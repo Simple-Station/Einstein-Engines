@@ -1,0 +1,324 @@
+#vendors
+
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachine]
+  id: SyndicateArmoryVendory
+  name: mercenary armory vendor
+  description: Here, you can tithe credits to the company for equipment. Sweet, sweet capitalism.
+  components:
+  - type: VendingMachine
+    pack: SyndicateArmoryInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Advertise
+    pack: AmmoVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/syndicatearmory.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: MarketModifier
+    mod: 2
+
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachine]
+  id: ImperialArmoryVendory
+  name: imperial armory vendor
+  description: Here, you can tithe credits to the House for equipment. Sweet, sweet feudalism.
+  components:
+  - type: VendingMachine
+    pack: ImperialArmoryInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Advertise
+    pack: AmmoVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/armory.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: MarketModifier
+    mod: 1.5
+
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachine]
+  id: ShinoharaBudgetVendor
+  name: shinohara budget armory vendor
+  description: Walking through a rough station with no iron? Allow us to sell you a temporary safeguard!
+  components:
+  - type: VendingMachine
+    pack: SHIBudgetArmoryInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Advertise
+    pack: AmmoVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/gunvend.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: MarketModifier
+    mod: 1.5
+    
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachine]
+  id: NCWLArmoryVendory
+  name: union armory vendor
+  description: Weapons to fuel the liberation of this system.
+  components:
+  - type: VendingMachine
+    pack: NCWLArmoryInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Advertise
+    pack: AmmoVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/armory.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: MarketModifier
+    mod: 1.5
+
+#cargo
+
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachine]
+  id: NCWLCargoDispenser
+  name: nova belraska dispensary
+  description: Excess goods are sold here to licensed traders.
+  components:
+  - type: VendingMachine
+    pack: NovaBelraskaDispensary
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Advertise
+    pack: AmmoVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/cargovendor.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: MarketModifier
+    mod: 1
+
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachine]
+  id: NCSPCargoDispenser
+  name: grinning jackal dispensary
+  description: Excess goods are sold here to licensed traders.
+  components:
+  - type: VendingMachine
+    pack: GrinningJackalDispensary
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Advertise
+    pack: AmmoVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/cargovendor.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: MarketModifier
+    mod: 1
+
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachineWallmount]
+  id: OnionAntiquarian
+  name: ONION wallconsole
+  description: A wall-mounted computer which delivers its gifts through a chute which reeks of waste.
+  components:
+  - type: VendingMachine
+    pack: OnionInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Advertise
+    pack: OnionVendAds
+  - type: SpeakOnUIClosed
+    pack: OnionGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/onion.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: MarketModifier
+    mod: 3
+  - type: AccessReader
+    access: [["Antiquarian"]]
+
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachine]
+  id: ImperialCargoDispenser
+  name: imperial dispensary
+  description: Excess goods are sold here to licensed traders.
+  components:
+  - type: VendingMachine
+    pack: ImperialDispensary
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Advertise
+    pack: AmmoVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/cargovendor.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: MarketModifier
+    mod: 1
+
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachine]
+  id: InterdyneCargoDispenser
+  name: hayes dispensary
+  description: Excess goods are sold here to licensed traders.
+  components:
+  - type: VendingMachine
+    pack: InterdyneDispensary
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Advertise
+    pack: AmmoVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/cargovendor.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: MarketModifier
+    mod: 1
+
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachine]
+  id: SawCargoDispenser
+  name: dochenskaya dispensary
+  description: Excess goods are sold here to licensed traders.
+  components:
+  - type: VendingMachine
+    pack: SawDispensary
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Advertise
+    pack: AmmoVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/cargovendor.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: MarketModifier
+    mod: 1
+
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachine]
+  id: SHICargoDispenser
+  name: tatsumoto dispensary
+  description: Excess goods are sold here to licensed traders.
+  components:
+  - type: VendingMachine
+    pack: SHIDispensary
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Advertise
+    pack: AmmoVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/cargovendor.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: MarketModifier
+    mod: 1

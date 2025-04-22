@@ -1,0 +1,33 @@
+- type: vessel
+  id: Countsman
+  name: DSM Countsman
+  description: The capital Flagship vessel of the Empire.
+  price: 600000
+  category: Countsman
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/DSM/countsman.yml
+
+- type: gameMap
+  id: Countsman
+  mapName: 'DSM Countsman'
+  mapPath: /Maps/_Crescent/Shuttles/DSM/countsman.yml
+  minPlayers: 0
+  stations:
+    Countsman:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Countsman {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-flagship
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            AdjutantDSM: [ 1, 1 ]
+            CourtierDSM: [ 3, 3 ]
+            KnightDSM: [ 3, 3 ]
+            LevymanDSM: [ 5, 5 ]
+            FreeholderDSM: [ 10, 10 ]

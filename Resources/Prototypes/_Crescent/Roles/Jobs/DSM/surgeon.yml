@@ -1,0 +1,39 @@
+- type: job
+  id: SurgeonDSM
+  name: job-name-surgeon
+  description: job-description-surgeon
+  playTimeTracker: JobSurgeonDSM
+  weight: 20
+  startingGear: SurgeonGear
+  alwaysUseSpawner: true
+  icon: "JobIconImperialSurgeon"
+  requirements:
+    - !type:FactionRequirement
+      factionID: "DSM"
+  requireAdminNotify: false
+  supervisors: job-supervisors-imperial 
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-smarts
+  access:
+  - Command
+  - Empire
+  - Maintenance
+  - ScribesGuild
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: SurgeonGear
+  equipment:
+    id: SurgeonPDA
+    ears: ClothingHeadsetEmpireCiv
+    pocket1: ImperialPassportBareLegit
+    head: ClothingHeadHatImperialSurgeon
+    shoes: ClothingShoesBootsImperialLaceup
+    jumpsuit: ClothingUniformJumpsuitImperialSurgeon

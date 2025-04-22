@@ -1,0 +1,35 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Ivarod
+  name: NCWL Ivarod
+  description: A converted light destroyer, purpose-built with endurance in mind.
+  price: 80000
+  category: Large
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCWL/ivarod.yml
+
+- type: gameMap
+  id: Ivarod
+  mapName: 'NCWL Ivarod'
+  mapPath: /Maps/_Crescent/Shuttles/NCWL/ivarod.yml
+  minPlayers: 0
+  stations:
+    Ivarod:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Ivarod {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-destroyer
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            KapitanNCWL: [ 1, 1 ]
+            SanitarNCWL: [ 4, 4 ]
+            ArtificerNCWL: [ 1, 1 ]
+            KadetNCWL: [ 2, 2 ]

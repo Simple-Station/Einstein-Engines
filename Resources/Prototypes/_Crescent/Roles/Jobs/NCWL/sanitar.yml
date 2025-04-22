@@ -1,0 +1,39 @@
+- type: job
+  id: SanitarNCWL
+  name: job-name-sanitar
+  description: job-description-sanitar
+  playTimeTracker: JobSanitarNCWL
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 1000
+    - !type:FactionRequirement
+      factionID: "NCWL"
+  weight: 20
+  startingGear: SanitarGear
+  alwaysUseSpawner: true
+  icon: "JobIconSanitar"
+  requireAdminNotify: false
+  supervisors: job-supervisors-highcomm
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-partisan
+  access:
+  - Command
+  - Maintenance
+  - NCWLGeneral
+  - NCWLJail
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: SanitarGear
+  equipment:
+    ears: ClothingHeadsetNCWL
+    pocket1: WeaponPistolHKUSP
+    pocket2: NCWLPassportAccepted
+    id: SanitarPDA

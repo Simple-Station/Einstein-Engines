@@ -1,0 +1,39 @@
+- type: job
+  id: PhysicianCMM
+  name: job-name-physician
+  description: job-description-physician
+  playTimeTracker: JobPhysicianCMM
+  weight: 24
+  startingGear: PhysicianGear
+  requirements:
+  - !type:FactionRequirement
+      factionID: "TSP"
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-physician
+  alwaysUseSpawner: true
+  icon: "JobIconCMMPhysician"
+  requireAdminNotify: false
+  supervisors: You answer to your Colonial Marshal , Deputy Marshal and Watchmaster.
+  canBeAntag: false
+  access:
+  - Command
+  - Maintenance
+  - Minuteman
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: PhysicianGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCMMPhysician
+    shoes: ClothingShoesBootsCombat
+    head: ClothingHeadHatMinuteman
+    gloves: ClothingHandsGlovesCombat
+    belt: ClothingBeltMinutemanPouches
+    id: PhysicianPDA
+    ears: ClothingHeadsetCMM
+    pocket1: WeaponPistolHKUSP

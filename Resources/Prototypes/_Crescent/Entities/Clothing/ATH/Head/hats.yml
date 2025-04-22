@@ -1,0 +1,104 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatAuthorityKommandant
+  name: kommandant's service cap
+  description: A no-bullshit military peaked cap meant for the Battlegroup's Kommandant.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Head/kommandant.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Head/kommandant.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatAuthorityLeutnant
+  name: leutnant's beret
+  description: A no-bullshit military officer's beret emblazoned with Authoritat sigils.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Head/leutnant.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Head/leutnant.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatAuthorityLogistitat
+  name: logistitat's beret
+  description: A pompous, gilded beret meant for the Logistitat.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Head/logistitat.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Head/logistitat.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatAuthoritySteward
+  name: steward's service cap
+  description: A military assistant's service cap. This one belongs to the First Steward of the 43rd Battlegroup of the Central Sol Authoritat.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Head/steward.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Head/steward.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatAuthorityKanoneer
+  name: kanoneer's beret
+  description: A no-bullshit military beret, the rank insignia that of a Sergeant.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Head/kanoneer.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Head/kanoneer.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatAuthoritySanitat
+  name: sanitat's beret
+  description: A no-bullshit military beret, the rank insignia that of a Corporal.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Head/sanitat.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Head/sanitat.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatAuthoritySoldat
+  name: soldat's beret
+  description: A no-bullshit military beret, the rank insignia that of a Private.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Head/soldat.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Head/soldat.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon

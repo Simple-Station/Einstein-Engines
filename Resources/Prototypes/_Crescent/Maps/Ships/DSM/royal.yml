@@ -1,0 +1,29 @@
+- type: vessel
+  id: Royal
+  name: DSM Royal
+  description: The dreadnought battleship of the Divine Mandate, it is the icon of the empire's power projection throughout space
+  price: 2500000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/DSM/royal.yml
+
+- type: gameMap
+  id: Royal
+  mapName: 'DSM Royal'
+  mapPath: /Maps/_Crescent/Shuttles/DSM/royal.yml
+  minPlayers: 0
+  stations:
+    Royal:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Royal {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: Imperial Dreadnought
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            LevymanDSM: [ 9, 9 ]

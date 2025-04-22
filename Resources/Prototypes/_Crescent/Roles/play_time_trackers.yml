@@ -1,0 +1,236 @@
+#ncwl
+
+- type: playTimeTracker
+  id: JobKommissarNCWL
+
+- type: playTimeTracker
+  id: JobSanitarNCWL
+
+- type: playTimeTracker
+  id: JobArtificerNCWL
+
+- type: playTimeTracker
+  id: JobDoktorNCWL
+
+- type: playTimeTracker
+  id: JobAdministratorNCWL
+
+- type: playTimeTracker
+  id: JobKapitanNCWL
+
+- type: playTimeTracker
+  id: JobKadetNCWL
+
+#syndicate
+
+- type: playTimeTracker
+  id: JobRingleaderNCSP
+
+- type: playTimeTracker
+  id: JobLieutenantNCSP
+
+- type: playTimeTracker
+  id: JobInfanteerNCSP
+
+- type: playTimeTracker
+  id: JobCyberdawnTechNCSP
+
+- type: playTimeTracker
+  id: JobTechnicianNCSP
+
+- type: playTimeTracker
+  id: JobRipperdocNCSP
+
+- type: playTimeTracker
+  id: JobChemcookNCSP
+
+- type: playTimeTracker
+  id: JobOperativeNCSP
+
+- type: playTimeTracker
+  id: JobIntelligenceOfficerNCSP
+
+- type: playTimeTracker
+  id: JobForemanNCSP
+
+- type: playTimeTracker
+  id: JobShipbreakerNCSP
+
+# empire
+
+- type: playTimeTracker
+  id: JobCitizenDSM
+  
+- type: playTimeTracker
+  id: JobFreeholderDSM
+
+- type: playTimeTracker
+  id: JobAdvocatusDSM
+
+- type: playTimeTracker
+  id: JobTemplarDSM
+
+- type: playTimeTracker
+  id: JobLevymanDSM
+
+- type: playTimeTracker
+  id: JobKnightDSM
+
+- type: playTimeTracker
+  id: JobWealthDSM
+
+- type: playTimeTracker
+  id: JobForemanDSM
+
+- type: playTimeTracker
+  id: JobScribeDSM
+
+- type: playTimeTracker
+  id: JobSurgeonDSM
+
+- type: playTimeTracker
+  id: JobArchmaesterDSM
+
+- type: playTimeTracker
+  id: JobPhysicianDSM
+
+- type: playTimeTracker
+  id: JobCourtierDSM
+
+- type: playTimeTracker
+  id: JobAdjutantDSM
+
+- type: playTimeTracker
+  id: JobGovernorDSM
+
+#srm
+
+- type: playTimeTracker
+  id: JobTenderSRM
+
+- type: playTimeTracker
+  id: JobAcolyteSRM
+
+- type: playTimeTracker
+  id: JobHunterSRM
+
+- type: playTimeTracker
+  id: JobMontagneSRM
+
+- type: playTimeTracker
+  id: JobOverseerSRM
+
+#shi
+
+- type: playTimeTracker
+  id: JobExecutiveSHI
+
+- type: playTimeTracker
+  id: JobBoardSHI
+
+- type: playTimeTracker
+  id: JobHighsecSHI
+
+- type: playTimeTracker
+  id: JobTraumasecSHI
+
+- type: playTimeTracker
+  id: JobSecuritySHI
+
+- type: playTimeTracker
+  id: JobEmployeeSHI
+
+- type: playTimeTracker
+  id: JobMedtechSHI
+
+#cmm
+
+- type: playTimeTracker
+  id: JobOrdnancemanCMM
+
+- type: playTimeTracker
+  id: JobMachinistCMM
+
+- type: playTimeTracker
+  id: JobPhysicianCMM
+
+- type: playTimeTracker
+  id: JobMinutemanCMM
+
+- type: playTimeTracker
+  id: JobWatchmasterCMM
+
+- type: playTimeTracker
+  id: JobDeputyMarshalCMM
+
+- type: playTimeTracker
+  id: JobMarshalCMM
+
+#4fams
+
+- type: playTimeTracker
+  id: JobProphetTAP
+
+- type: playTimeTracker
+  id: JobAcolyteTAP
+
+- type: playTimeTracker
+  id: JobDraugrTAP
+
+- type: playTimeTracker
+  id: JobServileTAP
+
+- type: playTimeTracker
+  id: JobTechminerTAP
+
+- type: playTimeTracker
+  id: JobHangarTechTAP
+  
+- type: playTimeTracker
+  id: JobTinkererTAP
+
+- type: playTimeTracker
+  id: JobBeltrunnerTAP
+
+- type: playTimeTracker
+  id: JobAntiquarianTAP
+
+#ath
+
+- type: playTimeTracker
+  id: JobKommandantATH
+
+- type: playTimeTracker
+  id: JobLeutnantATH
+
+- type: playTimeTracker
+  id: JobSoldatATH
+
+- type: playTimeTracker
+  id: JobKanoneerATH
+
+- type: playTimeTracker
+  id: JobSanitatATH
+  
+#misc
+
+- type: playTimeTracker
+  id: JobAntiquarian
+
+- type: playTimeTracker
+  id: JobContractor
+
+- type: playTimeTracker
+  id: JobPilot
+
+- type: playTimeTracker
+  id: JobMercenary
+
+- type: playTimeTracker
+  id: JobSpacer
+
+- type: playTimeTracker
+  id: JobGliessSheriff
+
+- type: playTimeTracker
+  id: JobGliessDockmaster

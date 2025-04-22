@@ -1,0 +1,32 @@
+- type: entity
+  id: Bullet9mm
+  name: bullet (9×19mm Parabellum) #AKA 9mm Luger, 9mm NATO or simply 9mm
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 15 #Dummy value
+
+- type: entity
+  id: Bullet6mm
+  name: bullet (6mm)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 14
+
+- type: entity
+  id: CartridgePistol6mm
+  name: cartridge (6mm auto)
+  parent: BaseCartridgePistol
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet6mm
+  - type: Tag
+    tags:
+      - CartridgePistol6mm

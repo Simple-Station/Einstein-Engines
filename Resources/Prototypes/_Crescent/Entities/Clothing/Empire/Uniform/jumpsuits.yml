@@ -1,0 +1,142 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitImperialCombat
+  name: imperial fatigues
+  description: A sleek onepiece bodysuit with Imperial livery.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Uniform/mandatecombat.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Uniform/mandatecombat.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitClarizeCombat
+  name: clarizian fatigues
+  description: A sleek onepiece bodysuit with Royal livery.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Uniform/clarizecombat.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Uniform/clarizecombat.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitClarizeOfficer
+  name: clarizian officer's suit
+  description: An officer's silken suit.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Uniform/clarizeofficer.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Uniform/clarizeofficer.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitImperialSoldierFormal
+  name: formal shirt and slacks
+  description: A formal shirt and slacks for Imperial soldiers.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Uniform/mandatesoldierformal.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Uniform/mandatesoldierformal.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitImperialAdjutantFormal
+  name: adjutant's formal suit
+  description: A formal suit for the Imperial Adjutant.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Uniform/mandateadjutantformal.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Uniform/mandateadjutantformal.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitImperialDoctor
+  name: doctor's jumpsuit
+  description: A doctor's jumpsuit with Imperial livery.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Uniform/mandatedoctor.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Uniform/mandatedoctor.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitClarizeDoctor
+  name: doctor's jumpsuit
+  description: A doctor's jumpsuit with Royal livery.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Uniform/clarizemedic.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Uniform/clarizemedic.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitImperialGovernor
+  name: imperial governor's formal dress
+  description: An ornate jumpsuit, intended for an Imperial Governor.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Uniform/mandategovernor.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Uniform/mandategovernor.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitImperialFreeholder
+  name: freeholder's jumpsuit
+  description: An Imperial citizen's jumpsuit with a biotracker embedded at the wrist.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Uniform/mandatefreeholder.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Uniform/mandatefreeholder.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitImperialArchmaester
+  name: archmaester's suit
+  description: A noble's elegant shirt and slacks, of genuine purple mothsilk.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Uniform/mandategovernorcasual.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Uniform/mandategovernorcasual.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitImperialNobleMale
+  name: noble's shirt and slacks
+  description: A noble's elegant shirt and slacks, of genuine black and white mothsilk.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Uniform/mandateadjutantcasual.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Uniform/mandateadjutantcasual.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitImperialNobleFemale
+  name: noble's shirt and pleated skirt
+  description: A noble's elegant shirt and skirt, of genuine black and white mothsilk.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Uniform/mandatecourtier.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Uniform/mandatecourtier.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitImperialSurgeon
+  name: imperial scribe's surgeon scrubs
+  description: Sterile scrubs in Olywir purple.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Uniform/mandatesurgeon.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Uniform/mandatesurgeon.rsi

@@ -1,0 +1,19 @@
+- type: loadout
+  id: LevymanDSMClothingBackpackDSMSatchelFilledSoldier
+  equipment: LevymanDSMClothingBackpackDSMSatchelFilledSoldier
+  price: 0
+
+- type: startingGear
+  id: LevymanDSMClothingBackpackDSMSatchelFilledSoldier
+  equipment:
+    back: ClothingBackpackDSMSatchelFilledSoldier
+
+- type: loadout
+  id: LevymanDSMClothingBackpackDSMFilledSoldier
+  equipment: LevymanDSMClothingBackpackDSMFilledSoldier
+  price: 0
+
+- type: startingGear
+  id: LevymanDSMClothingBackpackDSMFilledSoldier
+  equipment:
+    back: ClothingBackpackDSMFilledSoldier

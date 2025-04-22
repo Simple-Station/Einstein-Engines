@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by Kirov from CEV Eris on SS13",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "homelandAlloy"
+    },
+    {
+      "name": "steel"
+    },
+    {
+      "name": "plasteel"
+    },
+    {
+      "name": "PCK"
+    },
+    {
+      "name": "ceramic"
+    },
+    {
+      "name": "panzer"
+    },
+    {
+      "name": "fuhrer"
+    },
+    {
+      "name": "kaiser"
+    },
+    {
+      "name": "cloth"
+    },
+    {
+      "name": "leather"
+    },
+    {
+      "name": "kevlar"
+    },
+    {
+      "name": "NanoCeramic"
+    },
+    {
+      "name": "NanoPolymer"
+    },
+    {
+      "name": "excelalloy_sg"
+    },
+    {
+      "name": "steel_sg"
+    },
+    {
+      "name": "plasteel_sg"
+    },
+    {
+      "name": "ablative_sg"
+    },
+    {
+      "name": "ceramic_sg"
+    },
+    {
+      "name": "carrion_sg"
+    },
+    {
+      "name": "fuhrer_sg"
+    },
+    {
+      "name": "kaiser_sg"
+    },
+    {
+      "name": "plastic"
+    },
+    {
+      "name": "plastic_sg"
+    }
+  ]
+}

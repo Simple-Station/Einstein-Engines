@@ -1,0 +1,22 @@
+- type: gameMap
+  id: Dochenskaya
+  mapName: 'Dochenskaya Engineering Platform'
+  mapPath: /Maps/_Crescent/Stations/dochenskaya.yml
+  minPlayers: 0
+  stations:
+    Dochenskaya:
+      stationProto: StandardCrescentOutpost
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Dochenskaya Engineering Platform'
+        - type: Grammar
+          attributes:
+            proper: true
+        - type: VesselDesignation
+          designation: vessel-designation-outpost
+        - type: StationJobs
+          checkAlive: false
+          overflowJobs: []
+          availableJobs:
+            ForemanNCSP: [ 1, 1 ]
+            ShipbreakerNCSP: [ 6, 6 ]

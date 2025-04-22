@@ -1,0 +1,29 @@
+- type: cargoProduct
+  id: ShuttleSumitomoAmmoPangtai
+  icon:
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    state: baton
+  product: CrateSumitomoAmmo
+  cost: 5000
+  category: cargoproduct-category-name-shuttle
+  group: pangtai
+
+- type: cargoProduct
+  id: ShuttleCrateVulcanAmmoPangtai
+  icon:
+    sprite: _Crescent/Ammunition/vulcan.rsi
+    state: base
+  product: CrateVulcanAmmo
+  cost: 5000
+  category: cargoproduct-category-name-shuttle
+  group: pangtai
+
+- type: cargoProduct
+  id: CrateVulcanAmmoPangtai
+  icon:
+    sprite: _NF/Objects/SpaceArtillery/50_armorpiercing_machinegun_casing.rsi
+    state: base
+  product: CrateSlugthrowerAmmo
+  cost: 2500
+  category: cargoproduct-category-name-shuttle
+  group: pangtai

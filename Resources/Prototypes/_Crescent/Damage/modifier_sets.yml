@@ -1,0 +1,11 @@
+- type: damageModifierSet
+  id: Guardian
+  coefficients:
+    Blunt: 0.6
+    Slash: 0.6
+    Piercing: 0.3
+  flatReductions:
+    Blunt: 10
+    Slash: 10
+    Piercing: 10
+    Heat: 10

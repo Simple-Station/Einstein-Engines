@@ -1,0 +1,65 @@
+- type: latheRecipe
+  id: Crash
+  result: CrashAutoinjector
+  applyMaterialDiscount: false
+  completetime: 1
+  materials:
+    ExoticProteins: 250
+    DeactivatedPhoron: 500
+    Garbage: 1750
+
+- type: latheRecipe
+  id: Exile
+  result: ExileAutoinjector
+  applyMaterialDiscount: false
+  completetime: 1
+  materials:
+    Galine: 250
+    PlasmaIsotope: 500
+    DeactivatedPhoron: 500
+    ExoticProteins: 1000
+    RefinedGarbage: 1500
+
+- type: latheRecipe
+  id: Kaiser
+  result: KaiserAutoinjector
+  applyMaterialDiscount: false
+  completetime: 1
+  materials:
+    Galine: 1000
+    ExoticProteins: 1500
+    DeactivatedPhoron: 1500
+    PlasmaIsotope: 2000
+
+- type: latheRecipe
+  id: Mechanite
+  result: MechaniteAutoinjector
+  applyMaterialDiscount: false
+  completetime: 1
+  materials:
+    Galine: 500
+    PlasmaIsotope: 1000
+    DeactivatedPhoron: 1500
+    Mechanites: 2000
+
+- type: latheRecipe
+  id: Bloodeye
+  result: BloodeyeAutoinjector
+  applyMaterialDiscount: false
+  completetime: 1
+  materials:
+    Galine: 500
+    DeactivatedPhoron: 1000 
+    ExoticProteins: 1500
+    RefinedGarbage: 2000
+
+- type: latheRecipe
+  id: PartyDrugs
+  result: TradeGoodDrugs
+  applyMaterialDiscount: false
+  completetime: 2
+  materials:
+    Galine: 500
+    PlasmaIsotope: 1000
+    DeactivatedPhoron: 1500
+    RefinedGarbage: 1500

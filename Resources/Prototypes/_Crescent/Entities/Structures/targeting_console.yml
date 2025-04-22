@@ -1,0 +1,62 @@
+- type: entity
+  parent: BaseComputer
+  id: ComputerTargeting
+  name: targeting computer
+  description: A dazzling console providing total control over the ship's projectile armaments.
+  components:
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: shuttle
+    - map: ["computerLayerKeys"]
+      state: generic_keys
+  - type: Computer
+    board: TargetingConsoleCircuitboard
+  - type: TargetingConsole
+  - type: ActivatableUI
+    key: enum.TargetingConsoleUiKey.Key
+  - type: UserInterface
+    interfaces:
+        enum.TargetingConsoleUiKey.Key:
+          type: TargetingConsoleBoundUserInterface
+  - type: RadarConsole
+  - type: WorldLoader
+    radius: 256
+  - type: DeviceLinkSource
+    # ports:
+    #   - TargetingConsoleOutput YAMLFIX: This doesn't exist as a SourcePortPrototype
+
+- type: entity
+  parent: [BaseStructureComputerTabletop, ComputerTargeting]
+  id: ComputerTabletopTargeting
+  components:
+  - type: Sprite
+    drawdepth: SmallObjects
+    layers:
+    - map: ["computerLayerBody"]
+      sprite: _NF/Structures/Machines/computer_tabletop.rsi
+      state: computer_tabletop
+    - map: ["computerLayerKeyboard"]
+      sprite: _NF/Structures/Machines/computer_tabletop.rsi
+      state: generic_keyboard_tabletop
+    - map: ["computerLayerScreen"]
+      sprite: Structures/Machines/computers.rsi
+      state: shuttle
+    - map: ["computerLayerKeys"]
+      sprite: Structures/Machines/computers.rsi
+      state: generic_keys
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: TargetingConsoleCircuitboard
+  name: targeting console board
+  description: A computer printed circuit board for a targeting console.
+  components:
+    - type: ComputerBoard
+      prototype: ComputerTargeting
+    - type: ComputerTabletopBoard
+      prototype: ComputerTabletopTargeting

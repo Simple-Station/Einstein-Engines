@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesBootsHunter
+  name: tall leather boots
+  description: Tall boots of heavy leather, made for the Hunter on the prowl.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SRM/Feet/hunterboots.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SRM/Feet/hunterboots.rsi

@@ -1,0 +1,40 @@
+- type: job
+  id: CorpsecSHI
+  name: job-name-corpsec
+  description: job-description-corpsec
+  playTimeTracker: JobSecuritySHI
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 18000
+    - !type:FactionRequirement
+      factionID: "SHI"
+  weight: 38
+  startingGear: CorpsecGear
+  alwaysUseSpawner: true
+  icon: "JobIconCorpsec"
+  requireAdminNotify: false
+  supervisors: job-supervisors-shi
+  canBeAntag: false
+  access:
+  - Command
+  - Maintenance
+  - Shinohara
+  - ShinoharaSecurity
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: CorpsecGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitShinoharaSecurity
+    shoes: ClothingShoesBootsCombat
+    belt: WeaponLaserSvalinn
+    head: ClothingHeadHatShinoharaBeret
+    outerClothing: ClothingOuterArmorShinoharaArmor
+    gloves: ClothingHandsGlovesFingerless
+    id: CorpsecPDA
+    ears: ClothingHeadsetShinohara
+    pocket1: Handcuffs
+    pocket2: TradePassport

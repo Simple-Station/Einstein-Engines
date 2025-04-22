@@ -1,0 +1,31 @@
+- type: gameMap
+  id: Aasim
+  mapName: 'TAP Qiwa Aasim'
+  mapPath: /Maps/_Crescent/Stations/aasim.yml
+  minPlayers: 0
+  stations:
+    Aasim:
+      stationProto: StandardCrescentStation
+      gridComponents:
+        - type: BlockShipWeaponProjectileGrid
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'TAP Qiwa Aasim'
+        - type: Grammar
+          attributes:
+            proper: true
+        - type: VesselDesignation
+          designation: vessel-designation-headquarters
+        - type: StationJobs
+          checkAlive: false
+          overflowJobs: []
+          availableJobs:
+            ProphetTAP: [ 1, 1 ]
+            AcolyteTAP: [ 4, 4 ]
+            DraugrTAP: [ 5, 5 ]
+            ServileTAP: [ 4, 4 ]
+            TechminerTAP: [ 3, 3 ]
+            HangarTechTAP: [ 3, 3 ]
+            TinkererTAP: [ 3, 3 ]
+            BeltrunnerTAP: [ 2, 2 ]
+            Antiquarian: [ 1, 1 ]

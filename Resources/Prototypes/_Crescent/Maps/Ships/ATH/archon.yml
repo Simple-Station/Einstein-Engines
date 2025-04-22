@@ -1,0 +1,33 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Archon
+  name: ATH Archon
+  description: A light Authoritat frigate, often seen escorting larger targets or leading light patrols.
+  price: 75000
+  category: Medium
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/ATH/archon.yml
+
+- type: gameMap
+  id: Archon
+  mapName: 'Archon'
+  mapPath: /Maps/_Crescent/Shuttles/ATH/archon.yml
+  minPlayers: 0
+  stations:
+    Archon:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Archon {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-lightfrigate
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            SoldatATH: [ 2, 2 ]
+            KanoneerATH: [ 1, 1 ]

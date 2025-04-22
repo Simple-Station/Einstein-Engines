@@ -1,0 +1,9 @@
+- type: messagePack
+  id: OnionVendAds
+  messages:
+  - advertisement-onion-1
+  - advertisement-onion-2
+  - advertisement-onion-3
+  - advertisement-onion-4
+  - advertisement-onion-5
+  - advertisement-onion-6

@@ -1,0 +1,46 @@
+- type: job
+  id: IntelligenceOfficerNCSP
+  name: job-name-intelligenceofficer
+  description: job-description-intelligenceofficer
+  playTimeTracker: JobIntelligenceOfficerNCSP
+  weight: 14
+  startingGear: IntelligenceOfficerGear
+  alwaysUseSpawner: true
+  icon: "JobIconSyndieIntelligenceOfficer"
+  requireAdminNotify: true
+  supervisors: You answer to the interests of the CyberDawn Technologies company. Protect your technology, make money,  take out competition.
+  canBeAntag: false
+  requirements:
+    - !type:WhitelistRequirement
+    - !type:FactionRequirement
+      factionID: "TFSC"
+    - !type:SexRequirement
+      allowed:
+      - Male
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-patriarch
+  access:
+  - Command
+  - Maintenance
+  - SyndicateBasic
+  - SyndicateRamzi
+  - SyndicateCommand
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: IntelligenceOfficerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSyndicateSuitCyberdawn
+    shoes: ClothingShoesBootsCombat
+    head: ClothingHeadHatPatriarch
+    id: IntelligenceOfficerPDA
+    gloves: ClothingHandsGlovesFingerless
+    outerClothing: ClothingOuterArmorCyberdawnPatriarch
+    ears: ClothingHeadsetNCSPCyberdawn
+    pocket1: AccesElevatorCD

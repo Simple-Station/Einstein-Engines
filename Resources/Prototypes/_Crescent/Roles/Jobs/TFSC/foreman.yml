@@ -1,0 +1,46 @@
+- type: job
+  id: ForemanNCSP
+  name: job-name-foreman
+  description: job-description-foreman
+  playTimeTracker: JobForemanNCSP
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 20000
+    - !type:FactionRequirement
+      factionID: "TFSC"
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-foreman
+  weight: 8
+  startingGear: ForemanGear
+  alwaysUseSpawner: true
+  icon: "JobIconSyndieForeman"
+  requireAdminNotify: true
+  supervisors: You're the leader of the SAW. You answer to your own interests
+  canBeAntag: false
+  access:
+  - Command
+  - Maintenance
+  - SyndicateBasic
+  - SyndicateSaws
+  - SyndicateCommand
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: ForemanGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSyndicateSaws
+    shoes: ClothingShoesBootsCombat
+    head: ClothingHeadHatHardhatSyndicateForeman
+    id: ForemanPDA
+    ears: ClothingHeadsetNCSPSaws
+    outerClothing: ClothingOuterArmorSyndicateForeman
+    belt: ClothingBeltUtilityEngineering
+    pocket1: WeaponPistolHKUSP
+    gloves: ClothingHandsGlovesFingerless
+    pocket2: AccesElevatorSAW

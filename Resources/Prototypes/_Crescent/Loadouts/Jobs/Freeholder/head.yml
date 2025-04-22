@@ -1,0 +1,9 @@
+- type: loadout
+  id: FreeholderDSMClothingHeadHelmetImperialWorkerHelmet
+  equipment: FreeholderDSMClothingHeadHelmetImperialWorkerHelmet
+  price: 150
+
+- type: startingGear
+  id: FreeholderDSMClothingHeadHelmetImperialWorkerHelmet
+  equipment:
+    head: ClothingHeadHelmetImperialWorkerHelmet

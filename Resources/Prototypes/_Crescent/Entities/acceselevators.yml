@@ -1,0 +1,58 @@
+﻿- type: entity
+  parent: BaseItem
+  id: AccesElevatorBase
+  name: Debug Acces Elevator
+  description: Gives you jack shit dumbass you shouldn't spawn this!!!!!!!!!!!.
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/appraisal-tool.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Tools/appraisal-tool.rsi
+  - type: UseDelay
+    delay: 3
+  - type: Clothing
+    sprite: Objects/Tools/appraisal-tool.rsi
+    quickEquip: false
+    slots:
+    - Belt
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 250
+  - type: Speech
+  - type: AccesElevator
+    acces:
+    - Command
+
+- type: entity
+  parent: AccesElevatorBase
+  id: AccesElevatorCD
+  name: CyberDawn Acces Elevator
+  description: Gives a target ID the acces codes for CyberDawn Technologies facilities.
+  components:
+  - type: AccesElevator
+    acces:
+    - SyndicateBasic
+    - SyndicateRamzi
+
+- type: entity
+  parent: AccesElevatorBase
+  id: AccesElevatorSAW
+  name: SAW Acces Elevator
+  description: Gives a target ID the acces codes for Space Aeronautic Worker's union facilities.
+  components:
+  - type: AccesElevator
+    acces:
+    - SyndicateBasic
+    - SyndicateSaws
+
+- type: entity
+  parent: AccesElevatorBase
+  id: AccesElevatorGSC
+  name: GSC Acces Elevator
+  description: Gives a target ID the acces codes for Gorlex Security Consulting facilities.
+  components:
+  - type: AccesElevator
+    acces:
+    - SyndicateBasic
+    - SyndicateGorlex

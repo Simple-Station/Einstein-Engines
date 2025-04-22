@@ -1,0 +1,221 @@
+#hardsuits
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitTraumasec
+  name: interdyne traumasec hardsuit
+  description: A modular hardsuit produced by Shinohara Heavy Industries, made for Interdyne TraumaSec officers.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/OuterClothing/traumasec.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/OuterClothing/traumasec.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: DegradeableArmor
+    armorMaxHealth: 700
+    armorType: Ceramic
+    armorRepair: NTCeramic
+    initialModifiers:
+      flatReductions:
+        Blunt: 20
+        Slash: 20
+        Piercing: 80
+        Heat: 15
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitTraumasec
+  - type: Contraband
+    value: 5
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitHEV
+  name: shinohara hazardous environment hardsuit
+  description: A modular hardsuit produced by Shinohara Heavy Industries, made for logistics officers.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/OuterClothing/shinoharahev.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/OuterClothing/shinoharahev.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: DegradeableArmor
+    armorMaxHealth: 750
+    armorType: Metallic
+    armorRepair: PlasteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 15
+        Slash: 15
+        Piercing: 10
+        Heat: 10
+        Caustic: 15
+        Radiation: 35
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.9
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitHEV
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitHighsec
+  name: shinohara SVBT-2 combat hardsuit
+  description: A modular combat hardsuit developed by Shinohara Heavy Industries. Sold to elite mercs and corporate deathsquads everywhere.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/OuterClothing/corpsec.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/OuterClothing/corpsec.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: DegradeableArmor
+    armorMaxHealth: 900
+    armorType: Ceramic
+    armorRepair: NTCeramic
+    initialModifiers:
+      flatReductions:
+        Blunt: 25
+        Slash: 35
+        Piercing: 80
+        Heat: 15
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 0.7
+    sprintModifier: 0.7
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitCorpsec
+
+#armor
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorShinoharaArmor
+  name: SHI CIV-1 combat vest
+  description: A kevlar-intervowen durathread vest padded with ballistic gel. Sold on the civilian self-defense market.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/OuterClothing/securityvest.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/OuterClothing/securityvest.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 1000
+    armorType: Metallic
+    armorRepair: PlasteelEncasedKevlar
+    initialModifiers:
+      flatReductions:
+        Blunt: 10
+        Slash: 10
+        Piercing: 30
+        Heat: 20
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorShinoharaArmorHighsec
+  name: SHI BULWARK-2 ballistic hauberk
+  description: A kevlar-intervowen durathread hauberk padded with ballistic gel, plated with NanoTrasen Ballistic Carapace (tm) on the outside. A wet dream for any corporate goon.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/OuterClothing/highsec.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/OuterClothing/highsec.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 1000
+    armorType: Metallic
+    armorRepair: NTPolymer
+    initialModifiers:
+      flatReductions:
+        Blunt: 35
+        Slash: 35
+        Piercing: 55
+        Heat: 35
+        Caustic: 35
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.80
+  - type: GroupExamine
+
+#clothes
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterShinoharaVest
+  name: corporate hi-vis vest
+  description: A hi-vis vest made for Shinohara workers.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/OuterClothing/logisticsvest.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/OuterClothing/logisticsvest.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterShinoharaOvercoat
+  name: captain's overcoat
+  description: A heavy overcoat. Bears the Lord Commander's insignia on a label on the inside.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/OuterClothing/execcoat.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/OuterClothing/execcoat.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterShinoharaSuitjacket
+  name: corporate suit jacket
+  description: A silken suit jacket, worn by corporate goons everywhere.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/OuterClothing/suitjacket.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/OuterClothing/suitjacket.rsi
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterShinoharaExecSuitjacket
+  name: corporate executive suit jacket
+  description: A silken, luxurious suit jacket, worn by corporate bosses everywhere.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/OuterClothing/execsuitjacket.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/OuterClothing/execsuitjacket.rsi
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterShinoharaLabcoat
+  name: corporate labcoat
+  description: A linen labcoat in Shinohara colors.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/OuterClothing/rndcoat.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/OuterClothing/rndcoat.rsi

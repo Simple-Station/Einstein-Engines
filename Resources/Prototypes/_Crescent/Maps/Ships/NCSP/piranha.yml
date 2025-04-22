@@ -1,0 +1,32 @@
+# Author Info
+# Discord: @fleshangel
+#
+- type: vessel
+  id: Piranha
+  name: NCSP Piranha
+  description: An ultralight Syndicate fighter.
+  price: 15000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/piranha.yml
+
+- type: gameMap
+  id: Piranha
+  mapName: 'NCSP Piranha'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/piranha.yml
+  minPlayers: 0
+  stations:
+    Piranha:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'GSC Piranha {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            InfanteerNCSP: [ 0, 0 ]

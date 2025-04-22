@@ -1,0 +1,119 @@
+- type: factoryRecipe
+  id: 120mmCasingDU
+  name: 120mm DU casing
+  inputs:
+    Steel: 3
+  outputs:
+    Casing120: 1
+
+- type: factoryRecipe
+  id: 120mmWeldDU
+  name: weld 120mm DU casing
+  inputs:
+    Casing120: 1
+  outputs:
+    Casing120Welded: 1
+
+- type: factoryRecipe
+  id: 120mmAssembleDU
+  name: assemble 120mm DU casing
+  inputs:
+    Casing120Welded: 1
+  outputs:
+    CartridgeShellArmorPiercing: 1
+
+- type: factoryRecipe
+  id: 120mmCasingHE
+  name: 120mm HE casing
+  inputs:
+    Plasma: 5
+  outputs:
+    Casing120HE: 1
+
+- type: factoryRecipe
+  id: 120mmWeldHE
+  name: weld 120mm HE casing
+  inputs:
+    Casing120HE: 1
+  outputs:
+    Casing120WeldedHE: 1
+
+- type: factoryRecipe
+  id: 120mmAssembleHE
+  name: assemble 120mm HE casing
+  inputs:
+    Casing120WeldedHE: 1
+  outputs:
+    CartridgeShellHighExplosive: 1
+
+- type: factoryRecipe
+  id: GargoyleCasing
+  name: Gargoyle Cruise Missile
+  inputs:
+    Plasteel: 10
+  outputs:
+    TorpGarg: 1
+
+- type: factoryRecipe
+  id: LancerCasing
+  name: Lancer 100mm Missile
+  inputs:
+    Plastic: 3
+  outputs:
+    LanceRocketCartridge: 1
+
+- type: factoryRecipe
+  id: 320mmCasing
+  name: Create 320mm casing
+  inputs:
+    Steel: 15
+  outputs:
+    ColonyShellIncomplete: 1
+
+- type: factoryRecipe
+  id: 320mmPack
+  name: Pack 320mm casing with GP
+  inputs:
+    ColonyShellIncomplete: 1
+    Gunpowder: 5
+    Plasma: 5
+  outputs:
+    ColonyShellComplete: 1
+
+- type: factoryRecipe
+  id: BiomassFromWheat
+  name: Wheat to Biomass
+  inputs:
+    WheatBushel: 1
+  outputs:
+    MaterialBiomass: 25
+
+- type: factoryRecipe
+  id: BiomassFromSugarcane
+  name: Sugarcane to Biomass
+  inputs:
+    Sugarcane: 1
+  outputs:
+    MaterialBiomass: 40
+
+- type: factoryRecipe
+  id: FourFamiliesPlasteel
+  name: Fourfamilies Plasteel
+  inputs:
+    Plasma: 10
+    Steel: 20
+  outputs:
+    SheetPlasteel1: 5
+
+- type: factoryRecipe
+  id: IdnaTorpedoManufacturing
+  name : Manufacture IDNA Torpedo
+  inputs:
+    Plasma: 5
+    Steel: 5
+  outputs:
+    IdnaTorpedo: 1
+
+
+
+

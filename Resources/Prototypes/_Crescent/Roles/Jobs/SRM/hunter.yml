@@ -1,0 +1,43 @@
+- type: job
+  id: HunterSRM
+  name: job-name-hunter
+  description: job-description-hunter
+  playTimeTracker: JobHunterSRM
+  requirements:
+    - !type:SpeciesRequirement
+      allowedOnly:
+        - Human
+    - !type:OverallPlaytimeRequirement
+      time: 20000
+    - !type:FactionRequirement
+      factionID: "SRM"
+  weight: 22
+  startingGear: HunterGear
+  alwaysUseSpawner: true
+  icon: "JobIconHunter"
+  requireAdminNotify: false
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
+  access:
+  - Command
+  - Hunter
+  - Maintenance
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: Telepathic
+
+- type: startingGear
+  id: HunterGear
+  equipment:
+    id: HunterPDA
+    ears: ClothingHeadsetHunter
+    jumpsuit: ClothingUniformJumpsuitHunter
+    head: ClothingHeadHatHunter
+    shoes: ClothingShoesBootsHunter
+    outerClothing: ClothingOuterArmorHunterDuster
+    gloves: ClothingHandsGlovesHunter

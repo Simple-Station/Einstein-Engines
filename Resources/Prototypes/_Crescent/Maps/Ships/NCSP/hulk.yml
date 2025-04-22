@@ -1,0 +1,33 @@
+# Author Info
+# Discord: @fleshangel
+#
+- type: vessel
+  id: Hulk
+  name: IPM Hulk
+  description: A mobile hospital on thrusters. Quite heavy, yet underarmed.
+  price: 120000
+  category: Large
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/hulk.yml
+
+- type: gameMap
+  id: Hulk
+  mapName: 'IPM Hulk'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/hulk.yml
+  minPlayers: 0
+  stations:
+    Hulk:
+      stationProto: StandardCrescentCivilianVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'IPM Hulk {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-medical
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            RipperdocNCSP: [ 3, 3 ]
+            ChemcookNCSP: [ 3, 3 ]

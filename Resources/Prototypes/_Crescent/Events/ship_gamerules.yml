@@ -1,0 +1,29 @@
+- type: gameMap
+  id: trader
+  mapName: 'PTA Gu Tian'
+  mapPath: /Maps/_Crescent/Bluespace/trader.yml
+  minPlayers: 0
+  stations:
+    trader:
+      stationProto: StandardCrescentOutpost
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'PTA Gu Tian'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+
+- type: gameMap
+  id: shitrader
+  mapName: 'SHI Kitamura Jeon'
+  mapPath: /Maps/_Crescent/Bluespace/shitrader.yml
+  minPlayers: 0
+  stations:
+    shitrader:
+      stationProto: StandardCrescentOutpost
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'SHI Kitamura Jeon'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'

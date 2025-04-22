@@ -1,0 +1,7 @@
+- type: entity
+  id: IntercomLocal
+  parent: Intercom
+  components:
+  - type: Intercom
+    supportedChannels:
+    - Traffic # Frontier - Add Traffic channel

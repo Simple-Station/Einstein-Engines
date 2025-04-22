@@ -1,0 +1,30 @@
+- type: vessel
+  id: Provost
+  name: CMM Provost
+  description: A brawler and missile gunship, overdriven to perfection.
+  price: 30000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/CMM/provost.yml
+
+- type: gameMap
+  id: Provost
+  mapName: 'CMM Provost'
+  mapPath: /Maps/_Crescent/Shuttles/CMM/provost.yml
+  minPlayers: 0
+  stations:
+    Provost:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'CMM Provost {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-gunship
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            MinutemanCMM: [1, 1]
+

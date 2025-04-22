@@ -1,0 +1,13 @@
+- type: utilityQuery
+  id: NearbyPDTTargets
+  query:
+    - !type:NearbyHostilesQuery
+  considerations:
+    - !type:TargetDistanceCon
+      curve: !type:PresetCurve
+        preset: TargetDistance
+    - !type:TargetHealthCon
+      curve: !type:PresetCurve
+        preset: TargetHealth
+    - !type:TargetInLOSOrCurrentCon
+      curve: !type:BoolCurve

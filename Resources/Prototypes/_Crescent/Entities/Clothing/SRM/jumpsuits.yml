@@ -1,0 +1,32 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitHunterAcolyte
+  name: apprentice's fatigues
+  description: Fatigues for fresh-faced Hunter initiates.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SRM/Uniform/acolytefatigues.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SRM/Uniform/acolytefatigues.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitHunter
+  name: hunter's fatigues
+  description: Fatigues and a vest belonging to a Hunter. A dreaded sight for many defenseless civilians.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SRM/Uniform/hunterfatigues.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SRM/Uniform/hunterfatigues.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitOverseer
+  name: overseer's clericals
+  description: The dignified clericals of the Overseer of the Hunt.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SRM/Uniform/overseerclericals.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SRM/Uniform/overseerclericals.rsi

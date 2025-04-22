@@ -1,0 +1,136 @@
+## hardsuit helmets
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitHEV
+  categories: [ HideSpawnMenu ]
+  name: shinohara hazardous environment suit helmet
+  description: Spaceworthy protection for your fragile skull.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Head/hshinoharahev.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Head/hshinoharahev.rsi
+  - type: PointLight
+    color: "#ffffff"
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
+        Heat: 0.95
+        Radiation: 0.95
+        Caustic: 0.95
+  - type: EyeProtection
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitCorpsec
+  categories: [ HideSpawnMenu ]
+  name: shinohara SVBT-2 combat hardsuit helmet
+  description: Spaceworthy protection for your fragile skull.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Head/corpsec.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Head/corpsec.rsi
+  - type: PointLight
+    radius: 6
+    color: "#ffffff"
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9
+        Caustic: 0.9
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitTraumasec
+  categories: [ HideSpawnMenu ]
+  name: interdyne traumasec hardsuit helmet
+  description: Spaceworthy protection for your fragile skull.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Head/traumasec.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Head/traumasec.rsi
+  - type: PointLight
+    radius: 4
+    color: "#d96050"
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9
+        Caustic: 0.9
+
+#hats
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatShinoharaBeret
+  name: watchman's beret
+  description: A formal beret with the tower insignia of the Lord Commander.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Head/beret.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Head/beret.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatShinoharaFacade
+  name: captain's facade
+  description: A sleek, face-covering helmet that strips the wearer of identity.
+  components:
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Head/execmask.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Head/execmask.rsi
+
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadHatShinoharaHelmet
+  name: SHI BULWARK-2 ballistic helmet
+  description: A high-tech, cycloptic helmet with the Shinohara Heavy Industries corporate logo emblazoned on the front. Preferred by liquidation agents and elite mercs everywhere.
+  components:
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Head/highsec.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Head/highsec.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+        Heat: 0.85
+        Caustic: 0.85

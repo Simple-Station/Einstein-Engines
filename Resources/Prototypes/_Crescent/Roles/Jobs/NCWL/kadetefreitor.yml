@@ -1,0 +1,37 @@
+- type: job
+  id: KadetNCWL
+  name: job-name-kadet
+  description: job-description-kadet
+  playTimeTracker: JobKadetNCWL
+  weight: 10
+  startingGear: KadetGear
+  alwaysUseSpawner: true
+  icon: "JobIconKadet"
+  requirements:
+    - !type:FactionRequirement
+      factionID: "NCWL"
+  requireAdminNotify: false
+  supervisors: job-supervisors-highcomm
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-soldat
+  access:
+  - Command
+  - Maintenance
+  - Service
+  - NCWLGeneral
+  - NCWLJail
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: KadetGear
+  equipment:
+    ears: ClothingHeadsetNCWL
+    belt: WeaponPistolHKUSP
+    pocket1: NCWLPassportAccepted
+    id: KadetPDA

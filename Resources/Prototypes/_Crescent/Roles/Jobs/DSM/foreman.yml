@@ -1,0 +1,34 @@
+- type: job
+  id: ForemanDSM
+  name: job-name-foremanimp
+  description: job-description-foremanimp
+  playTimeTracker: JobForemanDSM
+  weight: 19
+  startingGear: ForemanImpGear
+  alwaysUseSpawner: true
+  requirements:
+    - !type:FactionRequirement
+      factionID: "DSM"
+  icon: "JobIconImperialForeman"
+  requireAdminNotify: false
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
+  access:
+  - Command
+  - Empire
+  - Maintenance
+  - Service
+  - ScribesGuild
+  - LogisticsWealth
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: ForemanImpGear
+  equipment:
+    id: ForemanImpPDA
+    ears: ClothingHeadsetEmpireCiv
+    head: ClothingHeadHelmetImperialWorkerHelmet
+    pocket1: ImperialPassportBareLegit
+    mask: ClothingMaskImperialCombatGasmask

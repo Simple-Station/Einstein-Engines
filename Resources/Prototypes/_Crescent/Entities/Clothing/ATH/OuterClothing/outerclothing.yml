@@ -1,0 +1,166 @@
+#hardsuits
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitAuthorityPanzer
+  name: heavy 'Panzer' mk II combat hardsuit
+  description: A heavy shocktrooper's combat hardsuit belonging to the 43rd Battlegroup of the Authoritat.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/OuterClothing/panzer.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/OuterClothing/panzer.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: DegradeableArmor
+    armorMaxHealth: 1000
+    armorType: Metallic
+    armorRepair: NTPolymer
+    initialModifiers:
+      flatReductions:
+        Blunt: 35
+        Slash: 35
+        Piercing: 45
+        Heat: 25
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 0.80
+    sprintModifier: 0.80
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitAuthorityPanzer
+  - type: StaticPrice
+    price: 4500
+
+#coats
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatAuthorityKommandant
+  name: kommandant's formal coat
+  description: An ornate, durathread-reinforced officer's coat.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/OuterClothing/kommandant.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/OuterClothing/kommandant.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 750
+    armorType: Metallic
+    armorRepair: NTPolymer
+    initialModifiers:
+      flatReductions:
+        Blunt: 20
+        Slash: 20
+        Piercing: 35
+        Heat: 25
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: StaticPrice
+    price: 1500
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatAuthorityLeutnant
+  name: leutnant's formal coat
+  description: An ornate, durathread-reinforced officer's coat.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/OuterClothing/leutnant.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/OuterClothing/leutnant.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 750
+    armorType: Metallic
+    armorRepair: NTPolymer
+    initialModifiers:
+      flatReductions:
+        Blunt: 20
+        Slash: 20
+        Piercing: 35
+        Heat: 25
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: StaticPrice
+    price: 1500
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatAuthorityOberartz
+  name: oberartz's heavy robes
+  description: Heavy, flowing silken robes belonging to the Oberartz.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/OuterClothing/oberartz.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/OuterClothing/oberartz.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.80
+        Slash: 0.80
+        Piercing: 0.95
+        Heat: 0.95
+  - type: StaticPrice
+    price: 1500
+
+#regular
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatAuthorityHandels
+  name: merchant's silken robes
+  description: An ornate set of flowing silken robes belonging to the common peddler.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/OuterClothing/handels.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/OuterClothing/handels.rsi
+  - type: StaticPrice
+    price: 1000
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatAuthorityVorarbeiter
+  name: vorarbeiter's heavy work coat
+  description: A heavy durathread work coat belonging to the foreman of a worker gang.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/OuterClothing/vorarbeiter.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/OuterClothing/vorarbeiter.rsi
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatAuthorityChirurgeon
+  name: chirurgeon's labcoat
+  description: A sterilized labcoat ready for operating.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/OuterClothing/chirurgeon.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/OuterClothing/chirurgeon.rsi
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatAuthorityForscher
+  name: forscher's labcoat
+  description: A sterilized labcoat ready for science.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/OuterClothing/forscher.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/OuterClothing/forscher.rsi
+  - type: StaticPrice
+    price: 250
+

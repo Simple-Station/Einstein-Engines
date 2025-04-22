@@ -1,0 +1,32 @@
+# Author Info
+# Discord: fleshangel
+#
+- type: vessel
+  id: Harpy
+  name: TFSC Harpy
+  description: A medium-sized rocket corvette with an onboard clinic.
+  price: 60000
+  category: Medium
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/harpy.yml
+
+- type: gameMap
+  id: Harpy
+  mapName: 'TFSC Harpy'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/harpy.yml
+  minPlayers: 0
+  stations:
+    Harpy:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'IPM Harpy {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-utility
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            RipperdocNCSP: [ 0, 0 ]

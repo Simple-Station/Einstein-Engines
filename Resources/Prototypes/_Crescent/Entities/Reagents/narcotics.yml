@@ -1,0 +1,203 @@
+- type: reagent
+  id: Crash
+  name: reagent-name-crash
+  group: Narcotics
+  desc: reagent-desc-crash
+  physicalDesc: reagent-physical-desc-soothing
+  flavor: paintthinner
+  color: "#EE35FF"
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        probability: 0.3
+        damage:
+          groups:
+            Poison: 1.5
+    Narcotic:
+      effects:
+      - !type:ChemVomit
+        probability: 0.05
+        conditions:
+        - !type:ReagentThreshold
+            min: 10
+      - !type:MovespeedModifier
+        walkSpeedModifier: 1.3
+        sprintSpeedModifier: 1.3
+      - !type:GenericStatusEffect
+        key: Stutter
+        component: StutteringAccent
+      - !type:Jitter
+      - !type:GenericStatusEffect
+        key: Stun
+        time: 9
+        type: Remove
+      - !type:GenericStatusEffect
+        key: KnockedDown
+        time: 9
+        type: Remove
+      - !type:Emote
+        emote: Scream
+        probability: 0.25
+      - !type:AdjustTemperature
+        conditions:
+        - !type:ReagentThreshold
+            min: 20
+        amount: 50000 
+      - !type:Emote
+        emote: Scream
+        showInChat: true
+        probability: 0.5
+        conditions:
+        - !type:ReagentThreshold
+          min: 20
+      - !type:PopupMessage # we dont have sanity/mood so this will have to do
+        type: Local
+        visualType: Medium
+        messages:
+        - "psicodine-effect-fearless"
+        - "psicodine-effect-anxieties-wash-away"
+        probability: 0.4
+        conditions:
+        - !type:ReagentThreshold
+          max: 10
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 15
+        refresh: false
+
+- type: reagent
+  id: Exile
+  name: reagent-name-exile
+  group: Narcotics
+  desc: reagent-desc-exile
+  physicalDesc: reagent-physical-desc-opaque
+  flavor: medicine
+  color: "#00e5ff"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:TotalDamage
+          max: 50
+        damage:
+          groups:
+            Brute: -3
+            Burn: -2
+    Narcotic:
+      effects:
+      - !type:AdjustTemperature
+        conditions:
+        - !type:ReagentThreshold
+            min: 30
+        amount: 50000
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 6
+        refresh: false
+      - !type:MovespeedModifier
+        walkSpeedModifier: 1.35
+        sprintSpeedModifier: 1.35
+      - !type:GenericStatusEffect
+        key: Stutter
+        component: StutteringAccent
+      - !type:Jitter
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Crash
+          min: 1
+        damage:
+          types:
+            Poison: 5
+
+
+- type: reagent
+  id: Kaiser
+  name: reagent-name-kaiser
+  group: Narcotics
+  desc: reagent-desc-kaiser
+  physicalDesc: reagent-physical-desc-opaque
+  flavor: holy
+  color: "#00e5ff"
+  metabolisms:
+    Medicine:
+      metabolismRate: 5
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Brute: -10
+            Burn: -1
+            Airloss: -2
+          types:
+            Piercing: -5
+      - !type:AdjustTemperature
+        conditions:
+        - !type:ReagentThreshold
+            min: 30
+        amount: 100000
+
+
+- type: reagent
+  id: Mechanites
+  name: reagent-name-mechanites
+  group: Narcotics
+  desc: reagent-desc-mechanites
+  physicalDesc: reagent-physical-desc-glowing
+  flavor: horrible
+  color: "#FF7F7F"
+  worksOnTheDead: true # for thematic reasons
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Brute: -4
+          types:
+            Poison: -2.0
+            Heat: -0.6
+            Shock: -2.6
+            Cold: -0.6
+            Radiation: -4.0
+      - !type:ResetNarcolepsy
+        conditions:
+        - !type:ReagentThreshold
+          min: 1
+      - !type:ModifyBleedAmount
+        amount: -4.0
+
+- type: reagent
+  id: Bloodeye
+  name: reagent-name-bloodeye
+  group: Narcotics
+  desc: reagent-desc-bloodeye
+  physicalDesc: reagent-physical-desc-opaque
+  flavor: tingly
+  color: "#FF7F7F"
+  metabolisms:
+    Medicine:
+      metabolismRate: 1
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Brute: -8
+            Airloss: -2
+      - !type:ResetNarcolepsy
+        conditions:
+        - !type:ReagentThreshold
+          min: 1
+      - !type:ModifyBleedAmount
+        amount: 1.5 # one stim eventually applies full bleed stacks.
+      - !type:AdjustTemperature
+        conditions:
+        - !type:ReagentThreshold
+            min: 35
+        amount: 50000

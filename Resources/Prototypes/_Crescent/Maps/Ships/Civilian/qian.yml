@@ -1,0 +1,32 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Qian
+  name: PTA Qian
+  description: A medium-sized hauler equipped with many modern modules for long-term voyages. Equipped minimally with ballistic turrets.
+  price: 75000
+  category: Medium
+  group: Civilian
+  shuttlePath: /Maps/_Crescent/Shuttles/Civilian/qian.yml
+
+- type: gameMap
+  id: Qian
+  mapName: 'PTA Qian'
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/qian.yml
+  minPlayers: 0
+  stations:
+    Qian:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'PTA Qian {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-expeditions
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            SalvageSpecialist: [ 0, 0 ]

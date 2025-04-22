@@ -1,0 +1,43 @@
+- type: job
+  id: TenderSRM
+  name: job-name-tender
+  description: job-description-tender
+  playTimeTracker: JobTenderSRM
+  requirements:
+    - !type:SpeciesRequirement
+      allowedOnly:
+        - Human
+    - !type:FactionRequirement
+      factionID: "SRM"
+  weight: 20
+  startingGear: TenderGear
+  alwaysUseSpawner: true
+  icon: "JobIconTender"
+  requireAdminNotify: false
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
+  access:
+  - Command
+  - Hunter
+  - Maintenance
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: Telepathic
+      - type: BibleUser
+
+- type: startingGear
+  id: TenderGear
+  equipment:
+    id: TenderPDA
+    ears: ClothingHeadsetHunter
+    jumpsuit: ClothingUniformJumpsuitHunterAcolyte
+    shoes: ClothingShoesBootsHunter
+    head: ClothingHeadHatHunterTender
+    outerClothing: ClothingOuterArmorHunterTender
+    gloves: ClothingHandsGlovesHunter
+    pocket1: RomaineBible

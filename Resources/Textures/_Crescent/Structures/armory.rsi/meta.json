@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "taken from tgstation at source. Modified by Peptide90 to work with SS14. Broken state by Peptide based on off.",
+  "source": "https://github.com/tgstation/tgstation/commit/2b7f2c42f1bd57497052e8ef593d5e05ea45208e",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+    "states": [
+        {
+            "name": "normal-unshaded"
+        },
+        {
+            "name": "deny-unshaded"
+        },
+        {
+            "name": "off"
+        },
+        {
+            "name": "broken"
+        },
+        {
+            "name": "panel"
+        }
+    ]
+}

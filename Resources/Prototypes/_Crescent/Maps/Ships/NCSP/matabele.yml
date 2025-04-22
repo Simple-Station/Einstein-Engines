@@ -1,0 +1,32 @@
+# Author Info
+# Discord: fleshangel
+#
+- type: vessel
+  id: Matabele
+  name: TFSC Matabele
+  description: A stealth-capable ambulance pod.
+  price: 30000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/matabele.yml
+
+- type: gameMap
+  id: Matabele
+  mapName: 'TFSC Matabele'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/matabele.yml
+  minPlayers: 0
+  stations:
+    Matabele:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'IPM Matabele {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-utility
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            ChemcookNCSP: [ 0, 0 ]

@@ -1,0 +1,32 @@
+# Author Info
+# Discord: @fleshangel
+#
+- type: vessel
+  id: Jiuzhu
+  name: NCSP Jiuzhu
+  description: A medium-sized TraumaSec frigate.
+  price: 55000
+  category: Medium
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/jiuzhu.yml
+
+- type: gameMap
+  id: Jiuzhu
+  mapName: 'NCSP Jiuzhu'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/jiuzhu.yml
+  minPlayers: 0
+  stations:
+    Jiuzhu:
+      stationProto: StandardCrescentnVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'IPM Jiuzhu {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-medical
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            RipperdocNCSP: [ 3, 3 ]

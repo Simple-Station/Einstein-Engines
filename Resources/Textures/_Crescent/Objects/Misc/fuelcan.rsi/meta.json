@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Sprited by Fleshangel for Sector Crescent.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "jug"
+    },
+    {
+      "name": "jug1"
+    },
+    {
+      "name": "jug2"
+    },
+    {
+      "name": "jug3"
+    },
+    {
+      "name": "jug4"
+    },
+    {
+      "name": "jug5"
+    },
+    {
+      "name": "jug6"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+- type: gameMap
+  id: Hayes
+  mapName: 'IPM Hayes Medical Waystation'
+  mapPath: /Maps/_Crescent/Stations/hayes.yml
+  minPlayers: 0
+  stations:
+    Hayes:
+      stationProto: StandardCrescentOutpost
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'IPM Hayes Medical Waystation'
+        - type: VesselDesignation
+          designation: vessel-designation-outpost
+        - type: StationJobs
+          checkAlive: false
+          overflowJobs: []
+          availableJobs:
+            RipperdocNCSP: [ 2, 2 ]
+            ChemcookNCSP: [ 6, 6 ]

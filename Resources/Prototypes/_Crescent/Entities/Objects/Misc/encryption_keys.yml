@@ -1,0 +1,231 @@
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyNCWL
+  name: ncwl encryption key
+  description: An encryption key used by the Union.
+  components:
+  - type: EncryptionKey
+    channels:
+    - NCWL
+    - Common
+    defaultChannel: Common
+  - type: Sprite
+    layers:
+    - state: crypt_silver
+    - state: com_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyBalreska
+  name: ncwl encryption key
+  description: An encryption key used by the Union.
+  components:
+  - type: EncryptionKey
+    channels:
+    - NCWL
+    - Common
+    defaultChannel: Common
+  - type: Sprite
+    layers:
+    - state: crypt_silver
+    - state: com_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeySyndies
+  name: ncsp encryption key
+  description: An encryption key used by the Syndicate.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Syndicate
+    - Common
+    defaultChannel: Common
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: common_label
+  - type: Contraband
+    value: 2
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeySyndiesGorlex
+  name: gorlex encryption key
+  description: An encryption key used by Gorlex Security Consulting.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Syndicate
+    - Gorlex
+    - Common
+    defaultChannel: Common
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: common_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeySyndiesInterdyne
+  name: interdyne encryption key
+  description: An encryption key used by Interdyne Pharmaceuticals.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Syndicate
+    - Interdyne
+    - Common
+    defaultChannel: Common
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: common_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeySyndiesSaws
+  name: SAWs encryption key
+  description: An encryption key used by the Shipfitters and Astronautics Workers Union.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Syndicate
+    - Saws
+    - Common
+    defaultChannel: Common
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: common_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeySyndiesCyberdawn
+  name: cyberdawn encryption key
+  description: An encryption key used by Cyberdawn Technologies.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Syndicate
+    - Cyberdawn
+    - Common
+    defaultChannel: Common
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: common_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyEmpire
+  name: imperial encryption key
+  description: An encryption key used by the Empire.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Imperial
+    - EmpireCiv
+    - Common
+    defaultChannel: Common
+  - type: Sprite
+    layers:
+    - state: crypt_gold
+    - state: common_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyEmpireCiv
+  name: imperial encryption key
+  description: An encryption key used by the Empire.
+  components:
+  - type: EncryptionKey
+    channels:
+    - EmpireCiv
+    - Common
+    defaultChannel: Common
+  - type: Sprite
+    layers:
+    - state: crypt_gold
+    - state: common_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyHunter
+  name: SRM encryption key
+  description: An encryption key used by the Hunter's Militia.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Hunter
+    - Common
+    defaultChannel: Common
+  - type: Sprite
+    layers:
+    - state: crypt_rusted
+    - state: common_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyShinohara
+  name: SHI encryption key
+  description: An encryption key used by Shinohara employees.
+  components:
+  - type: EncryptionKey
+    channels:
+    - SHI
+    - Common
+    defaultChannel: Common
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: common_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyMinutemen
+  name: minutemen encryption key
+  description: An encryption key used by the Colonial Minutemen.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Nfsd
+    - Common
+    defaultChannel: Common
+  - type: Sprite
+    layers:
+    - state: crypt_blue
+    - state: common_label
+
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyFamilies
+  name: nomad encryption key
+  description: An encryption key used by the Families.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Families
+    - Common
+    - Traffic
+    defaultChannel: Common
+  - type: Sprite
+    layers:
+    - state: crypt_rusted
+    - state: common_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyAuthority
+  name: 43rd encryption key
+  description: An encryption key used by the 43rd Battlegroup.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Authority
+    defaultChannel: Common
+  - type: Sprite
+    layers:
+    - state: crypt_rusted
+    - state: common_label

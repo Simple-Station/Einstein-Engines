@@ -1,0 +1,27 @@
+- type: gameMap
+  id: Ardour
+  mapName: 'ATH Ardour 43BG-92'
+  mapPath: /Maps/_Crescent/Stations/ardour.yml
+  minPlayers: 0
+  stations:
+    Ardour:
+      stationProto: StandardCrescentStation
+      gridComponents:
+        - type: BlockShipWeaponProjectileGrid
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'ATH Ardour 43BG-92'
+        - type: Grammar
+          attributes:
+            proper: true
+        - type: VesselDesignation
+          designation: vessel-designation-headquarters
+        - type: StationJobs
+          checkAlive: false
+          overflowJobs: []
+          availableJobs:
+            KommandantATH: [ 1, 1 ]
+            LeutnantATH: [ 6, 6 ]
+            KanoneerATH: [ -1, -1 ]
+            SoldatATH: [ -1, -1 ]
+            SanitatATH: [ -1, -1 ]

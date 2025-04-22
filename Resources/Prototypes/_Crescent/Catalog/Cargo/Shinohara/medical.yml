@@ -1,0 +1,69 @@
+- type: cargoProduct
+  id: MedicalSuppliesShi
+  icon:
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: firstaid
+  product: CrateMedicalSupplies
+  cost: 2000
+  category: cargoproduct-category-name-medical
+  group: shinohara
+
+- type: cargoProduct
+  id: MedicalChemistrySuppliesshinohara
+  icon:
+    sprite: Objects/Specific/Chemistry/beaker.rsi
+    state: beaker
+  product: CrateChemistrySupplies
+  cost: 750
+  category: cargoproduct-category-name-medical
+  group: shinohara
+
+- type: cargoProduct
+  id: MedicalChemistryVialsshinohara
+  icon:
+    sprite: Objects/Specific/Chemistry/vial.rsi
+    state: vial
+  product: CrateChemistryVials
+  cost: 1000
+  category: cargoproduct-category-name-medical
+  group: shinohara
+
+- type: cargoProduct
+  id: MedicalBodybagsshinohara
+  icon:
+    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+    state: bag_folded
+  product: CrateBodyBags
+  cost: 700
+  category: cargoproduct-category-name-medical
+  group: shinohara
+
+- type: cargoProduct
+  id: ChemistryPshinohara
+  icon:
+    sprite: Structures/Storage/Crates/chemcrate_secure.rsi
+    state: icon
+  product: CrateChemistryP
+  cost: 850
+  category: cargoproduct-category-name-medical
+  group: shinohara
+
+- type: cargoProduct
+  id: ChemistrySshinohara
+  icon:
+    sprite: Structures/Storage/Crates/chemcrate_secure.rsi
+    state: icon
+  product: CrateChemistryS
+  cost: 750
+  category: cargoproduct-category-name-medical
+  group: shinohara
+
+- type: cargoProduct
+  id: CrateChemistryDshinohara
+  icon:
+    sprite: Structures/Storage/Crates/chemcrate_secure.rsi
+    state: icon
+  product: CrateChemistryD
+  cost: 750
+  category: cargoproduct-category-name-medical
+  group: shinohara

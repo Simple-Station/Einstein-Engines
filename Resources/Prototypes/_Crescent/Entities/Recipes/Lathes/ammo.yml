@@ -1,0 +1,77 @@
+
+- type: latheRecipe
+  id: SluggieHE
+  result: MagazineLightRifleBoxSlugHE
+  completetime: 2
+  materials:
+    Steel: 2000
+    Plasma: 500
+
+- type: latheRecipe
+  id: SluggieAP
+  result: MagazineLightRifleBoxSlug
+  completetime: 2
+  materials:
+    Steel: 2000
+
+- type: latheRecipe
+  id: Automortar90
+  result: MagazineMortar
+  completetime: 2
+  materials:
+    Steel: 2000
+    Plasma: 500
+
+- type: latheRecipe
+  id: Needler60
+  result: MagazineNeedler
+  completetime: 2
+  materials:
+    Steel: 1500
+    Uranium: 200
+    Plasma: 300
+
+
+- type: latheRecipe
+  id: MagazineVulcan
+  result: MagazineVulcan
+  completetime: 2
+  materials:
+    Steel: 1500
+
+- type: latheRecipe
+  id: MagazineFlak
+  result: MagazineFlak
+  completetime: 2
+  materials:
+    Steel: 2500
+    Plasma: 1000
+
+- type: latheRecipe
+  id: MagazinePistol6mm
+  result: MagazinePistol6mm
+  completetime: 2
+  materials:
+    Steel: 250
+
+- type: latheRecipe
+  id: MagazineHeavyRifle
+  result: MagazineHeavyRifle
+  completetime: 2
+  materials:
+    Steel: 750
+    Uranium: 250
+
+- type: latheRecipe
+  id: MagazinePistolSubMachineGunHeavy
+  result: MagazinePistolSubMachineGunHeavy
+  completetime: 2
+  materials:
+    Steel: 750
+
+- type: latheRecipe
+  id: GrenadeBatonCraft
+  result: GrenadeBaton
+  completetime: 4
+  materials:
+    Steel: 500

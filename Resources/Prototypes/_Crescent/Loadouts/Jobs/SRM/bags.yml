@@ -1,0 +1,19 @@
+- type: loadout
+  id: SRMClothingBackpackSatchelFilledSRM
+  equipment: SRMClothingBackpackSatchelFilledSRM
+  price: 0
+
+- type: startingGear
+  id: SRMClothingBackpackSatchelFilledSRM
+  equipment:
+    back: ClothingBackpackSatchelFilledSRM
+
+- type: loadout
+  id: SRMClothingBackpackFilledSRM
+  equipment: SRMClothingBackpackFilledSRM
+  price: 0
+
+- type: startingGear
+  id: SRMClothingBackpackFilledSRM
+  equipment:
+    back: ClothingBackpackFilledSRM

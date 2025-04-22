@@ -1,0 +1,40 @@
+- type: job
+  id: CyberdawnTechNCSP
+  name: job-name-cyberdawntech
+  description: job-description-cyberdawntech
+  playTimeTracker: JobCyberdawnTechNCSP
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 2000
+    - !type:FactionRequirement
+      factionID: "TFSC"
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-syndoc
+  weight: 15
+  startingGear: CyberdawnGear
+  alwaysUseSpawner: true
+  icon: "JobIconCyberdawnTech"
+  requireAdminNotify: false
+  supervisors: You answer to the patriach and the interests of the CyberDawn Technologies company.
+  canBeAntag: false
+  access:
+  - Command
+  - Maintenance
+  - SyndicateBasic
+  - SyndicateRamzi
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: CyberdawnGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSyndicateLabCyberdawn
+    shoes: ClothingShoesBootsCombat
+    id: CyberdawnTechPDA
+    ears: ClothingHeadsetNCSPCyberdawn
+    gloves: ClothingHandsGlovesFingerless

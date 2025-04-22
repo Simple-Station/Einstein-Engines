@@ -1,0 +1,222 @@
+#ncwl#
+
+- type: accessLevel
+  id: NCWLGeneral
+  name: id-card-access-level-ncwlgeneral
+
+- type: accessLevel
+  id: NCWLCommand
+  name: id-card-access-level-ncwlcommand
+
+- type: accessLevel
+  id: NCWLKommissar
+  name: id-card-access-level-ncwlkommissar
+
+- type: accessLevel
+  id: NCWLAdministrator
+  name: id-card-access-level-ncwladministrator
+
+- type: accessLevel
+  id: NCWLArmory
+  name: id-card-access-level-ncwlarmory
+
+- type: accessLevel
+  id: NCWLJail
+  name: id-card-access-level-ncwljail
+
+- type: accessLevel
+  id: NCWLFunds
+  name: NCWL Funding Account
+
+
+#syndicate#
+
+- type: accessLevel
+  id: SyndicateBasic
+  name: id-card-access-level-syndicatebasic
+
+- type: accessLevel
+  id: SyndicateCommand
+  name: id-card-access-level-syndicatecommand
+
+- type: accessLevel
+  id: SyndicateGorlex
+  name: id-card-access-level-syndicategorlex
+
+- type: accessLevel
+  id: SyndicateInterdyne
+  name: id-card-access-level-syndicateinterdyne
+
+- type: accessLevel
+  id: SyndicateSaws
+  name: id-card-access-level-syndicatesaws
+
+- type: accessLevel
+  id: SyndicateRamzi
+  name: id-card-access-level-syndicateramzi
+
+- type: accessLevel
+  id: SyndicateRingleader
+  name: id-card-access-level-syndicateringleader
+
+- type: accessLevel
+  id: SyndicateFunds
+  name: PMC Funding Account
+
+# empire #
+
+- type: accessLevel
+  id: Empire
+  name: id-card-access-level-empire
+
+- type: accessLevel
+  id: Archmaester
+  name: id-card-access-level-empirearchmaester
+
+- type: accessLevel
+  id: EmpireSoldier
+  name: id-card-access-level-empiremilitary
+
+- type: accessLevel
+  id: EmpireNoble
+  name: id-card-access-level-empirenoble
+
+- type: accessLevel
+  id: EmpireAdjutant
+  name: id-card-access-level-empireadjutant
+
+- type: accessLevel
+  id: EmpireGovernor
+  name: id-card-access-level-empiregovernor
+
+- type: accessLevel
+  id: LogisticsWealth
+  name: id-card-access-level-empirewealth
+
+- type: accessLevel
+  id: ScribesGuild
+  name: id-card-access-level-empirescribes
+
+- type: accessLevel
+  id: Advocatus
+  name: id-card-access-level-advocatus
+
+- type: accessLevel
+  id: DSMFunds
+  name: Imperial Funding Account
+
+#srm
+
+- type: accessLevel
+  id: Hunter
+  name: id-card-access-level-srm
+
+- type: accessLevel
+  id: HunterSenior
+  name: id-card-access-level-srmsenior
+
+- type: accessLevel
+  id: HunterOverseer
+  name: id-card-access-level-srmoverseer
+
+#shi
+
+- type: accessLevel
+  id: Shinohara
+  name: id-card-access-level-shi
+
+- type: accessLevel
+  id: ShinoharaOfficer
+  name: id-card-access-level-shiofficer
+
+- type: accessLevel
+  id: ShinoharaSecurity
+  name: id-card-access-level-shisec
+
+- type: accessLevel
+  id: ShinoharaExecutive
+  name: id-card-access-level-shiexec
+
+#cmm
+
+- type: accessLevel
+  id: Minuteman
+  name: id-card-access-level-cmm
+
+- type: accessLevel
+  id: MinutemanRankingOfficer
+  name: id-card-access-level-cmmranking
+
+- type: accessLevel
+  id: MinutemanPrison
+  name: id-card-access-level-cmmprison
+
+- type: accessLevel
+  id: MinutemanMarshal
+  name: id-card-access-level-cmmmarshal
+
+- type: accessLevel
+  id: CMMFunds
+  name: CMM Funding Account
+
+#misc
+
+- type: accessLevel
+  id: Antiquarian
+  name: id-card-access-level-antiquarian
+
+- type: accessLevel
+  id: GliessDockmaster
+  name: id-card-access-level-gliess-admin
+
+- type: accessLevel
+  id: GliessSheriff
+  name: id-card-access-level-gliess-sheriff
+
+#ath
+
+- type: accessLevel
+  id: Kommandant
+  name: id-card-access-level-authoritat-kommandant
+
+- type: accessLevel
+  id: AuthorityRanking
+  name: id-card-access-level-authoritat-ranking
+
+- type: accessLevel
+  id: Authority
+  name: id-card-access-level-authoritat
+
+- type: accessLevel
+  id: Authoritymed
+  name: id-card-access-level-authoritat-medical
+
+- type: accessLevel
+  id: AuthoritySupply
+  name: id-card-access-level-authoritat-cargo
+
+#4families
+
+- type: accessLevel
+  id: Arabet
+  name: id-card-access-level-arabet
+
+- type: accessLevel
+  id: Thukker
+  name: id-card-access-level-thukker
+
+- type: accessLevel
+  id: Alseik
+  name: id-card-access-level-Alseik
+
+- type: accessLevel
+  id: AlseikServile
+  name: id-card-access-level-Servile
+
+- type: accessLevel
+  id: Families
+  name: id-card-access-level-Families
+
+- type: accessLevel
+  id: Izdari
+  name: id-card-access-level-Izdari

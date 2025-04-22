@@ -1,0 +1,32 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Kite
+  name: ICM Kite
+  description: A small all-rounder shuttle with expedition capabilities for beginner pilots, armed with dual plasmacasters. Expedition-worthy.
+  price: 28000
+  category: Small
+  group: Civilian
+  shuttlePath: /Maps/_Crescent/Shuttles/Civilian/kite.yml
+
+- type: gameMap
+  id: Kite
+  mapName: 'ICM Kite'
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/kite.yml
+  minPlayers: 0
+  stations:
+    Kite:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'ICM Kite {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-expeditions
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            SalvageSpecialist: [ 0, 0 ]

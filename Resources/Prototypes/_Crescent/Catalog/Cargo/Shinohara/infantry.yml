@@ -1,0 +1,130 @@
+- type: cargoProduct
+  id: ShinoharaGoro
+  icon:
+    sprite: _Crescent/Objects/Weapons/goro.rsi
+    state: icon
+  product: CrateShinoharaGoro
+  cost: 8500
+  category: cargoproduct-category-name-military
+  group: shinohara
+
+- type: cargoProduct
+  id: ShinoharaHound
+  icon:
+    sprite: _Crescent/Objects/Weapons/hound.rsi
+    state: icon
+  product: CrateShinoharaHound
+  cost: 5000
+  category: cargoproduct-category-name-military
+  group: shinohara
+
+- type: cargoProduct
+  id: ShinoharaMP49
+  icon:
+    sprite: _Crescent/Objects/Weapons/mp49.rsi
+    state: icon
+  product: CrateShinoharaMP49
+  cost: 4000
+  category: cargoproduct-category-name-military
+  group: shinohara
+
+- type: cargoProduct
+  id: ShinoharaHimehabu
+  icon:
+    sprite: _Crescent/Objects/Weapons/himehabu.rsi
+    state: icon
+  product: CrateShinoharaHimehabu
+  cost: 3000
+  category: cargoproduct-category-name-military
+  group: shinohara
+
+- type: cargoProduct
+  id: ShinoharaSmartgun
+  icon:
+    sprite: _Crescent/Objects/Weapons/smartgun.rsi
+    state: icon
+  product: CrateShinoharaShinobi
+  cost: 10000
+  category: cargoproduct-category-name-military
+  group: shinohara
+
+- type: cargoProduct
+  id: ShinoharaSAW
+  icon:
+    sprite: Objects/Weapons/Guns/LMGs/l6.rsi
+    state: icon
+  product: CrateShinoharaSAW
+  cost: 25000
+  category: cargoproduct-category-name-military
+  group: shinohara
+
+- type: cargoProduct
+  id: ShinoharaHardsuit
+  icon:
+    sprite: _Crescent/Clothing/SHI/OuterClothing/corpsec.rsi
+    state: icon
+  product: CrateShinoharaHardsuit
+  cost: 12500
+  category: cargoproduct-category-name-military
+  group: shinohara
+
+- type: cargoProduct
+  id: ShinoharaTac
+  icon:
+    sprite: _Crescent/Clothing/Corpo/Head/eyehelmet.rsi
+    state: icon
+  product: CrateShinoharaTac
+  cost: 5000
+  category: cargoproduct-category-name-military
+  group: shinohara
+
+- type: cargoProduct
+  id: ShinoharaHighsec
+  icon:
+    sprite: _Crescent/Clothing/SHI/OuterClothing/highsec.rsi
+    state: icon
+  product: CrateShinoharaBulwark
+  cost: 8500
+  category: cargoproduct-category-name-military
+  group: shinohara
+
+- type: cargoProduct
+  id: ShinoharaHammerhead
+  icon:
+    sprite: _Crescent/Objects/Weapons/rocket.rsi
+    state: icon
+  product: CrateShinoharaHammerhead
+  cost: 20000
+  category: cargoproduct-category-name-military
+  group: shinohara
+
+- type: cargoProduct
+  id: NanoPolymerShinohara
+  icon:
+    sprite: _Crescent/Clothing/armorSprites.rsi
+    state: NanoPolymer
+  product: CrateSecurityArmorNanoPolymerPlates
+  cost: 20000
+  category: cargoproduct-category-name-military
+  group: shinohara
+
+- type: cargoProduct
+  id: NanoCeramicShinohara
+  icon:
+    sprite: _Crescent/Clothing/armorSprites.rsi
+    state: NanoCeramic
+  product: CrateSecurityArmorNanoCeramicPlates
+  cost: 35000
+  category: cargoproduct-category-name-military
+  group: shinohara
+
+- type: cargoProduct
+  id: DurathreadShinohara
+  icon:
+    sprite: _Crescent/Clothing/armorSprites.rsi
+    state: cloth
+  product: CrateSecurityArmorDurathreadPlates
+  cost: 15000
+  category: cargoproduct-category-name-military
+  group: shinohara
+

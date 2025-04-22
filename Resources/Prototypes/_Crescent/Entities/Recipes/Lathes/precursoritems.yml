@@ -1,0 +1,64 @@
+
+- type: latheRecipe
+  id: WeaponRifleM90GrenadeLauncherNT
+  result: WeaponRifleM90GrenadeLauncher
+  completetime: 5
+  materials:
+    Steel: 3250
+    Plastic: 1000
+
+- type: latheRecipe
+  id: WeaponSubMachineGunMP5NT
+  result: WeaponSubMachineGunMP5
+  completetime: 5
+  materials:
+    Steel: 2250
+    Plastic: 650
+
+- type: latheRecipe
+  id: WeaponShotgunSpasNT
+  result: WeaponShotgunSpas
+  completetime: 5
+  materials:
+    Steel: 1050
+
+- type: latheRecipe
+  id: WeaponRevolverSnubnoseNT
+  result: WeaponRevolverSnubnose
+  completetime: 5
+  materials:
+    Steel: 625
+
+- type: latheRecipe
+  id:  WeaponPistolHKUSPNT
+  result:  WeaponPistolHKUSP
+  completetime: 5
+  materials:
+    Steel: 750
+
+- type: latheRecipe
+  id: MissileRackFlatpackCraft
+  result: MissileRackFlatpack
+  completetime: 5
+  materials:
+    Steel: 5000
+    Silver: 1500
+    Uranium: 500
+
+- type: latheRecipe
+  id: VulcanFlatpackCraft
+  result: VulcanFlatpack
+  completetime: 5
+  materials:
+    Steel: 5000
+    Silver: 2500
+
+- type: latheRecipe
+  id: HardlineBeamPulserFlatpackCraft
+  result: HardlineBeamPulserFlatpack
+  completetime: 5
+  materials:
+    Steel: 5000
+    Silver: 2500
+    Glass: 1000
+    Plasma: 1500

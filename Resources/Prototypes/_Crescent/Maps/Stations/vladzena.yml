@@ -1,0 +1,30 @@
+- type: gameMap
+  id: Vladzena
+  mapName: 'Port Vladzena'
+  mapPath: /Maps/_Crescent/Stations/vladzena.yml
+  minPlayers: 0
+  stations:
+    Vladzena:
+      stationProto: StandardCrescentStation
+      gridComponents:
+        - type: BlockShipWeaponProjectileGrid
+        - type: PreventPilot
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Port Vladzena'
+        - type: VesselDesignation
+          designation: vessel-designation-headquarters
+        - type: Grammar
+          attributes:
+            proper: true
+        - type: StationJobs
+          checkAlive: false
+          overflowJobs: []
+          availableJobs:
+            AdministratorNCWL: [ 1, 1 ]
+            KommissarNCWL: [ 1, 1 ]
+            KapitanNCWL: [ 3, 3 ]
+            SanitarNCWL: [ 8, 8 ]
+            KadetNCWL: [ 4, 4 ]
+            ArtificerNCWL: [ 4, 4 ]
+            DoktorNCWL: [ 4, 4 ]

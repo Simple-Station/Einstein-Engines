@@ -1,0 +1,30 @@
+- type: vessel
+  id: Laelaps
+  name: DSM Laelaps
+  description: A heavy assault frigate excelling at brawling.
+  price: 80000
+  category: Medium
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/DSM/laelaps.yml
+
+- type: gameMap
+  id: Laelaps
+  mapName: 'DSM Laelaps'
+  mapPath: /Maps/_Crescent/Shuttles/DSM/laelaps.yml
+  minPlayers: 0
+  stations:
+    Laelaps:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Laelaps {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-assault-frigate
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            KnightDSM: [ 0, 1 ]
+            LevymanDSM: [ 0, 4 ]

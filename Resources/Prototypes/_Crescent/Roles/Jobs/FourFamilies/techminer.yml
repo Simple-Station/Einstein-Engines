@@ -1,0 +1,79 @@
+- type: job
+  id: TechminerTAP
+  name: job-name-techminer
+  description: job-description-techminer
+  playTimeTracker:  JobTechminerTAP
+  requirements:
+    - !type:FactionRequirement
+      factionID: "TAP"
+    - !type:SpeciesRequirement
+      allowedOnly:
+        - Moth
+        - Arachnid
+  weight: 52
+  startingGear: TechminerGear
+  alwaysUseSpawner: true
+  icon: "JobIconTechminer"
+  requireAdminNotify: false
+  supervisors: job-supervisors-tap
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-techminer
+  - !type:AddComponentSpecial
+    components:
+      - type: Telepathic
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - Families
+  - Thukker
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Command
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Mercenary # Frontier
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - External
+  - Captain # Frontier
+
+- type: startingGear
+  id: TechminerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitTechminer
+    back: ClothingBackpackSatchelFilled
+    shoes: ClothingShoesBootsJack
+    id: TechminerPDA
+    ears: ClothingHeadsetFamilies
+    gloves: ClothingHandsGlovesFingerless

@@ -1,0 +1,39 @@
+- type: loadout
+  id: SHIClothingBackpackSHIFilled
+  equipment: SHIClothingBackpackSHIFilled
+  price: 0
+
+- type: startingGear
+  id: SHIClothingBackpackSHIFilled
+  equipment:
+    back: ClothingBackpackSHIFilled
+
+- type: loadout
+  id: SHIClothingBackpackSatchelSHIFilled
+  equipment: SHIClothingBackpackSatchelSHIFilled
+  price: 0
+
+- type: startingGear
+  id: SHIClothingBackpackSatchelSHIFilled
+  equipment:
+    back: ClothingBackpackSatchelSHIFilled
+
+- type: loadout
+  id: SHIClothingBackpackSHIDuffelbagFilled
+  equipment: SHIClothingBackpackSHIDuffelbagFilled
+  price: 0
+
+- type: startingGear
+  id: SHIClothingBackpackSHIDuffelbagFilled
+  equipment:
+    back: ClothingBackpackSHIDuffelbagFilled
+
+- type: loadout
+  id: SHIClothingBackpackSatchelLeatherFilledDSM
+  equipment: SHIClothingBackpackSatchelLeatherFilledDSM
+  price: 0
+
+- type: startingGear
+  id: SHIClothingBackpackSatchelLeatherFilledDSM
+  equipment:
+    back: ClothingBackpackSatchelLeatherFilledDSM

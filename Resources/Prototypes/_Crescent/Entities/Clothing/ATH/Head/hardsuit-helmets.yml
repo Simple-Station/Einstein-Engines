@@ -1,0 +1,27 @@
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitAuthorityPanzer
+  categories: [ HideSpawnMenu ]
+  name: mk.II 'Panzer' hardsuit helmet
+  description: A combat hardsuit helmet with internal pressurization systems and an inbuilt tracker system for ballistics.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Head/panzer.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Head/panzer.rsi
+  - type: PointLight
+    radius: 6
+    color: "#ffffed"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: IdentityBlocker
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9
+        Caustic: 0.9

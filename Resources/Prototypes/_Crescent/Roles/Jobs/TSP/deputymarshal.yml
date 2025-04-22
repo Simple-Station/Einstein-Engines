@@ -1,0 +1,45 @@
+- type: job
+  id: DeputyMarshalCMM
+  name: job-name-deputymarshal
+  description: job-description-deputymarshal
+  playTimeTracker: JobDeputyMarshalCMM
+  weight: 32
+  startingGear: DeputyMarshalGear
+  requirements:
+  - !type:FactionRequirement
+      factionID: "TSP"
+  - !type:OverallPlaytimeRequirement
+    time: 36000
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-2ic
+  alwaysUseSpawner: true
+  icon: "JobIconDeputyMarshal"
+  requireAdminNotify: false
+  supervisors: You answer to your Colonial Marshal.
+  canBeAntag: false
+  access:
+  - Command
+  - Maintenance
+  - Minuteman
+  - MinutemanPrison
+  - MinutemanRankingOfficer
+  - MinutemanMarshal
+  - CMMFunds
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: DeputyMarshalGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCMMOfficer
+    shoes: ClothingShoesBootsCombat
+    head: ClothingHeadHatCMMDeputyMarshal
+    gloves: ClothingHandsGlovesCombat
+    belt: WeaponRevolverSnubnose
+    id: DeputyMarshalPDA
+    ears: ClothingHeadsetCMM
+    outerClothing: ClothingOuterArmorCMMDeputyCarapace

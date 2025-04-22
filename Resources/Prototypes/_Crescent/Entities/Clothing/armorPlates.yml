@@ -1,0 +1,296 @@
+- type: entity
+  name: Debug Armor Plate
+  parent: BaseItem
+  id: baseArmorPlate
+  description: "A armor plate made out of raw shitcodium .Its heavy upon the soul."
+  components:
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/wrench_drop.ogg
+  - type: Sprite
+    sprite: _Crescent/Clothing/armorSprites.rsi
+    state: steel
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,2,2
+    sprite: _Crescent/Clothing/armorSprites.rsi
+    storedSprite:
+      sprite: _Crescent/Clothing/armorSprites.rsi
+      state: steel
+  - type: MeleeWeapon
+    wideAnimationRotation: 135
+    attackRate: 1.5
+    damage:
+      types:
+        Blunt: 12
+    soundHit:
+      collection: MetalThud
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 500
+  - type: StaticPrice
+    price: 750
+
+- type: entity
+  name : Steel Armor Plate
+  parent: baseArmorPlate
+  id: ArmorPlateSteel
+  description: "A armor plate made out of raw steel. Its very heavy"
+  components:
+  - type: ArmorRepairKit
+    repairHealth: 1250.0
+    materialType: SteelPlate
+  - type: Sprite
+    sprite: _Crescent/Clothing/armorSprites.rsi
+    state: steel
+  - type: Item
+    sprite: _Crescent/Clothing/armorSprites.rsi
+    storedSprite:
+      sprite: _Crescent/Clothing/armorSprites.rsi
+      state: steel
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 2000
+  - type: StaticPrice
+    price: 750
+
+- type: entity
+  name : Plasteel Armor Plate
+  parent: baseArmorPlate
+  id: ArmorPlatePlasteel
+  description: "A armor plate made out of refined plasteel. Its a big lighter than the steel ones"
+  components:
+  - type: ArmorRepairKit
+    repairHealth: 1250.0
+    materialType: PlasteelPlate
+  - type: Sprite
+    sprite: _Crescent/Clothing/armorSprites.rsi
+    state: plasteel
+  - type: Item
+    sprite: _Crescent/Clothing/armorSprites.rsi
+    storedSprite:
+      sprite: _Crescent/Clothing/armorSprites.rsi
+      state: plasteel
+  - type: PhysicalComposition
+    materialComposition:
+      Plasteel: 2000
+  - type: StaticPrice
+    price: 1250
+
+- type: entity
+  name : NanoPolymer Sheet
+  parent: baseArmorPlate
+  id: ArmorPlateNanoPolymer
+  description: "A sheet made out of NT Propietary NanoPolymer. The technology behind the fabrication is closely guarded."
+  components:
+  - type: ArmorRepairKit
+    repairHealth: 1250.0
+    materialType: NTPolymer
+  - type: Sprite
+    sprite: _Crescent/Clothing/armorSprites.rsi
+    state: NanoPolymer
+  - type: Item
+    sprite: _Crescent/Clothing/armorSprites.rsi
+    storedSprite:
+      sprite: _Crescent/Clothing/armorSprites.rsi
+      state: NanoPolymer
+  - type: PhysicalComposition
+    materialComposition:
+      Plasteel: 1250
+      Durathread: 2500
+      Plastic: 1000
+      Diamond: 500
+  - type: StaticPrice
+    price: 2000
+
+
+- type: entity
+  name : Ceramic Armor Plate
+  parent: baseArmorPlate
+  id: ArmorPlateCeramic
+  description: "A solid plate of armor-grade ceramic, baked and cleaned , its a formidable bullet stopper"
+  components:
+  - type: ArmorRepairKit
+    repairHealth: 1250.0
+    materialType: CeramicPlate
+  - type: Sprite
+    sprite: _Crescent/Clothing/armorSprites.rsi
+    state: ceramic
+  - type: Item
+    sprite: _Crescent/Clothing/armorSprites.rsi
+    storedSprite:
+      sprite: _Crescent/Clothing/armorSprites.rsi
+      state: ceramic
+  - type: PhysicalComposition
+    materialComposition:
+      Glass: 1500
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  name : DuraThread Weave
+  parent: baseArmorPlate
+  id: ArmorPlateDurathread
+  description: "A solid sheet of Durathread weaved across 8 times. Great at stopping big bullets."
+  components:
+  - type: ArmorRepairKit
+    repairHealth: 1250.0
+    materialType: DuraThread
+  - type: Sprite
+    sprite: _Crescent/Clothing/armorSprites.rsi
+    state: cloth
+  - type: Item
+    sprite: _Crescent/Clothing/armorSprites.rsi
+    storedSprite:
+      sprite: _Crescent/Clothing/armorSprites.rsi
+      state:
+  - type: PhysicalComposition
+    materialComposition:
+      Durathread: 4000
+  - type: StaticPrice
+    price: 1250
+
+- type: entity
+  name : Plasma Glass Plate
+  parent: baseArmorPlate
+  id: ArmorPlatePlasmGlassa
+  description: "A plate of Plasma Glass doped with Gold & Silver. A very effective blocker for laser weaponary"
+  components:
+  - type: ArmorRepairKit
+    repairHealth: 1250.0
+    materialType: PlasmaGlass
+  - type: PhysicalComposition
+    materialComposition:
+      Plasma: 2500
+      Glass: 2500
+      Gold: 500
+      Silver: 500
+  - type: StaticPrice
+    price: 1250
+ # needs sprite
+
+- type: entity
+  name : Plastic Armor Plate
+  parent: baseArmorPlate
+  id: ArmorPlatePlastic
+  description: "A plate made of solid plastic. Not strong , but it is the cheapest thing on the market"
+  components:
+  - type: ArmorRepairKit
+    repairHealth: 1250.0
+    materialType: Plastic
+  - type: Sprite
+    sprite: _Crescent/Clothing/armorSprites.rsi
+    state: plastic
+  - type: Item
+    sprite: _Crescent/Clothing/armorSprites.rsi
+    storedSprite:
+      sprite: _Crescent/Clothing/armorSprites.rsi
+      state: plastic
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 5000
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  name : Homeland Alloy Plate
+  parent: baseArmorPlate
+  id: ArmorPlateHomeland
+  description: "A plate made from a tightly guarded alloy manufacturing technique used by NCWL."
+  components:
+  - type: ArmorRepairKit
+    repairHealth: 1250.0
+    materialType: HomelandAlloy
+  - type: Sprite
+    sprite: _Crescent/Clothing/armorSprites.rsi
+    state: homelandAlloy
+  - type: Item
+    sprite: _Crescent/Clothing/armorSprites.rsi
+    storedSprite:
+      sprite: _Crescent/Clothing/armorSprites.rsi
+      state: homelandAlloy
+  - type: PhysicalComposition
+    materialComposition:
+      Plasteel: 1250
+      Durathread: 2500
+      Plastic: 1000
+      Plasma: 500
+      Glass: 2000
+  - type: StaticPrice
+    price: 5000
+
+- type: entity
+  name : Kevlar Sheet
+  parent: baseArmorPlate
+  id: ArmorPlateKevlar
+  description: "Threads and threads of strong fibers weaved togheter to stop the strongest bullets"
+  components:
+  - type: ArmorRepairKit
+    repairHealth: 1250.0
+    materialType: Kevlar
+  - type: Sprite
+    sprite: _Crescent/Clothing/armorSprites.rsi
+    state: kevlar
+  - type: Item
+    sprite: _Crescent/Clothing/armorSprites.rsi
+    storedSprite:
+      sprite: _Crescent/Clothing/armorSprites.rsi
+      state: kevlar
+  - type: PhysicalComposition
+    materialComposition:
+      Durathread: 2500
+      Plastic: 1000
+  - type: StaticPrice
+    price: 2000
+
+- type: entity
+  name : Plasteel Encased Kevlar Armor Plate
+  parent: baseArmorPlate
+  id: ArmorPlatePlasteelEncasedKevlar
+  description: "A solid plate of Plasteel covers the kevlar, preventing it from deteriorating from just any kind of munition"
+  components:
+  - type: ArmorRepairKit
+    repairHealth: 1250.0
+    materialType: PlasteelEncasedKevlar
+  - type: Sprite
+    sprite: _Crescent/Clothing/armorSprites.rsi
+    state: PCK
+  - type: Item
+    sprite: _Crescent/Clothing/armorSprites.rsi
+    storedSprite:
+      sprite: _Crescent/Clothing/armorSprites.rsi
+      state: PCK
+  - type: PhysicalComposition
+    materialComposition:
+      Plasteel: 2500
+      Durathread: 2500
+      Plastic: 1000
+  - type: StaticPrice
+    price: 3500
+
+- type: entity
+  name : NanoCeramic Armor Plate
+  parent: baseArmorPlate
+  id: ArmorPlateNanoCeramic
+  description: "A propietary plate of NanoCeramic. The manufacturing technique is closely guarded, the material keeps its flexibility whilst having the propeties of ceramic"
+  components:
+  - type: ArmorRepairKit
+    repairHealth: 1250.0
+    materialType: NTCeramic
+  - type: Sprite
+    sprite: _Crescent/Clothing/armorSprites.rsi
+    state: NanoCeramic
+  - type: Item
+    sprite: _Crescent/Clothing/armorSprites.rsi
+    storedSprite:
+      sprite: _Crescent/Clothing/armorSprites.rsi
+      state: NanoCeramic
+  - type: PhysicalComposition
+    materialComposition:
+      Plasteel: 1250
+      Durathread: 2500
+      Plastic: 1000
+      Diamond: 500
+  - type: StaticPrice
+    price: 5000

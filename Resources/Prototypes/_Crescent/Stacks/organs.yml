@@ -1,0 +1,8 @@
+
+- type: stack
+  id: ProteinCan
+  name: exotic proteins canister
+  icon: { sprite: Mobs/Species/Human/organs.rsi, state: muscle }
+  spawn: ProteinCan1
+  maxCount: 30
+  itemSize: 2

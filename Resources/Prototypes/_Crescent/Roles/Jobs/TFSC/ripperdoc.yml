@@ -1,0 +1,43 @@
+- type: job
+  id: RipperdocNCSP
+  name: job-name-ripperdoc
+  description: job-description-ripperdoc
+  playTimeTracker: JobRipperdocNCSP
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 6000
+    - !type:FactionRequirement
+      factionID: "TFSC"
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-syndoc
+  weight: 16
+  startingGear: RipperdocGear
+  alwaysUseSpawner: true
+  icon: "JobIconSyndieRipperdoc"
+  requireAdminNotify: false
+  supervisors: You answer to the interests of Interdyne Pharmaceuticals company, whatever they be decided by you or your colleagues
+  canBeAntag: false
+  access:
+  - Command
+  - Maintenance
+  - SyndicateBasic
+  - SyndicateInterdyne
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: RipperdocGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSyndicateInterdyne
+    shoes: ClothingShoesBootsCombat
+    head: ClothingHeadHatSyndicateDoctor
+    id: RipperdocPDA
+    ears: ClothingHeadsetNCSPInterdyne
+    mask: ClothingMaskSyndicateFacemask
+    pocket1: MedkitCombatFilled
+    outerClothing: ClothingOuterArmorSyndicateApron

@@ -1,0 +1,43 @@
+- type: vendingMachineInventory
+  id: NovaBelraskaDispensary
+  startingInventory:
+    TradeGoodSugar: 9999
+    TradeGoodFlour: 9999
+    TradeGoodAlcohol: 9999
+    JugBoriaticFuel: 500
+
+- type: vendingMachineInventory
+  id: GrinningJackalDispensary
+  startingInventory:
+    TradeGoodScrap: 9999
+    TradeGoodGunparts: 9999
+    TradeGoodCybernetics: 9999
+
+- type: vendingMachineInventory
+  id: ImperialDispensary
+  startingInventory:
+    TradeGoodScrap: 9999
+    TradeGoodAmmo: 9999
+    TradeGoodRice: 9999
+
+
+- type: vendingMachineInventory
+  id: InterdyneDispensary
+  startingInventory:
+    TradeGoodCybernetics: 9999
+    TradeGoodAntibiotics: 9999
+    TradeGoodAlcohol: 9999
+
+- type: vendingMachineInventory
+  id: SawDispensary
+  startingInventory:
+    TradeGoodScrap: 9999
+    TradeGoodAmmo: 9999
+    TradeGoodGunparts: 9999
+
+- type: vendingMachineInventory
+  id: SHIDispensary
+  startingInventory:
+    TradeGoodRice: 9999
+    TradeGoodCybernetics: 9999
+    TradeGoodGunparts: 9999

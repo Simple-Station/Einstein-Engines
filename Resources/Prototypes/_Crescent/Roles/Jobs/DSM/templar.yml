@@ -1,0 +1,55 @@
+- type: job
+  id: TemplarDSM
+  name: job-name-advocatustemplar
+  description: job-description-advocatustemplar
+  playTimeTracker: JobTemplarDSM
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 55000
+    - !type:SpeciesRequirement
+      allowedOnly:
+        - Human
+    - !type:SexRequirement
+      allowed:
+        - Male
+    - !type:FactionRequirement
+      factionID: "DSM"
+  weight: 22
+  startingGear: TemplarGear
+  alwaysUseSpawner: true
+  icon: "JobIconAdvocatusTemplar"
+  requireAdminNotify: false
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-templar
+      - type: BibleUser
+  access:
+  - Command
+  - Empire
+  - Advocatus
+  - Maintenance
+  - Service
+  - ScribesGuild
+  - LogisticsWealth
+  - EmpireNoble
+  - EmpireSoldier
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: TemplarGear
+  equipment:
+    id: TemplarPDA
+    ears: ClothingHeadsetEmpire
+    neck: ClothingNeckCloakInspector
+    jumpsuit: ClothingUniformJumpsuitImperialCombat
+    back: ClothingBackpackDSMFilledSoldier
+    shoes: ClothingShoesBootsJack
+    gloves: ClothingHandsGlovesImperialLonggloves
+    pocket1: ImperialPassportBareLegit
+    pocket2: RomaineBible

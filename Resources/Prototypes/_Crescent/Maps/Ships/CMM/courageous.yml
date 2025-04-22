@@ -1,0 +1,33 @@
+- type: vessel
+  id: Courageous
+  name: CMM Courageous
+  description: A heavy missile platform equipped with an expanded security module.
+  price: 85000
+  category: Medium
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/CMM/courageous.yml
+
+- type: gameMap
+  id: Courageous
+  mapName: 'CMM Courageous'
+  mapPath: /Maps/_Crescent/Shuttles/CMM/courageous.yml
+  minPlayers: 0
+  stations:
+    Courageous:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'CMM Courageous {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-missile
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            MachinistCMM: [2, 2]
+            PhysicianCMM: [2, 2]
+            MinutemanCMM: [5, 5]
+            WatchmasterCMM: [1, 1]
+

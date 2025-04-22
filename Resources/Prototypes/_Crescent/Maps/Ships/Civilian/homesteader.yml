@@ -1,0 +1,34 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Homesteader
+  name: ICM Homesteader
+  description: An entry-level colonization corvette.
+  price: 37500
+  category: Small
+  group: Civilian
+  shuttlePath: /Maps/_Crescent/Shuttles/Civilian/homesteader.yml
+
+- type: gameMap
+  id: Homesteader
+  mapName: 'ICM Homesteader'
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/homesteader.yml
+  minPlayers: 0
+  stations:
+    Homesteader:
+      stationProto: StandardCrescentCivilianVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'ICM Homesteader {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-colony
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            Pilot: [ 1, 1 ]
+            SalvageSpecialist: [ 1, 1 ]
+            StationEngineer: [ 1, 1 ]

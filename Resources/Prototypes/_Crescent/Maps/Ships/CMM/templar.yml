@@ -1,0 +1,33 @@
+- type: vessel
+  id: Templar
+  name: CMM Templar
+  description: A frontliner assault corvette.
+  price: 90000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/CMM/templar.yml
+
+- type: gameMap
+  id: Templar
+  mapName: 'CMM Templar'
+  mapPath: /Maps/_Crescent/Shuttles/CMM/templar.yml
+  minPlayers: 0
+  stations:
+    Templar:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'CMM Templar {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-assault-corvette
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            MachinistCMM: [1, 1]
+            PhysicianCMM: [2, 2]
+            MinutemanCMM: [4, 4]
+            WatchmasterCMM: [1, 1]
+

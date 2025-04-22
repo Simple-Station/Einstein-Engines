@@ -1,0 +1,831 @@
+#ncwl#
+
+- type: entity
+  parent: IDCardStandard
+  id: NCWLIDCardKommissar
+  name: NCWL ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcentcom
+  - type: PresetIdCard
+    job: KommissarNCWL
+
+- type: entity
+  parent: IDCardStandard
+  id: NCWLIDCardSanitar
+  name: NCWL ID card
+  components:
+  - type: PresetIdCard
+    job: SanitarNCWL
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcentcom
+
+- type: entity
+  parent: IDCardStandard
+  id: NCWLIDCardArtificer
+  name: NCWL ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcentcom
+  - type: PresetIdCard
+    job: ArtificerNCWL
+
+- type: entity
+  parent: IDCardStandard
+  id: NCWLIDCardDoktor
+  name: NCWL ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcentcom
+  - type: PresetIdCard
+    job: DoktorNCWL
+
+- type: entity
+  parent: IDCardStandard
+  id: NCWLIDCardAdministrator
+  name: NCWL ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcentcom
+  - type: PresetIdCard
+    job: AdministratorNCWL
+
+- type: entity
+  parent: IDCardStandard
+  id: NCWLIDCardKapitan
+  name: NCWL ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcentcom
+  - type: PresetIdCard
+    job: KapitanNCWL
+
+- type: entity
+  parent: IDCardStandard
+  id: NCWLIDCardKadet
+  name: NCWL ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcentcom
+  - type: PresetIdCard
+    job: KadetNCWL
+
+#syndicate#
+
+- type: entity
+  parent: IDCardStandard
+  id: NCSPIDCardRingleader
+  name: NCSP ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+    - state: idzookeeper
+  - type: PresetIdCard
+    job: RingleaderNCSP
+
+- type: entity
+  parent: IDCardStandard
+  id: NCSPIDCardCyberdawnTech
+  name: NCSP ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+    - state: idzookeeper
+  - type: PresetIdCard
+    job: CyberdawnTechNCSP
+
+- type: entity
+  parent: IDCardStandard
+  id: NCSPIDCardLieutenant
+  name: NCSP ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+    - state: idzookeeper
+  - type: PresetIdCard
+    job: LieutenantNCSP
+
+- type: entity
+  parent: IDCardStandard
+  id: NCSPIDCardInfanteer
+  name: NCSP ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+    - state: idzookeeper
+  - type: PresetIdCard
+    job: InfanteerNCSP
+
+- type: entity
+  parent: IDCardStandard
+  id: NCSPIDCardRipperdoc
+  name: NCSP ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+    - state: idzookeeper
+  - type: PresetIdCard
+    job: RipperdocNCSP
+
+- type: entity
+  parent: IDCardStandard
+  id: NCSPIDCardChemcook
+  name: NCSP ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+    - state: idzookeeper
+  - type: PresetIdCard
+    job: ChemcookNCSP
+
+- type: entity
+  parent: IDCardStandard
+  id: NCSPIDCardOperative
+  name: NCSP ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+    - state: idzookeeper
+  - type: PresetIdCard
+    job: OperativeNCSP
+
+- type: entity
+  parent: IDCardStandard
+  id: NCSPIDCardIntelligenceOfficer
+  name: NCSP ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+    - state: idzookeeper
+  - type: PresetIdCard
+    job: IntelligenceOfficerNCSP
+
+- type: entity
+  parent: IDCardStandard
+  id: NCSPIDCardForeman
+  name: NCSP ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+    - state: idzookeeper
+  - type: PresetIdCard
+    job: ForemanNCSP
+
+- type: entity
+  parent: IDCardStandard
+  id: NCSPIDCardShipbreaker
+  name: NCSP ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+    - state: idzookeeper
+  - type: PresetIdCard
+    job: ShipbreakerNCSP
+
+#empire
+
+- type: entity
+  parent: IDCardStandard
+  id: DSMIDCardFreeholder
+  name: imperial ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorresearcher
+  - type: PresetIdCard
+    job: FreeholderDSM
+
+- type: entity
+  parent: IDCardStandard
+  id: DSMIDCardTemplar
+  name: imperial ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorresearcher
+  - type: PresetIdCard
+    job: TemplarDSM
+
+- type: entity
+  parent: IDCardStandard
+  id: DSMIDCardAdvocatus
+  name: imperial ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorresearcher
+  - type: PresetIdCard
+    job: AdvocatusDSM
+
+- type: entity
+  parent: IDCardStandard
+  id: DSMIDCardArchmaester
+  name: imperial ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorresearcher
+  - type: PresetIdCard
+    job: ArchmaesterDSM
+
+- type: entity
+  parent: IDCardStandard
+  id: DSMIDCardSurgeon
+  name: imperial ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorresearcher
+  - type: PresetIdCard
+    job: SurgeonDSM
+
+- type: entity
+  parent: IDCardStandard
+  id: DSMIDCardWealth
+  name: imperial ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorresearcher
+  - type: PresetIdCard
+    job: WealthDSM
+
+- type: entity
+  parent: IDCardStandard
+  id: DSMIDCardForeman
+  name: imperial ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorresearcher
+  - type: PresetIdCard
+    job: ForemanDSM
+
+- type: entity
+  parent: IDCardStandard
+  id: DSMIDCardScribe
+  name: imperial ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorresearcher
+  - type: PresetIdCard
+    job: ScribeDSM
+
+- type: entity
+  parent: IDCardStandard
+  id: DSMIDCardLevyman
+  name: imperial ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorresearcher
+  - type: PresetIdCard
+    job: LevymanDSM
+
+- type: entity
+  parent: IDCardStandard
+  id: DSMIDCardKnight
+  name: imperial ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorresearcher
+  - type: PresetIdCard
+    job: KnightDSM
+
+- type: entity
+  parent: IDCardStandard
+  id: DSMIDCardCourtier
+  name: imperial ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorresearcher
+  - type: PresetIdCard
+    job: CourtierDSM
+
+- type: entity
+  parent: IDCardStandard
+  id: DSMIDCardAdjutant
+  name: imperial ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorresearcher
+  - type: PresetIdCard
+    job: AdjutantDSM
+
+- type: entity
+  parent: IDCardStandard
+  id: DSMIDCardGovernor
+  name: imperial ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorresearcher
+  - type: PresetIdCard
+    job: GovernorDSM
+
+#srm
+
+- type: entity
+  parent: IDCardStandard
+  id: SRMIDCardTender
+  name: hunter ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idbotanist
+  - type: PresetIdCard
+    job: TenderSRM
+
+- type: entity
+  parent: IDCardStandard
+  id: SRMIDCardAcolyte
+  name: hunter ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idbotanist
+  - type: PresetIdCard
+    job: AcolyteSRM
+
+- type: entity
+  parent: IDCardStandard
+  id: SRMIDCardHunter
+  name: hunter ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idbotanist
+  - type: PresetIdCard
+    job: HunterSRM
+
+- type: entity
+  parent: IDCardStandard
+  id: SRMIDCardOverseer
+  name: overseer ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idbotanist
+  - type: PresetIdCard
+    job: OverseerSRM
+
+- type: entity
+  parent: IDCardStandard
+  id: SRMIDCardMontagne
+  name: hunter montagne's ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idbotanist
+  - type: PresetIdCard
+    job: MontagneSRM
+
+#shi
+
+
+- type: entity
+  parent: IDCardStandard
+  id: SHIIDCardExecutive
+  name: corporate ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: ExecutiveSHI
+
+- type: entity
+  parent: IDCardStandard
+  id: SHIIDCardBoard
+  name: corporate ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: BoardSHI
+
+- type: entity
+  parent: IDCardStandard
+  id: SHIIDCardCorpSec
+  name: corporate ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: CorpsecSHI
+
+- type: entity
+  parent: IDCardStandard
+  id: SHIIDCardHighSec
+  name: corporate ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: HighsecSHI
+
+- type: entity
+  parent: IDCardStandard
+  id: SHIIDCardEmployee
+  name: corporate ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: EmployeeSHI
+
+- type: entity
+  parent: IDCardStandard
+  id: SHIIDCardMedtech
+  name: corporate ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: MedtechSHI
+
+#cmm
+
+- type: entity
+  parent: IDCardStandard
+  id: CMMIDCardOrdnanceman
+  name: minuteman ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorofficer
+  - type: PresetIdCard
+    job: OrdnancemanCMM
+
+- type: entity
+  parent: IDCardStandard
+  id: CMMIDCardMachinist
+  name: minuteman ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorofficer
+  - type: PresetIdCard
+    job: MachinistCMM
+
+- type: entity
+  parent: IDCardStandard
+  id: CMMIDCardPhysician
+  name: minuteman ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorofficer
+  - type: PresetIdCard
+    job: PhysicianCMM
+
+- type: entity
+  parent: IDCardStandard
+  id: CMMIDCardMinuteman
+  name: minuteman ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorofficer
+  - type: PresetIdCard
+    job: MinutemanCMM
+
+- type: entity
+  parent: IDCardStandard
+  id: CMMIDCardWatchmaster
+  name: minuteman ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorofficer
+  - type: PresetIdCard
+    job: WatchmasterCMM
+
+- type: entity
+  parent: IDCardStandard
+  id: CMMIDCardDeputyMarshal
+  name: minuteman ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorofficer
+  - type: PresetIdCard
+    job: DeputyMarshalCMM
+
+- type: entity
+  parent: IDCardStandard
+  id: CMMIDCardMarshal
+  name: minuteman ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorofficer
+  - type: PresetIdCard
+    job: MarshalCMM
+
+#misc
+
+- type: entity
+  parent: IDCardStandard
+  id: IDCardAntiquarian
+  name: nomadic ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: Antiquarian
+
+- type: entity
+  parent: IDCardStandard
+  id: MercenaryIDCard
+  name: mercenary ID card
+  components:
+  - type: PresetIdCard
+    job: Mercenary
+  - type: Sprite
+    sprite: _NF/Objects/Misc/id_cards.rsi
+    layers:
+    - state: default
+    - state: idmercenary
+  - type: Clothing
+    sprite: _NF/Objects/Misc/id_cards.rsi
+
+- type: entity
+  parent: IDCardStandard
+  id: PilotIDCard
+  name: pilot ID card
+  components:
+  - type: PresetIdCard
+    job: Pilot
+  - type: Sprite
+    sprite: _NF/Objects/Misc/id_cards.rsi
+    layers:
+    - state: default
+    - state: idpilot
+  - type: Clothing
+    sprite: _NF/Objects/Misc/id_cards.rsi
+
+- type: entity
+  name: "magnate ID card"
+  parent: IDCardStandard
+  id: DeparmentPassMagnate
+  components:
+  - type: Access
+    tags:
+    - LogisticsWealth
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorresearcher
+
+#families
+
+- type: entity
+  parent: IDCardStandard
+  id: TAPIDCardProphet
+  name: nomadic ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: ProphetTAP
+
+- type: entity
+  parent: IDCardStandard
+  id: TAPIDCardAcolyte
+  name: nomadic ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: AcolyteTAP
+
+- type: entity
+  parent: IDCardStandard
+  id: TAPIDCardTinkerer
+  name: nomadic ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: TinkererTAP
+
+- type: entity
+  parent: IDCardStandard
+  id: TAPIDCardTechminer
+  name: nomadic ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: TechminerTAP
+
+- type: entity
+  parent: IDCardStandard
+  id: TAPIDCardHangarTech
+  name: nomadic ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: HangarTechTAP
+
+- type: entity
+  parent: IDCardStandard
+  id: TAPIDCardBeltrunner
+  name: nomadic ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: BeltrunnerTAP
+
+- type: entity
+  parent: IDCardStandard
+  id: TAPIDCardDraugr
+  name: nomadic ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: DraugrTAP
+
+- type: entity
+  parent: IDCardStandard
+  id: TAPIDCardServile
+  name: nomadic ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: ServileTAP
+
+#ath
+
+- type: entity
+  parent: IDCardStandard
+  id: ATHIDCardKommandant
+  name: 43rd battlegroup ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: KommandantATH
+
+- type: entity
+  parent: IDCardStandard
+  id: ATHIDCardLeutnant
+  name: 43rd battlegroup ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: LeutnantATH
+
+- type: entity
+  parent: IDCardStandard
+  id: ATHIDCardSoldat
+  name: 43rd battlegroup ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: SoldatATH
+
+- type: entity
+  parent: IDCardStandard
+  id: ATHIDCardKanoneer
+  name: 43rd battlegroup ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: KanoneerATH
+
+- type: entity
+  parent: IDCardStandard
+  id: ATHIDCardSanitat
+  name: 43rd battlegroup ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: SanitatATH
+
+#misc
+
+- type: entity
+  parent: IDCardStandard
+  id: GliessIDCardSheriff
+  name: spacer ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: GliessianSheriff
+
+- type: entity
+  parent: IDCardStandard
+  id: GliessIDCardDockmaster
+  name: spacer ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: GliessianDockmaster

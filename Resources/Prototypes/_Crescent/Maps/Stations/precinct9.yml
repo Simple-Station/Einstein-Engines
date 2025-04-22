@@ -1,0 +1,29 @@
+- type: gameMap
+  id: Precinct9
+  mapName: 'TSP Proctor Annalise'
+  mapPath: /Maps/_Crescent/Stations/precinct9.yml
+  minPlayers: 0
+  stations:
+    Precinct9:
+      stationProto: StandardCrescentStation
+      gridComponents:
+        - type: BlockShipWeaponProjectileGrid
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'TSP Proctor Annalise'
+        - type: Grammar
+          attributes:
+            proper: true
+        - type: VesselDesignation
+          designation: vessel-designation-headquarters
+        - type: StationJobs
+          checkAlive: false
+          overflowJobs: []
+          availableJobs:
+            MarshalCMM: [ 1, 1 ]
+            DeputyMarshalCMM: [ 1, 1 ]
+            WatchmasterCMM: [ 3, 3 ]
+            MinutemanCMM: [ 8, 8 ]
+            MachinistCMM: [ 2, 2 ]
+            OrdnancemanCMM: [ 4, 4 ]
+            PhysicianCMM: [ 3, 3 ]

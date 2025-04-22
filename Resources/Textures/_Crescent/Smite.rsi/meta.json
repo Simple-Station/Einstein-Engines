@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "license": "Don\u0027t redistribute or use without permission",
+  "copyright": "Reversed to Hullrot",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "F"
+    }
+  ]
+}

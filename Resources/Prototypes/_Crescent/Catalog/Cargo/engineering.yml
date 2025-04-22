@@ -1,0 +1,29 @@
+- type: cargoProduct
+  id: WeldingFuelTank
+  icon:
+    sprite: Structures/Storage/tanks.rsi
+    state: fueltank-2
+  product: WeldingFuelTankFull
+  cost: 1000
+  category: Engineering
+  group: market
+
+- type: cargoProduct
+  id: CrateToolbelt
+  icon:
+    sprite: Clothing/Belt/utility.rsi
+    state: icon
+  product: CrateEngineeringToolbelts
+  cost: 800
+  category: Engineering
+  group: market
+
+- type: cargoProduct
+  id: CrateEngineeringPPE
+  icon:
+    sprite: Clothing/Head/Welding/welding.rsi
+    state: icon
+  product: CrateEngineeringPPE
+  cost: 800
+  category: Engineering
+  group: market

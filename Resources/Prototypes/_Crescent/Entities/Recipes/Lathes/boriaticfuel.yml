@@ -1,0 +1,8 @@
+
+- type: latheRecipe
+  id: JugBoriaticFuelCraft
+  result: JugBoriaticFuel
+  completetime: 3
+  materials:
+    Uranium: 750
+    Plasma: 1000

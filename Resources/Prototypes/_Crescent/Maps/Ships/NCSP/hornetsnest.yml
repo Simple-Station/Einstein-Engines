@@ -1,0 +1,29 @@
+﻿- type: vessel
+  id: Hornetsnest
+  name: GSC Hornet's Nest
+  description: A Carrier fit for use by Para Military Corporations. A capable vessel for its class.
+  price: 90000
+  category: Medium
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/hornetsnest.yml
+
+- type: gameMap
+  id: Hornetsnest
+  mapName: 'GSC Hornets Nest'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/hornetsnest.ymll
+  minPlayers: 0
+  stations:
+    Hornetsnest:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'GSC Hornets Nest {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: PMC Carrier
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            InfanteerNCSP: [ 7, 7 ]

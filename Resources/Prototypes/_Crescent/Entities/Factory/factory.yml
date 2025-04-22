@@ -1,0 +1,138 @@
+- type: entity
+  id: Factory120Fab
+  parent: BaseMachinePowered
+  name: shell fabricator
+  description: Shapes metal for use by ship munitions.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/factorystructures.rsi
+    snapCardinals: true
+    layers:
+    - state: pooper
+  - type: Factory
+    sound:
+      collection: Welder
+      params:
+        variation: 0.125
+    recipes:
+      - 120mmCasingDU
+      - 120mmCasingHE
+      - GargoyleCasing
+      - LancerCasing
+      - IdnaTorpedoManufacturing
+
+- type: entity
+  id: Factory120Weld
+  parent: BaseMachinePowered
+  name: cartridge welding arm
+  description: Welds shell casings for priming.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/factorystructures.rsi
+    snapCardinals: false
+    layers:
+    - state: welder
+  - type: Factory
+    sound:
+      collection: Welder
+      params:
+        variation: 0.125
+    recipes:
+      - 120mmWeldDU
+      - 120mmWeldHE
+
+- type: entity
+  id: Factory120Assembler
+  parent: BaseMachinePowered
+  name: assembling arm
+  description: Packs explosive armaments into munitions.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/factorystructures.rsi
+    snapCardinals: false
+    layers:
+    - state: assembler
+  - type: Factory
+    sound:
+      collection: Screwdriver
+      params:
+        variation: 0.125
+    recipes:
+      - 120mmAssembleDU
+      - 120mmAssembleHE
+
+- type: entity
+  id: Factory320Assembler
+  parent: BaseMachinePowered
+  name: assembling arm
+  description: Packs explosive armaments into munitions.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/factorystructures.rsi
+    snapCardinals: false
+    layers:
+    - state: assembler
+  - type: Factory
+    sound:
+      collection: Screwdriver
+      params:
+        variation: 0.125
+    recipes:
+      - 320mmPack
+
+- type: entity
+  id: Factory320Fab
+  parent: BaseMachinePowered
+  name: shell fabricator
+  description: Shapes metal for use by ship munitions.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/factorystructures.rsi
+    snapCardinals: true
+    layers:
+    - state: pooper
+  - type: Factory
+    sound:
+      collection: Welder
+      params:
+        variation: 0.125
+    recipes:
+      - 320mmCasing
+
+- type: entity
+  id: FactoryPlasteelFamilies
+  parent: BaseMachinePowered
+  name: plasteel blast furnace
+  description: Uses advanced metallurgy patterns to smelt plasma and steel alloy into durable plasteel and plastitanium.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/furnacefactory.rsi
+    snapCardinals: true
+    layers:
+    - state: furnace
+  - type: Factory
+    sound:
+      collection: Welder
+      params:
+        variation: 0.125
+    recipes:
+      - FourFamiliesPlasteel
+
+- type: entity
+  parent: BaseMachinePowered
+  id: BiomassFoodMulcher
+  name: biomass mulcher
+  description: A miniature vat that accepts grown produce and mulches it into usable biomass.
+  components:
+  - type: Factory
+    recipes:
+      - BiomassFromWheat
+      - BiomassFromSugarcane
+  - type: Sprite
+    sprite: _Crescent/Structures/mulcher.rsi
+    layers:
+    - state: "icon"
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"

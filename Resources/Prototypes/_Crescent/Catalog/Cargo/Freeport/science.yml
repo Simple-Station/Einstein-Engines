@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: ArtifactContainerFreeport
+  icon:
+    sprite: Structures/Storage/Crates/artifact.rsi
+    state: artifact_container_icon
+  product: CrateArtifactContainer
+  cost: 500
+  category: cargoproduct-category-name-science
+  group: freeport

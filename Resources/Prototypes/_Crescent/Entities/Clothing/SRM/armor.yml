@@ -1,0 +1,205 @@
+
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitHunter
+  name: salvaged hunting hardsuit
+  description: A modular hardsuit assembled from what seems to be salvaged Imperial parts. For predators on the hunt.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SRM/OuterClothing/hardsuit.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SRM/OuterClothing/hardsuit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: DegradeableArmor
+    armorMaxHealth: 750
+    armorType: Metallic
+    armorRepair: PlasteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 15
+        Slash: 15
+        Piercing: 35
+        Heat: 15
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.9
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitHunter
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitHunterElite
+  name: sixth subjugation fireteam hardsuit
+  description: A pristine battle-ready hardsuit printed fresh from a nanoforge. Still bears the House Romaine colors.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SRM/OuterClothing/hardsuitelite.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SRM/OuterClothing/hardsuitelite.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: DegradeableArmor
+    armorMaxHealth: 750
+    armorType: Ceramic
+    armorRepair: NTCeramic
+    initialModifiers:
+      flatReductions:
+        Blunt: 25
+        Slash: 15
+        Piercing: 70
+        Heat: 15
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 0.80
+    sprintModifier: 0.85
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitHunterElite
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorHunterDuster
+  name: hunter's reinforced duster
+  description: A kevlar-intervowen durathread coat with a popped collar. Dreadful.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SRM/OuterClothing/huntercoat.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SRM/OuterClothing/huntercoat.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 750
+    armorType: Metallic
+    armorRepair: PlasteelEncasedKevlar
+    initialModifiers:
+      flatReductions:
+        Blunt: 10
+        Slash: 10
+        Piercing: 30
+        Heat: 20
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorHunterVest
+  name: hunter's ballistic vest
+  description: A kevlar-plated durathread vest to wear during the Hunt.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SRM/OuterClothing/kevlarvest.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SRM/OuterClothing/kevlarvest.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 750
+    armorType: Metallic
+    armorRepair: PlasteelEncasedKevlar
+    initialModifiers:
+      flatReductions:
+        Blunt: 15
+        Slash: 15
+        Piercing: 35
+        Heat: 20
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorHunterTender
+  name: tender's fullbody biosuit
+  description: A reinforced rubber biosuit strung with bone ornaments. Made for Tenders of the Hunt.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SRM/OuterClothing/tendercoat.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SRM/OuterClothing/tendercoat.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 1000
+    armorType: Metallic
+    armorRepair: NTPolymer
+    initialModifiers:
+      flatReductions:
+        Blunt: 10
+        Slash: 10
+        Piercing: 25
+        Heat: 20
+        Caustic: 35
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorHunterDusterMontagne
+  name: hunter montagne's reinforced duster
+  description: A double-breasted ornate coat, woven through with reinforced kevlar lining.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SRM/OuterClothing/montagnecoat.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SRM/OuterClothing/montagnecoat.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 1000
+    armorType: Metallic
+    armorRepair: NTPolymer
+    initialModifiers:
+      flatReductions:
+        Blunt: 10
+        Slash: 10
+        Piercing: 25
+        Heat: 20
+        Caustic: 35
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorHunterDusterOverseer
+  name: overseer's double breasted coat
+  description: An ornate, antiquated coat, said to have once belonged to a legendary Huntsman.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SRM/OuterClothing/overseercoat.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SRM/OuterClothing/overseercoat.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 750
+    armorType: Metallic
+    armorRepair: NTPolymer
+    initialModifiers:
+      flatReductions:
+        Blunt: 10
+        Slash: 10
+        Piercing: 35
+        Heat: 20
+        Caustic: 35
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine

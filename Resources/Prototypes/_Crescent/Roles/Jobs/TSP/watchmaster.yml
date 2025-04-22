@@ -1,0 +1,43 @@
+- type: job
+  id: WatchmasterCMM
+  name: job-name-watchmaster
+  description: job-description-watchmaster
+  playTimeTracker: JobWatchmasterCMM
+  weight: 28
+  startingGear: WatchmasterGear
+  alwaysUseSpawner: true
+  icon: "JobIconWatchmaster"
+  requirements:
+  - !type:FactionRequirement
+      factionID: "TSP"
+  - !type:OverallPlaytimeRequirement
+    time: 12000
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-watchmaster
+  requireAdminNotify: false
+  supervisors: You answer to your Colonial Marshal and the Deputy Marshal
+  canBeAntag: false
+  access:
+  - Command
+  - Maintenance
+  - Minuteman
+  - MinutemanPrison
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: WatchmasterGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCMMOfficer
+    shoes: ClothingShoesBootsCombat
+    head: ClothingHeadHatWatchmaster
+    gloves: ClothingHandsGlovesCombat
+    belt: WeaponPistolHKUSP
+    id: WatchmasterPDA
+    ears: ClothingHeadsetCMM
+    neck: ClothingNeckScarfCMMCloak
+    outerClothing: ClothingOuterArmorCMM

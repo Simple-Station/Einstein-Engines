@@ -1,0 +1,39 @@
+- type: loadout
+  id: SanitarNCWLClothingHeadHelmetNCWLBasic
+  equipment: SanitarNCWLClothingHeadHelmetNCWLBasic
+  price: 0
+
+- type: startingGear
+  id: SanitarNCWLClothingHeadHelmetNCWLBasic
+  equipment:
+    head: ClothingHeadHelmetNCWLBasic
+
+- type: loadout
+  id: SanitarNCWLClothingHeadHatNCWLCapsoft
+  equipment: SanitarNCWLClothingHeadHatNCWLCapsoft
+  price: 0
+
+- type: startingGear
+  id: SanitarNCWLClothingHeadHatNCWLCapsoft
+  equipment:
+    head: ClothingHeadHatNCWLCapsoft
+
+- type: loadout
+  id: SanitarNCWLClothingHeadHatNCWLTanker
+  equipment: SanitarNCWLClothingHeadHatNCWLTanker
+  price: 50
+
+- type: startingGear
+  id: SanitarNCWLClothingHeadHatNCWLTanker
+  equipment:
+    head: ClothingHeadHatNCWLTanker
+
+- type: loadout
+  id: SanitarNCWLClothingHeadHelmetNCWLHeavy
+  equipment: SanitarNCWLClothingHeadHelmetNCWLHeavy
+  price: 250
+
+- type: startingGear
+  id: SanitarNCWLClothingHeadHelmetNCWLHeavy
+  equipment:
+    head: ClothingHeadHelmetNCWLHeavy

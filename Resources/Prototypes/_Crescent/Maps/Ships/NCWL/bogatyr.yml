@@ -1,0 +1,34 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Bogatyr
+  name: NCWL Bogatyr
+  description: A communard stealth bomber, sees use primarily in discreet naval operations.
+  price: 150000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCWL/bogatyr.yml
+
+- type: gameMap
+  id: Bogatyr
+  mapName: 'NCWL Bogatyr'
+  mapPath: /Maps/_Crescent/Shuttles/NCWL/bogatyr.yml
+  minPlayers: 0
+  stations:
+    Bogatyr:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Bogatyr {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-stealth-bomber
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            KapitanNCWL: [ 1, 1 ]
+            SanitarNCWL: [ 2, 5 ]
+            DoktorNCWL: [ 1, 2 ]

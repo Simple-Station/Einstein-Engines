@@ -1,0 +1,91 @@
+- type: job
+  id: GovernorDSM
+  name: job-name-governor
+  description: job-description-governor
+  playTimeTracker: JobGovernorDSM
+  requirements:
+    - !type:WhitelistRequirement
+    - !type:SpeciesRequirement
+      allowedOnly:
+        - Human
+    - !type:SexRequirement
+      allowed:
+        - Male
+    - !type:FactionRequirement
+      factionID: "DSM"
+  weight: 87
+  startingGear: GovernorGear
+  alwaysUseSpawner: true
+  icon: "JobIconImperialGovernor"
+  requireAdminNotify: true
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-baron
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - Service
+  - External
+  - LogisticsWealth
+  - ScribesGuild
+  - Archmaester
+  - Maintenance
+  - Advocatus
+  - EmpireNoble
+  - EmpireAdjutant
+  - DSMFunds
+  - EmpireGovernor
+  - EmpireSoldier
+  - Service
+  - Empire
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: GovernorGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitImperialGovernor
+    back: ClothingBackpackSatchelLeatherFilledDSM
+    shoes: ClothingShoesBootsImperialGovernorBoots
+    head: ClothingHeadHatImperialBicorne
+    outerClothing: ClothingOuterCoatImperialGovernor
+    belt: ClothingBeltSheathFilled
+    id: GovernorPDA
+    ears: ClothingHeadsetEmpire
+    pocket1: ImperialPassportBareLegit

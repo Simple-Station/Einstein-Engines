@@ -1,0 +1,257 @@
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitTechminer
+  result: ClothingUniformJumpsuitTechminer
+  completetime: 4
+  materials:
+    Cloth: 1000
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitTinkerer
+  result: ClothingUniformJumpsuitTinkerer
+  completetime: 4
+  materials:
+    Cloth: 1000
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitHangarTechnician
+  result: ClothingUniformJumpsuitHangarTechnician
+  completetime: 4
+  materials:
+    Cloth: 1000
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitServile
+  result: ClothingUniformJumpsuitServile
+  completetime: 4
+  materials:
+    Cloth: 1000
+
+- type: latheRecipe
+  id: ClothingHeadHatDraugr
+  result: ClothingHeadHatDraugr
+  completetime: 4
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingHeadHatServile
+  result: ClothingHeadHatServile
+  completetime: 4
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitDraugr
+  result: ClothingUniformJumpsuitDraugr
+  completetime: 4
+  materials:
+    Cloth: 1000
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitBeltrunner
+  result: ClothingUniformJumpsuitBeltrunner
+  completetime: 4
+  materials:
+    Cloth: 1000
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitAntiquarianFamilies
+  result: ClothingUniformJumpsuitAntiquarianFamilies
+  completetime: 4
+  materials:
+    Cloth: 1000
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitBodysuit
+  result: ClothingUniformJumpsuitBodysuit
+  completetime: 4
+  materials:
+    Cloth: 750
+    Plastic: 250
+
+- type: latheRecipe
+  id: ClothingOuterArmorServileAlseik
+  result: ClothingOuterArmorServileAlseik
+  completetime: 4
+  materials:
+    Cloth: 750
+
+- type: latheRecipe
+  id: ClothingOuterArmorDraugrAlseik
+  result: ClothingOuterArmorDraugrAlseik
+  completetime: 4
+  materials:
+    Cloth: 750
+
+- type: latheRecipe
+  id: ClothingOuterArmorAcolyteRobes
+  result: ClothingOuterArmorAcolyteRobes
+  completetime: 4
+  materials:
+    Cloth: 750
+
+- type: latheRecipe
+  id: ClothingOuterBeltrunnerEVA
+  result: ClothingOuterBeltrunnerEVA
+  completetime: 4
+  materials:
+    Cloth: 750
+    Plastic: 1000
+
+- type: latheRecipe
+  id: ClothingHeadHelmetIzdariEVA
+  result: ClothingHeadHelmetIzdariEVA
+  completetime: 4
+  materials:
+    Cloth: 500
+    Plastic: 500
+
+
+- type: latheRecipe
+  id: ClothingOuterArmorThukkerEngiVest
+  result: ClothingOuterArmorThukkerEngiVest
+  completetime: 4
+  materials:
+    Cloth: 750
+    Steel: 1000
+
+- type: latheRecipe
+  id: Plashammer
+  result: Plashammer
+  completetime: 4
+  materials:
+    Silver: 750
+    Steel: 3000
+    Plasma: 2500
+
+- type: latheRecipe
+  id: PlasHalberd
+  result: PlasHalberd
+  completetime: 4
+  materials:
+    Silver: 750
+    Steel: 2000
+    Gold: 1000
+    Plasma: 2500
+
+- type: latheRecipe
+  id: EnergySwordFamilies
+  result: EnergySwordFamilies
+  completetime: 4
+  materials:
+    Silver: 1750
+    Steel: 1000
+    Gold: 1500
+    Plasma: 3000
+
+- type: latheRecipe
+  id: WeaponLaserSvalinnFam
+  result: WeaponLaserSvalinn
+  completetime: 4
+  materials:
+    Silver: 1750
+    Steel: 1500
+
+- type: latheRecipe
+  id: WeaponTeslaGunFam
+  result: WeaponTeslaGun
+  completetime: 4
+  materials:
+    Silver: 1750
+    Steel: 1500
+    Gold: 3500
+    Plasma: 4000
+
+- type: latheRecipe
+  id: WeaponPulsePistolFam
+  result: WeaponPulsePistol
+  completetime: 4
+  materials:
+    Silver: 2500
+    Steel: 1500
+    Gold: 3500
+    Plasma: 5000
+
+- type: latheRecipe
+  id: WeaponXrayCannonFam
+  result: WeaponXrayCannon
+  completetime: 4
+  materials:
+    Silver: 2500
+    Steel: 1500
+    Gold: 3500
+    Plasma: 5000
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitDraugr
+  result: ClothingOuterHardsuitDraugr
+  completetime: 4
+  materials:
+    Cloth: 1750
+    Plasteel: 3000
+    Silver: 500
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitArabet
+  result: ClothingOuterHardsuitArabet
+  completetime: 4
+  materials:
+    Cloth: 1750
+    Plasteel: 3000
+    Gold: 500
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitIzdari
+  result: ClothingOuterHardsuitIzdari
+  completetime: 4
+  materials:
+    Cloth: 1750
+    Plasteel: 3000
+    Uranium: 500
+
+- type: latheRecipe
+  id: CompaktFlatpack
+  result: CompaktFlatpack
+  completetime: 4
+  materials:
+    Gold: 1750
+    Plasteel: 3000
+    Uranium: 1500
+    Silver: 500
+
+- type: latheRecipe
+  id: LensPlasma
+  result: LensPlasma
+  completetime: 2
+  materials:
+    Glass: 1750
+    Plasma: 500
+
+- type: latheRecipe
+  id: LensMicrowave
+  result: LensMicrowave
+  completetime: 2
+  materials:
+    Glass: 1750
+    Uranium: 500
+
+- type: latheRecipe
+  id: LensInfrared
+  result: LensInfrared
+  completetime: 2
+  materials:
+    Glass: 1750
+    Silver: 500
+
+- type: latheRecipe
+  id: MediumEnergyHardpointFlatpack
+  result: MediumEnergyHardpointFlatpack
+  completetime: 5
+  materials:
+    Glass: 1750
+    Silver: 2500
+    Plasma: 4000
+    Steel: 2500
+    Plasteel: 1000
+    Gold: 2500

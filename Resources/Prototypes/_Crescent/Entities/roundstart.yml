@@ -1,0 +1,6 @@
+﻿# Rane is fat and I WILL NOT have sex with him
+
+- type: entity
+  id: GhostRespawnTicker
+  components:
+  - type: RespawnTicker

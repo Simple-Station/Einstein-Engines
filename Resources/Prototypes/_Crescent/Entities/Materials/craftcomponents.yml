@@ -1,0 +1,376 @@
+- type: entity
+  parent: OreBase
+  id: BasicElectronics
+  name: basic electronic parts
+  description: Bundles of electronics, wiring, and loose parts for basic electronic projects.
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: BasicElectronics
+  - type: Tag
+    tags:
+    - CraftMaterials
+  - type: Sprite
+    sprite: _Crescent/Objects/Materials/materials.rsi
+    layers:
+    - state: basicelectronics
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      BasicElectronics: 500
+
+- type: entity
+  id: BasicElectronics1
+  parent: BasicElectronics
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  parent: OreBase
+  id: AdvancedElectronics
+  name: advanced electronic parts
+  description: Nanomachinery, circuitry, and other fine-crafted parts for advanced electronic projects.
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: AdvancedElectronics
+  - type: Tag
+    tags:
+    - CraftMaterials
+  - type: Sprite
+    sprite: _Crescent/Objects/Materials/materials.rsi
+    layers:
+    - state: advancedelectronics
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      AdvancedElectronics: 500
+
+- type: entity
+  id: AdvancedElectronics1
+  parent: AdvancedElectronics
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  parent: OreBase
+  id: NanotrasenElectronics
+  name: precursor electronics parts
+  description: Microcircuitry, nanorotors, microcapacitors, and other fine-lathed electronic parts manufactured by the extinct NanoTrasen. Worth it's weight in gold.
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: NanotrasenElectronics
+  - type: Tag
+    tags:
+    - CraftMaterials
+  - type: Sprite
+    sprite: _Crescent/Objects/Materials/materials.rsi
+    layers:
+    - state: nanotrasenelectronics
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      NanotrasenElectronics: 500
+
+- type: entity
+  id: NanotrasenElectronics1
+  parent: NanotrasenElectronics
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  parent: OreBase
+  id: BasicMechatronics
+  name: basic mechatronic components
+  description: Springs, casings, and assorted simple contraptions for basic mechanic devices.
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: BasicMechatronics
+  - type: Tag
+    tags:
+    - CraftMaterials
+  - type: Sprite
+    sprite: _Crescent/Objects/Materials/materials.rsi
+    layers:
+    - state: basicmechanic
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      BasicMechatronics: 500
+
+- type: entity
+  id: BasicMechatronics1
+  parent: BasicMechatronics
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  parent: OreBase
+  id: AdvancedMechatronics
+  name: advanced mechatronic components
+  description: Complex engines, systems, rotors, everything needed for projects requiring specialized mechanics.
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: AdvancedMechatronics
+  - type: Tag
+    tags:
+    - CraftMaterials
+  - type: Sprite
+    sprite: _Crescent/Objects/Materials/materials.rsi
+    layers:
+    - state: advancedmechanic
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      AdvancedMechatronics: 500
+
+- type: entity
+  id: AdvancedMechatronics1
+  parent: AdvancedMechatronics
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  parent: OreBase
+  id: NanotrasenMechatronics
+  name: bluespace mechatronic components
+  description: Extremely complex mechatronic components that carry out part of their operations in a pocket slice of localized bluespace. Produced by the extinct NanoTrasen and no longer obtainable via regular means.
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: NanotrasenMechatronics
+  - type: Tag
+    tags:
+    - CraftMaterials
+  - type: Sprite
+    sprite: _Crescent/Objects/Materials/materials.rsi
+    layers:
+    - state: bluespacemechatronics
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      NanotrasenMechatronics: 500
+
+- type: entity
+  id: NanotrasenMechatronics1
+  parent: NanotrasenMechatronics
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  parent: OreBase
+  id: LaserLocus
+  name: focused laser locus
+  description: Part of a greater machine; this locus focuses hardlight into one concentrated beam. Typically seen used on shuttle armaments, but also has uses in the holographic advertisement, medical, and eyewear industries.
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: LaserLocus
+  - type: Tag
+    tags:
+    - CraftMaterials
+  - type: Sprite
+    sprite: _Crescent/Objects/Materials/materials.rsi
+    layers:
+    - state: laserlocus
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      LaserLocus: 500
+
+- type: entity
+  id: LaserLocus1
+  parent: LaserLocus
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  parent: OreBase
+  id: BallisticCycler
+  name: ballistic gas cycler
+  description: Part of a greater machine; this cycler is almost always exclusively used for shuttle armaments that use ballistic feeder mechanisms.
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: BallisticCycler
+  - type: Tag
+    tags:
+    - CraftMaterials
+  - type: Sprite
+    sprite: _Crescent/Objects/Materials/materials.rsi
+    layers:
+    - state: gascycler
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      BallisticCycler: 500
+
+- type: entity
+  id: BallisticCycler1
+  parent: BallisticCycler
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  parent: OreBase
+  id: TubeLoader
+  name: tube loader robotics
+  description: A basic mechanism and manipulator arm designed for internal loading mechanisms of missile platforms, grenade turrets, and other implements of war.
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: TubeLoader
+  - type: Tag
+    tags:
+    - CraftMaterials
+  - type: Sprite
+    sprite: _Crescent/Objects/Materials/materials.rsi
+    layers:
+    - state: tubeloaderrobotics
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      TubeLoader: 500
+
+- type: entity
+  id: TubeLoader1
+  parent: TubeLoader
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  parent: OreBase
+  id: WeakLaserLocus
+  name: unfocused hardlight locus
+  description: A basic locus for hardlight beams. This is a civilian variant, a common component in low-performance laser armaments and mining gear.
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: WeakLaserLocus
+  - type: Tag
+    tags:
+    - CraftMaterials
+  - type: Sprite
+    sprite: _Crescent/Objects/Materials/materials.rsi
+    layers:
+    - state: weaklaserlocus
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      WeakLaserLocus: 500
+
+- type: entity
+  id: WeakLaserLocus1
+  parent: WeakLaserLocus
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  parent: OreBase
+  id: HardlightGenerator
+  name: focused hardlight generator
+  description: A hardlight generator conduit, one of many which combine to make up a hardlight relay. These small components are vital in the operation of bubble deflector technology.
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: HardlightGenerator
+  - type: Tag
+    tags:
+    - CraftMaterials
+  - type: Sprite
+    sprite: _Crescent/Objects/Materials/materials.rsi
+    layers:
+    - state: hardlightgenerator
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      HardlightGenerator: 500
+
+- type: entity
+  id: HardlightGenerator1
+  parent: HardlightGenerator
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  parent: OreBase
+  id: HardsuitElectronics
+  name: hardsuit electronics
+  description: A barycentric spinal hardsuit mount. Originally designed by Shinohara as an external companion gadget for old softsuits to track oxygen levels and life support optimization, now integrated into pretty much every common hardsuit everywhere.
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: HardsuitElectronics
+  - type: Tag
+    tags:
+    - CraftMaterials
+  - type: Sprite
+    sprite: _Crescent/Objects/Materials/materials.rsi
+    layers:
+    - state: hardsuitelectronics
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      HardsuitElectronics: 500
+
+- type: entity
+  id: HardsuitElectronics1
+  parent: HardsuitElectronics
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  parent: OreBase
+  id: PlastitaniumFibreAlloy
+  name: plastitanium fibre alloy plate
+  description: The most common building block of the space industry today. Plastitanium fibre is both resistant as it's namesake and flexible as plastic. Being too expensive to produce en masse, it's instead used as casings and shells for things like turrets, graviton thrusters, gravity generators, and other sensitive equipment.
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: PlastitaniumFibreAlloy
+  - type: Tag
+    tags:
+    - CraftMaterials
+  - type: Sprite
+    sprite: _Crescent/Objects/Materials/materials.rsi
+    layers:
+    - state: plastitaniumfibrealloy
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      PlastitaniumFibreAlloy: 500
+
+- type: entity
+  id: PlastitaniumFibreAlloy1
+  parent: PlastitaniumFibreAlloy
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1

@@ -1,0 +1,82 @@
+- type: job
+  id: ProphetTAP
+  name: job-name-prophet
+  description: job-description-prophet
+  playTimeTracker: JobProphetTAP
+  requirements:
+    - !type:WhitelistRequirement
+    - !type:FactionRequirement
+      factionID: "TAP"
+    - !type:SpeciesRequirement
+      allowedOnly:
+        - Moth
+  weight: 55
+  startingGear: ProphetGear
+  alwaysUseSpawner: true
+  icon: "JobIconProphet"
+  requireAdminNotify: true
+  supervisors: job-supervisors-prophet
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-prophet
+  - !type:AddComponentSpecial
+    components:
+      - type: Telepathic
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - Families
+  - Arabet
+  - Alseik
+  - AlseikServile
+  - Thukker
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Command
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Mercenary # Frontier
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - External
+  - Captain # Frontier
+
+- type: startingGear
+  id: ProphetGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBodysuit
+    back: ClothingBackpackSatchelLeatherFilledNCWL
+    shoes: ClothingShoesBootsJack
+    outerClothing: ClothingOuterHardsuitArabet
+    id: ProphetPDA
+    ears: ClothingHeadsetFamilies

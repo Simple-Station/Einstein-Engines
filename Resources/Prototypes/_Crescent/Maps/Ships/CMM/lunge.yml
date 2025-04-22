@@ -1,0 +1,30 @@
+- type: vessel
+  id: Lunge
+  name: CMM Lunge
+  description: A small survey corvette turned into a modified missile boat. Fragile but heavy-handed.
+  price: 55000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/CMM/lunge.yml
+
+- type: gameMap
+  id: Lunge
+  mapName: 'CMM Lunge'
+  mapPath: /Maps/_Crescent/Shuttles/CMM/lunge.yml
+  minPlayers: 0
+  stations:
+    Lunge:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'CMM Lunge {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-gunship
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            MinutemanCMM: [0, 0]
+

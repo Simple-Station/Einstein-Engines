@@ -1,0 +1,76 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitShinoharaSuit
+  name: shirt and slacks
+  description: The corporate uniform.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Uniform/board.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Uniform/board.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitExecutiveShinoharaSuit
+  name: expensive shirt and slacks
+  description: The corporate uniform, for corporate overbosses.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Uniform/executive.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Uniform/executive.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitShinoharaDoctor
+  name: medtech's jumpsuit
+  description: A sterile corporate uniform in Shinohara colors.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Uniform/doctor.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Uniform/doctor.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitShinoharaLogistics
+  name: employee's jumpsuit
+  description: A worker's corporate uniform in Shinohara colors.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Uniform/logistics.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Uniform/logistics.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitShinoharaSecurity
+  name: security specialist's jumpsuit
+  description: A security officer's corporate uniform in Shinohara colors.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Uniform/security.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Uniform/security.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitShinoharaTraumasec
+  name: traumasec officer's jumpsuit
+  description: A traumasec officer's corporate uniform in Shinohara MedTech colors.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Uniform/traumasec.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Uniform/traumasec.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitShinoharaHighsec
+  name: highsec officer's turtleneck
+  description: A traumasec officer's corporate uniform in Shinohara MedTech colors.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Uniform/securityturtleneck.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Uniform/securityturtleneck.rsi

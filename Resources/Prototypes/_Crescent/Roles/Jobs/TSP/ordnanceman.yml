@@ -1,0 +1,39 @@
+- type: job
+  id: OrdnancemanCMM
+  name: job-name-ordnanceman
+  description: job-description-ordnanceman
+  playTimeTracker: JobOrdnancemanCMM
+  weight: 18
+  startingGear: OrdnancemanGear
+  alwaysUseSpawner: true
+  requirements:
+  - !type:FactionRequirement
+      factionID: "TSP"
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ordnance
+  icon: "JobIconOrdnanceman"
+  requireAdminNotify: false
+  supervisors: You answer to your Colonial Marshal , Deputy Marshal and Watchmaster.
+  canBeAntag: false
+  access:
+  - Command
+  - Maintenance
+  - Minuteman
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: OrdnancemanGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCMMOrdnanceman
+    shoes: ClothingShoesBootsCombat
+    head: ClothingHeadHelmetCMMOrdnanceman
+    gloves: ClothingHandsGlovesCombat
+    belt: ClothingBeltMinutemanPouches
+    id: OrdnancemanPDA
+    ears: ClothingHeadsetCMM
+    pocket1: WeaponPistolHKUSP

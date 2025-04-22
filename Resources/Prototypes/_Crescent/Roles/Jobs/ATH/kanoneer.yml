@@ -1,0 +1,73 @@
+- type: job
+  id: KanoneerATH
+  name: job-name-kanoneer
+  description: job-description-kanoneer
+  playTimeTracker: JobKanoneerATH
+  requirements:
+    - !type:SpeciesRequirement
+      allowedOnly:
+        - Human
+        - Reptilian
+        - Oni
+    - !type:FactionRequirement
+      factionID: "ATH"
+  weight: 85
+  startingGear: KanoneerGear
+  alwaysUseSpawner: true
+  icon: "JobIconKanoneer"
+  requireAdminNotify: false
+  supervisors: job-supervisors-ath
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-kanoneer
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - Service
+  - External
+  - Authority
+
+- type: startingGear
+  id: KanoneerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAuthorityKanoneer
+    shoes: ClothingShoesBootsJack
+    head: ClothingHeadHatAuthorityKanoneer
+    belt: ClothingBeltAuthorityWebbing
+    gloves: ClothingHandsGlovesFingerless
+    id: KanoneerPDA
+    ears: ClothingHeadsetAuthority

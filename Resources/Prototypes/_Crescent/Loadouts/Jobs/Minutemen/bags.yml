@@ -1,0 +1,29 @@
+- type: loadout
+  id: CMMClothingBackpackMinutemanDuffelbagFilled
+  equipment: CMMClothingBackpackMinutemanDuffelbagFilled
+  price: 0
+
+- type: startingGear
+  id: CMMClothingBackpackMinutemanDuffelbagFilled
+  equipment:
+    back: ClothingBackpackMinutemanDuffelbagFilled
+
+- type: loadout
+  id: CMMClothingBackpackMinutemanSatchelFilled
+  equipment: CMMClothingBackpackMinutemanSatchelFilled
+  price: 0
+
+- type: startingGear
+  id: CMMClothingBackpackMinutemanSatchelFilled
+  equipment:
+    back: ClothingBackpackMinutemanSatchelFilled
+
+- type: loadout
+  id: CMMClothingBackpackMinutemanFilled
+  equipment: CMMClothingBackpackMinutemanFilled
+  price: 0
+
+- type: startingGear
+  id: CMMClothingBackpackMinutemanFilled
+  equipment:
+    back: ClothingBackpackMinutemanFilled

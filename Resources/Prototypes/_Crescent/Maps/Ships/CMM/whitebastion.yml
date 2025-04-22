@@ -1,0 +1,32 @@
+# Author Info
+# Discord: mlgtastic
+#
+- type: vessel
+  id: WhiteBastion
+  name: TSP White Bastion
+  description: A repurposed battlecruiser , used as a mobile command center.
+  price: 325000
+  category: Large
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/CMM/whitebastion.yml
+
+- type: gameMap
+  id: WhiteBastion
+  mapName: 'TSP White Bastion'
+  mapPath: /Maps/_Crescent/Shuttles/CMM/whitebastion.yml
+  minPlayers: 0
+  stations:
+    WhiteBastion:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'TSP White Bastion {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-utility
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            MinutemanCMM: [1, 1]

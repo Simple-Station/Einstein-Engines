@@ -1,0 +1,103 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitTechminer
+  name: techminer's fatigues
+  description: A generic ThukkerCorp jumpsuit, attributed to the Thukker family of the Atyrian Pact. This one is meant for salvager pilots.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/FourFamilies/Uniform/techminer.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/FourFamilies/Uniform/techminer.rsi
+  - type: StaticPrice
+    price: 100
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitTinkerer
+  name: tinkerer's fatigues
+  description: A generic ThukkerCorp jumpsuit, attributed to the Thukker family of the Atyrian Pact. This one is meant for research and development analysts.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/FourFamilies/Uniform/tinkereruniform.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/FourFamilies/Uniform/tinkereruniform.rsi
+  - type: StaticPrice
+    price: 100
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitHangarTechnician
+  name: hangar tech's fatigues
+  description: A generic ThukkerCorp jumpsuit, attributed to the Thukker family of the Atyrian Pact. This one is meant for deck crew and hangard specialists.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/FourFamilies/Uniform/hangartech.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/FourFamilies/Uniform/hangartech.rsi
+  - type: StaticPrice
+    price: 100
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitServile
+  name: servile's jumpsuit
+  description: An undecorated jumpsuit meant for an Al'Seik servile.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/FourFamilies/Uniform/servileuniform.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/FourFamilies/Uniform/servileuniform.rsi
+  - type: StaticPrice
+    price: 100
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitDraugr
+  name: draugr's combat fatigues
+  description: A simplistic jumpsuit meant to be worn under heavy armor. Bears the insignia of the Al'Seik family.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/FourFamilies/Uniform/draugruniform.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/FourFamilies/Uniform/draugruniform.rsi
+  - type: StaticPrice
+    price: 100
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitBeltrunner
+  name: beltrunner's leisurewear
+  description: Casual clothes for casual businessmen. Most commonly attributed to bounty hunters, beltrunners, and smugglers.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/FourFamilies/Uniform/izdaribeltrunner.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/FourFamilies/Uniform/izdaribeltrunner.rsi
+  - type: StaticPrice
+    price: 100
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitAntiquarianFamilies
+  name: antiquarian's business suit
+  description: Serious clothes for serious businessmen. Spun from true Terran mothsilk. People would pay several fortunes just for the fabric.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/FourFamilies/Uniform/izdariantiquarian.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/FourFamilies/Uniform/izdariantiquarian.rsi
+  - type: StaticPrice
+    price: 5000
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitBodysuit
+  name: preachers clericals
+  description: An uncomfortable jumpsuit made from natural fibers. Commonly worn by tribal preachers.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/FourFamilies/Uniform/bodysuit.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/FourFamilies/Uniform/bodysuit.rsi
+  - type: StaticPrice
+    price: 100

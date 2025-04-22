@@ -1,0 +1,62 @@
+﻿- type: decal
+  id: CMM1
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Crescent/Decals/cmmlogo.rsi
+    state: cmm1
+
+- type: decal
+  id: CMM2
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Crescent/Decals/cmmlogo.rsi
+    state: cmm2
+
+- type: decal
+  id: CMM3
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Crescent/Decals/cmmlogo.rsi
+    state: cmm3
+
+- type: decal
+  id: CMM4
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Crescent/Decals/cmmlogo.rsi
+    state: cmm4
+
+- type: decal
+  id: CMM5
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Crescent/Decals/cmmlogo.rsi
+    state: cmm5
+
+- type: decal
+  id: CMM6
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Crescent/Decals/cmmlogo.rsi
+    state: cmm6
+
+- type: decal
+  id: CMM7
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Crescent/Decals/cmmlogo.rsi
+    state: cmm7
+
+- type: decal
+  id: CMM8
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Crescent/Decals/cmmlogo.rsi
+    state: cmm8
+
+- type: decal
+  id: CMM9
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Crescent/Decals/cmmlogo.rsi
+    state: cmm9

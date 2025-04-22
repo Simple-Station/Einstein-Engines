@@ -1,0 +1,43 @@
+- type: job
+  id: InfanteerNCSP
+  name: job-name-infanteer
+  description: job-description-infanteer
+  playTimeTracker: JobInfanteerNCSP
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 8000
+    - !type:FactionRequirement
+      factionID: "TFSC"
+  weight: 20
+  startingGear: InfanteerGear
+  alwaysUseSpawner: true
+  icon: "JobIconSyndiePrivateer"
+  requireAdminNotify: false
+  supervisors: You answer to the Station Administrator and Gorlex Security Lieutenants
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-pfc
+  access:
+  - Command
+  - Maintenance
+  - SyndicateBasic
+  - SyndicateGorlex
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: InfanteerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSyndicate
+    shoes: ClothingShoesBootsCombat
+    head: ClothingHeadHelmetSyndicateBasic
+    id: InfanteerPDA
+    ears: ClothingHeadsetNCSP
+    belt: ClothingBeltSyndicateWebbing
+    pocket1: WeaponPistolHKUSP
+    gloves: ClothingHandsGlovesFingerless

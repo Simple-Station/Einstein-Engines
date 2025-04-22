@@ -1,0 +1,34 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Paracelsus
+  name: ICM Paracelsus
+  description: An entry-level medical corvette.
+  price: 39000
+  category: Small
+  group: Civilian
+  shuttlePath: /Maps/_Crescent/Shuttles/Civilian/paracelsus.yml
+
+- type: gameMap
+  id: Paracelsus
+  mapName: 'ICM Paracelsus'
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/paracelsus.yml
+  minPlayers: 0
+  stations:
+    Paracelsus:
+      stationProto: StandardCrescentCivilianVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'ICM Paracelsus {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-medical
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            ChiefMedicalOfficer: [ 1, 1 ]
+            Paramedic: [ 2, 2 ]
+            StationEngineer: [ 1, 1 ]

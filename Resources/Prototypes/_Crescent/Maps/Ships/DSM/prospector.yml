@@ -1,0 +1,29 @@
+- type: vessel
+  id: Prospector
+  name: DSM Prospector
+  description: An Imperial salvaging and mining barge with a large cargohold.
+  price: 75000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/DSM/prospector.yml
+
+- type: gameMap
+  id: Prospector
+  mapName: 'DSM Prospector'
+  mapPath: /Maps/_Crescent/Shuttles/DSM/prospector.yml
+  minPlayers: 0
+  stations:
+    Prospector:
+      stationProto: StandardCrescentCivilianVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Prospector {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-salvage
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            FreeholderDSM: [ 3, 3 ]

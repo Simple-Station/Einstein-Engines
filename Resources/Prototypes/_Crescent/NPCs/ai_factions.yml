@@ -1,0 +1,113 @@
+#
+
+- type: npcFaction
+  id: HostileNPCWorld
+  hostile:
+    - SRMFighter
+    - NCWLFighter
+    - DSMFighter
+    - SHIFighter
+    - CMMFighter
+    - NCSPFighter
+    - NCSPWarship
+    - NCWLWarship
+    - CMMWarship
+    - DSMWarship
+    - SHIWarship
+    - SRMWarship
+
+#
+
+- type: npcFaction
+  id: NCWLFighter
+  hostile:
+    - CMMFighter
+    - NCSPFighter
+    - SRMFighter
+    - DSMFighter
+
+- type: npcFaction
+  id: SRMFighter
+  hostile:
+    - NCSPFighter
+    - NCWLFighter
+    - DSMFighter
+    - SHIFighter
+    - CMMFighter
+
+- type: npcFaction
+  id: NCSPFighter
+  hostile:
+    - SRMFighter
+    - NCWLFighter
+    - DSMFighter
+    - SHIFighter
+    - CMMFighter
+
+- type: npcFaction
+  id: CMMFighter
+  hostile:
+    - NCSPFighter
+    - SRMFighter
+    - NCWLFighter
+
+- type: npcFaction
+  id: SHIFighter
+  hostile:
+    - NCSPFighter
+    - SRMFighter
+
+- type: npcFaction
+  id: DSMFighter
+  hostile:
+    - SRMFighter
+    - NCSPFighter
+    - NCWLFighter
+
+#
+
+- type: npcFaction
+  id: NCWLWarship
+  hostile:
+    - CMMWarship
+    - SRMWarship
+    - NCSPWarship
+    - DSMWarship
+
+- type: npcFaction
+  id: SRMWarship
+  hostile:
+    - NCSPWarship
+    - NCWLWarship
+    - CMMWarship
+    - DSMWarship
+    - SHIWarship
+
+- type: npcFaction
+  id: NCSPWarship
+  hostile:
+    - SRMWarship
+    - NCWLWarship
+    - CMMWarship
+    - DSMWarship
+    - SHIWarship
+
+- type: npcFaction
+  id: CMMWarship
+  hostile:
+    - NCSPWarship
+    - NCWLWarship
+    - SRMWarship
+
+- type: npcFaction
+  id: DSMWarship
+  hostile:
+    - SRMWarship
+    - NCWLWarship
+    - NCSPWarship
+
+- type: npcFaction
+  id: SHIWarship
+  hostile:
+    - NCSPWarship
+    - SRMWarship

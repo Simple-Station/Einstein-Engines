@@ -1,0 +1,91 @@
+- type: latheRecipe
+  id: ArmorPlateSteelCraft
+  result: ArmorPlateSteel
+  completetime: 1
+  materials:
+    Steel: 750
+
+- type: latheRecipe
+  id: ArmorPlatePlasteelCraft
+  result: ArmorPlatePlasteel
+  completetime: 1
+  materials:
+    Steel: 500
+    Plasma: 500
+
+- type: latheRecipe
+  id: ArmorPlateNanoPolymerCraft
+  result: ArmorPlateNanoPolymer
+  completetime: 1
+  materials:
+    Cloth: 500
+    Plasma: 250
+
+- type: latheRecipe
+  id: ArmorPlateCeramicCraft
+  result: ArmorPlateCeramic
+  completetime: 1
+  materials:
+    Steel: 250
+    Plasma: 250
+    Glass: 400
+
+- type: latheRecipe
+  id: ArmorPlateDurathreadCraft
+  result: ArmorPlateDurathread
+  completetime: 1
+  materials:
+    Steel: 250
+    Cloth: 500
+    Plastic: 500
+    
+- type: latheRecipe
+  id: ArmorPlatePlasmGlassaCraft # no sprite
+  result: ArmorPlatePlasmGlassa
+  completetime: 1
+  materials:
+    Steel: 250
+    Plasma: 300
+    Glass: 300
+        
+- type: latheRecipe
+  id: ArmorPlatePlasticCraft
+  result: ArmorPlatePlastic
+  completetime: 1
+  materials:
+    Plastic: 750
+            
+- type: latheRecipe
+  id: ArmorPlateHomelandCraft
+  result: ArmorPlateHomeland
+  completetime: 1
+  materials:
+    Steel: 250
+    Plasma: 300
+    Silver: 100
+                
+- type: latheRecipe
+  id: ArmorPlateKevlarCraft
+  result: ArmorPlateKevlar
+  completetime: 1
+  materials:
+    Steel: 250
+    Cloth: 500
+                    
+- type: latheRecipe
+  id: ArmorPlatePlasteelEncasedKevlarCraft
+  result: ArmorPlatePlasteelEncasedKevlar
+  completetime: 1
+  materials:
+    Steel: 250
+    Plasma: 250
+    Cloth: 500
+                        
+- type: latheRecipe
+  id: ArmorPlateNanoCeramicCraft
+  result: ArmorPlateNanoCeramic
+  completetime: 1
+  materials:
+    Steel: 250
+    Plasma: 250
+    Glass: 400

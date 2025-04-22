@@ -1,0 +1,51 @@
+- type: entity
+  name: NCWL command stamp
+  parent: RubberStampBase
+  id: RubberStampNCWLCommand
+  suffix: DO NOT MAP
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-ncwl
+    stampedColor: "#ffd580"
+    stampState: "paper_stamp-ncwl"
+  - type: Sprite
+    state: stampncwl
+
+- type: entity
+  name: imperial rubber stamp
+  parent: RubberStampBase
+  id: RubberStampEmpire
+  suffix: DO NOT MAP
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-empire
+    stampedColor: "#432d51"
+    stampState: "paper_stamp-empire"
+  - type: Sprite
+    state: empire
+
+- type: entity
+  name: overseer's rubber stamp
+  parent: RubberStampBase
+  id: RubberStampHunters
+  suffix: DO NOT MAP
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-hunters
+    stampedColor: "#4a6741"
+    stampState: "paper_stamp-hunter"
+  - type: Sprite
+    state: empire
+
+- type: entity
+  name: executive's rubber stamp
+  parent: RubberStampBase
+  id: RubberStampShinohara
+  suffix: DO NOT MAP
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-shinohara
+    stampedColor: "#bb9042"
+    stampState: "paper_stamp-shi"
+  - type: Sprite
+    state: stamp-shi

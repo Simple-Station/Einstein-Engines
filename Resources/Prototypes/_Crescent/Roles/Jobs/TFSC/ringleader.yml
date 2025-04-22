@@ -1,0 +1,77 @@
+- type: job
+  id: RingleaderNCSP
+  name: job-name-ringleader
+  description: job-description-ringleader
+  playTimeTracker: JobRingleaderNCSP
+  requirements:
+    - !type:WhitelistRequirement
+    - !type:FactionRequirement
+      factionID: "TFSC"
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-synadmin
+  weight: 55
+  startingGear: RingleaderGear
+  alwaysUseSpawner: true
+  icon: "JobIconSyndieRingleader"
+  requireAdminNotify: true
+  supervisors: You're the defacto Commander of the Taypani Free Stations, wheter by charm or by firepower. You answer to money and your heart's desires.
+  canBeAntag: false
+  access:
+
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - Service
+  - External
+  - SyndicateBasic
+  - SyndicateCommand
+  - SyndicateRingleader
+  - SyndicateFunds
+  - SyndicateGorlex
+
+- type: startingGear
+  id: RingleaderGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSyndicateOfficer
+    back: ClothingBackpackSatchelLeatherFilledNCWLAdministrator
+    shoes: ClothingShoesBootsCombat
+    head: ClothingHeadHatSyndicateOfficer
+    outerClothing: ClothingOuterArmorSyndicateRingmaster
+    id: RingleaderPDA
+    ears: ClothingHeadsetNCSP
+    belt: WeaponRevolverPythonAP
+    gloves: ClothingHandsGlovesFingerless
+    pocket1: AccesElevatorGSC

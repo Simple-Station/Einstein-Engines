@@ -1,0 +1,19 @@
+- type: loadout
+  id: FreeholderDSMClothingBackpackDSMFilledFreeholder
+  equipment: FreeholderDSMClothingBackpackDSMFilledFreeholder
+  price: 0
+
+- type: startingGear
+  id: FreeholderDSMClothingBackpackDSMFilledFreeholder
+  equipment:
+    back: ClothingBackpackDSMFilledFreeholder
+
+- type: loadout
+  id: FreeholderDSMClothingBackpackDSMSatchelFilledFreeholder
+  equipment: FreeholderDSMClothingBackpackDSMSatchelFilledFreeholder
+  price: 0
+
+- type: startingGear
+  id: FreeholderDSMClothingBackpackDSMSatchelFilledFreeholder
+  equipment:
+    back: ClothingBackpackDSMSatchelFilledFreeholder

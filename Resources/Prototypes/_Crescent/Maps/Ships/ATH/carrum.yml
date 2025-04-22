@@ -1,0 +1,28 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Carrum
+  name: ATH Carrum
+  description: A light Authoritat torpedo bomber, oft deployed against larger targets.
+  price: 17500
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/ATH/carrum.yml
+
+- type: gameMap
+  id: Carrum
+  mapName: 'Carrum'
+  mapPath: /Maps/_Crescent/Shuttles/ATH/carrum.yml
+  minPlayers: 0
+  stations:
+    Carrum:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Carrum {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter

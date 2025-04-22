@@ -1,0 +1,163 @@
+- type: ambientMusic
+  id: CombatMode
+  sound:
+    collection: AmbienceCombatMode
+  rules: InCombatMode
+  priority: 4000
+
+- type: rules
+  id: InCombatMode
+  rules:
+    - !type:InCombatModeRule
+
+- type: soundCollection
+  id: AmbienceCombatMode
+  files:
+    - /Audio/_Crescent/Ambience/CombatMode/awakening.ogg
+
+#example
+- type: ambientMusic
+  id: TestBiome
+  sound:
+    collection: AmbienceTestBiome
+  rules: InTestBiome
+  priority: 2000
+  fadeIn: true
+
+- type: rules
+  id: InTestBiome
+  rules:
+    - !type:InSpaceBiomeRule
+      biome: test
+
+- type: soundCollection
+  id: AmbienceTestBiome
+  files:
+   - /Audio/Jukebox/sector11.ogg
+
+#imperial
+
+- type: ambientMusic
+  id: ImperialBiome
+  sound:
+    collection: ImperialBiome
+  rules: InImperialAirspace
+  priority: 2000
+  fadeIn: true
+
+- type: rules
+  id: InImperialAirspace
+  rules:
+    - !type:InSpaceBiomeRule
+      biome: imperialbiome
+
+- type: soundCollection
+  id: ImperialBiome
+  files:
+   - /Audio/_Crescent/duduk.ogg
+
+#hunter
+
+- type: ambientMusic
+  id: HunterBiome
+  sound:
+    collection: HunterBiome
+  rules: InHunterAirspace
+  priority: 2000
+  fadeIn: true
+
+- type: rules
+  id: InHunterAirspace
+  rules:
+    - !type:InSpaceBiomeRule
+      biome: hunterbiome
+
+- type: soundCollection
+  id: HunterBiome
+  files:
+   - /Audio/_Crescent/ludd.ogg
+
+#syndie
+
+- type: ambientMusic
+  id: SyndieBiome
+  sound:
+    collection: SyndicateBiome
+  rules: InSyndicateAirspace
+  priority: 2000
+  fadeIn: true
+
+- type: rules
+  id: InSyndicateAirspace
+  rules:
+    - !type:InSpaceBiomeRule
+      biome: syndicatebiome
+
+- type: soundCollection
+  id: SyndicateBiome
+  files:
+   - /Audio/_Crescent/syndies.ogg
+
+#corpie
+
+- type: ambientMusic
+  id: CorpieBiome
+  sound:
+    collection: CorpieBiome
+  rules: InCorpieAirspace
+  priority: 2000
+  fadeIn: true
+
+- type: rules
+  id: InCorpieAirspace
+  rules:
+    - !type:InSpaceBiomeRule
+      biome: corpiebiome
+
+- type: soundCollection
+  id: CorpieBiome
+  files:
+   - /Audio/_Crescent/the_insulindan_miracle.ogg
+
+#wilds
+
+- type: ambientMusic
+  id: WildBiome
+  sound:
+    collection: WildBiome
+  rules: InWildAirspace
+  priority: 2000
+  fadeIn: true
+
+- type: rules
+  id: InWildAirspace
+  rules:
+    - !type:InSpaceBiomeRule
+      biome: wildbiome
+
+- type: soundCollection
+  id: WildBiome
+  files:
+   - /Audio/_Crescent/wilds.ogg
+
+#deepwilds
+
+- type: ambientMusic
+  id: DeepwildBiome
+  sound:
+    collection: WildBiome
+  rules: InDeepwildAirspace
+  priority: 2000
+  fadeIn: true
+
+- type: rules
+  id: InDeepwildAirspace
+  rules:
+    - !type:InSpaceBiomeRule
+      biome: deepwildbiome
+
+- type: soundCollection
+  id: DeepwildBiome
+  files:
+   - /Audio/_Crescent/the_deepwilds.ogg
+

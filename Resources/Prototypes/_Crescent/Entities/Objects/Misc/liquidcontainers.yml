@@ -1,0 +1,103 @@
+- type: entity
+  name: fuel canister
+  parent: BaseItem
+  id: FuelCan
+  categories: [ HideSpawnMenu ]
+  description: A metallic container that contains fuel.
+  components:
+    - type: SolutionContainerManager
+      solutions:
+        beaker:
+          maxVol: 200
+    - type: Sprite
+      sprite: _Crescent/Objects/Misc/fuelcan.rsi
+      layers:
+        - state: jug
+        - state: jug1
+          map: [ "enum.SolutionContainerLayers.Fill" ]
+          visible: false
+    - type: Item
+      size: Normal
+      sprite: _Crescent/Objects/Misc/fuelcan.rsi
+    - type: MixableSolution
+      solution: beaker
+    - type: RefillableSolution
+      solution: beaker
+    - type: DrainableSolution
+      solution: beaker
+    - type: ExaminableSolution
+      solution: beaker
+    - type: DrawableSolution
+      solution: beaker
+    - type: InjectableSolution
+      solution: beaker
+    - type: SolutionTransfer
+      canChangeTransferAmount: true
+    - type: SolutionItemStatus
+      solution: beaker
+    - type: UserInterface
+      interfaces:
+        enum.TransferAmountUiKey.Key:
+          type: TransferAmountBoundUserInterface
+    - type: Drink
+      solution: beaker
+    - type: Spillable
+      solution: beaker
+    - type: Appearance
+    - type: SolutionContainerVisuals
+      maxFillLevels: 6
+      fillBaseName: jug
+    - type: StaticPrice
+      price: 10
+    - type: Damageable
+      damageContainer: Inorganic
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 200
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 20
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
+            params:
+              volume: -4
+        - !type:SpillBehavior { }
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            SheetPlastic1:
+              min: 0
+              max: 1
+          transferForensics: true
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - type: Label
+      originalName: jug
+    - type: Tag
+      tags:
+      - ChemDispensable
+    - type: TrashOnSolutionEmpty # Frontier
+      solution: beaker # Frontier
+
+- type: entity
+  parent: FuelCan
+  name: boriatic fuel canister
+  id: JugBoriaticFuel
+  components:
+    - type: Label
+      currentLabel: reagent-name-Boriatic-fuel
+    - type: SolutionContainerManager
+      solutions:
+        beaker:
+          reagents:
+            - ReagentId: BoriaticFuel
+              Quantity: 200
+    - type: StaticPrice
+      price: 250
+           

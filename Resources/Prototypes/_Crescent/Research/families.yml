@@ -1,0 +1,128 @@
+- type: technology
+  id: FamiliesClothes
+  name: research-technology-clothwork
+  icon:
+    sprite: _Crescent/Clothing/FourFamilies/OuterClothing/acolyterobes.rsi
+    state: icon
+  discipline: Families
+  tier: 1
+  cost: 500
+  recipeUnlocks:
+  - ClothingUniformJumpsuitTechminer
+  - ClothingUniformJumpsuitTinkerer
+  - ClothingUniformJumpsuitHangarTechnician
+  - ClothingUniformJumpsuitServile
+  - ClothingUniformJumpsuitServile
+  - ClothingUniformJumpsuitDraugr
+  - ClothingUniformJumpsuitBeltrunner
+  - ClothingUniformJumpsuitAntiquarianFamilies
+  - ClothingUniformJumpsuitBodysuit
+  - ClothingOuterArmorServileAlseik
+  - ClothingOuterArmorDraugrAlseik
+  - ClothingOuterArmorAcolyteRobes
+  - ClothingOuterArmorThukkerEngiVest
+
+- type: technology
+  id: FamiliesEVA
+  name: research-technology-evafam
+  icon:
+    sprite: _Crescent/Clothing/FourFamilies/OuterClothing/beltrunner.rsi
+    state: icon
+  discipline: Families
+  tier: 1
+  cost: 1250
+  recipeUnlocks:
+  - ClothingHeadHelmetIzdariEVA
+  - ClothingOuterBeltrunnerEVA
+
+- type: technology
+  id: FamiliesHardsuit
+  name: research-technology-armorsfam
+  icon:
+    sprite: _Crescent/Clothing/FourFamilies/OuterClothing/beltrunner.rsi
+    state: icon
+  discipline: Families
+  tier: 1
+  cost: 1250
+  recipeUnlocks:
+  - ClothingOuterHardsuitDraugr
+  - ClothingOuterHardsuitArabet
+  - ClothingOuterHardsuitIzdari
+
+- type: technology
+  id: FamiliesSvalinn
+  name: research-technology-lasergun
+  icon:
+    sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
+    state: icon
+  discipline: Families
+  tier: 1
+  cost: 2500
+  recipeUnlocks:
+  - WeaponLaserSvalinn
+
+- type: technology
+  id: FamiliesMelee
+  name: research-technology-meleefam
+  icon:
+    sprite: _Crescent/Objects/Weapons/plashammer.rsi
+    state: icon
+  discipline: Families
+  tier: 2
+  cost: 5000
+  recipeUnlocks:
+  - PlasHalberd
+  - EnergySwordFamilies
+  - Plashammer
+
+- type: technology
+  id: FamiliesXray
+  name: research-technology-xrayfam	
+  icon:
+    sprite: Objects/Weapons/Guns/Battery/xray.rsi
+    state: icon
+  discipline: Families
+  tier: 2
+  cost: 5000
+  recipeUnlocks:
+  - WeaponXrayCannonFam
+
+- type: technology
+  id: FamiliesTesla
+  name: research-technology-tesla	
+  icon:
+    sprite: Objects/Weapons/Guns/Battery/tesla_gun.rsi
+    state: base
+  discipline: Families
+  tier: 2
+  cost: 7500
+  recipeUnlocks:
+  - WeaponTeslaGunFam
+
+- type: technology
+  id: FamiliesPulse
+  name: research-technology-pulsefam	
+  icon:
+    sprite: Objects/Weapons/Guns/Battery/pulse_pistol.rsi
+    state: icon
+  discipline: Families
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - WeaponPulsePistolFam
+
+- type: technology
+  id: FamiliesCompakt
+  name: research-technology-compakt
+  icon:
+    sprite: Objects/Devices/flatpack.rsi
+    state: ame-part
+  discipline: Families
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - CompaktFlatpack
+  - LensPlasma
+  - LensInfrared
+  - LensMicrowave
+  - MediumEnergyHardpointFlatpack

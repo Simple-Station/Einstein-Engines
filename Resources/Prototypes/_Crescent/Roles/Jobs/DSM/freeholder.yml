@@ -1,0 +1,30 @@
+- type: job
+  id: FreeholderDSM
+  name: job-name-freeholder
+  description: job-description-freeholder
+  playTimeTracker: JobFreeholderDSM
+  weight: 18
+  startingGear: FreeholderGear
+  requirements:
+    - !type:FactionRequirement
+        factionID: "DSM"
+  alwaysUseSpawner: true
+  icon: "JobIconImperialFreeholder"
+  requireAdminNotify: false
+  supervisors: job-supervisors-imperial 
+  canBeAntag: false
+  access:
+  - Command
+  - Maintenance
+  - Empire
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: FreeholderGear
+  equipment:
+    id: FreeholderPDA
+    ears: ClothingHeadsetEmpireCiv
+    pocket1: ImperialPassportBareLegit

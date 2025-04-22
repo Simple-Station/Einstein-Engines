@@ -1,0 +1,153 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatDraugr
+  name: draugr's battle-mantle
+  description: A head mantle and wrap for a decorated tribal warrior.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/FourFamilies/Head/draugrhead.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/FourFamilies/Head/draugrhead.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+  - type: IdentityBlocker
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatServile
+  name: servile's headwrap
+  description: A headwrap for a fledgling tribal warrior.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/FourFamilies/Head/servilewrap.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/FourFamilies/Head/servilewrap.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+  - type: IdentityBlocker
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitDraugr
+  categories: [ HideSpawnMenu ]
+  name: draugr's exohelm
+  description: Spaceworthy protection for your fragile skull.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/FourFamilies/Head/draugrhelmet.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/FourFamilies/Head/draugrhelmet.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: BreathMask
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9
+        Caustic: 0.9
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitIzdari
+  categories: [ HideSpawnMenu ]
+  name: beltrunner's hardsuit helmet
+  description: Spaceworthy protection for your fragile skull.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/FourFamilies/Head/izdarihelmet.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/FourFamilies/Head/izdarihelmet.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: BreathMask
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9
+        Caustic: 0.9
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitThukker
+  categories: [ HideSpawnMenu ]
+  name: thukker's engineering hardsuit helmet
+  description: Spaceworthy protection for your fragile skull.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/FourFamilies/Head/thukkerhelmet.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/FourFamilies/Head/thukkerhelmet.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: BreathMask
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9
+        Caustic: 0.9
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitArabet
+  categories: [ HideSpawnMenu ]
+  name: arabet's hardsuit helmet
+  description: Spaceworthy protection for your fragile skull.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/FourFamilies/Head/prophetmask.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/FourFamilies/Head/prophetmask.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: BreathMask
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9
+        Caustic: 0.9
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+  - type: IdentityBlocker
+
+- type: entity
+  parent: ClothingHeadEVAHelmetBase
+  id: ClothingHeadHelmetIzdariEVA
+  name: beltrunner's softsuit helmet
+  description: An Izdari beltrunner's EVA helmet.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Crescent/Clothing/FourFamilies/Head/beltrunner.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/FourFamilies/Head/beltrunner.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+  - type: IdentityBlocker

@@ -1,0 +1,41 @@
+- type: job
+  id: MinutemanCMM
+  name: job-name-minuteman
+  description: job-description-minuteman
+  playTimeTracker: JobMinutemanCMM
+  weight: 26
+  startingGear: MinutemanGear
+  requirements:
+  - !type:FactionRequirement
+      factionID: "TSP"
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-minuteman
+  alwaysUseSpawner: true
+  icon: "JobIconMinuteman"
+  requireAdminNotify: false
+  supervisors: You answer to your Colonial Marshal , Deputy Marshal and Watchmaster.
+  canBeAntag: false
+  access:
+  - Command
+  - Maintenance
+  - Minuteman
+  - MinutemanPrison
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: MinutemanGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCMM
+    shoes: ClothingShoesBootsCombat
+    head: ClothingHeadHatMinuteman
+    gloves: ClothingHandsGlovesCombat
+    belt: WeaponPistolHKUSP
+    id: MinutemanPDA
+    ears: ClothingHeadsetCMM
+    neck: ClothingNeckScarfCMMCloak
+    outerClothing: ClothingOuterArmorCMM

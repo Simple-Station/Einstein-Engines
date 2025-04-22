@@ -1,0 +1,517 @@
+# YAMLFIX: You can't give material stacks static prices without messing stuff up and failing tests. The material values may need to be recalibrated.
+- type: entity
+  parent: OreBase
+  id: SteelScrapOre
+  name: scrapsteel shards
+  description: Scraps of steel blasted off larger structures.
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: SteelScrapOre
+  - type: Tag
+    tags:
+    - RawMaterial
+  - type: Sprite
+    state: icon-scrap
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      ScrapSteel: 500
+
+- type: entity
+  id: SteelScrap1
+  parent: SteelScrapOre
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  id: SteelScrap3
+  parent: SteelScrapOre
+  suffix: Three
+  components:
+    - type: Stack
+      count: 3
+
+- type: entity
+  id: SteelScrap8
+  parent: SteelScrapOre
+  suffix: Eight
+  components:
+    - type: Stack
+      count: 8
+
+
+- type: entity
+  id: SteelScrap16
+  parent: SteelScrapOre
+  suffix: Sixteen
+  components:
+    - type: Stack
+      count: 16
+
+
+- type: entity
+  id: SteelScrap25
+  parent: SteelScrapOre
+  suffix: Twenty Five
+  components:
+    - type: Stack
+      count: 25
+
+#tit
+
+- type: entity
+  parent: OreBase
+  id: TitaniumScrapOre
+  name: titanium scrap
+  description: Pile of titanium scrap, blasted off a larger structure.
+  suffix: Full
+  components:
+  - type: Tag
+    tags:
+    - RawMaterial
+  - type: Stack
+    stackType: TitaniumScrapOre
+  - type: Sprite
+    state: icon-titaniumscrap
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      ScrapTitanium: 500
+
+- type: entity
+  id: TitaniumScrap1
+  parent: TitaniumScrapOre
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  id: TitaniumScrap6
+  parent: TitaniumScrapOre
+  suffix: Single
+  components:
+    - type: Stack
+      count: 6
+
+- type: entity
+  id: TitaniumScrap17
+  parent: TitaniumScrapOre
+  suffix: Single
+  components:
+    - type: Stack
+      count: 17
+
+- type: entity
+  id: TitaniumScrap25
+  parent: TitaniumScrapOre
+  suffix: Single
+  components:
+    - type: Stack
+      count: 25
+
+#single-use scrap
+
+- type: entity
+  parent: BaseItem
+  id: ScrapCircuit
+  name: destroyed electronics
+  description: A pile of scrap electronics, ripped out of a larger machine.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/scrapcircuit.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  parent: BaseItem
+  id: ScrapPlasma
+  name: destroyed plasma pump
+  description: A pile of scrap plasma, ripped out of a larger machine.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/scraplasma.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 325
+
+- type: entity
+  parent: BaseItem
+  id: ScrapComponent
+  name: ruined machine components
+  description: Damaged machine parts, half-operational.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/scrapmachinery.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseItem
+  id: ScrapUranium
+  name: spent uranium cell
+  description: A spent uranium cell, discarded. May still be of some use to scrappers.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/scrapuranium.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 850
+
+- type: entity
+  parent: BaseItem
+  id: ScrapBluespace
+  name: damaged HFCA circuit
+  description: A damaged HFCA unit with a relatively intact bluespace core. A priceless relic.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/scrapbluespace.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 3500
+  - type: Contraband
+
+- type: entity
+  parent: BaseItem
+  id: GammaCore
+  name: gamma-class artifical intelligence core
+  description: A scuffed artifical sub-intelligence core ripped from a droneship's innards. This one is a Gamma class intelligence, possessing child-like emotional intelligence, but highly advanced in analytics. It seems to refuse to communicate with you.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/ai_core.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 50000
+  - type: Contraband
+  - type: Input
+    context: human
+  - type: BlockMovement
+  - type: ToggleableGhostRole
+    examineTextMindPresent: positronic-brain-installed
+    examineTextMindSearching: positronic-brain-still-searching
+    examineTextNoMind: positronic-brain-off
+    beginSearchingText: positronic-brain-searching
+    roleName: positronic-brain-role-name
+    roleDescription: positronic-brain-role-description
+    wipeVerbText: positronic-brain-wipe-device-verb-text
+    wipeVerbPopup: positronic-brain-wiped-device
+    stopSearchVerbText: positronic-brain-stop-searching-verb-text
+    stopSearchVerbPopup: positronic-brain-stopped-searching
+  - type: Examiner
+  - type: BorgBrain
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+  - type: NameIdentifier
+    group: PositronicBrain
+  - type: DoAfter
+  - type: Actions
+  - type: TypingIndicator
+    proto: robot
+  - type: Speech
+    speechSounds: Pai
+  - type: MobState
+    allowedStates:
+    - Alive
+  - type: Appearance
+  - type: Tag
+    tags:
+    - CannotSuicide
+
+#refined scrap
+
+- type: entity
+  parent: OreBase
+  id: RefinedSteelScrapOre
+  name: refined steel scrap
+  description: Smelted and repaired bits of steel scrap.
+  suffix: Full
+  components:
+  - type: Tag
+    tags:
+    - RawMaterial
+  - type: Stack
+    stackType: RefinedSteelScrapOre
+  - type: Sprite
+    state: icon-refinedscrap
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      RefinedScrapSteel: 500
+
+- type: entity
+  id: RefinedSteelScrap1
+  parent: RefinedSteelScrapOre
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  parent: OreBase
+  id: RefinedTitaniumScrapOre
+  name: refined titanium scrap
+  description: Smelted and repaired bits of titanium scrap.
+  suffix: Full
+  components:
+  - type: Tag
+    tags:
+    - RawMaterial
+  - type: Stack
+    stackType: RefinedTitaniumScrapOre
+  - type: Sprite
+    state: icon-titta
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      RefinedScrapTitanium: 500
+
+- type: entity
+  id: RefinedTitaniumScrap1
+  parent: RefinedTitaniumScrapOre
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+
+#drugmaking stuff
+
+- type: Tag
+  id: DrugComponent
+
+- type: entity
+  parent: OreBase
+  id: GarbageOre
+  name: industrial garbage
+  description: Loosely compacted industrial trash.
+  suffix: Full
+  components:
+  - type: Tag
+    tags:
+    - RawMaterial
+    - DrugComponent
+  - type: Stack
+    stackType: GarbageOre
+  - type: Sprite
+    state: garbage
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      Garbage: 500
+
+- type: entity
+  id: GarbageOre1
+  parent: GarbageOre
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  id: GarbageOre5
+  parent: GarbageOre
+  suffix: Five
+  components:
+    - type: Stack
+      count: 5
+
+- type: entity
+  id: GarbageOre10
+  parent: GarbageOre
+  suffix: Ten
+  components:
+    - type: Stack
+      count: 10
+
+- type: entity
+  id: GarbageOre25
+  parent: GarbageOre
+  suffix: Twenty Five
+  components:
+    - type: Stack
+      count: 25
+
+
+- type: entity
+  parent: OreBase
+  id: RefinedGarbageOre
+  name: compacted industrial trash
+  description: Compacted, cleaned industrial residue.
+  suffix: Full
+  components:
+  - type: Tag
+    tags:
+    - DrugComponent
+  - type: Stack
+    stackType: RefinedGarbageOre
+  - type: Sprite
+    state: refinedgarbage
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      RefinedGarbage: 500
+
+- type: entity
+  id: RefinedGarbageOre1
+  parent: RefinedGarbageOre
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  parent: OreBase
+  id: PlasmaIsotope
+  name: plasma-9 isotope canister
+  description: A canister of a volatile chemical precursor.
+  suffix: Full
+  components:
+  - type: Tag
+    tags:
+    - DrugComponent
+  - type: Stack
+    stackType: PlasmaIsotope
+  - type: Sprite
+    state: plasmaisotope
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      PlasmaIsotope: 500
+
+- type: entity
+  id: PlasmaIsotope1
+  parent: PlasmaIsotope
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  id: PlasmaIsotope5
+  parent: PlasmaIsotope
+  suffix: Five
+  components:
+    - type: Stack
+      count: 5
+
+- type: entity
+  parent: OreBase
+  id: MechaniteCanister
+  name: inert mechanite canister
+  description: A canister of a inert medical mechanites.
+  suffix: Full
+  components:
+  - type: Tag
+    tags:
+    - DrugComponent
+  - type: Stack
+    stackType: MechaniteCanister
+  - type: Sprite
+    state: mechanites
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      Mechanites: 500
+
+- type: entity
+  id: MechaniteCanister1
+  parent: MechaniteCanister
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  id: MechaniteCanister5
+  parent: MechaniteCanister
+  suffix: Five
+  components:
+    - type: Stack
+      count: 5
+
+- type: entity
+  parent: OreBase
+  id: GalineCanister
+  name: pressurized galine-5 canister
+  description: A canister of volatile, pressurized gases, most commonly used in unregulated narcotics.
+  suffix: Full
+  components:
+  - type: Tag
+    tags:
+    - DrugComponent
+  - type: Stack
+    stackType: GalineCanister
+  - type: Sprite
+    state: galine5
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      Galine: 500
+
+- type: entity
+  id: GalineCanister1
+  parent: GalineCanister
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  id: GalineCanister5
+  parent: GalineCanister
+  suffix: Five
+  components:
+    - type: Stack
+      count: 5
+
+- type: entity
+  parent: OreBase
+  id: DeactivatedPhoronBottle
+  name: bottle of liquid deactivated phoron
+  description: A glass bottle of deactivated phoron with medicinal uses.
+  suffix: Full
+  components:
+  - type: Tag
+    tags:
+    - DrugComponent
+  - type: Stack
+    stackType: PhoronBottle
+  - type: Sprite
+    state: deactivatedphoron
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      DeactivatedPhoron: 500
+
+- type: entity
+  id: DeactivatedPhoronBottle1
+  parent: DeactivatedPhoronBottle
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  id: DeactivatedPhoronBottle5
+  parent: DeactivatedPhoronBottle
+  suffix: Five
+  components:
+    - type: Stack
+      count: 5

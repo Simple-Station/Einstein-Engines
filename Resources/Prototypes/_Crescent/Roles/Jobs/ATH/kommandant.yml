@@ -1,0 +1,77 @@
+- type: job
+  id: KommandantATH
+  name: job-name-kommandant
+  description: job-description-kommandant
+  playTimeTracker: JobKommandantATH
+  requirements:
+    - !type:WhitelistRequirement
+    - !type:SpeciesRequirement
+      allowedOnly:
+        - Human
+    - !type:FactionRequirement
+      factionID: "ATH"
+  weight: 87
+  startingGear: KommandantGear
+  alwaysUseSpawner: true
+  icon: "JobIconKommandant"
+  requireAdminNotify: true
+  supervisors: job-supervisors-ath
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-kommandant
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - Service
+  - External
+  - Kommandant
+  - Authority
+  - AuthorityRanking
+  - Authoritymed
+  - AuthoritySupply
+
+- type: startingGear
+  id: KommandantGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAuthorityKommandant
+    back: ClothingBackpackSatchelLeatherFilledDSM
+    shoes: ClothingShoesBootsJack
+    head: ClothingHeadHatAuthorityKommandant
+    outerClothing: ClothingOuterCoatAuthorityKommandant
+    belt: ClothingBeltSheathFilled
+    id: KommandantPDA
+    ears: ClothingHeadsetAuthority

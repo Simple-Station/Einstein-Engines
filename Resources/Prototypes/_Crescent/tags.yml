@@ -1,0 +1,23 @@
+- type: Tag
+  id: OrganMaterial
+
+- type: Tag
+  id: CartridgeHeavyPistol
+
+- type: Tag
+  id: CartridgePistolSmart
+
+- type: Tag
+  id: MagazineHeavySMG
+
+- type: Tag
+  id: CartridgePistol6mm
+
+- type: Tag
+  id: MagazinePistol6mm
+
+- type: Tag
+  id: Torpedo
+
+- type: Tag
+  id: CraftMaterials

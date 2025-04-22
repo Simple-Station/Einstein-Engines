@@ -1,0 +1,35 @@
+
+- type: entity
+  parent: [ClothingBeltBase, ClothingSlotBase]
+  id: ClothingBeltSheathKhopesh
+  name: vibrokhopesh scabbard
+  description: A scabbard meant to hold a Hunter's vibrokhopesh.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SRM/Belt/sheath.rsi
+    state: sheath
+  - type: Clothing
+    sprite: _Crescent/Clothing/SRM/Belt/sheath.rsi
+  - type: Item
+    size: Ginormous
+  - type: ItemSlots
+    slots:
+      item:
+        name: SRMKhopesh
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+        whitelist:
+          tags:
+          - Khopesh
+  - type: ItemMapper
+    mapLayers:
+      sheath-sabre:
+        whitelist:
+          tags:
+          - Khopesh
+  - type: Appearance
+
+- type: Tag
+  id: Khopesh

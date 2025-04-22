@@ -1,0 +1,35 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Zhipov
+  name: NCWL Zhipov
+  description: A bulky, carrier-converted freighter and weapons platform.
+  price: 500000
+  category: Large
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCWL/zhipov.yml
+
+- type: gameMap
+  id: Zhipov
+  mapName: 'NCWL Zhipov'
+  mapPath: /Maps/_Crescent/Shuttles/NCWL/zhipov.yml
+  minPlayers: 0
+  stations:
+    Zhipov:
+      stationProto: StandardCrescentExpeditionVesselCombat
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Zhipov {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-carrier
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            KapitanNCWL: [ 1, 1 ]
+            SanitarNCWL: [ 10, 10 ]
+            ArtificerNCWL: [ 4, 4 ]
+            DoktorNCWL: [ 2, 2 ]

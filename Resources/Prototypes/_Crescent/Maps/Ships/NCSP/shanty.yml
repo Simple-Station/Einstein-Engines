@@ -1,0 +1,31 @@
+# Author Info
+# Discord: @fleshangel
+#
+- type: vessel
+  id: Shanty
+  name: NCSP Shanty
+  description: A salvaged Syndicate cargopod.
+  price: 24500
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/Shanty.yml
+
+- type: gameMap
+  id: Shanty
+  mapName: 'NCSP Shanty'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/Shanty.yml
+  minPlayers: 0
+  stations:
+    Shanty:
+      stationProto: StandardCrescentCivilianVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'SAW Shanty {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            ShipbreakerNCSP: [ 1, 1 ]

@@ -1,0 +1,34 @@
+# Author Info
+# Discord: fleshangel
+#
+- type: vessel
+  id: Hyena
+  name: NCSP Hyena
+  description: A multipurpose, FTL-capable armed corvette.
+  price: 85000
+  category: Medium
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/hyena.yml
+
+- type: gameMap
+  id: Hyena
+  mapName: 'NCSP Hyena'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/hyena.yml
+  minPlayers: 0
+  stations:
+    Hyena:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'SAW Hyena {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-utility
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            LieutenantNCSP: [ 0, 0 ]
+            InfanteerNCSP: [ 0, 0 ]
+            ShipbreakerNCSP: [ 0, 0 ]

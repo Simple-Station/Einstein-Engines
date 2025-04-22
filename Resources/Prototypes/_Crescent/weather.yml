@@ -1,0 +1,13 @@
+- type: weather
+  id: Snowstorm
+  sprite:
+    sprite: /Textures/Effects/weather.rsi
+    state: snowfall_heavy
+  sound:
+    path: /Audio/Effects/Weather/snowstorm.ogg
+    params:
+      loop: true
+      volume: -6
+  damage:
+    types:
+        Cold : 0.1

@@ -1,0 +1,29 @@
+- type: vessel
+  id: Gnosis
+  name: DSM Gnosis
+  description: An Imperial personal shuttle built for the Scribes Guild.
+  price: 19500
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/DSM/gnosis.yml
+
+- type: gameMap
+  id: Gnosis
+  mapName: 'DSM Gnosis'
+  mapPath: /Maps/_Crescent/Shuttles/DSM/gnosis.yml
+  minPlayers: 0
+  stations:
+    Gnosis:
+      stationProto: StandardCrescentCivilianVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Gnosis {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-salvage
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            ScribeDSM: [ 1, 1 ]

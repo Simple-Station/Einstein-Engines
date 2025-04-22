@@ -1,0 +1,29 @@
+﻿- type: vessel
+  id: Playerbuilt
+  name: PBS Shuttle
+  description: Player built shuttle
+  price: 1
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/rockchipper.yml
+
+- type: gameMap
+  id: Playerbuilt
+  mapName: 'PBS Shuttle'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/rockchipper.yml
+  minPlayers: 0
+  stations:
+    Playerbuilt:
+      stationProto: StandardCrescentCivilianVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'PBS {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: "Undesignated Vessel"
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            ShipbreakerNCSP: [0, 0]

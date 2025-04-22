@@ -1,0 +1,487 @@
+- type: entity
+  name: NT Lockwell MX-32 9x19mm
+  parent: BaseWeaponPistol
+  id: WeaponPistolHKUSP
+  description: A cheap, mass-produced pistol originally produced from antiquated NanoTrasen designs. Chambered in 9x19mm PSTF rounds. 
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/hkusp.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/hkusp.rsi
+  - type: Gun
+    fireRate: 3
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+  - type: StaticPrice
+    price: 750
+
+- type: entity
+  name: NCWL T-91 Quasar .327
+  parent: BaseWeaponPistol
+  id: WeaponPistolT91
+  description: A semi-automatic communard solution to self-defense issues amidst officers and heavyhitters. Ironically chambered in .327 Imperial.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/t91.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/t91.rsi
+  - type: Gun
+    minAngle: 1
+    maxAngle: 20
+    angleIncrease: 8
+    angleDecay: 9
+    fireRate: 3
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineMagnum
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineMagnum
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeMagnum
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeMagnum
+  - type: StaticPrice
+    price: 1250
+
+- type: entity
+  name: SHI M-002 Himehabu 9x19mm
+  parent: BaseWeaponPistol
+  id: WeaponPistolHimehabu
+  description: A domestic firearm produced for the Shinoahara internal market. Often seen in the hands of CSEC operatives - and sometimes independent mercenaries. Chambered in 9x19mm PSTF.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/himehabu.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/himehabu.rsi
+  - type: Gun
+    fireRate: 3
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/t91.ogg
+  - type: StaticPrice
+    price: 900
+
+- type: entity
+  name: IRM T-82 Compliance 9x19mm
+  parent: BaseWeaponPistol
+  id: WeaponPistolComplianceImperial
+  description: A standard-issue Imperial sidearm with a laser-engraved "OLYWIR ARMAMENTS" print. Full of useless flair and polish, yet performs the same as other firearms on the market. Chambered in 9x19mm.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/compliance.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/compliance.rsi
+  - type: Gun
+    fireRate: 3
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+  - type: StaticPrice
+    price: 1000
+
+- type: entity
+  name: SHI-25T Shinobi 12mm
+  parent: BaseWeaponPistol
+  id: WeaponPistolSmartpistol
+  description: A robust little thing from the SHI development team. Chambered in custom-made 12mm depleted uranium-tip rounds - packs a punch and is capable of full auto. Chambered in heavy 12mm.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/smartgun.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/smartgun.rsi
+  - type: Gun
+    minAngle: 1
+    maxAngle: 19
+    angleIncrease: 6
+    angleDecay: 7
+    fireRate: 3
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolSmartgun
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistolSmartgun
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
+  - type: StaticPrice
+    price: 3500
+
+#single use pistols
+
+
+#single use pistol base
+
+- type: entity
+  name: BasePistolOneuse
+  parent: BaseItem
+  id: BasePistolOneuse
+  description: A rooty tooty point and shooty.
+  abstract: true
+  components:
+  - type: Sprite
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+    - 0,1,0,1
+  - type: Tag
+    tags:
+    - Sidearm
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Pistols/viper.rsi
+    quickEquip: false
+    slots:
+    - suitStorage
+    - Belt
+  - type: Gun
+    fireRate: 3
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+      - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 500
+
+#single use pistols actual
+
+- type: entity
+  name: SHI-DG02 Blastpop 'Cherry Red' 6mm
+  parent: BasePistolOneuse
+  id: WeaponPistolBlastpopRed
+  description: A mass-produced, 3D printed sidearm. Unable to be reloaded after use. Just twist the plastic key on top to rack the first round, and blast away.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/disposableguns/red.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/disposableguns/red.rsi
+  - type: Gun
+    fireRate: 2
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+  - type: StaticPrice
+    price: 100
+  - type: BallisticAmmoProvider
+    proto: CartridgePistol6mm
+    capacity: 20
+    cycleable: false
+
+- type: entity
+  name: SHI-DG03 Blastpop 'Lavender Purple' 6mm
+  parent: BasePistolOneuse
+  id: WeaponPistolBlastpopPurple
+  description: A mass-produced, 3D printed sidearm. Unable to be reloaded after use. Just twist the plastic key on top to rack the first round, and blast away.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/disposableguns/purple.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/disposableguns/purple.rsi
+  - type: Gun
+    fireRate: 2
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+  - type: StaticPrice
+    price: 100
+  - type: BallisticAmmoProvider
+    proto: CartridgePistol6mm
+    capacity: 20
+    cycleable: false
+
+- type: entity
+  name: SHI-DG04 Blastpop 'Lethal Gray' 6mm
+  parent: BasePistolOneuse
+  id: WeaponPistolBlastpopGray
+  description: A mass-produced, 3D printed sidearm. Unable to be reloaded after use. Just twist the plastic key on top to rack the first round, and blast away.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/disposableguns/gray.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/disposableguns/gray.rsi
+  - type: Gun
+    fireRate: 2
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+  - type: StaticPrice
+    price: 100
+  - type: BallisticAmmoProvider
+    proto: CartridgePistol6mm
+    capacity: 20
+    cycleable: false
+
+- type: entity
+  name: SHI-DG05 Blastpop 'Poison Green' 6mm
+  parent: BasePistolOneuse
+  id: WeaponPistolBlastpopGreen
+  description: A mass-produced, 3D printed sidearm. Unable to be reloaded after use. Just twist the plastic key on top to rack the first round, and blast away.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/disposableguns/green.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/disposableguns/green.rsi
+  - type: Gun
+    fireRate: 2
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+  - type: StaticPrice
+    price: 100
+  - type: BallisticAmmoProvider
+    proto: CartridgePistol6mm
+    capacity: 20
+    cycleable: false
+
+- type: entity
+  name: SHI-DG06 Blastpop 'Royal Gold' 6mm
+  parent: BasePistolOneuse
+  id: WeaponPistolBlastpopGold
+  description: A mass-produced, 3D printed sidearm. Unable to be reloaded after use. Just twist the plastic key on top to rack the first round, and blast away.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/disposableguns/gold.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/disposableguns/gold.rsi
+  - type: Gun
+    fireRate: 2
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+  - type: StaticPrice
+    price: 100
+  - type: BallisticAmmoProvider
+    proto: CartridgePistol6mm
+    capacity: 20
+    cycleable: false
+
+- type: entity
+  name: SHI-DG07 Blastpop 'Fresh Blue' 6mm
+  parent: BasePistolOneuse
+  id: WeaponPistolBlastpopBlue
+  description: A mass-produced, 3D printed sidearm. Unable to be reloaded after use. Just twist the plastic key on top to rack the first round, and blast away.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/disposableguns/blue.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/disposableguns/blue.rsi
+  - type: Gun
+    fireRate: 2
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+  - type: StaticPrice
+    price: 100
+  - type: BallisticAmmoProvider
+    proto: CartridgePistol6mm
+    capacity: 20
+    cycleable: false
+
+- type: entity
+  name: IRM M-8 NeoVolker Tribune .45
+  parent: BaseWeaponPistol
+  id: WeaponPistolNeoVolker
+  description: An antiquated, outdated Imperial sidearm, attributed to ancient Terran designs. Fires .45 rounds.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/neovolker.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/neovolker.rsi
+  - type: Gun
+    minAngle: 1
+    maxAngle: 20
+    angleIncrease: 8
+    angleDecay: 9
+    fireRate: 3
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineMagnum
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineMagnum
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeMagnum
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeMagnum
+  - type: StaticPrice
+    price: 1500
+
+- type: Tag
+  id: MagazinePistolSmartgun
+
+
+- type: entity
+  name: PTA BA-6 Rongyu 6mm 
+  parent: BaseWeaponPistol
+  id: WeaponPistolRongyu
+  description: A cheap sidearm produced by Pang Tai Arms. Made for the merc on a budget. Chambered in small 6mm rounds.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/rongyu.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/rongyu.rsi
+  - type: Gun
+    minAngle: 1
+    maxAngle: 20
+    angleIncrease: 8
+    angleDecay: 9
+    fireRate: 4
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    - Burst
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistol6mm
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistol6mm
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol6mm
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol6mm
+  - type: StaticPrice
+    price: 750

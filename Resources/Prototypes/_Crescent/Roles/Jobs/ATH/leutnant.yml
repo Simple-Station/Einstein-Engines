@@ -1,0 +1,75 @@
+- type: job
+  id: LeutnantATH
+  name: job-name-leutnant
+  description: job-description-leutnant
+  playTimeTracker: JobLeutnantATH
+  requirements:
+    - !type:WhitelistRequirement
+    - !type:SpeciesRequirement
+      allowedOnly:
+        - Human
+        - Reptilian
+        - Oni
+    - !type:FactionRequirement
+      factionID: "ATH"
+  weight: 86
+  startingGear: LeutnantGear
+  alwaysUseSpawner: true
+  icon: "JobIconLeutnant"
+  requireAdminNotify: true
+  supervisors: job-supervisors-ath
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-leutnant
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - Service
+  - External
+  - Authority
+  - AuthorityRanking
+
+- type: startingGear
+  id: LeutnantGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAuthorityLeutnant
+    back: ClothingBackpackSatchelLeatherFilledDSM
+    shoes: ClothingShoesBootsJack
+    head: ClothingHeadHatAuthorityLeutnant
+    outerClothing: ClothingOuterCoatAuthorityLeutnant
+    id: LeutnantPDA
+    ears: ClothingHeadsetAuthority

@@ -1,0 +1,89 @@
+- type: Tag
+  id: ShipParts
+
+- type: entity
+  parent: OreBase
+  id: StarshipEngineComponents
+  name: shuttle engine components
+  description: Assorted engine components manufactured from a motley of minerals or repaired scrap.
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: StarshipEngineComponents
+  - type: Tag
+    tags:
+    - ShipParts
+  - type: Sprite
+    sprite: _Crescent/Objects/Materials/shipconstruction.rsi
+    layers:
+    - state: block
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      StarshipEngineComponents: 500
+
+- type: entity
+  id: StarshipEngineComponents1
+  parent: StarshipEngineComponents
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  parent: OreBase
+  id: StarshipElectronics
+  name: shuttle electronics
+  description: Assorted electronic parts, delicate and intricate.
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: StarshipElectronics
+  - type: Tag
+    tags:
+    - ShipParts
+  - type: Sprite
+    sprite: _Crescent/Objects/Materials/shipconstruction.rsi
+    layers:
+    - state: parts
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      ShipComponents: 500
+
+- type: entity
+  id: StarshipElectronics1
+  parent: StarshipElectronics
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  parent: OreBase
+  id: StarshipHull
+  name: shuttle hull parts
+  description: Stacked, sorted hull plating for shuttlecraft. A strong vibroplasteel alloy.
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: StarshipHull
+  - type: Tag
+    tags:
+    - ShipParts
+  - type: Sprite
+    sprite: _Crescent/Objects/Materials/shipconstruction.rsi
+    layers:
+    - state: hull
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      ShipHull: 500
+
+- type: entity
+  id: StarshipHull1
+  parent: StarshipHull
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1

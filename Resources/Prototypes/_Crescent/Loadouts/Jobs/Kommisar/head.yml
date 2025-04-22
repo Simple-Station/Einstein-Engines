@@ -1,0 +1,9 @@
+- type: loadout
+  id: KommissarClothingHeadHatNCWLBeret
+  equipment: KommissarClothingHeadHatNCWLBeret
+  price: 0
+
+- type: startingGear
+  id: KommissarClothingHeadHatNCWLBeret
+  equipment:
+    head: ClothingHeadHatNCWLKommissarHat

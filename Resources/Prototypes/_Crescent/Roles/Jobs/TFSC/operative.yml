@@ -1,0 +1,40 @@
+- type: job
+  id: OperativeNCSP
+  name: job-name-operative
+  description: job-description-operative
+  playTimeTracker: JobOperativeNCSP
+  weight: 14
+  startingGear: OperativeGear
+  alwaysUseSpawner: true
+  requirements:
+    - !type:FactionRequirement
+      factionID: "TFSC"
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-freeman
+  icon: "JobIconSyndieOperative"
+  requireAdminNotify: false
+  supervisors: You answer to the patriach and the interests of the CyberDawn Technologies company.
+  canBeAntag: false
+  access:
+  - Command
+  - Maintenance
+  - SyndicateBasic
+  - SyndicateRamzi
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: OperativeGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSyndicateSoldierCyberdawn
+    shoes: ClothingShoesBootsCombat
+    id: OperativePDA
+    gloves: ClothingHandsGlovesFingerless
+    outerClothing: ClothingOuterArmorKendoBogu
+    ears: ClothingHeadsetNCSPCyberdawn
+    belt: WeaponPistolHKUSP

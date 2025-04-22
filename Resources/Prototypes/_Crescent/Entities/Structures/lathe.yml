@@ -1,0 +1,771 @@
+
+
+- type: entity
+  parent: BaseLathe
+  id: ScrapRefiner
+  name: SHI scrap upcycler
+  description: An automated refinery with scrap metal refinement patterns.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/sheetifier.rsi
+    layers:
+    - state: base_machine
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: buttons_on
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: MaterialStorage
+    dropOnDeconstruct: false #should drop ores instead of ingots/sheets
+    ignoreColor: true
+    canEjectStoredMaterials: false
+    whitelist:
+      tags:
+      - RawMaterial
+  - type: Lathe
+    idleState: base_machine
+    runningState: base_machine_processing
+    staticRecipes:
+    - SteelScrap
+    - TitaniumScrap
+    - Garbage
+    - PlasteelFromScrap1
+    - PlasteelFromScrap
+    - SteelScraptoSteel
+    - SteelScraptoSteel1
+
+- type: entity
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  id: IndustrialScrapRefiner
+  name: Industrial SHI scrap upcycler
+  description: An automated refinery with scrap metal refinement patterns. Now employing factory protocols! Throw scrap at it!
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/sheetifier.rsi
+    layers:
+    - state: base_machine
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: buttons_on
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: MaterialStorage
+    dropOnDeconstruct: false #should drop ores instead of ingots/sheets
+    ignoreColor: true
+    canEjectStoredMaterials: false
+    whitelist:
+      tags:
+      - RawMaterial
+  - type: Lathe
+    idleState: base_machine
+    runningState: base_machine_processing
+    staticRecipes:
+    - SteelScrap
+    - TitaniumScrap
+    - Garbage
+    - PlasteelFromScrap1
+    - PlasteelFromScrap
+    - SteelScraptoSteel
+    - SteelScraptoSteel1
+
+
+#drugs
+
+- type: entity
+  parent: BaseLathe
+  id: DrugLathe
+  name: interdyne pharmaceutic fablathe
+  description: An automated fablathe with preloaded pharmaceutic patterns. Bears the Interdyne logo.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/drugifier.rsi
+    layers:
+    - state: base_machine
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: buttons_on
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: MaterialStorage
+    dropOnDeconstruct: false #should drop ores instead of ingots/sheets
+    ignoreColor: true
+    canEjectStoredMaterials: true
+    whitelist:
+      tags:
+      - DrugComponent
+      - Sheet
+      - RawMaterial
+  - type: Lathe
+    idleState: base_machine
+    runningState: base_machine_processing
+    staticRecipes:
+    - PartyDrugs
+    - Crash
+    - Exile
+    - Kaiser
+    - Mechanite
+    - Bloodeye
+    - Saw
+    - BodyBag
+    - Brutepack
+    - Ointment
+    - Gauze
+    - Defibrillator
+    - Medkit
+    - MedkitAdvanced
+    - MedkitCombat
+    - HandLabeler
+    - Beaker
+    - LargeBeaker
+    - Dropper
+    - Jug
+    - Syringe
+    - VehicleWheelchairFolded
+    - RollerBedSpawnFolded
+  - type: Anchorable
+    flags:
+    - Anchorable
+
+
+#microforge
+
+- type: entity
+  id: MicroforgeCircuitboard
+  parent: BaseMachineCircuitboard
+  name: microforge circuit
+  description: A machine printed circuit board for a microforge.
+  components:
+    - type: Sprite
+      state: security
+    - type: MachineBoard
+      prototype: PristineMicroforge
+      requirements:
+        MatterBin: 2
+        Manipulator: 2
+
+- type: entity
+  id: PristineMicroforge
+  parent: BaseLathe
+  name: pristine microforge
+  description: Used to print equipment discovered through techdisks, or researched.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/nanoforge.rsi
+    layers:
+    - state: fab-active
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: fab-idle
+    - state: fab-idle
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: fab-load
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: fab-o
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Lathe
+    idleState: fab-idle
+    runningState: fab-active
+    staticRecipes:
+      - MagazineBoxLightRifle
+      - MagazineBoxMagnum
+      - MagazineBoxPistol
+      - MagazineBoxRifle
+      - MagazineLightRifle
+      - MagazinePistol6mm
+      - MagazineHeavyRifle
+      - MagazinePistolSubMachineGunHeavy
+      - MagazinePistol
+      - MagazinePistolSubMachineGun
+      - MagazinePistolSubMachineGunTopMounted
+      - MagazineRifle
+      - MagazineShotgun
+      - MagazineShotgunSlug
+      - MagazineMagnumSub
+      - Wirecutter
+      - Igniter
+      - Signaller
+      - Screwdriver
+      - Welder
+      - Wrench
+      - Crowbar
+      - Multitool
+      - NetworkConfigurator
+      - SprayPainter
+      - HandheldGPSBasic
+      - TRayScanner
+      - AirTank
+      - GasAnalyzer
+      - UtilityBelt
+      - Pickaxe
+      - ModularReceiver
+      - AppraisalTool
+      - Beaker
+      - Syringe
+      - HandLabeler
+      - LightTube
+      - LedLightTube
+      - SodiumLightTube
+      - ExteriorLightTube
+      - LightBulb
+      - LedLightBulb
+      - SprayBottle
+      - MopItem
+      - Holoprojector
+      - LightReplacer
+      - PowerCellSmall
+      - PowerCellMedium
+      - VehicleWheelchairFolded
+      - RollerBedSpawnFolded
+      - CheapRollerBedSpawnFolded
+      - EmergencyRollerBedSpawnFolded
+      - MicroManipulatorStockPart
+      - MatterBinStockPart
+      - CapacitorStockPart
+      - ConveyorBeltAssembly
+      - ClothingHeadHatWelding
+      - ClothingOuterSuitEmergency
+      - ClothingHeadHelmetEVALarge # Frontier
+      - ArmorPlateSteelCraft
+      - ArmorPlatePlasteelCraft
+      - ArmorPlateNanoPolymerCraft
+      - ArmorPlateCeramicCraft
+      - ArmorPlateDurathreadCraft
+      # - ArmorPlatePlasmGlassaCraft # no sprite
+      - ArmorPlatePlasticCraft
+      - ArmorPlateHomelandCraft
+      - ArmorPlateKevlarCraft
+      - ArmorPlatePlasteelEncasedKevlarCraft
+      - ArmorPlateNanoCeramicCraft
+    dynamicRecipes:
+      - WeaponSubMachineGunCheshyre
+      - WeaponPistolRongyu
+      - WeaponSpecialMako
+      - ClothingOuterArmorPangTaiVest
+      - ClothingHeadHatPangtaiCorvidHelmet
+      - ClothingOuterArmorPangTaiKorund
+      - ClothingHeadHatPangtaiKorundHelmet
+      - BoxBeanbag
+      - BoxShotgunIncendiary
+      - ClothingUniformJumpsuitTechminer
+      - ClothingUniformJumpsuitTinkerer
+      - ClothingUniformJumpsuitHangarTechnician
+      - ClothingUniformJumpsuitServile
+      - ClothingUniformJumpsuitServile
+      - ClothingUniformJumpsuitDraugr
+      - ClothingUniformJumpsuitBeltrunner
+      - WeaponPulsePistolFam
+      - ClothingUniformJumpsuitAntiquarianFamilies
+      - WeaponTeslaGunFam
+      - ClothingUniformJumpsuitBodysuit
+      - ClothingOuterHardsuitDraugr
+      - WeaponXrayCannonFam
+      - ClothingOuterHardsuitArabet
+      - ClothingOuterHardsuitIzdari
+      - ClothingOuterArmorServileAlseik
+      - ClothingOuterArmorDraugrAlseik
+      - WeaponLaserSvalinn
+      - PlasHalberd
+      - EnergySwordFamilies
+      - Plashammer
+      - ClothingOuterArmorAcolyteRobes
+      - ClothingOuterArmorThukkerEngiVest
+      - BoxShotgunUranium
+      - ClothingHeadHelmetIzdariEVA
+      - ClothingOuterHardsuitDraugr
+      - ClothingOuterHardsuitArabet
+      - ClothingOuterHardsuitIzdari
+      - ClothingOuterBeltrunnerEVA
+      - ExplosivePayload
+      - FlashPayload
+      - GrenadeBlast
+      - GrenadeEMP
+      - HoloprojectorSecurity
+      - MagazineBoxLightRifleIncendiary
+      - MagazineBoxLightRifleUranium
+      - MagazineBoxMagnumIncendiary
+      - MagazineBoxMagnumUranium
+      - MagazineBoxPistolIncendiary
+      - MagazineBoxPistolUranium
+      - MagazineBoxRifleIncendiary
+      - MagazineBoxRifleUranium
+      - MagazineBoxLightRifleRubber # Frontier
+      - MagazineBoxMagnumRubber # Frontier
+      - MagazineBoxPistolRubber # Frontier
+      - MagazineBoxRifleRubber # Frontier
+      - MagazineLightRifleIncendiary
+      - MagazineLightRifleUranium
+      - MagazinePistolIncendiary
+      - MagazinePistolUranium
+      - MagazineRifleIncendiary
+      - MagazineRifleUranium
+      - MagazineShotgunBeanbag
+      - MagazineShotgunIncendiary
+      - PortableRecharger
+      - PowerCageHigh
+      - PowerCageMedium
+      - PowerCageSmall
+      - ShellTranquilizer
+      - ShuttleGunDusterCircuitboard
+      - ShuttleGunFriendshipCircuitboard
+      - ShuttleGunPerforatorCircuitboard
+      - ShuttleGunSvalinnMachineGunCircuitboard
+      - Signaller
+      - SignalTrigger
+      - SpeedLoaderMagnumIncendiary
+      - SpeedLoaderMagnumUranium
+      - SpeedLoaderRifleHeavyIncendiary # Frontier
+      - SpeedLoaderRifleHeavyUranium # Frontier
+      - TelescopicShield
+      - TimerTrigger
+      - Truncheon
+      - VoiceTrigger
+      - WeaponAdvancedLaser
+      - WeaponDisabler
+      - WeaponDisablerSMG
+      - WeaponLaserCannon
+      - WeaponLaserCarbine
+      - WeaponXrayCannon
+      - PowerDrill
+      - MiningDrill
+      - AnomalyScanner
+      - AnomalyLocator
+      - AnomalyLocatorWide
+      - ShipyardRCD # Frontier
+      - ShipyardRCDAmmo # Frontier
+      - Scalpel
+      - Retractor
+      - Cautery
+      - Drill
+      - WeaponParticleDecelerator
+      - HoloprojectorField
+      - Saw
+      - Hemostat
+      - CryostasisBeaker
+      - SyringeCryostasis
+      - Syringe
+      - Implanter
+      - PillCanister
+      - ChemistryEmptyBottle01
+      - AdvancedCapacitorStockPart
+      - AdvancedMatterBinStockPart
+      - NanoManipulatorStockPart
+      - SuperCapacitorStockPart
+      - SuperMatterBinStockPart
+      - PicoManipulatorStockPart
+      - AdvMopItem
+      - WeaponSprayNozzle
+      - ClothingBackpackWaterTank
+      - MegaSprayBottle
+      - TimerTrigger
+      - ChemicalPayload
+      - FlashPayload
+      - Signaller
+      - SignallerAdvanced
+      - SignalTrigger
+      - VoiceTrigger
+      - Igniter
+      - HandHeldMassScanner
+      - PowerCellMicroreactor
+      - PowerCellMedium
+      - PowerCellHigh
+      - PowerCellMicroreactor
+      - WeaponPistolCHIMP
+      - ClothingMaskWeldingGas
+      - WeaponGauntletGorilla
+      - SynthesizerInstrument
+      - RPED
+      - ClothingShoesBootsMagSci
+      - ClothingShoesBootsMagAdv # Frontier
+      - ClothingShoesBootsSpeed
+      - NodeScanner
+      - HolofanProjector
+      - BluespaceBeaker
+      - SyringeBluespace
+      - Jug
+      - WeaponCrusher
+      - WeaponCrusherDagger
+      - WeaponCrusherGlaive
+      - WeaponForceGun
+      - WeaponLaserSvalinn
+      - WeaponProtoKineticAccelerator
+      - WeaponTetherGun
+      - WeaponGrapplingGun
+      - ClothingBackpackHolding
+      - ClothingBackpackSatchelHolding
+      - ClothingBackpackDuffelHolding
+      - ClothingBackpackMessengerHolding
+      - WelderExperimental
+      - JawsOfLife
+      - FauxTileAstroGrass
+      - FauxTileMowedAstroGrass
+      - FauxTileJungleAstroGrass
+      - FauxTileAstroIce
+      - FauxTileAstroSnow
+      - OreBagOfHolding
+      - DeviceQuantumSpinInverter
+      - UtilityBeltChiefEngineer
+      - JetpackVoid
+      - WeaponRifleM90GrenadeLauncherNT
+      - WeaponSubMachineGunMP5NT
+      - WeaponShotgunSpasNT
+      - WeaponRevolverSnubnoseNT
+      - WeaponPistolHKUSPNT
+      - ClothingOuterHardsuitSyndicateBGNCSP
+      - ClothingOuterHardsuitRamziNCSP
+      - ClothingOuterHardsuitCybersunNCSP
+      - ClothingOuterHardsuitTraumasecNCSP
+      - ClothingHeadHelmetSyndicateBasicInterdyneNCSP
+      - ClothingHeadHelmetSyndicateBasicNCSP
+      - ClothingUniformJumpsuitSyndicateNCSP
+      - ClothingOuterArmorSyndicateArmorvestInterdyneNCSP
+      - ClothingOuterArmorSyndicateArmorvestNCSP
+      - ClothingUniformJumpsuitSyndicateSawsNCSP
+      - ClothingUniformJumpsuitSyndicateInterdyneNCSP
+      - ClothingNeckScarfSyndicateShemaghNCSP
+      - MediumBallisticHardpointFlatpackCraft
+      - WeaponSubMachineGunAtreidesNCSP
+      - WeaponSubMachineGunDrozdNCSP
+      - NCSPWarshipThrusterFlatpackNCSP
+      - NCSPFighterThrusterFlatpackNCSP
+      - NCSPAnklebiterFlatpackNCSP
+      - FlakCannonTurretFlatpackCraftNCSP
+      - BaseWeaponTurretGargoyleFlatpackCraftNCSP
+      - PlasmaRepeaterFlatpackCraft
+      - EnergyShieldNCSP
+      - EnergySwordNCSP
+      - WeaponRifleBarghestNCSP
+      - WeaponLauncherRocketNCSP
+      - WeaponRifleMayflowerNCSP
+      - WeaponLightMachineGunL6CNCSP
+      - MagazineLightRifleBoxNCSP
+      - RadioJammerNCSP
+      - EmagNCSP
+      - EmpGrenadeNCSP
+      - CartridgeRocketNCSP
+      # - GrenadeEMPCraft YAMLFIX: Duplicate recipe result
+      - ClothingUniformJumpsuitNCWLMedicCraft
+      - ClothingUniformJumpsuitNCWLCraft
+      - ClothingUniformJumpsuitNCWLArtificerCraft
+      - ClothingHeadHatNCWLBeretCraft
+      - ClothingHeadHatNCWLTankerCraft
+      - ClothingHeadHatNCWLCapsoftCraft
+      - ClothingMaskNCWLBalaclavaCraft
+      - ClothingOuterHardsuitNCWLInfantryCraft
+      - ClothingOuterNCWLEVACraft
+      - ClothingHeadHelmetNCWLEVACraft
+      - ClothingHeadHelmetNCWLBasicCraft
+      - ClothingOuterArmorNCWLCarapaceDoktorCraft
+      - ClothingOuterHardsuitNCWLJuggernautCraft
+      - ClothingOuterArmorNCWLHeavyCarapaceCraft
+      - ClothingHeadHelmetNCWLHeavyCraft
+      - WeaponSubMachineGunNCWLWatchdogCraft
+      - WeaponSubMachineGunBloodhoundCraft
+      - WeaponRevolverPythonCraft
+      - NCWLFighterThrusterFlatpackCraft
+      - NCWLWarshipThrusterFlatpackCraft
+      - WeaponRifleFALCraft
+      - WeaponRifleNCWLBatanyaCraft
+      - WeaponShotgunBulldogCraft
+      - NCWLGranSudaruskaFlatpackCraft
+      - NCWLVulcanFlatpackCraft
+      - NCWLSwarmerFlatpackCraft
+      - NCWLKurosawaFlatpackCraft
+      - GrenadeBatonCraft
+      # - GrenadeBlastCraft YAMLFIX: Should be a new result or just use
+      # - GrenadeFlashCraft YAMLFIX: Should be a new result or just use
+      - NCWLSlugthrowerFlatpackCraft
+      - NCWLAutomortarFlatpackCraft
+      - NCWLNeedlerFlatpackCraft
+      - WeaponLightMachineGunConscriptCraft
+      - MagazineLightRifleBoxConscriptAPCraft
+      - MagazineLightRifleBoxConscriptHECraft
+      - ClothingOuterHardsuitImperialWorkerCraft
+      - ClothingOuterCoatImperialSoftsuitCraft
+      - ClothingHeadHelmetImperialEVACraft
+      - ClothingOuterCoatImperialParadeCraft
+      - ClothingUniformJumpsuitImperialSoldierFormalCraft
+      - ClothingUniformJumpsuitImperialDoctorCraft
+      - ClothingUniformJumpsuitImperialFreeholderCraft
+      - ClothingUniformJumpsuitImperialNobleMaleCraft
+      - ClothingUniformJumpsuitImperialNobleFemaleCraft
+      - WeaponSubMachineGunC20rCraft
+      - WeaponPistolComplianceImperialCraft
+      - WeaponSubMachineGunBeetleCraft
+      - DSMLadyFlatpackCraft
+      - DSMVulcanFlatpackCraft
+      - DSMFighterThrusterFlatpackCraft
+      - DSMWarshipThrusterFlatpackCraft
+      - WeaponRifleMillerCraft
+      - WeaponRifleHunterCraft
+      - ClothingOuterHardsuitImperialSoldierCraft
+      - ClothingOuterArmorImperialTrooperArmorCraft
+      - ClothingOuterArmorImperialArmorPrestigeCraft
+      - ClothingHeadHelmetImperialTrooperHelmetCraft
+      - ClothingHeadHelmetImperialKnightCommanderHelmetCraft
+      - DSMPlasmaTurretFlatpackCraft
+      - SRMKhopeshCraft
+      - SHIFighterThrusterFlatpackCraft
+      - SHIWarshipThrusterFlatpackCraft
+      - WeaponPistolBlastpopGrayCraft
+      - WeaponPistolBlastpopRedCraft
+      - WeaponPistolBlastpopBlueCraft
+      - WeaponPistolBlastpopGoldCraft
+      - SHIExhumerFlatpackCraft
+      - SHISlugthrowerFlatpackCraft
+      - SHITsuiFlatpackCraft
+      - SHIVulcanFlatpackCraft
+      - ClothingOuterHardsuitHEVCraft
+      - ClothingOuterHardsuitHighsecCraft
+      - ClothingOuterArmorShinoharaArmorCraft
+      - ClothingHeadHatShinoharaBeretCraft
+      - ClothingUniformJumpsuitShinoharaSecurityCraft
+      - WeaponPistolHimehabuCraft
+      - WeaponSubMachineGunSabreCraft
+      - WeaponPistolViperCraft
+      - WeaponPistolMk58Craft
+      - WeaponLauncherHammerheadCraft
+      - SHIArtilleryFlatpackCraft
+      - SHIMortarFlatpackCraft
+      - SHINeedlerFlatpackCraft
+      - ClothingOuterArmorShinoharaArmorHighsecCraft
+      - AnathemaLPC
+      - SinnLPC
+      - WolfLPC
+      - ClothingHeadHatShinoharaHelmetCraft
+      - WeaponPistolSmartpistolCraft
+      - MagazinePistolSmartgunCraft
+      - EnergyKatanaCraft
+      - MissileRackFlatpackCraft
+      - VulcanFlatpackCraft
+      - HardlineBeamPulserFlatpackCraft
+      - BogatyrLPC
+      - BroadswordLPC
+      - KhopeshLPC
+      - SashaLPC
+      - GargutLPC
+      - IbisLPC
+      - LaelapsLPC
+      - ZhipovLPC
+      - ClementineLPC
+      - NemesisLPC
+      - VanguardTwoLPC
+      - ConquestLPC
+      - ValorLPC
+      - RapierLPC
+      - IvarodLPC
+      - CherenzikovLPC
+      - TermiteLPC
+      - ParacelsusLPC
+      - ExhumerLPC
+      - CompaktFlatpack
+      - MediumEnergyHardpointFlatpack
+      - LensPlasma
+      - LensInfrared
+      - LensMicrowave
+  - type: Machine
+    board: MicroforgeCircuitboard
+
+#boriatic fuel thing
+
+- type: entity
+  parent: BaseLathe
+  id: BoriaticRefiner
+  name: SHI boriatic composter
+  description: An automated refinery and fabricator that purifies various minerals into usable boriatic fuels.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/purifier.rsi
+    layers:
+    - state: base_machine
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: buttons_on
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: Machine
+    board: SheetifierMachineCircuitboard
+  - type: MaterialStorage
+    dropOnDeconstruct: false #should drop ores instead of ingots/sheets
+    ignoreColor: true
+    canEjectStoredMaterials: true
+    whitelist:
+      tags:
+      - Sheet
+      - Metal
+  - type: Lathe
+    idleState: base_machine
+    runningState: base_machine_processing
+    staticRecipes:
+    - JugBoriaticFuelCraft
+
+#ship parts
+
+- type: entity
+  parent: BaseLathe
+  id: ShipyardManufactorum
+  name: SHI shipyard manufactorum
+  description: An automated assembler, constructing vessel components out of minerals.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/shipfab.rsi
+    layers:
+    - state: base_machine
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: buttons_on
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: MaterialStorage
+    dropOnDeconstruct: false #should drop ores instead of ingots/sheets
+    ignoreColor: true
+    canEjectStoredMaterials: true
+    whitelist:
+      tags:
+      - Ingot
+      - Sheet
+      - Metal
+  - type: Lathe
+    idleState: base_machine
+    runningState: base_machine_processing
+    staticRecipes:
+    - ShipHull
+    - ShipElectronics
+    - ShipEngine
+  - type: Anchorable
+    flags:
+    - Anchorable
+
+#organs
+
+- type: entity
+  parent: BaseLathe
+  id: OrganPrinter
+  name: IPM organic bioprinter
+  description: An automated fablathe with preloaded organic patterns. Bears the Interdyne logo.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/organfab.rsi
+    layers:
+    - state: fab-idle
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: buttons_on
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: MaterialStorage
+    dropOnDeconstruct: false #should drop ores instead of ingots/sheets
+    ignoreColor: true
+    canEjectStoredMaterials: true
+    whitelist:
+      tags:
+      - OrganMaterial
+  - type: Lathe
+    idleState: fab-idle
+    runningState: fab-active
+    staticRecipes:
+    - OrganCrate
+  - type: Anchorable
+    flags:
+    - Anchorable
+
+
+#crates
+#imperial
+
+- type: entity
+  parent: BaseLathe
+  id: ImperialTradeGoodPrinter
+  name: kal surezai commodity fablathe
+  description: An automated fablathe preloaded with many commodity patterns. A merchant's best friend.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/cratefab.rsi
+    layers:
+    - state: fab-idle
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: buttons_on
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: MaterialStorage
+    dropOnDeconstruct: false #should drop ores instead of ingots/sheets
+    ignoreColor: true
+    canEjectStoredMaterials: true
+    whitelist:
+      tags:
+      - Sheet
+      - Metal
+      - RawMaterial
+  - type: Lathe
+    idleState: fab-idle
+    runningState: fab-active
+    staticRecipes:
+    - FabricsCrate
+    - WineCrate
+  - type: Anchorable
+    flags:
+    - Anchorable
+
+#shi
+
+- type: entity
+  parent: BaseLathe
+  id: CorporateTradeGoodPrinter
+  name: shinohara commodity fablathe
+  description: An automated fablathe preloaded with many commodity patterns. A merchant's best friend.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/cratefab.rsi
+    layers:
+    - state: fab-idle
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: buttons_on
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: MaterialStorage
+    dropOnDeconstruct: false #should drop ores instead of ingots/sheets
+    ignoreColor: true
+    canEjectStoredMaterials: true
+    whitelist:
+      tags:
+      - Sheet
+      - Metal
+  - type: Lathe
+    idleState: fab-idle
+    runningState: fab-active
+    staticRecipes:
+    - MiltechCrate
+    - AlloysCrate
+  - type: Anchorable
+    flags:
+    - Anchorable
+
+#saws
+
+- type: entity
+  parent: BaseLathe
+  id: SawsTradeGoodPrinter
+  name: shipfitters commodity fablathe
+  description: An automated fablathe preloaded with many commodity patterns. A merchant's best friend.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/cratefab.rsi
+    layers:
+    - state: fab-idle
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: buttons_on
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: MaterialStorage
+    dropOnDeconstruct: false #should drop ores instead of ingots/sheets
+    ignoreColor: true
+    canEjectStoredMaterials: true
+    whitelist:
+      tags:
+      - Sheet
+      - Metal
+      - RawMaterial
+  - type: Lathe
+    idleState: fab-idle
+    runningState: fab-active
+    staticRecipes:
+    - PlasmaCrate
+    - ScrapCrate
+    - GunpartsCrate
+    - TitaniumScrapAlloyCrate
+  - type: Anchorable
+    flags:
+    - Anchorable

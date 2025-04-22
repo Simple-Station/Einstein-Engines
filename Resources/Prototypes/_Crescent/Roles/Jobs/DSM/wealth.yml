@@ -1,0 +1,51 @@
+- type: job
+  id: WealthDSM
+  name: job-name-wealth
+  description: job-description-wealth
+  playTimeTracker: JobWealthDSM
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 500
+    - !type:SpeciesRequirement
+      allowedOnly:
+        - Human
+    - !type:FactionRequirement
+      factionID: "DSM"
+  weight: 25
+  startingGear: WealthGear
+  alwaysUseSpawner: true
+  icon: "JobIconImperialWealth"
+  requireAdminNotify: false
+  supervisors: job-supervisors-imperial 
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ministry
+  access:
+  - Command
+  - Empire
+  - EmpireNoble
+  - Maintenance
+  - LogisticsWealth
+  - Service
+  - EmpireSoldier
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: WealthGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitImperialNobleMale
+    back: ClothingBackpackSatchelLeatherFilledDSM
+    shoes: ClothingShoesBootsImperialLongboots
+    mask: ClothingMaskImperialCombatGasmask
+    head: ClothingHeadHatImperialHeadwrap
+    outerClothing: ClothingOuterCoatImperialMerchant
+    gloves: ClothingHandsGlovesImperialGovernorGloves
+    id: WealthPDA
+    ears: ClothingHeadsetEmpire
+    pocket1: ImperialPassportBareLegit
+    pocket2: SpaceCash10000

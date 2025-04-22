@@ -1,0 +1,36 @@
+- type: job
+  id: AcolyteSRM
+  name: job-name-acolyte
+  description: job-description-apprenticehunter
+  playTimeTracker: JobAcolyteSRM
+  requirements:
+    - !type:SpeciesRequirement
+      allowedOnly:
+        - Human
+    - !type:FactionRequirement
+      factionID: "SRM"
+  weight: 22
+  startingGear: AcolyteGear
+  alwaysUseSpawner: true
+  icon: "JobIconAcolyte"
+  requireAdminNotify: false
+  supervisors: job-supervisors-imperial 
+  canBeAntag: false
+  access:
+  - Command
+  - Hunter
+  - Maintenance
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: AcolyteGear
+  equipment:
+    id: AcolytePDA
+    ears: ClothingHeadsetHunter
+    jumpsuit: ClothingUniformJumpsuitHunterAcolyte
+    shoes: ClothingShoesBootsHunter
+    outerClothing: ClothingOuterArmorHunterVest
+    gloves: ClothingHandsGlovesHunter

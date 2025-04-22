@@ -1,0 +1,32 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Bhaalgorn
+  name: Bhaalgorn
+  description: A heavy frontliner destroyer with a focus on explosive and missile armament.
+  price: 75000
+  category: Medium
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/TAP/bhaalgorn.yml
+
+- type: gameMap
+  id: Bhaalgorn
+  mapName: 'Bhaalgorn'
+  mapPath: /Maps/_Crescent/Shuttles/TAP/bhaalgorn.yml
+  minPlayers: 0
+  stations:
+    Bhaalgorn:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Bhaalgorn {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-assault-frigate
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            DraugrTAP: [ 2, 2 ]

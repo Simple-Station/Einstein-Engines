@@ -1,0 +1,9 @@
+- type: loadout
+  id: KapitanClothingHeadHatNCWLBeret
+  equipment: KapitanClothingHeadHatNCWLBeret
+  price: 0
+
+- type: startingGear
+  id: KapitanClothingHeadHatNCWLBeret
+  equipment:
+    head: ClothingHeadHatNCWLBeret

@@ -1,0 +1,32 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Sabre
+  name: NCWL Sabre
+  description: An ultralight communard laser platform.
+  price: 10000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCWL/sabre.yml
+
+- type: gameMap
+  id: Sabre
+  mapName: 'NCWL Sabre'
+  mapPath: /Maps/_Crescent/Shuttles/NCWL/sabre.yml
+  minPlayers: 0
+  stations:
+    Sabre:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Sabre {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            SanitarNCWL: [ 0, 0 ]

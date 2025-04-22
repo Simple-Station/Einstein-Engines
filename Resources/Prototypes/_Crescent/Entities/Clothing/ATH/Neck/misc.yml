@@ -1,0 +1,21 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckAuthorityLogistatCape
+  name: logistitat marshal's cape
+  description: A gilded cape meant for the economic powerhouse of the fortress.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Neck/logistitat.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Neck/logistitat.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckAuthorityStewardCape
+  name: first steward's capelet
+  description: A short capelet emblazoned with rank insignias for the First Steward.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Neck/steward.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Neck/steward.rsi

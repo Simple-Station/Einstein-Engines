@@ -1,0 +1,30 @@
+- type: vessel
+  id: Nazaar
+  name: CSEC Nazaar
+  description: A CorpSec patrol gunboat.
+  price: 25000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/SHI/nazaar.yml
+
+- type: gameMap
+  id: Nazaar
+  mapName: 'CSEC Nazaar'
+  mapPath: /Maps/_Crescent/Shuttles/SHI/nazaar.yml
+  minPlayers: 0
+  stations:
+    Nazaar:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'CSEC Nazaar {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-patrol
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            CorpsecSHI: [2, 2]
+

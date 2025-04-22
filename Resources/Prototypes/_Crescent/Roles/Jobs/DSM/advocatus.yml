@@ -1,0 +1,85 @@
+- type: job
+  id: AdvocatusDSM
+  name: job-name-advocatus
+  description: job-description-advocatus
+  playTimeTracker: JobAdvocatusDSM
+  weight: 32
+  startingGear: AdvocatusGear
+  alwaysUseSpawner: true
+  icon: "JobIconAdvocatus"
+  requireAdminNotify: true
+  supervisors: job-supervisors-imperial 
+  canBeAntag: false
+  requirements:
+    - !type:WhitelistRequirement
+    - !type:SpeciesRequirement
+      allowedOnly:
+        - Human
+    - !type:OverallPlaytimeRequirement
+      time: 36000
+    - !type:FactionRequirement
+      factionID: "DSM"
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-advocatus
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - Service
+  - External
+  - Maintenance
+  - EmpireNoble
+  - Advocatus
+  - EmpireSoldier
+  - Service
+  - Empire
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+  - ScribesGuild
+  - LogisticsWealth
+
+- type: startingGear
+  id: AdvocatusGear
+  equipment:
+    id: AdvocatusPDA
+    head:  ClothingHeadHatAdvocatus
+    ears: ClothingHeadsetEmpire
+    pocket1: ImperialPassportBareLegit
+    back: ClothingBackpackSatchelLeatherFilledDSM
+    outerClothing: ClothingOuterCoatImperialAdvocatus
+    shoes: ClothingShoesBootsJack
+    jumpsuit: ClothingUniformJumpsuitImperialNobleMale

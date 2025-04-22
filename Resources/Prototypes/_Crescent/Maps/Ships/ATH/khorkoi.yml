@@ -1,0 +1,28 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Khorkoi
+  name: ATH Khorkoi
+  description: A light Authoritat fighter deployed in swarms.
+  price: 17500
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/ATH/khorkoi.yml
+
+- type: gameMap
+  id: Khorkoi
+  mapName: 'Khorkoi'
+  mapPath: /Maps/_Crescent/Shuttles/ATH/khorkoi.yml
+  minPlayers: 0
+  stations:
+    Khorkoi:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Khorkoi {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter

@@ -1,0 +1,42 @@
+- type: job
+  id: TechnicianNCSP
+  name: job-name-technician
+  description: job-description-technician
+  playTimeTracker: JobTechnicianNCSP
+  requirements:
+    - !type:FactionRequirement
+      factionID: "TFSC"
+    - !type:OverallPlaytimeRequirement
+      time: 21600 # 6 hours
+      inverted: true # Leave slots open for newer, less confident players.
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-op
+  weight: 18
+  startingGear: TechnicianGear
+  alwaysUseSpawner: true
+  icon: "JobIconSyndieNewblood"
+  requireAdminNotify: false
+  supervisors: You answer to all Gorlex Security personnel and the Station Administrator
+  canBeAntag: false
+  access:
+  - Command
+  - Maintenance
+  - SyndicateBasic
+  - SyndicateGorlex
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: TechnicianGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSyndicate
+    shoes: ClothingShoesBootsCombat
+    head: ClothingHeadHatSyndicateArmaments
+    id: InfanteerPDA
+    ears: ClothingHeadsetNCSP
+    pocket1: WeaponPistolHKUSP

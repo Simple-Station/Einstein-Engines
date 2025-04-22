@@ -1,0 +1,211 @@
+
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadHelmetSyndicateBasic
+  name: frontliner's ballistic helmet
+  description: A kevlar-plated nanoweave infantry helmet. Standard issue for the Syndicate.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/Head/syndiehelmet.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/Head/syndiehelmet.rsi
+  - type: StaticPrice
+    price: 75
+
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadHelmetSyndicateBasicInterdyne
+  name: ballistic helmet
+  description: A kevlar-plated nanoweave infantry helmet. Standard issue for TFSC.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/Head/traumahelmet.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/Head/traumahelmet.rsi
+  - type: StaticPrice
+    price: 75
+
+## hardsuit helmets
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetSyndiDonator
+  categories: [ HideSpawnMenu ]
+  name: combat technician's hardsuit helmet
+  description: Spaceworthy protection for your fragile skull. A Syndicate design.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/Head/syndicatedonator.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/Head/syndicatedonator.rsi
+  - type: PointLight
+    radius: 6
+    color: "#90ee90"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
+        Heat: 0.95
+        Radiation: 0.95
+        Caustic: 0.95
+  - type: EyeProtection
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitRamzi
+  categories: [ HideSpawnMenu ]
+  name: operative's combat hardsuit helmet
+  description: Spaceworthy protection for your fragile skull. A Syndicate design.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/Head/syndicateramzi.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/Head/syndicateramzi.rsi
+  - type: PointLight
+    radius: 6
+    color: "#90ee90"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
+        Heat: 0.95
+        Radiation: 0.95
+        Caustic: 0.95
+  - type: EyeProtection
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitSyndicateBattlegroup
+  categories: [ HideSpawnMenu ]
+  name: frontliner's combat hardsuit helmet
+  description: Spaceworthy protection for your fragile skull. A Syndicate design.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/Head/syndicatesbg.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/Head/syndicatesbg.rsi
+  - type: PointLight
+    radius: 6
+    color: "#90ee90"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
+        Heat: 0.95
+        Radiation: 0.95
+        Caustic: 0.95
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitCybersunSuit
+  categories: [ HideSpawnMenu ]
+  name: cybersun hardsuit helmet
+  description: Spaceworthy protection for your fragile skull.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/Head/cybersunhelmet.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/Head/cybersunhelmet.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSyndicateDoctor
+  name: ripperdoc's bandana
+  description: A head bandana to keep blood and sweat from your brow while you're guts-deep in today's batch.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/Head/syndiedoc.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/Head/syndiedoc.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSyndicatePilot
+  name: ace pilot hat
+  description: An old Terran design, intended for fightercraft pilots to keep their heads warm. This one's stitched with the SAWs logo.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/Head/syndiepilot.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/Head/syndiepilot.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSyndicateOfficer
+  name: mercenary officer's peaked cap
+  description: A peaked cap in Syndicate colors.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/Head/syndieofficer.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/Head/syndieofficer.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSyndicateArmaments
+  name: armaments technician's cap
+  description: A simple militia cap with the Syndicate logo on it.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/Head/syndiegarrison.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/Head/syndiegarrison.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHardhatSyndicateForeman
+  name: foreman's hard hat
+  description: An aged hardhat in Syndicate tan. Someone's scrawled 'SAWs' on the side with a knife.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/Head/foremanhardhat.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/Head/foremanhardhat.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHardhatSyndicate
+  name: shipbreaker's hard hat
+  description: An aged hardhat in Syndicate red.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/Head/syndiehardhat.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/Head/syndiehardhat.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatPatriarch
+  name: patriarch's peaked cap
+  description: An authorative cap in Cyberdawn white and red.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/Head/patriarch.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/Head/patriarch.rsi

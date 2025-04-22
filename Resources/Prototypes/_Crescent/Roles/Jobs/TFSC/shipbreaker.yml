@@ -1,0 +1,41 @@
+- type: job
+  id: ShipbreakerNCSP
+  name: job-name-shipbreaker
+  description: job-description-shipbreaker
+  playTimeTracker: JobShipbreakerNCSP
+  requirements:
+    - !type:FactionRequirement
+      factionID: "TFSC"
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-saw
+  weight: 8
+  startingGear: ShipbreakerGear
+  alwaysUseSpawner: true
+  icon: "JobIconSyndieShipbreaker"
+  requireAdminNotify: false
+  supervisors: You answer to the Shipfitters Aerodynamic & Worker's union interests, which your Foreman will decide.
+  canBeAntag: false
+  access:
+  - Command
+  - Maintenance
+  - SyndicateBasic
+  - SyndicateSaws
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: ShipbreakerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSyndicateSaws
+    shoes: ClothingShoesBootsCombat
+    head: ClothingHeadHatHardhatSyndicate
+    id: ShipbreakerPDA
+    ears: ClothingHeadsetNCSPSaws
+    belt: ClothingBeltUtilityEngineering
+    pocket1: WeaponPistolHKUSP
+    gloves: ClothingHandsGlovesFingerless

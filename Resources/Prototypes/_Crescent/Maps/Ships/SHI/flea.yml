@@ -1,0 +1,30 @@
+- type: vessel
+  id: Flea
+  name: SHI Flea
+  description: A refitted Termite, the Flea acts as a stealth boarder pod.
+  price: 22500
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/SHI/flea.yml
+
+- type: gameMap
+  id: Flea
+  mapName: 'SHI Flea'
+  mapPath: /Maps/_Crescent/Shuttles/SHI/flea.yml
+  minPlayers: 0
+  stations:
+    Flea:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'CSEC Flea {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-stealth-boarder
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            CorpsecSHI: [2, 2]
+

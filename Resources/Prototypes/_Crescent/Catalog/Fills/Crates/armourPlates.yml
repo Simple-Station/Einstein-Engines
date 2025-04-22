@@ -1,0 +1,103 @@
+- type: entity
+  id: CrateSecurityArmorSteelPlates
+  parent: CrateSecgear
+  name: Armor Steel Plates Crate
+  description: "6 steel plates shaped to be slotted into armour slots."
+  components:
+  - type: StorageFill
+    contents:
+      - id: ArmorPlateSteel
+        amount: 6
+
+- type: entity
+  id: CrateSecurityArmorPlasteelPlates
+  parent: CrateSecgear
+  name: Armor Plasteel Plates Crate
+  description: "6 Plasteel plates shaped to be slotted into armour slots."
+  components:
+  - type: StorageFill
+    contents:
+      - id: ArmorPlatePlasteel
+        amount: 6
+
+- type: entity
+  id: CrateSecurityArmorNanoPolymerPlates
+  parent: CrateSecgear
+  name: Armor NanoPolymer Sheets Crate
+  description: "6 rolls of NanoPolymer ready to be woven."
+  components:
+  - type: StorageFill
+    contents:
+      - id: ArmorPlateNanoPolymer
+        amount: 6
+
+- type: entity
+  id: CrateSecurityArmorCeramicPlates
+  parent: CrateSecgear
+  name: Armor Ceramic Plates Crate
+  description: "6 Ceramic plates ready for stopping bullets."
+  components:
+  - type: StorageFill
+    contents:
+      - id: ArmorPlateCeramic
+        amount: 6
+
+- type: entity
+  id: CrateSecurityArmorDurathreadPlates
+  parent: CrateSecgear
+  name: Armor Durathread Weave Crate
+  description: "6 rolls of Durathread Weave ready for combat-use."
+  components:
+  - type: StorageFill
+    contents:
+      - id: ArmorPlateDurathread
+        amount: 6
+
+- type: entity
+  id: CrateSecurityArmorHomelandPlates
+  parent: CrateSecgear
+  name: Armor Homeland Alloy Plates Crate
+  description: "6 Sheets of the highly prized Homeland Alloy that has won NCWL the conflict on the homeworld."
+  components:
+  - type: StorageFill
+    contents:
+      - id: ArmorPlateHomeland
+        amount: 6
+
+- type: entity
+  id: CrateSecurityArmorKevlarPlates
+  parent: CrateSecgear
+  name: Armor Kevlar Rolls Crate
+  description: "6 Rolls of high-grade kevlar for blocking rifle-sized bullets."
+  components:
+  - type: StorageFill
+    contents:
+      - id: ArmorPlateKevlar
+        amount: 6
+
+- type: entity
+  id: CrateSecurityArmorPEKPlates
+  parent: CrateSecgear
+  name: Armor Plastel Encased Kevlar Plates
+  description: "6 raw pieces of Kevlar with Plasteel hydraulically pressed to cover it. Formidable at blocking tough bullets."
+  components:
+  - type: StorageFill
+    contents:
+      - id: ArmorPlatePlasteelEncasedKevlar
+        amount: 6
+
+
+- type: entity
+  id: CrateSecurityArmorNanoCeramicPlates
+  parent: CrateSecgear
+  name: Armor NanoCeramic Rolls Crate
+  description: "6 Rolls of NanoCeramic plates. A propietary NT alloy that keeps flexibility as a ceramic."
+  components:
+  - type: StorageFill
+    contents:
+      - id: ArmorPlateNanoCeramic
+        amount: 6
+
+
+
+

@@ -1,0 +1,241 @@
+#faction-flagged thrusters
+
+- type: entity
+  id: ThrusterNCSPFighter
+  parent: Thruster
+  suffix: NCSP, Fighter
+  components:
+    - type: NpcFactionMember
+      factions:
+        - NCSPFighter
+    - type: Sprite
+      sprite: _Crescent/Structures/thrustersyn.rsi
+      layers:
+      - state: base
+        map: ["enum.ThrusterVisualLayers.Base"]
+      - state: thrust
+        map: ["enum.ThrusterVisualLayers.ThrustOn"]
+        shader: unshaded
+        visible: false
+      - state: thrust_burn_unshaded
+        map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+        shader: unshaded
+        visible: false
+        offset: 0, 1
+    - type: Machine
+      board: NCSPFighterCircuitBoard
+
+- type: entity
+  id: ThrusterNCSPSmuggler
+  parent: Thruster
+  suffix: NCSP, Smuggler
+  components:
+    - type: Sprite
+      sprite: _Crescent/Structures/thrustersyn.rsi
+      layers:
+      - state: base
+        map: ["enum.ThrusterVisualLayers.Base"]
+      - state: thrust
+        map: ["enum.ThrusterVisualLayers.ThrustOn"]
+        shader: unshaded
+        visible: false
+      - state: thrust_burn_unshaded
+        map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+        shader: unshaded
+        visible: false
+        offset: 0, 1
+    - type: Machine
+      board: NCSPSmugglerCircuitBoard
+
+- type: entity
+  id: ThrusterCMMFighter
+  parent: Thruster
+  suffix: CMM, Fighter
+  components:
+    - type: NpcFactionMember
+      factions:
+        - CMMFighter
+    - type: Machine
+      board: CMMFighterCircuitBoard
+
+- type: entity
+  id: ThrusterDSMFighter
+  parent: Thruster
+  suffix: DSM, Fighter
+  components:
+    - type: NpcFactionMember
+      factions:
+        - DSMFighter
+    - type: Sprite
+      sprite: _Crescent/Structures/thrusterempire.rsi
+      layers:
+      - state: base
+        map: ["enum.ThrusterVisualLayers.Base"]
+      - state: thrust
+        map: ["enum.ThrusterVisualLayers.ThrustOn"]
+        shader: unshaded
+        visible: false
+      - state: thrust_burn_unshaded
+        map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+        shader: unshaded
+        visible: false
+        offset: 0, 1
+    - type: Machine
+      board: DSMFighterCircuitBoard
+
+
+
+- type: entity
+  id: ThrusterSHIFighter
+  parent: Thruster
+  suffix: SHI, Fighter
+  components:
+    - type: NpcFactionMember
+      factions:
+        - SHIFighter
+    - type: Machine
+      board: SHIFighterCircuitBoard
+
+- type: entity
+  id: ThrusterNCWLFighter
+  parent: Thruster
+  suffix: NCWL, Fighter
+  components:
+    - type: NpcFactionMember
+      factions:
+        - NCWLFighter
+    - type: Sprite
+      sprite: _Crescent/Structures/thrusterncwl.rsi
+      layers:
+      - state: base
+        map: ["enum.ThrusterVisualLayers.Base"]
+      - state: thrust
+        map: ["enum.ThrusterVisualLayers.ThrustOn"]
+        shader: unshaded
+        visible: false
+      - state: thrust_burn_unshaded
+        map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+        shader: unshaded
+        visible: false
+        offset: 0, 1
+    - type: Machine
+      board: NCWLFighterCircuitBoard
+
+- type: entity
+  id: ThrusterSRMFighter
+  parent: Thruster
+  suffix: SRM, Fighter
+  components:
+    - type: NpcFactionMember
+      factions:
+        - SRMFighter
+    - type: Machine
+      board: SRMFighterCircuitBoard
+
+- type: entity
+  id: ThrusterNCSPWarship
+  parent: Thruster
+  suffix: NCSP, Warship
+  components:
+    - type: NpcFactionMember
+      factions:
+        - NCSPWarship
+    - type: Sprite
+      sprite: _Crescent/Structures/thrustersyn.rsi
+      layers:
+      - state: base
+        map: ["enum.ThrusterVisualLayers.Base"]
+      - state: thrust
+        map: ["enum.ThrusterVisualLayers.ThrustOn"]
+        shader: unshaded
+        visible: false
+      - state: thrust_burn_unshaded
+        map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+        shader: unshaded
+        visible: false
+        offset: 0, 1
+    - type: Machine
+      board: NCSPWarshipCircuitBoard
+
+- type: entity
+  id: ThrusterNCWLWarship
+  parent: Thruster
+  suffix: NCWL, Warship
+  components:
+    - type: NpcFactionMember
+      factions:
+        - NCWLWarship
+    - type: Sprite
+      sprite: _Crescent/Structures/thrusterncwl.rsi
+      layers:
+      - state: base
+        map: ["enum.ThrusterVisualLayers.Base"]
+      - state: thrust
+        map: ["enum.ThrusterVisualLayers.ThrustOn"]
+        shader: unshaded
+        visible: false
+      - state: thrust_burn_unshaded
+        map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+        shader: unshaded
+        visible: false
+        offset: 0, 1
+    - type: Machine
+      board: NCWLWarshipCircuitBoard
+
+- type: entity
+  id: ThrusterCMMWarship
+  parent: Thruster
+  suffix: CMM, Warship
+  components:
+    - type: NpcFactionMember
+      factions:
+        - CMMWarship
+    - type: Machine
+      board: CMMWarshipCircuitBoard
+
+- type: entity
+  id: ThrusterSHIWarship
+  parent: Thruster
+  suffix: SHI, Warship
+  components:
+    - type: NpcFactionMember
+      factions:
+        - SHIWarship
+    - type: Machine
+      board: SHIWarshipCircuitBoard
+
+- type: entity
+  id: ThrusterDSMWarship
+  parent: Thruster
+  suffix: DSM, Warship
+  components:
+    - type: NpcFactionMember
+      factions:
+        - DSMWarship
+    - type: Sprite
+      sprite: _Crescent/Structures/thrusterempire.rsi
+      layers:
+      - state: base
+        map: ["enum.ThrusterVisualLayers.Base"]
+      - state: thrust
+        map: ["enum.ThrusterVisualLayers.ThrustOn"]
+        shader: unshaded
+        visible: false
+      - state: thrust_burn_unshaded
+        map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+        shader: unshaded
+        visible: false
+        offset: 0, 1
+    - type: Machine
+      board: DSMWarshipCircuitBoard
+
+- type: entity
+  id: ThrusterSRMWarship
+  parent: Thruster
+  suffix: SRM, Warship
+  components:
+    - type: NpcFactionMember
+      factions:
+        - SRMWarship
+    - type: Machine
+      board: SRMWarshipCircuitBoard

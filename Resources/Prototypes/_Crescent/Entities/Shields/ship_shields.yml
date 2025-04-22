@@ -1,0 +1,8 @@
+- type: entity
+  id: ShipShield
+  name: ship shield
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipShield
+  - type: ShipShieldVisuals
+  - type: Fixtures

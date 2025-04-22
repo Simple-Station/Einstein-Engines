@@ -1,0 +1,32 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Broadsword
+  name: NCWL Broadsword
+  description: An ultralight communard bomber.
+  price: 12500
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCWL/broadsword.yml
+
+- type: gameMap
+  id: Broadsword
+  mapName: 'NCWL Broadsword'
+  mapPath: /Maps/_Crescent/Shuttles/NCWL/broadsword.yml
+  minPlayers: 0
+  stations:
+    Broadsword:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Broadsword {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-bomber
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            SanitarNCWL: [ 0, 0 ]

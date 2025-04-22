@@ -1,0 +1,18 @@
+- type: vendingMachineInventory
+  id: ImperialArmoryInventory
+  startingInventory:
+    WeaponSubMachineGunBeetle: 6
+    WeaponSubMachineGunC20r: 6
+    WeaponRifleMiller: 6
+    WeaponPistolComplianceImperial: 12
+    WeaponShotgunSpas: 6
+    MagazinePistol: 25
+    MagazineRifle: 25
+    ClothingUniformJumpsuitImperialCombat: 10
+    ClothingMaskSyndicateFacemask: 10
+    ClothingShoesBootsImperialJackboots: 10
+    ClothingHandsGlovesImperialLonggloves: 10
+    ClothingShoesBootsJack: 10 #YAMLFIX: What the fuck are these supposed to be?
+    FoodSnackNutribrick: 10
+    DrinkMREFlask: 10
+    WeaponGrapplingGun: 15

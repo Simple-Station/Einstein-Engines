@@ -1,0 +1,38 @@
+- type: entity
+  name: NT SPAS-13 12g
+  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  id: WeaponShotgunSpas
+  description: A premium combat shotgun ripped from ancient Terran designs. Originates from the now-defunct NanoTrasen.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/spas12.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/spas12worn.rsi
+  - type: BallisticAmmoProvider
+  - type: StaticPrice
+    price: 2500
+
+- type: entity
+  name: PTA Karabin 4g
+  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  id: WeaponShotgunKS23
+  description: An oversized shotgun. Packs devastating 4 Gauge punches. Developed as part of Pang Tai's elite mercenary package.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/karabin.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/karabinworn.rsi
+  - type: GunRequiresWield
+  - type: Gun
+    fireRate: 1.5
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - ShellShotgun4g
+    capacity: 4
+    proto: ShellShotgun4gBuckshot
+  - type: ItemSlots

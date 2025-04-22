@@ -1,0 +1,49 @@
+
+- type: latheRecipe
+  id: SteelScrap
+  result: RefinedSteelScrap1
+  completetime: 0.25
+  materials:
+    ScrapSteel: 500
+
+- type: latheRecipe
+  id: TitaniumScrap
+  result: RefinedTitaniumScrap1
+  completetime: 0.25
+  materials:
+    ScrapTitanium: 500
+
+- type: latheRecipe
+  id: Garbage
+  result: RefinedGarbageOre1
+  completetime: 0.25
+  materials:
+    Garbage: 500
+
+- type: latheRecipe
+  id: SteelScraptoSteel1
+  result: SheetSteel1
+  completetime: 0.25
+  materials:
+    ScrapSteel: 100
+
+- type: latheRecipe
+  id: SteelScraptoSteel
+  result: SheetSteel
+  completetime: 0.25
+  materials:
+    ScrapSteel: 3000
+
+- type: latheRecipe
+  id: PlasteelFromScrap1
+  result: SheetPlasteel1
+  completetime: 0.25
+  materials:
+    ScrapTitanium: 200
+
+- type: latheRecipe
+  id: PlasteelFromScrap
+  result: SheetPlasteel
+  completetime: 0.25
+  materials:
+    ScrapTitanium: 6000

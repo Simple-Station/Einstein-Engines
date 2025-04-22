@@ -1,0 +1,187 @@
+- type: entity
+  name: crash autoinjector
+  parent: ChemicalMedipen
+  id: CrashAutoinjector
+  description: A cheap, easily-produced combat stimulant, most commonly used by combat pilots. Known to cause the jitters.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Autoinjectors/crash.rsi
+    layers:
+    - state: medipen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: medipen_empty
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 15
+        reagents:
+        - ReagentId: Crash
+          Quantity: 15
+  - type: Tag
+    tags: []
+  - type: StaticPrice
+    price: 1000
+  - type: Contraband
+    value: 3
+
+- type: entity
+  name: exile autoinjector
+  parent: ChemicalMedipen
+  id: ExileAutoinjector
+  description: A common combat stimulant used to both treat wounds sustained during battle and keep an operative on their feet for the duration of the fight.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Autoinjectors/exile.rsi
+    layers:
+    - state: medipen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: medipen_empty
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 30
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 30
+        reagents:
+        - ReagentId: Exile
+          Quantity: 25
+        - ReagentId: TranexamicAcid
+          Quantity: 5
+  - type: Tag
+    tags: []
+  - type: Contraband
+    value: 5
+
+- type: entity
+  name: kaiser autoinjector
+  parent: ChemicalMedipen
+  id: KaiserAutoinjector
+  description: A sophisticated, potent combat drug - boasting the refined effects of Exile with none of the drawbacks. A feat of Syndicate chemical engineering.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Autoinjectors/kaiser.rsi
+    layers:
+    - state: medipen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: medipen_empty
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 40
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 40
+        reagents:
+        - ReagentId: Kaiser
+          Quantity: 25
+        - ReagentId: Ephedrine
+          Quantity: 15
+  - type: Tag
+    tags: []
+  - type: Contraband
+    value: 10
+
+- type: entity
+  name: mechanite injector gun
+  parent: ChemicalMedipen
+  id: MechaniteAutoinjector
+  description: A chemical cocktail of healing mechanites intended to localize around damaged parts of the body and repair it on a sub-molecular level.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Autoinjectors/mechanites.rsi
+    layers:
+    - state: medipen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: medipen_empty
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 40
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 40
+        reagents:
+        - ReagentId: Mechanites
+          Quantity: 35
+        - ReagentId: TranexamicAcid
+          Quantity: 5
+  - type: Tag
+    tags: []
+
+- type: entity
+  name: blood-eye ampoule
+  parent: ChemicalMedipen
+  id: BloodeyeAutoinjector
+  description: A chemical cocktail of combat drugs known to invoke violent tendencies within the user. Blood-eye was originally produced by Shinohara Heavy Industries, but later taken off the shelves after narcotic regulations were put into place.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Autoinjectors/bloodeye.rsi
+    layers:
+    - state: medipen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: medipen_empty
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 45
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 45
+        reagents:
+        - ReagentId: Bloodeye
+          Quantity: 30
+        - ReagentId: Crash
+          Quantity: 15
+  - type: Tag
+    tags: []
+  - type: Contraband
+    value: 4
+
+- type: entity
+  name: narcan autoinjector
+  parent: ChemicalMedipen
+  id: NarcanAutoinjector
+  description: A chemical used for the stabilization of patients who have overdosed on narcotics.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: medipen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: medipen_empty
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 10
+        reagents:
+        - ReagentId: Narcan
+          Quantity: 10
+  - type: Tag
+    tags: []

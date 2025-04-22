@@ -1,0 +1,42 @@
+- type: job
+  id: CourtierDSM
+  name: job-name-courtier
+  description: job-description-courtier
+  playTimeTracker: JobCourtierDSM
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 2500
+    - !type:SpeciesRequirement
+      allowedOnly:
+        - Human
+    - !type:FactionRequirement
+      factionID: "DSM"
+  weight: 25
+  startingGear: CourtierGear
+  alwaysUseSpawner: true
+  icon: "JobIconImperialCourtier"
+  requireAdminNotify: false
+  supervisors: job-supervisors-imperial 
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ministry
+  access:
+  - Command
+  - Empire
+  - EmpireNoble
+  - Maintenance
+  - Service
+  - EmpireSoldier
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: CourtierGear
+  equipment:
+    id: CourtierPDA
+    ears: ClothingHeadsetEmpire
+    pocket1: ImperialPassportBareLegit

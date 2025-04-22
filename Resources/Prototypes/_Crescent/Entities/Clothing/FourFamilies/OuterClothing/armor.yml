@@ -1,0 +1,277 @@
+#hardsuits
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitDraugr
+  name: DRAUGR mk.I pressurized combat exosuit
+  description: A combat hardsuit of antiquated make. Tribal fetishes adorn the dented breastplate. Used by many Pacters belonging to the Al'Seik family.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/FourFamilies/OuterClothing/draugrexo.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/FourFamilies/OuterClothing/draugrexo.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: DegradeableArmor
+    armorMaxHealth: 750
+    armorType: Metallic
+    armorRepair: SteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 15
+        Slash: 15
+        Piercing: 45
+        Heat: 15
+        Caustic: 25
+  - type: ClothingSpeedModifier
+    walkModifier: 0.80
+    sprintModifier: 0.85
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitDraugr
+  - type: StaticPrice
+    price: 1000
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitArabet
+  name: prophet's pressurized hardsuit
+  description: An unusual hardsuit constructed of sleek plasteel, gilded with tribal patterns. The shoulderplates bear the mark of the Arabet family of the Pact.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/FourFamilies/OuterClothing/prophetsuit.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/FourFamilies/OuterClothing/prophetsuit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: DegradeableArmor
+    armorMaxHealth: 750
+    armorType: Metallic
+    armorRepair: PlasteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 35
+        Slash: 35
+        Piercing: 75
+        Heat: 55
+        Caustic: 25
+  - type: ClothingSpeedModifier
+    walkModifier: 0.80
+    sprintModifier: 0.85
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitArabet
+  - type: StaticPrice
+    price: 1000
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitIzdari
+  name: izdari beltrunner's armored hardsuit
+  description: A modified version of an antiquated atmospheric techinican's hardsuit. Around three generations out of date. Attributed commonly to the Izdari family.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/FourFamilies/OuterClothing/izdarianti.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/FourFamilies/OuterClothing/izdarianti.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: DegradeableArmor
+    armorMaxHealth: 750
+    armorType: Metallic
+    armorRepair: SteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 35
+        Slash: 25
+        Piercing: 35
+        Heat: 10
+        Caustic: 25
+  - type: ClothingSpeedModifier
+    walkModifier: 0.80
+    sprintModifier: 0.85
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitIzdari
+  - type: StaticPrice
+    price: 1000
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitThukker
+  name: thukker combat engineer's hardsuit
+  description: A modified mining hardsuit adorned with the livery of the Thukker family of the Pact. Features bulky lead shielding against radiation.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/FourFamilies/OuterClothing/thukkersuit.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/FourFamilies/OuterClothing/thukkersuit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: DegradeableArmor
+    armorMaxHealth: 1000
+    armorType: Metallic
+    armorRepair: SteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 10
+        Slash: 10
+        Piercing: 10
+        Heat: 10
+        Caustic: 25
+  - type: ClothingSpeedModifier
+    walkModifier: 0.80
+    sprintModifier: 0.85
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitThukker
+  - type: StaticPrice
+    price: 1000
+
+- type: entity
+  parent: ClothingOuterEVASuitBase
+  id: ClothingOuterBeltrunnerEVA
+  name: pact beltrunner's voidsuit
+  description: A spaceworthy softsuit belonging to the Izdari family of the Atyrian Pact. Repaired many times over.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/FourFamilies/OuterClothing/beltrunner.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/FourFamilies/OuterClothing/beltrunner.rsi
+  - type: Tag
+    tags:
+    - SuitEVA
+  - type: StaticPrice
+    price: 1000
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorServileAlseik
+  name: servile's durathread rags
+  description: A durathread robe adorned with tribal fetishes. This one doesn't bear as many rank stripes or adornments.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/FourFamilies/OuterClothing/alseikservile.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/FourFamilies/OuterClothing/alseikservile.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 750
+    armorType: Metallic
+    armorRepair: DuraThread
+    initialModifiers:
+      flatReductions:
+        Blunt: 5
+        Slash: 5
+        Piercing: 15
+        Heat: 5
+        Caustic: 25
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorDraugrAlseik
+  name: draugr's armored durathread robes
+  description: A durathread robe adorned with tribal fetishes. This one bears the color stripes and adornments of a decorated tribal warrior.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/FourFamilies/OuterClothing/alseikdraugr.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/FourFamilies/OuterClothing/alseikdraugr.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 1000
+    armorType: Metallic
+    armorRepair: DuraThread
+    initialModifiers:
+      flatReductions:
+        Blunt: 10
+        Slash: 10
+        Piercing: 35
+        Heat: 15
+        Caustic: 25
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorAcolyteRobes
+  name: devoted's robes
+  description: A set of hooded robes for the truly devoted.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/FourFamilies/OuterClothing/acolyterobes.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/FourFamilies/OuterClothing/acolyterobes.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 750
+    armorType: Metallic
+    armorRepair: DuraThread
+    initialModifiers:
+      flatReductions:
+        Blunt: 5
+        Slash: 5
+        Piercing: 5
+        Heat: 5
+        Caustic: 25
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorThukkerEngiVest
+  name: thukker combat engineer's vest
+  description: A half-vest of kevlar-reinforced durathread, meant to shield engineers' vitals during combat.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/FourFamilies/OuterClothing/engineervest.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/FourFamilies/OuterClothing/engineervest.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 750
+    armorType: Metallic
+    armorRepair: DuraThread
+    initialModifiers:
+      flatReductions:
+        Blunt: 10
+        Slash: 10
+        Piercing: 30
+        Heat: 25
+        Caustic: 25
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+  - type: StaticPrice
+    price: 250

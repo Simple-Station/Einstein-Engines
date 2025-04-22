@@ -1,0 +1,824 @@
+#ncwl#
+
+- type: entity
+  id: SpawnPointKommissar
+  parent: SpawnPointJobBase
+  name: kommissar
+  components:
+  - type: SpawnPoint
+    job_id: KommissarNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointSanitar
+  parent: SpawnPointJobBase
+  name: sanitar
+  components:
+  - type: SpawnPoint
+    job_id: SanitarNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointArtificer
+  parent: SpawnPointJobBase
+  name: artificer
+  components:
+  - type: SpawnPoint
+    job_id: ArtificerNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointDoktor
+  parent: SpawnPointJobBase
+  name: doktor
+  components:
+  - type: SpawnPoint
+    job_id: DoktorNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointAdministrator
+  parent: SpawnPointJobBase
+  name: administrator
+  components:
+  - type: SpawnPoint
+    job_id: AdministratorNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointKapitan
+  parent: SpawnPointJobBase
+  name: kapitan
+  components:
+  - type: SpawnPoint
+    job_id: KapitanNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointKadet
+  parent: SpawnPointJobBase
+  name: kadet
+  components:
+  - type: SpawnPoint
+    job_id: KadetNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+
+#syndicate#
+
+- type: entity
+  id: SpawnPointRingleader
+  parent: SpawnPointJobBase
+  name: ringleader
+  components:
+  - type: SpawnPoint
+    job_id: RingleaderNCSP
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointLieutenant
+  parent: SpawnPointJobBase
+  name: lieutenant
+  components:
+  - type: SpawnPoint
+    job_id: LieutenantNCSP
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointCyberdawnTech
+  parent: SpawnPointJobBase
+  name: cyberdawn researcher
+  components:
+  - type: SpawnPoint
+    job_id: CyberdawnTechNCSP
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointInfanteer
+  parent: SpawnPointJobBase
+  name: infanteer
+  components:
+  - type: SpawnPoint
+    job_id: InfanteerNCSP
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointTechnician
+  parent: SpawnPointJobBase
+  name: artillery technician
+  components:
+  - type: SpawnPoint
+    job_id: TechnicianNCSP
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointRipperdoc
+  parent: SpawnPointJobBase
+  name: ripperdoc
+  components:
+  - type: SpawnPoint
+    job_id: RipperdocNCSP
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointChemcook
+  parent: SpawnPointJobBase
+  name: traumasec
+  components:
+  - type: SpawnPoint
+    job_id: ChemcookNCSP
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointOperative
+  parent: SpawnPointJobBase
+  name: cyberdawn agent
+  components:
+  - type: SpawnPoint
+    job_id: OperativeNCSP
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointIntelligenceOfficer
+  parent: SpawnPointJobBase
+  name: patriarch
+  components:
+  - type: SpawnPoint
+    job_id: IntelligenceOfficerNCSP
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointShipbreaker
+  parent: SpawnPointJobBase
+  name: shipbreaker
+  components:
+  - type: SpawnPoint
+    job_id: ShipbreakerNCSP
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointForeman
+  parent: SpawnPointJobBase
+  name: foreman
+  components:
+  - type: SpawnPoint
+    job_id: ForemanNCSP
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+#empire
+
+- type: entity
+  id: SpawnPointFreeholder
+  parent: SpawnPointJobBase
+  name: freeholder
+  components:
+  - type: SpawnPoint
+    job_id: FreeholderDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointAdvocatus
+  parent: SpawnPointJobBase
+  name: advocati
+  components:
+  - type: SpawnPoint
+    job_id: AdvocatusDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointTemplar
+  parent: SpawnPointJobBase
+  name: advocati
+  components:
+  - type: SpawnPoint
+    job_id: TemplarDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointSurgeon
+  parent: SpawnPointJobBase
+  name: surgeon
+  components:
+  - type: SpawnPoint
+    job_id: SurgeonDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointArchmaester
+  parent: SpawnPointJobBase
+  name: archmaester
+  components:
+  - type: SpawnPoint
+    job_id: ArchmaesterDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointLevyman
+  parent: SpawnPointJobBase
+  name: man at arms
+  components:
+  - type: SpawnPoint
+    job_id: LevymanDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointWealth
+  parent: SpawnPointJobBase
+  name: minister of wealth
+  components:
+  - type: SpawnPoint
+    job_id: WealthDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointForemanImperial
+  parent: SpawnPointJobBase
+  name: imperial foreman
+  components:
+  - type: SpawnPoint
+    job_id: ForemanDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointScribe
+  parent: SpawnPointJobBase
+  name: imperial scribe
+  components:
+  - type: SpawnPoint
+    job_id: ScribeDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointKnight
+  parent: SpawnPointJobBase
+  name: knight
+  components:
+  - type: SpawnPoint
+    job_id: KnightDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointCourtier
+  parent: SpawnPointJobBase
+  name: courtier
+  components:
+  - type: SpawnPoint
+    job_id: CourtierDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointAdjutant
+  parent: SpawnPointJobBase
+  name: adjutant
+  components:
+  - type: SpawnPoint
+    job_id: AdjutantDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointGovernor
+  parent: SpawnPointJobBase
+  name: governor
+  components:
+  - type: SpawnPoint
+    job_id: GovernorDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+#srm
+
+- type: entity
+  id: SpawnPointTender
+  parent: SpawnPointJobBase
+  name: tender
+  components:
+  - type: SpawnPoint
+    job_id: TenderSRM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointAcolyte
+  parent: SpawnPointJobBase
+  name: apprentice hunter
+  components:
+  - type: SpawnPoint
+    job_id: AcolyteSRM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointHunter
+  parent: SpawnPointJobBase
+  name: hunter
+  components:
+  - type: SpawnPoint
+    job_id: HunterSRM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointMontagne
+  parent: SpawnPointJobBase
+  name: hunter montagne
+  components:
+  - type: SpawnPoint
+    job_id: MontagneSRM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointOverseer
+  parent: SpawnPointJobBase
+  name: overseer
+  components:
+  - type: SpawnPoint
+    job_id: OverseerSRM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+#shi
+
+- type: entity
+  id: SpawnPointExecutive
+  parent: SpawnPointJobBase
+  name: executive
+  components:
+  - type: SpawnPoint
+    job_id: ExecutiveSHI
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointBoard
+  parent: SpawnPointJobBase
+  name: board member
+  components:
+  - type: SpawnPoint
+    job_id: BoardSHI
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointCorpSec
+  parent: SpawnPointJobBase
+  name: corpsec agent
+  components:
+  - type: SpawnPoint
+    job_id: CorpsecSHI
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointHighSec
+  parent: SpawnPointJobBase
+  name: highsec agent
+  components:
+  - type: SpawnPoint
+    job_id: HighsecSHI
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointEmployee
+  parent: SpawnPointJobBase
+  name: shinohara employee
+  components:
+  - type: SpawnPoint
+    job_id: EmployeeSHI
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointMedtech
+  parent: SpawnPointJobBase
+  name: medtech
+  components:
+  - type: SpawnPoint
+    job_id: MedtechSHI
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+#misc
+
+- type: entity
+  id: SpawnPointAntiquarian
+  parent: SpawnPointJobBase
+  name: antiquarian
+  components:
+  - type: SpawnPoint
+    job_id: Antiquarian
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+#cmm
+
+- type: entity
+  id: SpawnPointOrdnanceman
+  parent: SpawnPointJobBase
+  name: ordnanceman
+  components:
+  - type: SpawnPoint
+    job_id: OrdnancemanCMM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointPhysicianCMM
+  parent: SpawnPointJobBase
+  name: PhysicianCMM
+  components:
+  - type: SpawnPoint
+    job_id: PhysicianCMM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointDeputyMarshalCMM
+  parent: SpawnPointJobBase
+  name: DeputyMarshalCMM
+  components:
+  - type: SpawnPoint
+    job_id: DeputyMarshalCMM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointMachinistCMM
+  parent: SpawnPointJobBase
+  name: MachinistCMM
+  components:
+  - type: SpawnPoint
+    job_id: MachinistCMM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointMarshalCMM
+  parent: SpawnPointJobBase
+  name: MarshalCMM
+  components:
+  - type: SpawnPoint
+    job_id: MarshalCMM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointMinutemanCMM
+  parent: SpawnPointJobBase
+  name: MinutemanCMM
+  components:
+  - type: SpawnPoint
+    job_id: MinutemanCMM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointOrdnancemanCMM
+  parent: SpawnPointJobBase
+  name: OrdnancemanCMM
+  components:
+  - type: SpawnPoint
+    job_id: OrdnancemanCMM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointWatchmasterCMM
+  parent: SpawnPointJobBase
+  name: WatchmasterCMM
+  components:
+  - type: SpawnPoint
+    job_id: WatchmasterCMM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+#fourfamilies
+
+- type: entity
+  id: SpawnPointProphetTAP
+  parent: SpawnPointJobBase
+  name: ProphetTAP
+  components:
+  - type: SpawnPoint
+    job_id: ProphetTAP
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointAcolyteTAP
+  parent: SpawnPointJobBase
+  name: AcolyteTAP
+  components:
+  - type: SpawnPoint
+    job_id: AcolyteTAP
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointTinkererTAP
+  parent: SpawnPointJobBase
+  name: TinkererTAP
+  components:
+  - type: SpawnPoint
+    job_id: TinkererTAP
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointTechminerTAP
+  parent: SpawnPointJobBase
+  name: TechminerTAP
+  components:
+  - type: SpawnPoint
+    job_id: TechminerTAP
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointHangarTechTAP
+  parent: SpawnPointJobBase
+  name: HangarTechTAP
+  components:
+  - type: SpawnPoint
+    job_id: HangarTechTAP
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointDraugrTAP
+  parent: SpawnPointJobBase
+  name: DraugrTAP
+  components:
+  - type: SpawnPoint
+    job_id: DraugrTAP
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointServileTAP
+  parent: SpawnPointJobBase
+  name: ServileTAP
+  components:
+  - type: SpawnPoint
+    job_id: ServileTAP
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointBeltrunnerTAP
+  parent: SpawnPointJobBase
+  name: BeltrunnerTAP
+  components:
+  - type: SpawnPoint
+    job_id: BeltrunnerTAP
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+#misc
+
+- type: entity
+  id: SpawnPointSpacer
+  parent: SpawnPointJobBase
+  name: Spacer
+  components:
+  - type: SpawnPoint
+    job_id: Spacer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointGliessDockmaster
+  parent: SpawnPointJobBase
+  name: GliessDockmaster
+  components:
+  - type: SpawnPoint
+    job_id: GliessianDockmaster
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointGliessSheriff
+  parent: SpawnPointJobBase
+  name: GliessSheriff
+  components:
+  - type: SpawnPoint
+    job_id: GliessianSheriff
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+#ath
+
+- type: entity
+  id: SpawnPointKommandantATH
+  parent: SpawnPointJobBase
+  name: Kommandant
+  components:
+  - type: SpawnPoint
+    job_id: KommandantATH
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointLeutnantATH
+  parent: SpawnPointJobBase
+  name: Leutnant
+  components:
+  - type: SpawnPoint
+    job_id: LeutnantATH
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointSoldatATH
+  parent: SpawnPointJobBase
+  name: Soldat
+  components:
+  - type: SpawnPoint
+    job_id: SoldatATH
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointKanoneerATH
+  parent: SpawnPointJobBase
+  name: Kanoneer
+  components:
+  - type: SpawnPoint
+    job_id: KanoneerATH
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointSanitatATH
+  parent: SpawnPointJobBase
+  name: Sanitat
+  components:
+  - type: SpawnPoint
+    job_id: SanitatATH
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger

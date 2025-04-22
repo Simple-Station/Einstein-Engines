@@ -1,0 +1,81 @@
+- type: job
+  id: TinkererTAP
+  name: job-name-tinkerer
+  description: job-description-tinkerer
+  playTimeTracker:  JobTinkererTAP
+  requirements:
+    - !type:FactionRequirement
+      factionID: "TAP"
+    - !type:SpeciesRequirement
+      allowedOnly:
+        - Moth
+        - Arachnid
+  weight: 53
+  startingGear: TinkererGear
+  alwaysUseSpawner: true
+  icon: "JobIconTinkerer"
+  requireAdminNotify: false
+  supervisors: job-supervisors-tap
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-tinkerer
+  - !type:AddComponentSpecial
+    components:
+      - type: Telepathic
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - Families
+  - Thukker
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Command
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Mercenary # Frontier
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - External
+  - Captain # Frontier
+
+- type: startingGear
+  id: TinkererGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitTinkerer
+    back: ClothingBackpackSatchelFilled
+    shoes: ClothingShoesBootsJack
+    outerClothing: ClothingOuterArmorThukkerEngiVest
+    id: TinkererPDA
+    belt: ClothingBeltUtilityEngineering
+    ears: ClothingHeadsetFamilies
+    gloves: ClothingHandsGlovesFingerless

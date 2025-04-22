@@ -1,0 +1,32 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: VanguardMarkTwo
+  name: NCWL Vanguard Mk.II
+  description: An elite communard gunboat with upgraded armaments.
+  price: 87500
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCWL/vanguardmk2.yml
+
+- type: gameMap
+  id: VanguardMarkTwo
+  mapName: 'NCWL Vanguard Mk.II'
+  mapPath: /Maps/_Crescent/Shuttles/NCWL/vanguardmk2.yml
+  minPlayers: 0
+  stations:
+    VanguardMarkTwo:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Vanguard Mk.II {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-gunship
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            SanitarNCWL: [ 0, 0 ]

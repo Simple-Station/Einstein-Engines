@@ -1,0 +1,47 @@
+- type: job
+  id: ArchmaesterDSM
+  name: job-name-archmaester
+  description: job-description-archmaester
+  playTimeTracker: JobArchmaesterDSM
+  weight: 21
+  startingGear: ArchmaesterGear
+  alwaysUseSpawner: true
+  icon: "JobIconArchmaester"
+  requireAdminNotify: true
+  supervisors: job-supervisors-imperial 
+  canBeAntag: false
+  requirements:
+    - !type:SpeciesRequirement
+      allowedOnly:
+        - Human
+    - !type:OverallPlaytimeRequirement
+      time: 36000
+    - !type:FactionRequirement
+      factionID: "DSM"
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-archmaester
+  access:
+  - Command
+  - Empire
+  - Maintenance
+  - ScribesGuild
+  - Archmaester
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: ArchmaesterGear
+  equipment:
+    id: ArchmaesterPDA
+    ears: ClothingHeadsetEmpire
+    pocket1: ImperialPassportBareLegit
+    back: ClothingBackpackSatchelLeatherFilledDSM
+    outerClothing: ClothingOuterCoatArchmaester
+    mask: ClothingMaskImperialAdjutantMask
+    shoes: ClothingShoesBootsImperialLaceup
+    jumpsuit: ClothingUniformJumpsuitImperialArchmaester

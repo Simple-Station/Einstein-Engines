@@ -1,0 +1,34 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Hind
+  name: NCWL Hind
+  description: A light ore freighter converted into a missile frigate.
+  price: 60000
+  category: Medium
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCWL/hind.yml
+
+- type: gameMap
+  id: Hind
+  mapName: 'NCWL Hind'
+  mapPath: /Maps/_Crescent/Shuttles/NCWL/hind.yml
+  minPlayers: 0
+  stations:
+    Hind:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Hind {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-missile
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            SanitarNCWL: [ 2, 2 ]
+            KadetNCWL: [ 2, 2 ]
+            DoktorNCWL: [ 1, 1 ]

@@ -1,0 +1,29 @@
+- type: vessel
+  id: Ibis
+  name: DSM Ibis
+  description: A heavy fighter, designed for ranging and harassment missions.
+  price: 48000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/DSM/ibis.yml
+
+- type: gameMap
+  id: Ibis
+  mapName: 'DSM Ibis'
+  mapPath: /Maps/_Crescent/Shuttles/DSM/ibis.yml
+  minPlayers: 0
+  stations:
+    Ibis:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Ibis {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            LevymanDSM: [ 0, 2 ]

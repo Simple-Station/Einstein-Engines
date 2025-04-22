@@ -1,0 +1,531 @@
+- type: entity
+  parent: BaseFlatpack
+  id: NCSPWarshipThrusterFlatpack
+  name: syndicate warship thruster flatpack
+  description: A flatpack used for constructing warship thrusters with Syndicate IFF clearance.
+  components:
+  - type: Flatpack
+    entity: ThrusterNCSPWarship
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseFlatpack
+  id: NCSPFighterThrusterFlatpack
+  name: syndicate fighter thruster flatpack
+  description: A flatpack used for constructing smallshuttle thrusters with Syndicate IFF clearance.
+  components:
+  - type: Flatpack
+    entity: ThrusterNCSPFighter
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 400
+
+- type: entity
+  parent: BaseFlatpack
+  id: NCSPVulcanTurretFlatpack
+  name: syndicate gatling autoturret flatpack
+  description: A flatpack used for constructing primitive gatling autoturrets with Syndicate IFF clearance.
+  components:
+  - type: Flatpack
+    entity: WeaponTurretVulcanNCSP
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 1500
+
+- type: entity
+  parent: BaseFlatpack
+  id: NCSPAnklebiterFlatpack
+  name: syndicate point defense turret flatpack
+  description: A flatpack used for constructing a ballistic point defense turret with Syndicate IFF clearance.
+  components:
+  - type: Flatpack
+    entity: WeaponTurretPDTNCSP
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 1000
+
+- type: entity
+  parent: BaseFlatpack
+  id: PlasmaRepeaterFlatpack
+  name: plasma repeater flatpack
+  description: A flatpack used for constructing a plasma repeater hardpoint weapon.
+  components:
+  - type: Flatpack
+    entity:  ShuttleGunPlasmaRepeater
+  - type: Sprite
+    layers:
+    - state: tesla-generator
+  - type: StaticPrice
+    price: 650
+
+- type: entity
+  parent: BaseFlatpack
+  id: NCWLFighterThrusterFlatpack
+  name: union fighter thruster flatpack
+  description: A flatpack used for constructing smallshuttle thrusters with Union IFF clearance.
+  components:
+  - type: Flatpack
+    entity: ThrusterNCWLWarship
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 400
+
+- type: entity
+  parent: BaseFlatpack
+  id: NCWLWarshipThrusterFlatpack
+  name: union warship thruster flatpack
+  description: A flatpack used for constructing warship thrusters with Union IFF clearance.
+  components:
+  - type: Flatpack
+    entity: ThrusterNCWLWarship
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseFlatpack
+  id: NCWLGranSudaruskaFlatpack
+  name: union point defense turret flatpack
+  description: A flatpack used for constructing a ballistic point defense turret with Union IFF clearance.
+  components:
+  - type: Flatpack
+    entity: WeaponTurretPDTNCWL
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 1000
+
+- type: entity
+  parent: BaseFlatpack
+  id: NCWLVulcanFlatpack
+  name: union gatling autoturret flatpack
+  description: A flatpack used for constructing a ballistic turret with Union IFF clearance.
+  components:
+  - type: Flatpack
+    entity: WeaponTurretVulcanNCWL
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 1000
+
+- type: entity
+  parent: BaseFlatpack
+  id: NCWLSwarmerFlatpack
+  name: union swarmer rocket autoturret flatpack
+  description: A flatpack used for constructing a cheap rocket pod with Union IFF clearance.
+  components:
+  - type: Flatpack
+    entity: WeaponTurretSwarmerNCWL
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 2500
+
+- type: entity
+  parent: BaseFlatpack
+  id: NCWLKurosawaFlatpack
+  name: kurosawa rocket launcher flatpack
+  description: A flatpack used for constructing a cheap rocket pod with Union IFF clearance.
+  components:
+  - type: Flatpack
+    entity: ShuttleGunKurosawaNCWL
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 5000
+
+- type: entity
+  parent: BaseFlatpack
+  id: NCWLSlugthrowerFlatpack
+  name: slugthrower flatpack
+  description: A flatpack used for constructing a heavy slugthrower with Union IFF clearance.
+  components:
+  - type: Flatpack
+    entity: SHISlugthrowerTurretNCWL
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 7500
+
+- type: entity
+  parent: BaseFlatpack
+  id: NCWLAutomortarFlatpack
+  name: heavy automortar flatpack
+  description: A flatpack used for constructing a heavy automortar with Union IFF clearance.
+  components:
+  - type: Flatpack
+    entity: WeaponTurretMortarNCWL
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 8000
+
+- type: entity
+  parent: BaseFlatpack
+  id: NCWLNeedlerFlatpack
+  name: needler autogun flatpack
+  description: A flatpack used for constructing a heavy needler autogun with Union IFF clearance.
+  components:
+  - type: Flatpack
+    entity: BaseWeaponTurretNeedlerNCWL
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 8000
+
+- type: entity
+  parent: BaseFlatpack
+  id: DSMLadyFlatpack
+  name: imperial point defense turret flatpack
+  description: A flatpack used for constructing a ballistic point defense turret with Imperial IFF clearance.
+  components:
+  - type: Flatpack
+    entity: WeaponTurretPDTDSM
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 1000
+
+- type: entity
+  parent: BaseFlatpack
+  id: DSMVulcanFlatpack
+  name: imperial gatling autoturret flatpack
+  description: A flatpack used for constructing a ballistic turret with Imperial IFF clearance.
+  components:
+  - type: Flatpack
+    entity: WeaponTurretVulcanDSM
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 1000
+
+- type: entity
+  parent: BaseFlatpack
+  id: DSMWarshipThrusterFlatpack
+  name: imperial warship thruster flatpack
+  description: A flatpack used for constructing warship thrusters with Imperial IFF clearance.
+  components:
+  - type: Flatpack
+    entity: ThrusterDSMWarship
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseFlatpack
+  id: DSMFighterThrusterFlatpack
+  name: imperial fighter thruster flatpack
+  description: A flatpack used for constructing smallshuttle thrusters with Imperial IFF clearance.
+  components:
+  - type: Flatpack
+    entity: ThrusterDSMFighter
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 400
+
+- type: entity
+  parent: BaseFlatpack
+  id: DSMPlasmaTurretFlatpack
+  name: imperial plasma gatling turret flatpack
+  description: A flatpack used for constructing a plasma gatling turret with Imperial IFF clearance.
+  components:
+  - type: Flatpack
+    entity: BaseWeaponTurretLaserDSM
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 2500
+
+- type: entity
+  parent: BaseFlatpack
+  id: SHIWarshipThrusterFlatpack
+  name: SHI warship thruster flatpack
+  description: A flatpack used for constructing warship thrusters with corporate IFF clearance.
+  components:
+  - type: Flatpack
+    entity: ThrusterSHIWarship
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseFlatpack
+  id: SHIFighterThrusterFlatpack
+  name: SHI fighter thruster flatpack
+  description: A flatpack used for constructing smallship thrusters with corporate IFF clearance.
+  components:
+  - type: Flatpack
+    entity: ThrusterSHIFighter
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseFlatpack
+  id: SHIExhumerFlatpack
+  name: SHI exhumer mining turret flatpack
+  description: A flatpack used for constructing mining laser turrets.
+  components:
+  - type: Flatpack
+    entity: ShuttleGunExhumer
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 1500
+
+- type: entity
+  parent: BaseFlatpack
+  id: SHISlugthrowerFlatpack
+  name: slugthrower flatpack
+  description: A flatpack used for constructing slugthrowers with a universal commercial IFF signal.
+  components:
+  - type: Flatpack
+    entity: SHISlugthrowerTurret
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 2500
+
+- type: entity
+  parent: BaseFlatpack
+  id: SHITsuiFlatpack
+  name: SHI ballistic point defense turret flatpack
+  description: A flatpack used for constructing point defense turrets with an SHI clearance level IFF.
+  components:
+  - type: Flatpack
+    entity: WeaponTurretPDTSHI
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 3000
+
+- type: entity
+  parent: BaseFlatpack
+  id: SHIVulcanFlatpack
+  name: SHI ballistic turret flatpack
+  description: A flatpack used for constructing ballistic vulcan turrets with an SHI clearance level IFF.
+  components:
+  - type: Flatpack
+    entity: WeaponTurretVulcanSHI
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 3000
+
+- type: entity
+  parent: BaseFlatpack
+  id: SHIArtilleryFlatpack
+  name: Type-99 artillery flatpack
+  description: A flatpack used for constructing artillery cannons with a universal commercial IFF.
+  components:
+  - type: Flatpack
+    entity: Type99Artillery
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 5000
+
+- type: entity
+  parent: BaseFlatpack
+  id: SHIMortarFlatpack
+  name: SHI heavy automortar flatpack
+  description: A flatpack used for constructing artillery cannons with an SHI clearance IFF.
+  components:
+  - type: Flatpack
+    entity: WeaponTurretMortarSHI
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 7500
+
+- type: entity
+  parent: BaseFlatpack
+  id: SHINeedlerFlatpack
+  name: SHI heavy needler flatpack
+  description: A flatpack used for constructing artillery cannons with an SHI clearance IFF.
+  components:
+  - type: Flatpack
+    entity: BaseWeaponTurretNeedlerSHI
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 5000
+
+- type: entity
+  parent: BaseFlatpack
+  id: MissileRackFlatpack
+  name: NT-8 missile rack flatpack
+  description: A flatpack used for constructing shuttle launchers with a universal commercial IFF.
+  components:
+  - type: Flatpack
+    entity: ShuttleGunMissileRack
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 10000
+
+- type: entity
+  parent: BaseFlatpack
+  id: VulcanFlatpack
+  name: vulcan hardpoint platform flatpack
+  description: A flatpack used for constructing shuttle launchers with a universal commercial IFF.
+  components:
+  - type: Flatpack
+    entity: NTVulcanTurret
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 12500
+
+- type: entity
+  parent: BaseFlatpack
+  id: HardlineBeamPulserFlatpack
+  name: plasma lance hardpoint platform flatpack
+  description: A flatpack used for constructing shuttle launchers with a universal commercial IFF.
+  components:
+  - type: Flatpack
+    entity: HardlineBeamPulser
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 15000
+
+- type: entity
+  parent: BaseFlatpack
+  id: FlakCannonTurretFlatpack
+  name: Prince flak artillery flatpack
+  description: A flatpack used for constructing artillery cannons with a universal commercial IFF.
+  components:
+  - type: Flatpack
+    entity: FlakCannonTurret
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 10000
+
+- type: entity
+  parent: BaseFlatpack
+  id: BaseWeaponTurretGargoyleFlatpack
+  name: Gargoyle missile platform flatpack
+  description: A flatpack used for constructing artillery cannons with a universal commercial IFF.
+  components:
+  - type: Flatpack
+    entity: BaseWeaponTurretGargoyle
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 12500
+    
+- type: entity
+  parent: BaseFlatpack
+  id: RecyclerFlatpack
+  name: basic recycler
+  description:  A large crushing machine used to recycle small items inefficiently.
+  components:
+  - type: Flatpack
+    entity: Recycler
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 100
+    
+- type: entity
+  parent: BaseFlatpack
+  id: ComputerShuttleFlatpack
+  name: Computer Shuttle pilot console
+  description:  Used to pilot a shuttle.
+  components:
+  - type: Flatpack
+    entity: ComputerShuttle
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 100
+
+- type: entity
+  parent: BaseFlatpack
+  id: CompaktFlatpack
+  name: 350c Compakt flatpack
+  description:  Parts used to build a 350c Compakt laser gatling.
+  components:
+  - type: Flatpack
+    entity: BaseWeaponTurretHeavyPlasma
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 2000
+
+- type: entity
+  parent: BaseFlatpack
+  id: MediumEnergyHardpointFlatpack
+  name: medium energy hardpoint flatpack
+  description:  Parts used to build a medium energy hardpoint.
+  components:
+  - type: Flatpack
+    entity: AAAHardpointMediumEnergy
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 1500
+
+- type: entity
+  parent: BaseFlatpack
+  id: MediumBallisticHardpointFlatpack
+  name: medium ballistic hardpoint flatpack
+  description:  Parts used to build a medium ballistic hardpoint.
+  components:
+  - type: Flatpack
+    entity: AAAHardpointMediumBallistic
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 1500

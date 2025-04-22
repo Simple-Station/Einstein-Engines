@@ -1,0 +1,44 @@
+- type: job
+  id: MontagneSRM
+  name: job-name-montagne
+  description: job-description-montagne
+  playTimeTracker: JobMontagneSRM
+  requirements:
+    - !type:SpeciesRequirement
+      allowedOnly:
+        - Human
+    - !type:OverallPlaytimeRequirement
+      time: 40000
+    - !type:FactionRequirement
+      factionID: "SRM"
+  weight: 22
+  startingGear: MontagneGear
+  alwaysUseSpawner: true
+  icon: "JobIconMontagne"
+  requireAdminNotify: false
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
+  access:
+  - Command
+  - Hunter
+  - HunterSenior
+  - Maintenance
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: Telepathic
+
+- type: startingGear
+  id: MontagneGear
+  equipment:
+    id: MontagnePDA
+    ears: ClothingHeadsetHunter
+    jumpsuit: ClothingUniformJumpsuitHunter
+    head: ClothingHeadHelmetHunterBasic
+    shoes: ClothingShoesBootsHunter
+    outerClothing: ClothingOuterArmorHunterDusterMontagne
+    gloves: ClothingHandsGlovesHunter

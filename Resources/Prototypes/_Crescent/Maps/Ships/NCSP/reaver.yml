@@ -1,0 +1,32 @@
+# Author Info
+# Discord: @fleshangel
+#
+- type: vessel
+  id: Reaver
+  name: NCSP Reaver
+  description: A medium Syndicate fighter.
+  price: 27000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/reaver.yml
+
+- type: gameMap
+  id: Reaver
+  mapName: 'NCSP Reaver'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/reaver.yml
+  minPlayers: 0
+  stations:
+    Reaver:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'GSC Reaver {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            InfanteerNCSP: [ 0, 0 ]

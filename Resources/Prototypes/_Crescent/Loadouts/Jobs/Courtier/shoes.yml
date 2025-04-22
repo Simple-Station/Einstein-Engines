@@ -1,0 +1,19 @@
+- type: loadout
+  id: CourtierDSMClothingShoesBootsImperialLaceup
+  equipment: CourtierDSMClothingShoesBootsImperialLaceup
+  price: 0
+
+- type: startingGear
+  id: CourtierDSMClothingShoesBootsImperialLaceup
+  equipment:
+    shoes: ClothingShoesBootsImperialLaceup
+
+- type: loadout
+  id: CourtierDSMClothingShoesBootsImperialLongboots
+  equipment: CourtierDSMClothingShoesBootsImperialLongboots
+  price: 0
+
+- type: startingGear
+  id: CourtierDSMClothingShoesBootsImperialLongboots
+  equipment:
+    shoes: ClothingShoesBootsImperialLongboots

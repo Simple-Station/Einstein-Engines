@@ -1,0 +1,29 @@
+- type: job
+  id: CitizenDSM
+  name: Imperial Citizen
+  description: A inhabitant of the Taypani Sector with no ties to the local nobles
+  playTimeTracker: JobCitizenDSM
+  weight: 18
+  startingGear: CitizenGear
+  requirements:
+    - !type:FactionRequirement
+        factionID: "DSM"
+  alwaysUseSpawner: true
+  icon: "JobIconImperialFreeholder"
+  requireAdminNotify: false
+  supervisors: job-supervisors-imperial 
+  canBeAntag: false
+  access:
+  - Command
+  - Maintenance
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: CitizenGear
+  equipment:
+    id: FreeholderPDA
+    ears: ClothingHeadsetGrey
+    pocket1: ImperialPassportBareLegit

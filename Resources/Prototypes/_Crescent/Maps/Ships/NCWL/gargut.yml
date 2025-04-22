@@ -1,0 +1,34 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Gargut
+  name: NCWL Gargut
+  description: A lumbering battle platform, converted from a derelict fabstation.
+  price: 320000
+  category: Large
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCWL/gargut.yml
+
+- type: gameMap
+  id: Gargut
+  mapName: 'NCWL Gargut'
+  mapPath: /Maps/_Crescent/Shuttles/NCWL/gargut.yml
+  minPlayers: 0
+  stations:
+    Gargut:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Gargut {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            KapitanNCWL: [ 1, 1 ]
+            SanitarNCWL: [ 4, 4 ]
+            ArtificerNCWL: [ 2, 4 ]
+            DoktorNCWL: [ 2, 2 ]

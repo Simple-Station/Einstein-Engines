@@ -1,0 +1,31 @@
+# Author Info
+# Discord: @fleshangel
+#
+- type: vessel
+  id: Wreck
+  name: NCSP Wreck
+  description: An asteroid with engines on it.
+  price: 14000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/wreck.yml
+
+- type: gameMap
+  id: Wreck
+  mapName: 'NCSP Wreck'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/wreck.yml
+  minPlayers: 0
+  stations:
+    Wreck:
+      stationProto: StandardCrescentCivilianVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'RC Wreck {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            OperativeNCSP: [ 1, 1 ]

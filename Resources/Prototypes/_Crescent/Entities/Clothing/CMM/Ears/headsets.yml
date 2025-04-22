@@ -1,0 +1,16 @@
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetCMM
+  name: minuteman's headset
+  description: To communicate with other Minutemen.
+  components:
+    - type: ContainerFill
+      containers:
+        key_slots:
+          - EncryptionKeyNfsd
+          - EncryptionKeyTraffic
+    - type: Sprite
+      sprite: Clothing/Ears/Headsets/cmm.rsi
+    - type: Clothing
+      sprite: Clothing/Ears/Headsets/cmm.rsi

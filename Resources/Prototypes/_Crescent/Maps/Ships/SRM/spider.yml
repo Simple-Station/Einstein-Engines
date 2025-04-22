@@ -1,0 +1,29 @@
+- type: vessel
+  id: Spider
+  name: SRM Spider
+  description: A repurposed civilian hull, converted into a fragile EWAR shuttle.
+  price: 35000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/SRM/spider.yml
+
+- type: gameMap
+  id: Spider
+  mapName: 'SRM Spider'
+  mapPath: /Maps/_Crescent/Shuttles/SRM/spider.yml
+  minPlayers: 0
+  stations:
+    Spider:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Spider {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-expeditions
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            HunterSRM: [ 0, 1 ]

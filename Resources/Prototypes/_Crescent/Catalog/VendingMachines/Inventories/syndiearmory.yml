@@ -1,0 +1,23 @@
+- type: vendingMachineInventory
+  id: SyndicateArmoryInventory
+  startingInventory:
+    WeaponRifleMayflower: 6
+    WeaponRifleKrinkov: 6
+    WeaponRifleHoundMarksman: 6
+    WeaponShotgunEnforcer: 6
+    WeaponPistolHKUSP: 6
+    WeaponPistolMk58: 6
+    WeaponPistolViper: 6
+    ClothingBeltSyndicateWebbingMedFilled: 6
+    ClothingBeltSyndicateWebbingFilledGrenadier: 6
+    # BoxLethalShot: 10 YAMLFIX
+    BoxShotgunSlug: 10
+    MagazinePistol: 25
+    MagazineRifle: 25
+    ClothingUniformJumpsuitSyndicate: 10
+    ClothingMaskSyndicateFacemask: 10
+    ClothingHeadHelmetSyndicateBasic: 10
+    ClothingOuterArmorSyndicateArmorvest: 10
+    ClothingShoesBootsJack: 10
+    FoodSnackNutribrick: 10
+    DrinkMREFlask: 10

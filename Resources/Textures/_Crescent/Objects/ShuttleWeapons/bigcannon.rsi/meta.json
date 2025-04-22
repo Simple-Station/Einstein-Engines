@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA 3.0",
+  "copyright": "Taken from CEV Eris and modified for use.",
+  "size": {
+    "x": 128,
+    "y": 128
+  },
+  "states": [
+    {
+      "name": "deck_turret_loaded",
+      "directions": 4
+    }
+  ]
+}

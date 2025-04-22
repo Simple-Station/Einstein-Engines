@@ -1,0 +1,28 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Svipul
+  name: Svipul
+  description: An ultralight interdictor shuttle with dual ion gatlings.
+  price: 15000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/TAP/svipul.yml
+
+- type: gameMap
+  id: Svipul
+  mapName: 'Svipul'
+  mapPath: /Maps/_Crescent/Shuttles/TAP/svipul.yml
+  minPlayers: 0
+  stations:
+    Svipul:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Svipul {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter

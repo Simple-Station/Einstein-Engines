@@ -1,0 +1,32 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Rapier
+  name: NCWL Rapier
+  description: An ultralight communard converted torpedo bomber.
+  price: 11000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCWL/rapier.yml
+
+- type: gameMap
+  id: Rapier
+  mapName: 'NCWL Rapier'
+  mapPath: /Maps/_Crescent/Shuttles/NCWL/rapier.yml
+  minPlayers: 0
+  stations:
+    Rapier:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Rapier {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-torpedo-bomber
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            SanitarNCWL: [ 0, 0 ]

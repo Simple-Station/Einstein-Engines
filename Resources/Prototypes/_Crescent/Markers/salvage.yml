@@ -1,0 +1,95 @@
+- type: entity
+  name: Scrap Spawner
+  id: ScrapSalvageRandomSpawner
+  parent: MarkerBase
+  suffix: 50
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: Objects/Consumable/Food/snacks.rsi
+          state: pistachio-trash
+    - type: RandomSpawner
+      rarePrototypes:
+        - TitaniumScrap25
+        - SteelScrap25
+        - ScrapBluespace
+        - GarbageOre25
+        - TradeGoodNanoTrasen
+        - TradeGoodOldCyber
+        - TradeGoodOldParts
+      rareChance: 0.03
+      prototypes:
+        - SteelScrap1
+        - SteelScrap3
+        - SteelScrap8
+        - TitaniumScrap1
+        - TitaniumScrap6
+        - TitaniumScrap17
+        - ScrapCircuit
+        - ScrapPlasma
+        - ScrapComponent
+        - ScrapUranium
+        - GarbageOre10
+        - GarbageOre5
+        - GarbageOre1
+        - GarbageOre10
+      chance: 0.5
+      offset: 0.2
+  placement:
+    mode: AlignTileAny
+
+- type: entity
+  name: Techmining Spawner
+  id: TechminingSpawner
+  parent: MarkerBase
+  suffix: 50
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: Objects/Consumable/Food/snacks.rsi
+          state: pistachio-trash
+    - type: RandomSpawner
+      rarePrototypes:
+        - DelamDisk
+        - DelamDisk
+        - DelamDisk
+        - ShipVoucherRockchipper
+        - ShipVoucherMercury
+        - ShipVoucherTermite
+        - ShipVoucherParacelsus
+        - ShipVoucherExhumer
+        - ShipVoucherAntiquarianWarthog
+        - ShipVoucherHomesteader
+        - ShipVoucherBroadsword
+        - ShipVoucherKite
+        - ShipVoucherScuttlefish
+        - NanotrasenFabdiskWeapons
+        - UnionFabdiskConscript
+        - UnionFabdiskJuggernaut
+        - ImperialFabdiskArmor
+        - ImperialFabdiskCompliance
+        - CorporateFabdiskHammerhead
+        - CorporateFabdiskMako
+      rareChance: 0.08
+      prototypes:
+        - DelamDiskThumb
+        - DelamDiskThumb
+        - DelamDiskThumb
+        - DelamDisk
+        - CorporateFabdiskTermite
+        - CorporateFabdiskParacelsus
+        - CorporateFabdiskExhumer
+        - CorporateFabdiskHimehabu
+        - CorporateFabdiskHEV
+        - CorporateFabdiskDisposable
+        - CorporateFabdiskSabre
+        - UnionFabdiskBulldog
+        - SyndicateFabdiskMayflower
+        - SyndicateFabdiskDrozd
+        - SyndicateFabdiskCobra
+      chance: 0.5
+      offset: 0.2
+  placement:
+    mode: AlignTileAny

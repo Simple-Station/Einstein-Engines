@@ -1,0 +1,172 @@
+#conscript
+
+- type: entity
+  id: MagazineLightRifleBoxConscriptHE
+  name: ".50 low-yield Conscript ammunition box"
+  parent: BaseMagazineLightRifle
+  components:
+  - type: Tag
+    tags:
+      - MagazineNCWLConscriptBox
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeMachineGunConscript
+    proto: CartridgeMachineGunHighExplosiveConscript
+    capacity: 75
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,2,2
+  - type: Sprite
+    sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
+    state: base
+  - type: Clothing
+    sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
+    slots:
+    - Belt
+
+- type: entity
+  id: MagazineLightRifleBoxConscriptAP
+  name: ".50 AP Conscript ammunition box"
+  parent: BaseMagazineLightRifle
+  components:
+  - type: Tag
+    tags:
+      - MagazineNCWLConscriptBox
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeMachineGunConscript
+    proto: CartridgeMachineGunArmorPiercingConscript
+    capacity: 75
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,2,2
+  - type: Sprite
+    sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
+    state: base
+  - type: Clothing
+    sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
+    slots:
+    - Belt
+
+
+- type: entity
+  id: CartridgeMachineGunHighExplosiveConscript
+  name: .50 low-yield explosive Conscript cartridge
+  parent: BaseItem
+  description: An explosive-tipped slugthrower cartridge.
+  components:
+  - type: Tag
+    tags:
+      - CartridgeMachineGunConscript
+      - Cartridge
+  - type: Item
+    size: Tiny
+  - type: CartridgeAmmo
+    proto: BulletMachineGunHighExplosiveConscript
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/50_highexplosive_machinegun_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: SpaceGarbage
+
+- type: entity
+  id: CartridgeMachineGunArmorPiercingConscript
+  name: .50 depleted uranium slugthrower cartridge
+  parent: BaseItem
+  description: An armor-piercing .50 slugthrower cartridge, tipped with depleted uranium.
+  components:
+  - type: Tag
+    tags:
+      - CartridgeMachineGun
+      - Cartridge
+  - type: Item
+    size: Tiny
+  - type: CartridgeAmmo
+    proto: BulletMachineGunArmorPiercingConscript
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/50_armorpiercing_machinegun_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: SpaceGarbage
+#slugs
+
+
+- type: Tag
+  id: SlugthrowerCartridgeBox
+
+- type: Tag
+  id: VulcanCartridgeBox
+
+- type: entity
+  id: MagazineLightRifleBoxSlug
+  name: ".50 cal uranium-tip slugthrower box"
+  parent: BaseMagazineLightRifle
+  components:
+  - type: Tag
+    tags:
+      - SlugthrowerCartridgeBox
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeMachineGun
+    proto: CartridgeMachineGunArmorPiercing
+    capacity: 200
+  - type: Item
+  - type: Sprite
+    sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
+    state: base
+
+- type: entity
+  id: MagazineLightRifleBoxSlugHE
+  name: ".50 cal low-yield explosive slugthrower box"
+  parent: BaseMagazineLightRifle
+  components:
+  - type: Tag
+    tags:
+      - SlugthrowerCartridgeBox
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeMachineGun
+    proto: CartridgeMachineGunHighExplosive
+    capacity: 200
+  - type: Item
+  - type: Sprite
+    sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
+    state: base
+
+- type: entity
+  id: MagazineLightRifleBoxSlugInert
+  name: ".50 cal inert slugthrower box"
+  parent: BaseMagazineLightRifle
+  components:
+  - type: Tag
+    tags:
+      - SlugthrowerCartridgeBox
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeMachineGun
+    proto: BulletMachineGunPractice
+    capacity: 200
+  - type: Item
+  - type: Sprite
+    sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
+    state: base

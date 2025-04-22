@@ -1,0 +1,48 @@
+- type: alertLevels
+  id: combatShipAlerts
+  defaultLevel: cruise
+  levels:
+    cruise:
+      announcement: alert-level-cruise-announcement
+      color: Green
+      emergencyLightColor: LawnGreen
+      sound:
+        path: /Audio/Misc/ShipAlerts/cruise.ogg
+        params:
+          volume: -2
+    combat:
+      announcement: alert-level-combat-announcement
+      color: Red
+      emergencyLightColor: Red
+      forceEnableEmergencyLights: true
+      sound:
+        path: /Audio/Misc/ShipAlerts/combat.ogg #Yes this is like 40 seconds long yes it's intended
+        params:
+          volume: -4
+    boarders:
+      announcement: alert-level-boarders-announcement
+      color: DodgerBlue
+      forceEnableEmergencyLights: true
+      emergencyLightColor: DodgerBlue
+      sound:
+        path: /Audio/Misc/ShipAlerts/boarders.ogg
+        params:
+          volume: -2
+    damage:
+      announcement: alert-level-damage-announcement
+      color: Yellow
+      emergencyLightColor: Goldenrod
+      forceEnableEmergencyLights: true
+      sound:
+        path: /Audio/Misc/ShipAlerts/damage.ogg
+        params:
+          volume: -2
+    scuttle:
+      announcement: alert-level-scuttle-announcement
+      color: DarkRed
+      emergencyLightColor: Orange
+      forceEnableEmergencyLights: true
+      sound:
+        path: /Audio/Misc/delta_alt.ogg
+        params:
+          volume: -2

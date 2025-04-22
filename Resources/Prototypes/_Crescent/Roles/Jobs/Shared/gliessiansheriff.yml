@@ -1,0 +1,31 @@
+- type: job
+  id: GliessianSheriff
+  name: job-name-gliess-sheriff
+  description: job-description-gliess-sheriff
+  playTimeTracker: JobGliessSheriff
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 4000
+  startingGear: GliessSheriffGear
+  icon: "JobIconGliessSheriff"
+  supervisors: job-supervisors-gliess
+  accessGroups:
+  - GeneralAccess
+  access:
+  - GliessSheriff
+  - GliessDockmaster
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-sheriff
+
+- type: startingGear
+  id: GliessSheriffGear
+  equipment:
+    ears: ClothingHeadsetGrey
+    shoes: ClothingShoesBootsCowboyBrown
+    jumpsuit: ClothingUniformJumpsuitDetective
+    head: ClothingHeadHatCowboyBrown
+    id: GliessSheriffPDA
+    back: ClothingBackpackSatchelLeatherFilledDSM

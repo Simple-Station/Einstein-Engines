@@ -1,0 +1,160 @@
+- type: entity
+  id: CrateSumitomoAmmo
+  parent: CrateSecgear
+  name: sumitomo crate
+  description: Ammunition for the SHI Sumitomo and SHI Kurosawa.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineGrenadeEmpty
+        amount: 3
+      - id: GrenadeEMP
+        amount: 6
+      - id: GrenadeBlast
+        amount: 6
+      - id: GrenadeBaton
+        amount: 12
+
+- type: entity
+  id: CrateGargoyleAmmo
+  parent: CrateSecgear
+  name: cruise missile crate
+  description: Ammunition for the Gargoyle cruise missile launcher.
+  components:
+  - type: StorageFill
+    contents:
+      - id: TorpGarg
+        amount: 10
+      - id: TorpGargEMP
+        amount: 10
+
+- type: entity
+  id: CrateLancerAmmo
+  parent: CrateSecgear
+  name: lancer rocket crate
+  description: Ammunition for the Lancer swarm missile launcher.
+  components:
+  - type: StorageFill
+    contents:
+      - id: LanceRocketCartridge
+        amount: 30
+
+- type: entity
+  id: CrateAssaultMortarAmmo
+  parent: CrateSecgear
+  name: assault mortar crate
+  description: Ammunition for the assault mortar platform.
+  components:
+  - type: StorageFill
+    contents:
+      - id: HeavyMortarCartridge
+        amount: 15
+
+- type: entity
+  id: CrateIdnaAmmo
+  parent: CrateSecgear
+  name: light torpedo crate
+  description: A crate of light 'Idna' heat guided torpedoes.
+  components:
+  - type: StorageFill
+    contents:
+      - id: IdnaTorpedo
+        amount: 10
+
+- type: entity
+  id: CrateBoriatic
+  parent: CrateSecgear
+  name: boriatic crate
+  description: Fuel for Boriatic-powered engines.
+  components:
+  - type: StorageFill
+    contents:
+      - id: FuelCan
+        amount: 10 #a can is 250 normally. this is about double + 1984
+  - type: StaticPrice
+    price: 5984
+
+- type: entity
+  id: CrateVulcanAmmo
+  parent: CrateSecgear
+  name: vulcan crate
+  description: Ammunition for the NT Vulcan.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineVulcan
+        amount: 10
+
+- type: entity
+  id: CrateSlugthrowerAmmo
+  parent: CrateSecgear
+  name: slug cartridge crate
+  description: Ammunition the SHI slugthrower.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineLightRifleBoxSlug
+        amount: 8
+      - id: MagazineLightRifleBoxSlugInert
+        amount: 4
+      - id: MagazineLightRifleBoxSlugHE
+        amount: 4
+
+- type: entity
+  id: CrateCoolant
+  parent: CrateSecgear
+  name: coolant crate
+  description: Contains coolant for laser turrets.
+  components:
+  - type: StorageFill
+    contents:
+      - id: CoolantCartridge30
+        amount: 15
+
+- type: entity
+  id: CrateArtilleryAmmo
+  parent: CrateSecgear
+  name: type-99 crate
+  description: Ammunition for 120mm artilleries.
+  components:
+  - type: StorageFill
+    contents:
+      - id: CartridgeShellArmorPiercing
+        amount: 15
+      - id: CartridgeShellHighExplosive
+        amount: 10
+      - id: CartridgeShellPractice
+        amount: 5
+
+- type: entity
+  id: CrateAutogunAmmo
+  parent: CrateSecgear
+  name: autogun crate
+  description: Ammunition for autogun artilleries.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineNeedler
+        amount: 5
+
+- type: entity
+  id: CrateMortarAmmo
+  parent: CrateSecgear
+  name: automortar crate
+  description: Ammunition for automortar artilleries.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineMortar
+        amount: 5
+
+- type: entity
+  id: CrateSwarmerAmmo
+  parent: CrateSecgear
+  name: swarmer rocket crate
+  description: Ammunition for swarmer rocket artilleries.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineSwarmer
+        amount: 5

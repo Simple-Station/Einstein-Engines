@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by Vienna for Sector Crescent.",
+  "source": "Vienna",
+  "size": {
+    "x": 23,
+    "y": 32
+  },
+    "states": [
+        {
+            "name": "ncwlposter"
+        },
+        {
+            "name": "ncwlposter2"
+        },
+        {
+            "name": "ncwlposter3"
+        }
+    ]
+}

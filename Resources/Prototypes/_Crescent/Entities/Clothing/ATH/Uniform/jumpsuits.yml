@@ -1,0 +1,142 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitAuthorityKommandant
+  name: kommandant's suit
+  description: An officer's suit and pants. The name and rank decorations inform you that this belongs to the Kommandant of the 43rd Battlegroup.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Uniform/kommandant.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Uniform/kommandant.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitAuthorityLogistitat
+  name: logistitat's suit
+  description: An officer's suit and pants. The name and rank decorations inform you that this belongs to the Logistitat Marshal of the fortress.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Uniform/logistitat.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Uniform/logistitat.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitAuthoritySteward
+  name: steward's suit
+  description: An officer's suit and pants. The name and rank decorations inform you that this belongs to the First Steward of the 43rd Battlegroup.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Uniform/steward.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Uniform/steward.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitAuthorityOberartz
+  name: oberartz's jumpsuit
+  description: A medical officer's jumpsuit, the coloring and rank insignias belonging to the Oberartz of the 43rd Battlegroup.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Uniform/oberartz.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Uniform/oberartz.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitAuthorityLeutnant
+  name: leutnant's fatigues
+  description: Pressed military fatigues belonging to a ranking officer.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Uniform/leutnant.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Uniform/leutnant.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitAuthorityKanoneer
+  name: kanoneer's fatigues
+  description: Pressed military fatigues belonging to a combat technician.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Uniform/kanoneer.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Uniform/kanoneer.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitAuthoritySanitat
+  name: sanitat's fatigues
+  description: Pressed military fatigues belonging to a combat medic.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Uniform/sanitat.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Uniform/sanitat.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitAuthoritySoldat
+  name: soldat's fatigues
+  description: Pressed military fatigues belonging to an infanteer.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Uniform/soldat.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Uniform/soldat.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitAuthorityChirurgeon
+  name: chirurgeon's jumpsuit
+  description: A neat and tidy jumpsuit, sterilized and ready for science.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Uniform/chirurgeon.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Uniform/chirurgeon.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitAuthorityForscher
+  name: forscher's jumpsuit
+  description: A neat and tidy jumpsuit, sterilized and ready for science.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Uniform/forscher.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Uniform/forscher.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitAuthorityHandels
+  name: merchant's suit
+  description: A neat and tidy suit belonging to a common peddler.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Uniform/handels.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Uniform/handels.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitAuthorityVorarbeiter
+  name: vorarbeiter's suit
+  description: A heavy worker's suit belonging to the foreman of a worker gang.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Uniform/vorarbeiter.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Uniform/vorarbeiter.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitAuthorityArbeiter
+  name: arbeiter's suit
+  description: A heavy worker's suit belonging to the common man.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Uniform/arbeiter.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Uniform/arbeiter.rsi

@@ -1,0 +1,74 @@
+- type: job
+  id: SanitatATH
+  name: job-name-sanitatATH
+  description: job-description-sanitat
+  playTimeTracker: JobSanitatATH
+  requirements:
+    - !type:SpeciesRequirement
+      allowedOnly:
+        - Human
+        - Reptilian
+        - Oni
+    - !type:FactionRequirement
+      factionID: "ATH"
+  weight: 82
+  startingGear: SanitatGear
+  alwaysUseSpawner: true
+  icon: "JobIconSanitat"
+  requireAdminNotify: true
+  supervisors: job-supervisors-ath
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-sanitat
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - Service
+  - External
+  - Authority
+  - Authoritymed
+
+- type: startingGear
+  id: SanitatGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAuthoritySanitat
+    shoes: ClothingShoesBootsJack
+    head: ClothingHeadHatAuthoritySanitat
+    belt: ClothingBeltAuthorityDroppouches
+    gloves: ClothingHandsGlovesFingerless
+    id: SanitatPDA
+    ears: ClothingHeadsetAuthority

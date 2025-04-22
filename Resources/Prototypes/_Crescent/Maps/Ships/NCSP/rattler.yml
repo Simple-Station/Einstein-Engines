@@ -1,0 +1,32 @@
+# Author Info
+# Discord: @fleshangel
+#
+- type: vessel
+  id: Rattler
+  name: NCSP Rattler
+  description: An ad-hoc guns platform developed by the Shipbreakers.
+  price: 40000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/rattler.yml
+
+- type: gameMap
+  id: Rattler
+  mapName: 'NCSP Rattler'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/rattler.yml
+  minPlayers: 0
+  stations:
+    Rattler:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'SAW Rattler {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            InfanteerNCSP: [ 0, 0 ]

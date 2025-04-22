@@ -1,0 +1,32 @@
+# Author Info
+# Discord: @fleshangel
+#
+- type: vessel
+  id: Meatwagon
+  name: NCSP Meatwagon
+  description: A light Syndicate rescue vessel, armed with missiles and slugthrowers.
+  price: 31000
+  category: Medium
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/meatwagon.yml
+
+- type: gameMap
+  id: Meatwagon
+  mapName: 'NCSP Meatwagon'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/meatwagon.yml
+  minPlayers: 0
+  stations:
+    Meatwagon:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'IPM Meatwagon {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-medical
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            RipperdocNCSP: [ 3, 3 ]

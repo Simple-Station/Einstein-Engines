@@ -1,0 +1,32 @@
+- type: vessel
+  id: Borealis
+  name: CMM Borealis
+  description: A heavy shielded gunship.
+  price: 130000
+  category: Large
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/borealis.yml
+
+- type: gameMap
+  id: Borealis
+  mapName: 'CMM Borealis'
+  mapPath: /Maps/_Crescent/Shuttles/borealis.yml
+  minPlayers: 0
+  stations:
+    Borealis:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'CMM Borealis {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-gunship
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            MachinistCMM: [2, 2]
+            PhysicianCMM: [2, 2]
+            MinutemanCMM: [5, 5]
+            WatchmasterCMM: [1, 1]

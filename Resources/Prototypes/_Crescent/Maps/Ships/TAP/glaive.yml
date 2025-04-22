@@ -1,0 +1,28 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Glaive
+  name: Glaive
+  description: A light torpedo bomber with a vulcan gatling as a sidearm.
+  price: 20000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/TAP/glaive.yml
+
+- type: gameMap
+  id: Glaive
+  mapName: 'Glaive'
+  mapPath: /Maps/_Crescent/Shuttles/TAP/glaive.yml
+  minPlayers: 0
+  stations:
+    Glaive:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Glaive {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter

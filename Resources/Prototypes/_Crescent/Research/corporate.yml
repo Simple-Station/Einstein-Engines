@@ -1,0 +1,149 @@
+- type: technology
+  id: ShinoharaAvionics
+  name: research-technology-corpavionics
+  icon:
+    sprite: Objects/Devices/flatpack.rsi
+    state: ame-part
+  discipline: Shinohara
+  tier: 1
+  cost: 7000
+  recipeUnlocks:
+  - SHIFighterThrusterFlatpackCraft
+  - SHIWarshipThrusterFlatpackCraft
+  # - GyroscopeFlatpackLathe YAMLFIX Fails tests - not printable
+
+- type: technology
+  id: ShinoharaCheapPistols
+  name: research-technology-corpbudgetarms
+  icon:
+    sprite: _Crescent/Objects/Weapons/disposableguns/gray.rsi
+    state: base
+  discipline: Shinohara
+  tier: 1
+  cost: 3000
+  recipeUnlocks:
+  - WeaponPistolBlastpopGrayCraft
+  - WeaponPistolBlastpopGoldCraft
+  - WeaponPistolBlastpopBlueCraft
+  - WeaponPistolBlastpopRedCraft
+
+- type: technology
+  id: ShinoharaMining
+  name: research-technology-corpmining
+  icon:
+    sprite: _Crescent/Objects/Misc/miningdisplay.rsi
+    state: icon
+  discipline: Shinohara
+  tier: 1
+  cost: 4000
+  recipeUnlocks:
+  - SHIExhumerFlatpackCraft
+
+- type: technology
+  id: ShinoharaHEV
+  name: research-technology-corphev
+  icon:
+    sprite: _Crescent/Clothing/SHI/OuterClothing/shinoharahev.rsi
+    state: icon
+  discipline: Shinohara
+  tier: 1
+  cost: 4500
+  recipeUnlocks:
+  - ClothingOuterHardsuitHEVCraft
+
+- type: technology
+  id: ShinoharaShipweapons
+  name: research-technology-corpshuttleweapons
+  icon:
+    sprite: _Crescent/Objects/Misc/laserdisplay.rsi
+    state: icon
+  discipline: Shinohara
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - SHITsuiFlatpackCraft
+  - SHIVulcanFlatpackCraft
+  - PlasmaRepeaterFlatpackCraft
+  - SHISlugthrowerFlatpackCraft
+
+- type: technology
+  id: ShinoharaCorpsec
+  name: research-technology-corpcorpsec
+  icon:
+    sprite: _Crescent/Clothing/SHI/OuterClothing/securityvest.rsi
+    state: icon
+  discipline: Shinohara
+  tier: 2
+  cost: 12500
+  recipeUnlocks:
+  - ClothingOuterArmorShinoharaArmorCraft
+  - ClothingHeadHatShinoharaBeretCraft
+  - ClothingUniformJumpsuitShinoharaSecurityCraft
+
+- type: technology
+  id: ShinoharaBallistics
+  name: research-technology-corpballistics
+  icon:
+    sprite: _Crescent/Objects/Weapons/himehabu.rsi
+    state: icon
+  discipline: Shinohara
+  tier: 2
+  cost: 12000
+  recipeUnlocks:
+  - WeaponPistolHimehabuCraft
+  - WeaponSubMachineGunSabreCraft
+  - WeaponPistolViperCraft
+  - WeaponPistolMk58Craft
+
+- type: technology
+  id: ShinoharaArtillery
+  name: research-technology-corpartillery
+  icon:
+    sprite: _Crescent/Objects/Misc/artillerydisplay.rsi
+    state: icon
+  discipline: Shinohara
+  tier: 2
+  cost: 14000
+  recipeUnlocks:
+  - SHIArtilleryFlatpackCraft
+  - SHINeedlerFlatpackCraft
+  - SHIMortarFlatpackCraft
+
+- type: technology
+  id: ShinoharaHighsec
+  name: research-technology-corphighsec
+  icon:
+    sprite:  _Crescent/Clothing/SHI/OuterClothing/corpsec.rsi
+    state: icon
+  discipline: Shinohara
+  tier: 3
+  cost: 20000
+  recipeUnlocks:
+  - ClothingHeadHatShinoharaHelmetCraft
+  - ClothingOuterArmorShinoharaArmorHighsecCraft
+  - ClothingOuterHardsuitHighsecCraft
+
+- type: technology
+  id: ShinoharaSmartgun
+  name: research-technology-corpsmartgun
+  icon:
+    sprite:  _Crescent/Objects/Weapons/smartgun.rsi
+    state: icon
+  discipline: Shinohara
+  tier: 3
+  cost: 22500
+  recipeUnlocks:
+  - WeaponPistolSmartpistolCraft
+  - MagazinePistolSmartgunCraft
+
+- type: technology
+  id: ShinoharaSword
+  name: research-technology-corpsword
+  icon:
+    sprite:  Objects/Weapons/Melee/energykatana.rsi
+    state: icon
+  discipline: Shinohara
+  tier: 3
+  cost: 25000
+  recipeUnlocks:
+  - EnergyKatanaCraft

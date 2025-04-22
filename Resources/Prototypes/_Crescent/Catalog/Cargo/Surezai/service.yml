@@ -1,0 +1,70 @@
+- type: cargoProduct
+  id: ServiceJanitorialSurezai
+  icon:
+    sprite: Objects/Specific/Janitorial/janitorial.rsi
+    state: cleaner
+  product: CrateServiceJanitorialSupplies
+  cost: 560
+  category: cargoproduct-category-name-service
+  group: surezai
+
+- type: cargoProduct
+  id: ServiceLightsReplacementSurezai
+  icon:
+    sprite: Objects/Power/light_bulb.rsi
+    state: normal
+  product: CrateServiceReplacementLights
+  cost: 600
+  category: cargoproduct-category-name-service
+  group: surezai
+
+- type: cargoProduct
+  id: MousetrapBoxesSurezai
+  icon:
+    sprite: Objects/Devices/mousetrap.rsi
+    state: mousetrap
+  product: CrateMousetrapBoxes
+  cost: 500
+  category: cargoproduct-category-name-service
+  group: surezai
+
+- type: cargoProduct
+  id: ServiceSmokeablesSurezai
+  icon:
+    sprite: Objects/Consumable/Smokeables/Cigarettes/Cartons/green.rsi
+    state: closed
+  product: CrateServiceSmokeables
+  cost: 1500
+  category: cargoproduct-category-name-service
+  group: surezai
+
+- type: cargoProduct
+  id: ServiceBureaucracySurezai
+  icon:
+    sprite: Objects/Misc/bureaucracy.rsi
+    state: pen
+  product: CrateServiceBureaucracy
+  cost: 1000
+  category: cargoproduct-category-name-service
+  group: surezai
+
+- type: cargoProduct
+  id: ServiceBooksSurezai
+  icon:
+    sprite: Objects/Misc/books.rsi
+    state: book_icon
+  product: CrateServiceBooks
+  cost: 1000
+  category: cargoproduct-category-name-service
+  group: surezai
+
+- type: cargoProduct
+  id: ServiceJanitorTrolleySurezai
+  icon:
+    sprite: Objects/Specific/Janitorial/janitorial_cart.rsi
+    state: icon-cart
+  product: JanitorialTrolley
+  cost: 1500
+  category: cargoproduct-category-name-service
+  group: surezai
+

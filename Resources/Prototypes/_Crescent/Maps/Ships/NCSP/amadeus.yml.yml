@@ -1,0 +1,32 @@
+# Author Info
+# Discord: fleshangel
+#
+- type: vessel
+  id: Amadeus
+  name: NCSP Amadeus
+  description: A shielded, lightly-armed defense corvette.
+  price: 85000
+  category: Medium
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/amadeus.yml
+
+- type: gameMap
+  id: Amadeus
+  mapName: 'NCSP Amadeus'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/amadeus.yml
+  minPlayers: 0
+  stations:
+    Amadeus:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'SAW Amadeus {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-utility
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            ShipbreakerNCSP: [ 0, 0 ]

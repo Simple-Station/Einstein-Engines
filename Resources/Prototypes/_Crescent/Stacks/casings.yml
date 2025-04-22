@@ -1,0 +1,51 @@
+#industry refactor, factory, 120mm
+
+- type: stack
+  id: EmptyCasing
+  name: empty munitions casing
+  icon: { sprite: _Crescent/Objects/FactoryGoods/120.rsi, state: icon }
+  spawn: Casing120
+  maxCount: 2
+  itemSize: 2
+
+- type: stack
+  id: EmptyCasingHE
+  name: empty munitions casing
+  icon: { sprite: _Crescent/Objects/FactoryGoods/120.rsi, state: icon }
+  spawn: Casing120HE
+  maxCount: 2
+  itemSize: 2
+
+- type: stack
+  id: WeldedCasing
+  name: welded munitions casing
+  icon: { sprite: _Crescent/Objects/FactoryGoods/120w.rsi, state: icon }
+  spawn: Casing120Welded
+  maxCount: 2
+  itemSize: 2
+
+- type: stack
+  id: WeldedCasingEmp
+  name: welded EMP munitions casing
+  icon: { sprite: _Crescent/Objects/FactoryGoods/120wemp.rsi, state: icon }
+  spawn: Casing120WeldedEMP
+  maxCount: 2
+  itemSize: 2
+
+- type: stack
+  id: WeldedCasingHE
+  name: welded HE munitions casing
+  icon: { sprite: _Crescent/Objects/FactoryGoods/120whe.rsi, state: icon }
+  spawn: Casing120WeldedHE
+  maxCount: 2
+  itemSize: 2
+
+# colony
+
+- type: stack
+  id: ColonyShellIncomplete
+  name: incomplete 320mm shell
+  icon: { sprite: _NF/Objects/SpaceArtillery/1000_armorpiercing_rail_casing.rsi, state: base }
+  spawn: ColonyShellIncomplete
+  maxCount: 1
+  itemSize: 1

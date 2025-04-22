@@ -1,0 +1,44 @@
+- type: job
+  id: LevymanDSM
+  name: job-name-levyman
+  description: job-description-levyman
+  playTimeTracker: JobLevymanDSM
+  requirements:
+    - !type:SpeciesRequirement
+      allowedOnly:
+        - Human
+    - !type:FactionRequirement
+      factionID: "DSM"
+  weight: 20
+  startingGear: LevymanGear
+  alwaysUseSpawner: true
+  icon: "JobIconImperialLevyman"
+  requireAdminNotify: false
+  supervisors: job-supervisors-imperial 
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-manatarms
+  access:
+  - Command
+  - Empire
+  - Maintenance
+  - Service
+  - EmpireSoldier
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: LevymanGear
+  equipment:
+    id: LevymanPDA
+    ears: ClothingHeadsetEmpire
+    shoes: ClothingShoesBootsImperialJackboots
+    head: ClothingHeadHelmetImperialTrooperHelmet
+    jumpsuit: ClothingUniformJumpsuitImperialCombat
+    outerClothing: ClothingOuterArmorImperialTrooperArmor
+    gloves: ClothingHandsGlovesImperialLonggloves
+    pocket1: ImperialPassportBareLegit

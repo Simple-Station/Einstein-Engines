@@ -1,0 +1,86 @@
+- type: entity
+  id: ClothingBeltNCWLWebbingFilledGrenadier
+  parent: ClothingBeltNCWLPouches
+  name: union grenadier drop pouches
+  suffix: Filled
+  components:
+  - type: Item
+    size: Ginormous
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,7,1
+  - type: StorageFill
+    contents:
+      - id: ExGrenade
+        amount: 4
+      - id: SyndieMiniBomb
+        amount: 2
+      - id: EmpGrenade
+        amount: 2
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  id: ClothingBeltNCWLWebbingMedFilled
+  parent: ClothingBeltNCWLPouches
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: EpinephrineChemistryBottle
+        amount: 2
+      - id: EphedrineChemistryBottle
+        amount: 2
+      - id: OmnizineChemistryBottle
+      - id: MedkitCombatFilled
+      - id: Syringe
+        amount: 3
+      - id: Gauze
+        amount: 2
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  id: ClothingBeltSyndicateWebbingFilledGrenadier
+  parent: ClothingBeltSyndicateWebbing
+  name: hired gun's grenadier webbing
+  suffix: Filled
+  components:
+  - type: Item
+    size: Ginormous
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,7,1
+  - type: StorageFill
+    contents:
+      - id: ExGrenade
+        amount: 4
+      - id: SyndieMiniBomb
+        amount: 2
+      - id: EmpGrenade
+        amount: 2
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  id: ClothingBeltSyndicateWebbingMedFilled
+  parent: ClothingBeltSyndicateWebbing
+  name: hired gun's medic webbing
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: EpinephrineChemistryBottle
+        amount: 2
+      - id: EphedrineChemistryBottle
+        amount: 2
+      - id: OmnizineChemistryBottle
+      - id: MedkitCombatFilled
+      - id: Syringe
+        amount: 3
+      - id: Gauze
+        amount: 2
+  - type: StaticPrice
+    price: 250

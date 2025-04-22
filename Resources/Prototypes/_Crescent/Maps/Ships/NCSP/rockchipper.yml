@@ -1,0 +1,32 @@
+# Author Info
+# Discord: @mlgtastic
+
+- type: vessel
+  id: Rockchipper
+  name: SAW Rockchipper
+  description: A SAW Retrofit of wrecked termites. Made for intense mining operations.
+  price: 18000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/rockchipper.yml
+
+- type: gameMap
+  id: Rockchipper
+  mapName: 'SAW Rockchipper'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/rockchipper.yml
+  minPlayers: 0
+  stations:
+    Rockchipper:
+      stationProto: StandardCrescentCivilianVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'SAW Rockchipper {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: "Retrofitted mining vessel"
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            ShipbreakerNCSP: [ 1, 1 ]

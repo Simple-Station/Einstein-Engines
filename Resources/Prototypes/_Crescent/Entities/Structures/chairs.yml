@@ -1,0 +1,9 @@
+- type: entity
+  name: baronial grandthrone
+  id: BaronThrone
+  parent: ChairBase
+  description: An ornate seat of power made for the highest power in this System.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/imperialthrone.rsi
+    state: icon

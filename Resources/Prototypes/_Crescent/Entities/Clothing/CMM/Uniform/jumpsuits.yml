@@ -1,0 +1,54 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCMM
+  name: minuteman's uniform
+  description: Warrior's fatigues from many eons past. This faded uniform dates back to the first planetary revolutions, undoubtedly a Union surplus.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/CMM/Uniform/minuteman.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/CMM/Uniform/minuteman.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCMMOrdnanceman
+  name: ordnanceman's uniform
+  description: Artillery operator's fatigues from many eons past. This faded uniform dates back to the first planetary revolutions, undoubtedly a Union surplus.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/CMM/Uniform/ordnanceman.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/CMM/Uniform/ordnanceman.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCMMMachinist
+  name: machinist's uniform
+  description: Machinist's fatigues from many eons past. This faded uniform dates back to the first planetary revolutions, undoubtedly a Union surplus.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/CMM/Uniform/machinist.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/CMM/Uniform/machinist.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCMMPhysician
+  name: physician's uniform
+  description: Doctor's fatigues from many eons past. This faded uniform dates back to the first planetary revolutions, undoubtedly a Union surplus.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/CMM/Uniform/physician.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/CMM/Uniform/physician.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCMMOfficer
+  name: officer's uniform
+  description: Officer's fatigues from many eons past. This faded uniform dates back to the first planetary revolutions, undoubtedly a Union surplus.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/CMM/Uniform/sarge.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/CMM/Uniform/sarge.rsi

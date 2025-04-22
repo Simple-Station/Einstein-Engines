@@ -1,0 +1,14 @@
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingMaskSyndicateFacemask
+  name: combat facemask
+  description: A close-fitting combat facemask for combat operators.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/Face/facemask.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/Face/facemask.rsi
+  - type: EyeProtection
+  - type: BreathMask
+  - type: StaticPrice
+    price: 90

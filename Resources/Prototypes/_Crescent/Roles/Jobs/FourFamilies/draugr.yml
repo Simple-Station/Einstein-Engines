@@ -1,0 +1,81 @@
+- type: job
+  id: DraugrTAP
+  name: job-name-draugr
+  description: job-description-draugr
+  playTimeTracker:  JobDraugrTAP
+  requirements:
+    - !type:FactionRequirement
+      factionID: "TAP"
+    - !type:SpeciesRequirement
+      allowedOnly:
+        - Human
+        - Reptilian
+  weight: 50
+  startingGear: DraugrGear
+  alwaysUseSpawner: true
+  icon: "JobIconDraugr"
+  requireAdminNotify: false
+  supervisors: job-supervisors-tap
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-draugr
+  - !type:AddComponentSpecial
+    components:
+      - type: Telepathic
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - Alseik
+  - Families
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Command
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Mercenary # Frontier
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - AlseikServile
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - External
+  - Captain # Frontier
+
+- type: startingGear
+  id: DraugrGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitDraugr
+    back: ClothingBackpackSatchelFilled
+    shoes: ClothingShoesBootsJack
+    head: ClothingHeadHatDraugr
+    id: DraugrPDA
+    outerClothing: ClothingOuterArmorDraugrAlseik
+    ears: ClothingHeadsetFamilies
+    gloves: ClothingHandsGlovesFingerless

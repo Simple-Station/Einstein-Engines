@@ -1,0 +1,29 @@
+- type: vessel
+  id: Wisp
+  name: RC Wisp
+  description: A repurposed civilian hull, converted into a nimble smuggling shuttle.
+  price: 35000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/wisp.yml
+
+- type: gameMap
+  id: Wisp
+  mapName: 'RC Wisp'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/wisp.yml
+  minPlayers: 0
+  stations:
+    Wisp:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'RC Wisp {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-smuggling
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            OperativeNCSP: [ 0, 1 ]

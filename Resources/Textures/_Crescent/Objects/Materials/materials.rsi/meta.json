@@ -1,0 +1,53 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from CEV Eris and modified for Sector Crescent.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "basicelectronics"
+        },
+        {
+            "name": "weaklaserlocus"
+        },
+        {
+            "name": "hardlightgenerator"
+        },
+        {
+            "name": "tubeloaderrobotics"
+        },
+        {
+            "name": "gascycler"
+        },
+        {
+            "name": "advancedelectronics"
+        },
+        {
+            "name": "nanotrasenelectronics"
+        },
+        {
+            "name": "basicmechanic"
+        },
+        {
+            "name": "empulser"
+        },
+        {
+            "name": "hardsuitelectronics"
+        },
+        {
+            "name": "bluespacemechatronics"
+        },
+        {
+            "name": "laserlocus"
+        },
+        {
+            "name": "advancedmechanic"
+        },
+        {
+            "name": "plastitaniumfibrealloy"
+        }
+    ]
+}

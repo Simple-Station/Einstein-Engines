@@ -1,0 +1,187 @@
+#ncwl#
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackNCWL
+  name: homeguard backpack
+  description: A robust backpack for the NCWL.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Back/ncwlbackpack.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelNCWL
+  name: union courier bag
+  description: A trend-setting courier pack for the NCWL.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Back/ncwlsatchel.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelNCWL
+  name: union duffle bag
+  description: A large duffel bag emblazoned with the NCWL logo.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Back/ncwlduffle.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+
+#syndicate#
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackNCSP
+  name: hired gun's backpack
+  description: A robust backpack for mercenaries.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Back/syndiepack.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackNCSPSatchel
+  name: hired gun's satchel
+  description: A robust courier bag for mercenaries.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Back/syndiesatchel.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackNCSPDuffelbag
+  name: hired gun's duffelbag
+  description: A robust duffelbag for mercenaries.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Back/syndicate.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+
+#empire
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackDSMSatchel
+  name: imperial courier bag
+  description: A robust courier bag in Imperial livery.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Back/empiresatchel.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackDSM
+  name: imperial backpack
+  description: A robust backpack in Imperial livery.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Back/empirebackpack.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+
+#srm
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSRMSatchel
+  name: hunter's courier bag
+  description: A robust courier bag in SRM livery.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Back/srmsatchel.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackSRM
+  name: hunter's rucksack
+  description: A robust backpack in SRM livery.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Back/srmback.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+
+#shi
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSHISatchel
+  name: shinohara courier bag
+  description: A robust courier bag of corporate make.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Back/shisatchel.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackSHI
+  name: shinohara rucksack
+  description: A robust backpack in SHI livery.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Back/shibackpack.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackSHIDuffelbag
+  name: corporate duffelbag
+  description: A robust duffelbag for corporate assets.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Back/shidufflebag.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+
+#cmm
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackMinuteman
+  name: minuteman rucksack
+  description: A robust backpack in CMM livery.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Back/minuteman.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackMinutemanSatchel
+  name: minuteman's courier bag
+  description: A robust courier bag in CMM livery.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Back/minutemansatch.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackMinutemanDuffelbag
+  name: minuteman duffelbag
+  description: A robust duffelbag for the Minutemen.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Back/minutemanduff.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1

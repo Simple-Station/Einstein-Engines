@@ -1,0 +1,229 @@
+- type: entity
+  id: BaseHardpoint
+  parent: BaseMachinePowered
+  name: Hardpoint
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/hardpoints.rsi
+    state: Small
+  - type: Transform
+    noRot: false
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 3500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+  - type: Repairable
+    doAfterDelay: 8
+  - type: Anchorable
+    delay: 10
+  - type: PointLight
+    enabled: false
+    castShadows: false
+    radius: 3
+  - type: LitOnPowered
+  - type: ApcPowerReceiver
+    powerLoad: 5000
+  - type: Appearance
+  - type: Hardpoint
+    range: 20
+    class: Ballistic
+    size: Small
+  - type: Fixtures
+    fixtures:
+      fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.2,-0.2,0.2,0.2"
+          # very not dense to make it easy to pull
+          density: 600
+          mask:
+          - SmallMobMask
+          layer:
+          - MachineLayer
+  - type: CollideOnAnchor
+  placement:
+    mode: SnapgridCenter
+
+- type: entity
+  id: AAAHardpointSmallBallistic
+  parent: BaseHardpoint
+  name: Hardpoint Small/Ballistic
+  components:
+  - type: Hardpoint
+    range: 20
+    class: Ballistic
+    size: Small
+  - type: ApcPowerReceiver
+    powerLoad: 500
+  - type: Sprite
+    sprite: _Crescent/Structures/hardpoints.rsi
+    state: Small
+
+- type: entity
+  id: AAAHardpointSmallEnergy
+  parent: BaseHardpoint
+  name: Hardpoint Small/Energy
+  components:
+  - type: Hardpoint
+    range: 20
+    class: Energy
+    size: Small
+  - type: ApcPowerReceiver
+    powerLoad: 1500
+  - type: Sprite
+    sprite: _Crescent/Structures/hardpoints.rsi
+    state: Small
+
+- type: entity
+  id: AAAHardpointSmallMissile
+  parent: BaseHardpoint
+  name: Hardpoint Small/Missile
+  components:
+  - type: Hardpoint
+    range: 20
+    class: Missile
+    size: Small
+  - type: ApcPowerReceiver
+    powerLoad: 50
+  - type: Sprite
+    sprite: _Crescent/Structures/hardpoints.rsi
+    state: Small
+
+- type: entity
+  id: AAAHardpointMediumBallistic
+  parent: BaseHardpoint
+  name: Hardpoint Medium/Ballistic
+  components:
+  - type: Hardpoint
+    range: 35
+    class: Ballistic
+    size: Medium
+  - type: ApcPowerReceiver
+    powerLoad: 1000
+  - type: Sprite
+    sprite: _Crescent/Structures/hardpoints.rsi
+    state: Medium
+
+- type: entity
+  id: AAAHardpointMediumEnergy
+  parent: BaseHardpoint
+  name: Hardpoint Medium/Energy
+  components:
+  - type: Hardpoint
+    range: 35
+    class: Energy
+    size: Medium
+  - type: ApcPowerReceiver
+    powerLoad: 3500
+  - type: Sprite
+    sprite: _Crescent/Structures/hardpoints.rsi
+    state: Medium
+
+- type: entity
+  id: AAAardpointMediumMissile
+  parent: BaseHardpoint
+  name: Hardpoint Medium/Missile
+  components:
+  - type: Hardpoint
+    range: 35
+    class: Missile
+    size: Medium
+  - type: ApcPowerReceiver
+    powerLoad: 250
+  - type: Sprite
+    sprite: _Crescent/Structures/hardpoints.rsi
+    state: Medium
+
+- type: entity
+  id: AAAHardpointLargeBallistic
+  parent: BaseHardpoint
+  name: Hardpoint Large/Ballistic
+  components:
+  - type: Hardpoint
+    range: 35
+    class: Ballistic
+    size: Large
+  - type: ApcPowerReceiver
+    powerLoad: 5000
+  - type: Sprite
+    sprite: _Crescent/Structures/hardpoints.rsi
+    state: Large
+
+- type: entity
+  id: AAAHardpointLargeEnergy
+  parent: BaseHardpoint
+  name: Hardpoint Large/Energy
+  components:
+  - type: Hardpoint
+    range: 35
+    class: Energy
+    size: Large
+  - type: ApcPowerReceiver
+    powerLoad: 7500
+  - type: Sprite
+    sprite: _Crescent/Structures/hardpoints.rsi
+    state: Large
+
+- type: entity
+  id: AAAHardpointLargeMissile
+  parent: BaseHardpoint
+  name: Hardpoint Large/Missile
+  components:
+  - type: Hardpoint
+    range: 35
+    class: Missile
+    size: Large
+  - type: ApcPowerReceiver
+    powerLoad: 1500
+  - type: Sprite
+    sprite: _Crescent/Structures/hardpoints.rsi
+    state: Large
+
+- type: entity
+  id: AAAHardpointLargeUniversal
+  parent: BaseHardpoint
+  name: Hardpoint Large/Universal
+  components:
+  - type: Hardpoint
+    range: 15
+    class: Universal
+    size: Large
+  - type: ApcPowerReceiver
+    powerLoad: 10000
+  - type: Sprite
+    sprite: _Crescent/Structures/hardpoints.rsi
+    state: Large
+
+- type: entity
+  id: AAAHardpointFixed
+  parent: BaseHardpoint
+  name: Hardpoint Fixed/Universal
+  components:
+  - type: Hardpoint
+    range: 15
+    class: Universal
+    size: Large
+  - type: HardpointFixedMount
+  - type: Sprite
+    sprite: _Crescent/Structures/fixedHardpoint.rsi
+    state: large
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 1200
+  - type: DeviceLinkSink
+    ports:
+      - Toggle
+      - SpaceArtilleryFire
+  - type: Rotatable
+  - type: ExtensionCableReceiver
+

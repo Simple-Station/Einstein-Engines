@@ -1,0 +1,340 @@
+- type: entity
+  id: CrateSurezaiInfantry
+  parent: CrateSecgear
+  name: imperial infantry armaments
+  description: Basic armaments to outfit an Imperial squadron.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponPistolComplianceImperial
+        amount: 3
+      - id: WeaponSubMachineGunMP49
+        amount: 3
+
+- type: entity
+  id: CrateSurezaiInfantryArmor
+  parent: CrateSecgear
+  name: imperial infantry armor
+  description: Basic armor to outfit an Imperial squadron.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterHardsuitImperialSoldier
+        amount: 3
+
+- type: entity
+  id: CrateFreeportPistols
+  parent: CrateSecgear
+  name: smuggled light armaments crate
+  description: Basic light armaments, smuggled from outside sources.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponPistolHKUSP
+        amount: 2
+      - id: WeaponSubMachineGunSabre
+        amount: 2     
+
+#pangtai
+
+- type: entity
+  id: CratePangtaiTakemura
+  parent: CrateSecgear
+  name: pang tai arms "Takemura" crate
+  description: A corporate assault rifle packaged in a stamped cargo crate.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponRifleTakemura
+        amount: 1
+      - id: MagazineRifle
+        amount: 2    
+
+- type: entity
+  id: CratePangtaiHalyad
+  parent: CrateSecgear
+  name: pang tai arms "Halyad" crate
+  description: A heavy marksman's rifle packaged in a stamped cargo crate.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponRifleHalyadMarksman
+        amount: 1
+      - id: MagazineHeavyRifle
+        amount: 2    
+
+- type: entity
+  id: CratePangtaiBarghest
+  parent: CrateSecgear
+  name: pang tai arms "Barghest" crate
+  description: A heavy marksman's rifle packaged in a stamped cargo crate.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponRifleBarghest
+        amount: 1
+      - id: MagazineHeavyRifle
+        amount: 2    
+
+- type: entity
+  id: CratePangtaiCheshyre
+  parent: CrateSecgear
+  name: pang tai arms "Cheshyre" crate
+  description: A heavy operator's submachine gun packaged in a stamped cargo crate.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSubMachineGunCheshyre
+        amount: 1
+      - id: MagazinePistolSubMachineGunHeavy
+        amount: 2    
+
+- type: entity
+  id: CratePangtaiRongyu
+  parent: CrateSecgear
+  name: pang tai arms "Rongyu" crate
+  description: A cheap six milimeter sidearm packaged in a stamped cargo crate.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponPistolRongyu
+        amount: 1
+      - id: MagazinePistol6mm
+        amount: 2  
+
+- type: entity
+  id: CratePangtaiViper
+  parent: CrateSecgear
+  name: pang tai arms "Viper" crate
+  description: A nine milimeter operator's handgun packaged in a stamped cargo crate.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponPistolViper
+        amount: 1
+      - id: MagazinePistol
+        amount: 2  
+
+- type: entity
+  id: CratePangtaiDrozd
+  parent: CrateSecgear
+  name: pang tai arms "Drozd" crate
+  description: A heavy submachinegun packaged in a stamped cargo crate.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSubMachineGunDrozd
+        amount: 1
+      - id: MagazineMagnumSub
+        amount: 2  
+
+- type: entity
+  id: CratePangtaiPozhar
+  parent: CrateSecgear
+  name: pang tai arms "Pozhar" crate
+  description: A shotgun packaged in a stamped cargo crate.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponShotgunBulldog
+        amount: 1
+      - id: MagazineShotgun
+        amount: 2  
+
+- type: entity
+  id: CratePangtaiMako
+  parent: CrateSecgear
+  name: pang tai arms "Mako" crate
+  description: A shoulder-operated plasma caster packaged in a stamped cargo crate.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSpecialMako
+        amount: 1
+
+- type: entity
+  id: CratePangtaiLowArmor
+  parent: CrateSecgear
+  name: pang tai arms civilian armor crate
+  description: A cheap armor set packaged in a stamped cargo crate.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingUniformJumpsuitMilitaryColorGrey
+        amount: 1
+      - id: ClothingShoesBootsJack
+        amount: 1  
+      - id: ClothingHandsGlovesFingerless
+        amount: 1  
+      - id: ClothingHeadHatPangtaiCorvidHelmet
+        amount: 1 
+      - id: ClothingOuterArmorPangTaiVest
+        amount: 1 
+
+- type: entity
+  id: CratePangtaiHighArmor
+  parent: CrateSecgear
+  name: pang tai arms ballistic armor crate
+  description: A high-tier armor set packaged in a stamped cargo crate.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingUniformJumpsuitMilitaryColorGrey
+        amount: 1
+      - id: ClothingShoesBootsJack
+        amount: 1  
+      - id: ClothingHandsGlovesFingerless
+        amount: 1  
+      - id: ClothingHeadHatPangtaiKorundHelmet
+        amount: 1 
+      - id: ClothingOuterArmorPangTaiKorund
+        amount: 1 
+
+- type: entity
+  id: CratePangtaiHardsuitArmor
+  parent: CrateSecgear
+  name: pang tai arms hardsuit armor crate
+  description: A spaceworthy corporate hardsuit set packaged in a stamped cargo crate.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterHardsuitPangTai
+        amount: 1
+
+#shinohara
+
+- type: entity
+  id: CrateShinoharaGoro
+  parent: CrateSecgear
+  name: shinohara "Goro M55" crate
+  description: A battle rifle packaged in a stamped cargo crate.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponRifleGoro
+        amount: 1
+      - id: MagazineRifle
+        amount: 2   
+
+- type: entity
+  id: CrateShinoharaHound
+  parent: CrateSecgear
+  name: shinohara "Hound M215s" crate
+  description: A marksman rifle packaged in a stamped cargo crate.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponRifleHoundMarksman
+        amount: 1
+      - id: MagazineLightRifle
+        amount: 2   
+
+- type: entity
+  id: CrateShinoharaMP49
+  parent: CrateSecgear
+  name: shinohara "MP49" crate
+  description: A light submachinegun packaged in a stamped cargo crate.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSubMachineGunMP49
+        amount: 1
+      - id: MagazinePistolSubMachineGun
+        amount: 2   
+
+- type: entity
+  id: CrateShinoharaHimehabu
+  parent: CrateSecgear
+  name: shinohara "M-002 Himehabu" crate
+  description: An operator's pistol packaged in a stamped cargo crate.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponPistolHimehabu
+        amount: 1
+      - id: MagazinePistol
+        amount: 2   
+
+- type: entity
+  id: CrateShinoharaShinobi
+  parent: CrateSecgear
+  name: shinohara "25T Shinobi" crate
+  description: An operator's smartpistol packaged in a stamped cargo crate.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponPistolSmartpistol
+        amount: 1
+      - id: MagazinePistolSmartgun
+        amount: 2   
+
+- type: entity
+  id: CrateShinoharaSAW
+  parent: CrateSecgear
+  name: shinohara "L93" crate
+  description: A light machinegun packaged in a stamped cargo crate.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponLightMachineGunL6
+        amount: 1
+
+- type: entity
+  id: CrateShinoharaHardsuit
+  parent: CrateSecgear
+  name: shinohara "SVBT-2" crate
+  description: A combat hardsuit packaged in a stamped cargo crate.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterHardsuitHighsec
+        amount: 1
+
+- type: entity
+  id: CrateShinoharaBulwark
+  parent: CrateSecgear
+  name: shinohara "BULWARK-2" crate
+  description: A ballistic hauberk packaged in a stamped cargo crate.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingUniformJumpsuitMilitaryColorGrey
+        amount: 1
+      - id: ClothingShoesBootsJack
+        amount: 1  
+      - id: ClothingHandsGlovesFingerless
+        amount: 1  
+      - id: ClothingHeadHatShinoharaHelmet
+        amount: 1
+      - id: ClothingOuterArmorShinoharaArmorHighsec
+        amount: 1
+
+- type: entity
+  id: CrateShinoharaTac
+  parent: CrateSecgear
+  name: shinohara "TAC-1" crate
+  description: A ballistic hauberk packaged in a stamped cargo crate.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingUniformJumpsuitMilitaryColorGrey
+        amount: 1
+      - id: ClothingShoesBootsJack
+        amount: 1  
+      - id: ClothingHandsGlovesFingerless
+        amount: 1  
+      - id: ClothingHeadHatShinoharaNonevaHelm
+        amount: 1
+      - id: ClothingOuterArmorShinoharaArmorBulwark
+        amount: 1
+
+- type: entity
+  id: CrateShinoharaHammerhead
+  parent: CrateSecgear
+  name: shinohara "Hammerhead" crate
+  description: A disposable smart rocket launcher packaged in a stamped cargo crate.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponLauncherHammerhead
+        amount: 1

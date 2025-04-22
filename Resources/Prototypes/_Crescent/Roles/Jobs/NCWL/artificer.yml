@@ -1,0 +1,39 @@
+- type: job
+  id: ArtificerNCWL
+  name: job-name-artificer
+  description: job-description-artificer
+  playTimeTracker: JobArtificerNCWL
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 20000
+    - !type:FactionRequirement
+      factionID: "NCWL"
+  weight: 20
+  startingGear: ArtificerGear
+  alwaysUseSpawner: true
+  icon: "JobIconArtificer"
+  requireAdminNotify: false
+  supervisors: job-supervisors-highcomm
+  canBeAntag: false
+  access:
+  - Command
+  - Maintenance
+  - NCWLGeneral
+  - NCWLJail
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: ArtificerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNCWLArtificer
+    back: ClothingBackpackDuffelNCWLFilledArtificer
+    id: ArtificerPDA
+    ears: ClothingHeadsetNCWL
+    belt: ClothingBeltUtilityEngineering
+    pocket1: WeaponPistolHKUSP
+    pocket2: NCWLPassportAccepted
+  # duffelbag: ClothingBackpackDuffelNCWLFilledArtificer YAMLFIX: This doesn't go here anymore.
+  # satchel: ClothingBackpackSatchelNCWLFilledArtificer

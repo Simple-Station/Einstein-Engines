@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingBeltNfsdWebbing
+  id: ClothingBeltMinutemanPouches
+  name: minuteman webbing
+  description: Built for the Minutemen - light synthread webbing with pouches. Intended for doctors, engineers and drop-troopers.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/CMM/Belt/minuteman_droppouches.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/CMM/Belt/minuteman_droppouches.rsi

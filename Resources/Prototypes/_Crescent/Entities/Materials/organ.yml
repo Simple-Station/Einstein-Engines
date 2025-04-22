@@ -1,0 +1,38 @@
+- type: entity
+  parent: OreBase
+  id: ProteinCan
+  name: exotic proteins canister
+  description: A canister of freshly-harvested exotic proteins.
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: ProteinCan
+  - type: Tag
+    tags:
+    - OrganMaterial
+    - DrugComponent
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/proteins.rsi
+    state: icon
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      ExoticProteins: 500
+  - type: Contraband
+    value: 1
+
+- type: entity
+  id: ProteinCan1
+  parent: ProteinCan
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  id: ProteinCan5
+  parent: ProteinCan
+  suffix: Single
+  components:
+    - type: Stack
+      count: 5

@@ -1,0 +1,185 @@
+#NCWL
+
+- type: entity
+  parent: BaseItem
+  id: NCWLPassportBareLegit
+  name: union passport
+  description: A small booklet with a verification of identity for the bearer.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/ncwlpassport.rsi
+    state: icon
+  - type: StaticPrice
+    price: 500
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/_Crescent/pageturn.ogg
+    soundDeactivate:
+      path: /Audio/_Crescent/pageturn.ogg
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: { state: iconopen }
+          False: { state: icon }
+  - type: UseDelay
+    delay: 1.0
+
+- type: entity
+  parent: BaseItem
+  id: NCWLPassportBareFake
+  name: union passport
+  description: A small booklet with a verification of identity for the bearer.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/ncwlpassport.rsi
+    state: icon
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/_Crescent/pageturn.ogg
+    soundDeactivate:
+      path: /Audio/_Crescent/pageturn.ogg
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: { state: iconopen }
+          False: { state: icon }
+  - type: UseDelay
+    delay: 1.0
+  - type: StaticPrice
+    price: 1250
+  - type: Contraband
+
+- type: entity
+  parent: BaseItem
+  id: NCWLPassportDenied
+  name: union passport
+  description: A small booklet with a verification of identity for the bearer. This one is marked as a fraud.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/ncwlpassportdenied.rsi
+    state: icon
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/_Crescent/pageturn.ogg
+    soundDeactivate:
+      path: /Audio/_Crescent/pageturn.ogg
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: { state: iconopen }
+          False: { state: icon }
+  - type: UseDelay
+    delay: 1.0
+
+- type: entity
+  parent: BaseItem
+  id: NCWLPassportAccepted
+  name: union passport
+  description: A small booklet with a verification of identity for the bearer. This one has been already cleared for entry.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/ncwlpassportaccepted.rsi
+    state: icon
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/_Crescent/pageturn.ogg
+    soundDeactivate:
+      path: /Audio/_Crescent/pageturn.ogg
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: { state: iconopen }
+          False: { state: icon }
+  - type: UseDelay
+    delay: 1.0
+
+#imperial
+
+- type: entity
+  parent: BaseItem
+  id: ImperialPassportBareLegit
+  name: imperial passport
+  description: A small booklet with a verification of identity for the bearer.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/imperialpassport.rsi
+    state: icon
+  - type: StaticPrice
+    price: 500
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/_Crescent/pageturn.ogg
+    soundDeactivate:
+      path: /Audio/_Crescent/pageturn.ogg
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: { state: iconopen }
+          False: { state: icon }
+  - type: UseDelay
+    delay: 1.0
+
+- type: entity
+  parent: BaseItem
+  id: ImperialPassportBareFake
+  name: imperial passport
+  description: A small booklet with a verification of identity for the bearer.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/imperialpassport.rsi
+    state: icon
+  - type: StaticPrice
+    price: 500
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/_Crescent/pageturn.ogg
+    soundDeactivate:
+      path: /Audio/_Crescent/pageturn.ogg
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: { state: iconopen }
+          False: { state: icon }
+  - type: UseDelay
+    delay: 1.0
+  - type: Contraband
+
+#trade permit
+
+- type: entity
+  parent: BaseItem
+  id: TradePassport
+  name: trade permit
+  description: A small booklet with a verification of identity for the bearer. Often issued to merchants and corporate employees.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/tradepassport.rsi
+    state: icon
+  - type: StaticPrice
+    price: 500
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/_Crescent/pageturn.ogg
+    soundDeactivate:
+      path: /Audio/_Crescent/pageturn.ogg
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: { state: iconopen }
+          False: { state: icon }
+  - type: UseDelay
+    delay: 1.0

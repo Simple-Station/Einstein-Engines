@@ -1,0 +1,30 @@
+- type: vessel
+  id: buffalo
+  name: SHI Buffalo
+  description: The SHI Buffalo is a cost-effective hauling ship designed for two technicians, one foreman, and an anti-boarding corpsec officer.
+  price: 47000
+  category: Medium
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/SHI/buffalo.yml
+
+- type: gameMap
+  id: buffalo
+  mapName: 'SHI Buffalo'
+  mapPath: /Maps/_Crescent/Shuttles/SHI/buffalo.yml
+  minPlayers: 0
+  stations:
+    buffalo:
+      stationProto: StandardCrescentCivilianVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'SHI Buffalo {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-civilian
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            EmployeeSHI: [1, 2]
+

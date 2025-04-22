@@ -1,0 +1,30 @@
+- type: vessel
+  id: Bison
+  name: SHI Bison
+  description: A heavy blockade runner, the Bison primarily serves as a backliner for the CorpSec team, and as a smuggler vehicle for prospective freight-runners.
+  price: 55000
+  category: Medium
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/SHI/bison.yml
+
+- type: gameMap
+  id: Bison
+  mapName: 'SHI Bison'
+  mapPath: /Maps/_Crescent/Shuttles/SHI/buffalo.yml
+  minPlayers: 0
+  stations:
+    Bison:
+      stationProto: StandardCrescentCivilianVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'CSEC Bison {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-smuggling
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            BoardSHI: [1, 0]
+            HighsecSHI: [3, 0]

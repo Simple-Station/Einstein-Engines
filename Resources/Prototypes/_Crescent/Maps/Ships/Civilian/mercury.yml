@@ -1,0 +1,32 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Mercury
+  name: ICM Mercury
+  description: A basic techmining shuttle equipped with high-tech research equipment.
+  price: 17500
+  category: Small
+  group: Civilian
+  shuttlePath: /Maps/_Crescent/Shuttles/Civilian/mercury.yml
+
+- type: gameMap
+  id: Mercury
+  mapName: 'ICM Mercury'
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/mercury.yml
+  minPlayers: 0
+  stations:
+    Mercury:
+      stationProto: StandardCrescentCivilianVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'ICM Mercury {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-research
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            Scientist: [ 1, 1 ]

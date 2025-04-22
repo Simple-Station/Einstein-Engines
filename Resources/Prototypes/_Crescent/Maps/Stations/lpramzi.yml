@@ -1,0 +1,22 @@
+- type: gameMap
+  id: lpramzi
+  mapName: 'Listening Post 5'
+  mapPath: /Maps/_Crescent/Stations/lpramzi.yml
+  minPlayers: 0
+  stations:
+    lpramzi:
+      stationProto: StandardCrescentOutpost
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Listening Post 5'
+        - type: Grammar
+          attributes:
+            proper: true
+        - type: VesselDesignation
+          designation: vessel-designation-headquarters
+        - type: StationJobs
+          checkAlive: false
+          overflowJobs: []
+          availableJobs:
+            IntelligenceOfficerNCSP: [ 1, 1 ]
+            OperativeNCSP: [ 3, 3 ]

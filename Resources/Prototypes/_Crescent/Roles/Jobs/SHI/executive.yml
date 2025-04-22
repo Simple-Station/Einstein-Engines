@@ -1,0 +1,69 @@
+- type: job
+  id: ExecutiveSHI
+  name: job-name-executive
+  description: job-description-executive
+  playTimeTracker: JobExecutiveSHI
+  requirements:
+    - !type:WhitelistRequirement
+    - !type:OverallPlaytimeRequirement
+      time: 36000
+    - !type:FactionRequirement
+      factionID: "SHI"
+  weight: 55
+  startingGear: ExecutiveGear
+  alwaysUseSpawner: true
+  icon: "JobIconExecutive"
+  requireAdminNotify: true
+  supervisors: job-supervisors-shi
+  canBeAntag: false
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - Service
+  - External
+  - Shinohara
+  - ShinoharaOfficer
+  - ShinoharaExecutive
+  - ShinoharaSecurity
+
+- type: startingGear
+  id: ExecutiveGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitExecutiveShinoharaSuit
+    shoes: ClothingShoesBootsLaceup
+    neck: ClothingNeckTieRed
+    outerClothing: ClothingOuterShinoharaExecSuitjacket
+    id: ExecutivePDA
+    pocket1: TradePassport
+    ears: ClothingHeadsetShinohara

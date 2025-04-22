@@ -1,0 +1,381 @@
+#ncwl#
+
+#kommissar#
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackSatchelLeather
+  id: ClothingBackpackSatchelLeatherFilledNCWL
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+      - id: Flash
+      - id: MagazinePistol
+      - id: Tourniquet
+      - id: Zipties
+
+#sanitar#
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackSatchelNCWL
+  id: ClothingBackpackSatchelNCWLFilledSanitar
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+      - id: Flash
+      - id: MagazinePistol
+      - id: Tourniquet
+      - id: Zipties
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackNCWL
+  id: ClothingBackpackNCWLFilledSanitar
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+      - id: Flash
+      - id: MagazinePistol
+      - id: Tourniquet
+      - id: Zipties
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackDuffelNCWL
+  id: ClothingBackpackDuffelNCWLFilledSanitar
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+      - id: Flash
+      - id: MagazinePistol
+      - id: Tourniquet
+      - id: Zipties
+
+#artificer#
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackDuffelNCWL
+  id: ClothingBackpackDuffelNCWLFilledArtificer
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazinePistol
+      - id: Tourniquet
+      - id: Zipties
+      - id: BoxSurvivalEngineering
+      - id: trayScanner
+      - id: CableMVStack
+      - id: CableHVStack
+      - id: CableApcStack
+      - id: SheetSteel
+      - id: SheetGlass
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackNCWL
+  id: ClothingBackpackNCWLFilledArtificer
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazinePistol
+      - id: Tourniquet
+      - id: Zipties
+      - id: BoxSurvivalEngineering
+      - id: trayScanner
+      - id: CableMVStack
+      - id: CableHVStack
+      # - id: CableApcStack # Not enough room for these
+      # - id: SheetSteel
+      # - id: SheetGlass
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackSatchelNCWL
+  id: ClothingBackpackSatchelNCWLFilledArtificer
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazinePistol
+      - id: Tourniquet
+      - id: Zipties
+      - id: BoxSurvivalEngineering
+      - id: trayScanner
+      - id: CableMVStack
+      - id: CableHVStack
+      - id: CableApcStack
+      - id: SheetSteel
+      - id: SheetGlass
+
+# administrator #
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackSatchelLeather
+  id: ClothingBackpackSatchelLeatherFilledNCWLAdministrator
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+      - id: Flash
+      - id: SpeedLoaderMagnumAP
+      - id: Tourniquet
+      - id: Zipties
+
+#syndicate#
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackNCSPSatchel
+  id: ClothingBackpackNCSPSatchelFilledInfanteer
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+      - id: Flash
+      - id: MagazinePistol
+      - id: Tourniquet
+      - id: Zipties
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackNCSP
+  id: ClothingBackpackNCSPFilledInfanteer
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+      - id: Flash
+      - id: MagazinePistol
+      - id: Tourniquet
+      - id: Zipties
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackNCSPDuffelbag
+  id: ClothingBackpackNCSPDuffelbagFilledInfanteer
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+      - id: Flash
+      - id: MagazinePistol
+      - id: Tourniquet
+      - id: Zipties
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackNCSPDuffelbag
+  id: ClothingBackpackNCSPDuffelbagSAWS
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazinePistol
+      - id: Tourniquet
+      - id: Zipties
+      - id: BoxSurvivalEngineering
+      - id: trayScanner
+      - id: CableMVStack
+      - id: CableHVStack
+      - id: CableApcStack
+      - id: SheetSteel
+      - id: SheetGlass
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackNCSP
+  id: ClothingBackpackNCSPSAWS
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazinePistol
+      - id: Tourniquet
+      - id: Zipties
+      - id: BoxSurvivalEngineering
+      - id: trayScanner
+      - id: CableMVStack
+      - id: CableHVStack
+      # - id: CableApcStack # These don't fit
+      # - id: SheetSteel
+      # - id: SheetGlass
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackNCSPSatchel
+  id: ClothingBackpackNCSPSatchelSAWS
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazinePistol
+      - id: Tourniquet
+      - id: Zipties
+      - id: BoxSurvivalEngineering
+      - id: trayScanner
+      - id: CableMVStack
+      - id: CableHVStack
+      - id: CableApcStack
+      - id: SheetSteel
+      - id: SheetGlass
+
+#empire
+
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackDSMSatchel
+  id: ClothingBackpackDSMSatchelFilledFreeholder
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackDSM
+  id: ClothingBackpackDSMFilledFreeholder
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackDSMSatchel
+  id: ClothingBackpackDSMSatchelFilledSoldier
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+      - id: Flash
+      - id: Tourniquet
+      - id: Zipties
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackDSM
+  id: ClothingBackpackDSMFilledSoldier
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+      - id: Flash
+      - id: Tourniquet
+      - id: Zipties
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackSatchelLeather
+  id: ClothingBackpackSatchelLeatherFilledDSM
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+      - id: Flash
+
+#srm
+
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackSRMSatchel
+  id: ClothingBackpackSatchelFilledSRM
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackSRM
+  id: ClothingBackpackFilledSRM
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+
+#shi
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackSHISatchel
+  id: ClothingBackpackSHIFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackSHI
+  id: ClothingBackpackSatchelSHIFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackSHIDuffelbag
+  id: ClothingBackpackSHIDuffelbagFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+
+#cmm
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackMinuteman
+  id: ClothingBackpackMinutemanFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+      - id: Flash
+      - id: MagazinePistol
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackMinutemanSatchel
+  id: ClothingBackpackMinutemanSatchelFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+      - id: Flash
+      - id: MagazinePistol
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackMinutemanDuffelbag
+  id: ClothingBackpackMinutemanDuffelbagFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+      - id: Flash
+      - id: MagazinePistol
+  
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackSatchel
+  id: BackpackAntiquarianSatchelFilled
+  components:
+    - type: StorageFill
+      contents:
+        - id: BoxSurvival
+        - id: ShipVoucherAntiquarianWarthog
+        - id: AmbrosiaVulgarisSeeds
+        - id: AmbrosiaVulgarisSeeds
+        - id: AmbrosiaVulgarisSeeds
+        - id: SuperCapacitorStockPart
+        - id: SuperCapacitorStockPart
+        - id: SuperCapacitorStockPart
+        - id: SuperCapacitorStockPart

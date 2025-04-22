@@ -1,0 +1,33 @@
+# Author Info
+# Discord: @fleshangel
+#
+- type: vessel
+  id: Corvax
+  name: NCSP Corvax
+  description: A light missile corvette. Devastating at long range.
+  price: 41000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/corvax.yml
+
+- type: gameMap
+  id: Corvax
+  mapName: 'NCSP Corvax'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/corvax.yml
+  minPlayers: 0
+  stations:
+    Corvax:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'GSC Corvax {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-missile
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            InfanteerNCSP: [ 1, 1 ]
+            TechnicianNCSP: [ 1, 1 ]

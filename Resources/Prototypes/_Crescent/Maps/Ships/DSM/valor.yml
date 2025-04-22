@@ -1,0 +1,29 @@
+- type: vessel
+  id: Valor
+  name: DSM Valor
+  description: A light torpedo bomber with dual torpedo launchers.
+  price: 12000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/DSM/valor.yml
+
+- type: gameMap
+  id: Valor
+  mapName: 'DSM Valor'
+  mapPath: /Maps/_Crescent/Shuttles/DSM/valor.yml
+  minPlayers: 0
+  stations:
+    Valor:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Valor {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-torpedo-bomber
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            LevymanDSM: [ 0, 1 ]

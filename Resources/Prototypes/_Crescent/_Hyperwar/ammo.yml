@@ -1,0 +1,29 @@
+
+
+- type: messagePack
+  id: WarVendAds
+  messages:
+  - advertisement-war-1
+  - advertisement-war-2
+  - advertisement-war-3
+  - advertisement-war-4
+  - advertisement-war-5
+  - advertisement-war-6
+  - advertisement-war-7
+  - advertisement-war-8
+  - advertisement-war-9
+  - advertisement-war-10
+
+- type: messagePack
+  id: ShipVendAds
+  messages:
+  - advertisement-ship-1
+  - advertisement-ship-2
+  - advertisement-ship-3
+  - advertisement-ship-4
+  - advertisement-ship-5
+  - advertisement-ship-6
+  - advertisement-ship-7
+  - advertisement-ship-8
+  - advertisement-ship-9
+  - advertisement-ship-10

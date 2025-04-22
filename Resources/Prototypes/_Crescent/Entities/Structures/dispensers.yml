@@ -1,0 +1,610 @@
+- type: entity
+  id: BaseDispenser
+  parent: BaseMachinePowered
+  name: dispenser
+  description: Dispenser
+  abstract: true
+  components:
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    volume: -9
+    range: 3
+    enabled: false
+    sound:
+      path: /Audio/Ambience/Objects/vending_machine_hum.ogg
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/empty.rsi
+    snapCardinals: true
+  - type: Physics
+    bodyType: Static
+  - type: Transform
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.45,0.25,0.45"
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+        density: 200
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+  - type: Repairable
+    doAfterDelay: 8
+  - type: WiresPanel
+  - type: Wires
+
+    boardName: wires-board-name-dispenser
+    layoutId: Dispenser
+  - type: Anchorable
+  - type: Electrified
+    enabled: false
+    usesApcPower: true
+  - type: PointLight
+    enabled: false
+    castShadows: false
+    radius: 1.5
+  - type: LitOnPowered
+  - type: ApcPowerReceiver
+    powerLoad: 50
+  - type: Actions
+  - type: Appearance
+  - type: WiresVisuals
+
+- type: entity
+  parent: BaseDispenser
+  id: DeedConsole
+  name: deed console
+  description: A machine that reads cargo deeds and dispenses money accordingly.
+  components:
+  - type: Dispenser
+    defaultItem: TradeDeedStub
+    inventory:
+      TradeDeedLow: SpaceCash1500
+      TradeDeedNormal: SpaceCash3500
+      TradeDeedHigh: SpaceCash4500
+      TradeDeedVeryHigh: SpaceCash6000
+      TradeDeedExotic: SpaceCash10000
+  - type: Sprite
+    sprite: _Crescent/Structures/deedsmachine.rsi
+    layers:
+    - state: "icon"
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"
+
+- type: entity
+  parent: BaseDispenser
+  id: NovaBalreskaCargoChute
+  name: balreskan cargo turn-in chute
+  description: A machine with piping systems that lead into the bowels of the station, accepting export goods for trade deeds. The electronic display informs that the NCWL are in need of antibiotics.
+  components:
+  - type: Dispenser
+    defaultItem: TradeDeedStub
+    inventory:
+      TradeGoodAmmo: TradeDeedNormal
+      TradeGoodNanoTrasen: TradeDeedVeryHigh
+      TradeGoodOldCyber: TradeDeedVeryHigh
+      TradeGoodOldParts: TradeDeedVeryHigh
+      TradeGoodAntibiotics: TradeDeedVeryHigh
+      TradeGoodScrap: TradeDeedLow
+      TradeGoodCybernetics: TradeDeedLow
+      TradeGoodGunparts: TradeDeedHigh
+      TradeGoodRice: TradeDeedNormal
+      TradeGoodWine: TradeDeedHigh
+      TradeGoodAlloys: TradeDeedExotic
+      TradeGoodMiltech: TradeDeedNormal
+      TradeGoodFabrics: TradeDeedVeryHigh
+      TradeGoodPlasma: TradeDeedVeryHigh
+      TradeGoodGoodScrap: TradeDeedExotic
+  - type: Sprite
+    sprite: _Crescent/Structures/cargochute.rsi
+    layers:
+    - state: "icon"
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"
+
+- type: entity
+  parent: BaseDispenser
+  id: GrinningJackalCargoChute
+  name: syndicate cargo turn-in chute
+  description: A machine with piping systems that lead into the bowels of the station, accepting export goods for trade deeds. The electronic display informs that the NCSP are in need of food.
+  components:
+  - type: Dispenser
+    defaultItem: TradeDeedStub
+    inventory:
+      TradeGoodAlcohol: TradeDeedHigh
+      TradeGoodAntibiotics: TradeDeedLow
+      TradeGoodRice: TradeDeedLow
+      TradeGoodFlour: TradeDeedNormal
+      TradeGoodNanoTrasen: TradeDeedHigh
+      TradeGoodOldCyber: TradeDeedHigh
+      TradeGoodOldParts: TradeDeedHigh
+      TradeGoodSugar: TradeDeedNormal
+      TradeGoodFabrics: TradeDeedVeryHigh
+      TradeGoodMiltech: TradeDeedNormal
+      TradeGoodAlloys: TradeDeedExotic
+      TradeGoodWine: TradeDeedExotic
+  - type: Sprite
+    sprite: _Crescent/Structures/cargochute.rsi
+    layers:
+    - state: "icon"
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"
+
+- type: entity
+  parent: BaseDispenser
+  id: PassportChecker
+  name: passport validity checker
+  description: A complicated-looking machine that checks the validity of provided passports.
+  components:
+  - type: Dispenser
+    defaultItem: TemporaryDenialSlip
+    inventory:
+      NCWLPassportBareFake: NCWLPassportDenied
+      NCWLPassportBareLegit: NCWLPassportAccepted
+  - type: Sprite
+    sprite: _Crescent/Structures/passportchecker.rsi
+    layers:
+    - state: "icon"
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"
+
+- type: entity
+  parent: BaseDispenser
+  id: PassportPrinter
+  name: passport printer
+  description: A machine that prints union passports on the authority of the Administrator.
+  components:
+  - type: Dispenser
+    defaultItem: NCWLPassportBareLegit
+    inventory:
+      NCWLPassportBareFake: NCWLPassportDenied
+      NCWLPassportBareLegit: NCWLPassportAccepted
+  - type: Sprite
+    sprite: _Crescent/Structures/deedsmachine.rsi
+    layers:
+    - state: "icon"
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"
+
+- type: entity
+  parent: BaseDispenser
+  id: HuntersBounty
+  name: hunter's bounty
+  description: A near-derelict machine that accepts ID cards for cold, hard credits.
+  components:
+  - type: Dispenser
+    defaultItem: HuntersPermit
+    inventory:
+      NCWLIDCardAdministrator: SpaceCash30000
+      NCWLIDCardKommissar: SpaceCash30000
+      NCWLIDCardKapitan: SpaceCash20000
+      NCWLIDCardSanitar: SpaceCash10000
+      NCWLIDCardArtificer: SpaceCash10000
+      NCWLIDCardDoktor: SpaceCash10000
+      NCWLIDCardKadet: SpaceCash5000
+      NCSPIDCardRingleader: SpaceCash30000
+      NCSPIDCardLieutenant: SpaceCash30000
+      NCSPIDCardInfanteer: SpaceCash10000
+      NCSPIDCardRipperdoc: SpaceCash10000
+      NCSPIDCardChemcook: SpaceCash10000
+      NCSPIDCardOperative: SpaceCash10000
+      NCSPIDCardIntelligenceOfficer: SpaceCash20000
+      NCSPIDCardForeman: SpaceCash20000
+      NCSPIDCardShipbreaker: SpaceCash10000
+      IDCardAntiquarian: SpaceCash10000
+      CMMIDCardMinuteman: SpaceCash10000
+      CMMIDCardPhysician: SpaceCash10000
+      CMMIDCardMachinist: SpaceCash10000
+      CMMIDCardOrdnanceman: SpaceCash10000
+      CMMIDCardWatchmaster: SpaceCash20000
+      CMMIDCardDeputyMarshal: SpaceCash30000
+      CMMIDCardMarshal: SpaceCash30000
+      DSMIDCardFreeholder: SpaceCash5000
+      DSMIDCardLevyman: SpaceCash10000
+      DSMIDCardKnight: SpaceCash20000
+      DSMIDCardCourtier: SpaceCash20000
+      DSMIDCardAdjutant: SpaceCash30000
+      DSMIDCardGovernor: SpaceCash30000
+  - type: Sprite
+    sprite: _Crescent/Structures/hunter.rsi
+    layers:
+    - state: "icon"
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"
+
+- type: entity
+  parent: BaseDispenser
+  id: OnionWallchute
+  name: ONION cargo chute
+  description: A chute that leads into the bowels of the station and delivers cargo to a place unknown.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wallmount
+  components:
+  - type: WallMount
+    arc: 175
+  - type: Dispenser
+    defaultItem: TradeDeedStub
+    inventory:
+      CrashAutoinjector: SpaceCash1000
+      ExileAutoinjector: SpaceCash2500
+      KaiserAutoinjector: SpaceCash5000
+      BloodeyeAutoinjector: SpaceCash2500
+      MechaniteAutoinjector: SpaceCash3500
+      RadioJammer: SpaceCash5000
+      FreedomImplanter: SpaceCash1000
+      StorageImplanter: SpaceCash1000
+      RitualDagger: SpaceCash500
+      EldritchBlade: SpaceCash1000
+      UnholyHalberd: SpaceCash1500
+      NCWLPassportBareLegit: SpaceCash5000
+      ImperialPassportBareLegit: SpaceCash3500
+      TradePassport: SpaceCash2500
+      WeaponLightMachineGunConscript: SpaceCash5000
+      WeaponRifleNCWLBatanya: SpaceCash3500
+      WeaponRifleMiller: SpaceCash3500
+      WeaponRifleFAL: SpaceCash4000
+      WeaponRifleKrinkov: SpaceCash1500
+      WeaponRifleHoundMarksman: SpaceCash3500
+      WeaponRifleHunter: SpaceCash2500
+      WeaponRifleMayflower: SpaceCash3500
+      WeaponRevolverSnubnose: SpaceCash1500
+      WeaponPistolHKUSP: SpaceCash2000
+      WeaponPistolT91: SpaceCash2500
+      WeaponPistolHimehabu: SpaceCash2500
+      WeaponPistolComplianceImperial: SpaceCash2500
+      WeaponPistolSmartpistol: SpaceCash2500
+      TradeGoodOrgans: SpaceCash12500
+      TradeGoodDrugs: SpaceCash10000
+      FoodAmbrosiaVulgaris: SpaceCash1000
+  - type: Sprite
+    sprite: _Crescent/Structures/onionchute.rsi
+    layers:
+    - state: "icon"
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"
+
+- type: entity
+  parent: BaseDispenser
+  id: CountsmanCargoChute
+  name: imperial cargo turn-in chute
+  description: A machine with piping systems that lead into the bowels of the ship, accepting export goods for trade deeds. The electronic display informs that the DSM are in need of medical supplies.
+  components:
+  - type: Dispenser
+    defaultItem: TradeDeedStub
+    inventory:
+      TradeGoodAlcohol: TradeDeedLow
+      TradeGoodCybernetics: TradeDeedHigh
+      TradeGoodGunparts: TradeDeedNormal
+      TradeGoodAntibiotics: TradeDeedLow
+      TradeGoodFlour: TradeDeedNormal
+      TradeGoodSugar: TradeDeedLow
+      TradeGoodMiltech: TradeDeedNormal
+      TradeGoodAlloys: TradeDeedExotic
+      TradeGoodGoodScrap: TradeDeedVeryHigh
+      TradeGoodPlasma: TradeDeedVeryHigh
+      TradeGoodNanoTrasen: TradeDeedHigh
+      TradeGoodOldCyber: TradeDeedHigh
+      TradeGoodOldParts: TradeDeedHigh
+  - type: Sprite
+    sprite: _Crescent/Structures/cargochute.rsi
+    layers:
+    - state: "icon"
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"
+
+- type: entity
+  parent: BaseDispenser
+  id: BaseCargoChute
+  name: cargo turn-in chute
+  description: A machine with piping systems that lead deep into the bowels of the station, accepting trade goods for deeds.
+  components:
+  - type: Dispenser
+    defaultItem: TradeDeedStub
+    inventory:
+      TradeGoodAmmo: TradeDeedNormal
+      TradeGoodAlcohol: TradeDeedNormal
+      TradeGoodCybernetics: TradeDeedLow
+      TradeGoodGunparts: TradeDeedNormal
+      TradeGoodScrap: TradeDeedLow
+      TradeGoodAntibiotics: TradeDeedLow
+      TradeGoodRice: TradeDeedLow
+      TradeGoodFlour: TradeDeedLow
+      TradeGoodSugar: TradeDeedLow
+      TradeGoodGoodScrap: TradeDeedHigh
+      TradeGoodPlasma: TradeDeedExotic
+      TradeGoodWine: TradeDeedExotic
+      TradeGoodFabrics: TradeDeedVeryHigh
+      TradeGoodNanoTrasen: TradeDeedHigh
+      TradeGoodOldCyber: TradeDeedHigh
+      TradeGoodOldParts: TradeDeedHigh
+  - type: Sprite
+    sprite: _Crescent/Structures/cargochute.rsi
+    layers:
+    - state: "icon"
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"
+
+- type: entity
+  parent: BaseDispenser
+  id: InterdyneCargoChute
+  name: hayes cargo turn-in chute
+  description: A machine with piping systems that lead deep into the bowels of the station, accepting trade goods for deeds.
+  components:
+  - type: Dispenser
+    defaultItem: TradeDeedStub
+    inventory:
+      TradeGoodAmmo: TradeDeedNormal
+      TradeGoodGunparts: TradeDeedNormal
+      TradeGoodScrap: TradeDeedLow
+      TradeGoodRice: TradeDeedNormal
+      TradeGoodFlour: TradeDeedLow
+      TradeGoodSugar: TradeDeedLow
+      TradeGoodFabrics: TradeDeedVeryHigh
+      TradeGoodMiltech: TradeDeedNormal
+      TradeGoodAlloys: TradeDeedExotic
+      TradeGoodGoodScrap: TradeDeedVeryHigh
+      TradeGoodPlasma: TradeDeedExotic
+      TradeGoodWine: TradeDeedExotic
+      TradeGoodNanoTrasen: TradeDeedHigh
+      TradeGoodOldCyber: TradeDeedHigh
+      TradeGoodOldParts: TradeDeedHigh
+  - type: Sprite
+    sprite: _Crescent/Structures/cargochute.rsi
+    layers:
+    - state: "icon"
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"
+
+- type: entity
+  parent: BaseDispenser
+  id: SawsCargoChute
+  name: dochenskaya cargo turn-in chute
+  description: A machine with piping systems that lead deep into the bowels of the station, accepting trade goods for deeds.
+  components:
+  - type: Dispenser
+    defaultItem: TradeDeedStub
+    inventory:
+      TradeGoodAlcohol: TradeDeedHigh
+      TradeGoodCybernetics: TradeDeedNormal
+      TradeGoodAntibiotics: TradeDeedLow
+      TradeGoodRice: TradeDeedHigh
+      TradeGoodFlour: TradeDeedNormal
+      TradeGoodSugar: TradeDeedNormal
+      TradeGoodOrgans: TradeDeedHigh
+      TradeGoodDrugs: TradeDeedHigh
+      TradeGoodFabrics: TradeDeedVeryHigh
+      TradeGoodMiltech: TradeDeedNormal
+      TradeGoodAlloys: TradeDeedExotic
+      TradeGoodWine: TradeDeedNormal
+      TradeGoodNanoTrasen: TradeDeedHigh
+      TradeGoodOldCyber: TradeDeedHigh
+      TradeGoodOldParts: TradeDeedHigh
+  - type: Sprite
+    sprite: _Crescent/Structures/cargochute.rsi
+    layers:
+    - state: "icon"
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"
+
+- type: entity
+  parent: BaseDispenser
+  id: SHICargoChute
+  name: tatsumoto cargo turn-in chute
+  description: A machine with piping systems that lead deep into the bowels of the station, accepting trade goods for deeds.
+  components:
+  - type: Dispenser
+    defaultItem: TradeDeedStub
+    inventory:
+      TradeGoodAmmo: TradeDeedNormal
+      TradeGoodAlcohol: TradeDeedLow
+      TradeGoodScrap: TradeDeedLow
+      TradeGoodAntibiotics: TradeDeedLow
+      TradeGoodFlour: TradeDeedLow
+      TradeGoodSugar: TradeDeedLow
+      TradeGoodGoodScrap: TradeDeedExotic
+      TradeGoodFabrics: TradeDeedVeryHigh
+      TradeGoodWine: TradeDeedExotic
+      TradeGoodPlasma: TradeDeedVeryHigh
+      TradeGoodNanoTrasen: TradeDeedHigh
+      TradeGoodOldCyber: TradeDeedHigh
+      TradeGoodOldParts: TradeDeedHigh
+  - type: Sprite
+    sprite: _Crescent/Structures/cargochute.rsi
+    layers:
+    - state: "icon"
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"
+
+- type: entity
+  parent: BaseDispenser
+  id: ColonyChute
+  name: outpost cargo turn-in chute
+  description: A machine with piping systems that lead deep into the bowels of the colony, accepting trade goods for deeds.
+  components:
+  - type: Dispenser
+    defaultItem: TradeDeedStub
+    inventory:
+      ColonyShellComplete: TradeDeedNormal
+  - type: Sprite
+    sprite: _Crescent/Structures/cargochute.rsi
+    layers:
+    - state: "icon"
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"
+
+- type: entity
+  parent: BaseDispenser
+  id: BioprocessorInterdyne
+  name: interdyne exotic bioprocessor
+  description: A machine that mulches scrap muscle and protein into usable exotic particles.
+  components:
+  - type: Dispenser
+    defaultItem: OrganStub
+    inventory:
+      OrganArachnidStomach: ProteinCan1
+      OrganArachnidLungs: ProteinCan1
+      OrganArachnidHeart: ProteinCan5
+      OrganArachnidLiver: ProteinCan5
+      OrganArachnidKidneys: ProteinCan5
+      OrganArachnidEyes: ProteinCan1
+      OrganReptilianStomach: ProteinCan1
+      OrganMothStomach: ProteinCan1
+      OrganHumanEyes: ProteinCan1
+      OrganHumanLungs: ProteinCan1
+      OrganHumanHeart: ProteinCan5
+      OrganHumanStomach: ProteinCan1
+      OrganHumanKidneys: ProteinCan5
+      OrganHumanLiver: ProteinCan5
+      OrganHumanBrain: ProteinCan5
+  - type: Sprite
+    sprite: _Crescent/Structures/bioprocessor.rsi
+    layers:
+    - state: "icon"
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"
+
+- type: entity
+  parent: BaseDispenser
+  id: TSPBountyTerminal
+  name: sector bounty terminal
+  description: A bounty terminal. It accepts the ID cards of the terrorist group 'New Crescent Worker's League' and proof of kills for any pirates in return for cold, hard credits.
+  components:
+  - type: Dispenser
+    defaultItem: BountyHuntersPermit
+    inventory:
+      NCWLIDCardAdministrator: SpaceCash30000
+      NCWLIDCardKommissar: SpaceCash30000
+      NCWLIDCardKapitan: SpaceCash20000
+      NCWLIDCardSanitar: SpaceCash10000
+      NCWLIDCardArtificer: SpaceCash10000
+      NCWLIDCardDoktor: SpaceCash10000
+      NCWLIDCardKadet: SpaceCash5000
+      NCSPIDCardRingleader: SpaceCash30000
+      NCSPIDCardLieutenant: SpaceCash30000
+      NCSPIDCardInfanteer: SpaceCash10000
+      NCSPIDCardRipperdoc: SpaceCash10000
+      NCSPIDCardChemcook: SpaceCash10000
+      NCSPIDCardOperative: SpaceCash10000
+      NCSPIDCardIntelligenceOfficer: SpaceCash20000
+      NCSPIDCardForeman: SpaceCash20000
+      NCSPIDCardShipbreaker: SpaceCash10000
+      IDCardAntiquarian: SpaceCash10000
+  - type: Sprite
+    sprite: _Crescent/Structures/deedsmachine.rsi
+    layers:
+    - state: "icon"
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"
+
+- type: entity
+  id: PlaceholderNothing
+  abstract: true
+  name: nothing
+  description: Absolutely nothing.
+
+- type: entity
+  parent: BaseDispenser
+  id: SektorpolCommissary
+  name: sektorpol commissary
+  description: A vendor that uses requisition slips to vend security gear.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/commissary.rsi
+    layers:
+    - state: "icon"
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Store
+    preset: StorePresetSecurityUplink
+    balance:
+      FrontierUplinkCoin: 5
+  - type: Tag
+    tags:
+    - SecurityUplink
+
+- type: entity
+  parent: BaseDispenser
+  id: IDDispenserLabor
+  name: department pass vendor
+  description: Dispenses laborer ID cards for recruitment.
+  components:
+  - type: Dispenser
+    defaultItem: DSMIDCardFreeholder
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/cart.rsi
+    layers:
+    - state: "off"
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"
+
+- type: entity
+  parent: BaseDispenser
+  id: IDWealthLabor
+  name: department pass vendor
+  description: Dispenses magnate ID cards for recruitment.
+  components:
+  - type: Dispenser
+    defaultItem: DeparmentPassMagnate
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/cart.rsi
+    layers:
+    - state: "off"
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"

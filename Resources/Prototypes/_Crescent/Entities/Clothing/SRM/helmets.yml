@@ -1,0 +1,94 @@
+
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadHelmetHunterBasic
+  name: hunter's steel helmet
+  description: A steel-beaten ornate helmet, intended for a Hunter. The menacing visor conceals the wearer's face.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SRM/Head/helmet.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SRM/Head/helmet.rsi
+
+## hardsuit helmets
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitHunter
+  categories: [ HideSpawnMenu ]
+  name: hunter's hardsuit helmet
+  description: Spaceworthy protection for your fragile skull.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Crescent/Clothing/SRM/Head/hardsuit.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SRM/Head/hardsuit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitHunterElite
+  categories: [ HideSpawnMenu ]
+  name: sixth subjugation fireteam hardsuit helmet
+  description: Spaceworthy protection for your fragile skull.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Crescent/Clothing/SRM/Head/hardsuitelite.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SRM/Head/hardsuitelite.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+#hats
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHunterOverseer
+  name: overseer's facade
+  description: An antiquated Hunter's cap and a pilfered mask packed with fresh herbs.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SRM/Head/overseer.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SRM/Head/overseer.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHunter
+  name: hunter's tricorne
+  description: A newer-generation Hunter's hat. Signifies allegiance to the Hunt.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SRM/Head/tricorne.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SRM/Head/tricorne.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHunterTender
+  name: tender's hood
+  description: A newer-generation Tender-hunter's hat. Signifies allegiance to the Hunt.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SRM/Head/tenderhelm.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SRM/Head/tenderhelm.rsi

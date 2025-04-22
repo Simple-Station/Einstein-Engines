@@ -1,0 +1,82 @@
+- type: job
+  id: AcolyteTAP
+  name: job-name-acolytetap
+  description: job-description-acolytetap
+  playTimeTracker: JobAcolyteTAP
+  requirements:
+    - !type:FactionRequirement
+      factionID: "TAP"
+    - !type:SpeciesRequirement
+      allowedOnly:
+        - Human
+        - Reptilian
+        - Moth
+        - Arachnid
+        - Lizard
+  weight: 54
+  startingGear: AcolyteTAPGear
+  alwaysUseSpawner: true
+  icon: "JobIconAcolyteFamilies"
+  requireAdminNotify: false
+  supervisors: job-supervisors-tap
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-acolytetap
+  - !type:AddComponentSpecial
+    components:
+      - type: Telepathic
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - Families
+  - Arabet
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Command
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Mercenary # Frontier
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - External
+  - Captain # Frontier
+
+- type: startingGear
+  id: AcolyteTAPGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBodysuit
+    back: ClothingBackpackSatchelLeatherFilledNCWL
+    shoes: ClothingShoesBootsHunter
+    outerClothing: ClothingOuterArmorAcolyteRobes
+    id: AcolyteTAPPDA
+    ears: ClothingHeadsetFamilies

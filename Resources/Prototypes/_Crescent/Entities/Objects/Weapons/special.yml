@@ -1,0 +1,269 @@
+- type: entity
+  name: PTA 400c Mako handheld plasma repeater
+  parent: BaseWeaponBattery
+  id: WeaponSpecialMako
+  description: A shoulder-carried version of the NanoTrasen plasma repeater intended for infantry use by field operatives. Developed by Pang Tai Arms.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/mako.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-1
+      visible: false
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Appearance
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
+    zeroVisible: false
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/makoworn.rsi
+  - type: Battery
+    maxCharge: 1000
+    startingCharge: 1000
+  - type: Gun
+    projectileSpeed: 15
+    fireRate: 0.5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/ship_svalinn.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: MakoPlasmaBullet
+    fireCost: 250
+  - type: MultiHandedItem
+
+- type: entity
+  id: MakoPlasmaBullet
+  name: plasma bolt
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Structural: 90
+        Radiation: 10
+        Heat: 150
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 15
+    intensitySlope: 25
+    totalIntensity: 20
+    maxTileBreak: 2
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/plasmahardpoint.rsi
+    layers:
+      - state: icon
+
+- type: entity
+  name: SHI Hammerhead smart-missile launcher
+  parent: BaseWeaponLauncher
+  id: WeaponLauncherHammerhead
+  description: A modified ancient rocket-propelled grenade launcher. Stamped with the Shinohara Heavy Industries logo and capable of firing guided projectiles.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/rocket.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/rocket.rsi
+  - type: Gun
+    fireRate: 0.5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+  - type: BallisticAmmoProvider
+    proto: BulletRocketSmart
+    capacity: 3
+    cycleable: false
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+  - type: Contraband
+   
+- type: entity
+  id: BulletRocketSmart
+  name: smart missile
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileIFF
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 65
+    intensitySlope: 5
+    totalIntensity: 200
+    maxTileBreak: 5
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: HeatSeeking
+    rotationSpeed: 40
+    acceleration: 25 
+    topSpeed: 125
+    FOV: 80
+    defaultSeekingRange: 400
+    guidanceAlgorithm: PredictiveGuidance
+
+- type: entity
+  name: SCHK-2 plasma hardlight sword
+  parent: BaseItem
+  id: EnergySwordFamilies
+  description: A stylish answer to the antiquated NanoTrasen energy sword.
+  components:
+  - type: WeaponCaseInsertable # Frontier
+  - type: EnergySword
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/Weapons/ebladeon.ogg
+    soundDeactivate:
+      path: /Audio/Weapons/ebladeoff.ogg
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/Weapons/ebladehum.ogg
+  - type: ItemToggleSharp
+  - type: ItemToggleHot
+  - type: ItemToggleDisarmMalus
+    activatedDisarmMalus: 0.6
+  - type: ItemToggleSize
+    activatedSize: Huge
+  - type: ItemToggleMeleeWeapon
+    activatedSoundOnHit:
+      path: /Audio/Weapons/eblade1.ogg
+      params:
+        variation: 0.250
+    activatedSoundOnHitNoDamage:
+      path: /Audio/Weapons/eblade1.ogg
+      params:
+        variation: 0.250
+        volume: -10
+    activatedSoundOnSwing:
+      path: /Audio/Weapons/eblademiss.ogg
+      params:
+        variation: 0.125
+    activatedDamage:
+        types:
+            Slash: 25
+            Heat: 20
+            Structural: 20
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/plas_sword.rsi
+    layers:
+      - state: e_sword
+      - state: e_sword_blade
+        color: "#FFFFFF"
+        visible: false
+        shader: unshaded
+        map: [ "blade" ]
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 4.5
+  - type: Item
+    size: Small
+    sprite: _Crescent/Objects/Weapons/plas_sword-inhands.rsi
+  - type: UseDelay
+    delay: 1.0
+  - type: PointLight
+    enabled: false
+    radius: 2
+    energy: 2
+    color: purple
+    netsync: false
+  - type: Appearance
+  - type: ToggleableLightVisuals
+    spriteLayer: blade
+    inhandVisuals:
+      left:
+      - state: inhand-left-blade
+        shader: unshaded
+      right:
+      - state: inhand-right-blade
+        shader: unshaded
+  - type: DisarmMalus
+    malus: 0
+  - type: Reflect
+    enabled: false
+  - type: IgnitionSource
+    temperature: 700
+  - type: StaticPrice
+    price: 3333
+
+- type: entity
+  name: SCHK-1 plasma-bladed halberd
+  parent: BaseItem
+  id: PlasHalberd
+  description: A weighty polearm made with a crystalline plasma-bladed edge. A vibro-module at the spine accelerates the toxic-edged material to burning levels of friction, melting through targets.
+  components:
+  - type: Sharp
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/halberd.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: 135
+    swingLeft: true
+    attackRate: 0.75
+    damage:
+      types:
+        Slash: 25
+        Heat: 10
+    soundHit:
+      collection: MetalThud
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Slash: 35
+        Heat: 25
+  - type: Item
+    size: Ginormous
+  - type: Tool
+    qualities:
+      - Prying
+  - type: ToolTileCompatible
+  - type: Prying
+  - type: UseDelay
+    delay: 1
+  - type: IgniteOnMeleeHit
+    fireStacks: 1
+
+- type: entity
+  name: SCHK-3 charge warhammer
+  parent: BaseItem
+  id: Plashammer
+  description: A robust warclub made by the Families.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/plashammer.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -155 #onehanded stance allows for wider swing
+    damage:
+      types:
+        Blunt: 35
+        Heat: 10
+    soundHit:
+      collection: MetalThud
+  - type: Item
+    size: Normal
+  - type: DisarmMalus #harder to shake firm grip

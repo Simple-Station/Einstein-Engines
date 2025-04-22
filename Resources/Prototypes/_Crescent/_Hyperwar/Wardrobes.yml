@@ -1,0 +1,178 @@
+- type: vendingMachineInventory
+  id: SyndicateWarInventory
+  startingInventory:
+    WeaponRevolverInspector: 60
+    WeaponRifleMiller: 60
+    WeaponRifleMayflower: 60
+    WeaponRifleFAL: 60
+    WeaponSubMachineGunNCWLWatchdog: 60
+    WeaponSubMachineGunBeetle: 60
+    WeaponPistolMk58: 60
+    WeaponShotgunSpas: 60
+    WeaponShotgunEnforcer: 60
+    MagazineRifle: 250
+    MagazineLightRifle: 250
+    MagazinePistolSubMachineGun: 250
+    MagazinePistol: 250
+    BoxLethalshot: 250
+    BoxShotgunSlug: 100
+    SpeedLoaderMagnum: 250
+    ClothingBeltSyndicateWebbingMedFilled: 60
+    ClothingBeltSyndicateWebbingFilledGrenadier: 60
+    ClothingUniformJumpsuitSyndicate: 100
+    ClothingMaskSyndicateFacemask: 100
+    ClothingHeadHelmetSyndicateBasic: 100
+    ClothingOuterArmorSyndicateArmorvest: 100
+    ClothingShoesBootsJack: 100
+    ClothingBackpackNCSPSatchel: 150
+    ClothingBackpackNCSPDuffelbag: 150
+    FoodSnackNutribrick: 100
+    DrinkMREFlask: 100
+    WeaponGrapplingGun: 150
+    JetpackCaptainFilled: 150
+    HandHeldMassScanner: 150
+    Crowbar: 150
+    ClothingOuterHardsuitSyndicateBG: 150
+    OxygenTankFilled: 150
+    ClothingShoesBootsMagAdv: 150
+    StimpackMini : 150
+
+- type: vendingMachineInventory
+  id: NCWLWarInventory
+  startingInventory:
+    WeaponRevolverInspector: 60
+    WeaponRifleMiller: 60
+    WeaponRifleMayflower: 60
+    WeaponRifleFAL: 60
+    WeaponSubMachineGunNCWLWatchdog: 60
+    WeaponSubMachineGunBeetle: 60
+    WeaponPistolMk58: 60
+    WeaponShotgunSpas: 60
+    WeaponShotgunEnforcer: 60
+    MagazineRifle: 250
+    MagazineLightRifle: 250
+    MagazinePistolSubMachineGun: 250
+    MagazinePistol: 250
+    BoxLethalshot: 250
+    BoxShotgunSlug: 100
+    SpeedLoaderMagnum: 250
+    ClothingBeltNCWLWebbingMedFilled: 60
+    ClothingBeltNCWLWebbingFilledGrenadier: 60
+    ClothingBackpackDuffelNCWL: 150
+    ClothingBackpackNCWL: 150
+    FoodSnackNutribrick: 100
+    DrinkMREFlask: 100
+    WeaponGrapplingGun: 150
+    JetpackCaptainFilled: 150
+    HandHeldMassScanner: 150
+    Crowbar: 150
+    ClothingOuterHardsuitNCWLInfantry: 150
+    OxygenTankFilled: 150
+    ClothingShoesBootsMagAdv: 150
+    StimpackMini : 150
+
+- type: vendingMachineInventory
+  id: ImperialWarInventory
+  startingInventory:
+    WeaponRevolverInspector: 60
+    WeaponRifleMiller: 60
+    WeaponRifleMayflower: 60
+    WeaponRifleFAL: 60
+    WeaponSubMachineGunNCWLWatchdog: 60
+    WeaponSubMachineGunBeetle: 60
+    WeaponPistolMk58: 60
+    WeaponShotgunSpas: 60
+    WeaponShotgunEnforcer: 60
+    MagazineRifle: 250
+    MagazineLightRifle: 250
+    MagazinePistolSubMachineGun: 250
+    MagazinePistol: 250
+    BoxLethalshot: 250
+    BoxShotgunSlug: 100
+    SpeedLoaderMagnum: 250
+    ClothingBeltSyndicateWebbingMedFilled: 60
+    ClothingBeltSyndicateWebbingFilledGrenadier: 60
+    ClothingUniformJumpsuitImperialCombat: 100
+    ClothingMaskImperialCombatGasmask: 100
+    ClothingShoesBootsImperialJackboots: 100
+    ClothingHandsGlovesImperialLonggloves: 100
+    ClothingShoesBootsJack: 100
+    ClothingBackpackDSMSatchel: 150
+    ClothingBackpackDSM: 150
+    FoodSnackNutribrick: 100
+    DrinkMREFlask: 100
+    WeaponGrapplingGun: 150
+    JetpackCaptainFilled: 150
+    HandHeldMassScanner: 150
+    Crowbar: 150
+    ClothingOuterHardsuitImperialSoldier: 150
+    OxygenTankFilled: 150
+    ClothingShoesBootsMagAdv: 150
+    StimpackMini : 150
+
+
+- type: vendingMachineInventory
+  id: PoliceWarInventory
+  startingInventory:
+    WeaponRevolverInspector: 60
+    WeaponRifleMiller: 60
+    WeaponRifleMayflower: 60
+    WeaponRifleFAL: 60
+    WeaponSubMachineGunNCWLWatchdog: 60
+    WeaponSubMachineGunBeetle: 60
+    WeaponPistolMk58: 60
+    WeaponShotgunSpas: 60
+    WeaponShotgunEnforcer: 60
+    MagazineRifle: 250
+    MagazineLightRifle: 250
+    MagazinePistolSubMachineGun: 250
+    MagazinePistol: 250
+    BoxLethalshot: 250
+    BoxShotgunSlug: 100
+    SpeedLoaderMagnum: 250
+    ClothingBeltSyndicateWebbingMedFilled: 60
+    ClothingBeltSyndicateWebbingFilledGrenadier: 60
+    ClothingBeltMinutemanPouches: 100
+    ClothingUniformJumpsuitCMM: 100
+    ClothingMaskImperialCombatGasmask: 100
+    ClothingShoesBootsImperialJackboots: 100
+    ClothingHandsGlovesImperialLonggloves: 100
+    ClothingShoesBootsJack: 100
+    ClothingBackpackMinutemanSatchel: 150
+    ClothingBackpackMinuteman: 150
+    ClothingBackpackMinutemanDuffelbag: 150
+    FoodSnackNutribrick: 100
+    DrinkMREFlask: 100
+    WeaponGrapplingGun: 150
+    JetpackCaptainFilled: 150
+    HandHeldMassScanner: 150
+    Crowbar: 150
+    ClothingOuterHardsuitCMMPatrol: 150
+    OxygenTankFilled: 150
+    ClothingShoesBootsMagAdv: 150
+    StimpackMini : 150
+
+- type: vendingMachineInventory
+  id: ShipWarInventory
+  startingInventory:
+    CartridgeShellHighExplosive : 5000
+    CartridgeShellEmp : 5000
+    CartridgeShellArmorPiercing : 5000
+    MagazineLightRifleBoxSlug : 5000
+    MagazineLightRifleBoxSlugHE : 5000
+    MagazineLightRifleBoxSlugEMP : 5000
+    MagazineMortar : 5000
+    LanceRocketCartridge : 5000
+    MagazineSwarmer : 5000
+    MagazineGrenadeBlast : 5000
+    MagazineGrenadeFrag : 5000
+    EMP missile cartridge : 5000
+    TorpGargEMP : 5000
+    TorpGarg : 5000
+    HeavyMortarCartridge : 5000
+    MagazineNeedler : 5000
+    FuelCan : 5000
+    CoolantCartridge30 : 5000
+    IdnaTorpedo : 5000
+    MagazineVulcan : 5000
+    MagazineFlak : 5000

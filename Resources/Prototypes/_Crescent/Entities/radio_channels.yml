@@ -1,0 +1,76 @@
+- type: radioChannel
+  id: NCWL
+  name: chat-radio-ncwl
+  keycode: "o"
+  frequency: 1985
+  color: "#ffd580"
+
+- type: radioChannel
+  id: Imperial
+  name: chat-radio-empire
+  keycode: "i"
+  frequency: 6218
+  color: "#684871"
+
+- type: radioChannel
+  id: Authority
+  name: chat-radio-authoritat
+  keycode: "k"
+  frequency: 8218
+  color: "#684871"
+
+- type: radioChannel
+  id: Hunter
+  name: chat-radio-hunter
+  keycode: "a"
+  frequency: 6219
+  color: "#4a6741"
+
+- type: radioChannel
+  id: SHI
+  name: chat-radio-shi
+  keycode: "w"
+  frequency: 6222
+  color: "#535961"
+
+- type: radioChannel
+  id: EmpireCiv
+  name: chat-radio-empireciv
+  keycode: "j"
+  frequency: 6223
+  color: "#cbc3e3"
+
+- type: radioChannel
+  id: Gorlex
+  name: chat-radio-syndiegorlex
+  keycode: "p"
+  frequency: 6102
+  color: "#ff7f7f"
+
+- type: radioChannel
+  id: Interdyne
+  name: chat-radio-syndieipm
+  keycode: "3"
+  frequency: 6103
+  color: "#f8baba"
+  
+- type: radioChannel
+  id: Cyberdawn
+  name: chat-radio-syndiecyberdawn
+  keycode: "2"
+  frequency: 3103
+  color: "#fafafa"
+
+- type: radioChannel
+  id: Saws
+  name: chat-radio-syndiesaws
+  keycode: "x"
+  frequency: 6105
+  color: "#ff5349"
+
+- type: radioChannel
+  id: Families
+  name: chat-radio-pact
+  keycode: "4"
+  frequency: 6104
+  color: "#50c878"

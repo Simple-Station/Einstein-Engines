@@ -1,0 +1,32 @@
+# Author Info
+# Discord: mlgtastic
+#
+- type: vessel
+  id: Adjudicator
+  name: CMM Adjudicator
+  description: A light barely combat worthy vessel.
+  price: 19000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/CMM/adjudicator.yml
+
+- type: gameMap
+  id: Adjudicator
+  mapName: 'CMM Adjudicator'
+  mapPath: /Maps/_Crescent/Shuttles/CMM/adjudicator.yml
+  minPlayers: 0
+  stations:
+    Adjudicator:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'CMM Adjudicator {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-utility
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            MinutemanCMM: [1, 1]

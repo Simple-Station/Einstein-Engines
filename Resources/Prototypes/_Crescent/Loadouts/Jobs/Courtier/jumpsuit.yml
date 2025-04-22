@@ -1,0 +1,19 @@
+- type: loadout
+  id: CourtierDSMClothingUniformJumpsuitImperialNobleMale
+  equipment: CourtierDSMClothingUniformJumpsuitImperialNobleMale
+  price: 0
+
+- type: startingGear
+  id: CourtierDSMClothingUniformJumpsuitImperialNobleMale
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitImperialNobleMale
+
+- type: loadout
+  id: CourtierDSMClothingUniformJumpsuitImperialNobleFemale
+  equipment: CourtierDSMClothingUniformJumpsuitImperialNobleFemale
+  price: 0
+
+- type: startingGear
+  id: CourtierDSMClothingUniformJumpsuitImperialNobleFemale
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitImperialNobleFemale

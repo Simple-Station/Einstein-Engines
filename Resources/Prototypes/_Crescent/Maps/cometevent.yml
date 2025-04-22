@@ -1,0 +1,25 @@
+- type: gameMap
+  id: Comet
+  mapName: 'NCWL Katyusha'
+  mapPath: /Maps/_Crescent/Stations/cometevent.yml
+  minPlayers: 0
+  stations:
+    Comet:
+      stationProto: StandardCrescentStation
+      gridComponents:
+        - type: BlockShipWeaponProjectileGrid
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Katyusha'
+        - type: Grammar
+          attributes:
+            proper: true
+        - type: VesselDesignation
+          designation: vessel-designation-headquarters
+        - type: StationJobs
+          checkAlive: false
+          overflowJobs: []
+          availableJobs:
+            AdministratorNCWL: [ 1, 1 ]
+            KommissarNCWL: [ 1, 1 ]
+            SanitarNCWL: [ 15, 15 ]

@@ -1,0 +1,44 @@
+- type: entity
+  parent: BaseItem
+  id: Casing120
+  name: empty 120mm casing
+  description: A hollow 120mm casing for ship artillery.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/FactoryGoods/120.rsi
+    layers:
+    - state: icon
+
+- type: entity
+  parent: BaseItem
+  id: Casing120HE
+  name: empty 120mm casing
+  description: A hollow 120mm casing for ship artillery, marked for HE shells.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/FactoryGoods/120.rsi
+    layers:
+    - state: icon
+
+- type: entity
+  parent: BaseItem
+  id: Casing120Welded
+  name: welded 120mm casing
+  description: A hollow 120mm casing for ship artillery, welded and ready for priming.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/FactoryGoods/120w.rsi
+    layers:
+    - state: icon
+
+
+- type: entity
+  parent: BaseItem
+  id: Casing120WeldedHE
+  name: welded 120mm HE casing
+  description: A hollow 120mm casing for ship artillery, welded and ready for priming with HE payloads.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/FactoryGoods/120whe.rsi
+    layers:
+    - state: icon

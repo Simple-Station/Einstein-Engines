@@ -1,0 +1,571 @@
+- type: entity
+  # This means that it's not anchored on spawn.
+  id: BaseTradeItem
+  parent: BaseStructureDynamic
+  abstract: true
+  components:
+  - type: Transform
+    noRot: true
+  - type: InteractionOutline
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.29"
+        density: 50
+        mask:
+        - CrateMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+  - type: PlaceableSurface
+    isPlaceable: false # defaults to closed.
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: Pullable
+  - type: NotDisposable
+  - type: Item
+    size: Ginormous
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodAlcohol
+  name: alcohol crate
+  description: A sealed crate of distilled potato vodka - Chengridz brand. A sticker on the side identifies the export console this was bought from.
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.29"
+        density: 50
+        mask:
+        - CrateMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+  - type: Pullable
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/alcohol.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodAmmo
+  name: sealed ammunition crate
+  description: A hermetically sealed crate of pre-war munitions. A sticker on the side identifies the export console this was bought from.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/ammo.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 400
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 60
+        behaviors:
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              MagazineVulcan:
+                min: 0
+                max: 1
+              CartridgeShellArmorPiercing:
+                min: 0
+                max: 1
+              MagazineNeedler:
+                min: 1
+                max: 1
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodAntibiotics
+  name: sealed antibiotics case
+  description: A hermetically sealed case of high-grade antibiotics. A sticker on the side identifies the export console this was bought from.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/antibiotics.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 500
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.36,0.4,0.27"
+        density: 50
+        mask:
+        - CrateMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodCybernetics
+  name: sealed crate of cybernetic parts
+  description: A hermetically sealed case of high-grade prosthetics and spare parts. A sticker on the side identifies the export console this was bought from.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/cybernetics.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodScrap
+  name: sealed scrap crate
+  description: A hermetically sealed case of assorted scrap parts. A sticker on the side identifies the export console this was bought from.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/scrap.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 400
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 60
+        behaviors:
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              TitaniumScrapOre:
+                min: 0
+                max: 1
+              SteelScrap1:
+                min: 2
+                max: 4
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.16"
+        density: 50
+        mask:
+        - CrateMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodGunparts
+  name: sealed crate of gun parts
+  description: A hermetically sealed case of assorted armament parts. A sticker on the side identifies the export console this was bought from.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/gunparts.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 500
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 60
+        behaviors:
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              SteelScrap1:
+                min: 2
+                max: 4
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodPlasma
+  name: sealed plasma fuel crate
+  description: A hermetically sealed case of assorted, recycled plasma fuel rods, fuel pumps, and liquid canisters. A sticker on the side identifies the station this was produced in as Dochenskaya.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/enrichedphoron.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 750
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 60
+        behaviors:
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              ScrapPlasma:
+                min: 2
+                max: 4
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodWine
+  name: sealed taypan wine shipment
+  description: A sealed case of aged, fine Taypan wine. A sticker on the side identifies the station this was produced in. The same sticker warns you that the product is an imitation and not really made from berries.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/taypanwine.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 750
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.29,0.25,0.32"
+        density: 50
+        mask:
+        - CrateMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodDrugs
+  name: secured chemical crate
+  description: A secured crate of 'fun chemical byproducts'. It bears no identification stickers, making it difficult to suss out which station this shipment was produced in.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/partydrugs.rsi
+    layers:
+    - state: icon
+  - type: Contraband
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 60
+        behaviors:
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CrashAutoinjector:
+                min: 1
+                max: 2
+              ExileAutoinjector:
+                min: 0
+                max: 1
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodOrgans
+  name: unmarked shipment
+  description: A secured crate of reconstructed humanoid organs, the interior cooled to prevent the rotting of the merchandise. It bears no identification stickers, making it difficult to suss out which station this shipment was produced in.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/organs.rsi
+    layers:
+    - state: icon
+  - type: Contraband
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodMiltech
+  name: miltech cybernetics shipment
+  description: A secured crate of military-grade cybernetic parts. Useless on their own and likely has to be reconstructed at a specialized facility. A sticker on the side reveals that this shipment is created by Shinohara Heavy Industries.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/militarycybernetics.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 750
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodNanoTrasen
+  name: NanoTrasen corporate goods crate
+  description: An antique cargo crate full of NanoTrasen consumer products that never got delivered. Not really worth much at face value anymore. But some collectors might pay a good sum for it.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/militarycybernetics.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 750
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodOldCyber
+  name: antique cybernetic goods crate
+  description: An antique cargo crate full of NanoTrasen cybernetics and replacement parts that never got delivered. Most of this crap is broken. But sealed crates resell for decent prices to scavs hoping to get lucky.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/militarycybernetics.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 750
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodOldParts
+  name: antique parts goods crate
+  description: An antique cargo crate full of NanoTrasen mechanical products and replacement parts that never got delivered. Most of this crap is broken. But sealed crates resell for decent prices to scavs hoping to get lucky.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/militarycybernetics.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 750
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodAlloys
+  name: high-grade plasteel alloys shipment
+  description: A secured crate of specialized plasteel alloys. Most commonly put to use in military vessels. A sticker on the side reveals that this shipment is created by Shinohara Heavy Industries.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/militarysurplus.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 750
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 60
+        behaviors:
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              RefinedTitaniumScrap1:
+                min: 6
+                max: 15
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodFabrics
+  name: secured fabrics shipment
+  description: A secured shipment of fine Surezai-produced fabrics.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/taypanwine.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 750
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.29,0.25,0.32"
+        density: 50
+        mask:
+        - CrateMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodGoodScrap
+  name: secured scrap components shipment
+  description: A secured shipment of usable scrap components. Half-unctional electronics, mostly-intact hull plating...
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/militarysurplus.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 750
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 60
+        behaviors:
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              RefinedSteelScrap1:
+                min: 3
+                max: 5
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodFlour
+  name: bag of export flour
+  description: A bag of export-grade flour.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/flour.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 300
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodRice
+  name: bag of export rice
+  description: A bag of export-grade rice.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/rice.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 300
+
+- type: entity
+  parent: BaseTradeItem
+  id: TradeGoodSugar
+  name: bag of export sugar
+  description: A bag of export-grade sugar.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/sugar.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 300
+
+#deeds
+
+- type: entity
+  parent: BaseItem
+  id: TradeDeedStub
+  name: explanation stub
+  description: A printed stub. Blocky letting informs the user that they must insert their deed of deliveries, one by one, into the machine, or their trade goods into the repository of the chute, if delivering said goods.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/stub.rsi
+    layers:
+    - state: icon
+
+- type: entity
+  parent: BaseItem
+  id: OrganStub
+  name: explanation stub
+  description: A printed stub. Blocky letting informs the user that organics must be inserted into the machine for the reclaiming process to work. It also warns that certain organs may be too low-grade to be accepted!
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/stub.rsi
+    layers:
+    - state: icon
+
+- type: entity
+  parent: BaseItem
+  id: TemporaryDenialSlip
+  name: temporary denial slip
+  description: A printed slip of paper with an aggressive red 'X'. It notifies the reader that they have no valid passport - and are thus not eligible for entry.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/tempdenial.rsi
+    layers:
+    - state: icon
+
+- type: entity
+  parent: BaseItem
+  id: TradeDeedLow
+  name: deed of delivery
+  description: A printed deed of delivery. Blocky letting informs that this deed is one thousand Union credits to an official chartered station.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/deed.rsi
+    layers:
+    - state: icon
+
+- type: entity
+  parent: BaseItem
+  id: TradeDeedNormal
+  name: deed of delivery
+  description: A printed deed of delivery. Blocky letting informs that this deed is worth two thousand Union credits to an official chartered station.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/deed.rsi
+    layers:
+    - state: icon
+
+- type: entity
+  parent: BaseItem
+  id: TradeDeedHigh
+  name: deed of delivery
+  description: A printed deed of delivery. Blocky letting informs that this deed is worth three thousand and five hundred Union credits to an official chartered station.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/deed.rsi
+    layers:
+    - state: icon
+
+- type: entity
+  parent: BaseItem
+  id: TradeDeedVeryHigh
+  name: deed of delivery
+  description: A printed deed of delivery. Blocky letting informs that this deed is worth five thousand Union credits to an official chartered station.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/deed.rsi
+    layers:
+    - state: icon
+
+- type: entity
+  parent: BaseItem
+  id: TradeDeedExotic
+  name: deed of delivery
+  description: A printed deed of delivery. Blocky letting informs that this deed is worth eight thousand Union credits to an official chartered station.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/deed.rsi
+    layers:
+    - state: icon
+
+- type: entity
+  parent: BaseItem
+  id: HuntersPermit
+  name: hunter's permit of capture
+  description: A printed, stamped sheet of paper that "permits" the bearer to "reclaim" assets of the Imperial regime. Fine writing informs you that this means pretty much everyone in the local Sector cluster.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/deed.rsi
+    layers:
+    - state: icon
+
+- type: entity
+  parent: BaseItem
+  id: BountyHuntersPermit
+  name: bounty hunter's permit of business
+  description: A printed, stamped sheet of paper bearing the authority of the Imperial Navy to capture posted criminals. Dead or alive.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/TradeGoods/deed.rsi
+    layers:
+    - state: icon

@@ -1,0 +1,56 @@
+- type: entity
+  id: CrescentDiplomacy
+  components:
+  - type: Diplomacy
+
+- type: diplomacy
+  id: DSM
+  relations:
+    NCWL:
+      War
+    TSP:
+      Ally
+
+- type: diplomacy
+  id: NCWL
+  relations:
+    DSM:
+      War
+    TSP:
+      ColdWar
+
+- type: diplomacy
+  id: NCSP
+  relations:
+    SHI:
+      ColdWar
+    TSP:
+      ColdWar
+
+- type: diplomacy
+  id: SHI
+  relations:
+    NCSP:
+      ColdWar
+
+- type: diplomacy
+  id: TSP
+  relations:
+    NCSP:
+      ColdWar
+    NCWL:
+      ColdWar
+
+- type: diplomacy
+  id: SRM
+  relations:
+    DSM:
+      ColdWar
+    NCWL:
+      ColdWar
+    NCSP:
+      ColdWar
+    SHI:
+      ColdWar
+    TSP:
+      ColdWar

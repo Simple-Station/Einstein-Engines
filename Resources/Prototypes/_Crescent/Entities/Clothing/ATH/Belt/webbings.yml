@@ -1,0 +1,32 @@
+- type: entity
+  parent: ClothingBeltNfsdWebbing
+  id: ClothingBeltAuthorityWebbing
+  name: ballistic combat webbing
+  description: A set of tactical webbing padded with light kevlar.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Belt/webbing.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Belt/webbing.rsi
+
+- type: entity
+  parent: ClothingBeltNfsdWebbing
+  id: ClothingBeltAuthorityPouches
+  name: tactical combat pouches
+  description: A light belt housing a few pouches for storage.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Belt/pouches.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Belt/pouches.rsi
+
+- type: entity
+  parent: ClothingBeltNfsdWebbing
+  id: ClothingBeltAuthorityDroppouches
+  name: tactical droppouches
+  description: A heavy utility belt lined with tactical droppouches.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Belt/droppouches.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Belt/droppouches.rsi

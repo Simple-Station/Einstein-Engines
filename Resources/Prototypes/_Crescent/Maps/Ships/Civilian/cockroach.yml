@@ -1,0 +1,32 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Cockroach
+  name: Cockroach
+  description: A reclaimed mining barge.
+  price: 65000
+  category: Small
+  group: Scrap
+  shuttlePath: /Maps/_Crescent/Shuttles/Civilian/cockroach.yml
+
+- type: gameMap
+  id: Cockroach
+  mapName: 'Cockroach'
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/cockroach.yml
+  minPlayers: 0
+  stations:
+    Cockroach:
+      stationProto: StandardCrescentCivilianVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Cockroach {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-mining
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            Contractor: [ 4, 4 ]

@@ -1,0 +1,9 @@
+- type: loadout
+  id: KommissarNCWLCoat
+  equipment: KommissarNCWLCoat
+  price: 0
+
+- type: startingGear
+  id: KommissarNCWLCoat
+  equipment:
+    outerClothing: ClothingOuterArmorNCWLCarapace

@@ -1,0 +1,72 @@
+- type: job
+  id: LieutenantNCSP
+  name: job-name-lieutenant
+  description: job-description-lieutenant
+  playTimeTracker: JobLieutenantNCSP
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 30000
+    - !type:FactionRequirement
+      factionID: "TFSC"
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-boss
+  weight: 45
+  startingGear: LieutenantGear
+  alwaysUseSpawner: true
+  icon: "JobIconSyndieLieutenant"
+  requireAdminNotify: true
+  supervisors: You answer to the Station Administrator.
+  canBeAntag: false
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - Service
+  - External
+  - SyndicateBasic
+  - SyndicateCommand
+  - SyndicateGorlex
+
+- type: startingGear
+  id: LieutenantGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSyndicateOfficer
+    back: ClothingBackpackSatchelLeatherFilledNCWL
+    shoes: ClothingShoesBootsCombat
+    outerClothing: ClothingOuterArmorSyndicateLieutenant
+    id: LieutenantPDA
+    ears: ClothingHeadsetNCSP
+    belt: WeaponPistolHKUSP

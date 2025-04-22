@@ -1,0 +1,19 @@
+- type: loadout
+  id: FreeholderDSMClothingUniformJumpsuitImperialDoctor
+  equipment: FreeholderDSMClothingUniformJumpsuitImperialDoctor
+  price: 50
+
+- type: startingGear
+  id: FreeholderDSMClothingUniformJumpsuitImperialDoctor
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitImperialDoctor
+
+- type: loadout
+  id: FreeholderDSMClothingUniformJumpsuitImperialFreeholder
+  equipment: FreeholderDSMClothingUniformJumpsuitImperialFreeholder
+  price: 0
+
+- type: startingGear
+  id: FreeholderDSMClothingUniformJumpsuitImperialFreeholder
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitImperialFreeholder

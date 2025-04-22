@@ -1,0 +1,31 @@
+- type: vessel
+  id: Probe
+  name: SHI Probe
+  description: The SHI Probe is a cost-effective research ship designed for short-term deployment.
+  price: 40000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/SHI/probe.yml
+
+- type: gameMap
+  id: Probe
+  mapName: 'SHI Probe'
+  mapPath: /Maps/_Crescent/Shuttles/SHI/probe.yml
+  minPlayers: 0
+  stations:
+    Probe:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'SHI Probe {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-research
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            EmployeeSHI: [0, 2]
+            MedtechSHI: [0, 2]
+

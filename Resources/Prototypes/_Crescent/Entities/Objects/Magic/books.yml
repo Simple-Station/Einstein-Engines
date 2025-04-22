@@ -1,0 +1,91 @@
+- type: entity
+  id: LesserHackSpellbook
+  name: lesser knock spellbook
+  parent: BaseSpellbook
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/books.rsi
+    layers:
+    - state: paper
+    - state: cover_strong
+      color: "#117045"
+    - state: decor_wingette_circle
+      color: gold
+    - state: icon_magic_knock
+    - state: detail_rivets
+      color: gold
+    - state: detail_bookmark
+      color: "#98c495"
+  - type: Spellbook
+    learnTime: 2.5
+    spells:
+      ActionLesserHack: -1
+
+- type: entity
+  id: LesserKnockdownSpellbook
+  name: lesser knockdown spellbook
+  parent: BaseSpellbook
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/books.rsi
+    layers:
+    - state: paper
+    - state: cover_strong
+      color: "#1b5af7"
+    - state: decor_wingette_circle
+      color: blue
+    - state: icon_magic
+    - state: detail_rivets
+      color: blue
+    - state: detail_bookmark
+      color: "#959dc4"
+  - type: Spellbook
+    learnTime: 4
+    spells:
+      ActionLesserKnockdown: -1
+
+- type: entity
+  id: LesserSuppressMindSpellbook
+  name: lesser suppress spellbook
+  parent: BaseSpellbook
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/books.rsi
+    layers:
+    - state: paper
+    - state: cover_strong
+      color: "#c2200e"
+    - state: decor_wingette_circle
+      color: orange
+    - state: icon_eye
+    - state: detail_rivets
+      color: red
+    - state: detail_bookmark
+      color: "#d94c3d"
+  - type: Spellbook
+    learnTime: 6
+    spells:
+      ActionLesserSuppress: -1
+
+- type: entity
+  id: GreaterSuppressMindSpellbook
+  name: greater suppress spellbook
+  parent: BaseSpellbook
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/books.rsi
+    layers:
+    - state: paper
+    - state: cover_strong
+      color: "#c2200e"
+    - state: decor_wingette_circle
+      color: gold
+    - state: icon_eye
+    - state: detail_rivets
+      color: red
+    - state: detail_bookmark
+      color: "#d94c3d"
+  - type: Spellbook
+    learnTime: 10
+    spells:
+      ActionGreaterSuppress: -1

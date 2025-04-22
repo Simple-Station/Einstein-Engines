@@ -1,0 +1,33 @@
+- type: vessel
+  id: Musinyane
+  name: SHI Musinyane
+  description: A CorpSec patrol corvette.
+  price: 47500
+  category: Medium
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/SHI/musinyane.yml
+
+- type: gameMap
+  id: Musinyane
+  mapName: 'SHI Musinyane'
+  mapPath: /Maps/_Crescent/Shuttles/SHI/musinyane.yml
+  minPlayers: 0
+  stations:
+    Musinyane:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'CSEC Musinyane {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-patrol
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            BoardSHI: [0, 1]
+            HighsecSHI: [0, 2]
+            CorpsecSHI: [0, 1]
+            EmployeeSHI: [0, 2]
+

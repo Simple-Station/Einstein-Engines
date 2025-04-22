@@ -1,0 +1,43 @@
+- type: entity
+  id: CrateGaline
+  parent: CrateMedical
+  name: galine-5 crate
+  description: A smuggled crate of Galine-5. The serials have been scratched off.
+  components:
+  - type: StorageFill
+    contents:
+      - id: GalineCanister5
+        amount: 3
+
+- type: entity
+  id: CrateIsotopes
+  parent: CrateMedical
+  name: plasma isotopes crate
+  description: A smuggled crate of plasma isotopes. The serials have been scratched off.
+  components:
+  - type: StorageFill
+    contents:
+      - id: PlasmaIsotope5
+        amount: 3
+
+- type: entity
+  id: CratePhoron
+  parent: CrateMedical
+  name: deactivated phoron crate
+  description: A smuggled crate of deactivated phoron bottles. The serials have been scratched off.
+  components:
+  - type: StorageFill
+    contents:
+      - id: DeactivatedPhoronBottle5
+        amount: 3
+
+- type: entity
+  id: CrateMechanite
+  parent: CrateMedical
+  name: mechanites crate
+  description: A smuggled crate of mechanite canisters. The serials have been scratched off.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MechaniteCanister5
+        amount: 3

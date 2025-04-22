@@ -1,0 +1,213 @@
+
+- type: entity
+  id: NCWLMothershipComputer
+  parent: BaseMothershipComputer
+  name: NCWL shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Vanguard
+    - Cherenzikov
+    - Hind
+    - Ivarod
+    - Meteor
+
+- type: entity
+  id: JackalMothershipComputer
+  parent: BaseMothershipComputer
+  name: GSC shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Reaver
+    - Corvax
+    - Wolf
+    - Hornetsnest
+
+- type: entity
+  id: CountsmanMothershipComputer
+  parent: BaseMothershipComputer
+  name: imperial shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Ibis
+    - Imparator
+    - Anathema
+    - Jannissary
+    - Nemesis
+    - Triumphant
+    - Raider
+
+- type: entity
+  id: LaborMothershipComputer
+  parent: BaseMothershipComputer
+  name: imperial shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Imp
+    - Prospector
+
+- type: entity
+  id: ScribesMothershipComputer
+  parent: BaseMothershipComputer
+  name: imperial shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Gnosis
+    - Sunesis
+
+- type: entity
+  id: NemesisMothershipComputer
+  parent: BaseMothershipComputer
+  name: nemesis internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Imparator
+    - Jannissary
+    - Raider
+    - Conquest
+    - Valor
+
+- type: entity
+  id: InterdyneMothershipComputer
+  parent: BaseMothershipComputer
+  name: interdyne internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Hulk
+    - Meatwagon
+    - Harpy
+    - Matabele
+
+- type: entity
+  id: SawsMothershipComputer
+  parent: BaseMothershipComputer
+  name: SAWs internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Shanty
+    - Amadeus
+    - Hyena
+    - Rattler
+    - Rockchipper
+
+- type: entity
+  id: RamziMothershipComputer
+  parent: BaseMothershipComputer
+  name: ramzi internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Velator
+    - Wisp
+    - Taipan
+
+- type: entity
+  id: TatsumotoMothershipComputer
+  parent: BaseMothershipComputer
+  name: shinohara internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Probe
+    - buffalo
+    - gazpachov
+    - Musinyane
+    - Flea
+    - Bison
+    - Nazaar
+
+- type: entity
+  id: ZhipovMothershipComputer
+  parent: BaseMothershipComputer
+  name: zhipov internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Khopesh
+    - Broadsword
+
+- type: entity
+  id: JackalCarrierMothershipComputer
+  parent: BaseMothershipComputer
+  name: jackal internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Reaver
+    - Piranha
+    - Scuttlefish
+
+- type: entity
+  id: CMMMothershipComputer
+  parent: BaseMothershipComputer
+  name: TSP internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Justiciar
+    - Templar
+    - Courageous
+    - Lunge
+    - Provost
+    - Adjudicator
+    - Borealis
+
+- type: entity
+  id: RefugeMothershipComputer
+  parent: BaseMothershipComputer
+  name: refuge shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Saintsfall
+    - Spider
+
+- type: entity
+  id: AnathemaMothershipComputer
+  parent: BaseMothershipComputer
+  name: anathema internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Conquest
+    - Valor
+
+- type: entity
+  id: AlseikMothershipComputer
+  parent: BaseMothershipComputer
+  name: alseik tribal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Svipul
+    - Einherji
+    - Glaive
+    - Bhaalgorn
+
+- type: entity
+  id: AuthorityMothershipComputer
+  parent: BaseMothershipComputer
+  name: authority shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Archon
+    - Carrum
+    - Khorkoi
+
+- type: entity
+  id: ThukkerMothershipComputer
+  parent: BaseMothershipComputer
+  name: thukker tribal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Hearth
+

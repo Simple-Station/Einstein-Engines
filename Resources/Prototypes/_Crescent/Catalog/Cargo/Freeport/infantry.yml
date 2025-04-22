@@ -1,0 +1,39 @@
+- type: cargoProduct
+  id: CrateFreeportPistols
+  icon:
+    sprite: _Crescent/Objects/Weapons/mp49.rsi
+    state: icon
+  product: CrateFreeportPistols
+  cost: 10000
+  category: cargoproduct-category-name-military
+  group: freeport
+
+- type: cargoProduct
+  id: SecurityNonLethalFreeport
+  icon:
+    sprite: Objects/Weapons/Guns/Battery/disabler.rsi
+    state: base
+  product: CrateSecurityNonlethal
+  cost: 5000
+  category: cargoproduct-category-name-military
+  group: freeport
+
+- type: cargoProduct
+  id: SecurityRestraintsFreeport
+  icon:
+    sprite: Objects/Misc/handcuffs.rsi
+    state: handcuff
+  product: CrateRestraints
+  cost: 1000
+  category: cargoproduct-category-name-military
+  group: freeport
+
+- type: cargoProduct
+  id: BreachingChargesFreeport
+  icon:
+    sprite: DeltaV/Objects/Weapons/Bombs/breaching.rsi
+    state: icon
+  product: BoxBreachingCharges
+  cost: 1500
+  category: cargoproduct-category-name-military
+  group: freeport

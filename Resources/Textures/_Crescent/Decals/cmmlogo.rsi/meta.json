@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by the Sector Crescent team.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+    "states": [
+        {
+            "name": "cmm1"
+        },
+        {
+            "name": "cmm2"
+        },
+        {
+            "name": "cmm3"
+        },
+        {
+            "name": "cmm4"
+        },
+        {
+            "name": "cmm5"
+        },
+        {
+            "name": "cmm6"
+        },
+        {
+            "name": "cmm7"
+        },
+        {
+            "name": "cmm8"
+        },
+        {
+            "name": "cmm9"
+        }
+    ]
+}

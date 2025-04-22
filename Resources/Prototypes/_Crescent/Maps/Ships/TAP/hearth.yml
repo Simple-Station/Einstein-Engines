@@ -1,0 +1,28 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Hearth
+  name: Hearth
+  description: An ultralight interdictor shuttle with dual ion gatlings.
+  price: 90000
+  category: Medium
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/TAP/hearth.yml
+
+- type: gameMap
+  id: Hearth
+  mapName: 'Hearth'
+  mapPath: /Maps/_Crescent/Shuttles/TAP/hearth.yml
+  minPlayers: 0
+  stations:
+    Hearth:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Hearth {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-outpost

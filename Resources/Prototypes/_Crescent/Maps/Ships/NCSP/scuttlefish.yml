@@ -1,0 +1,32 @@
+# Author Info
+# Discord: @fleshangel
+#
+- type: vessel
+  id: Scuttlefish
+  name: NCSP Scuttlefish
+  description: An ultralight Syndicate fighter.
+  price: 12000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/scuttlefish.yml
+
+- type: gameMap
+  id: Scuttlefish
+  mapName: 'NCSP Scuttlefish'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/scuttlefish.yml
+  minPlayers: 0
+  stations:
+    Scuttlefish:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'GSC Scuttlefish {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            InfanteerNCSP: [ 0, 0 ]

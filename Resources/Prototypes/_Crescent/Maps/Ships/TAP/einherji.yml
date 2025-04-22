@@ -1,0 +1,28 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Einherji
+  name: Einherji
+  description: A heavy frontliner fighter with energy-heavy weaponry.
+  price: 30000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/TAP/einherji.yml
+
+- type: gameMap
+  id: Einherji
+  mapName: 'Einherji'
+  mapPath: /Maps/_Crescent/Shuttles/TAP/einherji.yml
+  minPlayers: 0
+  stations:
+    Einherji:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Einherji {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter

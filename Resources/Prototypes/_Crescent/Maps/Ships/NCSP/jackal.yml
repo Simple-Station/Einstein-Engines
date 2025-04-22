@@ -1,0 +1,33 @@
+# Author Info
+# Discord: @fleshangel
+#
+- type: vessel
+  id: Jackal
+  name: NCSP Jackal
+  description: A heavy Syndicate carrier, able to launch ultralight strikeshuttles.
+  price: 235000
+  category: Large
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/jackal.yml
+
+- type: gameMap
+  id: Jackal
+  mapName: 'NCSP Jackal'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/jackal.yml
+  minPlayers: 0
+  stations:
+    Jackal:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Jackal {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-carrier
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            InfanteerNCSP: [ 4, 4 ]
+            TechnicianNCSP: [ 2, 2 ]

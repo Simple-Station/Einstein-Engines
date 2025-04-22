@@ -1,0 +1,44 @@
+- type: job
+  id: OverseerSRM
+  name: job-name-overseer
+  description: job-description-overseer
+  playTimeTracker: JobOverseerSRM
+  requirements:
+    - !type:WhitelistRequirement
+    - !type:SpeciesRequirement
+      allowedOnly:
+        - Human
+    - !type:FactionRequirement
+      factionID: "SRM"
+  weight: 27
+  startingGear: OverseerGear
+  alwaysUseSpawner: true
+  icon: "JobIconOverseer"
+  requireAdminNotify: false
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
+  access:
+  - Command
+  - Hunter
+  - HunterSenior
+  - HunterOverseer
+  - Maintenance
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: Telepathic
+
+- type: startingGear
+  id: OverseerGear
+  equipment:
+    id: OverseerPDA
+    ears: ClothingHeadsetHunter
+    jumpsuit: ClothingUniformJumpsuitOverseer
+    head: ClothingHeadHatHunterOverseer
+    shoes: ClothingShoesBootsHunter
+    outerClothing: ClothingOuterArmorHunterDusterOverseer
+    gloves: ClothingHandsGlovesHunter

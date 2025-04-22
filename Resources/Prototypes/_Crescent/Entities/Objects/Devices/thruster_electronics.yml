@@ -1,0 +1,182 @@
+- type: entity
+  id: NCSPFighterCircuitBoard
+  parent: BaseMachineCircuitboard
+  name: syndicate fighter circuit board
+  components:
+  - type: MachineBoard
+    prototype: ThrusterNCSPFighter
+    requirements:
+      Capacitor: 4
+    materialRequirements:
+      Steel: 5
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  id: NCSPSmugglerCircuitBoard
+  parent: BaseMachineCircuitboard
+  name: syndicate smuggler thruster circuit board
+  components:
+  - type: MachineBoard
+    prototype: ThrusterNCSPSmuggler
+    requirements:
+      Capacitor: 4
+    materialRequirements:
+      Steel: 5
+  - type: StaticPrice
+    price: 250
+
+
+- type: entity
+  id: CMMFighterCircuitBoard
+  parent: BaseMachineCircuitboard
+  name: minuteman fighter circuit board
+  components:
+  - type: MachineBoard
+    prototype: ThrusterCMMFighter
+    requirements:
+      Capacitor: 4
+    materialRequirements:
+      Steel: 5
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  id: DSMFighterCircuitBoard
+  parent: BaseMachineCircuitboard
+  name: imperial fighter circuit board
+  components:
+  - type: MachineBoard
+    prototype: ThrusterDSMFighter
+    requirements:
+      Capacitor: 4
+    materialRequirements:
+      Steel: 5
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  id: SHIFighterCircuitBoard
+  parent: BaseMachineCircuitboard
+  name: shinohara fighter circuit board
+  components:
+  - type: MachineBoard
+    prototype: ThrusterSHIFighter
+    requirements:
+      Capacitor: 4
+    materialRequirements:
+      Steel: 5
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  id: NCWLFighterCircuitBoard
+  parent: BaseMachineCircuitboard
+  name: union fighter circuit board
+  components:
+  - type: MachineBoard
+    prototype: ThrusterNCWLFighter
+    requirements:
+      Capacitor: 4
+    materialRequirements:
+      Steel: 5
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  id: SRMFighterCircuitBoard
+  parent: BaseMachineCircuitboard
+  name: hunter fighter circuit board
+  components:
+  - type: MachineBoard
+    prototype: ThrusterSRMFighter
+    requirements:
+      Capacitor: 4
+    materialRequirements:
+      Steel: 5
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  id: NCSPWarshipCircuitBoard
+  parent: BaseMachineCircuitboard
+  name: syndicate warship circuit board
+  components:
+  - type: MachineBoard
+    prototype: ThrusterNCSPWarship
+    requirements:
+      Capacitor: 4
+    materialRequirements:
+      Steel: 5
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  id: NCWLWarshipCircuitBoard
+  parent: BaseMachineCircuitboard
+  name: union warship circuit board
+  components:
+  - type: MachineBoard
+    prototype: ThrusterNCWLWarship
+    requirements:
+      Capacitor: 4
+    materialRequirements:
+      Steel: 5
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  id: CMMWarshipCircuitBoard
+  parent: BaseMachineCircuitboard
+  name: minutemen warship circuit board
+  components:
+  - type: MachineBoard
+    prototype: ThrusterCMMWarship
+    requirements:
+      Capacitor: 4
+    materialRequirements:
+      Steel: 5
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  id: SHIWarshipCircuitBoard
+  parent: BaseMachineCircuitboard
+  name: minutemen warship circuit board
+  components:
+  - type: MachineBoard
+    prototype: ThrusterSHIWarship
+    requirements:
+      Capacitor: 4
+    materialRequirements:
+      Steel: 5
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  id: DSMWarshipCircuitBoard
+  parent: BaseMachineCircuitboard
+  name: imperial warship circuit board
+  components:
+  - type: MachineBoard
+    prototype: ThrusterDSMWarship
+    requirements:
+      Capacitor: 4
+    materialRequirements:
+      Steel: 5
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  id: SRMWarshipCircuitBoard
+  parent: BaseMachineCircuitboard
+  name: imperial warship circuit board
+  components:
+  - type: MachineBoard
+    prototype: ThrusterSRMWarship
+    requirements:
+      Capacitor: 4
+    materialRequirements:
+      Steel: 5
+  - type: StaticPrice
+    price: 250

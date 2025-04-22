@@ -1,0 +1,60 @@
+- type: latheRecipe
+  id: WeaponSubMachineGunCheshyre
+  result: WeaponSubMachineGunCheshyre
+  completetime: 4
+  materials:
+    Steel: 2500
+    Plastic: 1000
+
+- type: latheRecipe
+  id: WeaponPistolRongyu
+  result: WeaponPistolRongyu
+  completetime: 4
+  materials:
+    Steel: 1500
+
+- type: latheRecipe
+  id: WeaponSpecialMako
+  result: WeaponSpecialMako
+  completetime: 4
+  materials:
+    Steel: 7500
+    Plasma: 5000
+    Gold: 1500
+    Silver: 2500
+
+- type: latheRecipe
+  id: ClothingOuterArmorPangTaiVest
+  result: ClothingOuterArmorPangTaiVest
+  completetime: 4
+  materials:
+    Steel: 1500
+    Plastic: 1000
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingHeadHatPangtaiCorvidHelmet
+  result: ClothingHeadHatPangtaiCorvidHelmet
+  completetime: 4
+  materials:
+    Steel: 1000
+    Plastic: 500
+    Cloth: 250
+
+- type: latheRecipe
+  id: ClothingOuterArmorPangTaiKorund
+  result: ClothingOuterArmorPangTaiKorund
+  completetime: 4
+  materials:
+    Steel: 5000
+    Plastic: 2500
+    Cloth: 2500
+
+- type: latheRecipe
+  id: ClothingHeadHatPangtaiKorundHelmet
+  result: ClothingHeadHatPangtaiKorundHelmet
+  completetime: 4
+  materials:
+    Steel: 2500
+    Plastic: 2000
+    Cloth: 1000

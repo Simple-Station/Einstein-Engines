@@ -1,0 +1,34 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Exhumer
+  name: ICM Exhumer
+  description: An entry-level mining corvette.
+  price: 35000
+  category: Small
+  group: Civilian
+  shuttlePath: /Maps/_Crescent/Shuttles/Civilian/exhumer.yml
+
+- type: gameMap
+  id: Exhumer
+  mapName: 'ICM Exhumer'
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/exhumer.yml
+  minPlayers: 0
+  stations:
+    Exhumer:
+      stationProto: StandardCrescentCivilianVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'ICM Exhumer {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-mining
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            Pilot: [ 1, 1 ]
+            SalvageSpecialist: [ 2, 2 ]
+            StationEngineer: [ 1, 1 ]

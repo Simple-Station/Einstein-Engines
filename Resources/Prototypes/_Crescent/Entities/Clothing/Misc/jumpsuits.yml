@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitAntiquarian
+  name: antiquarian's leisurewear
+  description: Leisurewear for the aspiring trader.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Misc/antiquarian.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Misc/antiquarian.rsi

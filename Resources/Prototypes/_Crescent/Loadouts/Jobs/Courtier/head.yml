@@ -1,0 +1,9 @@
+- type: loadout
+  id: CourtierDSMClothingHeadHatImperialHat
+  equipment: CourtierDSMClothingHeadHatImperialHat
+  price: 50
+
+- type: startingGear
+  id: CourtierDSMClothingHeadHatImperialHat
+  equipment:
+    head: ClothingHeadHatImperialHat

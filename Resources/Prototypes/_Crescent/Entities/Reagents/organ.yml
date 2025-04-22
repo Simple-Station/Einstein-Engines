@@ -1,0 +1,7 @@
+- type: material
+  id: ExoticProteins
+  stackEntity: ProteinCan1
+  name: materials-organs
+  unit: materials-unit-chunk
+  icon: { sprite: Mobs/Species/Human/organs.rsi, state: muscle }
+  price: 0.15

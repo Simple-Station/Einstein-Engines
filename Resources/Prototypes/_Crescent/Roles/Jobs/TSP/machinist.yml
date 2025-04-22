@@ -1,0 +1,39 @@
+- type: job
+  id: MachinistCMM
+  name: job-name-machinist
+  description: job-description-machinist
+  playTimeTracker: JobMachinistCMM
+  weight: 22
+  requirements:
+  - !type:FactionRequirement
+      factionID: "TSP"
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-machinist
+  startingGear: MachinistGear
+  alwaysUseSpawner: true
+  icon: "JobIconMachinist"
+  requireAdminNotify: false
+  supervisors: You answer to your Colonial Marshal , Deputy Marshal and Watchmaster.
+  canBeAntag: false
+  access:
+  - Command
+  - Maintenance
+  - Minuteman
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: MachinistGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCMMMachinist
+    shoes: ClothingShoesBootsCombat
+    head: ClothingHeadHelmetCMMMachinist
+    gloves: ClothingHandsGlovesCombat
+    belt: ClothingBeltUtilityEngineering
+    id: MachinistPDA
+    ears: ClothingHeadsetCMM
+    pocket1: WeaponPistolHKUSP

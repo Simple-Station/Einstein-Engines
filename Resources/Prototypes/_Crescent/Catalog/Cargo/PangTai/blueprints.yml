@@ -1,0 +1,49 @@
+- type: cargoProduct
+  id: PangTaiKorund
+  icon:
+    sprite: _Crescent/Objects/Misc/techdisks.rsi
+    state: iconnanotrasen
+  product: CorporateFabdiskKorund
+  cost: 10000
+  category: cargoproduct-category-name-blueprints
+  group: pangtai
+
+- type: cargoProduct
+  id: PangTaiCorvid
+  icon:
+    sprite: _Crescent/Objects/Misc/techdisks.rsi
+    state: iconnanotrasen
+  product: CorporateFabdiskCorvid
+  cost: 5000
+  category: cargoproduct-category-name-blueprints
+  group: pangtai
+
+- type: cargoProduct
+  id: PangTaiMako
+  icon:
+    sprite: _Crescent/Objects/Misc/techdisks.rsi
+    state: iconnanotrasen
+  product: CorporateFabdiskMako
+  cost: 15000
+  category: cargoproduct-category-name-blueprints
+  group: pangtai
+
+- type: cargoProduct
+  id: PangTaiCheshyre
+  icon:
+    sprite: _Crescent/Objects/Misc/techdisks.rsi
+    state: iconnanotrasen
+  product: CorporateFabdiskCheshyre
+  cost: 7500
+  category: cargoproduct-category-name-blueprints
+  group: pangtai
+
+- type: cargoProduct
+  id: PangTaiRongyu
+  icon:
+    sprite: _Crescent/Objects/Misc/techdisks.rsi
+    state: iconnanotrasen
+  product: CorporateFabdiskRongyu
+  cost: 2500
+  category: cargoproduct-category-name-blueprints
+  group: pangtai

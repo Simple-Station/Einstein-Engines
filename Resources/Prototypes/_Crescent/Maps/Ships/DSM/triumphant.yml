@@ -1,0 +1,30 @@
+- type: vessel
+  id: Triumphant
+  name: DSM Triumphant
+  description: An exploration cruiser turned frontliner vessel, equipped for long-distance missions.
+  price: 125000
+  category: Large
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/DSM/triumphant.yml
+
+- type: gameMap
+  id: Triumphant
+  mapName: 'DSM Triumphant'
+  mapPath: /Maps/_Crescent/Shuttles/DSM/triumphant.yml
+  minPlayers: 0
+  stations:
+    Triumphant:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Triumphant {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            KnightDSM: [ 1, 1 ]
+            LevymanDSM: [ 3, 3 ]
+            SurgeonDSM: [ 1, 1 ]

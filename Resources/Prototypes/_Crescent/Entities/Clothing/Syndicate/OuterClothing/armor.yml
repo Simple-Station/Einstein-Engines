@@ -1,0 +1,371 @@
+#hardsuits
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitRamzi
+  name: LUGNUT mk.I combat technician's hardsuit
+  description: A modular hardsuit, bears the colors of the Shipfitters and Astronautics Workers Union of the Syndicate.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndicateramzi.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndicateramzi.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: DegradeableArmor
+    armorMaxHealth: 900
+    armorType: Metallic
+    armorRepair: SteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 10
+        Slash: 10
+        Piercing: 35
+        Heat: 15
+        Caustic: 15
+        Radiation: 35
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitRamzi
+  - type: StaticPrice
+    price: 1000
+  - type: Contraband
+    value: 8
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitSyndieDonator
+  name: UNIONIZER modified combat technician's hardsuit
+  description: A modular hardsuit, bears the colors of the Shipfitters and Astronautics Workers Union of the Syndicate. Hard-worn and modified after many years of use.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndicatedonator.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndicatedonator.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: DegradeableArmor
+    armorMaxHealth: 900
+    armorType: Metallic
+    armorRepair: SteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 10
+        Slash: 10
+        Piercing: 35
+        Heat: 15
+        Caustic: 15
+        Radiation: 35
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetSyndiDonator
+  - type: StaticPrice
+    price: 1000
+  - type: Contraband
+    value: 8
+
+- type: entity
+  parent: ClothingOuterHardsuitRamzi
+  id: ClothingOuterHardsuitCybersun
+  name: RONIN mk.III modular hardsuit
+  description: A modular hardsuit, bears the colors of Cybersun Technologies of the Syndicate.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndicatecybersun.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndicatecybersun.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitCybersunSuit
+  - type: Contraband
+    value: 8
+  - type: DegradeableArmor
+    armorMaxHealth: 800
+    armorType: Metallic
+    armorRepair: PlasteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 15
+        Slash: 15
+        Piercing: 45
+        Heat: 15
+        Caustic: 15
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitSyndicateBG
+  name: BULWARK mk.II frontliner hardsuit
+  description: A modular hardsuit painted in the colors of the Syndicate. Bulky nanokevlar pads the light titanium skeleton, shielding flimsy electronics and the fleshy operator underneath.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndicatesbg.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndicatesbg.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: DegradeableArmor
+    armorMaxHealth: 700
+    armorType: Ceramic
+    armorRepair: NTCeramic
+    initialModifiers:
+      flatReductions:
+        Blunt: 25
+        Slash: 15
+        Piercing: 90
+        Heat: 15
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitSyndicateBattlegroup
+  - type: StaticPrice
+    price: 1250
+  - type: Contraband
+    value: 15
+
+#regular shit. if you put hardsuit below here i'm going to explode your cock
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorSyndicateForeman
+  name: foreman's reinforced coat
+  description: A kevlar-intervowen durathread coat with a popped collar and the SAWs insignia on the front.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndieforeman.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndieforeman.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 1000
+    armorType: Metallic
+    armorRepair: Kevlar
+    initialModifiers:
+      flatReductions:
+        Blunt: 15
+        Slash: 15
+        Piercing: 25
+        Heat: 15
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorSyndicateWorker
+  name: shipfitter's high-vis worker vest
+  description: A rubber vest with hi-vis sprites. Comes in TFSC colors.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndiehazardvest.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndiehazardvest.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.90
+        Piercing: 0.95
+        Heat: 0.70
+        Caustic: 0.7
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+  - type: StaticPrice
+    price: 100
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorSyndicateApron
+  name: ripperdoc's apron
+  description: A heavy medical apron fit for a (non)licensed cyberware specialist. Just don't mind the faded bloodstains.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndieapron.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndieapron.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.85
+        Piercing: 0.85
+        Heat: 0.70
+        Caustic: 0.7
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+  - type: StaticPrice
+    price: 100
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorSyndicateArmorvest
+  name: frontliner's ballistic vest
+  description: A bulky kevlar-padded ballistic vest, touched with the colors of the TFSC.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndiearmor.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndiearmor.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 750
+    armorType: Metallic
+    armorRepair: SteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 10
+        Slash: 10
+        Piercing: 45
+        Heat: 10
+        Caustic: 10
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorSyndicateArmorvestInterdyne
+  name: ballistic vest
+  description: A bulky kevlar-padded ballistic vest, touched with the colors of the TFSC.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/traumasecvest.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/traumasecvest.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 750
+    armorType: Metallic
+    armorRepair: SteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 10
+        Slash: 10
+        Piercing: 45
+        Heat: 10
+        Caustic: 10
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorSyndicateRingmaster
+  name: ringmaster's armored coat
+  description: A heavy synthetic fabric overcoat with structured shoulders. Sleek durathread panels line the vitals under the lining, offering meager padding.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/ringmaster.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/ringmaster.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 1000
+    armorType: Metallic
+    armorRepair: NTPolymer
+    initialModifiers:
+      flatReductions:
+        Blunt: 15
+        Slash: 15
+        Piercing: 25
+        Heat: 15
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+  - type: StaticPrice
+    price: 350
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorSyndicateLieutenant
+  name: mercenary lieutenant's overcoat
+  description: A tall durathread officer's coat, bearing the insignia stripes of the Syndicate's second-in-command.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndicatelieutenant.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndicatelieutenant.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 1000
+    armorType: Metallic
+    armorRepair: NTPolymer
+    initialModifiers:
+      flatReductions:
+        Blunt: 15
+        Slash: 15
+        Piercing: 30
+        Heat: 15
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+  - type: StaticPrice
+    price: 450
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorCyberdawnPatriarch
+  name: patriarch's overcoat
+  description: A tall durathread coat, regal and adorned with the Cyberdawn corporate insignia.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/patriarchcoat.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/patriarchcoat.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 1000
+    armorType: Metallic
+    armorRepair: Durathread
+    initialModifiers:
+      flatReductions:
+        Blunt: 15
+        Slash: 15
+        Piercing: 25
+        Heat: 15
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+  - type: StaticPrice
+    price: 500

@@ -1,0 +1,78 @@
+- type: job
+  id: BeltrunnerTAP
+  name: job-name-beltrunner
+  description: job-description-beltrunner
+  playTimeTracker:  JobBeltrunnerTAP
+  requirements:
+    - !type:FactionRequirement
+      factionID: "TAP"
+    - !type:SpeciesRequirement
+      allowedOnly:
+        - Human
+  weight: 52
+  startingGear: BeltrunnerGear
+  alwaysUseSpawner: true
+  icon: "JobIconBeltrunner"
+  requireAdminNotify: false
+  supervisors: job-supervisors-tap
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-beltrunner
+  - !type:AddComponentSpecial
+    components:
+      - type: Telepathic
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - Izdari
+  - Families
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Command
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Mercenary # Frontier
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - External
+  - Captain # Frontier
+
+- type: startingGear
+  id: BeltrunnerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBeltrunner
+    back: ClothingBackpackSatchelFilled
+    shoes: ClothingShoesBootsJack
+    id: BeltrunnerPDA
+    ears: ClothingHeadsetFamilies
+    gloves: ClothingHandsGlovesFingerless

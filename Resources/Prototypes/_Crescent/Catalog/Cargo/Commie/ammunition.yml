@@ -1,0 +1,39 @@
+- type: cargoProduct
+  id: ShuttleSumitomoAmmocommie
+  icon:
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    state: baton
+  product: CrateSumitomoAmmo
+  cost: 15000
+  category: cargoproduct-category-name-shuttle
+  group: commie
+
+- type: cargoProduct
+  id: ShuttleCrateVulcanAmmocommie
+  icon:
+    sprite: _Crescent/Ammunition/vulcan.rsi
+    state: base
+  product: CrateVulcanAmmo
+  cost: 15000
+  category: cargoproduct-category-name-shuttle
+  group: commie
+
+- type: cargoProduct
+  id: CrateVulcanAmmocommie
+  icon:
+    sprite: _NF/Objects/SpaceArtillery/50_armorpiercing_machinegun_casing.rsi
+    state: base
+  product: CrateSlugthrowerAmmo
+  cost: 10000
+  category: cargoproduct-category-name-shuttle
+  group: commie
+
+- type: cargoProduct
+  id: ShuttleCoolantcommie
+  icon:
+    sprite: _Crescent/Objects/Misc/coolant.rsi
+    state: icon
+  product: CrateCoolant
+  cost: 15000
+  category: cargoproduct-category-name-shuttle
+  group: commie

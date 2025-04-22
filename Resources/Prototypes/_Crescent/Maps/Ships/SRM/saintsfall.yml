@@ -1,0 +1,29 @@
+- type: vessel
+  id: Saintsfall
+  name: SRM Saintsfall
+  description: A repurposed fighter pod, used primarily by Hunters.
+  price: 22000
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/SRM/saintsfall.yml
+
+- type: gameMap
+  id: Saintsfall
+  mapName: 'SRM Saintsfall'
+  mapPath: /Maps/_Crescent/Shuttles/SRM/saintsfall.yml
+  minPlayers: 0
+  stations:
+    Saintsfall:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Saintsfall {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            AcolyteSRM: [ 0, 1 ]

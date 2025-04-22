@@ -1,0 +1,9 @@
+- type: loadout
+  id: DoktorClothingHeadHatNCWLCapsoftMedical
+  equipment: DoktorClothingHeadHatNCWLCapsoftMedical
+  price: 0
+
+- type: startingGear
+  id: DoktorClothingHeadHatNCWLCapsoftMedical
+  equipment:
+    head: ClothingHeadHatNCWLCapsoftMedical

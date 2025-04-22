@@ -1,0 +1,138 @@
+- type: entity
+  parent: BaseSign
+  id: BaseFlagSRM
+  abstract: true
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _Crescent/Structures/flagssrm.rsi
+
+- type: entity
+  parent: BaseFlagSRM
+  id: FlagSRM
+  name: sixth subjugation fireteam insignia
+  description: "The insignia of the Sixth Subjugation Fireteam. This once used to mean something other than fear and terror."
+  components:
+  - type: Sprite
+    state: icon
+
+- type: entity
+  parent: BaseFlagSRM
+  id: BannerSkull
+  name: hunter's insignia
+  description: "The insignia of the Hunters of Romaine."
+  components:
+  - type: Sprite
+    state: skullbanner
+
+- type: entity
+  parent: BaseSign
+  id: BaseFlagNCWL
+  abstract: true
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _Crescent/Structures/ncwlposters.rsi
+
+- type: entity
+  parent: BaseFlagNCWL
+  id: NCWLPoster1
+  name: union recruitment poster
+  description: "A faded recruitment poster. Blocky letting informs the viewer to join the Homeguard for triple rations. How charming."
+  components:
+  - type: Sprite
+    state: ncwlposter
+
+- type: entity
+  parent: BaseFlagNCWL
+  id: NCWLPoster2
+  name: union poster
+  description: "A faded Communard poster. Faded letting instructs the viewer to fight back against the Imperial menace. Someone's rudely scrawled a cock and balls on the corner."
+  components:
+  - type: Sprite
+    state: ncwlposter2
+
+- type: entity
+  parent: BaseFlagNCWL
+  id: NCWLPoster3
+  name: union poster
+  description: "A faded Communard poster. On the cover is a mean-looking man in armor. You don't really understand this one."
+  components:
+  - type: Sprite
+    state: ncwlposter3
+
+- type: entity
+  parent: BaseSign
+  id: BaseWindowSRM
+  abstract: true
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _Crescent/Structures/churchglass.rsi
+
+- type: entity
+  parent: BaseWindowSRM
+  id: ChurchWindow
+  name: frosted cathedral window
+  description: "A masterful craft, depicting the Saint-Father in colorful detail."
+  components:
+  - type: Sprite
+    state: icon
+
+- type: entity
+  parent: BaseSign
+  id: RotLayerThin
+  name: welt tendrils
+  description: "A tendril of Rotwelt. They tend to grow on corpses where Fog is abundant."
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _Crescent/Structures/rot.rsi
+    state: meatthin
+
+- type: entity
+  parent: BaseSign
+  id: RotLayerThick
+  name: welt tendrils
+  description: "A tendril of Rotwelt. They tend to grow on corpses where Fog is abundant."
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _Crescent/Structures/rot.rsi
+    state: meatlayer
+
+- type: entity
+  parent: BaseSign
+  id: RotPustule
+  name: rotpustule
+  description: "Terrible growths..."
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _Crescent/Structures/rot.rsi
+    state: pustule
+
+- type: entity
+  parent: BaseSign
+  id: ImperialFlag
+  name: imperial banner
+  description: "A strip of fabric with the insignia of House Kircheis on it."
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _Crescent/Structures/imperialflag.rsi
+    state: flag

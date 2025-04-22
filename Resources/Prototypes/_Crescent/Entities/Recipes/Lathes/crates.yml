@@ -1,0 +1,70 @@
+
+- type: latheRecipe
+  id: OrganCrate
+  result: TradeGoodOrgans
+  completetime: 2
+  materials:
+    ExoticProteins: 2500
+
+- type: latheRecipe
+  id: MiltechCrate
+  result: TradeGoodMiltech
+  completetime: 2
+  materials:
+    Steel: 5000
+    Plasma: 1000
+    Silver: 1000
+
+- type: latheRecipe
+  id: AlloysCrate
+  result: TradeGoodAlloys
+  completetime: 2
+  materials:
+    Steel: 5000
+    Plasma: 3000
+
+- type: latheRecipe
+  id: GunpartsCrate
+  result: TradeGoodGunparts
+  completetime: 2
+  materials:
+    Steel: 2000
+    Plasma: 500
+    Plasteel: 500
+
+- type: latheRecipe
+  id: PlasmaCrate
+  result: TradeGoodPlasma
+  completetime: 2
+  materials:
+    Steel: 500
+    Plasma: 2500
+
+- type: latheRecipe
+  id: WineCrate
+  result: TradeGoodWine
+  completetime: 2
+  materials:
+    Biomass: 120
+
+- type: latheRecipe
+  id: FabricsCrate
+  result: TradeGoodFabrics
+  completetime: 2
+  materials:
+    Cloth: 1250
+    Plastic: 1000
+
+- type: latheRecipe
+  id: ScrapCrate
+  result: TradeGoodGoodScrap
+  completetime: 2
+  materials:
+    RefinedScrapSteel: 5000
+
+- type: latheRecipe
+  id: TitaniumScrapAlloyCrate
+  result: TradeGoodAlloys
+  completetime: 2
+  materials:
+    RefinedScrapTitanium: 15000

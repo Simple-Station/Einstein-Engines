@@ -1,0 +1,32 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Meteor
+  name: NCWL Meteor
+  description: A converted recon fighter packing a hefty punch.
+  price: 37500
+  category: Small
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCWL/meteor.yml
+
+- type: gameMap
+  id: Meteor
+  mapName: 'NCWL Meteor'
+  mapPath: /Maps/_Crescent/Shuttles/NCWL/meteor.yml
+  minPlayers: 0
+  stations:
+    Meteor:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Meteor {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            SanitarNCWL: [ 0, 0 ]

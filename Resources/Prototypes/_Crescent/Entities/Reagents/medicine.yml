@@ -1,0 +1,62 @@
+- type: reagent
+  id: Narcan
+  name: narcan
+  group: Medicine
+  desc: A chemical used for the stabilization of patients who have overdosed on narcotics.
+  physicalDesc: reagent-physical-desc-pungent
+  flavor: medicine
+  color: "#ff7db5"
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Heat: -1 # dont wanna heal lasers or heat damage too much but a lot of OD deals heat
+            Poison: -2
+      - !type:AdjustTemperature
+        conditions:
+        - !type:Temperature
+          max: 260
+        amount: 10000 # if they are too cold heat them up a little bit, not too much otherwise it will work against spacing
+      - !type:AdjustTemperature
+        conditions:
+        - !type:Temperature
+          min: 293.15
+        amount: -100000 # cool them down if they are too hot
+      - !type:PopupMessage
+        type: Local
+        visualType: Medium
+        messages: [ "leporazine-effect-temperature-adjusting" ]
+        probability: 0.2
+      - !type:AdjustReagent
+        reagent: Crash
+        amount: -5
+      - !type:AdjustReagent
+        reagent: Exile
+        amount: -5
+      - !type:AdjustReagent
+        reagent: Bloodeye
+        amount: -5
+      - !type:AdjustReagent
+        reagent: Kaiser
+        amount: -5
+      - !type:AdjustReagent
+        reagent: Ephedrine
+        amount: -5
+      - !type:AdjustReagent
+        reagent: Desoxyephedrine
+        amount: -5
+      - !type:AdjustReagent
+        reagent: Stimulants
+        amount: -5
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        time: 15
+        type: Remove
+      - !type:GenericStatusEffect 
+        key: Drunk # make people a little dizzy, narcan has side effects
+        time: 3
+        type: Add

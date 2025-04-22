@@ -1,0 +1,32 @@
+# Author Info
+# Discord: @fleshangel
+#
+- type: vessel
+  id: Sinn
+  name: NCSP Sinn
+  description: An asteroid with engines on it.
+  price: 50000
+  category: Medium
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/sinn.yml
+
+- type: gameMap
+  id: Sinn
+  mapName: 'NCSP Sinn'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/sinn.yml
+  minPlayers: 0
+  stations:
+    Sinn:
+      stationProto: StandardCrescentCivilianVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'GSC Sinn {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            InfanteerNCSP: [ 4, 4 ]
+            TechnicianNCSP: [ 2, 2 ]

@@ -1,0 +1,29 @@
+- type: gameMap
+  id: Tatsumoto
+  mapName: 'Tatsumoto Trading Outpost'
+  mapPath: /Maps/_Crescent/Stations/tatsumoto.yml
+  minPlayers: 0
+  stations:
+    Tatsumoto:
+      stationProto: StandardCrescentStation
+      gridComponents:
+        - type: BlockShipWeaponProjectileGrid
+        - type: PreventPilot
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Tatsumoto Trading Outpost'
+        - type: VesselDesignation
+          designation: vessel-designation-headquarters
+        - type: Grammar
+          attributes:
+            proper: true
+        - type: StationJobs
+          checkAlive: false
+          overflowJobs: []
+          availableJobs:
+            ExecutiveSHI: [ 1, 1 ]
+            HighsecSHI: [ 3, 3 ]
+            BoardSHI: [ 2, 2 ]
+            CorpsecSHI: [ 6, 6 ]
+            EmployeeSHI: [ 15, 15 ]
+            MedtechSHI: [ 4, 4 ]

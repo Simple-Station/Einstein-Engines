@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from CEV Eris.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+    "states": [
+        {
+            "name": "iconnanotrasen"
+        },
+        {
+            "name": "syndicate"
+        },
+        {
+            "name": "ncwl"
+        },
+        {
+            "name": "datadisk_label"
+        }
+    ]
+}

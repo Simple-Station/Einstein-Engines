@@ -1,0 +1,131 @@
+#industry refactor, ship parts
+
+- type: stack
+  id: StarshipEngineComponents
+  name: shuttle engine components
+  icon: { sprite: _Crescent/Objects/Materials/shipconstruction.rsi, state: block }
+  spawn: StarshipEngineComponents1
+  maxCount: 50
+  itemSize: 2
+
+- type: stack
+  id: StarshipElectronics
+  name: shuttle electronics
+  icon: { sprite: _Crescent/Objects/Materials/shipconstruction.rsi, state: parts }
+  spawn: StarshipElectronics1
+  maxCount: 50
+  itemSize: 2
+
+- type: stack
+  id: StarshipHull
+  name: shuttle hull parts
+  icon: { sprite: _Crescent/Objects/Materials/shipconstruction.rsi, state: hull }
+  spawn: StarshipHull1
+  maxCount: 50
+  itemSize: 2
+
+#industry refactor, tiered parts
+
+- type: stack
+  id: BasicElectronics
+  name: basic electronic components
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: basicelectronics }
+  spawn: BasicElectronics1
+  maxCount: 10
+  itemSize: 2
+
+- type: stack
+  id: AdvancedElectronics
+  name: basic electronic components
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: advancedelectronics }
+  spawn: AdvancedElectronics1
+  maxCount: 10
+  itemSize: 2
+
+- type: stack
+  id: NanotrasenElectronics
+  name: precursor electronic components
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: nanotrasenelectronics }
+  spawn: NanotrasenElectronics1
+  maxCount: 10
+  itemSize: 2
+
+- type: stack
+  id: BasicMechatronics
+  name: basic mechatronic parts
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: basicmechanic }
+  spawn: BasicMechatronics1
+  maxCount: 10
+  itemSize: 2
+
+- type: stack
+  id: AdvancedMechatronics
+  name: advanced mechatronic parts
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: advancedmechanic }
+  spawn: AdvancedMechatronics1
+  maxCount: 10
+  itemSize: 2
+
+- type: stack
+  id: NanotrasenMechatronics
+  name: bluespace mechatronic parts
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: bluespacemechatronics }
+  spawn: NanotrasenMechatronics1
+  maxCount: 10
+  itemSize: 2
+
+- type: stack
+  id: LaserLocus
+  name: focused laser locus
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: laserlocus }
+  spawn: LaserLocus1
+  maxCount: 5
+  itemSize: 2
+
+- type: stack
+  id: BallisticCycler
+  name: ballistic gas cycler
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: gascycler }
+  spawn: BallisticCycler1
+  maxCount: 5
+  itemSize: 2
+
+- type: stack
+  id: TubeLoader
+  name: tube loader robotics
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: tubeloaderrobotics }
+  spawn: TubeLoader1
+  maxCount: 5
+  itemSize: 2
+
+- type: stack
+  id: WeakLaserLocus
+  name: weak laser locus
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: weaklaserlocus }
+  spawn: WeakLaserLocus1
+  maxCount: 5
+  itemSize: 2
+
+- type: stack
+  id: HardlightGenerator
+  name: hardlight generator conduit
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: hardlightgenerator }
+  spawn: HardlightGenerator
+  maxCount: 5
+  itemSize: 2
+
+- type: stack
+  id: HardsuitElectronics
+  name: hardsuit electronics
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: hardsuitelectronics }
+  spawn: HardsuitElectronics
+  maxCount: 5
+  itemSize: 2
+
+- type: stack
+  id: PlastitaniumFibreAlloy
+  name: plastitanium fibre alloy plate
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: plastitaniumfibrealloy }
+  spawn: PlastitaniumFibreAlloy
+  maxCount: 5
+  itemSize: 2

@@ -1,0 +1,10 @@
+#T0
+- type: loadout
+  id: CourtierDSMClothingHandsGlovesImperialLonggloves
+  equipment: CourtierDSMClothingHandsGlovesImperialLonggloves
+  price: 50
+
+- type: startingGear
+  id: CourtierDSMClothingHandsGlovesImperialLonggloves
+  equipment:
+    gloves: ClothingHandsGlovesImperialLonggloves

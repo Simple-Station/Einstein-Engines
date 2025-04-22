@@ -1,0 +1,32 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Anthead
+  name: Anthead
+  description: The Anthead is what remains out of the cockpit of a much larger corvette, refitted to support itself as an independent "ship". Don't expect to get very far.
+  price: 16000
+  category: Small
+  group: Scrap
+  shuttlePath: /Maps/_Crescent/Shuttles/Civilian/anthead.yml
+
+- type: gameMap
+  id: Anthead
+  mapName: 'Anthead'
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/anthead.yml
+  minPlayers: 0
+  stations:
+    Anthead:
+      stationProto: StandardCrescentCivilianVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Anthead {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-civilian
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            Contractor: [ 1, 1 ]

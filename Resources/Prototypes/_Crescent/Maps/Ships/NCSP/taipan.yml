@@ -1,0 +1,32 @@
+# Author Info
+# Discord: fleshangel
+#
+- type: vessel
+  id: Taipan
+  name: TFSC Taipan
+  description: A multipurpose, armed corvette.
+  price: 47000
+  category: Medium
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/taipan.yml
+
+- type: gameMap
+  id: Taipan
+  mapName: 'TFSC Taipan'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/taipan.yml
+  minPlayers: 0
+  stations:
+    Taipan:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'CD Taipan {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-utility
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            OperativeNCSP: [ 2, 2 ]

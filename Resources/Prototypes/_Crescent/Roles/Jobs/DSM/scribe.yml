@@ -1,0 +1,41 @@
+- type: job
+  id: ScribeDSM
+  name: job-name-imperialresearch
+  description: job-description-scribe
+  playTimeTracker: JobScribeDSM
+  weight: 20
+  startingGear: ScribeGear
+  alwaysUseSpawner: true
+  icon: "JobIconImperialScribe"
+  requireAdminNotify: false
+  supervisors: job-supervisors-imperial 
+  canBeAntag: false
+  requirements:
+    - !type:FactionRequirement
+      factionID: "DSM"
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-smarts
+      - type: BibleUser
+  access:
+  - Command
+  - Empire
+  - Maintenance
+  - ScribesGuild
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: ScribeGear
+  equipment:
+    id: ScribePDA
+    ears: ClothingHeadsetEmpireCiv
+    pocket1: ImperialPassportBareLegit
+    pocket2: RomaineBible
+    mask: ClothingMaskImperialAdjutantMask
+    shoes: ClothingShoesBootsImperialClogs
+    jumpsuit: ClothingUniformJumpsuitImperialDoctor

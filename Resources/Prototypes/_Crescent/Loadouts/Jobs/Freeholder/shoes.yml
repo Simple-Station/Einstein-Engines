@@ -1,0 +1,19 @@
+- type: loadout
+  id: FreeholderDSMClothingShoesBootsImperialLongboots
+  equipment: FreeholderDSMClothingShoesBootsImperialLongboots
+  price: 15
+
+- type: startingGear
+  id: FreeholderDSMClothingShoesBootsImperialLongboots
+  equipment:
+    shoes: ClothingShoesBootsImperialLongboots
+
+- type: loadout
+  id: FreeholderDSMClothingShoesBootsImperialClogs
+  equipment: FreeholderDSMClothingShoesBootsImperialClogs
+  price: 25
+
+- type: startingGear
+  id: FreeholderDSMClothingShoesBootsImperialClogs
+  equipment:
+    shoes: ClothingShoesBootsImperialClogs

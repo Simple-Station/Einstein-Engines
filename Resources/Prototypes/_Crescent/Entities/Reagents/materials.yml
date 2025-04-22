@@ -1,0 +1,213 @@
+- type: material
+  id: ScrapSteel
+  stackEntity: SteelScrap1
+  name: materials-scrap-steel
+  unit: materials-unit-chunk
+  icon: { sprite: Objects/Materials/ore.rsi, state: icon-scrap }
+  price: 0.08
+
+- type: material
+  id: ScrapTitanium
+  stackEntity: TitaniumScrap1
+  name: materials-scrap-titanium
+  unit: materials-unit-chunk
+  icon: { sprite: Objects/Materials/ore.rsi, state: icon-titaniumscrap }
+  price: 0.1
+
+- type: material
+  id: RefinedScrapSteel
+  stackEntity: RefinedSteelScrap1
+  name: materials-scrap-steelrefined
+  unit: materials-unit-chunk
+  icon: { sprite: Objects/Materials/ore.rsi, state: icon-refinedscrap }
+  price: 0.3
+
+- type: material
+  id: RefinedScrapTitanium
+  stackEntity: RefinedTitaniumScrap1
+  name: materials-scrap-titaniumrefined
+  unit: materials-unit-chunk
+  icon: { sprite: Objects/Materials/ore.rsi, state: icon-titta }
+  price: 0.4
+
+#drugmaking stuff
+
+- type: material
+  id: Garbage
+  stackEntity: GarbageOre1
+  name: materials-garbage
+  unit: materials-unit-chunk
+  icon: { sprite: Objects/Materials/ore.rsi, state: garbage }
+  price: 0.01
+
+- type: material
+  id: RefinedGarbage
+  stackEntity: RefinedGarbageOre1
+  name: materials-refined-garbage
+  unit: materials-unit-chunk
+  icon: { sprite: Objects/Materials/ore.rsi, state: refinedgarbage }
+  price: 0.05
+
+- type: material
+  id: PlasmaIsotope
+  stackEntity: PlasmaIsotope1
+  name: materials-isotopes
+  unit: materials-unit-canister
+  icon: { sprite: Objects/Materials/ore.rsi, state: plasmaisotope }
+  price: 0.10
+
+- type: material
+  id: Mechanites
+  stackEntity: MechaniteCanister1
+  name: materials-mechanites
+  unit: materials-unit-canister
+  icon: { sprite: Objects/Materials/ore.rsi, state: mechanites }
+  price: 0.07
+
+- type: material
+  id: Galine
+  stackEntity: GalineCanister1
+  name: materials-galine
+  unit: materials-unit-canister
+  icon: { sprite: Objects/Materials/ore.rsi, state: galine5 }
+  price: 0.12
+
+- type: material
+  id: DeactivatedPhoron
+  stackEntity: DeactivatedPhoronBottle1
+  name: materials-chemphoron
+  unit: materials-unit-liter
+  icon: { sprite: Objects/Materials/ore.rsi, state: deactivatedphoron }
+  price: 0.08
+
+#engineparts
+
+- type: material
+  id: StarshipEngineComponents
+  stackEntity: StarshipEngineComponents1
+  name: materials-engine
+  unit: materials-unit-chunk
+  icon: { sprite: _Crescent/Objects/Materials/shipconstruction.rsi, state: block }
+  price: 0.92
+
+- type: material
+  id: ShipComponents
+  stackEntity: StarshipElectronics1
+  name: materials-electronicship
+  unit: materials-unit-chunk
+  icon: { sprite: _Crescent/Objects/Materials/shipconstruction.rsi, state: parts }
+  price: 1.12
+
+- type: material
+  id: ShipHull
+  stackEntity: StarshipHull1
+  name: materials-hull
+  unit: materials-unit-chunk
+  icon: { sprite: _Crescent/Objects/Materials/shipconstruction.rsi, state: hull }
+  price: 0.52
+
+#craftparts
+
+- type: material
+  id: BasicElectronics
+  stackEntity: BasicElectronics1
+  name: materials-basicelectronics
+  unit: materials-unit-chunk
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: basicelectronics }
+  price: 0.24
+
+- type: material
+  id: AdvancedElectronics
+  stackEntity: AdvancedElectronics1
+  name: materials-advancedelectronics
+  unit: materials-unit-chunk
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: advancedelectronics }
+  price: 0.37
+
+- type: material
+  id: NanotrasenElectronics
+  stackEntity: NanotrasenElectronics1
+  name: materials-precursorelectronics
+  unit: materials-unit-chunk
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: nanotrasenelectronics }
+  price: 0.87
+
+- type: material
+  id: BasicMechatronics
+  stackEntity: BasicMechatronics1
+  name: materials-basicmechanics
+  unit: materials-unit-chunk
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: basicmechanic }
+  price: 0.35
+
+- type: material
+  id: AdvancedMechatronics
+  stackEntity: AdvancedMechatronics1
+  name: materials-advancedmechanics
+  unit: materials-unit-chunk
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: advancedcmechanic }
+  price: 0.55
+
+- type: material
+  id: NanotrasenMechatronics
+  stackEntity: NanotrasenMechatronics1
+  name: materials-precursormechanics
+  unit: materials-unit-chunk
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: bluespacemechatronics }
+  price: 0.95
+
+- type: material
+  id: LaserLocus
+  stackEntity: LaserLocus1
+  name: materials-laserlocus
+  unit: materials-unit-chunk
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: laserlocus }
+  price: 0.45
+
+- type: material
+  id: BallisticCycler
+  stackEntity: BallisticCycler1
+  name: materials-gascycler
+  unit: materials-unit-chunk
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: laserlocus }
+  price: 0.40
+
+- type: material
+  id: TubeLoader
+  stackEntity: TubeLoader1
+  name: materials-tubeloader
+  unit: materials-unit-chunk
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: tubeloaderrobotics }
+  price: 0.70
+
+- type: material
+  id: WeakLaserLocus
+  stackEntity: WeakLaserLocus1
+  name: materials-weaklaserlocus
+  unit: materials-unit-chunk
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: weaklaserlocus }
+  price: 0.35
+
+- type: material
+  id: HardlightGenerator
+  stackEntity: HardlightGenerator1
+  name: materials-hardlightgenerator
+  unit: materials-unit-chunk
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: hardlightgenerator }
+  price: 0.55
+
+- type: material
+  id: HardsuitElectronics
+  stackEntity: HardsuitElectronics
+  name: materials-hardsuitelectronics
+  unit: materials-unit-chunk
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: hardsuitelectronics }
+  price: 0.25
+
+- type: material
+  id: PlastitaniumFibreAlloy
+  stackEntity: PlastitaniumFibreAlloy
+  name: materials-plastitaniumfibre
+  unit: materials-unit-sheet
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: plastitaniumfibrealloy }
+  price: 0.40

@@ -1,0 +1,80 @@
+- type: job
+  id: HangarTechTAP
+  name: job-name-hangartech
+  description: job-description-hangartech
+  playTimeTracker:  JobHangarTechTAP
+  requirements:
+    - !type:FactionRequirement
+      factionID: "TAP"
+    - !type:SpeciesRequirement
+      allowedOnly:
+        - Moth
+        - Arachnid
+  weight: 52
+  startingGear: HangarTechGear
+  alwaysUseSpawner: true
+  icon: "JobIconHangarTech"
+  requireAdminNotify: false
+  supervisors: job-supervisors-tap
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-hangartech
+  - !type:AddComponentSpecial
+    components:
+      - type: Telepathic
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - Families
+  - Thukker
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Command
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Mercenary # Frontier
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - External
+  - Captain # Frontier
+
+- type: startingGear
+  id: HangarTechGear
+  equipment:
+    jumpsuit:  ClothingUniformJumpsuitHangarTechnician
+    back: ClothingBackpackSatchelFilled
+    shoes: ClothingShoesBootsJack
+    head: ClothingHeadHatBeretQM
+    id: HangarTechPDA
+    ears: ClothingHeadsetFamilies
+    gloves: ClothingHandsGlovesFingerless

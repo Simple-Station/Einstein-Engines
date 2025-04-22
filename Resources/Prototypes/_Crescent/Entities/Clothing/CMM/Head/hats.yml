@@ -1,0 +1,43 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCMMDeputyMarshal
+  name: deputy marshal's campaign hat
+  description: An officer's hat in CMM colors.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/CMM/Head/deputymarshal.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/CMM/Head/deputymarshal.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCMMMarshal
+  name: marshal's campaign hat
+  description: An officer's hat in CMM colors.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/CMM/Head/marshal.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/CMM/Head/marshal.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatMinuteman
+  name: minuteman's cap
+  description: A Minuteman cap, dyed in faded blue.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/CMM/Head/minuteman.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/CMM/Head/minuteman.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatWatchmaster
+  name: watchmaster's cap
+  description: A Watchmaster's cap, dyed in faded blue and trimmed in red.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/CMM/Head/minutemansarge.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/CMM/Head/minutemansarge.rsi

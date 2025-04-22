@@ -1,0 +1,129 @@
+- type: cargoProduct
+  id: MedicalSuppliesFreeport
+  icon:
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: firstaid
+  product: CrateMedicalSupplies
+  cost: 3000
+  category: cargoproduct-category-name-medical
+  group: freeport
+
+- type: cargoProduct
+  id: PhoronFreeport
+  icon:
+    sprite: Objects/Materials/ore.rsi
+    state: deactivatedphoron
+  product: CratePhoron
+  cost: 7000
+  category: cargoproduct-category-name-medical
+  group: freeport
+
+- type: cargoProduct
+  id: PlasmaFreeport
+  icon:
+    sprite: Objects/Materials/ore.rsi
+    state: plasmaisotope
+  product: CrateIsotopes
+  cost: 8500
+  category: cargoproduct-category-name-medical
+  group: freeport
+
+- type: cargoProduct
+  id: GalineFreeport
+  icon:
+    sprite: Objects/Materials/ore.rsi
+    state: galine5
+  product: CrateGaline
+  cost: 6000
+  category: cargoproduct-category-name-medical
+  group: freeport
+
+- type: cargoProduct
+  id: MechaniteFreeport
+  icon:
+    sprite: Objects/Materials/ore.rsi
+    state: mechanites
+  product: CrateMechanite
+  cost: 12500
+  category: cargoproduct-category-name-medical
+  group: freeport
+
+- type: cargoProduct
+  id: EmergencyBurnKitFreeport
+  icon:
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: burnkit
+  product: CrateEmergencyBurnKit
+  cost: 1500
+  category: cargoproduct-category-name-medical
+  group: freeport
+
+- type: cargoProduct
+  id: EmergencyToxinKitFreeport
+  icon:
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: toxinkit
+  product: CrateEmergencyToxinKit
+  cost: 1000
+  category: cargoproduct-category-name-medical
+  group: freeport
+
+- type: cargoProduct
+  id: EmergencyO2KitFreeport
+  icon:
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: o2kit
+  product: CrateEmergencyO2Kit
+  cost: 1500
+  category: cargoproduct-category-name-medical
+  group: freeport
+
+- type: cargoProduct
+  id: EmergencyBruteKitFreeport
+  icon:
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: brutekit
+  product: CrateEmergencyBruteKit
+  cost: 2000
+  category: cargoproduct-category-name-medical
+  group: freeport
+
+- type: cargoProduct
+  id: EmergencyAdvancedKitFreeport
+  icon:
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: advkit
+  product: CrateEmergencyAdvancedKit
+  cost: 3000
+  category: cargoproduct-category-name-medical
+  group: freeport
+
+- type: cargoProduct
+  id: EmergencyRadiationKitFreeport
+  icon:
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: radkit
+  product: CrateEmergencyRadiationKit
+  cost: 600
+  category: cargoproduct-category-name-medical
+  group: freeport
+
+- type: cargoProduct
+  id: MedicalBodybagsShip
+  icon:
+    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+    state: bag_folded
+  product: CrateBodyBags
+  cost: 700
+  category: cargoproduct-category-name-medical
+  group: ship
+
+- type: cargoProduct
+  id: MedicalSuppliesShip
+  icon:
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: firstaid
+  product: CrateMedicalSupplies
+  cost: 6000
+  category: cargoproduct-category-name-medical
+  group: ship

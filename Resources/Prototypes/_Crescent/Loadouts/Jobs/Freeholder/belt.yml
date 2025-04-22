@@ -1,0 +1,9 @@
+- type: loadout
+  id: FreeholderDSMClothingBeltUtilityEngineering
+  equipment: FreeholderDSMClothingBeltUtilityEngineering
+  price: 500
+
+- type: startingGear
+  id: FreeholderDSMClothingBeltUtilityEngineering
+  equipment:
+    belt: ClothingBeltUtilityEngineering

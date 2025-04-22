@@ -1,0 +1,32 @@
+# Author Info
+# Discord: @fleshangel
+#
+- type: vessel
+  id: Velator
+  name: NCSP Velator
+  description: A light Syndicate electronic warfare corvette with an onboard saboteur's armory.
+  price: 60000
+  category: Medium
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/velator.yml
+
+- type: gameMap
+  id: Velator
+  mapName: 'NCSP Velator'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/velator.yml
+  minPlayers: 0
+  stations:
+    Velator:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'RC Velator {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-electronic
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            OperativeNCSP: [ 3, 3 ]

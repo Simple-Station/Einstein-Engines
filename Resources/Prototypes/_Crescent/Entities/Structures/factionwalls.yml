@@ -1,0 +1,282 @@
+#faction-flagged walls to guide autoturret targeting
+
+
+#plastitanium
+
+- type: entity
+  parent: WallPlastitanium
+  id: WallPlastitaniumSRM
+  suffix: SRM Warship
+  components:
+    - type: NpcFactionMember
+      factions:
+        - SRMWarship
+
+- type: entity
+  parent: WallPlastitanium
+  id: WallPlastitaniumSHI
+  suffix: SHI Warship
+  components:
+    - type: NpcFactionMember
+      factions:
+        - SHIWarship
+
+- type: entity
+  parent: WallPlastitanium
+  id: WallPlastitaniumDSM
+  suffix: DSM Warship
+  components:
+    - type: NpcFactionMember
+      factions:
+        - DSMWarship
+
+- type: entity
+  parent: WallPlastitanium
+  id: WallPlastitaniumCMM
+  suffix: CMM Warship
+  components:
+    - type: NpcFactionMember
+      factions:
+        - CMMWarship
+
+- type: entity
+  parent: WallPlastitanium
+  id: WallPlastitaniumNCWL
+  suffix: NCWL Warship
+  components:
+    - type: NpcFactionMember
+      factions:
+        - NCWLWarship
+
+- type: entity
+  parent: WallPlastitanium
+  id: WallPlastitaniumNCSP
+  suffix: NCSP Warship
+  components:
+    - type: NpcFactionMember
+      factions:
+        - NCSPWarship
+
+#reinforced
+
+- type: entity
+  parent: WallReinforced
+  id: WallReinforcedNCSP
+  suffix: NCSP Warship
+  components:
+    - type: NpcFactionMember
+      factions:
+        - NCSPWarship
+
+- type: entity
+  parent: WallReinforced
+  id: WallReinforcedDSM
+  suffix: DSM Warship
+  components:
+    - type: NpcFactionMember
+      factions:
+        - DSMWarship
+
+- type: entity
+  parent: WallReinforced
+  id: WallReinforcedSHI
+  suffix: SHI Warship
+  components:
+    - type: NpcFactionMember
+      factions:
+        - SHIWarship
+
+- type: entity
+  parent: WallReinforced
+  id: WallReinforcedNCWL
+  suffix: NCWL Warship
+  components:
+    - type: NpcFactionMember
+      factions:
+        - NCWLWarship
+
+- type: entity
+  parent: WallReinforced
+  id: WallReinforcedSRM
+  suffix: SRM Warship
+  components:
+    - type: NpcFactionMember
+      factions:
+        - SRMWarship
+
+- type: entity
+  parent: WallReinforced
+  id: WallReinforcedCMM
+  suffix: CMM Warship
+  components:
+    - type: NpcFactionMember
+      factions:
+        - CMMWarship
+
+#shuttlewalls
+
+- type: entity
+  parent: WallShuttle
+  id: ReinforcedShuttleWallCMM
+  name: Heavy shuttle wall
+  suffix: Reinforced, Exterior
+  components:
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 4000
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalSlam
+      - trigger:
+          !type:DamageTrigger
+          damage: 3200
+        behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: girder
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalSlam
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+    - type: NpcFactionMember
+      factions:
+        - CMMWarship
+
+- type: entity
+  id: HeavyReinforcedPlasmaWindow
+  name: Heavy reinforced plasma window
+  parent: ReinforcedPlasmaWindow
+  components:
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 10000
+        behaviors: #excess damage, don't spawn entities.
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound:
+            collection: WindowShatter
+      - trigger:
+          !type:DamageTrigger
+          damage: 7500
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            collection: WindowShatter
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            ShardGlassPlasma:
+              min: 3
+              max: 7
+            PartRodMetal:
+              min: 5
+              max: 15
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+
+- type: entity
+  parent: WallShuttle
+  id: WallShuttleCMM
+  suffix: CMM Warship
+  components:
+    - type: NpcFactionMember
+      factions:
+        - CMMWarship
+
+- type: entity
+  parent: WallShuttle
+  id: WallShuttleDSM
+  suffix: DSM Warship
+  components:
+    - type: NpcFactionMember
+      factions:
+        - DSMWarship
+
+
+- type: entity
+  parent: WallShuttle
+  id: WallShuttleSHI
+  suffix: SHI Warship
+  components:
+    - type: NpcFactionMember
+      factions:
+        - SHIWarship
+
+
+- type: entity
+  parent: WallShuttle
+  id: WallShuttleSRM
+  suffix: SRM Warship
+  components:
+    - type: NpcFactionMember
+      factions:
+        - SRMWarship
+
+- type: entity
+  parent: WallShuttle
+  id: WallShuttleNCWL
+  suffix: NCWL Warship
+  components:
+    - type: NpcFactionMember
+      factions:
+        - NCWLWarship
+
+- type: entity
+  parent: WallShuttle
+  id: WallShuttleNCSP
+  suffix: NCSP Warship
+  components:
+    - type: NpcFactionMember
+      factions:
+        - NCSPWarship
+
+#Mining
+
+- type: entity
+  parent: WallMining
+  id: WallMiningSHI
+  suffix: SHI Warship
+  components:
+    - type: NpcFactionMember
+      factions:
+        - SHIWarship
+
+- type: entity
+  parent: WallReinforced
+  id: WallReinforcedCapital
+  suffix: Capital
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 2000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+    - trigger:
+        !type:DamageTrigger
+        damage: 1500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SteelScrap1:
+            min: 1
+            max: 1
+      - !type:ChangeConstructionNodeBehavior
+        node: girder
+      - !type:DoActsBehavior
+        acts: ["Destruction"]

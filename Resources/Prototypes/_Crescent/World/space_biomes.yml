@@ -1,0 +1,227 @@
+#fallback, don't remove
+- type: crescentFactionBiome
+  id: default
+  name: Taypani Abyss
+  swapDuration: 2
+  parallax: AbyssParallax
+
+#example
+- type: crescentFactionBiome
+  id: test
+  name: Test zone
+  swapDuration: 2
+  parallax: Sky
+
+- type: entity
+  id: TestBiomeSource
+  name: test source
+  components:
+  - type: SpaceBiomeSource
+    biome: test
+    swapDistance: 1000
+    priority: 1500
+
+#imperial
+
+- type: crescentFactionBiome
+  id: imperialbiome
+  name: Low Imperial Orbit
+  swapDuration: 2
+  parallax: Sky
+
+- type: entity
+  id: ImperialBiomeSource
+  name: imperial source
+  components:
+  - type: SpaceBiomeSource
+    biome: imperialbiome
+    swapDistance: 750
+    priority: 2550
+
+#hunter
+
+- type: entity
+  id: HunterBiomeSource
+  name: hunter source
+  components:
+  - type: SpaceBiomeSource
+    biome: hunterbiome
+    swapDistance: 1500
+    priority: 2495
+
+- type: crescentFactionBiome
+  id: hunterbiome
+  name: The Hunter's Prowl
+  swapDuration: 2
+  parallax: AspidParallax
+
+#syndie
+
+- type: entity
+  id: SyndicateBiomeSource
+  name: syndicate source
+  components:
+  - type: SpaceBiomeSource
+    biome: syndicatebiome
+    swapDistance: 2500
+    priority: 2494
+
+- type: crescentFactionBiome
+  id: syndicatebiome
+  name: The Devil's Maw
+  swapDuration: 2
+  parallax: SyndieParallax
+
+#graveyard
+
+- type: entity
+  id: GraveyardBiomeSource
+  name: graveyard source
+  components:
+  - type: SpaceBiomeSource
+    biome: graveyardbiome
+    swapDistance: 500
+    priority: 5000
+
+- type: crescentFactionBiome
+  id: graveyardbiome
+  name: The Graveyard
+  swapDuration: 2
+  parallax: GraveyardParallax
+
+#corpie
+
+- type: entity
+  id: CorpieBiomeSource
+  name: corpie source
+  components:
+  - type: SpaceBiomeSource
+    biome: corpiebiome
+    swapDistance: 300
+    priority: 2493
+
+- type: crescentFactionBiome
+  id: corpiebiome
+  name: Corporate Demilitarized Zone
+  swapDuration: 2
+  parallax: CorpieParallax
+
+#oris
+
+- type: entity
+  id: OrisBiomeSource
+  name: oris source
+  components:
+  - type: SpaceBiomeSource
+    biome: orisbiome
+    swapDistance: 1500
+    priority: 2492
+
+- type: crescentFactionBiome
+  id: orisbiome
+  name: Taypan-2 Asteroid Belt
+  swapDuration: 2
+  parallax: OrisParallax
+
+# wilds
+
+- type: entity
+  id: WildBiomeSource
+  name: wild source
+  components:
+  - type: SpaceBiomeSource
+    biome: wildbiome
+    swapDistance: 8000
+    priority: 2450
+
+- type: crescentFactionBiome
+  id: wildbiome
+  name: Taypan Wilds
+  swapDuration: 2
+  parallax: WildParallax
+
+#generic debris
+
+- type: entity
+  id: DebrisSource
+  name: debris source
+  components:
+  - type: SpaceBiomeSource
+    biome: debrisbiome
+    swapDistance: 500
+    priority: 5500
+
+- type: crescentFactionBiome
+  id: debrisbiome
+  name: Ruined Derelict
+  swapDuration: 2
+  parallax: DebrisParallax
+
+#deepwilds
+
+- type: entity
+  id: DeepWildBiomeSource
+  name: deepwild source
+  components:
+  - type: SpaceBiomeSource
+    biome: deepwildbiome
+    swapDistance: 12500
+    priority: 2420
+
+- type: crescentFactionBiome
+  id: deepwildbiome
+  name: The Deepwilds
+  swapDuration: 2
+  parallax: WildParallax
+
+# breach
+
+- type: entity
+  id: RuptureSource
+  name: the rupture
+  components:
+  - type: SpaceBiomeSource
+    biome: hadalbiome
+    swapDistance: 2000
+    priority: 2500
+
+- type: crescentFactionBiome
+  id: hadalbiome
+  name: The Fracture
+  swapDuration: 2
+  parallax: Rupture
+
+
+# breach
+
+- type: entity
+  id: ApproachSource
+  name: moon approach
+  components:
+  - type: SpaceBiomeSource
+    biome: moonapproach
+    swapDistance: 1500
+    priority: 2500
+
+- type: crescentFactionBiome
+  id: moonapproach
+  name: Lunar Approach
+  swapDuration: 2
+  parallax: MoonApproach
+
+#abyss
+
+- type: entity
+  id: DeadspaceSource
+  name: hadal deadspace
+  components:
+  - type: SpaceBiomeSource
+    biome: hadaldeadspace
+    swapDistance: 15000
+    priority: 2400
+
+- type: crescentFactionBiome
+  id: hadaldeadspace
+  name: Hadal Deadspace
+  swapDuration: 2
+  parallax: Default

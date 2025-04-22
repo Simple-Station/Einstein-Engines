@@ -1,0 +1,17 @@
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesHunter
+  name: reinforced hunter's gloves
+  description: Wrist-length gloves made for Hunters.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SRM/Hands/huntergloves.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SRM/Hands/huntergloves.rsi
+  - type: GloveHeatResistance
+    heatResistance: 1400
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-durathread
+    fiberColor: fibers-black
+  - type: FingerprintMask

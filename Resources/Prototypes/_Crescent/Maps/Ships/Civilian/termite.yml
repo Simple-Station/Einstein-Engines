@@ -1,0 +1,32 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Termite
+  name: ICM Termite
+  description: A frugal mining pod.
+  price: 15000
+  category: Small
+  group: Civilian
+  shuttlePath: /Maps/_Crescent/Shuttles/Civilian/termite.yml
+
+- type: gameMap
+  id: Termite
+  mapName: 'ICM Termite'
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/termite.yml
+  minPlayers: 0
+  stations:
+    Termite:
+      stationProto: StandardCrescentCivilianVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'ICM Termite {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-mining
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            Contractor: [ 1, 1 ]

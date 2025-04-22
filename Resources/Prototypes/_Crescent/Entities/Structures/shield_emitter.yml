@@ -1,0 +1,147 @@
+- type: entity
+  id: ShieldEmitter
+  parent: BaseMachinePowered
+  name: NT-910 'Goliath' deflector emitter
+  description: A complicated array of machinery - guzzles power and maintains a bubble deflector shield around the mother vessel. Overheats with too much use.
+  components:
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    volume: -5
+    range: 30
+    enabled: false
+    sound:
+      path: /Audio/_Crescent/Ambience/turbine.ogg
+  - type: Sprite
+    noRot: true
+    sprite: _Crescent/Structures/shieldemitter.rsi
+    state: icon
+    snapCardinals: true
+  - type: Physics
+    bodyType: Static
+  - type: Transform
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      machine:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0,-2,2,2"
+        mask:
+        - FullTileMask
+        layer:
+        - FullTileLayer
+        density: 1000
+      display:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-2,0,0,1.8"
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+        density: 1000
+      smallthing:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.1,-1.8,0,-1"
+        mask:
+        - MachineMask
+        layer:
+        - HalfWallLayer
+        density: 1000
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+  - type: Repairable
+    doAfterDelay: 8
+  # - type: Electrified If we had multifixture this would be fine
+  #   enabled: true
+  #   usesApcPower: true
+  #   shockDamage: 60
+  - type: PointLight
+    enabled: false
+    castShadows: true
+    radius: 5
+    offset: 1.5, -2
+    color: "#90d5ff"
+  - type: AnimationPlayer
+  - type: LitOnPowered
+  - type: PowerSwitch
+  - type: ApcPowerReceiver
+    powerLoad: 60000
+  - type: Appearance
+  - type: ShipShieldEmitter
+    powerUpSound: !type:SoundPathSpecifier
+        path: "/Audio/Effects/teleport_arrival.ogg"
+        params:
+          pitch: 0.5
+    powerDownSound: !type:SoundPathSpecifier
+        path: "/Audio/Effects/teleport_departure.ogg"
+        params:
+          pitch: 0.5
+
+- type: entity
+  id: ShieldEmitterMedium
+  parent: ShieldEmitter
+  name: NT-630 'Bulwark' deflector emitter
+  description: A complicated array of machinery - guzzles power and maintains a bubble deflector shield around the mother vessel. Overheats with too much use.
+  components:
+  - type: ShipShieldEmitter # can stop a decent amount of damage, weaker than the Goliath
+    healPerSecond: 200 # base is 250
+    damageExp: 1.15 # base is 1.1
+    baseDraw: 40000 # base is 50000
+    maxDraw: 80000 # base is 150000
+    unpoweredBonus: 3 # base is 6
+  - type: Fixtures
+    fix1:
+      shape:
+        !type:PhysShapeAabb
+        bounds: "-1.5,-1.5,1.5,1.5"
+      mask:
+      - FullTileMask
+      layer:
+      - WallLayer
+      density: 800
+  - type: Sprite
+    noRot: true
+    sprite: _Crescent/Structures/shieldemittermedium.rsi
+    state: icon
+  - type: ApcPowerReceiver
+    powerLoad: 40000
+
+- type: entity
+  id: ShieldEmitterSmall
+  parent: ShieldEmitter
+  name: NT-280 'Errant' deflector emitter
+  description: A complicated array of machinery - guzzles power and maintains a bubble deflector shield around the mother vessel. Overheats with too much use.
+  components:
+  - type: ShipShieldEmitter 
+    healPerSecond: 50
+    damageExp: 1.4
+    baseDraw: 20000
+    maxDraw: 60000
+    unpoweredBonus: 2.5
+  - type: Fixtures
+    fix1:
+      shape:
+        !type:PhysShapeAabb
+        bounds: "-0.5,-0.5,0.5,0.5"
+      mask:
+      - FullTileMask
+      layer:
+      - WallLayer
+      density: 200
+  - type: Sprite
+    noRot: true
+    sprite: _Crescent/Structures/shieldemittersmall.rsi
+    state: icon
+  - type: ApcPowerReceiver
+    powerLoad: 20000

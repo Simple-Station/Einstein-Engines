@@ -1,0 +1,32 @@
+- type: job
+  id: GliessianDockmaster
+  name: job-name-gliess-dockmaster
+  description: job-description-gliess-dockmaster
+  playTimeTracker: JobGliessDockmaster
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 8000
+  startingGear: GliessDockmasterGear
+  icon: "JobIconCaptain"
+  supervisors: job-supervisors-lols
+  accessGroups:
+  - GeneralAccess
+  access:
+  - GliessSheriff
+  - GliessDockmaster
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-dockmaster
+
+- type: startingGear
+  id: GliessDockmasterGear
+  equipment:
+    ears: ClothingHeadsetGrey
+    shoes: ClothingShoesBootsLaceup
+    jumpsuit: ClothingUniformJumpsuitCapFormal
+    head: ClothingHeadHatCapcap
+    belt: ClothingBeltSheath
+    id: GliessDockmasterPDA
+    back: ClothingBackpackSatchelLeatherFilledDSM

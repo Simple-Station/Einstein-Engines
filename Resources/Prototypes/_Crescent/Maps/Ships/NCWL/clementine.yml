@@ -1,0 +1,34 @@
+- type: vessel
+  id: Clementine
+  name: NCWL Clementine
+  description: The Flagship of the Union fleet.
+  price: 600000
+  category: Large
+  group: None
+  shuttlePath: /Maps/_Crescent/Shuttles/NCWL/clementine.yml
+
+- type: gameMap
+  id: Clementine
+  mapName: 'NCWL Clementine'
+  mapPath: /Maps/_Crescent/Shuttles/NCWL/clementine.yml
+  minPlayers: 0
+  stations:
+    Clementine:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Clementine {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-flagship
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            KommissarNCWL: [ 1, 1 ]
+            KapitanNCWL: [ 3, 3 ]
+            SanitarNCWL: [ 12, 12 ]
+            KadetNCWL: [ 7, 7 ]
+            ArtificerNCWL: [ 4, 4 ]
+            DoktorNCWL: [ 4, 4 ]
