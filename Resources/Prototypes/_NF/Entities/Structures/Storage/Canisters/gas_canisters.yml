@@ -1,0 +1,23 @@
+- type: entity
+  parent: GasCanisterBrokenBase
+  id: LiquidOxygenCanisterBroken
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    state: oxygen_liquid-1 # Frontier
+
+- type: entity
+  parent: GasCanisterBrokenBase
+  id: LiquidNitrogenCanisterBroken
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    state: nitrogen_liquid-1 # Frontier
+
+- type: entity
+  parent: GasCanisterBrokenBase
+  id: LiquidCarbonDioxideCanisterBroken
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    state: carbon_liquid-1 # Frontier

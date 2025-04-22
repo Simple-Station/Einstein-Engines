@@ -1,0 +1,120 @@
+- type: entity
+  name: requisition slip
+  parent: BaseItem
+  id: FrontierUplinkCoin
+  suffix: 20 TC
+  description: A quasi-currency issued to the Minutemen by the NCWL to make use of their armaments.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Specific/Security/frontieruplinkcoin.rsi
+    state: frontieruplinkcoin
+  - type: Item
+    sprite: _NF/Objects/Specific/Security/frontieruplinkcoin.rsi
+    size: Tiny
+  - type: Stack
+    count: 20
+    stackType: FrontierUplinkCoin
+  - type: StaticPrice
+    price: 0
+  - type: StackPrice
+    price: 200
+  - type: Currency
+    price:
+      FrontierUplinkCoin: 1
+
+- type: entity
+  parent: FrontierUplinkCoin
+  id: FrontierUplinkCoin1
+  suffix: 1 TC
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: FrontierUplinkCoin
+  id: FrontierUplinkCoin5
+  suffix: 5 TC
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent: FrontierUplinkCoin
+  id: FrontierUplinkCoin10
+  suffix: 10 TC
+  components:
+  - type: Stack
+    count: 10
+
+# Uplinks
+- type: entity
+  parent: BaseItem
+  id: BaseSecurityUplinkRadio
+  name: tele-order uplink
+  description: A requisitions console that uses bluespace slipstreams to deliver goods to the user.
+  suffix: Empty
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/communication.rsi
+    layers:
+    - state: old-radio
+  - type: Item
+    sprite: Objects/Devices/communication.rsi
+    heldPrefix: old-radio
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Store
+    preset: StorePresetSecurityUplink
+    balance:
+      FrontierUplinkCoin: 0
+  - type: Tag
+    tags:
+    - SecurityUplink
+
+- type: entity
+  parent: BaseSecurityUplinkRadio
+  id: BaseSecurityUplinkRadioDebug
+  suffix: Security, DEBUG
+  components:
+  - type: Store
+    preset: StorePresetSecurityUplink
+    balance:
+      FrontierUplinkCoin: 99999
+
+- type: entity
+  parent: BaseSecurityUplinkRadio
+  id: BaseSecurityUplinkRadioSheriff
+  suffix: Sheriff 20
+  components:
+  - type: Store
+    preset: StorePresetSecurityUplink
+    balance:
+      FrontierUplinkCoin: 20
+
+- type: entity
+  parent: BaseSecurityUplinkRadio
+  id: BaseSecurityUplinkRadioOfficer
+  suffix: Officer 15
+  components:
+  - type: Store
+    preset: StorePresetSecurityUplink
+    balance:
+      FrontierUplinkCoin: 15
+
+- type: entity
+  name: nfsd deployable barrier
+  id: NfsdDeployableBarrier
+  description: A deployable barrier. Swipe your ID card to lock/unlock it.
+  parent: DeployableBarrier
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Specific/Security/nfsdbarrier.rsi
+    layers:
+    - state: idle
+    - state: locked
+      map: ["enum.LockVisualLayers.Lock"]

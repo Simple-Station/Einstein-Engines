@@ -1,0 +1,165 @@
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessenger, ClothingBackpackFilled]
+  id: ClothingBackpackMessengerFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessengerClown, ClothingBackpackClownFilled]
+  id: ClothingBackpackMessengerClownFilled
+
+#- type: entity
+#  categories: [ HideSpawnMenu ]
+#  parent: [ClothingBackpackMessengerSecurity, ClothingBackpackSecurityFilled]
+#  id: ClothingBackpackMessengerSecurityFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessengerMedical, ClothingBackpackMedicalFilled]
+  id: ClothingBackpackMessengerMedicalFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessengerCaptain, ClothingBackpackCaptainFilled]
+  id: ClothingBackpackMessengerCaptainFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessengerEngineering, ClothingBackpackChiefEngineerFilled]
+  id: ClothingBackpackMessengerChiefEngineerFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessengerScience, ClothingBackpackResearchDirectorFilled]
+  id: ClothingBackpackMessengerResearchDirectorFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessenger, ClothingBackpackHOPFilled]
+  id: ClothingBackpackMessengerHOPFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessengerMedical, ClothingBackpackCMOFilled]
+  id: ClothingBackpackMessengerCMOFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessengerCargo, ClothingBackpackQuartermasterFilled]
+  id: ClothingBackpackMessengerQuartermasterFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessengerEngineering, ClothingBackpackEngineeringFilled]
+  id: ClothingBackpackMessengerEngineeringFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessengerAtmospherics, ClothingBackpackAtmosphericsFilled]
+  id: ClothingBackpackMessengerAtmosphericsFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessengerScience, ClothingBackpackScienceFilled]
+  id: ClothingBackpackMessengerScienceFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessengerHydroponics, ClothingBackpackHydroponicsFilled]
+  id: ClothingBackpackMessengerHydroponicsFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessengerMime, ClothingBackpackMimeFilled]
+  id: ClothingBackpackMessengerMimeFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessengerChemistry, ClothingBackpackChemistryFilled]
+  id: ClothingBackpackMessengerChemistryFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessenger, ClothingBackpackChaplainFilled]
+  id: ClothingBackpackMessengerChaplainFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessenger, ClothingBackpackMusicianFilled]
+  id: ClothingBackpackMessengerMusicianFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessenger, ClothingBackpackLibrarianFilled]
+  id: ClothingBackpackMessengerLibrarianFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessengerCargo, ClothingBackpackCargoFilled]
+  id: ClothingBackpackMessengerCargoFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessengerSalvage, ClothingBackpackSalvageFilled]
+  id: ClothingBackpackMessengerSalvageFilled
+
+# Frontier
+#- type: entity
+#  categories: [ HideSpawnMenu ]
+#  parent: [ClothingBackpackMessengerBrigmedic, ClothingBackpackSecurityFilled]
+#  id: ClothingBackpackMessengerBrigmedicFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessengerMercenary, ClothingBackpackMercenaryFilled]
+  id: ClothingBackpackMessengerMercenaryFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessenger, ClothingBackpackLawyerFilled]
+  id: ClothingBackpackMessengerLawyerFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessengerPilot, ClothingBackpackPilotFilled]
+  id: ClothingBackpackMessengerPilotFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessengerJanitor, ClothingBackpackFilled]
+  id: ClothingBackpackMessengerJanitorFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessengerMailCarrier, ClothingBackpackFilled]
+  id: ClothingBackpackMessengerMailCarrierFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessenger, ClothingBackpackSrFilled]
+  id: ClothingBackpackMessengerSrFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessengerNfsdBrown, ClothingBackpackNfsdBrownFilled]
+  id: ClothingBackpackMessengerNfsdBrownFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessengerNfsdCream, ClothingBackpackNfsdCreamFilled]
+  id: ClothingBackpackMessengerNfsdCreamFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessengerNfsdBrown, ClothingBackpackNfsdBrownDetectiveFilled]
+  id: ClothingBackpackMessengerNfsdBrownDetectiveFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessengerNfsdBrown, ClothingBackpackNfsdBrownRadioFilled]
+  id: ClothingBackpackMessengerNfsdBrownRadioFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackMessengerNfsdBrown, ClothingBackpackNfsdBrownSheriffFilled]
+  id: ClothingBackpackMessengerNfsdBrownSheriffFilled

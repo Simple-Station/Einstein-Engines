@@ -1,0 +1,225 @@
+# Frontier
+
+- type: entity
+  name: andesite elemental spawner
+  id: AndesiteElementalSpawner
+  parent: MarkerBase
+  suffix: 45
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: /Textures/Mobs/Elemental/orecrab.rsi
+          state: uranium_crab
+    - type: RandomSpawner
+      rarePrototypes:
+      - WallRockAndesiteCoalGolem
+      - WallRockAndesiteGoldGolem
+      - WallRockAndesiteIronGolem
+      - WallRockAndesitePlasmaGolem
+      - WallRockAndesiteQuartzGolem
+      - WallRockAndesiteSilverGolem
+      - WallRockAndesiteUraniumGolem
+      rareChance: 0.05
+      prototypes:
+        - WallRockAndesiteCoalCrabNF
+        - WallRockAndesiteGoldCrabNF
+        - WallRockAndesiteIronCrabNF
+        - WallRockAndesitePlasmaCrabNF
+        - WallRockAndesiteQuartzCrabNF
+        - WallRockAndesiteSilverCrabNF
+        - WallRockAndesiteUraniumCrabNF
+      chance: 0.25
+      offset: 0.2
+
+- type: entity
+  name: Basalt Elemental Spawner
+  id: BasaltElementalSpawner
+  parent: MarkerBase
+  suffix: 45
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: /Textures/Mobs/Elemental/orecrab.rsi
+          state: uranium_crab
+    - type: RandomSpawner
+      rarePrototypes:
+      - WallRockBasaltCoalGolem
+      - WallRockBasaltGoldGolem
+      - WallRockBasaltIronGolem
+      - WallRockBasaltPlasmaGolem
+      - WallRockBasaltQuartzGolem
+      - WallRockBasaltSilverGolem
+      - WallRockBasaltUraniumGolem
+      rareChance: 0.1
+      prototypes:
+        - WallRockBasaltCoalCrabNF
+        - WallRockBasaltGoldCrabNF
+        - WallRockBasaltIronCrabNF
+        - WallRockBasaltPlasmaCrabNF
+        - WallRockBasaltQuartzCrabNF
+        - WallRockBasaltSilverCrabNF
+        - WallRockBasaltUraniumCrabNF
+      chance: 0.45
+      offset: 0.2
+
+- type: entity
+  name: Rock Elemental Spawner
+  id: RockElementalSpawner
+  parent: MarkerBase
+  suffix: 45
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: /Textures/Mobs/Elemental/orecrab.rsi
+          state: uranium_crab
+    - type: RandomSpawner
+      rarePrototypes:
+      - WallRockCoalGolem
+      - WallRockGoldGolem
+      - WallRockIronGolem
+      - WallRockPlasmaGolem
+      - WallRockQuartzGolem
+      - WallRockSilverGolem
+      - WallRockUraniumGolem
+      rareChance: 0.1
+      prototypes:
+        - WallRockCoalCrabNF
+        - WallRockGoldCrabNF
+        - WallRockIronCrabNF
+        - WallRockPlasmaCrabNF
+        - WallRockQuartzCrabNF
+        - WallRockSilverCrabNF
+        - WallRockUraniumCrabNF
+      chance: 0.45
+      offset: 0.2
+
+- type: entity
+  name: Sand Elemental Spawner
+  id: SandElementalSpawner
+  parent: MarkerBase
+  suffix: 45
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: /Textures/Mobs/Elemental/orecrab.rsi
+          state: uranium_crab
+    - type: RandomSpawner
+      rarePrototypes:
+      - WallRockSandCoalGolem
+      - WallRockSandGoldGolem
+      - WallRockSandIronGolem
+      - WallRockSandPlasmaGolem
+      - WallRockSandQuartzGolem
+      - WallRockSandSilverGolem
+      - WallRockSandUraniumGolem
+      rareChance: 0.1
+      prototypes:
+        - WallRockSandCoalCrabNF
+        - WallRockSandGoldCrabNF
+        - WallRockSandIronCrabNF
+        - WallRockSandPlasmaCrabNF
+        - WallRockSandQuartzCrabNF
+        - WallRockSandSilverCrabNF
+        - WallRockSandUraniumCrabNF
+      chance: 0.45
+      offset: 0.2
+
+- type: entity
+  name: Snow Elemental Spawner
+  id: SnowElementalSpawner
+  parent: MarkerBase
+  suffix: 45
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: /Textures/Mobs/Elemental/orecrab.rsi
+          state: uranium_crab
+    - type: RandomSpawner
+      rarePrototypes:
+      - WallRockSnowCoalGolem
+      - WallRockSnowGoldGolem
+      - WallRockSnowIronGolem
+      - WallRockSnowPlasmaGolem
+      - WallRockSnowQuartzGolem
+      - WallRockSnowSilverGolem
+      - WallRockSnowUraniumGolem
+      rareChance: 0.1 
+      prototypes:
+        - WallRockSnowCoalCrabNF
+        - WallRockSnowGoldCrabNF
+        - WallRockSnowIronCrabNF
+        - WallRockSnowPlasmaCrabNF
+        - WallRockSnowQuartzCrabNF
+        - WallRockSnowSilverCrabNF
+        - WallRockSnowUraniumCrabNF
+      chance: 0.45
+      offset: 0.2
+
+- type: entity
+  name: Chromite Elemental Spawner
+  id: ChromiteElementalSpawner
+  parent: MarkerBase
+  suffix: 45
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: /Textures/Mobs/Elemental/orecrab.rsi
+          state: uranium_crab
+    - type: RandomSpawner
+      rarePrototypes:
+      - WallRockChromiteCoalGolem
+      - WallRockChromiteGoldGolem
+      - WallRockChromiteIronGolem
+      - WallRockChromitePlasmaGolem
+      - WallRockChromiteQuartzGolem
+      - WallRockChromiteSilverGolem
+      - WallRockChromiteUraniumGolem
+      rareChance: 0.2
+      prototypes:
+        - WallRockChromiteCoalCrabNF
+        - WallRockChromiteGoldCrabNF
+        - WallRockChromiteIronCrabNF
+        - WallRockChromitePlasmaCrabNF
+        - WallRockChromiteQuartzCrabNF
+        - WallRockChromiteSilverCrabNF
+        - WallRockChromiteUraniumCrabNF
+      chance: 0.55
+      offset: 0.2
+
+- type: entity
+  name: Asteroid Rock Elemental Spawner
+  id: AsteroidRockElementalSpawner
+  parent: MarkerBase
+  suffix: 45
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: /Textures/Mobs/Elemental/orecrab.rsi
+          state: uranium_crab
+    - type: RandomSpawner
+      rarePrototypes:
+      - AsteroidRockCoalGolem
+      - AsteroidRockGoldGolem
+      - AsteroidRockIronGolem
+      - AsteroidRockPlasmaGolem
+      - AsteroidRockQuartzGolem
+      - AsteroidRockSilverGolem
+      - AsteroidRockUraniumGolem
+      rareChance: 0.1
+      prototypes:
+        - AsteroidRockCoalCrabNF
+        - AsteroidRockGoldCrabNF
+        - AsteroidRockTinCrabNF
+        - AsteroidRockPlasmaCrabNF
+        - AsteroidRockQuartzCrabNF
+        - AsteroidRockSilverCrabNF
+        - AsteroidRockUraniumCrabNF
+      chance: 0.25
+      offset: 0.2

@@ -1,0 +1,77 @@
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackDuffelMercenary, ClothingBackpackDuffelFilled]
+  id: ClothingBackpackDuffelMercenaryFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ClothingBackpackDuffelPilot, ClothingBackpackDuffelFilled]
+  id: ClothingBackpackDuffelPilotFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelSrFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+      - id: RubberStampHop
+      - id: DoorRemoteCommand
+      - id: AccessConfigurator
+      - id: PhoneInstrument
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackDuffelNfsdBrown
+  id: ClothingBackpackDuffelNfsdBrownFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+      - id: MagazinePistol
+      - id: FrontierUplinkCoin10
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackDuffelNfsdBrownFilled
+  id: ClothingBackpackDuffelNfsdCreamFilled
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackDuffelNfsdBrown
+  id: ClothingBackpackDuffelNfsdBrownDetectiveFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+      - id: ForensicPad
+      - id: MagazinePistol
+      - id: ForensicScanner
+      - id: FrontierUplinkCoin10
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackDuffelNfsdBrown
+  id: ClothingBackpackDuffelNfsdBrownRadioFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+      - id: MagazinePistol
+      - id: BaseSecurityUplinkRadioOfficer
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackDuffelNfsdBrown
+  id: ClothingBackpackDuffelNfsdBrownSheriffFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+      - id: MagazinePistol
+      - id: RubberStampSheriff
+      - id: DoorRemoteNfsd
+      - id: NfsdTechFabFlatpack
+      - id: BaseSecurityUplinkRadioSheriff
+      - id: ClothingNeckNfsdBadgeSheriff

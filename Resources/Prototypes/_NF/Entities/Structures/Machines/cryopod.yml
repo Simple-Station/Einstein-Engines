@@ -1,0 +1,56 @@
+- type: entity
+  id: MachineCryoSleepPod
+  parent: [BaseMachine]
+  name: cryo sleep chamber
+  description: cold pillow guaranteed
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: _NF/Structures/Machines/cryopod.rsi
+    layers:
+    - state: closed
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MobLayer # To allow people to pass through
+  - type: MaterialStorage
+  - type: Appearance
+  - type: Climbable
+  - type: CryoSleep
+  - type: ContainerContainer
+    containers:
+      body_container: !type:ContainerSlot
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SteelScrap1:
+            min: 1
+            max: 2

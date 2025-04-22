@@ -1,0 +1,77 @@
+- type: entity
+  id: SmallThruster
+  parent: Thruster
+  name: small thruster
+  components:
+  - type: Thruster
+    baseThrust: 33
+    thrust: 33
+    damage:
+      types:
+        Heat: 40
+  - type: ApcPowerReceiver
+    powerLoad: 500
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: Structures/Shuttles/thruster.rsi
+    layers:
+    - state: base
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+      offset: 0, 1
+  - type: StaticPrice
+    price: 100
+  - type: Machine
+    board: SmallThrusterMachineCircuitboard
+
+- type: entity
+  id: SmallGyroscope
+  parent: Gyroscope
+  name: small gyroscope
+  components:
+  - type: Thruster
+    thrusterType: Angular
+    requireSpace: false
+    baseThrust: 50
+    thrust: 50
+  - type: ApcPowerReceiver
+    powerLoad: 200
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: Structures/Shuttles/gyroscope.rsi
+    snapCardinals: true
+    layers:
+    - state: base
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 50
+          behaviors:
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                ScrapComponent:
+                  min: 1
+                  max: 1
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+  - type: StaticPrice
+    price: 100
+  - type: Machine
+    board: SmallGyroscopeMachineCircuitboard

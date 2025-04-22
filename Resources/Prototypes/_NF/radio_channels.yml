@@ -1,0 +1,16 @@
+- type: radioChannel
+  id: Traffic
+  name: chat-radio-traffic
+  keycode: 'd'
+  frequency: 1022
+  color: "#CC6633"
+  localize: True
+  localizeRange: 500.0
+
+- type: radioChannel
+  id: Nfsd
+  name: chat-radio-nfsd
+  keycode: 's'
+  frequency: 1023
+  color: "#5191e0"
+

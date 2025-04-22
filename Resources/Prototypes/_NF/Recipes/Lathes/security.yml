@@ -1,118 +1,86 @@
 - type: latheRecipe
-  abstract: true
-  id: BaseWeaponRecipe
-  category: Weapons
-  completetime: 2
-  materials:
-    Steel: 300
-    Plastic: 300
-
-- type: latheRecipe
-  abstract: true
-  parent: BaseWeaponRecipe
-  id: BaseWeaponRecipeLong
-  completetime: 5
-
-- type: latheRecipe
-  abstract: true
-  id: BaseAmmoRecipe
+  id: SpeedLoaderRifleHeavyEmpty
+  result: SpeedLoaderRifleHeavyEmpty
   category: Ammo
   completetime: 5
-
-- type: latheRecipe
-  abstract: true
-  parent: BaseAmmoRecipe
-  id: BaseEmptyAmmoRecipe
-  completetime: 1
-
-- type: latheRecipe # novalite mag empty
-  id: MagazineNovaliteC1Empty
-  parent: BaseEmptyAmmoRecipe
-  result: MagazineNovaliteC1Empty
   materials:
-    Steel: 20
-
-- type: latheRecipe # novalite mag
-  id: MagazineNovaliteC1
-  parent: BaseAmmoRecipe
-  result: MagazineNovaliteC1
-  materials:
-    Steel: 245 # 20 [Steel per empty mag] + 15 [bullets] * 15 [Steel per bullet]
-
-- type: latheRecipe # gestio mag empty
-  id: MagazineLightRifleLowCapacityEmpty
-  parent: BaseEmptyAmmoRecipe
-  result: MagazineLightRifleLowCapacityEmpty
-  materials:
-    Steel: 20
-
-- type: latheRecipe # gestio mag
-  id: MagazineLightRifleLowCapacity
-  parent: BaseAmmoRecipe
-  result: MagazineLightRifleLowCapacity
-  materials:
-    Steel: 245 # 20 [Steel per empty mag] + 15 [bullets] * 15 [Steel per bullet]
-
-- type: latheRecipe
-  id: SpeedLoaderRifleHeavyEmpty
-  parent: BaseEmptyAmmoRecipe
-  result: SpeedLoaderRifleHeavyEmpty
-  materials:
-    Steel: 25
+    Steel: 50
 
 - type: latheRecipe
   id: SpeedLoaderRifleHeavy
-  parent: BaseAmmoRecipe
   result: SpeedLoaderRifleHeavy
+  category: Ammo
+  completetime: 5
   materials:
-    Steel: 140 # 25 [Steel per empty mag] + 8 [bullets] * 15 [Steel per bullet]
+    Steel: 190
+
+# - type: latheRecipe
+#   id: BaseMagazinePistolSubMachineGun
+#   result: BaseMagazinePistolSubMachineGun YAMLFIX: This is abstract and you can't use it.
+#   category: Ammo
+#   completetime: 5
+#   materials:
+#     Steel: 190
 
 - type: latheRecipe
   id: SpeedLoaderRifleHeavyPractice
-  parent: BaseAmmoRecipe
   result: SpeedLoaderRifleHeavyPractice
+  category: Ammo
+  completetime: 5
   materials:
-    Steel: 65 # 25 [Steel per empty mag] + 8 [bullets] * 5 [Steel per practice bullet]
-
-- type: latheRecipe
-  id: SpeedLoaderRifleHeavyRubber
-  parent: BaseAmmoRecipe
-  result: SpeedLoaderRifleHeavyRubber
-  materials:
-    Steel: 25
-    Plastic: 80
+    Steel: 90
 
 - type: latheRecipe
   id: SpeedLoaderRifleHeavyUranium
-  parent: BaseAmmoRecipe
   result: SpeedLoaderRifleHeavyUranium
+  category: Ammo
+  completetime: 5
   materials:
-    Steel: 25 # 25 [Steel per empty mag]
-    Plastic: 80 # 8 [bullets] * 10 [Plastic per bullet]
-    Uranium: 80 # 8 [bullets] * 10 [Uranium per bullet]
+    Steel: 50
+    Plastic: 150
+    Uranium: 110
 
 - type: latheRecipe
   id: SpeedLoaderRifleHeavyIncendiary
-  parent: BaseAmmoRecipe
   result: SpeedLoaderRifleHeavyIncendiary
+  category: Ammo
+  completetime: 5
   materials:
-    Steel: 25 # 25 [Steel per empty mag]
-    Plastic: 120 # 8 [bullets] * 15 [Plastic per bullet]
+    Steel: 50
+    Plastic: 150
 
 - type: latheRecipe
-  id: WeaponRifleNovaliteC1
-  parent: BaseWeaponRecipeLong
-  result: WeaponRifleNovaliteC1
+  id: MagazineBoxLightRifleRubber
+  result: MagazineBoxLightRifleRubber
+  category: Ammo
+  completetime: 5
   materials:
-    Steel: 2500
-    Plasteel: 1200
-    Plastic: 1500
+    Steel: 300
+    Plastic: 600
 
 - type: latheRecipe
-  id: WeaponRifleGestio
-  parent: BaseWeaponRecipeLong
-  result: WeaponRifleGestio
+  id: MagazineBoxMagnumRubber
+  result: MagazineBoxMagnumRubber
+  category: Ammo
+  completetime: 5
   materials:
-    Steel: 2500
-    Plasteel: 1200
-    Plastic: 1500
+    Steel: 80
+    Plastic: 160
+
+- type: latheRecipe
+  id: MagazineBoxPistolRubber
+  result: MagazineBoxPistolRubber
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 200
+    Plastic: 400
+
+- type: latheRecipe
+  id: MagazineBoxRifleRubber
+  result: MagazineBoxRifleRubber
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 250
+    Plastic: 500

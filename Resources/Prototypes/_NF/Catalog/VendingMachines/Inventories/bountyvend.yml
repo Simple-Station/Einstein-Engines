@@ -1,0 +1,22 @@
+- type: vendingMachineInventory
+  id: BountyVendInventory
+  startingInventory:
+    PinpointerUniversal: 5
+    WeaponGrapplingGun: 5
+    HandheldGPSBasic: 3
+    JetpackMiniFilled:  5
+    WeaponDisabler: 10
+    Zipties: 20
+    Flash: 10
+    ClothingEyesGlassesSunglasses: 6
+    ForensicScanner: 3
+    BoxForensicPad: 6
+    LogProbeCartridge: 3
+#Bounty hunter
+    ClothingUniformJumpsuitBH: 3
+    ClothingUniformJumpskirtBH: 3
+    ClothingUniformJumpsuitBHGrey: 2
+    ClothingUniformJumpskirtBHGrey: 2
+    ClothingNeckTieBH: 2
+    ClothingOuterCoatBHTrench: 3
+    ClothingHeadHatBH: 3

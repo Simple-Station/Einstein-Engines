@@ -1,0 +1,103 @@
+- type: entity
+  parent:
+  - Dart
+  - ConjuredObject10 # Despawns in 10 seconds
+  id: DartSyndicateImpedrezene
+  name: syndicate impedrezene dart
+  description: Try not to prick yourself.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Darts/dart_red.rsi
+    state: icon
+  - type: EmbeddableProjectile
+    removalTime: 0.5
+    sound: /Audio/Weapons/star_hit.ogg
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 4
+  - type: SolutionContainerManager
+    solutions:
+      ammo:
+        maxVol: 2
+        reagents:
+        - ReagentId: Impedrezene
+          Quantity: 2
+  - type: RefillableSolution
+    solution: ammo
+  - type: DrainableSolution
+    solution: ammo
+  - type: SolutionTransfer
+    maxTransferAmount: 4
+  - type: SolutionInjectOnEmbed
+    transferAmount: 2
+    solution: ammo
+  - type: InjectableSolution
+    solution: ammo
+
+- type: entity # 4 hits to KO a spaceman
+  parent: DartSyndicateImpedrezene
+  id: DartSyndicateTranquilizer
+  name: syndicate tranquilizer dart
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      ammo:
+        maxVol: 3
+        reagents:
+        - ReagentId: ChloralHydrate
+          Quantity: 3
+  - type: SolutionTransfer
+    maxTransferAmount: 4
+  - type: SolutionInjectOnEmbed
+    transferAmount: 3
+    solution: ammo
+  - type: InjectableSolution
+    solution: ammo
+
+- type: entity
+  parent: DartSyndicateImpedrezene
+  id: DartAberrantFleshHorrorSpike
+  name: bone spike
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Ammo
+    muzzleFlash: null
+  - type: Sprite
+    sprite: _NF/Mobs/Aliens/flesh.rsi
+    state: spike
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 10
+  - type: SolutionContainerManager
+    solutions:
+      ammo:
+        maxVol: 3
+        reagents:
+        - ReagentId: Impedrezene
+          Quantity: 3
+  - type: SolutionInjectOnEmbed
+    transferAmount: 3
+    solution: ammo
+  - type: SolutionTransfer
+    maxTransferAmount: 4
+  - type: InjectableSolution
+    solution: ammo
+
+- type: entity
+  parent: ConjuredObject10
+  id: DartAberrantFleshHorrorSpikeCluster
+  name: bone spike  
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _NF/Mobs/Aliens/flesh.rsi
+    state: spike
+  - type: CartridgeAmmo
+    muzzleFlash: null
+    proto: DartAberrantFleshHorrorSpike
+    count: 3
+    spread: 25

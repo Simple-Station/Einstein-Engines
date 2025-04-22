@@ -1,0 +1,10 @@
+- type: entity
+  id: CrateVehicleJanicart
+  parent: CrateLivestock
+  name: janicart crate
+  description: The janitor's trusty steed.
+  components:
+  - type: StorageFill
+    contents:
+      - id: VehicleJanicart
+      - id: VehicleKeyJanicart

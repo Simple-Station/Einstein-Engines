@@ -1,0 +1,12 @@
+- type: entity
+  parent: ClothingOuterWinterSci
+  id: ClothingOuterWinterArcadia
+  name: arcadia winter coat
+  description: A coat produced by Arcadia Industries, seems soft.
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/OuterClothing/WinterCoats/arcadia.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/OuterClothing/WinterCoats/arcadia.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodArcadia

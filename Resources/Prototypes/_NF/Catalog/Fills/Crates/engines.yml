@@ -1,0 +1,17 @@
+- type: entity
+  parent: CrateEngineering
+  id: CrateEngineeringSmallThruster
+  name: small thruster crate
+  components:
+  - type: StorageFill
+    contents:
+      - id: SmallThrusterFlatpack
+
+- type: entity
+  parent: CrateEngineering
+  id: CrateEngineeringSmallGyroscope
+  name: small gyroscope crate
+  components:
+  - type: StorageFill
+    contents:
+      - id: SmallGyroscopeFlatpack

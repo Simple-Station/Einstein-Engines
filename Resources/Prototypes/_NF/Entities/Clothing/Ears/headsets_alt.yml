@@ -1,0 +1,79 @@
+﻿- type: entity
+  parent: ClothingHeadsetAlt
+  id: ClothingHeadsetAltMercenary
+  name: mercenary over-ear headset
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCommon
+      - EncryptionKeyTraffic
+  - type: Sprite
+    sprite: _NF/Clothing/Ears/Headsets/mercenary.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/Ears/Headsets/mercenary.rsi
+
+- type: entity
+  parent: ClothingHeadsetAlt
+  id: ClothingHeadsetAltPilot
+  name: pilot over-ear headset
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCommon
+      - EncryptionKeyTraffic
+  - type: Sprite
+    sprite: _NF/Clothing/Ears/Headsets/pilot.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/Ears/Headsets/pilot.rsi
+
+- type: entity
+  parent: ClothingHeadsetAlt
+  id: ClothingHeadsetAltNfsdGreen
+  name: nfsd over-ear headset
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCommon
+      - EncryptionKeyNfsd
+      - EncryptionKeyCommand
+      - EncryptionKeyTraffic
+  - type: Sprite
+    sprite: _NF/Clothing/Ears/Headsets/nfsd_h_green.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/Ears/Headsets/nfsd_h_green.rsi
+
+- type: entity
+  parent: ClothingHeadsetAlt
+  id: ClothingHeadsetAltNfsdBrown
+  name: nfsd over-ear headset
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCommon
+      - EncryptionKeyNfsd
+      - EncryptionKeyCommand
+      - EncryptionKeyTraffic
+  - type: Sprite
+    sprite: _NF/Clothing/Ears/Headsets/nfsd_h_brown.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/Ears/Headsets/nfsd_h_brown.rsi
+
+- type: entity
+  parent: ClothingHeadsetAlt
+  id: ClothingHeadsetAltNfsdCreamandBrown
+  name: sheriff's over-ear headset
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/Ears/Headsets/nfsd_h_cb.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/Ears/Headsets/nfsd_h_cb.rsi
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyStationMaster
+      - EncryptionKeyCentCom
+      - EncryptionKeyTraffic

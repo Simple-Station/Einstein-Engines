@@ -1,0 +1,37 @@
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyTraffic
+  name: traffic control encryption key
+  description: An encryption key for the space traffic control channel.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Traffic
+    - Common
+    defaultChannel: Common
+  - type: Item
+    sprite: _NF/Objects/Devices/encryption_keys.rsi
+  - type: Sprite
+    sprite: _NF/Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_gray
+    - state: stc_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyNfsd
+  name: nfsd encryption key
+  suffix: DO NOT MAP
+  description: An encryption key for the new frontier security department channel.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Nfsd
+    defaultChannel: Nfsd
+  - type: Item
+    sprite: _NF/Objects/Devices/encryption_keys.rsi
+  - type: Sprite
+    sprite: _NF/Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_gray
+    - state: nfsd_label

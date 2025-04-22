@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: CrateMedicalSurgery
+  icon:
+    sprite: Structures/Storage/Crates/surgery.rsi
+    state: icon
+  product: CrateMedicalSurgery
+  cost: 3000
+  category: cargoproduct-category-name-medical
+  group: market
