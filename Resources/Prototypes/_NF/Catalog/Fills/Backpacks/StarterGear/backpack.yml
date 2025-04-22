@@ -1,6 +1,6 @@
 - type: entity
   categories: [ HideSpawnMenu ]
-  parent: [ClothingBackpackMercenary, ClothingBackpackFilled]
+  parent: [ClothingBackpackFilled]
   id: ClothingBackpackMercenaryFilled
 
 - type: entity

@@ -12,7 +12,7 @@
 
 - type: entity
   id: ClothingShoesBootsMagMercenaryFilled
-  parent: [ClothingShoesBootsMagMercenary, ClothingShoesBootsMercenaryFilled]
+  parent: [ClothingShoesBootsMagMercenary]
 
 - type: entity
   id: ClothingShoesBootsNfsdBrownFilled

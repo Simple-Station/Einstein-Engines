@@ -1,0 +1,15 @@
+- type: entity
+  parent: Airlock
+  id: AirlockSecurityHorizontal
+  suffix: Security Horizontal
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/securityhorizontal.rsi
+
+- type: entity
+  parent: Airlock
+  id: AirlockCommandHorizontal
+  suffix: Command Horizontal
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/commandhorizontal.rsi

@@ -144,6 +144,53 @@
   - type: SpentAmmoVisuals
   - type: SpaceGarbage
 
+# laser lens
+- type: entity
+  id: BaseMagazineLens
+  name: dont spawn this lol
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - CompaktLens
+  - type: BallisticAmmoProvider
+    mayTransfer: false
+    whitelist:
+      tags:
+        - CompaktLens
+    proto: CartridgeLightRifle
+    capacity: 30
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/light_rifle_mag.rsi
+    state: base
+  - type: Appearance
+
+- type: entity
+  id: BaseBulletEmp
+  name: base bullet emp
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Shock: 0
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    layers:
+      - state: emp_projectile
+        shader: unshaded
+  - type: EmpOnTrigger
+    range: 0.3
+    energyConsumption: 50000
+    disableDuration: 10
+
 # heavy mortar bullet
 
 - type: Tag
