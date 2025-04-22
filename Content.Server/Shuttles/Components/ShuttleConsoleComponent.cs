@@ -55,7 +55,7 @@ namespace Content.Server.Shuttles.Components
 
         /// Hullrot additions
         [DataField("targetIdSlot")]
-        public ItemSlot targetIdSlot = default!;
+        public ItemSlot targetIdSlot = new();
 
         [DataField, ViewVariables(VVAccess.ReadWrite)]
         public ShuttleConsoleAccesState accesState = ShuttleConsoleAccesState.NotDynamic;

@@ -22,11 +22,12 @@ public abstract class SharedShipyardConsoleSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-
+        /*
         Subs.BuiEvents<ShipyardConsoleComponent>(ShipyardConsoleUiKey.Key, subs =>
         {
             subs.Event<ShipyardConsolePurchaseMessage>(OnPurchase);
         });
+        */
     }
 
     private void OnPurchase(Entity<ShipyardConsoleComponent> ent, ref ShipyardConsolePurchaseMessage msg)

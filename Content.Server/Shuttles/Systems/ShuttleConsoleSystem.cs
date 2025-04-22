@@ -162,7 +162,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     {
         if (comp.accesState != ShuttleConsoleAccesState.CaptainAcces)
             return;
-        if (comp.targetIdSlot.Item is null)
+        if (comp.targetIdSlot?.Item is null)
             return;
         var grid = _transform.GetGrid(uid);
         if (grid is null)
