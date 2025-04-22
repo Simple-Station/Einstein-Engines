@@ -9,7 +9,7 @@
   group: market
 
 - type: cargoProduct
-  id: MaterialUranium
+  id: MaterialUraniumCrescent
   icon:
     sprite: Objects/Materials/Sheets/other.rsi
     state: uranium_3
@@ -38,7 +38,7 @@
   cost: 5000
   category: cargoproduct-category-name-materials
   group: market
-  
+
 - type: cargoProduct
   id: MaterialWaterTankHighCapacity
   abstract: true

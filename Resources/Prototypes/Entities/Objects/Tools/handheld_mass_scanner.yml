@@ -1,8 +1,9 @@
 - type: entity
   name: handheld mass scanner
   parent: BaseHandheldComputer
-  id: HandHeldMassScanner
+  id: HandHeldMassScannerEE
   description: A hand-held mass scanner.
+  suffix : Einstein-Engines
   components:
   - type: Item
   - type: Sprite

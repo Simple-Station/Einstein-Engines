@@ -134,8 +134,8 @@
 
 - type: entity
   parent: TelecomServer
-  id: TelecomServerFilledSecurity
-  suffix: Security
+  id: TelecomServerFilledSecurityEinstein
+  suffix: Security [Einstein Version]
   components:
   - type: ContainerFill
     containers:

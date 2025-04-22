@@ -1,20 +1,4 @@
 - type: npcFaction
-  id: Pibble
-  hostile:
-  - Mouse
-  - Xeno
-  - Zombie
-  - SimpleHostile
-  - Dwarf
-  - Felinid
-  - Harpy
-  - Cat
-  - Chicken
-  - Monkey
-  - Goblin
-  - DinosaursNF
-
-- type: npcFaction
   id: Dwarf
 
 - type: npcFaction
@@ -22,9 +6,6 @@
 
 - type: npcFaction
   id: Harpy
-
-- type: npcFaction
-  id: Cat
 
 - type: npcFaction
   id: Chicken

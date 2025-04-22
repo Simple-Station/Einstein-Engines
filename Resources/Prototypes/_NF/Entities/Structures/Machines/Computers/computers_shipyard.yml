@@ -1,8 +1,9 @@
 - type: entity
   name: shipyard console
   parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, BaseStructureComputer]
-  id: ComputerShipyard
+  id: ComputerShipyardCrescent
   description: Used to purchase and sell shuttles
+  suffix: Crescent
   placement:
     mode: SnapgridCenter
   components:

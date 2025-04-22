@@ -1,8 +1,4 @@
-- type: Tag
-  id: CaveFactory
 
-- type: Tag
-  id: DockTransit
 
 - type: Tag
   id: LabGrown
@@ -41,25 +37,7 @@
   id: LavaMercenary
 
 - type: Tag
-  id: MysteryFigureBox
-
-- type: Tag
-  id: WhoopieCushion
-
-- type: Tag
-  id: Mustard
-
-- type: Tag
-  id: Mail
-
-- type: Tag
-  id: MailCapsule
-
-- type: Tag
   id: SecurityUplink
-
-- type: Tag
-  id: DroneUsable
 
 - type: Tag
   id: LightReplacer
@@ -75,3 +53,4 @@
 
 - type: Tag
   id: SpeedLoaderRifleHeavy
+

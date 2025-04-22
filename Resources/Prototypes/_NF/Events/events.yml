@@ -10,17 +10,6 @@
   # - type: AnomalySpawnRule
 
 - type: entity
-  id: BreakerFlip
-  parent: BaseGameRule
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: StationEvent
-    weight: 7
-    duration: 1
-    minimumPlayers: 15
-  - type: BreakerFlipRule
-
-- type: entity
   id: FalseAlarm
   parent: BaseGameRule
   categories: [ HideSpawnMenu ]
