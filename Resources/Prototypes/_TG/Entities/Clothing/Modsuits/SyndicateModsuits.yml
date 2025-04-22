@@ -1,6 +1,6 @@
 # The bloodred from ali express
 - type: entity
-  parent: [ClothingModsuitStandard]
+  parent: [ClothingModsuitStandard, BaseIntegratedManeuveringThrusters]
   id: BloodredModsuitBackpack
   name: EE-99MS "Raider" Modsuit Control
   description: A control module for the "Raider" modsuit.
@@ -33,6 +33,8 @@
         - state: equipped-BACKPACK-sealed
         - state: equipped-BACKPACK-sealed_glow
           shader: unshaded
+    - type: Jetpack
+      moleUsage: 0 #Cant refill the modsuit's jetpack gas tank due to weird interactions, so for now it consumes no gas.
 
 - type: entity
   parent: [ClothingModsuitGauntletsStandard]
@@ -141,7 +143,7 @@
 
 # The second modsuit
 - type: entity
-  parent: [ClothingModsuitStandard]
+  parent: [ClothingModsuitStandard, BaseIntegratedManeuveringThrusters]
   id: EliteModsuitBackpack
   name: EE-122MS "Jaeger" Modsuit Control
   description: A controller for the "Jaeger" modsuit.
@@ -174,6 +176,8 @@
         - state: equipped-BACKPACK-sealed
         - state: equipped-BACKPACK-sealed_glow
           shader: unshaded
+    - type: Jetpack
+      moleUsage: 0 #Cant refill the modsuit's jetpack gas tank due to weird interactions, so for now it consumes no gas.
 
 - type: entity
   parent: [ClothingModsuitGauntletsStandard]
