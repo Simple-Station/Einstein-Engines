@@ -28,3 +28,6 @@ nationality_description_adhomai = The People's Republic of Adhomai was establish
 
 nationality_name_goldendeep = Golden Deep
 nationality_description_goldendeep = The Golden Deep is a growing nation state of independent synthetics with the unifying vision of producing an unshakable economy. These uniquely independent synthetics hold origins of mostly illicit freedom, but are growing wide into an odd haven for the average synthetic. The majority of the merchants within the collective are IPCs, but it is not uncommon to witness other synthetics within it.
+
+nationality_name_qiimaeruan = Qiimaeruan
+nationality_description_qiimaeruan = The Qiimaeru Constellation is a nation controlling a small number of stars, named after the star system it was originally founded in. Citizens of the Constellation are largely Xelthia, though this is mostly due to the fact that they have only fairly recently made contact with other species, this broadly being their home nation.

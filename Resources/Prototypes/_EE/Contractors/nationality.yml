@@ -106,4 +106,4 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
-        - Xelthia
+        - Xelthia # Consider not making this exclusive later, actually
