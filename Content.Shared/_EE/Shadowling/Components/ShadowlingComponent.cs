@@ -1,3 +1,4 @@
+using Content.Shared.Alert;
 using Content.Shared.StatusIcon;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -76,6 +77,12 @@ public sealed partial class ShadowlingComponent : Component
     // Thrall Indicator
     [DataField]
     public List<EntityUid> Thralls = new();
+
+    [DataField]
+    public ProtoId<AlertPrototype> AlertProto = "ShadowlingLight";
+
+    [DataField]
+    public int AlertSprites = 11;
 }
 
 [NetSerializable, Serializable]

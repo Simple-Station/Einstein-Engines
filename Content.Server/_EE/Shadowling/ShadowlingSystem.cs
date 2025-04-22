@@ -6,12 +6,14 @@ using Content.Shared._EE.Shadowling;
 using Content.Shared._EE.Shadowling.Components;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Actions;
+using Content.Shared.Alert;
 using Content.Shared.Damage;
 using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
+using Microsoft.CodeAnalysis.Elfie.Serialization;
 
 
 namespace Content.Server._EE.Shadowling;
@@ -27,6 +29,7 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
     [Dependency] private readonly EntityStorageSystem _entityStorage = default!;
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
+    [Dependency] private readonly AlertsSystem _alert = default!;
 
     public override void Initialize()
     {
@@ -66,6 +69,12 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
         {
             // _actions.RemoveAction();
             AddPostHatchActions(uid, component);
+
+            EnsureComp<LightDetectionComponent>(uid);
+            var lightComp = EnsureComp<LightDetectionDamageModifierComponent>(uid);
+            lightComp.ShowAlert = true;
+            lightComp.AlertProto = component.AlertProto;
+            lightComp.AlertSprites = component.AlertSprites;
         }
         else if (args.Phase == ShadowlingPhases.Ascension)
         {

@@ -2,3 +2,6 @@ shadowling-on-try-equip-clothes = This is fruitless to me...
 
 reagent-name-shadowling-toxin = shadowling toxin
 reagent-desc-shadowling-toxin = A mysterious chemical that makes heals any shadowling and their thralls, but blinds anyone else
+
+alerts-shadowling-light-name = Light Identifier
+alerts-shadowling-light-desc = This is your light identifier. If it reaches 0, you're getting cooked alive. Always prioritize standing in the shadows.

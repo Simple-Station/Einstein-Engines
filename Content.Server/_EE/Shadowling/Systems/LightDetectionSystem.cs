@@ -1,7 +1,9 @@
 using Content.Shared._EE.Shadowling.Components;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Physics;
 using Robust.Server.GameObjects;
 using Robust.Shared.Physics;
+using Robust.Shared.Timing;
 
 
 namespace Content.Server._EE.Shadowling;
@@ -16,13 +18,33 @@ public sealed class LightDetectionSystem : EntitySystem
     /// <inheritdoc/>
     [Dependency] private readonly PhysicsSystem _physicsSystem = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<LightDetectionComponent, ComponentStartup>(OnComponentStartup);
+    }
+
+    private void OnComponentStartup(EntityUid uid, LightDetectionComponent component, ComponentStartup args)
+    {
+        component.NextUpdate = _timing.CurTime;
+    }
     public override void Update(float frameTime)
     {
-
-        // todo: make it check every 0.25s-1s and optimize the shit out of it
         var query = EntityQueryEnumerator<LightDetectionComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
+            // Skip dead entities
+            if (_mobStateSystem.IsDead(uid))
+                continue;
+
+            if (_timing.CurTime < comp.NextUpdate)
+                continue;
+
+            comp.NextUpdate += comp.UpdateInterval;
             DetectLight(uid, comp);
         }
     }
@@ -32,11 +54,15 @@ public sealed class LightDetectionSystem : EntitySystem
         var xform = EntityManager.GetComponent<TransformComponent>(uid);
         var worldPos = _transformSystem.GetWorldPosition(uid);
 
+        // We want to avoid this expensive operation if the user has not moved
+        if ((comp.LastKnownPosition - worldPos).LengthSquared() < 0.01f)
+            return;
+
+        comp.LastKnownPosition = worldPos;
         comp.IsOnLight = false;
         var query = EntityQueryEnumerator<PointLightComponent>();
         while (query.MoveNext(out var point, out var pointLight))
         {
-            // todo: skip maplight because the system it doesn't work with glacier outside terrain
             if (!pointLight.Enabled)
                 continue;
 
@@ -51,7 +77,6 @@ public sealed class LightDetectionSystem : EntitySystem
 
             var direction = (worldPos - lightPos).Normalized();
             var ray = new CollisionRay(lightPos, direction, (int)CollisionGroup.Opaque);
-
 
             var rayResults = _physicsSystem.IntersectRay(
                 xform.MapID,
