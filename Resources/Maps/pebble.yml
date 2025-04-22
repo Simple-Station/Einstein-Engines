@@ -30257,6 +30257,9 @@ entities:
     - type: Transform
       pos: -12.5,-50.5
       parent: 2
+    - type: SingletonDeviceNetServer
+      active: False
+      available: False
 - proto: CrowbarRed
   entities:
   - uid: 3873
