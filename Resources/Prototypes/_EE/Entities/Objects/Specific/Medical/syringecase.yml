@@ -34,7 +34,7 @@
     - CigPack # so it can be placed in things that whitelist cigarette packs
   - type: PhysicalComposition
     materialComposition:
-      Plastic: 100
+      Plastic: 62
   - type: Item
     size: Tiny
     shape:

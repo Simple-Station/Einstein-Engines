@@ -210,6 +210,8 @@
   components:
   - type: Sprite
     state: plushie_nuke
+  - type: Item
+    heldPrefix: plushienuke
 
 - type: entity
   parent: BasePlushie
