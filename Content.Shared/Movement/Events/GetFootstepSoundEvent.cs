@@ -1,4 +1,5 @@
 using Robust.Shared.Audio;
+using Content.Shared.Inventory;
 
 namespace Content.Shared.Movement.Events;
 
@@ -14,4 +15,9 @@ public record struct GetFootstepSoundEvent(EntityUid User)
     /// Set the sound to specify a footstep sound and mark as handled.
     /// </summary>
     public SoundSpecifier? Sound;
+}
+
+public record struct MakeFootstepSoundEvent : IInventoryRelayEvent
+{
+    public SlotFlags TargetSlots => SlotFlags.WITHOUT_POCKET;
 }

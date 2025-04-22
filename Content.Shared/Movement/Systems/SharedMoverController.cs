@@ -465,8 +465,10 @@ namespace Content.Shared.Movement.Systems
             if (mobMover.StepSoundDistance < distanceNeeded)
                 return false;
 
-            mobMover.StepSoundDistance -= distanceNeeded;
+            var soundEv = new MakeFootstepSoundEvent();
+            RaiseLocalEvent(uid, soundEv);
 
+            mobMover.StepSoundDistance -= distanceNeeded;
             if (TryComp<FootstepModifierComponent>(uid, out var moverModifier))
             {
                 sound = moverModifier.FootstepSoundCollection;

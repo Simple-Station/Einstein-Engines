@@ -56,10 +56,13 @@ public sealed class SuitSensorSystem : EntitySystem
         base.Update(frameTime);
 
         var curTime = _gameTiming.CurTime;
-        var sensors = EntityManager.EntityQueryEnumerator<SuitSensorComponent, DeviceNetworkComponent>();
+        var sensors = EntityManager.EntityQueryEnumerator<SuitSensorComponent>();
 
-        while (sensors.MoveNext(out var uid, out var sensor, out var device))
+        while (sensors.MoveNext(out var uid, out var sensor))
         {
+            if (!TryComp(uid, out DeviceNetworkComponent? device))
+                continue;
+
             if (device.TransmitFrequency is null)
                 continue;
 
@@ -113,10 +116,11 @@ public sealed class SuitSensorSystem : EntitySystem
     /// <returns>True if the sensor is assigned to a station or assigning it was successful. False otherwise.</returns>
     private bool CheckSensorAssignedStation(EntityUid uid, SuitSensorComponent sensor)
     {
-        if (!sensor.StationId.HasValue && Transform(uid).GridUid == null)
+        var xform = Transform(uid);
+        if (!sensor.StationId.HasValue && xform.GridUid is null)
             return false;
 
-        sensor.StationId = _stationSystem.GetOwningStation(uid);
+        sensor.StationId = _stationSystem.GetOwningStation(uid, xform);
         return sensor.StationId.HasValue;
     }
 
