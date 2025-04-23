@@ -51,7 +51,7 @@
     radius: 3
     energy: 1
     netsync: false
-    
+
 - type: entity
   id: PortalArtifact
   parent: BasePortal
@@ -123,3 +123,11 @@
     volume: -3
     sound:
       path: /Audio/Ambience/anomaly_scary.ogg
+
+- type: entity
+  name: Temporary shadow rift
+  id: ShadowPortalTemp
+  parent: ShadowPortal
+  components:
+    - type: TimedDespawn
+      lifetime: 10

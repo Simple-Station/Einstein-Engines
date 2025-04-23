@@ -230,7 +230,7 @@
   components:
   - type: InstantAction
     icon: { sprite : Interface/Actions/psionics.rsi, state: shadeskip }
-    useDelay: 45
+    useDelay: 0.1
     checkCanInteract: false
     event: !type:AnomalyPowerActionEvent
             settings:
@@ -243,9 +243,9 @@
               - settings:
                   spawnOnPulse: true
                   spawnOnSuperCritical: true
-                  minAmount: 18
-                  maxAmount: 28
-                  maxRange: 2.5
+                  minAmount: 20
+                  maxAmount: 25
+                  maxRange: 2.25
                 spawns:
                 - ShadowKudzuTemp
               - settings:
