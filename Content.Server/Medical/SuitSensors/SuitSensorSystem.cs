@@ -63,7 +63,7 @@ public sealed class SuitSensorSystem : EntitySystem
             var (uid, sensor) = ent;
             if (!TryComp(uid, out DeviceNetworkComponent? device)
                 || device.TransmitFrequency is null
-                || sensor.User is null)
+                || !Exists(sensor.User))
             {
                 _wornSensors.Remove(ent); //Not a valid suit sensor array, cease all processing for it.
                 continue;
