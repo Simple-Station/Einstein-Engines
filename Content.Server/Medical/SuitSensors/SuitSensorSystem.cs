@@ -36,7 +36,7 @@ public sealed class SuitSensorSystem : EntitySystem
     [Dependency] private readonly SingletonDeviceNetServerSystem _singletonServerSystem = default!;
     [Dependency] private readonly MobThresholdSystem _mobThresholdSystem = default!;
 
-    private readonly HashSet<Entity<SuitSensorComponent>> _wornSensors = default!;
+    private readonly HashSet<Entity<SuitSensorComponent>> _wornSensors = new();
 
     public override void Initialize()
     {
