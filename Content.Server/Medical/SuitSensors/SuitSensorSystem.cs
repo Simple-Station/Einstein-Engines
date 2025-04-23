@@ -316,7 +316,8 @@ public sealed class SuitSensorSystem : EntitySystem
         component.Mode = mode;
         if (mode == SuitSensorMode.SensorOff)
             _wornSensors.Remove((uid, component));
-        else _wornSensors.Add((uid, component));
+        else if (component.User != null)
+            _wornSensors.Add((uid, component));
 
         if (userUid != null)
         {
