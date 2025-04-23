@@ -1,4 +1,3 @@
-using Content.Server.DeviceLinking.Systems;
 using Content.Shared.DeviceLinking;
 using Robust.Shared.Prototypes;
 
@@ -7,7 +6,7 @@ namespace Content.Server.DeviceLinking.Components
     /// <summary>
     /// A component with an On/Off state controlled by signals from DeviceLinking
     /// </summary>
-    [RegisterComponent, Access(typeof(SignalControlSystem))]
+    [RegisterComponent]
     public sealed partial class SignalControlComponent : Component
     {
         [DataField]

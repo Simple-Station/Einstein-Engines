@@ -8,11 +8,11 @@
   alwaysUseSpawner: true
   icon: "JobIconArchmaester"
   requireAdminNotify: true
-  supervisors: job-supervisors-imperial 
+  supervisors: job-supervisors-imperial
   canBeAntag: false
   requirements:
     - !type:SpeciesRequirement
-      allowedOnly:
+      Species:
         - Human
     - !type:OverallPlaytimeRequirement
       time: 36000

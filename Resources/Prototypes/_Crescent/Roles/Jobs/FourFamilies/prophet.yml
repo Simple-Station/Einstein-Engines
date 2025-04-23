@@ -8,7 +8,7 @@
     - !type:FactionRequirement
       factionID: "TAP"
     - !type:SpeciesRequirement
-      allowedOnly:
+      Species:
         - Moth
   weight: 55
   startingGear: ProphetGear

@@ -5,7 +5,7 @@
   playTimeTracker: JobLevymanDSM
   requirements:
     - !type:SpeciesRequirement
-      allowedOnly:
+      Species:
         - Human
     - !type:FactionRequirement
       factionID: "DSM"
@@ -14,7 +14,7 @@
   alwaysUseSpawner: true
   icon: "JobIconImperialLevyman"
   requireAdminNotify: false
-  supervisors: job-supervisors-imperial 
+  supervisors: job-supervisors-imperial
   canBeAntag: false
   special:
   - !type:AddComponentSpecial

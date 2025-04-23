@@ -5,7 +5,7 @@
   playTimeTracker: JobHunterSRM
   requirements:
     - !type:SpeciesRequirement
-      allowedOnly:
+      Species:
         - Human
     - !type:OverallPlaytimeRequirement
       time: 20000

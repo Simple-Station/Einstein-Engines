@@ -7,7 +7,7 @@
     - !type:FactionRequirement
       factionID: "TAP"
     - !type:SpeciesRequirement
-      allowedOnly:
+      Species:
         - Human
   weight: 1
   startingGear: AntiquarianGear

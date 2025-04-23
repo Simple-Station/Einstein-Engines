@@ -6,7 +6,7 @@
   requirements:
     - !type:WhitelistRequirement
     - !type:SpeciesRequirement
-      allowedOnly:
+      Species:
         - Human
     - !type:SexRequirement
       allowed:

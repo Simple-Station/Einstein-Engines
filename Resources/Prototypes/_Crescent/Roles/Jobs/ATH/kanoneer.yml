@@ -5,7 +5,7 @@
   playTimeTracker: JobKanoneerATH
   requirements:
     - !type:SpeciesRequirement
-      allowedOnly:
+      Species:
         - Human
         - Reptilian
         - Oni

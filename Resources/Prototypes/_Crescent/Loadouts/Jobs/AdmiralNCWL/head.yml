@@ -1,9 +1,0 @@
-- type: loadout
-  id: AdminClothingHeadHatNCWLBeret
-  equipment: AdminClothingHeadHatNCWLBeret
-  price: 0
-
-- type: startingGear
-  id: AdminClothingHeadHatNCWLBeret
-  equipment:
-    head: ClothingHeadHatNCWLBeret

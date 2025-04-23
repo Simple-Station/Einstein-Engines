@@ -8,12 +8,12 @@
   alwaysUseSpawner: true
   icon: "JobIconAdvocatus"
   requireAdminNotify: true
-  supervisors: job-supervisors-imperial 
+  supervisors: job-supervisors-imperial
   canBeAntag: false
   requirements:
     - !type:WhitelistRequirement
     - !type:SpeciesRequirement
-      allowedOnly:
+      Species:
         - Human
     - !type:OverallPlaytimeRequirement
       time: 36000

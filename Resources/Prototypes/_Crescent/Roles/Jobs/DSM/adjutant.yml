@@ -7,7 +7,7 @@
     - !type:OverallPlaytimeRequirement
       time: 36000
     - !type:SpeciesRequirement
-      allowedOnly:
+      Species:
         - Human
     - !type:FactionRequirement
       factionID: "DSM"

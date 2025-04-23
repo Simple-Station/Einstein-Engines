@@ -5,7 +5,7 @@
   playTimeTracker: JobTenderSRM
   requirements:
     - !type:SpeciesRequirement
-      allowedOnly:
+      Species:
         - Human
     - !type:FactionRequirement
       factionID: "SRM"
