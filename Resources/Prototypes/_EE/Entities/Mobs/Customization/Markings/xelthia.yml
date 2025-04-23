@@ -72,6 +72,24 @@
   sprites:
   - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
     state: hair_fancy
+    
+- type: marking
+  id: XelthiaHairTripoint
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [Xelthia]
+  sprites:
+  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+    state: hair_tripoint
+    
+- type: marking
+  id: XelthiaHairDownNBack
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [Xelthia]
+  sprites:
+  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+    state: hair_downandback
 
 # Chest Patterns
 

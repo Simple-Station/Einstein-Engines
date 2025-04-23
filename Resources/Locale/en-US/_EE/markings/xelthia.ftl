@@ -10,3 +10,5 @@ marking-XelthiaHairShort = Short Hair Tendrils
 marking-XelthiaHairStandard = Normal Hair Tendrils
 marking-XelthiaHairOvereye = Over-eye Hair Tendrils
 marking-XelthiaHairFancy = Fancy Hair Tendrils
+marking-XelthiaHairTripoint = Tripoint Hair Tendrils
+marking-XelthiaHairDownNBack = Down 'N' Back Tendrils
