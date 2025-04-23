@@ -2,6 +2,7 @@ using System.Numerics;
 using Content.Shared._Crescent.SpaceBiomes;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
+using Content.Shared.CombatMode;
 using Content.Shared.Whitelist;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -241,6 +242,16 @@ public sealed class RulesSystem : EntitySystem
                 case InSpaceBiomeRule inSpaceBiome:
                 {
                     if (TryComp<SpaceBiomeTrackerComponent>(uid, out var tracker) && tracker.Biome == inSpaceBiome.Biome)
+                    {
+                        break;
+                    }
+
+                    return false;
+                }
+                case InCombatModeRule inCombatModeRule:
+                {
+                    if (TryComp<CombatModeComponent>(uid, out var combatModeComponent) &&
+                        combatModeComponent.IsInCombatMode)
                     {
                         break;
                     }
