@@ -4,8 +4,8 @@
   description: job-description-courtier
   playTimeTracker: JobCourtierDSM
   requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 2500
+    - !type:CharacterOverallTimeRequirement
+      Min: 2500
     - !type:SpeciesRequirement
       Species:
         - Human

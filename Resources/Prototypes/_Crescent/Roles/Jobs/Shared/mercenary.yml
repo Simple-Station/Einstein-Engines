@@ -4,8 +4,8 @@
   description: job-description-mercenary
   playTimeTracker: JobMercenary
   requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 108000
+    - !type:CharacterOverallTimeRequirement
+      Min: 108000
   startingGear: MercenaryGear
   canBeAntag: true
   icon: "JobIconMercenary"

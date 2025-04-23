@@ -5,7 +5,7 @@
   price: 18000
   category: Small
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/DSM/conquest.yml
+  Path: /Maps/_Crescent/Shuttles/DSM/conquest.yml
 
 - type: gameMap
   id: Conquest

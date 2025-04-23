@@ -4,8 +4,8 @@
   description: job-description-doktor
   playTimeTracker: JobDoktorNCWL
   requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 20000
+    - !type:CharacterOverallTimeRequirement
+      Min: 20000
     - !type:FactionRequirement
       factionID: "NCWL"
   weight: 22

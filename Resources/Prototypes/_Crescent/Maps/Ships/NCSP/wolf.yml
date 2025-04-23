@@ -8,7 +8,7 @@
   price: 90000
   category: Medium
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/wolf.yml
+  Path: /Maps/_Crescent/Shuttles/NCSP/wolf.yml
 
 - type: gameMap
   id: Wolf

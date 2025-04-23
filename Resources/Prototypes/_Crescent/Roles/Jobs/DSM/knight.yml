@@ -4,8 +4,8 @@
   description: job-description-knight
   playTimeTracker: JobKnightDSM
   requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 35000
+    - !type:CharacterOverallTimeRequirement
+      Min: 35000
     - !type:SpeciesRequirement
       Species:
         - Human

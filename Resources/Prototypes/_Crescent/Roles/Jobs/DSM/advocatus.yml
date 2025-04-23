@@ -15,8 +15,8 @@
     - !type:SpeciesRequirement
       Species:
         - Human
-    - !type:OverallPlaytimeRequirement
-      time: 36000
+    - !type:CharacterOverallTimeRequirement
+      Min: 36000
     - !type:FactionRequirement
       factionID: "DSM"
   special:

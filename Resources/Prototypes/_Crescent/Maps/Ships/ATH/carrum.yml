@@ -8,7 +8,7 @@
   price: 17500
   category: Small
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/ATH/carrum.yml
+  Path: /Maps/_Crescent/Shuttles/ATH/carrum.yml
 
 - type: gameMap
   id: Carrum

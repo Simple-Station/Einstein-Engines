@@ -8,7 +8,7 @@
   price: 30000
   category: Small
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/TAP/einherji.yml
+  Path: /Maps/_Crescent/Shuttles/TAP/einherji.yml
 
 - type: gameMap
   id: Einherji

@@ -8,7 +8,7 @@
   price: 27000
   category: Small
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/reaver.yml
+  Path: /Maps/_Crescent/Shuttles/NCSP/reaver.yml
 
 - type: gameMap
   id: Reaver

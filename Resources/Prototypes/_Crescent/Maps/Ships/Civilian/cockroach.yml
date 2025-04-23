@@ -8,7 +8,7 @@
   price: 65000
   category: Small
   group: Scrap
-  shuttlePath: /Maps/_Crescent/Shuttles/Civilian/cockroach.yml
+  Path: /Maps/_Crescent/Shuttles/Civilian/cockroach.yml
 
 - type: gameMap
   id: Cockroach

@@ -5,7 +5,7 @@
   price: 12000
   category: Small
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/DSM/valor.yml
+  Path: /Maps/_Crescent/Shuttles/DSM/valor.yml
 
 - type: gameMap
   id: Valor

@@ -8,7 +8,7 @@
   price: 41000
   category: Small
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/corvax.yml
+  Path: /Maps/_Crescent/Shuttles/NCSP/corvax.yml
 
 - type: gameMap
   id: Corvax

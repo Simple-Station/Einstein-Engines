@@ -8,7 +8,7 @@
   price: 12500
   category: Small
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/NCWL/broadsword.yml
+  Path: /Maps/_Crescent/Shuttles/NCWL/broadsword.yml
 
 - type: gameMap
   id: Broadsword

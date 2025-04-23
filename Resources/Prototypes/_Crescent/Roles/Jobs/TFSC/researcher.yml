@@ -4,8 +4,8 @@
   description: job-description-cyberdawntech
   playTimeTracker: JobCyberdawnTechNCSP
   requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 2000
+    - !type:CharacterOverallTimeRequirement
+      Min: 2000
     - !type:FactionRequirement
       factionID: "TFSC"
   special:

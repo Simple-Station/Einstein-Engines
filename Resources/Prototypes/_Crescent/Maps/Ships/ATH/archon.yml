@@ -8,7 +8,7 @@
   price: 75000
   category: Medium
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/ATH/archon.yml
+  Path: /Maps/_Crescent/Shuttles/ATH/archon.yml
 
 - type: gameMap
   id: Archon

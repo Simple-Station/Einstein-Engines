@@ -8,7 +8,7 @@
   price: 35000
   category: Small
   group: Civilian
-  shuttlePath: /Maps/_Crescent/Shuttles/Civilian/exhumer.yml
+  Path: /Maps/_Crescent/Shuttles/Civilian/exhumer.yml
 
 - type: gameMap
   id: Exhumer

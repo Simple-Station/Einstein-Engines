@@ -4,8 +4,8 @@
   description: job-description-lieutenant
   playTimeTracker: JobLieutenantNCSP
   requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 30000
+    - !type:CharacterOverallTimeRequirement
+      Min: 30000
     - !type:FactionRequirement
       factionID: "TFSC"
   special:

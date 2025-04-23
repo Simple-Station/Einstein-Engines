@@ -8,8 +8,8 @@
   requirements:
   - !type:FactionRequirement
       factionID: "TSP"
-  - !type:OverallPlaytimeRequirement
-    time: 36000
+  - !type:CharacterOverallTimeRequirement
+    Min: 36000
   special:
   - !type:AddComponentSpecial
     components:

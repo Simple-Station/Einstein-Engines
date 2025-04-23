@@ -4,8 +4,8 @@
   description: job-description-wealth
   playTimeTracker: JobWealthDSM
   requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 500
+    - !type:CharacterOverallTimeRequirement
+      Min: 500
     - !type:SpeciesRequirement
       Species:
         - Human

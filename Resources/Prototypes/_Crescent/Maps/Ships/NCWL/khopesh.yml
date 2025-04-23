@@ -8,7 +8,7 @@
   price: 6000
   category: Small
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/NCWL/khopesh.yml
+  Path: /Maps/_Crescent/Shuttles/NCWL/khopesh.yml
 
 - type: gameMap
   id: Khopesh

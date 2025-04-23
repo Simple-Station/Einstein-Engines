@@ -5,7 +5,7 @@
   price: 44000
   category: Small
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/DSM/raider.yml
+  Path: /Maps/_Crescent/Shuttles/DSM/raider.yml
 
 - type: gameMap
   id: Raider

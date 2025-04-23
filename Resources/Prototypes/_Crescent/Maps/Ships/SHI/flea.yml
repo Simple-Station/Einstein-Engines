@@ -5,7 +5,7 @@
   price: 22500
   category: Small
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/SHI/flea.yml
+  Path: /Maps/_Crescent/Shuttles/SHI/flea.yml
 
 - type: gameMap
   id: Flea

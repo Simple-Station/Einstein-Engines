@@ -4,8 +4,8 @@
   description: job-description-pilot
   playTimeTracker: JobPilot
   requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 43200
+    - !type:CharacterOverallTimeRequirement
+      Min: 43200
   startingGear: PilotGear
   icon: "JobIconPilot"
   supervisors: job-supervisors-hire

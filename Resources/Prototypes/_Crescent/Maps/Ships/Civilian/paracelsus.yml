@@ -8,7 +8,7 @@
   price: 39000
   category: Small
   group: Civilian
-  shuttlePath: /Maps/_Crescent/Shuttles/Civilian/paracelsus.yml
+  Path: /Maps/_Crescent/Shuttles/Civilian/paracelsus.yml
 
 - type: gameMap
   id: Paracelsus

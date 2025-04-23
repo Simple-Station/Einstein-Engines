@@ -5,7 +5,7 @@
   price: 85000
   category: Medium
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/CMM/courageous.yml
+  Path: /Maps/_Crescent/Shuttles/CMM/courageous.yml
 
 - type: gameMap
   id: Courageous

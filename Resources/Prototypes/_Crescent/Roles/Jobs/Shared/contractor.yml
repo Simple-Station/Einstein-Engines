@@ -4,8 +4,8 @@
   description: job-description-contractor
   playTimeTracker: JobContractor
   requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 4000
+    - !type:CharacterOverallTimeRequirement
+      Min: 4000
     - !type:WealthRequirement
       below: 40000
   startingGear: ContractorGear

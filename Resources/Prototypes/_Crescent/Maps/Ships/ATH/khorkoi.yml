@@ -8,7 +8,7 @@
   price: 17500
   category: Small
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/ATH/khorkoi.yml
+  Path: /Maps/_Crescent/Shuttles/ATH/khorkoi.yml
 
 - type: gameMap
   id: Khorkoi

@@ -8,7 +8,7 @@
   price: 28000
   category: Small
   group: Civilian
-  shuttlePath: /Maps/_Crescent/Shuttles/Civilian/kite.yml
+  Path: /Maps/_Crescent/Shuttles/Civilian/kite.yml
 
 - type: gameMap
   id: Kite

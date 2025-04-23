@@ -8,7 +8,7 @@
   price: 55000
   category: Medium
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/jiuzhu.yml
+  Path: /Maps/_Crescent/Shuttles/NCSP/jiuzhu.yml
 
 - type: gameMap
   id: Jiuzhu

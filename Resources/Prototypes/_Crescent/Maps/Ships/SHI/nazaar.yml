@@ -5,7 +5,7 @@
   price: 25000
   category: Small
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/SHI/nazaar.yml
+  Path: /Maps/_Crescent/Shuttles/SHI/nazaar.yml
 
 - type: gameMap
   id: Nazaar

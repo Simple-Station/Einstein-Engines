@@ -8,7 +8,7 @@
   price: 35000
   category: Small
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/NCWL/vanguard.yml
+  Path: /Maps/_Crescent/Shuttles/NCWL/vanguard.yml
 
 - type: gameMap
   id: Vanguard

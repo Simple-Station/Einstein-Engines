@@ -8,7 +8,7 @@
   price: 18000
   category: Small
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/rockchipper.yml
+  Path: /Maps/_Crescent/Shuttles/NCSP/rockchipper.yml
 
 - type: gameMap
   id: Rockchipper

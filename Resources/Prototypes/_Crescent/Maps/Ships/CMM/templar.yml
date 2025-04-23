@@ -5,7 +5,7 @@
   price: 90000
   category: Small
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/CMM/templar.yml
+  Path: /Maps/_Crescent/Shuttles/CMM/templar.yml
 
 - type: gameMap
   id: Templar

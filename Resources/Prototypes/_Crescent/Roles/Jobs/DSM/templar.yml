@@ -4,8 +4,8 @@
   description: job-description-advocatustemplar
   playTimeTracker: JobTemplarDSM
   requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 55000
+    - !type:CharacterOverallTimeRequirement
+      Min: 55000
     - !type:SpeciesRequirement
       Species:
         - Human

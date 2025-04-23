@@ -4,8 +4,8 @@
   description: job-description-gliess-dockmaster
   playTimeTracker: JobGliessDockmaster
   requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 8000
+    - !type:CharacterOverallTimeRequirement
+      Min: 8000
   startingGear: GliessDockmasterGear
   icon: "JobIconCaptain"
   supervisors: job-supervisors-lols

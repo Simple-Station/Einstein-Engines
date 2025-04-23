@@ -5,7 +5,7 @@
   price: 600000
   category: Countsman
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/DSM/countsman.yml
+  Path: /Maps/_Crescent/Shuttles/DSM/countsman.yml
 
 - type: gameMap
   id: Countsman

@@ -8,7 +8,7 @@
   price: 11000
   category: Small
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/NCWL/rapier.yml
+  Path: /Maps/_Crescent/Shuttles/NCWL/rapier.yml
 
 - type: gameMap
   id: Rapier

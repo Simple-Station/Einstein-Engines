@@ -8,7 +8,7 @@
   price: 37500
   category: Small
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/NCWL/meteor.yml
+  Path: /Maps/_Crescent/Shuttles/NCWL/meteor.yml
 
 - type: gameMap
   id: Meteor

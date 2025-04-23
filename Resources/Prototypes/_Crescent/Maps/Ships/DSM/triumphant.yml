@@ -5,7 +5,7 @@
   price: 125000
   category: Large
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/DSM/triumphant.yml
+  Path: /Maps/_Crescent/Shuttles/DSM/triumphant.yml
 
 - type: gameMap
   id: Triumphant

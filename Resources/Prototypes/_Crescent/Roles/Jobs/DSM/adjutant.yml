@@ -4,8 +4,8 @@
   description: job-description-adjutant
   playTimeTracker: JobAdjutantDSM
   requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 36000
+    - !type:CharacterOverallTimeRequirement
+      Min: 36000
     - !type:SpeciesRequirement
       Species:
         - Human

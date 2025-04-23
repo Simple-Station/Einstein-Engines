@@ -8,7 +8,7 @@
   price: 55000
   category: Small
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/NCWL/Vasinya.yml
+  Path: /Maps/_Crescent/Shuttles/NCWL/Vasinya.yml
 
 - type: gameMap
   id: Vasinya

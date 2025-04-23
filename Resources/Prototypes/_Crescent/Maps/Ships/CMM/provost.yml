@@ -5,7 +5,7 @@
   price: 30000
   category: Small
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/CMM/provost.yml
+  Path: /Maps/_Crescent/Shuttles/CMM/provost.yml
 
 - type: gameMap
   id: Provost

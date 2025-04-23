@@ -8,7 +8,7 @@
   price: 325000
   category: Large
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/CMM/whitebastion.yml
+  Path: /Maps/_Crescent/Shuttles/CMM/whitebastion.yml
 
 - type: gameMap
   id: WhiteBastion

@@ -8,7 +8,7 @@
   price: 19000
   category: Small
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/CMM/adjudicator.yml
+  Path: /Maps/_Crescent/Shuttles/CMM/adjudicator.yml
 
 - type: gameMap
   id: Adjudicator

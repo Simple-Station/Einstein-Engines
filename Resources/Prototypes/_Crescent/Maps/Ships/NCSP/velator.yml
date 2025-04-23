@@ -8,7 +8,7 @@
   price: 60000
   category: Medium
   group: None
-  shuttlePath: /Maps/_Crescent/Shuttles/NCSP/velator.yml
+  Path: /Maps/_Crescent/Shuttles/NCSP/velator.yml
 
 - type: gameMap
   id: Velator
