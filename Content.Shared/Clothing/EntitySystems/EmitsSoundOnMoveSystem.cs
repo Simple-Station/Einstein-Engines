@@ -21,10 +21,7 @@ public sealed class EmitsSoundOnMoveSystem : EntitySystem
 
     public override void Initialize()
     {
-
-
         base.Initialize();
-
         _physicsQuery = GetEntityQuery<PhysicsComponent>();
         _clothingQuery = GetEntityQuery<ClothingComponent>();
         SubscribeLocalEvent<EmitsSoundOnMoveComponent, GotEquippedEvent>(OnEquipped);
