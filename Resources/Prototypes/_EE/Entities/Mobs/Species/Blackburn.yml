@@ -60,9 +60,11 @@
         - Landmine
   - type: LanguageKnowledge
     speaks:
+    - Sol
     - Blackburn
     understands:
     - Blackburn
+    - Sol
   - type: Tag
     tags:
     - CanPilot

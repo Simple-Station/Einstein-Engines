@@ -89,3 +89,7 @@
 - type: font
   id: RubikDirt
   path: /Fonts/Rubik_Dirt/RubikDirt.ttf
+
+- type: font
+  id: ComforterBrush
+  path: /Fonts/Comforter/ComforterBrush-Regular.ttf

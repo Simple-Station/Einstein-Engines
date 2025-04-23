@@ -1,5 +1,9 @@
 - type: language
   id: Blackburn
+  isVisibleLanguage: true
+  speech:
+#    color: "#47a18c"
+    fontId: ComforterBrush
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
