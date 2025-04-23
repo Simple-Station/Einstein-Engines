@@ -50,6 +50,7 @@ entities:
         version: 2
         nodes: []
     - type: GridAtmosphere
+      simulatedTurf: false
       version: 2
       data:
         tiles:
@@ -1214,7 +1215,7 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
-- proto: ClothingHeadHatPirateTricord
+- proto: ClothingHeadHatPirateTricorn
   entities:
   - uid: 180
     components:

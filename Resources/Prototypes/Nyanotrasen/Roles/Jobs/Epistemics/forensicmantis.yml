@@ -22,10 +22,12 @@
           inverted: true
           traits:
             - Pacifist
-        - !type:CharacterTraitRequirement
-          inverted: true
-          traits:
-            - ShadowkinBlackeye
+    - !type:CharacterEmployerRequirement
+      employers:
+      - NanoTrasen
+      - ZengHuPharmaceuticals
+    - !type:CharacterItemGroupRequirement
+      group: TraitsCasterType
   startingGear: ForensicMantisGear
   icon: "JobIconForensicMantis"
   supervisors: job-supervisors-rd
@@ -40,13 +42,17 @@
     components:
     - type: Psionic
       powerSlots: 2
+      baselinePowerCost: 75
+      nextPowerCost: 75
+      removable: false
+      powerPool: PsychoHistorianPowerPool
   - !type:AddComponentSpecial
     components:
     - type: InnatePsionicPowers
       powersToAdd:
         - MetapsionicPower
         - TelepathyPower
-        - AssayPower
+        - MantisSummonBlackBlade # Dear Maintainer, say NOTHING about this.
 
 - type: startingGear
   id: ForensicMantisGear

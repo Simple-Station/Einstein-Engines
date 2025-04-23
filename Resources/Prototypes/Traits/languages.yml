@@ -1,10 +1,12 @@
 - type: trait
   id: SignLanguage
   category: TraitsSpeechLanguages
-  points: -2
+  points: -1
+  # slots: 1
+  # itemGroupSlots: 0
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesBasic
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -20,13 +22,19 @@
   id: SolCommon
   category: TraitsSpeechLanguages
   points: 0
+  # slots: 1
+  # itemGroupSlots: 0
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesBasic
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
         - Human
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Solarian
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -38,9 +46,11 @@
   id: Tradeband
   category: TraitsSpeechLanguages
   points: 0
+  # slots: 1
+  # itemGroupSlots: 0
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesBasic
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -56,9 +66,11 @@
   id: Freespeak
   category: TraitsSpeechLanguages
   points: 0
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesBasic
+  # slots: 1
+  # itemGroupSlots: 0
+  # requirements:
+  #   - !type:CharacterItemGroupRequirement
+  #     group: TraitsLanguagesBasic
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -70,9 +82,15 @@
   id: Elyran
   category: TraitsSpeechLanguages
   points: 0
+  # slots: 1
+  # itemGroupSlots: 0
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesBasic
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Elyran
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -84,9 +102,15 @@
   id: ValyrianStandard
   category: TraitsSpeechLanguages
   points: -1
+  # slots: 1
+  # itemGroupSlots: 0
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesBasic
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Valyrian
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -95,15 +119,37 @@
         - ValyrianStandard
 
 - type: trait
+  id: NovuNederic
+  category: TraitsSpeechLanguages
+  points: 0
+  # slots: 1
+  # itemGroupSlots: 0
+  requirements:
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Nederlandic
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - NovuNederic
+      languagesUnderstood:
+        - NovuNederic
+
+- type: trait
   id: Azaziba
   category: TraitsSpeechLanguages
   points: -1
+  # slots: 1
+  # itemGroupSlots: 0
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
         - Reptilian
-    - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesBasic
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:

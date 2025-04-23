@@ -32,7 +32,7 @@ internal sealed class FreeProberRule : StationEventSystem<FreeProberRuleComponen
         var query = EntityQueryEnumerator<GlimmerSourceComponent>();
         while (query.MoveNext(out var glimmerSource, out var glimmerSourceComponent))
         {
-            if (glimmerSourceComponent.AddToGlimmer && glimmerSourceComponent.Active)
+            if (glimmerSourceComponent.GlimmerPerSecond >= 0 && glimmerSourceComponent.Active)
             {
                 PossibleSpawns.Add(glimmerSource);
             }

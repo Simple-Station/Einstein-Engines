@@ -113,7 +113,7 @@
   parent: Kudzu
   components:
     - type: Sprite
-      drawdepth: FloorObjects
+      drawdepth: HighFloorObjects
       sprite: Objects/Misc/kudzuflower.rsi
       state: kudzu_11
     - type: Kudzu
@@ -311,5 +311,13 @@
       chance: 0.45
       prototypes:
         - ShadowBasaltRandom
+    - type: TimedDespawn
+      lifetime: 30
+
+- type: entity
+  name: Temporary haze
+  id: ShadowKudzuTemp
+  parent: ShadowKudzuWeak
+  components:
     - type: TimedDespawn
       lifetime: 30

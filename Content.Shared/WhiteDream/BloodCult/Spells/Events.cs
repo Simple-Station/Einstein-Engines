@@ -62,6 +62,9 @@ public sealed partial class SummonEquipmentEvent : InstantActionEvent, ISpeakSpe
     [DataField]
     public bool Force { get; set; } = true;
 
+    [DataField]
+    public InGameICChatType InvokeChatType = InGameICChatType.Whisper;
+
     public InGameICChatType ChatType => InGameICChatType.Whisper;
 }
 

@@ -14,7 +14,6 @@
         - Photophobia
         - Nearsighted
         - CyberEyes
-        - FlareShieldingModule
         - SecurityEyesModule
         - MedicalEyesModule
         - DiagnosticEyesModule
@@ -41,7 +40,6 @@
       traits:
         - Blindness
         - CyberEyes
-        - FlareShieldingModule
         - SecurityEyesModule
         - MedicalEyesModule
         - DiagnosticEyesModule
@@ -57,7 +55,7 @@
 - type: trait
   id: Narcolepsy
   category: Mental
-  points: 2
+  points: 6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -78,7 +76,7 @@
 - type: trait
   id: Pacifist
   category: Mental
-  points: 6
+  points: 8
   functions:
     - !type:TraitAddComponent
       components:
@@ -101,7 +99,7 @@
 - type: trait
   id: Muted
   category: Mental
-  points: 4
+  points: 6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -129,6 +127,10 @@
       jobs:
         - Borg
         - MedicalBorg
+    - !type:CharacterLifepathRequirement
+      inverted: true
+      lifepaths:
+      - Clone
   functions:
     - !type:TraitAddComponent
       components:
@@ -136,6 +138,8 @@
 
 - type: trait
   id: FrontalLisp
+  slots: 0
+  itemGroupSlots: 0
   category: TraitsSpeechAccents
   requirements:
     - !type:CharacterJobRequirement
@@ -175,7 +179,7 @@
 - type: trait
   id: BadKnees
   category: Physical
-  points: 3
+  points: 5
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
@@ -199,13 +203,14 @@
 - type: trait
   id: Sluggish
   category: Physical
-  points: 3
+  points: 5
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - ParkourTraining
         - SnailPaced
+        - WheelchairBound
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -221,13 +226,14 @@
 - type: trait
   id: SnailPaced
   category: Physical
-  points: 5
+  points: 8
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - ParkourTraining
         - Sluggish
+        - WheelchairBound
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -243,7 +249,7 @@
 - type: trait
   id: BloodDeficiency
   category: Physical
-  points: 5
+  points: 6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -265,7 +271,7 @@
 - type: trait
   id: Hemophilia
   category: Physical
-  points: 2
+  points: 4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -302,7 +308,6 @@
       traits:
         - Blindness
         - CyberEyes
-        - FlareShieldingModule
         - SecurityEyesModule
         - MedicalEyesModule
         - DiagnosticEyesModule
@@ -320,7 +325,7 @@
 - type: trait
   id: Clumsy
   category: Physical
-  points: 1
+  points: 4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true

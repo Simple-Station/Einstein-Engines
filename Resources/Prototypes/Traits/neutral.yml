@@ -1,5 +1,7 @@
 - type: trait
   id: PirateAccent
+ # slots: 0
+ # itemGroupSlots: 0
   category: TraitsSpeechAccents
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -12,7 +14,8 @@
 - type: trait
   id: Accentless
   category: TraitsSpeechAccents
-  points: -1
+ # slots: 0
+ # itemGroupSlots: 0
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -33,6 +36,8 @@
 
 - type: trait
   id: Southern
+ # slots: 0
+ # itemGroupSlots: 0
   category: TraitsSpeechAccents
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -41,9 +46,11 @@
     - !type:TraitAddComponent
       components:
         - type: SouthernAccent
-        
+
 - type: trait
   id: GermanAccent
+ # slots: 0
+ # itemGroupSlots: 0
   category: TraitsSpeechAccents
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -52,9 +59,11 @@
     - !type:TraitAddComponent
       components:
         - type: GermanAccent
-        
+
 - type: trait
   id: RussianAccent
+ # slots: 0
+ # itemGroupSlots: 0
   category: TraitsSpeechAccents
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -63,9 +72,11 @@
     - !type:TraitAddComponent
       components:
         - type: RussianAccent
-        
+
 - type: trait
   id: FrenchAccent
+ # slots: 0
+ # itemGroupSlots: 0
   category: TraitsSpeechAccents
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -74,9 +85,11 @@
     - !type:TraitAddComponent
       components:
         - type: FrenchAccent
-        
+
 - type: trait
   id: ItalianAccent
+ # slots: 0
+ # itemGroupSlots: 0
   category: TraitsSpeechAccents
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -85,9 +98,11 @@
     - !type:TraitAddComponent
       components:
         - type: MobsterAccent
-        
+
 - type: trait
   id: SpanishAccent
+ # slots: 0
+ # itemGroupSlots: 0
   category: TraitsSpeechAccents
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -99,6 +114,8 @@
 
 - type: trait
   id: SkeletonAccent
+ # slots: 0
+ # itemGroupSlots: 0
   category: TraitsSpeechAccents
   requirements:
     - !type:CharacterItemGroupRequirement

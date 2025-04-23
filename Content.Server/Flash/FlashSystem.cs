@@ -4,6 +4,7 @@ using Content.Shared.Flash.Components;
 using Content.Server.Light.EntitySystems;
 using Content.Server.Popups;
 using Content.Server.Stunnable;
+using Content.Shared._Goobstation.Flashbang;
 using Content.Shared.Charges.Components;
 using Content.Shared.Charges.Systems;
 using Content.Shared.Eye.Blinding.Components;
@@ -12,7 +13,6 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
-using Content.Shared.Physics;
 using Content.Shared.Tag;
 using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee.Events;
@@ -23,7 +23,6 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using InventoryComponent = Content.Shared.Inventory.InventoryComponent;
 using Content.Shared.Traits.Assorted.Components;
-using Robust.Shared.Random;
 using Content.Shared.Eye.Blinding.Systems;
 
 namespace Content.Server.Flash
@@ -151,7 +150,8 @@ namespace Content.Server.Flash
 
             if (stunDuration != null)
             {
-                _stun.TryParalyze(target, stunDuration.Value, true);
+                // stunmeta
+                _stun.TryKnockdown(target, stunDuration.Value, true);
             }
             else
             {
@@ -186,6 +186,9 @@ namespace Content.Server.Flash
 
                 // They shouldn't have flash removed in between right?
                 Flash(entity, user, source, duration, slowTo, displayPopup, flashableQuery.GetComponent(entity));
+
+                var distance = (mapPosition.Position - _transform.GetMapCoordinates(entity).Position).Length(); // Goobstation
+                RaiseLocalEvent(source, new AreaFlashEvent(range, distance, entity)); // Goobstation
             }
 
             _audio.PlayPvs(sound, source, AudioParams.Default.WithVolume(1f).WithMaxDistance(3f));

@@ -239,6 +239,9 @@ namespace Content.Server.Hands.Systems
 
                 var targEv = new VirtualItemThrownEvent(virt.BlockingEntity, player, throwEnt, direction);
                 RaiseLocalEvent(virt.BlockingEntity, targEv);
+
+                if (userEv.Cancelled || targEv.Cancelled)
+                    return false;
             }
             // Goobstation end
 

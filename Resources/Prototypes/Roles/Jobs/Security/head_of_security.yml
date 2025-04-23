@@ -13,6 +13,11 @@
         - Blindness
         - Pacifist
         - BrittleBoneDisease
+    - !type:CharacterEmployerRequirement
+      employers:
+      - ZavodskoiInterstellar
+      - PMCG
+      - NanoTrasen
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"

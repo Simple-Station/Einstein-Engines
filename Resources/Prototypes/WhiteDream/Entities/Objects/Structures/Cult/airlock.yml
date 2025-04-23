@@ -46,6 +46,7 @@
     deconstructable: false
   - type: RunedDoor
   - type: Repulse
+    forceMultiplier: 300 # This datafield has an awful name, it's actually the amount of force in Newtons.
   - type: RepulseOnTouch
   - type: PlacementReplacement
     key: walls

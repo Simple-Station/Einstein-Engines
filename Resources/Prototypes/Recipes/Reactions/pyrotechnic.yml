@@ -62,6 +62,15 @@
     Ash: 1
 
 - type: reaction
+  id: AshArtiplates
+  minTemp: 520
+  reactants:
+    Artiplates:
+      amount: 1
+  products:
+    Ash: 1
+
+- type: reaction
   id: WeldingFuelBreakdown
   source: true
   requiredMixerCategories:

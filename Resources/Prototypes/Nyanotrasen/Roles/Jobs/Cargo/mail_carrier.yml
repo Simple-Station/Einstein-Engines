@@ -10,6 +10,11 @@
   - Cargo
   - Maintenance
   - Mail
+  requirements:
+    - !type:CharacterEmployerRequirement
+      employers:
+      - OrionExpress
+      - NanoTrasen
 
 - type: startingGear
   id: MailCarrierGear

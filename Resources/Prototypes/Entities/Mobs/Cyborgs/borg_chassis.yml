@@ -1,5 +1,90 @@
 - type: entity
+  id: BorgChassisSelectable
+  parent: BaseBorgChassisNT
+  components:
+  - type: Sprite
+    layers:
+    - state: robot
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: robot_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: robot_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  - type: BorgChassis
+    # Default borg can take no modules until selected type.
+    maxModules: 0
+    hasMindState: robot_e
+    noMindState: robot_e_r
+  - type: BorgTransponder
+    sprite:
+      sprite: Mobs/Silicon/chassis.rsi
+      state: robot
+    name: cyborg
+  - type: InteractionPopup
+    interactSuccessString: petting-success-generic-cyborg
+    interactFailureString: petting-failure-generic-cyborg
+  - type: BorgSwitchableType
+    inherentRadioChannels:
+    - Common
+    - Binary
+
+- type: entity
   id: BorgChassisGeneric
+  parent: BorgChassisSelectable
+  name: generic cyborg
+  suffix: type picked
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: generic
+
+- type: entity
+  id: BorgChassisMining
+  parent: BorgChassisSelectable
+  name: salvage cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: mining
+
+- type: entity
+  id: BorgChassisEngineer
+  parent: BorgChassisSelectable
+  name: engineer cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: engineering
+
+- type: entity
+  id: BorgChassisJanitor
+  parent: BorgChassisSelectable
+  name: janitor cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: janitor
+
+- type: entity
+  id: BorgChassisService
+  parent: BorgChassisSelectable
+  name: service cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: service
+
+- type: entity
+  id: BorgChassisMedical
+  parent: BorgChassisSelectable
+  name: medical cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: medical
+
+# Robotics Made
+
+- type: entity
+  id: BorgChassisGenericBare
   parent: BaseBorgChassisNT
   components:
   - type: Sprite
@@ -31,7 +116,7 @@
     speechVerb: Robotic
 
 - type: entity
-  id: BorgChassisMining
+  id: BorgChassisMiningBare
   parent: BaseBorgChassisNT
   name: salvage cyborg
   components:
@@ -55,7 +140,7 @@
       movement:
         state: miner
   - type: BorgChassis
-    maxModules: 4
+    maxModules: 6
     moduleWhitelist:
       tags:
       - BorgModuleGeneric
@@ -87,7 +172,7 @@
     templateId: borgTall
 
 - type: entity
-  id: BorgChassisEngineer
+  id: BorgChassisEngineerBare
   parent: BaseBorgChassisNT
   name: engineer cyborg
   components:
@@ -103,7 +188,7 @@
       map: ["light"]
       visible: false
   - type: BorgChassis
-    maxModules: 4
+    maxModules: 7
     moduleWhitelist:
       tags:
       - BorgModuleGeneric
@@ -137,7 +222,7 @@
     laws: Engineer
 
 - type: entity
-  id: BorgChassisJanitor
+  id: BorgChassisJanitorBare
   parent: BaseBorgChassisNT
   name: janitor cyborg
   components:
@@ -161,7 +246,7 @@
       movement:
         state: janitor
   - type: BorgChassis
-    maxModules: 4
+    maxModules: 5
     moduleWhitelist:
       tags:
       - BorgModuleGeneric
@@ -195,7 +280,7 @@
     laws: Janitor
 
 - type: entity
-  id: BorgChassisMedical
+  id: BorgChassisMedicalBare
   parent: BaseBorgChassisNT
   name: medical cyborg
   components:
@@ -256,6 +341,12 @@
     actions:
     - ActionFabricateLollipop
     - ActionFabricateGumball
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+  - type: ShowHealthIcons
+    damageContainers:
+    - Biological
   - type: SiliconLawProvider
     laws: Medical
   - type: SurgeryTarget # Shitmed
@@ -268,8 +359,8 @@
       path: /Audio/Ambience/Objects/periodic_beep.ogg
 
 - type: entity
-  id: BorgChassisService
-  parent: BaseBorgChassisNT
+  id: BorgChassisServiceBare
+  parent: BorgChassisSelectable
   name: service cyborg
   components:
   - type: Sprite
@@ -284,7 +375,7 @@
       map: ["light"]
       visible: false
   - type: BorgChassis
-    maxModules: 4
+    maxModules: 6
     moduleWhitelist:
       tags:
       - BorgModuleGeneric
@@ -332,8 +423,6 @@
           shader: unshaded
           map: ["light"]
           visible: false
-    - type: PointLight
-      color: "#dd200b"
     - type: BorgChassis
       maxModules: 3
       moduleWhitelist:
@@ -343,8 +432,11 @@
           - BorgModuleSyndicateAssault
       hasMindState: synd_sec_e
       noMindState: synd_sec
-    - type: Construction
-      node: syndicateassault
+    - type: InteractionPopup
+      interactSuccessString: petting-success-syndicate-cyborg
+      interactFailureString: petting-failure-syndicate-cyborg
+      interactSuccessSound:
+        path: /Audio/Ambience/Objects/periodic_beep.ogg
 
 - type: entity
   id: BorgChassisSyndicateMedical
@@ -372,8 +464,18 @@
           - BorgModuleSyndicate
       hasMindState: synd_medical_e
       noMindState: synd_medical
-    - type: Construction
-      node: syndicatemedical
+    - type: ShowHealthBars
+    - type: InteractionPopup
+      interactSuccessString: petting-success-syndicate-cyborg
+      interactFailureString: petting-failure-syndicate-cyborg
+      interactSuccessSound:
+        path: /Audio/Ambience/Objects/periodic_beep.ogg
+    - type: SolutionScanner
+    - type: FootstepModifier
+      footstepSoundCollection:
+        collection: FootstepHoverBorg
+        params:
+          volume: -6
 
 - type: entity
   id: BorgChassisSyndicateSaboteur
@@ -401,5 +503,12 @@
           - BorgModuleSyndicate
       hasMindState: synd_engi_e
       noMindState: synd_engi
-    - type: Construction
-      node: syndicatesaboteur
+    - type: ShowHealthBars
+      damageContainers:
+      - Inorganic
+      - Silicon
+    - type: InteractionPopup
+      interactSuccessString: petting-success-syndicate-cyborg
+      interactFailureString: petting-failure-syndicate-cyborg
+      interactSuccessSound:
+        path: /Audio/Ambience/Objects/periodic_beep.ogg

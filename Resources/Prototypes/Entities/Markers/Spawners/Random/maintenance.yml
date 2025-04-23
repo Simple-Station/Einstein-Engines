@@ -108,7 +108,7 @@
         - !type:EntSelector
           id: ClothingOuterCoatPirate
         - !type:EntSelector
-          id: ClothingHeadHatPirateTricord
+          id: ClothingHeadHatPirateTricorn
       - !type:EntSelector
         id: ClothingHeadHatTophat
       - !type:EntSelector
@@ -147,6 +147,8 @@
         id: ClothingUniformJumpsuitLoungewear
       - !type:EntSelector
         id: ClothingHeadHatCowboyRed
+      - !type:EntSelector
+        id: Wristwatch
     # Uncommon Group
     - !type:GroupSelector
       weight: 23
@@ -280,6 +282,8 @@
         id: CigarGold
       - !type:EntSelector
         id: ClothingUniformJumpsuitFamilyGuy
+      - !type:EntSelector
+        id: WristwatchGold
 
 - type: entity
   name: Maint Loot Spawner

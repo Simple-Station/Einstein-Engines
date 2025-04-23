@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseMob
+  parent: [BaseMob, StripableInventoryBase]
   id: BaseBorgChassis
   name: cyborg
   description: A man-machine hybrid that assists in station activity. They love being asked to state their laws over and over.
@@ -69,6 +69,9 @@
         type: BorgBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+      # Only used for NT borgs that can switch type, defined here to avoid copy-pasting the rest of this component.
+      enum.BorgSwitchableTypeUiKey.SelectBorgType:
+        type: BorgSelectTypeUserInterface
   - type: ActivatableUI
     key: enum.BorgUiKey.Key
   - type: SiliconLawBound
@@ -80,9 +83,6 @@
   - type: SiliconLawProvider
     laws: Asimov
   - type: IonStormTarget
-  - type: Strippable
-  - type: StationAiVision
-  - type: InventorySlots
   - type: Inventory
     templateId: borg
   - type: Hands
@@ -105,6 +105,11 @@
     doAfterDelay: 10
     allowSelfRepair: false
   - type: BorgChassis
+  - type: LockingWhitelist
+    blacklist:
+      components:
+      - BorgChassis
+      - RoboticsConsole
   - type: WiresPanel
   - type: ActivatableUIRequiresPanel
   - type: NameIdentifier
@@ -119,7 +124,10 @@
     cellSlotId: cell_slot
     fitsInCharger: true
   - type: ItemToggle
+    onActivate: false # You should not be able to turn off a borg temporarily.
+    activated: false # gets activated when a mind is added
     onUse: false # no item-borg toggling sorry
+  - type: ItemTogglePointLight
   - type: AccessToggle
   # TODO: refactor movement to just be based on toggle like speedboots but for the boots themselves
   # TODO: or just have sentient speedboots be fast idk
@@ -137,6 +145,7 @@
     - Stun
     - KnockedDown
     - SlowedDown
+    - Flashed
   - type: TypingIndicator
     proto: robot
   - type: Speech
@@ -151,16 +160,19 @@
       collection: FootstepBorg
   - type: Construction
     graph: Cyborg
+    node: cyborg
     containers:
     - part-container
     - cell_slot
   - type: Lock
     locked: true
+    breakOnEmag: false
+    unlockOnClick: false
   - type: ActivatableUIRequiresLock
   - type: LockedWiresPanel
-  - type: Flashable
   - type: Damageable
     damageContainer: Silicon
+    damageModifierSet: Silicon #Goobstation - Iondamage
   - type: Destructible
     thresholds:
     - trigger:
@@ -282,14 +294,21 @@
   - type: NpcFactionMember
     factions:
     - NanoTrasen
+  - type: SiliconLawProvider
+    laws: Asimov
   - type: Access
     enabled: false
     groups:
     - AllAccessBorg
+    tags:
+    - Borg
   - type: AccessReader
     access: [["Command"], ["Research"]]
   - type: ShowJobIcons
   - type: ShowMindShieldIcons
+  - type: InteractionPopup
+    interactSuccessSound:
+      path: /Audio/Ambience/Objects/periodic_beep.ogg
 
 - type: entity
   id: BaseBorgChassisSyndicate
@@ -323,3 +342,10 @@
   - type: Vocal
     sounds:
       Unsexed: UnisexSiliconSyndicate
+  - type: PointLight
+    color: "#dd200b"
+  - type: Damageable 
+    damageContainer: Silicon
+    damageModifierSet: SiliconProtected 
+  - type: ExplosionResistance
+    damageCoefficient: 0.5

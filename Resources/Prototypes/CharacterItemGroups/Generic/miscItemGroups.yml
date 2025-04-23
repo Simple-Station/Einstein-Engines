@@ -92,6 +92,84 @@
       id: LoadoutItemBoxSurvivalMedical
     - type: loadout
       id: LoadoutItemBoxHug
+
+- type: characterItemGroup
+  id: LoadoutWritables
+  maxItems: 2
+  items:
+    - type: loadout
+      id: LoadoutItemPapers
+    - type: loadout
+      id: LoadoutItemBoxFolderGrey
+    - type: loadout
+      id: LoadoutBookRandom
+    - type: loadout
+      id: LoadoutPen
+    - type: loadout
+      id: LuxuryPen
+
+- type: characterItemGroup
+  id: LoadoutPets
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutItemPetMouse
+    - type: loadout
+      id: LoadoutItemPetHamster
+    - type: loadout
+      id: LoadoutItemPetMothroach
+    - type: loadout
+      id: LoadoutItemPetSquackroach
+    - type: loadout
+      id: LoadoutItemPetCockroach
+    - type: loadout
+      id: LoadoutItemPetGoldfish
+
+- type: characterItemGroup
+  id: LoadoutCards
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutItemBlackDeck
+    - type: loadout
+      id: LoadoutItemNTDeck
+
+- type: characterItemGroup
+  id: LoadoutPlushie
+  maxItems: 1
+  items:
+    - type: loadout
+      id: PlushieSharkBlue
+    - type: loadout
+      id: PlushieSharkGrey
+    - type: loadout
+      id: PlushieLizard
+    - type: loadout
+      id: PlushieArachind
+    - type: loadout
+      id: PlushieMoth
+    - type: loadout
+      id: PlushieHampter
+    - type: loadout
+      id: PlushieRouny
+    - type: loadout
+      id: PlushieCarp
+    - type: loadout
+      id: PlushieSlime
+    - type: loadout
+      id: PlushieVox
+    - type: loadout
+      id: PlushieHuman
+    - type: loadout
+      id: PlushieArachne
+    - type: loadout
+      id: PlushieVulp
+    - type: loadout
+      id: PlushieShadowkin
+
+- type: characterItemGroup
+  id: LoadoutMedkits
+  items:
     - type: loadout
       id: LoadoutMedkitFilled
     - type: loadout
@@ -108,38 +186,3 @@
       id: LoadoutMedkitAdvancedFilled
     - type: loadout
       id: LoadoutMedkitCombatFilled
-
-- type: characterItemGroup
-  id: LoadoutWritables
-  maxItems: 2
-  items:
-    - type: loadout
-      id: LoadoutItemPapers
-    - type: loadout
-      id: LoadoutItemBoxFolderGrey
-    - type: loadout
-      id: LoadoutBookRandom
-    - type: loadout
-      id: LoadoutPen
-
-- type: characterItemGroup
-  id: LoadoutPets
-  maxItems: 1
-  items:
-    - type: loadout
-      id: LoadoutItemPetMouse
-    - type: loadout
-      id: LoadoutItemPetHamster
-    - type: loadout
-      id: LoadoutItemPetMothroach
-    - type: loadout
-      id: LoadoutItemPetCockroach
-
-- type: characterItemGroup
-  id: LoadoutCards
-  maxItems: 1
-  items:
-    - type: loadout
-      id: LoadoutItemBlackDeck
-    - type: loadout
-      id: LoadoutItemNTDeck
