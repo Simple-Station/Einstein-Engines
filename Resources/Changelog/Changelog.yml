@@ -15318,3 +15318,10 @@ Entries:
   id: 7175
   time: '2025-04-19T01:21:53.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2263
+- author: Orion-416
+  changes:
+    - type: Fix
+      message: Fixed an issue where Combat Magboots would cause a test fail.
+  id: 7176
+  time: '2025-04-23T02:56:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2301
