@@ -15,8 +15,8 @@ using NpgsqlTypes;
 namespace Content.Server.Database.Migrations.Postgres
 {
     [DbContext(typeof(PostgresServerDbContext))]
-    [Migration("20250420145413_hullrotBankFaction")]
-    partial class hullrotBankFaction
+    [Migration("20250423174908_hullrotDbPort")]
+    partial class hullrotDbPort
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -842,6 +842,10 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("backpack");
 
+                    b.Property<long>("BankBalance")
+                        .HasColumnType("bigint")
+                        .HasColumnName("bank_balance");
+
                     b.Property<string>("CharacterName")
                         .IsRequired()
                         .HasColumnType("text")
@@ -884,6 +888,11 @@ namespace Content.Server.Database.Migrations.Postgres
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("facial_hair_name");
+
+                    b.Property<string>("Faction")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("faction");
 
                     b.Property<string>("FlavorText")
                         .IsRequired()
