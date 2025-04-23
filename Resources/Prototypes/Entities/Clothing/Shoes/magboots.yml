@@ -241,6 +241,9 @@
         Slash: 0.95
         Piercing: 0.95
         Heat: 0.95
+  - type: ContainerContainer
+    containers:
+      item: !type:ContainerSlot
 
 - type: entity
   id: ActionToggleMagboots
