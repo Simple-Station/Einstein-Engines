@@ -8,7 +8,7 @@
   price: 8000
   category: Small
   group: Scrap
-  Path: /Maps/_Crescent/Shuttles/Civilian/warthog.yml
+  path: /Maps/_Crescent/Shuttles/Civilian/warthog.yml
 
 - type: gameMap
   id: Warthog

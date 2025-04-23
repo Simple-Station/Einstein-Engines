@@ -5,7 +5,7 @@
   playTimeTracker: JobMontagneSRM
   requirements:
     - !type:SpeciesRequirement
-      Species:
+      species:
         - Human
     - !type:CharacterOverallTimeRequirement
       Min: 40000

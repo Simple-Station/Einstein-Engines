@@ -4,7 +4,7 @@
   description: job-description-executive
   playTimeTracker: JobExecutiveSHI
   requirements:
-    - !type:WhitelistRequirement
+    - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
       Min: 36000
     - !type:FactionRequirement

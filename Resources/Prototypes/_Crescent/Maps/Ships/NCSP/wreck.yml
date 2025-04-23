@@ -8,7 +8,7 @@
   price: 14000
   category: Small
   group: None
-  Path: /Maps/_Crescent/Shuttles/NCSP/wreck.yml
+  path: /Maps/_Crescent/Shuttles/NCSP/wreck.yml
 
 - type: gameMap
   id: Wreck

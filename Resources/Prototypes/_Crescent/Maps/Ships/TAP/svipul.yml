@@ -8,7 +8,7 @@
   price: 15000
   category: Small
   group: None
-  Path: /Maps/_Crescent/Shuttles/TAP/svipul.yml
+  path: /Maps/_Crescent/Shuttles/TAP/svipul.yml
 
 - type: gameMap
   id: Svipul

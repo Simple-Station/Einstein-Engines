@@ -5,7 +5,7 @@
   playTimeTracker: JobSanitatATH
   requirements:
     - !type:SpeciesRequirement
-      Species:
+      species:
         - Human
         - Reptilian
         - Oni

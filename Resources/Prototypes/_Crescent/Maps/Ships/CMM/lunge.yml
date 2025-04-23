@@ -5,7 +5,7 @@
   price: 55000
   category: Small
   group: None
-  Path: /Maps/_Crescent/Shuttles/CMM/lunge.yml
+  path: /Maps/_Crescent/Shuttles/CMM/lunge.yml
 
 - type: gameMap
   id: Lunge

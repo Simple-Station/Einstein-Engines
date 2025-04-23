@@ -4,9 +4,9 @@
   description: job-description-overseer
   playTimeTracker: JobOverseerSRM
   requirements:
-    - !type:WhitelistRequirement
+    - !type:CharacterWhitelistRequirement
     - !type:SpeciesRequirement
-      Species:
+      species:
         - Human
     - !type:FactionRequirement
       factionID: "SRM"

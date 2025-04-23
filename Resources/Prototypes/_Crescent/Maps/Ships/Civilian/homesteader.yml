@@ -8,7 +8,7 @@
   price: 37500
   category: Small
   group: Civilian
-  Path: /Maps/_Crescent/Shuttles/Civilian/homesteader.yml
+  path: /Maps/_Crescent/Shuttles/Civilian/homesteader.yml
 
 - type: gameMap
   id: Homesteader

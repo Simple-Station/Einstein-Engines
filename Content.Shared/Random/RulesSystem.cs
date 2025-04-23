@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared._Crescent.SpaceBiomes;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Whitelist;
@@ -236,6 +237,15 @@ public sealed class RulesSystem : EntitySystem
                     }
 
                     break;
+                }
+                case InSpaceBiomeRule inSpaceBiome:
+                {
+                    if (TryComp<SpaceBiomeTrackerComponent>(uid, out var tracker) && tracker.Biome == inSpaceBiome.Biome)
+                    {
+                        break;
+                    }
+
+                    return false;
                 }
                 default:
                     throw new NotImplementedException();

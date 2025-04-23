@@ -8,7 +8,7 @@
   price: 15000
   category: Small
   group: None
-  Path: /Maps/_Crescent/Shuttles/NCSP/piranha.yml
+  path: /Maps/_Crescent/Shuttles/NCSP/piranha.yml
 
 - type: gameMap
   id: Piranha

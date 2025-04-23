@@ -7,7 +7,7 @@
     - !type:FactionRequirement
       factionID: "TAP"
     - !type:SpeciesRequirement
-      Species:
+      species:
         - Moth
         - Arachnid
   weight: 53

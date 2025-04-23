@@ -7,7 +7,7 @@
     - !type:CharacterOverallTimeRequirement
       Min: 500
     - !type:SpeciesRequirement
-      Species:
+      species:
         - Human
     - !type:FactionRequirement
       factionID: "DSM"

@@ -8,7 +8,7 @@
   price: 40000
   category: Small
   group: None
-  Path: /Maps/_Crescent/Shuttles/NCSP/rattler.yml
+  path: /Maps/_Crescent/Shuttles/NCSP/rattler.yml
 
 - type: gameMap
   id: Rattler

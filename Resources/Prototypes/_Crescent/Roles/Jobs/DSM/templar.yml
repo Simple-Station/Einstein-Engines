@@ -7,11 +7,10 @@
     - !type:CharacterOverallTimeRequirement
       Min: 55000
     - !type:SpeciesRequirement
-      Species:
+      species:
         - Human
     - !type:SexRequirement
-      allowed:
-        - Male
+      sex: Male
     - !type:FactionRequirement
       factionID: "DSM"
   weight: 22

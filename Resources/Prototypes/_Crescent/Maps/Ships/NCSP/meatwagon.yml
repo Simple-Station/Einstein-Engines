@@ -8,7 +8,7 @@
   price: 31000
   category: Medium
   group: None
-  Path: /Maps/_Crescent/Shuttles/NCSP/meatwagon.yml
+  path: /Maps/_Crescent/Shuttles/NCSP/meatwagon.yml
 
 - type: gameMap
   id: Meatwagon

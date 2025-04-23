@@ -11,9 +11,9 @@
   supervisors: job-supervisors-imperial
   canBeAntag: false
   requirements:
-    - !type:WhitelistRequirement
+    - !type:CharacterWhitelistRequirement
     - !type:SpeciesRequirement
-      Species:
+      species:
         - Human
     - !type:CharacterOverallTimeRequirement
       Min: 36000

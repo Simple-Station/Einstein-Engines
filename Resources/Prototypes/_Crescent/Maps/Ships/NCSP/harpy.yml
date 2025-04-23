@@ -8,7 +8,7 @@
   price: 60000
   category: Medium
   group: None
-  Path: /Maps/_Crescent/Shuttles/NCSP/harpy.yml
+  path: /Maps/_Crescent/Shuttles/NCSP/harpy.yml
 
 - type: gameMap
   id: Harpy

@@ -5,7 +5,7 @@
   price: 29500
   category: Small
   group: None
-  Path: /Maps/_Crescent/Shuttles/DSM/imp.yml
+  path: /Maps/_Crescent/Shuttles/DSM/imp.yml
 
 - type: gameMap
   id: Imp

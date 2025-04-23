@@ -5,7 +5,7 @@
   playTimeTracker: JobSoldatATH
   requirements:
     - !type:SpeciesRequirement
-      Species:
+      species:
         - Human
         - Reptilian
         - Oni

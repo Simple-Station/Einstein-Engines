@@ -8,7 +8,7 @@
   price: 500000
   category: Large
   group: None
-  Path: /Maps/_Crescent/Shuttles/NCWL/zhipov.yml
+  path: /Maps/_Crescent/Shuttles/NCWL/zhipov.yml
 
 - type: gameMap
   id: Zhipov

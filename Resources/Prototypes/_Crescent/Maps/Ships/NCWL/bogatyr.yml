@@ -8,7 +8,7 @@
   price: 150000
   category: Small
   group: None
-  Path: /Maps/_Crescent/Shuttles/NCWL/bogatyr.yml
+  path: /Maps/_Crescent/Shuttles/NCWL/bogatyr.yml
 
 - type: gameMap
   id: Bogatyr

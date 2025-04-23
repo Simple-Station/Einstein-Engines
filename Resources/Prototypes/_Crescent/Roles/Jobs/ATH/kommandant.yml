@@ -4,9 +4,9 @@
   description: job-description-kommandant
   playTimeTracker: JobKommandantATH
   requirements:
-    - !type:WhitelistRequirement
+    - !type:CharacterWhitelistRequirement
     - !type:SpeciesRequirement
-      Species:
+      species:
         - Human
     - !type:FactionRequirement
       factionID: "ATH"

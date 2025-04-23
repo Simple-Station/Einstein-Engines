@@ -5,7 +5,7 @@
   playTimeTracker: JobAcolyteSRM
   requirements:
     - !type:SpeciesRequirement
-      Species:
+      species:
         - Human
     - !type:FactionRequirement
       factionID: "SRM"

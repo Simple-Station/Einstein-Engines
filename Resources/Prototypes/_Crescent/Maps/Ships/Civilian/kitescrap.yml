@@ -8,7 +8,7 @@
   price: 22500
   category: Small
   group: Scrap
-  Path: /Maps/_Crescent/Shuttles/Civilian/kitescrap.yml
+  path: /Maps/_Crescent/Shuttles/Civilian/kitescrap.yml
 
 - type: gameMap
   id: KiteScrap

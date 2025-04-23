@@ -8,7 +8,7 @@
   price: 60000
   category: Medium
   group: None
-  Path: /Maps/_Crescent/Shuttles/NCWL/hind.yml
+  path: /Maps/_Crescent/Shuttles/NCWL/hind.yml
 
 - type: gameMap
   id: Hind

@@ -8,7 +8,7 @@
   price: 12000
   category: Small
   group: None
-  Path: /Maps/_Crescent/Shuttles/NCSP/scuttlefish.yml
+  path: /Maps/_Crescent/Shuttles/NCSP/scuttlefish.yml
 
 - type: gameMap
   id: Scuttlefish

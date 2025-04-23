@@ -4,7 +4,7 @@
   description: job-description-kommissar
   playTimeTracker: JobKommissarNCWL
   requirements:
-    - !type:WhitelistRequirement
+    - !type:CharacterWhitelistRequirement
     - !type:FactionRequirement
       factionID: "NCWL"
   weight: 55
@@ -12,7 +12,7 @@
   alwaysUseSpawner: true
   icon: "JobIconCommissar"
   requireAdminNotify: true
-  supervisors: job-supervisors-highcomm 
+  supervisors: job-supervisors-highcomm
   canBeAntag: false
   special:
   - !type:AddComponentSpecial

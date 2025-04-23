@@ -5,7 +5,7 @@
   price: 2500000
   category: Small
   group: None
-  Path: /Maps/_Crescent/Shuttles/DSM/royal.yml
+  path: /Maps/_Crescent/Shuttles/DSM/royal.yml
 
 - type: gameMap
   id: Royal

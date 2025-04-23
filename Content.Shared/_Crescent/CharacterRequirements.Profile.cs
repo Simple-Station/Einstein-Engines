@@ -45,3 +45,33 @@ public sealed partial class FactionRequirement : CharacterRequirement
     }
 
 }
+
+[UsedImplicitly]
+[Serializable, NetSerializable]
+public sealed partial class WealthRequirement : CharacterRequirement
+{
+    [DataField("below")] public int below = int.MaxValue;
+    [DataField("above")] public int above = 0;
+
+    public override bool IsValid(JobPrototype job,
+        HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes,
+        bool whitelisted,
+        IPrototype prototype,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager,
+        out string? reason,
+        int depth = 0,
+        MindComponent? mind = null)
+    {
+        if (profile.BankBalance > above || profile.BankBalance < below)
+        {
+            reason = $"Your bank balance must be between {below} and {above} !";
+            return false;
+        }
+
+        reason = null;
+        return true;
+    }
+}

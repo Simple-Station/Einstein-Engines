@@ -4,11 +4,11 @@
   description: job-description-prophet
   playTimeTracker: JobProphetTAP
   requirements:
-    - !type:WhitelistRequirement
+    - !type:CharacterWhitelistRequirement
     - !type:FactionRequirement
       factionID: "TAP"
     - !type:SpeciesRequirement
-      Species:
+      species:
         - Moth
   weight: 55
   startingGear: ProphetGear

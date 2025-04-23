@@ -4,9 +4,9 @@
   description: job-description-leutnant
   playTimeTracker: JobLeutnantATH
   requirements:
-    - !type:WhitelistRequirement
+    - !type:CharacterWhitelistRequirement
     - !type:SpeciesRequirement
-      Species:
+      species:
         - Human
         - Reptilian
         - Oni

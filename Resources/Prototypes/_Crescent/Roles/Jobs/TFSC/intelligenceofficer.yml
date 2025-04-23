@@ -11,12 +11,11 @@
   supervisors: You answer to the interests of the CyberDawn Technologies company. Protect your technology, make money,  take out competition.
   canBeAntag: false
   requirements:
-    - !type:WhitelistRequirement
+    - !type:CharacterWhitelistRequirement
     - !type:FactionRequirement
       factionID: "TFSC"
     - !type:SexRequirement
-      allowed:
-      - Male
+      sex: Male
   special:
   - !type:AddComponentSpecial
     components:

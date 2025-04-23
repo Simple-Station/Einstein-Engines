@@ -4,13 +4,12 @@
   description: job-description-governor
   playTimeTracker: JobGovernorDSM
   requirements:
-    - !type:WhitelistRequirement
+    - !type:CharacterWhitelistRequirement
     - !type:SpeciesRequirement
-      Species:
+      species:
         - Human
     - !type:SexRequirement
-      allowed:
-        - Male
+      sex : Male
     - !type:FactionRequirement
       factionID: "DSM"
   weight: 87

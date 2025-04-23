@@ -5,7 +5,7 @@
   price: 80000
   category: Medium
   group: None
-  Path: /Maps/_Crescent/Shuttles/DSM/laelaps.yml
+  path: /Maps/_Crescent/Shuttles/DSM/laelaps.yml
 
 - type: gameMap
   id: Laelaps

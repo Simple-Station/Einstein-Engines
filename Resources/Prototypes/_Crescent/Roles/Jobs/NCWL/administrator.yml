@@ -9,7 +9,7 @@
   icon: "JobIconHeadOfPersonnel"
   requireAdminNotify: true
   requirements:
-    - !type:WhitelistRequirement
+    - !type:CharacterWhitelistRequirement
     - !type:FactionRequirement
       factionID: "NCWL"
   supervisors: job-supervisors-highcomm

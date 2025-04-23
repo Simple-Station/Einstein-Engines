@@ -8,7 +8,7 @@
   price: 17500
   category: Small
   group: Civilian
-  Path: /Maps/_Crescent/Shuttles/Civilian/mercury.yml
+  path: /Maps/_Crescent/Shuttles/Civilian/mercury.yml
 
 - type: gameMap
   id: Mercury
