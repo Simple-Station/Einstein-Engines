@@ -92,7 +92,7 @@
     zeroVisible: false
   - type: Appearance
   - type: Contraband
-   
+
 - type: entity
   id: BulletRocketSmart
   name: smart missile
@@ -117,7 +117,7 @@
     energy: 0.5
   - type: HeatSeeking
     rotationSpeed: 40
-    acceleration: 25 
+    acceleration: 25
     topSpeed: 125
     FOV: 80
     defaultSeekingRange: 400
@@ -141,8 +141,6 @@
       path: /Audio/Weapons/ebladehum.ogg
   - type: ItemToggleSharp
   - type: ItemToggleHot
-  - type: ItemToggleDisarmMalus
-    activatedDisarmMalus: 0.6
   - type: ItemToggleSize
     activatedSize: Huge
   - type: ItemToggleMeleeWeapon

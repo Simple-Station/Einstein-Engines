@@ -36,7 +36,6 @@
         sound:
           collection: MetalBreak
   - type: Pullable
-  - type: NotDisposable
   - type: Item
     size: Ginormous
 

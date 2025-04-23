@@ -1,3 +1,4 @@
+using Content.Shared.Actions;
 using Content.Shared.Alert;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Clothing.EntitySystems;
@@ -102,3 +103,5 @@ public sealed class SharedMagbootsSystem : EntitySystem
         args.Handled = true;
     }
 }
+
+public sealed partial class ToggleMagbootsEvent : InstantActionEvent {}

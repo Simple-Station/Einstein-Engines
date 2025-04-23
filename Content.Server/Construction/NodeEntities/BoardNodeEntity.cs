@@ -1,3 +1,4 @@
+using Content.Server.Construction.Components;
 using Content.Shared.Construction;
 using Content.Shared.Construction.Components;
 using JetBrains.Annotations;
@@ -28,6 +29,13 @@ public sealed partial class BoardNodeEntity : IGraphNodeEntity
             return null;
 
         var board = container.ContainedEntities[0];
+
+        if (args.EntityManager.TryGetComponent(container.Owner, out ConstructionComponent? constructionComponent)
+            && constructionComponent.Graph == "ComputerTabletop"
+            && args.EntityManager.TryGetComponent(board, out ComputerTabletopBoardComponent? tabletopComputer))
+        {
+            return tabletopComputer.Prototype;
+        }
 
         // There should not be a case where more than one of these components exist on the same entity...
         if (args.EntityManager.TryGetComponent(board, out MachineBoardComponent? machine))

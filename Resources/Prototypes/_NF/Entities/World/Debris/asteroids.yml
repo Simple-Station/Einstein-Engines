@@ -48,8 +48,6 @@
           - id: RockElementalSpawner
             prob: 0.009
             orGroup: rock
-    - type: GCAbleObject
-      queue: SpaceDebris
     - type: IFF
       flags: HideLabel
       color: "#d67e27"
@@ -192,8 +190,6 @@
           - id: WallRockSnowSilver
             prob: 0.009
             orGroup: rock
-    - type: GCAbleObject
-      queue: SpaceDebris
     - type: IFF
       flags: HideLabel
       color: "#d6fffc"
@@ -345,8 +341,6 @@
           - id: WallAndesiteCobblebrick
             prob: 0.1
             orGroup: rock
-    - type: GCAbleObject
-      queue: SpaceDebris
     - type: IFF
       flags: HideLabel
       color: "#95c280"

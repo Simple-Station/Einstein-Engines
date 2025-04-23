@@ -8,7 +8,6 @@
     - BaseStationShuttles
     - BaseStationAlertLevels
     - BaseStationSiliconLawCrescentStation
-    - BaseStationEmpImmune
     - BaseStationSectorNews
   categories: [ HideSpawnMenu ]
   components:
@@ -38,7 +37,6 @@
     - BaseCombatShipAlertLevels
     - BaseStationAllEventsEligible
     - BaseStationRenameFaxes
-    - BaseStationRenameWarpPoints
     - BaseStationSiliconLawCrescentShips
   categories: [ HideSpawnMenu ]
   components:
@@ -54,7 +52,6 @@
     - BaseStationAllEventsEligible
     - BaseStationRenameFaxes
     - BaseStationCargo
-    - BaseStationRenameWarpPoints
     - BaseStationSiliconLawCrescentShips
   categories: [ HideSpawnMenu ]
   components:
@@ -70,7 +67,6 @@
     - BaseStationAllEventsEligible
     - BaseStationRenameFaxes
     - BaseStationCargo
-    - BaseStationRenameWarpPoints
     - BaseStationSiliconLawCrescentShips
     - BaseStationExpeditions
   categories: [ HideSpawnMenu ]
@@ -87,7 +83,6 @@
     - BaseStationAllEventsEligible
     - BaseStationRenameFaxes
     - BaseStationCargo
-    - BaseStationRenameWarpPoints
     - BaseStationSiliconLawCrescentShips
     - BaseStationExpeditions
   categories: [ HideSpawnMenu ]
@@ -113,18 +108,6 @@
   abstract: true
   components:
     - type: StationRenameFaxes
-
-- type: entity
-  id: BaseStationRenameWarpPoints
-  abstract: true
-  components:
-    - type: StationRenameWarps
-
-- type: entity
-  id: BaseStationEmpImmune
-  abstract: true
-  components:
-    - type: StationEmpImmune
 
 # Sector-wide news access, should be on stations with comms (radio station, telecomms)
 - type: entity

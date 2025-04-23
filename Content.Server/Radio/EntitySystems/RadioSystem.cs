@@ -122,6 +122,7 @@ public sealed class RadioSystem : EntitySystem
             return;
 
         var evt = new TransformSpeakerNameEvent(messageSource, Name(messageSource));
+        evt.fromRadio = true;
         RaiseLocalEvent(messageSource, evt);
         var name = evt.VoiceName;
 
