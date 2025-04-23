@@ -8,3 +8,5 @@ marking-XelthiaTailNormal = Normal Xelthia Tail
 marking-XelthiaHairLongish = Long Hair Tendrils
 marking-XelthiaHairShort = Short Hair Tendrils
 marking-XelthiaHairStandard = Normal Hair Tendrils
+marking-XelthiaHairOvereye = Over-eye Hair Tendrils
+marking-XelthiaHairFancy = Fancy Hair Tendrils

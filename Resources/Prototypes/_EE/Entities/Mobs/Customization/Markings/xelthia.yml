@@ -54,6 +54,24 @@
   sprites:
   - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
     state: hair_longish
+    
+- type: marking
+  id: XelthiaHairOvereye
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [Xelthia]
+  sprites:
+  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+    state: hair_overeye
+    
+- type: marking
+  id: XelthiaHairFancy
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [Xelthia]
+  sprites:
+  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+    state: hair_fancy
 
 # Chest Patterns
 
