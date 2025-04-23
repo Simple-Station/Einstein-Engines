@@ -14,23 +14,34 @@ namespace Content.Client._EE.Shadowling;
 /// </summary>
 public sealed class ShadowlingSystem : SharedShadowlingSystem
 {
+    private const int StateNormalizerSling = 9;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<ThrallComponent, GetStatusIconsEvent>(GetThrallIcon);
-        SubscribeLocalEvent<LightDetectionDamageModifierComponent, UpdateAlertSpriteEvent>(OnUpdateAlert);
+        SubscribeLocalEvent<ShadowlingComponent, UpdateAlertSpriteEvent>(OnUpdateAlert);
         SubscribeLocalEvent<ShadowlingComponent, GetStatusIconsEvent>(GetShadowlingIcon);
     }
 
-    private void OnUpdateAlert(EntityUid uid, LightDetectionDamageModifierComponent comp, UpdateAlertSpriteEvent args)
+    private void OnUpdateAlert(Entity<ShadowlingComponent> ent, ref UpdateAlertSpriteEvent args)
     {
-        var normalized = (int)(comp.DetectionValue / comp.DetectionValueMax * comp.AlertSprites);
+        if (args.Alert.ID != ent.Comp.AlertProto)
+            return;
+
+        if (!EntityManager.TryGetComponent<LightDetectionDamageModifierComponent>(
+            ent,
+            out var lightDetectionDamageModifier))
+            return;
 
         var sprite = args.SpriteViewEnt.Comp;
+        var normalized = (int)( (lightDetectionDamageModifier.DetectionValue / lightDetectionDamageModifier.DetectionValueMax) * StateNormalizerSling );
+        normalized = Math.Clamp(normalized, 0, StateNormalizerSling);
+
         sprite.LayerSetState(AlertVisualLayers.Base, $"{normalized}");
     }
+
     private void GetThrallIcon(Entity<ThrallComponent> ent, ref GetStatusIconsEvent args)
     {
         if (HasComp<ShadowlingComponent>(ent))

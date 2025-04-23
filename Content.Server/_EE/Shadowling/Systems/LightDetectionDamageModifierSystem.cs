@@ -39,11 +39,6 @@ public sealed class LightDetectionDamageModifierSystem : EntitySystem
             if (_timing.CurTime < comp.NextUpdate)
                 continue;
 
-            if (comp.ShowAlert)
-            {
-                _alerts.ShowAlert(uid, comp.AlertProto);
-            }
-
             if (lightDet.IsOnLight)
             {
                 comp.DetectionValue -= comp.DetectionValueFactor;
@@ -97,10 +92,5 @@ public sealed class LightDetectionDamageModifierSystem : EntitySystem
         component.NextUpdateDamage = _timing.CurTime;
         component.NextUpdateHeal   = _timing.CurTime;
         component.DetectionValue   = component.DetectionValueMax;
-
-        if (component.ShowAlert)
-        {
-            _alerts.ShowAlert(uid, component.AlertProto);
-        }
     }
 }

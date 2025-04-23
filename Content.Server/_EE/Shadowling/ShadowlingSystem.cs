@@ -13,7 +13,9 @@ using Content.Shared.Inventory;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
+using MathNet.Numerics;
 using Microsoft.CodeAnalysis.Elfie.Serialization;
+using Microsoft.EntityFrameworkCore.Storage;
 
 
 namespace Content.Server._EE.Shadowling;
@@ -41,6 +43,21 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
         SubscribeLocalEvent<ShadowlingComponent, PhaseChangedEvent>(OnPhaseChanged);
 
         SubscribeAbilities();
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var query = EntityQueryEnumerator<ShadowlingComponent>();
+        while (query.MoveNext(out var uid, out var comp))
+        {
+            if (!TryComp<LightDetectionDamageModifierComponent>(uid, out var lightDet))
+                return;
+
+            Dirty(uid, lightDet);
+            _alert.ShowAlert(uid, comp.AlertProto);
+        }
     }
 
     #region Event Handlers
@@ -71,10 +88,8 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
             AddPostHatchActions(uid, component);
 
             EnsureComp<LightDetectionComponent>(uid);
-            var lightComp = EnsureComp<LightDetectionDamageModifierComponent>(uid);
-            lightComp.ShowAlert = true;
-            lightComp.AlertProto = component.AlertProto;
-            lightComp.AlertSprites = component.AlertSprites;
+            EnsureComp<LightDetectionDamageModifierComponent>(uid);
+            _alert.ShowAlert(uid, component.AlertProto);
         }
         else if (args.Phase == ShadowlingPhases.Ascension)
         {

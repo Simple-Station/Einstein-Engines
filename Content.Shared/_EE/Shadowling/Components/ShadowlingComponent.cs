@@ -80,9 +80,6 @@ public sealed partial class ShadowlingComponent : Component
 
     [DataField]
     public ProtoId<AlertPrototype> AlertProto = "ShadowlingLight";
-
-    [DataField]
-    public int AlertSprites = 11;
 }
 
 [NetSerializable, Serializable]

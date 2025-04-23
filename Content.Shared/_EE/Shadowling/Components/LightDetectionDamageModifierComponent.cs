@@ -2,6 +2,7 @@ using Content.Shared.Alert;
 using Content.Shared.Damage;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
 
 
 namespace Content.Shared._EE.Shadowling.Components;
@@ -11,19 +12,20 @@ namespace Content.Shared._EE.Shadowling.Components;
 /// Component that indicates a user should take damage or heal damage based on the light detection system
 /// </summary>
 [RegisterComponent, NetworkedComponent]
+[AutoGenerateComponentState]
 public sealed partial class LightDetectionDamageModifierComponent : Component
 {
     /// <summary>
     /// Max Detection Value
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public float DetectionValueMax = 5f;
 
     /// <summary>
     /// If this reaches 0, the entity will start taking damage.
     /// If it is max, the entity will heal damage (if specified)
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public float DetectionValue;
 
     /// <summary>
@@ -99,13 +101,4 @@ public sealed partial class LightDetectionDamageModifierComponent : Component
             ["Heat"] = -15,
         }
     };
-
-    [DataField]
-    public bool ShowAlert;
-
-    [DataField]
-    public ProtoId<AlertPrototype> AlertProto;
-
-    [DataField]
-    public int AlertSprites = 11;
 }
