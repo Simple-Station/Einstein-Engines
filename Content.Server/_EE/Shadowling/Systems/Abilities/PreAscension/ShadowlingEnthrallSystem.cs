@@ -58,11 +58,12 @@ public sealed class ShadowlingEnthrallSystem : EntitySystem
 
         var target = args.Args.Target.Value;
 
-        EnsureComp<ThrallComponent>(target);
+        var thrall = EnsureComp<ThrallComponent>(target);
 
         if (TryComp<ShadowlingComponent>(uid, out var sling))
         {
            sling.Thralls.Add(target);
+           thrall.Converter = uid;
            RaiseLocalEvent(uid, new ThrallAddedEvent());
         }
     }

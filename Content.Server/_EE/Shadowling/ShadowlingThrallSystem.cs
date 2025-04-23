@@ -64,5 +64,14 @@ public sealed class ShadowlingThrallSystem : EntitySystem
         _actions.RemoveAction(component.ActionGuiseEntity);
 
         RemComp<NightVisionComponent>(uid);
+        RemComp<ThrallGuiseComponent>(uid);
+
+        if (HasComp<LesserShadowlingComponent>(uid))
+            RemComp<LesserShadowlingComponent>(uid);
+
+        if (component.Converter == null)
+            return;
+
+        RaiseLocalEvent(component.Converter.Value, new ThrallRemovedEvent());
     }
 }

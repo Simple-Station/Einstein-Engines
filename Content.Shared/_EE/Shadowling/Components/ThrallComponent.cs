@@ -10,7 +10,7 @@ namespace Content.Shared._EE.Shadowling;
 /// <summary>
 /// This is used for marking Thralls and storing their icons
 /// </summary>
-[RegisterComponent, NetworkedComponent, Access(typeof(SharedShadowlingSystem))]
+[RegisterComponent, NetworkedComponent]
 public sealed partial class ThrallComponent : Component
 {
 
@@ -37,6 +37,12 @@ public sealed partial class ThrallComponent : Component
     /// </summary>
     // [DataField]
     // public SoundSpecifier ThrallConverted = new SoundPathSpecifier();
+
+    /// <summary>
+    /// The shadowling that converted the Thrall
+    /// </summary>
+    [DataField]
+    public EntityUid? Converter;
 
 
 }

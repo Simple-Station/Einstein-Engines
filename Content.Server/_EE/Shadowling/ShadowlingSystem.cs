@@ -4,15 +4,20 @@ using Content.Server.Storage.EntitySystems;
 using Content.Shared._EE.Shadowling.Systems;
 using Content.Shared._EE.Shadowling;
 using Content.Shared._EE.Shadowling.Components;
+using Content.Shared._Goobstation.Flashbang;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Actions;
 using Content.Shared.Alert;
 using Content.Shared.Damage;
+using Content.Shared.Hands.Components;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
+using Content.Shared.Projectiles;
+using Content.Shared.Weapons.Ranged.Components;
 using MathNet.Numerics;
 using Microsoft.CodeAnalysis.Elfie.Serialization;
 using Microsoft.EntityFrameworkCore.Storage;
@@ -32,6 +37,8 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
     [Dependency] private readonly AlertsSystem _alert = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly SharedHandsSystem _sharedHands = default!;
 
     public override void Initialize()
     {
@@ -41,6 +48,12 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
 
         SubscribeLocalEvent<ShadowlingComponent, BeforeDamageChangedEvent>(BeforeDamageChanged);
         SubscribeLocalEvent<ShadowlingComponent, PhaseChangedEvent>(OnPhaseChanged);
+
+        SubscribeLocalEvent<ShadowlingComponent, ThrallAddedEvent>(OnThrallAdded);
+        SubscribeLocalEvent<ShadowlingComponent, ThrallRemovedEvent>(OnThrallRemoved);
+
+        SubscribeLocalEvent<ShadowlingComponent, GetFlashbangedEvent>(OnFlashBanged);
+        SubscribeLocalEvent<ShadowlingComponent, DamageModifyEvent>(OnDamageModify);
 
         SubscribeAbilities();
     }
@@ -61,6 +74,45 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
     }
 
     #region Event Handlers
+
+    private void OnDamageModify(EntityUid uid, ShadowlingComponent component, DamageModifyEvent args)
+    {
+        foreach (var (key,_) in args.Damage.DamageDict)
+        {
+            if (key == "Heat")
+                args.Damage += component.HeatDamageProjectileModifier;
+        }
+    }
+    private void OnFlashBanged(EntityUid uid, ShadowlingComponent component, GetFlashbangedEvent args)
+    {
+        // Shadowling get damaged from flashbangs
+        if (!TryComp<DamageableComponent>(uid, out var damageableComp))
+            return;
+
+        _damageable.TryChangeDamage(uid, component.HeatDamage, damageable: damageableComp);
+    }
+    private void OnThrallAdded(EntityUid uid, ShadowlingComponent comp, ThrallAddedEvent args)
+    {
+        if (!TryComp<LightDetectionDamageModifierComponent>(uid, out var lightDet))
+            return;
+
+        if (lightDet == null)
+            return;
+
+        lightDet.ResistanceModifier += comp.LightResistanceModifier;
+
+    }
+
+    private void OnThrallRemoved(EntityUid uid, ShadowlingComponent comp, ThrallRemovedEvent args)
+    {
+        if (!TryComp<LightDetectionDamageModifierComponent>(uid, out var lightDet))
+            return;
+
+        if (lightDet == null)
+            return;
+
+        lightDet.ResistanceModifier -= comp.LightResistanceModifier;
+    }
 
     private void OnInit(EntityUid uid, ShadowlingComponent component, ref ComponentInit args)
     {
@@ -88,7 +140,8 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
             AddPostHatchActions(uid, component);
 
             EnsureComp<LightDetectionComponent>(uid);
-            EnsureComp<LightDetectionDamageModifierComponent>(uid);
+            var lightMod = EnsureComp<LightDetectionDamageModifierComponent>(uid);
+            lightMod.ResistanceModifier = 0.5f; // Let them start with 50% resistance, and decrease it per Thrall
             _alert.ShowAlert(uid, component.AlertProto);
         }
         else if (args.Phase == ShadowlingPhases.Ascension)

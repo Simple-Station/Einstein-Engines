@@ -13,6 +13,14 @@ public sealed class ThrallAddedEvent : EntityEventArgs
 }
 
 /// <summary>
+/// This handles when a Thrall gets removed to the Shadowling.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class ThrallRemovedEvent : EntityEventArgs
+{
+}
+
+/// <summary>
 /// This handles the event which the phase of the Shadowling has changed.
 /// </summary>
 [Serializable, NetSerializable]

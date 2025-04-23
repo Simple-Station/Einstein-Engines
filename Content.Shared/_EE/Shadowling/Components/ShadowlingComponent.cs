@@ -1,4 +1,5 @@
 using Content.Shared.Alert;
+using Content.Shared.Damage;
 using Content.Shared.StatusIcon;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -80,6 +81,33 @@ public sealed partial class ShadowlingComponent : Component
 
     [DataField]
     public ProtoId<AlertPrototype> AlertProto = "ShadowlingLight";
+
+    [DataField]
+    public float LightResistanceModifier = 0.12f;
+
+    [DataField]
+    public DamageSpecifier HeatDamage = new()
+    {
+        DamageDict = new()
+        {
+            ["Heat"] = 20,
+        }
+    };
+
+    [DataField]
+    public DamageSpecifier HeatDamageProjectileModifier = new()
+    {
+        DamageDict = new()
+        {
+            ["Heat"] = 10,
+        }
+    };
+
+    [DataField]
+    public float NormalDamage;
+
+    [DataField]
+    public float ModifiedDamage;
 }
 
 [NetSerializable, Serializable]
