@@ -1,0 +1,58 @@
+- type: entity
+  parent: Airlock
+  id: AirlockSyndicateHorizontal
+  suffix: Syndicate Horizontal
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/syndicatehorizontal.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitMailCarrier
+  name: mail carrier's jumpsuit
+  description: Enemy of dogs everywhere.
+  components:
+  - type: Sprite
+    sprite: Nyanotrasen/Clothing/Uniforms/Jumpsuit/mailman.rsi
+  - type: Clothing
+    sprite: Nyanotrasen/Clothing/Uniforms/Jumpsuit/mailman.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtMailCarrier
+  name: mail carrier's jumpskirt
+  description: Enemy of dogs everywhere.
+  components:
+  - type: Sprite
+    sprite: Nyanotrasen/Clothing/Uniforms/Jumpskirt/mailman.rsi
+  - type: Clothing
+    sprite: Nyanotrasen/Clothing/Uniforms/Jumpskirt/mailman.rsi
+
+- type: entity
+  parent: ComputerRadar
+  id: ComputerAdvancedRadar # Frontier
+  name: radar computer
+  description: Better CPU and components gives this radar the technological and tactical advantage on detection of far away objects.
+  components:
+  - type: Computer
+    board: AdvancedRadarConsoleCircuitboard
+  - type: RadarConsole
+    maxRange: 1024
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: eris_control
+    - map: ["computerLayerKeys"]
+      state: generic_keys
+  - type: RadarDetector
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Pai
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Traffic
+
