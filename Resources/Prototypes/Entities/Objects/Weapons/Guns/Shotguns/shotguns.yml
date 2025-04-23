@@ -152,7 +152,7 @@
 
 - type: entity
   name: double-barreled shotgun
-  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  parent: [BaseWeaponRevolver, BaseGunWieldable]
   id: WeaponShotgunDoubleBarreled
   description: An immortal classic. Uses .50 shotgun shells.
   components:
@@ -168,8 +168,18 @@
     fireRate: 2
     fireOnDropChance: 0.5
   - type: Wieldable
-  - type: BallisticAmmoProvider
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+        - ShellShotgun
+    proto: ShellShotgun
     capacity: 2
+    chambers: [ True, True ]
+    ammoSlots: [ null, null ]
+    soundEject:
+      path: /Audio/Weapons/Guns/MagOut/revolver_magout.ogg
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
   - type: Construction
     graph: ShotgunSawn
     node: start
@@ -188,8 +198,18 @@
   description: An immortal classic. Uses .50 shotgun shells.
   suffix: Non-Lethal
   components:
-  - type: BallisticAmmoProvider
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+        - ShellShotgun
     proto: ShellShotgunBeanbag
+    capacity: 2
+    chambers: [ True, True ]
+    ammoSlots: [ null, null ]
+    soundEject:
+      path: /Audio/Weapons/Guns/MagOut/revolver_magout.ogg
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
 
 - type: entity
   name: Enforcer
@@ -247,7 +267,7 @@
 
 - type: entity
   name: sawn-off shotgun
-  parent: BaseWeaponShotgun
+  parent: BaseWeaponRevolver
   id: WeaponShotgunSawn
   description: Groovy! Uses .50 shotgun shells.
   components:
@@ -261,8 +281,6 @@
   - type: Gun
     fireRate: 4
     fireOnDropChance: 0.5
-  - type: BallisticAmmoProvider
-    capacity: 2
   - type: Construction
     graph: ShotgunSawn
     node: shotgunsawn
@@ -274,6 +292,18 @@
         Blunt: 7.5
   - type: DamageOtherOnHit
     staminaCost: 6
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+        - ShellShotgun
+    proto: ShellShotgun
+    capacity: 2
+    chambers: [ True, True ]
+    ammoSlots: [ null, null ]
+    soundEject:
+      path: /Audio/Weapons/Guns/MagOut/revolver_magout.ogg
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
 
 - type: entity
   name: sawn-off shogun
@@ -282,8 +312,6 @@
   description: Groovy! Uses .50 shotgun shells.
   suffix: Empty
   components:
-  - type: BallisticAmmoProvider
-    proto: null
   - type: Construction
     graph: ShotgunSawn
     node: shotgunsawn
