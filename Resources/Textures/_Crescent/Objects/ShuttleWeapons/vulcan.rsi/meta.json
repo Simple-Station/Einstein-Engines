@@ -1,15 +1,15 @@
 {
-  "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "Built by Meoman for Sector Crescent.",
-  "size": {
-    "x": 32,
-    "y": 32
-  },
-  "states": [
-    {
-      "name": "space_artillery",
-      "directions": 4
-    }
-  ]
+    "version": 1,
+    "license": "",
+    "copyright": "Built by the Hullrot Team for the Hullrot Project. All rights reserved. This art is proprietary. Do not modify, redistribute, relicense, or use in any way.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "space_artillery",
+            "directions": 4
+        }
+    ]
 }

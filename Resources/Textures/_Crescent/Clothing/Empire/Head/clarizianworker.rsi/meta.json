@@ -1,25 +1,25 @@
 {
-  "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/tree/fb2d71495bfe81446159ef528534193d09dd8d34, sprite repaletted by Flareguy for space-station-14",
-  "size": {
-    "x": 32,
-    "y": 32
-  },
-  "states": [
-    {
-      "name": "icon"
+    "version": 1,
+    "license": "",
+    "copyright": "Sprited by the Hullrot Team for the Hullrot Project. Do not use, share, relicense, redistribute, or edit.",
+    "size": {
+        "x": 32,
+        "y": 32
     },
-    {
-      "name": "on-equipped-HELMET",
-      "directions": 4
-    },
-    {
-      "name": "icon-flash"
-    },
-    {
-      "name": "off-equipped-HELMET",
-      "directions": 4
-    }
-  ]
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "on-equipped-HELMET",
+            "directions": 4
+        },
+        {
+            "name": "icon-flash"
+        },
+        {
+            "name": "off-equipped-HELMET",
+            "directions": 4
+        }
+    ]
 }

@@ -1,36 +1,36 @@
 {
-  "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "Made for Hullrot.",
-  "size": {
-    "x": 32,
-    "y": 32
-  },
-  "states": [
-    {
-        "name": "icon"
+    "version": 1,
+    "license": "",
+    "copyright": "Original artwork made by the Hullrot team for the Hullrot Project. All rights reserved. Do not copy, use, modify, or redistribute.",
+    "size": {
+        "x": 32,
+        "y": 32
     },
-    {
-        "name": "icon-flash",
-        "delays": [
-            [
-                1,
-                0.05,
-                0.05,
-                0.05,
-                0.05,
-                0.05,
-                0.05
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "icon-flash",
+            "delays": [
+                [
+                    1,
+                    0.05,
+                    0.05,
+                    0.05,
+                    0.05,
+                    0.05,
+                    0.05
+                ]
             ]
-        ]
-    },
-    {
-      "name": "off-equipped-HELMET",
-      "directions": 4
-    },
-    {
-      "name": "on-equipped-HELMET",
-      "directions": 4
-    }
-  ]
+        },
+        {
+            "name": "off-equipped-HELMET",
+            "directions": 4
+        },
+        {
+            "name": "on-equipped-HELMET",
+            "directions": 4
+        }
+    ]
 }
