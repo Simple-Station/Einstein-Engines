@@ -1,7 +1,7 @@
 - type: entity
   id: XelthiaRegenerateAction
   name: Regrow Arms
-  description: Regrow your lost arms. Tentacles? Tentacle arms.
+  description: Regrow any arms you may have lost.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction

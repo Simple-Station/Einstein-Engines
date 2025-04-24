@@ -3,13 +3,11 @@
   category: TraitsPsionicsFeats
   points: -5
   requirements:
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterTraitRequirement
-          traits:
-            - LatentPsychic
-            - PsychoHistorian
-            - Elementalist
+    - !type:CharacterTraitRequirement
+      traits:
+        - LatentPsychic
+        - PsychoHistorian
+        - Elementalist
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -44,13 +42,11 @@
   category: TraitsPsionicsFeats
   points: 5
   requirements:
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterTraitRequirement
-          traits:
-            - LatentPsychic
-            - PsychoHistorian
-            - Elementalist
+    - !type:CharacterTraitRequirement
+      traits:
+        - LatentPsychic
+        - PsychoHistorian
+        - Elementalist
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -85,13 +81,11 @@
   category: TraitsPsionicsFeats
   points: 3
   requirements:
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterTraitRequirement
-          traits:
-            - LatentPsychic
-            - PsychoHistorian
-            - Elementalist
+    - !type:CharacterTraitRequirement
+      traits:
+        - LatentPsychic
+        - PsychoHistorian
+        - Elementalist
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -122,13 +116,11 @@
   category: TraitsPsionicsFeats
   points: -3
   requirements:
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterTraitRequirement
-          traits:
-            - LatentPsychic
-            - PsychoHistorian
-            - Elementalist
+    - !type:CharacterTraitRequirement
+      traits:
+        - LatentPsychic
+        - PsychoHistorian
+        - Elementalist
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -155,13 +147,11 @@
   category: TraitsPsionicsFeats
   points: -10
   requirements:
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterTraitRequirement
-          traits:
-            - LatentPsychic
-            - PsychoHistorian
-            - Elementalist
+    - !type:CharacterTraitRequirement
+      traits:
+        - LatentPsychic
+        - PsychoHistorian
+        - Elementalist
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -188,13 +178,11 @@
   category: TraitsPsionicsFeats
   points: 3
   requirements:
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterTraitRequirement
-          traits:
-            - LatentPsychic
-            - PsychoHistorian
-            - Elementalist
+    - !type:CharacterTraitRequirement
+      traits:
+        - LatentPsychic
+        - PsychoHistorian
+        - Elementalist
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -220,13 +208,11 @@
   category: TraitsPsionicsFeats
   points: -3
   requirements:
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterTraitRequirement
-          traits:
-            - LatentPsychic
-            - PsychoHistorian
-            - Elementalist
+    - !type:CharacterTraitRequirement
+      traits:
+        - LatentPsychic
+        - PsychoHistorian
+        - Elementalist
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement

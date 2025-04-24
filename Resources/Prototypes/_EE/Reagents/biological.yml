@@ -65,7 +65,7 @@
         factor: -4
       - !type:SatiateHunger
         factor: -4
-      - !type:HealthChange # this originally had tricord's effects but then it was giving weird heal numbers in testing?? so I've reduced the scope. feel free to add more later I just want to be done working on them for now lol
+      - !type:HealthChange 
         conditions:
         - !type:TotalDamage
           max: 50

@@ -1,5 +1,5 @@
-reagent-name-acid-blood = acid clood 
-reagent-desc-acid-blood = Like blood, but it burns you.
+reagent-name-acid-blood = acid blood 
+reagent-desc-acid-blood = A corrosive type of blood that burns through organic and synthetic matter alike. 
 
 reagent-name-armjuice = Xelthia Arm Juice
-reagent-desc-armjuice = This saps your hunger and thirst. Where are you getting this from.
+reagent-desc-armjuice = An organic fluid extracted from Xelthian physiology. Rather than sustaining the body, it dramatically increases hunger and thirst.

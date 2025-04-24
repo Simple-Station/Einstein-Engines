@@ -3,11 +3,9 @@
   category: TraitsPsionicsPowers
   points: -4
   requirements:
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterTraitRequirement
-          traits:
-            - LatentPsychic
+    - !type:CharacterTraitRequirement
+      traits:
+        - LatentPsychic
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -33,11 +31,9 @@
   category: TraitsPsionicsPowers
   points: -2
   requirements:
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterTraitRequirement
-          traits:
-            - LatentPsychic
+    - !type:CharacterTraitRequirement
+      traits:
+        - LatentPsychic
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement

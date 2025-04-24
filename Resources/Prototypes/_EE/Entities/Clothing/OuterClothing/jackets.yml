@@ -11,4 +11,5 @@
     sprite: _EE/Clothing/InsulatedJacket/insulated_jacket.rsi
   - type: Insulated
   - type: FingerprintMask
-# PLEASE FIX DISPLACEMENT MAPS APPLYING TO SPECIES VARIANTS OF CLOTHES THERES NO WAY ITS INTENTIONAL hgsjkd (i have a version that's normal for if/when that behavior is changed. Seems like this would be an oversight)
+# if species-specific sprites are fixed to not have displacement maps apply to them, this will break. 
+# replacing the equipped-OUTERCLOTHING-xelthia.png file in the RSI with the one in the InsulatedJacket/insulated_jacket_unmodified folder would fix this.

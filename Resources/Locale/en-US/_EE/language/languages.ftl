@@ -20,4 +20,4 @@ language-Delvahii-description =
 
 language-Qiilour-name = Qiilour
 language-Qiilour-description =
-    The native primary language of the Xelthia, just about all of them speak it in some capacity. It's a blend of several older languages that have since been lost to time.
+    The native and principal language of the Xelthia, Qiilour is spoken by nearly all members of their species to some degree. It is a refined fusion of several ancient tongues—such as Telenarii, Voskarn, and Old Xelthec—each now lost to history.

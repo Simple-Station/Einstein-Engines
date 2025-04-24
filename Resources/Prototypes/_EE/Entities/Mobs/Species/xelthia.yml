@@ -73,7 +73,7 @@
 #        parameterUV: displacementUV
   - type: Inventory
     templateId: xelthia
-    speciesId: xelthia
+    speciesId: Xelthia
     displacements:
       jumpsuit:
         layer:
@@ -87,7 +87,7 @@
       head:
         layer:
           sprite: _EE/Mobs/Species/Xelthia/displacement.rsi
-          state: jumpsuit
+          state: jumpsuit # name is somewhat misleading, the jumpsuit state ended up being fairly versitile so I reused it
           copyToShaderParameters:
             # Value required, provide a dummy. Gets overridden when applied.
             layerKey: dummy

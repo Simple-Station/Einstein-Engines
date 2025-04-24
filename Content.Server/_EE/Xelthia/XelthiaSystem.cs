@@ -64,47 +64,37 @@ public sealed class XelthiaSystem : EntitySystem
         _actionsSystem.SetCooldown(component.XelthiaRegenerateAction!.Value, start, end); // Cooldown
 
         //IEntityManager entityManager = uid;
-        IEntityManager entityManager = base.EntityManager; // There's no way this is good code. I don't know what im doing though, so. I dunno.
-        var bodySystem = entityManager.System<BodySystem>();
-        var transformSystem = entityManager.System<SharedTransformSystem>();
-
-        if (!entityManager.TryGetComponent(uid, out BodyComponent? body)
-            || !entityManager.TryGetComponent(uid, out TransformComponent? xform))
+        var bodySystem = _entityManager.System<BodySystem>();
+        var transformSystem = _entityManager.System<SharedTransformSystem>();
+        if (!_entityManager.TryGetComponent(uid, out BodyComponent? body)
+            || !_entityManager.TryGetComponent(uid, out TransformComponent? xform))
             return;
-
         var root = bodySystem.GetRootPartOrNull(uid, body);
         if (root is null)
             return;
-
         var parts = bodySystem.GetBodyChildrenOfType(uid, BodyPartType.Arm, body); // Deletes Arms and hands
         foreach (var part in parts)
         {
-
             foreach (var child in bodySystem.GetBodyPartChildren(part.Id, part.Component))
-                entityManager.QueueDeleteEntity(child.Id);
-
+                _entityManager.QueueDeleteEntity(child.Id);
             transformSystem.AttachToGridOrMap(part.Id);
-            entityManager.QueueDeleteEntity(part.Id);
-            entityManager.SpawnAtPosition("FoodMeatXelthiaTentacle", xform.Coordinates); // Should drop arms equal to the number attached
+            _entityManager.QueueDeleteEntity(part.Id);
+            _entityManager.SpawnAtPosition("FoodMeatXelthiaTentacle", xform.Coordinates); // Should drop arms equal to the number attached
         }
         // Right Side
-        var newLimb = entityManager.SpawnAtPosition("RightArmXelthia", xform.Coordinates); // Copy-Pasted Code for arm spawning
-        if (entityManager.TryGetComponent(newLimb, out BodyPartComponent? limbComp))
+        var newLimb = _entityManager.SpawnAtPosition("RightArmXelthia", xform.Coordinates); // Copy-Pasted Code for arm spawning
+        if (_entityManager.TryGetComponent(newLimb, out BodyPartComponent? limbComp))
             bodySystem.AttachPart(root.Value.Entity, "right arm", newLimb, root.Value.BodyPart, limbComp);
-
-        var newerLimb = entityManager.SpawnAtPosition("RightHandXelthia", xform.Coordinates); // Spawns the hand
+        var newerLimb = _entityManager.SpawnAtPosition("RightHandXelthia", xform.Coordinates); // Spawns the hand
         Enum.TryParse<BodyPartType>("Hand", out var partType);
         bodySystem.TryCreatePartSlotAndAttach(newLimb, "right hand", newerLimb, partType);
-
         // Left Side
-        newLimb = entityManager.SpawnAtPosition("LeftArmXelthia", xform.Coordinates); // Copy-Pasted Code for arm spawning
-        if (entityManager.TryGetComponent(newLimb, out BodyPartComponent? limbComp2))
+        newLimb = _entityManager.SpawnAtPosition("LeftArmXelthia", xform.Coordinates); // Copy-Pasted Code for arm spawning
+        if (_entityManager.TryGetComponent(newLimb, out BodyPartComponent? limbComp2))
             bodySystem.AttachPart(root.Value.Entity, "left arm", newLimb, root.Value.BodyPart, limbComp2);
-
-        newerLimb = entityManager.SpawnAtPosition("LeftHandXelthia", xform.Coordinates); // Spawns the hand
+        newerLimb = _entityManager.SpawnAtPosition("LeftHandXelthia", xform.Coordinates); // Spawns the hand
         bodySystem.TryCreatePartSlotAndAttach(newLimb, "left hand", newerLimb, partType);
-
-        entityManager.EntitySysManager.GetEntitySystem<SharedAudioSystem>()
+        _entityManager.EntitySysManager.GetEntitySystem<SharedAudioSystem>()
             .PlayPvs("/Audio/_EE/Voice/Xelthia/regrow.ogg", uid, null);
 
         var solution = new Solution();
