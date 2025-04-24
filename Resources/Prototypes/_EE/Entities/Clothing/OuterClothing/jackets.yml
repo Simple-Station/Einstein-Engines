@@ -10,4 +10,5 @@
   - type: Clothing
     sprite: _EE/Clothing/InsulatedJacket/insulated_jacket.rsi
   - type: Insulated
+  - type: FingerprintMask
 # PLEASE FIX DISPLACEMENT MAPS APPLYING TO SPECIES VARIANTS OF CLOTHES THERES NO WAY ITS INTENTIONAL hgsjkd (i have a version that's normal for if/when that behavior is changed. Seems like this would be an oversight)
