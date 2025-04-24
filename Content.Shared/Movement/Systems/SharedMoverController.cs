@@ -244,13 +244,13 @@ namespace Content.Shared.Movement.Systems
             }
             else
             {
-                if (worldTotal != Vector2.Zero || moveSpeedComponent?.FrictionNoInput == null)
+                if (worldTotal != Vector2.Zero)
                 {
                     friction = tileDef?.MobFriction ?? moveSpeedComponent?.Friction ?? MovementSpeedModifierComponent.DefaultFriction;
                 }
                 else
                 {
-                    friction = tileDef?.MobFrictionNoInput ?? moveSpeedComponent.FrictionNoInput ?? MovementSpeedModifierComponent.DefaultFrictionNoInput;
+                    friction = tileDef?.MobFrictionNoInput ?? moveSpeedComponent?.FrictionNoInput ?? MovementSpeedModifierComponent.DefaultFrictionNoInput;
                 }
 
                 weightlessModifier = 1f;

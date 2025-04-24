@@ -66,7 +66,7 @@ public sealed partial class AtmosphereSystem
         if (!tileDef.SimulatedTurf)
             return;
 
-        var partialFrictionComposition = gravity * tileDef.MobFrictionNoInput;
+        var partialFrictionComposition = gravity * tileDef.MobFrictionNoInput ?? 0.2f;
 
         var pressureVector = GetPressureVectorFromTile(gridAtmosphere, tile);
         if (!pressureVector.IsValid())
