@@ -872,16 +872,6 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("eye_color");
 
-                    b.Property<string>("FacialHairColor")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("facial_hair_color");
-
-                    b.Property<string>("FacialHairName")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("facial_hair_name");
-
                     b.Property<string>("FlavorText")
                         .IsRequired()
                         .HasColumnType("text")
@@ -891,16 +881,6 @@ namespace Content.Server.Database.Migrations.Postgres
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("gender");
-
-                    b.Property<string>("HairColor")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("hair_color");
-
-                    b.Property<string>("HairName")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("hair_name");
 
                     b.Property<float>("Height")
                         .HasColumnType("real")

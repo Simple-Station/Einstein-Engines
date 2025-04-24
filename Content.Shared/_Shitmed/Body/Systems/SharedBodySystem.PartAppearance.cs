@@ -112,7 +112,6 @@ public partial class SharedBodySystem
             var markingColors = MarkingColoring.GetMarkingLayerColors(
                     prototype,
                     bodyAppearance.SkinColor,
-                    bodyAppearance.EyeColor,
                     bodyAppearance.MarkingSet
                 );
 
