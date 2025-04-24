@@ -244,13 +244,13 @@ namespace Content.Shared.Movement.Systems
             }
             else
             {
-                if (worldTotal != Vector2.Zero || moveSpeedComponent?.FrictionNoInput == null)
+                if (worldTotal != Vector2.Zero)
                 {
                     friction = tileDef?.MobFriction ?? moveSpeedComponent?.Friction ?? MovementSpeedModifierComponent.DefaultFriction;
                 }
                 else
                 {
-                    friction = tileDef?.MobFrictionNoInput ?? moveSpeedComponent.FrictionNoInput ?? MovementSpeedModifierComponent.DefaultFrictionNoInput;
+                    friction = tileDef?.MobFrictionNoInput ?? moveSpeedComponent?.FrictionNoInput ?? MovementSpeedModifierComponent.DefaultFrictionNoInput;
                 }
 
                 weightlessModifier = 1f;
@@ -465,8 +465,10 @@ namespace Content.Shared.Movement.Systems
             if (mobMover.StepSoundDistance < distanceNeeded)
                 return false;
 
-            mobMover.StepSoundDistance -= distanceNeeded;
+            var soundEv = new MakeFootstepSoundEvent();
+            RaiseLocalEvent(uid, soundEv);
 
+            mobMover.StepSoundDistance -= distanceNeeded;
             if (TryComp<FootstepModifierComponent>(uid, out var moverModifier))
             {
                 sound = moverModifier.FootstepSoundCollection;
