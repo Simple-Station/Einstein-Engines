@@ -44,7 +44,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
     [Dependency] private readonly RoleSystem _role = default!;
     [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly EntityWhitelistSystem _entityWhitelist = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
 
     // arbitrary random number to give late joining some mild interest.
     public const float LateJoinRandomChance = 0.5f;
@@ -184,7 +184,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             .Where(x => GameTicker.PlayerGameStatuses.TryGetValue(x.UserId, out var status) && status == PlayerGameStatus.JoinedGame)
             .ToList();
 
-        ChooseAntags((uid, component), players);
+        ChooseAntags((uid, component), players, midround: true);
     }
 
     /// <summary>
@@ -200,7 +200,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
 
         foreach (var def in ent.Comp.Definitions)
         {
-            ChooseAntags(ent, pool, def);
+            ChooseAntags(ent, pool, def, midround: midround);
         }
 
         ent.Comp.SelectionsComplete = true;
@@ -221,68 +221,38 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         var playerPool = GetPlayerPool(ent, pool, def);
         var count = GetTargetAntagCount(ent, GetTotalPlayerCount(pool), def);
 
-        ///// Einstein Engines changes /////
-        //
-        // Fixes issues caused by failures in making someone antag while
-        // not breaking any API on this system.
-        //
-        // This will either allocate `count` slots from the player pool,
-        // or will call MakeAntag with null sessions to fill up the slots.
-        //
-        if (def.PickPlayer)
+        // if there is both a spawner and players getting picked, let it fall back to a spawner.
+        var noSpawner = def.SpawnerPrototype == null;
+        var picking = def.PickPlayer;
+        if (midround && ent.Comp.SelectionTime == AntagSelectionTime.PrePlayerSpawn)
         {
-            // Tries multiple times to assign antags.
-            // When any number of assignments fail, next iteration
-            // gets new items to replace those.
-            // Already selected or failed sessions are avoided.
-            // It retries until it ends with no failures or up
-            // to maxRetries attempts.
+            // prevent antag selection from happening if the round is on-going, requiring a spawner if used midround.
+            // this is so rules like nukies, if added by an admin midround, dont make random living people nukies
+            Log.Info($"Antags for rule {ent:?} get picked pre-spawn so only spawners will be made.");
+            DebugTools.Assert(def.SpawnerPrototype != null, $"Rule {MetaData(ent).EntityPrototype} had no spawner for pre-spawn rule added mid-round!");
+            picking = false;
+        }
 
-            const int maxRetries = 4;
-            var retry = 0;
-            var failed = new List<ICommonSession>();
-
-            while (ent.Comp.SelectedSessions.Count < count && retry < maxRetries)
+        for (var i = 0; i < count; i++)
+        {
+            var session = (ICommonSession?)null;
+            if (picking)
             {
-                var sessions = (ICommonSession[]?) null;
-                if (!playerPool.TryGetItems(RobustRandom,
-                                            out sessions,
-                                            count - ent.Comp.SelectedSessions.Count,
-                                            false))
-                    break; // Ends early if there are no eligible sessions
-
-                foreach (var session in sessions)
+                if (!playerPool.TryPickAndTake(RobustRandom, out session) && noSpawner)
                 {
-                    MakeAntag(ent, session, def);
-                    if (!ent.Comp.SelectedSessions.Contains(session))
-                    {
-                        failed.Add(session);
-                    }
-                }
-                // In case we're done
-                if (ent.Comp.SelectedSessions.Count >= count)
+                    Log.Warning($"Couldn't pick a player for {ToPrettyString(ent):rule}, no longer choosing antags for this definition");
                     break;
+                }
 
-                playerPool = playerPool.Where((session_) =>
+                if (session != null && ent.Comp.SelectedSessions.Contains(session))
                 {
-                    return !ent.Comp.SelectedSessions.Contains(session_) &&
-                        !failed.Contains(session_);
-                });
-                retry++;
+                    Log.Warning($"Somehow picked {session} for an antag when this rule already selected them previously");
+                    continue;
+                }
             }
-        }
 
-        // This preserves previous behavior for when def.PickPlayer
-        // was not satisfied. This behavior is not that obvious to
-        // read from the previous code.
-        // It may otherwise process leftover slots if maxRetries have
-        // been reached.
-
-        for (var i = ent.Comp.SelectedSessions.Count; i < count; ++i)
-        {
-            MakeAntag(ent, null, def);
+            MakeAntag(ent, session, def);
         }
-        ///// End of Einstein Engines changes /////
     }
 
     /// <summary>
@@ -418,6 +388,9 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
     /// </summary>
     public bool IsSessionValid(Entity<AntagSelectionComponent> ent, ICommonSession? session, AntagSelectionDefinition def, EntityUid? mind = null)
     {
+        // TODO ROLE TIMERS
+        // Check if antag role requirements are met
+
         if (session == null)
             return true;
 
@@ -473,16 +446,24 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         if (!def.AllowNonHumans && !HasComp<HumanoidAppearanceComponent>(entity))
             return false;
 
-        if (_entityWhitelist.IsWhitelistFail(def.Whitelist, entity.Value)
-            || _entityWhitelist.IsBlacklistPass(def.Blacklist, entity.Value))
-            return false;
+        if (def.Whitelist != null)
+        {
+            if (!_whitelist.IsValid(def.Whitelist, entity.Value))
+                return false;
+        }
+
+        if (def.Blacklist != null)
+        {
+            if (_whitelist.IsValid(def.Blacklist, entity.Value))
+                return false;
+        }
 
         return true;
     }
 
     private void OnObjectivesTextGetInfo(Entity<AntagSelectionComponent> ent, ref ObjectivesTextGetInfoEvent args)
     {
-        if (ent.Comp.AgentName is not {} name)
+        if (ent.Comp.AgentName is not { } name)
             return;
 
         args.Minds = ent.Comp.SelectedMinds;
