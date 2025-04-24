@@ -15325,3 +15325,37 @@ Entries:
   id: 7176
   time: '2025-04-23T02:56:54.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2301
+- author: dootythefrooty
+  changes:
+    - type: Fix
+      message: >-
+        The Crew Monitor server now works on Anchor, Asterisk, Core, Hive,
+        Lambda, and Pebble roundstart.
+  id: 7177
+  time: '2025-04-24T02:26:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2302
+- author: Timfa2112
+  changes:
+    - type: Remove
+      message: Removed antag eligibility for Corporate Liaison
+  id: 7178
+  time: '2025-04-24T02:27:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2299
+- author: LaryNevesPR
+  changes:
+    - type: Fix
+      message: The spiders got tired of making friends and started biting again.
+  id: 7179
+  time: '2025-04-24T03:46:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2303
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed items such as tactical webbing, bell collars, and hardsuits being
+        desynced with character movement. 
+    - type: Tweak
+      message: Made various large performance improvements.
+  id: 7180
+  time: '2025-04-24T04:28:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2298
