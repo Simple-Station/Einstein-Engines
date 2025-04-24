@@ -15325,3 +15325,12 @@ Entries:
   id: 7176
   time: '2025-04-23T02:56:54.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2301
+- author: dootythefrooty
+  changes:
+    - type: Fix
+      message: >-
+        The Crew Monitor server now works on Anchor, Asterisk, Core, Hive,
+        Lambda, and Pebble roundstart.
+  id: 7177
+  time: '2025-04-24T02:26:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2302
