@@ -230,7 +230,7 @@
   components:
   - type: InstantAction
     icon: { sprite : Interface/Actions/psionics.rsi, state: shadeskip }
-    useDelay: 0.1
+    useDelay: 45
     checkCanInteract: false
     event: !type:AnomalyPowerActionEvent
             settings:
