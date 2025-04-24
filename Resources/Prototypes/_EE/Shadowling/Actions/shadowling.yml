@@ -320,3 +320,21 @@
     event: !type:AscendantBroadcastEvent
     # add speech
   - type: ShadowlingAction
+
+- type: entity
+  id: ActionEmpoweredEnthrall
+  name: Empowered Enthrall
+  description: Shatters their will, forging a Thrall. Faster and stronger.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTargetAction
+    canTargetSelf: false
+    interactOnMiss: false
+    itemIconStyle: NoItem
+    range: 1
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: emp_enthrall
+    event: !type:EmpoweredEnthrallEvent
+    # add speech
+  - type: ShadowlingAction

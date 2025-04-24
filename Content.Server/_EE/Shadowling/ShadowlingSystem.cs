@@ -10,6 +10,7 @@ using Content.Shared.Abilities.Psionics;
 using Content.Shared.Actions;
 using Content.Shared.Alert;
 using Content.Shared.Damage;
+using Content.Shared.DoAfter;
 using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
 using Content.Shared.Mobs.Components;
@@ -131,13 +132,13 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
 
         if (args.Phase == ShadowlingPhases.PostHatch)
         {
-            // _actions.RemoveAction();
             AddPostHatchActions(uid, component);
 
-            EnsureComp<LightDetectionComponent>(uid);
+            // todo: uncomment after debugging abilities
+            /*EnsureComp<LightDetectionComponent>(uid);
             var lightMod = EnsureComp<LightDetectionDamageModifierComponent>(uid);
             lightMod.ResistanceModifier = 0.5f; // Let them start with 50% resistance, and decrease it per Thrall
-            _alert.ShowAlert(uid, component.AlertProto);
+            _alert.ShowAlert(uid, component.AlertProto);*/
         }
         else if (args.Phase == ShadowlingPhases.Ascension)
         {
@@ -150,7 +151,6 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
                 _actions.RemoveAction(uid, action);
             }
 
-            // Add Ascension Actions and Components
             AddComp<ShadowlingAnnihilateComponent>(uid);
             AddComp<ShadowlingHypnosisComponent>(uid);
             AddComp<ShadowlingPlaneShiftComponent>(uid);
@@ -245,5 +245,24 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
             return false;
 
         return true;
+    }
+
+    public void DoEnthrall(EntityUid uid, SimpleDoAfterEvent args)
+    {
+        if (args.Cancelled)
+            return;
+        if (args.Args.Target is null)
+            return;
+
+        var target = args.Args.Target.Value;
+
+        var thrall = EnsureComp<ThrallComponent>(target);
+
+        if (TryComp<ShadowlingComponent>(uid, out var sling))
+        {
+            sling.Thralls.Add(target);
+            thrall.Converter = uid;
+            RaiseLocalEvent(uid, new ThrallAddedEvent());
+        }
     }
 }

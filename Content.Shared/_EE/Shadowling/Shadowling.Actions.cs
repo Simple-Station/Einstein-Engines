@@ -38,6 +38,7 @@ public sealed partial class BlindnessSmokeEvent : InstantActionEvent { }
 public sealed partial class NullChargeEvent : InstantActionEvent { }
 public sealed partial class SonicScreechEvent : InstantActionEvent { }
 public sealed partial class BlackRecuperationEvent : EntityTargetActionEvent { }
+public sealed partial class EmpoweredEnthrallEvent : EntityTargetActionEvent { }
 #endregion
 
 #region Events - Ascension

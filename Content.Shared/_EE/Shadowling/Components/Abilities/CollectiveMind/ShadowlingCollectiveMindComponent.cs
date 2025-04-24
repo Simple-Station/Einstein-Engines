@@ -48,6 +48,12 @@ public sealed partial class ShadowlingCollectiveMindComponent : Component
             ActionPrototype = "ActionBlackRecuperation",
             ActionComponentName = "ShadowlingBlackRecuperation"
         },
+        new ShadowlingActionData
+        {
+            UnlockAtThralls = 12,
+            ActionPrototype = "ActionEmpoweredEnthrall",
+            ActionComponentName = "ShadowlingEmpoweredEnthrall"
+        }
     };
 
     [DataField]

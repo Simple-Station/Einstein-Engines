@@ -36,7 +36,6 @@ public sealed class ShadowlingEnthrallSystem : EntitySystem
 
         if (!_shadowling.CanEnthrall(uid, target))
             return;
-
         // Basic Enthrall -> Can't melt Mindshields
         if (HasComp<MindShieldComponent>(target))
         {
@@ -51,20 +50,6 @@ public sealed class ShadowlingEnthrallSystem : EntitySystem
 
     private void OnEnthrallDoAfter(EntityUid uid, ShadowlingEnthrallComponent comp, EnthrallDoAfterEvent args)
     {
-        if (args.Cancelled)
-            return;
-        if (args.Args.Target is null)
-            return;
-
-        var target = args.Args.Target.Value;
-
-        var thrall = EnsureComp<ThrallComponent>(target);
-
-        if (TryComp<ShadowlingComponent>(uid, out var sling))
-        {
-           sling.Thralls.Add(target);
-           thrall.Converter = uid;
-           RaiseLocalEvent(uid, new ThrallAddedEvent());
-        }
+        _shadowling.DoEnthrall(uid, args);
     }
 }
