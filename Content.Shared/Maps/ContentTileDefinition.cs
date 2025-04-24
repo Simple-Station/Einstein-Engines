@@ -100,7 +100,7 @@ namespace Content.Shared.Maps
         ///     except in the case of Space Wind. This default value is assuming an interaction interface of "Rubber on steel tile".
         /// </summary>
         [DataField]
-        public float MobFrictionNoInput = 0.2f;
+        public float? MobFrictionNoInput;
 
         /// <summary>
         ///     Accel override for mob mover in <see cref="SharedMoverController"/>
