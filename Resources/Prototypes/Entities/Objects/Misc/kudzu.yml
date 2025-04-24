@@ -343,7 +343,7 @@
             data: { state: spookysmoke }
           - options: ReducedMotion
             data: { state: spookysmoke_static }
-    - type: RandomSpawner
+    - type: RandomSpawner # Deparented from ShadowHaze to prevent spawning of normal ShadowPortals that do not despawn
       deleteSpawnerAfterSpawn: false
       rareChance: 0.05
       offset: 0.2

@@ -125,8 +125,9 @@
       path: /Audio/Ambience/anomaly_scary.ogg
 
 - type: entity
-  name: Temporary shadow rift
+  name: unstable shadow rift
   id: ShadowPortalTemp
+  description: Its already closing!
   parent: ShadowPortal
   components:
     - type: TimedDespawn
