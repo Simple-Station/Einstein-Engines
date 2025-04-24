@@ -15348,3 +15348,14 @@ Entries:
   id: 7179
   time: '2025-04-24T03:46:28.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2303
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed items such as tactical webbing, bell collars, and hardsuits being
+        desynced with character movement. 
+    - type: Tweak
+      message: Made various large performance improvements.
+  id: 7180
+  time: '2025-04-24T04:28:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2298
