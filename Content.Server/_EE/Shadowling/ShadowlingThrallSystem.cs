@@ -1,5 +1,6 @@
 using Content.Server.Actions;
 using Content.Server.Antag;
+using Content.Server.Language;
 using Content.Shared._EE.Shadowling;
 using Content.Shared._EE.Shadowling.Components;
 using Content.Shared._EE.Shadowling.Thrall;
@@ -17,6 +18,7 @@ public sealed class ShadowlingThrallSystem : EntitySystem
 {
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
+    [Dependency] private readonly LanguageSystem _language = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -29,6 +31,7 @@ public sealed class ShadowlingThrallSystem : EntitySystem
     {
         _antag.SendBriefing(uid, Loc.GetString("thrall-role-greeting"), Color.MediumPurple, null); // todo: find sfx
         // todo: add screen shader effect here too
+        _language.AddLanguage(uid, component.SlingLanguageId);
 
         var nightVision = EnsureComp<NightVisionComponent>(uid);
         nightVision.ToggleAction = "ActionThrallDarksight"; // todo: not sure if this is needed, need to test it without it

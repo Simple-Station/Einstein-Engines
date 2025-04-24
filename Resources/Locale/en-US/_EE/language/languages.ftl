@@ -17,3 +17,7 @@ language-YaSsa-description =
 language-Delvahii-name = Delvahii
 language-Delvahii-description =
     A Zhan-Khazan language tied to Ma'take worship, still used in religious rites and favored by farmers resisting government control.
+
+language-Shadowmind-name = Shadowmind
+language-Shadowmind-description =
+    A test

@@ -711,10 +711,6 @@
     organ:
     - type: Brain
     slotId: brain
-  - type: SurgeryOrganOnAddCondition
-    components:
-      brain:
-      - type: Thrall
   - type: SurgeryPartCondition
     part: Head
 

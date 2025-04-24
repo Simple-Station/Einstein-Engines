@@ -1,4 +1,5 @@
 using Content.Server.Actions;
+using Content.Server.Language;
 using Content.Server.Popups;
 using Content.Server.Storage.EntitySystems;
 using Content.Shared._EE.Shadowling.Systems;
@@ -9,18 +10,11 @@ using Content.Shared.Abilities.Psionics;
 using Content.Shared.Actions;
 using Content.Shared.Alert;
 using Content.Shared.Damage;
-using Content.Shared.Hands.Components;
-using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
-using Content.Shared.Projectiles;
-using Content.Shared.Weapons.Ranged.Components;
-using MathNet.Numerics;
-using Microsoft.CodeAnalysis.Elfie.Serialization;
-using Microsoft.EntityFrameworkCore.Storage;
 
 
 namespace Content.Server._EE.Shadowling;
@@ -38,7 +32,7 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
     [Dependency] private readonly AlertsSystem _alert = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly SharedHandsSystem _sharedHands = default!;
+    [Dependency] private readonly LanguageSystem _language = default!;
 
     public override void Initialize()
     {
@@ -116,6 +110,7 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
 
     private void OnInit(EntityUid uid, ShadowlingComponent component, ref ComponentInit args)
     {
+        _language.AddLanguage(uid, component.SlingLanguageId);
         if (!TryComp(uid, out ActionsComponent? actions))
             return;
 

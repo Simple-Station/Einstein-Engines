@@ -1,10 +1,5 @@
 using Content.Server.Actions;
-using Content.Server.Database.Migrations.Sqlite;
-using Content.Server.Polymorph.Systems;
-using Content.Server.Stealth;
 using Content.Shared._EE.Shadowling;
-using Content.Shared.Movement.Systems;
-using Content.Shared.Stealth.Components;
 using Content.Shared.WhiteDream.BloodCult.Constructs.PhaseShift;
 
 
@@ -17,7 +12,6 @@ namespace Content.Server._EE.Shadowling;
 /// </summary>
 public sealed class ShadowlingPlaneShiftSystem : EntitySystem
 {
-    [Dependency] private readonly PolymorphSystem _polymorph = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
 
     /// <inheritdoc/>
@@ -33,7 +27,7 @@ public sealed class ShadowlingPlaneShiftSystem : EntitySystem
         comp.IsActive = !comp.IsActive;
         if (comp.IsActive)
         {
-            TryDoShift(uid, comp);
+            TryDoShift(uid);
         }
         else
         {
@@ -46,7 +40,7 @@ public sealed class ShadowlingPlaneShiftSystem : EntitySystem
         _actions.StartUseDelay(args.Action);
     }
 
-    private void TryDoShift(EntityUid uid, ShadowlingPlaneShiftComponent comp)
+    private void TryDoShift(EntityUid uid)
     {
         if (HasComp<PhaseShiftedComponent>(uid))
             return;

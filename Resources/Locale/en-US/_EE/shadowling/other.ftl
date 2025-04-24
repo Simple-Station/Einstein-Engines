@@ -5,3 +5,5 @@ reagent-desc-shadowling-toxin = A mysterious chemical that makes heals any shado
 
 alerts-shadowling-light-name = Light Identifier
 alerts-shadowling-light-desc = This is your light identifier. If it reaches 0, you're getting cooked alive. Always prioritize standing in the shadows.
+
+chat-manager-shadowling-channel-name = Shadowmind

@@ -6,7 +6,6 @@ using Content.Shared._EE.Shadowling.Components;
 using Content.Shared._EE.Shadowling.Thrall;
 using Content.Shared.Popups;
 using Content.Shared.Stealth.Components;
-using Microsoft.EntityFrameworkCore.Update;
 using Robust.Shared.Timing;
 
 

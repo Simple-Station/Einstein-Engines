@@ -1,5 +1,6 @@
 using Content.Shared.Alert;
 using Content.Shared.Damage;
+using Content.Shared.Language;
 using Content.Shared.StatusIcon;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -108,6 +109,9 @@ public sealed partial class ShadowlingComponent : Component
 
     [DataField]
     public float ModifiedDamage;
+
+    [DataField]
+    public ProtoId<LanguagePrototype> SlingLanguageId { get; set; } = "Shadowmind";
 }
 
 [NetSerializable, Serializable]

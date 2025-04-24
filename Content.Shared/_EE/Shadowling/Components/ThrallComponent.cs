@@ -1,4 +1,5 @@
 using Content.Shared._EE.Shadowling.Systems;
+using Content.Shared.Language;
 using Content.Shared.StatusIcon;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -44,5 +45,7 @@ public sealed partial class ThrallComponent : Component
     [DataField]
     public EntityUid? Converter;
 
+    [DataField]
+    public ProtoId<LanguagePrototype> SlingLanguageId { get; set; } = "Shadowmind";
 
 }
