@@ -48,3 +48,4 @@ reagent-desc-liftloversspecial = A chemical cocktail that quickly restores stami
 
 reagent-name-morphine = morphine
 reagent-desc-morphine = A potent analgesic that allows a patient to painlessly undergo surgery even while awake. Highly addictive if overused. Overdose can cause difficulty breathing.
+

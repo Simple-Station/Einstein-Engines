@@ -8,3 +8,15 @@
   description: An air horn made from bananium.
   icon: { sprite: Objects/Fun/bananiumhorn.rsi, state: icon }
   objectType: Item
+
+- type: construction
+  name: ousiana dust bowl
+  id:  FoodOusianaDustBowl
+  graph: OusianaDustBowl
+  startNode: start
+  targetNode: ousianadustbowl
+  category: construction-category-misc
+  description: A potent powder, which when consumed can break psionic blocks
+  icon: { sprite: Objects/Consumable/Food/bowl.rsi, state: ousiana }
+  objectType: Item
+

@@ -2734,11 +2734,13 @@
     damage:
       types:
         Piercing: 6
+  - type: Puller
+    needsHands: false
 
 - type: entity
   parent:
-  - MobGiantSpider
   - MobSpiderAngryBase
+  - MobGiantSpider
   id: MobGiantSpiderAngry
 
 - type: entity

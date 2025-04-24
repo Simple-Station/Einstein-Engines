@@ -409,6 +409,23 @@
 
 - type: entity
   parent: SmokeGrenade
+  id: CleanerGrenadeNuke
+  name: the clean solution
+  description: A special cleanade designed by an especially tenacious janitor. Its foam can spread over an entire room, leaving it squeaky clean and smelling slightly of lemons.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Grenades/janitornuke.rsi
+  - type: SmokeOnTrigger
+    duration: 20
+    spreadAmount: 200
+    smokePrototype: Foam
+    solution:
+      reagents:
+      - ReagentId: SpaceCleaner
+        Quantity: 30
+
+- type: entity
+  parent: SmokeGrenade
   id: TearGasGrenade
   name: tear gas grenade
   description: A riot control tear gas grenade. Causes irritation, pain and makes you cry your eyes out.

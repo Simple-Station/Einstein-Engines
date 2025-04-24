@@ -1,0 +1,54 @@
+- type: microwaveMealRecipe
+  id: RecipeCleaningGrenadeNuke
+  name: clean nuke recipe
+  result: CleanerGrenadeNuke
+  time: 10
+  solids:
+    CleanerGrenade: 1
+    Soap: 1
+  reagents:
+    Bleach: 100
+
+- type: microwaveMealRecipe
+  id: RecipeCleaningGrenadeNuke1
+  name: clean nuke recipe
+  result: CleanerGrenadeNuke
+  time: 10
+  solids:
+    CleanerGrenade: 1
+    SoapNT: 1
+  reagents:
+    Bleach: 100
+
+- type: microwaveMealRecipe
+  id: RecipeCleaningGrenadeNuke2
+  name: clean nuke recipe
+  result: CleanerGrenadeNuke
+  time: 10
+  solids:
+    CleanerGrenade: 1
+    SoapDeluxe: 1
+  reagents:
+    Bleach: 100
+
+- type: microwaveMealRecipe
+  id: RecipeCleaningGrenadeNuke3
+  name: clean nuke recipe
+  result: CleanerGrenadeNuke
+  time: 10
+  solids:
+    CleanerGrenade: 1
+    SoapHomemade: 1
+  reagents:
+    Bleach: 100
+
+- type: microwaveMealRecipe
+  id: RecipeCleaningGrenadeNuke4
+  name: clean nuke recipe
+  result: CleanerGrenadeNuke
+  time: 10
+  solids:
+    CleanerGrenade: 1
+    SoapSyndie: 1
+  reagents:
+    Bleach: 100
