@@ -15341,3 +15341,10 @@ Entries:
   id: 7178
   time: '2025-04-24T02:27:36.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2299
+- author: LaryNevesPR
+  changes:
+    - type: Fix
+      message: The spiders got tired of making friends and started biting again.
+  id: 7179
+  time: '2025-04-24T03:46:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2303
