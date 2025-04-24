@@ -751,7 +751,7 @@ entities:
       fixtures: {}
     - type: OccluderTree
     - type: BecomesStation
-      id: Anchor Station
+      id: Anchor
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
         path: /Audio/Effects/alert.ogg
@@ -79974,6 +79974,9 @@ entities:
     - type: Transform
       pos: 68.5,16.5
       parent: 2
+    - type: SingletonDeviceNetServer
+      active: False
+      available: False
 - proto: Crowbar
   entities:
   - uid: 12421
