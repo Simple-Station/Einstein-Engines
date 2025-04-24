@@ -15318,3 +15318,73 @@ Entries:
   id: 7175
   time: '2025-04-19T01:21:53.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2263
+- author: Orion-416
+  changes:
+    - type: Fix
+      message: Fixed an issue where Combat Magboots would cause a test fail.
+  id: 7176
+  time: '2025-04-23T02:56:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2301
+- author: dootythefrooty
+  changes:
+    - type: Fix
+      message: >-
+        The Crew Monitor server now works on Anchor, Asterisk, Core, Hive,
+        Lambda, and Pebble roundstart.
+  id: 7177
+  time: '2025-04-24T02:26:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2302
+- author: Timfa2112
+  changes:
+    - type: Remove
+      message: Removed antag eligibility for Corporate Liaison
+  id: 7178
+  time: '2025-04-24T02:27:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2299
+- author: LaryNevesPR
+  changes:
+    - type: Fix
+      message: The spiders got tired of making friends and started biting again.
+  id: 7179
+  time: '2025-04-24T03:46:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2303
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed items such as tactical webbing, bell collars, and hardsuits being
+        desynced with character movement. 
+    - type: Tweak
+      message: Made various large performance improvements.
+  id: 7180
+  time: '2025-04-24T04:28:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2298
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: >-
+        Improved readability of many parts of the character editor with colored
+        rows
+    - type: Tweak
+      message: >-
+        Cleaned up some little bits of the character editor, most notably
+        removing a tiny margin that was shrinking every tab
+    - type: Fix
+      message: >-
+        Fixed the style of the Background tab of the character editor being very
+        wonky due to misplaced UI elements
+    - type: Tweak
+      message: Made the Jobs tab use proper headers for the department titles
+    - type: Tweak
+      message: Improved the Marking editor
+    - type: Tweak
+      message: Improved the layout of the character editor
+    - type: Tweak
+      message: Improved some button names in the character editor
+    - type: Add
+      message: >-
+        The character editor now shows all 4 directions of your character
+        preview at once
+  id: 7181
+  time: '2025-04-24T09:24:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2252
