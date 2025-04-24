@@ -27614,9 +27614,9 @@ entities:
     - type: Transform
       pos: 46.5,-4.5
       parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
+    - type: SingletonDeviceNetServer
+      active: False
+      available: False
 - proto: CrewMonitoringServerMachineCircuitboard
   entities:
   - uid: 4406
