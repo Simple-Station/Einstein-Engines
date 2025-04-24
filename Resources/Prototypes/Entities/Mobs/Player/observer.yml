@@ -72,6 +72,7 @@
   - type: UniversalLanguageSpeaker # Ghosts should understand any language.
   - type: PointLight
     radius: 6
+    castShadows: false
     enabled: false
   - type: UserInterface
     interfaces:
