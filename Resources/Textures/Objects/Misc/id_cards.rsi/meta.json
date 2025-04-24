@@ -222,7 +222,16 @@
       "name": "idseniorofficer"
     },
     {
-      "name": "idpassanger"
+      "name": "idpassenger"
+    },
+    {
+      "name": "idquartermaster"
+    },
+    {
+      "name": "idzookeeper"
+    },
+    {
+      "name": "idbotanist"
     }
   ]
 }

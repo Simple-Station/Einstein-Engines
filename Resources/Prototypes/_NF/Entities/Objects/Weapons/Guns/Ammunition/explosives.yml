@@ -15,7 +15,7 @@
     proto: BulletRocketEmp
     deleteOnSpawn: true
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    sprite: _Crescent/Objects/Weapons/Ammunition/Explosives/explosives.rsi
     state: rpg-emp
 
 # Grenades
@@ -28,7 +28,7 @@
   - type: CartridgeAmmo
     proto: BulletGrenadeEmp
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    sprite: _Crescent/Objects/Weapons/Ammunition/Explosives/explosives.rsi
     layers:
     - state: emp
       map: ["enum.AmmoVisualLayers.Base"]

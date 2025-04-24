@@ -5,7 +5,7 @@
   description: Contains the collective knowledge of the station's scientists.
   components:
   - type: Sprite
-    sprite: Structures/Machines/server.rsi
+    sprite: _Crescent/Structures/Machines/server.rsi
     layers:
       - state: server
       - state: variant-pirate
@@ -69,7 +69,7 @@
   description: Contains the collective knowledge of the station's scientists.
   components:
   - type: Sprite
-    sprite: Structures/Machines/server.rsi
+    sprite: _Crescent/Structures/Machines/server.rsi
     layers:
       - state: server
       - state: variant-ncwl
@@ -135,7 +135,7 @@
   description: Contains the collective knowledge of the station's scientists.
   components:
   - type: Sprite
-    sprite: Structures/Machines/server.rsi
+    sprite: _Crescent/Structures/Machines/server.rsi
     layers:
       - state: server
       - state: variant-imperial
@@ -200,7 +200,7 @@
   description: Contains the collective knowledge of the station's scientists.
   components:
   - type: Sprite
-    sprite: Structures/Machines/server.rsi
+    sprite: _Crescent/Structures/Machines/server.rsi
     layers:
       - state: server
       - state: variant-imperial
@@ -264,7 +264,7 @@
   description: Contains the collective knowledge of the station's scientists.
   components:
   - type: Sprite
-    sprite: Structures/Machines/server.rsi
+    sprite: _Crescent/Structures/Machines/server.rsi
     layers:
       - state: server
       - state: variant-shi

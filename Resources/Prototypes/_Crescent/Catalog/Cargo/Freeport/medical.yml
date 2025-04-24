@@ -11,7 +11,7 @@
 - type: cargoProduct
   id: PhoronFreeport
   icon:
-    sprite: Objects/Materials/ore.rsi
+    sprite: _Crescent/Objects/Materials/ore.rsi
     state: deactivatedphoron
   product: CratePhoron
   cost: 7000
@@ -21,7 +21,7 @@
 - type: cargoProduct
   id: PlasmaFreeport
   icon:
-    sprite: Objects/Materials/ore.rsi
+    sprite: _Crescent/Objects/Materials/ore.rsi
     state: plasmaisotope
   product: CrateIsotopes
   cost: 8500
@@ -31,7 +31,7 @@
 - type: cargoProduct
   id: GalineFreeport
   icon:
-    sprite: Objects/Materials/ore.rsi
+    sprite: _Crescent/Objects/Materials/ore.rsi
     state: galine5
   product: CrateGaline
   cost: 6000
@@ -41,7 +41,7 @@
 - type: cargoProduct
   id: MechaniteFreeport
   icon:
-    sprite: Objects/Materials/ore.rsi
+    sprite: _Crescent/Objects/Materials/ore.rsi
     state: mechanites
   product: CrateMechanite
   cost: 12500

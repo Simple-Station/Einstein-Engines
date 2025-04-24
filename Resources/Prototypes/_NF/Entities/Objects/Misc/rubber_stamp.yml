@@ -10,15 +10,3 @@
   - type: Sprite
     state: stamp-hop
 
-- type: entity
-  name: station traffic controller's rubber stamp
-  parent: RubberStampBase
-  id: RubberStampStc
-  suffix: DO NOT MAP
-  components:
-  - type: Stamp
-    stampedName: stamp-component-stamped-name-stc
-    stampedColor: "#CC6633"
-    stampState: "paper_stamp-stc"
-  - type: Sprite
-    state: stamp-stc

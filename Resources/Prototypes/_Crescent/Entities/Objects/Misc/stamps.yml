@@ -9,6 +9,7 @@
     stampedColor: "#ffd580"
     stampState: "paper_stamp-ncwl"
   - type: Sprite
+    sprite: _Crescent/Objects/Misc/stamps.rsi
     state: stampncwl
 
 - type: entity
@@ -22,6 +23,7 @@
     stampedColor: "#432d51"
     stampState: "paper_stamp-empire"
   - type: Sprite
+    sprite: _Crescent/Objects/Misc/stamps.rsi
     state: empire
 
 - type: entity
@@ -35,6 +37,7 @@
     stampedColor: "#4a6741"
     stampState: "paper_stamp-hunter"
   - type: Sprite
+    sprite: _Crescent/Objects/Misc/stamps.rsi
     state: empire
 
 - type: entity
@@ -48,4 +51,5 @@
     stampedColor: "#bb9042"
     stampState: "paper_stamp-shi"
   - type: Sprite
+    sprite: _Crescent/Objects/Misc/stamps.rsi
     state: stamp-shi

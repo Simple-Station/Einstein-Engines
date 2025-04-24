@@ -99,9 +99,6 @@
     chance: 0.95
     offset: 0.0
     rarePrototypes:
-    #- RCD
-    - ShipyardRCD
-    - ShipyardRCDAmmo
     - SyndicateJawsOfLife
     rareChance: 0.01
 

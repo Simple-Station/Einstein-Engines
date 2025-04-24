@@ -12,6 +12,7 @@
     tags:
     - RawMaterial
   - type: Sprite
+    sprite: _Crescent/Objects/Materials/ore.rsi
     state: icon-scrap
   - type: Material
   - type: PhysicalComposition
@@ -75,6 +76,7 @@
   - type: Stack
     stackType: TitaniumScrapOre
   - type: Sprite
+    sprite: _Crescent/Objects/Materials/ore.rsi
     state: icon-titaniumscrap
   - type: Material
   - type: PhysicalComposition
@@ -249,6 +251,7 @@
   - type: Stack
     stackType: RefinedSteelScrapOre
   - type: Sprite
+    sprite: _Crescent/Objects/Materials/ore.rsi
     state: icon-refinedscrap
   - type: Material
   - type: PhysicalComposition
@@ -276,6 +279,7 @@
   - type: Stack
     stackType: RefinedTitaniumScrapOre
   - type: Sprite
+    sprite: _Crescent/Objects/Materials/ore.rsi
     state: icon-titta
   - type: Material
   - type: PhysicalComposition
@@ -310,6 +314,7 @@
   - type: Stack
     stackType: GarbageOre
   - type: Sprite
+    sprite: _Crescent/Objects/Materials/ore.rsi
     state: garbage
   - type: Material
   - type: PhysicalComposition
@@ -362,6 +367,7 @@
   - type: Stack
     stackType: RefinedGarbageOre
   - type: Sprite
+    sprite: _Crescent/Objects/Materials/ore.rsi
     state: refinedgarbage
   - type: Material
   - type: PhysicalComposition
@@ -389,6 +395,7 @@
   - type: Stack
     stackType: PlasmaIsotope
   - type: Sprite
+    sprite: _Crescent/Objects/Materials/ore.rsi
     state: plasmaisotope
   - type: Material
   - type: PhysicalComposition
@@ -424,6 +431,7 @@
   - type: Stack
     stackType: MechaniteCanister
   - type: Sprite
+    sprite: _Crescent/Objects/Materials/ore.rsi
     state: mechanites
   - type: Material
   - type: PhysicalComposition
@@ -459,6 +467,7 @@
   - type: Stack
     stackType: GalineCanister
   - type: Sprite
+    sprite: _Crescent/Objects/Materials/ore.rsi
     state: galine5
   - type: Material
   - type: PhysicalComposition
@@ -494,6 +503,7 @@
   - type: Stack
     stackType: PhoronBottle
   - type: Sprite
+    sprite: _Crescent/Objects/Materials/ore.rsi
     state: deactivatedphoron
   - type: Material
   - type: PhysicalComposition

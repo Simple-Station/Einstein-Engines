@@ -12,7 +12,7 @@
       - !type:HealthChange
         probability: 0.3
         damage:
-          groups:
+          types:
             Poison: 1.5
     Narcotic:
       effects:
@@ -43,7 +43,7 @@
         conditions:
         - !type:ReagentThreshold
             min: 20
-        amount: 50000 
+        amount: 50000
       - !type:Emote
         emote: Scream
         showInChat: true

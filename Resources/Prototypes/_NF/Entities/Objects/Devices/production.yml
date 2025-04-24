@@ -40,7 +40,7 @@
   description: A machine printed circuit board for an nfsd techfab.
   components:
     - type: Sprite
-      state: nfsd
+      state: supply
     - type: MachineBoard
       prototype: NfsdTechFab
 

@@ -4,6 +4,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
+    sprite: _NF/Structures/Storage/canister.rsi
     state: oxygen_liquid-1 # Frontier
 
 - type: entity
@@ -12,6 +13,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
+    sprite: _NF/Structures/Storage/canister.rsi
     state: nitrogen_liquid-1 # Frontier
 
 - type: entity
@@ -20,4 +22,5 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
+    sprite: _NF/Structures/Storage/canister.rsi
     state: carbon_liquid-1 # Frontier
