@@ -588,8 +588,6 @@
               Poison: -0.35
               Radiation: -0.35
               Genetic: -0.35
-    - !type:TraitAddComponent
-      components:
         - type: BloodDeficiency # we do a little reverse engineering
           bloodLossPercentage: -1  # we don't know if this will work or not but it should fill 1% blood back in every second
 
