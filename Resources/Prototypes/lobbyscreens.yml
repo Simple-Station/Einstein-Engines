@@ -63,3 +63,9 @@
   background: /Textures/LobbyScreens/justaweekaway.webp
   name: Just A Week Away
   artist: plantyfern
+
+- type: lobbyBackground
+  id: NosfordGunther
+  background: /Textures/LobbyScreens/nosfordgunther.webp
+  name: CALL CODE WHITE
+  artist: LeonardoDaBepis

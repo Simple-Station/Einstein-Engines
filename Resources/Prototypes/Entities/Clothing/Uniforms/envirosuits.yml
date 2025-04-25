@@ -1595,7 +1595,7 @@
 - type: entity
   parent: ClothingUniformEnvirosuitCustomBase
   id: ClothingUniformEnvirosuitNanotrasenRepresentative
-  name: nanotrasen representative envirosuit
+  name: corporate liaison envirosuit
   description: A black envirosuit worn by officials.
   components:
   - type: Sprite

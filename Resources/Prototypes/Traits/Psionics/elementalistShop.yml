@@ -1,7 +1,7 @@
 - type: trait
   id: ElementalistAnoigoPower
   category: TraitsPsionicsPowers
-  points: -5
+  points: -10
   requirements:
     - !type:CharacterTraitRequirement
       traits:

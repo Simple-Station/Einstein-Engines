@@ -13,9 +13,11 @@
   - External
   requirements:
     - !type:CharacterEmployerRequirement
-      inverted: true
       employers:
-      - Unemployed
+      - HephaestusIndustries
+      - ZavodskoiInterstellar
+      - EinsteinEngines
+      - NanoTrasen
 
 - type: startingGear
   id: TechnicalAssistantGear

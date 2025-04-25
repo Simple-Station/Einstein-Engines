@@ -1,0 +1,286 @@
+# The bloodred from ali express
+- type: entity
+  parent: [ClothingModsuitStandard]
+  id: BloodredModsuitBackpack
+  name: EE-99MS "Raider" Modsuit Control
+  description: A control module for the "Raider" modsuit.
+  components:
+    - type: Sprite
+      sprite: _TG/Clothing/Modsuit/bloodredmodsuit.rsi
+    - type: ExplosionResistance
+      damageCoefficient: 0.6
+    - type: ToggleableClothing
+      clothingPrototypes:
+        head: ClothingModsuitHelmetBloodredModsuit
+        gloves: ClothingModsuitGauntletsBloodredModsuit
+        outerClothing: ClothingModsuitChestplateBloodredModsuit
+        shoes: ClothingModsuitBootsBloodredModsuit
+    - type: ItemSlots
+      slots:
+        cell_slot:
+          name: power-cell-slot-component-slot-name-default
+          startingItem: PowerCellHyper
+          whitelist:
+            components:
+              - PowerCell
+    - type: Storage
+      maxItemSize: Huge
+      grid:
+        - 0,0,7,4
+    - type: SealableClothingVisuals
+      visualLayers:
+        back:
+        - state: equipped-BACKPACK-sealed
+        - state: equipped-BACKPACK-sealed_glow
+          shader: unshaded
+
+- type: entity
+  parent: [ClothingModsuitGauntletsStandard]
+  id: ClothingModsuitGauntletsBloodredModsuit
+  name: EE-99MS "Raider" Modsuit Gauntlets
+  description: A set of armored gauntlets for the "Raider" modsuit.
+  categories: [HideSpawnMenu]
+  components:
+    - type: Sprite
+      sprite: _TG/Clothing/Modsuit/bloodredmodsuit.rsi
+    - type: SealableClothingVisuals
+      visualLayers:
+        gloves:
+        - state: equipped-HAND-sealed
+
+- type: entity
+  parent: [ClothingModsuitHelmetStandard, ShowSecurityIcons]
+  id: ClothingModsuitHelmetBloodredModsuit
+  name: EE-99MS "Raider" Modsuit Helm
+  description: A helmet made for the "Raider" modsuit.
+  categories: [HideSpawnMenu]
+  components:
+    - type: Sprite
+      sprite: _TG/Clothing/Modsuit/bloodredmodsuit.rsi
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.90
+          Slash: 0.90
+          Piercing: 0.95
+          Heat: 0.90
+    - type: SealableClothingVisuals
+      visualLayers:
+        head:
+          - state: equipped-HEAD-sealed
+          - state: equipped-HEAD-sealed_glow
+            shader: unshaded
+    - type: ShowHealthBars
+      damageContainers:
+        - Biological
+    - type: PointLight
+      color: "#21A52E"
+
+- type: entity
+  parent: [ClothingModsuitChestplateStandard]
+  id: ClothingModsuitChestplateBloodredModsuit
+  name: EE-99MS "Raider" Modsuit Chestplate
+  description: A mass production model of a modular-tacsuit that once made headlines for its showings in Solarian media. After being rejected in favor of the Shanlin tacsuit, these suits have mysteriously become commonplace among frontier pirate crews.
+  categories: [HideSpawnMenu]
+  components:
+    - type: Sprite
+      sprite: _TG/Clothing/Modsuit/bloodredmodsuit.rsi
+    - type: ClothingSpeedModifier
+      walkModifier: 0.9
+      sprintModifier: 0.9
+    - type: Armor
+      modifiers:
+        flatReductions:
+          Piercing: 2
+          Heat: 2
+        coefficients:
+          Blunt: 0.70
+          Slash: 0.70
+          Piercing: 0.80
+          Heat: 0.60
+    - type: TemperatureProtection
+      coefficient: 0.01
+    - type: ClothingModifyStunTime
+      modifier: 0.5
+    - type: Reflect
+      spread: 270
+      reflectProb: 0.04
+    - type: EmitsSoundOnMove
+      soundCollection:
+        collection: FootstepHardsuitMedium
+        params:
+          volume: -5
+      requiresWorn: true
+      distanceWalking: 2
+      distanceSprinting: 3
+    - type: SealableClothingVisuals
+      visualLayers:
+        outerClothing:
+        - state: equipped-OUTERCLOTHING-sealed
+
+- type: entity
+  parent: [ClothingModsuitBootsStandard]
+  id: ClothingModsuitBootsBloodredModsuit
+  name: EE-99MS "Raider" Modsuit Boots
+  description: A set of greaves made for the "Raider" modsuit.
+  categories: [HideSpawnMenu]
+  components:
+    - type: Appearance
+    - type: Sprite
+      sprite: _TG/Clothing/Modsuit/bloodredmodsuit.rsi
+    - type: Tag
+      tags:
+        - WhitelistChameleon
+    - type: ToggleClothing
+      action: ActionToggleMagboots
+    - type: Magboots
+    - type: SealableClothingVisuals
+      visualLayers:
+        shoes:
+        - state: equipped-FEET-sealed
+
+# The second modsuit
+- type: entity
+  parent: [ClothingModsuitStandard]
+  id: EliteModsuitBackpack
+  name: EE-122MS "Jaeger" Modsuit Control
+  description: A controller for the "Jaeger" modsuit.
+  components:
+    - type: Sprite
+      sprite: _TG/Clothing/Modsuit/syndicateelitemodsuit.rsi
+    - type: ExplosionResistance
+      damageCoefficient: 0.6
+    - type: ToggleableClothing
+      clothingPrototypes:
+        head: ClothingModsuitHelmetEliteSyndicateModsuit
+        gloves: ClothingModsuitGauntletsEliteSyndicateModsuit
+        outerClothing: ClothingModsuitChestplateEliteSyndicateModsuit
+        shoes: ClothingModsuitBootsEliteSyndicateModsuit
+    - type: ItemSlots
+      slots:
+        cell_slot:
+          name: power-cell-slot-component-slot-name-default
+          startingItem: PowerCellHyper
+          whitelist:
+            components:
+              - PowerCell
+    - type: Storage
+      maxItemSize: Huge
+      grid:
+        - 0,0,7,4
+    - type: SealableClothingVisuals
+      visualLayers:
+        back:
+        - state: equipped-BACKPACK-sealed
+        - state: equipped-BACKPACK-sealed_glow
+          shader: unshaded
+
+- type: entity
+  parent: [ClothingModsuitGauntletsStandard]
+  id: ClothingModsuitGauntletsEliteSyndicateModsuit
+  name: EE-122MS "Jaeger" Modsuit Gauntlets
+  description: A pair of gauntlets made for the "Jaeger" modsuit.
+  categories: [HideSpawnMenu]
+  components:
+    - type: Sprite
+      sprite: _TG/Clothing/Modsuit/syndicateelitemodsuit.rsi
+    - type: SealableClothingVisuals
+      visualLayers:
+        gloves:
+        - state: equipped-HAND-sealed
+    - type: Insulated
+
+- type: entity
+  parent: [ClothingModsuitHelmetStandard, ShowSecurityIcons]
+  id: ClothingModsuitHelmetEliteSyndicateModsuit
+  name: EE-122MS "Jaeger" Modsuit Helm
+  description: A helmet made for the "Jaeger" modsuit.
+  categories: [HideSpawnMenu]
+  components:
+    - type: Sprite
+      sprite: _TG/Clothing/Modsuit/syndicateelitemodsuit.rsi
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.90
+          Slash: 0.90
+          Piercing: 0.95
+          Heat: 0.90
+    - type: SealableClothingVisuals
+      visualLayers:
+        head:
+          - state: equipped-HEAD-sealed
+          - state: equipped-HEAD-sealed_glow
+            shader: unshaded
+    - type: ShowHealthBars
+      damageContainers:
+        - Biological
+    - type: PointLight
+      color: "#ffd480"
+    - type: NightVision
+
+- type: entity
+  parent: [ClothingModsuitChestplateStandard]
+  id: ClothingModsuitChestplateEliteSyndicateModsuit
+  name: EE-122MS "Jaeger" Modsuit Chestplate
+  description: A mass production modular take on the Shiwei tacsuit. It trades a lot of the Shiwei's enhanced protection for modular equipment gear. Compared with the Raider modsuit, it offers unparalleled protection from energy weapons, but its ballistic protection leaves much to be desired.
+  categories: [HideSpawnMenu]
+  components:
+    - type: Sprite
+      sprite: _TG/Clothing/Modsuit/syndicateelitemodsuit.rsi
+    - type: Armor
+      modifiers:
+        flatReductions:
+          Piercing: 2
+          Heat: 2
+        coefficients:
+          Blunt: 0.70
+          Slash: 0.70
+          Piercing: 0.80
+          Heat: 0.60
+          Radiation: 0.40
+    - type: TemperatureProtection
+      coefficient: 0.01
+    - type: ClothingModifyStunTime
+      modifier: 0.5
+    - type: Reflect
+      spread: 270
+      reflectProb: 0.2
+    - type: EmitsSoundOnMove
+      soundCollection:
+        collection: FootstepHardsuitMedium
+        params:
+          volume: -7
+      requiresWorn: true
+      distanceWalking: 2
+      distanceSprinting: 3
+    - type: SealableClothingVisuals
+      visualLayers:
+        outerClothing:
+        - state: equipped-OUTERCLOTHING-sealed
+- type: entity
+  parent: [ClothingModsuitBootsStandard]
+  id: ClothingModsuitBootsEliteSyndicateModsuit
+  name: EE-122MS "Jaeger" Modsuit Boots
+  description: A pair of greaves made for the "Jaeger" modsuit.
+  categories: [HideSpawnMenu]
+  components:
+    - type: Appearance
+    - type: Sprite
+      sprite: _TG/Clothing/Modsuit/syndicateelitemodsuit.rsi
+    - type: Tag
+      tags:
+        - WhitelistChameleon
+    - type: ClothingSpeedModifier
+      walkModifier: 1
+      sprintModifier: 1
+    - type: ToggleClothing
+      action: ActionToggleMagboots
+    - type: ComponentToggler
+      components:
+        - type: NoSlip
+    - type: Magboots
+    - type: SealableClothingVisuals
+      visualLayers:
+        shoes:
+        - state: equipped-FEET-sealed

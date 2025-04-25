@@ -441,6 +441,15 @@
     slotId: posibrain
 
 - type: entity
+  parent: SurgeryInsertBrainTorso
+  id: SurgeryInsertSlimeCore
+  name: Insert Brain
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SurgeryOrganCondition
+    slotId: core
+
+- type: entity
   parent: SurgeryBase
   id: SurgeryRemoveHeart
   name: Remove Heart

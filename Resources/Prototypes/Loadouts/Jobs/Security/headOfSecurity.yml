@@ -2,7 +2,19 @@
 # Backpacks
 
 # Belt
-
+- type: loadout
+  id: LoadoutClothingBeltJudoHoS
+  category: JobsSecurityHeadOfSecurity
+  cost: 2
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityBelt
+  - !type:CharacterJobRequirement
+    jobs:
+    - HeadOfSecurity
+  items:
+  - ClothingBeltCorporateJudoHoS
 # Ears
 
 # Equipment

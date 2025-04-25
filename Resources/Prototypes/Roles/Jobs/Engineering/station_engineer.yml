@@ -8,9 +8,11 @@
       department: Engineering
       min: 14400 #4 hrs
     - !type:CharacterEmployerRequirement
-      inverted: true
       employers:
-      - Unemployed
+      - HephaestusIndustries
+      - ZavodskoiInterstellar
+      - EinsteinEngines
+      - NanoTrasen
   startingGear: StationEngineerGear
   icon: "JobIconStationEngineer"
   supervisors: job-supervisors-ce
