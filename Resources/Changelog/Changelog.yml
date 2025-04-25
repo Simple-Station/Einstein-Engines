@@ -15417,3 +15417,14 @@ Entries:
   id: 7184
   time: '2025-04-25T13:00:45.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2309
+- author: Zeta_Null
+  changes:
+    - type: Add
+      message: Added a proper font for Qiilour to use
+    - type: Tweak
+      message: >-
+        Put Xelthia on some trait blacklists that they wouldn't reasonably be
+        applicable for (Arm Related things)
+  id: 7185
+  time: '2025-04-25T21:19:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2317
