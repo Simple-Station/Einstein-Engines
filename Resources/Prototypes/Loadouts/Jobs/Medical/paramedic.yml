@@ -32,6 +32,8 @@
   cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
     - !type:CharacterJobRequirement
       jobs:
         - Paramedic
@@ -77,7 +79,7 @@
 # Shoes
 
 - type: loadout
-  id: LoadoutMedicalParamedicShoesBootsWinter
+  id: LoadoutMedicalShoesBootsWinterParamedic
   category: JobsMedicalParamedic
   cost: 0
   exclusive: true
