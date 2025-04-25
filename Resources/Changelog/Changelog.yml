@@ -15395,3 +15395,25 @@ Entries:
   id: 7182
   time: '2025-04-25T04:53:28.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2280
+- author: Zeta_Null
+  changes:
+    - type: Add
+      message: Added Xelthia, a custom alien species
+    - type: Add
+      message: >-
+        Added an insulated jacket, to account for Xelthia not having access to a
+        glove slot.
+    - type: Add
+      message: >-
+        Xelthia tentacle item that drops when arms are regrown. This is able to
+        be cooked.
+  id: 7183
+  time: '2025-04-25T08:58:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2214
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'MAS Version 1 is here. '
+  id: 7184
+  time: '2025-04-25T13:00:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2309
