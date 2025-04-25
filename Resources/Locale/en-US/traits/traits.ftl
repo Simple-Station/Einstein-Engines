@@ -635,3 +635,14 @@ trait-description-BionicPryArm =
     Your arms have been reinforced with steel and hydraulics. You can force your way out of some unpleasant situations.
     This trait gives you cybernetic DX-1 Pryarms, which let you pry open unpowered doors easily.
     (They essentially function like a crowbar)
+
+trait-name-Moffic = Moffic
+trait-description-Moffic =
+    The language of the mothpeople borders on complete unintelligibility.
+    Some species with compatible mouthparts (IPC's speakers, Harpies' Larynx, and Chitinid's buzzing) are able to learn it.
+
+trait-name-Chittin = Chittin
+trait-description-Chittin =
+    A language consisting of clicks, buzzes, and some variety of harsh insect sounds.
+    Most of what makes up their speech comes from their antennae, making it a near-impossible language for those without to learn.
+    However, some species with compatible mouthparts (IPC's speakers, Harpies' Larynx, and Mothpeople's buzzing and antennae) are still able to learn it.
