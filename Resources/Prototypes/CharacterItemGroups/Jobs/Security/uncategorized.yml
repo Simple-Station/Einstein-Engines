@@ -199,13 +199,11 @@
     - type: loadout
       id: ClothingHeadHelmetTCFLHeavy
     - type: loadout
-      id: LoadoutClothingHeadHelmetHeavyAblative
-    - type: loadout
-      id: LoadoutClothingHeadHelmetHeavyRiot
-    - type: loadout
-      id: LoadoutClothingHeadHelmetHeavyBallistic
-    - type: loadout
       id: LoadoutClothingHeadHelmetHeavyStandard
+    - type: loadout
+      id: ClothingHeadHelmetTCFLNoVisor
+    - type: loadout
+      id: ClothingHeadHelmetTCFLVisor
 
 #- type: characterItemGroup
 #  id: LoadoutSecurityId
@@ -243,13 +241,9 @@
     - type: loadout
       id: ClothingOuterArmorTCFLHeavy
     - type: loadout
-      id: LoadoutClothingOuterArmorAblativeHeavy
-    - type: loadout
-      id: LoadoutClothingOuterArmorBallisticHeavy
+      id: ClothingOuterArmorTCFLLight
     - type: loadout
       id: LoadoutClothingOuterArmorStandardHeavy
-    - type: loadout
-      id: LoadoutClothingOuterArmorRiotHeavy
     - type: loadout
       id: LoadoutClothingOuterJacketZavSecurity
     - type: loadout

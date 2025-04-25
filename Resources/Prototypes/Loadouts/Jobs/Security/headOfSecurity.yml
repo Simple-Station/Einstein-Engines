@@ -177,6 +177,19 @@
   items:
     - ClothingHeadHatHoshat
 
+- type: loadout
+  id: LoadoutCommandHOSHelmet
+  category: JobsSecurityHeadOfSecurity
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingHeadHelmetHeavyHoS
+
 # Id
 - type: loadout
   id: LoadoutHeadOfSecurityNTPDA
@@ -265,6 +278,19 @@
         - HeadOfSecurity
   items:
     - ClothingOuterCoatHoSTrench
+
+- type: loadout
+  id: LoadoutCommandHOSOuterHeavyArmor
+  category: JobsSecurityHeadOfSecurity
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingOuterArmorHoSHeavy
 
 # Shoes
 - type: loadout

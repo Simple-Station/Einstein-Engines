@@ -226,6 +226,7 @@
   category: JobsEngineeringStationEngineer
   cost: 0
   exclusive: true
+  guideEntry: ZavodskoiInterstellar
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutStationEngineerUniforms
@@ -243,6 +244,7 @@
   category: JobsEngineeringStationEngineer
   cost: 0
   exclusive: true
+  guideEntry: NanoTrasen
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutStationEngineerUniforms
@@ -260,6 +262,7 @@
   category: JobsEngineeringStationEngineer
   cost: 0
   exclusive: true
+  guideEntry: HephaestusIndustries
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutStationEngineerUniforms

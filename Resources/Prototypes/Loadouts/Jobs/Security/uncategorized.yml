@@ -265,51 +265,9 @@
     - ClothingHeadHelmetInsulated
 
 - type: loadout
-  id: LoadoutClothingHeadHelmetHeavyAblative
-  category: JobsSecurityAUncategorized
-  cost: 3
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityHead
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
-  items:
-    - ClothingHeadHelmetHeavyAblative
-
-- type: loadout
-  id: LoadoutClothingHeadHelmetHeavyRiot
-  category: JobsSecurityAUncategorized
-  cost: 3
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityHead
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
-  items:
-    - ClothingHeadHelmetHeavyRiot
-
-- type: loadout
-  id: LoadoutClothingHeadHelmetHeavyBallistic
-  category: JobsSecurityAUncategorized
-  cost: 3
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityHead
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
-  items:
-    - ClothingHeadHelmetHeavyBallistic
-
-- type: loadout
   id: LoadoutClothingHeadHelmetHeavyStandard
   category: JobsSecurityAUncategorized
-  cost: 3
+  cost: 3 # This is also a notable upgrade over a standard security helmet.
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -340,6 +298,48 @@
         - WarVet
   items:
     - ClothingHeadHelmetTCFLHeavy
+
+- type: loadout
+  id: ClothingHeadHelmetTCFLNoVisor
+  category: JobsSecurityAUncategorized
+  cost: 0 # Identical stats to standard security helmet.
+  exclusive: true
+  guideEntry: TCFLInfo
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+  items:
+    - ClothingHeadHelmetTCFLNoVisor
+
+- type: loadout
+  id: ClothingHeadHelmetTCFLVisor
+  category: JobsSecurityAUncategorized
+  cost: 0 # Identical stats to standard security helmet.
+  exclusive: true
+  guideEntry: TCFLInfo
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+  items:
+    - ClothingHeadHelmetTCFLVisor
 
 # Id
 
@@ -473,32 +473,25 @@
     - ClothingOuterArmorTCFLHeavy
 
 - type: loadout
-  id: LoadoutClothingOuterArmorAblativeHeavy
+  id: ClothingOuterArmorTCFLLight
   category: JobsSecurityAUncategorized
-  cost: 3
+  cost: 0 # Identical stats to standard plate carrier
   exclusive: true
+  guideEntry: TCFLInfo
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityOuter
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
   items:
-    - ClothingOuterArmorAblativeHeavy
-
-- type: loadout
-  id: LoadoutClothingOuterArmorBallisticHeavy
-  category: JobsSecurityAUncategorized
-  cost: 3
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityOuter
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
-  items:
-    - ClothingOuterArmorBallisticHeavy
+    - ClothingOuterArmorTCFLLight
 
 - type: loadout
   id: LoadoutClothingOuterArmorStandardHeavy
@@ -513,20 +506,6 @@
         - Security
   items:
     - ClothingOuterArmorStandardHeavy
-
-- type: loadout
-  id: LoadoutClothingOuterArmorRiotHeavy
-  category: JobsSecurityAUncategorized
-  cost: 3
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityOuter
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
-  items:
-    - ClothingOuterArmorRiotHeavy
 
 - type: loadout
   id: LoadoutClothingOuterJacketZavSecurity

@@ -114,3 +114,19 @@
     - type: ClothingSpeedModifier
       walkModifier: 0.95
       sprintModifier: 0.95
+
+- type: entity
+  parent: [ClothingHeadHelmetHeavyStandard, BaseClothingRadio]
+  id: ClothingHeadHelmetHeavyHoS
+  name: advanced combat helmet
+  description: A heavy security helmet manufactured by Zavodskoi Interstellar and sold to NT Security. This helmet bears markings for NT Command Staff.
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/Generic/Helmet/heavy_helmet_hos.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/Generic/Helmet/heavy_helmet_hos.rsi
+      clothingVisuals:
+        head:
+        - state: equipped-HELMET
+        - state: equipped-HELMET-unshaded
+          shader: unshaded

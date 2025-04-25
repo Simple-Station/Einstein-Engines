@@ -63,6 +63,30 @@
       sprintModifier: 0.95
 
 - type: entity
+  parent: [ClothingHeadHelmetBasic, TCFLInfo, BaseClothingRadio]
+  id: ClothingHeadHelmetTCFLNoVisor
+  name: TCAF light tactical helmet
+  suffix: TCFL
+  description: A basic tactical helmet worn by members of the Tau-Ceti Armed Forces.
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/BieselRepublic/Helmet/TCAF_tactical_helmet_novisor.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/BieselRepublic/Helmet/TCAF_tactical_helmet_novisor.rsi
+
+- type: entity
+  parent: [ClothingHeadHelmetBasic, TCFLInfo, BaseClothingRadio]
+  id: ClothingHeadHelmetTCFLVisor
+  name: TCAF light tactical helmet
+  suffix: TCFL
+  description: A basic tactical helmet worn by members of the Tau-Ceti Armed Forces.
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/BieselRepublic/Helmet/TCAF_tactical_helmet_visor.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/BieselRepublic/Helmet/TCAF_tactical_helmet_visor.rsi
+
+- type: entity
   parent: [ClothingHeadBaseButcherable, TCFLInfo]
   id: ClothingHeadHatTCAFBeretDress
   name: TCAF dress beret
