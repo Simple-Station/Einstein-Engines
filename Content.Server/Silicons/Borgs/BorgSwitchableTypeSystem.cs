@@ -32,10 +32,6 @@ public sealed partial class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeS
         if (TryComp(ent, out ActiveRadioComponent? activeRadio))
             activeRadio.Channels = [.. radioChannels];
 
-        // Assign lawsets
-        var laws = _siliconLawSystem.GetLawset(prototype.Laws).Laws;
-        _siliconLawSystem.SetLaws(laws, ent);
-
         // Borg transponder for the robotics console
         if (TryComp(ent, out BorgTransponderComponent? transponder))
         {
