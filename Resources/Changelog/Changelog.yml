@@ -15428,3 +15428,14 @@ Entries:
   id: 7185
   time: '2025-04-25T21:19:56.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2317
+- author: 3PonPon3
+  changes:
+    - type: Tweak
+      message: >-
+        Adjusted moth and harpy flight to be more balanced. (Moth flight, ~30%
+        speed increase, Harpy flight ~60% over sprinting, accounts for all
+        modifiers, including harpies 10% sprint speed increase) Makes True
+        Flight trait cost -2 instead of -5.
+  id: 7186
+  time: '2025-04-25T23:19:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2313
