@@ -567,10 +567,17 @@
           damageCap: 400
           damage:
             groups:
-              Brute: -0.35
-              Burn: -0.35
-              Airloss: -0.25
-              Toxin: -0.35
+              Blunt: -0.35
+              Piercing: -0.35
+              Slash: -0.35
+              Heat: -0.35
+              Cold: -0.35
+              Shock: -0.35
+              Caustic: -0.35
+              Asphyxiation: -0.25
+              Bloodloss: -0.25
+              Poison: -0.35
+              Radiation: -0.35
               Genetic: -0.35
 
 - type: trait
