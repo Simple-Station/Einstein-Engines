@@ -11,6 +11,8 @@
       map: [ "enum.ToggleVisuals.Layer" ]
   - type: Clothing
     sprite: _EE/Clothing/Neck/Mantles/magmantle.rsi
+  - type: TemperatureProtection
+    coefficient: 0.8 # equivalent to winter boots, scarves
   - type: ToggleClothing
     action: ActionToggleMagmantle
   - type: Magboots
