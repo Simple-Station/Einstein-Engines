@@ -18,6 +18,9 @@
   <GuideEntityEmbed Entity="MobThaven" Caption="Thaven"/>
   <GuideEntityEmbed Entity="MobVulpkanin" Caption="Vulpkanin"/>
   </Box>
+  <Box>
+  <GuideEntityEmbed Entity="MobXelthia" Caption="Xelthia"/>
+  </Box>
 
   # Parkstation specific species
   <Box>

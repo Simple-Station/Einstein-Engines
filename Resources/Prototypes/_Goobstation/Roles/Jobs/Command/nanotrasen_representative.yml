@@ -23,7 +23,7 @@
   requireAdminNotify: true
   joinNotifyCrew: true
   supervisors: job-supervisors-centcom
-  canBeAntag: true
+  canBeAntag: false
   access:
   - CentralCommand
   - Brig
