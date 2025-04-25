@@ -27,7 +27,6 @@
     offset: 0.0
     rarePrototypes:
     - UnholyHalberd
-    - EldritchBlade
     - Katana
     - FireAxe
     - BrokenBottle
@@ -48,13 +47,6 @@
         state: icon
   - type: RandomSpawner
     prototypes:
-    - EldritchBlade
-    - EldritchBlade
-    - EldritchBlade
-    - EldritchBlade
-    - EldritchBlade
-    - EldritchBlade
-    - EldritchBlade
     - UnholyHalberd
     - FireAxe
     - SpearBone

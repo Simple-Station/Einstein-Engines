@@ -96,12 +96,10 @@
     cost: 1500
   - id: WeaponRevolverArgentiEmpty
     cost: 4400
-  - id: WeaponRifleNovaliteC1Empty
+  - id: Empty
     cost: 5200
   - id: ClothingBackpackDuffelSalvageConscription
     cost: 1250
-  - id: WeaponRifleGestioEmpty
-    cost: 6400
   - id: WeaponRifleSVTEmpty
     cost: 6400
   - id: OreBagOfHolding

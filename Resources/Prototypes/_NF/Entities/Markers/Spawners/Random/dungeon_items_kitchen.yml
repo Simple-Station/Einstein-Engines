@@ -236,6 +236,4 @@
     offset: 0.0
     rarePrototypes:
     - FoodBreadMoldySlice
-    - FoodBreadMoldy
-    - FoodPizzaMoldySlice
     rareChance: 0.05

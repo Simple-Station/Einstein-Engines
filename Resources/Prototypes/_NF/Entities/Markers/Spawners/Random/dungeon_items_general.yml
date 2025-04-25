@@ -255,7 +255,7 @@
     - SalvageTechfabNF
     - ScienceTechFab
     - ServiceTechFab
-    - EngineeringTechFab
+    - Autolathe
     - Autolathe
     - Protolathe
     - CircuitImprinter
@@ -501,7 +501,7 @@
     - SalvageTechFabCircuitboardNF
     - ScienceTechFabCircuitboard
     - ServiceTechFabCircuitboard
-    - EngineeringTechFabCircuitboard
+    - AutolatheCircuitboard
     - AmmoTechFabCircuitboard
     - MedicalTechFabCircuitboard
     - OreProcessorIndustrialMachineCircuitboard

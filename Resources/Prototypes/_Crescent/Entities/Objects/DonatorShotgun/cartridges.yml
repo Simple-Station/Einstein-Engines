@@ -25,7 +25,7 @@
   parent: BaseShellShotgun4g
   components:
   - type: Sprite
-    layers: 
+    layers:
       - state: beanbag
         map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
@@ -39,13 +39,11 @@
   parent: BaseShellShotgun4g
   components:
   - type: Sprite
-    layers: 
+    layers:
       - state: base
         map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
     proto: PelletShotgunHeavyBuck
-    count: 5
-    spread: 10
   - type: SpentAmmoVisuals
     state: "base"
 
@@ -55,7 +53,7 @@
   parent: [ BaseShellShotgun4g ]
   components:
   - type: Sprite
-    layers: 
+    layers:
       - state: slug
         map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
@@ -69,7 +67,7 @@
   parent: [ BaseShellShotgun4g ]
   components:
   - type: Sprite
-    layers: 
+    layers:
       - state: flare
         map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
@@ -83,12 +81,10 @@
   parent: [ BaseShellShotgun4g ]
   components:
   - type: Sprite
-    layers: 
+    layers:
       - state: flare
         map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
     proto: PelletShotgunHeavyFlash
-    count: 3
-    spread: 15
   - type: SpentAmmoVisuals
     state: "flare"

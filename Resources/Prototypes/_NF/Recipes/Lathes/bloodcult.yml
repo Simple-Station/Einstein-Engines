@@ -8,15 +8,6 @@
     Bones: 100
     Steel: 500
 
-- type: latheRecipe
-  id: EldritchBlade
-  result: EldritchBlade
-  completetime: 1
-  category: Weapons
-  materials:
-    Bones: 200
-    Steel: 700
-    Plasteel: 500
 
 - type: latheRecipe
   id: UnholyHalberd

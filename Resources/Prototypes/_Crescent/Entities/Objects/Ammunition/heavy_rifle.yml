@@ -1,0 +1,7 @@
+- type: entity
+  id: CartridgeHeavyRifle
+  name: cartridge (12.7×99mm USM)
+  parent: BaseCartridgeHeavyRifle
+  components:
+  - type: CartridgeAmmo
+    proto: BulletHeavyRifle

@@ -253,10 +253,10 @@
     prototypes:
     - Autolathe
     - Protolathe
-    - EngineeringTechFab
-    - EngineeringTechFab
-    - EngineeringTechFab
-    - EngineeringTechFab
+    - Autolathe
+    - Autolathe
+    - Autolathe
+    - Autolathe
     - CircuitImprinter
     - MachineFlatpacker
     - SpawnDungeonMachineFrame
@@ -395,7 +395,7 @@
     - AlertsComputerCircuitboard
     # Lathes
     - CircuitImprinterMachineCircuitboard
-    - EngineeringTechFabCircuitboard
+    - AutolatheCircuitboard
     - ProtolatheMachineCircuitboard
     - AutolatheMachineCircuitboard
     - FlatpackerMachineCircuitboard

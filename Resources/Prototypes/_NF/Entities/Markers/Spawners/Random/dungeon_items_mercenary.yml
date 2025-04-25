@@ -20,10 +20,8 @@
     - SpawnDungeonLootArmorMercenary
     - SpawnDungeonLootShieldsMercenary
     - SpawnDungeonLootMeleeT2
-    - ClothingMaskGasMercenary
     - ClothingOuterCoatBHTrench
     - ClothingHeadHatBH
-    - ClothingHeadHelmetMercenary
     - Zipties
     - Handcuffs
     - ComputerIFFCircuitboard
@@ -253,44 +251,6 @@
     rarePrototypes:
     - TelescopicShield
     rareChance: 0.01
-
-# Clothes
-- type: entity
-  name: random clothes
-  id: SpawnDungeonLootClothesMercenary
-  parent: MarkerBasePlaceFree
-  suffix: "Dungeon, Mercenary"
-  components:
-  - type: Sprite
-    layers:
-      - state: green
-        scale: 0.7, 0.7
-      - sprite: Clothing/Uniforms/Jumpsuit/mercenary.rsi
-        state: icon
-      - sprite: _NF/Markers/general.rsi
-        state: questionmark
-        color: red
-  - type: RandomSpawner
-    prototypes:
-    - ClothingHeadBandMercenary
-    - ClothingHeadHatBeretMercenary
-    - ClothingUniformJumpsuitMercenary
-    - ClothingShoesBootsMercenary
-    - ClothingHandsMercenaryGlovesCombat
-    - ClothingShoesBootsMercenary
-    - ClothingEyesGlassesMercenary
-    - ClothingBackpackMessengerMercenary
-    - ClothingBackpackDuffelMercenary
-    - ClothingBeltMercenaryWebbing
-    - ClothingOuterVestWebMercenary
-    - ClothingOuterVestWebMercenaryBlack
-    - SpawnDungeonLootArmorMercenary
-    chance: 1
-    offset: 0.0
-    rarePrototypes:
-    - SpawnDungeonLootHardsuitsMercenary
-    - ClothingShoesBootsMagMercenary
-    rareChance: 0.02
 
 - type: entity
   name: random armor

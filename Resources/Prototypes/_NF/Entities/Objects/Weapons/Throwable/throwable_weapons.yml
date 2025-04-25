@@ -90,7 +90,7 @@
 - type: entity
   parent: ConjuredObject10
   id: DartAberrantFleshHorrorSpikeCluster
-  name: bone spike  
+  name: bone spike
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -99,5 +99,3 @@
   - type: CartridgeAmmo
     muzzleFlash: null
     proto: DartAberrantFleshHorrorSpike
-    count: 3
-    spread: 25

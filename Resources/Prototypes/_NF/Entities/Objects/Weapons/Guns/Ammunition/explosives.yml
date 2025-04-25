@@ -1,5 +1,27 @@
 # Rockets
 
+
+- type: entity
+  id: BulletRocketEmp
+  name: rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Shock: 0
+  - type: TimedDespawn
+    lifetime: 15
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag-emp
+  - type: EmpOnTrigger
+    range: 4
+    energyConsumption: 50000
+    disableDuration: 60
+
 - type: entity
   id: CartridgeRocketEmp
   name: PG-7VL emp

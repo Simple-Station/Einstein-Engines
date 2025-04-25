@@ -177,7 +177,5 @@
       color: red
   - type: CartridgeAmmo
     proto: SoapletBloodCult # SoapConjuredBloodCultCluster
-    count: 35
-    spread: 40
   - type: Ammo
     muzzleFlash: null

@@ -1,0 +1,26 @@
+- type: reagent
+  id: BoriaticFuel
+  name: reagent-name-Boriatic-fuel
+  parent: BasePyrotechnic
+  desc: reagent-desc-Boriatic-fuel
+  physicalDesc: reagent-physical-desc-oily
+  slippery: true
+  flavor: bitter
+  flavorMinimum: 0.01
+  color: "#a76b1c"
+  recognizable: true
+  boilingPoint: -84.7 # Acetylene. Close enough.
+  meltingPoint: -80.7
+  tileReactions:
+  - !type:FlammableTileReaction {}
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Heat: 5
+            Poison: 5
+            Caustic: 2 # Boriatic fuel is even more corrosive
+      - !type:FlammableReaction
+        multiplier: 0.4
