@@ -63,7 +63,7 @@
     - ClothingOuterCoatParamedicWB
 
 - type: loadout
-  id: LoadoutMedicalOuterWinterPara
+  id: LoadoutMedicalOuterParamedicWinterPara
   category: JobsMedicalParamedic
   cost: 0
   exclusive: true
@@ -79,7 +79,7 @@
 # Shoes
 
 - type: loadout
-  id: LoadoutMedicalShoesBootsWinterParamedic
+  id: LoadoutMedicalShoesParamedicBootsWinter
   category: JobsMedicalParamedic
   cost: 0
   exclusive: true
