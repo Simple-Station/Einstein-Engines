@@ -26,6 +26,18 @@
 
 # Head
 
+- type: loadout
+  id: LoadoutMedicalHeadClothingHeadHatParamedicsoft
+  category: JobsMedicalParamedic
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Paramedic
+  items:
+    - ClothingHeadHatParamedicsoft
+
 # Id
 
 # Neck
@@ -34,7 +46,36 @@
 
 # Outer
 
+- type: loadout
+  id: LoadoutMedicalOuterCoatParamedicWB
+  category: JobsMedicalParamedic
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Paramedic
+  items:
+    - ClothingOuterCoatParamedicWB
+
+- type: loadout
+  id: LoadoutMedicalOuterWinterPara
+  category: JobsMedicalParamedic
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Paramedic
+  items:
+    - ClothingOuterWinterPara
+
 # Shoes
+
 - type: loadout
   id: LoadoutMedicalParamedicShoesBootsWinter
   category: JobsMedicalParamedic
@@ -42,7 +83,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutParamedicShoes
+      group: LoadoutShoes
     - !type:CharacterJobRequirement
       jobs:
         - Paramedic
@@ -50,6 +91,7 @@
     - ClothingShoesBootsWinterParamedic
 
 # Uniforms
+
 - type: loadout
   id: LoadoutMedicalUniformParamedicJumpsuit
   category: JobsMedicalParamedic
