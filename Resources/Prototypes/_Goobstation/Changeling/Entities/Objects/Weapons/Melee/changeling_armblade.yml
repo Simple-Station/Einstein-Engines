@@ -8,7 +8,6 @@
     sprite: _Goobstation/Changeling/arm_blade.rsi
     state: icon
   - type: MeleeWeapon
-    angle: 0
     wideAnimationRotation: 90
     attackRate: 0.9
     damage:

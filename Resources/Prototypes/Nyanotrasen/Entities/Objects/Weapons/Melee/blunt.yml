@@ -17,7 +17,7 @@
         Blunt: 14
     soundHit:
       path: /Audio/Nyanotrasen/Weapons/club.ogg
-    bluntStaminaDamageFactor: 1.60 # 25.6 stamina damage
+    bluntStaminaDamageFactor: 1.60
 #  - type: MeleeStaminaCost
 #    swing: 10
 #    wieldCoefficient: 0.35 #if wielded you will only consume 3.5 stam its a weapon after all

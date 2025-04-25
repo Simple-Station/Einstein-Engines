@@ -2,7 +2,7 @@
   name: fireaxe
   parent: BaseItem
   id: FireAxe
-  description: A versitile tool, capable of prying open airlocks and tearing through windows.
+  description: A versatile tool, capable of prying open airlocks and tearing through windows.
   components:
   - type: Tag
     tags:
