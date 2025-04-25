@@ -208,12 +208,45 @@
     canTargetSelf: false
     interactOnMiss: false
     itemIconStyle: NoItem
-    # useDelay: 90
+    useDelay: 90
     range: 1
     icon:
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: black_recuperation
     event: !type:BlackRecuperationEvent
+    # add speech
+  - type: ShadowlingAction
+
+- type: entity
+  id: ActionEmpoweredEnthrall
+  name: Empowered Enthrall
+  description: Shatters their will, forging a Thrall. Faster and stronger.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTargetAction
+    canTargetSelf: false
+    interactOnMiss: false
+    itemIconStyle: NoItem
+    range: 1
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: emp_enthrall
+    event: !type:EmpoweredEnthrallEvent
+    # add speech
+  - type: ShadowlingAction
+
+- type: entity
+  id: ActionNoxImperii
+  name: Nox Imperii
+  description: Become immune to that which you fear the most.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: nox_imperii
+    event: !type:NoxImperiiEvent
     # add speech
   - type: ShadowlingAction
 
@@ -318,23 +351,5 @@
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: broadcast
     event: !type:AscendantBroadcastEvent
-    # add speech
-  - type: ShadowlingAction
-
-- type: entity
-  id: ActionEmpoweredEnthrall
-  name: Empowered Enthrall
-  description: Shatters their will, forging a Thrall. Faster and stronger.
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: EntityTargetAction
-    canTargetSelf: false
-    interactOnMiss: false
-    itemIconStyle: NoItem
-    range: 1
-    icon:
-      sprite: _EE/Shadowling/shadowling_abilities.rsi
-      state: emp_enthrall
-    event: !type:EmpoweredEnthrallEvent
     # add speech
   - type: ShadowlingAction

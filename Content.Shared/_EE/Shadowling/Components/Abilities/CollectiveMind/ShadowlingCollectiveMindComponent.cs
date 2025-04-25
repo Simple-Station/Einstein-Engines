@@ -53,6 +53,12 @@ public sealed partial class ShadowlingCollectiveMindComponent : Component
             UnlockAtThralls = 12,
             ActionPrototype = "ActionEmpoweredEnthrall",
             ActionComponentName = "ShadowlingEmpoweredEnthrall"
+        },
+        new ShadowlingActionData()
+        {
+            UnlockAtThralls = 15,
+            ActionPrototype = "ActionNoxImperii",
+            ActionComponentName = "ShadowlingNoxImperii"
         }
     };
 

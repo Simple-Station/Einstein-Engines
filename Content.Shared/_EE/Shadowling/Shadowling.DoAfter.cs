@@ -20,3 +20,5 @@ public sealed partial class BlackRecuperationDoAfterEvent : SimpleDoAfterEvent {
 public sealed partial class LightningStormEventDoAfterEvent : SimpleDoAfterEvent { }
 [Serializable, NetSerializable]
 public sealed partial class EmpoweredEnthrallDoAfterEvent : SimpleDoAfterEvent { }
+[Serializable, NetSerializable]
+public sealed partial class NoxImperiiDoAfterEvent : SimpleDoAfterEvent { }

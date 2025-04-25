@@ -33,6 +33,9 @@ shadowling-black-rec-revive-done = Darkness pulls you back from the brink.
 shadowling-black-rec-lesser-done = You feel like even stronger than before.
 
 shadowling-ascendant-broadcast-dialog = Your message has been sent to everyone.
+
+shadowling-nox-imperii-done = No longer prey to the light, you stride where your ancestors withered.
+
 # Thrall
 
-thrall-guise-fail = You were not in the shadows.
+thrall-guise-fail = You can not harvest enough power unless you begin in the shadows.

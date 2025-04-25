@@ -39,6 +39,7 @@ public sealed partial class NullChargeEvent : InstantActionEvent { }
 public sealed partial class SonicScreechEvent : InstantActionEvent { }
 public sealed partial class BlackRecuperationEvent : EntityTargetActionEvent { }
 public sealed partial class EmpoweredEnthrallEvent : EntityTargetActionEvent { }
+public sealed partial class NoxImperiiEvent : InstantActionEvent { }
 #endregion
 
 #region Events - Ascension
