@@ -15439,3 +15439,17 @@ Entries:
   id: 7186
   time: '2025-04-25T23:19:17.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2313
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Added Moffic (moff lang) and Chittin (chitinid lang) as languages
+        traits. Available for IPCs and Harpies for 1 point, as well as Moths for
+        Chittin and Chitinids for Moffic.
+    - type: Fix
+      message: >-
+        Harpies can no longer waste a point on the Valyrian standard language
+        trait, which they already start with.
+  id: 7187
+  time: '2025-04-25T23:24:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2316
