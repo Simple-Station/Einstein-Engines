@@ -446,8 +446,21 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         humanoid.CyborgName = profile.CyborgName;
         humanoid.Age = profile.Age;
 
-        RaiseLocalEvent(uid, new ProfileLoadFinishedEvent()); // Shitmed Change
+        humanoid.CustomSpecieName = profile.Customspeciename;
+
+        var species = _proto.Index(humanoid.Species);
+
+        if (profile.Height <= 0 || profile.Width <= 0)
+            SetScale(uid, new Vector2(species.DefaultWidth, species.DefaultHeight), true, humanoid);
+        else
+            SetScale(uid, new Vector2(profile.Width, profile.Height), true, humanoid);
+
+        _heightAdjust.SetScale(uid, new Vector2(humanoid.Width, humanoid.Height));
+
+        humanoid.LastProfileLoaded = profile; // DeltaV - let paradox anomaly be cloned
+
         Dirty(uid, humanoid);
+        RaiseLocalEvent(uid, new ProfileLoadFinishedEvent());
     }
 
     /// <summary>
