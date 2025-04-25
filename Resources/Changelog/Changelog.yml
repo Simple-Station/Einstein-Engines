@@ -15410,3 +15410,10 @@ Entries:
   id: 7183
   time: '2025-04-25T08:58:09.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2214
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'MAS Version 1 is here. '
+  id: 7184
+  time: '2025-04-25T13:00:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2309
