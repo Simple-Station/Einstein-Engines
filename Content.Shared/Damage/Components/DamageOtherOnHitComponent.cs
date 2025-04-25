@@ -71,5 +71,5 @@ public sealed partial class DamageOtherOnHitComponent : Component
     public SoundSpecifier SoundNoDamage { get; set; } = new SoundCollectionSpecifier("WeakHit");
 
     [DataField, AutoNetworkedField]
-    public float MinimumSpeed = 2f;
+    public float MinimumSpeed = 1f;
 }

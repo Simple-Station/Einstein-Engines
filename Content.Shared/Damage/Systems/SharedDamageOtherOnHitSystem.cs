@@ -101,7 +101,6 @@ namespace Content.Shared.Damage.Systems
             var thrown = args.Thrown;
             if (physics.LinearVelocity.Length() < component.MinimumSpeed)
             {
-                _meleeSound.PlayHitSound(args.Target, null, null, null, component.SoundNoDamage, component.SoundNoDamage);
                 LandAfterImpact(thrown, args.Component, physics);
                 return;
             }
