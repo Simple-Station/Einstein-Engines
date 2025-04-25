@@ -35,6 +35,19 @@
 # Outer
 
 # Shoes
+- type: loadout
+  id: LoadoutMedicalParamedicShoesBootsWinter
+  category: JobsMedicalParamedic
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutParamedicShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Paramedic
+  items:
+    - ClothingShoesBootsWinterParamedic
 
 # Uniforms
 - type: loadout
