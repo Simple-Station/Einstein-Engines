@@ -61,7 +61,7 @@
   parent: [ClothingHeadHelmetBasic, BaseClothingRadio]
   id: ClothingHeadHelmetHeavyRiot
   name: heavy riot helmet
-  description: A heavy riot helmet manufactured by Zavodskoi Interstellar and sold to NT Security. It trades mobility for unparalleled protection against ballistic weaponry.
+  description: A heavy riot helmet manufactured by Zavodskoi Interstellar and sold to NT Security. It trades mobility for unparalleled protection against blunt force.
   components:
     - type: Sprite
       sprite: _EE/Clothing/Generic/Helmet/heavy_helmet_riot.rsi
@@ -90,7 +90,7 @@
   parent: [ClothingHeadHelmetBasic, BaseClothingRadio]
   id: ClothingHeadHelmetHeavyStandard
   name: heavy security helmet
-  description: A heavy security helmet manufactured by Zavodskoi Interstellar and sold to NT Security. It trades mobility for unparalleled protection against ballistic weaponry.
+  description: A heavy security helmet manufactured by Zavodskoi Interstellar and sold to NT Security. It trades mobility for unparalleled protection against general threats.
   components:
     - type: Sprite
       sprite: _EE/Clothing/Generic/Helmet/heavy_helmet_standard.rsi

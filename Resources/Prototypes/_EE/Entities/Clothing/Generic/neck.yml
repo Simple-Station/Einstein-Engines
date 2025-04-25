@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckFurWrap
+  name: fur mantle
+  description: A synthetic fur mantle.
+  components:
+  - type: Sprite
+    sprite: _EE/Clothing/Generic/Neck/fur_wrap.rsi
+  - type: Clothing
+    sprite: _EE/Clothing/Generic/Neck/fur_wrap.rsi
