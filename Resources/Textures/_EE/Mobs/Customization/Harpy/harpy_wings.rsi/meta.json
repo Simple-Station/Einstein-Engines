@@ -1,0 +1,75 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "zetawings by @zeta_null",
+    "states": [
+        {
+            "name": "colorless_zetawing",
+            "directions": 4
+        },
+        {
+            "name": "lime_zetawing",
+            "directions": 4
+        },
+        {
+            "name": "macaw_zetawing",
+            "directions": 4
+        },
+        {
+            "name": "monocolor_parrot_zetawing",
+            "directions": 4
+        },
+        {
+            "name": "tricolor_parrot_zetawing_layer1",
+            "directions": 4
+        },
+        {
+            "name": "tricolor_parrot_zetawing_layer2",
+            "directions": 4
+        },
+        {
+            "name": "tricolor_parrot_zetawing_layer3",
+            "directions": 4
+        },
+        {
+            "name": "dragobat_zetawing",
+            "directions": 4
+        },
+        {
+            "name": "dragobat_c_zetawing_layer1",
+            "directions": 4
+        },
+        {
+            "name": "dragobat_c_zetawing_layer2",
+            "directions": 4
+        },
+        {
+            "name": "asymagical_zetawing",
+            "directions": 4
+        },
+        {
+            "name": "asymagical_c_zetawing_layer1",
+            "directions": 4
+        },
+        {
+            "name": "asymagical_c_zetawing_layer2",
+            "directions": 4
+        },
+        {
+            "name": "small_zetawing",
+            "directions": 4
+        },
+        {
+            "name": "quintet_zetawing",
+            "directions": 4
+        },
+        {
+            "name": "downward_zetawing",
+            "directions": 4
+        }
+    ]
+}

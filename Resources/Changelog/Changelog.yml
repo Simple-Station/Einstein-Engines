@@ -15388,3 +15388,10 @@ Entries:
   id: 7181
   time: '2025-04-24T09:24:54.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2252
+- author: Zeta_Null
+  changes:
+    - type: Add
+      message: Added 12 new sets of wings for Harpies
+  id: 7182
+  time: '2025-04-25T04:53:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2280
