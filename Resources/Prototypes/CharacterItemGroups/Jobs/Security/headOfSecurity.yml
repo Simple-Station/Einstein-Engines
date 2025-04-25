@@ -76,6 +76,8 @@
       id: LoadoutCommandHOSNeckMantle
     - type: loadout
       id: LoadoutCommandHOSNeckCloak
+    - type: loadout
+      id: LoadoutCommandHOSNeckCloakFur
 
 #- type: characterItemGroup
 #  id: LoadoutHeadOfSecurityMask

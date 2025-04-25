@@ -237,6 +237,20 @@
   items:
     - ClothingNeckCloakHos
 
+- type: loadout
+  id: LoadoutCommandHOSNeckCloakFur
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingNeckCloakHosFur
+
 # Mask
 
 # Outer
