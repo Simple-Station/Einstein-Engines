@@ -370,6 +370,7 @@
       species:
         - Harpy # Harpies already have talons
         - Arachnid # Apparently they have a "piercing" bite
+        - Xelthia # Talons don't make sense on tentacle arms
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -403,6 +404,7 @@
         - Tajaran # Tajaran also have cat claws
         - Reptilian # Reptilians also have cat claws.
         - Shadowkin # Shadowkins also have claws.
+        - Xelthia # Claws don't make sense on tentacle arms
         # - Vulpkanin # Vulpkanin have "Blunt" claws. One could argue this trait "Sharpens" their claws.
     - !type:CharacterTraitRequirement
       inverted: true
@@ -440,6 +442,7 @@
         - Arachne
         - IPC # Other species could justify getting this trait for Blunt stamina damage,
               # but 6 blunt -> 5 blunt is a straight up downgrade.
+        - Xelthia # Their tentacles aren't really weapons probably 
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -476,6 +479,10 @@
         - Talons
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Xelthia # this would fall off
   functions:
     - !type:TraitModifyUnarmed
       flatDamageIncrease:
@@ -498,6 +505,7 @@
         - Arachne
         - Shadowkin
         - IPC
+        - Xelthia # this would fall off
     - !type:CharacterItemGroupRequirement
       group: TraitsMind
   functions:
@@ -534,6 +542,10 @@
       inverted: true
       traits:
         - BionicPryArm
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Xelthia # this would fall off
   functions:
     - !type:TraitCyberneticLimbReplacement
       removeBodyPart: Arm
@@ -1238,6 +1250,10 @@
       inverted: true
       traits:
         - BionicArm
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Xelthia # this would fall off
   functions:
     - !type:TraitCyberneticLimbReplacement
       removeBodyPart: Arm
