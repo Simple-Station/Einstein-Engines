@@ -1,0 +1,24 @@
+- type: entity
+  save: false
+  name: Urista McBlackburn
+  parent: MobBlackburnBase
+  id: MobBlackburn
+  components:
+  - type: CombatMode
+  - type: MindContainer
+    showExamineInfo: true
+  - type: Input
+    context: "human"
+  - type: Speech
+    speechVerb: Vulpkanin
+  - type: MobMover
+  - type: InputMover
+  - type: Alerts
+  - type: Actions
+  - type: Eye
+  - type: CameraRecoil
+  - type: Examiner
+  - type: CanHostGuardian
+  - type: NpcFactionMember
+    factions:
+    - Blackburn

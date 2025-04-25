@@ -1,0 +1,94 @@
+- type: species
+  id: Blackburn
+  name: species-name-blackburn
+  roundStart: true
+  prototype: MobBlackburn
+  sprites: MobBlackburnSprites
+  markingLimits: MobBlackburnMarkingLimits
+  dollPrototype: MobBlackburnDummy
+  skinColoration: HumanToned
+  minHeight: 0.50 #desislava and koblisha
+  defaultHeight: 1
+  maxHeight: 1.1
+  minWidth: 0.50
+  defaultWidth: 1
+  maxWidth: 1.15
+  femaleFirstNames: names_blackburn_first
+  lastNames: names_blackburn_last
+  sexes:
+  - Female
+
+- type: markingPoints
+  id: MobBlackburnMarkingLimits
+  points:
+    Hair:
+      points: 1
+      required: false
+    FacialHair:
+      points: 1
+      required: false
+    Tail:
+      points: 1
+      required: true
+      defaultMarkings: [ BlackburnTailOne ]
+    HeadTop:
+      points: 1
+      required: true
+      defaultMarkings: [ BlackburnEars ]
+    Chest:
+      points: 1
+      required: false
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
+      points: 1
+      required: false
+    RightLeg:
+      points: 6
+      required: false
+    RightFoot:
+      points: 6
+      required: false
+    LeftLeg:
+      points: 6
+      required: false
+    LeftFoot:
+      points: 6
+      required: false
+    RightArm:
+      points: 6
+      required: false
+    RightHand:
+      points: 6
+      required: false
+    LeftArm:
+      points: 6
+      required: false
+    LeftHand:
+      points: 6
+      required: false
+
+- type: speciesBaseSprites
+  id: MobBlackburnSprites
+  sprites:
+    Head: MobHumanHead
+    Face: MobHumanoidAnyMarking
+    Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
+    Chest: MobHumanTorso
+    Eyes: MobHumanoidEyes
+    LArm: MobHumanLArm
+    RArm: MobHumanRArm
+    LHand: MobHumanLHand
+    RHand: MobHumanRHand
+    LLeg: MobHumanLLeg
+    RLeg: MobHumanRLeg
+    LFoot: MobHumanLFoot
+    RFoot: MobHumanRFoot
+    Tail: MobHumanoidAnyMarking
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking

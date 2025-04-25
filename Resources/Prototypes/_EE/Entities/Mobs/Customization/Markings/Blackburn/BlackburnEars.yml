@@ -1,0 +1,9 @@
+- type: marking
+  id: BlackburnEars
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Blackburn]
+  sprites:
+  - sprite: _CS4875/Markings/BlackburnEars.rsi
+    state: ears
+

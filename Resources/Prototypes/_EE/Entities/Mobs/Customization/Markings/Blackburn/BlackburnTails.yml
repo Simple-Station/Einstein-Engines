@@ -1,0 +1,32 @@
+- type: marking
+  id: BlackburnTailOne
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Blackburn]
+  sprites:
+  - sprite: _CS4875/Markings/BlackburnTails.rsi
+    state: Fox tail base
+  - sprite: _CS4875/Markings/BlackburnTails.rsi
+    state: Fox tail tip dark
+
+- type: marking
+  id: BlackburnTailTwo
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Blackburn]
+  sprites:
+  - sprite: _CS4875/Markings/BlackburnTails.rsi
+    state: Double fox tails base
+  - sprite: _CS4875/Markings/BlackburnTails.rsi
+    state: Double fox tails tip dark
+
+- type: marking
+  id: BlackburnTailThree
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Blackburn]
+  sprites:
+  - sprite: _CS4875/Markings/BlackburnTails.rsi
+    state: Fox triple tails base
+  - sprite: _CS4875/Markings/BlackburnTails.rsi
+    state: Fox triple tails tip dark
