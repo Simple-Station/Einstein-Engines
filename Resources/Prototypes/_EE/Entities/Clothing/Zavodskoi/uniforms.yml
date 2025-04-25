@@ -109,7 +109,7 @@
 - type: entity
   parent: [ClothingUniformBase, ClothingUniformFoldableBase, ZavodInfo]
   id: ClothingUniformJumpsuitZavodWarden
-  name: security officer jumpsuit
+  name: warden jumpsuit
   suffix: Zavodskoi
   description: A uniform worn by wardens contracted from Zavodskoi Interstellar
   components:
