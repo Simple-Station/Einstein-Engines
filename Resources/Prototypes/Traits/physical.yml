@@ -575,7 +575,7 @@
           - Critical
           damageCap: 400
           damage:
-            groups:
+            types:
               Blunt: -0.35
               Piercing: -0.35
               Slash: -0.35
