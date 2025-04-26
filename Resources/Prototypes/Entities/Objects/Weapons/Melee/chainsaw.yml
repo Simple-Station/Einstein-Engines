@@ -16,15 +16,17 @@
   - type: MeleeWeapon
     autoAttack: true
     wideAnimationRotation: -135
-    attackRate: .25
+    attackRate: 0.3
     damage:
       types:
         Slash: 2
         Blunt: 2
         Structural: 4
-    heavyRateModifier: 2
-    heavyDamageBaseModifier: 1.0
-    heavyStaminaCost: 15
+    clickPartDamageMultiplier: 3
+    heavyPartDamageMultiplier: 2.5
+    heavyRateModifier: 3
+    heavyDamageBaseModifier: 3.0
+    heavyStaminaCost: 2.5
     maxTargets: 20
     angle: 160
     soundHit:
@@ -53,7 +55,7 @@
     delay: 1
   # Shitmed Change
   - type: BoneSaw
-    speed: 0.5 # TODO: arm-mounted version becomes 0.65 - We dont have that though???
+    speed: 6.5 # TODO: arm-mounted version becomes 0.65 - We dont have that though???
   - type: SurgeryTool
     startSound:
       path: /Audio/Weapons/chainsawwield.ogg

@@ -1,0 +1,71 @@
+- type: entity
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase, NTInfo]
+  id: ClothingUniformJumpsuitNTAtmos
+  name: atmos technician jumpsuit
+  suffix: NanoTrasen
+  description: A uniform worn by NanoTrasen atmos techs
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/NanoTrasen/Uniforms/nt_atmos.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/NanoTrasen/Uniforms/nt_atmos.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase, NTInfo]
+  id: ClothingUniformJumpsuitNTCargoTech
+  name: cargo tech jumpsuit
+  suffix: NanoTrasen
+  description: A uniform worn by NanoTrasen cargo techs
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/NanoTrasen/Uniforms/nt_cargo_tech.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/NanoTrasen/Uniforms/nt_cargo_tech.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase, NTInfo]
+  id: ClothingUniformJumpsuitNTEngineer
+  name: engineer jumpsuit
+  suffix: NanoTrasen
+  description: A uniform worn by NanoTrasen engineers
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/NanoTrasen/Uniforms/nt_engineer.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/NanoTrasen/Uniforms/nt_engineer.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase, NTInfo]
+  id: ClothingUniformJumpsuitNTEngineeringApprentice
+  name: apprentice engineer jumpsuit
+  suffix: NanoTrasen
+  description: A uniform worn by NanoTrasen apprentice engineers
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/NanoTrasen/Uniforms/nt_engineering_apprentice.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/NanoTrasen/Uniforms/nt_engineering_apprentice.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase, NTInfo]
+  id: ClothingUniformJumpsuitNTMiner
+  name: shaft miner jumpsuit
+  suffix: NanoTrasen
+  description: A uniform worn by NanoTrasen shaft miners
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/NanoTrasen/Uniforms/nt_miner.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/NanoTrasen/Uniforms/nt_miner.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase, NTInfo]
+  id: ClothingUniformJumpsuitNTRoboticist
+  name: roboticist jumpsuit
+  suffix: NanoTrasen
+  description: A uniform worn by NanoTrasen roboticists
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/NanoTrasen/Uniforms/nt_roboticist.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/NanoTrasen/Uniforms/nt_roboticist.rsi
