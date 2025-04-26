@@ -149,7 +149,7 @@ public abstract class SharedLayingDownSystem : EntitySystem
             || !TryComp<BodyComponent>(uid, out var body)
             || body.LegEntities.Count < body.RequiredLegs
             || HasComp<DebrainedComponent>(uid)
-            || Comp<MovementSpeedModifierComponent>(uid).CurrentWalkSpeed == 0)
+            || TryComp<MovementSpeedModifierComponent>(uid, out var movement) && movement.CurrentWalkSpeed == 0)
             return false;
 
         var args = new DoAfterArgs(EntityManager, uid, layingDown.StandingUpTime, new StandingUpDoAfterEvent(), uid)

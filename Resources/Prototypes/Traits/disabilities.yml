@@ -50,7 +50,7 @@
     - !type:TraitAddComponent
       components:
         - type: PermanentBlindness
-          blindness: 4
+          blindness: 3
 
 - type: trait
   id: Narcolepsy
