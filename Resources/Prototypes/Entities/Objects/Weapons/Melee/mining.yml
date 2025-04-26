@@ -12,8 +12,8 @@
     sprite: Objects/Weapons/Melee/pickaxe.rsi
     state: pickaxe
   - type: MeleeWeapon
-    attackRate: 0.85
-    range: 1.5
+    attackRate: 1.2
+    range: 1.6
     wideAnimationRotation: -135
     soundHit:
       path: "/Audio/Weapons/smash.ogg"
@@ -65,7 +65,7 @@
     wideAnimationRotation: -90
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
-    attackRate: 0.25
+    attackRate: 0.5
     range: 1.5
     heavyStaminaCost: 0.7
     damage:
@@ -149,7 +149,7 @@
     capacity: 1
     count: 1
   - type: MeleeWeapon
-    attackRate: 0.65 # Lavaland/Eris Change
+    attackRate: 1.5 # Lavaland/Eris Change
     range: 1.65
     wideAnimationRotation: -135
     damage:
@@ -157,9 +157,9 @@
         Blunt: 13 # Lavaland Change: no damage when unwielded
         Slash: 7
     bluntStaminaDamageFactor: 2.0
-    heavyRateModifier: 0.75
+    heavyRateModifier: 1.5
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 7.5
+    heavyStaminaCost: 2.5
     angle: 120
     soundHit:
       collection: MetalThud
@@ -199,12 +199,12 @@
   - type: MeleeWeapon
     autoAttack: true
     wideAnimationRotation: -135
-    attackRate: 1.25
+    attackRate: 0.8
     range: 1.4
     damage:
       types:
         Slash: 9
-    heavyRateModifier: 0.9
+    heavyRateModifier: 1.4
     heavyDamageBaseModifier: 1.2
     maxTargets: 2
     angle: 20

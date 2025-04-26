@@ -21,12 +21,12 @@
     damage:
       types:
         Blunt: 6
-        Shock: 1
-    bluntStaminaDamageFactor: 1.5
-    heavyRateModifier: 0.75
-    heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 7.5
-    angle: 75
+        Shock: 2
+    bluntStaminaDamageFactor: 1.25
+    heavyRateModifier: 1.4
+    heavyDamageBaseModifier: 1.5
+    heavyStaminaCost: 2.5
+    angle: 105
   - type: DamageOtherOnHit
     staminaCost: 8
   - type: Item
@@ -65,12 +65,12 @@
     damage:
       types:
         Blunt: 6
-        Shock: 1
-    bluntStaminaDamageFactor: 1.5
-    heavyRateModifier: 1.3333
-    heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 7.5
-    angle: 75
+        Shock: 2
+    bluntStaminaDamageFactor: 1.25
+    heavyRateModifier: 1.4
+    heavyDamageBaseModifier: 1.5
+    heavyStaminaCost: 2.5
+    angle: 105
   - type: DamageOtherOnHit
     staminaCost: 8
   - type: Item
@@ -110,11 +110,11 @@
     damage:
       types:
         Blunt: 6
-        Shock: 1
-    bluntStaminaDamageFactor: 1.5
-    heavyRateModifier: 0.75
-    heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 10
+        Shock: 2
+    bluntStaminaDamageFactor: 1.25
+    heavyRateModifier: 1.4
+    heavyDamageBaseModifier: 1.5
+    heavyStaminaCost: 2.5
     angle: 160
   - type: DamageOtherOnHit
     staminaCost: 8
@@ -194,18 +194,18 @@
     wideAnimationRotation: 45
     damage:
       types:
-        Blunt: 7
-    bluntStaminaDamageFactor: 2
-    heavyRateModifier: 0.75
-    heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 10
-    angle: 75
+        Blunt: 9
+    bluntStaminaDamageFactor: 1.5
+    heavyRateModifier: 1.75
+    heavyDamageBaseModifier: 1.5
+    heavyStaminaCost: 5
+    angle: 105
   - type: DamageOtherOnHit
     staminaCost: 7
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 2
+        Blunt: 3
 
 - type: entity
   parent: BaseHandheldInstrument
@@ -242,12 +242,12 @@
     range: 1.5
     damage:
       types:
-        Blunt: 7
-    bluntStaminaDamageFactor: 2
-    heavyRateModifier: 0.75
-    heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 7.5
-    angle: 75
+        Blunt: 8
+    bluntStaminaDamageFactor: 1.5
+    heavyRateModifier: 1.75
+    heavyDamageBaseModifier: 1.5
+    heavyStaminaCost: 2.5
+    angle: 105
   - type: DamageOtherOnHit
     staminaCost: 8
 
