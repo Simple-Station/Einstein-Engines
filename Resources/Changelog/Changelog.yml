@@ -15550,3 +15550,12 @@ Entries:
   id: 7195
   time: '2025-04-26T16:26:05.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2324
+- author: mrs
+  changes:
+    - type: Fix
+      message: >-
+        Bagel: The syndicate shuttle has been issued a parking ticket. (No more
+        shuttles spawning inside the station, hopefully.)
+  id: 7196
+  time: '2025-04-26T16:47:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2275
