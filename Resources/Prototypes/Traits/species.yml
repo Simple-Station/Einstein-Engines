@@ -1,7 +1,7 @@
 - type: trait
   id: Swashbuckler
   category: Physical
-  points: -1
+  points: 0
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -26,7 +26,7 @@
 - type: trait
   id: Spearmaster
   category: Physical
-  points: -1
+  points: 0
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -50,7 +50,7 @@
 - type: trait
   id: WeaponsGeneralist
   category: Physical
-  points: -1
+  points: 0
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -74,7 +74,7 @@
 - type: trait
   id: Mystic
   category: Mental
-  points: -1
+  points: 0
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -111,7 +111,7 @@
 - type: trait
   id: ShadowkinBlackeye
   category: Mental
-  points: 4
+  points: 5
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -128,12 +128,12 @@
 - type: trait
   id: MothFlight
   category: Physical
-  points: -5
+  points: -2
   functions:
     - !type:TraitAddComponent
       components:
         - type: Flight
-          speedModifier: 1.2 # gives an effective 32% increase over walking with base moth weightless modifier
+          speedModifier: 1.19 # gives an effective ~31% (30.9%) increase over walking with base moth weightless modifier
           flapInterval: 0.75
           needsHands: false
   requirements:
