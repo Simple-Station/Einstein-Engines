@@ -9,7 +9,6 @@ using Robust.Shared.Audio;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
-using Robust.Shared.Utility;
 using System.Numerics;
 
 namespace Content.Server.Atmos.EntitySystems;
@@ -66,7 +65,7 @@ public sealed partial class AtmosphereSystem
         if (!tileDef.SimulatedTurf)
             return;
 
-        var partialFrictionComposition = gravity * tileDef.MobFrictionNoInput;
+        var partialFrictionComposition = gravity * tileDef.MobFrictionNoInput ?? 0.2f;
 
         var pressureVector = GetPressureVectorFromTile(gridAtmosphere, tile);
         if (!pressureVector.IsValid())
@@ -155,7 +154,7 @@ public sealed partial class AtmosphereSystem
         // ThrowingSystem increments linear velocity by a given vector, but we have to do this anyways because reasons.
         var velocity = _transformSystem.GetWorldRotation(uid).ToWorldVec() + pressureVector;
 
-        _sharedStunSystem.TryKnockdown(uid, TimeSpan.FromSeconds(SpaceWindKnockdownTime), false);
+        _sharedStunSystem.TryKnockdown(uid, TimeSpan.FromSeconds(SpaceWindKnockdownTime), true);
         _throwing.TryThrow(uid, velocity, physics, xform, projectileQuery,
             1, doSpin: physics.AngularVelocity < SpaceWindMaxAngularVelocity);
 

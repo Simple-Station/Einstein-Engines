@@ -344,10 +344,6 @@
   categories: [ HideSpawnMenu ]
   parent: ClothingBackpackSalvage
   id: ClothingBackpackSalvageFilled
-  components:
-    - type: StorageFill
-      contents:
-        - id: MiningVoucher
 
 # Pirate
 

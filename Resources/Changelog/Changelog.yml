@@ -15002,3 +15002,551 @@ Entries:
   id: 7148
   time: '2025-04-14T10:32:16.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2200
+- author: Mike32oz
+  changes:
+    - type: Fix
+      message: 'asterisk spawn-point '
+  id: 7149
+  time: '2025-04-15T04:30:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2240
+- author: ilmenwe
+  changes:
+    - type: Add
+      message: >-
+        spawncorporatestamp, spawnspecificcorporatestamp and
+        marking-ThavenChestScales
+  id: 7150
+  time: '2025-04-15T04:30:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2236
+- author: ilmenwe
+  changes:
+    - type: Tweak
+      message: resource composition
+  id: 7151
+  time: '2025-04-15T04:32:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2237
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Traits that increase your surgery speed, Surgery Training (1.6, between
+        intern and standard doc) for non-medical, and Experienced Surgeon (2.5,
+        same as CMO) for medical w/o intern and with corpsman
+    - type: Tweak
+      message: CPR Training cost 4 -> 3
+    - type: Fix
+      message: BSO can no longer take the CPR trait as they already have it innately
+  id: 7152
+  time: '2025-04-15T20:14:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2238
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added "Integrated Thrusters" and "Integrated Magboots" as features that
+        hardsuits and tacsuits can sometimes have. Hardsuits rarely have both,
+        and sometimes have neither, while the more "Advanced" Tacsuits such as
+        the CSA series of suits will always have both. 
+    - type: Tweak
+      message: >-
+        Reduced the maximum amount of time player characters can remain in the
+        air without being touched by space wind again to 1 second, down from 2.
+        This does nothing if you're actively being thrown. 
+    - type: Fix
+      message: >-
+        Fixed a bug where the hardsuit action to toggle your helmet wasn't
+        displaying the helmet icon.
+  id: 7153
+  time: '2025-04-16T08:03:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2245
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Added the Pryarm Prosthetics trait, that replaces your arms with the
+        DX-1 Pryarms, which let you pry open unpowered doors just as you would
+        with a crowbar.
+    - type: Tweak
+      message: >-
+        Made bionic arm cost 8 points again and be restricted to command,
+        security, dignitaries and paramedics only.
+    - type: Remove
+      message: Speed legs trait go bye bye for now.
+  id: 7154
+  time: '2025-04-16T16:44:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2255
+- author: Timfa2112
+  changes:
+    - type: Fix
+      message: >-
+        Fixed passport sometimes being closed while appearing open, and
+        vice-versa
+  id: 7155
+  time: '2025-04-16T18:26:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2243
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: Make survival box smaller
+  id: 7156
+  time: '2025-04-16T18:28:24.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2169
+- author: ilmenwe
+  changes:
+    - type: Remove
+      message: ContainerManager references
+    - type: Add
+      message: ContainerSystem references
+    - type: Tweak
+      message: some variable naming
+  id: 7157
+  time: '2025-04-16T18:32:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2231
+- author: Emilly
+  changes:
+    - type: Fix
+      message: 'Gax: minor fixes'
+  id: 7158
+  time: '2025-04-16T18:35:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2249
+- author: mrs
+  changes:
+    - type: Add
+      message: 'Asterisk: Lavaland shuttle dock.'
+    - type: Fix
+      message: 'Asterisk: Logistics firelocks.'
+  id: 7159
+  time: '2025-04-16T18:36:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2248
+- author: SolsticeOfTheWinter
+  changes:
+    - type: Add
+      message: Added the ability to wear the terminus on your back.
+  id: 7160
+  time: '2025-04-16T18:43:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2065
+- author: dootythefrooty
+  changes:
+    - type: Tweak
+      message: Nukie plushies are now visibly seen in your hands.
+  id: 7161
+  time: '2025-04-16T18:55:46.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2232
+- author: Kirisune
+  changes:
+    - type: Add
+      message: >-
+        mk 32 "Universal" non-lethal and security versions together with special
+        incendiary, uranium and shrapnel mags.
+    - type: Add
+      message: >-
+        mk 32 "Universal" integrated in to research and unlocking at "Advanced
+        Weapons" at tier 2 armory. Special mags are locked behind relevant ammo
+        researches.
+    - type: Add
+      message: >-
+        mk 32 "Universal" integrated in to security techfab. The pistol and its
+        mags cost slightly more to make then N1984. Standard empty, lethal and
+        non-lethal mags can be made round start.
+    - type: Add
+      message: >-
+        mk 32 "Universal" as a loadout option for senior officer costing
+        <s>5</s> 6 points to pick, mags costing 4 points each.
+    - type: Add
+      message: >-
+        Filled corporate judo belt as a loadout option for senior officer
+        costing 2 points. Belt is filled with standard security belt items
+        excluding stun baton.
+    - type: Add
+      message: Disabler SMG as a loadout option for senior officer costing 2 points.
+    - type: Add
+      message: >-
+        Filled corporate judo belt as a loadout option for Head of Security with
+        a unique sprite and costing 2 points.
+    - type: Tweak
+      message: >-
+        Disabler SMG stamina damage increase from 15 to <s>25</s> 20. Still
+        lower then a standard disabler but now its more reasonable to carry it
+        as a duty weapon despite how bulky it is compared to other options.
+    - type: Tweak
+      message: >-
+        Security formal suit, senior trooper uniform and senior trooper hat are
+        now senior officers exclusives.
+    - type: Tweak
+      message: >-
+        mk 32 "Universal" added missing accuracy components making it not be
+        laser accurate.
+  id: 7162
+  time: '2025-04-16T18:56:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2215
+- author: GNUtopia
+  changes:
+    - type: Add
+      message: Added machine-man interface
+    - type: Add
+      message: Added pAI adapter
+    - type: Tweak
+      message: Allowed MMIs to function as IPC brains
+  id: 7163
+  time: '2025-04-16T21:56:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2251
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: The Abductors are here to replace your organs. Gleep Glorp!
+  id: 7164
+  time: '2025-04-17T00:17:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2234
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        NT has had its station's "High Security" doors such as Command,
+        Security, and Vault doors shielded with psifoil around their components.
+        They can no longer be forced open by the Anoigo power. 
+    - type: Tweak
+      message: >-
+        Anoigo, Dispel, Mindswap, Healing Word, Breath Of Life, Pyrokinesis, and
+        Noospheric Zap now all don't work if the target has psionic insulation.
+    - type: Fix
+      message: 'Psionic Invisibility now actually works as advertised. '
+    - type: Fix
+      message: >-
+        Psionic Invisibility and Anoigo now actually produce a sound, as well as
+        properly enforce their cooldowns.
+    - type: Tweak
+      message: >-
+        Anoigo reclassified as a "Dangerous" power, it now also costs 10 points
+        for Elementalists.
+    - type: Remove
+      message: Prisoners can no longer be Psionic.
+    - type: Fix
+      message: Mantis can no longer summon his black blade if his hands are full.
+  id: 7165
+  time: '2025-04-18T18:53:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2272
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed various bugs related to Magboots and Integrated Magboots on
+        hardsuits.
+    - type: Tweak
+      message: >-
+        All Modsuits as well as tacsuits contributed by Goobstation now also
+        include Integrated Magsuits.
+  id: 7166
+  time: '2025-04-18T21:32:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2273
+- author: 3PonPon3
+  changes:
+    - type: Fix
+      message: Fixed the scottish, stutter and frontal lisp accents not working.
+  id: 7167
+  time: '2025-04-18T21:34:03.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2266
+- author: Timfa2112
+  changes:
+    - type: Fix
+      message: >-
+        Fixed admin commands for spawning stamps, passports, and their related
+        localization missing
+  id: 7168
+  time: '2025-04-18T21:43:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2265
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added a "Flash" weakness to DarkSwap. Being hit by any flash, even if
+        you have flash protection, causes you to instantly drop out of the dark
+        realm and take a massive amount of stamina damage.
+    - type: Add
+      message: >-
+        DarkSwap users now take continuous stamina damage while in the dark
+        realm.
+    - type: Remove
+      message: >-
+        DarkSwap no longer makes its user immune to Space, Gravity, and
+        Vacuums. 
+  id: 7169
+  time: '2025-04-18T22:09:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2274
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Space wind no longer causes its victims to accumulate infinite stun
+        time.
+  id: 7170
+  time: '2025-04-18T22:32:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2276
+- author: LaryNevesPR
+  changes:
+    - type: Fix
+      message: Fixes character height.
+  id: 7171
+  time: '2025-04-18T23:34:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2278
+- author: dootythefrooty
+  changes:
+    - type: Fix
+      message: Intercomms are functional for every channel again.
+  id: 7172
+  time: '2025-04-18T23:45:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2269
+- author: ODJ
+  changes:
+    - type: Fix
+      message: >-
+        Updated Anchor, large number of bugs and missing content should be
+        fixed.
+  id: 7173
+  time: '2025-04-19T00:33:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2262
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Pebble updated to version 3.0, please enjoy.
+  id: 7174
+  time: '2025-04-19T00:33:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2261
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Salvage shuttle is no longer a dorito.
+  id: 7175
+  time: '2025-04-19T01:21:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2263
+- author: Orion-416
+  changes:
+    - type: Fix
+      message: Fixed an issue where Combat Magboots would cause a test fail.
+  id: 7176
+  time: '2025-04-23T02:56:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2301
+- author: dootythefrooty
+  changes:
+    - type: Fix
+      message: >-
+        The Crew Monitor server now works on Anchor, Asterisk, Core, Hive,
+        Lambda, and Pebble roundstart.
+  id: 7177
+  time: '2025-04-24T02:26:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2302
+- author: Timfa2112
+  changes:
+    - type: Remove
+      message: Removed antag eligibility for Corporate Liaison
+  id: 7178
+  time: '2025-04-24T02:27:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2299
+- author: LaryNevesPR
+  changes:
+    - type: Fix
+      message: The spiders got tired of making friends and started biting again.
+  id: 7179
+  time: '2025-04-24T03:46:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2303
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed items such as tactical webbing, bell collars, and hardsuits being
+        desynced with character movement. 
+    - type: Tweak
+      message: Made various large performance improvements.
+  id: 7180
+  time: '2025-04-24T04:28:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2298
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Tweak
+      message: >-
+        Improved readability of many parts of the character editor with colored
+        rows
+    - type: Tweak
+      message: >-
+        Cleaned up some little bits of the character editor, most notably
+        removing a tiny margin that was shrinking every tab
+    - type: Fix
+      message: >-
+        Fixed the style of the Background tab of the character editor being very
+        wonky due to misplaced UI elements
+    - type: Tweak
+      message: Made the Jobs tab use proper headers for the department titles
+    - type: Tweak
+      message: Improved the Marking editor
+    - type: Tweak
+      message: Improved the layout of the character editor
+    - type: Tweak
+      message: Improved some button names in the character editor
+    - type: Add
+      message: >-
+        The character editor now shows all 4 directions of your character
+        preview at once
+  id: 7181
+  time: '2025-04-24T09:24:54.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2252
+- author: Zeta_Null
+  changes:
+    - type: Add
+      message: Added 12 new sets of wings for Harpies
+  id: 7182
+  time: '2025-04-25T04:53:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2280
+- author: Zeta_Null
+  changes:
+    - type: Add
+      message: Added Xelthia, a custom alien species
+    - type: Add
+      message: >-
+        Added an insulated jacket, to account for Xelthia not having access to a
+        glove slot.
+    - type: Add
+      message: >-
+        Xelthia tentacle item that drops when arms are regrown. This is able to
+        be cooked.
+  id: 7183
+  time: '2025-04-25T08:58:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2214
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: 'MAS Version 1 is here. '
+  id: 7184
+  time: '2025-04-25T13:00:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2309
+- author: Zeta_Null
+  changes:
+    - type: Add
+      message: Added a proper font for Qiilour to use
+    - type: Tweak
+      message: >-
+        Put Xelthia on some trait blacklists that they wouldn't reasonably be
+        applicable for (Arm Related things)
+  id: 7185
+  time: '2025-04-25T21:19:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2317
+- author: 3PonPon3
+  changes:
+    - type: Tweak
+      message: >-
+        Adjusted moth and harpy flight to be more balanced. (Moth flight, ~30%
+        speed increase, Harpy flight ~60% over sprinting, accounts for all
+        modifiers, including harpies 10% sprint speed increase) Makes True
+        Flight trait cost -2 instead of -5.
+  id: 7186
+  time: '2025-04-25T23:19:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2313
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Added Moffic (moff lang) and Chittin (chitinid lang) as languages
+        traits. Available for IPCs and Harpies for 1 point, as well as Moths for
+        Chittin and Chitinids for Moffic.
+    - type: Fix
+      message: >-
+        Harpies can no longer waste a point on the Valyrian standard language
+        trait, which they already start with.
+  id: 7187
+  time: '2025-04-25T23:24:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2316
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added new Employer-Specific uniforms for Hephaestus, Zavodskoi, and
+        NanoTrasen.
+    - type: Add
+      message: >-
+        Added heavy armor options for security to spend loadout points on other
+        than their gun.
+    - type: Add
+      message: Added a unique heavy armor variant for Head of Security.
+    - type: Add
+      message: >-
+        Added specialized heavy armor crates to order from the Armory tab, these
+        include Ballistic and Laser Ablative armor variants.
+    - type: Add
+      message: >-
+        Added TCAF plate carrier for people wanting to use the TCAF security
+        outfits, but don't like taking the big slowdown.
+    - type: Tweak
+      message: >-
+        Nerfed the TCAF heavy armor a bit, it now has the same 30% slowdown as
+        the other "Heavy Sec Armor" variants.
+  id: 7188
+  time: '2025-04-26T00:31:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2315
+- author: ODJ
+  changes:
+    - type: Add
+      message: Changeling now has power attacks for it's blade and hammer.
+    - type: Tweak
+      message: Melee weapons given slight adjustments to feel better and more unique.
+  id: 7189
+  time: '2025-04-26T13:48:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2319
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: >-
+        Adjusted a number of trait prices; Oni now have a free species trait
+        choice, Harpies singing is far cheaper, being small is now free, etc.
+  id: 7190
+  time: '2025-04-26T14:00:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2323
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Significantly reduced the amount of points given by most negative
+        traits.
+    - type: Fix
+      message: Fixed the Psionic Mantis not being able to roll powers.
+    - type: Remove
+      message: >-
+        Removed all trait menu options for buying roundstart psionic powers. I'm
+        sorry about this, but it broke a LOT of things, and wasn't a good idea
+        at all in the first place. There's no longer the Elementalist psicaster
+        type, since there's also no power shop.
+  id: 7191
+  time: '2025-04-26T15:05:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2292
+- author: Orion-416
+  changes:
+    - type: Tweak
+      message: Shuttle walls no longer reflect projectiles
+  id: 7192
+  time: '2025-04-26T15:09:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2314
+- author: mrs
+  changes:
+    - type: Add
+      message: >-
+        Added paramedic windbreaker, winter coat, and winter boots to the
+        paramedic loadout.
+  id: 7193
+  time: '2025-04-26T15:09:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2312
+- author: EctoplasmIsGood
+  changes:
+    - type: Fix
+      message: Advanced surgery tools will no longer be errors
+  id: 7194
+  time: '2025-04-26T16:21:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2307
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Added the Inefficient Cogitator and Defective Chassis traits! Both are
+        negative traits for IPCs. Inefficient Cogitator increases the power
+        drain of IPCs by ~33% (1.5/s -> 2/s) and gives 3 points, Defective
+        Chassis halves their death threshold, as they can't go into crit (it's
+        the IPC version of brittle bone disease). Gives 6 points.
+  id: 7195
+  time: '2025-04-26T16:26:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2324
