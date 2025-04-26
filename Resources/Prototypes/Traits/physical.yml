@@ -592,7 +592,7 @@
               Radiation: -0.3
               Genetic: -0.3
         - type: BloodDeficiency # Incredibly actually works
-          bloodLossPercentage: -0.025            
+          bloodLossPercentage: -0.025
 
 - type: trait
   id: DermalArmor
