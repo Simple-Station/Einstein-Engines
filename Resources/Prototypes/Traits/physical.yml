@@ -576,18 +576,18 @@
           damageCap: 400
           damage:
             types:
-              Blunt: -0.35
-              Piercing: -0.35
-              Slash: -0.35
-              Heat: -0.35
-              Cold: -0.35
-              Shock: -0.35
-              Caustic: -0.35
+              Blunt: -0.3
+              Piercing: -0.3
+              Slash: -0.3
+              Heat: -0.3
+              Cold: -0.3
+              Shock: -0.3
+              Caustic: -0.3
               Asphyxiation: -0.25
               Bloodloss: -0.25
-              Poison: -0.35
-              Radiation: -0.35
-              Genetic: -0.35
+              Poison: -0.3
+              Radiation: -0.3
+              Genetic: -0.3
         - type: BloodDeficiency # we do a little reverse engineering
           bloodLossPercentage: -0.025  # we don't know if this will work or not but it should fill 1% blood back in every second              
 
