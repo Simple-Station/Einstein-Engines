@@ -130,7 +130,11 @@
     - !type:CharacterLifepathRequirement
       inverted: true
       lifepaths:
-      - Clone
+        - Clone
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
   functions:
     - !type:TraitAddComponent
       components:
