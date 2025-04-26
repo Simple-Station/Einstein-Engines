@@ -15453,3 +15453,30 @@ Entries:
   id: 7187
   time: '2025-04-25T23:24:32.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2316
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added new Employer-Specific uniforms for Hephaestus, Zavodskoi, and
+        NanoTrasen.
+    - type: Add
+      message: >-
+        Added heavy armor options for security to spend loadout points on other
+        than their gun.
+    - type: Add
+      message: Added a unique heavy armor variant for Head of Security.
+    - type: Add
+      message: >-
+        Added specialized heavy armor crates to order from the Armory tab, these
+        include Ballistic and Laser Ablative armor variants.
+    - type: Add
+      message: >-
+        Added TCAF plate carrier for people wanting to use the TCAF security
+        outfits, but don't like taking the big slowdown.
+    - type: Tweak
+      message: >-
+        Nerfed the TCAF heavy armor a bit, it now has the same 30% slowdown as
+        the other "Heavy Sec Armor" variants.
+  id: 7188
+  time: '2025-04-26T00:31:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2315
