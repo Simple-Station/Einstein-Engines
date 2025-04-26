@@ -22,7 +22,7 @@
 - type: trait
   id: SelfAware
   category: Mental
-  points: -3
+  points: -4
   functions:
     - !type:TraitAddComponent
       components:
@@ -193,7 +193,7 @@
 - type: trait
   id: LyreBird
   category: Auditory
-  points: -6
+  points: -10
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
@@ -233,7 +233,7 @@
 - type: trait
   id: AnomalousPositronics
   category: Psionics
-  points: -6
+  points: -4
   functions:
     - !type:TraitRemoveComponent
       components:
@@ -255,7 +255,7 @@
 - type: trait
   id: SurgeryTraining
   category: Mental
-  points: -6
+  points: -3
   functions:
     - !type:TraitAddComponent
       components:
@@ -276,7 +276,7 @@
 - type: trait
   id: ExperiencedSurgeon
   category: Mental
-  points: -6
+  points: -3
   functions:
     - !type:TraitReplaceComponent
       components:

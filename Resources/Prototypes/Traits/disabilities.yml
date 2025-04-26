@@ -1,7 +1,7 @@
 - type: trait
   id: Blindness
   category: Visual
-  points: 2 # Was 10, it can return to 10, when its made permanently not fixable.
+  points: 10
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -76,7 +76,7 @@
 - type: trait
   id: Pacifist
   category: Mental
-  points: 6
+  points: 8
   functions:
     - !type:TraitAddComponent
       components:
@@ -85,7 +85,7 @@
 - type: trait
   id: Paracusia
   category: Auditory
-  points: 0
+  points: 2
   functions:
     - !type:TraitAddComponent
       components:
@@ -99,7 +99,7 @@
 - type: trait
   id: Muted
   category: Mental
-  points: 4
+  points: 6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -120,7 +120,7 @@
 - type: trait
   id: Uncloneable
   category: Physical
-  points: 0
+  points: 1
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -183,7 +183,7 @@
 - type: trait
   id: BadKnees
   category: Physical
-  points: 1
+  points: 5
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
@@ -300,7 +300,7 @@
 - type: trait
   id: Photophobia
   category: Visual
-  points: 0
+  points: 1
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
