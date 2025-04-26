@@ -15571,3 +15571,10 @@ Entries:
   id: 7197
   time: '2025-04-26T18:38:41.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2295
+- author: ilmenwe
+  changes:
+    - type: Add
+      message: Added IPC to permitted for Lyre Bird.
+  id: 7198
+  time: '2025-04-26T19:52:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2326
