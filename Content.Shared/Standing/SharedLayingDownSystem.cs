@@ -15,7 +15,6 @@ using Robust.Shared.Input.Binding;
 using Robust.Shared.Player;
 using Robust.Shared.Serialization;
 using Content.Shared.Movement.Components;
-using Content.Shared.Traits.Assorted.Components;
 
 namespace Content.Shared.Standing;
 
