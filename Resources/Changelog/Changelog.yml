@@ -15578,3 +15578,10 @@ Entries:
   id: 7198
   time: '2025-04-26T19:52:35.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2326
+- author: EctoplasmIsGood
+  changes:
+    - type: Remove
+      message: Disabled grappling guns, tether guns, and force guns
+  id: 7199
+  time: '2025-04-26T19:58:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2328
