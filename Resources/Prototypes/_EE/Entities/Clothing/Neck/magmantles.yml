@@ -1,0 +1,39 @@
+- type: entity
+  parent: [ClothingNeckBase, BaseIntegratedMagboot]
+  id: ClothingNeckMantleMag
+  name: magmantle
+  description: Invented by a dynamic duo of harpies, this mantle creates a localized gravity field, enabling the effects of magboots without the boot! However, the gravity field is cumbersome to move through, making the magnetic mantle somewhat inferior to its predecessor. However, it does come with a wool lining. Cozy!
+  components:
+  - type: Sprite
+    sprite: _EE/Clothing/Neck/Mantles/magmantle.rsi
+    layers:
+    - state: icon
+      map: [ "enum.ToggleVisuals.Layer" ]
+  - type: Clothing
+    sprite: _EE/Clothing/Neck/Mantles/magmantle.rsi
+  - type: TemperatureProtection
+    coefficient: 0.8 # equivalent to winter boots, scarves
+  - type: ToggleClothing
+    action: ActionToggleMagmantle
+  - type: Magboots
+    activeWalkModifier: 0.7
+    activeSprintModifier: 0.65
+    changeClothingVisuals: true
+    slot: neck
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: {state: icon-on}
+          False: {state: icon}
+
+- type: entity
+  id: ActionToggleMagmantle
+  name: Toggle Magmantle
+  description: Toggles the personal gravity field on and off.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: BigItem
+    event: !type:ToggleActionEvent

@@ -381,3 +381,53 @@
   items:
     - ClothingUniformJumpskirtAtmos
 
+- type: loadout
+  id: LoadingEngineeringAtmosUniformSuitZav
+  category: JobsEngineeringAtmosphericTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAtmosphericTechnicianUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - AtmosphericTechnician
+    - !type:CharacterEmployerRequirement
+      employers:
+        - ZavodskoiInterstellar
+  items:
+    - ClothingUniformJumpsuitZavodAtmos
+
+- type: loadout
+  id: LoadingEngineeringAtmosUniformSuitNT
+  category: JobsEngineeringAtmosphericTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAtmosphericTechnicianUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - AtmosphericTechnician
+    - !type:CharacterEmployerRequirement
+      employers:
+        - NanoTrasen
+  items:
+    - ClothingUniformJumpsuitNTAtmos
+
+- type: loadout
+  id: LoadingEngineeringAtmosUniformSuitHeph
+  category: JobsEngineeringAtmosphericTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAtmosphericTechnicianUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - AtmosphericTechnician
+    - !type:CharacterEmployerRequirement
+      employers:
+        - HephaestusIndustries
+  items:
+    - ClothingUniformJumpsuitHephAtmos

@@ -48,6 +48,59 @@
   items:
     - ClothingOuterVestDetective
 
+- type: loadout
+  id: LoadoutClothingOuterJacketZavDetective
+  category: JobsSecurityDetective
+  cost: 0
+  exclusive: true
+  guideEntry: ZavodskoiInterstellar
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+    - !type:CharacterEmployerRequirement
+      employers:
+        - ZavodskoiInterstellar
+  items:
+    - ClothingOuterJacketZavDetective
+
 # Shoes
 
 # Uniforms
+- type: loadout
+  id: LoadoutSecurityUniformZavodDetective
+  category: JobsSecurityDetective
+  cost: 0
+  exclusive: true
+  guideEntry: ZavodskoiInterstellar
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+    - !type:CharacterEmployerRequirement
+      employers:
+        - ZavodskoiInterstellar
+  items:
+    - ClothingUniformJumpsuitZavodDetective
+
+- type: loadout
+  id: LoadoutSecurityUniformZavodDetectiveAlt
+  category: JobsSecurityDetective
+  cost: 0
+  exclusive: true
+  guideEntry: ZavodskoiInterstellar
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+    - !type:CharacterEmployerRequirement
+      employers:
+        - ZavodskoiInterstellar
+  items:
+    - ClothingUniformJumpsuitZavodDetectiveAlt
