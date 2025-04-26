@@ -2,7 +2,7 @@
   name: fireaxe
   parent: BaseItem
   id: FireAxe
-  description: Truly, the weapon of a madman. Who would think to fight fire with an axe?
+  description: A versatile tool, capable of prying open airlocks and tearing through windows.
   components:
   - type: Tag
     tags:
@@ -16,21 +16,23 @@
   - type: MeleeWeapon
     wideAnimationRotation: 135
     swingLeft: true
-    attackRate: 1.3333
+    attackRate: 1.25
     damage:
       types:
         # axes are kinda like sharp hammers, you know?
         Blunt: 4
         Slash: 6
         Structural: 10
+    clickPartDamageMultiplier: 3
+    heavyPartDamageMultiplier: 2.5
     heavyDamageBaseModifier: 1.0
-    heavyStaminaCost: 10
+    heavyStaminaCost: 2.5
     angle: 100
     soundHit:
       collection: MetalThud
   - type: DamageOtherOnHit
     meleeDamageMultiplier: 1.5
-    staminaCost: 18
+    staminaCost: 10
   - type: EmbeddableProjectile
   - type: EmbedPassiveDamage
   - type: Wieldable
