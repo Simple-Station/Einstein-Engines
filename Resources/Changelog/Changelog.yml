@@ -15480,3 +15480,12 @@ Entries:
   id: 7188
   time: '2025-04-26T00:31:47.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2315
+- author: ODJ
+  changes:
+    - type: Add
+      message: Changeling now has power attacks for it's blade and hammer.
+    - type: Tweak
+      message: Melee weapons given slight adjustments to feel better and more unique.
+  id: 7189
+  time: '2025-04-26T13:48:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2319
