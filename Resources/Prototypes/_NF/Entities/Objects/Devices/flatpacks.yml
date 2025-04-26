@@ -12,25 +12,7 @@
 
 # Machines
 # Engineering
-- type: entity
-  parent: BaseNFFlatpack
-  id: AutolatheFlatpack
-  name: autolathe flatpack
-  description: A flatpack used for constructing an autolathe.
-  components:
-  - type: Flatpack
-    entity: Autolathe
 
-- type: entity
-  parent: BaseNFFlatpack
-  id: AutolatheFlatpack
-  name: engineering tech fab flatpack
-  description: A flatpack used for constructing an engineering tech fab.
-  components:
-  - type: Flatpack
-    entity: Autolathe
-  - type: StaticPrice
-    price: 250
 
 - type: entity
   parent: BaseNFFlatpack
@@ -246,17 +228,6 @@
 
 - type: entity
   parent: UniformPrinterFlatpack
-  id: ServiceTechFabFlatpack
-  name: service tech fab flatpack
-  description: A flatpack used for constructing a service tech fab.
-  components:
-  - type: Flatpack
-    entity: ServiceTechFab
-  - type: StaticPrice
-    price: 250
-
-- type: entity
-  parent: UniformPrinterFlatpack
   id: MaterialReclaimerFlatpack
   name: material reclaimer flatpack
   description: A flatpack used for constructing a material reclaimer.
@@ -275,21 +246,6 @@
   - type: Sprite
     layers:
     - state: service_tray
-
-# Medical
-- type: entity
-  parent: BaseNFFlatpack
-  id: MedicalTechFabFlatpack
-  name: medical tech fab flatpack
-  description: A flatpack used for constructing a medical tech fab.
-  components:
-  - type: Flatpack
-    entity: MedicalTechFab
-  - type: StaticPrice
-    price: 250
-  - type: Sprite
-    layers:
-    - state: medical_lathe
 
 # Supply
 - type: entity
@@ -318,14 +274,6 @@
     layers:
     - state: supply_gun
 
-- type: entity
-  parent: OreProcessorFlatpack
-  id: SalvageTechfabNFFlatpack
-  name: salvage techfab flatpack
-  description: A flatpack used for constructing a salvage techfab.
-  components:
-  - type: Flatpack
-    entity: SalvageTechfabNF
 
 # Consoles
 - type: entity

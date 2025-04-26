@@ -14,9 +14,9 @@
   - type: TimedDespawn
     lifetime: 15
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    sprite: _Crescent/Objects/Weapons/Ammunition/Explosives/explosives.rsi
     layers:
-      - state: frag-emp
+      - state: rpg-emp
   - type: EmpOnTrigger
     range: 4
     energyConsumption: 50000
