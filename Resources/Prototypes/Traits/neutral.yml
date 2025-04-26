@@ -145,7 +145,7 @@
 - type: trait
   id: Saturnine
   category: Mental
-  points: 6
+  points: 2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -164,7 +164,7 @@
 - type: trait
   id: Sanguine
   category: Mental
-  points: -6
+  points: -2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true

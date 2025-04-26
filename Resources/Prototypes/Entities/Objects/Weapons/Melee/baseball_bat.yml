@@ -14,19 +14,19 @@
       types:
         Blunt: 7.5
         Structural: 5
-    bluntStaminaDamageFactor: 2.0
+    bluntStaminaDamageFactor: 2.5
     heavyRateModifier: 2
-    heavyDamageBaseModifier: 1.75
-    heavyStaminaCost: 10
-    maxTargets: 2
-    angle: 120
+    heavyDamageBaseModifier: 1.5
+    heavyStaminaCost: 2.5
+    maxTargets: 3
+    angle: 90
     soundHit:
       collection: MetalThud
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 4
+        Blunt: 3
         Structural: 10
   - type: DamageOtherOnHit
     staminaCost: 10
