@@ -1,5 +1,7 @@
 trait-name-Blindness = Blindness
-trait-description-Blindness = You are legally blind, and can't see clearly past a few meters in front of you.
+trait-description-Blindness =
+    You are legally blind, and can't see clearly past a few meters in front of you.[color=red]
+    This cannot be cured in any way.[/color]
 trait-examined-Blindness = [color=lightblue]{CAPITALIZE(POSS-ADJ($target))} eyes are glassy and unfocused. It doesn't seem like {SUBJECT($target)} can see you well, if at all.[/color]
 
 trait-name-Narcolepsy = Narcolepsy
@@ -103,7 +105,9 @@ trait-description-CPRTraining = At some point in your life, you have received tr
                                 This trait is automatically given for free to medical doctors, and is intended for non-medical characters
 
 trait-name-Nearsighted = Nearsighted
-trait-description-Nearsighted = Your eyes are not what they once were, you have difficulty seeing things far away without corrective glasses.
+trait-description-Nearsighted =
+    Your eyes are not what they once were, you have difficulty seeing things far away without corrective glasses.[color=red]
+    This cannot be cured in any way.[/color]
 
 trait-name-NormalVisionHarpy = Trichromat Modification
 trait-description-NormalVisionHarpy =
@@ -620,8 +624,8 @@ trait-description-RestrictedGear =
 
 trait-name-SurgeryTraining = Surgery Training
 trait-description-SurgeryTraining =
-    At some point in your life you acquired the knowledge and experience necessary for performing surgery effectively. 
-    This trait boosts your surgery speed to 1.6, and is intended for non-medical characters, as medical jobs already have faster surgery. 
+    At some point in your life you acquired the knowledge and experience necessary for performing surgery effectively.
+    This trait boosts your surgery speed to 1.6, and is intended for non-medical characters, as medical jobs already have faster surgery.
     (This is slightly faster than a medical intern (1.5) but slower than a normal doctor (1.75))
 
 trait-name-ExperiencedSurgeon = Experienced Surgeon
