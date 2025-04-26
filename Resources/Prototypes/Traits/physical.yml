@@ -591,8 +591,8 @@
               Poison: -0.3
               Radiation: -0.3
               Genetic: -0.3
-        - type: BloodDeficiency # we do a little reverse engineering
-          bloodLossPercentage: -0.025  # we don't know if this will work or not but it should fill 1% blood back in every second              
+        - type: BloodDeficiency # Incredibly actually works
+          bloodLossPercentage: -0.025            
 
 - type: trait
   id: DermalArmor
