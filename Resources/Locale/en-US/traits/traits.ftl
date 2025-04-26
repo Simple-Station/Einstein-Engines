@@ -287,7 +287,7 @@ trait-description-SnailPaced =
 
 trait-name-LightStep = Light Step
 trait-description-LightStep =
-    You move with a gentle step, which makes your footsteps quieter.
+    You move with a gentle step, which makes your footsteps quieter when not wearing any kind of shoes.
 
 trait-name-Swashbuckler = Swashbuckler
 trait-description-Swashbuckler =
@@ -311,13 +311,6 @@ trait-description-Mystic =
 
 trait-name-Singer = Singer
 trait-description-Singer = You are naturally capable of singing simple melodies with your voice.
-
-trait-name-NaturalTelepath = Natural Telepath
-trait-description-NaturalTelepath =
-    As a naturally occuring Telepath, you are capable of fluent telepathic communication, regardless of
-    whether or not you possess any notable psychic powers. This offers all of the same benefits and
-    drawbacks of Latent Psychic, except that you are guaranteed to start with full Telepathy. You may
-    still gain powers as normal for a Latent Psychic.
 
 trait-name-TrapAvoider = Trap Avoider
 trait-description-TrapAvoider =
@@ -620,8 +613,8 @@ trait-description-RestrictedGear =
 
 trait-name-SurgeryTraining = Surgery Training
 trait-description-SurgeryTraining =
-    At some point in your life you acquired the knowledge and experience necessary for performing surgery effectively. 
-    This trait boosts your surgery speed to 1.6, and is intended for non-medical characters, as medical jobs already have faster surgery. 
+    At some point in your life you acquired the knowledge and experience necessary for performing surgery effectively.
+    This trait boosts your surgery speed to 1.6, and is intended for non-medical characters, as medical jobs already have faster surgery.
     (This is slightly faster than a medical intern (1.5) but slower than a normal doctor (1.75))
 
 trait-name-ExperiencedSurgeon = Experienced Surgeon
@@ -635,3 +628,26 @@ trait-description-BionicPryArm =
     Your arms have been reinforced with steel and hydraulics. You can force your way out of some unpleasant situations.
     This trait gives you cybernetic DX-1 Pryarms, which let you pry open unpowered doors easily.
     (They essentially function like a crowbar)
+
+trait-name-Moffic = Moffic
+trait-description-Moffic =
+    The language of the mothpeople borders on complete unintelligibility.
+    Some species with compatible mouthparts (IPC's speakers, Harpies' Larynx, and Chitinid's buzzing) are able to learn it.
+
+trait-name-Chittin = Chittin
+trait-description-Chittin =
+    A language consisting of clicks, buzzes, and some variety of harsh insect sounds.
+    Most of what makes up their speech comes from their antennae, making it a near-impossible language for those without to learn.
+    However, some species with compatible mouthparts (IPC's speakers, Harpies' Larynx, and Mothpeople's buzzing and antennae) are still able to learn it.
+
+trait-name-IPCInefficientCogitator = Inefficient Cogitator
+trait-description-IPCInefficientCogitator = 
+    Due to running with an outdated driver, your positronic brain consumes much more power than standard.
+    Your power drain is increased by ~33% (1.5/s -> 2/s). 
+    (Note that this is exponentially worse for you with better power sources. A medium-capacity cell lasts you 6 mins instead of 8).
+
+trait-name-IPCBrittleBoneDisease = Defective Chassis
+trait-description-IPCBrittleBoneDisease =
+    Made from weaker materials, or corroded by age or damage, your body is much weaker than the standard for an IPC.
+    This trait reduces your threshold for death by 60 points.
+    (Just as the normal version, it halves the threshold. IPCs cannot be crit, so it instead makes you die 60 points sooner.)
