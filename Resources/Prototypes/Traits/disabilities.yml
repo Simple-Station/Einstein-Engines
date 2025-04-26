@@ -1,7 +1,7 @@
 - type: trait
   id: Blindness
   category: Visual
-  points: 10
+  points: 6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -76,7 +76,7 @@
 - type: trait
   id: Pacifist
   category: Mental
-  points: 8
+  points: 6
   functions:
     - !type:TraitAddComponent
       components:
@@ -85,7 +85,7 @@
 - type: trait
   id: Paracusia
   category: Auditory
-  points: 2
+  points: 1
   functions:
     - !type:TraitAddComponent
       components:
@@ -99,7 +99,7 @@
 - type: trait
   id: Muted
   category: Mental
-  points: 6
+  points: 3
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -130,7 +130,11 @@
     - !type:CharacterLifepathRequirement
       inverted: true
       lifepaths:
-      - Clone
+        - Clone
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
   functions:
     - !type:TraitAddComponent
       components:
@@ -179,7 +183,7 @@
 - type: trait
   id: BadKnees
   category: Physical
-  points: 5
+  points: 4
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
@@ -249,7 +253,7 @@
 - type: trait
   id: BloodDeficiency
   category: Physical
-  points: 6
+  points: 4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -325,7 +329,7 @@
 - type: trait
   id: Clumsy
   category: Physical
-  points: 4
+  points: 5
   requirements:
     - !type:CharacterJobRequirement
       inverted: true

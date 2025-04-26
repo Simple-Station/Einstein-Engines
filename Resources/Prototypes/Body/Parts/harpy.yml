@@ -164,7 +164,7 @@
     toolName: "a right arm" # Shitmed Change
     onAdd:
     - type: Flight
-      speedModifier: 1.25
+      speedModifier: 1.3 # For harpies, it gives an effective ~60% (60.16%) increase over sprinting (as sprinting has a 10% increase for harpies) with base harpy weightless modifier
       isLayerAnimated: true
       layer: "/Textures/Mobs/Customization/Harpy/harpy_wings.rsi"
       animationKey: "Flap"

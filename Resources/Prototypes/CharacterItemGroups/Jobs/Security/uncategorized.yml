@@ -198,6 +198,12 @@
       id: LoadoutSecurityHeadHelmetInsulated
     - type: loadout
       id: ClothingHeadHelmetTCFLHeavy
+    - type: loadout
+      id: LoadoutClothingHeadHelmetHeavyStandard
+    - type: loadout
+      id: ClothingHeadHelmetTCFLNoVisor
+    - type: loadout
+      id: ClothingHeadHelmetTCFLVisor
 
 #- type: characterItemGroup
 #  id: LoadoutSecurityId
@@ -234,6 +240,14 @@
       id: LoadoutClothingOuterArmorSlim
     - type: loadout
       id: ClothingOuterArmorTCFLHeavy
+    - type: loadout
+      id: ClothingOuterArmorTCFLLight
+    - type: loadout
+      id: LoadoutClothingOuterArmorStandardHeavy
+    - type: loadout
+      id: LoadoutClothingOuterJacketZavSecurity
+    - type: loadout
+      id: LoadoutClothingOuterJacketZavSecurityAlt
 
 - type: characterItemGroup
   id: LoadoutSecurityShoes
@@ -262,3 +276,11 @@
       id: LoadoutSecurityUniformEnvirosuitBlue
     - type: loadout
       id: LoadoutSecurityUniformEnvirosuitGrey
+    - type: loadout
+      id: LoadoutSecurityUniformZavodSecurityOfficer
+    - type: loadout
+      id: LoadoutSecurityUniformZavodSecurityOfficerAlt1
+    - type: loadout
+      id: LoadoutSecurityUniformZavodSecurityOfficerAlt2
+    - type: loadout
+      id: LoadoutSecurityUniformZavodCadet
