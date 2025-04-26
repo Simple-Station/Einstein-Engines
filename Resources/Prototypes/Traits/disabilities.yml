@@ -99,7 +99,7 @@
 - type: trait
   id: Muted
   category: Mental
-  points: 3
+  points: 6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true

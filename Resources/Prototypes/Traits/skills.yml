@@ -95,7 +95,7 @@
 - type: trait
   id: Thieving
   category: Physical
-  points: -4
+  points: -3
   functions:
     - !type:TraitReplaceComponent
       components:
