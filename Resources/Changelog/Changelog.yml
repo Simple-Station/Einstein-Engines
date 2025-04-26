@@ -15585,3 +15585,14 @@ Entries:
   id: 7199
   time: '2025-04-26T19:58:55.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2328
+- author: dootythefrooty
+  changes:
+    - type: Fix
+      message: >-
+        Law boards will no longer give the Station AI a law that makes them obey
+        themselves.
+    - type: Fix
+      message: Chassis Selection Medi-Borgs can dispense candy now.
+  id: 7200
+  time: '2025-04-26T20:24:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2320
