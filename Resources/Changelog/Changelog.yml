@@ -15498,3 +15498,20 @@ Entries:
   id: 7190
   time: '2025-04-26T14:00:19.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2323
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Significantly reduced the amount of points given by most negative
+        traits.
+    - type: Fix
+      message: Fixed the Psionic Mantis not being able to roll powers.
+    - type: Remove
+      message: >-
+        Removed all trait menu options for buying roundstart psionic powers. I'm
+        sorry about this, but it broke a LOT of things, and wasn't a good idea
+        at all in the first place. There's no longer the Elementalist psicaster
+        type, since there's also no power shop.
+  id: 7191
+  time: '2025-04-26T15:05:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2292
