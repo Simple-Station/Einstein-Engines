@@ -15453,3 +15453,81 @@ Entries:
   id: 7187
   time: '2025-04-25T23:24:32.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2316
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added new Employer-Specific uniforms for Hephaestus, Zavodskoi, and
+        NanoTrasen.
+    - type: Add
+      message: >-
+        Added heavy armor options for security to spend loadout points on other
+        than their gun.
+    - type: Add
+      message: Added a unique heavy armor variant for Head of Security.
+    - type: Add
+      message: >-
+        Added specialized heavy armor crates to order from the Armory tab, these
+        include Ballistic and Laser Ablative armor variants.
+    - type: Add
+      message: >-
+        Added TCAF plate carrier for people wanting to use the TCAF security
+        outfits, but don't like taking the big slowdown.
+    - type: Tweak
+      message: >-
+        Nerfed the TCAF heavy armor a bit, it now has the same 30% slowdown as
+        the other "Heavy Sec Armor" variants.
+  id: 7188
+  time: '2025-04-26T00:31:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2315
+- author: ODJ
+  changes:
+    - type: Add
+      message: Changeling now has power attacks for it's blade and hammer.
+    - type: Tweak
+      message: Melee weapons given slight adjustments to feel better and more unique.
+  id: 7189
+  time: '2025-04-26T13:48:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2319
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: >-
+        Adjusted a number of trait prices; Oni now have a free species trait
+        choice, Harpies singing is far cheaper, being small is now free, etc.
+  id: 7190
+  time: '2025-04-26T14:00:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2323
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Significantly reduced the amount of points given by most negative
+        traits.
+    - type: Fix
+      message: Fixed the Psionic Mantis not being able to roll powers.
+    - type: Remove
+      message: >-
+        Removed all trait menu options for buying roundstart psionic powers. I'm
+        sorry about this, but it broke a LOT of things, and wasn't a good idea
+        at all in the first place. There's no longer the Elementalist psicaster
+        type, since there's also no power shop.
+  id: 7191
+  time: '2025-04-26T15:05:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2292
+- author: Orion-416
+  changes:
+    - type: Tweak
+      message: Shuttle walls no longer reflect projectiles
+  id: 7192
+  time: '2025-04-26T15:09:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2314
+- author: mrs
+  changes:
+    - type: Add
+      message: >-
+        Added paramedic windbreaker, winter coat, and winter boots to the
+        paramedic loadout.
+  id: 7193
+  time: '2025-04-26T15:09:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2312

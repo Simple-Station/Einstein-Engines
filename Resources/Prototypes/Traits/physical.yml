@@ -1,7 +1,7 @@
 - type: trait
   id: WillToLive
   category: Physical
-  points: -3
+  points: -1
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -26,7 +26,7 @@
 - type: trait
   id: WillToDie
   category: Physical
-  points: 2
+  points: 1
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -50,7 +50,7 @@
 - type: trait
   id: Tenacity
   category: Physical
-  points: -4
+  points: -1
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -149,7 +149,7 @@
 - type: trait
   id: HighAdrenaline
   category: Physical
-  points: -5
+  points: -2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -174,7 +174,7 @@
 - type: trait
   id: AdrenalDysfunction
   category: Physical
-  points: 3
+  points: 2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -198,7 +198,7 @@
 - type: trait
   id: Masochism
   category: Physical
-  points: -5
+  points: -2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -239,7 +239,7 @@
 - type: trait
   id: Steadfast
   category: Physical
-  points: -4
+  points: -3
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -263,7 +263,7 @@
 - type: trait
   id: Feeble
   category: Physical
-  points: 3
+  points: 4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -320,7 +320,7 @@
 - type: trait
   id: Small
   category: Physical
-  points: -2
+  points: 0
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
@@ -363,7 +363,7 @@
 - type: trait
   id: Talons
   category: Physical
-  points: -1
+  points: 0
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
@@ -442,7 +442,7 @@
         - Arachne
         - IPC # Other species could justify getting this trait for Blunt stamina damage,
               # but 6 blunt -> 5 blunt is a straight up downgrade.
-        - Xelthia # Their tentacles aren't really weapons probably 
+        - Xelthia # Their tentacles aren't really weapons probably
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -466,7 +466,7 @@
 - type: trait
   id: StrikingCalluses
   category: Physical
-  points: -3
+  points: -2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -477,8 +477,6 @@
       traits:
         - Claws
         - Talons
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -492,7 +490,7 @@
 - type: trait
   id: Spinarette
   category: Physical
-  points: -3
+  points: -2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -506,8 +504,6 @@
         - Shadowkin
         - IPC
         - Xelthia # this would fall off
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -519,7 +515,6 @@
     - !type:TraitAddTag
       tags:
         - SpiderCraft
-
 
 - type: trait
   id: BionicArm
@@ -536,8 +531,6 @@
           - Security
           - Command
           - Dignitary
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -576,8 +569,6 @@
       inverted: true
       species:
         - IPC
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions: # TODO: Code Platelet factories as an actual obtainable implant, and replace this with TraitAddImplant
     - !type:TraitReplaceComponent
       components:
@@ -603,8 +594,6 @@
       inverted: true
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddArmor
       damageModifierSets:
@@ -618,7 +607,7 @@
 - type: trait
   id: CyberEyes
   category: Physical
-  points: -4
+  points: -3
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -634,8 +623,6 @@
         - Photophobia
         - Blindness
         - Nearsighted
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitPushDescription
       descriptionExtensions:
@@ -822,12 +809,12 @@
     - !type:TraitReplaceComponent
       components:
         - type: DeadModifier
-          deadThresholdModifier: -100
+          deadThresholdModifier: -99
 
 - type: trait
   id: BrittleBoneDisease
   category: Physical
-  points: 10
+  points: 6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -901,8 +888,6 @@
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions: # TODO: Code Platelet factories as an actual obtainable implant, and replace this with TraitAddImplant
     - !type:TraitReplaceComponent
       components:
@@ -914,8 +899,8 @@
           damageCap: 250
           damage:
             groups:
-              Brute: -0.6
-              Burn: -0.6
+              Brute: -0.5
+              Burn: -0.5
 
 # - type: trait
 #   id: BionicLeg
@@ -926,8 +911,6 @@
 #       inverted: true
 #       jobs:
 #         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-#     - !type:CharacterItemGroupRequirement
-#       group: TraitsMind
 #   functions:
 #     - !type:TraitPushDescription
 #       descriptionExtensions:
@@ -964,8 +947,6 @@
 #       - Photophobia
 #        - Blindness
 #        - Nearsighted
-#    - !type:CharacterItemGroupRequirement
-#      group: TraitsMind
 #  functions:
 #    - !type:TraitAddComponent
 #      components:
@@ -997,8 +978,6 @@
         - Photophobia
         - Blindness
         - Nearsighted
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -1026,8 +1005,6 @@
         - Photophobia
         - Blindness
         - Nearsighted
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -1059,8 +1036,6 @@
         - Photophobia
         - Blindness
         - Nearsighted
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -1096,8 +1071,6 @@
         - MedicalEyesModule
         - DiagnosticEyesModule
         - SecurityEyesModule
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -1133,8 +1106,6 @@
         - Photophobia
         - Blindness
         - Nearsighted
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -1158,8 +1129,6 @@
         - Photophobia
         - Blindness
         - Nearsighted
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -1175,7 +1144,7 @@
 - type: trait
   id: Bodybuilder
   category: Physical
-  points: -6
+  points: -4
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
@@ -1194,7 +1163,7 @@
 - type: trait
   id: Featherweight
   category: Physical
-  points: 3
+  points: 4
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
@@ -1213,7 +1182,7 @@
 - type: trait
   id: Vampirism # You may port this to EE, you have my permission!
   category: Physical
-  points: -3
+  points: -5
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -1238,14 +1207,12 @@
 - type: trait
   id: BionicPryArm
   category: Physical
-  points: -3
+  points: -2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
     - !type:CharacterTraitRequirement
       inverted: true
       traits:

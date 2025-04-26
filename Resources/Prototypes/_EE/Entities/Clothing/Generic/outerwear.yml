@@ -1,0 +1,144 @@
+- type: entity
+  parent: [ClothingOuterStorageBase, AllowSuitStorageClothing]
+  id: ClothingOuterArmorAblativeHeavy
+  name: heavy laser-ablative armor
+  description: A suit of heavy laser-ablative armor manufactured by Zavodskoi Interstellar and sold to NT Security. It trades mobility for unparalleled protection against laser weaponry.
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/Generic/OuterClothing/heavy_armor_ablative.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/Generic/OuterClothing/heavy_armor_ablative.rsi
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.85
+          Slash: 0.85
+          Piercing: 0.85
+          Heat: 0.3
+          Caustic: 0.5
+    - type: ExplosionResistance
+      damageCoefficient: 0.5
+    - type: Reflect
+      reflectProb: 0.05
+      spread: 270
+      innate: true
+      reflects:
+        - Energy
+        - NonEnergy
+    - type: ClothingSpeedModifier
+      walkModifier: 0.7
+      sprintModifier: 0.7
+
+- type: entity
+  parent: [ClothingOuterStorageBase, AllowSuitStorageClothing]
+  id: ClothingOuterArmorBallisticHeavy
+  name: heavy ballistic armor
+  description: A suit of heavy ballistic armor manufactured by Zavodskoi Interstellar and sold to NT Security. It trades mobility for unparalleled protection against ballistic weapons.
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/Generic/OuterClothing/heavy_armor_ballistic.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/Generic/OuterClothing/heavy_armor_ballistic.rsi
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.85
+          Slash: 0.5
+          Piercing: 0.3
+          Heat: 0.85
+          Caustic: 0.85
+    - type: ExplosionResistance
+      damageCoefficient: 0.5
+    - type: Reflect
+      reflectProb: 0.05
+      spread: 270
+      innate: true
+      reflects:
+        - Energy
+        - NonEnergy
+    - type: ClothingSpeedModifier
+      walkModifier: 0.7
+      sprintModifier: 0.7
+
+- type: entity
+  parent: [ClothingOuterStorageBase, AllowSuitStorageClothing]
+  id: ClothingOuterArmorRiotHeavy
+  name: heavy riot armor
+  description: A suit of heavy riot gear manufactured by Zavodskoi Interstellar and sold to NT Security. It trades mobility for unparalleled protection against blunt force.
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/Generic/OuterClothing/heavy_armor_riot.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/Generic/OuterClothing/heavy_armor_riot.rsi
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.3
+          Slash: 0.5
+          Piercing: 0.85
+          Heat: 0.85
+          Caustic: 0.85
+    - type: ExplosionResistance
+      damageCoefficient: 0.5
+    - type: Reflect
+      reflectProb: 0.05
+      spread: 270
+      innate: true
+      reflects:
+        - Energy
+        - NonEnergy
+    - type: ClothingSpeedModifier
+      walkModifier: 0.7
+      sprintModifier: 0.7
+
+- type: entity
+  parent: [ClothingOuterStorageBase, AllowSuitStorageClothing]
+  id: ClothingOuterArmorStandardHeavy
+  name: heavy security armor
+  description: A suit of heavy security armor manufactured by Zavodskoi Interstellar and sold to NT Security. It trades mobility for unparalleled protection against general threats.
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/Generic/OuterClothing/heavy_armor_standard.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/Generic/OuterClothing/heavy_armor_standard.rsi
+      clothingVisuals:
+        outerClothing:
+        - state: equipped-OUTERCLOTHING
+        - state: equipped-OUTERCLOTHING-unshaded
+          shader: unshaded
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.5
+          Slash: 0.5
+          Piercing: 0.5
+          Heat: 0.5
+          Caustic: 0.5
+    - type: ExplosionResistance
+      damageCoefficient: 0.5
+    - type: Reflect
+      reflectProb: 0.05
+      spread: 270
+      innate: true
+      reflects:
+        - Energy
+        - NonEnergy
+    - type: ClothingSpeedModifier
+      walkModifier: 0.7
+      sprintModifier: 0.7
+
+- type: entity
+  parent: [ClothingOuterArmorStandardHeavy, AllowSuitStorageClothing]
+  id: ClothingOuterArmorHoSHeavy
+  name: heavy tactical armor
+  description: A suit of heavy security armor manufactured by Zavodskoi Interstellar and sold to NT Security. It trades mobility for unparalleled protection against general threats. This one has NT Command staff markings.
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/Generic/OuterClothing/heavy_armor_hos.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/Generic/OuterClothing/heavy_armor_hos.rsi
+      clothingVisuals:
+        outerClothing:
+        - state: equipped-OUTERCLOTHING
+        - state: equipped-OUTERCLOTHING-unshaded
+          shader: unshaded
