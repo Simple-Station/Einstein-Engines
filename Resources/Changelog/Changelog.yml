@@ -15559,3 +15559,15 @@ Entries:
   id: 7196
   time: '2025-04-26T16:47:37.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2275
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Added the Magmantle, a mantle that functions as worse magboots on the
+        neck slot (15% more slow, but they give 20% temperature protection like
+        winter boots or scarves). It is available in the species section of
+        loadouts, for all the species that do not have a feet slot. (Harpy,
+        Diona, Arachne)
+  id: 7197
+  time: '2025-04-26T18:38:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2295
