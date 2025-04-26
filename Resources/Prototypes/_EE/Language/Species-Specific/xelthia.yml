@@ -4,7 +4,7 @@
   isVisibleLanguage: true
   speech:
     color: "#65d9ff"
-    fontId: Megrim
+    fontId: NovaFlat
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1

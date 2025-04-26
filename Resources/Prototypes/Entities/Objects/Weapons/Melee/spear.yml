@@ -45,7 +45,7 @@
     heavyRateModifier: 1.3
     heavyRangeModifier: 1.25
     heavyDamageBaseModifier: 1.0
-    heavyStaminaCost: 5
+    heavyStaminaCost: 2.5
     maxTargets: 3
     angle: 20
     animation: WeaponArcThrust
@@ -241,7 +241,7 @@
     heavyRateModifier: 1.3
     heavyRangeModifier: 1.25
     heavyDamageBaseModifier: 1.0
-    heavyStaminaCost: 5
+    heavyStaminaCost: 2.5
     maxTargets: 3
     angle: 20
     animation: WeaponArcThrust

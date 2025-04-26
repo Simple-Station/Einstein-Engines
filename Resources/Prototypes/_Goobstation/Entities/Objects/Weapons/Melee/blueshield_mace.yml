@@ -34,6 +34,8 @@
   - type: MeleeWeapon
     angle: 0
     wideAnimationRotation: -135
+    attackRate: 1.1
+    range: 1.4
     damage:
       types:
         Blunt: 13 # Unlucky number

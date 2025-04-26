@@ -15417,3 +15417,75 @@ Entries:
   id: 7184
   time: '2025-04-25T13:00:45.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2309
+- author: Zeta_Null
+  changes:
+    - type: Add
+      message: Added a proper font for Qiilour to use
+    - type: Tweak
+      message: >-
+        Put Xelthia on some trait blacklists that they wouldn't reasonably be
+        applicable for (Arm Related things)
+  id: 7185
+  time: '2025-04-25T21:19:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2317
+- author: 3PonPon3
+  changes:
+    - type: Tweak
+      message: >-
+        Adjusted moth and harpy flight to be more balanced. (Moth flight, ~30%
+        speed increase, Harpy flight ~60% over sprinting, accounts for all
+        modifiers, including harpies 10% sprint speed increase) Makes True
+        Flight trait cost -2 instead of -5.
+  id: 7186
+  time: '2025-04-25T23:19:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2313
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Added Moffic (moff lang) and Chittin (chitinid lang) as languages
+        traits. Available for IPCs and Harpies for 1 point, as well as Moths for
+        Chittin and Chitinids for Moffic.
+    - type: Fix
+      message: >-
+        Harpies can no longer waste a point on the Valyrian standard language
+        trait, which they already start with.
+  id: 7187
+  time: '2025-04-25T23:24:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2316
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added new Employer-Specific uniforms for Hephaestus, Zavodskoi, and
+        NanoTrasen.
+    - type: Add
+      message: >-
+        Added heavy armor options for security to spend loadout points on other
+        than their gun.
+    - type: Add
+      message: Added a unique heavy armor variant for Head of Security.
+    - type: Add
+      message: >-
+        Added specialized heavy armor crates to order from the Armory tab, these
+        include Ballistic and Laser Ablative armor variants.
+    - type: Add
+      message: >-
+        Added TCAF plate carrier for people wanting to use the TCAF security
+        outfits, but don't like taking the big slowdown.
+    - type: Tweak
+      message: >-
+        Nerfed the TCAF heavy armor a bit, it now has the same 30% slowdown as
+        the other "Heavy Sec Armor" variants.
+  id: 7188
+  time: '2025-04-26T00:31:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2315
+- author: ODJ
+  changes:
+    - type: Add
+      message: Changeling now has power attacks for it's blade and hammer.
+    - type: Tweak
+      message: Melee weapons given slight adjustments to feel better and more unique.
+  id: 7189
+  time: '2025-04-26T13:48:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2319

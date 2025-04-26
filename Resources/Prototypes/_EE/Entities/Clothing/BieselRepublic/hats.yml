@@ -46,10 +46,11 @@
     - type: Armor
       modifiers:
         coefficients:
-          Blunt: 0.9
-          Slash: 0.9
-          Piercing: 0.9
-          Heat: 0.9
+          Blunt: 0.875
+          Slash: 0.875
+          Piercing: 0.875
+          Heat: 0.875
+          Caustic: 0.875
     - type: Reflect
       reflectProb: 0.03
       spread: 270
@@ -57,6 +58,33 @@
       reflects:
         - Energy
         - NonEnergy
+    - type: ClothingSpeedModifier
+      walkModifier: 0.95
+      sprintModifier: 0.95
+
+- type: entity
+  parent: [ClothingHeadHelmetBasic, TCFLInfo, BaseClothingRadio]
+  id: ClothingHeadHelmetTCFLNoVisor
+  name: TCAF light tactical helmet
+  suffix: TCFL
+  description: A basic tactical helmet worn by members of the Tau-Ceti Armed Forces.
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/BieselRepublic/Helmet/TCAF_tactical_helmet_novisor.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/BieselRepublic/Helmet/TCAF_tactical_helmet_novisor.rsi
+
+- type: entity
+  parent: [ClothingHeadHelmetBasic, TCFLInfo, BaseClothingRadio]
+  id: ClothingHeadHelmetTCFLVisor
+  name: TCAF light tactical helmet
+  suffix: TCFL
+  description: A basic tactical helmet worn by members of the Tau-Ceti Armed Forces.
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/BieselRepublic/Helmet/TCAF_tactical_helmet_visor.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/BieselRepublic/Helmet/TCAF_tactical_helmet_visor.rsi
 
 - type: entity
   parent: [ClothingHeadBaseButcherable, TCFLInfo]

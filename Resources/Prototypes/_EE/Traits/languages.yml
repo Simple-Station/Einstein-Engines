@@ -97,3 +97,45 @@
         - Delvahii
       languagesUnderstood:
         - Delvahii
+
+- type: trait
+  id: Moffic
+  category: TraitsSpeechLanguages
+  points: -1
+  # slots: 1
+  # itemGroupSlots: 0
+  requirements:
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Harpy
+        - Chitinid
+        - IPC
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Moffic
+      languagesUnderstood:
+        - Moffic
+
+- type: trait
+  id: Chittin
+  category: TraitsSpeechLanguages
+  points: -1
+  # slots: 1
+  # itemGroupSlots: 0
+  requirements:
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Harpy
+        - Moth
+        - IPC
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Chittin
+      languagesUnderstood:
+        - Chittin
