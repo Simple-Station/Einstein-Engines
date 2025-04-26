@@ -265,6 +265,20 @@
     - ClothingHeadHelmetInsulated
 
 - type: loadout
+  id: LoadoutClothingHeadHelmetHeavyStandard
+  category: JobsSecurityAUncategorized
+  cost: 3 # This is also a notable upgrade over a standard security helmet.
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingHeadHelmetHeavyStandard
+
+- type: loadout
   id: ClothingHeadHelmetTCFLHeavy
   category: JobsSecurityAUncategorized
   cost: 3 # This is a notable upgrade over a standard security helmet.
@@ -284,6 +298,48 @@
         - WarVet
   items:
     - ClothingHeadHelmetTCFLHeavy
+
+- type: loadout
+  id: ClothingHeadHelmetTCFLNoVisor
+  category: JobsSecurityAUncategorized
+  cost: 0 # Identical stats to standard security helmet.
+  exclusive: true
+  guideEntry: TCFLInfo
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+  items:
+    - ClothingHeadHelmetTCFLNoVisor
+
+- type: loadout
+  id: ClothingHeadHelmetTCFLVisor
+  category: JobsSecurityAUncategorized
+  cost: 0 # Identical stats to standard security helmet.
+  exclusive: true
+  guideEntry: TCFLInfo
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+  items:
+    - ClothingHeadHelmetTCFLVisor
 
 # Id
 
@@ -415,6 +471,77 @@
         - WarVet
   items:
     - ClothingOuterArmorTCFLHeavy
+
+- type: loadout
+  id: ClothingOuterArmorTCFLLight
+  category: JobsSecurityAUncategorized
+  cost: 0 # Identical stats to standard plate carrier
+  exclusive: true
+  guideEntry: TCFLInfo
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+  items:
+    - ClothingOuterArmorTCFLLight
+
+- type: loadout
+  id: LoadoutClothingOuterArmorStandardHeavy
+  category: JobsSecurityAUncategorized
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingOuterArmorStandardHeavy
+
+- type: loadout
+  id: LoadoutClothingOuterJacketZavSecurity
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  guideEntry: ZavodskoiInterstellar
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterEmployerRequirement
+      employers:
+        - ZavodskoiInterstellar
+  items:
+  - ClothingOuterJacketZavSecurity
+
+- type: loadout
+  id: LoadoutClothingOuterJacketZavSecurityAlt
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  guideEntry: ZavodskoiInterstellar
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterEmployerRequirement
+      employers:
+        - ZavodskoiInterstellar
+  items:
+  - ClothingOuterJacketZavSecurityAlt
 
 # Shoes
 - type: loadout
@@ -552,3 +679,74 @@
     - ClothingUniformEnvirosuitSecGrey
     - ClothingHeadEnvirohelmSecGrey
 
+- type: loadout
+  id: LoadoutSecurityUniformZavodSecurityOfficer
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  guideEntry: ZavodskoiInterstellar
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterEmployerRequirement
+      employers:
+        - ZavodskoiInterstellar
+  items:
+    - ClothingUniformJumpsuitZavodSecurityOfficer
+
+- type: loadout
+  id: LoadoutSecurityUniformZavodSecurityOfficerAlt1
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  guideEntry: ZavodskoiInterstellar
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterEmployerRequirement
+      employers:
+        - ZavodskoiInterstellar
+  items:
+    - ClothingUniformJumpsuitZavodSecurityOfficerAlt1
+
+- type: loadout
+  id: LoadoutSecurityUniformZavodSecurityOfficerAlt2
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  guideEntry: ZavodskoiInterstellar
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterEmployerRequirement
+      employers:
+        - ZavodskoiInterstellar
+  items:
+    - ClothingUniformJumpsuitZavodSecurityOfficerAlt2
+
+- type: loadout
+  id: LoadoutSecurityUniformZavodCadet
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  guideEntry: ZavodskoiInterstellar
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+    - !type:CharacterEmployerRequirement
+      employers:
+        - ZavodskoiInterstellar
+  items:
+    - ClothingUniformJumpsuitZavodCadet
