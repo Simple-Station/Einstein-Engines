@@ -9,7 +9,6 @@ using Robust.Shared.Audio;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
-using Robust.Shared.Utility;
 using System.Numerics;
 
 namespace Content.Server.Atmos.EntitySystems;
