@@ -477,8 +477,6 @@
       traits:
         - Claws
         - Talons
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -506,8 +504,6 @@
         - Shadowkin
         - IPC
         - Xelthia # this would fall off
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
