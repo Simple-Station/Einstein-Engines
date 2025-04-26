@@ -15522,3 +15522,12 @@ Entries:
   id: 7192
   time: '2025-04-26T15:09:36.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2314
+- author: mrs
+  changes:
+    - type: Add
+      message: >-
+        Added paramedic windbreaker, winter coat, and winter boots to the
+        paramedic loadout.
+  id: 7193
+  time: '2025-04-26T15:09:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2312
