@@ -15596,3 +15596,10 @@ Entries:
   id: 7200
   time: '2025-04-26T20:24:33.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2320
+- author: ilmenwe
+  changes:
+    - type: Tweak
+      message: Tweaked as told.
+  id: 7201
+  time: '2025-04-26T21:07:03.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2325
