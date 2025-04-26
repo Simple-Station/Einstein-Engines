@@ -209,39 +209,6 @@
           proto: HarpySingerAll
 
 - type: trait
-  id: NaturalTelepath
-  category: Mental
-  points: -2
-  functions:
-    - !type:TraitAddPsionics
-      psionicPowers:
-        - TelepathyPower
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - ResearchDirector
-        - ForensicMantis
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterTraitRequirement
-          traits:
-            - LatentPsychic
-        - !type:CharacterJobRequirement
-          jobs:
-            - Chaplain
-            - Librarian
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
-
-- type: trait
   id: TrapAvoider
   category: Physical
   points: -3
@@ -265,7 +232,7 @@
 
 - type: trait
   id: AnomalousPositronics
-  category: Mental
+  category: Psionics
   points: -4
   functions:
     - !type:TraitRemoveComponent
@@ -276,14 +243,14 @@
       species:
         - IPC
 
-- type: trait
-  id: AnimalFriend
-  category: Mental
-  points: 0
-  functions:
-    - !type:TraitModifyFactions
-      addFactions:
-        - AnimalFriend
+# - type: trait
+#   id: AnimalFriend
+#   category: Mental
+#   points: -4
+#   functions:
+#     - !type:TraitModifyFactions
+#       addFactions:
+#         - AnimalFriend
 
 - type: trait
   id: SurgeryTraining

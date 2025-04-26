@@ -287,7 +287,7 @@ trait-description-SnailPaced =
 
 trait-name-LightStep = Light Step
 trait-description-LightStep =
-    You move with a gentle step, which makes your footsteps quieter.
+    You move with a gentle step, which makes your footsteps quieter when not wearing any kind of shoes.
 
 trait-name-Swashbuckler = Swashbuckler
 trait-description-Swashbuckler =
@@ -311,13 +311,6 @@ trait-description-Mystic =
 
 trait-name-Singer = Singer
 trait-description-Singer = You are naturally capable of singing simple melodies with your voice.
-
-trait-name-NaturalTelepath = Natural Telepath
-trait-description-NaturalTelepath =
-    As a naturally occuring Telepath, you are capable of fluent telepathic communication, regardless of
-    whether or not you possess any notable psychic powers. This offers all of the same benefits and
-    drawbacks of Latent Psychic, except that you are guaranteed to start with full Telepathy. You may
-    still gain powers as normal for a Latent Psychic.
 
 trait-name-TrapAvoider = Trap Avoider
 trait-description-TrapAvoider =
@@ -620,8 +613,8 @@ trait-description-RestrictedGear =
 
 trait-name-SurgeryTraining = Surgery Training
 trait-description-SurgeryTraining =
-    At some point in your life you acquired the knowledge and experience necessary for performing surgery effectively. 
-    This trait boosts your surgery speed to 1.6, and is intended for non-medical characters, as medical jobs already have faster surgery. 
+    At some point in your life you acquired the knowledge and experience necessary for performing surgery effectively.
+    This trait boosts your surgery speed to 1.6, and is intended for non-medical characters, as medical jobs already have faster surgery.
     (This is slightly faster than a medical intern (1.5) but slower than a normal doctor (1.75))
 
 trait-name-ExperiencedSurgeon = Experienced Surgeon
