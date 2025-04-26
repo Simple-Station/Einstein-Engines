@@ -1,0 +1,15 @@
+#Insulated Jacket
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterJacketInsulated
+  name: insulated jacket
+  description: A thick jacket with built-in insulated gloves. Useful if you can't wear regular insulated gloves, for some reason.
+  components:
+  - type: Sprite
+    sprite: _EE/Clothing/InsulatedJacket/insulated_jacket.rsi
+  - type: Clothing
+    sprite: _EE/Clothing/InsulatedJacket/insulated_jacket.rsi
+  - type: Insulated
+  - type: FingerprintMask
+# if species-specific sprites are fixed to not have displacement maps apply to them, this will break. 
+# replacing the equipped-OUTERCLOTHING-xelthia.png file in the RSI with the one in the InsulatedJacket/insulated_jacket_unmodified folder would fix this.
