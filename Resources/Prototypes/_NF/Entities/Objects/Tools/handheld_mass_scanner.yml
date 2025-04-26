@@ -17,7 +17,6 @@
         map: [ "enum.PowerDeviceVisualLayers.Powered" ]
   - type: RadarConsole
     maxRange: 256
-    alertOnPing: false
   - type: Appearance
   - type: GenericVisualizer
     visuals:

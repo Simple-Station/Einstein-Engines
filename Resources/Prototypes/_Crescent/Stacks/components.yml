@@ -6,7 +6,6 @@
   icon: { sprite: _Crescent/Objects/Materials/shipconstruction.rsi, state: block }
   spawn: StarshipEngineComponents1
   maxCount: 50
-  itemSize: 2
 
 - type: stack
   id: StarshipElectronics
@@ -14,7 +13,6 @@
   icon: { sprite: _Crescent/Objects/Materials/shipconstruction.rsi, state: parts }
   spawn: StarshipElectronics1
   maxCount: 50
-  itemSize: 2
 
 - type: stack
   id: StarshipHull
@@ -22,7 +20,6 @@
   icon: { sprite: _Crescent/Objects/Materials/shipconstruction.rsi, state: hull }
   spawn: StarshipHull1
   maxCount: 50
-  itemSize: 2
 
 #industry refactor, tiered parts
 
@@ -32,7 +29,6 @@
   icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: basicelectronics }
   spawn: BasicElectronics1
   maxCount: 10
-  itemSize: 2
 
 - type: stack
   id: AdvancedElectronics
@@ -40,7 +36,6 @@
   icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: advancedelectronics }
   spawn: AdvancedElectronics1
   maxCount: 10
-  itemSize: 2
 
 - type: stack
   id: NanotrasenElectronics
@@ -48,7 +43,6 @@
   icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: nanotrasenelectronics }
   spawn: NanotrasenElectronics1
   maxCount: 10
-  itemSize: 2
 
 - type: stack
   id: BasicMechatronics
@@ -56,7 +50,6 @@
   icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: basicmechanic }
   spawn: BasicMechatronics1
   maxCount: 10
-  itemSize: 2
 
 - type: stack
   id: AdvancedMechatronics
@@ -64,7 +57,6 @@
   icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: advancedmechanic }
   spawn: AdvancedMechatronics1
   maxCount: 10
-  itemSize: 2
 
 - type: stack
   id: NanotrasenMechatronics
@@ -72,7 +64,6 @@
   icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: bluespacemechatronics }
   spawn: NanotrasenMechatronics1
   maxCount: 10
-  itemSize: 2
 
 - type: stack
   id: LaserLocus
@@ -80,7 +71,6 @@
   icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: laserlocus }
   spawn: LaserLocus1
   maxCount: 5
-  itemSize: 2
 
 - type: stack
   id: BallisticCycler
@@ -88,7 +78,6 @@
   icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: gascycler }
   spawn: BallisticCycler1
   maxCount: 5
-  itemSize: 2
 
 - type: stack
   id: TubeLoader
@@ -96,7 +85,6 @@
   icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: tubeloaderrobotics }
   spawn: TubeLoader1
   maxCount: 5
-  itemSize: 2
 
 - type: stack
   id: WeakLaserLocus
@@ -104,7 +92,6 @@
   icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: weaklaserlocus }
   spawn: WeakLaserLocus1
   maxCount: 5
-  itemSize: 2
 
 - type: stack
   id: HardlightGenerator
@@ -112,7 +99,6 @@
   icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: hardlightgenerator }
   spawn: HardlightGenerator
   maxCount: 5
-  itemSize: 2
 
 - type: stack
   id: HardsuitElectronics
@@ -120,7 +106,6 @@
   icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: hardsuitelectronics }
   spawn: HardsuitElectronics
   maxCount: 5
-  itemSize: 2
 
 - type: stack
   id: PlastitaniumFibreAlloy
@@ -128,4 +113,3 @@
   icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: plastitaniumfibrealloy }
   spawn: PlastitaniumFibreAlloy
   maxCount: 5
-  itemSize: 2

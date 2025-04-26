@@ -150,7 +150,6 @@
     # Lathes
     - CircuitImprinterMachineCircuitboard
     - ExosuitFabricatorMachineCircuitboard
-    - ScienceTechFabCircuitboard
     - ProtolatheMachineCircuitboard
     - AutolatheMachineCircuitboard
     - FlatpackerMachineCircuitboard

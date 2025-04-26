@@ -292,7 +292,7 @@
 # SR
 - type: entity
   id: LockerStationRepresentative
-  parent: [BaseStructureIndestructible, BaseStructureLockImmuneToEmag, BaseStructureAccessReaderImmuneToEmag, LockerBaseSecure] # Frontier
+  parent: [BaseStructureIndestructible, LockerBaseSecure] # Frontier
   name: station representative's locker
   components:
   - type: Appearance

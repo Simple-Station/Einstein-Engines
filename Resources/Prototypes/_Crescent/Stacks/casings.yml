@@ -6,7 +6,6 @@
   icon: { sprite: _Crescent/Objects/FactoryGoods/120.rsi, state: icon }
   spawn: Casing120
   maxCount: 2
-  itemSize: 2
 
 - type: stack
   id: EmptyCasingHE
@@ -14,7 +13,6 @@
   icon: { sprite: _Crescent/Objects/FactoryGoods/120.rsi, state: icon }
   spawn: Casing120HE
   maxCount: 2
-  itemSize: 2
 
 - type: stack
   id: WeldedCasing
@@ -22,7 +20,6 @@
   icon: { sprite: _Crescent/Objects/FactoryGoods/120w.rsi, state: icon }
   spawn: Casing120Welded
   maxCount: 2
-  itemSize: 2
 
 - type: stack
   id: WeldedCasingEmp
@@ -30,7 +27,6 @@
   icon: { sprite: _Crescent/Objects/FactoryGoods/120wemp.rsi, state: icon }
   spawn: Casing120WeldedEMP
   maxCount: 2
-  itemSize: 2
 
 - type: stack
   id: WeldedCasingHE
@@ -38,7 +34,6 @@
   icon: { sprite: _Crescent/Objects/FactoryGoods/120whe.rsi, state: icon }
   spawn: Casing120WeldedHE
   maxCount: 2
-  itemSize: 2
 
 # colony
 
@@ -48,4 +43,3 @@
   icon: { sprite: _NF/Objects/SpaceArtillery/1000_armorpiercing_rail_casing.rsi, state: base }
   spawn: ColonyShellIncomplete
   maxCount: 1
-  itemSize: 1

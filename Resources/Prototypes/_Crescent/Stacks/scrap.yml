@@ -6,7 +6,6 @@
   icon: { sprite: /Textures/_Crescent/Objects/Materials/ore.rsi, state: icon-scrap }
   spawn: SteelScrap1
   maxCount: 30
-  itemSize: 2
 
 - type: stack
   id: TitaniumScrapOre
@@ -14,7 +13,6 @@
   icon: { sprite: /Textures/_Crescent/Objects/Materials/ore.rsi, state: icon-titaniumscrap }
   spawn: TitaniumScrap1
   maxCount: 30
-  itemSize: 2
 
 - type: stack
   id: RefinedSteelScrapOre
@@ -22,7 +20,6 @@
   icon: { sprite: /Textures/_Crescent/Objects/Materials/ore.rsi, state: icon-refinedscrap }
   spawn: RefinedSteelScrap1
   maxCount: 30
-  itemSize: 2
 
 - type: stack
   id: RefinedTitaniumScrapOre
@@ -30,7 +27,6 @@
   icon: { sprite: /Textures/_Crescent/Objects/Materials/ore.rsi, state: icon-titta }
   spawn: RefinedTitaniumScrap1
   maxCount: 30
-  itemSize: 2
 
 #drugmaking
 
@@ -40,7 +36,6 @@
   icon: { sprite: /Textures/_Crescent/Objects/Materials/ore.rsi, state: garbage }
   spawn: GarbageOre1
   maxCount: 30
-  itemSize: 2
 
 - type: stack
   id: RefinedGarbageOre
@@ -48,7 +43,6 @@
   icon: { sprite: /Textures/_Crescent/Objects/Materials/ore.rsi, state: refinedgarbage }
   spawn: RefinedGarbageOre1
   maxCount: 30
-  itemSize: 2
 
 #YAMLFIX: make sure these are right and put them in a category
 
@@ -58,7 +52,6 @@
   icon: { sprite: /Textures/_Crescent/Objects/Materials/ore.rsi, state: plasma }
   spawn: PlasmaIsotope1
   maxCount: 30
-  itemSize: 5
 
 - type: stack
   id: MechaniteCanister
@@ -66,7 +59,6 @@
   icon: { sprite: /Textures/_Crescent/Objects/Materials/ore.rsi, state: mechanites }
   spawn: MechaniteCanister1
   maxCount: 30
-  itemSize: 5
 
 - type: stack
   id: GalineCanister
@@ -74,7 +66,6 @@
   icon: { sprite: /Textures/_Crescent/Objects/Materials/ore.rsi, state: galine5 }
   spawn: GalineCanister1
   maxCount: 30
-  itemSize: 5
 
 - type: stack
   id: PhoronBottle
@@ -82,4 +73,3 @@
   icon: { sprite: /Textures/_Crescent/Objects/Materials/ore.rsi, state: deactivatedphoron }
   spawn: DeactivatedPhoronBottle1
   maxCount: 30
-  itemSize: 5

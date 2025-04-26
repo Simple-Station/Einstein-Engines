@@ -16,7 +16,6 @@
         color: red
   - type: RandomSpawner
     prototypes:
-    - SpawnDungeonLootClothesMercenary
     - SpawnDungeonLootArmorMercenary
     - SpawnDungeonLootShieldsMercenary
     - SpawnDungeonLootMeleeT2

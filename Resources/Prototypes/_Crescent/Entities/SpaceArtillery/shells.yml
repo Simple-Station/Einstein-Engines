@@ -708,7 +708,6 @@
   icon: { sprite: _Crescent/Objects/Misc/coolant.rsi, state: icon }
   spawn: CoolantCartridge
   maxCount: 30
-  itemSize: 4
 
 
 - type: entity

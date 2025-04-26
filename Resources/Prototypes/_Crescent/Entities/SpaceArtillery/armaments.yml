@@ -260,7 +260,6 @@
   - type: Strap
     position: Stand
     buckleOffset: "0,0.8"
-    maxBuckleDistance: 1
   - type: RadarConsole
 
 - type: entity
@@ -566,7 +565,6 @@
   - type: Strap
     position: Stand
     buckleOffset: "0,0.8"
-    maxBuckleDistance: 1
   - type: ApcPowerReceiver
     powerLoad: 1000
   - type: ExtensionCableReceiver
@@ -674,7 +672,6 @@
   - type: Strap
     position: Stand
     buckleOffset: "0,0.8"
-    maxBuckleDistance: 1
   - type: ApcPowerReceiver
     powerLoad: 1000
   - type: ExtensionCableReceiver
@@ -771,7 +768,6 @@
   - type: Strap
     position: Stand
     buckleOffset: "0,1.2"
-    maxBuckleDistance: 1.5
   - type: ApcPowerReceiver
     powerLoad: 1000
   - type: ExtensionCableReceiver
@@ -882,7 +878,6 @@
   - type: Strap
     position: Stand
     buckleOffset: "0,0.8"
-    maxBuckleDistance: 1
   - type: ApcPowerReceiver
     powerLoad: 1000
   - type: ExtensionCableReceiver
@@ -989,7 +984,6 @@
   - type: Strap
     position: Stand
     buckleOffset: "0,0.8"
-    maxBuckleDistance: 1
   - type: ApcPowerReceiver
     powerLoad: 1000
   - type: ExtensionCableReceiver
@@ -1097,7 +1091,6 @@
   - type: Strap
     position: Stand
     buckleOffset: "0,0.8"
-    maxBuckleDistance: 1
   - type: ApcPowerReceiver
     powerLoad: 1000
   - type: ExtensionCableReceiver
@@ -1182,7 +1175,6 @@
   - type: Strap
     position: Stand
     buckleOffset: "0,0.8"
-    maxBuckleDistance: 1
   - type: ApcPowerReceiver
     powerLoad: 0
   - type: ExtensionCableReceiver

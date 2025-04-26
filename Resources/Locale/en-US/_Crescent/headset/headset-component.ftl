@@ -1,0 +1,11 @@
+chat-radio-ncwl = NCWL
+chat-radio-empire = Imperial Command
+chat-radio-hunter = Sixth Subjugation Fireteam
+chat-radio-shi = Shinohara
+chat-radio-empireciv = Imperial Broadband
+chat-radio-syndiesaws = SAW Workers Union
+chat-radio-syndiegorlex = Gorlex Security Consulting
+chat-radio-syndieipm = Interdyne Pharmaceuticals
+chat-radio-syndiecyberdawn = Cyberdawn Technologies
+chat-radio-pact = The Atyrian Pact
+chat-radio-authoritat = 43rd Battlegroup

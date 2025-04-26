@@ -252,17 +252,12 @@
         color: red
   - type: RandomSpawner
     prototypes:
-    - SalvageTechfabNF
-    - ScienceTechFab
-    - ServiceTechFab
-    - Autolathe
     - Autolathe
     - Protolathe
     - CircuitImprinter
     - ExosuitFabricator
     - Biofabricator
     - AmmoTechFab
-    - MedicalTechFab
     - UniformPrinter
     - MachineFlatpacker
     - SpawnDungeonMachineFrame
@@ -498,12 +493,8 @@
     - SurveillanceCameraWirelessRouterCircuitboard
     - SurveillanceWirelessCameraMonitorCircuitboard
     # Boards
-    - SalvageTechFabCircuitboardNF
-    - ScienceTechFabCircuitboard
-    - ServiceTechFabCircuitboard
     - AutolatheCircuitboard
     - AmmoTechFabCircuitboard
-    - MedicalTechFabCircuitboard
     - OreProcessorIndustrialMachineCircuitboard
     - DawInstrumentMachineCircuitboard
     - ComputerIFFCircuitboard

@@ -204,14 +204,6 @@
     layers:
     - state: science_ape
 
-- type: entity
-  parent: ExosuitFabricatorFlatpack
-  id: ScienceTechFabFlatpack
-  name: science techfab flatpack
-  description: A flatpack used for constructing a science techfab.
-  components:
-  - type: Flatpack
-    entity: ScienceTechFab
 
 # Service
 - type: entity

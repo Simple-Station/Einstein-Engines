@@ -340,8 +340,8 @@
     rarePrototypes:
     #- HandheldStationMap
     # T4
-    - QuadraticCapacitorStockPart
-    - FemtoManipulatorStockPart
+    - BluespaceCapacitorStockPart
+    - BluespaceManipulatorStockPart
     - BluespaceMatterBinStockPart
     rareChance: 0.05
 

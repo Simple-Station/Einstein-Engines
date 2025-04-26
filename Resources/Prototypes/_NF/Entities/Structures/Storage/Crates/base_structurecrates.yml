@@ -1,5 +1,5 @@
 - type: entity
-  parent: [BaseStructureLockImmuneToEmag, BaseStructureAccessReaderImmuneToEmag, CrateBaseWeldable]
+  parent: [CrateBaseWeldable]
   id: CrateTradeBaseSecure
   categories: [ HideSpawnMenu ]
   components:
