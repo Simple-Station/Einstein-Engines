@@ -1,7 +1,7 @@
 - type: trait
   id: Swashbuckler
   category: Physical
-  points: -1
+  points: 0
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -26,7 +26,7 @@
 - type: trait
   id: Spearmaster
   category: Physical
-  points: -1
+  points: 0
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -50,7 +50,7 @@
 - type: trait
   id: WeaponsGeneralist
   category: Physical
-  points: -1
+  points: 0
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -74,7 +74,7 @@
 - type: trait
   id: Mystic
   category: Mental
-  points: -1
+  points: 0
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -111,7 +111,7 @@
 - type: trait
   id: ShadowkinBlackeye
   category: Mental
-  points: 4
+  points: 5
   functions:
     - !type:TraitReplaceComponent
       components:
