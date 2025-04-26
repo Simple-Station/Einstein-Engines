@@ -172,7 +172,12 @@
   - type: ShowHealthIcons
     damageContainers:
     - Biological
-  - type: FabricateCandy # Nyanotrasen - The medical cyborg can generate candies filled with medicine.
+  - type: FabricateActions
+    actions:
+    - ActionFabricateLollipop
+    - ActionFabricateGumball
+  - type: SurgeryTarget # Shitmed
+  - type: Sanitized # Shitmed
 
   # Visual
   inventoryTemplateId: borgDutch
