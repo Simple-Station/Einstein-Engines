@@ -210,6 +210,8 @@
   components:
   - type: Sprite
     state: plushie_nuke
+  - type: Item
+    heldPrefix: plushienuke
 
 - type: entity
   parent: BasePlushie
@@ -676,8 +678,8 @@
     sprite: Objects/Fun/ducky.rsi
     state: icon
   - type: MeleeWeapon
-    attackRate: .6666
-    range: 1.5
+    attackRate: .6
+    range: 1.6
     damage:
       types:
         Blunt: 0.1

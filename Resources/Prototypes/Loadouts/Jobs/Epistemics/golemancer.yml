@@ -156,3 +156,39 @@
         - Roboticist
   items:
     - ClothingUniformJumpsuitRoboticist
+
+- type: loadout
+  id: LoadoutScienceUniformJumpsuitRoboticistNT
+  category: JobsEpistemicsGolemancer
+  cost: 0
+  exclusive: true
+  guideEntry: NanoTrasen
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGolemancerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
+    - !type:CharacterEmployerRequirement
+      employers:
+        - NanoTrasen
+  items:
+    - ClothingUniformJumpsuitNTRoboticist
+
+- type: loadout
+  id: LoadoutScienceUniformJumpsuitRoboticistHeph
+  category: JobsEpistemicsGolemancer
+  cost: 0
+  exclusive: true
+  guideEntry: HephaestusIndustries
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGolemancerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
+    - !type:CharacterEmployerRequirement
+      employers:
+        - HephaestusIndustries
+  items:
+    - ClothingUniformJumpsuitHephRoboticist

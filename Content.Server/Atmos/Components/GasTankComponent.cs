@@ -117,5 +117,11 @@ namespace Content.Server.Atmos.Components
             {
                 Params = AudioParams.Default.WithVolume(-5f),
             };
+
+        /// <summary>
+        ///     For things like jetpacks and integrated thrusters that you're not meant to be drinking/probably aren't connected to your breath supply anyways.
+        /// </summary>
+        [DataField]
+        public bool IsInternals = true;
     }
 }
