@@ -515,9 +515,9 @@
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/e-cautery.rsi
     inhandVisuals:
       left:
-      - state: inhand-left-on
+      - state: on-inhand-left
       right:
-      - state: inhand-right-on
+      - state: on-inhand-right
   - type: SurgeryTool
     startSound:
       path: /Audio/_Shitmed/Medical/Surgery/cautery1.ogg
@@ -578,9 +578,9 @@
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/e-scalpel.rsi
     inhandVisuals:
       left:
-      - state: inhand-left-on
+      - state: on-inhand-left
       right:
-      - state: inhand-right-on
+      - state: on-inhand-right
   - type: SurgeryTool
     startSound:
       path: /Audio/_Shitmed/Medical/Surgery/scalpel1.ogg
@@ -641,9 +641,9 @@
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/adv-retractor.rsi
     inhandVisuals:
       left:
-      - state: inhand-left-on
+      - state: on-inhand-left
       right:
-      - state: inhand-right-on
+      - state: on-inhand-right
   - type: SurgeryTool
     startSound:
       path: /Audio/_Shitmed/Medical/Surgery/retractor1.ogg
