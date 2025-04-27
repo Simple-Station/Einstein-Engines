@@ -15638,3 +15638,10 @@ Entries:
   id: 7204
   time: '2025-04-27T21:12:18.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2334
+- author: BlueHNT
+  changes:
+    - type: Tweak
+      message: Tweaked Spacelaw gun restrictions
+  id: 7205
+  time: '2025-04-27T21:26:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2338
