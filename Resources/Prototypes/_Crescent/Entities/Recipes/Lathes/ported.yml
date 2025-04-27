@@ -1,4 +1,12 @@
 - type: latheRecipe
+  id: MagazineMagnumSub
+  result: MagazineMagnumSub
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 300
+
+- type: latheRecipe
   id: JetpackVoid
   result: JetpackVoidFilled
   completetime: 5

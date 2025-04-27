@@ -50,6 +50,65 @@
     - Traffic
 
 - type: entity
+  name: grappling gun
+  parent: BaseItem
+  id: WeaponGrapplingGun
+  components:
+    - type: AmmoCounter
+    - type: GrapplingGun
+    - type: Gun
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/harpoon.ogg
+      fireRate: 0.5
+    - type: BasicEntityAmmoProvider
+      proto: GrapplingHook
+      capacity: 1
+    - type: Sprite
+      sprite: Objects/Weapons/Guns/Launchers/grappling_gun.rsi
+      layers:
+        - state: base
+        - state: base-unshaded
+          map: [ "unshaded" ]
+          shader: unshaded
+          visible: true
+    - type: UseDelay
+      delay: 1.5
+    - type: Appearance
+    - type: GenericVisualizer
+      visuals:
+        enum.TetherVisualsStatus.Key:
+          unshaded:
+            True: { state: base-unshaded }
+            False: { state: base-unshaded-off }
+    - type: Tag # Frontier
+      tags: # Frontier
+      - Sidearm # Frontier
+
+
+- type: entity
+  id: MagazinePistolSubMachineGunHeavy
+  name: SMG magazine (11mm PSTF auto)
+  parent: BaseMagazinePistolSubMachineGun
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 25
+    proto: CartridgeHeavyPistol
+    whitelist:
+      tags:
+        - CartridgeHeavyPistol
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/bullet_insert.ogg
+  - type: Tag
+    tags:
+      - MagazineHeavySMG
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+
+- type: entity
   id: MagazineMagnumSub
   suffix: Submachinegun
   name: extended pistol magazine (.327 Imperial magnum)
@@ -63,6 +122,8 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+
+
 
 - type: entity
   id: MagazineHeavyRifle

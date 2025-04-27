@@ -977,7 +977,6 @@
     acceleration: 5
     topSpeed: 20
     initialSpeed: 10
-    FOV: 80
     defaultSeekingRange: 300
     guidanceAlgorithm: PredictiveGuidance
   - type: PointLight

@@ -53,7 +53,7 @@
   keycode: "3"
   frequency: 6103
   color: "#f8baba"
-  
+
 - type: radioChannel
   id: Cyberdawn
   name: chat-radio-syndiecyberdawn
@@ -74,3 +74,26 @@
   keycode: "4"
   frequency: 6104
   color: "#50c878"
+
+# these below are for compatibility with upstream
+- type: radioChannel
+  id: Security
+  name: Einstein Security
+  keycode: ">"
+  frequency: 2894
+  color: "#50c878"
+
+- type: radioChannel
+  id: Prison
+  name: Einstein Prison
+  keycode: "<"
+  frequency: 2895
+  color: "#50c878"
+
+- type: radioChannel
+  id: Justice
+  name: Einstein Justice
+  keycode: "'"
+  frequency: 2896
+  color: "#50c878"
+
