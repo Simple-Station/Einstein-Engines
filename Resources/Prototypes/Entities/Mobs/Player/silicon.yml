@@ -13,11 +13,10 @@
     - Engineering
     - Medical
     - Science
-    - Security
-    - Prison
     - Service
     - Supply
-    - Justice
+    - Nfsd
+    - Traffic
   - type: ActiveRadio
     channels:
     - Binary
@@ -26,11 +25,10 @@
     - Engineering
     - Medical
     - Science
-    - Security
-    - Prison
     - Service
     - Supply
-    - Justice
+    - Nfsd
+    - Traffic
   - type: IgnoreUIRange
   - type: StationAiHeld
   - type: StationAiOverlay

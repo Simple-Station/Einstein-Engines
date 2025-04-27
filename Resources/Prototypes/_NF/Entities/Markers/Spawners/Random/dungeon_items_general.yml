@@ -739,31 +739,6 @@
     rareChance: 0.05
 
 - type: entity
-  name: random vehicle crate
-  id: SpawnDungeonLootCrateVehicle
-  parent: MarkerBase
-  suffix: "Dungeon"
-  components:
-  - type: Sprite
-    layers:
-      - state: green
-      - sprite: Structures/Storage/Crates/livestock.rsi
-        state: base
-      - sprite: _NF/Objects/Vehicles/hoverbike.rsi
-        state: vehicle
-      - sprite: _NF/Markers/general.rsi
-        state: questionmark
-        color: red
-  - type: RandomSpawner
-    prototypes:
-    - CrateFunATV
-    chance: 1
-    offset: 0.0
-    rarePrototypes:
-    - CrateFunHoverbikeNF
-    rareChance: 0.35
-
-- type: entity
   name: random canister
   id: SpawnDungeonLootCanister
   parent: MarkerBase

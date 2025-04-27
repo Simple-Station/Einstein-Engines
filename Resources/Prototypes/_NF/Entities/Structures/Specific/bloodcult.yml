@@ -216,18 +216,6 @@
     - UnholyHalberd
     - WizardStaffMeleeBlood
     - SpearBone
-    - ClothingHeadHelmetCultJanitor
-    - ClothingMaskCultJanitor
-    - ClothingOuterCoatCultJanitor
-    - ClothingHeadHelmetCult
-    - ClothingOuterArmorCult
-    - ClothingShoesCult
-    - ClothingOuterCoatBloodCultRobes
-    - ClothingHeadHelmetBone
-    - ClothingOuterArmorBone
-    - ClothingBackpackMessengerBloodCult
-    - PumpkinLanternSmall
-    - CandleRedInfinite
 
 - type: entity
   parent: BloodCultProp01
