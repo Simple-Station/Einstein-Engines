@@ -118,22 +118,6 @@
   items:
     - WeaponRevolverArgentiNonlethal
 
-- type: loadout
-  id: LoadoutServiceBartenderRepeaterNonlethal
-  category: JobsServiceBartender
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBartenderWeapon
-    - !type:CharacterJobRequirement
-      jobs:
-        - Bartender
-    - !type:CharacterAgeRequirement
-      min: 21
-  items:
-    - WeaponSniperRepeaterNonlethal
-
 # Eyes
 
 # Gloves
