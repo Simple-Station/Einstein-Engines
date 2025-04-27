@@ -15417,3 +15417,189 @@ Entries:
   id: 7184
   time: '2025-04-25T13:00:45.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2309
+- author: Zeta_Null
+  changes:
+    - type: Add
+      message: Added a proper font for Qiilour to use
+    - type: Tweak
+      message: >-
+        Put Xelthia on some trait blacklists that they wouldn't reasonably be
+        applicable for (Arm Related things)
+  id: 7185
+  time: '2025-04-25T21:19:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2317
+- author: 3PonPon3
+  changes:
+    - type: Tweak
+      message: >-
+        Adjusted moth and harpy flight to be more balanced. (Moth flight, ~30%
+        speed increase, Harpy flight ~60% over sprinting, accounts for all
+        modifiers, including harpies 10% sprint speed increase) Makes True
+        Flight trait cost -2 instead of -5.
+  id: 7186
+  time: '2025-04-25T23:19:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2313
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Added Moffic (moff lang) and Chittin (chitinid lang) as languages
+        traits. Available for IPCs and Harpies for 1 point, as well as Moths for
+        Chittin and Chitinids for Moffic.
+    - type: Fix
+      message: >-
+        Harpies can no longer waste a point on the Valyrian standard language
+        trait, which they already start with.
+  id: 7187
+  time: '2025-04-25T23:24:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2316
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added new Employer-Specific uniforms for Hephaestus, Zavodskoi, and
+        NanoTrasen.
+    - type: Add
+      message: >-
+        Added heavy armor options for security to spend loadout points on other
+        than their gun.
+    - type: Add
+      message: Added a unique heavy armor variant for Head of Security.
+    - type: Add
+      message: >-
+        Added specialized heavy armor crates to order from the Armory tab, these
+        include Ballistic and Laser Ablative armor variants.
+    - type: Add
+      message: >-
+        Added TCAF plate carrier for people wanting to use the TCAF security
+        outfits, but don't like taking the big slowdown.
+    - type: Tweak
+      message: >-
+        Nerfed the TCAF heavy armor a bit, it now has the same 30% slowdown as
+        the other "Heavy Sec Armor" variants.
+  id: 7188
+  time: '2025-04-26T00:31:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2315
+- author: ODJ
+  changes:
+    - type: Add
+      message: Changeling now has power attacks for it's blade and hammer.
+    - type: Tweak
+      message: Melee weapons given slight adjustments to feel better and more unique.
+  id: 7189
+  time: '2025-04-26T13:48:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2319
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: >-
+        Adjusted a number of trait prices; Oni now have a free species trait
+        choice, Harpies singing is far cheaper, being small is now free, etc.
+  id: 7190
+  time: '2025-04-26T14:00:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2323
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Significantly reduced the amount of points given by most negative
+        traits.
+    - type: Fix
+      message: Fixed the Psionic Mantis not being able to roll powers.
+    - type: Remove
+      message: >-
+        Removed all trait menu options for buying roundstart psionic powers. I'm
+        sorry about this, but it broke a LOT of things, and wasn't a good idea
+        at all in the first place. There's no longer the Elementalist psicaster
+        type, since there's also no power shop.
+  id: 7191
+  time: '2025-04-26T15:05:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2292
+- author: Orion-416
+  changes:
+    - type: Tweak
+      message: Shuttle walls no longer reflect projectiles
+  id: 7192
+  time: '2025-04-26T15:09:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2314
+- author: mrs
+  changes:
+    - type: Add
+      message: >-
+        Added paramedic windbreaker, winter coat, and winter boots to the
+        paramedic loadout.
+  id: 7193
+  time: '2025-04-26T15:09:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2312
+- author: EctoplasmIsGood
+  changes:
+    - type: Fix
+      message: Advanced surgery tools will no longer be errors
+  id: 7194
+  time: '2025-04-26T16:21:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2307
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Added the Inefficient Cogitator and Defective Chassis traits! Both are
+        negative traits for IPCs. Inefficient Cogitator increases the power
+        drain of IPCs by ~33% (1.5/s -> 2/s) and gives 3 points, Defective
+        Chassis halves their death threshold, as they can't go into crit (it's
+        the IPC version of brittle bone disease). Gives 6 points.
+  id: 7195
+  time: '2025-04-26T16:26:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2324
+- author: mrs
+  changes:
+    - type: Fix
+      message: >-
+        Bagel: The syndicate shuttle has been issued a parking ticket. (No more
+        shuttles spawning inside the station, hopefully.)
+  id: 7196
+  time: '2025-04-26T16:47:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2275
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Added the Magmantle, a mantle that functions as worse magboots on the
+        neck slot (15% more slow, but they give 20% temperature protection like
+        winter boots or scarves). It is available in the species section of
+        loadouts, for all the species that do not have a feet slot. (Harpy,
+        Diona, Arachne)
+  id: 7197
+  time: '2025-04-26T18:38:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2295
+- author: ilmenwe
+  changes:
+    - type: Add
+      message: Added IPC to permitted for Lyre Bird.
+  id: 7198
+  time: '2025-04-26T19:52:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2326
+- author: EctoplasmIsGood
+  changes:
+    - type: Remove
+      message: Disabled grappling guns, tether guns, and force guns
+  id: 7199
+  time: '2025-04-26T19:58:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2328
+- author: dootythefrooty
+  changes:
+    - type: Fix
+      message: >-
+        Law boards will no longer give the Station AI a law that makes them obey
+        themselves.
+    - type: Fix
+      message: Chassis Selection Medi-Borgs can dispense candy now.
+  id: 7200
+  time: '2025-04-26T20:24:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2320
+- author: ilmenwe
+  changes:
+    - type: Tweak
+      message: Tweaked as told.
+  id: 7201
+  time: '2025-04-26T21:07:03.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2325

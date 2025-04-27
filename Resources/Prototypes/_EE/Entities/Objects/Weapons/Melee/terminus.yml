@@ -28,18 +28,18 @@
     capacity: 1
     count: 1
   - type: MeleeWeapon
-    attackRate: 2
+    attackRate: 1.2
     range: 1.65
     wideAnimationRotation: -135
     damage:
       types:
-        Blunt: 15
-        Slash: 5
+        Blunt: 12
+        Slash: 2.5
     bluntStaminaDamageFactor: 2.0
-    heavyRateModifier: 0.75
+    heavyRateModifier: 2
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 7.5
-    angle: 120
+    heavyStaminaCost: 5
+    angle: 90
     soundHit:
       collection: MetalThud
   - type: IncreaseDamageOnWield
