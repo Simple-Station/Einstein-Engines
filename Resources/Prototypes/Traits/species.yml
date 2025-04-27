@@ -212,10 +212,10 @@
                     types:
                       Shock: 2.5
                 - !type:PopupMessage
-                  type: Local
-                  visualType: Large
+                  type: Pvs
+                  visualType: LargeCaution
                   messages: [ "faultyWaterproofing-damage-popup" ]
-                  probability: 0.25
+                  probability: 1
   requirements:
     - !type:CharacterSpeciesRequirement
       species:

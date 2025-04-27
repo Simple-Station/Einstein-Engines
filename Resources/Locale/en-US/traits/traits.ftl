@@ -656,7 +656,7 @@ trait-name-FaultyWaterproofing = Faulty Waterproofing
 trait-description-FaultyWaterproofing =
     Either due to damage or cheap construction, your chassis is not waterproof.
     You take [color=orange]Shock[/color] damage any time you are splashed with water.
-faultyWaterproofing-damage-popup = The water causes your circuits to short out!
+faultyWaterproofing-damage-popup = The water causes your circuits to short out.
 
 trait-name-FragileCircuits = Fragile Circuits
 trait-description-FragileCircuits =
