@@ -6,9 +6,9 @@
   description: A thick jacket with a membrane attached to the end of its sleeves that conforms to the user's hands, allowing it to function as insulated gloves. Useful if you can't wear or find regular insulated gloves.
   components:
   - type: Sprite
-    sprite: _EE/Clothing/InsulatedJacket/insulated_jacket.rsi
+    sprite: _EE/Clothing/GloveJackets/insulated_jacket.rsi
   - type: Clothing
-    sprite: _EE/Clothing/InsulatedJacket/insulated_jacket.rsi
+    sprite: _EE/Clothing/GloveJackets/insulated_jacket.rsi
   - type: Insulated
   - type: FingerprintMask
   - type: GloveJacket # Components for these jackets that allows them to act as gloves. Mostly for surgery.
@@ -23,8 +23,8 @@
   description: A thick jacket with a membrane attached to the end of its sleeves that conforms to the user's hands, allowing it to function as surgical gloves. Useful for if you need to do surgery but can't wear normal gloves.
   components:
   - type: Sprite
-    sprite: _EE/Clothing/InsulatedJacket/surgical_jacket.rsi
+    sprite: _EE/Clothing/GloveJackets/surgical_jacket.rsi
   - type: Clothing
-    sprite: _EE/Clothing/InsulatedJacket/surgical_jacket.rsi
+    sprite: _EE/Clothing/GloveJackets/surgical_jacket.rsi
   - type: FingerprintMask
   - type: GloveJacket
