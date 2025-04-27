@@ -24,6 +24,7 @@
     - !type:TraitAddComponent
       components:
         - type: PermanentBlindness
+          incurable: true
 
 - type: trait
   id: Nearsighted

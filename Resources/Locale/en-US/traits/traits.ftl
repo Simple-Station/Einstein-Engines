@@ -105,9 +105,7 @@ trait-description-CPRTraining = At some point in your life, you have received tr
                                 This trait is automatically given for free to medical doctors, and is intended for non-medical characters
 
 trait-name-Nearsighted = Nearsighted
-trait-description-Nearsighted =
-    Your eyes are not what they once were, you have difficulty seeing things far away without corrective glasses.[color=red]
-    This cannot be cured in any way.[/color]
+trait-description-Nearsighted = Your eyes are not what they once were, you have difficulty seeing things far away without corrective glasses.
 
 trait-name-NormalVisionHarpy = Trichromat Modification
 trait-description-NormalVisionHarpy =
