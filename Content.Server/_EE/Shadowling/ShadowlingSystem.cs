@@ -15,6 +15,7 @@ using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Overlays.Switchable;
 using Content.Shared.Popups;
 
 
@@ -116,6 +117,12 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
             return;
 
         _actions.AddAction(uid, ref component.ActionHatchEntity, component.ActionHatch, component: actions);
+
+        var thermalV = EnsureComp<ThermalVisionComponent>(uid);
+        var nightV = EnsureComp<NightVisionComponent>(uid);
+
+        nightV.Color = Color.Purple;
+        thermalV.Color = Color.Purple;
     }
 
     private void BeforeDamageChanged(EntityUid uid, ShadowlingComponent comp, BeforeDamageChangedEvent args)
@@ -151,6 +158,9 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
                 _actions.RemoveAction(uid, action);
             }
 
+            // give thralls partial ascension
+            // destroy all lights
+
             AddComp<ShadowlingAnnihilateComponent>(uid);
             AddComp<ShadowlingHypnosisComponent>(uid);
             AddComp<ShadowlingPlaneShiftComponent>(uid);
@@ -161,6 +171,10 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
             _actions.AddAction(uid, ref component.ActionPlaneShiftEntity, component.ActionPlaneShift, component: actions);
             _actions.AddAction(uid, ref component.ActionLightningStormEntity, component.ActionLightningStorm, component: actions);
             _actions.AddAction(uid, ref component.ActionBroadcastEntity, component.ActionBroadcast, component: actions);
+        }
+        else if (args.Phase == ShadowlingPhases.FailedAscension)
+        {
+            _popup.PopupEntity("WHATTTTT", uid, uid, PopupType.MediumCaution);
         }
     }
 

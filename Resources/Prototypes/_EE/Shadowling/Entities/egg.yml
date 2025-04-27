@@ -1,7 +1,7 @@
 - type: entity
   id: SlingEgg
   name: Shadowling Egg
-  description: yes # todo
+  description: yes # yes
   components:
   - type: Transform
     noRot: true
@@ -40,4 +40,43 @@
       entity_storage: !type:Container
       paper_label: !type:ContainerSlot
   - type: RequireProjectileTarget
+
+- type: entity
+  parent: SlingEgg
+  id: SlingEggHatch
+  components:
   - type: HatchingEgg
+
+- type: entity
+  parent: SlingEgg
+  id: SlingEggAscension
+  components:
+  - type: Clickable
+  - type: Physics
+    bodyType: Dynamic
+  - type: ShadowlingAscensionEgg
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 4500 
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 160
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer

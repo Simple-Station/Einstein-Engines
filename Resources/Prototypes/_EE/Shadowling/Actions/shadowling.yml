@@ -261,12 +261,10 @@
   components:
   - type: InstantAction
     itemIconStyle: NoItem
-    # useDelay: 90
     icon:
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: ascendance
     event: !type:AscendanceEvent
-      # add speech
   - type: ShadowlingAction
 
 - type: entity

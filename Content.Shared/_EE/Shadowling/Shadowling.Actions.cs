@@ -1,5 +1,7 @@
 using Content.Shared.Actions;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 
 namespace Content.Shared._EE.Shadowling;
@@ -43,11 +45,13 @@ public sealed partial class NoxImperiiEvent : InstantActionEvent { }
 #endregion
 
 #region Events - Ascension
-public sealed partial class AscendanceEvent : InstantActionEvent { } // for debug
+
+public sealed partial class AscendanceEvent : InstantActionEvent { }
 public sealed partial class AnnihilateEvent : EntityTargetActionEvent { }
 public sealed partial class HypnosisEvent : EntityTargetActionEvent { }
 public sealed partial class TogglePlaneShiftEvent : InstantActionEvent { }
 public sealed partial class LightningStormEvent : InstantActionEvent { }
+
 public sealed partial class AscendantBroadcastEvent : InstantActionEvent { }
 #endregion
 

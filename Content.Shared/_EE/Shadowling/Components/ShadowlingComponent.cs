@@ -74,7 +74,7 @@ public sealed partial class ShadowlingComponent : Component
     public Color SkinColor = Color.FromHex("#000000");
 
     [DataField]
-    public string Egg = "SlingEgg";
+    public string Egg = "SlingEggHatch";
 
     // Thrall Indicator
     [DataField]
@@ -112,6 +112,9 @@ public sealed partial class ShadowlingComponent : Component
 
     [DataField]
     public ProtoId<LanguagePrototype> SlingLanguageId { get; set; } = "Shadowmind";
+
+    [DataField]
+    public bool IsAscending;
 }
 
 [NetSerializable, Serializable]
@@ -120,4 +123,5 @@ public enum ShadowlingPhases : byte
     PreHatch,
     PostHatch,
     Ascension,
+    FailedAscension,
 }

@@ -7,4 +7,9 @@ namespace Content.Shared._EE.Shadowling;
 [RegisterComponent]
 public sealed partial class ShadowlingAscendanceComponent : Component
 {
+    [DataField]
+    public TimeSpan Duration = TimeSpan.FromSeconds(1);
+
+    [DataField]
+    public string EggProto = "SlingEggAscension";
 }
