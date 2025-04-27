@@ -41,7 +41,7 @@
     attackRate: 1.25
     bluntStaminaDamageFactor: 1.5
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 5
+    heavyStaminaCost: 2.5
     maxTargets: 1
     angle: 40
     damage:
