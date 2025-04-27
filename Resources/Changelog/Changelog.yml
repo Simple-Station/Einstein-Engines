@@ -15610,3 +15610,12 @@ Entries:
   id: 7202
   time: '2025-04-27T19:32:42.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2330
+- author: Orion-416
+  changes:
+    - type: Tweak
+      message: BSO now has the over-ear headset
+    - type: Tweak
+      message: BSO's modsuit now has the right colour for its light
+  id: 7203
+  time: '2025-04-27T21:08:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2336
