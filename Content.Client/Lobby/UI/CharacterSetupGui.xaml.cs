@@ -1,3 +1,4 @@
+using Content.Client._Crescent;
 using Content.Client.Info;
 using Content.Client.Info.PlaytimeStats;
 using Content.Client.Resources;
@@ -21,6 +22,8 @@ namespace Content.Client.Lobby.UI
         private readonly IClientPreferencesManager _preferencesManager;
         private readonly IEntityManager _entManager;
         private readonly IPrototypeManager _protomanager;
+        public readonly FactionSelectorGui FactionSelector;
+        private readonly HumanoidProfileEditor _humanoidProfileEditor;
 
         private readonly Button _createNewCharacterButton;
 
@@ -60,12 +63,20 @@ namespace Content.Client.Lobby.UI
                 ReloadCharacterPickers();
                 args.Event.Handle();
             };
-
-            CharEditor.AddChild(profileEditor);
+            FactionSelector = new FactionSelectorGui(preferencesManager, protoManager, this);
+            _humanoidProfileEditor = profileEditor;
             RulesButton.OnPressed += _ => new RulesAndInfoWindow().Open();
 
             StatsButton.OnPressed += _ => new PlaytimeStatsWindow().OpenCentered();
         }
+
+        public void SwitchToCharacterEditor()
+        {
+            CharEditor.RemoveAllChildren();
+            _humanoidProfileEditor.Profile = FactionSelector.Profile;
+            CharEditor.AddChild(_humanoidProfileEditor);
+        }
+
 
         /// <summary>
         /// Disposes and reloads all character picker buttons from the preferences data.
@@ -99,9 +110,14 @@ namespace Content.Client.Lobby.UI
                     slot == selectedSlot);
 
                 Characters.AddChild(characterPickerButton);
-
+                HumanoidCharacterProfile profileOfCharacter = (HumanoidCharacterProfile) (character);
                 characterPickerButton.OnPressed += args =>
                 {
+                    CharEditor.DisposeAllChildren();
+                    if(profileOfCharacter.Faction is null || profileOfCharacter?.Faction == "")
+                        CharEditor.AddChild(FactionSelector);
+                    else
+                        CharEditor.AddChild(_humanoidProfileEditor);
                     SelectCharacter?.Invoke(slot);
                 };
 

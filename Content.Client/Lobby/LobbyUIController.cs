@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Client._Crescent;
 using Content.Client.Guidebook;
 using Content.Client.Humanoid;
 using Content.Client.Inventory;
@@ -143,6 +144,8 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         RefreshLobbyPreview();
         var (characterGui, profileEditor) = EnsureGui();
         characterGui.ReloadCharacterPickers();
+        characterGui.FactionSelector.SetProfile ((HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter,
+        _preferencesManager.Preferences?.SelectedCharacterIndex);
         profileEditor.SetProfile(
             (HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter,
             _preferencesManager.Preferences?.SelectedCharacterIndex);
@@ -210,6 +213,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             _markings,
             _random);
 
+
         _profileEditor.OnOpenGuidebook += _guide.OpenHelp;
 
         _characterSetup = new CharacterSetupGui(EntityManager, _prototypeManager, _resourceCache, _preferencesManager, _profileEditor);
@@ -226,6 +230,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         };
 
         _profileEditor.Save += SaveProfile;
+        _characterSetup.FactionSelector.Save += SaveProfile;
 
         _characterSetup.SelectCharacter += args =>
         {

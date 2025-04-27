@@ -50,44 +50,23 @@ namespace Content.Client._Crescent
         [Dependency] private readonly EntityManager _entities = default!;
         private readonly IResourceCache _resourceCache = default!;
         public HumanoidCharacterProfile? Profile;
-        public event Action<HumanoidCharacterProfile, int>? OnProfileChanged;
-        public CharacterSetupGui SetupUI;
+        public int? index;
 
+        public event Action? Save;
         private BoxContainer _factionList => CFactionList;
 
-        private Dictionary<Button, string> internalDirectory;
-
-        private bool _isDirty;
-        public int CharacterSlot;
-
+        public void SetProfile(HumanoidCharacterProfile? profile, int? slot)
+        {
+            Profile = profile?.Clone();
+            index = slot;
+        }
 
         public FactionSelectorGui(IClientPreferencesManager preferencesManager, IPrototypeManager prototypeManager, CharacterSetupGui setupUI)
         {
             RobustXamlLoader.Load(this);
             _preferencesManager = preferencesManager;
             _prototypeManager = prototypeManager;
-            SetupUI = setupUI;
-            internalDirectory = new Dictionary<Button, string>();
 
-            var controller = UserInterfaceManager.GetUIController<LobbyUIController>();
-
-            if (preferencesManager.ServerDataLoaded)
-            {
-                LoadServerData();
-            }
-
-
-            preferencesManager.OnServerDataLoaded += LoadServerData;
-            IsDirty = false;
-            controller.UpdateProfile();
-        }
-
-        private void SetDirty()
-        {
-            var controller = UserInterfaceManager.GetUIController<LobbyUIController>();
-            controller.UpdateProfile(Profile);
-            controller.ReloadCharacterUI();
-            IsDirty = true;
         }
 
         private void SetFaction(FactionPrototype faction)
@@ -96,7 +75,6 @@ namespace Content.Client._Crescent
                 return;
 
             Profile = Profile.WithFaction(faction.ID);
-            SetDirty();
         }
 
         protected override void Dispose(bool disposing)
@@ -104,16 +82,7 @@ namespace Content.Client._Crescent
             base.Dispose(disposing);
             if (!disposing)
                 return;
-
-            _preferencesManager.OnServerDataLoaded -= LoadServerData;
         }
-
-        public void LoadServerData()
-        {
-            Profile = (HumanoidCharacterProfile) _preferencesManager.Preferences!.SelectedCharacter;
-            CharacterSlot = _preferencesManager.Preferences.SelectedCharacterIndex;
-        }
-
         public void UpdateUI()
         {
             _factionList.RemoveAllChildren();
@@ -156,35 +125,18 @@ namespace Content.Client._Crescent
             confirmButton.ModulateSelfOverride = Color.Red;
             confirmButton.OnPressed += _ =>
             {
-                FactionInfo.RemoveAllChildren();
-                SetupUI.LockFaction();
-                Save();
-                SetupUI.SwitchToCharacterEditor();
+                SaveCharacter();
             };
             _factionList.AddChild(separator);
             _factionList.AddChild(confirmButton);
         }
 
-        public void Save()
+        public void SaveCharacter()
         {
-            IsDirty = false;
-
             if (Profile == null)
                 return;
-
-            _preferencesManager.UpdateCharacter(Profile, CharacterSlot);
-            OnProfileChanged?.Invoke(Profile, CharacterSlot);
-            // Reset profile to default.
-            UserInterfaceManager.GetUIController<LobbyUIController>().UpdateProfile();
+            Save?.Invoke();
         }
 
-        private bool IsDirty
-        {
-            get => _isDirty;
-            set
-            {
-                _isDirty = value;
-            }
-        }
     }
 }
