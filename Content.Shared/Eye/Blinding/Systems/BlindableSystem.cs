@@ -101,7 +101,7 @@ public sealed class BlindableSystem : EntitySystem
         newSight.EyeDamage = oldSight.EyeDamage;
         newSight.LightSetup = oldSight.LightSetup;
         newSight.GraceFrame = oldSight.GraceFrame;
-        if (oldSight.Incurable == false || newSight.Incurable == false)
+        if (!oldSight.Incurable || !newSight.Incurable)
             newSight.MinDamage = oldSight.MinDamage;
         newSight.MaxDamage = oldSight.MaxDamage;
         UpdateEyeDamage((newEntity, newSight), true);
