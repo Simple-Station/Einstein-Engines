@@ -16,7 +16,6 @@ public sealed partial class FactionPrototype : IPrototype
 
     [DataField("icon", required: true)] public SpriteSpecifier Icon = SpriteSpecifier.Invalid;
 
-
     /// <summary>
     ///     A color representing this department to use for text.
     /// </summary>

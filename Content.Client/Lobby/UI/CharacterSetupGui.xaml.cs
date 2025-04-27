@@ -113,7 +113,7 @@ namespace Content.Client.Lobby.UI
                 HumanoidCharacterProfile profileOfCharacter = (HumanoidCharacterProfile) (character);
                 characterPickerButton.OnPressed += args =>
                 {
-                    CharEditor.DisposeAllChildren();
+                    CharEditor.RemoveAllChildren();
                     if(profileOfCharacter.Faction is null || profileOfCharacter?.Faction == "")
                         CharEditor.AddChild(FactionSelector);
                     else

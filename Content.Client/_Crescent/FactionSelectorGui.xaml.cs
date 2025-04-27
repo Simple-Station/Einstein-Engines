@@ -44,7 +44,6 @@ namespace Content.Client._Crescent
     [GenerateTypedNameReferences]
     public sealed partial class FactionSelectorGui : BoxContainer
     {
-        private readonly IClientPreferencesManager _preferencesManager;
         private readonly IPrototypeManager _prototypeManager;
         [Dependency] private readonly SpriteSystem _sprite = default!;
         [Dependency] private readonly EntityManager _entities = default!;
@@ -64,7 +63,6 @@ namespace Content.Client._Crescent
         public FactionSelectorGui(IClientPreferencesManager preferencesManager, IPrototypeManager prototypeManager, CharacterSetupGui setupUI)
         {
             RobustXamlLoader.Load(this);
-            _preferencesManager = preferencesManager;
             _prototypeManager = prototypeManager;
 
         }
