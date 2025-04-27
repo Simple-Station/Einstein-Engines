@@ -15603,3 +15603,10 @@ Entries:
   id: 7201
   time: '2025-04-26T21:07:03.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2325
+- author: Zeta_Null
+  changes:
+    - type: Add
+      message: Fixed marking localization issues
+  id: 7202
+  time: '2025-04-27T19:32:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2330
