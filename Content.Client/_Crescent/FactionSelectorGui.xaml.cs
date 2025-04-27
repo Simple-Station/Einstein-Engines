@@ -44,10 +44,12 @@ namespace Content.Client._Crescent
     [GenerateTypedNameReferences]
     public sealed partial class FactionSelectorGui : BoxContainer
     {
+        private readonly IClientPreferencesManager _prefsMan;
         private readonly IPrototypeManager _prototypeManager;
         [Dependency] private readonly SpriteSystem _sprite = default!;
         [Dependency] private readonly EntityManager _entities = default!;
         private readonly IResourceCache _resourceCache = default!;
+        private CharacterSetupGui gui = default!;
         public HumanoidCharacterProfile? Profile;
         public int? index;
 
@@ -63,7 +65,10 @@ namespace Content.Client._Crescent
         public FactionSelectorGui(IClientPreferencesManager preferencesManager, IPrototypeManager prototypeManager, CharacterSetupGui setupUI)
         {
             RobustXamlLoader.Load(this);
+            _prefsMan = preferencesManager;
+            gui = setupUI;
             _prototypeManager = prototypeManager;
+            UpdateUI();
 
         }
 
@@ -83,6 +88,8 @@ namespace Content.Client._Crescent
         }
         public void UpdateUI()
         {
+            if (!_prefsMan.ServerDataLoaded)
+                return;
             _factionList.RemoveAllChildren();
             var factions = _prototypeManager.EnumeratePrototypes<FactionPrototype>().ToArray();
             foreach (var faction in factions)
@@ -133,7 +140,11 @@ namespace Content.Client._Crescent
         {
             if (Profile == null)
                 return;
+            if (!_prefsMan.ServerDataLoaded)
+                return;
+
             Save?.Invoke();
+            gui.SwitchToCharacterEditor();
         }
 
     }

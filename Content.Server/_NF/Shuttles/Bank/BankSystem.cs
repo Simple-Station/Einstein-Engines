@@ -23,7 +23,6 @@ public sealed partial class BankSystem : EntitySystem
         base.Initialize();
         _log = Logger.GetSawmill("bank");
         SubscribeLocalEvent<BankAccountComponent, ComponentGetState>(OnBankAccountChanged);
-        SubscribeLocalEvent<PlayerJoinedLobbyEvent>(OnPlayerLobbyJoin);
         InitializeATM();
         InitializeStationATM();
     }
@@ -122,25 +121,5 @@ public sealed partial class BankSystem : EntitySystem
         _log.Info($"{mobUid} deposited {amount}");
         EntityManager.Dirty(mobUid, bank);
         return true;
-    }
-
-    /// <summary>
-    /// ok so this is incredibly fucking cursed, and really shouldnt be calling LoadData
-    /// However
-    /// as of writing, the preferences system caches all player character data at the time of client connection.
-    /// This is causing some bad bahavior where the cache is becoming outdated after character data is getting saved to the db
-    /// and there is no method right now to invalidate and refresh this cache to ensure we get accurate bank data from the database,
-    /// resulting in respawns/round restarts populating the bank account component with an outdated cache and then re-saving that
-    /// bad cached data into the db.
-    /// effectively a gigantic money exploit.
-    /// So, this will have to stay cursed until I can find another way to refresh the character cache
-    /// or the db gods themselves come up to smite me from below, whichever comes first
-    ///
-    /// EDIT 5/13/2024 THE DB GODS THEY CAME. THEY SMOTE. SAVE ME
-    /// </summary>
-    private void OnPlayerLobbyJoin(PlayerJoinedLobbyEvent args)
-    {
-        var cts = new CancellationToken();
-        _prefsManager.LoadData(args.PlayerSession, CancellationToken.None);
     }
 }
