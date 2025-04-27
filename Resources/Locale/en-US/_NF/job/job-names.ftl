@@ -1,6 +1,5 @@
 # Frontier
 job-name-bailiff = Bailiff
-job-name-brigmedic = Brigmedic
 job-name-cadet-nf = Cadet
 job-name-contractor = Vagrant
 job-name-deputy = Deputy
@@ -25,14 +24,3 @@ JobPirateCaptain = Pirate Captain
 JobPirateFirstMate = Pirate First Mate
 JobSecurityGuard = Security Guard
 JobSTC = Station Traffic Controller
-
-# Upstream Removed
-job-name-senior-engineer = Senior Engineer
-job-name-senior-researcher = Senior Researcher
-job-name-senior-physician = Senior Physician
-job-name-senior-officer = Sergeant
-
-JobSeniorEngineer = Senior Engineer
-JobSeniorOfficer = Sergeant
-JobSeniorPhysician = Senior Physician
-JobSeniorResearcher = Senior Researcher
