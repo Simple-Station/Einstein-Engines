@@ -579,18 +579,18 @@
           damageCap: 400
           damage:
             types:
-              Blunt: -0.3
-              Piercing: -0.3
-              Slash: -0.3
-              Heat: -0.3
-              Cold: -0.3
-              Shock: -0.3
-              Caustic: -0.3
+              Blunt: -0.25
+              Piercing: -0.25
+              Slash: -0.25
+              Heat: -0.25
+              Cold: -0.25
+              Shock: -0.25
+              Caustic: -0.25
               Asphyxiation: -0.25
               Bloodloss: -0.25
-              Poison: -0.3
-              Radiation: -0.3
-              Genetic: -0.3
+              Poison: -0.25
+              Radiation: -0.25
+              Genetic: -0.25
         - type: BloodDeficiency # Incredibly actually works
           bloodLossPercentage: -0.025
 
