@@ -7,7 +7,6 @@ using Content.Shared.Emag.Systems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
-using Content.Goobstation.Common.Pirates;
 using Content.Goobstation.Common.Research; // R&D Console Rework
 using System.Linq; // R&D Console Rework
 
