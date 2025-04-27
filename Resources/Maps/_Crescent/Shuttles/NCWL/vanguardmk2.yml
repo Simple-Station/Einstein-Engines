@@ -1562,7 +1562,7 @@ entities:
       parent: 1
     - type: WarpPoint
       location: Vanguard
-- proto: WeaponTurretPDTNCWL
+- proto: WeaponTurretPDT
   entities:
   - uid: 77
     components:

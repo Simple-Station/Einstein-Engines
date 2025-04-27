@@ -874,7 +874,7 @@ entities:
       parent: 1
     - type: Physics
       canCollide: False
-- proto: SHISlugthrowerTurret
+- proto: SlugthrowerCannon
   entities:
   - uid: 18
     components:

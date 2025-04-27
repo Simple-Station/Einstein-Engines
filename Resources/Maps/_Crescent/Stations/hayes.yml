@@ -8186,7 +8186,7 @@ entities:
     - type: Transform
       pos: 8.555201,-1.9177945
       parent: 2
-- proto: WeaponTurretCoilgunNCSP
+- proto: WeaponTurretCoilgun
   entities:
   - uid: 12
     components:

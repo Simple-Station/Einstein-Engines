@@ -173,7 +173,7 @@
   tier: 3
   cost: 12500
   recipeUnlocks:
-  - DSMPlasmaTurretFlatpackCraft
+  - PlasmaTurretFlatpackCraft
 
 - type: technology
   id: ImperialSword

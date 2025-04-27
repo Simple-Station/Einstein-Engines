@@ -5612,7 +5612,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: WeaponTurretPDTNCWL
+- proto: WeaponTurretPDT
   entities:
   - uid: 2
     components:
@@ -5652,7 +5652,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 304
-- proto: WeaponTurretVulcanNCWL
+- proto: WeaponTurretVulcan
   entities:
   - uid: 42
     components:

@@ -984,7 +984,7 @@ entities:
     - type: Transform
       pos: -5.5,-10.5
       parent: 1
-- proto: BaseWeaponTurretLaserDSM
+- proto: WeaponTurretLaser
   entities:
   - uid: 280
     components:

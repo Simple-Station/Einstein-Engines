@@ -23839,7 +23839,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: WeaponTurretCoilgunNCSP
+- proto: WeaponTurretCoilgun
   entities:
   - uid: 2044
     components:
@@ -24077,7 +24077,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 74
-- proto: WeaponTurretVulcanNCSP
+- proto: WeaponTurretVulcan
   entities:
   - uid: 69
     components:

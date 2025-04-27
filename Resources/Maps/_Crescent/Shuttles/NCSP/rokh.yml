@@ -10071,7 +10071,7 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-- proto: WeaponTurretVulcanSHI
+- proto: WeaponTurretVulcan
   entities:
   - uid: 34
     components:

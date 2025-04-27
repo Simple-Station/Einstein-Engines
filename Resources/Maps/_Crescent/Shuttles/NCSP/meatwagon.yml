@@ -1141,7 +1141,7 @@ entities:
       linkedPorts:
         invalid:
         - Pressed: Trigger
-- proto: SHISlugthrowerTurret
+- proto: SlugthrowerCannon
   entities:
   - uid: 87
     components:

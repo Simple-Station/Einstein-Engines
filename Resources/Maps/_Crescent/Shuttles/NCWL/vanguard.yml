@@ -949,7 +949,7 @@ entities:
     - type: Transform
       pos: -0.52359277,0.056869805
       parent: 1
-- proto: SHISlugthrowerTurret
+- proto: SlugthrowerCannon
   entities:
   - uid: 70
     components:

@@ -3647,7 +3647,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: WeaponTurretPDTCMM
+- proto: WeaponTurretPDT
   entities:
   - uid: 217
     components:

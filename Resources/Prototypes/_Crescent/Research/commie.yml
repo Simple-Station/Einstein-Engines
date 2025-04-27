@@ -186,7 +186,7 @@
   cost: 8000
   recipeUnlocks:
   - PlasmaRepeaterFlatpackCraft
-  - NCWLVulcanFlatpackCraft
+  - VulcanFlatpackCraft
 
 - type: technology
   id: CommieShuttlegunsUltraheavy
@@ -198,9 +198,9 @@
   tier: 3
   cost: 15000
   recipeUnlocks:
-  - NCWLAutomortarFlatpackCraft
-  - NCWLNeedlerFlatpackCraft
-  - NCWLSlugthrowerFlatpackCraft
+  - AutomortarFlatpackCraft
+  - NeedlerFlatpackCraft
+  - SlugthrowerFlatpackCraft
   - MediumBallisticHardpointFlatpackCraft
   - WeaponLightMachineGunConscriptCraft
   - MagazineLightRifleBoxConscriptAPCraft

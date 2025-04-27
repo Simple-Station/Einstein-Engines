@@ -11865,7 +11865,7 @@ entities:
     - type: Transform
       pos: -3.4773364,2.4057157
       parent: 2
-- proto: WeaponTurretPDTNCWL
+- proto: WeaponTurretPDT
   entities:
   - uid: 117
     components:
@@ -11994,7 +11994,7 @@ entities:
       links:
       - 1697
       - 626
-- proto: WeaponTurretVulcanNCWL
+- proto: WeaponTurretVulcan
   entities:
   - uid: 127
     components:

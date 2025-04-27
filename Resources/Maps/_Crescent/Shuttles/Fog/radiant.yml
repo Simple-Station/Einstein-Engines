@@ -3249,7 +3249,7 @@ entities:
     - type: Transform
       pos: 1.5,-3.5
       parent: 1
-- proto: SHISlugthrowerTurret
+- proto: SlugthrowerCannon
   entities:
   - uid: 372
     components:
@@ -5232,7 +5232,7 @@ entities:
     - type: Transform
       pos: 4.5,-6.5
       parent: 1
-- proto: WeaponTurretPDTNCWL
+- proto: WeaponTurretPDT
   entities:
   - uid: 239
     components:

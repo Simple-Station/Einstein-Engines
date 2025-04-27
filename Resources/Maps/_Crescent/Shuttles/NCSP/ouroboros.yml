@@ -5250,7 +5250,7 @@ entities:
     - type: Transform
       pos: 3.4954066,-6.5625052
       parent: 1
-- proto: WeaponTurretVulcanCMM
+- proto: WeaponTurretVulcan
   entities:
   - uid: 656
     components:

@@ -7026,7 +7026,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 1.4199363,-2.4482086
       parent: 1
-- proto: WeaponTurretPDTCMM
+- proto: WeaponTurretPDT
   entities:
   - uid: 419
     components:

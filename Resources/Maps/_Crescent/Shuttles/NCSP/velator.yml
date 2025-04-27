@@ -3293,7 +3293,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 1.669806,-2.5372136
       parent: 1
-- proto: WeaponTurretVulcanCMM
+- proto: WeaponTurretVulcan
   entities:
   - uid: 191
     components:

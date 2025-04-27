@@ -277,7 +277,7 @@
     - state: iconnanotrasen
   - type: TechnologyDisk
     recipes:
-      - DSMPlasmaTurretFlatpackCraft
+      - PlasmaTurretFlatpackCraft
   - type: StaticPrice
     price: 5000
 

@@ -15389,7 +15389,7 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-- proto: WeaponTurretPDTNCWL
+- proto: WeaponTurretPDT
   entities:
   - uid: 257
     components:

@@ -8738,7 +8738,7 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-- proto: WeaponTurretVulcanNCSP
+- proto: WeaponTurretVulcan
   entities:
   - uid: 198
     components:

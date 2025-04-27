@@ -45,37 +45,21 @@
     Plastic: 1000
 
 - type: latheRecipe
-  id: SHIExhumerFlatpackCraft
-  result: SHIExhumerFlatpack
+  id: ExhumerFlatpackCraft
+  result: ExhumerFlatpack
   completetime: 5
   materials:
     Steel: 2500
     Plastic: 500
 
 - type: latheRecipe
-  id: SHISlugthrowerFlatpackCraft
-  result: SHISlugthrowerFlatpack
+  id: SlugthrowerFlatpackCraft
+  result: SlugthrowerFlatpack
   completetime: 5
   materials:
     Steel: 5000
     Plasma: 500
 
-- type: latheRecipe
-  id: SHITsuiFlatpackCraft
-  result: SHITsuiFlatpack
-  completetime: 5
-  materials:
-    Steel: 5000
-    Plastic: 2500
-
-- type: latheRecipe
-  id: SHIVulcanFlatpackCraft
-  result: SHIVulcanFlatpack
-  completetime: 5
-  materials:
-    Steel: 5000
-    Silver: 500
-    Plastic: 2500
 
 - type: latheRecipe
   id: ClothingOuterHardsuitHEVCraft
@@ -150,30 +134,12 @@
     Steel: 2000
 
 - type: latheRecipe
-  id: SHIArtilleryFlatpackCraft
-  result: SHIArtilleryFlatpack
+  id: ArtilleryFlatpackCraft
+  result: ArtilleryFlatpack
   completetime: 5
   materials:
     Steel: 8000
     Silver: 2500
-
-- type: latheRecipe
-  id: SHIMortarFlatpackCraft
-  result: SHIMortarFlatpack
-  completetime: 5
-  materials:
-    Steel: 8000
-    Silver: 2500
-    Gold: 500
-
-- type: latheRecipe
-  id: SHINeedlerFlatpackCraft
-  result: SHINeedlerFlatpack
-  completetime: 5
-  materials:
-    Steel: 5000
-    Silver: 1500
-    Gold: 250
 
 - type: latheRecipe
   id: ClothingOuterArmorShinoharaArmorHighsecCraft

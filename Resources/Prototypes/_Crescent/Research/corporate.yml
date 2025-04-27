@@ -37,7 +37,7 @@
   tier: 1
   cost: 4000
   recipeUnlocks:
-  - SHIExhumerFlatpackCraft
+  - ExhumerFlatpackCraft
 
 - type: technology
   id: ShinoharaHEV
@@ -61,10 +61,10 @@
   tier: 2
   cost: 10000
   recipeUnlocks:
-  - SHITsuiFlatpackCraft
-  - SHIVulcanFlatpackCraft
+  - PDTFlatpackCraftCraft
+  - VulcanFlatpackCraft
   - PlasmaRepeaterFlatpackCraft
-  - SHISlugthrowerFlatpackCraft
+  - SlugthrowerFlatpackCraft
 
 - type: technology
   id: ShinoharaCorpsec
@@ -105,9 +105,9 @@
   tier: 2
   cost: 14000
   recipeUnlocks:
-  - SHIArtilleryFlatpackCraft
-  - SHINeedlerFlatpackCraft
-  - SHIMortarFlatpackCraft
+  - ArtilleryFlatpackCraft
+  - NeedlerFlatpackCraft
+  - AutomortarFlatpack
 
 - type: technology
   id: ShinoharaHighsec

@@ -2632,7 +2632,7 @@ entities:
       linkedConsoleId: 1980
       obstructedRanges:
       - 3.5772923987407172 rad: 4.154610135598204 rad
-- proto: BaseWeaponTurretLaserDSM
+- proto: WeaponTurretLaser
   entities:
   - uid: 230
     components:
@@ -20569,7 +20569,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: WeaponTurretPDTNCWL
+- proto: WeaponTurretPDT
   entities:
   - uid: 166
     components:

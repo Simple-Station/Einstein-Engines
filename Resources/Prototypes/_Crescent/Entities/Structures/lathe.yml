@@ -458,16 +458,16 @@
       - WeaponRifleFALCraft
       - WeaponRifleNCWLBatanyaCraft
       - WeaponShotgunBulldogCraft
-      - NCWLGranSudaruskaFlatpackCraft
-      - NCWLVulcanFlatpackCraft
-      - NCWLSwarmerFlatpackCraft
-      - NCWLKurosawaFlatpackCraft
+      - PDTFlatpackCraft
+      - VulcanFlatpackCraft
+      - SwarmerFlatpackCraft
+      - MissileRackFlatpackCraft
       - GrenadeBatonCraft
       # - GrenadeBlastCraft YAMLFIX: Should be a new result or just use
       # - GrenadeFlashCraft YAMLFIX: Should be a new result or just use
-      - NCWLSlugthrowerFlatpackCraft
-      - NCWLAutomortarFlatpackCraft
-      - NCWLNeedlerFlatpackCraft
+      - SlugthrowerFlatpackCraft
+      - AutomortarFlatpackCraft
+      - NeedlerFlatpackCraft
       - WeaponLightMachineGunConscriptCraft
       - MagazineLightRifleBoxConscriptAPCraft
       - MagazineLightRifleBoxConscriptHECraft
@@ -494,7 +494,7 @@
       - ClothingOuterArmorImperialArmorPrestigeCraft
       - ClothingHeadHelmetImperialTrooperHelmetCraft
       - ClothingHeadHelmetImperialKnightCommanderHelmetCraft
-      - DSMPlasmaTurretFlatpackCraft
+      - PlasmaTurretFlatpackCraft
       - SRMKhopeshCraft
       - SHIFighterThrusterFlatpackCraft
       - SHIWarshipThrusterFlatpackCraft
@@ -502,10 +502,10 @@
       - WeaponPistolBlastpopRedCraft
       - WeaponPistolBlastpopBlueCraft
       - WeaponPistolBlastpopGoldCraft
-      - SHIExhumerFlatpackCraft
-      - SHISlugthrowerFlatpackCraft
-      - SHITsuiFlatpackCraft
-      - SHIVulcanFlatpackCraft
+      - ExhumerFlatpackCraft
+      - SlugthrowerFlatpackCraft
+      - PDTFlatpackCraftCraft
+      - VulcanFlatpackCraft
       - ClothingOuterHardsuitHEVCraft
       - ClothingOuterHardsuitHighsecCraft
       - ClothingOuterArmorShinoharaArmorCraft
@@ -516,9 +516,9 @@
       - WeaponPistolViperCraft
       - WeaponPistolMk58Craft
       - WeaponLauncherHammerheadCraft
-      - SHIArtilleryFlatpackCraft
-      - SHIMortarFlatpackCraft
-      - SHINeedlerFlatpackCraft
+      - ArtilleryFlatpackCraft
+      - AutomortarFlatpack
+      - NeedlerFlatpackCraft
       - ClothingOuterArmorShinoharaArmorHighsecCraft
       - AnathemaLPC
       - SinnLPC

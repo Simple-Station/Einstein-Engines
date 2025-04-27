@@ -3960,7 +3960,7 @@ entities:
     - type: Transform
       pos: 4.447284,6.5236254
       parent: 2
-- proto: WeaponTurretVulcanSHI
+- proto: WeaponTurretVulcan
   entities:
   - uid: 31
     components:

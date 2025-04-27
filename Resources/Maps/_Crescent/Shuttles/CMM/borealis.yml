@@ -9411,7 +9411,7 @@ entities:
     - type: Transform
       pos: 10.527951,15.665009
       parent: 1
-- proto: WeaponTurretVulcanCMM
+- proto: WeaponTurretVulcan
   entities:
   - uid: 777
     components:

@@ -3158,7 +3158,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 4.5,15.5
       parent: 1
-- proto: SHISlugthrowerTurret
+- proto: SlugthrowerCannon
   entities:
   - uid: 165
     components:
@@ -4480,7 +4480,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -5.693763,4.5167103
       parent: 1
-- proto: WeaponTurretCoilgunNCSP
+- proto: WeaponTurretCoilgun
   entities:
   - uid: 645
     components:
@@ -4508,7 +4508,7 @@ entities:
       - 2.251474735072685 rad: 3.994533262085685 rad
     - type: Physics
       bodyType: Dynamic
-- proto: WeaponTurretVulcanCMM
+- proto: WeaponTurretVulcan
   entities:
   - uid: 634
     components:

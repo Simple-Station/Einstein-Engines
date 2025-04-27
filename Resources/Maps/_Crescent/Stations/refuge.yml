@@ -13316,7 +13316,7 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-- proto: WeaponTurretVulcanSRM
+- proto: WeaponTurretVulcan
   entities:
   - uid: 293
     components:

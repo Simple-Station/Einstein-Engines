@@ -92,7 +92,7 @@
 
 - type: latheRecipe
   id: DSMLadyFlatpackCraft
-  result: DSMLadyFlatpack
+  result: PDTFlatpack
   completetime: 4
   materials:
     Steel: 4500
@@ -100,7 +100,7 @@
 
 - type: latheRecipe
   id: DSMVulcanFlatpackCraft
-  result: DSMVulcanFlatpack
+  result: PDTFlatpack
   completetime: 4
   materials:
     Steel: 5000
@@ -182,8 +182,8 @@
     Plastic: 500
 
 - type: latheRecipe
-  id: DSMPlasmaTurretFlatpackCraft
-  result: DSMPlasmaTurretFlatpack
+  id: PlasmaTurretFlatpackCraft
+  result: PlasmaTurretFlatpack
   completetime: 4
   materials:
     Steel: 5000

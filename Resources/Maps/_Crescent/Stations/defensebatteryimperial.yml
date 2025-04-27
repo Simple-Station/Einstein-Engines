@@ -879,7 +879,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 65
-- proto: WeaponTurretPDTDSM
+- proto: WeaponTurretPDT
   entities:
   - uid: 133
     components:

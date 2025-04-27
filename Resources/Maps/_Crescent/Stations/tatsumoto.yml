@@ -27893,7 +27893,7 @@ entities:
     - type: Transform
       pos: -38.464867,10.454103
       parent: 1
-- proto: WeaponTurretCoilgunNCSP
+- proto: WeaponTurretCoilgun
   entities:
   - uid: 638
     components:

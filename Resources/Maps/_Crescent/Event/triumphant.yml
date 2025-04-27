@@ -1522,7 +1522,7 @@ entities:
       linkedConsoleId: 542
       obstructedRanges:
       - 1.7234002896801222 rad: 4.342754208798159 rad
-- proto: BaseWeaponTurretNeedlerSRM
+- proto: WeaponTurretNeedler
   entities:
   - uid: 405
     components:

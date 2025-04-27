@@ -30554,7 +30554,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -5.1376762,-13.375209
       parent: 1
-- proto: WeaponTurretCoilgunNCSP
+- proto: WeaponTurretCoilgun
   entities:
   - uid: 3873
     components:

@@ -5075,7 +5075,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -2.2956815,20.555965
       parent: 1
-- proto: WeaponTurretVulcanSHI
+- proto: WeaponTurretVulcan
   entities:
   - uid: 257
     components:

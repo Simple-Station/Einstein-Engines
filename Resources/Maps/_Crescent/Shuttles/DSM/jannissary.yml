@@ -1030,7 +1030,7 @@ entities:
     - type: Transform
       pos: 6.5,2.5
       parent: 1
-- proto: SHISlugthrowerTurret
+- proto: SlugthrowerCannon
   entities:
   - uid: 32
     components:

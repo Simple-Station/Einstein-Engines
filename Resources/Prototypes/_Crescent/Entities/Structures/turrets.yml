@@ -110,17 +110,18 @@
       class: Ballistic
       size: Small
 
-
 - type: entity
   parent: BaseWeaponTurretPDT
   name: SHI MG-21 light machinegun 20x135mm
-  id: WeaponTurretPDTNCWL
+  id: WeaponTurretPDT
+  suffix : Tier 1
+
 
 - type: entity
   parent: BaseWeaponTurretPDT
   name: SHI MG-21 light dual machinegun Mk. II
   id: WeaponTurretPDTNCSP
-  suffix: Mark Two
+  suffix: Tier 1
   components:
     - type: Gun
       projectileSpeed: 145
@@ -251,16 +252,15 @@
 - type: entity
   parent: BaseWeaponTurretVulcan
   name: 20mm PTA "Operator" gatling turret
-  id: WeaponTurretVulcanCMM
+  id: WeaponTurretVulcan
 
 
 #swarmer missiles - warship
 
 - type: entity
   parent: BaseStructure
-  id: BaseWeaponTurretSwarmer
+  id: WeaponTurretSwarmer
   name: swarmer missile launcher
-  abstract: true
   components:
     - type: PointCannon
     - type: Clickable
@@ -489,7 +489,8 @@
 - type: entity
   parent: BaseWeaponTurretArtillery
   name: 60mm NT "Derecho" exotic blaster
-  id: WeaponTurretCoilgunNCSP
+  id: WeaponTurretCoilgun
+  suffix: Tier 3 Anti Ship Artillery
 
 #heavymortar
 
@@ -616,12 +617,8 @@
   parent: BaseWeaponTurretMortar
   name: 90mm heavy mortar-pounder
   categories: [ HideSpawnMenu ]
-  id: WeaponTurretMortarSHI
-  suffix: SHI MRTR
-  components:
-    - type: NpcFactionMember
-      factions:
-        - SHIWarship
+  id: WeaponTurretMortar
+  suffix: Tier 1 Anti Ship Artillery
 
 
 # PLASMA LASER
@@ -738,23 +735,8 @@
 - type: entity
   parent: BaseWeaponTurretLaser
   name: SHI 180c 'Torch' pressure gatling
-  id: BaseWeaponTurretLaserNCSP
-  suffix: Basic
-
-- type: entity
-  parent: BaseWeaponTurretLaser
-  name: SHI 200c 'Flare' pressure gatling
-  id: BaseWeaponTurretLaserDSM
-  suffix: Upgraded
-  components:
-    - type: Sprite
-      sprite: _Crescent/Objects/Autoturrets/imperialplasmacannon.rsi
-      drawdepth: Mobs
-      layers:
-        - state: syndie_lethal
-    - type: Gun
-      projectileSpeed: 105
-
+  id: WeaponTurretLaser
+  suffix: Tier 1 Light Anti Ship Turret
 
 #smartbomb
 
@@ -983,7 +965,8 @@
 - type: entity
   parent: BaseWeaponTurretNeedler
   name: 60mm PTA 'Needler' heavy precision autogun
-  id: BaseWeaponTurretNeedlerSRM
+  id: WeaponTurretNeedler
+  suffix : Tier 2 Anti Ship Artillery
 
 #basic point n fire cannon, controlled by targeting console
 #requires GunComponent and PointCannonComponent to work, rest can be modified however you like

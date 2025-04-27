@@ -7309,7 +7309,7 @@ entities:
       containers:
         gun_magazine: !type:ContainerSlot {}
         gun_chamber: !type:ContainerSlot {}
-- proto: WeaponTurretPDTNCWL
+- proto: WeaponTurretPDT
   entities:
   - uid: 660
     components:

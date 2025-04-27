@@ -935,7 +935,7 @@ entities:
       linkedPorts:
         90:
         - Pressed: Toggle
-- proto: SHISlugthrowerTurret
+- proto: SlugthrowerCannon
   entities:
   - uid: 90
     components:

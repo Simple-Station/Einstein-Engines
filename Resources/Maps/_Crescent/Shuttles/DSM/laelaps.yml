@@ -7399,7 +7399,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 5.2004976,1.5032752
       parent: 1
-- proto: WeaponTurretPDTDSM
+- proto: WeaponTurretPDT
   entities:
   - uid: 94
     components:

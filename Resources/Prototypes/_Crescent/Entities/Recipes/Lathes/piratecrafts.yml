@@ -142,7 +142,7 @@
 
 - type: latheRecipe
   id: NCSPAnklebiterFlatpackNCSP
-  result: NCSPAnklebiterFlatpack
+  result: PDTFlatpack
   completetime: 4
   materials:
     Steel: 2500
@@ -293,7 +293,7 @@
 
 - type: latheRecipe
   id: NCSPVulcanTurretFlatpackNCSP
-  result: NCSPVulcanTurretFlatpack
+  result: VulcanFlatpack
   completetime: 4
   materials:
     Steel: 3500

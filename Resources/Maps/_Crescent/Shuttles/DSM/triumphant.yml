@@ -9454,7 +9454,7 @@ entities:
     - type: Transform
       pos: 6.5008335,37.653393
       parent: 1
-- proto: WeaponTurretPDTNCWL
+- proto: WeaponTurretPDT
   entities:
   - uid: 499
     components:

@@ -187,24 +187,24 @@
     Gold: 200
 
 - type: latheRecipe
-  id: NCWLGranSudaruskaFlatpackCraft
-  result: NCWLGranSudaruskaFlatpack
+  id: PDTFlatpackCraft
+  result: PDTFlatpack
   completetime: 4
   materials:
     Steel: 5000
     Plastic: 1000
 
 - type: latheRecipe
-  id: NCWLVulcanFlatpackCraft
-  result: NCWLVulcanFlatpack
+  id: VulcanFlatpackCraft
+  result: VulcanFlatpack
   completetime: 4
   materials:
     Steel: 6000
     Plastic: 1500
 
 - type: latheRecipe
-  id: NCWLSwarmerFlatpackCraft
-  result: NCWLSwarmerFlatpack
+  id: SwarmerFlatpackCraft
+  result: SwarmerFlatpack
   completetime: 4
   materials:
     Steel: 5000
@@ -212,8 +212,8 @@
     Silver: 500
 
 - type: latheRecipe
-  id: NCWLKurosawaFlatpackCraft
-  result: NCWLKurosawaFlatpack
+  id: MissileRackFlatpackCraft
+  result: MissileRackFlatpack
   completetime: 4
   materials:
     Steel: 5000
@@ -221,8 +221,8 @@
     Silver: 1000
 
 - type: latheRecipe
-  id: NCWLSlugthrowerFlatpackCraft
-  result: NCWLSlugthrowerFlatpack
+  id: SlugthrowerFlatpackCraft
+  result: SlugthrowerFlatpack
   completetime: 4
   materials:
     Steel: 7500
@@ -231,8 +231,8 @@
     Silver: 250
 
 - type: latheRecipe
-  id: NCWLAutomortarFlatpackCraft
-  result: NCWLAutomortarFlatpack
+  id: AutomortarFlatpackCraft
+  result: AutomortarFlatpack
   completetime: 4
   materials:
     Steel: 8000
@@ -241,8 +241,8 @@
     Silver: 500
 
 - type: latheRecipe
-  id: NCWLNeedlerFlatpackCraft
-  result: NCWLNeedlerFlatpack
+  id: NeedlerFlatpackCraft
+  result: NeedlerFlatpack
   completetime: 4
   materials:
     Steel: 6500

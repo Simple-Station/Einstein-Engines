@@ -344,7 +344,7 @@
 #50 cal
 
 - type: entity
-  id: SHISlugthrowerTurret
+  id: SlugthrowerCannon
   name: SHI 43mm "Dasher" ballistic slugthrower
   parent: ConstructibleMachine
   description: An outdated, gas-operated slugthrower. Usually found mounted on older civilian models. Ballistic-fed.

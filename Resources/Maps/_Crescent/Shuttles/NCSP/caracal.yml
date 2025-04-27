@@ -2761,7 +2761,7 @@ entities:
     - type: BatterySelfRecharger
       autoRechargeRate: -500
       autoRecharge: True
-- proto: WeaponTurretVulcanSHI
+- proto: WeaponTurretVulcan
   entities:
   - uid: 324
     components:

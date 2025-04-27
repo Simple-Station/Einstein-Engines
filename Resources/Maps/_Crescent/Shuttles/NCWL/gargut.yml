@@ -8217,7 +8217,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 609
-- proto: WeaponTurretPDTNCWL
+- proto: WeaponTurretPDT
   entities:
   - uid: 302
     components:

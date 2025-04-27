@@ -4936,7 +4936,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -4.328359,-0.47270155
       parent: 1
-- proto: WeaponTurretVulcanCMM
+- proto: WeaponTurretVulcan
   entities:
   - uid: 203
     components:
