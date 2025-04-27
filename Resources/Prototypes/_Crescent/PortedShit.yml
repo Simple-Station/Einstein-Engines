@@ -356,7 +356,6 @@
   - type: CartridgeAmmo
     proto: BulletHeavyPistol
 
-
 - type: entity
   parent: BaseBulletTrigger
   id: ProjectileEmp
@@ -391,24 +390,6 @@
     range: 2
     energyConsumption: 500000
     disableDuration: 30
-
-
-- type: entity
-  parent: BaseSubdermalImplant
-  id: TrackingImplant
-  name: tracking implant (CMM)
-  description: This implant has a tracking device monitor for the Colonial MinuteMen radio channel.
-  components:
-    - type: SubdermalImplant
-      whitelist:
-        components:
-        - MobState
-    - type: TriggerOnMobstateChange
-      mobState:
-      - Critical
-      - Dead
-    - type: Rattle
-      radioChannel: "Nfsd"
 
 - type: entity
   parent: BaseSubdermalImplant

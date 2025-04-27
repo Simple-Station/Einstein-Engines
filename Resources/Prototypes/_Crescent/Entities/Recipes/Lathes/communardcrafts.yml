@@ -212,25 +212,6 @@
     Silver: 500
 
 - type: latheRecipe
-  id: MissileRackFlatpackCraft
-  result: MissileRackFlatpack
-  completetime: 4
-  materials:
-    Steel: 5000
-    Plastic: 2500
-    Silver: 1000
-
-- type: latheRecipe
-  id: SlugthrowerFlatpackCraft
-  result: SlugthrowerFlatpack
-  completetime: 4
-  materials:
-    Steel: 7500
-    Plastic: 2500
-    Gold: 250
-    Silver: 250
-
-- type: latheRecipe
   id: AutomortarFlatpackCraft
   result: AutomortarFlatpack
   completetime: 4

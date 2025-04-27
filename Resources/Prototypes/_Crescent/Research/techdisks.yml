@@ -327,8 +327,8 @@
     - state: iconnanotrasen
   - type: TechnologyDisk
     recipes:
-      - DSMVulcanFlatpackCraft
-      - DSMLadyFlatpackCraft
+      - VulcanFlatpackCraft
+      - PDTFlatpackCraft
   - type: StaticPrice
     price: 900
 

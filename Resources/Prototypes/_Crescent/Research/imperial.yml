@@ -130,8 +130,8 @@
   tier: 2
   cost: 8500
   recipeUnlocks:
-  - DSMVulcanFlatpackCraft
-  - DSMLadyFlatpackCraft
+  - VulcanFlatpackCraft
+  - PDTFlatpackCraft
   - PlasmaRepeaterFlatpackCraft
 
 - type: technology

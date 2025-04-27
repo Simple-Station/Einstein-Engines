@@ -90,21 +90,6 @@
   materials:
     Steel: 2500
 
-- type: latheRecipe
-  id: DSMLadyFlatpackCraft
-  result: PDTFlatpack
-  completetime: 4
-  materials:
-    Steel: 4500
-    Plastic: 1500
-
-- type: latheRecipe
-  id: DSMVulcanFlatpackCraft
-  result: PDTFlatpack
-  completetime: 4
-  materials:
-    Steel: 5000
-    Plastic: 2500
 
 - type: latheRecipe
   id: DSMFighterThrusterFlatpackCraft
