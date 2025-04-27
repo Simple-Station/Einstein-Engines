@@ -45,4 +45,16 @@ public sealed class VesselPrototype : IPrototype
     /// </summary>
     [DataField]
     public EntityWhitelist? Whitelist;
+
+    /// <summary>
+    ///     The category of the product. (e.g. Small, Medium, Large, Emergency, Special etc.)
+    /// </summary>
+    [DataField("category")]
+    public string Category = string.Empty;
+
+    /// <summary>
+    ///     The group of the product. (e.g. Civilian, Syndicate, Contraband etc.)
+    /// </summary>
+    [DataField("group")]
+    public string Group = string.Empty;
 }
