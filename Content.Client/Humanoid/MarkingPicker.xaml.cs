@@ -411,12 +411,10 @@ public sealed partial class MarkingPicker : Control
 
     private void MarkingRemove(MarkingPrototype marking)
     {
-        if (_selectedMarking is null) return;
-
         _currentMarkings.Remove(_selectedMarkingCategory, marking.ID);
 
         UpdatePoints();
-        CMarkingColors.Visible = _selectedMarking.Name != marking.ID;
+        CMarkingColors.Visible = _selectedMarking?.Name != marking.ID;
         OnMarkingRemoved?.Invoke(_currentMarkings);
     }
 }
