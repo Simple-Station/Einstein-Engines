@@ -5,7 +5,7 @@
   playTimeTracker: JobForemanNCSP
   requirements:
     - !type:CharacterOverallTimeRequirement
-      Min: 20000
+      min: 20000
     - !type:FactionRequirement
       factionID: "TFSC"
   special:

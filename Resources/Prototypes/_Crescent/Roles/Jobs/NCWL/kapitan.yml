@@ -5,7 +5,7 @@
   playTimeTracker: JobKapitanNCWL
   requirements:
     - !type:CharacterOverallTimeRequirement
-      Min: 50000
+      min: 50000
     - !type:FactionRequirement
       factionID: "NCWL"
   weight: 25

@@ -5,7 +5,7 @@
   playTimeTracker: JobLieutenantNCSP
   requirements:
     - !type:CharacterOverallTimeRequirement
-      Min: 30000
+      min: 30000
     - !type:FactionRequirement
       factionID: "TFSC"
   special:

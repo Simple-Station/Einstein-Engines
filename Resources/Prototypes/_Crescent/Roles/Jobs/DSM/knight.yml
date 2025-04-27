@@ -5,7 +5,7 @@
   playTimeTracker: JobKnightDSM
   requirements:
     - !type:CharacterOverallTimeRequirement
-      Min: 35000
+      min: 35000
     - !type:SpeciesRequirement
       species:
         - Human

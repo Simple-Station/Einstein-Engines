@@ -5,7 +5,7 @@
   playTimeTracker: JobChemcookNCSP
   requirements:
     - !type:CharacterOverallTimeRequirement
-      Min: 8000
+      min: 8000
     - !type:FactionRequirement
       factionID: "TFSC"
   special:

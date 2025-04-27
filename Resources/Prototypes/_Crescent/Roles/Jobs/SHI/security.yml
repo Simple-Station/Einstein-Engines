@@ -5,7 +5,7 @@
   playTimeTracker: JobSecuritySHI
   requirements:
     - !type:CharacterOverallTimeRequirement
-      Min: 18000
+      min: 18000
     - !type:FactionRequirement
       factionID: "SHI"
   weight: 38

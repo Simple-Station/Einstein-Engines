@@ -5,7 +5,7 @@
   playTimeTracker: JobGliessSheriff
   requirements:
     - !type:CharacterOverallTimeRequirement
-      Min: 4000
+      min: 4000
   startingGear: GliessSheriffGear
   icon: "JobIconGliessSheriff"
   supervisors: job-supervisors-gliess

@@ -11,7 +11,7 @@
   - !type:FactionRequirement
       factionID: "TSP"
   - !type:CharacterOverallTimeRequirement
-    Min: 12000
+    min: 12000
   special:
   - !type:AddComponentSpecial
     components:

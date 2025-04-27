@@ -5,7 +5,7 @@
   playTimeTracker: JobTemplarDSM
   requirements:
     - !type:CharacterOverallTimeRequirement
-      Min: 55000
+      min: 55000
     - !type:SpeciesRequirement
       species:
         - Human

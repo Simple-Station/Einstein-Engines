@@ -5,7 +5,7 @@
   playTimeTracker: JobRipperdocNCSP
   requirements:
     - !type:CharacterOverallTimeRequirement
-      Min: 6000
+      min: 6000
     - !type:FactionRequirement
       factionID: "TFSC"
   special:

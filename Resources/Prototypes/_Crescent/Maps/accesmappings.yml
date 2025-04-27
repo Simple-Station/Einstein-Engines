@@ -2,7 +2,7 @@
   id: GeneralShipAccesMapping
   captainKey: Captain
   pilotKey: Pilot
-  CryoKeys:
+  cryoKeys:
     - Crew
   accesIdentifierToEntity:
     Crew:

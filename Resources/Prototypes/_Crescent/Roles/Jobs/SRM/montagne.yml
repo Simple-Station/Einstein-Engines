@@ -8,7 +8,7 @@
       species:
         - Human
     - !type:CharacterOverallTimeRequirement
-      Min: 40000
+      min: 40000
     - !type:FactionRequirement
       factionID: "SRM"
   weight: 22

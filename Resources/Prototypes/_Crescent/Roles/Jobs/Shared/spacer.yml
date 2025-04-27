@@ -5,7 +5,7 @@
   playTimeTracker: JobSpacer
   requirements:
     - !type:CharacterOverallTimeRequirement
-      Min: 500
+      min: 500
   startingGear: ContractorGear
   icon: "JobIconPassenger"
   supervisors: job-supervisors-hire
