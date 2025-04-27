@@ -29,7 +29,6 @@
 - type: siliconLawset
   id: Medical
   laws:
-  - ObeyAI
   - Medical1
   - Medical2
   - Medical3
@@ -70,7 +69,6 @@
 - type: siliconLawset
   id: Research
   laws:
-  - ObeyAI
   - Research1
   - Research2
   - Research3
@@ -107,7 +105,6 @@
 - type: siliconLawset
   id: Engineer
   laws:
-  - ObeyAI
   - Engineer1
   - Engineer2
   - Engineer3
@@ -143,7 +140,6 @@
 - type: siliconLawset
   id: Janitor
   laws:
-  - ObeyAI
   - Janitor1
   - Janitor2
   - Janitor3
@@ -220,7 +216,6 @@
 - type: siliconLawset
   id: Chaplain
   laws:
-  - ObeyAI
   - Chaplain1
   - Chaplain2
   - Chaplain3
@@ -252,15 +247,14 @@
 - type: siliconLawset
   id: Reporter
   laws:
-  - ObeyAI
   - Reporter1
   - Reporter2
   - Reporter3
-  - Reporter4 
+  - Reporter4
   obeysTo: laws-owner-organic
 
 - type: siliconLaw # no Security Borg, so doesn't spawn
-  id: SiliconPolice1 
+  id: SiliconPolice1
   order: 1
   lawString: law-silicon-police-1
 
@@ -292,7 +286,6 @@
 - type: siliconLawset
   id: SiliconPolice
   laws:
-  - ObeyAI
   - SiliconPolice1
   - SiliconPolice2
   - SiliconPolice3
@@ -363,7 +356,6 @@
 - type: siliconLawset
   id: StationEfficiency
   laws:
-  - ObeyAI
   - StationEfficiency1
   - StationEfficiency2
   - StationEfficiency3
@@ -433,7 +425,7 @@
   id: DungeonMaster6
   order: 6
   lawString: law-dungeonmaster-6
-  
+
 - type: siliconLawset
   id: DungeonMaster
   laws:
