@@ -15619,3 +15619,22 @@ Entries:
   id: 7203
   time: '2025-04-27T21:08:12.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2336
+- author: Diggy0
+  changes:
+    - type: Fix
+      message: ERT suits should no longer be large errors.
+    - type: Fix
+      message: >-
+        Bloodred's head sprite should now be equipped-helmet and not
+        equipped-head (This is leftover from the impstation sprite port)
+    - type: Fix
+      message: BSO / Dreadnought suit now have glow.
+    - type: Fix
+      message: >-
+        The Reverse-Engineered hardsuits from Nyano now have glow, and no longer
+        display errors.
+    - type: Fix
+      message: ERT Helmets should now show light.
+  id: 7204
+  time: '2025-04-27T21:12:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2334
