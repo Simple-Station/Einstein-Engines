@@ -3,8 +3,6 @@ using Content.Shared.Body.Components;
 using Content.Shared.Examine;
 using Content.Shared.Morgue;
 using Content.Shared.Morgue.Components;
-using Robust.Server.GameObjects;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 
@@ -46,14 +44,11 @@ public sealed class MorgueSystem : EntitySystem
     /// <summary>
     ///     Updates data periodically in case something died/got deleted in the morgue.
     /// </summary>
-    private void CheckContents(EntityUid uid, MorgueComponent? morgue = null, EntityStorageComponent? storage = null, AppearanceComponent? app = null)
+    private void CheckContents(EntityUid uid, EntityStorageComponent storage, AppearanceComponent app)
     {
-        if (!Resolve(uid, ref morgue, ref storage, ref app))
-            return;
-
         if (storage.Contents.ContainedEntities.Count == 0)
         {
-            _appearance.SetData(uid, MorgueVisuals.Contents, MorgueContents.Empty);
+            _appearance.SetData(uid, MorgueVisuals.Contents, MorgueContents.Empty, app);
             return;
         }
 
@@ -81,15 +76,16 @@ public sealed class MorgueSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<MorgueComponent, EntityStorageComponent, AppearanceComponent>();
-        while (query.MoveNext(out var uid, out var comp, out var storage, out var appearance))
+        var query = EntityQueryEnumerator<MorgueComponent>();
+        while (query.MoveNext(out var uid, out var comp))
         {
             comp.AccumulatedFrameTime += frameTime;
-
-            CheckContents(uid, comp, storage);
-
-            if (comp.AccumulatedFrameTime < comp.BeepTime)
+            if (comp.AccumulatedFrameTime < comp.BeepTime
+                || !TryComp(uid, out EntityStorageComponent? storage)
+                || !TryComp(uid, out AppearanceComponent? appearance))
                 continue;
+
+            CheckContents(uid, storage, appearance);
 
             comp.AccumulatedFrameTime -= comp.BeepTime;
 

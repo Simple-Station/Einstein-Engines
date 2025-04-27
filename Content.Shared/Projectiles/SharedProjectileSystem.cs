@@ -25,6 +25,7 @@ namespace Content.Shared.Projectiles;
 public abstract partial class SharedProjectileSystem : EntitySystem
 {
     public const string ProjectileFixture = "projectile";
+    private readonly HashSet<Entity<EmbeddableProjectileComponent>> _activeEmbeddables = new();
 
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
@@ -52,11 +53,11 @@ public abstract partial class SharedProjectileSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<EmbeddableProjectileComponent>();
         var curTime = _timing.CurTime;
 
-        while (query.MoveNext(out var uid, out var comp))
+        foreach (var ent in _activeEmbeddables)
         {
+            var (uid, comp) = ent;
             if (comp.AutoRemoveTime == null || comp.AutoRemoveTime > curTime)
                 continue;
 
@@ -102,6 +103,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         component.AutoRemoveTime = null;
         component.Target = null;
         component.TargetBodyPart = null;
+        _activeEmbeddables.Remove((uid, component));
 
         var ev = new RemoveEmbedEvent(remover);
         RaiseLocalEvent(uid, ref ev);
@@ -166,6 +168,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         if (!TryComp(uid, out PhysicsComponent? physics))
             return false;
 
+        _activeEmbeddables.Add((uid, component));
         _physics.SetLinearVelocity(uid, Vector2.Zero, body: physics);
         _physics.SetBodyType(uid, BodyType.Static, body: physics);
         var xform = Transform(uid);
