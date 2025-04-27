@@ -363,10 +363,11 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
     layers:
-      - state: emp_projectile
-        shader: unshaded
+    - state: omnilaser_greyscale
+      shader: unshaded
+      color: red
   - type: Ammo
     muzzleFlash: null
   - type: Physics
@@ -379,7 +380,6 @@
         hard: false
         mask:
         - Opaque
-      fly-by: *flybyfixture
   - type: Projectile
     damage:
       types:
