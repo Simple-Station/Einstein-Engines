@@ -1023,8 +1023,8 @@ namespace Content.Client.Lobby.UI
 
                 foreach (var job in jobs)
                 {
-                    var jobContainer = new BoxContainer { Orientation = LayoutOrientation.Horizontal, };
-                    var selector = new RequirementsSelector { Margin = new(3f, 3f, 3f, 0f) };
+                    var jobContainer = new BoxContainer { Orientation = LayoutOrientation.Horizontal, HorizontalExpand = true, };
+                    var selector = new RequirementsSelector { Margin = new(3f, 3f, 3f, 0f), HorizontalExpand = true, };
                     selector.OnOpenGuidebook += OnOpenGuidebook;
 
                     var icon = new TextureRect
@@ -1085,32 +1085,6 @@ namespace Content.Client.Lobby.UI
             }
 
             UpdateJobPriorities();
-        }
-
-        /// DeltaV - Make sure that no invalid job priorities get through
-        private void EnsureJobRequirementsValid()
-        {
-            foreach (var (jobId, selector) in _jobPriorities)
-            {
-                var proto = _prototypeManager.Index<JobPrototype>(jobId);
-                if ((JobPriority) selector.Selected == JobPriority.Never
-                    || _requirements.CheckJobWhitelist(proto, out _)
-                    || _characterRequirementsSystem.CheckRequirementsValid(
-                        proto.Requirements ?? new(),
-                        proto,
-                        Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                        _requirements.GetRawPlayTimeTrackers(),
-                        _requirements.IsWhitelisted(),
-                        proto,
-                        _entManager,
-                        _prototypeManager,
-                        _cfgManager,
-                        out _))
-                    continue;
-
-                selector.Select((int) JobPriority.Never);
-                Profile = Profile?.WithJobPriority(proto.ID, JobPriority.Never);
-            }
         }
 
         private void OnFlavorTextChange(string content)
