@@ -43,17 +43,6 @@
   - type: SpawnOnDespawn
     prototype: MobPlasmaCrab
 
-- type: entity
-  id: MobSpawnSaltCrab
-  parent: MobSpawnCrabQuartz
-  name: mobspawner salt crab
-  components:
-  - type: Sprite
-    sprite: /Textures/_NF/Effects/mobspawn.rsi
-    state: crab_salt
-  - type: SpawnOnDespawn
-    prototype: MobSaltCrab
-
 # Frontier
 - type: entity
   id: MobSpawnCrabNFQuartz
@@ -192,7 +181,7 @@
     state: golem
   - type: SpawnOnDespawn
     prototype: MobCoalGolem
-    
+
 - type: entity
   id: MobSpawnGoldGolem
   parent: MobSpawnCrabNFQuartz

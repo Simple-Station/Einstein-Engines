@@ -27,13 +27,6 @@
   - type: SpawnOnDespawn
     prototype: AsteroidRockPlasmaCrab
 
-- type: entity
-  id: WallSpawnAsteroidSaltCrab
-  parent: WallSpawnAsteroid
-  components:
-  - type: SpawnOnDespawn
-    prototype: AsteroidRockSaltCrab
-
 # Frontier
 - type: entity
   id: WallSpawnAsteroidIronCrabNF
@@ -91,12 +84,6 @@
   - type: SpawnOnDespawn
     prototype: AsteroidRockPlasmaCrabNF
 
-- type: entity
-  id: WallSpawnAsteroidSaltCrabNF
-  parent: WallSpawnAsteroid
-  components:
-  - type: SpawnOnDespawn
-    prototype: AsteroidRockSaltCrabNF
 
 - type: entity
   id: WallSpawnAsteroidBananium

@@ -220,22 +220,6 @@
     Plastic: 2500
     Silver: 1000
 
-# - type: latheRecipe
-#   id: GrenadeBlastCraft
-#   result: GrenadeBlast #YAMLFIX: needs new result entity to not fail tests
-#   completetime: 4
-#   materials:
-#     Steel: 500
-#     Uranium: 200
-
-# - type: latheRecipe
-#   id: GrenadeFlashCraft
-#   result: GrenadeFlash #YAMLFIX: Duplicate lathe recipe result causes test errors
-#   completetime: 4
-#   materials:
-#     Steel: 500
-#     Silver: 200
-
 - type: latheRecipe
   id: NCWLSlugthrowerFlatpackCraft
   result: NCWLSlugthrowerFlatpack
@@ -291,7 +275,7 @@
   materials:
     Steel: 750
     Plastic: 500
-    Plasma: 200    
+    Plasma: 200
 
 - type: latheRecipe
   id: MediumBallisticHardpointFlatpackCraft
@@ -302,4 +286,4 @@
     Silver: 2500
     Gold: 2500
     Uranium: 2500
-    Plasma: 2500  
+    Plasma: 2500

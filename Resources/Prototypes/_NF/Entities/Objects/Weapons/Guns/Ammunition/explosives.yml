@@ -48,7 +48,7 @@
   parent: BaseGrenade
   components:
   - type: CartridgeAmmo
-    proto: BulletGrenadeEmp
+    proto: BulletGrenadeEMP
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Ammunition/Explosives/explosives.rsi
     layers:

@@ -110,31 +110,6 @@
     energy: 3
     color: "#E592E7FF" # Same as plasma ore
 
-- type: entity
-  parent: MobOreCrab
-  id: MobSaltCrab
-  description: An ore crab made from salt. # delicious, don't try to lick this
-  components:
-  - type: Sprite
-    sprite: /Textures/_NF/Mobs/Elemental/orecrab.rsi
-    state: salt_crab
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 80
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: GlassBreak
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          Salt1:
-            min: 5
-            max: 8
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-
 # Frontier
 - type: entity
   abstract: true

@@ -50,6 +50,72 @@
     - Traffic
 
 - type: entity
+  parent: BaseItem
+  id: AbyssalSurvey
+  name: abyssal survey data
+  description: A NanoTrasen-brand tablet, barely functional and on backup power. Contains gathered survey data of the local Taypani Abyss. You can name several scientists just off the top of your head who'd kill you for one of these.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/abyssal_survey.rsi
+    state: abyssal_survey
+  - type: ResearchDisk
+    points: 15000
+  - type: StaticPrice
+    price: 25000
+  - type: GuideHelp
+    guides:
+    - Science
+
+- type: entity
+  parent: BaseItem
+  id: Databases
+  name: ancient corporate database
+  description: Clunky old NanoTrasen databanks. Not empty; thus valuable.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/database.rsi
+    layers:
+    - state: dataracks
+  - type: TechnologyDisk
+    tierWeightPrototype: TechDiskTierWeights
+  - type: StaticPrice
+    price: 20000
+
+- type: entity
+  parent: BaseItem
+  id: DelamDisk
+  name: delaminated survey data
+  description: A harddrive. Preliminary scans suggest survey data of celestial bodies and basic information about other systems and this one. It's probably worth money. Or you could put it into your research server and see if it can make sense of it.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/salvagedisk.rsi
+    state: icon
+  - type: ResearchDisk
+    points: 3000
+  - type: StaticPrice
+    price: 750
+  - type: GuideHelp
+    guides:
+    - Science
+
+- type: entity
+  parent: BaseItem
+  id: DelamDiskThumb
+  name: damaged thumbdrive
+  description: A worn-down thumbdrive. A label on the broad side reads 'SURVEY DATA'. You could probably harvest the research if you put this into your research server. Or you could sell it for money.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/salvagedisksmall.rsi
+    state: icon
+  - type: ResearchDisk
+    points: 1000
+  - type: StaticPrice
+    price: 300
+  - type: GuideHelp
+    guides:
+    - Science
+
+- type: entity
   name: grappling gun
   parent: BaseItem
   id: WeaponGrapplingGun
@@ -277,3 +343,113 @@
     steps: 9
     zeroVisible: false
   - type: Appearance
+
+- type: entity
+  id: CartridgeHeavyPistol
+  name: cartridge (11mm PSTF auto)
+  parent: BaseCartridgePistol
+  components:
+  - type: Tag
+    tags:
+      - CartridgeHeavyPistol
+      - Cartridge
+  - type: CartridgeAmmo
+    proto: BulletHeavyPistol
+
+
+- type: entity
+  parent: BaseBulletTrigger
+  id: ProjectileEmp
+  name: emp projectile
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    layers:
+      - state: emp_projectile
+        shader: unshaded
+  - type: Ammo
+    muzzleFlash: null
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        hard: false
+        mask:
+        - Opaque
+      fly-by: *flybyfixture
+  - type: Projectile
+    damage:
+      types:
+        Shock: 0
+  - type: TimedDespawn
+    lifetime: 15
+  - type: EmpOnTrigger
+    range: 2
+    energyConsumption: 500000
+    disableDuration: 30
+
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: TrackingImplant
+  name: tracking implant (CMM)
+  description: This implant has a tracking device monitor for the Colonial MinuteMen radio channel.
+  components:
+    - type: SubdermalImplant
+      whitelist:
+        components:
+        - MobState
+    - type: TriggerOnMobstateChange
+      mobState:
+      - Critical
+      - Dead
+    - type: Rattle
+      radioChannel: "Nfsd"
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: MedicalTrackingImplant
+  name: tracking implant (IPM)
+  description: This implant has a tracking device monitor for the Interdyne Pharmaceuticals radio channel.
+  components:
+    - type: SubdermalImplant
+      whitelist:
+        components:
+        - MobState
+    - type: TriggerOnMobstateChange
+      mobState:
+      - Critical
+      - Dead
+    - type: Rattle
+      radioChannel: "Interdyne"
+
+- type: entity
+  parent: TrackingImplant
+  id: TrackingImplantDSMSec
+  name : tracking implant (DSM-Sec)
+  description: This implant has a tracking device monitor for the Divine Mandate Security radio channel
+  components:
+  - type: Rattle
+    radioChannel: "Imperial"
+
+- type: entity
+  parent: TrackingImplant
+  name : tracking implant (DSM-Civ)
+  id: TrackingImplantDSMCiv
+  description: This implant has a tracking device monitor for the Divine Mandate Civilian radio channel
+  components:
+  - type: Rattle
+    radioChannel: "EmpireCiv"
+
+- type: entity
+  parent: TrackingImplant
+  name : tracking implant (NCWL)
+  id: TrackingImplantNCWL
+  description: This implant has a tracking device monitor for the New Crescent Workers League radio channel
+  components:
+  - type: Rattle
+    radioChannel: "NCWL"

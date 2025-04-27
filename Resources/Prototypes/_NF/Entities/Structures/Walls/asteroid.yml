@@ -35,15 +35,6 @@
       oreChance: 0
       currentOre: OrePlasmaCrab
 
-- type: entity
-  id: AsteroidRockSaltCrab
-  parent: AsteroidRockSalt
-  suffix: Salt Crab
-  components:
-    - type: OreVein
-      oreChance: 0
-      currentOre: OreSaltCrab
-
 # Frontier
 - type: entity
   id: AsteroidRockQuartzCrabNF
@@ -460,7 +451,7 @@
     - type: OreVein
       oreChance: 0
       currentOre: OreGoldGolem
-      
+
 - type: entity
   id: WallRockChromiteGoldGolem
   parent: WallRockChromiteGold
@@ -591,7 +582,7 @@
     - type: OreVein
       oreChance: 0
       currentOre: OreIronGolem
-      
+
 # Plasma
 ## Plasma crabs
 
@@ -657,7 +648,7 @@
     - type: OreVein
       oreChance: 0.001
       currentOre: OrePlasmaCrabNF
-      
+
 ## Plasma golems
 
 - type: entity
@@ -845,71 +836,6 @@
       oreChance: 0
       currentOre: OreQuartzGolem
 
-# Salt
-## Salt crabs
-
-- type: entity
-  id: WallRockAndesiteSaltCrabNF
-  parent: WallRockAndesiteSalt
-  suffix: Salt Crab
-  components:
-    - type: OreVein
-      oreChance: 0
-      currentOre: OreSaltCrabNF
-
-- type: entity
-  id: WallRockBasaltSaltCrabNF
-  parent: WallRockBasaltSalt
-  suffix: Salt Crab
-  components:
-    - type: OreVein
-      oreChance: 0
-      currentOre: OreSaltCrabNF
-
-- type: entity
-  id: AsteroidRockSaltCrabNF
-  parent: AsteroidRockSalt
-  suffix: Salt Crab
-  components:
-    - type: OreVein
-      oreChance: 0
-      currentOre: OreSaltCrabNF
-
-- type: entity
-  id: WallRockSaltCrabNF
-  parent: WallRockSalt
-  suffix: Salt Crab
-  components:
-    - type: OreVein
-      oreChance: 0
-      currentOre: OreSaltCrabNF
-
-- type: entity
-  id: WallRockSandSaltCrabNF
-  parent: WallRockSandSalt
-  suffix: Salt Crab
-  components:
-    - type: OreVein
-      oreChance: 0
-      currentOre: OreSaltCrabNF
-
-- type: entity
-  id: WallRockSnowSaltCrabNF
-  parent: WallRockSnowSalt
-  suffix: Salt Crab
-  components:
-    - type: OreVein
-      oreChance: 0
-      currentOre: OreSaltCrabNF
-
-- type: entity
-  id: WallRockChromiteSaltCrabNF
-  parent: WallRockChromiteSalt
-  suffix: Salt Crab
-  components:
-    - type: OreVein
-      oreChance: 0
-      currentOre: OreSaltCrabNF
 
 ## Salt golems
 

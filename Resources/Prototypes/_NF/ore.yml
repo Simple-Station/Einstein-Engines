@@ -7,9 +7,6 @@
   id: OreCoalCrab
   oreEntity: MobSpawnCoalCrab
 
-- type: ore
-  id: OreSaltCrab
-  oreEntity: MobSpawnSaltCrab
 
 - type: ore
   id: OrePlasmaCrab
@@ -76,9 +73,7 @@
   id: OrePlasmaGolem
   oreEntity: MobSpawnPlasmaGolem
 
-- type: ore
-  id: OreSaltCrabNF
-  oreEntity: MobSpawnSaltCrabNF
+
 
 - type: ore
   id: OreSaltGolem
