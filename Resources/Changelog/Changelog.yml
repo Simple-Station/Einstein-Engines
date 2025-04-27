@@ -15645,3 +15645,12 @@ Entries:
   id: 7205
   time: '2025-04-27T21:26:07.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2338
+- author: dootythefrooty
+  changes:
+    - type: Fix
+      message: Abductor Eye is now no longer visible for the inferior organisms.
+    - type: Remove
+      message: Invisibility Organs were removed for being turbo-borked.
+  id: 7206
+  time: '2025-04-27T21:54:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2331
