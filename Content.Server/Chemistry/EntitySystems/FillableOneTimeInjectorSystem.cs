@@ -270,9 +270,6 @@ public sealed class FillableOneTimeInjectorSystem : SharedFillableOneTimeInjecto
     private void TryInject(Entity<FillableOneTimeInjectorComponent> injector, EntityUid targetEntity,
         Entity<SolutionComponent> targetSolution, EntityUid user, bool asRefill)
     {
-        if (HasComp<BlockInjectionComponent>(targetEntity))  // DeltaV
-            return;
-
         if (injector.Comp.ToggleState == FillableOneTimeInjectorToggleMode.Spent)
             return;
 

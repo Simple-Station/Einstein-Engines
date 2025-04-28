@@ -262,9 +262,6 @@ public sealed class InjectorSystem : SharedInjectorSystem
     private void TryInject(Entity<InjectorComponent> injector, EntityUid targetEntity,
         Entity<SolutionComponent> targetSolution, EntityUid user, bool asRefill)
     {
-        if (HasComp<BlockInjectionComponent>(targetEntity))  // DeltaV
-            return;
-
         if (!SolutionContainers.TryGetSolution(injector.Owner, injector.Comp.SolutionName, out var soln,
                 out var solution) || solution.Volume == 0)
             return;
