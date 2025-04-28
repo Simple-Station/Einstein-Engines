@@ -15667,3 +15667,10 @@ Entries:
   id: 7207
   time: '2025-04-28T08:15:56.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2340
+- author: Zeta_Null
+  changes:
+    - type: Fix
+      message: 'Fixed the Linoleum floor texture. '
+  id: 7208
+  time: '2025-04-28T08:16:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2346
