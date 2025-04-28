@@ -15683,3 +15683,14 @@ Entries:
   id: 7209
   time: '2025-04-28T18:45:30.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2350
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: Made Wheelchair User and Blindness permanent
+    - type: Tweak
+      message: Made Shortsighted less visually intense
+    - type: Tweak
+      message: Made glasses counteract eye damage better
+  id: 7210
+  time: '2025-04-28T18:46:20.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2327
