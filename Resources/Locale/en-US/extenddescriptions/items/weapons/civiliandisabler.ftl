@@ -1,1 +1,1 @@
-civiliandisabler-extenddescription-security = This weapon is legal to own and carry without a license on NanoTrasen stations, but may be considered as an accessory equivalent to a weapon if used in a crime.
+civiliandisabler-extenddescription-security = This weapon is legal to own and carry without a license for command members on NanoTrasen stations, but may be considered as an accessory equivalent to a weapon if used in a crime.
