@@ -15603,3 +15603,54 @@ Entries:
   id: 7201
   time: '2025-04-26T21:07:03.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2325
+- author: Zeta_Null
+  changes:
+    - type: Add
+      message: Fixed marking localization issues
+  id: 7202
+  time: '2025-04-27T19:32:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2330
+- author: Orion-416
+  changes:
+    - type: Tweak
+      message: BSO now has the over-ear headset
+    - type: Tweak
+      message: BSO's modsuit now has the right colour for its light
+  id: 7203
+  time: '2025-04-27T21:08:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2336
+- author: Diggy0
+  changes:
+    - type: Fix
+      message: ERT suits should no longer be large errors.
+    - type: Fix
+      message: >-
+        Bloodred's head sprite should now be equipped-helmet and not
+        equipped-head (This is leftover from the impstation sprite port)
+    - type: Fix
+      message: BSO / Dreadnought suit now have glow.
+    - type: Fix
+      message: >-
+        The Reverse-Engineered hardsuits from Nyano now have glow, and no longer
+        display errors.
+    - type: Fix
+      message: ERT Helmets should now show light.
+  id: 7204
+  time: '2025-04-27T21:12:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2334
+- author: BlueHNT
+  changes:
+    - type: Tweak
+      message: Tweaked Spacelaw gun restrictions
+  id: 7205
+  time: '2025-04-27T21:26:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2338
+- author: dootythefrooty
+  changes:
+    - type: Fix
+      message: Abductor Eye is now no longer visible for the inferior organisms.
+    - type: Remove
+      message: Invisibility Organs were removed for being turbo-borked.
+  id: 7206
+  time: '2025-04-27T21:54:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2331
