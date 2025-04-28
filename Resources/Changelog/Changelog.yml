@@ -15674,3 +15674,12 @@ Entries:
   id: 7208
   time: '2025-04-28T08:16:51.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2346
+- author: wachte1
+  changes:
+    - type: Fix
+      message: >-
+        Changelings are now correctly identified as Solo Antagonists in the
+        admin overlay!
+  id: 7209
+  time: '2025-04-28T18:45:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2350
