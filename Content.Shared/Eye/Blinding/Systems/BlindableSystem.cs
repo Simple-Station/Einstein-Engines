@@ -87,6 +87,13 @@ public sealed class BlindableSystem : EntitySystem
         blindable.Comp.MinDamage = amount;
         UpdateEyeDamage(blindable, false);
     }
+    public void SetIncurable(Entity<BlindableComponent?> blindable, bool isIncurable)
+    {
+        if (!Resolve(blindable, ref blindable.Comp, false))
+            return;
+
+        blindable.Comp.Incurable = isIncurable;
+    }
 
     public void TransferBlindness(BlindableComponent newSight, BlindableComponent oldSight, EntityUid newEntity)
     {
@@ -94,7 +101,8 @@ public sealed class BlindableSystem : EntitySystem
         newSight.EyeDamage = oldSight.EyeDamage;
         newSight.LightSetup = oldSight.LightSetup;
         newSight.GraceFrame = oldSight.GraceFrame;
-        newSight.MinDamage = oldSight.MinDamage;
+        if (!oldSight.Incurable || !newSight.Incurable)
+            newSight.MinDamage = oldSight.MinDamage;
         newSight.MaxDamage = oldSight.MaxDamage;
         UpdateEyeDamage((newEntity, newSight), true);
     }
