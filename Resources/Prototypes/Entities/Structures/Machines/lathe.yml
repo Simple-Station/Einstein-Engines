@@ -383,7 +383,6 @@
     - SyringeBluespace
   #  - WeaponForceGun
     - WeaponLaserSvalinn
-    - WeaponCivilianDisabler
     - WeaponProtoKineticAccelerator
   #  - WeaponTetherGun
   #  - WeaponGrapplingGun
@@ -460,6 +459,7 @@
     - WeaponLaserCannon
     - WeaponLaserCarbine
     - WeaponXrayCannon
+    - WeaponCivilianDisabler
     - WeaponEnergyGun       # DeltaV - Energy Gun
     - WeaponEnergyGunMini   # DeltaV - Miniature Energy Gun
     - WeaponEnergyGunPistol # DeltaV - PDW-9 Energy Pistol
@@ -1101,6 +1101,7 @@
       - WeaponEnergyGun
       - WeaponEnergyGunMini
       - WeaponEnergyGunPistol
+      - WeaponCivilianDisabler
       - WeaponGunLaserCarbineAutomatic
       - CartridgeSpecialIncendiary
       - CartridgeSpecialUranium
