@@ -1,8 +1,8 @@
-- type: species
+- type: species # Chitinids have had their visuals moved to be a set of moth markings so less is lost in the process of disabling them.
   id: Chitinid
   name: species-name-chitinid
-  roundStart: false # REENABLE AT YOUR OWN RISK!! Chitinids are HORRIBLY optimized and eat a frankly absurd amount of resources for what they are. These WILL tank performance if you enable them.
-  prototype: MobChitinid # Chitinids have had their visuals moved to be a set of moth markings so less is lost in the process of disabling them.
+  roundStart: true
+  prototype: MobChitinid
   sprites: MobChitinidSprites
   defaultSkinTone: "#ffda93"
   markingLimits: MobChitinidMarkingLimits
