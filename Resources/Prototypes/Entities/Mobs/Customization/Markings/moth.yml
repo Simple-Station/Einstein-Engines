@@ -1109,3 +1109,14 @@
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: witchwing_r_arm
+
+# Chitinid Merger
+
+- type: marking
+  id: MothChitinidSnout
+  bodyPart: Head
+  markingCategory: Snout
+  speciesRestriction: [Moth]
+  sprites:
+  - sprite: DeltaV/Mobs/Species/Chitinid/parts.rsi
+    state: head_f

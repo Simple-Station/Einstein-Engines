@@ -1,7 +1,7 @@
 - type: species
   id: Chitinid
   name: species-name-chitinid
-  roundStart: true
+  roundStart: true # HOLY SHIT these things are a performance nightmare. This is unfortunate but I don't think they're in an acceptable state to be enabled? Reenable at own risk.
   prototype: MobChitinid
   sprites: MobChitinidSprites
   defaultSkinTone: "#ffda93"
