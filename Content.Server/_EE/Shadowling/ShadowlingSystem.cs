@@ -15,7 +15,6 @@ using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.Overlays.Switchable;
 using Content.Shared.Popups;
 
 
@@ -115,14 +114,7 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
         _language.AddLanguage(uid, component.SlingLanguageId);
         if (!TryComp(uid, out ActionsComponent? actions))
             return;
-
         _actions.AddAction(uid, ref component.ActionHatchEntity, component.ActionHatch, component: actions);
-
-        var thermalV = EnsureComp<ThermalVisionComponent>(uid);
-        var nightV = EnsureComp<NightVisionComponent>(uid);
-
-        nightV.Color = Color.Purple;
-        thermalV.Color = Color.Purple;
     }
 
     private void BeforeDamageChanged(EntityUid uid, ShadowlingComponent comp, BeforeDamageChangedEvent args)
@@ -139,6 +131,9 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
 
         if (args.Phase == ShadowlingPhases.PostHatch)
         {
+            // When the entity gets polymorphed, the OnInit starts so... We have to remove it again here.
+            _actions.RemoveAction(uid, component.ActionHatchEntity);
+
             AddPostHatchActions(uid, component);
 
             // todo: uncomment after debugging abilities

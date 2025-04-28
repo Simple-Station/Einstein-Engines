@@ -1,6 +1,7 @@
 using Content.Shared.Alert;
 using Content.Shared.Damage;
 using Content.Shared.Language;
+using Content.Shared.Polymorph;
 using Content.Shared.StatusIcon;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -68,10 +69,10 @@ public sealed partial class ShadowlingComponent : Component
     public bool IsHatching;
 
     [DataField]
-    public Color EyeColor = Color.FromHex("#f80000");
+    public ProtoId<PolymorphPrototype> ShadowlingPolymorphId = "ShadowlingPolymorph";
 
     [DataField]
-    public Color SkinColor = Color.FromHex("#000000");
+    public bool IsPolymorphed;
 
     [DataField]
     public string Egg = "SlingEggHatch";

@@ -1,6 +1,8 @@
+using Content.Server.Polymorph.Systems;
 using Content.Server.Popups;
 using Content.Server.Storage.Components;
 using Content.Server.Storage.EntitySystems;
+using Content.Shared._EE.Clothing.Components;
 using Content.Shared._EE.Shadowling;
 using Content.Shared.Popups;
 using Robust.Shared.Timing;
@@ -15,6 +17,7 @@ namespace Content.Server._EE.Shadowling;
 ///
 public sealed class ShadowlingEggHatchSystem : EntitySystem
 {
+    [Dependency] private readonly PolymorphSystem _polymorph = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly EntityStorageSystem _entityStorage = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
@@ -64,8 +67,8 @@ public sealed class ShadowlingEggHatchSystem : EntitySystem
         if (comp.HasBeenHatched)
             return;
 
-        if (TryComp<ShadowlingComponent>(sling, out var shadowling))
-            shadowling.IsHatching = false;
+        if (!TryComp<ShadowlingComponent>(sling, out var shadowling))
+            return;
 
         // Remove sling from egg
         if (TryComp<EntityStorageComponent>(egg, out var storage))
@@ -74,7 +77,13 @@ public sealed class ShadowlingEggHatchSystem : EntitySystem
             _entityStorage.OpenStorage(egg, storage);
         }
 
-        RaiseLocalEvent(sling, new PhaseChangedEvent(ShadowlingPhases.PostHatch));
+        var newUid = _polymorph.PolymorphEntity(sling, shadowling.ShadowlingPolymorphId);
+        if (newUid == null)
+            return;
+
+        EnsureComp<ShadowlingCannotWearClothesComponent>(newUid.Value);
+
+        RaiseLocalEvent(newUid.Value, new PhaseChangedEvent(ShadowlingPhases.PostHatch));
         comp.HasBeenHatched = true;
     }
 }

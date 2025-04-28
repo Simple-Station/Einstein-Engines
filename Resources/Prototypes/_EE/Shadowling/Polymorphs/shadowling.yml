@@ -1,0 +1,12 @@
+- type: polymorph
+  id: ShadowlingPolymorph
+  configuration:
+    entity: MobShadowlingBase
+    forced: true
+    transferName: true
+    transferHumanoidAppearance: false
+    allowRepeatedMorphs: true
+    revertOnDeath: false
+    revertOnCrit: false
+    copiedComponents:
+      - Shadowling
