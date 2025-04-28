@@ -54,6 +54,11 @@
       nameSegments:
       - NamesFirstMilitary
       - names_last
+    - type: LanguageKnowledge
+      speaks:
+      - SolCommon # Intentionally does not include Tau-Ceti Basic, so they can only communicate with Humans on the station.
+      understands:
+      - SolCommon
     # TODO: Mindroles
 
 - type: antag

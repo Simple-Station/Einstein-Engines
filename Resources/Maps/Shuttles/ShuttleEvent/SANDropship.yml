@@ -19,7 +19,7 @@ entities:
       name: SAN Shuttle
     - type: Transform
       pos: -0.6171875,1.6265492
-      parent: invalid
+      parent: 48
     - type: MapGrid
       chunks:
         0,0:
@@ -143,6 +143,18 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
+  - uid: 48
+    components:
+    - type: MetaData
+      name: Map Entity
+    - type: Transform
+    - type: Map
+      mapPaused: True
+    - type: PhysicsMap
+    - type: GridTree
+    - type: MovedGrids
+    - type: Broadphase
+    - type: OccluderTree
 - proto: AirAlarm
   entities:
   - uid: 226
@@ -224,6 +236,23 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 2.5,-5.5
       parent: 1
+- proto: AtmosDeviceFanDirectional
+  entities:
+  - uid: 273
+    components:
+    - type: Transform
+      pos: -0.5,-15.5
+      parent: 1
+  - uid: 274
+    components:
+    - type: Transform
+      pos: 0.5,-15.5
+      parent: 1
+  - uid: 277
+    components:
+    - type: Transform
+      pos: 1.5,-15.5
+      parent: 1
 - proto: BlastDoor
   entities:
   - uid: 55
@@ -272,6 +301,13 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 1.5,-0.5
+      parent: 1
+- proto: BoxFlashbang
+  entities:
+  - uid: 74
+    components:
+    - type: Transform
+      pos: 1.3671875,-5.3563733
       parent: 1
 - proto: BoxHandcuff
   entities:
@@ -942,10 +978,11 @@ entities:
       fixtures: {}
 - proto: Doorjack
   entities:
-  - uid: 102
+  - uid: 61
     components:
     - type: Transform
-      pos: 3.5337243,-9.2386
+      rot: 3.141592653589793 rad
+      pos: 1.6015625,-4.723561
       parent: 1
 - proto: FoodPacketCheesieTrash
   entities:
@@ -1284,12 +1321,17 @@ entities:
     - type: Transform
       pos: 6.5,-4.5
       parent: 1
-- proto: GrenadeFlashBang
+- proto: GrenadeStinger
   entities:
-  - uid: 277
+  - uid: 420
     components:
     - type: Transform
-      pos: 1.4492347,-5.4080944
+      pos: 1.71875,-5.426686
+      parent: 1
+  - uid: 437
+    components:
+    - type: Transform
+      pos: 1.765625,-5.239186
       parent: 1
 - proto: Grille
   entities:
@@ -1405,55 +1447,96 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -6.5,-4.5
       parent: 1
-- proto: JetpackBlackFilled
+- proto: MagazineBoxRifle
   entities:
-  - uid: 74
+  - uid: 137
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: -3.6463256,-10.3912945
+      pos: 3.453125,-9.481373
       parent: 1
-  - uid: 120
+  - uid: 138
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: -3.2713256,-10.4381695
+      pos: 3.6640625,-9.50481
       parent: 1
-  - uid: 136
+  - uid: 199
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: -3.5057006,-10.6725445
+      pos: 3.2421875,-9.481373
       parent: 1
-- proto: MagazineBoxPistol
+- proto: MagazineRifle
   entities:
-  - uid: 61
+  - uid: 431
     components:
     - type: Transform
-      pos: 3.4165368,-9.472975
+      pos: 3.3828125,-9.340748
       parent: 1
-- proto: MagazineBoxPistolRubber
-  entities:
-  - uid: 48
+  - uid: 432
     components:
     - type: Transform
-      pos: 3.6977868,-9.566725
+      pos: 3.6171875,-9.340748
       parent: 1
-- proto: MagazinePistolSubMachineGun
-  entities:
-  - uid: 274
+  - uid: 433
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 1.5429847,-4.681532
+      pos: 3.8984375,-9.340748
       parent: 1
-- proto: MagazinePistolSubMachineGunRubber
-  entities:
-  - uid: 273
+  - uid: 434
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 1.6836097,-4.869032
+      pos: 3.6171875,-9.364185
+      parent: 1
+  - uid: 435
+    components:
+    - type: Transform
+      pos: 3.2890625,-9.387623
+      parent: 1
+  - uid: 436
+    components:
+    - type: Transform
+      pos: 3.546875,-9.387623
+      parent: 1
+- proto: MagazineRifleRubber
+  entities:
+  - uid: 425
+    components:
+    - type: Transform
+      pos: 3.3125,-9.293873
+      parent: 1
+  - uid: 426
+    components:
+    - type: Transform
+      pos: 3.5,-9.31731
+      parent: 1
+  - uid: 427
+    components:
+    - type: Transform
+      pos: 3.6875,-9.293873
+      parent: 1
+  - uid: 428
+    components:
+    - type: Transform
+      pos: 3.828125,-9.31731
+      parent: 1
+  - uid: 429
+    components:
+    - type: Transform
+      pos: 3.5,-9.270435
+      parent: 1
+  - uid: 430
+    components:
+    - type: Transform
+      pos: 3.6640625,-9.293873
+      parent: 1
+- proto: MedkitFilled
+  entities:
+  - uid: 421
+    components:
+    - type: Transform
+      pos: -0.296875,-1.6995382
       parent: 1
 - proto: N14DecorFloorGlass5
   entities:
@@ -1720,24 +1803,32 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 2.5,-4.5
       parent: 1
-- proto: SuitStorageBasic
+- proto: SuitStorageSANModsuitMarine
   entities:
-  - uid: 198
+  - uid: 102
     components:
     - type: Transform
       pos: -2.5,-9.5
       parent: 1
-  - uid: 199
+  - uid: 136
     components:
     - type: Transform
       pos: -2.5,-11.5
       parent: 1
-- proto: SuitStorageShanlin
+- proto: SuitStorageSANModsuitOfficer
   entities:
-  - uid: 137
+  - uid: 120
     components:
     - type: Transform
       pos: -0.5,-4.5
+      parent: 1
+- proto: SyndieMiniBomb
+  entities:
+  - uid: 198
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 1.4609375,-4.3719983
       parent: 1
 - proto: TableReinforced
   entities:
@@ -2620,12 +2711,22 @@ entities:
     - type: Transform
       pos: 3.4991298,-11.473295
       parent: 1
-- proto: WeaponSubMachineGunC20r
+- proto: WeaponRifleM90
   entities:
-  - uid: 138
+  - uid: 422
     components:
     - type: Transform
-      pos: 1.6367347,-4.306532
+      pos: -3.578125,-10.746998
+      parent: 1
+  - uid: 423
+    components:
+    - type: Transform
+      pos: -3.578125,-10.559498
+      parent: 1
+  - uid: 424
+    components:
+    - type: Transform
+      pos: -3.578125,-10.25481
       parent: 1
 - proto: WeaponTurretSAN
   entities:
