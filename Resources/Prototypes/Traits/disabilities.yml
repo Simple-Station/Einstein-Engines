@@ -24,6 +24,7 @@
     - !type:TraitAddComponent
       components:
         - type: PermanentBlindness
+          incurable: true
 
 - type: trait
   id: Nearsighted
@@ -50,7 +51,7 @@
     - !type:TraitAddComponent
       components:
         - type: PermanentBlindness
-          blindness: 4
+          blindness: 3
 
 - type: trait
   id: Narcolepsy
@@ -99,7 +100,7 @@
 - type: trait
   id: Muted
   category: Mental
-  points: 3
+  points: 6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
