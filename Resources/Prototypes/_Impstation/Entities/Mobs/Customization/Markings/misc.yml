@@ -191,7 +191,7 @@
   id: MothRhinoBeetle
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Moth, Chitinid]
+  speciesRestriction: [ Moth ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -236,7 +236,7 @@
   id: MothGlowAntenna
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [ Moth, Chitinid]
+  speciesRestriction: [ Moth ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -271,7 +271,7 @@
   id: MothBeetleTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Moth, Chitinid]
+  speciesRestriction: [ Moth ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -308,7 +308,7 @@
   id: MothBiggerEyes
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [ Moth, Chitinid]
+  speciesRestriction: [ Moth ]
   coloring:
     default:
       type:
@@ -879,28 +879,6 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: vitiligolegl
-
-- type: marking
-  id: ChitinidBeetleHorn1
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Chitinid]
-  forcedColoring: true
-  followSkinColor: true
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
-    state: chitinidbeetlehorn1
-
-- type: marking
-  id: ChitinidBeetleHorn2
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Chitinid]
-  forcedColoring: true
-  followSkinColor: true
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
-    state: chitinidbeetlehorn2
 
 - type: marking
   id: Gills

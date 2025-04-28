@@ -11,12 +11,6 @@
   offset: 0, 0.2 # 0625
 
 - type: typingIndicator
-  id: Chitinid
-  spritePath: /Textures/DeltaV/Effects/speech.rsi
-  typingState: chitinid0
-  offset: -0.2, 0.1 # 0625
-
-- type: typingIndicator
   id: Thaven
   spritePath: /Textures/_EE/Effects/speech.rsi
   typingState: thaven0

@@ -14,7 +14,7 @@
   id: MothBurnLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Moth, Chitinid]
+  speciesRestriction: [Moth ]
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
@@ -24,7 +24,7 @@
   id: MothBurnRight
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Moth, Chitinid]
+  speciesRestriction: [Moth ]
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
@@ -34,7 +34,7 @@
   id: MothFaceClaw
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Moth, Chitinid]
+  speciesRestriction: [Moth ]
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
@@ -44,7 +44,7 @@
   id: MothSlashLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Moth, Chitinid]
+  speciesRestriction: [Moth ]
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
@@ -215,7 +215,7 @@
   id: HeterochromiaMoth
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Moth, Chitinid]
+  speciesRestriction: [Moth ]
   followSkinColor: false
   coloring:
     default:
@@ -365,7 +365,7 @@
   id: EyebagsMoth
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Moth, Chitinid]
+  speciesRestriction: [Moth ]
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
@@ -375,7 +375,7 @@
   id: HeadTwistingMoth
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Moth, Chitinid]
+  speciesRestriction: [Moth ]
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
@@ -450,7 +450,7 @@
   id: TorsoIncisionMoth
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Moth, Chitinid]
+  speciesRestriction: [Moth ]
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi

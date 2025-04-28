@@ -1,4 +1,4 @@
-using Content.Server.Abilities.Chitinid;
+
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Server.Chat.Managers;
@@ -7,7 +7,6 @@ using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
-using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
@@ -126,24 +125,6 @@ public sealed class FillableOneTimeInjectorSystem : SharedFillableOneTimeInjecto
     {
         if (injector.Comp.ToggleState == FillableOneTimeInjectorToggleMode.Spent)
             return;
-
-        if (TryComp<BlockInjectionComponent>(target, out var blockComponent)) // DeltaV
-        {
-            var msg = Loc.GetString($"injector-component-deny-{blockComponent.BlockReason}");
-            Popup.PopupEntity(msg, target, user);
-
-            if (!_playerManager.TryGetSessionByEntity(target, out var session))
-                return;
-
-            _chat.ChatMessageToOne(
-                BlockInjectionDenyChannel,
-                msg,
-                msg,
-                EntityUid.Invalid,
-                false,
-                session.Channel);
-            return;
-        }
 
         bool isDrawing = injector.Comp.ToggleState == FillableOneTimeInjectorToggleMode.Draw;
 

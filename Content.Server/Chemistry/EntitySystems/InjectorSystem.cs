@@ -1,4 +1,3 @@
-using Content.Server.Abilities.Chitinid;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Server.Chat.Managers;
@@ -123,24 +122,6 @@ public sealed class InjectorSystem : SharedInjectorSystem
     /// </summary>
     private void InjectDoAfter(Entity<InjectorComponent> injector, EntityUid target, EntityUid user)
     {
-        if (TryComp<BlockInjectionComponent>(target, out var blockComponent)) // DeltaV
-        {
-            var msg = Loc.GetString($"injector-component-deny-{blockComponent.BlockReason}");
-            Popup.PopupEntity(msg, target, user);
-
-            if (!_playerManager.TryGetSessionByEntity(target, out var session))
-                return;
-
-            _chat.ChatMessageToOne(
-                BlockInjectionDenyChannel,
-                msg,
-                msg,
-                EntityUid.Invalid,
-                false,
-                session.Channel);
-            return;
-        }
-
         // Create a pop-up for the user
         if (injector.Comp.ToggleState == InjectorToggleMode.Draw)
         {

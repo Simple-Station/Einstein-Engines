@@ -632,18 +632,12 @@ trait-description-BionicPryArm =
 trait-name-Moffic = Moffic
 trait-description-Moffic =
     The language of the mothpeople borders on complete unintelligibility.
-    Some species with compatible mouthparts (IPC's speakers, Harpies' Larynx, and Chitinid's buzzing) are able to learn it.
-
-trait-name-Chittin = Chittin
-trait-description-Chittin =
-    A language consisting of clicks, buzzes, and some variety of harsh insect sounds.
-    Most of what makes up their speech comes from their antennae, making it a near-impossible language for those without to learn.
-    However, some species with compatible mouthparts (IPC's speakers, Harpies' Larynx, and Mothpeople's buzzing and antennae) are still able to learn it.
+    Some species with compatible mouthparts (IPC's speakers, Harpies' Larynx) are able to learn it.
 
 trait-name-IPCInefficientCogitator = Inefficient Cogitator
-trait-description-IPCInefficientCogitator = 
+trait-description-IPCInefficientCogitator =
     Due to running with an outdated driver, your positronic brain consumes much more power than standard.
-    Your power drain is increased by ~33% (1.5/s -> 2/s). 
+    Your power drain is increased by ~33% (1.5/s -> 2/s).
     (Note that this is exponentially worse for you with better power sources. A medium-capacity cell lasts you 6 mins instead of 8).
 
 trait-name-IPCBrittleBoneDisease = Defective Chassis
