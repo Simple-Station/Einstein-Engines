@@ -15654,3 +15654,16 @@ Entries:
   id: 7206
   time: '2025-04-27T21:54:34.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2331
+- author: Zeta_Null
+  changes:
+    - type: Add
+      message: >-
+        Added a surgical jacket, for Xelthia to perform surgery wearing in place
+        of gloves.
+    - type: Tweak
+      message: >-
+        Tweaked surgery to allow for jackets with gloves to be treated as
+        gloves.
+  id: 7207
+  time: '2025-04-28T08:15:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2340
