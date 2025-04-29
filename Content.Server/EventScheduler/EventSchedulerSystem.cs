@@ -18,13 +18,30 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
         return _id++ - 1;
     }
 
-    public DelayedEvent ScheduleEvent(EntityUid uid, object eventArgs, TimeSpan time)
+    private void Enqueue(DelayedEvent delayedEvent, TimeSpan time)
     {
-        var delayedEvent = new DelayedEvent(uid, eventArgs);
         var id = NextId();
 
         _eventList.Add(id, delayedEvent);
         _eventQueue.Enqueue(id, time);
+    }
+
+    private void Dequeue(out DelayedEvent? delayedEvent)
+    {
+        var id = _eventQueue.Dequeue();
+        delayedEvent = _eventList[id];
+        _eventList.Remove(id);
+    }
+
+    private void Dequeue()
+    {
+        Dequeue(out _);
+    }
+
+    public DelayedEvent ScheduleEvent(EntityUid uid, object eventArgs, TimeSpan time)
+    {
+        var delayedEvent = new DelayedEvent(uid, eventArgs);
+        Enqueue(delayedEvent, time);
 
         Log.Warning($"Scheduled event for {uid}");
 
@@ -58,7 +75,7 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
             // if the pointed event has been cancelled, get the next event
             if (current.Cancelled)
             {
-                _eventQueue.Dequeue();
+                Dequeue();
                 continue;
             }
 
@@ -66,7 +83,7 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
             // this is in case >1 event is raised at the same time, allowing them to trigger on the same frame
             if (_gameTiming.CurTime >= time)
             {
-                _eventQueue.Dequeue();
+                Dequeue();
                 RaiseLocalEvent(current.Uid, current.EventArgs);
 
                 Log.Warning($"Event raised for {current.Uid}!");
