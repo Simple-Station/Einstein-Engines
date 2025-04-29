@@ -233,7 +233,7 @@ namespace Content.Server.Forensics
                 return;
 
             var component = EnsureComp<ForensicsComponent>(target);
-            if (_inventory.TryGetSlotEntity(user, "gloves", out var gloves))
+            if (_inventory.TryGetSlotEntity(user, "gloves", out var gloves) || _inventory.TryGetSlotEntity(user, "outerClothing", out gloves))
             {
                 if (TryComp<FiberComponent>(gloves, out var fiber) && !string.IsNullOrEmpty(fiber.FiberMaterial))
                 {
