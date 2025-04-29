@@ -134,11 +134,11 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         PreferenceUnavailableMode.SpawnAsOverflow;
 
     // hullrot added
-    [DataField("bankBalance")]
-    public long BankBalance { get; private set; }
+    [DataField]
+    public long BankBalance { get; private set; } = 0;
 
-    [DataField("faction")]
-    public string? Faction { get; private set; }
+    [DataField]
+    public string Faction { get; private set; } = "";
 
 
     public HumanoidCharacterProfile(
@@ -169,7 +169,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         HashSet<string> traitPreferences,
         HashSet<LoadoutPreference> loadoutPreferences,
         long bankWealth,
-        string? proFaction
+        string proFaction
     )
     {
         Name = name;
@@ -233,7 +233,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             new HashSet<string>(other.TraitPreferences),
             new HashSet<LoadoutPreference>(other.LoadoutPreferences),
             other.BankBalance,
-            other?.Faction) { }
+            other.Faction) { }
 
     /// <summary>
     ///     Get the default humanoid character profile, using internal constant values.
@@ -468,7 +468,9 @@ public string Summary =>
             && _traitPreferences.SequenceEqual(other._traitPreferences)
             && LoadoutPreferences.SequenceEqual(other.LoadoutPreferences)
             && Appearance.MemberwiseEquals(other.Appearance)
-            && FlavorText == other.FlavorText;
+            && FlavorText == other.FlavorText
+            && Faction == other.Faction
+            && BankBalance == other.BankBalance;
     }
 
     public void EnsureValid(ICommonSession session, IDependencyCollection collection)
@@ -482,10 +484,18 @@ public string Summary =>
             speciesPrototype = prototypeManager.Index<SpeciesPrototype>(Species);
         }
 
+        bool validFaction = false;
         foreach (var proto in prototypeManager.EnumeratePrototypes<FactionPrototype>())
         {
-            if(proto.)
+            if (proto.ID == Faction)
+            {
+                validFaction = true;
+                break;
+            }
         }
+
+        if (!validFaction)
+            Faction = "";
         var sex = Sex switch
         {
             Sex.Male => Sex.Male,
@@ -671,6 +681,8 @@ public string Summary =>
         hashCode.Add((int) SpawnPriority);
         hashCode.Add((int) PreferenceUnavailable);
         hashCode.Add(Customspeciename);
+        hashCode.Add(Faction);
+        hashCode.Add(BankBalance);
         return hashCode.ToHashCode();
     }
 
