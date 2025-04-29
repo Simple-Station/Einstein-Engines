@@ -13,10 +13,7 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
     private static PriorityQueue<uint, TimeSpan> _eventQueue = new(_comparer);
     private static EventSchedulerComparer _comparer = new();
 
-    private uint NextId()
-    {
-        return _id++;
-    }
+    private uint NextId() { return _id++; }
 
     private void Enqueue(DelayedEvent delayedEvent, TimeSpan time)
     {
