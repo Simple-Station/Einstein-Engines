@@ -233,7 +233,7 @@ namespace Content.Server.Forensics
                 return;
 
             var component = EnsureComp<ForensicsComponent>(target);
-            if (_inventory.TryGetSlotEntity(user, "gloves", out var gloves) || _inventory.TryGetSlotEntity(user, "outerClothing", out gloves))
+            if (_inventory.TryGetSlotEntity(user, "gloves", out var gloves))
             {
                 if (TryComp<FiberComponent>(gloves, out var fiber) && !string.IsNullOrEmpty(fiber.FiberMaterial))
                 {
@@ -244,6 +244,22 @@ namespace Content.Server.Forensics
                 }
 
                 if (HasComp<FingerprintMaskComponent>(gloves))
+                {
+                    Dirty(target, component);
+                    return;
+                }
+            }
+            if (_inventory.TryGetSlotEntity(user, "outerClothing", out var outerClothing)) // Allows outerClothing to use this.
+            {
+                if (TryComp<FiberComponent>(outerClothing, out var fiber) && !string.IsNullOrEmpty(fiber.FiberMaterial))
+                {
+                    var fiberLocale = string.IsNullOrEmpty(fiber.FiberColor)
+                        ? Loc.GetString("forensic-fibers", ("material", fiber.FiberMaterial))
+                        : Loc.GetString("forensic-fibers-colored", ("color", fiber.FiberColor), ("material", fiber.FiberMaterial));
+                    component.Fibers.Add(fiberLocale + " ; " + fiber.Fiberprint);
+                }
+
+                if (HasComp<FingerprintMaskComponent>(outerClothing))
                 {
                     Dirty(target, component);
                     return;
