@@ -7,19 +7,23 @@ public abstract partial class SharedEventSchedulerSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _gameTiming = default!;
 
-    private static uint _index = 0;
+    private static uint _id = 0;
     private static Dictionary<uint, DelayedEvent> _eventList = new();
     private static PriorityQueue<uint, TimeSpan> _eventQueue = new(_comparer);
     private static EventSchedulerComparer _comparer = new();
 
+    private uint NextId()
+    {
+        return _id++ - 1;
+    }
+
     public DelayedEvent ScheduleEvent(EntityUid uid, object eventArgs, TimeSpan time)
     {
         var delayedEvent = new DelayedEvent(uid, eventArgs);
+        var id = NextId();
 
-        _eventList.Add(_index, delayedEvent);
-        _eventQueue.Enqueue(_index, time);
-
-        _index++;
+        _eventList.Add(id, delayedEvent);
+        _eventQueue.Enqueue(id, time);
 
         return delayedEvent;
     }
