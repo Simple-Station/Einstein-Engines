@@ -63,8 +63,15 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
                 but it should only iterate 1/frame if no events occur on the frame
                 REGARDLESS OF HOW MANY SYSTEMS USE IT <-------
         */
+        const uint failsafe = 1000;
+        uint iterationCount = 0;
         while (true)
         {
+            // this should never happen
+            iterationCount++;
+            if (iterationCount >= failsafe)
+                break;
+
             // mostly a getter for values we're dealing with, if there are no queued events break
             if (!_eventQueue.TryPeek(out var index, out var time)
                 || !_eventList.TryGetValue(index, out var current))
