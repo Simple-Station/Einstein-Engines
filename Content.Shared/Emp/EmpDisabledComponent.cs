@@ -1,3 +1,5 @@
+using Content.Shared.EventScheduler;
+
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
@@ -26,4 +28,10 @@ public sealed partial class EmpDisabledComponent : Component
     /// </summary>
     [AutoPausedField]
     public TimeSpan TargetTime = TimeSpan.Zero;
+
+    /// <summary>
+    /// Stores the last delayed event (EmpDisableRemoval) to extend its duration when stacking EMP
+    /// </summary>
+    [DataField]
+    public DelayedEvent? LastDelayedEvent;
 }
