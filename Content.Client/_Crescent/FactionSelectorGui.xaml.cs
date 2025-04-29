@@ -53,7 +53,7 @@ namespace Content.Client._Crescent
         public HumanoidCharacterProfile? Profile;
         public int? index;
 
-        public event Action? Save;
+        public event Action<HumanoidCharacterProfile, int >? Save;
         private BoxContainer _factionList => CFactionList;
 
         public void SetProfile(HumanoidCharacterProfile? profile, int? slot)
@@ -138,12 +138,13 @@ namespace Content.Client._Crescent
 
         public void SaveCharacter()
         {
-            if (Profile == null)
+            if (Profile is null)
                 return;
             if (!_prefsMan.ServerDataLoaded)
                 return;
-
-            Save?.Invoke();
+            if (index is null)
+                return;
+            Save?.Invoke(Profile, index.Value);
             gui.SwitchToCharacterEditor();
         }
 

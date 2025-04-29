@@ -193,6 +193,14 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         ReloadCharacterSetup();
     }
 
+    private void SaveFaction(HumanoidCharacterProfile profile, int index)
+    {
+        if (_preferencesManager.Preferences?.SelectedCharacter is null)
+            return;
+        _preferencesManager.UpdateCharacter(profile, index);
+        ReloadCharacterSetup();
+    }
+
     private (CharacterSetupGui, HumanoidProfileEditor) EnsureGui()
     {
         if (_characterSetup != null && _profileEditor != null)
@@ -230,7 +238,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         };
 
         _profileEditor.Save += SaveProfile;
-        _characterSetup.FactionSelector.Save += SaveProfile;
+        _characterSetup.FactionSelector.Save += (profile,index) => SaveFaction(profile,index);
 
         _characterSetup.SelectCharacter += args =>
         {

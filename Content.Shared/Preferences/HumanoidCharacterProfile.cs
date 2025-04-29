@@ -483,7 +483,6 @@ public string Summary =>
             Species = SharedHumanoidAppearanceSystem.DefaultSpecies;
             speciesPrototype = prototypeManager.Index<SpeciesPrototype>(Species);
         }
-
         bool validFaction = false;
         foreach (var proto in prototypeManager.EnumeratePrototypes<FactionPrototype>())
         {
@@ -496,6 +495,7 @@ public string Summary =>
 
         if (!validFaction)
             Faction = "";
+
         var sex = Sex switch
         {
             Sex.Male => Sex.Male,
