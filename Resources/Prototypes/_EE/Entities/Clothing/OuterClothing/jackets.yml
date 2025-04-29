@@ -10,6 +10,8 @@
   - type: Clothing
     sprite: _EE/Clothing/InsulatedJacket/insulated_jacket.rsi
   - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-insulative
   - type: FingerprintMask
 # if species-specific sprites are fixed to not have displacement maps apply to them, this will break. 
 # replacing the equipped-OUTERCLOTHING-xelthia.png file in the RSI with the one in the InsulatedJacket/insulated_jacket_unmodified folder would fix this.
