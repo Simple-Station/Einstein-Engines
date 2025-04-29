@@ -16,6 +16,7 @@
     - Plasmaman
     - Chitinid
     - Tajaran
+    - Vulpkanin
     - Xelthia
     # ImpStation additions
     - Thaven
@@ -79,6 +80,11 @@
   id: Plasmaman
   name: species-name-plasmaman
   text: "/ServerInfo/Guidebook/Mobs/Plasmaman.xml"
+
+- type: guideEntry
+  id: Vulpkanin
+  name: species-name-vulpkanin
+  text: "/ServerInfo/Guidebook/Mobs/DeltaV/Vulpkanin.xml"
   
 - type: guideEntry
   id: Xelthia
