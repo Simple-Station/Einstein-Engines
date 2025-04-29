@@ -2,6 +2,7 @@ using Content.Server.Explosion.EntitySystems;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Radio;
+using Content.Server.EventScheduler;
 using Content.Shared.Emp;
 using Content.Shared.Examine;
 using Robust.Server.GameObjects;
@@ -13,6 +14,7 @@ public sealed class EmpSystem : SharedEmpSystem
 {
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly EventSchedulerSystem _eventScheduler = default!;
 
     public const string EmpPulseEffectPrototype = "EffectEmpPulse";
 
@@ -66,7 +68,9 @@ public sealed class EmpSystem : SharedEmpSystem
     /// <param name="duration">The duration of the EMP effects.</param>
     public void DoEmpEffects(EntityUid uid, float energyConsumption, float duration)
     {
-        var ev = new EmpPulseEvent(energyConsumption, false, false, TimeSpan.FromSeconds(duration));
+        TimeSpan delay = TimeSpan.FromSeconds(duration);
+
+        var ev = new EmpPulseEvent(energyConsumption, false, false, delay);
         RaiseLocalEvent(uid, ref ev);
         if (ev.Affected)
         {
@@ -80,7 +84,11 @@ public sealed class EmpSystem : SharedEmpSystem
             {
                 disabled.DisabledUntil = Timing.CurTime;
             }
-            disabled.DisabledUntil = disabled.DisabledUntil + TimeSpan.FromSeconds(duration);
+            disabled.DisabledUntil = disabled.DisabledUntil + delay;
+
+            // TODO: use EventSchedulerSystem to remove EmpComponent after a delay
+            var dEv = new EmpDisabledRemoved();
+            //_eventScheduler.Enqueue(dEv, delay);
 
             /// i tried my best to go through the Pow3r server code but i literally couldn't find in relation to PowerNetworkBatteryComponent that uses the event system
             /// the code is otherwise too esoteric for my innocent eyes
@@ -91,6 +99,7 @@ public sealed class EmpSystem : SharedEmpSystem
         }
     }
 
+    /*
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -111,6 +120,7 @@ public sealed class EmpSystem : SharedEmpSystem
             }
         }
     }
+    */
 
     private void OnExamine(EntityUid uid, EmpDisabledComponent component, ExaminedEvent args)
     {
