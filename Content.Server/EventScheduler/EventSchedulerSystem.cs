@@ -41,7 +41,7 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
         var delayedEvent = new DelayedEvent(uid, eventArgs);
         Enqueue(delayedEvent, time);
 
-        Log.Warning($"Scheduled {eventArgs.GetType()} event for {uid}");
+        Log.Debug($"Scheduled {eventArgs.GetType()} event for {uid}");
 
         return delayedEvent;
     }
@@ -81,7 +81,7 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
             {
                 Dequeue();
 
-                Log.Warning($"Event cancelled for {current.Uid}!");
+                Log.Debug($"Event cancelled for {current.Uid}!");
                 continue;
             }
 
@@ -92,7 +92,7 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
                 Dequeue();
                 RaiseLocalEvent(current.Uid, current.EventArgs);
 
-                Log.Warning($"Event raised for {current.Uid}!");
+                Log.Debug($"Event raised for {current.Uid}!");
                 continue;
             }
 
