@@ -8,16 +8,25 @@ public abstract partial class SharedEventSchedulerSystem : EntitySystem
     [Dependency] private readonly IGameTiming _gameTiming = default!;
 
     private static uint _index = 0;
-    private static Dictionary<uint, object> _eventList = new();
-    private static PriorityQueue<object, TimeSpan> _eventQueue = new(_comparer);
+    private static Dictionary<uint, DelayedEvent> _eventList = new();
+    private static PriorityQueue<uint, TimeSpan> _eventQueue = new(_comparer);
     private static EventSchedulerComparer _comparer = new();
 
-    public void Enqueue(object delayedEvent, TimeSpan delay)
+    public DelayedEvent ScheduleEvent(EntityUid uid, object eventArgs, TimeSpan time)
     {
+        var delayedEvent = new DelayedEvent(uid, eventArgs);
+
         _eventList.Add(_index, delayedEvent);
-        _eventQueue.Enqueue(_index, _gameTiming.CurTime + delay);
+        _eventQueue.Enqueue(_index, time);
 
         _index++;
+
+        return delayedEvent;
+    }
+
+    public DelayedEvent DelayEvent(EntityUid uid, object eventArgs, TimeSpan delay)
+    {
+        return ScheduleEvent(uid, eventArgs, _gameTiming.CurTime + delay);
     }
 
     public override void Update(float frameTime)
@@ -42,3 +51,5 @@ public sealed class EventSchedulerComparer : IComparer<TimeSpan>
         return 0;
     }
 }
+
+public record struct DelayedEvent(EntityUid Uid, object EventArgs, bool Cancelled = false) { }
