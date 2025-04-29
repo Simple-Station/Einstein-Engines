@@ -38,19 +38,21 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
         Dequeue(out _);
     }
 
-    public DelayedEvent ScheduleEvent(EntityUid uid, object eventArgs, TimeSpan time)
+    public DelayedEvent ScheduleEvent<TEvent>(EntityUid uid, ref TEvent eventArgs, TimeSpan time)
+        where TEvent : notnull
     {
         var delayedEvent = new DelayedEvent(uid, eventArgs);
         Enqueue(delayedEvent, time);
 
-        Log.Warning($"Scheduled event for {uid}");
+        Log.Warning($"Scheduled {eventArgs.GetType()} event for {uid}");
 
         return delayedEvent;
     }
 
-    public DelayedEvent DelayEvent(EntityUid uid, object eventArgs, TimeSpan delay)
+    public DelayedEvent DelayEvent<TEvent>(EntityUid uid, ref TEvent eventArgs, TimeSpan delay)
+        where TEvent : notnull
     {
-        return ScheduleEvent(uid, eventArgs, _gameTiming.CurTime + delay);
+        return ScheduleEvent(uid, ref eventArgs, _gameTiming.CurTime + delay);
     }
 
     public override void Update(float frameTime)
@@ -77,12 +79,12 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
                 || !_eventList.TryGetValue(index, out var current))
                 break;
 
-            Log.Debug($"Stepped at frame {_gameTiming.CurTick} with delayed events: This should only occur once per frame unless multiple events take place");
-
             // if the pointed event has been cancelled, get the next event
             if (current.Cancelled)
             {
                 Dequeue();
+
+                Log.Warning($"Event cancelled for {current.Uid}!");
                 continue;
             }
 
