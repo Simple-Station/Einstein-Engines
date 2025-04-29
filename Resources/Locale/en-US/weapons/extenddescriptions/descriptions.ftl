@@ -1,5 +1,5 @@
 # Legality Notices
-gun-legality-salvage = This weapon is licensed for use in planetary expeditions. It is unlawful to brandish this weapon aboard NanoTrasen stations, and may be confiscated by Security if removed from the station's Salvage Department.
+gun-legality-salvage = This weapon is licensed solely for use in planetary expeditions. Possession of this weapon anywhere aboard a NanoTrasen station, outside of authorized Salvage operations, is illegal and may result in confiscation and criminal prosecution.
 
 # Weapon Modifiers
 gun-suppressed = This weapon comes with a built-in suppressor. It will be impossible to hear at a distance.

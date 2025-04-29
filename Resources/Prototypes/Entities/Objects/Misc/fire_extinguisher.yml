@@ -44,9 +44,9 @@
     damage:
       types:
         Blunt: 8
-    heavyRateModifier: 1.25
+    heavyRateModifier: 1.5
     heavyDamageBaseModifier: 2
-    heavyStaminaCost: 7.5
+    heavyStaminaCost: 5
     maxTargets: 6
     soundHit:
       path: /Audio/Weapons/smash.ogg
