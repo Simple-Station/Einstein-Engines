@@ -89,7 +89,7 @@ public sealed class EmpSystem : SharedEmpSystem
 
             // TODO: use EventSchedulerSystem to remove EmpComponent after a delay
             var dEv = new EmpDisabledRemoved();
-            _eventScheduler.DelayEvent(uid, dEv, delay);
+            var delayedEvent = _eventScheduler.DelayEvent(uid, ref dEv, delay);
 
             /// i tried my best to go through the Pow3r server code but i literally couldn't find in relation to PowerNetworkBatteryComponent that uses the event system
             /// the code is otherwise too esoteric for my innocent eyes
