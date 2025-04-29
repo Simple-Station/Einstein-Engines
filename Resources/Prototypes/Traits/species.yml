@@ -187,7 +187,7 @@
         - IPC
 
 - type: trait
-  id: FaultyWaterproofing
+  id: IPCFaultyWaterproofing
   category: Physical
   points: 3
   functions:
@@ -222,7 +222,7 @@
         - IPC
 
 - type: trait
-  id: FragileCircuits
+  id: IPCFragileCircuits
   category: Physical
   points: 4 # shock is rare as-is, maybe raise if it becomes more common
   functions:

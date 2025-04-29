@@ -652,14 +652,14 @@ trait-description-IPCBrittleBoneDisease =
     This trait reduces your threshold for death by 60 points.
     (Just as the normal version, it halves the threshold. IPCs cannot be crit, so it instead makes you die 60 points sooner.)
 
-trait-name-FaultyWaterproofing = Faulty Waterproofing
-trait-description-FaultyWaterproofing =
+trait-name-IPCFaultyWaterproofing = Faulty Waterproofing
+trait-description-IPCFaultyWaterproofing =
     Either due to damage or cheap construction, your chassis is not waterproof.
     You take [color=orange]Shock[/color] damage any time you are splashed with water.
 faultyWaterproofing-damage-popup = The water causes your circuits to short out.
 
-trait-name-FragileCircuits = Fragile Circuits
-trait-description-FragileCircuits =
+trait-name-IPCFragileCircuits = Fragile Circuits
+trait-description-IPCFragileCircuits =
     Your chassis is particularly bad at handling electric discharges.
     You immediately shut down any time you take [color=orange]Shock[/color] damage and must be rebooted.
 fragileCircuits-kill-popup = {$name}'s circuits shut down from short-circuiting!
