@@ -41,6 +41,7 @@ public abstract partial class SharedEventSchedulerSystem : EntitySystem
             huh?? weren't you supposed to make an optimised system to replace frameTime?
             -   no, this replaces EQE, uses frametime to stay in sync with game tick
                 but it should only iterate 1/frame if no events occur on the frame
+                REGARDLESS OF HOW MANY SYSTEMS USE IT <-------
         */
         while (true)
         {
