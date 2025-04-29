@@ -15716,3 +15716,14 @@ Entries:
   id: 7212
   time: '2025-04-29T19:59:45.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2353
+- author: Zeta_Null
+  changes:
+    - type: Add
+      message: >-
+        Added Chitinid visuals to moth markings, to make their overall removal
+        something that causes less trouble
+    - type: Remove
+      message: Removed Chitinids from the guidebook
+  id: 7213
+  time: '2025-04-29T19:59:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2354
