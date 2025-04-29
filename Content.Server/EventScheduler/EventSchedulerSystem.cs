@@ -26,6 +26,8 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
         _eventList.Add(id, delayedEvent);
         _eventQueue.Enqueue(id, time);
 
+        Log.Warning($"Scheduled event for {uid}");
+
         return delayedEvent;
     }
 
@@ -51,6 +53,8 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
                 || !_eventList.TryGetValue(index, out var current))
                 break;
 
+            Log.Debug($"Stepped at frame {_gameTiming.CurFrame} with delayed events: This should only occur once per frame unless multiple events take place");
+
             // if the pointed event has been cancelled, get the next event
             if (current.Cancelled)
             {
@@ -64,6 +68,8 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
             {
                 _eventQueue.Dequeue();
                 RaiseLocalEvent(current.Uid, current.EventArgs);
+
+                Log.Warning($"Event raised for {current.Uid}!");
                 continue;
             }
 
