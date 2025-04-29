@@ -23,6 +23,7 @@ public sealed class EmpSystem : SharedEmpSystem
         base.Initialize();
         SubscribeLocalEvent<EmpDisabledComponent, ExaminedEvent>(OnExamine);
         SubscribeLocalEvent<EmpOnTriggerComponent, TriggerEvent>(HandleEmpTrigger);
+        SubscribeLocalEvent<EmpDisabledComponent, EmpDisabledRemoved>(OnEmpDisabledRemoved);
 
         SubscribeLocalEvent<EmpDisabledComponent, RadioSendAttemptEvent>(OnRadioSendAttempt);
         SubscribeLocalEvent<EmpDisabledComponent, RadioReceiveAttemptEvent>(OnRadioReceiveAttempt);
@@ -99,28 +100,17 @@ public sealed class EmpSystem : SharedEmpSystem
         }
     }
 
-    /*
-    public override void Update(float frameTime)
+    private void OnEmpDisabledRemoved(EntityUid uid, EmpDisabledComponent component, EmpDisabledRemoved args)
     {
-        base.Update(frameTime);
+        RemComp<EmpDisabledComponent>(uid);
+        var ev = new EmpDisabledRemoved();
+        RaiseLocalEvent(uid, ref ev);
 
-        var query = EntityQueryEnumerator<EmpDisabledComponent>();
-        while (query.MoveNext(out var uid, out var comp))
+        if (TryComp<PowerNetworkBatteryComponent>(uid, out var powerNetBattery))
         {
-            if (comp.DisabledUntil < Timing.CurTime)
-            {
-                RemComp<EmpDisabledComponent>(uid);
-                var ev = new EmpDisabledRemoved();
-                RaiseLocalEvent(uid, ref ev);
-
-                if (TryComp<PowerNetworkBatteryComponent>(uid, out var powerNetBattery))
-                {
-                    powerNetBattery.CanCharge = true;
-                }
-            }
+            powerNetBattery.CanCharge = true;
         }
     }
-    */
 
     private void OnExamine(EntityUid uid, EmpDisabledComponent component, ExaminedEvent args)
     {
