@@ -45,7 +45,7 @@ public abstract partial class SharedEventSchedulerSystem : EntitySystem
         */
         while (true)
         {
-            // mostly a getter for values we're dealing with, if we can't get them for whatever reason something is wrong
+            // mostly a getter for values we're dealing with, if there are no queued events break
             if (!_eventQueue.TryPeek(out var index, out var time)
                 || !_eventList.TryGetValue(index, out var current))
                 break;
