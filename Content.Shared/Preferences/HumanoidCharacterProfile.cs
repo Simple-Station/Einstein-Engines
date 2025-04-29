@@ -482,6 +482,10 @@ public string Summary =>
             speciesPrototype = prototypeManager.Index<SpeciesPrototype>(Species);
         }
 
+        foreach (var proto in prototypeManager.EnumeratePrototypes<FactionPrototype>())
+        {
+            if(proto.)
+        }
         var sex = Sex switch
         {
             Sex.Male => Sex.Male,
