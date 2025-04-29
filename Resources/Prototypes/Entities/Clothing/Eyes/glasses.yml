@@ -161,6 +161,7 @@
   - type: Clothing
     sprite: Clothing/Eyes/Glasses/jamjar.rsi
   - type: VisionCorrection
+    visionBonus: -3.5 #a bit stronger
   - type: Tag
     tags:
     - HamsterWearable

@@ -15654,3 +15654,43 @@ Entries:
   id: 7206
   time: '2025-04-27T21:54:34.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2331
+- author: Zeta_Null
+  changes:
+    - type: Add
+      message: >-
+        Added a surgical jacket, for Xelthia to perform surgery wearing in place
+        of gloves.
+    - type: Tweak
+      message: >-
+        Tweaked surgery to allow for jackets with gloves to be treated as
+        gloves.
+  id: 7207
+  time: '2025-04-28T08:15:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2340
+- author: Zeta_Null
+  changes:
+    - type: Fix
+      message: 'Fixed the Linoleum floor texture. '
+  id: 7208
+  time: '2025-04-28T08:16:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2346
+- author: wachte1
+  changes:
+    - type: Fix
+      message: >-
+        Changelings are now correctly identified as Solo Antagonists in the
+        admin overlay!
+  id: 7209
+  time: '2025-04-28T18:45:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2350
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: Made Wheelchair User and Blindness permanent
+    - type: Tweak
+      message: Made Shortsighted less visually intense
+    - type: Tweak
+      message: Made glasses counteract eye damage better
+  id: 7210
+  time: '2025-04-28T18:46:20.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2327
