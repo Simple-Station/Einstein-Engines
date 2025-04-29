@@ -15707,3 +15707,12 @@ Entries:
   id: 7211
   time: '2025-04-29T17:11:37.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2347
+- author: VMSolidus
+  changes:
+    - type: Remove
+      message: >-
+        Chitinids have been disabled due to being a server performance
+        nightmare.
+  id: 7212
+  time: '2025-04-29T19:59:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2353
