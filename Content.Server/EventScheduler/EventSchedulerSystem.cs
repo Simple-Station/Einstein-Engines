@@ -70,7 +70,7 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
                 || !_eventList.TryGetValue(index, out var current))
                 break;
 
-            Log.Debug($"Stepped at frame {_gameTiming.CurFrame} with delayed events: This should only occur once per frame unless multiple events take place");
+            Log.Debug($"Stepped at frame {_gameTiming.CurTick} with delayed events: This should only occur once per frame unless multiple events take place");
 
             // if the pointed event has been cancelled, get the next event
             if (current.Cancelled)
