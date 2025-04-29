@@ -26,4 +26,4 @@ public sealed class EventSchedulerComparer : IComparer<TimeSpan>
     }
 }
 
-public record struct DelayedEvent(EntityUid Uid, object EventArgs, bool Cancelled = false) { }
+public record struct DelayedEvent(EntityUid Uid, object EventArgs, bool Cancelled = false);

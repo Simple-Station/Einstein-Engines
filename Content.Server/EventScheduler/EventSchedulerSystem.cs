@@ -15,7 +15,7 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
 
     private uint NextId()
     {
-        return _id++ - 1;
+        return _id++;
     }
 
     private void Enqueue(DelayedEvent delayedEvent, TimeSpan time)
