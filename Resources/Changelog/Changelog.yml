@@ -15694,3 +15694,36 @@ Entries:
   id: 7210
   time: '2025-04-28T18:46:20.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2327
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        SAN Deserters now have actual equipment. Their dropship is also now
+        airtight. 
+    - type: Tweak
+      message: >-
+        SAN Deserters no longer speak Tau-Ceti Basic. They can only speak Sol
+        Common.
+  id: 7211
+  time: '2025-04-29T17:11:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2347
+- author: VMSolidus
+  changes:
+    - type: Remove
+      message: >-
+        Chitinids have been disabled due to being a server performance
+        nightmare.
+  id: 7212
+  time: '2025-04-29T19:59:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2353
+- author: Zeta_Null
+  changes:
+    - type: Add
+      message: >-
+        Added Chitinid visuals to moth markings, to make their overall removal
+        something that causes less trouble
+    - type: Remove
+      message: Removed Chitinids from the guidebook
+  id: 7213
+  time: '2025-04-29T19:59:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2354
