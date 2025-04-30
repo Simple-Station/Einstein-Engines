@@ -148,6 +148,13 @@
       board: !type:Container
         ents: []
       disk_slot: !type:ContainerSlot {}
+  - type: NamedModules
+    buttonNames:
+      - "Module A"
+      - "Module B"
+      - "Module C"
+      - "Module D"
+      - "Module E"
 
 - type: entity
   parent: BaseComputerShuttle

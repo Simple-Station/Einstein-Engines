@@ -23,6 +23,9 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
     public event Action<NetEntity, NetEntity>? DockRequest;
     public event Action<NetEntity>? UndockRequest;
 
+    // hullrot edit - SPCR
+    public NavScreen NavScreen => NavContainer;
+
     public ShuttleConsoleWindow()
     {
         RobustXamlLoader.Load(this);

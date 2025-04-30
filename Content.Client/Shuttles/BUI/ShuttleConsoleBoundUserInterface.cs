@@ -27,6 +27,7 @@ public sealed partial class ShuttleConsoleBoundUserInterface : BoundUserInterfac
         _window.DockRequest += OnDockRequest;
         _window.UndockRequest += OnUndockRequest;
         NfOpen(); // Frontier
+        HullrotOpen();
     }
 
     private void OnUndockRequest(NetEntity entity)

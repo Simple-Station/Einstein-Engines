@@ -26,18 +26,25 @@ public sealed class NavInterfaceState
     /// </summary>
     public InertiaDampeningMode DampeningMode;
 
+    /// <summary>
+    /// Hullrot - target console for this UI state
+    /// </summary>
+    public NetEntity console;
+
     public NavInterfaceState(
         float maxRange,
         NetCoordinates? coordinates,
         Angle? angle,
         Dictionary<NetEntity, List<DockingPortState>> docks,
-        InertiaDampeningMode dampeningMode) // Frontier: add dampeningMode
+        InertiaDampeningMode dampeningMode, // Frontier: add dampeningMode
+        NetEntity Console)
     {
         MaxRange = maxRange;
         Coordinates = coordinates;
         Angle = angle;
         Docks = docks;
         DampeningMode = dampeningMode; // Frontier
+        console = Console;
     }
 }
 

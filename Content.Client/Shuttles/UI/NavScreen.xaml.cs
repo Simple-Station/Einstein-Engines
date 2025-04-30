@@ -30,6 +30,7 @@ public sealed partial class NavScreen : BoxContainer
         DockToggle.Pressed = NavRadar.ShowDocks;
 
         NfInitialize(); // Frontier Initialization for the NavScreen
+        HullrotInitialize();
     }
 
     public void SetShuttle(EntityUid? shuttle)
@@ -52,6 +53,7 @@ public sealed partial class NavScreen : BoxContainer
     public void UpdateState(NavInterfaceState scc)
     {
         NavRadar.UpdateState(scc);
+        HullrotUpdateState(scc);
         NfUpdateState(); // Frontier Update State
     }
 
