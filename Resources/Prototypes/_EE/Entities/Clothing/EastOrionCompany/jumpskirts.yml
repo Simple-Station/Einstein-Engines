@@ -2,13 +2,12 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtHydroponicsEOC
   name: New-Nederic jumpskirt
-  description: A jumpskirt worn by the agricultural workforce of the Ease-Orion Company.
+  description: A jumpskirt worn by the agricultural workforce of the East-Orion Company.
   components:
   - type: Sprite
     sprite: _EE/Clothing/Uniforms/Jumpskirts/hydro_eoc.rsi
   - type: Clothing
     sprite: _EE/Clothing/Uniforms/Jumpskirts/hydro_eoc.rsi
-
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtSecurityEOC
