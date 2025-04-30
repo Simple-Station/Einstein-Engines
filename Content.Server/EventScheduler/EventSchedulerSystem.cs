@@ -12,8 +12,8 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
     private uint NextId() { return _id++; }
 
     private static Dictionary<uint, DelayedEvent> _eventList = new();
-    private static EventSchedulerComparer _comparer = new();
     private static PriorityQueue<uint, TimeSpan> _eventQueue = new(_comparer);
+    private static EventSchedulerComparer _comparer = new();
 
     private void Enqueue(DelayedEvent delayedEvent, TimeSpan time)
     {
