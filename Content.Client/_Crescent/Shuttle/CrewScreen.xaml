@@ -1,0 +1,12 @@
+<controls:BoxContainer Visible="False"
+       HorizontalExpand="True"
+       xmlns:controls="https://spacestation14.io"
+       xmlns:controls1="clr-namespace:Content.Client.UserInterface.Controls"
+       xmlns:ui="clr-namespace:Content.Client.Shuttles.UI"
+       Orientation="Vertical">
+
+    <controls:Label Text="Target ID" />
+    <controls:Button Name="targetIdButton" Access="Public" Text="Employee ID slot"/>
+    <controls:BoxContainer Name="accesButtons"></controls:BoxContainer>
+
+</controls:BoxContainer>

@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Client._Crescent.Shuttle;
 using Content.Client.Computer;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Shuttles.BUIStates;
@@ -23,8 +24,6 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
     public event Action<NetEntity, NetEntity>? DockRequest;
     public event Action<NetEntity>? UndockRequest;
 
-    // hullrot edit - SPCR
-    public NavScreen NavScreen => NavContainer;
 
     public ShuttleConsoleWindow()
     {
@@ -67,6 +66,7 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
         };
 
         NfInitialize(); // Frontier Initialization for the ShuttleConsoleWindow
+        HullrotInitialize(group);
     }
 
     private void ClearModes(ShuttleConsoleMode mode)
@@ -117,6 +117,9 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
             case ShuttleConsoleMode.Dock:
                 DockContainer.Visible = true;
                 break;
+            case ShuttleConsoleMode.Crew:
+                CrewContainer.Visible = true;
+                break;
             default:
                 throw new NotImplementedException();
         }
@@ -137,6 +140,7 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
         Nav,
         Map,
         Dock,
+        Crew,
     }
 
     public void UpdateState(EntityUid owner, ShuttleBoundUserInterfaceState cState)
