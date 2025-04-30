@@ -1119,6 +1119,9 @@
   id: PlantSampleTaker
 
 - type: Tag
+  id: PlantSampleTakerHighQuality
+
+- type: Tag
   id: HydroponicsToolClippers
 
 - type: Tag

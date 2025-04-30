@@ -42,4 +42,8 @@ employer_description_orionexpress = Orion Express is a manufactured megacorporat
 
 employer_name_pmcg = PMCG
 employer_name_pmcg_command = PMCG Command
-employer_description_pmcg = A coalition of security contractors in service of the Stellar Corporate Conglomerate, the Private Military Contracting Group is one of the elements born from the necessity of protecting an ever-growing corporate empire. Gathering mercenaries from all across the galaxy, the Private Military Contracting Group deploys a diverse force to anywhere they are needed.
+employer_description_pmcg = A coalition of security contractors, the Private Military Contracting Group is one of the elements born from the necessity of protecting an ever-growing corporate empire. Gathering mercenaries from all across the galaxy, the Private Military Contracting Group deploys a diverse force to anywhere they are needed.
+
+employer_name_eastorioncompany = East-Orion Company
+employer_name_eastorioncompany_command = East-Orion Company Command
+employer_description_eastorioncompany = A Nederlandic initiative to exploit an untapped market in 2157, the United East-Orion Company was an old idea made new. Rooted in tradition that went back centuries, two large agricultural corporations — the New-Nederic agricultural machinery manufacturer and the Farmer's Civil Union — came together under one banner to offer planet-honed skillsets to a growing number of corporate space stations.
