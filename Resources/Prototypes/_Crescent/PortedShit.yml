@@ -456,3 +456,28 @@
   clippedValue: 0
   remapTo0Through1: true
   inputMultiplier: 60 # Makes wreck concentration very low noise at scale.
+
+- type: sourcePort
+  id: Group1
+  name: First Module
+  description: First
+
+- type: sourcePort
+  id: Group2
+  name: Second Module
+  description: Second
+
+- type: sourcePort
+  id: Group3
+  name: Third Module
+  description: Third
+
+- type: sourcePort
+  id: Group4
+  name: Fourth Module
+  description: Fourth
+
+- type: sourcePort
+  id: Group5
+  name: Fifth module
+  description: Fifth
