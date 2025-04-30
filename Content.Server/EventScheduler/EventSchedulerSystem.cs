@@ -144,7 +144,10 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
             // this should never happen
             iterationCount++;
             if (iterationCount >= failsafe)
+            {
+                Log.Warning($"Event processing hit safety limit of {failsafe} events in one frame - possible infinite loop detected!");
                 break;
+            }
 
             // mostly a getter for values we're dealing with, if there are no queued events break
             if (!_eventQueue.TryPeek(out var index, out var time)
@@ -165,7 +168,9 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
             if (_gameTiming.CurTime >= time)
             {
                 Dequeue();
-                RaiseLocalEvent(current.Uid, current.EventArgs);
+
+                try { RaiseLocalEvent(current.Uid, current.EventArgs); }
+                catch (Exception ex) { Log.Error($"Error processing event for entity {current.Uid}: {ex}"); }
 
                 Log.Debug($"Raised event '{current.EventArgs.GetType()}' at uid: ({current.Uid})!");
                 continue;
