@@ -26,6 +26,7 @@
     stealGroup: IDCard
   - type: NanoChatCard # DeltaV
   - type: MiningPoints # DeltaV
+  - type: DynamicCodeHolder
 
 #IDs with layers
 

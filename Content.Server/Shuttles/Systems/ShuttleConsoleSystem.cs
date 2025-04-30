@@ -26,6 +26,7 @@ using Content.Shared.Movement.Systems;
 using Content.Shared.NamedModules.Components;
 using Content.Shared.PointCannons;
 using Content.Shared.Power;
+using Content.Shared.Shipyard.Components;
 using Content.Shared.Shuttles.UI.MapObjects;
 using Content.Shared.Timing;
 using Robust.Server.GameObjects;
@@ -37,6 +38,8 @@ using Content.Shared.UserInterface;
 using Robust.Server.Audio;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 
 
 namespace Content.Server.Shuttles.Systems;
@@ -59,6 +62,9 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     [Dependency] private readonly AccessSystem _acces = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly DeviceLinkSystem _link = default!;
+    [Dependency] private readonly MetaDataSystem _meta = default!;
+    [Dependency] private readonly IPrototypeManager _manager = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
 
     [Dependency] private readonly _Lavaland.Shuttles.Systems.DockingConsoleSystem _dockingConsole = default!; // Lavaland Change: FTL
@@ -237,12 +243,6 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     {
         if (component.accesState == ShuttleConsoleAccesState.NotDynamic)
             return;
-        if (component.accesState != ShuttleConsoleAccesState.NoAcces)
-        {
-            component.accesState = ShuttleConsoleAccesState.NoAcces;
-            _popup.PopupEntity("Console locked", uid, args.User, PopupType.Small);
-            return;
-        }
 
         if (!_crescent.getGridOfEntity(uid, out var gridId))
             return;
@@ -254,8 +254,15 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         if (component.captainIdentifier is null || component.pilotIdentifier is null)
             return;
 
-        if (_codes.hasKey(dynamicAccesComponent.mappedCodes[component.captainIdentifier], dynIdComp))
+        if (_codes.hasKey(dynamicAccesComponent.mappedCodes[component.captainIdentifier],dynIdComp))
         {
+            if (component.accesState != ShuttleConsoleAccesState.NoAcces)
+            {
+                component.accesState = ShuttleConsoleAccesState.NoAcces;
+                _popup.PopupEntity("Console locked", uid, args.User, PopupType.Small);
+                return;
+            }
+
             component.accesState = ShuttleConsoleAccesState.CaptainAcces;
             _audio.PlayPvs("/Audio/Machines/high_tech_confirm.ogg", uid, AudioParams.Default);
             _popup.PopupEntity("Console unlocked. Welcome onboard, captain.", uid, args.User);
@@ -265,17 +272,36 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
 
         if (_codes.hasKey(dynamicAccesComponent.mappedCodes[component.pilotIdentifier], dynIdComp))
         {
+            if (component.accesState != ShuttleConsoleAccesState.NoAcces)
+            {
+                component.accesState = ShuttleConsoleAccesState.NoAcces;
+                _popup.PopupEntity("Console locked", uid, args.User, PopupType.Small);
+                return;
+            }
             component.accesState = ShuttleConsoleAccesState.PilotAcces;
             _audio.PlayPvs("/Audio/Machines/high_tech_confirm.ogg", uid, AudioParams.Default);
             _popup.PopupEntity("Authorized to console as pilot.", uid, args.User);
             UpdateState(uid, component);
         }
+
+
     }
 
     private void OnComponentInit(EntityUid uid, ShuttleConsoleComponent component, ComponentInit args)
     {
         _itemSlotsSystem.AddItemSlot(uid, SharedShuttleConsoleComponent.IdSlotName, component.targetIdSlot);
         _itemSlotsSystem.SetLock(uid, SharedShuttleConsoleComponent.IdSlotName,true);
+        var grid = Transform(uid).GridUid;
+        if (grid is  null)
+            return;
+        if (TryComp<DynamicCodeHolderComponent>(grid.Value, out var accesComp))
+        {
+            component.accesState = ShuttleConsoleAccesState.NoAcces;
+        }
+        else
+        {
+            component.accesState = ShuttleConsoleAccesState.NotDynamic;
+        }
     }
 
     private void OnComponentRemove(EntityUid uid, ShuttleConsoleComponent component, ComponentRemove args)
@@ -314,7 +340,6 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
             comp.accesState = ShuttleConsoleAccesState.NotDynamic;
         }
 
-
     }
 
 
@@ -350,6 +375,41 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     private void OnConsoleUIOpenAttempt(EntityUid uid, ShuttleConsoleComponent component,
         ActivatableUIOpenAttemptEvent args)
     {
+
+        if(component.accesState == ShuttleConsoleAccesState.NoAcces)
+        {
+            args.Cancel();
+            _popup.PopupEntity("Swipe ID to authorize yourself.", uid, args.User, PopupType.LargeCaution);
+            return;
+        }
+        var uis = _ui.GetActorUis(args.User);
+
+        var tgridUid = Transform(uid).GridUid;
+        if (tgridUid is null)
+            return;
+        var gridUid = tgridUid.Value;
+
+        if (!TryComp<IFFComponent>(gridUid, out var _))
+        {
+            _shuttle.SetIFFColor(gridUid, new Color
+            {
+                R = 10,
+                G = 50,
+                B = 100,
+                A = 100
+            });
+            _shuttle.AddIFFFlag(gridUid, IFFFlags.IsPlayerShuttle);
+            EnsureComp<ShuttleDeedComponent>(gridUid, out var deedComp);
+            List<string> possibleNames = new List<string> {"NX", "KXZ", "ALP", "BET", "TAN", "MV"};
+            _random.Shuffle(possibleNames);
+            _meta.SetEntityName(gridUid, $"Shuttle {possibleNames[0]}-{(int)_random.NextFloat(100f,999f)}");
+            deedComp.ShuttleUid = gridUid;
+            deedComp.ShuttleName = MetaData(gridUid).EntityName;
+            DirtyEntity(gridUid);
+
+
+        }
+
         if (!TryPilot(args.User, uid))
             args.Cancel();
     }
