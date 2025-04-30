@@ -381,12 +381,12 @@
     - HolofanProjector
     - BluespaceBeaker
     - SyringeBluespace
-    - WeaponForceGun
+  #  - WeaponForceGun
     - WeaponLaserSvalinn
     - WeaponCivilianDisabler
     - WeaponProtoKineticAccelerator
-    - WeaponTetherGun
-    - WeaponGrapplingGun
+  #  - WeaponTetherGun
+  #  - WeaponGrapplingGun
     - ClothingBackpackHolding
     - ClothingBackpackSatchelHolding
     - ClothingBackpackDuffelHolding
@@ -729,7 +729,7 @@
     - BorgModuleLightReplacer
     - BorgModuleAdvancedCleaning
     - BorgModuleMining
-    - BorgModuleGrapplingGun
+  #  - BorgModuleGrapplingGun
     - BorgModuleAdvancedTool
     - BorgModuleGPS
     - BorgModuleRCD
