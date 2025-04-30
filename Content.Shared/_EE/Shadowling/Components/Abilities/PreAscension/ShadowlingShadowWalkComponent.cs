@@ -25,5 +25,14 @@ public sealed partial class ShadowlingShadowWalkComponent : Component
     public float TimeUntilDeactivation = 10f;
 
     [DataField]
+    public float EffectOutTimer = 0.6f;
+
+    [DataField]
     public float Timer;
+
+    [DataField]
+    public string? ShadowWalkEffectIn = "ShadowlingShadowWalkInEffect";
+
+    [DataField]
+    public string? ShadowWalkEffectOut = "ShadowlingShadowWalkOutEffect";
 }

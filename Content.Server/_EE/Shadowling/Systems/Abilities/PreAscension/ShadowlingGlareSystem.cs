@@ -1,10 +1,13 @@
+using System.Numerics;
 using Content.Server.Actions;
 using Content.Server.Popups;
 using Content.Server.Stunnable;
 using Content.Shared._EE.Shadowling;
+using Content.Shared.Coordinates.Helpers;
 using Content.Shared.Popups;
 using Content.Shared.StatusEffect;
 using Robust.Server.GameObjects;
+using Robust.Shared.Map;
 using Robust.Shared.Timing;
 
 namespace Content.Server._EE.Shadowling;
@@ -91,7 +94,10 @@ public sealed class ShadowlingGlareSystem : EntitySystem
             comp.ActivateGlareTimer = true;
         }
 
+        var effectEnt = Spawn(comp.EffectGlare, _transform.GetMapCoordinates(uid));
+        _transform.SetParent(effectEnt, uid);
+
         _popup.PopupEntity(Loc.GetString("shadowling-glare-target"), uid, target, PopupType.MediumCaution);
-        _actions.StartUseDelay(args.Action);
+        // _actions.StartUseDelay(args.Action);
     }
 }

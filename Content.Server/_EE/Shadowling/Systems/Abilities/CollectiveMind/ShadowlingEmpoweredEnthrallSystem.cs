@@ -50,7 +50,11 @@ private void OnEmpEnthrall(EntityUid uid, ShadowlingEmpoweredEnthrallComponent c
             component.EnthrallTime,
             new EmpoweredEnthrallDoAfterEvent(),
             uid,
-            target);
+            target)
+        {
+            CancelDuplicate = true,
+            BreakOnDamage = true,
+        };
 
         if (!_shadowling.CanEnthrall(uid, target))
             return;

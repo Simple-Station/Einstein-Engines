@@ -73,4 +73,7 @@ public sealed partial class ShadowlingCollectiveMindComponent : Component
 
     [DataField]
     public float BaseStunTime = 0.5f;
+
+    [DataField]
+    public string? CollectiveMindEffect = "ShadowlingCollectiveMindEffect";
 }

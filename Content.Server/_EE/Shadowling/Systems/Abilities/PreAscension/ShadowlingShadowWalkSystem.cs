@@ -5,6 +5,7 @@ using Content.Shared._EE.Shadowling;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Stealth.Components;
+using Robust.Server.GameObjects;
 using Robust.Shared.Timing;
 
 
@@ -21,6 +22,7 @@ public sealed class ShadowlingShadowWalkSystem : EntitySystem
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
+    [Dependency] private  readonly TransformSystem _transform = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -42,6 +44,13 @@ public sealed class ShadowlingShadowWalkSystem : EntitySystem
             if (shadowWalk.IsActive)
             {
                 shadowWalk.Timer -= frameTime;
+
+                if (shadowWalk.Timer <= shadowWalk.EffectOutTimer)
+                {
+                    var effectEnt = Spawn(shadowWalk.ShadowWalkEffectOut, _transform.GetMapCoordinates(uid));
+                    _transform.SetParent(effectEnt, uid);
+                }
+
                 if (shadowWalk.Timer <= 0)
                 {
                     if (TryComp<StealthComponent>(uid, out var stealth))
@@ -76,11 +85,12 @@ public sealed class ShadowlingShadowWalkSystem : EntitySystem
         _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
 
         // todo: sound
-        // todo: visuals
+        var effectEnt = Spawn(comp.ShadowWalkEffectIn, _transform.GetMapCoordinates(uid));
+        _transform.SetParent(effectEnt, uid);
 
         var stealth = EnsureComp<StealthComponent>(uid);
         _stealth.SetVisibility(uid, 0f, stealth);
 
-        _actions.StartUseDelay(args.Action);
+        // _actions.StartUseDelay(args.Action);
     }
 }

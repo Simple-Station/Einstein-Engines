@@ -32,7 +32,11 @@ public sealed class ShadowlingEnthrallSystem : EntitySystem
             comp.EnthrallTime,
             new EnthrallDoAfterEvent(),
             uid,
-            target);
+            target)
+        {
+            CancelDuplicate = true,
+            BreakOnDamage = true,
+        };
 
         if (!_shadowling.CanEnthrall(uid, target))
             return;

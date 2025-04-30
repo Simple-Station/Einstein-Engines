@@ -1,0 +1,100 @@
+- type: entity
+  id: ShadowlingGlareEffect
+  name: shadowling glare effect
+  components:
+  - type: TimedDespawn
+    lifetime: 0.35
+  - type: Transform
+    noRot: true
+  - type: Sprite
+    noRot: true
+    sprite: _EE/Shadowling/Effects/glare.rsi
+    state: glare
+    netsync: false
+    drawdepth: Effects
+  - type: PointLight # Attaching pointlight to something makes it look 10x better ngl
+    color: "#e3432a"
+    radius: 7
+    energy: 2
+  - type: LightFade
+    duration: 0.34
+
+- type: entity
+  id: ShadowlingShadowWalkInEffect
+  name: shadowling shadow walk in effect
+  components:
+  - type: TimedDespawn
+    lifetime: 0.5
+  - type: Transform
+    noRot: true
+  - type: Sprite
+    noRot: true
+    sprite: _EE/Shadowling/Effects/shadow_walk.rsi
+    state: shadow_walk_in
+    netsync: false
+    drawdepth: Effects
+  - type: PointLight
+    color: "#8A9A5B"
+    radius: 1.13
+    energy: 2
+
+- type: entity
+  id: ShadowlingShadowWalkOutEffect
+  name: shadowling shadow walk out effect
+  components:
+  - type: TimedDespawn
+    lifetime: 0.5
+  - type: Transform
+    noRot: true
+  - type: Sprite
+    noRot: true
+    sprite: _EE/Shadowling/Effects/shadow_walk.rsi
+    state: shadow_walk_out
+    netsync: false
+    drawdepth: Effects
+  - type: PointLight
+    color: "#8A9A5B"
+    radius: 1.13
+    energy: 2
+
+- type: entity
+  id: ShadowlingCollectiveMindEffect
+  name: shadowling collective mind effect
+  components:
+  - type: TimedDespawn
+    lifetime: 0.35
+  - type: Transform
+    noRot: true
+  - type: Sprite
+    noRot: true
+    sprite: _EE/Shadowling/Effects/collective_mind.rsi
+    state: collective_mind
+    netsync: false
+    drawdepth: Effects
+  - type: PointLight
+    color: "#e3432a"
+    radius: 1.13
+    energy: 5
+  - type: LightFade
+    duration: 0.34
+
+- type: entity
+  id: ShadowlingRapidRehatchEffect
+  name: shadowling rapid rehatch effect
+  components:
+  - type: TimedDespawn
+    lifetime: 0.85
+  - type: Transform
+    noRot: true
+  - type: Sprite
+    noRot: true
+    sprite: _EE/Shadowling/Effects/rapid_rehatch.rsi
+    state: rapid_rehatch
+    netsync: false
+    drawdepth: Effects
+  - type: PointLight
+    color: "#FBCEB1"
+    radius: 1.13
+    energy: 70
+  - type: LightFade
+    duration: 0.7

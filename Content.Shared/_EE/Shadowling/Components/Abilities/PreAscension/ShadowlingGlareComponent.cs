@@ -1,4 +1,7 @@
+using System.Numerics;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
+
 
 namespace Content.Shared._EE.Shadowling;
 
@@ -51,4 +54,10 @@ public sealed partial class ShadowlingGlareComponent : Component
     public EntityUid GlareTarget;
 
     public bool ActivateGlareTimer;
+
+    [DataField]
+    public string? EffectGlare = "ShadowlingGlareEffect";
+
+    [DataField]
+    public Vector2 Offset = Vector2.Zero;
 }

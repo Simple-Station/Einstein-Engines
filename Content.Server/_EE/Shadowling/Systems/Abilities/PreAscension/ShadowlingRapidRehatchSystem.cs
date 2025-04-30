@@ -6,6 +6,8 @@ using Content.Shared._EE.Shadowling;
 using Content.Shared.DoAfter;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
+using Robust.Server.GameObjects;
+
 
 namespace Content.Server._EE.Shadowling;
 
@@ -20,6 +22,7 @@ public sealed class ShadowlingRapidRehatchSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly RejuvenateSystem _rejuvenate = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -41,17 +44,25 @@ public sealed class ShadowlingRapidRehatchSystem : EntitySystem
             uid,
             TimeSpan.FromSeconds(comp.DoAfterTime),
             new RapidRehatchDoAfterEvent(),
-            user);
+            user)
+        {
+            CancelDuplicate = true
+        };
 
         _doAfter.TryStartDoAfter(doAfterArgs);
     }
 
     private void OnRapidRehatchDoAfter(EntityUid uid, ShadowlingRapidRehatchComponent comp, RapidRehatchDoAfterEvent args)
     {
+        if (args.Cancelled)
+            return;
+
         _popup.PopupEntity(Loc.GetString("shadowling-rapid-rehatch-complete"), uid, uid, PopupType.Medium);
         _rejuvenate.PerformRejuvenate(uid);
-        //todo: add visuals here
+        var effectEnt = Spawn(comp.RapidRehatchEffect, _transform.GetMapCoordinates(uid));
+        _transform.SetParent(effectEnt, uid);
         //todo: play sound here
-        _actions.StartUseDelay(comp.ActionRapidRehatchEntity);
+
+        // _actions.StartUseDelay(comp.ActionRapidRehatchEntity);
     }
 }

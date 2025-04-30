@@ -5,6 +5,7 @@ using Content.Shared._EE.Shadowling;
 using Content.Shared.Actions;
 using Content.Shared.Popups;
 using Content.Shared.StatusEffect;
+using Robust.Server.GameObjects;
 
 
 namespace Content.Server._EE.Shadowling;
@@ -22,6 +23,7 @@ public sealed class ShadowlingCollectiveMindSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popups = default!;
     [Dependency] private readonly StunSystem _stun = default!;
     [Dependency] private readonly IComponentFactory _compFactory = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -31,15 +33,13 @@ public sealed class ShadowlingCollectiveMindSystem : EntitySystem
 
     private void OnCollectiveMind(EntityUid uid, ShadowlingCollectiveMindComponent comp, CollectiveMindEvent args)
     {
-
         if (!TryComp<ActionsComponent>(uid, out var actions))
             return;
 
-        // Shitcode start
         if (!TryComp<ShadowlingComponent>(uid, out var sling))
             return;
 
-        if (comp.AbilitiesAdded >= 3)
+        if (comp.AbilitiesAdded >= comp.Locked.Count)
         {
             _popups.PopupEntity(Loc.GetString("shadowling-collective-mind-ascend"), uid, uid, PopupType.Medium);
             return;
@@ -70,12 +70,15 @@ public sealed class ShadowlingCollectiveMindSystem : EntitySystem
         }
 
          if (abiltiesAddedCount > 0)
-        {
-            _popups.PopupEntity(Loc.GetString("shadowling-collective-mind-success", ("thralls", thrallsRemaining)),
-                uid,
-                uid,
-                PopupType.Medium);
-        }
+         {
+             _popups.PopupEntity(
+                 Loc.GetString("shadowling-collective-mind-success", ("thralls", thrallsRemaining)),
+                 uid,
+                 uid,
+                 PopupType.Medium);
+             var effectEnt = Spawn(comp.CollectiveMindEffect, _transform.GetMapCoordinates(uid));
+             _transform.SetParent(effectEnt, uid);
+         }
         else
         {
             _popups.PopupEntity(Loc.GetString("shadowling-collective-mind-failure", ("thralls", thrallsRemaining)),
@@ -95,7 +98,5 @@ public sealed class ShadowlingCollectiveMindSystem : EntitySystem
 
             _stun.TryParalyze(thrall, TimeSpan.FromSeconds(comp.BaseStunTime * abiltiesAddedCount + 1), false);
         }
-
-        // Shitcode end. If you ripped your eyes out, I can't blame you
     }
 }

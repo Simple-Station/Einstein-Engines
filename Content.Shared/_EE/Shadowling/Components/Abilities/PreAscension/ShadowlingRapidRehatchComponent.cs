@@ -16,4 +16,7 @@ public sealed partial class ShadowlingRapidRehatchComponent : Component
 
     [DataField]
     public float DoAfterTime = 4f;
+
+    [DataField]
+    public string? RapidRehatchEffect = "ShadowlingRapidRehatchEffect";
 }
