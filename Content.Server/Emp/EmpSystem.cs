@@ -82,14 +82,13 @@ public sealed class EmpSystem : SharedEmpSystem
             var disabled = EnsureComp<EmpDisabledComponent>(uid);
             // couldnt use null-coalescing operator here sadge
             if (disabled.LastDelayedEvent != null)
-                disabled.LastDelayedEvent.Cancelled = true;
+                _eventScheduler.TryPostponeDelayedEvent(disabled.LastDelayedEvent, delay);
             else
-                disabled.DisabledUntil = Timing.CurTime;
-            disabled.DisabledUntil = disabled.DisabledUntil + delay;
+            {
 
-            // we use ScheduleEvent because we cancel and overwrite the previous time
-            var dEv = new EmpDisabledRemoved();
-            disabled.LastDelayedEvent = _eventScheduler.ScheduleEvent(uid, ref dEv, disabled.DisabledUntil);
+                var dEv = new EmpDisabledRemoved();
+                disabled.LastDelayedEvent = _eventScheduler.DelayEvent(uid, ref dEv, delay);
+            }
 
             /// i tried my best to go through the Pow3r server code but i literally couldn't find in relation to PowerNetworkBatteryComponent that uses the event system
             /// the code is otherwise too esoteric for my innocent eyes

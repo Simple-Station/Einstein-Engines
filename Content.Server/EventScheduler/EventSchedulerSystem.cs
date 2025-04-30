@@ -9,11 +9,11 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
     [Dependency] private readonly IGameTiming _gameTiming = default!;
 
     private static uint _id = 0;
-    private static Dictionary<uint, DelayedEvent> _eventList = new();
-    private static PriorityQueue<uint, TimeSpan> _eventQueue = new(_comparer);
-    private static EventSchedulerComparer _comparer = new();
-
     private uint NextId() { return _id++; }
+
+    private static Dictionary<uint, DelayedEvent> _eventList = new();
+    private static EventSchedulerComparer _comparer = new();
+    private static PriorityQueue<uint, TimeSpan> _eventQueue = new(_comparer);
 
     private void Enqueue(DelayedEvent delayedEvent, TimeSpan time)
     {
@@ -33,21 +33,98 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
         Dequeue(out _);
     }
 
+    private bool TryRequeue(DelayedEvent delayedEvent, TimeSpan time, bool useDelay = false)
+    {
+        var curId = delayedEvent.Id;
+
+        // if we can't get the event for whatever reason, consider the requeuing a failure
+        if (!_eventList.TryGetValue(curId, out _))
+        {
+            Log.Warning($"Couldn't reschedule event for {delayedEvent.Uid}, missing a value!");
+
+            return false;
+        }
+
+        // if we cannot remove the event for whatever reason, consider requeuing a failure
+        if (!_eventQueue.Remove(curId, out _, out var originalTime))
+        {
+            Log.Warning($"Couldn't reschedule event for {delayedEvent.Uid}, failed to remove!");
+
+            return false;
+        }
+
+        // if we the delay behaviour, consider the original time as the starting point and our input as a delay
+        if (useDelay)
+            time += originalTime;
+
+        // finally requeue
+        _eventQueue.Enqueue(curId, time);
+        return true;
+    }
+
+    /// <summary>
+    /// Wraps an Event to be raised at a specific time in the future.
+    /// </summary>
+    /// <typeparam name="TEvent"></typeparam>
+    /// <param name="uid">The EntityUid which the Event will be raised for.</param>
+    /// <param name="eventArgs">The Event to be passed to the scheduler.</param>
+    /// <param name="time">The time at which the Event will be raised.</param>
+    /// <returns>A DelayedEvent instance. Keep this if you want to conditionally reschedule your Event.</returns>
     public DelayedEvent ScheduleEvent<TEvent>(EntityUid uid, ref TEvent eventArgs, TimeSpan time)
         where TEvent : notnull
     {
         var delayedEvent = new DelayedEvent(NextId(), uid, eventArgs);
         Enqueue(delayedEvent, time);
 
-        Log.Debug($"Scheduled {eventArgs.GetType()} event for {uid}");
+        Log.Debug($"Scheduled event: '{eventArgs.GetType()}' at uid: ({uid}) for time: ({time})");
 
         return delayedEvent;
     }
 
+    /// <summary>
+    /// Wraps an Event to be raised after a time has elapsed.
+    /// </summary>
+    /// <typeparam name="TEvent"></typeparam>
+    /// <param name="uid">The EntityUid which the Event will be raised for.</param>
+    /// <param name="eventArgs">The Event to be passed to the scheduler.</param>
+    /// <param name="delay">A delay after which the Event will be raised.</param>
+    /// <returns>A DelayedEvent instance. Keep this if you want to conditionally reschedule your Event.</returns>
     public DelayedEvent DelayEvent<TEvent>(EntityUid uid, ref TEvent eventArgs, TimeSpan delay)
         where TEvent : notnull
     {
         return ScheduleEvent(uid, ref eventArgs, _gameTiming.CurTime + delay);
+    }
+
+    /// <summary>
+    /// Takes an existing DelayedEvent and reschedules it to a specific time, as long as it hasn't already been raised yet.
+    /// </summary>
+    /// <typeparam name="TEvent"></typeparam>
+    /// <param name="delayedEvent">The DelayedEvent instance which you want to reschedule.</param>
+    /// <param name="time">The new time at which the Event will be raised.</param>
+    /// <returns>Returns true if the DelayedEvent exists, false otherwise.</returns>
+    public bool TryRescheduleDelayedEvent(DelayedEvent delayedEvent, TimeSpan time)
+    {
+        if (!TryRequeue(delayedEvent, time))
+            return false;
+
+        Log.Debug($"Rescheduled event: '{delayedEvent.EventArgs.GetType()}' at uid: ({delayedEvent.Uid}) for time: ({time})");
+        return true;
+    }
+
+    /// <summary>
+    /// Takes an existing DelayedEvent and postpones it by a certain time, as long as it hasn't already been raised yet.
+    /// </summary>
+    /// <typeparam name="TEvent"></typeparam>
+    /// <param name="delayedEvent">The DelayedEvent instance which you want to reschedule.</param>
+    /// <param name="delay">A delay that is added to the Event's scheduled raise time.</param>
+    /// <returns>Returns true if the DelayedEvent exists, false otherwise.</returns>
+    public bool TryPostponeDelayedEvent(DelayedEvent delayedEvent, TimeSpan delay)
+    {
+        if (!TryRequeue(delayedEvent, delay, true))
+            return false;
+
+        Log.Debug($"Postponed event: '{delayedEvent.EventArgs.GetType()}' at uid: ({delayedEvent.Uid}) by delay: ({delay})");
+        return true;
     }
 
     public override void Update(float frameTime)
@@ -79,7 +156,7 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
             {
                 Dequeue();
 
-                Log.Debug($"Event cancelled for {current.Uid}!");
+                Log.Debug($"Cancelled event '{current.EventArgs.GetType()}' at uid: ({current.Uid})!");
                 continue;
             }
 
@@ -90,7 +167,7 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
                 Dequeue();
                 RaiseLocalEvent(current.Uid, current.EventArgs);
 
-                Log.Debug($"Event raised for {current.Uid}!");
+                Log.Debug($"Raised event '{current.EventArgs.GetType()}' at uid: ({current.Uid})!");
                 continue;
             }
 
