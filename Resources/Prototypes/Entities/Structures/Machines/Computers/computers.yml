@@ -148,6 +148,13 @@
       board: !type:Container
         ents: []
       disk_slot: !type:ContainerSlot {}
+  - type: DeviceLinkSource
+    ports:
+      - Group1
+      - Group2
+      - Group3
+      - Group4
+      - Group5
   - type: NamedModules
     buttonNames:
       - "Module A"
