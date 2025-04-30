@@ -13,13 +13,6 @@ namespace Content.Shared.Emp;
 [Access(typeof(SharedEmpSystem))]
 public sealed partial class EmpDisabledComponent : Component
 {
-    /// <summary>
-    /// Moment of time when component is removed and entity stops being "disabled"
-    /// </summary>
-    [DataField("timeLeft", customTypeSerializer: typeof(TimeOffsetSerializer)), ViewVariables(VVAccess.ReadWrite)]
-    [AutoPausedField]
-    public TimeSpan DisabledUntil;
-
     [DataField("effectCoolDown"), ViewVariables(VVAccess.ReadWrite)]
     public float EffectCooldown = 3f;
 
