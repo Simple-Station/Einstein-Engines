@@ -90,6 +90,33 @@
                                          MaxWidth="82"/>
                     </controls:BoxContainer>
                     <!--end Inertia dampener controls-->
+                    <!-- hullrot modules -->
+                    <controls:BoxContainer Name ="ButtonHolder" VerticalExpand="True" HorizontalExpand="False" Orientation="Vertical">
+                        <controls:Button Name="Group1"
+                                         Text="{controls:Loc 'Module A'}"
+                                         TextAlign="Center"
+                                         ToggleMode="False"/>
+                        <controls:Button Name="Group2"
+                                         Text="{controls:Loc 'Module B'}"
+                                         TextAlign="Center"
+                                         ToggleMode="False"/>
+                        <controls:Button Name="Group3"
+                                         Text="{controls:Loc 'Module C'}"
+                                         TextAlign="Center"
+                                         ToggleMode="False"/>
+                        <controls:Button Name="Group4"
+                                         Text="{controls:Loc 'Module D'}"
+                                         TextAlign="Center"
+                                         ToggleMode="False"/>
+                        <controls:Button Name="Group5"
+                                         Text="{controls:Loc 'Module E'}"
+                                         TextAlign="Center"
+                                         ToggleMode="False"/>
+                    </controls:BoxContainer>
 
+                    <controls:Button Name="RenameButton"
+                                     Text="{controls:Loc 'Renaming mode'}"
+                                     TextAlign="Center"
+                                     ToggleMode="True"/>
                     </controls:BoxContainer>
                 </controls:BoxContainer>
