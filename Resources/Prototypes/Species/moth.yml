@@ -56,7 +56,8 @@
       defaultMarkings: [ MothWingsDefault ]
     Snout:
       points: 1
-      required: false
+      required: true
+      defaultMarkings: [ MothRegularSnout ]
     HeadTop:
       points: 6
       required: true
