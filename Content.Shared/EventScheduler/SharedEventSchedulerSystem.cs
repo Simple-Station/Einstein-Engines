@@ -22,6 +22,8 @@ public sealed class EventSchedulerComparer : IComparer<TimeSpan>
         else if (bDelay < aDelay)
             return 1;
 
+        // TODO: add deterministic EntityUid tiebreaker when server code is moved to shared
+
         return 0;
     }
 }
@@ -32,6 +34,8 @@ public sealed class DelayedEvent
     public EntityUid Uid { get; set; }
     public object EventArgs { get; set; }
     public bool Cancelled { get; set; }
+
+    // TODO: add raise time with set { RescheduleEvent(this, time) } when server code is moved to shared
 
     public DelayedEvent(uint id, EntityUid uid, object eventArgs)
     {
