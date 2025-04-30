@@ -459,25 +459,25 @@
 
 - type: sourcePort
   id: Group1
-  name: First Module
-  description: First
+  name: Group1
+  description: Group1
 
 - type: sourcePort
   id: Group2
-  name: Second Module
-  description: Second
+  name: Group2
+  description: Group2
 
 - type: sourcePort
   id: Group3
-  name: Third Module
-  description: Third
+  name: Group3
+  description: Group3
 
 - type: sourcePort
   id: Group4
-  name: Fourth Module
-  description: Fourth
+  name: Group4
+  description: Group4
 
 - type: sourcePort
   id: Group5
-  name: Fifth module
-  description: Fifth
+  name: Group5
+  description: Group5

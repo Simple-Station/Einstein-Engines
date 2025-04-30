@@ -28,10 +28,8 @@ namespace Content.Client.Shuttles.UI
             _buttons[5] = Group5;
             for (int i = 1; i <= 5; i++)
             {
-                _buttons[i].OnPressed += (args) =>
-                {
-                    modulePressed?.Invoke(i);
-                };
+                int copy = i;
+                _buttons[i].OnPressed += (args) => modulePressed?.Invoke(copy);
             }
             foreach(var (index, button) in _buttons)
             {

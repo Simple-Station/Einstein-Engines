@@ -115,6 +115,15 @@
   abstract: true
   components:
   - type: ShuttleConsole
+    targetIdSlot:
+        name: Employee ID card slot
+        ejectSound: /Audio/Machines/id_swipe.ogg
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectOnBreak: true
+        swap: false
+        whitelist:
+          components:
+          - IdCard
   - type: ActivatableUI
     key: enum.ShuttleConsoleUiKey.Key
   - type: UserInterface
@@ -148,6 +157,7 @@
       board: !type:Container
         ents: []
       disk_slot: !type:ContainerSlot {}
+  - type: DeviceLinkSink
   - type: DeviceLinkSource
     ports:
       - Group1
