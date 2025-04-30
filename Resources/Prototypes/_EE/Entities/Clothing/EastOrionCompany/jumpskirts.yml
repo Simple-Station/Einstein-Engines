@@ -12,7 +12,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtSecurityEOC
   name: FCU jumpskirt
-  description: A standard Farmer's Civil Union jumpskirt, worn by Ease-Orion Company employees who protect agricultural assets and interests.
+  description: A standard Farmer's Civil Union jumpskirt, worn by East-Orion Company employees who protect agricultural assets and interests.
   components:
   - type: Sprite
     sprite: _EE/Clothing/Uniforms/Jumpskirts/security_eoc.rsi
