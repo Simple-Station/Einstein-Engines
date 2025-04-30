@@ -53,6 +53,7 @@
         - ItemMask
   - type: Appearance
   - type: CargoSellBlacklist
+  - type: Currency
 
 - type: material
   id: Credit
