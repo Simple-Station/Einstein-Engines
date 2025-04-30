@@ -1,3 +1,4 @@
+
 using System.Numerics;
 using Robust.Client.Graphics;
 
@@ -53,7 +54,7 @@ public static class ProjectileIFFVisuals
             {
                 var angle = i / (float) segments * MathHelper.TwoPi;
                 var pos = new Vector2(MathF.Sin(angle), MathF.Cos(angle));
-                verts[i] = position + pos * radius;
+                verts[i] = Vector2.Transform(position + pos * radius, matrix);
             }
 
             return verts;
