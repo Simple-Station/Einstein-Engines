@@ -28,12 +28,16 @@ public sealed class EventSchedulerComparer : IComparer<TimeSpan>
 
 public sealed class DelayedEvent
 {
+    public uint Id { get; }
     public EntityUid Uid { get; set; }
     public object EventArgs { get; set; }
     public bool Cancelled { get; set; }
 
-    public DelayedEvent(EntityUid uid, object eventArgs)
+    public DelayedEvent(uint id, EntityUid uid, object eventArgs)
     {
+        // TODO: just use NextId() func when server code is moved to shared
+        Id = id;
+
         Uid = uid;
         EventArgs = eventArgs;
         Cancelled = false;

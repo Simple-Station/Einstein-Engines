@@ -17,10 +17,8 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
 
     private void Enqueue(DelayedEvent delayedEvent, TimeSpan time)
     {
-        var id = NextId();
-
-        _eventList.Add(id, delayedEvent);
-        _eventQueue.Enqueue(id, time);
+        _eventList.Add(delayedEvent.Id, delayedEvent);
+        _eventQueue.Enqueue(delayedEvent.Id, time);
     }
 
     private void Dequeue(out DelayedEvent? delayedEvent)
@@ -38,7 +36,7 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
     public DelayedEvent ScheduleEvent<TEvent>(EntityUid uid, ref TEvent eventArgs, TimeSpan time)
         where TEvent : notnull
     {
-        var delayedEvent = new DelayedEvent(uid, eventArgs);
+        var delayedEvent = new DelayedEvent(NextId(), uid, eventArgs);
         Enqueue(delayedEvent, time);
 
         Log.Debug($"Scheduled {eventArgs.GetType()} event for {uid}");
