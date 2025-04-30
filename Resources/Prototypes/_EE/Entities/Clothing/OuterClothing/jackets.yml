@@ -10,6 +10,9 @@
   - type: Clothing
     sprite: _EE/Clothing/GloveJackets/insulated_jacket.rsi
   - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+    fiberColor: fibers-yellow
   - type: FingerprintMask
   - type: GloveJacket # Components for these jackets that allows them to act as gloves. Mostly for surgery.
 # if species-specific sprites are fixed to not have displacement maps apply to them, this will break. 
@@ -26,5 +29,7 @@
     sprite: _EE/Clothing/GloveJackets/surgical_jacket.rsi
   - type: Clothing
     sprite: _EE/Clothing/GloveJackets/surgical_jacket.rsi
+  - type: Fiber
+    fiberMaterial: fibers-nitrile
   - type: FingerprintMask
   - type: GloveJacket
