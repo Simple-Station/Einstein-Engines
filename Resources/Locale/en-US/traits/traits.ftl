@@ -1,5 +1,7 @@
 trait-name-Blindness = Blindness
-trait-description-Blindness = You are legally blind, and can't see clearly past a few meters in front of you.
+trait-description-Blindness =
+    You are legally blind, and can't see clearly past a few meters in front of you.[color=red]
+    This cannot be cured in any way.[/color]
 trait-examined-Blindness = [color=lightblue]{CAPITALIZE(POSS-ADJ($target))} eyes are glassy and unfocused. It doesn't seem like {SUBJECT($target)} can see you well, if at all.[/color]
 
 trait-name-Narcolepsy = Narcolepsy
@@ -540,7 +542,7 @@ trait-description-ShadowkinBlackeye =
 
 trait-name-LyreBird = Lyre Bird
 trait-description-LyreBird =
-    Your natural talent for mimicry vastly exceeds that of other Harpies. You have the ability to perfectly imitate songs in their entirety.
+    Your talent for mimicry vastly exceeds the norms of others. You have the ability to perfectly imitate songs in their entirety.
     Be your own full symphony orchestra, jazz group, or metal band.
 
 trait-name-NaniteAutoRepairBots = Nanite Auto-Repair Bots

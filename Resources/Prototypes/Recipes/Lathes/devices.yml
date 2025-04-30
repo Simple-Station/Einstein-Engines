@@ -186,15 +186,15 @@
     Steel: 600
     Glass: 200
 
-- type: latheRecipe
-  id: WeaponForceGun
-  result: WeaponForceGun
-  category: Tools
-  completetime: 5
-  materials:
-    Steel: 500
-    Glass: 400
-    Silver: 200
+# - type: latheRecipe
+#   id: WeaponForceGun
+#   result: WeaponForceGun
+#   category: Tools
+#   completetime: 5
+#   materials:
+#     Steel: 500
+#     Glass: 400
+#    Silver: 200
 
 - type: latheRecipe
   id: DeviceQuantumSpinInverter
@@ -215,25 +215,25 @@
     Glass: 500
     Silver: 100
 
-- type: latheRecipe
-  id: WeaponTetherGun
-  result: WeaponTetherGun
-  category: Tools
-  completetime: 5
-  materials:
-    Steel: 500
-    Glass: 400
-    Silver: 100
+# - type: latheRecipe
+#   id: WeaponTetherGun
+#   result: WeaponTetherGun
+#   category: Tools
+#   completetime: 5
+#   materials:
+#     Steel: 500
+#     Glass: 400
+#     Silver: 100
 
-- type: latheRecipe
-  id: WeaponGrapplingGun
-  result: WeaponGrapplingGun
-  category: Tools
-  completetime: 5
-  materials:
-    Steel: 500
-    Glass: 400
-    Gold: 100
+# - type: latheRecipe
+#   id: WeaponGrapplingGun
+#   result: WeaponGrapplingGun
+#   category: Tools
+#   completetime: 5
+#   materials:
+#     Steel: 500
+#     Glass: 400
+#     Gold: 100
 
 - type: latheRecipe
   id: ClothingEyesNightVisionGoggles
