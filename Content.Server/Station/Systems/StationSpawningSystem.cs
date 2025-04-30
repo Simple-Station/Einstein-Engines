@@ -11,6 +11,7 @@ using Content.Server.Spawners.Components;
 using Content.Server.Station.Components;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
+using Content.Shared.Bank.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Customization.Systems;
 using Content.Shared.Humanoid;
@@ -158,6 +159,8 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             _metaSystem.SetEntityName(entity.Value, profile.Name);
             if (profile.FlavorText != "" && _configurationManager.GetCVar(CCVars.FlavorText))
                 EnsureComp<DetailExaminableComponent>(entity.Value).Content = profile.FlavorText;
+            var bank = EnsureComp<BankAccountComponent>(entity.Value);
+            bank.Balance = profile.BankBalance;
         }
 
         DoJobSpecials(job, entity.Value);

@@ -27,7 +27,7 @@ namespace Content.Shared.Shipyard
     [NetSerializable, Serializable]
     public sealed class ShipyardConsoleInterfaceState : BoundUserInterfaceState
     {
-        public int Balance;
+        public long Balance;
         public readonly bool AccessGranted;
         public readonly string? ShipDeedTitle;
         public int ShipSellValue;
@@ -38,7 +38,7 @@ namespace Content.Shared.Shipyard
         public readonly string ShipyardName;
 
         public ShipyardConsoleInterfaceState(
-            int balance,
+            long balance,
             bool accessGranted,
             string? shipDeedTitle,
             int shipSellValue,

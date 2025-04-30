@@ -814,7 +814,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         return availableShuttles;
     }
 
-    private void RefreshState(EntityUid uid, int balance, bool access, string? shipDeed, int shipSellValue, bool isTargetIdPresent, ShipyardConsoleUiKey uiKey)
+    private void RefreshState(EntityUid uid, long balance, bool access, string? shipDeed, int shipSellValue, bool isTargetIdPresent, ShipyardConsoleUiKey uiKey)
     {
         var listing = TryComp<ShipyardListingComponent>(uid, out var comp) ? comp : null;
 
