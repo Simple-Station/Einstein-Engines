@@ -15792,3 +15792,10 @@ Entries:
   id: 7220
   time: '2025-05-01T20:45:28.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2357
+- author: Orion-416
+  changes:
+    - type: Tweak
+      message: Both Syndicate modsuits now have integrated jetpacks
+  id: 7221
+  time: '2025-05-01T20:48:26.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2300
