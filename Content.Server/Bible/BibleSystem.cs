@@ -101,9 +101,7 @@ namespace Content.Server.Bible
                 return;
 
             if (args.Target == null || args.Target == args.User || !_mobStateSystem.IsAlive(args.Target.Value))
-            {
-                return;
-            }
+                return; // STOP WITH USELESS BRACES!! - Goobstation
 
             if (!HasComp<BibleUserComponent>(args.User))
             {

@@ -12,10 +12,14 @@
   - Lawyer
   - Maintenance
   requirements:
-    - !type:CharacterEmployerRequirement
-      employers:
-      - IdrisIncorporated
-      - NanoTrasen
+  - !type:CharacterEmployerRequirement
+    employers:
+    - IdrisIncorporated
+    - NanoTrasen
+  special: # Goobstation - lawyers have no souls to sacrifice
+  - !type:AddComponentSpecial
+    components:
+    - type: Condemned
 
 - type: startingGear
   id: LawyerGear
