@@ -29,6 +29,10 @@
       checkCanAccess: false
       range: 8
       itemIconStyle: BigAction
+      blacklist:
+        components:
+          - PsionicInsulation
+          - Mindbroken
       event: !type:MassSleepPowerActionEvent
 
 - type: entity
@@ -234,6 +238,7 @@
     checkCanInteract: false
     event: !type:AnomalyPowerActionEvent
             settings:
+              checkInsulation: true
               powerName: "Shadeskip"
               minGlimmer: 6
               maxGlimmer: 8
@@ -269,6 +274,7 @@
       checkCanInteract: false
       event: !type:AnomalyPowerActionEvent
         settings:
+          checkInsulation: true
           powerName: "Telekinetic Pulse"
           overchargeFeedback: "shadeskip-overcharge-feedback" # The text behind this is fine.
           overchargeCooldown: 120
@@ -315,6 +321,7 @@
       checkCanInteract: false
       event: !type:AnomalyPowerActionEvent
         settings:
+          checkInsulation: true
           powerName: "Pyrokinetic Flare"
           minGlimmer: 3
           maxGlimmer: 5

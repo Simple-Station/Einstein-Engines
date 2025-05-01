@@ -131,4 +131,4 @@
   parent: ShadowPortal
   components:
     - type: TimedDespawn
-      lifetime: 10
+      lifetime: 12

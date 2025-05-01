@@ -315,44 +315,18 @@
       lifetime: 5
 
 - type: entity
-  name: Temporary haze
+  name: fading haze
   id: ShadowKudzuTemp
-  parent: [BaseKudzu, BaseShadow]
+  parent: ShadowKudzuWeak
   components:
-    - type: Physics
-      canCollide: false
-    - type: Occluder
-    - type: Sprite
-      drawdepth: Effects
-      sprite: Effects/spookysmoke.rsi
-      layers:
-        - state: spookysmoke
-          color: "#793a80dd"
-          map: [base]
-    - type: Kudzu
-      growthTickChance: 0
-      spreadChance: 0
-    - type: Tag
-      tags:
-        - HideContextMenu
-        - SpookyFog
-    - type: OptionsVisualizer
-      visuals:
-        base:
-          - options: Default
-            data: { state: spookysmoke }
-          - options: ReducedMotion
-            data: { state: spookysmoke_static }
-    - type: RandomSpawner # Deparented from ShadowHaze to prevent spawning of normal ShadowPortals that do not despawn
+    - type: RandomSpawner
       deleteSpawnerAfterSpawn: false
-      rareChance: 0.05
+      rareChance: 0.2
       offset: 0.2
       chance: 0.45
       prototypes:
         - ShadowBasaltRandom
       rarePrototypes:
-        - ShadowPortalTemp
         - ShadowKudzuLootSpawnerTemp
-        - MobCatShadow
     - type: TimedDespawn
-      lifetime: 10
+      lifetime: 12
