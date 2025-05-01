@@ -30,6 +30,12 @@ public sealed partial class BlindableComponent : Component
     [ViewVariables(VVAccess.ReadOnly), DataField]
     public int MinDamage = 0;
 
+    /// <summary>
+    /// Whether the minimum eye damage can be modified with surgery.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite), DataField("incurable"), AutoNetworkedField]
+    public bool Incurable = false;
+
     /// <description>
     /// Used to ensure that this doesn't break with sandbox or admin tools.
     /// This is not "enabled/disabled".
