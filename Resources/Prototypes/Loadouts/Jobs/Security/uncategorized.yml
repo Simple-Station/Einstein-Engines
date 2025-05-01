@@ -751,7 +751,7 @@
   items:
     - ClothingUniformJumpsuitZavodCadet
 
-    - type: loadout
+- type: loadout
   id: LoadoutSecurityJumpsuitEOC
   category: JobsSecurityAUncategorized
   cost: 0
