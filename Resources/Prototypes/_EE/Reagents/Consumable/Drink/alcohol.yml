@@ -5,7 +5,7 @@
   desc: reagent-desc-vodka-sports-drink
   physicalDesc: reagent-physical-desc-strong-smelling
   flavor: vodkasportsdrink
-  color: "#fcff5660"
+  color: "#fcff56a0"
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/ginvodkaglass.rsi
     state: icon_empty
@@ -28,7 +28,7 @@
   desc: reagent-desc-ronin-refresher
   physicalDesc: reagent-physical-desc-exotic-smelling
   flavor: roninrefresher
-  color: "#6ebeff90"
+  color: "#6ebeffc0"
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/gildlagerglass.rsi
     state: icon_empty
@@ -56,7 +56,7 @@
   flavor: deadlifter
   color: "#a05446"
   metamorphicSprite:
-    sprite: Objects/Consumable/Drinks/boogerglass.rsi
+    sprite: Objects/Consumable/Drinks/booger.rsi
     state: icon_empty
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-

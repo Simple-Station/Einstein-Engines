@@ -6,7 +6,7 @@
   slippery: true
   physicalDesc: reagent-physical-desc-translucent
   flavor: sportyyellow
-  color: "#fbff2780"
+  color: "#fbff27e0"
   metabolisms:
     Drink:
       effects:
@@ -19,7 +19,7 @@
   parent: SportsDrinkYellow
   desc: reagent-desc-sports-drink-blue
   flavor: sportyblue
-  color: "#46a6f580"
+  color: "#46a6f5e0"
   metabolisms:
     Drink:
       effects:
@@ -33,7 +33,7 @@
   parent: SportsDrinkYellow
   desc: reagent-desc-sports-drink-red
   flavor: sportyred
-  color: "#f7371580"
+  color: "#f73715e0"
   metabolisms:
     Drink:
       effects:

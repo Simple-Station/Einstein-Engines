@@ -17,7 +17,7 @@
   - type: Sprite
     sprite: _EE/Objects/Consumable/Drinks/sportsdrink.rsi
     layers:
-      - state: icon
+      - state: icon-yellow
         map: ["enum.OpenableVisuals.Layer"]
       - state: fill-1
         map: ["enum.SolutionContainerLayers.Fill"]
@@ -28,30 +28,46 @@
     fillBaseName: fill-
   - type: Sealable
 
-  - type: entity
-    parent: DrinkSportsYellowBottleFull
-    id: DrinkSportsBlueBottleFull
-    name: blue Supernade bottle
-    description:  A striking blue performance sports drink, banned from sale for containing carcinogens. It's allegedly cool frezon flavored.
-    components:
-    - type: SolutionContainerManager
-      solutions:
-        drink:
-          maxVol: 30
-          reagents:
-          - ReagentId: SportsDrinkBlue
-            Quantity: 30
+- type: entity
+  parent: DrinkSportsYellowBottleFull
+  id: DrinkSportsBlueBottleFull
+  name: blue Supernade bottle
+  description:  A striking blue performance sports drink, banned from sale for containing carcinogens. It's allegedly cool frezon flavored.
+  components:
+  - type: Sprite
+    sprite: _EE/Objects/Consumable/Drinks/sportsdrink.rsi
+    layers:
+      - state: icon-blue
+        map: ["enum.OpenableVisuals.Layer"]
+      - state: fill-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: SportsDrinkBlue
+          Quantity: 30
 
-  - type: entity
-    parent: DrinkSportsYellowBottleFull
-    id: DrinkSportsRedBottleFull
-    name: red Supernade bottle
-    description: A sickly red performance sports drink, banned from sale for containing carcinogens. It's allegedly nitrous punch flavored.
-    components:
-    - type: SolutionContainerManager
-      solutions:
-        drink:
-          maxVol: 30
-          reagents:
-          - ReagentId: SportsDrinkRed
-            Quantity: 30
+- type: entity
+  parent: DrinkSportsYellowBottleFull
+  id: DrinkSportsRedBottleFull
+  name: red Supernade bottle
+  description: A sickly red performance sports drink, banned from sale for containing carcinogens. It's allegedly nitrous punch flavored.
+  components:
+  - type: Sprite
+    sprite: _EE/Objects/Consumable/Drinks/sportsdrink.rsi
+    layers:
+      - state: icon-red
+        map: ["enum.OpenableVisuals.Layer"]
+      - state: fill-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: SportsDrinkRed
+          Quantity: 30

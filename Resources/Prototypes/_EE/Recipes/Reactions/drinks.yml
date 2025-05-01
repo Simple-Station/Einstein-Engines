@@ -9,14 +9,14 @@
     SportsDrinkBlue: 5
 
 - type: reaction
-  id: SportsrinkRed
+  id: SportsDrinkRed
   reactants:
     LiftLoversSpecial:
       amount: 1
     SportsDrinkYellow:
       amount: 4
   products:
-    SportsrinkRed: 5
+    SportsDrinkRed: 5
 
 - type: reaction
   id: VodkaSportsDrink
@@ -42,6 +42,8 @@
 
 - type: reaction
   id: Deadlifter
+  requiredMixerCategories:
+  - Shake
   reactants:
     Absinthe:
       amount: 1
