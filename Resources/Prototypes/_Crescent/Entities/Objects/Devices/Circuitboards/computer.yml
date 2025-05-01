@@ -1,0 +1,21 @@
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: RadarConsoleCircuitboard
+  name: radar console computer board
+  components:
+  - type: ComputerBoard
+    prototype: ComputerRadar
+  - type: ComputerTabletopBoard # Frontier
+    prototype: ComputerTabletopRadar # Frontier
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: AdvancedRadarConsoleCircuitboard # Frontier
+  name: advanced radar console computer board
+  components:
+  - type: Sprite
+    state: cpu_security
+  - type: ComputerBoard
+    prototype: ComputerAdvancedRadar
+  - type: ComputerTabletopBoard # Frontier
+    prototype: ComputerTabletopAdvancedRadar # Frontier

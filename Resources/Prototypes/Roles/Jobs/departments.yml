@@ -1,101 +1,64 @@
 - type: department
-  id: Logistics # DeltaV - Logistics Department replacing Cargo
+  id: Logistics
   description: department-Cargo-description
   color: "#A46106"
-  roles:
-  - CargoTechnician
-  - Quartermaster
-  - SalvageSpecialist
-  - MailCarrier # Nyanotrasen - MailCarrier, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Cargo/mail-carrier.yml
+  weight: -90
+  primary: false
 
 - type: department
   id: Civilian
   description: department-Civilian-description
   color: "#9FED58"
-  weight: -10
+  weight: 5
   roles:
-  - Bartender
-  - Botanist
-  - Boxer
-  # - Chaplain # DeltaV - Move Chaplain into Epistemics
-  - Chef
-  - Clown
-  - HeadOfPersonnel
-  - Janitor
-  # - Lawyer # DeltaV - Move Lawyer into Justice
-  - Mime
-  - Musician
-  - Passenger
-  - Reporter
-  - Visitor
-  - Zookeeper
-  - ServiceWorker
-  - MartialArtist # Nyanotrasen - MartialArtist, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Wildcards/martialartist.yml
-  - Prisoner # Nyanotrasen - Prisoner, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Wildcards/prisoner.yml
-  - Gladiator # Nyanotrasen - Gladiator, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Wildcards/gladiator.yml
+  - Borg
+  - GliessianDockmaster
+  - GliessianSheriff
+  - Spacer
+ # - Botanist
+ # - Boxer
+ # - Chaplain
+ # - Chef
+ # - Clown
+#  - HeadOfPersonnel
+ # - Lawyer
+ # - Librarian
+ # - Mime
+ # - Musician
+  - Contractor
+ # - Reporter
+ # - Visitor
+ # - Zookeeper
+ # - ServiceWorker
+  enabled: true
 
 - type: department
   id: Command
   description: department-Command-description
   color: "#334E6D"
   roles:
-  - Captain
   - CentralCommandOfficial
-  - ChiefEngineer
-  - ChiefMedicalOfficer
-  - HeadOfPersonnel
-  - HeadOfSecurity
-  - ResearchDirector
-  - Quartermaster
-  - ChiefJustice # DeltaV - chief justice is in command staff
-  - CentralCommandOfficial
-  - CBURN
-  - ERTLeader
-  - ERTChaplain
-  - ERTJanitor
-  - ERTMedical
-  - ERTSecurity
-  - ERTEngineer
-  - DeathSquad
-  - AdministrativeAssistant # Delta V - Administrative Assistant, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Command/admin_assistant.yml
+  - KommissarNCWL
+  - HeadOfPersonnel # Not shown but needed here for playtime
+  - HeadOfSecurity # Not shown but needed here for playtime
+#  - ChiefMedicalOfficer
   primary: false
   weight: 100
-
-- type: department
-  id: Dignitary
-  description: department-Dignitary-description
-  color: "#33FE6D"
-  roles:
-  - BlueshieldOfficer # Goobstation
-  - NanotrasenRepresentative # Goobstation
-  - Magistrate # Goobstation
-  primary: false
-  weight: 101
+  enabled: false
 
 - type: department
   id: Engineering
   description: department-Engineering-description
   color: "#EFB341"
-  roles:
-  - AtmosphericTechnician
-  - ChiefEngineer
-  - SeniorEngineer
-  - StationEngineer
-  - TechnicalAssistant
+  weight: -94
+  primary: false
 
 - type: department
   id: Medical
   description: department-Medical-description
   color: "#52B4E9"
-  roles:
-  - Chemist
-  - ChiefMedicalOfficer
-  - MedicalDoctor
-  - MedicalIntern
-  - Psychologist
-  - Paramedic
-  - SeniorPhysician
-  - MedicalBorg  # Delta V - Medical Borg, see Resources/Prototypes/DeltaV/Roles/Jobs/Medical/medicalborg.yml
+  weight: -93
+  primary: false
 
 - type: department
   id: Security
@@ -103,49 +66,149 @@
   color: "#DE3A3A"
   weight: 20
   roles:
+  - Detective
   - HeadOfSecurity
   - SecurityCadet
   - SecurityOfficer
-  - SeniorOfficer
-  - Detective
   - Warden
-  - PrisonGuard # Nyanotrasen - PrisonGuard, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Security/prisonguard.yml
-  - Brigmedic # DeltaV - Brigmedic, see Resources/Prototypes/DeltaV/Roles/Jobs/Security/brigmedic.yml
+  enabled: false
 
 - type: department
-  id: Epistemics # DeltaV - Epistemics Department replacing Science
-  description: department-Science-description
+  id: Epistemics
+  description: department-Epistemics-description
   color: "#D381C9"
-  roles:
-  - ResearchDirector
-  - SeniorResearcher
-  - Scientist
-  - ResearchAssistant
-  - Chaplain # DeltaV - Move Chaplain into Epistemics
-  - ForensicMantis # Nyanotrasen - ForensicMantis, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Epistemics/forensicmantis.yml
-  - Librarian
-  - Roboticist
-
-- type: department
-  id: Silicon
-  description: department-Silicon-description
-  color: "#D381C9"
-  roles:
-  - Borg
-  - StationAi
+  weight: -92
+  primary: false
 
 - type: department
   id: Specific
   description: department-Specific-description
   color: "#9FED58"
-  weight: 10
-  roles:
-  - Boxer
-  - Reporter
-  - Zookeeper
-  - Psychologist
-  - MartialArtist # Nyanotrasen - MartialArtist, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Wildcards/martialartist.yml
-  - Gladiator # Nyanotrasen - Gladiator, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Wildcards/gladiator.yml
-  - Prisoner # Nyanotrasen - Prisoner, see Resrouces/Prototypes/Nyanotrasen/Roles/Jobs/Wildcards/prisoner.yml
-  - Brigmedic # DeltaV - Corpsman, see Resources/Prototypes/DeltaV/Roles/Jobs/Security/brigmedic.yml
+  weight: -91
   primary: false
+- type: department
+  id: NCWL
+  description: department-NCWL-description
+  color: "#FFD580"
+  weight: 100
+  roles:
+  - AdministratorNCWL
+  - KommissarNCWL
+  - SanitarNCWL
+  - ArtificerNCWL
+  - DoktorNCWL
+  - KapitanNCWL
+  - KadetNCWL
+  enabled: true
+
+- type: department
+  id: NCSP
+  description: department-NCSP-description
+  color: "#DC143C"
+  weight: 90
+  roles:
+  - RingleaderNCSP
+  - LieutenantNCSP
+  - InfanteerNCSP
+  - TechnicianNCSP
+  - RipperdocNCSP
+  - ChemcookNCSP
+  - OperativeNCSP
+  - IntelligenceOfficerNCSP
+  - CyberdawnTechNCSP
+  - ForemanNCSP
+  - ShipbreakerNCSP
+  enabled: true
+
+- type: department
+  id: DSM
+  description: department-DSM-description
+  color: "#684871"
+  weight: 85
+  roles:
+  - FreeholderDSM
+  - LevymanDSM
+  - KnightDSM
+  - WealthDSM
+  - ForemanDSM
+  - ScribeDSM
+  - TemplarDSM
+  - SurgeonDSM
+  - CourtierDSM
+  - AdjutantDSM
+  - GovernorDSM
+  - AdvocatusDSM
+  - ArchmaesterDSM
+  enabled: true
+
+- type: department
+  id: SRM
+  description: department-SRM-description
+  color: "#4a6741"
+  weight: 80
+  roles:
+  - TenderSRM
+  - AcolyteSRM
+  - HunterSRM
+  - MontagneSRM
+  - OverseerSRM
+  enabled: false
+
+- type: department
+  id: SHI
+  description: department-SHI-description
+  color: "#4a6741"
+  weight: 75
+  roles:
+  - ExecutiveSHI
+  - BoardSHI
+  - HighsecSHI
+  - CorpsecSHI
+  - EmployeeSHI
+  - MedtechSHI
+  enabled: false
+
+- type: department
+  id: CMM
+  description: department-CMM-description
+  color: "#5191e0"
+  weight: 70
+  roles:
+  - OrdnancemanCMM
+  - MachinistCMM
+  - PhysicianCMM
+  - MinutemanCMM
+  - WatchmasterCMM
+  - DeputyMarshalCMM
+  - MarshalCMM
+  enabled: true
+
+- type: department
+  id: TAP
+  description: department-TAP-description
+  color: "#50c878"
+  weight: 55
+  roles:
+  - ProphetTAP
+  - AcolyteTAP
+  - TinkererTAP
+  - TechminerTAP
+  - HangarTechTAP
+  - Antiquarian
+  - BeltrunnerTAP
+  - DraugrTAP
+  - ServileTAP
+  enabled: true
+
+- type: department
+  id: ATH
+  description: department-ATH-description
+  color: "#ffffed"
+  weight: 40
+  roles:
+  - KommandantATH
+  - LeutnantATH
+  - KanoneerATH
+  - SoldatATH
+  - SanitatATH
+  enabled: true

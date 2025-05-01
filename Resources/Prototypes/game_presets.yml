@@ -98,7 +98,6 @@
     - Secret
     - LavalandStormScheduler # Lavaland Change
 
-
 - type: gamePreset
   id: SecretExtended #For Admin Use: Runs Extended but shows "Secret" in lobby.
   alias:

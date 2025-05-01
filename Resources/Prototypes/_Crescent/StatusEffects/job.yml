@@ -1,0 +1,447 @@
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconCorpsec
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: CorpSec
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconAdvocatus
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: advocatus
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconAdvocatusTemplar
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: advocatustemplar
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconArchmaester
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: archmaester
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconCyberdawnTech
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: cyberdawntech
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconArtificer
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Artificer
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconKadet
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Kadet
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconCommsOfficer
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: CommunicationsOfficer
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconCommissar
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Commissar
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconDoktor
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Doktor
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSanitar
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Sanitar
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSyndieRingleader
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Ringleader
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSyndieLieutenant
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Lieutenant
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSyndieRipperdoc
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Ripperdoc
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSyndiePrivateer
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Privateer
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSyndieNewblood
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Newblood
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSyndieChemcook
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Chemcook
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSyndieOperative
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Operative
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSyndieIntelligenceOfficer
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: IntelligenceOfficer
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSyndieShipbreaker
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Shipbreaker
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSyndieForeman
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Foreman
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconImperialAdjutant
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Adjutant
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconImperialGovernor
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Governor
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconImperialCourtier
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Courtier
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconImperialKnight
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Knight
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconImperialFreeholder
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Freeholder
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconImperialLevyman
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Levyman
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconTender
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Tender
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconHunter
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Hunter
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconMontagne
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Montagne
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconAcolyte
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Acolyte
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconOverseer
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Overseer
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconExecutive
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Executive
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconEmployee
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Employee
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconLogistics
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Logistics
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconMedtech
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: MedTech
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconBoard
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Board
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconHighsec
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Highsec
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconDeputyMarshal
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: DeputyMarshal
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconMarshal
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Marshal
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconMinuteman
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Minuteman
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconOrdnanceman
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Ordnanceman
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconCMMPhysician
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Physician
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconWatchmaster
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Watchmaster
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconMachinist
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Engineman
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconProphet
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Prophet
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconAcolyteFamilies
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: AcolyteFamilies
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconDraugr
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: draugrfamilies
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconServile
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: servile
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconTechminer
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: techminer
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconTinkerer
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: tinkerer
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconHangarTech
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hangartech
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconAntiquarian
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: antiquarian
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconBeltrunner
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: beltrunner
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconGliessSheriff
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: sheriff
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconKommandant
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: kommandant
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconLeutnant
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: leutnant
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSoldat
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: soldat
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconKanoneer
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: kanoneer
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSanitat
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: sanitat
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconImperialWealth
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Wealthman
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconImperialSurgeon
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Surgeon
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconImperialForeman
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: ForemanImp
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconImperialScribe
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: logisticier
