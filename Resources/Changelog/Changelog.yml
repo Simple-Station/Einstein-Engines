@@ -15736,3 +15736,10 @@ Entries:
   id: 7214
   time: '2025-04-30T21:17:59.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2358
+- author: EctoplasmIsGood
+  changes:
+    - type: Fix
+      message: Energy guns wont cycle on wield anymore
+  id: 7215
+  time: '2025-05-01T17:43:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2368
