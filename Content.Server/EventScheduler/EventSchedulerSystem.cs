@@ -11,21 +11,21 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
     private uint _id = 0;
     private uint NextId() { return _id++; }
 
-    private Dictionary<uint, DelayedEvent> _eventList = new();
+    private Dictionary<uint, DelayedEvent> _eventDict = new();
     private static PriorityQueue<uint, TimeSpan> _eventQueue = new(_comparer);
     private static EventSchedulerComparer _comparer = new();
 
     private void Enqueue(DelayedEvent delayedEvent, TimeSpan time)
     {
-        _eventList.Add(delayedEvent.Id, delayedEvent);
+        _eventDict.Add(delayedEvent.Id, delayedEvent);
         _eventQueue.Enqueue(delayedEvent.Id, time);
     }
 
     private void Dequeue(out DelayedEvent? delayedEvent)
     {
         var id = _eventQueue.Dequeue();
-        delayedEvent = _eventList[id];
-        _eventList.Remove(id);
+        delayedEvent = _eventDict[id];
+        _eventDict.Remove(id);
     }
 
     private void Dequeue()
@@ -38,7 +38,7 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
         var curId = delayedEvent.Id;
 
         // if we can't get the event for whatever reason, consider the requeuing a failure
-        if (!_eventList.TryGetValue(curId, out _))
+        if (!_eventDict.TryGetValue(curId, out _))
         {
             Log.Warning($"Couldn't reschedule event for {delayedEvent.Uid}, missing a value!");
 
@@ -151,7 +151,7 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
 
             // mostly a getter for values we're dealing with, if there are no queued events break
             if (!_eventQueue.TryPeek(out var index, out var time)
-                || !_eventList.TryGetValue(index, out var current))
+                || !_eventDict.TryGetValue(index, out var current))
                 break;
 
             // if the pointed event has been cancelled, get the next event
