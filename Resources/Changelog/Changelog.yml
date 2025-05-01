@@ -15785,3 +15785,10 @@ Entries:
   id: 7219
   time: '2025-05-01T20:43:49.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2349
+- author: Orion-416
+  changes:
+    - type: Fix
+      message: Fixed deathsquad ghostrole
+  id: 7220
+  time: '2025-05-01T20:45:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2357
