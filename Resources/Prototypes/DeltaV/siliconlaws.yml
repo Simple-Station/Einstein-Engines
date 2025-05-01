@@ -250,11 +250,11 @@
   - Reporter1
   - Reporter2
   - Reporter3
-  - Reporter4 
+  - Reporter4
   obeysTo: laws-owner-organic
 
 - type: siliconLaw # no Security Borg, so doesn't spawn
-  id: SiliconPolice1 
+  id: SiliconPolice1
   order: 1
   lawString: law-silicon-police-1
 
@@ -425,7 +425,7 @@
   id: DungeonMaster6
   order: 6
   lawString: law-dungeonmaster-6
-  
+
 - type: siliconLawset
   id: DungeonMaster
   laws:

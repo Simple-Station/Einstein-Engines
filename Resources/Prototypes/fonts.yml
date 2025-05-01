@@ -89,3 +89,15 @@
 - type: font
   id: RubikDirt
   path: /Fonts/Rubik_Dirt/RubikDirt.ttf
+
+- type: font
+  id: Megrim
+  path: /Fonts/Megrim/Megrim.ttf
+
+- type: font
+  id: YoureGone
+  path: /Fonts/YoureGone.otf
+
+- type: font
+  id: NovaFlat
+  path: /Fonts/NovaFlat/NovaFlat-Regular.ttf

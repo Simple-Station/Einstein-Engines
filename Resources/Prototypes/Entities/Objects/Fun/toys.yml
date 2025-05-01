@@ -210,6 +210,8 @@
   components:
   - type: Sprite
     state: plushie_nuke
+  - type: Item
+    heldPrefix: plushienuke
 
 - type: entity
   parent: BasePlushie
@@ -270,7 +272,10 @@
   description: An adorable stuffed toy that resembles a lizardperson. Made by CentCom as a token initiative to combat speciesism in work environments. "Welcome your new colleagues as you do this plush, with open arms!"
   components:
   - type: Sprite
+    sprite: Objects/Fun/toys.rsi
     state: plushie_lizard
+  - type: Item
+    heldPrefix: plushielizard
   - type: EmitSoundOnUse
     sound:
       path: /Audio/Items/Toys/weh.ogg
@@ -305,6 +310,12 @@
           Quantity: 10
         - ReagentId: JuiceThatMakesYouWeh
           Quantity: 10
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/toys.rsi
+    equippedPrefix: lizard
+    slots:
+    - HEAD
 
 - type: entity
   parent: PlushieLizard
@@ -321,6 +332,8 @@
   name: space lizard plushie
   description: An adorable stuffed toy that resembles a lizardperson in an EVA suit. Made by CentCom as a token initiative to combat speciesism in space environments. "Welcome your new colleges as you do this plush, with open arms!"
   components:
+  - type: Item
+    heldPrefix: spacelizard
   - type: Sprite
     state: plushie_spacelizard
   - type: EmitSoundOnUse
@@ -357,6 +370,14 @@
           Quantity: 10
         - ReagentId: JuiceThatMakesYouWeh
           Quantity: 10
+  - type: Clothing
+    slots:
+    - HEAD
+    quickEquip: false
+    clothingVisuals:
+      head:
+      - state: spacelizard-equipped-HELMET
+        offset: "0, 0.03"
 
 - type: entity
   parent: BasePlushie
@@ -657,8 +678,8 @@
     sprite: Objects/Fun/ducky.rsi
     state: icon
   - type: MeleeWeapon
-    attackRate: .6666
-    range: 1.5
+    attackRate: .6
+    range: 1.6
     damage:
       types:
         Blunt: 0.1
@@ -2030,7 +2051,7 @@
       params:
         variation: 0.05
   - type: EmitSoundOnLand
-    sound: 
+    sound:
       path: /Audio/DeltaV/Voice/Harpy/caw1.ogg
       params:
         variation: 0.05

@@ -8,6 +8,18 @@
   - type: Sprite
     sprite: _Goobstation/Clothing/Head/Hardsuits/blueshield.rsi
   - type: Clothing
+    clothingVisuals:
+      head:
+      - state: off-equipped-HELMET
+      - state: off-equipped-HELMET-glow
+        shader: unshaded
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+      - state: on-equipped-HELMET-glow
+        shader: unshaded
     sprite: _Goobstation/Clothing/Head/Hardsuits/blueshield.rsi
   - type: PointLight
     color: "#57b9ff"
@@ -70,6 +82,18 @@
   - type: Sprite
     sprite: _Goobstation/Clothing/Head/Hardsuits/dreadnought.rsi
   - type: Clothing
+    clothingVisuals:
+      head:
+      - state: off-equipped-HELMET
+      - state: off-equipped-HELMET-glow
+        shader: unshaded
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+      - state: on-equipped-HELMET-glow
+        shader: unshaded
     sprite: _Goobstation/Clothing/Head/Hardsuits/dreadnought.rsi
   - type: PointLight
     color: red

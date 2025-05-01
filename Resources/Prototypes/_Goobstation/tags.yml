@@ -1,13 +1,17 @@
 - type: Tag
-  id: MagazineMagnumLeverRifle
+  id: CartridgeLightRifleSubsonic
 
-# Mechs
+- type: Tag
+  id: CartridgeHighCaliber
+
+- type: Tag
+  id: CartridgeHighCaliberExplosive
+
+- type: Tag
+  id: Clarke
 
 - type: Tag
   id: ClarkeCentralControlModule
-
-- type: Tag
-  id: ClarkePeripheralsControlModule
 
 - type: Tag
   id: ClarkeHead
@@ -16,22 +20,25 @@
   id: ClarkeLArm
 
 - type: Tag
+  id: ClarkePeripheralsControlModule
+
+- type: Tag
   id: ClarkeRArm
 
 - type: Tag
   id: ClarkeTreads
 
 - type: Tag
+  id: CombatMech
+
+- type: Tag
+  id: Durand
+
+- type: Tag
   id: DurandArmor
 
 - type: Tag
   id: DurandCentralControlModule
-
-- type: Tag
-  id: DurandPeripheralsControlModule
-
-- type: Tag
-  id: DurandTargetingControlModule
 
 - type: Tag
   id: DurandHead
@@ -43,22 +50,25 @@
   id: DurandLLeg
 
 - type: Tag
+  id: DurandPeripheralsControlModule
+
+- type: Tag
   id: DurandRArm
 
 - type: Tag
   id: DurandRLeg
 
 - type: Tag
+  id: DurandTargetingControlModule
+
+- type: Tag
+  id: Gygax
+
+- type: Tag
   id: GygaxArmor
 
 - type: Tag
   id: GygaxCentralControlModule
-
-- type: Tag
-  id: GygaxPeripheralsControlModule
-
-- type: Tag
-  id: GygaxTargetingControlModule
 
 - type: Tag
   id: GygaxHead
@@ -70,55 +80,34 @@
   id: GygaxLLeg
 
 - type: Tag
+  id: GygaxPeripheralsControlModule
+
+- type: Tag
   id: GygaxRArm
 
 - type: Tag
   id: GygaxRLeg
 
 - type: Tag
-  id: MechAirTank
-
-- type: Tag
-  id: MechThruster
-
-- type: Tag
-  id: RipleyMKIIUpgradeKit
+  id: GygaxTargetingControlModule
 
 - type: Tag
   id: IndustrialMech
 
 - type: Tag
-  id: CombatMech
-# TODO: Make medical mech, I will.
+  id: MagazineHighCaliber
 
 - type: Tag
-  id: SpecialMech
+  id: MagazineLightRifleSubsonic
 
 - type: Tag
-  id: RipleyMkII
+  id: MagazineMagnumLeverRifle
 
 - type: Tag
-  id: Clarke
+  id: MechAirTank
 
 - type: Tag
-  id: Durand
-
-- type: Tag
-  id: Gygax
-
-  # MODsuits
-
-- type: Tag
-  id: ModsuitPart
-
-- type: Tag
-  id: ModsuitShell
-
-- type: Tag
-  id: ModsuitGauntlets
-
-- type: Tag
-  id: ModsuitHelmet
+  id: MechThruster
 
 - type: Tag
   id: ModsuitBoots
@@ -130,4 +119,28 @@
   id: ModsuitCore
 
 - type: Tag
+  id: ModsuitGauntlets
+
+- type: Tag
+  id: ModsuitHelmet
+
+- type: Tag
+  id: ModsuitPart
+
+- type: Tag
   id: ModsuitPlatingExternal
+
+- type: Tag
+  id: ModsuitShell
+
+- type: Tag
+  id: RipleyMKIIUpgradeKit
+
+- type: Tag
+  id: RipleyMkII
+
+- type: Tag
+  id: SpecialMech
+
+- type: Tag
+  id: WeaponPistolDualetta

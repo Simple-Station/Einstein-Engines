@@ -78,6 +78,7 @@
   children:
     # Major Nations
     - SolAlliance
+    - TCFL
     #- BieselRepublic
     #- CoalitionOfColonies
     #- AdhomaiFactions
@@ -88,3 +89,8 @@
   id: SolAlliance
   name: guide-entry-sol-alliance
   text: "/ServerInfo/Guidebook/Lore/Nations/SolAlliance.xml"
+
+- type: guideEntry
+  id: TCFL
+  name: guide-entry-tcfl
+  text: "/ServerInfo/Guidebook/Lore/Nations/TCFL.xml"

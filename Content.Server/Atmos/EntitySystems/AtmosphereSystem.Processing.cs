@@ -413,10 +413,6 @@ namespace Content.Server.Atmos.EntitySystems
             while (atmosphere.CurrentRunTiles.TryDequeue(out var tile))
             {
                 HighPressureMovements(ent, tile, bodies, xforms, pressureQuery, metas, projectileQuery, sumGravity);
-                tile.PressureDifference = 0f;
-                tile.LastPressureDirection = tile.PressureDirection;
-                tile.PressureDirection = AtmosDirection.Invalid;
-                tile.PressureSpecificTarget = null;
                 atmosphere.HighPressureDelta.Remove(tile);
 
                 if (number++ < LagCheckIterations)
@@ -576,10 +572,14 @@ namespace Content.Server.Atmos.EntitySystems
                 _currentRunAtmosphereIndex = 0;
                 _currentRunAtmosphere.Clear();
 
-                var query = EntityQueryEnumerator<GridAtmosphereComponent, GasTileOverlayComponent, MapGridComponent, TransformComponent>();
-                while (query.MoveNext(out var uid, out var atmos, out var overlay, out var grid, out var xform ))
+                var query = EntityQueryEnumerator<GridAtmosphereComponent>();
+                while (query.MoveNext(out var uid, out var atmos))
                 {
-                    _currentRunAtmosphere.Add((uid, atmos, overlay, grid, xform));
+                    if (!TryComp(uid, out GasTileOverlayComponent? overlay)
+                        || !TryComp(uid, out MapGridComponent? grid))
+                        continue;
+
+                    _currentRunAtmosphere.Add((uid, atmos, overlay, grid, Transform(uid)));
                 }
             }
 

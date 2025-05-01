@@ -8,7 +8,7 @@ using Content.Shared.Damage;
 using Content.Server.Mind;
 using Content.Shared.Mobs.Systems;
 using Content.Server.Popups;
-using Content.Server.Psionics;
+using Content.Shared.Psionics;
 using Content.Server.GameTicking;
 using Content.Shared.Mind;
 using Content.Shared.Actions.Events;
@@ -38,7 +38,7 @@ namespace Content.Server.Abilities.Psionics
 
         private void OnPowerUsed(MindSwapPowerActionEvent args)
         {
-            if (!_psionics.OnAttemptPowerUse(args.Performer, "mind swap")
+            if (!_psionics.OnAttemptPowerUse(args.Performer, args.Target, "mind swap", true)
                 || !(TryComp<DamageableComponent>(args.Target, out var damageable) && damageable.DamageContainerID == "Biological"))
                 return;
 

@@ -120,16 +120,20 @@
 - type: entity
   id: ClothingBeltMedicalEMTFilled
   parent: ClothingBeltMedicalEMT
-  suffix: Paramedic,Filled
+  suffix: Filled
   components:
   - type: StorageFill
     contents:
-      - id: Brutepack
-      - id: Ointment
+      - id: MedicatedSuture
+        amount: 2
+      - id: RegenerativeMesh
+        amount: 1
       - id: Bloodpack
+        amount: 1
       - id: Gauze
-      - id: EmergencyMedipen #You never know what people are going to latejoin into
-        amount: 3
+      - id: EmergencyMedipen
+      - id: BruteAutoInjector
+      - id: BurnAutoInjector
 
 - type: entity
   id: ClothingBeltPlantFilled

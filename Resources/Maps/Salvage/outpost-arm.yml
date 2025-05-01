@@ -146,6 +146,7 @@ entities:
           decals:
             19: 1.5020199,7.7976913
     - type: GridAtmosphere
+      simulatedTurf: false
       version: 2
       data:
         tiles:

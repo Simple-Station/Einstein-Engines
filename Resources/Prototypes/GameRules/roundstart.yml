@@ -91,8 +91,7 @@
     definitions:
     - prefRoles: [ NukeopsCommander ]
       fallbackRoles: [ Nukeops, NukeopsMedic ]
-      max: 1
-      playerRatio: 10
+      spawnerPrototype: SpawnPointNukeopsCommander
       startingGear: SyndicateCommanderGearFull
       components:
       - type: NukeOperative
@@ -107,8 +106,7 @@
       - MindRoleNukeopsCommander
     - prefRoles: [ NukeopsMedic ]
       fallbackRoles: [ Nukeops, NukeopsCommander ]
-      max: 1
-      playerRatio: 10
+      spawnerPrototype: SpawnPointNukeopsMedic
       startingGear: SyndicateOperativeMedicFull
       components:
       - type: NukeOperative
@@ -123,7 +121,7 @@
       - MindRoleNukeopsMedic
     - prefRoles: [ Nukeops ]
       fallbackRoles: [ NukeopsCommander, NukeopsMedic ]
-      min: 0
+      spawnerPrototype: SpawnPointNukeopsOperative
       max: 3
       playerRatio: 10
       startingGear: SyndicateOperativeGearFull
@@ -281,8 +279,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: RampingStationEventScheduler
-    chaosModifier: 4 # By default, one event each 30-10 seconds after two hours. Changing CVars will cause this to deviate.
-    startingChaosRatio: 0.025 # Starts as slow as survival, but quickly ramps up
+    chaosModifier: 5 # By default, one event each 30-10 seconds after two hours. Changing CVars will cause this to deviate.
+    startingChaosRatio: 0.1
     shiftLengthModifier: 2.5
 
 - type: entity
@@ -330,3 +328,6 @@
 #    - id: BloodbathPuddleMessVariationPass
 #      prob: 0.01
 #      orGroup: puddleMess
+    - id: SmugglerStashVariationPass
+      prob: 0.90
+

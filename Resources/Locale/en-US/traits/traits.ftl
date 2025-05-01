@@ -1,5 +1,7 @@
 trait-name-Blindness = Blindness
-trait-description-Blindness = You are legally blind, and can't see clearly past a few meters in front of you.
+trait-description-Blindness =
+    You are legally blind, and can't see clearly past a few meters in front of you.[color=red]
+    This cannot be cured in any way.[/color]
 trait-examined-Blindness = [color=lightblue]{CAPITALIZE(POSS-ADJ($target))} eyes are glassy and unfocused. It doesn't seem like {SUBJECT($target)} can see you well, if at all.[/color]
 
 trait-name-Narcolepsy = Narcolepsy
@@ -287,7 +289,7 @@ trait-description-SnailPaced =
 
 trait-name-LightStep = Light Step
 trait-description-LightStep =
-    You move with a gentle step, which makes your footsteps quieter.
+    You move with a gentle step, which makes your footsteps quieter when not wearing any kind of shoes.
 
 trait-name-Swashbuckler = Swashbuckler
 trait-description-Swashbuckler =
@@ -304,28 +306,13 @@ trait-description-WeaponsGeneralist =
     You are a jack of all trades with melee weapons, enabling you to be versatile with your weapon arsenal.
     Your melee damage bonus for all Brute damage types (Blunt, Slash, Piercing) becomes 30%.
 
+trait-name-Mystic = Mystic
+trait-description-Mystic =
+    You are trained in Mysticism instead of melee combat, reducing your melee capabilities but drastically increasing your psionic potential.
+    Your melee damage bonus for all Brute damage types (Blunt, Slash, Piercing) becomes 10%, but your Potentia gain is drastically increased.
+
 trait-name-Singer = Singer
 trait-description-Singer = You are naturally capable of singing simple melodies with your voice.
-
-trait-name-LatentPsychic = Latent Psychic
-trait-description-LatentPsychic =
-    Your mind and soul are open to the noosphere, allowing for use of Telepathy.
-    Thus, you are eligible for potentially receiving psychic powers.
-    It is possible that you may be hunted by otherworldly forces, so consider keeping your powers a secret.
-
-trait-name-PsionicInsulation = χ Waveform Misalignment
-trait-description-PsionicInsulation =
-    You are a flesh automaton animated by neurotransmitters. Within your skull lies a
-    1.5kg sack of meat pretending at sentience. By modern epistemiological theory, you aren't even a sophont.
-    The good news is that you are immune to most positive and negative effects of psychic powers.
-    There may be other consequences to this malady.
-
-trait-name-NaturalTelepath = Natural Telepath
-trait-description-NaturalTelepath =
-    As a naturally occuring Telepath, you are capable of fluent telepathic communication, regardless of
-    whether or not you possess any notable psychic powers. This offers all of the same benefits and
-    drawbacks of Latent Psychic, except that you are guaranteed to start with full Telepathy. You may
-    still gain powers as normal for a Latent Psychic.
 
 trait-name-TrapAvoider = Trap Avoider
 trait-description-TrapAvoider =
@@ -507,6 +494,11 @@ trait-description-MetapsionicPower =
     to detect whether or not psions are nearby. This ability has a wide area of effect, and cannot precisely
     scan individual entities. Still, it is better than being blind.
 
+trait-name-HealingWordPower = Healing Word
+trait-description-HealingWordPower =
+    Your Mentalic abilities includes the power to heal the wounded.
+    This power, commonly known as "Healing Word", allows the user to heal themselves or others with their mind.
+
 trait-name-XenoglossyPower = Xenoglossy
 trait-description-XenoglossyPower =
     An advanced form of Telepathy, Xenoglossy is the ability to speak using emotional and metaphysical concepts,
@@ -550,7 +542,7 @@ trait-description-ShadowkinBlackeye =
 
 trait-name-LyreBird = Lyre Bird
 trait-description-LyreBird =
-    Your natural talent for mimicry vastly exceeds that of other Harpies. You have the ability to perfectly imitate songs in their entirety.
+    Your talent for mimicry vastly exceeds the norms of others. You have the ability to perfectly imitate songs in their entirety.
     Be your own full symphony orchestra, jazz group, or metal band.
 
 trait-name-NaniteAutoRepairBots = Nanite Auto-Repair Bots
@@ -599,3 +591,65 @@ trait-name-Vampirism = Vampirism
 trait-description-Vampirism =
     Your body has evolved to be able to suck blood from beings that contain it and metabolize it into useful compounds.
     You cannot eat normal food, but drinking blood satiates your hunger and thirst, and also improves your health.
+
+trait-name-MothFlight = True Flight
+trait-description-MothFlight =
+    Unlike other mothpeople, your body is light enough and your wings are strong enough to be able to fly under normal gravity.
+    Flight is faster than running; however, it is strenuous and quickly drains your stamina.
+
+trait-name-Featherweight = Featherweight
+trait-description-Featherweight =
+    Your body is unusually lightweight for your species.
+    This trait reduces the density of your body by 50%, making dragging / picking things up harder.
+
+trait-name-Bodybuilder = Bodybuilder
+trait-description-Bodybuilder =
+    Through extensive training or body modification, you have achieved the pinnacle of physique.
+    This trait increases the density of your body by 55, making dragging / picking things up easier.
+
+trait-name-RestrictedGear = Restricted Gear
+trait-description-RestrictedGear =
+    Either through personal ownership or theft, you have access to equipment that isn't particularly standard issue.
+    Note that starting with an item [color=red]doesn't certify its legality[/color]. Conceal it or justify it.
+    (You equip other jobs' items in the loadouts menu)
+
+trait-name-SurgeryTraining = Surgery Training
+trait-description-SurgeryTraining =
+    At some point in your life you acquired the knowledge and experience necessary for performing surgery effectively.
+    This trait boosts your surgery speed to 1.6, and is intended for non-medical characters, as medical jobs already have faster surgery.
+    (This is slightly faster than a medical intern (1.5) but slower than a normal doctor (1.75))
+
+trait-name-ExperiencedSurgeon = Experienced Surgeon
+trait-description-ExperiencedSurgeon =
+    Surgery is your specialty. You are faster than most at your craft.
+    This trait boosts your surgery speed to 2.5, which is the same as the innate boost CMO gets.
+    (This is either a boost from 1.75 or 2 depending on your job)
+
+trait-name-BionicPryArm = Prybar Prosthetics
+trait-description-BionicPryArm =
+    Your arms have been reinforced with steel and hydraulics. You can force your way out of some unpleasant situations.
+    This trait gives you cybernetic DX-1 Pryarms, which let you pry open unpowered doors easily.
+    (They essentially function like a crowbar)
+
+trait-name-Moffic = Moffic
+trait-description-Moffic =
+    The language of the mothpeople borders on complete unintelligibility.
+    Some species with compatible mouthparts (IPC's speakers, Harpies' Larynx, and Chitinid's buzzing) are able to learn it.
+
+trait-name-Chittin = Chittin
+trait-description-Chittin =
+    A language consisting of clicks, buzzes, and some variety of harsh insect sounds.
+    Most of what makes up their speech comes from their antennae, making it a near-impossible language for those without to learn.
+    However, some species with compatible mouthparts (IPC's speakers, Harpies' Larynx, and Mothpeople's buzzing and antennae) are still able to learn it.
+
+trait-name-IPCInefficientCogitator = Inefficient Cogitator
+trait-description-IPCInefficientCogitator = 
+    Due to running with an outdated driver, your positronic brain consumes much more power than standard.
+    Your power drain is increased by ~33% (1.5/s -> 2/s). 
+    (Note that this is exponentially worse for you with better power sources. A medium-capacity cell lasts you 6 mins instead of 8).
+
+trait-name-IPCBrittleBoneDisease = Defective Chassis
+trait-description-IPCBrittleBoneDisease =
+    Made from weaker materials, or corroded by age or damage, your body is much weaker than the standard for an IPC.
+    This trait reduces your threshold for death by 60 points.
+    (Just as the normal version, it halves the threshold. IPCs cannot be crit, so it instead makes you die 60 points sooner.)

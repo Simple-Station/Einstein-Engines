@@ -13,6 +13,11 @@
   extendedAccess:
   - Kitchen
   - Bar
+  requirements:
+    - !type:CharacterEmployerRequirement
+      employers:
+      - NanoTrasen
+      - ZengHuPharmaceuticals
 
 - type: startingGear
   id: BotanistGear

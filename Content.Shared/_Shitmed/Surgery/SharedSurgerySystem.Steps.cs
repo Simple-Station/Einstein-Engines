@@ -17,7 +17,7 @@ using Content.Shared._Shitmed.Medical.Surgery.Effects.Step;
 using Content.Shared._Shitmed.Medical.Surgery.Steps;
 using Content.Shared._Shitmed.Medical.Surgery.Steps.Parts;
 using Content.Shared._Shitmed.Medical.Surgery.Tools;
-//using Content.Shared.Mood;
+using Content.Shared.Mood;
 using Content.Shared.Inventory;
 using Content.Shared.Item;
 using Content.Shared._Shitmed.Body.Organ;
@@ -165,9 +165,9 @@ public abstract partial class SharedSurgerySystem
         }
 
 
-        //if (!HasComp<ForcedSleepingComponent>(args.Body))
-        //    //RaiseLocalEvent(args.Body, new MoodEffectEvent("SurgeryPain"));
-        // No mood on Goob :(
+        if (!HasComp<ForcedSleepingComponent>(args.Body) || !HasComp<NoScreamComponent>(args.Body))
+            RaiseLocalEvent(args.Body, new MoodEffectEvent("SurgeryPain"));
+        // Morphine - reenable this :)
         if (!_inventory.TryGetSlotEntity(args.User, "gloves", out var _)
             || !_inventory.TryGetSlotEntity(args.User, "mask", out var _))
         {
@@ -278,6 +278,9 @@ public abstract partial class SharedSurgerySystem
 
         if (_inventory.TryGetContainerSlotEnumerator(args.Body, out var containerSlotEnumerator, args.TargetSlots))
         {
+            if (HasComp<SurgeryIgnoreClothingComponent>(args.User))
+                return;
+
             while (containerSlotEnumerator.MoveNext(out var containerSlot))
             {
                 if (!containerSlot.ContainedEntity.HasValue)
@@ -525,6 +528,7 @@ public abstract partial class SharedSurgerySystem
                 {
                     var ev = new SurgeryStepDamageChangeEvent(args.User, args.Body, args.Part, ent);
                     RaiseLocalEvent(ent, ref ev);
+                    args.Complete = true;
                 }
                 break;
             }

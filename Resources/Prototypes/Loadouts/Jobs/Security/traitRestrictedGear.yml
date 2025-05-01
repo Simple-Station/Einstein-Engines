@@ -1,0 +1,90 @@
+### All Security
+## Holster
+- type: loadout
+  id: LoadoutSecurityRestrictedGearBeltHolster
+  category: JobsSecurityAUncategorized
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - ClothingBeltHolster
+
+## Outer
+- type: loadout
+  id: LoadoutSecurityRestrictedGearOuterArmorPlateCarrier
+  category: JobsSecurityAUncategorized
+  cost: 7
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - ClothingOuterArmorPlateCarrier
+
+- type: loadout
+  id: LoadoutSecurityRestrictedGearOuterArmorDuraVest
+  category: JobsSecurityAUncategorized
+  cost: 7
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - ClothingOuterArmorDuraVest
+
+- type: loadout
+  id: LoadoutSecurityRestrictedGearOuterArmorBasic
+  category: JobsSecurityAUncategorized
+  cost: 7
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - ClothingOuterArmorBasic
+
+- type: loadout
+  id: LoadoutSecurityRestrictedGearOuterArmorSlim
+  category: JobsSecurityAUncategorized
+  cost: 7
+  exclusive: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Security
+  items:
+    - ClothingOuterArmorBasicSlim

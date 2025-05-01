@@ -59,9 +59,9 @@ namespace Content.IntegrationTests.Tests
             "Shoukou", // Maintained by Violet
             // "Tortuga", // De-rotated, no current maintainer.
             "Arena", // Maintained by astriloqua.
-            // "Asterisk", // De-rotated, no current maintainer.
+            "Asterisk", // Maintained by mrs.
             "Glacier", // Maintained by Violet
-            // "TheHive", // De-rotated, no current maintainer.
+            "TheHive", // Maintained by dootythefrooty
             // "Hammurabi", // De-rotated, maintained by Ichai.
             "Lighthouse", // Maintained by Violet
             // "Submarine", // De-rotated, no current maintainer.
@@ -73,7 +73,8 @@ namespace Content.IntegrationTests.Tests
             "Cyberiad", // Maintained by Ichai
             "Lambda", // Maintained by Ichai
             "Bagel", // Maintained by Ichai
-            "Northway" // Maintained by Violet
+            "Northway", // Maintained by Violet
+            "Anchor" // Maintained by the SiN Mapping Team.
         };
 
         /// <summary>

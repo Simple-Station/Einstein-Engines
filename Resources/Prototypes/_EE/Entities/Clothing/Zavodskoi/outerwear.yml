@@ -1,0 +1,62 @@
+- type: entity
+  parent: [ClothingOuterStorageBase, AllowSuitStorageClothing, ZavodInfo]
+  id: ClothingOuterJacketZavDetective
+  name: detective jacket
+  suffix: Zavodskoi
+  description: A sturdy jacket worn by detectives contracted from Zavodskoi Interstellar
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/Zavodskoi/OuterClothing/zav_jacket_detective.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/Zavodskoi/OuterClothing/zav_jacket_detective.rsi
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.95
+          Slash: 0.95
+          Piercing: 0.95
+          Heat: 0.85
+    - type: TemperatureProtection
+      coefficient: 0.1
+
+- type: entity
+  parent: [ClothingOuterStorageBase, AllowSuitStorageClothing, ZavodInfo]
+  id: ClothingOuterJacketZavSecurity
+  name: security shell jacket
+  suffix: Zavodskoi
+  description: A shell jacket worn by security staff contracted from Zavodskoi Interstellar
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/Zavodskoi/OuterClothing/zav_jacket_security.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/Zavodskoi/OuterClothing/zav_jacket_security.rsi
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.95
+          Slash: 0.95
+          Piercing: 0.95
+          Heat: 0.85
+    - type: TemperatureProtection
+      coefficient: 0.1
+
+- type: entity
+  parent: [ClothingOuterStorageBase, AllowSuitStorageClothing, ZavodInfo]
+  id: ClothingOuterJacketZavSecurityAlt
+  name: security shell jacket
+  suffix: Zavodskoi, alt
+  description: A shell jacket worn by security staff contracted from Zavodskoi Interstellar
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/Zavodskoi/OuterClothing/zav_jacket_security_alt.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/Zavodskoi/OuterClothing/zav_jacket_security_alt.rsi
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.95
+          Slash: 0.95
+          Piercing: 0.95
+          Heat: 0.85
+    - type: TemperatureProtection
+      coefficient: 0.1

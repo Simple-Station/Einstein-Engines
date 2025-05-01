@@ -26,6 +26,7 @@
   - type: Tag
     tags:
       - Meat
+      - Organ
 
 
 - type: entity
@@ -59,6 +60,7 @@
   - type: Tag
     tags:
       - Meat
+      - Brain
   - type: SolutionContainerManager
     solutions:
       organ:

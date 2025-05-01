@@ -1723,7 +1723,7 @@
   id: UplinkHardsuitSyndie
   name: uplink-hardsuit-syndie-name
   description: uplink-hardsuit-syndie-desc
-  icon: { sprite: /Textures/Clothing/OuterClothing/Hardsuits/syndicate.rsi, state: icon }
+  icon: { sprite: _Impstation/Clothing/OuterClothing/Hardsuits/syndicate.rsi, state: icon }
   productEntity: ClothingBackpackDuffelSyndicateHardsuitBundle
   discountCategory: veryRareDiscounts
   discountDownTo:
@@ -1737,7 +1737,7 @@
   id: UplinkHardsuitSyndieMedic
   name: uplink-hardsuit-syndie-medic-name
   description: uplink-hardsuit-syndie-medic-desc
-  icon: { sprite: /Textures/Clothing/OuterClothing/Hardsuits/syndicate.rsi, state: icon }
+  icon: { sprite: _Impstation/Clothing/OuterClothing/Hardsuits/syndicate_agent.rsi, state: icon }
   productEntity: ClothingBackpackDuffelSyndicateHardsuitMedicBundle
   discountCategory: veryRareDiscounts
   discountDownTo:
@@ -1751,7 +1751,7 @@
   id: UplinkHardsuitSyndieCommander
   name: uplink-hardsuit-syndie-commander-name
   description: uplink-hardsuit-syndie-commander-desc
-  icon: { sprite: /Textures/Clothing/OuterClothing/Hardsuits/syndicate.rsi, state: icon }
+  icon: { sprite: _Impstation/Clothing/OuterClothing/Hardsuits/syndicate_commander.rsi, state: icon }
   productEntity: ClothingBackpackDuffelSyndicateHardsuitCommanderBundle
   discountCategory: veryRareDiscounts
   discountDownTo:
@@ -1784,7 +1784,7 @@
   id: UplinkHardsuitSyndieElite
   name: uplink-hardsuit-syndieelite-name
   description: uplink-hardsuit-syndieelite-desc
-  icon: { sprite: /Textures/Clothing/OuterClothing/Hardsuits/syndieelite.rsi, state: icon }
+  icon: { sprite: _Impstation/Clothing/OuterClothing/Hardsuits/syndicate_elite.rsi, state: icon }
   productEntity: ClothingBackpackDuffelSyndicateEliteHardsuitBundle
   discountCategory: rareDiscounts
   discountDownTo:
@@ -1798,7 +1798,7 @@
   id: UplinkClothingOuterHardsuitJuggernaut
   name: uplink-clothing-outer-hardsuit-juggernaut-name
   description: uplink-clothing-outer-hardsuit-juggernaut-desc
-  icon: { sprite: /Textures/Structures/Storage/Crates/syndicate.rsi, state: icon }
+  icon: { sprite: _Impstation/Clothing/OuterClothing/Hardsuits/syndicate_juggernaut.rsi, state: icon }
   productEntity: CrateCybersunJuggernautBundle
   discountCategory: veryRareDiscounts
   discountDownTo:
@@ -2194,6 +2194,19 @@
     whitelist:
     - Chef
     - Mime
+
+- type: listing
+  id: UplinkSmugglerSatchel
+  name: uplink-smuggler-satchel-name
+  description: uplink-smuggler-satchel-desc
+  productEntity: ClothingBackpackSatchelSmugglerUnanchored
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 15
+  cost:
+    Telecrystal: 30
+  categories:
+  - UplinkDeception
 
 - type: listing
   id: UplinkEmpFlashlight

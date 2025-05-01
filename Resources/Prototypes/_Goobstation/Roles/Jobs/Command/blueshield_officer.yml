@@ -22,6 +22,9 @@
         - Blindness
         - Pacifist
         - BrittleBoneDisease
+    - !type:CharacterEmployerRequirement
+      employers:
+      - NanoTrasen # BSO works directly for centcomm, they are not a contractor.
   weight: 20
   startingGear: BlueshieldOfficerGear
   icon: "JobIconBlueshield"
@@ -64,7 +67,7 @@
     jumpsuit: ClothingUniformJumpsuitBlueshieldOfficer
     shoes: ClothingShoesBootsCombatFilled
     eyes: ClothingEyesGlassesMedSec
-    ears: ClothingHeadsetCentCom
+    ears: ClothingHeadsetAltCentCom
     gloves: ClothingHandsGlovesCombat
     id: BlueshieldPDA
     pocket1: UniqueBlueshieldOfficerLockerTeleporter

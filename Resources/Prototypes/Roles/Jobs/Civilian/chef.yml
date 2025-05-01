@@ -7,6 +7,9 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Civilian
       min: 3600 #DeltaV 1 hour
+    - !type:CharacterEmployerRequirement
+      employers:
+      - NanoTrasen
   startingGear: ChefGear
   icon: "JobIconChef"
   supervisors: job-supervisors-hop

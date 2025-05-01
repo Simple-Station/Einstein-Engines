@@ -1,7 +1,7 @@
 - type: trait
   id: CPRTraining
   category: Mental
-  points: -4
+  points: -3
   functions:
     - !type:TraitAddComponent
       components:
@@ -17,11 +17,12 @@
         - ChiefMedicalOfficer
         - Brigmedic
         - SeniorPhysician
+        - BlueshieldOfficer
 
 - type: trait
   id: SelfAware
   category: Mental
-  points: -4
+  points: -2
   functions:
     - !type:TraitAddComponent
       components:
@@ -94,7 +95,7 @@
 - type: trait
   id: Thieving
   category: Physical
-  points: -8
+  points: -3
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -112,7 +113,7 @@
 - type: trait
   id: Voracious
   category: Physical
-  points: -2
+  points: -1
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -137,6 +138,7 @@
         - Sluggish
         - SnailPaced
         - BadKnees
+        - WheelchairBound
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -172,7 +174,7 @@
 - type: trait
   id: Singer
   category: Auditory
-  points: -2
+  points: -1
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
@@ -191,11 +193,12 @@
 - type: trait
   id: LyreBird
   category: Auditory
-  points: -10
+  points: -3
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
         - Harpy
+        - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -205,118 +208,6 @@
       components:
         - type: Singer
           proto: HarpySingerAll
-
-- type: trait
-  id: LatentPsychic
-  category: Mental
-  points: -4
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: Psionic
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
-        - ResearchDirector
-        - ForensicMantis
-        - Chaplain
-        - Librarian
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - Shadowkin
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - PsionicInsulation
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMachine
-
-- type: trait
-  id: PsionicInsulation
-  category: Mental
-  points: -10 #Buy a significant disability to get this.
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: PsionicInsulation
-        - type: Mindbroken
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
-        - ResearchDirector
-        - ForensicMantis
-        - Chaplain
-        - Librarian
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - LatentPsychic
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - Shadowkin
-
-- type: trait
-  id: NaturalTelepath
-  category: Mental
-  points: -2
-  functions:
-    - !type:TraitAddPsionics
-      psionicPowers:
-        - TelepathyPower
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - ResearchDirector
-        - ForensicMantis
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterTraitRequirement
-          traits:
-            - LatentPsychic
-        - !type:CharacterJobRequirement
-          jobs:
-            - Chaplain
-            - Librarian
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
 
 - type: trait
   id: TrapAvoider
@@ -342,7 +233,7 @@
 
 - type: trait
   id: AnomalousPositronics
-  category: Mental
+  category: Psionics
   points: -4
   functions:
     - !type:TraitRemoveComponent
@@ -353,11 +244,51 @@
       species:
         - IPC
 
+# - type: trait
+#   id: AnimalFriend
+#   category: Mental
+#   points: -4
+#   functions:
+#     - !type:TraitModifyFactions
+#       addFactions:
+#         - AnimalFriend
+
 - type: trait
-  id: AnimalFriend
+  id: SurgeryTraining
   category: Mental
-  points: -4
+  points: -3
   functions:
-    - !type:TraitModifyFactions
-      addFactions:
-        - AnimalFriend
+    - !type:TraitAddComponent
+      components:
+        - type: SurgerySpeedModifier
+          speedModifier: 1.6
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - MedicalDoctor
+        - Chemist
+        - MedicalIntern
+        - Paramedic
+        - ChiefMedicalOfficer
+        - Brigmedic
+        - SeniorPhysician
+
+- type: trait
+  id: ExperiencedSurgeon
+  category: Mental
+  points: -3
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+      - type: SurgerySpeedModifier
+        speedModifier: 2.3
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+      - MedicalDoctor
+      - Chemist
+      - Paramedic
+      - Brigmedic
+      - SeniorPhysician
+
