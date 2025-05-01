@@ -28,6 +28,7 @@
       - CanPilot
       - FootstepSound
       - DoorBumpOpener
+  - type: SurgeryIgnoreClothingComponent
 
 - type: entity
   name: lone abductor
