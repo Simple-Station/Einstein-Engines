@@ -70,6 +70,18 @@
   name: bio-synthetic right foot
   description: This right foot can be transplanted into any living organism and it will adapt to its recipient.
 
+- type: entity
+  parent: HeadHuman
+  id: BioSynthHead
+  name: bio-synthetic head
+  description: This head can be transplanted into any living organism and it will adapt to its recipient.
+
+- type: entity
+  parent: TorsoHuman
+  id: BioSynthTorso
+  name: bio-synthetic torso
+  description: This torso can be transplanted into any living organism and it will adapt to its recipient.
+
 # JOKE ITEMS
 
 - type: entity
