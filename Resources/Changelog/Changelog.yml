@@ -15768,3 +15768,20 @@ Entries:
   id: 7218
   time: '2025-05-01T20:40:53.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2370
+- author: mrs
+  changes:
+    - type: Add
+      message: 'Cyberiad: Round-start SM setup. (You still have to click pumps, lazy!!!)'
+    - type: Tweak
+      message: 'Cyberiad: Atmos waste ends at a space vent now.'
+    - type: Fix
+      message: >-
+        Cyberiad: Found and removed passive vent on the distro pipenet that
+        caused pressure imbalance/space wind. Space wind victims rejoice.
+    - type: Remove
+      message: >-
+        Cyberiad: Unnecessary/dangerous piping from atmos. SM mix to distro
+        connections and vice-versa. (Just, why?)
+  id: 7219
+  time: '2025-05-01T20:43:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2349
