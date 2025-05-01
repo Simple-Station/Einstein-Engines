@@ -15759,3 +15759,12 @@ Entries:
   id: 7217
   time: '2025-05-01T18:36:16.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2369
+- author: EctoplasmIsGood
+  changes:
+    - type: Fix
+      message: >-
+        Abductor & Medical borg now have their proper surgery speed buffs and
+        their clothing bypass
+  id: 7218
+  time: '2025-05-01T20:40:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2370
