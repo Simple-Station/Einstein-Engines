@@ -15,10 +15,10 @@
     sprite: Nyanotrasen/Objects/Weapons/Melee/wakizashi.rsi
     state: icon
   - type: MeleeWeapon
-    attackRate: .5
+    attackRate: .7
     damage:
       types:
-        Slash: 12
+        Slash: 8
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: DamageOtherOnHit
