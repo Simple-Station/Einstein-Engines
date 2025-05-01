@@ -32,4 +32,4 @@ marking-HarpySmallZetawing = Small Wings
 marking-HarpySmallZetawing-small_zetawing = Wings
 
 marking-HarpyDownwardZetawing = Downward Wings
-marking-HarpyDownwardZetawing-quintet_zetawing = Wings
+marking-HarpyDownwardZetawing-downward_zetawing = Wings
