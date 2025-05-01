@@ -15752,3 +15752,10 @@ Entries:
   id: 7216
   time: '2025-05-01T17:43:53.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2367
+- author: EctoplasmIsGood
+  changes:
+    - type: Fix
+      message: TCAF Combat Gloves should no longer show an error
+  id: 7217
+  time: '2025-05-01T18:36:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2369
