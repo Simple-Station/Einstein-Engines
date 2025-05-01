@@ -6,7 +6,7 @@
   slippery: true
   physicalDesc: reagent-physical-desc-translucent
   flavor: sportyyellow
-  color: "#fdff27"
+  color: "#fbff2780"
   metabolisms:
     Drink:
       effects:
@@ -19,13 +19,13 @@
   parent: SportsDrinkYellow
   desc: reagent-desc-sports-drink-blue
   flavor: sportyblue
-  color: "#46a6f5"
+  color: "#46a6f580"
   metabolisms:
     Drink:
       effects:
       - !type:AdjustReagent
         reagent: Cryanobalamin
-        amount: 0.2
+        amount: 0.1
 
 - type: reagent
   id: SportsDrinkRed
@@ -33,10 +33,10 @@
   parent: SportsDrinkYellow
   desc: reagent-desc-sports-drink-red
   flavor: sportyred
-  color: "#f73715"
+  color: "#f7371580"
   metabolisms:
     Drink:
       effects:
       - !type:AdjustReagent
         reagent: LiftLoversSpecial
-        amount: 0.2
+        amount: 0.1
