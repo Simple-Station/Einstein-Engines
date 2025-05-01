@@ -15743,3 +15743,12 @@ Entries:
   id: 7215
   time: '2025-05-01T17:43:31.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2368
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: >-
+        Bartenders and Chefs can now be employed by Orion Express and Idris
+        Incorporated
+  id: 7216
+  time: '2025-05-01T17:43:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2367
