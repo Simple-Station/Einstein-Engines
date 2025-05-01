@@ -15,7 +15,7 @@ RELEASE_DIR = "release"
 # Forks should change these to publish to their own infrastructure.
 #
 ROBUST_CDN_URL = "https://cdn.simplestation.org/"
-FORK_ID = "einstein-engines"
+FORK_ID = "einstein-engines-test"
 
 def main():
     session = requests.Session()
