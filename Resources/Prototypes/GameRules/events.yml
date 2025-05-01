@@ -630,8 +630,6 @@
       weight: 0
     - type: BabelTowerRule
 
-
-=======
 - type: entity
   id: CarpSpawn
   parent: BaseGameRule
