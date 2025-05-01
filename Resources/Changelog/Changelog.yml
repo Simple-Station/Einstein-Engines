@@ -15727,3 +15727,12 @@ Entries:
   id: 7213
   time: '2025-04-29T19:59:49.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2354
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Added a printable torso and head to the medical biofabricator, as well
+        as some space organs for when it is emagged.
+  id: 7214
+  time: '2025-04-30T21:17:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2358
