@@ -8,10 +8,10 @@ public sealed class EventSchedulerSystem : SharedEventSchedulerSystem
     //TODO: move server files to shared after System.Collection.Generic.PriorityQueue`2 is whitelisted in sandbox.yml in RobustToolbox
     [Dependency] private readonly IGameTiming _gameTiming = default!;
 
-    private static uint _id = 0;
+    private uint _id = 0;
     private uint NextId() { return _id++; }
 
-    private static Dictionary<uint, DelayedEvent> _eventList = new();
+    private Dictionary<uint, DelayedEvent> _eventList = new();
     private static PriorityQueue<uint, TimeSpan> _eventQueue = new(_comparer);
     private static EventSchedulerComparer _comparer = new();
 
