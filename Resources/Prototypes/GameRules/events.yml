@@ -305,7 +305,6 @@
     startDelay: 10
     weight: 3
     duration: 50
-    maximumPlayers: 30
   - type: VentCrittersRule
     entries:
     - id: MobSnail
