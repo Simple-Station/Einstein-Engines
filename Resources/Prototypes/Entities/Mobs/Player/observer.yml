@@ -171,4 +171,5 @@
       - TelepathyPower
       - PsychognomyPower
   - type: TelegnosticProjection
-
+  - type: Stealth
+    lastVisibility: 0.66
