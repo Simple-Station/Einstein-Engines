@@ -1,0 +1,4 @@
+- type: shader
+  id: EnthrallEffect
+  kind: source
+  path: "/Textures/Shaders/enthrall_effect.swsl"

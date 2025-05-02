@@ -1,4 +1,3 @@
-using Content.Shared._EE.Shadowling.Systems;
 using Content.Shared.Language;
 using Content.Shared.StatusIcon;
 using Robust.Shared.GameStates;
@@ -14,6 +13,8 @@ namespace Content.Shared._EE.Shadowling;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class ThrallComponent : Component
 {
+    [DataField]
+    public float EnthrallDurationEffect = 1.5f;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public ProtoId<FactionIconPrototype> StatusIcon { get; set; } = "ThrallFaction";

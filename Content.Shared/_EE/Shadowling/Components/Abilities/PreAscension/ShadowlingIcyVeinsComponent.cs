@@ -18,4 +18,7 @@ public sealed partial class ShadowlingIcyVeinsComponent : Component
 
     [DataField]
     public float ParalyzeTime = 1f;
+
+    [DataField]
+    public string? IcyVeinsEffect = "ShadowlingIcyVeinsEffect";
 }

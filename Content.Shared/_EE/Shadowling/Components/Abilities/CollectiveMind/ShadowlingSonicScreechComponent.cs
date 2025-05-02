@@ -39,4 +39,7 @@ public sealed partial class ShadowlingSonicScreechComponent : Component
 
     [DataField]
     public SoundSpecifier? ScreechSound = new SoundPathSpecifier("/Audio/_EE/Shadowling/screech.ogg");
+
+    [DataField]
+    public string? SonicScreechEffect = "ShadowlingSonicScreechEffect";
 }

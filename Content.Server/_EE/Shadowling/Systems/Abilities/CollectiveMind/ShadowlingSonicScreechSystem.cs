@@ -9,6 +9,7 @@ using Content.Shared.Popups;
 using Content.Shared.Silicon.Components;
 using Content.Shared.Tag;
 using Robust.Server.Audio;
+using Robust.Server.GameObjects;
 
 
 namespace Content.Server._EE.Shadowling;
@@ -28,6 +29,7 @@ public sealed class ShadowlingSonicScreechSystem : EntitySystem
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly PopupSystem _popups = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
 
     public override void Initialize()
     {
@@ -38,9 +40,12 @@ public sealed class ShadowlingSonicScreechSystem : EntitySystem
 
     private void OnSonicScreech(EntityUid uid, ShadowlingSonicScreechComponent component, SonicScreechEvent args)
     {
-        _actions.StartUseDelay(args.Action);
+        // _actions.StartUseDelay(args.Action);
         _popups.PopupEntity(Loc.GetString("shadowling-sonic-screech-complete"), uid, uid, PopupType.Medium);
         _audio.PlayPvs(component.ScreechSound, uid);
+
+        var effectEnt = Spawn(component.SonicScreechEffect, _transform.GetMapCoordinates(uid));
+        _transform.SetParent(effectEnt, uid);
 
         foreach (var entity in _lookup.GetEntitiesInRange(uid, component.Range))
         {

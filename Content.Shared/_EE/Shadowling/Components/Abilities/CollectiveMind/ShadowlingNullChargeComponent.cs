@@ -16,4 +16,7 @@ public sealed partial class ShadowlingNullChargeComponent : Component
 
     [DataField]
     public float Range = 1f;
+
+    [DataField]
+    public string? NullChargeEffect = "ShadowlingNullChargeEffect";
 }

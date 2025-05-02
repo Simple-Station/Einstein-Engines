@@ -6,6 +6,7 @@ using Content.Shared._EE.Shadowling.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
+using Robust.Server.GameObjects;
 
 
 namespace Content.Server._EE.Shadowling;
@@ -21,6 +22,7 @@ public sealed class ShadowlingBlackRecuperationSystem : EntitySystem
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly RejuvenateSystem _rejuvenate = default!;
+    [Dependency] private readonly TransformSystem _transformSystem = default!;
     /// <inheritdoc/>
     public override void Initialize()
     {
@@ -74,5 +76,8 @@ public sealed class ShadowlingBlackRecuperationSystem : EntitySystem
             EnsureComp<LesserShadowlingComponent>(target);
             _popup.PopupEntity(Loc.GetString("shadowling-black-rec-lesser-done"), uid, target, PopupType.MediumCaution);
         }
+
+        var effectEnt = Spawn(component.BlackRecuperationEffect, _transformSystem.GetMapCoordinates(target));
+        _transformSystem.SetParent(effectEnt, target);
     }
 }

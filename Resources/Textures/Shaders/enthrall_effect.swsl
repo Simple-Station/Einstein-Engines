@@ -1,0 +1,14 @@
+uniform sampler2D SCREEN_TEXTURE;
+uniform highp float percentComplete;
+const highp float fadeFalloffExp = 8.0;
+uniform highp float runeIntensity = 0.5; // Intensity of the rune pop-up effect
+
+// Created by jaburns in 2013-11-25
+void fragment() {
+    // Compute alpha fade
+    highp float remaining = -pow(percentComplete, fadeFalloffExp) + 1.0;
+
+    // todo: this shader (plz send help)
+
+    COLOR = vec4(vec3(1.0,1.0,1.0), remaining);
+}

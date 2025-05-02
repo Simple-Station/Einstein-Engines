@@ -4,6 +4,7 @@ using Content.Server.Power.Components;
 using Content.Shared._EE.Shadowling;
 using Content.Shared.DoAfter;
 using Content.Shared.Popups;
+using Robust.Server.GameObjects;
 
 
 namespace Content.Server._EE.Shadowling;
@@ -19,6 +20,7 @@ public sealed class ShadowlingNullChargeSystem : EntitySystem
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly TransformSystem _transformSystem = default!;
 
     public override void Initialize()
     {
@@ -74,7 +76,8 @@ public sealed class ShadowlingNullChargeSystem : EntitySystem
         if (apcAffected)
             _popupSystem.PopupEntity(Loc.GetString("shadowling-null-charge-success"), uid, uid, PopupType.Medium);
 
-        // todo: add visuals (for apc too maybe)
+        var effectEnt = Spawn(component.NullChargeEffect, _transformSystem.GetMapCoordinates(uid));
+        _transformSystem.SetParent(effectEnt, uid);
         // todo: add sfx
     }
 

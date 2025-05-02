@@ -11,6 +11,7 @@ namespace Content.Client._EE.Shadowling;
 
 /// <summary>
 /// This handles status icons for slings and thralls
+/// This also handles alerts
 /// </summary>
 public sealed class ShadowlingSystem : SharedShadowlingSystem
 {

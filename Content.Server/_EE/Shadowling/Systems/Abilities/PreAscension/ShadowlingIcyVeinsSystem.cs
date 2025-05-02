@@ -70,7 +70,10 @@ public sealed class ShadowlingIcyVeinsSystem : EntitySystem
             TryIcyVeins(target, component);
         }
 
-        _actions.StartUseDelay(args.Action);
+        var effectEnt = Spawn(component.IcyVeinsEffect, _transform.GetMapCoordinates(uid));
+        _transform.SetParent(effectEnt, uid);
+
+        // _actions.StartUseDelay(args.Action);
     }
 
     private void TryIcyVeins(EntityUid target, ShadowlingIcyVeinsComponent component)
