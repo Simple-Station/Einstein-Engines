@@ -15727,3 +15727,75 @@ Entries:
   id: 7213
   time: '2025-04-29T19:59:49.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2354
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Added a printable torso and head to the medical biofabricator, as well
+        as some space organs for when it is emagged.
+  id: 7214
+  time: '2025-04-30T21:17:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2358
+- author: EctoplasmIsGood
+  changes:
+    - type: Fix
+      message: Energy guns wont cycle on wield anymore
+  id: 7215
+  time: '2025-05-01T17:43:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2368
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: >-
+        Bartenders and Chefs can now be employed by Orion Express and Idris
+        Incorporated
+  id: 7216
+  time: '2025-05-01T17:43:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2367
+- author: EctoplasmIsGood
+  changes:
+    - type: Fix
+      message: TCAF Combat Gloves should no longer show an error
+  id: 7217
+  time: '2025-05-01T18:36:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2369
+- author: EctoplasmIsGood
+  changes:
+    - type: Fix
+      message: >-
+        Abductor & Medical borg now have their proper surgery speed buffs and
+        their clothing bypass
+  id: 7218
+  time: '2025-05-01T20:40:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2370
+- author: mrs
+  changes:
+    - type: Add
+      message: 'Cyberiad: Round-start SM setup. (You still have to click pumps, lazy!!!)'
+    - type: Tweak
+      message: 'Cyberiad: Atmos waste ends at a space vent now.'
+    - type: Fix
+      message: >-
+        Cyberiad: Found and removed passive vent on the distro pipenet that
+        caused pressure imbalance/space wind. Space wind victims rejoice.
+    - type: Remove
+      message: >-
+        Cyberiad: Unnecessary/dangerous piping from atmos. SM mix to distro
+        connections and vice-versa. (Just, why?)
+  id: 7219
+  time: '2025-05-01T20:43:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2349
+- author: Orion-416
+  changes:
+    - type: Fix
+      message: Fixed deathsquad ghostrole
+  id: 7220
+  time: '2025-05-01T20:45:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2357
+- author: Orion-416
+  changes:
+    - type: Tweak
+      message: Both Syndicate modsuits now have integrated jetpacks
+  id: 7221
+  time: '2025-05-01T20:48:26.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2300
