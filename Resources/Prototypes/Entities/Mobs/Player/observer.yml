@@ -167,7 +167,7 @@
       - p-descriptor-liminal # because you arnt currently in your body
   - type: InnatePsionicPowers
     powersToAdd:
-      - XenoglossyPower #Remove if a better way to have the projection understand langs is implemented
+      - XenoglossyPower #Remove if a better way to have the projection understand langs is implemented, ideal is to have projection inherit user langs
       - TelepathyPower
       - PsychognomyPower
   - type: TelegnosticProjection
