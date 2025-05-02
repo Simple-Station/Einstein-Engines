@@ -29,10 +29,6 @@
       checkCanAccess: false
       range: 8
       itemIconStyle: BigAction
-      blacklist:
-        components:
-          - PsionicInsulation
-          - Mindbroken
       event: !type:MassSleepPowerActionEvent
 
 - type: entity
@@ -116,7 +112,7 @@
     - type: InstantAction
       icon: Interface/VerbIcons/psionic_regeneration.png
       useDelay: 120
-      event: !type:PsionicRegenerationPowerActionEvent
+      event: !type:PsionicRegeneratiTeonPowerActionEvent
 
 - type: entity
   id: ActionTelegnosis
