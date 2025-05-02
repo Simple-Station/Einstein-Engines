@@ -362,7 +362,7 @@
     startAnnouncement: true
   - type: RandomSentienceRule
     minSentiences: 2
-    maxSentiences: 8
+    maxSentiences: 6
 
 - type: entity
   parent: BaseGameRule
