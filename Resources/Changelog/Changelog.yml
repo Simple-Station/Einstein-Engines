@@ -15812,3 +15812,12 @@ Entries:
   id: 7222
   time: '2025-05-02T18:30:33.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2379
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed rolling psionic powers not generating their unique messages in
+        chat.
+  id: 7223
+  time: '2025-05-02T18:30:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2371
