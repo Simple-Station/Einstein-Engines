@@ -112,7 +112,7 @@
     - type: InstantAction
       icon: Interface/VerbIcons/psionic_regeneration.png
       useDelay: 120
-      event: !type:PsionicRegeneratiTeonPowerActionEvent
+      event: !type:PsionicRegenerationPowerActionEvent
 
 - type: entity
   id: ActionTelegnosis
