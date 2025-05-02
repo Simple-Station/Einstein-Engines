@@ -15821,3 +15821,10 @@ Entries:
   id: 7223
   time: '2025-05-02T18:30:42.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2371
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: Adjusted psionic weights
+  id: 7224
+  time: '2025-05-02T18:31:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2374
