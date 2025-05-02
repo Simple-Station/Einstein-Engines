@@ -80,6 +80,9 @@
       collection: MetalThud
   - type: DamageOtherOnHit
     staminaCost: 5
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-inanimate
+    weight: 0.25
 
 - type: entity
   name: viper

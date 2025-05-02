@@ -75,6 +75,9 @@
         Blunt: 2.5
   - type: DamageOtherOnHit
     staminaCost: 8
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-inanimate
+    weight: 0.25
 
 - type: entity
   name: Atreides

@@ -37,7 +37,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    weight: 8
+    weight: 6 # Glimmer problems
     duration: 35
   - type: AnomalySpawnRule
 
@@ -82,7 +82,7 @@
   - type: StationEvent
     startAnnouncement: true
     minimumPlayers: 25
-    weight: 3
+    weight: 2 # Happens so fuckin frequently
     duration: 1
   - type: BureaucraticErrorRule
 
@@ -94,7 +94,7 @@
   - type: StationEvent
     startAnnouncement: true
     minimumPlayers: 15
-    weight: 5
+    weight: 3 # Happens so fuckin frequently
     duration: 1
   - type: ClericalErrorRule
 
@@ -305,6 +305,7 @@
     startDelay: 10
     weight: 3
     duration: 50
+    maximumPlayers: 30
   - type: VentCrittersRule
     entries:
     - id: MobSnail
@@ -361,7 +362,7 @@
     startAnnouncement: true
   - type: RandomSentienceRule
     minSentiences: 2
-    maxSentiences: 5
+    maxSentiences: 8
 
 - type: entity
   parent: BaseGameRule
@@ -404,26 +405,26 @@
     duration: 60
   - type: VentClogRule
 
-- type: entity
-  id: SlimesSpawn
-  parent: BaseGameRule
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: StationEvent
-    startAnnouncement: true
-    startDelay: 10
-    earliestStart: 20
-    minimumPlayers: 15
-    weight: 3
-    duration: 60
-  - type: VentCrittersRule
-    entries:
-    - id: MobAdultSlimesBlueAngry
-      prob: 0.02
-    - id: MobAdultSlimesGreenAngry
-      prob: 0.02
-    - id: MobAdultSlimesYellowAngry
-      prob: 0.02
+# - type: entity
+#   id: SlimesSpawn
+#   parent: BaseGameRule
+#   categories: [ HideSpawnMenu ]
+#   components:
+#   - type: StationEvent
+#     startAnnouncement: true
+#     startDelay: 10
+#     earliestStart: 20
+#     minimumPlayers: 15
+#     weight: 3
+#     duration: 60
+#   - type: VentCrittersRule
+#     entries:
+#     - id: MobAdultSlimesBlueAngry
+#       prob: 0.02
+#     - id: MobAdultSlimesGreenAngry
+#       prob: 0.02
+#     - id: MobAdultSlimesYellowAngry
+#       prob: 0.02
 
 - type: entity
   id: SpiderSpawn
@@ -588,7 +589,7 @@
   id: IonStorm
   components:
   - type: StationEvent
-    weight: 10
+    weight: 13
     reoccurrenceDelay: 20
     duration: 1
   - type: IonStormRule
@@ -602,7 +603,7 @@
       earliestStart: 0
       minimumPlayers: 20
       maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
-      weight: 5
+      weight: 3 # Happens so fuckin frequently
     - type: MobReplacementRule
 
 - type: entity
@@ -648,3 +649,16 @@
     weight: 10
   - type: RandomSpawnRule
     prototype: RandomSatchelSpawner
+
+- type: entity
+  id: PirateRadioSpawn
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    weight: 7.5
+    minimumPlayers: 10
+    maxOccurrences: 1
+    duration: 1
+  - type: PirateRadioSpawnRule
+    debrisCount: 6
