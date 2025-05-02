@@ -76,4 +76,22 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<string> DiscordAuthApiKey =
         CVarDef.Create("discord.auth_api_key", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    /// <summary>
+    ///     Table of the Discord webhook URL IDs/tokens which will relay all scribe messages.
+    /// </summary>
+    /// <remarks>
+    ///     Expected to be formatted as one <c>&lt;key&gt;: &lt;id&gt;/&lt;token&gt;</c> per line,
+    ///     where the <c>key</c> is the same as a key in the <c>ScribeComponent</c>'s <c>WebhookKey</c> field and
+    ///     the <c>id</c> and <c>token</c> are the same as they appear in a Webhook URL.
+    ///     For example
+    ///     <code>
+    ///         scribe_webhooks: """
+    ///             first_scribe_key: 0000000000000000000/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    ///             second_scribe_key: 1111111111112222222/bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcccccccccccccccccccccccccccccccccccc
+    ///         """
+    ///     </code>
+    /// </remarks>
+    public static readonly CVarDef<string> DiscordScribeWebhooks =
+        CVarDef.Create("discord.scribe_webhooks", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
 }
