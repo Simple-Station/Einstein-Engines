@@ -32,7 +32,7 @@
   parent: DrinkSportsYellowBottleFull
   id: DrinkSportsBlueBottleFull
   name: blue Supernade bottle
-  description:  A striking blue performance sports drink, banned from sale for containing carcinogens. It's allegedly cool frezon flavored.
+  description: A striking blue performance sports drink, banned from sale for containing carcinogens. It's allegedly cool frezon flavored.
   components:
   - type: Sprite
     sprite: _EE/Objects/Consumable/Drinks/sportsdrink.rsi
