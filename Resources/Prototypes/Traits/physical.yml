@@ -591,9 +591,6 @@
         - type: BloodDeficiency # Incredibly actually works
           bloodLossPercentage: -0.025
 
-
-
-
 - type: trait
   id: DermalArmor
   category: Physical
