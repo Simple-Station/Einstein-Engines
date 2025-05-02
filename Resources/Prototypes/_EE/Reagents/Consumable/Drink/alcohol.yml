@@ -72,6 +72,8 @@
         - !type:AdjustReagent
           reagent: LiftLoversSpecial
           amount: 0.02
+    Food:
+      effects:
         - !type:AdjustReagent
           reagent: UncookedAnimalProteins
           amount: 0.1 # 2 parts ice, 1 part egg, 1 part red sports drink, 1 part absinthe

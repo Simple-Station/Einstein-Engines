@@ -23,6 +23,8 @@
   metabolisms:
     Drink:
       effects:
+      - !type:SatiateThirst
+        factor: 5
       - !type:AdjustReagent
         reagent: Cryanobalamin
         amount: 0.1
@@ -37,6 +39,8 @@
   metabolisms:
     Drink:
       effects:
+      - !type:SatiateThirst
+        factor: 5
       - !type:AdjustReagent
         reagent: LiftLoversSpecial
         amount: 0.1
