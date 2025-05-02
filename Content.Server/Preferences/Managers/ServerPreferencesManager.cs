@@ -106,6 +106,7 @@ namespace Content.Server.Preferences.Managers
 
             profile.EnsureValid(session, _dependencies);
             // hullrot edit
+            /*
             if (curPrefs.Characters[slot] is HumanoidCharacterProfile humanoidEditingTarget && profile is HumanoidCharacterProfile humanProfile)
             {
                 // you cheat like a king! gg! - SPCR
@@ -120,7 +121,7 @@ namespace Content.Server.Preferences.Managers
                     _sawmill.Info($"{session.Name} has tried to give their character money. They are using a modified client!");
                     return;
                 }
-            }
+            }*/
             // hullrot edit end
             var profiles = new Dictionary<int, ICharacterProfile>(curPrefs.Characters)
             {

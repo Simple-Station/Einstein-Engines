@@ -1,27 +1,28 @@
 - type: gameMapPool
   id: DefaultMapPool
   maps:
-  - Anchor # Maintained by the SiN Mapping Team
-  - Arena # Maintained by astriloqua.
-  - Asterisk # Maintained by mrs.
-  - Core # No current Maintainer. In need of a rework...
- # - Edge # De-rotated, no current maintainer.
-  - Glacier # Maintained by Violet, pending update.
- # - Hammurabi # De-rotated, maintained by Ichai, pending update.
-  - Lighthouse # Maintained by the SiN Mapping Team, ODJ, and TCJ.
-  - Pebble # Plyushsune is the current maintainer.
-  - Saltern # Maintained by the SiN Mapping Team
-  - Shoukou # Maintained by Violet, pending update.
+   - Empty # Placeholder for default gamemode
+#  - Anchor # Maintained by the SiN Mapping Team
+#  - Arena # Maintained by astriloqua.
+#  - Asterisk # Maintained by mrs.
+#  - Core # No current Maintainer. In need of a rework...
+# - Edge # De-rotated, no current maintainer.
+#  - Glacier # Maintained by Violet, pending update.
+# - Hammurabi # De-rotated, maintained by Ichai, pending update.
+#  - Lighthouse # Maintained by the SiN Mapping Team, ODJ, and TCJ.
+#  - Pebble # Plyushsune is the current maintainer.
+#  - Saltern # Maintained by the SiN Mapping Team
+#  - Shoukou # Maintained by Violet, pending update.
  # - Submarine # De-rotated, no current maintainer.
  # - Tortuga # De-rotated, no current maintainer.
-  - TheHive # Maintained by dootythefrooty
-  - Gax # Maintained by Ichai
-  - Rad # Maintained by Ichai
-  - Meta # Maintained by Ichai
-  - Cyberiad # Maintained by Ichai
-  - Lambda # Maintained by Ichai
-  - Bagel # Maintained by Ichai
-  - Northway # Maintained by Violet, pending update.
+#  - TheHive # Maintained by dootythefrooty
+#  - Gax # Maintained by Ichai
+#  - Rad # Maintained by Ichai
+#  - Meta # Maintained by Ichai
+#  - Cyberiad # Maintained by Ichai
+#  - Lambda # Maintained by Ichai
+#  - Bagel # Maintained by Ichai
+#  - Northway # Maintained by Violet, pending update.
 #  - Europa # De-rotated. Has significant issues.
 
 # All maps marked as De-rotated are currently receiving no update support due to a shortage of map maintainers.

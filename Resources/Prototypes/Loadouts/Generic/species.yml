@@ -67,7 +67,6 @@
         departments:
           - Engineering
           - Command
-          - Dignitary
           - Security
       - !type:CharacterJobRequirement
         jobs:

@@ -13,7 +13,7 @@
       tags:
         - CartridgePistolSmart
     capacity: 25
-   
+
 - type: entity
   id: Bullet12mm
   name: bullet (12mm auto)
@@ -59,3 +59,4 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+

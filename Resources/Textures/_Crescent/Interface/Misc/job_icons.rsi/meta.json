@@ -1,0 +1,384 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from https://github.com/vgstation-coders/vgstation13/blob/e71d6c4fba5a51f99b81c295dcaec4fc2f58fb19/icons/mob/screen1.dmi | Brigmedic icon made by PuroSlavKing (Github) | Zombie icon made by RamZ | Zookeper by netwy (discort) | Rev and Head Rev icon taken from https://tgstation13.org/wiki/HUD and edited by coolmankid12345 (Discord)",
+
+    "size": {
+        "x": 8,
+        "y": 8
+    },
+    "states": [
+        {
+            "name": "Detective"
+        },
+        {
+            "name": "kommandant"
+        },
+        {
+            "name": "leutnant"
+        },
+        {
+            "name": "soldat"
+        },
+        {
+            "name": "sanitat"
+        },
+        {
+            "name": "kanoneer"
+        },
+        {
+            "name": "forscher"
+        },
+        {
+            "name": "Engineman"
+        },
+        {
+            "name": "sheriff"
+        },
+        {
+            "name": "Physician"
+        },
+        {
+            "name": "Prophet"
+        },
+        {
+            "name": "servile"
+        },
+        {
+            "name": "draugrfamilies"
+        },
+        {
+            "name": "AcolyteFamilies"
+        },
+        {
+            "name": "antiquarian"
+        },
+        {
+            "name": "tinkerer"
+        },
+        {
+            "name": "techminer"
+        },
+        {
+            "name": "hangartech"
+        },
+        {
+            "name": "beltrunner"
+        },
+        {
+            "name": "ScientistImperial"
+        },
+        {
+            "name": "archmaester"
+        },
+        {
+            "name": "advocatus"
+        },
+        {
+            "name": "advocatustemplar"
+        },
+        {
+            "name": "cyberdawntech"
+        },
+        {
+            "name": "Surgeon"
+        },
+        {
+            "name": "Wealthman"
+        },
+        {
+            "name": "Laborer"
+        },
+        {
+            "name": "ForemanImp"
+        },
+        {
+            "name": "logisticier"
+        },
+        {
+            "name": "Ordnanceman"
+        },
+        {
+            "name": "Minuteman"
+        },
+        {
+            "name": "Watchmaster"
+        },
+        {
+            "name": "DeputyMarshal"
+        },
+        {
+            "name": "Marshal"
+        },
+        {
+            "name": "Courtier"
+        },
+        {
+            "name": "Hunter"
+        },
+        {
+            "name": "Montagne"
+        },
+        {
+            "name": "Board"
+        },
+        {
+            "name": "Executive"
+        },
+        {
+            "name": "MedTech"
+        },
+        {
+            "name": "Highsec"
+        },
+        {
+            "name": "Logistics"
+        },
+        {
+            "name": "Employee"
+        },
+        {
+            "name": "Overseer"
+        },
+        {
+            "name": "Acolyte"
+        },
+        {
+            "name": "Tender"
+        },
+        {
+            "name": "Governor"
+        },
+        {
+            "name": "Adjutant"
+        },
+        {
+            "name": "Knight"
+        },
+        {
+            "name": "Freeholder"
+        },
+        {
+            "name": "Levyman"
+        },
+        {
+            "name": "Newblood"
+        },
+        {
+            "name": "Visitor"
+        },
+        {
+            "name": "Kadet"
+        },
+        {
+            "name": "Chemcook"
+        },
+        {
+            "name": "Foreman"
+        },
+        {
+            "name": "Shipbreaker"
+        },
+        {
+            "name": "Operative"
+        },
+        {
+            "name": "IntelligenceOfficer"
+        },
+        {
+            "name": "InitialInfected"
+        },
+        {
+            "name": "Privateer"
+        },
+        {
+            "name": "Ripperdoc"
+        },
+        {
+            "name": "Lieutenant"
+        },
+        {
+            "name": "CorpSec"
+        },
+        {
+            "name": "Ringleader"
+        },
+        {
+            "name": "QuarterMaster"
+        },
+        {
+            "name": "Botanist"
+        },
+        {
+            "name": "Borg"
+        },
+        {
+            "name": "Boxer"
+        },
+        {
+            "name": "Sanitar"
+        },
+        {
+            "name": "AtmosphericTechnician"
+        },
+        {
+            "name": "Nanotrasen"
+        },
+        {
+            "name": "Artificer"
+        },
+        {
+            "name": "Prisoner"
+        },
+        {
+            "name": "Janitor"
+        },
+        {
+            "name": "Doktor"
+        },
+        {
+            "name": "CommunicationsOfficer"
+        },
+        {
+            "name": "Chemist"
+        },
+        {
+            "name": "StationEngineer"
+        },
+        {
+            "name": "SecurityOfficer"
+        },
+        {
+            "name": "NoId"
+        },
+        {
+            "name": "ChiefMedicalOfficer"
+        },
+        {
+            "name": "Roboticist"
+        },
+        {
+            "name": "Chaplain"
+        },
+        {
+            "name": "Lawyer"
+        },
+        {
+            "name": "Unknown"
+        },
+        {
+            "name": "Librarian"
+        },
+        {
+            "name": "CargoTechnician"
+        },
+        {
+            "name": "Scientist"
+        },
+        {
+            "name": "ResearchAssistant"
+        },
+        {
+            "name": "Geneticist"
+        },
+        {
+            "name": "Clown"
+        },
+        {
+            "name": "Captain"
+        },
+        {
+            "name": "HeadOfPersonnel"
+        },
+        {
+            "name": "Virologist"
+        },
+        {
+            "name": "ShaftMiner"
+        },
+        {
+            "name": "Commissar"
+        },
+        {
+            "name": "Passenger"
+        },
+        {
+            "name": "ChiefEngineer"
+        },
+        {
+            "name": "Bartender"
+        },
+        {
+            "name": "HeadOfSecurity"
+        },
+        {
+            "name": "Brigmedic"
+        },
+        {
+            "name": "MedicalDoctor"
+        },
+        {
+            "name": "Paramedic"
+        },
+        {
+            "name": "Chef"
+        },
+        {
+            "name": "Warden"
+        },
+        {
+            "name": "ResearchDirector"
+        },
+        {
+            "name": "Mime"
+        },
+        {
+            "name": "Musician"
+        },
+        {
+            "name": "Reporter"
+        },
+        {
+            "name": "Psychologist"
+        },
+        {
+            "name": "MedicalIntern"
+        },
+        {
+            "name": "TechnicalAssistant"
+        },
+        {
+            "name": "ServiceWorker"
+        },
+        {
+            "name": "SecurityCadet"
+        },
+        {
+            "name": "Zombie"
+        },
+        {
+            "name": "Zookeeper"
+        },
+        {
+            "name": "MailCarrier"
+        },
+        {
+            "name": "SeniorEngineer"
+        },
+        {
+            "name": "SeniorResearcher"
+        },
+        {
+            "name": "SeniorPhysician"
+        },
+        {
+            "name": "SeniorOfficer"
+        },
+        {
+            "name": "Revolutionary"
+        },
+        {
+            "name": "HeadRevolutionary"
+        }
+    ]
+}

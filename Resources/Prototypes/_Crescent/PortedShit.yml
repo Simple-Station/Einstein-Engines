@@ -481,3 +481,52 @@
   id: Group5
   name: Group5
   description: Group5
+
+- type: entity
+  id: BoriaticFuelTankFull
+  parent: WeldingFuelTank
+  suffix: Full
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: BoriaticFuel
+          Quantity: 1500
+  - type: Sprite
+    sprite: _Crescent/Structures/fuelcan.rsi
+    layers:
+      - state: fueltank-2
+      - state: fueltank-2-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+
+- type: entity
+  id: BoriaticFuelTankHuge
+  name: LZ-30 fuel storage tanker
+  parent: WeldingFuelTank
+  suffix: Full
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: BoriaticFuel
+          Quantity: 10000
+  - type: Anchorable
+  - type: Sprite
+    sprite: _Crescent/Structures/fueltank.rsi
+    layers:
+      - state: fueltank
+
+- type: gamePreset
+  id: Adventure
+  alias:
+    - adventure
+    - hullrot
+  name: adventure-title
+  showInVote: false
+  description: adventure-description
+  rules:
+    - Adventure
+    - LavalandStormScheduler # Lavaland Change
