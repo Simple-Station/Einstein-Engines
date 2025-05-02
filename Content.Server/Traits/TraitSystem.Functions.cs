@@ -555,7 +555,7 @@ public sealed partial class TraitModifyMobState : TraitFunction
             mobStateComponent.AllowMovementWhileCrit = AllowMovementWhileCrit.Value;
 
         if (AllowMovementWhileSoftCrit is not null)
-            mobStateComponent.AllowHandInteractWhileSoftCrit = AllowMovementWhileSoftCrit.Value;
+            mobStateComponent.AllowMovementWhileSoftCrit = AllowMovementWhileSoftCrit.Value;
 
         if (AllowMovementWhileDead is not null)
             mobStateComponent.AllowMovementWhileDead = AllowMovementWhileDead.Value;
