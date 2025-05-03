@@ -15828,3 +15828,61 @@ Entries:
   id: 7224
   time: '2025-05-02T18:31:37.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2374
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Cleanup and reorganization of Radstation
+  id: 7225
+  time: '2025-05-03T12:18:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2385
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Slight changes to Northway
+  id: 7226
+  time: '2025-05-03T12:20:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2386
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Cleanup of Meta
+  id: 7227
+  time: '2025-05-03T13:12:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2387
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Cleanup of Lighthouse
+  id: 7228
+  time: '2025-05-03T13:25:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2388
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Reorganization and removal of unnecessary/bad roles in Shoukou
+  id: 7229
+  time: '2025-05-03T13:54:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2389
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Cleanup of Saltern
+  id: 7230
+  time: '2025-05-03T15:03:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2390
+- author: ODJ
+  changes:
+    - type: Remove
+      message: Puddle in Bagel.
+    - type: Tweak
+      message: Medical and roles of Bagel.
+  id: 7231
+  time: '2025-05-03T15:05:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2391
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Reorganized and cleaned up Asterisks.
+  id: 7232
+  time: '2025-05-03T15:05:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2392
