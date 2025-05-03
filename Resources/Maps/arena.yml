@@ -55715,8 +55715,6 @@ entities:
       linkedPorts:
         17158:
         - MedicalScannerSender: MedicalScannerReceiver
-        invalid:
-        - CloningPodSender: CloningPodReceiver
 - proto: ComputerComms
   entities:
   - uid: 8459
@@ -118671,14 +118669,6 @@ entities:
       parent: 17659
     - type: Physics
       canCollide: False
-  - uid: 17661
-    components:
-    - type: Transform
-      pos: 57.477898,5.4784174
-      parent: 2
-    - type: NetworkConfigurator
-      devices:
-        'UID: 28856': invalid
   - uid: 19889
     components:
     - type: Transform
