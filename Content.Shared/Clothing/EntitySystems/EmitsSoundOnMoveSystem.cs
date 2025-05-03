@@ -71,6 +71,6 @@ public sealed class EmitsSoundOnMoveSystem : EntitySystem
             .WithVolume(sound.Params.Volume)
             .WithVariation(sound.Params.Variation ?? 0f);
 
-        _audio.PlayPredicted(sound, uid, uid, audioParams);
+        _audio.PlayPredicted(sound, uid, xform.ParentUid, audioParams);
     }
 }
