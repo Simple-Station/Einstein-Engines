@@ -15886,3 +15886,10 @@ Entries:
   id: 7232
   time: '2025-05-03T15:05:29.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2392
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Cleanup and slight rework of Lambda
+  id: 7233
+  time: '2025-05-03T17:43:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2394
