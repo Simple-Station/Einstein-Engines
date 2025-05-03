@@ -15893,3 +15893,10 @@ Entries:
   id: 7233
   time: '2025-05-03T17:43:10.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2394
+- author: Mapping Team
+  changes:
+    - type: Tweak
+      message: Arena had an overhaul
+  id: 7234
+  time: '2025-05-03T17:43:26.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2393
