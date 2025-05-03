@@ -23,6 +23,7 @@
       tags:
       - CartridgeLightRifle
   - type: ChamberMagazineAmmoProvider
+    autoEject: true
     soundAutoEject:
       path: /Audio/Weapons/Guns/EmptyAlarm/M1_empty_alarm.ogg
 
@@ -51,5 +52,6 @@
       tags:
       - CartridgeLightRifle
   - type: ChamberMagazineAmmoProvider
+    autoEject: true
     soundAutoEject:
       path: /Audio/Weapons/Guns/EmptyAlarm/M1_empty_alarm.ogg
