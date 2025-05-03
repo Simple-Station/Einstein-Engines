@@ -1,7 +1,7 @@
 - type: species
   id: Thaven
   name: species-name-thaven
-  roundStart: true
+  roundStart: false
   prototype: MobThaven
   sprites: MobThavenSprites
   defaultSkinTone: "#ffffff"

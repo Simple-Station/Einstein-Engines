@@ -33,7 +33,7 @@ public sealed partial class CCVars
     ///     Controls the default game preset.
     /// </summary>
     public static readonly CVarDef<string>
-        GameLobbyDefaultPreset = CVarDef.Create("game.defaultpreset", "secret", CVar.ARCHIVE);
+        GameLobbyDefaultPreset = CVarDef.Create("game.defaultpreset", "adventure", CVar.ARCHIVE);
 
     /// <summary>
     ///     Controls if the game can force a different preset if the current preset's criteria are not met.
@@ -144,7 +144,7 @@ public sealed partial class CCVars
     /// If roles should be restricted based on time.
     /// </summary>
     public static readonly CVarDef<bool>
-        GameRoleTimers = CVarDef.Create("game.role_timers", true, CVar.SERVER | CVar.REPLICATED);
+        GameRoleTimers = CVarDef.Create("game.role_timers", false, CVar.SERVER | CVar.REPLICATED); // hullrot-todo: ENABLE WHEN TESTING ENDS!!!
 
     /// <summary>
     /// Whether or not disconnecting inside of a cryopod should remove the character or just store them until they reconnect.
@@ -325,32 +325,32 @@ public sealed partial class CCVars
     ///     Whether to allow characters to select loadout items.
     /// </summary>
     public static readonly CVarDef<bool> GameLoadoutsEnabled =
-        CVarDef.Create("game.loadouts_enabled", true, CVar.REPLICATED);
+        CVarDef.Create("game.loadouts_enabled", false, CVar.REPLICATED); // hullrot-todo: Once loadouts are functional and set up for Hullrot, re-enable
 
     /// <summary>
     ///     How many points to give to each player for loadouts.
     /// </summary>
     public static readonly CVarDef<int> GameLoadoutsPoints =
-        CVarDef.Create("game.loadouts_points", 14, CVar.REPLICATED);
+        CVarDef.Create("game.loadouts_points", 15, CVar.REPLICATED);
 
 
     /// <summary>
     ///     Whether to repeat eating doafters after completion
     /// </summary>
     public static readonly CVarDef<bool> GameAutoEatFood =
-        CVarDef.Create("game.auto_eat_food", false, CVar.REPLICATED);
+        CVarDef.Create("game.auto_eat_food", true, CVar.REPLICATED);
 
     /// <summary>
     ///     Whether to repeat drinking doafters after completion
     /// </summary>
     public static readonly CVarDef<bool> GameAutoEatDrinks =
-        CVarDef.Create("game.auto_eat_drinks", false, CVar.REPLICATED);
+        CVarDef.Create("game.auto_eat_drinks", true, CVar.REPLICATED);
 
     /// <summary>
     ///     Whether item slots, such as power cell slots or AME fuel cell slots, should support quick swap if it is not otherwise specified in their YAML prototype.
     /// </summary>
     public static readonly CVarDef<bool> AllowSlotQuickSwap =
-        CVarDef.Create("game.slot_quick_swap", false, CVar.REPLICATED);
+        CVarDef.Create("game.slot_quick_swap", true, CVar.REPLICATED);
 
 #if EXCEPTION_TOLERANCE
     /// <summary>
