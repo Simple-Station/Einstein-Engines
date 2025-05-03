@@ -15856,3 +15856,10 @@ Entries:
   id: 7228
   time: '2025-05-03T13:25:34.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2388
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Reorganization and removal of unnecessary/bad roles in Shoukou
+  id: 7229
+  time: '2025-05-03T13:54:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2389
