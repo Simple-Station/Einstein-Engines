@@ -15835,3 +15835,10 @@ Entries:
   id: 7225
   time: '2025-05-03T12:18:29.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2385
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Slight changes to Northway
+  id: 7226
+  time: '2025-05-03T12:20:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2386
