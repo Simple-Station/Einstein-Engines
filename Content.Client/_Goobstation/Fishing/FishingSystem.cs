@@ -1,18 +1,12 @@
-// SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
-// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-// SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
-
-using Content.Goobstation.Client.Fishing.Overlays;
-using Content.Goobstation.Shared.Fishing.Components;
-using Content.Goobstation.Shared.Fishing.Systems;
+using Content.Client._Goobstation.Fishing.Overlays;
+using Content.Shared._Goobstation.Fishing.Components;
+using Content.Shared._Goobstation.Fishing.Systems;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
-namespace Content.Goobstation.Client.Fishing;
+namespace Content.Client._Goobstation.Fishing;
 
 public sealed class FishingSystem : SharedFishingSystem
 {
