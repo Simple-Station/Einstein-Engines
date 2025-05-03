@@ -36,7 +36,6 @@
     noRot: true
   - type: Clickable
   - type: InteractionOutline
-  - type: PhysicsGunBlacklist
   # TODO: change visuals when it's active
   - type: Sprite
     sprite: _Goobstation/Objects/Specific/Fishing/fishing_spot.rsi
