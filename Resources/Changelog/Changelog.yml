@@ -15879,3 +15879,10 @@ Entries:
   id: 7231
   time: '2025-05-03T15:05:01.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2391
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Reorganized and cleaned up Asterisks.
+  id: 7232
+  time: '2025-05-03T15:05:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2392
