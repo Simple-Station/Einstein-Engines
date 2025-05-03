@@ -15849,3 +15849,10 @@ Entries:
   id: 7227
   time: '2025-05-03T13:12:01.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2387
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Cleanup of Lighthouse
+  id: 7228
+  time: '2025-05-03T13:25:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2388
