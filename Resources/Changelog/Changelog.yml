@@ -15863,3 +15863,10 @@ Entries:
   id: 7229
   time: '2025-05-03T13:54:17.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2389
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Cleanup of Saltern
+  id: 7230
+  time: '2025-05-03T15:03:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2390
