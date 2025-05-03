@@ -24,3 +24,5 @@ public sealed partial class EmpoweredEnthrallDoAfterEvent : SimpleDoAfterEvent {
 public sealed partial class NoxImperiiDoAfterEvent : SimpleDoAfterEvent { }
 [Serializable, NetSerializable]
 public sealed partial class AscendanceDoAfterEvent : SimpleDoAfterEvent { }
+[Serializable, NetSerializable]
+public sealed partial class AntiMindControlItemDoAfterEvent : SimpleDoAfterEvent { }

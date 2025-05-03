@@ -13,6 +13,7 @@ using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
+using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
@@ -44,6 +45,8 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
         SubscribeLocalEvent<ShadowlingComponent, BeforeDamageChangedEvent>(BeforeDamageChanged);
         SubscribeLocalEvent<ShadowlingComponent, PhaseChangedEvent>(OnPhaseChanged);
 
+        SubscribeLocalEvent<ShadowlingComponent, MobStateChangedEvent>(OnMobStateChanged);
+
         SubscribeLocalEvent<ShadowlingComponent, ThrallAddedEvent>(OnThrallAdded);
         SubscribeLocalEvent<ShadowlingComponent, ThrallRemovedEvent>(OnThrallRemoved);
 
@@ -69,6 +72,19 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
     }
 
     #region Event Handlers
+
+    private void OnMobStateChanged(EntityUid uid, ShadowlingComponent component, MobStateChangedEvent args)
+    {
+        // Remove all Thralls if shadowling is dead
+        if (args.NewMobState == MobState.Dead || args.NewMobState == MobState.Invalid)
+        {
+            foreach (var thrall in component.Thralls)
+            {
+                _popup.PopupEntity(Loc.GetString("shadowling-dead"), thrall, thrall, PopupType.LargeCaution);
+                RemCompDeferred<ThrallComponent>(thrall);
+            }
+        }
+    }
 
     private void OnDamageModify(EntityUid uid, ShadowlingComponent component, DamageModifyEvent args)
     {

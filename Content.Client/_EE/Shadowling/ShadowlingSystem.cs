@@ -23,10 +23,28 @@ public sealed class ShadowlingSystem : SharedShadowlingSystem
 
         SubscribeLocalEvent<ThrallComponent, GetStatusIconsEvent>(GetThrallIcon);
         SubscribeLocalEvent<ShadowlingComponent, UpdateAlertSpriteEvent>(OnUpdateAlert);
+        SubscribeLocalEvent<LesserShadowlingComponent, UpdateAlertSpriteEvent>(OnUpdateAlertLesser);
         SubscribeLocalEvent<ShadowlingComponent, GetStatusIconsEvent>(GetShadowlingIcon);
     }
 
     private void OnUpdateAlert(Entity<ShadowlingComponent> ent, ref UpdateAlertSpriteEvent args)
+    {
+        if (args.Alert.ID != ent.Comp.AlertProto)
+            return;
+
+        if (!EntityManager.TryGetComponent<LightDetectionDamageModifierComponent>(
+            ent,
+            out var lightDetectionDamageModifier))
+            return;
+
+        var sprite = args.SpriteViewEnt.Comp;
+        var normalized = (int)( (lightDetectionDamageModifier.DetectionValue / lightDetectionDamageModifier.DetectionValueMax) * StateNormalizerSling );
+        normalized = Math.Clamp(normalized, 0, StateNormalizerSling);
+
+        sprite.LayerSetState(AlertVisualLayers.Base, $"{normalized}");
+    }
+
+    private void OnUpdateAlertLesser(Entity<LesserShadowlingComponent> ent, ref UpdateAlertSpriteEvent args)
     {
         if (args.Alert.ID != ent.Comp.AlertProto)
             return;

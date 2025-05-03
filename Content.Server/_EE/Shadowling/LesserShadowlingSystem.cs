@@ -2,6 +2,7 @@ using Content.Server.Actions;
 using Content.Shared._EE.Shadowling;
 using Content.Shared._EE.Shadowling.Components;
 using Content.Shared.Actions;
+using Content.Shared.Alert;
 
 
 namespace Content.Server._EE.Shadowling;
@@ -14,6 +15,7 @@ namespace Content.Server._EE.Shadowling;
 public sealed class LesserShadowlingSystem : EntitySystem
 {
     [Dependency] private readonly ActionsSystem _actions = default!;
+    [Dependency] private readonly AlertsSystem _alerts = default!;
     /// <inheritdoc/>
     public override void Initialize()
     {
@@ -21,6 +23,21 @@ public sealed class LesserShadowlingSystem : EntitySystem
 
         SubscribeLocalEvent<LesserShadowlingComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<LesserShadowlingComponent, ComponentRemove>(OnRemove);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var query = EntityQueryEnumerator<LesserShadowlingComponent>();
+        while (query.MoveNext(out var uid, out var comp))
+        {
+            if (!TryComp<LightDetectionDamageModifierComponent>(uid, out var lightDet))
+                return;
+
+            Dirty(uid, lightDet);
+            _alerts.ShowAlert(uid, comp.AlertProto);
+        }
     }
 
     private void OnStartup(EntityUid uid, LesserShadowlingComponent component, ComponentStartup args)
@@ -36,6 +53,11 @@ public sealed class LesserShadowlingSystem : EntitySystem
 
         _actions.AddAction(uid, ref component.ShadowWalkActionId, component.ShadowWalkAction, component: comp);
         EnsureComp<ShadowlingShadowWalkComponent>(uid);
+
+        EnsureComp<LightDetectionComponent>(uid);
+        var lightMod = EnsureComp<LightDetectionDamageModifierComponent>(uid);
+
+        lightMod.DetectionValueMax = 10;
     }
 
     private void OnRemove(EntityUid uid, LesserShadowlingComponent component, ComponentRemove args)
@@ -45,5 +67,7 @@ public sealed class LesserShadowlingSystem : EntitySystem
 
         _actions.RemoveAction(uid, component.ShadowWalkActionId, comp);
         RemComp<ShadowlingShadowWalkComponent>(uid);
+
+        _alerts.ClearAlert(uid, component.AlertProto);
     }
 }

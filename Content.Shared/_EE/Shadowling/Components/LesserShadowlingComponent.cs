@@ -1,3 +1,4 @@
+using Content.Shared.Alert;
 using Content.Shared.StatusIcon;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -17,4 +18,7 @@ public sealed partial class LesserShadowlingComponent : Component
     public readonly string? ShadowWalkAction = "ActionShadowWalk";
 
     public EntityUid? ShadowWalkActionId;
+
+    [DataField]
+    public ProtoId<AlertPrototype> AlertProto = "ShadowlingLight";
 }

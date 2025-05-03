@@ -12,3 +12,25 @@
     size: Ginormous
     sprite: _EE/Shadowling/Entities/Items/wrath_ball.rsi # todo: fix this shitty sprite that looks like a basketball
   - type: Unremoveable
+
+# Anti Thrall Item
+- type: entity
+  parent: BaseItem
+  id: AntiMindControlDevice
+  name: anti-mind control device
+  description: A special device designed for reverting mind control.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/flash.rsi # todo: remove placeholder
+    layers:
+    - state: flash
+      map: [ "enum.FlashVisuals.BaseLayer" ]
+    - state: flashing
+      map: [ "enum.FlashVisuals.LightLayer" ]
+      visible: false
+      shader: unshaded
+  - type: Item
+    size: Small
+    sprite: Objects/Weapons/Melee/flash.rsi
+  - type: AntiMindControlItem
+    # you can change the duration here (check comp)

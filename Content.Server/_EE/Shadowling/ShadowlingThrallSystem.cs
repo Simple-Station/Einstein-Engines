@@ -5,6 +5,7 @@ using Content.Shared._EE.Shadowling;
 using Content.Shared._EE.Shadowling.Components;
 using Content.Shared._EE.Shadowling.Thrall;
 using Content.Shared.Actions;
+using Content.Shared.Examine;
 using Content.Shared.Overlays.Switchable;
 
 
@@ -25,6 +26,8 @@ public sealed class ShadowlingThrallSystem : EntitySystem
 
         SubscribeLocalEvent<ThrallComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<ThrallComponent, ComponentRemove>(OnRemove);
+
+        SubscribeLocalEvent<ThrallComponent, ExaminedEvent>(OnExamined);
     }
 
     private void OnStartup(EntityUid uid, ThrallComponent component, ComponentStartup args)
@@ -70,11 +73,23 @@ public sealed class ShadowlingThrallSystem : EntitySystem
         RemComp<ThrallGuiseComponent>(uid);
 
         if (HasComp<LesserShadowlingComponent>(uid))
-            RemComp<LesserShadowlingComponent>(uid);
+            RemCompDeferred<LesserShadowlingComponent>(uid);
 
         if (component.Converter == null)
             return;
 
         RaiseLocalEvent(component.Converter.Value, new ThrallRemovedEvent());
+    }
+
+    private void OnExamined(EntityUid uid, ThrallComponent component, ExaminedEvent args)
+    {
+        if (!HasComp<ShadowlingComponent>(args.Examiner))
+            return;
+
+        if (component.Converter == null)
+            return;
+
+        if (component.Converter == args.Examiner)
+            args.PushMarkup($"[color=red]{Loc.GetString("shadowling-thrall-examined")}[/color]"); // Indicates that it is your Thrall
     }
 }
