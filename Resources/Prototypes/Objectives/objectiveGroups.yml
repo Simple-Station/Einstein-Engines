@@ -107,7 +107,7 @@
     BoozeDispenserStealObjective: 1
     AltarNanotrasenStealObjective: 1
     PlantRDStealObjective: 1
-    ToiletGoldenStealObjective: 1
+    # ToiletGoldenStealObjective: 1 # My PC crashes when I try to do mapping, so I've disabled it until someone volunteers to handle it.
 
 - type: weightedRandom
   id: ThiefObjectiveGroupAnimal
