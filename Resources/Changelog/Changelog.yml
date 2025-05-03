@@ -15870,3 +15870,12 @@ Entries:
   id: 7230
   time: '2025-05-03T15:03:59.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2390
+- author: ODJ
+  changes:
+    - type: Remove
+      message: Puddle in Bagel.
+    - type: Tweak
+      message: Medical and roles of Bagel.
+  id: 7231
+  time: '2025-05-03T15:05:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2391
