@@ -1,19 +1,13 @@
-// SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
-// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-// SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
-
 using System.Numerics;
 using Content.Client.UserInterface.Systems;
-using Content.Goobstation.Shared.Fishing.Components;
+using Content.Shared._Goobstation.Fishing.Components;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;
 using Robust.Client.Player;
 using Robust.Shared.Utility;
 
-namespace Content.Goobstation.Client.Fishing.Overlays;
+namespace Content.Client._Goobstation.Fishing.Overlays;
 
 public sealed class FishingOverlay : Overlay
 {
