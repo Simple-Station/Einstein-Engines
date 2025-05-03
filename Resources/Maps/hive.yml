@@ -14173,9 +14173,6 @@ entities:
     - type: Transform
       pos: 126.5,3.5
       parent: 2
-    - type: Door
-      secondsUntilStateChange: -5747.2554
-      state: Opening
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -14184,9 +14181,6 @@ entities:
     - type: Transform
       pos: 126.5,4.5
       parent: 2
-    - type: Door
-      secondsUntilStateChange: -2204.2532
-      state: Opening
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -16822,9 +16816,6 @@ entities:
     - type: Transform
       pos: 24.5,-14.5
       parent: 2
-    - type: Door
-      secondsUntilStateChange: -9552.618
-      state: Opening
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -60556,8 +60547,6 @@ entities:
       linkedPorts:
         18726:
         - MedicalScannerSender: MedicalScannerReceiver
-        invalid:
-        - CloningPodSender: CloningPodReceiver
 - proto: ComputerComms
   entities:
   - uid: 8932
