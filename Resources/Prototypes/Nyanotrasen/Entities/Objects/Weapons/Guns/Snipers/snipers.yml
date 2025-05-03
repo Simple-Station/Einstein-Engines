@@ -17,11 +17,15 @@
       path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
   - type: BallisticAmmoProvider
 #    autoCycle: true
-    capacity: 5
+    capacity: 8
     proto: CartridgeLightRifle
     whitelist:
       tags:
       - CartridgeLightRifle
+  - type: ChamberMagazineAmmoProvider
+    autoEject: true
+    soundAutoEject:
+      path: /Audio/Weapons/Guns/EmptyAlarm/M1_empty_alarm.ogg
 
 - type: entity
   name: ceremonial rifle
