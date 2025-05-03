@@ -15799,3 +15799,32 @@ Entries:
   id: 7221
   time: '2025-05-01T20:48:26.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2300
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Thermal Vision lasting only a single tick instead of the full 2
+        seconds its intended to last.
+    - type: Fix
+      message: >-
+        Fixed traits not correctly updating the client on changes made to the
+        character.
+  id: 7222
+  time: '2025-05-02T18:30:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2379
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed rolling psionic powers not generating their unique messages in
+        chat.
+  id: 7223
+  time: '2025-05-02T18:30:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2371
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: Adjusted psionic weights
+  id: 7224
+  time: '2025-05-02T18:31:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2374
