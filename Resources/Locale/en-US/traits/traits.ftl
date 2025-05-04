@@ -653,3 +653,9 @@ trait-description-IPCBrittleBoneDisease =
     Made from weaker materials, or corroded by age or damage, your body is much weaker than the standard for an IPC.
     This trait reduces your threshold for death by 60 points.
     (Just as the normal version, it halves the threshold. IPCs cannot be crit, so it instead makes you die 60 points sooner.)
+
+trait-name-Wings = Wings
+trait-description-Wings =
+    Through some mutation, genetic editing or questionable surgery, your arms have been replaced with wings simular to a Harpies.
+    You gain the ability to fly like a Harpy would.
+
