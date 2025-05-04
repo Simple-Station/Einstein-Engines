@@ -745,14 +745,14 @@
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
 
 - type: entity
-  id: FishGuppy
+  id: FishLubefish
   parent: BaseFishRare
-  name: guppy
-  description: A rare iridescent variant of the small freshwater guppy, prized by collectors.
+  name: lube fish
+  description: Slippery little thing. Hard to catch, harder to hold.
   components:
   - type: Sprite
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
-    state: guppy
+    state: lubefish
   - type: Item
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
 
@@ -829,14 +829,14 @@
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
 
 - type: entity
-  id: FishSludgefishPurple
+  id: FishSludgefish
   parent: BaseFishRare
-  name: sludgefish purple
-  description: A radioactive mutant fish adapted to thrive in toxic sludge.
+  name: sludge fish
+  description: A fish that looks as gross as the water it swims in.
   components:
   - type: Sprite
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
-    state: sludgefish_purple
+    state: sludgefish
   - type: Item
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
 
@@ -848,7 +848,7 @@
   components:
   - type: Sprite
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
-    state: lava loop
+    state: lava_loop
   - type: Item
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
 
@@ -860,7 +860,7 @@
   components:
   - type: Sprite
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
-    state: plasma loop
+    state: plasma_loop
   - type: Item
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
 
