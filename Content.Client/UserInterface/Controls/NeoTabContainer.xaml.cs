@@ -91,7 +91,7 @@ public sealed partial class NeoTabContainer : BoxContainer
     /// <param name="title">The title of the tab</param>
     /// <param name="updateTabMerging">Whether the tabs should fix their styling automatically. Useful if you're doing tons of updates at once</param>
     /// <returns>The index of the new tab</returns>
-    public int AddTab(Control control, string? title, bool updateTabMerging = true)
+    public int AddTab(Control control, string? title, bool updateTabMerging = true, Action? initialize = null)
     {
         var button = new Button
         {
@@ -109,15 +109,19 @@ public sealed partial class NeoTabContainer : BoxContainer
         _controls.Add(control);
         _tabs.Add(control, new(control, button));
 
+        TrySetTabInitialize(control, initialize);
+        if (!LazyLoading)
+        {
+            _tabs[control].Initialize?.Invoke();
+            _tabs[control].Initialized = true;
+        }
+
         // Show it if it has content
         if (ContentContainer.ChildCount > 1)
             control.Visible = false;
         else
             // Select it if it's the only tab
             SelectTab(control);
-
-        if (!LazyLoading)
-            _tabs[control].Initialize?.Invoke();
 
         if (updateTabMerging)
             UpdateTabMerging();
@@ -162,8 +166,26 @@ public sealed partial class NeoTabContainer : BoxContainer
     }
 
     public TabInfo GetTabInfo(int index) => _tabs[_controls[index]];
-
     public TabInfo GetTabInfo(Control control) => _tabs[control];
+
+    public void TrySetTabInitialize(int index, Action? initialize)
+    {
+        if (index < 0 || index >= _controls.Count)
+            return;
+
+        var control = _controls[index];
+        TrySetTabInitialize(control, initialize);
+    }
+    public void TrySetTabInitialize(Control control, Action? initialize)
+    {
+        if (!_tabs.TryGetValue(control, out var info))
+            return;
+
+        if (info.Initialize != null)
+            info.Initialize += initialize;
+        else
+            info.Initialize = initialize;
+    }
 
 
     /// Sets the title of the tab associated with the given index

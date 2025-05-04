@@ -2292,37 +2292,32 @@ namespace Content.Client.Lobby.UI
             }
 
             var uncategorized = LoadoutsTabs.Contents.FirstOrDefault(c => c.Name == "Uncategorized");
-            if (uncategorized == null)
+            uncategorized ??= new BoxContainer
             {
-                uncategorized = new BoxContainer
+                Name = "Uncategorized",
+                Orientation = LayoutOrientation.Vertical,
+                HorizontalExpand = true,
+                VerticalExpand = true,
+                // I hate ScrollContainers
+                Children =
                 {
-                    Name = "Uncategorized",
-                    Orientation = LayoutOrientation.Vertical,
-                    HorizontalExpand = true,
-                    VerticalExpand = true,
-                    // I hate ScrollContainers
-                    Children =
+                    new ScrollContainer
                     {
-                        new ScrollContainer
+                        HScrollEnabled = false,
+                        HorizontalExpand = true,
+                        VerticalExpand = true,
+                        Children =
                         {
-                            HScrollEnabled = false,
-                            HorizontalExpand = true,
-                            VerticalExpand = true,
-                            Children =
+                            new BoxContainer
                             {
-                                new BoxContainer
-                                {
-                                    Orientation = LayoutOrientation.Vertical,
-                                    HorizontalExpand = true,
-                                    VerticalExpand = true,
-                                },
+                                Orientation = LayoutOrientation.Vertical,
+                                HorizontalExpand = true,
+                                VerticalExpand = true,
                             },
                         },
                     },
-                };
-
-                LoadoutsTabs.AddTab(uncategorized, Loc.GetString("loadout-category-Uncategorized"));
-            }
+                },
+            };
 
             // Create a Dictionary/tree of categories and subcategories
             var cats = CreateTree(_prototypeManager.EnumeratePrototypes<LoadoutCategoryPrototype>()
@@ -2338,6 +2333,8 @@ namespace Content.Client.Lobby.UI
                 .OrderBy(l => l.Key.ID)
                 .ThenBy(l => Loc.GetString($"loadout-name-{l.Key.ID}"))
                 .ThenBy(l => l.Key.Cost);
+            LoadoutsTabs.AddTab(uncategorized, Loc.GetString("loadout-category-Uncategorized"),
+                false, () => LoadCategoryLoadouts((BoxContainer) uncategorized, "Uncategorized"));
             CreateCategoryUI(categories, LoadoutsTabs);
 
             // Hide any empty tabs //TODO: This is broken
@@ -2383,8 +2380,8 @@ namespace Content.Client.Lobby.UI
                             },
                         };
 
-                        var i = parent.AddTab(category, Loc.GetString($"loadout-category-{key}"));
-                        parent.GetTabInfo(i).Initialize = () => LoadCategoryLoadouts(category, key);
+                        parent.AddTab(category, Loc.GetString($"loadout-category-{key}"),
+                            initialize: () => LoadCategoryLoadouts(category, key));
                     }
                     // If the value is a dictionary, create a new tab for it and recursively call this function to fill it
                     else
@@ -2397,8 +2394,8 @@ namespace Content.Client.Lobby.UI
                             SeparatorMargin = new(0),
                         };
 
-                        var i = parent.AddTab(category, Loc.GetString($"loadout-category-{key}"));
-                        parent.GetTabInfo(i).Initialize = () => CreateCategoryUI((Dictionary<string, object>) value, category);
+                        parent.AddTab(category, Loc.GetString($"loadout-category-{key}"),
+                            initialize: () => CreateCategoryUI((Dictionary<string, object>) value, category));
                     }
                 }
             }
