@@ -9,6 +9,10 @@
     difficulty: 0.025
   - type: StaticPrice
     price: 250
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatFish
+      amount: 1
 
 - type: entity
   id: BaseFishRare
