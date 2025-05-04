@@ -187,11 +187,11 @@
                     </BoxContainer>
                 </ScrollContainer>
                 </BoxContainer>
-            <!--<BoxContainer Name="Antags" HorizontalExpand="True" Orientation="Vertical">
+            <BoxContainer Name="Antags" HorizontalExpand="True" Orientation="Vertical">
                 <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True" VScrollEnabled="True">
                     <BoxContainer Name="AntagList" />
                 </ScrollContainer>
-            </BoxContainer>-->
+            </BoxContainer>
             <BoxContainer Name="TraitsTab" HorizontalExpand="True" Orientation="Vertical">
                 <!-- Traits -->
                 <Label Name="TraitPointsLabel" HorizontalAlignment="Stretch" Align="Center" />
@@ -217,7 +217,7 @@
 
                 <ui:NeoTabContainer Name="TraitsTabs" VerticalExpand="True" SeparatorMargin="0" />
             </BoxContainer>
-            <!--<BoxContainer Name="LoadoutsTab" HorizontalExpand="True" Orientation="Vertical">
+            <BoxContainer Name="LoadoutsTab" HorizontalExpand="True" Orientation="Vertical">
                 <Label Name="LoadoutPointsLabel" HorizontalAlignment="Stretch" Align="Center" />
                 <ProgressBar Name="LoadoutPointsBar" MaxValue="1" Value="1" MaxHeight="8" Margin="0 5" />
 
@@ -240,7 +240,7 @@
                 </BoxContainer>
 
                 <ui:NeoTabContainer Name="LoadoutsTabs" VerticalExpand="True" SeparatorMargin="0" />
-            </BoxContainer>-->
+            </BoxContainer>
             <BoxContainer Name="MarkingsTab" HorizontalExpand="True" Orientation="Vertical">
                 <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True" VScrollEnabled="True">
                     <!-- Markings -->

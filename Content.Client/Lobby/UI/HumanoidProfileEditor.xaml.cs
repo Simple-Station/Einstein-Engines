@@ -494,7 +494,7 @@ namespace Content.Client.Lobby.UI
             #region Antags
 
             Antags.Orphan();
-            CTabContainer.AddTab(Antags, Loc.GetString("humanoid-profile-editor-antags-tab"));
+            //CTabContainer.AddTab(Antags, Loc.GetString("humanoid-profile-editor-antags-tab"));
 
             #endregion Antags
 
@@ -522,7 +522,7 @@ namespace Content.Client.Lobby.UI
 
             // Set up the loadouts tab
             LoadoutsTab.Orphan();
-            CTabContainer.AddTab(LoadoutsTab, Loc.GetString("humanoid-profile-editor-loadouts-tab"));
+            //CTabContainer.AddTab(LoadoutsTab, Loc.GetString("humanoid-profile-editor-loadouts-tab"));
             _loadoutPreferences = new();
 
             // Show/Hide the loadouts tab if they ever get enabled/disabled
