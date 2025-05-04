@@ -121,6 +121,12 @@ namespace Content.Client.Lobby.UI
                     SelectCharacter?.Invoke(slot);
                 };
 
+                CharEditor.RemoveAllChildren();
+                if (profileOfCharacter.Faction is null || profileOfCharacter?.Faction == "")
+                    CharEditor.AddChild(FactionSelector);
+                else
+                    CharEditor.AddChild(_humanoidProfileEditor);
+
                 characterPickerButton.OnDeletePressed += () =>
                 {
                     DeleteCharacter?.Invoke(slot);
