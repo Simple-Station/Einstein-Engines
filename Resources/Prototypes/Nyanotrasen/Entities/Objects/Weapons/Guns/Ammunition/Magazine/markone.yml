@@ -4,7 +4,7 @@
   suffix: empty
   parent: MagazineLightRifle
   components:
-  - type: tag
+  - type: Tag
     - MagazineMarkOne
   - type: BallisticAmmoProvider
     proto: null
@@ -28,7 +28,7 @@
   name: "Mark 1 Rifle En-bloc (.30 rifle)"
   parent: BaseMagazineLightRifle
   components:
-  - type: tag
+  - type: Tag
     - MagazineMarkOne
   - type: BallisticAmmoProvider
     proto: CartridgeLightRifle
