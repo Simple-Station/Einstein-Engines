@@ -39,9 +39,9 @@
       types:
         Blunt: 8
     bluntStaminaDamageFactor: 2.5
-    heavyRateModifier: 1.25
+    heavyRateModifier: 1.5
     heavyDamageBaseModifier: 1.5
-    heavyStaminaCost: 10
+    heavyStaminaCost: 2.5
     maxTargets: 3
     angle: 100
     soundHit:

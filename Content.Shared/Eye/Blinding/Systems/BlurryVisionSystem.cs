@@ -30,11 +30,12 @@ public sealed class BlurryVisionSystem : EntitySystem
         RaiseLocalEvent(ent, ev);
 
         var blur = Math.Clamp(ev.Blur, 0, BlurryVisionComponent.MaxMagnitude);
-        if (blur <= 0)
-        {
-            RemCompDeferred<BlurryVisionComponent>(ent);
-            return;
-        }
+        ///if (blur <= 0)
+        ///{
+        ///    RemCompDeferred<BlurryVisionComponent>(ent);
+        ///    return;
+        ///}
+        /// this makes prediction freak out when you put on glasses
 
         var blurry = EnsureComp<BlurryVisionComponent>(ent);
         blurry.Magnitude = blur;
