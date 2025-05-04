@@ -565,24 +565,6 @@
     state: hemostat
   - type: SurgeryStepEmoteEffect
 
-- type: entity
-  parent: SurgeryStepBase
-  id: SurgeryStepTreatTumor
-  name: Treat Tumor
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: SurgeryStep
-    tool:
-    - type: Drill
-    duration: 7
-    removeOrganOnAdd:
-      brain:
-      - type: Thrall
-  - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/drill.rsi
-    state: drill
-  - type: SurgeryStepEmoteEffect
-
 # The lengths I go to just for a joke... I HATE HARDCODING AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 # Maybe I should modify species prototypes to include tails and ears properly...
 

@@ -695,25 +695,6 @@
   - type: SurgeryPartCondition
     part: Head
 
-# this shit doesnt work, fix later
-- type: entity
-  parent: SurgeryBase
-  id: SurgeryTreatTumor
-  name: Treat Tumor
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Surgery
-    requirement: SurgeryOpenIncision
-    steps:
-    - SurgeryStepTreatTumor
-    - SurgeryStepCloseIncision
-  - type: SurgeryOrganCondition
-    organ:
-    - type: Brain
-    slotId: brain
-  - type: SurgeryPartCondition
-    part: Head
-
 # Fluff/Joke Surgeries
 
 #- type: entity

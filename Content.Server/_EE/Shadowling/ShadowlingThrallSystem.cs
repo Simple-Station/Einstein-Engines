@@ -1,6 +1,8 @@
 using Content.Server.Actions;
 using Content.Server.Antag;
 using Content.Server.Language;
+using Content.Server.Mind;
+using Content.Server.Roles;
 using Content.Shared._EE.Shadowling;
 using Content.Shared._EE.Shadowling.Components;
 using Content.Shared._EE.Shadowling.Thrall;
@@ -20,6 +22,8 @@ public sealed class ShadowlingThrallSystem : EntitySystem
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
+    [Dependency] private readonly MindSystem _mind = default!;
+    [Dependency] private readonly RoleSystem _roles = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -32,9 +36,21 @@ public sealed class ShadowlingThrallSystem : EntitySystem
 
     private void OnStartup(EntityUid uid, ThrallComponent component, ComponentStartup args)
     {
-        _antag.SendBriefing(uid, Loc.GetString("thrall-role-greeting"), Color.MediumPurple, null); // todo: find sfx
-        // todo: add screen shader effect here too
+        // antag stuff
+        if (!_mind.TryGetMind(uid, out var mindId, out var mind))
+            return;
+
+        if (mindId == default || !_roles.MindHasRole<ShadowlingRoleComponent>(mindId))
+        {
+            _roles.MindAddRole(mindId, "MindRoleThrall");
+        }
+
+        if (mind?.Session != null)
+            _antag.SendBriefing(uid, Loc.GetString("thrall-role-greeting"), Color.MediumPurple, null); // todo: find sfx
+
         _language.AddLanguage(uid, component.SlingLanguageId);
+
+
 
         var nightVision = EnsureComp<NightVisionComponent>(uid);
         nightVision.ToggleAction = "ActionThrallDarksight"; // todo: not sure if this is needed, need to test it without it
@@ -66,6 +82,9 @@ public sealed class ShadowlingThrallSystem : EntitySystem
 
     private void OnRemove(EntityUid uid, ThrallComponent component, ComponentRemove args)
     {
+        if (_mind.TryGetMind(uid, out var mindId, out _))
+            _roles.MindRemoveRole<ShadowlingRoleComponent>(mindId);
+
         _actions.RemoveAction(component.ActionThrallDarksightEntity);
         _actions.RemoveAction(component.ActionGuiseEntity);
 

@@ -38,9 +38,15 @@ public sealed partial class ShadowlingGlareComponent : Component
     [DataField]
     public float MaxGlareStunTime = 4f;
 
+    // <summary>
+    // Regarding time delay before activation
+    // </summary>
     [DataField]
     public float MaxGlareDelay = 2f;
 
+    // <summary>
+    // Regarding time delay before activation
+    // </summary>
     [DataField]
     public float MinGlareDelay = 0.1f;
 
