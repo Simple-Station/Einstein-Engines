@@ -9,4 +9,4 @@
     layers:
     - state: "spacewind"
   - type: TimedDespawn
-    lifetime: 1
+    lifetime: 2
