@@ -509,11 +509,12 @@
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
   - type: Butcherable
     spawned:
-    - id: Bones
+    - id: MaterialBones1
       amount: 5
 
 - type: entity
   id: FishSludgefish
+  parent: BaseFish
   name: sludge fish
   description: A fish that looks as gross as the water it swims in.
   components:
@@ -792,7 +793,7 @@
   - type: PointLight
     enabled: true
     netsync: false
-    radius: 3
+    radius: 1.5
     color: red
   - type: Cautery
     speed: 0.45
@@ -815,7 +816,7 @@
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
   - type: Butcherable
     spawned:
-    - id: Steel
+    - id: SheetSteel1
       amount: 10
 
 - type: entity
@@ -854,7 +855,7 @@
   - type: PointLight
     enabled: true
     netsync: false
-    radius: 3
+    radius: 1.5
     color: blue
   - type: Cautery
     speed: 0.45
@@ -879,7 +880,7 @@
     spawned:
     - id: FoodMeatFish
       amount: 1
-    - id: Bones
+    - id: MaterialBones1
       amount: 10
 
 - type: entity
@@ -918,7 +919,7 @@
   - type: PointLight
     enabled: true
     netsync: false
-    radius: 6
+    radius: 2
     color: purple
 
 - type: entity
@@ -936,12 +937,12 @@
     wideAnimationRotation: 180
     damage:
       types:
-        Heat: 8
+        Heat: 10
   - type: DamageOtherOnHit
   - type: PointLight
     enabled: true
     netsync: false
-    radius: 6
+    radius: 2.5
     color: orange
 
 - type: entity
@@ -957,7 +958,7 @@
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
   - type: Butcherable
     spawned:
-    - id: Plasma
+    - id: SheetPlasma1
       amount: 1
 
 - type: entity
