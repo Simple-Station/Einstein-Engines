@@ -18,6 +18,22 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineLightRifleMarkOne
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineMarkOne
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeLightRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeLightRifle
   - type: ChamberMagazineAmmoProvider
     autoEject: true
     soundAutoEject:
@@ -43,6 +59,22 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineLightRifleMarkOne
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineMarkOne
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeLightRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeLightRifle
   - type: ChamberMagazineAmmoProvider
     autoEject: true
     soundAutoEject:
