@@ -1,8 +1,3 @@
-# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-# SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 # This should be on every other fishing table
 - type: entityTable
   id: BasicFishingLootTable
@@ -31,9 +26,9 @@
       - !type:NestedSelector
         tableId: MaintToolsTable
 
-# All types of the rare and unique fishes
+# All types of the legendary and unique fishes
 - type: entityTable
-  id: RareFishTable
+  id: LegendaryFishTable
   table: !type:GroupSelector
     children:
     - id: FishAlien
@@ -45,12 +40,6 @@
     - id: FishNuker
     - id: FishToxic
     - id: FishIan
-
-# Fish from water
-- type: entityTable
-  id: WaterFishTable
-  table: !type:GroupSelector
-    children:
     - id: FishAngler
     - id: FishBass
     - id: FishBlob
@@ -61,6 +50,72 @@
     - id: FishSilver
     - id: FishTropicalSun
     - id: FishTropical
+    - id: FishCheckered
+    - id: FishJumpercable
+    - id: FishSkinCrab
+    - id: FishSoulfish
+
+# All types of the rare and item drops varied
+- type: entityTable
+  id: RareFishTable
+  table: !type:GroupSelector
+    children:
+    - id: FishGuppy
+    - id: FishFirefish
+    - id: FishArmorfish
+    - id: FishRatfish
+    - id: FishArcticChrab
+    - id: FishHalfFish
+    - id: FishSlimefish
+    - id: FishSludgefishPurple
+    - id: FishLavaLoop
+    - id: FishPlasmaLoop
+
+# Fish from water
+- type: entityTable
+  id: WaterFishTable
+  table: !type:GroupSelector
+    children:
+    - id: FishGuppy
+    - id: FishGreenchromis
+    - id: FishCardinalfish
+    - id: FishCatfish2
+    - id: FishPlastetra
+    - id: FishAngelfish
+    - id: FishClownfish
+    - id: FishHoloClownfish
+    - id: FishLanternfish
+    - id: FishGoldfish
+    - id: FishDwarfMoonfish
+    - id: FishTiziraMoonfish
+    - id: FishGunnerJellyfish
+    - id: FishNeedlefish
+    - id: FishPufferfish2
+    - id: FishEmulsijack
+    - id: FishDonkfish
+    - id: FishChrab
+    - id: FishCrab
+    - id: FishBonemass
+    - id: FishSludgefishPurple
+    - id: FishStarfish
+    - id: FishZipzap
+    - id: FishArcticChar
+    - id: FishStingray
+    - id: FishSockeye
+    - id: FishBumpy
+    - id: FishSandSurfer
+    - id: FishThreeEyes
+    - id: FishTadpole
+    - id: FishSquid
+    - id: FishPerch
+    - id: FishPlaice
+    - id: FishMonkfish
+    - id: FishBabyCarp
+    - id: FishFryish
+    - id: FishFritterish
+    - id: FishBernardfish
+    - id: FishMatthewfish
+    - id: FishSacabambaspis
 
 # Items from Water
 - type: entityTable
@@ -69,13 +124,16 @@
     children:
       - !type:NestedSelector
         tableId: BasicFishingLootTable
-        weight: 70
+        weight: 60
       - !type:NestedSelector
         tableId: WaterFishTable
-        weight: 20
+        weight: 25
       - !type:NestedSelector
         tableId: RareFishTable
         weight: 10
+      - !type:NestedSelector
+        tableId: LegendaryFishTable
+        weight: 5
 
 # Items from Lava
 - type: entityTable
@@ -103,7 +161,10 @@
       # like water but no rare fishes
       - !type:NestedSelector
         tableId: BasicFishingLootTable
-        weight: 80
+        weight: 75
       - !type:NestedSelector
         tableId: WaterFishTable
         weight: 20
+      - !type:NestedSelector
+        tableId: RareFishTable
+        weight: 5
