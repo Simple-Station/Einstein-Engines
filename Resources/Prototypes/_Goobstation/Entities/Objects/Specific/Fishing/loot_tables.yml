@@ -60,7 +60,7 @@
   id: RareFishTable
   table: !type:GroupSelector
     children:
-    - id: FishGuppy
+    - id: FishLubefish
     - id: FishFirefish
     - id: FishArmorfish
     - id: FishRatfish
@@ -96,7 +96,7 @@
     - id: FishChrab
     - id: FishCrab
     - id: FishBonemass
-    - id: FishSludgefishPurple
+    - id: FishSludgefish
     - id: FishStarfish
     - id: FishZipzap
     - id: FishArcticChar
