@@ -1529,5 +1529,8 @@
 - type: Tag
   id: SiliconEmotes
 
+- type: tag
+  id: MagazineMarkOne
+
 - type: Tag
   id: UnathiEmotes
