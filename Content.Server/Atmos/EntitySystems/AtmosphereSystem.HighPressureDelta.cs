@@ -154,8 +154,7 @@ public sealed partial class AtmosphereSystem
         var coefficientOfFriction = partialFrictionComposition * physics.Mass;
         coefficientOfFriction *= _standingSystem.IsDown(uid) ? 3 : 1;
 
-        var humanoid = false;
-        if (TryComp(ent, out HumanoidAppearanceComponent? humanoidAppearance))
+        if (TryComp(ent.Owner, out HumanoidAppearanceComponent? humanoidAppearance))
         {
             pressureVector *= HumanoidThrowMultiplier;
 
@@ -165,7 +164,7 @@ public sealed partial class AtmosphereSystem
                 // Same with 1.75f, we're quick and dirty shorthanding for the standard height of a human (in meters).
                 var heightSquared = MathF.Pow(humanoidAppearance.Height * 1.75f, 2);
                 var knockdownThreshold = heightSquared / 3;
-                if (humanoid && knockdownThreshold <= pVecLength)
+                if (knockdownThreshold <= pVecLength)
                     _sharedStunSystem.TryKnockdown(uid, TimeSpan.FromSeconds(SpaceWindKnockdownTime), true);
             }
         }
