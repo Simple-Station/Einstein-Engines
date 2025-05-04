@@ -656,6 +656,5 @@ trait-description-IPCBrittleBoneDisease =
 
 trait-name-Wings = Wings
 trait-description-Wings =
-    Through some mutation, genetic editing or questionable surgery, your arms have been replaced with wings simular to a Harpies.
-    You gain the ability to fly like a Harpy would.
-
+    Through mutation, genetic editing, or questionable surgery, your arms have been replaced with wings similar to those of a Harpy.
+    You gain the ability to fly like a Harpy.
