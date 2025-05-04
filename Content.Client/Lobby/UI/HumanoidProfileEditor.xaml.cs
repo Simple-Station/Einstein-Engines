@@ -494,7 +494,7 @@ namespace Content.Client.Lobby.UI
             #region Antags
 
             Antags.Orphan();
-            //CTabContainer.AddTab(Antags, Loc.GetString("humanoid-profile-editor-antags-tab"));
+            CTabContainer.AddTab(Antags, Loc.GetString("humanoid-profile-editor-antags-tab"));
 
             #endregion Antags
 
