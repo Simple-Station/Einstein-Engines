@@ -195,7 +195,6 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         if (_characterSetup != null && _profileEditor != null)
         {
             _characterSetup.Visible = true;
-            _profileEditor.Visible = true;
             return (_characterSetup, _profileEditor);
         }
 
@@ -218,11 +217,16 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         {
             // Reset sliders etc.
             _profileEditor.SetProfile(null, null);
-            _profileEditor.Visible = false;
+            _characterSetup.CustomizeButton.Pressed = false;
             if (_stateManager.CurrentState is LobbyState lobbyGui)
             {
                 lobbyGui.SwitchState(LobbyGui.LobbyGuiState.Default);
             }
+        };
+
+        _characterSetup.CustomizeButton.OnToggled += _ =>
+        {
+            _profileEditor.Visible = !_profileEditor.Visible;
         };
 
         _profileEditor.Save += SaveProfile;
