@@ -6,7 +6,7 @@
   description: Water-born creature from the infinite sea... Or toilet.
   components:
   - type: Fish
-    difficulty: 0.025
+    difficulty: 0.030
   - type: StaticPrice
     price: 250
   - type: Butcherable
@@ -22,7 +22,7 @@
   description: Water-born creature from the infinite sea... Or toilet.
   components:
   - type: Fish
-    difficulty: 0.050
+    difficulty: 0.040
   - type: StaticPrice
     price: 500
 
@@ -34,7 +34,7 @@
   description: Water-born creature from the infinite sea... Or toilet.
   components:
   - type: Fish
-    difficulty: 0.075
+    difficulty: 0.050
   - type: StaticPrice
     price: 1000
 
