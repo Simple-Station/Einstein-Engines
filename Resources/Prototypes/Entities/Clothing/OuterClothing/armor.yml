@@ -20,6 +20,17 @@
         Heat: 0.80
   - type: ExplosionResistance
     damageCoefficient: 0.90
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 9.6 # Assuming a level 3 bulletproof vest weighs 2.4kg
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 #Alternate / slim basic armor vest
 - type: entity
@@ -57,10 +68,39 @@
   - type: GroupExamine
 
 - type: entity
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, ClothingOuterEVASuitBase]
+  id: ClothingOuterArmorSwat
+  name: swat suit
+  description: Composed of semi-flexible polycarbonate, reinforced materials, and integrated ballistic plating, it offers exceptional protection against melee, bullet, and environmental threats, ensuring officers remain combat-ready in the harshest conditions.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Armor/swat.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Armor/swat.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.85
+        Radiation: 0.75
+        Caustic: 0.85
+  - type: ExplosionResistance
+    damageCoefficient: 0.50
+  - type: ClothingSpeedModifier # Burdensome for running, but perfect for speedy gliding, even though running is still probably better
+    walkModifier: 0.9
+    sprintModifier: 0.7
+  - type: GroupExamine
+
+- type: entity
   parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorBulletproof
   name: bulletproof vest
-  description: A Type III heavy bulletproof vest that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent.
+  description: A Type III heavy bulletproof vest that provides superb protection against bullets, but is lackluster against anything else.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Armor/bulletproof.rsi
@@ -68,13 +108,85 @@
     sprite: Clothing/OuterClothing/Armor/bulletproof.rsi
   - type: Armor
     modifiers:
+      flatReductions:
+        Piercing: 4
       coefficients:
-        Blunt: 0.9
-        Slash: 0.9
-        Piercing: 0.4
-        Heat: 0.9
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.5
+        Heat: 0.95
+
+- type: entity
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing ]
+  id: ClothingOuterArmorRaid
+  name: syndicate raid suit
+  description: A somewhat flexible and well-armored suit with a powerful shoulder mounted flashlight manufactured in the Gorlex Marauder's iconic blood-red color scheme, it does not protect its wearer from space.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Armor/syndie-raid.rsi
+    layers:
+    - state: icon
+    - state: light-overlay
+      visible: false
+      shader: unshaded
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Armor/syndie-raid.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.35
+        Slash: 0.35
+        Piercing: 0.35
+        Heat: 0.35
+        Caustic: 0.5
   - type: ExplosionResistance
-    damageCoefficient: 0.80
+    damageCoefficient: 0.35
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  #Shoulder mounted flashlight
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING-light
+        shader: unshaded
+  - type: Appearance
+  - type: HandheldLight
+    addPrefix: false
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: PointLight
+    enabled: false
+    color: "#80ff80"
+    radius: 5
+    energy: 2
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    netsync: false
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour
+        id: radiating
+        interpolate: Linear
+        maxDuration: 2.0
+        startValue: 3.0
+        endValue: 2.0
+        isLooped: true
+        reverseWhenFinished: true
+      - !type:PulseBehaviour
+        id: blinking
+        interpolate: Nearest
+        maxDuration: 1.0
+        minValue: 0.1
+        maxValue: 2.0
+        isLooped: true
+  - type: Battery
+    maxCharge: 600
+    startingCharge: 600
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 2
 
 - type: entity
   parent: ClothingOuterArmorBasic
@@ -88,13 +200,15 @@
     sprite: Clothing/OuterClothing/Armor/armor_reflec.rsi
   - type: Armor
     modifiers:
+      flatReductions:
+        Heat: 3
       coefficients:
         Blunt: 0.9
         Slash: 0.9
         Piercing: 0.9
-        Heat: 0.4 # this technically means it protects against fires pretty well? -heat is just for lasers and stuff, not atmos temperature
+        Heat: 0.7
   - type: Reflect
-    reflectProb: 1
+    reflectProb: 0.33
     innate: true # armor grants a passive shield that does not require concentration to maintain
     reflects:
       - Energy
@@ -136,6 +250,31 @@
         Piercing: 0.2
         Heat: 0.5
         Radiation: 0
+        Caustic: 0.75
+  - type: GroupExamine
+  - type: ClothingRequiredStepTriggerImmune
+    slots: WITHOUT_POCKET
+  - type: Tag
+    tags:
+      - FullBodyOuter
+
+- type: entity
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]
+  id: ClothingOuterArmorHosSamurai
+  name: daimyō's tousei gusoku
+  description: A tousei gusoku fashioned for the Head of Security, it's primarily for ceremonial use, lacking pockets and gauntlets to make handling firearms easier, but still provides suitable protection for the Head of Security. Pairs excellently with a Katana sheath or tuncheon!
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Armor/hosamurai.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Armor/hosamurai.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.65
+        Heat: 0.65
         Caustic: 0.75
   - type: GroupExamine
   - type: ClothingRequiredStepTriggerImmune
@@ -293,3 +432,29 @@
   - type: GroupExamine
   - type: ClothingRequiredStepTriggerImmune
     slots: WITHOUT_POCKET
+
+- type: entity
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]
+  id: ClothingOuterArmorCaptainDogi
+  name: "shogun's armoured dogi"
+  description: "An armored Dogi, made of fine, yet durable fabrics and up armoured with exotic alloy to keep it's wearer protected and stylish in combat and in duties. Glory to the Shogun!"
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Armor/captaindogi.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Armor/captaindogi.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.6
+        Heat: 0.5
+        Caustic: 0.9
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: HeldSpeedModifier
+  - type: ExplosionResistance
+    damageCoefficient: 0.65
+  - type: GroupExamine

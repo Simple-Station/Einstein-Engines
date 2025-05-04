@@ -1,8 +1,6 @@
-using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.Customization.Systems;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
+using Robust.Shared.Serialization.Manager;
 
 namespace Content.Shared.Clothing.Loadouts.Prototypes;
 
@@ -27,6 +25,12 @@ public sealed partial class LoadoutPrototype : IPrototype
     [DataField]
     public int Cost = 1;
 
+    /// <summary>
+    ///     How many item group selections this uses. Defaulted to 1:1, but can be any number.
+    /// </summary>
+    [DataField]
+    public int Slots = 1;
+
     /// Should this item override other items in the same slot
     [DataField]
     public bool Exclusive;
@@ -45,4 +49,22 @@ public sealed partial class LoadoutPrototype : IPrototype
 
     [DataField]
     public List<CharacterRequirement> Requirements = new();
+
+    [DataField]
+    public string GuideEntry { get; } = "";
+
+    [DataField(serverOnly: true)]
+    public LoadoutFunction[] Functions { get; private set; } = Array.Empty<LoadoutFunction>();
+}
+
+/// This serves as a hook for loadout functions to modify one or more entities upon spawning in.
+[ImplicitDataDefinitionForInheritors]
+public abstract partial class LoadoutFunction
+{
+    public abstract void OnPlayerSpawn(
+        EntityUid character,
+        EntityUid loadoutEntity,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager);
 }

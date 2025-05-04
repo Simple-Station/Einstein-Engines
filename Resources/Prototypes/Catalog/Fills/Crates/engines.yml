@@ -120,12 +120,14 @@
   id: CrateEngineeringSolar
   parent: CrateEngineering
   name: solar assembly crate
-  description: Parts for constructing solar panels and trackers.
+  description: A kit with solar flatpacks and glass to construct ten solar panels.
   components:
   - type: StorageFill
     contents:
       - id: SolarAssemblyFlatpack
-        amount: 6
+        amount: 10
+      - id: SheetGlass10
+        amount: 2
 
 - type: entity
   id: CrateEngineeringShuttle
@@ -169,3 +171,18 @@
   - type: StorageFill
     contents:
       - id: TeslaGroundingRodFlatpack
+
+- type: entity
+  id: CrateEngineeringTEGKit
+  parent: CrateEngineeringSecure
+  name: TEG construction kit crate
+  description: A 'build your own TEG' kit. Some assembly required.
+  components:
+  - type: StorageFill
+    contents:
+      - id: TegCirculatorPartFlatpack
+      - id: TegCirculatorPartFlatpack
+      - id: TegCenterPartFlatpack
+      - id: GasAnalyzer
+      - id: SheetSteel
+        amount: 1

@@ -28,6 +28,9 @@ reagent-effect-condition-guidebook-reagent-threshold =
 reagent-effect-condition-guidebook-mob-state-condition =
     the mob is { $state }
 
+reagent-effect-condition-guidebook-job-condition =
+    the target's job is { $job }
+
 reagent-effect-condition-guidebook-solution-temperature =
     the solution's temperature is { $max ->
             [2147483648] at least {NATURALFIXED($min, 2)}k
@@ -57,5 +60,14 @@ reagent-effect-condition-guidebook-has-tag =
                  [true] does not have
                  *[false] has
                 } the tag {$tag}
+
+reagent-effect-condition-guidebook-blood-reagent-threshold =
+    { $max ->
+        [2147483648] there's at least {NATURALFIXED($min, 2)}u of {$reagent}
+        *[other] { $min ->
+                    [0] there's at most {NATURALFIXED($max, 2)}u of {$reagent}
+                    *[other] there's between {NATURALFIXED($min, 2)}u and {NATURALFIXED($max, 2)}u of {$reagent}
+                 }
+    }
 
 reagent-effect-condition-guidebook-this-reagent = this reagent

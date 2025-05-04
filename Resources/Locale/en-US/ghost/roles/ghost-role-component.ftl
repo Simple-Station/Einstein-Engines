@@ -3,12 +3,28 @@ ghost-role-component-default-rules = All normal rules apply unless an administra
                                      You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
                                      You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
                                      You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+ghost-role-information-freeagent-rules = You are a [color=yellow][bold]Free Agent[/bold][/color]. You are free to act as either an antagonist or a non-antagonist.
+                                         You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
+                                         You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
+                                         You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
 
 ghost-role-information-mouse-name = Mouse
 ghost-role-information-mouse-description = A hungry and mischievous mouse.
 
 ghost-role-information-mothroach-name = Mothroach
 ghost-role-information-mothroach-description = A cute but mischievous mothroach.
+
+ghost-role-information-squackroach-name = Squackroach
+ghost-role-information-squackroach-description = A diabolical but nearly harmless squackroach.
+
+ghost-role-information-snail-name = Snail
+ghost-role-information-snail-description = A little snail who doesn't mind a bit of space. Just stay on grid!
+
+ghost-role-information-snailspeed-name = Snail
+ghost-role-information-snailspeed-description = A little snail with snailborn thrusters.
+
+ghost-role-information-snoth-name = Snoth
+ghost-role-information-snoth-description = A little snoth who doesn't mind a bit of space. Just stay on grid!
 
 ghost-role-information-giant-spider-name = Giant spider
 ghost-role-information-giant-spider-description = This station's inhabitants look mighty tasty, and your sticky web is perfect to catch them!
@@ -64,6 +80,9 @@ ghost-role-information-salvage-carp-description = Defend the loot inside the sal
 ghost-role-information-sentient-carp-name = Sentient Carp
 ghost-role-information-sentient-carp-description = Help the dragon flood the station with carps!
 
+ghost-role-information-space-goldfish-name = Space Goldfish
+ghost-role-information-space-goldfish-description = Swim aimlessly through the air and nibble at anyone foolish enough to incur your wrath.
+
 ghost-role-information-salvage-shark-name = Space sharkminnow on salvage wreck
 ghost-role-information-salvage-shark-description = Help the younger fellow carp protect their prey. Smell the blood!
 
@@ -90,6 +109,9 @@ ghost-role-information-taxibot-description = Drive the station crew to their des
 
 ghost-role-information-supplybot-name = SupplyBot
 ghost-role-information-supplybot-description = Deliver goods around the station.
+
+ghost-role-information-minebot-name = Minebot
+ghost-role-information-minebot-description = Assist the miners with their work.
 
 ghost-role-information-space-bear-name = Space bear
 ghost-role-information-space-bear-description = Your tummy rumbles, and these people look really yummy... What a feast!
@@ -131,7 +153,11 @@ ghost-role-information-holoclown-name = Holoclown
 ghost-role-information-holoclown-description = Listen to your owner. Utilize your pockets and hand to help your owner.
 
 ghost-role-information-ifrit-name = Ifrit
-ghost-role-information-ifrit-description = Listen to your owner. Don't tank damage. Punch people hard.
+ghost-role-information-ifrit-description = The mystagogue's servant.
+ghost-role-information-ifrit-rules = A fire spirit originating from Gehenna, you have been summoned by the mystagogue. Follow them around and don't cause any trouble unless they tell you to.
+
+ghost-role-information-ifrit-wizard-name = Ifrit (Wizard Summon)
+ghost-role-information-ifrit-wizard-description = Listen to your owner. Don't tank damage. Punch people hard.
 
 ghost-role-information-space-dragon-name = Space dragon
 ghost-role-information-space-dragon-description = Call in 3 carp rifts and take over this quadrant! You have only 5 minutes in between each rift before you will disappear.
@@ -247,6 +273,9 @@ ghost-role-information-syndie-disaster-victim-rules = Normal station crew rules 
 ghost-role-information-syndicate-kobold-reinforcement-name = Syndicate Kobold Agent
 ghost-role-information-syndicate-kobold-reinforcement-description = Someone needs reinforcements. You, a trained kobold, will help them.
 ghost-role-information-syndicate-kobold-reinforcement-rules = Normal syndicate antagonist rules apply. Work with whoever called you in, and don't harm them.
+
+ghost-role-information-shiva-name = Shiva
+ghost-role-information-shiva-description = The first defender of the station.
 
 ghost-role-information-artifact-name = Sentient Artifact
 ghost-role-information-artifact-description =

@@ -70,8 +70,17 @@
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Vests/hazard.rsi
+    layers:
+    - state: icon
+    - state: icon-unshaded
+      shader: unshaded
   - type: Clothing
     sprite: Clothing/OuterClothing/Vests/hazard.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
   - type: Tag
     tags:
     - HiViz
@@ -120,3 +129,25 @@
     sprite: Clothing/OuterClothing/Vests/vest_orion.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Vests/vest_orion.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterVestColorable
+  name: vest
+  description: You have a vested interest in looking good, and this vest is the vest choice to achieve that!
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Vests/vest_colorable.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Vests/vest_colorable.rsi
+
+- type: entity
+  parent: ClothingOuterFoldableBase
+  id: ClothingOuterVestThick
+  name: thick vest
+  description: A vest made of synthetic leather.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Vests/vest_thick.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Vests/vest_thick.rsi

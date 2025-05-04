@@ -171,7 +171,7 @@ public sealed class PanicBunkerMinOverallHoursCommand : LocalizedCommands
         if (args.Length == 0)
         {
             var current = _cfg.GetCVar(CCVars.PanicBunkerMinOverallHours);
-            shell.WriteLine(Loc.GetString("panicbunker-command-min-overall-hours-is", ("minutes", current)));
+            shell.WriteLine(Loc.GetString("panicbunker-command-min-overall-hours-is", ("hours", current)));
         }
 
         if (args.Length > 1)

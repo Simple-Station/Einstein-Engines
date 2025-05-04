@@ -2,23 +2,7 @@
   id: LoadoutShoes
   items:
     - type: loadout
-      id: LoadoutShoesBlack
-    - type: loadout
-      id: LoadoutShoesBlue
-    - type: loadout
-      id: LoadoutShoesBrown
-    - type: loadout
-      id: LoadoutShoesGreen
-    - type: loadout
-      id: LoadoutShoesOrange
-    - type: loadout
-      id: LoadoutShoesPurple
-    - type: loadout
-      id: LoadoutShoesRed
-    - type: loadout
       id: LoadoutShoesWhite
-    - type: loadout
-      id: LoadoutShoesYellow
     - type: loadout
       id: LoadoutShoesGeta
     - type: loadout
@@ -26,19 +10,31 @@
     - type: loadout
       id: LoadoutShoesBootsWork
     - type: loadout
+      id: LoadoutShoesBootsWorkColor
+    - type: loadout
+      id: LoadoutShoesBootsJackFake
+    - type: loadout
+      id: LoadoutShoesBootsJackColor
+    - type: loadout
       id: LoadoutShoesBootsLaceup
     - type: loadout
       id: LoadoutShoesBootsWinter
-    - type: loadout
-      id: LoadoutShoesBootsCowboyBrown
-    - type: loadout
-      id: LoadoutShoesBootsCowboyBlack
     - type: loadout
       id: LoadoutShoesBootsCowboyWhite
     - type: loadout
       id: LoadoutShoesBootsCowboyFancy
     - type: loadout
       id: LoadoutShoesBootsFishing
+    - type: loadout
+      id: LoadoutShoesBootsAnkle
+    - type: loadout
+      id: LoadoutShoesBootsFull
+    - type: loadout
+      id: LoadoutShoesBootsMud
+    - type: loadout
+      id: LoadoutShoesBootsMudThigh
+    - type: loadout
+      id: LoadoutShoesBootsThigh
     - type: loadout
       id: LoadoutShoesSlippersDuck
     - type: loadout
@@ -53,3 +49,17 @@
       id: LoadoutShoesUnderSocksBee
     - type: loadout
       id: LoadoutShoesClothWrap
+    - type: loadout
+      id: LoadoutShoesHighHeels
+    - type: loadout
+      id: LoadoutShoesHighHeelsLong
+    - type: loadout
+      id: LoadoutShoesFlats
+    - type: loadout
+      id: LoadoutShoesSkater
+    - type: loadout
+      id: LoadoutShoesSandals
+    - type: loadout
+      id: LoadoutShoesSandalsFlipFlops
+    - type: loadout
+      id: LoadoutShoesSandalsFlipFlopsAlt

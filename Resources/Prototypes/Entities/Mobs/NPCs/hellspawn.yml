@@ -12,6 +12,9 @@
     makeSentient: true
     name: ghost-role-information-hellspawn-name
     description: ghost-role-information-hellspawn-description
+    rules: ghost-role-information-antagonist-rules
+    mindRoles:
+    - MindRoleGhostRoleSoloAntagonist
     raffle:
       settings: default
   - type: RotationVisuals
@@ -43,6 +46,7 @@
         Base: alive
       Dead:
         Base: dead
+  - type: Absorbable
   - type: Firestarter
   - type: NameIdentifier
     group: GenericNumber

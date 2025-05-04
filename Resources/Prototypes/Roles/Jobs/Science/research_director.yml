@@ -3,13 +3,9 @@
   name: job-name-rd
   description: job-description-rd
   playTimeTracker: JobResearchDirector
-  antagAdvantage: 6 # DeltaV - Reduced TC: Head of Staff
   requirements:
-    - !type:CharacterDepartmentTimeRequirement
-      department: Epistemics # DeltaV - Epistemics Department replacing Science
-      min: 54000 # DeltaV - 15 hours
-    - !type:CharacterOverallTimeRequirement
-      min: 72000 # DeltaV - 20 hours
+    - !type:CharacterItemGroupRequirement
+      group: TraitsCasterType
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -19,12 +15,15 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - Shadowkin
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Muted
+        - Foreigner
+        - ForeignerLight
+    - !type:CharacterEmployerRequirement
+      employers:
+      - NanoTrasen
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
@@ -38,33 +37,50 @@
   - ResearchDirector
   - Mantis # DeltaV - Mantis, see Resources/Prototypes/DeltaV/Access/epistemics.yml
   - Chapel # DeltaV - Chaplain is in Epistemics
+  - External # DeltaV - AI satellite access
   - Cryogenics
   special: # Nyanotrasen - Mystagogue can use the Bible
   - !type:AddComponentSpecial
     components:
-    - type: BibleUser # Nyano - Lets them heal with bibles
-    - type: Psionic # Nyano - They start with telepathic chat
-      powerSlots: 3
-  - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
-  - !type:AddComponentSpecial
-    components:
+      - type: BibleUser # Nyano - Lets them heal with bibles
+      - type: Psionic # Nyano - They start with telepathic chat
+        powerSlots: 3
+        baselinePowerCost: 75
+        nextPowerCost: 75 # No that's fully intended that he has the "Full" power pull. Have fun with being a crew-aligned wizard/cultist.
       - type: CommandStaff
       - type: InnatePsionicPowers
         powersToAdd:
           - DispelPower
           - MetapsionicPower
           - TelepathyPower
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 8
+  - !type:ModifyEnvirohelmSpecial
+    powerCell: PowerCellHigh
 
 - type: startingGear
   id: ResearchDirectorGear
+  subGear:
+  - ResearchDirectorPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitResearchDirector
     back: ClothingBackpackResearchDirectorFilled
     shoes: ClothingShoesColorBrown
     id: RnDPDA
-    ears: ClothingHeadsetRD
-    belt: BibleMystagogue # Nyanotrasen - Mystagogue book for their Ifrit
+    ears: ClothingHeadsetAltScience # Goobstation
+    pocket1: BookPsionicsGuidebook
+    pocket2: BibleMystagogue
   innerClothingSkirt: ClothingUniformJumpskirtResearchDirector
   satchel: ClothingBackpackSatchelResearchDirectorFilled
   duffelbag: ClothingBackpackDuffelResearchDirectorFilled
+
+- type: startingGear
+  id: ResearchDirectorPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitResearchDirector
+    head: ClothingHeadEnvirohelmResearchDirector
+    gloves: ClothingHandsGlovesEnviroglovesResearchDirector

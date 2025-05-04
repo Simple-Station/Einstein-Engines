@@ -347,7 +347,7 @@
 
 # Pills
 - type: entity
-  name: pill (dexalin 10u)
+  suffix: Dexalin 10u
   parent: Pill
   id: PillDexalin
   components:
@@ -367,7 +367,6 @@
 
 
 - type: entity
-  name: pill canister (dexalin 10u)
   parent: PillCanister
   id: PillCanisterDexalin
   suffix: Dexalin, 7
@@ -380,7 +379,7 @@
       amount: 7
 
 - type: entity
-  name: pill (dylovene 10u)
+  suffix: Dylovene 10u
   parent: Pill
   id: PillDylovene
   components:
@@ -399,7 +398,6 @@
           Quantity: 10
 
 - type: entity
-  name: pill canister (dylovene 10u)
   parent: PillCanister
   id: PillCanisterDylovene
   suffix: Dylovene, 5
@@ -412,7 +410,7 @@
       amount: 5
 
 - type: entity
-  name: pill (hyronalin 10u)
+  suffix: Hyronalin 10u
   parent: Pill
   id: PillHyronalin
   components:
@@ -431,7 +429,6 @@
           Quantity: 10
 
 - type: entity
-  name: pill canister (hyronalin 10u)
   parent: PillCanister
   id: PillCanisterHyronalin
   suffix: Hyronalin, 5
@@ -444,7 +441,38 @@
       amount: 5
 
 - type: entity
-  name: pill (iron 10u)
+  suffix: Potassium iodide 10u
+  parent: Pill
+  id: PillPotassiumIodide
+  components:
+  - type: Pill
+    pillType: 8
+  - type: Sprite
+    state: pill9
+  - type: Label
+    currentLabel: potassium iodide 10u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: PotassiumIodide
+          Quantity: 10
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterPotassiumIodide
+  suffix: Potassium iodide, 5
+  components:
+  - type: Label
+    currentLabel: potassium iodide 10u
+  - type: StorageFill
+    contents:
+    - id: PillPotassiumIodide
+      amount: 5
+
+- type: entity
+  suffix: Iron 10u
   parent: Pill
   id: PillIron
   components:
@@ -463,7 +491,7 @@
           Quantity: 10
 
 - type: entity
-  name: pill (copper 10u)
+  suffix: Copper 10u
   parent: Pill
   id: PillCopper
   components:
@@ -482,7 +510,6 @@
           Quantity: 10
 
 - type: entity
-  name: pill canister (iron 10u)
   parent: PillCanister
   id: PillCanisterIron
   suffix: Iron, 5
@@ -495,7 +522,6 @@
       amount: 5
 
 - type: entity
-  name: pill canister (copper 10u)
   parent: PillCanister
   id: PillCanisterCopper
   suffix: Copper, 5
@@ -508,7 +534,7 @@
       amount: 5
 
 - type: entity
-  name: pill (kelotane 10u)
+  suffix: Kelotane 10u
   parent: Pill
   id: PillKelotane
   components:
@@ -527,7 +553,6 @@
           Quantity: 10
 
 - type: entity
-  name: pill canister (kelotane 10u)
   parent: PillCanister
   id: PillCanisterKelotane
   suffix: Kelotane, 5
@@ -540,7 +565,7 @@
       amount: 5
 
 - type: entity
-  name: pill (dermaline 10u)
+  suffix: Dermaline 10u
   parent: Pill
   id: PillDermaline
   components:
@@ -559,7 +584,6 @@
           Quantity: 10
 
 - type: entity
-  name: pill canister (dermaline 10u)
   parent: PillCanister
   id: PillCanisterDermaline
   suffix: Dermaline, 5
@@ -572,10 +596,12 @@
       amount: 5
 
 - type: entity
-  name: space drugs
+  suffix: Space drugs 15u
   parent: Pill
   id: PillSpaceDrugs
   components:
+  - type: Label
+    currentLabel: space drugs 15u
   - type: SolutionContainerManager
     solutions:
       food:
@@ -583,9 +609,10 @@
         reagents:
         - ReagentId: SpaceDrugs
           Quantity: 15
+  - type: GuideHelp
+    guides: [ Psionics ]
 
 - type: entity
-  name: pill canister (LSD 15u)
   parent: PillCanister
   id: PillCanisterSpaceDrugs
   suffix: Space Drugs, 5
@@ -596,12 +623,16 @@
     contents:
     - id: PillSpaceDrugs
       amount: 5
+  - type: GuideHelp
+    guides: [ Psionics ]
 
 - type: entity
-  name: pax
+  suffix: Pax 10u
   parent: Pill
   id: PillPax
   components:
+  - type: Label
+    currentLabel: pax 10u
   - type: SolutionContainerManager
     solutions:
       food:
@@ -611,7 +642,6 @@
           Quantity: 10
 
 - type: entity
-  name: pill canister (Pax 10u)
   parent: PillCanister
   id: PillCanisterPax
   suffix: Pax, 5
@@ -625,7 +655,7 @@
 
 
 - type: entity
-  name: pill (tricordrazine 10u)
+  suffix: Tricordrazine 10u
   parent: Pill
   id: PillTricordrazine
   components:
@@ -644,7 +674,6 @@
           Quantity: 10
 
 - type: entity
-  name: pill canister (tricordrazine 10u)
   parent: PillCanister
   id: PillCanisterTricordrazine
   suffix: Tricordrazine, 5
@@ -657,7 +686,7 @@
       amount: 5
 
 - type: entity
-  name: pill (bicaridine 10u)
+  suffix: Bicaridine 10u
   parent: Pill
   id: PillBicaridine
   components:
@@ -676,7 +705,6 @@
           Quantity: 10
 
 - type: entity
-  name: pill canister (bicaridine 10u)
   parent: PillCanister
   id: PillCanisterBicaridine
   suffix: Bicaridine, 5
@@ -689,7 +717,7 @@
       amount: 5
 
 - type: entity
-  name: pill (charcoal 10u)
+  suffix: Charcoal 10u
   parent: Pill
   id: PillCharcoal
   components:
@@ -708,7 +736,6 @@
           Quantity: 10
 
 - type: entity
-  name: pill canister (charcoal 10u)
   parent: PillCanister
   id: PillCanisterCharcoal
   suffix: Charcoal, 3
@@ -721,10 +748,12 @@
       amount: 3
 
 - type: entity
-  name: romerol pill
+  suffix: Romerol 10u
   parent: Pill
   id: PillRomerol
   components:
+  - type: Label
+    currentLabel: romerol 10u
   - type: SolutionContainerManager
     solutions:
       food:
@@ -734,10 +763,12 @@
           Quantity: 10
 
 - type: entity
-  name: ambuzol pill
+  suffix: Ambuzol 10u
   parent: Pill
   id: PillAmbuzol
   components:
+    - type: Label
+      currentLabel: ambuzol 10u
     - type: SolutionContainerManager
       solutions:
         food:
@@ -747,7 +778,7 @@
               Quantity: 10
 
 - type: entity
-  name: ambuzol plus pill
+  suffix: Ambuzol plus 5u
   parent: Pill
   id: PillAmbuzolPlus
   components:
@@ -755,6 +786,8 @@
       pillType: 2
     - type: Sprite
       state: pill3
+    - type: Label
+      currentLabel: ambuzol plus 5u
     - type: SolutionContainerManager
       solutions:
         food:
@@ -779,6 +812,10 @@
       maxAmount: 7
       orGroup: RandomPill
     - id: PillHyronalin
+      prob: 0.10
+      maxAmount: 7
+      orGroup: RandomPill
+    - id: PillPotassiumIodide
       prob: 0.10
       maxAmount: 7
       orGroup: RandomPill

@@ -3,25 +3,12 @@
   category: Backpacks
   cost: 0
   exclusive: true
+  customColorTint: true
   items:
     - ClothingBackpack
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBackpacks
-
-- type: loadout
-  id: LoadoutBackpackMime
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackMime
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - Mime
 
 - type: loadout
   id: LoadoutBackpackHydroponics
@@ -36,34 +23,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Civilian
-
-- type: loadout
-  id: LoadoutBackpackScience
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackScience
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Epistemics
-
-- type: loadout
-  id: LoadoutBackpackRobotics
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackRobotics
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Epistemics
 
 - type: loadout
   id: LoadoutBackpackMerc

@@ -61,6 +61,18 @@
 # Mask
 
 # Outer
+- type: loadout
+  id: LoadoutQMWinterCoat
+  category: JobsLogisticsLogisticsOfficer
+  cost: 0
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLogisticsOfficerOuter
+  - !type:CharacterJobRequirement
+    jobs:
+    - Quartermaster
+  items:
+  - ClothingOuterWinterQM
 
 # Shoes
 - type: loadout

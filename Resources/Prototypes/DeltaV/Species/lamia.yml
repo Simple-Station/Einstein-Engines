@@ -1,0 +1,70 @@
+- type: species
+  id: Lamia
+  name: Lamia
+  roundStart: false
+  prototype: MobLamia
+  dollPrototype: MobLamiaDummy
+  sprites: MobLamiaSprites
+  defaultSkinTone: "#c0967f"
+  markingLimits: MobLamiaMarkingLimits
+  skinColoration: HumanToned
+  maleFirstNames: names_cyno_male
+  femaleFirstNames: names_cyno_female
+  lastNames: names_cyno_last
+
+- type: markingPoints
+  id: MobLamiaMarkingLimits
+  points:
+    Hair:
+      points: 1
+      required: false
+    FacialHair:
+      points: 1
+      required: false
+    Snout:
+      points: 1
+      required: false
+    HeadTop:
+      points: 2
+      required: false
+    HeadSide:
+      points: 3
+      required: false
+    Tail:
+      points: 1
+      required: true
+      defaultMarkings: [ LamiaBottom ]
+    Chest:
+      points: 1
+      required: false
+    RightArm:
+      points: 2
+      required: false
+    RightHand:
+      points: 3
+      required: false
+    LeftArm:
+      points: 2
+      required: false
+    LeftHand:
+      points: 3
+      required: false
+
+
+- type: speciesBaseSprites
+  id: MobLamiaSprites
+  sprites:
+    Head: MobHumanHead
+    Face: MobHumanoidAnyMarking
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
+    Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    Chest: MobHumanTorso
+    Eyes: MobHumanoidEyes
+    LArm: MobHumanLArm
+    RArm: MobHumanRArm
+    LHand: MobHumanLHand
+    RHand: MobHumanRHand
+    Tail: MobHumanoidAnyMarking

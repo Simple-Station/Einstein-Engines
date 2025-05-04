@@ -12,7 +12,7 @@ public sealed partial class BoxerComponent : Component
     public DamageModifierSet UnarmedModifiers = default!;
 
     [DataField("rangeBonus")]
-    public float RangeBonus = 1.5f;
+    public float RangeBonus = 1.0f;
 
     /// <summary>
     /// Damage modifier with boxing glove stam damage.

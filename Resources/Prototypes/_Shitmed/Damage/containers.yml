@@ -1,0 +1,11 @@
+# Shitmed
+- type: damageContainer
+  id: OrganicPart
+  supportedGroups:
+    - Brute
+    - Burn
+
+- type: damageContainer
+  id: Organ
+  supportedGroups:
+    - OrganFailure

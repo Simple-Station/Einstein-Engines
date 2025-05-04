@@ -6,6 +6,8 @@
   sounds:
     Scream:
       collection: HarpyScreams
+    Yawn:
+      collection: MaleYawn
     Laugh:
       collection: HarpyLaugh
     Sneeze:
@@ -38,8 +40,20 @@
       collection: HarpyBangs
     Beep:
       collection: HarpyBeeps
+    Boop:
+      path: /Audio/Voice/IPC/beep_500.ogg
     HarpyRev:
       collection: HarpyRevs
+    Chime:
+      path: /Audio/Machines/chime.ogg
+    Buzz:
+      path: /Audio/Machines/buzz-sigh.ogg
+    Buzz-Two:
+      path: /Audio/Machines/buzz-two.ogg
+    Ping:
+      path: /Audio/Effects/Cargo/ping.ogg
+    Whirr:
+      collection: IPCWhirrs
     Click:
       collection: HarpyClicks
     Chitter:
@@ -48,6 +62,8 @@
       collection: HarpySqueak
     HarpyCaw:
       collection: HarpyCaws
+    HarpyHoot:
+      collection: HarpyHoots
     Chirp:
       collection: HarpyChirps
     Snarl:
@@ -57,6 +73,8 @@
     Whine:
       collection: VulpkaninWhines
     Howl:
+      collection: VulpkaninHowls
+    Awoo:
       collection: VulpkaninHowls
     Weh:
       collection: Weh
@@ -102,6 +120,8 @@
       collection: VulpkaninWhines
     Howl:
       collection: VulpkaninHowls
+    Awoo:
+      collection: VulpkaninHowls
 
 - type: emoteSounds
   id: FemaleVulpkanin
@@ -140,3 +160,51 @@
       collection: VulpkaninWhines
     Howl:
       collection: VulpkaninHowls
+    Awoo:
+      collection: VulpkaninHowls
+
+- type: emoteSounds
+  id: MobDog
+  params:
+    variation: 0.125
+  sounds:
+    Growl:
+      collection: VulpkaninGrowls
+    Snarl:
+      collection: VulpkaninSnarls
+    Bark:
+      collection: VulpkaninBarks
+    Whine:
+      collection: VulpkaninWhines
+    Howl:
+      collection: VulpkaninHowls
+    Awoo:
+      collection: VulpkaninHowls
+
+- type: emoteSounds
+  id: UnisexChitinid
+  params:
+    variation: 0.125
+  sounds:
+    Buzz:
+      path: /Audio/DeltaV/Voice/Chitinid/moth_scream.ogg
+    Scream:
+      path: /Audio/Voice/Arachnid/arachnid_scream.ogg
+    Laugh:
+      path: /Audio/DeltaV/Voice/Chitinid/moth_laugh.ogg
+    Chitter:
+      path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
+    Click:
+      path: /Audio/Voice/Arachnid/arachnid_click.ogg
+    Crying:
+      collection: FemaleCry
+    Weh:
+      collection: Weh
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    Yawn:
+      collection: MaleYawn
+    Hiss:
+      path: /Audio/Animals/snake_hiss.ogg

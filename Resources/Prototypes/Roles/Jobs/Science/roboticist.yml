@@ -7,6 +7,11 @@
   - !type:CharacterDepartmentTimeRequirement
     department: Epistemics
     min: 14400 # 4 hours - same as scientist
+  - !type:CharacterEmployerRequirement
+      employers:
+      - ZavodskoiInterstellar
+      - HephaestusIndustries
+      - NanoTrasen
   startingGear: RoboticistGear
   icon: "JobIconRoboticist"
   supervisors: job-supervisors-rd
@@ -16,6 +21,8 @@
 
 - type: startingGear
   id: RoboticistGear
+  subGear:
+  - RoboticistPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitRoboticist
     back: ClothingBackpackRoboticsFilled
@@ -23,6 +30,15 @@
     outerClothing: ClothingOuterCoatRobo
     id: RoboticsPDA
     ears: ClothingHeadsetRobotics
+    pocket1: BookPsionicsGuidebook
   innerClothingSkirt: ClothingUniformJumpskirtRoboticist
   satchel: ClothingBackpackSatchelRoboticsFilled
   duffelbag: ClothingBackpackDuffelRoboticsFilled
+
+- type: startingGear
+  id: RoboticistPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitRoboticist
+    head: ClothingHeadEnvirohelmRoboticist
+    gloves: ClothingHandsGlovesEnviroglovesRoboticist

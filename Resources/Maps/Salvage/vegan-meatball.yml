@@ -183,6 +183,7 @@ entities:
             55: -0.52253246,0.8825569
             56: -1.20222,2.4528694
     - type: GridAtmosphere
+      simulatedTurf: false
       version: 2
       data:
         tiles:
@@ -505,7 +506,7 @@ entities:
         chemicals:
           THC:
             Inherent: True
-            potencyDivisor: 10
+            PotencyDivisor: 10
             Max: 10
             Min: 1
         productPrototypes:
@@ -578,7 +579,7 @@ entities:
         chemicals:
           Stellibinin:
             Inherent: True
-            potencyDivisor: 4
+            PotencyDivisor: 4
             Max: 25
             Min: 1
         productPrototypes:

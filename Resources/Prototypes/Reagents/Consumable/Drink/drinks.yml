@@ -12,6 +12,10 @@
       effects:
       - !type:SatiateThirst
         factor: 2
+      - !type:GenericStatusEffect
+        key: Drowsiness
+        time: 2.0
+        type: Remove
       - !type:AdjustReagent
         reagent: Theobromine
         amount: 0.05
@@ -96,6 +100,15 @@
   metamorphicMaxFillLevels: 1
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:GenericStatusEffect
+        key: Drowsiness
+        time: 2.0
+        type: Remove
 
 - type: reagent
   id: GreenTea
@@ -145,6 +158,15 @@
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:GenericStatusEffect
+        key: Drowsiness
+        time: 2.0
+        type: Remove
 
 - type: reagent
   id: IcedGreenTea
@@ -244,6 +266,25 @@
       effects:
       - !type:SatiateThirst
         factor: 4
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Plasmaman
+        damage:
+          groups:
+            Brute: -0.90
+          types:
+            Heat: -0.30
+            Shock: -0.30
+            Caustic: -0.30
+      - !type:ChemAddMoodlet
+        conditions:
+        - !type:OrganType
+          type: Plasmaman
+        - !type:ReagentThreshold
+          reagent: Milk
+          min: 4
+        moodPrototype: PlasmamanIngestMilk
 
 - type: reagent
   id: MilkGoat
@@ -322,6 +363,10 @@
       effects:
       - !type:SatiateThirst
         factor: 6
+      - !type:GenericStatusEffect
+        key: Drowsiness
+        time: 3.0
+        type: Remove
     Poison:
       effects:
       - !type:HealthChange
@@ -354,6 +399,15 @@
   metamorphicMaxFillLevels: 1
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:GenericStatusEffect
+        key: Drowsiness
+        time: 2.0
+        type: Remove
 
 - type: reagent
   id: Tea
@@ -527,7 +581,7 @@
   parent: BaseDrink
   desc: reagent-desc-rewriter
   physicalDesc: reagent-physical-desc-strong-smelling
-  flavor: sweet
+  flavor: rewriter      #Delta-V Flavor additions
   color: "#485000"
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/beerstein.rsi

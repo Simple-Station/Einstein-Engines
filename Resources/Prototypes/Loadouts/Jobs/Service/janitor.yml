@@ -20,7 +20,18 @@
 # Mask
 
 # Outer
-
+- type: loadout
+  id: LoadoutServiceWinterCoatJanitor
+  category: JobsServiceJanitor
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutJanitorOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Janitor
+  items:
+    - ClothingOuterWinterJani
 # Shoes
 
 # Uniforms

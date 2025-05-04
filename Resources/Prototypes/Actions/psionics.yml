@@ -69,7 +69,7 @@
   components:
     - type: EntityTargetAction
       icon: Interface/VerbIcons/noospheric_zap.png
-      useDelay: 100
+      useDelay: 50
       range: 5
       itemIconStyle: BigAction
       blacklist:
@@ -173,7 +173,7 @@
             Burn: -10
         rotReduction: 10
         useDelay: 1
-        doRevive: true
+        doRevive: false
         powerName: Healing Word
         popupText: healing-word-begin
         playSound: true
@@ -243,17 +243,17 @@
               - settings:
                   spawnOnPulse: true
                   spawnOnSuperCritical: true
-                  minAmount: 5
-                  maxAmount: 8
-                  maxRange: 1.5
+                  minAmount: 18
+                  maxAmount: 28
+                  maxRange: 2.5
                 spawns:
-                - ShadowKudzuWeak
+                - ShadowKudzuTemp
               - settings:
                   spawnOnPulse: true
                   spawnOnSuperCritical: true
                   minAmount: 1
                   maxAmount: 1
-                  maxRange: 0.5
+                  maxRange: 2
                 spawns:
                 - EffectFlashShadeskip
 
@@ -292,40 +292,6 @@
           spaceRange: 3
 
 - type: entity
-  id: ActionShadowkinShadeskip
-  name: action-name-shadeskip
-  description: action-description-shadowkin-shadeskip
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: InstantAction
-      icon: { sprite: Interface/Actions/shadowkin_icons.rsi, state: shadeskip }
-      useDelay: 10
-      checkCanInteract: false
-      event: !type:AnomalyPowerActionEvent
-        settings:
-          powerName: "Shadowkin-Shadeskip"
-          manaCost: 25
-          checkInsulation: false
-          minGlimmer: 0
-          maxGlimmer: 0
-          doSupercritical: false
-        entitySpawnEntries:
-          - settings:
-              spawnOnPulse: true
-              minAmount: 5
-              maxAmount: 10
-              maxRange: 2.5
-            spawns:
-              - ShadowkinShadow
-          - settings:
-              spawnOnPulse: true
-              minAmount: 1
-              maxAmount: 1
-              maxRange: 0.5
-            spawns:
-              - EffectFlashShadowkinShadeskip
-
-- type: entity
   id: ActionDarkSwap
   name: action-name-darkswap
   description: action-description-darkswap
@@ -336,8 +302,6 @@
       useDelay: 10
       checkCanInteract: false
       event: !type:DarkSwapActionEvent
-        manaCost: 100
-        checkInsulation: false
 
 - type: entity
   id: ActionPyrokineticFlare
@@ -402,3 +366,34 @@
         followMaster: true
         minGlimmer: 5
         maxGlimmer: 10
+
+- type: entity
+  id: ActionAssay
+  name: action-name-assay
+  description: action-description-assay
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: EntityTargetAction
+      icon: { sprite: Interface/Actions/psionics.rsi, state: assay }
+      useDelay: 45
+      checkCanAccess: false
+      range: 2
+      itemIconStyle: BigAction
+      canTargetSelf: true
+      blacklist:
+        components:
+          - PsionicInsulation
+          - Mindbroken
+      event: !type:AssayPowerActionEvent
+
+- type: entity
+  id: ActionAnoigo
+  name: action-name-anoigo
+  description: action-description-anoigo
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTargetAction
+    icon: { sprite: Interface/Actions/psionics.rsi, state: anoigo }
+    useDelay: 40
+    itemIconStyle: BigAction
+    event: !type:AnoigoPowerActionEvent

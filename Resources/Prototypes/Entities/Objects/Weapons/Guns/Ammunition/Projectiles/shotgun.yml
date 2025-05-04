@@ -43,6 +43,16 @@
         Piercing: 10
 
 - type: entity
+  id: PelletShotgunSpread
+  categories: [ HideSpawnMenu ]
+  parent: PelletShotgun
+  components:
+  - type: ProjectileSpread
+    proto: PelletShotgun
+    count: 6
+    spread: 15
+
+- type: entity
   id: PelletShotgunIncendiary
   name: pellet (.50 incendiary)
   categories: [ HideSpawnMenu ]
@@ -60,6 +70,16 @@
     ignited: true
 
 - type: entity
+  id: PelletShotgunIncendiarySpread
+  categories: [ HideSpawnMenu ]
+  parent: PelletShotgunIncendiary
+  components:
+  - type: ProjectileSpread
+    proto: PelletShotgunIncendiary
+    count: 6
+    spread: 15
+
+- type: entity
   id: PelletShotgunPractice
   name: pellet (.50 practice)
   categories: [ HideSpawnMenu ]
@@ -72,6 +92,16 @@
     damage:
       types:
         Blunt: 1
+
+- type: entity
+  id: PelletShotgunPracticeSpread
+  categories: [ HideSpawnMenu ]
+  parent: PelletShotgunPractice
+  components:
+  - type: ProjectileSpread
+    proto: PelletShotgunPractice
+    count: 6
+    spread: 15
 
 - type: entity
   id: PelletShotgunImprovised
@@ -88,6 +118,15 @@
         Piercing: 3
         Slash: 3
 
+- type: entity
+  id: PelletShotgunImprovisedSpread
+  categories: [ HideSpawnMenu ]
+  parent: PelletShotgunImprovised
+  components:
+  - type: ProjectileSpread
+    proto: PelletShotgunImprovised
+    count: 10
+    spread: 45
 
 - type: entity
   id: PelletShotgunTranquilizer
@@ -105,16 +144,203 @@
   - type: SolutionContainerManager
     solutions:
       ammo:
-        maxVol: 15
+        maxVol: 30
   - type: RefillableSolution
     solution: ammo
   - type: DrainableSolution
     solution: ammo
   - type: SolutionInjectOnProjectileHit
-    transferAmount: 15
+    transferAmount: 30 # "Hey, you're not meant to have a shotgun its gree- *snores*"
     solution: ammo
   - type: InjectableSolution
     solution: ammo
+
+
+- type: entity
+  id: PelletShotgunLumen
+  name: pellet (.50 lumenblast)
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: buckshot-flare
+  - type: FlashOnTrigger
+    range: 3
+    duration: 2
+  - type: SpawnOnTrigger
+    proto: GrenadeFlashEffect
+  - type: Ammo
+    muzzleFlash: null
+  - type: PointLight
+    radius: 1.5
+    color: yellow
+    energy: 1
+  - type: StaminaDamageOnCollide
+    damage: 40 # three shot stamcrit
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 3
+
+
+- type: entity
+  id: PelletShotgunUranium
+  name: pellet (.50 uranium)
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: depleted-uranium
+  - type: Projectile
+    damage:
+      types:
+        Radiation: 5
+        Piercing: 5
+
+- type: entity
+  id: PelletShotgunUraniumSpread
+  categories: [ HideSpawnMenu ]
+  parent: PelletShotgunUranium
+  components:
+  - type: ProjectileSpread
+    proto: PelletShotgunUranium
+    count: 5
+    spread: 6
+
+- type: entity
+  id: PelletGrapeshot #tally fucking ho
+  name: grapeshot pellet
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    noRot: false
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: grapeshot
+      shader: unshaded
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 25
+        Structural: 5
+
+- type: entity
+  id: PelletGrapeshotSpread
+  categories: [ HideSpawnMenu ]
+  parent: PelletGrapeshot
+  components:
+  - type: ProjectileSpread
+    proto: PelletGrapeshot
+    count: 5
+    spread: 40
+
+- type: entity
+  id: PelletGlass
+  name: glass shard
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    noRot: false
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: shard
+      shader: unshaded
+  - type: EmbeddableProjectile
+    deleteOnRemove: true
+  - type: Projectile
+    deleteOnCollide: false
+    damage:
+      types:
+        Slash: 25
+
+- type: entity
+  id: PelletGlassSpread
+  parent: PelletGlass
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileSpread
+    proto: PelletGlass
+    count: 5
+    spread: 10
+
+- type: entity
+  id: PelletShotgunBirdshot
+  name: pellet (.50 birdshot)
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    scale: 0.5, 0.5
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: buckshot
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 3.333
+
+- type: entity
+  id: PelletShotgunSpreadBirdshot
+  categories: [ HideSpawnMenu ]
+  parent: PelletShotgun
+  components:
+  - type: ProjectileSpread
+    proto: PelletShotgunBirdshot
+    count: 18
+    spread: 15
+
+- type: entity
+  id: PelletShotgun00Buckshot
+  name: pellet (.50 00-Buckshot)
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    scale: 1.1, 1.1
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: buckshot
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 15
+
+- type: entity
+  id: PelletShotgunSpread00Buckshot
+  categories: [ HideSpawnMenu ]
+  parent: PelletShotgun
+  components:
+  - type: ProjectileSpread
+    proto: PelletShotgun00Buckshot
+    count: 4
+    spread: 15
+
+- type: entity
+  id: PelletShotgun0000Buckshot
+  name: pellet (.50 0000-Buckshot)
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    scale: 1.25, 1.25
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: buckshot
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 20
+
+- type: entity
+  id: PelletShotgunSpread0000Buckshot
+  categories: [ HideSpawnMenu ]
+  parent: PelletShotgun
+  components:
+  - type: ProjectileSpread
+    proto: PelletShotgun0000Buckshot
+    count: 3
+    spread: 15
 
 - type: entity
   id: PelletShotgunFlare
@@ -162,56 +388,3 @@
     damage:
       types:
         Heat: 5
-
-- type: entity
-  id: PelletShotgunUranium
-  name: pellet (.50 uranium)
-  categories: [ HideSpawnMenu ]
-  parent: BaseBullet
-  components:
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    state: depleted-uranium
-  - type: Projectile
-    damage:
-      types:
-        Radiation: 5
-        Piercing: 5
-
-- type: entity
-  id: PelletGrapeshot #tally fucking ho
-  name: grapeshot pellet
-  categories: [ HideSpawnMenu ]
-  parent: BaseBullet
-  components:
-  - type: Sprite
-    noRot: false
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    layers:
-    - state: grapeshot
-      shader: unshaded
-  - type: Projectile
-    damage:
-      types:
-        Piercing: 25
-        Structural: 5
-
-- type: entity
-  id: PelletGlass
-  name: glass shard
-  parent: BaseBullet
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    noRot: false
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    layers:
-    - state: shard
-      shader: unshaded
-  - type: EmbeddableProjectile
-    deleteOnRemove: true
-  - type: Projectile
-    deleteOnCollide: false
-    damage:
-      types:
-        Slash: 25

@@ -5,6 +5,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
+using Content.Server.Players.RateLimiting;
 using Content.Server.Language;
 using Content.Server.Speech.Components;
 using Content.Server.Speech.EntitySystems;
@@ -21,8 +22,9 @@ using Content.Shared.Interaction;
 using Content.Shared.Language.Systems;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Players;
+using Content.Shared.Players.RateLimiting;
 using Content.Shared.Radio;
-using Content.Shared.Speech;
+using Content.Shared.Whitelist;
 using Robust.Server.Player;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -69,6 +71,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly ReplacementAccentSystem _wordreplacement = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
     [Dependency] private readonly TelepathicChatSystem _telepath = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
 
     public const int VoiceRange = 10; // how far voice goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
@@ -147,7 +150,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     /// <param name="shell"></param>
     /// <param name="player">The player doing the speaking</param>
     /// <param name="nameOverride">The name to use for the speaking entity. Usually this should just be modified via <see cref="TransformSpeakerSpeechEvent"/>. If this is set, the event will not get raised.</param>
-    public void TrySendInGameICMessage(
+    public override void TrySendInGameICMessage(
         EntityUid source,
         string message,
         InGameICChatType desiredType,
@@ -192,7 +195,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             return;
         }
 
-        if (player != null && !_chatManager.HandleRateLimit(player))
+        if (player != null && _chatManager.HandleRateLimit(player) != RateLimitStatus.Allowed)
             return;
 
         // Sus
@@ -260,6 +263,8 @@ public sealed partial class ChatSystem : SharedChatSystem
             }
         }
 
+        message = FormattedMessage.EscapeText(message);
+
         // Otherwise, send whatever type.
         switch (desiredType)
         {
@@ -291,7 +296,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (!CanSendInGame(message, shell, player))
             return;
 
-        if (player != null && !_chatManager.HandleRateLimit(player))
+        if (player != null && _chatManager.HandleRateLimit(player) != RateLimitStatus.Allowed)
             return;
 
         // It doesn't make any sense for a non-player to send in-game OOC messages, whereas non-players may be sending
@@ -405,7 +410,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             return;
 
         // The original message
-        var message = TransformSpeech(source, FormattedMessage.RemoveMarkup(originalMessage), language);
+        var message = TransformSpeech(source, FormattedMessage.RemoveMarkupPermissive(originalMessage), language);
 
         if (message.Length == 0)
             return;
@@ -420,7 +425,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         }
         else
         {
-            var nameEv = new TransformSpeakerSpeechEvent(source, Name(source));
+            var nameEv = new TransformSpeakerNameEvent(source, Name(source));
             RaiseLocalEvent(source, nameEv);
             name = nameEv.VoiceName ?? Name(source);
             // Check for a speech verb override
@@ -478,7 +483,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (!_actionBlocker.CanSpeak(source) && !ignoreActionBlocker)
             return;
 
-        var message = TransformSpeech(source, FormattedMessage.RemoveMarkup(originalMessage), language);
+        var message = TransformSpeech(source, FormattedMessage.RemoveMarkupPermissive(originalMessage), language);
         if (message.Length == 0)
             return;
 
@@ -492,9 +497,9 @@ public sealed partial class ChatSystem : SharedChatSystem
         }
         else
         {
-            var nameEv = new TransformSpeakerSpeechEvent(source, Name(source));
+            var nameEv = new TransformSpeakerNameEvent(source, Name(source));
             RaiseLocalEvent(source, nameEv);
-            name = nameEv.VoiceName ?? Name(source);
+            name = nameEv.VoiceName;
         }
         name = FormattedMessage.EscapeText(name);
 
@@ -514,7 +519,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
             var canUnderstandLanguage = _language.CanUnderstand(listener, language.ID);
             // How the entity perceives the message depends on whether it can understand its language
-            var perceivedMessage = FormattedMessage.EscapeText(canUnderstandLanguage ? message : languageObfuscatedMessage);
+            var perceivedMessage = canUnderstandLanguage ? message : languageObfuscatedMessage;
 
             // Result is the intermediate message derived from the perceived one via obfuscation
             // Wrapped message is the result wrapped in an "x says y" string
@@ -541,7 +546,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             _chatManager.ChatMessageToOne(ChatChannel.Whisper, result, wrappedMessage, source, false, session.Channel);
         }
 
-        var replayWrap = WrapWhisperMessage(source, "chat-manager-entity-whisper-wrap-message", name, FormattedMessage.EscapeText(message), language);
+        var replayWrap = WrapWhisperMessage(source, "chat-manager-entity-whisper-wrap-message", name, message, language);
         _replay.RecordServerMessage(new ChatMessage(ChatChannel.Whisper, message, replayWrap, GetNetEntity(source), null, MessageRangeHideChatForReplay(range)));
 
         var ev = new EntitySpokeEvent(source, message, channel, true, language);
@@ -588,7 +593,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         var wrappedMessage = Loc.GetString("chat-manager-entity-me-wrap-message",
             ("entityName", name),
             ("entity", ent),
-            ("message", FormattedMessage.RemoveMarkup(action)));
+            ("message", FormattedMessage.RemoveMarkupPermissive(action)));
 
         if (checkEmote)
             TryEmoteChatInput(source, action);
@@ -768,8 +773,10 @@ public sealed partial class ChatSystem : SharedChatSystem
     // ReSharper disable once InconsistentNaming
     private string SanitizeInGameICMessage(EntityUid source, string message, out string? emoteStr, bool capitalize = true, bool punctuate = false, bool capitalizeTheWordI = true)
     {
-        var newMessage = message.Trim();
-        newMessage = SanitizeMessageReplaceWords(newMessage);
+        var newMessage = SanitizeMessageReplaceWords(message.Trim());
+
+        GetRadioKeycodePrefix(source, newMessage, out newMessage, out var prefix);
+        _sanitizer.TrySanitizeOutSmilies(newMessage, source, out newMessage, out emoteStr);
 
         if (capitalize)
             newMessage = SanitizeMessageCapital(newMessage);
@@ -778,9 +785,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (punctuate)
             newMessage = SanitizeMessagePeriod(newMessage);
 
-        _sanitizer.TrySanitizeOutSmilies(newMessage, source, out newMessage, out emoteStr);
-
-        return newMessage;
+        return prefix + newMessage;
     }
 
     private string SanitizeInGameOOCMessage(string message)
@@ -880,7 +885,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (language.SpeechOverride.Color is { } colorOverride)
             color = Color.InterpolateBetween(color, colorOverride, colorOverride.A);
         var languageDisplay = language.IsVisibleLanguage
-            ? $"{language.ChatName} | "
+            ? Loc.GetString("chat-manager-language-prefix", ("language", language.ChatName))
             : "";
 
         return Loc.GetString(wrapId,
@@ -931,7 +936,7 @@ public sealed partial class ChatSystem : SharedChatSystem
                 recipients.Add(player, new ICChatRecipientData(-1, true));
         }
 
-        RaiseLocalEvent(new ExpandICChatRecipientstEvent(source, voiceGetRange, recipients));
+        RaiseLocalEvent(new ExpandICChatRecipientsEvent(source, voiceGetRange, recipients));
         return recipients;
     }
 
@@ -989,7 +994,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 ///     This event is raised before chat messages are sent out to clients. This enables some systems to send the chat
 ///     messages to otherwise out-of view entities (e.g. for multiple viewports from cameras).
 /// </summary>
-public record ExpandICChatRecipientstEvent(EntityUid Source, float VoiceRange, Dictionary<ICommonSession, ChatSystem.ICChatRecipientData> Recipients)
+public record ExpandICChatRecipientsEvent(EntityUid Source, float VoiceRange, Dictionary<ICommonSession, ChatSystem.ICChatRecipientData> Recipients)
 {
 }
 

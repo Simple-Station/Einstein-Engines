@@ -139,7 +139,7 @@ namespace Content.Server.Carrying
 
             args.ItemUid = virtItem.BlockingEntity;
 
-            args.ThrowStrength *= _contests.MassContest(uid, virtItem.BlockingEntity, false, 2f)
+            args.ThrowSpeed *= _contests.MassContest(uid, virtItem.BlockingEntity, false, 2f)
                             * _contests.StaminaContest(uid, virtItem.BlockingEntity);
         }
 
@@ -168,7 +168,7 @@ namespace Content.Server.Carrying
             var targetParent = Transform(args.Target.Value).ParentUid;
 
             if (args.Target.Value != component.Carrier && targetParent != component.Carrier && targetParent != uid)
-                args.Cancel();
+                args.Cancelled = true;
         }
 
         /// <summary>
@@ -183,10 +183,7 @@ namespace Content.Server.Carrying
             // Check if the victim is in any way incapacitated, and if not make an escape attempt.
             // Escape time scales with the inverse of a mass contest. Being lighter makes escape harder.
             if (_actionBlockerSystem.CanInteract(uid, component.Carrier))
-            {
-                var disadvantage = _contests.MassContest(component.Carrier, uid, false, 2f);
-                _escapeInventorySystem.AttemptEscape(uid, component.Carrier, escape, disadvantage);
-            }
+                _escapeInventorySystem.AttemptEscape(uid, component.Carrier, escape, _contests.MassContest(uid, component.Carrier, false, 2f));
         }
 
         private void OnMoveAttempt(EntityUid uid, BeingCarriedComponent component, UpdateCanMoveEvent args)
@@ -202,7 +199,7 @@ namespace Content.Server.Carrying
         private void OnInteractedWith(EntityUid uid, BeingCarriedComponent component, GettingInteractedWithAttemptEvent args)
         {
             if (args.Uid != component.Carrier)
-                args.Cancel();
+                args.Cancelled = true;
         }
 
         private void OnPullAttempt(EntityUid uid, BeingCarriedComponent component, PullAttemptEvent args)
@@ -250,8 +247,7 @@ namespace Content.Server.Carrying
             var ev = new CarryDoAfterEvent();
             var args = new DoAfterArgs(EntityManager, carrier, length, ev, carried, target: carried)
             {
-                BreakOnTargetMove = true,
-                BreakOnUserMove = true,
+                BreakOnMove = true,
                 NeedHand = true
             };
 

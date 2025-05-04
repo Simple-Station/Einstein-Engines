@@ -14,16 +14,26 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutCatalogerEquipment
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutCatalogerEyes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutCatalogerEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutCatalogerEquipmentCandles
+    - type: loadout
+      id: LoadoutCatalogerEquipmentCandlesSmall
+    - type: loadout
+      id: LoadoutCatalogerPillCanisterSpaceDrugs
+
+- type: characterItemGroup
+  id: LoadoutCatalogerEyes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCatalogerEyesEpiHUD
+    - type: loadout
+      id: LoadoutCatalogerEyesEpiGlasses
+
 #- type: characterItemGroup
 #  id: LoadoutCatalogerGloves
 #  maxItems: 1

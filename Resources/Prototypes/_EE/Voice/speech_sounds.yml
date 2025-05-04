@@ -1,0 +1,48 @@
+- type: speechSounds
+  id: SupermatterWarning
+  variation: 0
+  saySound:
+    path: /Audio/_EE/Supermatter/status/terminal_alert.ogg
+  askSound:
+    path: /Audio/_EE/Supermatter/status/terminal_alert.ogg
+  exclaimSound:
+    path: /Audio/_EE/Supermatter/status/terminal_alert.ogg
+
+- type: speechSounds
+  id: SupermatterDanger
+  variation: 0
+  saySound:
+    path: /Audio/_EE/Supermatter/status/engine_alert2.ogg
+  askSound:
+    path: /Audio/_EE/Supermatter/status/engine_alert2.ogg
+  exclaimSound:
+    path: /Audio/_EE/Supermatter/status/engine_alert2.ogg
+
+- type: speechSounds
+  id: SupermatterEmergency
+  variation: 0
+  saySound:
+    path: /Audio/_EE/Supermatter/status/engine_alert1.ogg
+  askSound:
+    path: /Audio/_EE/Supermatter/status/engine_alert1.ogg
+  exclaimSound:
+    path: /Audio/_EE/Supermatter/status/engine_alert1.ogg
+
+- type: speechSounds
+  id: SupermatterDelaminating
+  variation: 0
+  saySound:
+    path: /Audio/_EE/Supermatter/status/bloblarm.ogg
+  askSound:
+    path: /Audio/_EE/Supermatter/status/bloblarm.ogg
+  exclaimSound:
+    path: /Audio/_EE/Supermatter/status/bloblarm.ogg
+
+- type: speechSounds
+  id: Xelthia
+  saySound:
+    path: /Audio/_EE/Voice/Xelthia/say.ogg
+  askSound:
+    path: /Audio/_EE/Voice/Xelthia/ask.ogg
+  exclaimSound:
+    path: /Audio/_EE/Voice/Xelthia/exclaim.ogg

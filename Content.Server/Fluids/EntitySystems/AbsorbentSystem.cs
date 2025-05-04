@@ -1,5 +1,4 @@
 using System.Numerics;
-using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Popups;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
@@ -18,7 +17,7 @@ using Robust.Shared.Utility;
 namespace Content.Server.Fluids.EntitySystems;
 
 /// <inheritdoc/>
-public sealed class AbsorbentSystem : SharedAbsorbentSystem
+public sealed partial class AbsorbentSystem : SharedAbsorbentSystem
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
@@ -26,7 +25,7 @@ public sealed class AbsorbentSystem : SharedAbsorbentSystem
     [Dependency] private readonly PuddleSystem _puddleSystem = default!;
     [Dependency] private readonly SharedMeleeWeaponSystem _melee = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
 
@@ -35,7 +34,7 @@ public sealed class AbsorbentSystem : SharedAbsorbentSystem
         base.Initialize();
         SubscribeLocalEvent<AbsorbentComponent, ComponentInit>(OnAbsorbentInit);
         SubscribeLocalEvent<AbsorbentComponent, AfterInteractEvent>(OnAfterInteract);
-        SubscribeLocalEvent<AbsorbentComponent, InteractNoHandEvent>(OnInteractNoHand);
+        SubscribeLocalEvent<AbsorbentComponent, UserActivateInWorldEvent>(OnActivateInWorld);
         SubscribeLocalEvent<AbsorbentComponent, SolutionContainerChangedEvent>(OnAbsorbentSolutionChange);
     }
 
@@ -85,12 +84,12 @@ public sealed class AbsorbentSystem : SharedAbsorbentSystem
         Dirty(uid, component);
     }
 
-    private void OnInteractNoHand(EntityUid uid, AbsorbentComponent component, InteractNoHandEvent args)
+    private void OnActivateInWorld(EntityUid uid, AbsorbentComponent component, UserActivateInWorldEvent args)
     {
-        if (args.Handled || args.Target == null)
+        if (args.Handled)
             return;
 
-        Mop(uid, args.Target.Value, uid, component);
+        Mop(uid, args.Target, uid, component);
         args.Handled = true;
     }
 
@@ -119,6 +118,8 @@ public sealed class AbsorbentSystem : SharedAbsorbentSystem
             if (!TryRefillableInteract(user, used, target, component, useDelay, absorberSoln.Value))
                 return;
         }
+
+        TryCleanNearbyFootprints(user, target, (used, component), absorberSoln.Value);
     }
 
     /// <summary>

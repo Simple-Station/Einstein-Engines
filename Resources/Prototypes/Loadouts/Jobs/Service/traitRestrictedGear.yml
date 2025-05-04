@@ -1,0 +1,80 @@
+### Botanist
+## Equipment
+- type: loadout
+  id: LoadoutServiceRestrictedGearBotanistMiniHoe
+  category: JobsServiceBotanist
+  cost: 2
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Botanist
+  items:
+    - HydroponicsToolMiniHoe
+- type: loadout
+  id: LoadoutServiceRestrictedGearBotanistClippers
+  category: JobsServiceBotanist
+  cost: 2
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Botanist
+  items:
+    - HydroponicsToolClippers
+
+- type: loadout
+  id: LoadoutServiceRestrictedGearBotanistScythe
+  category: JobsServiceBotanist
+  cost: 2
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs: 
+        - Botanist
+  items:
+    - HydroponicsToolScythe
+
+- type: loadout
+  id: LoadoutServiceRestrictedGearBotanistHatchet
+  category: JobsServiceBotanist
+  cost: 2
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Botanist
+  items:
+    - HydroponicsToolHatchet
+
+- type: loadout
+  id: LoadoutServiceRestrictedGearBotanistSpade
+  category: JobsServiceBotanist
+  cost: 2
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterTraitRequirement
+      traits:
+        - RestrictedGear
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Botanist
+  items:
+    - HydroponicsToolSpade

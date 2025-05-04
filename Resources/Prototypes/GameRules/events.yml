@@ -1,22 +1,53 @@
 - type: entity
-  id: AnomalySpawn
+  id: BaseStationEvent
   parent: BaseGameRule
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    delay:
+      min:  10
+      max:  20
+
+- type: entity
+  id: BaseStationEventShortDelay
+  parent: BaseGameRule
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    delay:
+      min:  10
+      max:  20
+
+- type: entity
+  id: BaseStationEventLongDelay
+  parent: BaseGameRule
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    delay:
+      min:  40
+      max:  60
+
+- type: entity
+  id: AnomalySpawn
+  parent: BaseStationEventLongDelay
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 8
-    startDelay: 30
     duration: 35
   - type: AnomalySpawnRule
 
 - type: entity
   id: BluespaceArtifact
-  parent: BaseGameRule
+  parent: BaseStationEventLongDelay
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 8
-    startDelay: 30
     duration: 35
   - type: BluespaceArtifactRule
 
@@ -86,12 +117,28 @@
   components:
   - type: StationEvent
     weight: 6.5
-    duration: 1
     earliestStart: 40
     reoccurrenceDelay: 20
     minimumPlayers: 20
-  - type: RandomSpawnRule
-    prototype: SpawnPointGhostDragon
+    duration: null
+  - type: SpaceSpawnRule
+    spawnDistance: 0
+  - type: AntagSpawner
+    prototype: MobDragon
+  - type: DragonRule
+  - type: AntagObjectives
+    objectives:
+    - CarpRiftsObjective
+    - DragonSurviveObjective
+  - type: AntagSelection
+    agentName: dragon-round-end-agent-name
+    definitions:
+    - spawnerPrototype: SpawnPointGhostDragon
+      min: 1
+      max: 1
+      pickPlayer: false
+      mindRoles:
+      - MindRoleDragon
 
 - type: entity
   parent: BaseGameRule
@@ -104,7 +151,42 @@
     earliestStart: 30
     reoccurrenceDelay: 20
     minimumPlayers: 30
-  - type: NinjaSpawnRule
+  - type: SpaceSpawnRule
+  - type: AntagLoadProfileRule
+  - type: AntagObjectives
+    objectives:
+    - StealResearchObjective
+    - DoorjackObjective
+    - SpiderChargeObjective
+    - TerrorObjective
+    - MassArrestObjective
+    - NinjaSurviveObjective
+  - type: AntagSelection
+    agentName: ninja-round-end-agent-name
+    definitions:
+    - spawnerPrototype: SpawnPointGhostSpaceNinja
+      min: 1
+      max: 1
+      pickPlayer: false
+      startingGear: SpaceNinjaGear
+      briefing:
+        text: ninja-role-greeting
+        color: Green
+        sound: /Audio/Misc/ninja_greeting.ogg
+      components:
+      - type: SpaceNinja
+      - type: NpcFactionMember
+        factions:
+        - Syndicate
+      - type: AutoImplant
+        implants:
+        - DeathAcidifierImplant
+      - type: RandomMetadata
+        nameSegments:
+        - names_ninja_title
+        - names_ninja
+      mindRoles:
+      - MindRoleNinja
 
 - type: entity
   parent: BaseGameRule
@@ -162,7 +244,7 @@
   components:
   - type: StationEvent
     earliestStart: 30
-    weight: 7.5
+    weight: 5
     minimumPlayers: 10 #Enough to hopefully have at least one engineering guy
     startAnnouncement: true
     endAnnouncement: true
@@ -179,7 +261,7 @@
     startAnnouncement: true
     startDelay: 10
     earliestStart: 15
-    weight: 6
+    weight: 3
     duration: 50
   - type: VentCrittersRule
     entries:
@@ -203,7 +285,7 @@
   - type: StationEvent
     startAnnouncement: true
     startDelay: 10
-    weight: 6
+    weight: 3
     duration: 50
   - type: VentCrittersRule
     entries:
@@ -211,6 +293,47 @@
       prob: 0.03
     - id: MobMothroach
       prob: 0.008
+    - id: MobSquackroach
+      prob: 0.001
+
+- type: entity
+  id: SnailMigrationLowPop
+  parent: BaseGameRule
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    startDelay: 10
+    weight: 3
+    duration: 50
+  - type: VentCrittersRule
+    entries:
+    - id: MobSnail
+      prob: 0.02
+    - id: MobSnailSpeed
+      prob: 0.002
+    - id: MobSnailMoth
+      prob: 0.002
+
+- type: entity
+  id: SnailMigration
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    earliestStart: 15
+    weight: 3
+    duration: 50
+    minimumPlayers: 30
+  - type: VentCrittersRule
+    entries:
+    - id: MobSnail
+      prob: 0.02
+    - id: MobSnailSpeed
+      prob: 0.002
+    - id: MobSnailMoth
+      prob: 0.002
+    - id: MobSnailInstantDeath
+      prob: 0.00001 #  ~ 1:2000 snails
 
 - type: entity
   id: PowerGridCheck
@@ -235,7 +358,10 @@
     weight: 6
     duration: 1
     maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
+    startAnnouncement: true
   - type: RandomSentienceRule
+    minSentiences: 2
+    maxSentiences: 5
 
 - type: entity
   parent: BaseGameRule
@@ -288,7 +414,7 @@
     startDelay: 10
     earliestStart: 20
     minimumPlayers: 15
-    weight: 5
+    weight: 3
     duration: 60
   - type: VentCrittersRule
     entries:
@@ -309,7 +435,7 @@
     startDelay: 10
     earliestStart: 20
     minimumPlayers: 15
-    weight: 5
+    weight: 3
     duration: 60
   - type: VentCrittersRule
     entries:
@@ -339,9 +465,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    earliestStart: 50
-    minimumPlayers: 30
-    weight: 2
+    earliestStart: 90
+    minimumPlayers: 40
+    weight: 1 # Zombies was happening basically every single survival round, so now it's super rare
     duration: 1
   - type: ZombieRule
   - type: AntagSelection
@@ -352,7 +478,7 @@
       blacklist:
         components:
         - ZombieImmune
-        - InitialInfectedExempt
+        - AntagImmune
       briefing:
         text: zombie-patientzero-role-greeting
         color: Plum
@@ -363,20 +489,21 @@
         maxInitialInfectedGrace: 450
       - type: ZombifyOnDeath
       - type: IncurableZombie
-      mindComponents:
-      - type: InitialInfectedRole
-        prototype: InitialInfected
+      - type: InitialInfected
+      mindRoles:
+      - MindRoleInitialInfected
 
 - type: entity
-  id: LoneOpsSpawn
-  parent: BaseGameRule
   categories: [ HideSpawnMenu ]
+  parent: BaseNukeopsRule
+  id: LoneOpsSpawn
   components:
   - type: StationEvent
     earliestStart: 35
     weight: 5.5
     minimumPlayers: 20
     duration: 1
+  - type: RuleGrids
   - type: LoadMapRule
     preloadedGrid: ShuttleStriker
   - type: NukeopsRule
@@ -397,14 +524,13 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
-      mindComponents:
-      - type: NukeopsRole
-        prototype: Nukeops
+      mindRoles:
+      - MindRoleNukeops
 
 - type: entity
-  id: SleeperAgentsRule
-  parent: BaseGameRule
   categories: [ HideSpawnMenu ]
+  parent: BaseTraitorRule
+  id: SleeperAgents
   components:
   - type: StationEvent
     earliestStart: 25
@@ -412,17 +538,19 @@
     minimumPlayers: 15
     reoccurrenceDelay: 30
     startAnnouncement: false
-  - type: AlertLevelInterceptionRule
-  - type: TraitorRule
+# - type: AlertLevelInterceptionRule - Disable setting to blue with sleeper agents. Uncomment to enable.
   - type: AntagSelection
     definitions:
-    - prefRoles: [ Traitor ]
+    - prefRoles: [ TraitorSleeper ]
+      fallbackRoles: [ Traitor ]
       min: 1
       max: 2
       playerRatio: 10
-      mindComponents:
-      - type: TraitorRole
-        prototype: Traitor
+      blacklist:
+        components:
+        - AntagImmune
+      mindRoles:
+      - MindRoleTraitorSleeper
 
 - type: entity
   id: MassHallucinations
@@ -460,7 +588,7 @@
   id: IonStorm
   components:
   - type: StationEvent
-    weight: 8
+    weight: 10
     reoccurrenceDelay: 20
     duration: 1
   - type: IonStormRule
@@ -476,3 +604,47 @@
       maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
       weight: 5
     - type: MobReplacementRule
+
+- type: entity
+  id: AirlockVirusRule
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: StationEvent
+      earliestStart: 15
+      minimumPlayers: 5
+      maxOccurrences: 1
+      weight: 3
+    - type: AirlockVirusRule
+
+- type: entity
+  id: CarpSpawn
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    startDelay: 10
+    earliestStart: 20
+    minimumPlayers: 15
+    weight: 3
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: MobCarpGoldfish
+      prob: 0.02
+    - id: MobCarp
+      prob: 0.005
+
+- type: entity
+  parent: BaseGameRule
+  id: SmugglerStashVariationPass
+  components:
+  - type: StationEvent
+    earliestStart: 0
+    duration: 1
+    minimumPlayers: 1
+    maxOccurrences: 2
+    weight: 10
+  - type: RandomSpawnRule
+    prototype: RandomSatchelSpawner

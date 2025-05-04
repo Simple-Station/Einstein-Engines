@@ -6,13 +6,14 @@
   id: Circuitry
   name: lathe-category-circuitry
 
+
+- type: latheCategory
+  id: Books
+  name: lathe-category-books
+
 - type: latheCategory
   id: Lights
   name: lathe-category-lights
-
-- type: latheCategory
-  id: Mech
-  name: lathe-category-mechs
 
 - type: latheCategory
   id: Parts
@@ -21,6 +22,10 @@
 - type: latheCategory
   id: Robotics
   name: lathe-category-robotics
+
+- type: latheCategory
+  id: Tacsuits
+  name: lathe-category-tacsuits
 
 - type: latheCategory
   id: Tools

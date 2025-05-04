@@ -108,7 +108,7 @@
         - !type:EntSelector
           id: ClothingOuterCoatPirate
         - !type:EntSelector
-          id: ClothingHeadHatPirateTricord
+          id: ClothingHeadHatPirateTricorn
       - !type:EntSelector
         id: ClothingHeadHatTophat
       - !type:EntSelector
@@ -130,6 +130,8 @@
       - !type:EntSelector
         id: ClothingShoesBootsJack
       - !type:EntSelector
+        id: ClothingShoesBootsJackFake
+      - !type:EntSelector
         id: ClothingShoesHighheelBoots
       - !type:EntSelector
         id: ClothingShoesBootsLaceup
@@ -145,6 +147,8 @@
         id: ClothingUniformJumpsuitLoungewear
       - !type:EntSelector
         id: ClothingHeadHatCowboyRed
+      - !type:EntSelector
+        id: Wristwatch
     # Uncommon Group
     - !type:GroupSelector
       weight: 23
@@ -184,6 +188,8 @@
           id: ClothingNeckCloakPan
       - !type:EntSelector
         id: ToySkeleton
+      - !type:EntSelector
+        id: RevolutionaryManifesto
       - !type:EntSelector
         id: Basketball
       - !type:EntSelector
@@ -243,6 +249,8 @@
         - !type:EntSelector
           id: ClothingNeckBisexualPin
         - !type:EntSelector
+          id: ClothingNeckGayPin
+        - !type:EntSelector
           id: ClothingNeckIntersexPin
         - !type:EntSelector
           id: ClothingNeckLesbianPin
@@ -274,6 +282,8 @@
         id: CigarGold
       - !type:EntSelector
         id: ClothingUniformJumpsuitFamilyGuy
+      - !type:EntSelector
+        id: WristwatchGold
 
 - type: entity
   name: Maint Loot Spawner
@@ -315,6 +325,12 @@
           id: NitrogenTankFilled
         - !type:EntSelector
           id: DoubleEmergencyNitrogenTankFilled
+      - !type:GroupSelector
+        children:
+        - !type:EntSelector
+          id: PlasmaTankFilled
+        - !type:EntSelector
+          id: DoubleEmergencyPlasmaTankFilled
       - !type:EntSelector
         id: EmergencyFunnyOxygenTankFilled
         weight: 0.5

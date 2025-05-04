@@ -118,7 +118,7 @@ public sealed partial class TelepathicChatSystem
 
     private void DescribeGlimmerSource(EntityUid uid, GlimmerSourceComponent component, GetPsychognomicDescriptorEvent ev)
     {
-        if (component.AddToGlimmer)
+        if (component.GlimmerPerSecond >= 0)
             ev.Descriptors.Add(Loc.GetString("p-descriptor-emanative"));
         else
         {
@@ -130,7 +130,7 @@ public sealed partial class TelepathicChatSystem
     // This one's also a bit of a catch-all for "lacks component"
     private void DescribePsion(EntityUid uid, PsionicComponent component, GetPsychognomicDescriptorEvent ev)
     {
-        if (component.PsychognomicDescriptors != null)
+        if (component.PsychognomicDescriptors.Count > 0)
         {
             foreach (var descriptor in component.PsychognomicDescriptors)
             {

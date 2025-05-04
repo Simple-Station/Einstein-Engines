@@ -14,7 +14,7 @@
     sprite: Nyanotrasen/Objects/Weapons/Guns/Pistols/universal.rsi
     state: icon
   product: CrateArmoryUniversal
-  cost: 6500
+  cost: 22500
   category: Armory
   group: market
 
@@ -37,7 +37,7 @@
   cost: 5500
   category: Armory
   group: market
- 
+
 - type: cargoProduct
   id: ArmoryEnergyGunMini
   icon:

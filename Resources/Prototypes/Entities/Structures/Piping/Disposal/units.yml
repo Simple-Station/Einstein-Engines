@@ -65,6 +65,7 @@
     price: 62
   - type: PowerSwitch
 
+
 - type: entity
   id: DisposalUnit
   parent: DisposalUnitBase
@@ -77,6 +78,9 @@
     graph: DisposalMachine
     node: disposal_unit
   - type: DisposalUnit
+    blacklist:
+      components:
+      - SegmentedEntity
   - type: ThrowInsertContainer
     containerId: disposals
   - type: UserInterface
@@ -85,6 +89,9 @@
         type: DisposalUnitBoundUserInterface
   - type: RatKingRummageable
   - type: RequireProjectileTarget
+  - type: DeviceLinkSink
+    ports:
+      - FillbotAnyItem
 
 - type: entity
   id: MailingUnit
@@ -136,3 +143,6 @@
         type: DisposalUnitBoundUserInterface
       enum.ConfigurationUiKey.Key:
         type: ConfigurationBoundUserInterface
+  - type: DeviceLinkSink
+    ports:
+      - FillbotAnyItem

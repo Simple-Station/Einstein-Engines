@@ -1,5 +1,37 @@
 # Random humanoids
 
+- type: randomHumanoidSettings
+  id: EventHumanoid
+  # Shitmed Change Start
+  speciesBlacklist:
+  - Monkey
+  - Kobold
+  - Abductor
+  # Shitmed Change End
+  components:
+    - type: RandomHumanoidAppearance
+      randomizeName: false
+    - type: GhostTakeoverAvailable
+
+- type: randomHumanoidSettings
+  id: EventHumanoidMindShielded
+  parent: EventHumanoid
+  components:
+    - type: MindShield
+    - type: AntagImmune
+
+# Goobstation start
+#- type: randomHumanoidSettings
+#  id: EventHuman
+#  parent: EventHumanoid
+#  speciesWhitelist: Human
+
+#- type: randomHumanoidSettings
+#  id: EventHumanMindShielded
+#  parent: EventHumanoidMindShielded
+#  speciesWhitelist: Human
+# Goobstation end
+
 ## Death Squad
 
 - type: entity
@@ -7,6 +39,7 @@
   name: Death Squad Agent
   suffix: ERTRole, Death Squad
   components:
+    - type: MindShield
     - type: Sprite
       sprite: Clothing/OuterClothing/Hardsuits/deathsquad.rsi
       state: icon
@@ -16,18 +49,20 @@
         - NamesLastMilitary
     - type: RandomHumanoidSpawner
       settings: DeathSquad
-    - type: InitialInfectedExempt
 
 - type: randomHumanoidSettings
   id: DeathSquad
   randomizeName: false
   speciesBlacklist:
     - Shadowkin
+    - Monkey # Shitmed Change
+    - Kobold # Shitmed Change
   components:
     - type: MindShield
     - type: GhostRole
       name: ghost-role-information-Death-Squad-name
       description: ghost-role-information-Death-Squad-description
+      rules: ghost-role-information-Death-Squad-rules
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
@@ -37,8 +72,6 @@
       nameSegments:
         - NamesFirstMilitaryLeader
         - NamesLastMilitary
-    - type: InitialInfectedExempt
-
 
 ## ERT Leader
 
@@ -56,18 +89,20 @@
       - NamesLastMilitary
     - type: RandomHumanoidSpawner
       settings: ERTLeader
-    - type: InitialInfectedExempt
 
 - type: randomHumanoidSettings
   id: ERTLeader
   randomizeName: false
   speciesBlacklist:
     - Shadowkin
+    - Monkey # Shitmed Change
+    - Kobold # Shitmed Change
   components:
     - type: MindShield
     - type: GhostRole
       name: ghost-role-information-ert-leader-name
       description: ghost-role-information-ert-leader-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
@@ -77,7 +112,6 @@
       nameSegments:
       - NamesFirstMilitaryLeader
       - NamesLastMilitary
-    - type: InitialInfectedExempt
 
 - type: entity
   id: RandomHumanoidSpawnerERTLeaderEVA
@@ -90,7 +124,6 @@
       state: ertleadereva
     - type: RandomHumanoidSpawner
       settings: ERTLeaderEVA
-    - type: InitialInfectedExempt
 
 - type: randomHumanoidSettings
   id: ERTLeaderEVA
@@ -100,12 +133,12 @@
     - type: GhostRole
       name: ghost-role-information-ert-leader-name
       description: ghost-role-information-ert-leader-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ ERTLeaderGearEVA ]
-    - type: InitialInfectedExempt
 
 - type: entity
   id: RandomHumanoidSpawnerERTLeaderEVALecter
@@ -114,7 +147,6 @@
   components:
     - type: RandomHumanoidSpawner
       settings: ERTLeaderEVALecter
-    - type: InitialInfectedExempt
 
 - type: randomHumanoidSettings
   id: ERTLeaderEVALecter
@@ -124,12 +156,12 @@
     - type: GhostRole
       name: ghost-role-information-ert-leader-name
       description: ghost-role-information-ert-leader-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ ERTLeaderGearEVALecter ]
-    - type: InitialInfectedExempt
 
 ## ERT Chaplain
 
@@ -157,6 +189,7 @@
     - type: GhostRole
       name: ghost-role-information-ert-chaplain-name
       description: ghost-role-information-ert-chaplain-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
@@ -166,7 +199,6 @@
       - NamesLastMilitary
     - type: Loadout
       prototypes: [ ERTChaplainGear ]
-    - type: InitialInfectedExempt
 
 - type: entity
   id: RandomHumanoidSpawnerERTChaplainEVA
@@ -193,7 +225,6 @@
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ ERTChaplainGearEVA ]
-    - type: InitialInfectedExempt
 
 ## ERT Janitor
 
@@ -221,6 +252,7 @@
     - type: GhostRole
       name: ghost-role-information-ert-janitor-name
       description: ghost-role-information-ert-janitor-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
@@ -230,7 +262,6 @@
       - NamesLastMilitary
     - type: Loadout
       prototypes: [ ERTJanitorGear ]
-    - type: InitialInfectedExempt
 
 - type: entity
   id: RandomHumanoidSpawnerERTJanitorEVA
@@ -252,12 +283,12 @@
     - type: GhostRole
       name: ghost-role-information-ert-janitor-name
       description: ghost-role-information-ert-janitor-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ ERTJanitorGearEVA ]
-    - type: InitialInfectedExempt
 
 ## ERT Engineer
 
@@ -285,6 +316,7 @@
     - type: GhostRole
       name: ghost-role-information-ert-engineer-name
       description: ghost-role-information-ert-engineer-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
@@ -294,7 +326,6 @@
       - NamesLastMilitary
     - type: Loadout
       prototypes: [ ERTEngineerGear ]
-    - type: InitialInfectedExempt
 
 - type: entity
   id: RandomHumanoidSpawnerERTEngineerEVA
@@ -316,12 +347,12 @@
     - type: GhostRole
       name: ghost-role-information-ert-engineer-name
       description: ghost-role-information-ert-engineer-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ ERTEngineerGearEVA ]
-    - type: InitialInfectedExempt
 
 ## ERT Security
 
@@ -358,7 +389,6 @@
       - NamesLastMilitary
     - type: Loadout
       prototypes: [ ERTSecurityGear ]
-    - type: InitialInfectedExempt
 
 - type: entity
   id: RandomHumanoidSpawnerERTSecurityEVA
@@ -380,12 +410,12 @@
     - type: GhostRole
       name: ghost-role-information-ert-security-name
       description: ghost-role-information-ert-security-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ ERTSecurityGearEVA ]
-    - type: InitialInfectedExempt
 
 - type: entity
   id: RandomHumanoidSpawnerERTSecurityEVALecter
@@ -408,7 +438,6 @@
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ ERTSecurityGearEVALecter ]
-    - type: InitialInfectedExempt
 
 ## ERT Medic
 
@@ -436,6 +465,7 @@
     - type: GhostRole
       name: ghost-role-information-ert-medical-name
       description: ghost-role-information-ert-medical-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
@@ -445,7 +475,6 @@
       - NamesLastMilitary
     - type: Loadout
       prototypes: [ ERTMedicalGear ]
-    - type: InitialInfectedExempt
 
 - type: entity
   id: RandomHumanoidSpawnerERTMedicalEVA
@@ -467,12 +496,12 @@
     - type: GhostRole
       name: ghost-role-information-ert-medical-name
       description: ghost-role-information-ert-medical-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ ERTMedicalGearEVA ]
-    - type: InitialInfectedExempt
 
 ## CBURN
 
@@ -486,12 +515,13 @@
       state: cburn
     - type: RandomHumanoidSpawner
       settings: CBURNAgent
-    - type: InitialInfectedExempt
 
 - type: randomHumanoidSettings
   id: CBURNAgent
   speciesBlacklist:
     - Shadowkin
+    - Monkey # Shitmed Change
+    - Kobold # Shitmed Change
   components:
     - type: MindShield
     - type: Loadout
@@ -499,6 +529,7 @@
     - type: GhostRole
       name: ghost-role-information-cburn-agent-name
       description: ghost-role-information-cburn-agent-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
@@ -506,7 +537,7 @@
       nameSegments:
       - NamesFirstMilitary
       - NamesLastMilitary
-    - type: InitialInfectedExempt
+
 ## Central Command
 
 - type: entity
@@ -518,23 +549,24 @@
       state: centcom
     - type: RandomHumanoidSpawner
       settings: CentcomOfficial
-    - type: InitialInfectedExempt
 
 - type: randomHumanoidSettings
   id: CentcomOfficial
   speciesBlacklist:
     - Shadowkin
+    - Monkey # Shitmed Change
+    - Kobold # Shitmed Change
   components:
     - type: MindShield
     - type: GhostRole
       name: ghost-role-information-centcom-official-name
       description: ghost-role-information-centcom-official-description
+      rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: default
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ CentcomGear ]
-    - type: InitialInfectedExempt
 
 ## Syndicate
 
@@ -554,7 +586,11 @@
   id: SyndicateAgent
   speciesBlacklist:
     - Shadowkin
+    - Monkey # Shitmed Change
+    - Kobold # Shitmed Change
   components:
+    - type: RandomHumanoidAppearance
+      randomizeName: false
     - type: Loadout
       prototypes: [SyndicateOperativeGearExtremelyBasic]
 
@@ -572,7 +608,11 @@
   id: NukeOp
   speciesBlacklist:
     - Shadowkin
+    - Monkey # Shitmed Change
+    - Kobold # Shitmed Change
   components:
+    - type: RandomHumanoidAppearance
+      randomizeName: false
     - type: NukeOperative
     - type: Psionic
       powerRollMultiplier: 7
@@ -596,6 +636,8 @@
   id: Cluwne
   speciesBlacklist:
     - Shadowkin
+    - Monkey # Shitmed Change
+    - Kobold # Shitmed Change
   randomizeName: false
   components:
     - type: GhostRole

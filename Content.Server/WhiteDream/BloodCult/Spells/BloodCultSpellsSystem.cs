@@ -1,20 +1,18 @@
 ﻿using Content.Server.Actions;
-using Content.Server.Cuffs;
 using Content.Server.DoAfter;
 using Content.Server.Emp;
 using Content.Server.Hands.Systems;
 using Content.Server.Popups;
-using Content.Server.Stunnable;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Actions;
 using Content.Shared.Actions.Events;
 using Content.Shared.Clothing.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Inventory;
+using Content.Shared.Magic;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Popups;
 using Content.Shared.RadialSelector;
-using Content.Shared.Speech.Muting;
 using Content.Shared.StatusEffect;
 using Content.Shared.Verbs;
 using Content.Shared.WhiteDream.BloodCult.Spells;
@@ -30,20 +28,20 @@ public sealed class BloodCultSpellsSystem : EntitySystem
 
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
-    [Dependency] private readonly CuffableSystem _cuffable = default!;
     [Dependency] private readonly EmpSystem _empSystem = default!;
     [Dependency] private readonly HandsSystem _hands = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
-    [Dependency] private readonly StunSystem _stun = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
+    [Dependency] private readonly SharedMagicSystem _magicSystem = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
+        SubscribeLocalEvent<BaseCultSpellComponent, ComponentStartup>(OnSpellStartup);
         SubscribeLocalEvent<BaseCultSpellComponent, EntityTargetActionEvent>(OnCultTargetEvent);
         SubscribeLocalEvent<BaseCultSpellComponent, ActionGettingDisabledEvent>(OnActionGettingDisabled);
 
@@ -52,13 +50,17 @@ public sealed class BloodCultSpellsSystem : EntitySystem
         SubscribeLocalEvent<BloodCultSpellsHolderComponent, RadialSelectorSelectedMessage>(OnSpellSelected);
         SubscribeLocalEvent<BloodCultSpellsHolderComponent, CreateSpeellDoAfterEvent>(OnSpellCreated);
 
-        SubscribeLocalEvent<BloodCultStunEvent>(OnStun);
         SubscribeLocalEvent<BloodCultEmpEvent>(OnEmp);
-        SubscribeLocalEvent<BloodCultShacklesEvent>(OnShackles);
         SubscribeLocalEvent<SummonEquipmentEvent>(OnSummonEquipment);
     }
 
     #region BaseHandlers
+
+    private void OnSpellStartup(Entity<BaseCultSpellComponent> action, ref ComponentStartup args)
+    {
+        if (_actions.TryGetActionData(action, out var actionData, false) && actionData is { UseDelay: not null })
+            _actions.StartUseDelay(action);
+    }
 
     private void OnCultTargetEvent(Entity<BaseCultSpellComponent> spell, ref EntityTargetActionEvent args)
     {
@@ -83,10 +85,8 @@ public sealed class BloodCultSpellsSystem : EntitySystem
         _actions.RemoveAction(args.Performer, spell);
     }
 
-    private void OnComponentStartup(Entity<BloodCultSpellsHolderComponent> cultist, ref ComponentStartup args)
-    {
+    private void OnComponentStartup(Entity<BloodCultSpellsHolderComponent> cultist, ref ComponentStartup args) =>
         cultist.Comp.MaxSpells = cultist.Comp.DefaultMaxSpells;
-    }
 
     private void OnGetVerbs(Entity<BloodCultSpellsHolderComponent> cultist, ref GetVerbsEvent<ExamineVerb> args)
     {
@@ -136,13 +136,14 @@ public sealed class BloodCultSpellsSystem : EntitySystem
             ActionProtoId = args.SelectedItem
         };
 
-        var doAfter = new DoAfterArgs(EntityManager,
+        var doAfter = new DoAfterArgs(
+            EntityManager,
             cultist.Owner,
             cultist.Comp.SpellCreationTime,
             createSpellEvent,
             cultist.Owner)
         {
-            BreakOnUserMove = true
+            BreakOnMove = true
         };
 
         if (_doAfter.TryStartDoAfter(doAfter, out var doAfterId))
@@ -164,16 +165,6 @@ public sealed class BloodCultSpellsSystem : EntitySystem
 
     #region SpellsHandlers
 
-    private void OnStun(BloodCultStunEvent ev)
-    {
-        if (ev.Handled)
-            return;
-
-        _statusEffects.TryAddStatusEffect<MutedComponent>(ev.Target, "Muted", ev.MuteDuration, true);
-        _stun.TryParalyze(ev.Target, ev.ParalyzeDuration, true);
-        ev.Handled = true;
-    }
-
     private void OnEmp(BloodCultEmpEvent ev)
     {
         if (ev.Handled)
@@ -183,34 +174,31 @@ public sealed class BloodCultSpellsSystem : EntitySystem
         ev.Handled = true;
     }
 
-    private void OnShackles(BloodCultShacklesEvent ev)
-    {
-        if (ev.Handled)
-            return;
-
-        var shuckles = Spawn(ev.ShacklesProto);
-        if (!_cuffable.TryAddNewCuffs(ev.Performer, ev.Target, shuckles))
-            return;
-
-        _stun.TryKnockdown(ev.Target, ev.KnockdownDuration, true);
-        _statusEffects.TryAddStatusEffect<MutedComponent>(ev.Target, "Muted", ev.MuteDuration, true);
-        ev.Handled = true;
-    }
-
     private void OnSummonEquipment(SummonEquipmentEvent ev)
     {
         if (ev.Handled)
             return;
 
+
+
         foreach (var (slot, protoId) in ev.Prototypes)
         {
             var entity = Spawn(protoId, _transform.GetMapCoordinates(ev.Performer));
-            _hands.TryPickupAnyHand(ev.Performer, entity);
-            if (!TryComp(entity, out ClothingComponent? _))
+            if (!_hands.TryPickupAnyHand(ev.Performer, entity) && !ev.Force)
+            {
+                _popup.PopupEntity(Loc.GetString("cult-magic-no-empty-hand"), ev.Performer, ev.Performer);
+                _actions.SetCooldown(ev.Action, TimeSpan.FromSeconds(1));
+                QueueDel(entity);
+                return;
+            }
+
+            if (!TryComp(entity, out ClothingComponent? clothing)
+                || !_inventory.TryUnequip(ev.Performer, slot, clothing: clothing)
+                || !_inventory.TryEquip(ev.Performer, entity, slot, clothing: clothing, force: true))
                 continue;
 
-            _inventory.TryUnequip(ev.Performer, slot);
-            _inventory.TryEquip(ev.Performer, entity, slot, force: true);
+            if (ev.Speech is not null)
+                _magicSystem.Speak(ev.Performer, ev.Speech, ev.InvokeChatType);
         }
 
         ev.Handled = true;

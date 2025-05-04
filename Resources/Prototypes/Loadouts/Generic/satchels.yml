@@ -3,6 +3,7 @@
   category: Backpacks
   cost: 0
   exclusive: true
+  customColorTint: true
   items:
     - ClothingBackpackSatchel
   requirements:
@@ -17,38 +18,12 @@
   items:
     - ClothingBackpackSatchelLeather
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
     - !type:CharacterJobRequirement
        inverted: true
        jobs:
          - Prisoner
-
-- type: loadout
-  id: LoadoutBackpackSatchelSecurity
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackSatchelSecurity
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
-
-- type: loadout
-  id: LoadoutBackpackSatchelMime
-  category: Backpacks
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackSatchelMime
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - Mime
 
 - type: loadout
   id: LoadoutBackpackSatchelHydroponics
@@ -65,29 +40,33 @@
         - Civilian
 
 - type: loadout
-  id: LoadoutBackpackSatchelScience
+  id: LoadoutBackpackSatchelPurse
   category: Backpacks
   cost: 0
   exclusive: true
+  customColorTint: true
   items:
-    - ClothingBackpackSatchelScience
+    - ClothingBackpackSatchelPurse
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Epistemics
+    - !type:CharacterJobRequirement
+       inverted: true
+       jobs:
+         - Prisoner
 
 - type: loadout
-  id: LoadoutBackpackSatchelRobotics
+  id: LoadoutBackpackSatchelPurseFlipped
   category: Backpacks
   cost: 0
   exclusive: true
+  customColorTint: true
   items:
-    - ClothingBackpackSatchelRobotics
+    - ClothingBackpackSatchelPurseFlipped
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Epistemics
+    - !type:CharacterJobRequirement
+       inverted: true
+       jobs:
+         - Prisoner

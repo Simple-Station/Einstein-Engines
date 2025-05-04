@@ -1,0 +1,40 @@
+- type: entity
+  id: UnburnedDiskPrototype
+  name: unburned disk dummy prototype
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: CrewMonitorDiskPrototype
+  name: Crew Monitor
+  categories: [HideSpawnMenu]
+  components:
+    - type: ActivatableUI
+      key: enum.CrewMonitoringUIKey.Key
+    - type: UserInterface
+      interfaces:
+        enum.CrewMonitoringUIKey.Key:
+          type: CrewMonitoringBoundUserInterface
+    - type: CrewMonitoringConsole
+    - type: DeviceNetwork
+      deviceNetId: Wireless
+      receiveFrequencyId: CrewMonitor
+    - type: WirelessNetworkConnection
+      range: 1200
+
+- type: entity
+  id: CommunicationsConsoleDiskPrototype
+  name: Communications Console
+  categories: [HideSpawnMenu]
+  components:
+    - type: AccessReader
+      access: [["Command"]]
+    - type: CommunicationsConsole
+      title: comms-console-announcement-title-station
+    - type: DeviceNetwork
+      transmitFrequencyId: ShuttleTimer
+    - type: ActivatableUI
+      key: enum.CommunicationsConsoleUiKey.Key
+    - type: UserInterface
+      interfaces:
+        enum.CommunicationsConsoleUiKey.Key:
+          type: CommunicationsConsoleBoundUserInterface

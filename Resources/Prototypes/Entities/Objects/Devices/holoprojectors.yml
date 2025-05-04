@@ -24,6 +24,19 @@
   - type: Tag
     tags:
       - HolosignProjector
+  - type: MeleeWeapon
+    wideAnimationRotation: 90
+    attackRate: 0.8
+    damage:
+      types:
+        Blunt: 6.5
+    bluntStaminaDamageFactor: 2
+    heavyRateModifier: 0.9
+    maxTargets: 1
+    angle: 20
+    soundHit:
+      collection: MetalThud
+  - type: DamageOtherOnHit
 
 - type: entity
   parent: Holoprojector

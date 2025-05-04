@@ -10,3 +10,6 @@ loadout-description-LoadoutCommandCapHatCapcap = The Captain's cap, pretty nice.
 loadout-description-LoadoutCommandCapHatBeret = The Captain's beret, very nice.
 loadout-description-LoadoutCommandCapMaskGas = Why would the captain need this? I don't know, but it looks cool.
 loadout-description-LoadoutCommandCapItemDrinkFlask = The finest of flasks, for the finest of drinks.
+
+loadout-name-LoadoutCaptainDrinkFlask = captain's drink flask (colorable)
+loadout-name-LoadoutCaptainGlovesInspection = inspection gloves (colorable)

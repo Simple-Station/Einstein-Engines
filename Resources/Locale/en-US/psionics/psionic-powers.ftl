@@ -1,6 +1,5 @@
 generic-power-initialization-feedback = I Awaken.
 already-casting = I cannot channel more than one power at a time.
-no-mana = I cannot channel enough power.
 
 # Dispel
 dispel-power-description = Dispel summoned entities such as familiars or forcewalls.
@@ -83,7 +82,9 @@ telegnosis-power-initialization-feedback =
 telegnosis-power-metapsionic-feedback = {CAPITALIZE($entity)}'s soul travels across bridges composed of dreamlight
 
 # Psionic Invisibility
-psionic-invisibility-power-description = Render yourself invisible to any entity that could potentially be psychic. Borgs, animals, and so on are not affected.
+psionic-invisibility-power-description =
+    Render yourself invisible to any entity that could potentially be psychic. Borgs, animals, and so on are not affected.
+    This doesn't last forever, and its duration scales with your psychic amplification factor.
 psionic-invisibility-power-initialization-feedback =
     I suddenly find myself plunged into a world utterly without light, yet I can feel the rays of warmth cast upon me.
     Pondering this, I arrive at a realization that sight itself is an illusion. I reject it, I deny that light itself is real.
@@ -160,6 +161,7 @@ summon-remilia-power-description = { action-description-summon-remilia }
 
 # Psionic System Messages
 mindbreaking-feedback = The light of life vanishes from {CAPITALIZE($entity)}'s eyes, leaving behind a husk pretending at sapience
+hard-mindbreaking-feedback = Your character's personhood has been obliterated. If you wish to continue playing, consider respawning as a new character.
 examine-mindbroken-message =
     Eyes unblinking, staring deep into the horizon. {CAPITALIZE($entity)} is a sack of meat pretending it has a soul.
     There is nothing behind its gaze, no evidence there can be found of the divine light of creation.
@@ -167,13 +169,11 @@ psionic-roll-failed = For a moment, my consciousness expands, yet I feel that it
 entity-anomaly-no-grid = There is nowhere for me to conjure beings.
 power-overwhelming-power-feedback = {CAPITALIZE($entity)} wields a vast connection to the noösphere
 
-# Shadowkin ShadeSkip
-action-description-shadowkin-shadeskip = Aaramrra!
-
 # DarkSwap
 action-name-darkswap = DarkSwap
 action-description-darkswap = Mmra Mamm!
-
+darkswap-power-initialization-feedback =
+    For a short moment, I find myself able to break the realms. Phasing in the shadows and the dark, ready to travel to the darkest of places...
 ethereal-pickup-fail = My hand sizzles as it passes through...
 
 # Psionic Familiar System
@@ -184,3 +184,41 @@ ghost-role-information-familiar-description = An interdimensional creature bound
 ghost-role-information-familiar-rules =
     Obey the one who summoned you. Do not act against the interests of your Master. You will die for your Master if it is necessary.
 
+# Assay Power
+assay-begin = The air around {CAPITALIZE($entity)} begins to shimmer faintly
+assay-self = I AM.
+no-powers = {CAPITALIZE($entity)} will never awaken from the dream in this life
+assay-body = "My will cast upon {CAPITALIZE($entity)} divines these. Amplification: {$amplification} Dampening: {$dampening} Potentia: {$potentia}"
+assay-power-initialization-feedback =
+    I descend into the dreamlight once more, there I drink more fully of the cup of knowledge. The touch of the noosphere upon others becomes known to me,
+    I can cast my will upon them, divining the inner nature of others.
+assay-power-metapsionic-feedback = {CAPITALIZE($entity)} bears a spark of the divine's judgment, they have drunk deeply of the cup of knowledge.
+
+# Anoigo Power
+action-name-anoigo = Anoigo
+action-description-anoigo = Open locked and bolted doors.
+anoigo-power-initialization-feedback=
+    Knowledge arrived to me in a bottle alongside the shores of Entropy.
+    Gatekeepers of riches and secrets can be persuaded if you speak their tongue.
+anoigo-power-metapsionic-feedback = {CAPITALIZE($entity)} possesses the Gatekeeper's tongue.
+
+# Entity Specific Feedback Messages
+ifrit-feedback = A spirit of Gehenna, bound by the will of a powerful psychic
+prober-feedback = A mirror into the end of time, the screaming of dead stars emanates from this machine
+drain-feedback = A mirror into a realm where the stars sit still forever, a cold and distant malevolence stares back
+sophic-grammateus-feedback = SEEKER, YOU NEED ONLY ASK FOR MY WISDOM.
+oracle-feedback = WHY DO YOU BOTHER ME SEEKER? HAVE I NOT MADE MY DESIRES CLEAR?
+orecrab-feedback = Heralds of the Lord of Earth, summoned to this realm from Grome's kingdom
+reagent-slime-feedback = Heralds of the Lord of Water, summoned to this realm from Straasha's kingdom.
+flesh-golem-feedback = Abominations pulled from dead realms, twisted amalgamations of those fallen to the influence of primordial Chaos
+glimmer-mite-feedback = A semi-corporeal parasite native to the dreamlight, its presence here brings forth the screams of dead stars.
+anomaly-pyroclastic-feedback = A small mirror to the plane of Gehenna, truth lies within the Secret of Fire
+anomaly-gravity-feedback = Violet and crimson, blue of blue, impossibly dark yet greater than the whitest of white, a black star shines weakly at the end of it all
+anomaly-electricity-feedback = A mirror to a realm tiled by silicon, the lifeblood of artificial thought flows from it
+anomaly-flesh-feedback = From within it comes the suffering of damned mutants howling for all eternity
+anomaly-bluespace-feedback = A bridge of dreamlight, crossing into the space between realms of the multiverse
+anomaly-ice-feedback = Walls of blackened stone, ruin and famine wait for those who fall within
+anomaly-rock-feedback = A vast old oak dwells high over a plane of stone, it turns to stare back
+anomaly-flora-feedback = Musical notes drift around you, playfully beckoning, they wish to feast
+anomaly-liquid-feedback = A realm of twisting currents. Its placidity is a lie. The eyes within stare hungrilly
+anomaly-shadow-feedback = At the end of time, when all suns have set forever, there amidst the void stands a monument to past sins.

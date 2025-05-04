@@ -2,30 +2,39 @@
   name: fireaxe
   parent: BaseItem
   id: FireAxe
-  description: Truly, the weapon of a madman. Who would think to fight fire with an axe?
+  description: A versatile tool, capable of prying open airlocks and tearing through windows.
   components:
   - type: Tag
     tags:
     - FireAxe
   - type: Sharp
+  - type: Execution
+    doAfterDuration: 4.0
   - type: Sprite
     sprite: Objects/Weapons/Melee/fireaxe.rsi
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 135
     swingLeft: true
-    attackRate: 0.75
+    attackRate: 1.25
     damage:
       types:
         # axes are kinda like sharp hammers, you know?
         Blunt: 4
         Slash: 6
         Structural: 10
+    clickPartDamageMultiplier: 3
+    heavyPartDamageMultiplier: 2.5
     heavyDamageBaseModifier: 1.0
-    heavyStaminaCost: 10
+    heavyStaminaCost: 2.5
     angle: 100
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
+    meleeDamageMultiplier: 1.5
+    staminaCost: 10
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
@@ -52,6 +61,14 @@
     stealGroup: FireAxe
   - type: IgniteOnMeleeHit
     fireStacks: -4
+  # Shitmed Change
+  - type: Scalpel
+    speed: 0.3
+  - type: BoneSaw
+    speed: 0.5
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Medical/Surgery/saw.ogg
 
 - type: entity
   id: FireAxeFlaming

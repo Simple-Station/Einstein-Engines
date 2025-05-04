@@ -20,6 +20,10 @@
       id: LoadoutClothingBeltSecurity
     - type: loadout
       id: LoadoutClothingBeltHolster
+    - type: loadout
+      id: LoadoutClothingBeltJudo
+    - type: loadout
+      id: LoadoutClothingBeltJudoHoS
 
 #- type: characterItemGroup
 #  id: LoadoutSecurityEars
@@ -58,6 +62,22 @@
       id: LoadoutMagazineMagnumSpare
     - type: loadout
       id: LoadoutMagazineMagnumRubberSpare
+    - type: loadout
+      id: LoadoutSpeedLoaderRifleHeavy
+    - type: loadout
+      id: LoadoutSpeedLoaderRifleHeavySpare
+    - type: loadout
+      id: LoadoutSpeedLoaderRifleHeavyRubber
+    - type: loadout
+      id: LoadoutSpeedLoaderRifleHeavyRubberSpare
+    - type: loadout
+      id: LoadoutMagazineUniversalMagnum
+    - type: loadout
+      id: LoadoutMagazineUniversalMagnumSpare
+    - type: loadout
+      id: LoadoutMagazineUniversalMagnumRubber
+    - type: loadout
+      id: LoadoutMagazineUniversalMagnumRubberSpare
 
 - type: characterItemGroup
   maxItems: 1
@@ -90,6 +110,8 @@
     - type: loadout
       id: LoadoutSecurityEquipmentTruncheon
     - type: loadout
+      id: LoadoutSecurityEquipmentEnergySword
+    - type: loadout
       id: LoadoutSecurityPistolSvalin
     - type: loadout
       id: LoadoutSecurityEnergyGunMini
@@ -115,6 +137,24 @@
       id: LoadoutSecurityRevolverPython
     - type: loadout
       id: LoadoutSecurityRevolverPythonNonlethal
+    - type: loadout
+      id: LoadoutSecurityArgenti
+    - type: loadout
+      id: LoadoutSecurityArgentiNonLethal
+    - type: loadout
+      id: LoadoutSecurityPistolEnergyRevolver
+    - type: loadout
+      id: LoadoutBSOEnergyRevolver
+    - type: loadout
+      id: LoadoutBSORifleChester
+    - type: loadout
+      id: LoadoutSecurityShotgunSawnLumen
+    - type: loadout
+      id: LoadoutSecurityDisablerSMG
+    - type: loadout
+      id: LoadoutSecurityPistolUniversal
+    - type: loadout
+      id: LoadoutSecurityPistolUniversalNonLethal
 
 - type: characterItemGroup
   id: LoadoutSecurityEyes
@@ -130,12 +170,22 @@
       id: LoadoutSecurityEyesHudSecurityPrescription
     - type: loadout
       id: LoadoutClothingEyesGlassesSecurity
+    - type: loadout
+      id: LoadoutClothingEyesGlassesSecurityAviator
+    - type: loadout
+      id: LoadoutClothingEyesGlassesSecurityBig
+    - type: loadout
+      id: LoadoutClothingEyesGlassesSecurityVisor
+    - type: loadout
+      id: LoadoutClothingEyesGlassesCorpsman
 
-#- type: characterItemGroup
-#  id: LoadoutSecurityGloves
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutSecurityGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSecurityCombatGloves
+
 - type: characterItemGroup
   id: LoadoutSecurityHead
   maxItems: 1
@@ -146,6 +196,14 @@
       id: LoadoutClothingHeadHelmetBasic
     - type: loadout
       id: LoadoutSecurityHeadHelmetInsulated
+    - type: loadout
+      id: ClothingHeadHelmetTCFLHeavy
+    - type: loadout
+      id: LoadoutClothingHeadHelmetHeavyStandard
+    - type: loadout
+      id: ClothingHeadHelmetTCFLNoVisor
+    - type: loadout
+      id: ClothingHeadHelmetTCFLVisor
 
 #- type: characterItemGroup
 #  id: LoadoutSecurityId
@@ -163,6 +221,8 @@
   items:
     - type: loadout
       id: LoadoutSecurityMaskGasSwat
+    - type: loadout
+      id: LoadoutSecurityMaskGasSwatPaid
 
 - type: characterItemGroup
   id: LoadoutSecurityOuter
@@ -171,11 +231,23 @@
     - type: loadout
       id: LoadoutClothingOuterArmorPlateCarrier
     - type: loadout
+      id: LoadoutClothingOuterWinterCoatSec
+    - type: loadout
       id: LoadoutClothingOuterArmorDuraVest
     - type: loadout
       id: LoadoutClothingOuterArmorBasic
     - type: loadout
       id: LoadoutClothingOuterArmorSlim
+    - type: loadout
+      id: ClothingOuterArmorTCFLHeavy
+    - type: loadout
+      id: ClothingOuterArmorTCFLLight
+    - type: loadout
+      id: LoadoutClothingOuterArmorStandardHeavy
+    - type: loadout
+      id: LoadoutClothingOuterJacketZavSecurity
+    - type: loadout
+      id: LoadoutClothingOuterJacketZavSecurityAlt
 
 - type: characterItemGroup
   id: LoadoutSecurityShoes
@@ -199,6 +271,16 @@
     - type: loadout
       id: LoadoutSecurityUniformJumpskirtBlue
     - type: loadout
-      id: LoadoutUniformJumpsuitSecFormal
-    - type: loadout
       id: LoadoutUniformJumpsuitSecSummer
+    - type: loadout
+      id: LoadoutSecurityUniformEnvirosuitBlue
+    - type: loadout
+      id: LoadoutSecurityUniformEnvirosuitGrey
+    - type: loadout
+      id: LoadoutSecurityUniformZavodSecurityOfficer
+    - type: loadout
+      id: LoadoutSecurityUniformZavodSecurityOfficerAlt1
+    - type: loadout
+      id: LoadoutSecurityUniformZavodSecurityOfficerAlt2
+    - type: loadout
+      id: LoadoutSecurityUniformZavodCadet

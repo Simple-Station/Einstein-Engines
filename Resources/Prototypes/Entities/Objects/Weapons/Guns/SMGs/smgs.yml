@@ -19,6 +19,7 @@
     minAngle: 2
     maxAngle: 16
     fireRate: 8
+    burstFireRate: 8
     angleIncrease: 3
     angleDecay: 16
     selectedMode: FullAuto
@@ -27,6 +28,7 @@
     - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/smg.ogg
+    defaultDirection: 1, 0
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/smg_cock.ogg
@@ -54,6 +56,25 @@
       gun_chamber: !type:ContainerSlot
   - type: StaticPrice
     price: 500
+  - type: Execution
+  - type: MeleeWeapon
+    attackRate: 1.3333
+    damage:
+      types:
+        Blunt: 9.0
+    bluntStaminaDamageFactor: 1.25
+    swapKeys: true
+    disableHeavy: true
+    animation: WeaponArcThrust
+    wideAnimationRotation: 180
+    soundHit:
+      collection: MetalThud
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2.5
+  - type: DamageOtherOnHit
+    staminaCost: 8
 
 - type: entity
   name: Atreides
@@ -101,6 +122,7 @@
   - type: Gun
     minAngle: 21
     maxAngle: 32
+    fireRate: 10
     shotsPerBurst: 5
     availableModes:
     - SemiAuto
@@ -118,6 +140,31 @@
   - type: Appearance
 
 - type: entity
+  name: C-20r sub machine gun
+  parent: [WeaponSubMachineGunC20r]
+  id: WeaponSubMachineGunC20rEmpty
+  description: Manufactured by Cybersun-Armaments, the C-20r is one of the most popular personal small-arms in the Coalition of Colonies. Uses .35 auto ammo.
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: null
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistolSubMachineGun
+      gun_chamber:
+        name: Chamber
+        startingItem: null
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
+
+- type: entity
   name: antique C-20r submachine gun
   parent: WeaponSubMachineGunC20r
   id: WeaponSubMachineGunC20rHoS
@@ -128,7 +175,7 @@
 
 - type: entity
   name: Drozd
-  parent: [BaseWeaponSubMachineGun, BaseGunWieldable]
+  parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunDrozd
   description: An excellent fully automatic Heavy SMG.
   components:
@@ -142,19 +189,20 @@
     - type: Clothing
       sprite: Objects/Weapons/Guns/SMGs/drozd.rsi
     - type: Wieldable
+      unwieldOnUse: false
     - type: GunWieldBonus
       minAngle: -19
       maxAngle: -16
     - type: Gun
       minAngle: 21
       maxAngle: 32
-      fireRate: 6
+      fireRate: 12
+      burstFireRate: 12
       selectedMode: FullAuto
       soundGunshot:
         path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
       availableModes:
         - FullAuto
-      fireOnDropChance: 0.2
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -179,53 +227,54 @@
       zeroVisible: true
     - type: Appearance
 
-- type: entity
-  name: Vector
-  parent: BaseWeaponSubMachineGun
-  id: WeaponSubMachineGunVector
-  suffix: Deprecated use Drozd
-  description: An excellent fully automatic Heavy SMG. Uses .45 magnum ammo.
-  components:
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/SMGs/vector.rsi
-    layers:
-      - state: base
-        map: ["enum.GunVisualLayers.Base"]
-      - state: mag-0
-        map: ["enum.GunVisualLayers.Mag"]
-  - type: Clothing
-    sprite: Objects/Weapons/Guns/SMGs/vector.rsi
-  - type: Gun
-    fireRate: 6
-    selectedMode: FullAuto
-    soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
-    availableModes:
-    - FullAuto
-    fireOnDropChance: 0.1
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: MagazineMagnumSubMachineGun
-        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
-        priority: 2
-        whitelist:
-          tags:
-            - MagazineMagnumSubMachineGun
-      gun_chamber:
-        name: Chamber
-        startingItem: CartridgeMagnum
-        priority: 1
-        whitelist:
-          tags:
-            - CartridgeMagnum
-  - type: MagazineVisuals
-    magState: mag
-    steps: 1
-    zeroVisible: true
-  - type: Appearance
+#Commented out the Vector, as it is deprecated.
+# - type: entity
+#  name: Vector
+#  parent: BaseWeaponSubMachineGun
+#  id: WeaponSubMachineGunVector
+#  suffix: Deprecated use Drozd
+#  description: An excellent fully automatic Heavy SMG. Uses .45 magnum ammo.
+#  components:
+#  - type: Sprite
+#    sprite: Objects/Weapons/Guns/SMGs/vector.rsi
+#    layers:
+#      - state: base
+#        map: ["enum.GunVisualLayers.Base"]
+#      - state: mag-0
+#        map: ["enum.GunVisualLayers.Mag"]
+#  - type: Clothing
+#    sprite: Objects/Weapons/Guns/SMGs/vector.rsi
+#  - type: Gun
+#    fireRate: 6
+#    selectedMode: FullAuto
+#    soundGunshot:
+#      path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+#    availableModes:
+#    - FullAuto
+#    fireOnDropChance: 0.1
+#  - type: ItemSlots
+#    slots:
+#      gun_magazine:
+#        name: Magazine
+#        startingItem: MagazineMagnumSubMachineGun
+#        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+#        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+#        priority: 2
+#       whitelist:
+#          tags:
+#            - MagazineMagnumSubMachineGun
+#      gun_chamber:
+#        name: Chamber
+#        startingItem: CartridgeMagnum
+#        priority: 1
+#        whitelist:
+#          tags:
+#            - CartridgeMagnum
+#  - type: MagazineVisuals
+#    magState: mag
+##    steps: 1
+#    zeroVisible: true
+#  - type: Appearance
 
 - type: entity
   name: WT550
@@ -251,13 +300,15 @@
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
   - type: Gun
-    fireRate: 5.5
+    fireRate: 7
     minAngle: 1
     maxAngle: 6
     angleIncrease: 1.5
     angleDecay: 6
     selectedMode: FullAuto
     shotsPerBurst: 5
+    burstCooldown: 0.2
+    burstFireRate: 7
     availableModes:
     - SemiAuto
     - Burst
@@ -296,6 +347,7 @@
     - type: StealTarget
       stealGroup: HoSAntiqueWeapon
 
+
 # Rubber
 - type: entity
   name: Drozd
@@ -322,28 +374,28 @@
             tags:
               - CartridgePistol
 
-- type: entity
-  name: Vector
-  parent: WeaponSubMachineGunVector
-  id: WeaponSubMachineGunVectorRubber
-  description: An excellent fully automatic Heavy SMG. Uses .45 magnum ammo.
-  suffix: Non-Lethal
-  components:
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: MagazineMagnumSubMachineGunRubber
-        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
-        priority: 2
-        whitelist:
-          tags:
-            - MagazineMagnumSubMachineGun
-      gun_chamber:
-        name: Chamber
-        startingItem: CartridgeMagnumRubber
-        priority: 1
-        whitelist:
-          tags:
-            - CartridgeMagnum
+#- type: entity
+#  name: Vector
+#  parent: WeaponSubMachineGunVector
+#  id: WeaponSubMachineGunVectorRubber
+#  description: An excellent fully automatic Heavy SMG. Uses .45 magnum ammo.
+#  suffix: Non-Lethal
+#  components:
+#  - type: ItemSlots
+#    slots:
+#      gun_magazine:
+#        name: Magazine
+#        startingItem: MagazineMagnumSubMachineGunRubber
+#        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+#        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+#        priority: 2
+#        whitelist:
+#          tags:
+#            - MagazineMagnumSubMachineGun
+#      gun_chamber:
+#        name: Chamber
+#        startingItem: CartridgeMagnumRubber
+#        priority: 1
+#        whitelist:
+#          tags:
+#            - CartridgeMagnum

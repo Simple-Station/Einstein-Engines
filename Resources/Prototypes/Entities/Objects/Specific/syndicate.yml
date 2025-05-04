@@ -48,7 +48,7 @@
 
 # Uplinks
 - type: entity
-  parent: BaseItem
+  parent: [ BaseItem, StorePresetUplink ]
   id: BaseUplinkRadio
   name: syndicate uplink
   description: Suspiciously looking old radio...
@@ -68,7 +68,6 @@
   - type: ActivatableUI
     key: enum.StoreUiKey.Key
   - type: Store
-    preset: StorePresetUplink
     balance:
       Telecrystal: 0
 
@@ -78,9 +77,8 @@
   suffix: 20 TC
   components:
   - type: Store
-    preset: StorePresetUplink
     balance:
-      Telecrystal: 20
+      Telecrystal: 100
 
 - type: entity
   parent: BaseUplinkRadio
@@ -88,9 +86,8 @@
   suffix: 25 TC
   components:
   - type: Store
-    preset: StorePresetUplink
     balance:
-      Telecrystal: 25
+      Telecrystal: 125
 
 #this uplink MUST be used for nukeops, as it has the tag for filtering the listing.
 - type: entity
@@ -99,9 +96,20 @@
   suffix: 40 TC, NukeOps
   components:
   - type: Store
-    preset: StorePresetUplink
     balance:
-      Telecrystal: 40
+      Telecrystal: 250 # 5x TC, +cost of a tacsuit they no longer spawn with.
+  - type: Tag
+    tags:
+    - NukeOpsUplink
+
+- type: entity
+  parent: BaseUplinkRadio
+  id: BaseUplinkRadio60TC
+  suffix: 60 TC, LoneOps
+  components:
+  - type: Store
+    balance:
+      Telecrystal: 350 # 5x TC, +cost of a tacsuit they no longer spawn with.
   - type: Tag
     tags:
     - NukeOpsUplink
@@ -112,6 +120,5 @@
   suffix: DEBUG
   components:
   - type: Store
-    preset: StorePresetUplink
     balance:
       Telecrystal: 99999

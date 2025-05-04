@@ -1,13 +1,9 @@
 using Content.Shared.Administration.Logs;
 using Content.Shared.Contests;
 using Content.Shared.Popups;
-using Content.Shared.Psionics;
 using Content.Shared.Psionics.Glimmer;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
-using Content.Shared.Mobs.Systems;
-using Content.Shared.FixedPoint;
-using Content.Shared.Rejuvenate;
 
 namespace Content.Shared.Abilities.Psionics
 {
@@ -19,21 +15,19 @@ namespace Content.Shared.Abilities.Psionics
         [Dependency] private readonly GlimmerSystem _glimmerSystem = default!;
         [Dependency] private readonly IRobustRandom _robustRandom = default!;
         [Dependency] private readonly ContestsSystem _contests = default!;
-        [Dependency] private readonly MobStateSystem _mobState = default!;
 
         public override void Initialize()
         {
             base.Initialize();
             SubscribeLocalEvent<PsionicComponent, PsionicPowerUsedEvent>(OnPowerUsed);
-            SubscribeLocalEvent<PsionicComponent, RejuvenateEvent>(OnRejuvenate);
         }
 
-        public bool OnAttemptPowerUse(EntityUid uid, string power, float? manacost = null, bool checkInsulation = true)
+        public bool OnAttemptPowerUse(EntityUid uid, string power, bool checkInsulation = true)
         {
             if (!TryComp<PsionicComponent>(uid, out var component)
                 || HasComp<MindbrokenComponent>(uid)
                 || checkInsulation
-                && HasComp<PsionicInsulationComponent>(uid))
+                && TryComp(uid, out PsionicInsulationComponent? insul) && !insul.Passthrough)
                 return false;
 
             var tev = new OnAttemptPowerUseEvent(uid, power);
@@ -48,21 +42,26 @@ namespace Content.Shared.Abilities.Psionics
                 return false;
             }
 
-            if (manacost is null)
-                return true;
+            return true;
+        }
 
-            if (component.Mana >= manacost
-                || component.BypassManaCheck)
-            {
-                var newmana = component.Mana - manacost;
-                component.Mana = newmana ?? component.Mana;
+        public bool OnAttemptPowerUse(EntityUid uid, EntityUid target, string power, bool checkInsulation = true)
+        {
+            if (!TryComp<PsionicComponent>(uid, out var component)
+                || HasComp<MindbrokenComponent>(uid) || HasComp<MindbrokenComponent>(target)
+                || checkInsulation
+                && (TryComp(uid, out PsionicInsulationComponent? insul) && !insul.Passthrough || HasComp<PsionicInsulationComponent>(target)))
+                return false;
 
-                var ev = new OnManaUpdateEvent();
-                RaiseLocalEvent(uid, ref ev);
-            }
-            else
+            var tev = new OnAttemptPowerUseEvent(uid, power);
+            RaiseLocalEvent(uid, tev);
+
+            if (tev.Cancelled)
+                return false;
+
+            if (component.DoAfter is not null)
             {
-                _popups.PopupEntity(Loc.GetString(component.NoMana), uid, uid, PopupType.LargeCaution);
+                _popups.PopupEntity(Loc.GetString(component.AlreadyCasting), uid, uid, PopupType.LargeCaution);
                 return false;
             }
 
@@ -82,13 +81,19 @@ namespace Content.Shared.Abilities.Psionics
             }
         }
 
-        public void LogPowerUsed(EntityUid uid, string power, int minGlimmer = 8, int maxGlimmer = 12)
+        public void LogPowerUsed(EntityUid uid, string power, float minGlimmer = 8, float maxGlimmer = 12)
         {
-            _adminLogger.Add(Database.LogType.Psionics, Database.LogImpact.Medium, $"{ToPrettyString(uid):player} used {power}");
+            if (minGlimmer is <= 0 || maxGlimmer <= 0 || minGlimmer > maxGlimmer)
+            {
+                _adminLogger.Add(Database.LogType.Psionics, Database.LogImpact.Extreme, $"{ToPrettyString(uid):player} used {power}, producing min glimmer:{minGlimmer} and max glimmer: {maxGlimmer}. REPORT THIS TO THE EE DISCORD IMMEDIATELY AND TELL US HOW.");
+                return;
+            }
+
+            _adminLogger.Add(Database.LogType.Psionics, Database.LogImpact.Medium, $"{ToPrettyString(uid):player} used {power}, producing min glimmer:{minGlimmer} and max glimmer: {maxGlimmer}");
             var ev = new PsionicPowerUsedEvent(uid, power);
             RaiseLocalEvent(uid, ev, false);
 
-            _glimmerSystem.Glimmer += _robustRandom.Next(minGlimmer, maxGlimmer);
+            _glimmerSystem.DeltaGlimmerInput(_robustRandom.NextFloat(minGlimmer, maxGlimmer));
         }
 
         /// <summary>
@@ -128,55 +133,14 @@ namespace Content.Shared.Abilities.Psionics
         ///     Returns the CurrentDampening of a given Entity, multiplied by the result of that Entity's MoodContest.
         ///     Lower mood means more Dampening, higher mood means less Dampening.
         /// </summary>
-        public float ModifiedDampening(EntityUid uid, PsionicComponent component)
-        {
-            return component.CurrentDampening / _contests.MoodContest(uid, true);
-        }
-
-        public void OnRejuvenate(EntityUid uid, PsionicComponent component, RejuvenateEvent args)
-        {
-            component.Mana = component.MaxMana;
-            var ev = new OnManaUpdateEvent();
-            RaiseLocalEvent(uid, ref ev);
-        }
-
-        public override void Update(float frameTime)
-        {
-            base.Update(frameTime);
-
-            var query = EntityQueryEnumerator<PsionicComponent>();
-            while (query.MoveNext(out var uid, out var component))
-            {
-                if (_mobState.IsDead(uid))
-                    continue;
-
-                component.ManaAccumulator += frameTime;
-
-                if (component.ManaAccumulator <= 1)
-                    continue;
-
-                component.ManaAccumulator -= 1;
-
-                if (component.Mana > component.MaxMana)
-                    component.Mana = component.MaxMana;
-
-                if (component.Mana < component.MaxMana)
-                {
-                    var gainedmana = component.ManaGain * component.ManaGainMultiplier;
-                    component.Mana += gainedmana;
-                    FixedPoint2.Min(component.Mana, component.MaxMana);
-
-                    var ev = new OnManaUpdateEvent();
-                    RaiseLocalEvent(uid, ref ev);
-                }
-            }
-        }
+        public float ModifiedDampening(EntityUid uid, PsionicComponent component) =>
+         component.CurrentDampening / _contests.MoodContest(uid, true);
     }
 
     public sealed class PsionicPowerUsedEvent : HandledEntityEventArgs
     {
         public EntityUid User { get; }
-        public string Power = string.Empty;
+        public string Power;
 
         public PsionicPowerUsedEvent(EntityUid user, string power)
         {

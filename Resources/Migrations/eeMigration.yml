@@ -28,7 +28,7 @@ HyperlinkBookAtmos: BookAtmosDistro
 HyperlinkBookBartending: BookBartendersManual
 HyperlinkBookBotany: BookLeafLoversSecret
 HyperlinkBookChemistry: BookChemicalCompendium
-HyperlinkBookCooking: BookChefGaming
+HyperlinkBookCooking: BookHowToCookForFortySpaceman
 HyperlinkBookGlimmer: BookScientistsGuidebook
 HyperlinkBookHacking: BookEngineersHandbook
 HyperlinkBookMedical: BookMedicalReferenceBook
@@ -64,9 +64,6 @@ ClothingHeadHoodMystic: ClothingHeadHoodMysta
 # 2023-11-07
 VendingMachineMailDrobe: VendingMachineCourierDrobe
 
-#Delta V temporary changes. Remove When items are added. # TODO: EE remove when Rebased
-ComputerShipyard: ComputerBroken
-ShipyardComputerCircuitboard: null
 SpawnMobGolemCult: null
 ShogiBoard: CheckerBoard
 
@@ -120,3 +117,9 @@ SophicScribe: SophicScribeSpawner
 
 # 2024-11-16
 GlassBoxLaser: null #Captain's Laser was moved to Loadouts.
+
+# 2024-12-22
+VendingMachineRestockSalvageEquipment: null
+
+# 2025-04-05 Dear Maintainer, say nothing about this.
+AntiPsychicKnife: null

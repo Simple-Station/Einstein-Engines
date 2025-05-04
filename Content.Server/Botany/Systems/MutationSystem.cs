@@ -5,7 +5,6 @@ using Content.Shared.Random.Helpers;
 using Content.Shared.Chemistry.Reagent;
 using System.Linq;
 using Content.Shared.Atmos;
-using FastAccessors;
 
 namespace Content.Server.Botany;
 

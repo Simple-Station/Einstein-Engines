@@ -1,0 +1,54 @@
+- type: decal
+  id: MedicalTextZeta
+  parent: Markings
+  tags: ["station", "markings"]
+  defaultCustomColor: true
+  sprite:
+    sprite: _ds14/Decals/zetatextdecals.rsi
+    state: Medical
+    
+- type: decal
+  id: BridgeTextZeta
+  parent: Markings
+  tags: ["station", "markings"]
+  defaultCustomColor: true
+  sprite:
+    sprite: _ds14/Decals/zetatextdecals.rsi
+    state: Bridge
+
+- type: decal
+  id: RnDTextZeta
+  parent: Markings
+  tags: ["station", "markings"]
+  defaultCustomColor: true
+  sprite:
+    sprite: _ds14/Decals/zetatextdecals.rsi
+    state: RnD
+
+- type: decal
+  id: SecTextZeta
+  parent: Markings
+  tags: ["station", "markings"]
+  defaultCustomColor: true
+  sprite:
+    sprite: _ds14/Decals/zetatextdecals.rsi
+    state: Sec
+
+- type: decal
+  id: SupplyTextZeta
+  parent: Markings
+  tags: ["station", "markings"]
+  defaultCustomColor: true
+  sprite:
+    sprite: _ds14/Decals/zetatextdecals.rsi
+    state: Supply
+    
+- type: decal
+  id: EngiTextZeta
+  parent: Markings
+  tags: ["station", "markings"]
+  defaultCustomColor: true
+  sprite:
+    sprite: _ds14/Decals/zetatextdecals.rsi
+    state: Engi
+

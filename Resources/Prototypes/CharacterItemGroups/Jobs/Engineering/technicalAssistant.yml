@@ -13,10 +13,22 @@
 #  maxItems: 1
 #  items:
 
-#- type: characterItemGroup
-#  id: LoadoutTechnicalAssistantEquipment
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutTechnicalAssistantEquipment
+  maxItems: 2
+  items:
+    - type: loadout
+      id: LoadoutTechnicalAssistantEquipmentBoxInflatable
+    - type: loadout
+      id: LoadoutTechnicalAssistantEquipmentSheetSteel10
+    - type: loadout
+      id: LoadoutTechnicalAssistantEquipmentSheetPlasteel10
+    - type: loadout
+      id: LoadoutTechnicalAssistantEquipmentSheetGlass10
+    - type: loadout
+      id: LoadoutTechnicalAssistantEquipmentMaterialWoodPlank10
+    - type: loadout
+      id: LoadoutTechnicalAssistantEquipmentSheetPlastic10
 
 #- type: characterItemGroup
 #  id: LoadoutTechnicalAssistantEyes
@@ -58,7 +70,11 @@
 #  maxItems: 1
 #  items:
 
-#- type: characterItemGroup
-#  id: LoadoutTechnicalAssistantUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutTechnicalAssistantUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutTechnicalAssistantSuit
+    - type: loadout
+      id: LoadoutTechnicalAssistantSkirt

@@ -1,5 +1,4 @@
 using Content.Server.NPC;
-using Content.Server.NPC.Components;
 using Content.Server.NPC.HTN;
 using Content.Server.NPC.Systems;
 using Content.Server.Popups;
@@ -9,6 +8,9 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Mobs;
 using Robust.Shared.Map;
 using System.Numerics;
+using Content.Shared.NPC.Components;
+using NpcFactionSystem = Content.Shared.NPC.Systems.NpcFactionSystem;
+
 
 namespace Content.Server.Abilities.Psionics;
 
@@ -33,7 +35,7 @@ public sealed partial class PsionicFamiliarSystem : EntitySystem
     private void OnSummon(EntityUid uid, PsionicComponent psionicComponent, SummonPsionicFamiliarActionEvent args)
     {
         if (psionicComponent.Familiars.Count >= psionicComponent.FamiliarLimit
-            || !_psionics.OnAttemptPowerUse(args.Performer, args.PowerName, args.ManaCost, args.CheckInsulation)
+            || !_psionics.OnAttemptPowerUse(args.Performer, args.PowerName, args.CheckInsulation)
             || args.Handled || args.FamiliarProto is null)
             return;
 
@@ -60,7 +62,7 @@ public sealed partial class PsionicFamiliarSystem : EntitySystem
         EnsureComp<NpcFactionMemberComponent>(familiar, out var familiarFactions);
         foreach (var faction in masterFactions.Factions)
         {
-            if (familiarFactions.Factions.Contains(faction))
+            if (_factions.IsMember(familiar, faction))
                 continue;
 
             _factions.AddFaction(familiar, faction, true);

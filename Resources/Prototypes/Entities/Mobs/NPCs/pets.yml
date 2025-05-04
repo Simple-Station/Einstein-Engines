@@ -116,6 +116,7 @@
   - type: NpcFactionMember
     factions:
       - PetsNT
+      - Cat # DeltaV
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
@@ -143,6 +144,7 @@
   - type: NpcFactionMember
     factions:
       - PetsNT
+      - Cat # DeltaV
   - type: Grammar
     attributes:
       proper: true
@@ -648,9 +650,8 @@
     makeSentient: true
     allowSpeech: true
     allowMovement: true
-    name: ghost-role-information-Shiva-name
-    description: ghost-role-information-Shiva-description
-    rules: ghost-role-information-Shiva-rules
+    name: ghost-role-information-shiva-name
+    description: ghost-role-information-shiva-description
   - type: GhostTakeoverAvailable # DeltaV
   - type: InteractionPopup
     successChance: 0.5 # spider is mean
@@ -697,7 +698,7 @@
     damage:
       types:
         Piercing: 8
-        Poison: 8
+        Poison: 2 # Sleep poison instead of die poison
   - type: Grammar
     attributes:
       proper: true
@@ -710,6 +711,23 @@
     - FootstepSound
   - type: StealTarget
     stealGroup: AnimalShiva
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        maxVol: 12
+  - type: SolutionRegeneration
+    solution: melee
+    generated:
+      reagents:
+      - ReagentId: Nocturine
+        Quantity: 0.1
+  - type: MeleeChemicalInjector
+    solution: melee
+    transferAmount: 3
+  - type: Access
+    tags:
+    - Security
+    - Brig
 
 - type: entity
   name: Willow
@@ -757,16 +775,16 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      200: Dead
+      100000000000000000: Dead
   - type: FootstepModifier
     footstepSoundCollection:
       path: /Audio/Effects/Footsteps/slime1.ogg
       params:
         volume: -6
+  - type: CanEscapeInventory
   - type: Tag
     tags:
     - FootstepSound
-    - DoorBumpOpener
     - CannotSuicide
     - VimPilot
   - type: DamageStateVisuals
@@ -776,30 +794,41 @@
         BaseUnshaded: aslime-_3
       Dead:
         Base: rainbow_baby_slime_dead
-  - type: Butcherable
-    spawned:
-    - id: FoodMeatSlime
-      amount: 1
-    - id: MaterialSmileExtract
-      amount: 1
-  - type: Damageable
-    damageModifierSet: SlimePet
+  - type: StaminaDamageResistance
+    coefficient: 0
   - type: Bloodstream
-    bloodlossHealDamage:
-      types:
-        Bloodloss:
-          -0.8
+    bloodReagent: Nothing
+    bloodMaxVolume: 50
   - type: Temperature
-    heatDamageThreshold: 800
-    coldDamageThreshold: 0
+    heatDamageThreshold: 100000000000
+    coldDamageThreshold: -10000000000
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Smile
+  - type: SupermatterImmune
+  - type: Puller
+    needsHands: false
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 1
-        Caustic: 1
+        Blunt: 0
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        maxVol: 10
+  - type: SolutionRegeneration
+    solution: melee
+    generated:
+      reagents:
+      - ReagentId: Omnizine
+        Quantity: 0.05
+  - type: NoSlip
+  - type: MeleeChemicalInjector
+    solution: melee
+    transferAmount: 0.1
   - type: MultiHandedItem
   - type: Item
-    size: Huge
+    size: Ginormous
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-slime
   - type: MobPrice
@@ -812,13 +841,51 @@
     attributes:
       proper: true
       gender: female
-  - type: LanguageKnowledge
-    speaks:
-    - Bubblish
-    understands:
-    - TauCetiBasic
-    - Bubblish
-
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - XenoglossyPower
+      - TelepathyPower
+      - HealingWordPower
+      - PowerOverwhelming
+  - type: LanguageSpeaker
+  - type: UniversalLanguageSpeaker
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      1000000000: 1
+  - type: ZombieImmune
+  - type: MovementIgnoreGravity
+  - type: SpeedModifiedByContactModifier
+    walkModifierEffectiveness: 0
+    sprintModifierEffectiveness: 0
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.30
+        density: 80
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: Storage
+    clickInsert: false
+    grid:
+    - 0,0,1,2
+    maxItemSize: Large
+    storageInsertSound:
+      path: /Audio/Voice/Slime/slime_squish.ogg
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+    
 - type: entity
   name: Pun Pun
   parent: MobMonkey

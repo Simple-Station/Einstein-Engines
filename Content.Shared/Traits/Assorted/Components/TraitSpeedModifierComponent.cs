@@ -13,4 +13,10 @@ public sealed partial class TraitSpeedModifierComponent : Component
 
     [DataField, AutoNetworkedField]
     public float SprintModifier = 1.0f;
+
+    // <summary>
+    //   Multiplied with the required trigger speed for step triggers that this entity collides with.
+    // </summary>
+    [DataField, AutoNetworkedField]
+    public float RequiredTriggeredSpeedModifier = 1.0f;
 }

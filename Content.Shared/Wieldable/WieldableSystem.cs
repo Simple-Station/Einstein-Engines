@@ -3,6 +3,7 @@ using Content.Shared.Examine;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.Item;
@@ -17,7 +18,12 @@ using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
 using Content.Shared.Wieldable.Components;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Network;
 using Robust.Shared.Timing;
+// Lavaland Change
+using Content.Shared.StatusEffect;
+using Content.Shared.Stunnable;
+using Robust.Shared.Audio;
 
 namespace Content.Shared.Wieldable;
 
@@ -32,7 +38,9 @@ public sealed class WieldableSystem : EntitySystem
     [Dependency] private readonly UseDelaySystem _delay = default!;
     [Dependency] private readonly SharedGunSystem _gun = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-
+    [Dependency] private readonly INetManager _netManager = default!;
+    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!; // Lavaland Change
+    [Dependency] private readonly SharedStunSystem _stun = default!; // Lavaland Change
     public override void Initialize()
     {
         base.Initialize();
@@ -45,6 +53,7 @@ public sealed class WieldableSystem : EntitySystem
         SubscribeLocalEvent<WieldableComponent, HandDeselectedEvent>(OnDeselectWieldable);
 
         SubscribeLocalEvent<MeleeRequiresWieldComponent, AttemptMeleeEvent>(OnMeleeAttempt);
+        SubscribeLocalEvent<GunRequiresWieldComponent, ExaminedEvent>(OnExamineRequires);
         SubscribeLocalEvent<GunRequiresWieldComponent, ShotAttemptedEvent>(OnShootAttempt);
         SubscribeLocalEvent<GunWieldBonusComponent, ItemWieldedEvent>(OnGunWielded);
         SubscribeLocalEvent<GunWieldBonusComponent, ItemUnwieldedEvent>(OnGunUnwielded);
@@ -59,8 +68,20 @@ public sealed class WieldableSystem : EntitySystem
         if (TryComp<WieldableComponent>(uid, out var wieldable) &&
             !wieldable.Wielded)
         {
+            // Lavaland Change: If the weapon can fumble, the player will get knocked down if they try to use the weapon without wielding it.
+            if (component.FumbleOnAttempt)
+            {
+                args.Message = Loc.GetString("wieldable-component-requires-fumble", ("item", uid));
+                var playSound = !_statusEffects.HasStatusEffect(args.PlayerUid, "KnockedDown");
+                _stun.TryKnockdown(args.PlayerUid, TimeSpan.FromSeconds(1.5f), true);
+                if (playSound)
+                    _audioSystem.PlayPredicted(new SoundPathSpecifier("/Audio/Effects/slip.ogg"), args.PlayerUid, args.PlayerUid);
+            }
+            else
+            {
+                args.Message = Loc.GetString("wieldable-component-requires", ("item", uid));
+            }
             args.Cancelled = true;
-            args.Message = Loc.GetString("wieldable-component-requires", ("item", uid));
         }
     }
 
@@ -114,8 +135,17 @@ public sealed class WieldableSystem : EntitySystem
         }
     }
 
+    private void OnExamineRequires(Entity<GunRequiresWieldComponent> entity, ref ExaminedEvent args)
+    {
+        if(entity.Comp.WieldRequiresExamineMessage != null)
+            args.PushText(Loc.GetString(entity.Comp.WieldRequiresExamineMessage));
+    }
+
     private void OnExamine(EntityUid uid, GunWieldBonusComponent component, ref ExaminedEvent args)
     {
+        if (HasComp<GunRequiresWieldComponent>(uid))
+            return;
+
         if (component.WieldBonusExamineMessage != null)
             args.PushText(Loc.GetString(component.WieldBonusExamineMessage));
     }
@@ -213,19 +243,25 @@ public sealed class WieldableSystem : EntitySystem
         if (component.WieldSound != null)
             _audioSystem.PlayPredicted(component.WieldSound, used, user);
 
-        var virtuals = new List<EntityUid>();
-        for (var i = 0; i < component.FreeHandsRequired; i++)
+        //This section handles spawning the virtual item(s) to occupy the required additional hand(s).
+        //Since the client can't currently predict entity spawning, only do this if this is running serverside.
+        //Remove this check if TrySpawnVirtualItem in SharedVirtualItemSystem is allowed to complete clientside.
+        if (_netManager.IsServer)
         {
-            if (_virtualItemSystem.TrySpawnVirtualItemInHand(used, user, out var virtualItem, true))
+            var virtuals = new List<EntityUid>();
+            for (var i = 0; i < component.FreeHandsRequired; i++)
             {
-                virtuals.Add(virtualItem.Value);
-                continue;
+                if (_virtualItemSystem.TrySpawnVirtualItemInHand(used, user, out var virtualItem, true))
+                {
+                    virtuals.Add(virtualItem.Value);
+                    continue;
+                }
+
+                foreach (var existingVirtual in virtuals)
+                    QueueDel(existingVirtual);
+
+                return false;
             }
-
-            foreach (var existingVirtual in virtuals)
-                QueueDel(existingVirtual);
-
-            return false;
         }
 
         if (TryComp(used, out UseDelayComponent? useDelay)
@@ -233,8 +269,10 @@ public sealed class WieldableSystem : EntitySystem
             return false;
 
         var selfMessage = Loc.GetString("wieldable-component-successful-wield", ("item", used));
-        var othersMessage = Loc.GetString("wieldable-component-successful-wield-other", ("user", user), ("item", used));
+        var othersMessage = Loc.GetString("wieldable-component-successful-wield-other", ("user", Identity.Entity(user, EntityManager)), ("item", used));
         _popupSystem.PopupPredicted(selfMessage, othersMessage, user, user);
+
+        _appearance.SetData(used, WieldableVisuals.Wielded, true); // Goobstation
 
         var targEv = new ItemWieldedEvent();
         RaiseLocalEvent(used, ref targEv);
@@ -247,7 +285,7 @@ public sealed class WieldableSystem : EntitySystem
     ///     Attempts to unwield an item, with no DoAfter.
     /// </summary>
     /// <returns>True if the attempt wasn't blocked.</returns>
-    public bool TryUnwield(EntityUid used, WieldableComponent component, EntityUid user)
+    public bool TryUnwield(EntityUid used, WieldableComponent component, EntityUid user, bool force = false) // Goobstation edit
     {
         var ev = new BeforeUnwieldEvent();
         RaiseLocalEvent(used, ev);
@@ -256,7 +294,7 @@ public sealed class WieldableSystem : EntitySystem
             return false;
 
         component.Wielded = false;
-        var targEv = new ItemUnwieldedEvent(user);
+        var targEv = new ItemUnwieldedEvent(user, force);
 
         RaiseLocalEvent(used, targEv);
         return true;
@@ -278,7 +316,7 @@ public sealed class WieldableSystem : EntitySystem
                 _audioSystem.PlayPredicted(component.UnwieldSound, uid, args.User);
 
             var selfMessage = Loc.GetString("wieldable-component-failed-wield", ("item", uid));
-            var othersMessage = Loc.GetString("wieldable-component-failed-wield-other", ("user", args.User.Value), ("item", uid));
+            var othersMessage = Loc.GetString("wieldable-component-failed-wield-other", ("user", Identity.Entity(args.User.Value, EntityManager)), ("item", uid));
             _popupSystem.PopupPredicted(selfMessage, othersMessage, args.User.Value, args.User.Value);
         }
 

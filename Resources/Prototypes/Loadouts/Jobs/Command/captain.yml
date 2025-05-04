@@ -166,6 +166,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Captain
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponAntiqueLaser
 
@@ -180,8 +182,47 @@
     - !type:CharacterJobRequirement
       jobs:
         - Captain
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponPulsePistolCaptain
+
+- type: loadout
+  id: LoadoutCaptainTerminus
+  category: JobsCommandCaptain
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+    - !type:CharacterAgeRequirement
+      min: 21
+    - !type:CharacterSpeciesRequirement
+      species:
+      - Oni
+  items:
+    - Terminus
+
+- type: loadout
+  id: LoadoutCaptainRevolverShotgun
+  category: JobsCommandCaptain
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - WeaponCaptainRevolverShotgun
+
 
 # Eyes
 - type: loadout
@@ -355,6 +396,19 @@
   items:
     - ClothingMaskGasCaptain
 
+- type: loadout
+  id: LoadoutCommandCapMaskGasCombat
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingMaskGasCaptainCombat
+
 # Outer
 - type: loadout
   id: LoadoutCommandCapOuterWinter
@@ -381,6 +435,34 @@
         - Captain
   items:
     - ClothingOuterArmorCaptainCarapace
+
+- type: loadout
+  id: LoadoutCaptainOuterDogi
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingOuterArmorCaptainDogi
+
+- type: loadout
+  id: LoadoutCaptainOuterTrench
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingOuterCoatCapTrench
 
 # Shoes
 - type: loadout

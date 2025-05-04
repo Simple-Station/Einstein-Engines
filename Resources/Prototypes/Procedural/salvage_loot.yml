@@ -81,20 +81,20 @@
         - proto: ResearchAndDevelopmentServerMachineCircuitboard
           cost: 5
           prob: 0.5
-        - proto: ResearchDisk10000
+        - proto: ResearchDisk20000
           prob: 0.5
-        - proto: ResearchDisk5000
+        - proto: ResearchDisk10000
           prob: 0.5
         - proto: RipleyHarness
           cost: 3
           prob: 0.5
         - proto: RPED
-        - proto: SpaceCash1000
-        - proto: SpaceCash10000
-          cost: 10
         - proto: SpaceCash2500
-          cost: 3
+        - proto: SpaceCash20000
+          cost: 10
         - proto: SpaceCash5000
+          cost: 3
+        - proto: SpaceCash10000
           cost: 5
         - proto: TechnologyDiskRare
           cost: 5
@@ -106,6 +106,10 @@
         - proto: WeaponTeslaGun
           prob: 0.1
           cost: 2
+        - proto: ClothingEyesNightVisionGoggles
+          cost: 8
+        - proto: ClothingEyesGlassesThermal
+          cost: 8
 
 # Mob loot table
 
@@ -120,6 +124,28 @@
   loots:
     - !type:BiomeMarkerLoot
       proto: OreIron
+
+- type: salvageLoot
+  id: OreAluminium
+  guaranteed: true
+  loots:
+    - !type:BiomeMarkerLoot
+      proto: OreAluminium
+
+- type: salvageLoot
+  id: OreCopper
+  guaranteed: true
+  loots:
+    - !type:BiomeMarkerLoot
+      proto: OreCopper
+
+- type: salvageLoot
+  id: OreLead
+  guaranteed: true
+  loots:
+    - !type:BiomeMarkerLoot
+      proto: OreLead
+
 
 - type: salvageLoot
   id: OreCoal
@@ -180,6 +206,13 @@
       proto: OreBananium
 
 - type: salvageLoot
+  id: OreDiamond
+  guaranteed: true
+  loots:
+    - !type:BiomeMarkerLoot
+      proto: OreDiamond
+
+- type: salvageLoot
   id: OreArtifactFragment
   guaranteed: true
   loots:
@@ -199,3 +232,10 @@
   loots:
     - !type:BiomeMarkerLoot
       proto: OreNormality
+
+- type: salvageLoot
+  id: OreTungsten
+  guaranteed: true
+  loots:
+    - !type:BiomeMarkerLoot
+      proto: OreTungsten

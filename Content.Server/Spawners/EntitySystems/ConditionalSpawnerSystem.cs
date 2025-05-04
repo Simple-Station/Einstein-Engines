@@ -89,8 +89,18 @@ namespace Content.Server.Spawners.EntitySystems
                 return;
             }
 
-            if (!Deleted(uid))
-                EntityManager.SpawnEntity(_robustRandom.Pick(component.Prototypes), Transform(uid).Coordinates);
+            if (Deleted(uid))
+                return;
+
+            var picked = _robustRandom.Pick(component.Prototypes);
+            try
+            {
+                EntityManager.SpawnEntity(picked, Transform(uid).Coordinates);
+            }
+            catch (EntityCreationException e)
+            {
+                Log.Warning($"Caught an exception while trying to process a conditional spawner {ToPrettyString(uid)} of type {picked}: {e}");
+            }
         }
 
         private void Spawn(EntityUid uid, RandomSpawnerComponent component)

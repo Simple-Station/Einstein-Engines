@@ -13,7 +13,7 @@
       state: icon
   - type: RoleRequirement
     roles:
-      components:
+      mindRoles:
       - BloodCultistRole
   - type: KillTargetCult
     title: objective-condition-kill-person-title

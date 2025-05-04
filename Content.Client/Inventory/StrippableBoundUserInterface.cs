@@ -17,12 +17,11 @@ using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.Strip.Components;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
+using Robust.Client.Player;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
-using Robust.Client.Player;
 using Robust.Shared.Input;
 using Robust.Shared.Map;
-using Robust.Shared.Prototypes;
 using static Content.Client.Inventory.ClientInventorySystem;
 using static Robust.Client.UserInterface.Control;
 
@@ -31,11 +30,13 @@ namespace Content.Client.Inventory
     [UsedImplicitly]
     public sealed class StrippableBoundUserInterface : BoundUserInterface
     {
+        [Dependency] private readonly IPlayerManager _player = default!;
         [Dependency] private readonly IUserInterfaceManager _ui = default!;
-        [Dependency] private readonly IPlayerManager _playerManager = default!;
+
         private readonly ExamineSystem _examine;
         private readonly InventorySystem _inv;
         private readonly SharedCuffableSystem _cuffable;
+        private readonly StrippableSystem _strippable;
 
         [ViewVariables]
         private const int ButtonSeparation = 4;
@@ -44,7 +45,7 @@ namespace Content.Client.Inventory
         public const string HiddenPocketEntityId = "StrippingHiddenEntity";
 
         [ViewVariables]
-        private readonly StrippingMenu? _strippingMenu;
+        private StrippingMenu? _strippingMenu;
 
         [ViewVariables]
         private readonly EntityUid _virtualHiddenEntity;
@@ -54,29 +55,32 @@ namespace Content.Client.Inventory
             _examine = EntMan.System<ExamineSystem>();
             _inv = EntMan.System<InventorySystem>();
             _cuffable = EntMan.System<SharedCuffableSystem>();
+            _strippable = EntMan.System<StrippableSystem>();
 
-            var title = Loc.GetString("strippable-bound-user-interface-stripping-menu-title", ("ownerName", Identity.Name(Owner, EntMan)));
-            _strippingMenu = new StrippingMenu(title, this);
-            _strippingMenu.OnClose += Close;
             _virtualHiddenEntity = EntMan.SpawnEntity(HiddenPocketEntityId, MapCoordinates.Nullspace);
         }
 
         protected override void Open()
         {
             base.Open();
+
+            _strippingMenu = this.CreateWindow<StrippingMenu>();
+            _strippingMenu.OnDirty += UpdateMenu;
+            _strippingMenu.Title = Loc.GetString("strippable-bound-user-interface-stripping-menu-title", ("ownerName", Identity.Name(Owner, EntMan)));
+
             _strippingMenu?.OpenCenteredLeft();
         }
 
         protected override void Dispose(bool disposing)
         {
-            base.Dispose(disposing);
-
-            EntMan.DeleteEntity(_virtualHiddenEntity);
-
             if (!disposing)
                 return;
 
-            _strippingMenu?.Dispose();
+            if (_strippingMenu != null)
+                _strippingMenu.OnDirty -= UpdateMenu;
+
+            EntMan.DeleteEntity(_virtualHiddenEntity);
+            base.Dispose(disposing);
         }
 
         public void DirtyMenu()
@@ -167,8 +171,7 @@ namespace Content.Client.Inventory
                 if (EntMan.TryGetComponent<CuffableComponent>(Owner, out var cuff) && _cuffable.GetAllCuffs(cuff).Contains(virt.BlockingEntity))
                     button.BlockedRect.MouseFilter = MouseFilterMode.Ignore;
             }
-
-            UpdateEntityIcon(button, hand.HeldEntity);
+            UpdateEntityIcon(button, EntMan.HasComponent<StripMenuHiddenComponent>(hand.HeldEntity) ? _virtualHiddenEntity : hand.HeldEntity);
             _strippingMenu!.HandsContainer.AddChild(button);
         }
 
@@ -200,9 +203,16 @@ namespace Content.Client.Inventory
             var entity = container.ContainedEntity;
 
             // If this is a full pocket, obscure the real entity
-            if (entity != null && slotDef.StripHidden
-                && !(EntMan.TryGetComponent<ThievingComponent>(_playerManager.LocalEntity, out var thiefcomponent) && thiefcomponent.IgnoreStripHidden))
+            // this does not work for modified clients because they are still sent the real entity
+            if (entity != null
+                && _strippable.IsStripHidden(slotDef, _player.LocalEntity)
+                && !(EntMan.TryGetComponent<ThievingComponent>(PlayerManager.LocalEntity, out var thiefComponent)
+                && thiefComponent.IgnoreStripHidden))
                 entity = _virtualHiddenEntity;
+
+            if (entity != null && EntMan.HasComponent<StripMenuHiddenComponent>(entity))
+                entity = _virtualHiddenEntity;
+
 
             var button = new SlotButton(new SlotData(slotDef, container));
             button.Pressed += SlotPressed;

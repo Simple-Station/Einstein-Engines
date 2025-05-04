@@ -53,6 +53,10 @@
       id: LoadoutCaptainAntiqueLaserPistol
     - type: loadout
       id: LoadoutCaptainPulsePistol
+    - type: loadout
+      id: LoadoutCaptainTerminus
+    - type: loadout
+      id: LoadoutCaptainRevolverShotgun
 
 - type: characterItemGroup
   id: LoadoutCaptainEyes
@@ -107,6 +111,8 @@
   items:
     - type: loadout
       id: LoadoutCommandCapMaskGas
+    - type: loadout
+      id: LoadoutCommandCapMaskGasCombat
 
 - type: characterItemGroup
   id: LoadoutCaptainOuter
@@ -116,6 +122,10 @@
       id: LoadoutCommandCapOuterWinter
     - type: loadout
       id: LoadoutCaptainOuterCarapace
+    - type: loadout
+      id: LoadoutCaptainOuterTrench
+    - type: loadout
+      id: LoadoutCaptainOuterDogi
 
 - type: characterItemGroup
   id: LoadoutCaptainShoes

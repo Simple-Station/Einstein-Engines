@@ -10,6 +10,17 @@ public sealed class ChargesSystem : SharedChargesSystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
 
+    public override void Initialize()
+    {
+        base.Initialize();
+        SubscribeLocalEvent<AutoRechargeComponent, ComponentInit>(OnInit);
+    }
+
+    private void OnInit(EntityUid uid, AutoRechargeComponent comp, ComponentInit args)
+    {
+        comp.NextChargeTime = _timing.CurTime + comp.RechargeDuration;
+    }
+
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -37,15 +48,17 @@ public sealed class ChargesSystem : SharedChargesSystem
         args.PushMarkup(Loc.GetString("limited-charges-recharging", ("seconds", timeRemaining)));
     }
 
-    public override void UseCharge(EntityUid uid, LimitedChargesComponent? comp = null)
+    public override void AddCharges(EntityUid uid, int change, LimitedChargesComponent? comp = null)
     {
-        if (!Resolve(uid, ref comp, false))
+        if (!Query.Resolve(uid, ref comp, false))
             return;
 
         var startRecharge = comp.Charges == comp.MaxCharges;
-        base.UseCharge(uid, comp);
-        // start the recharge time after first use at full charge
-        if (startRecharge && TryComp<AutoRechargeComponent>(uid, out var recharge))
+        base.AddCharges(uid, change, comp);
+
+        // if a charge was just used from full, start the recharge timer
+        // TODO: probably make this an event instead of having le server system that just does this
+        if (change < 0 && startRecharge && TryComp<AutoRechargeComponent>(uid, out var recharge))
             recharge.NextChargeTime = _timing.CurTime + recharge.RechargeDuration;
     }
 }

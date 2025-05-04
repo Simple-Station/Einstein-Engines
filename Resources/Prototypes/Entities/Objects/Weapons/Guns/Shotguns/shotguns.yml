@@ -33,6 +33,7 @@
     whitelist:
       tags:
       - ShellShotgun
+      - Flare
     capacity: 7
     proto: ShellShotgun
     soundInsert:
@@ -43,6 +44,25 @@
         ents: []
   - type: StaticPrice
     price: 500
+  - type: Execution
+  - type: MeleeWeapon
+    attackRate: 1.4
+    damage:
+      types:
+        Blunt: 10
+    bluntStaminaDamageFactor: 1.3333
+    swapKeys: true
+    disableHeavy: true
+    animation: WeaponArcThrust
+    wideAnimationRotation: 180
+    soundHit:
+      collection: MetalThud
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2.5
+  - type: DamageOtherOnHit
+    staminaCost: 9.5
 
 - type: entity
   name: Bulldog
@@ -78,6 +98,8 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
     fireOnDropChance: 0.3
+    shotgunSpreadMultiplier: 1.5
+    shotgunProjectileCountModifier: 1.33
   - type: Wieldable
   - type: ItemSlots
     slots:
@@ -102,6 +124,43 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
+  - type: Execution
+  - type: MeleeWeapon
+    attackRate: 1.4
+    damage:
+      types:
+        Blunt: 10
+    bluntStaminaDamageFactor: 1.3333
+    swapKeys: true
+    disableHeavy: true
+    animation: WeaponArcThrust
+    wideAnimationRotation: 180
+    soundHit:
+      collection: MetalThud
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2.5
+  - type: DamageOtherOnHit
+    staminaCost: 9.5
+
+- type: entity
+  name: Bulldog
+  parent: [WeaponShotgunBulldog]
+  id: WeaponShotgunBulldogEmpty
+  description: It's a magazine-fed shotgun designed for close quarters combat. Uses .50 shotgun shells.
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: null
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineShotgun
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
 
 - type: entity
   name: antique Bulldog
@@ -136,6 +195,12 @@
     graph: ShotgunSawn
     node: start
     deconstructionTarget: null
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 8.5
+  - type: DamageOtherOnHit
+    staminaCost: 7.5
 
 - type: entity
   name: double-barreled shotgun
@@ -160,8 +225,17 @@
   - type: Item
     sprite: Objects/Weapons/Guns/Shotguns/enforcer_inhands_64x.rsi
   - type: BallisticAmmoProvider
+    capacity: 7
+    autoCycle: false
   - type: Wieldable
   - type: GunRequiresWield
+  - type: MeleeWeapon
+    attackRate: 1.4
+    damage:
+      types:
+        Blunt: 9
+  - type: DamageOtherOnHit
+    staminaCost: 8.0
 
 - type: entity
   parent: WeaponShotgunEnforcer
@@ -189,10 +263,19 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: BallisticAmmoProvider
     capacity: 4
+    autoCycle: false
   - type: Tag
     tags:
     - WeaponShotgunKammerer
   - type: Wieldable
+  - type: Gun
+    shotgunSpreadMultiplier: 0.5
+  - type: ExtendDescription
+    descriptionList:
+      - description: "gun-modifier-choke"
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
 
 - type: entity
   name: sawn-off shotgun
@@ -210,12 +293,31 @@
   - type: Gun
     fireRate: 4
     fireOnDropChance: 0.5
+    shotgunSpreadMultiplier: 3
+    damageModifier: 1.5
   - type: BallisticAmmoProvider
     capacity: 2
   - type: Construction
     graph: ShotgunSawn
     node: shotgunsawn
     deconstructionTarget: null
+  - type: MeleeWeapon
+    attackRate: 1.2
+    damage:
+      types:
+        Blunt: 7.5
+  - type: DamageOtherOnHit
+    staminaCost: 6
+
+- type: entity
+  parent: WeaponShotgunSawn
+  id: WeaponShotgunSawnLumen
+  suffix: Lumenblast
+  description: Groovy! Uses .50 shotgun shells.
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 2
+    proto: ShellShotgunLumen
 
 - type: entity
   name: sawn-off shogun
@@ -255,6 +357,14 @@
     deconstructionTarget: null
   - type: StaticPrice
     price: 0
+  - type: MeleeWeapon
+    attackRate: 1.2
+    damage:
+      types:
+        Blunt: 7.5
+    wideAnimationRotation: 135
+  - type: DamageOtherOnHit
+    staminaCost: 5
 
 - type: entity
   name: blunderbuss

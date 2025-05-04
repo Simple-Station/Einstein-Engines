@@ -7,6 +7,11 @@
   components:
   - type: Item
     size: Tiny
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 1
+    staminaCost: 1
 
 - type: entity
   parent: ClothingNeckPinBase
@@ -71,6 +76,22 @@
     clothingVisuals:
       neck:
       - state: bi-equipped
+
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckGayPin
+  name: gay pin
+  description: be gay do crime
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Misc/pins.rsi
+    layers:
+    - state: gay
+  - type: Clothing
+    sprite: Clothing/Neck/Misc/pins.rsi
+    clothingVisuals:
+      neck:
+      - state: gay-equipped
 
 - type: entity
   parent: ClothingNeckPinBase
@@ -151,7 +172,7 @@
     clothingVisuals:
       neck:
       - state: trans-equipped
- 
+
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckAutismPin

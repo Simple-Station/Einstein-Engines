@@ -1,4 +1,113 @@
 - type: entity
+  name: pickaxe
+  parent: BaseItem
+  id: Pickaxe
+  description: Notched to perfection, for jamming it into rocks.
+  components:
+  - type: Tag
+    tags:
+    - Pickaxe
+    - ItemPickaxe
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/pickaxe.rsi
+    state: pickaxe
+  - type: MeleeWeapon
+    attackRate: 1.2
+    range: 1.6
+    wideAnimationRotation: -135
+    soundHit:
+      path: "/Audio/Weapons/smash.ogg"
+      params:
+        volume: -3
+    damage:
+      types:
+        Blunt: 6
+        Piercing: 3
+    bluntStaminaDamageFactor: 2.0
+    heavyDamageBaseModifier: 1.75
+    maxTargets: 5
+    angle: 80
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      groups:
+        Brute: 5
+      types:
+        Structural: 30
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,0
+    - 1,1,1,2
+    sprite: Objects/Weapons/Melee/pickaxe.rsi
+    storedRotation: -45
+  - type: UseDelay
+
+- type: entity
+  name: mining drill
+  parent: BaseItem
+  id: MiningDrill
+  description: Powerful tool used to quickly drill through rocks.
+  components:
+  - type: Item
+    storedRotation: -90
+  - type: Tag
+    tags:
+    - Pickaxe
+  - type: Sprite
+    sprite: Objects/Tools/handdrill.rsi
+    state: handdrill
+  - type: MeleeWeapon
+    autoAttack: true
+    angle: 0
+    wideAnimationRotation: -90
+    soundHit:
+      path: "/Audio/Items/drill_hit.ogg"
+    attackRate: 0.5
+    range: 1.5
+    heavyStaminaCost: 0.7
+    damage:
+      types:
+        Structural: 15
+        Piercing: 6
+  - type: DamageOtherOnHit
+    staminaCost: 9
+    damage:
+      types:
+        Structural: 25
+        Piercing: 9
+  - type: ThrowingAngle
+    angle: 270
+
+- type: entity
+  name: diamond tipped mining drill
+  parent: MiningDrill
+  id: MiningDrillDiamond
+  description: A significantly more efficient mining drill tipped with diamond.
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/handdrilldiamond.rsi
+    state: handdrill
+  - type: MeleeWeapon
+    autoAttack: true
+    angle: 0
+    wideAnimationRotation: -90
+    soundHit:
+      path: "/Audio/Items/drill_hit.ogg"
+    heavyStaminaCost: 0.55 # More efficient so less stamina needed to use
+    damage:
+      types:
+        Piercing: 12
+        Structural: 50
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Structural: 40
+        Piercing: 18
+
+- type: entity
   abstract: true
   parent: BaseItem
   id: BaseWeaponCrusher # Crusher? But I...
@@ -11,6 +120,7 @@
     color: "#ffeead"
     enabled: false
     radius: 4
+  - type: PressureDamageChange # Lavaland Change: Pressure damage change for kinetic weapons
 
 - type: entity
   parent: BaseWeaponCrusher
@@ -26,10 +136,6 @@
   - type: UseDelayOnShoot
   - type: UseDelay
     delay: 0.9
-  - type: LeechOnMarker
-    leech:
-      groups:
-        Brute: -10
   - type: Gun
     soundGunshot: /Audio/Weapons/plasma_cutter.ogg
     fireRate: 1
@@ -43,27 +149,23 @@
     capacity: 1
     count: 1
   - type: MeleeWeapon
-    attackRate: 0.85
+    attackRate: 1.5 # Lavaland/Eris Change
     range: 1.65
     wideAnimationRotation: -135
     damage:
       types:
-        Blunt: 8
-        Slash: 4
+        Blunt: 13 # Lavaland Change: no damage when unwielded
+        Slash: 7
     bluntStaminaDamageFactor: 2.0
-    heavyRateModifier: 0.75
+    heavyRateModifier: 1.5
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 7.5
+    heavyStaminaCost: 2.5
     angle: 120
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
+    staminaCost: 8
   - type: Wieldable
-  - type: IncreaseDamageOnWield
-    damage:
-      types:
-        Blunt: 2.5
-        Slash: 2.5
-        Structural: 30
   - type: GunRequiresWield
   - type: Item
     size: Ginormous
@@ -72,6 +174,18 @@
     qualities:
       - Prying
   - type: Prying
+  # Lavaland Change Start
+  - type: MeleeRequiresWield
+    fumbleOnAttempt: true
+  - type: DamageBoostOnMarker
+    boost:
+      types: # Totals to 70 damage when hitting marked targets
+        Blunt: 34
+        Slash: 16
+    backstabBoost: # And 30 extra for a backstab. Adding up to 100
+      types:
+        Blunt: 19
+        Slash: 11
 
 - type: entity
   parent: BaseWeaponCrusher
@@ -85,15 +199,21 @@
   - type: MeleeWeapon
     autoAttack: true
     wideAnimationRotation: -135
-    attackRate: 1.25
+    attackRate: 0.8
     range: 1.4
     damage:
       types:
         Slash: 9
-    heavyRateModifier: 0.9
+    heavyRateModifier: 1.4
     heavyDamageBaseModifier: 1.2
     maxTargets: 2
     angle: 20
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
   - type: Tag
     tags:
     - Knife
@@ -114,6 +234,10 @@
       groups:
         Brute: -21
   - type: MeleeWeapon
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
   - type: Tag
     tags:
       - Pickaxe

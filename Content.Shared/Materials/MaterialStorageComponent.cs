@@ -7,7 +7,6 @@ using Robust.Shared.Serialization;
 namespace Content.Shared.Materials;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-[Access(typeof(SharedMaterialStorageSystem))]
 public sealed partial class MaterialStorageComponent : Component
 {
     [DataField, AutoNetworkedField]
@@ -76,12 +75,15 @@ public enum MaterialStorageVisuals : byte
 }
 
 /// <summary>
-/// event raised on the materialStorage when a material entity is inserted into it.
+/// Lavaland Change: Event raised on the materialStorage when a material entity is inserted into it.
 /// </summary>
 [ByRefEvent]
-public readonly record struct MaterialEntityInsertedEvent(MaterialComponent MaterialComp)
+public readonly record struct MaterialEntityInsertedEvent(EntityUid User, EntityUid Inserted, MaterialComponent MaterialComp, int Count)
 {
+    public readonly EntityUid User = User;
+    public readonly EntityUid Inserted = Inserted;
     public readonly MaterialComponent MaterialComp = MaterialComp;
+    public readonly int Count = Count;
 }
 
 /// <summary>

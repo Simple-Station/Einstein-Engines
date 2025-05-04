@@ -23,7 +23,7 @@ public abstract partial class SharedMoverController
             return;
 
         ent.Comp.DefaultSprinting = _netConfig.GetClientCVar(channel, CCVars.DefaultWalk);
-        WalkingAlert(ent, ent.Comp);
+        WalkingAlert(ent);
     }
 
     private void OnMindRemoved(Entity<InputMoverComponent> ent, ref MindRemovedMessage args)
@@ -38,6 +38,6 @@ public abstract partial class SharedMoverController
             return;
 
         mover.DefaultSprinting = _netConfig.GetClientCVar(args.SenderSession.Channel, CCVars.DefaultWalk);
-        WalkingAlert(uid, mover);
+        WalkingAlert((uid, mover));
     }
 }

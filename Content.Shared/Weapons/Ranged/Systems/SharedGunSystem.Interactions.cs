@@ -19,7 +19,21 @@ public abstract partial class SharedGunSystem
             args.PushMarkup(Loc.GetString("gun-selected-mode-examine", ("color", ModeExamineColor),
                 ("mode", GetLocSelector(component.SelectedMode))));
             args.PushMarkup(Loc.GetString("gun-fire-rate-examine", ("color", FireRateExamineColor),
-                ("fireRate", $"{component.FireRateModified:0.0}")));
+                ("fireRate", $"{(int) (component.FireRate * 60)}")));
+
+            if (component.DamageModifier != 1f)
+                args.PushMarkup(Loc.GetString("gun-damage-modifier-examine", ("color", FireRateExamineColor),
+                    ("damage", $"{component.DamageModifier.ToString("#.##")}")));
+
+            if (!component.AvailableModes.HasFlag(SelectiveFire.Burst))
+                return;
+
+            if (component.FireRate != component.BurstFireRate)
+                args.PushMarkup(Loc.GetString("gun-burst-fire-rate-examine", ("color", FireRateExamineColor),
+                    ("fireRate", $"{(int) (component.BurstFireRate * 60)}")));
+
+            args.PushMarkup(Loc.GetString("gun-burst-fire-burst-count", ("color", FireRateExamineColor),
+                ("burstcount", $"{component.ShotsPerBurst}")));
         }
     }
 

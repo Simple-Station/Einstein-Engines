@@ -1,6 +1,6 @@
 - type: entity
   id: SentientSlimeCore
-  parent: OrganHumanBrain
+  parent: [BaseItem, OrganHumanBrain]
   name: sentient slime core
   description: "The source of incredible, unending gooeyness."
   components:
@@ -48,7 +48,7 @@
     layers:
       - state: lung-l-slime
       - state: lung-r-slime
-  - type: Organ
+  - type: Organ # Shitmed
     slotId: lungs
   - type: Lung
     alert: LowNitrogen

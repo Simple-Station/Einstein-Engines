@@ -9,12 +9,13 @@ namespace Content.Shared.Chemistry.Components;
 public sealed partial class HyposprayComponent : Component
 {
     [DataField]
-    public string SolutionName = "hypospray";
+    public float MaxPressure = float.MaxValue;
 
-    // TODO: This should be on clumsycomponent.
     [DataField]
-    [ViewVariables(VVAccess.ReadWrite)]
-    public float ClumsyFailChance = 0.5f;
+    public float InjectTime = 2f;
+
+    [DataField]
+    public string SolutionName = "hypospray";
 
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]

@@ -1,4 +1,4 @@
-﻿using Content.Shared.Chat;
+using Content.Shared.Chat;
 using Content.Server.Speech.Components;
 
 namespace Content.Server.Speech.EntitySystems;
@@ -8,10 +8,10 @@ public sealed partial class VoiceOverrideSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<VoiceOverrideComponent, TransformSpeakerSpeechEvent>(OnTransformSpeakerName);
+        SubscribeLocalEvent<VoiceOverrideComponent, TransformSpeakerNameEvent>(OnTransformSpeakerName);
     }
 
-    private void OnTransformSpeakerName(Entity<VoiceOverrideComponent> entity, ref TransformSpeakerSpeechEvent args)
+    private void OnTransformSpeakerName(Entity<VoiceOverrideComponent> entity, ref TransformSpeakerNameEvent args)
     {
         if (!entity.Comp.Enabled)
             return;

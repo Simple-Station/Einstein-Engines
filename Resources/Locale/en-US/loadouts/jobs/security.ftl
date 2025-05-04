@@ -8,6 +8,8 @@ loadout-name-LoadoutSpeedLoaderMagnumSpare = speed loader (.45 magnum, spare)
 loadout-name-LoadoutSpeedLoaderMagnumRubberSpare = speed loader (.45 magnum rubber, spare)
 loadout-name-LoadoutMagazineMagnumSpare = pistol magazine (.45 magnum, spare)
 loadout-name-LoadoutMagazineMagnumRubberSpare = pistol magazine (.45 magnum rubber, spare)
+loadout-name-LoadoutMagazineUniversalMagnumSpare = mk 32 'Universal' magazine (.45 magnum, spare)
+loadout-name-LoadoutMagazineUniversalMagnumRubberSpare = mk 32 'Universal' magazine (.45 magnum rubber, spare)
 
 # Duty Weapons
 loadout-name-LoadoutSecurityMk58 = Mk58 (lethal)
@@ -33,3 +35,13 @@ loadout-name-LoadoutSecurityRevolverFitz = Fitz (lethal)
 loadout-name-LoadoutSecurityRevolverFitzNonlethal = Fitz (non-lethal)
 loadout-name-LoadoutSecurityRevolverPython = Python (lethal)
 loadout-name-LoadoutSecurityRevolverPythonNonlethal = Python (non-lethal)
+loadout-name-LoadoutSecurityPistolEnergyRevolver = EG-4 Energy Revolver
+loadout-name-LoadoutSecurityArgenti = Argenti (lethal)
+loadout-name-LoadoutSecurityArgentiNonLethal = Argenti (non-lethal)
+loadout-name-LoadoutSecurityShotgunSawnLumen = Sawn-off Shotgun (Lumenblast)
+loadout-name-LoadoutSecurityPistolUniversal = mk 32 "Universal" (lethal)
+loadout-name-LoadoutSecurityPistolUniversalNonLethal = mk 32 "Universal" (non-lethal)
+
+# Duty Melee
+loadout-name-LoadoutSecurityEquipmentTruncheon = Truncheon
+loadout-name-LoadoutSecurityEquipmentEnergySword = Energy Sword

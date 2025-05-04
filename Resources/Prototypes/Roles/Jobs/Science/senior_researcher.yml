@@ -7,6 +7,10 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Epistemics # DeltaV - Epistemics Department replacing Science
       min: 216000 #60 hrs
+    - !type:CharacterEmployerRequirement
+      employers:
+      - NanoTrasen
+      - ZengHuPharmaceuticals
   startingGear: SeniorResearcherGear
   icon: "JobIconSeniorResearcher"
   supervisors: job-supervisors-rd
@@ -16,6 +20,8 @@
 
 - type: startingGear
   id: SeniorResearcherGear
+  subGear:
+  - ScientistPlasmamanGear
   equipment:
     head: ClothingHeadHatBeretRND
     jumpsuit: ClothingUniformJumpsuitSeniorResearcher
@@ -24,6 +30,7 @@
     outerClothing: ClothingOuterCoatLabSeniorResearcher
     id: SeniorResearcherPDA
     ears: ClothingHeadsetScience
+    pocket1: BookPsionicsGuidebook
   innerClothingSkirt: ClothingUniformJumpskirtSeniorResearcher
   satchel: ClothingBackpackSatchelScienceFilled
   duffelbag: ClothingBackpackDuffelScienceFilled

@@ -223,7 +223,9 @@
   reactants:
     Ambuzol:
       amount: 5
-    Omnizine:
+    Necrosol:
+      amount: 1
+    Plasma:
       amount: 5
   products:
     AmbuzolPlus: 10
@@ -280,9 +282,9 @@
     HeartbreakerToxin:
       amount: 1
     Plasma:
-      amount: 1
-    Vestine:
-      amount: 1
+      amount: 3
+    Impedrezene:
+      amount: 3
   products:
     Lexorin: 2
 
@@ -561,7 +563,7 @@
   id: Opporozidone
   minTemp: 400 #Maybe if a method of reducing reagent temp exists one day, this could be -50
   reactants:
-    Cognizine: 
+    Acetone:
       amount: 1
     Plasma:
       amount: 2
@@ -577,8 +579,10 @@
   reactants:
     Blood:
       amount: 3
-    Omnizine:
-      amount: 1
+    Ammonia:
+      amount: 10
+    Doxarubixadone:
+      amount: 2
     Cryoxadone:
       amount: 2
   products:
@@ -636,3 +640,44 @@
       catalyst: true
   products:
     Happiness: 4
+
+- type: reaction
+  id: PotassiumIodide
+  reactants:
+    Potassium:
+      amount: 1
+    Iodine:
+      amount: 1
+  products:
+    PotassiumIodide: 2
+
+- type: reaction
+  id: Haloperidol
+  reactants:
+    Aluminium:
+      amount: 1
+    Chlorine:
+      amount: 1
+    Fluorine:
+      amount: 1
+    Oil:
+      amount: 1
+    PotassiumIodide:
+      amount: 1
+  products:
+    Haloperidol: 5
+
+- type: reaction
+  id: Artiplates
+  minTemp: 310
+  reactants:
+    Iron:
+      amount: 1
+    Copper:
+      amount: 1
+    TranexamicAcid:
+      amount: 2
+    Saline:
+      amount: 3
+  products:
+    Artiplates: 12

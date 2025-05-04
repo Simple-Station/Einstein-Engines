@@ -8,9 +8,8 @@
   - Xenoarchaeology
   - Robotics
   - MachineUpgrading
-  - AltarsGolemancy
   - ReverseEngineering
-  - GlimmerCreatures
+  - MantisGuide
 
 - type: guideEntry
   id: Technologies
@@ -71,6 +70,6 @@
   text: "/ServerInfo/Guidebook/Science/Cyborgs.xml"
 
 - type: guideEntry
-  id: GlimmerCreatures
-  name: guide-entry-glimmer-creatures
-  text: /ServerInfo/Guidebook/DeltaV/Epistemics/GlimmerCreatures.xml
+  id: MantisGuide
+  name: guide-entry-Psionic-Mantis
+  text: "/ServerInfo/Guidebook/Science/MantisGuide.xml"

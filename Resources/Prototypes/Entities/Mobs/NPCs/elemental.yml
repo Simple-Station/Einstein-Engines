@@ -74,6 +74,8 @@
   - type: ZombieImmune
   - type: ClothingRequiredStepTriggerImmune
     slots: All
+  - type: Dispellable
+  - type: Fauna # Lavaland Change
 
 - type: entity
   abstract: true
@@ -104,6 +106,9 @@
     damageContainer: StructuralInorganic
   - type: Psionic
     removable: false
+    roller: false
+    assayFeedback:
+      - orecrab-feedback
   - type: InnatePsionicPowers
     powersToAdd:
       - TelepathyPower
@@ -237,6 +242,9 @@
   - type: GhostRole
     prob: 0
     description: ghost-role-information-angry-slimes-description
+    rules: ghost-role-information-angry-slimes-rules
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
     raffle:
       settings: short
   - type: NpcFactionMember
@@ -302,10 +310,14 @@
   - type: DrainableSolution
     solution: bloodstream
   - type: Psionic
+    roller: false
     removable: false
+    assayFeedback:
+      - reagent-slime-feedback
   - type: InnatePsionicPowers
     powersToAdd:
       - TelepathyPower
+  - type: Fauna # Lavaland Change
 
 - type: entity
   name: Reagent Slime Spawner

@@ -1,6 +1,8 @@
 ﻿#nullable enable
 using Robust.Shared.Console;
 using Robust.Shared.Map;
+using Robust.Client.GameObjects;
+using Robust.Shared.Audio.Components;
 
 namespace Content.IntegrationTests.Tests.Minds;
 
@@ -24,6 +26,7 @@ public sealed partial class MindTests
 
         // Delete **everything**
         var conHost = pair.Server.ResolveDependency<IConsoleHost>();
+        var clientEntMan = pair.Client.ResolveDependency<IClientEntityManager>();
         await pair.Server.WaitPost(() => conHost.ExecuteCommand("entities delete"));
         await pair.RunTicksSync(5);
 
@@ -34,7 +37,8 @@ public sealed partial class MindTests
             Console.WriteLine(pair.Client.EntMan.ToPrettyString(ent));
         }
 
-        Assert.That(pair.Client.EntMan.EntityCount, Is.AtMost(1)); // Tolerate at most one client entity
+        var clientCount = pair.Client.EntMan.EntityCount - clientEntMan.Count<AudioComponent>(); //Ignore stupid audio entities
+        Assert.That(clientCount, Is.AtMost(1)); // Tolerate at most one client entity
 
         // Create a new map.
         int mapId = 1;

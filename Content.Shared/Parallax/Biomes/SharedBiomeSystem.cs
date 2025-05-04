@@ -18,8 +18,7 @@ public abstract class SharedBiomeSystem : EntitySystem
     [Dependency] protected readonly ITileDefinitionManager TileDefManager = default!;
     [Dependency] private readonly TileSystem _tile = default!;
 
-    protected const byte ChunkSize = 8;
-
+    public const byte ChunkSize = 8; // Lavaland change - make it public
     private T Pick<T>(List<T> collection, float value)
     {
         // Listen I don't need this exact and I'm too lazy to finetune just for random ent picking.
@@ -129,7 +128,7 @@ public abstract class SharedBiomeSystem : EntitySystem
             if (layer is not BiomeTileLayer tileLayer)
                 continue;
 
-            if (TryGetTile(indices, noiseCopy, tileLayer.Invert, tileLayer.Threshold, ProtoManager.Index<ContentTileDefinition>(tileLayer.Tile), tileLayer.Variants, out tile))
+            if (TryGetTile(indices, noiseCopy, tileLayer.Invert, tileLayer.Threshold, ProtoManager.Index(tileLayer.Tile), tileLayer.Flags, tileLayer.Variants, out tile))
             {
                 return true;
             }
@@ -142,7 +141,7 @@ public abstract class SharedBiomeSystem : EntitySystem
     /// <summary>
     /// Gets the underlying biome tile, ignoring any existing tile that may be there.
     /// </summary>
-    private bool TryGetTile(Vector2i indices, FastNoiseLite noise, bool invert, float threshold, ContentTileDefinition tileDef, List<byte>? variants, [NotNullWhen(true)] out Tile? tile)
+    private bool TryGetTile(Vector2i indices, FastNoiseLite noise, bool invert, float threshold, ContentTileDefinition tileDef, byte tileFlags, List<byte>? variants, [NotNullWhen(true)] out Tile? tile)
     {
         var found = noise.GetNoise(indices.X, indices.Y);
         found = invert ? found * -1 : found;
@@ -163,7 +162,7 @@ public abstract class SharedBiomeSystem : EntitySystem
             variant = _tile.PickVariant(tileDef, (int) variantValue);
         }
 
-        tile = new Tile(tileDef.TileId, 0, variant);
+        tile = new Tile(tileDef.TileId, flags: tileFlags, variant);
         return true;
     }
 

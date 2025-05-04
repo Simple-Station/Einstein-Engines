@@ -29,6 +29,7 @@ public sealed class BloodstreamAdjustSystem : EntitySystem
     {
         if (!TryComp<BloodstreamComponent>(ent, out var bloodstream)
             || !_solutionContainer.TryGetSolution(ent.Owner, bloodstream.BloodSolutionName, out var bloodSolutionEnt)
+            || bloodstream.BloodMaxVolume == 0
             || !_config.GetCVar(CCVars.HeightAdjustModifiesBloodstream))
             return false;
 

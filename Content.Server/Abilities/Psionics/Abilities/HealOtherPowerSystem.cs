@@ -44,7 +44,7 @@ public sealed class RevivifyPowerSystem : EntitySystem
 
     private void OnPowerUsed(EntityUid uid, PsionicComponent component, PsionicHealOtherPowerActionEvent args)
     {
-        if (!_psionics.OnAttemptPowerUse(args.Performer, args.PowerName))
+        if (!_psionics.OnAttemptPowerUse(args.Performer, args.Target, args.PowerName, true))
             return;
 
         args.ModifiedAmplification = _psionics.ModifiedAmplification(uid, component);
@@ -55,21 +55,21 @@ public sealed class RevivifyPowerSystem : EntitySystem
         else ActivatePower(uid, component, args);
 
         if (args.PopupText is not null
-            && _glimmer.Glimmer > args.GlimmerPopupThreshold * args.ModifiedDampening)
+            && _glimmer.GlimmerOutput > args.GlimmerPopupThreshold * args.ModifiedDampening)
             _popupSystem.PopupEntity(Loc.GetString(args.PopupText, ("entity", uid)), uid,
                 Filter.Pvs(uid).RemoveWhereAttachedEntity(entity => !_examine.InRangeUnOccluded(uid, entity, ExamineRange, null)),
                 true,
                 args.PopupType);
 
         if (args.PlaySound
-            && _glimmer.Glimmer > args.GlimmerSoundThreshold * args.ModifiedDampening)
+            && _glimmer.GlimmerOutput > args.GlimmerSoundThreshold * args.ModifiedDampening)
             _audioSystem.PlayPvs(args.SoundUse, uid, args.AudioParams);
 
         // Sanitize the Glimmer inputs because otherwise the game will crash if someone makes MaxGlimmer lower than MinGlimmer.
-        var minGlimmer = (int) Math.Round(MathF.MinMagnitude(args.MinGlimmer, args.MaxGlimmer)
-            * args.ModifiedAmplification - args.ModifiedDampening);
-        var maxGlimmer = (int) Math.Round(MathF.MaxMagnitude(args.MinGlimmer, args.MaxGlimmer)
-            * args.ModifiedAmplification - args.ModifiedDampening);
+        var minGlimmer = MathF.MinMagnitude(args.MinGlimmer, args.MaxGlimmer)
+            * args.ModifiedAmplification - args.ModifiedDampening;
+        var maxGlimmer = MathF.MaxMagnitude(args.MinGlimmer, args.MaxGlimmer)
+            * args.ModifiedAmplification - args.ModifiedDampening;
 
         _psionics.LogPowerUsed(uid, args.PowerName, minGlimmer, maxGlimmer);
         args.Handled = true;
@@ -88,9 +88,8 @@ public sealed class RevivifyPowerSystem : EntitySystem
         ev.DoRevive = args.DoRevive;
         var doAfterArgs = new DoAfterArgs(EntityManager, uid, args.UseDelay, ev, uid, target: args.Target)
         {
-            BreakOnUserMove = args.BreakOnUserMove,
-            BreakOnTargetMove = args.BreakOnTargetMove,
-            Hidden = _glimmer.Glimmer > args.GlimmerDoAfterVisibilityThreshold * args.ModifiedDampening,
+            BreakOnMove = args.BreakOnMove,
+            Hidden = _glimmer.GlimmerOutput > args.GlimmerDoAfterVisibilityThreshold * args.ModifiedDampening,
         };
 
         if (!_doAfterSystem.TryStartDoAfter(doAfterArgs, out var doAfterId))

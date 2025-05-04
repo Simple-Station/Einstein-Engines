@@ -19,7 +19,13 @@ ui-options-general-discord = Discord
 ui-options-general-cursor = Cursor
 ui-options-general-speech = Speech
 ui-options-general-storage = Storage
+ui-options-general-other = Other
 ui-options-general-accessibility = Accessibility
+ui-options-chatstack = Automatically merge identical chat messages
+ui-options-chatstack-off = Off
+ui-options-chatstack-single = Only last message
+ui-options-chatstack-double = Last two messages
+ui-options-chatstack-triple = Last three messages
 
 ## Audio menu
 
@@ -95,6 +101,7 @@ ui-options-vp-vertical-fit-tooltip = When enabled, the main viewport will ignore
 ui-options-vp-low-res = Low-resolution viewport
 ui-options-parallax-low-quality = Low-quality Parallax (background)
 ui-options-fps-counter = Show FPS counter
+ui-options-mood-visual-effects = Enable the mood system's visual effects
 ui-options-vp-width = Viewport width: { $width }
 ui-options-hud-layout = HUD layout:
 
@@ -102,6 +109,7 @@ ui-options-hud-layout = HUD layout:
 
 ui-options-binds-reset-all = Reset ALL keybinds
 ui-options-binds-explanation = Click to change binding, right-click to clear
+ui-options-binds-search = Search
 ui-options-unbound = Unbound
 ui-options-bind-reset = Reset
 ui-options-key-prompt = Press a key...
@@ -154,6 +162,7 @@ ui-options-function-save-item-location = Save item location
 ui-options-function-toggle-standing = Toggle standing
 ui-options-function-toggle-crawling-under = Toggle crawling under furniture
 ui-options-static-storage-ui = Lock storage window to hotbar
+ui-options-modern-progress-bar = Modern progress bar
 
 ui-options-function-smart-equip-backpack = Smart-equip to backpack
 ui-options-function-smart-equip-belt = Smart-equip to belt
@@ -213,6 +222,9 @@ ui-options-function-editor-line-place = Place line
 ui-options-function-editor-rotate-object = Rotate
 ui-options-function-editor-flip-object = Flip
 ui-options-function-editor-copy-object = Copy
+ui-options-function-mapping-enable-pick = Pick object/tile
+ui-options-function-mapping-enable-decal-pick = Pick decal
+ui-options-function-mapping-enable-delete = Delete object
 
 ui-options-function-show-debug-console = Open Console
 ui-options-function-show-debug-monitors = Show Debug Monitors

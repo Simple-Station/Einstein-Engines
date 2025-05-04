@@ -1,3 +1,4 @@
+using Content.Shared.Mind;
 using Robust.Shared.Network;
 using Robust.Shared.Serialization;
 
@@ -10,6 +11,7 @@ namespace Content.Shared.Administration
         string IdentityName,
         string StartingJob,
         bool Antag,
+        RoleTypePrototype RoleProto,
         NetEntity? NetEntity,
         NetUserId SessionId,
         bool Connected,
@@ -17,6 +19,8 @@ namespace Content.Shared.Administration
         TimeSpan? OverallPlaytime)
     {
         private string? _playtimeString;
+
+        public bool IsPinned { get; set; }
 
         public string PlaytimeString => _playtimeString ??=
             OverallPlaytime?.ToString("%d':'hh':'mm") ?? Loc.GetString("generic-unknown-title");

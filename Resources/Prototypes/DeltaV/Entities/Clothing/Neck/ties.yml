@@ -8,6 +8,7 @@
     sprite: DeltaV/Clothing/Neck/Ties/whitetie.rsi
   - type: Clothing
     sprite: DeltaV/Clothing/Neck/Ties/whitetie.rsi
+    renderLayer: innerNeck
 
 - type: entity
   parent: ClothingNeckBase

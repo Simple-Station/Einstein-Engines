@@ -1,7 +1,7 @@
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Server.Chemistry.Containers.EntitySystems;
-using Content.Server.Chemistry.ReagentEffects;
+using Content.Server.EntityEffects.Effects;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Forensics;
 using Content.Server.Inventory;
@@ -17,6 +17,7 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
+using Content.Shared.EntityEffects;
 using Content.Shared.FixedPoint;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
@@ -213,9 +214,8 @@ public sealed class DrinkSystem : SharedDrinkSystem
             target: target,
             used: item)
         {
-            BreakOnUserMove = forceDrink,
+            BreakOnMove = forceDrink,
             BreakOnDamage = true,
-            BreakOnTargetMove = forceDrink,
             MovementThreshold = 0.01f,
             DistanceThreshold = 1.0f,
             // Mice and the like can eat without hands.

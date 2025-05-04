@@ -80,11 +80,12 @@ public sealed class StealthComponentState : ComponentState
     public readonly float Visibility;
     public readonly TimeSpan? LastUpdated;
     public readonly bool Enabled;
-
-    public StealthComponentState(float stealthLevel, TimeSpan? lastUpdated, bool enabled)
+    public readonly float MaxVisibility; // Shitmed Change
+    public StealthComponentState(float stealthLevel, TimeSpan? lastUpdated, bool enabled, float maxVisibility)
     {
         Visibility = stealthLevel;
         LastUpdated = lastUpdated;
         Enabled = enabled;
+        MaxVisibility = maxVisibility; // Shitmed Change
     }
 }

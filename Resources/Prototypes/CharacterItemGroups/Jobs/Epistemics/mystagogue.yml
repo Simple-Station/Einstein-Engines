@@ -20,16 +20,26 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutMystagogueEquipment
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutMystagogueEyes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutMystagogueEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutMystagogueEquipmentCandles
+    - type: loadout
+      id: LoadoutMystagogueEquipmentCandlesSmall
+    - type: loadout
+      id: LoadoutMystagoguePillCanisterSpaceDrugs
+
+- type: characterItemGroup
+  id: LoadoutMystagogueEyes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMystagogueEyesEpiHUD
+    - type: loadout
+      id: LoadoutMystagogueEyesEpiGlasses
+
 #- type: characterItemGroup
 #  id: LoadoutMystagogueGloves
 #  maxItems: 1

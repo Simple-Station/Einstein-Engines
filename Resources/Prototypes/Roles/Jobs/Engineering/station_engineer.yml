@@ -3,11 +3,16 @@
   name: job-name-engineer
   description: job-description-engineer
   playTimeTracker: JobStationEngineer
-  antagAdvantage: 3 # DeltaV - Reduced TC: External Access + Engineering
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Engineering
       min: 14400 #4 hrs
+    - !type:CharacterEmployerRequirement
+      employers:
+      - HephaestusIndustries
+      - ZavodskoiInterstellar
+      - EinsteinEngines
+      - NanoTrasen
   startingGear: StationEngineerGear
   icon: "JobIconStationEngineer"
   supervisors: job-supervisors-ce
@@ -20,6 +25,8 @@
 
 - type: startingGear
   id: StationEngineerGear
+  subGear:
+  - StationEngineerPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitEngineering
     back: ClothingBackpackEngineeringFilled
@@ -31,3 +38,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtEngineering
   satchel: ClothingBackpackSatchelEngineeringFilled
   duffelbag: ClothingBackpackDuffelEngineeringFilled
+
+- type: startingGear
+  id: StationEngineerPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitEngineering
+    head: ClothingHeadEnvirohelmEngineering
+    gloves: ClothingHandsGlovesEnviroglovesEngineering

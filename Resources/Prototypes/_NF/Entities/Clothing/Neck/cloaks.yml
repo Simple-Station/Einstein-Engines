@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakJanitor
+  name: janitor's cloak
+  description: An exquisite cloak fitting for those who save the station from messes and slips. The unsung heroes who work thanklessly while we make a mess over the bar. Pure angels of patience and an iron will! ...It's also waterproof!
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/Neck/Cloaks/janitor.rsi
+  - type: Clothing
+    sprite: _NF/Clothing/Neck/Cloaks/janitor.rsi

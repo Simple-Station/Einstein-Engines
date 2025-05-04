@@ -9,6 +9,8 @@
   - Revolutionaries
   - MinorAntagonists
   - SpaceNinja
+  - Abductors # Shitmed - Abductors
+  - BloodCult
 
 - type: guideEntry
   id: Traitors
@@ -39,3 +41,8 @@
   id: SpaceNinja
   name: guide-entry-space-ninja
   text: "/ServerInfo/Guidebook/Antagonist/SpaceNinja.xml"
+
+- type: guideEntry
+  id: BloodCult
+  name: guide-entry-blood-cult
+  text: "/ServerInfo/Guidebook/Antagonist/BloodCult.xml"

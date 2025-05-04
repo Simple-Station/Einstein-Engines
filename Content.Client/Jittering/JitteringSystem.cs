@@ -45,7 +45,10 @@ namespace Content.Client.Jittering
 
         private void OnAnimationCompleted(EntityUid uid, JitteringComponent jittering, AnimationCompletedEvent args)
         {
-            if(args.Key != _jitterAnimationKey)
+            if (args.Key != _jitterAnimationKey || jittering.LifeStage >= ComponentLifeStage.Stopping)
+                return;
+
+            if (!args.Finished)
                 return;
 
             if (TryComp(uid, out AnimationPlayerComponent? animationPlayer)

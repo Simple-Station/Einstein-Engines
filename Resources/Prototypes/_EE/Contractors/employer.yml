@@ -1,0 +1,75 @@
+# The default, should be able to do all jobs
+- type: employer
+  id: NanoTrasen
+  nameKey: employer_name_nanotrasen
+  descriptionKey: employer_description_nanotrasen
+  primaryColour: "#3d4f66"
+  secondaryColour: "#282828"
+  rivals:
+  - EinsteinEngines
+
+# Technically not an employer, but it's the best place to put it
+- type: employer
+  id: Unemployed
+  nameKey: employer_name_unemployed
+  descriptionKey: employer_description_unemployed
+  primaryColour: "#FFFFFF"
+  secondaryColour: "#000000"
+
+- type: employer
+  id: HephaestusIndustries
+  nameKey: employer_name_hephaestusindustries
+  descriptionKey: employer_description_hephaestusindustries
+  primaryColour: "#ab6f19"
+  secondaryColour: "#263e23"
+
+- type: employer
+  id: EinsteinEngines
+  nameKey: employer_name_einsteinengines
+  descriptionKey: employer_description_einsteinengines
+  primaryColour: "#777700"
+  secondaryColour: "#637C65"
+  rivals:
+  - NanoTrasen
+
+- type: employer
+  id: ZengHuPharmaceuticals
+  nameKey: employer_name_zenghupharmaceuticals
+  descriptionKey: employer_description_zenghupharmaceuticals
+  primaryColour: "#a86bd8"
+  secondaryColour: "#dfe4ed"
+
+- type: employer
+  id: ZavodskoiInterstellar
+  nameKey: employer_name_zavodskoiinterstellar
+  descriptionKey: employer_description_zavodskoiinterstellar
+  primaryColour: "#920a0a"
+  secondaryColour: "#7a6347"
+
+- type: employer
+  id: Interdyne
+  nameKey: employer_name_interdyne
+  descriptionKey: employer_description_interdyne
+  primaryColour: "#336699"
+  secondaryColour: "#81d9ee"
+
+- type: employer
+  id: IdrisIncorporated
+  nameKey: employer_name_idrisincorporated
+  descriptionKey: employer_description_idrisincorporated
+  primaryColour: "#3A6F6F"
+  secondaryColour: "#00d1d4"
+
+- type: employer
+  id: OrionExpress
+  nameKey: employer_name_orionexpress
+  descriptionKey: employer_description_orionexpress
+  primaryColour: "#414446"
+  secondaryColour: "#7a6347"
+
+- type: employer
+  id: PMCG
+  nameKey: employer_name_pmcg
+  descriptionKey: employer_description_pmcg
+  primaryColour: "#3355ff"
+  secondaryColour: "#c4a56e"

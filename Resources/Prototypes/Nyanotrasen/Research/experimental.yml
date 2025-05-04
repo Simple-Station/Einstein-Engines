@@ -12,8 +12,9 @@
   recipeUnlocks:
   - ClothingHeadHelmetInsulated
   - ClothingHeadCage
-  # - ShellSoulbreaker # DeltaV - Placing it under Exotic Ammunition because that's what it is.
-
+  - CartridgeSpecialHoly
+  - CartridgeSpecialMindbreaker
+  - ShellSoulbreaker
 
 # Tier 3
 

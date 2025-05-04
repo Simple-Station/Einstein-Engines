@@ -143,7 +143,7 @@ public abstract partial class SharedPseudoItemSystem : EntitySystem
     private void OnInteractAttempt(EntityUid uid, PseudoItemComponent component, InteractionAttemptEvent args)
     {
         if (args.Uid == args.Target && component.Active)
-            args.Cancel();
+            args.Cancelled = true;
     }
 
     private void OnDoAfter(EntityUid uid, PseudoItemComponent component, DoAfterEvent args)
@@ -163,8 +163,7 @@ public abstract partial class SharedPseudoItemSystem : EntitySystem
         var ev = new PseudoItemInsertDoAfterEvent();
         var args = new DoAfterArgs(EntityManager, inserter, 5f, ev, toInsert, toInsert, storageEntity)
         {
-            BreakOnTargetMove = true,
-            BreakOnUserMove = true,
+            BreakOnMove = true,
             NeedHand = true
         };
 

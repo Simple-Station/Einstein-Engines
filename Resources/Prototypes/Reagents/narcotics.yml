@@ -40,6 +40,18 @@
         key: KnockedDown
         time: 3
         type: Remove
+      - !type:GenericStatusEffect
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Haloperidol
+          max: 0.01
+        key: Drowsiness
+        time: 10
+        type: Remove
+      - !type:GenericStatusEffect # goob edit
+        key: Adrenaline
+        component: IgnoreSlowOnDamage
+        time: 5
     Medicine:
       effects:
       - !type:ResetNarcolepsy
@@ -80,11 +92,23 @@
         key: KnockedDown
         time: 1
         type: Remove
+      - !type:GenericStatusEffect
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Haloperidol
+          max: 0.01
+        key: Drowsiness
+        time: 10
+        type: Remove
       - !type:PopupMessage
         visualType: Medium
         messages: ["ephedrine-effect-tight-pain", "ephedrine-effect-heart-pounds"]
         type: Local
         probability: 0.05
+      - !type:GenericStatusEffect # goob edit
+        key: Adrenaline
+        component: IgnoreSlowOnDamage
+        time: 5
     Medicine:
       effects:
       - !type:ResetNarcolepsy
@@ -140,6 +164,18 @@
         key: ForcedSleep
         time: 3
         type: Remove
+      - !type:GenericStatusEffect
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Haloperidol
+          max: 0.01
+        key: Drowsiness
+        time: 10
+        type: Remove
+      - !type:GenericStatusEffect # goob edit
+        key: Adrenaline
+        component: IgnoreSlowOnDamage
+        time: 5
     Medicine:
       metabolismRate: 1.0
       effects:
@@ -394,7 +430,7 @@
         - norepinephricacid-effect-blindness
         conditions:
         - !type:ReagentThreshold
-          min: 15
+          min: 5
       - !type:Emote
         emote: Scream
         probability: 0.08
@@ -403,7 +439,7 @@
         component: TemporaryBlindness
         conditions:
         - !type:ReagentThreshold
-          min: 20
+          min: 5
 
 - type: reagent
   id: Happiness
@@ -454,3 +490,54 @@
         type: Add
         time: 5
         refresh: false
+
+- type: reagent
+  id: Cryanobalamin
+  name: reagent-name-cryanobalamin
+  group: Narcotics
+  desc: reagent-desc-cryanobalamin
+  flavor: sweet
+  color: "#46a6f5"
+  physicalDesc: reagent-physical-desc-sugary
+  metabolisms:
+    Narcotic:
+      effects:
+      - !type:StaminaChange
+        amount: -3
+      - !type:SatiateThirst
+        factor: -1
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 30
+        damage:
+          types:
+            Cellular: 0.2
+
+- type: reagent
+  id: LiftLoversSpecial
+  name: reagent-name-liftloversspecial
+  group: Narcotics
+  desc: reagent-desc-liftloversspecial
+  flavor: sweet
+  color: "#f73715"
+  physicalDesc: reagent-physical-desc-unhealthy
+  metabolisms:
+    Narcotic:
+      effects:
+      - !type:StaminaChange
+        amount: -6
+      - !type:SatiateThirst
+        factor: -2
+      - !type:Jitter
+        conditions:
+        - !type:ReagentThreshold
+          min: 7
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 20
+        damage:
+          types:
+            Cellular: 0.3
+

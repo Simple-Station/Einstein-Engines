@@ -2,13 +2,26 @@
 # Backpacks
 
 # Belt
-
+- type: loadout
+  id: LoadoutClothingBeltJudoHoS
+  category: JobsSecurityHeadOfSecurity
+  cost: 2
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityBelt
+  - !type:CharacterJobRequirement
+    jobs:
+    - HeadOfSecurity
+  items:
+  - ClothingBeltCorporateJudoHoS
 # Ears
 
 # Equipment
 # Head of Security Weapon Selection
 # Most of these mirror the unique weapons that were previously map-specific items placed in the HoS Office.
 # Or are weapons that fit a similar theme of "Rare weapons not normally seen by Security"
+
 - type: loadout
   id: LoadoutCommandHoSPulsePistol
   category: JobsSecurityHeadOfSecurity
@@ -20,6 +33,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponPulsePistolHoS
 
@@ -34,6 +49,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponSubMachineGunWt550HoS
 
@@ -62,6 +79,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponSubMachineGunC20rHoS
 
@@ -76,6 +95,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponShotgunBulldogHoS
 
@@ -104,8 +125,26 @@
     - !type:CharacterJobRequirement
       jobs:
         - HeadOfSecurity
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponEnergyGunMultiphase
+
+- type: loadout
+  id: LoadoutCommandHoSBRDIR25
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - WeaponSubMachineGunBRDIR25HoS
 
 # Eyes
 
@@ -137,6 +176,19 @@
         - HeadOfSecurity
   items:
     - ClothingHeadHatHoshat
+
+- type: loadout
+  id: LoadoutCommandHOSHelmet
+  category: JobsSecurityHeadOfSecurity
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingHeadHelmetHeavyHoS
 
 # Id
 - type: loadout
@@ -185,9 +237,36 @@
   items:
     - ClothingNeckCloakHos
 
+- type: loadout
+  id: LoadoutCommandHOSNeckCloakFur
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingNeckCloakHosFur
+
 # Mask
 
 # Outer
+- type: loadout
+  id: LoadoutCommandHOSOuterWinterUnarmored
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHeadOfSecurityOuter
+  - !type:CharacterJobRequirement
+    jobs:
+    - HeadOfSecurity
+  items:
+  - ClothingOuterWinterHoSUnarmored
+
 - type: loadout
   id: LoadoutCommandHOSOuterWinter
   category: JobsSecurityHeadOfSecurity
@@ -213,6 +292,19 @@
         - HeadOfSecurity
   items:
     - ClothingOuterCoatHoSTrench
+
+- type: loadout
+  id: LoadoutCommandHOSOuterHeavyArmor
+  category: JobsSecurityHeadOfSecurity
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingOuterArmorHoSHeavy
 
 # Shoes
 - type: loadout
@@ -369,3 +461,17 @@
         - HeadOfSecurity
   items:
     - ClothingUniformJumpskirtHosFormal
+
+# Trinkets
+- type: loadout
+  id: LoadoutHoSCigarCase
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityTrinkets
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - CigarRobustCase

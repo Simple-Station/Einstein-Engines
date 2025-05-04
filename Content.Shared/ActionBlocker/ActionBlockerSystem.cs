@@ -4,6 +4,7 @@ using Content.Shared.DragDrop;
 using Content.Shared.Emoting;
 using Content.Shared.Hands;
 using Content.Shared.Interaction;
+using Content.Shared.Interaction.Components;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Item;
 using Content.Shared.Mobs;
@@ -16,6 +17,11 @@ using Content.Shared.Weapons.Melee;
 using JetBrains.Annotations;
 using Robust.Shared.Containers;
 
+// Shitmed Change
+using Content.Shared._Shitmed.Antags.Abductor;
+using Content.Shared.Silicons.StationAi;
+using Content.Shared.Body.Events;
+
 namespace Content.Shared.ActionBlocker
 {
     /// <summary>
@@ -26,9 +32,14 @@ namespace Content.Shared.ActionBlocker
     {
         [Dependency] private readonly SharedContainerSystem _container = default!;
 
+        private EntityQuery<ComplexInteractionComponent> _complexInteractionQuery;
+
         public override void Initialize()
         {
             base.Initialize();
+
+            _complexInteractionQuery = GetEntityQuery<ComplexInteractionComponent>();
+
             SubscribeLocalEvent<InputMoverComponent, ComponentStartup>(OnMoverStartup);
         }
 
@@ -58,6 +69,15 @@ namespace Content.Shared.ActionBlocker
         }
 
         /// <summary>
+        /// Checks if a given entity is able to do specific complex interactions.
+        /// This is used to gate manipulation to general humanoids. If a mouse shouldn't be able to do something, then it's complex.
+        /// </summary>
+        public bool CanComplexInteract(EntityUid user)
+        {
+            return _complexInteractionQuery.HasComp(user);
+        }
+
+        /// <summary>
         ///     Raises an event directed at both the user and the target entity to check whether a user is capable of
         ///     interacting with this entity.
         /// </summary>
@@ -73,8 +93,12 @@ namespace Content.Shared.ActionBlocker
             if (!CanConsciouslyPerformAction(user))
                 return false;
 
+            // Shitmed Change
+            if (HasComp<StationAiOverlayComponent>(user) && HasComp<AbductorScientistComponent>(user))
+                return false;
+
             var ev = new InteractionAttemptEvent(user, target);
-            RaiseLocalEvent(user, ev);
+            RaiseLocalEvent(user, ref ev);
 
             if (ev.Cancelled)
                 return false;
@@ -83,7 +107,7 @@ namespace Content.Shared.ActionBlocker
                 return true;
 
             var targetEv = new GettingInteractedWithAttemptEvent(user, target);
-            RaiseLocalEvent(target.Value, targetEv);
+            RaiseLocalEvent(target.Value, ref targetEv);
 
             return !targetEv.Cancelled;
         }
@@ -96,9 +120,9 @@ namespace Content.Shared.ActionBlocker
         ///     involve using a held entity. In the majority of cases, systems that provide interactions will not need
         ///     to check this themselves.
         /// </remarks>
-        public bool CanUseHeldEntity(EntityUid user)
+        public bool CanUseHeldEntity(EntityUid user, EntityUid used)
         {
-            var ev = new UseAttemptEvent(user);
+            var ev = new UseAttemptEvent(user, used);
             RaiseLocalEvent(user, ev);
 
             return !ev.Cancelled;
@@ -114,7 +138,7 @@ namespace Content.Shared.ActionBlocker
         public bool CanConsciouslyPerformAction(EntityUid user)
         {
             var ev = new ConsciousAttemptEvent(user);
-            RaiseLocalEvent(user, ev);
+            RaiseLocalEvent(user, ref ev);
 
             return !ev.Cancelled;
         }
@@ -222,5 +246,15 @@ namespace Content.Shared.ActionBlocker
 
             return !ev.Cancelled;
         }
+
+        // Shitmed Change Start - Starlight Abductors
+        public bool CanInstrumentInteract(EntityUid user, EntityUid used, EntityUid? target)
+        {
+            var ev = new InteractionAttemptEvent(user, target);
+            RaiseLocalEvent(used, ref ev);
+
+            return !ev.Cancelled;
+        }
+        // Shitmed Change End - Starlight Abductors
     }
 }

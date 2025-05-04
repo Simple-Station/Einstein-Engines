@@ -13,6 +13,11 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Medical
       min: 216000 # 60 hrs
+    - !type:CharacterEmployerRequirement
+      employers:
+      - ZengHuPharmaceuticals
+      - Interdyne
+      - NanoTrasen
   startingGear: SeniorPhysicianGear
   icon: "JobIconSeniorPhysician"
   supervisors: job-supervisors-cmo
@@ -25,10 +30,12 @@
     components:
     - type: CPRTraining
     - type: SurgerySpeedModifier
-      SpeedModifier: 2.0
+      speedModifier: 2.0
 
 - type: startingGear
   id: SeniorPhysicianGear
+  subGear:
+  - DoctorPlasmamanGear
   equipment:
     head: ClothingHeadHatBeretSeniorPhysician
     jumpsuit: ClothingUniformJumpsuitSeniorPhysician

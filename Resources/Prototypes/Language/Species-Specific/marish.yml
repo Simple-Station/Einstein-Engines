@@ -5,13 +5,13 @@
   speech:
     color: "#be3cc5"
     fontId: Lymphatic
-    empathySpeech: true
+    empathySpeech: false
     speechVerbOverrides:
     - chat-speech-verb-marish
   obfuscation:
     !type:SyllableObfuscation
-    minSyllables: 1 # Replacements are really short
-    maxSyllables: 2
+    minSyllables: 2
+    maxSyllables: 5
     replacement:
     - mar
     - mwrrr
@@ -19,3 +19,20 @@
     - aarrr
     - wrurrl
     - mmar
+    - mwar
+    - mlar
+    - mlwar
+    - mwaarr
+    - mAaAr
+    - lmwar
+    - wlurrl
+    - wlmwar
+    - arrmaw
+    - mwAlwar
+    - wrlurll
+    - wlarrul
+    - wlAmur
+    - AlwuRm
+    - mrrrAw
+    - wurlMur
+    - uuRlmmr

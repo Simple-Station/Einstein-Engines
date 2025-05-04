@@ -1,0 +1,300 @@
+# Delta-V - This file is licensed under AGPLv3
+# Copyright (c) 2024 Delta-V Contributors
+# See AGPLv3.txt for details.
+
+- type: entity
+  save: false
+  name: Lamia
+  parent: BaseMobHuman #parenting human so I can remove most of these components
+  id: MobLamiaBase
+  abstract: true
+  description: A miserable pile of scales. #TODO: Add a better description
+  components:
+  - type: Flashable
+  - type: Polymorphable
+  - type: Identity
+  - type: Hands
+  - type: HumanoidAppearance
+    species: Lamia
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 4
+    baseSprintSpeed : 6
+  - type: MovedByPressure
+  - type: Hunger
+  - type: Thirst
+  - type: IdExaminable
+  - type: Inventory
+    speciesId: lamia
+    templateId: lamia
+  - type: HealthExaminable
+    examinableTypes:
+    - Blunt
+    - Slash
+    - Piercing
+    - Heat
+    - Shock
+  - type: Stamina
+  - type: Blindable
+  - type: Clickable
+  - type: InteractionOutline
+  - type: InteractionPopup
+    successChance: 0.5
+    interactSuccessString: petting-success-lamia
+    interactFailureString: petting-failure-lamia
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/lizard_happy.ogg #placeholder sound
+    interactFailureSound:
+      path: /Audio/Animals/snake_hiss.ogg #placeholder sound
+  - type: Icon
+    sprite: Mobs/Species/Human/parts.rsi
+    state: full
+  - type: Physics
+    bodyType: KinematicController
+  - type: Tag
+    tags:
+    - CanPilot
+    - DoorBumpOpener
+  - type: Sprite
+    netsync: false
+    noRot: true
+    drawdepth: Mobs
+    scale: 1, 1
+    offset: 0, 0.4
+    layers: #TODO: manually fix these layers
+      - map: [ "enum.HumanoidVisualLayers.Chest" ]
+        color: "#e8b59b"
+        sprite: Nyanotrasen/Mobs/Species/lamia.rsi
+        state: torso_m
+      - map: [ "enum.HumanoidVisualLayers.Head" ]
+        color: "#e8b59b"
+        sprite: Mobs/Species/Human/parts.rsi
+        state: head_m
+      - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+        color: "#008800"
+        sprite: Mobs/Customization/eyes.rsi
+        state: eyes
+      - map: [ "enum.HumanoidVisualLayers.Face" ]
+      - map: [ "enum.HumanoidVisualLayers.RArm" ]
+        color: "#e8b59b"
+        sprite: Mobs/Species/Human/parts.rsi
+        state: r_arm
+      - map: [ "enum.HumanoidVisualLayers.LArm" ]
+        color: "#e8b59b"
+        sprite: Mobs/Species/Human/parts.rsi
+        state: l_arm
+      - map: [ "enum.HumanoidVisualLayers.Tail" ]
+      - map: [ "jumpsuit" ]
+      - map: [ "enum.HumanoidVisualLayers.LHand" ]
+        color: "#e8b59b"
+        sprite: Mobs/Species/Human/parts.rsi
+        state: l_hand
+      - map: [ "enum.HumanoidVisualLayers.RHand" ]
+        color: "#e8b59b"
+        sprite: Mobs/Species/Human/parts.rsi
+        state: r_hand
+      - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
+        color: "#ffffff"
+        sprite: Objects/Misc/handcuffs.rsi
+        state: body-overlay-2
+        visible: false
+      - map: [ "id" ]
+      - map: [ "gloves" ]
+      - map: [ "ears" ]
+      - map: [ "innerBelt" ]
+      - map: [ "innerNeck" ]
+      - map: [ "outerClothing" ]
+      - map: [ "eyes" ]
+      - map: [ "belt" ]
+      - map: [ "belt2" ]
+      - map: [ "neck" ]
+      - map: [ "back" ]
+      - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
+      - map: [ "enum.HumanoidVisualLayers.Hair" ]
+      - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
+      - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
+      - map: [ "mask" ]
+      - map: [ "head" ]
+      - map: [ "pocket1" ]
+      - map: [ "pocket2" ]
+      - map: [ "clownedon" ] # Dynamically generated
+        sprite: "Effects/creampie.rsi"
+        state: "creampie_human"
+        visible: false
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Scale #TODO: make a new damage modifier set
+  - type: NoSlip
+  - type: Internals
+  - type: MobState
+  - type: DamageVisuals
+    thresholds: [ 60, 120, 200 ] #these values aren't final, adjust accordingly with thresholds above'
+    targetLayers:
+      - "enum.HumanoidVisualLayers.Chest"
+      - "enum.HumanoidVisualLayers.Head"
+      - "enum.HumanoidVisualLayers.LArm"
+      - "enum.HumanoidVisualLayers.RArm"
+    damageOverlayGroups:
+      Brute:
+        sprite: Nyanotrasen/Mobs/Effects/Lamia/brute_damage.rsi
+        color: "#FF0000"
+      Burn:
+        sprite: Nyanotrasen/Mobs/Effects/Lamia/burn_damage.rsi
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      200: Critical #these values aren't final'
+      300: Dead #these values aren't final'
+  - type: SlowOnDamage
+    speedModifierThresholds: #these values aren't final, adjust accordingly with thresholds above'
+      60: 0.9
+      80: 0.8
+      100: 0.7
+      120: 0.6
+      140: 0.5
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Generic_mob_burning
+    alternateState: Standing
+    fireStackAlternateState: 3
+  - type: CombatMode
+  - type: Climbing
+  - type: Cuffable
+  - type: AnimationPlayer
+  - type: MeleeWeapon #This damage is most likely final
+    soundHit:
+      path: /Audio/Items/hypospray.ogg #this sound is not final, but is a pretty good placeholder so we might keep it
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 2
+        Poison: 3
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        maxVol: 30
+  - type: SolutionRegeneration
+    solution: melee
+    generated:
+      reagents:
+      - ReagentId: SpaceDrugs
+        Quantity: 1
+  - type: MeleeChemicalInjector
+    solution: melee
+    transferAmount: 3 #amount to inject is not final
+  - type: Pullable
+  - type: DoAfter
+  - type: CreamPied
+  - type: Stripping
+  - type: Strippable
+  - type: Puller
+  - type: Fixtures
+    fixtures: # TODO: This needs a second fixture just for mob collisions.
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 1000 #Density is not final, adjust accordingly if the number of tail segments is reduced or increased
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: SegmentedEntity
+    numberOfSegments: 18
+    texturePath: /Textures/Nyanotrasen/Mobs/Species/lamia.rsi/segment.png
+  - type: Speech
+    speechSounds: Alto
+  - type: Vocal
+  - type: Emoting
+  - type: Grammar
+    attributes:
+      proper: true
+  - type: StandingState
+  - type: Fingerprint
+  - type: Perishable
+  - type: Bloodstream
+    bloodMaxVolume: 60000
+    bloodlossDamage:
+      types:
+        Bloodloss: 1
+    bloodlossHealDamage:
+      types:
+        Bloodloss: -1
+  - type: PortalExempt
+  - type: FootPrints
+    leftBarePrint: "dragging-1"
+    rightBarePrint: "dragging-1"
+    shoesPrint: "dragging-1"
+    suitPrint: "dragging-1"
+
+- type: entity
+  save: false
+  name: Lamia Dummy
+  parent: MobHumanDummy
+  id: MobLamiaDummy
+  description: A dummy lamia meant to be used in character setup.
+  components:
+  - type: Sprite
+    netsync: false
+    noRot: true
+    drawdepth: Mobs
+    scale: 1, 1
+    layers:
+      - map: [ "enum.HumanoidVisualLayers.Chest" ]
+        color: "#e8b59b"
+        sprite: Nyanotrasen/Mobs/Species/lamia.rsi
+        state: torso_m
+      - map: [ "enum.HumanoidVisualLayers.Head" ]
+        color: "#e8b59b"
+        sprite: Mobs/Species/Human/parts.rsi
+        state: head_m
+      - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+        color: "#008800"
+        sprite: Mobs/Customization/eyes.rsi
+        state: eyes
+      - map: [ "enum.HumanoidVisualLayers.Face" ]
+      - map: [ "enum.HumanoidVisualLayers.RArm" ]
+        color: "#e8b59b"
+        sprite: Mobs/Species/Human/parts.rsi
+        state: r_arm
+      - map: [ "enum.HumanoidVisualLayers.LArm" ]
+        color: "#e8b59b"
+        sprite: Mobs/Species/Human/parts.rsi
+        state: l_arm
+      - map: [ "jumpsuit" ]
+        shader: StencilDraw
+      - map: [ "enum.HumanoidVisualLayers.LHand" ]
+        color: "#e8b59b"
+        sprite: Mobs/Species/Human/parts.rsi
+        state: l_hand
+      - map: [ "enum.HumanoidVisualLayers.RHand" ]
+        color: "#e8b59b"
+        sprite: Mobs/Species/Human/parts.rsi
+        state: r_hand
+      - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
+        color: "#ffffff"
+        sprite: Objects/Misc/handcuffs.rsi
+        state: body-overlay-2
+        visible: false
+      - map: [ "id" ]
+      - map: [ "gloves" ]
+      - map: [ "ears" ]
+      - map: [ "innerBelt" ]
+      - map: [ "innerNeck" ]
+      - map: [ "outerClothing" ]
+      - map: [ "eyes" ]
+      - map: [ "belt" ]
+      - map: [ "neck" ]
+      - map: [ "back" ]
+      - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
+      - map: [ "enum.HumanoidVisualLayers.Hair" ]
+      - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
+      - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
+      - map: [ "mask" ]
+      - map: [ "head" ]
+      - map: [ "pocket1" ]
+      - map: [ "pocket2" ]
+      - map: [ "enum.HumanoidVisualLayers.Tail" ]
+  - type: Inventory
+    templateId: lamia

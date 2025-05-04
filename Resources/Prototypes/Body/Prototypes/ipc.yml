@@ -18,7 +18,7 @@
       - left leg
       - head
       organs:
-        brain: PositronicBrain
+        posibrain: PositronicBrain
         heart: OrganIPCPump
     right arm:
       part: RightArmIPC

@@ -5,10 +5,6 @@
   id: MobHarpyBase
   abstract: true
   components:
-  - type: Flight
-    isLayerAnimated: true
-    layer: "/Textures/Mobs/Customization/Harpy/harpy_wings.rsi"
-    animationKey: "Flap"
   - type: Singer
     proto: HarpySinger
   - type: Sprite
@@ -18,9 +14,12 @@
       - map: [ "enum.HumanoidVisualLayers.Head" ]
       - map: [ "enum.HumanoidVisualLayers.Snout" ]
       - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+      - map: [ "enum.HumanoidVisualLayers.Face" ]
       - map: [ "enum.HumanoidVisualLayers.LArm" ]
       - map: [ "enum.HumanoidVisualLayers.RLeg" ]
       - map: [ "enum.HumanoidVisualLayers.LLeg" ]
+      - map: [ "enum.HumanoidVisualLayers.Underwear" ]
+      - map: [ "enum.HumanoidVisualLayers.Undershirt" ]
       - map: [ "underpants" ]
       - map: [ "undershirt" ]
       - map: [ "socks" ]
@@ -37,6 +36,8 @@
       - map: [ "id" ]
       - map: [ "gloves" ]
       - map: [ "ears" ]
+      - map: [ "innerBelt" ]
+      - map: [ "innerNeck" ]
       - map: [ "outerClothing" ]
       - map: [ "eyes" ]
       - map: [ "belt" ]
@@ -104,9 +105,20 @@
     baseWalkSpeed: 3
     baseSprintSpeed: 5.5
     weightlessAcceleration: 2.5
+    weightlessModifier: 1.12
   - type: Inventory
     speciesId: harpy
     templateId: digitigrade
+    displacements:
+      jumpsuit:
+        layer:
+          sprite: Mobs/Species/Harpy/displacement.rsi
+          state: jumpsuit
+          copyToShaderParameters:
+            # Value required, provide a dummy. Gets overridden when applied.
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
   - type: HarpyVisuals
   - type: UltraVision
   - type: Tag
@@ -114,6 +126,7 @@
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
+    - HarpyEmotes
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
@@ -133,6 +146,7 @@
 
 - type: entity
   save: false
+  categories: [ HideSpawnMenu ]
   name: Urist McBirb
   parent: MobHumanDummy
   id: MobHarpyDummy
@@ -143,6 +157,16 @@
   - type: Inventory
     speciesId: harpy
     templateId: digitigrade
+    displacements:
+      jumpsuit:
+        layer:
+          sprite: Mobs/Species/Harpy/displacement.rsi
+          state: jumpsuit
+          copyToShaderParameters:
+            # Value required, provide a dummy. Gets overridden when applied.
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
   - type: Sprite
     scale: 0.9, 0.9
     layers:
@@ -150,6 +174,7 @@
       - map: [ "enum.HumanoidVisualLayers.Head" ]
       - map: [ "enum.HumanoidVisualLayers.Snout" ]
       - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+      - map: [ "enum.HumanoidVisualLayers.Face" ]
       - map: [ "enum.HumanoidVisualLayers.LArm" ]
       - map: [ "enum.HumanoidVisualLayers.RLeg" ]
       - map: [ "enum.HumanoidVisualLayers.LLeg" ]
@@ -164,6 +189,8 @@
       - map: [ "id" ]
       - map: [ "gloves" ]
       - map: [ "ears" ]
+      - map: [ "innerBelt" ]
+      - map: [ "innerNeck" ]
       - map: [ "outerClothing" ]
       - map: [ "eyes" ]
       - map: [ "belt" ]
@@ -214,7 +241,7 @@
 - type: entity
   id: ActionToggleFlight
   name: Fly
-  description: Make use of your wings to fly. Beat the flightless bird allegations.
+  description: Make use of your wings to fly. Beat the flightlessness allegations.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction

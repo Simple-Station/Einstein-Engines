@@ -67,6 +67,7 @@
     boozeStrengthMultiplier: 0.5
   - type: Stamina
     critThreshold: 115
+    decay: 3.3 # 3 base decay multiplied by 1.15 = 3.3
   - type: FootPrints
     leftBarePrint: "footprint-left-bare-dwarf"
     rightBarePrint: "footprint-right-bare-dwarf"

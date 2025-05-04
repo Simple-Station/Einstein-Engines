@@ -70,273 +70,129 @@
   - type: Produce
   - type: NoSlip
 
-#- type: entity
-#  name: oneirophage
-#  parent: MobGiantSpider
-#  id: MobGiantSpiderVampire
-#  description: The 'dream-eater' spider, rumored to be one of the potential genetic sources for arachne.
-#  components:
-#  - type: Sprite
-#    drawdepth: Mobs
-#    layers:
-#    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
-#      state: viper
-#      sprite: Mobs/Animals/spider.rsi
-#  - type: SpriteMovement
-#    movementLayers:
-#      movement:
-#        state: viper-moving
-#    noMovementLayers:
-#      movement:
-#        state: viper
-#  - type: Appearance
-#  - type: DamageStateVisuals
-#    states:
-#      Alive:
-#        Base: viper
-#      Critical:
-#        Base: viper_dead
-#      Dead:
-#        Base: viper_dead
-#  - type: ReplacementAccent
-#    accent: xeno
-#  - type: InteractionPopup
-#    successChance: 0.5
-#    interactSuccessString: petting-success-tarantula
-#    interactFailureString: petting-failure-generic
-#    interactSuccessSpawn: EffectHearts
-#    interactSuccessSound:
-#      path: /Audio/Animals/snake_hiss.ogg
-#  - type: Puller
-#    needsHands: false
-#  - type: Cocooner
-#    cocoonDelay: 8
-#  - type: SolutionContainerManager
-#    solutions:
-#      melee:
-#        reagents:
-#        - ReagentId: Nocturine
-#          Quantity: 20
-#  - type: MeleeChemicalInjector
-#   solution: melee
-#    transferAmount: 3.5
-#  - type: SolutionRegeneration
-#    solution: melee
-#    generated:
-#      reagents:
-#        - ReagentId: Nocturine
-#          Quantity: 0.15
-#  - type: BloodSucker
-#    unitsToSucc: 35
-#    injectWhenSucc: true
-#    injectReagent: Cryptobiolin
-#    unitsToInject: 10
-#    webRequired: true
-#  - type: Bloodstream
-#    bloodReagent: DemonsBlood
-#  - type: Body
-#    prototype: VampiricAnimalLarge
-#  - type: Psionic
-#    removable: false
-#  - type: InnatePsionicPowers
-#    powersToAdd:
-#      - MetapsionicPower
-#      - PsionicInvisibilityPower
-#  - type: AntiPsionicWeapon
-#    punish: false
-#    modifiers:
-#      coefficients:
-#        Piercing: 2.25
-#  - type: Damageable
-#    damageContainer: HalfSpirit
-#    damageModifierSet: HalfSpirit
-#  - type: StatusEffects
-#    allowed:
-#      - Stun
-#      - KnockedDown
-#      - SlowedDown
-#      - Stutter
-#      - SeeingRainbows
-#      - Electrocution
-#      - Drunk
-#      - SlurredSpeech
-#      - PressureImmunity
-#      - Muted
-#      - ForcedSleep
-#      - TemporaryBlindness
-#      - Pacified
-#      - PsionicsDisabled
-#      - PsionicallyInsulated
-#  - type: Tag
-#    tags:
-#      - Oneirophage
-#  - type: MovementAlwaysTouching
-#  - type: PsionicInvisibleContacts
-#    whitelist:
-#      tags:
-#        - ArachneWeb
-
-#- type: entity
-#  name: oneirophage
-#  parent: MobGiantSpiderVampire
-#  id: MobGiantSpiderVampireAngry
-#  suffix: Angry
-#  components:
-#    - type: NpcFactionMember
-#      factions:
-#        - SimpleHostile
-#    - type: InputMover
-#    - type: MobMover
-#    - type: HTN
-#      rootTask:
-#        task: SimpleHostileCompound
-#    - type: GhostRole
-#      makeSentient: true
-#      name: ghost-role-information-giant-spider-vampire-name
-#      description: ghost-role-information-giant-spider-vampire-description
-#      rules: No antagonist restrictions. Just don't talk in emote; you have telepathic chat.
-#    - type: GhostTakeoverAvailable
-
 - type: entity
-  parent: SimpleMobBase
-  id: MobMouseCancer
-  name: Cancer Mouse
-  description: Oh hey Civvie...
+  name: oneirophage
+  parent: MobGiantSpider
+  id: MobGiantSpiderVampire
+  description: The 'dream-eater' spider, rumored to be one of the potential genetic sources for arachne.
   components:
   - type: Sprite
-    drawdepth: SmallMobs
-    sprite: Mobs/Animals/mouse.rsi
+    drawdepth: Mobs
     layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: mouse-0
-      color: greenyellow
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: viper
+      sprite: Mobs/Animals/spider.rsi
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: viper-moving
+    noMovementLayers:
+      movement:
+        state: viper
+  - type: Appearance
   - type: DamageStateVisuals
-    rotate: true
     states:
       Alive:
-        Base: mouse-0
+        Base: viper
       Critical:
-        Base: dead-0
+        Base: viper_dead
       Dead:
-        Base: splat-0
-  - type: PointLight
-    color: greenyellow
-  - type: RadiationSource
-    intensity: 5
-    slope: 0.5
-  - type: Damageable
-    damageContainer: Biological
-    damageModifierSet: CancerMouse
-  - type: GhostRole
-    makeSentient: true
-    name: ghost-role-information-cancer-mouse-name
-    description: ghost-role-information-cancer-mouse-description
-  - type: GhostTakeoverAvailable
-  - type: CombatMode
-  - type: MovementSpeedModifier
-    baseWalkSpeed : 3.5
-    baseSprintSpeed : 3.5
-  - type: InputMover
-  - type: MobMover
-  - type: Reactive
-    groups:
-      Flammable: [Touch]
-      Extinguish: [Touch]
-  - type: Physics
-    bodyType: KinematicController
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 0.2
-        density: 30 #Bulky by mouse standards...
-        mask:
-        - SmallMobMask
-        layer:
-        - SmallMobLayer
-  - type: MobState
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      40: Critical
-      80: Dead
-  - type: Item
-    size: Normal
-  - type: Stamina
-    critThreshold: 80
-  - type: MeleeWeapon
-    hidden: true
-    soundHit:
-        path: /Audio/Weapons/bladeslice.ogg
-    angle: 0
-    animation: WeaponArcClaw
-    damage:
-      types:
-        Slash: 5
-        Piercing: 3
-  - type: Body
-    prototype: Rat
-    requiredLegs: 1 # TODO: More than 1 leg
-  - type: Hunger # probably should be prototyped
-    thresholds:
-      Overfed: 200
-      Okay: 150
-      Peckish: 100
-      Starving: 50
-      Dead: 0
-    baseDecayRate: 0.01666666666
-  - type: Thirst
-    thresholds:
-      OverHydrated: 600
-      Okay: 450
-      Thirsty: 300
-      Parched: 150
-      Dead: 0
-    baseDecayRate: 0.1
-  - type: Appearance
+        Base: viper_dead
+  - type: ReplacementAccent
+    accent: xeno
+  - type: InteractionPopup
+    successChance: 0.5
+    interactSuccessString: petting-success-tarantula
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/snake_hiss.ogg
   - type: Puller
     needsHands: false
-  - type: Vocal
-    sounds:
-      Male: Mouse
-      Female: Mouse
-      Unsexed: Mouse
-    wilhelmProbability: 0.001
-  - type: Tag
-    tags:
-      - CannotSuicide
-      - DoorBumpOpener
-      - FootstepSound
-      - Recyclable
-  - type: NoSlip
-  - type: MobPrice
-    price: 100 # rat wealth
-  - type: FelinidFood
-  - type: CanEscapeInventory
-  - type: Extractable
-    grindableSolutionName: food
-  - type: Bloodstream
-    bloodReagent: Radium
-    bloodMaxVolume: 70
+  - type: Cocooner
+    cocoonDelay: 8
   - type: SolutionContainerManager
     solutions:
-      food:
+      melee:
         reagents:
-        - ReagentId: Nutriment
-          Quantity: 2
-        - ReagentId: Radium
-          Quantity: 70
-  - type: Butcherable
-    spawned:
-    - id: FoodMeatRat
-      amount: 1
-  - type: Grammar
-    attributes:
-      proper: true
-      gender: male
-  - type: IntrinsicRadioReceiver
-  - type: IntrinsicRadioTransmitter
-  - type: ActiveRadio
-    channels:
-    - Common
+        - ReagentId: Nocturine
+          Quantity: 20
+  - type: MeleeChemicalInjector
+    solution: melee
+    transferAmount: 3.5
+  - type: SolutionRegeneration
+    solution: melee
+    generated:
+      reagents:
+        - ReagentId: Nocturine
+          Quantity: 0.15
+  - type: BloodSucker
+    unitsToSucc: 35
+    injectWhenSucc: true
+    injectReagent: Cryptobiolin
+    unitsToInject: 10
+    webRequired: true
+  - type: Bloodstream
+    bloodReagent: DemonsBlood
+  - type: Body
+    prototype: VampiricAnimalLarge
+  - type: Psionic
+    removable: false
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - MetapsionicPower
+      - PsionicInvisibilityPower
+  - type: AntiPsionicWeapon
+    punish: false
+    modifiers:
+      coefficients:
+        Piercing: 2.25
+  - type: Damageable
+    damageContainer: HalfSpirit
+    damageModifierSet: HalfSpirit
+  - type: StatusEffects
+    allowed:
+      - Stun
+      - KnockedDown
+      - SlowedDown
+      - Stutter
+      - SeeingRainbows
+      - Electrocution
+      - Drunk
+      - SlurredSpeech
+      - PressureImmunity
+      - Muted
+      - ForcedSleep
+      - TemporaryBlindness
+      - Pacified
+      - PsionicsDisabled
+      - PsionicallyInsulated
+  - type: Tag
+    tags:
+      - Oneirophage
+  - type: MovementAlwaysTouching
+  - type: PsionicInvisibleContacts
+    whitelist:
+      tags:
+        - ArachneWeb
+
+- type: entity
+  name: oneirophage
+  parent: MobGiantSpiderVampire
+  id: MobGiantSpiderVampireAngry
+  suffix: Angry
+  components:
+    - type: NpcFactionMember
+      factions:
+        - SimpleHostile
+    - type: InputMover
+    - type: MobMover
+    - type: HTN
+      rootTask:
+        task: SimpleHostileCompound
+    - type: GhostRole
+      makeSentient: true
+      name: ghost-role-information-giant-spider-vampire-name
+      description: ghost-role-information-giant-spider-vampire-description
+      rules: No antagonist restrictions. Just don't talk in emote; you have telepathic chat.
+    - type: GhostTakeoverAvailable

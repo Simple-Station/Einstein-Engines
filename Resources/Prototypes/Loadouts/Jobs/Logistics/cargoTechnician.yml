@@ -50,3 +50,84 @@
     - ClothingShoesBootsWinterCargo
 
 # Uniforms
+- type: loadout
+  id: LoadoutCargoTechnicianUniformSuit
+  category: JobsLogisticsCargoTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCargoTechnicianUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - CargoTechnician
+  items:
+    - ClothingUniformJumpsuitCargo
+
+- type: loadout
+  id: LoadoutCargoTechnicianUniformSkirt
+  category: JobsLogisticsCargoTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCargoTechnicianUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - CargoTechnician
+  items:
+    - ClothingUniformJumpskirtCargo
+
+- type: loadout
+  id: LoadoutCargoTechnicianUniformHeph
+  category: JobsLogisticsCargoTechnician
+  cost: 0
+  exclusive: true
+  guideEntry: HephaestusIndustries
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCargoTechnicianUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - CargoTechnician
+    - !type:CharacterEmployerRequirement
+      employers:
+        - HephaestusIndustries
+  items:
+    - ClothingUniformJumpsuitHephCargoTech
+
+- type: loadout
+  id: LoadoutCargoTechnicianUniformHephAlt
+  category: JobsLogisticsCargoTechnician
+  cost: 0
+  exclusive: true
+  guideEntry: HephaestusIndustries
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCargoTechnicianUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - CargoTechnician
+    - !type:CharacterEmployerRequirement
+      employers:
+        - HephaestusIndustries
+  items:
+    - ClothingUniformJumpsuitHephCargoTechAlt
+
+- type: loadout
+  id: LoadoutCargoTechnicianUniformNT
+  category: JobsLogisticsCargoTechnician
+  cost: 0
+  exclusive: true
+  guideEntry: NanoTrasen
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCargoTechnicianUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - CargoTechnician
+    - !type:CharacterEmployerRequirement
+      employers:
+        - NanoTrasen
+  items:
+    - ClothingUniformJumpsuitNTCargoTech

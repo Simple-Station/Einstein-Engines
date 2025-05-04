@@ -12,12 +12,15 @@
       types:
         Blunt: 11
     bluntStaminaDamageFactor: 2.0
-    heavyRateModifier: 0.5
+    heavyRateModifier: 1.5
     heavyDamageBaseModifier: 1.75
-    heavyStaminaCost: 15
+    heavyStaminaCost: 2.5
     angle: 120
     soundHit:
       collection: ExplosionSmall
+  - type: DamageOtherOnHit
+    soundHit:
+      collection: MetalThud # A throw won't knock them back so it's just a normal thud
   - type: MeleeRequiresWield # You can't hit a home run with one hand, jimbo.
   - type: MeleeThrowOnHit
     speed: 30
@@ -25,7 +28,7 @@
   - type: Item
     size: Large
   - type: Tool
-    speed: 0.5 # it's very heavy, it rolls slower than a wooden bat
+    speedModifier: 0.5 # it's very heavy, it rolls slower than a wooden bat
   - type: UseDelay
     delay: 2
   - type: PhysicalComposition

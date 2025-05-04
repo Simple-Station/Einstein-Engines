@@ -26,6 +26,9 @@ public sealed partial class NPCBlackboard : IEnumerable<KeyValuePair<string, obj
         {"InteractRange", SharedInteractionSystem.InteractionRange},
         {"MaximumIdleTime", 7f},
         {MedibotInjectRange, 4f},
+        {WeldbotWeldRange, 4f},
+        {FillbotPickupRange, 10f},
+        {PlantbotServiceRange, 4f},
         {MeleeMissChance, 0.3f},
         {"MeleeRange", 1f},
         {"MinimumIdleTime", 2f},
@@ -34,6 +37,7 @@ public sealed partial class NPCBlackboard : IEnumerable<KeyValuePair<string, obj
         {"RangedRange", 10f},
         {"RotateSpeed", float.MaxValue},
         {"VisionRadius", 10f},
+        {"AggroVisionRadius", 10f},
     };
 
     /// <summary>
@@ -269,6 +273,13 @@ public sealed partial class NPCBlackboard : IEnumerable<KeyValuePair<string, obj
         return _blackboard.Remove(key);
     }
 
+    public string GetVisionRadiusKey(IEntityManager entMan)
+    {
+        return TryGetValue<EntityUid>("Target", out _, entMan)
+            ? AggroVisionRadius
+            : VisionRadius;
+    }
+
     // I Ummd and Ahhd about using strings vs enums and decided on tags because
     // if a fork wants to do their own thing they don't need to touch the enum.
 
@@ -284,6 +295,9 @@ public sealed partial class NPCBlackboard : IEnumerable<KeyValuePair<string, obj
     public const string FollowTarget = "FollowTarget";
     public const string Inventory = "Inventory";
     public const string MedibotInjectRange = "MedibotInjectRange";
+    public const string WeldbotWeldRange = "WeldbotWeldRange";
+    public const string FillbotPickupRange = "FillbotPickupRange";
+    public const string PlantbotServiceRange = "PlantbotServiceRange";
 
     public const string MeleeMissChance = "MeleeMissChance";
 
@@ -317,8 +331,10 @@ public sealed partial class NPCBlackboard : IEnumerable<KeyValuePair<string, obj
     public const string PathfindKey = "MovementPathfind";
 
     public const string RotateSpeed = "RotateSpeed";
-    public const string VisionRadius = "VisionRadius";
     public const string UtilityTarget = "UtilityTarget";
+
+    private const string VisionRadius = "VisionRadius";
+    private const string AggroVisionRadius = "AggroVisionRadius";
 
     /// <summary>
     /// A configurable "order" enum that can be given to an NPC from an external source.

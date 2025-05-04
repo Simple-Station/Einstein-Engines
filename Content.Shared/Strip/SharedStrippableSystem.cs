@@ -1,5 +1,12 @@
 using Content.Shared.DragDrop;
 using Content.Shared.Hands.Components;
+using Content.Shared.Hands.EntitySystems;
+using Content.Shared.IdentityManagement;
+using Content.Shared.Interaction;
+using Content.Shared.Interaction.Components;
+using Content.Shared.Interaction.Events;
+using Content.Shared.Inventory;
+using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.Popups;
 using Content.Shared.Strip.Components;
 
@@ -66,10 +73,25 @@ public abstract class SharedStrippableSystem : EntitySystem
         PopupType? popupSize = _thieving.GetPopupTypeFromStealth(stealth);
 
         if (popupSize.HasValue) // We should always have a value if we're not hidden
-            _popup.PopupEntity(Loc.GetString(messageId,
-            ("user", subtle ? Loc.GetString("thieving-component-user") : user ?? EntityUid.Invalid),
-            ("item", subtle ? Loc.GetString("thieving-component-item") : item ?? EntityUid.Invalid),
-            ("slot", slot)),
-            target, target, popupSize.Value);
+            _popup.PopupEntity(
+                Loc.GetString(
+                    messageId,
+                ("user", subtle ? Loc.GetString("thieving-component-user") : user ?? EntityUid.Invalid),
+                ("item", subtle ? Loc.GetString("thieving-component-item") : item ?? EntityUid.Invalid),
+                ("slot", slot)),
+            target,
+            target,
+            popupSize.Value);
+    }
+
+    public bool IsStripHidden(SlotDefinition definition, EntityUid? viewer)
+    {
+        if (!definition.StripHidden)
+            return false;
+
+        if (viewer == null)
+            return true;
+
+        return !(HasComp<BypassInteractionChecksComponent>(viewer) || HasComp<ThievingComponent>(viewer));
     }
 }

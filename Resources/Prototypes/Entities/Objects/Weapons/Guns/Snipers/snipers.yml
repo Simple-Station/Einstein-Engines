@@ -39,23 +39,74 @@
         ents: []
   - type: StaticPrice
     price: 500
+  - type: Execution
+  - type: MeleeWeapon
+    attackRate: 1.3333
+    damage:
+      types:
+        Blunt: 8.0
+    bluntStaminaDamageFactor: 1.25
+    swapKeys: true
+    disableHeavy: true
+    wideAnimationRotation: 135
+    animation: WeaponArcThrust
+    soundHit:
+      collection: MetalThud
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2.5
+  - type: DamageOtherOnHit
+    staminaCost: 7.5
 
 - type: entity
   name: Kardashev-Mosin
   parent: [BaseWeaponSniper, BaseGunWieldable]
   id: WeaponSniperMosin
-  description: A weapon for hunting, or endless trench warfare. Uses .30 rifle ammo.
+  description: A weapon for hunting, or endless trench warfare, with a bayonet attached at the barrel. Uses .30 rifle ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
   - type: Gun
-    fireRate: 0.75
+    fireRate: 0.75 
+    damageModifier: 1.5 
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
     fireOnDropChance: 1
+  - type: MeleeWeapon
+    range: 1.75
+    damage:
+      types:
+        Piercing: 7
+        Slash: 3.5
+    wideAnimationRotation: -135
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Piercing: 4
+        Slash: 2
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 8
+        Slash: 3
+  - type: EmbeddableProjectile
+    removalTime: 3.5
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
+  - type: BallisticAmmoProvider
+    capacity: 5
+    autoCycle: false
+    proto: CartridgeLightRifle
+    whitelist:
+      tags:
+      - CartridgeLightRifle
 
 - type: entity
   name: Kardashev-Mosin
@@ -66,6 +117,22 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeLightRifleRubber
+
+- type: entity
+  name: Kardashev-Mosin
+  parent: WeaponSniperMosin
+  id: WeaponSniperMosinEmpty
+  description: A weapon for hunting, or endless trench warfare. Uses .30 rifle ammo.
+  suffix: Empty
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+  - type: ExtendDescription
+    descriptionList:
+      - description: "gun-legality-salvage"
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
 
 - type: entity
   name: Hristov
@@ -84,12 +151,15 @@
     capacity: 5
     proto: CartridgeAntiMateriel
   - type: Telescope
+  - type: GunRequiresWield # DeltaV - Firing an antimateriel rifle is.. incredibly unweildy with one hand.
+  - type: Gun # DeltaV
+    fireRate: 0.5
 
 - type: entity
   name: musket
   parent: BaseWeaponSniper
   id: Musket
-  description: This should've been in a museum long before you were born. Uses .60 anti-materiel ammo.
+  description: This should've been in a museum long before you were born. Uses musket catridges. # Delta V - swapping to our crafted musket ammo
   components:
   - type: Sharp
   - type: Item
@@ -110,25 +180,39 @@
   - type: BallisticAmmoProvider
     whitelist:
       tags:
-      - CartridgeAntiMateriel
+      - CartridgeMusket # DeltaV - musket instead of anti materiel ammo
     capacity: 1
-    proto: CartridgeAntiMateriel
+    proto: CartridgeMusket # DeltaV
   - type: MeleeWeapon
-    wideAnimationRotation: -135
+    range: 1.75
     damage:
       types:
-        Piercing: 15 #you fucking stab em
-        Bloodloss: 2 #no way to apply bleed, triangular bayonet wounds are hard to fix(source:that one copypasta)
-    angle: 0
-    animation: WeaponArcThrust
+        Piercing: 5
+        Slash: 3.5
+    wideAnimationRotation: -135
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Piercing: 4
+        Slash: 2
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 8
+        Slash: 3
+  - type: EmbeddableProjectile
+    removalTime: 3.5
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
 
 - type: entity
   name: flintlock pistol
   parent: BaseWeaponSniper
   id: WeaponPistolFlintlock
-  description: A pirate's companion. Yarrr! Uses .60 anti-materiel ammo.
+  description: A pirate's companion. Yarrr! Uses musket cartridges. # Delta V - Ditto the above
   components:
   - type: Gun
     minAngle: 0
@@ -147,9 +231,17 @@
   - type: BallisticAmmoProvider
     whitelist:
       tags:
-        - CartridgeAntiMateriel
+      - CartridgeMusket # DeltaV - musket instead of anti materiel ammo
     capacity: 1
-    proto: CartridgeAntiMateriel
+    proto: CartridgeMusket # DeltaV
   - type: StaticPrice
     price: 0
-
+  - type: MeleeWeapon
+    attackRate: 1.2
+    damage:
+      types:
+        Blunt: 7.5
+    bluntStaminaDamageFactor: 1.0
+    wideAnimationRotation: 135
+  - type: DamageOtherOnHit
+    staminaCost: 5

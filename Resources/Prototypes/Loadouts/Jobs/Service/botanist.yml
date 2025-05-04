@@ -20,7 +20,18 @@
 # Mask
 
 # Outer
-
+- type: loadout
+  id: LoadoutServiceBotanistWinterCoat
+  category: JobsServiceBotanist
+  cost: 0
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutBotanistOuter
+  - !type:CharacterJobRequirement
+    jobs:
+    - Botanist
+  items:
+  - ClothingOuterWinterHydro
 # Shoes
 
 # Uniforms

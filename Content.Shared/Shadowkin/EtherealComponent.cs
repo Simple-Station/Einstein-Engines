@@ -1,4 +1,7 @@
+using Content.Shared.NPC.Prototypes;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
+
 
 namespace Content.Shared.Shadowkin;
 
@@ -23,6 +26,19 @@ public sealed partial class EtherealComponent : Component
     [DataField]
     public float DarkenRate = 0.084f;
 
+    /// Can this be stunned by ethereal stun objects?
+    [DataField]
+    public bool CanBeStunned = true;
+
+    /// <summary>
+    ///     How much stamina damage does the user take each second they are in the dark realm?
+    /// </summary>
+    [DataField]
+    public float StaminaPerSecond = 1;
+
+    [DataField]
+    public float StaminaDamageOnFlash = 200f;
+
     public List<EntityUid> DarkenedLights = new();
 
     public float DarkenAccumulator;
@@ -31,6 +47,6 @@ public sealed partial class EtherealComponent : Component
 
     public int OldMobLayer;
 
-    public List<string> SuppressedFactions = new();
+    public List<ProtoId<NpcFactionPrototype>> SuppressedFactions = new();
     public bool HasDoorBumpTag;
 }

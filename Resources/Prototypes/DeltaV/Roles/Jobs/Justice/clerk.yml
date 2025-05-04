@@ -3,7 +3,6 @@
   name: job-name-clerk
   description: job-description-clerk
   playTimeTracker: JobClerk
-  antagAdvantage: 2
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -14,6 +13,10 @@
     - !type:CharacterPlaytimeRequirement
       tracker: JobProsecutor
       min: 36000 # 10 hours
+    - !type:CharacterEmployerRequirement
+      employers:
+      - IdrisIncorporated
+      - NanoTrasen
 
 
   startingGear: ClerkGear
@@ -23,11 +26,14 @@
   canBeAntag: false
   access:
   - Justice
+  - Clerk
   - Security
   - Maintenance
 
 - type: startingGear
   id: ClerkGear
+  subGear:
+  - PassengerPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitClerk
     back: ClothingBackpackFilled

@@ -1,8 +1,10 @@
 using System.Linq;
+using Content.Client.Guidebook;
 using Content.Client.Humanoid;
 using Content.Client.Inventory;
 using Content.Client.Lobby.UI;
 using Content.Client.Players.PlayTimeTracking;
+using Content.Client.Station;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Clothing.Loadouts.Systems;
@@ -20,6 +22,7 @@ using Robust.Client.UserInterface.Controllers;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using static Content.Shared.Humanoid.SharedHumanoidAppearanceSystem;
 using CharacterSetupGui = Content.Client.Lobby.UI.CharacterSetupGui;
@@ -36,12 +39,14 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IResourceCache _resourceCache = default!;
     [Dependency] private readonly IStateManager _stateManager = default!;
-    [Dependency] private readonly JobRequirementsManager _requirements = default!;
     [Dependency] private readonly MarkingManager _markings = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly JobRequirementsManager _jobRequirements = default!;
     [UISystemDependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
     [UISystemDependency] private readonly ClientInventorySystem _inventory = default!;
+    [UISystemDependency] private readonly GuidebookSystem _guide = default!;
     [UISystemDependency] private readonly SharedLoadoutSystem _loadouts = default!;
+    [UISystemDependency] private readonly StationSpawningSystem _stationSpawning = default!;
 
     private CharacterSetupGui? _characterSetup;
     private HumanoidProfileEditor? _profileEditor;
@@ -60,7 +65,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
         _prototypeManager.PrototypesReloaded += OnPrototypesReloaded;
         _preferencesManager.OnServerDataLoaded += PreferencesDataLoaded;
-        _requirements.Updated += OnRequirementsUpdated;
+        _jobRequirements.Updated += OnRequirementsUpdated;
 
         _configurationManager.OnValueChanged(CCVars.FlavorText, _ => _profileEditor?.RefreshFlavorText());
         _configurationManager.OnValueChanged(CCVars.GameRoleTimers, _ => RefreshProfileEditor());
@@ -201,8 +206,11 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             _dialogManager,
             _playerManager,
             _prototypeManager,
-            _requirements,
-            _markings);
+            _jobRequirements,
+            _markings,
+            _random);
+
+        _profileEditor.OnOpenGuidebook += _guide.OpenHelp;
 
         _characterSetup = new CharacterSetupGui(EntityManager, _prototypeManager, _resourceCache, _preferencesManager, _profileEditor);
 
@@ -270,6 +278,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             return;
 
         var gear = _prototypeManager.Index<StartingGearPrototype>(job.StartingGear);
+        gear = _stationSpawning.ApplySubGear(gear, profile, job);
 
         foreach (var slot in slots)
         {
@@ -284,6 +293,12 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             var item = EntityManager.SpawnEntity(itemType, MapCoordinates.Nullspace);
             _inventory.TryEquip(dummy, item, slot.Name, true, true);
         }
+    }
+
+    /// Applies loadouts to the dummy.
+    public void GiveDummyLoadout(EntityUid dummy, JobPrototype job, HumanoidCharacterProfile profile)
+    {
+        _loadouts.ApplyCharacterLoadout(dummy, job, profile, _jobRequirements.GetRawPlayTimeTrackers(), _jobRequirements.IsWhitelisted(), out _);
     }
 
     /// Loads the profile onto a dummy entity
@@ -309,7 +324,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             if (jobClothes)
                 GiveDummyJobClothes(dummyEnt, job, humanoid);
             if (loadouts)
-                _loadouts.ApplyCharacterLoadout(dummyEnt, job, humanoid, _jobRequirements.GetRawPlayTimeTrackers(), _jobRequirements.IsWhitelisted(), out _);
+                GiveDummyLoadout(dummyEnt, job, humanoid);
         }
 
         return dummyEnt;

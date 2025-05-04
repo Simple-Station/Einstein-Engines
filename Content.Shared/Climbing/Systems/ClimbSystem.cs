@@ -47,6 +47,7 @@ public sealed partial class ClimbSystem : VirtualController
 
     private EntityQuery<FixturesComponent> _fixturesQuery;
     private EntityQuery<TransformComponent> _xformQuery;
+    private EntityQuery<ClimbableComponent> _climbableQuery;
 
     public override void Initialize()
     {
@@ -226,8 +227,7 @@ public sealed partial class ClimbSystem : VirtualController
             target: climbable,
             used: entityToMove)
         {
-            BreakOnTargetMove = true,
-            BreakOnUserMove = true,
+            BreakOnMove = true,
             BreakOnDamage = true,
             DuplicateCondition = DuplicateConditions.SameTool | DuplicateConditions.SameTarget
         };
@@ -252,6 +252,18 @@ public sealed partial class ClimbSystem : VirtualController
             return;
 
         if (!Resolve(climbable, ref comp, false))
+            return;
+
+        var selfEvent = new SelfBeforeClimbEvent(uid, user, (climbable, comp));
+        RaiseLocalEvent(uid, selfEvent);
+
+        if (selfEvent.Cancelled)
+            return;
+
+        var targetEvent = new TargetBeforeClimbEvent(uid, user, (climbable, comp));
+        RaiseLocalEvent(climbable, targetEvent);
+
+        if (targetEvent.Cancelled)
             return;
 
         if (!ReplaceFixtures(uid, climbing, fixtures))
@@ -362,6 +374,26 @@ public sealed partial class ClimbSystem : VirtualController
             return;
         }
 
+        foreach (var contact in args.OurFixture.Contacts.Values)
+        {
+            if (!contact.IsTouching)
+                continue;
+
+            var otherEnt = contact.OtherEnt(uid);
+            var (otherFixtureId, otherFixture) = contact.OtherFixture(uid);
+
+            // TODO: Remove this on engine.
+            if (args.OtherEntity == otherEnt && args.OtherFixtureId == otherFixtureId)
+                continue;
+
+            if (otherFixture is { Hard: true } &&
+                _climbableQuery.HasComp(otherEnt))
+            {
+                return;
+            }
+        }
+
+        // TODO: Is this even needed anymore?
         foreach (var otherFixture in args.OurFixture.Contacts.Keys)
         {
             // If it's the other fixture then ignore em

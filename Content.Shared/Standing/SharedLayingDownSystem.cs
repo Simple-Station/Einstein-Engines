@@ -6,6 +6,7 @@ using Content.Shared.Input;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Body.Components;
+using Content.Shared._Shitmed.Body.Organ;
 using Content.Shared.Standing;
 using Content.Shared.Popups;
 using Content.Shared.Stunnable;
@@ -13,6 +14,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Player;
 using Robust.Shared.Serialization;
+using Content.Shared.Movement.Components;
 
 namespace Content.Shared.Standing;
 
@@ -145,7 +147,9 @@ public abstract class SharedLayingDownSystem : EntitySystem
             || !_mobState.IsAlive(uid)
             || TerminatingOrDeleted(uid)
             || !TryComp<BodyComponent>(uid, out var body)
-            || body.LegEntities.Count == 0)
+            || body.LegEntities.Count < body.RequiredLegs
+            || HasComp<DebrainedComponent>(uid)
+            || TryComp<MovementSpeedModifierComponent>(uid, out var movement) && movement.CurrentWalkSpeed == 0)
             return false;
 
         var args = new DoAfterArgs(EntityManager, uid, layingDown.StandingUpTime, new StandingUpDoAfterEvent(), uid)

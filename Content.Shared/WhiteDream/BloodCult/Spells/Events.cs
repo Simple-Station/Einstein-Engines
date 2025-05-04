@@ -2,30 +2,20 @@
 using Content.Shared.Chat;
 using Content.Shared.DoAfter;
 using Content.Shared.Magic;
+using Content.Shared.StatusEffect;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.WhiteDream.BloodCult.Spells;
 
-public sealed partial class BloodCultStunEvent : EntityTargetActionEvent, ISpeakSpell
-{
-    [DataField]
-    public TimeSpan ParalyzeDuration = TimeSpan.FromSeconds(16);
-
-    [DataField]
-    public TimeSpan MuteDuration = TimeSpan.FromSeconds(12);
-
-    [DataField]
-    public string? Speech { get; set; }
-
-    public InGameICChatType ChatType => InGameICChatType.Whisper;
-}
-
 public sealed partial class BloodCultTeleportEvent : EntityTargetActionEvent, ISpeakSpell
 {
     [DataField]
     public float Range = 5;
+
+    [DataField]
+    public TimeSpan DoAfterDuration = TimeSpan.FromSeconds(2);
 
     [DataField]
     public string? Speech { get; set; }
@@ -43,23 +33,6 @@ public sealed partial class BloodCultEmpEvent : InstantActionEvent, ISpeakSpell
 
     [DataField]
     public float Duration = 20;
-
-    [DataField]
-    public string? Speech { get; set; }
-
-    public InGameICChatType ChatType => InGameICChatType.Whisper;
-}
-
-public sealed partial class BloodCultShacklesEvent : EntityTargetActionEvent, ISpeakSpell
-{
-    [DataField]
-    public EntProtoId ShacklesProto = "ShadowShackles";
-
-    [DataField]
-    public TimeSpan MuteDuration = TimeSpan.FromSeconds(5);
-
-    [DataField]
-    public TimeSpan KnockdownDuration = TimeSpan.FromSeconds(1);
 
     [DataField]
     public string? Speech { get; set; }
@@ -86,10 +59,38 @@ public sealed partial class SummonEquipmentEvent : InstantActionEvent, ISpeakSpe
     [DataField]
     public string? Speech { get; set; }
 
+    [DataField]
+    public bool Force { get; set; } = true;
+
+    [DataField]
+    public InGameICChatType InvokeChatType = InGameICChatType.Whisper;
+
     public InGameICChatType ChatType => InGameICChatType.Whisper;
 }
 
 public sealed partial class BloodSpearRecalledEvent : InstantActionEvent;
+
+public sealed partial class PlaceTileEntityEvent : WorldTargetActionEvent
+{
+    [DataField]
+    public EntProtoId? Entity;
+
+    [DataField]
+    public string? TileId;
+
+    [DataField]
+    public SoundSpecifier? Audio;
+
+}
+
+public sealed partial class PhaseShiftEvent : InstantActionEvent
+{
+    [DataField]
+    public TimeSpan Duration = TimeSpan.FromSeconds(5);
+
+    [DataField]
+    public ProtoId<StatusEffectPrototype> StatusEffectId = "PhaseShifted";
+}
 
 [Serializable, NetSerializable]
 public sealed partial class TwistedConstructionDoAfterEvent : SimpleDoAfterEvent;
@@ -110,3 +111,8 @@ public sealed partial class TeleportActionDoAfterEvent : SimpleDoAfterEvent
 
 [Serializable, NetSerializable]
 public sealed partial class BloodRitesExtractDoAfterEvent : SimpleDoAfterEvent;
+
+public sealed partial class SpeakOnAuraUseEvent(EntityUid user) : EntityEventArgs
+{
+    public EntityUid User = user;
+}

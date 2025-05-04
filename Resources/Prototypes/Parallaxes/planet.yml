@@ -24,6 +24,16 @@
       shader: ""
 
 - type: parallax
+  id: Desert
+  layers:
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/Tiles/Planet/Desert/desert1.png"
+      slowness: 0
+      scale: "1, 1"
+      shader: ""
+
+- type: parallax
   id: Grass
   layers:
     - texture:

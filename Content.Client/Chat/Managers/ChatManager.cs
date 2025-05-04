@@ -3,6 +3,7 @@ using Content.Client.Ghost;
 using Content.Shared.Administration;
 using Content.Shared.Chat;
 using Robust.Client.Console;
+using Robust.Shared.Network;
 using Robust.Shared.Utility;
 
 namespace Content.Client.Chat.Managers
@@ -21,7 +22,34 @@ namespace Content.Client.Chat.Managers
             _sawmill.Level = LogLevel.Info;
         }
 
-        public void SendMessage(string text, ChatSelectChannel channel)
+    public void SendAdminAlert(string message)
+    {
+        // See server-side manager. This just exists for shared code.
+    }
+
+    public void SendAdminAlert(EntityUid player, string message)
+    {
+        // See server-side manager. This just exists for shared code.
+    }
+
+    public void ChatMessageToAll(
+        ChatChannel channel,
+        string message,
+        string wrappedMessage,
+        EntityUid source,
+        bool hideChat,
+        bool recordReplay,
+        Color? colorOverride = null,
+        string? audioPath = null,
+        float audioVolume = 0,
+        NetUserId? author = null,
+        bool ignoreChatStack = false
+    )
+    {
+        // See server-side code. This method only exists for shared.
+    }
+
+    public void SendMessage(string text, ChatSelectChannel channel)
         {
             var str = text.ToString();
             switch (channel)
@@ -76,7 +104,7 @@ namespace Content.Client.Chat.Managers
                     throw new ArgumentOutOfRangeException(nameof(channel), channel, null);
             }
         }
-        //Nyano - Summary: fires off the update permissions script. 
+        //Nyano - Summary: fires off the update permissions script.
         public void UpdatePermissions()
         {
             PermissionsUpdated?.Invoke();

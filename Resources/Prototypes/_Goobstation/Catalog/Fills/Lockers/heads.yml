@@ -1,0 +1,42 @@
+- type: entity
+  id: LockerNanorepFilled
+  suffix: Filled
+  parent: LockerNanorep
+  components:
+  - type: StorageFill
+    contents:
+    - id: BoxFolderCentCom
+    - id: WeaponDisabler
+    - id: BriefcaseBrownFilled
+    - id: BedsheetCentcom
+    - id: CaneSheathFilledNanotrasen
+    - id: HandheldFaxNanorep
+    # - id: RubberStampNanorep # EE - Replaced by Corporate Liaison stamp in Loadout
+    - id: Paper
+      amount: 2
+
+- type: entity
+  id: LockerBlueshieldOfficerFilled
+  suffix: Filled
+  parent: LockerBlueshieldOfficer
+  components:
+  - type: StorageFill
+    contents:
+    - id: Flash
+    - id: PinpointerNuclear
+    - id: ClothingOuterHardsuitBlueshield
+    - id: ClothingBlueshieldArmoredCoat
+    - id: ClothingShoesBootsMagSec
+
+- type: entity
+  id: LockerMagistrateFilled
+  suffix: Filled
+  parent: LockerMagistrate
+  components:
+  - type: StorageFill
+    contents:
+    - id: BoxFolderCentCom
+    - id: WeaponDisabler
+    - id: BriefcaseBrownFilled
+    - id: RubberStampMagistrate
+    - id: ClothingHeadHatPwig

@@ -58,6 +58,11 @@
     heatDamage:
       types:
         Heat : 1.5 #per second, scales with temperature & other constants
+  - type: TemperatureSpeed
+    thresholds:
+      301: 0.8
+      295: 0.6
+      285: 0.4
   - type: Wagging
   - type: LanguageKnowledge
     speaks:
@@ -69,6 +74,12 @@
   - type: FootPrints
     leftBarePrint: "footprint-left-bare-lizard"
     rightBarePrint: "footprint-right-bare-lizard"
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - UnathiEmotes
 
 - type: entity
   parent: BaseSpeciesDummy

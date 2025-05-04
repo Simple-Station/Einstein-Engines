@@ -4,6 +4,7 @@ using Content.Shared.Flash.Components;
 using Content.Server.Light.EntitySystems;
 using Content.Server.Popups;
 using Content.Server.Stunnable;
+using Content.Shared._Goobstation.Flashbang;
 using Content.Shared.Charges.Components;
 using Content.Shared.Charges.Systems;
 using Content.Shared.Eye.Blinding.Components;
@@ -12,8 +13,8 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
-using Content.Shared.Physics;
 using Content.Shared.Tag;
+using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
@@ -22,7 +23,6 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using InventoryComponent = Content.Shared.Inventory.InventoryComponent;
 using Content.Shared.Traits.Assorted.Components;
-using Robust.Shared.Random;
 using Content.Shared.Eye.Blinding.Systems;
 
 namespace Content.Server.Flash
@@ -50,6 +50,7 @@ namespace Content.Server.Flash
             SubscribeLocalEvent<FlashComponent, MeleeHitEvent>(OnFlashMeleeHit);
             // ran before toggling light for extra-bright lantern
             SubscribeLocalEvent<FlashComponent, UseInHandEvent>(OnFlashUseInHand, before: new []{ typeof(HandheldLightSystem) });
+            SubscribeLocalEvent<FlashComponent, ThrowDoHitEvent>(OnFlashThrowHitEvent);
             SubscribeLocalEvent<InventoryComponent, FlashAttemptEvent>(OnInventoryFlashAttempt);
             SubscribeLocalEvent<FlashImmunityComponent, FlashAttemptEvent>(OnFlashImmunityFlashAttempt);
             SubscribeLocalEvent<PermanentBlindnessComponent, FlashAttemptEvent>(OnPermanentBlindnessFlashAttempt);
@@ -60,10 +61,8 @@ namespace Content.Server.Flash
         {
             if (!args.IsHit ||
                 !args.HitEntities.Any() ||
-                !UseFlash(uid, comp, args.User))
-            {
+                !UseFlash(uid, comp))
                 return;
-            }
 
             args.Handled = true;
             foreach (var e in args.HitEntities)
@@ -74,14 +73,22 @@ namespace Content.Server.Flash
 
         private void OnFlashUseInHand(EntityUid uid, FlashComponent comp, UseInHandEvent args)
         {
-            if (args.Handled || !UseFlash(uid, comp, args.User))
+            if (args.Handled || !UseFlash(uid, comp))
                 return;
 
             args.Handled = true;
             FlashArea(uid, args.User, comp.Range, comp.AoeFlashDuration, comp.SlowTo, true, comp.Probability);
         }
 
-        private bool UseFlash(EntityUid uid, FlashComponent comp, EntityUid user)
+        private void OnFlashThrowHitEvent(EntityUid uid, FlashComponent comp, ThrowDoHitEvent args)
+        {
+            if (!UseFlash(uid, comp))
+                return;
+
+            FlashArea(uid, args.User, comp.Range, comp.AoeFlashDuration, comp.SlowTo, false, comp.Probability);
+        }
+
+        private bool UseFlash(EntityUid uid, FlashComponent comp)
         {
             if (comp.Flashing)
                 return false;
@@ -99,7 +106,7 @@ namespace Content.Server.Flash
             {
                 _appearance.SetData(uid, FlashVisuals.Burnt, true);
                 _tag.AddTag(uid, "Trash");
-                _popup.PopupEntity(Loc.GetString("flash-component-becomes-empty"), user);
+                _popup.PopupEntity(Loc.GetString("flash-component-becomes-empty"), uid);
             }
 
             uid.SpawnTimer(400, () =>
@@ -130,15 +137,6 @@ namespace Content.Server.Flash
             if (attempt.Cancelled)
                 return;
 
-            if (melee)
-            {
-                var ev = new AfterFlashedEvent(target, user, used);
-                if (user != null)
-                    RaiseLocalEvent(user.Value, ref ev);
-                if (used != null)
-                    RaiseLocalEvent(used.Value, ref ev);
-            }
-
             flashDuration *= flashable.DurationMultiplier;
 
             flashable.LastFlash = _timing.CurTime;
@@ -152,7 +150,8 @@ namespace Content.Server.Flash
 
             if (stunDuration != null)
             {
-                _stun.TryParalyze(target, stunDuration.Value, true);
+                // stunmeta
+                _stun.TryKnockdown(target, stunDuration.Value, true);
             }
             else
             {
@@ -187,6 +186,9 @@ namespace Content.Server.Flash
 
                 // They shouldn't have flash removed in between right?
                 Flash(entity, user, source, duration, slowTo, displayPopup, flashableQuery.GetComponent(entity));
+
+                var distance = (mapPosition.Position - _transform.GetMapCoordinates(entity).Position).Length(); // Goobstation
+                RaiseLocalEvent(source, new AreaFlashEvent(range, distance, entity)); // Goobstation
             }
 
             _audio.PlayPvs(sound, source, AudioParams.Default.WithVolume(1f).WithMaxDistance(3f));
@@ -233,24 +235,4 @@ namespace Content.Server.Flash
             Used = used;
         }
     }
-    /// <summary>
-    /// Called after a flash is used via melee on another person to check for rev conversion.
-    /// Raised on the user of the flash, the target hit by the flash, and the flash used.
-    /// </summary>
-    [ByRefEvent]
-    public readonly struct AfterFlashedEvent
-    {
-        public readonly EntityUid Target;
-        public readonly EntityUid? User;
-        public readonly EntityUid? Used;
-
-        public AfterFlashedEvent(EntityUid target, EntityUid? user, EntityUid? used)
-        {
-            Target = target;
-            User = user;
-            Used = used;
-        }
-    }
-
-
 }

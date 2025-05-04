@@ -3,6 +3,11 @@
   abstract: true
   id: MobSiliconBase
   components:
+  - type: Renamable
+  - type: UserInterface
+    interfaces:
+      enum.SharedRenamableInterfaceKey.Key:
+        type: RenamableBoundUserInterface
   - type: LagCompensation
   - type: Reactive
     groups:
@@ -31,6 +36,9 @@
   - type: NpcFactionMember
     factions:
     - SimpleNeutral
+  - type: Access
+    tags:
+    - BasicSilicon
   - type: IntrinsicRadioReceiver
   - type: IntrinsicRadioTransmitter
     channels:
@@ -66,6 +74,7 @@
   - type: Tag
     tags:
     - DoorBumpOpener
+    - SiliconMob
   - type: MobState
     allowedStates:
       - Alive
@@ -165,6 +174,9 @@
     makeSentient: true
     name: ghost-role-information-honkbot-name
     description: ghost-role-information-honkbot-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
@@ -192,6 +204,9 @@
     makeSentient: true
     name: ghost-role-information-jonkbot-name
     description: ghost-role-information-jonkbot-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
     raffle:
       settings: default
   - type: InteractionPopup
@@ -292,6 +307,8 @@
     graph: MediBot
     node: bot
   - type: NoSlip
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-mechanical
   - type: Anchorable
   - type: InteractionPopup
     interactSuccessString: petting-success-medibot
@@ -330,6 +347,9 @@
     makeSentient: true
     name: ghost-role-information-mimebot-name
     description: ghost-role-information-mimebot-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
     raffle:
       settings: default
   - type: GhostTakeoverAvailable

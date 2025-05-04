@@ -1,18 +1,18 @@
 using Robust.Server.GameObjects;
 using Robust.Server.Maps;
 using Robust.Shared.Configuration;
+using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Content.Server.GameTicking;
 using Content.Server.StationEvents.Components;
-using Content.Shared.Salvage;
-using Content.Shared.Random.Helpers;
-using System.Linq;
-using Content.Shared.GameTicking.Components;
+using Content.Server.Station.Components;
+using Content.Server.Station.Systems;
 using Content.Shared.CCVar;
-using Robust.Shared.Serialization.Manager;
-using Content.Shared.Parallax.Biomes;
-using Robust.Shared.Map;
+using Content.Shared.GameTicking.Components;
+using Content.Shared.Random.Helpers;
+using Content.Shared.Salvage;
+using System.Linq;
 
 namespace Content.Server.StationEvents.Events;
 
@@ -24,30 +24,28 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
     [Dependency] private readonly IConfigurationManager _confMan = default!;
     [Dependency] private readonly GameTicker _gameTicker = default!;
     [Dependency] private readonly TransformSystem _xform = default!;
-    [Dependency] private readonly ISerializationManager _serializationManager = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
+    [Dependency] private readonly StationSystem _station = default!;
 
     protected override void Started(EntityUid uid, PirateRadioSpawnRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
         base.Started(uid, component, gameRule, args);
 
-        var stations = _gameTicker.GetSpawnableStations();
-        if (stations is null)
+        var station = _gameTicker.GetSpawnableStations();
+        if (station is null)
             return;
-
-        // Remove any station from the list that is on a Planet's surface.
-        // We have to do this because if we spawn the listening post 1.5 kilometers from the station on a planet
-        // The server will then attempt to generate 7 billion entities, immediately exceeding the 32bit signed integer limit for EntityUids.
-        var stationsCopy = _serializationManager.CreateCopy(stations, notNullableOverride: true);
-        foreach (var station in stationsCopy)
-            if (HasComp<BiomeComponent>(Transform(station).MapUid))
-                stations.Remove(station);
+        var stationGrids = new HashSet<EntityUid>();
+        foreach (var stations in station)
+        {
+            if (TryComp<StationDataComponent>(stations, out var data) && _station.GetLargestGrid(data) is { } grid)
+                stationGrids.Add(grid);
+        }
 
         // _random forces Test Fails if given an empty list. which is guaranteed to happen during Tests.
-        if (stations.Count <= 0)
+        if (stationGrids.Count <= 0)
             return;
 
-        var targetStation = _random.Pick(stations);
+        var targetStation = _random.Pick(stationGrids);
         var targetMapId = Transform(targetStation).MapID;
 
         if (!_mapSystem.MapExists(targetMapId))

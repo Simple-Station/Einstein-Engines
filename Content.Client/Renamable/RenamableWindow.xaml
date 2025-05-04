@@ -1,0 +1,8 @@
+<DefaultWindow xmlns="https://spacestation14.io"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               Title="{Loc 'renamable-ui-header'}">
+    <BoxContainer Orientation="Vertical" SeparationOverride="4" MinWidth="150">
+        <Label Name="CurrentNameLabel" Text="{Loc 'renamable-current-name-label'}" />
+        <LineEdit Name="NameLineEdit" />
+    </BoxContainer>
+</DefaultWindow>

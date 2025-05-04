@@ -34,6 +34,19 @@
 
 # Outer
 - type: loadout
+  id: LoadoutClothingOuterWinterCoatWarden
+  category: JobsSecurityWarden
+  cost: 0
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutWardenOuter
+  - !type:CharacterJobRequirement
+    jobs:
+      - Warden
+  items:
+  - ClothingOuterWinterWardenUnarmored
+
+- type: loadout
   id: LoadoutClothingOuterCoatWarden
   category: JobsSecurityWarden
   cost: 0
@@ -105,3 +118,21 @@
         - Warden
   items:
     - ClothingUniformJumpskirtWardenGrey
+
+- type: loadout
+  id: LoadoutUniformJumpskirtZavodWarden
+  category: JobsSecurityWarden
+  cost: 0
+  exclusive: true
+  guideEntry: ZavodskoiInterstellar
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWardenUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+    - !type:CharacterEmployerRequirement
+      employers:
+        - ZavodskoiInterstellar
+  items:
+    - ClothingUniformJumpsuitZavodWarden

@@ -119,12 +119,19 @@
     Steel: 300
 
 - type: latheRecipe
-  id: ClothingShoesBootsMagSci
-  result: ClothingShoesBootsMagSci
+  id: ClothingShoesBootsMag
+  result: ClothingShoesBootsMag
   completetime: 10
   materials:
     Steel: 1000
     Plastic: 500
+
+- type: latheRecipe
+  id: ClothingShoesBootsMoon
+  result: ClothingShoesBootsMoon
+  completetime: 2
+  materials:
+    Steel: 600
 
 - type: latheRecipe
   id: ClothingShoesBootsSpeed

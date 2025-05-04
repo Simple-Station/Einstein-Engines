@@ -1,103 +1,4 @@
 - type: loadout
-  id: LoadoutHandsColorPurple
-  category: Hands
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingHandsGlovesColorPurple
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves
-
-- type: loadout
-  id: LoadoutHandsColorRed
-  category: Hands
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingHandsGlovesColorRed
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves
-
-- type: loadout
-  id: LoadoutHandsColorBlack
-  category: Hands
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingHandsGlovesColorBlack
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves
-
-- type: loadout
-  id: LoadoutHandsColorBlue
-  category: Hands
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingHandsGlovesColorBlue
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves
-
-- type: loadout
-  id: LoadoutHandsColorBrown
-  category: Hands
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingHandsGlovesColorBrown
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves
-
-- type: loadout
-  id: LoadoutHandsColorGray
-  category: Hands
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingHandsGlovesColorGray
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves
-
-- type: loadout
-  id: LoadoutHandsColorGreen
-  category: Hands
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingHandsGlovesColorGreen
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves
-
-- type: loadout
-  id: LoadoutHandsColorLightBrown
-  category: Hands
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingHandsGlovesColorLightBrown
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves
-
-- type: loadout
-  id: LoadoutHandsColorOrange
-  category: Hands
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingHandsGlovesColorOrange
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves
-
-- type: loadout
   id: LoadoutHandsColorWhite
   category: Hands
   cost: 0
@@ -109,6 +10,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGloves
+    - !type:CharacterSpeciesRequirement # Use the envirogloves that use the same sprite instead.
+      inverted: true
+      species:
+        - Plasmaman
 
 - type: loadout
   id: LoadoutHandsColorYellowBudget
@@ -160,12 +65,74 @@
       group: LoadoutGloves
 
 - type: loadout
-  id: LoadoutHandsGlovesFingerless
+  id: LoadoutHandsGlovesFingerlessWhite
+  category: Hands
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHandsGlovesFingerlessWhite
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Plasmaman
+
+- type: loadout
+  id: LoadoutHandsGlovesEvening
+  category: Hands
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHandsGlovesEvening
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves
+    - !type:CharacterSpeciesRequirement # Use the evening envirogloves that use the same sprite instead.
+      inverted: true
+      species:
+        - Plasmaman
+
+- type: loadout
+  id: LoadoutHandsClothWrap
+  category: Hands
+  cost: 0
+  exclusive: false
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves
+  items:
+    - ClothingClothWrap
+
+- type: loadout
+  id: ClothingHandsTacticalMaidGlovesLoadout
   category: Hands
   cost: 0
   exclusive: true
   items:
-    - ClothingHandsGlovesFingerless
+    - ClothingHandsTacticalMaidGlovesLoadout
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGloves
+
+- type: loadout
+  id: ClothingHandsGlovesCombatTCAF
+  category: Hands
+  cost: 3
+  canBeHeirloom: true
+  guideEntry: TCFLInfo
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+  items:
+    - ClothingHandsGlovesCombatTCAF

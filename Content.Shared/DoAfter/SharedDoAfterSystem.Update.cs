@@ -1,6 +1,12 @@
 using Content.Shared.Gravity;
 using Content.Shared.Hands.Components;
+using Content.Shared.Interaction;
+using Content.Shared.Physics;
 using Robust.Shared.Utility;
+
+// Shitmed Change
+using Content.Shared._Shitmed.Antags.Abductor;
+using Content.Shared.Silicons.StationAi;
 
 namespace Content.Shared.DoAfter;
 
@@ -8,6 +14,7 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
 {
     [Dependency] private readonly IDynamicTypeFactory _factory = default!;
     [Dependency] private readonly SharedGravitySystem _gravity = default!;
+    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
 
     private DoAfter[] _doAfters = Array.Empty<DoAfter>();
 
@@ -164,20 +171,49 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
             return true;
 
         // TODO: Re-use existing xform query for these calculations.
-        // when there is no gravity you will be drifting 99% of the time making many doafters impossible
-        // so this just ignores your movement if you are weightless (unless the doafter sets BreakOnWeightlessMove then moving will still break it)
-        if (args.BreakOnUserMove
-            && !userXform.Coordinates.InRange(EntityManager, _transform, doAfter.UserPosition, args.MovementThreshold)
-            && (args.BreakOnWeightlessMove || !_gravity.IsWeightless(args.User, xform: userXform)))
-            return true;
-
-        if (args.BreakOnTargetMove)
+        if (args.BreakOnMove && !(!args.BreakOnWeightlessMove && _gravity.IsWeightless(args.User, xform: userXform)))
         {
-            DebugTools.Assert(targetXform != null, "Break on move is true, but no target specified?");
-            if (targetXform != null && targetXform.Coordinates.TryDistance(EntityManager, userXform.Coordinates, out var distance))
+            // Whether the user has moved too much from their original position.
+            if (!userXform.Coordinates.InRange(EntityManager, _transform, doAfter.UserPosition, args.MovementThreshold))
+                return true;
+
+            // Whether the distance between the user and target(if any) has changed too much.
+            if (targetXform != null &&
+                targetXform.Coordinates.TryDistance(EntityManager, userXform.Coordinates, out var distance))
             {
-                // once the target moves too far from you the do after breaks
                 if (Math.Abs(distance - doAfter.TargetDistance) > args.MovementThreshold)
+                    return true;
+            }
+        }
+
+        // Whether the user and the target are too far apart.
+        if (args.Target != null)
+        {
+            if (args.DistanceThreshold != null)
+            {
+                if (!_interaction.InRangeUnobstructed(args.User, args.Target.Value, args.DistanceThreshold.Value))
+                    return true;
+            }
+            else
+            {
+                if (!_interaction.InRangeUnobstructed(args.User, args.Target.Value))
+                    return true;
+            }
+        }
+
+        // Whether the distance between the tool and the user has grown too much.
+        if (args.Used != null)
+        {
+            if (args.DistanceThreshold != null)
+            {
+                if (!_interaction.InRangeUnobstructed(args.User,
+                        args.Used.Value,
+                        args.DistanceThreshold.Value))
+                    return true;
+            }
+            else
+            {
+                if (!_interaction.InRangeUnobstructed(args.User,args.Used.Value))
                     return true;
             }
         }
@@ -197,26 +233,10 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
             }
         }
 
-        if (args.RequireCanInteract && !_actionBlocker.CanInteract(args.User, args.Target))
+        var hasNoSpecificComponents = !HasComp<StationAiOverlayComponent>(args.User) && !HasComp<AbductorScientistComponent>(args.User); // Shitmed Change
+        if (args.RequireCanInteract && !_actionBlocker.CanInteract(args.User, args.Target) && hasNoSpecificComponents) // Shitmed Change
             return true;
 
-        if (args.DistanceThreshold != null)
-        {
-            if (targetXform != null
-                && !args.User.Equals(args.Target)
-                && !userXform.Coordinates.InRange(EntityManager, _transform, targetXform.Coordinates,
-                    args.DistanceThreshold.Value))
-            {
-                return true;
-            }
-
-            if (usedXform != null
-                && !userXform.Coordinates.InRange(EntityManager, _transform, usedXform.Coordinates,
-                    args.DistanceThreshold.Value))
-            {
-                return true;
-            }
-        }
 
         return false;
     }

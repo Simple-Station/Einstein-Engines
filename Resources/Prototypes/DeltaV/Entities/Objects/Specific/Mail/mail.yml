@@ -111,7 +111,7 @@
     - id: BookBartendersManual
       prob: 0.2
       orGroup: bookguide
-    - id: BookChefGaming
+    - id: BookHowToCookForFortySpaceman
       prob: 0.2
       orGroup: bookguide
     - id: BookLeafLoversSecret
@@ -778,6 +778,9 @@
       prob: 0.5
       orGroup: Plushie
     - id: PlushieMothBartender
+      prob: 0.5
+      orGroup: Plushie
+    - id: PlushieShadowkin
       prob: 0.5
       orGroup: Plushie
 
@@ -1661,6 +1664,8 @@
   - type: Mail
     contents:
     - id: CrayonBox
+    - id: CrayonMagic
+    - prob: .10
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -1816,3 +1821,37 @@
       orGroup: Coat
     - id: ClothingOuterWinterCoatPlaid
       orGroup: Coat
+
+- type: entity
+  parent: BaseMail
+  id: MailHydroCoPowderJuice
+  suffix: HydroCo powder juice
+  components:
+  - type: Mail
+    contents:
+    - id: ReagentTinPowderedJuiceLemon
+      orGroup: Juice
+    - id: ReagentTinPowderedJuiceLime
+      orGroup: Juice
+    - id: ReagentTinPowderedJuicePineapple
+      orGroup: Juice
+    - id: ReagentTinPowderedJuiceBanana
+      orGroup: Juice
+    - id: ReagentTinPowderedJuiceBerry
+      orGroup: Juice
+    - id: ReagentTinPowderedJuiceWatermelon
+      orGroup: Juice
+    - id: ReagentTinPowderedJuiceGrape
+      orGroup: Juice
+    - id: ReagentTinPowderedJuiceApple
+      orGroup: Juice
+    - id: ReagentTinPowderedJuiceCherry
+      orGroup: Juice
+    - id: ReagentTinPowderedJuiceCarrot
+      orGroup: Juice
+    - id: ReagentTinPowderedJuiceTomato
+      orGroup: Juice
+    - id: SpoonPlastic
+      amount: 1
+    - id: PaperMailHydroCoTrial
+      amount: 1

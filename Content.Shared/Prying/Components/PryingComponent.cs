@@ -3,13 +3,13 @@ using Robust.Shared.GameStates;
 
 namespace Content.Shared.Prying.Components;
 
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class PryingComponent : Component
 {
     /// <summary>
     /// Whether the entity can pry open powered doors
     /// </summary>
-    [DataField("pryPowered")]
+    [DataField("pryPowered"), AutoNetworkedField]
     public bool PryPowered = false;
 
     /// <summary>
@@ -22,7 +22,7 @@ public sealed partial class PryingComponent : Component
     /// Modifier on the prying time.
     /// Lower values result in more time.
     /// </summary>
-    [DataField("speedModifier")]
+    [DataField("speedModifier"), AutoNetworkedField]
     public float SpeedModifier = 1.0f;
 
     /// <summary>

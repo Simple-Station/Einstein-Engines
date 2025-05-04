@@ -9,6 +9,7 @@
   - type: CombatMode
   - type: InputMover
   - type: MobMover
+  - type: Absorbable
   - type: HTN
     rootTask:
       task: XenoCompound
@@ -22,7 +23,7 @@
       NavSmash: !type:Bool
         true
   - type: Tool
-    speed: 1.5
+    speedModifier: 1.5
     qualities:
       - Prying
   - type: Prying
@@ -40,6 +41,7 @@
     factions:
     - Xeno
   - type: Hands
+  - type: ComplexInteraction
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Aliens/Xenos/burrower.rsi
@@ -129,8 +131,10 @@
     molsPerSecondPerUnitMass: 0.0005
   - type: Speech
     speechVerb: LargeMob
+    speechSounds: Xenonid # DeltaV: Use RMC's speech sounds for sentient xenos
   - type: Psionic
     removable: false
+    roller: false
   - type: InnatePsionicPowers
     powersToAdd:
       - TelepathyPower
@@ -139,6 +143,13 @@
     - Xeno
     understands:
     - Xeno
+  - type: ThermalVision
+    isActive: true
+    lightRadius: 15
+    color: "#808080"
+    activateSound: null
+    deactivateSound: null
+  - type: Fauna # Lavaland Change
 
 - type: entity
   name: Praetorian
@@ -152,6 +163,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: running
+  - type: Absorbable
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -186,6 +198,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: running
+  - type: Absorbable
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -224,6 +237,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: running
+  - type: Absorbable
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -264,6 +278,7 @@
   parent: MobXeno
   id: MobXenoRavagerNPC # Delta V - These no longer inherit the ghost takeover comp
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Aliens/Xenos/ravager.rsi
@@ -302,6 +317,7 @@
   parent: MobXeno
   id: MobXenoRunnerNPC # Delta V - These no longer inherit the ghost takeover comp
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Aliens/Xenos/runner.rsi
@@ -348,6 +364,7 @@
   parent: MobXeno
   id: MobXenoSpitterNPC # Delta V - These no longer inherit the ghost takeover comp
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Aliens/Xenos/spitter.rsi
@@ -396,6 +413,7 @@
   id: MobPurpleSnake
   description: A menacing purple snake from Kepler-283c.
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Aliens/Xenos/purple_snake.rsi
@@ -462,6 +480,7 @@
   suffix: small
   description: A smaller version of the menacing purple snake from Kepler-283c.
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Aliens/Xenos/purple_snake.rsi

@@ -6,6 +6,9 @@ namespace Content.Server.Medical.Components;
 /// <summary>
 /// After scanning, retrieves the target Uid to use with its related UI.
 /// </summary>
+/// <remarks>
+/// Requires <c>ItemToggleComponent</c>.
+/// </remarks>
 [RegisterComponent, AutoGenerateComponentPause]
 [Access(typeof(HealthAnalyzerSystem), typeof(CryoPodSystem))]
 public sealed partial class HealthAnalyzerComponent : Component
@@ -36,7 +39,7 @@ public sealed partial class HealthAnalyzerComponent : Component
     public EntityUid? ScannedEntity;
 
     /// <summary>
-    /// The body part that is currently being scanned.
+    /// Shitmed Change: The body part that is currently being scanned.
     /// </summary>
     [DataField]
     public EntityUid? CurrentBodyPart;
@@ -57,5 +60,11 @@ public sealed partial class HealthAnalyzerComponent : Component
     /// Sound played on scanning end
     /// </summary>
     [DataField]
-    public SoundSpecifier? ScanningEndSound;
+    public SoundSpecifier ScanningEndSound = new SoundPathSpecifier("/Audio/Items/Medical/healthscanner.ogg");
+
+    /// <summary>
+    /// Whether to show up the popup
+    /// </summary>
+    [DataField]
+    public bool Silent;
 }

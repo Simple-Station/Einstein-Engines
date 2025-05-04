@@ -167,7 +167,7 @@
 - type: entity
   parent: ClothingHeadHeadHatBaseFlippable
   id: ClothingHeadHatMimesoft
-  name: mime cap
+  name: baseball cap
   description: "It's a baseball hat in a tasteless white colour."
   components:
   - type: Sprite
@@ -178,7 +178,7 @@
 - type: entity
   parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatMimesoft]
   id: ClothingHeadHatMimesoftFlipped
-  name: mime cap
+  name: baseball cap
 
 - type: entity
   parent: ClothingHeadHeadHatBaseFlippable

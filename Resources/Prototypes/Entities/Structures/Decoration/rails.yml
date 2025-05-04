@@ -1,0 +1,95 @@
+- type: entity
+  id: Rails
+  name: railway
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: Structures/Decoration/rails64.rsi
+    state: rails
+    netsync: false
+    drawdepth: FloorObjects
+  - type: Damageable
+    damageModifierSet: Wood
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Clickable
+
+- type: entity
+  parent: Rails
+  id: RailsJunctionRightTop
+  suffix: junction right top
+  components:
+  - type: Sprite
+    state: junction-right-top
+
+- type: entity
+  parent: Rails
+  id: RailsJunctionLeftTop
+  suffix: junction left top
+  components:
+  - type: Sprite
+    state: junction-left-top
+
+- type: entity
+  parent: Rails
+  id: RailsJunctionRightBottom
+  suffix: junction right bottom
+  components:
+  - type: Sprite
+    state: junction-right-bottom
+
+- type: entity
+  parent: Rails
+  id: RailsJunctionLeftBottom
+  suffix: junction left bottom
+  components:
+  - type: Sprite
+    state: junction-left-bottom
+
+- type: entity
+  parent: Rails
+  id: RailsTurnWS
+  suffix: turn west-south
+  components:
+  - type: Sprite
+    state: turn-WS
+
+- type: entity
+  parent: Rails
+  id: RailsTurnNW
+  suffix: turn north-west
+  components:
+  - type: Sprite
+    state: turn-NW
+
+- type: entity
+  parent: Rails
+  id: RailsTurnNE
+  suffix: turn north-east
+  components:
+  - type: Sprite
+    state: turn-NE
+
+- type: entity
+  parent: Rails
+  id: RailsTurnSE
+  suffix: turn south-east
+  components:
+  - type: Sprite
+    state: turn-SE
