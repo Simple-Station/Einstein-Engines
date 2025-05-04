@@ -507,16 +507,19 @@
     state: bonemass
   - type: Item
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: Bones
+      amount: 5
 
 - type: entity
-  id: FishSludgefishPurple
-  parent: BaseFish
-  name: sludgefish purple
-  description: A slimy, pollution-adapted fish with a toxic purple hue.
+  id: FishSludgefish
+  name: sludge fish
+  description: A fish that looks as gross as the water it swims in.
   components:
   - type: Sprite
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
-    state: sludgefish_purple
+    state: sludgefish
   - type: Item
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
 
@@ -759,6 +762,15 @@
     state: lubefish
   - type: Item
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        output:
+        maxVol: 30
+        reagents:
+        - ReagentId: SpaceLube
+          Quantity: 30
+  - type: Lube
 
 - type: entity
   id: FishFirefish
@@ -771,6 +783,24 @@
     state: firefish
   - type: Item
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    damage:
+      types:
+        Heat: 6
+  - type: DamageOtherOnHit
+  - type: PointLight
+    enabled: true
+    netsync: false
+    radius: 3
+    color: red
+  - type: Cautery
+    speed: 0.45
+  - type: SurgeryTool
+    startSound:
+      collection: lighterOnSounds
+    endSound:
+      collection: lighterOffSounds
 
 - type: entity
   id: FishArmorfish
@@ -783,6 +813,10 @@
     state: armorfish
   - type: Item
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: Steel
+      amount: 10
 
 - type: entity
   id: FishRatfish
@@ -795,6 +829,10 @@
     state: ratfish
   - type: Item
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatRat
+      amount: 1
 
 - type: entity
   id: FishArcticChrab
@@ -807,6 +845,24 @@
     state: arctic_chrab
   - type: Item
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    damage:
+      types:
+        Heat: 6
+  - type: DamageOtherOnHit
+  - type: PointLight
+    enabled: true
+    netsync: false
+    radius: 3
+    color: blue
+  - type: Cautery
+    speed: 0.45
+  - type: SurgeryTool
+    startSound:
+      collection: lighterOnSounds
+    endSound:
+      collection: lighterOffSounds
 
 - type: entity
   id: FishHalfFish
@@ -819,6 +875,12 @@
     state: half_fish
   - type: Item
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatFish
+      amount: 1
+    - id: Bones
+      amount: 10
 
 - type: entity
   id: FishSlimefish
@@ -831,18 +893,33 @@
     state: slimefish
   - type: Item
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSlime
+      amount: 1
 
 - type: entity
-  id: FishSludgefish
+  id: FishSludgefishPurple
   parent: BaseFishRare
-  name: sludge fish
-  description: A fish that looks as gross as the water it swims in.
+  name: sludgefish purple
+  description: A slimy, pollution-adapted fish with a toxic purple hue.
   components:
   - type: Sprite
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
-    state: sludgefish
+    state: sludgefish_purple
   - type: Item
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    damage:
+      types:
+        Poison: 8
+  - type: DamageOtherOnHit
+  - type: PointLight
+    enabled: true
+    netsync: false
+    radius: 6
+    color: purple
 
 - type: entity
   id: FishLavaLoop
@@ -855,6 +932,17 @@
     state: lava_loop
   - type: Item
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    damage:
+      types:
+        Heat: 8
+  - type: DamageOtherOnHit
+  - type: PointLight
+    enabled: true
+    netsync: false
+    radius: 6
+    color: orange
 
 - type: entity
   id: FishPlasmaLoop
@@ -867,6 +955,10 @@
     state: plasma_loop
   - type: Item
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: Plasma
+      amount: 1
 
 - type: entity
   id: FishCheckered
