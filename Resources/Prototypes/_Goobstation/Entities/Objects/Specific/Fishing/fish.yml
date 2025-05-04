@@ -766,7 +766,6 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        output:
         maxVol: 30
         reagents:
         - ReagentId: SpaceLube
