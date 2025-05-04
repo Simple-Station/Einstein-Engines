@@ -578,6 +578,7 @@
   category: Head
   cost: 0
   canBeHeirloom: true
+  exclusive: true
   guideEntry: TCFLInfo
   items:
     - ClothingHeadHatTCAFBeretDress
@@ -596,6 +597,7 @@
   category: Head
   cost: 0
   canBeHeirloom: true
+  exclusive: true
   guideEntry: TCFLInfo
   items:
     - ClothingHeadHatTCAFBeretField
@@ -614,6 +616,7 @@
   category: Head
   cost: 0
   canBeHeirloom: true
+  exclusive: true
   guideEntry: TCFLInfo
   items:
     - ClothingHeadHatTCFLBeretDress
@@ -632,6 +635,7 @@
   category: Head
   cost: 0
   canBeHeirloom: true
+  exclusive: true
   guideEntry: TCFLInfo
   items:
     - ClothingHeadHatTCFLBeretField
@@ -650,6 +654,7 @@
   category: Head
   cost: 0
   canBeHeirloom: true
+  exclusive: true
   guideEntry: TCFLInfo
   items:
     - ClothingHeadHatTCFLBeretSentinel
@@ -668,6 +673,7 @@
   category: Head
   cost: 0
   canBeHeirloom: true
+  exclusive: true
   guideEntry: TCFLInfo
   items:
     - ClothingHeadHatTCFLSoftCap
@@ -687,6 +693,7 @@
   category: Head
   cost: 0
   canBeHeirloom: true
+  exclusive: true
   guideEntry: SANInfo
   items:
     - ClothingHeadHatSANArmyCap
@@ -705,6 +712,7 @@
   category: Head
   cost: 0
   canBeHeirloom: true
+  exclusive: true
   guideEntry: SANInfo
   items:
     - ClothingHeadHatSANArmyField
@@ -723,6 +731,7 @@
   category: Head
   cost: 0
   canBeHeirloom: true
+  exclusive: true
   guideEntry: SANInfo
   items:
     - ClothingHeadHatSANArmyFieldGrey
@@ -741,6 +750,7 @@
   category: Head
   cost: 0
   canBeHeirloom: true
+  exclusive: true
   guideEntry: SANInfo
   items:
     - ClothingHeadHatSANArmyGarrison
@@ -759,6 +769,7 @@
   category: Head
   cost: 0
   canBeHeirloom: true
+  exclusive: true
   guideEntry: SANInfo
   items:
     - ClothingHeadHatSANMarineUtility
@@ -777,6 +788,7 @@
   category: Head
   cost: 0
   canBeHeirloom: true
+  exclusive: true
   guideEntry: SANInfo
   items:
     - ClothingHeadHatSANMarineUtilityGrey
@@ -795,6 +807,7 @@
   category: Head
   cost: 0
   canBeHeirloom: true
+  exclusive: true
   guideEntry: SANInfo
   items:
     - ClothingHeadHatSANNavyCap
@@ -813,6 +826,7 @@
   category: Head
   cost: 0
   canBeHeirloom: true
+  exclusive: true
   guideEntry: SANInfo
   items:
     - ClothingHeadHatSANWheelCap
