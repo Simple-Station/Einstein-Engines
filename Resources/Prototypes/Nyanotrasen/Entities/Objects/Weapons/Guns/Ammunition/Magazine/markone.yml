@@ -1,6 +1,6 @@
 - type: entity
   id: MagazineLightRifleMarkOneEmpty
-  name: Mark 1 Rifle En-bloc (.30 rifle any)
+  name: "Mark 1 Rifle En-bloc (.30 rifle any)"
   suffix: empty
   parent: MagazineLightRifle
   components:
@@ -25,7 +25,7 @@
 
 - type: entity
   id: MagazineLightRifleMarkOne
-  name: Mark 1 Rifle En-bloc (.30 rifle)
+  name: "Mark 1 Rifle En-bloc (.30 rifle)"
   parent: BaseMagazineLightRifle
   components:
   - type: tag
