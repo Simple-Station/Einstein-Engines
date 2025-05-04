@@ -130,6 +130,7 @@
         state: "creampie_moth"
         visible: false
   - type: FootPrints
+  - type: CanMoveInAir
 
 - type: entity
   parent: BaseSpeciesDummy
