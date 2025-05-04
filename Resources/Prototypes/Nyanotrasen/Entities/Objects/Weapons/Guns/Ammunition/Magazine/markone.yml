@@ -5,6 +5,7 @@
   parent: MagazineLightRifle
   components:
   - type: Tag
+    tags:
     - MagazineMarkOne
   - type: BallisticAmmoProvider
     proto: null
@@ -29,6 +30,7 @@
   parent: BaseMagazineLightRifle
   components:
   - type: Tag
+    tags:
     - MagazineMarkOne
   - type: BallisticAmmoProvider
     proto: CartridgeLightRifle
