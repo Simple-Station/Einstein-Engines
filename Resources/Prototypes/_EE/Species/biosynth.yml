@@ -6,7 +6,7 @@
   sprites: MobHumanSprites
   defaultSkinTone: "#FFFFFFFF"
   markingLimits: MobHumanMarkingLimits
-  dollPrototype: MobHumanDummy
+  dollPrototype: BioSynthTorso
   skinColoration: Hues
   sexes:
   - Unsexed

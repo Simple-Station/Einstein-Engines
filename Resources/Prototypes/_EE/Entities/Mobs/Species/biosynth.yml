@@ -10,7 +10,9 @@
     requiredLegs: 2
   - type: Renamable
     singleUse: true
-  - type: ChangableGender
+  - type: ChangeableGender
+    singleUse: true
+  - type: ChangeableSex
     singleUse: true
   - type: UserInterface
     interfaces:

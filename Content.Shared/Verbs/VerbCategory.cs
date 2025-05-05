@@ -114,5 +114,6 @@ namespace Content.Shared.Verbs
         public static readonly VerbCategory Switch = new("verb-categories-switch", "/Textures/Interface/VerbIcons/group.svg.192dpi.png");
 
         public static readonly VerbCategory GenderChange = new("verb-categories-gender-change");
+        public static readonly VerbCategory SexChange = new("verb-categories-sex-change");
     }
 }
