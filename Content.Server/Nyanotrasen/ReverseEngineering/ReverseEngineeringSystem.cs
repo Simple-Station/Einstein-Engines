@@ -235,7 +235,7 @@ public sealed class ReverseEngineeringSystem : EntitySystem
 
         if (!TryComp<ReverseEngineeringComponent>(component.CurrentItem, out var rev))
         {
-            Logger.Error("We somehow scanned a " + component.CurrentItem + " for reverse engineering...");
+            Logger.GetSawmill("reversengineering").Error("We somehow scanned a " + component.CurrentItem + " for reverse engineering...");
             return;
         }
 

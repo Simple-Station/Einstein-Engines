@@ -48,7 +48,7 @@ namespace Content.Server.MoMMI
 
             if (string.IsNullOrWhiteSpace(password))
             {
-                Logger.WarningS("mommi", "MoMMI URL specified but not password!");
+                Logger.GetSawmill("mommi").Debug("MoMMI URL specified but not password!");
                 return;
             }
 

@@ -42,7 +42,7 @@ public sealed partial class GuideReagentGroupEmbed : BoxContainer, IDocumentTag
         control = null;
         if (!args.TryGetValue("Group", out var group))
         {
-            Logger.Error("Reagent group embed tag is missing group argument");
+            Logger.GetSawmill("guide.regentgroup.embed").Error("Reagent group embed tag is missing group argument");
             return false;
         }
 

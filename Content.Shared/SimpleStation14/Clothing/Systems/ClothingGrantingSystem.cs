@@ -30,7 +30,7 @@ public sealed class ClothingGrantingSystem : EntitySystem
 
         if (component.Components.Count > 1)
         {
-            Logger.Error("Although a component registry supports multiple components, we cannot bookkeep more than 1 component for ClothingGrantComponent at this time.");
+            Logger.GetSawmill("clothinggrantingsystem").Error("Although a component registry supports multiple components, we cannot bookkeep more than 1 component for ClothingGrantComponent at this time.");
             return;
         }
 

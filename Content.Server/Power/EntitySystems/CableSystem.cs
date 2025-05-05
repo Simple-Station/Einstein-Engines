@@ -17,7 +17,6 @@ public sealed partial class CableSystem : EntitySystem
     [Dependency] private readonly SharedToolSystem _toolSystem = default!;
     [Dependency] private readonly StackSystem _stack = default!;
     [Dependency] private readonly ElectrocutionSystem _electrocutionSystem = default!;
-    [Dependency] private readonly IAdminLogManager _adminLogs = default!;
 
     public override void Initialize()
     {
