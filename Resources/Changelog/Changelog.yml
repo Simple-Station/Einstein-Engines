@@ -15915,3 +15915,13 @@ Entries:
   id: 7235
   time: '2025-05-04T21:10:26.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2332
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Attempting to spawn in with an invalid trait list will now simply
+        prevent you from spawning with any traits at all. It will also inform
+        any admins who may be online of the attempt. 
+  id: 7236
+  time: '2025-05-05T01:39:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2410
