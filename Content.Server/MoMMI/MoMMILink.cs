@@ -18,11 +18,14 @@ namespace Content.Server.MoMMI
         [Dependency] private readonly IStatusHost _statusHost = default!;
         [Dependency] private readonly IChatManager _chatManager = default!;
         [Dependency] private readonly ITaskManager _taskManager = default!;
-        private readonly ISawmill _sawmill = Logger.GetSawmill("mommi");
+        private  ISawmill _sawmill = default!;
         private readonly HttpClient _httpClient = new();
+
+        
 
         void IPostInjectInit.PostInject()
         {
+            _sawmill = Logger.GetSawmill("mommi");
             _statusHost.AddHandler(HandleChatPost);
         }
 
