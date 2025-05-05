@@ -43,12 +43,30 @@
           - ItemMask
         density: 1000
         hard: false
+      # Goobstation - fishing
+      fishing:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.4
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
+      # Goobstation - fishing
   - type: FootstepModifier
     footstepSoundCollection:
       collection: N14FootstepWater
       params:
         volume: 8
-
+  # Goobstation - fishing
+  - type: FishingSpot
+    fishList: !type:NestedSelector
+      tableId: WaterFishingLootTable
+    fishDefaultTimer: 25.0
+    fishTimerVariety: 15.0
+  # Goobstation - fishing
 
 - type: entity
   parent: N14FloorWaterDirtyEntity
