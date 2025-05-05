@@ -187,6 +187,19 @@
         - IPC
 
 - type: trait
+  id: IPCFragileCircuits
+  category: Physical
+  points: 4 # shock is rare as-is, maybe raise if it becomes more common
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: KillOnShock
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+
+- type: trait
   id: IPCFaultyWaterproofing
   category: Physical
   points: 3
@@ -216,19 +229,6 @@
                   visualType: LargeCaution
                   messages: [ "faultyWaterproofing-damage-popup" ]
                   probability: 1
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      species:
-        - IPC
-
-- type: trait
-  id: IPCFragileCircuits
-  category: Physical
-  points: 4 # shock is rare as-is, maybe raise if it becomes more common
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: KillOnShock
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
