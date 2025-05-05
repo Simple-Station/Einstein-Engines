@@ -165,7 +165,7 @@ public abstract partial class SharedSurgerySystem
         }
 
 
-        if (!HasComp<ForcedSleepingComponent>(args.Body) || !HasComp<NoScreamComponent>(args.Body))
+        if (!HasComp<ForcedSleepingComponent>(args.Body) && !HasComp<NoScreamComponent>(args.Body))
             RaiseLocalEvent(args.Body, new MoodEffectEvent("SurgeryPain"));
         // Morphine - reenable this :)
         if (!_inventory.TryGetSlotEntity(args.User, "gloves", out var _)
