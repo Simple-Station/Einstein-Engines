@@ -25,5 +25,3 @@ public sealed partial class ChangeableGenderComponent : Component
         };
 
 }
-[ByRefEvent]
-public record struct GenderChangeEvent(EntityUid Uid, Gender Gender);

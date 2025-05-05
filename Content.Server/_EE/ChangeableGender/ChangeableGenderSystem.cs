@@ -1,6 +1,4 @@
 using Content.Shared.Humanoid;
-using Content.Shared.IdentityManagement;
-using Content.Shared.IdentityManagement.Components;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Robust.Shared.GameObjects.Components.Localization;
@@ -24,7 +22,7 @@ public sealed class ChangeableGenderSystem : EntitySystem
         if (!args.CanInteract || !args.CanAccess)
             return;
 
-        if (!TryComp<ChangeableGenderComponent>(uid, out var comp) || !TryComp<HumanoidAppearanceComponent>(uid, out var app))
+        if (!TryComp<HumanoidAppearanceComponent>(uid, out var app))
             return;
 
         var priority = 0;
@@ -40,17 +38,7 @@ public sealed class ChangeableGenderSystem : EntitySystem
                     _appearance.SetGender(uid, entry.Value, app);
                     _popup.PopupEntity(Loc.GetString("changeable-gender-component-gender-set", ("pronouns", entry.Key)),
                         args.User, args.User);
-                    if (TryComp<GrammarComponent>(uid, out var grammar))
-                    {
-                        grammar.Gender = entry.Value;
-                        Dirty(uid, grammar);
-                    }
-                    if (TryComp<IdentityComponent>(uid, out var identity))
-                    {
-                        var ev = new GenderChangeEvent(uid, entry.Value);
-                        RaiseLocalEvent(uid, ref ev, true);
-                    }
-                    if (comp.SingleUse)
+                    if (component.SingleUse)
                         RemCompDeferred<ChangeableGenderComponent>(uid);
                 }
             };

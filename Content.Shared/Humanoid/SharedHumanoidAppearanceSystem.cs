@@ -22,6 +22,7 @@ using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Serialization.Markdown;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
+using Content.Shared._EE.GenderChange;
 
 namespace Content.Shared.Humanoid;
 
@@ -562,8 +563,13 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     {
         if (!Resolve(uid, ref humanoid) || humanoid.Gender == gender)
             return;
-
+        if (TryComp<GrammarComponent>(uid, out var grammar))
+        {
+            grammar.Gender = gender;
+            Dirty(uid, grammar);
+        }
         humanoid.Gender = gender;
+        RaiseLocalEvent(uid, new GenderChangeEvent(uid, gender), true);
         Dirty(uid, humanoid);
     }
 }
