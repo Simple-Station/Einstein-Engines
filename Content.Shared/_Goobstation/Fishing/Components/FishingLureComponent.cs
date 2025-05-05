@@ -11,7 +11,7 @@ public sealed partial class FishingLureComponent : Component
     [DataField, AutoNetworkedField]
     public EntityUid? AttachedEntity;
 
-    [ViewVariables]
+    [ViewVariables, AutoNetworkedField]
     public TimeSpan NextUpdate;
 
     [DataField]
