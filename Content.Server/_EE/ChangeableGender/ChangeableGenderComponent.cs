@@ -9,7 +9,7 @@ namespace Content.Server._EE.ChangeableGender;
 public sealed partial class ChangeableGenderComponent : Component
 {
     /// <summary>
-    /// Whether the entity's gender can only be renamed once.
+    /// Whether the entity's gender can only be changed once.
     /// If set to true, the component will be removed after selecting a gender.
     /// </summary>
     [DataField]
@@ -23,5 +23,4 @@ public sealed partial class ChangeableGenderComponent : Component
             { "They/Them", Gender.Epicene },
             { "It/Its", Gender.Neuter }
         };
-
 }

@@ -9,7 +9,7 @@ namespace Content.Server._EE.ChangeableSex;
 public sealed partial class ChangeableSexComponent : Component
 {
     /// <summary>
-    /// Whether the entity's sex can only changed once.
+    /// Whether the entity's sex can only be changed once.
     /// If set to true, the component will be removed after selecting a sex.
     /// </summary>
     [DataField]
@@ -22,5 +22,4 @@ public sealed partial class ChangeableSexComponent : Component
             { "Female", Sex.Female },
             { "Unsexed", Sex.Unsexed }
         };
-
 }
