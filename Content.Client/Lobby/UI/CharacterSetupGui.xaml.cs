@@ -32,7 +32,8 @@ namespace Content.Client.Lobby.UI
             IPrototypeManager protoManager,
             IResourceCache resourceCache,
             IClientPreferencesManager preferencesManager,
-            HumanoidProfileEditor profileEditor)
+            HumanoidProfileEditor profileEditor,
+            JobPreferenceSelector jobPreferences)
         {
             RobustXamlLoader.Load(this);
             _preferencesManager = preferencesManager;
@@ -62,6 +63,7 @@ namespace Content.Client.Lobby.UI
             };
 
             CharEditor.AddChild(profileEditor);
+            CharEditor.AddChild(jobPreferences);
             RulesButton.OnPressed += _ => new RulesAndInfoWindow().Open();
 
             StatsButton.OnPressed += _ => new PlaytimeStatsWindow().OpenCentered();

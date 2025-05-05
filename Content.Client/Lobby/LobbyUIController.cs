@@ -27,6 +27,7 @@ using Robust.Shared.Utility;
 using static Content.Shared.Humanoid.SharedHumanoidAppearanceSystem;
 using CharacterSetupGui = Content.Client.Lobby.UI.CharacterSetupGui;
 using HumanoidProfileEditor = Content.Client.Lobby.UI.HumanoidProfileEditor;
+using JobPreferenceSelector = Content.Client.Lobby.UI.JobPreferenceSelector;
 
 namespace Content.Client.Lobby;
 
@@ -50,6 +51,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
     private CharacterSetupGui? _characterSetup;
     private HumanoidProfileEditor? _profileEditor;
+    private JobPreferenceSelector? _jobSelector;
 
     /// This is the character preview panel in the chat. This should only update if their character updates
     private LobbyCharacterPreviewPanel? PreviewPanel => GetLobbyPreview();
@@ -141,7 +143,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     public void ReloadCharacterSetup()
     {
         RefreshLobbyPreview();
-        var (characterGui, profileEditor) = EnsureGui();
+        var (characterGui, profileEditor, jobSelector) = EnsureGui();
         characterGui.ReloadCharacterPickers();
         profileEditor.SetProfile(
             (HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter,
@@ -190,12 +192,13 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         ReloadCharacterSetup();
     }
 
-    private (CharacterSetupGui, HumanoidProfileEditor) EnsureGui()
+    private (CharacterSetupGui, HumanoidProfileEditor, JobPreferenceSelector) EnsureGui()
     {
-        if (_characterSetup != null && _profileEditor != null)
+        if (_characterSetup != null && _profileEditor != null && _jobSelector != null)
         {
             _characterSetup.Visible = true;
-            return (_characterSetup, _profileEditor);
+            _jobSelector.Visible = !_profileEditor.Visible;
+            return (_characterSetup, _profileEditor, _jobSelector);
         }
 
         _profileEditor = new HumanoidProfileEditor(
@@ -211,7 +214,16 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
         _profileEditor.OnOpenGuidebook += _guide.OpenHelp;
 
-        _characterSetup = new CharacterSetupGui(EntityManager, _prototypeManager, _resourceCache, _preferencesManager, _profileEditor);
+        _jobSelector = new JobPreferenceSelector(
+            _jobRequirements,
+            _playerManager,
+            EntityManager,
+            _prototypeManager,
+            _configurationManager,
+            _profileEditor
+            );
+
+        _characterSetup = new CharacterSetupGui(EntityManager, _prototypeManager, _resourceCache, _preferencesManager, _profileEditor, _jobSelector);
 
         _characterSetup.CloseButton.OnPressed += _ =>
         {
@@ -227,6 +239,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         _characterSetup.CustomizeButton.OnToggled += _ =>
         {
             _profileEditor.Visible = !_profileEditor.Visible;
+            _jobSelector.Visible = !_profileEditor.Visible;
         };
 
         _profileEditor.Save += SaveProfile;
@@ -252,7 +265,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         if (_stateManager.CurrentState is LobbyState lobby)
             lobby.Lobby?.CharacterSetupState.AddChild(_characterSetup);
 
-        return (_characterSetup, _profileEditor);
+        return (_characterSetup, _profileEditor, _jobSelector);
     }
 
     #region Helpers
