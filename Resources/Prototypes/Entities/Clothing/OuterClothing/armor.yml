@@ -26,7 +26,7 @@
         shape:
           !type:PhysShapeAabb
           bounds: "-0.25,-0.25,0.25,0.25"
-        density: 9.6 # Assuming a level 3 bulletproof vest weighs 2.4kg
+        density: 55
         mask:
         - ItemMask
         restitution: 0.3
