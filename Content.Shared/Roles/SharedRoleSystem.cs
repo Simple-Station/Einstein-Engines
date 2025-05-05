@@ -28,6 +28,7 @@ public abstract class SharedRoleSystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<StartingMindRoleComponent, PlayerSpawnCompleteEvent>(OnSpawn);
+        SubscribeLocalEvent<MindRoleComponent, ComponentShutdown>(OnComponentShutdown);
     }
 
     private void OnSpawn(EntityUid uid, StartingMindRoleComponent component, PlayerSpawnCompleteEvent args)
