@@ -45,7 +45,7 @@ namespace Content.Server.Chat.Managers
         [Dependency] private readonly IEntityManager _entityManager = default!;
         [Dependency] private readonly PlayerRateLimitManager _rateLimitManager = default!;
 
-        private readonly ISawmill _sawmill = Logger.GetSawmill("SERVER");
+        private ISawmill _sawmill = default!;
 
         /// <summary>
         /// The maximum length a player-sent message can be sent
@@ -59,6 +59,7 @@ namespace Content.Server.Chat.Managers
 
         public void Initialize()
         {
+            _sawmill = Logger.GetSawmill("SERVER");
             _netManager.RegisterNetMessage<MsgChatMessage>();
             _netManager.RegisterNetMessage<MsgDeleteChatMessagesBy>();
 
