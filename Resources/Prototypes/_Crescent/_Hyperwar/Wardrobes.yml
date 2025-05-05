@@ -18,8 +18,8 @@
     WeaponLightMachineGunL6: 60
     WeaponSubMachineGunAtreides: 60
     WeaponSubMachineGunCheshyre: 60
-    WeaponSubMachineGunSabre: 60
     WeaponSubMachineGunMP5: 60
+    WeaponSubMachineGunSabre: 60
     WeaponSubMachineGunMP49: 60
     WeaponSubMachineGunDrozd: 60
     WeaponShotgunBulldog: 60
@@ -64,10 +64,10 @@
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     RomaineBible: 100
-    ClothingUniformJumpsuitSyndicate: 100
+    ClothingNeckScarfSyndicateShemagh: 100
     ClothingMaskSyndicateFacemask: 100
-    ClothingHeadHelmetSyndicateBasic: 100
-    ClothingOuterArmorSyndicateArmorvest: 100
+    ClothingUniformJumpsuitSyndicate: 100
+    ClothingHandsGlovesCombat: 100
     ClothingShoesBootsJack: 100
     ClothingBackpackNCSPDuffelbag: 150
     ClothingBackpackNCSPSatchel: 150
@@ -87,6 +87,11 @@
     OxygenTankFilled: 150
     ClothingShoesBootsMagAdv: 150
     StimpackMini: 150
+    MechaniteAutoinjector: 150
+    KaiserAutoinjector: 150
+    ExileAutoinjector: 150
+    BloodeyeAutoinjector: 150
+    CrashAutoinjector: 150
     HoloparasiteInjector: 100
     ArmorPlateNanoCeramic: 100
     ArmorPlateSteel: 100
@@ -134,8 +139,8 @@
     WeaponPistolViper: 60
     WeaponPistolRongyu: 60
     WeaponPistolBlastpopGray: 60
-    Katana: 60
     SecBreachingHammer: 60
+    Katana: 60
     RiotBulletShield: 100
     RiotLaserShield: 100
     TelescopicShield: 100
@@ -154,6 +159,12 @@
     BoxShotgunSlug: 250
     ClothingBeltNCWLWebbingMedFilled: 60
     ClothingBeltNCWLWebbingFilledGrenadier: 60
+    ClothingEyesGlassesNCWL: 100
+    ClothingNeckAdminCapelet: 100
+    ClothingMaskSyndicateFacemask: 100
+    ClothingUniformJumpsuitNCWL: 150
+    ClothingHandsGlovesCombat: 100
+    ClothingShoesBootsJack: 100
     ClothingBackpackDuffelNCWL: 150
     ClothingBackpackSatchelNCWL: 150
     ClothingBackpackNCWL: 150
@@ -164,12 +175,14 @@
     HandHeldMassScanner: 150
     Crowbar: 150
     BoxBreachingCharges: 150
-    ClothingEyesGlassesNCWL: 100
     ClothingOuterHardsuitNCWLJuggernaut: 150
     ClothingOuterHardsuitNCWLInfantry: 150
     OxygenTankFilled: 150
     ClothingShoesBootsMagAdv: 150
     StimpackMini: 150
+    MechaniteAutoinjector: 150
+    BloodeyeAutoinjector: 150
+    CrashAutoinjector: 150
     ArmorPlateHomeland: 100
     MetalFoamGrenadeFast: 150
 
@@ -232,9 +245,11 @@
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     RomaineBible: 100
+    ClothingNeckCloakImperialAdjutant: 100
+    ClothingNeckCloakImperialCapelet: 100
+    ClothingMaskImperialCombatGasmask: 100
     ClothingUniformJumpsuitImperialCombat: 100
     ClothingUniformJumpsuitClarizeCombat: 100
-    ClothingMaskImperialCombatGasmask: 100
     ClothingHandsGlovesImperialLonggloves: 100
     ClothingShoesBootsImperialJackboots: 100
     ClothingBackpackDSMSatchel: 150
@@ -251,6 +266,10 @@
     OxygenTankFilled: 150
     ClothingShoesBootsMagAdv: 150
     StimpackMini: 150
+    MechaniteAutoinjector: 150
+    BloodeyeAutoinjector: 150
+    CrashAutoinjector: 150
+    NarcanAutoinjector: 150
     ArmorPlatePlasteel: 100
     MetalFoamGrenadeFast: 150
 
@@ -290,7 +309,6 @@
     WeaponPistolBlastpopGray: 60
     SRMKhopesh: 60
     ClothingBeltSheathKhopesh: 60
-    ClothingBeltSheathFilled: 60 # captain sabre
     SecBreachingHammer: 60
     Katana: 60
     RiotBulletShield: 100
@@ -312,8 +330,8 @@
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     RomaineBible: 100
-    ClothingUniformJumpsuitHunter: 100
     ClothingMaskImperialCombatGasmask: 100
+    ClothingUniformJumpsuitHunter: 100
     ClothingHandsGlovesHunter: 100
     ClothingShoesBootsHunter: 100
     ClothingBackpackSRMSatchel: 150
@@ -330,6 +348,9 @@
     OxygenTankFilled: 150
     ClothingShoesBootsMagAdv: 150
     StimpackMini: 150
+    MechaniteAutoinjector: 150
+    BloodeyeAutoinjector: 150
+    CrashAutoinjector: 150
     ArmorPlateNanoCeramic: 100
     MetalFoamGrenadeFast: 150
 
@@ -401,10 +422,10 @@
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingBeltMinutemanPouches: 100
     RomaineBible: 100
+    ClothingNeckScarfCMMCloak: 100
+    ClothingMaskSyndicateFacemask: 100
     ClothingUniformJumpsuitCMM: 100
-    ClothingMaskImperialCombatGasmask: 100
-    ClothingShoesBootsImperialJackboots: 100
-    ClothingHandsGlovesImperialLonggloves: 100
+    ClothingHandsGlovesCombat: 100
     ClothingShoesBootsJack: 100
     ClothingBackpackMinutemanDuffelbag: 150
     ClothingBackpackMinutemanSatchel: 150
@@ -421,6 +442,11 @@
     OxygenTankFilled: 150
     ClothingShoesBootsMagAdv: 150
     StimpackMini: 150
+    MechaniteAutoinjector: 150
+    ExileAutoinjector: 150
+    BloodeyeAutoinjector: 150
+    CrashAutoinjector: 150
+    NarcanAutoinjector: 150
     ArmorPlatePlasteel: 100
     ArmorPlateNanoPolymer: 100
     MetalFoamGrenadeFast: 150
@@ -430,17 +456,12 @@
   startingInventory:
     SpaceCash1000000: 999
     WeaponLauncherHammerhead: 60
-    WeaponSpecialMako: 60
     WeaponSniperHristov: 60
     WeaponSniperMosin: 60
-    WeaponRifleHalyadMarksman: 60
-    WeaponRifleBarghest: 60
-    WeaponRifleTakemura: 60
     WeaponRifleLecter: 60
     WeaponRifleGoro: 60
     WeaponRifleHoundMarksman: 60
     WeaponLightMachineGunL6: 60
-    WeaponSubMachineGunCheshyre: 60
     WeaponSubMachineGunMP5: 60
     WeaponSubMachineGunSabre: 60
     WeaponSubMachineGunMP49: 60
@@ -455,17 +476,14 @@
     WeaponRevolverInspector: 60
     WeaponPistolZodum: 60
     WeaponPistolNeoVolker: 60
-    WeaponPistolT91: 60
     WeaponPistolHKUSP: 60
     WeaponPistolN1984: 60
     WeaponPistolHimehabu: 60
     WeaponPistolMk58: 60
     WeaponPistolSmartpistol: 60
     WeaponPistolViper: 60
-    WeaponPistolRongyu: 60
     WeaponPistolBlastpopGray: 60
     EnergyKatana: 60
-    ClothingBeltSheathFilled: 60 # captain sabre
     SecBreachingHammer: 60
     Katana: 60
     RiotBulletShield: 100
@@ -488,9 +506,9 @@
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingBeltMinutemanPouches: 100
     RomaineBible: 100
-    ClothingUniformJumpsuitShinoharaSuit: 150
     ClothingMaskSyndicateFacemask: 100
-    ClothingHandsGlovesImperialLonggloves: 100
+    ClothingUniformJumpsuitShinoharaSecurity: 150
+    ClothingHandsGlovesCombat: 100
     ClothingShoesBootsJack: 100
     ClothingBackpackSHIDuffelbag: 150
     ClothingBackpackSHISatchel: 150
@@ -506,6 +524,11 @@
     OxygenTankFilled: 150
     ClothingShoesBootsMagAdv: 150
     StimpackMini: 150
+    MechaniteAutoinjector: 150
+    ExileAutoinjector: 150
+    BloodeyeAutoinjector: 150
+    CrashAutoinjector: 150
+    NarcanAutoinjector: 150
     ArmorPlateNanoCeramic: 100
     MetalFoamGrenadeFast: 150
 
@@ -544,7 +567,6 @@
     WeaponRevolverMateba: 60
     WeaponRevolverInspector: 60
     WeaponPistolZodum: 60
-    WeaponPistolT91: 60
     WeaponPistolHKUSP: 60
     WeaponPistolN1984: 60
     WeaponPistolHimehabu: 60
@@ -556,8 +578,6 @@
     PlasHalberd: 60
     Plashammer: 60
     EnergySwordFamilies: 60
-    ClothingBeltSheathFilled: 60 # captain sabre
-    SecBreachingHammer: 60
     Katana: 60
     RiotBulletShield: 100
     RiotLaserShield: 100
@@ -578,9 +598,9 @@
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingBeltMinutemanPouches: 100
-    ClothingHeadHatDraugr: 150
-    ClothingUniformJumpsuitDraugr: 150
     ClothingMaskSyndicateFacemask: 100
+    ClothingUniformJumpsuitDraugr: 150
+    ClothingHandsGlovesCombat: 100
     ClothingShoesBootsJack: 100
     ClothingBackpackSHIDuffelbag: 150
     ClothingBackpackSHISatchel: 150
@@ -596,6 +616,11 @@
     OxygenTankFilled: 150
     ClothingShoesBootsMagAdv: 150
     StimpackMini: 150
+    MechaniteAutoinjector: 150
+    KaiserAutoinjector: 150
+    ExileAutoinjector: 150
+    CrashAutoinjector: 150
+    HoloparasiteInjector: 100
     ArmorPlateSteel: 100
     MetalFoamGrenadeFast: 150
 
@@ -629,16 +654,13 @@
     WeaponRevolverMateba: 60
     WeaponRevolverInspector: 60
     WeaponPistolZodum: 60
-    WeaponPistolComplianceImperial: 60
     WeaponPistolNeoVolker: 60
-    WeaponPistolT91: 60
     WeaponPistolHKUSP: 60
     WeaponPistolN1984: 60
     WeaponPistolHimehabu: 60
     WeaponPistolMk58: 60
     WeaponPistolSmartpistol: 60
     WeaponPistolViper: 60
-    WeaponPistolRongyu: 60
     WeaponPistolBlastpopGray: 60
     ClothingBeltSheathFilled: 60 # captain sabre
     SecBreachingHammer: 60
@@ -664,8 +686,9 @@
     ClothingBeltAuthorityWebbing: 100
     RomaineBible: 100
     ClothingNeckAuthorityStewardCape: 150
-    ClothingUniformJumpsuitAuthoritySoldat: 150
     ClothingMaskSyndicateFacemask: 100
+    ClothingUniformJumpsuitAuthoritySoldat: 150
+    ClothingHandsGlovesCombat: 100
     ClothingShoesBootsJack: 100
     ClothingBackpackSHIDuffelbag: 150
     ClothingBackpackSHISatchel: 150
@@ -681,6 +704,9 @@
     OxygenTankFilled: 150
     ClothingShoesBootsMagAdv: 150
     StimpackMini: 150
+    MechaniteAutoinjector: 150
+    BloodeyeAutoinjector: 150
+    NarcanAutoinjector: 150
     ArmorPlateNanoPolymer: 100
     MetalFoamGrenadeFast: 150
 
@@ -701,6 +727,8 @@
     WeaponRifleFAL: 60
     WeaponRifleLecter: 60
     WeaponRifleGoro: 60
+    WeaponRifleAk: 60
+    WeaponRifleKrinkov: 60
     WeaponRifleHoundMarksman: 60
     WeaponLightMachineGunL6: 60
     WeaponSubMachineGunWt550: 60
@@ -752,8 +780,9 @@
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingBeltMinutemanPouches: 100
     RomaineBible: 100
-    ClothingUniformJumpsuitShinoharaSuit: 150
     ClothingMaskSyndicateFacemask: 100
+    ClothingUniformJumpsuitShinoharaSuit: 150
+    ClothingHandsGlovesCombat: 100
     ClothingShoesBootsJack: 100
     ClothingBackpackSHIDuffelbag: 150
     ClothingBackpackSHISatchel: 150
@@ -770,6 +799,11 @@
     OxygenTankFilled: 150
     ClothingShoesBootsMagAdv: 150
     StimpackMini: 150
+    MechaniteAutoinjector: 150
+    ExileAutoinjector: 150
+    BloodeyeAutoinjector: 150
+    CrashAutoinjector: 150
+    NarcanAutoinjector: 150
     ArmorPlateNanoCeramic: 100
     MetalFoamGrenadeFast: 150
 
