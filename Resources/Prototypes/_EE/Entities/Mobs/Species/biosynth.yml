@@ -1,7 +1,9 @@
 - type: entity
   parent: MobHuman
   id: MobSynthHuman
-  name: bio-synthetic human
+  name: bio-synthetic torso
+  description: A customizable synthetic human body.
+  suffix: Alive
   components:
   - type: HumanoidAppearance
     species: SynthHuman
@@ -36,3 +38,8 @@
         type: RenamableBoundUserInterface
   - type: NameIdentifier
     group: Synth
+  - type: Damageable
+    damage:
+      types:
+        Bloodloss: -100 # they spawn with 100 bloodloss for whatever reason
+  - type: Debrained

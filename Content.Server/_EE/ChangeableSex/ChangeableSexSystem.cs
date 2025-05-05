@@ -1,9 +1,6 @@
 using Content.Shared.Humanoid;
-using Content.Shared.IdentityManagement;
-using Content.Shared.IdentityManagement.Components;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
-using Robust.Shared.GameObjects.Components.Localization;
 
 namespace Content.Server._EE.ChangeableSex;
 
@@ -19,7 +16,7 @@ public sealed class ChangeableSexSystem : EntitySystem
         SubscribeLocalEvent<ChangeableSexComponent, GetVerbsEvent<AlternativeVerb>>(AddSexChangeVerb);
     }
 
-    private void AddGenderChangeVerb(EntityUid uid, ChangeableSexComponent component, GetVerbsEvent<AlternativeVerb> args)
+    private void AddSexChangeVerb(EntityUid uid, ChangeableSexComponent component, GetVerbsEvent<AlternativeVerb> args)
     {
         if (!args.CanInteract || !args.CanAccess)
             return;
