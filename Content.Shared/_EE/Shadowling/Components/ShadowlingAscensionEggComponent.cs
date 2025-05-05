@@ -14,7 +14,7 @@ public sealed partial class ShadowlingAscensionEggComponent : Component
     public TimeSpan NextUpdateTime = TimeSpan.Zero;
 
     [DataField]
-    public TimeSpan UpdateInterval = TimeSpan.FromSeconds(300);
+    public TimeSpan UpdateInterval = TimeSpan.FromSeconds(5);
 
     [DataField]
     public EntityUid? Creator;

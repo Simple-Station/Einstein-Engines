@@ -1,3 +1,4 @@
+using Content.Server.Actions;
 using Content.Server.Chat.Systems;
 using Content.Server.Popups;
 using Content.Server.Storage.EntitySystems;
@@ -23,6 +24,7 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
+    [Dependency] private readonly ActionsSystem _actions = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -92,7 +94,7 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
         // todo:  add indicator for damage here?
     }
 
-private void TryAscend(EntityUid uid, EntityUid eggUid, ShadowlingAscensionEggComponent component)
+    private void TryAscend(EntityUid uid, EntityUid eggUid, ShadowlingAscensionEggComponent component)
     {
         if (!HasComp<ShadowlingComponent>(uid))
         {
@@ -105,6 +107,8 @@ private void TryAscend(EntityUid uid, EntityUid eggUid, ShadowlingAscensionEggCo
             _popup.PopupEntity(Loc.GetString("shadowling-ascension-not-creator"), uid, uid, PopupType.MediumCaution);
             return;
         }
+
+
 
         // Don't ascend if another shadowling is ascending.
         // If one shadowling finishes ascension, the remaining
@@ -127,6 +131,8 @@ private void TryAscend(EntityUid uid, EntityUid eggUid, ShadowlingAscensionEggCo
 
         // Start Ascension
         var shadowling = EntityManager.GetComponent<ShadowlingComponent>(uid);
+
+        _actions.RemoveAction(shadowling.ActionAscendanceEntity);
 
         shadowling.IsAscending = true;
         component.StartTimer = true;

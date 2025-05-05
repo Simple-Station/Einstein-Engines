@@ -86,6 +86,13 @@ public sealed class AntiMindControlItemSystem : EntitySystem
         if (HasComp<ThrallComponent>(target))
         {
             RemComp<ThrallComponent>(target);
+
+            if (!HasComp<EnthrallResistanceComponent>(target))
+                EnsureComp<EnthrallResistanceComponent>(target);
+
+            var enthrallRes = EntityManager.GetComponent<EnthrallResistanceComponent>(target);
+            enthrallRes.ExtraTime += enthrallRes.ExtraTimeUpdate;
+
             _popupSystem.PopupEntity(Loc.GetString("mind-control-thrall-done"), target, target, PopupType.MediumCaution);
         }
     }

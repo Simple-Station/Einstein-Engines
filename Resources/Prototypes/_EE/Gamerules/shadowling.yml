@@ -4,13 +4,16 @@
   components:
   - type: ShadowlingRule
   - type: GameRule
-    minPlayers: 15
+    minPlayers: 30
   - type: AntagSelection
     selectionTime: PrePlayerSpawn
     definitions:
       - prefRoles: [ Shadowling ]
-        max: 4
-        playerRatio: 12
+        max: 2
+        playerRatio: 30
         lateJoinAdditional: true
         mindRoles:
           - MindRoleShadowling
+  - type: AntagObjectives
+    objectives:
+      - ShadowlingAscendObjective

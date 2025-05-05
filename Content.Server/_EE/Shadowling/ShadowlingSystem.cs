@@ -1,6 +1,10 @@
+using Content.Server._EE.Shadowling.Objectives;
 using Content.Server.Actions;
 using Content.Server.Language;
+using Content.Server.Mind;
+using Content.Server.Objectives;
 using Content.Server.Popups;
+using Content.Server.Roles;
 using Content.Server.Storage.EntitySystems;
 using Content.Shared._EE.Shadowling.Systems;
 using Content.Shared._EE.Shadowling;
@@ -16,7 +20,9 @@ using Content.Shared.Inventory;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Objectives.Systems;
 using Content.Shared.Popups;
+using Content.Shared.Roles;
 
 
 namespace Content.Server._EE.Shadowling;
@@ -35,6 +41,8 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
     [Dependency] private readonly AlertsSystem _alert = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
+    [Dependency] private readonly MindSystem _mind = default!;
+    [Dependency] private readonly SharedObjectivesSystem _sharedObjectives = default!;
 
     public override void Initialize()
     {
@@ -83,6 +91,9 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
                 _popup.PopupEntity(Loc.GetString("shadowling-dead"), thrall, thrall, PopupType.LargeCaution);
                 RemCompDeferred<ThrallComponent>(thrall);
             }
+
+            var ev = new ShadowlingDeathEvent();
+            RaiseLocalEvent(ev);
         }
     }
 
@@ -111,7 +122,6 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
             return;
 
         lightDet.ResistanceModifier += comp.LightResistanceModifier;
-
     }
 
     private void OnThrallRemoved(EntityUid uid, ShadowlingComponent comp, ThrallRemovedEvent args)
@@ -171,6 +181,9 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
 
             // give thralls partial ascension
             // destroy all lights
+
+            var ev = new ShadowlingAscendEvent();
+            RaiseLocalEvent(ev);
 
             AddComp<ShadowlingAnnihilateComponent>(uid);
             AddComp<ShadowlingHypnosisComponent>(uid);

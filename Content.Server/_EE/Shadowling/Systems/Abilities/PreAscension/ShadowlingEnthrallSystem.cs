@@ -1,6 +1,7 @@
 using Content.Server.DoAfter;
 using Content.Server.Popups;
 using Content.Shared._EE.Shadowling;
+using Content.Shared._EE.Shadowling.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Popups;
@@ -26,10 +27,15 @@ public sealed class ShadowlingEnthrallSystem : EntitySystem
     private void OnEnthrall(EntityUid uid, ShadowlingEnthrallComponent comp, EnthrallEvent args)
     {
         var target = args.Target;
+        var time = comp.EnthrallTime;
+
+        if (TryComp<EnthrallResistanceComponent>(target, out var enthrallRes))
+            time += enthrallRes.ExtraTime;
+
         var doAfterArgs = new DoAfterArgs(
             EntityManager,
             uid,
-            comp.EnthrallTime,
+            time,
             new EnthrallDoAfterEvent(),
             uid,
             target)

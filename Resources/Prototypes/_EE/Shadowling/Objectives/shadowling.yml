@@ -1,0 +1,15 @@
+- type: entity
+  parent: BaseObjective
+  id: ShadowlingAscendObjective
+  description: I must ascend at all costs.
+  components:
+  - type: Objective
+    issuer: Shadowling
+    unique: true
+    difficulty: 3
+    icon:
+      sprite: _EE/Shadowling/shadowling_abilities.rsi
+      state: ascendance
+  - type: ShadowlingAscendCondition
+
+

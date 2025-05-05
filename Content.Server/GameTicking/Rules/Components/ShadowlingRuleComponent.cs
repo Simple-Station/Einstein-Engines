@@ -8,5 +8,12 @@ namespace Content.Server.GameTicking.Rules.Components;
 public sealed partial class ShadowlingRuleComponent : Component
 {
     [DataField]
-    public Color EyeColor = Color.FromHex("#f80000");
+    public ShadowlingWinCondition WinCondition = ShadowlingWinCondition.Draw;
+}
+
+public enum ShadowlingWinCondition : byte
+{
+    Draw,
+    Win,
+    Failure
 }

@@ -1,6 +1,7 @@
 using Content.Server.Actions;
 using Content.Shared._EE.Shadowling;
 using Content.Shared.WhiteDream.BloodCult.Constructs.PhaseShift;
+using Robust.Server.GameObjects;
 
 
 namespace Content.Server._EE.Shadowling;
@@ -27,7 +28,7 @@ public sealed class ShadowlingPlaneShiftSystem : EntitySystem
         comp.IsActive = !comp.IsActive;
         if (comp.IsActive)
         {
-            TryDoShift(uid);
+            TryDoShift(uid, comp);
         }
         else
         {
@@ -40,13 +41,16 @@ public sealed class ShadowlingPlaneShiftSystem : EntitySystem
         _actions.StartUseDelay(args.Action);
     }
 
-    private void TryDoShift(EntityUid uid)
+    private void TryDoShift(EntityUid uid, ShadowlingPlaneShiftComponent component)
     {
         if (HasComp<PhaseShiftedComponent>(uid))
             return;
 
         var phaseShift = EnsureComp<PhaseShiftedComponent>(uid);
         phaseShift.MovementSpeedBuff = 1.7f;
-        // todo: add custom visuals and sounds here. Thanks to blood cult code for this component
+        // Thanks to blood cult code for this component
+        // todo: add sound
+        phaseShift.PhaseOutEffect = component.ShadowWalkEffectOut;
+
     }
 }

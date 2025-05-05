@@ -3,6 +3,8 @@ using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Mind;
 using Content.Server.Roles;
 using Content.Shared._EE.Shadowling;
+using Content.Shared.GameTicking.Components;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Roles;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
@@ -14,6 +16,7 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
     [Dependency] private readonly SharedRoleSystem _role = default!;
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly MindSystem _mind = default!;
+    [Dependency] private readonly MobStateSystem _mob = default!;
 
     public readonly SoundSpecifier BriefingSound = new SoundPathSpecifier("/Audio/_Goobstation/Ambience/Antag/changeling_start.ogg"); // todo: change later
 
@@ -24,6 +27,48 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
         base.Initialize();
 
         SubscribeLocalEvent<ShadowlingRuleComponent, AfterAntagEntitySelectedEvent>(OnSelectAntag);
+        SubscribeLocalEvent<ShadowlingRoleComponent, GetBriefingEvent>(OnGetBriefing);
+
+        SubscribeLocalEvent<ShadowlingAscendEvent>(OnAscend);
+        SubscribeLocalEvent<ShadowlingDeathEvent>(OnDeath);
+    }
+
+    private void OnDeath(ShadowlingDeathEvent args)
+    {
+        var rulesQuery = QueryActiveRules();
+        while (rulesQuery.MoveNext(out _, out var shadowling, out _))
+        {
+            var shadowlingCount = 0;
+            var shadowlingDead = 0;
+            var query = EntityQueryEnumerator<ShadowlingComponent>();
+
+            while (query.MoveNext(out var uid, out _))
+            {
+                shadowlingCount++;
+                if (_mob.IsDead(uid) || _mob.IsInvalidState(uid))
+                    shadowlingDead++;
+            }
+
+            if (shadowlingCount == shadowlingDead)
+                shadowling.WinCondition = ShadowlingWinCondition.Failure;
+        }
+    }
+
+    private void OnAscend(ShadowlingAscendEvent args)
+    {
+        var rulesQuery = QueryActiveRules();
+        while (rulesQuery.MoveNext(out _, out var shadowling, out _))
+        {
+            shadowling.WinCondition = ShadowlingWinCondition.Win;
+            return;
+        }
+    }
+
+    private void OnGetBriefing(EntityUid uid, ShadowlingRoleComponent component, ref GetBriefingEvent args)
+    {
+        var ent = args.Mind.Comp.OwnedEntity;
+        var sling = HasComp<ShadowlingComponent>(ent);
+        args.Append(Loc.GetString(sling ? "shadowling-briefing" : "thrall-briefing"));
     }
 
     private void OnSelectAntag(EntityUid uid, ShadowlingRuleComponent comp, ref AfterAntagEntitySelectedEvent args)
@@ -43,14 +88,31 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
             return false;
 
         var briefing = Loc.GetString("shadowling-role-greeting");
-        var briefingShort = Loc.GetString("shadowling-role-greeting-short", ("name", metaData.EntityName ?? "Unknown"));
 
         _antag.SendBriefing(target, briefing, Color.MediumPurple, BriefingSound);
 
-        if (_role.MindHasRole<ShadowlingComponent>(mindId, out var mr))
-            AddComp(mr.Value, new RoleBriefingComponent { Briefing = briefingShort }, overwrite: true);
-
         EnsureComp<ShadowlingComponent>(target);
         return true;
+    }
+
+    protected override void AppendRoundEndText(
+        EntityUid uid,
+        ShadowlingRuleComponent component,
+        GameRuleComponent gamerule,
+        ref RoundEndTextAppendEvent args
+    )
+    {
+        base.AppendRoundEndText(uid, component, gamerule, ref args);
+        var winText = Loc.GetString($"shadowling-condition-{component.WinCondition.ToString().ToLower()}");
+        args.AddLine(winText);
+
+        args.AddLine(Loc.GetString("shadowling-list-start"));
+
+        var sessionData = _antag.GetAntagIdentifiers(uid);
+        foreach (var (_, data, name) in sessionData)
+        {
+            var listing = Loc.GetString("shadowling-list-name", ("name", name), ("user", data.UserName));
+            args.AddLine(listing);
+        }
     }
 }

@@ -11,3 +11,10 @@ shadowling-role-greeting-short =
 thrall-role-greeting =
     You are a thrall.
     Help your Shadowling ascend by any means necessary.
+
+shadowling-briefing =
+    Shed from this lesser form and start your path to ascension.
+
+thrall-briefing =
+    You are no longer bound to your old beliefs.
+    Help your shadowling ascend at all costs.

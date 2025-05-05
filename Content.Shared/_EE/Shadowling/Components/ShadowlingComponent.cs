@@ -116,6 +116,9 @@ public sealed partial class ShadowlingComponent : Component
 
     [DataField]
     public bool IsAscending;
+
+    [DataField]
+    public string ObjectiveAscend = "ShadowlingAscendObjective";
 }
 
 [NetSerializable, Serializable]

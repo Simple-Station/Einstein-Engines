@@ -10,4 +10,6 @@ namespace Content.Server.Roles;
 public sealed partial class ShadowlingRoleComponent : BaseMindRoleComponent
 {
 
+    [DataField]
+    public int ThrallsConverted = 0;
 }

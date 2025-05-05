@@ -9,6 +9,7 @@
       # - id: FlashlightSeclite # Deltav - Detective is in charge of investigating crimes.
       # - id: ForensicScanner
       # - id: BoxForensicPad
+      - id: AntiMindControlDevice
       - id: AntiPsychicKnife
       - id: FlashlightLantern # DeltaV - To replace their lost flashlight
       - id: BoxZiptie # DeltaV - Give the mantis some zipties

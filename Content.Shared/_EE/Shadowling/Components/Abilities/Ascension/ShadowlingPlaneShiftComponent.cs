@@ -1,4 +1,5 @@
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 
 namespace Content.Shared._EE.Shadowling;
@@ -18,4 +19,7 @@ public sealed partial class ShadowlingPlaneShiftComponent : Component
 
     [DataField]
     public float RunSpeedModifier = 1.5f;
+
+    [DataField]
+    public EntProtoId ShadowWalkEffectOut = "ShadowlingShadowWalkOutEffect";
 }
