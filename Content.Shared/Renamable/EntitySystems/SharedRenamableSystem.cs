@@ -41,6 +41,8 @@ public partial class SharedRenamableSystem : EntitySystem
             return;
 
         _metaData.SetEntityName(entity, name, metaData);
+        if (TryComp<RenamableComponent>(entity, out var comp) && comp.SingleUse)
+            RemCompDeferred<RenamableComponent>(entity);
     }
 
     private void OnGetVerbs(Entity<RenamableComponent> entity, ref GetVerbsEvent<Verb> args)

@@ -555,4 +555,15 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         return Loc.GetString("identity-age-old");
     }
+    /// <summary>
+    ///     Set a humanoid mob's gender.
+    /// </summary>
+    public void SetGender(EntityUid uid, Robust.Shared.Enums.Gender gender, HumanoidAppearanceComponent? humanoid = null)
+    {
+        if (!Resolve(uid, ref humanoid) || humanoid.Gender == gender)
+            return;
+
+        humanoid.Gender = gender;
+        Dirty(uid, humanoid);
+    }
 }

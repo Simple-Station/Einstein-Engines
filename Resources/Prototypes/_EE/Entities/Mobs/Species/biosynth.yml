@@ -1,0 +1,36 @@
+- type: entity
+  parent: MobHuman
+  id: MobSynthHuman
+  name: bio-synthetic human
+  components:
+  - type: HumanoidAppearance
+    species: SynthHuman
+  - type: Body
+    prototype: SynthHuman
+    requiredLegs: 2
+  - type: Renamable
+    singleUse: true
+  - type: ChangableGender
+    singleUse: true
+  - type: UserInterface
+    interfaces:
+      enum.HumanoidMarkingModifierKey.Key:
+        type: HumanoidMarkingModifierBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+      # Goobstation - changelings
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+      enum.InstrumentUiKey.Key:
+        type: InstrumentBoundUserInterface
+        requireInputValidation: false
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
+      enum.ListViewSelectorUiKey.Key:
+        type: ListViewSelectorBUI
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
+      enum.SharedRenamableInterfaceKey.Key:
+        type: RenamableBoundUserInterface
+  - type: NameIdentifier
+    group: Synth

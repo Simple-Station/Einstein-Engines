@@ -112,5 +112,7 @@ namespace Content.Shared.Verbs
 
         // Shitmed - Starlight Abductors
         public static readonly VerbCategory Switch = new("verb-categories-switch", "/Textures/Interface/VerbIcons/group.svg.192dpi.png");
+
+        public static readonly VerbCategory GenderChange = new("verb-categories-gender-change");
     }
 }
