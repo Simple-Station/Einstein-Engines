@@ -7,7 +7,7 @@ namespace Content.Server.Traits.Assorted;
 public sealed partial class KillOnShockComponent : Component
 {
     [DataField]
-    public string Type = "Shock";
+    public string DamageType = "Shock";
 
     [DataField]
     public float Threshold = 5.0f;
