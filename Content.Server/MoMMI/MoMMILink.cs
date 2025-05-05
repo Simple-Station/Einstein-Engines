@@ -18,7 +18,7 @@ namespace Content.Server.MoMMI
         [Dependency] private readonly IStatusHost _statusHost = default!;
         [Dependency] private readonly IChatManager _chatManager = default!;
         [Dependency] private readonly ITaskManager _taskManager = default!;
-
+        private readonly ISawmill _sawmill = Logger.GetSawmill("mommi");
         private readonly HttpClient _httpClient = new();
 
         void IPostInjectInit.PostInject()
@@ -48,7 +48,7 @@ namespace Content.Server.MoMMI
 
             if (string.IsNullOrWhiteSpace(password))
             {
-                Logger.GetSawmill("mommi").Debug("MoMMI URL specified but not password!");
+                _sawmill.Warning("MoMMI URL specified but not password!");
                 return;
             }
 

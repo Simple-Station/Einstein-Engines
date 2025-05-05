@@ -45,6 +45,8 @@ namespace Content.Server.Chat.Managers
         [Dependency] private readonly IEntityManager _entityManager = default!;
         [Dependency] private readonly PlayerRateLimitManager _rateLimitManager = default!;
 
+        private readonly ISawmill _sawmill = Logger.GetSawmill("SERVER");
+
         /// <summary>
         /// The maximum length a player-sent message can be sent
         /// </summary>
@@ -110,7 +112,7 @@ namespace Content.Server.Chat.Managers
         {
             var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", FormattedMessage.EscapeText(message)));
             ChatMessageToAll(ChatChannel.Server, message, wrappedMessage, EntityUid.Invalid, hideChat: false, recordReplay: true, colorOverride: colorOverride);
-            Logger.GetSawmill("SERVER").Info(message);
+            _sawmill.Info(message);
 
             _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Server announcement: {message}");
         }

@@ -87,7 +87,7 @@ public sealed partial class AlertsUI : UIWidget
             var alertType = alertKey.AlertType.Value;
             if (!alertsSystem.TryGet(alertType, out var newAlert))
             {
-                Logger.GetSawmill("alart").Error("alert", "Unrecognized alertType {0}", alertType);
+                Logger.GetSawmill("alert").Error("Unrecognized alertType {0}", alertType);
                 continue;
             }
 
