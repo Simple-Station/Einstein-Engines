@@ -61,13 +61,15 @@
     - 0,0,1,0
     - 1,1,1,1
   - type: MeleeWeapon
-    attackRate: 1.3333
+    attackRate: 1.25
     range: 1.4
     damage:
       types:
         Piercing: 8
+    heavyRateModifier: 1.5
+    heavyRangeModifier: 2
     heavyDamageBaseModifier: 1.5
-    heavyStaminaCost: 5
+    heavyStaminaCost: 2.5
     maxTargets: 1
     angle: 20
     soundHit:
@@ -121,8 +123,9 @@
       types:
         Slash: 7.5
     heavyRateModifier: 1.25
+    heavyRangeModifier: 2
     heavyDamageBaseModifier: 1.25
-    heavyStaminaCost: 5
+    heavyStaminaCost: 2.5
     maxTargets: 1
     angle: 20
     soundHit:
@@ -224,15 +227,15 @@
   # Shitmed Change
   - type: MeleeWeapon
     wideAnimationRotation: 90
-    attackRate: 1.25
+    attackRate: 1.1
     range: 1.4
     damage:
       types:
-        Slash: 2.5
-        Blunt: 2.0
-    heavyRateModifier: 0.8
-    heavyDamageBaseModifier: 1.25
-    heavyStaminaCost: 4
+        Slash: 3.5
+        Blunt: 3.0
+    heavyRateModifier: 1.25
+    heavyDamageBaseModifier: 1.75
+    heavyStaminaCost: 2.5
     maxTargets: 1
     angle: 20
     soundHit:
@@ -267,16 +270,16 @@
     storedRotation: 90
   - type: MeleeWeapon
     wideAnimationRotation: 90
-    attackRate: 1.25
+    attackRate: 1.1
     range: 1.4
     damage:
       types:
         Slash: 6
-    heavyRateModifier: 0.8
+    heavyRateModifier: 1.25
     heavyDamageBaseModifier: 1.25
-    heavyStaminaCost: 4.5
-    maxTargets: 1
-    angle: 20
+    heavyStaminaCost: 2.5
+    maxTargets: 2
+    angle: 40
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: DamageOtherOnHit
@@ -348,14 +351,14 @@
       - Sawing
     speedModifier: 1.0
   - type: MeleeWeapon
-    attackRate: 1.3333
+    attackRate: 1.3
     range: 1.35
     damage:
       types:
         Blunt: 2.5
         Slash: 6.5
-    heavyRateModifier: 1.25
-    heavyDamageBaseModifier: 1.0
+    heavyRateModifier: 3
+    heavyDamageBaseModifier: 2.0
     heavyStaminaCost: 20
     maxTargets: 8
     angle: 20
@@ -385,14 +388,14 @@
     size: Small
     heldPrefix: improv
   - type: MeleeWeapon
-    attackRate: 1.17
+    attackRate: 1.1
     damage:
       types:
         Blunt: 3
         Slash: 7
     bluntStaminaDamageFactor: 3
     heavyRateModifier: 1.25
-    heavyDamageBaseModifier: 1.0
+    heavyDamageBaseModifier: 1.25
     heavyStaminaCost: 20
     maxTargets: 8
     angle: 20
@@ -421,14 +424,15 @@
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/circular-saw.rsi
     storedRotation: 90
   - type: MeleeWeapon
-    attackRate: .86
-    range: 1.5
+    attackRate: .8
+    range: 1.4
     bluntStaminaDamageFactor: 3.0
     damage:
       types:
         Blunt: 4.5
         Slash: 5.5
     heavyRateModifier: 2
+    heavyRangeModifier: 1.75
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 10
     maxTargets: 8
@@ -467,14 +471,15 @@
     storedRotation: 90
     heldPrefix: advanced
   - type: MeleeWeapon
-    attackRate: .86
-    range: 1.5
+    attackRate: .8
+    range: 1.4
     bluntStaminaDamageFactor: 5.0
     damage:
       types:
         Blunt: 4.5
         Slash: 7.5
     heavyRateModifier: 2
+    heavyRangeModifier: 1.75
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 10
     maxTargets: 8
@@ -510,9 +515,9 @@
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/e-cautery.rsi
     inhandVisuals:
       left:
-      - state: inhand-left-on
+      - state: on-inhand-left
       right:
-      - state: inhand-right-on
+      - state: on-inhand-right
   - type: SurgeryTool
     startSound:
       path: /Audio/_Shitmed/Medical/Surgery/cautery1.ogg
@@ -573,9 +578,9 @@
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/e-scalpel.rsi
     inhandVisuals:
       left:
-      - state: inhand-left-on
+      - state: on-inhand-left
       right:
-      - state: inhand-right-on
+      - state: on-inhand-right
   - type: SurgeryTool
     startSound:
       path: /Audio/_Shitmed/Medical/Surgery/scalpel1.ogg
@@ -636,9 +641,9 @@
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/adv-retractor.rsi
     inhandVisuals:
       left:
-      - state: inhand-left-on
+      - state: on-inhand-left
       right:
-      - state: inhand-right-on
+      - state: on-inhand-right
   - type: SurgeryTool
     startSound:
       path: /Audio/_Shitmed/Medical/Surgery/retractor1.ogg
