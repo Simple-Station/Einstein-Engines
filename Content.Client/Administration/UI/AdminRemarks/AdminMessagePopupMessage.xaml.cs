@@ -12,12 +12,19 @@ public sealed partial class AdminMessagePopupMessage : Control
     public AdminMessagePopupMessage(AdminMessageEuiState.Message message)
     {
         RobustXamlLoader.Load(this);
+        try
+        {
 
-        Admin.SetMessage(FormattedMessage.FromMarkupOrThrow(Loc.GetString(
-            "admin-notes-message-admin",
-            ("admin", message.AdminName),
-            ("date", message.AddedOn.ToLocalTime()))));
+            Admin.SetMessage(FormattedMessage.FromMarkupOrThrow(Loc.GetString(
+                "admin-notes-message-admin",
+                ("admin", message.AdminName),
+                ("date", message.AddedOn.ToLocalTime()))));
 
-        Message.SetMessage(message.Text);
+            Message.SetMessage(message.Text);
+        }
+        catch(Exception e)
+        {
+            Message.SetMessage(e.Message);
+        }
     }
 }
