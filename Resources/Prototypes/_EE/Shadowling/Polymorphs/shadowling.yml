@@ -10,3 +10,16 @@
     revertOnCrit: false
     copiedComponents:
       - Shadowling
+
+- type: polymorph
+  id: ShadowlingAscendantPolymorph
+  configuration:
+    entity: BaseMobShadowlingAscendant
+    forced: true
+    transferName: true
+    transferHumanoidAppearance: false
+    allowRepeatedMorphs: true
+    revertOnCrit: false
+    revertOnDeath: false
+    copiedComponents:
+      - Shadowling

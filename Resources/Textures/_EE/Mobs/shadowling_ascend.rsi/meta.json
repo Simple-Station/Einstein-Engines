@@ -1,0 +1,36 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from Paradise Station",
+    "states": [
+        {
+            "name": "shadowling_ascend",
+            "directions": 4,
+            "delays": [
+                [
+                    0.5,
+                    0.5
+                ],
+                [
+                    0.5,
+                    0.5
+                ],
+                [
+                    0.5,
+                    0.5
+                ],
+                [
+                    0.5,
+                    0.5
+                ]
+            ]
+        },
+        {
+            "name": "asc_dead"
+        }
+    ]
+}

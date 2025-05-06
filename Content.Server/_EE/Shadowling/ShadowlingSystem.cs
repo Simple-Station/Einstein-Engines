@@ -1,5 +1,6 @@
 using Content.Server._EE.Shadowling.Objectives;
 using Content.Server.Actions;
+using Content.Server.Humanoid;
 using Content.Server.Language;
 using Content.Server.Mind;
 using Content.Server.Objectives;
@@ -16,6 +17,7 @@ using Content.Shared.Alert;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.Humanoid;
+using Content.Shared.Humanoid.Markings;
 using Content.Shared.Inventory;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
@@ -23,6 +25,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Objectives.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Roles;
+using Robust.Server.GameObjects;
 
 
 namespace Content.Server._EE.Shadowling;
@@ -43,6 +46,7 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
     [Dependency] private readonly LanguageSystem _language = default!;
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly SharedObjectivesSystem _sharedObjectives = default!;
+    [Dependency] private  readonly HumanoidAppearanceSystem _appearance = default!;
 
     public override void Initialize()
     {
@@ -184,6 +188,8 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
 
             var ev = new ShadowlingAscendEvent();
             RaiseLocalEvent(ev);
+
+
 
             AddComp<ShadowlingAnnihilateComponent>(uid);
             AddComp<ShadowlingHypnosisComponent>(uid);

@@ -1,5 +1,6 @@
 using Content.Server.Actions;
 using Content.Server.Chat.Systems;
+using Content.Server.Polymorph.Systems;
 using Content.Server.Popups;
 using Content.Server.Storage.EntitySystems;
 using Content.Shared._EE.Shadowling;
@@ -25,6 +26,7 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
+    [Dependency] private readonly PolymorphSystem _polymorph = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -158,6 +160,13 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
         var query = EntityQueryEnumerator<ShadowlingComponent>();
         while (query.MoveNext(out var slingUid, out var sling))
         {
+            var newUid = _polymorph.PolymorphEntity(slingUid, "ShadowlingAscendantPolymorph");
+
+            if (newUid == null)
+                return;
+
+            var ascendant = EntityManager.GetComponent<ShadowlingComponent>(newUid.Value);
+            _actions.RemoveAction(ascendant.ActionHatchEntity);
             sling.CurrentPhase = ShadowlingPhases.Ascension;
             RaiseLocalEvent(slingUid, new PhaseChangedEvent(ShadowlingPhases.Ascension));
         }

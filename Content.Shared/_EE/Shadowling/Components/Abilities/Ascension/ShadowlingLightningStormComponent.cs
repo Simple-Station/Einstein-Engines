@@ -18,10 +18,4 @@ public sealed partial class ShadowlingLightningStormComponent : Component
 
     [DataField]
     public string LightningProto = "HyperchargedLightning";
-
-    [DataField]
-    public EntityUid Ball;
-
-    [DataField]
-    public string WrathProto = "ShadowlingWrathBall";
 }
