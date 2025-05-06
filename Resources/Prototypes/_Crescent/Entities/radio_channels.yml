@@ -75,6 +75,13 @@
   frequency: 6104
   color: "#50c878"
 
+- type: radioChannel
+  id: Clarizian
+  name: chat-radio-clarizian
+  keycode: "r"
+  frequency: 6220
+  color: "#3b5a72"
+
 # these below are for compatibility with upstream
 - type: radioChannel
   id: Security

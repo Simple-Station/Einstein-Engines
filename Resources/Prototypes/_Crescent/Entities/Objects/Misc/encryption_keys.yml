@@ -229,3 +229,20 @@
     layers:
     - state: crypt_rusted
     - state: common_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyClarizian
+  name: clarizian encryption key
+  description: An encryption key used by the Clarizians.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Clarizian
+    - Common
+    - Traffic
+    defaultChannel: Common
+  - type: Sprite
+    layers:
+    - state: crypt_blue
+    - state: common_label
