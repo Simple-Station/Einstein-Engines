@@ -41,12 +41,14 @@ public sealed class ProjectilePhasePreventerSystem : EntitySystem
     private record struct ProcessRaycastsJob : IParallelRobustJob
     {
         public int BatchSize => 100;
-
-        public List<RaycastQuery> queries = new();
+        public List<RaycastQuery> queries;
+        public ConcurrentQueue<Tuple<StartCollideEvent, StartCollideEvent>> eventQueue;
         public void Execute(int index)
         {
             RaycastQuery data = queries[index];
-            if(transformQuery)
+            if (!transformQuery.GetComponent(data.owner, out var transform))
+                return;
+
 
         }
     }
