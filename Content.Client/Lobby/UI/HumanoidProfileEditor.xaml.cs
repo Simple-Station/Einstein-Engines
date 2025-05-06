@@ -526,10 +526,10 @@ namespace Content.Client.Lobby.UI
             _loadoutPreferences = new();
 
             // Show/Hide the loadouts tab if they ever get enabled/disabled
-            var loadoutsEnabled = cfgManager.GetCVar(CCVars.GameLoadoutsEnabled);
-            CTabContainer.SetTabVisible(4, loadoutsEnabled);
-            ShowLoadouts.Visible = loadoutsEnabled;
-            cfgManager.OnValueChanged(CCVars.GameLoadoutsEnabled, LoadoutsChanged);
+            //var loadoutsEnabled = cfgManager.GetCVar(CCVars.GameLoadoutsEnabled);
+            //CTabContainer.SetTabVisible(4, loadoutsEnabled);
+            //ShowLoadouts.Visible = loadoutsEnabled;
+            //cfgManager.OnValueChanged(CCVars.GameLoadoutsEnabled, LoadoutsChanged);
 
             LoadoutsShowUnusableButton.OnToggled += args => UpdateLoadouts(args.Pressed);
             LoadoutsRemoveUnusableButton.OnPressed += _ => TryRemoveUnusableLoadouts();
