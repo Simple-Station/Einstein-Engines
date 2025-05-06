@@ -15900,3 +15900,28 @@ Entries:
   id: 7234
   time: '2025-05-03T17:43:26.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2393
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: >-
+        The job menu doesn't magically switch to the old style when editing
+        other parts of your character anymore
+    - type: Fix
+      message: >-
+        You can no longer lie to yourself and select more markings than the
+        point limit allows
+    - type: Fix
+      message: Fixed some odd behavior with the marking editor's Customize button
+  id: 7235
+  time: '2025-05-04T21:10:26.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2332
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Attempting to spawn in with an invalid trait list will now simply
+        prevent you from spawning with any traits at all. It will also inform
+        any admins who may be online of the attempt. 
+  id: 7236
+  time: '2025-05-05T01:39:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2410
