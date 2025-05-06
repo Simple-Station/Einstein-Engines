@@ -72,6 +72,9 @@ namespace Content.Server.Body.Systems
 
             RemComp<TemporaryBlindnessComponent>(body);
             HandleSight(uid, body);
+            if (TryComp<BlindableComponent>(body, out var incurable) && incurable.Incurable)
+                _blindableSystem.SetMinDamage(body, 8);
+            // hack fix, please remove if you fix eye damage transferring to eyes
         }
 
         private void OnOrganDisabled(EntityUid uid, EyesComponent component, OrganDisabledEvent args)
