@@ -20,6 +20,9 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Dynamics;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
+using Robust.Shared.Threading;
+
+
 public sealed class ProjectilePhasePreventerSystem : EntitySystem
 {
     [Dependency] private readonly SharedPhysicsSystem _phys = default!;
@@ -30,8 +33,30 @@ public sealed class ProjectilePhasePreventerSystem : EntitySystem
     ConcurrentQueue<Tuple<StartCollideEvent, StartCollideEvent>> eventQueue = new();
     private EntityQuery<PhysicsComponent> physQuery;
     private EntityQuery<FixturesComponent> fixtureQuery;
+    private EntityQuery<TransformComponent> transformQuery;
+    private EntityQuery<MetaDataComponent> metaDataQuery;
 
     public required ISawmill sawLogs;
+
+    private record struct ProcessRaycastsJob : IParallelRobustJob
+    {
+        public int BatchSize => 100;
+
+        public List<RaycastQuery> queries = new();
+        public void Execute(int index)
+        {
+            RaycastQuery data = queries[index];
+            if(transformQuery)
+
+        }
+    }
+
+    internal readonly record struct RaycastQuery
+    {
+        public EntityUid owner { get; }
+        public Vector2 start{ get; }
+        public Vector2 end{ get; }
+    }
 
     internal sealed class RaycastBucket
     {
