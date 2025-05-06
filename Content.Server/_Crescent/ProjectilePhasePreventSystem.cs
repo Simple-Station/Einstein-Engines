@@ -114,6 +114,10 @@ public sealed class ProjectilePhasePreventerSystem : EntitySystem
     private void OnInit(EntityUid uid, ProjectilePhasePreventComponent comp, ref MapInitEvent args)
     {
         comp.start = _trans.GetWorldPosition(uid);
+        foreach(var (key , fixture) in Comp<FixturesComponent>(uid).Fixtures)
+        {
+            comp.relevantBitmasks |= fixture.CollisionLayer;
+        };
     }
 
 
@@ -130,13 +134,15 @@ public sealed class ProjectilePhasePreventerSystem : EntitySystem
         while (enumerator.MoveNext(out var owner, out var phaseComp, out var physComp, out var fixtComp,
                    out var projComp))
         {
+            if (TerminatingOrDeleted(owner))
+                continue;
             var map = _trans.GetMapId(owner);
             if (map == MapId.Nullspace)
             {
                 continue;
             }
             var start = phaseComp.start;
-            var end = _trans.GetWorldPosition()
+            var end = _trans.GetWorldPosition(owner);
             if (start == end)
                 continue;
             raycastsJob.queries.Add(new RaycastQuery(owner, start, end - start, phaseComp.relevantBitmasks));
