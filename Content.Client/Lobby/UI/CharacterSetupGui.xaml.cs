@@ -114,7 +114,7 @@ namespace Content.Client.Lobby.UI
                 characterPickerButton.OnPressed += args =>
                 {
                     CharEditor.RemoveAllChildren();
-                    if(profileOfCharacter.Faction is null || profileOfCharacter?.Faction == "")
+                    if (profileOfCharacter.Faction is null || profileOfCharacter?.Faction == "")
                         CharEditor.AddChild(FactionSelector);
                     else
                         CharEditor.AddChild(_humanoidProfileEditor);
@@ -126,6 +126,19 @@ namespace Content.Client.Lobby.UI
                     DeleteCharacter?.Invoke(slot);
                 };
             }
+
+            var selectedChar = _preferencesManager.Preferences?.SelectedCharacter;
+            if (selectedChar != null)
+            {
+                HumanoidCharacterProfile profileOfCharacterr = (HumanoidCharacterProfile) (selectedChar);
+
+                CharEditor.RemoveAllChildren();
+                if (profileOfCharacterr?.Faction is null || profileOfCharacterr?.Faction == "")
+                    CharEditor.AddChild(FactionSelector);
+                else
+                    CharEditor.AddChild(_humanoidProfileEditor);
+            }
+
 
             _createNewCharacterButton.Disabled = numberOfFullSlots >= _preferencesManager.Settings.MaxCharacterSlots;
             Characters.AddChild(_createNewCharacterButton);

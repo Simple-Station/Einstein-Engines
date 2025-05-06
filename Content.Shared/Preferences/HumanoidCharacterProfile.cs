@@ -30,6 +30,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     public const int MaxNameLength = 64;
     public const int MaxDescLength = 1024;
 
+    public const int DefaultBalance = 25000;
+
     /// Job preferences for initial spawn
     [DataField]
     private Dictionary<string, JobPriority> _jobPriorities = new()
@@ -267,6 +269,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             Nationality = SharedHumanoidAppearanceSystem.DefaultNationality,
             Employer = SharedHumanoidAppearanceSystem.DefaultEmployer,
             Lifepath = SharedHumanoidAppearanceSystem.DefaultLifepath,
+            BankBalance = DefaultBalance,
         };
     }
 
@@ -330,6 +333,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             Nationality = SharedHumanoidAppearanceSystem.DefaultNationality,
             Employer = SharedHumanoidAppearanceSystem.DefaultEmployer,
             Lifepath = SharedHumanoidAppearanceSystem.DefaultLifepath,
+            BankBalance = DefaultBalance,
         };
     }
 

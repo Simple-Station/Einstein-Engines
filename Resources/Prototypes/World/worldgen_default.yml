@@ -4,6 +4,10 @@
     - type: WorldController
     - type: BiomeSelection
       biomes:
-        - AsteroidsFallback
         - Failsafe
-        - AsteroidsStandard
+        - DevilsMawWrecks
+        - AsteroidsStandardShinohara
+        - GenericWrecks1
+        - GenericWrecks2
+        - AsteroidsStandardTaypanOne
+        - CrastersGrave
