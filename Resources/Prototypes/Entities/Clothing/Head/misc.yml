@@ -125,8 +125,8 @@
 
 - type: entity
   parent: ClothingHeadBase
-  id: ClothingHeadHatShrineMaidenWig
-  name: shrine maiden's wig
+  id: ClothingHeadHatShrineMaidenBow
+  name: shrine maiden's Bow
   description: The tag reads "All proceeds go to the Hakurei Shrine."
   components:
   - type: Sprite

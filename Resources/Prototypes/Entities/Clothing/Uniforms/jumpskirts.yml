@@ -1377,3 +1377,14 @@
     sprite: Clothing/Uniforms/Jumpskirt/yellowswoop.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpskirt/yellowswoop.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtShrineMaiden
+  name: shrine maiden outfit
+  description: Makes you want to go deal with some troublesome youkai.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Suits/shrine-maiden.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Suits/shrine-maiden.rsi
