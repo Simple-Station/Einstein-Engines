@@ -193,7 +193,7 @@
   functions:
     - !type:TraitAddComponent
       components:
-        - type: KillOnShock
+        - type: KillOnDamage
   requirements:
     - !type:CharacterSpeciesRequirement
       species:

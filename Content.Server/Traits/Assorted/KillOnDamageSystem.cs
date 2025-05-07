@@ -4,22 +4,21 @@ using Content.Shared.Popups;
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
 using Content.Shared.IdentityManagement;
-using Content.Server.Chat.V2;
 using Content.Shared.Mobs.Components;
 
 namespace Content.Server.Traits.Assorted;
 
-public sealed class KillOnShockSystem : EntitySystem
+public sealed class KillOnDamageSystem : EntitySystem
 {
     [Dependency] private readonly MobStateSystem _mob = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<KillOnShockComponent, DamageChangedEvent>(OnDamageChanged);
+        SubscribeLocalEvent<KillOnDamageComponent, DamageChangedEvent>(OnDamageChanged);
     }
 
-    private void OnDamageChanged(EntityUid uid, KillOnShockComponent component, DamageChangedEvent args)
+    private void OnDamageChanged(EntityUid uid, KillOnDamageComponent component, DamageChangedEvent args)
     {
         if (!TryComp<MobStateComponent>(uid, out var mobState))
             return;
