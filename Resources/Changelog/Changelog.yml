@@ -16027,3 +16027,14 @@ Entries:
   id: 7237
   time: '2025-05-07T03:18:14.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2409
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added Solarian army/navy outfits to loadouts for characters with
+        Solarian+WarVeteran.
+    - type: Tweak
+      message: All cosmetic loadout items are now free.
+  id: 7238
+  time: '2025-05-07T19:45:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2407
