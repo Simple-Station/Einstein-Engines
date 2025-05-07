@@ -27,7 +27,7 @@ using Robust.Shared.Utility;
 using static Content.Shared.Humanoid.SharedHumanoidAppearanceSystem;
 using CharacterSetupGui = Content.Client.Lobby.UI.CharacterSetupGui;
 using HumanoidProfileEditor = Content.Client.Lobby.UI.HumanoidProfileEditor;
-using JobPreferenceSelector = Content.Client.Lobby.UI.JobPreferenceSelector;
+using JobPreferenceMenu = Content.Client.Lobby.UI.JobPreferenceMenu;
 
 namespace Content.Client.Lobby;
 
@@ -51,7 +51,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
     private CharacterSetupGui? _characterSetup;
     private HumanoidProfileEditor? _profileEditor;
-    private JobPreferenceSelector? _jobSelector;
+    private JobPreferenceMenu? _jobSelector;
 
     /// This is the character preview panel in the chat. This should only update if their character updates
     private LobbyCharacterPreviewPanel? PreviewPanel => GetLobbyPreview();
@@ -148,6 +148,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         profileEditor.SetProfile(
             (HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter,
             _preferencesManager.Preferences?.SelectedCharacterIndex);
+        jobSelector.RefreshJobs();
     }
 
     /// Refreshes the character preview in the lobby chat
@@ -192,12 +193,13 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         ReloadCharacterSetup();
     }
 
-    private (CharacterSetupGui, HumanoidProfileEditor, JobPreferenceSelector) EnsureGui()
+    private (CharacterSetupGui, HumanoidProfileEditor, JobPreferenceMenu) EnsureGui()
     {
         if (_characterSetup != null && _profileEditor != null && _jobSelector != null)
         {
             _characterSetup.Visible = true;
             _jobSelector.Visible = !_profileEditor.Visible;
+            _jobSelector.RefreshJobs();
             return (_characterSetup, _profileEditor, _jobSelector);
         }
 
@@ -214,12 +216,11 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
         _profileEditor.OnOpenGuidebook += _guide.OpenHelp;
 
-        _jobSelector = new JobPreferenceSelector(
-            _jobRequirements,
-            _playerManager,
+        _jobSelector = new JobPreferenceMenu(
+            _configurationManager,
             EntityManager,
             _prototypeManager,
-            _configurationManager,
+            _jobRequirements,
             _profileEditor
             );
 

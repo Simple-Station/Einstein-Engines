@@ -1,0 +1,17 @@
+<BoxContainer xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:humanoid="clr-namespace:Content.Client.Humanoid"
+    xmlns:prefUi="clr-namespace:Content.Client.Lobby.UI"
+    xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    HorizontalExpand="True">
+    <BoxContainer Name="Jobs" HorizontalExpand="True">
+        <!-- Jobs -->
+        <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True" VScrollEnabled="True">
+            <BoxContainer HorizontalExpand="True" Orientation="Vertical">
+                <OptionButton Name="PreferenceUnavailableButton" StyleClasses="OpenBoth" />
+                <BoxContainer Name="JobList" Orientation="Vertical" />
+            </BoxContainer>
+        </ScrollContainer>
+    </BoxContainer>
+</BoxContainer>

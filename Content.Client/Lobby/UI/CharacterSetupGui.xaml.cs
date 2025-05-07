@@ -33,7 +33,7 @@ namespace Content.Client.Lobby.UI
             IResourceCache resourceCache,
             IClientPreferencesManager preferencesManager,
             HumanoidProfileEditor profileEditor,
-            JobPreferenceSelector jobPreferences)
+            JobPreferenceMenu jobPreferences)
         {
             RobustXamlLoader.Load(this);
             _preferencesManager = preferencesManager;
