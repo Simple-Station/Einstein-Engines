@@ -31,6 +31,7 @@ shadowling-null-charge-start = I begin to charge my fist with a nullifying force
 shadowling-black-rec-lesser-already = The target is already a Lesser Shadowling.
 shadowling-black-rec-revive-done = Darkness pulls you back from the brink.
 shadowling-black-rec-lesser-done = You feel like even stronger than before.
+shadowling-black-rec-limit = You have reached your limit. You can not empower any more Thralls!
 
 shadowling-ascendant-broadcast-dialog = Your message has been sent to everyone.
 

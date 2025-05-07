@@ -1,5 +1,6 @@
 using Content.Client.Flash;
 using Content.Shared._EE.Shadowling;
+using Content.Shared._EE.Shadowling.Components;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.GameStates;
@@ -42,6 +43,9 @@ public sealed class EnthrallSystem : SharedEnthrallSystem
     {
         if (_playerManager.LocalEntity == uid)
         {
+            if (EntityManager.HasComponent<LesserShadowlingComponent>(uid))
+                return;
+
             _overlay.ReceiveEnthrall(5f);
             _overlayManager.AddOverlay(_overlay);
         }

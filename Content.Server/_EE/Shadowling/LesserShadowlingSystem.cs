@@ -1,4 +1,5 @@
 using Content.Server.Actions;
+using Content.Server.Polymorph.Systems;
 using Content.Shared._EE.Shadowling;
 using Content.Shared._EE.Shadowling.Components;
 using Content.Shared.Actions;
@@ -21,9 +22,10 @@ public sealed class LesserShadowlingSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<LesserShadowlingComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<LesserShadowlingComponent, ComponentRemove>(OnRemove);
+        SubscribeLocalEvent<LesserShadowlingComponent, ComponentStartup>(OnStartup);
     }
+
 
     public override void Update(float frameTime)
     {
@@ -40,15 +42,18 @@ public sealed class LesserShadowlingSystem : EntitySystem
         }
     }
 
-    private void OnStartup(EntityUid uid, LesserShadowlingComponent component, ComponentStartup args)
+    public void OnStartup(EntityUid uid, LesserShadowlingComponent component, ComponentStartup args)
     {
-        if (!TryComp(uid, out ActionsComponent? comp))
-            return;
-        // todo: remove guise once added in here and replace with shadow walk
         if (!TryComp<ThrallComponent>(uid, out var thrall))
             return;
+        if (!TryComp<ActionsComponent>(uid, out var actions))
+            return;
 
-        RemComp<LightDetectionComponent>(uid); // This was only needed for Guise
+        AddLesserActions(uid, component, thrall, actions);
+    }
+
+    public void AddLesserActions(EntityUid uid, LesserShadowlingComponent component, ThrallComponent thrall, ActionsComponent comp)
+    {
         _actions.RemoveAction(thrall.ActionGuiseEntity);
 
         _actions.AddAction(uid, ref component.ShadowWalkActionId, component.ShadowWalkAction, component: comp);
@@ -67,6 +72,8 @@ public sealed class LesserShadowlingSystem : EntitySystem
 
         _actions.RemoveAction(uid, component.ShadowWalkActionId, comp);
         RemComp<ShadowlingShadowWalkComponent>(uid);
+        RemComp<LightDetectionComponent>(uid);
+        RemComp<LightDetectionDamageModifierComponent>(uid);
 
         _alerts.ClearAlert(uid, component.AlertProto);
     }

@@ -1,7 +1,8 @@
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
-
+using Content.Shared.Polymorph;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 
 namespace Content.Shared._EE.Shadowling;
@@ -21,5 +22,14 @@ public sealed partial class ShadowlingBlackRecuperationComponent : Component
 
     [DataField]
     public string? BlackRecuperationEffect = "ShadowlingBlackRecuperationEffect";
+
+    [DataField]
+    public int LesserShadowlingMaxLimit = 5;
+
+    [DataField]
+    public int LesserShadowlingAmount;
+
+    [DataField]
+    public ProtoId<PolymorphPrototype> LesserShadowlingSpeciesProto = "ShadowPolymorph";
 }
 

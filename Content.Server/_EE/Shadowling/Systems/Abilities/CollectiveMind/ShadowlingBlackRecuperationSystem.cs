@@ -1,8 +1,10 @@
 using Content.Server.Administration.Systems;
 using Content.Server.DoAfter;
+using Content.Server.Polymorph.Systems;
 using Content.Server.Popups;
 using Content.Shared._EE.Shadowling;
 using Content.Shared._EE.Shadowling.Components;
+using Content.Shared.Actions;
 using Content.Shared.DoAfter;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
@@ -23,6 +25,8 @@ public sealed class ShadowlingBlackRecuperationSystem : EntitySystem
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly RejuvenateSystem _rejuvenate = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
+    [Dependency] private readonly LesserShadowlingSystem _lesserShadowling = default!;
+    [Dependency] private readonly PolymorphSystem _polymorph = default!;
     /// <inheritdoc/>
     public override void Initialize()
     {
@@ -66,6 +70,9 @@ public sealed class ShadowlingBlackRecuperationSystem : EntitySystem
 
         var target = args.Args.Target.Value;
 
+        var effectEnt = Spawn(component.BlackRecuperationEffect, _transformSystem.GetMapCoordinates(target));
+        _transformSystem.SetParent(effectEnt, target);
+
         if (!_mobStateSystem.IsAlive(target))
         {
             _rejuvenate.PerformRejuvenate(target);
@@ -73,11 +80,20 @@ public sealed class ShadowlingBlackRecuperationSystem : EntitySystem
         }
         else
         {
-            EnsureComp<LesserShadowlingComponent>(target);
-            _popup.PopupEntity(Loc.GetString("shadowling-black-rec-lesser-done"), uid, target, PopupType.MediumCaution);
-        }
+            if (component.LesserShadowlingAmount >= component.LesserShadowlingMaxLimit)
+            {
+                _popup.PopupEntity(Loc.GetString("shadowling-black-rec-limit"), uid, uid, PopupType.MediumCaution);
+                return;
+            }
 
-        var effectEnt = Spawn(component.BlackRecuperationEffect, _transformSystem.GetMapCoordinates(target));
-        _transformSystem.SetParent(effectEnt, target);
+            var newUid = _polymorph.PolymorphEntity(target, component.LesserShadowlingSpeciesProto);
+            if (newUid == null)
+                return;
+
+            EnsureComp<LesserShadowlingComponent>(newUid.Value);
+
+            component.LesserShadowlingAmount++;
+            _popup.PopupEntity(Loc.GetString("shadowling-black-rec-lesser-done"), uid, newUid.Value, PopupType.MediumCaution);
+        }
     }
 }
