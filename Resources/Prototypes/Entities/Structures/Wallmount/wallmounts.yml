@@ -16,11 +16,12 @@
     sprite: Structures/Storage/storage.rsi
     state: vent
   - type: SecretStash
-    secretStashName: secret-stash-part-vent
+    secretPartName: secret-stash-part-vent
     maxItemSize: Normal
   - type: ContainerContainer
     containers:
       stash: !type:ContainerSlot {}
+  - type: PottedPlantHide # TODO: This needs changed to be generic stash hide?
 
 - type: entity
   parent: WallmountVent
