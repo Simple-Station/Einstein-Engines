@@ -48,71 +48,34 @@ public sealed class ProjectilePhasePreventerSystem : EntitySystem
     public required ISawmill sawLogs;
     /// <summary>
     ///  how many rays will be put per thread
-    ///  
+    ///
     /// </summary>
-    internal const int raysPerThread = 450;
+    internal const int raysPerThread = 300;
 
-
-    private record struct RaycastBucket(RaycastQuery[] Queries, int space);
-
-    private record struct ProcessRaycastsJob(RayCastSystem RaySys, EntityQuery<PhysicsComponent>  Phys, EntityQuery<FixturesComponent> Fixt) : IParallelRobustJob
+    private class RaycastBucket(RaycastQuery[] queries, int space)
     {
-        public int BatchSize => 100;
-        public List<RaycastQuery> queries;
-        public ConcurrentQueue<Tuple<StartCollideEvent, StartCollideEvent>> eventQueue;
-        public void Execute(int index)
+        public RaycastQuery[] Queries = queries;
+        public int space = space;
+    };
+
+    private readonly struct RaycastQuery
+    {
+        public readonly EntityUid owner;
+        public readonly Vector2 start;
+
+        public readonly Vector2 translation;
+        public readonly MapId map;
+        public readonly int CollisionBitMask;
+
+        public RaycastQuery(EntityUid owner, Vector2 start, Vector2 translation, MapId map, int collisionBitMas)
         {
-            RaycastQuery data = queries[index];
-            QueryFilter queryFilter = new QueryFilter()
-            {
-                LayerBits = data.CollisionBitMask,
-                MaskBits = data.CollisionBitMask,
-            };
-            RayResult result = RaySys.CastRay(data.map, data.start, data.translation, queryFilter);
-            var bulletPhysics = Phys.GetComponent(data.owner);
-            var bulletFixtures = Fixt.GetComponent(data.owner);
-            var bulletString = bulletFixtures.Fixtures.Keys.First();
-            foreach (var hit in result.Results)
-            {
-                if (hit.Entity == data.owner)
-                    continue;
-                var targetPhysics = Phys.GetComponent(hit.Entity);
-                var targetFixtures = Fixt.GetComponent(hit.Entity);
-                var targetString = targetFixtures.Fixtures.Keys.First();
-                // i hate how verbose this is. - SPCR 2025
-                var bulletEvent = new StartCollideEvent(
-                    data.owner,
-                    hit.Entity,
-                    bulletString,
-                    targetString,
-                    bulletFixtures.Fixtures[bulletString],
-                    targetFixtures.Fixtures[targetString],
-                    bulletPhysics,
-                    targetPhysics,
-                    hit.Point);
-                var targetEvent = new StartCollideEvent(
-                    hit.Entity,
-                    data.owner,
-                    targetString,
-                    bulletString,
-                    targetFixtures.Fixtures[targetString],
-                    bulletFixtures.Fixtures[bulletString],
-                    targetPhysics,
-                    bulletPhysics,
-                    hit.Point);
-                eventQueue.Enqueue(new Tuple<StartCollideEvent, StartCollideEvent>(bulletEvent, targetEvent));
-            }
-
-
+            this.owner = owner;
+            this.start = start;
+            this.translation = translation;
+            this.map = map;
+            this.CollisionBitMask = collisionBitMas;
         }
     }
-
-    internal readonly record struct RaycastQuery(
-        EntityUid owner,
-        Vector2 start,
-        Vector2 translation,
-        MapId map,
-        int CollisionBitMask);
 
     public override void Initialize()
     {
@@ -134,17 +97,14 @@ public sealed class ProjectilePhasePreventerSystem : EntitySystem
 
     public override void Update(float frametime)
     {
-        
-        var enumerator =
-            EntityQueryEnumerator<ProjectilePhasePreventComponent, PhysicsComponent, FixturesComponent,
-                ProjectileComponent>();
+
+        var enumerator = EntityQueryEnumerator<ProjectilePhasePreventComponent>();
         var rayCount = 0;
         var currentBucket = new RaycastBucket(new RaycastQuery[raysPerThread], raysPerThread);
         List<RaycastBucket> buckets = new List<RaycastBucket>();
         ConcurrentQueue<Tuple<StartCollideEvent, StartCollideEvent>> eventQueue = new();
 
-        while (enumerator.MoveNext(out var owner, out var phaseComp, out var physComp, out var fixtComp,
-                   out var projComp))
+        while (enumerator.MoveNext(out var owner, out var phaseComp))
         {
             if (TerminatingOrDeleted(owner))
                 continue;
@@ -160,10 +120,11 @@ public sealed class ProjectilePhasePreventerSystem : EntitySystem
             if(currentBucket.space == 0)
             {
                 buckets.Add(currentBucket);
-                currentBucket = new RaycastBucket(new RaycastQuery[raysPerThread], raysPerThread); 
+                currentBucket = new RaycastBucket(new RaycastQuery[raysPerThread], raysPerThread);
             }
             currentBucket.Queries[currentBucket.space-- - 1] = new RaycastQuery(owner, start, end - start, map, phaseComp.relevantBitmasks);
             rayCount++;
+            phaseComp.start = end;
         }
         Parallel.ForEach<RaycastBucket>(buckets, args =>
         {
@@ -209,6 +170,7 @@ public sealed class ProjectilePhasePreventerSystem : EntitySystem
                         hit.Point);
                     eventQueue.Enqueue(new Tuple<StartCollideEvent, StartCollideEvent>(bulletEvent, targetEvent));
                 }
+
             }
         });
 
