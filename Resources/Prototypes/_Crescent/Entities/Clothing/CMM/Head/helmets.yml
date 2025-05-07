@@ -31,6 +31,7 @@
   name: midshipman's helmet
   description: Spaceworthy protection for your fragile skull. A Minuteman design.
   components:
+  - type: BreathMask
   - type: Sprite
     sprite: _Crescent/Clothing/CMM/Head/midshipman.rsi
   - type: Clothing
@@ -60,6 +61,7 @@
   name: minuteman's patrolsuit
   description: Spaceworthy protection for your fragile skull. A Minuteman design.
   components:
+  - type: BreathMask
   - type: Sprite
     sprite: _Crescent/Clothing/CMM/Head/patrol.rsi
   - type: Clothing
