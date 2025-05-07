@@ -32,7 +32,7 @@ public sealed class WaddleAnimationSystem : EntitySystem
         SubscribeLocalEvent<WaddleAnimationComponent, AnimationCompletedEvent>(OnAnimationCompleted);
         SubscribeLocalEvent<WaddleAnimationComponent, StunnedEvent>(OnStunned);
         SubscribeLocalEvent<WaddleAnimationComponent, KnockedDownEvent>(OnKnockedDown);
-        SubscribeLocalEvent<WaddleAnimationComponent, BuckleChangeEvent>(OnBuckleChange);
+        SubscribeLocalEvent<WaddleAnimationComponent, BuckledEvent>(OnBuckled);
     }
 
     private void OnMovementInput(EntityUid entity, WaddleAnimationComponent component, MoveInputEvent args)
@@ -148,7 +148,7 @@ public sealed class WaddleAnimationSystem : EntitySystem
         StopWaddling(uid, component);
     }
 
-    private void OnBuckleChange(EntityUid uid, WaddleAnimationComponent component, BuckleChangeEvent args)
+    private void OnBuckled(EntityUid uid, WaddleAnimationComponent component, BuckledEvent args)
     {
         StopWaddling(uid, component);
     }

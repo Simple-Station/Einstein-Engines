@@ -9,5 +9,6 @@ main-menu-address-label = Server Address:
 main-menu-join-public-server-button = Join Public Server
 main-menu-join-public-server-button-tooltip = Cannot connect to public server with a debug build.
 main-menu-direct-connect-button = Direct Connect
+main-menu-go-lobby-button = Connect & Go to Lobby
 main-menu-options-button = Options
 main-menu-quit-button = Quit

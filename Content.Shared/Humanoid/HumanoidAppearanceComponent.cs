@@ -1,12 +1,11 @@
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
-using Content.Shared.Preferences; // DeltaV
+using Content.Shared.Preferences; //DeltaV, used for Metempsychosis, Fugitive, and Paradox Anomaly
 using Robust.Shared.Enums;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
-using Content.Shared.Preferences; //DeltaV, used for Metempsychosis, Fugitive, and Paradox Anomaly
 
 namespace Content.Shared.Humanoid;
 
@@ -28,6 +27,15 @@ public sealed partial class HumanoidAppearanceComponent : Component
 
     [DataField, AutoNetworkedField]
     public Gender Gender;
+
+    [DataField, AutoNetworkedField]
+    public string? DisplayPronouns;
+
+    [DataField, AutoNetworkedField]
+    public string? StationAiName;
+
+    [DataField, AutoNetworkedField]
+    public string? CyborgName;
 
     [DataField, AutoNetworkedField]
     public int Age = 18;
@@ -87,6 +95,12 @@ public sealed partial class HumanoidAppearanceComponent : Component
     /// </summary>
     [ViewVariables(VVAccess.ReadOnly)]
     public Color? CachedFacialHairColor;
+
+    /// <summary>
+    ///     Which layers of this humanoid that should be hidden on equipping a corresponding item..
+    /// </summary>
+    [DataField]
+    public HashSet<HumanoidVisualLayers> HideLayersOnEquip = [HumanoidVisualLayers.Hair];
 
     /// <summary>
     /// DeltaV - let paradox anomaly be cloned

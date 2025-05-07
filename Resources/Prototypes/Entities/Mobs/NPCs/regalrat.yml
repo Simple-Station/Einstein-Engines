@@ -89,7 +89,11 @@
     makeSentient: true
     name: ghost-role-information-rat-king-name
     description: ghost-role-information-rat-king-description
-    rules: ghost-role-information-rat-king-rules
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+    raffle:
+      settings: default
   - type: GhostTakeoverAvailable
   - type: Tag
     tags:
@@ -125,6 +129,17 @@
     understands:
     - TauCetiBasic
     - Mouse
+  - type: SurgeryTarget
+  - type: UserInterface
+    interfaces:
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
+  - type: NightVision
+    isActive: true
+    toggleAction: null
+    color: "#808080"
+    activateSound: null
+    deactivateSound: null
 
 - type: entity
   id: MobRatKingBuff
@@ -161,13 +176,14 @@
   - type: GuideHelp
     guides:
     - MinorAntagonists
+  - type: Fauna # Lavaland Change
 
 - type: entity
   name: Rat Servant
   id: MobRatServant
   parent: [ SimpleMobBase, MobCombat ]
   description: He's da mini rat. He don't make da roolz.
-  noSpawn: true #Must be configured to a King or the AI breaks.
+  categories: [ HideSpawnMenu ] #Must be configured to a King or the AI breaks.
   components:
   - type: Carriable
     freeHandsRequired: 1
@@ -203,7 +219,11 @@
     - map: [ "enum.DamageStateVisualLayers.BaseUnshaded"]
       state: eyes
       shader: unshaded
-
+  - type: SurgeryTarget
+  - type: UserInterface
+    interfaces:
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
   - type: SpriteMovement
     movementLayers:
       movement:
@@ -306,6 +326,12 @@
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
+  - type: NightVision
+    isActive: true
+    toggleAction: null
+    color: "#808080"
+    activateSound: null
+    deactivateSound: null
 
 - type: weightedRandomEntity
   id: RatKingLoot
@@ -318,7 +344,7 @@
   id: ActionRatKingRaiseArmy
   name: Raise Army
   description: Spend some hunger to summon an allied rat to help defend you.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 4
@@ -331,7 +357,7 @@
   id: ActionRatKingDomain
   name: Rat King's Domain
   description: Spend some hunger to release a cloud of ammonia into the air.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 6
@@ -344,7 +370,7 @@
   id: ActionRatKingOrderStay
   name: Stay
   description: Command your army to stand in place.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 1
@@ -363,7 +389,7 @@
   id: ActionRatKingOrderFollow
   name: Follow
   description: Command your army to follow you around.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 1
@@ -382,7 +408,7 @@
   id: ActionRatKingOrderCheeseEm
   name: Cheese 'Em
   description: Command your army to attack whoever you point at.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 1
@@ -401,7 +427,7 @@
   id: ActionRatKingOrderLoose
   name: Loose
   description: Command your army to act at their own will.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 1

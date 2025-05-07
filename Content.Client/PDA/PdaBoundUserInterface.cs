@@ -21,10 +21,15 @@ namespace Content.Client.PDA
         protected override void Open()
         {
             base.Open();
-            SendMessage(new PdaRequestUpdateInterfaceMessage());
-            _menu = new PdaMenu();
-            _menu.OpenCenteredLeft();
-            _menu.OnClose += Close;
+
+            if (_menu == null)
+                CreateMenu();
+        }
+
+        private void CreateMenu()
+        {
+            _menu = this.CreateWindowCenteredLeft<PdaMenu>();
+
             _menu.FlashLightToggleButton.OnToggled += _ =>
             {
                 SendMessage(new PdaToggleFlashlightMessage());
@@ -32,17 +37,17 @@ namespace Content.Client.PDA
 
             _menu.EjectIdButton.OnPressed += _ =>
             {
-                SendMessage(new ItemSlotButtonPressedEvent(PdaComponent.PdaIdSlotId));
+                SendPredictedMessage(new ItemSlotButtonPressedEvent(PdaComponent.PdaIdSlotId));
             };
 
             _menu.EjectPenButton.OnPressed += _ =>
             {
-                SendMessage(new ItemSlotButtonPressedEvent(PdaComponent.PdaPenSlotId));
+                SendPredictedMessage(new ItemSlotButtonPressedEvent(PdaComponent.PdaPenSlotId));
             };
 
             _menu.EjectPaiButton.OnPressed += _ =>
             {
-                SendMessage(new ItemSlotButtonPressedEvent(PdaComponent.PdaPaiSlotId));
+                SendPredictedMessage(new ItemSlotButtonPressedEvent(PdaComponent.PdaPaiSlotId));
             };
 
             _menu.ActivateMusicButton.OnPressed += _ =>
@@ -89,7 +94,6 @@ namespace Content.Client.PDA
             _menu?.UpdateState(updateState);
         }
 
-
         protected override void AttachCartridgeUI(Control cartridgeUIFragment, string? title)
         {
             _menu?.ProgramView.AddChild(cartridgeUIFragment);
@@ -109,15 +113,6 @@ namespace Content.Client.PDA
         protected override void UpdateAvailablePrograms(List<(EntityUid, CartridgeComponent)> programs)
         {
             _menu?.UpdateAvailablePrograms(programs);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-            if (!disposing)
-                return;
-
-            _menu?.Dispose();
         }
 
         private PdaBorderColorComponent? GetBorderColorComponent()

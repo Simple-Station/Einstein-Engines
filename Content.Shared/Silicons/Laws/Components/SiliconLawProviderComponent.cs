@@ -1,4 +1,5 @@
 ﻿using Robust.Shared.Prototypes;
+using Robust.Shared.Audio;
 
 namespace Content.Shared.Silicons.Laws.Components;
 
@@ -20,4 +21,20 @@ public sealed partial class SiliconLawProviderComponent : Component
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public SiliconLawset? Lawset;
+
+    /// <summary>
+    /// The sound that plays for the Silicon player
+    /// when the particular lawboard has been inserted.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier? LawUploadSound = new SoundPathSpecifier("/Audio/Misc/cryo_warning.ogg");
+
+    /// <summary>
+    ///     Whether this lawset cannot ever be removed, such as Antagonistic laws. This is largely needed for MALF AI,
+    ///     since it is imperative that the MALF AI needs to be destroyed, and can't simply be rendered harmless by
+    ///     the research director getting a board out of his closet.
+    /// </summary>
+    [DataField]
+    public bool UnRemovable;
+
 }

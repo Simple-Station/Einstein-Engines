@@ -1,0 +1,227 @@
+- type: entity
+  parent: CrateGenericSteel
+  id: CrateFootlocker
+  name: footlocker
+  description: A footlocker for someones equipment.
+  components:
+  - type: Icon
+    sprite: Structures/Storage/Crates/footlocker.rsi
+  - type: Sprite
+    sprite: Structures/Storage/Crates/footlocker.rsi
+  - type: Reflect
+    reflects:
+    - Energy
+    reflectProb: 0.2
+    spread: 90
+
+- type: entity
+  parent: CrateGenericSteel
+  id: CrateAluminium
+  name: aluminium crate
+  description: An aluminium crate for storing stuff.
+  components:
+  - type: Icon
+    sprite: Structures/Storage/Crates/aluminiumcrate.rsi
+  - type: Sprite
+    sprite: Structures/Storage/Crates/aluminiumcrate.rsi
+
+- type: entity
+  parent: CrateGenericSteel
+  id: CrateArmy
+  name: army crate
+  description: A crate with a US Army star on.
+  components:
+  - type: Icon
+    sprite: Structures/Storage/Crates/armycrate.rsi
+  - type: Sprite
+    sprite: Structures/Storage/Crates/armycrate.rsi
+
+- type: entity
+  parent: CrateGenericSteel
+  id: CrateMedical2
+  name: medical crate
+  description: A metal crate for storing medical equipment.
+  components:
+  - type: Icon
+    sprite: Structures/Storage/Crates/medicalcrate.rsi
+  - type: Sprite
+    sprite: Structures/Storage/Crates/medicalcrate.rsi
+
+- type: entity
+  parent: CrateGenericSteel
+  id: CrateRed
+  name: red crate
+  description: A faded red crate for storing stuff.
+  components:
+  - type: Icon
+    sprite: Structures/Storage/Crates/redcrate.rsi
+  - type: Sprite
+    sprite: Structures/Storage/Crates/redcrate.rsi
+
+- type: entity
+  parent: CrateGeneric
+  id: Trashbin
+  name: trash bin
+  description: A trash bin for putting rubbish in.
+  components:
+  - type: Icon
+    sprite: Structures/Storage/Crates/trashbin.rsi
+  - type: Sprite
+    sprite: Structures/Storage/Crates/trashbin.rsi
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: closed
+      map: ["enum.StorageVisualLayers.Door"]
+
+- type: entity
+  parent: CrateFootlocker
+  id: CrateTrashcart
+  name: trash cart
+  description: A trash cart for transporting waste.
+  components:
+  - type: Icon
+    sprite: Structures/Storage/Crates/trashcart.rsi
+  - type: Sprite
+    sprite: Structures/Storage/Crates/trashcart.rsi
+  - type: TileFrictionModifier
+    modifier: 0.4
+
+- type: entity
+  parent: CrateGeneric
+  id: CrateFreezer2
+  name: freezer
+  description: A freezer for keeping things cool.
+  components:
+  - type: Icon
+    sprite: Structures/Storage/Crates/freezer.rsi
+  - type: Sprite
+    sprite: Structures/Storage/Crates/freezer.rsi
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: closed
+      map: ["enum.StorageVisualLayers.Door"]
+  - type: AntiRottingContainer
+
+# Wooden
+- type: entity
+  parent: CrateGeneric
+  id: CrateWooden
+  name: wooden crate
+  components:
+  - type: Icon
+    sprite: Structures/Storage/Crates/cratewooden.rsi
+    state: icon
+  - type: Sprite
+    sprite: Structures/Storage/Crates/cratewooden.rsi
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: closed
+      map: ["enum.StorageVisualLayers.Door"]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.29"
+        density: 50
+        mask:
+        - SmallMobMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+
+- type: entity
+  parent: CrateWooden
+  id: CrateMilitary
+  name: military crate
+  description: An old wooden crate. Looks like it might have some supplies in.
+  components:
+  - type: Icon
+    sprite: Structures/Storage/Crates/cratemilitary.rsi
+  - type: Sprite
+    sprite: Structures/Storage/Crates/cratemilitary.rsi
+
+# Breakable Crates (deconstruct or destroy)
+- type: entity
+  parent: BaseStructureDynamic
+  id: CrateBreakBase
+  name: wooden crate
+  description: A wooden crate for storage.
+  abstract: true
+  components:
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank:
+            min: 0
+            max: 1
+      - !type:EmptyAllContainersBehaviour
+  - type: Sprite
+    sprite: Structures/Storage/Crates/woodencrates.rsi
+  - type: Storage
+    grid:
+    - 0,0,6,3
+    maxItemSize: Huge
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+
+- type: entity
+  parent: CrateBreakBase
+  id: CrateBreakWood
+  suffix: wood
+  components:
+  - type: Sprite
+    state: wood_crate
+
+- type: entity
+  parent: CrateBreakBase
+  id: CrateBreakPlain
+  suffix: plain
+  components:
+  - type: Sprite
+    state: plain_crate
+
+- type: entity
+  parent: CrateBreakBase
+  id: CrateBreakPlainDamaged
+  suffix: plain damaged
+  components:
+  - type: Sprite
+    state: plain_crate-1 # TODO: Make this random between states -1, -2 and -3
+
+- type: entity
+  parent: CrateBreakBase
+  id: CrateBreakArmy
+  name: army crate
+  components:
+  - type: Sprite
+    state: army_crate
+
+- type: entity
+  parent: CrateBreakArmy
+  id: CrateBreakArmyDamaged
+  suffix: damaged
+  components:
+  - type: Sprite
+    state: army_crate-1 # TODO: Make this random between states -1 and -2

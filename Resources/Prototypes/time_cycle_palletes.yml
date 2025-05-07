@@ -1,0 +1,30 @@
+- type: timeCyclePalette
+  id: DefaultTimeCycle
+  timeEntries:
+    0:  "#000000"   # Night
+    2:  "#000000"   # Late night
+    4:  "#02020b"   # Very-Early-Morning
+    6:  "#312716"   # Early-Dawn
+    7:  "#4E3D23"   # Dawn
+    8:  "#58372d"   # Sunrise
+    9:  "#876A42"   # Early-Morning
+    10: "#A08042"   # Mid-Morning
+    12: "#A88F73"   # Noon
+    14: "#C1A78A"   # Early-Afternoon
+    16: "#7D6244"   # Afternoon
+    18: "#8C6130"   # Sunset
+    20: "#543521"   # Dusk
+    22: "#02020b"   # Early night
+    24: "#000000"   # Night
+
+- type: timeCyclePalette
+  id: Gothic
+  timeEntries:
+    0:  "#000000"   # Night
+    2:  "#000000"   # Late night
+    6:  "#11122c"   # Sunrise
+    12: "#d8b059"   # Noon
+    18: "#73586b"   # Sunset
+    20: "#11122c"   # Dusk
+    21: "#000000"   # Early night
+    24: "#000000"   # Night

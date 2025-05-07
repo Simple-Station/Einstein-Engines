@@ -29,6 +29,8 @@
         prob: 0.2
       - id: ClothingHandsGlovesColorYellow
         prob: 0.05
+      - id: ClothingOuterJacketInsulated
+        prob: 0.05
       - id: ClothingHeadHatHardhatRed
         prob: 0.4
       - id: CableApcStack
@@ -65,13 +67,20 @@
   components:
   - type: StorageFill
     contents:
-      - id: WelderMini
-      - id: Welder
-        prob: 0.7
-      - id: WelderIndustrial
-        prob: 0.5
+      - id: ClothingHeadHatWelding
+      - id: ClothingHeadHatWelding
       - id: ClothingHeadHatWelding
         prob: 0.5
+      - id: Welder
+      - id: Welder
+      - id: WelderMini
+        orGroup: thirdWelder
+      - id: Welder
+        prob: 0.33
+        orGroup: thirdWelder
+      - id: WelderIndustrial
+        prob: 0.33
+        orGroup: thirdWelder
 
 - type: entity
   id: LockerAtmosphericsFilledHardsuit
@@ -90,8 +99,11 @@
       - id: DoorRemoteFirefight
       - id: RCD
       - id: RCDAmmo
+      - id: RPD
+      - id: RCDAmmo # Extra Compressed matter for the RPD
       - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
+      - id: AccessConfigurator
 
 - type: entity
   id: LockerAtmosphericsFilled
@@ -109,8 +121,11 @@
       - id: DoorRemoteFirefight
       - id: RCD
       - id: RCDAmmo
+      - id: RPD
+      - id: RCDAmmo # Extra Compressed matter for the RPD
       - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
+      - id: AccessConfigurator
 
 - type: entity
   id: LockerEngineerFilledHardsuit
@@ -122,11 +137,12 @@
       - id: ClothingOuterHardsuitEngineering
       - id: ClothingHandsGlovesColorYellow
       - id: ClothingMaskGas
-      - id: ClothingShoesBootsMag
+      - id: ClothingShoesBootsMagEng
       - id: RCD
       - id: RCDAmmo
       - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
+      - id: AccessConfigurator
 
 - type: entity
   id: LockerEngineerFilled
@@ -136,12 +152,14 @@
   - type: StorageFill
     contents:
       - id: ClothingHandsGlovesColorYellow
+      - id: ClothingOuterJacketInsulated
       - id: ClothingMaskGas
       - id: trayScanner
       - id: RCD
       - id: RCDAmmo
       - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
+      - id: AccessConfigurator
 
 - type: entity
   id: ClosetRadiationSuitFilled

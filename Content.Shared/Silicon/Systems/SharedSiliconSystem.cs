@@ -60,12 +60,12 @@ public sealed class SharedSiliconChargeSystem : EntitySystem
         if (!component.BatteryPowered)
             return;
 
-        _alertsSystem.ShowAlert(uid, AlertType.BorgBattery, component.ChargeState);
+        _alertsSystem.ShowAlert(uid, component.BatteryAlert, component.ChargeState);
     }
 
     private void OnSiliconChargeStateUpdate(EntityUid uid, SiliconComponent component, SiliconChargeStateUpdateEvent ev)
     {
-        _alertsSystem.ShowAlert(uid, AlertType.BorgBattery, ev.ChargePercent);
+        _alertsSystem.ShowAlert(uid, component.BatteryAlert, ev.ChargePercent);
     }
 
     private void OnRefreshMovespeed(EntityUid uid, SiliconComponent component, RefreshMovementSpeedModifiersEvent args)

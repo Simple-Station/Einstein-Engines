@@ -1,0 +1,12 @@
+- type: technology
+  id: ModularComputing
+  name: research-technology-modular-computing
+  icon:
+    sprite: Objects/Misc/cd.rsi
+    state: icon
+  discipline: Experimental
+  tier: 2
+  cost: 15000
+  recipeUnlocks:
+  - BaseComputerModularCircuitBoard
+  - DiskBurnerMachineCircuitboard

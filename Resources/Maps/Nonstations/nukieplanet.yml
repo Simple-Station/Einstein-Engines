@@ -930,6 +930,7 @@ entities:
           decals:
             371: 20.568506,2.9319348
     - type: GridAtmosphere
+      simulatedTurf: false
       version: 2
       data:
         tiles:
@@ -10994,7 +10995,7 @@ entities:
     - type: Transform
       pos: 18.918644,6.663283
       parent: 104
-- proto: KitchenMicrowave
+- proto: SyndicateMicrowave
   entities:
   - uid: 10
     components:

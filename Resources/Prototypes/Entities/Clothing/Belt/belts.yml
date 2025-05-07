@@ -31,6 +31,8 @@
         - AppraisalTool
         - JawsOfLife
         - GPS
+        - WeldingMask
+        - RPD
       components:
         - SprayPainter
         - NetworkConfigurator
@@ -48,6 +50,10 @@
         whitelist:
           tags:
           - Powerdrill
+      rpd:
+        whitelist:
+          tags:
+          - RPD
       cutters_red:
         whitelist:
           tags:
@@ -110,6 +116,7 @@
         - HolofanProjector
         - Multitool
         - AppraisalTool
+        - RPD
       components:
         - SprayPainter
         - NetworkConfigurator
@@ -128,6 +135,10 @@
         whitelist:
           tags:
           - Powerdrill
+      rpd:
+        whitelist:
+          tags:
+          - RPD
       cutters_red:
         whitelist:
           tags:
@@ -267,8 +278,8 @@
         - PillCanister
         - Radio
         - DiscreteHealthAnalyzer
-        - SurgeryTool
       components:
+        - SurgeryTool # Shitmed Change
         - Hypospray
         - Injector
         - Pill
@@ -306,6 +317,21 @@
           tags:
           - Wrench
     sprite: Clothing/Belt/belt_overlay.rsi
+  # DeltaV - Add medkit slot to medical belts
+  - type: ItemSlots
+    slots:
+      medkit:
+        name: clothing-belt-medkit
+        whitelist:
+          tags:
+          - Medkit
+        insertOnInteract: false
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+      medkit: !type:ContainerSlot {}
+  # End of DeltaV - Add medkit slot to medical belts.
   - type: Appearance
 
 - type: entity
@@ -332,7 +358,7 @@
   - type: Storage
     whitelist:
       tags:
-        # - PlantAnalyzer
+        - PlantAnalyzer
         - PlantSampleTaker
         - BotanyShovel
         - BotanyHoe
@@ -352,10 +378,10 @@
         whitelist:
           tags:
           - BotanyHatchet
-      # hydro:
-      #   whitelist:
-      #     tags:
-      #     - PlantAnalyzer # Dunno what to put here, should be aight.
+      hydro:
+        whitelist:
+          tags:
+          - PlantAnalyzer
       hoe:
         whitelist:
           tags:
@@ -462,6 +488,8 @@
     sprite: Clothing/Belt/security.rsi
   - type: Clothing
     sprite: Clothing/Belt/security.rsi
+  - type: ExplosionResistance # Goobstation
+    damageCoefficient: 0.5
   - type: Storage
     whitelist:
       tags:
@@ -473,12 +501,19 @@
         - MagazinePistol
         - MagazineMagnum
         - CombatKnife
+        - Truncheon
       components:
         - Stunbaton
         - FlashOnTrigger
         - SmokeOnTrigger
         - Flash
         - Handcuff
+        - BallisticAmmoProvider
+        - CartridgeAmmo
+        - DoorRemote
+        - Whistle
+        - HolosignProjector
+        - BalloonPopper
   - type: ItemMapper
     mapLayers:
       flashbang:
@@ -495,6 +530,13 @@
           - SmokeOnTrigger
     sprite: Clothing/Belt/belt_overlay.rsi
   - type: Appearance
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepTacticalWebbing
+      params:
+        volume: -10
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
   parent: [ClothingBeltBase, ClothingSlotBase]
@@ -508,7 +550,7 @@
   - type: Clothing
     sprite: Clothing/Belt/sheath.rsi
   - type: Item
-    size: Ginormous
+    size: Large
   - type: ItemSlots
     slots:
       item:
@@ -576,6 +618,13 @@
   - type: Storage
     grid:
     - 0,0,3,1
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepTacticalWebbing
+      params:
+        volume: -10
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
   parent: ClothingBeltStorageBase
@@ -598,9 +647,16 @@
         - Gun
         - BallisticAmmoProvider
         - CartridgeAmmo
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepTacticalWebbing
+      params:
+        volume: -10
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
-  parent: ClothingBeltStorageBase
+  parent: ClothingBeltSecurity
   id: ClothingBeltSecurityWebbing
   name: security webbing
   description: Unique and versatile chest rig, can hold security gear.
@@ -609,6 +665,13 @@
     sprite: Clothing/Belt/securitywebbing.rsi
   - type: Clothing
     sprite: Clothing/Belt/securitywebbing.rsi
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepTacticalWebbing
+      params:
+        volume: -10
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
   parent: ClothingBeltSecurityWebbing
@@ -627,13 +690,20 @@
 - type: entity
   parent: ClothingBeltStorageBase
   id: ClothingBeltMercWebbing
-  name: mercenarie webbing
+  name: mercenary webbing
   description: Ideal for storing everything from ammo to weapons and combat essentials.
   components:
   - type: Sprite
     sprite: Clothing/Belt/mercwebbing.rsi
   - type: Clothing
     sprite: Clothing/Belt/mercwebbing.rsi
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepTacticalWebbing
+      params:
+        volume: -10
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
   parent: ClothingBeltStorageBase
@@ -645,12 +715,19 @@
     sprite: Clothing/Belt/salvagewebbing.rsi
   - type: Clothing
     sprite: Clothing/Belt/salvagewebbing.rsi
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepTacticalWebbing
+      params:
+        volume: -10
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
   parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase]
   id: ClothingBeltMilitaryWebbing
   name: chest rig
-  description: A set of tactical webbing worn by Syndicate boarding parties.
+  description: A set of tactical webbing worn by boarding parties.
   components:
   - type: Sprite
     sprite: Clothing/Belt/militarywebbing.rsi
@@ -658,6 +735,13 @@
     sprite: Clothing/Belt/militarywebbing.rsi
   - type: ExplosionResistance
     damageCoefficient: 0.5
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepTacticalWebbing
+      params:
+        volume: -10
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
   parent: ClothingBeltMilitaryWebbing
@@ -673,6 +757,13 @@
     size: Huge
   - type: ExplosionResistance
     damageCoefficient: 0.1
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepTacticalWebbing
+      params:
+        volume: -10
+    distanceWalking: 2
+    distanceSprinting: 3
 
 - type: entity
   parent: ClothingBeltBase
@@ -706,3 +797,68 @@
     whitelist:
       tags:
       - WizardWand
+
+- type: entity
+  parent: ClothingBeltBase
+  id: ClothingBeltGeneric
+  name: belt
+  description: A plain belt made of leather.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/generic.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Belt/generic.rsi
+    renderLayer: innerBelt
+
+- type: entity
+  parent: ClothingBeltBase
+  id: ClothingBeltGenericThin
+  name: thin belt
+  description: This is thinner than your usual belt.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/generic_thin.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Belt/generic_thin.rsi
+    renderLayer: innerBelt
+
+- type: entity
+  parent: ClothingBeltBase
+  id: ClothingBeltGenericThick
+  name: thick belt
+  description: A bold fashion statement.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/generic_thick.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Belt/generic_thick.rsi
+    renderLayer: innerBelt
+
+- type: entity
+  parent: ClothingBeltBase
+  id: ClothingBeltWaist
+  name: waist belt
+  description: A belt worn around the waist, giving outfits a more fitted silhouette.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/waist.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Belt/waist.rsi
+    renderLayer: innerBelt
+
+- type: entity
+  parent: ClothingBeltBase
+  id: ClothingBeltWaistThin
+  name: thin waist belt
+  description: For highlighting that snatched waist.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/waist_thin.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Belt/waist_thin.rsi
+    renderLayer: innerBelt

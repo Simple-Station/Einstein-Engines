@@ -24,9 +24,22 @@ public abstract class SharedEnsnareableSystem : EntitySystem
         SubscribeLocalEvent<EnsnareableComponent, EnsnareEvent>(OnEnsnare);
         SubscribeLocalEvent<EnsnareableComponent, EnsnareRemoveEvent>(OnEnsnareRemove);
         SubscribeLocalEvent<EnsnareableComponent, EnsnaredChangedEvent>(OnEnsnareChange);
+        //SubscribeLocalEvent<EnsnaringComponent, ProjectileHitEvent>(OnProjectileHit); // Goobstation - TODO: add after ensnareable refactor
         SubscribeLocalEvent<EnsnareableComponent, ComponentGetState>(OnGetState);
         SubscribeLocalEvent<EnsnareableComponent, ComponentHandleState>(OnHandleState);
     }
+
+    // // Goobstation - TODO: add after ensnareable refactor
+    // private void OnProjectileHit(EntityUid uid, EnsnaringComponent component, ProjectileHitEvent args)
+    // {
+    //     if (!component.CanThrowTrigger)
+    //         return;
+    //
+    //     if (TryEnsnare(args.Target, uid, component))
+    //     {
+    //         _audio.PlayPvs(component.EnsnareSound, uid);
+    //     }
+    // }
 
     private void OnHandleState(EntityUid uid, EnsnareableComponent component, ref ComponentHandleState args)
     {

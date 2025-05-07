@@ -1,2 +1,2 @@
-job-supervisors-cj = the chief justice
-
+job-supervisors-cj = the Chief Justice
+job-supervisors-command = all command staff

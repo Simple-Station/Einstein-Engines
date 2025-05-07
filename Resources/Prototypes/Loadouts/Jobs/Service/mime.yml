@@ -1,0 +1,159 @@
+# Mime
+# Backpacks
+- type: loadout
+  id: LoadoutBackpackMime
+  category: JobsServiceMime
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMime
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+
+- type: loadout
+  id: LoadoutBackpackSatchelMime
+  category: JobsServiceMime
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelMime
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+
+- type: loadout
+  id: LoadoutBackpackDuffelMime
+  category: JobsServiceMime
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelMime
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+- type: loadout
+  id: LoadoutServiceMimeBedsheetMime
+  category: JobsServiceMime
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - BedsheetMime
+
+
+# Mask
+- type: loadout
+  id: LoadoutServiceMimeMaskSad
+  category: JobsServiceMime
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - ClothingMaskSadMime
+
+- type: loadout
+  id: LoadoutServiceMimeMaskScared
+  category: JobsServiceMime
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - ClothingMaskScaredMime
+
+- type: loadout
+  id: LoadoutServiceMimeMaskSexy
+  category: JobsServiceMime
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - ClothingMaskSexyMime
+
+# Outer
+- type: loadout
+  id: LoadoutServiceMimeOuterWinter
+  category: JobsServiceMime
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - ClothingOuterWinterMime
+
+# Shoes
+- type: loadout
+  id: LoadoutServiceMimeShoesBootsWinter
+  category: JobsServiceMime
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - ClothingShoesBootsWinterMime
+# Uniforms

@@ -26,13 +26,18 @@
             Lawyer: [ 1, 1 ]
             Bartender: [ 1, 2 ]
             Botanist: [ 1, 2 ]
-            MartialArtist: [ 2, 3 ]
+            # MartialArtist: [ 2, 3 ] # EE: Disabled
             Chef: [ 1, 2 ]
             Clown: [ 1, 1 ]
             Janitor: [ 1, 2 ]
             Musician: [ 1, 1]
             Mime: [ 1, 1 ]
+          #Command
             Captain: [ 1, 1 ]
+            BlueshieldOfficer: [ 1, 1]
+            NanotrasenRepresentative: [ 1, 1 ]
+            # Magistrate: [ 1, 1 ] # EE: Disabled
+            # AdministrativeAssistant: [ 1, 1 ] # EE: Disabled
             HeadOfPersonnel: [ 1, 1 ]
           #Engineering
             ChiefEngineer: [ 1, 1 ]
@@ -66,4 +71,5 @@
             SalvageSpecialist: [ 2, 4 ]
             MailCarrier: [ 1, 2 ]
             CargoTechnician: [ 2, 3 ]
-
+          # Silicon
+            StationAi: [ 1, 1 ]

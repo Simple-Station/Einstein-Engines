@@ -80,10 +80,12 @@
   - type: GuideHelp
     guides:
     - Security
+    - Antagonists
+  - type: Flashbang # Goobstation
 
 - type: entity
   id: GrenadeFlashEffect
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: PointLight
       enabled: true
@@ -119,6 +121,30 @@
       path: /Audio/Effects/minibombcountdown.ogg
       params:
         volume: 12
+
+- type: entity
+  name: Self Destruct
+  description: Go out on your own terms!
+  parent: GrenadeBase
+  id: SelfDestructSeq
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Minibomb
+    totalIntensity: 400
+    intensitySlope: 30
+    maxIntensity: 125
+    canCreateVacuum: true
+  - type: OnUseTimerTrigger
+    delay: 4.5
+    beepSound:
+      path: /Audio/Effects/Grenades/SelfDestruct/SDS_Charge2.ogg
+      params:
+        volume: 30
+    initialBeepDelay: 0
+    beepInterval: 16
+
 
 - type: entity
   name: supermatter grenade
@@ -375,6 +401,23 @@
   - type: SmokeOnTrigger
     duration: 15
     spreadAmount: 50
+    smokePrototype: Foam
+    solution:
+      reagents:
+      - ReagentId: SpaceCleaner
+        Quantity: 30
+
+- type: entity
+  parent: SmokeGrenade
+  id: CleanerGrenadeNuke
+  name: the clean solution
+  description: A special cleanade designed by an especially tenacious janitor. Its foam can spread over an entire room, leaving it squeaky clean and smelling slightly of lemons.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Grenades/janitornuke.rsi
+  - type: SmokeOnTrigger
+    duration: 20
+    spreadAmount: 200
     smokePrototype: Foam
     solution:
       reagents:

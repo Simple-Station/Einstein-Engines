@@ -1,6 +1,6 @@
 # Base Nyano Mail
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailMedicalBasicSupplies
   suffix: basicmedical
@@ -15,7 +15,7 @@
       maxAmount: 2
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailMedicalChemistrySupplement
   suffix: chemsupp
@@ -31,7 +31,7 @@
       maxAmount: 3
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailMedicalEmergencyPens
   suffix: medipens
@@ -42,7 +42,7 @@
       maxAmount: 3
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailMedicalMedicinePills
   suffix: medicinepills
@@ -57,7 +57,7 @@
       maxAmount: 2
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailMedicalSheetPlasma
   suffix: sheetplasma
@@ -67,7 +67,7 @@
     - id: SheetPlasma1
 
 #- type: entity
-#  noSpawn: true
+#  categories: [ HideSpawnMenu ]
 #  parent: BaseMail
 #  id: MailMedicalSpaceacillin
 #  suffix: spaceacillin
@@ -79,7 +79,7 @@
 # Awaiting diseases
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailMedicalStabilizers
   suffix: stabilizers

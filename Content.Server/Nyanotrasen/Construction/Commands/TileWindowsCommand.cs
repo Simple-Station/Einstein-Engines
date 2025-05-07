@@ -5,7 +5,9 @@ using Content.Shared.Tag;
 using Robust.Server.Player;
 using Robust.Shared.Console;
 using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Maths;
+using Robust.Shared.Physics;
 using Robust.Shared.Player;
 
 namespace Content.Server.Construction.Commands
@@ -24,8 +26,11 @@ namespace Content.Server.Construction.Commands
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)
         {
-            var player = shell.Player as ICommonSession;
+            var player = shell.Player;
             var entityManager = IoCManager.Resolve<IEntityManager>();
+            var lookup = IoCManager.Resolve<EntityLookupSystem>();
+            var mapSystem = IoCManager.Resolve<SharedMapSystem>();
+
             EntityUid? gridId;
 
             switch (args.Length)
@@ -53,8 +58,7 @@ namespace Content.Server.Construction.Commands
                     return;
             }
 
-            var mapManager = IoCManager.Resolve<IMapManager>();
-            if (!mapManager.TryGetGrid(gridId, out var grid))
+            if (!entityManager.TryGetComponent<MapGridComponent>(gridId, out var grid))
             {
                 shell.WriteLine($"No grid exists with id {gridId}");
                 return;
@@ -70,8 +74,12 @@ namespace Content.Server.Construction.Commands
             var tagSystem = entityManager.EntitySysManager.GetEntitySystem<TagSystem>();
             var underplating = tileDefinitionManager[TilePrototypeId];
             var underplatingTile = new Tile(underplating.TileId);
+            var childEntities = new HashSet<Entity<TransformComponent>>();
             var changed = 0;
-            foreach (var child in entityManager.GetComponent<TransformComponent>(grid.Owner).ChildEntities)
+
+            lookup.GetChildEntities(grid.Owner, childEntities);
+
+            foreach (var child in childEntities)
             {
                 if (!entityManager.EntityExists(child))
                 {
@@ -95,7 +103,7 @@ namespace Content.Server.Construction.Commands
                     continue;
                 }
 
-                var tile = grid.GetTileRef(childTransform.Coordinates);
+                var tile = mapSystem.GetTileRef((EntityUid) gridId, grid, childTransform.Coordinates);
                 var tileDef = (ContentTileDefinition) tileDefinitionManager[tile.Tile.TypeId];
 
                 if (tileDef.ID == TilePrototypeId)
@@ -103,7 +111,7 @@ namespace Content.Server.Construction.Commands
                     continue;
                 }
 
-                grid.SetTile(childTransform.Coordinates, underplatingTile);
+                mapSystem.SetTile((EntityUid) gridId, grid, childTransform.Coordinates, underplatingTile);
                 changed++;
             }
 

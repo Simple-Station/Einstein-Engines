@@ -2,7 +2,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
-using Content.Server.GameTicking.Components;
+using Content.Shared.GameTicking.Components;
 using Content.Server.StationEvents.Components;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;

@@ -3,7 +3,6 @@
   name: job-name-paramedic
   description: job-description-paramedic
   playTimeTracker: JobParamedic
-  antagAdvantage: 2 # DeltaV - Reduced TC: External Access
   requirements:
     # - !type:RoleTimeRequirement # DeltaV - No Medical Doctor time requirement
     #   role: JobMedicalDoctor
@@ -11,6 +10,11 @@
     - !type:CharacterDepartmentTimeRequirement # DeltaV - Medical dept time requirement
       department: Medical
       min: 28800 # DeltaV - 8 hours
+    - !type:CharacterEmployerRequirement
+      employers:
+      - Interdyne
+      - NanoTrasen
+      - ZengHuPharmaceuticals
     # - !type:OverallPlaytimeRequirement # DeltaV - No playtime requirement
     #   time: 54000 # 15 hrs
   startingGear: ParamedicGear
@@ -27,18 +31,31 @@
   - !type:AddComponentSpecial
     components:
     - type: CPRTraining
+    - type: SurgerySpeedModifier
+      speedModifier: 1.75
 
 - type: startingGear
   id: ParamedicGear
+  subGear:
+  - ParamedicPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitParamedic
-    back: ClothingBackpackParamedicFilledDV # DeltaV - Give Paramedics useful tools on spawn, see Resources/Prototypes/DeltaV/Catalog/Fills/Backpacks/StargerGear/backpack.yml
+    back: ClothingBackpackParamedicFilledDV
     shoes: ClothingShoesColorBlue
     id: ParamedicPDA
     ears: ClothingHeadsetMedical
     belt: ClothingBeltMedicalEMTFilled
-    pocket1: HandheldGPSBasic # DeltaV - Give Paramedics useful tools on spawn
-    pocket2: HandheldCrewMonitor # DeltaV - Give Paramedics useful tools on spawn
+    pocket1: HandheldGPSBasic
+    pocket2: HandheldCrewMonitor
   innerClothingSkirt: ClothingUniformJumpskirtParamedic
-  satchel: ClothingBackpackSatchelParamedicFilledDV # DeltaV - Give Paramedics useful tools on spawn, see Resources/Prototypes/DeltaV/Catalog/Fills/Backpacks/StargerGear/satchel.yml
-  duffelbag: ClothingBackpackDuffelParamedicFilledDV # DeltaV - Give Paramedics useful tools on spawn, see Resources/Prototypes/DeltaV/Catalog/Fills/Backpacks/StargerGear/duffelbag.yml
+  satchel: ClothingBackpackSatchelParamedicFilledDV
+  duffelbag: ClothingBackpackDuffelParamedicFilledDV
+
+- type: startingGear
+  id: ParamedicPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitParamedic
+    head: ClothingHeadEnvirohelmParamedic
+    gloves: ClothingHandsGlovesEnviroglovesNitrile
+    shoes: ClothingShoesColorBlue

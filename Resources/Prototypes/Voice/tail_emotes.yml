@@ -1,6 +1,11 @@
 - type: emote
   id: WagTail
-  chatMessages: [wags tail]
+  name: chat-emote-name-tailwag
+  whitelist:
+    tags:
+    - VulpEmotes
+    - UnathiEmotes
+  chatMessages: [wags their tail]
   chatTriggers:
     - wags tail
     - wags his tail

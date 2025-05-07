@@ -28,8 +28,8 @@
     - type: Appearance
     - type: UserInterface
       interfaces:
-      - key: enum.PenLightUiKey.Key
-        type: PenLightBoundUserInterface
+        enum.PenLightUiKey.Key:
+          type: PenLightBoundUserInterface
     - type: ToggleableLightVisuals
     - type: ContainerContainer
       containers:

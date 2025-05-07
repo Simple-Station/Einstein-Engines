@@ -76,6 +76,9 @@ reagent-desc-vestine = Has an adverse reaction within the body causing major jit
 reagent-name-tazinide = tazinide
 reagent-desc-tazinide = A highly dangerous metallic mixture which can interfere with most movement through an electrifying current.
 
+reagent-name-lipolicide = lipolicide
+reagent-desc-lipolicide = A powerful toxin that will destroy fat cells, massively reducing body weight in a short time. Deadly to those without nutriment in their body.
+
 reagent-name-soulbreaker-toxin = soulbreaker toxin
 reagent-desc-soulbreaker-toxin = An anti-psionic about 4 times as powerful as mindbreaker toxin.
 
@@ -84,3 +87,6 @@ reagent-desc-lotophagoi-oil = A super potent drug that is much better at inducin
 
 reagent-name-ectoplasm = ectoplasm
 reagent-desc-ectoplasm = The physical component of semi-corporeal spirits.
+
+reagent-name-ousiana-dust = ousiana dust
+reagent-desc-ousiana-dust = A silent scream echos from this powder, it is a sledgehammer to the mind capable of violently breaking through any psionic blocks, at a cost.

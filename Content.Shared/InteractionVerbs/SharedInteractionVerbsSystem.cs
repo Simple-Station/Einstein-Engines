@@ -4,10 +4,12 @@ using Content.Shared.ActionBlocker;
 using Content.Shared.Contests;
 using Content.Shared.DoAfter;
 using Content.Shared.Ghost;
+using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.InteractionVerbs.Events;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
+using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Network;
@@ -26,16 +28,14 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
     private readonly InteractionAction.VerbDependencies _verbDependencies = new();
     private List<InteractionVerbPrototype> _globalPrototypes = default!;
 
-    [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfters = default!;
-    [Dependency] private readonly SharedContainerSystem _containers = default!;
     [Dependency] private readonly ContestsSystem _contests = default!;
-    [Dependency] private readonly SharedInteractionSystem _interactions = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedPopupSystem _popups = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IEntityManager _entityManager = default!;
 
     public override void Initialize()
     {
@@ -383,8 +383,8 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
 
             (string, object)[] localeArgs =
             [
-                ("user", user),
-                ("target", target),
+                ("user", Identity.Entity(user, _entityManager)),
+                ("target", Identity.Entity(target, _entityManager)),
                 ("used", used ?? EntityUid.Invalid),
                 ("selfTarget", user == target),
                 ("hasUsed", used != null)

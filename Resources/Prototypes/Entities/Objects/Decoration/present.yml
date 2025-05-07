@@ -104,6 +104,8 @@
         orGroup: GiftPool
       - id: PlushieArachind
         orGroup: GiftPool
+      - id: PlushieShadowkin
+        orGroup: GiftPool
       - id: ClothingNeckCloakMoth
         orGroup: GiftPool
       - id: ToyMouse
@@ -435,7 +437,7 @@
 
 - type: entity
   id: PresentTrash
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseItem
   name: Wrapping Paper
   description: Carefully folded, taped, and tied with a bow. Then ceremoniously ripped apart and tossed on the floor.

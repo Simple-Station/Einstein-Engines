@@ -1,6 +1,6 @@
 ﻿- type: entity
   id: MachineFlatpacker
-  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  parent: [ BaseMachinePowered, ConstructibleMachine, BaseMaterialSiloUtilizer ]
   name: Flatpacker 1001
   description: An industrial machine used for expediting machine construction across the station.
   components:
@@ -58,8 +58,8 @@
   - type: ActivatableUIRequiresPower
   - type: UserInterface
     interfaces:
-    - key: enum.FlatpackCreatorUIKey.Key
-      type: FlatpackCreatorBoundUserInterface
+      enum.FlatpackCreatorUIKey.Key:
+        type: FlatpackCreatorBoundUserInterface
   - type: ItemSlots
     slots:
       board_slot:
@@ -83,8 +83,7 @@
 
 - type: entity
   id: FlatpackerNoBoardEffect
-  categories:
-  - hideSpawnMenu
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: Structures/Machines/autolathe.rsi

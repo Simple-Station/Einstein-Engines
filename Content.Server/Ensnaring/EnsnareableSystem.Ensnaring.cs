@@ -11,6 +11,7 @@ using Content.Shared.Ensnaring.Components;
 using Content.Shared.IdentityManagement;
 using Content.Shared.StepTrigger.Systems;
 using Content.Shared.Throwing;
+using Content.Shared.Whitelist;
 
 namespace Content.Server.Ensnaring;
 
@@ -20,6 +21,7 @@ public sealed partial class EnsnareableSystem
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly BodySystem _body = default!;
     [Dependency] private readonly StaminaSystem _stamina = default!;
+    [Dependency] private readonly EntityWhitelistSystem _entityWhitelist = default!;
 
     public void InitializeEnsnaring()
     {
@@ -70,8 +72,9 @@ public sealed partial class EnsnareableSystem
     /// <param name="component">The ensnaring component</param>
     public void TryEnsnare(EntityUid target, EntityUid ensnare, EnsnaringComponent component)
     {
-        //Don't do anything if they don't have the ensnareable component.
-        if (!TryComp<EnsnareableComponent>(target, out var ensnareable))
+        //Don't do anything if they don't have the ensnareable component or should be ignored.
+        if (!TryComp<EnsnareableComponent>(target, out var ensnareable) ||
+            component.IgnoredTargets is not null && _entityWhitelist.IsValid(component.IgnoredTargets, target))
             return;
 
         var legs = _body.GetBodyChildrenOfType(target, BodyPartType.Leg).Count();
@@ -93,7 +96,7 @@ public sealed partial class EnsnareableSystem
         component.Ensnared = target;
         _container.Insert(ensnare, ensnareable.Container);
         ensnareable.IsEnsnared = true;
-        Dirty(ensnareable);
+        Dirty(target, ensnareable);
 
         UpdateAlert(target, ensnareable);
         var ev = new EnsnareEvent(component.WalkSpeed, component.SprintSpeed);
@@ -107,7 +110,7 @@ public sealed partial class EnsnareableSystem
     /// <param name="user">The entity that is freeing the target</param>
     /// <param name="ensnare">The entity used to ensnare</param>
     /// <param name="component">The ensnaring component</param>
-    public void TryFree(EntityUid target,  EntityUid user, EntityUid ensnare, EnsnaringComponent component)
+    public void TryFree(EntityUid target, EntityUid user, EntityUid ensnare, EnsnaringComponent component)
     {
         //Don't do anything if they don't have the ensnareable component.
         if (!HasComp<EnsnareableComponent>(target))
@@ -118,8 +121,7 @@ public sealed partial class EnsnareableSystem
 
         var doAfterEventArgs = new DoAfterArgs(EntityManager, user, freeTime, new EnsnareableDoAfterEvent(), target, target: target, used: ensnare)
         {
-            BreakOnUserMove = breakOnMove,
-            BreakOnTargetMove = breakOnMove,
+            BreakOnMove = breakOnMove,
             BreakOnDamage = false,
             NeedHand = true,
             BlockDuplicate = true,
@@ -147,14 +149,14 @@ public sealed partial class EnsnareableSystem
 
         var target = component.Ensnared.Value;
 
-        _container.Remove(ensnare, ensnareable.Container, force: true);
+        _container.TryRemoveFromContainer(ensnare, force: true); // Goobstation - fix on ensnare entity remove
         ensnareable.IsEnsnared = ensnareable.Container.ContainedEntities.Count > 0;
-        Dirty(ensnareable);
+        Dirty(component.Ensnared.Value, ensnareable);
         component.Ensnared = null;
 
         UpdateAlert(target, ensnareable);
         var ev = new EnsnareRemoveEvent(component.WalkSpeed, component.SprintSpeed);
-        RaiseLocalEvent(ensnare, ev);
+        RaiseLocalEvent(target, ev);
     }
 
     /// <summary>
@@ -164,8 +166,8 @@ public sealed partial class EnsnareableSystem
     public void UpdateAlert(EntityUid target, EnsnareableComponent component)
     {
         if (!component.IsEnsnared)
-            _alerts.ClearAlert(target, AlertType.Ensnared);
+            _alerts.ClearAlert(target, component.EnsnaredAlert);
         else
-            _alerts.ShowAlert(target, AlertType.Ensnared);
+            _alerts.ShowAlert(target, component.EnsnaredAlert);
     }
 }

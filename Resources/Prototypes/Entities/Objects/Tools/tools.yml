@@ -31,16 +31,22 @@
     - state: cutters-cutty-thingy
   - type: MeleeWeapon
     wideAnimationRotation: -90
-    attackRate: 0.9
+    attackRate: 1.1
     range: 1.6
     damage:
       types:
         Blunt: 6.5
-    heavyRateModifier: 0.9
+    heavyRateModifier: 1.4
     heavyDamageBaseModifier: 1.2
     maxTargets: 4
     soundHit:
       path: "/Audio/Items/wirecutter.ogg"
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 4
+    soundHit:
+      collection: MetalThud
   - type: Tool
     qualities:
       - Cutting
@@ -59,6 +65,20 @@
       Steel: 100
   - type: StaticPrice
     price: 30
+  # Shitmed Change
+  - type: Retractor
+    speed: 0.35
+  - type: Hemostat
+    speed: 0.6
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Items/wirecutter.ogg
+      params:
+        variation: 0.125
+    endSound:
+      path: /Audio/Items/wirecutter.ogg
+      params:
+        variation: 0.125
 
 - type: entity
   name: screwdriver
@@ -95,16 +115,24 @@
     storedRotation: -90
   - type: MeleeWeapon
     wideAnimationRotation: -90
-    attackRate: 1.35
+    attackRate: .8
     damage:
       types:
         Piercing: 6
-    heavyRateModifier: 0.75
+    heavyRateModifier: 1.75
     heavyDamageBaseModifier: 1.5
     maxTargets: 1
     angle: 20
     soundHit:
       path: "/Audio/Weapons/bladeslice.ogg"
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: ThrowingAngle
+    angle: 270
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+    removalTime: 1
+  - type: EmbedPassiveDamage
   - type: Tool
     qualities:
       - Screwing
@@ -119,6 +147,16 @@
       Steel: 100
   - type: StaticPrice
     price: 30
+  # Shitmed Change
+  - type: Retractor
+    speed: 0.45
+  - type: Tending
+    speed: 0.65
+  - type: SurgeryTool
+    startSound:
+      collection: Screwdriver
+    endSound:
+      path: /Audio/Medical/Surgery/retractor2.ogg
 
 - type: entity
   name: wrench
@@ -154,17 +192,18 @@
       state: storage
   - type: MeleeWeapon
     wideAnimationRotation: 135
-    attackRate: 0.9
+    attackRate: 1.25
     range: 1.6
     damage:
       types:
         Blunt: 6.5
     bluntStaminaDamageFactor: 1.5
-    heavyRateModifier: 0.75
-    heavyDamageBaseModifier: 1.75
+    heavyRateModifier: 1.5
+    heavyDamageBaseModifier: 1.5
     angle: 100
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
   - type: Tool
     qualities:
       - Anchoring
@@ -211,14 +250,16 @@
       state: storage
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.25
+    attackRate: .8
     damage:
       types:
         Blunt: 6
     bluntStaminaDamageFactor: 2
-    heavyStaminaCost: 5
+    heavyStaminaCost: 2.5
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
+    staminaCost: 6
   - type: Tool
     qualities:
       - Prying
@@ -231,6 +272,11 @@
   - type: StaticPrice
     price: 22
   - type: Prying
+  # Shitmed Change
+  - type: Tweezers
+    speed: 0.55
+  - type: SurgeryTool
+    startSound: /Audio/Items/crowbar.ogg
 
 - type: entity
   parent: Crowbar
@@ -269,14 +315,16 @@
     - state: green-unlit
       shader: unshaded
   - type: MeleeWeapon
-    attackRate: 0.75
+    attackRate: 1.3
     damage:
       types:
-        Shock: 2
-    heavyRateModifier: 0.9
-    heavyDamageBaseModifier: 1.2
+        Shock: 3
+    heavyRateModifier: 3
+    heavyRangeModifier: 1.25
+    heavyDamageBaseModifier: 3
     maxTargets: 1
-    angle: 20
+    angle: 10
+  - type: DamageOtherOnHit
   - type: Item
     size: Small
   - type: Clothing
@@ -293,11 +341,11 @@
     inHandsOnly: true
   - type: UserInterface
     interfaces:
-      - key: enum.NetworkConfiguratorUiKey.List
+      enum.NetworkConfiguratorUiKey.List:
         type: NetworkConfiguratorBoundUserInterface
-      - key: enum.NetworkConfiguratorUiKey.Configure
+      enum.NetworkConfiguratorUiKey.Configure:
         type: NetworkConfiguratorBoundUserInterface
-      - key: enum.NetworkConfiguratorUiKey.Link
+      enum.NetworkConfiguratorUiKey.Link:
         type: NetworkConfiguratorBoundUserInterface
   - type: Tag
     tags:
@@ -305,8 +353,9 @@
       - DoorElectronicsConfigurator
   - type: PhysicalComposition
     materialComposition:
-      Steel: 100
-      Plastic: 100
+      Aluminum: 50
+      Plastic: 50
+      Circuitry: 25
   - type: StaticPrice
     price: 56
 
@@ -349,11 +398,11 @@
         - DoorElectronicsConfigurator
     - type: UserInterface
       interfaces:
-        - key: enum.NetworkConfiguratorUiKey.List
+        enum.NetworkConfiguratorUiKey.List:
           type: NetworkConfiguratorBoundUserInterface
-        - key: enum.NetworkConfiguratorUiKey.Configure
+        enum.NetworkConfiguratorUiKey.Configure:
           type: NetworkConfiguratorBoundUserInterface
-        - key: enum.NetworkConfiguratorUiKey.Link
+        enum.NetworkConfiguratorUiKey.Link:
           type: NetworkConfiguratorBoundUserInterface
     - type: StaticPrice
       price: 56
@@ -381,7 +430,7 @@
   - type: Tool
     qualities:
       - Screwing
-    speed: 1.5
+    speedModifier: 1.5
     useSound: /Audio/Items/drill_use.ogg
   - type: MultipleTool
     statusShowBehavior: true
@@ -405,24 +454,32 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 300
-      Plastic: 100
+      Plastic: 50
+      Circuitry: 50
 #  - type: DynamicPrice
 #    price: 100
   - type: StaticPrice
     price: 100
   - type: MeleeWeapon
     wideAnimationRotation: -90
-    attackRate: 0.9
+    attackRate: 1.1
     range: 1.4
     damage:
       types:
         Piercing: 8
-    heavyRateModifier: 0.9
+    heavyRateModifier: 1.1
     heavyDamageBaseModifier: 1.2
     maxTargets: 1
     angle: 20
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 8
+    staminaCost: 7.5
+    soundHit:
+      collection: MetalThud
   - type: ReverseEngineering # Nyano
     difficulty: 2
     recipes:
@@ -471,20 +528,69 @@
     - Belt
   - type: PhysicalComposition
     materialComposition:
-      Steel: 600
-      Plastic: 150
+      Steel: 400
+      Plastic: 100
+      Circuitry: 50
   - type: StaticPrice
     price: 100
   - type: UserInterface
     interfaces:
-    - key: enum.RcdUiKey.Key
-      type: RCDMenuBoundUserInterface
+      enum.RcdUiKey.Key:
+        type: RCDMenuBoundUserInterface
   - type: ActivatableUI
     key: enum.RcdUiKey.Key
   - type: ReverseEngineering # Nyano
     difficulty: 3
     recipes:
       - RCD
+
+- type: entity
+  id: RPD
+  parent: RCD
+  name: RPD
+  description: A device used to rapidly pipe things.
+  components:
+  - type: Tag
+    tags:
+      - RPD
+  - type: RCD
+    isRpd: true
+    availablePrototypes:
+    - PipeFourway
+    - PipeStraight
+    - PipeBend
+    - PipeTJunction
+    - OutletInjector
+    - ManualValve
+    - VolumetricPump
+    - PressurePump
+    - VentScrubber
+    - PressureValve
+    - DualPortVent
+    - VentGas
+    - VentPassive
+    - MixerGas
+    - Radiator
+    - SignalValve
+    - CanisterPort
+    - FilterGas
+    - Deconstruct
+  - type: LimitedCharges
+    maxCharges: 50
+    charges: 50
+  - type: Sprite
+    sprite: Objects/Tools/rpd.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 500
+      Plastic: 150
+      Circuitry: 50
+  - type: StaticPrice
+    price: 100
+  - type: ReverseEngineering # Nyano
+    difficulty: 3
+    recipes:
+      - RPD
 
 - type: entity
   id: RCDEmpty
@@ -509,6 +615,39 @@
     - Firelock
 
 - type: entity
+  id: RPDEmpty
+  parent: RPD
+  suffix: Empty
+  components:
+  - type: LimitedCharges
+    charges: 0
+  - type: Tag
+    tags:
+      - RPD
+  - type: RCD
+    isRpd: true
+    availablePrototypes:
+    - PipeFourway
+    - PipeStraight
+    - PipeBend
+    - PipeTJunction
+    - OutletInjector
+    - ManualValve
+    - VolumetricPump
+    - PressurePump
+    - VentScrubber
+    - PressureValve
+    - DualPortVent
+    - VentGas
+    - VentPassive
+    - MixerGas
+    - Radiator
+    - SignalValve
+    - CanisterPort
+    - FilterGas
+    - Deconstruct
+
+- type: entity
   id: RCDRecharging
   parent: RCD
   name: experimental RCD
@@ -527,6 +666,29 @@
   suffix: Admeme
   name: experimental RCD
   description: A bluespace-enhanced rapid construction device that passively generates its own compressed matter.
+  components:
+  - type: AutoRecharge
+    rechargeDuration: 1
+
+- type: entity
+  id: RPDRecharging
+  parent: RPD
+  name: experimental RPD
+  description: A bluespace-enhanced rapid piping device that passively generates its own compressed matter.
+  suffix: AutoRecharge
+  components:
+  - type: LimitedCharges
+    maxCharges: 25
+    charges: 25
+  - type: AutoRecharge
+    rechargeDuration: 10
+
+- type: entity
+  id: RPDExperimental
+  parent: RPD
+  suffix: Admeme
+  name: experimental RPD
+  description: A bluespace-enhanced rapid piping device that passively generates its own compressed matter.
   components:
   - type: AutoRecharge
     rechargeDuration: 1
@@ -577,7 +739,7 @@
   - type: Tool
     qualities:
       - Screwing
-    speed: 1.2 # Kept for future adjustments. Currently 1.2x for balance
+    speedModifier: 1.2 # Kept for future adjustments. Currently 1.2x for balance
     useSound: /Audio/Items/drill_use.ogg
   - type: ToolTileCompatible
   - type: MultipleTool
@@ -634,18 +796,22 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 45
-    attackRate: 0.8
+    attackRate: 1.25
     range: 1.75
     damage:
       types:
         Blunt: 8
-    bluntStaminaDamageFactor: 1.5
-    heavyRateModifier: 0.9
+    bluntStaminaDamageFactor: 2
+    heavyRateModifier: 1.75
     heavyDamageBaseModifier: 1.5
-    heavyStaminaCost: 7.5
-    angle: 100
+    heavyStaminaCost: 2.5
+    angle: 120
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
+    staminaCost: 8.5
+  - type: ThrowingAngle
+    angle: 45
   - type: Item
     size: Normal
     sprite: Objects/Tools/shovel.rsi
@@ -683,17 +849,18 @@
     - Belt
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 0.9
+    attackRate: 1.1
     damage:
       types:
         Blunt: 7
     bluntStaminaDamageFactor: 2.0
-    heavyRateModifier: 0.8
-    heavyDamageBaseModifier: 1.5
+    heavyRateModifier: 2.5
+    heavyDamageBaseModifier: 2
     maxTargets: 2
     angle: 20
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
   - type: Tool
     qualities:
     - Rolling

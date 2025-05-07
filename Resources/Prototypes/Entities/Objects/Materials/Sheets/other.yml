@@ -12,6 +12,7 @@
   - type: Tag
     tags:
     - Sheet
+    - NoPaint
   - type: Damageable
     damageContainer: Inorganic
   - type: Destructible
@@ -52,6 +53,11 @@
   - type: Item
     heldPrefix: paper
   - type: Appearance
+  - type: Tag
+    tags:
+    - Sheet
+    - NoPaint
+    - MaterialPaper
   - type: Extractable
     grindableSolutionName: paper
   - type: SolutionContainerManager
@@ -110,12 +116,15 @@
   - type: Tag
     tags:
     - Sheet
+    - NoPaint
   - type: UserInterface
     interfaces:
-    - key: enum.ShortConstructionUiKey.Key
-      type: ShortConstructionMenuBUI
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
   - type: ActivatableUI
-    key: enum.ShortConstructionUiKey.Key
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
   - type: ShortConstruction
     entries:
     - prototype: SheetPGlass
@@ -134,6 +143,17 @@
     count: 1
 
 - type: entity
+  parent: SheetPlasma
+  id: SheetPlasma10
+  name: plasma
+  suffix: 10
+  components:
+  - type: Sprite
+    state: plasma
+  - type: Stack
+    count: 10
+
+- type: entity
   parent: SheetOtherBase
   id: SheetPlastic
   name: plastic
@@ -143,6 +163,7 @@
     tags:
     - Plastic
     - Sheet
+    - NoPaint
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -175,10 +196,12 @@
         canReact: false
   - type: UserInterface
     interfaces:
-    - key: enum.ShortConstructionUiKey.Key
-      type: ShortConstructionMenuBUI
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
   - type: ActivatableUI
-    key: enum.ShortConstructionUiKey.Key
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
   - type: ShortConstruction
     entries:
     - prototype: CratePlastic
@@ -246,10 +269,12 @@
         canReact: false
   - type: UserInterface
     interfaces:
-    - key: enum.ShortConstructionUiKey.Key
-      type: ShortConstructionMenuBUI
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
   - type: ActivatableUI
-    key: enum.ShortConstructionUiKey.Key
+    key: enum.RadialSelectorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
   - type: ShortConstruction
     entries:
     - prototype: SheetUGlass

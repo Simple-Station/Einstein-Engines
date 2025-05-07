@@ -1,3 +1,4 @@
+using System.Numerics;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
@@ -41,7 +42,7 @@ public sealed partial class UltraVisionOverlay : Overlay
 
         var worldHandle = args.WorldHandle;
         var viewport = args.WorldBounds;
-        worldHandle.SetTransform(Matrix3.Identity);
+        worldHandle.SetTransform(Matrix3x2.Identity);
         worldHandle.UseShader(_ultraVisionShader);
         worldHandle.DrawRect(viewport, Color.White);
         worldHandle.UseShader(null);

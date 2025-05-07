@@ -3,9 +3,12 @@ using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Rejuvenate;
+using Content.Shared.StatusIcon;
 using JetBrains.Annotations;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 using Content.Shared.Mood;
 using Robust.Shared.Configuration;
 using Content.Shared.CCVar;
@@ -16,15 +19,33 @@ namespace Content.Shared.Nutrition.EntitySystems;
 public sealed class ThirstSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movement = default!;
     [Dependency] private readonly SharedJetpackSystem _jetpack = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
 
+    [ValidatePrototypeId<SatiationIconPrototype>]
+    private const string ThirstIconOverhydratedId = "ThirstIconOverhydrated";
+
+    [ValidatePrototypeId<SatiationIconPrototype>]
+    private const string ThirstIconThirstyId = "ThirstIconThirsty";
+
+    [ValidatePrototypeId<SatiationIconPrototype>]
+    private const string ThirstIconParchedId = "ThirstIconParched";
+
+    private SatiationIconPrototype? _thirstIconOverhydrated = null;
+    private SatiationIconPrototype? _thirstIconThirsty = null;
+    private SatiationIconPrototype? _thirstIconParched = null;
+
     public override void Initialize()
     {
         base.Initialize();
+
+        DebugTools.Assert(_prototype.TryIndex(ThirstIconOverhydratedId, out _thirstIconOverhydrated) &&
+                          _prototype.TryIndex(ThirstIconThirstyId, out _thirstIconThirsty) &&
+                          _prototype.TryIndex(ThirstIconParchedId, out _thirstIconParched));
 
         SubscribeLocalEvent<ThirstComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovespeed);
         SubscribeLocalEvent<ThirstComponent, MapInitEvent>(OnMapInit);
@@ -112,6 +133,28 @@ public sealed class ThirstSystem : EntitySystem
         }
     }
 
+    public bool TryGetStatusIconPrototype(ThirstComponent component, out SatiationIconPrototype? prototype)
+    {
+        switch (component.CurrentThirstThreshold)
+        {
+            case ThirstThreshold.OverHydrated:
+                prototype = _thirstIconOverhydrated;
+                return true;
+
+            case ThirstThreshold.Thirsty:
+                prototype = _thirstIconThirsty;
+                return true;
+
+            case ThirstThreshold.Parched:
+                prototype = _thirstIconParched;
+                return true;
+
+            default:
+                prototype = null;
+                return false;
+        }
+    }
+
     private void UpdateEffects(EntityUid uid, ThirstComponent component)
     {
         if (!_config.GetCVar(CCVars.MoodEnabled)
@@ -128,7 +171,7 @@ public sealed class ThirstSystem : EntitySystem
         }
         else
         {
-            _alerts.ClearAlertCategory(uid, AlertCategory.Thirst);
+            _alerts.ClearAlertCategory(uid, component.ThirstyCategory);
         }
 
         var ev = new MoodEffectEvent("Thirst" + component.CurrentThirstThreshold);

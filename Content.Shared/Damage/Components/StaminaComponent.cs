@@ -1,4 +1,6 @@
+using Content.Shared.Alert;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Shared.Damage.Components;
@@ -19,7 +21,7 @@ public sealed partial class StaminaComponent : Component
     /// How much stamina reduces per second.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
-    public float Decay = 3f;
+    public float Decay = 5f; // Stun meta
 
     /// <summary>
     /// How much time after receiving damage until stamina starts decreasing.
@@ -59,15 +61,6 @@ public sealed partial class StaminaComponent : Component
     [AutoPausedField]
     public TimeSpan NextUpdate = TimeSpan.Zero;
 
-    /// <summary>
-    /// Minimum factor of the crit threshold that the mob must receive in stamina damage in order to start slowing down.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public float SlowdownThresholdFactor = 0.5f;
-
-    /// <summary>
-    /// Speed multiplier for entities that are slowed down due to low stamina. Multiplied by how close the mob is to stamcrit.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public float SlowdownMultiplier = 0.75f;
+    [DataField]
+    public ProtoId<AlertPrototype> StaminaAlert = "Stamina";
 }

@@ -1,0 +1,66 @@
+# All Service
+#- type: characterItemGroup
+#  id: LoadoutServiceBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutServiceBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutServiceEars
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutServiceEquipment
+  items:
+    - type: loadout
+      id: LoadoutServiceClownCowToolboxFilled
+
+#- type: characterItemGroup
+#  id: LoadoutServiceEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutServiceGloves
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutServiceHead
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutServiceId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutServiceNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutServiceMask
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutServiceOuter
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutServiceShoes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutServiceUniforms
+#  maxItems: 1
+#  items:

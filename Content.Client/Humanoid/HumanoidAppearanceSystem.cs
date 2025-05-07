@@ -65,7 +65,8 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         foreach (var (key, info) in component.CustomBaseLayers)
         {
             oldLayers.Remove(key);
-            SetLayerData(component, sprite, key, info.Id, sexMorph: false, color: info.Color);
+            // Shitmed Change: For whatever reason these weren't actually ignoring the skin color as advertised.
+            SetLayerData(component, sprite, key, info.Id, sexMorph: false, color: info.Color, overrideSkin: true);
         }
 
         // hide old layers
@@ -83,7 +84,8 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         HumanoidVisualLayers key,
         string? protoId,
         bool sexMorph = false,
-        Color? color = null)
+        Color? color = null,
+        bool overrideSkin = false) // Shitmed Change
     {
         var layerIndex = sprite.LayerMapReserveBlank(key);
         var layer = sprite[layerIndex];
@@ -101,7 +103,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         var proto = _prototypeManager.Index<HumanoidSpeciesSpriteLayer>(protoId);
         component.BaseLayers[key] = proto;
 
-        if (proto.MatchSkin)
+        if (proto.MatchSkin && !overrideSkin) // Shitmed Change
             layer.Color = component.SkinColor.WithAlpha(proto.LayerAlpha);
 
         if (proto.BaseSprite != null)
@@ -203,6 +205,9 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         humanoid.CustomBaseLayers = customBaseLayers;
         humanoid.Sex = profile.Sex;
         humanoid.Gender = profile.Gender;
+        humanoid.DisplayPronouns = profile.DisplayPronouns;
+        humanoid.StationAiName = profile.StationAiName;
+        humanoid.CyborgName = profile.CyborgName;
         humanoid.Age = profile.Age;
         humanoid.Species = profile.Species;
         humanoid.SkinColor = profile.Appearance.SkinColor;

@@ -12,7 +12,8 @@
   - type: Clothing
     quickEquip: false
     slots:
-    - Back
+      - Back
+      - suitStorage
   - type: Wieldable
     wieldSound:
       path: /Audio/Items/bow_pull.ogg
@@ -44,6 +45,8 @@
       projectiles: !type:ContainerSlot
   - type: ContainerAmmoProvider
     container: projectiles
+  - type: UnwieldOnShoot # Goobstation
+  - type: UseDelayBlockShoot # Goobstation
 
 - type: entity
   id: BowImprovised

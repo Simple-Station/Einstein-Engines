@@ -8,8 +8,7 @@ namespace Content.Server.Jobs
     [UsedImplicitly]
     public sealed partial class AddComponentSpecial : JobSpecial
     {
-        [DataField("components")]
-        [AlwaysPushInheritance]
+        [DataField, AlwaysPushInheritance]
         public ComponentRegistry Components { get; private set; } = new();
 
         public override void AfterEquip(EntityUid mob)

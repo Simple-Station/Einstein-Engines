@@ -30,27 +30,27 @@ public sealed partial class ContestsSystem
             return 1;
 
         if (!args.DoEveryInteraction)
-            return args.DoMassInteraction ? ((!args.MassDisadvantage
+            return args.DoMassInteraction ? ((args.MassDisadvantage
                         ? MassContest(user, args.MassBypassClamp, args.MassRangeModifier)
                         : 1 / MassContest(user, args.MassBypassClamp, args.MassRangeModifier))
                             + args.MassOffset)
                                 : 1
-                    * (args.DoStaminaInteraction ? ((!args.StaminaDisadvantage
+                    * (args.DoStaminaInteraction ? ((args.StaminaDisadvantage
                         ? StaminaContest(user, args.StaminaBypassClamp, args.StaminaRangeModifier)
                         : 1 / StaminaContest(user, args.StaminaBypassClamp, args.StaminaRangeModifier))
                             + args.StaminaOffset)
                                 : 1)
-                    * (args.DoHealthInteraction ? ((!args.HealthDisadvantage
+                    * (args.DoHealthInteraction ? ((args.HealthDisadvantage
                         ? HealthContest(user, args.HealthBypassClamp, args.HealthRangeModifier)
                         : 1 / HealthContest(user, args.HealthBypassClamp, args.HealthRangeModifier))
                             + args.HealthOffset)
                                 : 1)
-                    * (args.DoMindInteraction ? ((!args.MindDisadvantage
+                    * (args.DoMindInteraction ? ((args.MindDisadvantage
                         ? MindContest(user, args.MindBypassClamp, args.MindRangeModifier)
                         : 1 / MindContest(user, args.MindBypassClamp, args.MindRangeModifier))
                             + args.MindOffset)
                                 : 1)
-                    * (args.DoMoodInteraction ? ((!args.MoodDisadvantage
+                    * (args.DoMoodInteraction ? ((args.MoodDisadvantage
                         ? MoodContest(user, args.MoodBypassClamp, args.MoodRangeModifier)
                         : 1 / MoodContest(user, args.MoodBypassClamp, args.MoodRangeModifier))
                             + args.MoodOffset)

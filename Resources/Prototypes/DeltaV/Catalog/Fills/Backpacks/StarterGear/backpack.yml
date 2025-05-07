@@ -12,7 +12,7 @@
       - id: BaseBallBat
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: ClothingBackpackMedical
   id: ClothingBackpackParamedicFilledDV
   components:
@@ -23,7 +23,7 @@
       - id: Portafib
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: ClothingBackpackMedical
   id: ClothingBackpackPsychologistFilled
   components:
@@ -33,7 +33,7 @@
 
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: ClothingBackpack
   id: ClothingBackpackLawyerFilled
   components:

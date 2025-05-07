@@ -1,0 +1,27 @@
+- type: characterItemGroup
+  id: LoadoutGloves
+  items:
+    - type: loadout
+      id: LoadoutHandsColorWhite
+    - type: loadout
+      id: LoadoutHandsColorYellowBudget
+    - type: loadout
+      id: LoadoutHandsGlovesLeather
+    - type: loadout
+      id: LoadoutHandsGlovesPowerglove
+    - type: loadout
+      id: LoadoutHandsGlovesRobohands
+    - type: loadout
+      id: LoadoutHandsGlovesFingerlessWhite
+    - type: loadout
+      id: LoadoutHandsGlovesEvening
+    - type: loadout
+      id: LoadoutHandsGlovesEnviroglovesColor
+    - type: loadout
+      id: LoadoutHandsGlovesEnviroglovesEvening
+    - type: loadout
+      id: LoadoutHandsClothWrap
+    - type: loadout
+      id: ClothingHandsTacticalMaidGlovesLoadout
+    - type: loadout
+      id: ClothingHandsGlovesCombatTCAF

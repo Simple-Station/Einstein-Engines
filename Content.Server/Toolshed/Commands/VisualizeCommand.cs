@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using Content.Server.Administration;
 using Content.Server.EUI;
 using Content.Shared.Administration;
@@ -16,7 +16,7 @@ public sealed class VisualizeCommand : ToolshedCommand
 
     [CommandImplementation]
     public void VisualizeEntities(
-            [CommandInvocationContext] IInvocationContext ctx,
+            IInvocationContext ctx,
             [PipedArgument] IEnumerable<EntityUid> input
         )
     {

@@ -2,7 +2,7 @@
   id: ActionSmite
   name: Smite
   description: Instantly gibs a target.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: EntityTargetAction
     useDelay: 60

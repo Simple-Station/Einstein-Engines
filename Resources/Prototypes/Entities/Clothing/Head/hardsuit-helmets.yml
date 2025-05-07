@@ -17,9 +17,9 @@
     sprite: Clothing/Head/Hardsuits/basic.rsi
   - type: Clothing
     sprite: Clothing/Head/Hardsuits/basic.rsi
-  - type: Tag
-    tags:
-    - HidesNose
+  - type: HideLayerClothing
+    slots:
+    - Snout
 
 #Atmospherics Hardsuit
 - type: entity
@@ -62,6 +62,36 @@
     coefficient: 0.005
 
 #Engineering Hardsuit
+- type: entity
+  parent: ClothingHeadHelmetHardsuitEngineering
+  id: ClothingHeadHelmetHardsuitEngineeringUnpainted
+  name: engineering hardsuit helmet
+  description: An engineering hardsuit helmet designed for working in low-pressure, high radioactive environments.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hardsuits/engineering-base.rsi
+    layers:
+    - state: icon
+    - state: icon-unshaded
+      shader: unshaded
+    - state: light-overlay
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Clothing
+    sprite: Clothing/Head/Hardsuits/engineering-base.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-head
+      - state: equipped-head-unshaded
+        shader: unshaded
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - state: equipped-head-light
+        shader: unshaded
+
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitEngineering
@@ -136,7 +166,7 @@
 - type: entity
   parent: ClothingHeadHardsuitBase
   id: ClothingHeadHelmetHardsuitMaxim
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: salvager maxim helmet
   description: A predication of decay washes over your mind.
   components:
@@ -199,6 +229,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Brigmedic Hardsuit
 - type: entity
@@ -211,6 +243,18 @@
   - type: Sprite
     sprite: Clothing/Head/Hardsuits/brigmedic.rsi
   - type: Clothing
+    clothingVisuals:
+      head:
+      - state: off-equipped-HELMET
+      - state: off-equipped-HELMET-glow
+        shader: unshaded
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+      - state: on-equipped-HELMET-glow
+        shader: unshaded
     sprite: Clothing/Head/Hardsuits/brigmedic.rsi
   - type: PointLight
     color: "#00FFFF"
@@ -226,6 +270,8 @@
   - type: PressureProtection
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Warden's Hardsuit
 - type: entity
@@ -251,6 +297,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Captain's Hardsuit
 - type: entity
@@ -267,6 +315,8 @@
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Chief Engineer's Hardsuit
 - type: entity
@@ -346,6 +396,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Luxury Mining Hardsuit
 - type: entity
@@ -369,6 +421,35 @@
 #ANTAG HARDSUITS
 #Blood-red Hardsuit
 - type: entity
+  parent: ClothingHeadHelmetHardsuitSyndie
+  id: ClothingHeadHelmetHardsuitShanlinUnpainted
+  name: Cybersun tacsuit helmet
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hardsuits/syndicate-base.rsi
+    layers:
+    - state: icon
+    - state: icon-unshaded
+      shader: unshaded
+    - state: light-overlay
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Clothing
+    sprite: Clothing/Head/Hardsuits/syndicate-base.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-head
+      - state: equipped-head-unshaded
+        shader: unshaded
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - state: equipped-head-light
+        shader: unshaded
+
+- type: entity
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitSyndie
   name: blood-red hardsuit helmet
@@ -376,14 +457,23 @@
   components:
   - type: BreathMask
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/syndicate.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/syndicate.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate.rsi
+    clothingVisuals:
+      head:
+      - state: off-equipped-HELMET
+      - state: off-equipped-HELMET-glow
+        shader: unshaded
   - type: PointLight
     color: green
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - Hair
   - type: Armor
     modifiers:
       coefficients:
@@ -391,6 +481,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Blood-red Medic Hardsuit
 - type: entity
@@ -401,14 +493,23 @@
   components:
   - type: BreathMask
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/syndiemedic.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate_agent.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/syndiemedic.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate_agent.rsi
+    clothingVisuals:
+      head:
+      - state: off-equipped-HELMET
+      - state: off-equipped-HELMET-glow
+        shader: unshaded
   - type: PointLight
     color: green
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - Hair
   - type: Armor
     modifiers:
       coefficients:
@@ -416,8 +517,39 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Syndicate Elite Hardsuit
+- type: entity
+  parent: ClothingHeadHelmetHardsuitSyndieElite
+  id: ClothingHeadHelmetHardsuitShiweiUnpainted
+  name: Cybersun elite tacsuit helmet
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hardsuits/syndicate-elite-base.rsi
+    layers:
+    - state: icon
+    - state: icon-unshaded
+      shader: unshaded
+    - state: light-overlay
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
+  - type: Clothing
+    sprite: Clothing/Head/Hardsuits/syndicate-elite-base.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-head
+      - state: equipped-head-unshaded
+        shader: unshaded
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - state: equipped-head-light
+        shader: unshaded
+
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitSyndieElite
@@ -426,16 +558,27 @@
   components:
   - type: BreathMask
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/syndieelite.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate_elite.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/syndieelite.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate_elite.rsi
+    clothingVisuals:
+      head:
+      - state: off-equipped-HELMET
+      - state: off-equipped-HELMET-glow
+        shader: unshaded
   - type: PointLight
     color: red
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - Hair
   - type: TemperatureProtection
     coefficient: 0.005
+  - type: FireProtection
+    reduction: 0.2
   - type: Armor
     modifiers:
       coefficients:
@@ -443,6 +586,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Syndicate Commander Hardsuit
 - type: entity
@@ -453,14 +598,23 @@
   components:
   - type: BreathMask
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/syndiecommander.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate_commander.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/syndiecommander.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate_commander.rsi
+    clothingVisuals:
+      head:
+      - state: off-equipped-HELMET
+      - state: off-equipped-HELMET-glow
+        shader: unshaded
   - type: PointLight
     color: green
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - Hair
   - type: Armor
     modifiers:
       coefficients:
@@ -468,6 +622,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Cybersun Juggernaut Hardsuit
 - type: entity
@@ -478,12 +634,21 @@
   components:
   - type: BreathMask
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/cybersun.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate_juggernaut.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/cybersun.rsi
+    sprite: _Impstation/Clothing/Head/Hardsuits/syndicate_juggernaut.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+      - state: equipped-HELMET-glow
+        shader: unshaded
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - Hair
   - type: Armor
     modifiers:
       coefficients:
@@ -491,6 +656,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Wizard Hardsuit
 - type: entity
@@ -516,6 +683,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Organic Space Suit
 - type: entity
@@ -566,11 +735,13 @@
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #CENTCOMM / ERT HARDSUITS
 #ERT Leader Hardsuit
 - type: entity
-  parent: ClothingHeadHelmetHardsuitSyndieCommander
+  parent: ClothingHeadHelmetHardsuitSyndie
   id: ClothingHeadHelmetHardsuitERTLeader
   name: ERT leader hardsuit helmet
   description: A special hardsuit helmet worn by members of an emergency response team.
@@ -579,9 +750,21 @@
   - type: Sprite
     sprite: Clothing/Head/Hardsuits/ERThelmets/ertleader.rsi
   - type: Clothing
+    clothingVisuals:
+      head:
+      - state: off-equipped-HELMET
+      - state: off-equipped-HELMET-unshaded
+        shader: unshaded
     sprite: Clothing/Head/Hardsuits/ERThelmets/ertleader.rsi
   - type: PointLight
     color: "#addbff"
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+      - state: on-equipped-HELMET-unshaded
+        shader: unshaded
   - type: Armor
     modifiers:
       coefficients:
@@ -601,9 +784,21 @@
   - type: Sprite
     sprite: Clothing/Head/Hardsuits/ERThelmets/ertchaplain.rsi
   - type: Clothing
+    clothingVisuals:
+      head:
+      - state: off-equipped-HELMET
+      - state: off-equipped-HELMET-unshaded
+        shader: unshaded
     sprite: Clothing/Head/Hardsuits/ERThelmets/ertchaplain.rsi
   - type: PointLight
     color: "#ffffff"
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+      - state: on-equipped-HELMET-unshaded
+        shader: unshaded
 
 #ERT Engineer Hardsuit
 - type: entity
@@ -616,9 +811,21 @@
   - type: Sprite
     sprite: Clothing/Head/Hardsuits/ERThelmets/ertengineer.rsi
   - type: Clothing
+    clothingVisuals:
+      head:
+      - state: off-equipped-HELMET
+      - state: off-equipped-HELMET-unshaded
+        shader: unshaded
     sprite: Clothing/Head/Hardsuits/ERThelmets/ertengineer.rsi
   - type: PointLight
     color: "#f4ffad"
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+      - state: on-equipped-HELMET-unshaded
+        shader: unshaded
   - type: Armor
     modifiers:
       coefficients:
@@ -629,7 +836,7 @@
 
 #ERT Medical Hardsuit
 - type: entity
-  parent: ClothingHeadHelmetHardsuitSyndieElite
+  parent: ClothingHeadHelmetHardsuitSyndie
   id: ClothingHeadHelmetHardsuitERTMedical
   name: ERT medic hardsuit helmet
   description: A special hardsuit helmet worn by members of an emergency response team.
@@ -638,9 +845,21 @@
   - type: Sprite
     sprite: Clothing/Head/Hardsuits/ERThelmets/ertmedical.rsi
   - type: Clothing
+    clothingVisuals:
+      head:
+      - state: off-equipped-HELMET
+      - state: off-equipped-HELMET-unshaded
+        shader: unshaded
     sprite: Clothing/Head/Hardsuits/ERThelmets/ertmedical.rsi
   - type: PointLight
     color: "#adffec"
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+      - state: on-equipped-HELMET-unshaded
+        shader: unshaded
 
 #ERT Security Hardsuit
 - type: entity
@@ -653,9 +872,21 @@
   - type: Sprite
     sprite: Clothing/Head/Hardsuits/ERThelmets/ertsecurity.rsi
   - type: Clothing
+    clothingVisuals:
+      head:
+      - state: off-equipped-HELMET
+      - state: off-equipped-HELMET-unshaded
+        shader: unshaded
     sprite: Clothing/Head/Hardsuits/ERThelmets/ertsecurity.rsi
   - type: PointLight
     color: "#ffadc6"
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+      - state: on-equipped-HELMET-unshaded
+        shader: unshaded
   - type: Armor
     modifiers:
       coefficients:
@@ -675,9 +906,21 @@
   - type: Sprite
     sprite: Clothing/Head/Hardsuits/ERThelmets/ertjanitor.rsi
   - type: Clothing
+    clothingVisuals:
+      head:
+      - state: off-equipped-HELMET
+      - state: off-equipped-HELMET-unshaded
+        shader: unshaded
     sprite: Clothing/Head/Hardsuits/ERThelmets/ertjanitor.rsi
   - type: PointLight
     color: "#cbadff"
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+      - state: on-equipped-HELMET-unshaded
+        shader: unshaded
 
 #CBURN Hardsuit
 - type: entity
@@ -717,6 +960,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Deathsquad Hardsuit
 - type: entity
@@ -742,6 +987,13 @@
         Heat: 0.80
         Radiation: 0.80
         Caustic: 0.95
+  - type: ThermalVision
+    isEquipment: true
+    color: "#98EEFB"
+    lightRadius: 15
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
+    protectionRange: 0
 
 #MISC. HARDSUITS
 #Clown Hardsuit

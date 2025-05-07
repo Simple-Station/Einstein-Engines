@@ -3,9 +3,6 @@
   name: job-name-mime
   description: job-description-mime
   playTimeTracker: JobMime
-  requirements:
-    - !type:CharacterOverallTimeRequirement
-      min: 7200 # DeltaV - 2 hours
   startingGear: MimeGear
   icon: "JobIconMime"
   supervisors: job-supervisors-hop
@@ -21,6 +18,8 @@
 
 - type: startingGear
   id: MimeGear
+  subGear:
+  - MimePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitMime
     back: ClothingBackpackMimeFilled
@@ -37,11 +36,20 @@
   satchel: ClothingBackpackSatchelMimeFilled
   duffelbag: ClothingBackpackDuffelMimeFilled
 
+- type: startingGear
+  id: MimePlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitMime
+    head: ClothingHeadEnvirohelmMime
+    gloves: ClothingHandsGlovesEnviroglovesWhite
+    mask: ClothingMaskMime # Parent sets mask to breath mask so set it again here
+
 - type: entity
   id: ActionMimeInvisibleWall
   name: Create Invisible Wall
   description: Create an invisible wall in front of you, if placeable there.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     priority: -1

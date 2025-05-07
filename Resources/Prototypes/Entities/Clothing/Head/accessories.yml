@@ -1,0 +1,96 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatPin
+  name: hair pin
+  description: A nice hair pin.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Accessories/pin.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Accessories/pin.rsi
+    equipDelay: 0
+    unequipDelay: 0
+  - type: Item
+    size: Tiny
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatPinClover
+  name: clover pin
+  description: A hair pin in the shape of a clover leaf. Smells of mischief.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Accessories/pin_clover.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Accessories/pin_clover.rsi
+    equipDelay: 0
+    unequipDelay: 0
+  - type: Item
+    size: Tiny
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatPinButterfly
+  name: butterfly pin
+  description: A hair pin in the shape of a butterfly.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Accessories/pin_butterfly.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Accessories/pin_butterfly.rsi
+    equipDelay: 0
+    unequipDelay: 0
+  - type: Item
+    size: Tiny
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatPinMagnetic
+  name: magnetic pin
+  description: A pair of magnetic pins that stick to your head with magnetism.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Accessories/pin_magnetic.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Accessories/pin_magnetic.rsi
+    equipDelay: 0
+    unequipDelay: 0
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatRibbon
+  name: hair ribbon
+  description: A length of ribbon acting as a headband.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Accessories/ribbon.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Accessories/ribbon.rsi
+    equipDelay: 0.2
+    unequipDelay: 0.2
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBow
+  name: hair bow
+  description: A hair bow with a small removable clip on the back.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Accessories/bow.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Accessories/bow.rsi
+    equipDelay: 0.2
+    unequipDelay: 0.2
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBowSmall
+  name: small hair bow
+  description: A ribbon tied into a small bow with a clip on the back to attach to hair.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Accessories/bow_small.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Accessories/bow_small.rsi
+    equipDelay: 0.2
+    unequipDelay: 0.2

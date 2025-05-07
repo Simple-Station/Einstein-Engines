@@ -9,7 +9,6 @@
         map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
     proto: PelletShotgunSoulbreaker
-    count: 1
   - type: ChemicalAmmo
   - type: SolutionContainerManager
     solutions:
@@ -21,3 +20,5 @@
     maxTransferAmount: 15
   - type: SpentAmmoVisuals
     state: "practice"
+  - type: GuideHelp
+    guides: [ Mindbreaking ]

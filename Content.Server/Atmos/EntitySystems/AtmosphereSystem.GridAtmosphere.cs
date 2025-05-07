@@ -2,6 +2,7 @@ using Content.Server.Atmos.Components;
 using Content.Server.Atmos.Reactions;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
+using Content.Shared.Atmos.Reactions;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Utility;
@@ -94,8 +95,6 @@ public sealed partial class AtmosphereSystem
                 newTileAtmosphere.Hotspot = tileAtmosphere.Hotspot;
                 newTileAtmosphere.HeatCapacity = tileAtmosphere.HeatCapacity;
                 newTileAtmosphere.Temperature = tileAtmosphere.Temperature;
-                newTileAtmosphere.PressureDifference = tileAtmosphere.PressureDifference;
-                newTileAtmosphere.PressureDirection = tileAtmosphere.PressureDirection;
 
                 // TODO ATMOS: Somehow force GasTileOverlaySystem to perform an update *right now, right here.*
                 // The reason why is that right now, gas will flicker until the next GasTileOverlay update.

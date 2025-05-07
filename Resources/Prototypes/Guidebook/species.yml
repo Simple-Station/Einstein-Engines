@@ -5,13 +5,20 @@
   children:
     - Arachnid
     - Diona
-    - Dwarf
     - Human
     - Moth
+    - Oni
     - Reptilian
     - SlimePerson
     - IPCs
     - Harpy
+    - Shadowkin
+    - Plasmaman
+    - Chitinid
+    - Tajaran
+    - Xelthia
+    # ImpStation additions
+    - Thaven
 
 - type: guideEntry
   id: Arachnid
@@ -24,11 +31,6 @@
   text: "/ServerInfo/Guidebook/Mobs/Diona.xml"
 
 - type: guideEntry
-  id: Dwarf
-  name: species-name-dwarf
-  text: "/ServerInfo/Guidebook/Mobs/Dwarf.xml"
-
-- type: guideEntry
   id: Human
   name: species-name-human
   text: "/ServerInfo/Guidebook/Mobs/Human.xml"
@@ -37,6 +39,11 @@
   id: Moth
   name: species-name-moth
   text: "/ServerInfo/Guidebook/Mobs/Moth.xml"
+
+- type: guideEntry
+  id: Oni
+  name: species-name-oni
+  text: "/ServerInfo/Guidebook/Mobs/Oni.xml"
 
 - type: guideEntry
   id: Reptilian
@@ -57,3 +64,23 @@
   id: Harpy
   name: species-name-harpy
   text: "/ServerInfo/Guidebook/Mobs/Harpy.xml"
+
+- type: guideEntry
+  id: Shadowkin
+  name: species-name-shadowkin
+  text: "/ServerInfo/Guidebook/Mobs/Shadowkin.xml"
+
+- type: guideEntry
+  id: Tajaran
+  name: species-name-tajaran
+  text: "/ServerInfo/Guidebook/Mobs/Tajaran.xml"
+
+- type: guideEntry
+  id: Plasmaman
+  name: species-name-plasmaman
+  text: "/ServerInfo/Guidebook/Mobs/Plasmaman.xml"
+  
+- type: guideEntry
+  id: Xelthia
+  name: species-name-xelthia
+  text: "/ServerInfo/_EE/Guidebook/Mobs/Xelthia.xml"

@@ -2,18 +2,18 @@
   id: BulletMagnum
   name: bullet (.45 magnum)
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Piercing: 35
+        Piercing: 25
 
 - type: entity
   id: BulletMagnumPractice
   name: bullet (.45 magnum practice)
   parent: BaseBulletPractice
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -24,7 +24,7 @@
   id: BulletMagnumRubber
   name: bullet (.45 magnum rubber)
   parent: BaseBulletRubber
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -37,34 +37,57 @@
   id: BulletMagnumIncendiary
   parent: BaseBulletIncendiary
   name: bullet (.45 magnum incendiary)
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
         Blunt: 3
-        Heat: 32
-        
+        Heat: 22
+
 - type: entity
   id: BulletMagnumAP
   name: bullet (.45 magnum armor-piercing)
   parent: BaseBulletAP
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Piercing: 26 # 20% decrease
+        Piercing: 25
     ignoreResistances: true
 
 - type: entity
   id: BulletMagnumUranium
   name: bullet (.45 magnum uranium)
   parent: BaseBulletUranium
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
         Radiation: 15
-        Piercing: 20
+        Piercing: 10
+
+- type: entity
+  id: BulletMagnumShrapnel
+  name: bullet (.45 magnum shrapnel)
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 4.7916
+  - type: Sprite
+    scale: 0.5, 0.5
+
+- type: entity
+  id: BulletMagnumShrapnelSpread
+  categories: [ HideSpawnMenu ]
+  parent: BulletMagnumShrapnel
+  components:
+  - type: ProjectileSpread
+    proto: BulletMagnumShrapnel
+    count: 6
+    spread: 15

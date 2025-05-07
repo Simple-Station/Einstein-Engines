@@ -1,0 +1,141 @@
+- type: trait
+  id: SiikMaas
+  category: TraitsSpeechLanguages
+  points: -1
+  # slots: 1
+  # itemGroupSlots: 0
+  requirements:
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Tajaran
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Adhomai
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - SiikMaas
+      languagesUnderstood:
+        - SiikMaas
+
+- type: trait
+  id: NalRasan
+  category: TraitsSpeechLanguages
+  points: -1
+  # slots: 1
+  # itemGroupSlots: 0
+  requirements:
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Tajaran
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - NalRasan
+      languagesUnderstood:
+        - NalRasan
+
+- type: trait
+  id: SiikTajr
+  category: TraitsSpeechLanguages
+  points: -2
+  # slots: 1
+  # itemGroupSlots: 0
+  requirements:
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Tajaran
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - SiikTajr
+      languagesUnderstood:
+        - SiikTajr
+
+- type: trait
+  id: YaSsa
+  category: TraitsSpeechLanguages
+  points: -2
+  # slots: 1
+  # itemGroupSlots: 0
+  requirements:
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Tajaran
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - YaSsa
+      languagesUnderstood:
+        - YaSsa
+
+- type: trait
+  id: Delvahii
+  category: TraitsSpeechLanguages
+  points: -2
+  # slots: 1
+  # itemGroupSlots: 0
+  requirements:
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Tajaran
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Delvahii
+      languagesUnderstood:
+        - Delvahii
+
+- type: trait
+  id: Moffic
+  category: TraitsSpeechLanguages
+  points: -1
+  # slots: 1
+  # itemGroupSlots: 0
+  requirements:
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Harpy
+        - Chitinid
+        - IPC
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Moffic
+      languagesUnderstood:
+        - Moffic
+
+- type: trait
+  id: Chittin
+  category: TraitsSpeechLanguages
+  points: -1
+  # slots: 1
+  # itemGroupSlots: 0
+  requirements:
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Harpy
+        - Moth
+        - IPC
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Chittin
+      languagesUnderstood:
+        - Chittin

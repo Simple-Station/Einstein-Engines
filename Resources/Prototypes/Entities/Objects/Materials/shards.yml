@@ -5,6 +5,8 @@
   description: It's a shard of some unknown material.
   components:
   - type: Sharp
+  - type: Execution
+    doAfterDuration: 4.0
   - type: Sprite
     layers:
       - sprite: Objects/Materials/Shards/shard.rsi
@@ -17,7 +19,7 @@
           shard2: ""
           shard3: ""
   - type: MeleeWeapon
-    attackRate: 1.5
+    attackRate: 1
     damage:
       types:
         Slash: 3.5
@@ -43,11 +45,12 @@
         mask:
         - ItemMask
   - type: DamageOtherOnHit
-    damage:
-      types:
-        Slash: 2
+    meleeDamageMultiplier: 2
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/bladeslice.ogg
+    removalTime: 2.5
+    autoRemoveDuration: 30
+  - type: EmbedPassiveDamage
   - type: Tag
     tags:
     - Trash
@@ -68,7 +71,7 @@
       types:
       - Shard
     intersectRatio: 0.2
-  - type: ShoesRequiredStepTrigger
+  - type: ClothingRequiredStepTrigger
   - type: Slippery
     slipSound:
       path: /Audio/Effects/glass_step.ogg
@@ -81,6 +84,14 @@
   - type: DeleteOnTrigger
   - type: StaticPrice
     price: 0
+  # Shitmed Change
+  - type: Scalpel
+    speed: 0.45
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/_Shitmed/Medical/Surgery/scalpel1.ogg
+    endSound:
+      path: /Audio/_Shitmed/Medical/Surgery/scalpel2.ogg
 
 - type: entity
   parent: ShardBase
@@ -90,13 +101,13 @@
   components:
   - type: Sprite
     color: "#bbeeff"
-  - type: WelderRefinable
+  - type: ToolRefinable
     refineResult:
     - id: SheetGlass1
   - type: DamageUserOnTrigger
     damage:
       types:
-        Piercing: 5
+        Piercing: 4.5
   - type: Tag
     tags:
       - GlassShard
@@ -121,14 +132,18 @@
   components:
   - type: Sprite
     color: "#96cdef"
-  - type: WelderRefinable
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 4.5
+  - type: ToolRefinable
     refineResult:
     - id: SheetGlass1
     - id: PartRodMetal1
   - type: DamageUserOnTrigger
     damage:
       types:
-        Piercing: 5
+        Piercing: 5.5
   - type: Tag
     tags:
       - ReinforcedGlassShard
@@ -153,14 +168,22 @@
   components:
   - type: Sprite
     color: "#FF72E7"
-  - type: WelderRefinable
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 5.5
+  - type: ToolRefinable
     refineResult:
-    - id: SheetGlass1
-    - id: SheetPlasma1
+      - id: SheetGlass1
+      - id: SheetPlasma1
+  - type: EmbedPassiveDamage
+    damage:
+      types:
+        Slash: 0.15
   - type: DamageUserOnTrigger
     damage:
       types:
-        Piercing: 5
+        Piercing: 6.5
   - type: Tag
     tags:
       - PlasmaGlassShard
@@ -187,15 +210,20 @@
   components:
   - type: Sprite
     color: "#8eff7a"
-  - type: WelderRefinable
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 4.5
+        Radiation: 2
+  - type: ToolRefinable
     refineResult:
     - id: SheetGlass1
     - id: SheetUranium1
   - type: DamageUserOnTrigger
     damage:
       types:
-        Piercing: 3
-        Radiation: 2
+        Piercing: 5
+        Radiation: 2.5
   - type: Tag
     tags:
       - UraniumGlassShard
@@ -222,7 +250,7 @@
   components:
   - type: Sprite
     color: "#e0aa36"
-  - type: WelderRefinable
+  - type: ToolRefinable
     refineResult:
     - id: SheetGlass1
     - id: SheetBrass1

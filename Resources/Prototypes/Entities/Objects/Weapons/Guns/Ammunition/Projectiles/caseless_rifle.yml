@@ -2,18 +2,18 @@
   id: BulletCaselessRifle
   name: bullet (.25 caseless)
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Piercing: 19
+        Piercing: 15
 
 - type: entity
   id: BulletCaselessRiflePractice
   name: bullet (.25 caseless practice)
   parent: BaseBulletPractice
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
@@ -24,9 +24,56 @@
   id: BulletCaselessRifleRubber
   name: bullet (.25 caseless rubber)
   parent: BaseBulletRubber
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
         Blunt: 3
+
+- type: entity
+  id: BulletCaselessRifleIncendiary
+  name: bullet (.25 caseless incendiary)
+  parent: BaseBulletIncendiary
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 3
+        Heat: 12
+
+- type: entity
+  id: BulletCaselessRifleUranium
+  name: bullet (.25 caseless uranium)
+  parent: BaseBulletUranium
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Radiation: 7
+        Piercing: 8
+
+- type: entity
+  id: BulletCaselessRifleShrapnel
+  name: bullet (.25 caseless shrapnel)
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 3.75
+  - type: Sprite
+    scale: 0.5, 0.5
+
+- type: entity
+  id: BulletCaselessRifleShrapnelSpread
+  categories: [ HideSpawnMenu ]
+  parent: BulletCaselessRifleShrapnel
+  components:
+  - type: ProjectileSpread
+    proto: BulletCaselessRifleShrapnel
+    count: 5
+    spread: 15

@@ -134,7 +134,7 @@ marking-CyberLimbsMarkingXionLLeg-l_leg-1 = Primary Leg
 marking-CyberLimbsMarkingXionLLeg-l_leg-2 = Secondary Leg
 marking-CyberLimbsMarkingXionLFoot = Left Robotic Foot from Xion Manufacturing Group
 marking-CyberLimbsMarkingXionLFoot-l_foot-1 = Primary Foot
-marking-CyberLimbsMarkingXionLFoot-l_foot-1 = Secondary Foot
+marking-CyberLimbsMarkingXionLFoot-l_foot-2 = Secondary Foot
 marking-CyberLimbsMarkingXionRArm = Right Robotic Arm from Xion Manufacturing Group
 marking-CyberLimbsMarkingXionRArm-r_arm-1 = Primary Arm
 marking-CyberLimbsMarkingXionRArm-r_arm-2 = Secondary Arm
@@ -146,7 +146,7 @@ marking-CyberLimbsMarkingXionRLeg-r_leg-1 = Primary Leg
 marking-CyberLimbsMarkingXionRLeg-r_leg-2 = Secondary Leg
 marking-CyberLimbsMarkingXionRFoot = Right Robotic Foot from Xion Manufacturing Group
 marking-CyberLimbsMarkingXionRFoot-r_foot-1 = Primary Foot
-marking-CyberLimbsMarkingXionRFoot-r_foot-1 = Secondary Foot
+marking-CyberLimbsMarkingXionRFoot-r_foot-2 = Secondary Foot
 
 marking-CyberLimbsMarkingShellguardHead = Operational Monitor from Shellguard Munitions
 marking-CyberLimbsMarkingShellguardHead-head-1 = Primary Head

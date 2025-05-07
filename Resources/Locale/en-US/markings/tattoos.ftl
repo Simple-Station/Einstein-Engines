@@ -4,6 +4,9 @@ marking-TattooHiveChest = Back Tattoo (Hive)
 marking-TattooNightlingChest-tattoo_nightling = Chest Tattoo (nightling)
 marking-TattooNightlingChest = Chest Tattoo (Nightling)
 
+marking-TattooNanotrasenChest-tattoo_nanotrasen_chest = Chest Tattoo (Nanotrasen)
+marking-TattooNanotrasenChest = Chest Tattoo (Nanotrasen)
+
 marking-TattooSilverburghLeftLeg-tattoo_silverburgh_l_leg = Left Leg Tattoo (Silverburg)
 marking-TattooSilverburghLeftLeg = Left Leg Tattoo (Silverburg)
 
@@ -27,3 +30,9 @@ marking-TattooEyeRight = Right Eye
 
 marking-TattooEyeLeft-tattoo_eye_l = Left Eye
 marking-TattooEyeLeft = Left Eye
+
+marking-TattooEyeArachneRight-tattoo_eye_arachne_r = Right Arachne Eye
+marking-TattooEyeArachneRight = Right Arachne Eye
+
+marking-TattooEyeArachneLeft-tattoo_eye_arachne_l = Left Arachne Eye
+marking-TattooEyeArachneLeft = Left Arachne Eye

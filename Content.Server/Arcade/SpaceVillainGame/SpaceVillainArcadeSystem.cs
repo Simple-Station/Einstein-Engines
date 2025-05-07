@@ -3,6 +3,7 @@ using Content.Shared.UserInterface;
 using Content.Server.Advertise;
 using Content.Server.Advertise.Components;
 using Content.Shared.Mood;
+using Content.Shared.Power;
 using static Content.Shared.Arcade.SharedSpaceVillainArcadeComponent;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
@@ -77,8 +78,7 @@ public sealed partial class SpaceVillainArcadeSystem : EntitySystem
         if (!TryComp<ApcPowerReceiverComponent>(uid, out var power) || !power.Powered)
             return;
 
-        if (msg.Session.AttachedEntity != null)
-            RaiseLocalEvent(msg.Session.AttachedEntity.Value, new MoodEffectEvent("ArcadePlay"));
+        RaiseLocalEvent(EntityManager.GetEntity(msg.Entity), new MoodEffectEvent("ArcadePlay"));
 
         switch (msg.PlayerAction)
         {
@@ -94,12 +94,10 @@ public sealed partial class SpaceVillainArcadeSystem : EntitySystem
                 _audioSystem.PlayPvs(component.NewGameSound, uid, AudioParams.Default.WithVolume(-4f));
 
                 component.Game = new SpaceVillainGame(uid, component, this);
-                if (_uiSystem.TryGetUi(uid, SpaceVillainArcadeUiKey.Key, out var bui))
-                    _uiSystem.SendUiMessage(bui, component.Game.GenerateMetaDataMessage());
+                _uiSystem.ServerSendUiMessage(uid, SpaceVillainArcadeUiKey.Key, component.Game.GenerateMetaDataMessage());
                 break;
             case PlayerAction.RequestData:
-                if (_uiSystem.TryGetUi(uid, SpaceVillainArcadeUiKey.Key, out bui))
-                    _uiSystem.SendUiMessage(bui, component.Game.GenerateMetaDataMessage());
+                _uiSystem.ServerSendUiMessage(uid, SpaceVillainArcadeUiKey.Key, component.Game.GenerateMetaDataMessage());
                 break;
         }
     }
@@ -114,7 +112,6 @@ public sealed partial class SpaceVillainArcadeSystem : EntitySystem
         if (TryComp<ApcPowerReceiverComponent>(uid, out var power) && power.Powered)
             return;
 
-        if (_uiSystem.TryGetUi(uid, SpaceVillainArcadeUiKey.Key, out var bui))
-            _uiSystem.CloseAll(bui);
+        _uiSystem.CloseUi(uid, SpaceVillainArcadeUiKey.Key);
     }
 }

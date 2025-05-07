@@ -1,0 +1,73 @@
+# Janitor
+#- type: characterItemGroup
+#  id: LoadoutJanitorBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutJanitorBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutJanitorEars
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutJanitorEquipment
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutJanitorEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutJanitorGloves
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutJanitorHead
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutJanitorId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutJanitorNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutJanitorMask
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutJanitorOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutServiceWinterCoatJanitor
+#
+#- type: characterItemGroup
+#  id: LoadoutJanitorShoes
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutJanitorUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutServiceJumpsuitJanitorNt
+    - type: loadout
+      id: LoadoutServiceJumpsuitJanitorIdris
+    - type: loadout
+      id: LoadoutServiceJumpsuitJanitorOrion

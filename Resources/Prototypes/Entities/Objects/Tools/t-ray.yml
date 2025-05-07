@@ -19,5 +19,10 @@
         base:
           On: { state: tray-on }
           Off: { state: tray-off }
+  - type: PhysicalComposition
+    materialComposition:
+      Aluminum: 300
+      Glass: 100
+      Circuitry: 25
   - type: StaticPrice
     price: 60

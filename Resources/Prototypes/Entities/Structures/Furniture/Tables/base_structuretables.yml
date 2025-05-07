@@ -33,14 +33,13 @@
     bonkDamage:
       types:
         Blunt: 4
-    bonkSound: !type:SoundCollectionSpecifier
-      collection: TrayHit
   - type: Clickable
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepHull
   - type: RequireProjectileTarget
-  
+  - type: ThrownItemImmune
+
 - type: entity
   id: CounterBase
   parent: TableBase

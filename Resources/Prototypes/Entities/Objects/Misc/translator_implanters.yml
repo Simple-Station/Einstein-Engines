@@ -61,6 +61,14 @@
     implant: SolCommonTranslatorImplant
 
 - type: entity
+  id: NovuNedericTranslatorImplanter
+  parent: [ BaseTranslatorImplanter ]
+  name: novu-nederic translator implant
+  components:
+  - type: Implanter
+    implant: NovuNedericTranslatorImplant
+
+- type: entity
   id: RootSpeakTranslatorImplanter
   parent: [ BaseTranslatorImplanter ]
   name: root-speak translator implant
@@ -91,3 +99,19 @@
   components:
   - type: Implanter
     implant: AzazibaTranslatorImplant
+
+- type: entity
+  id: ChittinTranslatorImplanter
+  parent: [ BaseTranslatorImplanter ]
+  name: chittin translator implant
+  components:
+  - type: Implanter
+    implant: ChittinTranslatorImplant
+
+- type: entity
+  id: SiikMaasTranslatorImplanter
+  parent: [ BaseTranslatorImplanter ]
+  name: siik'maas translator implant
+  components:
+  - type: Implanter
+    implant: SiikMaasTranslatorImplant

@@ -9,11 +9,11 @@
     issuer: dragon
   - type: RoleRequirement
     roles:
-      components:
+      mindRoles:
       - DragonRole
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseDragonObjective
   id: CarpRiftsObjective
   components:
@@ -30,7 +30,7 @@
   - type: CarpRiftsCondition
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: [BaseDragonObjective, BaseSurviveObjective]
   id: DragonSurviveObjective
   name: Survive

@@ -32,9 +32,6 @@
   id: ATVKeys
 
 - type: Tag
-  id: Baguette
-
-- type: Tag
   id: Balloon
 
 - type: Tag
@@ -116,6 +113,24 @@
   id: BorgHead
 
 - type: Tag
+  id: BorgLArm
+
+- type: Tag
+  id: BorgLLeg
+
+- type: Tag
+  id: BorgRArm
+
+- type: Tag
+  id: BorgRLeg
+
+- type: Tag
+  id: BorgTorso
+
+- type: Tag
+  id: BorgLeg
+
+- type: Tag
   id: BorgJanitorHead
 
 - type: Tag
@@ -126,9 +141,6 @@
 
 - type: Tag
   id: BorgJanitorTorso
-
-- type: Tag
-  id: BorgLeg
 
 - type: Tag
   id: BorgMedicalHead
@@ -191,6 +203,9 @@
   id: BorgModuleSyndicateAssault
 
 - type: Tag
+  id: Bot
+
+- type: Tag
   id: BorgServiceHead
 
 - type: Tag
@@ -224,10 +239,16 @@
   id: BoxCardboard
 
 - type: Tag
+  id: MaterialCardboard
+
+- type: Tag
+  id: MaterialPaper
+
+- type: Tag
   id: BoxHug
 
 - type: Tag
-  id: Burnt
+  id: Brain
 
 - type: Tag
   id: BrassInstrument
@@ -251,7 +272,19 @@
   id: Bucket
 
 - type: Tag
+  id: Burger
+
+- type: Tag
   id: BulletFoam
+
+- type: Tag
+  id: BulletRubber
+
+- type: Tag
+  id: Burnt
+
+- type: Tag
+  id: Bun
 
 - type: Tag
   id: BypassDropChecks
@@ -260,7 +293,16 @@
   id: BypassInteractionRangeChecks
 
 - type: Tag
+  id: Cable
+
+- type: Tag
   id: CableCoil
+
+- type: Tag
+  id: Cake
+
+- type: Tag
+  id: CaneBlade
 
 - type: Tag
   id: CapacitorStockPart
@@ -341,6 +383,9 @@
   id: CartridgeHeavyRifle
 
 - type: Tag
+  id: CartridgeMinigun
+
+- type: Tag
   id: CartridgeLightRifle
 
 - type: Tag
@@ -369,6 +414,13 @@
   id: Chicken
 
 - type: Tag
+  id: Cheese
+
+# Allowed to control someone wearing a Chef's hat if inside their hat.
+- type: Tag
+  id: ChefPilot
+
+- type: Tag
   id: ChemDispensable # container that can go into the chem dispenser
 
 - type: Tag
@@ -393,6 +445,9 @@
   id: ClothMade
 
 - type: Tag
+  id: ClothingHeadHelmetBasic
+
+- type: Tag
   id: ClownMask
 
 - type: Tag
@@ -406,6 +461,9 @@
 
 - type: Tag
   id: ClownSuit
+
+- type: Tag
+  id: CluwneHappyHonk
 
 - type: Tag
   id: CluwneHorn
@@ -424,6 +482,9 @@
 
 - type: Tag
   id: Cow
+
+- type: Tag
+  id: Crab
 
 - type: Tag
   id: Crayon
@@ -507,6 +568,12 @@
   id: DiscreteHealthAnalyzer #So construction recipes don't eat medical PDAs
 
 - type: Tag
+  id: Disposal
+
+- type: Tag
+  id: DNASolutionScannable
+
+- type: Tag
   id: DockArrivals
 
 - type: Tag
@@ -537,6 +604,9 @@
   id: DrinkCan
 
 - type: Tag
+  id: DrinkGlass
+
+- type: Tag
   id: DrinkSpaceGlue
 
 - type: Tag
@@ -556,6 +626,9 @@
 
 - type: Tag
   id: EmitterBolt
+
+- type: Tag
+  id: Envirohelm
 
 - type: Tag
   id: Enzyme
@@ -640,6 +713,9 @@
 
 - type: Tag
   id: Goat
+
+- type: Tag
+  id: Goliath
 
 - type: Tag
   id: GPS
@@ -761,6 +837,9 @@
 - type: Tag
   id: Igniter
 
+- type: Tag
+  id: Ingredient
+
 - type: Tag #Drop this innate tool instead of deleting it.
   id: InnateDontDelete
 
@@ -772,6 +851,9 @@
 
 - type: Tag
   id: IntercomElectronics
+
+- type: Tag # Goobstation
+  id: JanicartKeys
 
 - type: Tag
   id: JawsOfLife
@@ -839,6 +921,9 @@
   id: MagazineHeavyRifleBox
 
 - type: Tag
+  id: MagazineBoxRifleMinigun
+
+- type: Tag
   id: MagazineLightRifle
 
 - type: Tag
@@ -890,6 +975,9 @@
   id: Meat
 
 - type: Tag
+  id: Medal
+
+- type: Tag
   id: Medkit
 
 - type: Tag
@@ -938,7 +1026,16 @@
   id: NoBlockAnchoring
 
 - type: Tag
+  id: NoConsoleSound
+
+- type: Tag
+  id: NoPaint
+
+- type: Tag
   id: NozzleBackTank
+
+- type: Tag
+  id: Nugget # for chicken nuggets
 
 - type: Tag
   id: NukeOpsUplink
@@ -950,7 +1047,13 @@
   id: Oneirophage
 
 - type: Tag
+  id: Oni
+
+- type: Tag
   id: Ore
+
+- type: Tag
+  id: Organ
 
 - type: Tag
   id: Packet
@@ -977,10 +1080,16 @@
   id: PetWearable
 
 - type: Tag
+  id: HardHat
+
+- type: Tag
   id: MonkeyWearable
 
 - type: Tag
   id: Pickaxe
+
+- type: Tag
+  id: ItemPickaxe
 
 - type: Tag
   id: Pie
@@ -1010,7 +1119,13 @@
   id: PlantSampleTaker
 
 - type: Tag
+  id: HydroponicsToolClippers
+
+- type: Tag
   id: PlasmaGlassShard
+
+- type: Tag
+  id: PlasmamanSafe
 
 - type: Tag
   id: Plastic
@@ -1020,6 +1135,12 @@
 
 - type: Tag
   id: PlushieGhost
+
+- type: Tag
+  id: SiliconMob
+
+- type: Tag
+  id: WeldbotFixableStructure
 
 - type: Tag
   id: PlushieSharkBlue
@@ -1080,6 +1201,9 @@
   id: RifleStock
 
 - type: Tag
+  id: Ring
+
+- type: Tag
   id: RipleyCentralControlModule
 
 - type: Tag
@@ -1107,6 +1231,9 @@
   id: RollingPin
 
 - type: Tag
+  id: RPD
+
+- type: Tag
   id: SaltShaker
 
 - type: Tag
@@ -1128,10 +1255,10 @@
   id: ShellShotgun
 
 - type: Tag
-  id: Shiv
+  id: ShellShotgunLight # shotgun shells that are compatible with the flare gun.
 
 - type: Tag
-  id: ShoesRequiredStepTriggerImmune
+  id: Shiv
 
 - type: Tag
   id: Shovel
@@ -1140,10 +1267,16 @@
   id: Sidearm
 
 - type: Tag
+  id: SignalTrigger
+
+- type: Tag
   id: SkeletonMotorcycleKeys
 
 - type: Tag
   id: Skewer
+
+- type: Tag
+  id: Slice # sliced fruit, vegetables, pizza etc.
 
 - type: Tag
   id: SmallAIChip
@@ -1153,9 +1286,6 @@
 
 - type: Tag
   id: Smokable
-
-- type: Tag
-  id: SnapPop
 
 - type: Tag
   id: SnowyLabs
@@ -1200,10 +1330,16 @@
   id: StringInstrument
 
 - type: Tag
+  id: StationAi
+
+- type: Tag
   id: StationMapElectronics
 
 - type: Tag
   id: Steak
+
+- type: Tag
+  id: Stunbaton
 
 - type: Tag
   id: SubdermalImplant
@@ -1236,6 +1372,9 @@
   id: TabletopBoard
 
 - type: Tag
+  id: Taco
+
+- type: Tag
   id: TabletopPiece
 
 - type: Tag
@@ -1266,6 +1405,15 @@
   id: TrashBag
 
 - type: Tag
+  id: Truncheon
+
+- type: Tag
+  id: TurretCompatibleWeapon # Used in the construction of sentry turrets
+
+- type: Tag
+  id: TurretControlElectronics # Used in the construction of sentry turret control panels
+
+- type: Tag
   id: Unimplantable
 
 - type: Tag
@@ -1276,6 +1424,9 @@
 
 - type: Tag
   id: Vegetable
+
+- type: Tag # Goobstation
+  id: VehicleKey
 
 - type: Tag
   id: VimPilot
@@ -1299,10 +1450,19 @@
   id: WeaponAntiqueLaser
 
 - type: Tag
+  id: WeaponDisabler
+
+- type: Tag
   id: WeaponPistolCHIMPUpgradeKit
 
 - type: Tag
   id: WeaponShotgunKammerer
+
+- type: Tag
+  id: WeldingMask
+
+- type: Tag
+  id: WeldingTool
 
 - type: Tag
   id: WetFloorSign
@@ -1349,4 +1509,25 @@
 - type: Tag
   id: WriteIgnoreStamps
 
-# PUT YOUR TAGS IN ALPHABETICAL ORDER
+- type: Tag
+  id: FoodBowlBig
+
+# ALPHABETICAL
+
+- type: Tag
+  id: FelinidEmotes
+
+- type: Tag
+  id: HarpyEmotes
+
+- type: Tag
+  id: VulpEmotes
+
+- type: Tag
+  id: ShadowkinEmotes
+
+- type: Tag
+  id: SiliconEmotes
+
+- type: Tag
+  id: UnathiEmotes

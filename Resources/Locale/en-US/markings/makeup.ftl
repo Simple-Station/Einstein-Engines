@@ -4,11 +4,11 @@ marking-MakeupLips = Lips
 marking-MakeupBlush-blush = Blush
 marking-MakeupBlush = Blush
 
-marking-MakeupNailPolishLeft-nail_polish_l = Nail Polish (Left)
-marking-MakeupNailPolishLeft = Nail Polish (Left)
+marking-MakeupNailPolishLeft-nail_polish_l = Left Nail Polish
+marking-MakeupNailPolishLeft = Left Nail Polish
 
-marking-MakeupNailPolishRight-nail_polish_r = Nail Polish (Right)
-marking-MakeupNailPolishRight = Nail Polish (Right)
+marking-MakeupNailPolishRight-nail_polish_r = Right Nail Polish
+marking-MakeupNailPolishRight = Right Nail Polish
 
 marking-MakeupMothBlush-moth_blush = Moth Blush
 marking-MakeupMothBlush = Moth Blush

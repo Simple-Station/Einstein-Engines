@@ -2,15 +2,14 @@ using System.Linq;
 using System.Numerics;
 using Content.Client.CrewManifest;
 using Content.Client.GameTicking.Managers;
+using Content.Client.Lobby;
 using Content.Client.UserInterface.Controls;
 using Content.Client.Players.PlayTimeTracking;
-using Content.Client.Preferences;
 using Content.Shared.CCVar;
 using Content.Shared.Customization.Systems;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.StatusIcon;
-using Microsoft.Win32.SafeHandles;
 using Robust.Client.Console;
 using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
@@ -252,7 +251,7 @@ namespace Content.Client.LateJoin
                             VerticalAlignment = VAlignment.Center
                         };
 
-                        var jobIcon = _prototypeManager.Index<StatusIconPrototype>(prototype.Icon);
+                        var jobIcon = _prototypeManager.Index(prototype.Icon);
                         icon.Texture = _sprites.Frame0(jobIcon.Icon);
                         jobSelector.AddChild(icon);
 
@@ -262,7 +261,24 @@ namespace Content.Client.LateJoin
 
                         jobButton.OnPressed += _ => SelectedId.Invoke((id, jobButton.JobId));
 
-                        if (!_characterRequirements.CheckRequirementsValid(
+                        if (!_jobRequirements.CheckJobWhitelist(prototype, out var reason))
+                        {
+                            jobButton.Disabled = true;
+
+                            var tooltip = new Tooltip();
+                            tooltip.SetMessage(reason);
+                            jobButton.TooltipSupplier = _ => tooltip;
+
+                            jobSelector.AddChild(new TextureRect
+                            {
+                                TextureScale = new Vector2(0.4f, 0.4f),
+                                Stretch = TextureRect.StretchMode.KeepCentered,
+                                Texture = _sprites.Frame0(new SpriteSpecifier.Texture(new ("/Textures/Interface/Nano/lock.svg.192dpi.png"))),
+                                HorizontalExpand = true,
+                                HorizontalAlignment = HAlignment.Right,
+                            });
+                        }
+                        else if (!_characterRequirements.CheckRequirementsValid(
                                 prototype.Requirements ?? new(),
                                 prototype,
                                 (HumanoidCharacterProfile) (_prefs.Preferences?.SelectedCharacter

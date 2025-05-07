@@ -43,11 +43,12 @@
     soundHit:
       path: /Audio/Nyanotrasen/Weapons/electricguitarhit.ogg
     bluntStaminaDamageFactor: 4.5
-    attackRate: 1.25
+    attackRate: .8
     range: 1.85
     damage:
       types:
         Blunt: 7
+  - type: DamageOtherOnHit
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:

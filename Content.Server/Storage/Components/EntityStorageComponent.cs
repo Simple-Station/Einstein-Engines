@@ -1,4 +1,5 @@
 using Content.Server.Atmos;
+using Content.Shared.Atmos;
 using Content.Shared.Storage.Components;
 using Robust.Shared.GameStates;
 
@@ -13,5 +14,5 @@ public sealed partial class EntityStorageComponent : SharedEntityStorageComponen
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField("air")]
-    public GasMixture Air { get; set; } = new (200);
+    public GasMixture Air { get; set; } = new(101.325f);
 }

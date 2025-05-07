@@ -1,0 +1,75 @@
+# Noviciate
+#- type: characterItemGroup
+#  id: LoadoutNoviciateBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutNoviciateBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutNoviciateEars
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutNoviciateEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutNoviciateEquipmentCandles
+    - type: loadout
+      id: LoadoutNoviciateEquipmentCandlesSmall
+    - type: loadout
+      id: LoadoutNoviciatePillCanisterSpaceDrugs
+
+#- type: characterItemGroup
+#  id: LoadoutNoviciateEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutNoviciateGloves
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutNoviciateHead
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutNoviciateId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutNoviciateNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutNoviciateMask
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutNoviciateOuter
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutNoviciateShoes
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutNoviciateUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutNoviciateUniformSuit
+    - type: loadout
+      id: LoadoutNoviciateUniformSkirt

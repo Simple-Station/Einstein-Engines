@@ -53,7 +53,7 @@
     - type: PipeColorVisuals
     - type: UserInterface
       interfaces:
-        - key: enum.GasFilterUiKey.Key
+        enum.GasFilterUiKey.Key:
           type: GasFilterBoundUserInterface
     - type: GasFilter
       enabled: false
@@ -70,6 +70,9 @@
       range: 5
       sound:
         path: /Audio/Ambience/Objects/gas_hiss.ogg
+    - type: AtmosMonitoringConsoleDevice
+      navMapBlip: GasFlowRegulator
+    - type: StationAiWhitelist
 
 - type: entity
   parent: GasFilter
@@ -96,6 +99,9 @@
         enabled:
           True: { state: gasFilterFOn }
           False: { state: gasFilterF }
+  - type: Construction
+    node: filterflipped
+
   - type: PipeColorVisuals
   - type: NodeContainer
     nodes:
@@ -138,7 +144,7 @@
     - type: PipeColorVisuals
     - type: UserInterface
       interfaces:
-        - key: enum.GasMixerUiKey.Key
+        enum.GasMixerUiKey.Key:
           type: GasMixerBoundUserInterface
     - type: GasMixer
       enabled: false
@@ -155,6 +161,9 @@
       range: 5
       sound:
         path: /Audio/Ambience/Objects/gas_hiss.ogg
+    - type: AtmosMonitoringConsoleDevice
+      navMapBlip: GasFlowRegulator
+    - type: StationAiWhitelist
 
 - type: entity
   parent: GasMixer
@@ -196,6 +205,8 @@
         !type:PipeNode
         nodeGroupID: Pipe
         pipeDirection: North
+  - type: Construction
+    node: mixerflipped
 
 - type: entity
   parent: GasPipeBase
@@ -252,3 +263,6 @@
     - type: Construction
       graph: GasTrinary
       node: pneumaticvalve
+    - type: AtmosMonitoringConsoleDevice
+      navMapBlip: GasFlowRegulator
+    - type: StationAiWhitelist

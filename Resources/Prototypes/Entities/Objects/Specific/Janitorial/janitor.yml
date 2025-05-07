@@ -13,14 +13,19 @@
       types:
         Blunt: 2
     bluntStaminaDamageFactor: 3
-    heavyRateModifier: 0.8
-    heavyRangeModifier: 1.25
+    heavyRateModifier: 2.5
+    heavyRangeModifier: 2
     heavyDamageBaseModifier: 1.25
-    heavyStaminaCost: 7.5
-    maxTargets: 2
-    angle: 180
+    heavyStaminaCost: 5
+    maxTargets: 7
+    angle: 160
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 6
+    staminaCost: 8
   - type: Spillable
     solution: absorbed
   - type: Wieldable
@@ -32,12 +37,17 @@
     size: Large
     sprite: Objects/Specific/Janitorial/mop.rsi
   - type: Absorbent
+    footprintCleaningRange: 0.45
+    maxCleanedFootprints: 25
   - type: SolutionContainerManager
     solutions:
       absorbed:
         maxVol: 100
   - type: UseDelay
     delay: 1
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 50
   - type: Tag
     tags:
       - Mop
@@ -61,14 +71,19 @@
         types:
           Blunt: 2
       bluntStaminaDamageFactor: 3
-      heavyRateModifier: 0.8
-      heavyRangeModifier: 1.25
+      heavyRateModifier: 2.5
+      heavyRangeModifier: 2
       heavyDamageBaseModifier: 1.25
-      heavyStaminaCost: 7.5
-      maxTargets: 2
-      angle: 180
+      heavyStaminaCost: 5
+      maxTargets: 7
+      angle: 160
       soundHit:
          collection: MetalThud
+    - type: DamageOtherOnHit
+      damage:
+        types:
+          Blunt: 6
+      staminaCost: 8
     - type: Spillable
       solution: absorbed
     - type: Wieldable
@@ -81,6 +96,8 @@
       sprite: Objects/Specific/Janitorial/advmop.rsi
     - type: Absorbent
       pickupAmount: 100
+      footprintCleaningRange: 0.75
+      maxCleanedFootprints: 25
     - type: UseDelay
       delay: 1.0
     - type: SolutionRegeneration
@@ -119,6 +136,9 @@
       coefficients:
         Blunt: 0.95
         Slash: 0.95
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 50
   - type: Tag
     tags:
       - WetFloorSign
@@ -228,6 +248,7 @@
     embedOnThrow: True
   - type: ThrowingAngle
     angle: 0
+  - type: LandAtCursor
   - type: Ammo
     muzzleFlash: null
   - type: Projectile

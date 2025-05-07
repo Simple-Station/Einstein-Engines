@@ -1,5 +1,6 @@
 # Only affects magical beings.
 - type: damageType
   id: Holy
+  name: damage-type-holy
   armorCoefficientPrice: 25
   armorFlatPrice: 150

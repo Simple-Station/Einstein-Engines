@@ -3,23 +3,28 @@ ghost-role-component-default-rules = All normal rules apply unless an administra
                                      You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
                                      You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
                                      You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
-
-# Delta V soft antag rule
-deltav-ghost-role-information-softantag-rules = You are allowed to attack the crew without provocation.
-                                                You are allowed to coexist with the crew.
-                                                The crew is allowed to kill you without warning.
-
-# Delta V salvage antag rule
-deltav-ghost-role-information-salvageantag-rules =  You are a salvage mob.
-                                                    You are allowed to attack salvagers without provocation. DO NOT GIB THEIR CORPSES!
-                                                    You are allowed to attack the salvage shuttle.
-                                                    You are NOT allowed to go to the station. If the salvagers go to the station, you can't follow them.
+ghost-role-information-freeagent-rules = You are a [color=yellow][bold]Free Agent[/bold][/color]. You are free to act as either an antagonist or a non-antagonist.
+                                         You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
+                                         You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
+                                         You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
 
 ghost-role-information-mouse-name = Mouse
 ghost-role-information-mouse-description = A hungry and mischievous mouse.
 
 ghost-role-information-mothroach-name = Mothroach
 ghost-role-information-mothroach-description = A cute but mischievous mothroach.
+
+ghost-role-information-squackroach-name = Squackroach
+ghost-role-information-squackroach-description = A diabolical but nearly harmless squackroach.
+
+ghost-role-information-snail-name = Snail
+ghost-role-information-snail-description = A little snail who doesn't mind a bit of space. Just stay on grid!
+
+ghost-role-information-snailspeed-name = Snail
+ghost-role-information-snailspeed-description = A little snail with snailborn thrusters.
+
+ghost-role-information-snoth-name = Snoth
+ghost-role-information-snoth-description = A little snoth who doesn't mind a bit of space. Just stay on grid!
 
 ghost-role-information-giant-spider-name = Giant spider
 ghost-role-information-giant-spider-description = This station's inhabitants look mighty tasty, and your sticky web is perfect to catch them!
@@ -40,16 +45,13 @@ ghost-role-information-angry-slimes-description = Everyone around you irritates 
 
 ghost-role-information-smile-name = Smile the Slime
 ghost-role-information-smile-description = The sweetest creature in the world. Smile Slime!
-ghost-role-information-smile-rules = You are a crew-aligned pet. You can defend yourself and even attack threats to the station, but you generally should not attack the station's crew nor destroy their property.
 
 ghost-role-information-punpun-name = Pun Pun
 ghost-role-information-punpun-description = An honorable member of the monkey society in charge of the bar and helping the bartenders in any way he can.
 
 ghost-role-information-xeno-name = Xeno
 ghost-role-information-xeno-description = You are a xeno, co-operate with your hive to kill all crewmembers!
-ghost-role-information-xeno-rules = You are a xeno.
-                                    Your objective is to cooperate with your fellow xenos and kill all the crew.
-                                    Strike fast, make them fear the shadows.
+ghost-role-information-xeno-rules = You are an antagonist, smack, slash, and wack!
 
 ghost-role-information-revenant-name = Revenant
 ghost-role-information-revenant-description = You are a Revenant. Use your powers to harvest souls and unleash chaos upon the crew. Unlock new abilities with the essence you harvest.
@@ -78,6 +80,9 @@ ghost-role-information-salvage-carp-description = Defend the loot inside the sal
 ghost-role-information-sentient-carp-name = Sentient Carp
 ghost-role-information-sentient-carp-description = Help the dragon flood the station with carps!
 
+ghost-role-information-space-goldfish-name = Space Goldfish
+ghost-role-information-space-goldfish-description = Swim aimlessly through the air and nibble at anyone foolish enough to incur your wrath.
+
 ghost-role-information-salvage-shark-name = Space sharkminnow on salvage wreck
 ghost-role-information-salvage-shark-description = Help the younger fellow carp protect their prey. Smell the blood!
 
@@ -104,6 +109,9 @@ ghost-role-information-taxibot-description = Drive the station crew to their des
 
 ghost-role-information-supplybot-name = SupplyBot
 ghost-role-information-supplybot-description = Deliver goods around the station.
+
+ghost-role-information-minebot-name = Minebot
+ghost-role-information-minebot-description = Assist the miners with their work.
 
 ghost-role-information-space-bear-name = Space bear
 ghost-role-information-space-bear-description = Your tummy rumbles, and these people look really yummy... What a feast!
@@ -145,7 +153,11 @@ ghost-role-information-holoclown-name = Holoclown
 ghost-role-information-holoclown-description = Listen to your owner. Utilize your pockets and hand to help your owner.
 
 ghost-role-information-ifrit-name = Ifrit
-ghost-role-information-ifrit-description = Listen to your owner. Don't tank damage. Punch people hard.
+ghost-role-information-ifrit-description = The mystagogue's servant.
+ghost-role-information-ifrit-rules = A fire spirit originating from Gehenna, you have been summoned by the mystagogue. Follow them around and don't cause any trouble unless they tell you to.
+
+ghost-role-information-ifrit-wizard-name = Ifrit (Wizard Summon)
+ghost-role-information-ifrit-wizard-description = Listen to your owner. Don't tank damage. Punch people hard.
 
 ghost-role-information-space-dragon-name = Space dragon
 ghost-role-information-space-dragon-description = Call in 3 carp rifts and take over this quadrant! You have only 5 minutes in between each rift before you will disappear.
@@ -161,7 +173,7 @@ ghost-role-information-skeleton-biker-name = Skeleton Biker
 ghost-role-information-skeleton-biker-description = Ride around on your sweet ride.
 
 ghost-role-information-closet-skeleton-name = Closet Skeleton
-ghost-role-information-closet-skeleton-description = You are a closet skeleton! You are a primordial force of chaos with no allegiance! You can either join the crew and use your skeletal antics to help them, or be a a prankster, and hinder their efforts!
+ghost-role-information-closet-skeleton-description = Wreak havoc! You are a primordial force with no allegiance. Live happily with the crew or wage sweet skeletal war.
 
 ghost-role-information-onestar-mecha-name = Onestar Mecha
 ghost-role-information-onestar-mecha-description = You are an experimental mecha created by who-knows-what, all you know is that you have weapons and you detect fleshy moving targets nearby...
@@ -226,14 +238,6 @@ ghost-role-information-BreadDog-name = BreadDog
 ghost-role-information-BreadDog-description = You are the chef's favorite child. You're a living bread dog.
 ghost-role-information-BreadDog-rules = You're an edible dog made of bread. Your task is to find your place in this world where everything wants to eat you.
 
-ghost-role-information-Shiva-name = Shiva
-ghost-role-information-Shiva-description = Shiva, the stations first defender. Help the Head of Security in their work
-ghost-role-information-Shiva-rules = Protect security staff and the crew from danger. Stay with Security staff or around the Security department, try to disable criminals and not kill them if the situation allows for it.
-
-ghost-role-information-exterminator-name = Exterminator
-ghost-role-information-exterminator-description = You been been sent back in time to terminate a target with high importance to the future.
-ghost-role-information-exterminator-rules = You are an antagonist and may kill anyone that tries to stop you, but killing the target is always your top priority.
-
 ghost-role-information-space-ninja-name = Space Ninja
 ghost-role-information-space-ninja-description = Use stealth and deception to sabotage the station.
 ghost-role-information-space-ninja-rules = You are an elite mercenary of the Spider Clan. You aren't required to follow your objectives, yet your NINJA HONOR demands you try.
@@ -245,6 +249,33 @@ ghost-role-information-syndicate-reinforcement-rules = Normal syndicate antagoni
 ghost-role-information-syndicate-monkey-reinforcement-name = Syndicate Monkey Agent
 ghost-role-information-syndicate-monkey-reinforcement-description = Someone needs reinforcements. You, a trained monkey, will help them.
 ghost-role-information-syndicate-monkey-reinforcement-rules = Normal syndicate antagonist rules apply. Work with whoever called you in, and don't harm them.
+
+ghost-role-information-lost-cargo-technical-name = Lost Cargo Technician
+ghost-role-information-lost-cargo-technical-description = Something went wrong and your cargo shuttle with the goods was beamed into the sector to another station.
+ghost-role-information-lost-cargo-technical-rules = You're a regular cargo technician from another station. Do what regular cargo do.
+
+ghost-role-information-clown-troupe-name = Space Clown
+ghost-role-information-clown-troupe-description = You and your troupe have come to cheer up this station with your best jokes. Honk!
+ghost-role-information-clown-troupe-rules = Normal station crew rules apply.
+
+ghost-role-information-traveling-chef-name = Traveling Chef
+ghost-role-information-traveling-chef-description = You are a chef on a traveling shuttle of exotic cuisine. Delight the station with delicious food!
+ghost-role-information-traveling-chef-rules = Normal station crew rules apply.
+
+ghost-role-information-disaster-victim-name = Disaster Victim
+ghost-role-information-disaster-victim-description = You were rescued in an escape pod from another station that suffered a terrible fate. Perhaps you will be found and rescued.
+ghost-role-information-disaster-victim-rules = Normal station crew rules apply.
+
+ghost-role-information-syndie-disaster-victim-name = Syndie Disaster Victim
+ghost-role-information-syndie-disaster-victim-description = You're a regular passenger from a syndicate station. Unfortunately, an evacuation pod has thrown you into an enemy sector.....
+ghost-role-information-syndie-disaster-victim-rules = Normal station crew rules apply. You are NOT an antagonist!
+
+ghost-role-information-syndicate-kobold-reinforcement-name = Syndicate Kobold Agent
+ghost-role-information-syndicate-kobold-reinforcement-description = Someone needs reinforcements. You, a trained kobold, will help them.
+ghost-role-information-syndicate-kobold-reinforcement-rules = Normal syndicate antagonist rules apply. Work with whoever called you in, and don't harm them.
+
+ghost-role-information-shiva-name = Shiva
+ghost-role-information-shiva-description = The first defender of the station.
 
 ghost-role-information-artifact-name = Sentient Artifact
 ghost-role-information-artifact-description =

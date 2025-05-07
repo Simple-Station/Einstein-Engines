@@ -210,7 +210,7 @@ public sealed partial class ContentAudioSystem
             track.ToString(),
             Filter.Local(),
             false,
-            AudioParams.Default.WithVolume(_musicProto.Sound.Params.Volume + _volumeSlider));
+            AudioParams.Default.WithVolume(_musicProto.Sound.Params.Volume + _volumeSlider))!;
 
         _ambientMusicStream = strim.Value.Entity;
 

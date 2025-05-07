@@ -17,6 +17,7 @@ using Content.Shared.Bed.Cryostorage;
 using Content.Shared.Chat;
 using Content.Shared.Climbing.Systems;
 using Content.Shared.Database;
+using Content.Shared.GameTicking;
 using Content.Shared.Hands.Components;
 using Content.Shared.Mind.Components;
 using Robust.Server.Audio;
@@ -79,9 +80,7 @@ public sealed class CryostorageSystem : SharedCryostorageSystem
     private void OnRemoveItemBuiMessage(Entity<CryostorageComponent> ent, ref CryostorageRemoveItemBuiMessage args)
     {
         var (_, comp) = ent;
-        if (args.Session.AttachedEntity is not { } attachedEntity)
-            return;
-
+        var attachedEntity = args.Actor;
         var cryoContained = GetEntity(args.StoredEntity);
 
         if (!comp.StoredPlayers.Contains(cryoContained) || !IsInPausedMap(cryoContained))
@@ -114,6 +113,7 @@ public sealed class CryostorageSystem : SharedCryostorageSystem
         AdminLog.Add(LogType.Action, LogImpact.High,
             $"{ToPrettyString(attachedEntity):player} removed item {ToPrettyString(entity)} from cryostorage-contained player " +
             $"{ToPrettyString(cryoContained):player}, stored in cryostorage {ToPrettyString(ent)}");
+
         _container.TryRemoveFromContainer(entity.Value);
         _transform.SetCoordinates(entity.Value, Transform(attachedEntity).Coordinates);
         _hands.PickupOrDrop(attachedEntity, entity.Value);
@@ -122,8 +122,8 @@ public sealed class CryostorageSystem : SharedCryostorageSystem
 
     private void UpdateCryostorageUIState(Entity<CryostorageComponent> ent)
     {
-        var state = new CryostorageBuiState(GetAllContainedData(ent).ToList());
-        _ui.TrySetUiState(ent, CryostorageUIKey.Key, state);
+        var state = new CryostorageBuiState(GetAllContainedData(ent));
+        _ui.SetUiState(ent.Owner, CryostorageUIKey.Key, state);
     }
 
     private void OnPlayerSpawned(Entity<CryostorageContainedComponent> ent, ref PlayerSpawnCompleteEvent args)
@@ -293,12 +293,17 @@ public sealed class CryostorageSystem : SharedCryostorageSystem
             _chatManager.ChatMessageToOne(ChatChannel.Server, msg, msg, uid, false, actor.PlayerSession.Channel);
     }
 
-    private IEnumerable<CryostorageContainedPlayerData> GetAllContainedData(Entity<CryostorageComponent> ent)
+    private List<CryostorageContainedPlayerData> GetAllContainedData(Entity<CryostorageComponent> ent)
     {
+        var data = new List<CryostorageContainedPlayerData>();
+        data.EnsureCapacity(ent.Comp.StoredPlayers.Count);
+
         foreach (var contained in ent.Comp.StoredPlayers)
         {
-            yield return GetContainedData(contained);
+            data.Add(GetContainedData(contained));
         }
+
+        return data;
     }
 
     private CryostorageContainedPlayerData GetContainedData(EntityUid uid)

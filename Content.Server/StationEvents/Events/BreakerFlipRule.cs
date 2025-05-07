@@ -1,9 +1,8 @@
-﻿using Content.Server.GameTicking.Components;
-using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Station.Components;
 using Content.Server.StationEvents.Components;
+﻿using Content.Shared.GameTicking.Components;
 using JetBrains.Annotations;
 using Content.Server.Announcements.Systems;
 using Robust.Shared.Player;

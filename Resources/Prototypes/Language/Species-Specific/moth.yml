@@ -2,6 +2,7 @@
 # TODO: Replace this with a much better language.
 - type: language
   id: Moffic
+  isVisibleLanguage: true
   speech:
     color: "#c7df2edd"
     fontId: Copperplate

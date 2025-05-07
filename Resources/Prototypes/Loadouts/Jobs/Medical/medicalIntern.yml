@@ -1,0 +1,53 @@
+# Medical Intern
+# Backpacks
+
+# Belt
+- type: loadout
+  id: LoadoutMedicalInternBeltMedical
+  category: JobsMedicalMedicalIntern
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalInternBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalIntern
+  items:
+    - ClothingBeltMedical
+
+- type: loadout
+  id: LoadoutMedicalInternBeltMedicalFilled
+  category: JobsMedicalMedicalIntern
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalInternBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalIntern
+  items:
+    - ClothingBeltMedicalFilled
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+
+# Shoes
+
+# Uniforms

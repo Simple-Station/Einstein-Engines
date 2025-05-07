@@ -1,32 +1,32 @@
-- type: statusIcon
+- type: jobIcon
   parent: JobIcon
   id: JobIconGladiator
   icon:
     sprite: /Textures/DeltaV/Interface/Misc/job_icons.rsi
     state: nyanoGladiator
 
-- type: statusIcon
+- type: jobIcon
   parent: JobIcon
   id: JobIconPrisonGuard
   icon:
     sprite: /Textures/DeltaV/Interface/Misc/job_icons.rsi
     state: nyanoPrisonGuard
 
-- type: statusIcon
+- type: jobIcon
   parent: JobIcon
   id: JobIconMailCarrier
   icon:
     sprite: /Textures/DeltaV/Interface/Misc/job_icons.rsi
     state: nyanoMailCarrier
 
-- type: statusIcon
+- type: jobIcon
   parent: JobIcon
   id: JobIconMartialArtist
   icon:
     sprite: /Textures/DeltaV/Interface/Misc/job_icons.rsi
     state: nyanoMartialArtist
 
-- type: statusIcon
+- type: jobIcon
   parent: JobIcon
   id: JobIconForensicMantis
   icon:

@@ -1,0 +1,69 @@
+# Medical Intern
+#- type: characterItemGroup
+#  id: LoadoutMedicalInternBackpacks
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutMedicalInternBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalInternBeltMedical
+    - type: loadout
+      id: LoadoutMedicalInternBeltMedicalFilled
+
+#- type: characterItemGroup
+#  id: LoadoutMedicalInternEars
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMedicalInternEquipment
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMedicalInternEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMedicalInternGloves
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMedicalInternHead
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMedicalInternId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMedicalInternNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMedicalInternMask
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMedicalInternOuter
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMedicalInternShoes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutMedicalInternUniforms
+#  maxItems: 1
+#  items:

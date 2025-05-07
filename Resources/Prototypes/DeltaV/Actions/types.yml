@@ -1,0 +1,12 @@
+- type: entity
+  id: ActionChitzite
+  name: Cough Up Chitzite
+  description: Purge the excess radiation build-up from your body by expelling it as a mass of toxic material.
+  components:
+  - type: InstantAction
+    charges: 0
+    enabled: false
+    maxCharges: 1
+    icon: { sprite: DeltaV/Objects/Specific/Species/chitinid.rsi, state: chitzite }
+    useDelay: 300
+    event: !type:ChitziteActionEvent

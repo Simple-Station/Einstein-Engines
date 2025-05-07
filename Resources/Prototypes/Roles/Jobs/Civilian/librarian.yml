@@ -16,6 +16,11 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterEmployerRequirement
+      employers:
+      - NanoTrasen
+    - !type:CharacterItemGroupRequirement
+      group: TraitsCasterType
   startingGear: LibrarianGear
   icon: "JobIconLibrarian"
   supervisors: job-supervisors-rd
@@ -27,14 +32,21 @@
   - !type:AddComponentSpecial
     components:
     - type: Psionic
+      baselinePowerCost: 75
+      nextPowerCost: 75
+      removable: false
+      powerPool: PsychoHistorianPowerPool
     - type: InnatePsionicPowers
       powersToAdd:
         - XenoglossyPower
         - TelepathyPower
+        - AssayPower
 
 
 - type: startingGear
   id: LibrarianGear
+  subGear:
+  - LibrarianPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitLibrarian
     back: ClothingBackpackLibrarianFilled
@@ -42,8 +54,16 @@
     outerClothing: ClothingOuterCoatRnd
     id: LibrarianPDA
     ears: ClothingHeadsetScience
-    pocket1: d10Dice
+    pocket1: BookPsionicsGuidebook
     pocket2: HandLabeler
   innerClothingSkirt: ClothingUniformJumpskirtLibrarian
   satchel: ClothingBackpackSatchelLibrarianFilled
   duffelbag: ClothingBackpackDuffelLibrarianFilled
+
+- type: startingGear
+  id: LibrarianPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitAncientVoid
+    head: ClothingHeadEnvirohelmAncientVoid
+    gloves: ClothingHandsGlovesEnviroglovesPrototype

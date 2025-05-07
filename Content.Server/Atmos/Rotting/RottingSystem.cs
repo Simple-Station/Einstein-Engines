@@ -34,7 +34,7 @@ public sealed class RottingSystem : SharedRottingSystem
         if (!TryComp<PerishableComponent>(uid, out var perishable))
             return;
 
-        var molsToDump = perishable.MolsPerSecondPerUnitMass * physics.FixturesMass * (float) component.TotalRotTime.TotalSeconds;
+        var molsToDump = perishable.MolsPerSecondPerUnitMass * physics.FixturesMass * (float)component.TotalRotTime.TotalSeconds;
         var tileMix = _atmosphere.GetTileMixture(uid, excite: true);
         tileMix?.AdjustMoles(Gas.Ammonia, molsToDump);
     }
@@ -46,6 +46,29 @@ public sealed class RottingSystem : SharedRottingSystem
         args.Handled = component.CurrentTemperature < Atmospherics.T0C + 0.85f;
     }
 
+
+    public void ReduceAccumulator(EntityUid uid, TimeSpan time)
+    {
+        if (!TryComp<PerishableComponent>(uid, out var perishable))
+            return;
+
+        if (!TryComp<RottingComponent>(uid, out var rotting))
+        {
+            perishable.RotAccumulator -= time;
+            return;
+        }
+        var total = (rotting.TotalRotTime + perishable.RotAccumulator) - time;
+
+        if (total < perishable.RotAfter)
+        {
+            RemCompDeferred(uid, rotting);
+            perishable.RotAccumulator = total;
+        }
+
+        else
+            rotting.TotalRotTime = total - perishable.RotAfter;
+    }
+    
     /// <summary>
     /// Is anything speeding up the decay?
     /// e.g. buried in a grave
@@ -54,7 +77,7 @@ public sealed class RottingSystem : SharedRottingSystem
     /// <returns></returns>
     private float GetRotRate(EntityUid uid)
     {
-        if (_container.TryGetContainingContainer(uid, out var container) &&
+        if (_container.TryGetContainingContainer((uid, null, null), out var container) &&
             TryComp<ProRottingContainerComponent>(container.Owner, out var rotContainer))
         {
             return rotContainer.DecayModifier;
@@ -124,7 +147,7 @@ public sealed class RottingSystem : SharedRottingSystem
                 continue;
             // We need a way to get the mass of the mob alone without armor etc in the future
             // or just remove the mass mechanics altogether because they aren't good.
-            var molRate = perishable.MolsPerSecondPerUnitMass * (float) rotting.RotUpdateRate.TotalSeconds;
+            var molRate = perishable.MolsPerSecondPerUnitMass * (float)rotting.RotUpdateRate.TotalSeconds;
             var tileMix = _atmosphere.GetTileMixture(uid, excite: true);
             tileMix?.AdjustMoles(Gas.Ammonia, molRate * physics.FixturesMass);
         }

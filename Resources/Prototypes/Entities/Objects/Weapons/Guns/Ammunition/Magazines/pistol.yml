@@ -12,7 +12,7 @@
     whitelist:
       tags:
         - CartridgePistol
-    capacity: 10
+    capacity: 12
   - type: Item
     size: Small
   - type: ContainerContainer
@@ -129,6 +129,14 @@
       ballistic-ammo: !type:Container
 
 - type: entity
+  id: MagazinePistolSubMachineGunTopMountedEmpty
+  name: WT550 magazine (.35 auto top-mounted any)
+  parent: MagazinePistolSubMachineGunTopMounted
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+
+- type: entity
   id: MagazinePistol
   name: pistol magazine (.35 auto)
   parent: BaseMagazinePistol
@@ -141,6 +149,28 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: MagazinePistolEmpty
+  name: pistol magazine (.35 auto any)
+  suffix: empty
+  parent: MagazinePistol
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+
+
+- type: entity
+  id: MagazinePistolIncendiary
+  name: pistol magazine (.35 auto incendiary)
+  parent: MagazinePistol
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistolIncendiary
 
 - type: entity
   id: MagazinePistolPractice
@@ -169,6 +199,47 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: MagazinePistolUranium
+  name: pistol magazine (.35 auto uranium)
+  parent: BaseMagazinePistol
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistolUranium
+  - type: Sprite
+    layers:
+    - state: uranium
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: MagazinePistolShrapnel
+  name: pistol magazine (.35 auto shrapnel)
+  parent: BaseMagazinePistol
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistolShrapnel
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: MagazinePistolHighCapacityEmpty
+  name: machine pistol magazine (.35 auto any)
+  suffix: empty
+  parent: BaseMagazinePistolHighCapacity
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
 
 - type: entity
   id: MagazinePistolHighCapacity
@@ -213,6 +284,20 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
+  id: MagazinePistolHighCapacityShrapnel
+  name: machine pistol magazine (.35 auto shrapnel)
+  parent: BaseMagazinePistolHighCapacity
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistolShrapnel
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
   id: MagazinePistolSubMachineGun
   name: SMG magazine (.35 auto)
   parent: BaseMagazinePistolSubMachineGun
@@ -231,6 +316,19 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: MagazinePistolSubMachineGunEmpty
+  name: SMG magazine (.35 auto any)
+  suffix: empty
+  parent: BaseMagazinePistolSubMachineGun
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
 
 - type: entity
   id: MagazinePistolSubMachineGunPractice
@@ -261,8 +359,22 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
+  id: MagazinePistolSubMachineGunIncendiary
+  name: SMG magazine (.35 auto incendiary)
+  parent: BaseMagazinePistolSubMachineGun
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistolIncendiary
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
   id: MagazinePistolSubMachineGunUranium
-  name: SMG magazine (.35 auto rubber)
+  name: SMG magazine (.35 auto uranium)
   parent: BaseMagazinePistolSubMachineGun
   components:
   - type: BallisticAmmoProvider
@@ -273,3 +385,11 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: MagazinePistolSubMachineGunShrapnel
+  name: SMG magazine (.35 auto shrapnel)
+  parent: BaseMagazinePistolSubMachineGun
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistolShrapnel

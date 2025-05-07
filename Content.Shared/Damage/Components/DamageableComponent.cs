@@ -41,6 +41,12 @@ namespace Content.Shared.Damage
         public string? DamageModifierSetId;
 
         /// <summary>
+        ///     List of all Modifier Sets stored by this entity. The above single format is a deprecated function used only to support legacy yml.
+        /// </summary>
+        [DataField]
+        public List<string> DamageModifierSets = new();
+
+        /// <summary>
         ///     All the damage information is stored in this <see cref="DamageSpecifier"/>.
         /// </summary>
         /// <remarks>
@@ -68,7 +74,7 @@ namespace Content.Shared.Damage
         public List<string> RadiationDamageTypeIDs = new() { "Radiation" };
 
         [DataField]
-        public Dictionary<MobState, ProtoId<StatusIconPrototype>> HealthIcons = new()
+        public Dictionary<MobState, ProtoId<HealthIconPrototype>> HealthIcons = new()
         {
             { MobState.Alive, "HealthIconFine" },
             { MobState.Critical, "HealthIconCritical" },
@@ -76,7 +82,10 @@ namespace Content.Shared.Damage
         };
 
         [DataField]
-        public ProtoId<StatusIconPrototype> RottingIcon = "HealthIconRotting";
+        public ProtoId<HealthIconPrototype> RottingIcon = "HealthIconRotting";
+
+        [DataField]
+        public FixedPoint2? HealthBarThreshold;
     }
 
     [Serializable, NetSerializable]

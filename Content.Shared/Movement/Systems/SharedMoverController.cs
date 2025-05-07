@@ -64,11 +64,6 @@ namespace Content.Shared.Movement.Systems
         protected EntityQuery<CanMoveInAirComponent> CanMoveInAirQuery;
         protected EntityQuery<NoRotateOnMoveComponent> NoRotateQuery;
 
-        private const float StepSoundMoveDistanceRunning = 2;
-        private const float StepSoundMoveDistanceWalking = 1.5f;
-
-        private const float FootstepVariation = 0f;
-
         /// <summary>
         /// <see cref="CCVars.StopSpeed"/>
         /// </summary>
@@ -116,44 +111,60 @@ namespace Content.Shared.Movement.Systems
             UsedMobMovement.Clear();
         }
 
-        /// <summary>
-        ///     Movement while considering actionblockers, weightlessness, etc.
-        /// </summary>
-        protected void HandleMobMovement(
-            EntityUid uid,
-            InputMoverComponent mover,
-            EntityUid physicsUid,
-            PhysicsComponent physicsComponent,
-            TransformComponent xform,
-            float frameTime)
+    /// <summary>
+    ///     Movement while considering actionblockers, weightlessness, etc.
+    /// </summary>
+    protected void HandleMobMovement(
+        EntityUid uid,
+        InputMoverComponent mover,
+        EntityUid physicsUid,
+        PhysicsComponent physicsComponent,
+        TransformComponent xform,
+        float frameTime)
+    {
+        var canMove = mover.CanMove;
+        if (RelayTargetQuery.TryGetComponent(uid, out var relayTarget))
         {
-            var canMove = mover.CanMove;
-            if (RelayTargetQuery.TryGetComponent(uid, out var relayTarget))
+            if (_mobState.IsIncapacitated(relayTarget.Source) ||
+                TryComp<SleepingComponent>(relayTarget.Source, out _) ||
+                // Shitmed Change
+                !PhysicsQuery.TryGetComponent(relayTarget.Source, out var relayedPhysicsComponent) ||
+                !MoverQuery.TryGetComponent(relayTarget.Source, out var relayedMover) ||
+                !XformQuery.TryGetComponent(relayTarget.Source, out var relayedXform))
             {
-                if (_mobState.IsIncapacitated(relayTarget.Source) ||
-                    TryComp<SleepingComponent>(relayTarget.Source, out _) ||
-                    !MoverQuery.TryGetComponent(relayTarget.Source, out var relayedMover))
+                canMove = false;
+            }
+            else
+            {
+                mover.LerpTarget = relayedMover.LerpTarget;
+                mover.RelativeEntity = relayedMover.RelativeEntity;
+                mover.RelativeRotation = relayedMover.RelativeRotation;
+                mover.TargetRelativeRotation = relayedMover.TargetRelativeRotation;
+                HandleMobMovement(relayTarget.Source, relayedMover, relayTarget.Source, relayedPhysicsComponent, relayedXform, frameTime);
+            }
+        }
+
+        // Update relative movement
+        // Shitmed Change Start
+        else
+        {
+            if (mover.LerpTarget < Timing.CurTime)
+            {
+                if (TryComp(uid, out RelayInputMoverComponent? relay)
+                    && TryComp(relay.RelayEntity, out TransformComponent? relayXform))
                 {
-                    canMove = false;
+                    if (TryUpdateRelative(mover, relayXform))
+                        Dirty(uid, mover);
                 }
                 else
                 {
-                    mover.RelativeEntity = relayedMover.RelativeEntity;
-                    mover.RelativeRotation = relayedMover.RelativeRotation;
-                    mover.TargetRelativeRotation = relayedMover.TargetRelativeRotation;
+                    if (TryUpdateRelative(mover, xform))
+                        Dirty(uid, mover);
                 }
             }
-
-            // Update relative movement
-            if (mover.LerpTarget < Timing.CurTime)
-            {
-                if (TryUpdateRelative(mover, xform))
-                {
-                    Dirty(uid, mover);
-                }
-            }
-
             LerpRotation(uid, mover, frameTime);
+        }
+        // Shitmed Change End
 
             if (!canMove
                 || physicsComponent.BodyStatus != BodyStatus.OnGround && !CanMoveInAirQuery.HasComponent(uid)
@@ -233,13 +244,13 @@ namespace Content.Shared.Movement.Systems
             }
             else
             {
-                if (worldTotal != Vector2.Zero || moveSpeedComponent?.FrictionNoInput == null)
+                if (worldTotal != Vector2.Zero)
                 {
                     friction = tileDef?.MobFriction ?? moveSpeedComponent?.Friction ?? MovementSpeedModifierComponent.DefaultFriction;
                 }
                 else
                 {
-                    friction = tileDef?.MobFrictionNoInput ?? moveSpeedComponent.FrictionNoInput ?? MovementSpeedModifierComponent.DefaultFrictionNoInput;
+                    friction = tileDef?.MobFrictionNoInput ?? moveSpeedComponent?.FrictionNoInput ?? MovementSpeedModifierComponent.DefaultFrictionNoInput;
                 }
 
                 weightlessModifier = 1f;
@@ -274,7 +285,7 @@ namespace Content.Shared.Movement.Systems
 
                     var audioParams = sound.Params
                         .WithVolume(volume)
-                        .WithVariation(sound.Params.Variation ?? FootstepVariation);
+                        .WithVariation(sound.Params.Variation ?? mobMover.FootstepVariation);
 
                     // If we're a relay target then predict the sound for all relays.
                     if (relayTarget != null)
@@ -299,9 +310,9 @@ namespace Content.Shared.Movement.Systems
             PhysicsSystem.SetAngularVelocity(physicsUid, 0, body: physicsComponent);
         }
 
-        private void WalkingAlert(EntityUid player, InputMoverComponent component)
+        private void WalkingAlert(Entity<InputMoverComponent> entity)
         {
-            _alerts.ShowAlert(player, AlertType.Walking, component.Sprinting ? (short) 1 : (short) 0);
+            _alerts.ShowAlert(entity, entity.Comp.WalkingAlert, entity.Comp.Sprinting ? (short) 1 : (short) 0);
         }
 
         public void LerpRotation(EntityUid uid, InputMoverComponent mover, float frameTime)
@@ -425,7 +436,9 @@ namespace Content.Shared.Movement.Systems
                 return false;
 
             var coordinates = xform.Coordinates;
-            var distanceNeeded = mover.Sprinting ? StepSoundMoveDistanceRunning : StepSoundMoveDistanceWalking;
+            var distanceNeeded = mover.Sprinting
+                ? mobMover.StepSoundMoveDistanceRunning
+                : mobMover.StepSoundMoveDistanceWalking;
 
             // Handle footsteps.
             if (!weightless)
@@ -452,8 +465,10 @@ namespace Content.Shared.Movement.Systems
             if (mobMover.StepSoundDistance < distanceNeeded)
                 return false;
 
-            mobMover.StepSoundDistance -= distanceNeeded;
+            var soundEv = new MakeFootstepSoundEvent();
+            RaiseLocalEvent(uid, soundEv);
 
+            mobMover.StepSoundDistance -= distanceNeeded;
             if (TryComp<FootstepModifierComponent>(uid, out var moverModifier))
             {
                 sound = moverModifier.FootstepSoundCollection;

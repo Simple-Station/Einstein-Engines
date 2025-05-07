@@ -8,6 +8,8 @@ using Robust.Client.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Robust.Shared.Configuration;
+using Content.Shared.CCVar;
 
 namespace Content.Client.DoAfter;
 
@@ -16,12 +18,13 @@ public sealed class DoAfterOverlay : Overlay
     private readonly IEntityManager _entManager;
     private readonly IGameTiming _timing;
     private readonly IPlayerManager _player;
+    private readonly IConfigurationManager _cfg;
     private readonly SharedTransformSystem _transform;
     private readonly MetaDataSystem _meta;
     private readonly ProgressColorSystem _progressColor;
 
     private readonly Texture _barTexture;
-    private readonly ShaderInstance _shader;
+    private readonly ShaderInstance _unshadedShader;
 
     /// <summary>
     ///     Flash time for cancelled DoAfters
@@ -32,6 +35,8 @@ public sealed class DoAfterOverlay : Overlay
     private const float StartX = 2;
     private const float EndX = 22f;
 
+    private bool _useModernHUD = false;
+
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowFOV;
 
     public DoAfterOverlay(IEntityManager entManager, IPrototypeManager protoManager, IGameTiming timing, IPlayerManager player)
@@ -39,13 +44,16 @@ public sealed class DoAfterOverlay : Overlay
         _entManager = entManager;
         _timing = timing;
         _player = player;
+        _cfg = IoCManager.Resolve<IConfigurationManager>();
         _transform = _entManager.EntitySysManager.GetEntitySystem<SharedTransformSystem>();
         _meta = _entManager.EntitySysManager.GetEntitySystem<MetaDataSystem>();
         _progressColor = _entManager.System<ProgressColorSystem>();
         var sprite = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/progress_bar.rsi"), "icon");
         _barTexture = _entManager.EntitySysManager.GetEntitySystem<SpriteSystem>().Frame0(sprite);
 
-        _shader = protoManager.Index<ShaderPrototype>("unshaded").Instance();
+        _unshadedShader = protoManager.Index<ShaderPrototype>("unshaded").Instance();
+        _useModernHUD = _cfg.GetCVar(CCVars.ModernProgressBar);
+        _cfg.OnValueChanged(CCVars.ModernProgressBar, (newValue) => { _useModernHUD = newValue; } );
     }
 
     protected override void Draw(in OverlayDrawArgs args)
@@ -56,9 +64,8 @@ public sealed class DoAfterOverlay : Overlay
 
         // If you use the display UI scale then need to set max(1f, displayscale) because 0 is valid.
         const float scale = 1f;
-        var scaleMatrix = Matrix3.CreateScale(new Vector2(scale, scale));
-        var rotationMatrix = Matrix3.CreateRotation(-rotation);
-        handle.UseShader(_shader);
+        var scaleMatrix = Matrix3Helpers.CreateScale(new Vector2(scale, scale));
+        var rotationMatrix = Matrix3Helpers.CreateRotation(-rotation);
 
         var curTime = _timing.CurTime;
 
@@ -79,15 +86,22 @@ public sealed class DoAfterOverlay : Overlay
             if (!bounds.Contains(worldPosition))
                 continue;
 
+            // shades the do-after bar if the do-after bar belongs to other players
+            // does not shade do-afters belonging to the local player
+            if (uid != localEnt)
+                handle.UseShader(null);
+            else
+                handle.UseShader(_unshadedShader);
+
             // If the entity is paused, we will draw the do-after as it was when the entity got paused.
             var meta = metaQuery.GetComponent(uid);
             var time = meta.EntityPaused
                 ? curTime - _meta.GetPauseTime(uid, meta)
                 : curTime;
 
-            var worldMatrix = Matrix3.CreateTranslation(worldPosition);
-            Matrix3.Multiply(scaleMatrix, worldMatrix, out var scaledWorld);
-            Matrix3.Multiply(rotationMatrix, scaledWorld, out var matty);
+            var worldMatrix = Matrix3Helpers.CreateTranslation(worldPosition);
+            var scaledWorld = Matrix3x2.Multiply(scaleMatrix, worldMatrix);
+            var matty = Matrix3x2.Multiply(rotationMatrix, scaledWorld);
             handle.SetTransform(matty);
 
             var offset = 0f;
@@ -98,7 +112,8 @@ public sealed class DoAfterOverlay : Overlay
                 var alpha = 1f;
                 if (doAfter.Args.Hidden)
                 {
-                    if (uid != localEnt)
+                    // Goobstation - Show doAfter progress bar to another entity
+                    if (uid != localEnt && localEnt != doAfter.Args.ShowTo)
                         continue;
 
                     // Hints to the local player that this do-after is not visible to other players.
@@ -133,19 +148,47 @@ public sealed class DoAfterOverlay : Overlay
                 {
                     var elapsed = time - doAfter.StartTime;
                     elapsedRatio = (float) Math.Min(1, elapsed.TotalSeconds / doAfter.Args.Delay.TotalSeconds);
-                    color = GetProgressColor(elapsedRatio, alpha);
+
+                    if (_useModernHUD)
+                    {
+                        if (elapsedRatio < 1.0f)
+                            color = GetProgressColor(elapsedRatio, alpha);
+                        else
+                            color = GetProgressColor(0.35f, alpha); // Make orange/yellow color
+                    }
+                    else
+                    {
+                        color = GetProgressColor(elapsedRatio, alpha);
+                    }
                 }
 
                 var xProgress = (EndX - StartX) * elapsedRatio + StartX;
-                var box = new Box2(new Vector2(StartX, 3f) / EyeManager.PixelsPerMeter, new Vector2(xProgress, 4f) / EyeManager.PixelsPerMeter);
-                box = box.Translated(position);
-                handle.DrawRect(box, color);
+
+                if (_useModernHUD)
+                {
+                    var box = new Box2(new Vector2(StartX, 2f) / EyeManager.PixelsPerMeter, new Vector2(xProgress, 5f) / EyeManager.PixelsPerMeter);
+                    box = box.Translated(position);
+                    // Brighter line, like /tg/station bar
+                    var boxInner = new Box2(new Vector2(StartX, 3f) / EyeManager.PixelsPerMeter, new Vector2(xProgress, 4f) / EyeManager.PixelsPerMeter);
+                    boxInner = boxInner.Translated(position);
+
+                    handle.DrawRect(box, color);
+                    handle.DrawRect(boxInner, Color.InterpolateBetween(color, Color.White, 0.5f));
+                }
+                else
+                {
+                    var box = new Box2(new Vector2(StartX, 3f) / EyeManager.PixelsPerMeter, new Vector2(xProgress, 4f) / EyeManager.PixelsPerMeter);
+                    box = box.Translated(position);
+
+                    handle.DrawRect(box, color);
+                }
+
                 offset += _barTexture.Height / scale;
             }
         }
 
         handle.UseShader(null);
-        handle.SetTransform(Matrix3.Identity);
+        handle.SetTransform(Matrix3x2.Identity);
     }
 
     public Color GetProgressColor(float progress, float alpha = 1f)

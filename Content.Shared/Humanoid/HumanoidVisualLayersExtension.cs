@@ -47,20 +47,33 @@ namespace Content.Shared.Humanoid
                     yield return HumanoidVisualLayers.LArm;
                     yield return HumanoidVisualLayers.LHand;
                     break;
+                case HumanoidVisualLayers.LHand:
+                    yield return HumanoidVisualLayers.LHand;
+                    break;
                 case HumanoidVisualLayers.RArm:
                     yield return HumanoidVisualLayers.RArm;
+                    yield return HumanoidVisualLayers.RHand;
+                    break;
+                case HumanoidVisualLayers.RHand:
                     yield return HumanoidVisualLayers.RHand;
                     break;
                 case HumanoidVisualLayers.LLeg:
                     yield return HumanoidVisualLayers.LLeg;
                     yield return HumanoidVisualLayers.LFoot;
                     break;
+                case HumanoidVisualLayers.LFoot:
+                    yield return HumanoidVisualLayers.LFoot;
+                    break;
                 case HumanoidVisualLayers.RLeg:
                     yield return HumanoidVisualLayers.RLeg;
                     yield return HumanoidVisualLayers.RFoot;
                     break;
+                case HumanoidVisualLayers.RFoot:
+                    yield return HumanoidVisualLayers.RFoot;
+                    break;
                 case HumanoidVisualLayers.Chest:
                     yield return HumanoidVisualLayers.Chest;
+                    yield return HumanoidVisualLayers.Wings;
                     yield return HumanoidVisualLayers.Tail;
                     break;
                 default:

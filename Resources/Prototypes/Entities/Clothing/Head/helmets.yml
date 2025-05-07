@@ -3,7 +3,7 @@
 
 #Basic Helmet (Security Helmet)
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ClothingHeadBase, BallisticGlasses]
   id: ClothingHeadHelmetBasic
   name: helmet
   description: Standard security gear. Protects the head from impacts.
@@ -22,6 +22,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+    - ClothingHeadHelmetBasic
 
 #Mercenary Helmet
 - type: entity
@@ -37,7 +38,7 @@
 
 #SWAT Helmet
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ClothingHeadBase, ClothingHeadEVAHelmetBase, BallisticGlasses]
   id: ClothingHeadHelmetSwat
   name: SWAT helmet
   description: An extremely robust helmet, commonly used by paramilitary forces. This one has the Nanotrasen logo emblazoned on the top.
@@ -46,15 +47,18 @@
     sprite: Clothing/Head/Helmets/swat.rsi
   - type: Clothing
     sprite: Clothing/Head/Helmets/swat.rsi
-  - type: Armor #This is intentionally not spaceproof, when the time comes to port the values from SS13 this should be buffed from what it was.
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.80
-        Slash: 0.80
-        Piercing: 0.80
-        Heat: 0.80
-        Radiation: 0.80
-        Caustic: 0.95
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+        Heat: 0.85
+        Radiation: 0.8
+        Caustic: 0.9
   - type: ExplosionResistance
     damageCoefficient: 0.75
 
@@ -110,6 +114,10 @@
         Blunt: 0.95
         Slash: 0.95
         Piercing: 0.95
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
 
 #Janitorial Bombsuit Helmet
 - type: entity
@@ -146,7 +154,7 @@
 
 #Space Ninja Helmet
 - type: entity
-  parent: ClothingHeadEVAHelmetBase
+  parent: ClothingHeadEVAHelmetNoIngestionBlocker
   id: ClothingHeadHelmetSpaceNinja
   name: space ninja helmet
   description: What may appear to be a simple black garment is in fact a highly sophisticated nano-weave helmet. Standard issue ninja gear.
@@ -157,10 +165,14 @@
     sprite: Clothing/Head/Helmets/spaceninja.rsi
   - type: Tag
     tags:
-    - HidesHair
     - WhitelistChameleon
-  - type: IngestionBlocker
   - type: IdentityBlocker
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+  - type: Unremoveable
+
 
 #Templar Helmet
 - type: entity
@@ -217,11 +229,16 @@
   - type: IngestionBlocker
   - type: TemperatureProtection
     coefficient: 0.005
+  - type: FireProtection
+    reduction: 0.15 # not fully sealed so less protection
   - type: IdentityBlocker
   - type: Tag
     tags:
-    - HidesHair
     - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
 
 #Atmos Fire Helmet
 - type: entity
@@ -238,14 +255,19 @@
   - type: IngestionBlocker
   - type: TemperatureProtection
     coefficient: 0.005
+  - type: FireProtection
+    reduction: 0.2
   - type: PressureProtection
     highPressureMultiplier: 0.25
     lowPressureMultiplier: 1000
   - type: IdentityBlocker
   - type: Tag
     tags:
-    - HidesHair
     - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
 
 #Chitinous Helmet
 - type: entity
@@ -326,6 +348,25 @@
     sprite: Clothing/Head/Helmets/ert_janitor.rsi
   - type: Clothing
     sprite: Clothing/Head/Helmets/ert_janitor.rsi
+
+# Lavaland shuttupance - Raid Helmet
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadHelmetRaid
+  name: syndicate raid helmet
+  description: An armored helmet for use with the syndicate raid suit. Very stylish.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Helmets/syndie-raid.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Helmets/syndie-raid.rsi
+  - type: Armor
+    modifiers: #There's gotta be SOME reason to use this over other helmets.
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+        Heat: 0.85
 
 #Bone Helmet
 - type: entity

@@ -5,6 +5,9 @@ using Content.Shared.Gravity;
 using Content.Shared.Input;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Systems;
+using Content.Shared.Body.Components;
+using Content.Shared._Shitmed.Body.Organ;
+using Content.Shared.Standing;
 using Content.Shared.Popups;
 using Content.Shared.Stunnable;
 using Robust.Shared.Configuration;
@@ -141,7 +144,10 @@ public abstract class SharedLayingDownSystem : EntitySystem
             || !Resolve(uid, ref layingDown, false)
             || standingState.CurrentState is not StandingState.Lying
             || !_mobState.IsAlive(uid)
-            || TerminatingOrDeleted(uid))
+            || TerminatingOrDeleted(uid)
+            || !TryComp<BodyComponent>(uid, out var body)
+            || body.LegEntities.Count < body.RequiredLegs
+            || HasComp<DebrainedComponent>(uid))
             return false;
 
         var args = new DoAfterArgs(EntityManager, uid, layingDown.StandingUpTime, new StandingUpDoAfterEvent(), uid)
@@ -170,7 +176,7 @@ public abstract class SharedLayingDownSystem : EntitySystem
             return false;
         }
 
-        _standing.Down(uid, true, behavior != DropHeldItemsBehavior.NoDrop, standingState, setDrawDepth: true);
+        _standing.Down(uid, true, behavior != DropHeldItemsBehavior.NoDrop, standingState);
         return true;
     }
 }
@@ -178,6 +184,7 @@ public abstract class SharedLayingDownSystem : EntitySystem
 [Serializable, NetSerializable]
 public sealed partial class StandingUpDoAfterEvent : SimpleDoAfterEvent;
 
+[Serializable, NetSerializable]
 public enum DropHeldItemsBehavior : byte
 {
     NoDrop,

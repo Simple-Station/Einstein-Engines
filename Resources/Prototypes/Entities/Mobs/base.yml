@@ -46,8 +46,16 @@
   - type: LanguageSpeaker # Einstein Engines. This component is required to support speech, although it does not define known languages.
   - type: RequireProjectileTarget
     active: False
+  - type: AnimatedEmotes
   - type: OwnInteractionVerbs
     allowedVerbs: [] # TODO: define something here, or don't.
+
+- type: entity
+  save: false
+  id: MobPolymorphable
+  abstract: true
+  components:
+  - type: Polymorphable
 
 # Used for mobs that have health and can take damage.
 - type: entity
@@ -197,7 +205,7 @@
     canResistFire: true
     damage: #per second, scales with number of fire 'stacks'
       types:
-        Heat: 3
+        Heat: 1.5
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Generic_mob_burning

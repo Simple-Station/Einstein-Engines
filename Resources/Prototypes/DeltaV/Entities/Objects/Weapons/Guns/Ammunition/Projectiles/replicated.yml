@@ -2,7 +2,7 @@
   id: BulletLightRifleReplicated
   name: replicated bullet (.20 rifle)
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Projectile
       damage:

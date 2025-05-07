@@ -2,7 +2,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Server.Chemistry.Containers.EntitySystems;
-using Content.Server.Chemistry.ReactionEffects;
+using Content.Server.EntityEffects.Effects;
 using Content.Server.Spreader;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
@@ -22,7 +22,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using System.Linq;
-
+using Content.Server.Nutrition.Components;
+using Content.Shared.Inventory;
 using TimedDespawnComponent = Robust.Shared.Spawners.TimedDespawnComponent;
 
 namespace Content.Server.Fluids.EntitySystems;
@@ -44,7 +45,8 @@ public sealed class SmokeSystem : EntitySystem
     [Dependency] private readonly ReactiveSystem _reactive = default!;
     [Dependency] private readonly SharedBroadphaseSystem _broadphase = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
-    [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!; // Goobstation
 
     private EntityQuery<SmokeComponent> _smokeQuery;
     private EntityQuery<SmokeAffectedComponent> _smokeAffectedQuery;
@@ -269,6 +271,13 @@ public sealed class SmokeSystem : EntitySystem
             return;
 
         var blockIngestion = _internals.AreInternalsWorking(entity);
+
+        if (_inventory.TryGetSlotEntity(entity, "mask", out var maskUid) &&
+            EntityManager.TryGetComponent<IngestionBlockerComponent>(maskUid, out var blocker) &&
+            blocker is { Enabled: true, BlockSmokeIngestion: true }) // Goobstation
+        {
+            blockIngestion = true;
+        }
 
         var cloneSolution = solution.Clone();
         var availableTransfer = FixedPoint2.Min(cloneSolution.Volume, component.TransferRate);

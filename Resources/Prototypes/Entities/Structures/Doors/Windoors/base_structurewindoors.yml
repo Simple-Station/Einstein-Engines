@@ -11,6 +11,7 @@
       Brute:
         collection: GlassSmash
   - type: InteractionOutline
+  - type: StationAiWhitelist
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -42,6 +43,9 @@
     - state: panel_open
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AnimationPlayer
+  - type: Tag
+    tags:
+      - WeldbotFixableStructure
   - type: ApcPowerReceiver
   - type: ExtensionCableReceiver
   - type: DoorSignalControl
@@ -93,10 +97,11 @@
             max: 4
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: AccessReader
   - type: ContainerFill
     containers:
       board: [ DoorElectronics ]
+  - type: AccessReader
+    containerAccessProvider: board
   - type: ContainerContainer
     containers:
       board: !type:Container
@@ -129,8 +134,10 @@
     layoutId: Airlock
   - type: UserInterface
     interfaces:
-    - key: enum.WiresUiKey.Key
-      type: WiresBoundUserInterface
+      enum.AiUi.Key:
+        type: StationAiBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
   - type: Appearance
   - type: WiresVisuals
   - type: Airtight

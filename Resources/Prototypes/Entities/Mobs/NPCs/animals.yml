@@ -17,6 +17,7 @@
   - type: Speech
     speechSounds: Squeak
     speechVerb: SmallMob
+    allowedEmotes: ['Squeak']
   - type: Fixtures
     fixtures:
       fix1:
@@ -69,6 +70,12 @@
     barkType: mouse
     minTime: 10 # Mice like to squeak, I think. You can always put your pet mouse to sleep if it gets annoying
     maxTime: 160
+  - type: NightVision
+    isActive: true
+    toggleAction: null
+    color: "#808080"
+    activateSound: null
+    deactivateSound: null
 
 - type: entity
   name: bee
@@ -101,7 +108,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      10: Dead
+      5: Dead # Goob edit
   - type: Stamina
     critThreshold: 10
   - type: DamageStateVisuals
@@ -175,6 +182,7 @@
   id: MobChicken
   description: Comes before an egg, and IS a dinosaur!
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -259,6 +267,7 @@
   parent: MobChicken
   id: MobChicken1
   components:
+  - type: Absorbable
   - type: Sprite
     layers:
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
@@ -284,6 +293,7 @@
   parent: MobChicken
   id: MobChicken2
   components:
+  - type: Absorbable
   - type: Sprite
     layers:
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
@@ -396,8 +406,30 @@
         damageType: Blunt
         damage: 10
       behaviors:
-      - !type:GibBehavior { }
+      - !type:GibBehavior
+        gibContents: Skip
+        recursive: false
   - type: NonSpreaderZombie
+  - type: LanguageKnowledge
+    speaks: [Hissing]
+    understands: [Hissing]
+
+- type: entity
+  parent: MobCockroach
+  id: MobCockroachPet
+  components:
+  - type: HTN
+    rootTask:
+      task: FollowCompound
+    blackboard:
+      IdleRange: !type:Single
+        1.5
+      FollowCloseRange: !type:Single
+        1.0
+      FollowRange: !type:Single
+        2.0
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-organic
 
 - type: entity
   name: glockroach
@@ -443,6 +475,9 @@
     allowMovement: true
     name: ghost-role-information-mothroach-name
     description: ghost-role-information-mothroach-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
   - type: Fixtures
     fixtures:
       fix1:
@@ -457,7 +492,10 @@
   - type: GhostTakeoverAvailable
   - type: Speech
     speechVerb: Moth
-    speechSounds: Chitter # Delta-V - Eep!
+    speechSounds: Chitter
+    allowedEmotes: ['Chitter', 'Squeak']
+  - type: FaxableObject
+    insertingState: inserting_mothroach
   - type: MothAccent
   - type: Sprite
     sprite: Mobs/Animals/mothroach.rsi
@@ -561,7 +599,194 @@
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
+  - type: SurgeryTarget
+  - type: UserInterface
+    interfaces:
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
 
+- type: entity
+  parent: MobMothroach
+  id: MobMothroachPet
+  components:
+  - type: HTN
+    rootTask:
+      task: FollowCompound
+    blackboard:
+      IdleRange: !type:Single
+        1.5
+      FollowCloseRange: !type:Single
+        1.0
+      FollowRange: !type:Single
+        2.0
+
+- type: entity
+  name: squackroach
+  parent: MobCockroach
+  id: MobSquackroach
+  description: This is just a horrific genetic stew of a specimen.
+  components:
+  - type: Singer
+    proto: HarpySinger
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-squackroach-name
+    description: ghost-role-information-squackroach-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 0.007
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: GhostTakeoverAvailable
+  - type: Speech
+    speechVerb: Harpy
+    speechSounds: Harpy
+  - type: FaxableObject
+    insertingState: inserting_squackroach
+  - type: Sprite
+    sprite: Mobs/Animals/squackroach.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: squackroach
+    - map: [ "singingLayer" ]
+      sprite: Effects/harpysinger.rsi
+      state: singing_music_notes
+      visible: false
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: squackroach-moving
+    noMovementLayers:
+      movement:
+        state: squackroach
+  - type: Item
+    size: Normal
+  - type: Clothing
+    quickEquip: false
+    sprite: Mobs/Animals/squackroach.rsi
+    equippedPrefix: sq
+    slots:
+    - HEAD
+    - NECK
+  - type: Appearance
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: squackroach
+      Critical:
+        Base: squackroach_dead
+      Dead:
+        Base: squackroach_dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      40: Critical
+      60: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2.5
+    baseSprintSpeed : 4
+    weightlessAcceleration: 1.5
+    weightlessFriction: 1
+    weightlessModifier: 1.12
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Moth
+  - type: Bloodstream
+    bloodReagent: InsectBlood # it's still somewhat an insect... somehow
+  - type: Respirator
+  - type: CombatMode
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatRat
+      amount: 2
+  - type: Extractable
+    grindableSolutionName: food
+  - type: LanguageKnowledge
+    speaks:
+    - ValyrianStandard
+    understands:
+    - ValyrianStandard
+  - type: Vocal
+    sounds:
+      Male: SoundsHarpy
+      Female: SoundsHarpy
+      Unsexed: SoundsHarpy
+  - type: GenericVisualizer
+    visuals:
+      enum.HarpyVisualLayers.Singing:
+        singingLayer:
+          False: { visible: false }
+          True: { visible: true }
+    wilhelmProbability: 0.001
+  - type: MobPrice
+    price: 150
+  - type: Tag
+    tags:
+    - Trash
+    - CannotSuicide
+    - DoorBumpOpener
+    - HarpyEmotes
+    - VimPilot
+  - type: CanEscapeInventory
+  - type: NpcFactionMember
+    factions:
+    - Mouse
+  - type: Body
+    prototype: Squackroach
+  - type: StepTriggerImmune
+    whitelist:
+      types:
+      - Shard
+      - Landmine
+      - Mousetrap
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 60
+      behaviors:
+      - !type:GibBehavior { }
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Mouse_burning
+  - type: FootPrints
+    leftBarePrint: "footprint-left-bare-lizard"
+    rightBarePrint: "footprint-right-bare-lizard"
+  - type: SurgeryTarget
+  - type: UserInterface
+    interfaces:
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
+      enum.InstrumentUiKey.Key:
+        type: InstrumentBoundUserInterface
+        requireInputValidation: false
+
+- type: entity
+  parent: MobSquackroach
+  id: MobSquackroachPet
+  components:
+  - type: HTN
+    rootTask:
+      task: FollowCompound
+    blackboard:
+      IdleRange: !type:Single
+        1.5
+      FollowCloseRange: !type:Single
+        1.0
+      FollowRange: !type:Single
+        2.0
 
 # Note that the mallard duck is actually a male drake mallard, with the brown duck being the female variant of the same species, however ss14 lacks sex specific textures
 # The white duck is more akin to a pekin or call duck.
@@ -643,6 +868,11 @@
   - type: RandomBark
     barkType: chicken # Duh
     barkMultiplier: 0.7
+  - type: SurgeryTarget
+  - type: UserInterface
+    interfaces:
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
 
 - type: entity
   name: white duck #Quack
@@ -747,6 +977,7 @@
   id: MobCow
   description: Moo.
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -832,6 +1063,7 @@
   id: MobCrab
   description: A folk legend goes around that his claw snaps spacemen out of existence over distasteful remarks. Be polite and tolerant for your own safety.
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -862,6 +1094,7 @@
   - type: Speech
     speechVerb: Arachnid
     speechSounds: Arachnid
+    allowedEmotes: ['Click', 'Chitter']
   - type: DamageStateVisuals
     states:
       Alive:
@@ -897,6 +1130,11 @@
     prototype: AnimalHemocyanin
   - type: RandomBark
     barkType: crab
+  - type: SurgeryTarget
+  - type: UserInterface
+    interfaces:
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
 
 - type: entity
   name: goat
@@ -904,6 +1142,7 @@
   id: MobGoat
   description: Her spine consists of long sharp segments, no wonder she is so grumpy.
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -988,6 +1227,11 @@
   - type: HTN
     rootTask:
       task: RuminantHostileCompound
+  - type: SurgeryTarget
+  - type: UserInterface
+    interfaces:
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
 
 # Note that we gotta make this bitch vomit someday when you feed it anthrax or sumthin. Needs to be a small item thief too and aggressive if attacked.
 - type: entity
@@ -1043,6 +1287,7 @@
   id: MobGorilla
   description: Smashes, roars, looks cool. Don't stand near one.
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -1091,6 +1336,8 @@
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
+  - type: Fauna # Lavaland Change
+
 
 - type: entity
   name: kangaroo
@@ -1098,6 +1345,7 @@
   id: MobKangaroo
   description: A large marsupial herbivore. It has powerful hind legs, with nails that resemble long claws.
   components:
+  - type: Absorbable
   - type: MovementSpeedModifier
     baseWalkSpeed: 3.5
     baseSprintSpeed: 4.5
@@ -1134,8 +1382,8 @@
     - id: FoodMeat
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -1202,11 +1450,20 @@
   description: The genetic bipedal ancestor of... Uh... Something. Yeah, there's definitely something on the station that descended from whatever this is.
   abstract: true
   components:
+  - type: Absorbable
   - type: CombatMode
+  # Shitmed Change Start
+  - type: SurgeryTarget
+  - type: Targeting
+  - type: HumanoidAppearance
+    species: Monkey
+  # Shitmed Change End
   - type: Inventory
     templateId: monkey
     speciesId: monkey
   - type: InventorySlots
+  - type: Deathgasp
+    prototype: MonkeyDeathgasp
   - type: Cuffable
   - type: RotationVisuals
     defaultRotation: 90
@@ -1226,40 +1483,65 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
   - type: Sprite
     drawdepth: Mobs
     layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: monkey
-      sprite: Mobs/Animals/monkey.rsi
-    - map: [ "jumpsuit" ]
-    - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
+    # Shitmed Change Start
+    - map: [ "enum.HumanoidVisualLayers.Chest" ]
+    - map: [ "enum.HumanoidVisualLayers.Head" ]
+    - map: [ "enum.HumanoidVisualLayers.Snout" ]
+    - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+    - map: [ "enum.HumanoidVisualLayers.RArm" ]
+    - map: [ "enum.HumanoidVisualLayers.LArm" ]
+    - map: [ "enum.HumanoidVisualLayers.RLeg" ]
+    - map: [ "enum.HumanoidVisualLayers.LLeg" ]
+    - map: ["jumpsuit"]
+    - map: ["enum.HumanoidVisualLayers.LFoot"]
+    - map: ["enum.HumanoidVisualLayers.RFoot"]
+    - map: ["enum.HumanoidVisualLayers.LHand"]
+    - map: ["enum.HumanoidVisualLayers.RHand"]
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
       color: "#ffffff"
       sprite: Objects/Misc/handcuffs.rsi
       state: body-overlay-2
       visible: false
+    - map: [ "gloves" ]
+    - map: [ "shoes" ]
     - map: [ "ears" ]
+    - map: [ "innerBelt" ] # Einstein Engines
+    - map: [ "innerNeck" ] # Einstein Engines
     - map: [ "outerClothing" ]
+    - map: [ "eyes" ]
+    - map: [ "belt" ]
     - map: [ "id" ]
+    - map: [ "neck" ]
+    - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
+    - map: [ "enum.HumanoidVisualLayers.Hair" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
+    - map: [ "enum.HumanoidVisualLayers.Tail" ]
     - map: [ "mask" ]
     - map: [ "head" ]
-    - map: [ "clownedon" ]
-      sprite: "Effects/creampie.rsi"
-      state: "creampie_human"
-      visible: false
+    - map: [ "pocket1" ]
+    - map: [ "pocket2" ]
+    # Shitmed Change End
   - type: Carriable
   - type: Hands
+  - type: ComplexInteraction
   - type: GenericVisualizer
     visuals:
       enum.CreamPiedVisuals.Creamed:
         clownedon:
           True: {visible: true}
           False: {visible: false}
-  - type: Body
-    prototype: Primate
-    requiredLegs: 1 # TODO: More than 1 leg
+  - type: Body # Shitmed Change
+    prototype: Monkey
+    requiredLegs: 2
   - type: CreamPied
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
@@ -1311,6 +1593,7 @@
   parent: MobBaseAncestor
   description: New church of neo-darwinists actually believe that EVERY animal evolved from a monkey. Tastes like pork, and killing them is both fun and relaxing.
   components:
+  - type: Absorbable
   - type: NameIdentifier
     group: Monkey
   - type: Speech
@@ -1332,7 +1615,7 @@
     description: ghost-role-information-monkey-description
   - type: GhostTakeoverAvailable
   - type: Clumsy
-    clumsyDamage:
+    gunShootFailDamage:
       types:
         Blunt: 5
         Piercing: 4
@@ -1348,6 +1631,7 @@
   description: New church of neo-darwinists actually believe that EVERY animal evolved from a monkey. Tastes like pork, and killing them is both fun and relaxing.
   suffix: syndicate base
   components:
+  - type: Absorbable
   - type: NameIdentifier
     group: Monkey
   - type: SentienceTarget
@@ -1370,6 +1654,12 @@
     makeSentient: true
     name: ghost-role-information-monkey-name
     description: ghost-role-information-monkey-description
+    rules: ghost-role-information-syndicate-reinforcement-rules
+    mindRoles:
+    # This is for syndicate monkeys that randomly gain sentience, thus have no summoner to team with
+    - MindRoleGhostRoleSoloAntagonist
+    raffle:
+      settings: default
   - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [SyndicateOperativeGearMonkey]
@@ -1380,23 +1670,26 @@
   suffix: syndicate agent
   components:
     # make the player a traitor once its taken
+  - type: Absorbable
   - type: AutoTraitor
-    giveUplink: false
-    giveObjectives: false
+    profile: TraitorReinforcement
 
 - type: entity
   id: MobMonkeySyndicateAgentNukeops # Reinforcement exclusive to nukeops uplink
   parent: MobBaseSyndicateMonkey
   suffix: NukeOps
   components:
+  - type: Absorbable
   - type: NukeOperative
 
 - type: entity
   name: kobold
-  id: MobKobold
+  id: MobBaseKobold
   parent: MobBaseAncestor
   description: Cousins to the sentient race of lizard people, kobolds blend in with their natural habitat and are as nasty as monkeys; ready to pull out your hair and stab you to death.
+  abstract: true
   components:
+  - type: Absorbable
   - type: NameIdentifier
     group: Kobold
   - type: LizardAccent
@@ -1411,9 +1704,9 @@
     speechVerb: Reptilian
   - type: Vocal
     sounds:
-      Male: UnisexReptilian
-      Female: UnisexReptilian
-      Unsexed: UnisexReptilian
+      Male: MaleReptilian
+      Female: FemaleReptilian
+      Unsexed: MaleReptilian
   - type: TypingIndicator
     proto: lizard
   - type: InteractionPopup
@@ -1447,61 +1740,11 @@
     coldDamageThreshold: 285
     currentTemperature: 310.15
     specificHeat: 42
-  - type: Sprite
-    drawdepth: Mobs
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      sprite: Mobs/Animals/kobold.rsi
-      state: kobold
-    - map: [ "outline" ]
-      sprite: Mobs/Animals/kobold.rsi
-      state: outline
-    - map: [ "horns" ]
-      sprite: Mobs/Customization/reptilian_parts.rsi
-      state: horns_short
-    - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
-      color: "#ffffff"
-      sprite: Objects/Misc/handcuffs.rsi
-      state: body-overlay-2
-      visible: false
-    - map: [ "ears" ]
-    - map: [ "id" ]
-    - map: [ "mask" ]
-    - map: [ "head" ]
-    - map: [ "clownedon" ]
-      sprite: "Effects/creampie.rsi"
-      state: "creampie_human"
-      visible: false
-  - type: RandomSprite
-    getAllGroups: true
-    available:
-      - enum.DamageStateVisualLayers.Base:
-          kobold: KoboldColors
-      - horns:
-          horns_curled: KoboldHornColors
-          horns_ram: KoboldHornColors
-          horns_short: KoboldHornColors
-          horns_myrsore: KoboldHornColors
-          horns_bighorn: KoboldHornColors
-          horns_argali: KoboldHornColors
-          horns_ayrshire: KoboldHornColors
-          horns_floppy_kobold_ears: Inherit
-          horns_double: Inherit
-          horns_kobold_ears: Inherit
   - type: Butcherable
     butcheringType: Spike
     spawned:
     - id: FoodMeat
       amount: 2
-  - type: Clumsy
-    clumsyDamage:
-      types:
-        Blunt: 2
-        Piercing: 7
-      groups:
-        Burn: 3
-    clumsySound:
-      path: /Audio/Voice/Reptilian/reptilian_scream.ogg
   - type: AlwaysRevolutionaryConvertible
   - type: GhostTakeoverAvailable
   - type: SentienceTarget
@@ -1514,11 +1757,70 @@
   - type: RandomBark
     barkMultiplier: 0.65
     barkType: kobold
+  # Shitmed Change Start
+  - type: HumanoidAppearance
+    species: Kobold
+  - type: Body
+    prototype: Kobold
+    requiredLegs: 2
+  # Shitmed Change End
+
+- type: entity
+  name: kobold
+  id: MobKobold
+  parent: MobBaseKobold
+  description: Cousins to the sentient race of lizard people, kobolds blend in with their natural habitat and are as nasty as monkeys; ready to pull out your hair and stab you to death.
+  components:
+  - type: Absorbable
+  - type: Clumsy
+    gunShootFailDamage:
+      types:
+        Blunt: 2
+        Piercing: 7
+      groups:
+        Burn: 3
+    clumsySound:
+      path: /Audio/Voice/Reptilian/reptilian_scream.ogg
+
+- type: entity
+  id: MobBaseSyndicateKobold
+  parent: MobBaseKobold
+  suffix: syndicate base
+  components:
+  - type: Absorbable
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      75: Critical
+      200: Dead
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
+  - type: Loadout
+    prototypes: [SyndicateOperativeGearMonkey]
+
+- type: entity
+  id: MobKoboldSyndicateAgent
+  parent: MobBaseSyndicateKobold
+  suffix: syndicate agent
+  components:
+  - type: Absorbable
+    # make the player a traitor once its taken
+  - type: AutoTraitor
+    profile: TraitorReinforcement
+
+- type: entity
+  id: MobKoboldSyndicateAgentNukeops # Reinforcement exclusive to nukeops uplink
+  parent: MobBaseSyndicateKobold
+  suffix: NukeOps
+  components:
+  - type: Absorbable
+  - type: NukeOperative
 
 - type: entity
   name: guidebook monkey
   parent: MobMonkey
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: MobGuidebookMonkey
   description: A hopefully helpful monkey whose only purpose in life is for you to click on. Does this count as having a monkey give you a tutorial?
   components:
@@ -1538,10 +1840,14 @@
     allowMovement: true
     name: ghost-role-information-mouse-name
     description: ghost-role-information-mouse-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
   - type: GhostTakeoverAvailable
   - type: Speech
     speechSounds: Squeak
     speechVerb: SmallMob
+    allowedEmotes: ['Squeak']
   - type: Sprite
     drawdepth: SmallMobs
     sprite: Mobs/Animals/mouse.rsi
@@ -1570,6 +1876,8 @@
     rootTask:
       task: MouseCompound
   - type: Physics
+  - type: FaxableObject
+    insertingState: inserting_mouse
   - type: Fixtures
     fixtures:
       fix1:
@@ -1645,6 +1953,7 @@
     tags:
     - Trash
     - VimPilot
+    - ChefPilot
     - Mouse
     - Meat
   - type: Respirator
@@ -1675,10 +1984,6 @@
   - type: FelinidFood # Nyanotrasen - Felinid, ability to eat mice, see Content.Server/Nyanotrasen/Abilities/Felinid/FelinidSystem.cs
   - type: BadFood
   - type: NonSpreaderZombie
-  - type: PreventSpiller
-  - type: RandomBark
-    barkMultiplier: 0.3
-    barkType: mouse
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
@@ -1686,6 +1991,37 @@
     whitelist:
       types:
       - Landmine
+  - type: SurgeryTarget
+  - type: UserInterface
+    interfaces:
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
+  - type: FoodSequenceElement
+    entries:
+      Taco: RatTaco
+      Burger: RatBurger
+      Skewer: RatSkewer
+  - type: NightVision
+    isActive: true
+    toggleAction: null
+    color: "#808080"
+    activateSound: null
+    deactivateSound: null
+
+- type: entity
+  parent: MobMouse
+  id: MobMousePet
+  components:
+  - type: HTN
+    rootTask:
+      task: FollowCompound
+    blackboard:
+      IdleRange: !type:Single
+        1.5
+      FollowCloseRange: !type:Single
+        1.0
+      FollowRange: !type:Single
+        2.0
 
 - type: entity
   parent: MobMouse
@@ -1739,6 +2075,9 @@
         Base: dead-1
       Dead:
         Base: splat-1
+  - type: Item
+    size: Tiny
+    heldPrefix: 1
 
 - type: entity
   parent: MobMouse
@@ -1765,6 +2104,44 @@
         Base: dead-2
       Dead:
         Base: splat-2
+  - type: Item
+    size: Tiny
+    heldPrefix: 2
+
+- type: entity
+  name: cancer mouse
+  description: Toxic. Squeak!
+  parent: MobMouse
+  id: MobMouseCancer
+  components:
+  - type: Sprite
+    color: LightGreen
+  - type: PointLight
+    color: LightGreen
+    radius: 5
+    energy: 5
+    netsync: false
+  - type: RadiationSource
+    intensity: 0.3
+  - type: Bloodstream
+    bloodReagent: UnstableMutagen
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 3
+        - ReagentId: Uranium
+          Quantity: 10
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatRat
+      amount: 1
+    - id: SheetUranium1
+      amount: 1
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Zombie
 
 - type: entity
   name: lizard #Weh
@@ -1927,16 +2304,6 @@
     - VimPilot
   - type: RandomBark
     barkMultiplier: 1.3
-    barks:
-      - Croooaaaakkk
-      - Ribbit
-      - Ribbit
-      - Ribbit
-      - Crooaak
-      - Ribbit
-      - Ribbit
-      - Ribbit
-      - Bibbit
 
 # Would be cool to have some functionality for the parrot to be able to sit on stuff
 - type: entity
@@ -2005,6 +2372,7 @@
   id: MobPenguin
   description: Their lives are constant pain due to their inner-body knees.
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -2048,6 +2416,7 @@
     factions:
     - Passive
   - type: Temperature
+    atmosTemperatureTransferEfficiency: 0.04
     heatDamageThreshold: 335
     coldDamageThreshold: 230
     currentTemperature: 310.15
@@ -2061,6 +2430,9 @@
   - type: RandomBark
     barkType: penguin
     barkMultiplier: 0.6
+  - type: LanguageKnowledge
+    speaks: [Penguin]
+    understands: [Penguin]
 
 - type: entity
   name: grenade penguin
@@ -2068,6 +2440,7 @@
   id: MobGrenadePenguin
   description: A small penguin with a grenade strapped around its neck. Harvested by the Syndicate from icy shit-hole planets.
   components:
+  - type: Absorbable
   - type: MovementSpeedModifier
     baseWalkSpeed: 3.5
     baseSprintSpeed: 5
@@ -2181,28 +2554,18 @@
     minTime: 10
     maxTime: 50 # It's a sssnake...
     barkType: hissing
+  - type: LanguageKnowledge
+    speaks: [Hissing]
+    understands: [Hissing]
 
 # Code unique spider prototypes or combine them all into one spider and get a
 # random sprite state when you spawn it.
 - type: entity
-  name: tarantula
   parent: [ SimpleMobBase, MobCombat ]
-  id: MobGiantSpider
-  description: Widely recognized to be the literal worst thing in existence.
+  id: MobSpiderBase
+  abstract: true
   components:
-  - type: Sprite
-    drawdepth: Mobs
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
-      state: tarantula
-      sprite: Mobs/Animals/spider.rsi
-  - type: SpriteMovement
-    movementLayers:
-      movement:
-        state: tarantula-moving
-    noMovementLayers:
-      movement:
-        state: tarantula
+  - type: Absorbable
   - type: Carriable
   - type: Physics
   - type: Fixtures
@@ -2216,12 +2579,6 @@
         - MobMask
         layer:
         - MobLayer
-  - type: DamageStateVisuals
-    states:
-      Alive:
-        Base: tarantula
-      Dead:
-        Base: tarantula_dead
   - type: Butcherable
     spawned:
     - id: FoodMeatSpider
@@ -2233,14 +2590,6 @@
     thresholds:
       0: Alive
       90: Dead
-  - type: MeleeWeapon
-    angle: 0
-    animation: WeaponArcBite
-    soundHit:
-      path: /Audio/Effects/bite.ogg
-    damage:
-      types:
-        Piercing: 6
   - type: SolutionContainerManager
     solutions:
       melee:
@@ -2275,6 +2624,7 @@
   - type: Speech
     speechVerb: Arachnid
     speechSounds: Arachnid
+    allowedEmotes: ['Click', 'Chitter', 'Hiss'] #DeltaV added Hiss
   - type: Vocal
     sounds:
       Male: UnisexArachnid
@@ -2287,7 +2637,7 @@
     - DoorBumpOpener
     - FootstepSound
   - type: Tool # Open door from xeno.yml.
-    speed: 1.5
+    speedModifier: 1.5
     qualities:
       - Prying
     useSound:
@@ -2311,35 +2661,95 @@
         Burn: -0.07
   - type: RandomBark
     barkType: hissing
-    barkMultiplied: 0.3
+    barkMultiplier: 0.3
+  - type: BloodSucker
+    webRequired: true
+  - type: Cocooner
+  - type: SurgeryTarget
+  - type: UserInterface
+    interfaces:
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
+  - type: Fauna # Lavaland Change
+
+- type: entity
+  parent: MobSpiderBase
+  id: MobSpiderAngryBase
+  abstract: true
+  components:
+  - type: Absorbable
+  - type: NpcFactionMember
+    factions:
+      - Xeno
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: GhostRole
+    makeSentient: true
+    name: ghost-role-information-giant-spider-name
+    description: ghost-role-information-giant-spider-description
+    rules: ghost-role-information-giant-spider-rules
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+    raffle:
+      settings: short
+  - type: GhostTakeoverAvailable
 
 - type: entity
   name: tarantula
-  parent: MobGiantSpider
-  id: MobGiantSpiderAngry
-  suffix: Angry
+  parent: MobSpiderBase
+  id: MobGiantSpider
+  description: Widely recognized to be the literal worst thing in existence.
   components:
-    - type: NpcFactionMember
-      factions:
-        - Xeno
-    - type: InputMover
-    - type: MobMover
-    - type: HTN
-      rootTask:
-        task: SimpleHostileCompound
-    - type: GhostRole
-      makeSentient: true
-      name: ghost-role-information-giant-spider-name
-      description: ghost-role-information-giant-spider-description
-      rules: deltav-ghost-role-information-softantag-rules #DeltaV
-    - type: GhostTakeoverAvailable
+  - type: Absorbable
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: tarantula
+      sprite: Mobs/Animals/spider.rsi
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: tarantula-moving
+    noMovementLayers:
+      movement:
+        state: tarantula
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: tarantula
+      Critical:
+        Base: tarantula_dead
+      Dead:
+        Base: tarantula_dead
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Piercing: 6
+  - type: Puller
+    needsHands: false
+
+- type: entity
+  parent:
+  - MobSpiderAngryBase
+  - MobGiantSpider
+  id: MobGiantSpiderAngry
 
 - type: entity
   name: clown spider
-  parent: MobGiantSpiderAngry
+  parent: MobSpiderAngryBase
   id: MobClownSpider
   description: Combines the two most terrifying things in existence, spiders and clowns.
   components:
+    - type: Absorbable
     - type: Sprite
       drawdepth: Mobs
       layers:
@@ -2363,6 +2773,7 @@
     - type: Spider
       webPrototype: SpiderWebClown
     - type: MeleeWeapon
+      altDisarm: false
       angle: 0
       animation: WeaponArcBite
       soundHit:
@@ -2380,11 +2791,24 @@
       bloodReagent: Laughter
 
 - type: entity
+  name: wizard spider
+  parent: MobGiantSpider
+  id: MobGiantSpiderWizard
+  description: This spider looks a little magical
+  suffix: Wizard
+  components:
+  - type: Accentless
+    removes:
+    - type: ReplacementAccent
+      accent: xeno  #let this wizard speak
+
+- type: entity
   name: possum
   parent: SimpleMobBase
   id: MobPossum
   description: '"O Possum! My Possum!" -- Walt Whitman, 1865'
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Animals/possum.rsi
@@ -2411,8 +2835,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -2468,6 +2892,7 @@
   id: MobRaccoon
   description: Trash panda!
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Animals/raccoon.rsi
@@ -2494,8 +2919,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -2533,6 +2958,7 @@
   id: MobFox
   description: They're a fox.
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Animals/fox.rsi
@@ -2566,8 +2992,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -2584,7 +3010,7 @@
     interactFailureString: petting-failure-generic
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
-      path: /Audio/Animals/fox_squeak.ogg
+      collection: Fox
   - type: Grammar
     attributes:
       gender: epicene
@@ -2617,6 +3043,7 @@
   - type: RandomBark
     barkType: fox
     barkMultiplier: 0.5 # Talkative <3
+  - type: ScentTracker
 
 - type: entity
   name: corgi
@@ -2624,6 +3051,7 @@
   id: MobCorgi
   description: Finally, a space corgi!
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Pets/corgi.rsi
@@ -2652,8 +3080,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -2687,6 +3115,7 @@
     - VimPilot
   - type: RandomBark
     barkType: dog
+  - type: ScentTracker
 
 - type: entity
   name: corrupted corgi
@@ -2694,6 +3123,7 @@
   id: MobCorgiNarsi
   description: Ian! No!
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Pets/corgi.rsi
@@ -2782,6 +3212,7 @@
   id: MobCat
   description: Feline pet, very funny.
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Pets/cat.rsi
@@ -2808,8 +3239,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -2836,6 +3267,11 @@
     interactSuccessSound:
       path: /Audio/Animals/cat_meow.ogg
   - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
     damage:
       types:
         Piercing: 5
@@ -2849,6 +3285,12 @@
     - VimPilot
   - type: RandomBark
     barkType: cat
+  - type: HTN # DeltaV - make all cats eat mice
+    rootTask:
+      task: SimpleHostileCompound
+  - type: NpcFactionMember # DeltaV - give cats faction so they fight mice
+    factions:
+    - Cat
 
 - type: entity
   name: calico cat
@@ -2873,6 +3315,7 @@
   parent: MobCatSpace
   description: Explosive kitten.
   components:
+  - type: Absorbable
   - type: Sprite
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
@@ -2889,16 +3332,33 @@
     allowMovement: true
     description: ghost-role-information-SyndiCat-description
     rules: ghost-role-information-SyndiCat-rules
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+    raffle:
+      settings: default
   - type: GhostTakeoverAvailable
   - type: AutoImplant
     implants:
     - MicroBombImplant
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
   - type: NpcFactionMember
     factions:
     - Syndicate
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Slash: 6
+        Piercing: 6
+        Structural: 15
   - type: LanguageKnowledge
     speaks:
-    - Cat
+      - Cat
     understands:
     - Cat
     - TauCetiBasic
@@ -2909,6 +3369,7 @@
   parent: MobCat
   description: Feline pet, prepared for the worst.
   components:
+  - type: Absorbable
   - type: Sprite
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
@@ -2922,7 +3383,13 @@
   - type: Temperature
     heatDamageThreshold: 423
     coldDamageThreshold: 0
+  - type: Tag
+    tags:
+      - DoorBumpOpener
+  - type: MovementAlwaysTouching
   - type: PressureImmunity
+  - type: StepTriggerImmune
+  - type: Insulated
   - type: InteractionPopup
     successChance: 0.7
     interactSuccessString: petting-success-space-cat
@@ -2968,6 +3435,7 @@
   id: MobCatKitten
   description: Small and fluffy.
   components:
+  - type: Absorbable
   - type: Sprite
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
@@ -3014,6 +3482,7 @@
   id: MobSloth
   description: Very slow animal. For people with low energy.
   components:
+  - type: Absorbable
   - type: MovementSpeedModifier
     baseWalkSpeed : 1
     baseSprintSpeed : 1
@@ -3043,8 +3512,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -3106,8 +3575,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -3154,6 +3623,7 @@
   - type: Speech
     speechVerb: SmallMob
     speechSounds: Squeak
+    allowedEmotes: ['Squeak']
   - type: Sprite
     drawdepth: SmallMobs
     sprite: Mobs/Animals/hamster.rsi
@@ -3170,6 +3640,8 @@
   - type: Item
     size: Tiny
   - type: Physics
+  - type: FaxableObject
+    insertingState: inserting_hamster
   - type: Fixtures
     fixtures:
       fix1:
@@ -3204,8 +3676,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -3241,6 +3713,7 @@
   - type: Tag
     tags:
     - VimPilot
+    - ChefPilot
     - Trash
     - Hamster
     - Meat
@@ -3286,11 +3759,27 @@
     normalState: Mouse_burning
 
 - type: entity
+  parent: MobHamster
+  id: MobHamsterPet
+  components:
+  - type: HTN
+    rootTask:
+      task: FollowCompound
+    blackboard:
+      IdleRange: !type:Single
+        1.5
+      FollowCloseRange: !type:Single
+        1.0
+      FollowRange: !type:Single
+        2.0
+
+- type: entity
   name: pig
   parent: SimpleMobBase
   id: MobPig
   description: Oink.
   components:
+  - type: Absorbable
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -3328,8 +3817,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -3396,8 +3885,8 @@
     bloodMaxVolume: 60
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:

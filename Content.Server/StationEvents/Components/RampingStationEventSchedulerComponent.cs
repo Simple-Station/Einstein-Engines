@@ -24,6 +24,7 @@ public sealed partial class RampingStationEventSchedulerComponent : Component
     /// <summary>
     ///     The number by which average expected shift length is multiplied. Higher values lead to slower chaos growth.
     /// </summary>
+    [DataField]
     public float ShiftLengthModifier = 1f;
 
     // Everything below is overridden in the RampingStationEventSchedulerSystem based on CVars

@@ -4,6 +4,7 @@ using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Power.Components;
 using Content.Shared.ActionBlocker;
 using Content.Shared.DeviceNetwork;
+using Content.Shared.Power;
 using Content.Shared.SurveillanceCamera;
 using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
@@ -192,14 +193,14 @@ public sealed class SurveillanceCameraSystem : EntitySystem
         UpdateSetupInterface(uid, component);
     }
 
-    private void OpenSetupInterface(EntityUid uid, EntityUid player, SurveillanceCameraComponent? camera = null, ActorComponent? actor = null)
+    private void OpenSetupInterface(EntityUid uid, EntityUid player, SurveillanceCameraComponent? camera = null)
     {
-        if (!Resolve(uid, ref camera) || !Resolve(player, ref actor))
-            return;
-        if (!_userInterface.TryGetUi(uid, SurveillanceCameraSetupUiKey.Camera, out var bui))
+        if (!Resolve(uid, ref camera))
             return;
 
-        _userInterface.OpenUi(bui, actor.PlayerSession);
+        if (!_userInterface.TryOpenUi(uid, SurveillanceCameraSetupUiKey.Camera, player))
+            return;
+
         UpdateSetupInterface(uid, camera);
     }
 
@@ -212,7 +213,7 @@ public sealed class SurveillanceCameraSystem : EntitySystem
 
         if (camera.NameSet && camera.NetworkSet)
         {
-            _userInterface.TryCloseAll(uid, SurveillanceCameraSetupUiKey.Camera);
+            _userInterface.CloseUi(uid, SurveillanceCameraSetupUiKey.Camera);
             return;
         }
 
@@ -224,14 +225,14 @@ public sealed class SurveillanceCameraSystem : EntitySystem
             }
             else if (!camera.NetworkSet)
             {
-                _userInterface.TryCloseAll(uid, SurveillanceCameraSetupUiKey.Camera);
+                _userInterface.CloseUi(uid, SurveillanceCameraSetupUiKey.Camera);
                 return;
             }
         }
 
         var state = new SurveillanceCameraSetupBoundUiState(camera.CameraId, deviceNet.ReceiveFrequency ?? 0,
             camera.AvailableNetworks, camera.NameSet, camera.NetworkSet);
-        _userInterface.TrySetUiState(uid, SurveillanceCameraSetupUiKey.Camera, state);
+        _userInterface.SetUiState(uid, SurveillanceCameraSetupUiKey.Camera, state);
     }
 
     // If the camera deactivates for any reason, it must have all viewers removed,

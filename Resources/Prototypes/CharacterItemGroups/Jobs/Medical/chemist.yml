@@ -1,0 +1,115 @@
+# Chemist
+- type: characterItemGroup
+  id: LoadoutChemistBackpacks
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutChemistryBackpackBackpack
+    - type: loadout
+      id: LoadoutBackpackSatchelChemistry
+    - type: loadout
+      id: LoadoutBackpackDuffelChemistry
+
+- type: characterItemGroup
+  id: LoadoutChemistBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutChemistBeltChemBag
+
+#- type: characterItemGroup
+#  id: LoadoutChemistEars
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutChemistEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutMedicalItemHandLabeler
+    - type: loadout
+      id: LoadoutChemistPillCanisterKelotane
+    - type: loadout
+      id: LoadoutChemistPillCanisterTricordrazine
+    - type: loadout
+      id: LoadoutChemistPillCanisterHyronalin
+    - type: loadout
+      id: LoadoutChemistPillCanisterBicaridine
+    - type: loadout
+      id: LoadoutChemistPillCanisterDermaline
+    - type: loadout
+      id: LoadoutChemistPillCanisterDylovene
+    - type: loadout
+      id: LoadoutChemistPillCanisterDexalin
+    - type: loadout
+      id: LoadoutChemistPillCanisterSpaceDrugs
+
+- type: characterItemGroup
+  id: LoadoutChemistEyes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalEyesGlassesChemicalBudget
+    - type: loadout
+      id: LoadoutMedicalEyesGlassesChemical
+    - type: loadout
+      id: LoadoutMedicalEyesGlassesChemist
+
+- type: characterItemGroup
+  id: LoadoutChemistGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalHandsGlovesChemist
+
+#- type: characterItemGroup
+#  id: LoadoutChemistHead
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutChemistId
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutChemistNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalNeckTieChem
+
+#- type: characterItemGroup
+#  id: LoadoutChemistMask
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutChemistOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalOuterLabcoatChem
+    - type: loadout
+      id: LoadoutMedicalOuterApronChemist
+    - type: loadout
+      id: LoadoutChemistWinterCoat
+
+- type: characterItemGroup
+  id: LoadoutChemistShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalShoesEnclosedChem
+
+- type: characterItemGroup
+  id: LoadoutChemistUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalUniformJumpsuitChemShirt
+    - type: loadout
+      id: LoadoutMedicalUniformJumpsuitChemistry
+    - type: loadout
+      id: LoadoutMedicalUniformJumpskirtChemistry

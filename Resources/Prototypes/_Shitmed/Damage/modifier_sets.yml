@@ -1,0 +1,15 @@
+- type: damageModifierSet
+  id: PartDamage
+  coefficients:
+    Blunt: 0.8
+    Slash: 1.2
+    Piercing: 0.5
+    Cold: 0.5
+    Heat: 0.8
+    Shock: 0.5
+
+- type: damageModifierSet
+  id: OrganDamage
+  coefficients:
+    Decay: 1.0
+    Trauma: 1.0

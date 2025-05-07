@@ -12,14 +12,15 @@ namespace Content.Server.Entry
             "GuideHelp",
             "Clickable",
             "Icon",
-            "HandheldGPS",
             "CableVisualizer",
+            "SolutionItemStatus",
             "UIFragment",
             "PdaBorderColor",
             "InventorySlots",
             "LightFade",
             "HolidayRsiSwap",
             "OptionsVisualizer",
+            "ToggleableLightWieldable", // Goobstation
         };
     }
 }

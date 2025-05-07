@@ -48,6 +48,19 @@
   - type: Appearance
 
 - type: entity
+  id: MagazineMagnumEmpty
+  name: pistol magazine (.45 magnum any)
+  suffix: empty
+  parent: BaseMagazineMagnum
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+
+- type: entity
   id: MagazineMagnum
   name: pistol magazine (.45 magnum)
   parent: BaseMagazineMagnum
@@ -90,6 +103,20 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
+  id: MagazineMagnumIncendiary
+  name: pistol magazine (.45 magnum incendiary)
+  parent: BaseMagazineMagnum
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeMagnumIncendiary
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
   id: MagazineMagnumUranium
   name: pistol magazine (.45 magnum uranium)
   parent: BaseMagazineMagnum
@@ -116,6 +143,33 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: MagazineMagnumShrapnel
+  name: pistol magazine (.45 magnum shrapnel)
+  parent: BaseMagazineMagnum
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeMagnumShrapnel
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: MagazineMagnumSubMachineGunEmpty
+  name: "Vector magazine (.45 magnum any)"
+  suffix: empty
+  parent: BaseMagazineMagnumSubMachineGun
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
 
 - type: entity
   id: MagazineMagnumSubMachineGun

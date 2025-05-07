@@ -1,0 +1,83 @@
+# Psionic Mantis
+#- type: characterItemGroup
+#  id: LoadoutPsionicMantisBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutPsionicMantisBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutPsionicMantisEars
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutPsionicMantisEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutPsionicMantisEquipmentCandles
+    - type: loadout
+      id: LoadoutPsionicMantisEquipmentCandlesSmall
+    - type: loadout
+      id: LoadoutPsionicMantisPillCanisterSpaceDrugs
+    - type: loadout
+      id: LoadoutPsionicMantisPillCanisterCryptobiolin
+
+- type: characterItemGroup
+  id: LoadoutPsionicMantisEyes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutPsionicMantisEyesEpiHUD
+    - type: loadout
+      id: LoadoutPsionicMantisEyesEpiGlasses
+
+#- type: characterItemGroup
+#  id: LoadoutPsionicMantisGloves
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutPsionicMantisHead
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutPsionicMantisId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutPsionicMantisNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutPsionicMantisMask
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutPsionicMantisOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutScienceOuterWinterCoatMantis
+
+#- type: characterItemGroup
+#  id: LoadoutPsionicMantisShoes
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutPsionicMantisUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutPsionicMantisUniformSuit
+    - type: loadout
+      id: LoadoutPsionicMantisUniformSkirt

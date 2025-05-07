@@ -45,6 +45,8 @@
     contents:
       - id: HandheldHealthAnalyzer
         prob: 0.6
+      - id: ClothingHeadMirror
+        prob: 0.1
       - id: ClothingHandsGlovesLatex
       - id: ClothingHeadsetMedical
       - id: ClothingEyesHudMedical
@@ -109,7 +111,7 @@
         prob: 0.3
       - id: ClothingMaskSterile
       - id: LunchboxMedicalFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3 
+        prob: 0.3
 
 - type: entity
   parent: LockerWallMedical
@@ -145,7 +147,7 @@
         orGroup: Surgshrubs
       - id: ClothingMaskSterile
       - id: LunchboxMedicalFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3 
+        prob: 0.3
 
 - type: entity
   id: LockerChemistryFilled
@@ -187,7 +189,8 @@
       - id: MedkitFilled
         prob: 0.3
       - id: LunchboxMedicalFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3 
+        prob: 0.3
+      - id: EmergencyNitrousOxideTankFilled
 
 - type: entity
   id: LockerParamedicFilledHardsuit #Delta V - Paramedic locker with suit
@@ -211,4 +214,5 @@
       - id: MedkitFilled
         prob: 0.3
       - id: LunchboxMedicalFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3 
+        prob: 0.3
+      - id: EmergencyNitrousOxideTankFilled

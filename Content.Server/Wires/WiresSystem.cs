@@ -4,14 +4,14 @@ using System.Threading;
 using Content.Server.Construction;
 using Content.Server.Construction.Components;
 using Content.Server.Power.Components;
-using Content.Server.UserInterface;
 using Content.Shared.DoAfter;
 using Content.Shared.GameTicking;
 using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
+using Content.Shared.Power;
+using Content.Shared.Tag; // Shitmed Change
 using Content.Shared.Tools.Components;
-using Content.Shared.UserInterface;
 using Content.Shared.Wires;
 using Robust.Server.GameObjects;
 using Robust.Shared.Player;
@@ -23,13 +23,13 @@ namespace Content.Server.Wires;
 public sealed class WiresSystem : SharedWiresSystem
 {
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
-    [Dependency] private readonly ActivatableUISystem _activatableUI = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ConstructionSystem _construction = default!;
+    [Dependency] private readonly TagSystem _tags = default!; // Shitmed Change
 
     // This is where all the wire layouts are stored.
     [ViewVariables] private readonly Dictionary<string, WireLayout> _layouts = new();
@@ -51,8 +51,6 @@ public sealed class WiresSystem : SharedWiresSystem
         SubscribeLocalEvent<WiresComponent, TimedWireEvent>(OnTimedWire);
         SubscribeLocalEvent<WiresComponent, PowerChangedEvent>(OnWiresPowered);
         SubscribeLocalEvent<WiresComponent, WireDoAfterEvent>(OnDoAfter);
-        SubscribeLocalEvent<ActivatableUIRequiresPanelComponent, ActivatableUIOpenAttemptEvent>(OnAttemptOpenActivatableUI);
-        SubscribeLocalEvent<ActivatableUIRequiresPanelComponent, PanelChangedEvent>(OnActivatableUIPanelChanged);
         SubscribeLocalEvent<WiresPanelSecurityComponent, WiresPanelSecurityEvent>(SetWiresPanelSecurity);
     }
 
@@ -347,7 +345,7 @@ public sealed class WiresSystem : SharedWiresSystem
         }
     }
 
-    private class ActiveWireAction
+    private sealed class ActiveWireAction
     {
         /// <summary>
         ///     The wire action's ID. This is so that once the action is finished,
@@ -393,11 +391,11 @@ public sealed class WiresSystem : SharedWiresSystem
 
     private void OnWiresActionMessage(EntityUid uid, WiresComponent component, WiresActionMessage args)
     {
-        if (args.Session.AttachedEntity == null)
+        if (args.Actor == null)
         {
             return;
         }
-        var player = (EntityUid) args.Session.AttachedEntity;
+        var player = (EntityUid) args.Actor;
 
         if (!EntityManager.TryGetComponent(player, out HandsComponent? handsComponent))
         {
@@ -458,7 +456,16 @@ public sealed class WiresSystem : SharedWiresSystem
         {
             if (TryComp(args.User, out ActorComponent? actor))
             {
-                _uiSystem.TryOpen(uid, WiresUiKey.Key, actor.PlayerSession);
+                // Shitmed Change Start
+                if (_tags.HasTag(args.Used, component.ShowWiresTag))
+                    component.ViewWires = true;
+                else
+                    component.ViewWires = false;
+
+                UpdateUserInterface(uid);
+                // Shitmed Change End
+
+                _uiSystem.OpenUi(uid, WiresUiKey.Key, actor.PlayerSession);
                 args.Handled = true;
             }
         }
@@ -468,24 +475,8 @@ public sealed class WiresSystem : SharedWiresSystem
     {
         if (args.Open)
             return;
-        _uiSystem.TryCloseAll(ent, WiresUiKey.Key);
-    }
 
-    private void OnAttemptOpenActivatableUI(EntityUid uid, ActivatableUIRequiresPanelComponent component, ActivatableUIOpenAttemptEvent args)
-    {
-        if (args.Cancelled || !TryComp<WiresPanelComponent>(uid, out var wires))
-            return;
-
-        if (component.RequireOpen != wires.Open)
-            args.Cancel();
-    }
-
-    private void OnActivatableUIPanelChanged(EntityUid uid, ActivatableUIRequiresPanelComponent component, ref PanelChangedEvent args)
-    {
-        if (args.Open == component.RequireOpen)
-            return;
-
-        _activatableUI.CloseAll(uid);
+        _uiSystem.CloseUi(ent.Owner, WiresUiKey.Key);
     }
 
     private void OnMapInit(EntityUid uid, WiresComponent component, MapInitEvent args)
@@ -568,24 +559,41 @@ public sealed class WiresSystem : SharedWiresSystem
         var statuses = new List<(int position, object key, object value)>();
         foreach (var (key, value) in wires.Statuses)
         {
-            var valueCast = ((int position, StatusLightData? value)) value;
-            statuses.Add((valueCast.position, key, valueCast.value!));
+            // Shitmed Change Start
+            var tempValue = value;
+            var lightData = (((int, StatusLightData?)) tempValue);
+            if (lightData.Item2 != null && lightData.Item2 is StatusLightData data)
+            {
+                if (wires.ViewWires)
+                {
+                    var foundWires = wires.WiresList
+                        .Where(wire => wire.OriginalPosition == lightData.Item1)
+                        .ToList();
+                    if (foundWires.Any())
+                    {
+                        var wireLetters = string.Join(", ", foundWires.Select(wire => wire.Letter.ToString()));
+                        data.Text = $"{data.Text}({wireLetters})";
+                    }
+                }
+
+                statuses.Add((lightData.Item1, key, data));
+            }
+            // Shitmed Change End
         }
 
         statuses.Sort((a, b) => a.position.CompareTo(b.position));
 
-        _uiSystem.TrySetUiState(uid, WiresUiKey.Key, new WiresBoundUserInterfaceState(
+        _uiSystem.SetUiState((uid, ui), WiresUiKey.Key, new WiresBoundUserInterfaceState(
             clientList.ToArray(),
             statuses.Select(p => new StatusEntry(p.key, p.value)).ToArray(),
             Loc.GetString(wires.BoardName),
             wires.SerialNumber,
-            wires.WireSeed), ui: ui);
+            wires.WireSeed));
     }
 
     public void OpenUserInterface(EntityUid uid, ICommonSession player)
     {
-        if (_uiSystem.TryGetUi(uid, WiresUiKey.Key, out var ui))
-            _uiSystem.OpenUi(ui, player);
+        _uiSystem.OpenUi(uid, WiresUiKey.Key, player);
     }
 
     /// <summary>
@@ -629,7 +637,7 @@ public sealed class WiresSystem : SharedWiresSystem
 
         if (!args.WiresAccessible)
         {
-            _uiSystem.TryCloseAll(uid, WiresUiKey.Key);
+            _uiSystem.CloseUi(uid, WiresUiKey.Key);
         }
     }
 
@@ -701,7 +709,7 @@ public sealed class WiresSystem : SharedWiresSystem
             {
                 NeedHand = true,
                 BreakOnDamage = true,
-                BreakOnUserMove = true
+                BreakOnMove = true
             };
 
             _doAfter.TryStartDoAfter(args);

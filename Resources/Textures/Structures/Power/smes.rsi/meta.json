@@ -1,12 +1,21 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from Paradise at https://github.com/McRamon/Paradise/blob/b727162ed9dead12de42be5c5b04872934a474e1/icons/obj/power.dmi",
+  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/9c7d509354ee030300f63c701da63c17928c3b3b and modified by Swept, advanced-smes, advanced-smes-static, advanced-smes-open modified from smes, smes-open, and static by august-sun (GitHub)",
   "size": {
     "x": 32,
     "y": 32
   },
   "states": [
+    {
+      "name": "advancedsmes"
+    },
+    {
+      "name": "advancedsmes-static"
+    },
+    {
+      "name": "advancedsmes-open"
+    },
     {
       "name": "smes"
     },

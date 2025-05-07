@@ -19,7 +19,13 @@ ui-options-general-discord = Discord
 ui-options-general-cursor = Cursor
 ui-options-general-speech = Speech
 ui-options-general-storage = Storage
+ui-options-general-other = Other
 ui-options-general-accessibility = Accessibility
+ui-options-chatstack = Automatically merge identical chat messages
+ui-options-chatstack-off = Off
+ui-options-chatstack-single = Only last message
+ui-options-chatstack-double = Last two messages
+ui-options-chatstack-triple = Last three messages
 
 ## Audio menu
 
@@ -88,9 +94,14 @@ ui-options-vp-integer-scaling-tooltip = If this option is enabled, the viewport 
                                         at specific resolutions. While this results in crisp textures, it also often
                                         means that black bars appear at the top/bottom of the screen or that part
                                         of the viewport is not visible.
+ui-options-vp-vertical-fit = Vertical viewport fitting
+ui-options-vp-vertical-fit-tooltip = When enabled, the main viewport will ignore the horizontal axis entirely when
+                                     fitting to your screen. If your screen is smaller than the viewport, then this
+                                     will cause the viewport to be cut off on the horizontal axis.
 ui-options-vp-low-res = Low-resolution viewport
 ui-options-parallax-low-quality = Low-quality Parallax (background)
 ui-options-fps-counter = Show FPS counter
+ui-options-mood-visual-effects = Enable the mood system's visual effects
 ui-options-vp-width = Viewport width: { $width }
 ui-options-hud-layout = HUD layout:
 
@@ -98,6 +109,7 @@ ui-options-hud-layout = HUD layout:
 
 ui-options-binds-reset-all = Reset ALL keybinds
 ui-options-binds-explanation = Click to change binding, right-click to clear
+ui-options-binds-search = Search
 ui-options-unbound = Unbound
 ui-options-bind-reset = Reset
 ui-options-key-prompt = Press a key...
@@ -107,6 +119,7 @@ ui-options-header-camera = Camera
 ui-options-header-interaction-basic = Basic Interaction
 ui-options-header-interaction-adv = Advanced Interaction
 ui-options-header-ui = User Interface
+ui-options-header-targeting = Targeting
 ui-options-header-misc = Miscellaneous
 ui-options-header-hotbar = Hotbar
 ui-options-header-shuttle = Shuttle
@@ -149,6 +162,7 @@ ui-options-function-save-item-location = Save item location
 ui-options-function-toggle-standing = Toggle standing
 ui-options-function-toggle-crawling-under = Toggle crawling under furniture
 ui-options-static-storage-ui = Lock storage window to hotbar
+ui-options-modern-progress-bar = Modern progress bar
 
 ui-options-function-smart-equip-backpack = Smart-equip to backpack
 ui-options-function-smart-equip-belt = Smart-equip to belt
@@ -159,6 +173,13 @@ ui-options-function-try-pull-object = Pull object
 ui-options-function-move-pulled-object = Move pulled object
 ui-options-function-release-pulled-object = Release pulled object
 ui-options-function-point = Point at location
+
+ui-options-function-target-head = Target head
+ui-options-function-target-torso = Target torso
+ui-options-function-target-left-arm = Target left arm
+ui-options-function-target-right-arm = Target right arm
+ui-options-function-target-left-leg = Target left leg
+ui-options-function-target-right-leg = Target right leg
 
 ui-options-function-focus-chat-input-window = Focus chat
 ui-options-function-focus-local-chat-window = Focus chat (IC)
@@ -178,6 +199,7 @@ ui-options-function-open-crafting-menu = Open crafting menu
 ui-options-function-open-inventory-menu = Open inventory
 ui-options-function-open-a-help = Open admin help
 ui-options-function-open-abilities-menu = Open action menu
+ui-options-function-toggle-round-end-summary-window = Toggle round end summary window
 ui-options-function-open-entity-spawn-window = Open entity spawn menu
 ui-options-function-open-sandbox-window = Open sandbox menu
 ui-options-function-open-tile-spawn-window = Open tile spawn menu
@@ -200,8 +222,10 @@ ui-options-function-editor-line-place = Place line
 ui-options-function-editor-rotate-object = Rotate
 ui-options-function-editor-flip-object = Flip
 ui-options-function-editor-copy-object = Copy
+ui-options-function-mapping-enable-pick = Pick object/tile
+ui-options-function-mapping-enable-decal-pick = Pick decal
+ui-options-function-mapping-enable-delete = Delete object
 
-ui-options-function-open-abilities-menu = Open action menu
 ui-options-function-show-debug-console = Open Console
 ui-options-function-show-debug-monitors = Show Debug Monitors
 ui-options-function-inspect-entity = Inspect Entity

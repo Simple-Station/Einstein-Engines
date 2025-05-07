@@ -12,6 +12,35 @@
     protectionTime: 5
 
 - type: entity
+  parent: [ClothingEyesEyepatch, BaseFoldable]
+  id: ClothingEyesEyepatchColor
+  name: eyepatch
+  description: Yarr.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Misc/eyepatch_color.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Misc/eyepatch_color.rsi
+  - type: EyeProtection
+    protectionTime: 5
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+
+- type: entity
+  parent: ClothingEyesEyepatchColor
+  id: ClothingEyesEyepatchColorFlipped
+  suffix: flipped
+  components:
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: flipped
+
+- type: entity
   parent: ClothingEyesBase
   id: ClothingEyesBlindfold
   name: blindfold
@@ -28,12 +57,34 @@
   - type: FlashImmunity
 
 - type: entity
+  parent: ClothingEyesBlindfold
+  id: ClothingEyesBlindfoldColor
+  suffix: colorable
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Misc/blindfold_color.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Misc/blindfold_color.rsi
+
+- type: entity
   parent: ClothingEyesBase
   id: ClothingEyesBlindfoldFake
   name: blindfold
   description: The bind leading the blind.
+  suffix: fake
   components:
   - type: Sprite
     sprite: Clothing/Eyes/Misc/blindfold.rsi
   - type: Clothing
     sprite: Clothing/Eyes/Misc/blindfold.rsi
+
+- type: entity
+  parent: ClothingEyesBlindfoldFake
+  id: ClothingEyesBlindfoldFakeColor
+  suffix: colorable, fake
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Misc/blindfold_color.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Misc/blindfold_color.rsi
+

@@ -10,6 +10,11 @@
       makeSentient: true
       name: ghost-role-information-behonker-name
       description: ghost-role-information-behonker-description
+      rules: ghost-role-information-antagonist-rules
+      mindRoles:
+      - MindRoleGhostRoleSoloAntagonist
+      raffle:
+        settings: default
     - type: GhostTakeoverAvailable
     - type: HTN
       rootTask:
@@ -76,8 +81,8 @@
         - id: BikeHorn
     - type: UserInterface
       interfaces:
-      - key: enum.StrippingUiKey.Key
-        type: StrippableBoundUserInterface
+        enum.StrippingUiKey.Key:
+          type: StrippableBoundUserInterface
     - type: MobThresholds
       thresholds:
         0: Alive
@@ -115,6 +120,7 @@
     - type: Bloodstream
       bloodMaxVolume: 300
       bloodReagent: Laughter
+    - type: Fauna # Lavaland Change
 
 - type: entity
   name: behonker

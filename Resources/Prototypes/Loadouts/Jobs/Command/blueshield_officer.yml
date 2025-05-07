@@ -1,0 +1,382 @@
+# Uncategorized
+# Backpacks
+- type: loadout
+  id: LoadoutClothingBackpackBlueshield
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBackpackBlueshield
+
+- type: loadout
+  id: LoadoutClothingSatchelBlueshield
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBackpackSatchelBlueshield
+
+- type: loadout
+  id: LoadoutClothingDuffelBlueshield
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBackpackDuffelBlueshield
+
+- type: loadout
+  id: LoadoutClothingModsuitBlueshield
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingModsuitPraetorian #Blueshield modsuit
+
+
+# Belt
+
+# Ears
+
+# Equipment
+- type: loadout
+  id: LoadoutBSOEnergyRevolver
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 18000 # 5 hours
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - WeaponEnergyRevolverSecurity
+
+- type: loadout
+  id: LoadoutBSORifleChester
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerPrimary
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - WeaponLeverChester
+    - BlueshieldAmmunitionBoxFilled
+
+- type: loadout
+  id: LoadoutBSORifleBRDIR25
+  category: JobsCommandBlueshieldOfficer
+  cost: 9 # Significant upgrade over a Chester, offered here for the STYLE. Intentionally priced at you not being able to buy all 3 medical items alongside it, plus being unable to buy it alongside the CQC Manual.
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerPrimary
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - WeaponSubMachineGunBRDIR25BSO # The Den sprites
+
+- type: loadout
+  id: LoadoutBSOGreatShield
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerPrimary
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - BlueShieldShieldFilled
+
+- type: loadout
+  id: LoadoutBSOMedkitCombatFilled
+  category: JobsCommandBlueshieldOfficer
+  cost: 2
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - MedkitCombatFilled
+
+- type: loadout
+  id: LoadoutBSOPortafib
+  category: JobsCommandBlueshieldOfficer
+  cost: 2
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - Portafib
+
+- type: loadout
+  id: LoadoutBSOCrewMonitor
+  category: JobsCommandBlueshieldOfficer
+  cost: 2 # BSO's main job is to keep command safe, they should be able to monitor their status & location without that costing too many points.
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - HandheldCrewMonitor
+
+- type: loadout
+  id: LoadoutBSOCQCManual
+  category: JobsCommandBlueshieldOfficer
+  cost: 8 # You can run this alongside the 3 medical items, but then you will be restricted to free gear for everything else such as weapons or other utilities.
+  requirements: # Knowledge does not occupy a weapon slot. You are a trained bodyguard, so it makes sense to have it. Balanced out by costing over half of your loadout points.
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - BSOManual
+
+- type: loadout
+  id: LoadoutBSOTerminus
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerPrimary
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+    - !type:CharacterAgeRequirement
+      min: 21
+    - !type:CharacterSpeciesRequirement
+      species:
+      - Oni
+  items:
+    - Terminus
+
+# Eyes
+
+# Gloves
+
+# Head
+- type: loadout
+  id: LoadoutClothingBlueshieldBeretNavy
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerHats
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingHeadHatBeretNavy
+
+- type: loadout
+  id: LoadoutClothingBlueshieldBeretOfficer
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerHats
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingHeadHatBeretOfficer
+
+- type: loadout
+  id: LoadoutClothingBlueshieldCowboyHat
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerHats
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingHeadHatCowboyBlueshield
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+- type: loadout
+  id: LoadoutClothingBlueshieldArmoredJacket
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerVests
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBlueshieldArmoredJacket
+
+- type: loadout
+  id: LoadoutClothingBlueshieldArmoredCowboyJacket
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerVests
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBlueshieldArmoredCowboyJacket
+
+- type: loadout
+  id: LoadoutClothingBlueshieldArmorVest
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerVests
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBlueshieldArmourVest
+
+- type: loadout
+  id: LoadoutClothingBlueshieldArmoredMarine
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerVests
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBlueshieldArmoredMarine
+
+- type: loadout
+  id: LoadoutClothingBlueshieldArmoredVest
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerVests
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBlueshieldArmoredVest
+
+- type: loadout
+  id: LoadoutClothingBlueshieldArmoredKimono
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerVests
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBlueshieldArmoredKimono
+
+- type: loadout
+  id: LoadoutClothingBlueshieldArmoredCoat
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerVests
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBlueshieldArmoredCoat
+
+# Shoes
+
+# Uniforms
+- type: loadout
+  id: LoadoutClothingUniformJumpskirtBlueshieldOfficer
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingUniformJumpskirtBlueshieldOfficer
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitBlueshieldOfficer
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingUniformJumpsuitBlueshieldOfficer

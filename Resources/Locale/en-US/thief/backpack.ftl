@@ -15,9 +15,9 @@ thief-backpack-button-deselect = Select [X]
 
 thief-backpack-category-chameleon-name = chameleon's kit
 thief-backpack-category-chameleon-description =
-    Includes a full set of clothing that contain
-    chameleon technology, allowing you to disguise
-    as pretty much anything on the station.
+    Includes a full set of clothing that contains chameleon technology,
+    Contains a chameleon projector to help disguise yourself as objects,
+    You'll be able to disguise yourself as almost anything and anyone.
 
 thief-backpack-category-tools-name = bearcatcher's kit
 thief-backpack-category-tools-description =
@@ -53,6 +53,13 @@ thief-backpack-category-communicator-description =
     A communication enthusiast's kit. Includes a master key
     for all station channels, a cybersun pen, a portable
     crew monitor, a voice chameleon mask and lots of money for business deals.
+
+thief-backpack-category-communicator-plasmaman-name = communicator's kit
+thief-backpack-category-communicator-plasmaman-description =
+    A communication enthusiast's kit. Includes a master key
+    for all station channels, a cybersun pen, a portable
+    crew monitor, a voice chameleon mask, a tacticool envirosuit
+    and lots of money for business deals.
 
 thief-backpack-category-smuggler-name = smuggler's kit
 thief-backpack-category-smuggler-description =

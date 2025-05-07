@@ -10,6 +10,7 @@ using Content.Shared.Ame.Components;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Database;
 using Content.Shared.Mind.Components;
+using Content.Shared.Power;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -129,11 +130,11 @@ public sealed class AmeControllerSystem : EntitySystem
         if (!Resolve(uid, ref controller))
             return;
 
-        if (!_userInterfaceSystem.TryGetUi(uid, AmeControllerUiKey.Key, out var bui))
+        if (!_userInterfaceSystem.HasUi(uid, AmeControllerUiKey.Key))
             return;
 
         var state = GetUiState(uid, controller);
-        _userInterfaceSystem.SetUiState(bui, state);
+        _userInterfaceSystem.SetUiState(uid, AmeControllerUiKey.Key, state);
 
         controller.NextUIUpdate = _gameTiming.CurTime + controller.UpdateUIPeriod;
     }
@@ -324,7 +325,7 @@ public sealed class AmeControllerSystem : EntitySystem
 
     private void OnUiButtonPressed(EntityUid uid, AmeControllerComponent comp, UiButtonPressedMessage msg)
     {
-        var user = msg.Session.AttachedEntity;
+        var user = msg.Actor;
         if (!Exists(user))
             return;
 
@@ -334,7 +335,7 @@ public sealed class AmeControllerSystem : EntitySystem
             _ => true,
         };
 
-        if (!PlayerCanUseController(uid, user!.Value, needsPower, comp))
+        if (!PlayerCanUseController(uid, user, needsPower, comp))
             return;
 
         _audioSystem.PlayPvs(comp.ClickSound, uid, AudioParams.Default.WithVolume(-2f));

@@ -79,7 +79,12 @@ namespace Content.Shared.Showers
             {
                 if (component.PlayingStream == null)
                 {
-                    component.PlayingStream = _audio.PlayPvs(component.LoopingSound, uid, AudioParams.Default.WithLoop(true).WithMaxDistance(5)).Value.Entity;
+                    var audio = _audio.PlayPvs(component.LoopingSound, uid, AudioParams.Default.WithLoop(true).WithMaxDistance(5));
+
+                    if (audio == null)
+                        return;
+
+                    component.PlayingStream = audio!.Value.Entity;
                 }
             }
             else

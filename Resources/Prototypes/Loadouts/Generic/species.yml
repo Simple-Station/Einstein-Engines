@@ -1,0 +1,77 @@
+- type: loadout
+  id: LoadoutSpeciesEmergencyNitrogenTank
+  category: Species
+  cost: 0
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+        - Vox
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAirTank
+  items:
+    - EmergencyNitrogenTankFilled
+
+- type: loadout
+  id: LoadoutSpeciesExtendedEmergencyNitrogenTank
+  category: Species
+  cost: 1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+        - Vox
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAirTank
+  items:
+    - ExtendedEmergencyNitrogenTankFilled
+
+- type: loadout
+  id: LoadoutSpeciesDoubleEmergencyNitrogenTank
+  category: Species
+  cost: 2
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+        - Vox
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAirTank
+  items:
+    - DoubleEmergencyNitrogenTankFilled
+
+- type: loadout
+  id: LoadoutSpeciesPowerCellHigh
+  category: Species
+  cost: 6
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+  items:
+    - PowerCellHigh
+
+- type: loadout
+  id: LoadoutSpeciesMantleMag
+  category: Species
+  cost: 6
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Harpy
+        - Diona
+        - Arachne
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Engineering
+          - Command
+          - Dignitary
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - Paramedic
+          - SalvageSpecialist
+  items:
+    - ClothingNeckMantleMag

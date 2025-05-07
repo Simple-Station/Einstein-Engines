@@ -15,7 +15,10 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
-    - HidesNose
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    hideOnToggle: true
 
 - type: entity
   parent: ClothingMaskGas
@@ -36,6 +39,8 @@
         Slash: 0.95
         Piercing: 0.95
         Heat: 0.95
+  - type: IngestionBlocker # Goobstation
+    blockSmokeIngestion: true
 
 - type: entity
   parent: ClothingMaskGas
@@ -56,6 +61,8 @@
         Slash: 0.95
         Piercing: 0.95
         Heat: 0.95
+  - type: IngestionBlocker # Goobstation
+    blockSmokeIngestion: true
 
 - type: entity
   parent: ClothingMaskGas
@@ -84,6 +91,17 @@
     sprite: Clothing/Mask/gascaptain.rsi
   - type: BreathMask
   - type: IngestionBlocker
+
+- type: entity
+  parent: ClothingMaskGasExplorer
+  id: ClothingMaskGasCaptainCombat
+  name: captain's combat gas mask
+  description: A military-grade gas mask that can be connected to an air supply, painted and outfitted with an emblem befitting its wearer. Issued only to the station's finest.
+  components:
+  - type: Sprite
+    sprite: Clothing/Mask/gascaptaincombat.rsi
+  - type: Clothing
+    sprite: Clothing/Mask/gascaptaincombat.rsi
 
 - type: entity
   parent: ClothingMaskGasAtmos
@@ -197,8 +215,10 @@
     tags:
     - ClownMask
     - WhitelistChameleon
-    - HidesNose
-    - IPCMaskWearable # Estacao Pirata - IPCs
+    - IPCMaskWearable
+  - type: HideLayerClothing
+    slots:
+    - Snout
 
 - type: entity
   parent: ClothingMaskClownBase
@@ -209,7 +229,9 @@
     - ClownMask
     - HamsterWearable
     - WhitelistChameleon
-    - HidesNose
+  - type: HideLayerClothing
+    slots:
+    - Snout
 
 - type: entity
   parent: ClothingMaskClown
@@ -238,8 +260,10 @@
   - type: IdentityBlocker
   - type: Tag
     tags:
-    - HidesNose
-    - IPCMaskWearable # Estacao Pirata - IPCs
+    - IPCMaskWearable
+  - type: HideLayerClothing
+    slots:
+    - Snout
 
 - type: entity
   parent: ClothingMaskBase
@@ -257,8 +281,10 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
-    - HidesNose
-    - IPCMaskWearable # Estacao Pirata - IPCs
+    - IPCMaskWearable
+  - type: HideLayerClothing
+    slots:
+    - Snout
 
 - type: entity
   parent: ClothingMaskPullableBase
@@ -272,9 +298,12 @@
     sprite: Clothing/Mask/sterile.rsi
   - type: IngestionBlocker
   - type: Item
-    storedRotation: -90
+    size: Tiny
   - type: IdentityBlocker
     coverage: MOUTH
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 25
 
 - type: entity
   parent: ClothingMaskBase
@@ -309,9 +338,10 @@
   - type: BreathMask
   - type: IngestionBlocker
   - type: IdentityBlocker
-  - type: Tag
-    tags:
-    - HidesNose
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    hideOnToggle: true
 
 - type: entity
   parent: ClothingMaskClownBase
@@ -341,8 +371,11 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-    - HidesHair
-    - HidesNose
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    hideOnToggle: true
 
 - type: entity
   parent: ClothingMaskGasExplorer
@@ -368,8 +401,13 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-    - HidesHair
-    - HidesNose
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    hideOnToggle: true
+  - type: IngestionBlocker # Goobstation
+    blockSmokeIngestion: true
 
 - type: entity
   parent: ClothingMaskGasERT
@@ -405,7 +443,9 @@
     - IPCMaskWearable # Estacao Pirata - IPCs
     - HamsterWearable
     - WhitelistChameleon
-    - HidesNose
+  - type: HideLayerClothing
+    slots:
+    - Snout
   - type: IdentityBlocker
 
 - type: entity
@@ -422,8 +462,10 @@
   - type: IdentityBlocker
   - type: Tag
     tags:
-    - HidesNose
-    - IPCMaskWearable # Estacao Pirata - IPCs
+    - IPCMaskWearable
+  - type: HideLayerClothing
+    slots:
+    - Snout
 
 - type: entity
   parent: ClothingMaskBase
@@ -439,8 +481,10 @@
   - type: IdentityBlocker
   - type: Tag
     tags:
-    - HidesNose
-    - IPCMaskWearable # Estacao Pirata - IPCs
+    - IPCMaskWearable
+  - type: HideLayerClothing
+    slots:
+    - Snout
 
 - type: entity
   parent: ClothingMaskBase
@@ -456,8 +500,10 @@
   - type: IdentityBlocker
   - type: Tag
     tags:
-    - HidesNose
-    - IPCMaskWearable # Estacao Pirata - IPCs
+    - IPCMaskWearable
+  - type: HideLayerClothing
+    slots:
+    - Snout
 
 - type: entity
   parent: ClothingMaskBase
@@ -473,8 +519,10 @@
   - type: IdentityBlocker
   - type: Tag
     tags:
-    - HidesNose
-    - IPCMaskWearable # Estacao Pirata - IPCs
+    - IPCMaskWearable
+  - type: HideLayerClothing
+    slots:
+    - Snout
 
 - type: entity
   parent: ClothingMaskBase
@@ -490,8 +538,10 @@
   - type: IdentityBlocker
   - type: Tag
     tags:
-    - HidesNose
-    - IPCMaskWearable # Estacao Pirata - IPCs
+    - IPCMaskWearable
+  - type: HideLayerClothing
+    slots:
+    - Snout
 
 - type: entity
   parent: ClothingMaskBase
@@ -507,8 +557,10 @@
   - type: IdentityBlocker
   - type: Tag
     tags:
-    - HidesNose
-    - IPCMaskWearable # Estacao Pirata - IPCs
+    - IPCMaskWearable
+  - type: HideLayerClothing
+    slots:
+    - Snout
 
 - type: entity
   parent: ClothingMaskBase
@@ -526,6 +578,16 @@
     tags:
     - WhitelistChameleon
     - IPCMaskWearable # Estacao Pirata - IPCs
+
+- type: entity
+  parent: ClothingMaskNeckGaiter
+  id: ClothingMaskNeckGaiterWhite
+  name: neck gaiter
+  components:
+  - type: Sprite
+    sprite: Clothing/Mask/neckgaiterwhite.rsi
+  - type: Clothing
+    sprite: Clothing/Mask/neckgaiterwhite.rsi
 
 - type: entity
   parent: ClothingMaskNeckGaiter
@@ -615,3 +677,4 @@
   - type: Tag
     tags:
     - IPCMaskWearable # Estacao Pirata - IPCs
+  - type: Unremoveable

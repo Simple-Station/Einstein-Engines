@@ -34,7 +34,47 @@
     sprite: DeltaV/Clothing/OuterClothing/Armor/riot.rsi # DeltaV - resprite
     state: icon
   product: CrateSecurityRiot
-  cost: 5500
+  cost: 7500
+  category: cargoproduct-category-name-security
+  group: market
+
+- type: cargoProduct
+  id: SecuritySwat
+  icon:
+    sprite: DeltaV/Clothing/OuterClothing/Armor/riot.rsi # DeltaV - resprite
+    state: icon
+  product: CrateSecuritySwat
+  cost: 12500
+  category: cargoproduct-category-name-security
+  group: market
+
+- type: cargoProduct
+  id: SecurityHeavyAblative
+  icon:
+    sprite: _EE/Clothing/Generic/OuterClothing/heavy_armor_ablative.rsi
+    state: icon
+  product: CrateSecurityHeavyAblativeArmor
+  cost: 15000
+  category: cargoproduct-category-name-security
+  group: market
+
+- type: cargoProduct
+  id: SecurityHeavyBallistic
+  icon:
+    sprite: _EE/Clothing/Generic/OuterClothing/heavy_armor_ballistic.rsi
+    state: icon
+  product: CrateSecurityHeavyBallisticArmor
+  cost: 15000
+  category: cargoproduct-category-name-security
+  group: market
+
+- type: cargoProduct
+  id: SecurityHeavyStandard
+  icon:
+    sprite: _EE/Clothing/Generic/OuterClothing/heavy_armor_standard.rsi
+    state: icon
+  product: CrateSecurityHeavySecurityArmor
+  cost: 15000
   category: cargoproduct-category-name-security
   group: market
 
@@ -44,7 +84,7 @@
     sprite: Objects/Storage/boxes.rsi
     state: box_security
   product: CrateSecuritySupplies
-  cost: 500
+  cost: 1000
   category: cargoproduct-category-name-security
   group: market
 

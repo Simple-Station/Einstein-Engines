@@ -13,6 +13,7 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Map;
 using System.Numerics;
+using Content.Shared.Power;
 using Robust.Server.GameObjects;
 
 namespace Content.Server.Anomaly;
@@ -61,7 +62,7 @@ public sealed partial class AnomalySystem
         var materialAmount = _material.GetMaterialAmount(uid, component.RequiredMaterial);
 
         var state = new AnomalyGeneratorUserInterfaceState(component.CooldownEndTime, materialAmount, component.MaterialPerAnomaly);
-        _ui.TrySetUiState(uid, AnomalyGeneratorUiKey.Key, state);
+        _ui.SetUiState(uid, AnomalyGeneratorUiKey.Key, state);
     }
 
     public void TryGeneratorCreateAnomaly(EntityUid uid, AnomalyGeneratorComponent? component = null)

@@ -199,7 +199,7 @@ namespace Content.Client.Inventory
 
         public void UIInventoryStorageActivate(string slot)
         {
-            EntityManager.EntityNetManager?.SendSystemNetworkMessage(new OpenSlotStorageNetworkMessage(slot));
+            EntityManager.RaisePredictiveEvent(new OpenSlotStorageNetworkMessage(slot));
         }
 
         public void UIInventoryExamine(string slot, EntityUid uid)
@@ -235,9 +235,24 @@ namespace Content.Client.Inventory
             EntityManager.RaisePredictiveEvent(new InteractInventorySlotEvent(GetNetEntity(item.Value), altInteract: true));
         }
 
+        protected override void UpdateInventoryTemplate(Entity<InventoryComponent> ent)
+        {
+            base.UpdateInventoryTemplate(ent);
+
+            if (TryComp(ent, out InventorySlotsComponent? inventorySlots))
+            {
+                foreach (var slot in ent.Comp.Slots)
+                {
+                    if (inventorySlots.SlotData.TryGetValue(slot.Name, out var slotData))
+                        slotData.SlotDef = slot;
+                }
+            }
+        }
+
         public sealed class SlotData
         {
-            public readonly SlotDefinition SlotDef;
+            [ViewVariables] // Shitmed Change - Mostly for debugging.
+            public SlotDefinition SlotDef;
             public EntityUid? HeldEntity => Container?.ContainedEntity;
             public bool Blocked;
             public bool Highlighted;
@@ -251,6 +266,7 @@ namespace Content.Client.Inventory
             public string SlotGroup => SlotDef.SlotGroup;
             public string SlotDisplayName => SlotDef.DisplayName;
             public string TextureName => "Slots/" + SlotDef.TextureName;
+            public string FullTextureName => SlotDef.FullTextureName;
 
             public SlotData(SlotDefinition slotDef, ContainerSlot? container = null, bool highlighted = false,
                 bool blocked = false)

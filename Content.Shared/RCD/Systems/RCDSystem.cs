@@ -65,6 +65,8 @@ public class RCDSystem : EntitySystem
         SubscribeLocalEvent<RCDComponent, DoAfterAttemptEvent<RCDDoAfterEvent>>(OnDoAfterAttempt);
         SubscribeLocalEvent<RCDComponent, RCDSystemMessage>(OnRCDSystemMessage);
         SubscribeNetworkEvent<RCDConstructionGhostRotationEvent>(OnRCDconstructionGhostRotationEvent);
+        SubscribeNetworkEvent<RCDConstructionGhostFlipEvent>(OnRCDConstructionGhostFlipEvent);
+
     }
 
     #region Event handling
@@ -84,6 +86,8 @@ public class RCDSystem : EntitySystem
         // The RCD has no valid recipes somehow? Get rid of it
         QueueDel(uid);
     }
+
+
 
     private void OnRCDSystemMessage(EntityUid uid, RCDComponent component, RCDSystemMessage args)
     {
@@ -211,8 +215,7 @@ public class RCDSystem : EntitySystem
         {
             BreakOnDamage = true,
             BreakOnHandChange = true,
-            BreakOnUserMove = true,
-            BreakOnTargetMove = args.Target != null,
+            BreakOnMove = true,
             AttemptFrequency = AttemptFrequency.EveryTick,
             CancelDuplicate = false,
             BlockDuplicate = false,
@@ -295,6 +298,28 @@ public class RCDSystem : EntitySystem
         rcd.ConstructionDirection = ev.Direction;
         Dirty(uid, rcd);
     }
+
+
+    private void OnRCDConstructionGhostFlipEvent(RCDConstructionGhostFlipEvent ev, EntitySessionEventArgs session)
+    {
+        var uid = GetEntity(ev.NetEntity);
+
+        // Determine if player that send the message is carrying the specified RCD in their active hand
+        if (session.SenderSession.AttachedEntity == null)
+            return;
+
+        if (!TryComp<HandsComponent>(session.SenderSession.AttachedEntity, out var hands) ||
+            uid != hands.ActiveHand?.HeldEntity)
+            return;
+
+        if (!TryComp<RCDComponent>(uid, out var rcd))
+            return;
+
+        // Update the construction direction
+        rcd.UseMirrorPrototype = ev.UseMirrorPrototype;
+        Dirty(uid, rcd);
+    }
+
 
     #endregion
 
@@ -450,6 +475,13 @@ public class RCDSystem : EntitySystem
         // Attempt to deconstruct a floor tile
         if (target == null)
         {
+            if (component.IsRpd)
+            {
+                if (popMsgs)
+                    _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
+
+                return false;
+            }
             // The tile is empty
             if (mapGridData.Tile.Tile.IsEmpty)
             {
@@ -483,8 +515,17 @@ public class RCDSystem : EntitySystem
         // Attempt to deconstruct an object
         else
         {
+            // The object is not in the RPD whitelist
+            if (!TryComp<RCDDeconstructableComponent>(target, out var deconstructible) || !deconstructible.RpdDeconstructable && component.IsRpd)
+            {
+                if (popMsgs)
+                    _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
+
+                return false;
+            }
+
             // The object is not in the whitelist
-            if (!TryComp<RCDDeconstructableComponent>(target, out var deconstructible) || !deconstructible.Deconstructable)
+            if (!deconstructible.Deconstructable)
             {
                 if (popMsgs)
                     _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
@@ -516,7 +557,12 @@ public class RCDSystem : EntitySystem
                 break;
 
             case RcdMode.ConstructObject:
-                var ent = Spawn(component.CachedPrototype.Prototype, _mapSystem.GridTileToLocal(mapGridData.GridUid, mapGridData.Component, mapGridData.Position));
+                var proto = (component.UseMirrorPrototype &&
+                    !string.IsNullOrEmpty(component.CachedPrototype.MirrorPrototype))
+                    ? component.CachedPrototype.MirrorPrototype
+                    : component.CachedPrototype.Prototype;
+
+                var ent = Spawn(proto, _mapSystem.GridTileToLocal(mapGridData.GridUid, mapGridData.Component, mapGridData.Position));
 
                 switch (component.CachedPrototype.Rotation)
                 {
@@ -574,7 +620,6 @@ public class RCDSystem : EntitySystem
         }
 
         gridUid = mapGrid.Owner;
-
         var tile = _mapSystem.GetTileRef(gridUid.Value, mapGrid, location);
         var position = _mapSystem.TileIndicesFor(gridUid.Value, mapGrid, location);
         mapGridData = new MapGridData(gridUid.Value, mapGrid, location, tile, position);
@@ -592,8 +637,12 @@ public class RCDSystem : EntitySystem
 
     public void UpdateCachedPrototype(EntityUid uid, RCDComponent component)
     {
-        if (component.ProtoId.Id != component.CachedPrototype?.Prototype)
+        if (component.ProtoId.Id != component.CachedPrototype?.Prototype ||
+            (component.CachedPrototype?.MirrorPrototype != null &&
+            component.ProtoId.Id != component.CachedPrototype?.MirrorPrototype))
+        {
             component.CachedPrototype = _protoManager.Index(component.ProtoId);
+        }
     }
 
     #endregion

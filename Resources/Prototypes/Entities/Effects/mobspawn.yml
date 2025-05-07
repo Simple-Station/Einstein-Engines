@@ -61,7 +61,7 @@
 
 - type: entity
   id: EffectAnomalyFloraBulb
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 0.4

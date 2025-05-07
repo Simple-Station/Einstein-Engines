@@ -36,7 +36,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v3.2.0
       with:
-        dotnet-version: 8.0.100
+        dotnet-version: 9.0.x
 
     - name: Install dependencies
       run: dotnet restore
@@ -51,7 +51,7 @@ jobs:
       shell: pwsh
       run: |
         $env:DOTNET_gcServer=1
-        dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj -- NUnit.ConsoleOut=0 NUnit.MapWarningTo=Failed
+        dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj -- NUnit.ConsoleOut=0
   ci-success:
     name: Build & Test Debug
     needs:

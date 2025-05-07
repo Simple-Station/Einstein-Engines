@@ -30,7 +30,7 @@
 
 #Atmospherics Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBase, BaseIntegratedMagboot]
   id: ClothingOuterHardsuitAtmos
   name: atmos hardsuit
   description: A special suit that protects against hazardous, low pressure environments. Has thermal shielding.
@@ -39,11 +39,18 @@
     sprite: Clothing/OuterClothing/Hardsuits/atmospherics.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/atmospherics.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
     coefficient: 0.001
+  - type: FireProtection
+    reduction: 1
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: Armor
@@ -52,19 +59,38 @@
         Blunt: 0.9
         Slash: 0.9
         Piercing: 0.9
-        Heat: 0.2
+        Heat: 0.8
         Radiation: 0.5
-        Caustic: 0.5
   - type: ClothingSpeedModifier
     walkModifier: 0.7
     sprintModifier: 0.7
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitAtmos
+  - type: GuideHelp
+    guides: [ HephaestusIndustries ]
 
 #Engineering Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBase, BaseIntegratedMagboot]
+  id: ClothingOuterHardsuitEngineeringUnpainted
+  name: engineering hardsuit
+  description: A special suit that protects against hazardous, low pressure environments. Has radiation shielding.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Hardsuits/engineering-base.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Hardsuits/engineering-base.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitEngineeringUnpainted
+
+- type: entity
+  parent: [ClothingOuterHardsuitBase, BaseIntegratedMagboot]
   id: ClothingOuterHardsuitEngineering
   name: engineering hardsuit
   description: A special suit that protects against hazardous, low pressure environments. Has radiation shielding.
@@ -73,11 +99,14 @@
     sprite: Clothing/OuterClothing/Hardsuits/engineering.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/engineering.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
   - type: PressureProtection
     highPressureMultiplier: 0.04
     lowPressureMultiplier: 1000
-  - type: TemperatureProtection
-    coefficient: 0.01
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: Armor
@@ -97,10 +126,16 @@
     clothingPrototype: ClothingHeadHelmetHardsuitEngineering
   - type: StaminaDamageResistance
     coefficient: 0.75 # 25%
+  - type: GuideHelp
+    guides: [ HephaestusIndustries ]
+  - type: TemperatureProtection
+    coefficient: 0.001
+  - type: FireProtection
+    reduction: 1
 
 #Spationaut Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBase, BaseIntegratedMagboot]
   id: ClothingOuterHardsuitSpatio
   name: spationaut hardsuit
   description: A lightweight hardsuit designed for industrial EVA in zero gravity.
@@ -126,10 +161,12 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSpatio
+  - type: GuideHelp
+    guides: [ HephaestusIndustries ]
 
 #Salvage Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBase, BaseIntegratedMagboot]
   id: ClothingOuterHardsuitSalvage
   name: mining hardsuit
   description: A special suit that protects against hazardous, low pressure environments. Has reinforced plating for wildlife encounters.
@@ -157,10 +194,12 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSalvage
+  - type: GuideHelp
+    guides: [ HephaestusIndustries ]
 
 #Paramedic Voidsuit
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBase, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
   id: ClothingOuterHardsuitVoidParamed
   name: paramedic hardsuit
   description: A hardsuit made for paramedics.
@@ -188,10 +227,12 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitVoidParamed
+  - type: GuideHelp
+    guides: [ ZengHuPharmaceuticals ]
 
 
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBaseMedium, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
   id: ClothingOuterHardsuitMaxim
   name: salvager maxim hardsuit
   description: Fire. Heat. These things forge great weapons, they also forge great salvagers.
@@ -218,12 +259,16 @@
     damageCoefficient: 0.2
   - type: TemperatureProtection
     coefficient: 0.001
+  - type: FireProtection
+    reduction: 1
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitMaxim
+  - type: GuideHelp
+    guides: [ HephaestusIndustries ]
 
 #Security Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: ClothingOuterHardsuitBaseMedium
   id: ClothingOuterHardsuitSecurity
   name: security hardsuit
   description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
@@ -244,6 +289,7 @@
         Slash: 0.6
         Piercing: 0.6
         Caustic: 0.7
+        Heat: 0.7 # Goobstation
   - type: ClothingSpeedModifier
     walkModifier: 0.75
     sprintModifier: 0.75
@@ -255,7 +301,7 @@
 
 #Brigmedic Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: ClothingOuterHardsuitBaseMedium
   id: ClothingOuterHardsuitBrigmedic
   name: corpsman hardsuit # DeltaV - rename brigmedic to corpsman
   description: Special hardsuit of the guardian angel of the brig. It is the medical version of the security hardsuit. # I will fix the rest of this entry later when I resprite sec suits
@@ -263,6 +309,11 @@
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/brigmedic.rsi
   - type: Clothing
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-glow
+        shader: unshaded
     sprite: Clothing/OuterClothing/Hardsuits/brigmedic.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.3
@@ -273,6 +324,7 @@
         Blunt: 0.8
         Slash: 0.8
         Piercing: 0.7
+        Heat: 0.7 # Goobstation
   - type: ClothingSpeedModifier
     walkModifier: 0.65
     sprintModifier: 0.65
@@ -284,7 +336,7 @@
 
 #Warden's Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: ClothingOuterHardsuitBaseHeavy
   id: ClothingOuterHardsuitWarden
   name: warden's hardsuit
   description: A specialized riot suit geared to combat low pressure environments.
@@ -305,6 +357,7 @@
         Slash: 0.6
         Piercing: 0.6
         Caustic: 0.7
+        Heat: 0.7 # Goobstation
   - type: ClothingSpeedModifier
     walkModifier: 0.7
     sprintModifier: 0.7
@@ -316,7 +369,7 @@
 
 #Captain's Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBaseMedium, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
   id: ClothingOuterHardsuitCap
   name: captain's armored spacesuit
   description: A formal armored spacesuit, made for the station's captain.
@@ -347,10 +400,12 @@
     clothingPrototype: ClothingHeadHelmetHardsuitCap
   - type: StaminaDamageResistance
     coefficient: 0.5 # 50%
+  - type: GuideHelp
+    guides: [ NanoTrasen ]
 
 #Chief Engineer's Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBaseMedium, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
   id: ClothingOuterHardsuitEngineeringWhite
   name: chief engineer's hardsuit
   description: A special hardsuit that protects against hazardous, low pressure environments, made for the chief engineer of the station.
@@ -359,6 +414,11 @@
     sprite: Clothing/OuterClothing/Hardsuits/engineering-white.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/engineering-white.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
@@ -384,10 +444,16 @@
     - type: SupermatterImmune
   - type: StaminaDamageResistance
     coefficient: 0.65 # 35%
+  - type: GuideHelp
+    guides: [ HephaestusIndustries ]
+  - type: TemperatureProtection
+    coefficient: 0.001
+  - type: FireProtection
+    reduction: 1
 
 #Chief Medical Officer's Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBase, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
   id: ClothingOuterHardsuitMedical
   name: chief medical officer's hardsuit
   description: A special suit that protects against hazardous, low pressure environments. Built with lightweight materials for easier movement.
@@ -409,13 +475,15 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitMedical
+  - type: GuideHelp
+    guides: [ ZengHuPharmaceuticals ]
 
 #Research Director's Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: ClothingOuterHardsuitBaseHeavy
   id: ClothingOuterHardsuitRd
   name: experimental research hardsuit
-  description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor. Able to be compressed to small sizes.
+  description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/rd.rsi
@@ -440,7 +508,9 @@
     sprintModifier: 0.75
   - type: HeldSpeedModifier
   - type: Item
-    size: Normal
+    size: Huge
+    shape:
+    - 0,0,4,4 #5X5, can fit in a duffel bag but nothing smaller.
   - type: Tag
     tags:
     - WhitelistChameleon
@@ -453,6 +523,8 @@
     stealGroup: ClothingOuterHardsuitRd
   - type: StaminaDamageResistance
     coefficient: 0.75 # 25% as in "shock resistance" :trollface:
+  - type: GuideHelp
+    guides: [ NanoTrasen ]
 
 #Head of Security's Hardsuit
 - type: entity
@@ -478,6 +550,7 @@
         Piercing: 0.5
         Radiation: 0.5
         Caustic: 0.6
+        Heat: 0.6 # Goobstation
   - type: ClothingSpeedModifier
     walkModifier: 0.8
     sprintModifier: 0.8
@@ -489,8 +562,8 @@
 
 #Luxury Mining Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBase
-  id: ClothingOuterHardsuitLuxury #DO NOT MAP - https://github.com/space-wizards/space-station-14/pull/19738#issuecomment-1703486738
+  parent: [ClothingOuterHardsuitBaseMedium, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
+  id: ClothingOuterHardsuitLuxury
   name: luxury mining hardsuit
   description: A refurbished mining hardsuit, fashioned after the Logistics Officer's colors. Graphene lining provides less protection, but is much easier to move. # DeltaV - Logistics Department replacing Cargo
   components:
@@ -517,21 +590,46 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitLuxury
+  - type: GuideHelp
+    guides: [ HephaestusIndustries ]
 
 #ANTAG HARDSUITS
 #Blood-red Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: ClothingOuterHardsuitSyndie
+  id: ClothingOuterHardsuitShanlinUnpainted
+  name: Cybersun tacsuit
+  description: A special suit that protects against hazardous, low pressure environments. Has radiation shielding.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Hardsuits/syndicate-base.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Hardsuits/syndicate-base.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitShanlinUnpainted
+
+- type: entity
+  parent: [ClothingOuterHardsuitBaseMedium, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
   id: ClothingOuterHardsuitSyndie
   name: blood-red hardsuit
   description: A heavily armored hardsuit designed for work in special operations. Property of Gorlex Marauders.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/syndicate.rsi
+    sprite: _Impstation/Clothing/OuterClothing/Hardsuits/syndicate.rsi
   - type: Item
     size: Huge
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/syndicate.rsi
+    sprite: _Impstation/Clothing/OuterClothing/Hardsuits/syndicate.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-glow
+        shader: unshaded
   - type: PressureProtection
     highPressureMultiplier: 0.05
     lowPressureMultiplier: 1000
@@ -569,9 +667,14 @@
   description: A heavily armored and agile advanced hardsuit specifically designed for field medic operations.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/syndiemedic.rsi
+    sprite: _Impstation/Clothing/OuterClothing/Hardsuits/syndicate_agent.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/syndiemedic.rsi
+    sprite: _Impstation/Clothing/OuterClothing/Hardsuits/syndicate_agent.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-glow
+        shader: unshaded
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndieMedic
   - type: Tag
@@ -584,15 +687,38 @@
 
 #Syndicate Elite Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: ClothingOuterHardsuitSyndieElite
+  id: ClothingOuterHardsuitShiweiUnpainted
+  name: Cybersun tacsuit
+  description: A special suit that protects against hazardous, low pressure environments. Has radiation shielding.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Hardsuits/syndicate-elite-base.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Hardsuits/syndicate-elite-base.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitShiweiUnpainted
+
+- type: entity
+  parent: [ClothingOuterHardsuitBase, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
   id: ClothingOuterHardsuitSyndieElite
   name: syndicate elite hardsuit
   description: An elite version of the blood-red hardsuit, with improved mobility and fireproofing. Property of Gorlex Marauders.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/syndieelite.rsi
+    sprite: _Impstation/Clothing/OuterClothing/Hardsuits/syndicate_elite.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/syndieelite.rsi
+    sprite: _Impstation/Clothing/OuterClothing/Hardsuits/syndicate_elite.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-glow
+        shader: unshaded
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
@@ -600,6 +726,8 @@
     coefficient: 0.001
   - type: ExplosionResistance
     damageCoefficient: 0.2
+  - type: FireProtection
+    reduction: 1 # perfect protection like atmos firesuit for pyro tf2 ops
   - type: Armor
     modifiers:
       coefficients:
@@ -622,15 +750,20 @@
 
 #Syndicate Commander Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBaseHeavy, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
   id: ClothingOuterHardsuitSyndieCommander
   name: syndicate commander hardsuit
   description: A bulked up version of the blood-red hardsuit, purpose-built for the commander of a syndicate operative squad. Has significantly improved armor for those deadly front-lines firefights.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/syndiecommander.rsi
+    sprite: _Impstation/Clothing/OuterClothing/Hardsuits/syndicate_commander.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/syndiecommander.rsi
+    sprite: _Impstation/Clothing/OuterClothing/Hardsuits/syndicate_commander.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-glow
+        shader: unshaded
   - type: PressureProtection
     highPressureMultiplier: 0.05
     lowPressureMultiplier: 1000
@@ -653,40 +786,61 @@
     clothingPrototype: ClothingHeadHelmetHardsuitSyndieCommander
   - type: StaminaDamageResistance
     coefficient: 0.5 # 50%
+  - type: Item
+    size: Huge
 
 #Cybersun Juggernaut Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBaseHeavy, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
   id: ClothingOuterHardsuitJuggernaut
   name: cybersun juggernaut suit
   description: A suit made by the cutting edge R&D department at cybersun to be hyper resilient.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/cybersun.rsi
+    sprite: _Impstation/Clothing/OuterClothing/Hardsuits/syndicate_juggernaut.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/cybersun.rsi
+    sprite: _Impstation/Clothing/OuterClothing/Hardsuits/syndicate_juggernaut.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-glow
+        shader: unshaded
   - type: PressureProtection
     highPressureMultiplier: 0.2
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.3
+    damageCoefficient: 0.1
   - type: Armor
     modifiers:
+      flatReductions:
+        Blunt: 3
+        Piercing: 3
+        Slash: 3
       coefficients:
-        Blunt: 0.2
-        Slash: 0.2
-        Piercing: 0.2
-        Heat: 0.2
-        Radiation: 0.2
-        Caustic: 0.2
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.3
+        Heat: 0.4
+        Radiation: 0.75
+        Caustic: 0.6
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.65
+    sprintModifier: 0.7
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCybersun
   - type: StaminaDamageResistance
-    coefficient: 0.5 # 50%
+    coefficient: 1 # Replaced with HEAVY modify stun time and slow protection
+  - type: Reflect
+    spread: 270
+    reflectProb: 0.45
+    innate: true
+    reflects:
+      - Energy
+      - NonEnergy
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.5
+  - type: ClothingModifyStunTime # Goobstation
+    modifier: 0.2
 
 #Wizard Hardsuit
 - type: entity
@@ -822,7 +976,7 @@
 #CENTCOMM / ERT HARDSUITS
 #ERT Leader Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitSyndieCommander
+  parent: ClothingOuterHardsuitCBURN
   id: ClothingOuterHardsuitERTLeader
   name: ERT leader's hardsuit
   description: A protective hardsuit worn by the leader of an emergency response team.
@@ -838,7 +992,7 @@
 
 #ERT Chaplain Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitJuggernaut
+  parent: ClothingOuterHardsuitCBURN
   id: ClothingOuterHardsuitERTChaplain
   name: ERT chaplain's hardsuit
   description: A protective hardsuit worn by the chaplains of an Emergency Response Team.
@@ -867,10 +1021,14 @@
     clothingPrototype: ClothingHeadHelmetHardsuitERTEngineer
   - type: StaminaDamageResistance
     coefficient: 0.5 # 50%
+  - type: TemperatureProtection
+    coefficient: 0.001
+  - type: FireProtection
+    reduction: 1
 
 #ERT Medic Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitSyndieMedic
+  parent: ClothingOuterHardsuitCBURN
   id: ClothingOuterHardsuitERTMedical
   name: ERT medic's hardsuit
   description: A protective hardsuit worn by the medics of an emergency response team.
@@ -886,7 +1044,7 @@
 
 #ERT Security Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitSyndie
+  parent: ClothingOuterHardsuitCBURN
   id: ClothingOuterHardsuitERTSecurity
   name: ERT security's hardsuit
   description: A protective hardsuit worn by the security officers of an emergency response team.
@@ -922,7 +1080,7 @@
 
 #Deathsquad
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBaseHeavy, BaseIntegratedMagboot, BaseIntegratedManeuveringThrusters]
   id: ClothingOuterHardsuitDeathsquad
   name: death squad hardsuit
   description: An advanced hardsuit favored by commandos for use in special operations.
@@ -958,7 +1116,7 @@
 
 #CBURN Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: ClothingOuterHardsuitBaseMedium
   id: ClothingOuterHardsuitCBURN
   name: CBURN exosuit
   description: A lightweight yet strong exosuit used for special cleanup operations.
@@ -1020,9 +1178,9 @@
     walkModifier: 0.9
     sprintModifier: 0.9
   - type: HeldSpeedModifier
-  #- type: Construction # DeltaV - Prevent clowns from making the hardsuit
-  #   graph: ClownHardsuit
-  #   node: clownHardsuit
+  - type: Construction
+    graph: ClownHardsuit
+    node: clownHardsuit
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitClown
 
@@ -1037,9 +1195,9 @@
     sprite: Clothing/OuterClothing/Hardsuits/mime.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/mime.rsi
-#  - type: Construction # DeltaV - Nuh uh
-#    graph: MimeHardsuit
-#    node: mimeHardsuit
+  - type: Construction
+    graph: MimeHardsuit
+    node: mimeHardsuit
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitMime
 

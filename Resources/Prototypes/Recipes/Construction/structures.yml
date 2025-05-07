@@ -458,7 +458,7 @@
   targetNode: plasmaWindow
   category: construction-category-structures
   canBuildInImpassable: true
-  description: Clear and even tougher, with a purple tint.
+  description: Explosion resistant and even tougher, with a purple tint.
   conditions:
     - !type:EmptyOrWindowValidInTile
     - !type:NoWindowsInTile
@@ -477,7 +477,7 @@
   targetNode: reinforcedPlasmaWindow
   category: construction-category-structures
   canBuildInImpassable: true
-  description: Fire resistant and even tougher, with a purple tint.
+  description: Very explosion resistant and even tougher, with a purple tint.
   conditions:
     - !type:EmptyOrWindowValidInTile
     - !type:NoWindowsInTile
@@ -496,7 +496,7 @@
   targetNode: plasmaWindowDiagonal
   category: construction-category-structures
   canBuildInImpassable: true
-  description: Clear and even tougher, with a purple tint.
+  description: Explosion resistant and even tougher, with a purple tint.
   conditions:
     - !type:EmptyOrWindowValidInTile
     - !type:NoWindowsInTile
@@ -514,7 +514,7 @@
   targetNode: reinforcedPlasmaWindowDiagonal
   category: construction-category-structures
   canBuildInImpassable: true
-  description: Fire resistant and even tougher, with a purple tint.
+  description: Very explosion resistant and even tougher, with a purple tint.
   conditions:
     - !type:EmptyOrWindowValidInTile
     - !type:NoWindowsInTile
@@ -586,7 +586,7 @@
   targetNode: plasmaWindowDirectional
   category: construction-category-structures
   canBuildInImpassable: true
-  description: Clear and even tougher, with a purple tint.
+  description: Explosion resistant and even tougher, with a purple tint.
   conditions:
     - !type:EmptyOrWindowValidInTile
     - !type:NoWindowsInTile
@@ -604,7 +604,7 @@
   targetNode: plasmaReinforcedWindowDirectional
   category: construction-category-structures
   canBuildInImpassable: true
-  description: Fire resistant and even tougher, with a purple tint.
+  description: Very explosion resistant and even tougher, with a purple tint.
   conditions:
     - !type:EmptyOrWindowValidInTile
     - !type:NoWindowsInTile
@@ -846,10 +846,11 @@
   conditions:
     - !type:TileNotBlocked
       failIfSpace: false
-    - !type:TileType
-      targets:
-        - Lattice
-        - Plating
+# Lavaland Change: add ability to build catwalks on any tiles
+#    - !type:TileType
+#      targets:
+#        - Lattice
+#        - Plating
   icon:
     sprite: Structures/catwalk.rsi
     state: catwalk_preview
@@ -1589,23 +1590,6 @@
     - !type:TileNotBlocked
 
 - type: construction
-  name: airtight plastic flaps
-  id: PlasticFlapsAirtight
-  graph: PlasticFlapsGraph
-  startNode: start
-  targetNode: airtightFlaps
-  category: construction-category-structures
-  placementMode: SnapgridCenter
-  description: An airtight plastic flap to let items through and keep people out.
-  objectType: Structure
-  canBuildInImpassable: false
-  icon:
-    sprite: Structures/plastic_flaps.rsi
-    state: plasticflaps
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
   name: opaque plastic flaps
   id: PlasticFlapsOpaque
   graph: PlasticFlapsGraph
@@ -1614,23 +1598,6 @@
   category: construction-category-structures
   placementMode: SnapgridCenter
   description: An opaque plastic flap to let items through and keep people out.
-  objectType: Structure
-  canBuildInImpassable: false
-  icon:
-    sprite: Structures/plastic_flaps.rsi
-    state: plasticflaps
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  name: airtight opaque plastic flaps
-  id: PlasticFlapsAirtightOpaque
-  graph: PlasticFlapsGraph
-  startNode: start
-  targetNode: airtightopaqueFlaps
-  category: construction-category-structures
-  placementMode: SnapgridCenter
-  description: An opaque, airtight plastic flap to let items through and keep people out.
   objectType: Structure
   canBuildInImpassable: false
   icon:

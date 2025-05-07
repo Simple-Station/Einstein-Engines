@@ -66,13 +66,19 @@ public abstract class SharedAnnouncerSystem : EntitySystem
     public string GetAnnouncementId(string announcementId, bool ended = false)
     {
         // Replace the first letter with lowercase
-        var id = char.ToLowerInvariant(announcementId[0]) + announcementId[1..];
+        var id = OopsConcat(char.ToLowerInvariant(announcementId[0]).ToString(), announcementId[1..]);
 
         // If the event has ended, add "Complete" to the end
         if (ended)
             id += "Complete";
 
         return id;
+    }
+
+    private string OopsConcat(string a, string b)
+    {
+        // This exists to prevent Roslyn being clever and compiling something that fails sandbox checks.
+        return a + b;
     }
 
 

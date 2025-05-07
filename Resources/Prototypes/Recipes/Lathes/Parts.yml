@@ -84,3 +84,34 @@
     Plastic: 150
     Plasma: 75
     Gold: 75
+
+#Rating 4
+- type: latheRecipe
+  id: BluespaceCapacitorStockPart
+  result: BluespaceCapacitorStockPart
+  completetime: 3
+  materials:
+    Steel: 150
+    Plastic: 150
+    Gold: 75
+    Bluespace: 300
+
+- type: latheRecipe
+  id: BluespaceMatterBinStockPart
+  result: BluespaceMatterBinStockPart
+  completetime: 3
+  materials:
+    Steel: 150
+    Plastic: 150
+    Gold: 75
+    Bluespace: 300
+
+- type: latheRecipe
+  id: BluespaceManipulatorStockPart
+  result: BluespaceManipulatorStockPart
+  completetime: 3
+  materials:
+    Steel: 150
+    Plastic: 150
+    Gold: 75
+    Bluespace: 300

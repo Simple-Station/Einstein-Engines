@@ -82,6 +82,7 @@
       openingAnimationTime: 0.6
       closingAnimationTime: 0.6
     - type: Weldable
+      fuel: 5
       time: 3
     - type: Firelock
     - type: Appearance
@@ -89,7 +90,7 @@
     - type: WiresPanel
     - type: UserInterface
       interfaces:
-        - key: enum.WiresUiKey.Key
+        enum.WiresUiKey.Key:
           type: WiresBoundUserInterface
     - type: Physics
       canCollide: false
@@ -108,11 +109,13 @@
     - type: DoorBolt
     - type: AccessReader
       access: [ [ "Engineering" ] ]
+    - type: NavMapDoor
 
 - type: entity
   id: Firelock
   parent: BaseFirelock
   components:
+  - type: StationAiWhitelist
   - type: ContainerContainer
     containers:
       board: !type:Container
@@ -130,6 +133,7 @@
   parent: Firelock
   name: glass firelock
   components:
+    - type: StationAiWhitelist
     - type: Sprite
       sprite: Structures/Doors/Airlocks/Glass/firelock.rsi
     - type: Occluder
@@ -155,6 +159,7 @@
   parent: Firelock
   name: firelock
   components:
+    - type: StationAiWhitelist
     - type: Sprite
       sprite: Structures/Doors/edge_door_hazard.rsi
       snapCardinals: false

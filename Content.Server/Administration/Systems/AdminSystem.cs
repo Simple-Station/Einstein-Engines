@@ -4,7 +4,6 @@ using Content.Server.Chat.Managers;
 using Content.Server.Forensics;
 using Content.Server.GameTicking;
 using Content.Server.Hands.Systems;
-using Content.Server.IdentityManagement;
 using Content.Server.Mind;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Server.Popups;
@@ -16,6 +15,7 @@ using Content.Shared.GameTicking;
 using Content.Shared.Hands.Components;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Inventory;
+using Content.Shared.Mind;
 using Content.Shared.PDA;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Popups;
@@ -31,6 +31,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Administration.Systems
 {
@@ -52,6 +53,7 @@ namespace Content.Server.Administration.Systems
         [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly StationRecordsSystem _stationRecords = default!;
         [Dependency] private readonly TransformSystem _transform = default!;
+        [Dependency] private readonly IPrototypeManager _protoMan = default!;
 
         private readonly Dictionary<NetUserId, PlayerInfo> _playerList = new();
 
@@ -62,6 +64,7 @@ namespace Content.Server.Administration.Systems
 
         private readonly HashSet<NetUserId> _roundActivePlayers = new();
         public readonly PanicBunkerStatus PanicBunker = new();
+        public readonly BabyJailStatus BabyJail = new();
 
         public override void Initialize()
         {
@@ -70,12 +73,24 @@ namespace Content.Server.Administration.Systems
             _playerManager.PlayerStatusChanged += OnPlayerStatusChanged;
             _adminManager.OnPermsChanged += OnAdminPermsChanged;
 
+            // Panic Bunker Settings
             Subs.CVar(_config, CCVars.PanicBunkerEnabled, OnPanicBunkerChanged, true);
             Subs.CVar(_config, CCVars.PanicBunkerDisableWithAdmins, OnPanicBunkerDisableWithAdminsChanged, true);
             Subs.CVar(_config, CCVars.PanicBunkerEnableWithoutAdmins, OnPanicBunkerEnableWithoutAdminsChanged, true);
             Subs.CVar(_config, CCVars.PanicBunkerCountDeadminnedAdmins, OnPanicBunkerCountDeadminnedAdminsChanged, true);
             Subs.CVar(_config, CCVars.PanicBunkerShowReason, OnShowReasonChanged, true);
             Subs.CVar(_config, CCVars.PanicBunkerMinAccountAge, OnPanicBunkerMinAccountAgeChanged, true);
+            Subs.CVar(_config, CCVars.PanicBunkerMinOverallHours, OnPanicBunkerMinOverallHoursChanged, true);
+
+            /*
+             * TODO: Remove baby jail code once a more mature gateway process is established. This code is only being issued as a stopgap to help with potential tiding in the immediate future.
+             */
+
+            // Baby Jail Settings
+            Subs.CVar(_config, CCVars.BabyJailEnabled, OnBabyJailChanged, true);
+            Subs.CVar(_config, CCVars.BabyJailShowReason, OnBabyJailShowReasonChanged, true);
+            Subs.CVar(_config, CCVars.BabyJailMaxAccountAge, OnBabyJailMaxAccountAgeChanged, true);
+            Subs.CVar(_config, CCVars.BabyJailMaxOverallHours, OnBabyJailMaxOverallHoursChanged, true);
             Subs.CVar(_config, CCVars.PanicBunkerMinOverallHours, OnPanicBunkerMinOverallHoursChanged, true);
 
             SubscribeLocalEvent<IdentityChangedEvent>(OnIdentityChanged);
@@ -92,13 +107,11 @@ namespace Content.Server.Administration.Systems
 
             foreach (var (id, data) in _playerList)
             {
-                if (!data.ActiveThisRound)
+                if (!data.ActiveThisRound
+                    || !_playerManager.TryGetPlayerData(id, out var playerData)
+                    || !_playerManager.TryGetSessionById(id, out var session))
                     continue;
 
-                if (!_playerManager.TryGetPlayerData(id, out var playerData))
-                    return;
-
-                _playerManager.TryGetSessionById(id, out var session);
                 _playerList[id] = GetPlayerInfo(playerData, session);
             }
 
@@ -145,11 +158,13 @@ namespace Content.Server.Administration.Systems
         private void OnRoleEvent(RoleEvent ev)
         {
             var session = _minds.GetSession(ev.Mind);
-            if (!ev.Antagonist || session == null)
+
+            if (!ev.RoleTypeUpdate || session == null)
                 return;
 
             UpdatePlayerList(session);
         }
+
 
         private void OnAdminPermsChanged(AdminPermsChangedEventArgs obj)
         {
@@ -218,9 +233,16 @@ namespace Content.Server.Administration.Systems
             }
 
             var antag = false;
+
+            RoleTypePrototype roleType = new();
             var startingRole = string.Empty;
-            if (_minds.TryGetMind(session, out var mindId, out _))
+            if (_minds.TryGetMind(session, out var mindId, out var mindComp))
             {
+                if (_protoMan.TryIndex(mindComp.RoleType, out var role))
+                    roleType = role;
+                else
+                    Log.Error($"{ToPrettyString(mindId)} has invalid Role Type '{mindComp.RoleType}'. Displaying '{Loc.GetString(roleType.Name)}' instead");
+
                 antag = _role.MindIsAntagonist(mindId);
                 startingRole = _jobs.MindTryGetJobName(mindId);
             }
@@ -234,7 +256,7 @@ namespace Content.Server.Administration.Systems
                 overallPlaytime = playTime;
             }
 
-            return new PlayerInfo(name, entityName, identityName, startingRole, antag, GetNetEntity(session?.AttachedEntity), data.UserId,
+            return new PlayerInfo(name, entityName, identityName, startingRole, antag, roleType, GetNetEntity(session?.AttachedEntity), data.UserId,
                 connected, _roundActivePlayers.Contains(data.UserId), overallPlaytime);
         }
 
@@ -247,6 +269,17 @@ namespace Content.Server.Administration.Systems
             ));
 
             SendPanicBunkerStatusAll();
+        }
+
+        private void OnBabyJailChanged(bool enabled)
+        {
+            BabyJail.Enabled = enabled;
+            _chat.SendAdminAlert(Loc.GetString(enabled
+                ? "admin-ui-baby-jail-enabled-admin-alert"
+                : "admin-ui-baby-jail-disabled-admin-alert"
+            ));
+
+            SendBabyJailStatusAll();
         }
 
         private void OnPanicBunkerDisableWithAdminsChanged(bool enabled)
@@ -273,10 +306,22 @@ namespace Content.Server.Administration.Systems
             SendPanicBunkerStatusAll();
         }
 
-        private void OnPanicBunkerMinAccountAgeChanged(int minutes)
+        private void OnBabyJailShowReasonChanged(bool enabled)
         {
-            PanicBunker.MinAccountAgeHours = minutes / 60;
+            BabyJail.ShowReason = enabled;
+            SendBabyJailStatusAll();
+        }
+
+        private void OnPanicBunkerMinAccountAgeChanged(int hours)
+        {
+            PanicBunker.MinAccountAgeHours = hours;
             SendPanicBunkerStatusAll();
+        }
+
+        private void OnBabyJailMaxAccountAgeChanged(int hours)
+        {
+            BabyJail.MaxOverallHours = hours;
+            SendBabyJailStatusAll();
         }
 
         private void OnPanicBunkerMinOverallHoursChanged(int hours)
@@ -285,12 +330,31 @@ namespace Content.Server.Administration.Systems
             SendPanicBunkerStatusAll();
         }
 
+        private void OnBabyJailMaxOverallHoursChanged(int hours)
+        {
+            BabyJail.MaxAccountAgeHours = hours;
+            SendBabyJailStatusAll();
+        }
+
         private void UpdatePanicBunker()
         {
             var admins = PanicBunker.CountDeadminnedAdmins
                 ? _adminManager.AllAdmins
                 : _adminManager.ActiveAdmins;
             var hasAdmins = admins.Any();
+
+            // TODO Fix order dependent Cvars
+            // Please for the sake of my sanity don't make cvars & order dependent.
+            // Just make a bool field on the system instead of having some cvars automatically modify other cvars.
+            //
+            // I.e., this:
+            //   /sudo cvar game.panic_bunker.enabled true
+            //   /sudo cvar game.panic_bunker.disable_with_admins true
+            // and this:
+            //   /sudo cvar game.panic_bunker.disable_with_admins true
+            //   /sudo cvar game.panic_bunker.enabled true
+            //
+            // should have the same effect, but currently setting the disable_with_admins can modify enabled.
 
             if (hasAdmins && PanicBunker.DisableWithAdmins)
             {
@@ -307,6 +371,15 @@ namespace Content.Server.Administration.Systems
         private void SendPanicBunkerStatusAll()
         {
             var ev = new PanicBunkerChangedEvent(PanicBunker);
+            foreach (var admin in _adminManager.AllAdmins)
+            {
+                RaiseNetworkEvent(ev, admin);
+            }
+        }
+
+        private void SendBabyJailStatusAll()
+        {
+            var ev = new BabyJailChangedEvent(BabyJail);
             foreach (var admin in _adminManager.AllAdmins)
             {
                 RaiseNetworkEvent(ev, admin);

@@ -14,6 +14,48 @@
   radius: 4
 
 - type: biomeMarkerLayer
+  id: OreAluminium
+  entityMask:
+    AsteroidRock: AsteroidRockAluminium
+    WallRock: WallRockAluminium
+    WallRockBasalt: WallRockBasaltAluminium
+    WallRockChromite: WallRockChromiteAluminium
+    WallRockSand: WallRockSandAluminium
+    WallRockSnow: WallRockSnowAluminium
+  maxCount: 30
+  minGroupSize: 7
+  maxGroupSize: 15
+  radius: 4
+
+- type: biomeMarkerLayer
+  id: OreCopper
+  entityMask:
+    AsteroidRock: AsteroidRockCopper
+    WallRock: WallRockCopper
+    WallRockBasalt: WallRockBasaltCopper
+    WallRockChromite: WallRockChromiteCopper
+    WallRockSand: WallRockSandCopper
+    WallRockSnow: WallRockSnowCopper
+  maxCount: 30
+  minGroupSize: 7
+  maxGroupSize: 15
+  radius: 4
+
+- type: biomeMarkerLayer
+  id: OreLead
+  entityMask:
+    AsteroidRock: AsteroidRockLead
+    WallRock: WallRockLead
+    WallRockBasalt: WallRockBasaltLead
+    WallRockChromite: WallRockChromiteLead
+    WallRockSand: WallRockSandLead
+    WallRockSnow: WallRockSnowLead
+  maxCount: 30
+  minGroupSize: 5
+  maxGroupSize: 8
+  radius: 4
+
+- type: biomeMarkerLayer
   id: OreQuartz
   entityMask:
     AsteroidRock: AsteroidRockQuartz
@@ -128,6 +170,34 @@
   maxCount: 12
   minGroupSize: 5
   maxGroupSize: 10
+  radius: 4
+
+- type: biomeMarkerLayer
+  id: OreDiamond
+  entityMask:
+    AsteroidRock: AsteroidRockDiamond
+    WallRock: WallRockDiamond
+    WallRockBasalt: WallRockBasaltDiamond
+    WallRockChromite: WallRockChromiteDiamond
+    WallRockSand: WallRockSandDiamond
+    WallRockSnow: WallRockSnowDiamond
+  maxCount: 6
+  minGroupSize: 1
+  maxGroupSize: 2
+  radius: 4
+
+- type: biomeMarkerLayer
+  id: OreTungsten
+  entityMask:
+    AsteroidRock: AsteroidRockTungsten
+    WallRock: WallRockTungsten
+    WallRockBasalt: WallRockBasaltTungsten
+    WallRockChromite: WallRockChromiteTungsten
+    WallRockSand: WallRockSandTungsten
+    WallRockSnow: WallRockSnowTungsten
+  maxCount: 6
+  minGroupSize: 3
+  maxGroupSize: 6
   radius: 4
 
 # Artifact Fragment

@@ -68,6 +68,37 @@
 
 - type: entity
   parent: OreBase
+  id: DiamondOre
+  name: diamond ore
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: DiamondOre
+  - type: Sprite
+    state: diamond
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      RawDiamond: 500
+  - type: Extractable
+    grindableSolutionName: diamondore
+  - type: SolutionContainerManager
+    solutions:
+      diamondore:
+        reagents:
+        - ReagentId: Carbon
+          Quantity: 20
+
+- type: entity
+  parent: DiamondOre
+  id: DiamondOre1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: OreBase
   id: SteelOre
   name: iron ore
   suffix: Full
@@ -360,7 +391,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      Bluespace: 100
+      RawBluespace: 100
 
 - type: entity
   parent: BluespaceOre
@@ -379,16 +410,39 @@
   - type: Stack
     stackType: NormalityOre
   - type: Sprite
-    state: bluespace
+    state: normality
   - type: Item
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      Normality: 100
+      RawNormality: 100
 
 - type: entity
   parent: NormalityOre
   id: NormalityOre1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: OreBase
+  id: TungstenOre
+  name: wolframite
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: TungstenOre
+  - type: Sprite
+    state: tungsten
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      RawTungsten: 500
+
+- type: entity
+  parent: TungstenOre
+  id: TungstenOre1
   suffix: Single
   components:
   - type: Stack

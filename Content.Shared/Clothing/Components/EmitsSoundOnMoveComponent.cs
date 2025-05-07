@@ -32,4 +32,22 @@ public sealed partial class EmitsSoundOnMoveComponent : Component
     /// </summary>
     [ViewVariables(VVAccess.ReadOnly)]
     public bool IsSlotValid = true;
+
+    /// <summary>
+    ///     If worn, how far the wearer has to walk in order to make a sound.
+    /// </summary>
+    [DataField]
+    public float DistanceWalking = 1.5f;
+
+    /// <summary>
+    ///     If worn, how far the wearer has to sprint in order to make a sound.
+    /// </summary>
+    [DataField]
+    public float DistanceSprinting = 2f;
+
+    /// <summary>
+    ///     Whether or not this item must be worn in order to make sounds.
+    /// </summary>
+    [DataField]
+    public bool RequiresWorn;
 }

@@ -55,6 +55,8 @@
 
 - type: startingGear
   id: SyndicateListenerGear
+  subGear:
+  - SyndicatePlasmamanGear # TODO: syndicate listener enviropyjamas
   equipment:
     jumpsuit: ClothingUniformJumpsuitPyjamaSyndicateBlack
     head: ClothingHeadPyjamaSyndicateBlack
@@ -62,6 +64,7 @@
     gloves: ClothingHandsGlovesCombat
     shoes: ClothingShoesSlippers
     id: SyndiListeningPostPDA
+    pocket1: BaseUplinkRadio20TC
   innerClothingSkirt: ClothingUniformJumpsuitPyjamaSyndicatePink
 
 # Mobsters

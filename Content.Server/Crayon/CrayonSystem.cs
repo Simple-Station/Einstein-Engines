@@ -73,15 +73,22 @@ public sealed class CrayonSystem : SharedCrayonSystem
         if (component.UseSound != null)
             _audio.PlayPvs(component.UseSound, uid, AudioParams.Default.WithVariation(0.125f));
 
-        // Decrease "Ammo"
-        component.Charges--;
-        Dirty(uid, component);
+        // Frontier: check if crayon is infinite, Delta V Port
+        if (component.Charges != int.MaxValue)
+        {
+            // Decrease "Ammo"
+            component.Charges--;
+            Dirty(uid, component);
+        }
+        // End Frontier, Delta V Port
 
         _adminLogger.Add(LogType.CrayonDraw, LogImpact.Low, $"{EntityManager.ToPrettyString(args.User):user} drew a {component.Color:color} {component.SelectedState}");
         args.Handled = true;
 
         if (component.DeleteEmpty && component.Charges <= 0)
             UseUpCrayon(uid, args.User);
+        else
+            _uiSystem.ServerSendUiMessage(uid, SharedCrayonComponent.CrayonUiKey.Key, new CrayonUsedMessage(component.SelectedState));
     }
 
     private void OnCrayonUse(EntityUid uid, CrayonComponent component, UseInHandEvent args)
@@ -90,19 +97,14 @@ public sealed class CrayonSystem : SharedCrayonSystem
         if (args.Handled)
             return;
 
-        if (!TryComp<ActorComponent>(args.User, out var actor) ||
-            !_uiSystem.TryGetUi(uid, SharedCrayonComponent.CrayonUiKey.Key, out var ui))
+        if (!_uiSystem.HasUi(uid, SharedCrayonComponent.CrayonUiKey.Key))
         {
             return;
         }
 
-        _uiSystem.ToggleUi(ui, actor.PlayerSession);
-        if (ui.SubscribedSessions.Contains(actor.PlayerSession))
-        {
-            // Tell the user interface the selected stuff
-            _uiSystem.SetUiState(ui, new CrayonBoundUserInterfaceState(component.SelectedState, component.SelectableColor, component.Color));
-        }
+        _uiSystem.TryToggleUi(uid, SharedCrayonComponent.CrayonUiKey.Key, args.User);
 
+        _uiSystem.SetUiState(uid, SharedCrayonComponent.CrayonUiKey.Key, new CrayonBoundUserInterfaceState(component.SelectedState, component.SelectableColor, component.Color));
         args.Handled = true;
     }
 
@@ -140,8 +142,8 @@ public sealed class CrayonSystem : SharedCrayonSystem
 
     private void OnCrayonDropped(EntityUid uid, CrayonComponent component, DroppedEvent args)
     {
-        if (TryComp<ActorComponent>(args.User, out var actor))
-            _uiSystem.TryClose(uid, SharedCrayonComponent.CrayonUiKey.Key, actor.PlayerSession);
+        // TODO: Use the existing event.
+        _uiSystem.CloseUi(uid, SharedCrayonComponent.CrayonUiKey.Key, args.User);
     }
 
     private void UseUpCrayon(EntityUid uid, EntityUid user)

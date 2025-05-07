@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "equipped-NECK from Aurorastation at commit https://github.com/Aurorastation/Aurora.3/commit/1ee286c3df1acf25c766df29cfb3ba5d97a1d5d5, edited by Skubman for Space Station 14. Icon taken from tgstation at commit https://github.com/tgstation/tgstation/commit/5a73e8f825ff279e82949b9329783a9e3070e2da, edited by Flareguy for Space Station 14 | In hand sprites sprited by PuroSlavKing (Github) for Space Station 14. Modified by TJohnson.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
+    }
+  ]
+}

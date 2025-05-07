@@ -68,9 +68,13 @@ public sealed class ParacusiaSystem : SharedParacusiaSystem
             );
 
         var newCoords = Transform(uid).Coordinates.Offset(randomOffset);
+        var sound = _audio.PlayStatic(paracusia.Sounds, uid, newCoords);
+
+        if (sound == null)
+            return;
 
         // Play the sound
-        paracusia.Stream = _audio.PlayStatic(paracusia.Sounds, uid, newCoords).Value.Entity;
+        paracusia.Stream = sound!.Value.Entity;
     }
 
 }

@@ -8,13 +8,54 @@
       jobs:
         - Borg
         - MedicalBorg
-  components:
-    - type: PermanentBlindness
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Photophobia
+        - Nearsighted
+        - CyberEyes
+        - SecurityEyesModule
+        - MedicalEyesModule
+        - DiagnosticEyesModule
+        - OmniEyesModule
+        - LightAmplificationModule
+        - ThermographicVisionModule
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: PermanentBlindness
+
+- type: trait
+  id: Nearsighted
+  category: Visual
+  points: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Blindness
+        - CyberEyes
+        - SecurityEyesModule
+        - MedicalEyesModule
+        - DiagnosticEyesModule
+        - OmniEyesModule
+        - LightAmplificationModule
+        - ThermographicVisionModule
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: PermanentBlindness
+          blindness: 4
 
 - type: trait
   id: Narcolepsy
   category: Mental
-  points: 2
+  points: 6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -25,42 +66,56 @@
       inverted: true
       species:
         - IPC
-  components:
-    - type: Narcolepsy
-      timeBetweenIncidents: 300, 600
-      durationOfIncident: 10, 30
+  functions:
+    - !type:TraitAddComponent
+      components:
+      - type: Narcolepsy
+        timeBetweenIncidents: 300, 600
+        durationOfIncident: 10, 30
 
 - type: trait
   id: Pacifist
   category: Mental
   points: 6
-  components:
-    - type: Pacified
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Pacified
 
 - type: trait
   id: Paracusia
   category: Auditory
-  points: 2
-  components:
-    - type: Paracusia
-      minTimeBetweenIncidents: 0.1
-      maxTimeBetweenIncidents: 300
-      maxSoundDistance: 7
-      sounds:
-        collection: Paracusia
+  points: 1
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Paracusia
+          minTimeBetweenIncidents: 0.1
+          maxTimeBetweenIncidents: 300
+          maxSoundDistance: 7
+          sounds:
+            collection: Paracusia
 
 - type: trait
   id: Muted
   category: Mental
-  points: 4
+  points: 6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
         - Borg
         - MedicalBorg
-  components:
-    - type: Muted
+        - Mime
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Muted
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Sign
+      languagesUnderstood:
+        - Sign
 
 - type: trait
   id: Uncloneable
@@ -72,11 +127,23 @@
       jobs:
         - Borg
         - MedicalBorg
-  components:
-    - type: Uncloneable
+    - !type:CharacterLifepathRequirement
+      inverted: true
+      lifepaths:
+        - Clone
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Uncloneable
 
 - type: trait
   id: FrontalLisp
+  # slots: 0
+  # itemGroupSlots: 0
   category: TraitsSpeechAccents
   requirements:
     - !type:CharacterJobRequirement
@@ -90,8 +157,10 @@
         - IPC
     - !type:CharacterItemGroupRequirement
       group: TraitsAccents
-  components:
-    - type: FrontalLisp
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: FrontalLisp
 
 - type: trait
   id: Snoring
@@ -106,59 +175,85 @@
       inverted: true
       species:
         - IPC
-  components:
-    - type: Snoring
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Snoring
+
+- type: trait
+  id: BadKnees
+  category: Physical
+  points: 4
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ParkourTraining
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Diona
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: ClimbDelayModifier
+          climbDelayMultiplier: 1.5
+        - type: SlippableModifier
+          paralyzeTimeMultiplier: 1.4
+        - type: SpeedModifiedByContactModifier
+          walkModifierEffectiveness: 1.35
+          sprintModifierEffectiveness: 1.35
 
 - type: trait
   id: Sluggish
   category: Physical
-  points: 3
+  points: 5
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - ParkourTraining
         - SnailPaced
+        - WheelchairBound
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
         - Diona
-  components:
-    - type: TraitSpeedModifier
-      sprintModifier: 0.85
-      walkModifier: 0.85
-    - type: ClimbDelayModifier
-      climbDelayMultiplier: 1.35
-    - type: LayingDownModifier
-      layingDownCooldownMultiplier: 1.2
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: TraitSpeedModifier
+          sprintModifier: 0.84
+          walkModifier: 0.84
+          requiredTriggeredSpeedModifier: 0.84
 
 - type: trait
   id: SnailPaced
   category: Physical
-  points: 5
+  points: 8
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - ParkourTraining
         - Sluggish
+        - WheelchairBound
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
         - Diona
-  components:
-    - type: TraitSpeedModifier
-      sprintModifier: 0.7
-      walkModifier: 0.7
-    - type: ClimbDelayModifier
-      climbDelayMultiplier: 1.66
-    - type: LayingDownModifier
-      layingDownCooldownMultiplier: 1.6
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: TraitSpeedModifier
+          sprintModifier: 0.68
+          walkModifier: 0.68
+          requiredTriggeredSpeedModifier: 0.68 # Still slip against normal slips with the new sprint speed
 
 - type: trait
   id: BloodDeficiency
   category: Physical
-  points: 5
+  points: 4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -169,14 +264,18 @@
       inverted: true
       species:
         - IPC
-  components:
-    - type: BloodDeficiency              # by default, start taking bloodloss damage at around ~21.4 minutes,
-      bloodLossPercentage: 0.0002333333  # then become crit ~10 minutes
+        - Lamia
+        - Plasmaman
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: BloodDeficiency # By default, start taking bloodloss damage at around ~21.4 minutes,
+          bloodLossPercentage: 0.0002333333  # then become crit ~10 minutes
 
 - type: trait
   id: Hemophilia
   category: Physical
-  points: 2
+  points: 4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -187,12 +286,16 @@
       inverted: true
       species:
         - IPC
-  components:
-    - type: Hemophilia
-      bleedReductionModifier: 0.5
-      damageModifiers:
-        coefficients:
-          Blunt: 1.1
+        - Lamia
+        - Plasmaman
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Hemophilia
+          bleedReductionModifier: 0.5
+          damageModifiers:
+            coefficients:
+              Blunt: 1.1
 
 - type: trait
   id: Photophobia
@@ -203,16 +306,30 @@
       inverted: true
       species:
         - Vulpkanin # This trait functions exactly as-is for the Vulpkanin trait.
-  components:
-    - type: Flashable
-      eyeDamageChance: 0.3
-      eyeDamage: 1
-      durationMultiplier: 1.5
+        - Shadowkin
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Blindness
+        - CyberEyes
+        - SecurityEyesModule
+        - MedicalEyesModule
+        - DiagnosticEyesModule
+        - OmniEyesModule
+        - LightAmplificationModule
+        - ThermographicVisionModule
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: Flashable
+          eyeDamageChance: 0.3
+          eyeDamage: 1
+          durationMultiplier: 1.5
 
 - type: trait
   id: Clumsy
   category: Physical
-  points: 1
+  points: 5
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -223,11 +340,13 @@
       departments:
         - Command # Because I know for a fact people will play Captain and grief with their inability to fight back.
         - Security # Because I know for a fact people will play Security and grief with their inability to use guns.
-  components:
-    - type: Clumsy
-      clumsyDamage:
-        types:
-          Blunt: 5
-          Piercing: 4
-        groups:
-          Burn: 3
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Clumsy
+          gunShootFailDamage:
+            types:
+              Blunt: 5
+              Piercing: 4
+            groups:
+              Burn: 3

@@ -39,7 +39,7 @@
       brain_slot:
         name: positronic-brain-slot-component-slot-name-brain
         whitelist:
-          components:
+          tags:
           - Brain
   - type: ContainerContainer
     containers:
@@ -48,6 +48,14 @@
   - type: GuideHelp
     guides:
       - Cyborgs
+  - type: LanguageSpeaker
+  - type: LanguageKnowledge
+    speaks: [TauCetiBasic, RobotTalk]
+    understands: [TauCetiBasic, RobotTalk]
+  - type: Brain # IPCMMI
+    active: false
+  - type: Organ
+    slotId: posibrain
 
 - type: entity
   parent: MMI
@@ -60,7 +68,7 @@
         name: "Brain"
         startingItem: OrganHumanBrain
         whitelist:
-          components:
+          tags: # IPCMMI - changed component requirement to a tag bc you'd be able to infinitely stack regular + reverse MMIs otherwise
             - Brain
 
 - type: entity
@@ -76,7 +84,6 @@
         map: ["base"]
     - type: Input
       context: human
-    - type: BlockMovement
     - type: ToggleableGhostRole
       examineTextMindPresent: positronic-brain-installed
       examineTextMindSearching: positronic-brain-still-searching
@@ -84,11 +91,17 @@
       beginSearchingText: positronic-brain-searching
       roleName: positronic-brain-role-name
       roleDescription: positronic-brain-role-description
+      roleRules: ghost-role-information-silicon-rules
+      mindRoles:
+      - MindRoleGhostRoleSilicon
       wipeVerbText: positronic-brain-wipe-device-verb-text
       wipeVerbPopup: positronic-brain-wiped-device
       stopSearchVerbText: positronic-brain-stop-searching-verb-text
       stopSearchVerbPopup: positronic-brain-stopped-searching
+    - type: BlockMovement
     - type: Examiner
+    - type: Brain # hopefully this doesn't break everything
+      active: false
     - type: BorgBrain
     - type: IntrinsicRadioReceiver
     - type: IntrinsicRadioTransmitter
@@ -113,6 +126,7 @@
     - type: Tag
       tags:
       - CannotSuicide
+      - Posibrain # IPCMMI - added posibrain tag
     - type: GenericVisualizer
       visuals:
         enum.ToggleableGhostRoleVisuals.Status:
@@ -124,3 +138,8 @@
       guides:
       - Cyborgs
     - type: Organ # Estacao Pirata - IPCs
+      slotId: posibrain
+    - type: LanguageSpeaker
+    - type: LanguageKnowledge
+      speaks: [RobotTalk]
+      understands: [RobotTalk]

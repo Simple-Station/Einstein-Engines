@@ -1,4 +1,4 @@
-﻿- type: moodEffect
+- type: moodEffect
   id: BeingHugged
   moodChange: 3
   timeout: 120
@@ -45,3 +45,20 @@
 - type: moodEffect
   id: TraitSanguine
   moodChange: 15
+
+- type: moodEffect
+  id: HeirloomSecure
+  category: Heirloom
+  moodChange: 5
+  timeout: 60 # A bit of time before they realize it's gone
+  moodletOnEnd: HeirloomNeutral
+
+- type: moodEffect
+  id: PlasmamanIngestMilk
+  moodChange: 7
+  timeout: 60
+
+- type: moodEffect
+  id: PlasmamanIngestPlasma
+  moodChange: 14
+  timeout: 60

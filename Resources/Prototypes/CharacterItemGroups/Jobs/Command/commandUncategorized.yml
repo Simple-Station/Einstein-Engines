@@ -1,0 +1,78 @@
+# All Command
+#- type: characterItemGroup
+#  id: LoadoutCommandBackpacks
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutCommandBelt
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutCommandEars
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutCommandEquipment
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutCommandSelfDefense
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandTelescopicBaton
+    - type: loadout
+      id: LoadoutCommandDisabler
+    - type: loadout
+      id: LoadoutCommandStunBaton
+    - type: loadout
+      id: LoadoutCommandFlash
+
+#- type: characterItemGroup
+#  id: LoadoutCommandEyes
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutCommandGloves
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutCommandHead
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutCommandId
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutCommandNeck
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutCommandMask
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutCommandOuter
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutCommandShoes
+#  maxItems: 1
+#  items:
+
+#- type: characterItemGroup
+#  id: LoadoutCommandUniforms
+#  maxItems: 1
+#  items:

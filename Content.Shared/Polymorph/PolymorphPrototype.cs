@@ -115,6 +115,17 @@ public sealed partial record PolymorphConfiguration
     [DataField(serverOnly: true)]
     [ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan Cooldown = TimeSpan.Zero;
+
+    /// <summary>
+    /// The exact names of components to copy over when this polymorph is applied.
+    /// </summary>
+    [DataField(serverOnly: true)]
+    public HashSet<string> CopiedComponents = new()
+    {
+        "LanguageKnowledge",
+        "LanguageSpeaker",
+        "Grammar"
+    };
 }
 
 public enum PolymorphInventoryChange : byte

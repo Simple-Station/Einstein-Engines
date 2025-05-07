@@ -74,7 +74,9 @@ public sealed partial class AnomalyPowerActionEvent : InstantActionEvent
 [DataRecord]
 public partial record struct AnomalyPowerSettings()
 {
-    public string PowerName;
+    public string PowerName = string.Empty;
+
+    public bool CheckInsulation;
 
     /// <summary>
     ///     When casting above the Supercritical Threshold, if not 0, this will cause all powers to enter cooldown for the given duration.

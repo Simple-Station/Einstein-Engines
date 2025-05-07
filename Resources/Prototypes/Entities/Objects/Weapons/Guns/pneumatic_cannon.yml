@@ -22,7 +22,6 @@
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
-    - FullAuto
     soundGunshot:
       path: /Audio/Effects/thunk.ogg
     soundEmpty:
@@ -34,10 +33,7 @@
   - type: Storage
     maxItemSize: Normal
     grid:
-    - 0,0,3,3
-    blacklist:
-      tags:
-        - CannonRestrict
+    - 0,0,1,1
   - type: Appearance
   - type: ItemMapper
     containerWhitelist: [gas_tank]
@@ -65,6 +61,19 @@
       storagebase: !type:Container
         ents: []
       gas_tank: !type:ContainerSlot
+  - type: MeleeWeapon
+    attackRate: 1.33
+    damage:
+      types:
+        Blunt: 9
+    swapKeys: true
+    disableHeavy: true
+    animation: WeaponArcThrust
+    wideAnimationRotation: 180
+    soundHit:
+      collection: MetalThud
+  - type: DamageOtherOnHit
+    staminaCost: 8
 
 - type: entity
   name: pie cannon
@@ -107,6 +116,7 @@
     containers:
       storagebase: !type:Container
         ents: []
+  - type: Execution
 
 # shoots bullets instead of throwing them, no other changes
 - type: entity

@@ -1,11 +1,11 @@
-﻿mood-show-effects-start = [font size=12]Mood:[/font]
+mood-show-effects-start = [font size=12]Mood:[/font]
 
 mood-effect-HungerOverfed = I ate so much, I feel as though I'm about to burst!
 mood-effect-HungerOkay = I am feeling full.
 mood-effect-HungerPeckish = I could go for a snack right about now.
 mood-effect-HungerStarving = I NEED FOOD!
 
-mood-effect-ThirstOverHydrated = I feel dizzy after drinking too much.
+mood-effect-ThirstOverHydrated = I've had my fill of water.
 mood-effect-ThirstOkay = I'm feeling refreshed.
 mood-effect-ThirstThirsty = My lips are a little dry.
 mood-effect-ThirstParched = I NEED WATER!
@@ -55,6 +55,9 @@ mood-effect-CultFocused = Dark Gods, grant me strength!
 
 mood-effect-TraitSanguine = I have nothing to worry about. I'm sure everything will turn out well in the end!
 
+mood-effect-HeirloomSecure = My heirloom is safe, and with it the memories of the ones before me.
+mood-effect-HeirloomLost = I can't seem to find my heirloom, how will the past be safe now?
+
 # Addictions
 mood-effect-LotoTranscendence =
     I CAN SEE ALL THAT IS, ALL THAT WILL EVER BE, AND ALL THAT EVER WAS. ALL OF CREATION HAS OPENED TO MY MIND!
@@ -68,8 +71,22 @@ mood-effect-NicotineBenefit =
 mood-effect-NicotineWithdrawal =
     I could really go for a smoke right now.
 
+mood-effect-MorphineBenefit =
+    The morphine helps me forget my worries.
+mood-effect-MorphineWithdrawal =
+    Everything is too loud, too bright. I need something to take the edge off...
+
+# Surgery
+mood-effect-SurgeryPain = The surgery hurts.
 # Drugs
 mood-effect-EthanolBenefit =
     I feel so relaxed from drinking.
 mood-effect-SpaceDrugsBenefit =
     Woaaaah, such pretty colors maaaaan. It's like I can hear color and taste sound maaan.
+
+# Plasmaman
+mood-effect-PlasmamanIngestPlasma =
+    My body is rejuvenated by the fresh plasma coursing through my body.
+
+mood-effect-PlasmamanIngestMilk =
+    I can feel the milk's calcium repairing my bones. This is dairy-lightful!

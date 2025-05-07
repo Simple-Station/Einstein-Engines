@@ -2,6 +2,7 @@
 # TODO: Replace this with a much better language.
 - type: language
   id: Nekomimetic
+  isVisibleLanguage: true
   speech:
     color: "#df57aaee"
     fontId: Manga

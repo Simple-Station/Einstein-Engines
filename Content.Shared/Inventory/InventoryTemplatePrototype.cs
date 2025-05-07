@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared.Strip;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 
@@ -17,6 +18,10 @@ public sealed partial class SlotDefinition
 {
     [DataField("name", required: true)] public string Name { get; private set; } = string.Empty;
     [DataField("slotTexture")] public string TextureName { get; private set; } = "pocket";
+    /// <summary>
+    /// The texture displayed in a slot when it has an item inside of it.
+    /// </summary>
+    [DataField] public string FullTextureName { get; private set; } = "SlotBackground";
     [DataField("slotFlags")] public SlotFlags SlotFlags { get; private set; } = SlotFlags.PREVENTEQUIP;
     [DataField("showInWindow")] public bool ShowInWindow { get; private set; } = true;
     [DataField("slotGroup")] public string SlotGroup { get; private set; } = "Default";
@@ -30,9 +35,15 @@ public sealed partial class SlotDefinition
 
     [DataField("dependsOn")] public string? DependsOn { get; private set; }
 
+    [DataField("dependsOnComponents")] public ComponentRegistry? DependsOnComponents { get; private set; }
+
     [DataField("displayName", required: true)]
     public string DisplayName { get; private set; } = string.Empty;
 
+    /// <summary>
+    ///     Whether or not this slot will have its item hidden in the strip menu, and block interactions.
+    ///     <seealso cref="SharedStrippableSystem.IsStripHidden"/>
+    /// </summary>
     [DataField("stripHidden")] public bool StripHidden { get; private set; }
 
     /// <summary>
@@ -49,4 +60,19 @@ public sealed partial class SlotDefinition
     ///     Entity blacklist for CanEquip checks.
     /// </summary>
     [DataField("blacklist")] public EntityWhitelist? Blacklist = null;
+
+    /// <summary>
+    ///     Entity whitelist for CanEquip checks, on spawn only.
+    /// </summary>
+    [DataField("spawnWhitelist")] public EntityWhitelist? SpawnWhitelist = null;
+
+    /// <summary>
+    ///     Entity blacklist for CanEquip checks, on spawn only.
+    /// </summary>
+    [DataField("spawnBlacklist")] public EntityWhitelist? SpawnBlacklist = null;
+
+    /// <summary>
+    ///     Is this slot disabled? Could be due to severing or other reasons.
+    /// </summary>
+    [DataField] public bool Disabled;
 }

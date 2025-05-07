@@ -13,7 +13,7 @@
   id: ActionScream
   name: Scream
   description: AAAAAAAAAAAAAAAAAAAAAAAAA
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 10
@@ -25,7 +25,7 @@
   id: ActionTurnUndead
   name: Turn Undead
   description: Succumb to your infection and become a zombie.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     checkCanInteract: false
@@ -37,7 +37,7 @@
   id: ActionToggleLight
   name: Toggle Light
   description: Turn the light on and off.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: { sprite: Objects/Tools/flashlight.rsi, state: flashlight }
@@ -48,7 +48,7 @@
   id: ActionOpenStorageImplant
   name: Open Storage Implant
   description: Opens the storage implant embedded under your skin
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     itemIconStyle: BigAction
@@ -63,7 +63,7 @@
   id: ActionActivateMicroBomb
   name: Activate Microbomb
   description: Activates your internal microbomb, completely destroying you and your equipment
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     checkCanInteract: false
@@ -80,7 +80,7 @@
   id: ActionActivateDeathAcidifier
   name: Activate Death-Acidifier
   description: Activates your death-acidifier, completely melting you and your equipment
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     checkCanInteract: false
@@ -92,12 +92,11 @@
       state: gib
     event: !type:ActivateImplantEvent
 
-
 - type: entity
   id: ActionActivateFreedomImplant
   name: Break Free
   description: Activating your freedom implant will free you from any hand restraints
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     charges: 3
@@ -113,7 +112,7 @@
   id: ActionOpenUplinkImplant
   name: Open Uplink
   description: Opens the syndicate uplink embedded under your skin
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     itemIconStyle: BigAction
@@ -127,9 +126,10 @@
   id: ActionActivateEmpImplant
   name: Activate EMP
   description: Triggers a small EMP pulse around you
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
+    checkCanInteract: false
     charges: 3
     useDelay: 5
     itemIconStyle: BigAction
@@ -143,7 +143,7 @@
   id: ActionActivateScramImplant
   name: SCRAM!
   description: Randomly teleports you within a large distance.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     checkCanInteract: false
@@ -160,7 +160,7 @@
   id: ActionActivateDnaScramblerImplant
   name: Scramble DNA
   description:  Randomly changes your name and appearance.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     charges: 1
@@ -172,10 +172,25 @@
     event: !type:UseDnaScramblerImplantEvent
 
 - type: entity
+  id: ActionMorphGeras
+  name: Morph into Geras
+  description:  Morphs you into a Geras - a miniature version of you which allows you to move fast, at the cost of your inventory.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: BigAction
+    useDelay: 10 # prevent spam
+    priority: -20
+    icon:
+      sprite: Mobs/Aliens/slimes.rsi
+      state: blue_adult_slime
+    event: !type:MorphIntoGeras
+
+- type: entity
   id: ActionToggleSuitPiece
   name: Toggle Suit Piece
   description: Remember to equip the important pieces of your suit before going into action.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     itemIconStyle: BigItem
@@ -186,7 +201,7 @@
   id: ActionCombatModeToggle
   name: "[color=red]Combat Mode[/color]"
   description: Enter combat mode
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     checkCanInteract: false
@@ -201,7 +216,7 @@
   parent: ActionCombatModeToggle
   name: "[color=red]Combat Mode[/color]"
   description: Enter combat mode
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     enabled: false
@@ -212,7 +227,7 @@
   id: ActionChangeVoiceMask
   name: Set name
   description: Change the name others hear to something else.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: { sprite: Interface/Actions/voice-mask.rsi, state: icon }
@@ -222,7 +237,7 @@
   id: ActionVendingThrow
   name: Dispense Item
   description: Randomly dispense an item from your stock.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 30
@@ -232,7 +247,7 @@
   id: ActionArtifactActivate
   name: Activate Artifact
   description: Immediately activates your current artifact node.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon:
@@ -245,7 +260,7 @@
   id: ActionToggleBlock
   name: Block
   description: Raise or lower your shield.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: { sprite: Objects/Weapons/Melee/shields.rsi, state: teleriot-icon }
@@ -256,7 +271,7 @@
   id: ActionClearNetworkLinkOverlays
   name: Clear network link overlays
   description: Clear network link overlays.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     clientExclusive: true
@@ -270,7 +285,7 @@
   id: ActionAnimalLayEgg
   name: Lay egg
   description: Uses hunger to lay an egg.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: { sprite: Objects/Consumable/Food/egg.rsi, state: icon }
@@ -281,7 +296,7 @@
   id: ActionSleep
   name: Sleep
   description: Go to sleep.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     checkCanInteract: false
@@ -290,22 +305,36 @@
     event: !type:SleepActionEvent
 
 - type: entity
+  id: ShadowkinActionSleep
+  name: action-name-shadowkin-rest
+  description: action-description-shadowkin-rest
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    checkCanInteract: false
+    checkConsciousness: false
+    icon: { sprite: Interface/Actions/shadowkin_icons.rsi, state: rest }
+    event: !type:SleepActionEvent
+
+- type: entity
   id: ActionWake
   name: Wake up
   description: Stop sleeping.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: { sprite: Clothing/Head/Hats/pyjamasyndicatered.rsi, state: icon }
     checkCanInteract: false
     checkConsciousness: false
     event: !type:WakeActionEvent
+    startDelay: true
+    useDelay: 2
 
 - type: entity
   id: ActionActivateHonkImplant
   name: Honk
   description: Activates your honking implant, which will produce the signature sound of the clown.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: { sprite: Objects/Fun/bikehorn.rsi, state: icon }
@@ -316,7 +345,7 @@
   id: ActionFireStarter
   name: Ignite
   description: Ignites enemies in a radius around you.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     priority: -1
@@ -328,7 +357,7 @@
   id: ActionToggleEyes
   name: Open/Close eyes
   description: Close your eyes to protect your peepers, or open your eyes to enjoy the pretty lights.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: Interface/Actions/eyeopen.png
@@ -342,7 +371,7 @@
   id: ActionToggleWagging
   name: action-name-toggle-wagging
   description: action-description-toggle-wagging
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       icon: { sprite: Interface/Actions/wagging.rsi, state: icon }
@@ -355,7 +384,7 @@
   id: ActionFabricateLollipop
   name: action-name-fabricate-lollipop
   description: action-description-fabricate-lollipop
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: { sprite: Nyanotrasen/Objects/Consumable/Food/candy.rsi, state: lollipop }
@@ -368,7 +397,7 @@
   id: ActionFabricateGumball
   name: action-name-fabricate-gumball
   description: action-description-fabricate-gumball
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: { sprite: Nyanotrasen/Objects/Consumable/Food/candy.rsi, state: gumball }
@@ -376,3 +405,58 @@
     event:
       !type:FabricateActionEvent
       fabrication: FoodGumball
+
+- type: entity
+  id: ToggleNightVision
+  name: Switch night vision
+  description: Switches night vision.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: BigAction
+    priority: -20
+    icon:
+      sprite: Clothing/Eyes/Goggles/nightvision.rsi
+      state: icon
+    event: !type:ToggleNightVisionEvent
+
+- type: entity
+  id: ToggleThermalVision
+  name: Switch Thermal vision
+  description: Switches Thermal vision.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: BigAction
+    priority: -20
+    icon:
+      sprite: Clothing/Eyes/Goggles/thermal.rsi
+      state: icon
+    event: !type:ToggleThermalVisionEvent
+
+- type: entity
+  id: PulseThermalVision
+  parent: ToggleThermalVision
+  name: Pulse Thermal Vision
+  description: Activate thermal vision temporarily.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 4
+
+- type: entity
+  id: ActionSelfExtinguish
+  name: Self-Extinguish
+  description: Extinguishes you if you are on fire and insulated against self-ignition.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: BigItem
+    icon:
+      sprite: Objects/Misc/fire_extinguisher.rsi
+      state: fire_extinguisher_open
+    iconCooldown:
+      sprite: Objects/Misc/fire_extinguisher.rsi
+      state: fire_extinguisher_closed
+    iconDisabled: Interface/Default/blocked.png
+    event: !type:SelfExtinguishEvent

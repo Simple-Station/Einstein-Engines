@@ -1,0 +1,107 @@
+# Chaplain
+#- type: characterItemGroup
+#  id: LoadoutChaplainBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutChaplainBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutChaplainEars
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutChaplainEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutChaplainBible
+    - type: loadout
+      id: LoadoutChaplainStamp
+    - type: loadout
+      id: LoadoutChaplainEquipmentCandles
+    - type: loadout
+      id: LoadoutChaplainEquipmentCandlesSmall
+    - type: loadout
+      id: LoadoutChaplainPillCanisterSpaceDrugs
+
+- type: characterItemGroup
+  id: LoadoutChaplainEyes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutChaplainEyesEpiHUD
+    - type: loadout
+      id: LoadoutChaplainEyesEpiGlasses
+
+#- type: characterItemGroup
+#  id: LoadoutChaplainGloves
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutChaplainHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutScienceHeadHatHoodNunHood
+    - type: loadout
+      id: LoadoutScienceHeadHatPlaguedoctor
+    - type: loadout
+      id: LoadoutScienceHeadHatWitch
+    - type: loadout
+      id: LoadoutScienceHeadHatWitch1
+
+#- type: characterItemGroup
+#  id: LoadoutChaplainId
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutChaplainNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutScienceNeckStoleChaplain
+
+- type: characterItemGroup
+  id: LoadoutChaplainMask
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutScienceMaskPlague
+
+- type: characterItemGroup
+  id: LoadoutChaplainOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutScienceOuterPlagueSuit
+    - type: loadout
+      id: LoadoutScienceOuterNunRobe
+    - type: loadout
+      id: LoadoutScienceOuterHoodieBlack
+    - type: loadout
+      id: LoadoutScienceOuterHoodieChaplain
+
+#- type: characterItemGroup
+#  id: LoadoutChaplainShoes
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutChaplainUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutChaplainJumpsuit
+    - type: loadout
+      id: LoadoutChaplainJumpskirt
+    - type: loadout
+      id: LoadoutScienceUniformJumpsuitMonasticRobeDark
+    - type: loadout
+      id: LoadoutScienceUniformJumpsuitMonasticRobeLight

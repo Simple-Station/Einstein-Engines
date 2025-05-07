@@ -110,7 +110,7 @@
   - type: StorageFill
     contents:
         - id: OxygenTankFilled
-        - id: ClothingShoesBootsMag
+        - id: ClothingShoesBootsMagEng
         - id: ClothingOuterHardsuitEngineering
         - id: ClothingMaskBreath
   - type: AccessReader
@@ -139,8 +139,13 @@
   - type: StorageFill
     contents:
         - id: OxygenTankFilled
+          amount: 2 #DeltaV - Double the tanks
         - id: ClothingOuterHardsuitCombatOfficer # DeltaV - ClothingOuterHardsuitSecurity replaced in favour of security combat hardsuit.
+          amount: 2 #DeltaV - Double the suits
         - id: ClothingMaskBreath
+          amount: 2 #Delta-V Double the masks
+        - id: ClothingShoesBootsMagSec
+          amount: 2
   - type: AccessReader
     access: [["Security"]]
 
@@ -200,6 +205,7 @@
         - id: JetpackSecurityFilled
         - id: ClothingOuterHardsuitCombatHoS # DeltaV - ClothingOuterHardsuitSecurityRed replaced in favour of head of security's advanced combat hardsuit.
         - id: ClothingMaskGasSwat
+        - id: ClothingShoesBootsMagSec
   - type: AccessReader
     access: [["HeadOfSecurity"]]
 
@@ -214,6 +220,7 @@
         - id: OxygenTankFilled
         - id: ClothingOuterHardsuitCombatWarden # DeltaV - ClothingOuterHardsuitWarden replaced in favour of warden's riot combat hardsuit.
         - id: ClothingMaskBreath
+        - id: ClothingShoesBootsMagSec
   - type: AccessReader
     access: [["Armory"]]
 
@@ -228,6 +235,7 @@
         - id: OxygenTankFilled
         - id: ClothingOuterHardsuitCap
         - id: ClothingMaskGasCaptain
+        - id: ClothingMaskGasCaptainCombat
   - type: AccessReader
     access: [["Captain"]]
 
@@ -315,3 +323,26 @@
         - id: OxygenTankFilled
         - id: ClothingOuterHardsuitWizard
         - id: ClothingMaskBreath
+
+# Cybersun Armoring Corporation
+- type: entity
+  id: SuitStorageShanlin
+  parent: SuitStorageBase
+  suffix: CSA-51a
+  components:
+    - type: StorageFill
+      contents:
+          - id: OxygenTankFilled
+          - id: ClothingOuterHardsuitShanlinUnpainted
+          - id: ClothingMaskBreath
+
+- type: entity
+  id: SuitStorageShiwei
+  parent: SuitStorageBase
+  suffix: CSA-54UA
+  components:
+    - type: StorageFill
+      contents:
+          - id: OxygenTankFilled
+          - id: ClothingOuterHardsuitShiweiUnpainted
+          - id: ClothingMaskBreath

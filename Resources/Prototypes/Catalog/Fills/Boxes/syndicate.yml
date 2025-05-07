@@ -66,3 +66,21 @@
     layers:
       - state: box_of_doom
       - state: throwing_knives
+
+- type: entity
+  parent: BoxCardboard
+  id: CombatBakeryKit
+  name: combat bakery kit
+  description: A kit of clandestine baked weapons.
+  components:
+  - type: Sprite
+    layers:
+      - state: box_of_doom
+      - state: france
+  - type: StorageFill
+    contents:
+      - id: WeaponCroissant
+        amount: 2
+      - id: WeaponBaguette
+      - id: SyndicateMicrowaveMachineCircuitboard
+      - id: PaperWrittenCombatBakeryKit

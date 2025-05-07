@@ -6,6 +6,7 @@
   placement:
     mode: SnapgridCenter
   components:
+  - type: StationAiWhitelist
   - type: InteractionOutline
   - type: Sprite
     sprite: Structures/Doors/Airlocks/highsec/highsec.rsi
@@ -55,6 +56,7 @@
     denySound:
       path: /Audio/Machines/airlock_deny.ogg
   - type: Weldable
+    fuel: 10
     time: 10
   - type: Airlock
   - type: NavMapDoor
@@ -78,8 +80,10 @@
     alwaysRandomize: true
   - type: UserInterface
     interfaces:
-    - key: enum.WiresUiKey.Key
-      type: WiresBoundUserInterface
+      enum.AiUi.Key:
+        type: StationAiBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
   - type: Airtight
   - type: Occluder
   - type: Damageable
@@ -103,3 +107,4 @@
     tags:
       - HighSecDoor
       # This tag is used to nagivate the Airlock construction graph. It's needed because this construction graph is shared between Airlock, AirlockGlass, and HighSecDoor
+  - type: PsionicInsulation # Psifoil shield the high sec airlocks.

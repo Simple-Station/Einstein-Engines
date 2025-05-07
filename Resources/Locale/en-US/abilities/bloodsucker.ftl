@@ -4,9 +4,9 @@ action-description-suck-blood = Suck the blood of the victim in your hand.
 bloodsucker-fail-helmet = You'd need to remove {THE($helmet)}.
 bloodsucker-fail-mask = You'd need to remove your mask!
 
-bloodsucker-fail-not-blood = { CAPITALIZE(SUBJECT($target)) } doesn't have delicious, nourishing mortal blood.
-bloodsucker-fail-no-blood = { CAPITALIZE(SUBJECT($target)) } has no blood in { POSS-ADJ($target) } body.
-bloodsucker-fail-no-blood-bloodsucked = { CAPITALIZE(SUBJECT($target)) } has been sucked dry.
+bloodsucker-not-blood = {$target} doesn't have delicious, nourishing blood.
+bloodsucker-fail-no-blood = {$target} has no blood in { POSS-ADJ($target) } body.
+bloodsucker-fail-no-blood-bloodsucked = {$target} has been sucked dry.
 
 bloodsucker-blood-sucked = You suck some blood from {$target}.
 bloodsucker-doafter-start = You try to suck blood from {$target}.

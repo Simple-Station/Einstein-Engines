@@ -1,7 +1,7 @@
 - type: entity
   id: PelletShotgunSoulbreaker
   name: pellet (.50 soulbreaker)
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseBulletPractice
   components:
   - type: Sprite
@@ -21,6 +21,6 @@
     solution: ammo
   - type: SolutionInjectOnProjectileHit
     transferAmount: 15
-    blockSlots: NONE #tranquillizer darts shouldn't be blocked by a mask
+    solution: ammo
   - type: InjectableSolution
     solution: ammo

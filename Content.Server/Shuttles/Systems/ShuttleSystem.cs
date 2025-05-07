@@ -1,3 +1,4 @@
+using Content.Server.Administration.Logs;
 using Content.Server.Body.Systems;
 using Content.Server.Doors.Systems;
 using Content.Server.Parallax;
@@ -10,6 +11,7 @@ using Content.Shared.Shuttles.Systems;
 using Content.Shared.Throwing;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
+using Robust.Server.GameStates;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
@@ -39,7 +41,9 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
     [Dependency] private readonly FixtureSystem _fixtures = default!;
     [Dependency] private readonly MapLoaderSystem _loader = default!;
     [Dependency] private readonly MetaDataSystem _metadata = default!;
+    [Dependency] private readonly PvsOverrideSystem _pvs = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedMapSystem _maps = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly ShuttleConsoleSystem _console = default!;
@@ -48,6 +52,8 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly ThrusterSystem _thruster = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
+    [Dependency] private readonly IAdminLogManager _logger = default!;
+    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
 
     public const float TileMassMultiplier = 0.5f;
 
@@ -65,6 +71,9 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
 
         SubscribeLocalEvent<GridInitializeEvent>(OnGridInit);
         SubscribeLocalEvent<FixturesComponent, GridFixtureChangeEvent>(OnGridFixtureChange);
+
+        NfInitialize(); // Frontier Initialization for the ShuttleSystem
+
     }
 
     public override void Update(float frameTime)

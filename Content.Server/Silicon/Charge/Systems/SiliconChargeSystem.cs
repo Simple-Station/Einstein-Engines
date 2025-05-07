@@ -91,10 +91,10 @@ public sealed class SiliconChargeSystem : EntitySystem
             if (!TryGetSiliconBattery(silicon, out var batteryComp))
             {
                 UpdateChargeState(silicon, 0, siliconComp);
-                if (_alerts.IsShowingAlert(silicon, AlertType.BorgBattery))
+                if (_alerts.IsShowingAlert(silicon, siliconComp.BatteryAlert))
                 {
-                    _alerts.ClearAlert(silicon, AlertType.BorgBattery);
-                    _alerts.ShowAlert(silicon, AlertType.BorgBatteryNone);
+                    _alerts.ClearAlert(silicon, siliconComp.BatteryAlert);
+                    _alerts.ShowAlert(silicon, siliconComp.NoBatteryAlert);
                 }
                 continue;
             }
@@ -142,10 +142,10 @@ public sealed class SiliconChargeSystem : EntitySystem
         _moveMod.RefreshMovementSpeedModifiers(uid);
 
         // If the battery was replaced and the no battery indicator is showing, replace the indicator
-        if (_alerts.IsShowingAlert(uid, AlertType.BorgBatteryNone) && chargePercent != 0)
+        if (_alerts.IsShowingAlert(uid, component.NoBatteryAlert) && chargePercent != 0)
         {
-            _alerts.ClearAlert(uid, AlertType.BorgBatteryNone);
-            _alerts.ShowAlert(uid, AlertType.BorgBattery, chargePercent);
+            _alerts.ClearAlert(uid, component.NoBatteryAlert);
+            _alerts.ShowAlert(uid, component.BatteryAlert, chargePercent);
         }
     }
 
@@ -182,8 +182,9 @@ public sealed class SiliconChargeSystem : EntitySystem
             if (!_random.Prob(Math.Clamp(temperComp.CurrentTemperature / (upperThresh * 5), 0.001f, 0.9f)))
                 return hotTempMulti;
 
-            _flammable.AdjustFireStacks(silicon, Math.Clamp(siliconComp.FireStackMultiplier, -10, 10), flamComp);
-            _flammable.Ignite(silicon, silicon, flamComp);
+            // Goobstation: Replaced by KillOnOverheatSystem
+            //_flammable.AdjustFireStacks(silicon, Math.Clamp(siliconComp.FireStackMultiplier, -10, 10), flamComp);
+            //_flammable.Ignite(silicon, silicon, flamComp);
             return hotTempMulti;
         }
 

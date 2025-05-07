@@ -3,7 +3,6 @@
   name: job-name-senior-physician
   description: job-description-senior-physician
   playTimeTracker: JobSeniorPhysician
-  setPreference: false # DeltaV - Disable Senior Roles round start selection
   requirements:
     - !type:CharacterPlaytimeRequirement
       tracker: JobChemist
@@ -14,6 +13,11 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Medical
       min: 216000 # 60 hrs
+    - !type:CharacterEmployerRequirement
+      employers:
+      - ZengHuPharmaceuticals
+      - Interdyne
+      - NanoTrasen
   startingGear: SeniorPhysicianGear
   icon: "JobIconSeniorPhysician"
   supervisors: job-supervisors-cmo
@@ -25,9 +29,13 @@
   - !type:AddComponentSpecial
     components:
     - type: CPRTraining
+    - type: SurgerySpeedModifier
+      speedModifier: 2.0
 
 - type: startingGear
   id: SeniorPhysicianGear
+  subGear:
+  - DoctorPlasmamanGear
   equipment:
     head: ClothingHeadHatBeretSeniorPhysician
     jumpsuit: ClothingUniformJumpsuitSeniorPhysician

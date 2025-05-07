@@ -12,6 +12,11 @@
   - type: Item
     sprite: Objects/Devices/gps.rsi
   - type: HandheldGPS
+  - type: PhysicalComposition
+    materialComposition:
+      Aluminum: 300
+      Glass: 100
+      Circuitry: 25
   - type: Tag
     tags:
     - GPS

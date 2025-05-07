@@ -123,6 +123,33 @@ namespace Content.Shared.StatusEffect
             return false;
         }
 
+        /// <summary>
+        ///     Tries to add a status effect to an entity, with a given component added as well.
+        /// </summary>
+        /// <param name="uid">The entity to add the effect to.</param>
+        /// <param name="key">The status effect ID to add.</param>
+        /// <param name="time">How long the effect should last for.</param>
+        /// <param name="refresh">The status effect cooldown should be refreshed (true) or accumulated (false).</param>
+        /// <param name="component">The component of status effect itself.</param>
+        /// <param name="status">The status effects component to change, if you already have it.</param>
+        /// <returns>False if the effect could not be added or the component already exists, true otherwise.</returns>
+        public bool TryAddStatusEffect(EntityUid uid, string key, TimeSpan time, bool refresh, Component component,
+            StatusEffectsComponent? status = null)
+        {
+            if (!Resolve(uid, ref status, false)
+                || !TryAddStatusEffect(uid, key, time, refresh, status))
+                return false;
+
+            // If they already have the comp, we just won't bother updating anything.
+            if (!EntityManager.HasComponent(uid, component.GetType()))
+            {
+                EntityManager.AddComponent(uid, component);
+                status.ActiveEffects[key].RelevantComponent = _componentFactory.GetComponentName(component.GetType());
+            }
+
+            return true;
+        }
+
         public bool TryAddStatusEffect(EntityUid uid, string key, TimeSpan time, bool refresh, string component,
             StatusEffectsComponent? status = null)
         {
@@ -207,7 +234,7 @@ namespace Content.Shared.StatusEffect
                 _alertsSystem.ShowAlert(uid, proto.Alert.Value, null, cooldown1);
             }
 
-            Dirty(status);
+            Dirty(uid, status);
             RaiseLocalEvent(uid, new StatusEffectAddedEvent(uid, key));
             return true;
         }
@@ -219,7 +246,7 @@ namespace Content.Shared.StatusEffect
         ///     This is mostly for stuns, since Stun and Knockdown share an alert key. Other times this pretty much
         ///     will not be useful.
         /// </remarks>
-        private (TimeSpan, TimeSpan)? GetAlertCooldown(EntityUid uid, AlertType alert, StatusEffectsComponent status)
+        private (TimeSpan, TimeSpan)? GetAlertCooldown(EntityUid uid, ProtoId<AlertPrototype> alert, StatusEffectsComponent status)
         {
             (TimeSpan, TimeSpan)? maxCooldown = null;
             foreach (var kvp in status.ActiveEffects)
@@ -283,7 +310,7 @@ namespace Content.Shared.StatusEffect
                 RemComp<ActiveStatusEffectsComponent>(uid);
             }
 
-            Dirty(status);
+            Dirty(uid, status);
             RaiseLocalEvent(uid, new StatusEffectEndedEvent(uid, key));
             return true;
         }
@@ -307,7 +334,7 @@ namespace Content.Shared.StatusEffect
                     failed = true;
             }
 
-            Dirty(status);
+            Dirty(uid, status);
             return failed;
         }
 
@@ -381,7 +408,7 @@ namespace Content.Shared.StatusEffect
                 _alertsSystem.ShowAlert(uid, proto.Alert.Value, null, cooldown);
             }
 
-            Dirty(status);
+            Dirty(uid, status);
             return true;
         }
 
@@ -417,7 +444,7 @@ namespace Content.Shared.StatusEffect
                 _alertsSystem.ShowAlert(uid, proto.Alert.Value, null, cooldown);
             }
 
-            Dirty(status);
+            Dirty(uid, status);
             return true;
         }
 
@@ -438,7 +465,7 @@ namespace Content.Shared.StatusEffect
 
             status.ActiveEffects[key].Cooldown = (_gameTiming.CurTime, _gameTiming.CurTime + time);
 
-            Dirty(status);
+            Dirty(uid, status);
             return true;
         }
 

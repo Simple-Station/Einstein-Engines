@@ -12,6 +12,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Temperature;
 using Robust.Shared.Physics.Components;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Temperature.Systems;
 
@@ -32,6 +33,9 @@ public sealed class TemperatureSystem : EntitySystem
     public float UpdateInterval = 1.0f;
 
     private float _accumulatedFrametime;
+
+    [ValidatePrototypeId<AlertCategoryPrototype>]
+    public const string TemperatureAlertCategory = "Temperature";
 
     public override void Initialize()
     {
@@ -57,9 +61,13 @@ public sealed class TemperatureSystem : EntitySystem
         base.Update(frameTime);
 
         // conduct heat from the surface to the inside of entities with internal temperatures
-        var query = EntityQueryEnumerator<InternalTemperatureComponent, TemperatureComponent>();
-        while (query.MoveNext(out var uid, out var comp, out var temp))
+        var query = EntityQueryEnumerator<InternalTemperatureComponent>();
+        while (query.MoveNext(out var uid, out var comp))
         {
+            if (!TryComp(uid, out TemperatureComponent? temp))
+                continue;
+            var tempEntity = (uid, temp);
+
             // don't do anything if they equalised
             var diff = Math.Abs(temp.CurrentTemperature - comp.Temperature);
             if (diff < 0.1f)
@@ -70,13 +78,13 @@ public sealed class TemperatureSystem : EntitySystem
 
             // convert to J then K
             var joules = q * comp.Area * frameTime;
-            var degrees = joules / GetHeatCapacity(uid, temp);
+            var degrees = joules / GetHeatCapacity(tempEntity);
             if (temp.CurrentTemperature < comp.Temperature)
                 degrees *= -1;
 
             // exchange heat between inside and surface
             comp.Temperature += degrees;
-            ForceChangeTemperature(uid, temp.CurrentTemperature - degrees, temp);
+            ForceChangeTemperature(tempEntity, temp.CurrentTemperature - degrees);
         }
 
         UpdateDamage(frameTime);
@@ -119,10 +127,19 @@ public sealed class TemperatureSystem : EntitySystem
             true);
     }
 
+    public void ForceChangeTemperature(Entity<TemperatureComponent> ent, float temp)
+    {
+        float lastTemp = ent.Comp.CurrentTemperature;
+        float delta = ent.Comp.CurrentTemperature - temp;
+        ent.Comp.CurrentTemperature = temp;
+        RaiseLocalEvent(ent, new OnTemperatureChangeEvent(ent.Comp.CurrentTemperature, lastTemp, delta),
+            true);
+    }
+
     public void ChangeHeat(EntityUid uid, float heatAmount, bool ignoreHeatResistance = false,
         TemperatureComponent? temperature = null)
     {
-        if (!Resolve(uid, ref temperature))
+        if (!Resolve(uid, ref temperature, false))
             return;
 
         if (!ignoreHeatResistance)
@@ -166,6 +183,16 @@ public sealed class TemperatureSystem : EntitySystem
         else return comp.SpecificHeat * physics.FixturesMass;
     }
 
+    public float GetHeatCapacity(Entity<TemperatureComponent> ent, PhysicsComponent? physics = null)
+    {
+        if (!Resolve(ent.Owner, ref physics, false) || physics.FixturesMass <= 0)
+            return Atmospherics.MinimumHeatCapacity;
+
+        if (physics.Mass < 1)
+            return ent.Comp.SpecificHeat;
+        else return ent.Comp.SpecificHeat * physics.FixturesMass;
+    }
+
     private void OnInit(EntityUid uid, InternalTemperatureComponent comp, MapInitEvent args)
     {
         if (!TryComp<TemperatureComponent>(uid, out var temp))
@@ -181,13 +208,13 @@ public sealed class TemperatureSystem : EntitySystem
 
     private void ServerAlert(EntityUid uid, AlertsComponent status, OnTemperatureChangeEvent args)
     {
-        AlertType type;
+        ProtoId<AlertPrototype> type;
         float threshold;
         float idealTemp;
 
         if (!TryComp<TemperatureComponent>(uid, out var temperature))
         {
-            _alerts.ClearAlertCategory(uid, AlertCategory.Temperature);
+            _alerts.ClearAlertCategory(uid, TemperatureAlertCategory);
             return;
         }
 
@@ -204,12 +231,19 @@ public sealed class TemperatureSystem : EntitySystem
 
         if (args.CurrentTemperature <= idealTemp)
         {
-            type = AlertType.Cold;
+            // If there's no risk to being cold there's no reason to show a Cold alert
+            if (!temperature.ColdDamage.AnyPositive())
+                return;
+
+            type = temperature.ColdAlert;
             threshold = temperature.ColdDamageThreshold;
         }
         else
         {
-            type = AlertType.Hot;
+            if (!temperature.HeatDamage.AnyPositive())
+                return;
+
+            type = temperature.HotAlert;
             threshold = temperature.HeatDamageThreshold;
         }
 
@@ -231,7 +265,7 @@ public sealed class TemperatureSystem : EntitySystem
                 break;
 
             case > 0.66f:
-                _alerts.ClearAlertCategory(uid, AlertCategory.Temperature);
+                _alerts.ClearAlertCategory(uid, TemperatureAlertCategory);
                 break;
         }
     }
@@ -408,19 +442,5 @@ public sealed class TemperatureSystem : EntitySystem
         }
 
         return (newHeatThreshold, newColdThreshold);
-    }
-}
-
-public sealed class OnTemperatureChangeEvent : EntityEventArgs
-{
-    public float CurrentTemperature { get; }
-    public float LastTemperature { get; }
-    public float TemperatureDelta { get; }
-
-    public OnTemperatureChangeEvent(float current, float last, float delta)
-    {
-        CurrentTemperature = current;
-        LastTemperature = last;
-        TemperatureDelta = delta;
     }
 }

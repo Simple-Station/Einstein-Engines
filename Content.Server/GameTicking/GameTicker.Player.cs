@@ -1,4 +1,6 @@
+using System.Linq;
 using Content.Server.Database;
+using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.GameWindow;
@@ -18,14 +20,8 @@ namespace Content.Server.GameTicking
     [UsedImplicitly]
     public sealed partial class GameTicker
     {
-        [Dependency] private readonly IPlayerManager _playerManager = default!;
-        [Dependency] private readonly IServerDbManager _dbManager = default!;
-        [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
-
-        private void InitializePlayer()
-        {
+        private void InitializePlayer() =>
             _playerManager.PlayerStatusChanged += PlayerStatusChanged;
-        }
 
         private async void PlayerStatusChanged(object? sender, SessionStatusEventArgs args)
         {
@@ -59,7 +55,7 @@ namespace Content.Server.GameTicking
                         session.Data.ContentDataUncast = data;
                     }
 
-                    var record = await _dbManager.GetPlayerRecordByUserId(args.Session.UserId);
+                    var record = await _db.GetPlayerRecordByUserId(args.Session.UserId);
                     var firstConnection = record != null &&
                                           Math.Abs((record.FirstSeenTime - record.LastSeenTime).TotalMinutes) < 1;
 
@@ -70,7 +66,7 @@ namespace Content.Server.GameTicking
                     RaiseNetworkEvent(GetConnectionStatusMsg(), session.Channel);
 
                     if (firstConnection && _configurationManager.GetCVar(CCVars.AdminNewPlayerJoinSound))
-                        _audioSystem.PlayGlobal(new SoundPathSpecifier("/Audio/Effects/newplayerping.ogg"),
+                        _audio.PlayGlobal(new SoundPathSpecifier("/Audio/Effects/newplayerping.ogg"),
                             Filter.Empty().AddPlayers(_adminManager.ActiveAdmins), false,
                             audioParams: new AudioParams { Volume = -5f });
 
@@ -142,13 +138,33 @@ namespace Content.Server.GameTicking
 
             async void SpawnWaitDb()
             {
-                await _userDb.WaitLoadComplete(session);
+                try
+                {
+                    await _userDb.WaitLoadComplete(session);
+                }
+                catch (OperationCanceledException)
+                {
+                    // Bail, user must've disconnected or something.
+                    Log.Debug($"Database load cancelled while waiting to spawn {session}");
+                    return;
+                }
+
                 SpawnPlayer(session, EntityUid.Invalid);
             }
 
             async void SpawnObserverWaitDb()
             {
-                await _userDb.WaitLoadComplete(session);
+                try
+                {
+                    await _userDb.WaitLoadComplete(session);
+                }
+                catch (OperationCanceledException)
+                {
+                    // Bail, user must've disconnected or something.
+                    Log.Debug($"Database load cancelled while waiting to spawn {session}");
+                    return;
+                }
+
                 JoinAsObserver(session);
             }
 
@@ -173,6 +189,15 @@ namespace Content.Server.GameTicking
 
             _playerGameStatuses[session.UserId] = PlayerGameStatus.JoinedGame;
             _db.AddRoundPlayers(RoundId, session.UserId);
+
+            if (_adminManager.HasAdminFlag(session, AdminFlags.Admin))
+            {
+                if (_allPreviousGameRules.Count > 0)
+                {
+                    var rulesMessage = GetGameRulesListMessage(true);
+                    _chatManager.SendAdminAnnouncementMessage(session, Loc.GetString("starting-rule-selected-preset", ("preset", rulesMessage)));
+                }
+            }
 
             RaiseNetworkEvent(new TickerJoinGameEvent(), session.Channel);
         }

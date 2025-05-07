@@ -1,14 +1,32 @@
 # vocal emotes
 - type: emote
   id: Hiss
+  name: chat-emote-name-hisses
   category: Vocal
+  icon: Interface/Emotes/hiss.png
+  whitelist:
+    tags:
+    - FelinidEmotes
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
   chatMessages: [ hisses ]
   chatTriggers:
     - hisses
 
 - type: emote
   id: Meow
+  name: chat-emote-name-meow
   category: Vocal
+  icon: Interface/Emotes/meow.png
+  whitelist:
+    tags:
+    - FelinidEmotes
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
   chatMessages: [ meows ]
   chatTriggers:
     - meows
@@ -18,21 +36,48 @@
 
 - type: emote
   id: Mew
+  name: chat-emote-name-mew
   category: Vocal
+  icon: Interface/Emotes/mew.png
+  whitelist:
+    tags:
+    - FelinidEmotes
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
   chatMessages: [ mews ]
   chatTriggers:
     - mews
 
 - type: emote
   id: Growl
+  name: chat-emote-name-growl
   category: Vocal
+  icon: Interface/Emotes/growl.png
+  whitelist:
+    tags:
+    - FelinidEmotes
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
   chatMessages: [ growls ]
   chatTriggers:
     - growls
 
 - type: emote
   id: Purr
+  name: chat-emote-name-purr
   category: Vocal
+  icon: Interface/Emotes/purr.png
+  whitelist:
+    tags:
+    - FelinidEmotes
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
   chatMessages: [ purrs ]
   chatTriggers:
     - purrs

@@ -1,8 +1,14 @@
-ghost-respawn-time-left = До возможности вернуться в раунд { $time } 
+ghost-respawn-minutes-left = До возможности вернуться в раунд { $time } 
     { $time ->
         [one] минута
         [few] минуты
        *[other] минут
+    }
+ghost-respawn-seconds-left = До возможности вернуться в раунд { $time } 
+    { $time ->
+        [one] секунда
+        [few] секунды
+       *[other] секунд
     }
 ghost-respawn-max-players = Функция недоступна, игроков на сервере должно быть меньше { $players }.
 ghost-respawn-window-title = Правила возвращения в раунд

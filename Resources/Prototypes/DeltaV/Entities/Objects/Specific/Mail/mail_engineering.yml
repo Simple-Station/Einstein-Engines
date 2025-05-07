@@ -1,6 +1,6 @@
 # Base Nyano Mail
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailEngineeringCables
   suffix: cables
@@ -15,7 +15,7 @@
       orGroup: Cables
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailEngineeringKudzuDeterrent
   suffix: antikudzu
@@ -25,7 +25,7 @@
     - id: PlantBGoneSpray
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailEngineeringSheetGlass
   suffix: sheetglass
@@ -35,7 +35,7 @@
     - id: SheetGlass
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailEngineeringWelderReplacement
   suffix: welder
@@ -47,7 +47,7 @@
 # Frontier Mail
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailNFCircuitboardIndustrial
   suffix: industrial circuitboard
@@ -113,7 +113,7 @@
       prob: 0.1
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMail
   id: MailNFCircuitboardService
   suffix: service circuitboard
@@ -155,7 +155,7 @@
       prob: 0.1
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseMailLarge
   id: MailNFPowerTool
   suffix: power tool

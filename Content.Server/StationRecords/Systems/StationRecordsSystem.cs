@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Forensics;
-using Content.Server.GameTicking;
+using Content.Shared.GameTicking;
 using Content.Shared.Inventory;
 using Content.Shared.PDA;
 using Content.Shared.Preferences;
@@ -215,7 +215,7 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
     /// </remarks>
     public uint? GetRecordByName(EntityUid station, string name, StationRecordsComponent? records = null)
     {
-        if (!Resolve(station, ref records))
+        if (!Resolve(station, ref records, false))
             return null;
 
         foreach (var (id, record) in GetRecordsOfType<GeneralStationRecord>(station, records))

@@ -43,7 +43,7 @@ namespace Content.Server.Nutrition.EntitySystems
         public (bool Success, bool Handled) TryUseUtensil(EntityUid user, EntityUid target, UtensilComponent component)
         {
             if (!EntityManager.TryGetComponent(target, out FoodComponent? food))
-                return (false, true);
+                return (false, false);
 
             //Prevents food usage with a wrong utensil
             if ((food.Utensil & component.Types) == 0)

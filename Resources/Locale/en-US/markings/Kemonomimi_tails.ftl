@@ -1,6 +1,9 @@
 marking-BunnyTail = Bunny Tail
 marking-BunnyTail-bunnytail = Tail
 
+marking-BunnyTailAlt = Bunny Tail, Alternative
+marking-BunnyTailAlt-bunnytailalt = Bunny Tail, Alternative
+
 marking-DobleFur = Doble Tail
 marking-DobleFur-doblefurtailtone1 = Outer
 marking-DobleFur-doblefurtailtone2 = Inner
@@ -17,7 +20,7 @@ marking-FoxThreeTails-foxthreetailstone1 = Inner
 marking-FoxThreeTails-foxthreetailstone2 = Outer
 
 marking-HorseTailCulty = Culty Horse Tail
-marking-HorseTailCulty = Tail
+marking-HorseTailCulty-horsetailculty = Tail
 
 marking-HorseTailLong = Long Horse Tail
 marking-HorseTailLong-horsetaillong = Tail

@@ -1,0 +1,35 @@
+- type: characterItemGroup
+  id: LoadoutMagistrateHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHeadChiefJustice
+
+- type: characterItemGroup
+  id: LoadoutMagistrateNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingNeckChiefJustice
+
+- type: characterItemGroup
+  id: LoadoutMagistrateOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingOuterChiefJustice
+
+- type: characterItemGroup
+  id: LoadoutMagistrateUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingUniformJumpsuitMagistrate
+    - type: loadout
+      id: LoadoutClothingUniformJumpskirtMagistrate
+    - type: loadout
+      id: LoadoutClothingUniformJumpsuitChiefJustice
+    - type: loadout
+      id: LoadoutClothingUniformJumpsuitChiefJusticeFormal
+    - type: loadout
+      id: LoadoutClothingUniformJumpsuitChiefJusticeWhite

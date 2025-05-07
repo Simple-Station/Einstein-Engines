@@ -1,19 +1,25 @@
 using System.Linq;
-using Content.Shared.Actions;
-using Content.Server.GameTicking;
+using Content.Server.Administration.Logs;
+using Content.Server.Administration.Systems;
+using Content.Server.Chat.Managers;
+using Content.Shared.GameTicking;
 using Content.Server.Players.PlayTimeTracking;
+using Content.Shared.CCVar;
+using Content.Shared.Chat;
 using Content.Shared.Customization.Systems;
+using Content.Shared.Database;
 using Content.Shared.Players;
+using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.Traits;
+using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
-using Content.Server.Abilities.Psionics;
-using Content.Shared.Psionics;
-using Content.Server.Language;
-using Content.Shared.Mood;
+using Timer = Robust.Shared.Timing.Timer;
+using Content.Shared.Humanoid.Prototypes;
 
 namespace Content.Server.Traits;
 
@@ -24,10 +30,12 @@ public sealed class TraitSystem : EntitySystem
     [Dependency] private readonly CharacterRequirementsSystem _characterRequirements = default!;
     [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;
     [Dependency] private readonly IConfigurationManager _configuration = default!;
-    [Dependency] private readonly SharedActionsSystem _actions = default!;
-    [Dependency] private readonly PsionicAbilitiesSystem _psionicAbilities = default!;
     [Dependency] private readonly IComponentFactory _componentFactory = default!;
-    [Dependency] private readonly LanguageSystem _languageSystem = default!;
+    [Dependency] private readonly IAdminLogManager _adminLog = default!;
+    [Dependency] private readonly AdminSystem _adminSystem = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IChatManager _chatManager = default!;
 
     public override void Initialize()
     {
@@ -37,26 +45,62 @@ public sealed class TraitSystem : EntitySystem
     }
 
     // When the player is spawned in, add all trait components selected during character creation
-    private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent args)
+    private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent args) =>
+        ApplyTraits(args.Mob, args.JobId, args.Profile,
+            _playTimeTracking.GetTrackerTimes(args.Player), args.Player.ContentData()?.Whitelisted ?? false);
+
+    /// <summary>
+    ///     Adds the traits selected by a player to an entity.
+    /// </summary>
+    public void ApplyTraits(EntityUid uid, ProtoId<JobPrototype>? jobId, HumanoidCharacterProfile profile,
+        Dictionary<string, TimeSpan> playTimes, bool whitelisted, bool punishCheater = true)
     {
-        foreach (var traitId in args.Profile.TraitPreferences)
+        var pointsTotal = _configuration.GetCVar(CCVars.GameTraitsDefaultPoints);
+        var traitSelections = _configuration.GetCVar(CCVars.GameTraitsMax);
+        if (jobId is not null && !_prototype.TryIndex(jobId, out var jobPrototype)
+            && jobPrototype is not null && !jobPrototype.ApplyTraits)
+            return;
+
+        if (_prototype.TryIndex<SpeciesPrototype>(profile.Species, out var speciesProto))
+            pointsTotal += speciesProto.BonusTraitPoints;
+
+        var jobPrototypeToUse = _prototype.Index(jobId ?? _prototype.EnumeratePrototypes<JobPrototype>().First().ID);
+        var sortedTraits = new List<TraitPrototype>();
+
+        foreach (var traitId in profile.TraitPreferences)
         {
-            if (!_prototype.TryIndex<TraitPrototype>(traitId, out var traitPrototype))
+            if (_prototype.TryIndex<TraitPrototype>(traitId, out var traitPrototype))
+            {
+                sortedTraits.Add(traitPrototype);
+            }
+            else
             {
                 DebugTools.Assert($"No trait found with ID {traitId}!");
                 return;
             }
+        }
 
+        sortedTraits.Sort();
+
+        foreach (var traitPrototype in sortedTraits)
+        {
             if (!_characterRequirements.CheckRequirementsValid(
                 traitPrototype.Requirements,
-                _prototype.Index<JobPrototype>(args.JobId ?? _prototype.EnumeratePrototypes<JobPrototype>().First().ID),
-                args.Profile, _playTimeTracking.GetTrackerTimes(args.Player), args.Player.ContentData()?.Whitelisted ?? false, traitPrototype,
+                jobPrototypeToUse,
+                profile, playTimes, whitelisted, traitPrototype,
                 EntityManager, _prototype, _configuration,
                 out _))
                 continue;
 
-            AddTrait(args.Mob, traitPrototype);
+            // To check for cheaters. :FaridaBirb.png:
+            pointsTotal += traitPrototype.Points;
+            --traitSelections;
+
+            AddTrait(uid, traitPrototype);
         }
+
+        if (punishCheater && (pointsTotal < 0 || traitSelections < 0))
+            PunishCheater(uid);
     }
 
     /// <summary>
@@ -64,165 +108,44 @@ public sealed class TraitSystem : EntitySystem
     /// </summary>
     public void AddTrait(EntityUid uid, TraitPrototype traitPrototype)
     {
-        RemoveTraitComponents(uid, traitPrototype);
-        AddTraitComponents(uid, traitPrototype);
-        AddTraitActions(uid, traitPrototype);
-        AddTraitPsionics(uid, traitPrototype);
-        AddTraitLanguage(uid, traitPrototype);
-        RemoveTraitLanguage(uid, traitPrototype);
-        AddTraitMoodlets(uid, traitPrototype);
+        foreach (var function in traitPrototype.Functions)
+            function.OnPlayerSpawn(uid, _componentFactory, EntityManager, _serialization);
     }
 
     /// <summary>
-    ///     Removes all components defined by a Trait. It's not possible to validate component removals,
-    ///     so if an incorrect string is given, it's basically a skill issue.
+    ///     On a non-cheating client, it's not possible to save a character with a negative number of traits. This can however
+    ///     trigger incorrectly if a character was saved, and then at a later point in time an admin changes the traits Cvars to reduce the points.
+    ///     Or if the points costs of traits is increased.
     /// </summary>
-    /// <remarks>
-    ///     This comes before AddTraitComponents for a good reason.
-    ///     It allows for a component to optionally be fully wiped and replaced with a new component.
-    /// </remarks>
-    public void RemoveTraitComponents(EntityUid uid, TraitPrototype traitPrototype)
+    private void PunishCheater(EntityUid uid)
     {
-        if (traitPrototype.ComponentRemovals is null)
+        _adminLog.Add(LogType.AdminMessage, LogImpact.High,
+            $"{ToPrettyString(uid):entity} attempted to spawn with an invalid trait list. This might be a mistake, or they might be cheating");
+
+        if (!_configuration.GetCVar(CCVars.TraitsPunishCheaters)
+            || !_playerManager.TryGetSessionByEntity(uid, out var targetPlayer))
             return;
 
-        foreach (var entry in traitPrototype.ComponentRemovals)
-        {
-            if (!_componentFactory.TryGetRegistration(entry, out var comp))
-                continue;
+        // For maximum comedic effect, this is plenty of time for the cheater to get on station and start interacting with people.
+        var timeToDestroy = _random.NextFloat(120, 360);
 
-            EntityManager.RemoveComponent(uid, comp.Type);
-        }
+        Timer.Spawn(TimeSpan.FromSeconds(timeToDestroy), () => VaporizeCheater(targetPlayer));
     }
 
     /// <summary>
-    ///     Adds all Components included with a Trait.
+    ///     https://www.youtube.com/watch?v=X2QMN0a_TrA
     /// </summary>
-    public void AddTraitComponents(EntityUid uid, TraitPrototype traitPrototype)
+    private void VaporizeCheater (Robust.Shared.Player.ICommonSession targetPlayer)
     {
-        if (traitPrototype.Components is null)
-            return;
+        _adminSystem.Erase(targetPlayer);
 
-        foreach (var entry in traitPrototype.Components.Values)
-        {
-            if (HasComp(uid, entry.Component.GetType()))
-                continue;
-
-            var comp = (Component) _serialization.CreateCopy(entry.Component, notNullableOverride: true);
-            comp.Owner = uid;
-            EntityManager.AddComponent(uid, comp);
-        }
-    }
-
-    /// <summary>
-    ///     Add all actions associated with a specific Trait
-    /// </summary>
-    public void AddTraitActions(EntityUid uid, TraitPrototype traitPrototype)
-    {
-        if (traitPrototype.Actions is null)
-            return;
-
-        foreach (var id in traitPrototype.Actions)
-        {
-            EntityUid? actionId = null;
-            if (_actions.AddAction(uid, ref actionId, id))
-            {
-                _actions.StartUseDelay(actionId);
-            }
-        }
-    }
-
-    /// <summary>
-    ///     If a trait includes any Psionic Powers, this enters the powers into PsionicSystem to be initialized.
-    ///     If the lack of logic here seems startling, it's okay. All of the logic necessary for adding Psionics is handled by InitializePsionicPower.
-    /// </summary>
-    public void AddTraitPsionics(EntityUid uid, TraitPrototype traitPrototype)
-    {
-        if (traitPrototype.PsionicPowers is null)
-            return;
-
-        foreach (var powerProto in traitPrototype.PsionicPowers)
-            if (_prototype.TryIndex<PsionicPowerPrototype>(powerProto, out var psionicPower))
-                _psionicAbilities.InitializePsionicPower(uid, psionicPower, false);
-    }
-
-    /// <summary>
-    ///     Initialize languages given by a Trait.
-    /// </summary>
-    private void AddTraitLanguage(EntityUid uid, TraitPrototype traitPrototype)
-    {
-        AddTraitLanguagesSpoken(uid, traitPrototype);
-        AddTraitLanguagesUnderstood(uid, traitPrototype);
-    }
-
-    /// <summary>
-    ///     If a trait includes any Spoken Languages, this sends them to LanguageSystem to be initialized.
-    /// </summary>
-    public void AddTraitLanguagesSpoken(EntityUid uid, TraitPrototype traitPrototype)
-    {
-        if (traitPrototype.LanguagesSpoken is null)
-            return;
-
-        foreach (var language in traitPrototype.LanguagesSpoken)
-            _languageSystem.AddLanguage(uid, language, true, false);
-    }
-
-    /// <summary>
-    ///     If a trait includes any Understood Languages, this sends them to LanguageSystem to be initialized.
-    /// </summary>
-    public void AddTraitLanguagesUnderstood(EntityUid uid, TraitPrototype traitPrototype)
-    {
-        if (traitPrototype.LanguagesUnderstood is null)
-            return;
-
-        foreach (var language in traitPrototype.LanguagesUnderstood)
-            _languageSystem.AddLanguage(uid, language, false, true);
-    }
-
-    /// <summary>
-    ///     Remove Languages given by a Trait.
-    /// </summary>
-    private void RemoveTraitLanguage(EntityUid uid, TraitPrototype traitPrototype)
-    {
-        RemoveTraitLanguagesSpoken(uid, traitPrototype);
-        RemoveTraitLanguagesUnderstood(uid, traitPrototype);
-    }
-
-    /// <summary>
-    ///     Removes any Spoken Languages if defined by a trait.
-    /// </summary>
-    public void RemoveTraitLanguagesSpoken(EntityUid uid, TraitPrototype traitPrototype)
-    {
-        if (traitPrototype.RemoveLanguagesSpoken is null)
-            return;
-
-        foreach (var language in traitPrototype.RemoveLanguagesSpoken)
-            _languageSystem.RemoveLanguage(uid, language, true, false);
-    }
-
-    /// <summary>
-    ///     Removes any Understood Languages if defined by a trait.
-    /// </summary>
-    public void RemoveTraitLanguagesUnderstood(EntityUid uid, TraitPrototype traitPrototype)
-    {
-        if (traitPrototype.RemoveLanguagesUnderstood is null)
-            return;
-
-        foreach (var language in traitPrototype.RemoveLanguagesUnderstood)
-            _languageSystem.RemoveLanguage(uid, language, false, true);
-    }
-
-    /// <summary>
-    ///     If a trait includes any moodlets, this adds the moodlets to the receiving entity.
-    ///     While I can't stop you, you shouldn't use this to add temporary moodlets.
-    /// </summary>
-    public void AddTraitMoodlets(EntityUid uid, TraitPrototype traitPrototype)
-    {
-        if (traitPrototype.MoodEffects is null)
-            return;
-
-        foreach (var moodProto in traitPrototype.MoodEffects)
-            if (_prototype.TryIndex(moodProto, out var moodlet))
-                RaiseLocalEvent(uid, new MoodEffectEvent(moodlet.ID));
+        var feedbackMessage = $"[font size=24][color=#ff0000]{"You have spawned in with an illegal trait point total. If this was a result of cheats, then your nonexistence is a skill issue. Otherwise, feel free to click 'Return To Lobby', and fix your trait selections."}[/color][/font]";
+        _chatManager.ChatMessageToOne(
+            ChatChannel.Emotes,
+            feedbackMessage,
+            feedbackMessage,
+            EntityUid.Invalid,
+            false,
+            targetPlayer.Channel);
     }
 }

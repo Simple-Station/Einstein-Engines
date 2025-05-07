@@ -1,6 +1,7 @@
 /* WD edit
 
 #nullable enable
+using System.Collections.Generic;
 using System.Linq;
 using Content.Server.Body.Components;
 using Content.Server.GameTicking;
@@ -18,6 +19,7 @@ using Content.Shared.FixedPoint;
 using Content.Shared.GameTicking;
 using Content.Shared.Hands.Components;
 using Content.Shared.Inventory;
+using Content.Shared.NPC.Systems;
 using Content.Shared.NukeOps;
 using Robust.Server.GameObjects;
 using Robust.Shared.GameObjects;
@@ -52,7 +54,6 @@ public sealed class NukeOpsTest
         var invSys = server.System<InventorySystem>();
         var factionSys = server.System<NpcFactionSystem>();
 
-        Assert.That(server.CfgMan.GetCVar(CCVars.GridFill), Is.False);
         server.CfgMan.SetCVar(CCVars.GridFill, true);
 
         // Initially in the lobby
@@ -111,29 +112,61 @@ public sealed class NukeOpsTest
 
         Assert.That(factionSys.IsMember(player, "Syndicate"), Is.True);
         Assert.That(factionSys.IsMember(player, "NanoTrasen"), Is.False);
-
-        var roles = roleSys.MindGetAllRoles(mind);
-        var cmdRoles = roles.Where(x => x.Prototype == "NukeopsCommander" && x.Component is NukeopsRoleComponent);
+        var roles = roleSys.MindGetAllRoleInfo(mind);
+        var cmdRoles = roles.Where(x => x.Prototype == "NukeopsCommander");
         Assert.That(cmdRoles.Count(), Is.EqualTo(1));
+
+        // The second dummy player should be a medic
+        var dummyMind = mindSys.GetMind(dummyEnts[1])!.Value;
+        Assert.That(entMan.HasComponent<NukeOperativeComponent>(dummyEnts[1]));
+        Assert.That(roleSys.MindIsAntagonist(dummyMind));
+        Assert.That(roleSys.MindHasRole<NukeopsRoleComponent>(dummyMind));
+        Assert.That(factionSys.IsMember(dummyEnts[1], "Syndicate"), Is.True);
+        Assert.That(factionSys.IsMember(dummyEnts[1], "NanoTrasen"), Is.False);
+        roles = roleSys.MindGetAllRoleInfo(dummyMind);
+        cmdRoles = roles.Where(x => x.Prototype == "NukeopsMedic");
+        Assert.That(cmdRoles.Count(), Is.EqualTo(1));
+
+        // The other two players should have just spawned in as normal.
+        CheckDummy(0);
+        CheckDummy(2);
+        void CheckDummy(int i)
+        {
+            var ent = dummyEnts[i];
+            var mindCrew = mindSys.GetMind(ent)!.Value;
+            Assert.That(entMan.HasComponent<NukeOperativeComponent>(ent), Is.False);
+            Assert.That(roleSys.MindIsAntagonist(mindCrew), Is.False);
+            Assert.That(roleSys.MindHasRole<NukeopsRoleComponent>(mindCrew), Is.False);
+            Assert.That(factionSys.IsMember(ent, "Syndicate"), Is.False);
+            Assert.That(factionSys.IsMember(ent, "NanoTrasen"), Is.True);
+            var nukeroles = new List<string>() { "Nukeops", "NukeopsMedic", "NukeopsCommander" };
+            Assert.That(roleSys.MindGetAllRoleInfo(mindCrew).Any(x => nukeroles.Contains(x.Prototype)), Is.False);
+        }
 
         // The game rule exists, and all the stations/shuttles/maps are properly initialized
         var rule = entMan.AllComponents<NukeopsRuleComponent>().Single().Component;
-        var mapRule = entMan.AllComponents<LoadMapRuleComponent>().Single().Component;
-        foreach (var grid in mapRule.MapGrids)
+        var gridsRule = entMan.AllComponents<RuleGridsComponent>().Single().Component;
+        foreach (var grid in gridsRule.MapGrids)
         {
             Assert.That(entMan.EntityExists(grid));
             Assert.That(entMan.HasComponent<MapGridComponent>(grid));
             Assert.That(entMan.HasComponent<StationMemberComponent>(grid));
         }
+        Assert.That(entMan.EntityExists(rule.NukieOutpost));
+        Assert.That(entMan.EntityExists(rule.NukieShuttle));
         Assert.That(entMan.EntityExists(rule.TargetStation));
 
+        Assert.That(entMan.HasComponent<MapGridComponent>(rule.NukieOutpost));
+        Assert.That(entMan.HasComponent<MapGridComponent>(rule.NukieShuttle));
+
+        Assert.That(entMan.HasComponent<StationMemberComponent>(rule.NukieOutpost));
         Assert.That(entMan.HasComponent<StationDataComponent>(rule.TargetStation));
 
         var nukieShuttlEnt = entMan.AllComponents<NukeOpsShuttleComponent>().FirstOrDefault().Uid;
         Assert.That(entMan.EntityExists(nukieShuttlEnt));
 
         EntityUid? nukieStationEnt = null;
-        foreach (var grid in mapRule.MapGrids)
+        foreach (var grid in gridsRule.MapGrids)
         {
             if (entMan.HasComponent<StationMemberComponent>(grid))
             {
@@ -145,11 +178,12 @@ public sealed class NukeOpsTest
         Assert.That(entMan.EntityExists(nukieStationEnt));
         var nukieStation = entMan.GetComponent<StationMemberComponent>(nukieStationEnt!.Value);
 
+        var nukieStation = entMan.GetComponent<StationMemberComponent>(rule.NukieOutpost!.Value);
         Assert.That(entMan.EntityExists(nukieStation.Station));
         Assert.That(nukieStation.Station, Is.Not.EqualTo(rule.TargetStation));
 
-        Assert.That(server.MapMan.MapExists(mapRule.Map));
-        var nukieMap = mapSys.GetMap(mapRule.Map!.Value);
+        Assert.That(server.MapMan.MapExists(gridsRule.Map));
+        var nukieMap = mapSys.GetMap(gridsRule.Map!.Value);
 
         var targetStation = entMan.GetComponent<StationDataComponent>(rule.TargetStation!.Value);
         var targetGrid = targetStation.Grids.First();
@@ -159,6 +193,8 @@ public sealed class NukeOpsTest
         Assert.That(entMan.GetComponent<TransformComponent>(player).MapUid, Is.EqualTo(nukieMap));
         Assert.That(entMan.GetComponent<TransformComponent>(nukieStationEnt.Value).MapUid, Is.EqualTo(nukieMap));
         Assert.That(entMan.GetComponent<TransformComponent>(nukieShuttlEnt).MapUid, Is.EqualTo(nukieMap));
+        Assert.That(entMan.GetComponent<TransformComponent>(rule.NukieOutpost!.Value).MapUid, Is.EqualTo(nukieMap));
+        Assert.That(entMan.GetComponent<TransformComponent>(rule.NukieShuttle!.Value).MapUid, Is.EqualTo(nukieMap));
 
         // The maps are all map-initialized, including the player
         // Yes, this is necessary as this has repeatedly been broken somehow.
@@ -173,6 +209,8 @@ public sealed class NukeOpsTest
         Assert.That(LifeStage(targetMap), Is.GreaterThan(EntityLifeStage.Initialized));
         Assert.That(LifeStage(nukieStationEnt.Value), Is.GreaterThan(EntityLifeStage.Initialized));
         Assert.That(LifeStage(nukieShuttlEnt), Is.GreaterThan(EntityLifeStage.Initialized));
+        Assert.That(LifeStage(rule.NukieOutpost), Is.GreaterThan(EntityLifeStage.Initialized));
+        Assert.That(LifeStage(rule.NukieShuttle), Is.GreaterThan(EntityLifeStage.Initialized));
         Assert.That(LifeStage(rule.TargetStation), Is.GreaterThan(EntityLifeStage.Initialized));
 
         // Make sure the player has hands. We've had fucking disarmed nukies before.
@@ -198,13 +236,29 @@ public sealed class NukeOpsTest
         for (var tick = 0; tick < totalTicks; tick += increment)
         {
             await pair.RunTicksSync(increment);
-            Assert.That(resp.SuffocationCycles, Is.LessThanOrEqualTo(resp.SuffocationCycleThreshold));
+            Assert.That(resp.SuffocationCycWles, Is.LessThanOrEqualTo(resp.SuffocationCycleThreshold));
             Assert.That(damage.TotalDamage, Is.EqualTo(FixedPoint2.Zero));
         }
 
-        //ticker.SetGamePreset((GamePresetPrototype?)null); WD edit
-        server.CfgMan.SetCVar(CCVars.GridFill, false);
-        await pair.SetAntagPref("NukeopsCommander", false);
+        // Check that the round does not end prematurely when agents are deleted in the outpost
+        var nukies = dummyEnts.Where(entMan.HasComponent<NukeOperativeComponent>).Append(player).ToArray();
+        await server.WaitAssertion(() =>
+        {
+            for (var i = 0; i < nukies.Length - 1; i++)
+            {
+                entMan.DeleteEntity(nukies[i]);
+                Assert.That(roundEndSys.IsRoundEndRequested,
+                    Is.False,
+                    $"The round ended, but {nukies.Length - i - 1} nukies are still alive!");
+            }
+            // Delete the last nukie and make sure the round ends.
+            entMan.DeleteEntity(nukies[^1]);
+
+            Assert.That(roundEndSys.IsRoundEndRequested,
+                "All nukies were deleted, but the round didn't end!");
+        });
+
+        ticker.SetGamePreset((GamePresetPrototype?) null);
         await pair.CleanReturnAsync();
     }
 }

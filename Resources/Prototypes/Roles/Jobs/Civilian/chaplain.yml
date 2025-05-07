@@ -16,6 +16,12 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
+    - !type:CharacterItemGroupRequirement
+      group: TraitsCasterType
   startingGear: ChaplainGear
   icon: "JobIconChaplain"
   supervisors: job-supervisors-rd
@@ -26,22 +32,36 @@
   special:
   - !type:AddComponentSpecial
     components:
-    - type: BibleUser #Lets them heal with bibles
+    - type: BibleUser
     - type: Psionic
       powerRollMultiplier: 3
+      baselinePowerCost: 150
+      nextPowerCost: 150
+      powerPool: ElementalistPowerPool
     - type: InnatePsionicPowers
       powersToAdd:
-        - TelepathyPower
         - HealingWordPower
+        - SummonRemiliaPower
 
 - type: startingGear
   id: ChaplainGear
+  subGear:
+  - ChaplainPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitChaplain
-    back: ClothingBackpackChaplainFilled
+    back: ClothingBackpack
     shoes: ClothingShoesColorBlack
     id: ChaplainPDA
     ears: ClothingHeadsetScience
+    pocket1: BookPsionicsGuidebook
   innerClothingSkirt: ClothingUniformJumpskirtChaplain
   satchel: ClothingBackpackSatchelChaplainFilled
   duffelbag: ClothingBackpackDuffelChaplainFilled
+
+- type: startingGear
+  id: ChaplainPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitChaplain
+    head: ClothingHeadEnvirohelmChaplain
+    gloves: ClothingHandsGlovesEnviroglovesBlack

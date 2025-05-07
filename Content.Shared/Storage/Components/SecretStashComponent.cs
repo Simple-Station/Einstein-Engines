@@ -6,6 +6,7 @@ using Robust.Shared.Prototypes;
 using Content.Shared.Tools;
 using Robust.Shared.GameStates;
 using Content.Shared.DoAfter;
+using Content.Shared.Toilet.Components;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Storage.Components

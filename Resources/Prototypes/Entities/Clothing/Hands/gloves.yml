@@ -20,6 +20,7 @@
     soundHit:
       collection: BoxingHit
     animation: WeaponArcFist
+    mustBeEquippedToUse: true
   - type: Fiber
     fiberMaterial: fibers-leather
     fiberColor: fibers-red
@@ -90,6 +91,7 @@
       types:
         Blunt: 8
     bluntStaminaDamageFactor: 0.0 # so blunt doesn't deal stamina damage at all
+    mustBeEquippedToUse: true
 
 - type: entity
   parent: ClothingHandsBase
@@ -204,7 +206,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingHandsBase
+  parent: [ClothingHandsBase, BaseToggleClothing]
   id: ClothingHandsGlovesSpaceNinja
   name: space ninja gloves
   description: These black nano-enhanced gloves insulate from electricity and provide fire resistance.
@@ -231,7 +233,32 @@
   - type: FingerprintMask
   - type: Thieving
     stripTimeReduction: 1
+  - type: ToggleClothing
+    action: ActionToggleNinjaGloves
+  - type: Unremoveable
   - type: NinjaGloves
+    abilities:
+    - components:
+      - type: BatteryDrainer
+      - type: StunProvider
+        noPowerPopup: ninja-no-power
+        whitelist:
+          components:
+          - Stamina
+      - type: EmagProvider
+        whitelist:
+          components:
+          - Airlock
+    - objective: StealResearchObjective
+      components:
+      - type: ResearchStealer
+    - objective: TerrorObjective
+      components:
+      - type: CommsHacker
+        threats: NinjaThreats
+    - objective: MassArrestObjective
+      components:
+      - type: CriminalRecordsHacker
 
 - type: entity
   parent: ClothingHandsGlovesColorBlack
@@ -239,9 +266,21 @@
   name: combat gloves
   description: These tactical gloves are fireproof and shock resistant.
   components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/combat.rsi
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/combat.rsi
+  - type: GloveHeatResistance
+    heatResistance: 1400
   - type: Insulated
   - type: Fiber
     fiberMaterial: fibers-insulative
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
 
 # can't parent combat gloves since they are butcherable
 - type: entity
@@ -254,11 +293,17 @@
     sprite: Clothing/Hands/Gloves/tacticalmaidgloves.rsi
   - type: Clothing
     sprite: Clothing/Hands/Gloves/tacticalmaidgloves.rsi
+  - type: Fiber
+    fiberColor: fibers-black
   - type: GloveHeatResistance
     heatResistance: 1400
   - type: Insulated
-  - type: Fiber
-    fiberColor: fibers-black
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
 
 - type: entity
   parent: ClothingHandsGlovesCombat
@@ -277,6 +322,12 @@
   - type: Fiber
     fiberMaterial: fibers-insulative
     fiberColor: fibers-olive
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
 
 - type: entity
   parent: ClothingHandsButcherable
@@ -291,6 +342,20 @@
   - type: Fiber
     fiberMaterial: fibers-synthetic
     fiberColor: fibers-black
+
+- type: entity
+  parent: ClothingHandsButcherable
+  id: ClothingHandsGlovesFingerlessWhite
+  name: fingerless gloves
+  description: Plain gloves without fingertips.
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/fingerlesswhite.rsi
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/fingerlesswhite.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-dyed
 
 - type: entity
   parent: ClothingHandsBase
@@ -353,7 +418,7 @@
     sprite: Clothing/Hands/Gloves/northstar.rsi
   - type: MeleeWeapon
     autoAttack: true
-    attackRate: 4
+    attackRate: 0.25
     heavyStaminaCost: 2
     heavyDamageBaseModifier: 1.05
     maxTargets: 1
@@ -363,6 +428,7 @@
     soundHit:
       collection: Punch
     animation: WeaponArcFist
+    mustBeEquippedToUse: true
   - type: Fiber
     fiberMaterial: fibers-leather
     fiberColor: fibers-blue
@@ -370,12 +436,11 @@
   - type: MeleeSpeech
   - type: ActivatableUI
     key: enum.MeleeSpeechUiKey.Key
-    closeOnHandDeselect: false
-    rightClickOnly: true
+    verbOnly: true
   - type: Actions
   - type: UserInterface
     interfaces:
-      - key: enum.MeleeSpeechUiKey.Key
+      enum.MeleeSpeechUiKey.Key:
         type: MeleeSpeechBoundUserInterface
   - type: StaticPrice
     price: 0
@@ -410,3 +475,27 @@
     fiberMaterial: fibers-rubber
     fiberColor: fibers-yellow
   - type: FingerprintMask
+
+- type: entity
+  parent: ClothingHandsGlovesSyntheticBase
+  id: ClothingHandsGlovesEvening
+  name: evening gloves
+  description: Gloves that reach past the elbow. Serving elegance and serving looks!
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/evening_gloves.rsi
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/evening_gloves.rsi
+
+- type: entity
+  parent: ClothingHandsGlovesSyntheticBase
+  id: ClothingHandsTacticalMaidGlovesLoadout
+  name: tactical maid gloves
+  description: Tactical maid gloves, every self-respecting maid should be able to discreetly eliminate the stains the passengers leave.
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/tacticalmaidgloves.rsi
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/tacticalmaidgloves.rsi
+  - type: Fiber
+    fiberColor: fibers-black

@@ -109,7 +109,7 @@
   components:
   - type: PointLight
     radius: 8
-    energy: 25
+    energy: 10
     color: "#daa3fd"
   - type: TriggerArtifact
   - type: FlashOnTrigger
@@ -503,6 +503,9 @@
     - Desoxyephedrine
     - Pax
     - Siderlac
+    # Goobstation - Start
+    - Ibuprofen
+    - Tirimol
 
 - type: artifactEffect
   id: EffectEmp
@@ -592,10 +595,10 @@
   - type: SpawnArtifact
     maxSpawns: 10
     spawns:
-    - id: QuadraticCapacitorStockPart
+    - id: BluespaceCapacitorStockPart
       prob: 0.5
       maxAmount: 3
-    - id: FemtoManipulatorStockPart
+    - id: BluespaceManipulatorStockPart
       prob: 0.5
       maxAmount: 3
     - id: BluespaceMatterBinStockPart
@@ -622,6 +625,9 @@
     - ChloralHydrate
     - Mold
     - Amatoxin
+    # Goobstation - Start
+    - Triclor
+    - Cyanide
 
 - type: artifactEffect
   id: EffectIgnite

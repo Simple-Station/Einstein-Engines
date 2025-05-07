@@ -25,8 +25,6 @@ public partial class MobStateSystem : EntitySystem
         _sawmill = _logManager.GetSawmill("MobState");
         base.Initialize();
         SubscribeEvents();
-        SubscribeLocalEvent<MobStateComponent, ComponentGetState>(OnGetComponentState);
-        SubscribeLocalEvent<MobStateComponent, ComponentHandleState>(OnHandleComponentState);
     }
 
     #region Public API
@@ -67,11 +65,20 @@ public partial class MobStateSystem : EntitySystem
     {
         if (!Resolve(target, ref component, false))
             return false;
+
         return component.CurrentState == MobState.Dead;
     }
 
+    public bool IsSoftCritical(EntityUid target, MobStateComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return false;
+
+        return component.CurrentState == MobState.SoftCritical;
+    }
+
     /// <summary>
-    ///  Check if a Mob is Critical or Dead
+    ///  Check if a Mob is Critical or Dead or SoftCrit
     /// </summary>
     /// <param name="target">Target Entity</param>
     /// <param name="component">The MobState component owned by the target</param>
@@ -80,7 +87,7 @@ public partial class MobStateSystem : EntitySystem
     {
         if (!Resolve(target, ref component, false))
             return false;
-        return component.CurrentState is MobState.Critical or MobState.Dead;
+        return component.CurrentState is MobState.Critical or MobState.Dead or MobState.SoftCritical;
     }
 
     /// <summary>
@@ -99,25 +106,6 @@ public partial class MobStateSystem : EntitySystem
     #endregion
 
     #region Private Implementation
-
-    private void OnHandleComponentState(EntityUid uid, MobStateComponent component, ref ComponentHandleState args)
-    {
-        if (args.Current is not MobStateComponentState state)
-            return;
-
-        component.CurrentState = state.CurrentState;
-
-        if (!component.AllowedStates.SetEquals(state.AllowedStates))
-        {
-            component.AllowedStates.Clear();
-            component.AllowedStates.UnionWith(state.AllowedStates);
-        }
-    }
-
-    private void OnGetComponentState(EntityUid uid, MobStateComponent component, ref ComponentGetState args)
-    {
-        args.State = new MobStateComponentState(component.CurrentState, component.AllowedStates);
-    }
 
     #endregion
 }

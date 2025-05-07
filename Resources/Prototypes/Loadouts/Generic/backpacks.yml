@@ -1,0 +1,45 @@
+- type: loadout
+  id: LoadoutBackpack
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingBackpack
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+
+- type: loadout
+  id: LoadoutBackpackHydroponics
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackHydroponics
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Civilian
+
+- type: loadout
+  id: LoadoutBackpackMerc
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMerc
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+            - Civilian
+        - !type:CharacterJobRequirement
+          jobs:
+            - SalvageSpecialist

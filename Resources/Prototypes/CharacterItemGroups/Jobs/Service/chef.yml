@@ -1,0 +1,80 @@
+# Chef
+#- type: characterItemGroup
+#  id: LoadoutChefBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutChefBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutChefEars
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutChefEquipment
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutChefEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutChefGloves
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutChefHead
+  items:
+    - type: loadout
+      id: LoadoutServiceHeadChefNt
+    - type: loadout
+      id: LoadoutServiceHeadChefIdris
+    - type: loadout
+      id: LoadoutServiceHeadChefOrion
+
+#- type: characterItemGroup
+#  id: LoadoutChefId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutChefNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutChefMask
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutChefOuter
+  items:
+    - type: loadout
+      id: LoadoutServiceOuterChefNt
+    - type: loadout
+      id: LoadoutServiceOuterChefIdris
+    - type: loadout
+      id: LoadoutServiceOuterChefOrion
+
+#- type: characterItemGroup
+#  id: LoadoutChefShoes
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutChefUniforms
+  items:
+    - type: loadout
+      id: LoadoutServiceJumpsuitChefNt
+    - type: loadout
+      id: LoadoutServiceJumpsuitChefIdris
+    - type: loadout
+      id: LoadoutServiceJumpsuitChefOrion

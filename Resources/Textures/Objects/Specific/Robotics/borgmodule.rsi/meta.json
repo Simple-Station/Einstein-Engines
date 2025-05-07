@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC0-1.0",
-  "copyright": "Created by EmoGarbage404 (github) for Space Station 14. icon-construction.png created by deltanedas (github).",
+  "copyright": "Created by EmoGarbage404 (github) for Space Station 14. icon-construction.png created by deltanedas (github). syndicateborgbomb.png created by Mangohydra (github).",
   "size": {
     "x": 32,
     "y": 32
@@ -92,6 +92,9 @@
       "name": "icon-rcd"
     },
     {
+        "name": "icon-rpd"
+    },
+    {
       "name": "icon-template"
     },
     {
@@ -107,10 +110,19 @@
       "name": "icon-treatment"
     },
     {
+      "name": "icon-surgery"
+    },
+    {
+      "name": "icon-advanced-surgery"
+    },
+    {
       "name": "icon-syndicate"
     },
     {
       "name": "janitor"
+    },
+    {
+      "name": "icon-bomb"
     },
     {
       "name": "medical"
@@ -123,6 +135,9 @@
     },
     {
       "name": "service"
+    },
+    {
+      "name": "syndicateborgbomb"
     },
     {
       "name": "syndicate"

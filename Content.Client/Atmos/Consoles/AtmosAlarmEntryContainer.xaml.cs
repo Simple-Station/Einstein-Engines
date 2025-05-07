@@ -160,15 +160,12 @@ public sealed partial class AtmosAlarmEntryContainer : BoxContainer
                     // Add an entry for each gas
                     foreach ((var gas, (var mol, var percent, var alert)) in gasData)
                     {
-                        var gasPercent = (FixedPoint2)0f;
-                        gasPercent = percent * 100f;
-
-                        if (!_gasShorthands.TryGetValue(gas, out var gasShorthand))
-                            gasShorthand = "X";
+                        FixedPoint2 gasPercent = percent * 100f;
+                        var gasAbbreviation = Atmospherics.GasAbbreviations.GetValueOrDefault(gas, Loc.GetString("gas-unknown-abbreviation"));
 
                         var gasLabel = new Label()
                         {
-                            Text = Loc.GetString("atmos-alerts-window-other-gases-value", ("shorthand", gasShorthand), ("value", gasPercent)),
+                            Text = Loc.GetString("atmos-alerts-window-other-gases-value", ("shorthand", gasAbbreviation), ("value", gasPercent)),
                             FontOverride = normalFont,
                             FontColorOverride = GetAlarmStateColor(alert),
                             HorizontalAlignment = HAlignment.Center,

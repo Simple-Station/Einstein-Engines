@@ -25,18 +25,22 @@ marking-LizardHornsSimple = Lizard Horns
 marking-LizardTailSmooth-tail_smooth_primary = Lizard Tail
 marking-LizardTailSmooth-tail_smooth_secondary = Under Tone
 marking-LizardTailSmooth = Lizard Tail (Smooth)
+marking-LizardTailSmoothAnimated = Lizard Tail (Smooth) (Animated)
 
 marking-LizardTailLarge-tail_large = Lizard Tail (Large)
 marking-LizardTailLarge = Lizard Tail (Large)
 
 marking-LizardTailSpikes-tail_spikes = Lizard Tail (Spiky)
 marking-LizardTailSpikes = Lizard Tail (Spiky)
+marking-LizardTailSpikesAnimated = Lizard Tail (Spiky) (Animated)
 
 marking-LizardTailLTiger-tail_ltiger = Lizard Tail (Light Tiger Stripes)
 marking-LizardTailLTiger = Lizard Tail (Light Tiger Stripes)
+marking-LizardTailLTigerAnimated = Lizard Tail (Light Tiger Stripes) (Animated)
 
 marking-LizardTailDTiger-tail_dtiger = Lizard Tail (Dark Tiger Stripes)
 marking-LizardTailDTiger = Lizard Tail (Dark Tiger Stripes)
+marking-LizardTailDTigerAnimated = Lizard Tail (Dark Tiger Stripes) (Animated)
 
 marking-LizardSnoutRound-snout_round = Lizard Snout (Round)
 marking-LizardSnoutRound = Lizard Snout (Round)
@@ -67,6 +71,9 @@ marking-LizardFrillsDivinity = Lizard Frills (Divinity)
 
 marking-LizardFrillsBig-frills_big = Lizard Frills (Big)
 marking-LizardFrillsBig = Lizard Frills (Big)
+
+marking-LizardFrillsNeckfull-frills_neckfull = Lizard Frills (Neckfull)
+marking-LizardFrillsNeckfull = Lizard Frills (Neckfull)
 
 marking-LizardHornsDouble-horns_double = Lizard Horns (Double)
 marking-LizardHornsDouble = Lizard Horns (Double)
@@ -101,3 +108,7 @@ marking-LizardChestUnderbelly = Lizard Chest (Underbelly)
 
 marking-LizardChestBackspikes-body_backspikes = Lizard Back spikes (Four)
 marking-LizardChestBackspikes = Lizard Back spikes (Four)
+
+marking-LizardSnoutSplotch = Lizard Snout (Splotch)
+marking-LizardSnoutSplotch-snout_splotch_primary = Muzzle
+marking-LizardSnoutSplotch-snout_splotch_secondary = Snoot

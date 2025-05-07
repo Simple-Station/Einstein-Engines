@@ -4,17 +4,12 @@ using Content.Shared.Storage;
 using Content.Server.Carrying; // Carrying system from Nyanotrasen.
 using Content.Shared.Inventory;
 using Content.Shared.Hands.EntitySystems;
-using Content.Server.Storage.Components;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions;
-using Content.Shared.Contests;
 using Content.Shared.DoAfter;
-using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction.Events;
-using Content.Shared.Inventory;
 using Content.Shared.Movement.Events;
 using Content.Shared.Resist;
-using Content.Shared.Storage;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 
@@ -29,7 +24,6 @@ public sealed class EscapeInventorySystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
     [Dependency] private readonly CarryingSystem _carryingSystem = default!; // Carrying system from Nyanotrasen.
     [Dependency] private readonly SharedActionsSystem _actions = default!;
-    [Dependency] private readonly ContestsSystem _contests = default!;
 
     /// <summary>
     /// You can't escape the hands of an entity this many times more massive than you.
@@ -56,7 +50,7 @@ public sealed class EscapeInventorySystem : EntitySystem
         if (!args.HasDirectionalMovement)
             return;
 
-        if (!_containerSystem.TryGetContainingContainer(uid, out var container) || !_actionBlockerSystem.CanInteract(uid, container.Owner))
+        if (!_containerSystem.TryGetContainingContainer((uid, null, null), out var container) || !_actionBlockerSystem.CanInteract(uid, container.Owner))
             return;
 
         // Make sure there's nothing stopped the removal (like being glued)
@@ -69,8 +63,7 @@ public sealed class EscapeInventorySystem : EntitySystem
         // Contested
         if (_handsSystem.IsHolding(container.Owner, uid, out _))
         {
-            var disadvantage = _contests.MassContest(container.Owner, uid, rangeFactor: 3f);
-            AttemptEscape(uid, container.Owner, component, disadvantage);
+            AttemptEscape(uid, container.Owner, component);
             return;
         }
 
@@ -86,8 +79,7 @@ public sealed class EscapeInventorySystem : EntitySystem
 
         var doAfterEventArgs = new DoAfterArgs(EntityManager, user, component.BaseResistTime * multiplier, new EscapeInventoryEvent(), user, target: container)
         {
-            BreakOnTargetMove = false,
-            BreakOnUserMove = true,
+            BreakOnMove = true,
             BreakOnDamage = true,
             NeedHand = false
         };

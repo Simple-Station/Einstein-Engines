@@ -133,7 +133,7 @@
     factions:
     - PetsNT
   - type: Tool
-    speed: 3
+    speedModifier: 3
     qualities:
       - Prying
   - type: Sprite
@@ -150,8 +150,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: Grammar
     attributes:
       proper: true
@@ -177,7 +177,7 @@
     factions:
     - PetsNT
   - type: Tool
-    speed: 3
+    speedModifier: 3
     qualities:
       - Prying
   - type: Sprite
@@ -201,8 +201,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: Grammar
     attributes:
       proper: true
@@ -225,7 +225,7 @@
     factions:
     - PetsNT
   - type: Tool
-    speed: 3
+    speedModifier: 3
     qualities:
       - Prying
   - type: Inventory
@@ -235,8 +235,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: Grammar
     attributes:
       proper: true
@@ -259,7 +259,7 @@
     factions:
     - PetsNT
   - type: Tool
-    speed: 3
+    speedModifier: 3
     qualities:
       - Prying
   - type: Inventory
@@ -269,8 +269,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: Grammar
     attributes:
       proper: true
@@ -293,7 +293,7 @@
     factions:
      - PetsNT
   - type: Tool
-    speed: 3
+    speedModifier: 3
     qualities:
       - Prying
   - type: Sprite
@@ -324,8 +324,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-    - key: enum.StrippingUiKey.Key
-      type: StrippableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: Grammar
     attributes:
       proper: true
@@ -341,7 +341,7 @@
 - type: entity
   id: neutralXenoVents
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
@@ -360,11 +360,11 @@
       prob: 0.0075
     - id: MobXenoNeutralRavager
       prob: 0.0075
-      
+
 - type: entity
   id: ArgocyteVents
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
@@ -403,7 +403,7 @@
 - type: entity
   id: MeatVents
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
@@ -424,11 +424,11 @@
       prob: 0.005
     - id: MobAbomination
       prob: 0.005
-      
+
 - type: entity
   id: TickVents
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
@@ -445,7 +445,7 @@
 - type: entity
   id: CarpVents
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
@@ -472,7 +472,7 @@
 - type: entity
   id: SpaceVents
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
@@ -495,7 +495,7 @@
 - type: entity
   id: LightVents
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
@@ -506,15 +506,13 @@
     duration: 60
   - type: VentCrittersRule
     entries:
-    - id: MobLivingLight
-      prob: 0.01
     - id: MobLuminousPerson
       prob: 0.01
     - id: MobLuminousObject
       prob: 0.01
     - id: MobLuminousEntity
       prob: 0.01
-      
+
 - type: entity
   name: Friendly Xeno spawner
   id: friendlyxenoSpawner

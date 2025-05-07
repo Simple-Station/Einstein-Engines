@@ -65,6 +65,11 @@ entities:
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
         path: /Audio/Effects/alert.ogg
+    - type: DeviceNetwork
+      configurators: []
+      deviceLists: []
+      transmitFrequencyId: ShuttleTimer
+      deviceNetId: Wireless
     - type: DecalGrid
       chunkCollection:
         version: 2
@@ -313,6 +318,7 @@ entities:
             78: 7,-10
             79: 7,-11
     - type: GridAtmosphere
+      simulatedTurf: false
       version: 2
       data:
         tiles:

@@ -13,9 +13,6 @@ reagent-desc-experimental-stimulants = A prototype version of the stimulant chem
 reagent-name-thc = THC
 reagent-desc-thc = The main psychoactive compound in cannabis.
 
-reagent-name-thc-oil = THC oil
-reagent-desc-thc-oil = Pure THC oil, extracted from the leaves of the cannabis plant. Much stronger than its natural form and can be used to numb chronic pain in patients.
-
 reagent-name-bananadine = bananadine
 reagent-desc-bananadine = A mild psychedelic that is found in small traces in banana peels.
 
@@ -39,3 +36,16 @@ reagent-desc-norepinephric-acid = A smooth chemical that blocks the optical rece
 
 reagent-name-tear-gas = tear gas
 reagent-desc-tear-gas = A chemical that causes severe irritation and crying, commonly used in riot control.
+
+reagent-name-happiness = happiness
+reagent-desc-happiness = Fills you with ecstatic numbness and causes minor brain damage. Highly addictive. If overdosed causes sudden mood swings.
+
+reagent-name-cryanobalamin = cryanobalamin
+reagent-desc-cryanobalamin = A formerly popular additive to energy drinks to restore stamina, now banned from commercial use due to its carcinogenic properties.
+
+reagent-name-liftloversspecial = lift lovers special
+reagent-desc-liftloversspecial = A chemical cocktail that quickly restores stamina. Despite being officially banned, it remains a popular black-market drink among fitness junkies. Carcinogenic in high doses.
+
+reagent-name-morphine = morphine
+reagent-desc-morphine = A potent analgesic that allows a patient to painlessly undergo surgery even while awake. Highly addictive if overused. Overdose can cause difficulty breathing.
+

@@ -4,6 +4,7 @@ using Content.Server.Wires;
 using Content.Shared.Doors.Components;
 using Content.Shared.Doors.Systems;
 using Content.Shared.Interaction;
+using Content.Shared.Power;
 using Content.Shared.Wires;
 using Robust.Shared.Player;
 
@@ -21,7 +22,7 @@ public sealed class AirlockSystem : SharedAirlockSystem
         SubscribeLocalEvent<AirlockComponent, SignalReceivedEvent>(OnSignalReceived);
 
         SubscribeLocalEvent<AirlockComponent, PowerChangedEvent>(OnPowerChanged);
-        SubscribeLocalEvent<AirlockComponent, ActivateInWorldEvent>(OnActivate, before: new[] { typeof(DoorSystem) });
+        SubscribeLocalEvent<AirlockComponent, ActivateInWorldEvent>(OnActivate, after: new[] { typeof(DoorSystem) });
     }
 
     private void OnAirlockInit(EntityUid uid, AirlockComponent component, ComponentInit args)
@@ -67,6 +68,9 @@ public sealed class AirlockSystem : SharedAirlockSystem
 
     private void OnActivate(EntityUid uid, AirlockComponent component, ActivateInWorldEvent args)
     {
+        if (args.Handled || !args.Complex)
+            return;
+
         if (TryComp<WiresPanelComponent>(uid, out var panel) &&
             panel.Open &&
             TryComp<ActorComponent>(args.User, out var actor))

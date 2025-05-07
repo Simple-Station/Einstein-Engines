@@ -18,7 +18,7 @@ lobbyduration      = 240
 
 [hub]
 tags = "lang:en-US,region:am_n_e,rp:med"
-hub_urls = "https://hub.spacestation14.com/"
+hub_urls = "https://hub.spacestation14.com/, https://web.networkgamez.com/, https://hub.singularity14.co.uk/"
 
 [ic]
 flavor_text = true
@@ -37,11 +37,11 @@ tickrate = 30
 limit = 10.0
 
 [build]
+#! PLEASE set this for your fork
 fork_id = "EinsteinEngines"
 
 [server]
-rules_file   = "Rules.txt"
-rules_header = "ui-rules-header"
+rules_file   = "DefaultRuleset"
 
 [ooc]
 enable_during_round = true

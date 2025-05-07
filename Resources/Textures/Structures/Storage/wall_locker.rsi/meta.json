@@ -33,6 +33,9 @@
     { "name": "unlocked" },
     { "name": "welded" },
     { "name": "white_door" },
-    { "name": "yellow_door" }
+    { "name": "yellow_door" },
+    { "name": "rad" },
+    { "name": "rad_door" },
+    { "name": "rad_open" }
   ]
 }

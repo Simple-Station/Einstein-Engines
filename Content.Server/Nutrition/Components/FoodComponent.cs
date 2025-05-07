@@ -7,7 +7,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server.Nutrition.Components;
 
-[RegisterComponent, Access(typeof(FoodSystem))]
+[RegisterComponent, Access(typeof(FoodSystem), typeof(FoodSequenceSystem))]
 public sealed partial class FoodComponent : Component
 {
     [DataField]
@@ -17,7 +17,7 @@ public sealed partial class FoodComponent : Component
     public SoundSpecifier UseSound = new SoundCollectionSpecifier("eating");
 
     [DataField]
-    public EntProtoId? Trash;
+    public List<EntProtoId> Trash = new();
 
     [DataField]
     public FixedPoint2? TransferAmount = FixedPoint2.New(5);
@@ -68,6 +68,12 @@ public sealed partial class FoodComponent : Component
     /// </summary>
     [DataField]
     public float ForceFeedDelay = 3;
+
+    /// <summary>
+    /// Shitmed Change: Whether to show a popup to everyone in range when attempting to eat this food, and upon successful eating.
+    /// </summary>
+    [DataField]
+    public bool PopupOnEat;
 
     /// <summary>
     /// For mobs that are food, requires killing them before eating.

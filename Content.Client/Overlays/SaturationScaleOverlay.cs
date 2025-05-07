@@ -1,4 +1,5 @@
-﻿using Robust.Client.Graphics;
+﻿using System.Numerics;
+using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
@@ -45,7 +46,7 @@ public sealed class SaturationScaleOverlay : Overlay
         _shader.SetParameter("saturation", Saturation);
 
         var handle = args.WorldHandle;
-        handle.SetTransform(Matrix3.Identity);
+        handle.SetTransform(Matrix3x2.Identity);
         handle.UseShader(_shader);
         handle.DrawRect(args.WorldBounds, Color.White);
         handle.UseShader(null);

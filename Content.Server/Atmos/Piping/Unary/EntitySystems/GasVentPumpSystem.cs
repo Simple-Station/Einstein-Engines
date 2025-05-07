@@ -18,6 +18,7 @@ using Content.Shared.Atmos.Visuals;
 using Content.Shared.Audio;
 using Content.Shared.DeviceNetwork;
 using Content.Shared.Examine;
+using Content.Shared.Power;
 using Content.Shared.Tools.Systems;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
@@ -80,7 +81,7 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
                 return;
             }
 
-            var timeDelta =  args.dt;
+            var timeDelta = args.dt;
             var pressureDelta = timeDelta * vent.TargetPressureChange;
 
             if (vent.PumpDirection == VentPumpDirection.Releasing && pipe.Air.Pressure > 0)
@@ -292,7 +293,7 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
         /// </summary>
         private void OnAnalyzed(EntityUid uid, GasVentPumpComponent component, GasAnalyzerScanEvent args)
         {
-            var gasMixDict = new Dictionary<string, GasMixture?>();
+            args.GasMixtures ??= new List<(string, GasMixture?)>();
 
             // these are both called pipe, above it switches using this so I duplicated that...?
             var nodeName = component.PumpDirection switch
@@ -301,10 +302,14 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
                 VentPumpDirection.Siphoning => component.Outlet,
                 _ => throw new ArgumentOutOfRangeException()
             };
-            if (_nodeContainer.TryGetNode(uid, nodeName, out PipeNode? pipe))
-                gasMixDict.Add(nodeName, pipe.Air);
-
-            args.GasMixtures = gasMixDict;
+            // multiply by volume fraction to make sure to send only the gas inside the analyzed pipe element, not the whole pipe system
+            if (_nodeContainer.TryGetNode(uid, nodeName, out PipeNode? pipe) && pipe.Air.Volume != 0f)
+            {
+                var pipeAirLocal = pipe.Air.Clone();
+                pipeAirLocal.Multiply(pipe.Volume / pipe.Air.Volume);
+                pipeAirLocal.Volume = pipe.Volume;
+                args.GasMixtures.Add((nodeName, pipeAirLocal));
+            }
         }
 
         private void OnWeldChanged(EntityUid uid, GasVentPumpComponent component, ref WeldableChangedEvent args)

@@ -1,8 +1,3 @@
-# - type: guideEntry # When it's added
-#   id: AltarsGolemancy
-#   name: guide-entry-altars-golemancy
-#   text: "/ServerInfo/Nyanotrasen/Guidebook/Epistemics/Altar.xml"
-
 - type: guideEntry
   id: ReverseEngineering
   name: guide-entry-reverse-engineering

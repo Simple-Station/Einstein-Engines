@@ -3,7 +3,7 @@
   name: job-name-senior-officer
   description: job-description-senior-officer
   playTimeTracker: JobSeniorOfficer
-  setPreference: false # DeltaV - Disable Senior Roles round start selection
+  setPreference: true
   requirements:
     - !type:CharacterPlaytimeRequirement
       tracker: JobWarden
@@ -17,6 +17,20 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Security
       min: 216000 # 60 hrs
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - BrittleBoneDisease
+    - !type:CharacterEmployerRequirement
+      employers:
+      - ZavodskoiInterstellar
+      - PMCG
+      - NanoTrasen
   startingGear: SeniorOfficerGear
   icon: "JobIconSeniorOfficer"
   supervisors: job-supervisors-hos
@@ -30,9 +44,16 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 6
+  - !type:ModifyEnvirohelmSpecial
+    powerCell: PowerCellHigh
 
 - type: startingGear
   id: SeniorOfficerGear
+  subGear:
+  - SecurityOfficerPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitSeniorOfficer
     back: ClothingBackpackSecurity

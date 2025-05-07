@@ -4,7 +4,7 @@
     sprite: Objects/Specific/Medical/firstaidkits.rsi
     state: firstaid
   product: CrateMedicalSupplies
-  cost: 2400
+  cost: 3000
   category: cargoproduct-category-name-medical
   group: market
 
@@ -74,7 +74,7 @@
     sprite: Objects/Specific/Medical/firstaidkits.rsi
     state: advkit
   product: CrateEmergencyAdvancedKit
-  cost: 1200
+  cost: 2000
   category: cargoproduct-category-name-medical
   group: market
 

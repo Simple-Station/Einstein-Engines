@@ -40,6 +40,7 @@
     sprite: Objects/Misc/Lights/lights.rsi
     size: Normal
     heldPrefix: off
+  - type: EtherealLight
   - type: PointLight
     enabled: false
     radius: 3
@@ -212,6 +213,11 @@
     enabled: false
     radius: 8
     energy: 5
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
   - type: Anchorable
   - type: Damageable
     damageContainer: Inorganic

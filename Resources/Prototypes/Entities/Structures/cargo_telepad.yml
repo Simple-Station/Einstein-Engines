@@ -22,7 +22,7 @@
           - MachineMask
   - type: Sprite
     sprite: Structures/cargo_telepad.rsi
-    drawdepth: FloorObjects
+    drawdepth: HighFloorObjects
     layers:
     - state: offline
       map: [ "enum.CargoTelepadLayers.Base" ]
@@ -47,3 +47,5 @@
     board: CargoTelepadMachineCircuitboard
   - type: Appearance
   - type: CollideOnAnchor
+  - type: NameIdentifier
+    group: CargoTelepads

@@ -1,0 +1,5 @@
+<controls:StyledButtonGroup
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls">
+    <!-- Yeah, there's nothing here -->
+</controls:StyledButtonGroup>

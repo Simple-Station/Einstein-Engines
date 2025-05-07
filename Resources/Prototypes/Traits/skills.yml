@@ -1,9 +1,11 @@
 - type: trait
   id: CPRTraining
   category: Mental
-  points: -4
-  components:
-    - type: CPRTraining
+  points: -3
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: CPRTraining
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -14,24 +16,28 @@
         - Paramedic
         - ChiefMedicalOfficer
         - Brigmedic
+        - SeniorPhysician
+        - BlueshieldOfficer
 
 - type: trait
   id: SelfAware
   category: Mental
-  points: -4
-  components:
-    - type: SelfAware
-      analyzableTypes:
-      - Blunt
-      - Slash
-      - Piercing
-      - Heat
-      - Shock
-      - Cold
-      - Caustic
-      detectableGroups:
-      - Airloss
-      - Toxin
+  points: -2
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: SelfAware
+          analyzableTypes:
+            - Blunt
+            - Slash
+            - Piercing
+            - Heat
+            - Shock
+            - Cold
+            - Caustic
+          detectableGroups:
+            - Airloss
+            - Toxin
 
 - type: trait
   id: HeavyweightDrunk
@@ -53,9 +59,11 @@
       species:
         - Dwarf
         - IPC
-  components:
-    - type: LightweightDrunk
-      boozeStrengthMultiplier: 0.5
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: LightweightDrunk
+          boozeStrengthMultiplier: 0.5
 
 - type: trait
   id: LiquorLifeline
@@ -77,21 +85,25 @@
       species:
         - Dwarf
         - IPC
-  components:
-    - type: LiquorLifeline
-    - type: LightweightDrunk
-      boozeStrengthMultiplier: 0.5
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: LiquorLifeline
+        - type: LightweightDrunk
+          boozeStrengthMultiplier: 0.5
 
 - type: trait
   id: Thieving
   category: Physical
-  points: -8
-  components:
-    - type: Thieving
-      ignoreStripHidden: true
-      stealth: Subtle
-      stripTimeReduction: 0
-      stripTimeMultiplier: 0.667
+  points: -3
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: Thieving
+          ignoreStripHidden: true
+          stealth: Subtle
+          stripTimeReduction: 0
+          stripTimeMultiplier: 0.667
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
@@ -101,11 +113,13 @@
 - type: trait
   id: Voracious
   category: Physical
-  points: -2
-  components:
-    - type: ConsumeDelayModifier
-      foodDelayMultiplier: 0.5
-      drinkDelayMultiplier: 0.5
+  points: -1
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: ConsumeDelayModifier
+          foodDelayMultiplier: 0.5
+          drinkDelayMultiplier: 0.5
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
@@ -123,162 +137,158 @@
       traits:
         - Sluggish
         - SnailPaced
+        - BadKnees
+        - WheelchairBound
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
         - Diona
-  components:
-    - type: ClimbDelayModifier
-      climbDelayMultiplier: 0.35
-    - type: LayingDownModifier
-      layingDownCooldownMultiplier: 0.5
-      downedSpeedMultiplierMultiplier: 1.65
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: ClimbDelayModifier
+          climbDelayMultiplier: 0.5
+        - type: SlippableModifier
+          paralyzeTimeMultiplier: 0.7
+        - type: SpeedModifiedByContactModifier
+          walkModifierEffectiveness: 0.5
+          sprintModifierEffectiveness: 0.5
 
 - type: trait
   id: LightStep
   category: Auditory
   points: -2
-  components:
-    - type: FootstepVolumeModifier
-      sprintVolumeModifier: -10
-      walkVolumeModifier: -10
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: FootstepVolumeModifier
+          sprintVolumeModifier: -10
+          walkVolumeModifier: -10
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
         - Felinid
+        - Tajaran
 
 - type: trait
   id: Singer
   category: Auditory
-  points: -2
+  points: -1
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
         - Harpy
-  components:
-    - type: Singer
-      proto: NormalSinger
-
-- type: trait
-  id: LatentPsychic
-  category: Mental
-  points: -4
-  components:
-    - type: Psionic
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
-        - ResearchDirector
-        - ForensicMantis
-        - Chaplain
-        - Librarian
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - PsionicInsulation
+        - Muted
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Singer
+          proto: NormalSinger
 
 - type: trait
-  id: PsionicInsulation
-  category: Mental
-  points: -10 #Buy a significant disability to get this.
-  components:
-    - type: PsionicInsulation
-    - type: Mindbroken
+  id: LyreBird
+  category: Auditory
+  points: -3
   requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
-        - ResearchDirector
-        - ForensicMantis
-        - Chaplain
-        - Librarian
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Harpy
+        - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - LatentPsychic
-
-- type: trait
-  id: NaturalTelepath
-  category: Mental
-  points: -2
-  psionicPowers:
-    - TelepathyPower
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - ResearchDirector
-        - ForensicMantis
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterTraitRequirement
-          traits:
-            - LatentPsychic
-        - !type:CharacterJobRequirement
-          jobs:
-            - Chaplain
-            - Librarian
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
+        - Muted
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: Singer
+          proto: HarpySingerAll
 
 - type: trait
   id: TrapAvoider
   category: Physical
   points: -3
-  components:
-    - type: StepTriggerImmune
-      whitelist:
-        types:
-        - Shard
-        - Landmine
-        - Mousetrap
-        - SlipEntity
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: StepTriggerImmune
+          whitelist:
+            types:
+              - Shard
+              - Landmine
+              - Mousetrap
+              - SlipEntity
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
         - Felinid
+        - Tajaran
         - Harpy
 
 - type: trait
   id: AnomalousPositronics
-  category: Mental
+  category: Psionics
   points: -4
-  componentRemovals:
-    - PsionicInsulation
+  functions:
+    - !type:TraitRemoveComponent
+      components:
+        - type: PsionicInsulation
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
+
+# - type: trait
+#   id: AnimalFriend
+#   category: Mental
+#   points: -4
+#   functions:
+#     - !type:TraitModifyFactions
+#       addFactions:
+#         - AnimalFriend
+
+- type: trait
+  id: SurgeryTraining
+  category: Mental
+  points: -3
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: SurgerySpeedModifier
+          speedModifier: 1.6
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - MedicalDoctor
+        - Chemist
+        - MedicalIntern
+        - Paramedic
+        - ChiefMedicalOfficer
+        - Brigmedic
+        - SeniorPhysician
+
+- type: trait
+  id: ExperiencedSurgeon
+  category: Mental
+  points: -3
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+      - type: SurgerySpeedModifier
+        speedModifier: 2.3
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+      - MedicalDoctor
+      - Chemist
+      - Paramedic
+      - Brigmedic
+      - SeniorPhysician
+

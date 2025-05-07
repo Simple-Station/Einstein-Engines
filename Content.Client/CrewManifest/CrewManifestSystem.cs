@@ -40,6 +40,7 @@ public sealed class CrewManifestSystem : EntitySystem
     {
         _jobDepartmentLookup.Clear();
         _departments.Clear();
+
         foreach (var department in _prototypeManager.EnumeratePrototypes<DepartmentPrototype>())
         {
             _departments.Add(department.ID);
@@ -52,25 +53,9 @@ public sealed class CrewManifestSystem : EntitySystem
                     _jobDepartmentLookup.Add(department.Roles[i - 1], departments);
                 }
 
-                departments.Add(department.ID, i);
+                if (department.Roles.Count == i)
+                    departments.Add(department.ID, i);
             }
         }
-    }
-
-    public int GetDepartmentOrder(string department, string jobPrototype)
-    {
-        if (!Departments.Contains(department))
-        {
-            return -1;
-        }
-
-        if (!_jobDepartmentLookup.TryGetValue(jobPrototype, out var departments))
-        {
-            return -1;
-        }
-
-        return departments.TryGetValue(department, out var order)
-            ? order
-            : -1;
     }
 }

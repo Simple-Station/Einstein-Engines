@@ -21,17 +21,22 @@
   - type: Item
     size: Ginormous
   - type: MeleeWeapon
-    attackRate: 0.9
-    range: 1.75
+    attackRate: 1.1
+    range: 1.5
     damage:
       types:
         Blunt: 9
     bluntStaminaDamageFactor: 2.0
-    heavyRateModifier: 0.8
-    heavyStaminaCost: 7.5
-    angle: 80.5
+    heavyRangeModifier: 1.75
+    heavyDamageBaseModifier: 1.5
+    heavyRateModifier: 2
+    heavyStaminaCost: 2.5
+    angle: 110
     soundHit:
       path: "/Audio/Weapons/smash.ogg"
+  - type: DamageOtherOnHit
+    meleeDamageMultiplier: 1.5
+    staminaCost: 10
   - type: Tag
     tags:
     - Toolbox
@@ -141,6 +146,10 @@
     damage:
       types:
         Blunt: 11.5
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 15
 
 - type: entity
   name: golden toolbox
@@ -157,6 +166,10 @@
     damage:
       types:
         Blunt: 12
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 16
 
 - type: entity
   id: ToolboxThief
@@ -176,10 +189,11 @@
     - SyndieSet
     - SleeperSet
     - CommunicatorSet
+    - CommunicatorSetPlasmaman
     - SmugglerSet
   - type: ActivatableUI
     key: enum.ThiefBackpackUIKey.Key
   - type: UserInterface
     interfaces:
-      - key: enum.ThiefBackpackUIKey.Key
+      enum.ThiefBackpackUIKey.Key:
         type: ThiefBackpackBoundUserInterface
