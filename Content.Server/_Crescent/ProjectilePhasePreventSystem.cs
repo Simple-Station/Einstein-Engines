@@ -50,7 +50,7 @@ public sealed class ProjectilePhasePreventerSystem : EntitySystem
     ///  how many rays will be put per thread
     ///  
     /// </summary>
-    internal const int raysPerThread = 150;
+    internal const int raysPerThread = 450;
 
 
     private record struct RaycastBucket(RaycastQuery[] Queries, int space);
