@@ -16093,3 +16093,20 @@ Entries:
   id: 7245
   time: '2025-05-08T23:53:21.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2399
+- author: RocketBoss360
+  changes:
+    - type: Tweak
+      message: Shadeskip now has a new sound.
+    - type: Tweak
+      message: Shadeskip now lasts 12 seconds, and its portals despawn with it
+    - type: Tweak
+      message: Darkswap's haze cloud on cast now lasts 5 seconds
+    - type: Tweak
+      message: Telegnosic projections can now speak telepathically
+    - type: Fix
+      message: >-
+        all psionic powers are now disabled if the caster is psionically
+        insulated.
+  id: 7246
+  time: '2025-05-08T23:55:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2376
