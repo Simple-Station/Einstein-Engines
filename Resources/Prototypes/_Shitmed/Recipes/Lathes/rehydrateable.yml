@@ -106,7 +106,7 @@
 
 - type: latheRecipe
   id: SynthTorso
-  result: BioSynthTorso
+  result: MobSynthHuman
   completetime: 120
   materials:
     Biomass: 60
