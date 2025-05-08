@@ -121,7 +121,7 @@
   parent: BaseWeaponTurretPDT
   name: SHI MG-21 light dual machinegun Mk. II
   id: WeaponTurretPDTNCSP
-  suffix: Tier 1
+  suffix: Tier 2
   components:
     - type: Gun
       projectileSpeed: 145
@@ -259,7 +259,7 @@
 
 - type: entity
   parent: BaseStructure
-  id: WeaponTurretSwarmer
+  id: BaseWeaponTurretSwarmer
   name: swarmer missile launcher
   components:
     - type: PointCannon
