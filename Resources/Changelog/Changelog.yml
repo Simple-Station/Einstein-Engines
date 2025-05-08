@@ -16059,3 +16059,10 @@ Entries:
   id: 7241
   time: '2025-05-08T22:05:42.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2404
+- author: Diggy0
+  changes:
+    - type: Tweak
+      message: Plasmamen can now wear Modsuit helmets.
+  id: 7242
+  time: '2025-05-08T22:16:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2384
