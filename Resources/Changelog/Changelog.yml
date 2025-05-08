@@ -16045,3 +16045,10 @@ Entries:
   id: 7239
   time: '2025-05-08T21:58:58.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2416
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: Made bio-synthetic torso work as a body
+  id: 7240
+  time: '2025-05-08T22:00:04.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2414
