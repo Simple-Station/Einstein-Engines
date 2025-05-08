@@ -59,29 +59,11 @@ public sealed class ProjectilePhasePreventerSystem : EntitySystem
 
     };
 
-    private readonly struct RaycastQuery
-    {
-        public readonly EntityUid owner;
-        public readonly Vector2 start;
-
-        public readonly Vector2 translation;
-        public readonly MapId map;
-        public readonly int CollisionBitMask;
-
-        public RaycastQuery(EntityUid owner, Vector2 start, Vector2 translation, MapId map, int collisionBitMas)
-        {
-            this.owner = owner;
-            this.start = start;
-            this.translation = translation;
-            this.map = map;
-            this.CollisionBitMask = collisionBitMas;
-        }
-    }
-
     public override void Initialize()
     {
         SubscribeLocalEvent<ProjectilePhasePreventComponent, ComponentStartup>(OnInit);
         SubscribeLocalEvent<ProjectilePhasePreventComponent, ComponentShutdown>(OnRemove);
+        processingBuckets.Add(new RaycastBucket());
         fixtureQuery = GetEntityQuery<FixturesComponent>();
         physQuery = GetEntityQuery<PhysicsComponent>();
         sawLogs = _logs.GetSawmill("Phase-Prevention");
@@ -109,6 +91,10 @@ public sealed class ProjectilePhasePreventerSystem : EntitySystem
     private void OnRemove(EntityUid uid, ProjectilePhasePreventComponent comp, ref ComponentShutdown args)
     {
         processingBuckets[comp.containedAt].items.Remove((uid, comp));
+        if (processingBuckets[comp.containedAt].items.Count == 0 && comp.containedAt != 0)
+        {
+            processingBuckets.RemoveAt(comp.containedAt);
+        }
         comp.ignoredEntities.Clear();
     }
 
@@ -119,6 +105,7 @@ public sealed class ProjectilePhasePreventerSystem : EntitySystem
         {
             QueryFilter queryFilter = new QueryFilter();
             args.output.Clear();
+            Vector2 worldPos = Vector2.Zero;
             foreach(var (owner,  phase) in args.items)
             {
                 // will be removed through events. Just skip for now
@@ -126,7 +113,9 @@ public sealed class ProjectilePhasePreventerSystem : EntitySystem
                     continue;
                 queryFilter.LayerBits = phase.relevantBitmasks;
                 queryFilter.MaskBits = phase.relevantBitmasks;
-                RayResult result = _raycast.CastRay(phase.mapId, phase.start, phase.translation, queryFilter);
+                worldPos = _trans.GetWorldPosition(owner);
+                RayResult result = _raycast.CastRay(phase.mapId, phase.start, worldPos - phase.start , queryFilter);
+                phase.start = worldPos;
                 var bulletPhysics = physQuery.GetComponent(owner);
                 var bulletFixtures = fixtureQuery.GetComponent(owner);
                 var bulletString = bulletFixtures.Fixtures.Keys.First();
@@ -167,25 +156,23 @@ public sealed class ProjectilePhasePreventerSystem : EntitySystem
 
         foreach (var bucket in processingBuckets)
         {
-            
-        }
-        while(eventQueue.TryDequeue(out var eventData))
-        {
-            if (TerminatingOrDeleted(eventData.Item1.OurEntity) || TerminatingOrDeleted(eventData.Item2.OurEntity))
-                continue;
-            var fEv = eventData.Item1;
-            var sEv = eventData.Item2;
-            try
+            foreach(var eventData in bucket.output)
             {
-                RaiseLocalEvent(eventData.Item1.OurEntity, ref fEv, true);
-                RaiseLocalEvent(eventData.Item2.OurEntity, ref sEv, true);
-            }
-            catch (Exception e)
-            {
-                sawLogs.Error(e.Message);
+                if (TerminatingOrDeleted(eventData.Item1.OurEntity) || TerminatingOrDeleted(eventData.Item2.OurEntity))
+                    continue;
+                var fEv = eventData.Item1;
+                var sEv = eventData.Item2;
+                try
+                {
+                    RaiseLocalEvent(eventData.Item1.OurEntity, ref fEv, true);
+                    RaiseLocalEvent(eventData.Item2.OurEntity, ref sEv, true);
+                }
+                catch (Exception e)
+                {
+                    sawLogs.Error(e.Message);
+                }
             }
         }
-
 
     }
 }

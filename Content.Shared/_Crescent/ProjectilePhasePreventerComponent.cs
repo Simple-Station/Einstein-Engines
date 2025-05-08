@@ -20,7 +20,6 @@ public sealed partial class ProjectilePhasePreventComponent : Component
 {
     public HashSet<EntityUid> ignoredEntities = new HashSet<EntityUid>();
     public Vector2 start = Vector2.Zero;
-    public Vector2 translation = Vector2.Zero;
     public MapId mapId = MapId.Nullspace;
     public int containedAt = 0;
     public int relevantBitmasks = 0;
