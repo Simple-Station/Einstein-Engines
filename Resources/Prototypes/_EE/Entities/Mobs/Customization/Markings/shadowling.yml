@@ -1,0 +1,8 @@
+- type: marking
+  id: LesserShadowlingEyes
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [Shadow]
+  sprites:
+  - sprite: _EE/Mobs/Customization/Shadow/lesser_eyes.rsi
+    state: lesser_eyes

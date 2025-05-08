@@ -28,7 +28,7 @@ public sealed class ShadowlingPlaneShiftSystem : EntitySystem
         comp.IsActive = !comp.IsActive;
         if (comp.IsActive)
         {
-            TryDoShift(uid, comp);
+            TryDoShift(uid);
         }
         else
         {
@@ -41,7 +41,7 @@ public sealed class ShadowlingPlaneShiftSystem : EntitySystem
         _actions.StartUseDelay(args.Action);
     }
 
-    private void TryDoShift(EntityUid uid, ShadowlingPlaneShiftComponent component)
+    private void TryDoShift(EntityUid uid)
     {
         if (HasComp<PhaseShiftedComponent>(uid))
             return;
@@ -50,7 +50,5 @@ public sealed class ShadowlingPlaneShiftSystem : EntitySystem
         phaseShift.MovementSpeedBuff = 1.7f;
         // Thanks to blood cult code for this component
         // todo: add sound
-        phaseShift.PhaseOutEffect = component.ShadowWalkEffectOut;
-
     }
 }

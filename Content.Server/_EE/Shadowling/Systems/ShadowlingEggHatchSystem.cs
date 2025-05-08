@@ -81,9 +81,11 @@ public sealed class ShadowlingEggHatchSystem : EntitySystem
         if (newUid == null)
             return;
 
-        EnsureComp<ShadowlingCannotWearClothesComponent>(newUid.Value);
+        var ascendantShadowlingComp = EntityManager.GetComponent<ShadowlingComponent>(newUid.Value);
+        var shadowlingSystem = EntityManager.System<ShadowlingSystem>();
 
-        RaiseLocalEvent(newUid.Value, new PhaseChangedEvent(ShadowlingPhases.PostHatch));
+        shadowlingSystem.OnPhaseChanged(newUid.Value, ascendantShadowlingComp, ShadowlingPhases.PostHatch);
+
         comp.HasBeenHatched = true;
     }
 }

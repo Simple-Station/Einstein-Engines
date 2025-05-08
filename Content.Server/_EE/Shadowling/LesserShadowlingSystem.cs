@@ -42,7 +42,7 @@ public sealed class LesserShadowlingSystem : EntitySystem
         }
     }
 
-    public void OnStartup(EntityUid uid, LesserShadowlingComponent component, ComponentStartup args)
+    private void OnStartup(EntityUid uid, LesserShadowlingComponent component, ComponentStartup args)
     {
         if (!TryComp<ThrallComponent>(uid, out var thrall))
             return;
@@ -52,7 +52,7 @@ public sealed class LesserShadowlingSystem : EntitySystem
         AddLesserActions(uid, component, thrall, actions);
     }
 
-    public void AddLesserActions(EntityUid uid, LesserShadowlingComponent component, ThrallComponent thrall, ActionsComponent comp)
+    private void AddLesserActions(EntityUid uid, LesserShadowlingComponent component, ThrallComponent thrall, ActionsComponent comp)
     {
         _actions.RemoveAction(thrall.ActionGuiseEntity);
 

@@ -76,8 +76,6 @@ public sealed class ShadowlingThrallSystem : EntitySystem
             ref component.ActionGuiseEntity,
             component.ActionGuise,
             component: actions);
-
-        // todo: add comp remove event once deconversion gets added
     }
 
     private void OnRemove(EntityUid uid, ThrallComponent component, ComponentRemove args)
@@ -97,7 +95,12 @@ public sealed class ShadowlingThrallSystem : EntitySystem
         if (component.Converter == null)
             return;
 
-        RaiseLocalEvent(component.Converter.Value, new ThrallRemovedEvent());
+        // Adjust lightning resistance for shadowling
+        var shadowling = component.Converter.Value;
+        var shadowlingComp = EntityManager.GetComponent<ShadowlingComponent>(shadowling);
+        var shadowlingSystem = EntityManager.System<ShadowlingSystem>();
+
+        shadowlingSystem.OnThrallRemoved(shadowling, uid, shadowlingComp);
     }
 
     private void OnExamined(EntityUid uid, ThrallComponent component, ExaminedEvent args)

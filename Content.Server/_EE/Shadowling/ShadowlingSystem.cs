@@ -55,12 +55,8 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
         SubscribeLocalEvent<ShadowlingComponent, ComponentInit>(OnInit);
 
         SubscribeLocalEvent<ShadowlingComponent, BeforeDamageChangedEvent>(BeforeDamageChanged);
-        SubscribeLocalEvent<ShadowlingComponent, PhaseChangedEvent>(OnPhaseChanged);
 
         SubscribeLocalEvent<ShadowlingComponent, MobStateChangedEvent>(OnMobStateChanged);
-
-        SubscribeLocalEvent<ShadowlingComponent, ThrallAddedEvent>(OnThrallAdded);
-        SubscribeLocalEvent<ShadowlingComponent, ThrallRemovedEvent>(OnThrallRemoved);
 
         SubscribeLocalEvent<ShadowlingComponent, GetFlashbangedEvent>(OnFlashBanged);
         SubscribeLocalEvent<ShadowlingComponent, DamageModifyEvent>(OnDamageModify);
@@ -117,7 +113,7 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
 
         _damageable.TryChangeDamage(uid, component.HeatDamage, damageable: damageableComp);
     }
-    private void OnThrallAdded(EntityUid uid, ShadowlingComponent comp, ThrallAddedEvent args)
+    public void OnThrallAdded(EntityUid uid, EntityUid thrall, ShadowlingComponent comp)
     {
         if (!TryComp<LightDetectionDamageModifierComponent>(uid, out var lightDet))
             return;
@@ -128,7 +124,7 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
         lightDet.ResistanceModifier += comp.LightResistanceModifier;
     }
 
-    private void OnThrallRemoved(EntityUid uid, ShadowlingComponent comp, ThrallRemovedEvent args)
+    public void OnThrallRemoved(EntityUid uid, EntityUid thrall, ShadowlingComponent comp)
     {
         if (!TryComp<LightDetectionDamageModifierComponent>(uid, out var lightDet))
             return;
@@ -154,12 +150,12 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
             args.Cancelled = true;
     }
 
-    private void OnPhaseChanged(EntityUid uid, ShadowlingComponent component, PhaseChangedEvent args)
+    public void OnPhaseChanged(EntityUid uid, ShadowlingComponent component, ShadowlingPhases phase)
     {
         if (!TryComp<ActionsComponent>(uid, out var actions))
             return;
 
-        if (args.Phase == ShadowlingPhases.PostHatch)
+        if (phase == ShadowlingPhases.PostHatch)
         {
             // When the entity gets polymorphed, the OnInit starts so... We have to remove it again here.
             _actions.RemoveAction(uid, component.ActionHatchEntity);
@@ -172,7 +168,7 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
             lightMod.ResistanceModifier = 0.5f; // Let them start with 50% resistance, and decrease it per Thrall
             _alert.ShowAlert(uid, component.AlertProto);*/
         }
-        else if (args.Phase == ShadowlingPhases.Ascension)
+        else if (phase == ShadowlingPhases.Ascension)
         {
             // Remove all previous actions
             foreach (var action in actions.Actions)
@@ -202,7 +198,7 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
             _actions.AddAction(uid, ref component.ActionLightningStormEntity, component.ActionLightningStorm, component: actions);
             _actions.AddAction(uid, ref component.ActionBroadcastEntity, component.ActionBroadcast, component: actions);
         }
-        else if (args.Phase == ShadowlingPhases.FailedAscension)
+        else if (phase == ShadowlingPhases.FailedAscension)
         {
             _popup.PopupEntity("WHATTTTT", uid, uid, PopupType.MediumCaution);
         }
@@ -306,7 +302,8 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
         {
             sling.Thralls.Add(target);
             thrall.Converter = uid;
-            RaiseLocalEvent(uid, new ThrallAddedEvent());
+
+            OnThrallAdded(uid, target, sling);
         }
     }
 }

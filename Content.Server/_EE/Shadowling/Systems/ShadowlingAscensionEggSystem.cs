@@ -27,6 +27,7 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly PolymorphSystem _polymorph = default!;
+    [Dependency] private readonly ShadowlingSystem _shadowling = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -81,7 +82,9 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
         // This indicates that the shadowling was inside the egg
         if (component.StartTimer)
         {
-            RaiseLocalEvent(component.Creator.Value, new PhaseChangedEvent(ShadowlingPhases.FailedAscension));
+            var shadowlingComp = EntityManager.GetComponent<ShadowlingComponent>(component.Creator.Value);
+            _shadowling.OnPhaseChanged(component.Creator.Value, shadowlingComp, ShadowlingPhases.FailedAscension);
+
             component.StartTimer = false;
         }
     }
@@ -92,8 +95,6 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
         {
             args.PushMarkup($"[color=red]{Loc.GetString("shadowling-ascension-start-warning")}[/color]");
         }
-
-        // todo:  add indicator for damage here?
     }
 
     private void TryAscend(EntityUid uid, EntityUid eggUid, ShadowlingAscensionEggComponent component)
@@ -157,18 +158,28 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
         _entityStorage.OpenStorage(uid);
         _entityStorage.Remove(component.Creator.Value, uid);
 
+        var shadowlings = new List<EntityUid>();
+
         var query = EntityQueryEnumerator<ShadowlingComponent>();
-        while (query.MoveNext(out var slingUid, out var sling))
+        while (query.MoveNext(out var slingUid, out _))
         {
-            var newUid = _polymorph.PolymorphEntity(slingUid, "ShadowlingAscendantPolymorph");
+            shadowlings.Add(slingUid);
+        }
+
+        foreach (var sling in shadowlings)
+        {
+            var newUid = _polymorph.PolymorphEntity(sling, "ShadowlingAscendantPolymorph");
 
             if (newUid == null)
                 return;
 
-            var ascendant = EntityManager.GetComponent<ShadowlingComponent>(newUid.Value);
+            if (!TryComp<ShadowlingComponent>(newUid.Value, out var ascendant))
+                continue;
+
             _actions.RemoveAction(ascendant.ActionHatchEntity);
-            sling.CurrentPhase = ShadowlingPhases.Ascension;
-            RaiseLocalEvent(slingUid, new PhaseChangedEvent(ShadowlingPhases.Ascension));
+            ascendant.CurrentPhase = ShadowlingPhases.Ascension;
+
+            _shadowling.OnPhaseChanged(newUid.Value, ascendant, ShadowlingPhases.Ascension);
         }
     }
 }

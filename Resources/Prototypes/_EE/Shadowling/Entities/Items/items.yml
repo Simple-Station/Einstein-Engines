@@ -1,18 +1,3 @@
-- type: entity
-  name: wrath energy ball
-  parent: BaseItem
-  id: ShadowlingWrathBall
-  description: Show them terror.
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _EE/Shadowling/Entities/Items/wrath_ball.rsi
-    state: icon
-  - type: Item
-    size: Ginormous
-    sprite: _EE/Shadowling/Entities/Items/wrath_ball.rsi # todo: fix this shitty sprite that looks like a basketball
-  - type: Unremoveable
-
 # Anti Thrall Item
 - type: entity
   parent: BaseItem

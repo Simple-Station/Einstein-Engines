@@ -1,11 +1,13 @@
 using Content.Server.Administration.Systems;
 using Content.Server.DoAfter;
+using Content.Server.Humanoid;
 using Content.Server.Polymorph.Systems;
 using Content.Server.Popups;
 using Content.Shared._EE.Shadowling;
 using Content.Shared._EE.Shadowling.Components;
 using Content.Shared.Actions;
 using Content.Shared.DoAfter;
+using Content.Shared.Humanoid;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Robust.Server.GameObjects;
@@ -27,6 +29,7 @@ public sealed class ShadowlingBlackRecuperationSystem : EntitySystem
     [Dependency] private readonly TransformSystem _transformSystem = default!;
     [Dependency] private readonly LesserShadowlingSystem _lesserShadowling = default!;
     [Dependency] private readonly PolymorphSystem _polymorph = default!;
+    [Dependency] private  readonly HumanoidAppearanceSystem _humanoidAppearance = default!;
     /// <inheritdoc/>
     public override void Initialize()
     {
@@ -70,13 +73,13 @@ public sealed class ShadowlingBlackRecuperationSystem : EntitySystem
 
         var target = args.Args.Target.Value;
 
-        var effectEnt = Spawn(component.BlackRecuperationEffect, _transformSystem.GetMapCoordinates(target));
-        _transformSystem.SetParent(effectEnt, target);
-
         if (!_mobStateSystem.IsAlive(target))
         {
             _rejuvenate.PerformRejuvenate(target);
             _popup.PopupEntity(Loc.GetString("shadowling-black-rec-revive-done"), uid, target, PopupType.MediumCaution);
+
+            var effectEnt = Spawn(component.BlackRecuperationEffect, _transformSystem.GetMapCoordinates(target));
+            _transformSystem.SetParent(effectEnt, target);
         }
         else
         {
@@ -91,6 +94,13 @@ public sealed class ShadowlingBlackRecuperationSystem : EntitySystem
                 return;
 
             EnsureComp<LesserShadowlingComponent>(newUid.Value);
+
+            if (TryComp<HumanoidAppearanceComponent>(newUid.Value, out var human))
+                _humanoidAppearance.AddMarking(newUid.Value, component.LesserShadowlingEyes, Color.Red, true, true, human);
+
+
+            var effectEnt = Spawn(component.BlackRecuperationEffect, _transformSystem.GetMapCoordinates(newUid.Value));
+            _transformSystem.SetParent(effectEnt, newUid.Value);
 
             component.LesserShadowlingAmount++;
             _popup.PopupEntity(Loc.GetString("shadowling-black-rec-lesser-done"), uid, newUid.Value, PopupType.MediumCaution);
