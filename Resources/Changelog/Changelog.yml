@@ -15925,3 +15925,116 @@ Entries:
   id: 7236
   time: '2025-05-05T01:39:33.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2410
+- author: Release
+  changes:
+    - type: Tweak
+      message: 'Mapping Team: Arena had an overhaul'
+    - type: Tweak
+      message: 'ODJ: Arena had an overhaul'
+    - type: Tweak
+      message: 'ODJ: Arena had an overhaul'
+    - type: Remove
+      message: 'ODJ: Puddle in Bagel.'
+    - type: Tweak
+      message: 'ODJ: Medical and roles of Bagel.'
+    - type: Tweak
+      message: 'ODJ: Cleanup of Saltern'
+    - type: Tweak
+      message: 'ODJ: Reorganization and removal of unnecessary/bad roles in Shoukou'
+    - type: Tweak
+      message: 'ODJ: Cleanup of Lighthouse'
+    - type: Tweak
+      message: 'ODJ: Cleanup of Meta'
+    - type: Tweak
+      message: 'ODJ: Slight changes to Northway'
+    - type: Tweak
+      message: 'ODJ: Cleanup and reorganization of Radstation'
+    - type: Tweak
+      message: 'ZetaNull: Fix the Color of Xelthia Blood as Rendered when Damaged'
+    - type: Fix
+      message: 'TCJ: Fixes for Psionic Rolling and Trait Netcode'
+    - type: Tweak
+      message: 'EctoplasmIsGood: Adjusted psionic weights'
+    - type: Fix
+      message: >-
+        EctoplasmIsGood: Abductor & Medical borg now have their proper surgery
+        speed buffs and their clothing bypass
+    - type: Fix
+      message: 'EctoplasmIsGood: TCAF Combat Gloves should no longer show an error'
+    - type: Tweak
+      message: >-
+        EctoplasmIsGood: Bartenders and Chefs can now be employed by Orion
+        Express and Idris Incorporated
+    - type: Fix
+      message: >-
+        EctoplasmIsGood, imatsoup, Matthew Herber: Energy guns wont cycle on
+        wield anymore
+    - type: Remove
+      message: 'EctoplasmIsGood: Remove Teach a Lesson'
+    - type: Fix
+      message: 'EctoplasmIsGood: Fix Mystic PDA'
+    - type: Fix
+      message: 'ZetaNull: Fix Downward Harpy Wing Localization'
+    - type: Tweak
+      message: >-
+        Timfa: Nerf Thaven melee attacks by halving stamina damage and removing
+        their sped-up attacks
+    - type: Fix
+      message: 'ZetaNull: Fix Xelthia Glovejackets to Properly Block Fingerprints '
+    - type: Fix
+      message: >-
+        Gareth Quaile: Changelings are now correctly identified as Solo
+        Antagonists in the admin overlay!
+    - type: Fix
+      message: 'ZetaNull: Fixed the Linoleum floor texture.'
+    - type: Add
+      message: >-
+        ZetaNull: Added a surgical jacket, for Xelthia to perform surgery
+        wearing in place of gloves.
+    - type: Tweak
+      message: >-
+        ZetaNull: Tweaked surgery to allow for jackets with gloves to be treated
+        as gloves.
+    - type: Fix
+      message: 'EctoplasmIsGood: Beacons No Longer Glitch Off on Grid Split '
+    - type: Fix
+      message: >-
+        DootyTheFrooty: Abductor Eye is now no longer visible for the inferior
+        organisms.
+    - type: Remove
+      message: 'DootyTheFrooty: Invisibility Organs were removed for being turbo-borked.'
+    - type: Fix
+      message: 'BloodFiendishOperator: ERT suits should no longer be large errors.'
+    - type: Fix
+      message: >-
+        BloodFiendishOperator: Bloodred's head sprite should now be
+        equipped-helmet and not equipped-head (This is leftover from the
+        impstation sprite port)
+    - type: Fix
+      message: 'BloodFiendishOperator: BSO / Dreadnought suit now have glow.'
+    - type: Fix
+      message: >-
+        BloodFiendishOperator: The Reverse-Engineered hardsuits from Nyano now
+        have glow, and no longer display errors.
+    - type: Fix
+      message: 'BloodFiendishOperator: ERT Helmets should now show light.'
+    - type: Tweak
+      message: 'CliveOcelot: BSO now has the over-ear headset'
+    - type: Tweak
+      message: 'CliveOcelot: BSO''s modsuit now has the right colour for its light'
+    - type: Add
+      message: 'ZetaNull: Fixed marking localization issues'
+  id: 7237
+  time: '2025-05-07T03:18:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2409
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added Solarian army/navy outfits to loadouts for characters with
+        Solarian+WarVeteran.
+    - type: Tweak
+      message: All cosmetic loadout items are now free.
+  id: 7238
+  time: '2025-05-07T19:45:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2407

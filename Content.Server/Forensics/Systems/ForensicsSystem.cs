@@ -249,6 +249,22 @@ namespace Content.Server.Forensics
                     return;
                 }
             }
+            if (_inventory.TryGetSlotEntity(user, "outerClothing", out var outerClothing)) // Allows outerClothing to use this.
+            {
+                if (TryComp<FiberComponent>(outerClothing, out var fiber) && !string.IsNullOrEmpty(fiber.FiberMaterial))
+                {
+                    var fiberLocale = string.IsNullOrEmpty(fiber.FiberColor)
+                        ? Loc.GetString("forensic-fibers", ("material", fiber.FiberMaterial))
+                        : Loc.GetString("forensic-fibers-colored", ("color", fiber.FiberColor), ("material", fiber.FiberMaterial));
+                    component.Fibers.Add(fiberLocale + " ; " + fiber.Fiberprint);
+                }
+
+                if (HasComp<FingerprintMaskComponent>(outerClothing))
+                {
+                    Dirty(target, component);
+                    return;
+                }
+            }
             if (TryComp<FingerprintComponent>(user, out var fingerprint))
             {
                 component.Fingerprints.Add(fingerprint.Fingerprint ?? "");

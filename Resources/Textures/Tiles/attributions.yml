@@ -6,9 +6,14 @@
   copyright: "CEV-Eris commit 28e589f0ff72a009adf17db767e90be39054f0f2"
   source: "https://github.com/discordia-space/CEV-Eris/"
 
-- files: [ "asteroid_red.png", "asteroid_tile.png", "elevator_shaft.png", "freezer.png", "lino.png", "mono.png", "rock_vault.png", "showroom.png"]
+- files: [ "asteroid_red.png", "asteroid_tile.png", "elevator_shaft.png", "freezer.png", "mono.png", "rock_vault.png", "showroom.png"]
   license: "CC-BY-SA-3.0"
   copyright: "vgstation13 at roughly commit e4d3ea7f69d21c3667be12b114fa935c4640cb05, asteroid_red and asteroid_tile taken from commit /vg/station at commit 02b9f6894af4419c9f7e699a22c402b086d8067e."
+  source: "https://github.com/vgstation-coders/vgstation13"
+
+- files: [ "lino.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "vgstation13 at roughly commit e4d3ea7f69d21c3667be12b114fa935c4640cb05, asteroid_red and asteroid_tile taken from commit /vg/station at commit 02b9f6894af4419c9f7e699a22c402b086d8067e. Fixed by Zeta_Null for EE."
   source: "https://github.com/vgstation-coders/vgstation13"
 
 - files: [ "asteroid.png", "asteroid_dug.png", "asteroid0.png"]
