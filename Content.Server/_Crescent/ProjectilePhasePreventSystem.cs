@@ -32,16 +32,13 @@ using Robust.Shared.Toolshed.Commands.Debug;
 ///  Written by MLGTASTICa/SPCR 2025 for Hullrot EE
 ///  This was initially using RobustParallel Manager, but the implementation is horrendous for this kind of task (threadPooling (fake c# threads) instead of high-performance single CPU threads)
 /// </summary>
-public sealed class ProjectilePhasePreventerSystem : EntitySystem
+public class ProjectilePhasePreventerSystem : EntitySystem
 {
     [Dependency] private readonly PhysicsSystem _phys = default!;
     [Dependency] private readonly TransformSystem _trans = default!;
     [Dependency] private readonly RayCastSystem _raycast = default!;
     [Dependency] private readonly IParallelManager _parallel = default!;
-
     [Dependency] private readonly ILogManager _logs = default!;
-    // im so sorry , SPCR 2025
-    ConcurrentQueue<Tuple<StartCollideEvent, StartCollideEvent>> eventQueue = new();
     private EntityQuery<PhysicsComponent> physQuery;
     private EntityQuery<FixturesComponent> fixtureQuery;
     private List<RaycastBucket> processingBuckets = new();
@@ -52,7 +49,7 @@ public sealed class ProjectilePhasePreventerSystem : EntitySystem
     /// </summary>
     internal const int raysPerThread = 150;
 
-    private class RaycastBucket()
+    public class RaycastBucket()
     {
         public HashSet<Entity<ProjectilePhasePreventComponent>> items = new();
         public List<Tuple<StartCollideEvent, StartCollideEvent>> output = new();
@@ -84,17 +81,21 @@ public sealed class ProjectilePhasePreventerSystem : EntitySystem
             processingBuckets.Add(new RaycastBucket());
         }
         processingBuckets.Last().items.Add((uid, comp));
-        comp.containedAt = processingBuckets.Count - 1;
+        comp.containedAt = processingBuckets.Last();
 
     }
 
     private void OnRemove(EntityUid uid, ProjectilePhasePreventComponent comp, ref ComponentShutdown args)
     {
-        processingBuckets[comp.containedAt].items.Remove((uid, comp));
-        if (processingBuckets[comp.containedAt].items.Count == 0 && comp.containedAt != 0)
+        if (comp.containedAt is not null && comp.containedAt is RaycastBucket bucket)
         {
-            processingBuckets.RemoveAt(comp.containedAt);
+            bucket.items.Remove((uid, comp));
+            if (bucket.items.Count == 0 && processingBuckets.Count > 1)
+            {
+                processingBuckets.Remove(bucket);
+            }
         }
+
         comp.ignoredEntities.Clear();
     }
 
@@ -153,6 +154,11 @@ public sealed class ProjectilePhasePreventerSystem : EntitySystem
 
             }
         });
+
+        if (processingBuckets.Count > 3)
+        {
+            sawLogs.Info($"Processing {processingBuckets.Count} buckets with estimated bullet count of {processingBuckets.Count * raysPerThread}");
+        }
 
         foreach (var bucket in processingBuckets)
         {
