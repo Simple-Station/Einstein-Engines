@@ -122,6 +122,7 @@
   - type: Tag
     tags:
     - WeldingTool
+    - Welder
   - type: GenericVisualizer
     visuals:
       enum.ToggleVisuals.Toggled:
@@ -245,7 +246,6 @@
         - ItemMask
         restitution: 0.3
         friction: 0.2
-    - Welder # Goobstation-WelderSword
 
 - type: entity
   name: industrial welding tool

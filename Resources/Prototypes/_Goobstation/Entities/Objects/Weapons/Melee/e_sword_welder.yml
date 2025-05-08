@@ -6,7 +6,7 @@
 
 - type: entity
   name: welder energy sword
-  parent: [BaseMeleeWeaponEnergy, BaseMinorContraband]
+  parent: EnergySword
   id: EnergySwordWelder
   description: Roughly converted from a welding tool, this energy sword hums an unstable flame. It looks like it's about to fall apart.
   components:
@@ -74,12 +74,6 @@
   - type: Tag # WD EDIT
     tags:
     - EnergySword
-  - type: ThrowableBlocker
-    blockSound:
-      path: /Audio/_Goobstation/Weapons/EswordWelder/eblade1.ogg
-      params:
-        variation: 0.250
-        volume: -2
   - type: RefillableSolution
     solution: Welder
   - type: Construction
@@ -89,8 +83,8 @@
 - type: entity
   name: welder energy sword
   parent: EnergySwordWelder
-  categories: [ HideSpawnMenu ]
   id: EnergySwordWelderIndustrial
+  suffix: Industrial
   components:
   - type: Sprite
     sprite: _Goobstation/Objects/Weapons/Melee/e_sword_welder.rsi
@@ -115,8 +109,8 @@
 - type: entity
   name: welder energy sword
   parent: EnergySwordWelder
-  categories: [ HideSpawnMenu ]
   id: EnergySwordWelderExperimental
+  suffix: Experimental
   description: A very loud & dangerous sword with a beam made of pure, concentrated plasma. Cuts through unarmored targets like butter.
   components:
   - type: Sprite

@@ -100,6 +100,9 @@
   id: DurandTargetingControlModule
 
 - type: Tag
+  id: EnergySword
+
+- type: Tag
   id: Gygax
 
 - type: Tag
