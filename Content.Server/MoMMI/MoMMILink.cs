@@ -18,11 +18,14 @@ namespace Content.Server.MoMMI
         [Dependency] private readonly IStatusHost _statusHost = default!;
         [Dependency] private readonly IChatManager _chatManager = default!;
         [Dependency] private readonly ITaskManager _taskManager = default!;
-
+        private  ISawmill _sawmill = default!;
         private readonly HttpClient _httpClient = new();
+
+        
 
         void IPostInjectInit.PostInject()
         {
+            _sawmill = Logger.GetSawmill("mommi");
             _statusHost.AddHandler(HandleChatPost);
         }
 
@@ -48,7 +51,7 @@ namespace Content.Server.MoMMI
 
             if (string.IsNullOrWhiteSpace(password))
             {
-                Logger.WarningS("mommi", "MoMMI URL specified but not password!");
+                _sawmill.Warning("MoMMI URL specified but not password!");
                 return;
             }
 
