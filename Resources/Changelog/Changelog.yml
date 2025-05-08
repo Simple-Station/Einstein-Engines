@@ -16066,3 +16066,10 @@ Entries:
   id: 7242
   time: '2025-05-08T22:16:19.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2384
+- author: ilmenwe
+  changes:
+    - type: Tweak
+      message: Logger to Logger.GetSawmill("name");
+  id: 7243
+  time: '2025-05-08T22:26:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2413
