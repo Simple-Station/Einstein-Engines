@@ -16038,3 +16038,10 @@ Entries:
   id: 7238
   time: '2025-05-07T19:45:10.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2407
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Added fishing.
+  id: 7239
+  time: '2025-05-08T21:58:58.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2416
