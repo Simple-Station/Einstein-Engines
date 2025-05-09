@@ -1,20 +1,38 @@
 # Tier 1
+
 - type: technology
-  id: BasicCybernetics
-  name: research-technology-basic-cybernetics
+  id: Hydroponics
+  name: research-technology-basic-hydroponics
   icon:
-    sprite: Mobs/Silicon/chassis.rsi
-    state: robot
+    sprite: Structures/Machines/seed_extractor.rsi
+    state: seedextractor
   discipline: CivilianServices
   tier: 1
-  cost: 15000
+  cost: 5000
   recipeUnlocks:
   - BorgModuleLightReplacer
   - BorgModuleAdvancedCleaning
   - BorgModuleGardening
   - BorgModuleHarvesting
-  - BorgModuleMusique
-  - BorgModuleClowning
+  - SeedExtractorMachineCircuitboard
+  - HydroponicsTrayMachineCircuitboard
+  - ReagentGrinderIndustrialMachineCircuitboard
+  # Goobstation R&D Console rework start
+  position: -3,4
+  technologyPrerequisites:
+  - AdvancedEntertainment
+  # Goobstation R&D Console rework end
+
+- type: technology
+  id: CritterMechs
+  name: research-technology-critter-mechs
+  icon:
+    sprite: Objects/Specific/Mech/mecha.rsi
+    state: hamtr
+  discipline: CivilianServices
+  tier: 1
+  cost: 7500
+  recipeUnlocks:
   - HamtrHarness
   - HamtrLArm
   - HamtrRArm
@@ -24,21 +42,22 @@
   - HamtrPeripheralsElectronics
   - MechEquipmentGrabberSmall
   - VimHarness
-  - ProximitySensor
-  - ExosuitFabricatorMachineCircuitboard
-  - BorgModuleArtifact
-  - BorgModuleAnomaly
-  - DroneElectronics
+  # Goobstation R&D Console rework start
+  position: 0,4
+  technologyPrerequisites:
+  - AdvancedEntertainment
+  - RipleyAPLU
+  # Goobstation R&D Console rework end
 
 - type: technology
-  id: BasicElectronics
-  name: research-technology-basic-electronics
+  id: AudioVisualCommunication
+  name: research-technology-audio-visual-communication
   icon:
-    sprite: Structures/Machines/computers.rsi
-    state: television
+    sprite: Structures/Wallmounts/camera.rsi
+    state: cameracase
   discipline: CivilianServices
   tier: 1
-  cost: 12500
+  cost: 5000
   recipeUnlocks:
   - SurveillanceCameraRouterCircuitboard
   - SurveillanceCameraWirelessRouterCircuitboard
@@ -47,14 +66,67 @@
   - SurveillanceCameraMonitorCircuitboard
   - SurveillanceWirelessCameraMonitorCircuitboard
   - TelecomServerCircuitboard
-  - ComputerTelevisionCircuitboard
-  - SynthesizerInstrument
-  - DawInstrumentMachineCircuitboard
-  - MassMediaCircuitboard
-  - JukeboxCircuitBoard
+  - HolopadMachineCircuitboard
+  # Goobstation R&D Console rework start
+  position: 1,4
+  technologyPrerequisites:
+  - AdvancedEntertainment
+  # Goobstation R&D Console rework end
+
+- type: technology
+  id: AdvancedEntertainment
+  name: research-technology-advanced-entertainment
+  icon:
+    sprite: Structures/Machines/computers.rsi
+    state: television
+  discipline: CivilianServices
+  tier: 1
+  cost: 7500
+  recipeUnlocks:
+    - ComputerTelevisionCircuitboard
+    - SynthesizerInstrument
+    - DawInstrumentMachineCircuitboard
+    - MassMediaCircuitboard
+    - JukeboxCircuitBoard
+    - BorgModuleLollipop # Goobstation
+  position: 0,2
+
+- type: technology
+  id: RoboticCleanliness
+  name: research-technology-robotic-cleanliness
+  icon:
+    sprite: Mobs/Silicon/chassis.rsi
+    state: janitor
+  discipline: CivilianServices
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - BorgModuleAdvancedCleaning
+  # Goobstation R&D Console rework start
+  position: -1,4
+  technologyPrerequisites:
+  - AdvancedEntertainment
+  - BasicRobotics
+  # Goobstation R&D Console rework end
+
+- type: technology
+  id: MeatManipulation
+  name: research-technology-meat-manipulation
+  icon:
+    sprite: Structures/Machines/fat_sucker.rsi
+    state: display
+  discipline: CivilianServices
+  tier: 1
+  cost: 7500
+  recipeUnlocks:
   - FatExtractorMachineCircuitboard
   - BiofabricatorMachineCircuitboard
   - BiomassReclaimerMachineCircuitboard
+  # Goobstation R&D Console rework start
+  position: -3,5
+  technologyPrerequisites:
+  - Hydroponics
+  # Goobstation R&D Console rework end
 
 # TODO: Add recipes to manufacture Vacsuits.
 # - type: technology
@@ -71,42 +143,65 @@
 
 # Tier 2
 
-# TODO: Add recipes to manufacture Hardsuits
-# - type: technology
-#   id: BasicHardsuits
-#   name: research-technology-basic-hardsuits
-#   icon:
-#     sprite: Clothing/OuterClothing/Hardsuits/engineering.rsi
-#     state: icon
-#   discipline: CivilianServices
-#   tier: 1
-#   cost: 15000
-#   recipeUnlocks:
-#   - ClothingOuterHardsuitEngineering
+- type: technology
+  id: FauxAstroTiles
+  name: research-technology-faux-astro-tiles
+  icon:
+    sprite: Objects/Tiles/tile.rsi
+    state: astroice
+  discipline: CivilianServices
+  tier: 2
+  cost: 5000
+  recipeUnlocks:
+  - FauxTileAstroGrass
+  - FauxTileMowedAstroGrass
+  - FauxTileJungleAstroGrass
+  - FauxTileAstroIce
+  - FauxTileAstroSnow
+  - FauxTileAstroAsteroidSand
+  # Goobstation R&D Console rework start
+  position: 1,5
+  technologyPrerequisites:
+  - AudioVisualCommunication
+  # Goobstation R&D Console rework end
 
 - type: technology
-  id: BasicLifeImprovements
-  name: research-technology-basic-life-improvements
+  id: BiochemicalStasis
+  name: research-technology-biochemical-stasis
   icon:
     sprite: Structures/Machines/stasis_bed.rsi
     state: icon
   discipline: CivilianServices
   tier: 2
-  cost: 15000
+  cost: 7500
   recipeUnlocks:
+  - StasisBedMachineCircuitboard
+  - CryoPodMachineCircuitboard
   - CryostasisBeaker
   - SyringeCryostasis
+  # Goobstation R&D Console rework start
+  position: 3,5
+  technologyPrerequisites:
+  - AccessibilityTech
+  # Goobstation R&D Console rework end
+
+- type: technology
+  id: AdvancedCleaning
+  name: research-technology-advanced-cleaning
+  icon:
+    sprite: Objects/Specific/Janitorial/advmop.rsi
+    state: advmop
+  discipline: CivilianServices
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
   - AdvMopItem
   - MegaSprayBottle
-  - WeaponSprayNozzle
-  - ClothingBackpackWaterTank
-  - CargoTelepadMachineCircuitboard
-  - ClothingShoesBootsMag
-  - ClothingShoesBootsMoon
-  - CloningConsoleComputerCircuitboard
-  - MedicalScannerMachineCircuitboard
-  - MetempsychoticMachineCircuitboard
-  - EnvirosuitExtinguisherRefill
+  # Goobstation R&D Console rework start
+  position: -1,5
+  technologyPrerequisites:
+  - RoboticCleanliness
+  # Goobstation R&D Console rework end
 
 - type: technology
   id: HONKMech
@@ -127,6 +222,48 @@
   - HonkerPeripheralsElectronics
   - HonkerTargetingElectronics
   - MechEquipmentHorn
+  # Goobstation R&D Console rework start
+  position: 0,5
+  technologyPrerequisites:
+  - CritterMechs
+  - RipleyAPLU
+  # Goobstation R&D Console rework end
+
+- type: technology
+  id: AdvancedSpray
+  name: research-technology-advanced-spray
+  icon:
+    sprite: Objects/Weapons/Guns/Basic/spraynozzle.rsi
+    state: icon
+  discipline: CivilianServices
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - WeaponSprayNozzle
+  - ClothingBackpackWaterTank
+  # Goobstation R&D Console rework start
+  position: -1,6
+  technologyPrerequisites:
+  - AdvancedCleaning
+  # Goobstation R&D Console rework end
+
+- type: technology
+  id: BluespaceCargoTransport
+  name: research-technology-bluespace-cargo-transport
+  icon:
+    sprite: Structures/cargo_telepad.rsi
+    state: display
+  discipline: CivilianServices
+  tier: 2
+  cost: 15000
+  recipeUnlocks:
+  - CargoTelepadMachineCircuitboard
+  # Goobstation R&D Console rework start
+  position: 1,8
+  technologyPrerequisites:
+  - MeatManipulation
+  - FauxAstroTiles
+  # Goobstation R&D Console rework end
 
 # Tier 3
 # TODO: Add recipes to manufacture Advanced Hardsuits
@@ -144,40 +281,37 @@
 #   softCapContribution: 1.5
 
 - type: technology
-  id: AdvancedLifeImprovements
-  name: research-technology-advanced-life-improvements
+  id: QuantumFiberWeaving
+  name: research-technology-quantum-fiber-weaving
   icon:
     sprite: Clothing/Shoes/Boots/speedboots.rsi
     state: icon
   discipline: CivilianServices
   tier: 3
-  cost: 15000
+  cost: 15000 # Goobstation 10000 -> 15000
   recipeUnlocks:
   - ClothingShoesBootsMagAdv # TODO: Separate this out from the silly "Steal the CE's Timbs" objective
   - ClothingShoesBootsSpeed
-  - BluespaceBeaker
-  - SyringeBluespace
-  # TODO: Add things like frontier's Hyposprays.
-  softCapContribution: 1.5
+  # Goobstation R&D Console rework start
+  position: 1,9
+  technologyPrerequisites:
+  - BluespaceCargoTransport
+  # Goobstation R&D Console rework end
 
 - type: technology
-  id: AdvancedTranslation
-  name: research-technology-advanced-translation
+  id: BluespaceChemistry
+  name: research-technology-bluespace-chemistry
   icon:
-    sprite: Objects/Devices/translator.rsi
-    state: icon
+    sprite: Objects/Specific/Chemistry/beaker_bluespace.rsi
+    state: beakerbluespace
   discipline: CivilianServices
   tier: 3
-  cost: 15000
+  cost: 20000 # Goobstation 10000 -> 20000
   recipeUnlocks:
-  - XenoTranslator
-  - AdvancedGalaticCommonTranslatorImplanter
-  - BubblishTranslatorImplanter
-  - NekomimeticTranslatorImplanter
-  - DraconicTranslatorImplanter
-  - CanilunztTranslatorImplanter
-  - SolCommonTranslatorImplanter
-  - RootSpeakTranslatorImplanter
-  - AnimalTranslator
-  - MofficTranslatorImplanter
-  softCapContribution: 1.5
+  - BluespaceBeaker
+  - SyringeBluespace
+  # Goobstation R&D Console rework start
+  position: 2,6
+  technologyPrerequisites:
+  - BiochemicalStasis
+  # Goobstation R&D Console rework end
