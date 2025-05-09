@@ -90,3 +90,6 @@ reagent-desc-ectoplasm = The physical component of semi-corporeal spirits.
 
 reagent-name-ousiana-dust = ousiana dust
 reagent-desc-ousiana-dust = A silent scream echos from this powder, it is a sledgehammer to the mind capable of violently breaking through any psionic blocks, at a cost.
+
+reagent-name-formic-acid = formic acid
+reagent-desc-formic-acid = A corrosive chemical used in the production of enzymes.

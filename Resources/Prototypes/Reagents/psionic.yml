@@ -126,6 +126,14 @@
           component: StutteringAccent
           type: Add
           time: 30
+        - !type:GenericStatusEffect
+          key: PsionicallyInsulated
+          type: Remove
+          time: 900
+        - !type:GenericStatusEffect
+          key: PsionicsDisabled
+          type: Remove
+          time: 900 # 5u counters a dose of cryptobiolin
         - !type:HealthChange
           damage:
             groups:
