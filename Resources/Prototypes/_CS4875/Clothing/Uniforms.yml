@@ -5,9 +5,9 @@
   description: A turtle skirt with yellow straps and soft fabric.
   components:
   - type: Sprite
-    sprite: Nyanotrasen/Clothing/Uniforms/Jumpskirt/Decorskirt.rsi
+    sprite: _CS4875/Decorskirt.rsi
   - type: Clothing
-    sprite: Nyanotrasen/Clothing/Uniforms/Jumpskirt/Decorskirt.rsi
+    sprite: _CS4875/Decorskirt.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -16,6 +16,17 @@
   description: A turtle sweater and skirt, for long operations under the frozen sun.
   components:
   - type: Sprite
-    sprite: Nyanotrasen/Clothing/Uniforms/Jumpskirt/Decorskirt.rsi
+    sprite: _CS4875/Decorskirt.rsi
   - type: Clothing
-    sprite: Nyanotrasen/Clothing/Uniforms/Jumpskirt/Decorskirt.rsi
+    sprite: _CS4875/Decorskirt.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: YukonMIlitaryPoliceUniform
+  name: Yukon Military Police
+  description: For crowd controlling some really unruly kitsunes.
+  components:
+  - type: Sprite
+    sprite: _CS4875/MilitaryPolice.rsi
+  - type: Clothing
+    sprite: _CS4875/MilitaryPolice.rsi
