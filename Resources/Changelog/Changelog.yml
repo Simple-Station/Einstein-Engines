@@ -16121,3 +16121,10 @@ Entries:
   id: 7247
   time: '2025-05-09T17:26:02.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2359
+- author: RedFoxIV
+  changes:
+    - type: Fix
+      message: Fixed some items used less power while turned on than they should.
+  id: 7248
+  time: '2025-05-09T17:26:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2360
