@@ -152,6 +152,18 @@
   fx: EffectRCDConstruct0
 
 - type: rcd
+  id: AirAlarm
+  category: Vents
+  sprite: /Textures/Interface/Radial/RPD/air_monitor.png
+  mode: ConstructObject
+  prototype: AirAlarm
+  cost: 4
+  delay: 3
+  collisionMask: InteractImpassable
+  rotation: User
+  fx: EffectRCDConstruct3
+
+- type: rcd
   id: VentPassive
   category: Vents
   sprite: /Textures/Interface/Radial/RPD/vent_passive.png
