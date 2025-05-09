@@ -559,3 +559,39 @@
     openOnActivation: true
     guides:
     - Psionics
+
+- type: entity
+  parent: BookBase
+  id: BookCorporateJudoGuidebook
+  name: "Corporate Judo for Dummies"
+  description: There are numerous doodles of stick figures fighting across the pages. The energy blasts are impressively drawn.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/books.rsi
+    layers:
+    - state: paper
+    - state: cover_base
+      color: "#ab1515"
+    - state: decor_wingette
+      color: "#e05334"
+    - state: icon_judobookfist
+  - type: Paper
+    content: book-text-martialarts-judo
+
+- type: entity
+  parent: BookBase
+  id: BookCorporateCQCGuidebook
+  name: "Blueshield CQC Refresher Manual"
+  description: This book is well read, but diligently cared for.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/books.rsi
+    layers:
+    - state: paper
+    - state: cover_base
+      color: "#4d6df3"
+    - state: decor_wingette
+      color: "#2f3699"
+    - state: icon_cqcbookfist
+  - type: Paper
+    content: book-text-martialarts-cqc
