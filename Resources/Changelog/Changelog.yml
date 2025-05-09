@@ -16110,3 +16110,14 @@ Entries:
   id: 7246
   time: '2025-05-08T23:55:09.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2376
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Added the East-Orion Company as a selectable Employer, focusing on
+        Hydroponics. They have alternate Hydroponics uniforms, alternate
+        Security uniforms, and a high-quality plant clipper that is more gentle
+        on plants when taking a sample.
+  id: 7247
+  time: '2025-05-09T17:26:02.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2359
