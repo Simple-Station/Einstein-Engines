@@ -267,6 +267,10 @@
         - IPC
         - Lamia
         - Plasmaman
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - PlateletFactories
   functions:
     - !type:TraitAddComponent
       components:
