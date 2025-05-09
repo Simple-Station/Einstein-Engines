@@ -207,7 +207,7 @@
       - id: ClothingOuterDameDane
         prob: 0.03
         orGroup: dressersecondloot
-      - id: ClothingHeadHatShrineMaidenBow
+      - id: ClothingHeadHatShrineMaidenWig
         prob: 0.03
         orGroup: dresserthirdloot
       - id: ClothingOuterPoncho
@@ -234,7 +234,7 @@
       - id: PlushieLizard
         prob: 0.03
         orGroup: dresserthirdloot
-      - id: ClothingUniformJumpskirtShrineMaiden
+      - id: ClothingOuterSuitShrineMaiden
         prob: 0.03
         orGroup: dressersecondloot
       - id: ClothingOuterClownPriest

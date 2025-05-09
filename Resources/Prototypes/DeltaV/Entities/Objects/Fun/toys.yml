@@ -39,7 +39,7 @@
 - type: entity
   parent: BaseFigurine
   id: ToyZero
-  name: toy war plane
+  name: toy zero
   description: whirrrrrrrrr taktaktaktaktak BOOM whirrrrrrr
   components:
   - type: Sprite

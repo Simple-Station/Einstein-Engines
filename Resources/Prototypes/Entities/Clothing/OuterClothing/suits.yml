@@ -228,6 +228,17 @@
   - type: Tag
     tags:
       - FullBodyOuter
+      
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterSuitShrineMaiden
+  name: shrine maiden outfit
+  description: Makes you want to go deal with some troublesome youkai.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Suits/shrine-maiden.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Suits/shrine-maiden.rsi
 
 - type: entity
   parent: ClothingOuterBase
