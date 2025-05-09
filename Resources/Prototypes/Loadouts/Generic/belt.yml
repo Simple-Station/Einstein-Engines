@@ -56,7 +56,7 @@
 - type: loadout
   id: LoadoutItemWaistbag
   category: Belt
-  cost: 2
+  cost: 0
   items:
     - ClothingBeltStorageWaistbag
   requirements:
@@ -70,7 +70,7 @@
 - type: loadout
   id: LoadoutBeltWaistbagColor
   category: Belt
-  cost: 2
+  cost: 0
   customColorTint: true
   items:
     - ClothingBeltStorageWaistbagColor

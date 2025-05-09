@@ -1808,7 +1808,7 @@ namespace Content.Client.Lobby.UI
             }
             catch (Exception exc)
             {
-                Logger.Error($"Error when importing profile\n{exc.StackTrace}");
+                Logger.GetSawmill("humanoidprofile.editor").Error($"Error when importing profile\n{exc.StackTrace}");
             }
             finally
             {
@@ -1838,7 +1838,7 @@ namespace Content.Client.Lobby.UI
             }
             catch (Exception exc)
             {
-                Logger.Error($"Error when exporting profile: {exc.Message}\n{exc.StackTrace}");
+                Logger.GetSawmill("humanoidprofile.editor").Error($"Error when exporting profile: {exc.Message}\n{exc.StackTrace}");
             }
             finally
             {

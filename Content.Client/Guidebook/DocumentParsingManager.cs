@@ -69,7 +69,7 @@ public sealed partial class DocumentParsingManager
         catch (Exception e)
         {
             if (log)
-                Logger.Error($"Encountered error while generating markup controls: {e}");
+                Logger.GetSawmill("document.parsing.addmarkup").Error($"Encountered error while generating markup controls: {e}");
             return false;
         }
 
@@ -82,7 +82,7 @@ public sealed partial class DocumentParsingManager
             var tag = (IDocumentTag) sandbox.CreateInstance(tagType);
             if (!tag.TryParseTag(args, out var control))
             {
-                Logger.Error($"Failed to parse {tagId} args");
+                Logger.GetSawmill("document.parsing").Error($"Failed to parse {tagId} args");
                 return new Control();
             }
 
