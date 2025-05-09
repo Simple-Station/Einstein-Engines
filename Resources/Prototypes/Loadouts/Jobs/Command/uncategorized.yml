@@ -22,7 +22,7 @@
   - TelescopicBaton
 
 - type: loadout
-  id: LoadoutCommandDisabler
+  id: LoadoutCommandCivilianDisabler
   category: JobsCommandAUncategorized
   cost: 2
   exclusive: true
@@ -33,21 +33,7 @@
       departments:
       - Command
   items:
-  - WeaponDisabler
-
-- type: loadout
-  id: LoadoutCommandStunBaton
-  category: JobsCommandAUncategorized
-  cost: 1
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCommandSelfDefense
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Command
-  items:
-  - Stunbaton
+  - WeaponCivilianDisabler
 
 - type: loadout
   id: LoadoutCommandFlash
