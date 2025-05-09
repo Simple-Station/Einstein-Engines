@@ -10,6 +10,7 @@ public sealed class ClothingGrantingSystem : EntitySystem
     [Dependency] private readonly IComponentFactory _componentFactory = default!;
     [Dependency] private readonly ISerializationManager _serializationManager = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!;
+    private static readonly ISawmill _sawmill = Logger.GetSawmill(nameof(ClothingGrantingSystem));
 
     public override void Initialize()
     {
@@ -30,7 +31,7 @@ public sealed class ClothingGrantingSystem : EntitySystem
 
         if (component.Components.Count > 1)
         {
-            Logger.Error("Although a component registry supports multiple components, we cannot bookkeep more than 1 component for ClothingGrantComponent at this time.");
+            _sawmill.Error("Although a component registry supports multiple components, we cannot bookkeep more than 1 component for ClothingGrantComponent at this time.");
             return;
         }
 

@@ -135,7 +135,7 @@ public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag
     {
         if (!args.TryGetValue("Entity", out var proto))
         {
-            Logger.Error("Entity embed tag is missing entity prototype argument");
+            Logger.GetSawmill("guide.entity.embed").Error("Entity embed tag is missing entity prototype argument");
             control = null;
             return false;
         }

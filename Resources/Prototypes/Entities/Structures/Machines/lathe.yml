@@ -248,6 +248,8 @@
     - RiotShield
     - SpeedLoaderMagnum
     - SpeedLoaderMagnumEmpty
+    - MagazineLightRifleMarkOneEmpty
+    - MagazineLightRifleMarkOne
     - GrenadeFlashBang # Goobstation
     # .35 Caseless Pistol
     - MagazinePistolCaselessRiflePractice # EE
@@ -1032,6 +1034,8 @@
       - MagazineUniversalMagnumEmpty
       - MagazineUniversalMagnum
       - MagazineUniversalMagnumRubber
+      - MagazineLightRifleMarkOneEmpty
+      - MagazineLightRifleMarkOne
     dynamicRecipes:
       - Truncheon
       - Terminus
@@ -1237,6 +1241,8 @@
         - MagazineBoxCaselessRiflePractice # EE
         - MagazineBoxCaselessRifle # EE
         - MagazineBoxCaselessRifleRubber # EE
+        - MagazineLightRifleMarkOneEmpty
+        - MagazineLightRifleMarkOne
     - type: MaterialStorage
       whitelist:
         tags:
