@@ -108,6 +108,18 @@
       - id: SheetPaper
         amount: 3
 
+# Backmen edit start
+- type: entity
+  id: CrateMaterialModCore
+  parent: CrateGenericSteel
+  components:
+  - type: StorageFill
+    contents:
+    - id: ModsuitCoreEnergy
+      amount: 2
+
+# backmen edit end
+
 #- type: entity
 #  id: CrateMaterialHFuelTank
 #  name: fueltank crate
