@@ -1237,3 +1237,30 @@
         - description: examine-bionic-pryarm-message
           fontSize: 12
           requireDetailRange: true
+
+- type: trait
+  id: Wings
+  category: Physical
+  points: -2
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - BionicArm
+        - BionicPryArm
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+        - Xelthia # this would fall off
+  functions:
+    - !type:TraitCyberneticLimbReplacement
+      removeBodyPart: Arm
+      partSymmetry: Left
+      protoId: LeftArmHarpy
+      slotId: "left arm"
+    - !type:TraitCyberneticLimbReplacement
+      removeBodyPart: Arm
+      partSymmetry: Right
+      protoId: RightArmHarpy
+      slotId: "right arm"
