@@ -1396,6 +1396,7 @@
             Burn: -0.5
           types:
             Holy: 1
+      - !type:RemoveCogchampAccent
       - !type:PurifyEvil
         conditions:
         - !type:ReagentThreshold
