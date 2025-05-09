@@ -46,6 +46,9 @@
       path: /Audio/Medical/Surgery/scalpel1.ogg
     endSound:
       path: /Audio/Medical/Surgery/scalpel2.ogg
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-inanimate
+    weight: 0.25
 
 - type: entity
   name: kitchen knife
