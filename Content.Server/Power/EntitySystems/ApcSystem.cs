@@ -2,7 +2,6 @@ using Content.Server.Emp;
 using Content.Server.Popups;
 using Content.Server.Power.Components;
 using Content.Server.Power.Pow3r;
-using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.APC;
 using Content.Shared.Emag.Components;
@@ -43,14 +42,16 @@ public sealed class ApcSystem : EntitySystem
 
     public override void Update(float deltaTime)
     {
-        var query = EntityQueryEnumerator<ApcComponent, PowerNetworkBatteryComponent, UserInterfaceComponent>();
-        while (query.MoveNext(out var uid, out var apc, out var battery, out var ui))
+        var query = EntityQueryEnumerator<ApcComponent>();
+        while (query.MoveNext(out var uid, out var apc))
         {
-            if (apc.LastUiUpdate + ApcComponent.VisualsChangeDelay < _gameTiming.CurTime)
-            {
-                apc.LastUiUpdate = _gameTiming.CurTime;
-                UpdateUIState(uid, apc, battery);
-            }
+            if (apc.LastUiUpdate + ApcComponent.VisualsChangeDelay > _gameTiming.CurTime
+                || !TryComp(uid, out PowerNetworkBatteryComponent? battery)
+                || !TryComp(uid, out UserInterfaceComponent? ui))
+                continue;
+
+            apc.LastUiUpdate = _gameTiming.CurTime;
+            UpdateUIState(uid, apc, battery, ui);
         }
     }
 
@@ -186,7 +187,7 @@ public sealed class ApcSystem : EntitySystem
 
         return ApcExternalPowerState.Good;
     }
-    
+
     private void OnEmpPulse(EntityUid uid, ApcComponent component, ref EmpPulseEvent args)
     {
         EnsureComp<EmpDisabledComponent>(uid, out var emp); //event calls before EmpDisabledComponent is added, ensure it to force sprite update
