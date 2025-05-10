@@ -38,6 +38,7 @@ using Robust.Shared.Physics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Content.Shared.Chemistry.Components;
 
 
 namespace Content.Client.Lobby.UI
@@ -48,6 +49,7 @@ namespace Content.Client.Lobby.UI
         private readonly IConfigurationManager _cfgManager;
         private readonly IEntityManager _entManager;
         private readonly IPrototypeManager _protoManager;
+        private readonly IClientPreferencesManager _preferencesManager;
         //private readonly HumanoidCharacterProfile _profile;
         //private readonly CharacterRequirementsSystem _characterRequirementsSystem;
         private readonly JobRequirementsManager _requirements;
@@ -58,9 +60,10 @@ namespace Content.Client.Lobby.UI
 
         public event Action<List<ProtoId<GuideEntryPrototype>>>? OnOpenGuidebook;
 
-        public JobPreferenceMenu(IConfigurationManager cfgManager, IEntityManager entManager, IPrototypeManager protoManager, JobRequirementsManager requirements, HumanoidProfileEditor profileEditor)
+        public JobPreferenceMenu(IClientPreferencesManager prefsManager, IConfigurationManager cfgManager, IEntityManager entManager, IPrototypeManager protoManager, JobRequirementsManager requirements, HumanoidProfileEditor profileEditor)
         {
             RobustXamlLoader.Load(this);
+            _preferencesManager = prefsManager;
             _cfgManager = cfgManager;
             _entManager = entManager;
             _protoManager = protoManager;
@@ -160,7 +163,14 @@ namespace Content.Client.Lobby.UI
                 {
                     var jobContainer = new BoxContainer { Orientation = LayoutOrientation.Horizontal, };
                     var selector = new RequirementsSelector { Margin = new(3f, 3f, 3f, 0f) };
+                    var jobLoadoutButton = new Button { Text = Loc.GetString("Job Loadout"), Margin = new(3f, 3f, 3f, 0f) };
+                    var characterList = new OptionButton();
                     selector.OnOpenGuidebook += OnOpenGuidebook;
+
+                    foreach (var (slot, character) in _preferencesManager.Preferences!.Characters)
+                    {
+                        characterList.AddItem(character.Name, slot);
+                    }
 
                     var icon = new TextureRect
                     {
@@ -170,7 +180,6 @@ namespace Content.Client.Lobby.UI
                     var jobIcon = _protoManager.Index<JobIconPrototype>(job.Icon);
                     icon.Texture = jobIcon.Icon.Frame0();
                     selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon, job.Guides);
-
                     if (!_requirements.CheckJobWhitelist(job, out var reason))
                         selector.LockRequirements(reason);
                     //else if (!_characterRequirementsSystem.CheckRequirementsValid(
@@ -213,8 +222,15 @@ namespace Content.Client.Lobby.UI
                         //SetDirty();
                     };
 
+                    characterList.OnItemSelected += args =>
+                    {
+                        characterList.SelectId(args.Id);
+                    };
+
                     _jobPriorities.Add((job.ID, selector));
                     jobContainer.AddChild(selector);
+                    jobContainer.AddChild(characterList);
+                    jobContainer.AddChild(jobLoadoutButton);
                     category.AddChild(jobContainer);
                 }
             }

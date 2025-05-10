@@ -217,6 +217,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         _profileEditor.OnOpenGuidebook += _guide.OpenHelp;
 
         _jobSelector = new JobPreferenceMenu(
+            _preferencesManager,
             _configurationManager,
             EntityManager,
             _prototypeManager,
