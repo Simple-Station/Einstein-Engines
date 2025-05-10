@@ -16128,3 +16128,14 @@ Entries:
   id: 7248
   time: '2025-05-09T17:26:53.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2360
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: Glacier, New Evac shuttle.
+    - type: Tweak
+      message: >-
+        Glacier's back to the Mountaintop, coupled with several fixes and
+        tweaks!
+  id: 7249
+  time: '2025-05-10T19:46:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2415
