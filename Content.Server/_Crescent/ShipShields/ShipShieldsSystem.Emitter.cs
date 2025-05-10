@@ -28,20 +28,18 @@ public partial class ShipShieldsSystem
         {
             component.Damage += Math.Clamp(emp.EnergyConsumption, 0f, MAX_EMP_DAMAGE);
             _trigger.Trigger(args.Deflected);
-            QueueDel(args.Deflected);
-            return;
         }
 
         if (TryComp<ExplosiveComponent>(args.Deflected, out var exp))
         {
             component.Damage += exp.TotalIntensity;
-            QueueDel(args.Deflected);
         }
 
         if (TryComp<ProjectileComponent>(args.Deflected, out var proj))
             component.Damage += (float) proj.Damage.GetTotal();
         else if (TryComp<PhysicsComponent>(args.Deflected, out var phys))
             component.Damage += phys.FixturesMass;
+        QueueDel(args.Deflected);
     }
 
     private void OnExamined(EntityUid uid, ShipShieldEmitterComponent component, ExaminedEvent args)

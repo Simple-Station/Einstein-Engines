@@ -1,36 +1,19 @@
-using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Diagnostics.Tracing;
 using System.Linq;
-using System.Net.Sockets;
 using System.Numerics;
-using System.Threading;
 using System.Threading.Tasks;
 using Content.Shared._Crescent;
-using Content.Shared._Shitmed.Medical.Surgery.Steps.Parts;
-using Content.Shared.Physics;
 using Content.Shared.Projectiles;
-using MathNet.Numerics;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Robust.Server.GameObjects;
-using Robust.Shared.Collections;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Robust.Shared.Log;
-using Robust.Shared.Map;
-using Robust.Shared.Maths;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
-using Robust.Shared.Physics.Dynamics;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Threading;
-using Robust.Shared.Toolshed.Commands.Debug;
 
 /// <summary>
 ///  Written by MLGTASTICa/SPCR 2025 for Hullrot EE
 ///  This was initially using RobustParallel Manager, but the implementation is horrendous for this kind of task (threadPooling (fake c# threads) instead of high-performance single CPU threads)
+///  This system is expected to be ran on objects that DO not have any HARD-FIXTURES. As in all-collision events are handled only by this and not by physics due to actual body collision.
 /// </summary>
 public class ProjectilePhasePreventerSystem : EntitySystem
 {
@@ -39,6 +22,8 @@ public class ProjectilePhasePreventerSystem : EntitySystem
     [Dependency] private readonly RayCastSystem _raycast = default!;
     [Dependency] private readonly IParallelManager _parallel = default!;
     [Dependency] private readonly ILogManager _logs = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly MapSystem _map = default!;
     private EntityQuery<PhysicsComponent> physQuery;
     private EntityQuery<FixturesComponent> fixtureQuery;
     private List<RaycastBucket> processingBuckets = new();
@@ -51,7 +36,7 @@ public class ProjectilePhasePreventerSystem : EntitySystem
 
     public class RaycastBucket()
     {
-        public HashSet<Entity<ProjectilePhasePreventComponent>> items = new();
+        public HashSet<Entity<ProjectilePhasePreventComponent, ProjectileComponent>> items = new();
         public List<Tuple<StartCollideEvent, StartCollideEvent>> output = new();
 
     };
@@ -68,10 +53,16 @@ public class ProjectilePhasePreventerSystem : EntitySystem
 
     private void OnInit(EntityUid uid, ProjectilePhasePreventComponent comp, ref ComponentStartup args)
     {
+        if (!TryComp<ProjectileComponent>(uid, out var projectile))
+        {
+            sawLogs.Error($"Tried to initialize ProjectilePhasePreventComponent on entity without projectileComponent. Prototype : {MetaData(uid).EntityPrototype?.ID}");
+            RemComp<ProjectilePhasePreventComponent>(uid);
+            return;
+
+        }
+
         comp.start = _trans.GetWorldPosition(uid);
         comp.mapId = _trans.GetMapId(uid);
-        //comp.owner = uid;
-        comp.ignoredEntities.Add(uid);
         foreach(var (key , fixture) in Comp<FixturesComponent>(uid).Fixtures)
         {
             comp.relevantBitmasks |= fixture.CollisionLayer;
@@ -80,23 +71,27 @@ public class ProjectilePhasePreventerSystem : EntitySystem
         {
             processingBuckets.Add(new RaycastBucket());
         }
-        processingBuckets.Last().items.Add((uid, comp));
+        processingBuckets.Last().items.Add((uid, comp, projectile));
         comp.containedAt = processingBuckets.Last();
 
     }
 
     private void OnRemove(EntityUid uid, ProjectilePhasePreventComponent comp, ref ComponentShutdown args)
     {
-        if (comp.containedAt is not null && comp.containedAt is RaycastBucket bucket)
+        if (!TryComp<ProjectileComponent>(uid, out var projectile))
         {
-            bucket.items.Remove((uid, comp));
+            sawLogs.Error($"Failed to remot entity without projectileComponent. Prototype : {MetaData(uid).EntityPrototype?.ID} [] ID : {uid}");
+            return;
+        }
+        if (comp.containedAt is RaycastBucket bucket)
+        {
+            bucket.items.Remove((uid, comp, projectile));
             if (bucket.items.Count == 0 && processingBuckets.Count > 1)
             {
                 processingBuckets.Remove(bucket);
             }
         }
 
-        comp.ignoredEntities.Clear();
     }
 
 
@@ -107,7 +102,7 @@ public class ProjectilePhasePreventerSystem : EntitySystem
             QueryFilter queryFilter = new QueryFilter();
             args.output.Clear();
             Vector2 worldPos = Vector2.Zero;
-            foreach(var (owner,  phase) in args.items)
+            foreach(var (owner,  phase, projectile) in args.items)
             {
                 // will be removed through events. Just skip for now
                 if (TerminatingOrDeleted(owner))
@@ -122,8 +117,15 @@ public class ProjectilePhasePreventerSystem : EntitySystem
                 var bulletString = bulletFixtures.Fixtures.Keys.First();
                 foreach (var hit in result.Results)
                 {
-                    // whilst the raycast supports a filter function . i do not want to package stuff in bulk
-                    if(phase.ignoredEntities.Contains(hit.Entity))
+                    // whilst the raycast supports a filter function . i do not want to package variabiles in lambdas in bulk
+                    if (projectile.Shooter == hit.Entity && projectile.IgnoreShooter)
+                        continue;
+                    if (projectile.Weapon == hit.Entity)
+                        continue;
+                    if (projectile.IgnoredEntities.Contains(hit.Entity))
+                        continue;
+                    // dont raise these. We cut some slack for the main thread by running it here.
+                    if (projectile.Weapon is not null && Transform(projectile.Weapon.Value).GridUid != Transform(hit.Entity).GridUid)
                         continue;
                     var targetPhysics = physQuery.GetComponent(hit.Entity);
                     var targetFixtures = fixtureQuery.GetComponent(hit.Entity);
@@ -132,6 +134,7 @@ public class ProjectilePhasePreventerSystem : EntitySystem
                     var bulletEvent = new StartCollideEvent(
                         owner,
                         hit.Entity,
+
                         bulletString,
                         targetString,
                         bulletFixtures.Fixtures[bulletString],
@@ -160,6 +163,7 @@ public class ProjectilePhasePreventerSystem : EntitySystem
             sawLogs.Info($"Processing {processingBuckets.Count} buckets with estimated bullet count of {processingBuckets.Count * raysPerThread}");
         }
 
+        var count = 0;
         foreach (var bucket in processingBuckets)
         {
             foreach(var eventData in bucket.output)
@@ -170,6 +174,7 @@ public class ProjectilePhasePreventerSystem : EntitySystem
                 var sEv = eventData.Item2;
                 try
                 {
+                    count++;
                     RaiseLocalEvent(eventData.Item1.OurEntity, ref fEv, true);
                     RaiseLocalEvent(eventData.Item2.OurEntity, ref sEv, true);
                 }
@@ -179,6 +184,11 @@ public class ProjectilePhasePreventerSystem : EntitySystem
                 }
             }
         }
+        if (processingBuckets.Count > 3)
+        {
+            sawLogs.Info($"Processed {count} events on main-thread");
+        }
+
 
     }
 }
