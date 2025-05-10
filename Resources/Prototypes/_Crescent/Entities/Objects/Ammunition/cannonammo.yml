@@ -23,13 +23,6 @@
     lifetime: 4
   - type: Fixtures
     fixtures:
-      projectile:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.1,-0.1,0.1,0.1"
-        hard: false
-        mask:
-        - BulletImpassable
       fly-by: &flybyfixture
         shape: !type:PhysShapeCircle
           radius: 1.5
@@ -45,6 +38,9 @@
       - state: base-projectile
   - type: ShipWeaponProjectile
   - type: ProjectilePhasePrevent
+    collision: "BulletImpassable, Impassable"
+
+
 
 - type: entity
   id: CartridgeVulcanStandard

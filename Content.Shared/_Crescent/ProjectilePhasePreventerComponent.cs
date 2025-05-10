@@ -22,8 +22,8 @@ public sealed partial class ProjectilePhasePreventComponent : Component
     public Vector2 start = Vector2.Zero;
     public MapId mapId = MapId.Nullspace;
     public object containedAt;
-    // relevant collision Groups for this projectile.
-    [DataField]
+    [DataField("collision")]
+    public CollisionGroup initializeBitMask = CollisionGroup.None;
     public int relevantBitmasks = 0;
 
 }

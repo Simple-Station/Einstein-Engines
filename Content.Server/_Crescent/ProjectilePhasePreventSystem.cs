@@ -63,10 +63,13 @@ public class ProjectilePhasePreventerSystem : EntitySystem
 
         comp.start = _trans.GetWorldPosition(uid);
         comp.mapId = _trans.GetMapId(uid);
+        /* Handled by  datafield in component.
         foreach(var (key , fixture) in Comp<FixturesComponent>(uid).Fixtures)
         {
             comp.relevantBitmasks |= fixture.CollisionLayer;
         };
+        */
+        comp.relevantBitmasks = (int) comp.initializeBitMask;
         if (processingBuckets.Last().items.Count >= raysPerThread)
         {
             processingBuckets.Add(new RaycastBucket());
