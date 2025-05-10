@@ -71,6 +71,7 @@
     - BypassInteractionRangeChecks
   - type: UniversalLanguageSpeaker # Ghosts should understand any language.
   - type: PointLight
+    netsync: false
     radius: 6
     castShadows: false
     enabled: false
