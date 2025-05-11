@@ -102,7 +102,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
     private float _shuttleIndex;
     private const float ShuttleSpawnBuffer = 1f;
     private ISawmill _sawmill = default!;
-    private bool _enabled;
+    private bool _enabled = true;
 
 
 
@@ -635,7 +635,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         // Null config means we didn't dock and had to park nearby.
         if (config == null)
         {
-            _chat.TrySendInGameICMessage(chatter, Loc.GetString("shipyard-console-nearby"), InGameICChatType.Speak, false);
+            _chat.TrySendInGameICMessage(chatter, "Your ship has been towed in local station space. Fly to it using a jetpack and a mass scanner!", InGameICChatType.Speak, false);
             return;
         }
 
