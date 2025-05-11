@@ -70,6 +70,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
 {
     [Dependency] private readonly IConfigurationManager _configManager = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly MapSystem _mapSystem = default!;
     [Dependency] private readonly CargoSystem _cargo = default!;
     [Dependency] private readonly DockingSystem _docking = default!;
     [Dependency] private readonly PricingSystem _pricing = default!;
@@ -307,8 +308,8 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
     {
         if (ShipyardMap != null && _mapManager.MapExists(ShipyardMap.Value))
             return;
-
-        ShipyardMap = _mapManager.CreateMap();
+        _mapSystem.CreateMap(out var id);
+        ShipyardMap = id;
 
         _mapManager.SetMapPaused(ShipyardMap.Value, false);
     }
