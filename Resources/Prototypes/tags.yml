@@ -1119,6 +1119,9 @@
   id: PlantSampleTaker
 
 - type: Tag
+  id: PlantSampleTakerHighQuality
+
+- type: Tag
   id: HydroponicsToolClippers
 
 - type: Tag
@@ -1528,6 +1531,9 @@
 
 - type: Tag
   id: SiliconEmotes
+
+- type: Tag
+  id: MagazineMarkOne
 
 - type: Tag
   id: UnathiEmotes

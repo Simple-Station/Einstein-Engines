@@ -17,7 +17,11 @@ namespace Content.Shared.Abilities.Psionics
         }
 
         private void OnPowerUsed(EntityUid uid, MassSleepPowerComponent component, MassSleepPowerActionEvent args)
+
         {
+            if (!_psionics.OnAttemptPowerUse(args.Performer, "mass sleep", true))
+                return;
+
             foreach (var entity in _lookup.GetEntitiesInRange(args.Target, component.Radius))
             {
                 if (HasComp<MobStateComponent>(entity) && entity != uid && !HasComp<PsionicInsulationComponent>(entity))

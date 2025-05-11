@@ -24,3 +24,36 @@
       rarePrototypes:
         - MobCatShadow
         - ArtifactFragment
+
+- type: entity
+  id: ShadowKudzuLootSpawnerTemp #literally just the other loot spawner but spawns a temp ver of the shadowportal
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+      - state: red
+      - sprite: Structures/Specific/Anomalies/shadow_anom.rsi
+        state: anom
+    - type: RandomSpawner
+      offset: 0.05
+      chance: 0.7
+      prototypes:
+        - CrystalPink
+        - CrystalPink
+        - ShadowPortalTemp
+        - ShadowPortalTemp
+        - ShadowPortalTemp
+        - ShadowPortalTemp
+        - ShadowPortalTemp
+        - ShadowPortalTemp
+        - ShadowTree01
+        - ShadowTree02
+        - ShadowTree03
+        - ShadowTree04
+        - ShadowTree05
+        - ShadowTree06
+      rareChance: 0.05
+      rarePrototypes:
+        - MobCatShadow
+        - MobCatShadow
+        - ArtifactFragment
