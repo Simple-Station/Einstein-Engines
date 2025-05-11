@@ -17,5 +17,5 @@ public sealed partial class SpawnItemsAtLocationOnUseComponent : Component
     public int Uses = 1;
 
     [DataField]
-    public LocId VerbText = "spawn-items-verb";
+    public LocId SpawnItemsVerbText = "spawn-items-verb";
 }

@@ -221,6 +221,7 @@
     graph: Seat
     node: chairOffice
   - type: SpawnItemsAtLocationOnUse
+    spawnItemsVerbText: disable-wheel-locks
     items:
       - id: ChairOfficeLightRolling
 
@@ -235,6 +236,7 @@
     graph: Seat
     node: chairOfficeDark
   - type: SpawnItemsAtLocationOnUse
+    spawnItemsVerbText: disable-wheel-locks
     items:
       - id: ChairOfficeDarkRolling
 
@@ -252,6 +254,7 @@
     graph: Seat
     node: chairOffice
   - type: SpawnItemsAtLocationOnUse
+    spawnItemsVerbText: activate-wheel-locks
     items:
       - id: ChairOfficeLight
 
@@ -267,6 +270,7 @@
     graph: Seat
     node: chairOfficeDark
   - type: SpawnItemsAtLocationOnUse
+    spawnItemsVerbText: activate-wheel-locks
     items:
       - id: ChairOfficeDark
 

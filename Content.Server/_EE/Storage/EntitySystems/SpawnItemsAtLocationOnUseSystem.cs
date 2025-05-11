@@ -40,7 +40,7 @@ public sealed class SpawnItemsAtLocationOnUseSystem : EntitySystem
             {
                 RaiseLocalEvent(uid, new UseInHandEvent(args.User));
             },
-            Text = Loc.GetString(component.VerbText),
+            Text = Loc.GetString(component.SpawnItemsVerbText),
             Priority = 3
         };
 
