@@ -32,26 +32,34 @@
   - type: PlaceableSurface
     isPlaceable: false # defaults to closed.
   - type: Appearance
-  - type: EntityStorageVisuals
-    stateDoorOpen: open
-    stateDoorClosed: closed
   - type: ContainerContainer
     containers:
       entity_storage: !type:Container
       paper_label: !type:ContainerSlot
   - type: RequireProjectileTarget
+  - type: Clickable
 
 - type: entity
   parent: SlingEgg
   id: SlingEggHatch
   components:
   - type: HatchingEgg
+  - type: EntityStorageVisuals
+    stateDoorOpen: open
+    stateDoorClosed: closed
 
 - type: entity
   parent: SlingEgg
   id: SlingEggAscension
   components:
-  - type: Clickable
+  - type: Sprite
+    noRot: true
+    sprite: _EE/Shadowling/ascension_egg.rsi
+    layers:
+      - state: base
+        map: [ "enum.StorageVisualLayers.Base" ]
+      - state: closed
+        map: [ "enum.StorageVisualLayers.Door" ]
   - type: Physics
     bodyType: Dynamic
   - type: ShadowlingAscensionEgg
@@ -62,7 +70,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 4500 
+        damage: 4500
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -80,3 +88,19 @@
         - MachineMask
         layer:
         - MachineLayer
+  - type: EntityStorageVisuals
+    stateDoorOpen: open
+    stateDoorClosed: closed
+
+- type: entity
+  id: AscensionEggShadowlingInside
+  name: ascension egg shadowling inside
+  components:
+  - type: Transform
+    noRot: true
+  - type: Sprite
+    noRot: true
+    sprite: _EE/Shadowling/ascension_egg.rsi
+    state: closed2
+    netsync: false
+    drawdepth: Effects

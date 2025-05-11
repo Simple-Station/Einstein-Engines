@@ -1,14 +1,20 @@
 using Content.Server.Actions;
 using Content.Server.Chat.Systems;
+using Content.Server.Light.Components;
+using Content.Server.Light.EntitySystems;
 using Content.Server.Polymorph.Systems;
 using Content.Server.Popups;
 using Content.Server.Storage.EntitySystems;
 using Content.Shared._EE.Shadowling;
 using Content.Shared._EE.Shadowling.Components;
+using Content.Shared._EE.Shadowling.Systems;
 using Content.Shared.Destructible;
 using Content.Shared.Examine;
+using Content.Shared.Light.Components;
 using Content.Shared.Popups;
+using Content.Shared.Storage;
 using Content.Shared.Verbs;
+using Robust.Server.GameObjects;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -28,6 +34,8 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly PolymorphSystem _polymorph = default!;
     [Dependency] private readonly ShadowlingSystem _shadowling = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly PoweredLightSystem _poweredLight = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -49,6 +57,14 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
         {
             if (!comp.StartTimer)
                 continue;
+
+            if (_timing.CurTime >= comp.NextUpdateTime - comp.AscendingEffectInterval && !comp.AscendingEffectAdded)
+            {
+                var effectEnt = Spawn(comp.AscendingEffect, _transform.GetMapCoordinates(uid));
+                _transform.SetParent(effectEnt, uid);
+                comp.AscendingEffectEntity = effectEnt;
+                comp.AscendingEffectAdded = true;
+            }
 
             if (_timing.CurTime < comp.NextUpdateTime)
                 continue;
@@ -76,6 +92,9 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
 
     private void OnDestruction(EntityUid uid, ShadowlingAscensionEggComponent component, DestructionEventArgs args)
     {
+        if (component.AscendingEffectEntity != null)
+            QueueDel(component.AscendingEffectEntity);
+
         if (component.Creator == null)
             return;
 
@@ -111,8 +130,6 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
             return;
         }
 
-
-
         // Don't ascend if another shadowling is ascending.
         // If one shadowling finishes ascension, the remaining
         // shadowlings will gain Ascendance powers too, either way.
@@ -132,6 +149,7 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
             }
         }
 
+
         // Start Ascension
         var shadowling = EntityManager.GetComponent<ShadowlingComponent>(uid);
 
@@ -146,14 +164,24 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
         _chat.DispatchGlobalAnnouncement(
             Loc.GetString("shadowling-ascension-message"),
             colorOverride: Color.Red); // todo: sound
+
+        var effectEnt = Spawn(component.ShadowlingInside, _transform.GetMapCoordinates(eggUid));
+        _transform.SetParent(effectEnt, eggUid);
+
+        component.ShadowlingInsideEntity = effectEnt;
     }
 
     private void DoAscend(EntityUid uid, ShadowlingAscensionEggComponent component)
     {
+        if (component.ShadowlingInsideEntity != null)
+            QueueDel(component.ShadowlingInsideEntity);
+
         if (component.Creator == null)
             return;
 
         component.StartTimer = false;
+
+        DestroyLights();
 
         _entityStorage.OpenStorage(uid);
         _entityStorage.Remove(component.Creator.Value, uid);
@@ -181,5 +209,12 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
 
             _shadowling.OnPhaseChanged(newUid.Value, ascendant, ShadowlingPhases.Ascension);
         }
+    }
+
+    private void DestroyLights()
+    {
+        var lights = EntityQueryEnumerator<PoweredLightComponent>();
+        while (lights.MoveNext(out var uid, out var light))
+            _poweredLight.TryDestroyBulb(uid, light);
     }
 }

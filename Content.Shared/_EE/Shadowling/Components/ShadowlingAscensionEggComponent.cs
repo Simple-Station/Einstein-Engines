@@ -14,7 +14,10 @@ public sealed partial class ShadowlingAscensionEggComponent : Component
     public TimeSpan NextUpdateTime = TimeSpan.Zero;
 
     [DataField]
-    public TimeSpan UpdateInterval = TimeSpan.FromSeconds(5);
+    public TimeSpan UpdateInterval = TimeSpan.FromSeconds(10);
+
+    [DataField]
+    public TimeSpan AscendingEffectInterval = TimeSpan.FromSeconds(5.52);
 
     [DataField]
     public EntityUid? Creator;
@@ -24,4 +27,19 @@ public sealed partial class ShadowlingAscensionEggComponent : Component
 
     [DataField]
     public string VerbName = "Start Ascension";
+
+    [DataField]
+    public EntityUid? ShadowlingInsideEntity;
+
+    [DataField]
+    public string? ShadowlingInside = "AscensionEggShadowlingInside";
+
+    [DataField]
+    public string? AscendingEffect = "ShadowlingAscendingEffect";
+
+    [DataField]
+    public bool AscendingEffectAdded;
+
+    [DataField]
+    public EntityUid? AscendingEffectEntity;
 }
