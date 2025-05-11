@@ -7,8 +7,6 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: ProjectileIFF
-    visualType: Circle
-    color: White
   - type: Projectile
     ignoreWeaponGrid: true
     damage:
@@ -23,6 +21,8 @@
     lifetime: 4
   - type: Fixtures
     fixtures:
+      projectile:
+        hard: false
       fly-by: &flybyfixture
         shape: !type:PhysShapeCircle
           radius: 1.5
@@ -38,7 +38,9 @@
       - state: base-projectile
   - type: ShipWeaponProjectile
   - type: ProjectilePhasePrevent
-    collision: "BulletImpassable, Impassable"
+    mask:
+    - BulletImpassable
+    - Impassable
 
 
 

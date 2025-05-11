@@ -127,7 +127,7 @@ public class ProjectilePhasePreventerSystem : EntitySystem
                     if (projectile.IgnoredEntities.Contains(hit.Entity))
                         continue;
                     // dont raise these. We cut some slack for the main thread by running it here.
-                    if (projectile.Weapon is not null && Transform(projectile.Weapon.Value).GridUid != Transform(hit.Entity).GridUid)
+                    if (projectile.Weapon is not null && Transform(projectile.Weapon.Value).GridUid == Transform(hit.Entity).GridUid)
                         continue;
                     var targetPhysics = physQuery.GetComponent(hit.Entity);
                     var targetFixtures = fixtureQuery.GetComponent(hit.Entity);
