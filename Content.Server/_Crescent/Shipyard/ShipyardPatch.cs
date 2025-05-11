@@ -70,6 +70,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
 {
     [Dependency] private readonly IConfigurationManager _configManager = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly MapSystem _mapSystem = default!;
     [Dependency] private readonly CargoSystem _cargo = default!;
     [Dependency] private readonly DockingSystem _docking = default!;
     [Dependency] private readonly PricingSystem _pricing = default!;
@@ -101,7 +102,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
     private float _shuttleIndex;
     private const float ShuttleSpawnBuffer = 1f;
     private ISawmill _sawmill = default!;
-    private bool _enabled;
+    private bool _enabled = true;
 
 
 
@@ -307,8 +308,8 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
     {
         if (ShipyardMap != null && _mapManager.MapExists(ShipyardMap.Value))
             return;
-
-        ShipyardMap = _mapManager.CreateMap();
+        _mapSystem.CreateMap(out var id);
+        ShipyardMap = id;
 
         _mapManager.SetMapPaused(ShipyardMap.Value, false);
     }
@@ -634,7 +635,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         // Null config means we didn't dock and had to park nearby.
         if (config == null)
         {
-            _chat.TrySendInGameICMessage(chatter, Loc.GetString("shipyard-console-nearby"), InGameICChatType.Speak, false);
+            _chat.TrySendInGameICMessage(chatter, "Your ship has been towed in local station space. Fly to it using a jetpack and a mass scanner!", InGameICChatType.Speak, false);
             return;
         }
 

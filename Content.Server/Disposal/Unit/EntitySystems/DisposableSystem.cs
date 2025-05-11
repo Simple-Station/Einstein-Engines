@@ -205,7 +205,7 @@ namespace Content.Server.Disposal.Unit.EntitySystems
             holder.CurrentDirection = ev.Next;
             holder.StartingTime = 0.1f;
             holder.TimeLeft = 0.1f;
-            // Logger.InfoS("c.s.disposal.holder", $"Disposals dir {holder.CurrentDirection}");
+            // Logger.GetSawmill("c.s.disposal.holder").Info($"Disposals dir {holder.CurrentDirection}");
 
             // Invalid direction = exit now!
             if (holder.CurrentDirection == Direction.Invalid)

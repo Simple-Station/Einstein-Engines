@@ -1,4 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.CodeAnalysis;
 using Content.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.Controls;
 
@@ -84,7 +84,7 @@ public abstract class ItemSlotUIContainer<T> : GridContainer, IItemslotUIContain
     {
         if (newButton.SlotName == "")
         {
-            Logger.Warning("Could not add button " + newButton.Name + "No slotname");
+            Logger.GetSawmill("itemslot.ui.container").Warning("Could not add button " + newButton.Name + "No slotname");
         }
 
         return !Buttons.TryAdd(newButton.SlotName, newButton) ? null : newButton;

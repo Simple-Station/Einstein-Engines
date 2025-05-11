@@ -2,6 +2,8 @@ using Content.Server.Administration.Logs;
 using Content.Server.Damage.Systems;
 using Content.Server.Effects;
 using Content.Server.Weapons.Ranged.Systems;
+using Content.Shared._Crescent;
+using Content.Shared._Crescent.ShipShields;
 using Content.Shared.Camera;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Events;
@@ -30,9 +32,9 @@ public sealed class ProjectileSystem : SharedProjectileSystem
 
     private void OnStartCollide(EntityUid uid, ProjectileComponent component, ref StartCollideEvent args)
     {
-        // This is so entities that shouldn't get a collision are ignored.
-        if (args.OurFixtureId != ProjectileFixture || !args.OtherFixture.Hard
-            || component.DamagedEntity || component is { Weapon: null, OnlyCollideWhenShot: true, })
+        if (args.OurFixtureId != ProjectileFixture || component.DamagedEntity || component is { Weapon: null, OnlyCollideWhenShot: true, })
+            return;
+        if (!HasComp<ShipShieldComponent>(uid) && !args.OtherFixture.Hard)
             return;
 
         var target = args.OtherEntity;

@@ -1,7 +1,7 @@
 - type: loadout
   id: LoadoutNeckHeadphones
   category: Neck
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingNeckHeadphones
@@ -12,7 +12,7 @@
 - type: loadout
   id: LoadoutNeckBellCollar
   category: Neck
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingNeckBellCollar
@@ -455,7 +455,7 @@
 - type: loadout
   id: LoadoutNeckBedsheetCosmos
   category: Neck
-  cost: 2
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:
@@ -474,7 +474,7 @@
 - type: loadout
   id: LoadoutNeckBedsheetRainbow
   category: Neck
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - BedsheetRainbow
@@ -492,7 +492,7 @@
 - type: loadout
   id: LoadoutNeckBedsheetWhite
   category: Neck
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -511,7 +511,7 @@
 - type: loadout
   id: LoadoutNeckBedsheetNT
   category: Neck
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - BedsheetNT
@@ -582,7 +582,7 @@
 - type: loadout
   id: LoadoutNeckNecklaceGold
   category: Neck
-  cost: 1
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:
@@ -594,7 +594,7 @@
 - type: loadout
   id: LoadoutNeckNecklaceSilver
   category: Neck
-  cost: 1
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:
@@ -606,7 +606,7 @@
 - type: loadout
   id: LoadoutNeckNecklaceChainGold
   category: Neck
-  cost: 3
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:
@@ -618,7 +618,7 @@
 - type: loadout
   id: LoadoutNeckNecklaceChainSilver
   category: Neck
-  cost: 3
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:
@@ -630,7 +630,7 @@
 - type: loadout
   id: LoadoutNeckNecklacePendantGold
   category: Neck
-  cost: 1
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:
@@ -642,7 +642,7 @@
 - type: loadout
   id: LoadoutNeckNecklacePendantGoldLarge
   category: Neck
-  cost: 2
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:
@@ -654,7 +654,7 @@
 - type: loadout
   id: LoadoutNeckNecklacePendantSilver
   category: Neck
-  cost: 1
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:
@@ -666,7 +666,7 @@
 - type: loadout
   id: LoadoutNeckNecklacePendantSilverLarge
   category: Neck
-  cost: 2
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:
