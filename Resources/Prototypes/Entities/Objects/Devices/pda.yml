@@ -409,12 +409,12 @@
   components:
   - type: Pda
     id: QuartermasterIDCard
-    state: pda-qmnano
+    state: pda-qm
   - type: PdaBorderColor
     borderColor: "#e39751"
     accentVColor: "#a23e3e"
   - type: Icon
-    state: pda-qmnano
+    state: pda-qm
   - type: CartridgeLoader # Adds the MailMetrics courier tracker
     preinstalled:
       - CrewManifestCartridge
@@ -587,7 +587,7 @@
   components:
   - type: Pda
     id: CaptainIDCard
-    state: pda-captainnano
+    state: pda-captain
     penSlot:
       startingItem: PenCap
       priority: -1
@@ -597,7 +597,7 @@
   - type: PdaBorderColor
     borderColor: "#7C5D00"
   - type: Icon
-    state: pda-captainnano
+    state: pda-captain
 
 - type: entity
   parent: BasePDA
@@ -628,7 +628,7 @@
   components:
   - type: Pda
     id: HoPIDCard
-    state: pda-hopnano
+    state: pda-hop
     penSlot:
       startingItem: PenHop
       priority: -1
@@ -664,12 +664,12 @@
   components:
   - type: Pda
     id: CEIDCard
-    state: pda-cenano
+    state: pda-ce
   - type: PdaBorderColor
     borderColor: "#949137"
     accentHColor: "#447987"
   - type: Icon
-    state: pda-cenano
+    state: pda-ce
 
 - type: entity
   parent: BasePDA
@@ -716,7 +716,7 @@
   components:
   - type: Pda
     id: CMOIDCard
-    state: pda-cmonano
+    state: pda-cmo
     penSlot: # Fancy Pen Light
       startingItem: CMOPenLight
       priority: -1
@@ -728,7 +728,7 @@
     accentHColor: "#447987"
     accentVColor: "#447987"
   - type: Icon
-    state: pda-cmonano
+    state: pda-cmo
 
 - type: entity
   parent: BaseMedicalPDA
@@ -828,13 +828,13 @@
   components:
   - type: Pda
     id: RDIDCard
-    state: pda-rdnano
+    state: pda-rd
   - type: PdaBorderColor
     borderColor: "#d7d7d0"
     accentHColor: "#447987"
     accentVColor: "#8900c9"
   - type: Icon
-    state: pda-rdnano
+    state: pda-rd
   - type: CartridgeLoader # Nyanotrasen - Glimmer Monitor
     preinstalled:
       - CrewManifestCartridge
@@ -913,12 +913,12 @@
   components:
   - type: Pda
     id: HoSIDCard
-    state: pda-hosnano
+    state: pda-hos
   - type: PdaBorderColor
     borderColor: "#A32D26"
     accentHColor: "#447987"
   - type: Icon
-    state: pda-hosnano
+    state: pda-hos
   - type: CartridgeLoader # DeltaV - Crime Assist + SecWatch
     preinstalled:
       - CrewManifestCartridge

@@ -45,9 +45,8 @@
     doAfterDelay: 8
   - type: WiresPanel
   - type: Wires
-
-    boardName: wires-board-name-dispenser
-    layoutId: Dispenser
+    boardName: wires-board-name-vendingmachine
+    layoutId: Vending
   - type: Anchorable
   - type: Electrified
     enabled: false
