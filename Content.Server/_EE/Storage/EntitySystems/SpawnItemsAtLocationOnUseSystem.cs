@@ -26,27 +26,6 @@ public sealed class SpawnItemsAtLocationOnUseSystem : EntitySystem
         SubscribeLocalEvent<SpawnItemsAtLocationOnUseComponent, GetVerbsEvent<AlternativeVerb>>(AddSpawnVerb);
     }
 
-    private void AddSpawnVerb(EntityUid uid, SpawnItemsAtLocationOnUseComponent component, GetVerbsEvent<AlternativeVerb> args)
-    {
-        if (!args.CanAccess || !args.CanInteract || args.Hands == null)
-            return;
-
-        if (TryComp<StrapComponent>(uid, out var strap) && strap.BuckledEntities.Count > 0)
-            return;
-
-        AlternativeVerb verb = new()
-        {
-            Act = () =>
-            {
-                RaiseLocalEvent(uid, new UseInHandEvent(args.User));
-            },
-            Text = Loc.GetString(component.SpawnItemsVerbText),
-            Priority = 3
-        };
-
-        args.Verbs.Add(verb);
-    }
-
     private void OnUseInHand(EntityUid uid, SpawnItemsAtLocationOnUseComponent component, UseInHandEvent args)
     {
         if (TryComp<StrapComponent>(uid, out var strap) && strap.BuckledEntities.Count > 0)
@@ -65,11 +44,10 @@ public sealed class SpawnItemsAtLocationOnUseSystem : EntitySystem
         foreach (var proto in spawns)
         {
             var spawned = Spawn(proto, coords);
-
             _transform.SetWorldRotation(spawned, xform.WorldRotation);
 
             _adminLogger.Add(LogType.EntitySpawn, LogImpact.Low,
-                $"{ToPrettyString(args.User)} use {ToPrettyString(uid)} spawned {ToPrettyString(spawned)}");
+                $"{ToPrettyString(args.User)} used {ToPrettyString(uid)} to spawn {ToPrettyString(spawned)}");
         }
 
         if (component.Sound != null)
@@ -84,5 +62,23 @@ public sealed class SpawnItemsAtLocationOnUseSystem : EntitySystem
         }
 
         args.Handled = true;
+    }
+
+    private void AddSpawnVerb(EntityUid uid, SpawnItemsAtLocationOnUseComponent component, GetVerbsEvent<AlternativeVerb> args)
+    {
+        if (!args.CanAccess || !args.CanInteract || args.Hands == null)
+            return;
+
+        if (TryComp<StrapComponent>(uid, out var strap) && strap.BuckledEntities.Count > 0)
+            return;
+
+        AlternativeVerb verb = new()
+        {
+            Act = () => RaiseLocalEvent(uid, new UseInHandEvent(args.User)),
+            Text = Loc.GetString(component.SpawnItemsVerbText),
+            Priority = 3
+        };
+
+        args.Verbs.Add(verb);
     }
 }
