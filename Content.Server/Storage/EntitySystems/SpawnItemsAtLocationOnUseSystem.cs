@@ -59,10 +59,14 @@ public sealed class SpawnItemsAtLocationOnUseSystem : EntitySystem
 
         var coords = Transform(uid).Coordinates;
         var spawns = GetSpawns(component.Items, _random);
+        var xform = Transform(uid);
 
         foreach (var proto in spawns)
         {
             var spawned = Spawn(proto, coords);
+
+            _transform.SetWorldRotation(spawned, xform.WorldRotation);
+
             _adminLogger.Add(LogType.EntitySpawn, LogImpact.Low,
                 $"{ToPrettyString(args.User)} use {ToPrettyString(uid)} spawned {ToPrettyString(spawned)}");
         }
