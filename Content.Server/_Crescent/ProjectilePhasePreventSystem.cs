@@ -69,7 +69,6 @@ public class ProjectilePhasePreventerSystem : EntitySystem
             comp.relevantBitmasks |= fixture.CollisionLayer;
         };
         */
-        comp.relevantBitmasks = (int) comp.initializeBitMask;
         if (processingBuckets.Last().items.Count >= raysPerThread)
         {
             processingBuckets.Add(new RaycastBucket());
