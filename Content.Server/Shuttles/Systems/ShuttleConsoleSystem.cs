@@ -651,9 +651,11 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
 
         if (_ui.HasUi(consoleUid, ShuttleConsoleUiKey.Key))
         {
-            var state = new ShuttleBoundUserInterfaceState(navState, mapState, dockState, crewState);
-            state.canAccesCrew = (console.accesState == ShuttleConsoleAccesState.CaptainAcces);
-            state.IFFState = iffState;
+            var state = new ShuttleBoundUserInterfaceState(navState, mapState, dockState, crewState)
+            {
+                canAccesCrew = (console.accesState == ShuttleConsoleAccesState.CaptainAcces),
+                IFFState = iffState,
+            };
             console.LastUpdatedState = state;
             _ui.SetUiState(consoleUid, ShuttleConsoleUiKey.Key, state);
         }
