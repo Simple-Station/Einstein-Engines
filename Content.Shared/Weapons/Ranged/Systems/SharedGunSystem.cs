@@ -448,6 +448,10 @@ public abstract partial class SharedGunSystem : EntitySystem
         var currentMapVelocity = Physics.GetMapLinearVelocity(uid, physics);
         var finalLinear = physics.LinearVelocity + targetMapVelocity - currentMapVelocity;
         Physics.SetLinearVelocity(uid, finalLinear, body: physics);
+        // hullrot edit , do not let these slow down >:( SPCR 2025
+        Physics.SetAngularDamping(uid, physics, 0);
+        Physics.SetLinearDamping(uid, physics, 0);
+        //
 
         var projectile = EnsureComp<ProjectileComponent>(uid);
         Projectiles.SetShooter(uid, projectile, user ?? gunUid);

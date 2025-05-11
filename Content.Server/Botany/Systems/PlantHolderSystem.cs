@@ -261,7 +261,8 @@ public sealed class PlantHolderSystem : EntitySystem
             return;
         }
 
-        if (_tagSystem.HasTag(args.Used, "PlantSampleTaker"))
+        var highQualitySampleTaker = _tagSystem.HasTag(args.Used, "PlantSampleTakerHighQuality");
+        if (_tagSystem.HasTag(args.Used, "PlantSampleTaker") || highQualitySampleTaker)
         {
             if (component.Seed == null)
             {
@@ -287,7 +288,7 @@ public sealed class PlantHolderSystem : EntitySystem
                 return;
             }
 
-            component.Health -= (_random.Next(3, 5) * 10);
+            component.Health -= (_random.Next(3, 5) * (highQualitySampleTaker? 3 : 10));
 
             float? healthOverride;
             if (component.Harvest)

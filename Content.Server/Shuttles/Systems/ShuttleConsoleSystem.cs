@@ -294,7 +294,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         var grid = Transform(uid).GridUid;
         if (grid is  null)
             return;
-        if (TryComp<DynamicCodeHolderComponent>(grid.Value, out var accesComp))
+        if (HasComp<DynamicCodeHolderComponent>(grid.Value))
         {
             component.accesState = ShuttleConsoleAccesState.NoAcces;
         }
@@ -302,6 +302,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         {
             component.accesState = ShuttleConsoleAccesState.NotDynamic;
         }
+        RefreshShuttleConsoles(grid.Value);
     }
 
     private void OnComponentRemove(EntityUid uid, ShuttleConsoleComponent component, ComponentRemove args)
@@ -555,13 +556,13 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
             return projectiles;
         }
 
-        var consolePosition = _transform.GetMapCoordinates(consoleTransform);
+        var consolePosition = _transform.GetWorldPosition(consoleUid);
         var range = SharedRadarConsoleSystem.DefaultMaxRange;
 
         var query = EntityQueryEnumerator<ProjectileIFFComponent, MetaDataComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var projectileIFF, out var metadata, out var transform))
         {
-            if (metadata.EntityLastModifiedTick <= metadata.LastModifiedTick || !consolePosition.InRange(_transform.GetMapCoordinates(transform), range))
+            if (metadata.EntityLastModifiedTick <= metadata.LastModifiedTick || (consolePosition - _transform.GetWorldPosition(uid)).Length() > range)
             {
                 continue;
             }
@@ -650,9 +651,11 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
 
         if (_ui.HasUi(consoleUid, ShuttleConsoleUiKey.Key))
         {
-            var state = new ShuttleBoundUserInterfaceState(navState, mapState, dockState, crewState);
-            state.canAccesCrew = (console.accesState == ShuttleConsoleAccesState.CaptainAcces);
-            state.IFFState = iffState;
+            var state = new ShuttleBoundUserInterfaceState(navState, mapState, dockState, crewState)
+            {
+                canAccesCrew = (console.accesState == ShuttleConsoleAccesState.CaptainAcces),
+                IFFState = iffState,
+            };
             console.LastUpdatedState = state;
             _ui.SetUiState(consoleUid, ShuttleConsoleUiKey.Key, state);
         }

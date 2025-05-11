@@ -119,7 +119,10 @@ public sealed partial class ShipShieldsSystem : EntitySystem
         var collisionSpeedVector = Vector2.Subtract(ourVelocity, velocity);
 
         if (Math.Abs(collisionSpeedVector.Length()) < CollisionThreshold)
+        {
             return;
+        }
+
 
         //if (TryComp<TimedDespawnComponent>(args.OtherEntity, out var despawn))
         //    despawn.Lifetime += despawn.Lifetime;
