@@ -8,9 +8,10 @@ using Content.Shared.Storage;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
+using Content.Server._EE.Storage.Components;
 using static Content.Shared.Storage.EntitySpawnCollection;
 
-namespace Content.Server.Storage.EntitySystems;
+namespace Content.Server._EE.Storage.EntitySystems;
 
 public sealed class SpawnItemsAtLocationOnUseSystem : EntitySystem
 {

@@ -2,7 +2,7 @@ using Content.Shared.Storage;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.Storage.Components;
+namespace Content.Server._EE.Storage.Components;
 
 [RegisterComponent]
 public sealed partial class SpawnItemsAtLocationOnUseComponent : Component
