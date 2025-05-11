@@ -1,0 +1,20 @@
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtHydroponicsEOC
+  name: New-Nederic jumpskirt
+  description: A jumpskirt worn by the agricultural workforce of the East-Orion Company.
+  components:
+  - type: Sprite
+    sprite: _EE/Clothing/Uniforms/Jumpskirts/hydro_eoc.rsi
+  - type: Clothing
+    sprite: _EE/Clothing/Uniforms/Jumpskirts/hydro_eoc.rsi
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtSecurityEOC
+  name: FCU jumpskirt
+  description: A standard Farmer's Civil Union jumpskirt, worn by East-Orion Company employees who protect agricultural assets and interests.
+  components:
+  - type: Sprite
+    sprite: _EE/Clothing/Uniforms/Jumpskirts/security_eoc.rsi
+  - type: Clothing
+    sprite: _EE/Clothing/Uniforms/Jumpskirts/security_eoc.rsi
