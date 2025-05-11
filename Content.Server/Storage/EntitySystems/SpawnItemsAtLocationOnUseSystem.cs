@@ -1,5 +1,6 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Storage.Components;
+using Content.Shared.Buckle.Components;
 using Content.Shared.Database;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction.Events;
@@ -29,6 +30,9 @@ public sealed class SpawnItemsAtLocationOnUseSystem : EntitySystem
         if (!args.CanAccess || !args.CanInteract || args.Hands == null)
             return;
 
+        if (TryComp<StrapComponent>(uid, out var strap) && strap.BuckledEntities.Count > 0)
+            return;
+
         AlternativeVerb verb = new()
         {
             Act = () =>
@@ -44,6 +48,12 @@ public sealed class SpawnItemsAtLocationOnUseSystem : EntitySystem
 
     private void OnUseInHand(EntityUid uid, SpawnItemsAtLocationOnUseComponent component, UseInHandEvent args)
     {
+        if (TryComp<StrapComponent>(uid, out var strap) && strap.BuckledEntities.Count > 0)
+        {
+            args.Handled = true;
+            return;
+        }
+
         if (args.Handled || component.Uses <= 0)
             return;
 
