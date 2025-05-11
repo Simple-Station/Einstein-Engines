@@ -140,3 +140,6 @@ DefaultStationBeaconQuestions: DefaultStationBeacon
 ReinforcedPlasmaWindowStation: ReinforcedPlasmaWindow
 TrackingImplanterDSMCiv: null
 TrackingImplanterDSMSec: null
+WeaponTurretCoilgunDSM: WeaponTurretCoilgun
+
+ComputerShipyard : ComputerShipyardCrescent

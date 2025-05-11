@@ -7,8 +7,6 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: ProjectileIFF
-    visualType: Circle
-    color: White
   - type: Projectile
     ignoreWeaponGrid: true
     damage:
@@ -24,12 +22,7 @@
   - type: Fixtures
     fixtures:
       projectile:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.1,-0.1,0.1,0.1"
         hard: false
-        mask:
-        - BulletImpassable
       fly-by: &flybyfixture
         shape: !type:PhysShapeCircle
           radius: 1.5
@@ -45,6 +38,11 @@
       - state: base-projectile
   - type: ShipWeaponProjectile
   - type: ProjectilePhasePrevent
+    mask:
+    - BulletImpassable
+    - Impassable
+
+
 
 - type: entity
   id: CartridgeVulcanStandard
