@@ -162,6 +162,7 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
         CrewContainer.UpdateState(cState.CrewState);
         NavContainer.UpdateState(cState.NavState);
         MapContainer.UpdateState(cState.MapState);
+        NavScreen.UpdateState(cState.IFFState);
         DockContainer.UpdateState(coordinates?.EntityId, cState.DockState);
     }
 }
