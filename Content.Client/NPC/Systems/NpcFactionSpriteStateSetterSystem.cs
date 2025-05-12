@@ -2,12 +2,10 @@
 using Content.Shared.NPC.Components;
 using Content.Shared.NPC.Events;
 using Robust.Client.GameObjects;
-using Robust.Shared.Reflection;
 
 namespace Content.Client.NPC.Systems;
 public sealed partial class NpcFactionSpriteStateSetterSystem : EntitySystem
 {
-    [Dependency] private readonly SpriteSystem _spriteSystem = default!;
     [Dependency] private readonly EntityManager _entityManager = default!;
 
     public override void Initialize()

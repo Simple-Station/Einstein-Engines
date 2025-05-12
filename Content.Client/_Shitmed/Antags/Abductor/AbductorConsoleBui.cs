@@ -1,9 +1,8 @@
-﻿using Content.Shared._Shitmed.Antags.Abductor;
+using Content.Shared._Shitmed.Antags.Abductor;
 using JetBrains.Annotations;
-using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.RichText;
 using Robust.Shared.Utility;
-using static Content.Shared.Pinpointer.SharedNavMapSystem;
+
 using static Robust.Client.UserInterface.Control;
 
 namespace Content.Client._Shitmed.Antags.Abductor;
@@ -11,8 +10,6 @@ namespace Content.Client._Shitmed.Antags.Abductor;
 [UsedImplicitly]
 public sealed class AbductorConsoleBui : BoundUserInterface
 {
-    [Dependency] private readonly IEntityManager _entities = default!;
-
     [ViewVariables]
     private AbductorConsoleWindow? _window;
 

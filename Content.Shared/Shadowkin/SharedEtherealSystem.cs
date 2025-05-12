@@ -14,9 +14,6 @@ using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Tag;
-using Content.Shared.Damage.Components;
-using Content.Shared.Damage.Systems;
-using Content.Shared.Standing;
 
 
 namespace Content.Shared.Shadowkin;
@@ -28,8 +25,6 @@ public abstract class SharedEtherealSystem : EntitySystem
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly TagSystem _tag = default!;
-    [Dependency] private readonly StaminaSystem _stamina = default!;
-    [Dependency] private readonly StandingStateSystem _standingState = default!;
 
     public override void Initialize()
     {

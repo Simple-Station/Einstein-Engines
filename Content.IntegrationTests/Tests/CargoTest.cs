@@ -130,7 +130,7 @@ public sealed class CargoTest
                 {
                     ent = entManager.SpawnEntity(proto, coord);
                 }
-                catch (Exception e)
+                catch
                 {
                     return;
                 }

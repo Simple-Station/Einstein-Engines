@@ -45,8 +45,6 @@ namespace Content.IntegrationTests.Tests.DeepFryer
 
             var testMap = await pair.CreateTestMap();
 
-            EntityUid unitUid = default;
-
             var entityManager = server.ResolveDependency<IEntityManager>();
             var xformSystem = entityManager.System<SharedTransformSystem>();
             var deepFryerSystem = entityManager.System<DeepFryerSystem>();
