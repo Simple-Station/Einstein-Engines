@@ -16110,3 +16110,39 @@ Entries:
   id: 7246
   time: '2025-05-08T23:55:09.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2376
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Added the East-Orion Company as a selectable Employer, focusing on
+        Hydroponics. They have alternate Hydroponics uniforms, alternate
+        Security uniforms, and a high-quality plant clipper that is more gentle
+        on plants when taking a sample.
+  id: 7247
+  time: '2025-05-09T17:26:02.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2359
+- author: RedFoxIV
+  changes:
+    - type: Fix
+      message: Fixed some items used less power while turned on than they should.
+  id: 7248
+  time: '2025-05-09T17:26:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2360
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: Glacier, New Evac shuttle.
+    - type: Tweak
+      message: >-
+        Glacier's back to the Mountaintop, coupled with several fixes and
+        tweaks!
+  id: 7249
+  time: '2025-05-10T19:46:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2415
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: added blood regen to Platelets
+  id: 7250
+  time: '2025-05-10T19:47:58.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2382
