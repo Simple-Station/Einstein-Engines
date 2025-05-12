@@ -19,3 +19,11 @@
     sprite: Objects/Weapons/Melee/flash.rsi
   - type: AntiMindControlItem
     # you can change the duration here (check comp)
+
+- type: entity
+  parent: ArmBladeChangeling
+  id: LightEaterArmBlade
+  name: Light Eater
+  description: An arm-blade that can rip through lights and ash them in a moment's notice. It's a very good weapon, too.
+  components:
+  - type: LightEater

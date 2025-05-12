@@ -26,22 +26,6 @@ public sealed class LesserShadowlingSystem : EntitySystem
         SubscribeLocalEvent<LesserShadowlingComponent, ComponentStartup>(OnStartup);
     }
 
-
-    public override void Update(float frameTime)
-    {
-        base.Update(frameTime);
-
-        var query = EntityQueryEnumerator<LesserShadowlingComponent>();
-        while (query.MoveNext(out var uid, out var comp))
-        {
-            if (!TryComp<LightDetectionDamageModifierComponent>(uid, out var lightDet))
-                return;
-
-            Dirty(uid, lightDet);
-            _alerts.ShowAlert(uid, comp.AlertProto);
-        }
-    }
-
     private void OnStartup(EntityUid uid, LesserShadowlingComponent component, ComponentStartup args)
     {
         if (!TryComp<ThrallComponent>(uid, out var thrall))

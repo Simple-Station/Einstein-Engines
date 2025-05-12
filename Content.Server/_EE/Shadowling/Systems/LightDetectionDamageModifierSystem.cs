@@ -1,4 +1,5 @@
 using Content.Shared._EE.Shadowling.Components;
+using Content.Shared.Alert;
 using Content.Shared.Damage;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.Timing;
@@ -15,6 +16,7 @@ public sealed class LightDetectionDamageModifierSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly AlertsSystem _alerts = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -32,6 +34,12 @@ public sealed class LightDetectionDamageModifierSystem : EntitySystem
         {
             if (!TryComp<LightDetectionComponent>(uid, out var lightDet))
                 continue;
+
+            if (comp.ShowAlert)
+            {
+                Dirty(uid, comp);
+                _alerts.ShowAlert(uid, comp.AlertProto);
+            }
 
             if (_timing.CurTime < comp.NextUpdate)
                 continue;

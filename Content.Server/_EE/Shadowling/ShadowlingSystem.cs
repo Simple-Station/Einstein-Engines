@@ -64,21 +64,6 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
         SubscribeAbilities();
     }
 
-    public override void Update(float frameTime)
-    {
-        base.Update(frameTime);
-
-        var query = EntityQueryEnumerator<ShadowlingComponent>();
-        while (query.MoveNext(out var uid, out var comp))
-        {
-            if (!TryComp<LightDetectionDamageModifierComponent>(uid, out var lightDet))
-                return;
-
-            Dirty(uid, lightDet);
-            _alert.ShowAlert(uid, comp.AlertProto);
-        }
-    }
-
     #region Event Handlers
 
     private void OnMobStateChanged(EntityUid uid, ShadowlingComponent component, MobStateChangedEvent args)

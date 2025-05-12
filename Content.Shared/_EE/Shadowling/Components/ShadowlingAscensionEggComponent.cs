@@ -17,7 +17,7 @@ public sealed partial class ShadowlingAscensionEggComponent : Component
     public TimeSpan UpdateInterval = TimeSpan.FromSeconds(10);
 
     [DataField]
-    public TimeSpan AscendingEffectInterval = TimeSpan.FromSeconds(5.52);
+    public TimeSpan AscendingEffectInterval = TimeSpan.FromSeconds(8.02);
 
     [DataField]
     public EntityUid? Creator;

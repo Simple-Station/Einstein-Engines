@@ -101,4 +101,10 @@ public sealed partial class LightDetectionDamageModifierComponent : Component
             ["Heat"] = -15,
         }
     };
+
+    [DataField]
+    public ProtoId<AlertPrototype> AlertProto = "ShadowlingLight";
+
+    [DataField]
+    public bool ShowAlert = true;
 }

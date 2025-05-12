@@ -1,5 +1,8 @@
 using Content.Server.Actions;
+using Content.Server.Stunnable;
+using Content.Shared._EE.Nightmare.Components;
 using Content.Shared._EE.Shadowling;
+using Content.Shared._EE.Shadowling.Components;
 using Content.Shared.WhiteDream.BloodCult.Constructs.PhaseShift;
 using Robust.Server.GameObjects;
 
@@ -14,6 +17,7 @@ namespace Content.Server._EE.Shadowling;
 public sealed class ShadowlingPlaneShiftSystem : EntitySystem
 {
     [Dependency] private readonly ActionsSystem _actions = default!;
+    [Dependency] private readonly StunSystem _stun = default!;
 
     /// <inheritdoc/>
     public override void Initialize()

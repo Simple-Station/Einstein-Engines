@@ -5,6 +5,7 @@ using Content.Server.Light.EntitySystems;
 using Content.Server.Polymorph.Systems;
 using Content.Server.Popups;
 using Content.Server.Storage.EntitySystems;
+using Content.Shared._EE.Nightmare.Components;
 using Content.Shared._EE.Shadowling;
 using Content.Shared._EE.Shadowling.Components;
 using Content.Shared._EE.Shadowling.Systems;
@@ -187,11 +188,18 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
         _entityStorage.Remove(component.Creator.Value, uid);
 
         var shadowlings = new List<EntityUid>();
+        var thralls = new List<EntityUid>();
 
         var query = EntityQueryEnumerator<ShadowlingComponent>();
         while (query.MoveNext(out var slingUid, out _))
         {
             shadowlings.Add(slingUid);
+        }
+
+        var queryThrall = EntityQueryEnumerator<ThrallComponent>();
+        while (queryThrall.MoveNext(out var thrallUid, out _))
+        {
+            thralls.Add(thrallUid);
         }
 
         foreach (var sling in shadowlings)
@@ -208,6 +216,22 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
             ascendant.CurrentPhase = ShadowlingPhases.Ascension;
 
             _shadowling.OnPhaseChanged(newUid.Value, ascendant, ShadowlingPhases.Ascension);
+        }
+
+        foreach (var thrall in thralls)
+        {
+            if (HasComp<LesserShadowlingComponent>(thrall))
+            {
+                EnsureComp<NightmareComponent>(thrall);
+                continue; // Don't polymorph the lesser again
+            }
+
+            var newUid = _polymorph.PolymorphEntity(thrall, "ShadowPolymorph");
+
+            if (newUid == null)
+                return;
+
+            EnsureComp<NightmareComponent>(newUid.Value);
         }
     }
 
