@@ -314,10 +314,7 @@ public class PointCannonSystem : EntitySystem
     public void UpdateConsoleState(EntityUid uid, TargetingConsoleComponent console)
     {
         NavInterfaceState navState = _shuttleConSys.GetNavState(uid, _shuttleConSys.GetAllDocks());
-        IFFInterfaceState iffState = _shuttleConSys.GetIFFState(
-            uid,
-            null,
-            console.RegenerateCannons ? null : console.PrevState?.IFFState.Turrets);
+        IFFInterfaceState iffState = _shuttleConSys.GetIFFState(uid, console.RegenerateCannons ? null : console.PrevState?.IFFState.Turrets);
 
         TargetingConsoleBoundUserInterfaceState consoleState = new(
             navState,
