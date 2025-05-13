@@ -1,8 +1,8 @@
 - type: language
-  id: Elyran
-  isVisibleLanguage: false
+  id: Dockta
+  isVisibleLanguage: true
   speech:
-    color: "#8282fbaa"
+    color: "#ffa53f"
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1

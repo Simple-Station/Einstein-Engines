@@ -1,0 +1,9 @@
+- type: lifepath
+  id: Ganger
+  nameKey: lifepath_name_ganger
+  descriptionKey: lifepath_description_ganger
+
+- type: lifepath
+  id: Conscript
+  nameKey: lifepath_name_conscript
+  descriptionKey: lifepath_description_conscript
