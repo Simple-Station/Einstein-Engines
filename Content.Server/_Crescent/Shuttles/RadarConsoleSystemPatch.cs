@@ -40,7 +40,7 @@ public sealed partial class RadarConsoleSystem : SharedRadarConsoleSystem
             }
 
             var turrets = console.LastUpdatedState.IFFState?.Turrets;
-            var iffState = _console.GetIFFState(uid, transform, turrets);
+            var iffState = _console.GetIFFState(uid, turrets);
             var state = new NavBoundUserInterfaceState(console.LastUpdatedState);
             state.IFFState = iffState;
 
