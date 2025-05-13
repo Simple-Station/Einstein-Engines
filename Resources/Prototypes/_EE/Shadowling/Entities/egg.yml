@@ -70,7 +70,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 4500
+        damage: 3000
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -94,7 +94,8 @@
 
 - type: entity
   id: AscensionEggShadowlingInside
-  name: ascension egg shadowling inside
+  name: The Shadowling
+  description: A terryfing creature that appears to have formed on top of the egg. Is it alive?
   components:
   - type: Transform
     noRot: true

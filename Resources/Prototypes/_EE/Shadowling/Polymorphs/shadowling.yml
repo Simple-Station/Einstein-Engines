@@ -38,18 +38,3 @@
     inventory: Transfer
     copiedComponents:
       - Thrall
-
-- type: polymorph
-  id: ShadowNightmarePolymorph
-  configuration:
-    entity: MobShadowBase
-    forced: true
-    transferName: true
-    transferHumanoidAppearance: false
-    allowRepeatedMorphs: true
-    revertOnCrit: false
-    revertOnDeath: false
-    inventory: Transfer
-    copiedComponents:
-    - Thrall
-    - Nightmare

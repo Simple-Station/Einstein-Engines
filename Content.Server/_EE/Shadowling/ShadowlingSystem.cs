@@ -1,5 +1,6 @@
 using Content.Server._EE.Shadowling.Objectives;
 using Content.Server.Actions;
+using Content.Server.Atmos.Components;
 using Content.Server.Humanoid;
 using Content.Server.Language;
 using Content.Server.Mind;
@@ -25,6 +26,8 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Objectives.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Roles;
+using Content.Shared.StatusEffect;
+using Content.Shared.Stunnable;
 using Robust.Server.GameObjects;
 
 
@@ -47,6 +50,7 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly SharedObjectivesSystem _sharedObjectives = default!;
     [Dependency] private  readonly HumanoidAppearanceSystem _appearance = default!;
+    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
 
     public override void Initialize()
     {
@@ -170,7 +174,7 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
             var ev = new ShadowlingAscendEvent();
             RaiseLocalEvent(ev);
 
-
+            EnsureComp<PressureImmunityComponent>(uid);
 
             AddComp<ShadowlingAnnihilateComponent>(uid);
             AddComp<ShadowlingHypnosisComponent>(uid);
@@ -185,7 +189,19 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
         }
         else if (phase == ShadowlingPhases.FailedAscension)
         {
-            _popup.PopupEntity("WHATTTTT", uid, uid, PopupType.MediumCaution);
+            // git gud bro :sob: :pray:
+            foreach (var action in actions.Actions)
+            {
+                if (!HasComp<ShadowlingActionComponent>(action))
+                    continue;
+
+                _actions.RemoveAction(uid, action);
+            }
+
+            EnsureComp<SlowedDownComponent>(uid);
+
+            _appearance.AddMarking(uid, "AbominationTorso");
+            _appearance.AddMarking(uid, "AbominationHorns");
         }
     }
 

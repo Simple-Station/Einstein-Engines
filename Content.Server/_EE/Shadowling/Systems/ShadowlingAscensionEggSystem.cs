@@ -2,6 +2,7 @@ using Content.Server.Actions;
 using Content.Server.Chat.Systems;
 using Content.Server.Light.Components;
 using Content.Server.Light.EntitySystems;
+using Content.Server.Pinpointer;
 using Content.Server.Polymorph.Systems;
 using Content.Server.Popups;
 using Content.Server.Storage.EntitySystems;
@@ -9,6 +10,7 @@ using Content.Shared._EE.Nightmare.Components;
 using Content.Shared._EE.Shadowling;
 using Content.Shared._EE.Shadowling.Components;
 using Content.Shared._EE.Shadowling.Systems;
+using Content.Shared.Damage.Components;
 using Content.Shared.Destructible;
 using Content.Shared.Examine;
 using Content.Shared.Light.Components;
@@ -37,6 +39,7 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
     [Dependency] private readonly ShadowlingSystem _shadowling = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly PoweredLightSystem _poweredLight = default!;
+    [Dependency] private readonly NavMapSystem _navMap = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -93,11 +96,18 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
 
     private void OnDestruction(EntityUid uid, ShadowlingAscensionEggComponent component, DestructionEventArgs args)
     {
+
         if (component.AscendingEffectEntity != null)
             QueueDel(component.AscendingEffectEntity);
 
+        if (component.ShadowlingInsideEntity != null)
+            QueueDel(component.ShadowlingInsideEntity);
+
         if (component.Creator == null)
             return;
+
+        if (HasComp<GodmodeComponent>(component.Creator.Value))
+            RemComp<GodmodeComponent>(component.Creator.Value);
 
         // This indicates that the shadowling was inside the egg
         if (component.StartTimer)
@@ -154,6 +164,9 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
         // Start Ascension
         var shadowling = EntityManager.GetComponent<ShadowlingComponent>(uid);
 
+        // Dont take damage during hatching
+        EnsureComp<GodmodeComponent>(uid);
+
         _actions.RemoveAction(shadowling.ActionAscendanceEntity);
 
         shadowling.IsAscending = true;
@@ -162,8 +175,9 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
 
         _entityStorage.Insert(uid, eggUid);
 
+        var position = _transform.GetMapCoordinates(uid);
         _chat.DispatchGlobalAnnouncement(
-            Loc.GetString("shadowling-ascension-message"),
+            Loc.GetString("shadowling-ascension-message", ("location", FormattedMessage.RemoveMarkupPermissive(_navMap.GetNearestBeaconString(position)))),
             colorOverride: Color.Red); // todo: sound
 
         var effectEnt = Spawn(component.ShadowlingInside, _transform.GetMapCoordinates(eggUid));
@@ -174,6 +188,8 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
 
     private void DoAscend(EntityUid uid, ShadowlingAscensionEggComponent component)
     {
+        RemComp<GodmodeComponent>(uid);
+
         if (component.ShadowlingInsideEntity != null)
             QueueDel(component.ShadowlingInsideEntity);
 
