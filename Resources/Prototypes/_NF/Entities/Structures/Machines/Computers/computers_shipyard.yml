@@ -105,7 +105,7 @@
         type: ShipyardConsoleBoundUserInterface
 
 - type: entity
-  id: ComputerShipyardCrescentExpedition
+  id: ComputerShipyardExpedition
   parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, ComputerShipyardCrescent]
   name: expedition shipyard console
   description: Used to buy ships outfitted for planetary expeditions
@@ -129,7 +129,7 @@
       state: blackmarket_key
 
 - type: entity
-  id: ComputerShipyardCrescentScrap
+  id: ComputerShipyardScrap
   parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, ComputerShipyardCrescent]
   name: scrapyard console
   description: Used to purchase and sell "shuttles"
