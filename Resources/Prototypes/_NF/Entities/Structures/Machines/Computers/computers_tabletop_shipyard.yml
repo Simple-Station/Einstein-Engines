@@ -1,5 +1,5 @@
 - type: entity
-  parent: [BaseStructureIndestructible, BaseStructureComputerTabletop, ComputerShipyard]
+  parent: [BaseStructureIndestructible, BaseStructureComputerTabletop, ComputerShipyardCrescent]
   id: ComputerTabletopShipyard
   components:
   - type: Sprite

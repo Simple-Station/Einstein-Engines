@@ -82,7 +82,7 @@
 # Hardcoded consoles
 - type: entity
   id: ComputerShipyardSecurity
-  parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, ComputerShipyard]
+  parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, ComputerShipyardCrescent]
   name: security shipyard console
   description: Used to enlist into Nanotrasen Security Forces
   components:
@@ -105,8 +105,8 @@
         type: ShipyardConsoleBoundUserInterface
 
 - type: entity
-  id: ComputerShipyardExpedition
-  parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, ComputerShipyard]
+  id: ComputerShipyardCrescentExpedition
+  parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, ComputerShipyardCrescent]
   name: expedition shipyard console
   description: Used to buy ships outfitted for planetary expeditions
   components:
@@ -129,8 +129,8 @@
       state: blackmarket_key
 
 - type: entity
-  id: ComputerShipyardScrap
-  parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, ComputerShipyard]
+  id: ComputerShipyardCrescentScrap
+  parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, ComputerShipyardCrescent]
   name: scrapyard console
   description: Used to purchase and sell "shuttles"
   components:
