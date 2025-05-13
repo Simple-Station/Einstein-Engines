@@ -1415,7 +1415,7 @@
   desc: reagent-desc-artiplates
   physicalDesc: reagent-physical-desc-cloudy
   flavor: medicine
-  color: "#382766"
+  color: "#422766"
   metabolisms:
     Medicine:
       effects:

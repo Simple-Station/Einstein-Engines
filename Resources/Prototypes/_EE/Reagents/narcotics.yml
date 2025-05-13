@@ -4,7 +4,7 @@
   group: Narcotics
   desc: reagent-desc-morphine
   flavor: bitter
-  color: "#fff8e880"
+  color: "#ffde7448"
   physicalDesc: reagent-physical-desc-translucent
   metabolisms:
     Narcotic:
