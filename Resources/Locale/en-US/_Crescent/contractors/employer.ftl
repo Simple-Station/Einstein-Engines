@@ -7,7 +7,7 @@ employer_name_gsc = Gorlex Security Consulting
 employer_name_gsc_command = Coalition Navalcomm
 employer_description_gsc = Just one of the many active pirate and mercenary cells in Taypan - but also one of the most numerous. The Gorlex Group has fingers in almost every pie when it comes to naval combat, with subsidiaries or allies that specialize in infantry boarding, artillery support, or engineering. With deep ties to local outlaw and pirate culture, they're the first to take the blame after any major heist.
 
-employer_name_saw = Shipfitters and Astronautcs Workers Union
+employer_name_saw = Shipfitters and Astronautics Workers Union
 employer_name_saw_command = Coalition Navalcomm
 employer_description_saw = A shipbreakers' and scrappers' union formerly in the ranks of the NCWL, who would later split apart due to ideological differences. After a successful rebellion aboard Shinohara's Prometheus Shipyards, the SAWs would regroup under the banner of the Coalition and rent out their shady services as privateers, haulers, and salvagers.
 

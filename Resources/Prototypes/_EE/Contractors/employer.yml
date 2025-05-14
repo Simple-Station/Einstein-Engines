@@ -1,12 +1,10 @@
 # The default, should be able to do all jobs
-#- type: employer
-#  id: NanoTrasen
-#  nameKey: employer_name_nanotrasen
-#  descriptionKey: employer_description_nanotrasen
-#  primaryColour: "#3d4f66"
-#  secondaryColour: "#282828"
-#  rivals:
-#  - EinsteinEngines
+- type: employer
+  id: NanoTrasen
+  nameKey: employer_name_nanotrasen
+  descriptionKey: employer_description_nanotrasen
+  primaryColour: "#3d4f66"
+  secondaryColour: "#282828"
 
 # Technically not an employer, but it's the best place to put it
 - type: employer

@@ -41,3 +41,47 @@
     - !type:CharacterNationalityRequirement
       nationalities:
       - Imperial
+
+- type: employer
+  id: InterdynePharmaceuticals
+  nameKey: employer_name_ipc
+  descriptionKey: employer_description_ipc
+  primaryColour: "#ff595e"
+  secondaryColour: "#cecece"
+  requirements:
+    - !type:CharacterNationalityRequirement
+      nationalities:
+      - Coalition
+
+- type: employer
+  id: Gorlex
+  nameKey: employer_name_gsc
+  descriptionKey: employer_description_gsc
+  primaryColour: "#ff595e"
+  secondaryColour: "#3b3b3b"
+  requirements:
+    - !type:CharacterNationalityRequirement
+      nationalities:
+      - Coalition
+
+- type: employer
+  id: Shipfitters
+  nameKey: employer_name_saw
+  descriptionKey: employer_description_saw
+  primaryColour: "#ff595e"
+  secondaryColour: "#3b3b3b"
+  requirements:
+    - !type:CharacterNationalityRequirement
+      nationalities:
+      - Coalition
+
+- type: employer
+  id: Cyberdawn
+  nameKey: employer_name_cdt
+  descriptionKey: employer_description_cdt
+  primaryColour: "#ff595e"
+  secondaryColour: "#cecece"
+  requirements:
+    - !type:CharacterNationalityRequirement
+      nationalities:
+      - Coalition
