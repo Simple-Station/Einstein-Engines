@@ -3,6 +3,7 @@
   isVisibleLanguage: true
   speech:
     color: "#ff8886"
+    fontId: Cambria
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
