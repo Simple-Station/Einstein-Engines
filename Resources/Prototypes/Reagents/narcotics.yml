@@ -52,6 +52,8 @@
         key: Adrenaline
         component: IgnoreSlowOnDamage
         time: 5
+      - !type:ChemAddMoodlet
+        moodPrototype: StrongStimulant
     Medicine:
       effects:
       - !type:ResetNarcolepsy
@@ -109,6 +111,8 @@
         key: Adrenaline
         component: IgnoreSlowOnDamage
         time: 5
+      - !type:ChemAddMoodlet
+        moodPrototype: StrongStimulant
     Medicine:
       effects:
       - !type:ResetNarcolepsy
@@ -176,6 +180,8 @@
         key: Adrenaline
         component: IgnoreSlowOnDamage
         time: 5
+      - !type:ChemAddMoodlet
+        moodPrototype: StrongStimulant
     Medicine:
       metabolismRate: 1.0
       effects:
@@ -289,10 +295,6 @@
           min: 15
       - !type:ChemAddMoodlet
         moodPrototype: SpaceDrugsBenefit
-        conditions:
-        - !type:ReagentThreshold
-          reagent: SpaceDrugs
-          min: 5
 
 - type: reagent
   id: Bananadine
@@ -440,6 +442,8 @@
         conditions:
         - !type:ReagentThreshold
           min: 5
+      - !type:ChemAddMoodlet
+        moodPrototype: TearGasEffect
 
 - type: reagent
   id: Happiness
@@ -473,17 +477,8 @@
         conditions:
         - !type:ReagentThreshold
           min: 20
-      - !type:PopupMessage # we dont have sanity/mood so this will have to do
-        type: Local
-        visualType: Medium
-        messages:
-        - "psicodine-effect-fearless"
-        - "psicodine-effect-anxieties-wash-away"
-        - "psicodine-effect-at-peace"
-        probability: 0.2
-        conditions:
-        - !type:ReagentThreshold
-          max: 20
+      - !type:ChemAddMoodlet
+        moodPrototype: PsicodineEffect
       - !type:GenericStatusEffect
         key: SeeingRainbows
         component: SeeingRainbows

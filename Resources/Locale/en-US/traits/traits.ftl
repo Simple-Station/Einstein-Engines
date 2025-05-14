@@ -643,9 +643,9 @@ trait-description-Chittin =
     However, some species with compatible mouthparts (IPC's speakers, Harpies' Larynx, and Mothpeople's buzzing and antennae) are still able to learn it.
 
 trait-name-IPCInefficientCogitator = Inefficient Cogitator
-trait-description-IPCInefficientCogitator = 
+trait-description-IPCInefficientCogitator =
     Due to running with an outdated driver, your positronic brain consumes much more power than standard.
-    Your power drain is increased by ~33% (1.5/s -> 2/s). 
+    Your power drain is increased by ~33% (1.5/s -> 2/s).
     (Note that this is exponentially worse for you with better power sources. A medium-capacity cell lasts you 6 mins instead of 8).
 
 trait-name-IPCBrittleBoneDisease = Defective Chassis
@@ -653,3 +653,12 @@ trait-description-IPCBrittleBoneDisease =
     Made from weaker materials, or corroded by age or damage, your body is much weaker than the standard for an IPC.
     This trait reduces your threshold for death by 60 points.
     (Just as the normal version, it halves the threshold. IPCs cannot be crit, so it instead makes you die 60 points sooner.)
+
+trait-name-Manic = Manic
+trait-description-Manic = Your perception of the world is subject to varying intensities. Anything that affects your mood will have its effects multiplied by between 0.7 and 1.3.
+
+trait-name-Mercurial = Mercurial
+trait-description-Mercurial = Your mood fluctuates regularly, causing you to have a random modifier to your mood that is always somewhere between -10 and +10.
+
+trait-name-DeadEmotions = Dead Emotions
+trait-description-DeadEmotions = You feel nothing, and are completely unaffected by all positive or negative mood modifiers.
