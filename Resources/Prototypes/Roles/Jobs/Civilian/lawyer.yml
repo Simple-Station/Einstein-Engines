@@ -11,11 +11,6 @@
   - Justice # DeltaV - Justice dept
   - Lawyer
   - Maintenance
-  requirements:
-    - !type:CharacterEmployerRequirement
-      employers:
-      - IdrisIncorporated
-      - NanoTrasen
 
 - type: startingGear
   id: LawyerGear

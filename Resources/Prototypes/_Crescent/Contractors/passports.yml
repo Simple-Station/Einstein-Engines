@@ -34,6 +34,22 @@
         - !type:CharacterNationalityRequirement
           nationalities:
           - Bieselite
+      - description: "clarizian_view_union_passport"
+        fontSize: 12
+        color: "#2E6F40"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Clarizian
+      - description: "coalition_view_union_passport"
+        fontSize: 12
+        color: "#2E6F40"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Coalition
 
 - type: entity
   name: imperial passport
@@ -71,6 +87,22 @@
         - !type:CharacterNationalityRequirement
           nationalities:
           - Bieselite
+      - description: "clarizian_view_imperial_passport"
+        fontSize: 12
+        color: "#2E6F40"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Clarizian
+      - description: "coalition_view_imperial_passport"
+        fontSize: 12
+        color: "#2E6F40"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Coalition
 
 - type: entity
   name: NAP passport
@@ -108,3 +140,187 @@
         - !type:CharacterNationalityRequirement
           nationalities:
           - Bieselite
+      - description: "clarizian_view_american_passport"
+        fontSize: 12
+        color: "#2E6F40"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Clarizian
+      - description: "coalition_view_american_passport"
+        fontSize: 12
+        color: "#2E6F40"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Coalition
+
+- type: entity
+  name: clarizian passport
+  parent: BasePassport
+  id: ClarizianPassport
+  components:
+    - type: Sprite
+      sprite: _EE/Contractors/Passport.rsi
+      layers:
+      - state: passport_elyran_open
+      - state: passport_species_human
+    - type: ExtendDescription
+      descriptionList:
+      - description: "imperial_view_clarizian_passport"
+        fontSize: 12
+        color: "#ff7777"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Imperial
+      - description: "union_view_clarizian_passport"
+        fontSize: 12
+        color: "#77ff77"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Unionist
+      - description: "american_view_clarizian_passport"
+        fontSize: 12
+        color: "#ADD8E6"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Bieselite
+      - description: "clarizian_view_clarizian_passport"
+        fontSize: 12
+        color: "#2E6F40"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Clarizian
+      - description: "coalition_view_clarizian_passport"
+        fontSize: 12
+        color: "#2E6F40"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Coalition
+
+
+- type: entity
+  name: coalition passport
+  parent: BasePassport
+  id: CoalitionPassport
+  components:
+    - type: Sprite
+      sprite: _EE/Contractors/Passport.rsi
+      layers:
+      - state: passport_adhomai_open
+      - state: passport_species_human
+    - type: ExtendDescription
+      descriptionList:
+      - description: "imperial_view_coalition_passport"
+        fontSize: 12
+        color: "#ff7777"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Imperial
+      - description: "union_view_coalition_passport"
+        fontSize: 12
+        color: "#77ff77"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Unionist
+      - description: "american_view_coalition_passport"
+        fontSize: 12
+        color: "#ADD8E6"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Bieselite
+      - description: "clarizian_view_coalition_passport"
+        fontSize: 12
+        color: "#2E6F40"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Clarizian
+      - description: "coalition_view_coalition_passport"
+        fontSize: 12
+        color: "#2E6F40"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Coalition
+
+- type: entity
+  name: authoritat passport
+  parent: BasePassport
+  id: AuthorityPassport
+  components:
+    - type: Sprite
+      sprite: _EE/Contractors/Passport.rsi
+      layers:
+      - state: passport_adhomai_open
+      - state: passport_species_human
+    - type: ExtendDescription
+      descriptionList:
+      - description: "imperial_view_authority_passport"
+        fontSize: 12
+        color: "#ff7777"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Imperial
+      - description: "union_view_authority_passport"
+        fontSize: 12
+        color: "#77ff77"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Unionist
+      - description: "american_view_authority_passport"
+        fontSize: 12
+        color: "#ADD8E6"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Bieselite
+      - description: "clarizian_view_authority_passport"
+        fontSize: 12
+        color: "#2E6F40"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Clarizian
+      - description: "coalition_view_authority_passport"
+        fontSize: 12
+        color: "#2E6F40"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Coalition
+      - description: "authority_view_authority_passport"
+        fontSize: 12
+        color: "#ffee8c"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Authority

@@ -27,15 +27,37 @@
   passportPrototype: NCWLPassport
 
 - type: nationality
-  id: Unionist
-  nameKey: nationality_name_union
-  descriptionKey: nationality_description_union
-  hostile:
-  - Imperial
+  id: Clarizian
+  nameKey: nationality_name_clarizian
+  descriptionKey: nationality_description_clarizian
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
-        - Dockta
+        - Clarizian
       languagesUnderstood:
-        - Dockta
+        - Clarizian
   passportPrototype: ClarizianPassport
+
+- type: nationality
+  id: Coalition
+  nameKey: nationality_name_coalition
+  descriptionKey: nationality_description_coalition
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Freespeak
+      languagesUnderstood:
+        - Freespeak
+  passportPrototype: CoalitionPassport
+
+- type: nationality
+  id: Authority
+  nameKey: nationality_name_authority
+  descriptionKey: nationality_description_authority
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - SolBasic
+      languagesUnderstood:
+        - SolBasic
+  passportPrototype: AuthorityPassport
