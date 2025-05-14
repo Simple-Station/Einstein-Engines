@@ -1,0 +1,19 @@
+- type: trait
+  id: Dockta
+  category: TraitsSpeechLanguages
+  points: -1
+  # slots: 1
+  # itemGroupSlots: 0
+  requirements:
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Unionist
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Dockta
+      languagesUnderstood:
+        - Dockta

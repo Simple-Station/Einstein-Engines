@@ -6,3 +6,12 @@ nationality_description_empire = Created after the dissolution of the Solarian A
 
 nationality_name_american = New American Protectorate
 nationality_description_american = Stitched together from the remnants of the American Commonwealth of Old Terra, the New American Protectorate would be formed initally as a loose union of American military outposts scattered outside the reaches of the still-growing Empire. Today, they operate on their ancient ideals of personal liberty and economic freedom, responsible for the logistics of most heavy weaponry to external sectors.
+
+nationality_name_clarizian = Free Clarizian Duchies
+nationality_description_clarizian = Founded by then-Governess Ariadne Clarize, the Free Clarizian Duchies were formed shortly after the creation of the Divine Sol Mandate. When the East Asian Combine fell, the Governess would flee to the southeastern reaches of the Known Cluster and settle into the temperate world of Kiraigo with her retinue and citizenry, giving birth to the Duchies as we know it today. Subjugated by the Empire early into it's life and later clawing it's freedom back from Imperial clutches, the Duchies are one of the few constituional monarchies still operating in the Known Cluster, headed by Her Majesty Queen Isobel Clarize II.
+
+nationality_name_kul-tanyr = The Dizharin Principality
+nationality_description_kul-tanyr = When the Divine Sol Mandate first started exploring the Cluster, they were quick to encounter the Unathi - soon revealed to be a failed society of serpentine humanoids that had reached the space age but never discovered faster than light travel. Scattered across the stars in the husks of dying arkships in various degrees of societal and technological growth, they were conquered easily by the Mandate, and adapted to live under feudal conditions. When the Empire fell, a tenuous state of freedom was placed upon them, creating the Principality of Dizharin, a union of Unathi coreworlds.
+
+nationality_name_coalition = The Taypani Coalition of Free Stations
+nationality_description_coalition = One of the few Taypani groups actually local to the region, the Coalition consists of unsavory pirate kingdoms, shipbreakers, seedy corporations, booster gangs, and various other shady characters. Considered by most to be illegitimate, it is nevertheless the largest 'independent' polity in the entirety of the system, with several motherships and stations under their control.
