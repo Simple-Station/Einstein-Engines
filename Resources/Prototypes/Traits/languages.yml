@@ -17,3 +17,23 @@
         - Sign
       languagesUnderstood:
         - Sign
+
+- type: trait
+  id: Tradeband
+  category: TraitsSpeechLanguages
+  points: 0
+  # slots: 1
+  # itemGroupSlots: 0
+  requirements:
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Tradeband
+      languagesUnderstood:
+        - Tradeband
