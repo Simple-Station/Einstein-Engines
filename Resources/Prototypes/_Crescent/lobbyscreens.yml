@@ -1,0 +1,11 @@
+- type: lobbyBackground
+  id: Gazer
+  background: /Textures/_Crescent/LobbyScreens/gazer.png
+  name: The Final Days
+  artist: Aisha
+
+- type: lobbyBackground
+  id: Rotter
+  background: /Textures/_Crescent/LobbyScreens/rotter.png
+  name: Death
+  artist: Aisha
