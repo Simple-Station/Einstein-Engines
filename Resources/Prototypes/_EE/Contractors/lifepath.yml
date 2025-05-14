@@ -12,15 +12,15 @@
       employers:
       - Unemployed
 
-- type: lifepath
-  id: SolRefugee
-  nameKey: lifepath_name_solrefugee
-  descriptionKey: lifepath_description_solrefugee
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Human
+#- type: lifepath
+#  id: SolRefugee
+#  nameKey: lifepath_name_solrefugee
+#  descriptionKey: lifepath_description_solrefugee
+#  requirements:
+#    - !type:CharacterSpeciesRequirement
+#      inverted: true
+#      species:
+#        - Human
 
 - type: lifepath
   id: DeskWorker
@@ -146,4 +146,3 @@
   id: ConArtist
   nameKey: lifepath_name_conartist
   descriptionKey: lifepath_description_conartist
-

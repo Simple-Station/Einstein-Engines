@@ -1,0 +1,33 @@
+- type: nationality
+  id: Imperial
+  nameKey: nationality_name_empire
+  descriptionKey: nationality_description_empire
+  hostile:
+  - Unionist
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
+        - Oni
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - HighImperial
+      languagesUnderstood:
+        - HighImperial
+  passportPrototype: ImperialPassport
+
+- type: nationality
+  id: Unionist
+  nameKey: nationality_name_union
+  descriptionKey: nationality_description_union
+  hostile:
+  - Imperial
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Dockta
+      languagesUnderstood:
+        - Dockta
+  passportPrototype: NCWLPassport
+
