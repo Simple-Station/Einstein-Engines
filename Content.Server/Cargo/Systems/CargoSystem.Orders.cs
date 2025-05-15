@@ -1,8 +1,10 @@
 using System.Diagnostics.CodeAnalysis;
+using Content.Server.Bank;
 using Content.Server.Cargo.Components;
 using Content.Server.Labels.Components;
 using Content.Server.Paper;
 using Content.Server.Station.Components;
+using Content.Shared.Bank.Components;
 using Content.Shared.Cargo;
 using Content.Shared.Cargo.BUI;
 using Content.Shared.Cargo.Components;
@@ -22,6 +24,7 @@ namespace Content.Server.Cargo.Systems
 {
     public sealed partial class CargoSystem
     {
+        [Dependency] private readonly BankSystem _bankSystem = default!;
         /// <summary>
         /// How much time to wait (in seconds) before increasing bank accounts balance.
         /// </summary>
@@ -117,11 +120,13 @@ namespace Content.Server.Cargo.Systems
                 return;
             }
 
+            if (!TryComp<BankAccountComponent>(player, out var bankAccount))
+                return;
+
             var station = _station.GetOwningStation(uid);
 
             // No station to deduct from.
-            if (!TryComp(station, out StationBankAccountComponent? bank) ||
-                !TryComp(station, out StationDataComponent? stationData) ||
+            if (!TryComp(station, out StationDataComponent? stationData) ||
                 !TryGetOrderDatabase(station, out var orderDatabase))
             {
                 ConsolePopup(args.Actor, Loc.GetString("cargo-console-station-not-found"));
@@ -135,6 +140,8 @@ namespace Content.Server.Cargo.Systems
             {
                 return;
             }
+
+
 
             // Invalid order
             if (!_protoMan.HasIndex<EntityPrototype>(order.ProductId))
@@ -168,12 +175,14 @@ namespace Content.Server.Cargo.Systems
             var cost = order.Price * order.OrderQuantity;
 
             // Not enough balance
-            if (cost > bank.Balance)
+            if (cost > bankAccount.Balance)
             {
                 ConsolePopup(args.Actor, Loc.GetString("cargo-console-insufficient-funds", ("cost", cost)));
                 PlayDenySound(uid, component);
                 return;
             }
+            if(!_bankSystem.TryBankWithdraw(player, cost))
+                return;
 
             var ev = new FulfillCargoOrderEvent((station.Value, stationData), order, (uid, component));
             RaiseLocalEvent(ref ev);
