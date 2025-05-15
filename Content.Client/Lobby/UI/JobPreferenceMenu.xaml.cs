@@ -39,6 +39,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using Content.Shared.Chemistry.Components;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using static Content.Shared.InteractionVerbs.InteractionPopupPrototype;
 
 
 namespace Content.Client.Lobby.UI
@@ -51,14 +53,17 @@ namespace Content.Client.Lobby.UI
         private readonly IPrototypeManager _protoManager;
         private readonly IClientPreferencesManager _preferencesManager;
         //private readonly HumanoidCharacterProfile _profile;
-        //private readonly CharacterRequirementsSystem _characterRequirementsSystem;
+        private readonly CharacterRequirementsSystem _characterRequirementsSystem;
         private readonly JobRequirementsManager _requirements;
         private readonly HumanoidProfileEditor _profileEditor;
 
-        private List<(string, RequirementsSelector)> _jobPriorities = new();
+        private List<(string, OptionButton, RequirementsSelector)> _jobPriorities = new();
         private readonly Dictionary<string, BoxContainer> _jobCategories;
 
         public event Action<List<ProtoId<GuideEntryPrototype>>>? OnOpenGuidebook;
+
+        /// The preferences being edited.
+        public JobPreferences? Preferences;
 
         public JobPreferenceMenu(IClientPreferencesManager prefsManager, IConfigurationManager cfgManager, IEntityManager entManager, IPrototypeManager protoManager, JobRequirementsManager requirements, HumanoidProfileEditor profileEditor)
         {
@@ -67,7 +72,7 @@ namespace Content.Client.Lobby.UI
             _cfgManager = cfgManager;
             _entManager = entManager;
             _protoManager = protoManager;
-            //_characterRequirementsSystem = characterRequirementsSystem;
+            _characterRequirementsSystem = _entManager.System<CharacterRequirementsSystem>();
             _requirements = requirements;
             _profileEditor = profileEditor;
             _jobCategories = new Dictionary<string, BoxContainer>();
@@ -102,6 +107,8 @@ namespace Content.Client.Lobby.UI
             _jobCategories.Clear();
             _jobPriorities.Clear();
 
+            // Kill this when proper Preference Jobs are added.
+            Preferences = new JobPreferences();
             // Get all displayed departments
             var departments = new List<DepartmentPrototype>();
             foreach (var department in _protoManager.EnumeratePrototypes<DepartmentPrototype>())
@@ -163,14 +170,18 @@ namespace Content.Client.Lobby.UI
                 {
                     var jobContainer = new BoxContainer { Orientation = LayoutOrientation.Horizontal, };
                     var selector = new RequirementsSelector { Margin = new(3f, 3f, 3f, 0f) };
-                    var jobLoadoutButton = new Button { Text = Loc.GetString("Job Loadout"), Margin = new(3f, 3f, 3f, 0f) };
+                    var jobLoadoutButton = new Button { Text = Loc.GetString("Loadout"), Margin = new(3f, 3f, 3f, 0f), HorizontalAlignment = HAlignment.Right };
                     var characterList = new OptionButton();
-                    selector.OnOpenGuidebook += OnOpenGuidebook;
-
+                    characterList.AddItem("job-preference-menu-character-none", 0);
                     foreach (var (slot, character) in _preferencesManager.Preferences!.Characters)
                     {
-                        characterList.AddItem(character.Name, slot);
+                        int characterJobs = Preferences.CharJobs(slot);
+                        // Change this to use the CVar later.
+                        characterList.AddItem(character.Name, slot + 1);
+                        if (characterJobs > 2)
+                            characterList.SetItemDisabled(slot + 1, true);
                     }
+                    selector.OnOpenGuidebook += OnOpenGuidebook;
 
                     var icon = new TextureRect
                     {
@@ -182,27 +193,57 @@ namespace Content.Client.Lobby.UI
                     selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon, job.Guides);
                     if (!_requirements.CheckJobWhitelist(job, out var reason))
                         selector.LockRequirements(reason);
-                    //else if (!_characterRequirementsSystem.CheckRequirementsValid(
-                    //     job.Requirements ?? new(),
-                    //     job,
-                    //     _profileEditor.Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                    //     _requirements.GetRawPlayTimeTrackers(),
-                    //     _requirements.IsWhitelisted(),
-                    //     job,
-                    //     _entManager,
-                    //     _protoManager,
-                    //     _cfgManager,
-                    //     out var reasons))
-                    //    selector.LockRequirements(_characterRequirementsSystem.GetRequirementsText(reasons));
+                    else if (!_characterRequirementsSystem.CheckRequirementsValid(
+                         job.Requirements ?? new(),
+                         job,
+                         _profileEditor.Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
+                         _requirements.GetRawPlayTimeTrackers(),
+                         _requirements.IsWhitelisted(),
+                         job,
+                         _entManager,
+                         _protoManager,
+                         _cfgManager,
+                         out var reasons))
+                        selector.LockRequirements(_characterRequirementsSystem.GetRequirementsText(reasons));
+                    else if (!_requirements.CheckCharacterAssigned(job, Preferences, out var reason3))
+                    {
+                        // Make this use PreferencesManager instead of just erroring :3
+                        if (reason3 != null)
+                            selector.LockRequirements(_characterRequirementsSystem.GetRequirementsText(new List<string> { { reason3 } }));
+                    }
                     else
                         selector.UnlockRequirements();
+
+                    characterList.OnItemSelected += args =>
+                    {
+                        var selectedChar = args.Id;
+                        characterList.SelectId(selectedChar);
+                        Preferences = Preferences?.WithAssignedChar(job.ID, selectedChar);
+                        foreach (var (jobId, character, other) in _jobPriorities)
+                        {
+                            if (jobId == job.ID)
+                                character.Select(selectedChar);
+                            if (Preferences != null && !_requirements.CheckCharacterAssigned(job, Preferences, out var reason3) && jobId != job.ID)
+                            {
+                                // Make this use PreferencesManager instead of just not workign on null :3
+                                if (reason3 != null)
+                                    selector.LockRequirements(_characterRequirementsSystem.GetRequirementsText(new List<string> { { reason3 } }));
+                            }
+                            else
+                                selector.UnlockRequirements();
+                        }
+                        // Should work, keep a close eye on it.
+                        if (Preferences?.CharJobs(selectedChar) > 2)
+                            RefreshJobs();
+                    };
 
                     selector.OnSelected += selectedPrio =>
                     {
                         var selectedJobPrio = (JobPriority) selectedPrio;
-                        _profileEditor.Profile = _profileEditor.Profile?.WithJobPriority(job.ID, selectedJobPrio);
+                        //_profileEditor.Profile = _profileEditor.Profile?.WithJobPriority(job.ID, selectedJobPrio);
+                        Preferences = Preferences?.WithJobPriority(job.ID, selectedJobPrio);
 
-                        foreach (var (jobId, other) in _jobPriorities)
+                        foreach (var (jobId, character, other) in _jobPriorities)
                         {
                             // Sync other selectors with the same job in case of multiple department jobs
                             if (jobId == job.ID)
@@ -210,9 +251,10 @@ namespace Content.Client.Lobby.UI
                             else if (selectedJobPrio == JobPriority.High &&
                                      (JobPriority) other.Selected == JobPriority.High)
                             {
-                                // Lower any other high priorities to medium.
+                                // Lower any other high priorities with the same character to medium.
                                 other.Select((int) JobPriority.Medium);
-                                _profileEditor.Profile = _profileEditor.Profile?.WithJobPriority(jobId, JobPriority.Medium);
+                                //_profileEditor.Profile = _profileEditor.Profile?.WithJobPriority(jobId, JobPriority.Medium);
+                                Preferences = Preferences?.WithJobPriority(jobId, JobPriority.Medium);
                             }
                         }
 
@@ -222,29 +264,44 @@ namespace Content.Client.Lobby.UI
                         //SetDirty();
                     };
 
-                    characterList.OnItemSelected += args =>
-                    {
-                        characterList.SelectId(args.Id);
-                    };
-
-                    _jobPriorities.Add((job.ID, selector));
+                    _jobPriorities.Add((job.ID, characterList, selector));
                     jobContainer.AddChild(selector);
                     jobContainer.AddChild(characterList);
                     jobContainer.AddChild(jobLoadoutButton);
                     category.AddChild(jobContainer);
                 }
             }
-
-            UpdateJobPriorities();
+            if (Preferences is not null)
+                UpdateJobPriorities();
         }
 
         /// Updates selected job priorities to the profile's
         private void UpdateJobPriorities()
         {
-            foreach (var (jobId, prioritySelector) in _jobPriorities)
+            foreach (var (jobId, character, prioritySelector) in _jobPriorities)
             {
-                var priority = _profileEditor.Profile?.JobPriorities.GetValueOrDefault(jobId, JobPriority.Never) ?? JobPriority.Never;
-                prioritySelector.Select((int) priority);
+                //var priority = _profileEditor.Profile?.JobPriorities.GetValueOrDefault(jobId, JobPriority.Never) ?? JobPriority.Never;
+                // Need to make getvalueordefault.
+                //var priority = Preferences?.JobPriorities[jobId].Item2 ?? JobPriority.Never;
+                var priority = Preferences?.JobPriorities.GetValueOrDefault(jobId, (0, JobPriority.Never)) ?? (0, JobPriority.Never);
+                //var charSlot = Preferences?.JobPriorities[jobId] != null ? Preferences.JobPriorities[jobId].Item1 : 0;
+                prioritySelector.Select((int) priority.Item2);
+                character.Select(priority.Item1);
+            }
+        }
+
+        private void UpdateCharAvailability(JobPrototype[] jobs, OptionButton chars, JobPreferences prefs)
+        {
+            foreach (var job in jobs)
+            {
+                foreach (var (slot, character) in _preferencesManager.Preferences!.Characters)
+                {
+                    int characterJobs = prefs.CharJobs(slot);
+                    // Change this to use the CVar later.
+                    if (characterJobs < 3)
+                        chars.SetItemDisabled(slot + 1, true);
+                    else chars.SetItemDisabled(slot + 1, false);
+                }
             }
         }
     }

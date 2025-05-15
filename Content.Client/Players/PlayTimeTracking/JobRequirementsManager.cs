@@ -1,4 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.CodeAnalysis;
 using Content.Shared.CCVar;
 using Content.Shared.Customization.Systems;
 using Content.Shared.Players.JobWhitelist;
@@ -12,6 +12,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Shared.Preferences;
 
 namespace Content.Client.Players.PlayTimeTracking;
 
@@ -104,6 +105,19 @@ public sealed partial class JobRequirementsManager : ISharedPlaytimeManager
             return false;
         }
 
+        return true;
+    }
+    /// <summary>
+    /// Make sure that the job actually has a character assigned to it. They wouldn't be able to play nobody, right?
+    /// </summary>
+    public bool CheckCharacterAssigned(JobPrototype job, JobPreferences jobPrefs, out string? reason)
+    {
+        reason = null;
+        if (!jobPrefs.JobPriorities.ContainsKey(job.ID) || jobPrefs.JobPriorities[job.ID].Item1 == 0)
+        {
+            reason = "no-char-assigned";
+            return false;
+        }
         return true;
     }
 
