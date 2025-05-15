@@ -7,7 +7,7 @@ employer_name_gsc = Gorlex Security Consulting
 employer_name_gsc_command = Coalition Navalcomm
 employer_description_gsc = Just one of the many active pirate and mercenary cells in Taypan - but also one of the most numerous. The Gorlex Group has fingers in almost every pie when it comes to naval combat, with subsidiaries or allies that specialize in infantry boarding, artillery support, or engineering. With deep ties to local outlaw and pirate culture, they're the first to take the blame after any major heist.
 
-employer_name_saw = Shipfitters and Astronautcs Workers Union
+employer_name_saw = Shipfitters and Astronautics Workers Union
 employer_name_saw_command = Coalition Navalcomm
 employer_description_saw = A shipbreakers' and scrappers' union formerly in the ranks of the NCWL, who would later split apart due to ideological differences. After a successful rebellion aboard Shinohara's Prometheus Shipyards, the SAWs would regroup under the banner of the Coalition and rent out their shady services as privateers, haulers, and salvagers.
 
@@ -26,3 +26,7 @@ employer_description_soga = Formed after the initial Battle for Taypan, the Mino
 employer_name_kircheis = House Kircheis
 employer_name_kircheis_command = The Barony of Taypan
 employer_description_kircheis = Formed after the initial Battle for Taypan, House Kircheis would be created as a House of Peerage under the supervision of Count Henry Olywir of the Domain system as a governmental vassal to the Olywir family, used as a vanguard force and stationed in Taypan to rule and collect taxes in the Count's name. With the disappearance of Henry Olywir, they have cemented themselves as the premiere Imperial power in Taypan today, staffing the Fourth Taypani Shield and the local Imperial Navy elements.
+
+employer_name_imperialnavy = Imperial Garrison
+employer_name_imperialnavy_command = The Barony of Taypan
+employer_description_imperialnavy = Staffed primarily by House Kircheis, the Imperial Garrison, or the Fourth Taypani Shield, is the military arm of the Barony, recruiting members from most races, almost all walks of life, and specifically from recruitment pools where Imperial blood is most common within potential recruits.

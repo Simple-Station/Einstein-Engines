@@ -81,9 +81,6 @@
     - !type:CharacterJobRequirement
       jobs:
         - NanotrasenRepresentative
-    - !type:CharacterEmployerRequirement
-      employers:
-      - NanoTrasen
   items:
     - ClothingOuterCorporateJacket
 
@@ -98,9 +95,6 @@
     - !type:CharacterJobRequirement
       jobs:
         - NanotrasenRepresentative
-    - !type:CharacterEmployerRequirement
-      employers:
-      - ZavodskoiInterstellar
   items:
     - ClothingOuterZiCorporateJacket
 
@@ -115,9 +109,6 @@
     - !type:CharacterJobRequirement
       jobs:
         - NanotrasenRepresentative
-    - !type:CharacterEmployerRequirement
-      employers:
-      - EinsteinEngines
   items:
     - ClothingOuterEeCorporateJacket
 
@@ -132,9 +123,6 @@
     - !type:CharacterJobRequirement
       jobs:
         - NanotrasenRepresentative
-    - !type:CharacterEmployerRequirement
-      employers:
-      - HephaestusIndustries
   items:
     - ClothingOuterHiCorporateJacket
 
@@ -149,9 +137,6 @@
     - !type:CharacterJobRequirement
       jobs:
         - NanotrasenRepresentative
-    - !type:CharacterEmployerRequirement
-      employers:
-      - Interdyne
   items:
     - ClothingOuterIdCorporateJacket
 
@@ -166,9 +151,6 @@
     - !type:CharacterJobRequirement
       jobs:
         - NanotrasenRepresentative
-    - !type:CharacterEmployerRequirement
-      employers:
-      - ZengHuPharmaceuticals
   items:
     - ClothingOuterZhCorporateJacket
 
@@ -185,9 +167,6 @@
     - !type:CharacterJobRequirement
       jobs:
         - NanotrasenRepresentative
-    - !type:CharacterEmployerRequirement
-        employers:
-        - IdrisIncorporated
 
 - type: loadout
   id: LoadoutClothingOuterCorporateJacketOrionExpressCorporateLiaison
@@ -202,9 +181,6 @@
     - !type:CharacterJobRequirement
       jobs:
         - NanotrasenRepresentative
-    - !type:CharacterEmployerRequirement
-        employers:
-        - OrionExpress
 
 # Shoes
 

@@ -1,8 +1,8 @@
 - type: language
-  id: NovuNederic
-  isVisibleLanguage: false
+  id: SolBasic
+  isVisibleLanguage: true
   speech:
-    color: "#df6e14dd"
+    color: "#ffee8c"
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1

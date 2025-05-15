@@ -11,13 +11,6 @@
   - Maintenance
   - Engineering
   - External
-  requirements:
-    - !type:CharacterEmployerRequirement
-      employers:
-      - HephaestusIndustries
-      - ZavodskoiInterstellar
-      - EinsteinEngines
-      - NanoTrasen
 
 - type: startingGear
   id: TechnicalAssistantGear

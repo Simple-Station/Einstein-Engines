@@ -414,9 +414,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
-    - !type:CharacterEmployerRequirement
-      employers:
-        - ZavodskoiInterstellar
   items:
   - ClothingOuterJacketZavSecurity
 
@@ -432,9 +429,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
-    - !type:CharacterEmployerRequirement
-      employers:
-        - ZavodskoiInterstellar
   items:
   - ClothingOuterJacketZavSecurityAlt
 
@@ -586,9 +580,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
-    - !type:CharacterEmployerRequirement
-      employers:
-        - ZavodskoiInterstellar
   items:
     - ClothingUniformJumpsuitZavodSecurityOfficer
 
@@ -604,9 +595,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
-    - !type:CharacterEmployerRequirement
-      employers:
-        - ZavodskoiInterstellar
   items:
     - ClothingUniformJumpsuitZavodSecurityOfficerAlt1
 
@@ -622,9 +610,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
-    - !type:CharacterEmployerRequirement
-      employers:
-        - ZavodskoiInterstellar
   items:
     - ClothingUniformJumpsuitZavodSecurityOfficerAlt2
 
@@ -640,9 +625,6 @@
     - !type:CharacterJobRequirement
       jobs:
         - Detective
-    - !type:CharacterEmployerRequirement
-      employers:
-        - ZavodskoiInterstellar
   items:
     - ClothingUniformJumpsuitZavodCadet
 
@@ -654,9 +636,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityUniforms
-    - !type:CharacterEmployerRequirement
-      employers:
-      - EastOrionCompany
     - !type:CharacterDepartmentRequirement
       departments:
       - Security
@@ -671,9 +650,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityUniforms
-    - !type:CharacterEmployerRequirement
-      employers:
-      - EastOrionCompany
     - !type:CharacterDepartmentRequirement
       departments:
       - Security

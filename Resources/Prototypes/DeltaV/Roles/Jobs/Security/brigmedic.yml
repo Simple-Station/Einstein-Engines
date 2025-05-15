@@ -19,12 +19,6 @@
         - Blindness
         - Pacifist
         - BrittleBoneDisease
-    - !type:CharacterEmployerRequirement
-      employers:
-      - ZavodskoiInterstellar
-      - Interdyne
-      - PMCG
-      - NanoTrasen
   startingGear: CorpsmanGear
   icon: "JobIconBrigmedic"
   supervisors: job-supervisors-hos

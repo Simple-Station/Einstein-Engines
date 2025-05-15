@@ -16,10 +16,6 @@
         - Foreigner
         - ForeignerLight
         - Muted
-    - !type:CharacterEmployerRequirement
-      employers:
-      - IdrisIncorporated
-      - NanoTrasen
   weight: 20
   startingGear: MagistrateGear
   icon: "JobIconMagistrate"

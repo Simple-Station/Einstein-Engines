@@ -68,9 +68,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSmokes
-    - !type:CharacterEmployerRequirement
-      employers:
-      - Interdyne
 
 - type: loadout
   id: LoadoutItemLighter
