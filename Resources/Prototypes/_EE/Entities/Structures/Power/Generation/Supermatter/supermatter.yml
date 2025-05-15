@@ -77,7 +77,7 @@
     location: supermatter
   - type: SinguloFood
     energy: 10000
-  - type: LanguageSpeaker # If you're an engineer with the foreigner trait, SUFFER.
+  - type: LanguageSpeaker
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
