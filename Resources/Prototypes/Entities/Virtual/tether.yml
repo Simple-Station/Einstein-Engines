@@ -1,3 +1,5 @@
+# File: Resources/Prototypes/Entities/Virtual/tether.yml
+
 - type: entity
   id: TetherEntity
   categories: [ HideSpawnMenu ]

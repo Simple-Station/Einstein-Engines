@@ -28,6 +28,9 @@
       - CanPilot
       - FootstepSound
       - DoorBumpOpener
+  - type: SurgeryIgnoreClothing
+  - type: SurgerySpeedModifier
+    speedModifier: 1.5
 
 - type: entity
   name: lone abductor

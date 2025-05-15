@@ -2,7 +2,6 @@ using Content.Shared._EE.Supermatter.Monitor;
 using Content.Shared.Atmos;
 using Content.Shared.DoAfter;
 using Content.Shared.Radio;
-using Content.Shared.Speech;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -19,7 +18,7 @@ public sealed partial class SupermatterComponent : Component
     ///     The SM will only cycle if activated.
     /// </summary>
     [DataField]
-    public bool Activated = false;
+    public bool Activated;
 
     /// <summary>
     ///     The current status of the singularity, used for alert sounds and the monitoring console
@@ -453,7 +452,4 @@ public sealed partial class GasFact
 }
 
 [Serializable, NetSerializable]
-public sealed partial class SupermatterDoAfterEvent : SimpleDoAfterEvent
-{
-
-}
+public sealed partial class SupermatterDoAfterEvent : SimpleDoAfterEvent { }
