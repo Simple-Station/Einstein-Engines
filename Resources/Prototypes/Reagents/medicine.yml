@@ -138,6 +138,8 @@
             Radiation: -3
           groups:
             Brute: 0.5
+      - !type:ChemAddMoodlet
+        moodPrototype: StrongPaincauser
 
 - type: reagent
   id: Bicaridine
@@ -172,6 +174,8 @@
         - !type:ReagentThreshold
           min: 15
       - !type:Drunk
+      - !type:ChemAddMoodlet
+        moodPrototype: MildPaincauser
 
 - type: reagent
   id: Cryoxadone
@@ -382,6 +386,8 @@
       - !type:MovespeedModifier # Goob edit
         walkSpeedModifier: 1.1
         sprintSpeedModifier: 1.1
+      - !type:ChemAddMoodlet
+        moodPrototype: EpinephrineEffect
 
 - type: reagent
   id: Hyronalin
@@ -450,6 +456,8 @@
             Asphyxiation: -5
       - !type:ModifyBleedAmount
         amount: -0.25
+      - !type:ChemAddMoodlet
+        moodPrototype: MildPainkiller
 
 - type: reagent
   id: Kelotane
@@ -483,6 +491,8 @@
         conditions:
         - !type:ReagentThreshold
           min: 25
+      - !type:ChemAddMoodlet
+        moodPrototype: MildPainkiller
 
 - type: reagent
   id: Leporazine
@@ -630,6 +640,11 @@
           conditions:
             - !type:ReagentThreshold
               min: 10
+        - !type:ChemRemoveMoodlet
+          moodPrototype: RomerolEffect
+          conditions:
+            - !type:ReagentThreshold
+              min: 10
 
 - type: reagent
   id: AmbuzolPlus
@@ -644,6 +659,11 @@
       effects:
         - !type:CureZombieInfection
           innoculate: true
+          conditions:
+            - !type:ReagentThreshold
+              min: 5
+        - !type:ChemRemoveMoodlet
+          moodPrototype: RomerolEffect
           conditions:
             - !type:ReagentThreshold
               min: 5
@@ -744,6 +764,11 @@
         key: SeeingRainbows
         time: 15.0
         type: Remove
+      - !type:ChemPurgeMoodlets
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Synaptizine
+          min: 10
 
 - type: reagent
   id: TranexamicAcid
@@ -792,6 +817,8 @@
             Heat: -0.5
             Shock: -0.5
             Cold: -0.5 # Was .33, Buffed due to limb damage changes
+      - !type:ChemAddMoodlet
+        moodPrototype: MildPainkiller
 
 - type: reagent
   id: Lipozine
@@ -1016,6 +1043,8 @@
         damage:
           types:
             Cold: 3
+      - !type:ChemAddMoodlet
+        moodPrototype: LacerinolEffect
 
 - type: reagent
   id: Puncturase
@@ -1040,6 +1069,8 @@
         damage:
           types:
             Blunt: 5
+      - !type:ChemAddMoodlet
+        moodPrototype: PuncturaseEffect
 
 - type: reagent
   id: Bruizine
@@ -1063,6 +1094,8 @@
         damage:
           types:
             Poison: 4
+      - !type:ChemAddMoodlet
+        moodPrototype: BruizineEffect
 
 - type: reagent
   id: Pyrazine
@@ -1272,14 +1305,8 @@
         key: Drunk
         time: 6.0
         type: Remove
-      - !type:PopupMessage # we dont have sanity/mood so this will have to do
-        type: Local
-        visualType: Medium
-        messages:
-        - "psicodine-effect-fearless"
-        - "psicodine-effect-anxieties-wash-away"
-        - "psicodine-effect-at-peace"
-        probability: 0.2
+      - !type:ChemAddMoodlet
+        moodPrototype: PsicodineEffect
 
 - type: reagent
   id: PotassiumIodide

@@ -470,6 +470,11 @@
           conditions:
             - !type:ReagentThreshold
               min: 5
+        - !type:ChemAddMoodlet
+          moodPrototype: RomerolEffect
+          conditions:
+            - !type:ReagentThreshold
+              min: 5
 
 - type: reagent
   id: UncookedAnimalProteins
@@ -556,6 +561,8 @@
         component: Pacified
         refresh: false
         type: Add
+      - !type:ChemAddMoodlet
+        moodPrototype: PaxEffect
 
 - type: reagent
   id: Honk

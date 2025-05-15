@@ -132,6 +132,8 @@
       - !type:AdjustReagent
         reagent: Mitogen
         amount: 0.125 # 1.25 per 5u
+      - !type:ChemAddMoodlet
+        moodPrototype: StrongPainkiller
 
 - type: reagent
   id: Mitogen
@@ -722,6 +724,8 @@
         conditions:
         - !type:ReagentThreshold
           min: 20
+      - !type:ChemAddMoodlet
+        moodPrototype: MildPainkiller
 
 # Externally applied meds
 

@@ -11,7 +11,6 @@ using Content.Shared.Movement.Systems;
 using Content.Shared.Mood;
 using Content.Shared.Overlays;
 using Content.Shared.Popups;
-using Content.Shared.Traits.Assorted.Components;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Timer = Robust.Shared.Timing.Timer;
@@ -32,7 +31,6 @@ public sealed class MoodSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
 
-
     public override void Initialize()
     {
         base.Initialize();
@@ -46,8 +44,11 @@ public sealed class MoodSystem : EntitySystem
         SubscribeLocalEvent<MoodComponent, MoodRemoveEffectEvent>(OnRemoveEffect);
     }
 
-    private void OnShutdown(EntityUid uid, MoodComponent component, ComponentShutdown args) =>
+    private void OnShutdown(EntityUid uid, MoodComponent component, ComponentShutdown args)
+    {
         _alerts.ClearAlertCategory(uid, component.MoodCategory);
+        RemComp<SaturationScaleOverlayComponent>(uid);
+    }
 
     private void OnRemoveEffect(EntityUid uid, MoodComponent component, MoodRemoveEffectEvent args)
     {
@@ -91,7 +92,6 @@ public sealed class MoodSystem : EntitySystem
     private void OnMoodEffect(EntityUid uid, MoodComponent component, MoodEffectEvent args)
     {
         if (!_config.GetCVar(CCVars.MoodEnabled)
-            || !_config.GetCVar(CCVars.MoodEnabled)
             || !_prototypeManager.TryIndex<MoodEffectPrototype>(args.EffectId, out var prototype) )
             return;
 
@@ -267,7 +267,7 @@ public sealed class MoodSystem : EntitySystem
         uid = ev.Receiver;
         amount = ev.MoodChangedAmount;
 
-        var newMoodLevel = amount + neutral;
+        var newMoodLevel = amount + neutral + ev.MoodOffset;
         if (!force)
             newMoodLevel = Math.Clamp(
                 amount + neutral,
@@ -282,6 +282,7 @@ public sealed class MoodSystem : EntitySystem
             mood.NeutralMoodThreshold = component.MoodThresholds.GetValueOrDefault(MoodThreshold.Neutral);
         }
 
+        RefreshShaders(uid, component.CurrentMoodLevel);
         UpdateCurrentThreshold(uid, component);
     }
 
@@ -312,7 +313,6 @@ public sealed class MoodSystem : EntitySystem
         {
             _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
             SetCritThreshold(uid, component, modifier);
-            RefreshShaders(uid, modifier);
         }
 
         // Modify interface
@@ -324,12 +324,11 @@ public sealed class MoodSystem : EntitySystem
         component.LastThreshold = component.CurrentMoodThreshold;
     }
 
-    private void RefreshShaders(EntityUid uid, int modifier)
+    private void RefreshShaders(EntityUid uid, float mood)
     {
-        if (modifier == -1)
-            EnsureComp<SaturationScaleOverlayComponent>(uid);
-        else
-            RemComp<SaturationScaleOverlayComponent>(uid);
+        EnsureComp<SaturationScaleOverlayComponent>(uid, out var comp);
+        comp.SaturationScale = mood / 50;
+        Dirty(uid, comp);
     }
 
     private void SetCritThreshold(EntityUid uid, MoodComponent component, int modifier)
@@ -405,7 +404,6 @@ public sealed partial class ShowMoodEffects : IAlertClick
         var playerManager = IoCManager.Resolve<IPlayerManager>();
 
         if (!entityManager.TryGetComponent<MoodComponent>(uid, out var comp)
-            || comp.CurrentMoodThreshold == MoodThreshold.Dead
             || !playerManager.TryGetSessionByEntity(uid, out var session))
             return;
 

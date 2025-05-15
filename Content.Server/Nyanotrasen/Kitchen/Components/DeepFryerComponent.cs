@@ -236,5 +236,8 @@ namespace Content.Server.Nyanotrasen.Kitchen.Components
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField("soundRemoveItem")]
         public SoundSpecifier SoundRemoveItem = new SoundPathSpecifier("/Audio/Nyanotrasen/Machines/deepfryer_basket_remove_item.ogg");
+
+        [DataField]
+        public string DeepFriedMoodletPrototype = "DeepFriedEffect";
     }
 }
