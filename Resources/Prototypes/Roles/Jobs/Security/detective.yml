@@ -16,11 +16,6 @@
       - Blindness
       - Pacifist
       - BrittleBoneDisease
-  - !type:CharacterEmployerRequirement
-      employers:
-      - ZavodskoiInterstellar
-      - PMCG
-      - NanoTrasen
   startingGear: DetectiveGear
   icon: "JobIconDetective"
   supervisors: job-supervisors-hos

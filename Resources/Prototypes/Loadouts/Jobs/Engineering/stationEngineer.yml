@@ -233,9 +233,6 @@
     - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
-    - !type:CharacterEmployerRequirement
-      employers:
-        - ZavodskoiInterstellar
   items:
     - ClothingUniformJumpsuitZavodEngineer
 
@@ -251,9 +248,6 @@
     - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
-    - !type:CharacterEmployerRequirement
-      employers:
-        - NanoTrasen
   items:
     - ClothingUniformJumpsuitNTEngineer
 
@@ -269,8 +263,5 @@
     - !type:CharacterJobRequirement
       jobs:
         - StationEngineer
-    - !type:CharacterEmployerRequirement
-      employers:
-        - HephaestusIndustries
   items:
     - ClothingUniformJumpsuitHephEngineer

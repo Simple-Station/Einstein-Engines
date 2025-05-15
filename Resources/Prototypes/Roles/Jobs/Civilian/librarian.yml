@@ -16,9 +16,6 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
-    - !type:CharacterEmployerRequirement
-      employers:
-      - NanoTrasen
     - !type:CharacterItemGroupRequirement
       group: TraitsCasterType
   startingGear: LibrarianGear

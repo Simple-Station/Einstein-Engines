@@ -60,9 +60,6 @@
     - !type:CharacterJobRequirement
       jobs:
         - Detective
-    - !type:CharacterEmployerRequirement
-      employers:
-        - ZavodskoiInterstellar
   items:
     - ClothingOuterJacketZavDetective
 
@@ -81,9 +78,6 @@
     - !type:CharacterJobRequirement
       jobs:
         - Detective
-    - !type:CharacterEmployerRequirement
-      employers:
-        - ZavodskoiInterstellar
   items:
     - ClothingUniformJumpsuitZavodDetective
 
@@ -99,8 +93,5 @@
     - !type:CharacterJobRequirement
       jobs:
         - Detective
-    - !type:CharacterEmployerRequirement
-      employers:
-        - ZavodskoiInterstellar
   items:
     - ClothingUniformJumpsuitZavodDetectiveAlt

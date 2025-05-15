@@ -6,16 +6,7 @@ clarizian_view_union_passport = A member of a young, naive nation.
 clarizian_view_american_passport = A member of a cutthroat, competitive micro-empire. They could be useful.
 clarizian_view_kul-tanyr_passport = A member of some serpentine backwater desert world. They don't interest you much.
 
-#kul-tanyr
-kul-tanyr_view_imperial_passport = A member of the empire that formerly conquered our lands.
-kul-tanyr_view_solarian_passport = A member of a military junta that replaced the Mandate.
-kul-tanyr_view_american_passport = A member of a backwater corporate state.
-kul-tanyr_view_union_passport = A member of the local worker's union.
-kul-tanyr_view_coalition_passport = A member of the local pirate kingdom.
-kul-tanyr_view_clarizian_passport = A Queensman, serving one of the two Monarchist regimes in the Supercluster.
-
 #american
-
 american_view_imperial_passport = A member of a foolish derelict nation still clinging to old ideals.
 american_view_solarian_passport = A member of an opportunist, militarized regime that overthrew their former Monarchist government.
 american_view_clarizian_passport = A member of a nation of matriarchal Monarchists.
