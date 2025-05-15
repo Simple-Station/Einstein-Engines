@@ -20,11 +20,6 @@
         - Blindness
         - Pacifist
         - BrittleBoneDisease
-    - !type:CharacterEmployerRequirement
-      employers:
-      - ZavodskoiInterstellar
-      - PMCG
-      - NanoTrasen
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos

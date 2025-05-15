@@ -51,9 +51,9 @@ language-Freespeak-description =
     This language is the only common cultural identity for humans in the frontier. Speaking this language in itself boldly declares the speaker a free spirit.
     It is often called 'Gutter' by Alliance citizens.
 
-language-Elyran-name = Elyran Standard
+language-Elyran-name = Clarizian Standard
 language-Elyran-description =
-    Elyran Standard is the official tongue of the Republic of Elyra. Constructed using elements of Farsi - Arabic - and Turkish.
+    Clarizian Standard is the official tongue of the Elyran Republic. Constructed using elements of Farsi - Arabic - and Turkish.
     Influence from all three of these languages can be seen throughout its grammar and vocabulary.
 
 language-Canilunzt-name = Canilunzt
