@@ -1,11 +1,13 @@
 using Content.Server.Access.Systems;
 using Content.Server.Administration.Logs;
+using Content.Server.Bank;
 using Content.Server.Cargo.Components;
 using Content.Server.Cargo.Systems;
 using Content.Server.DeltaV.Cargo.Components;
 using Content.Server.DeltaV.CartridgeLoader.Cartridges;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
+using Content.Shared.Bank.Components;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.CartridgeLoader.Cartridges;
 using Content.Shared.Database;
@@ -28,6 +30,7 @@ public sealed class StockMarketSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IdCardSystem _idCard = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly BankSystem _bankSystem = default!;
 
     private ISawmill _sawmill = default!;
     private const float MaxPrice = 262144; // 1/64 of max safe integer
@@ -137,8 +140,7 @@ public sealed class StockMarketSystem : EntitySystem
         if (amount == 0 || companyIndex < 0 || companyIndex >= stockMarket.Companies.Count)
             return false;
 
-        // Check if the station has a bank account
-        if (!TryComp<StationBankAccountComponent>(station, out var bank))
+        if (!TryComp<BankAccountComponent>(user, out var bank))
             return false;
 
         var company = stockMarket.Companies[companyIndex];
@@ -168,7 +170,12 @@ public sealed class StockMarketSystem : EntitySystem
             stockMarket.StockOwnership.Remove(companyIndex);
 
         // Update the bank account (take away for buying and give for selling)
-        _cargo.UpdateBankAccount(station, bank, -totalValue);
+        totalValue *= -1;
+        if (totalValue > 0)
+            _bankSystem.TryBankDeposit(user, totalValue);
+        else
+            _bankSystem.TryBankWithdraw(user, -totalValue);
+        //_cargo.UpdateBankAccount(station, bank, -totalValue);
 
         // Log the transaction
         var verb = amount > 0 ? "bought" : "sold";

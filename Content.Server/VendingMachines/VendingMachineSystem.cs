@@ -2,6 +2,7 @@ using System.Linq;
 using System.Numerics;
 using Content.Server.Advertise;
 using Content.Server.Advertise.Components;
+using Content.Server.Bank;
 using Content.Server.Cargo.Systems;
 using Content.Server.Emp;
 using Content.Server.Power.Components;
@@ -9,6 +10,7 @@ using Content.Server.Power.EntitySystems;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Actions;
+using Content.Shared.Bank.Components;
 using Content.Shared.Damage;
 using Content.Shared.Destructible;
 using Content.Shared.DoAfter;
@@ -30,10 +32,12 @@ namespace Content.Server.VendingMachines
 {
     public sealed class VendingMachineSystem : SharedVendingMachineSystem
     {
+        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly AccessReaderSystem _accessReader = default!;
         [Dependency] private readonly AppearanceSystem _appearanceSystem = default!;
         [Dependency] private readonly SharedActionsSystem _action = default!;
+        [Dependency] private readonly BankSystem _bankSystem = default!;
         [Dependency] private readonly PricingSystem _pricing = default!;
         [Dependency] private readonly ThrowingSystem _throwingSystem = default!;
         [Dependency] private readonly UserInterfaceSystem _userInterfaceSystem = default!;
@@ -114,6 +118,12 @@ namespace Content.Server.VendingMachines
         private void UpdateVendingMachineInterfaceState(EntityUid uid, VendingMachineComponent component)
         {
             var state = new VendingMachineInterfaceState(GetAllInventory(uid, component));
+            foreach (var thing in state.Inventory)
+            {
+                if (!_prototypeManager.TryIndex<EntityPrototype>(thing.ID, out var proto))
+                    return;
+                thing.Price = _pricing.GetEstimatedPrice(proto);
+            }
 
             _userInterfaceSystem.SetUiState(uid, VendingMachineUiKey.Key, state);
         }
@@ -291,6 +301,69 @@ namespace Content.Server.VendingMachines
             Audio.PlayPvs(vendComponent.SoundVend, uid);
         }
 
+        public void TryEjectVendorItem(EntityUid uid, EntityUid sender, InventoryType type, string itemId, bool throwItem, VendingMachineComponent? vendComponent = null)
+        {
+
+            if (!TryComp<BankAccountComponent>(sender, out var bank))
+                return;
+
+            if (!_prototypeManager.TryIndex<EntityPrototype>(itemId, out var proto))
+                return;
+
+            if (!Resolve(uid, ref vendComponent))
+                return;
+
+            if (vendComponent.Ejecting || vendComponent.Broken || !this.IsPowered(uid, EntityManager))
+            {
+                return;
+            }
+
+
+            var entry = GetEntry(uid, itemId, type, vendComponent);
+
+            if (entry == null)
+            {
+                Popup.PopupEntity(Loc.GetString("vending-machine-component-try-eject-invalid-item"), uid);
+                Deny(uid, vendComponent);
+                return;
+            }
+
+            if (entry.Amount <= 0)
+            {
+                Popup.PopupEntity(Loc.GetString("vending-machine-component-try-eject-out-of-stock"), uid);
+                Deny(uid, vendComponent);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(entry.ID))
+                return;
+
+            var price = _pricing.GetEstimatedPrice(proto);
+
+            if (price > bank.Balance)
+            {
+                Popup.PopupEntity(Loc.GetString("bank-insufficient-funds"), uid);
+                Deny(uid, vendComponent);
+                return;
+            }
+
+            if (price != 0 && !_bankSystem.TryBankWithdraw(sender, (int)price))
+                return;
+
+            // Start Ejecting, and prevent users from ordering while anim playing
+            vendComponent.Ejecting = true;
+            vendComponent.NextItemToEject = entry.ID;
+            vendComponent.ThrowNextItem = throwItem;
+
+            if (TryComp(uid, out SpeakOnUIClosedComponent? speakComponent))
+                _speakOnUIClosed.TrySetFlag((uid, speakComponent));
+
+            entry.Amount--;
+            UpdateVendingMachineInterfaceState(uid, vendComponent);
+            TryUpdateVisualState(uid, vendComponent);
+            Audio.PlayPvs(vendComponent.SoundVend, uid);
+        }
+
         /// <summary>
         /// Checks whether the user is authorized to use the vending machine, then ejects the provided item if true
         /// </summary>
@@ -303,7 +376,7 @@ namespace Content.Server.VendingMachines
         {
             if (IsAuthorized(uid, sender, component))
             {
-                TryEjectVendorItem(uid, type, itemId, component.CanShoot, component);
+                TryEjectVendorItem(uid ,sender, type, itemId, component.CanShoot, component);
             }
         }
 
