@@ -87,8 +87,9 @@ public sealed partial class CargoSystem : SharedCargoSystem
     }
 
     [PublicAPI]
-    public void UpdateBankAccount(EntityUid uid, BankAccountComponent component, int balanceAdded)
+    public void UpdateBankAccount(EntityUid uid, StationBankAccountComponent component, int balanceAdded)
     {
+
         component.Balance += balanceAdded;
         var query = EntityQueryEnumerator<BankClientComponent, TransformComponent>();
 
@@ -103,5 +104,6 @@ public sealed partial class CargoSystem : SharedCargoSystem
             Dirty(client, comp);
             RaiseLocalEvent(client, ref ev);
         }
+
     }
 }
