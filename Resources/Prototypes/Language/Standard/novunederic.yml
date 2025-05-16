@@ -1,6 +1,6 @@
 - type: language
   id: NovuNederic
-  isVisibleLanguage: true
+  isVisibleLanguage: false
   speech:
     color: "#df6e14dd"
   obfuscation:

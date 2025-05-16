@@ -22,10 +22,6 @@
           inverted: true
           traits:
             - Pacifist
-    - !type:CharacterEmployerRequirement
-      employers:
-      - NanoTrasen
-      - ZengHuPharmaceuticals
     - !type:CharacterItemGroupRequirement
       group: TraitsCasterType
   startingGear: ForensicMantisGear

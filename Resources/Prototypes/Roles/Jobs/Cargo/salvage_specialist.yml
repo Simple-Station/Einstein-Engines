@@ -7,11 +7,6 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Logistics # DeltaV - Logistics Department replacing Cargo
       min: 21600 #DeltaV 6 hrs
-    - !type:CharacterEmployerRequirement
-      employers:
-      - OrionExpress
-      - PMCG
-      - NanoTrasen
   #  - !type:OverallPlaytimeRequirement #DeltaV
   #    time: 36000 #10 hrs
   icon: "JobIconShaftMiner"

@@ -131,8 +131,5 @@
     - !type:CharacterJobRequirement
       jobs:
         - Warden
-    - !type:CharacterEmployerRequirement
-      employers:
-        - ZavodskoiInterstellar
   items:
     - ClothingUniformJumpsuitZavodWarden

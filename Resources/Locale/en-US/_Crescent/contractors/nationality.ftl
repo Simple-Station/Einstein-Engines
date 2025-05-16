@@ -1,0 +1,17 @@
+nationality_name_union = New Crescent Worker's League
+nationality_description_union = The New Crescent Worker's League was formed shortly after the workers' uprising in the Crescent Sector, spearheaded by loosely-banded laborer gangs and workers unions that would later collectivize under the nation-scale group known as the NCWL today. Operating on socialist ideals and prioritizing freedom for all, they tend to be viewed as naive by most.
+
+nationality_name_empire = Divine Sol Mandate
+nationality_description_empire = Created after the dissolution of the Solarian Ascendancy, the Divine Sol Mandate would rally under feudalist ideals of the (allegedly) all-powerful Kaiser. Conquering most of Known Space, the Imperials would eventually land in the Crescent and stagnate until a series of rebellions and revolutions would weaken them to a secondary power in the galactic political stage today.
+
+nationality_name_american = New American Protectorate
+nationality_description_american = Stitched together from the remnants of the American Commonwealth of Old Terra, the New American Protectorate would be formed initally as a loose union of American military outposts scattered outside the reaches of the still-growing Empire. Today, they operate on their ancient ideals of personal liberty and economic freedom, responsible for the logistics of most heavy weaponry to external sectors.
+
+nationality_name_clarizian = Free Clarizian Duchies
+nationality_description_clarizian = Founded by then-Governess Ariadne Clarize, the Free Clarizian Duchies were formed shortly after the creation of the Divine Sol Mandate. When the East Asian Combine fell, the Governess would flee to the southeastern reaches of the Known Cluster and settle into the temperate world of Kiraigo with her retinue and citizenry, giving birth to the Duchies as we know it today. Subjugated by the Empire early into it's life and later clawing it's freedom back from Imperial clutches, the Duchies are one of the few constituional monarchies still operating in the Known Cluster, headed by Her Majesty Queen Isobel Clarize II.
+
+nationality_name_coalition = The Taypani Coalition of Free Stations
+nationality_description_coalition = One of the few Taypani groups actually local to the region, the Coalition consists of unsavory pirate kingdoms, shipbreakers, seedy corporations, booster gangs, and various other shady characters. Considered by most to be illegitimate, it is nevertheless the largest 'independent' polity in the entirety of the system, with several motherships and stations under their control.
+
+nationality_name_authority = Central Sol Authority
+nationality_description_authority = The newest galactic player on the scene, the Central Sol Authority is the successor state to the Divine Sol Mandate, having declared sovereignty after a sudden coup d'etat in the Imperial capitalworld of Terra. Doubling down on human supremacist narratives, the Authority hunts and purges psionically-enabled sentients with prejudice and dogged determination, believing the act to delay the end of the Known Cluster as they know it. A hypermilitarized nation that covers a terrifyingly large swathe of territory, they are the primary source of exiles and immigrants into the Crescent Sector.

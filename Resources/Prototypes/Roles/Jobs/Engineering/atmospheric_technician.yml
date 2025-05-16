@@ -7,11 +7,6 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Engineering
       min: 36000 # DeltaV - 10 hours
-    - !type:CharacterEmployerRequirement
-      employers:
-      - HephaestusIndustries
-      - EinsteinEngines
-      - NanoTrasen
   startingGear: AtmosphericTechnicianGear
   icon: "JobIconAtmosphericTechnician"
   supervisors: job-supervisors-ce

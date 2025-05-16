@@ -198,6 +198,9 @@ namespace Content.Shared.VendingMachines
         public string ID;
         [ViewVariables(VVAccess.ReadWrite)]
         public uint Amount;
+        [ViewVariables(VVAccess.ReadWrite)]
+        public double Price = 0;
+
         public VendingMachineInventoryEntry(InventoryType type, string id, uint amount)
         {
             Type = type;

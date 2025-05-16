@@ -23,35 +23,37 @@
   name: Biesel Republic passport
   parent: BasePassport
   id: BieselPassport
+  abstract: true #hullrot
   components:
     - type: Sprite
       sprite: _EE/Contractors/Passport.rsi
       layers:
       - state: passport_biesel_open
       - state: passport_species_human
-    - type: ExtendDescription
-      descriptionList:
-      - description: "bieselite_view_biesel_passport"
-        fontSize: 12
-        color: "#77ff77"
-        requireDetailRange: true
-        requirements:
-        - !type:CharacterNationalityRequirement
-          nationalities:
-          - Bieselite
-      - description: "solarian_view_biesel_passport"
-        fontSize: 12
-        color: "#ff7777"
-        requireDetailRange: true
-        requirements:
-        - !type:CharacterNationalityRequirement
-          nationalities:
-          - Solarian
+   # - type: ExtendDescription
+   #   descriptionList:
+   #   - description: "bieselite_view_biesel_passport"
+   #     fontSize: 12
+   #     color: "#77ff77"
+   #     requireDetailRange: true
+   #     requirements:
+   #     - !type:CharacterNationalityRequirement 
+   #       nationalities:
+   #       - Bieselite
+   #   - description: "solarian_view_biesel_passport"
+   #     fontSize: 12
+   #     color: "#ff7777"
+   #     requireDetailRange: true
+   #     requirements:
+   #     - !type:CharacterNationalityRequirement
+   #       nationalities:
+   #       - Solarian #commented out since it bricks the game otherwise. LOL!
 
 - type: entity
   name: Solarian Alliance passport
   parent: BasePassport
   id: SolPassport
+  abstract: true #hullrot
   components:
     - type: Sprite
       sprite: _EE/Contractors/Passport.rsi
@@ -65,22 +67,23 @@
         color: "#ff7777"
         requireDetailRange: true
         requirements:
-        - !type:CharacterNationalityRequirement
-          nationalities:
-          - Bieselite
-      - description: "solarian_view_sol_passport"
-        fontSize: 12
-        color: "#77ff77"
-        requireDetailRange: true
-        requirements:
-        - !type:CharacterNationalityRequirement
-          nationalities:
-          - Solarian
+#        - !type:CharacterNationalityRequirement
+#          nationalities:
+#          - Bieselite
+#      - description: "solarian_view_sol_passport"
+#        fontSize: 12
+#        color: "#77ff77"
+#        requireDetailRange: true
+#        requirements:
+#        - !type:CharacterNationalityRequirement
+#          nationalities:
+#          - Solarian #commented out since it bricks the game otherwise. LOL!
 
 - type: entity
   name: Republic of Elyra passport
   parent: BasePassport
   id: ElyranPassport
+  abstract: true #hullrot
   components:
     - type: Sprite
       sprite: _EE/Contractors/Passport.rsi
@@ -92,6 +95,7 @@
   name: Valyrian 4b passport
   parent: BasePassport
   id: ValyrianPassport
+  abstract: true #hullrot
   components:
     - type: Sprite
       sprite: _EE/Contractors/Passport.rsi
@@ -103,6 +107,7 @@
   name: New-Netherlands passport
   parent: BasePassport
   id: NederlandicPassport
+  abstract: true #hullrot
   components:
     - type: Sprite
       sprite: _EE/Contractors/Passport.rsi
@@ -114,6 +119,7 @@
   name: Izweski Hegemony passport
   parent: BasePassport
   id: IzweskiPassport
+  abstract: true #hullrot
   components:
     - type: Sprite
       sprite: _EE/Contractors/Passport.rsi
@@ -125,6 +131,7 @@
   name: People's Republic of Adhomai passport
   parent: BasePassport
   id: AdhomaiPassport
+  abstract: true #hullrot
   components:
     - type: Sprite
       sprite: _EE/Contractors/Passport.rsi
@@ -136,6 +143,7 @@
   name: Golden Deep passport
   parent: BasePassport
   id: GoldenDeepPassport
+  abstract: true #hullrot
   components:
     - type: Sprite
       sprite: _EE/Contractors/Passport.rsi
@@ -147,6 +155,7 @@
   name: Qiimaeru passport
   parent: BasePassport
   id: QiimaeruPassport
+  abstract: true #hullrot
   components:
     - type: Sprite
       sprite: _EE/Contractors/Passport.rsi
