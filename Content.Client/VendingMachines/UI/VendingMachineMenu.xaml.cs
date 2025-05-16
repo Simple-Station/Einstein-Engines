@@ -105,8 +105,12 @@ namespace Content.Client.VendingMachines.UI
 
                 if (itemName.Length > longestEntry.Length)
                     longestEntry = itemName;
-
-                vendingItem.Text = $"{itemName} [{entry.Amount}]";
+                if(entry.Price != 0)
+                    vendingItem.Text = $"{itemName} [{entry.Amount}] {entry.Price}$";
+                else
+                {
+                    vendingItem.Text = $"{itemName} [{entry.Amount}] FREE";
+                }
 
                 vendingItem.Icon = icon;
                 filteredInventory.Add(i);
