@@ -43,6 +43,9 @@
 - type: markingPoints
   id: MobHumanMarkingLimits
   points:
+    Head:
+      points: 2
+      required: false
     Hair:
       points: 1
       required: false

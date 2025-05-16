@@ -93,3 +93,9 @@ marking-FaceNeckWideThick-neck_thick_m = Neck Cover (Wide Thick)
 
 marking-IronJaw = Iron Jaw
 marking-IronJaw-iron_jaw = Iron Jaw
+
+marking-EmissiveEyeRight-tattoo_eye_r = Right Cybernetic Eye (Emissive)
+marking-EmissiveEyeRight = Right Cybernetic Eye (Emissive)
+
+marking-EmissiveEyeLeft-tattoo_eye_l = Left Cybernetic Eye (Emissive)
+marking-EmissiveEyeLeft = Left Cybernetic Eye (Emissive)

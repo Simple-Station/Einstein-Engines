@@ -47,6 +47,10 @@ public sealed class BodySystem : SharedBodySystem
                 sprite.LayerSetColor(layerId, colors[j]);
             else
                 sprite.LayerSetColor(layerId, Color.White);
+
+            var shaders = markingPrototype.Shaders;
+            if (shaders is not null && shaders.ContainsKey(rsi.RsiState))
+                sprite.LayerSetShader(layerId, shaders[rsi.RsiState]);
         }
     }
 
