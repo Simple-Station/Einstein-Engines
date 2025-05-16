@@ -9,7 +9,10 @@ using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
+using Robust.Shared.Configuration;
 using Robust.Shared.Input;
+using Robust.Shared.Network;
+using Robust.Shared.Player;
 using Robust.Shared.Utility;
 
 namespace Content.Client.Administration.UI.CustomControls;
@@ -21,6 +24,8 @@ public sealed partial class PlayerListControl : BoxContainer
 
     private readonly IEntityManager _entManager;
     private readonly IUserInterfaceManager _uiManager;
+    private readonly ISharedPlayerManager _playerManager;
+    private readonly IConfigurationManager _config;
 
     private PlayerInfo? _selectedPlayer;
 
@@ -34,6 +39,8 @@ public sealed partial class PlayerListControl : BoxContainer
     {
         _entManager = IoCManager.Resolve<IEntityManager>();
         _uiManager = IoCManager.Resolve<IUserInterfaceManager>();
+        _playerManager = IoCManager.Resolve<ISharedPlayerManager>();
+        _config = IoCManager.Resolve<IConfigurationManager>();
         _adminSystem = _entManager.System<AdminSystem>();
         RobustXamlLoader.Load(this);
         // Fill the Option data
@@ -98,7 +105,8 @@ public sealed partial class PlayerListControl : BoxContainer
         _sortedPlayerList.Clear();
         foreach (var info in _playerList)
         {
-            var displayName = $"{info.CharacterName} ({info.Username})";
+            var displayName = $"{info.CharacterName} ({info.Username}@{AuthServer.GetServerFromCVarListByUrl(_config,
+                _playerManager.GetSessionById(info.SessionId).Channel.UserData.AuthServer)?.Id})";
             if (info.IdentityName != info.CharacterName)
                 displayName += $" [{info.IdentityName}]";
             if (!string.IsNullOrEmpty(FilterLineEdit.Text)
