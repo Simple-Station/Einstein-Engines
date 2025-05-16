@@ -9,3 +9,36 @@
       amount: 1
   products:
     Morphine: 4
+
+- type: reaction
+  id: FormicAcid
+  priority: -1 # should react to make benzene/hydroxide if you're too hot
+  reactants:
+    Hydrogen:
+      amount: 1
+    Carbon:
+      amount: 1
+    Oxygen:
+      amount: 1
+    Hydroxide:
+      amount: 1
+  products:
+    FormicAcid: 4
+
+- type: reaction
+  id: FormicAcidDehydration
+  reactants:
+    FormicAcid:
+      amount: 1
+    SulfuricAcid:
+      amount: 1
+      catalyst: true
+  effects:
+  - !type:CreateGas
+    gas: CarbonDioxide # not quite right but we don't have CO
+  - !type:PopupMessage
+    visualType: MediumCaution
+    messages: [ "formic-co2-created" ]
+    type: Pvs
+  products:
+    Water: 1
