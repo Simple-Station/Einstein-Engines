@@ -1,6 +1,5 @@
 using Content.Shared.Actions;
 using Content.Shared.Interaction;
-using Content.Shared.Polymorph;
 using Content.Shared.Polymorph.Components;
 using Content.Shared.Popups;
 using Robust.Shared.Serialization.Manager;
@@ -19,7 +18,6 @@ public abstract class SharedChameleonProjectorSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly ISerializationManager _serMan = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
 
     public override void Initialize()

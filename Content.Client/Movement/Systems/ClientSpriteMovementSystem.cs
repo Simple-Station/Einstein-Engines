@@ -10,7 +10,6 @@ namespace Content.Client.Movement.Systems;
 /// </summary>
 public sealed class ClientSpriteMovementSystem : SharedSpriteMovementSystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
 
     private EntityQuery<SpriteComponent> _spriteQuery;
 
