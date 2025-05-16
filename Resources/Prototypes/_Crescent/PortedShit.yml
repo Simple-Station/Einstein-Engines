@@ -357,6 +357,55 @@
     proto: BulletHeavyPistol
 
 - type: entity
+  id: OreMagnet
+  name: SHI baromagnetic ore array
+  description: A large, ship-mounted magnetic device. When pointed in the direction of loose ore, gathers the rocky material with a miniature tractor beam and stores it in an internal compartment for later harvest.
+  parent: OreBox
+  components:
+  - type: StaticPrice
+    price: 4500  # Frontier - 500<625
+  - type: Transform
+    anchored: true
+  - type: Anchorable
+    flags:
+    - Anchorable
+    delay: 20
+  - type: InteractionOutline
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400 # Frontier - 150<450
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Sprite
+    noRot: true
+    sprite: /Textures/Structures/Storage/orebox.rsi
+    layers:
+    - state: magnet
+    - state: magnet-top
+      map: [ top ]
+      visible: true
+  - type: MagnetPickup # Frontier
+    range: 20 # Ore bag has a range of 1.0
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.3
+        density: 600
+        mask:
+        #- MachineMask
+        - SmallMobMask  # Frontier
+        layer:
+        - MachineLayer
+
+- type: entity
   parent: BaseBulletTrigger
   id: ProjectileEmp
   name: emp projectile
