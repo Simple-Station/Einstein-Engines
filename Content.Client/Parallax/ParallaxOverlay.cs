@@ -1,8 +1,11 @@
 using System.Numerics;
 using Content.Client.Parallax.Managers;
 using Content.Shared.CCVar;
+using Content.Shared.Parallax;
 using Content.Shared.Parallax.Biomes;
+using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
+using Robust.Client.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Map;
@@ -13,6 +16,7 @@ namespace Content.Client.Parallax;
 
 public sealed class ParallaxOverlay : Overlay
 {
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
@@ -20,16 +24,18 @@ public sealed class ParallaxOverlay : Overlay
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IParallaxManager _manager = default!;
     private readonly ParallaxSystem _parallax;
-    private Dictionary<ParallaxLayerPrepared, ShaderInstance?> _layerShaders;
+    private readonly MapSystem _map;
 
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowWorld;
+
+    private TimeSpan _lastUpdate = TimeSpan.Zero;
 
     public ParallaxOverlay()
     {
         ZIndex = ParallaxSystem.ParallaxZIndex;
         IoCManager.InjectDependencies(this);
         _parallax = _entManager.System<ParallaxSystem>();
-        _layerShaders = new();
+        _map = _entManager.System<MapSystem>();
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)
@@ -42,37 +48,54 @@ public sealed class ParallaxOverlay : Overlay
 
     protected override void Draw(in OverlayDrawArgs args)
     {
-        if (args.MapId == MapId.Nullspace)
+        TimeSpan lastUpdate = _lastUpdate == TimeSpan.Zero ? _timing.CurTime : _lastUpdate;
+        float deltaTime = (float) (_timing.CurTime - lastUpdate).TotalSeconds;
+        _lastUpdate = _timing.CurTime;
+
+        if (args.MapId == MapId.Nullspace || !_map.TryGetMap(args.MapId, out var mapUid))
             return;
 
         if (!_configurationManager.GetCVar(CCVars.ParallaxEnabled))
             return;
 
+        ParallaxComponent? parallax = _entManager.GetComponentOrNull<ParallaxComponent>(_playerManager.LocalEntity);
+        parallax ??= _entManager.GetComponentOrNull<ParallaxComponent>(mapUid);
+
+        if (parallax == null)
+        {
+            DrawLayers(args, _parallax.GetParallaxLayers(ParallaxSystem.Fallback), 1);
+            return;
+        }
+
+        float alpha = parallax.IsSwapping ? parallax.SwapTimer / parallax.SwapDuration : 1f;
+        DrawLayers(args, _parallax.GetParallaxLayers(parallax.Parallax), alpha);
+        if (parallax.IsSwapping)
+        {
+            DrawLayers(args, _parallax.GetParallaxLayers(parallax.SwappedParallax!), 1f - alpha);
+            parallax.SwapTimer += deltaTime;
+
+            if (parallax.SwapTimer > parallax.SwapDuration)
+            {
+                parallax.SwappedParallax = null;
+                parallax.SwapTimer = parallax.SwapDuration = 0;
+            }
+        }
+    }
+
+    private void DrawLayers(OverlayDrawArgs args, ParallaxLayerPrepared[] layers, float alpha)
+    {
         var position = args.Viewport.Eye?.Position.Position ?? Vector2.Zero;
         var worldHandle = args.WorldHandle;
-
-        var layers = _parallax.GetParallaxLayers(ParallaxSystem.Fallback);
         var realTime = (float) _timing.RealTime.TotalSeconds;
 
         foreach (var layer in layers)
         {
-            ShaderInstance? shader = null;
+            ShaderInstance? shader;
+
             if (!string.IsNullOrEmpty(layer.Config.Shader))
-            {
-                if (_layerShaders.TryGetValue(layer, out var shaderInstance))
-                {
-                    shader = shaderInstance;
-                }
-                else
-                {
-                    shader = _prototypeManager.Index<ShaderPrototype>(layer.Config.Shader).Instance();
-                    _layerShaders.Add(layer, shader);
-                }
-            }
+                shader = _prototypeManager.Index<ShaderPrototype>(layer.Config.Shader).Instance();
             else
                 shader = null;
-
-
 
             worldHandle.UseShader(shader);
             var tex = layer.Texture;
@@ -115,30 +138,17 @@ public sealed class ParallaxOverlay : Overlay
                 {
                     for (var y = flooredBL.Y; y < args.WorldAABB.Top; y += size.Y)
                     {
-                        worldHandle.DrawTextureRect(tex, Box2.FromDimensions(new Vector2(x, y), size));
+                        worldHandle.DrawTextureRect(tex, Box2.FromDimensions(new Vector2(x, y), size), Color.White.WithAlpha(alpha));
                     }
                 }
             }
             else
             {
-                worldHandle.DrawTextureRect(tex, Box2.FromDimensions(originBL, size));
+                worldHandle.DrawTextureRect(tex, Box2.FromDimensions(originBL, size), Color.White.WithAlpha(alpha));
             }
         }
 
         worldHandle.UseShader(null);
-    }
-
-    protected override void DisposeBehavior()
-    {
-        foreach (var pair in _layerShaders)
-        {
-            if (pair.Value != null)
-            {
-                pair.Value.Dispose();
-            }
-        }
-        _layerShaders.Clear();
-        base.DisposeBehavior();
     }
 }
 
