@@ -278,6 +278,7 @@
         - PillCanister
         - Radio
         - DiscreteHealthAnalyzer
+        - MedicalPatch # Goobstation
       components:
         - SurgeryTool # Shitmed Change
         - Hypospray
