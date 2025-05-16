@@ -1,4 +1,5 @@
 using Content.Shared.Atmos;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 
 
@@ -21,4 +22,7 @@ public sealed partial class ShadowlingIcyVeinsComponent : Component
 
     [DataField]
     public string? IcyVeinsEffect = "ShadowlingIcyVeinsEffect";
+
+    [DataField]
+    public SoundSpecifier? IcyVeinsSound = new SoundPathSpecifier("/Audio/Effects/ghost2.ogg");
 }

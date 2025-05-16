@@ -1,4 +1,5 @@
 using Content.Shared.FixedPoint;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -25,4 +26,7 @@ public sealed partial class ShadowlingBlindnessSmokeComponent : Component
 
     [DataField]
     public FixedPoint2 ReagentQuantity = 10f;
+
+    [DataField]
+    public SoundSpecifier? BlindnessSound = new SoundPathSpecifier("/Audio/Effects/bamf.ogg");
 }

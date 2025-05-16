@@ -10,7 +10,9 @@ using Content.Shared.DoAfter;
 using Content.Shared.Humanoid;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
+using Robust.Server.Audio;
 using Robust.Server.GameObjects;
+using Robust.Shared.Audio;
 
 
 namespace Content.Server._EE.Shadowling;
@@ -30,6 +32,7 @@ public sealed class ShadowlingBlackRecuperationSystem : EntitySystem
     [Dependency] private readonly LesserShadowlingSystem _lesserShadowling = default!;
     [Dependency] private readonly PolymorphSystem _polymorph = default!;
     [Dependency] private  readonly HumanoidAppearanceSystem _humanoidAppearance = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
     /// <inheritdoc/>
     public override void Initialize()
     {
@@ -72,6 +75,7 @@ public sealed class ShadowlingBlackRecuperationSystem : EntitySystem
             return;
 
         var target = args.Args.Target.Value;
+        _audio.PlayPvs(component.BlackRecSound, target, AudioParams.Default.WithVolume(-1f));
 
         if (!_mobStateSystem.IsAlive(target))
         {

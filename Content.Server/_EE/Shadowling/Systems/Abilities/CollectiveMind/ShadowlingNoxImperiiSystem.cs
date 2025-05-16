@@ -6,6 +6,9 @@ using Content.Shared._EE.Shadowling.Components;
 using Content.Shared.Alert;
 using Content.Shared.DoAfter;
 using Content.Shared.Popups;
+using Robust.Server.Audio;
+using Robust.Shared.Audio;
+using Robust.Shared.Player;
 
 
 namespace Content.Server._EE.Shadowling;
@@ -21,6 +24,7 @@ public sealed class ShadowlingNoxImperiiSystem : EntitySystem
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly PopupSystem _popups = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
     /// <inheritdoc/>
     public override void Initialize()
     {
@@ -62,7 +66,9 @@ public sealed class ShadowlingNoxImperiiSystem : EntitySystem
         sling.HeatDamageProjectileModifier.DamageDict["Heat"] = 4;
 
         _alerts.ClearAlert(uid, sling.AlertProto);
-        //todo: visuals and sound!!!
+
+        // Indicates that the crew should start caring more since the Shadowling is close to ascension
+        _audio.PlayGlobal(new SoundPathSpecifier("/Audio/Effects/ghost.ogg"), Filter.Broadcast(), false, AudioParams.Default.WithVolume(-2f));
 
         _popups.PopupEntity(Loc.GetString("shadowling-nox-imperii-done"), uid, uid, PopupType.Medium);
     }

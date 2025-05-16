@@ -5,7 +5,9 @@ using Content.Shared._EE.Shadowling;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Stealth.Components;
+using Robust.Server.Audio;
 using Robust.Server.GameObjects;
+using Robust.Shared.Audio;
 using Robust.Shared.Timing;
 
 
@@ -23,6 +25,7 @@ public sealed class ShadowlingShadowWalkSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private  readonly TransformSystem _transform = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -57,6 +60,7 @@ public sealed class ShadowlingShadowWalkSystem : EntitySystem
                     {
                         _stealth.SetVisibility(uid, 1f, stealth);
                         RemComp<StealthComponent>(uid);
+                        _audio.PlayPvs(shadowWalk.ShadowWalkSound, uid, AudioParams.Default.WithVolume(-2f).WithPitchScale(2f));
                     }
                     shadowWalk.IsActive = false;
                     _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
@@ -84,7 +88,7 @@ public sealed class ShadowlingShadowWalkSystem : EntitySystem
 
         _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
 
-        // todo: sound
+        _audio.PlayPvs(comp.ShadowWalkSound, uid, AudioParams.Default.WithVolume(-2f));
         var effectEnt = Spawn(comp.ShadowWalkEffectIn, _transform.GetMapCoordinates(uid));
         _transform.SetParent(effectEnt, uid);
 

@@ -17,7 +17,9 @@ using Content.Shared.Light.Components;
 using Content.Shared.Popups;
 using Content.Shared.Storage;
 using Content.Shared.Verbs;
+using Robust.Server.Audio;
 using Robust.Server.GameObjects;
+using Robust.Shared.Audio;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -40,6 +42,7 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly PoweredLightSystem _poweredLight = default!;
     [Dependency] private readonly NavMapSystem _navMap = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -175,6 +178,8 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
 
         _entityStorage.Insert(uid, eggUid);
 
+        _audio.PlayPvs(component.AscensionEnterSound, eggUid, AudioParams.Default.WithVolume(-2f));
+
         var position = _transform.GetMapCoordinates(uid);
         _chat.DispatchGlobalAnnouncement(
             Loc.GetString("shadowling-ascension-message", ("location", FormattedMessage.RemoveMarkupPermissive(_navMap.GetNearestBeaconString(position)))),
@@ -249,6 +254,12 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
 
             EnsureComp<NightmareComponent>(newUid.Value);
         }
+
+        _chat.DispatchGlobalAnnouncement(Loc.GetString("shadowling-ascended-message"),
+            Loc.GetString("shadowling-destroy-engines-sender"),
+            true,
+            component.AscensionCompleteSound,
+            Color.MediumPurple);
     }
 
     private void DestroyLights()

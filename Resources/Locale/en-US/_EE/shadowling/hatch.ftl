@@ -15,3 +15,7 @@ shadowling-ascension-message =
     An unidentified life-form is completing its evolution at {$location}.
     All remaining personnel are ordered to eliminate the source at any cost.
     Failure to do so will result in total station collapse and absolute loss of all crew.
+
+shadowling-ascended-message =
+    The air turns to ash. The stars blink in fear. Something ancient has awakened beneath your feet — a will not born of man, but of shadow and hunger.
+    It has remembered its name. It has remembered you. There will be no dawn.

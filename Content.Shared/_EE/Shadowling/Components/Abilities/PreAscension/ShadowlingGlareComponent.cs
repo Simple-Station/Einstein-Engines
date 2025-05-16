@@ -1,4 +1,5 @@
 using System.Numerics;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -65,5 +66,5 @@ public sealed partial class ShadowlingGlareComponent : Component
     public string? EffectGlare = "ShadowlingGlareEffect";
 
     [DataField]
-    public Vector2 Offset = Vector2.Zero;
+    public SoundSpecifier? EffectGlareSound = new SoundPathSpecifier("/Audio/_EE/Shadowling/glare.ogg");
 }

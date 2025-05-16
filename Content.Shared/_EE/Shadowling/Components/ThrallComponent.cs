@@ -1,5 +1,6 @@
 using Content.Shared.Language;
 using Content.Shared.StatusIcon;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -34,11 +35,8 @@ public sealed partial class ThrallComponent : Component
     [DataField]
     public bool NightVisionMode;
 
-    /// <summary>
-    /// Sound that plays when you are chosen as Thrall. (Need to find it)
-    /// </summary>
-    // [DataField]
-    // public SoundSpecifier ThrallConverted = new SoundPathSpecifier();
+    [DataField]
+    public SoundSpecifier? ThrallConverted = new SoundPathSpecifier("/Audio/_EE/Shadowling/thrall.ogg");
 
     /// <summary>
     /// The shadowling that converted the Thrall

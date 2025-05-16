@@ -28,7 +28,9 @@ using Content.Shared.Popups;
 using Content.Shared.Roles;
 using Content.Shared.StatusEffect;
 using Content.Shared.Stunnable;
+using Robust.Server.Audio;
 using Robust.Server.GameObjects;
+using Robust.Shared.Audio;
 
 
 namespace Content.Server._EE.Shadowling;
@@ -51,6 +53,7 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
     [Dependency] private readonly SharedObjectivesSystem _sharedObjectives = default!;
     [Dependency] private  readonly HumanoidAppearanceSystem _appearance = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
 
     public override void Initialize()
     {
@@ -306,5 +309,10 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
 
             OnThrallAdded(uid, target, sling);
         }
+
+        _audio.PlayPvs(
+            new SoundPathSpecifier("/Audio/Items/Defib/defib_zap.ogg"),
+            uid,
+            AudioParams.Default.WithVolume(-2f).WithPitchScale(-3f));
     }
 }

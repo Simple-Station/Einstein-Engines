@@ -2,6 +2,7 @@ using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Polymorph;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -35,5 +36,8 @@ public sealed partial class ShadowlingBlackRecuperationComponent : Component
 
     [DataField]
     public string LesserShadowlingEyes = "LesserShadowlingEyes";
+
+    [DataField]
+    public SoundSpecifier? BlackRecSound = new SoundPathSpecifier("/Audio/Items/Defib/defib_zap.ogg");
 }
 

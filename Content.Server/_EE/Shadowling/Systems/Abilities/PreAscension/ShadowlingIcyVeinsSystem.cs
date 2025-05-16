@@ -8,7 +8,9 @@ using Content.Shared.Abilities.Psionics;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
 using Content.Shared.StatusEffect;
+using Robust.Server.Audio;
 using Robust.Server.GameObjects;
+using Robust.Shared.Audio;
 using Robust.Shared.Timing;
 
 
@@ -27,6 +29,7 @@ public sealed class ShadowlingIcyVeinsSystem : EntitySystem
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -72,6 +75,8 @@ public sealed class ShadowlingIcyVeinsSystem : EntitySystem
 
         var effectEnt = Spawn(component.IcyVeinsEffect, _transform.GetMapCoordinates(uid));
         _transform.SetParent(effectEnt, uid);
+
+        _audio.PlayPvs(component.IcyVeinsSound, uid, AudioParams.Default.WithVolume(-1f));
 
         // _actions.StartUseDelay(args.Action);
     }

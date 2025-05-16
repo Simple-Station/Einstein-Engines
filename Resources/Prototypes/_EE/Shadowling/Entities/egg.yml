@@ -91,6 +91,11 @@
   - type: EntityStorageVisuals
     stateDoorOpen: open
     stateDoorClosed: closed
+  - type: AmbientSound
+    volume: -1
+    range: 8
+    sound:
+      path: /Audio/_EE/Shadowling/heartbeat.ogg
 
 - type: entity
   id: AscensionEggShadowlingInside

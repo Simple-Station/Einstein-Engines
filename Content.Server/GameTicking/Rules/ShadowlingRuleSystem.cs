@@ -18,7 +18,7 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly MobStateSystem _mob = default!;
 
-    public readonly SoundSpecifier BriefingSound = new SoundPathSpecifier("/Audio/_Goobstation/Ambience/Antag/changeling_start.ogg"); // todo: change later
+    public readonly SoundSpecifier BriefingSound = new SoundPathSpecifier("/Audio/_EE/Shadowling/shadowling.ogg");
 
     [ValidatePrototypeId<EntityPrototype>] EntProtoId _mindRole = "MindRoleShadowling";
 

@@ -6,24 +6,17 @@
   description: A special device designed for reverting mind control.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Melee/flash.rsi # todo: remove placeholder
-    layers:
-    - state: flash
-      map: [ "enum.FlashVisuals.BaseLayer" ]
-    - state: flashing
-      map: [ "enum.FlashVisuals.LightLayer" ]
-      visible: false
-      shader: unshaded
+    sprite: _EE/Shadowling/anti_mind_control.rsi
+    state: anti-mind-control
   - type: Item
     size: Small
-    sprite: Objects/Weapons/Melee/flash.rsi
+    sprite: _EE/Shadowling/anti_mind_control.rsi
   - type: AntiMindControlItem
-    # you can change the duration here (check comp)
 
 - type: entity
   parent: ArmBladeChangeling
   id: LightEaterArmBlade
   name: Light Eater
-  description: An arm-blade that can rip through lights and ash them in a moment's notice. It's a very good weapon, too.
+  description: An arm-blade that can rip through lights and ash them in a moment's notice.
   components:
   - type: LightEater

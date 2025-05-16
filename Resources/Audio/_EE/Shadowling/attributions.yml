@@ -2,3 +2,23 @@
   license: "CC-3.0-BY-SA"
   copyright: "Taken from tgstation"
   source: "https://github.com/tgstation/tgstation/pull/8157/commits/c9338f72126114446dfbff206b458b92a324fbe3"
+
+- files: ["shadowling"]
+  license: "CC0"
+  copyright: "Taken from opengameart.org: Dark Ambiences"
+  source: "Ogrebane"
+
+- files: ["thrall"]
+  license: "CC0"
+  copyright: "Taken from opengameart.org: Dark Ambiences"
+  source: "Ogrebane"
+
+- files: ["ascension"]
+  license: "CC0"
+  copyright: "Taken from opengameart.org: Doomsday Laser Cannon Sound Effect"
+  source: "TAD"
+
+- files: ["heartbeat"]
+  license: "CC0"
+  copyright: "Taken from opengameart.org: Heartbeat sounds"
+  source: "bart"

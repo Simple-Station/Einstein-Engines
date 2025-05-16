@@ -5,6 +5,8 @@ using Content.Server.Storage.EntitySystems;
 using Content.Shared._EE.Clothing.Components;
 using Content.Shared._EE.Shadowling;
 using Content.Shared.Popups;
+using Robust.Server.Audio;
+using Robust.Shared.Audio;
 using Robust.Shared.Timing;
 
 
@@ -21,6 +23,7 @@ public sealed class ShadowlingEggHatchSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly EntityStorageSystem _entityStorage = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
 
     public override void Update(float frameTime)
     {
@@ -39,18 +42,21 @@ public sealed class ShadowlingEggHatchSystem : EntitySystem
             if (comp.CooldownTimer <= 12 && !comp.HasFirstMessageAppeared)
             {
                 _popupSystem.PopupEntity(Loc.GetString("sling-hatch-first"), uid, sUid, PopupType.Medium);
+                _audio.PlayPvs(comp.CrackFirst, uid, AudioParams.Default.WithVolume(-2f));
                 comp.HasFirstMessageAppeared = true;
             }
 
             if (comp.CooldownTimer <= 7 && !comp.HasSecondMessageAppeared)
             {
                 _popupSystem.PopupEntity(Loc.GetString("sling-hatch-second"), uid, sUid, PopupType.Medium);
+                _audio.PlayPvs(comp.CrackSecond, uid, AudioParams.Default.WithVolume(-2f));
                 comp.HasSecondMessageAppeared = true;
             }
 
             if (comp.CooldownTimer <= 3 && !comp.HasThirdMessageAppeared)
             {
                 _popupSystem.PopupEntity(Loc.GetString("sling-hatch-third"), uid, sUid, PopupType.Medium);
+                _audio.PlayPvs(comp.CrackFirst, uid, AudioParams.Default.WithVolume(-2f).WithPitchScale(2f));
                 comp.HasThirdMessageAppeared = true;
             }
 
@@ -69,6 +75,8 @@ public sealed class ShadowlingEggHatchSystem : EntitySystem
 
         if (!TryComp<ShadowlingComponent>(sling, out var shadowling))
             return;
+
+        _audio.PlayPvs(comp.CrackThird, egg, AudioParams.Default.WithVolume(-2f));
 
         // Remove sling from egg
         if (TryComp<EntityStorageComponent>(egg, out var storage))

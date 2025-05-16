@@ -1,3 +1,4 @@
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 
 
@@ -14,7 +15,7 @@ public sealed partial class ShadowlingAscensionEggComponent : Component
     public TimeSpan NextUpdateTime = TimeSpan.Zero;
 
     [DataField]
-    public TimeSpan UpdateInterval = TimeSpan.FromSeconds(300);
+    public TimeSpan UpdateInterval = TimeSpan.FromSeconds(10);
 
     [DataField]
     public TimeSpan AscendingEffectInterval = TimeSpan.FromSeconds(8.02);
@@ -42,4 +43,13 @@ public sealed partial class ShadowlingAscensionEggComponent : Component
 
     [DataField]
     public EntityUid? AscendingEffectEntity;
+
+    [DataField]
+    public SoundSpecifier? AscensionEnterSound = new SoundPathSpecifier("/Audio/_EE/Shadowling/egg/ascension_enter.ogg");
+
+    [DataField]
+    public SoundSpecifier AscensionCompleteSound = new SoundPathSpecifier("/Audio/_EE/Shadowling/ascension.ogg");
+
+    [DataField]
+    public SoundSpecifier AscensionEnterAnnounceSound = new SoundPathSpecifier("/Audio/Misc/epsilon.ogg");
 }

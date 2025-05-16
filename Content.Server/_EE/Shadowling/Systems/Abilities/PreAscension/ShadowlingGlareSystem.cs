@@ -6,7 +6,9 @@ using Content.Shared._EE.Shadowling;
 using Content.Shared.Coordinates.Helpers;
 using Content.Shared.Popups;
 using Content.Shared.StatusEffect;
+using Robust.Server.Audio;
 using Robust.Server.GameObjects;
+using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Timing;
 
@@ -25,6 +27,7 @@ public sealed class ShadowlingGlareSystem : EntitySystem
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly StatusEffectsSystem _effects = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
 
     public override void Initialize()
     {
@@ -96,6 +99,8 @@ public sealed class ShadowlingGlareSystem : EntitySystem
 
         var effectEnt = Spawn(comp.EffectGlare, _transform.GetMapCoordinates(uid));
         _transform.SetParent(effectEnt, uid);
+
+        _audio.PlayPvs(comp.EffectGlareSound, uid, AudioParams.Default.WithVolume(-2f));
 
         _popup.PopupEntity(Loc.GetString("shadowling-glare-target"), uid, target, PopupType.MediumCaution);
         // _actions.StartUseDelay(args.Action);

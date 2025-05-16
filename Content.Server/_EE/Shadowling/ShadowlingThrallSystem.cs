@@ -46,10 +46,9 @@ public sealed class ShadowlingThrallSystem : EntitySystem
         }
 
         if (mind?.Session != null)
-            _antag.SendBriefing(uid, Loc.GetString("thrall-role-greeting"), Color.MediumPurple, null); // todo: find sfx
+            _antag.SendBriefing(uid, Loc.GetString("thrall-role-greeting"), Color.MediumPurple, component.ThrallConverted);
 
         _language.AddLanguage(uid, component.SlingLanguageId);
-
 
 
         var nightVision = EnsureComp<NightVisionComponent>(uid);

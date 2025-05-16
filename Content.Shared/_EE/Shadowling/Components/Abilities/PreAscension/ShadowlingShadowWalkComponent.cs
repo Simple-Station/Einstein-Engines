@@ -1,3 +1,4 @@
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 
 
@@ -10,7 +11,7 @@ namespace Content.Shared._EE.Shadowling;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class ShadowlingShadowWalkComponent : Component
 {
-    public string? ActionRapidRehatch = "ActionShadowWalk";
+    public string? ActionShadowWalk = "ActionShadowWalk";
 
     [DataField]
     public bool IsActive;
@@ -35,4 +36,7 @@ public sealed partial class ShadowlingShadowWalkComponent : Component
 
     [DataField]
     public string? ShadowWalkEffectOut = "ShadowlingShadowWalkOutEffect";
+
+    [DataField]
+    public SoundSpecifier? ShadowWalkSound = new SoundPathSpecifier("/Audio/Effects/bamf.ogg");
 }
