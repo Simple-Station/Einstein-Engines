@@ -238,6 +238,7 @@
   components:
     - type: Tag
       tags:
+        - Tourniquet #Goobstation - ParamedHypo
         - SecBeltEquip
     - type: Sprite
       state: tourniquet

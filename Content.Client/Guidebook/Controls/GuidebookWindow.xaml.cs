@@ -63,7 +63,7 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler
         if (!_parsingMan.TryAddMarkup(EntryContainer, file.ReadToEnd()))
         {
             EntryContainer.AddChild(new Label() { Text = "ERROR: Failed to parse document." });
-            Logger.Error($"Failed to parse contents of guide document {entry.Id}.");
+            Logger.GetSawmill("guidebook.window").Error($"Failed to parse contents of guide document {entry.Id}.");
         }
     }
 
@@ -149,7 +149,7 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler
         {
             // TODO GUIDEBOOK Maybe allow duplicate entries?
             // E.g., for adding medicine under both chemicals & the chemist job
-            Logger.Error($"Adding duplicate guide entry: {id}");
+            Logger.GetSawmill("guidebook.window").Error($"Adding duplicate guide entry: {id}");
             return null;
         }
 

@@ -273,4 +273,5 @@
   - type: MindRole
     antagPrototype: Changeling
     exclusiveAntag: true
+    roleType: SoloAntagonist
   - type: ChangelingRole

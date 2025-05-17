@@ -157,6 +157,7 @@
 
   defaultModules:
   - BorgModuleTreatment
+  - BorgModuleDiagnosis
 
   radioChannels:
   - Science

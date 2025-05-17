@@ -248,6 +248,8 @@
     - RiotShield
     - SpeedLoaderMagnum
     - SpeedLoaderMagnumEmpty
+    - MagazineLightRifleMarkOneEmpty
+    - MagazineLightRifleMarkOne
     - GrenadeFlashBang # Goobstation
     # .35 Caseless Pistol
     - MagazinePistolCaselessRiflePractice # EE
@@ -269,6 +271,14 @@
     - MagazineMagnum # Goobstation
     - MagazineMagnumLeverRifleEmpty # Goobstation
     - MagazineMagnumLeverRifle # Goobstation
+    - CartridgeEpinephrine # Goobstation
+    - CartridgeBicaridine # Goobstation
+    - CartridgeDermaline # Goobstation
+    - CartridgeEphedrine # Goobstation
+    - CartridgeAtropine # Goobstation
+    - CartridgePuncturase # Goobstation
+    - SecHypo # Goobstation
+    - ParamedHypo # Goobstation - ParamedHypo
 
 - type: entity
   id: AutolatheHyperConvection
@@ -1004,6 +1014,12 @@
       - ClothingHeadHelmetBasic
       - MagazineShotgunBeanbag
       - ShellTranquilizer
+      - CartridgeEpinephrine # Goobstation
+      - CartridgeBicaridine # Goobstation
+      - CartridgeDermaline # Goobstation
+      - CartridgeAtropine # Goobstation
+      - CartridgeSaline # Goobstation
+      - SecHypo # Goobstation
       - BoxBeanbag
       - CartridgePistolRubber
       - CartridgeMagnumRubber
@@ -1032,6 +1048,8 @@
       - MagazineUniversalMagnumEmpty
       - MagazineUniversalMagnum
       - MagazineUniversalMagnumRubber
+      - MagazineLightRifleMarkOneEmpty
+      - MagazineLightRifleMarkOne
     dynamicRecipes:
       - Truncheon
       - Terminus
@@ -1237,6 +1255,8 @@
         - MagazineBoxCaselessRiflePractice # EE
         - MagazineBoxCaselessRifle # EE
         - MagazineBoxCaselessRifleRubber # EE
+        - MagazineLightRifleMarkOneEmpty
+        - MagazineLightRifleMarkOne
     - type: MaterialStorage
       whitelist:
         tags:
@@ -1313,6 +1333,12 @@
     - AACTablet # DeltaV
     - VehicleWheelchairFolded # Goobstation - Vehicles
     - SyringeCase # Morphine
+    - CartridgeAtropine # Goobstation - ParamedHypo
+    - CartridgeEpinephrine # Goobstation - ParamedHypo
+    - CartridgeBicaridine # Goobstation - ParamedHypo
+    - CartridgeDermaline # Goobstation - ParamedHypo
+    - CartridgeSaline # Goobstation - ParamedHypo
+    - ParamedHypo # Goobstation - ParamedHypo
     dynamicRecipes:
     - ChemicalPayload
     - CryostasisBeaker
@@ -1329,6 +1355,11 @@
     - AdvancedRetractor
     - OmnimedTool
     - MedicalCyberneticEyes
+  - type: EmagLatheRecipes
+    emagStaticRecipes:
+    - CartridgeEphedrine
+    - CartridgePuncturase
+    - CartridgeTirizene
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: StealTarget
