@@ -77,3 +77,9 @@
     location: supermatter
   - type: SinguloFood
     energy: 10000
+  - type: LanguageSpeaker
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic
