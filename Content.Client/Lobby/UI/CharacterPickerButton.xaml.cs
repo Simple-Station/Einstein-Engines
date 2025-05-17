@@ -62,6 +62,8 @@ public sealed partial class CharacterPickerButton : ContainerButton
         View.SetEntity(_previewDummy);
         DescriptionLabel.Text = description;
 
+        var profileEditorVisible = CustomizeButton.Pressed;
+
         ConfirmDeleteButton.OnPressed += _ =>
         {
             Parent?.RemoveChild(this);
