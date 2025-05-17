@@ -16206,3 +16206,10 @@ Entries:
   id: 7255
   time: '2025-05-17T21:10:34.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2427
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Added a medical and security cartridge autoinjector.
+  id: 7256
+  time: '2025-05-17T21:11:03.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2258
