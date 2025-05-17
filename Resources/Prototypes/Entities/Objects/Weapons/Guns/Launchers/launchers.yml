@@ -34,6 +34,9 @@
   - type: DamageOtherOnHit
     staminaCost: 14
   - type: Execution
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-inanimate
+    weight: 0.25
 
 - type: entity
   name: china lake

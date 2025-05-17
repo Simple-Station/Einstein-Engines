@@ -58,6 +58,9 @@
         Blunt: 2.5
   - type: DamageOtherOnHit
     staminaCost: 7.5
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-inanimate
+    weight: 0.25
 
 - type: entity
   name: Kardashev-Mosin
@@ -68,8 +71,8 @@
   - type: Sprite
     sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
   - type: Gun
-    fireRate: 0.75 
-    damageModifier: 1.5 
+    fireRate: 0.75
+    damageModifier: 1.5
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
