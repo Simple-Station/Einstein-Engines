@@ -55,6 +55,12 @@
       soundHit:
         path: /Audio/Weapons/smash.ogg
     - type: ToggleCellDraw
+    - type: LanguageSpeaker
+    - type: LanguageKnowledge
+      speaks:
+      - TauCetiBasic
+      understands:
+      - TauCetiBasic
 
 - type: entity
   id: Defibrillator
