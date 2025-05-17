@@ -9,14 +9,18 @@
     sprite: _Goobstation/Changeling/hammer.rsi
     state: icon
   - type: MeleeWeapon
-    angle: 0
     wideAnimationRotation: -90
-    attackRate: 0.75
+    attackRate: 1.35
     damage:
       types:
         Blunt: 20
         Structural: 50
-    heavyStaminaCost: 12
+    heavyStaminaCost: 10
+    heavyRangeModifier: 1.75
+    heavyRateModifier: 2.5
+    heavyDamageBaseModifier: 1.5
+    maxTargets: 12
+    angle: 150
     soundHit:
       collection: MetalThud
   - type: Item

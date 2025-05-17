@@ -2,7 +2,7 @@
 - type: loadout
   id: LoadoutHeadBeaverHat
   category: Head
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingHeadHatBeaverHat
@@ -17,7 +17,7 @@
 - type: loadout
   id: LoadoutHeadTophat
   category: Head
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingHeadHatTophat
@@ -28,7 +28,7 @@
 - type: loadout
   id: LoadoutHeadFedoraWhite
   category: Head
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -40,7 +40,7 @@
 - type: loadout
   id: LoadoutHeadFlatBlack
   category: Head
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingHeadHatFlatBlack
@@ -51,7 +51,7 @@
 - type: loadout
   id: LoadoutHeadFlatBrown
   category: Head
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingHeadHatFlatBrown
@@ -66,7 +66,7 @@
 - type: loadout
   id: LoadoutHeadHatCowboyWhite
   category: Head
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -78,7 +78,7 @@
 - type: loadout
   id: LoadoutHeadHatCowboyBountyHunter
   category: Head
-  cost: 1
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:
@@ -104,7 +104,7 @@
 - type: loadout
   id: LoadoutHeadBellhop
   category: Head
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingHeadHatBellhop
@@ -210,7 +210,7 @@
 - type: loadout
   id: LoadoutHeadFishCap
   category: Head
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingHeadFishCap
@@ -225,7 +225,7 @@
 - type: loadout
   id: LoadoutHeadRastaHat
   category: Head
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingHeadRastaHat
@@ -240,7 +240,7 @@
 - type: loadout
   id: LoadoutHeadFez
   category: Head
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingHeadHatFez
@@ -251,7 +251,7 @@
 - type: loadout
   id: LoadoutHeadBowlerHat
   category: Head
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingHeadHatBowlerHat
@@ -263,7 +263,7 @@
 - type: loadout
   id: LoadoutHeadGreyFlatcap
   category: Head
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingHeadHatGreyFlatcap
@@ -274,7 +274,7 @@
 - type: loadout
   id: LoadoutHeadBrownFlatcap
   category: Head
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingHeadHatBrownFlatcap
@@ -290,7 +290,7 @@
 - type: loadout
   id: LoadoutHeadBeretWhite
   category: Head
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -302,7 +302,7 @@
 - type: loadout
   id: LoadoutHeadBeretArtist
   category: Head
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -314,7 +314,7 @@
 - type: loadout
   id: LoadoutHeadBeretPeaked
   category: Head
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -327,7 +327,7 @@
 - type: loadout
   id: LoadoutHeadBeanie
   category: Head
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -339,7 +339,7 @@
 - type: loadout
   id: LoadoutHeadBeanieWinter
   category: Head
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -351,7 +351,7 @@
 - type: loadout
   id: LoadoutHeadBeanieSubmariner
   category: Head
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -363,7 +363,7 @@
 - type: loadout
   id: LoadoutHeadBeanieTight
   category: Head
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -375,7 +375,7 @@
 - type: loadout
   id: LoadoutHeadSlouch
   category: Head
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -387,7 +387,7 @@
 - type: loadout
   id: LoadoutHeadSunVisor
   category: Head
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -578,6 +578,7 @@
   category: Head
   cost: 0
   canBeHeirloom: true
+  exclusive: true
   guideEntry: TCFLInfo
   items:
     - ClothingHeadHatTCAFBeretDress
@@ -596,6 +597,7 @@
   category: Head
   cost: 0
   canBeHeirloom: true
+  exclusive: true
   guideEntry: TCFLInfo
   items:
     - ClothingHeadHatTCAFBeretField
@@ -614,6 +616,7 @@
   category: Head
   cost: 0
   canBeHeirloom: true
+  exclusive: true
   guideEntry: TCFLInfo
   items:
     - ClothingHeadHatTCFLBeretDress
@@ -632,6 +635,7 @@
   category: Head
   cost: 0
   canBeHeirloom: true
+  exclusive: true
   guideEntry: TCFLInfo
   items:
     - ClothingHeadHatTCFLBeretField
@@ -650,6 +654,7 @@
   category: Head
   cost: 0
   canBeHeirloom: true
+  exclusive: true
   guideEntry: TCFLInfo
   items:
     - ClothingHeadHatTCFLBeretSentinel
@@ -668,6 +673,7 @@
   category: Head
   cost: 0
   canBeHeirloom: true
+  exclusive: true
   guideEntry: TCFLInfo
   items:
     - ClothingHeadHatTCFLSoftCap
@@ -677,6 +683,159 @@
     - !type:CharacterNationalityRequirement
       nationalities:
         - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+
+# Solarian headwear
+- type: loadout
+  id: ClothingHeadHatSANArmyCap
+  category: Head
+  cost: 0
+  canBeHeirloom: true
+  exclusive: true
+  guideEntry: SANInfo
+  items:
+    - ClothingHeadHatSANArmyCap
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Solarian
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+
+- type: loadout
+  id: ClothingHeadHatSANArmyField
+  category: Head
+  cost: 0
+  canBeHeirloom: true
+  exclusive: true
+  guideEntry: SANInfo
+  items:
+    - ClothingHeadHatSANArmyField
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Solarian
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+
+- type: loadout
+  id: ClothingHeadHatSANArmyFieldGrey
+  category: Head
+  cost: 0
+  canBeHeirloom: true
+  exclusive: true
+  guideEntry: SANInfo
+  items:
+    - ClothingHeadHatSANArmyFieldGrey
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Solarian
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+
+- type: loadout
+  id: ClothingHeadHatSANArmyGarrison
+  category: Head
+  cost: 0
+  canBeHeirloom: true
+  exclusive: true
+  guideEntry: SANInfo
+  items:
+    - ClothingHeadHatSANArmyGarrison
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Solarian
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+
+- type: loadout
+  id: ClothingHeadHatSANMarineUtility
+  category: Head
+  cost: 0
+  canBeHeirloom: true
+  exclusive: true
+  guideEntry: SANInfo
+  items:
+    - ClothingHeadHatSANMarineUtility
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Solarian
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+
+- type: loadout
+  id: ClothingHeadHatSANMarineUtilityGrey
+  category: Head
+  cost: 0
+  canBeHeirloom: true
+  exclusive: true
+  guideEntry: SANInfo
+  items:
+    - ClothingHeadHatSANMarineUtilityGrey
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Solarian
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+
+- type: loadout
+  id: ClothingHeadHatSANNavyCap
+  category: Head
+  cost: 0
+  canBeHeirloom: true
+  exclusive: true
+  guideEntry: SANInfo
+  items:
+    - ClothingHeadHatSANNavyCap
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Solarian
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+
+- type: loadout
+  id: ClothingHeadHatSANWheelCap
+  category: Head
+  cost: 0
+  canBeHeirloom: true
+  exclusive: true
+  guideEntry: SANInfo
+  items:
+    - ClothingHeadHatSANWheelCap
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Solarian
     - !type:CharacterLifepathRequirement
       lifepaths:
         - WarVet

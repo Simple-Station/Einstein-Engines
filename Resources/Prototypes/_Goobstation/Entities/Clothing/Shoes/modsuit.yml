@@ -23,9 +23,9 @@
   - type: SealableClothing
     sealUpPopup: sealable-clothing-seal-up-boots
     sealDownPopup: sealable-clothing-seal-down-boots
-  - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+  - type: ToggleClothing
+    action: ActionToggleMagboots
+  - type: Magboots
   - type: SealableClothingVisuals
     visualLayers:
       shoes:

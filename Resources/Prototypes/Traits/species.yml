@@ -1,7 +1,7 @@
 - type: trait
   id: Swashbuckler
   category: Physical
-  points: -1
+  points: 0
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -26,7 +26,7 @@
 - type: trait
   id: Spearmaster
   category: Physical
-  points: -1
+  points: 0
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -50,7 +50,7 @@
 - type: trait
   id: WeaponsGeneralist
   category: Physical
-  points: -1
+  points: 0
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -74,7 +74,7 @@
 - type: trait
   id: Mystic
   category: Mental
-  points: -1
+  points: 0
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -111,7 +111,7 @@
 - type: trait
   id: ShadowkinBlackeye
   category: Mental
-  points: 4
+  points: 5
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -128,12 +128,12 @@
 - type: trait
   id: MothFlight
   category: Physical
-  points: -5
+  points: -2
   functions:
     - !type:TraitAddComponent
       components:
         - type: Flight
-          speedModifier: 1.2 # gives an effective 32% increase over walking with base moth weightless modifier
+          speedModifier: 1.19 # gives an effective ~31% (30.9%) increase over walking with base moth weightless modifier
           flapInterval: 0.75
           needsHands: false
   requirements:
@@ -142,3 +142,94 @@
         - Moth
     - !type:CharacterWeightRequirement # big moffs are too heavy to fly
       max: 60
+
+- type: trait
+  id: IPCInefficientCogitator
+  category: Physical
+  points: 3
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: Silicon
+          entityType: enum.SiliconType.Player
+          batteryPowered: true
+          drainPerSecond: 2 # ~33% in power drain (1.5->2)
+          chargeThresholdMid: 0.80
+          chargeThresholdLow: 0.35
+          chargeThresholdCritical: 0.10
+          speedModifierThresholds:
+            4: 1
+            3: 1
+            2: 0.80
+            1: 0.45
+            0: 0.00
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+
+- type: trait
+  id: IPCBrittleBoneDisease
+  category: Physical
+  points: 6
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: CritModifier
+          critThresholdModifier: -60
+    - !type:TraitReplaceComponent
+      components:
+        - type: DeadModifier
+          deadThresholdModifier: -60
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+
+- type: trait
+  id: IPCFragileCircuits
+  category: Physical
+  points: 4 # shock is rare as-is, maybe raise if it becomes more common
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: KillOnDamage
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+
+- type: trait
+  id: IPCFaultyWaterproofing
+  category: Physical
+  points: 3
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: Reactive
+          groups:
+            Flammable: [Touch]
+            Extinguish: [Touch]
+            Acidic: [Touch]
+          reactions:
+            - reagents: [Water, SpaceCleaner]
+              methods: [Touch]
+              effects:
+                - !type:WashCreamPieReaction
+            - reagents: [ Water ]
+              methods: [ Touch ]
+              effects:
+                - !type:HealthChange
+                  scaleByQuantity: true
+                  damage:
+                    types:
+                      Shock: 2.5
+                - !type:PopupMessage
+                  type: Pvs
+                  visualType: LargeCaution
+                  messages: [ "faultyWaterproofing-damage-popup" ]
+                  probability: 1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC

@@ -77,7 +77,7 @@
       color: "#21A52E"
 
 - type: entity
-  parent: [ClothingModsuitChestplateStandard]
+  parent: [ClothingModsuitChestplateStandard, BaseIntegratedManeuveringThrusters]
   id: ClothingModsuitChestplateBloodredModsuit
   name: EE-99MS "Raider" Modsuit Chestplate
   description: A mass production model of a modular-tacsuit that once made headlines for its showings in Solarian media. After being rejected in favor of the Shanlin tacsuit, these suits have mysteriously become commonplace among frontier pirate crews.
@@ -117,6 +117,8 @@
       visualLayers:
         outerClothing:
         - state: equipped-OUTERCLOTHING-sealed
+    - type: Jetpack
+      moleUsage: 0 #Cant refill the modsuit's jetpack gas tank due to the chestplate being unable to be put into a canister
 
 - type: entity
   parent: [ClothingModsuitBootsStandard]
@@ -131,14 +133,8 @@
     - type: Tag
       tags:
         - WhitelistChameleon
-    - type: ClothingSpeedModifier
-      walkModifier: 1
-      sprintModifier: 1
     - type: ToggleClothing
       action: ActionToggleMagboots
-    - type: ComponentToggler
-      components:
-        - type: NoSlip
     - type: Magboots
     - type: SealableClothingVisuals
       visualLayers:
@@ -226,7 +222,7 @@
     - type: NightVision
 
 - type: entity
-  parent: [ClothingModsuitChestplateStandard]
+  parent: [ClothingModsuitChestplateStandard, BaseIntegratedManeuveringThrusters]
   id: ClothingModsuitChestplateEliteSyndicateModsuit
   name: EE-122MS "Jaeger" Modsuit Chestplate
   description: A mass production modular take on the Shiwei tacsuit. It trades a lot of the Shiwei's enhanced protection for modular equipment gear. Compared with the Raider modsuit, it offers unparalleled protection from energy weapons, but its ballistic protection leaves much to be desired.
@@ -264,6 +260,9 @@
       visualLayers:
         outerClothing:
         - state: equipped-OUTERCLOTHING-sealed
+    - type: Jetpack
+      moleUsage: 0 #Cant refill the modsuit's jetpack gas tank due to the chestplate being unable to be put into a canister
+
 - type: entity
   parent: [ClothingModsuitBootsStandard]
   id: ClothingModsuitBootsEliteSyndicateModsuit

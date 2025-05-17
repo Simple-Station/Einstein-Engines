@@ -1,0 +1,28 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckFurWrap
+  name: fur mantle
+  description: A synthetic fur mantle.
+  components:
+  - type: Sprite
+    sprite: _EE/Clothing/Generic/Neck/fur_wrap.rsi
+  - type: Clothing
+    sprite: _EE/Clothing/Generic/Neck/fur_wrap.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakHosFur
+  name: head of security's fur cloak
+  description: An exquisite gold-trimmed dark fur cloak fitting for taking up heroic poses on mysteriously placed tactical rocks in space. Lead your security force in style.
+  components:
+  - type: Sprite
+    sprite: _EE/Clothing/Generic/Neck/hos_fur_cloak.rsi
+  - type: Clothing
+    sprite: _EE/Clothing/Generic/Neck/hos_fur_cloak.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-NECK
+      - state: equipped-NECK-unshaded
+        shader: unshaded
+  - type: StealTarget
+    stealGroup: HeadCloak

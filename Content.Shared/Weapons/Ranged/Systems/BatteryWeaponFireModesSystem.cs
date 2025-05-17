@@ -82,6 +82,10 @@ public sealed class BatteryWeaponFireModesSystem : EntitySystem
 
     private void OnUseInHandEvent(EntityUid uid, BatteryWeaponFireModesComponent component, UseInHandEvent args)
     {
+        if(args.Handled)
+            return;
+
+        args.Handled = true;
         if (component.FireModes.Count < 2)
             return;
 

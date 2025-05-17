@@ -1,13 +1,9 @@
 using Content.Shared.Administration.Logs;
 using Content.Shared.Contests;
 using Content.Shared.Popups;
-using Content.Shared.Psionics;
 using Content.Shared.Psionics.Glimmer;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
-using Content.Shared.Mobs.Systems;
-using Content.Shared.FixedPoint;
-using Content.Shared.Rejuvenate;
 
 namespace Content.Shared.Abilities.Psionics
 {
@@ -19,7 +15,6 @@ namespace Content.Shared.Abilities.Psionics
         [Dependency] private readonly GlimmerSystem _glimmerSystem = default!;
         [Dependency] private readonly IRobustRandom _robustRandom = default!;
         [Dependency] private readonly ContestsSystem _contests = default!;
-        [Dependency] private readonly MobStateSystem _mobState = default!;
 
         public override void Initialize()
         {
@@ -32,7 +27,30 @@ namespace Content.Shared.Abilities.Psionics
             if (!TryComp<PsionicComponent>(uid, out var component)
                 || HasComp<MindbrokenComponent>(uid)
                 || checkInsulation
-                && HasComp<PsionicInsulationComponent>(uid))
+                && TryComp(uid, out PsionicInsulationComponent? insul) && !insul.Passthrough)
+                return false;
+
+            var tev = new OnAttemptPowerUseEvent(uid, power);
+            RaiseLocalEvent(uid, tev);
+
+            if (tev.Cancelled)
+                return false;
+
+            if (component.DoAfter is not null)
+            {
+                _popups.PopupEntity(Loc.GetString(component.AlreadyCasting), uid, uid, PopupType.LargeCaution);
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool OnAttemptPowerUse(EntityUid uid, EntityUid target, string power, bool checkInsulation = true)
+        {
+            if (!TryComp<PsionicComponent>(uid, out var component)
+                || HasComp<MindbrokenComponent>(uid) || HasComp<MindbrokenComponent>(target)
+                || checkInsulation
+                && (TryComp(uid, out PsionicInsulationComponent? insul) && !insul.Passthrough || HasComp<PsionicInsulationComponent>(target)))
                 return false;
 
             var tev = new OnAttemptPowerUseEvent(uid, power);
@@ -65,7 +83,13 @@ namespace Content.Shared.Abilities.Psionics
 
         public void LogPowerUsed(EntityUid uid, string power, float minGlimmer = 8, float maxGlimmer = 12)
         {
-            _adminLogger.Add(Database.LogType.Psionics, Database.LogImpact.Medium, $"{ToPrettyString(uid):player} used {power}");
+            if (minGlimmer is <= 0 || maxGlimmer <= 0 || minGlimmer > maxGlimmer)
+            {
+                _adminLogger.Add(Database.LogType.Psionics, Database.LogImpact.Extreme, $"{ToPrettyString(uid):player} used {power}, producing min glimmer:{minGlimmer} and max glimmer: {maxGlimmer}. REPORT THIS TO THE EE DISCORD IMMEDIATELY AND TELL US HOW.");
+                return;
+            }
+
+            _adminLogger.Add(Database.LogType.Psionics, Database.LogImpact.Medium, $"{ToPrettyString(uid):player} used {power}, producing min glimmer:{minGlimmer} and max glimmer: {maxGlimmer}");
             var ev = new PsionicPowerUsedEvent(uid, power);
             RaiseLocalEvent(uid, ev, false);
 

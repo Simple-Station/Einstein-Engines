@@ -1,0 +1,79 @@
+- type: reagent
+  id: VodkaSportsDrink
+  name: reagent-name-vodka-sports-drink
+  parent: BaseAlcohol
+  desc: reagent-desc-vodka-sports-drink
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: vodkasportsdrink
+  color: "#fcff56a0"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/ginvodkaglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 4
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.2 # 50/50 yellow sports drink and vodka
+
+- type: reagent
+  id: RoninRefresher
+  name: reagent-name-ronin-refresher
+  parent: BaseAlcohol
+  desc: reagent-desc-ronin-refresher
+  physicalDesc: reagent-physical-desc-exotic-smelling
+  flavor: roninrefresher
+  color: "#6ebeffc0"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/gildlagerglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 4
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.06
+        - !type:AdjustReagent
+          reagent: Cryanobalamin
+          amount: 0.04 # 2 parts sake, 2 parts blue sports drink, 1 part lime juice
+
+- type: reagent
+  id: Deadlifter
+  name: reagent-name-deadlifter
+  parent: BaseAlcohol
+  desc: reagent-desc-deadlifter
+  physicalDesc: reagent-physical-desc-thick
+  flavor: deadlifter
+  color: "#a05446"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/booger.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 4
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.14
+        - !type:AdjustReagent
+          reagent: LiftLoversSpecial
+          amount: 0.02
+    Food:
+      effects:
+        - !type:AdjustReagent
+          reagent: UncookedAnimalProteins
+          amount: 0.1 # 2 parts ice, 1 part egg, 1 part red sports drink, 1 part absinthe

@@ -28,6 +28,8 @@ using Content.Shared.Body.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 using System.Linq;
+using Robust.Shared.Utility;
+using Robust.Shared.GameStates;
 
 namespace Content.Server.Traits;
 
@@ -48,6 +50,10 @@ public sealed partial class TraitReplaceComponent : TraitFunction
             var comp = (Component) serializationManager.CreateCopy(data.Component, notNullableOverride: true);
             comp.Owner = uid;
             entityManager.AddComponent(uid, comp, true);
+            if (!comp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
+                continue;
+
+            entityManager.Dirty(uid, comp);
         }
     }
 }
@@ -75,6 +81,10 @@ public sealed partial class TraitAddComponent : TraitFunction
             var comp = (Component) serializationManager.CreateCopy(entry.Component, notNullableOverride: true);
             comp.Owner = uid;
             entityManager.AddComponent(uid, comp);
+
+            if (!comp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
+                continue;
+            entityManager.Dirty(uid, comp);
         }
     }
 }
@@ -392,6 +402,9 @@ public sealed partial class TraitAddArmor : TraitFunction
         entityManager.EnsureComponent<DamageableComponent>(uid, out var damageableComponent);
         foreach (var modifierSet in DamageModifierSets)
             damageableComponent.DamageModifierSets.Add(modifierSet);
+
+        // These functions live in the Server, but these components are Shared, so we gotta dirty so that prediction will work.
+        entityManager.Dirty(uid, damageableComponent);
     }
 }
 
@@ -411,6 +424,9 @@ public sealed partial class TraitRemoveArmor : TraitFunction
 
         foreach (var modifierSet in DamageModifierSets)
             damageableComponent.DamageModifierSets.Remove(modifierSet);
+
+        // These functions live in the Server, but these components are Shared, so we gotta dirty so that prediction will work.
+        entityManager.Dirty(uid, damageableComponent);
     }
 }
 
@@ -436,6 +452,7 @@ public sealed partial class TraitAddSolutionContainer : TraitFunction
 
             newSolution!.AddSolution(solution.Solution, null);
         }
+        // No need to dirty here since EnsureSolution and AddSolution already handle that.
     }
 }
 
@@ -480,6 +497,7 @@ public sealed partial class TraitModifyMobThresholds : TraitFunction
             if (deadThreshold != 0)
                 thresholdSystem.SetMobStateThreshold(uid, deadThreshold + DeadThresholdModifier, MobState.Dead);
         }
+        // We don't need to Dirty here, since SetMobStateThreshold already has a Dirty(uid, comp) in it.
     }
 }
 
@@ -537,7 +555,7 @@ public sealed partial class TraitModifyMobState : TraitFunction
             mobStateComponent.AllowMovementWhileCrit = AllowMovementWhileCrit.Value;
 
         if (AllowMovementWhileSoftCrit is not null)
-            mobStateComponent.AllowHandInteractWhileSoftCrit = AllowMovementWhileSoftCrit.Value;
+            mobStateComponent.AllowMovementWhileSoftCrit = AllowMovementWhileSoftCrit.Value;
 
         if (AllowMovementWhileDead is not null)
             mobStateComponent.AllowMovementWhileDead = AllowMovementWhileDead.Value;
@@ -568,6 +586,9 @@ public sealed partial class TraitModifyMobState : TraitFunction
 
         if (AllowHandInteractWhileDead is not null)
             mobStateComponent.AllowHandInteractWhileDead = AllowHandInteractWhileDead.Value;
+
+        // These functions live in the Server, but these components are Shared, so we gotta dirty so that prediction will work.
+        entityManager.Dirty(uid, mobStateComponent);
     }
 }
 
@@ -594,6 +615,8 @@ public sealed partial class TraitModifyStamina : TraitFunction
         staminaComponent.CritThreshold += StaminaModifier;
         staminaComponent.Decay += DecayModifier;
         staminaComponent.Cooldown += CooldownModifier;
+
+        // No need to dirty here since this component is Auto-Networked.
     }
 }
 
@@ -619,6 +642,7 @@ public sealed partial class TraitModifyDensity : TraitFunction
         var fixture = fixturesComponent.Fixtures.First();
         var newDensity = Multiply ? fixture.Value.Density * DensityModifier : fixture.Value.Density + DensityModifier;
         physicsSystem.SetDensity(uid, fixture.Key, fixture.Value, newDensity);
+        // SetDensity handles the Dirty.
     }
 }
 
@@ -655,6 +679,9 @@ public sealed partial class TraitModifySlowOnDamage : TraitFunction
             newSpeedModifierThresholds[damageThreshold + DamageThresholdsModifier] = 1 - (1 - speedModifier) * SpeedModifierMultiplier;
 
         slowOnDamage.SpeedModifierThresholds = newSpeedModifierThresholds;
+
+        // These functions live in the Server, but these components are Shared, so we gotta dirty so that prediction will work.
+        entityManager.Dirty(uid, slowOnDamage);
     }
 }
 
