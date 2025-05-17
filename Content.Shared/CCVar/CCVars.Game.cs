@@ -325,7 +325,7 @@ public sealed partial class CCVars
     ///     Whether to allow characters to select loadout items.
     /// </summary>
     public static readonly CVarDef<bool> GameLoadoutsEnabled =
-        CVarDef.Create("game.loadouts_enabled", false, CVar.REPLICATED); // hullrot-todo: Once loadouts are functional and set up for Hullrot, re-enable
+        CVarDef.Create("game.loadouts_enabled", true, CVar.REPLICATED); // hullrot-todo: Once loadouts are functional and set up for Hullrot, re-enable
 
     /// <summary>
     ///     How many points to give to each player for loadouts.

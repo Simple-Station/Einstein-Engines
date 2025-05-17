@@ -8,6 +8,7 @@ using Content.Server.Station.Systems;
 using Content.Shared.Access.Systems;
 using Content.Shared.Administration.Logs;
 using Content.Server.Radio.EntitySystems;
+using Content.Shared.Bank.Components;
 using Content.Shared.Cargo;
 using Content.Shared.Cargo.Components;
 using Content.Shared.Containers.ItemSlots;
@@ -88,10 +89,11 @@ public sealed partial class CargoSystem : SharedCargoSystem
     [PublicAPI]
     public void UpdateBankAccount(EntityUid uid, StationBankAccountComponent component, int balanceAdded)
     {
+
         component.Balance += balanceAdded;
         var query = EntityQueryEnumerator<BankClientComponent, TransformComponent>();
 
-        var ev = new BankBalanceUpdatedEvent(uid, component.Balance);
+        var ev = new BankBalanceUpdatedEvent(uid, (int)component.Balance);
         while (query.MoveNext(out var client, out var comp, out var xform))
         {
             var station = _station.GetOwningStation(client, xform);
@@ -102,5 +104,6 @@ public sealed partial class CargoSystem : SharedCargoSystem
             Dirty(client, comp);
             RaiseLocalEvent(client, ref ev);
         }
+
     }
 }
