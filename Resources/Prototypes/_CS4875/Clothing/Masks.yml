@@ -1,0 +1,31 @@
+- type: entity
+  parent: ClothingMaskPullableBase
+  id: YukonBlackburnKitsuneMaskCivilian
+  name: kitsune mask
+  description: A kitsune mask for all your tricky acts.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _CS4875/BKKitsuneMask.rsi
+  - type: Clothing
+    sprite: _CS4875/BKKitsuneMask.rsi
+  - type: BreathMask
+  - type: IngestionBlocker
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: YukonBlackburnKitsuneMaskCivilian
+  id: BlackburnKitsuneMask
+  name: YukonBlackburnian Commander's kitsune mask
+  description: A Blackburnian mask for ceremonial use.
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.15
+        Slash: 0.15
+        Piercing: 0.05
+        Heat: 0.15
