@@ -360,6 +360,18 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         }
     }
 
+    public void RefreshBulletStateForConsoles()
+    {
+        //var exclusions = new List<ShuttleExclusionObject>();
+        //GetExclusions(ref exclusions);
+        var query = AllEntityQuery<ShuttleConsoleComponent>();
+        while (query.MoveNext(out var uid, out var comp))
+        {
+            UpdateBulletState(uid, comp);
+        }
+    }
+
+
     /// <summary>
     /// Stop piloting if the window is closed.
     /// </summary>
@@ -655,13 +667,26 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         }
     }
 
+    private void UpdateBulletState(EntityUid consoleUid, ShuttleConsoleComponent console)
+    {
+        if (console.LastUpdatedState is null)
+            return;
+        console.LastUpdatedState.IFFState = GetIFFState(consoleUid, null);
+        console.LastUpdatedState.DirtyFlags = ShuttleBoundUserInterfaceState.StateDirtyFlags.IFF;
+        if (_ui.HasUi(consoleUid, ShuttleConsoleUiKey.Key) && _ui.IsUiOpen(consoleUid, ShuttleConsoleUiKey.Key))
+        {
+            _ui.SetUiState(consoleUid, ShuttleConsoleUiKey.Key, console.LastUpdatedState);
+        }
+
+    }
+
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
         var toRemove = new ValueList<(EntityUid, PilotComponent)>();
         var query = EntityQueryEnumerator<PilotComponent>();
-        RefreshShuttleConsoles();
+        RefreshBulletStateForConsoles();
 
         while (query.MoveNext(out var uid, out var comp))
         {
