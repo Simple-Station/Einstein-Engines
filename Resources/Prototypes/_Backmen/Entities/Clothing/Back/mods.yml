@@ -1,0 +1,196 @@
+# Default MOD
+- type: entity
+  parent: Clothing
+  id: ClothingModsuitBackBase
+  name: base MOD control unit
+  description: A civilian class suit by Nakamura Engineering, doesn't offer much other than slightly quicker movement.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Back/Modsuit/standart.rsi
+    state: icon
+  - type: Appearance
+  - type: ModSuit
+    clothingPrototypes:
+      head: ClothingHeadHelmetModsuitBase
+      gloves: ClothingHandsModsuitBase
+      outerClothing: ClothingOuterModsuitBodyBase
+      shoes: ClothingModsuitShoesBase
+  - type: UserInterface
+    interfaces:
+      enum.ModSuitDeployUiKey.Key:
+        type: ModSuitDeployBoundUserInterface
+      enum.ModSuitUiKey.Key:
+        type: ModSuitBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - back
+  - type: ClothingSpeedModifier
+  - type: Construction
+    graph: ModsuitStandard
+    node: sciencemodsuitstandard
+  - type: WiresPanel
+  - type: Item
+    size: Huge
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: [ ]
+
+- type: entity
+  parent: ClothingModsuitBackBase
+  id: ClothingModsuitBackAtmos
+  name: atmos MOD control unit
+  description: An atmospheric-resistant suit by Nakamura Engineering, offering extreme heat resistance compared to the engineer suit.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Back/Modsuit/atmospheric.rsi
+    state: icon
+  - type: ModSuit
+    clothingPrototypes:
+      head: ClothingHeadHelmetModsuitAtmos
+      gloves: ClothingHandsModsuitAtmos
+      outerClothing: ClothingOuterModsuitBodyAtmos
+      shoes: ClothingModsuitShoesAtmos
+    innateModules:
+    - ModSuitModMagBoots
+    - ModSuitModTray
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: Construction
+    graph: ModsuitAtmospheric
+    node: sciencemodsuitatmospheric
+
+- type: entity
+  parent: ClothingModsuitBackBase
+  id: ClothingModsuitBackClown
+  name: clown MOD control unit
+  description: A suit by Honk Ltd. Protects against low humor environments.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Back/Modsuit/clown.rsi
+    state: icon
+  - type: ModSuit
+    clothingPrototypes:
+      head: ClothingHeadHelmetModsuitClown
+      gloves: ClothingHandsModsuitClown
+      outerClothing: ClothingOuterModsuitBodyClown
+      shoes: ClothingModsuitShoesClown
+  - type: Construction
+    graph: ModsuitClown
+    node: sciencemodsuitclown
+
+- type: entity
+  parent: ClothingModsuitBackBase
+  id: ClothingModsuitBackEngineering
+  name: engineering MOD control unit
+  description: An engineer-fit suit with heat and shock resistance. Nakamura Engineering's classic.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Back/Modsuit/engineering.rsi
+    state: icon
+  - type: ModSuit
+    clothingPrototypes:
+      head: ClothingHeadHelmetModsuitEngineering
+      gloves: ClothingHandsModsuitEngineering
+      outerClothing: ClothingOuterModsuitBodyEngineering
+      shoes: ClothingModsuitShoesEngineering
+    innateModules:
+    - ModSuitModMagBoots
+    - ModSuitModTray
+  - type: Construction
+    graph: ModsuitEngineering
+    node: sciencemodsuitengineering
+
+- type: entity
+  parent: ClothingModsuitBackBase
+  id: ClothingModsuitBackMedical
+  name: medical MOD control unit
+  description: A lightweight suit by DeForest Medical Corporation, allows for easier movement.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Back/Modsuit/medical.rsi
+    state: icon
+  - type: ModSuit
+    clothingPrototypes:
+      head: ClothingHeadHelmetModsuitMedical
+      gloves: ClothingHandsModsuitMedical
+      outerClothing: ClothingOuterModsuitBodyMedical
+      shoes: ClothingModsuitShoesMedical
+    innateModules:
+    - ModSuitModMedHud
+  - type: Construction
+    graph: ModsuitMedical
+    node: sciencemodsuitmedical
+
+- type: entity
+  parent: ClothingModsuitBackBase
+  id: ClothingModsuitBackMining
+  name: mining MOD control unit
+  description: A Nanotrasen mining suit for on-site operations, fit with accreting ash armor and a sphere form.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Back/Modsuit/mining.rsi
+    state: icon
+  - type: ModSuit
+    maxComplexity: 10
+    clothingPrototypes:
+      head: ClothingHeadHelmetModsuitMining
+      gloves: ClothingHandsModsuitMining
+      outerClothing: ClothingOuterModsuitBodyMining
+      shoes: ClothingModsuitShoesMining
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: Construction
+    graph: ModsuitMining
+    node: sciencemodsuitmining
+
+- type: entity
+  parent: ClothingModsuitBackBase
+  id: ClothingModsuitBackSecurity
+  name: security MOD control unit
+  description: An Apadyne Technologies security suit, offering quicker speed at the cost of carrying capacity.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Back/Modsuit/security.rsi
+    state: icon
+  - type: ModSuit
+    maxComplexity: 10
+    clothingPrototypes:
+      head: ClothingHeadHelmetModsuitSecurity
+      gloves: ClothingHandsModsuitSecurity
+      outerClothing: ClothingOuterModsuitBodySecurity
+      shoes: ClothingModsuitShoesSecurity
+    innateModules:
+    - ModSuitModSecHud
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  - type: Construction
+    graph: ModsuitSecurity
+    node: sciencemodsuitsecurity
+
+- type: entity
+  parent: ClothingModsuitBackBase
+  id: ClothingModsuitBackScience
+  name: Science MOD control unit
+  description: Made by scientists for scientists. With love!
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Back/Modsuit/science.rsi
+    state: icon
+  - type: ModSuit
+    maxComplexity: 20
+    clothingPrototypes:
+      head: ClothingHeadHelmetModsuitScience
+      gloves: ClothingHandsModsuitScience
+      outerClothing: ClothingOuterModsuitBodyScience
+      shoes: ClothingModsuitShoesScience
+  - type: ClothingSpeedModifier
+  - type: Construction
+    graph: ModsuitScience
+    node: modsuitscience
