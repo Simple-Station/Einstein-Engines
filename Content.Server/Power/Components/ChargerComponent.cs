@@ -22,10 +22,27 @@ namespace Content.Server.Power.Components
         public string SlotId = string.Empty;
 
         /// <summary>
-        /// A whitelist for what entities can be charged by this Charger.
+        /// The maximum number of batteries that can be charged by the recharge at once 
         /// </summary>
-        [DataField("whitelist")]
-        public EntityWhitelist? Whitelist;
+        [DataField]
+        public int MaxBatteries = 1;
+
+        /// <summary>
+        /// A whitelist for what entities can be charged by this Charger.
+        /// Most useful on chargers that can hold more than one battery, or chargers that use EntityStorage rather than a slot system.
+        /// </summary>
+        [DataField]
+        public EntityWhitelist? ChargeWhitelist;
+
+        /// <summary>
+        /// A whitelist for what entities can be searched when looking for batteries to charge.
+        /// Most useful on chargers that use EntityStorage rather than a slot system.
+        /// 
+        /// For instance, the cyborg recharging station can only search cyborgs or ipcs.
+        /// Without it, a urist could stand in said recharging station to recharge inventory batteries.
+        /// </summary>
+        [DataField]
+        public EntityWhitelist? SearchWhitelist;
 
         /// <summary>
         /// Indicates whether the charger is portable and thus subject to EMP effects
@@ -33,5 +50,21 @@ namespace Content.Server.Power.Components
         /// </summary>
         [DataField]
         public bool Portable = false;
+
+        /// <summary>
+        /// debug
+        /// </summary>
+        [DataField]
+        public List<EntityUid> ExpectedBatteries = new();
+
+        /// <summary>
+        /// Maximum number of search steps. In case of extremely complex nested inventories. While it should never occur, prevents recursion too.
+        /// </summary>
+        public int MaxSteps = 256;
+
+        /// <summary>
+        /// Maximum inventory depth. In case of extremely complex nested inventories. While it should never occur, prevents recursion too.
+        /// </summary>
+        public int MaxDepth = 10;
     }
 }

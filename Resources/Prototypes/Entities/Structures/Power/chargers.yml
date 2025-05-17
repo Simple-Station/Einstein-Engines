@@ -242,11 +242,11 @@
   - type: Charger
     chargeRate: 30
     slotId: entity_storage
-    whitelist:
+    searchWhitelist:
       components:
       - BorgChassis
       - Silicon # Parkstation IPCs
-      - Inventory # Goobstation - Modsuits
+      # - Inventory # Goobstation - Modsuits
   - type: Construction
     containers:
     - machine_parts
