@@ -3,26 +3,28 @@ using Content.Shared.Shuttles.UI.MapObjects;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Shuttles.BUIStates;
+[Flags][Serializable][NetSerializable]
+public enum StateDirtyFlags : byte
+{
+    None = 0,
+    Base = 1,
+    IFF = 2,
+    Dock = 4,
+    All = Base | IFF | Dock,
+}
 
 [Serializable, NetSerializable]
 public sealed class ShuttleBoundUserInterfaceState : BoundUserInterfaceState
 {
-    public enum StateDirtyFlags : byte
-    {
-        None = 0,
-        Base = 1,
-        IFF = 2,
-        All = Base | IFF,
-    }
 
-    public NavInterfaceState NavState;
-    public ShuttleMapInterfaceState MapState;
-    public DockingInterfaceState DockState;
-    public CrewInterfaceState CrewState;
+    public NavInterfaceState? NavState;
+    public ShuttleMapInterfaceState? MapState;
+    public DockingInterfaceState? DockState;
+    public CrewInterfaceState? CrewState;
 
-    public IFFInterfaceState IFFState;
+    public IFFInterfaceState? IFFState;
 
-    public StateDirtyFlags DirtyFlags;
+    public StateDirtyFlags DirtyFlags = StateDirtyFlags.None;
 
     public bool canAccesCrew = false;
 
@@ -32,8 +34,11 @@ public sealed class ShuttleBoundUserInterfaceState : BoundUserInterfaceState
         MapState = mapState;
         DockState = dockState;
         CrewState = crewState;
-        IFFState = default!;
         DirtyFlags = StateDirtyFlags.Base;
+    }
+    // empty constructor
+    public ShuttleBoundUserInterfaceState()
+    {
     }
 
     public ShuttleBoundUserInterfaceState(ShuttleBoundUserInterfaceState other)
