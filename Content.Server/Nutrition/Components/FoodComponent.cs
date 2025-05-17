@@ -1,13 +1,12 @@
 using Content.Server.Body.Components;
 using Content.Shared.Nutrition.Components;
-using Content.Server.Nutrition.EntitySystems;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Nutrition.Components;
 
-[RegisterComponent, Access(typeof(FoodSystem), typeof(FoodSequenceSystem))]
+[RegisterComponent]
 public sealed partial class FoodComponent : Component
 {
     [DataField]
@@ -80,4 +79,7 @@ public sealed partial class FoodComponent : Component
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public bool RequireDead = true;
+
+    [DataField]
+    public HashSet<string> MoodletsOnEat = new();
 }
