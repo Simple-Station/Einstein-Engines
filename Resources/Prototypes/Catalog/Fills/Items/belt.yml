@@ -132,12 +132,12 @@
       - id: Bloodpack
         amount: 1
       - id: Gauze
-      - id: PainMedipen
       - id: ParamedHypo  #Goobstation - ParamedHypo
       - id: CartridgeBicaridine  #Goobstation - ParamedHypo
       - id: CartridgeAtropine  #Goobstation - ParamedHypo
       - id: CartridgeDermaline  #Goobstation - ParamedHypo
       - id: CartridgeSaline  #Goobstation - ParamedHypo
+      - id: CartridgePain # Morphine Tweaks
 
 - type: entity
   id: ClothingBeltPlantFilled

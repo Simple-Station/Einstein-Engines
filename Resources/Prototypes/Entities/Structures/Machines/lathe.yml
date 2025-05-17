@@ -279,6 +279,7 @@
     - CartridgePuncturase # Goobstation
     - SecHypo # Goobstation
     - ParamedHypo # Goobstation - ParamedHypo
+    - CartridgePain # Morphine Tweaks
 
 - type: entity
   id: AutolatheHyperConvection
@@ -1020,6 +1021,7 @@
       - CartridgeAtropine # Goobstation
       - CartridgeSaline # Goobstation
       - SecHypo # Goobstation
+      - CartridgePain # Morphine Tweaks
       - BoxBeanbag
       - CartridgePistolRubber
       - CartridgeMagnumRubber
@@ -1339,6 +1341,7 @@
     - CartridgeDermaline # Goobstation - ParamedHypo
     - CartridgeSaline # Goobstation - ParamedHypo
     - ParamedHypo # Goobstation - ParamedHypo
+    - CartridgePain # Morphine Tweaks
     dynamicRecipes:
     - ChemicalPayload
     - CryostasisBeaker
