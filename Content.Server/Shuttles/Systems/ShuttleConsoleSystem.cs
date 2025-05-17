@@ -65,8 +65,6 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     [Dependency] private readonly MetaDataSystem _meta = default!;
     [Dependency] private readonly IPrototypeManager _manager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-
-
     [Dependency] private readonly _Lavaland.Shuttles.Systems.DockingConsoleSystem _dockingConsole = default!; // Lavaland Change: FTL
 
     private EntityQuery<MetaDataComponent> _metaQuery;
@@ -90,12 +88,14 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         SubscribeLocalEvent<ShuttleConsoleComponent, BoundUserInterfaceMessageAttempt>(BUIValidation);
         SubscribeLocalEvent<ShuttleConsoleComponent, EntInsertedIntoContainerMessage>(UpdateUI);
         SubscribeLocalEvent<ShuttleConsoleComponent, EntRemovedFromContainerMessage>(UpdateUI);
+        SubscribeLocalEvent<ShuttleConsoleComponent, AfterActivatableUIOpenEvent>(UpdateUI);
         SubscribeLocalEvent<ShuttleConsoleComponent, TryMakeEmployeeMessage>(OnToggleEmployee);
         Subs.BuiEvents<ShuttleConsoleComponent>(ShuttleConsoleUiKey.Key, subs =>
         {
             subs.Event<ShuttleConsoleFTLBeaconMessage>(OnBeaconFTLMessage);
             subs.Event<ShuttleConsoleFTLPositionMessage>(OnPositionFTLMessage);
             subs.Event<BoundUIClosedEvent>(OnConsoleUIClose);
+            subs.Event<BoundUIOpenedEvent>(OnConsoleUIOpened);
             subs.Event<SwitchedToCrewHudMessage>(OnCrewSwitch);
         });
 
@@ -354,8 +354,6 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         var query = AllEntityQuery<ShuttleConsoleComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
-            if (!_ui.IsUiOpen(uid, ShuttleConsoleUiKey.Key))
-                continue;
             UpdateState(uid, comp);
         }
     }
@@ -384,6 +382,12 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
 
         RemovePilot(args.Actor);
     }
+
+    private void OnConsoleUIOpened(EntityUid uid, ShuttleConsoleComponent component, BoundUIOpenedEvent args)
+    {
+        UpdateState(uid, component);
+    }
+
 
     private void OnConsoleUIOpenAttempt(EntityUid uid, ShuttleConsoleComponent component,
         ActivatableUIOpenAttemptEvent args)
@@ -425,6 +429,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
 
         if (!TryPilot(args.User, uid))
             args.Cancel();
+        UpdateState(uid, component);
     }
 
     private void OnConsoleAnchorChange(EntityUid uid, ShuttleConsoleComponent component,
@@ -662,20 +667,33 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
                 canAccesCrew = (console.accesState == ShuttleConsoleAccesState.CaptainAcces),
                 IFFState = iffState,
             };
-            console.LastUpdatedState = state;
+            state.DirtyFlags = StateDirtyFlags.All;
+            state.sendingDock = true;
             _ui.SetUiState(consoleUid, ShuttleConsoleUiKey.Key, state);
+            console.LastUpdatedState = state;
         }
     }
 
     private void UpdateBulletState(EntityUid consoleUid, ShuttleConsoleComponent console)
     {
+        if (!_ui.IsUiOpen(consoleUid, ShuttleConsoleUiKey.Key))
+            return;
         if (console.LastUpdatedState is null)
             return;
-        console.LastUpdatedState.IFFState = GetIFFState(consoleUid, null);
-        console.LastUpdatedState.DirtyFlags = ShuttleBoundUserInterfaceState.StateDirtyFlags.IFF;
-        if (_ui.HasUi(consoleUid, ShuttleConsoleUiKey.Key) && _ui.IsUiOpen(consoleUid, ShuttleConsoleUiKey.Key))
+        var newState = new ShuttleBoundUserInterfaceState(console.LastUpdatedState);
+        newState.IFFState = GetIFFState(consoleUid, console.LastUpdatedState?.IFFState?.Turrets);
+        newState.DirtyFlags = StateDirtyFlags.IFF | StateDirtyFlags.Base;
+        if (newState.sendingDock)
         {
-            _ui.SetUiState(consoleUid, ShuttleConsoleUiKey.Key, console.LastUpdatedState);
+            newState.DirtyFlags = StateDirtyFlags.All;
+            newState.sendingDock = false;
+        }
+
+        if (_ui.HasUi(consoleUid, ShuttleConsoleUiKey.Key))
+        {
+            _ui.SetUiState(consoleUid, ShuttleConsoleUiKey.Key, newState);
+            console.LastUpdatedState = newState;
+
         }
 
     }

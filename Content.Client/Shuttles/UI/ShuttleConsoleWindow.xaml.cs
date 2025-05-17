@@ -16,6 +16,7 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
     IComputerWindow<ShuttleBoundUserInterfaceState>
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
+    [Dependency] private readonly ILogManager _mills = default!;
 
     private ShuttleConsoleMode _mode = ShuttleConsoleMode.Nav;
 
@@ -151,7 +152,18 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
 
     public void UpdateState(EntityUid owner, ShuttleBoundUserInterfaceState cState)
     {
-        var coordinates = _entManager.GetCoordinates(cState.NavState.Coordinates);
+        //_mills.GetSawmill("ui-debug-crescent").Warning($"Got interface state with bytes toggled {cState.DirtyFlags}");
+        if((cState.DirtyFlags & StateDirtyFlags.IFF) != 0)
+            NavScreen.UpdateState(cState.IFFState!);
+        if ((cState.DirtyFlags & StateDirtyFlags.Base) == 0)
+            return;
+        var coordinates = _entManager.GetCoordinates(cState.NavState!.Coordinates);
+        if ((cState.DirtyFlags & StateDirtyFlags.Dock) != 0 || DockContainer.Docks.Count == 0)
+        {
+            DockContainer.UpdateState(coordinates?.EntityId, cState.DockState!);
+            //_mills.GetSawmill("ui-debug-crescent").Warning($"Update dock with {cState.DockState!.Docks.Count} docks");
+        }
+
         NavContainer.SetShuttle(coordinates?.EntityId);
         MapContainer.SetShuttle(coordinates?.EntityId);
         MapContainer.SetConsole(owner);
@@ -159,10 +171,9 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
         if(_mode == ShuttleConsoleMode.Crew && CrewManagementButton.Disabled)
             SwitchMode(ShuttleConsoleMode.Map);
 
-        CrewContainer.UpdateState(cState.CrewState);
+
+        CrewContainer.UpdateState(cState.CrewState!);
         NavContainer.UpdateState(cState.NavState);
-        MapContainer.UpdateState(cState.MapState);
-        NavScreen.UpdateState(cState.IFFState);
-        DockContainer.UpdateState(coordinates?.EntityId, cState.DockState);
+        MapContainer.UpdateState(cState.MapState!);
     }
 }
