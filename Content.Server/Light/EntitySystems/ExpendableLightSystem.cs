@@ -9,9 +9,7 @@ using Content.Shared.Temperature;
 using Content.Shared.Verbs;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Player;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Light.EntitySystems
@@ -19,6 +17,8 @@ namespace Content.Server.Light.EntitySystems
     [UsedImplicitly]
     public sealed class ExpendableLightSystem : EntitySystem
     {
+        private readonly HashSet<Entity<ExpendableLightComponent>> _activeLights = new();
+
         [Dependency] private readonly SharedItemSystem _item = default!;
         [Dependency] private readonly ClothingSystem _clothing = default!;
         [Dependency] private readonly TagSystem _tagSystem = default!;
@@ -37,19 +37,13 @@ namespace Content.Server.Light.EntitySystems
 
         public override void Update(float frameTime)
         {
-            var query = EntityQueryEnumerator<ExpendableLightComponent>();
-            while (query.MoveNext(out var uid, out var light))
-            {
-                UpdateLight((uid, light), frameTime);
-            }
+            foreach (var ent in _activeLights)
+                UpdateLight(ent, frameTime);
         }
 
         private void UpdateLight(Entity<ExpendableLightComponent> ent, float frameTime)
         {
             var component = ent.Comp;
-            if (!component.Activated)
-                return;
-
             component.StateExpiryTime -= frameTime;
 
             if (component.StateExpiryTime <= 0f)
@@ -81,6 +75,7 @@ namespace Content.Server.Light.EntitySystems
                             _item.SetHeldPrefix(ent, "unlit", component: item);
                         }
 
+                        _activeLights.Remove(ent);
                         break;
                 }
             }
@@ -107,7 +102,7 @@ namespace Content.Server.Light.EntitySystems
 
                 UpdateSounds(ent);
                 UpdateVisualizer(ent);
-
+                _activeLights.Add(ent);
                 return true;
             }
 
