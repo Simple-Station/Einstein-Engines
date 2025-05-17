@@ -1,7 +1,54 @@
 - type: entity
   id: PlastitaniumWindow
   name: plastitanium window
-  parent: Window
+  description: Don't smudge up the glass down there.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Window
+  components:
+  - type: RCDDeconstructable
+    deconstructable: false
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmack
+  - type: WallMount
+    arc: 360 # interact despite grilles
+  - type: Tag
+    tags:
+      - ForceFixRotations
+      - Window
+  - type: Physics
+    bodyType: Static
+  - type: ExaminableDamage
+    messages: WindowMessages
+  - type: InteractionPopup
+    interactSuccessString: comp-window-knock
+    messagePerceivedByOthers: comp-window-knock
+    interactSuccessSound:
+      path: /Audio/Effects/glass_knock.ogg
+  - type: Appearance
+  - type: StaticPrice
+    price: 100
+  - type: BlockWeather
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 4000
+
+- type: entity
+  id: PlastitaniumWindowSquareBase
+  abstract: true
+  name: plastitanium window
+  parent: PlastitaniumWindowBase
   components:
   - type: Sprite
     drawdepth: WallTops
@@ -84,6 +131,7 @@
         - FullTileMask
         layer:
         - GlassLayer
+        density: 4000
   - type: Airtight
     noAirWhenFullyAirBlocked: false
     airBlockedDirection:
