@@ -2,7 +2,7 @@
 - type: entity
   parent: BaseMobSpeciesOrganic
   id: BaseMobXelthia
-  name: Urist McXelthia
+  name: Urist McTentacles
   abstract: true
   components:
   - type: Hunger
@@ -62,6 +62,11 @@
         Blunt: 0.14 #per second, scales with pressure and other constants.
   - type: Bloodstream
     bloodReagent: AcidBlood
+  - type: DamageVisuals
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#00FF69"
 #  - type: Hands # This doesnt seem to work. I can't tell why. Is this implemented here and i'm doing this wrong, or is it just on goob? Fix later.
 #    handDisplacement:
 #      sprite: _EE/Mobs/Species/Xelthia/displacement.rsi

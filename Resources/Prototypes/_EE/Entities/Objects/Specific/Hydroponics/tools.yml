@@ -1,0 +1,39 @@
+- type: entity
+  name: New-Nederic plant clippers
+  parent: BaseItem
+  id: HydroponicsToolClippersEOC
+  description: A sophisticsted tool developed by the East-Orion Company to take samples from even the most delicate plants.
+  components:
+  - type: Tag
+    tags:
+    - PlantSampleTakerHighQuality
+    - HydroponicsToolClippers
+  - type: Sprite
+    sprite: _EE/Objects/Tools/Hydroponics/clippers-eoc.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: 90
+    attackRate: 0.9
+    damage:
+      types:
+        Piercing: 8
+    heavyRateModifier: 1.25
+    heavyRangeModifier: 1.5
+    heavyDamageBaseModifier: 1.25
+    maxTargets: 1
+    angle: 20
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: Item
+    sprite: _EE/Objects/Tools/Hydroponics/clippers-eoc.rsi
+    storedRotation: -90
+  # Shitmed Change
+  - type: Retractor
+    speed: 0.38
+  - type: Hemostat
+    speed: 0.63
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/_Shitmed/Medical/Surgery/retractor1.ogg
+    endSound:
+      path: /Audio/_Shitmed/Medical/Surgery/retractor2.ogg

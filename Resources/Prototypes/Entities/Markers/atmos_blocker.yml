@@ -128,5 +128,5 @@
         volume: 2500
         moles:
           - 0 # oxygen
-          - 18710.71051 # nitrogen
+          - 9350.0 # nitrogen
         temperature: 72

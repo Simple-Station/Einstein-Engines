@@ -1,0 +1,170 @@
+# This should be on every other fishing table
+- type: entityTable
+  id: BasicFishingLootTable
+  table: !type:GroupSelector
+    children:
+    # 75% chance of scrap of some kind
+    - !type:GroupSelector
+      weight: 75
+      children:
+      - !type:NestedSelector
+        tableId: SalvageScrapLowValue
+        weight: 65
+      - !type:NestedSelector
+        tableId: SalvageScrapHighValue
+        weight: 35
+    # 15% chance of some trash
+    - !type:NestedSelector
+      tableId: GenericTrashItems
+      weight: 15
+    # 10% chance of low-value treasure or maintenance tools
+    - !type:GroupSelector
+      weight: 10
+      children:
+      - !type:NestedSelector
+        tableId: SalvageTreasureCommon
+      - !type:NestedSelector
+        tableId: MaintToolsTable
+
+# All types of the legendary and unique fishes
+- type: entityTable
+  id: LegendaryFishTable
+  table: !type:GroupSelector
+    children:
+    - id: FishAlien
+    - id: FishBingle
+    - id: FishBoyFisher
+    - id: FishNukeDisk
+    - id: FishGib
+    - id: FishMutant
+    - id: FishNuker
+    - id: FishToxic
+    - id: FishIan
+    - id: FishAngler
+    - id: FishBass
+    - id: FishBlob
+    - id: FishBlueFintuna
+    - id: FishCat
+    - id: FishTropicalClown
+    - id: FishPuffer
+    - id: FishSilver
+    - id: FishTropicalSun
+    - id: FishTropical
+    - id: FishCheckered
+    - id: FishJumpercable
+    - id: FishSkinCrab
+    - id: FishSoulfish
+
+# All types of the rare and item drops varied
+- type: entityTable
+  id: RareFishTable
+  table: !type:GroupSelector
+    children:
+    - id: FishLubefish
+    - id: FishFirefish
+    - id: FishArmorfish
+    - id: FishRatfish
+    - id: FishArcticChrab
+    - id: FishHalfFish
+    - id: FishSlimefish
+    - id: FishSludgefishPurple
+    - id: FishLavaLoop
+    - id: FishPlasmaLoop
+
+# Fish from water
+- type: entityTable
+  id: WaterFishTable
+  table: !type:GroupSelector
+    children:
+    - id: FishGuppy
+    - id: FishGreenchromis
+    - id: FishCardinalfish
+    - id: FishCatfish2
+    - id: FishPlastetra
+    - id: FishAngelfish
+    - id: FishClownfish
+    - id: FishHoloClownfish
+    - id: FishLanternfish
+    - id: FishGoldfish
+    - id: FishDwarfMoonfish
+    - id: FishTiziraMoonfish
+    - id: FishGunnerJellyfish
+    - id: FishNeedlefish
+    - id: FishPufferfish2
+    - id: FishEmulsijack
+    - id: FishDonkfish
+    - id: FishChrab
+    - id: FishCrab
+    - id: FishBonemass
+    - id: FishSludgefish
+    - id: FishStarfish
+    - id: FishZipzap
+    - id: FishArcticChar
+    - id: FishStingray
+    - id: FishSockeye
+    - id: FishBumpy
+    - id: FishSandSurfer
+    - id: FishThreeEyes
+    - id: FishTadpole
+    - id: FishSquid
+    - id: FishPerch
+    - id: FishPlaice
+    - id: FishMonkfish
+    - id: FishBabyCarp
+    - id: FishFryish
+    - id: FishFritterish
+    - id: FishBernardfish
+    - id: FishMatthewfish
+    - id: FishSacabambaspis
+
+# Items from Water
+- type: entityTable
+  id: WaterFishingLootTable
+  table: !type:GroupSelector
+    children:
+      - !type:NestedSelector
+        tableId: BasicFishingLootTable
+        weight: 60
+      - !type:NestedSelector
+        tableId: WaterFishTable
+        weight: 25
+      - !type:NestedSelector
+        tableId: RareFishTable
+        weight: 10
+      - !type:NestedSelector
+        tableId: LegendaryFishTable
+        weight: 5
+
+# Items from Lava
+- type: entityTable
+  id: LavaFishingLootTable
+  table: !type:GroupSelector
+    children:
+      # TODO: lava/plasma fish
+      - !type:NestedSelector
+        tableId: BasicFishingLootTable
+
+# Items from Plasma
+- type: entityTable
+  id: PlasmaFishingLootTable
+  table: !type:GroupSelector
+    children:
+    # TODO: lava/plasma fish
+      - !type:NestedSelector
+        tableId: BasicFishingLootTable
+
+# Items from Toilets
+- type: entityTable
+  id: ToiletFishingLootTable
+  table: !type:GroupSelector
+    children:
+      # like water but no rare fishes
+      - !type:NestedSelector
+        tableId: BasicFishingLootTable
+        weight: 75
+      - !type:NestedSelector
+        tableId: WaterFishTable
+        weight: 20
+      - !type:NestedSelector
+        tableId: RareFishTable
+        weight: 5

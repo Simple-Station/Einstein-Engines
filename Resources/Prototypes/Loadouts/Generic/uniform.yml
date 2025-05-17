@@ -1,7 +1,7 @@
 - type: loadout
   id: LoadoutUniformAncientJumpsuit
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   canBeHeirloom: true
@@ -61,7 +61,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitFlannel
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitFlannel
@@ -296,7 +296,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitHawaiBlack
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitHawaiBlack
@@ -312,7 +312,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitHawaiBlue
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitHawaiBlue
@@ -328,7 +328,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitHawaiRed
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitHawaiRed
@@ -343,7 +343,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitHawaiYellow
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitHawaiYellow
@@ -360,7 +360,7 @@
 - type: loadout
   id: LoadoutUniformDressRed
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformDressRed
@@ -405,7 +405,7 @@
 - type: loadout
   id: LoadoutUniformGeisha
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - UniformGeisha
@@ -420,7 +420,7 @@
 - type: loadout
   id: LoadoutUniformCostumeArcDress
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingCostumeArcDress
@@ -436,7 +436,7 @@
 - type: loadout
   id: LoadoutUniformCostumeMioSkirt
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingCostumeMioSkirt
@@ -452,7 +452,7 @@
 - type: loadout
   id: LoadoutUniformCostumeNaota
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingCostumeNaota
@@ -468,7 +468,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitLoungewear
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitLoungewear
@@ -519,7 +519,7 @@
 - type: loadout
   id: LoadoutUniformKendoHakama
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:
@@ -535,7 +535,7 @@
 - type: loadout
   id: LoadoutUniformMartialGi
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   canBeHeirloom: true
@@ -555,7 +555,7 @@
 - type: loadout
   id: LoadoutClothingJumpsuitKimono
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   canBeHeirloom: true
@@ -573,7 +573,7 @@
 - type: loadout
   id: LoadoutClothingKimonoBlue
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:
@@ -590,7 +590,7 @@
 - type: loadout
   id: LoadoutClothingKimonoPink
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:
@@ -607,7 +607,7 @@
 - type: loadout
   id: LoadoutClothingKimonoPurple
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:
@@ -624,7 +624,7 @@
 - type: loadout
   id: LoadoutClothingKimonoSky
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:
@@ -641,7 +641,7 @@
 - type: loadout
   id: LoadoutClothingKimonoGreen
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:
@@ -659,7 +659,7 @@
 - type: loadout
   id: LoadoutUniformSchoolGakuranBlack
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:
@@ -676,7 +676,7 @@
 - type: loadout
   id: LoadoutUniformSchoolgirlBlack
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - UniformSchoolgirlBlack
@@ -691,7 +691,7 @@
 - type: loadout
   id: LoadoutUniformSchoolgirlBlue
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - UniformSchoolgirlBlue
@@ -707,7 +707,7 @@
 - type: loadout
   id: LoadoutUniformSchoolgirlCyan
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - UniformSchoolgirlCyan
@@ -723,7 +723,7 @@
 - type: loadout
   id: LoadoutUniformSchoolgirlGreen
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - UniformSchoolgirlGreen
@@ -739,7 +739,7 @@
 - type: loadout
   id: LoadoutUniformSchoolgirlOrange
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - UniformSchoolgirlOrange
@@ -755,7 +755,7 @@
 - type: loadout
   id: LoadoutUniformSchoolgirlPink
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - UniformSchoolgirlPink
@@ -771,7 +771,7 @@
 - type: loadout
   id: LoadoutUniformSchoolgirlPurple
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - UniformSchoolgirlPurple
@@ -787,7 +787,7 @@
 - type: loadout
   id: LoadoutUniformSchoolgirlRed
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - UniformSchoolgirlRed
@@ -802,7 +802,7 @@
 - type: loadout
   id: LoadoutUniformSchoolgirlDusk
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - UniformSchoolgirlDusk
@@ -818,7 +818,7 @@
 - type: loadout
   id: LoadoutUniformSchoolgirlBlazerTan
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - UniformSchoolgirlBlazerTan
@@ -835,7 +835,7 @@
 - type: loadout
   id: LoadoutClothingMNKOfficeSkirt
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -851,7 +851,7 @@
 - type: loadout
   id: LoadoutClothingMNKUnderGarment
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -867,7 +867,7 @@
 - type: loadout
   id: LoadoutClothingMNKGymBra
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -883,7 +883,7 @@
 - type: loadout
   id: LoadoutClothingMNKDressBlack
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformMNKDressBlack
@@ -898,7 +898,7 @@
 - type: loadout
   id: LoadoutClothingMNKBlackOveralls
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformMNKBlackOveralls
@@ -913,7 +913,7 @@
 - type: loadout
   id: LoadoutClothingMNKBlackShoulder
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformMNKBlackShoulder
@@ -928,7 +928,7 @@
 - type: loadout
   id: LoadoutClothingMNKTracksuitBlack
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformMNKTracksuitBlack
@@ -944,7 +944,7 @@
 - type: loadout
   id: LoadoutClothingJumpsuitSuitBlack
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -960,7 +960,7 @@
 - type: loadout
   id: LoadoutClothingJumpsuitSuitBlackAlt
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitSuitBlackAlt
@@ -975,7 +975,7 @@
 - type: loadout
   id: LoadoutClothingJumpsuitSuitBlackMob
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitSuitBlackMob
@@ -990,7 +990,7 @@
 - type: loadout
   id: LoadoutClothingJumpsuitSuitBrown
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitSuitBrown
@@ -1006,7 +1006,7 @@
 - type: loadout
   id: LoadoutClothingJumpsuitSuitBrownAlt
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitSuitBrownAlt
@@ -1021,7 +1021,7 @@
 - type: loadout
   id: LoadoutClothingJumpsuitSuitBrownMob
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitSuitBrownMob
@@ -1036,7 +1036,7 @@
 - type: loadout
   id: LoadoutClothingJumpsuitSuitWhite
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -1053,7 +1053,7 @@
 - type: loadout
   id: LoadoutClothingJumpsuitSuitWhiteAlt
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -1069,7 +1069,7 @@
 - type: loadout
   id: LoadoutClothingJumpsuitSuitWhiteMob
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -1086,7 +1086,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressAsymmetric
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -1102,7 +1102,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressEvening
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -1118,7 +1118,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressMidi
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -1134,7 +1134,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressOpenShoulder
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -1150,7 +1150,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressTea
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -1166,7 +1166,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressSleeveless
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -1182,7 +1182,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressLongSleeve
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -1198,7 +1198,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressBlackAndGold
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:
@@ -1214,7 +1214,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressBlackTango
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpskirtDressBlackTango
@@ -1229,7 +1229,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressBlackTangoAlt
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpskirtDressBlackTangoAlt
@@ -1244,7 +1244,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtSuitBlueBlazer
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpskirtSuitBlueBlazer
@@ -1260,7 +1260,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressBlueSundress
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpskirtDressBlueSundress
@@ -1276,7 +1276,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressCheongsamBlue
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:
@@ -1293,7 +1293,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressCheongsamGreen
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:
@@ -1310,7 +1310,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressCheongsamPurple
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:
@@ -1327,7 +1327,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressCheongsamRed
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:
@@ -1343,7 +1343,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressCheongsamWhite
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   customColorTint: true
   canBeHeirloom: true
@@ -1361,7 +1361,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressClub
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   canBeHeirloom: true
@@ -1394,7 +1394,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressFlamenco
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:
@@ -1410,7 +1410,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressFire
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpskirtDressFire
@@ -1426,7 +1426,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressOrange
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpskirtDressOrange
@@ -1442,7 +1442,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressYellow
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpskirtDressYellow
@@ -1474,7 +1474,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressFluffy
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -1490,7 +1490,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressFormalRed
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpskirtDressFormalRed
@@ -1505,7 +1505,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressGothic
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpskirtDressGothic
@@ -1520,7 +1520,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtKimonoColor
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   canBeHeirloom: true
@@ -1537,7 +1537,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressLacyGown
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -1553,7 +1553,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressLong
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -1569,7 +1569,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressLongFlared
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -1585,7 +1585,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtQipao
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -1601,7 +1601,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtQipaoSlim
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -1617,7 +1617,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressRedSwept
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpskirtDressRedSwept
@@ -1632,7 +1632,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtPencilSkirtGymBra
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -1648,7 +1648,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressPuffy
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -1664,7 +1664,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtSailor
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpskirtSailor
@@ -1679,7 +1679,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressSariGreen
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpskirtDressSariGreen
@@ -1695,7 +1695,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressSariRed
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpskirtDressSariRed
@@ -1726,7 +1726,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressSpider
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:
@@ -1742,7 +1742,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressStriped
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpskirtDressStriped
@@ -1790,7 +1790,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressVictorianBlack
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpskirtDressVictorianBlack
@@ -1805,7 +1805,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressVictorianRed
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpskirtDressVictorianRed
@@ -1820,7 +1820,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtWaitress
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpskirtWaitress
@@ -1836,7 +1836,7 @@
 - type: loadout
   id: LoadoutUniformJumpskirtDressYellowSwoop
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpskirtDressYellowSwoop
@@ -1852,7 +1852,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitSuitAmish
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -1868,7 +1868,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitSuitAristocratic
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitSuitAristocratic
@@ -1883,7 +1883,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitSuitAristocraticTuxedo
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitSuitAristocraticTuxedo
@@ -1914,7 +1914,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitBarber
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitBarber
@@ -1929,7 +1929,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitSuitBlueBlazer
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitSuitBlueBlazer
@@ -1962,7 +1962,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitSuitRegal
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitSuitRegal
@@ -1977,7 +1977,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitSuitRegalTuxedo
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitSuitRegalTuxedo
@@ -1992,7 +1992,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitRippedPunk
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:
@@ -2008,7 +2008,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitSailor
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -2024,7 +2024,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitSuitStriped
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitSuitStriped
@@ -2055,7 +2055,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitTurtleneckGrey
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -2071,7 +2071,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitSuitVictorianRedBlack
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitSuitVictorianRedBlack
@@ -2086,7 +2086,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitSuitVictorianRedVest
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitSuitVictorianRedVest
@@ -2101,7 +2101,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitSuitVictorianVest
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitSuitVictorianVest
@@ -2116,7 +2116,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitWaiter
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitWaiter
@@ -2132,7 +2132,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitYogaGymBra
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -2148,7 +2148,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitBlackTurtleneck
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitBlackTurtleneck
@@ -2163,7 +2163,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitBlackTurtleneckFlipped
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitBlackTurtleneckFlipped
@@ -2179,7 +2179,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitSuitRolledSleeves
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitSuitRolledSleeves
@@ -2194,7 +2194,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitBartenderGrey
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitBartenderGrey
@@ -2209,7 +2209,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitCheckered
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitCheckered
@@ -2224,7 +2224,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitFlannelOveralls
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitFlannelOveralls
@@ -2239,7 +2239,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitCowboyBrown
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitCowboyBrown
@@ -2254,7 +2254,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitCowboyGrey
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitCowboyGrey
@@ -2269,7 +2269,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitCamouflageShirt
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitCamouflageShirt
@@ -2284,7 +2284,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitOliveSweater
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitOliveSweater
@@ -2300,7 +2300,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitDesertUniform
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitDesertUniform
@@ -2315,7 +2315,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitLumberjack
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitLumberjack
@@ -2346,7 +2346,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitGreyShirt
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitGreyShirt
@@ -2362,7 +2362,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitFlannelJeans
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitFlannelJeans
@@ -2377,7 +2377,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitFlannelBlackJeans
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitFlannelBlackJeans
@@ -2392,7 +2392,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitFlannelKhakis
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitFlannelKhakis
@@ -2407,7 +2407,7 @@
 - type: loadout
   id: LoadoutUniformJumpsuitFlannelBlackKhakis
   category: Uniform
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitFlannelBlackKhakis
@@ -2422,7 +2422,7 @@
 - type: loadout
   id: ClothingUniformJumpsuitTacticool
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpsuitTacticool
@@ -2437,7 +2437,7 @@
 - type: loadout
   id: ClothingUniformJumpskirtTacticool
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpskirtTacticool
@@ -2452,7 +2452,7 @@
 - type: loadout
   id: ClothingUniformJumpskirtTacticalMaid
   category: Uniform
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformJumpskirtTacticalMaid
@@ -2556,6 +2556,140 @@
     - !type:CharacterNationalityRequirement
       nationalities:
         - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+
+# Solarian Aliance Uniforms
+- type: loadout
+  id: ClothingUniformJumpsuitSolArmyService
+  category: Uniform
+  cost: 0
+  canBeHeirloom: true
+  exclusive: true
+  guideEntry: SANInfo
+  items:
+    - ClothingUniformJumpsuitSolArmyService
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Solarian
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+
+- type: loadout
+  id: ClothingUniformJumpsuitSolFatigueGreen
+  category: Uniform
+  cost: 0
+  canBeHeirloom: true
+  exclusive: true
+  guideEntry: SANInfo
+  items:
+    - ClothingUniformJumpsuitSolFatigueGreen
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Solarian
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+
+- type: loadout
+  id: ClothingUniformJumpsuitSolFatigueGrey
+  category: Uniform
+  cost: 0
+  canBeHeirloom: true
+  exclusive: true
+  guideEntry: SANInfo
+  items:
+    - ClothingUniformJumpsuitSolFatigueGrey
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Solarian
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+
+- type: loadout
+  id: ClothingUniformJumpsuitSolFatigueTan
+  category: Uniform
+  cost: 0
+  canBeHeirloom: true
+  exclusive: true
+  guideEntry: SANInfo
+  items:
+    - ClothingUniformJumpsuitSolFatigueTan
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Solarian
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+
+- type: loadout
+  id: ClothingUniformJumpsuitSolNavyCoveralls
+  category: Uniform
+  cost: 0
+  canBeHeirloom: true
+  exclusive: true
+  guideEntry: SANInfo
+  items:
+    - ClothingUniformJumpsuitSolNavyCoveralls
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Solarian
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+
+- type: loadout
+  id: ClothingUniformJumpsuitSolNavySailor
+  category: Uniform
+  cost: 0
+  canBeHeirloom: true
+  exclusive: true
+  guideEntry: SANInfo
+  items:
+    - ClothingUniformJumpsuitSolNavySailor
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Solarian
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet
+
+- type: loadout
+  id: ClothingUniformJumpsuitSolServiceWhite
+  category: Uniform
+  cost: 0
+  canBeHeirloom: true
+  exclusive: true
+  guideEntry: SANInfo
+  items:
+    - ClothingUniformJumpsuitSolServiceWhite
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Solarian
     - !type:CharacterLifepathRequirement
       lifepaths:
         - WarVet

@@ -338,10 +338,10 @@
       assayFeedback: psionic-language-power-feedback
     - !type:PsionicAddAvailablePowers
       powerPrototype: XenoglossyPower
-      weight: 0.75
+      weight: 2
     - !type:PsionicAddAvailablePowers
       powerPrototype: PsychognomyPower
-      weight: 0.75
+      weight: 0.1
   removalFunctions:
     - !type:RemovePsionicPowerComponents
       components:
@@ -376,7 +376,7 @@
       dampeningModifier: 0.5
     - !type:PsionicAddAvailablePowers
       powerPrototype: RevivifyPower
-      weight: 0.3
+      weight: 2
   removalFunctions:
     - !type:RemovePsionicActions
     - !type:RemovePsionicStatSources
@@ -503,7 +503,7 @@
       psychognomicDescriptor: tenebrous
     - !type:PsionicAddAvailablePowers
       powerPrototype: DarkSwapPower
-      weight: 0.1
+      weight: 1
   removalFunctions:
     - !type:RemovePsionicActions
     - !type:RemovePsionicStatSources
@@ -597,10 +597,10 @@
       amplificationModifier: 0.25
     - !type:PsionicAddAvailablePowers
       powerPrototype: SummonImpPower
-      weight: 0.3
+      weight: 1
     - !type:PsionicAddAvailablePowers
       powerPrototype: PyrokinesisPower
-      weight: 0.1
+      weight: 1
     - !type:AddPsionicPsychognomicDescriptors
       psychognomicDescriptor: pyre
   removalFunctions:

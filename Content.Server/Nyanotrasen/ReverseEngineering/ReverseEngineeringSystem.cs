@@ -32,6 +32,8 @@ public sealed class ReverseEngineeringSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
 
+    private readonly ISawmill _sawmill = Logger.GetSawmill("reverseengineering");
+
     private const string TargetSlot = "target_slot";
     public override void Initialize()
     {
@@ -235,7 +237,7 @@ public sealed class ReverseEngineeringSystem : EntitySystem
 
         if (!TryComp<ReverseEngineeringComponent>(component.CurrentItem, out var rev))
         {
-            Logger.Error("We somehow scanned a " + component.CurrentItem + " for reverse engineering...");
+            _sawmill.Error("We somehow scanned a " + component.CurrentItem + " for reverse engineering...");
             return;
         }
 

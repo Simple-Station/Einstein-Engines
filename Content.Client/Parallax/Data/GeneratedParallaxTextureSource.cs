@@ -51,7 +51,7 @@ public sealed partial class GeneratedParallaxTextureSource : IParallaxTextureSou
         var parallaxConfig = GetParallaxConfig();
         if (parallaxConfig == null)
         {
-            Logger.ErrorS("parallax", $"Parallax config not found or unreadable: {ParallaxConfigPath}");
+            Logger.GetSawmill("parallax.generator").Error("parallax", $"Parallax config not found or unreadable: {ParallaxConfigPath}");
             // The show must go on.
             return Texture.Transparent;
         }
@@ -77,7 +77,7 @@ public sealed partial class GeneratedParallaxTextureSource : IParallaxTextureSou
         }
         catch (Exception ex)
         {
-            Logger.ErrorS("parallax", $"Couldn't retrieve parallax cached texture: {ex}");
+            Logger.GetSawmill("parallax.generator").Error("parallax", $"Couldn't retrieve parallax cached texture: {ex}");
 
             try
             {
