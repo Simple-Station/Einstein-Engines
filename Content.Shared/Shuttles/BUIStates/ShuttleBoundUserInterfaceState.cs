@@ -28,6 +28,10 @@ public sealed class ShuttleBoundUserInterfaceState : BoundUserInterfaceState
 
     public bool canAccesCrew = false;
 
+    // YOu might ask why . Its because _ui.setUi is tick-based instead of event based. As such... we  need this cause the old state gets overridden SPCR 2025 . The
+    // proper fix would be just splitting the UI,s but the fucking Nav UIs are a mess
+    public bool sendingDock = false;
+
     public ShuttleBoundUserInterfaceState(NavInterfaceState navState, ShuttleMapInterfaceState mapState, DockingInterfaceState dockState, CrewInterfaceState crewState)
     {
         NavState = navState;
