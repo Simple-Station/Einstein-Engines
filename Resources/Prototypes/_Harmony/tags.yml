@@ -1,9 +1,3 @@
-# added to upstream entity ClothingShoesGaloshes in Resources/Prototypes/Entities/Clothing/Shoes/specific.yml ; used for ducky galoshes crafting recipe
-- type: Tag
-  id: ClothingShoesGaloshes
-- type: Tag
-  id: ClothingShoesDuckyGaloshes
-
 # Tag used for escape pod landing.
 - type: Tag
   id: DockPod
