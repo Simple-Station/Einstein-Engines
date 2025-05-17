@@ -27,7 +27,7 @@
     state: ears
 
 - type: entity
-  id: OrganShadowkinCore
+  id: OrganShadowkinCore #Should require half as much oxygen as normal lung IE 18kpa pure oxy -> 9kpa pure oxy
   parent: OrganHumanLungs
   description: "What is this thing?"
   components:
