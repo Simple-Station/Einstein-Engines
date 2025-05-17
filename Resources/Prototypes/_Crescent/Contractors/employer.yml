@@ -85,3 +85,72 @@
     - !type:CharacterNationalityRequirement
       nationalities:
       - Coalition
+
+- type: employer
+  id: IronRing
+  nameKey: employer_name_irc
+  descriptionKey: employer_description_irc
+  primaryColour: "#ff595e"
+  secondaryColour: "#3b3b3b"
+
+- type: employer
+  id: Ihijerika
+  nameKey: employer_name_icm
+  descriptionKey: employer_description_icm
+  primaryColour: "#ff595e"
+  secondaryColour: "#3b3b3b"
+
+- type: employer
+  id: PangTai
+  nameKey: employer_name_pta
+  descriptionKey: employer_description_pta
+  primaryColour: "#ff595e"
+  secondaryColour: "#3b3b3b"
+  requirements:
+    - !type:CharacterNationalityRequirement
+      nationalities:
+      - Clarizian
+
+- type: employer
+  id: Vrachev
+  nameKey: employer_name_vrachev
+  descriptionKey: employer_description_vrachev
+  primaryColour: "#ff595e"
+  secondaryColour: "#cecece"
+  requirements:
+    - !type:CharacterNationalityRequirement
+      nationalities:
+      - Unionist
+
+- type: employer
+  id: Homeguard
+  nameKey: employer_name_homeguard
+  descriptionKey: employer_description_homeguard
+  primaryColour: "#ff595e"
+  secondaryColour: "#cecece"
+  requirements:
+    - !type:CharacterNationalityRequirement
+      nationalities:
+      - Unionist
+
+- type: employer
+  id: Sindikat
+  nameKey: employer_name_sindikat
+  descriptionKey: employer_description_sindikat
+  primaryColour: "#ff595e"
+  secondaryColour: "#cecece"
+  requirements:
+    - !type:CharacterNationalityRequirement
+      nationalities:
+      - Unionist
+
+- type: employer
+  id: Logistics
+  nameKey: employer_name_logistics
+  descriptionKey: employer_description_logistics
+  primaryColour: "#ff595e"
+  secondaryColour: "#cecece"
+  requirements:
+    - !type:CharacterNationalityRequirement
+      nationalities:
+      - Unionist
