@@ -8,9 +8,11 @@ public sealed partial class SpaceBiomeTrackerComponent : Component
 {
     //for ambience rule
     [AutoNetworkedField]
+    [ViewVariables]
     public string Biome;
 
     //server only
+    [ViewVariables]
     public SpaceBiomeSourceComponent? Source;
 
     [ViewVariables]

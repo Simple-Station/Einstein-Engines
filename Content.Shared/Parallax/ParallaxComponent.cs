@@ -17,13 +17,13 @@ public sealed partial class ParallaxComponent : Component
     [DataField, AutoNetworkedField]
     public string? SwappedParallax;
 
-    [AutoNetworkedField]
+    [AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
     public float SwapDuration; //in seconds
 
-    [AutoNetworkedField]
+    [AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
     public float SwapTimer;
     // Hullrot edit end
-
+    [ViewVariables(VVAccess.ReadWrite)]
     public bool IsSwapping => SwappedParallax != null;
 
     [UsedImplicitly, ViewVariables(VVAccess.ReadWrite)]
