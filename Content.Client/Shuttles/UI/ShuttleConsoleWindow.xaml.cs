@@ -152,7 +152,7 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
 
     public void UpdateState(EntityUid owner, ShuttleBoundUserInterfaceState cState)
     {
-        _mills.GetSawmill("ui-debug-crescent").Warning($"Got interface state with bytes toggled {cState.DirtyFlags}");
+        //_mills.GetSawmill("ui-debug-crescent").Warning($"Got interface state with bytes toggled {cState.DirtyFlags}");
         if((cState.DirtyFlags & StateDirtyFlags.IFF) != 0)
             NavScreen.UpdateState(cState.IFFState!);
         if ((cState.DirtyFlags & StateDirtyFlags.Base) == 0)
@@ -161,7 +161,7 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
         if ((cState.DirtyFlags & StateDirtyFlags.Dock) != 0 || DockContainer.Docks.Count == 0)
         {
             DockContainer.UpdateState(coordinates?.EntityId, cState.DockState!);
-            _mills.GetSawmill("ui-debug-crescent").Warning($"Update dock with {cState.DockState!.Docks.Count} docks");
+            //_mills.GetSawmill("ui-debug-crescent").Warning($"Update dock with {cState.DockState!.Docks.Count} docks");
         }
 
         NavContainer.SetShuttle(coordinates?.EntityId);

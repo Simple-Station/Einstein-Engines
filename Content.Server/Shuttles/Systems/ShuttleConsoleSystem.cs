@@ -676,6 +676,8 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
 
     private void UpdateBulletState(EntityUid consoleUid, ShuttleConsoleComponent console)
     {
+        if (!_ui.IsUiOpen(consoleUid, ShuttleConsoleUiKey.Key))
+            return;
         if (console.LastUpdatedState is null)
             return;
         var newState = new ShuttleBoundUserInterfaceState(console.LastUpdatedState);
@@ -687,7 +689,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
             newState.sendingDock = false;
         }
 
-        if (_ui.HasUi(consoleUid, ShuttleConsoleUiKey.Key) && _ui.IsUiOpen(consoleUid, ShuttleConsoleUiKey.Key))
+        if (_ui.HasUi(consoleUid, ShuttleConsoleUiKey.Key))
         {
             _ui.SetUiState(consoleUid, ShuttleConsoleUiKey.Key, newState);
             console.LastUpdatedState = newState;
