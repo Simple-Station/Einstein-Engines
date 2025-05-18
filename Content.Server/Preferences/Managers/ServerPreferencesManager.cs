@@ -37,6 +37,7 @@ namespace Content.Server.Preferences.Managers
         private ISawmill _sawmill = default!;
 
         private int MaxCharacterSlots => _cfg.GetCVar(CCVars.GameMaxCharacterSlots);
+        private int MaxCharacterJobs => _cfg.GetCVar(CCVars.GameMaxJobs);
 
         public void Init()
         {
@@ -218,7 +219,8 @@ namespace Content.Server.Preferences.Managers
             msg.Preferences = prefsData.Prefs;
             msg.Settings = new GameSettings
             {
-                MaxCharacterSlots = MaxCharacterSlots
+                MaxCharacterSlots = MaxCharacterSlots,
+                MaxCharacterJobs = MaxCharacterJobs
             };
             _netManager.ServerSendMessage(msg, session.Channel);
         }

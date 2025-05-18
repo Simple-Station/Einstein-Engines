@@ -24,9 +24,9 @@ namespace Content.Shared.Preferences
 
         /// <see cref="_jobPriorities"/>
         public IReadOnlyDictionary<string, (int, JobPriority)> JobPriorities => _jobPriorities;
-        public JobPreferences(Dictionary<string, (int, JobPriority)> jobPriorities)
+        public JobPreferences(IEnumerable<KeyValuePair<string, (int, JobPriority)>> jobPriorities)
         {
-            _jobPriorities = jobPriorities;
+            _jobPriorities = new Dictionary<string, (int, JobPriority)>(jobPriorities);
         }
 
         /// Copy Constructor
@@ -54,7 +54,7 @@ namespace Content.Shared.Preferences
         public JobPreferences WithAssignedChar(string jobId, int slot)
         {
             var dictionary = new Dictionary<string, (int, JobPriority)>(_jobPriorities);
-            if (slot == 0 && !_jobPriorities.ContainsKey(jobId))
+            if (slot == 0)
                 dictionary.Remove(jobId);
             else
                 dictionary[jobId] = _jobPriorities.ContainsKey(jobId) ? (slot, _jobPriorities[jobId].Item2) : (slot, JobPriority.Never);

@@ -10,10 +10,18 @@ namespace Content.Shared.Preferences
     {
         private int _maxCharacterSlots;
 
+        private int _maxCharacterJobs;
+
         public int MaxCharacterSlots
         {
             get => _maxCharacterSlots;
             set => _maxCharacterSlots = value;
+        }
+
+        public int MaxCharacterJobs
+        {
+            get => _maxCharacterJobs;
+            set => _maxCharacterJobs = value;
         }
     }
 }

@@ -4,8 +4,13 @@
     xmlns:prefUi="clr-namespace:Content.Client.Lobby.UI"
     xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
-    HorizontalExpand="True">
-    <BoxContainer Name="Jobs" HorizontalExpand="True">
+    HorizontalExpand="True"
+    Orientation="Vertical">
+    <BoxContainer HorizontalExpand="True">
+        <Button Name="SaveJobsButton" Text="Save Changes" HorizontalAlignment="Stretch" HorizontalExpand="True" StyleClasses="OpenRight" ToolTip="Remember to save your character loadouts!"/>
+        <Button Name="ResetJobsButton" Text="Undo Changes" HorizontalAlignment="Stretch" HorizontalExpand="True" StyleClasses="OpenLeft"/>
+    </BoxContainer>
+    <BoxContainer Name="Jobs" HorizontalExpand="True" VerticalExpand="True">
         <!-- Jobs -->
         <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True" VScrollEnabled="True">
             <BoxContainer HorizontalExpand="True" Orientation="Vertical">

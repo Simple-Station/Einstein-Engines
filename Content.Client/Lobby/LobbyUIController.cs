@@ -11,6 +11,7 @@ using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
+using Content.Shared.Item;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.Traits;
@@ -264,6 +265,12 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
                 _characterSetup?.ReloadCharacterPickers();
         };
 
+        _jobSelector.LoadoutButtonPressed += args =>
+        {
+            // Make an 'open with job' function.
+            //_profileEditor.
+        };
+
         if (_stateManager.CurrentState is LobbyState lobby)
             lobby.Lobby?.CharacterSetupState.AddChild(_characterSetup);
 
@@ -275,10 +282,12 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     /// Gets the highest priority job for the profile.
     public JobPrototype GetPreferredJob(HumanoidCharacterProfile profile)
     {
-        var highPriorityJob = profile.JobPriorities.FirstOrDefault(p => p.Value == JobPriority.High).Key;
+        // Is the high priority job's first item equal to the characterprofile?
+        // If yes, that is the job. If no, default to passenger.
+        // Preferences stuff.
+        var highPriorityJob = _jobSelector?.Preferences?.JobPriorities.FirstOrDefault(p => p.Value.Item2 == JobPriority.High && p.Value.Item1 == _preferencesManager.Preferences?.IndexOfCharacter(profile)).Key;
         return _prototypeManager.Index<JobPrototype>(highPriorityJob ?? SharedGameTicker.FallbackOverflowJob);
     }
-
     public void RemoveDummyClothes(EntityUid dummy)
     {
         if (!_inventory.TryGetSlots(dummy, out var slots))
@@ -319,7 +328,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     {
         _loadouts.ApplyCharacterLoadout(dummy, job, profile, _jobRequirements.GetRawPlayTimeTrackers(), _jobRequirements.IsWhitelisted(), out _);
     }
-
+    
     /// Loads the profile onto a dummy entity
     public EntityUid LoadProfileEntity(HumanoidCharacterProfile? humanoid, bool jobClothes, bool loadouts)
     {
@@ -339,11 +348,12 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
         if (humanoid != null)
         {
-            var job = GetPreferredJob(humanoid);
-            if (jobClothes)
-                GiveDummyJobClothes(dummyEnt, job, humanoid);
-            if (loadouts)
-                GiveDummyLoadout(dummyEnt, job, humanoid);
+            // Default to passenger or the displayed job.
+            //var job = GetPreferredJob(humanoid);
+            if (jobClothes) ;
+                //GiveDummyJobClothes(dummyEnt, job, humanoid);
+            if (loadouts) ;
+                //GiveDummyLoadout(dummyEnt, job, humanoid);
         }
 
         return dummyEnt;

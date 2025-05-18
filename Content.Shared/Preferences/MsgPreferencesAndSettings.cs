@@ -1,4 +1,5 @@
 using System.IO;
+using Content.Shared.Roles;
 using Lidgren.Network;
 using Robust.Shared.Network;
 using Robust.Shared.Serialization;
@@ -14,6 +15,7 @@ namespace Content.Shared.Preferences
 
         public PlayerPreferences Preferences = default!;
         public GameSettings Settings = default!;
+        public JobPreferences Jobs = default!;
 
         public override void ReadFromBuffer(NetIncomingMessage buffer, IRobustSerializer serializer)
         {

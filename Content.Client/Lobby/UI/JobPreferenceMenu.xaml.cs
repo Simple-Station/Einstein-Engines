@@ -61,6 +61,7 @@ namespace Content.Client.Lobby.UI
         private readonly Dictionary<string, BoxContainer> _jobCategories;
 
         public event Action<List<ProtoId<GuideEntryPrototype>>>? OnOpenGuidebook;
+        public event Action<JobPrototype>? LoadoutButtonPressed;
 
         /// The preferences being edited.
         public JobPreferences? Preferences;
@@ -178,7 +179,7 @@ namespace Content.Client.Lobby.UI
                         int characterJobs = Preferences.CharJobs(slot);
                         // Change this to use the CVar later.
                         characterList.AddItem(character.Name, slot + 1);
-                        if (characterJobs > 2)
+                        if (characterJobs >= 3/*_cfgManager.GetCVar(CCVars.GameMaxJobs)*/)
                             characterList.SetItemDisabled(slot + 1, true);
                     }
                     selector.OnOpenGuidebook += OnOpenGuidebook;
@@ -223,6 +224,7 @@ namespace Content.Client.Lobby.UI
                         {
                             if (jobId == job.ID)
                                 character.Select(selectedChar);
+                            // Should be able to remove this when saving is implemented.
                             if (Preferences != null && !_requirements.CheckCharacterAssigned(job, Preferences, out var reason3) && jobId != job.ID)
                             {
                                 // Make this use PreferencesManager instead of just not workign on null :3
@@ -233,8 +235,9 @@ namespace Content.Client.Lobby.UI
                                 selector.UnlockRequirements();
                         }
                         // Should work, keep a close eye on it.
-                        if (Preferences?.CharJobs(selectedChar) > 2)
-                            RefreshJobs();
+                        // Also, uh... once things save it would probably just be easier to make it reload every time.
+                        //if (Preferences?.CharJobs(selectedChar) > 2)
+                            //RefreshJobs();
                     };
 
                     selector.OnSelected += selectedPrio =>
@@ -264,6 +267,11 @@ namespace Content.Client.Lobby.UI
                         //SetDirty();
                     };
 
+                    jobLoadoutButton.OnPressed += args =>
+                    {
+                        LoadoutButtonPressed?.Invoke(job);
+                    };
+
                     _jobPriorities.Add((job.ID, characterList, selector));
                     jobContainer.AddChild(selector);
                     jobContainer.AddChild(characterList);
@@ -281,27 +289,12 @@ namespace Content.Client.Lobby.UI
             foreach (var (jobId, character, prioritySelector) in _jobPriorities)
             {
                 //var priority = _profileEditor.Profile?.JobPriorities.GetValueOrDefault(jobId, JobPriority.Never) ?? JobPriority.Never;
-                // Need to make getvalueordefault.
+                // Need to make getvalueordefault. Or maybe not.
                 //var priority = Preferences?.JobPriorities[jobId].Item2 ?? JobPriority.Never;
                 var priority = Preferences?.JobPriorities.GetValueOrDefault(jobId, (0, JobPriority.Never)) ?? (0, JobPriority.Never);
                 //var charSlot = Preferences?.JobPriorities[jobId] != null ? Preferences.JobPriorities[jobId].Item1 : 0;
                 prioritySelector.Select((int) priority.Item2);
                 character.Select(priority.Item1);
-            }
-        }
-
-        private void UpdateCharAvailability(JobPrototype[] jobs, OptionButton chars, JobPreferences prefs)
-        {
-            foreach (var job in jobs)
-            {
-                foreach (var (slot, character) in _preferencesManager.Preferences!.Characters)
-                {
-                    int characterJobs = prefs.CharJobs(slot);
-                    // Change this to use the CVar later.
-                    if (characterJobs < 3)
-                        chars.SetItemDisabled(slot + 1, true);
-                    else chars.SetItemDisabled(slot + 1, false);
-                }
             }
         }
     }
