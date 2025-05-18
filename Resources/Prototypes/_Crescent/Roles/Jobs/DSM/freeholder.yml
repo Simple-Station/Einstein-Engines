@@ -25,6 +25,7 @@
 - type: startingGear
   id: FreeholderGear
   equipment:
+    jumpsuit: ClothingUniformJumpsuitImperialFreeholder
     id: FreeholderPDA
     ears: ClothingHeadsetEmpireCiv
-    pocket1: ImperialPassportBareLegit
+    shoes: ClothingShoesBootsImperialLongboots

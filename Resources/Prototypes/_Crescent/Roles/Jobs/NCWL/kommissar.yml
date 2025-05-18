@@ -72,6 +72,6 @@
     jumpsuit: ClothingUniformJumpsuitNCWLKommissar
     id: KommissarPDA
     ears: ClothingHeadsetNCWL
-    belt: ClothingBeltNCWLWebbing
-    pocket1: NCWLPassportAccepted
-    pocket2: WeaponPistolHKUSP
+    shoes: ClothingShoesBootsJack
+    outerClothing: ClothingOuterArmorNCWLCarapace
+    head: ClothingHeadHatNCWLKommissarHat
