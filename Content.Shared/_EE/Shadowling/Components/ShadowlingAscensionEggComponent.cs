@@ -1,5 +1,7 @@
+using Content.Shared.Announcements.Prototypes;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 
 namespace Content.Shared._EE.Shadowling.Components;
@@ -46,10 +48,4 @@ public sealed partial class ShadowlingAscensionEggComponent : Component
 
     [DataField]
     public SoundSpecifier? AscensionEnterSound = new SoundPathSpecifier("/Audio/_EE/Shadowling/egg/ascension_enter.ogg");
-
-    [DataField]
-    public SoundSpecifier AscensionCompleteSound = new SoundPathSpecifier("/Audio/_EE/Shadowling/ascension.ogg");
-
-    [DataField]
-    public SoundSpecifier AscensionEnterAnnounceSound = new SoundPathSpecifier("/Audio/Misc/epsilon.ogg");
 }

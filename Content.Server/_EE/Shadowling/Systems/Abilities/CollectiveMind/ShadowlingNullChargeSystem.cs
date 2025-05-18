@@ -78,7 +78,6 @@ public sealed class ShadowlingNullChargeSystem : EntitySystem
 
         var effectEnt = Spawn(component.NullChargeEffect, _transformSystem.GetMapCoordinates(uid));
         _transformSystem.SetParent(effectEnt, uid);
-        // todo: add sfx
     }
 
     private bool IsApcInRange(EntityUid uid, float range)
@@ -88,7 +87,6 @@ public sealed class ShadowlingNullChargeSystem : EntitySystem
             if (HasComp<ApcComponent>(target))
                 return true;
         }
-
         return false;
     }
 

@@ -52,7 +52,6 @@
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: glare
     event: !type:GlareEvent { }
-    # add speech
   - type: ShadowlingAction
 
 - type: entity
@@ -68,7 +67,6 @@
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: veil
     event: !type:VeilEvent { }
-    # add speech
   - type: ShadowlingAction
 
 - type: entity
@@ -99,7 +97,6 @@
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: shadow_walk
     event: !type:ShadowWalkEvent { }
-    # add speech
   - type: ShadowlingAction
 
 - type: entity
@@ -115,7 +112,6 @@
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: icy_veins
     event: !type:IcyVeinsEvent { }
-    # add speech
   - type: ShadowlingAction
 
 - type: entity
@@ -130,7 +126,6 @@
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: destroy_engines
     event: !type:DestroyEnginesEvent { }
-    # add speech
   - type: ShadowlingAction
 
 - type: entity
@@ -145,7 +140,6 @@
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: collective_mind
     event: !type:CollectiveMindEvent { }
-    # add speech
   - type: ShadowlingAction
 
 # Thrall Required Actions
@@ -163,7 +157,6 @@
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: blindness_smoke
     event: !type:BlindnessSmokeEvent { }
-    # add speech
   - type: ShadowlingAction
 
 - type: entity
@@ -179,7 +172,6 @@
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: null_charge
     event: !type:NullChargeEvent
-    # add speech
   - type: ShadowlingAction
 
 - type: entity
@@ -195,26 +187,23 @@
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: sonic_screech
     event: !type:SonicScreechEvent
-    # add speech
   - type: ShadowlingAction
 
 - type: entity
   id: ActionBlackRecuperation
   name: Black Recuperation
-  description: Bring back a dead Thrall to life, or empower a living one.
+  description: Bring back a dead Thrall to life, or empower a living one. You'll take cellular damage once you use it.
   categories: [ HideSpawnMenu ]
   components:
   - type: EntityTargetAction
     canTargetSelf: false
     interactOnMiss: false
     itemIconStyle: NoItem
-    useDelay: 90
     range: 1
     icon:
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: black_recuperation
     event: !type:BlackRecuperationEvent
-    # add speech
   - type: ShadowlingAction
 
 - type: entity
@@ -232,7 +221,6 @@
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: emp_enthrall
     event: !type:EmpoweredEnthrallEvent
-    # add speech
   - type: ShadowlingAction
 
 - type: entity
@@ -247,16 +235,14 @@
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: nox_imperii
     event: !type:NoxImperiiEvent
-    # add speech
   - type: ShadowlingAction
 
 # Ascension Abilities
 
-# debug
 - type: entity
   id: ActionAscendance
   name: Ascendance
-  description: Ascend into your true form.
+  description: Forge your ascension egg and walk the path of a god.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
@@ -283,7 +269,6 @@
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: annihilate
     event: !type:AnnihilateEvent
-    # add speech
   - type: ShadowlingAction
 
 - type: entity
@@ -302,7 +287,6 @@
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: enthrall
     event: !type:HypnosisEvent
-    # add speech
   - type: ShadowlingAction
 
 - type: entity
@@ -318,7 +302,6 @@
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: shadow_walk
     event: !type:TogglePlaneShiftEvent
-    # add speech
   - type: ShadowlingAction
 
 - type: entity
@@ -334,7 +317,6 @@
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: lightning_storm
     event: !type:LightningStormEvent
-    # add speech
   - type: ShadowlingAction
 
 - type: entity
@@ -349,5 +331,4 @@
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: broadcast
     event: !type:AscendantBroadcastEvent
-    # add speech
   - type: ShadowlingAction

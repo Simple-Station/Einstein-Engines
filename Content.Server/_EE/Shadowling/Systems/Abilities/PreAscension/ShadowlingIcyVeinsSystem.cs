@@ -63,7 +63,6 @@ public sealed class ShadowlingIcyVeinsSystem : EntitySystem
                 }
             }
         }
-
     }
 
     private void OnIcyVeins(EntityUid uid, ShadowlingIcyVeinsComponent component, IcyVeinsEvent args)
@@ -78,7 +77,7 @@ public sealed class ShadowlingIcyVeinsSystem : EntitySystem
 
         _audio.PlayPvs(component.IcyVeinsSound, uid, AudioParams.Default.WithVolume(-1f));
 
-        // _actions.StartUseDelay(args.Action);
+        _actions.StartUseDelay(args.Action);
     }
 
     private void TryIcyVeins(EntityUid target, ShadowlingIcyVeinsComponent component)

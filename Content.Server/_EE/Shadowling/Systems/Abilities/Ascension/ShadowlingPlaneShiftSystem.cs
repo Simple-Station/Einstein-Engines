@@ -1,10 +1,6 @@
 using Content.Server.Actions;
-using Content.Server.Stunnable;
-using Content.Shared._EE.Nightmare.Components;
 using Content.Shared._EE.Shadowling;
-using Content.Shared._EE.Shadowling.Components;
 using Content.Shared.WhiteDream.BloodCult.Constructs.PhaseShift;
-using Robust.Server.GameObjects;
 
 
 namespace Content.Server._EE.Shadowling;
@@ -17,7 +13,6 @@ namespace Content.Server._EE.Shadowling;
 public sealed class ShadowlingPlaneShiftSystem : EntitySystem
 {
     [Dependency] private readonly ActionsSystem _actions = default!;
-    [Dependency] private readonly StunSystem _stun = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -53,6 +48,5 @@ public sealed class ShadowlingPlaneShiftSystem : EntitySystem
         var phaseShift = EnsureComp<PhaseShiftedComponent>(uid);
         phaseShift.MovementSpeedBuff = 1.7f;
         // Thanks to blood cult code for this component
-        // todo: add sound
     }
 }

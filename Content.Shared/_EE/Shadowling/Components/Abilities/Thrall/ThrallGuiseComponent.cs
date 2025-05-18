@@ -11,10 +11,10 @@ namespace Content.Shared._EE.Shadowling.Thrall;
 public sealed partial class ThrallGuiseComponent : Component
 {
     [DataField]
-    public float Timer = 4f;
+    public float Timer = 10f;
 
     [DataField]
-    public float GuiseDuration = 4f;
+    public float GuiseDuration = 10f;
 
     public bool Active;
 

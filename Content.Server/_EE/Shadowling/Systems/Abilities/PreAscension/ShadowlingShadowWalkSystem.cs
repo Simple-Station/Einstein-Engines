@@ -1,9 +1,7 @@
 using Content.Server.Actions;
-using Content.Server.Popups;
 using Content.Server.Stealth;
 using Content.Shared._EE.Shadowling;
 using Content.Shared.Movement.Systems;
-using Content.Shared.Popups;
 using Content.Shared.Stealth.Components;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
@@ -22,7 +20,6 @@ public sealed class ShadowlingShadowWalkSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly StealthSystem _stealth = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private  readonly TransformSystem _transform = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
@@ -95,6 +92,6 @@ public sealed class ShadowlingShadowWalkSystem : EntitySystem
         var stealth = EnsureComp<StealthComponent>(uid);
         _stealth.SetVisibility(uid, 0f, stealth);
 
-        // _actions.StartUseDelay(args.Action);
+        _actions.StartUseDelay(args.Action);
     }
 }

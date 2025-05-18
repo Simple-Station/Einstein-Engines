@@ -70,8 +70,7 @@ public sealed class ShadowlingAscendanceSystem : EntitySystem
         var cocoon = Spawn(component.EggProto, Transform(uid).Coordinates);
         var ascEgg = EntityManager.GetComponent<ShadowlingAscensionEggComponent>(cocoon);
         ascEgg.Creator = uid;
-
-        // todo: add this line once we done with debugging _actions.RemoveAction(uid, args.Args.Used);
+        _actions.RemoveAction(uid, args.Args.Used);
     }
 
     private bool TileFree(EntityUid uid)

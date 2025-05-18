@@ -64,7 +64,4 @@ public sealed partial class ShadowlingGlareComponent : Component
 
     [DataField]
     public string? EffectGlare = "ShadowlingGlareEffect";
-
-    [DataField]
-    public SoundSpecifier? EffectGlareSound = new SoundPathSpecifier("/Audio/_EE/Shadowling/glare.ogg");
 }

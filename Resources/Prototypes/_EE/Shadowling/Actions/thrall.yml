@@ -20,7 +20,7 @@
   components:
   - type: InstantAction
     itemIconStyle: NoItem
-    # useDelay: 120
+    useDelay: 120
     icon:
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: shadow_walk # todo: would be cool to add new ability icon

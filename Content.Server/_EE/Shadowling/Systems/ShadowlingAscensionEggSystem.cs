@@ -1,25 +1,26 @@
 using Content.Server.Actions;
+using Content.Server.AlertLevel;
+using Content.Server.Announcements.Systems;
 using Content.Server.Chat.Systems;
 using Content.Server.Light.Components;
 using Content.Server.Light.EntitySystems;
 using Content.Server.Pinpointer;
 using Content.Server.Polymorph.Systems;
 using Content.Server.Popups;
+using Content.Server.Station.Systems;
 using Content.Server.Storage.EntitySystems;
 using Content.Shared._EE.Nightmare.Components;
 using Content.Shared._EE.Shadowling;
 using Content.Shared._EE.Shadowling.Components;
-using Content.Shared._EE.Shadowling.Systems;
 using Content.Shared.Damage.Components;
 using Content.Shared.Destructible;
 using Content.Shared.Examine;
-using Content.Shared.Light.Components;
 using Content.Shared.Popups;
-using Content.Shared.Storage;
 using Content.Shared.Verbs;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
+using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -43,6 +44,9 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
     [Dependency] private readonly PoweredLightSystem _poweredLight = default!;
     [Dependency] private readonly NavMapSystem _navMap = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private readonly AnnouncerSystem _announcer = default!;
+    [Dependency] private readonly StationSystem _station = default!;
+    [Dependency] private readonly AlertLevelSystem _alertLevel = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -99,7 +103,6 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
 
     private void OnDestruction(EntityUid uid, ShadowlingAscensionEggComponent component, DestructionEventArgs args)
     {
-
         if (component.AscendingEffectEntity != null)
             QueueDel(component.AscendingEffectEntity);
 
@@ -178,12 +181,18 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
 
         _entityStorage.Insert(uid, eggUid);
 
-        _audio.PlayPvs(component.AscensionEnterSound, eggUid, AudioParams.Default.WithVolume(-2f));
+        _audio.PlayPvs(component.AscensionEnterSound, eggUid, AudioParams.Default.WithVolume(-1f));
 
         var position = _transform.GetMapCoordinates(uid);
-        _chat.DispatchGlobalAnnouncement(
-            Loc.GetString("shadowling-ascension-message", ("location", FormattedMessage.RemoveMarkupPermissive(_navMap.GetNearestBeaconString(position)))),
-            colorOverride: Color.Red); // todo: sound
+        var message = Loc.GetString(
+            "shadowling-ascension-message",
+            ("location", FormattedMessage.RemoveMarkupPermissive(_navMap.GetNearestBeaconString(position))));
+        var sender = "Central Command";
+
+        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("alertDelta"), Filter.Broadcast(), message, sender, Color.Red);
+        var stationUid = _station.GetStationInMap(Transform(uid).MapID);
+        if (stationUid != null)
+            _alertLevel.SetLevel(stationUid.Value, "delta", false, false, true, true);
 
         var effectEnt = Spawn(component.ShadowlingInside, _transform.GetMapCoordinates(eggUid));
         _transform.SetParent(effectEnt, eggUid);
@@ -257,9 +266,12 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
 
         _chat.DispatchGlobalAnnouncement(Loc.GetString("shadowling-ascended-message"),
             Loc.GetString("shadowling-destroy-engines-sender"),
-            true,
-            component.AscensionCompleteSound,
+            false,
+            null,
             Color.MediumPurple);
+
+        // im actually tired of debugging the sounds not playing, like idc if its shitcode anymore
+        _audio.PlayGlobal(new SoundPathSpecifier("/Audio/_EE/Shadowling/ascension.ogg"), Filter.Broadcast(), false, AudioParams.Default.WithVolume(-2f));
     }
 
     private void DestroyLights()

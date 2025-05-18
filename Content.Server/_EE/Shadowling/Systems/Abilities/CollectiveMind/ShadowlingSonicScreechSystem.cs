@@ -40,7 +40,7 @@ public sealed class ShadowlingSonicScreechSystem : EntitySystem
 
     private void OnSonicScreech(EntityUid uid, ShadowlingSonicScreechComponent component, SonicScreechEvent args)
     {
-        // _actions.StartUseDelay(args.Action);
+        _actions.StartUseDelay(args.Action);
         _popups.PopupEntity(Loc.GetString("shadowling-sonic-screech-complete"), uid, uid, PopupType.Medium);
         _audio.PlayPvs(component.ScreechSound, uid);
 

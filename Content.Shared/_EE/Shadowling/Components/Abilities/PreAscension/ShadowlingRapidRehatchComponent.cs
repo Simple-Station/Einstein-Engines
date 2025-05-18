@@ -1,3 +1,4 @@
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 
 
@@ -19,4 +20,7 @@ public sealed partial class ShadowlingRapidRehatchComponent : Component
 
     [DataField]
     public string? RapidRehatchEffect = "ShadowlingRapidRehatchEffect";
+
+    [DataField]
+    public SoundSpecifier? RapidRehatchSound = new SoundPathSpecifier("/Audio/_EE/Shadowling/rapid_rehatch.ogg");
 }

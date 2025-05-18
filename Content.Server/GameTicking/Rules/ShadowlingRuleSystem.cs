@@ -2,6 +2,7 @@ using Content.Server.Antag;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Mind;
 using Content.Server.Roles;
+using Content.Server.Zombies;
 using Content.Shared._EE.Shadowling;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Mobs.Systems;
@@ -78,6 +79,8 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
 
     public bool MakeShadowling(EntityUid target, ShadowlingRuleComponent rule)
     {
+        EnsureComp<ZombieImmuneComponent>(target);
+
         if (!_mind.TryGetMind(target, out var mindId, out var mind))
             return false;
 

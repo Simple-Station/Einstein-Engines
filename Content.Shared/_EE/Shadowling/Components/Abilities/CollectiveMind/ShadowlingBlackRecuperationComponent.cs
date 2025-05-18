@@ -39,5 +39,14 @@ public sealed partial class ShadowlingBlackRecuperationComponent : Component
 
     [DataField]
     public SoundSpecifier? BlackRecSound = new SoundPathSpecifier("/Audio/Items/Defib/defib_zap.ogg");
+
+    [DataField]
+    public DamageSpecifier DamageToDeal = new()
+    {
+        DamageDict = new()
+        {
+            ["Cellular"] = 5,
+        }
+    };
 }
 

@@ -54,11 +54,10 @@ public sealed class ShadowlingCollectiveMindSystem : EntitySystem
         {
             if (comp.AmountOfThralls >= actionData.UnlockAtThralls)
             {
-                // Has action been added?
                 if (actionData.Added)
                     continue;
 
-                _actions.AddAction(args.Performer, actionData.ActionPrototype, component: actions);
+                _actions.AddAction(args.Performer, actionData.ActionPrototype, actionData.ActionEntity, component: actions);
 
                 var componentToAdd = _compFactory.GetComponent(actionData.ActionComponentName);
                 EntityManager.AddComponent(args.Performer, componentToAdd);

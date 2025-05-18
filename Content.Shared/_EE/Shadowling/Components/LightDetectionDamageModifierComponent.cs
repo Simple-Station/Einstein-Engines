@@ -98,7 +98,15 @@ public sealed partial class LightDetectionDamageModifierComponent : Component
     {
         DamageDict = new()
         {
+            ["Blunt"] = -15,
+            ["Slash"] = -15,
+            ["Piercing"] = -15,
             ["Heat"] = -15,
+            ["Cold"] = -15,
+            ["Shock"] = -15,
+            ["Asphyxiation"] = -15,
+            ["Bloodloss"] = -15,
+            ["Poison"] = -15,
         }
     };
 

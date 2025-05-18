@@ -10,7 +10,6 @@ using Content.Shared.Actions;
 using Content.Shared.Examine;
 using Content.Shared.Overlays.Switchable;
 
-
 namespace Content.Server._EE.Shadowling;
 
 

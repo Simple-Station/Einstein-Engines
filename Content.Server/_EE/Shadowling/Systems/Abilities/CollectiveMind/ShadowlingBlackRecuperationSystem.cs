@@ -1,3 +1,4 @@
+using Content.Server.Actions;
 using Content.Server.Administration.Systems;
 using Content.Server.DoAfter;
 using Content.Server.Humanoid;
@@ -6,6 +7,7 @@ using Content.Server.Popups;
 using Content.Shared._EE.Shadowling;
 using Content.Shared._EE.Shadowling.Components;
 using Content.Shared.Actions;
+using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.Humanoid;
 using Content.Shared.Mobs.Systems;
@@ -29,10 +31,11 @@ public sealed class ShadowlingBlackRecuperationSystem : EntitySystem
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly RejuvenateSystem _rejuvenate = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
-    [Dependency] private readonly LesserShadowlingSystem _lesserShadowling = default!;
     [Dependency] private readonly PolymorphSystem _polymorph = default!;
     [Dependency] private  readonly HumanoidAppearanceSystem _humanoidAppearance = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private readonly ActionsSystem _actionsSystem = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
     /// <inheritdoc/>
     public override void Initialize()
     {
@@ -55,7 +58,6 @@ public sealed class ShadowlingBlackRecuperationSystem : EntitySystem
             return;
         }
 
-
         var doAfter = new DoAfterArgs(
             EntityManager,
             uid,
@@ -75,7 +77,6 @@ public sealed class ShadowlingBlackRecuperationSystem : EntitySystem
             return;
 
         var target = args.Args.Target.Value;
-        _audio.PlayPvs(component.BlackRecSound, target, AudioParams.Default.WithVolume(-1f));
 
         if (!_mobStateSystem.IsAlive(target))
         {
@@ -84,6 +85,10 @@ public sealed class ShadowlingBlackRecuperationSystem : EntitySystem
 
             var effectEnt = Spawn(component.BlackRecuperationEffect, _transformSystem.GetMapCoordinates(target));
             _transformSystem.SetParent(effectEnt, target);
+
+            _audio.PlayPvs(component.BlackRecSound, target, AudioParams.Default.WithVolume(-1f));
+
+            _damageable.TryChangeDamage(uid, component.DamageToDeal);
         }
         else
         {
@@ -108,6 +113,10 @@ public sealed class ShadowlingBlackRecuperationSystem : EntitySystem
 
             component.LesserShadowlingAmount++;
             _popup.PopupEntity(Loc.GetString("shadowling-black-rec-lesser-done"), uid, newUid.Value, PopupType.MediumCaution);
+
+            _audio.PlayPvs(component.BlackRecSound, newUid.Value, AudioParams.Default.WithVolume(-1f));
+
+            _damageable.TryChangeDamage(uid, component.DamageToDeal);
         }
     }
 }

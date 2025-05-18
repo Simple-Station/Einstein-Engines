@@ -10,6 +10,7 @@ public sealed partial class ShadowlingActionData
     [DataField] public int UnlockAtThralls;
     [DataField] public string ActionPrototype = string.Empty;
     [DataField] public string ActionComponentName = string.Empty;
+    [DataField] public EntityUid ActionEntity;
     public bool Added = false;
 }
 

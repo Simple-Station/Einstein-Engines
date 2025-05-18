@@ -1,7 +1,5 @@
 using Content.Server.Storage.Components;
-using Content.Shared._EE.Clothing.Components;
 using Content.Shared._EE.Shadowling;
-using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
 
 

@@ -6,7 +6,9 @@ using Content.Shared._EE.Shadowling;
 using Content.Shared.DoAfter;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
+using Robust.Server.Audio;
 using Robust.Server.GameObjects;
+using Robust.Shared.Audio;
 
 
 namespace Content.Server._EE.Shadowling;
@@ -23,6 +25,7 @@ public sealed class ShadowlingRapidRehatchSystem : EntitySystem
     [Dependency] private readonly RejuvenateSystem _rejuvenate = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -59,10 +62,12 @@ public sealed class ShadowlingRapidRehatchSystem : EntitySystem
 
         _popup.PopupEntity(Loc.GetString("shadowling-rapid-rehatch-complete"), uid, uid, PopupType.Medium);
         _rejuvenate.PerformRejuvenate(uid);
+
         var effectEnt = Spawn(comp.RapidRehatchEffect, _transform.GetMapCoordinates(uid));
         _transform.SetParent(effectEnt, uid);
-        //todo: play sound here
 
-        // _actions.StartUseDelay(comp.ActionRapidRehatchEntity);
+        _audio.PlayPvs(comp.RapidRehatchSound, uid, AudioParams.Default.WithVolume(-2f));
+
+        _actions.StartUseDelay(comp.ActionRapidRehatchEntity);
     }
 }

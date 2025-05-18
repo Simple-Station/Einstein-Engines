@@ -2,6 +2,8 @@ using Content.Shared._EE.Shadowling.Components;
 using Content.Shared.Alert;
 using Content.Shared.Damage;
 using Content.Shared.Mobs.Systems;
+using Robust.Server.Audio;
+using Robust.Shared.Audio;
 using Robust.Shared.Timing;
 
 
@@ -17,6 +19,7 @@ public sealed class LightDetectionDamageModifierSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -68,13 +71,17 @@ public sealed class LightDetectionDamageModifierSystem : EntitySystem
                     if (!_mobState.IsCritical(uid))
                     {
                         _damageable.TryChangeDamage(uid, comp.DamageToDeal * comp.ResistanceModifier);
+                        _audio.PlayPvs(
+                            new SoundPathSpecifier("/Audio/Weapons/Guns/Hits/energy_meat1.ogg"),
+                            uid,
+                            AudioParams.Default.WithVolume(-2f));
                         comp.NextUpdateDamage = _timing.CurTime + comp.DamageInterval;
                     }
                 }
-                // todo: we could add a StunUserOnLight here
             }
             else if (comp.DetectionValue >= comp.DetectionValueMax && comp.HealOnShadows)
             {
+                comp.NextUpdateHeal = _timing.CurTime + TimeSpan.FromSeconds(0.1f);
                 // Heal Damage
                 if (_timing.CurTime >= comp.NextUpdateHeal)
                 {
@@ -82,8 +89,7 @@ public sealed class LightDetectionDamageModifierSystem : EntitySystem
                     comp.NextUpdateHeal = _timing.CurTime + comp.HealInterval;
                 }
             }
-
-            comp.NextUpdate += comp.UpdateInterval;
+            comp.NextUpdate = _timing.CurTime + comp.UpdateInterval;
         }
     }
 

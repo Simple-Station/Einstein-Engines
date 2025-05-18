@@ -1,12 +1,9 @@
-using Content.Server._EE.Shadowling.Objectives;
 using Content.Server.Actions;
 using Content.Server.Atmos.Components;
 using Content.Server.Humanoid;
 using Content.Server.Language;
 using Content.Server.Mind;
-using Content.Server.Objectives;
 using Content.Server.Popups;
-using Content.Server.Roles;
 using Content.Server.Storage.EntitySystems;
 using Content.Shared._EE.Shadowling.Systems;
 using Content.Shared._EE.Shadowling;
@@ -18,18 +15,15 @@ using Content.Shared.Alert;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.Humanoid;
-using Content.Shared.Humanoid.Markings;
 using Content.Shared.Inventory;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Objectives.Systems;
 using Content.Shared.Popups;
-using Content.Shared.Roles;
 using Content.Shared.StatusEffect;
 using Content.Shared.Stunnable;
 using Robust.Server.Audio;
-using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 
 
@@ -46,13 +40,9 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
     [Dependency] private readonly EntityStorageSystem _entityStorage = default!;
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
-    [Dependency] private readonly AlertsSystem _alert = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
-    [Dependency] private readonly MindSystem _mind = default!;
-    [Dependency] private readonly SharedObjectivesSystem _sharedObjectives = default!;
     [Dependency] private  readonly HumanoidAppearanceSystem _appearance = default!;
-    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
 
     public override void Initialize()
@@ -313,6 +303,6 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
         _audio.PlayPvs(
             new SoundPathSpecifier("/Audio/Items/Defib/defib_zap.ogg"),
             uid,
-            AudioParams.Default.WithVolume(-2f).WithPitchScale(-3f));
+            AudioParams.Default.WithVolume(-1f));
     }
 }
