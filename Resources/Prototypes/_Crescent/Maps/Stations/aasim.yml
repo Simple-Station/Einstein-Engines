@@ -9,6 +9,10 @@
       gridComponents:
         - type: BlockShipWeaponProjectileGrid
       components:
+        - type: ExtraStationInformation
+          iconPath: /Textures/Logo/logo.png
+          stationSubtext: 'frontier-lobby-pirate-subtext'
+          stationDescription: 'frontier-lobby-pirate-description'
         - type: StationNameSetup
           mapNameTemplate: 'TAP Qiwa Aasim'
         - type: Grammar
