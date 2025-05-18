@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Content.Server.Actions;
 using Content.Server.AlertLevel;
 using Content.Server._Goobstation.Blob.Components;
+using Content.Server.Explosion.Components;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Objectives;
 using Content.Server.Explosion.EntitySystems;
