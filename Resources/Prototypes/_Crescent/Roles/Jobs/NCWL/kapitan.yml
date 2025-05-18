@@ -40,6 +40,6 @@
     ears: ClothingHeadsetNCWL
     belt: ClothingBeltNCWLWebbing
     pocket1: WeaponPistolHKUSP
-    pocket2: NCWLPassportAccepted
-  # duffelbag: ClothingBackpackDuffelNCWLFilledSanitar YAMLFIX: This doesn't go here anymore.
-  # satchel: ClothingBackpackSatchelNCWLFilledSanitar
+    outerClothing: ClothingOuterArmorNCWLCarapaceKapitan
+    shoes: ClothingShoesBootsJack
+    head: ClothingHeadHatNCWLBeret

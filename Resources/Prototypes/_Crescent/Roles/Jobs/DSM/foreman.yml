@@ -30,5 +30,8 @@
     id: ForemanImpPDA
     ears: ClothingHeadsetEmpireCiv
     head: ClothingHeadHelmetImperialWorkerHelmet
-    pocket1: ImperialPassportBareLegit
     mask: ClothingMaskImperialCombatGasmask
+    shoes: ClothingShoesBootsImperialLongboots
+    jumpsuit: ClothingUniformJumpsuitImperialFreeholder
+    gloves: ClothingHandsGlovesImperialWorkerGloves
+    

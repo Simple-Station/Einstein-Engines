@@ -80,11 +80,9 @@
   id: GovernorGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitImperialGovernor
-    back: ClothingBackpackSatchelLeatherFilledDSM
     shoes: ClothingShoesBootsImperialGovernorBoots
     head: ClothingHeadHatImperialBicorne
     outerClothing: ClothingOuterCoatImperialGovernor
     belt: ClothingBeltSheathFilled
     id: GovernorPDA
     ears: ClothingHeadsetEmpire
-    pocket1: ImperialPassportBareLegit

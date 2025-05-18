@@ -11,17 +11,6 @@
       group: LoadoutMasks
 
 - type: loadout
-  id: LoadoutMaskMuzzle
-  category: Mask
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingMaskMuzzle
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutMasks
-
-- type: loadout
   id: LoadoutMaskGas
   category: Mask
   cost: 1
