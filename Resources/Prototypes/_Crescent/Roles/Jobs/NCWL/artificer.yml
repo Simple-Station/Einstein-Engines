@@ -29,11 +29,9 @@
   id: ArtificerGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitNCWLArtificer
-    back: ClothingBackpackDuffelNCWLFilledArtificer
     id: ArtificerPDA
     ears: ClothingHeadsetNCWL
     belt: ClothingBeltUtilityEngineering
     pocket1: WeaponPistolHKUSP
-    pocket2: NCWLPassportAccepted
-  # duffelbag: ClothingBackpackDuffelNCWLFilledArtificer YAMLFIX: This doesn't go here anymore.
-  # satchel: ClothingBackpackSatchelNCWLFilledArtificer
+    shoes: ClothingShoesBootsJack
+    head: ClothingHeadHatNCWLBeret

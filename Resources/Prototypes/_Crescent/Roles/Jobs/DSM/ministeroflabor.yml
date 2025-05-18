@@ -37,6 +37,9 @@
 - type: startingGear
   id: CourtierGear
   equipment:
+    head: ClothingHeadHatImperialPeakedCap
+    jumpsuit: ClothingUniformJumpsuitImperialNobleMale
+    shoes: ClothingShoesBootsImperialLaceup
+    outerClothing: ClothingOuterCoatImperialParade
     id: CourtierPDA
     ears: ClothingHeadsetEmpire
-    pocket1: ImperialPassportBareLegit
