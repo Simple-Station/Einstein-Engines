@@ -6,6 +6,8 @@ using Content.Server.Zombies;
 using Content.Shared._EE.Shadowling;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.NPC.Prototypes;
+using Content.Shared.NPC.Systems;
 using Content.Shared.Roles;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
@@ -18,10 +20,15 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly MobStateSystem _mob = default!;
+    [Dependency] private readonly NpcFactionSystem _npc = default!;
 
     public readonly SoundSpecifier BriefingSound = new SoundPathSpecifier("/Audio/_EE/Shadowling/shadowling.ogg");
 
     [ValidatePrototypeId<EntityPrototype>] EntProtoId _mindRole = "MindRoleShadowling";
+
+    public readonly ProtoId<NpcFactionPrototype> ShadowlingFactionId = "Shadowling";
+
+    public readonly ProtoId<NpcFactionPrototype> NanotrasenFactionId = "NanoTrasen";
 
     public override void Initialize()
     {
@@ -69,7 +76,7 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
     {
         var ent = args.Mind.Comp.OwnedEntity;
         var sling = HasComp<ShadowlingComponent>(ent);
-        args.Append(Loc.GetString(sling ? "shadowling-briefing" : "thrall-briefing"));
+        args.Briefing = Loc.GetString(sling ? "shadowling-briefing" : "thrall-briefing");
     }
 
     private void OnSelectAntag(EntityUid uid, ShadowlingRuleComponent comp, ref AfterAntagEntitySelectedEvent args)
@@ -86,6 +93,9 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
 
         _role.MindAddRole(mindId, _mindRole.Id, mind, true);
 
+        _npc.RemoveFaction(target, NanotrasenFactionId, false);
+        _npc.AddFaction(target, ShadowlingFactionId);
+
         TryComp<MetaDataComponent>(target, out var metaData);
         if (metaData == null)
             return false;
@@ -95,6 +105,8 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
         _antag.SendBriefing(target, briefing, Color.MediumPurple, BriefingSound);
 
         EnsureComp<ShadowlingComponent>(target);
+
+        rule.ShadowlingMinds.Add(mindId);
         return true;
     }
 

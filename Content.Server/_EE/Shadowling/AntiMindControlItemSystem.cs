@@ -3,9 +3,12 @@ using Content.Server.Popups;
 using Content.Shared._EE.Shadowling;
 using Content.Shared._EE.Shadowling.Components;
 using Content.Shared.DoAfter;
+using Content.Shared.Examine;
 using Content.Shared.Humanoid;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
+using Robust.Server.Audio;
+using Robust.Shared.Audio;
 
 
 namespace Content.Server._EE.Shadowling;
@@ -14,11 +17,13 @@ namespace Content.Server._EE.Shadowling;
 /// <summary>
 /// This handles the Anti-Mind control item system
 /// Its the same as enthralling, but takes some seconds more.
+/// Has charges, and is limited through crafting it
 /// </summary>
 public sealed class AntiMindControlItemSystem : EntitySystem
 {
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
+    [Dependency] private readonly AudioSystem _audioSystem = default!;
     /// <inheritdoc/>
     public override void Initialize()
     {
@@ -26,12 +31,36 @@ public sealed class AntiMindControlItemSystem : EntitySystem
 
         SubscribeLocalEvent<AntiMindControlItemComponent, AfterInteractEvent>(AfterInteract);
         SubscribeLocalEvent<AntiMindControlItemComponent, AntiMindControlItemDoAfterEvent>(AntiMindControlDoAfter);
+
+        SubscribeLocalEvent<AntiMindControlItemComponent, ComponentStartup>(AntiMindControlStartup);
+
+        SubscribeLocalEvent<AntiMindControlItemComponent, ExaminedEvent>(AntiMindControlExamined);
+    }
+
+    private void AntiMindControlExamined(EntityUid uid, AntiMindControlItemComponent component, ExaminedEvent args)
+    {
+        args.PushMarkup(Loc.GetString("anti-mind-examine-charges", ("charges", component.CurrentCharges)));
+    }
+
+    private void AntiMindControlStartup(EntityUid uid, AntiMindControlItemComponent component, ComponentStartup args)
+    {
+        component.CurrentCharges = component.MaxCharges;
     }
 
     private void AfterInteract(EntityUid uid, AntiMindControlItemComponent component, ref AfterInteractEvent args)
     {
         if (args.Handled || !args.CanReach)
             return;
+
+        if (component.CurrentCharges == 0)
+        {
+            _popupSystem.PopupEntity(
+                Loc.GetString("anti-mind-max-charges-reached"),
+                args.User,
+                args.User,
+                PopupType.MediumCaution);
+            return;
+        }
 
         if (args.Target == null)
             return;
@@ -95,5 +124,10 @@ public sealed class AntiMindControlItemSystem : EntitySystem
 
             _popupSystem.PopupEntity(Loc.GetString("mind-control-thrall-done"), target, target, PopupType.MediumCaution);
         }
+        component.CurrentCharges -= 1;
+        _audioSystem.PlayPvs(
+            new SoundPathSpecifier("/Audio/Weapons/flash.ogg"),
+            target,
+            AudioParams.Default.WithVolume(-2f));
     }
 }

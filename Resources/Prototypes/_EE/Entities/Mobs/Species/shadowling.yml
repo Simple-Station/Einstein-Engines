@@ -22,6 +22,8 @@
     species: Shadowling
   - type: Fingerprint
   - type: Blindable
+  - type: TypingIndicator
+    proto: alien
   - type: FireVisuals
     alternateState: Standing
   - type: Damageable

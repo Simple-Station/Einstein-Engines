@@ -7,12 +7,12 @@
   - type: Transform
     noRot: true
   - type: Sprite
-    noRot: true
+    noRot: false
     sprite: _EE/Shadowling/Effects/glare.rsi
     state: glare
     netsync: false
     drawdepth: Effects
-  - type: PointLight # Attaching pointlight to something makes it look 10x better ngl
+  - type: PointLight
     color: "#e3432a"
     radius: 7
     energy: 2

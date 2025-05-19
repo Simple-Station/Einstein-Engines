@@ -2,29 +2,29 @@ using Content.Server.Actions;
 using Content.Server.Atmos.Components;
 using Content.Server.Humanoid;
 using Content.Server.Language;
-using Content.Server.Mind;
 using Content.Server.Popups;
 using Content.Server.Storage.EntitySystems;
+using Content.Server.Stunnable;
 using Content.Shared._EE.Shadowling.Systems;
 using Content.Shared._EE.Shadowling;
 using Content.Shared._EE.Shadowling.Components;
 using Content.Shared._Goobstation.Flashbang;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Actions;
-using Content.Shared.Alert;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
+using Content.Shared.Examine;
 using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.Objectives.Systems;
 using Content.Shared.Popups;
-using Content.Shared.StatusEffect;
 using Content.Shared.Stunnable;
+using Content.Shared.Weapons.Ranged.Events;
 using Robust.Server.Audio;
 using Robust.Shared.Audio;
+using Robust.Shared.Random;
 
 
 namespace Content.Server._EE.Shadowling;
@@ -44,6 +44,8 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
     [Dependency] private readonly LanguageSystem _language = default!;
     [Dependency] private  readonly HumanoidAppearanceSystem _appearance = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly StunSystem _stun = default!;
 
     public override void Initialize()
     {
@@ -57,6 +59,10 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
 
         SubscribeLocalEvent<ShadowlingComponent, GetFlashbangedEvent>(OnFlashBanged);
         SubscribeLocalEvent<ShadowlingComponent, DamageModifyEvent>(OnDamageModify);
+
+        SubscribeLocalEvent<ShadowlingComponent, SelfBeforeGunShotEvent>(BeforeGunShot);
+
+        SubscribeLocalEvent<ShadowlingComponent, ExaminedEvent>(OnExamined);
 
         SubscribeAbilities();
     }
@@ -139,16 +145,15 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
 
         if (phase == ShadowlingPhases.PostHatch)
         {
+            Dirty(uid, component);
             // When the entity gets polymorphed, the OnInit starts so... We have to remove it again here.
             _actions.RemoveAction(uid, component.ActionHatchEntity);
 
             AddPostHatchActions(uid, component);
 
-            // todo: uncomment after debugging abilities
-            /*EnsureComp<LightDetectionComponent>(uid);
+            EnsureComp<LightDetectionComponent>(uid);
             var lightMod = EnsureComp<LightDetectionDamageModifierComponent>(uid);
             lightMod.ResistanceModifier = 0.5f; // Let them start with 50% resistance, and decrease it per Thrall
-            _alert.ShowAlert(uid, component.AlertProto);*/
         }
         else if (phase == ShadowlingPhases.Ascension)
         {
@@ -161,21 +166,18 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
                 _actions.RemoveAction(uid, action);
             }
 
-            // give thralls partial ascension
-            // destroy all lights
-
             var ev = new ShadowlingAscendEvent();
             RaiseLocalEvent(ev);
 
             EnsureComp<PressureImmunityComponent>(uid);
 
             AddComp<ShadowlingAnnihilateComponent>(uid);
-            AddComp<ShadowlingHypnosisComponent>(uid);
+            //AddComp<ShadowlingHypnosisComponent>(uid); for future reader: uncomment if you want this in the game. Thralls turn into nightmares, so no need for it
             AddComp<ShadowlingPlaneShiftComponent>(uid);
             AddComp<ShadowlingLightningStormComponent>(uid);
             AddComp<ShadowlingAscendantBroadcastComponent>(uid);
             _actions.AddAction(uid, ref component.ActionAnnihilateEntity, component.ActionAnnihilate, component: actions);
-            _actions.AddAction(uid, ref component.ActionHypnosisEntity, component.ActionHypnosis, component: actions);
+            //_actions.AddAction(uid, ref component.ActionHypnosisEntity, component.ActionHypnosis, component: actions);
             _actions.AddAction(uid, ref component.ActionPlaneShiftEntity, component.ActionPlaneShift, component: actions);
             _actions.AddAction(uid, ref component.ActionLightningStormEntity, component.ActionLightningStorm, component: actions);
             _actions.AddAction(uid, ref component.ActionBroadcastEntity, component.ActionBroadcast, component: actions);
@@ -198,6 +200,33 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
         }
     }
 
+    private void BeforeGunShot(Entity<ShadowlingComponent> ent, ref SelfBeforeGunShotEvent args)
+    {
+        // Slings cant shoot guns
+        if (args.Gun.Comp.ClumsyProof)
+            return;
+
+        if (!_random.Prob(0.5f))
+            return;
+
+        _damageable.TryChangeDamage(ent, ent.Comp.GunShootFailDamage, origin: ent);
+
+        _stun.TryParalyze(ent, ent.Comp.GunShootFailStunTime, false);
+
+        args.Cancel();
+    }
+
+    private void OnExamined(EntityUid uid, ShadowlingComponent comp, ExaminedEvent args)
+    {
+        if (args.Examiner != uid)
+            return;
+
+        if (!TryComp<LightDetectionDamageModifierComponent>(uid, out var lightDet))
+            return;
+
+        args.PushMarkup($"[color=#D22B2B]You take {lightDet.ResistanceModifier * lightDet.DamageToDeal.GetTotal()} burn damage from light[/color]");
+    }
+
     #endregion
 
     private void AddPostHatchActions(EntityUid uid, ShadowlingComponent component)
@@ -214,8 +243,6 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
         AddComp<ShadowlingDestroyEnginesComponent>(uid);
         AddComp<ShadowlingCollectiveMindComponent>(uid);
 
-        AddComp<ShadowlingAscendanceComponent>(uid); // remove this once debugged
-
         _actions.AddAction(uid, ref component.ActionGlareEntity, component.ActionGlare, component: actions);
         _actions.AddAction(uid, ref component.ActionEnthrallEntity, component.ActionEnthrall, component: actions);
         _actions.AddAction(uid, ref component.ActionVeilEntity, component.ActionVeil, component: actions);
@@ -224,7 +251,6 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
         _actions.AddAction(uid, ref component.ActionIcyVeinsEntity, component.ActionIcyVeins, component: actions);
         _actions.AddAction(uid, ref component.ActionDestroyEnginesEntity, component.ActionDestroyEngines, component: actions);
         _actions.AddAction(uid, ref component.ActionCollectiveMindEntity, component.ActionCollectiveMind, component: actions);
-        _actions.AddAction(uid, ref component.ActionAscendanceEntity, component.ActionAscendance, component: actions);
     }
 
     public bool CanEnthrall(EntityUid uid, EntityUid target)
@@ -302,7 +328,7 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
 
         _audio.PlayPvs(
             new SoundPathSpecifier("/Audio/Items/Defib/defib_zap.ogg"),
-            uid,
-            AudioParams.Default.WithVolume(-1f));
+            target,
+            AudioParams.Default);
     }
 }

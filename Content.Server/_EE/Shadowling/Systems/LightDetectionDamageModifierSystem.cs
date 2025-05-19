@@ -104,4 +104,9 @@ public sealed class LightDetectionDamageModifierSystem : EntitySystem
         component.NextUpdateHeal   = _timing.CurTime;
         component.DetectionValue   = component.DetectionValueMax;
     }
+
+    public void AddResistance(float amount, EntityUid uid, LightDetectionDamageModifierComponent component)
+    {
+        component.ResistanceModifier += amount;
+    }
 }

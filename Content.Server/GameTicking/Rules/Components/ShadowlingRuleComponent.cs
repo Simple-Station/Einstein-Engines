@@ -10,6 +10,8 @@ public sealed partial class ShadowlingRuleComponent : Component
 {
     [DataField]
     public ShadowlingWinCondition WinCondition = ShadowlingWinCondition.Draw;
+
+    public readonly List<EntityUid> ShadowlingMinds = new();
 }
 
 public enum ShadowlingWinCondition : byte

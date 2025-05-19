@@ -1,12 +1,16 @@
-using Content.Server.Actions;
 using Content.Server.Administration.Systems;
+using Content.Server.Chat.Managers;
+using Content.Server.Chat.Systems;
 using Content.Server.DoAfter;
+using Content.Server.EUI;
+using Content.Server.Ghost;
 using Content.Server.Humanoid;
+using Content.Server.Mind;
 using Content.Server.Polymorph.Systems;
 using Content.Server.Popups;
 using Content.Shared._EE.Shadowling;
 using Content.Shared._EE.Shadowling.Components;
-using Content.Shared.Actions;
+using Content.Shared.Chat;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.Humanoid;
@@ -15,6 +19,7 @@ using Content.Shared.Popups;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
+using Robust.Shared.Player;
 
 
 namespace Content.Server._EE.Shadowling;
@@ -23,6 +28,7 @@ namespace Content.Server._EE.Shadowling;
 /// <summary>
 /// This handles the Black Recuperation logic.
 /// Black Rec. either turns back a dead Thrall to life, OR turns a living Thrall into a Lesser Shadowling by empowering them
+/// Reduces your light resistance forever. Less for thralls, more for lesser shadowlings.
 /// </summary>
 public sealed class ShadowlingBlackRecuperationSystem : EntitySystem
 {
@@ -34,8 +40,11 @@ public sealed class ShadowlingBlackRecuperationSystem : EntitySystem
     [Dependency] private readonly PolymorphSystem _polymorph = default!;
     [Dependency] private  readonly HumanoidAppearanceSystem _humanoidAppearance = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly ActionsSystem _actionsSystem = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly LightDetectionDamageModifierSystem _modifierLight = default!;
+    [Dependency] private readonly MindSystem _mind = default!;
+    [Dependency] private readonly ChatSystem _chatManager = default!;
+    [Dependency] private readonly EuiManager _euiManager = default!;
     /// <inheritdoc/>
     public override void Initialize()
     {
@@ -78,8 +87,30 @@ public sealed class ShadowlingBlackRecuperationSystem : EntitySystem
 
         var target = args.Args.Target.Value;
 
+        if (!TryComp<LightDetectionDamageModifierComponent>(uid, out var lightDetectionDamageModifier))
+            return;
+
         if (!_mobStateSystem.IsAlive(target))
         {
+            ICommonSession? session = null;
+
+            if (_mind.TryGetMind(target, out _, out var mind) &&
+                mind.Session is { } playerSession)
+            {
+                session = playerSession;
+                // notify them they're being revived.
+                if (mind.CurrentEntity != target)
+                {
+                    _euiManager.OpenEui(new ReturnToBodyEui(mind, _mind), session);
+                }
+            }
+            else
+            {
+                _chatManager.TrySendInGameICMessage(uid, Loc.GetString("defibrillator-no-mind"),
+                    InGameICChatType.Speak, true);
+                return;
+            }
+
             _rejuvenate.PerformRejuvenate(target);
             _popup.PopupEntity(Loc.GetString("shadowling-black-rec-revive-done"), uid, target, PopupType.MediumCaution);
 
@@ -89,6 +120,8 @@ public sealed class ShadowlingBlackRecuperationSystem : EntitySystem
             _audio.PlayPvs(component.BlackRecSound, target, AudioParams.Default.WithVolume(-1f));
 
             _damageable.TryChangeDamage(uid, component.DamageToDeal);
+
+            _modifierLight.AddResistance(component.ResistanceRemoveFromThralls, uid, lightDetectionDamageModifier);
         }
         else
         {
@@ -116,7 +149,7 @@ public sealed class ShadowlingBlackRecuperationSystem : EntitySystem
 
             _audio.PlayPvs(component.BlackRecSound, newUid.Value, AudioParams.Default.WithVolume(-1f));
 
-            _damageable.TryChangeDamage(uid, component.DamageToDeal);
+            _modifierLight.AddResistance(component.ResistanceRemoveFromLesser, uid, lightDetectionDamageModifier);
         }
     }
 }

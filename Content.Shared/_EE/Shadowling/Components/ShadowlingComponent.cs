@@ -106,6 +106,19 @@ public sealed partial class ShadowlingComponent : Component
     };
 
     [DataField]
+    public DamageSpecifier GunShootFailDamage = new()
+    {
+        DamageDict = new()
+        {
+            ["Blunt"] = 5,
+            ["Piercing"] = 4,
+        }
+    };
+
+    [DataField]
+    public TimeSpan GunShootFailStunTime = TimeSpan.FromSeconds(3);
+
+    [DataField]
     public float NormalDamage;
 
     [DataField]

@@ -12,4 +12,10 @@ public sealed partial class AntiMindControlItemComponent : Component
 {
     [DataField]
     public TimeSpan Duration = TimeSpan.FromSeconds(3);
+
+    [DataField]
+    public int MaxCharges;
+
+    [DataField]
+    public int CurrentCharges;
 }

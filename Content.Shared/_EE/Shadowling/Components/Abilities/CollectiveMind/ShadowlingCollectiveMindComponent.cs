@@ -33,19 +33,19 @@ public sealed partial class ShadowlingCollectiveMindComponent : Component
         },
         new ShadowlingActionData
         {
-            UnlockAtThralls = 5,
+            UnlockAtThralls = 10,
             ActionPrototype = "ActionBlindnessSmoke",
             ActionComponentName = "ShadowlingBlindnessSmoke"
         },
         new ShadowlingActionData
         {
-            UnlockAtThralls = 7,
+            UnlockAtThralls = 5,
             ActionPrototype = "ActionNullCharge",
             ActionComponentName = "ShadowlingNullCharge"
         },
         new ShadowlingActionData
         {
-            UnlockAtThralls = 9,
+            UnlockAtThralls = 7,
             ActionPrototype = "ActionBlackRecuperation",
             ActionComponentName = "ShadowlingBlackRecuperation"
         },
@@ -57,9 +57,15 @@ public sealed partial class ShadowlingCollectiveMindComponent : Component
         },
         new ShadowlingActionData()
         {
-            UnlockAtThralls = 1,
+            UnlockAtThralls = 15,
             ActionPrototype = "ActionNoxImperii",
             ActionComponentName = "ShadowlingNoxImperii"
+        },
+        new ShadowlingActionData()
+        {
+            UnlockAtThralls = 20,
+            ActionPrototype = "ActionAscendance",
+            ActionComponentName = "ShadowlingAscendance"
         }
     };
 

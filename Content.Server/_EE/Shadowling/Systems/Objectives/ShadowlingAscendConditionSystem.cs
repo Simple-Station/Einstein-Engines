@@ -14,6 +14,8 @@ public sealed class ShadowlingAscendConditionSystem : EntitySystem
     /// <inheritdoc/>
     public override void Initialize()
     {
+        base.Initialize();
+
         SubscribeLocalEvent<ShadowlingAscendConditionComponent, ObjectiveGetProgressEvent>(OnObjectiveProgress);
         SubscribeLocalEvent<ShadowlingAscendConditionComponent, ObjectiveAfterAssignEvent>(OnAfterAssign);
     }
@@ -30,7 +32,6 @@ public sealed class ShadowlingAscendConditionSystem : EntitySystem
 
     private float GetProgress(MindComponent mind)
     {
-        // idek why this shit is not working i tried everything IM DONE!!!
         if (mind.OwnedEntity == null)
             return 0f;
 

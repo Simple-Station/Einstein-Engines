@@ -12,6 +12,7 @@
     size: Small
     sprite: _EE/Shadowling/anti_mind_control.rsi
   - type: AntiMindControlItem
+    maxCharges: 5
 
 - type: entity
   parent: ArmBladeChangeling

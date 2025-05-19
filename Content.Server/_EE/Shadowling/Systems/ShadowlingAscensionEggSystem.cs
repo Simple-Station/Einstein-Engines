@@ -263,15 +263,9 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
 
             EnsureComp<NightmareComponent>(newUid.Value);
         }
-
-        _chat.DispatchGlobalAnnouncement(Loc.GetString("shadowling-ascended-message"),
-            Loc.GetString("shadowling-destroy-engines-sender"),
-            false,
-            null,
-            Color.MediumPurple);
-
-        // im actually tired of debugging the sounds not playing, like idc if its shitcode anymore
-        _audio.PlayGlobal(new SoundPathSpecifier("/Audio/_EE/Shadowling/ascension.ogg"), Filter.Broadcast(), false, AudioParams.Default.WithVolume(-2f));
+        var message = Loc.GetString("shadowling-ascended-message");
+        var sender = Loc.GetString("shadowling-destroy-engines-sender");
+        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("ShadowlingAscension"), Filter.Broadcast(), message, sender, Color.MediumPurple);
     }
 
     private void DestroyLights()

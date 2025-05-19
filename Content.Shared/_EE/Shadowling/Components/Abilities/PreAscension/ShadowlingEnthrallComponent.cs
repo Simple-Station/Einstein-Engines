@@ -11,5 +11,5 @@ public sealed partial class ShadowlingEnthrallComponent : Component
     public string? ActionEnthrall = "ActionEnthrall";
 
     [DataField]
-    public TimeSpan EnthrallTime = TimeSpan.FromSeconds(1.5); // This needs actual playtesting but should be fine for now
+    public TimeSpan EnthrallTime = TimeSpan.FromSeconds(5);
 }

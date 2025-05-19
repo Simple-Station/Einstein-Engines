@@ -8,8 +8,8 @@
     unique: true
     difficulty: 3
     icon:
-      sprite: _EE/Shadowling/shadowling_abilities.rsi
-      state: ascendance
+      sprite: _EE/Shadowling/objectives.rsi
+      state: ascendance_icon
   - type: ShadowlingAscendCondition
 
 

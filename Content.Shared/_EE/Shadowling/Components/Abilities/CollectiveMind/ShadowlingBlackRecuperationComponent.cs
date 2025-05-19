@@ -48,5 +48,11 @@ public sealed partial class ShadowlingBlackRecuperationComponent : Component
             ["Cellular"] = 5,
         }
     };
+
+    [DataField]
+    public float ResistanceRemoveFromThralls = 0.5f;
+
+    [DataField]
+    public float ResistanceRemoveFromLesser = 0.12f;
 }
 

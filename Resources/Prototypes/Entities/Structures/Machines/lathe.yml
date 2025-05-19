@@ -320,6 +320,7 @@
     - ClothingEyesGlassesChemical
     - N14MaterialCircuitry
     dynamicRecipes:
+    - AntiMindControlDevice
     - PowerDrill
     - MiningDrill
     - MiningDrillDiamond
