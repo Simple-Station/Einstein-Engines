@@ -9,7 +9,6 @@
     - Dragon
     - Revolutionary
     - Changeling
-    - Heretic
 
 - type: explosion
   id: Blob
@@ -48,7 +47,7 @@
       description: blob-carrier-role-desc
       rules: blob-carrier-role-rules
       mindRoles:
-      - MindRoleGhostRoleSoloAntagonist
+      - MindRoleGhostRoleTeamAntagonist
       raffle:
         settings: default
     - type: Sprite

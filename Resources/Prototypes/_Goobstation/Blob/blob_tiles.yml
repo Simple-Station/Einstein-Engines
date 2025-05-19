@@ -10,6 +10,8 @@
       name: ghost-role-information-blob-name
       description: ghost-role-information-blob-description
       rules: You are an antagonist, destroy the station!
+      mindRoles:
+      - MindRoleGhostRoleTeamAntagonist
       raffle:
         settings: default
     - type: Sprite
@@ -93,6 +95,8 @@
     description: ghost-role-information-blob-description
     rules: You are an antagonist, destroy the station!
     reregister: false
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
@@ -157,9 +161,6 @@
 #          - BlobTileLayer
 #        mask:
 #          - BlobTileMask
-
-
-
 
 - type: entity
   parent: BaseBlob
