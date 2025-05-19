@@ -31,7 +31,9 @@
 - type: startingGear
   id: KadetGear
   equipment:
+    shoes: ClothingShoesBootsJack
+    jumpsuit: ClothingUniformJumpsuitNCWL
     ears: ClothingHeadsetNCWL
     belt: WeaponPistolHKUSP
-    pocket1: NCWLPassportAccepted
     id: KadetPDA
+    head: ClothingHeadHatNCWLCapsoft

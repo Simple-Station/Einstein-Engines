@@ -10,106 +10,12 @@
       group: LoadoutEyes
 
 - type: loadout
-  id: LoadoutEyesEyepatchColor
-  category: Eyes
-  cost: 0
-  canBeHeirloom: true
-  customColorTint: true
-  items:
-    - ClothingEyesEyepatchColor
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes
-
-- type: loadout
-  id: LoadoutEyesEyepatchColorFlipped
-  category: Eyes
-  cost: 0
-  canBeHeirloom: true
-  customColorTint: true
-  items:
-    - ClothingEyesEyepatchColorFlipped
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes
-
-- type: loadout
   id: LoadoutEyesGlasses
   category: Eyes
   cost: 0
   customColorTint: true
   items:
     - ClothingEyesGlasses
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes
-
-- type: loadout
-  id: LoadoutEyesGlassesJamjar
-  category: Eyes
-  cost: 0
-  exclusive: true
-  customColorTint: true
-  items:
-    - ClothingEyesGlassesJamjar
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes
-
-- type: loadout
-  id: LoadoutEyesGlasses3D
-  category: Eyes
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingEyesGlasses3D
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes
-
-- type: loadout
-  id: LoadoutEyesGlassesHipster
-  category: Eyes
-  cost: 0
-  exclusive: true
-  customColorTint: true
-  items:
-    - ClothingEyesGlassesHipster
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes
-
-- type: loadout
-  id: LoadoutEyesGlassesMonocle
-  category: Eyes
-  cost: 0
-  exclusive: true
-  customColorTint: true
-  items:
-    - ClothingEyesGlassesMonocle
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes
-
-- type: loadout
-  id: LoadoutEyesGlassesPanto
-  category: Eyes
-  cost: 0
-  exclusive: true
-  customColorTint: true
-  items:
-    - ClothingEyesGlassesPanto
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes
-
-- type: loadout
-  id: LoadoutEyesGlassesJensen
-  category: Eyes
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingEyesGlassesJensen
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutEyes
@@ -131,51 +37,6 @@
   customColorTint: true
   items:
     - ClothingEyesBlindfoldColor
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes
-
-- type: loadout
-  id: LoadoutItemCheapSunglasses
-  category: Eyes
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingEyesGlassesCheapSunglasses
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes
-
-- type: loadout
-  id: LoadoutEyesGlassesCheapSunglassesAviator
-  category: Eyes
-  cost: 0
-  exclusive: true
-  customColorTint: true
-  items:
-    - ClothingEyesGlassesCheapSunglassesAviator
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes
-
-- type: loadout
-  id: LoadoutEyesGlassesCheapSunglassesBig
-  category: Eyes
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingEyesGlassesCheapSunglassesBig
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes
-
-- type: loadout
-  id: LoadoutEyesGlassesCheapSunglassesVisor
-  category: Eyes
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingEyesGlassesCheapSunglassesVisor
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutEyes
@@ -221,28 +82,6 @@
   exclusive: true
   items:
     - ClothingEyesGlassesSunglassesVisor
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes
-
-- type: loadout
-  id: LoadoutItemBlindfoldFake
-  category: Eyes
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingEyesBlindfoldFake
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes
-
-- type: loadout
-  id: LoadoutEyesBlindfoldFakeColor
-  category: Eyes
-  cost: 0
-  customColorTint: true
-  items:
-    - ClothingEyesBlindfoldFakeColor
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutEyes

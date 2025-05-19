@@ -1,7 +1,7 @@
 - type: species
   id: SynthHuman
   name: species-name-synth-human
-  roundStart: false
+  roundStart: true
   prototype: MobSynthHuman
   sprites: MobHumanSprites
   defaultSkinTone: "#FFFFFFFF"
