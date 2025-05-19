@@ -196,6 +196,8 @@ public sealed class PaperSystem : EntitySystem
                 _appearance.SetData(entity, PaperVisuals.Stamp, entity.Comp.StampState, appearance);
             }
         }
+
+        UpdateUserInterface(entity);
         return true;
     }
 

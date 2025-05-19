@@ -1,4 +1,4 @@
-using System.Linq
+using System.Linq;
 using Content.Server.Construction;
 using Content.Server.Power.Components;
 using Content.Server.Research.Systems;
