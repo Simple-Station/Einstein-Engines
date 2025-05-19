@@ -10,6 +10,8 @@
       name: ghost-role-information-blob-name
       description: ghost-role-information-blob-description
       rules: You are an antagonist, destroy the station!
+      mindRoles:
+        - MindRoleGhostRoleSoloAntagonist
       raffle:
         settings: default
     - type: Sprite
@@ -89,10 +91,11 @@
   - type: WarpPoint
     location: blob core
   - type: GhostRole
-    prob: 1
     name: ghost-role-information-blob-name
     description: ghost-role-information-blob-description
     rules: You are an antagonist, destroy the station!
+    mindRoles:
+      - MindRoleGhostRoleSoloAntagonist
     reregister: false
     raffle:
       settings: default
