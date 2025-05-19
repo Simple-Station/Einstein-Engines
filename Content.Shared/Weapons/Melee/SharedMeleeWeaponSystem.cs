@@ -195,7 +195,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         RaiseLocalEvent(uid, ref ev);
 
         if (component.ContestArgs is not null)
-            ev.Damage *= _contests.ContestConstructor(user, component.ContestArgs);
+            ev.Damage *= _contests.ContestConstructor(user, component.ContestArgs) * component.ClickDamageModifier;
 
         return DamageSpecifier.ApplyModifierSets(ev.Damage, ev.Modifiers);
     }
@@ -216,10 +216,10 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return FixedPoint2.Zero;
 
-        var ev = new GetHeavyDamageModifierEvent(uid, component.ClickDamageModifier, 1, user);
+        var ev = new GetHeavyDamageModifierEvent(uid, component.HeavyDamageBaseModifier, 1, user);
         RaiseLocalEvent(uid, ref ev);
 
-        return ev.DamageModifier * ev.Multipliers * component.HeavyDamageBaseModifier;
+        return ev.DamageModifier * ev.Multipliers;
     }
 
     public bool GetResistanceBypass(EntityUid uid, EntityUid user, MeleeWeaponComponent? component = null)
