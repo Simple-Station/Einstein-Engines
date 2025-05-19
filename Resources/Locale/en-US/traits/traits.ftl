@@ -654,6 +654,15 @@ trait-description-IPCBrittleBoneDisease =
     This trait reduces your threshold for death by 60 points.
     (Just as the normal version, it halves the threshold. IPCs cannot be crit, so it instead makes you die 60 points sooner.)
 
+trait-name-Manic = Manic
+trait-description-Manic = Your perception of the world is subject to varying intensities. Anything that affects your mood will have its effects multiplied by between 0.7 and 1.3.
+
+trait-name-Mercurial = Mercurial
+trait-description-Mercurial = Your mood fluctuates regularly, causing you to have a random modifier to your mood that is always somewhere between -10 and +10.
+
+trait-name-DeadEmotions = Dead Emotions
+trait-description-DeadEmotions = You feel nothing, and are completely unaffected by all positive or negative mood modifiers.
+
 trait-name-IPCFaultyWaterproofing = Faulty Waterproofing
 trait-description-IPCFaultyWaterproofing =
     Either due to damage or cheap construction, your chassis is not waterproof.
@@ -665,3 +674,4 @@ trait-description-IPCFragileCircuits =
     Your chassis is particularly bad at handling electric discharges.
     You immediately shut down any time you take [color=orange]Shock[/color] damage and must be rebooted.
 fragileCircuits-kill-popup = {$name}'s circuits shut down from short-circuiting!
+
