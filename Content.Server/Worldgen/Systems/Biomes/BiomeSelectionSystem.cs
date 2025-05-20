@@ -71,6 +71,6 @@ public sealed class BiomeSelectionSystem : BaseWorldSystem
     }
 
     private bool CheckSpecificChunkRange(BiomePrototype biome, Vector2i coords) =>
-        coords.X > biome.MinX || coords.X < biome.MaxX || coords.Y > biome.MinY || coords.Y < biome.MaxY;
+        coords.X >= biome.MinX && coords.X <= biome.MaxX && coords.Y >= biome.MinY && coords.Y <= biome.MaxY;
 }
 
