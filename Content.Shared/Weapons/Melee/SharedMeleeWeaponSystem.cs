@@ -421,7 +421,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
                     throw new NotImplementedException();
             }
 
-            DoLungeAnimation(user, weaponUid, weapon.Angle, TransformSystem.ToMapCoordinates(GetCoordinates(attack.Coordinates)), weapon.Range, animation);
+            DoLungeAnimation(user, weaponUid, weapon.Angle, TransformSystem.ToMapCoordinates(GetCoordinates(attack.Coordinates)), weapon.Range * weapon.HeavyRangeModifier, animation);
         }
 
         var attackEv = new MeleeAttackEvent(weaponUid);
@@ -440,7 +440,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
             HasComp<DamageableComponent>(target) &&
             TryComp<TransformComponent>(target, out targetXform) &&
             // Not in LOS.
-            InRange(user, target.Value, component.Range, session);
+            InRange(user, target.Value, component.Range * component.LightRangeModifier, session);
     }
 
     protected virtual void DoLightAttack(EntityUid user, LightAttackEvent ev, EntityUid meleeUid, MeleeWeaponComponent component, ICommonSession? session)
@@ -563,7 +563,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
         var userPos = TransformSystem.GetWorldPosition(userXform);
         var direction = targetMap.Position - userPos;
-        var distance = Math.Min(component.Range, direction.Length());
+        var distance = Math.Min(component.Range * component.HeavyRangeModifier, direction.Length());
 
         var damage = GetDamage(meleeUid, user, component) * GetHeavyDamageModifier(meleeUid, user, component);
         var entities = GetEntityList(ev.Entities);

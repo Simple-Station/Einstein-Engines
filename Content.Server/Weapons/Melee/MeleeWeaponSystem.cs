@@ -123,7 +123,7 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
                 return false;
         }
 
-        if (!InRange(user, target, component.Range, session))
+        if (!InRange(user, target, component.Range * component.DisarmRangeModifier, session))
         {
             return false;
         }

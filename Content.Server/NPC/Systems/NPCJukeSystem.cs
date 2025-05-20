@@ -171,7 +171,7 @@ public sealed class NPCJukeSystem : EntitySystem
                     return;
 
                 // TODO: Probably add in our bounds and target bounds for ideal distance.
-                var idealDistance = weapon.Range * 4f;
+                var idealDistance = weapon.Range * weapon.LightRangeModifier * 4f;
                 var obstacleDistance = obstacleDirection.Length();
 
                 if (obstacleDistance > idealDistance || obstacleDistance == 0f)

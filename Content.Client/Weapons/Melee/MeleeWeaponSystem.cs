@@ -149,7 +149,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
             var attackerPos = TransformSystem.GetMapCoordinates(entity);
 
             if (mousePos.MapId != attackerPos.MapId ||
-                (attackerPos.Position - mousePos.Position).Length() > weapon.Range)
+                (attackerPos.Position - mousePos.Position).Length() > weapon.Range * weapon.LightRangeModifier)
             {
                 if (weapon.HeavyOnLightMiss)
                     ClientHeavyAttack(entity, coordinates, weaponUid, weapon);
