@@ -50,33 +50,32 @@ public sealed class BiomeSelectionSystem : BaseWorldSystem
         component.Biomes = sorted; // my hopes and dreams rely on this being pre-sorted by priority.
     }
 
-    private bool CheckBiomeValidity(EntityUid chunk, BiomePrototype biome, Vector2i coords)
+    private bool CheckBiomeValidity(EntityUid chunk, BiomePrototype biome, Vector2i coords) =>
+        (biome.MinX is null || biome.MaxX is null || biome.MinY is null || biome.MaxY is null)
+        ? CheckNoiseRanges(chunk, biome, coords) : CheckSpecificChunkRange(biome, coords);
+
+    private bool CheckNoiseRanges(EntityUid chunk, BiomePrototype biome, Vector2i coords)
     {
-        if (biome.MinX is null || biome.MaxX is null || biome.MinY is null || biome.MaxY is null)
-            foreach (var (noise, ranges) in biome.NoiseRanges)
+        foreach (var (noise, ranges) in biome.NoiseRanges)
+        {
+            var value = _noiseIdx.Evaluate(chunk, noise, coords);
+            var anyValid = false;
+            foreach (var range in ranges)
             {
-                var value = _noiseIdx.Evaluate(chunk, noise, coords);
-                var anyValid = false;
-                foreach (var range in ranges)
+                if (range.X < value && value < range.Y)
                 {
-                    if (range.X < value && value < range.Y)
-                    {
-                        anyValid = true;
-                        break;
-                    }
+                    anyValid = true;
+                    break;
                 }
-
-                if (!anyValid)
-                    return false;
             }
-        else
-        if (coords.X < biome.MinX
-            || coords.X > biome.MaxX
-            || coords.Y < biome.MinY
-            || coords.Y > biome.MaxY)
-            return false;
 
+            if (!anyValid)
+                return false;
+        }
         return true;
     }
+
+    private bool CheckSpecificChunkRange(BiomePrototype biome, Vector2i coords) =>
+        coords.X > biome.MinX || coords.X < biome.MaxX || coords.Y > biome.MinY || coords.Y < biome.MaxY;
 }
 
