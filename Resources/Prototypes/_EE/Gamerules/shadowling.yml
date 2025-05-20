@@ -6,12 +6,10 @@
   - type: GameRule
     minPlayers: 30
   - type: AntagSelection
-    selectionTime: PrePlayerSpawn
     definitions:
       - prefRoles: [ Shadowling ]
         max: 2
         playerRatio: 30
-        lateJoinAdditional: true
         mindRoles:
           - MindRoleShadowling
   - type: AntagObjectives

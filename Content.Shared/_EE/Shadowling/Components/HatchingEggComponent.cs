@@ -10,7 +10,7 @@ public sealed partial class HatchingEggComponent : Component
     public float CooldownTimer = 15.0f;
 
     [DataField]
-    public EntityUid ShadowlingInside;
+    public EntityUid? ShadowlingInside;
 
     public bool HasBeenHatched;
 

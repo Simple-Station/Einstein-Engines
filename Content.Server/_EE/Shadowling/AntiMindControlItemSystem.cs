@@ -32,19 +32,12 @@ public sealed class AntiMindControlItemSystem : EntitySystem
         SubscribeLocalEvent<AntiMindControlItemComponent, AfterInteractEvent>(AfterInteract);
         SubscribeLocalEvent<AntiMindControlItemComponent, AntiMindControlItemDoAfterEvent>(AntiMindControlDoAfter);
 
-        SubscribeLocalEvent<AntiMindControlItemComponent, ComponentStartup>(AntiMindControlStartup);
-
         SubscribeLocalEvent<AntiMindControlItemComponent, ExaminedEvent>(AntiMindControlExamined);
     }
 
     private void AntiMindControlExamined(EntityUid uid, AntiMindControlItemComponent component, ExaminedEvent args)
     {
         args.PushMarkup(Loc.GetString("anti-mind-examine-charges", ("charges", component.CurrentCharges)));
-    }
-
-    private void AntiMindControlStartup(EntityUid uid, AntiMindControlItemComponent component, ComponentStartup args)
-    {
-        component.CurrentCharges = component.MaxCharges;
     }
 
     private void AfterInteract(EntityUid uid, AntiMindControlItemComponent component, ref AfterInteractEvent args)

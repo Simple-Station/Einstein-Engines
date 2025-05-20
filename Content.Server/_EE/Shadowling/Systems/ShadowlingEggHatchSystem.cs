@@ -34,36 +34,37 @@ public sealed class ShadowlingEggHatchSystem : EntitySystem
         var query = EntityQueryEnumerator<HatchingEggComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
-            var sUid = comp.ShadowlingInside;
+            var shadowlingInside = comp.ShadowlingInside;
 
-            # region Message Popups
-
-            if (comp.CooldownTimer <= 12 && !comp.HasFirstMessageAppeared)
+            if (shadowlingInside != null)
             {
-                _popupSystem.PopupEntity(Loc.GetString("sling-hatch-first"), uid, sUid, PopupType.Medium);
-                _audio.PlayPvs(comp.CrackFirst, uid, AudioParams.Default.WithVolume(-2f));
-                comp.HasFirstMessageAppeared = true;
+                var sUid = shadowlingInside.Value;
+                if (comp.CooldownTimer <= 12 && !comp.HasFirstMessageAppeared)
+                {
+                    _popupSystem.PopupEntity(Loc.GetString("sling-hatch-first"), uid, sUid, PopupType.Medium);
+                    _audio.PlayPvs(comp.CrackFirst, uid, AudioParams.Default.WithVolume(-2f));
+                    comp.HasFirstMessageAppeared = true;
+                }
+
+                if (comp.CooldownTimer <= 7 && !comp.HasSecondMessageAppeared)
+                {
+                    _popupSystem.PopupEntity(Loc.GetString("sling-hatch-second"), uid, sUid, PopupType.Medium);
+                    _audio.PlayPvs(comp.CrackSecond, uid, AudioParams.Default.WithVolume(-2f));
+                    comp.HasSecondMessageAppeared = true;
+                }
+
+                if (comp.CooldownTimer <= 3 && !comp.HasThirdMessageAppeared)
+                {
+                    _popupSystem.PopupEntity(Loc.GetString("sling-hatch-third"), uid, sUid, PopupType.Medium);
+                    _audio.PlayPvs(comp.CrackFirst, uid, AudioParams.Default.WithVolume(-2f).WithPitchScale(2f));
+                    comp.HasThirdMessageAppeared = true;
+                }
+
+
+                comp.CooldownTimer -= frameTime;
+                if (comp.CooldownTimer <= 0)
+                    Cycle(sUid, uid, comp);
             }
-
-            if (comp.CooldownTimer <= 7 && !comp.HasSecondMessageAppeared)
-            {
-                _popupSystem.PopupEntity(Loc.GetString("sling-hatch-second"), uid, sUid, PopupType.Medium);
-                _audio.PlayPvs(comp.CrackSecond, uid, AudioParams.Default.WithVolume(-2f));
-                comp.HasSecondMessageAppeared = true;
-            }
-
-            if (comp.CooldownTimer <= 3 && !comp.HasThirdMessageAppeared)
-            {
-                _popupSystem.PopupEntity(Loc.GetString("sling-hatch-third"), uid, sUid, PopupType.Medium);
-                _audio.PlayPvs(comp.CrackFirst, uid, AudioParams.Default.WithVolume(-2f).WithPitchScale(2f));
-                comp.HasThirdMessageAppeared = true;
-            }
-
-            #endregion
-
-            comp.CooldownTimer -= frameTime;
-            if (comp.CooldownTimer <= 0)
-                Cycle(sUid, uid, comp);
         }
     }
 

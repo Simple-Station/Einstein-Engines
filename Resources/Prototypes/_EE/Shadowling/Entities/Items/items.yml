@@ -13,6 +13,7 @@
     sprite: _EE/Shadowling/anti_mind_control.rsi
   - type: AntiMindControlItem
     maxCharges: 5
+    currentCharges: 5
   - type: GuideHelp
     guides: [ Shadowlings ]
 

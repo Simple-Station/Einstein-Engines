@@ -4,6 +4,6 @@ namespace Content.Server._EE.Shadowling.Objectives;
 public sealed partial class ShadowlingAscendConditionComponent : Component
 {
     [DataField]
-    public EntityUid MindId;
+    public EntityUid? MindId;
 }
 
