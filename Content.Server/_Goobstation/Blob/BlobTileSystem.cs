@@ -1,18 +1,13 @@
-using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
 using Content.Server.Construction.Components;
 using Content.Server.Destructible;
 using Content.Server.Emp;
-using Content.Server.Flash;
 using Content.Shared._Goobstation.Blob;
 using Content.Shared._Goobstation.Blob.Components;
 using Content.Shared.Damage;
 using Content.Shared.Destructible;
-using Content.Shared.FixedPoint;
-using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
-using Content.Shared.Mobs.Systems;
 using Content.Shared.NPC.Components;
 using Content.Shared.NPC.Prototypes;
 using Content.Shared.NPC.Systems;
@@ -35,7 +30,6 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly NpcFactionSystem _npcFactionSystem = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
 
     private EntityQuery<BlobCoreComponent> _blobCoreQuery;
 
@@ -49,7 +43,6 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
         SubscribeLocalEvent<BlobTileComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<BlobTileComponent, DestructionEventArgs>(OnDestruction);
         SubscribeLocalEvent<BlobTileComponent, BlobTileGetPulseEvent>(OnPulsed);
-        SubscribeLocalEvent<BlobTileComponent, FlashAttemptEvent>(OnFlashAttempt);
         SubscribeLocalEvent<BlobTileComponent, EntityTerminatingEvent>(OnTerminate);
 
         _blobCoreQuery = GetEntityQuery<BlobCoreComponent>();
@@ -73,17 +66,6 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
             return;
 
         component.Core!.Value.Comp.BlobTiles.Remove(uid);
-    }
-
-    private void OnFlashAttempt(EntityUid uid, BlobTileComponent component, FlashAttemptEvent args)
-    {
-        if (args.Used == null || MetaData(args.Used.Value).EntityPrototype?.ID != "GrenadeFlashBang")
-            return;
-
-        if (component.BlobTileType == BlobTileType.Normal)
-        {
-            _damageableSystem.TryChangeDamage(uid, component.FlashDamage);
-        }
     }
 
     private void OnDestruction(EntityUid uid, BlobTileComponent component, DestructionEventArgs args)
