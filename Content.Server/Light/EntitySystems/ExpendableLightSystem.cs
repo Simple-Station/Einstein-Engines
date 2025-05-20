@@ -17,8 +17,6 @@ namespace Content.Server.Light.EntitySystems
     [UsedImplicitly]
     public sealed class ExpendableLightSystem : EntitySystem
     {
-        private readonly HashSet<Entity<ExpendableLightComponent>> _activeLights = new();
-
         [Dependency] private readonly SharedItemSystem _item = default!;
         [Dependency] private readonly ClothingSystem _clothing = default!;
         [Dependency] private readonly TagSystem _tagSystem = default!;
@@ -37,8 +35,17 @@ namespace Content.Server.Light.EntitySystems
 
         public override void Update(float frameTime)
         {
-            foreach (var ent in _activeLights)
-                UpdateLight(ent, frameTime);
+            var query = EntityQueryEnumerator<ActiveExpendableLightComponent>();
+            while (query.MoveNext(out var uid, out var _))
+            {
+                if (!TryComp(uid, out ExpendableLightComponent? light))
+                {
+                    RemCompDeferred<ActiveExpendableLightComponent>(uid);
+                    continue;
+                }
+
+                UpdateLight((uid, light), frameTime);
+            }
         }
 
         private void UpdateLight(Entity<ExpendableLightComponent> ent, float frameTime)
@@ -75,7 +82,7 @@ namespace Content.Server.Light.EntitySystems
                             _item.SetHeldPrefix(ent, "unlit", component: item);
                         }
 
-                        _activeLights.Remove(ent);
+                        RemCompDeferred<ActiveExpendableLightComponent>(ent);
                         break;
                 }
             }
@@ -94,7 +101,7 @@ namespace Content.Server.Light.EntitySystems
                     _item.SetHeldPrefix(ent, "lit", component: item);
                 }
 
-                var isHotEvent = new IsHotEvent() {IsHot = true};
+                var isHotEvent = new IsHotEvent() { IsHot = true };
                 RaiseLocalEvent(ent, isHotEvent);
 
                 component.CurrentState = ExpendableLightState.Lit;
@@ -102,7 +109,7 @@ namespace Content.Server.Light.EntitySystems
 
                 UpdateSounds(ent);
                 UpdateVisualizer(ent);
-                _activeLights.Add(ent);
+                EnsureComp<ActiveExpendableLightComponent>(ent);
                 return true;
             }
 
@@ -129,7 +136,7 @@ namespace Content.Server.Light.EntitySystems
 
                 case ExpendableLightState.Dead:
                     _appearance.SetData(ent, ExpendableLightVisuals.Behavior, string.Empty, appearance);
-                    var isHotEvent = new IsHotEvent() {IsHot = true};
+                    var isHotEvent = new IsHotEvent() { IsHot = true };
                     RaiseLocalEvent(ent, isHotEvent);
                     break;
             }
