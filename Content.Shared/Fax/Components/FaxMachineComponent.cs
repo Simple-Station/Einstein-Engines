@@ -18,6 +18,13 @@ public sealed partial class FaxMachineComponent : Component
     public string FaxName { get; set; } = "Unknown";
 
     /// <summary>
+    /// If true, will sync fax name with a station name.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField("useStationName")]
+    public bool UseStationName { get; set; }
+
+    /// <summary>
     /// Sprite to use when inserting an object.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
@@ -133,13 +140,6 @@ public sealed partial class FaxMachineComponent : Component
     /// </summary>
     [ViewVariables]
     public float PrintingTime = 2.3f;
-
-    /// <summary>
-    /// If true, will sync fax name with a station name. HULLROT ADDED
-    /// </summary>
-    [ViewVariables(VVAccess.ReadWrite)]
-    [DataField("useStationName")]
-    public bool UseStationName { get; set; }
 }
 
 [DataDefinition]
