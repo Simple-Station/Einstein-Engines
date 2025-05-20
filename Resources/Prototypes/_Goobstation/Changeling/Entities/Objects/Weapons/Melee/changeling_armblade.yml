@@ -16,7 +16,7 @@
         Structural: 20
     clickPartDamageMultiplier: 3
     heavyPartDamageMultiplier: 2.5
-    heavyRangeModifier: 2.75
+    lightRangeModifier: 1.2
     heavyRateModifier: 2.5
     heavyDamageBaseModifier: 1.2
     maxTargets: 1
