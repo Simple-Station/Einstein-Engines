@@ -35,6 +35,17 @@ namespace Content.Server._EE.Shadowling;
 /// </summary>
 public sealed partial class ShadowlingSystem : SharedShadowlingSystem
 {
+    // If you want to port this to another non-EE server then:
+    // * Remove language and ShadowlingChatSystem
+    // * Replace the announcer system in ascension egg
+    // * Add the anti-mind control device to another locker other than mantis
+    // * Remove the psionic insulation check in enthralling
+    //
+    // This is all shitcode. It always has been.
+    //
+    // Actions exist in their own systems, refer to the components
+    // This system handles shadowling interactions with entities and basic action-related functions
+    //
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly EntityStorageSystem _entityStorage = default!;
@@ -172,11 +183,11 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
             EnsureComp<PressureImmunityComponent>(uid);
 
             AddComp<ShadowlingAnnihilateComponent>(uid);
-            //AddComp<ShadowlingHypnosisComponent>(uid); for future reader: uncomment if you want this in the game. Thralls turn into nightmares, so no need for it
             AddComp<ShadowlingPlaneShiftComponent>(uid);
             AddComp<ShadowlingLightningStormComponent>(uid);
             AddComp<ShadowlingAscendantBroadcastComponent>(uid);
             _actions.AddAction(uid, ref component.ActionAnnihilateEntity, component.ActionAnnihilate, component: actions);
+            // For the future reader: uncomment if you want this in the game. Thralls turn into nightmares, so no need for it
             //_actions.AddAction(uid, ref component.ActionHypnosisEntity, component.ActionHypnosis, component: actions);
             _actions.AddAction(uid, ref component.ActionPlaneShiftEntity, component.ActionPlaneShift, component: actions);
             _actions.AddAction(uid, ref component.ActionLightningStormEntity, component.ActionLightningStorm, component: actions);

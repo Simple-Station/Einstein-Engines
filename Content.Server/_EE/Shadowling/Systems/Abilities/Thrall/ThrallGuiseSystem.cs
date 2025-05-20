@@ -1,10 +1,8 @@
 using Content.Server.Actions;
-using Content.Server.Popups;
 using Content.Server.Stealth;
 using Content.Shared._EE.Shadowling;
 using Content.Shared._EE.Shadowling.Components;
 using Content.Shared._EE.Shadowling.Thrall;
-using Content.Shared.Popups;
 using Content.Shared.Stealth.Components;
 using Robust.Shared.Timing;
 
@@ -14,7 +12,7 @@ namespace Content.Server._EE.Shadowling.Thrall;
 
 /// <summary>
 /// This handles the Guise ability logic.
-/// Guise makes you become invisible for some seconds, ONLY if its activated in the dark.
+/// Guise makes you become invisible only in the dark.
 /// That doesn't mean it doesn't work on light, however.
 /// </summary>
 public sealed class ThrallGuiseSystem : EntitySystem
@@ -22,7 +20,6 @@ public sealed class ThrallGuiseSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly StealthSystem _stealth = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
     /// <inheritdoc/>
     public override void Initialize()
     {
@@ -43,22 +40,18 @@ public sealed class ThrallGuiseSystem : EntitySystem
         {
             if (comp.Active)
             {
-                // We check if the entity was in the shadows before the ability activation, otherwise we cancel it here
-                // Its not possible (or fast enough) to do that on ability activation so it gets done here
-                if (comp.Timer <= comp.GuiseDuration - 0.25 && !comp.WasInShadows)
+                if (TryComp<LightDetectionComponent>(uid, out var lightDetection))
                 {
-                    if (TryComp<LightDetectionComponent>(uid, out var lightDetection))
+                    if (TryComp<StealthComponent>(uid, out var stealth))
                     {
                         if (lightDetection.IsOnLight)
                         {
-                            _popup.PopupEntity(Loc.GetString("thrall-guise-fail"), uid, uid, PopupType.MediumCaution);
-                            comp.Active = false;
-                            RemComp<LightDetectionComponent>(uid);
-                            RemComp<StealthComponent>(uid);
-                            continue;
+                            _stealth.SetVisibility(uid, 0.5f, stealth);
                         }
-
-                        comp.WasInShadows = true;
+                        else
+                        {
+                            _stealth.SetVisibility(uid, -1f, stealth);
+                        }
                     }
                 }
                 // Start timer
@@ -69,7 +62,6 @@ public sealed class ThrallGuiseSystem : EntitySystem
                     comp.Active = false;
                     if (TryComp<StealthComponent>(uid, out var stealth))
                     {
-                        comp.WasInShadows = false;
                         _stealth.SetVisibility(uid, 1f, stealth);
                         RemComp<LightDetectionComponent>(uid);
                         RemComp<StealthComponent>(uid);

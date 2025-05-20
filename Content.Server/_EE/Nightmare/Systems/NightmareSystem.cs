@@ -1,5 +1,4 @@
 using Content.Server.Actions;
-using Content.Server.Polymorph.Systems;
 using Content.Server.Stunnable;
 using Content.Shared._EE.Nightmare.Components;
 using Content.Shared._EE.Shadowling;
@@ -18,7 +17,6 @@ namespace Content.Server._EE.Nightmare.Systems;
 public sealed class NightmareSystem : EntitySystem
 {
     [Dependency] private readonly ActionsSystem _actionsSystem = default!;
-    [Dependency] private readonly PolymorphSystem _polymorphSystem = default!;
     [Dependency] private readonly StunSystem _stunSystem = default!;
     /// <inheritdoc/>
     public override void Initialize()

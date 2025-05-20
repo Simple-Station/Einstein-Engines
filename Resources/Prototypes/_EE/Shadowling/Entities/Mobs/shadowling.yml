@@ -5,6 +5,7 @@
   suffix: ""
   description: A shadowling ascendant. If you're seeing this, you're probably dead.
   components:
+  - type: PsionicInsulation
   - type: Bloodstream
     bloodMaxVolume: 650
     bloodReagent: FluorosulfuricAcid

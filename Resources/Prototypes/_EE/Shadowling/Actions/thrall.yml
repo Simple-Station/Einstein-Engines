@@ -15,7 +15,7 @@
 - type: entity
   id: ActionGuise
   name: Guise
-  description: Become one with the shadows.
+  description: Become invisible in the darkness.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
@@ -23,5 +23,5 @@
     useDelay: 120
     icon:
       sprite: _EE/Shadowling/shadowling_abilities.rsi
-      state: shadow_walk # todo: would be cool to add new ability icon
+      state: shadow_walk
     event: !type:GuiseEvent { }

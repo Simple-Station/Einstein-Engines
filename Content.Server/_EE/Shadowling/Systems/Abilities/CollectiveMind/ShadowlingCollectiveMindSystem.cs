@@ -47,6 +47,10 @@ public sealed class ShadowlingCollectiveMindSystem : EntitySystem
 
         comp.AmountOfThralls = sling.Thralls.Count;
         var thrallsRemaining = comp.ThrallsRequiredForAscension - comp.AmountOfThralls; // aka Thralls required for ascension
+
+        if (thrallsRemaining < 0)
+            thrallsRemaining = 0;
+
         var abiltiesAddedCount = 0;
 
         // Can we gain this power?

@@ -6,3 +6,6 @@ shadowling-list-start = The Shadowlings were:
 thrall-list-start = The Thralls were:
 
 shadowling-list-name = [color=#880808]{ $name }[/color] ([color=gray]{ $user }[/color])
+
+shadowling-title = Shadowlings
+shadowling-description = The shadow is the greatest teacher for how to come to the light.

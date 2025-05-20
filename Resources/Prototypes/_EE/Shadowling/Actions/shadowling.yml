@@ -62,7 +62,7 @@
   components:
   - type: InstantAction
     itemIconStyle: NoItem
-    useDelay: 20
+    useDelay: 60
     icon:
       sprite: _EE/Shadowling/shadowling_abilities.rsi
       state: veil
@@ -117,7 +117,7 @@
 - type: entity
   id: ActionDestroyEngines
   name: Destroy Engines
-  description: Destroy the engines of the evacuation shuttle.
+  description: Destroy the engines of the evacuation shuttle. Delays the shuttle by 10 minutes.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
@@ -192,7 +192,7 @@
 - type: entity
   id: ActionBlackRecuperation
   name: Black Recuperation
-  description: Bring back a dead Thrall to life, or empower a living one. You'll take cellular damage once you use it.
+  description: Bring back a dead Thrall to life, or empower a living one. You'll reduce your resistance to light by using it.
   categories: [ HideSpawnMenu ]
   components:
   - type: EntityTargetAction
@@ -226,7 +226,7 @@
 - type: entity
   id: ActionNoxImperii
   name: Nox Imperii
-  description: Become immune to that which you fear the most.
+  description: Become immune to that which you fear the most. Light.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction

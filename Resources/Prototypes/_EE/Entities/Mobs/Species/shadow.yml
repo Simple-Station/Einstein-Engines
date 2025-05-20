@@ -71,6 +71,7 @@
     - TauCetiBasic
     understands:
     - TauCetiBasic
+  - type: PressureImmunity
 
 - type: entity
   parent: BaseSpeciesDummy

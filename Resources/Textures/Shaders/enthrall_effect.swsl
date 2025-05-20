@@ -73,8 +73,5 @@ void fragment() {
 
     c = mix(originalColor, c, 0.7);
 
-    highp vec3 purpleColor = vec3(0.5, 0.0, 0.8);
-    c.rgb = mix(c.rgb, purpleColor, 0.25 * remaining);
-
     COLOR = vec4(c.rgb, remaining);
 }

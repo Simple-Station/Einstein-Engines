@@ -17,7 +17,4 @@ public sealed partial class ThrallGuiseComponent : Component
     public float GuiseDuration = 10f;
 
     public bool Active;
-
-    [DataField]
-    public bool WasInShadows;
 }

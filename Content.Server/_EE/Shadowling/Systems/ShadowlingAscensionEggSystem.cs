@@ -1,7 +1,6 @@
 using Content.Server.Actions;
 using Content.Server.AlertLevel;
 using Content.Server.Announcements.Systems;
-using Content.Server.Chat.Systems;
 using Content.Server.Light.Components;
 using Content.Server.Light.EntitySystems;
 using Content.Server.Pinpointer;
@@ -36,7 +35,6 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
     [Dependency] private readonly EntityStorageSystem _entityStorage = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly PolymorphSystem _polymorph = default!;
     [Dependency] private readonly ShadowlingSystem _shadowling = default!;
@@ -47,6 +45,7 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
     [Dependency] private readonly AnnouncerSystem _announcer = default!;
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly AlertLevelSystem _alertLevel = default!;
+
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -173,6 +172,14 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
         // Dont take damage during hatching
         EnsureComp<GodmodeComponent>(uid);
 
+        var position = _transform.GetMapCoordinates(uid);
+        var message = Loc.GetString(
+            "shadowling-ascension-message",
+            ("location", FormattedMessage.RemoveMarkupPermissive(_navMap.GetNearestBeaconString(position))));
+        var sender = "Central Command";
+
+        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("alertDelta"), Filter.Broadcast(), message, sender, Color.Red);
+
         _actions.RemoveAction(shadowling.ActionAscendanceEntity);
 
         shadowling.IsAscending = true;
@@ -182,14 +189,6 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
         _entityStorage.Insert(uid, eggUid);
 
         _audio.PlayPvs(component.AscensionEnterSound, eggUid, AudioParams.Default.WithVolume(-1f));
-
-        var position = _transform.GetMapCoordinates(uid);
-        var message = Loc.GetString(
-            "shadowling-ascension-message",
-            ("location", FormattedMessage.RemoveMarkupPermissive(_navMap.GetNearestBeaconString(position))));
-        var sender = "Central Command";
-
-        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("alertDelta"), Filter.Broadcast(), message, sender, Color.Red);
         var stationUid = _station.GetStationInMap(Transform(uid).MapID);
         if (stationUid != null)
             _alertLevel.SetLevel(stationUid.Value, "delta", false, false, true, true);

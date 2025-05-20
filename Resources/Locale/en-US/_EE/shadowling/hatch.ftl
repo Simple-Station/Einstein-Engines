@@ -12,7 +12,7 @@ shadowling-ascension-already-ascended = The ascension has already been completed
 shadowling-ascension-start-warning = This is your cocoon. You should start the ascension as soon as possible.
 
 shadowling-ascension-message =
-    An unidentified life-form is completing its evolution at {$location}.
+    An unidentified life-form is completing its evolution {$location}.
     All remaining personnel are ordered to eliminate the source at any cost.
     Failure to do so will result in total station collapse and absolute loss of all crew.
 

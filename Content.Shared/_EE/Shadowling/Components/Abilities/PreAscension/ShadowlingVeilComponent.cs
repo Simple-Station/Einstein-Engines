@@ -13,5 +13,5 @@ public sealed partial class ShadowlingVeilComponent : Component
     public string? ActionGlare = "ActionVeil";
 
     [DataField]
-    public float Range = 8f;
+    public float Range = 6f;
 }

@@ -13,6 +13,8 @@
     sprite: _EE/Shadowling/anti_mind_control.rsi
   - type: AntiMindControlItem
     maxCharges: 5
+  - type: GuideHelp
+    guides: [ Shadowlings ]
 
 - type: entity
   parent: ArmBladeChangeling

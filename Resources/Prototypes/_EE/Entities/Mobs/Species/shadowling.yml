@@ -4,6 +4,7 @@
   parent: BaseMobSpeciesOrganic
   id: MobShadowlingBase
   components:
+  - type: PsionicInsulation
   - type: NightVision
     color: "#BF40BF"
     activateSound: null
