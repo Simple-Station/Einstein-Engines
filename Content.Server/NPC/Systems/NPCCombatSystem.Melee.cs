@@ -11,7 +11,6 @@ namespace Content.Server.NPC.Systems;
 
 public sealed partial class NPCCombatSystem
 {
-    [Dependency] private readonly IRobustRandom _rng = default!;
     private const float TargetMeleeLostRange = 14f;
 
     private void InitializeMelee()
@@ -129,6 +128,6 @@ public sealed partial class NPCCombatSystem
         }
 
         if (Comp<HTNComponent>(uid).Blackboard.TryGetValue<float>("AttackDelayDeviation", out var dev, EntityManager))
-            weapon.NextAttack += TimeSpan.FromSeconds(_rng.NextFloat(-dev, dev));
+            weapon.NextAttack += TimeSpan.FromSeconds(_random.NextFloat(-dev, dev));
     }
 }
