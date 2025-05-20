@@ -66,7 +66,7 @@ public sealed class RespiratorSystem : EntitySystem
         if (TryComp<PullableComponent>(uid, out var pullable)
             && pullable.GrabStage == GrabStage.Suffocate)
             return false;
-        
+
         return !HasComp<KravMagaBlockedBreathingComponent>(uid);
     }
     // Goobstation end
@@ -117,10 +117,10 @@ public sealed class RespiratorSystem : EntitySystem
 
             if (!CanBreathe(uid, respirator)) // Goobstation edit
             {
-                if (_gameTiming.CurTime >= respirator.LastGaspPopupTime + respirator.GaspPopupCooldown)
+                if (_gameTiming.CurTime >= respirator.LastGaspEmoteTime + respirator.GaspEmoteCooldown)
                 {
-                    respirator.LastGaspPopupTime = _gameTiming.CurTime;
-                    _popupSystem.PopupEntity(Loc.GetString("lung-behavior-gasp"), uid);
+                    respirator.LastGaspEmoteTime = _gameTiming.CurTime;
+                    _chat.TryEmoteWithChat(uid, respirator.GaspEmote, ignoreActionBlocker: true);
                 }
 
                 TakeSuffocationDamage((uid, respirator));
