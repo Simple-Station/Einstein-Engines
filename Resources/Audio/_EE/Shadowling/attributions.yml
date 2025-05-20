@@ -4,26 +4,26 @@
   source: "https://github.com/tgstation/tgstation/pull/8157/commits/c9338f72126114446dfbff206b458b92a324fbe3"
 
 - files: ["shadowling"]
-  license: "CC0"
-  copyright: "Taken from opengameart.org: Dark Ambiences"
-  source: "Ogrebane"
+  license: "CC0-1.0"
+  copyright: "Taken from opengameart.org"
+  source: "https://opengameart.org/content/dark-ambiences"
 
 - files: ["thrall"]
-  license: "CC0"
-  copyright: "Taken from opengameart.org: Dark Ambiences"
-  source: "Ogrebane"
+  license: "CC0-1.0"
+  copyright: "Taken from opengameart.org"
+  source: "https://opengameart.org/content/dark-ambiences"
 
 - files: ["ascension"]
-  license: "CC0"
-  copyright: "Taken from opengameart.org: Doomsday Laser Cannon Sound Effect"
-  source: "TAD"
+  license: "CC0-1.0"
+  copyright: "Taken from opengameart.org"
+  source: "https://opengameart.org/content/doomsday-laser-cannon-sound-effect"
 
 - files: ["heartbeat"]
-  license: "CC0"
-  copyright: "Taken from opengameart.org: Heartbeat sounds"
-  source: "bart"
+  license: "CC0-1.0"
+  copyright: "Taken from opengameart.org"
+  source: "https://opengameart.org/content/heartbeat-sounds"
 
 - files: ["rapid_rehatch"]
   license: "CC-BY-4.0"
-  copyright: "Taken from opengameart.org: Cracking Sounds"
-  source: "Varkalandar"
+  copyright: "Taken from opengameart.org"
+  source: "https://opengameart.org/content/cracking-sounds"

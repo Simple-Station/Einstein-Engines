@@ -80,3 +80,7 @@
   components:
   - type: HumanoidAppearance
     species: Shadow
+
+- type: entity
+  parent: MobShadowBase
+  id: MobShadow

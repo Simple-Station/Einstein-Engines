@@ -81,3 +81,8 @@
   components:
   - type: HumanoidAppearance
     species: Shadowling
+
+# for yaml linter
+- type: entity
+  parent: MobShadowlingBase
+  id: MobShadowling
