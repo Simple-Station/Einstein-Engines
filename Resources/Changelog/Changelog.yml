@@ -16237,3 +16237,10 @@ Entries:
   id: 7259
   time: '2025-05-20T19:39:39.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2439
+- author: Tirochora
+  changes:
+    - type: Fix
+      message: Krav Maga no longer  boosts all melee damage.
+  id: 7260
+  time: '2025-05-20T19:39:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2430
