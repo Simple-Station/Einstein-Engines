@@ -52,22 +52,29 @@ public sealed class BiomeSelectionSystem : BaseWorldSystem
 
     private bool CheckBiomeValidity(EntityUid chunk, BiomePrototype biome, Vector2i coords)
     {
-        foreach (var (noise, ranges) in biome.NoiseRanges)
-        {
-            var value = _noiseIdx.Evaluate(chunk, noise, coords);
-            var anyValid = false;
-            foreach (var range in ranges)
+        if (biome.MinX is null || biome.MaxX is null || biome.MinY is null || biome.MaxY is null)
+            foreach (var (noise, ranges) in biome.NoiseRanges)
             {
-                if (range.X < value && value < range.Y)
+                var value = _noiseIdx.Evaluate(chunk, noise, coords);
+                var anyValid = false;
+                foreach (var range in ranges)
                 {
-                    anyValid = true;
-                    break;
+                    if (range.X < value && value < range.Y)
+                    {
+                        anyValid = true;
+                        break;
+                    }
                 }
-            }
 
-            if (!anyValid)
-                return false;
-        }
+                if (!anyValid)
+                    return false;
+            }
+        else
+        if (coords.X < biome.MinX
+            || coords.X > biome.MaxX
+            || coords.Y < biome.MinY
+            || coords.Y > biome.MaxY)
+            return false;
 
         return true;
     }
