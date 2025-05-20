@@ -16255,3 +16255,16 @@ Entries:
   id: 7261
   time: '2025-05-20T19:42:05.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2247
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed melee weapons "Bonus range for heavy attacks" not functioning
+        correctly. 
+    - type: Add
+      message: >-
+        Added support for melee weapons having bonus range on disarms or light
+        attacks.
+  id: 7262
+  time: '2025-05-20T19:42:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2442
