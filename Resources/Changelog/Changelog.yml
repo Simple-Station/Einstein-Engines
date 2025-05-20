@@ -16244,3 +16244,14 @@ Entries:
   id: 7260
   time: '2025-05-20T19:39:57.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2430
+- author: Tirochora
+  changes:
+    - type: Tweak
+      message: Table slamming should be more consistent.
+    - type: Fix
+      message: >-
+        You should properly be able to use both hands after letting somebody go
+        from a stranglehold.
+  id: 7261
+  time: '2025-05-20T19:42:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2247
