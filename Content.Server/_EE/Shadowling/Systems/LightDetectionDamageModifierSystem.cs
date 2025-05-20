@@ -81,7 +81,6 @@ public sealed class LightDetectionDamageModifierSystem : EntitySystem
             }
             else if (comp.DetectionValue >= comp.DetectionValueMax && comp.HealOnShadows)
             {
-                comp.NextUpdateHeal = _timing.CurTime + TimeSpan.FromSeconds(0.1f);
                 // Heal Damage
                 if (_timing.CurTime >= comp.NextUpdateHeal)
                 {

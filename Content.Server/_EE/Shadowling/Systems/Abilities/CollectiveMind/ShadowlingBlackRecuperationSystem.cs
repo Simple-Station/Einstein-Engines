@@ -86,9 +86,6 @@ public sealed class ShadowlingBlackRecuperationSystem : EntitySystem
 
         var target = args.Args.Target.Value;
 
-        if (!TryComp<LightDetectionDamageModifierComponent>(uid, out var lightDetectionDamageModifier))
-            return;
-
         if (!_mobStateSystem.IsAlive(target))
         {
             ICommonSession? session = null;
@@ -120,6 +117,9 @@ public sealed class ShadowlingBlackRecuperationSystem : EntitySystem
 
             _damageable.TryChangeDamage(uid, component.DamageToDeal);
 
+            if (!TryComp<LightDetectionDamageModifierComponent>(uid, out var lightDetectionDamageModifier))
+                return;
+
             _modifierLight.AddResistance(component.ResistanceRemoveFromThralls, uid, lightDetectionDamageModifier);
         }
         else
@@ -147,6 +147,9 @@ public sealed class ShadowlingBlackRecuperationSystem : EntitySystem
             _popup.PopupEntity(Loc.GetString("shadowling-black-rec-lesser-done"), uid, newUid.Value, PopupType.MediumCaution);
 
             _audio.PlayPvs(component.BlackRecSound, newUid.Value, AudioParams.Default.WithVolume(-1f));
+
+            if (!TryComp<LightDetectionDamageModifierComponent>(uid, out var lightDetectionDamageModifier))
+                return;
 
             _modifierLight.AddResistance(component.ResistanceRemoveFromLesser, uid, lightDetectionDamageModifier);
         }
