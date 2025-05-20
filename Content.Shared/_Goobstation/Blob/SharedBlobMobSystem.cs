@@ -26,13 +26,10 @@ public abstract class SharedBlobMobSystem : EntitySystem
         _tileQuery = GetEntityQuery<BlobTileComponent>();
         _mobQuery = GetEntityQuery<BlobMobComponent>();
 
-        SubscribeLocalEvent<BlobSpeakComponent,GetDefaultRadioChannelEvent>(OnGetDefaultRadioChannel);
+        SubscribeLocalEvent<BlobSpeakComponent, GetDefaultRadioChannelEvent>(OnGetDefaultRadioChannel);
     }
 
-    private void OnGetDefaultRadioChannel(Entity<BlobSpeakComponent> ent, ref GetDefaultRadioChannelEvent args)
-    {
-        //args.Channel = ent.Comp.Channel;
-    }
+    private void OnGetDefaultRadioChannel(Entity<BlobSpeakComponent> ent, ref GetDefaultRadioChannelEvent args) => args.Channel = ent.Comp.Channel;
 
 
     [ValidatePrototypeId<EntityPrototype>]
@@ -40,7 +37,7 @@ public abstract class SharedBlobMobSystem : EntitySystem
 
     private void OnPulse(BlobMobGetPulseEvent ev)
     {
-        if(!TryGetEntity(ev.BlobEntity, out var blobEntity))
+        if (!TryGetEntity(ev.BlobEntity, out var blobEntity))
             return;
 
         SpawnAttachedTo(HealEffect, new EntityCoordinates(blobEntity.Value, Vector2.Zero));

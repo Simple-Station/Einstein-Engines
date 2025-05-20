@@ -47,7 +47,7 @@ public sealed class ZombieBlobSystem : SharedZombieBlobSystem
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
 
-    private const int ClimbingCollisionGroup = (int) (CollisionGroup.BlobImpassable);
+    private const int ClimbingCollisionGroup = (int) CollisionGroup.BlobImpassable;
 
     private readonly GasMixture _normalAtmos;
     public ZombieBlobSystem()
@@ -73,14 +73,8 @@ public sealed class ZombieBlobSystem : SharedZombieBlobSystem
 
     }
 
-    private void OnInhale(Entity<ZombieBlobComponent> ent, ref InhaleLocationEvent args)
-    {
-        args.Gas = _normalAtmos;
-    }
-    private void OnExhale(Entity<ZombieBlobComponent> ent, ref ExhaleLocationEvent args)
-    {
-        args.Gas = GasMixture.SpaceGas;
-    }
+    private void OnInhale(Entity<ZombieBlobComponent> ent, ref InhaleLocationEvent args) => args.Gas = _normalAtmos;
+    private void OnExhale(Entity<ZombieBlobComponent> ent, ref ExhaleLocationEvent args) => args.Gas = GasMixture.SpaceGas;
 
     /// <summary>
     /// Replaces the current fixtures with non-climbing collidable versions so that climb end can be detected
@@ -121,9 +115,6 @@ public sealed class ZombieBlobSystem : SharedZombieBlobSystem
         }
         _faction.AddFaction(uid, "Blob");
         component.OldFactions = oldFactions;
-
-        var accent = EnsureComp<ReplacementAccentComponent>(uid);
-        accent.Accent = "genericAggressive";
 
         _tagSystem.AddTag(uid, "BlobMob");
 
@@ -184,7 +175,6 @@ public sealed class ZombieBlobSystem : SharedZombieBlobSystem
         RemComp<BlobSpeakComponent>(uid);
         RemComp<BlobMobComponent>(uid);
         RemComp<HTNComponent>(uid);
-        RemComp<ReplacementAccentComponent>(uid);
         RemComp<PressureImmunityComponent>(uid);
 
         if (TryComp<TemperatureComponent>(uid, out var temperatureComponent) && component.OldColdDamageThreshold != null)
@@ -201,6 +191,7 @@ public sealed class ZombieBlobSystem : SharedZombieBlobSystem
             _roleSystem.MindTryRemoveRole<BlobRoleComponent>(mindComp.Mind.Value);
         }
         */
+
         _trigger.Trigger(component.BlobPodUid);
         QueueDel(component.BlobPodUid);
 

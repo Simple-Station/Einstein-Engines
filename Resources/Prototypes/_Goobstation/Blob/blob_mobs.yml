@@ -49,7 +49,14 @@
         NavBlob: !type:Bool
           true
     - type: BlobMob
-    #- type: BlobSpeak
+    - type: BlobSpeak
+    # start backmen languages
+    - type: LanguageKnowledge
+      speaks:
+      - Blob
+      understands:
+      - Blob
+    # end backmen languages
     - type: CombatMode
     - type: NpcFactionMember
       factions:
@@ -130,8 +137,18 @@
     - type: InputMover
     - type: MobMover
     - type: BlobMob
-    - type: ReplacementAccent
-      accent: genericAggressive
+    - type: BlobSpeak
+    # start backmen languages
+    - type: LanguageSpeaker
+      currentLanguage: Blob
+    - type: LanguageKnowledge
+      speaks:
+      - Blob
+      understands:
+      - Blob
+      - Xeno
+      - TauCetiBasic
+    # end backmen languages
     - type: CombatMode
     - type: HTN
       rootTask:
@@ -210,12 +227,22 @@
           type: BlobChemSwapBoundUserInterface
     - type: Actions
     - type: Alerts
-    - type: ReplacementAccent
-      accent: genericAggressive
+    # start backmen language
     - type: ActiveRadio
       channels:
       - Hivemind
-    #- type: BlobSpeak
+    - type: BlobSpeak
+      name: speak-vv-blob-core
+    - type: LanguageSpeaker
+      currentLanguage: Blob
+    - type: LanguageKnowledge
+      speaks:
+      - Blob
+      understands:
+      - Blob
+      - Xeno
+      - TauCetiBasic
+    # end backmen language
     - type: Hands
       showInHands: true
     - type: BlobObserver

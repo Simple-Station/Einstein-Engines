@@ -1,43 +1,27 @@
-using System.Numerics;
-using Content.Server._Goobstation.Blob.Components;
-//using Content.Server.Language;
-//using Content.Server.Language.Events;
+using Content.Server.Language;
 using Content.Server.Chat.Systems;
-using Content.Server.Explosion.EntitySystems;
-using Content.Server.Fluids.EntitySystems;
-using Content.Server.Popups;
 using Content.Server.Radio;
 using Content.Server.Radio.Components;
 using Content.Server.Radio.EntitySystems;
 using Content.Shared._Goobstation.Blob;
-using Content.Shared._Goobstation.Blob.Chemistry;
 using Content.Shared._Goobstation.Blob.Components;
-//using Content.Shared.Language;
-//using Content.Shared.Targeting;
 using Content.Shared.Chat;
-using Content.Shared.Chemistry.Components;
 using Content.Shared.Damage;
-using Content.Shared.Interaction.Events;
-using Content.Shared.Popups;
 using Content.Shared.Speech;
-using Robust.Shared.Audio;
-using Robust.Shared.Audio.Systems;
-using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
-using Robust.Shared.Utility;
+using Content.Shared.Language.Events;
+using Content.Shared.Language.Components;
+using Content.Shared._Shitmed.Targeting;
 
 namespace Content.Server._Goobstation.Blob;
 
 public sealed class BlobMobSystem : SharedBlobMobSystem
 {
-    //[Dependency] private readonly LanguageSystem _language = default!;
+    [Dependency] private readonly LanguageSystem _language = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly INetManager _netMan = default!;
     [Dependency] private readonly RadioSystem _radioSystem = default!;
-    private EntityQuery<BlobSpeakComponent> _activeBSpeak;
 
     public override void Initialize()
     {
@@ -45,36 +29,37 @@ public sealed class BlobMobSystem : SharedBlobMobSystem
 
         SubscribeLocalEvent<BlobMobComponent, BlobMobGetPulseEvent>(OnPulsed);
 
-       // SubscribeLocalEvent<BlobSpeakComponent, DetermineEntityLanguagesEvent>(OnLanguageApply);
-       // SubscribeLocalEvent<BlobSpeakComponent, ComponentStartup>(OnSpokeAdd);
-       // SubscribeLocalEvent<BlobSpeakComponent, ComponentShutdown>(OnSpokeRemove);
-       // SubscribeLocalEvent<BlobSpeakComponent, TransformSpeakerNameEvent>(OnSpokeName);
-       // SubscribeLocalEvent<BlobSpeakComponent, SpeakAttemptEvent>(OnSpokeCan, after: new []{ typeof(SpeechSystem) });
-       // SubscribeLocalEvent<BlobSpeakComponent, EntitySpokeEvent>(OnSpoke, before: new []{ typeof(RadioSystem), typeof(HeadsetSystem) });
-       // SubscribeLocalEvent<BlobSpeakComponent, RadioReceiveEvent>(OnIntrinsicReceive);
-        //SubscribeLocalEvent<SmokeOnTriggerComponent, TriggerEvent>(HandleSmokeTrigger);
-
-        _activeBSpeak = GetEntityQuery<BlobSpeakComponent>();
+        SubscribeLocalEvent<BlobSpeakComponent, DetermineEntityLanguagesEvent>(OnLanguageApply);
+        SubscribeLocalEvent<BlobSpeakComponent, ComponentStartup>(OnSpokeAdd);
+        SubscribeLocalEvent<BlobSpeakComponent, ComponentShutdown>(OnSpokeRemove);
+        SubscribeLocalEvent<BlobSpeakComponent, TransformSpeakerNameEvent>(OnSpokeName);
+        SubscribeLocalEvent<BlobSpeakComponent, SpeakAttemptEvent>(OnSpokeCan, after: new []{ typeof(SpeechSystem) });
+        SubscribeLocalEvent<BlobSpeakComponent, EntitySpokeEvent>(OnSpoke, before: new []{ typeof(RadioSystem), typeof(HeadsetSystem) });
+        SubscribeLocalEvent<BlobSpeakComponent, RadioReceiveEvent>(OnIntrinsicReceive);
     }
 
-   /* private void OnIntrinsicReceive(Entity<BlobSpeakComponent> ent, ref RadioReceiveEvent args)
+    private void OnIntrinsicReceive(Entity<BlobSpeakComponent> ent, ref RadioReceiveEvent args)
     {
         if (TryComp(ent, out ActorComponent? actor) && args.Channel.ID == ent.Comp.Channel)
         {
-            _netMan.ServerSendMessage(args.ChatMsg, actor.PlayerSession.Channel);
+            var msg = new MsgChatMessage
+            {
+                Message = args.OriginalChatMsg
+            };
+            _netMan.ServerSendMessage(msg, actor.PlayerSession.Channel);
         }
     }
 
     private void OnSpoke(Entity<BlobSpeakComponent> ent, ref EntitySpokeEvent args)
     {
-        if(args.Channel == null)
+        if (args.Channel == null)
             return;
         _radioSystem.SendRadioMessage(ent, args.Message, ent.Comp.Channel, ent, language: args.Language);
     }
 
     private void OnLanguageApply(Entity<BlobSpeakComponent> ent, ref DetermineEntityLanguagesEvent args)
     {
-        if(ent.Comp.LifeStage is
+        if (ent.Comp.LifeStage is
            ComponentLifeStage.Removing
            or ComponentLifeStage.Stopping
            or ComponentLifeStage.Stopped)
@@ -105,7 +90,7 @@ public sealed class BlobMobSystem : SharedBlobMobSystem
 
     private void OnSpokeRemove(Entity<BlobSpeakComponent> ent, ref ComponentShutdown args)
     {
-        if(TerminatingOrDeleted(ent))
+        if (TerminatingOrDeleted(ent))
             return;
 
         _language.UpdateEntityLanguages(ent.Owner);
@@ -115,7 +100,7 @@ public sealed class BlobMobSystem : SharedBlobMobSystem
 
     private void OnSpokeAdd(Entity<BlobSpeakComponent> ent, ref ComponentStartup args)
     {
-        if(TerminatingOrDeleted(ent))
+        if (TerminatingOrDeleted(ent))
             return;
 
         var component = EnsureComp<LanguageSpeakerComponent>(ent);
@@ -124,13 +109,8 @@ public sealed class BlobMobSystem : SharedBlobMobSystem
 
         var radio = EnsureComp<ActiveRadioComponent>(ent);
         radio.Channels.Add(ent.Comp.Channel);
-    }*/
-
-    private void OnPulsed(EntityUid uid, BlobMobComponent component, BlobMobGetPulseEvent args)
-    {
-        //_damageableSystem.TryChangeDamage(uid, component.HealthOfPulse, targetPart: TargetBodyPart.All);
-        _damageableSystem.TryChangeDamage(uid, component.HealthOfPulse);
     }
 
-
+    private void OnPulsed(EntityUid uid, BlobMobComponent component, BlobMobGetPulseEvent args) =>
+        _damageableSystem.TryChangeDamage(uid, component.HealthOfPulse, targetPart: TargetBodyPart.All);
 }
