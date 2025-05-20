@@ -371,30 +371,34 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         for (var i = 0; i < swings; i++)
         {
             string animation;
+            var animationRange = weapon.Range;
 
             switch (attack)
             {
                 case LightAttackEvent light:
                     DoLightAttack(user, light, weaponUid, weapon, session);
                     animation = weapon.Animation;
+                    animationRange *= weapon.LightRangeModifier;
                     break;
                 case DisarmAttackEvent disarm:
                     if (!DoDisarm(user, disarm, weaponUid, weapon, session))
                         return false;
 
                     animation = weapon.Animation;
+                    animationRange *= weapon.DisarmRangeModifier;
                     break;
                 case HeavyAttackEvent heavy:
                     if (!DoHeavyAttack(user, heavy, weaponUid, weapon, session))
                         return false;
 
                     animation = weapon.WideAnimation;
+                    animationRange *= weapon.HeavyRangeModifier;
                     break;
                 default:
                     throw new NotImplementedException();
             }
 
-            DoLungeAnimation(user, weaponUid, weapon.Angle, TransformSystem.ToMapCoordinates(GetCoordinates(attack.Coordinates)), weapon.Range * weapon.HeavyRangeModifier, animation);
+            DoLungeAnimation(user, weaponUid, weapon.Angle, TransformSystem.ToMapCoordinates(GetCoordinates(attack.Coordinates)), animationRange, animation);
         }
 
         var attackEv = new MeleeAttackEvent(weaponUid);
