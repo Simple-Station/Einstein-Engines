@@ -14,9 +14,9 @@
   - Chemistry
   requirements:
     - !type:CharacterEmployerRequirement
-      inverted: true
       employers:
-      - Unemployed
+      - Interdyne
+      - NanoTrasen
 
 - type: startingGear
   id: PsychologistGear

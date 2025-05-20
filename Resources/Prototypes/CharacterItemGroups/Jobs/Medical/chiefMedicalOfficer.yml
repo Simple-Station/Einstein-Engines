@@ -18,11 +18,13 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutChiefMedicalOfficerEquipment
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutChiefMedicalOfficerEquipment
+  maxItems: 1
+  items:
+  - type: loadout
+    id: LoadoutChiefMedicalOfficerEquipmentOmnimedToolLite
+
 #- type: characterItemGroup
 #  id: LoadoutChiefMedicalOfficerEyes
 #  maxItems: 1

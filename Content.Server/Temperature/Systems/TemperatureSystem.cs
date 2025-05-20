@@ -61,9 +61,13 @@ public sealed class TemperatureSystem : EntitySystem
         base.Update(frameTime);
 
         // conduct heat from the surface to the inside of entities with internal temperatures
-        var query = EntityQueryEnumerator<InternalTemperatureComponent, TemperatureComponent>();
-        while (query.MoveNext(out var uid, out var comp, out var temp))
+        var query = EntityQueryEnumerator<InternalTemperatureComponent>();
+        while (query.MoveNext(out var uid, out var comp))
         {
+            if (!TryComp(uid, out TemperatureComponent? temp))
+                continue;
+            var tempEntity = (uid, temp);
+
             // don't do anything if they equalised
             var diff = Math.Abs(temp.CurrentTemperature - comp.Temperature);
             if (diff < 0.1f)
@@ -74,13 +78,13 @@ public sealed class TemperatureSystem : EntitySystem
 
             // convert to J then K
             var joules = q * comp.Area * frameTime;
-            var degrees = joules / GetHeatCapacity(uid, temp);
+            var degrees = joules / GetHeatCapacity(tempEntity);
             if (temp.CurrentTemperature < comp.Temperature)
                 degrees *= -1;
 
             // exchange heat between inside and surface
             comp.Temperature += degrees;
-            ForceChangeTemperature(uid, temp.CurrentTemperature - degrees, temp);
+            ForceChangeTemperature(tempEntity, temp.CurrentTemperature - degrees);
         }
 
         UpdateDamage(frameTime);
@@ -120,6 +124,15 @@ public sealed class TemperatureSystem : EntitySystem
         float delta = temperature.CurrentTemperature - temp;
         temperature.CurrentTemperature = temp;
         RaiseLocalEvent(uid, new OnTemperatureChangeEvent(temperature.CurrentTemperature, lastTemp, delta),
+            true);
+    }
+
+    public void ForceChangeTemperature(Entity<TemperatureComponent> ent, float temp)
+    {
+        float lastTemp = ent.Comp.CurrentTemperature;
+        float delta = ent.Comp.CurrentTemperature - temp;
+        ent.Comp.CurrentTemperature = temp;
+        RaiseLocalEvent(ent, new OnTemperatureChangeEvent(ent.Comp.CurrentTemperature, lastTemp, delta),
             true);
     }
 
@@ -168,6 +181,16 @@ public sealed class TemperatureSystem : EntitySystem
         if (physics.Mass < 1)
             return comp.SpecificHeat;
         else return comp.SpecificHeat * physics.FixturesMass;
+    }
+
+    public float GetHeatCapacity(Entity<TemperatureComponent> ent, PhysicsComponent? physics = null)
+    {
+        if (!Resolve(ent.Owner, ref physics, false) || physics.FixturesMass <= 0)
+            return Atmospherics.MinimumHeatCapacity;
+
+        if (physics.Mass < 1)
+            return ent.Comp.SpecificHeat;
+        else return ent.Comp.SpecificHeat * physics.FixturesMass;
     }
 
     private void OnInit(EntityUid uid, InternalTemperatureComponent comp, MapInitEvent args)

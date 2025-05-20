@@ -1,6 +1,6 @@
 - type: entity
   id: BaseMagazineUniversalMagnum
-  name: "Universal magazine (.45 magnum)"
+  name: "mk 32 'Universal' magazine (.45 magnum)"
   parent: BaseMagazinePistol
   abstract: true
   components:
@@ -31,8 +31,21 @@
 # Magazines for the Universal Pistol
 
 - type: entity
+  id: MagazineUniversalMagnumEmpty
+  name: "mk 32 'Universal' magazine (.45 magnum any)"
+  suffix: empty
+  parent: BaseMagazineUniversalMagnum
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+
+- type: entity
   id: MagazineUniversalMagnum
-  name: "Universal magazine (.45 magnum)"
+  name: "mk 32 'Universal' magazine (.45 magnum)"
   parent: BaseMagazineUniversalMagnum
   components:
   - type: BallisticAmmoProvider
@@ -51,7 +64,7 @@
 
 - type: entity
   id: MagazineUniversalMagnumPractice
-  name: "Universal magazine (.45 magnum practice)"
+  name: "mk 32 'Universal' magazine (.45 magnum practice)"
   parent: BaseMagazineUniversalMagnum
   components:
   - type: BallisticAmmoProvider
@@ -70,7 +83,7 @@
 
 - type: entity
   id: MagazineUniversalMagnumRubber
-  name: "Universal magazine (.45 magnum rubber)"
+  name: "mk 32 'Universal' magazine (.45 magnum rubber)"
   parent: BaseMagazineUniversalMagnum
   components:
   - type: BallisticAmmoProvider
@@ -79,6 +92,63 @@
   - type: Sprite
     layers:
     - state: rubber
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 12
+    zeroVisible: false
+
+- type: entity
+  id: MagazineUniversalMagnumIncendiary
+  name: "mk 32 'Universal' magazine (.45 magnum incendiary)"
+  parent: BaseMagazineUniversalMagnum
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeMagnumIncendiary
+    capacity: 12
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 12
+    zeroVisible: false
+
+- type: entity
+  id: MagazineUniversalMagnumUranium
+  name: "mk 32 'Universal' magazine (.45 magnum uranium)"
+  parent: BaseMagazineUniversalMagnum
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeMagnumUranium
+    capacity: 12
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 12
+    zeroVisible: false
+
+- type: entity
+  id: MagazineUniversalMagnumShrapnel
+  name: "mk 32 'Universal' magazine (.45 magnum shrapnel)"
+  parent: BaseMagazineUniversalMagnum
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeMagnumShrapnel
+    capacity: 12
+  - type: Sprite
+    layers:
+    - state: red
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]

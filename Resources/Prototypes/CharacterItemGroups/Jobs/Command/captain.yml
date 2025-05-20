@@ -55,6 +55,8 @@
       id: LoadoutCaptainPulsePistol
     - type: loadout
       id: LoadoutCaptainTerminus
+    - type: loadout
+      id: LoadoutCaptainRevolverShotgun
 
 - type: characterItemGroup
   id: LoadoutCaptainEyes

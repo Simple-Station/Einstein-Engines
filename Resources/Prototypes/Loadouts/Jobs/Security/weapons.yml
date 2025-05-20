@@ -1,0 +1,1165 @@
+# Duty Weapon
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
+# Equipment, limit 3 selections
+# Duplicate "Spare" equipment exists and shares the ItemGroup, for those officers who like to pack a spare magazine in their pocket, outside of what was issued to them.
+# I knew a lot of people in my time working IRL Armed security that did this.
+- type: loadout
+  id: LoadoutSecurityCombatKnife
+  category: JobsSecurityWeapons
+  cost: 0
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityEquipment
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  items:
+  - CombatKnife
+
+- type: loadout
+  id: LoadoutSecurityFlash
+  category: JobsSecurityWeapons
+  cost: 0
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityEquipment
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  items:
+  - Flash
+
+- type: loadout
+  id: LoadoutMagazinePistol
+  category: JobsSecurityWeapons
+  cost: 0
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityEquipment
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - MagazinePistol
+
+- type: loadout
+  id: LoadoutMagazinePistolSpare
+  category: JobsSecurityWeapons
+  cost: 2
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityEquipment
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - MagazinePistol
+
+- type: loadout
+  id: LoadoutMagazinePistolRubber
+  category: JobsSecurityWeapons
+  cost: 0
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityEquipment
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - MagazinePistolRubber
+
+- type: loadout
+  id: LoadoutMagazinePistolRubberSpare
+  category: JobsSecurityWeapons
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityEquipment
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - MagazinePistolRubber
+
+- type: loadout
+  id: LoadoutSpeedLoaderMagnum
+  category: JobsSecurityWeapons
+  cost: 2
+  exclusive: true
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityEquipment
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - SpeedLoaderMagnum
+
+- type: loadout
+  id: LoadoutSpeedLoaderMagnumSpare
+  category: JobsSecurityWeapons
+  cost: 4
+  exclusive: true
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityEquipment
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - SpeedLoaderMagnum
+
+- type: loadout
+  id: LoadoutSpeedLoaderMagnumRubber
+  category: JobsSecurityWeapons
+  cost: 2
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityEquipment
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - SpeedLoaderMagnumRubber
+
+- type: loadout
+  id: LoadoutSpeedLoaderMagnumRubberSpare
+  category: JobsSecurityWeapons
+  cost: 4
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityEquipment
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - SpeedLoaderMagnumRubber
+
+- type: loadout
+  id: LoadoutMagazineMagnum
+  category: JobsSecurityWeapons
+  cost: 4
+  exclusive: true
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityEquipment
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - MagazineMagnum
+
+- type: loadout
+  id: LoadoutMagazineMagnumRubber
+  category: JobsSecurityWeapons
+  cost: 4
+  exclusive: true
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityEquipment
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - MagazineMagnumRubber
+
+- type: loadout
+  id: LoadoutMagazineMagnumSpare
+  category: JobsSecurityWeapons
+  cost: 4
+  exclusive: true
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityEquipment
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - MagazineMagnum
+
+- type: loadout
+  id: LoadoutMagazineMagnumRubberSpare
+  category: JobsSecurityWeapons
+  cost: 4
+  exclusive: true
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityEquipment
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - MagazineMagnumRubber
+
+- type: loadout
+  id: LoadoutSpeedLoaderRifleHeavy
+  category: JobsSecurityWeapons
+  cost: 2
+  exclusive: true
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityEquipment
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - SpeedLoaderRifleHeavy
+
+- type: loadout
+  id: LoadoutSpeedLoaderRifleHeavySpare
+  category: JobsSecurityWeapons
+  cost: 4
+  exclusive: true
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityEquipment
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - SpeedLoaderRifleHeavy
+
+- type: loadout
+  id: LoadoutSpeedLoaderRifleHeavyRubber
+  category: JobsSecurityWeapons
+  cost: 2
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityEquipment
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - SpeedLoaderRifleHeavyRubber
+
+- type: loadout
+  id: LoadoutSpeedLoaderRifleHeavyRubberSpare
+  category: JobsSecurityWeapons
+  cost: 4
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityEquipment
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - SpeedLoaderRifleHeavyRubber
+
+# Service Weapon, limit 1 selection.
+# Security no longer spawns with a weapon automatically, instead they have a free choice of security appropriate Duty Pistol in their loadouts.
+# This category is universal to the entire security department by special request, so that players can choose their preferred Duty Pistol even if they aren't playing a security role.
+# All lethal options come with a 1 hour security department playtime, as a basic shitter protection.
+- type: loadout
+  id: LoadoutSecurityDisabler
+  category: JobsSecurityWeapons
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  items:
+  - WeaponDisabler
+
+- type: loadout
+  id: LoadoutSecurityMk58
+  category: JobsSecurityWeapons
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponPistolMk58Security
+
+- type: loadout
+  id: LoadoutSecurityMk58NonLethal
+  category: JobsSecurityWeapons
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponPistolMk58SecurityNonlethal
+
+- type: loadout
+  id: LoadoutSecurityRevolver
+  category: JobsSecurityWeapons
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponRevolverInspectorSecurity
+
+- type: loadout
+  id: LoadoutSecurityRevolverNonLethal
+  category: JobsSecurityWeapons
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponRevolverInspectorNonLethalSecurity
+
+- type: loadout
+  id: LoadoutSecurityRevolverDeckard
+  category: JobsSecurityWeapons
+  cost: 1
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponRevolverDeckardSecurity
+
+- type: loadout
+  id: LoadoutSecurityRevolverDeckardNonLethal
+  category: JobsSecurityWeapons
+  cost: 1
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponRevolverDeckardNonLethalSecurity
+
+- type: loadout
+  id: LoadoutSecurityPistolN1984
+  category: JobsSecurityWeapons
+  cost: 5
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponPistolN1984Security
+
+- type: loadout
+  id: LoadoutSecurityPistolN1984NonLethal
+  category: JobsSecurityWeapons
+  cost: 5
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponPistolN1984SecurityNonLethal
+
+- type: loadout
+  id: LoadoutSecurityPistolViper
+  category: JobsSecurityWeapons
+  cost: 2
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponPistolViperSecurity
+
+- type: loadout
+  id: LoadoutSecurityPistolViperNonLethal
+  category: JobsSecurityWeapons
+  cost: 2
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponPistolViperSecurityNonLethal
+
+- type: loadout
+  id: LoadoutSecurityPistolViperWood
+  category: JobsSecurityWeapons
+  cost: 2
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 108000 # 30 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponPistolViperWoodSecurity
+
+- type: loadout
+  id: LoadoutSecurityEquipmentTruncheon
+  category: JobsSecurityWeapons
+  cost: 3
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterSpeciesRequirement
+    species:
+    - Oni
+  items:
+  - Truncheon
+
+- type: loadout
+  id: LoadoutSecurityEquipmentEnergySword
+  category: JobsSecurityWeapons
+  cost: 4
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 18000 # 5 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  items:
+  - EnergyCutlassSecurity
+
+- type: loadout
+  id: LoadoutSecurityPistolSvalin
+  category: JobsSecurityWeapons
+  cost: 1
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponLaserSvalinn
+
+- type: loadout
+  id: LoadoutSecurityEnergyGunMini
+  category: JobsSecurityWeapons
+  cost: 2
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponEnergyGunMiniSecurity
+
+- type: loadout
+  id: LoadoutSecurityEnergyGunPistol
+  category: JobsSecurityWeapons
+  cost: 2
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponEnergyGunPistolSecurity
+
+- type: loadout
+  id: LoadoutSecurityPistolPollock
+  category: JobsSecurityWeapons
+  cost: 1
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponPistolPollockSecurity
+
+- type: loadout
+  id: LoadoutSecurityPistolPollockNonlethal
+  category: JobsSecurityWeapons
+  cost: 1
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponPistolPollockNonlethalSecurity
+
+- type: loadout
+  id: LoadoutSecurityRevolverSnub
+  category: JobsSecurityWeapons
+  cost: 3
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponRevolverSnubSecurity
+
+- type: loadout
+  id: LoadoutSecurityRevolverSnubNonlethal
+  category: JobsSecurityWeapons
+  cost: 3
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponRevolverSnubNonlethalSecurity
+
+- type: loadout
+  id: LoadoutSecurityRevolverK38Master
+  category: JobsSecurityWeapons
+  cost: 1
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponRevolverK38MasterSecurity
+
+- type: loadout
+  id: LoadoutSecurityRevolverK38MasterNonlethal
+  category: JobsSecurityWeapons
+  cost: 1
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponRevolverK38MasterNonlethalSecurity
+
+- type: loadout
+  id: LoadoutSecurityRevolverFitz
+  category: JobsSecurityWeapons
+  cost: 2
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponRevolverFitzSecurity
+
+- type: loadout
+  id: LoadoutSecurityRevolverFitzNonlethal
+  category: JobsSecurityWeapons
+  cost: 2
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponRevolverFitzNonlethalSecurity
+
+- type: loadout
+  id: LoadoutSecurityRevolverPython
+  category: JobsSecurityWeapons
+  cost: 5
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponRevolverPythonSecurity
+
+- type: loadout
+  id: LoadoutSecurityRevolverPythonNonlethal
+  category: JobsSecurityWeapons
+  cost: 5
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponRevolverPythonNonlethalSecurity
+
+- type: loadout
+  id: LoadoutSecurityArgenti
+  category: JobsSecurityWeapons
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponRevolverArgentiSecurity
+
+- type: loadout
+  id: LoadoutSecurityArgentiNonLethal
+  category: JobsSecurityWeapons
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponRevolverArgentiNonLethalSecurity
+
+- type: loadout
+  id: LoadoutSecurityEnergyRevolver
+  category: JobsSecurityWeapons
+  cost: 10
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 18000 # 5 hours
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponEnergyRevolverSecurity
+
+- type: loadout
+  id: LoadoutSecurityShotgunSawnLumen
+  category: JobsSecurityWeapons
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+  - !type:CharacterAgeRequirement
+    min: 21
+  items:
+  - WeaponShotgunSawnLumen
+  - ShellShotgunLumen
+  - ShellShotgunLumen
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+
+# Shoes
+
+# Uniforms

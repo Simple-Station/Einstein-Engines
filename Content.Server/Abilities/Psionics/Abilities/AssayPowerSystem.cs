@@ -35,7 +35,7 @@ public sealed class AssayPowerSystem : EntitySystem
     /// </summary>
     private void OnPowerUsed(EntityUid uid, PsionicComponent psionic, AssayPowerActionEvent args)
     {
-        if (!_psionics.OnAttemptPowerUse(args.Performer, "assay")
+        if (!_psionics.OnAttemptPowerUse(args.Performer, args.Target, "assay", true)
             || psionic.DoAfter is not null)
             return;
 

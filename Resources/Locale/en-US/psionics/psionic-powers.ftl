@@ -82,7 +82,9 @@ telegnosis-power-initialization-feedback =
 telegnosis-power-metapsionic-feedback = {CAPITALIZE($entity)}'s soul travels across bridges composed of dreamlight
 
 # Psionic Invisibility
-psionic-invisibility-power-description = Render yourself invisible to any entity that could potentially be psychic. Borgs, animals, and so on are not affected.
+psionic-invisibility-power-description =
+    Render yourself invisible to any entity that could potentially be psychic. Borgs, animals, and so on are not affected.
+    This doesn't last forever, and its duration scales with your psychic amplification factor.
 psionic-invisibility-power-initialization-feedback =
     I suddenly find myself plunged into a world utterly without light, yet I can feel the rays of warmth cast upon me.
     Pondering this, I arrive at a realization that sight itself is an illusion. I reject it, I deny that light itself is real.

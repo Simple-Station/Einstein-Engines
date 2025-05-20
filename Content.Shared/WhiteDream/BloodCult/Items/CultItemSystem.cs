@@ -33,7 +33,7 @@ public sealed class CultItemSystem : EntitySystem
 
     private void OnActivate(Entity<CultItemComponent> item, ref ActivateInWorldEvent args)
     {
-        if (CanUse(args.User))
+        if (CanUse(args.User, item))
             return;
 
         args.Handled = true;
@@ -42,7 +42,7 @@ public sealed class CultItemSystem : EntitySystem
 
     private void OnUseInHand(Entity<CultItemComponent> item, ref UseInHandEvent args)
     {
-        if (CanUse(args.User) ||
+        if (CanUse(args.User, item) ||
             // Allow non-cultists to remove embedded cultist weapons and getting knocked down afterwards on pickup
             (TryComp<EmbeddableProjectileComponent>(item.Owner, out var embeddable) && embeddable.Target != null))
             return;
@@ -53,7 +53,7 @@ public sealed class CultItemSystem : EntitySystem
 
     private void OnBeforeGettingThrown(Entity<CultItemComponent> item, ref BeforeGettingThrownEvent args)
     {
-        if (CanUse(args.PlayerUid))
+        if (CanUse(args.PlayerUid, item))
             return;
 
         args.Cancelled = true;
@@ -62,7 +62,7 @@ public sealed class CultItemSystem : EntitySystem
 
     private void OnEquipAttempt(Entity<CultItemComponent> item, ref BeingEquippedAttemptEvent args)
     {
-        if (CanUse(args.EquipTarget))
+        if (CanUse(args.EquipTarget, item))
             return;
 
         args.Cancel();
@@ -71,7 +71,7 @@ public sealed class CultItemSystem : EntitySystem
 
     private void OnMeleeAttempt(Entity<CultItemComponent> item, ref AttemptMeleeEvent args)
     {
-        if (CanUse(args.PlayerUid))
+        if (CanUse(args.PlayerUid, item))
             return;
 
         args.Cancelled = true;
@@ -80,7 +80,7 @@ public sealed class CultItemSystem : EntitySystem
 
     private void OnBeforeBlocking(Entity<CultItemComponent> item, ref BeforeBlockingEvent args)
     {
-        if (CanUse(args.User))
+        if (CanUse(args.User, item))
             return;
 
         args.Cancel();
@@ -99,5 +99,6 @@ public sealed class CultItemSystem : EntitySystem
         _hands.TryDrop(user);
     }
 
-    private bool CanUse(EntityUid? uid) => HasComp<BloodCultistComponent>(uid) || HasComp<GhostComponent>(uid);
+    private bool CanUse(EntityUid? uid, Entity<CultItemComponent> item) =>
+        item.Comp.AllowUseToEveryone || HasComp<BloodCultistComponent>(uid) || HasComp<GhostComponent>(uid);
 }

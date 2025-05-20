@@ -68,3 +68,16 @@
   - type: Sprite
     sprite: DeltaV/Objects/Misc/stamps.rsi
     state: stamp-admin-assistant
+
+- type: entity
+  name: Liaison's rubber stamp
+  parent: RubberStampBase
+  id: RubberStampCorporateLiaison
+  suffix: DO NOT MAP
+  components:
+  - type: Stamp
+    stampState: "paper_stamp-corporate"
+  - type: CorporateStamp # handles colour, name
+  - type: Sprite
+    sprite: DeltaV/Objects/Misc/stamps.rsi
+    state: stamp-liaison

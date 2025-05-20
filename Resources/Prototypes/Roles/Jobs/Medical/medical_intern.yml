@@ -9,9 +9,10 @@
     #   time: 54000 # 15 hrs
     #   inverted: true # stop playing intern if you're good at med!
     - !type:CharacterEmployerRequirement
-      inverted: true
       employers:
-      - Unemployed
+      - ZengHuPharmaceuticals
+      - Interdyne
+      - NanoTrasen
   startingGear: MedicalInternGear
   icon: "JobIconMedicalIntern"
   supervisors: job-supervisors-medicine

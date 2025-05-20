@@ -55,4 +55,16 @@ public sealed partial class BallisticAmmoProviderComponent : Component
     /// </summary>
     [DataField]
     public TimeSpan FillDelay = TimeSpan.FromSeconds(0.5);
+
+    /// <summary>
+    /// Is ammo ejected after each shot, or not.
+    /// </summary>
+    [DataField]
+    public bool AutoCycle = true;
+
+    /// <summary>
+    /// Is the gun ready to shoot; if AutoCycle is true then this will always stay true and not need to be manually done.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool Cycled = true;
 }

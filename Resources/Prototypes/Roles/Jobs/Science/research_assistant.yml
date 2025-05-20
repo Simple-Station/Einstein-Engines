@@ -9,9 +9,9 @@
     #   time: 54000 #15 hrs
     #   inverted: true # stop playing intern if you're good at science!
     - !type:CharacterEmployerRequirement
-      inverted: true
       employers:
-      - Unemployed
+      - NanoTrasen
+      - ZengHuPharmaceuticals
   startingGear: ResearchAssistantGear
   icon: "JobIconResearchAssistant"
   supervisors: job-supervisors-science

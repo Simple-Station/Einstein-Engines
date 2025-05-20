@@ -44,16 +44,16 @@
         changeSound: /Audio/Items/change_jaws.ogg
   - type: MeleeWeapon
     wideAnimationRotation: 90
-    attackRate: 1.17
+    attackRate: 1.2
     range: 1.65
     damage:
       types:
         Blunt: 10
         Slash: 2
     bluntStaminaDamageFactor: 2.0
-    heavyRateModifier: 1.25
+    heavyRateModifier: 1.75
     heavyDamageBaseModifier: 1.5
-    heavyStaminaCost: 5
+    heavyStaminaCost: 2.5
     maxTargets: 1
     angle: 20
     soundHit:
@@ -66,6 +66,17 @@
     difficulty: 3
     recipes:
       - JawsOfLife
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 155
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 - type: entity
   name: syndicate jaws of life

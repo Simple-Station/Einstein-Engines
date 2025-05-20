@@ -347,6 +347,9 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
 
         MakeCrispy(item);
 
+        if (TryComp(item, out FoodComponent? foodComp))
+            foodComp.MoodletsOnEat.Add(component.DeepFriedMoodletPrototype);
+
         var oilToUse = 0;
 
         if (HasComp<ItemComponent>(item)) {

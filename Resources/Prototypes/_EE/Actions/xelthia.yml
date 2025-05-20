@@ -1,0 +1,12 @@
+- type: entity
+  id: XelthiaRegenerateAction
+  name: Regrow Arms
+  description: Regrow any arms you may have lost.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    icon:
+      sprite: _EE/Mobs/Species/Xelthia/parts.rsi
+      state: full
+    event: !type:ArmRegrowthEvent
+    useDelay: 150 # Once every 2.5 minutes or so?

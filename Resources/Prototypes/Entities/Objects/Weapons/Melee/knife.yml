@@ -89,7 +89,7 @@
         Slash: 8
         Blunt: 1
   - type: DamageOtherOnHit
-    staminaCost: 7.5
+    staminaCost: 2.5
   - type: ThrowingAngle
     angle: 245
   - type: Item
@@ -119,7 +119,7 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: .6666
+    attackRate: 0.8
     damage:
       types:
         Slash: 12

@@ -12,9 +12,9 @@
   - Mail
   requirements:
     - !type:CharacterEmployerRequirement
-      inverted: true
       employers:
-      - Unemployed
+      - OrionExpress
+      - NanoTrasen
 
 - type: startingGear
   id: MailCarrierGear

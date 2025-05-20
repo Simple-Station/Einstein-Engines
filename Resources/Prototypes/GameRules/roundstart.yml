@@ -14,7 +14,7 @@
     rules:
     - id: Thief
       prob: 0.5
-      
+
 - type: entity
   id: DeathMatch31
   parent: BaseGameRule
@@ -91,8 +91,7 @@
     definitions:
     - prefRoles: [ NukeopsCommander ]
       fallbackRoles: [ Nukeops, NukeopsMedic ]
-      max: 1
-      playerRatio: 10
+      spawnerPrototype: SpawnPointNukeopsCommander
       startingGear: SyndicateCommanderGearFull
       components:
       - type: NukeOperative
@@ -107,8 +106,7 @@
       - MindRoleNukeopsCommander
     - prefRoles: [ NukeopsMedic ]
       fallbackRoles: [ Nukeops, NukeopsCommander ]
-      max: 1
-      playerRatio: 10
+      spawnerPrototype: SpawnPointNukeopsMedic
       startingGear: SyndicateOperativeMedicFull
       components:
       - type: NukeOperative
@@ -123,7 +121,7 @@
       - MindRoleNukeopsMedic
     - prefRoles: [ Nukeops ]
       fallbackRoles: [ NukeopsCommander, NukeopsMedic ]
-      min: 0
+      spawnerPrototype: SpawnPointNukeopsOperative
       max: 3
       playerRatio: 10
       startingGear: SyndicateOperativeGearFull
@@ -282,7 +280,7 @@
   components:
   - type: RampingStationEventScheduler
     chaosModifier: 5 # By default, one event each 30-10 seconds after two hours. Changing CVars will cause this to deviate.
-    startingChaosRatio: 0.1 
+    startingChaosRatio: 0.1
     shiftLengthModifier: 2.5
 
 - type: entity
@@ -332,4 +330,4 @@
 #      orGroup: puddleMess
     - id: SmugglerStashVariationPass
       prob: 0.90
-      
+

@@ -96,10 +96,10 @@ character-item-group-LoadoutMagistrateNeck = Magistrate Neckwear
 character-item-group-LoadoutMagistrateOuter = Magistrate Outerwear
 character-item-group-LoadoutMagistrateUniforms = Magistrate Uniforms
 
-# Dignitary - Nanotrasen Representative
-character-item-group-LoadoutNanorepBackpacks = Nanotrasen Representative Backpacks
-character-item-group-LoadoutNanorepUniforms = Nanotrasen Representative Uniforms
-character-item-group-LoadoutNanotrasenRepresentativeWeapon = Nanotrasen Representative Weapons
+# Dignitary - Corporate Liaison
+character-item-group-LoadoutNanorepBackpacks = Corporate Liaison Backpacks
+character-item-group-LoadoutNanorepUniforms = Corporate Liaison Uniforms
+character-item-group-LoadoutNanotrasenRepresentativeWeapon = Corporate Liaison Weapons
 
 # Engineering
 character-item-group-LoadoutEngineeringBackpacks = Engineering Backpacks
@@ -815,7 +815,3 @@ character-item-group-LoadoutPrisonerUniforms = Prisoner Uniforms
 # Traits - Languages
 character-item-group-TraitsLanguagesBasic = Basic Languages
 character-item-group-TraitsAccents = Accents
-
-# Traits - Mind Or Machine
-character-item-group-TraitsMind = Mind Over Machine
-character-item-group-TraitsMachine = Machine Over Mind

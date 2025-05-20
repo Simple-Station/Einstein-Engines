@@ -444,13 +444,13 @@ public sealed class StationSystem : EntitySystem
         if (!Resolve(entity, ref xform))
             throw new ArgumentException("Tried to use an abstract entity!", nameof(entity));
 
-        if (TryComp<StationDataComponent>(entity, out _))
+        if (HasComp<StationDataComponent>(entity))
         {
             // We are the station, just return ourselves.
             return entity;
         }
 
-        if (TryComp<MapGridComponent>(entity, out _))
+        if (HasComp<MapGridComponent>(entity))
         {
             // We are the station, just check ourselves.
             return CompOrNull<StationMemberComponent>(entity)?.Station;

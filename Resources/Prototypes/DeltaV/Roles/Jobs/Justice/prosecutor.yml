@@ -3,6 +3,10 @@
   name: job-name-prosecutor
   description: job-description-prosecutor
   playTimeTracker: JobProsecutor
+  requirements:
+    - !type:CharacterEmployerRequirement
+      employers:
+      - NanoTrasen
   startingGear: ProsecutorGear
   icon: "JobIconProsecutor"
   supervisors: job-supervisors-cj

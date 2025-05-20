@@ -100,6 +100,71 @@
           min: 5
 
 - type: reagent
+  id: OusianaDust
+  name: reagent-name-ousiana-dust
+  group: Narcotics
+  desc: reagent-desc-ousiana-dust
+  flavor: supernova
+  color: "#10366e"
+  physicalDesc: reagent-physical-desc-diametric
+  metabolisms:
+    Narcotic:
+      metabolismRate: 5
+      effects:
+        - !type:ChemRestorePsionicReroll
+          conditions:
+            - !type:ReagentThreshold
+              reagent: OusianaDust
+              min: 5
+        - !type:GenericStatusEffect
+          key: SeeingRainbows
+          component: SeeingRainbows
+          type: Add
+          time: 30
+        - !type:GenericStatusEffect
+          key: Stutter
+          component: StutteringAccent
+          type: Add
+          time: 30
+        - !type:HealthChange
+          damage:
+            groups:
+              Toxin: 15 #fast heavy damage, but extreamly hard to get large quantity
+              Burn: 5
+        - !type:Drunk
+          boozePower: 50
+        - !type:Paralyze
+          paralyzeTime: 10 #too much reagent needed for arrows to be toooo powerful with this, but still useful for tratiors or robust CMOs that want a long stun and are friends with Epi
+          conditions:
+            - !type:ReagentThreshold
+              reagent: OusianaDust
+              min: 5
+        - !type:Jitter
+          time: 30
+        - !type:Emote
+          emote: Scream
+        - !type:PopupMessage
+          type: Local
+          visualType: LargeCaution
+          messages:
+            - "chem-potential-regained-ousiana-1"
+            - "chem-potential-regained-ousiana-2"
+            - "chem-potential-regained-ousiana-3"
+            - "chem-potential-regained-ousiana-4"
+          conditions:
+          - !type:ReagentThreshold
+            reagent: OusianaDust
+            min: 5
+        - !type:AdjustReagent
+          reagent: OusianaDust
+          amount: -10
+          conditions:
+            - !type:ReagentThreshold
+              reagent: OusianaDust
+              min: 5
+
+
+- type: reagent
   id: Ectoplasm
   name: reagent-name-ectoplasm
   group: Toxins

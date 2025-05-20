@@ -1,0 +1,47 @@
+- type: entity
+  parent: DrinkGlass
+  id: DrinkVodkaSportsDrink
+  suffix: vodka sports drink
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: VodkaSportsDrink
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/ginvodkaglass.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkRoninRefresher
+  suffix: ronin refresher
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: RoninRefresher
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/gildlagerglass.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkDeadlifter
+  suffix: deadlifter
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Deadlifter
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/booger.rsi
+    state: icon

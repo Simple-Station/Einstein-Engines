@@ -214,6 +214,7 @@
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
   - type: Gun
+    damageModifier: 1.25 # "Extra Robust" despite having an underpowered cartridge.
     fireRate: 4
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/silenced.ogg

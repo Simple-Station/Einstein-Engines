@@ -58,9 +58,12 @@
   - type: MeleeWeapon
     wideAnimationRotation: -135
     attackRate: .8
+    range: 1.6
     damage:
       types:
-        Blunt: 4.5
+        Blunt: 2.5
+    clickPartDamageMultiplier: 3
+    heavyPartDamageMultiplier: 2.5
   - type: DamageOtherOnHit
   - type: Item
     size: Small
@@ -246,7 +249,7 @@
         shader: unshaded
         map: [ "blade" ]
   - type: MeleeWeapon # DeltaV - reduced attack rate of e-cutlass; slower, more brutal swings
-    attackRate: 0.75
+    attackRate: 1.5
     soundHit:
       path: /Audio/Weapons/eblade1.ogg
     damage:
@@ -273,15 +276,15 @@
   suffix: Security Loadouts
   components:
   - type: MeleeWeapon
-    attackRate: 0.6666
+    attackRate: 1.25
   - type: ItemToggleMeleeWeapon
     activatedDamage:
         types:
-            Slash: 6
+            Slash: 5
             Heat: 12
             Structural: 20 # "expertly contained to cut through nearly any material" yet it had no structural damage
-  - type: GuideHelp  
-    guides: [ SecurityWeapons ]  
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]
 
 - type: entity
   name: double-bladed energy sword

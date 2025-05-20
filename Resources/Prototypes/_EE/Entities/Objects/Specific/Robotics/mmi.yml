@@ -1,0 +1,53 @@
+- type: entity
+  parent: MMI
+  id: AiAdapter
+  name: personal ai adapter
+  description: A device that allows a pAI to interface with electronics as if it was a positronic brain.
+  components:
+    - type: Sprite
+      sprite: _EE/Objects/Specific/Robotics/paiadapter.rsi
+      layers:
+      - state: mmi_off
+        map: ["enum.MMIVisualLayers.Base"]
+      - state: mmi_brain
+        map: ["enum.MMIVisualLayers.Brain"]
+        visible: false
+    - type: ItemSlots
+      slots:
+        brain_slot:
+          name: positronic-brain-slot-component-slot-name-brain
+          whitelist:
+            components:
+            - PAI
+    - type: Organ
+      slotId: posibrain
+    - type: Tag
+      tags:
+      - Posibrain
+    - type: Construction
+      graph: AiAdapter
+      node: paiadapter
+
+- type: entity
+  parent: MMI
+  id: ReverseMMI
+  name: machine-man interface
+  description: A machine able to facilitate communication between a biological body and positronics, enabling crew to continue to provide value after work-related incidents.
+  components:
+    - type: Sprite
+      sprite: _EE/Objects/Specific/Robotics/reversemmi.rsi
+      layers:
+      - state: mmi_brain
+        map: ["enum.MMIVisualLayers.Brain"]
+        visible: false
+      - state: mmi_off
+        map: ["enum.MMIVisualLayers.Base"]
+    - type: ItemSlots
+      slots:
+        brain_slot:
+          name: pai-system-role-name
+          whitelist:
+            tags:
+            - Posibrain
+    - type: Organ
+      slotId: brain

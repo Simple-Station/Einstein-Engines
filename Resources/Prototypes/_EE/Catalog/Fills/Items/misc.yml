@@ -1,0 +1,14 @@
+- type: entity
+  id: SyringeCaseFilled
+  parent: SyringeCase
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: SyringeInaprovaline
+    - id: Syringe
+    - id: ChemistryEmptyBottle01
+    - id: EpinephrineChemistryBottle # these are mostly to show off the sprite
+    - id: EmergencyMedipen
+    - id: PainMedipen
+      amount: 2

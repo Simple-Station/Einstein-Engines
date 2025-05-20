@@ -11,10 +11,15 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 65
-    attackRate: 1.25
+    attackRate: 0.9
     damage:
       types:
         Slash: 10
+    heavyRateModifier: 2
+    heavyRangeModifier: 1.75
+    heavyDamageBaseModifier: 1.5
+    maxTargets: 1
+    angle: 10
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: Item

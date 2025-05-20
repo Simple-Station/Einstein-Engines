@@ -1,4 +1,4 @@
-﻿using Content.Client.Stylesheets;
+using Content.Client.Stylesheets;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
@@ -77,9 +77,14 @@ namespace Content.Client.Actions.UI
                     MaxWidth = TooltipTextMaxWidth,
                     StyleClasses = {StyleNano.StyleClassTooltipActionRequirements}
                 };
-                requiresLabel.SetMessage(FormattedMessage.FromMarkup("[color=#635c5c]" +
-                                                                     requires +
-                                                                     "[/color]"));
+                try
+                {
+                    requiresLabel.SetMessage(FormattedMessage.FromMarkupOrThrow("[color=#635c5c]" + requires + "[/color]"));
+                }
+                catch(Exception e)
+                {
+                    requiresLabel.SetMessage(e.Message);
+                }
                 vbox.AddChild(requiresLabel);
             }
         }
@@ -97,8 +102,16 @@ namespace Content.Client.Actions.UI
             if (timeLeft > TimeSpan.Zero)
             {
                 var duration = Cooldown.Value.End - Cooldown.Value.Start;
-                _cooldownLabel.SetMessage(FormattedMessage.FromMarkup(
-                    $"[color=#a10505]{(int) duration.TotalSeconds} sec cooldown ({(int) timeLeft.TotalSeconds + 1} sec remaining)[/color]"));
+                try
+                {
+                    _cooldownLabel.SetMessage(FormattedMessage.FromMarkupOrThrow(
+                        $"[color=#a10505]{(int) duration.TotalSeconds} sec cooldown ({(int) timeLeft.TotalSeconds + 1} sec remaining)[/color]"));
+
+                }
+                catch(Exception e)
+                {
+                    _cooldownLabel.SetMessage(e.Message);
+                }
                 _cooldownLabel.Visible = true;
             }
             else

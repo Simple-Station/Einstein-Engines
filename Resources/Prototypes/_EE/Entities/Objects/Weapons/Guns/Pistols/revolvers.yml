@@ -1,0 +1,39 @@
+- type: entity
+  name: BRDI-P33 "Jury" Revolver
+  parent: BaseWeaponRevolver
+  id: WeaponCaptainRevolverShotgun
+  description: An incredibly rare, elegant, and powerful revolver of which only twenty were ever made. It features three chambers, which load 12-gauge shells.
+  components:
+  - type: Sprite
+    sprite: _EE/Objects/Weapons/Guns/Pistols/Captain_pistol.rsi
+    state: base
+  - type: Clothing
+    sprite: _EE/Objects/Weapons/Guns/Pistols/Captain_pistol.rsi
+  - type: AmmoCounter
+  - type: Gun
+    selectedMode: SemiAuto
+    fireRate: 1
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/_EE/Weapons/Guns/Gunshots/shotgun.ogg
+    fireOnDropChance: 0
+    shotgunSpreadMultiplier: 1.15
+    shotgunProjectileCountModifier: 1.33
+    ejectionForce: 0.2
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+      - ShellShotgun
+    proto: ShellShotgunIncendiary
+    capacity: 3
+    chambers: [True, True, True]
+    ammoSlots: [null, null, null]
+    soundEject:
+      path: /Audio/Weapons/Guns/MagOut/revolver_magout.ogg
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
+  - type: StaticPrice
+    price: 5000
+  - type: StealTarget
+    stealGroup: WeaponCaptain

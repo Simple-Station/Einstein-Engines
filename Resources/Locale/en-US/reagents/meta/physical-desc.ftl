@@ -99,3 +99,4 @@ reagent-physical-desc-vibrant = vibrant
 reagent-physical-desc-viscous = viscous
 reagent-physical-desc-volatile = volatile
 reagent-physical-desc-wormy = wormy
+reagent-physical-desc-diametric = diametric

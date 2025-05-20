@@ -8,9 +8,10 @@
       department: Civilian
       min: 3600 #DeltaV 1 hour
     - !type:CharacterEmployerRequirement
-      inverted: true
       employers:
-      - Unemployed
+      - NanoTrasen
+      - OrionExpress
+      - IdrisIncorporated
   startingGear: ChefGear
   icon: "JobIconChef"
   supervisors: job-supervisors-hop

@@ -18,6 +18,8 @@
         amount: 3
       - id: ClothingHandsGlovesColorYellow
         amount: 2
+      - id: ClothingOuterJacketInsulated
+        amount: 1
 
 - type: entity
   id: CrateEngineeringToolbox

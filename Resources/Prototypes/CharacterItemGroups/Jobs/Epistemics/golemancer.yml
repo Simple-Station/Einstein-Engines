@@ -10,10 +10,12 @@
     - type: loadout
       id: LoadoutBackpackDuffelRobotics
 
-#- type: characterItemGroup
-#  id: LoadoutGolemancerBelt
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutGolemancerBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutGolemancerBeltUtility
 #
 #- type: characterItemGroup
 #  id: LoadoutGolemancerEars
@@ -81,3 +83,7 @@
       id: LoadoutScienceUniformJumpskirtRoboticist
     - type: loadout
       id: LoadoutScienceUniformJumpsuitRoboticist
+    - type: loadout
+      id: LoadoutScienceUniformJumpsuitRoboticistNT
+    - type: loadout
+      id: LoadoutScienceUniformJumpsuitRoboticistHeph

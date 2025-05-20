@@ -8,7 +8,7 @@
   - type: Item
     storedRotation: -90
   - type: Food
-    trash: 
+    trash:
     - FoodBowlBig
     utensil: Spoon
   - type: SolutionContainerManager
@@ -971,7 +971,7 @@
     flavors:
       - miso
   - type: Food
-    trash: 
+    trash:
     - FoodBowlFancy
   - type: Sprite
     layers:
@@ -1257,3 +1257,39 @@
     tags:
     - Meat
     - Soup
+
+
+- type: entity
+  name: ousiana dust bowl
+  parent: FoodBowlBase # really dry soup i guess
+  id: FoodOusianaDustBowl
+  description: A combination of diametrically opposed forces,
+  components:
+  - type: Food
+    useSound: "/Audio/Effects/Footsteps/snowstep4.ogg"
+  - type: FlavorProfile
+    flavors:
+      - supernova
+  - type: Sprite
+    layers:
+      - state: bowl
+      - state: ousiana
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+          - ReagentId: OusianaDust
+            Quantity: 5
+  - type: Tag
+    tags:
+      - Soup
+  - type: Construction
+    graph: OusianaDustBowl
+    node: ousianadustbowl
+  - type: MeleeWeapon
+    soundNoDamage:
+      path: "/Audio/Effects/Footsteps/snowstep4.ogg"
+    damage:
+      types:
+        Blunt: 0

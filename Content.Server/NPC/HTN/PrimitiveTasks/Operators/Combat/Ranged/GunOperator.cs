@@ -39,6 +39,18 @@ public sealed partial class GunOperator : HTNOperator, IHtnConditionalShutdown
     [DataField("opaqueKey")]
     public bool UseOpaqueForLOSChecks = false;
 
+    /// <summary>
+    ///     Whether or not the NPC will always attempt to shoot targets that are laying down.
+    /// </summary>
+    [DataField]
+    public bool AlwaysDirectTargets;
+
+    /// <summary>
+    ///     The chance that an NPC will aim to hit targets that are laying down.
+    /// </summary>
+    [DataField]
+    public float DirectTargetChance = 0.5f;
+
     // Like movement we add a component and pass it off to the dedicated system.
 
     public override async Task<(bool Valid, Dictionary<string, object>? Effects)> Plan(NPCBlackboard blackboard,
@@ -66,6 +78,8 @@ public sealed partial class GunOperator : HTNOperator, IHtnConditionalShutdown
         var ranged = _entManager.EnsureComponent<NPCRangedCombatComponent>(blackboard.GetValue<EntityUid>(NPCBlackboard.Owner));
         ranged.Target = blackboard.GetValue<EntityUid>(TargetKey);
         ranged.UseOpaqueForLOSChecks = UseOpaqueForLOSChecks;
+        ranged.AlwaysDirectTargets = AlwaysDirectTargets;
+        ranged.DirectTargetChance = DirectTargetChance;
 
         if (blackboard.TryGetValue<float>(NPCBlackboard.RotateSpeed, out var rotSpeed, _entManager))
         {

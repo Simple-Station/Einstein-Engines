@@ -68,7 +68,8 @@
   - type: Sprite
     sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
   - type: Gun
-    fireRate: 0.75
+    fireRate: 0.75 
+    damageModifier: 1.5 
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -79,7 +80,7 @@
     range: 1.75
     damage:
       types:
-        Piercing: 5
+        Piercing: 7
         Slash: 3.5
     wideAnimationRotation: -135
     soundHit:
@@ -99,6 +100,13 @@
   - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 225
+  - type: BallisticAmmoProvider
+    capacity: 5
+    autoCycle: false
+    proto: CartridgeLightRifle
+    whitelist:
+      tags:
+      - CartridgeLightRifle
 
 - type: entity
   name: Kardashev-Mosin

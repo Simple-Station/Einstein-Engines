@@ -213,7 +213,7 @@ public sealed class DebrisFeaturePlacerSystem : BaseWorldSystem
         }
 
         if (failures > 0)
-            _sawmill.Error($"Failed to place {failures} debris at chunk {args.Chunk}");
+            _sawmill.Error($"Failed to place {failures} debris at chunk {args.Chunk} at coords {args.Coords}");
     }
 
     /// <summary>

@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Text;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Stylesheets;
@@ -65,41 +66,78 @@ public sealed partial class TraitPreferenceSelector : Control
                     MinWidth = 32,
                     MaxWidth = 32,
                     ClipText = true,
-                    Margin = new Thickness(0, 0, 8, 0),
+                    Margin = new(0, 0, 8, 0),
                 },
                 new Label
                 {
                     Text = Loc.GetString($"trait-name-{trait.ID}"),
-                    Margin = new Thickness(8, 0, 0, 0),
+                    Margin = new(8, 0, 0, 0),
                 },
             },
         });
         PreferenceButton.OnToggled += OnPrefButtonToggled;
 
-        var tooltip = new StringBuilder();
+
+        var tooltip = new Tooltip();
+        PreferenceButton.TooltipSupplier = _ => tooltip;
+        var toolBox = (BoxContainer) tooltip.Children.First();
+
         // Add the loadout description to the tooltip if there is one
         var desc = Loc.GetString($"trait-description-{trait.ID}");
         if (!string.IsNullOrEmpty(desc) && desc != $"trait-description-{trait.ID}")
-            tooltip.Append(desc);
-
-
-        // Get requirement reasons
-        characterRequirementsSystem.CheckRequirementsValid(
-            trait.Requirements, highJob, profile, new Dictionary<string, TimeSpan>(),
-            jobRequirementsManager.IsWhitelisted(), trait,
-            entityManager, prototypeManager, configManager,
-            out var reasons);
-
-        // Add requirement reasons to the tooltip
-        foreach (var reason in reasons)
-            tooltip.Append($"\n{reason}");
-
-        // Combine the tooltip and format it in the checkbox supplier
-        if (tooltip.Length > 0)
+            tooltip.SetMessage(FormattedMessage.FromMarkupPermissive(desc));
+        if (trait.Requirements.Any())
         {
-            var formattedTooltip = new Tooltip();
-            formattedTooltip.SetMessage(FormattedMessage.FromMarkupPermissive(tooltip.ToString()));
-            PreferenceButton.TooltipSupplier = _ => formattedTooltip;
+            toolBox.AddChild(
+                new Label
+                {
+                    Text = Loc.GetString("character-requirement-desc"),
+                    StyleClasses = { StyleBase.StyleClassLabelHeading, },
+                    Margin = new(0, 8, 0, 4),
+                });
+
+            MakeTooltipTree(toolBox, trait.Requirements);
+            toolBox.AddChild(new() { Margin = new(0, 2), });
+        }
+
+        return;
+
+        void MakeTooltipTree(BoxContainer box, List<CharacterRequirement> requirements)
+        {
+            foreach (var requirement in requirements)
+            {
+                if (requirement is CharacterLogicRequirement logicRequirement)
+                {
+                    requirement.IsValid(
+                        highJob, profile, new(), jobRequirementsManager.IsWhitelisted(), trait,
+                        entityManager, prototypeManager, configManager, out var reason);
+                    box.AddChild(new RichTextLabel { Text = reason?.Split("\n")[0], Margin = new(8, 2), });
+                    var newBox = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Vertical, };
+                    box.AddChild(new PanelContainer
+                        {
+                            PanelOverride = new StyleBoxFlat
+                            {
+                                BackgroundColor = Color.FromHex("#1B1B1C"),
+                                BorderColor = Color.FromHex("#3A3A3D"),
+                                BorderThickness = new(1),
+                            },
+                            Margin = new(8, 2),
+                            Children = { newBox, },
+                        });
+                    MakeTooltipTree(newBox, logicRequirement.Requirements);
+                }
+                else
+                {
+                    requirement.IsValid(
+                        highJob, profile, new(), jobRequirementsManager.IsWhitelisted(), trait,
+                        entityManager, prototypeManager, configManager, out var reason);
+                    box.AddChild(new RichTextLabel
+                    {
+                        Text = reason,
+                        Margin = new(8, 2),
+                    });
+                }
+            }
         }
     }
 

@@ -14,7 +14,7 @@ namespace Content.Server.Silicons.Borgs;
 /// <summary>
 /// Server-side logic for borg type switching. Handles more heavyweight and server-specific switching logic.
 /// </summary>
-public sealed class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeSystem
+public sealed partial class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeSystem // DeltaV: Made partial
 {
     [Dependency] private readonly BorgSystem _borgSystem = default!;
     [Dependency] private readonly ServerInventorySystem _inventorySystem = default!;
@@ -31,10 +31,6 @@ public sealed class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeSystem
 
         if (TryComp(ent, out ActiveRadioComponent? activeRadio))
             activeRadio.Channels = [.. radioChannels];
-
-        // Assign lawsets
-        var laws = _siliconLawSystem.GetLawset(prototype.Laws).Laws;
-        _siliconLawSystem.SetLaws(laws, ent);
 
         // Borg transponder for the robotics console
         if (TryComp(ent, out BorgTransponderComponent? transponder))
@@ -66,6 +62,11 @@ public sealed class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeSystem
                 _borgSystem.InsertModule(chassisEnt, moduleEntity);
             }
         }
+
+        // Begin DeltaV Code: Custom lawset patching
+        if (prototype.Lawset is {} lawset)
+            ConfigureLawset(ent, lawset);
+        // End DeltaV Code
 
         // Configure special components
         if (Prototypes.TryIndex(ent.Comp.SelectedBorgType, out var previousPrototype))

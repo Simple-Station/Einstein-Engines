@@ -31,8 +31,8 @@
     energyPerUse: 120
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1
-    range: 1.5
+    attackRate: 1.1
+    range: 1.6
     damage:
       types:
         Blunt: 7.5

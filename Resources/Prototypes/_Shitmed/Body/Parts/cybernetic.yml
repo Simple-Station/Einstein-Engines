@@ -1,6 +1,6 @@
 - type: entity
   id: LeftArmCybernetic
-  parent: LeftArmHuman
+  parent: [PartIPC, BaseLeftArm]
   abstract: true
   components:
   - type: Damageable
@@ -16,7 +16,7 @@
 
 - type: entity
   id: RightArmCybernetic
-  parent: RightArmHuman
+  parent: [PartIPC, BaseRightArm]
   abstract: true
   components:
   - type: Damageable
@@ -32,7 +32,7 @@
 
 - type: entity
   id: LeftLegCybernetic
-  parent: LeftLegHuman
+  parent: [PartIPC, BaseLeftLeg]
   abstract: true
   components:
   - type: Damageable
@@ -48,7 +48,7 @@
 
 - type: entity
   id: RightLegCybernetic
-  parent: RightLegHuman
+  parent: [PartIPC, BaseRightLeg]
   abstract: true
   components:
   - type: Damageable
@@ -64,7 +64,7 @@
 
 - type: entity
   id: LeftHandCybernetic
-  parent: LeftHandHuman
+  parent: [PartIPC, BaseLeftHand]
   name: cybernetic left hand
   components:
   - type: Damageable
@@ -78,7 +78,7 @@
 
 - type: entity
   id: RightHandCybernetic
-  parent: RightHandHuman
+  parent: [PartIPC, BaseRightHand]
   name: cybernetic right hand
   components:
   - type: Damageable
@@ -92,7 +92,7 @@
 
 - type: entity
   id: LeftFootCybernetic
-  parent: LeftFootHuman
+  parent: [PartIPC, BaseLeftFoot]
   name: cybernetic left foot
   components:
   - type: Damageable
@@ -106,7 +106,7 @@
 
 - type: entity
   id: RightFootCybernetic
-  parent: RightFootHuman
+  parent: [PartIPC, BaseRightFoot]
   name: cybernetic right foot
   components:
   - type: Damageable
@@ -181,3 +181,25 @@
         - Shard
         - Mousetrap
         - SlipEntity
+
+- type: entity
+  parent: LeftArmCybernetic
+  id: CrowbarLeftArm
+  name: DX-1 left Pryarm
+  description: A cybernetic left arm that can easily pry open unpowered doors.
+  components:
+  - type: BodyPart
+    onAdd:
+    - type: Prying
+      speedModifier: 2
+
+- type: entity
+  parent: RightArmCybernetic
+  id: CrowbarRightArm
+  name: DX-1 right Pryarm
+  description: A cybernetic right arm that can easily pry open unpowered doors.
+  components:
+  - type: BodyPart
+    onAdd:
+    - type: Prying
+      speedModifier: 2

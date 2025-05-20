@@ -1,0 +1,12 @@
+- type: entity
+  parent: EmergencyNitrogenTank
+  id: EmergencyNitrousOxideTank
+  name: emergency nitrous oxide tank
+  description: A downsized nitrous oxide tank for field applications. Usable as a source of oxygen in a pinch.
+  components:
+  - type: Sprite
+    sprite: Objects/Tanks/emergency_anesthetic.rsi
+  - type: Item
+    sprite: Objects/Tanks/emergency_anesthetic.rsi
+  - type: Clothing
+    sprite: Objects/Tanks/emergency_anesthetic.rsi

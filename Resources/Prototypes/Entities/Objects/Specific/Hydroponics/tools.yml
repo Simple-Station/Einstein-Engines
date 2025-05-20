@@ -17,11 +17,11 @@
     damage:
       types:
         Slash: 3.5
-        Blunt: 3
-    heavyRateModifier: 1
+        Blunt: 4
+    heavyRateModifier: 1.25
     heavyRangeModifier: 1
-    heavyDamageBaseModifier: 1.2
-    maxTargets: 5
+    heavyDamageBaseModifier: 1.25
+    maxTargets: 6
     angle: 100
   - type: DamageOtherOnHit
     staminaCost: 5
@@ -45,13 +45,13 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 90
-    attackRate: 1.25
+    attackRate: 0.9
     damage:
       types:
         Piercing: 7
-    heavyRateModifier: 1.1
-    heavyRangeModifier: 1.25
-    heavyDamageBaseModifier: 1.2
+    heavyRateModifier: 1.25
+    heavyRangeModifier: 1.5
+    heavyDamageBaseModifier: 1.25
     maxTargets: 1
     angle: 20
   - type: DamageOtherOnHit
@@ -82,14 +82,14 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 135
-    range: 1.85
+    range: 1.25
     damage:
       types:
         Slash: 7
-    heavyRateModifier: 1.25
-    heavyRangeModifier: 1.25
-    heavyDamageBaseModifier: 1.5
-    heavyStaminaCost: 5
+    heavyRateModifier: 2
+    heavyRangeModifier: 1.85
+    heavyDamageBaseModifier: 2
+    heavyStaminaCost: 2.5
     maxTargets: 1
     angle: 120
   - type: DamageOtherOnHit
@@ -124,13 +124,14 @@
   - type: MeleeWeapon
     wideAnimationRotation: 135
     swingLeft: true
-    attackRate: .8
+    attackRate: .9
     range: 1.4
     damage:
       types:
         Slash: 10
+    heavyRateModifier: 1.25
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 5
+    heavyStaminaCost: 2.5
   - type: DamageOtherOnHit
     meleeDamageMultiplier: 1.5
     staminaCost: 6.5
@@ -166,8 +167,8 @@
         Slash: 2 # I guess you can stab it into them?
     heavyRateModifier: 1.25
     heavyRangeModifier: 1.25
-    heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 5
+    heavyDamageBaseModifier: 1.25
+    heavyStaminaCost: 2.5
     angle: 80
     soundHit:
       collection: MetalThud

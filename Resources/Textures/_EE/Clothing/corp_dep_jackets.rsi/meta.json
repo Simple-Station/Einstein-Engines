@@ -1,0 +1,291 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Aurora Station",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "sci_dep_jacket"
+        },
+        {
+            "name": "sci_dep_jacket_open"
+        },
+        {
+            "name": "sci_dep_jacket_su",
+            "directions": 4
+        },
+        {
+            "name": "sci_dep_jacket_open_su",
+            "directions": 4
+        },
+        {
+            "name": "engi_dep_jacket"
+        },
+        {
+            "name": "engi_dep_jacket_open"
+        },
+        {
+            "name": "engi_dep_jacket_su",
+            "directions": 4
+        },
+        {
+            "name": "engi_dep_jacket_open_su",
+            "directions": 4
+        },
+        {
+            "name": "med_dep_jacket"
+        },
+        {
+            "name": "med_dep_jacket_open"
+        },
+        {
+            "name": "med_dep_jacket_open_su",
+            "directions": 4
+        },
+        {
+            "name": "med_dep_jacket_su",
+            "directions": 4
+        },
+        {
+            "name": "supply_dep_jacket"
+        },
+        {
+            "name": "supply_dep_jacket_open"
+        },
+        {
+            "name": "supply_dep_jacket_su",
+            "directions": 4
+        },
+        {
+            "name": "supply_dep_jacket_open_su",
+            "directions": 4
+        },
+        {
+            "name": "serv_dep_jacket"
+        },
+        {
+            "name": "serv_dep_jacket_open"
+        },
+        {
+            "name": "serv_dep_jacket_su",
+            "directions": 4
+        },
+        {
+            "name": "serv_dep_jacket_open_su",
+            "directions": 4
+        },
+        {
+            "name": "sec_dep_jacket"
+        },
+        {
+            "name": "sec_dep_jacket_open"
+        },
+        {
+            "name": "sec_dep_jacket_su",
+            "directions": 4
+        },
+        {
+            "name": "sec_dep_jacket_open_su",
+            "directions": 4
+        },
+        {
+            "name": "idris_corp_jacket"
+        },
+        {
+            "name": "idris_corp_jacket_open"
+        },
+        {
+            "name": "idris_corp_jacket_su",
+            "directions": 4
+        },
+        {
+            "name": "idris_corp_jacket_open_su",
+            "directions": 4
+        },
+        {
+            "name": "idris_corp_jacket_alt"
+        },
+        {
+            "name": "idris_corp_jacket_alt_open"
+        },
+        {
+            "name": "idris_corp_jacket_alt_su",
+            "directions": 4
+        },
+        {
+            "name": "idris_corp_jacket_alt_open_su",
+            "directions": 4
+        },
+        {
+            "name": "zavod_corp_jacket"
+        },
+        {
+            "name": "zavod_corp_jacket_open"
+        },
+        {
+            "name": "zavod_corp_jacket_su",
+            "directions": 4
+        },
+        {
+            "name": "zavod_corp_jacket_open_su",
+            "directions": 4
+        },
+        {
+            "name": "zavod_corp_jacket_alt"
+        },
+        {
+            "name": "zavod_corp_jacket_alt_open"
+        },
+        {
+            "name": "zavod_corp_jacket_alt_su",
+            "directions": 4
+        },
+        {
+            "name": "zavod_corp_jacket_alt_open_su",
+            "directions": 4
+        },
+        {
+            "name": "pmc_corp_jacket"
+        },
+        {
+            "name": "pmc_corp_jacket_open"
+        },
+        {
+            "name": "pmc_corp_jacket_su",
+            "directions": 4
+        },
+        {
+            "name": "pmc_corp_jacket_open_su",
+            "directions": 4
+        },
+        {
+            "name": "epmc_corp_jacket"
+        },
+        {
+            "name": "epmc_corp_jacket_open"
+        },
+        {
+            "name": "epmc_corp_jacket_su",
+            "directions": 4
+        },
+        {
+            "name": "epmc_corp_jacket_open_su",
+            "directions": 4
+        },
+        {
+            "name": "heph_corp_jacket"
+        },
+        {
+            "name": "heph_corp_jacket_open"
+        },
+        {
+            "name": "heph_corp_jacket_su",
+            "directions": 4
+        },
+        {
+            "name": "heph_corp_jacket_open_su",
+            "directions": 4
+        },
+        {
+            "name": "nt_corp_jacket"
+        },
+        {
+            "name": "nt_corp_jacket_open"
+        },
+        {
+            "name": "nt_corp_jacket_su",
+            "directions": 4
+        },
+        {
+            "name": "nt_corp_jacket_open_su",
+            "directions": 4
+        },
+        {
+            "name": "zeng_corp_jacket"
+        },
+        {
+            "name": "zeng_corp_jacket_open"
+        },
+        {
+            "name": "zeng_corp_jacket_su",
+            "directions": 4
+        },
+        {
+            "name": "zeng_corp_jacket_open_su",
+            "directions": 4
+        },
+        {
+            "name": "zeng_corp_jacket_alt"
+        },
+        {
+            "name": "zeng_corp_jacket_alt_open"
+        },
+        {
+            "name": "zeng_corp_jacket_alt_su",
+            "directions": 4
+        },
+        {
+            "name": "zeng_corp_jacket_alt_open_su",
+            "directions": 4
+        },
+        {
+            "name": "orion_corp_jacket"
+        },
+        {
+            "name": "orion_corp_jacket_open"
+        },
+        {
+            "name": "orion_corp_jacket_su",
+            "directions": 4
+        },
+        {
+            "name": "orion_corp_jacket_open_su",
+            "directions": 4
+        },
+        {
+            "name": "orion_corp_jacket_alt"
+        },
+        {
+            "name": "orion_corp_jacket_alt_open"
+        },
+        {
+            "name": "orion_corp_jacket_alt_su",
+            "directions": 4
+        },
+        {
+            "name": "orion_corp_jacket_alt_open_su",
+            "directions": 4
+        },
+        {
+            "name": "scc_corp_jacket"
+        },
+        {
+            "name": "scc_corp_jacket_open"
+        },
+        {
+            "name": "scc_corp_jacket_su",
+            "directions": 4
+        },
+        {
+            "name": "scc_corp_jacket_open_su",
+            "directions": 4
+        },
+        {
+            "name": "scc_corp_jacket_alt"
+        },
+        {
+            "name": "scc_corp_jacket_alt_open"
+        },
+        {
+            "name": "scc_corp_jacket_alt_su",
+            "directions": 4
+        },
+        {
+            "name": "scc_corp_jacket_alt_open_su",
+            "directions": 4
+        }
+    ]
+}

@@ -17,6 +17,10 @@
   root: true
 
 - type: traitCategory
+  id: Psionics
+  root: true
+
+- type: traitCategory
   id: Speech
   root: true
   subCategories:

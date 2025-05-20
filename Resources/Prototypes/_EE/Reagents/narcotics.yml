@@ -1,0 +1,43 @@
+- type: reagent
+  id: Morphine
+  name: reagent-name-morphine
+  group: Narcotics
+  desc: reagent-desc-morphine
+  flavor: bitter
+  color: "#fff8e8"
+  physicalDesc: reagent-physical-desc-translucent
+  metabolisms:
+    Narcotic:
+      metabolismRate: 0.2
+      effects:
+      - !type:Emote # it makes you a little tired but not enough to fall asleep
+        emote: Yawn
+        showInChat: true
+        probability: 0.05
+      - !type:PopupMessage # a warning when you have 10 seconds left
+        visualType: Medium
+        messages: ["morphine-wear-off"]
+        type: Local
+        probability: 1
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Morphine
+          max: 2.1
+          min: 1.91
+      - !type:GenericStatusEffect
+        key: NoScream
+        component: NoScream
+      - !type:ChemAddMoodlet
+        moodPrototype: MorphineBenefit
+        conditions:
+        - !type:ReagentThreshold # doesn't cause addiction unless you use more than one syringe/pen in a sitting
+          reagent: Morphine
+          min: 16
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Morphine
+          min: 20
+        damage:
+          types:
+            Asphyxiation: 2

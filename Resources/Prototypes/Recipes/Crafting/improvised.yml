@@ -214,3 +214,16 @@
   icon:
     sprite: Objects/Weapons/Bombs/pipebomb.rsi
     state: icon
+
+- type: construction
+  name: personal ai adapter
+  id: AiAdapter
+  graph: AiAdapter
+  startNode: start
+  targetNode: paiadapter
+  category: construction-category-misc
+  description: A cozy house for your electronic pal.
+  icon:
+    sprite: _EE/Objects/Specific/Robotics/paiadapter.rsi
+    state: mmi_off
+  objectType: Item

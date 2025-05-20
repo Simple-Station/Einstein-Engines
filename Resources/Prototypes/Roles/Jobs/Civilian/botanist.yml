@@ -15,9 +15,10 @@
   - Bar
   requirements:
     - !type:CharacterEmployerRequirement
-      inverted: true
       employers:
-      - Unemployed
+      - NanoTrasen
+      - ZengHuPharmaceuticals
+      - EastOrionCompany
 
 - type: startingGear
   id: BotanistGear

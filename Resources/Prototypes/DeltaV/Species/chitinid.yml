@@ -1,7 +1,7 @@
-- type: species
+- type: species # Chitinids have had their visuals moved to be a set of moth markings so less is lost in the process of disabling them.
   id: Chitinid
   name: species-name-chitinid
-  roundStart: true
+  roundStart: false # THESE ARE CURRENTLY A SERVER PERFORMANCE DISASTER. IF YOU ENABLE THEM AND THEN COMPLAIN ABOUT SERVER PERFORMANCE, I WILL BAN YOU FROM THE DISCORD.
   prototype: MobChitinid
   sprites: MobChitinidSprites
   defaultSkinTone: "#ffda93"

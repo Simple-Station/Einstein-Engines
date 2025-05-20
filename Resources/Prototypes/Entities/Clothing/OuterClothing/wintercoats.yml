@@ -565,6 +565,17 @@
 
 - type: entity
   parent: ClothingOuterWinterCoat
+  id: ClothingOuterZiCorporateJacket
+  name: Zavodskoi Interstellar Corporate Jacket
+  description: A cozy jacket with the Zavodskoi Interstellar logo printed on the back. Merchandise rewarded to stations with a safety factor of uhh... seven.
+  components:
+  - type: Sprite
+    sprite: _EE/Clothing/corpo_jacket_zavodskoi_interstellar.rsi
+  - type: Clothing
+    sprite: _EE/Clothing/corpo_jacket_zavodskoi_interstellar.rsi
+
+- type: entity
+  parent: ClothingOuterWinterCoat
   id: ClothingOuterCsCorporateJacket
   name: Cybersun Corporate Jacket
   description: A cozy jacket with the Cybersun logo printed on the back. Merchandise rewarded to stations with a safety factor of uhh... seven.
@@ -678,5 +689,32 @@
     sprite: Clothing/OuterClothing/WinterCoats/corpo_jacket_zeng_hu_pharma.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/corpo_jacket_zeng_hu_pharma.rsi
+  - type: GuideHelp
+    guides: [ ZengHuPharmaceuticals ]
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingOuterIiCorporateJacket
+  name: Idris Incorporated Corporate Jacket
+  description: A cozy jacket with the Idris Incorporated logo printed on the back. Merchandise rewarded to stations with a safety factor of uhh... seven.
+  components:
+  - type: Sprite
+    sprite: _EE/Clothing/corpo_jacket_idris_incorporated.rsi
+  - type: Clothing
+    sprite: _EE/Clothing/corpo_jacket_idris_incorporated.rsi
+  - type: GuideHelp
+    guides: [ ZengHuPharmaceuticals ]
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingOuterOeCorporateJacket
+  name: Orion Express Corporate Jacket
+
+  description: A cozy jacket with the Orion Express logo printed on the back. Merchandise rewarded to stations with a safety factor of uhh... seven.
+  components:
+  - type: Sprite
+    sprite: _EE/Clothing/corpo_jacket_orion_express.rsi
+  - type: Clothing
+    sprite: _EE/Clothing/corpo_jacket_orion_express.rsi
   - type: GuideHelp
     guides: [ ZengHuPharmaceuticals ]

@@ -89,8 +89,7 @@ public sealed class PsionicsSystem : EntitySystem
 
     private void OnStartup(EntityUid uid, PsionicComponent component, MapInitEvent args)
     {
-        if (!component.Removable
-            || !component.CanReroll)
+        if (!component.CanReroll)
             return;
 
         Timer.Spawn(TimeSpan.FromSeconds(30), () => DeferRollers(uid));
@@ -263,7 +262,7 @@ public sealed class PsionicsSystem : EntitySystem
     public void RollPsionics(EntityUid uid, PsionicComponent component, bool applyGlimmer = true, float rollEventMultiplier = 1f)
     {
         if (!_cfg.GetCVar(CCVars.PsionicRollsEnabled)
-            || !component.Removable)
+            || !component.Roller)
             return;
 
         // Calculate the initial odds based on the innate potential
@@ -297,14 +296,12 @@ public sealed class PsionicsSystem : EntitySystem
     public void RerollPsionics(EntityUid uid, PsionicComponent? psionic = null, float bonusMuliplier = 1f)
     {
         if (!Resolve(uid, ref psionic, false)
-            || !psionic.Removable
             || !psionic.CanReroll)
             return;
 
         psionic.CanReroll = false;
         RollPsionics(uid, psionic, true, bonusMuliplier);
     }
-
     private void OnMobstateChanged(EntityUid uid, PsionicComponent component, MobStateChangedEvent args)
     {
         if (component.Familiars.Count <= 0

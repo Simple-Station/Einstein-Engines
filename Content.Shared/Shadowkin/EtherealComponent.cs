@@ -30,6 +30,15 @@ public sealed partial class EtherealComponent : Component
     [DataField]
     public bool CanBeStunned = true;
 
+    /// <summary>
+    ///     How much stamina damage does the user take each second they are in the dark realm?
+    /// </summary>
+    [DataField]
+    public float StaminaPerSecond = 1;
+
+    [DataField]
+    public float StaminaDamageOnFlash = 200f;
+
     public List<EntityUid> DarkenedLights = new();
 
     public float DarkenAccumulator;

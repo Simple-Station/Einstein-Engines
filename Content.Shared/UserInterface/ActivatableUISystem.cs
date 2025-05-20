@@ -10,8 +10,6 @@ using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Content.Shared.Whitelist;
 using Robust.Shared.Utility;
-using Content.Shared.Whitelist;
-using Robust.Shared.Containers;
 
 namespace Content.Shared.UserInterface;
 

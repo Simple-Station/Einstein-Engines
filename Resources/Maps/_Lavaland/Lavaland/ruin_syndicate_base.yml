@@ -1177,6 +1177,7 @@ entities:
             250: 27,-15
     - type: GridAtmosphere
       simulatedTurf: false
+      spaceWindSimulation: false
       version: 2
       data:
         tiles:

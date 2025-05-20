@@ -97,3 +97,9 @@
 - type: font
   id: Aliensatemymum
   path: /Fonts/Aliensatemymum.ttf
+  id: YoureGone
+  path: /Fonts/YoureGone.otf
+
+- type: font
+  id: NovaFlat
+  path: /Fonts/NovaFlat/NovaFlat-Regular.ttf

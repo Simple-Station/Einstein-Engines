@@ -1,17 +1,13 @@
 using System.Numerics;
-using Content.Shared.Nyanotrasen.Abilities.Oni;
 using Content.Shared.Weapons.Ranged.Events;
-using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
-using Content.Shared._Goobstation.Weapons.Multishot;
 
 namespace Content.Shared.Weapons.Ranged.Components;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState, AutoGenerateComponentPause]
-[Access(typeof(SharedGunSystem), typeof(SharedMultishotSystem), typeof(SharedOniSystem))] // DeltaV - I didn't feel like rewriting big chunks of code
 public sealed partial class GunComponent : Component
 {
     #region Sound
@@ -311,7 +307,10 @@ public sealed partial class GunComponent : Component
     public float EjectionForce = 0.04f;
 
     [DataField]
-    public float EjectionSpeed = 5f;
+    public float EjectionSpeed = 20f;
+
+    [DataField]
+    public float EjectAngleOffset = 3.7f;
 }
 
 [Flags]

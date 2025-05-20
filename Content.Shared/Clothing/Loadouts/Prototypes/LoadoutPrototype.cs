@@ -25,6 +25,12 @@ public sealed partial class LoadoutPrototype : IPrototype
     [DataField]
     public int Cost = 1;
 
+    /// <summary>
+    ///     How many item group selections this uses. Defaulted to 1:1, but can be any number.
+    /// </summary>
+    [DataField]
+    public int Slots = 1;
+
     /// Should this item override other items in the same slot
     [DataField]
     public bool Exclusive;

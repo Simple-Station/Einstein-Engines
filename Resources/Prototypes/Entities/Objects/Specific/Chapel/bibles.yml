@@ -47,7 +47,7 @@
         Holy: 20
     heavyRateModifier: 1.25
     heavyDamageBaseModifier: 1
-    heavyStaminaCost: 5
+    heavyStaminaCost: 4
     maxTargets: 4
   - type: Tag
     tags:

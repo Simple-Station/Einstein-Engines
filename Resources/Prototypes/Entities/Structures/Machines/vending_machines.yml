@@ -106,13 +106,6 @@
     price: 100
   - type: Appearance
   - type: WiresVisuals
-  - type: LanguageKnowledge
-    speaks:
-    - TauCetiBasic
-    - RobotTalk
-    understands:
-    - TauCetiBasic
-    - RobotTalk
 
 - type: entity
   parent: VendingMachine
@@ -1559,6 +1552,8 @@
         type: ShopVendorBoundUserInterface
       enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
+      enum.MiningVoucherUiKey.Key:
+        type: MiningVoucherBoundUserInterface
   - type: Wires # DeltaV: Use shop vendor wires layout
     layoutId: ShopVendor
   - type: AccessReader
@@ -2445,6 +2440,11 @@
     color: "#9dc5c9"
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
+  - type: LanguageKnowledge
+    speaks:
+    - SolCommon
+    understands:
+    - SolCommon
 
 - type: entity
   id: VendingMachineSolsnack
@@ -2485,6 +2485,11 @@
     color: "#9dc5c9"
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
+  - type: LanguageKnowledge
+    speaks:
+    - SolCommon
+    understands:
+    - SolCommon
 
 - type: entity
   id: VendingMachineWeeb
@@ -2526,3 +2531,8 @@
     color: "#9dc5c9"
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
+  - type: LanguageKnowledge
+    speaks:
+    - SolCommon
+    understands:
+    - SolCommon

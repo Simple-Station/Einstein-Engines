@@ -33,6 +33,7 @@
     whitelist:
       tags:
       - ShellShotgun
+      - Flare
     capacity: 7
     proto: ShellShotgun
     soundInsert:
@@ -97,6 +98,8 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
     fireOnDropChance: 0.3
+    shotgunSpreadMultiplier: 1.5
+    shotgunProjectileCountModifier: 1.33
   - type: Wieldable
   - type: ItemSlots
     slots:
@@ -222,6 +225,8 @@
   - type: Item
     sprite: Objects/Weapons/Guns/Shotguns/enforcer_inhands_64x.rsi
   - type: BallisticAmmoProvider
+    capacity: 7
+    autoCycle: false
   - type: Wieldable
   - type: GunRequiresWield
   - type: MeleeWeapon
@@ -258,12 +263,19 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: BallisticAmmoProvider
     capacity: 4
+    autoCycle: false
   - type: Tag
     tags:
     - WeaponShotgunKammerer
   - type: Wieldable
   - type: Gun
     shotgunSpreadMultiplier: 0.5
+  - type: ExtendDescription
+    descriptionList:
+      - description: "gun-modifier-choke"
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
 
 - type: entity
   name: sawn-off shotgun
@@ -296,6 +308,16 @@
         Blunt: 7.5
   - type: DamageOtherOnHit
     staminaCost: 6
+
+- type: entity
+  parent: WeaponShotgunSawn
+  id: WeaponShotgunSawnLumen
+  suffix: Lumenblast
+  description: Groovy! Uses .50 shotgun shells.
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 2
+    proto: ShellShotgunLumen
 
 - type: entity
   name: sawn-off shogun
