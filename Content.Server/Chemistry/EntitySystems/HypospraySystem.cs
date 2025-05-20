@@ -21,6 +21,7 @@ using Content.Shared.Chemistry.Reagent;
 using Robust.Server.Audio;
 using Content.Server.Atmos.EntitySystems;
 using Content.Shared.DoAfter;
+using Content.Shared._Goobstation.Chemistry.Hypospray; // Goobstation
 
 namespace Content.Server.Chemistry.EntitySystems;
 
@@ -214,6 +215,9 @@ public sealed class HypospraySystem : SharedHypospraySystem
 
         var ev = new TransferDnaEvent { Donor = target, Recipient = uid };
         RaiseLocalEvent(target, ref ev);
+
+        var afterinjectev = new AfterHyposprayInjectsEvent { User = user, Target = target }; // Goobstation
+        RaiseLocalEvent(uid, ref afterinjectev); // Goobstation
 
         // same LogType as syringes...
         _adminLogger.Add(LogType.ForceFeed, $"{EntityManager.ToPrettyString(user):user} injected {EntityManager.ToPrettyString(target):target} with a solution {SharedSolutionContainerSystem.ToPrettyString(removedSolution):removedSolution} using a {EntityManager.ToPrettyString(uid):using}");

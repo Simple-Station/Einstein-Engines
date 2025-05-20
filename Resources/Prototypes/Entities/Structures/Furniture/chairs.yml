@@ -213,13 +213,17 @@
 - type: entity
   name: white office chair
   id: ChairOfficeLight
-  parent: RollingOfficeChairBase # Goobstation - make the rolly chairs roll!
+  parent: OfficeChairBase
   components:
   - type: Sprite
     state: office-white
   - type: Construction
     graph: Seat
     node: chairOffice
+  - type: SpawnItemsAtLocationOnUse
+    spawnItemsVerbText: disable-wheel-locks
+    items:
+      - id: ChairOfficeLightRolling
 
 - type: entity
   name: dark office chair
@@ -231,6 +235,46 @@
   - type: Construction
     graph: Seat
     node: chairOfficeDark
+  - type: SpawnItemsAtLocationOnUse
+    spawnItemsVerbText: disable-wheel-locks
+    items:
+      - id: ChairOfficeDarkRolling
+
+ # EE start
+
+- type: entity
+  name: white office chair
+  suffix: No mapping
+  id: ChairOfficeLightRolling
+  parent: RollingOfficeChairBase
+  components:
+  - type: Sprite
+    state: office-white
+  - type: Construction
+    graph: Seat
+    node: chairOffice
+  - type: SpawnItemsAtLocationOnUse
+    spawnItemsVerbText: activate-wheel-locks
+    items:
+      - id: ChairOfficeLight
+
+- type: entity
+  name: dark office chair
+  suffix: No mapping
+  id: ChairOfficeDarkRolling
+  parent: ChairOfficeLightRolling
+  components:
+  - type: Sprite
+    state: office-dark
+  - type: Construction
+    graph: Seat
+    node: chairOfficeDark
+  - type: SpawnItemsAtLocationOnUse
+    spawnItemsVerbText: activate-wheel-locks
+    items:
+      - id: ChairOfficeDark
+
+ # EE end
 
 - type: entity
   name: comfy chair

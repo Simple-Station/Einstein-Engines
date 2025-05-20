@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from Skyrat-SS13 at commit https://github.com/Skyrat-SS13/Skyrat-tg/commit/e507f9120bb0c3beecfe169d14193d90e7229a58 , edited by CyberLanos",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "equipped-EYES",
+      "directions": 4
+    },
+    {
+      "name": "flipped-equipped-EYES",
+      "directions": 4
+    }
+  ]
+}

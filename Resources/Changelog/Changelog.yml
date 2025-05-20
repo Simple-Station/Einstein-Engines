@@ -16146,3 +16146,87 @@ Entries:
   id: 7250
   time: '2025-05-10T19:47:58.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2382
+- author: GNUtopia
+  changes:
+    - type: Add
+      message: Added Faulty Waterproofing trait
+    - type: Add
+      message: Added Fragile Circuits trait
+  id: 7251
+  time: '2025-05-15T04:15:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2335
+- author: troytroy400
+  changes:
+    - type: Tweak
+      message: Edited TCAF webbing sprite.
+  id: 7252
+  time: '2025-05-16T22:26:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2431
+- author: CyberLanos
+  changes:
+    - type: Add
+      message: ported tinted security eyepatch
+    - type: Add
+      message: added tinted eyepatch to senior office and head of security loadouts
+    - type: Tweak
+      message: added flip action and sprites to eyepatches that missed them
+  id: 7253
+  time: '2025-05-17T19:25:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2271
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Re-enabled the "Mood shader" after significantly reworking it. Mood
+        visual effects now scale with your character's mood, instead of only
+        ever being near-greyscale. Being high life now makes the world more
+        colorful and saturated.
+    - type: Add
+      message: >-
+        A huge variety of medicines, drugs, and even food items(based on
+        flavor!) now have mood effects. Reaching for the packet of salt now
+        actually makes food provide a better mood buff.
+    - type: Add
+      message: Being Tear-gassed causes a massive mood penalty.
+    - type: Add
+      message: Deep frying food provides a strong mood bonus.
+    - type: Add
+      message: Added new Manic, Mercurial, and Dead Emotions traits.
+  id: 7254
+  time: '2025-05-17T21:10:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2425
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Turrets and NPCs can now hit players who are laying down on the floor.
+        They (by default) have a 50% chance to miss players who are laying down,
+        meaning it still offers some protection, but not perfect protection from
+        turrets. 
+  id: 7255
+  time: '2025-05-17T21:10:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2427
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Added a medical and security cartridge autoinjector.
+  id: 7256
+  time: '2025-05-17T21:11:03.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2258
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Markings can now use shaders. Including things like glowing light
+        effects. You can now also have glowing cybernetic eyes. IPC head screens
+        now glow. 
+  id: 7257
+  time: '2025-05-17T21:26:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2432
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: Now you can enable and disable the locks on office chairs.
+  id: 7258
+  time: '2025-05-19T19:49:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2422
