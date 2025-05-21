@@ -20,6 +20,7 @@ using Content.Shared.GameTicking.Components;
 using Content.Shared.Objectives.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.Player;
+using Content.Server.Announcements.Systems;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -27,12 +28,12 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
 {
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly RoundEndSystem _roundEndSystem = default!;
-    [Dependency] private readonly ChatSystem _chatSystem = default!;
     [Dependency] private readonly NukeCodePaperSystem _nukeCode = default!;
     [Dependency] private readonly StationSystem _stationSystem = default!;
     [Dependency] private readonly ObjectivesSystem _objectivesSystem = default!;
     [Dependency] private readonly AlertLevelSystem _alertLevelSystem = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
+    [Dependency] private readonly AnnouncerSystem _announcer = default!;
 
     public override void Initialize()
     {
@@ -46,7 +47,7 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
         var activeRules = QueryActiveRules();
         while (activeRules.MoveNext(out var entityUid, out _, out _, out _))
         {
-            if(uid == entityUid)
+            if (uid == entityUid)
                 continue;
 
             GameTicker.EndGameRule(uid, gameRule);
@@ -59,7 +60,7 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
     {
         component.Accumulator += frameTime;
 
-        if(component.Accumulator < 10)
+        if (component.Accumulator < 10)
             return;
 
         component.Accumulator = 0;
@@ -110,18 +111,18 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
     {
         Resolve(stationUid, ref stationUid.Comp, false);
 
-        var stationName = Name(stationUid);
-
         if (blobTilesCount >= (stationUid.Comp?.StageBegin ?? StationBlobConfigComponent.DefaultStageBegin)
             && _roundEndSystem.ExpectedCountdownEnd != null)
         {
             _roundEndSystem.CancelRoundEndCountdown(checkCooldown: false);
-            _chatSystem.DispatchStationAnnouncement(stationUid,
+
+            _announcer.SendAnnouncement(
+                "blob-recall-shuttle",
+                Filter.Broadcast(),
                 Loc.GetString("blob-alert-recall-shuttle"),
-                Loc.GetString("Station"),
-                false,
-                null,
-                Color.Red);
+                station: stationUid,
+                colorOverride: Color.Red
+                );
         }
 
         switch (blobRuleComp.Stage)
@@ -129,71 +130,79 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
             case BlobStage.Default when blobTilesCount >= (stationUid.Comp?.StageBegin ?? StationBlobConfigComponent.DefaultStageBegin):
                 blobRuleComp.Stage = BlobStage.Begin;
 
-                _chatSystem.DispatchGlobalAnnouncement(
+                _announcer.SendAnnouncement(
+                    "blob-detect",
+                    Filter.Broadcast(),
                     Loc.GetString("blob-alert-detect"),
-                    stationName,
-                    false,
-                    // blobRuleComp.DetectedAudio, // https://github.com/Simple-Station/Einstein-Engines/issues/2437
-                    colorOverride: Color.Red);
+                    station: stationUid,
+                    colorOverride: Color.Red
+                    );
+
+                // blobRuleComp.DetectedAudio,
 
                 _alertLevelSystem.SetLevel(stationUid, StationAlertDetected, true, true, true, true);
 
                 RaiseLocalEvent(stationUid,
                     new BlobChangeLevelEvent
-                {
-                    Station = stationUid,
-                    Level = blobRuleComp.Stage
-                },
+                    {
+                        Station = stationUid,
+                        Level = blobRuleComp.Stage
+                    },
                     broadcast: true);
                 return;
             case BlobStage.Begin when blobTilesCount >= (stationUid.Comp?.StageCritical ?? StationBlobConfigComponent.DefaultStageCritical):
-            {
-                if (_nukeCode.SendNukeCodes(stationUid))//send the nuke code?
                 {
-                    blobRuleComp.Stage = BlobStage.Critical;
-                    _chatSystem.DispatchGlobalAnnouncement(
-                    Loc.GetString("blob-alert-critical"),
-                    stationName,
-                    false,
-                    // blobRuleComp.CriticalAudio, // https://github.com/Simple-Station/Einstein-Engines/issues/2437
-                    colorOverride: Color.Red);
-                }
-                else
-                {
-                    blobRuleComp.Stage = BlobStage.Critical;
-                    _chatSystem.DispatchGlobalAnnouncement(
-                    Loc.GetString("blob-alert-critical-NoNukeCode"),
-                    stationName,
-                    false,
-                    // blobRuleComp.CriticalAudio, // https://github.com/Simple-Station/Einstein-Engines/issues/2437
-                    colorOverride: Color.Red);
-                }
+                    if (_nukeCode.SendNukeCodes(stationUid))//send the nuke code?
+                    {
+                        blobRuleComp.Stage = BlobStage.Critical;
 
-                _alertLevelSystem.SetLevel(stationUid, StationAlertCritical, true, true, true, true);
+                        _announcer.SendAnnouncement(
+                            "blob-critical",
+                            Filter.Broadcast(),
+                            Loc.GetString("blob-alert-critical"),
+                            station: stationUid,
+                            colorOverride: Color.Red
+                            );
+                        // blobRuleComp.CriticalAudio
+                    }
+                    else
+                    {
+                        blobRuleComp.Stage = BlobStage.Critical;
 
-                RaiseLocalEvent(stationUid,
-                    new BlobChangeLevelEvent
-                {
-                    Station = stationUid,
-                    Level = blobRuleComp.Stage
-                },
-                    broadcast: true);
-                return;
-            }
+                        _announcer.SendAnnouncement(
+                            "blob-critical-no-nuke",
+                            Filter.Broadcast(),
+                            Loc.GetString("blob-alert-critical-NoNukeCode"),
+                            colorOverride: Color.Red
+                            );
+                        // blobRuleComp.CriticalAudio
+                    }
+
+                    _alertLevelSystem.SetLevel(stationUid, StationAlertCritical, true, true, true, true);
+
+                    RaiseLocalEvent(stationUid,
+                        new BlobChangeLevelEvent
+                        {
+                            Station = stationUid,
+                            Level = blobRuleComp.Stage
+                        },
+                        broadcast: true);
+                    return;
+                }
             case BlobStage.Critical when blobTilesCount >= (stationUid.Comp?.StageTheEnd ?? StationBlobConfigComponent.DefaultStageEnd):
-            {
-                blobRuleComp.Stage = BlobStage.TheEnd;
-                _roundEndSystem.EndRound();
-
-                RaiseLocalEvent(stationUid,
-                    new BlobChangeLevelEvent
                 {
-                    Station = stationUid,
-                    Level = blobRuleComp.Stage
-                },
-                    broadcast: true);
-                return;
-            }
+                    blobRuleComp.Stage = BlobStage.TheEnd;
+                    _roundEndSystem.EndRound();
+
+                    RaiseLocalEvent(stationUid,
+                        new BlobChangeLevelEvent
+                        {
+                            Station = stationUid,
+                            Level = blobRuleComp.Stage
+                        },
+                        broadcast: true);
+                    return;
+                }
         }
     }
 
