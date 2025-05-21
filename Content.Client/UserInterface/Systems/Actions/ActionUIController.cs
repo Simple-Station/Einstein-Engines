@@ -453,8 +453,11 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
 
         foreach (var page in _pages)
             for (var i = 0; i < page.Size; i++)
+            {
                 if (page[i] == actionId)
                     page[i] = null;
+                    (_container.GetChild(i) as ActionButton)?.ClearData();
+            }
     }
 
     private void OnActionsUpdated()
