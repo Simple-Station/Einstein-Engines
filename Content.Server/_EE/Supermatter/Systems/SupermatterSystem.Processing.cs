@@ -1,20 +1,16 @@
 using System.Linq;
 using System.Text;
-using Content.Server.Chat.Systems;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Sound.Components;
-using Content.Shared._EE.CCVars;
 using Content.Shared._EE.Supermatter.Components;
 using Content.Shared._EE.Supermatter.Monitor;
 using Content.Shared.Atmos;
 using Content.Shared.Audio;
-using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Popups;
 using Content.Shared.Radiation.Components;
 using Content.Shared.Speech;
 using Robust.Shared.Audio;
-using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -108,14 +104,14 @@ public sealed partial class SupermatterSystem
         sm.Power = Math.Max(absorbedGas.Temperature * tempFactor / Atmospherics.T0C * powerRatio + sm.Power, 0);
 
         // Irradiate stuff
-        if (TryComp<RadiationSourceComponent>(uid, out var rad))
+        if (sm.Activated && TryComp<RadiationSourceComponent>(uid, out var rad))
         {
             rad.Intensity =
-                _config.GetCVar(ECCVars.SupermatterRadsBase) +
+                SupermatterRadsBase +
                 (sm.Power
                 * Math.Max(0, 1f + transmissionBonus / 10f)
                 * 0.003f
-                * _config.GetCVar(ECCVars.SupermatterRadsModifier));
+                * SupermatterRadsModifier);
 
             rad.Slope = Math.Clamp(rad.Intensity / 15, 0.2f, 1f);
         }
@@ -323,7 +319,7 @@ public sealed partial class SupermatterSystem
         {
             message = Loc.GetString("supermatter-delam-cancel", ("integrity", integrity));
             sm.DelamAnnounced = false;
-            sm.YellTimer = TimeSpan.FromSeconds(_config.GetCVar(ECCVars.SupermatterYellTimer));
+            sm.YellTimer = TimeSpan.FromSeconds(SupermatterYellTimer);
             global = true;
 
             SendSupermatterAnnouncement(uid, sm, message, global);
@@ -350,7 +346,7 @@ public sealed partial class SupermatterSystem
                 > 30 => TimeSpan.FromSeconds(10),
                 >  5 => TimeSpan.FromSeconds(5),
                 <= 5 => TimeSpan.FromSeconds(1),
-                _ => TimeSpan.FromSeconds(_config.GetCVar(ECCVars.SupermatterYellTimer))
+                _ => TimeSpan.FromSeconds(SupermatterYellTimer)
             };
 
             message = Loc.GetString(loc, ("seconds", seconds));
@@ -429,8 +425,8 @@ public sealed partial class SupermatterSystem
     /// </summary>
     public DelamType ChooseDelamType(EntityUid uid, SupermatterComponent sm)
     {
-        if (_config.GetCVar(ECCVars.SupermatterDoForceDelam))
-            return _config.GetCVar(ECCVars.SupermatterForcedDelamType);
+        if (SupermatterDoForceDelam)
+            return SupermatterForcedDelamType;
 
         var mix = _atmosphere.GetContainingMixture(uid, true, true);
 
@@ -439,13 +435,13 @@ public sealed partial class SupermatterSystem
             var absorbedGas = mix.Remove(sm.GasEfficiency * mix.TotalMoles);
             var moles = absorbedGas.TotalMoles;
 
-            if (_config.GetCVar(ECCVars.SupermatterDoSingulooseDelam)
-                && moles >= sm.MolePenaltyThreshold * _config.GetCVar(ECCVars.SupermatterSingulooseMolesModifier))
+            if (SupermatterDoSingulooseDelam
+                && moles >= sm.MolePenaltyThreshold * SupermatterSingulooseMolesModifier)
                 return DelamType.Singulo;
         }
 
-        if (_config.GetCVar(ECCVars.SupermatterDoTeslooseDelam)
-            && sm.Power >= sm.PowerPenaltyThreshold * _config.GetCVar(ECCVars.SupermatterTesloosePowerModifier))
+        if (SupermatterDoTeslooseDelam
+            && sm.Power >= sm.PowerPenaltyThreshold * SupermatterTesloosePowerModifier)
             return DelamType.Tesla;
 
         //TODO: Add resonance cascade when there's crazy conditions or a destabilizing crystal

@@ -379,6 +379,12 @@ reagent-effect-guidebook-add-moodlet =
         *[other] for {$timeout} seconds
     }
 
+reagent-effect-guidebook-remove-moodlet =
+    Removes the {$name} moodlet.
+
+reagent-effect-guidebook-purge-moodlets =
+    Removes all active non-permanent moodlets.
+
 reagent-effect-guidebook-purify-evil = Purifies evil powers
 reagent-effect-guidebook-plant-diethylamine =
     { $chance ->
