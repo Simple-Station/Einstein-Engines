@@ -288,7 +288,7 @@
     sprite: Clothing/Eyes/Hud/beerpatch.rsi
 
 - type: entity
-  parent: []ClothingEyesBase, FlippableEyesBase]
+  parent: [ClothingEyesBase, FlippableEyesBase]
   id: ClothingEyesEyepatchHudDiag
   name: diagnostic hud eyepatch
   description: A heads-up display capable of analyzing the integrity and status of robotics and exosuits. Made out of see-borg-ium.

@@ -58,7 +58,7 @@ public sealed partial class ClothingComponent : Component
     public string? EquippedState;
 
     [DataField]
-    public string? RsiPath;
+    public string? Sprite;
 
     [DataField]
     public ClothingMask MaleMask = ClothingMask.UniformFull;

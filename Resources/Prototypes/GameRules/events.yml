@@ -280,7 +280,7 @@
       prob: 0.001
 
 - type: entity
-  id: BaseStationEventShortDelay
+  id: CockroachMigration
   parent: BaseStationEventShortDelay
   categories: [ HideSpawnMenu ]
   components:
