@@ -19,5 +19,6 @@ namespace Content.Client.Lobby
         void CreateCharacter(ICharacterProfile profile);
         void DeleteCharacter(ICharacterProfile profile);
         void DeleteCharacter(int slot);
+        void SaveJob(string job, int assignedChar, JobPriority priority);
     }
 }

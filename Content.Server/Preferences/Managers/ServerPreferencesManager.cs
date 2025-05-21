@@ -33,6 +33,8 @@ namespace Content.Server.Preferences.Managers
         // Cache player prefs on the server so we don't need as much async hell related to them.
         private readonly Dictionary<NetUserId, PlayerPrefData> _cachedPlayerPrefs =
             new();
+        private readonly Dictionary<NetUserId, JobPrefData> _cachedJobPrefs =
+            new();
 
         private ISawmill _sawmill = default!;
 
@@ -185,21 +187,30 @@ namespace Content.Server.Preferences.Managers
                         new[] { new KeyValuePair<int, ICharacterProfile>(0, HumanoidCharacterProfile.Random()) },
                         0, Color.Transparent)
                 };
+                var jobsData = new JobPrefData
+                {
+                    PrefsLoaded = true,
+                    Prefs = new JobPreferences()
+                };
 
                 _cachedPlayerPrefs[session.UserId] = prefsData;
+                _cachedJobPrefs[session.UserId] = jobsData;
             }
             else
             {
                 var prefsData = new PlayerPrefData();
+                var jobsData = new JobPrefData();
                 var loadTask = LoadPrefs();
                 _cachedPlayerPrefs[session.UserId] = prefsData;
+                _cachedJobPrefs[session.UserId] = jobsData;
 
                 await loadTask;
 
                 async Task LoadPrefs()
                 {
                     var prefs = await GetOrCreatePreferencesAsync(session.UserId, cancel);
-                    prefsData.Prefs = prefs;
+                    prefsData.Prefs = prefs.Item1;
+                    jobsData.Prefs = prefs.Item2;
                 }
             }
         }
@@ -210,7 +221,9 @@ namespace Content.Server.Preferences.Managers
             // Sanitizing preferences requires play time info due to loadouts.
             // And play time info is loaded concurrently from the DB with preferences.
             var prefsData = _cachedPlayerPrefs[session.UserId];
+            var jobsData = _cachedJobPrefs[session.UserId];
             DebugTools.Assert(prefsData.Prefs != null);
+            DebugTools.Assert(jobsData.Prefs != null);
             prefsData.Prefs = SanitizePreferences(session, prefsData.Prefs, _dependencies);
 
             prefsData.PrefsLoaded = true;
@@ -222,6 +235,7 @@ namespace Content.Server.Preferences.Managers
                 MaxCharacterSlots = MaxCharacterSlots,
                 MaxCharacterJobs = MaxCharacterJobs
             };
+            msg.Jobs = new JobPreferences();
             _netManager.ServerSendMessage(msg, session.Channel);
         }
 
@@ -294,15 +308,16 @@ namespace Content.Server.Preferences.Managers
             return null;
         }
 
-        private async Task<PlayerPreferences> GetOrCreatePreferencesAsync(NetUserId userId, CancellationToken cancel)
+        private async Task<(PlayerPreferences, JobPreferences)> GetOrCreatePreferencesAsync(NetUserId userId, CancellationToken cancel)
         {
             var prefs = await _db.GetPlayerPreferencesAsync(userId, cancel);
-            if (prefs is null)
+            var jobs = await _db.GetJobPreferencesAsync(userId, cancel);
+            if (prefs is null || jobs is null)
             {
                 return await _db.InitPrefsAsync(userId, HumanoidCharacterProfile.Random(), cancel);
             }
 
-            return prefs;
+            return (prefs, jobs);
         }
 
         private PlayerPreferences SanitizePreferences(ICommonSession session, PlayerPreferences prefs,
@@ -336,6 +351,12 @@ namespace Content.Server.Preferences.Managers
         {
             public bool PrefsLoaded;
             public PlayerPreferences? Prefs;
+        }
+
+        private sealed class JobPrefData
+        {
+            public bool PrefsLoaded;
+            public JobPreferences? Prefs;
         }
 
         void IPostInjectInit.PostInject()

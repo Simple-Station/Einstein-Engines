@@ -20,6 +20,8 @@ using Robust.Shared.Network;
 using Robust.Shared.Utility;
 using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
+using Content.Shared._Shitmed.BodyEffects;
+using Content.Shared.GameTicking;
 
 namespace Content.Server.Database
 {
@@ -62,6 +64,30 @@ namespace Content.Server.Database
             }
 
             return new PlayerPreferences(profiles, prefs.SelectedCharacterSlot, Color.FromHex(prefs.AdminOOCColor));
+        }
+
+        public async Task<JobPreferences?> GetJobPreferencesAsync(
+            NetUserId userId,
+            CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+
+            var prefs = await db.DbContext
+                .Preference
+                .Include(p => p.Jobs)
+                .AsSingleQuery()
+                .SingleOrDefaultAsync(p => p.UserId == userId.UserId, cancel);
+
+            if (prefs is null)
+                return null;
+
+            var jobs = new Dictionary<string, (int, JobPriority)>();
+            foreach (var job in prefs.Jobs)
+            {
+                jobs[job.JobName] = (job.AssignedCharSlot, (JobPriority) job.Priority);
+            }
+
+            return new JobPreferences(jobs);
         }
 
         public async Task SaveSelectedCharacterIndexAsync(NetUserId userId, int index)
@@ -128,7 +154,7 @@ namespace Content.Server.Database
             db.Profile.Remove(profile);
         }
 
-        public async Task<PlayerPreferences> InitPrefsAsync(NetUserId userId, ICharacterProfile defaultProfile)
+        public async Task<(PlayerPreferences, JobPreferences)> InitPrefsAsync(NetUserId userId, ICharacterProfile defaultProfile)
         {
             await using var db = await GetDb();
 
@@ -146,7 +172,7 @@ namespace Content.Server.Database
 
             await db.DbContext.SaveChangesAsync();
 
-            return new PlayerPreferences(new[] { new KeyValuePair<int, ICharacterProfile>(0, defaultProfile) }, 0, Color.FromHex(prefs.AdminOOCColor));
+            return (new PlayerPreferences(new[] { new KeyValuePair<int, ICharacterProfile>(0, defaultProfile) }, 0, Color.FromHex(prefs.AdminOOCColor)), new JobPreferences(new[] { new KeyValuePair<string, (int, JobPriority)>(SharedGameTicker.FallbackOverflowJob, (1, JobPriority.Never)) }));
         }
 
         public async Task DeleteSlotAndSetSelectedIndex(NetUserId userId, int deleteSlot, int newSlot)
@@ -170,6 +196,25 @@ namespace Content.Server.Database
 
             await db.DbContext.SaveChangesAsync();
 
+        }
+
+        public async Task SaveJobPreferencesAsync(NetUserId userId, JobPreferences jobs)
+        {
+            await using var db = await GetDb();
+            var prefs = await db.DbContext
+                .Preference
+                .Include(p => p.Jobs)
+                .SingleAsync(p => p.UserId == userId.UserId);
+            prefs.Jobs.Clear();
+            foreach (var job in jobs.JobPriorities)
+            {
+                var newJob = new Job();
+                newJob.JobName = job.Key;
+                newJob.AssignedCharSlot = job.Value.Item1;
+                newJob.Priority = (DbJobPriority) job.Value.Item2;
+                prefs.Jobs.Add(newJob);
+            }
+            await db.DbContext.SaveChangesAsync();
         }
 
         private static async Task SetSelectedCharacterSlotAsync(NetUserId userId, int newSlot, ServerDbContext db)

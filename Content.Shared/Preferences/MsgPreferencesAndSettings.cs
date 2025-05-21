@@ -33,6 +33,13 @@ namespace Content.Shared.Preferences
                 buffer.ReadAlignedMemory(stream, length);
                 serializer.DeserializeDirect(stream, out Settings);
             }
+
+            length = buffer.ReadVariableInt32();
+            using (var stream = new MemoryStream())
+            {
+                buffer.ReadAlignedMemory(stream, length);
+                serializer.DeserializeDirect(stream, out Jobs);
+            }
         }
 
         public override void WriteToBuffer(NetOutgoingMessage buffer, IRobustSerializer serializer)
@@ -48,6 +55,14 @@ namespace Content.Shared.Preferences
             using (var stream = new MemoryStream())
             {
                 serializer.SerializeDirect(stream, Settings);
+                buffer.WriteVariableInt32((int) stream.Length);
+                stream.TryGetBuffer(out var segment);
+                buffer.Write(segment);
+            }
+
+            using (var stream = new MemoryStream())
+            {
+                serializer.SerializeDirect(stream, Jobs);
                 buffer.WriteVariableInt32((int) stream.Length);
                 stream.TryGetBuffer(out var segment);
                 buffer.Write(segment);

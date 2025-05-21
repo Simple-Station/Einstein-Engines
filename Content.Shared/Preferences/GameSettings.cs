@@ -9,7 +9,6 @@ namespace Content.Shared.Preferences
     public sealed class GameSettings
     {
         private int _maxCharacterSlots;
-
         private int _maxCharacterJobs;
 
         public int MaxCharacterSlots

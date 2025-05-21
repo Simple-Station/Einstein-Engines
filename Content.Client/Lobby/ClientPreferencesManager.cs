@@ -37,6 +37,7 @@ namespace Content.Client.Lobby
             _netManager.RegisterNetMessage<MsgUpdateCharacter>();
             _netManager.RegisterNetMessage<MsgSelectCharacter>();
             _netManager.RegisterNetMessage<MsgDeleteCharacter>();
+            _netManager.RegisterNetMessage<MsgUpdateJob>();
 
             _baseClient.RunLevelChanged += BaseClientOnRunLevelChanged;
         }
@@ -47,6 +48,7 @@ namespace Content.Client.Lobby
             {
                 Settings = default!;
                 Preferences = default!;
+                Jobs = default!;
             }
         }
 
@@ -114,10 +116,25 @@ namespace Content.Client.Lobby
             _netManager.ClientSendMessage(msg);
         }
 
+        public void SaveJob(string job, int assignedChar, JobPriority priority)
+        {
+            // Should be similar to WithJobPriority
+            var jobs = new Dictionary<string, (int, JobPriority)>();
+            Jobs = new JobPreferences(jobs);
+            var msg = new MsgUpdateJob
+            {
+                Job = job,
+                CharSlot = assignedChar,
+                Priority = priority
+            };
+            _netManager.ClientSendMessage(msg);
+        }
+
         private void HandlePreferencesAndSettings(MsgPreferencesAndSettings message)
         {
             Preferences = message.Preferences;
             Settings = message.Settings;
+            Jobs = message.Jobs;
 
             OnServerDataLoaded?.Invoke();
         }

@@ -109,7 +109,8 @@ namespace Content.Client.Lobby.UI
             _jobPriorities.Clear();
 
             // Kill this when proper Preference Jobs are added.
-            Preferences = new JobPreferences();
+            //Preferences = new JobPreferences();
+            Preferences = _preferencesManager.Jobs!;
             // Get all displayed departments
             var departments = new List<DepartmentPrototype>();
             foreach (var department in _protoManager.EnumeratePrototypes<DepartmentPrototype>())
@@ -179,7 +180,7 @@ namespace Content.Client.Lobby.UI
                         int characterJobs = Preferences.CharJobs(slot);
                         // Change this to use the CVar later.
                         characterList.AddItem(character.Name, slot + 1);
-                        if (characterJobs >= 3/*_cfgManager.GetCVar(CCVars.GameMaxJobs)*/)
+                        if (characterJobs >= _preferencesManager.Settings!.MaxCharacterJobs)
                             characterList.SetItemDisabled(slot + 1, true);
                     }
                     selector.OnOpenGuidebook += OnOpenGuidebook;
