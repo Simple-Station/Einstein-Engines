@@ -13,6 +13,7 @@ using Content.Shared.Body.Components;
 using Content.Shared._Shitmed.Body.Components; // Shitmed Change
 using Content.Shared._Shitmed.Body.Organ;
 using Content.Shared.Body.Prototypes;
+using Content.Shared.Chat;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent; // Shitmed Change
 using Content.Shared.Damage;
