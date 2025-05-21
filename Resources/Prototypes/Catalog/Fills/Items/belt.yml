@@ -131,9 +131,11 @@
       - id: Bloodpack
         amount: 1
       - id: Gauze
-      - id: EmergencyMedipen
-      - id: BruteAutoInjector
-      - id: BurnAutoInjector
+      - id: ParamedHypo  #Goobstation - ParamedHypo
+      - id: CartridgeBicaridine  #Goobstation - ParamedHypo
+      - id: CartridgeAtropine  #Goobstation - ParamedHypo
+      - id: CartridgeDermaline  #Goobstation - ParamedHypo
+      - id: CartridgeSaline  #Goobstation - ParamedHypo
 
 - type: entity
   id: ClothingBeltPlantFilled

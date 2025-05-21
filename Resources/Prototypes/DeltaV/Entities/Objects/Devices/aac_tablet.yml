@@ -42,3 +42,9 @@
     speechSounds: Alto
   - type: AACTablet
   - type: VoiceMask
+  - type: LanguageSpeaker
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic
