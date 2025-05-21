@@ -4,7 +4,7 @@ using Content.Shared._Goobstation.Blob.Components;
 using Content.Shared.FixedPoint;
 using Content.Shared.Popups;
 
-namespace Content.Server._Goobstation.Blob;
+namespace Content.Server._Goobstation.Blob.Systems;
 
 public sealed class BlobResourceSystem : EntitySystem
 {
@@ -33,11 +33,6 @@ public sealed class BlobResourceSystem : EntitySystem
             blobCoreComponent.Observer == null)
             return;
 
-        _popup.PopupEntity(Loc.GetString("blob-get-resource", ("point", component.PointsPerPulsed)),
-            uid,
-            blobCoreComponent.Observer.Value,
-            PopupType.Large);
-
         var points = component.PointsPerPulsed;
 
         if (blobCoreComponent.CurrentChem == BlobChemType.RegenerativeMateria)
@@ -45,12 +40,10 @@ public sealed class BlobResourceSystem : EntitySystem
             points += 1;
         }
 
-        if (_blobCoreSystem.ChangeBlobPoint(blobTileComponent.Core.Value, points))
-        {
-            _popup.PopupClient(Loc.GetString("blob-get-resource", ("point", points)),
-                uid,
-                blobCoreComponent.Observer.Value,
-                PopupType.Large);
-        }
+        _popup.PopupEntity(Loc.GetString("blob-get-resource", ("point", points)),
+            uid,
+            blobCoreComponent.Observer.Value,
+            PopupType.Large);
+        _blobCoreSystem.ChangeBlobPoint(blobTileComponent.Core.Value, points);
     }
 }

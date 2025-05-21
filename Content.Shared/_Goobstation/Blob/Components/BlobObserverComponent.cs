@@ -16,7 +16,7 @@ public sealed partial class BlobObserverControllerComponent : Component
     public Entity<BlobObserverComponent> Blob;
 }
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(false)]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class BlobObserverComponent : Component
 {
     [ViewVariables]
@@ -60,6 +60,9 @@ public enum BlobChemSwapUiKey : byte
     Key
 }
 
+/// <summary>
+/// Tries to transform the Target blob tile in other type, making checks for Node and/or similar tiles.
+/// </summary>
 public sealed partial class BlobTransformTileActionEvent : WorldTargetActionEvent
 {
     /// <summary>
@@ -76,42 +79,37 @@ public sealed partial class BlobTransformTileActionEvent : WorldTargetActionEven
     public BlobTileType TileType = BlobTileType.Invalid;
 
     /// <summary>
-    /// Does this tile requires node nearby.
+    /// If specified, tries to find a blob node
+    /// in given radius and returns back if failed
     /// </summary>
     [DataField]
     public bool RequireNode = true;
 
-    public BlobTransformTileActionEvent(EntityUid performer, EntityCoordinates target, BlobTileType transformFrom, BlobTileType tileType, bool requireNode) : this()
+    /// <summary>
+    /// If specified, tries to find a tile of the same type
+    /// in given radius and returns back if failed.
+    /// </summary>
+    [DataField]
+    public float? NodeSearchRadius;
+
+    /// <summary>
+    /// If specified, tries to find a tile of the same type
+    /// in given radius and returns back if failed.
+    /// </summary>
+    [DataField]
+    public float? TileSearchRadius;
+
+    public BlobTransformTileActionEvent(EntityUid performer, EntityCoordinates target, BlobTileType transformFrom, BlobTileType tileType)
     {
         Performer = performer;
         Target = target;
         TransformFrom = transformFrom;
         TileType = tileType;
-        RequireNode = requireNode;
     }
 }
 
-public sealed partial class BlobCreateBlobbernautActionEvent : WorldTargetActionEvent
-{
-
-}
-
-public sealed partial class BlobSplitCoreActionEvent : WorldTargetActionEvent
-{
-
-}
-
-public sealed partial class BlobSwapCoreActionEvent : WorldTargetActionEvent
-{
-
-}
-
-public sealed partial class BlobToCoreActionEvent : InstantActionEvent
-{
-
-}
-
-public sealed partial class BlobSwapChemActionEvent : InstantActionEvent
-{
-
-}
+public sealed partial class BlobCreateBlobbernautActionEvent : WorldTargetActionEvent;
+public sealed partial class BlobSplitCoreActionEvent : WorldTargetActionEvent;
+public sealed partial class BlobSwapCoreActionEvent : WorldTargetActionEvent;
+public sealed partial class BlobToCoreActionEvent : InstantActionEvent;
+public sealed partial class BlobSwapChemActionEvent : InstantActionEvent;

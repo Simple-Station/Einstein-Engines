@@ -35,7 +35,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 
-namespace Content.Server._Goobstation.Blob;
+namespace Content.Server._Goobstation.Blob.Systems;
 
 public sealed class BlobCoreSystem : EntitySystem
 {
@@ -48,7 +48,6 @@ public sealed class BlobCoreSystem : EntitySystem
     [Dependency] private readonly StationSystem _stationSystem = default!;
     [Dependency] private readonly AlertLevelSystem _alertLevelSystem = default!;
     [Dependency] private readonly RoundEndSystem _roundEndSystem = default!;
-    [Dependency] private readonly MetaDataSystem _metaDataSystem = default!;
     [Dependency] private readonly ActionsSystem _action = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
     [Dependency] private readonly StoreSystem _storeSystem = default!;
@@ -60,8 +59,10 @@ public sealed class BlobCoreSystem : EntitySystem
 
     [ValidatePrototypeId<AlertPrototype>]
     private const string BlobHealth = "BlobHealth";
+
     [ValidatePrototypeId<AlertPrototype>]
     private const string BlobResource = "BlobResource";
+
     [ValidatePrototypeId<CurrencyPrototype>]
     private const string BlobMoney = "BlobPoint";
 
@@ -76,12 +77,7 @@ public sealed class BlobCoreSystem : EntitySystem
         SubscribeLocalEvent<BlobCoreComponent, DamageChangedEvent>(OnDamaged);
         SubscribeLocalEvent<BlobCoreComponent, EntityTerminatingEvent>(OnTerminating);
         SubscribeLocalEvent<BlobCoreComponent, BlobTransformTileActionEvent>(OnTileTransform);
-
         SubscribeLocalEvent<BlobCoreComponent, PlayerAttachedEvent>(OnPlayerAttached);
-        SubscribeLocalEvent<BlobCaptureConditionComponent, ObjectiveGetProgressEvent>(OnBlobCaptureProgress);
-        SubscribeLocalEvent<BlobCaptureConditionComponent, ObjectiveAfterAssignEvent>(OnBlobCaptureInfo);
-        SubscribeLocalEvent<BlobCaptureConditionComponent, ObjectiveAssignedEvent>(OnBlobCaptureInfoAdd);
-
 
         _tile = GetEntityQuery<BlobTileComponent>();
         _factory = GetEntityQuery<BlobFactoryComponent>();
@@ -91,7 +87,7 @@ public sealed class BlobCoreSystem : EntitySystem
     private const double KillCoreJobTime = 0.5;
     private readonly JobQueue _killCoreJobQueue = new(KillCoreJobTime);
 
-    public sealed class KillBlobCore(
+    private sealed class KillBlobCore(
         BlobCoreSystem system,
         EntityUid? station,
         Entity<BlobCoreComponent> ent,
@@ -130,6 +126,13 @@ public sealed class BlobCoreSystem : EntitySystem
 
         var store = EnsureComp<StoreComponent>(uid);
         store.CurrencyWhitelist.Add(BlobMoney);
+
+        _storeSystem.TryAddCurrency(new Dictionary<string, FixedPoint2>
+        {
+            { BlobMoney, FixedPoint2.Zero }
+        },
+            uid,
+            store);
 
         UpdateAllAlerts((uid, component));
         ChangeChem(uid, component.DefaultChem, component);
@@ -179,57 +182,6 @@ public sealed class BlobCoreSystem : EntitySystem
         TransformSpecialTile((uid, blobCoreComponent), args);
     }
 
-    #endregion
-
-    #region Objective
-
-    private void OnBlobCaptureInfoAdd(Entity<BlobCaptureConditionComponent> ent, ref ObjectiveAssignedEvent args)
-    {
-        if (args.Mind.OwnedEntity == null)
-        {
-            args.Cancelled = true;
-            return;
-        }
-        if (!TryComp<BlobObserverComponent>(args.Mind.OwnedEntity, out var blobObserverComponent)
-            || !HasComp<BlobCoreComponent>(blobObserverComponent.Core))
-        {
-            args.Cancelled = true;
-            return;
-        }
-
-        var station = _stationSystem.GetOwningStation(blobObserverComponent.Core);
-        if (station == null)
-        {
-            args.Cancelled = true;
-            return;
-        }
-
-        ent.Comp.Target = CompOrNull<StationBlobConfigComponent>(station)?.StageTheEnd ?? StationBlobConfigComponent.DefaultStageEnd;
-    }
-
-    private void OnBlobCaptureInfo(EntityUid uid, BlobCaptureConditionComponent component, ref ObjectiveAfterAssignEvent args)
-    {
-        _metaDataSystem.SetEntityName(uid,Loc.GetString("objective-condition-blob-capture-title"));
-        _metaDataSystem.SetEntityDescription(uid,Loc.GetString("objective-condition-blob-capture-description", ("count", component.Target)));
-    }
-
-    private void OnBlobCaptureProgress(EntityUid uid, BlobCaptureConditionComponent component, ref ObjectiveGetProgressEvent args)
-    {
-        if (!TryComp<BlobObserverComponent>(args.Mind.OwnedEntity, out var blobObserverComponent)
-            || !TryComp<BlobCoreComponent>(blobObserverComponent.Core, out var blobCoreComponent))
-        {
-            args.Progress = 0;
-            return;
-        }
-
-        var target = component.Target;
-        args.Progress = 0;
-
-        if (target != 0)
-            args.Progress = MathF.Min((float) blobCoreComponent.BlobTiles.Count / target, 1f);
-        else
-            args.Progress = 1f;
-    }
     #endregion
 
     public void UpdateAllAlerts(Entity<BlobCoreComponent> core, StoreComponent? store = null)
@@ -316,19 +268,15 @@ public sealed class BlobCoreSystem : EntitySystem
         }
     }
 
-    private void ChangeBlobEntChem(EntityUid uid, BlobChemType newChem)
+    public void ChangeBlobEntChem(EntityUid uid, BlobChemType newChem)
     {
         switch (newChem)
         {
             case BlobChemType.ExplosiveLattice:
-                _damageable.SetDamageModifierSetId(uid, "ExplosiveLatticeBlob");
-                _explosionSystem.SetExplosionResistance(uid, 0f, EnsureComp<ExplosionResistanceComponent>(uid));
-                break;
-            case BlobChemType.ElectromagneticWeb:
-                _damageable.SetDamageModifierSetId(uid, "ElectromagneticWebBlob");
+                _explosionSystem.SetExplosionResistance(uid, 0.1f, EnsureComp<ExplosionResistanceComponent>(uid));
                 break;
             default:
-                _damageable.SetDamageModifierSetId(uid, "BaseBlob");
+                _explosionSystem.SetExplosionResistance(uid, 0.7f, EnsureComp<ExplosionResistanceComponent>(uid));
                 break;
         }
     }
@@ -350,6 +298,9 @@ public sealed class BlobCoreSystem : EntitySystem
         BlobTileType newBlobTile,
         EntityCoordinates coordinates)
     {
+        if (newBlobTile == BlobTileType.Invalid)
+            return false;
+
         if (oldTileUid != null)
         {
             if (oldTileUid.Value.Comp.Core != blobCore)
@@ -369,8 +320,10 @@ public sealed class BlobCoreSystem : EntitySystem
 
         ConnectBlobTile((blobTileUid, blobTileComp), blobCore, nearNode);
         ChangeBlobEntChem(blobTileUid, blobCoreComp.CurrentChem);
-
         Dirty(blobTileUid, blobTileComp);
+
+        var ev = new BlobTransformTileEvent();
+        RaiseLocalEvent(blobTileUid, ev);
 
         return true;
     }
@@ -408,8 +361,18 @@ public sealed class BlobCoreSystem : EntitySystem
                 node.Value.Comp.BlobResource = tile;
                 Dirty(node.Value);
                 break;
+            case BlobTileType.Storage:
+                node.Value.Comp.BlobStorage = tile;
+                Dirty(node.Value);
+                break;
+            case BlobTileType.Turret:
+                node.Value.Comp.BlobTurret = tile;
+                Dirty(node.Value);
+                break;
         }
     }
+
+    #region Transform Tile Event
 
     public bool TryGetTargetBlobTile(WorldTargetActionEvent args, out Entity<BlobTileComponent>? blobTile)
     {
@@ -444,11 +407,10 @@ public sealed class BlobCoreSystem : EntitySystem
         return false;
     }
 
-    public bool CheckValidBlobTile(
+    private bool CheckValidBlobTile(
         Entity<BlobTileComponent> tile,
-        Entity<BlobNodeComponent>? node,
-        bool requireNode,
-        BlobTransformTileActionEvent args)
+        BlobTransformTileActionEvent args,
+        out Entity<BlobNodeComponent>? node)
     {
         var coords = Transform(tile).Coordinates;
 
@@ -456,34 +418,36 @@ public sealed class BlobCoreSystem : EntitySystem
         var checkTile = args.TransformFrom;
         var performer = args.Performer;
 
+        node = args.NodeSearchRadius != null ? GetNearNode(coords, args.NodeSearchRadius.Value) : null;
+        // Base checks
+
         if (tile.Comp.Core == null ||
             tile.Comp.BlobTileType == newTile ||
-            tile.Comp.BlobTileType == BlobTileType.Core ||
-            tile.Comp.BlobTileType != checkTile)
+            tile.Comp.BlobTileType == BlobTileType.Core)
+            return false;
+
+        if (checkTile == BlobTileType.Invalid)
+            return true;
+
+        if (tile.Comp.BlobTileType != checkTile)
         {
             _popup.PopupCoordinates(Loc.GetString("blob-target-normal-blob-invalid"), coords, performer, PopupType.Large);
             return false;
         }
 
-        var core = tile.Comp.Core.Value;
+        // Handle Tile search
 
-        if (checkTile == BlobTileType.Invalid)
-            return true;
-
-        // Handle node spawn
-        if (newTile == BlobTileType.Node)
+        if (args.TileSearchRadius != null)
         {
-            if (GetNearNode(coords, core.Comp.NodeRadiusLimit) == null)
+            if (GetNearTile(newTile, coords, args.TileSearchRadius.Value) == null)
                 return true;
 
-            _popup.PopupCoordinates(Loc.GetString("blob-target-close-to-node"), coords, performer, PopupType.Large);
+            _popup.PopupCoordinates(Loc.GetString("blob-target-close-to-tile"), coords, performer, PopupType.Large);
             return false;
         }
 
-        if (!requireNode)
-            return true;
-
-        if (node == null)
+        // Handle Node search & connection
+        if (node == null && args.NodeSearchRadius != null)
         {
             _popup.PopupCoordinates(Loc.GetString("blob-target-nearby-not-node"),
                 coords,
@@ -492,26 +456,27 @@ public sealed class BlobCoreSystem : EntitySystem
             return false;
         }
 
-        if (_blobTile.IsEmptySpecial(node.Value, newTile))
-            return true;
+        if (node != null && !_blobTile.IsEmptySpecial(node.Value, newTile))
+        {
+            _popup.PopupCoordinates(Loc.GetString("blob-target-already-connected"),
+                coords,
+                performer,
+                PopupType.Large);
+            return false;
+        }
 
-        _popup.PopupCoordinates(Loc.GetString("blob-target-already-connected"),
-            coords,
-            performer,
-            PopupType.Large);
-        return false;
+        return true;
     }
 
-    public void TransformSpecialTile(Entity<BlobCoreComponent> blobCore, BlobTransformTileActionEvent args)
+    private void TransformSpecialTile(Entity<BlobCoreComponent> blobCore, BlobTransformTileActionEvent args)
     {
         if (!TryGetTargetBlobTile(args, out var blobTile) || blobTile?.Comp.Core == null)
             return;
 
         var coords = Transform(blobTile.Value).Coordinates;
         var tileType = args.TileType;
-        var nearNode = GetNearNode(coords);
 
-        if (!CheckValidBlobTile(blobTile.Value, nearNode, args.RequireNode, args))
+        if (!CheckValidBlobTile(blobTile.Value, args, out var nearNode))
             return;
 
         if (!TryUseAbility(blobCore, blobCore.Comp.BlobTileCosts[tileType], coords))
@@ -524,6 +489,8 @@ public sealed class BlobCoreSystem : EntitySystem
             tileType,
             coords);
     }
+
+    #endregion
 
     public void RemoveBlobTile(Entity<BlobTileComponent> tile, Entity<BlobCoreComponent> core)
     {
@@ -616,6 +583,10 @@ public sealed class BlobCoreSystem : EntitySystem
         if (!_pointsChange.TryEnterWriteLock(1000))
             return false;
 
+        // You can't have more points than your max amount
+        if (core.Comp.MaxStorageAmount < store.Balance[BlobMoney] + amount)
+            amount = core.Comp.MaxStorageAmount - store.Balance[BlobMoney];
+
         if (_storeSystem.TryAddCurrency(new Dictionary<string, FixedPoint2>
                 {
                     { BlobMoney, amount }
@@ -651,18 +622,18 @@ public sealed class BlobCoreSystem : EntitySystem
         if (observer == null)
             return false;
 
+        coordinates ??= Transform(observer.Value).Coordinates;
+
         if (money < abilityCost)
         {
-            _popup.PopupEntity(Loc.GetString(
+            _popup.PopupCoordinates(Loc.GetString(
                 "blob-not-enough-resources",
                 ("point", abilityCost.Int() - money.Int())),
-                observer.Value,
+                coordinates.Value,
                 observer.Value,
                 PopupType.Large);
             return false;
         }
-
-        coordinates ??= Transform(observer.Value).Coordinates;
 
         _popup.PopupCoordinates(
             Loc.GetString("blob-spent-resource", ("point", abilityCost.Int())),
@@ -684,13 +655,30 @@ public sealed class BlobCoreSystem : EntitySystem
         EntityCoordinates coords,
         float radius = 3f)
     {
+        // Core IS in fact a node, so we need to also check it
+        var nodeEnt =
+            GetNearTile(BlobTileType.Node, coords, radius) ??
+            GetNearTile(BlobTileType.Core, coords, radius);
+
+        if (!_node.TryComp(nodeEnt, out var nodeComp))
+            return null;
+
+        Entity<BlobNodeComponent> node = (nodeEnt.Value.Owner, nodeComp);
+        return node;
+    }
+
+    public Entity<BlobTileComponent>? GetNearTile(
+        BlobTileType tileType,
+        EntityCoordinates coords,
+        float radius = 3f)
+    {
         var gridUid = _transform.GetGrid(coords)!.Value;
 
         if (!TryComp<MapGridComponent>(gridUid, out var grid))
             return null;
 
         var nearestDistance = float.MaxValue;
-        var nodeComponent = new BlobNodeComponent();
+        var tileComponent = new BlobTileComponent();
         var nearestEntityUid = EntityUid.Invalid;
 
         var innerTiles = _mapSystem.GetLocalTilesIntersecting(
@@ -705,8 +693,12 @@ public sealed class BlobCoreSystem : EntitySystem
         {
             foreach (var ent in _mapSystem.GetAnchoredEntities(gridUid, grid, tileRef.GridIndices))
             {
-                if (!_node.TryComp(ent, out var nodeComp))
+                if (!_tile.TryComp(ent, out var tileComp))
                     continue;
+
+                if (tileComp.BlobTileType != tileType)
+                    continue;
+
                 var tileCords = Transform(ent).Coordinates;
                 var distance = Vector2.Distance(coords.Position, tileCords.Position);
 
@@ -715,10 +707,10 @@ public sealed class BlobCoreSystem : EntitySystem
 
                 nearestDistance = distance;
                 nearestEntityUid = ent;
-                nodeComponent = nodeComp;
+                tileComponent = tileComp;
             }
         }
 
-        return nearestDistance > radius ? null : (nearestEntityUid, nodeComponent);
+        return nearestDistance > radius ? null : (nearestEntityUid, tileComponent);
     }
 }

@@ -8,7 +8,7 @@ namespace Content.Client._Goobstation.Blob;
 
 public sealed class BlobTileSystem : SharedBlobTileSystem
 {
-    protected override void TryUpgrade(Entity<BlobTileComponent> target, Entity<BlobCoreComponent> core, EntityUid observer) { }
+    protected override void TryUpgrade(Entity<BlobTileComponent, BlobUpgradeableTileComponent> target, Entity<BlobCoreComponent> core, EntityUid observer) { }
 }
 
 public sealed class BlobTileVisualizerSystem : VisualizerSystem<BlobTileComponent>

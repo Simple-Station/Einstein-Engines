@@ -14,7 +14,7 @@ using Content.Shared.Language.Events;
 using Content.Shared.Language.Components;
 using Content.Shared._Shitmed.Targeting;
 
-namespace Content.Server._Goobstation.Blob;
+namespace Content.Server._Goobstation.Blob.Systems;
 
 public sealed class BlobMobSystem : SharedBlobMobSystem
 {

@@ -1,15 +1,12 @@
 using System.Linq;
-using System.Numerics;
 using Content.Server.Actions;
 using Content.Server._Goobstation.Blob.Components;
-using Content.Server._Goobstation.Blob.Roles;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Chat.Managers;
 using Content.Server.Hands.Systems;
 using Content.Server.Mind;
 using Content.Server.Roles;
 using Content.Shared.ActionBlocker;
-using Content.Shared.Actions;
 using Content.Shared.Alert;
 using Content.Shared._Goobstation.Blob;
 using Content.Shared._Goobstation.Blob.Components;
@@ -25,7 +22,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._Goobstation.Blob;
+namespace Content.Server._Goobstation.Blob.Systems;
 
 public sealed class BlobObserverSystem : SharedBlobObserverSystem
 {
@@ -55,7 +52,6 @@ public sealed class BlobObserverSystem : SharedBlobObserverSystem
 
     [ValidatePrototypeId<EntityPrototype>] private const string BlobCaptureObjective = "BlobCaptureObjective";
     [ValidatePrototypeId<EntityPrototype>] private const string MobObserverBlobController = "MobObserverBlobController";
-    [ValidatePrototypeId<AlertPrototype>] private const string BlobHealth = "BlobHealth";
 
     public override void Initialize()
     {
@@ -213,8 +209,7 @@ public sealed class BlobObserverSystem : SharedBlobObserverSystem
         if (!_blobCoreSystem.TryUseAbility(component.Core.Value, blobCoreComponent.SwapChemCost))
             return;
 
-        if (!ChangeChem(uid, args.SelectedId, component))
-            return;
+        ChangeChem(uid, args.SelectedId, component);
     }
 
     private bool ChangeChem(EntityUid uid, BlobChemType newChem, BlobObserverComponent component)
@@ -314,7 +309,10 @@ public sealed class BlobObserverSystem : SharedBlobObserverSystem
             }
         }
 
-        if (blobTile == null || !HasComp<BlobNodeComponent>(blobTile))
+        if (blobTile == null ||
+            !HasComp<BlobNodeComponent>(blobTile) ||
+            !TryComp<BlobTileComponent>(blobTile, out var blobTileComp) ||
+            blobTileComp.BlobTileType == BlobTileType.Core)
         {
             _popup.PopupEntity(Loc.GetString("blob-target-node-blob-invalid"), args.Performer, args.Performer, PopupType.Large);
             args.Handled = true;

@@ -75,7 +75,7 @@ public sealed class BlobPodSystem : SharedBlobPodSystem
             return;
         if (blobCoreComponent.CurrentChem == BlobChemType.ExplosiveLattice)
         {
-            _explosionSystem.QueueExplosion(uid, blobCoreComponent.BlobExplosive, 4, 1, 2, maxTileBreak: 0);
+            _explosionSystem.QueueExplosion(uid, blobCoreComponent.BlobExplosive, 4, 1, 2, maxTileBreak: 0, user: uid);
         }
     }
 

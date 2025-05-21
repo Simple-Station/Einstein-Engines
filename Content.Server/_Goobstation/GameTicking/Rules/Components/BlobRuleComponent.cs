@@ -1,10 +1,8 @@
-﻿using Content.Server._Goobstation.Blob;
-using Content.Shared._Goobstation.Blob.Components;
+﻿using Content.Server._Goobstation.Blob.Systems;
 using Content.Shared.Mind;
 using Robust.Shared.Audio;
 
 namespace Content.Server.GameTicking.Rules.Components;
-
 [RegisterComponent, Access(typeof(BlobRuleSystem), typeof(BlobCoreSystem), typeof(BlobObserverSystem))]
 public sealed partial class BlobRuleComponent : Component
 {

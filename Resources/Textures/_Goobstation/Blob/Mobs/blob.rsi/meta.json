@@ -255,6 +255,25 @@
       ]
     },
     {
+      "name": "blob_storage_overlay",
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
       "name": "blob_node_overlay",
       "delays": [
         [

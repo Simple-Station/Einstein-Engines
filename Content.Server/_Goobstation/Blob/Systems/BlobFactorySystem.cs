@@ -1,8 +1,6 @@
 using Content.Server._Goobstation.Blob.Components;
 using Content.Server.Popups;
-using Content.Shared._Goobstation.Blob;
 using Content.Shared._Goobstation.Blob.Components;
-using Content.Shared._Goobstation.Blob.NPC.BlobPod;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage;
@@ -11,15 +9,15 @@ using Content.Shared.Explosion.Components;
 using Content.Shared.FixedPoint;
 using Content.Shared.Weapons.Melee;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Timing;
 
-namespace Content.Server._Goobstation.Blob;
+namespace Content.Server._Goobstation.Blob.Systems;
 
 public sealed class BlobFactorySystem : EntitySystem
 {
-    [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
+    private EntityQuery<BlobTileComponent> _tile;
+    private EntityQuery<BlobCoreComponent> _core;
 
     public override void Initialize()
     {
@@ -29,6 +27,8 @@ public sealed class BlobFactorySystem : EntitySystem
         SubscribeLocalEvent<BlobFactoryComponent, ProduceBlobbernautEvent>(OnProduceBlobbernaut);
         SubscribeLocalEvent<BlobFactoryComponent, DestructionEventArgs>(OnDestruction);
 
+        _tile = GetEntityQuery<BlobTileComponent>();
+        _core = GetEntityQuery<BlobCoreComponent>();
     }
 
     private void OnDestruction(EntityUid uid, BlobFactoryComponent component, DestructionEventArgs args)
@@ -44,10 +44,10 @@ public sealed class BlobFactorySystem : EntitySystem
         if (component.Blobbernaut != null)
             return;
 
-        if (!TryComp<BlobTileComponent>(uid, out var blobTileComponent) || blobTileComponent.Core == null)
+        if (!_tile.TryComp(uid, out var blobTileComponent) || blobTileComponent.Core == null)
             return;
 
-        if (!TryComp<BlobCoreComponent>(blobTileComponent.Core, out var blobCoreComponent))
+        if (!_core.TryComp(blobTileComponent.Core, out var blobCoreComponent))
             return;
 
         var xform = Transform(uid);
@@ -104,7 +104,8 @@ public sealed class BlobFactorySystem : EntitySystem
                 blobGas.AddSolution(new Solution(Phlogiston, FixedPoint2.New(30))
                 {
                     Temperature = 1000
-                },_prototypeManager);
+                },
+                    _prototypeManager);
                 break;
             case BlobChemType.ReactiveSpines:
                 blobGas.AddSolution(new Solution(Mold, FixedPoint2.New(30)),_prototypeManager);
@@ -116,7 +117,8 @@ public sealed class BlobFactorySystem : EntitySystem
                 blobGas.AddSolution(new Solution(Lexorin, FixedPoint2.New(30))
                 {
                     Temperature = 1000
-                },_prototypeManager);
+                },
+                    _prototypeManager);
                 break;
             case BlobChemType.ElectromagneticWeb:
                 blobGas.AddSolution(new Solution(Aluminium, FixedPoint2.New(10)){ CanReact = false },_prototypeManager);
@@ -131,16 +133,8 @@ public sealed class BlobFactorySystem : EntitySystem
 
     private void OnPulsed(EntityUid uid, BlobFactoryComponent component, BlobSpecialGetPulseEvent args)
     {
-        if (!TryComp<BlobTileComponent>(uid, out var blobTileComponent) || blobTileComponent.Core == null)
+        if (component.SpawnedCount >= component.MaxPods)
             return;
-
-        if (!TryComp<BlobCoreComponent>(blobTileComponent.Core, out var blobCoreComponent))
-            return;
-
-        if (component.SpawnedCount >= component.SpawnLimit)
-            return;
-
-        var xform = Transform(uid);
 
         if (component.Accumulator < component.AccumulateToSpawn)
         {
@@ -148,13 +142,21 @@ public sealed class BlobFactorySystem : EntitySystem
             return;
         }
 
+        if (!_tile.TryComp(uid, out var blobTileComponent) || blobTileComponent.Core == null)
+            return;
+
+        if (!_core.TryComp(blobTileComponent.Core, out var blobCoreComponent))
+            return;
+
+        var core = blobTileComponent.Core.Value;
+        var xform = Transform(uid);
+
         var pod = Spawn(component.Pod, xform.Coordinates);
         component.BlobPods.Add(pod);
         var blobPod = EnsureComp<BlobPodComponent>(pod);
-        blobPod.Core = blobTileComponent.Core.Value;
+        blobPod.Core = core;
         FillSmokeGas((pod,blobPod), blobCoreComponent.CurrentChem);
 
-        //smokeOnTrigger.SmokeColor = blobCoreComponent.ChemСolors[blobCoreComponent.CurrentChem];
         component.SpawnedCount += 1;
         component.Accumulator = 0;
     }

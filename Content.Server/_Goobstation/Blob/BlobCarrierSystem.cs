@@ -13,6 +13,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Content.Shared.Language.Events;
+using Content.Server._Goobstation.Blob.Systems;
 
 namespace Content.Server._Goobstation.Blob;
 

@@ -16,6 +16,9 @@ public sealed partial class BlobTileComponent : Component
     [DataField]
     public bool ReturnCost = true;
 
+    [DataField]
+    public FixedPoint2 PulseHealCost = 0.2;
+
     [DataField(required: true)]
     public BlobTileType BlobTileType = BlobTileType.Invalid;
 
@@ -38,7 +41,7 @@ public sealed partial class BlobTileComponent : Component
     {
         DamageDict = new Dictionary<string, FixedPoint2>
         {
-            { "Heat", 24 },
+            { "Heat", 12 }, // Makes normal tile 1 HP away from death
         }
     };
 }
@@ -51,11 +54,14 @@ public enum BlobTileType : byte
     Strong,
     Reflective,
     Resource,
-    /*
     Storage,
     Turret,
-    */
     Node,
     Factory,
     Core,
 }
+
+/// <summary>
+/// Raised after the blob tile was successfully transformed.
+/// </summary>
+public sealed partial class BlobTransformTileEvent : EntityEventArgs;

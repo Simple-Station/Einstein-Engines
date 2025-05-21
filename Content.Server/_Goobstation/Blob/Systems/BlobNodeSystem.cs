@@ -12,7 +12,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 
-namespace Content.Server._Goobstation.Blob;
+namespace Content.Server._Goobstation.Blob.Systems;
 
 public sealed class BlobNodeSystem : EntitySystem
 {
@@ -90,11 +90,19 @@ public sealed class BlobNodeSystem : EntitySystem
         {
             yield return (component.BlobResource.Value, tileResourceComponent);
         }
+        if (!TerminatingOrDeleted(component.BlobStorage) && _tileQuery.TryComp(component.BlobStorage, out var tileStorageComponent))
+        {
+            yield return (component.BlobStorage.Value, tileStorageComponent);
+        }
+        if (!TerminatingOrDeleted(component.BlobTurret) && _tileQuery.TryComp(component.BlobTurret, out var tileTurretComponent))
+        {
+            yield return (component.BlobTurret.Value, tileTurretComponent);
+        }
     }
 
     private void OnDestruction(EntityUid uid, BlobNodeComponent component, DestructionEventArgs args)
     {
-        if (!TryComp<BlobTileComponent>(uid, out var tileComp) ||
+        if (!_tileQuery.TryGetComponent(uid, out var tileComp) ||
             tileComp.BlobTileType != BlobTileType.Node ||
             tileComp.Core == null)
             return;

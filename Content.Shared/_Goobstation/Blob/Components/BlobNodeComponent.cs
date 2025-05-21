@@ -20,12 +20,10 @@ public sealed partial class BlobNodeComponent : Component
     public EntityUid? BlobResource = null;
     [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
     public EntityUid? BlobFactory = null;
-    /*
     [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
     public EntityUid? BlobStorage = null;
     [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
     public EntityUid? BlobTurret = null;
-    */
 }
 
 public sealed class BlobTileGetPulseEvent : HandledEntityEventArgs
