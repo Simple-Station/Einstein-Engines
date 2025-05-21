@@ -169,14 +169,17 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
 
     private void HealTile(Entity<BlobTileComponent> ent, Entity<BlobCoreComponent> core)
     {
-        var healCore = ent.Comp.HealthOfPulse;
+        var healCore = new DamageSpecifier();
+        var modifier = 1.0f;
 
         if (core.Comp.CurrentChem == BlobChemType.RegenerativeMateria)
         {
-            foreach (var keyValuePair in ent.Comp.HealthOfPulse.DamageDict)
-            {
-                healCore.DamageDict.Add(keyValuePair.Key, keyValuePair.Value * 2);
-            }
+            modifier = 2.0f;
+        }
+
+        foreach (var keyValuePair in ent.Comp.HealthOfPulse.DamageDict)
+        {
+            healCore.DamageDict.TryAdd(keyValuePair.Key, keyValuePair.Value * modifier);
         }
 
         _damageableSystem.TryChangeDamage(ent, healCore);
