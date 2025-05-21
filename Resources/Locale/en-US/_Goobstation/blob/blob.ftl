@@ -95,8 +95,12 @@ blob-alert-critical = Biohazard level critical, nuclear authentication codes hav
 blob-alert-critical-NoNukeCode = Biohazard level critical. Central Command orders any remaining personnel to seek shelter, and await resque.
 
 # Actions
-blob-create-factory-action-name = Place Factory Blob (80)
-blob-create-factory-action-desc = Turns selected normal blob into a factory blob, which will produce up to 3 spores and a blobbernaut if placed next to a core or a node.
+blob-create-factory-action-name = Create Blob Factory (40)
+blob-create-factory-action-desc = Transforms a selected normal blob into a factory that can produce various blob minions, if there is a node or core nearby.
+blob-create-storage-action-name = Create Blob Storage (50)
+blob-create-storage-action-desc = Transforms a selected normal blob into storage, which increases the maximum amount of resources the blob can have.
+blob-create-turret-action-name = Create Blob Turret (75)
+blob-create-turret-action-desc = Transforms a selected normal blob into a turret that shoots at enemies with small spores, consuming points.
 blob-create-resource-action-name = Place Resource Blob (60)
 blob-create-resource-action-desc = Turns selected normal blob into a resource blob which will generates resources if placed next to a core or a node.
 blob-create-node-action-name = Place Node Blob (50)
