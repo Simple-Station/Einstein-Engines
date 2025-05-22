@@ -668,7 +668,8 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
                 IFFState = iffState,
             };
             state.DirtyFlags = StateDirtyFlags.All;
-            state.sendingDock = true;
+            // send for 5 ticks to make sure it actually reaches client... (yes i dont know why the first one or two get always lost , shit-UI networking i guess)
+            state.sendingDock = 5;
             _ui.SetUiState(consoleUid, ShuttleConsoleUiKey.Key, state);
             console.LastUpdatedState = state;
         }
@@ -682,19 +683,20 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
             return;
         var newState = new ShuttleBoundUserInterfaceState(console.LastUpdatedState);
         newState.IFFState = GetIFFState(consoleUid, console.LastUpdatedState?.IFFState?.Turrets);
-        newState.DirtyFlags = StateDirtyFlags.IFF | StateDirtyFlags.Base;
-        if (newState.sendingDock)
+        newState.DirtyFlags = StateDirtyFlags.IFF;
+        if (console.LastUpdatedState!.sendingDock > 0)
         {
             newState.DirtyFlags = StateDirtyFlags.All;
-            newState.sendingDock = false;
+            console.LastUpdatedState!.sendingDock--;
         }
-
-        if (_ui.HasUi(consoleUid, ShuttleConsoleUiKey.Key))
-        {
-            _ui.SetUiState(consoleUid, ShuttleConsoleUiKey.Key, newState);
-            console.LastUpdatedState = newState;
-
+        else
+        { // dont send over the network.
+            newState.CrewState = null;
+            newState.NavState = null;
+            newState.DockState = null;
+            newState.MapState = null;
         }
+        _ui.SetUiState(consoleUid, ShuttleConsoleUiKey.Key, newState);
 
     }
 
