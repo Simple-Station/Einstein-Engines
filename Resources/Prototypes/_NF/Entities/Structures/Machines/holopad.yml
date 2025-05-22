@@ -1,0 +1,54 @@
+- type: entity
+  parent: HolopadLongRange
+  id: NFHolopadShip
+  name: bluespace holopad
+  description: "A floor-mounted device for projecting holographic images to enable ship to ship communication."
+  suffix: Ship
+  components:
+  - type: Telephone
+    ringTone: /Audio/Machines/double_ring.ogg # change me to something funny
+    listeningRange: 4
+    compatibleRanges:
+    - Grid
+    - Map
+    - Unlimited
+    ignoreTelephonesOnSameGrid: false
+  - type: Holopad
+    useStationName: true
+  - type: PowerSwitch
+
+- type: entity
+  parent: NFHolopadShip
+  id: NFHolopadShipAntag
+  suffix: Ship, Starts Off
+  components:
+  - type: Holopad
+    useStationName: true
+  - type: ApcPowerReceiver
+    powerDisabled: true #starts off
+
+- type: entity
+  parent: NFHolopadShip
+  id: NFHolopadShipAntagAnon
+  suffix: Ship, Starts Off, Anonymous
+  components:
+  - type: Holopad
+    useStationName: false
+  - type: ApcPowerReceiver
+    powerDisabled: true #starts off
+
+- type: entity
+  parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, NFHolopadShip]
+  id: NFHolopadPoiBase
+  suffix: Indestructible
+  components:
+  - type: Holopad
+    useStationName: true
+
+- type: entity
+  parent: NFHolopadPoiBase
+  id: NFHolopadPoiBaseAnon
+  suffix: Indestructible, Anonymous
+  components:
+  - type: Holopad
+    useStationName: false
