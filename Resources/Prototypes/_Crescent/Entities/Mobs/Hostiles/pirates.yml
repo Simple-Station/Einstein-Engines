@@ -1,0 +1,387 @@
+﻿- type: entity
+  abstract: true
+  parent:
+    - MobHumanoidInventory
+    - BaseSimpleMob
+    - MobCombat
+  id: SimpleFrontiersmanMobBase
+  suffix: AI
+  components:
+    - type: GibOnTrigger
+      deleteItems: true
+      deleteOrgans: true
+      gib: false
+    - type: Inventory
+      templateId: human
+    - type: Loadout
+      prototypes:
+        - LowRiskCriminalLoot
+    - type: NpcFactionMember
+      factions:
+        - Syndicate
+    - type: HTN
+      rootTask:
+        task: SimpleHostileCompound
+      blackboard:
+        NavClimb: !type:Bool
+          true
+        NavSmash: !type:Bool
+          true
+    - type: MobState
+      allowedStates:
+        - Alive
+        - Critical
+        - Dead
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        90: Critical
+        120: Dead
+    - type: Climbing
+    - type: NameIdentifier
+      group: GenericNumber
+    - type: SlowOnDamage
+      speedModifierThresholds:
+        60: 0.7
+        80: 0.5
+
+- type: entity
+  name: frontiersman fighter
+  parent: SimpleFrontiersmanMobBase
+  id: MobPirateMachete
+  description: A militiaman for the New Liberation Front. He's wielding a machete, stop messing around and shoot him!
+  components:
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: _Crescent/Mobs/Hostiles/Pirate/piratemachete.rsi
+      layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: piratemachete
+      - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.40
+          density: 100
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: piratemachete
+        Critical:
+          Base: crit
+        Dead:
+          Base: dead
+    - type: StatusEffects
+      allowed:
+        - SlowedDown
+        - Electrocution
+    - type: Tag
+      tags:
+        - DoorBumpOpener # Allow opening doors by bumping into them
+    - type: CombatMode
+    - type: MeleeWeapon
+      damage:
+        types:
+          Slash: 17.5
+      animation: WeaponArcThrust
+    - type: StaticPrice
+      price: 100
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 2.5
+      baseSprintSpeed: 2.5
+
+- type: entity
+  name: frontiersman sawbones
+  parent: SimpleFrontiersmanMobBase
+  id: MobPirateSawbones
+  description: A militiaman for the New Liberation Front. This one is dressed in the garments of a field medic.
+  components:
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: _Crescent/Mobs/Hostiles/Pirate/piratesawbones.rsi
+      layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: piratesawbones
+      - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.40
+          density: 100
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: piratesawbones
+        Critical:
+          Base: crit
+        Dead:
+          Base: dead
+    - type: StatusEffects
+      allowed:
+        - SlowedDown
+        - Electrocution
+    - type: Tag
+      tags:
+        - DoorBumpOpener # Allow opening doors by bumping into them
+    - type: CombatMode
+    - type: MeleeWeapon
+      damage:
+        types:
+          Piercing: 15
+          Caustic: 5
+      animation: WeaponArcThrust
+    - type: StaticPrice
+      price: 100
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 3
+      baseSprintSpeed: 3
+    - type: Loadout
+      prototypes:
+        - CriminalLoot
+
+- type: entity
+  name: frontiersman shotgunner
+  parent: SimpleFrontiersmanMobBase
+  id: MobPirateShotgunner
+  description: A militiaman for the New Liberation Front, heavily armored and wielding a shotgun.
+  components:
+    - type: Loadout
+      prototypes:
+        - CriminalLoot
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: _Crescent/Mobs/Hostiles/Pirate/pirateshotgunner.rsi
+      layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: pirateshotgunner
+      - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.40
+          density: 100
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: pirateshotgunner
+        Critical:
+          Base: crit
+        Dead:
+          Base: dead
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        120: Critical
+        150: Dead
+    - type: StatusEffects
+      allowed:
+        - SlowedDown
+        - Electrocution
+    - type: Tag
+      tags:
+        - DoorBumpOpener # Allow opening doors by bumping into them
+    - type: CombatMode
+    - type: MeleeWeapon
+      damage:
+        types:
+          Blunt: 5
+      animation: WeaponArcThrust
+    - type: StaticPrice
+      price: 100
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 3
+      baseSprintSpeed: 3
+    - type: HTN
+      rootTask:
+        task: SimpleRangedHostileCompound
+    - type: Stamina
+      critThreshold: 300
+    - type: Gun
+      fireRate: 0.7
+      selectedMode: SemiAuto
+      availableModes:
+        - SemiAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
+    - type: BasicEntityAmmoProvider
+      proto: PelletShotgunSpread
+      capacity: 6
+      count: 6
+    - type: RechargeBasicEntityAmmo
+      rechargeCooldown: 7
+      rechargeSound:
+        path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
+        params:
+          pitch: 1.2
+          variation: 0.08
+
+- type: entity
+  name: frontiersman militant
+  parent: SimpleFrontiersmanMobBase
+  id: MobPirateRifle
+  description: A militiaman for the New Liberation Front. This one's armed with a bolt-action.
+  components:
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: _Crescent/Mobs/Hostiles/Pirate/piraterifle.rsi
+      layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: piraterifle
+      - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.40
+          density: 100
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: piraterifle
+        Critical:
+          Base: crit
+        Dead:
+          Base: dead
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        120: Dead
+    - type: StatusEffects
+      allowed:
+        - SlowedDown
+        - Electrocution
+    - type: Tag
+      tags:
+        - DoorBumpOpener # Allow opening doors by bumping into them
+    - type: CombatMode
+    - type: MeleeWeapon
+      damage:
+        types:
+          Blunt: 5
+      animation: WeaponArcThrust
+    - type: StaticPrice
+      price: 100
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 3
+      baseSprintSpeed: 3
+    - type: HTN
+      rootTask:
+        task: SimpleRangedHostileCompound
+    - type: Stamina
+      critThreshold: 300
+    - type: Gun
+      fireRate: 0.75
+      selectedMode: SemiAuto
+      availableModes:
+        - SemiAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/sniper.ogg
+    - type: BasicEntityAmmoProvider
+      proto: BulletHeavyRifle
+      capacity: 5
+      count: 6
+    - type: RechargeBasicEntityAmmo
+      rechargeCooldown: 3
+      rechargeSound:
+        path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
+        params:
+          pitch: 1.2
+          variation: 0.08
+
+- type: entity
+  name: frontiersman infanteer
+  parent: SimpleFrontiersmanMobBase
+  id: MobPirateRifleman
+  description: A militiaman for the New Liberation Front. This one's armed with an assault rifle and seems to have a keen eye.
+  components:
+    - type: Loadout
+      prototypes:
+        - CriminalLoot
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: _Crescent/Mobs/Hostiles/Pirate/pirateassaultrifle.rsi
+      layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: pirateassaultrifle
+      - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.40
+          density: 100
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: pirateassaultrifle
+        Critical:
+          Base: crit
+        Dead:
+          Base: dead
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        90: Critical
+        125: Dead
+    - type: StatusEffects
+      allowed:
+        - SlowedDown
+        - Electrocution
+    - type: Tag
+      tags:
+        - DoorBumpOpener # Allow opening doors by bumping into them
+    - type: CombatMode
+    - type: MeleeWeapon
+      damage:
+        types:
+          Blunt: 5
+      animation: WeaponArcThrust
+    - type: StaticPrice
+      price: 100
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 3
+      baseSprintSpeed: 3
+    - type: HTN
+      rootTask:
+        task: SimpleRangedHostileCompound
+    - type: Stamina
+      critThreshold: 300
+    - type: Gun
+      fireRate: 3.5
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+      soundGunshot:  /Audio/Weapons/Guns/Gunshots/gun_sentry.ogg
+    - type: BasicEntityAmmoProvider
+      proto: BulletPistol
+      capacity: 30
+      count: 20
+    - type: RechargeBasicEntityAmmo
+      rechargeCooldown: 4.5
+      rechargeSound:
+        path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
+        params:
+          pitch: 1.2
+          variation: 0.08

@@ -39,7 +39,7 @@
     critThreshold: 50
   - type: Butcherable
     spawned:
-    - id: FoodMeat
+    - id: NanoTrasenIdentificationChipAbyssal
       amount: 1
   - type: Bloodstream
     bloodMaxVolume: 100

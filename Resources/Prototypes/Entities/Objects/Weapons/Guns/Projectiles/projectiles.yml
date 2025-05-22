@@ -1162,6 +1162,7 @@
     damage:
       types:
         Heat: 28
+        Structural: 375
 
 - type: entity
   name : disabler bolt
