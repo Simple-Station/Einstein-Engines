@@ -185,3 +185,8 @@ objective-condition-fail = { $condition } | [color={ $markupColor }]Failure![/co
 # Radio names
 speak-vv-blob = Blob
 speak-vv-blob-core = Blob core
+
+# Language
+language-Blob-name = Blob
+chat-language-Blob-name = Blob
+language-Blob-description = Bleeb bob! Blob blob!
