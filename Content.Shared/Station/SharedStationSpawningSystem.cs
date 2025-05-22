@@ -231,12 +231,9 @@ public abstract class SharedStationSpawningSystem : EntitySystem
 
             foreach (var (slot, entProtoId) in subGearProto.Equipment)
             {
-                // Don't remove items in pockets, instead put them in the backpack or hands
-                if (slot == "pocket1" && newStartingGear.Equipment.TryGetValue("pocket1", out var pocket1) ||
-                    slot == "pocket2" && newStartingGear.Equipment.TryGetValue("pocket2", out var pocket2))
+                // Hullrot edit - add generic pocket handler
+                void InsertIntoPocket(EntProtoId pocketProtoId)
                 {
-                    var pocketProtoId = slot == "pocket1" ? pocket1 : pocket2;
-
                     if (string.IsNullOrEmpty(newStartingGear.GetGear("back", null)))
                         newStartingGear.Inhand.Add(pocketProtoId);
                     else
@@ -246,6 +243,11 @@ public abstract class SharedStationSpawningSystem : EntitySystem
                         newStartingGear.Storage["back"].Add(pocketProtoId);
                     }
                 }
+                if (slot == "pocket1" && newStartingGear.Equipment.TryGetValue("pocket1", out var pocket1))
+                    InsertIntoPocket(pocket1);
+                if (slot == "pocket2" && newStartingGear.Equipment.TryGetValue("pocket2", out var pocket2))
+                    InsertIntoPocket(pocket2);
+                // hullrot edit end.
 
                 newStartingGear.Equipment[slot] = entProtoId;
             }
