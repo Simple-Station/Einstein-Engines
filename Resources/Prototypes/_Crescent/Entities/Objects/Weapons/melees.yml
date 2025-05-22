@@ -9,14 +9,15 @@
     sprite: _Crescent/Objects/Weapons/noble_rapier.rsi
     state: icon
   - type: MeleeWeapon
-    wideAnimationRotation: -60
-    range: 1.5
+    wideAnimationRotation: -135
+    range: 1.8
     attackRate: 1.25
     damage:
       types:
-        Slash: 24
-        Piercing: 20
+        Slash: 18
+        Piercing: 24
     maxTargets: 4
+    angle: 0.1
     animation: WeaponArcThrust
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
