@@ -14,7 +14,7 @@
         Blunt: 2
     bluntStaminaDamageFactor: 3
     heavyRateModifier: 2.5
-    heavyRangeModifier: 2
+    heavyRangeModifier: 1.3
     heavyDamageBaseModifier: 1.25
     heavyStaminaCost: 5
     maxTargets: 7
@@ -72,7 +72,7 @@
           Blunt: 2
       bluntStaminaDamageFactor: 3
       heavyRateModifier: 2.5
-      heavyRangeModifier: 2
+      heavyRangeModifier: 1.3
       heavyDamageBaseModifier: 1.25
       heavyStaminaCost: 5
       maxTargets: 7

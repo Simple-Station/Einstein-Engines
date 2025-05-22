@@ -1,6 +1,5 @@
 using System.Linq;
 using Content.Client.Gameplay;
-using Content.Shared.CCVar;
 using Content.Shared.CombatMode;
 using Content.Shared.Effects;
 using Content.Shared.Hands.Components;
@@ -76,10 +75,10 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         var altDown = _inputSystem.CmdStates.GetState(EngineKeyFunctions.UseSecondary) == BoundKeyState.Down;
 
         // Disregard inputs to the shoot binding
-        if (TryComp<GunComponent>(weaponUid, out var gun) &&
-            // Except if can't shoot due to being unwielded
-            (!HasComp<GunRequiresWieldComponent>(weaponUid) ||
-            (TryComp<WieldableComponent>(weaponUid, out var wieldable) && wieldable.Wielded)))
+        if (TryComp<GunComponent>(weaponUid, out var gun)
+            && (!HasComp<GunRequiresWieldComponent>(weaponUid)
+            || TryComp<WieldableComponent>(weaponUid, out var wieldable)
+            && wieldable.Wielded))
         {
             if (gun.UseKey)
                 useDown = false;
@@ -87,38 +86,16 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
                 altDown = false;
         }
 
-        if (weapon.AutoAttack || !useDown && !altDown)
-        {
-            if (weapon.Attacking)
-            {
-                RaisePredictiveEvent(new StopAttackEvent(GetNetEntity(weaponUid)));
-            }
-        }
+        if ((weapon.AutoAttack || !useDown && !altDown) && weapon.Attacking)
+            RaisePredictiveEvent(new StopAttackEvent(GetNetEntity(weaponUid)));
 
-        if (weapon.Attacking || weapon.NextAttack > Timing.CurTime || (!useDown && !altDown))
-        {
+        if (weapon.Attacking || weapon.NextAttack > Timing.CurTime || !useDown && !altDown)
             return;
-        }
 
         // TODO using targeted actions while combat mode is enabled should NOT trigger attacks.
 
         var mousePos = _eyeManager.PixelToMap(_inputManager.MouseScreenPosition);
-
-        if (mousePos.MapId == MapId.Nullspace)
-        {
-            return;
-        }
-
-        EntityCoordinates coordinates;
-
-        if (MapManager.TryFindGridAt(mousePos, out var gridUid, out _))
-        {
-            coordinates = EntityCoordinates.FromMap(gridUid, mousePos, TransformSystem, EntityManager);
-        }
-        else
-        {
-            coordinates = EntityCoordinates.FromMap(MapManager.GetMapEntityId(mousePos.MapId), mousePos, TransformSystem, EntityManager);
-        }
+        var coordinates = TransformSystem.ToCoordinates(mousePos);
 
         // Heavy attack.
         if (!weapon.DisableHeavy &&
@@ -149,7 +126,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
             var attackerPos = TransformSystem.GetMapCoordinates(entity);
 
             if (mousePos.MapId != attackerPos.MapId ||
-                (attackerPos.Position - mousePos.Position).Length() > weapon.Range)
+                (attackerPos.Position - mousePos.Position).Length() > weapon.Range * weapon.LightRangeModifier)
             {
                 if (weapon.HeavyOnLightMiss)
                     ClientHeavyAttack(entity, coordinates, weaponUid, weapon);
@@ -160,9 +137,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
             EntityUid? target = null;
 
             if (_stateManager.CurrentState is GameplayStateBase screen)
-            {
                 target = screen.GetClickedEntity(mousePos);
-            }
 
             // Don't light-attack if interaction will be handling this instead
             if (Interaction.CombatModeCanHandInteract(entity, target))
@@ -187,22 +162,15 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         return Interaction.InRangeUnobstructed(user, target, targetCoordinates, targetLocalAngle, range);
     }
 
-    protected override void DoDamageEffect(List<EntityUid> targets, EntityUid? user, TransformComponent targetXform)
-    {
-        // Server never sends the event to us for predictiveeevent.
+    protected override void DoDamageEffect(List<EntityUid> targets, EntityUid? user, TransformComponent targetXform) =>
         _color.RaiseEffect(Color.Red, targets, Filter.Local());
-    }
 
     protected override bool DoDisarm(EntityUid user, DisarmAttackEvent ev, EntityUid meleeUid, MeleeWeaponComponent component, ICommonSession? session)
     {
-        if (!base.DoDisarm(user, ev, meleeUid, component, session))
+        if (!base.DoDisarm(user, ev, meleeUid, component, session)
+            || !TryComp<CombatModeComponent>(user, out var combatMode)
+            || combatMode.CanDisarm != true)
             return false;
-
-        if (!TryComp<CombatModeComponent>(user, out var combatMode) ||
-            combatMode.CanDisarm != true)
-        {
-            return false;
-        }
 
         var target = GetEntity(ev.Target);
 
@@ -229,14 +197,11 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
     private void ClientHeavyAttack(EntityUid user, EntityCoordinates coordinates, EntityUid meleeUid, MeleeWeaponComponent component)
     {
         // Only run on first prediction to avoid the potential raycast entities changing.
-        if (!_xformQuery.TryGetComponent(user, out var userXform) ||
-            !Timing.IsFirstTimePredicted)
-        {
+        if (!_xformQuery.TryGetComponent(user, out var userXform)
+            || !Timing.IsFirstTimePredicted)
             return;
-        }
 
-        var targetMap = coordinates.ToMap(EntityManager, TransformSystem);
-
+        var targetMap = TransformSystem.ToMapCoordinates(coordinates);
         if (targetMap.MapId != userXform.MapID)
             return;
 
@@ -256,7 +221,9 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         var entWeapon = GetEntity(ev.Weapon);
 
         // Entity might not have been sent by PVS.
-        if (Exists(ent) && Exists(entWeapon))
-            DoLunge(ent, entWeapon, ev.Angle, ev.LocalPos, ev.Animation);
+        if (!Exists(ent) || Exists(entWeapon))
+            return;
+
+        DoLunge(ent, entWeapon, ev.Angle, ev.LocalPos, ev.Animation);
     }
 }
