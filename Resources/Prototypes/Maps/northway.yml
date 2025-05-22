@@ -63,9 +63,9 @@
             Passenger: [ 1, 5 ]
           # Silicon
             StationAi: [ 1, 1 ]
-        # Goobstation blob-config-start SMALL+
+        # blob-config-start SMALL+
         - type: StationBlobConfig
           stageBegin: 25
           stageCritical: 350
           stageTheEnd: 700
-        # Goobstation blob-config-end
+        # blob-config-end
