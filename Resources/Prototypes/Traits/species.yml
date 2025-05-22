@@ -185,3 +185,51 @@
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
+
+- type: trait
+  id: IPCFragileCircuits
+  category: Physical
+  points: 4 # shock is rare as-is, maybe raise if it becomes more common
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: KillOnDamage
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+
+- type: trait
+  id: IPCFaultyWaterproofing
+  category: Physical
+  points: 3
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: Reactive
+          groups:
+            Flammable: [Touch]
+            Extinguish: [Touch]
+            Acidic: [Touch]
+          reactions:
+            - reagents: [Water, SpaceCleaner]
+              methods: [Touch]
+              effects:
+                - !type:WashCreamPieReaction
+            - reagents: [ Water ]
+              methods: [ Touch ]
+              effects:
+                - !type:HealthChange
+                  scaleByQuantity: true
+                  damage:
+                    types:
+                      Shock: 2.5
+                - !type:PopupMessage
+                  type: Pvs
+                  visualType: LargeCaution
+                  messages: [ "faultyWaterproofing-damage-popup" ]
+                  probability: 1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC

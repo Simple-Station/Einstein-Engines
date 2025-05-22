@@ -23,6 +23,7 @@ using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared.Climbing.Systems;
 
 namespace Content.Shared._Goobstation.TableSlam;
 
@@ -41,95 +42,44 @@ public sealed class TableSlamSystem : EntitySystem
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly ContestsSystem _contestsSystem = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly ClimbSystem _climbing = default!;
     /// <inheritdoc/>
     public override void Initialize()
     {
         SubscribeLocalEvent<PullerComponent, MeleeHitEvent>(OnMeleeHit);
-        SubscribeLocalEvent<TableableComponent, StartCollideEvent>(OnStartCollide);
-        SubscribeLocalEvent<PostTabledComponent, DisarmAttemptEvent>(OnDisarmAttemptEvent);
-    }
-
-    private void OnDisarmAttemptEvent(Entity<PostTabledComponent> ent, ref DisarmAttemptEvent args)
-    {
-        if(!_random.Prob(ent.Comp.ParalyzeChance))
-            return;
-
-        _stunSystem.TryParalyze(ent, TimeSpan.FromSeconds(3), false);
-        RemComp<PostTabledComponent>(ent);
-    }
-
-    public override void Update(float frameTime)
-    {
-        base.Update(frameTime);
-        var tabledQuery = EntityQueryEnumerator<PostTabledComponent>();
-        while (tabledQuery.MoveNext(out var uid, out var comp))
-        {
-            if (_gameTiming.CurTime >= comp.PostTabledShovableTime)
-             RemComp<PostTabledComponent>(uid);
-        }
     }
 
     private void OnMeleeHit(Entity<PullerComponent> ent, ref MeleeHitEvent args)
     {
         if (ent.Comp.GrabStage < GrabStage.Suffocate
-            || ent.Comp.Pulling == null)
+            || ent.Comp.Pulling == null || (args.HitEntities.Count is > 1 or 0))
             return;
 
         if(!TryComp<PullableComponent>(ent.Comp.Pulling, out var pullableComponent))
             return;
 
-        if (args.Direction != null)
-            return;
-        if (args.HitEntities.Count is > 1 or 0)
-            return;
-
-        var target = args.HitEntities.ElementAt(0);
-        if (!HasComp<BonkableComponent>(target)) // checks if its a table.
-            return;
-
         var massContest = _contestsSystem.MassContest(ent, ent.Comp.Pulling.Value);
         var attemptChance = Math.Clamp(1 * massContest, 0, 1);
         var attemptRoundedToNearestQuarter = Math.Round(attemptChance * 4, MidpointRounding.ToEven) / 4;
-        if(_random.Prob((float) attemptRoundedToNearestQuarter)) // base chance to table slam someone is 1 if your mass ratio is less than 1 then your going to have a harder time slamming somebody.
-            TryTableSlam((ent.Comp.Pulling.Value, pullableComponent), ent, target);
+        if(_random.Prob((float) attemptRoundedToNearestQuarter)) // base chance to table slam someone is 1 if your mass ratio is less than 1 then you're going to have a harder time slamming somebody.
+            TryTableSlam((ent.Comp.Pulling.Value, pullableComponent), ent, args.HitEntities.ElementAt(0));
     }
 
     public void TryTableSlam(Entity<PullableComponent> ent, Entity<PullerComponent> pullerEnt, EntityUid tableUid)
     {
-        if(!_transformSystem.InRange(ent.Owner.ToCoordinates(), tableUid.ToCoordinates(), 2f ))
+        if (!_transformSystem.InRange(ent.Owner.ToCoordinates(), tableUid.ToCoordinates(), 2f)
+            || !TryComp<ClimbableComponent>(tableUid, out var component)
+            || !HasComp<BonkableComponent>(tableUid))
             return;
 
-        _standing.Down(ent);
-
+        _stunSystem.TryKnockdown(ent, TimeSpan.FromSeconds(3), false);
+        _climbing.TryClimb(pullerEnt, ent, tableUid, out _, component, null, true);
         _pullingSystem.TryStopPull(ent, ent.Comp, pullerEnt, ignoreGrab: true);
-        _throwingSystem.TryThrow(ent, tableUid.ToCoordinates() , ent.Comp.BasedTabledForceSpeed, animated: false, doSpin: false);
-        pullerEnt.Comp.NextStageChange = _gameTiming.CurTime.Add(TimeSpan.FromSeconds(3)); // prevent table slamming spam
-
-        if (TryComp<TableableComponent>(ent, out var tableableComp)) // Checks that the entity being tabled has the TableableComponent
+        if (TryComp<GlassTableComponent>(tableUid, out var glassTableComponent))
         {
-            tableableComp.BeingTabled = true;
-        }
-        else
-        {
-            tableableComp = EnsureComp<TableableComponent>(ent); // Adds the Tableable Component if it doesn't exist
-            tableableComp.BeingTabled = true; // This shit is so code :skull:
-        }
-    }
-
-    private void OnStartCollide(Entity<TableableComponent> ent, ref StartCollideEvent args)
-    {
-        if(!ent.Comp.BeingTabled)
-            return;
-
-        if (!HasComp<BonkableComponent>(args.OtherEntity))
-            return;
-
-        var modifierOnGlassBreak = 1;
-        if (TryComp<GlassTableComponent>(args.OtherEntity, out var glassTableComponent))
-        {
-            _damageableSystem.TryChangeDamage(args.OtherEntity, glassTableComponent.TableDamage, origin: ent, targetPart: TargetBodyPart.Torso);
-            _damageableSystem.TryChangeDamage(args.OtherEntity, glassTableComponent.ClimberDamage, origin: ent);
-            modifierOnGlassBreak = 2;
+            _damageableSystem.TryChangeDamage(tableUid, glassTableComponent.TableDamage, origin: ent);
+            _damageableSystem.TryChangeDamage(ent, glassTableComponent.ClimberDamage, origin: ent, targetPart: TargetBodyPart.Torso);
+            _stunSystem.TryParalyze(ent, TimeSpan.FromSeconds(3), false);
         }
         else
         {
@@ -145,13 +95,8 @@ public sealed class TableSlamSystem : EntitySystem
                     DamageDict = new Dictionary<string, FixedPoint2> { { "Blunt", ent.Comp.TabledDamage } },
                 });
         }
-
         _staminaSystem.TakeStaminaDamage(ent, ent.Comp.TabledStaminaDamage);
-        _stunSystem.TryKnockdown(ent, TimeSpan.FromSeconds(3 * modifierOnGlassBreak), false);
-        var postTabledComponent = EnsureComp<PostTabledComponent>(ent);
-        postTabledComponent.PostTabledShovableTime = _gameTiming.CurTime.Add(TimeSpan.FromSeconds(3));
-        ent.Comp.BeingTabled = false;
-
+        pullerEnt.Comp.NextStageChange = _gameTiming.CurTime + pullerEnt.Comp.StageChangeCooldown * 2;
         //_audioSystem.PlayPvs("/Audio/Effects/thudswoosh.ogg", uid);
     }
 }

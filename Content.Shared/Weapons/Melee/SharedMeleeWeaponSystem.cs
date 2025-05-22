@@ -21,9 +21,6 @@ using Content.Shared.Physics;
 using Content.Shared.Popups;
 using Content.Shared.Weapons.Melee.Components;
 using Content.Shared.Weapons.Melee.Events;
-using Content.Shared.Weapons.Ranged.Components;
-using Content.Shared.Weapons.Ranged.Events;
-using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
@@ -36,21 +33,21 @@ namespace Content.Shared.Weapons.Melee;
 
 public abstract class SharedMeleeWeaponSystem : EntitySystem
 {
-    [Dependency] protected readonly ISharedAdminLogManager   AdminLogger     = default!;
-    [Dependency] protected readonly ActionBlockerSystem      Blocker         = default!;
-    [Dependency] protected readonly SharedCombatModeSystem   CombatMode      = default!;
-    [Dependency] protected readonly DamageableSystem         Damageable      = default!;
-    [Dependency] protected readonly SharedInteractionSystem  Interaction     = default!;
-    [Dependency] protected readonly IMapManager              MapManager      = default!;
-    [Dependency] protected readonly SharedPopupSystem        PopupSystem     = default!;
-    [Dependency] protected readonly IGameTiming              Timing          = default!;
-    [Dependency] protected readonly SharedTransformSystem    TransformSystem = default!;
-    [Dependency] private   readonly InventorySystem         _inventory       = default!;
-    [Dependency] private   readonly MeleeSoundSystem        _meleeSound      = default!;
-    [Dependency] private   readonly SharedPhysicsSystem     _physics         = default!;
-    [Dependency] private   readonly IPrototypeManager       _protoManager    = default!;
-    [Dependency] private   readonly StaminaSystem           _stamina         = default!;
-    [Dependency] private   readonly ContestsSystem          _contests        = default!;
+    [Dependency] protected readonly ISharedAdminLogManager AdminLogger = default!;
+    [Dependency] protected readonly ActionBlockerSystem Blocker = default!;
+    [Dependency] protected readonly SharedCombatModeSystem CombatMode = default!;
+    [Dependency] protected readonly DamageableSystem Damageable = default!;
+    [Dependency] protected readonly SharedInteractionSystem Interaction = default!;
+    [Dependency] protected readonly IMapManager MapManager = default!;
+    [Dependency] protected readonly SharedPopupSystem PopupSystem = default!;
+    [Dependency] protected readonly IGameTiming Timing = default!;
+    [Dependency] protected readonly SharedTransformSystem TransformSystem = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly MeleeSoundSystem _meleeSound = default!;
+    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
+    [Dependency] private readonly IPrototypeManager _protoManager = default!;
+    [Dependency] private readonly StaminaSystem _stamina = default!;
+    [Dependency] private readonly ContestsSystem _contests = default!;
 
     private const int AttackMask = (int) (CollisionGroup.MobMask | CollisionGroup.Opaque);
 
@@ -71,8 +68,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         SubscribeAllEvent<StopAttackEvent>(OnStopAttack);
 
 #if DEBUG
-        SubscribeLocalEvent<MeleeWeaponComponent,
-                            MapInitEvent>                   (OnMapInit);
+        SubscribeLocalEvent<MeleeWeaponComponent, MapInitEvent>(OnMapInit);
     }
 
     private void OnMapInit(EntityUid uid, MeleeWeaponComponent component, MapInitEvent args)
@@ -85,13 +81,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
     private void OnMeleeSelected(EntityUid uid, MeleeWeaponComponent component, HandSelectedEvent args)
     {
         var attackRate = GetAttackRate(uid, args.User, component);
-        if (attackRate.Equals(0f))
-            return;
-
-        if (!component.ResetOnHandSelected)
-            return;
-
-        if (Paused(uid))
+        if (attackRate.Equals(0f) || !component.ResetOnHandSelected || Paused(uid))
             return;
 
         // If someone swaps to this weapon then reset its cd.
@@ -129,16 +119,10 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
     {
         var user = args.SenderSession.AttachedEntity;
 
-        if (user == null)
-            return;
-
-        if (!TryGetWeapon(user.Value, out var weaponUid, out var weapon) ||
-            weaponUid != GetEntity(msg.Weapon))
-        {
-            return;
-        }
-
-        if (!weapon.Attacking)
+        if (user == null
+            || !TryGetWeapon(user.Value, out var weaponUid, out var weapon)
+            || weaponUid != GetEntity(msg.Weapon)
+            || !weapon.Attacking)
             return;
 
         weapon.Attacking = false;
@@ -147,40 +131,32 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
     private void OnLightAttack(LightAttackEvent msg, EntitySessionEventArgs args)
     {
-        if (args.SenderSession.AttachedEntity is not {} user)
+        if (args.SenderSession.AttachedEntity is not { } user
+            || !TryGetWeapon(user, out var weaponUid, out var weapon)
+            || weaponUid != GetEntity(msg.Weapon))
             return;
-
-        if (!TryGetWeapon(user, out var weaponUid, out var weapon) ||
-            weaponUid != GetEntity(msg.Weapon))
-        {
-            return;
-        }
 
         AttemptAttack(user, weaponUid, weapon, msg, args.SenderSession);
     }
 
     private void OnHeavyAttack(HeavyAttackEvent msg, EntitySessionEventArgs args)
     {
-        if (args.SenderSession.AttachedEntity is not {} user)
+        if (args.SenderSession.AttachedEntity is not { } user
+            || !TryGetWeapon(user, out var weaponUid, out var weapon)
+            || weaponUid != GetEntity(msg.Weapon)
+            || !weapon.CanWideSwing)
             return;
-
-        if (!TryGetWeapon(user, out var weaponUid, out var weapon) ||
-            weaponUid != GetEntity(msg.Weapon) ||
-            !weapon.CanWideSwing) // Goobstation Change
-        {
-            return;
-        }
 
         AttemptAttack(user, weaponUid, weapon, msg, args.SenderSession);
     }
 
     private void OnDisarmAttack(DisarmAttackEvent msg, EntitySessionEventArgs args)
     {
-        if (args.SenderSession.AttachedEntity is not {} user)
+        if (args.SenderSession.AttachedEntity is not { } user
+            || !TryGetWeapon(user, out var weaponUid, out var weapon))
             return;
 
-        if (TryGetWeapon(user, out var weaponUid, out var weapon))
-            AttemptAttack(user, weaponUid, weapon, msg, args.SenderSession);
+        AttemptAttack(user, weaponUid, weapon, msg, args.SenderSession);
     }
 
     /// <summary>
@@ -195,7 +171,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         RaiseLocalEvent(uid, ref ev);
 
         if (component.ContestArgs is not null)
-            ev.Damage *= _contests.ContestConstructor(user, component.ContestArgs);
+            ev.Damage *= _contests.ContestConstructor(user, component.ContestArgs) * component.ClickDamageModifier;
 
         return DamageSpecifier.ApplyModifierSets(ev.Damage, ev.Modifiers);
     }
@@ -216,10 +192,10 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return FixedPoint2.Zero;
 
-        var ev = new GetHeavyDamageModifierEvent(uid, component.ClickDamageModifier, 1, user);
+        var ev = new GetHeavyDamageModifierEvent(uid, component.HeavyDamageBaseModifier, 1, user);
         RaiseLocalEvent(uid, ref ev);
 
-        return ev.DamageModifier * ev.Multipliers * component.HeavyDamageBaseModifier;
+        return ev.DamageModifier * ev.Multipliers;
     }
 
     public bool GetResistanceBypass(EntityUid uid, EntityUid user, MeleeWeaponComponent? component = null)
@@ -236,7 +212,6 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
     public bool TryGetWeapon(EntityUid entity, out EntityUid weaponUid, [NotNullWhen(true)] out MeleeWeaponComponent? melee)
     {
         weaponUid = default;
-        melee = null;
 
         var ev = new GetMeleeWeaponEvent();
         RaiseLocalEvent(entity, ev);
@@ -287,10 +262,8 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         return false;
     }
 
-    public void AttemptLightAttackMiss(EntityUid user, EntityUid weaponUid, MeleeWeaponComponent weapon, EntityCoordinates coordinates)
-    {
+    public void AttemptLightAttackMiss(EntityUid user, EntityUid weaponUid, MeleeWeaponComponent weapon, EntityCoordinates coordinates) =>
         AttemptAttack(user, weaponUid, weapon, new LightAttackEvent(null, GetNetEntity(weaponUid), GetNetCoordinates(coordinates)), null);
-    }
 
     public bool AttemptLightAttack(EntityUid user, EntityUid weaponUid, MeleeWeaponComponent weapon, EntityUid target)
     {
@@ -398,30 +371,34 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         for (var i = 0; i < swings; i++)
         {
             string animation;
+            var animationRange = weapon.Range;
 
             switch (attack)
             {
                 case LightAttackEvent light:
                     DoLightAttack(user, light, weaponUid, weapon, session);
                     animation = weapon.Animation;
+                    animationRange *= weapon.LightRangeModifier;
                     break;
                 case DisarmAttackEvent disarm:
                     if (!DoDisarm(user, disarm, weaponUid, weapon, session))
                         return false;
 
                     animation = weapon.Animation;
+                    animationRange *= weapon.DisarmRangeModifier;
                     break;
                 case HeavyAttackEvent heavy:
                     if (!DoHeavyAttack(user, heavy, weaponUid, weapon, session))
                         return false;
 
                     animation = weapon.WideAnimation;
+                    animationRange *= weapon.HeavyRangeModifier;
                     break;
                 default:
                     throw new NotImplementedException();
             }
 
-            DoLungeAnimation(user, weaponUid, weapon.Angle, TransformSystem.ToMapCoordinates(GetCoordinates(attack.Coordinates)), weapon.Range, animation);
+            DoLungeAnimation(user, weaponUid, weapon.Angle, TransformSystem.ToMapCoordinates(GetCoordinates(attack.Coordinates)), animationRange, animation);
         }
 
         var attackEv = new MeleeAttackEvent(weaponUid);
@@ -440,7 +417,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
             HasComp<DamageableComponent>(target) &&
             TryComp<TransformComponent>(target, out targetXform) &&
             // Not in LOS.
-            InRange(user, target.Value, component.Range, session);
+            InRange(user, target.Value, component.Range * component.LightRangeModifier, session);
     }
 
     protected virtual void DoLightAttack(EntityUid user, LightAttackEvent ev, EntityUid meleeUid, MeleeWeaponComponent component, ICommonSession? session)
@@ -502,11 +479,11 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         RaiseLocalEvent(target.Value, attackedEvent);
 
         var modifiedDamage = DamageSpecifier.ApplyModifierSets(damage + hitEvent.BonusDamage + attackedEvent.BonusDamage, hitEvent.ModifiersList);
-        var damageResult = Damageable.TryChangeDamage(target, modifiedDamage, origin:user, ignoreResistances: resistanceBypass, partMultiplier: component.ClickPartDamageMultiplier);
+        var damageResult = Damageable.TryChangeDamage(target, modifiedDamage, origin: user, ignoreResistances: resistanceBypass, partMultiplier: component.ClickPartDamageMultiplier);
         var comboEv = new ComboAttackPerformedEvent(user, target.Value, meleeUid, ComboAttackType.Harm);
         RaiseLocalEvent(user, comboEv);
 
-        if (damageResult is {Empty: false})
+        if (damageResult is { Empty: false })
         {
             // If the target has stamina and is taking blunt damage, they should also take stamina damage based on their blunt to stamina factor
             if (damageResult.DamageDict.TryGetValue("Blunt", out var bluntDamage))
@@ -563,7 +540,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
         var userPos = TransformSystem.GetWorldPosition(userXform);
         var direction = targetMap.Position - userPos;
-        var distance = Math.Min(component.Range, direction.Length());
+        var distance = Math.Min(component.Range * component.HeavyRangeModifier, direction.Length());
 
         var damage = GetDamage(meleeUid, user, component) * GetHeavyDamageModifier(meleeUid, user, component);
         var entities = GetEntityList(ev.Entities);
@@ -787,11 +764,8 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
     {
         var target = GetEntity(ev.Target);
 
-        if (Deleted(target) ||
-            user == target || !CanDoLightAttack(user, target, component, out var targetXform, session))
-        {
+        if (Deleted(target) || user == target || !CanDoLightAttack(user, target, component, out var _, session))
             return false;
-        }
 
         var comboEv = new ComboAttackPerformedEvent(user, target.Value, meleeUid, ComboAttackType.Disarm);
         RaiseLocalEvent(user, comboEv);

@@ -1,18 +1,9 @@
+using Content.Server.Fax;
+using Content.Server.Station.Components;
 using Content.Server.Station.Events;
-using Content.Server.Station.Systems;
 using Content.Shared.Fax.Components;
 
-
-namespace Content.Server.Station;
-
-/// <summary>
-/// Rename all faxes on a station when station name changes.
-/// Only faxes with "UseStationName" will be affected.
-/// </summary>
-[RegisterComponent]
-public sealed partial class StationRenameFaxesComponent : Component
-{
-}
+namespace Content.Server.Station.Systems;
 
 public sealed class StationRenameFaxesSystem : EntitySystem
 {

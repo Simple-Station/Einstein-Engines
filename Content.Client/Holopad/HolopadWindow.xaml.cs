@@ -62,6 +62,9 @@ public sealed partial class HolopadWindow : FancyWindow
         ActivateProjectorButton.OnPressed += args => { OnHolopadActivateProjectorMessage(); };
         RequestStationAiButton.OnPressed += args => { OnHolopadRequestStationAiMessage(); };
 
+        RequestStationAiButton.Visible = false; // Hullrot - disable call AI button 
+        StartBroadcastButton.Visible = false; // Hullrot - disable emergency broadcast button 
+
         // XML formatting
         AnswerCallButton.AddStyleClass("ButtonAccept");
         EndCallButton.AddStyleClass("Danger");
