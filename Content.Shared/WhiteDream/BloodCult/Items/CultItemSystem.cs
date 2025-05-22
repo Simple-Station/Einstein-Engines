@@ -1,4 +1,4 @@
-﻿using Content.Shared.Blocking;
+using Content.Shared.Blocking;
 using Content.Shared.Ghost;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
@@ -10,7 +10,6 @@ using Content.Shared.Stunnable;
 using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
-using Robust.Shared.Network;
 
 namespace Content.Shared.WhiteDream.BloodCult.Items;
 
@@ -19,7 +18,6 @@ public sealed class CultItemSystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
-    [Dependency] private readonly INetManager _net = default!;
 
     public override void Initialize()
     {
