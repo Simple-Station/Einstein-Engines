@@ -54,10 +54,8 @@ public sealed class GhostBarSystem : EntitySystem
     private ResPath MapPath = new("Maps/_Goobstation/Nonstations/ghostbar.yml");
     private void OnRoundStart(RoundStartingEvent ev)
     {
-        _mapSystem.CreateMap(out var mapId);
-
-        if (_mapLoader.TryLoadGrid(mapId, MapPath, out _))
-            _mapSystem.SetPaused(mapId, false);
+        if (_mapLoader.TryLoadMap(MapPath, out var mapId, out _))
+            _mapSystem.SetPaused((mapId.Value.Owner, null), false);
     }
 
     public void SpawnPlayer(GhostBarSpawnEvent msg, EntitySessionEventArgs args)
@@ -107,10 +105,19 @@ public sealed class GhostBarSystem : EntitySystem
         var whitelisted = player.ContentData()?.Whitelisted ?? false;
 
         _loadout.ApplyCharacterLoadout(
-            mobUid, randomJob, profile, playTimes, whitelisted
+            mobUid,
+            randomJob,
+            profile,
+            playTimes,
+            whitelisted
         );
         _trait.ApplyTraits(
-            mobUid, randomJob, profile, playTimes, whitelisted, punishCheater: false
+            mobUid,
+            randomJob,
+            profile,
+            playTimes,
+            whitelisted,
+            punishCheater: false
         );
         // Einstein Engines end - apply loadouts and traits
 
