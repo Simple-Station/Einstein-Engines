@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Numerics;
 using Content.Client.Inventory;
 using Content.Shared.Clothing;
 using Content.Shared.Clothing.Components;
@@ -136,6 +137,7 @@ public sealed class ClientClothingSystem : ClothingSystem
                 && rsi.RSI.TryGetState($"{layer.State}-{inventory.SpeciesId}", out _))
                 layer.State = $"{layer.State}-{inventory.SpeciesId}";
 
+            item.MappedLayer = key;
             args.Layers.Add((key, layer));
         }
     }
@@ -342,6 +344,8 @@ public sealed class ClientClothingSystem : ClothingSystem
 
                 if (layerData.Color != null)
                     sprite.LayerSetColor(key, layerData.Color.Value);
+                if (layerData.Scale != null)
+                    sprite.LayerSetScale(key, layerData.Scale.Value);
             }
             else
                 index = sprite.LayerMapReserveBlank(key);

@@ -20,8 +20,8 @@
     reflectProb: 0.01
     innate: true
     reflects:
-      - Energy
-      - NonEnergy
+    - Energy
+    - NonEnergy
 
 - type: entity
   abstract: true

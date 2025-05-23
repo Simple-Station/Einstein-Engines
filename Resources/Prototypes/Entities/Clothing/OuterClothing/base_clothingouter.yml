@@ -25,7 +25,7 @@
   - type: HeldSpeedModifier
   - type: Tag
     tags:
-      - WhitelistChameleon
+    - WhitelistChameleon
   - type: Fixtures
     fixtures:
       fix1:
@@ -134,9 +134,6 @@
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    coefficient: 0.01
-  - type: FireProtection
-    reduction: 0.75 # almost perfectly sealed, atmos firesuit is better
   - type: IgniteFromGasImmunity
     parts:
     - Torso
@@ -218,8 +215,8 @@
     reflectProb: 0.03
     innate: true
     reflects:
-      - Energy
-      - NonEnergy
+    - Energy
+    - NonEnergy
 
 - type: entity
   abstract: true
@@ -261,8 +258,8 @@
     reflectProb: 0.04
     innate: true
     reflects:
-      - Energy
-      - NonEnergy
+    - Energy
+    - NonEnergy
 
 - type: entity
   abstract: true
@@ -304,8 +301,8 @@
     reflectProb: 0.05
     innate: true
     reflects:
-      - Energy
-      - NonEnergy
+    - Energy
+    - NonEnergy
 
 - type: entity
   abstract: true

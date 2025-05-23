@@ -201,6 +201,7 @@
   - type: GuideHelp
     guides:
     - Bartender
+    - Drinks
 
 - type: entity
   parent: VendingMachine
@@ -1002,6 +1003,7 @@
   - type: GuideHelp
     guides:
     - Security
+    - Antagonists
   - type: Transform
     noRot: false
   - type: Rotatable

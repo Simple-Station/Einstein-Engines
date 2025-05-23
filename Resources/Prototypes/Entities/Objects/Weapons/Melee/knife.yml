@@ -11,7 +11,7 @@
     doAfterDuration: 4.0
   - type: Utensil
     types:
-      - Knife
+    - Knife
   - type: MeleeWeapon
     wideAnimationRotation: -135
     attackRate: .8
@@ -35,7 +35,7 @@
     size: Small
   - type: Tool
     qualities:
-      - Slicing
+    - Slicing
     useSound:
       path: /Audio/Items/Culinary/chop.ogg
   # Shitmed Change
@@ -67,6 +67,7 @@
   - type: GuideHelp
     guides:
     - Chef
+    - FoodRecipes
 
 - type: entity
   name: butcher's cleaver
@@ -98,6 +99,7 @@
   - type: GuideHelp
     guides:
     - Chef
+    - FoodRecipes
   # Shitmed Change
   - type: Scalpel
     speed: 0.3
