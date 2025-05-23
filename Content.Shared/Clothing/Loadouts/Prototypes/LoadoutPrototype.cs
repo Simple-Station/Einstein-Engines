@@ -16,7 +16,7 @@ public sealed partial class LoadoutPrototype : IPrototype
     public ProtoId<LoadoutCategoryPrototype> Category = "Uncategorized";
 
     [DataField(required: true)]
-    public List<ProtoId<EntityPrototype>> Items = new();
+    public List<EntProtoId> Items = new();
 
     /// Components to give each item on spawn
     [DataField]

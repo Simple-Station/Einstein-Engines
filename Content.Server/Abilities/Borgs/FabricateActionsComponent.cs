@@ -9,11 +9,11 @@ public sealed partial class FabricateActionsComponent : Component
     ///     IDs of fabrication actions that the entity should receive with this component.
     /// </summary>
     [DataField]
-    public List<ProtoId<EntityPrototype>> Actions = new();
+    public List<EntProtoId> Actions = new();
 
     /// <summary>
     ///     Action entities added by this component.
     /// </summary>
     [DataField]
-    public Dictionary<ProtoId<EntityPrototype>, EntityUid> ActionEntities = new();
+    public Dictionary<EntProtoId, EntityUid> ActionEntities = new();
 }

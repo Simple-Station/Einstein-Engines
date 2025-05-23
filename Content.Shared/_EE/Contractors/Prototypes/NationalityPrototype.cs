@@ -35,5 +35,5 @@ public sealed partial class NationalityPrototype : IPrototype
     public TraitFunction[] Functions { get; private set; } = Array.Empty<TraitFunction>();
 
     [DataField]
-    public ProtoId<EntityPrototype> PassportPrototype { get; } = new();
+    public EntProtoId PassportPrototype { get; } = new();
 }
