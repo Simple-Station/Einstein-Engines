@@ -6,7 +6,6 @@ using Content.Server.Players.PlayTimeTracking; // Einstein Engines
 using Content.Server.Station.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
-using Robust.Server.Maps;
 using Robust.Shared.Random;
 using Content.Shared.Ghost;
 using Content.Server._Goobstation.Ghostbar.Components;
@@ -17,7 +16,10 @@ using Content.Server.Antag.Components;
 using Content.Server.Traits; // Einstein Engines
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Players;
-using Content.Shared.Roles.Jobs; // Einstein Engines - use JobComponent
+using Content.Shared.Roles.Jobs;
+using Robust.Shared.EntitySerialization;
+using Robust.Shared.EntitySerialization.Systems;
+using Robust.Shared.Utility; // Einstein Engines - use JobComponent
 
 namespace Content.Server._Goobstation.Ghostbar;
 
@@ -49,13 +51,12 @@ public sealed class GhostBarSystem : EntitySystem
         SubscribeLocalEvent<GhostBarPlayerComponent, MindRemovedMessage>(OnPlayerGhosted);
     }
 
-    const string MapPath = "Maps/_Goobstation/Nonstations/ghostbar.yml";
+    private ResPath MapPath = new("Maps/_Goobstation/Nonstations/ghostbar.yml");
     private void OnRoundStart(RoundStartingEvent ev)
     {
         _mapSystem.CreateMap(out var mapId);
-        var options = new MapLoadOptions { LoadMap = true };
 
-        if (_mapLoader.TryLoad(mapId, MapPath, out _, options))
+        if (_mapLoader.TryLoadGrid(mapId, MapPath, out _))
             _mapSystem.SetPaused(mapId, false);
     }
 

@@ -250,7 +250,8 @@ public sealed partial class SalvageSystem
         var seed = data.Comp.Offered[index];
 
         var offering = GetSalvageOffering(seed);
-        var salvMap = _mapManager.CreateMap();
+        var salvMap = _mapSystem.CreateMap();
+        var salvMapXform = Transform(salvMap);
 
         // Set values while awaiting asteroid dungeon if relevant so we can't double-take offers.
         data.Comp.ActiveSeed = seed;
@@ -261,7 +262,7 @@ public sealed partial class SalvageSystem
         switch (offering)
         {
             case AsteroidOffering asteroid:
-                var grid = _mapManager.CreateGrid(salvMap);
+                var grid = _mapManager.CreateGrid(salvMapXform.MapID);
                 await _dungeon.GenerateDungeonAsync(asteroid.DungeonConfig, grid.Owner, grid, Vector2i.Zero, seed);
                 break;
             case SalvageOffering wreck:
@@ -285,7 +286,7 @@ public sealed partial class SalvageSystem
         }
 
         Box2? bounds = null;
-        var mapXform = _xformQuery.GetComponent(_mapManager.GetMapEntityId(salvMap));
+        var mapXform = _xformQuery.GetComponent(salvMap);
 
         if (mapXform.ChildCount == 0)
         {
@@ -337,7 +338,7 @@ public sealed partial class SalvageSystem
         if (!TryGetSalvagePlacementLocation(mapId, attachedBounds, bounds!.Value, worldAngle, out var spawnLocation, out var spawnAngle))
         {
             Report(magnet.Owner, MagnetChannel, "salvage-system-announcement-spawn-no-debris-available");
-            _mapManager.DeleteMap(salvMap);
+            _mapSystem.DeleteMap(salvMapXform.MapID);
             return;
         }
 
@@ -368,7 +369,7 @@ public sealed partial class SalvageSystem
         }
 
         Report(magnet.Owner, MagnetChannel, "salvage-system-announcement-arrived", ("timeLeft", data.Comp.ActiveTime.TotalSeconds));
-        _mapManager.DeleteMap(salvMap);
+        _mapSystem.DeleteMap(salvMapXform.MapID);
 
         data.Comp.Announced = false;
 
