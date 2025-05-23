@@ -43,15 +43,19 @@ public sealed class ApcSystem : EntitySystem
 
     public override void Update(float deltaTime)
     {
-        var query = EntityQueryEnumerator<ApcComponent, PowerNetworkBatteryComponent, UserInterfaceComponent>();
-        while (query.MoveNext(out var uid, out var apc, out var battery, out var ui))
+        var query = EntityQueryEnumerator<ApcComponent>();
+        while (query.MoveNext(out var uid, out var apc))
         {
+            if (!TryComp(uid, out PowerNetworkBatteryComponent? battery)
+                || !TryComp(uid, out UserInterfaceComponent? ui))
+                continue;
+
             if (apc.LastUiUpdate + ApcComponent.VisualsChangeDelay < _gameTiming.CurTime && _ui.IsUiOpen((uid, ui), ApcUiKey.Key))
             {
                 apc.LastUiUpdate = _gameTiming.CurTime;
                 UpdateUIState(uid, apc, battery);
             }
-
+            
             if (apc.NeedStateUpdate)
             {
                 UpdateApcState(uid, apc, battery);
@@ -199,7 +203,7 @@ public sealed class ApcSystem : EntitySystem
 
         return ApcExternalPowerState.Good;
     }
-    
+
     private void OnEmpPulse(EntityUid uid, ApcComponent component, ref EmpPulseEvent args)
     {
         EnsureComp<EmpDisabledComponent>(uid, out var emp); //event calls before EmpDisabledComponent is added, ensure it to force sprite update

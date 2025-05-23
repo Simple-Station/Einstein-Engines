@@ -9,24 +9,25 @@ namespace Content.Client.Administration.UI;
 public sealed partial class AdminMenuWindow : DefaultWindow
 {
     public event Action? OnDisposed;
-
+    [Dependency] private readonly ILocalizationManager _localization = default!;
     public AdminMenuWindow()
     {
-        MinSize = new Vector2(650, 250);
-        Title = Loc.GetString("admin-menu-title");
         RobustXamlLoader.Load(this);
-        MasterTabContainer.SetTabTitle((int) TabIndex.Admin, Loc.GetString("admin-menu-admin-tab"));
-        MasterTabContainer.SetTabTitle((int) TabIndex.Adminbus, Loc.GetString("admin-menu-adminbus-tab"));
-        MasterTabContainer.SetTabTitle((int) TabIndex.Atmos, Loc.GetString("admin-menu-atmos-tab"));
-        MasterTabContainer.SetTabTitle((int) TabIndex.Round, Loc.GetString("admin-menu-round-tab"));
-        MasterTabContainer.SetTabTitle((int) TabIndex.Server, Loc.GetString("admin-menu-server-tab"));
-        MasterTabContainer.SetTabTitle((int) TabIndex.PanicBunker, Loc.GetString("admin-menu-panic-bunker-tab"));
+        IoCManager.InjectDependencies(this);
+        MinSize = new Vector2(650, 250);
+        Title = _localization.GetString("admin-menu-title");
+        MasterTabContainer.SetTabTitle((int) TabIndex.Admin, _localization.GetString("admin-menu-admin-tab"));
+        MasterTabContainer.SetTabTitle((int) TabIndex.Adminbus, _localization.GetString("admin-menu-adminbus-tab"));
+        MasterTabContainer.SetTabTitle((int) TabIndex.Atmos, _localization.GetString("admin-menu-atmos-tab"));
+        MasterTabContainer.SetTabTitle((int) TabIndex.Round, _localization.GetString("admin-menu-round-tab"));
+        MasterTabContainer.SetTabTitle((int) TabIndex.Server, _localization.GetString("admin-menu-server-tab"));
+        MasterTabContainer.SetTabTitle((int) TabIndex.PanicBunker, _localization.GetString("admin-menu-panic-bunker-tab"));
         /*
          * TODO: Remove baby jail code once a more mature gateway process is established. This code is only being issued as a stopgap to help with potential tiding in the immediate future.
          */
-        MasterTabContainer.SetTabTitle((int) TabIndex.BabyJail, Loc.GetString("admin-menu-baby-jail-tab"));
-        MasterTabContainer.SetTabTitle((int) TabIndex.Players, Loc.GetString("admin-menu-players-tab"));
-        MasterTabContainer.SetTabTitle((int) TabIndex.Objects, Loc.GetString("admin-menu-objects-tab"));
+        MasterTabContainer.SetTabTitle((int) TabIndex.BabyJail, _localization.GetString("admin-menu-baby-jail-tab"));
+        MasterTabContainer.SetTabTitle((int) TabIndex.Players, _localization.GetString("admin-menu-players-tab"));
+        MasterTabContainer.SetTabTitle((int) TabIndex.Objects, _localization.GetString("admin-menu-objects-tab"));
         MasterTabContainer.OnTabChanged += OnTabChanged;
     }
 
