@@ -9,14 +9,14 @@ public abstract partial class ContestFunction
     [DataField]
     public float RangeFactor = 1f;
 
-    public abstract float ComparatorFunction(
+    public virtual float ComparatorFunction(
         EntityUid target,
-        IEntityManager entityManager);
+        IEntityManager entityManager) => 1f;
 
-    public abstract float ComparatorFunction(
+    public virtual float ComparatorFunction(
         EntityUid performer,
         EntityUid target,
-        IEntityManager entityManager);
+        IEntityManager entityManager) => 1f;
 }
 
 [ImplicitDataDefinitionForInheritors]
