@@ -1,0 +1,48 @@
+- type: entity
+  parent: BaseItem
+  id: NanoTrasenIdentificationChipLowRisk
+  name: C-11 NTID subdermal identification chip
+  description: A Pre-Collapse identification chip inserted subdermally near the brainstem. Records every piece of information possible about the holder and primarily used for gate-to-gate travel before the Bluespace Collapse. Nowadays, they've been repurposed as digital passports. This one's registered to a known low-risk criminal. You could probably make some scratch turning it in at a bounty office.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/ntid.rsi
+    layers:
+      - state: chip
+
+- type: entity
+  parent: BaseItem
+  id: NanoTrasenIdentificationChipBounty
+  name: C-11 NTID subdermal identification chip
+  description: A Pre-Collapse identification chip inserted subdermally near the brainstem. Records every piece of information possible about the holder and primarily used for gate-to-gate travel before the Bluespace Collapse. Nowadays, they've been repurposed as digital passports. This one's registered to a known criminal. You could probably make some scratch turning it in at a bounty office.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/ntid.rsi
+    layers:
+      - state: chip
+
+- type: entity
+  parent: BaseItem
+  id: NanoTrasenIdentificationChipAbyssal
+  name: destroyed NTID subdermal identification chip
+  description: A Pre-Collapse identification chip inserted subdermally near the brainstem. Records every piece of information possible about the holder and primarily used for gate-to-gate travel before the Bluespace Collapse. Nowadays, they've been repurposed as digital passports. This one has been smashed beyond repair and contaminated with Abyssal materials. Being a proof of kill for an Abyssal beast, it should sell nicely at a bounty post.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/ntid.rsi
+    layers:
+      - state: abyssal
+
+- type: startingGear
+  id: LowRiskCriminalLoot
+  equipment:
+    neck: NanoTrasenIdentificationChipLowRisk
+
+- type: startingGear
+  id: CriminalLoot
+  equipment:
+    neck: NanoTrasenIdentificationChipBounty
+    pocket1: ExileAutoinjector
+
+- type: startingGear
+  id: AbyssalMobLoot
+  equipment:
+    neck: NanoTrasenIdentificationChipAbyssal

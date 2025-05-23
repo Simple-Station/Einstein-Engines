@@ -684,7 +684,7 @@
                   max: 5
     - type: Gun
       projectileSpeed: 95
-      fireRate: 3
+      fireRate: 4
       selectedMode: FullAuto
       availableModes:
         - FullAuto
@@ -697,9 +697,9 @@
           pitch: 1.2
           variation: 0.08
     - type: BasicEntityAmmoProvider
-      proto: BulletKineticShuttle
-      capacity: 10
-      count: 10
+      proto: BulletEnergyTurretLaser
+      capacity: 40
+      count: 15
     - type: SignalControl
       isOnByDefault: true
     - type: DeviceNetwork

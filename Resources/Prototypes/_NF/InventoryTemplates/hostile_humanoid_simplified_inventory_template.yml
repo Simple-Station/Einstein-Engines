@@ -41,6 +41,15 @@
       strippingWindowPos: 0,1
       displayName: Back
 
+    - name: neck
+      stripTime: 5
+      slotTexture: neck
+      fullTextureName: template_small
+      slotFlags: NECK
+      uiWindowPos: 0,2
+      strippingWindowPos: 20,21
+      displayName: Neck
+
 # "Not strippable", "hidden"
     - name: shoes
       slotTexture: shoes
