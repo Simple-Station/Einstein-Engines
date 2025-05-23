@@ -56,8 +56,8 @@ public sealed class LungSystem : EntitySystem
     private void OnComponentInit(Entity<LungComponent> entity, ref ComponentInit args)
     {
         var solution = _solutionContainerSystem.EnsureSolution(entity.Owner, entity.Comp.SolutionName);
-        solution.MaxVolume = 100.0f;
-        solution.CanReact = false; // No dexalin lungs
+        solution.MaxVolume = entity.Comp.MaxVolume;
+        solution.CanReact = entity.Comp.CanReact;
     }
 
     // Goobstation - Update component state on component toggle
