@@ -129,6 +129,23 @@ public sealed partial class TraitAddActions : TraitFunction
     }
 }
 
+[UsedImplicitly]
+public sealed partial class TraitRemoveActions : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public List<EntProtoId> Actions { get; private set; } = new();
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var actionSystem = entityManager.System<SharedActionsSystem>();
+        foreach (var proto in Actions)
+            actionSystem.RemoveAction(uid, proto);
+    }
+}
+
 /// Used for traits that add an Implant upon spawning in.
 [UsedImplicitly]
 public sealed partial class TraitAddImplant : TraitFunction
