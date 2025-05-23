@@ -1,5 +1,6 @@
 - type: gameMap
   id: CentCommHarmony
+  isGrid: true
   mapName: 'Central Command'
   mapPath: /Maps/CentralCommand/harmony.yml
   minPlayers: 0
