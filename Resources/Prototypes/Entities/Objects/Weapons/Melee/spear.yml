@@ -43,7 +43,7 @@
         Piercing: 7
         Slash: 1
     heavyRateModifier: 1.3
-    heavyRangeModifier: 1.25
+    heavyRangeModifier: 1.35
     heavyDamageBaseModifier: 1.0
     heavyStaminaCost: 2.5
     maxTargets: 3
@@ -239,7 +239,7 @@
         Piercing: 10
         Slash: 2
     heavyRateModifier: 1.3
-    heavyRangeModifier: 1.25
+    heavyRangeModifier: 1.35
     heavyDamageBaseModifier: 1.0
     heavyStaminaCost: 2.5
     maxTargets: 3
