@@ -83,7 +83,7 @@ public partial class SharedBodySystem
             // Shitmed Change End
             var removedInBodyEv = new OrganRemovedFromBodyEvent(bodyUid, parentPartUid);
             RaiseLocalEvent(organEnt, ref removedInBodyEv);
-            RemoveFunctions(parentPartUid, organEnt.Comp);
+            RemoveFunctions(bodyUid, organEnt.Comp);
         }
 
         if (parentPartUid is { Valid: true }
