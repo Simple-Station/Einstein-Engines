@@ -1,0 +1,65 @@
+- type: entity
+  id: HullrotCyberneticBase
+  parent: BaseHumanOrgan
+  name: debug cybernetic
+  categories: [ HideSpawnMenu ]
+  abstract: true
+  description: saibapank 20 77
+  components:
+  - type: Cybernetics
+
+- type: entity
+  id: CyberneticsDermalArmor
+  parent: HullrotCyberneticBase
+  name: SHI KOURINDO-U dermal armor mesh
+  description: A surgical-grade plasteel mesh meant to be woven just under the inner dermis. Equipped with kinetic discharges that help spread harmful impacts along it's rolling plates. Developed by Shinohara Heavy Industries as part of it's MaxSec line.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/cybernetics.rsi
+    layers:
+      - state: dermalarmor
+  - type: Organ
+    onAdd:
+    - type: SubdermalArmor
+      modifiers:
+        coefficients:
+          Blunt: 0.8
+          Slash: 0.8
+          Piercing: 0.8
+          Heat: 0.8
+          Caustic: 0.8
+          Radiation: 0.8
+
+- type: entity
+  id: CyberneticsBloodPump
+  parent: HullrotCyberneticBase
+  name: IPM TT-92 overclocked blood pump
+  description: A small, fist-sized device meant to be a total replacement tool for a humanoid heart. Developed by Interdyne.
+  components:
+  - type: Heart
+  - type: Metabolizer
+    maxReagents: 2
+    metabolizerTypes: [Human]
+    groups:
+    - id: Medicine
+    - id: Poison
+    - id: Narcotic
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/cybernetics.rsi
+    layers:
+      - state: heartpump
+  - type: Organ
+    slotId: heart
+    onAdd:
+    - type: PassiveDamage
+      allowedStates:
+      - Alive
+      - Critical
+      damageCap: 150
+      damage:
+        groups:
+          Brute: -0.15
+          Burn: -0.15
+          Airloss: -0.15
+          Toxin: -0.15
+          Genetic: -0.15
