@@ -16,9 +16,9 @@ namespace Content.Server.Preferences.Managers
         void FinishLoad(ICommonSession session);
         void OnClientDisconnected(ICommonSession session);
 
-        bool TryGetCachedPreferences(NetUserId userId, [NotNullWhen(true)] out PlayerPreferences? playerPreferences);
-        PlayerPreferences GetPreferences(NetUserId userId);
-        PlayerPreferences? GetPreferencesOrNull(NetUserId? userId);
+        bool TryGetCachedPreferences(NetUserId userId, [NotNullWhen(true)] out PlayerPreferences? playerPreferences, [NotNullWhen(true)] out JobPreferences? jobPreferences);
+        (PlayerPreferences, JobPreferences) GetPreferences(NetUserId userId);
+        (PlayerPreferences?, JobPreferences?) GetPreferencesOrNull(NetUserId? userId);
         IEnumerable<KeyValuePair<NetUserId, ICharacterProfile>> GetSelectedProfilesForPlayers(List<NetUserId> userIds);
         bool HavePreferencesLoaded(ICommonSession session);
 

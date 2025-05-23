@@ -210,7 +210,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
         return _characterRequirements.CheckRequirementsValid(
             job.Requirements,
             job,
-            (HumanoidCharacterProfile) _prefs.GetPreferences(player.UserId).SelectedCharacter,
+            (HumanoidCharacterProfile) _prefs.GetPreferences(player.UserId).Item1.SelectedCharacter,
             playTimes,
             isWhitelisted,
             job,
@@ -241,7 +241,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
                 if (_characterRequirements.CheckRequirementsValid(
                         job.Requirements,
                         job,
-                        (HumanoidCharacterProfile) _prefs.GetPreferences(player.UserId).SelectedCharacter,
+                        (HumanoidCharacterProfile) _prefs.GetPreferences(player.UserId).Item1.SelectedCharacter,
                         playTimes,
                         isWhitelisted,
                         job,
@@ -288,7 +288,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
             if (!_characterRequirements.CheckRequirementsValid(
                 jobber.Requirements,
                 jobber,
-                (HumanoidCharacterProfile) _prefs.GetPreferences(userId).SelectedCharacter,
+                (HumanoidCharacterProfile) _prefs.GetPreferences(userId).Item1.SelectedCharacter,
                 _tracking.GetPlayTimes(_playerManager.GetSessionById(userId)),
                 _playerManager.GetSessionById(userId).ContentData()?.Whitelisted ?? false,
                 jobber,

@@ -62,6 +62,7 @@ namespace Content.Client.Lobby.UI
 
         public event Action<List<ProtoId<GuideEntryPrototype>>>? OnOpenGuidebook;
         public event Action<JobPrototype>? LoadoutButtonPressed;
+        public event Action? Save;
 
         /// The preferences being edited.
         public JobPreferences? Preferences;
@@ -77,6 +78,13 @@ namespace Content.Client.Lobby.UI
             _requirements = requirements;
             _profileEditor = profileEditor;
             _jobCategories = new Dictionary<string, BoxContainer>();
+
+            SaveJobsButton.OnPressed += args =>
+            {
+                DebugTools.Assert(Preferences != null);
+                _preferencesManager.SaveJobs(Preferences);
+                RefreshJobs();
+            };
 
             //Jobs.Orphan();
 
@@ -108,8 +116,6 @@ namespace Content.Client.Lobby.UI
             _jobCategories.Clear();
             _jobPriorities.Clear();
 
-            // Kill this when proper Preference Jobs are added.
-            //Preferences = new JobPreferences();
             Preferences = _preferencesManager.Jobs!;
             // Get all displayed departments
             var departments = new List<DepartmentPrototype>();
@@ -291,9 +297,7 @@ namespace Content.Client.Lobby.UI
             {
                 //var priority = _profileEditor.Profile?.JobPriorities.GetValueOrDefault(jobId, JobPriority.Never) ?? JobPriority.Never;
                 // Need to make getvalueordefault. Or maybe not.
-                //var priority = Preferences?.JobPriorities[jobId].Item2 ?? JobPriority.Never;
                 var priority = Preferences?.JobPriorities.GetValueOrDefault(jobId, (0, JobPriority.Never)) ?? (0, JobPriority.Never);
-                //var charSlot = Preferences?.JobPriorities[jobId] != null ? Preferences.JobPriorities[jobId].Item1 : 0;
                 prioritySelector.Select((int) priority.Item2);
                 character.Select(priority.Item1);
             }

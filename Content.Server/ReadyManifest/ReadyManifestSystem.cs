@@ -57,7 +57,7 @@ public sealed class ReadyManifestSystem : EntitySystem
     {
         var userId = ev.PlayerSession.Data.UserId;
 
-        if (!_prefsManager.TryGetCachedPreferences(userId, out var preferences))
+        if (!_prefsManager.TryGetCachedPreferences(userId, out var preferences, out var jobs))
         {
             return;
         }
@@ -102,7 +102,7 @@ public sealed class ReadyManifestSystem : EntitySystem
             if (status == PlayerGameStatus.ReadyToPlay)
             {
                 HumanoidCharacterProfile profile;
-                if (_prefsManager.TryGetCachedPreferences(userId, out var preferences))
+                if (_prefsManager.TryGetCachedPreferences(userId, out var preferences, out var jobs))
                 {
                     profile = (HumanoidCharacterProfile) preferences.SelectedCharacter;
                     var profileJobs = FilterPlayerJobs(profile);

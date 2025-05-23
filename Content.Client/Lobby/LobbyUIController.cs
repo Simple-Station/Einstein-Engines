@@ -149,6 +149,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         profileEditor.SetProfile(
             (HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter,
             _preferencesManager.Preferences?.SelectedCharacterIndex);
+        jobSelector.Preferences = _preferencesManager.Jobs;
         jobSelector.RefreshJobs();
     }
 
@@ -223,8 +224,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             EntityManager,
             _prototypeManager,
             _jobRequirements,
-            _profileEditor
-            );
+            _profileEditor);
 
         _characterSetup = new CharacterSetupGui(EntityManager, _prototypeManager, _resourceCache, _preferencesManager, _profileEditor, _jobSelector);
 

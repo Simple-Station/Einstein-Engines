@@ -382,7 +382,7 @@ namespace Content.Server.Database
         public int SelectedCharacterSlot { get; set; }
         public string AdminOOCColor { get; set; } = null!;
         public List<Profile> Profiles { get; } = new();
-        public List<Job> Jobs { get; } = new();
+        public List<Job> Jobs { get; set; } = new();
     }
 
     public class Profile

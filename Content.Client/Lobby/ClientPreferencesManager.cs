@@ -37,7 +37,7 @@ namespace Content.Client.Lobby
             _netManager.RegisterNetMessage<MsgUpdateCharacter>();
             _netManager.RegisterNetMessage<MsgSelectCharacter>();
             _netManager.RegisterNetMessage<MsgDeleteCharacter>();
-            _netManager.RegisterNetMessage<MsgUpdateJob>();
+            _netManager.RegisterNetMessage<MsgUpdateJobs>();
 
             _baseClient.RunLevelChanged += BaseClientOnRunLevelChanged;
         }
@@ -116,16 +116,14 @@ namespace Content.Client.Lobby
             _netManager.ClientSendMessage(msg);
         }
 
-        public void SaveJob(string job, int assignedChar, JobPriority priority)
+        public void SaveJobs(JobPreferences preferences)
         {
             // Should be similar to WithJobPriority
             var jobs = new Dictionary<string, (int, JobPriority)>();
             Jobs = new JobPreferences(jobs);
-            var msg = new MsgUpdateJob
+            var msg = new MsgUpdateJobs
             {
-                Job = job,
-                CharSlot = assignedChar,
-                Priority = priority
+                JobPreferences = preferences
             };
             _netManager.ClientSendMessage(msg);
         }

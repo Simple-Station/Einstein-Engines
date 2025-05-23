@@ -41,7 +41,7 @@ namespace Content.Server.Administration.Commands
             // Update the cached preference
             var prefManager = IoCManager.Resolve<IServerPreferencesManager>();
             var prefs = prefManager.GetPreferences(userId);
-            prefs.AdminOOCColor = color.Value;
+            prefs.Item1.AdminOOCColor = color.Value;
         }
     }
 }

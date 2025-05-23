@@ -70,7 +70,7 @@ public sealed class SpawnCharacter : IConsoleCommand
             character = selectedCharacter;
         }
         else
-            character = (HumanoidCharacterProfile) _prefs.GetPreferences(data.UserId).SelectedCharacter;
+            character = (HumanoidCharacterProfile) _prefs.GetPreferences(data.UserId).Item1.SelectedCharacter;
 
 
         var coordinates = player.AttachedEntity != null
@@ -113,7 +113,7 @@ public sealed class SpawnCharacter : IConsoleCommand
     private bool FetchCharacters(NetUserId player, out HumanoidCharacterProfile[] characters)
     {
         characters = null!;
-        if (!_prefs.TryGetCachedPreferences(player, out var prefs))
+        if (!_prefs.TryGetCachedPreferences(player, out var prefs, out var jobs))
             return false;
 
         characters = prefs.Characters

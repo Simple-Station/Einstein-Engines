@@ -206,14 +206,23 @@ namespace Content.Server.Database
                 .Include(p => p.Jobs)
                 .SingleAsync(p => p.UserId == userId.UserId);
             prefs.Jobs.Clear();
-            foreach (var job in jobs.JobPriorities)
+            prefs.Jobs = new List<Job>()
             {
-                var newJob = new Job();
-                newJob.JobName = job.Key;
-                newJob.AssignedCharSlot = job.Value.Item1;
-                newJob.Priority = (DbJobPriority) job.Value.Item2;
-                prefs.Jobs.Add(newJob);
-            }
+                new Job { JobName = "Passenger", Priority = DbJobPriority.High }
+            };
+            //foreach (var job in jobs.JobPriorities)
+            //{
+            //    var newJob = new Job();
+            //    newJob.JobName = job.Key;
+            //    newJob.AssignedCharSlot = job.Value.Item1;
+            //    newJob.Priority = (DbJobPriority) job.Value.Item2;
+            //    jobPrefs.Add(newJob);
+            //}
+            //prefs.Jobs = jobPrefs;
+            //prefs.Jobs.AddRange(
+            //jobs.JobPriorities
+            //.Where(j => j.Value.Item2 != JobPriority.Never)
+            //.Select(j => new Job { JobName = j.Key, AssignedCharSlot = j.Value.Item1, Priority = (DbJobPriority) j.Value.Item2 }));
             await db.DbContext.SaveChangesAsync();
         }
 

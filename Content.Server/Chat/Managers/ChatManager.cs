@@ -249,7 +249,7 @@ namespace Content.Server.Chat.Managers
             if (_adminManager.HasAdminFlag(player, AdminFlags.Admin))
             {
                 var prefs = _preferencesManager.GetPreferences(player.UserId);
-                colorOverride = prefs.AdminOOCColor;
+                colorOverride = prefs.Item1.AdminOOCColor;
             }
             if (  _netConfigManager.GetClientCVar(player.Channel, CCVars.ShowOocPatronColor) && player.Channel.UserData.PatronTier is { } patron && PatronOocColors.TryGetValue(patron, out var patronColor))
             {
