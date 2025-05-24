@@ -18,12 +18,12 @@
           prob: 1
         - id: ScrapDebrisLarge
           prob: 0.6
-        - id: ScrapDebrisExtraLarge
-          prob: 0.3
-        - id: ScrapDebrisExtraLargeScattered
-          prob: 0.3
-        - id: ScrapDebrisHuge
-          prob: 0.15
+        #- id: ScrapDebrisExtraLarge
+        #  prob: 0.3
+        #- id: ScrapDebrisExtraLargeScattered
+        #  prob: 0.3
+        #- id: ScrapDebrisHuge
+        #  prob: 0.15
     - type: NoiseRangeCarver
       ranges:
         - 0.4, 0.6
@@ -49,12 +49,12 @@
           prob: 1
         - id: ScrapDebrisLarge
           prob: 0.6
-        - id: ScrapDebrisExtraLarge
-          prob: 0.3
-        - id: ScrapDebrisExtraLargeScattered
-          prob: 0.3
-        - id: ScrapDebrisHuge
-          prob: 0.15
+        #- id: ScrapDebrisExtraLarge
+        #  prob: 0.3
+        #- id: ScrapDebrisExtraLargeScattered
+        #  prob: 0.3
+        #- id: ScrapDebrisHuge
+        #  prob: 0.15
     - type: NoiseRangeCarver
       ranges:
         - 0.4, 0.6
@@ -80,12 +80,12 @@
           prob: 1
         - id: ScrapDebrisLarge
           prob: 0.6
-        - id: ScrapDebrisExtraLarge
-          prob: 0.3
-        - id: ScrapDebrisExtraLargeScattered
-          prob: 0.3
-        - id: ScrapDebrisHuge
-          prob: 0.15
+        #- id: ScrapDebrisExtraLarge
+        #  prob: 0.3
+        #- id: ScrapDebrisExtraLargeScattered
+        #  prob: 0.3
+        #- id: ScrapDebrisHuge
+        #  prob: 0.15
     - type: NoiseRangeCarver
       ranges:
         - 0.4, 0.6
@@ -111,12 +111,12 @@
           prob: 1
         - id: ScrapDebrisLarge
           prob: 0.6
-        - id: ScrapDebrisExtraLarge
-          prob: 0.3
-        - id: ScrapDebrisExtraLargeScattered
-          prob: 0.3
-        - id: ScrapDebrisHuge
-          prob: 0.15
+        #- id: ScrapDebrisExtraLarge
+        #  prob: 0.3
+        #- id: ScrapDebrisExtraLargeScattered
+        #  prob: 0.3
+        #- id: ScrapDebrisHuge
+        #  prob: 0.15
     - type: NoiseRangeCarver
       ranges:
         - 0.4, 0.6
@@ -142,20 +142,20 @@
           prob: 1
         - id: ScrapDebrisLarge
           prob: 0.6
-        - id: ScrapDebrisExtraLarge
-          prob: 0.3
-        - id: ScrapDebrisExtraLargeScattered
-          prob: 0.3
-        - id: ScrapDebrisHuge
-          prob: 0.15
+        #- id: ScrapDebrisExtraLarge
+        #  prob: 0.3
+        #- id: ScrapDebrisExtraLargeScattered
+        #  prob: 0.3
+        #- id: ScrapDebrisHuge
+        #  prob: 0.15
         - id: ScrapDebrisLarge
           prob: 0.6
-        - id: ScrapDebrisExtraLarge
-          prob: 0.3
-        - id: ScrapDebrisExtraLargeScattered
-          prob: 0.3
-        - id: ScrapDebrisHuge
-          prob: 0.15
+        #- id: ScrapDebrisExtraLarge
+        #  prob: 0.3
+        #- id: ScrapDebrisExtraLargeScattered
+        #  prob: 0.3
+        #- id: ScrapDebrisHuge
+        #  prob: 0.15
     - type: NoiseRangeCarver
       ranges:
         - 0.4, 0.6

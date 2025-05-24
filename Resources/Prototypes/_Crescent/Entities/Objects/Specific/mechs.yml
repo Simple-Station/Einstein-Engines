@@ -1,0 +1,55 @@
+- type: entity
+  id: MechDSMCarrion
+  parent: [ BaseMech, IndustrialMech ]
+  name: IEE m-V30 Carrion utility mechsuit
+  description: A quadruped light exosuit intended for light cargo freight and mining duty that has been stamped with the Imperiatoria Eques Exercitus. This exosuit has been given an internal gyroscope and course-correction thrusters, allowing spaceflight. The cockpit is barely armored, and the pilot takes a great deal of the beating if attacked.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    sprite: _Crescent/Objects/Specific/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: carrion
+    - map: ["enum.PaperLabelVisuals.Layer"]
+      sprite: Structures/Storage/Crates/labels.rsi
+      state: paper
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+  - type: Mech
+    baseState: carrion
+    openState: carrion-open
+    brokenState: carrion-broken
+    mechToPilotDamageMultiplier: 0.7
+    airtight: true
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+  - type: MeleeWeapon
+    hidden: true
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 40
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 4.5
+  - type: CanMoveInAir
+  - type: MovementAlwaysTouching
+  - type: StaticPrice
+    price: 1500
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - FootstepSound
+
+- type: entity
+  id: MechDSMCarrionBattery
+  parent: MechDSMCarrion
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
