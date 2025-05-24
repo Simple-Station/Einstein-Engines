@@ -1,0 +1,30 @@
+- type: entity
+  parent: BaseSuicideAction
+  id: ActionActivateCortexBomb
+  name: Activate Cortex Bomb
+  description: Activates your internal cortex bomb, completely destroying you and your equipment
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    checkCanInteract: false
+    checkConsciousness: false
+    itemIconStyle: BigAction
+    priority: -20
+    icon:
+      sprite: Actions/Implants/implants.rsi
+      state: explosive
+    event: !type:CortexBombActivatedEvent
+
+- type: entity
+  id: ActionToggleMantisBlade
+  name: Toggle Mantis Blade
+  description: Turns your left arm into a weapon.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 2
+    itemIconStyle: NoItem
+    icon:
+      sprite: _Goobstation/Changeling/changeling_abilities.rsi
+      state: armblade
+    event: !type:MantisBladeToggledEvent
