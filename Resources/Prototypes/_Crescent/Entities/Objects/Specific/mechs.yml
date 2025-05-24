@@ -43,3 +43,13 @@
     tags:
     - DoorBumpOpener
     - FootstepSound
+
+- type: entity
+  id: MechDSMCarrionBattery
+  parent: MechDSMCarrion
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
