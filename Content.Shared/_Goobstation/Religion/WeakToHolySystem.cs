@@ -7,8 +7,8 @@
 
 using Content.Goobstation.Shared.Bible;
 using Content.Goobstation.Shared.Religion.Nullrod;
+using Content.Server.Bible.Components;
 using Content.Shared.Damage;
-using Content.Shared.Heretic;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
 using Content.Shared.Timing;
@@ -33,8 +33,8 @@ public sealed class WeakToHolySystem : EntitySystem
         SubscribeLocalEvent<WeakToHolyComponent, DamageUnholyEvent>(OnUnholyItemDamage);
         SubscribeLocalEvent<WeakToHolyComponent, AfterInteractUsingEvent>(AfterBibleUse);
 
-        SubscribeLocalEvent<HereticRitualRuneComponent, StartCollideEvent>(OnCollide);
-        SubscribeLocalEvent<HereticRitualRuneComponent, EndCollideEvent>(OnCollideEnd);
+        // SubscribeLocalEvent<HereticRitualRuneComponent, StartCollideEvent>(OnCollide);
+        // SubscribeLocalEvent<HereticRitualRuneComponent, EndCollideEvent>(OnCollideEnd);
 
         SubscribeLocalEvent<DamageableComponent, DamageModifyEvent>(OnDamageModify);
 
@@ -56,8 +56,8 @@ public sealed class WeakToHolySystem : EntitySystem
 
     private void OnDamageModify(EntityUid uid, DamageableComponent component, DamageModifyEvent args)
     {
-        var unholyEvent = new DamageUnholyEvent(args.Target, args.Origin);
-        RaiseLocalEvent(args.Target, ref unholyEvent);
+        var unholyEvent = new DamageUnholyEvent(uid, args.Origin);
+        RaiseLocalEvent(uid, ref unholyEvent);
 
         var holyCoefficient = 0f; // Default resistance
 
@@ -95,40 +95,40 @@ public sealed class WeakToHolySystem : EntitySystem
 
     #endregion
 
-    #region Heretic Rune Healing
-
-    // Passively heal on runes
-    private void OnCollide(Entity<HereticRitualRuneComponent> ent, ref StartCollideEvent args)
-    {
-        if (!TryComp<WeakToHolyComponent>(args.OtherEntity, out var weak))
-            return;
-
-        weak.IsColliding = true;
-    }
-
-    private void OnCollideEnd(Entity<HereticRitualRuneComponent> ent, ref EndCollideEvent args)
-    {
-        if (!TryComp<WeakToHolyComponent>(args.OtherEntity, out var weak))
-            return;
-
-        weak.IsColliding = false;
-    }
-
-    public override void Update(float frameTime)
-    {
-        base.Update(frameTime);
-
-        var query = EntityQueryEnumerator<WeakToHolyComponent>();
-        while (query.MoveNext(out var uid, out var comp))
-        {
-            if (comp.NextHealTick > _timing.CurTime || !comp.IsColliding)
-                continue;
-
-            _damageableSystem.TryChangeDamage(uid, comp.HealAmount);
-
-            comp.NextHealTick = _timing.CurTime + comp.HealTickDelay;
-        }
-    }
-
-    #endregion
+    // #region Heretic Rune Healing
+    //
+    // // Passively heal on runes
+    // private void OnCollide(Entity<HereticRitualRuneComponent> ent, ref StartCollideEvent args)
+    // {
+    //     if (!TryComp<WeakToHolyComponent>(args.OtherEntity, out var weak))
+    //         return;
+    //
+    //     weak.IsColliding = true;
+    // }
+    //
+    // private void OnCollideEnd(Entity<HereticRitualRuneComponent> ent, ref EndCollideEvent args)
+    // {
+    //     if (!TryComp<WeakToHolyComponent>(args.OtherEntity, out var weak))
+    //         return;
+    //
+    //     weak.IsColliding = false;
+    // }
+    //
+    // public override void Update(float frameTime)
+    // {
+    //     base.Update(frameTime);
+    //
+    //     var query = EntityQueryEnumerator<WeakToHolyComponent>();
+    //     while (query.MoveNext(out var uid, out var comp))
+    //     {
+    //         if (comp.NextHealTick > _timing.CurTime || !comp.IsColliding)
+    //             continue;
+    //
+    //         _damageableSystem.TryChangeDamage(uid, comp.HealAmount);
+    //
+    //         comp.NextHealTick = _timing.CurTime + comp.HealTickDelay;
+    //     }
+    // }
+    //
+    // #endregion
 }

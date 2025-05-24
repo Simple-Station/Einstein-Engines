@@ -10,7 +10,6 @@ using System.Linq;
 using Content.Goobstation.Shared.Devil;
 using Content.Server.Body.Components;
 using Content.Shared._Shitmed.Body.Events;
-using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 using Robust.Shared.Random;
@@ -39,24 +38,31 @@ public sealed partial class DevilContractSystem
     {
         if (!TryComp<BodyComponent>(args.Target, out var body))
             return;
+        //
+        // var hands = _bodySystem.GetBodyChildrenOfType(args.Target, BodyPartType.Hand, body).ToList();
+        //
+        // if (hands.Count <= 0)
+        //     return;
+        //
+        // var pick = _random.Pick(hands);
 
-        var hands = _bodySystem.GetBodyChildrenOfType(args.Target, BodyPartType.Hand, body).ToList();
+        // if (!TryComp<WoundableComponent>(pick.Id, out var woundable)
+        //     || !woundable.ParentWoundable.HasValue)
+        //     return;
+        //
+        // _wounds.AmputateWoundableSafely(woundable.ParentWoundable.Value, pick.Id, woundable);
+        // QueueDel(pick.Id);
+        //
+        // Dirty(args.Target, body);
+        // _sawmill.Debug($"Removed part {ToPrettyString(pick.Id)} from {ToPrettyString(args.Target)}");
+        // QueueDel(pick.Id);
 
-        if (hands.Count <= 0)
-            return;
-
-        var pick = _random.Pick(hands);
-
-        if (!TryComp<WoundableComponent>(pick.Id, out var woundable)
-            || !woundable.ParentWoundable.HasValue)
-            return;
-
-        _wounds.AmputateWoundableSafely(woundable.ParentWoundable.Value, pick.Id, woundable);
-        QueueDel(pick.Id);
-
-        Dirty(args.Target, body);
-        _sawmill.Debug($"Removed part {ToPrettyString(pick.Id)} from {ToPrettyString(args.Target)}");
-        QueueDel(pick.Id);
+        var baseXform = Transform(args.Target);
+        foreach (var part in _bodySystem.GetBodyChildrenOfType(args.Target, BodyPartType.Hand, body))
+        {
+            _transform.AttachToGridOrMap(part.Id);
+            break;
+        }
     }
 
     private void OnLoseLeg(DevilContractLoseLegEvent args)
@@ -64,22 +70,28 @@ public sealed partial class DevilContractSystem
         if (!TryComp<BodyComponent>(args.Target, out var body))
             return;
 
-        var legs = _bodySystem.GetBodyChildrenOfType(args.Target, BodyPartType.Leg, body).ToList();
-
-        if (legs.Count <= 0)
-            return;
-
-        var pick = _random.Pick(legs);
-
-        if (!TryComp<WoundableComponent>(pick.Id, out var woundable)
-            || !woundable.ParentWoundable.HasValue)
-            return;
-
-        _wounds.AmputateWoundableSafely(woundable.ParentWoundable.Value, pick.Id, woundable);
-
-        Dirty(args.Target, body);
-        _sawmill.Debug($"Removed part {ToPrettyString(pick.Id)} from {ToPrettyString(args.Target)}");
-        QueueDel(pick.Id);
+        // var legs = _bodySystem.GetBodyChildrenOfType(args.Target, BodyPartType.Leg, body).ToList();
+        //
+        // if (legs.Count <= 0)
+        //     return;
+        //
+        // var pick = _random.Pick(legs);
+        //
+        // if (!TryComp<WoundableComponent>(pick.Id, out var woundable)
+        //     || !woundable.ParentWoundable.HasValue)
+        //     return;
+        //
+        // _wounds.AmputateWoundableSafely(woundable.ParentWoundable.Value, pick.Id, woundable);
+        //
+        // Dirty(args.Target, body);
+        // _sawmill.Debug($"Removed part {ToPrettyString(pick.Id)} from {ToPrettyString(args.Target)}");
+        // QueueDel(pick.Id);
+        var baseXform = Transform(args.Target);
+        foreach (var part in _bodySystem.GetBodyChildrenOfType(args.Target, BodyPartType.Leg, body))
+        {
+            _transform.AttachToGridOrMap(part.Id);
+            break;
+        }
     }
 
     private void OnLoseOrgan(DevilContractLoseOrganEvent args)

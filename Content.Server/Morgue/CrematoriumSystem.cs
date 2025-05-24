@@ -1,3 +1,4 @@
+using Content.Goobstation.Shared.CrematorImmune;
 using Content.Server.GameTicking;
 using Content.Server.Morgue.Components;
 using Content.Server.Storage.Components;

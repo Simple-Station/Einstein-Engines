@@ -1,11 +1,12 @@
 - type: entity
-  parent: [BaseGuidebook, BaseMagicContraband]
+  parent: BaseItem # WD edit
   id: GuidebookCodexUmbra
   suffix: guidebook
   name: Codex Umbra
   description: An old book tightly wound in dark leather. It details various contracts and their effects.
   components:
   - type: Sprite # Change to a unique one
+    sprite: Objects/Misc/books.rsi
     layers:
     - state: paper
     - state: cover_base

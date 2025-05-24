@@ -6,5 +6,5 @@
   components:
   - type: Sprite
     state: lawyer
-  - type: SpeakOnTrigger
+#  - type: SpeakOnTrigger
     pack: FigurinesDevil

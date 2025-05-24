@@ -32,7 +32,7 @@
     objectives:
     - DevilContractObjective
   - type: AntagSelection
-    selectionTime: IntraPlayerSpawn
+    selectionTime: PostPlayerSpawn
     agentName: devil-roundend-name
     definitions:
     - prefRoles: [ Devil ]
@@ -42,6 +42,6 @@
       mindRoles:
       - DevilMindRole
       startingGear: DevilStartingGear
-  - type: Tag
-    tags:
-    - RoundstartAntag
+#  - type: Tag
+#    tags:
+#    - RoundstartAntag

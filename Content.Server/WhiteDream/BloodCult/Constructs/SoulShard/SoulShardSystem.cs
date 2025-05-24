@@ -1,4 +1,5 @@
-﻿using Content.Server.Bible.Components;
+﻿using Content.Goobstation.Shared.Bible;
+using Content.Server.Bible.Components;
 using Content.Server.Mind;
 using Content.Server.Popups;
 using Content.Server.Roles;

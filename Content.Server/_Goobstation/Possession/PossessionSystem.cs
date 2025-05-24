@@ -4,24 +4,23 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Common.Changeling;
 using Content.Goobstation.Shared.Bible;
 using Content.Goobstation.Shared.Devil;
 using Content.Goobstation.Shared.Possession;
 using Content.Goobstation.Shared.Religion;
 using Content.Server.Actions;
+using Content.Server.Bible.Components;
 using Content.Server.Polymorph.Components;
 using Content.Server.Polymorph.Systems;
 using Content.Server.Stunnable;
-using Content.Shared._Goobstation.Wizard.FadingTimedDespawn;
 using Content.Shared.Actions;
 using Content.Shared.Administration.Logs;
+using Content.Shared.Changeling;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Coordinates;
 using Content.Shared.Database;
 using Content.Shared.Examine;
 using Content.Shared.Ghost;
-using Content.Shared.Heretic;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Mind;
 using Content.Shared.Mindshield.Components;
@@ -198,12 +197,12 @@ public sealed partial class PossessionSystem : EntitySystem
         [
             (typeof(ChangelingComponent), "changeling"),
             (typeof(DevilComponent), "devil"),
-            (typeof(HereticComponent), "heretic"),
-            (typeof(GhoulComponent), "ghoul"),
+            // (typeof(HereticComponent), "heretic"),
+            // (typeof(GhoulComponent), "ghoul"),
             (typeof(GhostComponent), "ghost"),
-            (typeof(SpectralComponent), "ghost"),
+            // (typeof(SpectralComponent), "ghost"),
             (typeof(TimedDespawnComponent), "temporary"),
-            (typeof(FadingTimedDespawnComponent), "temporary"),
+            // (typeof(FadingTimedDespawnComponent), "temporary"),
         ];
 
         foreach (var (item1, item2) in blockers)

@@ -41,7 +41,7 @@
   addedComponents:
   - type: BreathingImmunity
   - type: PressureImmunity
-  - type: SpecialLowTempImmunity
+#  - type: SpecialLowTempImmunity
 
 - type: clause
   id: fearofdeath
@@ -82,7 +82,7 @@
   id: pain
   clauseWeight: -5
   addedComponents:
-  - type: PainNumbness
+#  - type: PainNumbness
   - type: SlowOnDamage
     speedModifierThresholds:
       60: 1
@@ -164,11 +164,11 @@
   addedComponents:
   - type: LegsParalyzed
 
-- type: clause
-  id: innerpeace
-  clauseWeight: 5
-  addedComponents:
-  - type: TileMovement
+#- type: clause
+#  id: innerpeace
+#  clauseWeight: 5
+#  addedComponents:
+#  - type: TileMovement
 
 - type: clause
   id: death
