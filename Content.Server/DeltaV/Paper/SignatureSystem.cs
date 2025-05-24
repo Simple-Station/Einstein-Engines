@@ -1,9 +1,9 @@
+using Content.Goobstation.Common.Paper;
+using Content.Goobstation.Shared.Devil;
 using Content.Server.Access.Systems;
 using Content.Server.Paper;
 using Content.Server.Popups;
 using Content.Shared.Paper;
-using Content.Goobstation.Common.Paper;
-using Content.Goobstation.Shared.Devil;
 using Content.Shared.Popups;
 using Content.Shared.Tag;
 using Content.Shared.Verbs;

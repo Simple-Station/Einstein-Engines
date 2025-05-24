@@ -68,14 +68,14 @@ public sealed partial class CheatDeathSystem : EntitySystem
             return;
         }
 
-        // If the entity is out of revives, or if they are unrevivable, return.
-        if (ent.Comp.ReviveAmount == 0 || HasComp<UnrevivableComponent>(ent))
-        {
-            var failPopup = Loc.GetString("action-cheat-death-fail-no-lives");
-            _popupSystem.PopupEntity(failPopup, ent, PopupType.LargeCaution);
-
-            return;
-        }
+        // // If the entity is out of revives, or if they are unrevivable, return.
+        // if (ent.Comp.ReviveAmount == 0 || HasComp<UnrevivableComponent>(ent))
+        // {
+        //     var failPopup = Loc.GetString("action-cheat-death-fail-no-lives");
+        //     _popupSystem.PopupEntity(failPopup, ent, PopupType.LargeCaution);
+        //
+        //     return;
+        // }
 
         // Show popup
         if (_mobStateSystem.IsDead(ent) && !ent.Comp.CanCheatStanding)

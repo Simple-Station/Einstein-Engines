@@ -2,6 +2,7 @@ using Content.Goobstation.Shared.Devil;
 using Content.Goobstation.Shared.Devil.Contract;
 using Content.Goobstation.Shared.Exorcism;
 using Content.Goobstation.Shared.Religion;
+using Content.Server.Bible.Components;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;

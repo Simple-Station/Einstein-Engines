@@ -6,7 +6,6 @@
 
 using Content.Goobstation.Shared.Bible;
 using Content.Shared.Damage;
-using Content.Shared.Heretic;
 using Content.Shared.Interaction;
 using Content.Shared.Timing;
 using Robust.Shared.Physics.Events;
@@ -24,24 +23,24 @@ public sealed partial class SharedWeakToHolySystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<WeakToHolyComponent, MapInitEvent>(OnInit);
+        // SubscribeLocalEvent<WeakToHolyComponent, MapInitEvent>(OnInit);
         SubscribeLocalEvent<WeakToHolyComponent, AfterInteractUsingEvent>(AfterBibleUse);
-        SubscribeLocalEvent<HereticRitualRuneComponent, StartCollideEvent>(OnCollide);
-        SubscribeLocalEvent<HereticRitualRuneComponent, EndCollideEvent>(OnCollideEnd);
+        // SubscribeLocalEvent<HereticRitualRuneComponent, StartCollideEvent>(OnCollide);
+        // SubscribeLocalEvent<HereticRitualRuneComponent, EndCollideEvent>(OnCollideEnd);
     }
-    private void OnInit(EntityUid uid, WeakToHolyComponent comp, ref MapInitEvent args)
-    {
-        // Only change to "BiologicalMetaphysical" if the original damage container was "Biological"
-        if (TryComp<DamageableComponent>(uid, out var damageable) && damageable.DamageContainerID == comp.BiologicalContainerId)
-            _damageableSystem.ChangeDamageContainer(uid, comp.MetaphysicalContainerId);
-    }
+    // private void OnInit(EntityUid uid, WeakToHolyComponent comp, ref MapInitEvent args)
+    // {
+    //     // Only change to "BiologicalMetaphysical" if the original damage container was "Biological"
+    //     if (TryComp<DamageableComponent>(uid, out var damageable) && damageable.DamageContainerID == comp.BiologicalContainerId)
+    //         _damageableSystem.ChangeDamageContainer(uid, comp.MetaphysicalContainerId);
+    // }
 
     private void AfterBibleUse(Entity<WeakToHolyComponent> ent, ref AfterInteractUsingEvent args)
     {
         if (!TryComp<BibleComponent>(args.Used, out var bibleComp)
             || !TryComp(args.Used, out UseDelayComponent? useDelay)
             || _delay.IsDelayed((args.Used, useDelay))
-            || !HasComp<BibleUserComponent>(args.User)
+            // || !HasComp<BibleUserComponent>(args.User)
             || args.Target is not { } target)
             return;
 
@@ -49,21 +48,21 @@ public sealed partial class SharedWeakToHolySystem : EntitySystem
     }
 
     // Passively heal
-    private void OnCollide(Entity<HereticRitualRuneComponent> ent, ref StartCollideEvent args)
-    {
-        if (!TryComp<WeakToHolyComponent>(args.OtherEntity, out var weak))
-            return;
-
-        weak.IsColliding = true;
-    }
-
-    private void OnCollideEnd(Entity<HereticRitualRuneComponent> ent, ref EndCollideEvent args)
-    {
-        if (!TryComp<WeakToHolyComponent>(args.OtherEntity, out var weak))
-            return;
-
-        weak.IsColliding = false;
-    }
+    // private void OnCollide(Entity<HereticRitualRuneComponent> ent, ref StartCollideEvent args)
+    // {
+    //     if (!TryComp<WeakToHolyComponent>(args.OtherEntity, out var weak))
+    //         return;
+    //
+    //     weak.IsColliding = true;
+    // }
+    //
+    // private void OnCollideEnd(Entity<HereticRitualRuneComponent> ent, ref EndCollideEvent args)
+    // {
+    //     if (!TryComp<WeakToHolyComponent>(args.OtherEntity, out var weak))
+    //         return;
+    //
+    //     weak.IsColliding = false;
+    // }
 
     public override void Update(float frameTime)
     {

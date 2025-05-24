@@ -4,15 +4,13 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Common.Changeling;
 using Content.Goobstation.Shared.Religion;
 using Content.Server.Stunnable;
-using Content.Shared._Goobstation.Wizard.FadingTimedDespawn;
+using Content.Shared.Changeling;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Coordinates;
 using Content.Shared.Examine;
 using Content.Shared.Ghost;
-using Content.Shared.Heretic;
 using Content.Shared.Mind;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Mobs.Systems;
@@ -143,12 +141,8 @@ public sealed partial class PossessionSystem : EntitySystem
         List<(Type, string)> blockers =
         [
             (typeof(ChangelingComponent), "changeling"),
-            (typeof(HereticComponent), "heretic"),
-            (typeof(GhoulComponent), "ghoul"),
             (typeof(GhostComponent), "ghost"),
-            (typeof(SpectralComponent), "ghost"),
             (typeof(TimedDespawnComponent), "temporary"),
-            (typeof(FadingTimedDespawnComponent), "temporary"),
         ];
 
         foreach (var (item1, item2) in blockers)

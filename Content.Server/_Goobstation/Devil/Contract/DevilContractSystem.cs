@@ -12,7 +12,8 @@ using Content.Goobstation.Shared.Devil;
 using Content.Goobstation.Shared.Devil.Condemned;
 using Content.Goobstation.Shared.Devil.Contract;
 using Content.Server.Body.Systems;
-using Content.Shared._EinsteinEngines.Silicon.Components;
+using Content.Server.Paper;
+using Content.Shared.Silicon.Components;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 using Content.Shared.Damage;
@@ -192,7 +193,7 @@ public sealed partial class DevilContractSystem : EntitySystem
     {
         // No funny business with a cybersun pen!
         if (TryComp<PaperComponent>(args.Paper, out var paper))
-            paper.EditingDisabled = true;
+            paper.CanEdit = false;
 
         comp.Signer = args.User;
         comp.IsVictimSigned = true;

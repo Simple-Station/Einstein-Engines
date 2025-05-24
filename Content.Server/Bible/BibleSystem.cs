@@ -1,3 +1,4 @@
+using Content.Goobstation.Shared.Bible;
 using Content.Server.Bible.Components;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Ghost.Roles.Events;
