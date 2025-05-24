@@ -13,4 +13,4 @@
     icon:
       sprite: Actions/Implants/implants.rsi
       state: explosive
-    event: !type:ActivateImplantEvent
+    event: !type:CortexBombActivatedEvent
