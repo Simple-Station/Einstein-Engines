@@ -86,6 +86,7 @@
   name: mantis blade
   description: placeholder item
   components:
+  - type: Heart
   - type: Sprite
     sprite: _Crescent/Objects/Misc/cybernetics.rsi
     layers:
@@ -93,12 +94,4 @@
   - type: Organ
     slotId: heart
     onAdd:
-    - type: SubdermalArmor
-      modifiers:
-        coefficients:
-          Blunt: 0.8
-          Slash: 0.8
-          Piercing: 0.8
-          Heat: 0.8
-          Caustic: 0.8
-          Radiation: 0.8
+    - type: MantisBlade

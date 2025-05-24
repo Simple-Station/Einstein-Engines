@@ -14,3 +14,20 @@
       sprite: Actions/Implants/implants.rsi
       state: explosive
     event: !type:CortexBombActivatedEvent
+
+- type: entity
+  parent: BaseSuicideAction
+  id: ActionToggleMantisBlade
+  name: Toggle Mantis Blade
+  description: Turns your left arm into a weapon.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    checkCanInteract: false
+    checkConsciousness: false
+    itemIconStyle: BigAction
+    priority: -20
+    icon:
+      sprite: Actions/Implants/implants.rsi
+      state: explosive
+    event: !type:MantisBladeToggledEvent
