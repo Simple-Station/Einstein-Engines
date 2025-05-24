@@ -15,7 +15,7 @@ public sealed partial class EmptyAllContainersBehaviour : IThresholdBehavior
         if (!entityManager.EntitySysManager.TryGetEntitySystem<ContainerSystem>(out var containerSystem)
             || !entityManager.HasComponent<ContainerManagerComponent>(owner))
             return;
-
+            
         foreach (var container in containerSystem.GetAllContainers(owner))
             destructibleSystem.ContainerSystem.EmptyContainer(container, true, entityManager.GetComponent<TransformComponent>(owner).Coordinates);
     }
