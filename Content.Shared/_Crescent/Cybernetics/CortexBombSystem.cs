@@ -23,7 +23,7 @@ namespace Content.Shared.Cybernetics
 
         private void OnStartup(EntityUid uid, CortexBombComponent component, ComponentStartup args)
         {
-            component.Action = _actions.AddAction(uid, component.ActionPrototype);
+            _actionsSystem.AddAction(uid, ref component.Action, component.ActionPrototype, uid);
         }
 
         private void OnShutdown(EntityUid uid, CortexBombComponent component, ComponentShutdown args)
