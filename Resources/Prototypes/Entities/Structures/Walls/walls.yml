@@ -873,9 +873,6 @@
   - type: Icon
     sprite: Structures/Walls/shuttle_diagonal.rsi
     state: state0
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: StructuralMetallic
   - type: Physics
     bodyType: Static
   - type: Pullable
