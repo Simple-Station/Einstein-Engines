@@ -9,11 +9,18 @@ namespace Content.Shared.Preferences
     public sealed class GameSettings
     {
         private int _maxCharacterSlots;
+        private int _maxCharacterJobs;
 
         public int MaxCharacterSlots
         {
             get => _maxCharacterSlots;
             set => _maxCharacterSlots = value;
+        }
+
+        public int MaxCharacterJobs
+        {
+            get => _maxCharacterJobs;
+            set => _maxCharacterJobs = value;
         }
     }
 }

@@ -710,7 +710,7 @@ namespace Content.Server.Administration.Systems
                 && bwoinkParams.SenderAdmin is not null)
             {
                 var prefs = _preferencesManager.GetPreferences(bwoinkParams.SenderId);
-                adminColor = prefs.AdminOOCColor.ToHex();
+                adminColor = prefs.Item1.AdminOOCColor.ToHex();
             }
 
             // If role color is enabled and exists, use it, otherwise use the discord reply color

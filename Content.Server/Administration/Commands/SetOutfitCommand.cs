@@ -92,7 +92,7 @@ namespace Content.Server.Administration.Commands
                 var userId = actorComponent.PlayerSession.UserId;
                 var preferencesManager = IoCManager.Resolve<IServerPreferencesManager>();
                 var prefs = preferencesManager.GetPreferences(userId);
-                profile = prefs.SelectedCharacter as HumanoidCharacterProfile;
+                profile = prefs.Item1.SelectedCharacter as HumanoidCharacterProfile;
 
                 if (profile != null)
                     startingGear = IoCManager.Resolve<IEntityManager>().System<SharedStationSpawningSystem>().ApplySubGear(startingGear, profile);

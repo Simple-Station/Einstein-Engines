@@ -58,11 +58,11 @@ namespace Content.IntegrationTests.Tests.Lobby
                 Assert.That(clientCharacters[1].MemberwiseEquals(profile));
             });
 
-            await PoolManager.WaitUntil(server, () => serverPrefManager.GetPreferences(clientNetId).Characters.Count == 2, maxTicks: 60);
+            await PoolManager.WaitUntil(server, () => serverPrefManager.GetPreferences(clientNetId).Item1.Characters.Count == 2, maxTicks: 60);
 
             await server.WaitAssertion(() =>
             {
-                var serverCharacters = serverPrefManager.GetPreferences(clientNetId).Characters;
+                var serverCharacters = serverPrefManager.GetPreferences(clientNetId).Item1.Characters;
 
                 Assert.That(serverCharacters, Has.Count.EqualTo(2));
                 Assert.That(serverCharacters[1].MemberwiseEquals(profile));
@@ -76,11 +76,11 @@ namespace Content.IntegrationTests.Tests.Lobby
                 Assert.That(clientCharacters, Is.EqualTo(1));
             });
 
-            await PoolManager.WaitUntil(server, () => serverPrefManager.GetPreferences(clientNetId).Characters.Count == 1, maxTicks: 60);
+            await PoolManager.WaitUntil(server, () => serverPrefManager.GetPreferences(clientNetId).Item1.Characters.Count == 1, maxTicks: 60);
 
             await server.WaitAssertion(() =>
             {
-                var serverCharacters = serverPrefManager.GetPreferences(clientNetId).Characters.Count;
+                var serverCharacters = serverPrefManager.GetPreferences(clientNetId).Item1.Characters.Count;
                 Assert.That(serverCharacters, Is.EqualTo(1));
             });
 
@@ -99,11 +99,11 @@ namespace Content.IntegrationTests.Tests.Lobby
                 Assert.That(clientCharacters[1].MemberwiseEquals(profile));
             });
 
-            await PoolManager.WaitUntil(server, () => serverPrefManager.GetPreferences(clientNetId).Characters.Count == 2, maxTicks: 60);
+            await PoolManager.WaitUntil(server, () => serverPrefManager.GetPreferences(clientNetId).Item1.Characters.Count == 2, maxTicks: 60);
 
             await server.WaitAssertion(() =>
             {
-                var serverCharacters = serverPrefManager.GetPreferences(clientNetId).Characters;
+                var serverCharacters = serverPrefManager.GetPreferences(clientNetId).Item1.Characters;
 
                 Assert.That(serverCharacters, Has.Count.EqualTo(2));
                 Assert.That(serverCharacters[1].MemberwiseEquals(profile));

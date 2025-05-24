@@ -33,10 +33,13 @@ namespace Content.Server.Preferences.Managers
         // Cache player prefs on the server so we don't need as much async hell related to them.
         private readonly Dictionary<NetUserId, PlayerPrefData> _cachedPlayerPrefs =
             new();
+        private readonly Dictionary<NetUserId, JobPrefData> _cachedJobPrefs =
+            new();
 
         private ISawmill _sawmill = default!;
 
         private int MaxCharacterSlots => _cfg.GetCVar(CCVars.GameMaxCharacterSlots);
+        private int MaxCharacterJobs => _cfg.GetCVar(CCVars.GameMaxJobs);
 
         public void Init()
         {
@@ -44,6 +47,7 @@ namespace Content.Server.Preferences.Managers
             _netManager.RegisterNetMessage<MsgSelectCharacter>(HandleSelectCharacterMessage);
             _netManager.RegisterNetMessage<MsgUpdateCharacter>(HandleUpdateCharacterMessage);
             _netManager.RegisterNetMessage<MsgDeleteCharacter>(HandleDeleteCharacterMessage);
+            _netManager.RegisterNetMessage<MsgUpdateJobs>(HandleUpdateJobsMessage);
             _sawmill = _log.GetSawmill("prefs");
         }
 
@@ -77,6 +81,14 @@ namespace Content.Server.Preferences.Managers
             {
                 await _db.SaveSelectedCharacterIndexAsync(message.MsgChannel.UserId, message.SelectedCharacterIndex);
             }
+        }
+
+        private async void HandleUpdateJobsMessage(MsgUpdateJobs message)
+        {
+            var userId = message.MsgChannel.UserId;
+            var jobDict = message.JobPreferences;
+            if (ShouldStorePrefs(_playerManager.GetSessionById(userId).Channel.AuthType))
+                await _db.SaveJobPreferencesAsync(userId, jobDict);
         }
 
         private async void HandleUpdateCharacterMessage(MsgUpdateCharacter message)
@@ -184,21 +196,30 @@ namespace Content.Server.Preferences.Managers
                         new[] { new KeyValuePair<int, ICharacterProfile>(0, HumanoidCharacterProfile.Random()) },
                         0, Color.Transparent)
                 };
+                var jobsData = new JobPrefData
+                {
+                    PrefsLoaded = true,
+                    Prefs = new JobPreferences()
+                };
 
                 _cachedPlayerPrefs[session.UserId] = prefsData;
+                _cachedJobPrefs[session.UserId] = jobsData;
             }
             else
             {
                 var prefsData = new PlayerPrefData();
+                var jobsData = new JobPrefData();
                 var loadTask = LoadPrefs();
                 _cachedPlayerPrefs[session.UserId] = prefsData;
+                _cachedJobPrefs[session.UserId] = jobsData;
 
                 await loadTask;
 
                 async Task LoadPrefs()
                 {
                     var prefs = await GetOrCreatePreferencesAsync(session.UserId, cancel);
-                    prefsData.Prefs = prefs;
+                    prefsData.Prefs = prefs.Item1;
+                    jobsData.Prefs = prefs.Item2;
                 }
             }
         }
@@ -209,7 +230,9 @@ namespace Content.Server.Preferences.Managers
             // Sanitizing preferences requires play time info due to loadouts.
             // And play time info is loaded concurrently from the DB with preferences.
             var prefsData = _cachedPlayerPrefs[session.UserId];
+            var jobsData = _cachedJobPrefs[session.UserId];
             DebugTools.Assert(prefsData.Prefs != null);
+            DebugTools.Assert(jobsData.Prefs != null);
             prefsData.Prefs = SanitizePreferences(session, prefsData.Prefs, _dependencies);
 
             prefsData.PrefsLoaded = true;
@@ -218,8 +241,10 @@ namespace Content.Server.Preferences.Managers
             msg.Preferences = prefsData.Prefs;
             msg.Settings = new GameSettings
             {
-                MaxCharacterSlots = MaxCharacterSlots
+                MaxCharacterSlots = MaxCharacterSlots,
+                MaxCharacterJobs = MaxCharacterJobs
             };
+            msg.Jobs = jobsData.Prefs;
             _netManager.ServerSendMessage(msg, session.Channel);
         }
 
@@ -237,11 +262,12 @@ namespace Content.Server.Preferences.Managers
         public void OnClientDisconnected(ICommonSession session)
         {
             _cachedPlayerPrefs.Remove(session.UserId);
+            _cachedJobPrefs.Remove(session.UserId);
         }
 
         public bool HavePreferencesLoaded(ICommonSession session)
         {
-            return _cachedPlayerPrefs.ContainsKey(session.UserId);
+            return (_cachedPlayerPrefs.ContainsKey(session.UserId) && _cachedJobPrefs.ContainsKey(session.UserId));
         }
 
         /// <summary>
@@ -251,15 +277,17 @@ namespace Content.Server.Preferences.Managers
         /// <param name="playerPreferences">The user preferences if true, otherwise null</param>
         /// <returns>If preferences are not null</returns>
         public bool TryGetCachedPreferences(NetUserId userId,
-            [NotNullWhen(true)] out PlayerPreferences? playerPreferences)
+            [NotNullWhen(true)] out PlayerPreferences? playerPreferences, [NotNullWhen(true)] out JobPreferences? jobPreferences)
         {
-            if (_cachedPlayerPrefs.TryGetValue(userId, out var prefs))
+            if (_cachedPlayerPrefs.TryGetValue(userId, out var prefs) && _cachedJobPrefs.TryGetValue(userId, out var jobs))
             {
                 playerPreferences = prefs.Prefs;
-                return prefs.Prefs != null;
+                jobPreferences = jobs.Prefs;
+                return (prefs.Prefs != null && jobs.Prefs != null);
             }
 
             playerPreferences = null;
+            jobPreferences = null;
             return false;
         }
 
@@ -267,40 +295,42 @@ namespace Content.Server.Preferences.Managers
         /// Retrieves preferences for the given username from storage.
         /// Creates and saves default preferences if they are not found, then returns them.
         /// </summary>
-        public PlayerPreferences GetPreferences(NetUserId userId)
+        public (PlayerPreferences, JobPreferences) GetPreferences(NetUserId userId)
         {
             var prefs = _cachedPlayerPrefs[userId].Prefs;
-            if (prefs == null)
+            var jobs = _cachedJobPrefs[userId].Prefs;
+            if (prefs == null || jobs == null)
             {
                 throw new InvalidOperationException("Preferences for this player have not loaded yet.");
             }
 
-            return prefs;
+            return (prefs, jobs);
         }
 
         /// <summary>
         /// Retrieves preferences for the given username from storage or returns null.
         /// Creates and saves default preferences if they are not found, then returns them.
         /// </summary>
-        public PlayerPreferences? GetPreferencesOrNull(NetUserId? userId)
+        public (PlayerPreferences?, JobPreferences?) GetPreferencesOrNull(NetUserId? userId)
         {
             if (userId == null)
-                return null;
+                return (null, null);
 
-            if (_cachedPlayerPrefs.TryGetValue(userId.Value, out var pref))
-                return pref.Prefs;
-            return null;
+            if (_cachedPlayerPrefs.TryGetValue(userId.Value, out var pref) && _cachedJobPrefs.TryGetValue(userId.Value, out var jobPref))
+                return (pref.Prefs, jobPref.Prefs);
+            return (null, null);
         }
 
-        private async Task<PlayerPreferences> GetOrCreatePreferencesAsync(NetUserId userId, CancellationToken cancel)
+        private async Task<(PlayerPreferences, JobPreferences)> GetOrCreatePreferencesAsync(NetUserId userId, CancellationToken cancel)
         {
             var prefs = await _db.GetPlayerPreferencesAsync(userId, cancel);
-            if (prefs is null)
+            var jobs = await _db.GetJobPreferencesAsync(userId, cancel);
+            if (prefs is null || jobs is null)
             {
                 return await _db.InitPrefsAsync(userId, HumanoidCharacterProfile.Random(), cancel);
             }
 
-            return prefs;
+            return (prefs, jobs);
         }
 
         private PlayerPreferences SanitizePreferences(ICommonSession session, PlayerPreferences prefs,
@@ -334,6 +364,12 @@ namespace Content.Server.Preferences.Managers
         {
             public bool PrefsLoaded;
             public PlayerPreferences? Prefs;
+        }
+
+        private sealed class JobPrefData
+        {
+            public bool PrefsLoaded;
+            public JobPreferences? Prefs;
         }
 
         void IPostInjectInit.PostInject()

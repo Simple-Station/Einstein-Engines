@@ -29,7 +29,14 @@
             </PanelContainer>
             <BoxContainer Orientation="Horizontal" VerticalExpand="True" SeparationOverride="0">
                 <ScrollContainer MinSize="325 0" Margin="5 5 0 0">
-                    <BoxContainer Name="Characters" Orientation="Vertical" />
+                    <BoxContainer Name="Characters" Orientation="Vertical"/>
+                    <Button Name="CustomizeButton"
+                            Access="Public"
+                            Text="{Loc 'character-setup-gui-character-setup-customize-button'}"
+                            VerticalExpand="False"
+                            VerticalAlignment="Bottom"
+                            MinHeight="50"
+                            ToggleMode="True"/>
                 </ScrollContainer>
                 <PanelContainer MinSize="2 0">
                     <PanelContainer.PanelOverride>

@@ -1,4 +1,4 @@
-﻿using Content.Shared.Roles;
+using Content.Shared.Roles;
 using Robust.Shared.Configuration;
 
 namespace Content.Shared.CCVar;
@@ -106,6 +106,12 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool>
         GameRoleWhitelist = CVarDef.Create("game.role_whitelist", true, CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    /// Maximum amount of (non-passenger) roles that one character can play as.
+    /// </summary>
+    public static readonly CVarDef<int>
+        GameMaxJobs = CVarDef.Create("game.maxjobs", 3, CVar.ARCHIVE | CVar.SERVERONLY);
 
 
     /// <summary>

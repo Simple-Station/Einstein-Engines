@@ -13,9 +13,9 @@ using Robust.Shared.Utility;
 namespace Content.Client.Lobby
 {
     /// <summary>
-    ///     Receives <see cref="PlayerPreferences" /> and <see cref="GameSettings" /> from the server during the initial
+    ///     Receives <see cref="PlayerPreferences"/>, <see cref="JobPreferences"/> and <see cref="GameSettings"/> from the server during the initial
     ///     connection.
-    ///     Stores preferences on the server through <see cref="SelectCharacter" /> and <see cref="UpdateCharacter" />.
+    ///     Stores preferences on the server through <see cref="SelectCharacter"/> and <see cref="UpdateCharacter"/>.
     /// </summary>
     public sealed class ClientPreferencesManager : IClientPreferencesManager
     {
@@ -27,6 +27,7 @@ namespace Content.Client.Lobby
 
         public GameSettings Settings { get; private set; } = default!;
         public PlayerPreferences Preferences { get; private set; } = default!;
+        public JobPreferences Jobs { get; private set; } = default!;
 
         public void Initialize()
         {
@@ -34,6 +35,7 @@ namespace Content.Client.Lobby
             _netManager.RegisterNetMessage<MsgUpdateCharacter>();
             _netManager.RegisterNetMessage<MsgSelectCharacter>();
             _netManager.RegisterNetMessage<MsgDeleteCharacter>();
+            _netManager.RegisterNetMessage<MsgUpdateJobs>();
 
             _baseClient.RunLevelChanged += BaseClientOnRunLevelChanged;
         }
@@ -44,6 +46,7 @@ namespace Content.Client.Lobby
             {
                 Settings = default!;
                 Preferences = default!;
+                Jobs = default!;
             }
         }
 
@@ -111,10 +114,23 @@ namespace Content.Client.Lobby
             _netManager.ClientSendMessage(msg);
         }
 
+        public void SaveJobs(JobPreferences preferences)
+        {
+            // Should be similar to WithJobPriority
+            var jobs = new Dictionary<string, (int, JobPriority)>();
+            Jobs = new JobPreferences(jobs);
+            var msg = new MsgUpdateJobs
+            {
+                JobPreferences = preferences
+            };
+            _netManager.ClientSendMessage(msg);
+        }
+
         private void HandlePreferencesAndSettings(MsgPreferencesAndSettings message)
         {
             Preferences = message.Preferences;
             Settings = message.Settings;
+            Jobs = message.Jobs;
 
             OnServerDataLoaded?.Invoke();
         }

@@ -598,10 +598,18 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("INTEGER")
                         .HasColumnName("job_id");
 
+                    b.Property<int>("AssignedCharSlot")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("assigned_char_slot");
+
                     b.Property<string>("JobName")
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasColumnName("job_name");
+
+                    b.Property<int?>("PreferenceId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("preference_id");
 
                     b.Property<int>("Priority")
                         .HasColumnType("INTEGER")
@@ -614,7 +622,11 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.HasKey("Id")
                         .HasName("PK_job");
 
-                    b.HasIndex("ProfileId");
+                    b.HasIndex("PreferenceId")
+                        .HasDatabaseName("IX_job_preference_id");
+
+                    b.HasIndex("ProfileId")
+                        .HasDatabaseName("IX_job_profile_id");
 
                     b.HasIndex("ProfileId", "JobName")
                         .IsUnique();
@@ -1599,6 +1611,11 @@ namespace Content.Server.Database.Migrations.Sqlite
 
             modelBuilder.Entity("Content.Server.Database.Job", b =>
                 {
+                    b.HasOne("Content.Server.Database.Preference", null)
+                        .WithMany("Jobs")
+                        .HasForeignKey("PreferenceId")
+                        .HasConstraintName("FK_job_preference_preference_id");
+
                     b.HasOne("Content.Server.Database.Profile", "Profile")
                         .WithMany("Jobs")
                         .HasForeignKey("ProfileId")
@@ -1938,6 +1955,8 @@ namespace Content.Server.Database.Migrations.Sqlite
 
             modelBuilder.Entity("Content.Server.Database.Preference", b =>
                 {
+                    b.Navigation("Jobs");
+
                     b.Navigation("Profiles");
                 });
 

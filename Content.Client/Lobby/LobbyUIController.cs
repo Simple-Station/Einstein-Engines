@@ -11,6 +11,7 @@ using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
+using Content.Shared.Item;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.Traits;
@@ -27,6 +28,7 @@ using Robust.Shared.Utility;
 using static Content.Shared.Humanoid.SharedHumanoidAppearanceSystem;
 using CharacterSetupGui = Content.Client.Lobby.UI.CharacterSetupGui;
 using HumanoidProfileEditor = Content.Client.Lobby.UI.HumanoidProfileEditor;
+using JobPreferenceMenu = Content.Client.Lobby.UI.JobPreferenceMenu;
 
 namespace Content.Client.Lobby;
 
@@ -50,6 +52,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
     private CharacterSetupGui? _characterSetup;
     private HumanoidProfileEditor? _profileEditor;
+    private JobPreferenceMenu? _jobSelector;
 
     /// This is the character preview panel in the chat. This should only update if their character updates
     private LobbyCharacterPreviewPanel? PreviewPanel => GetLobbyPreview();
@@ -141,11 +144,13 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     public void ReloadCharacterSetup()
     {
         RefreshLobbyPreview();
-        var (characterGui, profileEditor) = EnsureGui();
+        var (characterGui, profileEditor, jobSelector) = EnsureGui();
         characterGui.ReloadCharacterPickers();
         profileEditor.SetProfile(
             (HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter,
             _preferencesManager.Preferences?.SelectedCharacterIndex);
+        jobSelector.Preferences = _preferencesManager.Jobs;
+        jobSelector.RefreshJobs();
     }
 
     /// Refreshes the character preview in the lobby chat
@@ -190,13 +195,14 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         ReloadCharacterSetup();
     }
 
-    private (CharacterSetupGui, HumanoidProfileEditor) EnsureGui()
+    private (CharacterSetupGui, HumanoidProfileEditor, JobPreferenceMenu) EnsureGui()
     {
-        if (_characterSetup != null && _profileEditor != null)
+        if (_characterSetup != null && _profileEditor != null && _jobSelector != null)
         {
             _characterSetup.Visible = true;
-            _profileEditor.Visible = true;
-            return (_characterSetup, _profileEditor);
+            _jobSelector.Visible = !_profileEditor.Visible;
+            _jobSelector.RefreshJobs();
+            return (_characterSetup, _profileEditor, _jobSelector);
         }
 
         _profileEditor = new HumanoidProfileEditor(
@@ -212,17 +218,31 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
         _profileEditor.OnOpenGuidebook += _guide.OpenHelp;
 
-        _characterSetup = new CharacterSetupGui(EntityManager, _prototypeManager, _resourceCache, _preferencesManager, _profileEditor);
+        _jobSelector = new JobPreferenceMenu(
+            _preferencesManager,
+            _configurationManager,
+            EntityManager,
+            _prototypeManager,
+            _jobRequirements,
+            _profileEditor);
+
+        _characterSetup = new CharacterSetupGui(EntityManager, _prototypeManager, _resourceCache, _preferencesManager, _profileEditor, _jobSelector);
 
         _characterSetup.CloseButton.OnPressed += _ =>
         {
             // Reset sliders etc.
             _profileEditor.SetProfile(null, null);
-            _profileEditor.Visible = false;
+            _characterSetup.CustomizeButton.Pressed = false;
             if (_stateManager.CurrentState is LobbyState lobbyGui)
             {
                 lobbyGui.SwitchState(LobbyGui.LobbyGuiState.Default);
             }
+        };
+
+        _characterSetup.CustomizeButton.OnToggled += _ =>
+        {
+            _profileEditor.Visible = !_profileEditor.Visible;
+            _jobSelector.Visible = !_profileEditor.Visible;
         };
 
         _profileEditor.Save += SaveProfile;
@@ -245,10 +265,16 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
                 _characterSetup?.ReloadCharacterPickers();
         };
 
+        _jobSelector.LoadoutButtonPressed += args =>
+        {
+            // Make an 'open with job' function.
+            //_profileEditor.
+        };
+
         if (_stateManager.CurrentState is LobbyState lobby)
             lobby.Lobby?.CharacterSetupState.AddChild(_characterSetup);
 
-        return (_characterSetup, _profileEditor);
+        return (_characterSetup, _profileEditor, _jobSelector);
     }
 
     #region Helpers
@@ -256,10 +282,12 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     /// Gets the highest priority job for the profile.
     public JobPrototype GetPreferredJob(HumanoidCharacterProfile profile)
     {
-        var highPriorityJob = profile.JobPriorities.FirstOrDefault(p => p.Value == JobPriority.High).Key;
+        // Is the high priority job's first item equal to the characterprofile?
+        // If yes, that is the job. If no, default to passenger.
+        // Preferences stuff.
+        var highPriorityJob = _jobSelector?.Preferences?.JobPriorities.FirstOrDefault(p => p.Value.Item2 == JobPriority.High && p.Value.Item1 == _preferencesManager.Preferences?.IndexOfCharacter(profile)).Key;
         return _prototypeManager.Index<JobPrototype>(highPriorityJob ?? SharedGameTicker.FallbackOverflowJob);
     }
-
     public void RemoveDummyClothes(EntityUid dummy)
     {
         if (!_inventory.TryGetSlots(dummy, out var slots))
@@ -300,7 +328,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     {
         _loadouts.ApplyCharacterLoadout(dummy, job, profile, _jobRequirements.GetRawPlayTimeTrackers(), _jobRequirements.IsWhitelisted(), out _);
     }
-
+    
     /// Loads the profile onto a dummy entity
     public EntityUid LoadProfileEntity(HumanoidCharacterProfile? humanoid, bool jobClothes, bool loadouts)
     {
@@ -320,11 +348,12 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
         if (humanoid != null)
         {
-            var job = GetPreferredJob(humanoid);
-            if (jobClothes)
-                GiveDummyJobClothes(dummyEnt, job, humanoid);
-            if (loadouts)
-                GiveDummyLoadout(dummyEnt, job, humanoid);
+            // Default to passenger or the displayed job.
+            //var job = GetPreferredJob(humanoid);
+            if (jobClothes) ;
+                //GiveDummyJobClothes(dummyEnt, job, humanoid);
+            if (loadouts) ;
+                //GiveDummyLoadout(dummyEnt, job, humanoid);
         }
 
         return dummyEnt;

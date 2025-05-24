@@ -1,4 +1,4 @@
-﻿#nullable enable
+#nullable enable
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -141,19 +141,19 @@ public sealed partial class TestPair
 
         var prefs = prefMan.GetPreferences(Client.User!.Value);
         // what even is the point of ICharacterProfile if we always cast it to HumanoidCharacterProfile to make it usable?
-        var profile = (HumanoidCharacterProfile) prefs.SelectedCharacter;
+        var profile = (HumanoidCharacterProfile) prefs.Item1.SelectedCharacter;
 
         Assert.That(profile.AntagPreferences.Any(preference => preference == id), Is.EqualTo(!value));
         var newProfile = profile.WithAntagPreference(id, value);
 
         await Server.WaitPost(() =>
         {
-            prefMan.SetProfile(Client.User.Value, prefs.SelectedCharacterIndex, newProfile).Wait();
+            prefMan.SetProfile(Client.User.Value, prefs.Item1.SelectedCharacterIndex, newProfile).Wait();
         });
 
         // And why the fuck does it always create a new preference and profile object instead of just reusing them?
         var newPrefs = prefMan.GetPreferences(Client.User.Value);
-        var newProf = (HumanoidCharacterProfile) newPrefs.SelectedCharacter;
+        var newProf = (HumanoidCharacterProfile) newPrefs.Item1.SelectedCharacter;
         Assert.That(newProf.AntagPreferences.Any(preference => preference == id), Is.EqualTo(value));
     }
 }

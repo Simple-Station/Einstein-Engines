@@ -31,7 +31,7 @@ namespace Content.Server.Database
         void Shutdown();
 
         #region Preferences
-        Task<PlayerPreferences> InitPrefsAsync(
+        Task<(PlayerPreferences, JobPreferences)> InitPrefsAsync(
             NetUserId userId,
             ICharacterProfile defaultProfile,
             CancellationToken cancel);
@@ -42,9 +42,12 @@ namespace Content.Server.Database
 
         Task SaveAdminOOCColorAsync(NetUserId userId, Color color);
 
+        Task SaveJobPreferencesAsync(NetUserId userId, JobPreferences jobs);
+
         // Single method for two operations for transaction.
         Task DeleteSlotAndSetSelectedIndex(NetUserId userId, int deleteSlot, int newSlot);
         Task<PlayerPreferences?> GetPlayerPreferencesAsync(NetUserId userId, CancellationToken cancel);
+        Task<JobPreferences?> GetJobPreferencesAsync(NetUserId userId, CancellationToken cancel);
         #endregion
 
         #region User Ids
@@ -427,7 +430,7 @@ namespace Content.Server.Database
             _db.Shutdown();
         }
 
-        public Task<PlayerPreferences> InitPrefsAsync(
+        public Task<(PlayerPreferences, JobPreferences)> InitPrefsAsync(
             NetUserId userId,
             ICharacterProfile defaultProfile,
             CancellationToken cancel)
@@ -460,10 +463,22 @@ namespace Content.Server.Database
             return RunDbCommand(() => _db.SaveAdminOOCColorAsync(userId, color));
         }
 
+        public Task SaveJobPreferencesAsync(NetUserId userId, JobPreferences jobs)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.SaveJobPreferencesAsync(userId, jobs));
+        }
+
         public Task<PlayerPreferences?> GetPlayerPreferencesAsync(NetUserId userId, CancellationToken cancel)
         {
             DbReadOpsMetric.Inc();
             return RunDbCommand(() => _db.GetPlayerPreferencesAsync(userId, cancel));
+        }
+
+        public Task<JobPreferences?> GetJobPreferencesAsync(NetUserId userId, CancellationToken cancel)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetJobPreferencesAsync(userId, cancel));
         }
 
         public Task AssignUserIdAsync(string name, NetUserId userId)

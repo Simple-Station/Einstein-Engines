@@ -11,6 +11,7 @@ namespace Content.Client.Lobby
 
         GameSettings? Settings { get; }
         PlayerPreferences? Preferences { get; }
+        JobPreferences? Jobs { get; }
         void Initialize();
         void SelectCharacter(ICharacterProfile profile);
         void SelectCharacter(int slot);
@@ -18,5 +19,6 @@ namespace Content.Client.Lobby
         void CreateCharacter(ICharacterProfile profile);
         void DeleteCharacter(ICharacterProfile profile);
         void DeleteCharacter(int slot);
+        void SaveJobs(JobPreferences jobs);
     }
 }
