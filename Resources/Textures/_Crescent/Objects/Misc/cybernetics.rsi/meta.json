@@ -8,7 +8,7 @@
     },
     "states": [
         {
-            "name": "bluespaceanchor"
+            "name": "bluespacehiggsdisplacer"
         },
         {
             "name": "paineditor"
@@ -20,7 +20,34 @@
             "name": "dermalarmor"
         },
         {
-            "name": "gorillaarms"
+            "name": "mantisblade"
+        },
+        {
+            "name": "shinoharaoptics"
+        },
+        {
+            "name": "interdyneoptics"
+        },
+        {
+            "name": "cherenzikovaccelerator"
+        },
+        {
+            "name": "translator"
+        },
+        {
+            "name": "gorilla_arms"
+        },
+        {
+            "name": "cortexbomb"
+        },
+        {
+            "name": "spaceworthylungs"
+        },
+        {
+            "name": "higgsanchor"
+        },
+        {
+            "name": "poisonpurger"
         }
     ]
 }
