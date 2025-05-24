@@ -81,6 +81,9 @@
         Blunt: 3
   - type: DamageOtherOnHit
     staminaCost: 12
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-inanimate
+    weight: 0.25
 
 - type: entity
   name: L6 SAW
