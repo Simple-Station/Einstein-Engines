@@ -7,6 +7,10 @@ ghost-role-information-freeagent-rules = You are a [color=yellow][bold]Free Agen
                                          You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
                                          You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
                                          You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+ghost-role-information-antagonist-rules = You are a [color=#d82000][bold]{role-type-solo-antagonist-name}[/bold][/color]. Your intentions are clear, and harmful to the station and its crew.
+                                          You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
+                                          You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
+                                          You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
 
 ghost-role-information-mouse-name = Mouse
 ghost-role-information-mouse-description = A hungry and mischievous mouse.

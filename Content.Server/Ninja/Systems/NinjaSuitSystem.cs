@@ -37,6 +37,15 @@ public sealed class NinjaSuitSystem : SharedNinjaSuitSystem
         base.NinjaEquipped(ent, user);
 
         _ninja.SetSuitPowerAlert(user);
+
+        _ninja.GetNinjaBattery(user.Owner, out var uid, out _);
+
+        if (uid is not {} batteryUid)
+            return;
+
+        var ev = new NinjaBatteryChangedEvent(batteryUid, ent.Owner);
+        RaiseLocalEvent(ent, ref ev);
+        RaiseLocalEvent(user, ref ev);
     }
 
     // TODO: if/when battery is in shared, put this there too
