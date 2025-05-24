@@ -23,12 +23,12 @@ namespace Content.Shared.Cybernetics
 
         private void OnStartup(EntityUid uid, CortexBombComponent component, ComponentStartup args)
         {
-            _actionsSystem.AddAction(uid, ref component.Action, component.ActionPrototype, uid);
+            _actions.AddAction(uid, ref component.Action, component.ActionPrototype);
         }
 
         private void OnShutdown(EntityUid uid, CortexBombComponent component, ComponentShutdown args)
         {
-            _actions.RemoveAction(uid, component.ActionPrototype);
+            _actions.RemoveAction(uid, component.Action);
         }
     }
 }
