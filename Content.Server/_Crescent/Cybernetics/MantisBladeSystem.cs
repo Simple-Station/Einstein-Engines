@@ -6,7 +6,10 @@ using Content.Shared.Coordinates;
 using Content.Shared.Gibbing.Systems;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory;
+using Robust.Server.Audio;
+using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 
 namespace Content.Shared.Cybernetics
 {
@@ -22,6 +25,8 @@ namespace Content.Shared.Cybernetics
         [Dependency] private readonly SharedHandsSystem _hands = default!;
         [Dependency] private readonly PopupSystem _popup = default!;
 
+        [Dependency] private readonly IRobustRandom _rand = default!;
+        [Dependency] private readonly AudioSystem _audio = default!;
 
         [Dependency] private readonly ExplosionSystem _explosion = default!;
 
@@ -38,7 +43,19 @@ namespace Content.Shared.Cybernetics
 
         private void OnMantisBladeToggled(EntityUid uid, MantisBladeComponent component, MantisBladeToggledEvent args)
         {
-            TryToggleItem(uid, component.SwordPrototype, component, out _);
+            if (!TryToggleItem(uid, component.SwordPrototype, component, out _))
+                return;
+
+            List<SoundSpecifier?> soundPool = new()
+            {
+                new SoundPathSpecifier("/Audio/Effects/gib1.ogg"),
+                new SoundPathSpecifier("/Audio/Effects/gib2.ogg"),
+                new SoundPathSpecifier("/Audio/Effects/gib3.ogg"),
+            };
+
+            var rand = _rand.Next(0, soundPool.Count - 1);
+            var sound = soundPool.ToArray()[rand];
+            _audio.PlayPvs(sound, uid, AudioParams.Default.WithVolume(-3f));
         }
 
         private void OnStartup(EntityUid uid, MantisBladeComponent component, ComponentStartup args)
