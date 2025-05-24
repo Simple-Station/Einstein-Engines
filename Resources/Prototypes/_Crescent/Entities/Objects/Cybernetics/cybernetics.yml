@@ -63,3 +63,35 @@
           Airloss: -0.15
           Toxin: -0.15
           Genetic: -0.15
+
+- type: entity
+  id: CyberneticsCortexBomb
+  parent: HullrotCyberneticBase
+  name: cortex bomb
+  description: placeholder item
+  components:
+  - type: Heart
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/cybernetics.rsi
+    layers:
+      - state: cortexbomb
+  - type: Organ
+    slotId: heart
+    onAdd:
+    - type: CortexBomb
+
+- type: entity
+  id: CyberneticsMantisBlade
+  parent: HullrotCyberneticBase
+  name: mantis blade
+  description: placeholder item
+  components:
+  - type: Heart
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/cybernetics.rsi
+    layers:
+      - state: mantisblade
+  - type: Organ
+    slotId: heart
+    onAdd:
+    - type: MantisBlade
