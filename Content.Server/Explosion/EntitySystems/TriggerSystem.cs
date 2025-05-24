@@ -120,24 +120,6 @@ namespace Content.Server.Explosion.EntitySystems
             }
         }
 
-        private void HandleShockTrigger(Entity<ShockOnTriggerComponent> shockOnTrigger, ref TriggerEvent args)
-        {
-            if (!_container.TryGetContainingContainer(shockOnTrigger.Owner, out var container))
-                return;
-
-            var containerEnt = container.Owner;
-            var curTime = _timing.CurTime;
-
-            if (curTime < shockOnTrigger.Comp.NextTrigger)
-            {
-                // The trigger's on cooldown.
-                return;
-            }
-
-            _electrocution.TryDoElectrocution(containerEnt, null, shockOnTrigger.Comp.Damage, shockOnTrigger.Comp.Duration, true);
-            shockOnTrigger.Comp.NextTrigger = curTime + shockOnTrigger.Comp.Cooldown;
-        }
-
         private void OnAnchorTrigger(EntityUid uid, AnchorOnTriggerComponent component, TriggerEvent args)
         {
             var xform = Transform(uid);
