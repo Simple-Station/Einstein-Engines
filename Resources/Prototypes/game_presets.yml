@@ -60,6 +60,7 @@
     - BloodCult
     - RampingStationEventScheduler
     - LavalandStormScheduler # Lavaland Change
+    - Shadowling
 
 - type: gamePreset
   id: Extended
