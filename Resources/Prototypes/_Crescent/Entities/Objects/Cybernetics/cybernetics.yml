@@ -74,7 +74,7 @@
   - type: Sprite
     sprite: _Crescent/Objects/Misc/cybernetics.rsi
     layers:
-      - state: bluespaceanchor
+      - state: cortexbomb
   - type: Organ
     slotId: heart
     onAdd:
@@ -83,13 +83,13 @@
 - type: entity
   id: CyberneticsMantisBlade
   parent: HullrotCyberneticBase
-  name: SHI KOURINDO-U dermal armor mesh
-  description: A surgical-grade plasteel mesh meant to be woven just under the inner dermis. Equipped with kinetic discharges that help spread harmful impacts along it's rolling plates. Developed by Shinohara Heavy Industries as part of it's MaxSec line.
+  name: mantis blade
+  description: placeholder item
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Misc/cybernetics.rsi
     layers:
-      - state: dermalarmor
+      - state: mantisblade
   - type: Organ
     slotId: heart
     onAdd:
