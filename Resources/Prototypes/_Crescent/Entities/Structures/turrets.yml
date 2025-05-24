@@ -627,7 +627,8 @@
   parent: BaseStructure
   id: BaseWeaponTurretLaser
   name: pressure gatling
-  abstract: true
+#  abstract: true
+# - which one of you chucklefucks made this abstract
   components:
     - type: PointCannon
     - type: Clickable
