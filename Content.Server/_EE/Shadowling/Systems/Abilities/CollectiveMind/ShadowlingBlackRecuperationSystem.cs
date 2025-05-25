@@ -102,8 +102,7 @@ public sealed class ShadowlingBlackRecuperationSystem : EntitySystem
             }
             else
             {
-                _chatManager.TrySendInGameICMessage(uid, Loc.GetString("defibrillator-no-mind"),
-                    InGameICChatType.Speak, true);
+                _popup.PopupEntity(Loc.GetString("defibrillator-no-mind"), uid, uid, PopupType.MediumCaution);
                 return;
             }
 

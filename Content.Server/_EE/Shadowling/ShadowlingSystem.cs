@@ -2,6 +2,7 @@ using Content.Server.Actions;
 using Content.Server.Atmos.Components;
 using Content.Server.Humanoid;
 using Content.Server.Language;
+using Content.Server.Objectives.Systems;
 using Content.Server.Popups;
 using Content.Server.Storage.EntitySystems;
 using Content.Server.Stunnable;
@@ -57,6 +58,7 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly StunSystem _stun = default!;
+    [Dependency] private  readonly CodeConditionSystem _codeCondition = default!;
 
     public override void Initialize()
     {
@@ -159,6 +161,8 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
             Dirty(uid, component);
             // When the entity gets polymorphed, the OnInit starts so... We have to remove it again here.
             _actions.RemoveAction(uid, component.ActionHatchEntity);
+
+            _codeCondition.SetCompleted(uid, component.ObjectiveAscend);
 
             AddPostHatchActions(uid, component);
 

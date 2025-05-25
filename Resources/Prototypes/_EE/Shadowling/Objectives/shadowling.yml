@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseObjective
+  parent: BaseCodeObjective
   id: ShadowlingAscendObjective
   description: I must ascend at all costs.
   components:
@@ -10,6 +10,5 @@
     icon:
       sprite: _EE/Shadowling/objectives.rsi
       state: ascendance_icon
-  - type: ShadowlingAscendCondition
 
 
