@@ -829,7 +829,7 @@
       board: [ DoorElectronicsMaintenance ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintSalvage # Funkystation
   id: AirlockMaintSalvageLocked
   suffix: Salvage, Locked
   components:
@@ -838,7 +838,7 @@
       board: [ DoorElectronicsSalvage ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintCargo # Funkystation
   id: AirlockMaintCargoLocked
   suffix: Logistics, Locked # DeltaV - Logistics Department replacing Cargo
   components:
@@ -847,7 +847,7 @@
       board: [ DoorElectronicsCargo ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintCommand # Funkystation
   id: AirlockMaintCommandLocked
   suffix: Command, Locked
   components:
@@ -865,7 +865,7 @@
       board: [ DoorElectronicsMaintenance ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintEngi # Funkystation
   id: AirlockMaintEngiLocked
   suffix: Engineering, Locked
   components:
@@ -874,7 +874,7 @@
       board: [ DoorElectronicsEngineering ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintAtmo # Funkystation
   id: AirlockMaintAtmoLocked
   suffix: Atmospherics, Locked
   components:
@@ -901,7 +901,7 @@
       board: [ DoorElectronicsChapel ]
 
 - type: entity
-  parent: AirlockMaintServiceLocked
+  parent: AirlockMaintHydro # Funkystation
   id: AirlockMaintHydroLocked
   suffix: Hydroponics, Locked
   components:
@@ -928,15 +928,13 @@
       board: [ DoorElectronicsLawyer ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintService # Funkystation
   id: AirlockMaintServiceLocked
   suffix: Service, Locked
   components:
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsService ]
-  - type: Wires
-    layoutId: AirlockService
 
 - type: entity
   parent: AirlockMaintServiceLocked
@@ -966,15 +964,13 @@
       board: [ DoorElectronicsMaintenance ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintMed # Funkystation
   id: AirlockMaintMedLocked
   suffix: Medical, Locked
   components:
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsMedical ]
-  - type: Wires
-    layoutId: AirlockMedical
 
 - type: entity
   parent: AirlockMaintMedLocked
@@ -986,7 +982,7 @@
       board: [ DoorElectronicsMorgue ]
 
 - type: entity
-  parent: AirlockMaintMedLocked
+  parent: AirlockMaintChem # Funkystation
   id: AirlockMaintChemLocked
   suffix: Chemistry, Locked
   components:
@@ -995,15 +991,13 @@
       board: [ DoorElectronicsChemistry ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintRnD # Funkystation
   id: AirlockMaintRnDLocked
   suffix: Epistemics, Locked # DeltaV - Epistemics Department replacing Science
   components:
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsResearch ]
-  - type: Wires
-    layoutId: AirlockScience
 
 - type: entity
   parent: AirlockMaintRnDLocked
@@ -1015,15 +1009,13 @@
       board: [ DoorElectronicsMedicalResearch ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintSec # Funkystation
   id: AirlockMaintSecLocked
   suffix: Security, Locked
   components:
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsSecurity ]
-  - type: Wires
-    layoutId: AirlockSecurity
 
 - type: entity
   parent: AirlockMaintSecLocked
@@ -1098,15 +1090,13 @@
       board: [ DoorElectronicsQuartermaster ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintArmory # Funkystation
   id: AirlockMaintArmoryLocked
   suffix: Armory, Locked
   components:
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsArmory ]
-  - type: Wires
-    layoutId: AirlockArmory
 
 - type: entity
   parent: AirlockSyndicate

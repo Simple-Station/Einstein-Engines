@@ -1,0 +1,115 @@
+- type: entity
+  parent: AirlockMaint
+  id: AirlockMaintEngi
+  name: engineering maintenance access
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Structures/Doors/Airlocks/Standard/maint_engi.rsi
+  - type: Wires
+    layoutId: AirlockEngineering
+
+- type: entity
+  parent: AirlockMaint
+  id: AirlockMaintAtmo
+  name: atmospherics maintenance access
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Structures/Doors/Airlocks/Standard/maint_atmos.rsi
+  - type: Wires
+    layoutId: AirlockEngineering
+
+- type: entity
+  parent: AirlockMaint
+  id: AirlockMaintService
+  name: service maintenance access
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Structures/Doors/Airlocks/Standard/maint_service.rsi
+  - type: Wires
+    layoutId: AirlockService
+
+- type: entity
+  parent: AirlockMaintService
+  id: AirlockMaintHydro
+  name: hydroponics maintenance access
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Structures/Doors/Airlocks/Standard/maint_hydroponics.rsi
+
+- type: entity
+  parent: AirlockMaint
+  id: AirlockMaintMed
+  name: medical maintenance access
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Structures/Doors/Airlocks/Standard/maint_medical.rsi
+  - type: Wires
+    layoutId: AirlockMedical
+
+- type: entity
+  parent: AirlockMaintMed
+  id: AirlockMaintChem
+  name: chemistry maintenance access
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Structures/Doors/Airlocks/Standard/maint_chemistry.rsi
+
+- type: entity
+  parent: AirlockMaint
+  id: AirlockMaintRnD
+  name: science maintenance access
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Structures/Doors/Airlocks/Standard/maint_science.rsi
+  - type: Wires
+    layoutId: AirlockScience
+
+- type: entity
+  parent: AirlockMaint
+  id: AirlockMaintSec
+  name: security maintenance access
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Structures/Doors/Airlocks/Standard/maint_security.rsi
+  - type: Wires
+    layoutId: AirlockSecurity
+
+- type: entity
+  parent: AirlockMaint
+  id: AirlockMaintArmory
+  name: armory maintenance access
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Structures/Doors/Airlocks/Standard/maint_security.rsi
+  - type: Wires
+    layoutId: AirlockArmory
+
+- type: entity
+  parent: AirlockMaint
+  id: AirlockMaintCargo
+  name: cargo maintenance access
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Structures/Doors/Airlocks/Standard/maint_cargo.rsi
+  - type: Wires
+    layoutId: AirlockCargo
+
+- type: entity
+  parent: AirlockMaint
+  id: AirlockMaintSalvage
+  name: salvage maintenance access
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Structures/Doors/Airlocks/Standard/maint_cargo.rsi
+  - type: Wires
+    layoutId: AirlockCargo
+
+- type: entity
+  parent: AirlockMaint
+  id: AirlockMaintCommand
+  name: command maintenance access
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Structures/Doors/Airlocks/Standard/maint_command.rsi
+  - type: Wires
+    layoutId: AirlockCommand
