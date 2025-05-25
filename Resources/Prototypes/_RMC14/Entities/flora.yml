@@ -104,8 +104,6 @@
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
-  - type: Corrodible
-    isCorrodible: true
 
 - type: entity
   parent: RMCBasePlant
