@@ -4,9 +4,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Server.Devil.Objectives.Systems;
+using Content.Server._Goobstation.Devil.Objectives.Systems;
 
-namespace Content.Goobstation.Server.Devil.Objectives.Components;
+namespace Content.Server._Goobstation.Devil.Objectives.Components;
 
 [RegisterComponent, Access(typeof(DevilSystem), typeof(DevilObjectiveSystem))]
 

@@ -3,7 +3,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-namespace Content.Goobstation.Common.Religion;
+namespace Content.Shared._Goobstation.Religion;
 
 public sealed class TouchSpellDenialRelayEvent : CancellableEntityEventArgs;
 

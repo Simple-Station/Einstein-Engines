@@ -4,7 +4,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-namespace Content.Goobstation.Server.Devil.Contract.Revival;
+namespace Content.Server._Goobstation.Devil.Contract.Revival;
 
 [RegisterComponent]
 public sealed partial class RevivalContractComponent : Component

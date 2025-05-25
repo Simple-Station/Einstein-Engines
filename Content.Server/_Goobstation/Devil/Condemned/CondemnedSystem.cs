@@ -4,9 +4,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Shared.Devil;
-using Content.Goobstation.Shared.Devil.Condemned;
-using Content.Goobstation.Shared.Religion;
+using Content.Shared._Goobstation.Devil;
+using Content.Shared._Goobstation.Devil.Condemned;
+using Content.Shared._Goobstation.Religion;
 using Content.Server.IdentityManagement;
 using Content.Server.Polymorph.Systems;
 using Content.Shared.Examine;
@@ -20,7 +20,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Spawners;
 
-namespace Content.Goobstation.Server.Devil.Condemned;
+namespace Content.Server._Goobstation.Devil.Condemned;
 
 public sealed partial class CondemnedSystem : EntitySystem
 {

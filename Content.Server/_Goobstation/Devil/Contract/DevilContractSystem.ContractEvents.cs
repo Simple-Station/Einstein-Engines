@@ -7,14 +7,14 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
-using Content.Goobstation.Shared.Devil;
+using Content.Shared._Goobstation.Devil;
 using Content.Server.Body.Components;
 using Content.Shared._Shitmed.Body.Events;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 using Robust.Shared.Random;
 
-namespace Content.Goobstation.Server.Devil.Contract;
+namespace Content.Server._Goobstation.Devil.Contract;
 
 public sealed partial class DevilContractSystem
 {

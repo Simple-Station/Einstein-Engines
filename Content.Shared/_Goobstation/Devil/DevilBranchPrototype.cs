@@ -1,6 +1,6 @@
 using Robust.Shared.Prototypes;
 
-namespace Content.Goobstation.Shared.Devil;
+namespace Content.Shared._Goobstation.Devil;
 
 [Prototype("devilBranchPrototype")]
 public sealed class DevilBranchPrototype : IPrototype

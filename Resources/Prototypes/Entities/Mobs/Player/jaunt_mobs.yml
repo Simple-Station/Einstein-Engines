@@ -28,7 +28,7 @@
     layer: 2
 #  - type: Spectral
   - type: IsDeadIC # Goobstation
-    dead: false
+#    dead: false
 
 # Should be slow, for balance
 - type: entity

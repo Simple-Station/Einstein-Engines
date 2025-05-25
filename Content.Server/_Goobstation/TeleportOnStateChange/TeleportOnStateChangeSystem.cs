@@ -7,7 +7,7 @@
 using Content.Shared.Mobs;
 using Robust.Shared.Map;
 
-namespace Content.Goobstation.Server.TeleportOnStateChange;
+namespace Content.Server._Goobstation.TeleportOnStateChange;
 
 public sealed partial class TeleportOnStateChangeSystem : EntitySystem
 {

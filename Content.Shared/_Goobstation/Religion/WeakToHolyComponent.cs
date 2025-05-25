@@ -9,7 +9,7 @@ using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
 
-namespace Content.Goobstation.Shared.Religion;
+namespace Content.Shared._Goobstation.Religion;
 
 [RegisterComponent, NetworkedComponent]
 public sealed partial class WeakToHolyComponent : Component

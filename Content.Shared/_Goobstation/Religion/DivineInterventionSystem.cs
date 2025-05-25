@@ -5,13 +5,13 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
-using Content.Goobstation.Common.Religion;
+using Content.Shared._Goobstation.Religion;
 using Content.Shared.Inventory;
 using Content.Shared.Popups;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 
-namespace Content.Goobstation.Shared.Religion;
+namespace Content.Shared._Goobstation.Religion;
 
 /// <summary>
 /// Handles "Spell Denial", these methods are largely targeted towards TargetActionEvents, however,

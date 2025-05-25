@@ -4,10 +4,10 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Shared.Bible;
-using Content.Goobstation.Shared.Devil;
-using Content.Goobstation.Shared.Possession;
-using Content.Goobstation.Shared.Religion;
+using Content.Shared._Goobstation.Bible;
+using Content.Shared._Goobstation.Devil;
+using Content.Shared._Goobstation.Possession;
+using Content.Shared._Goobstation.Religion;
 using Content.Server.Actions;
 using Content.Server.Bible.Components;
 using Content.Server.Polymorph.Components;
@@ -35,7 +35,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Spawners;
 using Robust.Shared.Timing;
 
-namespace Content.Goobstation.Server.Possession;
+namespace Content.Server._Goobstation.Possession;
 
 public sealed partial class PossessionSystem : EntitySystem
 {

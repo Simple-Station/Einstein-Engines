@@ -1,5 +1,5 @@
 ﻿using System.Numerics;
-using Content.Goobstation.Common.Religion;
+using Content.Shared._Goobstation.Religion;
 using Content.Shared.Actions;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;

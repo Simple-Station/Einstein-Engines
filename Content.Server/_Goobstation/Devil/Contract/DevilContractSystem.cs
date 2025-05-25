@@ -9,11 +9,11 @@
 
 using System.Linq;
 using System.Text.RegularExpressions;
-using Content.Goobstation.Common.Paper;
-using Content.Goobstation.Server.Possession;
-using Content.Goobstation.Shared.Devil;
-using Content.Goobstation.Shared.Devil.Condemned;
-using Content.Goobstation.Shared.Devil.Contract;
+using Content.Shared._Goobstation.Paper;
+using Content.Server._Goobstation.Possession;
+using Content.Shared._Goobstation.Devil;
+using Content.Shared._Goobstation.Devil.Condemned;
+using Content.Shared._Goobstation.Devil.Contract;
 using Content.Server._Imp.Drone;
 using Content.Server.Body.Systems;
 using Content.Server.Hands.Systems;
@@ -34,7 +34,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
-namespace Content.Goobstation.Server.Devil.Contract;
+namespace Content.Server._Goobstation.Devil.Contract;
 
 public sealed partial class DevilContractSystem : EntitySystem
 {

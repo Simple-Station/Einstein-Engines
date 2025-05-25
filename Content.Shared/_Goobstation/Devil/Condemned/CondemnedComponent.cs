@@ -8,7 +8,7 @@ using Content.Shared.Polymorph;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
-namespace Content.Goobstation.Shared.Devil.Condemned;
+namespace Content.Shared._Goobstation.Devil.Condemned;
 
 /// <summary>
 /// Marks an entity as having sold their soul.

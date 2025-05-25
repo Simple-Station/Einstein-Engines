@@ -9,7 +9,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Goobstation.Common.Religion;
+namespace Content.Shared._Goobstation.Religion;
 
 [RegisterComponent, NetworkedComponent]
 public sealed partial class DivineInterventionComponent : Component

@@ -13,7 +13,7 @@ using Content.Shared.Polymorph;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
-namespace Content.Goobstation.Shared.Devil;
+namespace Content.Shared._Goobstation.Devil;
 
 [RegisterComponent]
 public sealed partial class DevilComponent : Component

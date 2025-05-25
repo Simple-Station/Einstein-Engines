@@ -8,7 +8,7 @@ using Content.Shared.NPC.Prototypes;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
-namespace Content.Goobstation.Server.Devil.GameTicking.Rules;
+namespace Content.Server._Goobstation.Devil.GameTicking.Rules;
 
 [RegisterComponent, Access(typeof(DevilRuleSystem))]
 public sealed partial class DevilRuleComponent : Component

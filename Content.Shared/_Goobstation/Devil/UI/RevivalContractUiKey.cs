@@ -1,5 +1,5 @@
 using Robust.Shared.Serialization;
-namespace Content.Goobstation.Shared.Devil.UI;
+namespace Content.Shared._Goobstation.Devil.UI;
 
 [Serializable, NetSerializable]
 public enum RevivalContractUiKey

@@ -8,7 +8,7 @@ using Content.Shared.Actions;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Goobstation.Shared.CheatDeath;
+namespace Content.Shared._Goobstation.CheatDeath;
 
 [RegisterComponent, NetworkedComponent]
 public sealed partial class CheatDeathComponent : Component

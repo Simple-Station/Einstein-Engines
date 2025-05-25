@@ -7,7 +7,7 @@
 
 using Content.Shared.Roles;
 
-namespace Content.Goobstation.Server.Devil.Roles;
+namespace Content.Server._Goobstation.Devil.Roles;
 
 [RegisterComponent]
 public sealed partial class DevilRoleComponent : BaseMindRoleComponent;

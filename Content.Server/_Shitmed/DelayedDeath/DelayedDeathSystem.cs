@@ -9,7 +9,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Common.DelayedDeath;
+using Content.Shared._Goobstation.DelayedDeath;
 using Content.Server.Chat.Systems;
 using Content.Shared.Chat;
 using Content.Shared.Medical;

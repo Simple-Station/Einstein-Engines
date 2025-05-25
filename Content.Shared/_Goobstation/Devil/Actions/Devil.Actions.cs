@@ -6,7 +6,7 @@
 
 using Content.Shared.Actions;
 
-namespace Content.Goobstation.Shared.Devil.Actions;
+namespace Content.Shared._Goobstation.Devil.Actions;
 
 public sealed partial class CreateContractEvent : InstantActionEvent;
 

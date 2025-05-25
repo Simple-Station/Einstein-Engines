@@ -5,8 +5,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Shared.Bible;
-using Content.Goobstation.Shared.Religion.Nullrod;
+using Content.Shared._Goobstation.Bible;
+using Content.Shared._Goobstation.Religion.Nullrod;
 using Content.Server.Bible.Components;
 using Content.Shared.Damage;
 using Content.Shared.Interaction;
@@ -15,7 +15,7 @@ using Content.Shared.Timing;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Timing;
 
-namespace Content.Goobstation.Shared.Religion;
+namespace Content.Shared._Goobstation.Religion;
 
 public sealed class WeakToHolySystem : EntitySystem
 {

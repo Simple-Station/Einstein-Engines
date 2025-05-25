@@ -1,4 +1,4 @@
-﻿using Content.Goobstation.Shared.Bible;
+﻿using Content.Shared._Goobstation.Bible;
 using Content.Server.Bible.Components;
 using Content.Server.Mind;
 using Content.Server.Popups;

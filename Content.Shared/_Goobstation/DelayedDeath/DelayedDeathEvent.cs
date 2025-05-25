@@ -4,7 +4,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-namespace Content.Goobstation.Common.DelayedDeath;
+namespace Content.Shared._Goobstation.DelayedDeath;
 
 /// <summary>
 /// 	Raised on a user when delayed death is triggered on them.

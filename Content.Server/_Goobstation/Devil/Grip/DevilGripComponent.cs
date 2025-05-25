@@ -6,7 +6,7 @@
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 
-namespace Content.Goobstation.Server.Devil.Grip;
+namespace Content.Server._Goobstation.Devil.Grip;
 
 [RegisterComponent]
 public sealed partial class DevilGripComponent : Component

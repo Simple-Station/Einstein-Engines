@@ -48,7 +48,7 @@
   id: Silicon
   supportedGroups:
     - Brute
-    - Electronic #Goobstation
+#    - Electronic #Goobstation
   supportedTypes:
     - Heat
     - Shock
@@ -77,7 +77,7 @@
 - type: damageContainer
   id: ManifestedSpirit
   supportedGroups:
-    - Metaphysical
+#    - Metaphysical
     - Brute
   supportedTypes:
     - Heat
@@ -93,4 +93,12 @@
   - Airloss
   - Genetic
   supportedTypes: # Goobstation
+  - Holy
+
+- type: damageContainer
+  id: HalfSpirit
+  supportedGroups:
+  - Brute
+  - Burn
+  supportedTypes:
   - Holy

@@ -4,7 +4,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-namespace Content.Goobstation.Common.Paper;
+namespace Content.Shared._Goobstation.Paper;
 
 /// <summary>
 /// 	Raised on the paper when a sign is attempted

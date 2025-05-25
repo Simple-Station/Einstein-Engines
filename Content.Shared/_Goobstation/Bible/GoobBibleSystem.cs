@@ -1,7 +1,7 @@
-using Content.Goobstation.Shared.Devil;
-using Content.Goobstation.Shared.Devil.Contract;
-using Content.Goobstation.Shared.Exorcism;
-using Content.Goobstation.Shared.Religion;
+using Content.Shared._Goobstation.Devil;
+using Content.Shared._Goobstation.Devil.Contract;
+using Content.Shared._Goobstation.Exorcism;
+using Content.Shared._Goobstation.Religion;
 using Content.Server.Bible.Components;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
@@ -12,7 +12,7 @@ using Content.Shared.Stunnable;
 using Content.Shared.Timing;
 using Robust.Shared.Audio.Systems;
 
-namespace Content.Goobstation.Shared.Bible;
+namespace Content.Shared._Goobstation.Bible;
 
 public sealed partial class GoobBibleSystem : EntitySystem
 {

@@ -7,7 +7,7 @@
 using Content.Shared.Polymorph;
 using Robust.Shared.Prototypes;
 
-namespace Content.Goobstation.Shared.Devil.Contract;
+namespace Content.Shared._Goobstation.Devil.Contract;
 
 [Prototype("clause")]
 public sealed class DevilClausePrototype : IPrototype

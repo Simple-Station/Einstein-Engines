@@ -5,8 +5,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Text;
-using Content.Goobstation.Server.Devil.Roles;
-using Content.Goobstation.Shared.Devil;
+using Content.Server._Goobstation.Devil.Roles;
+using Content.Shared._Goobstation.Devil;
 using Content.Server.Antag;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Mind;
@@ -18,7 +18,7 @@ using Content.Shared.Roles;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
-namespace Content.Goobstation.Server.Devil.GameTicking.Rules;
+namespace Content.Server._Goobstation.Devil.GameTicking.Rules;
 
 public sealed class DevilRuleSystem : GameRuleSystem<DevilRuleComponent>
 {

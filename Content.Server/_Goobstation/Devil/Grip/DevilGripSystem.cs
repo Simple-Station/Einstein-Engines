@@ -5,8 +5,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Shared.Devil;
-using Content.Goobstation.Shared.Religion;
+using Content.Shared._Goobstation.Devil;
+using Content.Shared._Goobstation.Religion;
 using Content.Server.Chat.Systems;
 using Content.Server.Speech.EntitySystems;
 using Content.Shared.Actions;
@@ -18,7 +18,7 @@ using Content.Shared.Stunnable;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
 
-namespace Content.Goobstation.Server.Devil.Grip;
+namespace Content.Server._Goobstation.Devil.Grip;
 
 public sealed class DevilGripSystem : EntitySystem
 {

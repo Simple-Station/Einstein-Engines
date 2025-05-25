@@ -5,6 +5,6 @@
 
 using Content.Shared.Actions;
 
-namespace Content.Goobstation.Shared.Possession;
+namespace Content.Shared._Goobstation.Possession;
 
 public sealed partial class EndPossessionEarlyEvent : InstantActionEvent;

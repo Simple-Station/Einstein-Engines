@@ -1,5 +1,5 @@
-using Content.Goobstation.Common.Paper;
-using Content.Goobstation.Shared.Devil;
+using Content.Shared._Goobstation.Paper;
+using Content.Shared._Goobstation.Devil;
 using Content.Server.Access.Systems;
 using Content.Server.Paper;
 using Content.Server.Popups;

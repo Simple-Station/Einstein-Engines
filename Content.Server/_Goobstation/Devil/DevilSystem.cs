@@ -5,17 +5,17 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Text.RegularExpressions;
-using Content.Goobstation.Server.Devil.Condemned;
-using Content.Goobstation.Server.Devil.Contract;
-using Content.Goobstation.Server.Devil.Objectives.Components;
-using Content.Goobstation.Server.Possession;
-using Content.Goobstation.Shared.Bible;
-using Content.Goobstation.Shared.CheatDeath;
-using Content.Goobstation.Shared.CrematorImmune;
-using Content.Goobstation.Shared.Devil;
-using Content.Goobstation.Shared.Devil.Condemned;
-using Content.Goobstation.Shared.Exorcism;
-using Content.Goobstation.Shared.Religion;
+using Content.Server._Goobstation.Devil.Condemned;
+using Content.Server._Goobstation.Devil.Contract;
+using Content.Server._Goobstation.Devil.Objectives.Components;
+using Content.Server._Goobstation.Possession;
+using Content.Shared._Goobstation.Bible;
+using Content.Shared._Goobstation.CheatDeath;
+using Content.Shared._Goobstation.CrematorImmune;
+using Content.Shared._Goobstation.Devil;
+using Content.Shared._Goobstation.Devil.Condemned;
+using Content.Shared._Goobstation.Exorcism;
+using Content.Shared._Goobstation.Religion;
 using Content.Server.Actions;
 using Content.Server.Administration.Systems;
 using Content.Server.Atmos.Components;
@@ -56,7 +56,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
-namespace Content.Goobstation.Server.Devil;
+namespace Content.Server._Goobstation.Devil;
 
 public sealed partial class DevilSystem : EntitySystem
 {

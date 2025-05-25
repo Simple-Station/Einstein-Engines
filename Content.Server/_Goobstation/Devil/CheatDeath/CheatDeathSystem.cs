@@ -4,8 +4,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Common.DelayedDeath;
-using Content.Goobstation.Shared.CheatDeath;
+using Content.Shared._Goobstation.DelayedDeath;
+using Content.Shared._Goobstation.CheatDeath;
 using Content.Server._Shitmed.DelayedDeath;
 using Content.Server.Actions;
 using Content.Server.Administration.Systems;
@@ -17,7 +17,7 @@ using Content.Shared.Popups;
 using Content.Shared.Traits.Assorted;
 using Robust.Shared.Network;
 
-namespace Content.Goobstation.Server.Devil.CheatDeath;
+namespace Content.Server._Goobstation.Devil.CheatDeath;
 
 public sealed partial class CheatDeathSystem : EntitySystem
 {

@@ -4,11 +4,11 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Shared.Devil.Contract;
+using Content.Shared._Goobstation.Devil.Contract;
 using Content.Shared.Inventory;
 using Robust.Shared.Serialization;
 
-namespace Content.Goobstation.Shared.Devil;
+namespace Content.Shared._Goobstation.Devil;
 
 /// <summary>
 /// Raised on a devil when their power level changes.

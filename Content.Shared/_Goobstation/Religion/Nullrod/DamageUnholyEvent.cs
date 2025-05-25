@@ -4,7 +4,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-namespace Content.Goobstation.Shared.Religion.Nullrod;
+namespace Content.Shared._Goobstation.Religion.Nullrod;
 
 [ByRefEvent]
 public sealed class DamageUnholyEvent(EntityUid target, EntityUid? origin = null) : EntityEventArgs

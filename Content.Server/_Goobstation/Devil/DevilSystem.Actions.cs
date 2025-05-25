@@ -4,16 +4,16 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Server.Devil.Contract;
-using Content.Goobstation.Server.Devil.Contract.Revival;
-using Content.Goobstation.Server.Devil.Grip;
-using Content.Goobstation.Shared.Devil;
-using Content.Goobstation.Shared.Devil.Actions;
-using Content.Goobstation.Shared.Devil.Condemned;
-using Content.Goobstation.Shared.Devil.Contract;
+using Content.Server._Goobstation.Devil.Contract;
+using Content.Server._Goobstation.Devil.Contract.Revival;
+using Content.Server._Goobstation.Devil.Grip;
+using Content.Shared._Goobstation.Devil;
+using Content.Shared._Goobstation.Devil.Actions;
+using Content.Shared._Goobstation.Devil.Condemned;
+using Content.Shared._Goobstation.Devil.Contract;
 using Content.Shared.IdentityManagement;
 
-namespace Content.Goobstation.Server.Devil;
+namespace Content.Server._Goobstation.Devil;
 
 public sealed partial class DevilSystem
 {

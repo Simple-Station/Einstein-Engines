@@ -4,9 +4,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Shared.Devil;
-using Content.Goobstation.Shared.Devil.Condemned;
-using Content.Goobstation.Shared.Devil.UI;
+using Content.Shared._Goobstation.Devil;
+using Content.Shared._Goobstation.Devil.Condemned;
+using Content.Shared._Goobstation.Devil.UI;
 using Content.Server.Administration.Systems;
 using Content.Server.Mind;
 using Content.Shared.Interaction;
@@ -15,7 +15,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
 using Robust.Server.GameObjects;
 
-namespace Content.Goobstation.Server.Devil.Contract.Revival;
+namespace Content.Server._Goobstation.Devil.Contract.Revival;
 public sealed partial class PendingRevivalContractSystem : EntitySystem
 {
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;

@@ -32,7 +32,7 @@
   - Revolutionaries
   - MinorAntagonists
   - SpaceNinja
-  - Thieves
+#  - Thieves
   - Abductors # Shitmed - Abductors
 #  - Bingle # Goob content
   - Devil # Goob content
@@ -56,7 +56,7 @@
 - type: guideEntry
   id: Revolutionaries
   name: guide-entry-revolutionaries
-  text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Revolutionaries.xml" # goobstation
+  text: "/ServerInfo/Guidebook/Antagonist/Revolutionaries.xml"
 
 - type: guideEntry
   id: MinorAntagonists
@@ -73,7 +73,7 @@
   name: guide-entry-blood-cult
   text: "/ServerInfo/Guidebook/Antagonist/BloodCult.xml"
 
-- type: guideEntry
-  id: Thieves
-  name: guide-entry-thieves
-  text: "/ServerInfo/Guidebook/Antagonist/Thieves.xml"
+#- type: guideEntry
+#  id: Thieves
+#  name: guide-entry-thieves
+#  text: "/ServerInfo/Guidebook/Antagonist/Thieves.xml"

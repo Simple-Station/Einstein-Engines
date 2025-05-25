@@ -7,7 +7,7 @@
 using Content.Shared.Mobs;
 using Robust.Shared.Map;
 
-namespace Content.Goobstation.Server.TeleportOnStateChange;
+namespace Content.Server._Goobstation.TeleportOnStateChange;
 
 /// <summary>
 /// Teleports the entity to the given coordinates when changed to the specified state.

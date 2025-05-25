@@ -11,7 +11,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 
-namespace Content.Goobstation.Server.Possession;
+namespace Content.Server._Goobstation.Possession;
 
 
 [RegisterComponent]

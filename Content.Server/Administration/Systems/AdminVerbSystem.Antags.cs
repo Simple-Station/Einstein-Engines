@@ -1,4 +1,4 @@
-using Content.Goobstation.Server.Devil.GameTicking.Rules;
+using Content.Server._Goobstation.Devil.GameTicking.Rules;
 using Content.Server.Administration.Commands;
 using Content.Server.Antag;
 using Content.Server.GameTicking.Rules.Components;
