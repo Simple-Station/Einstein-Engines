@@ -205,24 +205,6 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: RMCBaseTreeSnow
-  id: RMCFloraTreeStump
-  suffix: RMCFloraTreeStump
-  name: tree stump
-  components:
-  - type: Sprite
-    state: treestump
-
-- type: entity
-  parent: RMCBaseTreeConifer
-  id: RMCFloraTreeStumpConifer
-  suffix: RMCFloraTreeStumpConifer
-  name: tree stump
-  components:
-  - type: Sprite
-    state: treestumpconifer
-
-- type: entity
   parent: RMCBaseTreeAlien
   id: RMCAlienTree01
   suffix: RMCAlienTree01
