@@ -37,6 +37,23 @@
     - WhitelistChameleon
 
 - type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesCreasedJordans
+  name: creased air jordans
+  description: No wait... this can't be.... THEY'RE CREASED!
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Shoes/Boots/jordans.rsi
+    state: icon-creased
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Shoes/Boots/jordans.rsi
+  - type: ClothingSpeedModifier
+    walkModifier: 0.7
+    sprintModifier: 0.7
+  - type: StaticPrice
+    price: 1
+
+- type: entity
   parent: ClothingShoesRealJordans
   id: ClothingShoesRealJordansAutographed
   name: air jordans
