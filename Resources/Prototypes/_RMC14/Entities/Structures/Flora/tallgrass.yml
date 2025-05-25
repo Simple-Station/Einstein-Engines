@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: CMBaseStructure
+  parent: BaseStructure
   id: RMCGrassTallBase
   name: tallgrass
   suffix: Centre
