@@ -133878,9 +133878,6 @@ entities:
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
-    - type: Door
-      secondsUntilStateChange: -155426.58
-      state: Opening
   - uid: 20180
     components:
     - type: MetaData
