@@ -40,7 +40,7 @@ public sealed class DivineInterventionSystem : EntitySystem
     {
         denyingItem = _inventory.GetHandOrInventoryEntities(target, SlotFlags.WITHOUT_POCKET)
             .FirstOrDefault(HasComp<DivineInterventionComponent>);
-        return denyingItem != null;
+        return !Deleted(denyingItem); // WD edit
     }
     //Overload Method
     public bool ShouldDeny(EntityUid target) => ShouldDeny(target, out _);
