@@ -162,8 +162,6 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
             // When the entity gets polymorphed, the OnInit starts so... We have to remove it again here.
             _actions.RemoveAction(uid, component.ActionHatchEntity);
 
-            _codeCondition.SetCompleted(uid, component.ObjectiveAscend);
-
             AddPostHatchActions(uid, component);
 
             EnsureComp<LightDetectionComponent>(uid);
@@ -183,6 +181,8 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
 
             var ev = new ShadowlingAscendEvent();
             RaiseLocalEvent(ev);
+
+            _codeCondition.SetCompleted(uid, component.ObjectiveAscend);
 
             EnsureComp<PressureImmunityComponent>(uid);
 
