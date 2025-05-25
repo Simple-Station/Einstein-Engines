@@ -45,7 +45,7 @@ public sealed partial class NewFrontierLateJoinJobButton : Button
         }
 
         var prototype = _prototypeManager.Index<JobPrototype>(_jobId);
-        var jobIcon = _prototypeManager.Index<StatusIconPrototype>(prototype.Icon);
+        var jobIcon = _prototypeManager.Index(prototype.Icon);
         JobIcon.Texture = jobIcon.Icon.Frame0();
 
 
