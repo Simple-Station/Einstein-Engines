@@ -1,21 +1,71 @@
 {
-  "copyright" : "Taken from https://github.com/tgstation/tgstation at at https://github.com/tgstation/tgstation/commit/40d89d11ea4a5cb81d61dc1018b46f4e7d32c62a, hamtr made by brainfood1183 (github)",
-  "license" : "CC-BY-SA-3.0",
+  "copyright" : "Developed by the HULLROT team. Do not edit, relicense, or redistribute.",
+  "license" : "",
   "version": 1,
   "size": {
     "x": 48,
     "y": 48
   },
-  "states": [
-    {
-      "name": "carrion",
-      "directions": 4
-    },
-    {
-      "name": "carrion-open"
-    },
-    {
-      "name": "carrion-broken"
-    }
-  ]
+    "states": [
+        {
+            "name": "carrion",
+            "directions": 4
+        },
+        {
+            "name": "carrion-open"
+        },
+        {
+            "name": "carrion-broken"
+        },
+        {
+            "name": "bogatyr",
+            "directions": 4
+        },
+        {
+            "name": "bogatyr-open"
+        },
+        {
+            "name": "bogatyr-broken"
+        },
+        {
+            "name": "lancer",
+            "directions": 4
+        },
+        {
+            "name": "lancer-open"
+        },
+        {
+            "name": "lancer-broken"
+        },
+        {
+            "name": "paladin",
+            "directions": 4
+        },
+        {
+            "name": "paladin-open"
+        },
+        {
+            "name": "paladin-broken"
+        },
+        {
+            "name": "gilgamesh",
+            "directions": 4
+        },
+        {
+            "name": "gilgamesh-open"
+        },
+        {
+            "name": "gilgamesh-broken"
+        },
+        {
+            "name": "marauder",
+            "directions": 4
+        },
+        {
+            "name": "marauder-open"
+        },
+        {
+            "name": "marauder-broken"
+        }
+    ]
 }

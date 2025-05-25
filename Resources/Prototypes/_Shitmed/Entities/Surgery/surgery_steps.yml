@@ -653,3 +653,11 @@
 #  - type: ??? moth ops go here when wings can be destroyed
 #  - type: Sprite
 #    sprite: Interface/Emotes/chitter.png
+
+#hullrot skin surgery
+
+- type: entity
+  parent: SurgeryStepInsertOrgan
+  id: SurgeryStepInsertSkin
+  name: Install Cybernetic
+  categories: [ HideSpawnMenu ]
