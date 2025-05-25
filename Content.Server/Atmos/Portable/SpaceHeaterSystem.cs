@@ -99,7 +99,7 @@ public sealed class SpaceHeaterSystem : EntitySystem
         if (!Resolve(uid, ref powerReceiver))
             return;
 
-        _power.TogglePower(uid);
+        _power.TryTogglePower(uid);
 
         UpdateAppearance(uid);
         DirtyUI(uid, spaceHeater);

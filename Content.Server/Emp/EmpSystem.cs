@@ -95,6 +95,7 @@ public sealed class EmpSystem : SharedEmpSystem
     {
         base.Update(frameTime);
 
+        // todo: EQE BULLSHIT THAT DOES NOTHING GET RID OF IT SOON tm
         var query = EntityQueryEnumerator<EmpDisabledComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
