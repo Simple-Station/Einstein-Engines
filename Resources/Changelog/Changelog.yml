@@ -15603,3 +15603,677 @@ Entries:
   id: 7201
   time: '2025-04-26T21:07:03.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2325
+- author: Zeta_Null
+  changes:
+    - type: Add
+      message: Fixed marking localization issues
+  id: 7202
+  time: '2025-04-27T19:32:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2330
+- author: Orion-416
+  changes:
+    - type: Tweak
+      message: BSO now has the over-ear headset
+    - type: Tweak
+      message: BSO's modsuit now has the right colour for its light
+  id: 7203
+  time: '2025-04-27T21:08:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2336
+- author: Diggy0
+  changes:
+    - type: Fix
+      message: ERT suits should no longer be large errors.
+    - type: Fix
+      message: >-
+        Bloodred's head sprite should now be equipped-helmet and not
+        equipped-head (This is leftover from the impstation sprite port)
+    - type: Fix
+      message: BSO / Dreadnought suit now have glow.
+    - type: Fix
+      message: >-
+        The Reverse-Engineered hardsuits from Nyano now have glow, and no longer
+        display errors.
+    - type: Fix
+      message: ERT Helmets should now show light.
+  id: 7204
+  time: '2025-04-27T21:12:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2334
+- author: BlueHNT
+  changes:
+    - type: Tweak
+      message: Tweaked Spacelaw gun restrictions
+  id: 7205
+  time: '2025-04-27T21:26:07.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2338
+- author: dootythefrooty
+  changes:
+    - type: Fix
+      message: Abductor Eye is now no longer visible for the inferior organisms.
+    - type: Remove
+      message: Invisibility Organs were removed for being turbo-borked.
+  id: 7206
+  time: '2025-04-27T21:54:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2331
+- author: Zeta_Null
+  changes:
+    - type: Add
+      message: >-
+        Added a surgical jacket, for Xelthia to perform surgery wearing in place
+        of gloves.
+    - type: Tweak
+      message: >-
+        Tweaked surgery to allow for jackets with gloves to be treated as
+        gloves.
+  id: 7207
+  time: '2025-04-28T08:15:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2340
+- author: Zeta_Null
+  changes:
+    - type: Fix
+      message: 'Fixed the Linoleum floor texture. '
+  id: 7208
+  time: '2025-04-28T08:16:51.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2346
+- author: wachte1
+  changes:
+    - type: Fix
+      message: >-
+        Changelings are now correctly identified as Solo Antagonists in the
+        admin overlay!
+  id: 7209
+  time: '2025-04-28T18:45:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2350
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: Made Wheelchair User and Blindness permanent
+    - type: Tweak
+      message: Made Shortsighted less visually intense
+    - type: Tweak
+      message: Made glasses counteract eye damage better
+  id: 7210
+  time: '2025-04-28T18:46:20.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2327
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        SAN Deserters now have actual equipment. Their dropship is also now
+        airtight. 
+    - type: Tweak
+      message: >-
+        SAN Deserters no longer speak Tau-Ceti Basic. They can only speak Sol
+        Common.
+  id: 7211
+  time: '2025-04-29T17:11:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2347
+- author: VMSolidus
+  changes:
+    - type: Remove
+      message: >-
+        Chitinids have been disabled due to being a server performance
+        nightmare.
+  id: 7212
+  time: '2025-04-29T19:59:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2353
+- author: Zeta_Null
+  changes:
+    - type: Add
+      message: >-
+        Added Chitinid visuals to moth markings, to make their overall removal
+        something that causes less trouble
+    - type: Remove
+      message: Removed Chitinids from the guidebook
+  id: 7213
+  time: '2025-04-29T19:59:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2354
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Added a printable torso and head to the medical biofabricator, as well
+        as some space organs for when it is emagged.
+  id: 7214
+  time: '2025-04-30T21:17:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2358
+- author: EctoplasmIsGood
+  changes:
+    - type: Fix
+      message: Energy guns wont cycle on wield anymore
+  id: 7215
+  time: '2025-05-01T17:43:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2368
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: >-
+        Bartenders and Chefs can now be employed by Orion Express and Idris
+        Incorporated
+  id: 7216
+  time: '2025-05-01T17:43:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2367
+- author: EctoplasmIsGood
+  changes:
+    - type: Fix
+      message: TCAF Combat Gloves should no longer show an error
+  id: 7217
+  time: '2025-05-01T18:36:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2369
+- author: EctoplasmIsGood
+  changes:
+    - type: Fix
+      message: >-
+        Abductor & Medical borg now have their proper surgery speed buffs and
+        their clothing bypass
+  id: 7218
+  time: '2025-05-01T20:40:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2370
+- author: mrs
+  changes:
+    - type: Add
+      message: 'Cyberiad: Round-start SM setup. (You still have to click pumps, lazy!!!)'
+    - type: Tweak
+      message: 'Cyberiad: Atmos waste ends at a space vent now.'
+    - type: Fix
+      message: >-
+        Cyberiad: Found and removed passive vent on the distro pipenet that
+        caused pressure imbalance/space wind. Space wind victims rejoice.
+    - type: Remove
+      message: >-
+        Cyberiad: Unnecessary/dangerous piping from atmos. SM mix to distro
+        connections and vice-versa. (Just, why?)
+  id: 7219
+  time: '2025-05-01T20:43:49.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2349
+- author: Orion-416
+  changes:
+    - type: Fix
+      message: Fixed deathsquad ghostrole
+  id: 7220
+  time: '2025-05-01T20:45:28.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2357
+- author: Orion-416
+  changes:
+    - type: Tweak
+      message: Both Syndicate modsuits now have integrated jetpacks
+  id: 7221
+  time: '2025-05-01T20:48:26.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2300
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Thermal Vision lasting only a single tick instead of the full 2
+        seconds its intended to last.
+    - type: Fix
+      message: >-
+        Fixed traits not correctly updating the client on changes made to the
+        character.
+  id: 7222
+  time: '2025-05-02T18:30:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2379
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed rolling psionic powers not generating their unique messages in
+        chat.
+  id: 7223
+  time: '2025-05-02T18:30:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2371
+- author: EctoplasmIsGood
+  changes:
+    - type: Tweak
+      message: Adjusted psionic weights
+  id: 7224
+  time: '2025-05-02T18:31:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2374
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Cleanup and reorganization of Radstation
+  id: 7225
+  time: '2025-05-03T12:18:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2385
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Slight changes to Northway
+  id: 7226
+  time: '2025-05-03T12:20:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2386
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Cleanup of Meta
+  id: 7227
+  time: '2025-05-03T13:12:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2387
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Cleanup of Lighthouse
+  id: 7228
+  time: '2025-05-03T13:25:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2388
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Reorganization and removal of unnecessary/bad roles in Shoukou
+  id: 7229
+  time: '2025-05-03T13:54:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2389
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Cleanup of Saltern
+  id: 7230
+  time: '2025-05-03T15:03:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2390
+- author: ODJ
+  changes:
+    - type: Remove
+      message: Puddle in Bagel.
+    - type: Tweak
+      message: Medical and roles of Bagel.
+  id: 7231
+  time: '2025-05-03T15:05:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2391
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Reorganized and cleaned up Asterisks.
+  id: 7232
+  time: '2025-05-03T15:05:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2392
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Cleanup and slight rework of Lambda
+  id: 7233
+  time: '2025-05-03T17:43:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2394
+- author: Mapping Team
+  changes:
+    - type: Tweak
+      message: Arena had an overhaul
+  id: 7234
+  time: '2025-05-03T17:43:26.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2393
+- author: DEATHB4DEFEAT
+  changes:
+    - type: Fix
+      message: >-
+        The job menu doesn't magically switch to the old style when editing
+        other parts of your character anymore
+    - type: Fix
+      message: >-
+        You can no longer lie to yourself and select more markings than the
+        point limit allows
+    - type: Fix
+      message: Fixed some odd behavior with the marking editor's Customize button
+  id: 7235
+  time: '2025-05-04T21:10:26.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2332
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Attempting to spawn in with an invalid trait list will now simply
+        prevent you from spawning with any traits at all. It will also inform
+        any admins who may be online of the attempt. 
+  id: 7236
+  time: '2025-05-05T01:39:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2410
+- author: Release
+  changes:
+    - type: Tweak
+      message: 'Mapping Team: Arena had an overhaul'
+    - type: Tweak
+      message: 'ODJ: Arena had an overhaul'
+    - type: Tweak
+      message: 'ODJ: Arena had an overhaul'
+    - type: Remove
+      message: 'ODJ: Puddle in Bagel.'
+    - type: Tweak
+      message: 'ODJ: Medical and roles of Bagel.'
+    - type: Tweak
+      message: 'ODJ: Cleanup of Saltern'
+    - type: Tweak
+      message: 'ODJ: Reorganization and removal of unnecessary/bad roles in Shoukou'
+    - type: Tweak
+      message: 'ODJ: Cleanup of Lighthouse'
+    - type: Tweak
+      message: 'ODJ: Cleanup of Meta'
+    - type: Tweak
+      message: 'ODJ: Slight changes to Northway'
+    - type: Tweak
+      message: 'ODJ: Cleanup and reorganization of Radstation'
+    - type: Tweak
+      message: 'ZetaNull: Fix the Color of Xelthia Blood as Rendered when Damaged'
+    - type: Fix
+      message: 'TCJ: Fixes for Psionic Rolling and Trait Netcode'
+    - type: Tweak
+      message: 'EctoplasmIsGood: Adjusted psionic weights'
+    - type: Fix
+      message: >-
+        EctoplasmIsGood: Abductor & Medical borg now have their proper surgery
+        speed buffs and their clothing bypass
+    - type: Fix
+      message: 'EctoplasmIsGood: TCAF Combat Gloves should no longer show an error'
+    - type: Tweak
+      message: >-
+        EctoplasmIsGood: Bartenders and Chefs can now be employed by Orion
+        Express and Idris Incorporated
+    - type: Fix
+      message: >-
+        EctoplasmIsGood, imatsoup, Matthew Herber: Energy guns wont cycle on
+        wield anymore
+    - type: Remove
+      message: 'EctoplasmIsGood: Remove Teach a Lesson'
+    - type: Fix
+      message: 'EctoplasmIsGood: Fix Mystic PDA'
+    - type: Fix
+      message: 'ZetaNull: Fix Downward Harpy Wing Localization'
+    - type: Tweak
+      message: >-
+        Timfa: Nerf Thaven melee attacks by halving stamina damage and removing
+        their sped-up attacks
+    - type: Fix
+      message: 'ZetaNull: Fix Xelthia Glovejackets to Properly Block Fingerprints '
+    - type: Fix
+      message: >-
+        Gareth Quaile: Changelings are now correctly identified as Solo
+        Antagonists in the admin overlay!
+    - type: Fix
+      message: 'ZetaNull: Fixed the Linoleum floor texture.'
+    - type: Add
+      message: >-
+        ZetaNull: Added a surgical jacket, for Xelthia to perform surgery
+        wearing in place of gloves.
+    - type: Tweak
+      message: >-
+        ZetaNull: Tweaked surgery to allow for jackets with gloves to be treated
+        as gloves.
+    - type: Fix
+      message: 'EctoplasmIsGood: Beacons No Longer Glitch Off on Grid Split '
+    - type: Fix
+      message: >-
+        DootyTheFrooty: Abductor Eye is now no longer visible for the inferior
+        organisms.
+    - type: Remove
+      message: 'DootyTheFrooty: Invisibility Organs were removed for being turbo-borked.'
+    - type: Fix
+      message: 'BloodFiendishOperator: ERT suits should no longer be large errors.'
+    - type: Fix
+      message: >-
+        BloodFiendishOperator: Bloodred's head sprite should now be
+        equipped-helmet and not equipped-head (This is leftover from the
+        impstation sprite port)
+    - type: Fix
+      message: 'BloodFiendishOperator: BSO / Dreadnought suit now have glow.'
+    - type: Fix
+      message: >-
+        BloodFiendishOperator: The Reverse-Engineered hardsuits from Nyano now
+        have glow, and no longer display errors.
+    - type: Fix
+      message: 'BloodFiendishOperator: ERT Helmets should now show light.'
+    - type: Tweak
+      message: 'CliveOcelot: BSO now has the over-ear headset'
+    - type: Tweak
+      message: 'CliveOcelot: BSO''s modsuit now has the right colour for its light'
+    - type: Add
+      message: 'ZetaNull: Fixed marking localization issues'
+  id: 7237
+  time: '2025-05-07T03:18:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2409
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added Solarian army/navy outfits to loadouts for characters with
+        Solarian+WarVeteran.
+    - type: Tweak
+      message: All cosmetic loadout items are now free.
+  id: 7238
+  time: '2025-05-07T19:45:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2407
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Added fishing.
+  id: 7239
+  time: '2025-05-08T21:58:58.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2416
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: Made bio-synthetic torso work as a body
+  id: 7240
+  time: '2025-05-08T22:00:04.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2414
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Added fun but actually real
+  id: 7241
+  time: '2025-05-08T22:05:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2404
+- author: Diggy0
+  changes:
+    - type: Tweak
+      message: Plasmamen can now wear Modsuit helmets.
+  id: 7242
+  time: '2025-05-08T22:16:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2384
+- author: ilmenwe
+  changes:
+    - type: Tweak
+      message: Logger to Logger.GetSawmill("name");
+  id: 7243
+  time: '2025-05-08T22:26:14.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2413
+- author: GNUtopia
+  changes:
+    - type: Add
+      message: Added yellow, red, and blue sports drinks
+    - type: Add
+      message: Added vodka sports drink, ronin refresher, and deadlifter cocktails
+    - type: Add
+      message: Enabled neurotoxin cocktail recipe
+    - type: Tweak
+      message: Allowed fitness shakers to function as shakers
+  id: 7244
+  time: '2025-05-08T22:27:12.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2375
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: PING
+  id: 7245
+  time: '2025-05-08T23:53:21.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2399
+- author: RocketBoss360
+  changes:
+    - type: Tweak
+      message: Shadeskip now has a new sound.
+    - type: Tweak
+      message: Shadeskip now lasts 12 seconds, and its portals despawn with it
+    - type: Tweak
+      message: Darkswap's haze cloud on cast now lasts 5 seconds
+    - type: Tweak
+      message: Telegnosic projections can now speak telepathically
+    - type: Fix
+      message: >-
+        all psionic powers are now disabled if the caster is psionically
+        insulated.
+  id: 7246
+  time: '2025-05-08T23:55:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2376
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: >-
+        Added the East-Orion Company as a selectable Employer, focusing on
+        Hydroponics. They have alternate Hydroponics uniforms, alternate
+        Security uniforms, and a high-quality plant clipper that is more gentle
+        on plants when taking a sample.
+  id: 7247
+  time: '2025-05-09T17:26:02.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2359
+- author: RedFoxIV
+  changes:
+    - type: Fix
+      message: Fixed some items used less power while turned on than they should.
+  id: 7248
+  time: '2025-05-09T17:26:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2360
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: Glacier, New Evac shuttle.
+    - type: Tweak
+      message: >-
+        Glacier's back to the Mountaintop, coupled with several fixes and
+        tweaks!
+  id: 7249
+  time: '2025-05-10T19:46:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2415
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: added blood regen to Platelets
+  id: 7250
+  time: '2025-05-10T19:47:58.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2382
+- author: GNUtopia
+  changes:
+    - type: Add
+      message: Added Faulty Waterproofing trait
+    - type: Add
+      message: Added Fragile Circuits trait
+  id: 7251
+  time: '2025-05-15T04:15:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2335
+- author: troytroy400
+  changes:
+    - type: Tweak
+      message: Edited TCAF webbing sprite.
+  id: 7252
+  time: '2025-05-16T22:26:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2431
+- author: CyberLanos
+  changes:
+    - type: Add
+      message: ported tinted security eyepatch
+    - type: Add
+      message: added tinted eyepatch to senior office and head of security loadouts
+    - type: Tweak
+      message: added flip action and sprites to eyepatches that missed them
+  id: 7253
+  time: '2025-05-17T19:25:31.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2271
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Re-enabled the "Mood shader" after significantly reworking it. Mood
+        visual effects now scale with your character's mood, instead of only
+        ever being near-greyscale. Being high life now makes the world more
+        colorful and saturated.
+    - type: Add
+      message: >-
+        A huge variety of medicines, drugs, and even food items(based on
+        flavor!) now have mood effects. Reaching for the packet of salt now
+        actually makes food provide a better mood buff.
+    - type: Add
+      message: Being Tear-gassed causes a massive mood penalty.
+    - type: Add
+      message: Deep frying food provides a strong mood bonus.
+    - type: Add
+      message: Added new Manic, Mercurial, and Dead Emotions traits.
+  id: 7254
+  time: '2025-05-17T21:10:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2425
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Turrets and NPCs can now hit players who are laying down on the floor.
+        They (by default) have a 50% chance to miss players who are laying down,
+        meaning it still offers some protection, but not perfect protection from
+        turrets. 
+  id: 7255
+  time: '2025-05-17T21:10:34.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2427
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Added a medical and security cartridge autoinjector.
+  id: 7256
+  time: '2025-05-17T21:11:03.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2258
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Markings can now use shaders. Including things like glowing light
+        effects. You can now also have glowing cybernetic eyes. IPC head screens
+        now glow. 
+  id: 7257
+  time: '2025-05-17T21:26:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2432
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: Now you can enable and disable the locks on office chairs.
+  id: 7258
+  time: '2025-05-19T19:49:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2422
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: Escape pods now correctly dock at centcomm.
+  id: 7259
+  time: '2025-05-20T19:39:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2439
+- author: Tirochora
+  changes:
+    - type: Fix
+      message: Krav Maga no longer  boosts all melee damage.
+  id: 7260
+  time: '2025-05-20T19:39:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2430
+- author: Tirochora
+  changes:
+    - type: Tweak
+      message: Table slamming should be more consistent.
+    - type: Fix
+      message: >-
+        You should properly be able to use both hands after letting somebody go
+        from a stranglehold.
+  id: 7261
+  time: '2025-05-20T19:42:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2247
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed melee weapons "Bonus range for heavy attacks" not functioning
+        correctly. 
+    - type: Add
+      message: >-
+        Added support for melee weapons having bonus range on disarms or light
+        attacks.
+  id: 7262
+  time: '2025-05-20T19:42:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2442
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added support for Organs(such as Cybernetics) to utilize the same
+        massive library of functions used by Traits.
+  id: 7263
+  time: '2025-05-23T22:41:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2448

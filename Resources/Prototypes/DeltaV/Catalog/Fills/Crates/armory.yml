@@ -6,8 +6,8 @@
     contents:
       - id: WeaponSniperGrand
         amount: 2
-      - id: BoxSpeedLoaderLightRifle
-        amount: 1
+      - id: MagazineLightRifleMarkOne
+        amount: 4
 
 - type: entity
   id: CrateArmoryUniversal

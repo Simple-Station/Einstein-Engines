@@ -73,3 +73,10 @@
   descriptionKey: employer_description_pmcg
   primaryColour: "#3355ff"
   secondaryColour: "#c4a56e"
+
+- type: employer
+  id: EastOrionCompany
+  nameKey: employer_name_eastorioncompany
+  descriptionKey: employer_description_eastorioncompany
+  primaryColour: "#ff8a13"
+  secondaryColour: "#336b83"

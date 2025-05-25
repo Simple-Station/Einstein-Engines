@@ -22,3 +22,15 @@
     reflects:
       - Energy
       - NonEnergy
+
+- type: entity
+  abstract: true
+  parent: [Clothing, BaseFoldable]
+  id: FlippableEyesBase
+  components:
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped

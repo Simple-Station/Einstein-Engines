@@ -750,3 +750,37 @@
         - ZavodskoiInterstellar
   items:
     - ClothingUniformJumpsuitZavodCadet
+
+- type: loadout
+  id: LoadoutSecurityJumpsuitEOC
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityUniforms
+    - !type:CharacterEmployerRequirement
+      employers:
+      - EastOrionCompany
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+  items:
+    - ClothingUniformJumpsuitSecurityEOC
+
+- type: loadout
+  id: LoadoutSecurityJumpskirtEOC
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityUniforms
+    - !type:CharacterEmployerRequirement
+      employers:
+      - EastOrionCompany
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+  items:
+    - ClothingUniformJumpskirtSecurityEOC

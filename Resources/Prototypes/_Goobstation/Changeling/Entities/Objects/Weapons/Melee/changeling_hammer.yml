@@ -16,7 +16,7 @@
         Blunt: 20
         Structural: 50
     heavyStaminaCost: 10
-    heavyRangeModifier: 1.75
+    heavyRangeModifier: 1.2
     heavyRateModifier: 2.5
     heavyDamageBaseModifier: 1.5
     maxTargets: 12

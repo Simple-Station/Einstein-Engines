@@ -5,6 +5,8 @@ using Content.Shared.Traits.Assorted.Components;
 using Content.Shared.Damage.Events;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Damage.Components;
+using Content.Shared.Mood;
+using Robust.Shared.Random;
 
 namespace Content.Shared.Traits.Assorted.Systems;
 
@@ -12,6 +14,7 @@ public sealed partial class TraitStatModifierSystem : EntitySystem
 {
     [Dependency] private readonly ContestsSystem _contests = default!;
     [Dependency] private readonly MobThresholdSystem _threshold = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -22,6 +25,8 @@ public sealed partial class TraitStatModifierSystem : EntitySystem
         SubscribeLocalEvent<AdrenalineComponent, GetThrowingDamageEvent>(OnAdrenalineGetThrowingDamage);
         SubscribeLocalEvent<PainToleranceComponent, GetMeleeDamageEvent>(OnPainToleranceGetMeleeDamage);
         SubscribeLocalEvent<PainToleranceComponent, GetThrowingDamageEvent>(OnPainToleranceGetThrowingDamage);
+        SubscribeLocalEvent<ManicComponent, OnSetMoodEvent>(OnManicMood);
+        SubscribeLocalEvent<MercurialComponent, OnSetMoodEvent>(OnMercurialMood);
     }
 
     private void OnCritStartup(EntityUid uid, CritModifierComponent component, ComponentStartup args)
@@ -83,4 +88,10 @@ public sealed partial class TraitStatModifierSystem : EntitySystem
         var modifier = _contests.StaminaContest(uid, component.BypassClamp, component.RangeModifier);
         return component.Inverse ? 1 / modifier : modifier;
     }
+
+    private void OnManicMood(EntityUid uid, ManicComponent component, ref OnSetMoodEvent args) =>
+        args.MoodChangedAmount *= _random.NextFloat(component.LowerMultiplier, component.UpperMultiplier);
+
+    private void OnMercurialMood(EntityUid uid, MercurialComponent component, ref OnSetMoodEvent args) =>
+        args.MoodOffset += _random.NextFloat(component.LowerMood, component.UpperMood);
 }

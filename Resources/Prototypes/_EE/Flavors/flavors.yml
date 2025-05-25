@@ -3,3 +3,33 @@
   id: xelthia
   flavorType: Complex
   description: flavor-complex-xelthia
+
+- type: flavor
+  id: sportyyellow
+  flavorType: Complex
+  description: flavor-complex-sporty-and-yellow
+
+- type: flavor
+  id: sportyblue
+  flavorType: Complex
+  description: flavor-complex-sporty-and-blue
+
+- type: flavor
+  id: sportyred
+  flavorType: Complex
+  description: flavor-complex-sporty-and-red
+
+- type: flavor
+  id: vodkasportsdrink
+  flavorType: Complex
+  description: flavor-complex-vodka-sports-drink
+
+- type: flavor
+  id: roninrefresher
+  flavorType: Complex
+  description: flavor-complex-ronin-refresher
+
+- type: flavor
+  id: deadlifter
+  flavorType: Complex
+  description: flavor-complex-deadlifter

@@ -48,7 +48,7 @@ public sealed class MoodRemoveEffectEvent : EntityEventArgs
 ///     EG: The end result after tallying up all Moodlets comes out to 70, but a trait multiplies it by 0.8 to make it 56.
 /// </summary>
 [ByRefEvent]
-public record struct OnSetMoodEvent(EntityUid Receiver, float MoodChangedAmount, bool Cancelled);
+public record struct OnSetMoodEvent(EntityUid Receiver, float MoodChangedAmount, bool Cancelled, float MoodOffset = 0f);
 
 /// <summary>
 ///     This event is raised on an entity when it receives a mood effect, but before the effects are calculated.

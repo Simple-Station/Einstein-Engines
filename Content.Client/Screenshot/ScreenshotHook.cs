@@ -40,7 +40,7 @@ namespace Content.Client.Screenshot
                 }
                 else
                 {
-                    Logger.InfoS("screenshot", "Can't take no-UI screenshot: current state is not GameScreen");
+                    Logger.GetSawmill("screenshot").Info("Can't take no-UI screenshot: current state is not GameScreen");
                 }
             }));
         }
@@ -74,16 +74,16 @@ namespace Content.Client.Screenshot
                         screenshot.SaveAsPng(file);
                     });
 
-                    Logger.InfoS("screenshot", "Screenshot taken as {0}.png", filename);
+                    Logger.GetSawmill("screenshot.hook").Info("screenshot", "Screenshot taken as {0}.png", filename);
                     return;
                 }
                 catch (IOException e)
                 {
-                    Logger.WarningS("screenshot", "Failed to save screenshot, retrying?:\n{0}", e);
+                    Logger.GetSawmill("screenshot.hook").Warning("screenshot", "Failed to save screenshot, retrying?:\n{0}", e);
                 }
             }
 
-            Logger.ErrorS("screenshot", "Unable to save screenshot.");
+            Logger.GetSawmill("screenshot.hook").Error("screenshot", "Unable to save screenshot.");
         }
     }
 

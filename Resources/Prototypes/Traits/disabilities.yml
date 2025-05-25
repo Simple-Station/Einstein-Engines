@@ -24,6 +24,7 @@
     - !type:TraitAddComponent
       components:
         - type: PermanentBlindness
+          incurable: true
 
 - type: trait
   id: Nearsighted
@@ -50,7 +51,7 @@
     - !type:TraitAddComponent
       components:
         - type: PermanentBlindness
-          blindness: 4
+          blindness: 3
 
 - type: trait
   id: Narcolepsy
@@ -266,6 +267,10 @@
         - IPC
         - Lamia
         - Plasmaman
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - PlateletFactories
   functions:
     - !type:TraitAddComponent
       components:

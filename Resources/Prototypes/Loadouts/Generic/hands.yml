@@ -44,7 +44,7 @@
 - type: loadout
   id: LoadoutHandsGlovesPowerglove
   category: Hands
-  cost: 1
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   items:

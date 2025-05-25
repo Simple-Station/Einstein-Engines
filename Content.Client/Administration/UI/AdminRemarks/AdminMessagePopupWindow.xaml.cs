@@ -49,7 +49,14 @@ public sealed partial class AdminMessagePopupWindow : Control
             MessageContainer.AddChild(new AdminMessagePopupMessage(message));
         }
 
-        Description.SetMessage(FormattedMessage.FromMarkup(Loc.GetString("admin-notes-message-desc", ("count", state.Messages.Length))));
+        try
+        {
+            Description.SetMessage(FormattedMessage.FromMarkupOrThrow(Loc.GetString("admin-notes-message-desc", ("count", state.Messages.Length))));
+        }
+        catch (Exception e)
+        {
+            Description.SetMessage(e.Message);
+        }
     }
 
     private void OnDismissButtonPressed(BaseButton.ButtonEventArgs obj)

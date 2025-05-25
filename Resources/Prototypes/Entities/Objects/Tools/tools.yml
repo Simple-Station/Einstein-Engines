@@ -79,6 +79,17 @@
       path: /Audio/Items/wirecutter.ogg
       params:
         variation: 0.125
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 18
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 - type: entity
   name: screwdriver
@@ -157,6 +168,17 @@
       collection: Screwdriver
     endSound:
       path: /Audio/Medical/Surgery/retractor2.ogg
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 12
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 - type: entity
   name: wrench
@@ -214,6 +236,17 @@
       Steel: 100
   - type: StaticPrice
     price: 22
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 17
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 - type: entity
   name: crowbar
@@ -277,6 +310,17 @@
     speed: 0.55
   - type: SurgeryTool
     startSound: /Audio/Items/crowbar.ogg
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 28
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 - type: entity
   parent: Crowbar
@@ -358,6 +402,17 @@
       Circuitry: 25
   - type: StaticPrice
     price: 56
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 11
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 - type: entity
   name: network configurator
@@ -409,6 +464,17 @@
     - type: GuideHelp
       guides:
         - NetworkConfigurator
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.25,-0.25,0.25,0.25"
+          density: 12
+          mask:
+          - ItemMask
+          restitution: 0.3
+          friction: 0.2
 
 #Power tools
 #Later on these should switch probably switch damage when changing the tool behavior.
@@ -484,6 +550,17 @@
     difficulty: 2
     recipes:
       - PowerDrill
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 45
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 - type: entity
   id: RCD
@@ -543,6 +620,17 @@
     difficulty: 3
     recipes:
       - RCD
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 65
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 - type: entity
   id: RPD
@@ -591,6 +679,17 @@
     difficulty: 3
     recipes:
       - RPD
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 65
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 - type: entity
   id: RCDEmpty

@@ -11,7 +11,6 @@ using Content.Shared.Mind;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
@@ -23,6 +22,7 @@ namespace Content.Shared.Actions;
 using Content.Shared._Shitmed.Antags.Abductor;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.Popups;
+using Robust.Shared.Prototypes;
 
 public abstract class SharedActionsSystem : EntitySystem
 {
@@ -38,6 +38,7 @@ public abstract class SharedActionsSystem : EntitySystem
     [Dependency] private readonly ActionContainerSystem _actionContainer = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!; // Shitmed Change
+    [Dependency] private readonly IPrototypeManager _protoMan = default!;
 
     public override void Initialize()
     {
@@ -940,6 +941,38 @@ public abstract class SharedActionsSystem : EntitySystem
             return;
 
         RemoveAction(action.AttachedEntity.Value, actionId, comp, action);
+    }
+
+    public void RemoveAction(EntityUid uid, string actionProto)
+    {
+        if (!_protoMan.TryIndex(actionProto, out EntityPrototype? prototype))
+            return;
+
+        RemoveAction(uid, prototype);
+    }
+
+    /// <summary>
+    ///     Removes an action from its entity by prototype.
+    /// </summary>
+    public void RemoveAction(EntityUid uid, EntProtoId actionProto)
+    {
+        if (!TryComp(uid, out ActionsContainerComponent? actionsContainer)
+            || !TryComp(uid, out ActionsComponent? actionsComponent))
+            return;
+
+        var actionsToRemove = new List<Entity<BaseActionComponent>>();
+        foreach (var actionEnt in actionsContainer.Container.ContainedEntities)
+        {
+            var metaData = MetaData(actionEnt);
+            if (metaData.EntityPrototype is null || metaData.EntityPrototype.ID != actionProto
+                || !TryGetActionData(actionEnt, out var actionComponent))
+                continue;
+
+            actionsToRemove.Add((actionEnt, actionComponent));
+        }
+
+        foreach (var match in actionsToRemove)
+            RemoveAction(uid, match.Owner, actionsComponent, match.Comp);
     }
 
     public void RemoveAction(EntityUid performer, EntityUid? actionId, ActionsComponent? comp = null, BaseActionComponent? action = null)

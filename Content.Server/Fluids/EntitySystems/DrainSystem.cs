@@ -1,9 +1,8 @@
-using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.DoAfter;
-using Content.Server.Fluids.Components;
 using Content.Server.Popups;
 using Content.Shared.Audio;
 using Content.Shared.Chemistry.Components.SolutionManager;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
@@ -25,7 +24,7 @@ namespace Content.Server.Fluids.EntitySystems;
 public sealed class DrainSystem : SharedDrainSystem
 {
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly SharedAmbientSoundSystem _ambientSoundSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
@@ -153,7 +152,7 @@ public sealed class DrainSystem : SharedDrainSystem
             }
 
             // Remove a bit from the buffer
-            _solutionContainerSystem.SplitSolution(drain.Solution.Value, (drain.UnitsDestroyedPerSecond * drain.DrainFrequency));
+            _solutionContainerSystem.SplitSolution(drain.Solution.Value, drain.UnitsDestroyedPerSecond * drain.DrainFrequency);
 
             // This will ensure that UnitsPerSecond is per second...
             var amount = drain.UnitsPerSecond * drain.DrainFrequency;
@@ -163,7 +162,8 @@ public sealed class DrainSystem : SharedDrainSystem
 
             puddles.Clear();
 
-            foreach (var entity in _lookup.GetEntitiesInRange(_transform.GetMapCoordinates(uid, xform), drain.Range))
+            var coords = _transform.GetMapCoordinates(uid, xform);
+            foreach (var entity in _lookup.GetEntitiesInRange(coords.MapId, coords.Position, drain.Range, LookupFlags.Static))
             {
                 // No InRangeUnobstructed because there's no collision group that fits right now
                 // and these are placed by mappers and not buildable/movable so shouldnt really be a problem...

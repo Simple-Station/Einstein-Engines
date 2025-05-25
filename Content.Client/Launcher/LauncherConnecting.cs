@@ -112,12 +112,12 @@ namespace Content.Client.Launcher
                 }
                 else
                 {
-                    Logger.InfoS("launcher-ui", $"Redial not possible, no Ss14Address");
+                    Logger.GetSawmill("launcher-ui").Info($"Redial not possible, no Ss14Address");
                 }
             }
             catch (Exception ex)
             {
-                Logger.ErrorS("launcher-ui", $"Redial exception: {ex}");
+                Logger.GetSawmill("launcher-ui").Error($"Redial exception: {ex}");
             }
             return false;
         }

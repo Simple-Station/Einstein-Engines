@@ -234,6 +234,7 @@
     checkCanInteract: false
     event: !type:AnomalyPowerActionEvent
             settings:
+              checkInsulation: true
               powerName: "Shadeskip"
               minGlimmer: 6
               maxGlimmer: 8
@@ -243,9 +244,9 @@
               - settings:
                   spawnOnPulse: true
                   spawnOnSuperCritical: true
-                  minAmount: 18
-                  maxAmount: 28
-                  maxRange: 2.5
+                  minAmount: 20
+                  maxAmount: 25
+                  maxRange: 2.25
                 spawns:
                 - ShadowKudzuTemp
               - settings:
@@ -269,6 +270,7 @@
       checkCanInteract: false
       event: !type:AnomalyPowerActionEvent
         settings:
+          checkInsulation: true
           powerName: "Telekinetic Pulse"
           overchargeFeedback: "shadeskip-overcharge-feedback" # The text behind this is fine.
           overchargeCooldown: 120
@@ -315,6 +317,7 @@
       checkCanInteract: false
       event: !type:AnomalyPowerActionEvent
         settings:
+          checkInsulation: true
           powerName: "Pyrokinetic Flare"
           minGlimmer: 3
           maxGlimmer: 5

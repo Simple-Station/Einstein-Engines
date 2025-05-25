@@ -21,7 +21,7 @@ public sealed partial class CCVars
     ///     A direct multiplier on how violent space wind is.
     /// </summary>
     public static readonly CVarDef<float> SpaceWindStrengthMultiplier =
-        CVarDef.Create("atmos.space_wind_strength_multiplier", 2f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.space_wind_strength_multiplier", 1f, CVar.SERVERONLY);
 
     /// <summary>
     ///     The maximum Force (in Newtons) that may be applied to an object by atmospheric pressure differences.
@@ -40,7 +40,7 @@ public sealed partial class CCVars
     ///     The amount of time (in seconds) for space wind to knock down a player character if they are subjected to space wind.
     /// </summary>
     public static readonly CVarDef<float> SpaceWindKnockdownTime =
-        CVarDef.Create("atmos.space_wind_knockdown_time", 1f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.space_wind_knockdown_time", 0.75f, CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether monstermos tile equalization is enabled.
@@ -155,5 +155,17 @@ public sealed partial class CCVars
     ///     This multiplier is added after all other checks are made, and applies to both throwing force, and how easy it is for an entity to be thrown.
     /// </summary>
     public static readonly CVarDef<float> AtmosHumanoidThrowMultiplier =
-        CVarDef.Create("atmos.humanoid_throw_multiplier", 5f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.humanoid_throw_multiplier", 2f, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Whether or not Space Wind is allowed to attempt to knock down player characters.
+    /// </summary>
+    public static readonly CVarDef<bool> SpaceWindAllowKnockdown =
+        CVarDef.Create("atmos.space_wind_allow_knockdown", true, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Whether or not Space Wind will create subtle visual indicators for the presence of air currents.
+    /// </summary>
+    public static readonly CVarDef<bool> SpaceWindVisuals =
+        CVarDef.Create("atmos.space_wind_visuals", true, CVar.SERVERONLY);
 }

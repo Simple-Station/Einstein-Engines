@@ -439,8 +439,8 @@ public sealed class HierophantSystem : EntitySystem
         for (var i = 1; i < playerCount; i++)
             scalingMultiplier *= HealthScalingFactor;
 
-        Logger.Info($"Setting threshold for {uid} to {_baseHierophantHp * scalingMultiplier}");
-        if (_threshold.TryGetDeadThreshold(uid, out var deadThreshold, thresholds) 
+        Logger.GetSawmill("hierophant").Info($"Setting threshold for {uid} to {_baseHierophantHp * scalingMultiplier}");
+        if (_threshold.TryGetDeadThreshold(uid, out var deadThreshold, thresholds)
             && deadThreshold < _baseHierophantHp * scalingMultiplier)
             _threshold.SetMobStateThreshold(uid, _baseHierophantHp * scalingMultiplier, MobState.Dead, thresholds);
     }

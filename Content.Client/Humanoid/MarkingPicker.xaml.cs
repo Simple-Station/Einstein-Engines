@@ -227,13 +227,15 @@ public sealed partial class MarkingPicker : Control
                 Disabled = !item.Pressed,
             };
 
-            item.OnToggled += args =>
+            item.OnToggled += _ =>
             {
-                if (args.Pressed)
+                // Add the marking if they have points for it
+                item.Pressed = item.Pressed && !Forced ? _currentMarkings.PointsLeft(_selectedMarkingCategory) > 0 : item.Pressed;
+                if (item.Pressed)
                     MarkingAdd(_prototypeManager.Index<MarkingPrototype>(item.Name));
                 else
                     MarkingRemove(_prototypeManager.Index<MarkingPrototype>(item.Name));
-                customize.Disabled = !args.Pressed;
+                customize.Disabled = !item.Pressed;
             };
             customize.OnPressed += _ =>
             {
@@ -409,12 +411,10 @@ public sealed partial class MarkingPicker : Control
 
     private void MarkingRemove(MarkingPrototype marking)
     {
-        if (_selectedMarking is null) return;
-
         _currentMarkings.Remove(_selectedMarkingCategory, marking.ID);
 
         UpdatePoints();
-        CMarkingColors.Visible = _selectedMarking.Name != marking.ID;
+        CMarkingColors.Visible = _selectedMarking?.Name != marking.ID;
         OnMarkingRemoved?.Invoke(_currentMarkings);
     }
 }

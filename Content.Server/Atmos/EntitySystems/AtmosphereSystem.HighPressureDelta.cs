@@ -9,12 +9,14 @@ using Robust.Shared.Audio;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
+using Robust.Shared.Prototypes;
 using System.Numerics;
 
 namespace Content.Server.Atmos.EntitySystems;
 
 public sealed partial class AtmosphereSystem
 {
+    private EntProtoId _spaceWindProto = "SpaceWindVisual";
     private readonly HashSet<Entity<MovedByPressureComponent>> _activePressures = new();
     private void UpdateHighPressure(float frameTime)
     {
@@ -78,6 +80,13 @@ public sealed partial class AtmosphereSystem
             return;
 
         pressureVector *= SpaceWindStrengthMultiplier;
+
+        if (SpaceWindVisuals && atmosComp.SpaceWindSoundCooldown == 0)
+        {
+            var location = _mapSystem.GridTileToLocal(gridAtmosphere.Owner, mapGrid, tile.GridIndices);
+            var visualEnt = SpawnAtPosition(_spaceWindProto, location);
+            _transformSystem.SetLocalRotation(visualEnt, pressureVector.ToAngle() - MathF.PI / 2);
+        }
 
         if (pVecLength > 15 && !tile.Hotspot.Valid && atmosComp.SpaceWindSoundCooldown == 0)
         {
@@ -145,8 +154,21 @@ public sealed partial class AtmosphereSystem
         var coefficientOfFriction = partialFrictionComposition * physics.Mass;
         coefficientOfFriction *= _standingSystem.IsDown(uid) ? 3 : 1;
 
-        if (HasComp<HumanoidAppearanceComponent>(ent))
+        if (TryComp(ent.Owner, out HumanoidAppearanceComponent? humanoidAppearance))
+        {
             pressureVector *= HumanoidThrowMultiplier;
+
+            if (SpaceWindAllowKnockdown)
+            {
+                // Torque threshold for a humanoid shaped object is 1/3rd mass * height squared. Ignore the 3, it's not a magic number in this context.
+                // Same with 1.75f, we're quick and dirty shorthanding for the standard height of a human (in meters).
+                var heightSquared = MathF.Pow(humanoidAppearance.Height * 1.75f, 2);
+                var knockdownThreshold = heightSquared / 3;
+                if (knockdownThreshold <= pVecLength)
+                    _sharedStunSystem.TryKnockdown(uid, TimeSpan.FromSeconds(SpaceWindKnockdownTime), true);
+            }
+        }
+
         if (!alwaysThrow && pVecLength < coefficientOfFriction)
             return;
 
@@ -154,7 +176,6 @@ public sealed partial class AtmosphereSystem
         // ThrowingSystem increments linear velocity by a given vector, but we have to do this anyways because reasons.
         var velocity = _transformSystem.GetWorldRotation(uid).ToWorldVec() + pressureVector;
 
-        _sharedStunSystem.TryKnockdown(uid, TimeSpan.FromSeconds(SpaceWindKnockdownTime), true);
         _throwing.TryThrow(uid, velocity, physics, xform, projectileQuery,
             1, doSpin: physics.AngularVelocity < SpaceWindMaxAngularVelocity);
 

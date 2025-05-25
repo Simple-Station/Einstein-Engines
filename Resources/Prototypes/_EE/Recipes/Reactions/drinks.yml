@@ -1,0 +1,57 @@
+- type: reaction
+  id: SportsDrinkBlue
+  reactants:
+    Cryanobalamin:
+      amount: 1
+    SportsDrinkYellow:
+      amount: 4
+  products:
+    SportsDrinkBlue: 5
+
+- type: reaction
+  id: SportsDrinkRed
+  reactants:
+    LiftLoversSpecial:
+      amount: 1
+    SportsDrinkYellow:
+      amount: 4
+  products:
+    SportsDrinkRed: 5
+
+- type: reaction
+  id: VodkaSportsDrink
+  reactants:
+    Vodka:
+      amount: 1
+    SportsDrinkYellow:
+      amount: 1
+  products:
+    VodkaSportsDrink: 2
+
+- type: reaction
+  id: RoninRefresher
+  reactants:
+    Sake:
+      amount: 2
+    SportsDrinkBlue:
+      amount: 2
+    JuiceLime:
+      amount: 1
+  products:
+    RoninRefresher: 5
+
+- type: reaction
+  id: Deadlifter
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    Absinthe:
+      amount: 1
+    Egg:
+      amount: 1
+    SportsDrinkRed:
+      amount: 1
+    Ice:
+      amount: 2
+  products:
+    Deadlifter: 5

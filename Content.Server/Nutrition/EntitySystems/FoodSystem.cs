@@ -10,7 +10,6 @@ using Content.Shared.Administration.Logs;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Organ;
 using Content.Shared.Chemistry;
-using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
@@ -37,6 +36,7 @@ using Content.Shared.CCVar;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Whitelist;
 using Robust.Shared.Configuration;
+using Content.Shared.Mood;
 
 namespace Content.Server.Nutrition.EntitySystems;
 
@@ -322,6 +322,9 @@ public sealed class FoodSystem : EntitySystem
             if (entity.Comp.PopupOnEat)
                 _popup.PopupPredicted(Loc.GetString("food-system-eat-broadcasted-success", ("user", Identity.Entity(args.User, EntityManager)), ("food", Identity.Entity(entity.Owner, EntityManager))),
                     args.User, args.User, PopupType.MediumCaution);
+
+            foreach (var mood in entity.Comp.MoodletsOnEat)
+                RaiseLocalEvent(args.User, new MoodEffectEvent(mood));
 
             // log successful voluntary eating
             _adminLogger.Add(LogType.Ingestion, LogImpact.Low, $"{ToPrettyString(args.User):target} ate {ToPrettyString(entity.Owner):food}");
