@@ -12,6 +12,8 @@ using Robust.Server.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using System.Text;
+using Content.Server.Paper;
+
 
 namespace Content.Server.DeltaV.TapeRecorder;
 
@@ -125,7 +127,7 @@ public sealed class TapeRecorderSystem : SharedTapeRecorderSystem
         text.AppendLine();
         text.Append(Loc.GetString("tape-recorder-print-end-text"));
 
-        _paper.SetContent((paper, paperComp), text.ToString());
+        _paper.SetContent(paper, text.ToString(), paperComp);
 
         comp.CooldownEndTime = Timing.CurTime + comp.PrintCooldown;
     }
