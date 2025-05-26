@@ -3,7 +3,7 @@
   tags: ["flora"]
   snapCardinals: true
   sprite:
-    sprite: Nuclear14/Structures/Decoration/flora.rsi
+    sprite: _Nuclear14/Structures/Decoration/flora.rsi
     state: branch
 
 - type: decal
@@ -11,7 +11,7 @@
   tags: ["flora"]
   snapCardinals: true
   sprite:
-    sprite: Nuclear14/Structures/Decoration/flora.rsi
+    sprite: _Nuclear14/Structures/Decoration/flora.rsi
     state: branch_broken
 
 - type: decal
@@ -19,7 +19,7 @@
   tags: ["flora"]
   snapCardinals: true
   sprite:
-    sprite: Nuclear14/Structures/Decoration/flora.rsi
+    sprite: _Nuclear14/Structures/Decoration/flora.rsi
     state: brushwood
 
 - type: decal
@@ -27,7 +27,7 @@
   tags: ["flora"]
   snapCardinals: true
   sprite:
-    sprite: Nuclear14/Structures/Decoration/flora.rsi
+    sprite: _Nuclear14/Structures/Decoration/flora.rsi
     state: brushwood_alt
 
 - type: decal
@@ -35,7 +35,7 @@
   tags: ["flora"]
   snapCardinals: true
   sprite:
-    sprite: Nuclear14/Structures/Decoration/flora.rsi
+    sprite: _Nuclear14/Structures/Decoration/flora.rsi
     state: tall_grass_1
 
 - type: decal
@@ -43,7 +43,7 @@
   tags: ["flora"]
   snapCardinals: true
   sprite:
-    sprite: Nuclear14/Structures/Decoration/flora.rsi
+    sprite: _Nuclear14/Structures/Decoration/flora.rsi
     state: tall_grass_2
 
 - type: decal
@@ -51,7 +51,7 @@
   tags: ["flora"]
   snapCardinals: true
   sprite:
-    sprite: Nuclear14/Structures/Decoration/flora.rsi
+    sprite: _Nuclear14/Structures/Decoration/flora.rsi
     state: tall_grass_3
 
 - type: decal
@@ -59,7 +59,7 @@
   tags: ["flora"]
   snapCardinals: true
   sprite:
-    sprite: Nuclear14/Structures/Decoration/flora.rsi
+    sprite: _Nuclear14/Structures/Decoration/flora.rsi
     state: tall_grass_4
 
 - type: decal
@@ -67,7 +67,7 @@
   tags: ["flora"]
   snapCardinals: true
   sprite:
-    sprite: Nuclear14/Structures/Decoration/flora.rsi
+    sprite: _Nuclear14/Structures/Decoration/flora.rsi
     state: tall_grass_5
 
 - type: decal
@@ -75,7 +75,7 @@
   tags: ["flora"]
   snapCardinals: true
   sprite:
-    sprite: Nuclear14/Structures/Decoration/flora.rsi
+    sprite: _Nuclear14/Structures/Decoration/flora.rsi
     state: tall_grass_6
 
 - type: decal
@@ -83,7 +83,7 @@
   tags: ["flora"]
   snapCardinals: true
   sprite:
-    sprite: Nuclear14/Structures/Decoration/flora.rsi
+    sprite: _Nuclear14/Structures/Decoration/flora.rsi
     state: tall_grass_7
 
 - type: decal
@@ -91,7 +91,7 @@
   tags: ["flora"]
   snapCardinals: true
   sprite:
-    sprite: Nuclear14/Structures/Decoration/flora.rsi
+    sprite: _Nuclear14/Structures/Decoration/flora.rsi
     state: tall_grass_8
 
 - type: decal
@@ -99,7 +99,7 @@
   tags: ["flora"]
   snapCardinals: true
   sprite:
-    sprite: Nuclear14/Structures/Decoration/flora.rsi
+    sprite: _Nuclear14/Structures/Decoration/flora.rsi
     state: broc-dead
 
 - type: decal
@@ -107,7 +107,7 @@
   tags: ["flora"]
   snapCardinals: true
   sprite:
-    sprite: Nuclear14/Structures/Decoration/flora.rsi
+    sprite: _Nuclear14/Structures/Decoration/flora.rsi
     state: xander-dead
 
 - type: decal
@@ -115,7 +115,7 @@
   tags: ["flora"]
   snapCardinals: true
   sprite:
-    sprite: Nuclear14/Structures/Decoration/flora.rsi
+    sprite: _Nuclear14/Structures/Decoration/flora.rsi
     state: mutfruit-dead
 
 - type: decal
@@ -123,7 +123,7 @@
   tags: ["flora"]
   snapCardinals: true
   sprite:
-    sprite: Nuclear14/Structures/Decoration/flora.rsi
+    sprite: _Nuclear14/Structures/Decoration/flora.rsi
     state: ferocactus-dead
 
 - type: decal
@@ -131,5 +131,5 @@
   tags: ["flora"]
   snapCardinals: true
   sprite:
-    sprite: Nuclear14/Structures/Decoration/flora.rsi
+    sprite: _Nuclear14/Structures/Decoration/flora.rsi
     state: agave-dead
