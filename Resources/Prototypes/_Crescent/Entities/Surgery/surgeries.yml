@@ -1,0 +1,37 @@
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryInsertDermis
+  name: Install Dermal Cybernetic
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertSkin
+    - SurgeryStepSealOrganWound
+  - type: SurgeryPartCondition
+    part: Torso
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Dermis
+    inverse: true
+    reattaching: true
+    slotId: dermis
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryRemoveDermis
+  name: Remove Dermal Cybernetic
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepClampInternalBleeders
+    - SurgeryStepRemoveOrgan
+  - type: SurgeryPartCondition
+    part: Torso
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Dermis
+    slotId: dermis.
