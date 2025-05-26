@@ -1,0 +1,50 @@
+{
+  "copyright" : "Developed by the HULLROT team. Do not edit, relicense, or redistribute.",
+  "license" : "",
+  "version": 1,
+  "size": {
+    "x": 64,
+    "y": 32
+  },
+    "states": [
+        {
+            "name": "HMG"
+        },
+        {
+            "name": "rifle"
+        },
+        {
+            "name": "Cannon"
+        },
+        {
+            "name": "Minigun"
+        },
+        {
+            "name": "autoshotgun"
+        },
+        {
+            "name": "autopuntgun"
+        },
+        {
+            "name": "mechsword"
+        },
+        {
+            "name": "mechplasmasword"
+        },
+        {
+            "name": "mechhammer"
+        },
+        {
+            "name": "mechmissile"
+        },
+        {
+            "name": "grenadelauncher"
+        },
+        {
+            "name": "plasmarifle"
+        },
+        {
+            "name": "plasmacannon"
+        }
+    ]
+}

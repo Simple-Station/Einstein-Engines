@@ -88,9 +88,9 @@
   name: emergency shuttle console
   description: Handles authorization to early launch the shuttle.
   components:
-  - type: AccessReader
-    access:
-    - [ Command ]
+ # - type: AccessReader
+ #   access:
+ #   - [ Command ]
   - type: EmergencyShuttleConsole
   - type: ActivatableUI
     key: enum.EmergencyConsoleUiKey.Key
@@ -483,8 +483,8 @@
     color: "#1f8c28"
   - type: Computer
     board: CriminalRecordsComputerCircuitboard
-  - type: AccessReader
-    access: [["Security"]]
+ # - type: AccessReader
+ #   access: [["Security"]]
   - type: GuideHelp
     guides:
     - CriminalRecords
@@ -520,12 +520,12 @@
     color: "#1f8c28"
   - type: Computer
     board: PsionicsRecordsComputerCircuitboard
-  - type: AccessReader
-    access:
-      - [ Chapel ]
-      - [ Library ]
-      - [ Mantis ]
-      - [ ResearchDirector ]
+  #- type: AccessReader
+  #  access:
+  # #   - [ Chapel ]
+  #    - [ Library ]
+  ##    - [ Mantis ]
+  #    - [ ResearchDirector ]
   # - type: GuideHelp
     # guides: # TODO: Add a guide for Psionics Registry
 
@@ -631,8 +631,8 @@
     powerLoad: 1000
   - type: Computer
     board: ResearchComputerCircuitboard
-  - type: AccessReader
-    access: [["Research"]]
+ # - type: AccessReader
+ #   access: [["Research"]]
   - type: PointLight
     radius: 1.5
     energy: 1.6
@@ -787,8 +787,8 @@
       state: generic_keys
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
-  - type: AccessReader
-    access: [[ "Command" ]]
+ # - type: AccessReader
+ #   access: [[ "Command" ]]
   - type: CommunicationsConsole
     title: comms-console-announcement-title-station
   - type: DeviceNetwork
@@ -829,8 +829,8 @@
       state: syndie_key
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
-  - type: AccessReader
-    access: [[ "NuclearOperative" ]]
+ # - type: AccessReader
+  #  access: [[ "NuclearOperative" ]]
   - type: CommunicationsConsole
     title: comms-console-announcement-title-nukie
     color: "#ff0000"
@@ -948,8 +948,8 @@
     radius: 1.5
     energy: 1.6
     color: "#b89f25"
-  - type: AccessReader
-    access: [["Cargo"]]
+ # - type: AccessReader
+ #   access: [["Cargo"]]
   - type: GuideHelp
     guides:
     - Cargo
@@ -991,8 +991,8 @@
     radius: 1.5
     energy: 1.6
     color: "#b89f25"
-  - type: AccessReader
-    access: [["Cargo"]]
+#  - type: AccessReader
+#    access: [["Cargo"]]
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: BasicDevice
@@ -1039,8 +1039,8 @@
     radius: 1.5
     energy: 1.6
     color: "#b89f25"
-  - type: AccessReader
-    access: [["Quartermaster"]]
+ # - type: AccessReader
+ #   access: [["Quartermaster"]]
   - type: GuideHelp
     guides:
     - CargoBounties
@@ -1146,8 +1146,8 @@
       radius: 1.5
       energy: 1.6
       color: "#b89f25"
-    - type: AccessReader
-      access: [["Salvage"]]
+  #  - type: AccessReader
+  #    access: [["Salvage"]]
     - type: StealTarget
       stealGroup: SalvageExpeditionsComputerCircuitboard
 
@@ -1293,8 +1293,8 @@
     board: ComputerMassMediaCircuitboard
   - type: DeviceNetworkRequiresPower
   - type: NewsWriter
-  - type: AccessReader
-    access: [[ "Command" ]]
+ # - type: AccessReader
+ #   access: [[ "Command" ]]
   - type: ActivatableUI
     key: enum.NewsWriterUiKey.Key
   - type: ActivatableUIRequiresVision
@@ -1392,8 +1392,8 @@
     transmitFrequencyId: CyborgControl
   - type: Computer
     board: RoboticsConsoleCircuitboard
-  - type: AccessReader # only used for dangerous things
-    access: [["ResearchDirector"]]
+ # - type: AccessReader # only used for dangerous things
+ #   access: [["ResearchDirector"]]
   - type: Lock
     unlockOnClick: false
 
@@ -1419,8 +1419,8 @@
       state: generic_panel_open
   - type: ApcPowerReceiver
     powerLoad: 1000
-  - type: AccessReader
-    access: [ [ "ResearchDirector" ] ]
+ # - type: AccessReader
+ #   access: [ [ "ResearchDirector" ] ]
   - type: Lock
     unlockOnClick: false
   - type: SiliconLawUpdater
