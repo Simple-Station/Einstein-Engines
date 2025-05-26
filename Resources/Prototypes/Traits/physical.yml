@@ -600,14 +600,11 @@
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
   functions:
-    - !type:TraitAddArmor
-      damageModifierSets:
-        - DermalArmor
-    - !type:TraitPushDescription
-      descriptionExtensions:
-        - description: examine-dermal-armor-message
-          fontSize: 12
-          requireDetailRange: true
+    - !type:TraitCyberneticLimbReplacement
+      removeBodyPart: Torso
+      partSymmetry: None
+      protoId: CyberneticsDermalArmor
+      slotId: "dermis"
 
 - type: trait
   id: CyberEyes

@@ -1,4 +1,25 @@
 - type: entity
+  id: HybridLightMech
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Mech
+    equipmentWhitelist:
+      tags:
+      - LightCombatMech
+      - IndustrialMech
+
+- type: entity
+  id: LightMech
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Mech
+    equipmentWhitelist:
+      tags:
+      - LightCombatMech
+
+- type: entity
   id: MechDSMCarrion
   parent: [ BaseMech, IndustrialMech ]
   name: IEE m-V30 Carrion utility mechsuit
@@ -18,6 +39,7 @@
     footstepSoundCollection:
       path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
   - type: Mech
+    maxIntegrity: 225
     baseState: carrion
     openState: carrion-open
     brokenState: carrion-broken
@@ -47,6 +69,305 @@
 - type: entity
   id: MechDSMCarrionBattery
   parent: MechDSMCarrion
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechNCWLBogatyr
+  parent: [ BaseMech, CombatMech ]
+  name: HNF mk.II Bogatyr combat mechsuit
+  description: A biped medium exosuit intended for extended engagements. Developed by Shinohara Heavy Industries as the 'Jaipei' type exosuit and later modified by the Union Homeguard Naval Foundries for use by the State's mechanized infantry corps. Heavy, but reliable. Can be outfitted with various weapons systems.
+  components:
+  - type: Damageable
+    damageModifierSet: HeavyArmorNT
+  - type: Sprite
+    scale: 1.4, 1.4
+    drawdepth: Mobs
+    noRot: true
+    sprite: _Crescent/Objects/Specific/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: bogatyr
+    - map: ["enum.PaperLabelVisuals.Layer"]
+      sprite: Structures/Storage/Crates/labels.rsi
+      state: paper
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+  - type: Mech
+    maxIntegrity: 300
+    baseState: bogatyr
+    openState: bogatyr-open
+    brokenState: bogatyr-broken
+    mechToPilotDamageMultiplier: 0.2
+    airtight: true
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+  - type: MeleeWeapon
+    hidden: true
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 40
+        Structural: 90
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.5
+    baseSprintSpeed: 3.5
+  - type: CanMoveInAir
+  - type: MovementAlwaysTouching
+  - type: StaticPrice
+    price: 5000
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - FootstepSound
+
+- type: entity
+  id: MechNCWLBogatyrBattery
+  parent: MechNCWLBogatyr
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+
+- type: entity
+  id: MechNCWLLancer
+  parent: [ BaseMech, HybridLightMech ]
+  name: HNF mk.I Lancer hybrid mechsuit
+  description: A light biped exosuit that can take both light weapon and some industrial modules. Developed by Pang Tai Arms under the codename Project Goldenstar, and adapted for the uses of the State by the Union Homeguard Naval Foundries some time after. The workhorse of the Homeguard Navy.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    sprite: _Crescent/Objects/Specific/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: lancer
+    - map: ["enum.PaperLabelVisuals.Layer"]
+      sprite: Structures/Storage/Crates/labels.rsi
+      state: paper
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+  - type: Mech
+    maxIntegrity: 220
+    baseState: lancer
+    openState: lancer-open
+    brokenState: lancer-broken
+    mechToPilotDamageMultiplier: 0.4
+    airtight: true
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+  - type: MeleeWeapon
+    hidden: true
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 25
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 4.5
+  - type: CanMoveInAir
+  - type: MovementAlwaysTouching
+  - type: StaticPrice
+    price: 3000
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - FootstepSound
+
+- type: entity
+  id: MechNCWLLancerBattery
+  parent: MechNCWLLancer
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechGSCMarauder
+  parent: [ BaseMech, LightMech ]
+  name: GSC T-97 Marauder light combat mechsuit
+  description: A light biped exosuit that has been jury rigged with upgraded servos and thrusters while sacrificing it's industrial capacity. The Marauder-type exosuits are commonly used by the Gorlex Security Consulting outlaws fleet, designed for quick raids and guerilla warfare. Fragile and lightly armored.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    sprite: _Crescent/Objects/Specific/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: marauder
+    - map: ["enum.PaperLabelVisuals.Layer"]
+      sprite: Structures/Storage/Crates/labels.rsi
+      state: paper
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+  - type: Mech
+    maxIntegrity: 200
+    baseState: marauder
+    openState: marauder-open
+    brokenState: marauder-broken
+    mechToPilotDamageMultiplier: 0.35
+    airtight: true
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+  - type: MeleeWeapon
+    hidden: true
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 35
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 4.5
+    baseSprintSpeed: 6.5
+  - type: CanMoveInAir
+  - type: MovementAlwaysTouching
+  - type: StaticPrice
+    price: 3000
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - FootstepSound
+
+- type: entity
+  id: MechGSCMarauderBattery
+  parent: MechGSCMarauder
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechSHIGilgamesh
+  parent: [ BaseMech, CombatMech ]
+  name: SHI mR-815 Gilgamesh siege mechsuit
+  description: A gargantuan siegesuit designed by Shinohara Heavy Industries and kept secret from the world. After recovering the schematics from a blacksite, the Gilgamesh-type mechsuit has been modified for humanoid use, yielding in this potent, if shambling combat suit.
+  components:
+  - type: Sprite
+    scale: 1.7, 1.7
+    drawdepth: Mobs
+    noRot: true
+    sprite: _Crescent/Objects/Specific/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: gilgamesh
+    - map: ["enum.PaperLabelVisuals.Layer"]
+      sprite: Structures/Storage/Crates/labels.rsi
+      state: paper
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+  - type: Mech
+    maxIntegrity: 600
+    baseState: gilgamesh
+    openState: gilgamesh-open
+    brokenState: gilgamesh-broken
+    mechToPilotDamageMultiplier: 0.1
+    airtight: true
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+  - type: MeleeWeapon
+    hidden: true
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 55
+        Structural: 150
+  - type: Damageable
+    damageModifierSet: HeavyArmorNT
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1
+    baseSprintSpeed: 1.85
+  - type: CanMoveInAir
+  - type: MovementAlwaysTouching
+  - type: StaticPrice
+    price: 30000
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - FootstepSound
+    - Durand
+
+- type: entity
+  id: MechSHIGilgameshBattery
+  parent: MechSHIGilgamesh
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechDSMPaladin
+  parent: [ BaseMech, CombatMech ]
+  name: IEE mV-500 Paladin combat mechsuit
+  description: A biped medium exosuit intended for extended engagements. Developed by Shinohara Heavy Industries as the 'Koukou' type exosuit and later modified by the Imperiatoria Eques Exercitus for use by the Empire's mechanized infantry corps. Heavy, but reliable. Can be outfitted with various weapons systems.
+  components:
+  - type: Damageable
+    damageModifierSet: MediumArmorNT
+  - type: Sprite
+    scale: 1.3, 1.3
+    drawdepth: Mobs
+    noRot: true
+    sprite: _Crescent/Objects/Specific/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: paladin
+    - map: ["enum.PaperLabelVisuals.Layer"]
+      sprite: Structures/Storage/Crates/labels.rsi
+      state: paper
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+  - type: Mech
+    maxIntegrity: 450
+    baseState: paladin
+    openState: paladin-open
+    brokenState: paladin-broken
+    mechToPilotDamageMultiplier: 0.25
+    airtight: true
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+  - type: MeleeWeapon
+    hidden: true
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 40
+        Structural: 90
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.5
+    baseSprintSpeed: 3.5
+  - type: CanMoveInAir
+  - type: MovementAlwaysTouching
+  - type: StaticPrice
+    price: 5000
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - FootstepSound
+
+- type: entity
+  id: MechDSMPaladinBattery
+  parent: MechDSMPaladin
   suffix: Battery
   components:
   - type: ContainerFill

@@ -17,7 +17,7 @@ namespace Content.Shared.Cybernetics
         ///    What sword/item is spawned?
         ///   </summary>
         [DataField("swordproto"), AutoNetworkedField]
-        public string SwordPrototype = "ArmBlade";
+        public string SwordPrototype = "MantisBlade";
 
         [DataField, AutoNetworkedField]
         public EntityUid? Action;

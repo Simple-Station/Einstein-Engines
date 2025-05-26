@@ -10,7 +10,7 @@
 - type: gameMap
   id: Hornetsnest
   mapName: 'GSC Hornets Nest'
-  mapPath: /Maps/_Crescent/Shuttles/NCSP/hornetsnest.ymll
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/hornetsnest.yml # who wrote hornetsnest.ymll
   minPlayers: 0
   stations:
     Hornetsnest:
