@@ -7,7 +7,7 @@ using Content.Shared.Inventory;
 
 namespace Content.Shared.Cybernetics
 {
-    public sealed class CortexBombSystem : EntitySystem
+    public sealed class InternalBombSystem : EntitySystem
     {
 
         [Dependency] private readonly SharedActionsSystem _actions = default!;
@@ -23,13 +23,13 @@ namespace Content.Shared.Cybernetics
         {
             base.Initialize();
 
-            SubscribeLocalEvent<CortexBombComponent, CortexBombActivatedEvent>(OnCortexBombActivated);
+            SubscribeLocalEvent<InternalBombComponent, InternalBombActivatedEvent>(OnCortexBombActivated);
 
-            SubscribeLocalEvent<CortexBombComponent, ComponentStartup>(OnStartup);
-            SubscribeLocalEvent<CortexBombComponent, ComponentShutdown>(OnShutdown);
+            SubscribeLocalEvent<InternalBombComponent, ComponentStartup>(OnStartup);
+            SubscribeLocalEvent<InternalBombComponent, ComponentShutdown>(OnShutdown);
         }
 
-        private void OnCortexBombActivated(EntityUid uid, CortexBombComponent component, CortexBombActivatedEvent args)
+        private void OnCortexBombActivated(EntityUid uid, InternalBombComponent component, InternalBombActivatedEvent args)
         {
 
             var items = _inventory.GetHandOrInventoryEntities(uid);
@@ -42,12 +42,12 @@ namespace Content.Shared.Cybernetics
             _explosion.QueueExplosion(uid, ExplosionSystem.DefaultExplosionPrototypeId, 40, 1, 2);
         }
 
-        private void OnStartup(EntityUid uid, CortexBombComponent component, ComponentStartup args)
+        private void OnStartup(EntityUid uid, InternalBombComponent component, ComponentStartup args)
         {
             _actions.AddAction(uid, ref component.Action, component.ActionPrototype);
         }
 
-        private void OnShutdown(EntityUid uid, CortexBombComponent component, ComponentShutdown args)
+        private void OnShutdown(EntityUid uid, InternalBombComponent component, ComponentShutdown args)
         {
             _actions.RemoveAction(uid, component.Action);
         }

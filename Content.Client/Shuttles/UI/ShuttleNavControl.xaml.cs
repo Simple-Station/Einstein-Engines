@@ -226,6 +226,9 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         var ourWorldMatrix = Matrix3x2.Multiply(posMatrix, ourEntMatrix);
         Matrix3x2.Invert(ourWorldMatrix, out var ourWorldMatrixInvert);
 
+        var northRot = ourEntRot + _rotation.Value;
+        DrawNorthLine(handle, northRot);
+
         // Draw our grid in detail
         var ourGridId = xform.GridUid;
         if (EntManager.TryGetComponent<MapGridComponent>(ourGridId, out var ourGrid) &&

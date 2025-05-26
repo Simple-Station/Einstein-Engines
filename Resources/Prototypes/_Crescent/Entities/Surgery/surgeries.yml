@@ -1,0 +1,105 @@
+- type: entity
+  parent: SurgeryStepInsertOrgan
+  id: SurgeryStepInsertCybernetic
+  name: Install Cybernetic
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryInsertDermis
+  name: Install Dermal Cybernetic
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertCybernetic
+    - SurgeryStepSealOrganWound
+  - type: SurgeryPartCondition
+    part: Torso
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Dermis
+    inverse: true
+    reattaching: true
+    slotId: dermis
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryRemoveDermis
+  name: Remove Dermal Cybernetic
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepClampInternalBleeders
+    - SurgeryStepRemoveOrgan
+  - type: SurgeryPartCondition
+    part: Torso
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Dermis
+    slotId: dermis
+
+- type: entity
+  parent: SurgeryStepInsertOrgan
+  id: SurgeryStepInsertCybernetic
+  name: Install Cybernetic
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryInsertHeadAnchor
+  name: Install Cerebral Cybernetic
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepInsertCybernetic
+    - SurgeryStepMendSkull
+    - SurgeryStepSealOrganWound
+  - type: SurgeryPartCondition
+    part: Head
+  - type: SurgeryOrganCondition
+    organ:
+    - type: CerebralImplant
+    inverse: true
+    reattaching: true
+    slotId: cybernetic_anchor
+
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepMendSkull
+  name: Mend skull
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SurgeryStep
+    tool:
+    - type: BoneGel
+    duration: 2
+  - type: Sprite
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/bone-gel.rsi
+    state: bone-gel
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryRemoveHeadAnchor
+  name: Remove Cerebral Cybernetic
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepClampInternalBleeders
+    - SurgeryStepRemoveOrgan
+    - SurgeryStepMendSkull
+  - type: SurgeryPartCondition
+    part: Head
+  - type: SurgeryOrganCondition
+    organ:
+    - type: CerebralImplant
+    slotId: cybernetic_anchor
