@@ -76,6 +76,14 @@ public partial class BaseShuttleControl : MapGridControl
             Color.FromSrgb(IFFComponent.SelfColor));
     }
 
+    protected void DrawNorthLine(DrawingHandleScreen handle, Angle angle)
+    {
+        var origin = ScalePosition(-new Vector2(Offset.X, -Offset.Y));
+        var aExtent = (angle - Math.Tau / 4).ToVec() * ScaledMinimapRadius * 1.42f;
+        var lineColor = Color.Red.WithAlpha(0.1f);
+        handle.DrawLine(origin, origin + aExtent, lineColor);
+    }
+
     protected void DrawCircles(DrawingHandleScreen handle)
     {
         // Equatorial lines
