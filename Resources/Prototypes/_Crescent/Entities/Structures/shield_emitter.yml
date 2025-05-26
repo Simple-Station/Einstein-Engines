@@ -79,6 +79,8 @@
     powerLoad: 60000
   - type: Appearance
   - type: ShipShieldEmitter
+    DamageLimit: 25000
+    DamageOverloadTimePunishment: 120
     powerUpSound: !type:SoundPathSpecifier
         path: "/Audio/Effects/teleport_arrival.ogg"
         params:
@@ -100,6 +102,8 @@
     baseDraw: 40000 # base is 50000
     maxDraw: 80000 # base is 150000
     unpoweredBonus: 3 # base is 6
+    DamageLimit: 10000
+    DamageOverloadTimePunishment: 100
   - type: Fixtures
     fix1:
       shape:
@@ -123,12 +127,14 @@
   name: NT-280 'Errant' deflector emitter
   description: A complicated array of machinery - guzzles power and maintains a bubble deflector shield around the mother vessel. Overheats with too much use.
   components:
-  - type: ShipShieldEmitter 
+  - type: ShipShieldEmitter
     healPerSecond: 50
     damageExp: 1.4
     baseDraw: 20000
     maxDraw: 60000
     unpoweredBonus: 2.5
+    DamageLimit: 5000
+    DamageOverloadTimePunishment: 80
   - type: Fixtures
     fix1:
       shape:

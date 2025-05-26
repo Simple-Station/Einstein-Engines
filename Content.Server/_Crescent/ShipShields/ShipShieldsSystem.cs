@@ -13,6 +13,8 @@ using Robust.Server.GameStates;
 using Content.Server.Power.Components;
 using Robust.Shared.Physics;
 using Content.Shared._Crescent.SpaceArtillery;
+using Content.Shared.Projectiles;
+
 
 namespace Content.Server._Crescent.ShipShields;
 public sealed partial class ShipShieldsSystem : EntitySystem
@@ -49,6 +51,10 @@ public sealed partial class ShipShieldsSystem : EntitySystem
                 emitter.Recharging = true;
 
             emitter.Accumulator -= EmitterUpdateRate;
+            if (emitter.OverloadAccumulator > 0)
+            {
+                emitter.OverloadAccumulator -= EmitterUpdateRate;
+            }
 
             float healed = emitter.HealPerSecond * EmitterUpdateRate;
 
@@ -73,7 +79,10 @@ public sealed partial class ShipShieldsSystem : EntitySystem
 
             var filter = _station.GetInOwningStation(uid);
 
-            if (!emitter.Recharging && emitter.Shield is null)
+            if (emitter.Damage > emitter.DamageLimit)
+                emitter.OverloadAccumulator = emitter.DamageOverloadTimePunishment;
+
+            if (!emitter.Recharging && emitter.Shield is null && emitter.OverloadAccumulator < 1)
             {
                 var shield = ShieldEntity(parent.Value, source: uid);
                 if (shield != EntityUid.Invalid)
@@ -83,13 +92,14 @@ public sealed partial class ShipShieldsSystem : EntitySystem
                 }
                 _audio.PlayGlobal(emitter.PowerUpSound, filter, true, emitter.PowerUpSound.Params);
             }
-            else if (emitter.Recharging && emitter.Shield is not null)
+            else if ((emitter.Recharging || emitter.OverloadAccumulator > 0) && emitter.Shield is not null)
             {
                 UnshieldEntity(parent.Value);
                 emitter.Shield = null;
                 emitter.Shielded = null;
                 _audio.PlayGlobal(emitter.PowerDownSound, filter, true, emitter.PowerUpSound.Params);
             }
+
         }
     }
     public override void Initialize()
@@ -112,6 +122,15 @@ public sealed partial class ShipShieldsSystem : EntitySystem
         // only handle ship weapons for now. engine update introduced physics regressions. Let's polish everything else and circle back yeah?
         if (!HasComp<ShipWeaponProjectileComponent>(args.OtherEntity))
             return;
+
+        if (!TryComp<ProjectileComponent>(args.OtherEntity, out var projectile))
+            return;
+        if (projectile.Weapon is not null)
+        {
+            // dont collide with projectiles coming from the same , grid  SPCR 2025
+            if (component.Shielded == Transform(projectile.Weapon.Value).GridUid)
+                return;
+        }
 
         var ourVelocity = ourPhysics.LinearVelocity;
         var velocity = theirPhysics.LinearVelocity;
