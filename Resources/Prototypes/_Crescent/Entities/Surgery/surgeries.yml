@@ -41,3 +41,47 @@
     organ:
     - type: Dermis
     slotId: dermis
+
+- type: entity
+  parent: SurgeryStepInsertOrgan
+  id: SurgeryStepInsertCybernetic
+  name: Install Cybernetic
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryInsertHeadAnchor
+  name: Install Cerebral Cybernetic
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertCybernetic
+    - SurgeryStepSealOrganWound
+  - type: SurgeryPartCondition
+    part: Head
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Heart
+    inverse: true
+    reattaching: true
+    slotId: cybernetic_anchor
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryRemoveHeadAnchor
+  name: Remove Cerebral Cybernetic
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepClampInternalBleeders
+    - SurgeryStepRemoveOrgan
+  - type: SurgeryPartCondition
+    part: Head
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Heart
+    slotId: cybernetic_anchor

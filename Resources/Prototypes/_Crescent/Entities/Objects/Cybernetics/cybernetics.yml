@@ -92,7 +92,10 @@
       sprite: _Crescent/Objects/Misc/cybernetics.rsi
       layers:
         - state: bluespacehiggsdisplacer
-    - type: Organ #eris give this the ninja sword teleport plx
+    - type: Organ
+      slotId: heart
+      onAdd:
+        - type: BluespaceShunt
 
 - type: entity
   id: CyberneticsHiggsAnchor
