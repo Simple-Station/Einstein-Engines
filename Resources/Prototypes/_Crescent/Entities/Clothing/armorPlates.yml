@@ -144,7 +144,7 @@
     sprite: _Crescent/Clothing/armorSprites.rsi
     storedSprite:
       sprite: _Crescent/Clothing/armorSprites.rsi
-      state:
+      state: cloth
   - type: PhysicalComposition
     materialComposition:
       Durathread: 4000
