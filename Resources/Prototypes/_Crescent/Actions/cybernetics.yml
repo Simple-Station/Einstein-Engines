@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseSuicideAction
-  id: ActionActivateCortexBomb
-  name: Activate Cortex Bomb
-  description: Activates your internal cortex bomb, completely destroying you and your equipment
+  id: ActionActivateInternalBomb
+  name: Activate Internal Bomb
+  description: Activates your internal explosive, completely destroying you and your equipment.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
@@ -13,7 +13,7 @@
     icon:
       sprite: Actions/Implants/implants.rsi
       state: explosive
-    event: !type:CortexBombActivatedEvent
+    event: !type:InternalBombActivatedEvent
 
 - type: entity
   id: ActionToggleMantisBlade

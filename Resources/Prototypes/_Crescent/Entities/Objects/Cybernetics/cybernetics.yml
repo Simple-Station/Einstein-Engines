@@ -39,6 +39,7 @@
         - description: examine-dermal-armor-message
           fontSize: 12
           requireDetailRange: true
+
 - type: entity
   id: CyberneticsBloodPump
   parent: HullrotCyberneticBase
@@ -139,7 +140,7 @@
     - type: Organ
       slotId: lungs
       onAdd:
-        - type: CortexBomb
+        - type: InternalBomb
 
 - type: entity
   id: CyberneticsMantisBladeLeft
