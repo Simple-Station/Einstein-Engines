@@ -1,23 +1,4 @@
-- type: entity
-  id: HybridLightMech
-  abstract: true
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Mech
-    equipmentWhitelist:
-      tags:
-      - LightCombatMech
-      - IndustrialMech
 
-- type: entity
-  id: LightMech
-  abstract: true
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Mech
-    equipmentWhitelist:
-      tags:
-      - LightCombatMech
 
 - type: entity
   id: MechDSMCarrion
@@ -78,7 +59,7 @@
 
 - type: entity
   id: MechNCWLBogatyr
-  parent: [ BaseMech, CombatMech ]
+  parent: [ BaseMech, MediumMech ]
   name: HNF mk.II Bogatyr combat mechsuit
   description: A biped medium exosuit intended for extended engagements. Developed by Shinohara Heavy Industries as the 'Jaipei' type exosuit and later modified by the Union Homeguard Naval Foundries for use by the State's mechanized infantry corps. Heavy, but reliable. Can be outfitted with various weapons systems.
   components:
@@ -140,7 +121,7 @@
 
 - type: entity
   id: MechNCWLLancer
-  parent: [ BaseMech, HybridLightMech ]
+  parent: [ BaseMech, HybridScoutMech ]
   name: HNF mk.I Lancer hybrid mechsuit
   description: A light biped exosuit that can take both light weapon and some industrial modules. Developed by Pang Tai Arms under the codename Project Goldenstar, and adapted for the uses of the State by the Union Homeguard Naval Foundries some time after. The workhorse of the Homeguard Navy.
   components:
@@ -174,8 +155,8 @@
       types:
         Blunt: 25
   - type: MovementSpeedModifier
-    baseWalkSpeed: 2.5
-    baseSprintSpeed: 4.5
+    baseWalkSpeed: 1.9
+    baseSprintSpeed: 3.5
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: StaticPrice
@@ -197,7 +178,7 @@
 
 - type: entity
   id: MechGSCMarauder
-  parent: [ BaseMech, LightMech ]
+  parent: [ BaseMech, ScoutMech ]
   name: GSC T-97 Marauder light combat mechsuit
   description: A light biped exosuit that has been jury rigged with upgraded servos and thrusters while sacrificing it's industrial capacity. The Marauder-type exosuits are commonly used by the Gorlex Security Consulting outlaws fleet, designed for quick raids and guerilla warfare. Fragile and lightly armored.
   components:
@@ -229,10 +210,10 @@
     attackRate: 1
     damage:
       types:
-        Blunt: 35
+        Blunt: 25
   - type: MovementSpeedModifier
-    baseWalkSpeed: 4.5
-    baseSprintSpeed: 6.5
+    baseWalkSpeed: 3.5
+    baseSprintSpeed: 5.5
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: StaticPrice
@@ -254,7 +235,7 @@
 
 - type: entity
   id: MechSHIGilgamesh
-  parent: [ BaseMech, CombatMech ]
+  parent: [ BaseMech, SiegeMech ]
   name: SHI mR-815 Gilgamesh siege mechsuit
   description: A gargantuan siegesuit designed by Shinohara Heavy Industries and kept secret from the world. After recovering the schematics from a blacksite, the Gilgamesh-type mechsuit has been modified for humanoid use, yielding in this potent, if shambling combat suit.
   components:
@@ -316,7 +297,7 @@
 
 - type: entity
   id: MechDSMPaladin
-  parent: [ BaseMech, CombatMech ]
+  parent: [ BaseMech, MediumMech ]
   name: IEE mV-500 Paladin combat mechsuit
   description: A biped medium exosuit intended for extended engagements. Developed by Shinohara Heavy Industries as the 'Koukou' type exosuit and later modified by the Imperiatoria Eques Exercitus for use by the Empire's mechanized infantry corps. Heavy, but reliable. Can be outfitted with various weapons systems.
   components:

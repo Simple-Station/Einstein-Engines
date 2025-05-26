@@ -19,14 +19,17 @@
         {
             "name": "frag"
         },
+		{
+            "name": "emp"
+        },
         {
             "name": "rpg"
         },
         {
-            "name": "ball"
+            "name": "rpg-emp"
         },
         {
-            "name": "emp"
+            "name": "ball"
         },
         {
             "name": "grapeshot"

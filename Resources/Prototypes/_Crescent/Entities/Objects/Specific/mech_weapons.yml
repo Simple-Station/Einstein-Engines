@@ -1,0 +1,177 @@
+- type: Tag
+  id: ScoutMechEquipment
+
+- type: Tag
+  id: MediumMechEquipment
+
+- type: Tag
+  id: SiegeMechEquipment
+
+- type: entity
+  id: ScoutMech
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Mech
+    equipmentWhitelist:
+      tags:
+      - ScoutMechEquipment
+
+- type: entity
+  id: HybridScoutMech
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Mech
+    equipmentWhitelist:
+      tags:
+      - ScoutMechEquipment
+      - IndustrialMechEquipment
+
+- type: entity
+  id: MediumMech
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Mech
+    equipmentWhitelist:
+      tags:
+      - MediumMechEquipment
+      - ScoutMechEquipment
+
+- type: entity
+  id: SiegeMech
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Mech
+    equipmentWhitelist:
+      tags:
+      - MediumMechEquipment
+      - ScoutMechEquipment
+      - SiegeMechEquipment
+
+- type: entity
+  id: HybridScoutMechEquipment
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Mech
+    equipmentWhitelist:
+      tags:
+      - ScoutMech
+      - IndustrialMech
+
+- type: entity
+  id: ScoutMechEquipment
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Tag
+    tags:
+    - ScoutMech
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  id: MediumMechEquipment
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Tag
+    tags:
+    - MediumMech
+    - ScoutMech
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  id: SiegeMechEquipment
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Tag
+    tags:
+    - SiegeMech
+    - MediumMech
+    - ScoutMech
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  id: WeaponMechCombatTaikotyo
+  name: SHI shoulder-mounted 'Taikotyo' missile system
+  description: Bolted onto a medium-class exosuit's shoulder, this missile system fires high-explosive payloads with an inbuilt tracking system that seek out other ships in the area.
+  suffix: Mech Weapon, Gun, Combat, Light Missile
+  parent: [ BaseMechWeaponRange, MediumMechEquipment ]
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: mechmissile
+  - type: Gun
+    fireRate: 0.6
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletRocketSmart
+    fireCost: 25
+  - type: Appearance
+  - type: AmmoCounter
+  - type: Tag
+    tags:
+    - MediumMechEquipment
+
+- type: entity
+  id: WeaponMechSword
+  parent: [ BaseMechWeaponMelee, ScoutMechEquipment ]
+  name: SHI LvR-200 exosuit-mounted plasteel blade
+  suffix: Mech Weapon, Melee, Combat
+  description: Developed as a basic weapons system for lighter mechsuits, a plasteel blade at the end of a hydraulics-based limb. As simple as it gets.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: mechsword
+  - type: MeleeWeapon
+    autoAttack: true
+    angle: 0
+    wideAnimationRotation: -90
+    soundHit:
+      path: "/Audio/Weapons/Melee/rapierhit.ogg"
+    attackRate: 0.6
+    damage:
+      types:
+        Structural: 55
+        Piercing: 35
+        Blunt: 5
+  - type: Tag
+    tags:
+    - ScoutMechEquipment
+
+- type: entity
+  id: WeaponMechCombatHeavyRifle
+  name: PTA 'Rapture' 30mm ballistic autorifle
+  description: An exosuit-mounted autorifle firing depleted uranium rounds. Developed by Pang Tai Arms and sold en masse. The most basic mech weapon that can be found on the market.
+  suffix: Mech Weapon, Gun, Combat, Rifle
+  parent: [ BaseMechWeaponRange, ScoutMechEquipment ]
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: rifle
+  - type: Gun
+    fireRate: 3
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: CartridgeLightRifle
+    fireCost: 15
+  - type: Appearance
+  - type: AmmoCounter
+  - type: Tag
+    tags:
+    - ScoutMechEquipment
