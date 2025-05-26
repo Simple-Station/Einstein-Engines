@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "taken from tg at https://github.com/tgstation/tgstation/blob/master/icons/obj/changeling_items.dmi and edited by https://github.com/RealFakeSoof",
+    "copyright": "taken from tg at https://github.com/tgstation/tgstation/blob/master/icons/obj/changeling_items.dmi",
     "size": {
         "x": 32,
         "y": 32
@@ -12,23 +12,11 @@
         },
         {
             "name": "inhand-left",
-            "directions" : 4,
-            "delays": [
-                [ 0.5, 0.5 ],
-                [ 0.5, 0.5 ],
-                [ 0.5, 0.5 ],
-                [ 0.5, 0.5 ]
-            ]
+            "directions": 4
         },
         {
             "name": "inhand-right",
-            "directions" : 4,
-            "delays": [
-                [ 0.5, 0.5 ],
-                [ 0.5, 0.5 ],
-                [ 0.5, 0.5 ],
-                [ 0.5, 0.5 ]
-            ]
+            "directions": 4
         }
     ]
 }

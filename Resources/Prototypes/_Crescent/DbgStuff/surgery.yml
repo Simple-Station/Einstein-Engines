@@ -1,0 +1,34 @@
+- type: entity
+  name: THE SURGINATOR
+  description: "BEHOLD! THE SURGINATOR! With this tool, I will make all doctors obsolete!"
+  id: DebugOmnimedTool
+  parent: BaseToolSurgery
+  components:
+  - type: Sprite
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/omnimed.rsi
+    state: omnimed
+  - type: Item
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/omnimed.rsi
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/_Shitmed/Medical/Surgery/saw.ogg
+  - type: Hemostat
+    speed: 2000
+  - type: Scalpel
+    speed: 2000
+  - type: Drill
+    speed: 2000
+  - type: BoneSetter
+    speed: 2000
+  - type: Retractor
+    speed: 2000
+  - type: Cautery
+    speed: 2000
+  - type: BoneGel
+    speed: 2000
+  - type: BoneSaw
+    speed: 2000
+  - type: Tweezers
+    speed: 2000
+  - type: Tending
+    speed: 2000

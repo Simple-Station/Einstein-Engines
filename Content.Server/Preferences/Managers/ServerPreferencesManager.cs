@@ -106,22 +106,32 @@ namespace Content.Server.Preferences.Managers
 
             profile.EnsureValid(session, _dependencies);
             // hullrot edit
-            /*
-            if (curPrefs.Characters[slot] is HumanoidCharacterProfile humanoidEditingTarget && profile is HumanoidCharacterProfile humanProfile)
+            if (profile is HumanoidCharacterProfile humanProfile)
             {
-                // you cheat like a king! gg! - SPCR
-                if (humanoidEditingTarget.Faction != "" && humanProfile.Faction != humanoidEditingTarget.Faction)
+                if (!curPrefs.Characters.ContainsKey(slot))
+                    profile = humanProfile.WithBank(HumanoidCharacterProfile.DefaultBalance);
+
+                else if (curPrefs.Characters[slot] is HumanoidCharacterProfile humanoidEditingTarget)
                 {
-                    _sawmill.Info($"{session.Name} has tried to modify a locked character's faction. They are using a modified client!");
-                    return;
+                    // you cheat like a king! gg! - SPCR
+                    if (humanoidEditingTarget.Faction != "" && humanProfile.Faction != humanoidEditingTarget.Faction)
+                    {
+                        _sawmill.Info(
+                            $"{session.Name} has tried to modify a locked character's faction. They are using a modified client!");
+                        return;
+                    }
+
+                    // ha ha ha ha
+                    if (humanoidEditingTarget.BankBalance != humanProfile.BankBalance &&
+                        humanProfile.BankBalance > humanoidEditingTarget.BankBalance)
+                    {
+                        _sawmill.Info(
+                            $"{session.Name} has tried to give their character money. They are using a modified client!");
+                        return;
+                    }
                 }
-                // ha ha ha ha
-                if (humanoidEditingTarget.BankBalance != humanProfile.BankBalance && humanProfile.BankBalance > humanoidEditingTarget.BankBalance)
-                {
-                    _sawmill.Info($"{session.Name} has tried to give their character money. They are using a modified client!");
-                    return;
-                }
-            }*/
+            }
+
             // hullrot edit end
             var profiles = new Dictionary<int, ICharacterProfile>(curPrefs.Characters)
             {
