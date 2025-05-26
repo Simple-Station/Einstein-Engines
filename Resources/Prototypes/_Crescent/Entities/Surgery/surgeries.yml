@@ -57,16 +57,32 @@
   - type: Surgery
     requirement: SurgeryOpenIncision
     steps:
+    - SurgeryStepSawBones
     - SurgeryStepInsertCybernetic
     - SurgeryStepSealOrganWound
+    - SurgeryStepMendSkull
   - type: SurgeryPartCondition
     part: Head
   - type: SurgeryOrganCondition
     organ:
-    - type: Heart
+    - type: CerebralImplant
     inverse: true
     reattaching: true
     slotId: cybernetic_anchor
+
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepMendSkull
+  name: Mend skull
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SurgeryStep
+    tool:
+    - type: BoneGel
+    duration: 2
+  - type: Sprite
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/bone-gel.rsi
+    state: bone-gel
 
 - type: entity
   parent: SurgeryBase
@@ -77,11 +93,13 @@
   - type: Surgery
     requirement: SurgeryOpenIncision
     steps:
+    - SurgeryStepSawBones
     - SurgeryStepClampInternalBleeders
     - SurgeryStepRemoveOrgan
+    - SurgeryStepMendSkull
   - type: SurgeryPartCondition
     part: Head
   - type: SurgeryOrganCondition
     organ:
-    - type: Heart
+    - type: CerebralImplant
     slotId: cybernetic_anchor
