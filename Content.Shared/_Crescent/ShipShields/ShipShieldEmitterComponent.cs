@@ -32,6 +32,13 @@ public sealed partial class ShipShieldEmitterComponent : Component
     [DataField]
     public bool Recharging = false;
 
+    [DataField]
+    public float DamageLimit = 3500;
+
+    [DataField]
+    public float DamageOverloadTimePunishment = 30;
+
+    public float OverloadAccumulator = 0f;
     /// <summary>
     /// On power up, players for all on vessel, pitched down.
     /// </summary>

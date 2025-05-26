@@ -20,6 +20,16 @@ public partial class ShipShieldsSystem
     {
         SubscribeLocalEvent<ShipShieldEmitterComponent, ShieldDeflectedEvent>(OnShieldDeflected);
         SubscribeLocalEvent<ShipShieldEmitterComponent, ExaminedEvent>(OnExamined);
+        SubscribeLocalEvent<ShipShieldEmitterComponent, ComponentRemove>(OnRemoved);
+    }
+
+
+    private void OnRemoved(Entity<ShipShieldEmitterComponent> owner,ref ComponentRemove remove)
+    {
+        var parent = Transform(owner.Owner).GridUid;
+        if (parent is null)
+            return;
+        UnshieldEntity(parent.Value, null);
     }
 
     private void OnShieldDeflected(EntityUid uid, ShipShieldEmitterComponent component, ShieldDeflectedEvent args)
