@@ -59,8 +59,8 @@
     steps:
     - SurgeryStepSawBones
     - SurgeryStepInsertCybernetic
-    - SurgeryStepSealOrganWound
     - SurgeryStepMendSkull
+    - SurgeryStepSealOrganWound
   - type: SurgeryPartCondition
     part: Head
   - type: SurgeryOrganCondition
