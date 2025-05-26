@@ -16277,3 +16277,12 @@ Entries:
   id: 7263
   time: '2025-05-23T22:41:30.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2448
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: >-
+        Now the action bar doesn’t turn into a party when it picks up an item
+        with an action.
+  id: 7264
+  time: '2025-05-26T00:36:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2446
