@@ -2,8 +2,6 @@
   parent: ArmBlade
   id: ArmBladeChangeling
   suffix: Unremoveable
-  name: plasteel armbalde
-  description: An instrument of war. Directly in your forearm!
   components:
   - type: Sharp
   - type: Sprite
@@ -14,7 +12,7 @@
     attackRate: 0.9
     damage:
       types:
-        Slash: 25
+        Slash: 15
         Structural: 20
     clickPartDamageMultiplier: 3
     heavyPartDamageMultiplier: 2.5
@@ -40,7 +38,6 @@
     - Prying
   - type: DisarmMalus
     malus: 0
-  - type: MultiHandedItem
 
 - type: entity
   parent: ArmBladeChangeling
