@@ -17,8 +17,10 @@ namespace Content.Shared.Cybernetics
         [DataField, AutoNetworkedField]
         public EntityUid? Action;
 
-        [AutoNetworkedField]
+        [DataField, AutoNetworkedField]
         public bool OnCooldown = false;
+
+        [DataField, AutoNetworkedField]
         public float CooldownTime = 5f;
 
     }

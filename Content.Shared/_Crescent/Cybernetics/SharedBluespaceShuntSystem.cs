@@ -23,17 +23,12 @@ namespace Content.Shared.Cybernetics
             base.Initialize();
 
             SubscribeLocalEvent<BluespaceShuntComponent, BluespaceShuntEvent>(OnBluespaceShunt);
-            SubscribeLocalEvent<BluespaceShuntComponent, BluespaceShuntCooldownEndEvent>(OnCooldownEnd);
 
             SubscribeLocalEvent<BluespaceShuntComponent, ComponentStartup>(OnStartup);
             SubscribeLocalEvent<BluespaceShuntComponent, ComponentShutdown>(OnShutdown);
         }
 
-        private void OnCooldownEnd(EntityUid uid, BluespaceShuntComponent component, BluespaceShuntCooldownEndEvent args)
-        {
-            component.OnCooldown = false;
-            _popup.PopupPredicted(Loc.GetString("shunt-cooldown-end"), uid, uid);
-        }
+
 
         private void OnBluespaceShunt(Entity<BluespaceShuntComponent> ent, ref BluespaceShuntEvent args)
         {
@@ -53,7 +48,7 @@ namespace Content.Shared.Cybernetics
             if (!_examine.InRangeUnOccluded(origin, target, SharedInteractionSystem.MaxRaycastRange, null))
             {
                 // can only dash if the destination is visible on screen
-                _popup.PopupClient(Loc.GetString("dash-ability-cant-see", ("item", uid)), user, user);
+                _popup.PopupClient(Loc.GetString("shunt-unseen", ("item", uid)), user, user);
                 return;
             }
 
