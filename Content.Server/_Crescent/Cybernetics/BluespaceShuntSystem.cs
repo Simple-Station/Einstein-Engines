@@ -1,5 +1,6 @@
 using Content.Server.EventScheduler;
 using Content.Server.Popups;
+using Content.Shared.Actions;
 using Content.Shared.Cybernetics;
 using Content.Shared.Popups;
 using Robust.Shared.GameObjects;
@@ -12,6 +13,7 @@ namespace Content.Server.Cybernetics
 
         [Dependency] private readonly EventSchedulerSystem _eventScheduler = default!;
 
+        [Dependency] private readonly SharedActionsSystem _actions = default!;
         [Dependency] private readonly PopupSystem _popup = default!;
 
         [Dependency] private readonly IGameTiming _timing = default!;
@@ -20,6 +22,10 @@ namespace Content.Server.Cybernetics
             base.Initialize();
             SubscribeLocalEvent<BluespaceShuntComponent, BluespaceShuntUsedEvent>(OnBluespaceShuntUsed);
             SubscribeLocalEvent<BluespaceShuntComponent, BluespaceShuntCooldownEndEvent>(OnCooldownEnd);
+
+
+            SubscribeLocalEvent<BluespaceShuntComponent, ComponentStartup>(OnStartup);
+            SubscribeLocalEvent<BluespaceShuntComponent, ComponentShutdown>(OnShutdown);
         }
 
         private void OnBluespaceShuntUsed(EntityUid uid, BluespaceShuntComponent component, ref BluespaceShuntUsedEvent args)
@@ -35,5 +41,14 @@ namespace Content.Server.Cybernetics
             _popup.PopupEntity(Loc.GetString("shunt-cooldown-end"), uid, uid);
         }
 
+        private void OnStartup(EntityUid uid, BluespaceShuntComponent component, ComponentStartup args)
+        {
+            _actions.AddAction(uid, ref component.Action, component.ActionPrototype);
+        }
+
+        private void OnShutdown(EntityUid uid, BluespaceShuntComponent component, ComponentShutdown args)
+        {
+            _actions.RemoveAction(uid, component.Action);
+        }
     }
 }

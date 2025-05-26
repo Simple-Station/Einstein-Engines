@@ -13,7 +13,6 @@ namespace Content.Shared.Cybernetics
     public sealed class SharedBluespaceShuntSystem : EntitySystem
     {
 
-        [Dependency] private readonly SharedActionsSystem _actions = default!;
         [Dependency] private readonly ExamineSystemShared _examine = default!;
         [Dependency] private readonly SharedPopupSystem _popup = default!;
         [Dependency] private readonly SharedTransformSystem _transform = default!;
@@ -23,9 +22,6 @@ namespace Content.Shared.Cybernetics
             base.Initialize();
 
             SubscribeLocalEvent<BluespaceShuntComponent, BluespaceShuntEvent>(OnBluespaceShunt);
-
-            SubscribeLocalEvent<BluespaceShuntComponent, ComponentStartup>(OnStartup);
-            SubscribeLocalEvent<BluespaceShuntComponent, ComponentShutdown>(OnShutdown);
         }
 
 
@@ -48,7 +44,7 @@ namespace Content.Shared.Cybernetics
             if (!_examine.InRangeUnOccluded(origin, target, SharedInteractionSystem.MaxRaycastRange, null))
             {
                 // can only dash if the destination is visible on screen
-                _popup.PopupClient(Loc.GetString("shunt-unseen", ("item", uid)), user, user);
+                _popup.PopupClient(Loc.GetString("shunt-unseen"), user, user);
                 return;
             }
 
@@ -61,18 +57,6 @@ namespace Content.Shared.Cybernetics
             RaiseLocalEvent(uid, ev);
 
             args.Handled = true;
-        }
-
-        private void OnStartup(EntityUid uid, BluespaceShuntComponent component, ComponentStartup args)
-        {
-            _actions.AddAction(uid, ref component.Action, component.ActionPrototype);
-            DirtyEntity(uid); // Atempt to workaround an issue where surgery doesn't properly add the action clientside. ACK!
-        }
-
-        private void OnShutdown(EntityUid uid, BluespaceShuntComponent component, ComponentShutdown args)
-        {
-            _actions.RemoveAction(uid, component.Action);
-            DirtyEntity(uid); // No harm in having this here either
         }
     }
 }

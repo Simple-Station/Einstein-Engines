@@ -119,6 +119,7 @@
   name: antique NT 800-cR Higgs cerebral conditioner
   description: Antiquated and nearly broken beyond repair, this cybernetic is powered by an internal bluespace shard core. It's primary function seems to be severing the user's ties to the local Heavyspace pocket, making them susceptible to Bluespace Aberrant phenomena. It has trouble responding to modern cybernetic interfaces, yet the internal signature reveals it has been developed by a certain 'Doctor Keagan Higgs'.
   components:
+    - type: CerebralImplant
     - type: Sprite
       sprite: _Crescent/Objects/Misc/cybernetics.rsi
       layers:
