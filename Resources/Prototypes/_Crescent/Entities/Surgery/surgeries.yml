@@ -43,10 +43,18 @@
     slotId: dermis
 
 - type: entity
-  parent: SurgeryStepInsertOrgan
-  id: SurgeryStepInsertCybernetic
-  name: Install Cybernetic
+  parent: SurgeryStepBase
+  id: SurgeryStepMendSkull
+  name: Mend skull
   categories: [ HideSpawnMenu ]
+  components:
+  - type: SurgeryStep
+    tool:
+    - type: BoneGel
+    duration: 2
+  - type: Sprite
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/bone-gel.rsi
+    state: bone-gel
 
 - type: entity
   parent: SurgeryBase
@@ -69,20 +77,6 @@
     inverse: true
     reattaching: true
     slotId: cybernetic_anchor
-
-- type: entity
-  parent: SurgeryStepBase
-  id: SurgeryStepMendSkull
-  name: Mend skull
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: SurgeryStep
-    tool:
-    - type: BoneGel
-    duration: 2
-  - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/bone-gel.rsi
-    state: bone-gel
 
 - type: entity
   parent: SurgeryBase
