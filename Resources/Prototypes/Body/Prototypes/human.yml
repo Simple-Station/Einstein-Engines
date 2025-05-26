@@ -24,6 +24,7 @@
         stomach: OrganHumanStomach
         liver: OrganHumanLiver
         kidneys: OrganHumanKidneys
+        dermis: OrganDummyDermis # aint no way this works first try, if it does I may actually /suicide
     right arm:
       part: RightArmHuman
       connections:
