@@ -18,7 +18,7 @@
 - type: entity
   id: ActionToggleMantisBlade
   name: Toggle Mantis Blade
-  description: Turns your left arm into a weapon.
+  description: Turns your arm into a weapon.
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
@@ -28,3 +28,23 @@
       sprite: _Goobstation/Changeling/changeling_abilities.rsi
       state: armblade
     event: !type:MantisBladeToggledEvent
+
+- type: entity
+  id: ActionBluespaceShunt
+  name: Bluespace Shunt
+  description: Teleport to anywhere you can see.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: WorldTargetAction
+    icon:
+      sprite: Objects/Magic/magicactions.rsi
+      state: blink
+    itemIconStyle: NoItem
+    sound:
+      path: /Audio/Magic/blink.ogg
+      params:
+        volume: 5
+    priority: -12
+    event: !type:BluespaceShuntEvent
+    checkCanAccess: false
+    range: 0
