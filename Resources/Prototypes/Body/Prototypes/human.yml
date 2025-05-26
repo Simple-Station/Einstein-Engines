@@ -24,7 +24,7 @@
         stomach: OrganHumanStomach
         liver: OrganHumanLiver
         kidneys: OrganHumanKidneys
-        dermis: OrganDummyDermis # aint no way this works first try, if it does I may actually /suicide
+        dermis: OrganCrescentDummy # Why do you need to do this to add an empty organ slot.
     right arm:
       part: RightArmHuman
       connections:
