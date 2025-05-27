@@ -4,9 +4,9 @@
   description: job-description-techminer
   playTimeTracker:  JobTechminerTAP
   requirements:
-    - !type:CharacterFactionRequirement
+    - !type:FactionRequirement
       factionID: "TAP"
-    - !type:CharacterSpeciesRequirement
+    - !type:SpeciesRequirement
       species:
         - Moth
         - Arachnid

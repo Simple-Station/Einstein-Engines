@@ -4,10 +4,10 @@
   description: job-description-levyman
   playTimeTracker: JobLevymanDSM
   requirements:
-    - !type:CharacterSpeciesRequirement
+    - !type:SpeciesRequirement
       species:
         - Human
-    - !type:CharacterFactionRequirement
+    - !type:FactionRequirement
       factionID: "DSM"
   weight: 20
   startingGear: LevymanGear

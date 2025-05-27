@@ -5,7 +5,7 @@
   playTimeTracker: JobMachinistCMM
   weight: 22
   requirements:
-  - !type:CharacterFactionRequirement
+  - !type:FactionRequirement
       factionID: "TSP"
   special:
   - !type:AddComponentSpecial

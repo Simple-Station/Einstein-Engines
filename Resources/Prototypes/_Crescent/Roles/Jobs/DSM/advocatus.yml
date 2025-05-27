@@ -12,12 +12,12 @@
   canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement
-    - !type:CharacterSpeciesRequirement
+    - !type:SpeciesRequirement
       species:
         - Human
     - !type:CharacterOverallTimeRequirement
       min: 36000
-    - !type:CharacterFactionRequirement
+    - !type:FactionRequirement
       factionID: "DSM"
   special:
   - !type:AddComponentSpecial

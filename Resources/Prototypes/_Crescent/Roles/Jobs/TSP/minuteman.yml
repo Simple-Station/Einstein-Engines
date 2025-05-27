@@ -6,7 +6,7 @@
   weight: 26
   startingGear: MinutemanGear
   requirements:
-  - !type:CharacterFactionRequirement
+  - !type:FactionRequirement
       factionID: "TSP"
   special:
   - !type:AddComponentSpecial

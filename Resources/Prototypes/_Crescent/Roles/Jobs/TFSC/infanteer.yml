@@ -6,7 +6,7 @@
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 8000
-    - !type:CharacterFactionRequirement
+    - !type:FactionRequirement
       factionID: "TFSC"
   weight: 20
   startingGear: InfanteerGear
