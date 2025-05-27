@@ -5,7 +5,7 @@
   playTimeTracker: JobMarshalCMM
   requirements:
     - !type:CharacterWhitelistRequirement
-    - !type:FactionRequirement
+    - !type:CharacterFactionRequirement
         factionID: "TSP"
   special:
   - !type:AddComponentSpecial

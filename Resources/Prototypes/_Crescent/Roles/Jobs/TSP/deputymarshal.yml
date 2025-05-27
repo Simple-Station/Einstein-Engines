@@ -6,7 +6,7 @@
   weight: 32
   startingGear: DeputyMarshalGear
   requirements:
-  - !type:FactionRequirement
+  - !type:CharacterFactionRequirement
       factionID: "TSP"
   - !type:CharacterOverallTimeRequirement
     min: 36000

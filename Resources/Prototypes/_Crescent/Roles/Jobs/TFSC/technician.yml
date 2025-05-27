@@ -4,7 +4,7 @@
   description: job-description-technician
   playTimeTracker: JobTechnicianNCSP
   requirements:
-    - !type:FactionRequirement
+    - !type:CharacterFactionRequirement
       factionID: "TFSC"
     - !type:CharacterOverallTimeRequirement
       min: 21600 # 6 hours
