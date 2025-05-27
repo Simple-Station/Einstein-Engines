@@ -145,7 +145,7 @@
   stackEntity: AdvancedMechatronics1
   name: materials-advancedmechanics
   unit: materials-unit-chunk
-  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: advancedmechanic }
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: advancedcmechanic }
   price: 0.55
 
 - type: material
