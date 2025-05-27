@@ -5,7 +5,7 @@
   playTimeTracker: JobKommissarNCWL
   requirements:
     - !type:CharacterWhitelistRequirement
-    - !type:FactionRequirement
+    - !type:CharacterFactionRequirement
       factionID: "NCWL"
   weight: 55
   startingGear: KommissarGear

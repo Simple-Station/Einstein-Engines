@@ -278,7 +278,7 @@ namespace Content.Client.LateJoin
                                 HorizontalAlignment = HAlignment.Right,
                             });
                         }
-                        else if (!_characterRequirements.CheckRequirementsValid(
+                        if (!_characterRequirements.CheckRequirementsValid(
                                 prototype.Requirements ?? new(),
                                 prototype,
                                 (HumanoidCharacterProfile) (_prefs.Preferences?.SelectedCharacter
@@ -309,7 +309,7 @@ namespace Content.Client.LateJoin
                                 HorizontalAlignment = HAlignment.Right,
                             });
                         }
-                        else if (value == 0)
+                        if (value == 0)
                         {
                             jobButton.Disabled = true;
                         }

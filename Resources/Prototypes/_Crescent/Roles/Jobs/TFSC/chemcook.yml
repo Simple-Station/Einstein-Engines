@@ -6,7 +6,7 @@
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 8000
-    - !type:FactionRequirement
+    - !type:CharacterFactionRequirement
       factionID: "TFSC"
   special:
   - !type:AddComponentSpecial

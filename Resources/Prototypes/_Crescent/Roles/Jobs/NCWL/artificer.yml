@@ -6,7 +6,7 @@
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 20000
-    - !type:FactionRequirement
+    - !type:CharacterFactionRequirement
       factionID: "NCWL"
   weight: 20
   startingGear: ArtificerGear

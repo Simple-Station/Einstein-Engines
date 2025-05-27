@@ -2,6 +2,9 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.DeltaV.Station.Events; // DeltaV
 using Content.Server.GameTicking;
+using Content.Server.Players.PlayTimeTracking;
+using Content.Server.Players.RateLimiting;
+using Content.Server.Preferences.Managers;
 using Content.Server.Station.Components;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
@@ -14,6 +17,8 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Utility;
+
 
 namespace Content.Server.Station.Systems;
 
@@ -27,6 +32,10 @@ public sealed partial class StationJobsSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly GameTicker _gameTicker = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly PlayTimeTrackingSystem _playTimeTracking = default!;
+    [Dependency] private readonly IServerPreferencesManager _prefsManager = default!;
+    private Dictionary<NetEntity, Dictionary<string, uint?>> jobs = new();
+    private Dictionary<NetEntity, string> stationNames = new ();
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -35,6 +44,7 @@ public sealed partial class StationJobsSystem : EntitySystem
         SubscribeLocalEvent<StationJobsComponent, StationRenamedEvent>(OnStationRenamed);
         SubscribeLocalEvent<StationJobsComponent, ComponentShutdown>(OnStationDeletion);
         SubscribeLocalEvent<PlayerJoinedLobbyEvent>(OnPlayerJoinedLobby);
+        _prefsManager.OnHullrotSelectedSlotUpdated += args => UpdateJobsForPlayer(args);
         Subs.CVar(_configurationManager, CCVars.GameDisallowLateJoins, _ => UpdateJobsAvailable(), true);
     }
 
@@ -42,10 +52,28 @@ public sealed partial class StationJobsSystem : EntitySystem
     {
         if (_availableJobsDirty)
         {
-            _cachedAvailableJobs = GenerateJobsAvailableEvent();
-            RaiseNetworkEvent(_cachedAvailableJobs, Filter.Empty().AddPlayers(_playerManager.Sessions));
+            jobs.Clear();
+            stationNames.Clear();
+
+            var query = EntityQueryEnumerator<StationJobsComponent>();
+
+            while (query.MoveNext(out var station, out var comp))
+            {
+                var netStation = GetNetEntity(station);
+                var list = comp.JobList.ToDictionary(x => x.Key, x => x.Value);
+                jobs.Add(netStation, list);
+                stationNames.Add(netStation, Name(station));
+            }
+            // generate per player and only send the truly available jobs - HULLROT EDIT SPCR 2025
+            foreach(var player in _playerManager.Sessions)
+                RaiseNetworkEvent(GenerateJobsAvailableEvent(player, jobs.ToDictionary(kvp => kvp.Key, kvp => new Dictionary<string, uint?>(kvp.Value)),stationNames ), Filter.Empty().AddPlayer(player));
             _availableJobsDirty = false;
         }
+    }
+
+    public void UpdateJobsForPlayer(HullrotSelectedSlotUpdated args)
+    {
+        RaiseNetworkEvent(GenerateJobsAvailableEvent(args.session, jobs.ToDictionary(kvp => kvp.Key, kvp => new Dictionary<string, uint?>(kvp.Value)),stationNames ), Filter.Empty().AddPlayer(args.session));
     }
 
     private void OnStationDeletion(EntityUid uid, StationJobsComponent component, ComponentShutdown args)
@@ -499,25 +527,22 @@ public sealed partial class StationJobsSystem : EntitySystem
     /// This is moderately expensive to construct.
     /// </summary>
     /// <returns>The event.</returns>
-    private TickerJobsAvailableEvent GenerateJobsAvailableEvent()
+    private TickerJobsAvailableEvent GenerateJobsAvailableEvent(ICommonSession player, Dictionary<NetEntity, Dictionary<string, uint?>> allStationJobs,Dictionary<NetEntity, string> names  )
     {
         // If late join is disallowed, return no available jobs.
         if (_gameTicker.DisallowLateJoin)
             return new TickerJobsAvailableEvent(new Dictionary<NetEntity, string>(), new Dictionary<NetEntity, Dictionary<string, uint?>>());
-
-        var jobs = new Dictionary<NetEntity, Dictionary<string, uint?>>();
-        var stationNames = new Dictionary<NetEntity, string>();
-
-        var query = EntityQueryEnumerator<StationJobsComponent>();
-
-        while (query.MoveNext(out var station, out var comp))
+        foreach (var (station, jobDictionary) in allStationJobs)
         {
-            var netStation = GetNetEntity(station);
-            var list = comp.JobList.ToDictionary(x => x.Key, x => x.Value);
-            jobs.Add(netStation, list);
-            stationNames.Add(netStation, Name(station));
+            foreach (var (jobProto, Count) in jobDictionary.ShallowClone())
+            {
+                if (!_playTimeTracking.IsAllowed(player, jobProto))
+                {
+                    jobDictionary.Remove(jobProto);
+                }
+            }
         }
-        return new TickerJobsAvailableEvent(stationNames, jobs);
+        return new TickerJobsAvailableEvent(names, allStationJobs);
     }
 
     /// <summary>

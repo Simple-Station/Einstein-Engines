@@ -16,7 +16,7 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared.Customization.Systems;
 
-public sealed partial class FactionRequirement : CharacterRequirement
+public sealed partial class CharacterFactionRequirement : CharacterRequirement
 {
     [DataField("factionID")] public string FactionID = "";
 

@@ -4,9 +4,9 @@
   description: job-description-antiquarian
   playTimeTracker: JobAntiquarian
   requirements:
-    - !type:FactionRequirement
+    - !type:CharacterFactionRequirement
       factionID: "TAP"
-    - !type:SpeciesRequirement
+    - !type:CharacterSpeciesRequirement
       species:
         - Human
   weight: 1
