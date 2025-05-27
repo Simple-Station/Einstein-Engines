@@ -78,6 +78,24 @@ namespace Content.Client.LateJoin
             _gameTicker.LobbyJobsAvailableUpdated += JobsAvailableUpdated;
         }
 
+        public void RebuildWrapper(int slot)
+        {
+            RebuildUI();
+        }
+
+        protected override void Opened()
+        {
+            base.Opened();
+            _prefs.SlotSelected += RebuildWrapper;
+            RebuildUI();
+        }
+
+        public override void Close()
+        {
+            _prefs.SlotSelected -= RebuildWrapper;
+            base.Close();
+        }
+
         private void RebuildUI()
         {
             _base.RemoveAllChildren();
