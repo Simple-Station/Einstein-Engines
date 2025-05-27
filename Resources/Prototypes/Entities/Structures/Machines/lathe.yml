@@ -1812,7 +1812,7 @@
 
 - type: entity
   parent: BaseLathe
-  id: CutterMachine
+  id: [CutterMachine, BaseMaterialSiloUtilizer]
   name: cutter machine
   description: This is a cutter. It cuts. Add variety to your station floor with eye-pleasing patterns! Don't stick your fingers in.
   components:
