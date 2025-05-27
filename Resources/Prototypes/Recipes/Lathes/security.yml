@@ -1320,6 +1320,15 @@
     Plastic: 80
 
 - type: latheRecipe
+  id: BoxShotgunIncendiary
+  result: BoxShotgunIncendiary
+  category: Ammo
+  completetime: 5
+  materials:
+    Steel: 80
+    Plastic: 320
+
+- type: latheRecipe
   id: BoxShotgunLumen
   result: BoxShotgunLumen
   category: Ammo
