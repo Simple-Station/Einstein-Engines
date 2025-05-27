@@ -4,7 +4,7 @@
   description: job-description-medtech
   playTimeTracker: JobMedtechSHI
   requirements:
-    - !type:FactionRequirement
+    - !type:CharacterFactionRequirement
       factionID: "SHI"
   weight: 25
   startingGear: MedtechGear

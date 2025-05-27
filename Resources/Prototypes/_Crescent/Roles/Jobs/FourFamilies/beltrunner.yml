@@ -4,9 +4,9 @@
   description: job-description-beltrunner
   playTimeTracker:  JobBeltrunnerTAP
   requirements:
-    - !type:FactionRequirement
+    - !type:CharacterFactionRequirement
       factionID: "TAP"
-    - !type:SpeciesRequirement
+    - !type:CharacterSpeciesRequirement
       species:
         - Human
   weight: 52

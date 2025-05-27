@@ -11,12 +11,12 @@
   supervisors: job-supervisors-imperial
   canBeAntag: false
   requirements:
-    - !type:SpeciesRequirement
+    - !type:CharacterSpeciesRequirement
       species:
         - Human
     - !type:CharacterOverallTimeRequirement
       min: 36000
-    - !type:FactionRequirement
+    - !type:CharacterFactionRequirement
       factionID: "DSM"
   special:
   - !type:AddComponentSpecial

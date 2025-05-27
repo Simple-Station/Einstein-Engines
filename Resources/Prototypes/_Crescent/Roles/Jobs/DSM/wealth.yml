@@ -6,10 +6,10 @@
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 500
-    - !type:SpeciesRequirement
+    - !type:CharacterSpeciesRequirement
       species:
         - Human
-    - !type:FactionRequirement
+    - !type:CharacterFactionRequirement
       factionID: "DSM"
   weight: 25
   startingGear: WealthGear

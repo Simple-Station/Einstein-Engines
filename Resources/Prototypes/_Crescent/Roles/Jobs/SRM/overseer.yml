@@ -5,10 +5,10 @@
   playTimeTracker: JobOverseerSRM
   requirements:
     - !type:CharacterWhitelistRequirement
-    - !type:SpeciesRequirement
+    - !type:CharacterSpeciesRequirement
       species:
         - Human
-    - !type:FactionRequirement
+    - !type:CharacterFactionRequirement
       factionID: "SRM"
   weight: 27
   startingGear: OverseerGear

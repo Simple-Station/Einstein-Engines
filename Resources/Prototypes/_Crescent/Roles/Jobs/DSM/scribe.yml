@@ -8,10 +8,10 @@
   alwaysUseSpawner: true
   icon: "JobIconImperialScribe"
   requireAdminNotify: false
-  supervisors: job-supervisors-imperial 
+  supervisors: job-supervisors-imperial
   canBeAntag: false
   requirements:
-    - !type:FactionRequirement
+    - !type:CharacterFactionRequirement
       factionID: "DSM"
   special:
   - !type:AddComponentSpecial

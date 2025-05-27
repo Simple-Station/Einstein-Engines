@@ -6,7 +6,7 @@
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 35000
-    - !type:FactionRequirement
+    - !type:CharacterFactionRequirement
       factionID: "SHI"
   weight: 39
   startingGear: HighsecGear

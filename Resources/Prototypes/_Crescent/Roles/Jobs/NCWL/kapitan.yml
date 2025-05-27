@@ -6,7 +6,7 @@
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 50000
-    - !type:FactionRequirement
+    - !type:CharacterFactionRequirement
       factionID: "NCWL"
   weight: 25
   startingGear: KapitanGear

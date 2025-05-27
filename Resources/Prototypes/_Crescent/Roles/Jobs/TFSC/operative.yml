@@ -7,7 +7,7 @@
   startingGear: OperativeGear
   alwaysUseSpawner: true
   requirements:
-    - !type:FactionRequirement
+    - !type:CharacterFactionRequirement
       factionID: "TFSC"
   special:
   - !type:AddComponentSpecial

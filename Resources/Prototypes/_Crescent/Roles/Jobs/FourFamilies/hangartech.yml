@@ -4,9 +4,9 @@
   description: job-description-hangartech
   playTimeTracker:  JobHangarTechTAP
   requirements:
-    - !type:FactionRequirement
+    - !type:CharacterFactionRequirement
       factionID: "TAP"
-    - !type:SpeciesRequirement
+    - !type:CharacterSpeciesRequirement
       species:
         - Moth
         - Arachnid
