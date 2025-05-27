@@ -6,10 +6,10 @@
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 2500
-    - !type:CharacterSpeciesRequirement
+    - !type:SpeciesRequirement
       species:
         - Human
-    - !type:CharacterFactionRequirement
+    - !type:FactionRequirement
       factionID: "DSM"
   weight: 25
   startingGear: CourtierGear

@@ -4,12 +4,12 @@
   description: job-description-montagne
   playTimeTracker: JobMontagneSRM
   requirements:
-    - !type:CharacterSpeciesRequirement
+    - !type:SpeciesRequirement
       species:
         - Human
     - !type:CharacterOverallTimeRequirement
       min: 40000
-    - !type:CharacterFactionRequirement
+    - !type:FactionRequirement
       factionID: "SRM"
   weight: 22
   startingGear: MontagneGear

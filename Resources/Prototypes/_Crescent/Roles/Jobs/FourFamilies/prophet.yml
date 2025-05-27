@@ -5,9 +5,9 @@
   playTimeTracker: JobProphetTAP
   requirements:
     - !type:CharacterWhitelistRequirement
-    - !type:CharacterFactionRequirement
+    - !type:FactionRequirement
       factionID: "TAP"
-    - !type:CharacterSpeciesRequirement
+    - !type:SpeciesRequirement
       species:
         - Moth
   weight: 55

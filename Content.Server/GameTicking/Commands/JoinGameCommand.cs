@@ -1,4 +1,3 @@
-using Content.Server.Players.PlayTimeTracking;
 using Content.Server.Station.Systems;
 using Content.Shared.Administration;
 using Content.Shared.GameTicking;
@@ -39,7 +38,6 @@ namespace Content.Server.GameTicking.Commands
 
             var ticker = _entManager.System<GameTicker>();
             var stationJobs = _entManager.System<StationJobsSystem>();
-            var playerTracker = _entManager.System<PlayTimeTrackingSystem>();
 
             if (ticker.PlayerGameStatuses.TryGetValue(player.UserId, out var status) && status == PlayerGameStatus.JoinedGame)
             {
@@ -62,18 +60,11 @@ namespace Content.Server.GameTicking.Commands
                     shell.WriteError(Loc.GetString("shell-argument-must-be-number"));
                 }
 
-
                 var station = _entManager.GetEntity(new NetEntity(sid));
                 var jobPrototype = _prototypeManager.Index<JobPrototype>(id);
                 if(stationJobs.TryGetJobSlot(station, jobPrototype, out var slots) == false || slots == 0)
                 {
                     shell.WriteLine($"{jobPrototype.LocalizedName} has no available slots.");
-                    return;
-                }
-
-                if (!playerTracker.IsAllowed(player, id))
-                {
-                    shell.WriteLine($"You cannot play as {jobPrototype.LocalizedName} because you do not fulfill its requirements!");
                     return;
                 }
                 ticker.MakeJoinGame(player, station, id);

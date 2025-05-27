@@ -12,7 +12,7 @@
   canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement
-    - !type:CharacterFactionRequirement
+    - !type:FactionRequirement
       factionID: "TFSC"
     - !type:SexRequirement
       sex: Male

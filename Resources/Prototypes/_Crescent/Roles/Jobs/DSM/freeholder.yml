@@ -6,12 +6,12 @@
   weight: 18
   startingGear: FreeholderGear
   requirements:
-    - !type:CharacterFactionRequirement
+    - !type:FactionRequirement
         factionID: "DSM"
   alwaysUseSpawner: true
   icon: "JobIconImperialFreeholder"
   requireAdminNotify: false
-  supervisors: job-supervisors-imperial
+  supervisors: job-supervisors-imperial 
   canBeAntag: false
   access:
   - Command

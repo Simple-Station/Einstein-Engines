@@ -8,7 +8,7 @@
   alwaysUseSpawner: true
   icon: "JobIconKadet"
   requirements:
-    - !type:CharacterFactionRequirement
+    - !type:FactionRequirement
       factionID: "NCWL"
   requireAdminNotify: false
   supervisors: job-supervisors-highcomm

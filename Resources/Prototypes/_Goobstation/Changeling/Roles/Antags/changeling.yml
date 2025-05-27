@@ -5,7 +5,7 @@
   setPreference: true
   objective: roles-antag-changeling-description
   requirements:
-  - !type:CharacterSpeciesRequirement
+  - !type:SpeciesRequirement
     inverted: true
     species:
     - IPC

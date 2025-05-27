@@ -5,10 +5,10 @@
   playTimeTracker: JobKommandantATH
   requirements:
     - !type:CharacterWhitelistRequirement
-    - !type:CharacterSpeciesRequirement
+    - !type:SpeciesRequirement
       species:
         - Human
-    - !type:CharacterFactionRequirement
+    - !type:FactionRequirement
       factionID: "ATH"
   weight: 87
   startingGear: KommandantGear
