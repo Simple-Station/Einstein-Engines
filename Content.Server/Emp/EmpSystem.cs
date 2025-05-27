@@ -2,6 +2,7 @@ using Content.Server.Explosion.EntitySystems;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Radio;
+using Content.Server.EventScheduler;
 using Content.Shared.Emp;
 using Content.Shared.Examine;
 using Robust.Server.GameObjects;
@@ -13,6 +14,7 @@ public sealed class EmpSystem : SharedEmpSystem
 {
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly EventSchedulerSystem _eventScheduler = default!;
 
     public const string EmpPulseEffectPrototype = "EffectEmpPulse";
 
@@ -21,6 +23,7 @@ public sealed class EmpSystem : SharedEmpSystem
         base.Initialize();
         SubscribeLocalEvent<EmpDisabledComponent, ExaminedEvent>(OnExamine);
         SubscribeLocalEvent<EmpOnTriggerComponent, TriggerEvent>(HandleEmpTrigger);
+        SubscribeLocalEvent<EmpDisabledComponent, EmpDisabledRemoved>(OnEmpDisabledRemoved);
 
         SubscribeLocalEvent<EmpDisabledComponent, RadioSendAttemptEvent>(OnRadioSendAttempt);
         SubscribeLocalEvent<EmpDisabledComponent, RadioReceiveAttemptEvent>(OnRadioReceiveAttempt);
@@ -66,7 +69,9 @@ public sealed class EmpSystem : SharedEmpSystem
     /// <param name="duration">The duration of the EMP effects.</param>
     public void DoEmpEffects(EntityUid uid, float energyConsumption, float duration)
     {
-        var ev = new EmpPulseEvent(energyConsumption, false, false, TimeSpan.FromSeconds(duration));
+        TimeSpan delay = TimeSpan.FromSeconds(duration);
+
+        var ev = new EmpPulseEvent(energyConsumption, false, false, delay);
         RaiseLocalEvent(uid, ref ev);
         if (ev.Affected)
         {
@@ -76,11 +81,14 @@ public sealed class EmpSystem : SharedEmpSystem
         {
             var disabled = EnsureComp<EmpDisabledComponent>(uid);
             // couldnt use null-coalescing operator here sadge
-            if (disabled.DisabledUntil == TimeSpan.Zero)
+            if (disabled.LastDelayedEvent != null)
+                _eventScheduler.TryPostponeDelayedEvent(disabled.LastDelayedEvent, delay);
+            else
             {
-                disabled.DisabledUntil = Timing.CurTime;
+
+                var dEv = new EmpDisabledRemoved();
+                disabled.LastDelayedEvent = _eventScheduler.DelayEvent(uid, ref dEv, delay);
             }
-            disabled.DisabledUntil = disabled.DisabledUntil + TimeSpan.FromSeconds(duration);
 
             /// i tried my best to go through the Pow3r server code but i literally couldn't find in relation to PowerNetworkBatteryComponent that uses the event system
             /// the code is otherwise too esoteric for my innocent eyes
@@ -91,24 +99,15 @@ public sealed class EmpSystem : SharedEmpSystem
         }
     }
 
-    public override void Update(float frameTime)
+    private void OnEmpDisabledRemoved(EntityUid uid, EmpDisabledComponent component, EmpDisabledRemoved args)
     {
-        base.Update(frameTime);
+        RemComp<EmpDisabledComponent>(uid);
+        var ev = new EmpDisabledRemoved();
+        RaiseLocalEvent(uid, ref ev);
 
-        var query = EntityQueryEnumerator<EmpDisabledComponent>();
-        while (query.MoveNext(out var uid, out var comp))
+        if (TryComp<PowerNetworkBatteryComponent>(uid, out var powerNetBattery))
         {
-            if (comp.DisabledUntil < Timing.CurTime)
-            {
-                RemComp<EmpDisabledComponent>(uid);
-                var ev = new EmpDisabledRemoved();
-                RaiseLocalEvent(uid, ref ev);
-
-                if (TryComp<PowerNetworkBatteryComponent>(uid, out var powerNetBattery))
-                {
-                    powerNetBattery.CanCharge = true;
-                }
-            }
+            powerNetBattery.CanCharge = true;
         }
     }
 

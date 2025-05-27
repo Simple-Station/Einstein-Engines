@@ -10,12 +10,17 @@ using Robust.Shared.Containers;
 using Content.Shared.Damage;
 using Content.Shared._Shitmed.BodyEffects;
 using Content.Shared._Shitmed.Body.Organ;
+using Robust.Shared.Serialization.Manager;
+using Robust.Shared.Network;
 
 namespace Content.Shared.Body.Systems;
 
 public partial class SharedBodySystem
 {
     // Shitmed Change Start
+    [Dependency] private readonly IComponentFactory _componentFactory = default!;
+    [Dependency] private readonly ISerializationManager _serializationManager = default!;
+    [Dependency] private readonly INetManager _netManager = default!;
 
     private void InitializeOrgans()
     {
@@ -42,15 +47,26 @@ public partial class SharedBodySystem
 
         if (organEnt.Comp.Body is not null)
         {
-        // Shitmed Change Start
+            // Shitmed Change Start
             var addedInBodyEv = new OrganAddedToBodyEvent(bodyUid, parentPartUid);
             RaiseLocalEvent(organEnt, ref addedInBodyEv);
             var organEnabledEv = new OrganEnableChangedEvent(true);
             RaiseLocalEvent(organEnt, ref organEnabledEv);
+            AddFunctions(bodyUid, organEnt.Comp);
         }
         // Shitmed Change End
 
         Dirty(organEnt, organEnt.Comp);
+    }
+
+    private void AddFunctions(EntityUid body, OrganComponent organ)
+    {
+        // TraitFunctions don't currently exist on the client.
+        if (!_netManager.IsServer)
+            return;
+
+        foreach (var function in organ.OnImplantFunctions)
+            function.OnPlayerSpawn(body, _componentFactory, EntityManager, _serializationManager);
     }
 
     private void RemoveOrgan(Entity<OrganComponent> organEnt, EntityUid parentPartUid)
@@ -67,6 +83,7 @@ public partial class SharedBodySystem
             // Shitmed Change End
             var removedInBodyEv = new OrganRemovedFromBodyEvent(bodyUid, parentPartUid);
             RaiseLocalEvent(organEnt, ref removedInBodyEv);
+            RemoveFunctions(bodyUid, organEnt.Comp);
         }
 
         if (parentPartUid is { Valid: true }
@@ -76,6 +93,16 @@ public partial class SharedBodySystem
 
         organEnt.Comp.Body = null;
         Dirty(organEnt, organEnt.Comp);
+    }
+
+    private void RemoveFunctions(EntityUid body, OrganComponent organ)
+    {
+        // TraitFunctions don't currently exist on the client.
+        if (!_netManager.IsServer)
+            return;
+
+        foreach (var function in organ.OnRemoveFunctions)
+            function.OnPlayerSpawn(body, _componentFactory, EntityManager, _serializationManager);
     }
 
     /// <summary>
