@@ -57,9 +57,6 @@ public sealed class DynamicCodeSystem : SharedDynamicCodeSystem
             Logger.Error($"Failed to instanciate mapping template for {component.accesMapping}");
             return;
         }
-        //Logger.Error($"Instanciated on {MetaData(grid).EntityName}");
-
-        //Logger.Error($"Instanciating");
         var codeHolder= new DynamicCodeHolderComponent();
         var codeHolderQuery = GetEntityQuery<DynamicCodeHolderComponent>();
         var consoleQuery = GetEntityQuery<ShuttleConsoleComponent>();
@@ -75,27 +72,16 @@ public sealed class DynamicCodeSystem : SharedDynamicCodeSystem
                 consoles.Add(targ);
         }
 
-        //Logger.Error($"Found entity {MetaData(targ).EntityName} WITH THE CHILD ENUMERATOR");
-        //_lookup.GetGridEntities(grid, targets);
 
         foreach(var (key, targetProtos) in prototype.accesIdentifierToEntity)
         {
             var code = retrieveKey();
             AddKeyToComponent(codeHolder, code, key);
-            //Logger.Error($"Instanciated key : {key} with numeric code {code}");
-            //Logger.Error($"Len of targets list is {targets.Count}");
             foreach (var prototypeId in targetProtos)
             {
-                if (!_prototypes.TryIndex(prototypeId, out var _))
-                {
-                    Logger.Error($"Could not find prototype {prototypeId} for AccesMapping {component.accesMapping}");
-                    continue;
-                }
-
                 foreach (var target in targets)
                 {
                     var meta = MetaData(target);
-                    //Logger.Error($"Checking {meta.EntityName}");
                     if (meta.EntityPrototype is not null && meta.EntityPrototype.ID != prototypeId)
                         continue;
                     var comp = codeHolderQuery.GetComponent(target);
