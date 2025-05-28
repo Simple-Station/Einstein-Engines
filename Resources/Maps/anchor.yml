@@ -117,6 +117,7 @@ entities:
       name: Map Entity
     - type: Transform
     - type: Map
+      mapPaused: True
     - type: PhysicsMap
     - type: GridTree
     - type: MovedGrids
@@ -751,7 +752,7 @@ entities:
       fixtures: {}
     - type: OccluderTree
     - type: BecomesStation
-      id: Anchor Station
+      id: Anchor
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
         path: /Audio/Effects/alert.ogg
@@ -79974,6 +79975,9 @@ entities:
     - type: Transform
       pos: 68.5,16.5
       parent: 2
+    - type: SingletonDeviceNetServer
+      active: False
+      available: False
 - proto: Crowbar
   entities:
   - uid: 12421
@@ -157166,11 +157170,6 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       id: Arrivals Checkpoint
-    - type: UserInterface
-      actors:
-        enum.SurveillanceCameraSetupUiKey.Camera:
-        - invalid
-    - type: ActiveUserInterface
   - uid: 24329
     components:
     - type: Transform

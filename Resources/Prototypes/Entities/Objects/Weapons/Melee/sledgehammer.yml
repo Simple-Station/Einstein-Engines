@@ -9,16 +9,16 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.3333
+    attackRate: 1.3
     range: 1.75
     damage:
       types:
         Blunt: 6
         Structural: 10
     bluntStaminaDamageFactor: 2.0
-    heavyRateModifier: 0.75
+    heavyRateModifier: 1.5
     heavyDamageBaseModifier: 1.75
-    heavyStaminaCost: 7.5
+    heavyStaminaCost: 5
     maxTargets: 10
     angle: 120
     soundHit:

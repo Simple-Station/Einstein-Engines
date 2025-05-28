@@ -376,12 +376,13 @@
   bodyPart: RArm
   markingCategory: RightArm
   speciesRestriction: [Harpy]
+  shaders:
+    bionic_wings_tone_2: unshaded
   sprites:
     - sprite: Mobs/Customization/Harpy/harpy_wings.rsi
       state: bionic_wings_tone_1
     - sprite: Mobs/Customization/Harpy/harpy_wings.rsi
       state: bionic_wings_tone_2
-      shader: unshaded
 
 - type: marking
   id: HarpyChestDefault

@@ -257,7 +257,7 @@ public sealed partial class PsionicFeedbackSelfChat : PsionicPowerFunction
         PsionicPowerPrototype proto)
     {
         var chatManager = IoCManager.Resolve<IChatManager>();
-        if (playerManager.TryGetSessionByEntity(uid, out var session)
+        if (!playerManager.TryGetSessionByEntity(uid, out var session)
             || session is null
             || !loc.TryGetString(FeedbackMessage, out var feedback))
             return;

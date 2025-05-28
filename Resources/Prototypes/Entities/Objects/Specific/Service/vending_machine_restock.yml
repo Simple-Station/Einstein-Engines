@@ -140,6 +140,7 @@
     - ViroDrobeInventory
     - WinterDrobeInventory
     - CuraDrobeInventory
+    - MagiVendInventory
   - type: Sprite
     layers:
     - state: base

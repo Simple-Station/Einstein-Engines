@@ -26,8 +26,8 @@
             Captain: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1]
             NanotrasenRepresentative: [ 1, 1 ]
-            Magistrate: [ 1, 1 ]
-            AdministrativeAssistant: [ 1, 1 ]
+            # Magistrate: [ 1, 1 ] # EE: Disabled
+            # AdministrativeAssistant: [ 1, 1 ] # EE: Disabled
           #engineering
             AtmosphericTechnician: [ 1, 2 ]
             ChiefEngineer: [ 1, 1 ]
@@ -43,10 +43,10 @@
           #security
             Brigmedic: [ 1, 1 ]
             Detective: [ 1, 1 ]
-            Gladiator: [ 0, 2 ]
+            # Gladiator: [ 0, 2 ] # EE: Disabled
             HeadOfSecurity: [ 1, 1 ]
             Prisoner: [ 1, 2 ]
-            PrisonGuard: [ 1, 1 ]
+            # PrisonGuard: [ 1, 1 ] # EE: Disabled
             SecurityOfficer: [ 5, 7 ]
             SecurityCadet: [ 1, 2 ]
             Warden: [ 1, 1 ]
@@ -77,3 +77,9 @@
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
             MedicalBorg: [ 1, 1 ]
+        # blob-config-start SMALL+
+        - type: StationBlobConfig
+          stageBegin: 25
+          stageCritical: 350
+          stageTheEnd: 700
+        # blob-config-end

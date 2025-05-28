@@ -17,8 +17,6 @@
   radioChannels:
   - Science
 
-  laws: Augustine
-
   # Visual
   inventoryTemplateId: borgShort
   spriteBodyState: robot
@@ -51,11 +49,11 @@
   - BorgModuleRCD
   - BorgModuleCable
 
+  lawset: Engineer # DeltaV: Custom lawset
+
   radioChannels:
   - Engineering
   - Science
-
-  laws: Engineer
 
   # Visual
   inventoryTemplateId: borgShort
@@ -84,7 +82,7 @@
     - BorgModuleCargo
 
   defaultModules:
-  - BorgModuleGrapplingGun
+#  - BorgModuleGrapplingGun
   - BorgModuleMining
   - BorgModuleAppraisal
   - BorgModulePKA # Lavaland
@@ -92,8 +90,6 @@
   radioChannels:
   - Supply
   - Science
-
-  laws: Augustine
 
   # Visual
   inventoryTemplateId: borgTall
@@ -126,11 +122,11 @@
   - BorgModuleLightReplacer
   - BorgModuleCleaning
 
+  lawset: Janitor # DeltaV: Custom lawset
+
   radioChannels:
   - Science
   - Service
-
-  laws: Janitor
 
   # Visual
   inventoryTemplateId: borgShort
@@ -161,12 +157,13 @@
 
   defaultModules:
   - BorgModuleTreatment
+  - BorgModuleDiagnosis
 
   radioChannels:
   - Science
   - Medical
 
-  laws: Medical
+  lawset: Medical # DeltaV: Custom lawset
 
   addComponents:
   - type: SolutionScanner
@@ -176,6 +173,12 @@
   - type: ShowHealthIcons
     damageContainers:
     - Biological
+  - type: FabricateActions
+    actions:
+    - ActionFabricateLollipop
+    - ActionFabricateGumball
+  - type: SurgeryTarget # Shitmed
+  - type: Sanitized # Shitmed
 
   # Visual
   inventoryTemplateId: borgDutch
@@ -216,8 +219,6 @@
   radioChannels:
   - Science
   - Service
-
-  laws: Augustine
 
   # Visual
   inventoryTemplateId: borgTall

@@ -21,6 +21,83 @@
   materials:
     Steel: 185
 
+- type: latheRecipe
+  id: CartridgeEpinephrine
+  result: CartridgeEpinephrine
+  completetime: 1
+  materials:
+    Steel: 100
+    Glass: 300
+
+- type: latheRecipe
+  id: CartridgeAtropine
+  result: CartridgeAtropine
+  completetime: 1
+  materials:
+    Steel: 100
+    Glass: 300
+
+- type: latheRecipe
+  id: CartridgeBicaridine
+  result: CartridgeBicaridine
+  completetime: 1
+  materials:
+    Steel: 100
+    Glass: 300
+
+- type: latheRecipe
+  id: CartridgeDermaline
+  result: CartridgeDermaline
+  completetime: 1
+  materials:
+    Steel: 100
+    Glass: 300
+
+- type: latheRecipe
+  id: CartridgeSaline
+  result: CartridgeSaline
+  completetime: 1
+  materials:
+    Steel: 100
+    Glass: 300
+
+- type: latheRecipe
+  id: CartridgeEphedrine
+  result: CartridgeEphedrine
+  completetime: 1
+  materials:
+    Steel: 200
+    Glass: 400
+    Plasma: 200
+
+- type: latheRecipe
+  id: CartridgePuncturase
+  result: CartridgePuncturase
+  completetime: 1
+  materials:
+    Steel: 200
+    Glass: 400
+    Plasma: 200
+
+- type: latheRecipe
+  id: CartridgeTirizene
+  result: CartridgeTirizene
+  completetime: 1
+  materials:
+    Steel: 200
+    Glass: 400
+    Plasma: 200
+
+- type: latheRecipe
+  id: SecHypo
+  result: SecHypo
+  completetime: 3
+  materials:
+    Steel: 1500
+    Plastic: 800
+    Glass: 1200
+    Gold: 500
+
 # Mech Weapons
 - type: latheRecipe
   id: WeaponMechCombatImmolationGun

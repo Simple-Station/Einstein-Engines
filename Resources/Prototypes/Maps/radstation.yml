@@ -18,12 +18,13 @@
           overflowJobs:
             - Passenger
           availableJobs:
-            #service
+          #command
             Captain: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1]
             NanotrasenRepresentative: [ 1, 1 ]
-            Magistrate: [ 1, 1 ]
-            AdministrativeAssistant: [ 1, 1 ]
+            # Magistrate: [ 1, 1 ] # EE: Disabled
+            # AdministrativeAssistant: [ 1, 1 ] # EE: Disabled
+          #service
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 1 ]
             Botanist: [ 3, 3 ]
@@ -31,51 +32,57 @@
             Janitor: [ 2, 2 ]
             Librarian: [ 1, 1 ]
             ServiceWorker: [ 1, 1 ]
-            #engineering
+          #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 4, 4 ]
             StationEngineer: [ 3, 3 ]
             TechnicalAssistant: [ 2, 2 ]
-            #medical
+          #medical
             ChiefMedicalOfficer: [ 1, 1 ]
             Chemist: [ 2, 2 ]
             MedicalBorg: [ 2, 2 ]
             MedicalDoctor: [ 3, 3 ]
             Paramedic: [ 1, 1 ]
             MedicalIntern: [ 2, 2 ]
-            #science
+          #science
             ResearchDirector: [ 1, 1 ]
             Roboticist: [ 1, 2 ]
             Scientist: [ 5, 5 ]
             ForensicMantis: [ 1, 1 ]
             ResearchAssistant: [ 2, 2 ]
             Chaplain: [ 1, 1 ]
-            #security
+          #security
             HeadOfSecurity: [ 1, 1 ]
             Brigmedic: [ 1, 1 ]
             Warden: [ 1, 1 ]
             SecurityOfficer: [ 5, 5 ]
             Prisoner: [ 2, 3 ]
-            PrisonGuard: [ 2, 3 ]
+            # PrisonGuard: [ 2, 3 ] # EE: Disabled
             Detective: [ 1, 1 ]
             SecurityCadet: [ 2, 2 ]
-            #supply
+          #supply
             Quartermaster: [ 1, 1 ]
             MailCarrier: [ 1, 2 ]
             SalvageSpecialist: [ 3, 3 ]
             CargoTechnician: [ 5, 5 ]
-            #civilian
+          #civilian
             Passenger: [ -1, -1 ]
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
             Reporter: [ 2, 2 ]
             Psychologist: [ 1, 1 ]
-            #justice
-            ChiefJustice: [ 1, 1 ]
-            Clerk: [ 1, 1 ]
+          #justice
+            #ChiefJustice: [ 1, 1 ] # EE: Disabled
+            #Clerk: [ 1, 1 ] # EE: Disabled
             Lawyer: [ 1, 1 ]
-            Prosecutor: [ 1, 1]
-            #silicon
+            #Prosecutor: [ 1, 1] # EE: Disabled
+          #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 3, 3 ]
+        # blob-config-start MEDIUM
+        - type: StationBlobConfig
+          stageBegin: 30
+          stageCritical: 375
+          stageTheEnd: 750
+        # blob-config-end

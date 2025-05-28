@@ -129,6 +129,7 @@
       - id: ClothingEyesGlassesMeson
       - id: ClothingShoesBootsMagAdv
       - id: ClothingHandsGlovesColorYellow
+      - id: ClothingOuterJacketInsulated
       - id: CigarCase
         prob: 0.15
       - id: DoorRemoteEngineering
@@ -157,6 +158,7 @@
       - id: ClothingEyesGlassesMeson
       - id: ClothingBeltChiefEngineerFilled
       - id: ClothingHandsGlovesColorYellow
+      - id: ClothingOuterJacketInsulated
       - id: CigarCase
         prob: 0.15
       - id: DoorRemoteEngineering
@@ -183,6 +185,7 @@
     contents:
       - id: MedkitFilled
       - id: ClothingHandsGlovesNitrile
+      - id: ClothingOuterJacketSurgical
       - id: ClothingEyesHudMedical
       - id: ClothingHeadsetAltMedical
       - id: ClothingBackpackDuffelSurgeryFilled
@@ -213,6 +216,7 @@
     contents:
       - id: MedkitFilled
       - id: ClothingHandsGlovesNitrile
+      - id: ClothingOuterJacketSurgical
       - id: ClothingEyesHudMedical
       - id: ClothingHeadsetAltMedical
       - id: ClothingBackpackDuffelSurgeryFilled

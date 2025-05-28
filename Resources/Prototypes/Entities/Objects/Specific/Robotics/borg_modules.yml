@@ -258,21 +258,21 @@
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: pka-module }
 
-- type: entity
-  id: BorgModuleGrapplingGun
-  parent: [ BaseBorgModuleCargo, BaseProviderBorgModule ]
-  name: grappling gun cyborg module
-  components:
-  - type: Sprite
-    layers:
-    - state: cargo
-    - state: icon-grappling-gun
-  - type: ItemBorgModule
-    items:
-    - WeaponGrapplingGun
-    - HandheldGPSBasic
-  - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: grappling-module }
+# - type: entity
+#   id: BorgModuleGrapplingGun
+#   parent: [ BaseBorgModuleCargo, BaseProviderBorgModule ]
+#   name: grappling gun cyborg module
+#   components:
+#   - type: Sprite
+#     layers:
+#     - state: cargo
+#     - state: icon-grappling-gun
+#   - type: ItemBorgModule
+#     items:
+#     - WeaponGrapplingGun
+#     - HandheldGPSBasic
+#   - type: BorgModuleIcon
+#     icon: { sprite: Interface/Actions/actions_borg.rsi, state: grappling-module }
 
 # engineering modules
 - type: entity

@@ -31,8 +31,6 @@ public partial class SharedRenamableSystem : EntitySystem
         _popup!.PopupPredicted(Loc.GetString("comp-renamable-rename", ("newname", renameMessage.Name)), entity, null);
 
         var name = renameMessage.Name.Trim();
-        if (TryComp<NameIdentifierComponent>(entity, out var identifier))
-            name = $"{name} {identifier.FullIdentifier}";
 
         var metaData = MetaData(entity);
 
@@ -40,7 +38,12 @@ public partial class SharedRenamableSystem : EntitySystem
         if (metaData.EntityName.Equals(name, StringComparison.InvariantCulture))
             return;
 
+        if (TryComp<NameIdentifierComponent>(entity, out var identifier))
+            name = $"{name} {identifier.FullIdentifier}";
+
         _metaData.SetEntityName(entity, name, metaData);
+        if (entity.Comp.SingleUse)
+            RemCompDeferred<RenamableComponent>(entity);
     }
 
     private void OnGetVerbs(Entity<RenamableComponent> entity, ref GetVerbsEvent<Verb> args)

@@ -389,3 +389,17 @@
       id: ClothingUniformTCFLSentinel
     - type: loadout
       id: ClothingUniformTCFLVolunteer
+    - type: loadout
+      id: ClothingUniformJumpsuitSolArmyService
+    - type: loadout
+      id: ClothingUniformJumpsuitSolFatigueGreen
+    - type: loadout
+      id: ClothingUniformJumpsuitSolFatigueGrey
+    - type: loadout
+      id: ClothingUniformJumpsuitSolFatigueTan
+    - type: loadout
+      id: ClothingUniformJumpsuitSolNavyCoveralls
+    - type: loadout
+      id: ClothingUniformJumpsuitSolNavySailor
+    - type: loadout
+      id: ClothingUniformJumpsuitSolServiceWhite

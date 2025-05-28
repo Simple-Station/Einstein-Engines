@@ -109,6 +109,7 @@ entities:
     - type: MetaData
     - type: Transform
     - type: Map
+      mapPaused: True
     - type: PhysicsMap
     - type: GridTree
     - type: MovedGrids
@@ -5730,12 +5731,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -8.5,15.5
       parent: 2
-    - type: Door
-      secondsUntilStateChange: -87823.68
-      state: Opening
-    - type: DeviceLinkSource
-      lastSignals:
-        DoorStatus: True
   - uid: 143
     components:
     - type: Transform
@@ -6100,12 +6095,6 @@ entities:
     - type: Transform
       pos: -23.5,1.5
       parent: 2
-    - type: Door
-      secondsUntilStateChange: -133125.69
-      state: Opening
-    - type: DeviceLinkSource
-      lastSignals:
-        DoorStatus: True
   - uid: 187
     components:
     - type: Transform
@@ -30257,6 +30246,9 @@ entities:
     - type: Transform
       pos: -12.5,-50.5
       parent: 2
+    - type: SingletonDeviceNetServer
+      active: False
+      available: False
 - proto: CrowbarRed
   entities:
   - uid: 3873
@@ -63085,11 +63077,6 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSupply
       id: Cargo Lobby
-    - type: UserInterface
-      actors:
-        enum.SurveillanceCameraSetupUiKey.Camera:
-        - invalid
-    - type: ActiveUserInterface
   - uid: 11761
     components:
     - type: Transform

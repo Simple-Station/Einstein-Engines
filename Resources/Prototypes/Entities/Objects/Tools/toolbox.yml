@@ -22,19 +22,21 @@
     size: Ginormous
   - type: MeleeWeapon
     attackRate: 1.1
-    range: 1.75
+    range: 1.5
     damage:
       types:
         Blunt: 9
     bluntStaminaDamageFactor: 2.0
-    heavyRateModifier: 0.8
-    heavyStaminaCost: 7.5
-    angle: 80.5
+    heavyRangeModifier: 1.2
+    heavyDamageBaseModifier: 1.5
+    heavyRateModifier: 2
+    heavyStaminaCost: 2.5
+    angle: 110
     soundHit:
       path: "/Audio/Weapons/smash.ogg"
   - type: DamageOtherOnHit
-    meleeDamageMultiplier: 1.33
-    staminaCost: 12.5
+    meleeDamageMultiplier: 1.5
+    staminaCost: 10
   - type: Tag
     tags:
     - Toolbox
@@ -45,6 +47,17 @@
           True: { state: icon-open }
           False: { state: icon }
   - type: Appearance
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 38
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 - type: entity
   name: emergency toolbox

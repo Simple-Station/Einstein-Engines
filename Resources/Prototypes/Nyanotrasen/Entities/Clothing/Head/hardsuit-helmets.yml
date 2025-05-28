@@ -25,6 +25,16 @@
     sprite: Nyanotrasen/Clothing/Head/ReverseEngineering/syndicate.rsi
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Head/ReverseEngineering/syndicate.rsi
+    clothingVisuals:
+      head:
+      - state: off-equipped-HELMET
+      - state: off-equipped-HELMET-glow
+        shader: unshaded
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - Hair
+    
 
 - type: entity
   parent: ClothingHeadHelmetHardsuitCybersun
@@ -37,6 +47,16 @@
     sprite: Nyanotrasen/Clothing/Head/ReverseEngineering/juggernaut.rsi
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Head/ReverseEngineering/juggernaut.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+      - state: equipped-HELMET-glow
+        shader: unshaded
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - Hair
+    - Head
 
 - type: entity
   parent: ClothingHeadHelmetHardsuitERTLeader
@@ -49,3 +69,11 @@
     sprite: Nyanotrasen/Clothing/Head/Hardsuits/ERThelmets/ertcentcomm.rsi
   - type: PointLight
     color: "#00aa5c"
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+      - state: on-equipped-HELMET-unshaded
+        shader: unshaded
+  

@@ -15,6 +15,6 @@ public sealed class MindbrokenSystem : EntitySystem
         if (!args.IsInDetailsRange)
             return;
 
-        args.PushMarkup($"[color=mediumpurple]{Loc.GetString(component.MindbrokenExaminationText, ("entity", uid))}[/color]");
+        args.PushMarkup($"[color=#f89b14]{Loc.GetString(component.MindbrokenExaminationText, ("entity", uid))}[/color]");
     }
 }

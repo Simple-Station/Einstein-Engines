@@ -97,3 +97,7 @@
 - type: font
   id: YoureGone
   path: /Fonts/YoureGone.otf
+
+- type: font
+  id: NovaFlat
+  path: /Fonts/NovaFlat/NovaFlat-Regular.ttf

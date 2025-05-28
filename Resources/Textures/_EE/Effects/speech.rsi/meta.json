@@ -23,6 +23,23 @@
         },
         {
             "name": "thaven2"
+        },
+		{
+            "name": "xelthia0",
+            "delays": [
+                [
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2
+                ]
+            ]
+        },
+        {
+            "name": "xelthia1"
+        },
+        {
+            "name": "xelthia2"
         }
     ]
 }

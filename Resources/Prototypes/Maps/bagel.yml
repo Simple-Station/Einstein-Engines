@@ -17,32 +17,32 @@
           emergencyShuttlePath: /Maps/Shuttles/emergency_box.yml
         - type: StationJobs
           availableJobs:
-            #command
+          #command
             Captain: [ 1, 1 ]
             NanotrasenRepresentative: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1 ]
-            AdministrativeAssistant: [ 1, 1 ]
-            #service
+            # AdministrativeAssistant: [ 1, 1 ] # EE: Disabled
+          #service
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 2 ]
             Botanist: [ 2, 2 ]
             Chef: [ 2, 2 ]
             Janitor: [ 2, 2 ]
             ServiceWorker: [ 2, 2 ]
-            #engineering
+          #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 3, 3 ]
             StationEngineer: [ 4, 4 ]
             TechnicalAssistant: [ 4, 4 ]
             SeniorEngineer: [ 1, 1 ]
-            #medical
+          #medical
             ChiefMedicalOfficer: [ 1, 1 ]
             Chemist: [ 2, 2 ]
             MedicalDoctor: [ 3, 3 ]
             SeniorPhysician: [ 1, 1 ]
             Paramedic: [ 1, 1 ]
             MedicalIntern: [ 4, 4 ]
-            #science
+          #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 5, 5 ]
             ResearchAssistant: [ 4, 4 ]
@@ -50,29 +50,35 @@
             Librarian: [ 1, 1 ]
             ForensicMantis: [ 1, 1 ]
             SeniorResearcher: [ 1, 1 ]
-            #security
+          #security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
             Brigmedic: [ 1, 1 ]
             Prisoner: [ 1, 2 ]
-            PrisonGuard: [ 1, 2 ]
+            # PrisonGuard: [ 1, 2 ] # EE: Disabled
             SecurityOfficer: [ 4, 4 ]
             Detective: [ 1, 1 ]
             SecurityCadet: [ 4, 4 ]
             Lawyer: [ 2, 2 ]
             SeniorOfficer: [ 1, 1 ]
-            #supply
+          #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
             CargoTechnician: [ 3, 3 ]
             MailCarrier: [ 1, 2 ]
-            #civilian
+          #civilian
             Passenger: [ -1, -1 ]
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 2 ]
             Reporter: [ 2, 2 ]
-            #silicon
+          #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
             MedicalBorg: [ 2, 2 ]
+        # blob-config-start SMALL
+        - type: StationBlobConfig
+          stageBegin: 20
+          stageCritical: 300
+          stageTheEnd: 600
+        # blob-config-end

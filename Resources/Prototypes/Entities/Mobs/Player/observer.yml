@@ -72,6 +72,7 @@
     radius: 6
     enabled: false
 
+
 - type: entity
   id: ActionGhostBoo
   name: Boo!
@@ -141,7 +142,7 @@
   - BaseMob
   id: MobTelegnosisObserver
   name: psionic projection
-  description: Dancing across bridges prismatic hypereality
+  description: A soul dancing across the dreamlight
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -149,24 +150,26 @@
     layers:
     - state: animated
       shader: unshaded
-  - type: ContentEye
   - type: Eye
     drawFov: false
     visMask:
       - TelegnosticProjection
       - PsionicInvisibility
-      - Ghost
       - Normal
-      - Ethereal
-  - type: Input
-    context: "ghost"
   - type: Examiner
-  - type: TelegnosticProjection
   - type: MovementSpeedModifier
     baseSprintSpeed: 8
     baseWalkSpeed: 5
   - type: Psionic
     removable: false
     roller: false
+    psychognomicDescriptors:
+      - p-descriptor-liminal # because you arnt currently in your body
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - XenoglossyPower #Remove if a better way to have the projection understand langs is implemented, ideal is to have projection inherit user langs
+      - TelepathyPower
+      - PsychognomyPower
+  - type: TelegnosticProjection
   - type: Stealth
     lastVisibility: 0.66

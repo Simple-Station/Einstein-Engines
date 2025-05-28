@@ -97,3 +97,13 @@
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
+
+- type: nationality
+  id: Qiimaeruan
+  nameKey: nationality_name_qiimaeruan
+  descriptionKey: nationality_description_qiimaeruan
+  passportPrototype: QiimaeruPassport
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Xelthia # Consider not making this exclusive later, actually

@@ -1,0 +1,269 @@
+# Anything human specific (e.g. UI, input) goes under MobHuman
+- type: entity
+  parent: BaseMobSpeciesOrganic
+  id: BaseMobXelthia
+  name: Urist McTentacles
+  abstract: true
+  components:
+  - type: Hunger
+  - type: Icon # It will not have an icon in the adminspawn menu without this. Body parts seem fine for whatever reason.
+    sprite: _EE/Mobs/Species/Xelthia/parts.rsi
+    state: full
+  - type: Body
+    prototype: Xelthia
+  - type: Thirst
+  - type: Carriable # Carrying system from nyanotrasen.
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeatHuman
+      amount: 5
+  - type: HumanoidAppearance
+    species: Xelthia
+    hideLayersOnEquip:
+    - Hair
+    - Snout
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Qiilour
+    understands:
+    - TauCetiBasic
+    - Qiilour
+  - type: Speech
+    speechSounds: Xelthia
+    speechVerb: Xelthia
+  - type: TypingIndicator
+    proto: xelthia
+  - type: Vocal
+    sounds:
+      Male: UnisexXelthia
+      Female: UnisexXelthia
+      Unsexed: UnisexXelthia
+  - type: FootPrints
+  - type: Xelthia
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Xelthia
+  - type: Temperature
+    heatDamageThreshold: 360
+    coldDamageThreshold: 280
+    currentTemperature: 310.15
+    specificHeat: 42
+    coldDamage:
+      types:
+        Cold: 1.2 #per second, scales with temperature & other constants
+    heatDamage:
+      types:
+        Heat: 1.2 #per second, scales with temperature & other constants
+  - type: Barotrauma
+    damage:
+      types:
+        Blunt: 0.14 #per second, scales with pressure and other constants.
+  - type: Bloodstream
+    bloodReagent: AcidBlood
+  - type: DamageVisuals
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#00FF69"
+#  - type: Hands # This doesnt seem to work. I can't tell why. Is this implemented here and i'm doing this wrong, or is it just on goob? Fix later.
+#    handDisplacement:
+#      sprite: _EE/Mobs/Species/Xelthia/displacement.rsi
+#      state: held
+#      copyToShaderParameters:
+#        # Value required, provide a dummy. Gets overridden when applied.
+#        layerKey: dummy
+#        parameterTexture: displacementMap
+#        parameterUV: displacementUV
+  - type: Inventory
+    templateId: xelthia
+    speciesId: Xelthia
+    displacements:
+      jumpsuit:
+        layer:
+          sprite: _EE/Mobs/Species/Xelthia/displacement.rsi
+          state: jumpsuit
+          copyToShaderParameters:
+            # Value required, provide a dummy. Gets overridden when applied.
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      head:
+        layer:
+          sprite: _EE/Mobs/Species/Xelthia/displacement.rsi
+          state: jumpsuit # name is somewhat misleading, the jumpsuit state ended up being fairly versitile so I reused it
+          copyToShaderParameters:
+            # Value required, provide a dummy. Gets overridden when applied.
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      shoes:
+        layer:
+          sprite: _EE/Mobs/Species/Xelthia/displacement.rsi
+          state: jumpsuit
+          copyToShaderParameters:
+            # Value required, provide a dummy. Gets overridden when applied.
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      mask:
+        layer:
+          sprite: _EE/Mobs/Species/Xelthia/displacement.rsi
+          state: jumpsuit
+          copyToShaderParameters:
+            # Value required, provide a dummy. Gets overridden when applied.
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      outerClothing:
+        layer:
+          sprite: _EE/Mobs/Species/Xelthia/displacement.rsi
+          state: jumpsuit
+          copyToShaderParameters:
+            # Value required, provide a dummy. Gets overridden when applied.
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      suitstorage:
+        layer:
+          sprite: _EE/Mobs/Species/Xelthia/displacement.rsi
+          state: jumpsuit
+          copyToShaderParameters:
+            # Value required, provide a dummy. Gets overridden when applied.
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      eyes:
+        layer:
+          sprite: _EE/Mobs/Species/Xelthia/displacement.rsi
+          state: jumpsuit
+          copyToShaderParameters:
+            # Value required, provide a dummy. Gets overridden when applied.
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      belt:
+        layer:
+          sprite: _EE/Mobs/Species/Xelthia/displacement.rsi
+          state: jumpsuit
+          copyToShaderParameters:
+            # Value required, provide a dummy. Gets overridden when applied.
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      back:
+        layer:
+          sprite: _EE/Mobs/Species/Xelthia/displacement.rsi
+          state: backpack
+          copyToShaderParameters:
+            # Value required, provide a dummy. Gets overridden when applied.
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+
+- type: entity
+  save: false
+  name: Urist McHands
+  parent: MobHumanDummy
+  id: MobXelthiaDummy
+  categories: [ HideSpawnMenu ]
+  description: A dummy xelthia meant to be used in character setup.
+  components:
+  - type: HumanoidAppearance
+    species: Xelthia
+#  - type: Hands
+#    handDisplacement:
+#      sprite: _EE/Mobs/Species/Xelthia/displacement.rsi
+#      state: held
+#      copyToShaderParameters:
+#        # Value required, provide a dummy. Gets overridden when applied.
+#        layerKey: dummy
+#        parameterTexture: displacementMap
+#        parameterUV: displacementUV
+          
+  - type: Inventory
+    templateId: xelthia
+    speciesId: xelthia
+    displacements:
+      jumpsuit:
+        layer:
+          sprite: _EE/Mobs/Species/Xelthia/displacement.rsi
+          state: jumpsuit
+          copyToShaderParameters:
+            # Value required, provide a dummy. Gets overridden when applied.
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      head:
+        layer:
+          sprite: _EE/Mobs/Species/Xelthia/displacement.rsi
+          state: jumpsuit
+          copyToShaderParameters:
+            # Value required, provide a dummy. Gets overridden when applied.
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      shoes:
+        layer:
+          sprite: _EE/Mobs/Species/Xelthia/displacement.rsi
+          state: jumpsuit
+          copyToShaderParameters:
+            # Value required, provide a dummy. Gets overridden when applied.
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      mask:
+        layer:
+          sprite: _EE/Mobs/Species/Xelthia/displacement.rsi
+          state: jumpsuit
+          copyToShaderParameters:
+            # Value required, provide a dummy. Gets overridden when applied.
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      outerClothing:
+        layer:
+          sprite: _EE/Mobs/Species/Xelthia/displacement.rsi
+          state: jumpsuit
+          copyToShaderParameters:
+            # Value required, provide a dummy. Gets overridden when applied.
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      suitstorage:
+        layer:
+          sprite: _EE/Mobs/Species/Xelthia/displacement.rsi
+          state: jumpsuit
+          copyToShaderParameters:
+            # Value required, provide a dummy. Gets overridden when applied.
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      eyes:
+        layer:
+          sprite: _EE/Mobs/Species/Xelthia/displacement.rsi
+          state: jumpsuit
+          copyToShaderParameters:
+            # Value required, provide a dummy. Gets overridden when applied.
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      belt:
+        layer:
+          sprite: _EE/Mobs/Species/Xelthia/displacement.rsi
+          state: jumpsuit
+          copyToShaderParameters:
+            # Value required, provide a dummy. Gets overridden when applied.
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      back:
+        layer:
+          sprite: _EE/Mobs/Species/Xelthia/displacement.rsi
+          state: backpack
+          copyToShaderParameters:
+            # Value required, provide a dummy. Gets overridden when applied.
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV

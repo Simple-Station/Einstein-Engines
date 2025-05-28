@@ -16,6 +16,7 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
     [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
     [Dependency] private readonly PullingSystem _pullingSystem = default!;
+    private static readonly ISawmill _sawmill = Logger.GetSawmill("abductor");
 
     private static readonly EntProtoId<InstantActionComponent> SendYourself = "ActionSendYourself";
     private static readonly EntProtoId<InstantActionComponent> ExitAction = "ActionExitConsole";
@@ -72,7 +73,7 @@ public sealed partial class AbductorSystem : SharedAbductorSystem
 
     private void OnSendYourself(SendYourselfEvent ev)
     {
-        Logger.Debug($"{ToPrettyString(ev.Performer)}");
+        _sawmill.Debug($"{ToPrettyString(ev.Performer)}");
         AddTeleportationEffect(ev.Performer, 5.0f, TeleportationEffectEntity, out var effectEnt, true, false);
         var effect = _entityManager.SpawnEntity(TeleportationEffect, ev.Target);
         EnsureComp<TimedDespawnComponent>(effect, out var _);

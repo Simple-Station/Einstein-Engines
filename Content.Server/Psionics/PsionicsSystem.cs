@@ -89,8 +89,7 @@ public sealed class PsionicsSystem : EntitySystem
 
     private void OnStartup(EntityUid uid, PsionicComponent component, MapInitEvent args)
     {
-        if (!component.Removable
-            || !component.CanReroll)
+        if (!component.CanReroll)
             return;
 
         Timer.Spawn(TimeSpan.FromSeconds(30), () => DeferRollers(uid));
@@ -297,7 +296,6 @@ public sealed class PsionicsSystem : EntitySystem
     public void RerollPsionics(EntityUid uid, PsionicComponent? psionic = null, float bonusMuliplier = 1f)
     {
         if (!Resolve(uid, ref psionic, false)
-            || !psionic.Removable
             || !psionic.CanReroll)
             return;
 

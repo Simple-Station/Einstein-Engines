@@ -312,12 +312,21 @@
       prototypes:
         - ShadowBasaltRandom
     - type: TimedDespawn
-      lifetime: 30
+      lifetime: 5
 
 - type: entity
-  name: Temporary haze
+  name: fading haze
   id: ShadowKudzuTemp
   parent: ShadowKudzuWeak
   components:
+    - type: RandomSpawner
+      deleteSpawnerAfterSpawn: false
+      rareChance: 0.2
+      offset: 0.2
+      chance: 0.45
+      prototypes:
+        - ShadowBasaltRandom
+      rarePrototypes:
+        - ShadowKudzuLootSpawnerTemp
     - type: TimedDespawn
-      lifetime: 30
+      lifetime: 12

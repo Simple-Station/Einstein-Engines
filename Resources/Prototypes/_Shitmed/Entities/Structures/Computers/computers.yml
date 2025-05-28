@@ -74,7 +74,7 @@
   - type: Eye
     pvsScale: 1.5
   - type: Visibility
-    layer: 4
+    layer: 10
   - type: Sprite
     sprite: _Shitmed/Structures/Machines/abductor_camera_console.rsi
     layers:

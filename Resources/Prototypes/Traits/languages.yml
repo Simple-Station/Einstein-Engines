@@ -111,6 +111,10 @@
       inverted: true
       nationalities:
         - Valyrian
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:

@@ -309,6 +309,11 @@
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/brigmedic.rsi
   - type: Clothing
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-glow
+        shader: unshaded
     sprite: Clothing/OuterClothing/Hardsuits/brigmedic.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.3

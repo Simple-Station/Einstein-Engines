@@ -7,7 +7,7 @@
       weight: 50
       children:
       - id: OrganDubiousHealth
-      - id: OrganDubiousInvisible
+     # - id: OrganDubiousInvisible
       - id: OrganDubiousSpaceAdaptation
       - id: OrganDubiousScrambleDna
       - id: OrganDubiousScrambleLocation

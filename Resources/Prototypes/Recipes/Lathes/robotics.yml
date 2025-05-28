@@ -428,7 +428,7 @@
   id: BorgModuleMining
   result: BorgModuleMining
 
-- type: latheRecipe
-  parent: BaseGoldBorgModuleRecipe
-  id: BorgModuleGrapplingGun
-  result: BorgModuleGrapplingGun
+# - type: latheRecipe
+#  parent: BaseGoldBorgModuleRecipe
+#  id: BorgModuleGrapplingGun
+#  result: BorgModuleGrapplingGun

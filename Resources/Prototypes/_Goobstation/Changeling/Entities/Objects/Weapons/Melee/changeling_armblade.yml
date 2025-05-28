@@ -8,15 +8,19 @@
     sprite: _Goobstation/Changeling/arm_blade.rsi
     state: icon
   - type: MeleeWeapon
-    angle: 0
     wideAnimationRotation: 90
-    attackRate: 1.5
+    attackRate: 0.9
     damage:
       types:
         Slash: 15
         Structural: 20
-    clickPartDamageMultiplier: 2
-    heavyPartDamageMultiplier: 1.5
+    clickPartDamageMultiplier: 3
+    heavyPartDamageMultiplier: 2.5
+    lightRangeModifier: 1.2
+    heavyRateModifier: 2.5
+    heavyDamageBaseModifier: 1.2
+    maxTargets: 1
+    angle: 10
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item

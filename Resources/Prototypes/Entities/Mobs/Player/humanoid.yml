@@ -1,4 +1,4 @@
-## Random humanoids
+# Random humanoids
 
 - type: randomHumanoidSettings
   id: EventHumanoid
@@ -65,15 +65,13 @@
       rules: ghost-role-information-Death-Squad-rules
       raffle:
         settings: short
-      mindRoles:
-      - MindRoleGhostRoleFamiliar
+    - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ DeathSquadGear ]
     - type: RandomMetadata
       nameSegments:
         - NamesFirstMilitaryLeader
         - NamesLastMilitary
-
 
 ## ERT Leader
 

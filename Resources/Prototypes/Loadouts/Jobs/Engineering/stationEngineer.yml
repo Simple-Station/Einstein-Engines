@@ -197,6 +197,7 @@
   id: LoadoutStationEngineerUniformsSuit
   category: JobsEngineeringStationEngineer
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutStationEngineerUniforms
@@ -210,6 +211,7 @@
   id: LoadoutStationEngineerUniformsSkirt
   category: JobsEngineeringStationEngineer
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutStationEngineerUniforms
@@ -218,3 +220,57 @@
         - StationEngineer
   items:
     - ClothingUniformJumpskirtEngineering
+
+- type: loadout
+  id: LoadoutStationEngineerUniformsSuitZav
+  category: JobsEngineeringStationEngineer
+  cost: 0
+  exclusive: true
+  guideEntry: ZavodskoiInterstellar
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutStationEngineerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - StationEngineer
+    - !type:CharacterEmployerRequirement
+      employers:
+        - ZavodskoiInterstellar
+  items:
+    - ClothingUniformJumpsuitZavodEngineer
+
+- type: loadout
+  id: LoadoutStationEngineerUniformsSuitNT
+  category: JobsEngineeringStationEngineer
+  cost: 0
+  exclusive: true
+  guideEntry: NanoTrasen
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutStationEngineerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - StationEngineer
+    - !type:CharacterEmployerRequirement
+      employers:
+        - NanoTrasen
+  items:
+    - ClothingUniformJumpsuitNTEngineer
+
+- type: loadout
+  id: LoadoutStationEngineerUniformsSuitHeph
+  category: JobsEngineeringStationEngineer
+  cost: 0
+  exclusive: true
+  guideEntry: HephaestusIndustries
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutStationEngineerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - StationEngineer
+    - !type:CharacterEmployerRequirement
+      employers:
+        - HephaestusIndustries
+  items:
+    - ClothingUniformJumpsuitHephEngineer

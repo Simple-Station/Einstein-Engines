@@ -47,7 +47,7 @@
 - type: loadout
   id: LoadoutEyesGlassesJamjar
   category: Eyes
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -59,7 +59,7 @@
 - type: loadout
   id: LoadoutEyesGlasses3D
   category: Eyes
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingEyesGlasses3D
@@ -82,7 +82,7 @@
 - type: loadout
   id: LoadoutEyesGlassesMonocle
   category: Eyes
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -106,7 +106,7 @@
 - type: loadout
   id: LoadoutEyesGlassesJensen
   category: Eyes
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingEyesGlassesJensen
@@ -138,7 +138,7 @@
 - type: loadout
   id: LoadoutItemCheapSunglasses
   category: Eyes
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingEyesGlassesCheapSunglasses
@@ -149,7 +149,7 @@
 - type: loadout
   id: LoadoutEyesGlassesCheapSunglassesAviator
   category: Eyes
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:
@@ -161,7 +161,7 @@
 - type: loadout
   id: LoadoutEyesGlassesCheapSunglassesBig
   category: Eyes
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingEyesGlassesCheapSunglassesBig
@@ -172,7 +172,7 @@
 - type: loadout
   id: LoadoutEyesGlassesCheapSunglassesVisor
   category: Eyes
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingEyesGlassesCheapSunglassesVisor

@@ -40,19 +40,18 @@
   special:
   - !type:AddComponentSpecial
     components:
-    - type: Psionic
-      powerSlots: 2
-      baselinePowerCost: 75
-      nextPowerCost: 75
-      removable: false
-      powerPool: PsychoHistorianPowerPool
-  - !type:AddComponentSpecial
-    components:
-    - type: InnatePsionicPowers
-      powersToAdd:
-        - MetapsionicPower
-        - TelepathyPower
-        - MantisSummonBlackBlade # Dear Maintainer, say NOTHING about this.
+      - type: Psionic
+        powerSlots: 2
+        baselinePowerCost: 75
+        nextPowerCost: 75
+        removable: false
+        powerPool: PsychoHistorianPowerPool
+      - type: InnatePsionicPowers
+        powersToAdd:
+          - MetapsionicPower
+          - TelepathyPower
+          - MantisSummonBlackBlade
+
 
 - type: startingGear
   id: ForensicMantisGear

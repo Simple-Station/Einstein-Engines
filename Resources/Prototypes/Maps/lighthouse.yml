@@ -19,16 +19,17 @@
         overflowJobs:
         - Passenger
         availableJobs:
-        #service
+        #command
           Captain: [ 1, 1 ]
           BlueshieldOfficer: [ 1, 1]
           NanotrasenRepresentative: [ 1, 1 ]
-          Magistrate: [ 1, 1 ]
-          AdministrativeAssistant: [ 1, 1 ]
+          # Magistrate: [ 1, 1 ] # EE: Disabled
+          # AdministrativeAssistant: [ 1, 1 ] # EE: Disabled
+        #service
           HeadOfPersonnel: [ 1, 1 ]
           Bartender: [ 1, 2 ]
           Botanist: [ 2, 2 ]
-          Boxer: [ 2, 2 ]
+          # Boxer: [ 2, 2 ] # EE: Disabled
           Chef: [ 1, 2 ]
           Clown: [ 1, 1 ]
           Lawyer: [ 2, 2 ]
@@ -75,3 +76,9 @@
           Passenger: [ -1, -1 ]
         # Silicon
           StationAi: [ 1, 1 ]
+      # Goobstation blob-config-start HUGE
+      - type: StationBlobConfig
+        stageBegin: 40
+        stageCritical: 450
+        stageTheEnd: 900
+      # Goobstation blob-config-end
