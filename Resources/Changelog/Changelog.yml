@@ -16293,3 +16293,10 @@ Entries:
   id: 7265
   time: '2025-05-28T00:24:57.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2441
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Dramatically improved performance of the flammable system.
+  id: 7266
+  time: '2025-05-28T01:25:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2462
