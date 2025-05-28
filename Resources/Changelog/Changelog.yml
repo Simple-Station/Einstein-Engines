@@ -16286,3 +16286,10 @@ Entries:
   id: 7264
   time: '2025-05-26T00:36:05.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2446
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: 'Added a new antagonist: Blob'
+  id: 7265
+  time: '2025-05-28T00:24:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2441
