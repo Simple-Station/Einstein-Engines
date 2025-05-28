@@ -16307,3 +16307,10 @@ Entries:
   id: 7267
   time: '2025-05-28T05:10:30.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2458
+- author: Lumminal
+  changes:
+    - type: Add
+      message: Ported thieving beacon from wizden. Have fun stealing pets now!
+  id: 7268
+  time: '2025-05-28T05:14:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2447
