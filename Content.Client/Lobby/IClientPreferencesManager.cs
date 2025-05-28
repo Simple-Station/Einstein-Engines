@@ -6,6 +6,7 @@ namespace Content.Client.Lobby
     public interface IClientPreferencesManager
     {
         event Action OnServerDataLoaded;
+        event Action<int>? SlotSelected;
 
         bool ServerDataLoaded => Settings != null;
 
