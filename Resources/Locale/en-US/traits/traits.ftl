@@ -682,9 +682,8 @@ trait-description-CyberneticLeftLeg =
 
 trait-name-CyberneticRightLeg = Cybernetic Right Leg
 trait-description-CyberneticRightLeg =
-    Your left leg has been replaced with a baseline cybernetic leg.
+    Your right leg has been replaced with a baseline cybernetic leg.
     This does not cost any trait slot selections.
-
 trait-name-Dwarf = Dwarf
 trait-description-Dwarf =
     You are not just short and stout... You are a dwarf.
