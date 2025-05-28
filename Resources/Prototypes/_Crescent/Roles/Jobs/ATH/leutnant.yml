@@ -5,12 +5,12 @@
   playTimeTracker: JobLeutnantATH
   requirements:
     - !type:CharacterWhitelistRequirement
-    - !type:CharacterSpeciesRequirement
+    - !type:SpeciesRequirement
       species:
         - Human
         - Reptilian
         - Oni
-    - !type:CharacterFactionRequirement
+    - !type:FactionRequirement
       factionID: "ATH"
   weight: 86
   startingGear: LeutnantGear

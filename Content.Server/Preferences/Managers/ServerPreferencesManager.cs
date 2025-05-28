@@ -30,10 +30,6 @@ namespace Content.Server.Preferences.Managers
         [Dependency] private readonly UserDbDataManager _userDb = default!;
         [Dependency] private readonly IPrototypeManager _protos = default!;
 
-        // Hullrot edit - added because events are not useable here >:( SPCR 2025
-        // This will break if game decides to multi-thread or change how it works.
-        public event Action<HullrotSelectedSlotUpdated>? OnHullrotSelectedSlotUpdated;
-
         // Cache player prefs on the server so we don't need as much async hell related to them.
         private readonly Dictionary<NetUserId, PlayerPrefData> _cachedPlayerPrefs =
             new();
@@ -76,9 +72,6 @@ namespace Content.Server.Preferences.Managers
             }
 
             prefsData.Prefs = new PlayerPreferences(curPrefs.Characters, index, curPrefs.AdminOOCColor);
-
-            var updatedEvent = new HullrotSelectedSlotUpdated(_playerManager.GetSessionById(userId), message.SelectedCharacterIndex);
-            OnHullrotSelectedSlotUpdated?.Invoke(updatedEvent);
 
             if (ShouldStorePrefs(message.MsgChannel.AuthType))
             {
@@ -139,14 +132,12 @@ namespace Content.Server.Preferences.Managers
                 }
             }
 
+            // hullrot edit end
             var profiles = new Dictionary<int, ICharacterProfile>(curPrefs.Characters)
             {
                 [slot] = profile
             };
 
-            var updatedEvent = new HullrotSelectedSlotUpdated(session, slot);
-            OnHullrotSelectedSlotUpdated?.Invoke(updatedEvent);
-            // hullrot edit end
 
 
             prefsData.Prefs = new PlayerPreferences(profiles, slot, curPrefs.AdminOOCColor);
@@ -224,8 +215,6 @@ namespace Content.Server.Preferences.Managers
                 };
 
                 _cachedPlayerPrefs[session.UserId] = prefsData;
-                var updatedEvent = new HullrotSelectedSlotUpdated(session, 0);
-                OnHullrotSelectedSlotUpdated?.Invoke(updatedEvent);
             }
             else
             {
@@ -239,12 +228,6 @@ namespace Content.Server.Preferences.Managers
                 {
                     var prefs = await GetOrCreatePreferencesAsync(session.UserId, cancel);
                     prefsData.Prefs = prefs;
-                }
-
-                if (prefsData.Prefs is not null)
-                {
-                    var updatedEvent = new HullrotSelectedSlotUpdated(session, prefsData.Prefs.SelectedCharacterIndex);
-                    OnHullrotSelectedSlotUpdated?.Invoke(updatedEvent);
                 }
             }
         }

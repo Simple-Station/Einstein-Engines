@@ -6,7 +6,7 @@
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 18000
-    - !type:CharacterFactionRequirement
+    - !type:FactionRequirement
       factionID: "SHI"
   weight: 38
   startingGear: CorpsecGear

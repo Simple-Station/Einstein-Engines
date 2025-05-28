@@ -7,7 +7,7 @@
     - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
       min: 36000
-    - !type:CharacterFactionRequirement
+    - !type:FactionRequirement
       factionID: "SHI"
   weight: 55
   startingGear: ExecutiveGear

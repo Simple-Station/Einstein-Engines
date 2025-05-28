@@ -6,12 +6,12 @@
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 55000
-    - !type:CharacterSpeciesRequirement
+    - !type:SpeciesRequirement
       species:
         - Human
     - !type:SexRequirement
       sex: Male
-    - !type:CharacterFactionRequirement
+    - !type:FactionRequirement
       factionID: "DSM"
   weight: 22
   startingGear: TemplarGear

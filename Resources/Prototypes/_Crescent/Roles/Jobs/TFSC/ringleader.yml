@@ -5,7 +5,7 @@
   playTimeTracker: JobRingleaderNCSP
   requirements:
     - !type:CharacterWhitelistRequirement
-    - !type:CharacterFactionRequirement
+    - !type:FactionRequirement
       factionID: "TFSC"
   special:
   - !type:AddComponentSpecial

@@ -7,7 +7,7 @@
   startingGear: OrdnancemanGear
   alwaysUseSpawner: true
   requirements:
-  - !type:CharacterFactionRequirement
+  - !type:FactionRequirement
       factionID: "TSP"
   special:
   - !type:AddComponentSpecial

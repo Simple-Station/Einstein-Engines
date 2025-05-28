@@ -4,10 +4,10 @@
   description: job-description-apprenticehunter
   playTimeTracker: JobAcolyteSRM
   requirements:
-    - !type:CharacterSpeciesRequirement
+    - !type:SpeciesRequirement
       species:
         - Human
-    - !type:CharacterFactionRequirement
+    - !type:FactionRequirement
       factionID: "SRM"
   weight: 22
   startingGear: AcolyteGear

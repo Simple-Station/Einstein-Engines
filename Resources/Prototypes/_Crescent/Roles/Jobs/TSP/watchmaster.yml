@@ -8,7 +8,7 @@
   alwaysUseSpawner: true
   icon: "JobIconWatchmaster"
   requirements:
-  - !type:CharacterFactionRequirement
+  - !type:FactionRequirement
       factionID: "TSP"
   - !type:CharacterOverallTimeRequirement
     min: 12000
