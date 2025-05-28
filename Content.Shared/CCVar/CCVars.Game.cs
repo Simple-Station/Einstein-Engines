@@ -144,7 +144,7 @@ public sealed partial class CCVars
     /// If roles should be restricted based on time.
     /// </summary>
     public static readonly CVarDef<bool>
-        GameRoleTimers = CVarDef.Create("game.role_timers", false, CVar.SERVER | CVar.REPLICATED); // hullrot-todo: ENABLE WHEN TESTING ENDS!!!
+        GameRoleTimers = CVarDef.Create("game.role_timers", true, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     /// Whether or not disconnecting inside of a cryopod should remove the character or just store them until they reconnect.
