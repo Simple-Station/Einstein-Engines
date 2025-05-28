@@ -548,6 +548,7 @@ trait-description-LyreBird =
 trait-name-NaniteAutoRepairBots = Nanite Auto-Repair Bots
 trait-description-NaniteAutoRepairBots =
     Your chassis has been outfitted with Nanite Repair Drones. Whenever your sensors detect that you've recieved structural damage, the NRDs will activate to bring you back to operational standards.
+    If you have taken too much damage, the drones will shut down.
 
 trait-name-BionicLeg = Bionic Legs
 trait-description-BionicLeg =
@@ -675,3 +676,18 @@ trait-description-IPCFragileCircuits =
     You immediately shut down any time you take [color=orange]Shock[/color] damage and must be rebooted.
 fragileCircuits-kill-popup = {$name}'s circuits shut down from short-circuiting!
 
+trait-name-SuperiorRadiationShielding = Superior Radiation Shielding
+trait-description-SuperiorRadiationShielding =
+    Your chassis has been outfitted with superior radiation shielding, protecting your circuitry from all but the most extreme radiation sources.
+    Your innate flat damage reduction to [color=yellow]Radiation[/color] is increased from [color=green]1[/color] to [color=blue]5[/color].
+
+trait-name-G2Chassis = G2 Chassis
+trait-description-G2Chassis =
+    Your chassis has been manufactured to military specifications.
+    You have an innate [color=blue]7%[/color] chance for incoming projectiles to deflect off of your armored hull.
+
+trait-name-HardenedCircuits = Hardened Circuits
+trait-description-HardenedCircuits =
+    Your internal components have been reinforced with shock absorbing metal-foam.
+    You gain a [color=blue]20%[/color] resistance to explosive damage.
+    Your [color=red]weakness[/color] to [color=yellow]Shock[/color] has been inverted to a [color=green]resistance[/color]

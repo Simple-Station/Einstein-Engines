@@ -39,16 +39,13 @@
   - type: MobState
     allowedStates:
       - Alive
-      - Critical
       - Dead
   - type: MobThresholds
     thresholds:
       0: Alive
-      119.999: Critical # TO make it almost impossible
       120: Dead
     stateAlertDict:
       Alive: BorgHealth
-      Critical: BorgCrit
       Dead: BorgDead
   - type: TypingIndicator
     proto: robot
@@ -135,6 +132,24 @@
     - DoorBumpOpener
     - SiliconEmotes
     - SiliconMob
+  - type: Damageable
+    damageContainer: SiliconUnshielded
+    damageModifierSet: IPC
+  - type: Barotrauma
+    damage:
+      types:
+        Heat: 0.28 #per second, scales with pressure and other constants.
+  - type: Bloodstream
+    bloodlossDamage:
+      types:
+        Bloodloss: 0
+    bloodlossHealDamage:
+      types:
+        Bloodloss: 0
+    bloodRegenerationHunger: 0
+    bloodRegenerationThirst: 0
+    bloodReagent: IPCCoolant
+    cauterizeMessage: null
 
 - type: entity
   save: false

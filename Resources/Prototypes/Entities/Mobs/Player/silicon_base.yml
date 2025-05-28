@@ -332,14 +332,3 @@
     - type: Carriable
     - type: LayingDown
 
-
-- type: damageModifierSet
-  id: IPC
-  coefficients:
-    Poison: 0
-    Cold: 0.2
-    Heat: 1
-    Shock: 3 # Ion merged with shock, they lost their heat damage weakness, they should be extremely weak to this rare damage type considering its shocking electronics
-    Blunt: 1
-    Slash: 1
-    Piercing: 1
