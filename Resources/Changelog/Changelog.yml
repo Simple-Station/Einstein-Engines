@@ -16300,3 +16300,10 @@ Entries:
   id: 7266
   time: '2025-05-28T01:25:30.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2462
+- author: Mapping Team
+  changes:
+    - type: Tweak
+      message: Cleanup of Gax
+  id: 7267
+  time: '2025-05-28T05:10:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2458
