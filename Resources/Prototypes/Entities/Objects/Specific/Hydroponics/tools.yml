@@ -87,7 +87,7 @@
       types:
         Slash: 7
     heavyRateModifier: 2
-    heavyRangeModifier: 1.85
+    heavyRangeModifier: 1.35
     heavyDamageBaseModifier: 2
     heavyStaminaCost: 2.5
     maxTargets: 1
