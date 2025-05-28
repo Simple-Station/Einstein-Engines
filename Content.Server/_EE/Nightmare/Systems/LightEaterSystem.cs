@@ -14,7 +14,8 @@ namespace Content.Server._EE.Nightmare.Systems;
 
 
 /// <summary>
-/// This handles...
+/// This handles the Light Eater system.
+/// Light Eater is an armblade that ashes any light that it attacks.
 /// </summary>
 public sealed class LightEaterSystem : EntitySystem
 {

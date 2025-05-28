@@ -87,6 +87,9 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
         // Remove all Thralls if shadowling is dead
         if (args.NewMobState == MobState.Dead || args.NewMobState == MobState.Invalid)
         {
+            if (component.CurrentPhase == ShadowlingPhases.Ascension)
+                return;
+
             foreach (var thrall in component.Thralls)
             {
                 _popup.PopupEntity(Loc.GetString("shadowling-dead"), thrall, thrall, PopupType.LargeCaution);
@@ -249,14 +252,14 @@ public sealed partial class ShadowlingSystem : SharedShadowlingSystem
         if (!TryComp(uid, out ActionsComponent? actions))
             return;
         // Le Comps
-        AddComp<ShadowlingGlareComponent>(uid);
-        AddComp<ShadowlingEnthrallComponent>(uid);
-        AddComp<ShadowlingVeilComponent>(uid);
-        AddComp<ShadowlingRapidRehatchComponent>(uid);
-        AddComp<ShadowlingShadowWalkComponent>(uid);
-        AddComp<ShadowlingIcyVeinsComponent>(uid);
-        AddComp<ShadowlingDestroyEnginesComponent>(uid);
-        AddComp<ShadowlingCollectiveMindComponent>(uid);
+        EnsureComp<ShadowlingGlareComponent>(uid);
+        EnsureComp<ShadowlingEnthrallComponent>(uid);
+        EnsureComp<ShadowlingVeilComponent>(uid);
+        EnsureComp<ShadowlingRapidRehatchComponent>(uid);
+        EnsureComp<ShadowlingShadowWalkComponent>(uid);
+        EnsureComp<ShadowlingIcyVeinsComponent>(uid);
+        EnsureComp<ShadowlingDestroyEnginesComponent>(uid);
+        EnsureComp<ShadowlingCollectiveMindComponent>(uid);
 
         _actions.AddAction(uid, ref component.ActionGlareEntity, component.ActionGlare, component: actions);
         _actions.AddAction(uid, ref component.ActionEnthrallEntity, component.ActionEnthrall, component: actions);

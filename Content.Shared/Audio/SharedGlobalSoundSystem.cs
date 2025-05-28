@@ -43,8 +43,7 @@ public sealed class GameGlobalSoundEvent : GlobalSoundEvent
 
 public enum StationEventMusicType : byte
 {
-    Nuke,
-    Shadowling
+    Nuke
 }
 
 /// <summary>
