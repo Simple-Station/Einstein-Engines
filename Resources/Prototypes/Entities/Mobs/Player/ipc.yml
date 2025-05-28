@@ -138,7 +138,7 @@
   - type: Barotrauma
     damage:
       types:
-        Heat: 0.28 #per second, scales with pressure and other constants.
+        Heat: 0.55 #per second, scales with pressure and other constants. Uniquely Heat instead of blunt, to simulate mechanical overheating in vacuum. IPCs are normally air cooled.
   - type: Bloodstream
     bloodlossDamage:
       types:
