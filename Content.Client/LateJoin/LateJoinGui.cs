@@ -65,6 +65,7 @@ namespace Content.Client.LateJoin
             Contents.AddChild(_base);
 
             _jobRequirements.Updated += RebuildUI;
+            _prefs.SlotSelected += RebuildWrapper;
             RebuildUI();
 
             SelectedId += x =>
@@ -83,18 +84,6 @@ namespace Content.Client.LateJoin
             RebuildUI();
         }
 
-        protected override void Opened()
-        {
-            base.Opened();
-            _prefs.SlotSelected += RebuildWrapper;
-            RebuildUI();
-        }
-
-        public override void Close()
-        {
-            _prefs.SlotSelected -= RebuildWrapper;
-            base.Close();
-        }
 
         private void RebuildUI()
         {
@@ -379,6 +368,7 @@ namespace Content.Client.LateJoin
             {
                 _jobRequirements.Updated -= RebuildUI;
                 _gameTicker.LobbyJobsAvailableUpdated -= JobsAvailableUpdated;
+                _prefs.SlotSelected -= RebuildWrapper;
                 _jobButtons.Clear();
                 _jobCategories.Clear();
             }
