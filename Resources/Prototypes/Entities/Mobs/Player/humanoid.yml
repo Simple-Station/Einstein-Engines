@@ -17,7 +17,7 @@
   parent: EventHumanoid
   components:
   - type: MindShield
-  - type: InitialInfectedExempt
+  - type: AntagImmune
 
 ## Death Squad
 
