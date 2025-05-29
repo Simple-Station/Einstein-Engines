@@ -57,9 +57,6 @@ public sealed class DynamicCodeSystem : SharedDynamicCodeSystem
             Logger.Error($"Failed to instanciate mapping template for {component.accesMapping}");
             return;
         }
-        //Logger.Error($"Instanciated on {MetaData(grid).EntityName}");
-
-        //Logger.Error($"Instanciating");
         var codeHolder= new DynamicCodeHolderComponent();
         var codeHolderQuery = GetEntityQuery<DynamicCodeHolderComponent>();
         var consoleQuery = GetEntityQuery<ShuttleConsoleComponent>();
@@ -67,23 +64,94 @@ public sealed class DynamicCodeSystem : SharedDynamicCodeSystem
         /// gridUids and other stuffi snt initialized when this is called but the componetns o nthe targets are.
         var trans = Transform(grid).ChildEnumerator;
         var consoles = new List<EntityUid>();
-        while (trans.MoveNext(out var targ))
+        var consolidatedTargetPrototypHashSet = new HashSet<string>();
+        Dictionary<string, int> KeyToCode = new();
+        List<(HashSet<string>, int)> continousMap = new();
+        foreach (var (key, targetProtos) in prototype.accesIdentifierToEntity)
         {
-            if(codeHolderQuery.HasComp(targ))
-                targets.Add(targ);
-            if (consoleQuery.HasComp(targ))
-                consoles.Add(targ);
+            consolidatedTargetPrototypHashSet.UnionWith(targetProtos);
+            var code = retrieveKey();
+            AddKeyToComponent(codeHolder, code, key);
+            KeyToCode.Add(key, code);
+            continousMap.Add((targetProtos, code));
         }
 
-        //Logger.Error($"Found entity {MetaData(targ).EntityName} WITH THE CHILD ENUMERATOR");
-        //_lookup.GetGridEntities(grid, targets);
+        Dictionary<ComponentRegistry, int> componentMap = new();
+        var consolidatedComponentTargets = new HashSet<Type>();
+        foreach (var (key, components) in prototype.accesIdentifierToComponent)
+        {
+            foreach (var entry in components.Values)
+            {
+                consolidatedComponentTargets.Add(entry.Component.GetType());
+            }
+
+            var code = 0;
+            if(KeyToCode.ContainsKey(key))
+                code = KeyToCode[key];
+            else
+            {
+                code = retrieveKey();
+                KeyToCode.Add(key, code);
+            }
+
+            AddKeyToComponent(codeHolder, code, key);
+            componentMap.Add(components, code);
+        }
+        while (trans.MoveNext(out var targ))
+        {
+
+            var meta = MetaData(targ);
+            if (consoleQuery.HasComp(targ))
+                consoles.Add(targ);
+            foreach (var componentType in consolidatedComponentTargets)
+            {
+                if (!HasComp(targ, componentType))
+                    continue;
+                goto Finish;
+            }
+            if (meta.EntityPrototype is null)
+                continue;
+            if (!consolidatedTargetPrototypHashSet.Contains(meta.EntityPrototype.ID))
+                continue;
+            Finish:
+            targets.Add(targ);
+            EnsureComp<DynamicCodeHolderComponent>(targ);
+        }
+        foreach (var target in targets)
+        {
+            var meta = MetaData(target);
+            if (meta.EntityPrototype is null)
+                continue;
+            var comp = codeHolderQuery.GetComponent(target);
+            foreach (var (set, code) in continousMap)
+            {
+                if (set.Contains(meta.EntityPrototype.ID))
+                {
+                    AddKeyToComponent(comp, code, null);
+                }
+            }
+            foreach (var (set, code) in componentMap)
+            {
+                foreach (var searchCompponent in set.Values)
+                {
+                    if (HasComp(target, searchCompponent.Component.GetType()))
+                    {
+                        AddKeyToComponent(comp, code, null);
+
+                    }
+                }
+            }
+            Dirty(target, comp);
+
+
+
+        }
+
 
         foreach(var (key, targetProtos) in prototype.accesIdentifierToEntity)
         {
             var code = retrieveKey();
             AddKeyToComponent(codeHolder, code, key);
-            //Logger.Error($"Instanciated key : {key} with numeric code {code}");
-            //Logger.Error($"Len of targets list is {targets.Count}");
             foreach (var prototypeId in targetProtos)
             {
                 if (!_prototypes.TryIndex(prototypeId, out var _))
@@ -106,6 +174,7 @@ public sealed class DynamicCodeSystem : SharedDynamicCodeSystem
             }
 
         }
+
 
         if (!codeHolder.mappedCodes.ContainsKey(prototype.captainKey))
         {
