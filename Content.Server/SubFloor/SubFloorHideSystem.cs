@@ -1,14 +1,24 @@
 using Content.Shared.Construction.Components;
+using Content.Shared.Eye;
 using Content.Shared.SubFloor;
+using Robust.Server.Player;
+using Robust.Shared.Enums;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Player;
 
 namespace Content.Server.SubFloor;
 
 public sealed class SubFloorHideSystem : SharedSubFloorHideSystem
 {
+    [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private readonly SharedEyeSystem _eye = default!;
+
+    private HashSet<ICommonSession> _showFloors = new();
+
     public override void Initialize()
     {
         base.Initialize();
+
         SubscribeNetworkEvent<ShowSubfloorRequestEvent>(OnShowSubfloor);
         SubscribeLocalEvent<GetVisMaskEvent>(OnGetVisibility);
 

@@ -189,6 +189,12 @@ namespace Content.Shared.SubFloor
                 Appearance.SetData(uid, SubFloorVisuals.Covered, hideComp.IsUnderCover, appearance);
             }
         }
+
+        [Serializable, NetSerializable]
+        protected sealed class ShowSubfloorRequestEvent : EntityEventArgs
+        {
+            public bool Value;
+        }
     }
 
     [Serializable, NetSerializable]

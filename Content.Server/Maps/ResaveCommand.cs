@@ -7,6 +7,8 @@ using Robust.Shared.Console;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Map;
 using Robust.Shared.Utility;
+using Robust.Shared.EntitySerialization;
+using Robust.Shared.EntitySerialization.Components;
 
 namespace Content.Server.Maps;
 

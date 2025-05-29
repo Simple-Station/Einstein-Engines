@@ -8,6 +8,7 @@ using Robust.Shared.Console;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
+using Robust.Shared.EntitySerialization;
 
 namespace Content.Server.Administration.Commands
 {

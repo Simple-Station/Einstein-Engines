@@ -13,6 +13,7 @@ using System.Numerics;
 using Content.Server.GameTicking;
 using Content.Shared.GameTicking;
 using JetBrains.Annotations;
+using Robust.Shared.EntitySerialization;
 
 namespace Content.Server.GridPreloader;
 public sealed class GridPreloaderSystem : SharedGridPreloaderSystem
