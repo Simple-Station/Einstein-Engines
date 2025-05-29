@@ -47,59 +47,58 @@ namespace Content.Shared.Friction
             _gridQuery = GetEntityQuery<MapGridComponent>();
         }
 
-        public override void UpdateBeforeMapSolve(bool prediction, PhysicsMapComponent mapComponent, float frameTime)
+        public override void UpdateBeforeSolve(bool prediction, float frameTime)
         {
-            base.UpdateBeforeMapSolve(prediction, mapComponent, frameTime);
+            base.UpdateBeforeSolve(prediction, frameTime);
 
-            foreach (var body in mapComponent.AwakeBodies)
+            foreach (var ent in PhysicsSystem.AwakeBodies)
             {
-                var uid = body.Owner;
-
-                // Only apply friction when it's not a mob (or the mob doesn't have control)
-                if (prediction && !body.Predict ||
-                    body.BodyStatus == BodyStatus.InAir ||
-                    _mover.UseMobMovement(uid))
+                var uid = ent.Owner;
+                var body = ent.Comp1;
                 {
-                    continue;
+                    var uid = body.Owner;
+
+                    // Only apply friction when it's not a mob (or the mob doesn't have control)
+                    if (prediction && !body.Predict ||
+                        body.BodyStatus == BodyStatus.InAir ||
+                        _mover.UseMobMovement(uid))
+                    {
+                        continue;
+                    }
+
+                    if (body.LinearVelocity.Equals(Vector2.Zero) && body.AngularVelocity.Equals(0f))
+                        continue;
+
+                    var xform = ent.Comp2;
+
+                    var surfaceFriction = GetTileFriction(uid, body, xform);
+                    var bodyModifier = 1f;
+
+                    if (_frictionQuery.TryGetComponent(uid, out var frictionComp))
+                    {
+                        bodyModifier = frictionComp.Modifier;
+                    }
+
+                    var ev = new TileFrictionEvent(bodyModifier);
+
+                    RaiseLocalEvent(uid, ref ev);
+                    bodyModifier = ev.Modifier;
+
+                    // If we're sandwiched between 2 pullers reduce friction
+                    // Might be better to make this dynamic and check how many are in the pull chain?
+                    // Either way should be much faster for now.
+                    if (_pullerQuery.TryGetComponent(uid, out var puller) && puller.Pulling != null &&
+                        _pullableQuery.TryGetComponent(uid, out var pullable) && pullable.BeingPulled)
+                    {
+                        bodyModifier *= 0.2f;
+                    }
+
+                    var friction = _frictionModifier * surfaceFriction * bodyModifier;
+
+                    ReduceLinearVelocity(uid, prediction, body, friction, frameTime);
+                    ReduceAngularVelocity(uid, prediction, body, friction, frameTime);
                 }
-
-                if (body.LinearVelocity.Equals(Vector2.Zero) && body.AngularVelocity.Equals(0f))
-                    continue;
-
-                if (!_xformQuery.TryGetComponent(uid, out var xform))
-                {
-                    Log.Error($"Unable to get transform for {ToPrettyString(uid)} in tilefrictioncontroller");
-                    continue;
-                }
-
-                var surfaceFriction = GetTileFriction(uid, body, xform);
-                var bodyModifier = 1f;
-
-                if (_frictionQuery.TryGetComponent(uid, out var frictionComp))
-                {
-                    bodyModifier = frictionComp.Modifier;
-                }
-
-                var ev = new TileFrictionEvent(bodyModifier);
-
-                RaiseLocalEvent(uid, ref ev);
-                bodyModifier = ev.Modifier;
-
-                // If we're sandwiched between 2 pullers reduce friction
-                // Might be better to make this dynamic and check how many are in the pull chain?
-                // Either way should be much faster for now.
-                if (_pullerQuery.TryGetComponent(uid, out var puller) && puller.Pulling != null &&
-                    _pullableQuery.TryGetComponent(uid, out var pullable) && pullable.BeingPulled)
-                {
-                    bodyModifier *= 0.2f;
-                }
-
-                var friction = _frictionModifier * surfaceFriction * bodyModifier;
-
-                ReduceLinearVelocity(uid, prediction, body, friction, frameTime);
-                ReduceAngularVelocity(uid, prediction, body, friction, frameTime);
             }
-        }
 
         private void ReduceLinearVelocity(EntityUid uid, bool prediction, PhysicsComponent body, float friction, float frameTime)
         {
