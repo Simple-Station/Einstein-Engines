@@ -10,7 +10,7 @@
   requireAdminNotify: true
   requirements:
     - !type:CharacterWhitelistRequirement
-    - !type:CharacterFactionRequirement
+    - !type:FactionRequirement
       factionID: "NCWL"
   supervisors: job-supervisors-highcomm
   canBeAntag: false

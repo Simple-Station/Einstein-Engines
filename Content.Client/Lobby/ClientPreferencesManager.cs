@@ -24,6 +24,7 @@ namespace Content.Client.Lobby
         [Dependency] private readonly IPlayerManager _playerManager = default!;
 
         public event Action? OnServerDataLoaded;
+        public event Action<int>? SlotSelected;
 
         public GameSettings Settings { get; private set; } = default!;
         public PlayerPreferences Preferences { get; private set; } = default!;
@@ -60,6 +61,7 @@ namespace Content.Client.Lobby
                 SelectedCharacterIndex = slot
             };
             _netManager.ClientSendMessage(msg);
+            SlotSelected?.Invoke(slot);
         }
 
         public void UpdateCharacter(ICharacterProfile profile, int slot)

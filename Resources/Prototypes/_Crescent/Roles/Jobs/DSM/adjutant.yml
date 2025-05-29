@@ -6,10 +6,10 @@
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 36000
-    - !type:CharacterSpeciesRequirement
+    - !type:SpeciesRequirement
       species:
         - Human
-    - !type:CharacterFactionRequirement
+    - !type:FactionRequirement
       factionID: "DSM"
   weight: 55
   startingGear: AdjutantGear

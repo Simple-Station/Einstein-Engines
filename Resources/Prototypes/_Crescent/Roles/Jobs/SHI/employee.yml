@@ -4,7 +4,7 @@
   description: job-description-employee
   playTimeTracker: JobEmployeeSHI
   requirements:
-    - !type:CharacterFactionRequirement
+    - !type:FactionRequirement
         factionID: "SHI"
   weight: 25
   startingGear: EmployeeGear

@@ -4,9 +4,9 @@
   description: job-description-draugr
   playTimeTracker:  JobDraugrTAP
   requirements:
-    - !type:CharacterFactionRequirement
+    - !type:FactionRequirement
       factionID: "TAP"
-    - !type:CharacterSpeciesRequirement
+    - !type:SpeciesRequirement
       species:
         - Human
         - Reptilian

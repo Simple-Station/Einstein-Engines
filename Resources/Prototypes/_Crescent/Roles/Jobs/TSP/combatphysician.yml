@@ -6,7 +6,7 @@
   weight: 24
   startingGear: PhysicianGear
   requirements:
-  - !type:CharacterFactionRequirement
+  - !type:FactionRequirement
       factionID: "TSP"
   special:
   - !type:AddComponentSpecial

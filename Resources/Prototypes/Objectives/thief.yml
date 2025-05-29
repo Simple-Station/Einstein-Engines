@@ -143,6 +143,23 @@
     difficulty: 0.7
 
 
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseThiefStealCollectionObjective
+  id: LAMPStealCollectionObjective
+  components:
+  - type: SpeciesRequirement
+    allowedSpecies:
+    - Moth
+  - type: StealCondition
+    stealGroup: LAMP
+    minCollectionSize: 1
+    maxCollectionSize: 10
+    verifyMapExistence: true
+  - type: Objective
+    difficulty: 0.5 # just for fun, collectings LAMP on Moth
+
 # steal item
 
 - type: entity                                      #Security subgroup
