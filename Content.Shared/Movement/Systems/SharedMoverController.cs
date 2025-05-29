@@ -36,22 +36,22 @@ namespace Content.Shared.Movement.Systems
     /// </summary>
     public abstract partial class SharedMoverController : VirtualController
     {
-        [Dependency] private   readonly AlertsSystem _alerts = default!;
-        [Dependency] private   readonly IConfigurationManager _configManager = default!;
+        [Dependency] private readonly AlertsSystem _alerts = default!;
+        [Dependency] private readonly IConfigurationManager _configManager = default!;
         [Dependency] protected readonly IGameTiming Timing = default!;
-        [Dependency] private   readonly IMapManager _mapManager = default!;
-        [Dependency] private   readonly ITileDefinitionManager _tileDefinitionManager = default!;
-        [Dependency] private   readonly EntityLookupSystem _lookup = default!;
-        [Dependency] private   readonly InventorySystem _inventory = default!;
-        [Dependency] private   readonly MobStateSystem _mobState = default!;
-        [Dependency] private   readonly SharedAudioSystem _audio = default!;
-        [Dependency] private   readonly SharedContainerSystem _container = default!;
-        [Dependency] private   readonly SharedMapSystem _mapSystem = default!;
-        [Dependency] private   readonly SharedGravitySystem _gravity = default!;
+        [Dependency] private readonly IMapManager _mapManager = default!;
+        [Dependency] private readonly ITileDefinitionManager _tileDefinitionManager = default!;
+        [Dependency] private readonly EntityLookupSystem _lookup = default!;
+        [Dependency] private readonly InventorySystem _inventory = default!;
+        [Dependency] private readonly MobStateSystem _mobState = default!;
+        [Dependency] private readonly SharedAudioSystem _audio = default!;
+        [Dependency] private readonly SharedContainerSystem _container = default!;
+        [Dependency] private readonly SharedMapSystem _mapSystem = default!;
+        [Dependency] private readonly SharedGravitySystem _gravity = default!;
         [Dependency] protected readonly SharedPhysicsSystem Physics = default!;
-        [Dependency] private   readonly SharedTransformSystem _transform = default!;
-        [Dependency] private   readonly TagSystem _tags = default!;
-        [Dependency] private   readonly IEntityManager _entities = default!; // Delta V-NoShoesSilentFootstepsComponent
+        [Dependency] private readonly SharedTransformSystem _transform = default!;
+        [Dependency] private readonly TagSystem _tags = default!;
+        [Dependency] private readonly IEntityManager _entities = default!; // Delta V-NoShoesSilentFootstepsComponent
 
         protected EntityQuery<InputMoverComponent> MoverQuery;
         protected EntityQuery<MobMoverComponent> MobMoverQuery;
@@ -78,6 +78,7 @@ namespace Content.Shared.Movement.Systems
 
         public override void Initialize()
         {
+            UpdatesBefore.Add(typeof(TileFrictionController));
             base.Initialize();
 
             MoverQuery = GetEntityQuery<InputMoverComponent>();
@@ -96,7 +97,6 @@ namespace Content.Shared.Movement.Systems
             InitializeCVars();
             Subs.CVar(_configManager, CCVars.RelativeMovement, value => _relativeMovement = value, true);
             Subs.CVar(_configManager, CCVars.StopSpeed, value => _stopSpeed = value, true);
-            UpdatesBefore.Add(typeof(TileFrictionController));
         }
 
         public override void Shutdown()
@@ -111,60 +111,60 @@ namespace Content.Shared.Movement.Systems
             UsedMobMovement.Clear();
         }
 
-    /// <summary>
-    ///     Movement while considering actionblockers, weightlessness, etc.
-    /// </summary>
-    protected void HandleMobMovement(
-        EntityUid uid,
-        InputMoverComponent mover,
-        EntityUid physicsUid,
-        PhysicsComponent physicsComponent,
-        TransformComponent xform,
-        float frameTime)
-    {
-        var canMove = mover.CanMove;
-        if (RelayTargetQuery.TryGetComponent(uid, out var relayTarget))
+        /// <summary>
+        ///     Movement while considering actionblockers, weightlessness, etc.
+        /// </summary>
+        protected void HandleMobMovement(
+            EntityUid uid,
+            InputMoverComponent mover,
+            EntityUid physicsUid,
+            PhysicsComponent physicsComponent,
+            TransformComponent xform,
+            float frameTime)
         {
-            if (_mobState.IsIncapacitated(relayTarget.Source) ||
-                TryComp<SleepingComponent>(relayTarget.Source, out _) ||
-                // Shitmed Change
-                !PhysicsQuery.TryGetComponent(relayTarget.Source, out var relayedPhysicsComponent) ||
-                !MoverQuery.TryGetComponent(relayTarget.Source, out var relayedMover) ||
-                !XformQuery.TryGetComponent(relayTarget.Source, out var relayedXform))
+            var canMove = mover.CanMove;
+            if (RelayTargetQuery.TryGetComponent(uid, out var relayTarget))
             {
-                canMove = false;
-            }
-            else
-            {
-                mover.LerpTarget = relayedMover.LerpTarget;
-                mover.RelativeEntity = relayedMover.RelativeEntity;
-                mover.RelativeRotation = relayedMover.RelativeRotation;
-                mover.TargetRelativeRotation = relayedMover.TargetRelativeRotation;
-                HandleMobMovement(relayTarget.Source, relayedMover, relayTarget.Source, relayedPhysicsComponent, relayedXform, frameTime);
-            }
-        }
-
-        // Update relative movement
-        // Shitmed Change Start
-        else
-        {
-            if (mover.LerpTarget < Timing.CurTime)
-            {
-                if (TryComp(uid, out RelayInputMoverComponent? relay)
-                    && TryComp(relay.RelayEntity, out TransformComponent? relayXform))
+                if (_mobState.IsIncapacitated(relayTarget.Source) ||
+                    TryComp<SleepingComponent>(relayTarget.Source, out _) ||
+                    // Shitmed Change
+                    !PhysicsQuery.TryGetComponent(relayTarget.Source, out var relayedPhysicsComponent) ||
+                    !MoverQuery.TryGetComponent(relayTarget.Source, out var relayedMover) ||
+                    !XformQuery.TryGetComponent(relayTarget.Source, out var relayedXform))
                 {
-                    if (TryUpdateRelative(mover, relayXform))
-                        Dirty(uid, mover);
+                    canMove = false;
                 }
                 else
                 {
-                    if (TryUpdateRelative(mover, xform))
-                        Dirty(uid, mover);
+                    mover.LerpTarget = relayedMover.LerpTarget;
+                    mover.RelativeEntity = relayedMover.RelativeEntity;
+                    mover.RelativeRotation = relayedMover.RelativeRotation;
+                    mover.TargetRelativeRotation = relayedMover.TargetRelativeRotation;
+                    HandleMobMovement(relayTarget.Source, relayedMover, relayTarget.Source, relayedPhysicsComponent, relayedXform, frameTime);
                 }
             }
-            LerpRotation(uid, mover, frameTime);
-        }
-        // Shitmed Change End
+
+            // Update relative movement
+            // Shitmed Change Start
+            else
+            {
+                if (mover.LerpTarget < Timing.CurTime)
+                {
+                    if (TryComp(uid, out RelayInputMoverComponent? relay)
+                        && TryComp(relay.RelayEntity, out TransformComponent? relayXform))
+                    {
+                        if (TryUpdateRelative(mover, relayXform))
+                            Dirty(uid, mover);
+                    }
+                    else
+                    {
+                        if (TryUpdateRelative(mover, xform))
+                            Dirty(uid, mover);
+                    }
+                }
+                LerpRotation(uid, mover, frameTime);
+            }
+            // Shitmed Change End
 
             if (!canMove
                 || physicsComponent.BodyStatus != BodyStatus.OnGround && !CanMoveInAirQuery.HasComponent(uid)

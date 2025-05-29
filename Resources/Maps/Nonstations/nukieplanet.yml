@@ -1637,7 +1637,7 @@ entities:
     - type: MetaData
     - type: Transform
     - type: Map
-    - type: PhysicsMap
+
     - type: Broadphase
     - type: OccluderTree
     - type: Parallax
@@ -1662,7 +1662,7 @@ entities:
         - 0
     - type: LoadedMap
     - type: GridTree
-    - type: MovedGrids
+    
 - proto: AirlockExternalGlassNukeopLocked
   entities:
   - uid: 49
