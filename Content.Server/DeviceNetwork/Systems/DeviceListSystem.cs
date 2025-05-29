@@ -20,7 +20,7 @@ public sealed class DeviceListSystem : SharedDeviceListSystem
         SubscribeLocalEvent<DeviceListComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<DeviceListComponent, BeforeBroadcastAttemptEvent>(OnBeforeBroadcast);
         SubscribeLocalEvent<DeviceListComponent, BeforePacketSentEvent>(OnBeforePacketSent);
-        SubscribeLocalEvent<BeforeSaveEvent>(OnMapSave);
+        SubscribeLocalEvent<BeforeSerializationEvent>(OnMapSave);
     }
 
     private void OnShutdown(EntityUid uid, DeviceListComponent component, ComponentShutdown args)
@@ -124,14 +124,14 @@ public sealed class DeviceListSystem : SharedDeviceListSystem
         Dirty(list);
     }
 
-    private void OnMapSave(BeforeSaveEvent ev)
+    private void OnMapSave(BeforeSerializationEvent ev)
     {
         List<EntityUid> toRemove = new();
         var query = GetEntityQuery<TransformComponent>();
         var enumerator = AllEntityQuery<DeviceListComponent, TransformComponent>();
         while (enumerator.MoveNext(out var uid, out var device, out var xform))
         {
-            if (xform.MapUid != ev.Map)
+            if (!ev.MapIds.Contains(xform.MapID))
                 continue;
 
             foreach (var ent in device.Devices)
@@ -144,12 +144,12 @@ public sealed class DeviceListSystem : SharedDeviceListSystem
                     continue;
                 }
 
-                if (linkedXform.MapUid == ev.Map)
+                if (!ev.MapIds.Contains(linkedXform.MapID))
                     continue;
 
                 toRemove.Add(ent);
                 // TODO full game saves.
-                // when full saves are supported, this should instead add data to the BeforeSaveEvent informing the
+                // when full saves are supported, this should instead add data to the BeforeSerializationEvent informing the
                 // saving system that this map (or null-space entity) also needs to be included in the save.
                 Log.Error(
                     $"Saving a device list ({ToPrettyString(uid)}) that has a reference to an entity on another map ({ToPrettyString(ent)}). Removing entity from list.");

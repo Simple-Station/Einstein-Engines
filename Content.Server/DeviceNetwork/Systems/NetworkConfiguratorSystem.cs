@@ -65,15 +65,17 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
 
         SubscribeLocalEvent<DeviceListComponent, ComponentRemove>(OnComponentRemoved);
 
-        SubscribeLocalEvent<BeforeSaveEvent>(OnMapSave);
+        SubscribeLocalEvent<BeforeSerializationEvent>(OnMapSave);
     }
 
-    private void OnMapSave(BeforeSaveEvent ev)
+    private void OnMapSave(BeforeSerializationEvent ev)
     {
         var enumerator = AllEntityQuery<NetworkConfiguratorComponent>();
         while (enumerator.MoveNext(out var uid, out var conf))
         {
-            if (CompOrNull<TransformComponent>(conf.ActiveDeviceList)?.MapUid != ev.Map)
+            if (!TryComp(conf.ActiveDeviceList, out TransformComponent? listXform))
+                continue;
+            if (!ev.MapIds.Contains(listXform.MapID))
                 continue;
 
             // The linked device list is (probably) being saved. Make sure that the configurator is also being saved
@@ -83,7 +85,7 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
             // TODO Map serialization refactor
 
             var xform = Transform(uid);
-            if (xform.MapUid == ev.Map && IsSaveable(uid))
+            if (ev.MapIds.Contains(xform.MapID) && IsSaveable(uid))
                 continue;
 
             _uiSystem.CloseUi(uid, NetworkConfiguratorUiKey.Configure);
