@@ -6,7 +6,11 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 namespace Content.Shared._Crescent.DynamicCodes;
 
 /// <summary>
-/// This is a prototype for...
+/// This is a prototype for mapping acces to ships/stations
+/// CaptainKey and PilotKey are used to denote acces given to the shuttle consoles
+/// CryoKeys is keys given to any crew joining the ship
+/// Acces Identifier to Entity is a hashset storing a accesKey , Like "Captain" and mapping it to entity prototype ID's to which it is given acces to.
+/// Acces Identifier to Component is the same thing , but it maps to components entities should have to be included.
 /// </summary>
 [Prototype("shipDynamicAccesMapping")]
 public sealed partial class ShipDynamicAccesMappingPrototype : IPrototype
@@ -17,6 +21,9 @@ public sealed partial class ShipDynamicAccesMappingPrototype : IPrototype
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public Dictionary<string, HashSet<string>> accesIdentifierToEntity = default!;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public Dictionary<string, ComponentRegistry> accesIdentifierToComponent = default!;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     // this key will be considered the captain key for the shuttle consoles on the grid
