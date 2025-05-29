@@ -24,11 +24,11 @@ public sealed class SubFloorHideSystem : SharedSubFloorHideSystem
     //     }
     // }
 
-    private void OnUnanchorAttempt(EntityUid uid, SubFloorHideComponent component, UnanchorAttemptEvent args)
-    {
-        // No un-anchoring things under the floor. Only required for something like vents, which are still interactable
-        // despite being partially under the floor.
-        if (component.IsUnderCover)
-            args.Cancel();
-    }
+    // private void OnUnanchorAttempt(EntityUid uid, SubFloorHideComponent component, UnanchorAttemptEvent args)
+    // {
+    //     // No un-anchoring things under the floor. Only required for something like vents, which are still interactable
+    //     // despite being partially under the floor.
+    //     if (component.IsUnderCover)
+    //         args.Cancel();
+    // }
 }
