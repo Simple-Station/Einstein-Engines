@@ -11,13 +11,7 @@
           state: pistachio-trash
     - type: RandomSpawner
       rarePrototypes:
-        - TitaniumScrap25
-        - SteelScrap25
         - ScrapBluespace
-        - GarbageOre25
-        - TradeGoodNanoTrasen
-        - TradeGoodOldCyber
-        - TradeGoodOldParts
       rareChance: 0.03
       prototypes:
         - SteelScrap1
@@ -55,40 +49,12 @@
         - DelamDisk
         - DelamDisk
         - DelamDisk
-        - ShipVoucherRockchipper
-        - ShipVoucherMercury
-        - ShipVoucherTermite
-        - ShipVoucherParacelsus
-        - ShipVoucherExhumer
-        - ShipVoucherAntiquarianWarthog
-        - ShipVoucherHomesteader
-        - ShipVoucherBroadsword
-        - ShipVoucherKite
-        - ShipVoucherScuttlefish
-        - NanotrasenFabdiskWeapons
-        - UnionFabdiskConscript
-        - UnionFabdiskJuggernaut
-        - ImperialFabdiskArmor
-        - ImperialFabdiskCompliance
-        - CorporateFabdiskHammerhead
-        - CorporateFabdiskMako
       rareChance: 0.08
       prototypes:
         - DelamDiskThumb
         - DelamDiskThumb
         - DelamDiskThumb
         - DelamDisk
-        - CorporateFabdiskTermite
-        - CorporateFabdiskParacelsus
-        - CorporateFabdiskExhumer
-        - CorporateFabdiskHimehabu
-        - CorporateFabdiskHEV
-        - CorporateFabdiskDisposable
-        - CorporateFabdiskSabre
-        - UnionFabdiskBulldog
-        - SyndicateFabdiskMayflower
-        - SyndicateFabdiskDrozd
-        - SyndicateFabdiskCobra
       chance: 0.5
       offset: 0.2
   placement:
