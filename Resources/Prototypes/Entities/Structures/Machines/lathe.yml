@@ -1804,8 +1804,8 @@
       - PrizeTicket
 
 - type: entity
-  parent: BaseLathe
-  id: [CutterMachine, BaseMaterialSiloUtilizer]
+  parent: [BaseLathe, BaseMaterialSiloUtilizer]
+  id: CutterMachine
   name: cutter machine
   description: This is a cutter. It cuts. Add variety to your station floor with eye-pleasing patterns! Don't stick your fingers in.
   components:
