@@ -16,7 +16,9 @@ ghost-role-information-antagonist-rules = You are a [color=red][bold]Solo Antago
                                           You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
                                           You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
                                           You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
-ghost-role-information-familiar-rules = You are a [color=#6495ed][bold]Familiar[/bold][/color]. Serve the interests of your master, whatever those may be.
+ghost-role-information-familiar-name = Psionic Familiar
+ghost-role-information-familiar-description = An interdimensional creature bound to the will of a Psion.
+ghost-role-information-familiar-rules = You are a [color=#6495ed][bold]Familiar[/bold][/color]. Obey the one who summoned you. Do not act against the interests of your Master. You will die for your Master if it is necessary.
                                         You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
                                         You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
                                         You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
