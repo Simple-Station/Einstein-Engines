@@ -37,8 +37,6 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Server.Announcements.Systems;
-using Robust.Shared.Map;
-
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -72,6 +70,8 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly AnnouncerSystem _announcer = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
+
+    [Dependency] private readonly MapLoaderSystem _loader = default!;
 
     private const float ShuttleSpawnBuffer = 1f;
 
