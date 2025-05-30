@@ -151,7 +151,59 @@
     - ScoutMechEquipment
 
 - type: entity
-  id: WeaponMechCombatHeavyRifle
+  id: WeaponMechPlasmaSword
+  parent: [ BaseMechWeaponMelee, ScoutMechEquipment ]
+  name: SHI LvP-300 exosuit-mounted plasma blade
+  suffix: Mech Weapon, Melee, Combat
+  description: Developed primarily for Scout-class exosuits, the LvP-300 is a direct successor to the LvR-200 exosuit sword model. Constructed with a plasma-alloy high-friction blade, it allows for thermic damage previously unattainable by previous models.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: mechplasmasword
+  - type: MeleeWeapon
+    autoAttack: true
+    angle: 0
+    wideAnimationRotation: -90
+    soundHit:
+      path: "/Audio/Weapons/Melee/rapierhit.ogg"
+    attackRate: 0.9
+    damage:
+      types:
+        Structural: 60
+        Piercing: 25
+        Heat: 15
+  - type: Tag
+    tags:
+    - ScoutMechEquipment
+
+- type: entity
+  id: WeaponMechMaul
+  parent: [ BaseMechWeaponMelee, ScoutMechEquipment ]
+  name: IRC exosuit-mounted plasteel maul
+  suffix: Mech Weapon, Melee, Combat
+  description: Made by the Iron Ring Company primarily for the salvager market, the plasteel maul comes in handy for breaking down both bodily autonomy and scrap salvage, usable as both a melee weapon and a salvaging tool.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: mechhammer
+  - type: MeleeWeapon
+    autoAttack: true
+    angle: 0
+    wideAnimationRotation: -90
+    soundHit:
+      path: "/Audio/Weapons/Melee/rapierhit.ogg"
+    attackRate: 0.9
+    damage:
+      types:
+        Structural: 120
+        Blunt: 40
+  - type: Tag
+    tags:
+    - ScoutMechEquipment
+
+
+- type: entity
+  id: WeaponMechCombatLightRifle
   name: PTA 'Rapture' 30mm ballistic autorifle
   description: An exosuit-mounted autorifle firing depleted uranium rounds. Developed by Pang Tai Arms and sold en masse. The most basic mech weapon that can be found on the market.
   suffix: Mech Weapon, Gun, Combat, Rifle
@@ -161,15 +213,171 @@
     sprite: _Crescent/Objects/Specific/mechaweapons.rsi
     state: rifle
   - type: Gun
-    fireRate: 3
+    fireRate: 3.5
     selectedMode: FullAuto
     availableModes:
       - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
   - type: ProjectileBatteryAmmoProvider
-    proto: CartridgeLightRifle
+    proto: BulletMechLightRifle
     fireCost: 15
+  - type: Appearance
+  - type: AmmoCounter
+  - type: Tag
+    tags:
+    - ScoutMechEquipment
+
+- type: entity
+  id: WeaponMechCombatGatling
+  name: PTA 'Loyal' 30mm gatling exosuit chaingun
+  description: An exosuit-mounted gatling cannon firing depleted uranium rounds. Developed by Pang Tai Arms and sold en masse. A heavier, faster version of the standard-issue autorifle.
+  suffix: Mech Weapon, Gun, Combat, Gatling
+  parent: [ BaseMechWeaponRange, MediumMechEquipment ]
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: Minigun
+  - type: Gun
+    fireRate: 7
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/vulcan.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletMechLightRifle
+    fireCost: 5
+  - type: Appearance
+  - type: AmmoCounter
+  - type: Tag
+    tags:
+    - MediumMechEquipment
+
+- type: entity
+  id: WeaponMechCombatHeavyRifle
+  name: PTA 'Sovereign' 47mm exosuit slugspitter
+  description: An exosuit-mounted heavy machine gun firing depleted uranium rounds. Developed by Pang Tai Arms and sold en masse. A heavier version of the standard-issue autorifle.
+  suffix: Mech Weapon, Gun, Combat, Rifle
+  parent: [ BaseMechWeaponRange, MediumMechEquipment ]
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: hmg
+  - type: Gun
+    fireRate: 1.9
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletMechHeavyRifle
+    fireCost: 25
+  - type: Appearance
+  - type: AmmoCounter
+  - type: Tag
+    tags:
+    - MediumMechEquipment
+
+- type: entity
+  id: WeaponMechCombatAutocannon
+  name: PTA 'Skysplitter' 90mm exosuit autocannon
+  description: An exosuit-mounted heavy machine gun firing depleted uranium rounds. Developed by Pang Tai Arms and sold en masse. A heavier version of the standard-issue autorifle.
+  suffix: Mech Weapon, Gun, Combat, Cannon
+  parent: [ BaseMechWeaponRange, SiegeMechEquipment ]
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: Cannon
+  - type: Gun
+    fireRate: 0.8
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/ship_duster.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletShellArmorPiercing
+    fireCost: 50
+  - type: Appearance
+  - type: AmmoCounter
+  - type: Tag
+    tags:
+    - SiegeMechEquipment
+
+- type: entity
+  id: WeaponMechCombatAutoshotgun
+  name: SHI 'Ogawa' 4g exosuit autoshotgun
+  description: An exosuit weapons system developed for Medium to Scout-type mechsuits by Shinohara Heavy Industries, meant for sweeping crowd control or shooting the locks off doors.
+  suffix: Mech Weapon, Gun, Combat, Autoshotgun
+  parent: [ BaseMechWeaponRange, ScoutMechEquipment ]
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: autoshotgun
+  - type: Gun
+    fireRate: 1.5
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/ship_friendship.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: ExosuitAutoshotgunPelletSpread
+    fireCost: 20
+  - type: Appearance
+  - type: AmmoCounter
+  - type: Tag
+    tags:
+    - ScoutMechEquipment
+
+- type: entity
+  id: WeaponMechCombatAutopuntgun
+  name: SHI 'Tatsuya' 1g exosuit automatic puntgun
+  description: An exosuit weapons system developed for Medium to Siege-type mechsuits by Shinohara Heavy Industries, meant for knocking down walls or combat against other heavy exosuits.
+  suffix: Mech Weapon, Gun, Combat, Autoshotgun
+  parent: [ BaseMechWeaponRange, MediumMechEquipment ]
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: autopuntgun
+  - type: Gun
+    fireRate: 0.9
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/ship_friendship.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: ExosuitAutopuntgunPelletSpread
+    fireCost: 20
+  - type: Appearance
+  - type: AmmoCounter
+  - type: Tag
+    tags:
+    - MediumMechEquipment
+
+- type: entity
+  id: WeaponMechCombatGrenadeLauncher
+  name: IRC 'Mauler' 37mm exosuit grenade launcher system
+  description: An exosuit weapons system developed for Scout to Medium-type mechsuits by the Iron Ring Company designed for crowd and room control. Watch your fire.
+  suffix: Mech Weapon, Gun, Combat, Grenade Launcher
+  parent: [ BaseMechWeaponRange, ScoutMechEquipment ]
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: grenadelauncher
+  - type: Gun
+    fireRate: 0.6
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/ship_friendship.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletGrenadeBlast
+    fireCost: 20
   - type: Appearance
   - type: AmmoCounter
   - type: Tag
