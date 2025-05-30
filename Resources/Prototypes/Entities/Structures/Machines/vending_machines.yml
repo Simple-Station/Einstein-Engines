@@ -2391,7 +2391,7 @@
   - type: Advertise
     pack: FitnessVendAds
   - type: SpeakOnUIClosed
-    pack: FitnessVendGoodbyes
+    pack: GenericVendGoodbyes
   - type: Transform
     noRot: false
   - type: Rotatable
@@ -2435,7 +2435,7 @@
   - type: Advertise
     pack: HotfoodAds
   - type: SpeakOnUIClosed
-    pack: HotfoodGoodbyes
+    pack: GenericVendGoodbyes
   - type: PointLight
     radius: 2
     energy: 1.6
@@ -2475,7 +2475,7 @@
   - type: Advertise
     pack: SolsnackAds
   - type: SpeakOnUIClosed
-    pack: SolsnackGoodbyes
+    pack: GenericVendGoodbyes
   - type: Transform
     noRot: false
   - type: Rotatable
@@ -2521,7 +2521,7 @@
   - type: Advertise
     pack: WeebVendAds
   - type: SpeakOnUIClosed
-    pack: WeebVendGoodbyes
+    pack: GenericVendGoodbyes
   - type: Transform
     noRot: false
   - type: Rotatable
