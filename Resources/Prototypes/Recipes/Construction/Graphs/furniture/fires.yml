@@ -54,7 +54,7 @@
   targetNode: BonfireNode
   category: construction-category-furniture
   description: What can be better then late evening under the sky with guitar and friends.
-  icon: { sprite: Structures/Decoration/bonfire.rsi, state: icon }
+  icon: { sprite: Structures/Decoration/bonfire.rsi }
   objectType: Structure
 
 - type: construction
@@ -65,5 +65,5 @@
   targetNode: FireplaceNode
   category: construction-category-furniture
   description: A place that has fire. Cozy!
-  icon: { sprite: Structures/Decoration/fireplace.rsi, state: icon }
+  icon: { sprite: Structures/Decoration/fireplace.rsi }
   objectType: Structure
