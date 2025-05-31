@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Numerics;
+using Content.Shared._Goobstation.Bible;
 using Content.Server.Bible.Components;
 using Content.Server.Chat.Systems;
 using Content.Server.Chemistry.Components;
@@ -118,7 +119,7 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
 
         _audio.PlayPvs(args.EndDrawingSound, args.User, AudioParams.Default.WithMaxDistance(2f));
         var runeEnt = SpawnRune(args.User, runeSelector.Prototype);
-        if (TryComp(runeEnt, out CultRuneBaseComponent? rune) 
+        if (TryComp(runeEnt, out CultRuneBaseComponent? rune)
             && rune.TriggerRendingMarkers
             && !_cultRule.TryConsumeNearestMarker(ent))
             return;
