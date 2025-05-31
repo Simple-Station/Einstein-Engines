@@ -14,7 +14,17 @@
   - type: Sprite
     noRot: true
     sprite: _Crescent/Structures/shieldemitter.rsi
-    state: icon
+    layers:
+    - state: icon
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
     snapCardinals: true
   - type: Physics
     bodyType: Static
@@ -39,15 +49,6 @@
         - MachineMask
         layer:
         - MachineLayer
-        density: 1000
-      smallthing:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-1.1,-1.8,0,-1"
-        mask:
-        - MachineMask
-        layer:
-        - HalfWallLayer
         density: 1000
   - type: Destructible
     thresholds:
@@ -117,7 +118,17 @@
   - type: Sprite
     noRot: true
     sprite: _Crescent/Structures/shieldemittermedium.rsi
-    state: icon
+    layers:
+    - state: icon
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
   - type: ApcPowerReceiver
     powerLoad: 40000
 
@@ -148,6 +159,16 @@
   - type: Sprite
     noRot: true
     sprite: _Crescent/Structures/shieldemittersmall.rsi
-    state: icon
+    layers:
+    - state: icon
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
   - type: ApcPowerReceiver
     powerLoad: 20000
