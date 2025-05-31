@@ -739,6 +739,7 @@
           damageContainers:
           - Inorganic
           - Silicon
+          - SiliconUnshielded
 
 - type: trait
   id: CyberEyesOmni
@@ -779,6 +780,7 @@
           - Biological
           - Inorganic
           - Silicon
+          - SiliconUnshielded
 
 - type: trait
   id: RestrictedGear
@@ -885,7 +887,7 @@
 - type: trait
   id: NaniteAutoRepairBots
   category: Physical
-  points: -10
+  points: -5
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -900,13 +902,12 @@
         - type: PassiveDamage
           allowedStates:
           - Alive
-          - Critical
           - Dead
-          damageCap: 250
+          damageCap: 75
           damage:
             groups:
               Brute: -0.5
-              Burn: -0.5
+              Burn: -0.25
 
 # - type: trait
 #   id: BionicLeg
@@ -1050,6 +1051,7 @@
           damageContainers:
           - Inorganic
           - Silicon
+          - SiliconUnshielded
 
 - type: trait
   id: OmniEyesModule
@@ -1093,6 +1095,7 @@
           - Biological
           - Inorganic
           - Silicon
+          - SiliconUnshielded
 
 - type: trait
   id: LightAmplificationModule
@@ -1243,3 +1246,56 @@
         - description: examine-bionic-pryarm-message
           fontSize: 12
           requireDetailRange: true
+
+- type: trait
+  id: SuperiorRadiationShielding
+  category: Physical
+  points: -4
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+  functions:
+    - !type:TraitAddArmor
+      damageModifierSets:
+        - SuperiorRadiationShielding
+
+- type: trait
+  id: G2Chassis
+  category: Physical
+  points: -5
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Reflect
+          spread: 270
+          reflectProb: 0.07
+          innate: true
+          reflects:
+            - Energy
+            - NonEnergy
+
+- type: trait
+  id: HardenedCircuits
+  category: Physical
+  points: -3
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - IPCFaultyWaterproofing
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: ExplosionResistance
+          damageCoefficient: 0.8
+    - !type:TraitAddArmor
+      damageModifierSets:
+        - HardenedCircuits

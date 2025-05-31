@@ -71,6 +71,7 @@
     delay: 1.8
     damageContainers:
     - Silicon
+    - SiliconUnshielded
     damage:
       types: # these are all split across multiple types. IPCs can still take cold damage, they just heavily resist it.
         Heat: -8
@@ -156,6 +157,7 @@
     delay: 1.2
     damageContainers:
     - Silicon
+    - SiliconUnshielded
     damage:
       types: # these are all split across multiple types. IPCs can still take cold damage, they just heavily resist it.
         Heat: -4
@@ -240,6 +242,7 @@
     delay: 0.6
     damageContainers:
     - Silicon
+    - SiliconUnshielded
     damage:
       types: # these are all split across multiple types. IPCs can still take cold damage, they just heavily resist it.
         Heat: -2

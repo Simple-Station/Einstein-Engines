@@ -53,6 +53,7 @@
   - type: BlindHealing
     damageContainers:
       - Silicon
+      - SiliconUnshielded
   - type: StackPrice
     price: 2
 

@@ -38,6 +38,15 @@
     - state: circuits_3
       map: ["base"]
   - type: Appearance
+  - type: Healing # Used for replacing rad-fried circuitry in Silicons
+    delay: 3
+    damageContainers:
+    - SiliconUnshielded
+    damage:
+      types: # Circuits are very expensive and hard to obtain. Probably needs to be adjusted after testing.
+        Radiation: -25
+        Heat: -10
+        Shock: -20
 
 - type: entity
   parent: N14MaterialCircuitry
