@@ -102,10 +102,8 @@
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
-  id: SpawnPointLoneNukeOperative
-  name: ghost role spawn point
-  suffix: loneops
   parent: BaseAntagSpawner
+  id: SpawnPointLoneNukeOperative
   components:
   - type: GhostRole
     name: ghost-role-information-loneop-name
