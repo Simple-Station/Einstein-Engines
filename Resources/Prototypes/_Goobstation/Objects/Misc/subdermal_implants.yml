@@ -8,9 +8,9 @@
   - type: SubdermalImplant
     permanent: true
     implantAction: ActionActivateBluespaceLifeline
-  - type: TriggerOnMobstateChange
-    mobState:
-    - Dead
+#  - type: TriggerOnMobstateChange #Makes this manual activation by commenting this out, but can be activated while dead.
+#    mobState:
+#    - Dead
   - type: TriggerImplantAction
   - type: DeleteParentOnTrigger
   - type: SpawnOnTrigger
