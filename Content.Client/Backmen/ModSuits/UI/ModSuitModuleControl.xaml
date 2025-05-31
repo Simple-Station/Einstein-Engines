@@ -1,0 +1,27 @@
+﻿<PanelContainer xmlns="https://spacestation14.io"
+                xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
+                HorizontalExpand="True"
+                StyleClasses="PanelBackgroundLight"
+                Margin="5 5 5 0">
+    <ContainerButton Name="ModulePreviewButton">
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="5 5 0 5">
+            <SpriteView Name="ModuleView" Margin="0 0 5 0" Scale="1.2 1.2" VerticalAlignment="Top"/>
+            <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="5 5 0 5">
+                <Label Name="ModuleName" HorizontalExpand="True" HorizontalAlignment="Right" SizeFlagsStretchRatio="3" StyleClasses="LabelBig"/>
+
+                <BoxContainer Name="ModuleData" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+                    <customControls:HSeparator Margin="0 5 0 5"/>
+                    <Label Name="ModuleComplexity" HorizontalExpand="True" HorizontalAlignment="Left"/>
+
+                    <customControls:HSeparator Margin="0 5 0 5"/>
+                    <Label Name="PassiveConsumption" HorizontalExpand="True" HorizontalAlignment="Left"/>
+                    <Label Name="ActiveConsumption" HorizontalExpand="True" HorizontalAlignment="Left"/>
+                </BoxContainer>
+
+                <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
+                    <Label Name="AttachedPiece" HorizontalExpand="True" HorizontalAlignment="Left" StyleClasses="WindowFooterText"/>
+                </BoxContainer>
+            </BoxContainer>
+        </BoxContainer>
+    </ContainerButton>
+</PanelContainer>
