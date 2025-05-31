@@ -470,22 +470,21 @@ public sealed class HolopadSystem : SharedHolopadSystem
 
         _updateTimer += frameTime;
 
-        if (_updateTimer >= UpdateTime)
+        if (_updateTimer < UpdateTime)
+            return;
+
+        _updateTimer = 0f;
+
+        var query = AllEntityQuery<HolopadComponent, TelephoneComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var holopad, out var telephone, out var xform))
         {
-            _updateTimer -= UpdateTime;
+            UpdateUIState((uid, holopad), telephone);
 
-            var query = AllEntityQuery<HolopadComponent, TelephoneComponent, TransformComponent>();
-            while (query.MoveNext(out var uid, out var holopad, out var telephone, out var xform))
-            {
-                UpdateUIState((uid, holopad), telephone);
+            if (holopad.User == null || !HasComp<IgnoreUIRangeComponent>(holopad.User)
+                || _xformSystem.InRange((holopad.User.Value, Transform(holopad.User.Value)), (uid, xform), telephone.ListeningRange))
+                continue;
 
-                if (holopad.User != null &&
-                    !HasComp<IgnoreUIRangeComponent>(holopad.User) &&
-                    !_xformSystem.InRange((holopad.User.Value, Transform(holopad.User.Value)), (uid, xform), telephone.ListeningRange))
-                {
-                    UnlinkHolopadFromUser((uid, holopad), holopad.User.Value);
-                }
-            }
+            UnlinkHolopadFromUser((uid, holopad), holopad.User.Value);
         }
 
         _recentlyUpdatedHolograms.Clear();
