@@ -16328,3 +16328,14 @@ Entries:
   id: 7270
   time: '2025-05-31T15:58:17.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2457
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: Meta office's chairs
+    - type: Tweak
+      message: Meta cameras
+    - type: Fix
+      message: Meta Disposal, Warp-point Bombing
+  id: 7271
+  time: '2025-05-31T15:58:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2468
