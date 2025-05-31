@@ -1,0 +1,217 @@
+- type: entity
+  id: RMCBaseTree
+  suffix: RMCBaseTree
+  abstract: true
+  description: Yep, it's a tree.
+  components:
+  - type: SpriteFade
+  - type: Clickable
+  - type: Sprite
+    noRot: true
+    sprite: Objects/Decoration/Flora/flora_trees.rsi
+    drawdepth: Overdoors
+    offset: 0,0.9
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.4,0.35,0.4"
+        density: 1000
+        layer:
+        - WallLayer
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: /Audio/Effects/chop.ogg
+        params:
+          variation: 0.05
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: RMCBaseTree
+  id: RMCBaseTreeSnow
+  suffix: RMCBaseTreeSnow
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Objects/Decoration/Flora/flora_treessnow.rsi
+    offset: 0,0.7
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.3,0.1,0.3"
+        density: 4000
+        layer:
+        - WallLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          RMCStump1:
+            min: 1
+            max: 1
+        offset: 0
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: RMCBaseTree
+  id: RMCBaseTreeLarge
+  suffix: RMCBaseTreeLarge
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Objects/Decoration/Flora/flora_treeslarge.rsi
+    offset: 0,1.55
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.18,-0.35,0.18,0.35"
+        density: 2000
+        layer:
+        - WallLayer
+
+- type: entity
+  parent: RMCBaseTree
+  id: RMCBaseTreeConifer
+  suffix: RMCBaseTreeConifer
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Objects/Decoration/Flora/flora_treesconifer.rsi
+    offset: 0,1.15
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.35,0.1,0.35"
+        density: 3500
+        layer:
+        - WallLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          RMCStump2:
+            min: 1
+            max: 1
+        offset: 0
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: RMCBaseTree
+  id: RMCBaseTreeAlien
+  suffix: RMCBaseTreeAlien
+  abstract: true
+  name: strange tree
+  description: Some kind of bizarre alien tree. It oozes with a sickly yellow sap.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Flora/flora_treealien.rsi
+    offset: 0,0.7
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.3,0.1,0.3"
+        density: 4000
+        layer:
+        - WallLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          RMCStump3:
+            min: 1
+            max: 1
+        offset: 0
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: RMCBaseTreeAlien
+  id: RMCAlienTree01
+  suffix: RMCAlienTree01
+  components:
+  - type: Sprite
+    state: treealien01

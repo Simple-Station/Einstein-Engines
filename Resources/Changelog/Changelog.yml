@@ -16286,3 +16286,38 @@ Entries:
   id: 7264
   time: '2025-05-26T00:36:05.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2446
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: 'Added a new antagonist: Blob'
+  id: 7265
+  time: '2025-05-28T00:24:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2441
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Dramatically improved performance of the flammable system.
+  id: 7266
+  time: '2025-05-28T01:25:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2462
+- author: Mapping Team
+  changes:
+    - type: Tweak
+      message: Cleanup of Gax
+  id: 7267
+  time: '2025-05-28T05:10:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2458
+- author: Lumminal
+  changes:
+    - type: Add
+      message: Ported thieving beacon from wizden. Have fun stealing pets now!
+  id: 7268
+  time: '2025-05-28T05:14:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2447
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: 'Made significant performance improvements to device network systems. '
+  id: 7269
+  time: '2025-05-28T22:30:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2465
