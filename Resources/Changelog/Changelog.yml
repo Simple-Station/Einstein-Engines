@@ -16321,3 +16321,10 @@ Entries:
   id: 7269
   time: '2025-05-28T22:30:47.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2465
+- author: Mapping Team
+  changes:
+    - type: Tweak
+      message: Cleanup of Cyberiad
+  id: 7270
+  time: '2025-05-31T15:58:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2457
