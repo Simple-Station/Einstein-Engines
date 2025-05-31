@@ -16,7 +16,7 @@
     size: Normal
   - type: Utensil
     types:
-      - Knife
+    - Knife
 
 - type: entity
   name: captain's sabre
@@ -163,7 +163,7 @@
     heavyStaminaCost: 2.5
     angle: 80
     soundHit:
-        path: /Audio/Weapons/bladeslice.ogg
+      path: /Audio/Weapons/bladeslice.ogg
   - type: DamageOtherOnHit
     staminaCost: 5
   - type: EmbeddableProjectile
@@ -199,7 +199,7 @@
     maxTargets: 10
     angle: 200
     soundHit:
-        path: /Audio/Weapons/bladeslice.ogg
+      path: /Audio/Weapons/bladeslice.ogg
   - type: DamageOtherOnHit
     staminaCost: 18
   - type: EmbeddableProjectile
@@ -238,7 +238,7 @@
     maxTargets: 3
     angle: 40
     soundHit:
-        path: /Audio/Weapons/bladeslice.ogg
+      path: /Audio/Weapons/bladeslice.ogg
   - type: DamageOtherOnHit
     staminaCost: 5
   - type: EmbeddableProjectile
@@ -250,31 +250,35 @@
     sprite: Objects/Weapons/Melee/cutlass.rsi
 
 - type: entity
-  name: The Throngler
+  name: Throngler
   parent: BaseSword
   id: Throngler
   description: Why would someone make this?
   components:
-    - type: Sprite
-      sprite: Objects/Weapons/Melee/Throngler2.rsi
-      state: icon
-    - type: MeleeWeapon
-      wideAnimationRotation: -135
-      attackRate: .1
-      damage:
-        types:
-          Structural: 150
-          Slash: 20 #Horror
-          Blunt: 20
-          Heat: 20
-          Piercing: 20
-          Radiation: 10
-      soundHit:
-        path: /Audio/Effects/explosion_small1.ogg
-    - type: DamageOtherOnHit
-    - type: Reflect
-      reflectProb: .25
-      spread: 90
-    - type: Item
-      size: Ginormous
-      sprite: Objects/Weapons/Melee/Throngler-in-hand.rsi
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/Throngler2.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: .1
+    damage:
+      types:
+        Structural: 150
+        Slash: 20 #Horror
+        Blunt: 20
+        Heat: 20
+        Piercing: 20
+        Radiation: 10
+    soundHit:
+      path: /Audio/Effects/explosion_small1.ogg
+  - type: DamageOtherOnHit
+  - type: Reflect
+    reflectProb: .25
+    spread: 90
+  - type: Item
+    size: Ginormous
+    sprite: Objects/Weapons/Melee/Throngler-in-hand.rsi
+  - type: DisarmMalus
+  - type: Grammar
+    attributes:
+      proper: true

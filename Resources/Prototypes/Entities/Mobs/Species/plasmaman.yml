@@ -18,14 +18,6 @@
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-#     - shader: StencilClear
-#      sprite: Mobs/Species/Human/parts.rsi
-#      state: l_leg
-    - shader: StencilMask
-      map: ["enum.HumanoidVisualLayers.StencilMask"]
-      sprite: Mobs/Customization/masking_helpers.rsi
-      state: unisex_full
-      visible: false
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
     - map: ["jumpsuit"] # jumpsuit after foot to show envirosuit shoes
@@ -162,8 +154,6 @@
     spawned:
     - id: SheetPlasma1
       amount: 8
-  - type: Inventory
-    templateId: plasmaman
   - type: Temperature
     heatDamageThreshold: 308    # 35 celsius, -17 from base heat damage threshold
     currentTemperature: 270.15  # -3 celsius
@@ -196,6 +186,14 @@
     - TauCetiBasic
     - Calcic
   - type: FootPrints
+  - type: Inventory
+    templateId: plasmaman
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
 
 - type: entity
   parent: BaseSpeciesDummy
@@ -206,3 +204,9 @@
     species: Plasmaman
   - type: Inventory
     templateId: plasmaman
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female

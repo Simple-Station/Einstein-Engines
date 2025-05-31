@@ -1,11 +1,10 @@
 using Content.Server.Labels.Components;
-using Content.Server.Paper;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Examine;
 using Content.Shared.Labels;
 using Content.Shared.Labels.Components;
 using Content.Shared.Labels.EntitySystems;
-using Content.Shared.NameModifier.EntitySystems;
+using Content.Shared.Paper;
 using Content.Shared.Tag;
 using JetBrains.Annotations;
 using Robust.Shared.Containers;
@@ -20,10 +19,10 @@ namespace Content.Server.Labels
     {
         [Dependency] private readonly ItemSlotsSystem _itemSlotsSystem = default!;
         [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-        [Dependency] private readonly NameModifierSystem _nameMod = default!;
         [Dependency] private readonly TagSystem _tagSystem = default!;
 
         public const string ContainerName = "paper_label";
+
         [ValidatePrototypeId<TagPrototype>]
         private const string PreventTag = "PreventLabel";
 
@@ -31,23 +30,11 @@ namespace Content.Server.Labels
         {
             base.Initialize();
 
-            SubscribeLocalEvent<LabelComponent, MapInitEvent>(OnLabelCompMapInit);
             SubscribeLocalEvent<PaperLabelComponent, ComponentInit>(OnComponentInit);
             SubscribeLocalEvent<PaperLabelComponent, ComponentRemove>(OnComponentRemove);
             SubscribeLocalEvent<PaperLabelComponent, EntInsertedIntoContainerMessage>(OnContainerModified);
             SubscribeLocalEvent<PaperLabelComponent, EntRemovedFromContainerMessage>(OnContainerModified);
             SubscribeLocalEvent<PaperLabelComponent, ExaminedEvent>(OnExamined);
-        }
-
-        private void OnLabelCompMapInit(EntityUid uid, LabelComponent component, MapInitEvent args)
-        {
-            if (!string.IsNullOrEmpty(component.CurrentLabel))
-            {
-                component.CurrentLabel = Loc.GetString(component.CurrentLabel);
-                Dirty(uid, component);
-            }
-
-            _nameMod.RefreshNameModifiers(uid);
         }
 
         /// <summary>
@@ -59,17 +46,14 @@ namespace Content.Server.Labels
         /// <param name="metadata">metadata component for resolve</param>
         public override void Label(EntityUid uid, string? text, MetaDataComponent? metadata = null, LabelComponent? label = null)
         {
-            if (!Resolve(uid, ref metadata))
-                return;
-
-            if (_tagSystem.HasTag(uid, PreventTag)) // DeltaV - Prevent labels on certain items
+            if (!Resolve(uid, ref metadata) || _tagSystem.HasTag(uid, PreventTag))
                 return;
 
             if (!Resolve(uid, ref label, false))
                 label = EnsureComp<LabelComponent>(uid);
 
             label.CurrentLabel = text;
-            _nameMod.RefreshNameModifiers(uid);
+            NameMod.RefreshNameModifiers(uid);
 
             Dirty(uid, label);
         }

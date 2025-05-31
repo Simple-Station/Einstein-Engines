@@ -30,12 +30,11 @@
   - type: AccessReader
     access: [["Salvage"]]
 
-- type: messagePack
+- type: localizedDataset
   id: MiningDrobeAds
-  messages:
-  - advertisement-miningdrobe-1
-  - advertisement-miningdrobe-2
-  - advertisement-miningdrobe-3
+  values:
+    prefix: advertisement-miningdrobe-
+    count: 3
 
 - type: vendingMachineInventory
   id: MiningDrobeInventory

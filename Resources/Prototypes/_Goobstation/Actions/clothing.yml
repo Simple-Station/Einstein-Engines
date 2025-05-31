@@ -2,7 +2,6 @@
   id: ActionClothingSeal
   name: Seal/Unseal Clothing
   description: Seals or unseals your current clothing.
-  categories: [ HideSpawnMenu ]
   components:
   - type: ConfirmableAction
     confirmDelay: 0

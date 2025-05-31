@@ -59,7 +59,7 @@
 
 - type: entity
   name: flashbang
-  description: Eeeeeeeeeeeeeeeeeeeeee
+  description: Eeeeeeeeeeeeeeeeeeeeee.
   parent: GrenadeBase
   id: GrenadeFlashBang
   components:
@@ -87,15 +87,15 @@
   id: GrenadeFlashEffect
   categories: [ HideSpawnMenu ]
   components:
-    - type: PointLight
-      enabled: true
-      radius: 5
-      energy: 8
-      netsync: false
-    - type: LightFade
-      duration: 0.5
-    - type: TimedDespawn
-      lifetime: 0.5
+  - type: PointLight
+    enabled: true
+    radius: 5
+    energy: 8
+    netsync: false
+  - type: LightFade
+    duration: 0.5
+  - type: TimedDespawn
+    lifetime: 0.5
 
 #The explosive values for these are pretty god damn mediocre, but SS14's explosion system is hard to understand - this is a good enough approximation of how it was in SS13.
 #Ideally, there should be a weak radius around the bomb outside of its gibbing / spacing range capable of dealing fair damage to players / structures.
@@ -181,33 +181,33 @@
   - type: TwoStageTrigger
     triggerDelay: 10.45
     components:
-      - type: AmbientSound
-        enabled: true
-        volume: -5
-        range: 14
-        sound:
-          path: /Audio/Effects/Grenades/Supermatter/supermatter_loop.ogg
-      - type: GravityWell
-        maxRange: 8
-        baseRadialAcceleration: 145
-        baseTangentialAcceleration: 5
-        gravPulsePeriod: 0.01
-      - type: SingularityDistortion
-        intensity: 150
-        falloffPower: 1.5
-      - type: PointLight
-        enabled: true
-        color: "#ffaa44"
-        energy: 8
-        radius: 6
-        softness: 1
-        offset: "0, 0"
-      - type: SoundOnTrigger
-        sound:
-          path: /Audio/Effects/Grenades/Supermatter/supermatter_end.ogg
-          params:
-            volume: 5
-      - type: ExplodeOnTrigger
+    - type: AmbientSound
+      enabled: true
+      volume: -5
+      range: 14
+      sound:
+        path: /Audio/Effects/Grenades/Supermatter/supermatter_loop.ogg
+    - type: GravityWell
+      maxRange: 8
+      baseRadialAcceleration: 145
+      baseTangentialAcceleration: 5
+      gravPulsePeriod: 0.01
+    - type: SingularityDistortion
+      intensity: 150
+      falloffPower: 1.5
+    - type: PointLight
+      enabled: true
+      color: "#ffaa44"
+      energy: 8
+      radius: 6
+      softness: 1
+      offset: "0, 0"
+    - type: SoundOnTrigger
+      sound:
+        path: /Audio/Effects/Grenades/Supermatter/supermatter_end.ogg
+        params:
+          volume: 5
+    - type: ExplodeOnTrigger
 
 - type: entity
   name: whitehole grenade
@@ -228,33 +228,33 @@
   - type: TwoStageTrigger
     triggerDelay: 11.14
     components:
-      - type: AmbientSound
-        enabled: true
-        volume: -5
-        range: 14
-        sound:
-          path: /Audio/Effects/Grenades/Supermatter/whitehole_loop.ogg
-      - type: GravityWell
-        maxRange: 10
-        baseRadialAcceleration: -180
-        baseTangentialAcceleration: -5
-        gravPulsePeriod: 0.01
-      - type: SingularityDistortion
-        intensity: -200
-        falloffPower: 1.5
-      - type: PointLight
-        enabled: true
-        color: "#ffffff"
-        energy: 8
-        radius: 6
-        softness: 1
-        offset: "0, 0"
-      - type: SoundOnTrigger
-        sound:
-          path: /Audio/Effects/Grenades/Supermatter/supermatter_end.ogg
-          params:
-            volume: 15
-      - type: DeleteOnTrigger
+    - type: AmbientSound
+      enabled: true
+      volume: -5
+      range: 14
+      sound:
+        path: /Audio/Effects/Grenades/Supermatter/whitehole_loop.ogg
+    - type: GravityWell
+      maxRange: 10
+      baseRadialAcceleration: -180
+      baseTangentialAcceleration: -5
+      gravPulsePeriod: 0.01
+    - type: SingularityDistortion
+      intensity: -200
+      falloffPower: 1.5
+    - type: PointLight
+      enabled: true
+      color: "#ffffff"
+      energy: 8
+      radius: 6
+      softness: 1
+      offset: "0, 0"
+    - type: SoundOnTrigger
+      sound:
+        path: /Audio/Effects/Grenades/Supermatter/supermatter_end.ogg
+        params:
+          volume: 15
+    - type: DeleteOnTrigger
 
 - type: entity
   name: the nuclear option
@@ -322,11 +322,12 @@
           emptyCase: { state: empty }
           wiredCase: { state: wired }
           caseWithTrigger: { state: no-payload }
+          caseWithPayload: { state: no-trigger }
           grenade: { state: complete }
       enum.Trigger.TriggerVisuals.VisualState:
         enum.ConstructionVisuals.Layer:
           Primed: { state: primed }
-          Unprimed: { state: complete }
+          # Unprimed: <Use state determined by enum.ConstructionVisuals.Layer>
   - type: StaticPrice
     price: 25
 
@@ -394,7 +395,7 @@
   parent: SmokeGrenade
   id: CleanerGrenade
   name: cleanade
-  description: Special grenade for janitors, releasing large cloud of space cleaner foam
+  description: Special grenade for janitors, releasing large cloud of space cleaner foam.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Grenades/janitor.rsi
@@ -439,6 +440,21 @@
       reagents:
       - ReagentId: TearGas
         Quantity: 50
+
+- type: entity
+  parent: SmokeGrenade
+  id: MetalFoamGrenade
+  name: metal foam grenade
+  description: An emergency tool used for patching up holes. Almost as good as real walls.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Grenades/metalfoam.rsi
+  - type: SmokeOnTrigger
+    duration: 10
+    spreadAmount: 13
+    smokePrototype: AluminiumMetalFoam
+  - type: StaticPrice
+    price: 350
 
 # Non-explosive "dummy" grenades to use as a distraction.
 

@@ -8,7 +8,7 @@
       state: engineering
     - type: MachineBoard
       prototype: ReverseEngineeringMachine
-      requirements:
+      machinePartRequirements:
         MatterBin: 1
         Manipulator: 1
       materialRequirements:
@@ -16,9 +16,8 @@
         PlasmaGlass: 5
       tagRequirements:
         BorgArm:
-          Amount: 3
-          DefaultPrototype: LeftArmBorg
-          ExamineName: borg arm
+          amount: 3
+          defaultPrototype: LeftArmBorg
     - type: ReverseEngineering
       difficulty: 3
       recipes:
@@ -33,7 +32,7 @@
       state: service
     - type: MachineBoard
       prototype: KitchenDeepFryer
-      requirements:
+      machinePartRequirements:
         Capacitor: 1
         MatterBin: 1
       materialRequirements:
@@ -53,7 +52,7 @@
       state: supply
     - type: MachineBoard
       prototype: MailTeleporter
-      requirements:
+      machinePartRequirements:
         Capacitor: 1
         MatterBin: 1
       materialRequirements:

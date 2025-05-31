@@ -8,7 +8,7 @@ public sealed partial class PartExchangerComponent : Component
     /// <summary>
     /// How long it takes to exchange the parts
     /// </summary>
-    [DataField("exchangeDuration")]
+    [DataField]
     public float ExchangeDuration = 3;
 
     /// <summary>
@@ -19,10 +19,10 @@ public sealed partial class PartExchangerComponent : Component
     /// I fucking hate BRPED and if you ever add it
     /// i will personally kill your dog.
     /// </remarks>
-    [DataField("doDistanceCheck")]
+    [DataField]
     public bool DoDistanceCheck = true;
 
-    [DataField("exchangeSound")]
+    [DataField]
     public SoundSpecifier ExchangeSound = new SoundPathSpecifier("/Audio/Items/rped.ogg");
 
     public EntityUid? AudioStream;

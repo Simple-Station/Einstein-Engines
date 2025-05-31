@@ -1,10 +1,8 @@
 using System.Linq;
 using Content.Shared.Construction.Components;
-using Content.Shared.Construction.Prototypes;
 using Content.Shared.Examine;
 using Content.Shared.Lathe;
 using Content.Shared.Materials;
-using Content.Shared.Stacks;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Construction
@@ -16,6 +14,7 @@ namespace Content.Shared.Construction
     {
         [Dependency] private readonly IPrototypeManager _prototype = default!;
         [Dependency] private readonly SharedLatheSystem _lathe = default!;
+        [Dependency] private readonly SharedConstructionSystem _construction = default!;
 
         public override void Initialize()
         {
@@ -32,32 +31,39 @@ namespace Content.Shared.Construction
             using (args.PushGroup(nameof(MachineBoardComponent)))
             {
                 args.PushMarkup(Loc.GetString("machine-board-component-on-examine-label"));
-                foreach (var (part, amount) in component.Requirements)
+                foreach (var (machinePartId, amount) in component.MachinePartRequirements)
                 {
+                    var machinePart = _prototype.Index(machinePartId);
+
                     args.PushMarkup(Loc.GetString("machine-board-component-required-element-entry-text",
                         ("amount", amount),
-                        ("requiredElement", Loc.GetString(_prototype.Index<MachinePartPrototype>(part).Name))));
+                        ("requiredElement", Loc.GetString(machinePart.Name))));
                 }
 
-                foreach (var (material, amount) in component.MaterialRequirements)
+                foreach (var (material, amount) in component.StackRequirements)
                 {
+                    var stack = _prototype.Index(material);
+                    var name = _prototype.Index(stack.Spawn).Name;
+
                     args.PushMarkup(Loc.GetString("machine-board-component-required-element-entry-text",
                         ("amount", amount),
-                        ("requiredElement", Loc.GetString(material.Name))));
+                        ("requiredElement", Loc.GetString(name))));
                 }
 
                 foreach (var (_, info) in component.ComponentRequirements)
                 {
+                    var examineName = _construction.GetExamineName(info);
                     args.PushMarkup(Loc.GetString("machine-board-component-required-element-entry-text",
                         ("amount", info.Amount),
-                        ("requiredElement", Loc.GetString(info.ExamineName))));
+                        ("requiredElement", examineName)));
                 }
 
                 foreach (var (_, info) in component.TagRequirements)
                 {
+                    var examineName = _construction.GetExamineName(info);
                     args.PushMarkup(Loc.GetString("machine-board-component-required-element-entry-text",
                         ("amount", info.Amount),
-                        ("requiredElement", Loc.GetString(info.ExamineName))));
+                        ("requiredElement", examineName)));
                 }
             }
         }
@@ -71,8 +77,8 @@ namespace Content.Shared.Construction
             {
                 args.PushMarkup(Loc.GetString("machine-part-component-on-examine-rating-text",
                     ("rating", component.Rating)));
-                args.PushMarkup(Loc.GetString("machine-part-component-on-examine-type-text", ("type",
-                    Loc.GetString(_prototype.Index<MachinePartPrototype>(component.PartType).Name))));
+                args.PushMarkup(Loc.GetString("machine-part-component-on-examine-type-text",
+                    ("type", Loc.GetString(_prototype.Index(component.PartType).Name))));
             }
         }
 
@@ -81,11 +87,11 @@ namespace Content.Shared.Construction
             var (_, comp) = entity;
 
             var materials = new Dictionary<string, int>();
-            foreach (var (partId, amount) in comp.Requirements)
+            foreach (var (machinePartId, amount) in comp.MachinePartRequirements)
             {
-                var partProto = _prototype.Index<MachinePartPrototype>(partId);
+                var machinePart = _prototype.Index(machinePartId);
 
-                if (!_lathe.TryGetRecipesFromEntity(partProto.StockPartPrototype, out var recipes))
+                if (!_lathe.TryGetRecipesFromEntity(machinePart.StockPartPrototype, out var recipes))
                     continue;
 
                 var partRecipe = recipes[0];
@@ -99,11 +105,12 @@ namespace Content.Shared.Construction
                 }
             }
 
-            foreach (var (stackId, amount) in comp.MaterialIdRequirements)
+            foreach (var (stackId, amount) in comp.StackRequirements)
             {
-                var stackProto = _prototype.Index<StackPrototype>(stackId);
-                if (_prototype.TryIndex(stackProto.Spawn, out var defaultProto) && 
-                    defaultProto.TryGetComponent<PhysicalCompositionComponent>(out var physComp))
+                var stackProto = _prototype.Index(stackId);
+                var defaultProto = _prototype.Index(stackProto.Spawn);
+
+                if (defaultProto.TryGetComponent<PhysicalCompositionComponent>(out var physComp, EntityManager.ComponentFactory))
                 {
                     foreach (var (mat, matAmount) in physComp.MaterialComposition)
                     {
@@ -144,7 +151,7 @@ namespace Content.Shared.Construction
                     }
                 }
                 else if (_prototype.TryIndex(defaultProtoId, out var defaultProto) &&
-                         defaultProto.TryGetComponent<PhysicalCompositionComponent>(out var physComp))
+                         defaultProto.TryGetComponent<PhysicalCompositionComponent>(out var physComp, EntityManager.ComponentFactory))
                 {
                     foreach (var (mat, matAmount) in physComp.MaterialComposition)
                     {

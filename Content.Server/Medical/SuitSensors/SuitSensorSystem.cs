@@ -79,11 +79,6 @@ public sealed class SuitSensorSystem : EntitySystem
             // TODO: This would cause imprecision at different tick rates.
             sensor.NextUpdate = curTime + sensor.UpdateRate;
 
-            var canEv = new SuitSensorsSendAttemptEvent();
-            RaiseLocalEvent(uid, ref canEv);
-            if (canEv.Cancelled)
-                continue;
-
             // get sensor status
             var status = GetSensorState(uid, sensor);
             if (status == null)
@@ -332,7 +327,7 @@ public sealed class SuitSensorSystem : EntitySystem
             return null;
 
         // check if sensor is enabled and worn by user
-        if (sensor.Mode == SuitSensorMode.SensorOff || sensor.User == null || transform.GridUid == null)
+        if (sensor.Mode == SuitSensorMode.SensorOff || sensor.User == null || !HasComp<MobStateComponent>(sensor.User) || transform.GridUid == null)
             return null;
 
         // try to get mobs id from ID slot
