@@ -480,11 +480,12 @@ public sealed class HolopadSystem : SharedHolopadSystem
         {
             UpdateUIState((uid, holopad), telephone);
 
-            if (holopad.User == null || !HasComp<IgnoreUIRangeComponent>(holopad.User)
-                || _xformSystem.InRange((holopad.User.Value, Transform(holopad.User.Value)), (uid, xform), telephone.ListeningRange))
-                continue;
-
-            UnlinkHolopadFromUser((uid, holopad), holopad.User.Value);
+            if (holopad.User != null &&
+                !HasComp<IgnoreUIRangeComponent>(holopad.User) &&
+                !_xformSystem.InRange((holopad.User.Value, Transform(holopad.User.Value)), (uid, xform), telephone.ListeningRange))
+            {
+                UnlinkHolopadFromUser((uid, holopad), holopad.User.Value);
+            }
         }
 
         _recentlyUpdatedHolograms.Clear();
