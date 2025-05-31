@@ -57,7 +57,7 @@ public sealed class SolarFlareRule : StationEventSystem<SolarFlareRuleComponent>
         var airlockQuery = EntityQueryEnumerator<AirlockComponent, DoorComponent>();
         while (airlockQuery.MoveNext(out var airlockEnt, out var airlock, out var door))
         {
-            if (!airlock.AutoClose || RobustRandom.Prob(component.DoorToggleChancePerSecond))
+            if (!airlock.AutoClose || !RobustRandom.Prob(component.DoorToggleChancePerSecond))
                 continue;
 
             _door.TryToggleDoor(airlockEnt, door);
