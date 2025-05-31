@@ -193,9 +193,9 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
     /// </summary>
     public FixedPoint2 GetOilPurity(EntityUid uid, DeepFryerComponent component)
     {
-        if (component.Solution.Volume > 0)
-            return GetOilVolume(uid, component) / component.Solution.Volume;
-        return FixedPoint2.Zero;
+        if (component.Solution == null || component.Solution.Volume <= 0)
+            return FixedPoint2.Zero;
+        return GetOilVolume(uid, component) / component.Solution.Volume;
     }
 
     /// <summary>
@@ -203,9 +203,9 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
     /// </summary>
     public FixedPoint2 GetOilLevel(EntityUid uid, DeepFryerComponent component)
     {
-        if (component.Solution.Volume > 0)
-            return GetOilVolume(uid, component) / component.Solution.MaxVolume;
-        return FixedPoint2.Zero;
+        if (component.Solution == null || component.Solution.Volume <= 0)
+            return FixedPoint2.Zero;
+        return GetOilVolume(uid, component) / component.Solution.Volume;
     }
 
     /// <summary>
