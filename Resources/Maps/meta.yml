@@ -170205,6 +170205,8 @@ entities:
     - type: Transform
       pos: -4.5,39.5
       parent: 2
+    - type: WarpPoint
+      location: Armory
   - uid: 22329
     components:
     - type: Transform
