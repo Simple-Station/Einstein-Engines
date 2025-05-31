@@ -675,3 +675,29 @@ trait-description-IPCFragileCircuits =
     You immediately shut down any time you take [color=orange]Shock[/color] damage and must be rebooted.
 fragileCircuits-kill-popup = {$name}'s circuits shut down from short-circuiting!
 
+trait-name-CyberneticLeftLeg = Cybernetic Left Leg
+trait-description-CyberneticLeftLeg =
+    Your left leg has been replaced with a baseline cybernetic leg.
+    This does not cost any trait slot selections.
+
+trait-name-CyberneticRightLeg = Cybernetic Right Leg
+trait-description-CyberneticRightLeg =
+    Your right leg has been replaced with a baseline cybernetic leg.
+    This does not cost any trait slot selections.
+trait-name-Dwarf = Dwarf
+trait-description-Dwarf =
+    You are not just short and stout... You are a dwarf.
+    You get alcohol healing, you are resistant to poison, you also do not vomit when drunk.
+
+trait-name-Kobold = Kobold
+trait-description-Kobold =
+    You are not just short and stout... You are a kobold.
+    You get alcohol healing, you are resistant to poison, you also do not vomit when drunk.
+
+trait-name-ForkedTongue = Forked Tongue
+trait-description-ForkedTongue =
+    You have a more developed forked tongue that allows you to track and distinguish objects by their scent.
+
+trait-name-StuntedSnout = Stunted Snout
+trait-description-StuntedSnout =
+    Your sense of smell is stunted for one reason or another. You lack the ability to pick up scents.
