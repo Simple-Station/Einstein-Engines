@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingBeltNfsdWebbing
+  id: ClothingBeltTacticalRig
+  name: tactical rig
+  description: A reliable tactical rig.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Independents/Belt/tac_rig.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Independents/Belt/tac_rig.rsi
