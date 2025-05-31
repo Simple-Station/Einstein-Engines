@@ -26,9 +26,7 @@
     - type: loadout
       id: LoadoutCommandTelescopicBaton
     - type: loadout
-      id: LoadoutCommandDisabler
-    - type: loadout
-      id: LoadoutCommandStunBaton
+      id: LoadoutCommandCivilianDisabler
     - type: loadout
       id: LoadoutCommandFlash
 
