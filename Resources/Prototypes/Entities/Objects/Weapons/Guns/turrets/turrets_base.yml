@@ -79,6 +79,9 @@
     - type: NoRotateOnMove
     - type: Input
       context: "human"
+    - type: SentienceTarget
+      flavorKind: station-event-random-sentience-flavor-inanimate
+      weight: 0.25
 
 - type: entity
   parent: BaseWeaponTurret
