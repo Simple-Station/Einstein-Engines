@@ -8,9 +8,9 @@ public sealed partial class NeoTabContainer
     // Too many computed properties...
 
     /// <summary>
-    ///     Where to place the tabs in relation to the contents
+    ///     Where to place the tabs in relation to the contents.
     ///     <br />
-    ///     If <see cref="Direction.North"/>, the tabs will be above the contents
+    ///     If <see cref="Direction.North"/>, the tabs will be above the contents.
     /// </summary>
     private Direction _tabLocation = North;
     public Direction TabLocation
@@ -53,18 +53,16 @@ public sealed partial class NeoTabContainer
         set => Separator.Margin = value;
     }
 
-    private bool _firstTabOpenBoth;
     public bool FirstTabOpenBoth
     {
-        get => _firstTabOpenBoth;
-        set => TabStyleChanged(value, LastTabOpenBoth);
+        get => TabContainer.FirstTabOpenBoth;
+        set => TabContainer.FirstTabOpenBoth = value;
     }
 
-    private bool _lastTabOpenBoth;
     public bool LastTabOpenBoth
     {
-        get => _lastTabOpenBoth;
-        set => TabStyleChanged(FirstTabOpenBoth, value);
+        get => TabContainer.LastTabOpenBoth;
+        set => TabContainer.LastTabOpenBoth = value;
     }
 
 
@@ -75,9 +73,8 @@ public sealed partial class NeoTabContainer
         _tabLocation = direction;
 
         LayoutOrientation DirectionalOrientation(Direction direction, LayoutOrientation north, LayoutOrientation south,
-            LayoutOrientation east, LayoutOrientation west)
-        {
-            return direction switch
+            LayoutOrientation east, LayoutOrientation west) =>
+            direction switch
             {
                 North => north,
                 South => south,
@@ -85,24 +82,23 @@ public sealed partial class NeoTabContainer
                 West => west,
                 _ => Vertical,
             };
-        }
+
         TabContainer.Orientation = DirectionalOrientation(direction, Horizontal, Horizontal, Vertical, Vertical);
         Container.Orientation = DirectionalOrientation(direction, Vertical, Vertical, Horizontal, Horizontal);
 
         var containerMargin = direction switch
         {
-            North => new Thickness(_containerMargin.Left, 0, _containerMargin.Right, _containerMargin.Bottom),
-            South => new Thickness(_containerMargin.Left, _containerMargin.Top, _containerMargin.Right, 0),
-            East => new Thickness(_containerMargin.Left, _containerMargin.Top, 0, _containerMargin.Bottom),
-            West => new Thickness(0, _containerMargin.Top, _containerMargin.Right, _containerMargin.Bottom),
+            North => new(_containerMargin.Left, 0, _containerMargin.Right, _containerMargin.Bottom),
+            South => new(_containerMargin.Left, _containerMargin.Top, _containerMargin.Right, 0),
+            East => new(_containerMargin.Left, _containerMargin.Top, 0, _containerMargin.Bottom),
+            West => new(0, _containerMargin.Top, _containerMargin.Right, _containerMargin.Bottom),
             _ => _containerMargin,
         };
         TabScrollContainer.Margin = containerMargin;
         ContentScrollContainer.Margin = containerMargin;
 
-        bool DirectionalBool(Direction direction, bool north, bool south, bool east, bool west)
-        {
-            return direction switch
+        bool DirectionalBool(Direction direction, bool north, bool south, bool east, bool west) =>
+            direction switch
             {
                 North => north,
                 South => south,
@@ -110,7 +106,7 @@ public sealed partial class NeoTabContainer
                 West => west,
                 _ => false,
             };
-        }
+
         TabScrollContainer.HorizontalExpand = DirectionalBool(direction, true, true, false, false);
         TabScrollContainer.VerticalExpand = DirectionalBool(direction, false, false, true, true);
         TabScrollContainer.HScrollEnabled = DirectionalBool(direction, true, true, false, false);
@@ -151,13 +147,5 @@ public sealed partial class NeoTabContainer
     {
         _containerMargin = value;
         LayoutChanged(TabLocation);
-    }
-
-    private void TabStyleChanged(bool firstTabOpenBoth, bool lastTabOpenBoth)
-    {
-        _firstTabOpenBoth = firstTabOpenBoth;
-        _lastTabOpenBoth = lastTabOpenBoth;
-
-        UpdateTabMerging();
     }
 }
