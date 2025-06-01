@@ -16346,3 +16346,10 @@ Entries:
   id: 7272
   time: '2025-06-01T02:06:50.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2474
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Improved the server performance of Solar Flare events.
+  id: 7273
+  time: '2025-06-01T02:08:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2473
