@@ -149,7 +149,7 @@
   parent: BaseThiefStealCollectionObjective
   id: LAMPStealCollectionObjective
   components:
-  - type: SpeciesRequirement
+  - type: CharacterSpeciesRequirement
     allowedSpecies:
     - Moth
   - type: StealCondition

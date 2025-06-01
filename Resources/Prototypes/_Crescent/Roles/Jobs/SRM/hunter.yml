@@ -4,7 +4,7 @@
   description: job-description-hunter
   playTimeTracker: JobHunterSRM
   requirements:
-    - !type:SpeciesRequirement
+    - !type:CharacterSpeciesRequirement
       species:
         - Human
     - !type:CharacterOverallTimeRequirement
