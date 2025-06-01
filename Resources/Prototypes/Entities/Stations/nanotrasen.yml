@@ -72,7 +72,6 @@
   - BaseStationSiliconLawAsimov
   - BaseStationAllEventsEligible
   - BaseStationNanotrasen
-  - BaseRandomStation
   - BaseStationMail
   categories: [ HideSpawnMenu ]
   components:
@@ -96,7 +95,6 @@
   - BaseStationSiliconLawAsimov
   - BaseStationAllEventsEligible
   - BaseStationNanotrasen
-  - BaseRandomStation
   - BaseStationMail
   categories: [HideSpawnMenu]
   components:
@@ -121,7 +119,6 @@
   - BaseStationSiliconLawAsimov
   - BaseStationAllEventsEligible
   - BaseStationNanotrasen
-  - BaseRandomStation
   - BaseStationMail
   categories: [HideSpawnMenu]
   components:
