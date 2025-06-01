@@ -16339,3 +16339,10 @@ Entries:
   id: 7271
   time: '2025-05-31T15:58:33.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2468
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Made some server performance improvements to Atmos Alert Computers.
+  id: 7272
+  time: '2025-06-01T02:06:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2474
