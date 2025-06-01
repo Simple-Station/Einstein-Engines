@@ -22,21 +22,21 @@ void fragment() {
 
     c = vec4(u.y, u.y, u.y, 1.0) / 20000.0;
 
-    for(float t = 0.6; t < 100.0; t += t) {
+    for(highp float t = 0.6; t < 100.0; t += t) {
         // Slower time animations (reduced by factor of 2.5)
-        float timeScale = 0.4; // Slows down all time-based animations
+        highp float timeScale = 0.4; // Slows down all time-based animations
 
-        float f1 = 0.3;
-        float f2 = f1;
-        float f3 = f1;
+        highp float f1 = 0.3;
+        highp float f2 = f1;
+        highp float f3 = f1;
 
-        float s1 = sin(TIME * f1 * timeScale + 3.14 * 2.0 * 0.00) * 0.5 + 0.5;
-        float s2 = sin(TIME * f2 * timeScale + 3.14 * 2.0 * 0.33) * 0.5 + 0.5;
-        float s3 = sin(TIME * f3 * timeScale + 3.14 * 2.0 * 0.66) * 0.5 + 0.5;
+        highp float s1 = sin(TIME * f1 * timeScale + 3.14 * 2.0 * 0.00) * 0.5 + 0.5;
+        highp float s2 = sin(TIME * f2 * timeScale + 3.14 * 2.0 * 0.33) * 0.5 + 0.5;
+        highp float s3 = sin(TIME * f3 * timeScale + 3.14 * 2.0 * 0.66) * 0.5 + 0.5;
 
-        float ps1 = abs(s1);
-        float ps2 = abs(s2);
-        float ps3 = abs(s3);
+        highp float ps1 = abs(s1);
+        highp float ps2 = abs(s2);
+        highp float ps3 = abs(s3);
 
         s1 = sign(s1) * pow(ps1, 0.3); // Increased power = softer transition
         s2 = sign(s2) * pow(ps2, 0.3);
@@ -63,7 +63,7 @@ void fragment() {
         c += v3 * s3 * 0.7;
     }
 
-    float mixscl = 0.002 + 0.03 * (0.5 + 0.5 * sin(TIME * 0.05)); // Reduced from 0.06, slower time
+    highp float mixscl = 0.002 + 0.03 * (0.5 + 0.5 * sin(TIME * 0.05)); // Reduced from 0.06, slower time
 
     highp vec4 color1 = T(u + vec2(c.x, c.y) * 0.7); // Reduced distortion by 0.7
     highp vec4 color2 = vec4(cos(c.x), cos(c.y), cos(c.z), cos(c.w));
