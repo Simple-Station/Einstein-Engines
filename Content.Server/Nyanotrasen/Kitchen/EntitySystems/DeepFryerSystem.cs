@@ -148,7 +148,7 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
     /// </remarks>
     private bool HasBubblingOil(EntityUid uid, DeepFryerComponent component)
     {
-        return _powerReceiverSystem.IsPowered(uid) && GetOilVolume(uid, component) > FixedPoint2.Zero;
+        return _powerReceiverSystem.IsPowered(uid) && component.Solution != null && GetOilVolume(uid, component) > FixedPoint2.Zero;
     }
 
     /// <summary>
@@ -156,6 +156,9 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
     /// </summary>
     public FixedPoint2 GetOilVolume(EntityUid uid, DeepFryerComponent component)
     {
+        if (component.Solution == null)
+            return FixedPoint2.Zero;
+
         var oilVolume = FixedPoint2.Zero;
 
         foreach (var reagent in component.Solution)
@@ -178,6 +181,9 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
     /// </summary>
     public FixedPoint2 GetWasteVolume(EntityUid uid, DeepFryerComponent component)
     {
+        if (component.Solution == null)
+            return FixedPoint2.Zero;
+
         var wasteVolume = FixedPoint2.Zero;
 
         foreach (var reagent in component.WasteReagents)
@@ -395,6 +401,9 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
         if (!containerExisted)
             _sawmill.Warning(
                 $"{ToPrettyString(uid)} did not have a {component.StorageName} container. It has been created.");
+
+        if (!HasComp<SolutionContainerManagerComponent>(uid))
+            AddComp<SolutionContainerManagerComponent>(uid);
 
         component.Solution =
             _solutionContainerSystem.EnsureSolution(uid, component.SolutionName, out var solutionExisted);
