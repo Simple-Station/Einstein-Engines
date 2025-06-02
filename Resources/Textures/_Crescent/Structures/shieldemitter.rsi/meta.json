@@ -1,10 +1,26 @@
 {
     "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Created by λserovich[BAD] (Aserovich) for Sector Crescent : Hullrot. Resprite Shit Forever.",
     "size": {
-        "x": 128,
-        "y": 128
+      "x": 128,
+      "y": 128
     },
-    "license": "CC0-1.0",
-    "copyright": "Taken from CEV Eris.",
-    "states": [ { "name": "icon" } ]
-}
+    "states": [
+      {
+        "name": "icon"
+      },
+      {
+          "name": "unlit",
+          "delays": [
+            [
+              0.2,
+              0.2,
+              0.2,
+              0.2
+            ]
+          ]
+        }
+    ]
+  }
+  

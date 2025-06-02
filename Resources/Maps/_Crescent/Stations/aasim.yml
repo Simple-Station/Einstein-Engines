@@ -32,7 +32,7 @@ entities:
     - type: MetaData
       name: grid
     - type: Transform
-      pos: -0.5668793,2.4819796
+      pos: 37.1535,-222.66635
       parent: invalid
     - type: MapGrid
       chunks:
@@ -3636,16 +3636,6 @@ entities:
     - type: Transform
       pos: 7.5,-26.5
       parent: 1
-    - type: ContainerContainer
-      containers:
-        ShipyardConsole-targetId: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
 - proto: AmeControllerSmallExplosion
   entities:
   - uid: 1851
@@ -4895,32 +4885,24 @@ entities:
       rot: 3.141592653589793 rad
       pos: -7.5,-3.5
       parent: 1
-    - type: Physics
-      bodyType: Static
   - uid: 1397
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -7.5,-5.5
       parent: 1
-    - type: Physics
-      bodyType: Static
   - uid: 1398
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -4.5,-5.5
       parent: 1
-    - type: Physics
-      bodyType: Static
   - uid: 1399
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -4.5,-3.5
       parent: 1
-    - type: Physics
-      bodyType: Static
 - proto: BenchPewRight
   entities:
   - uid: 1385
@@ -4929,32 +4911,24 @@ entities:
       rot: 3.141592653589793 rad
       pos: -3.5,-5.5
       parent: 1
-    - type: Physics
-      bodyType: Static
   - uid: 1393
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -6.5,-5.5
       parent: 1
-    - type: Physics
-      bodyType: Static
   - uid: 1394
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -3.5,-3.5
       parent: 1
-    - type: Physics
-      bodyType: Static
   - uid: 1395
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -6.5,-3.5
       parent: 1
-    - type: Physics
-      bodyType: Static
 - proto: BenchSofaCorner
   entities:
   - uid: 1556
@@ -4964,7 +4938,6 @@ entities:
       parent: 1
     - type: Physics
       canCollide: False
-      bodyType: Static
     - type: Fixtures
       fixtures: {}
 - proto: BenchSofaCorpCorner
@@ -4977,7 +4950,6 @@ entities:
       parent: 1
     - type: Physics
       canCollide: False
-      bodyType: Static
     - type: Fixtures
       fixtures: {}
 - proto: BenchSofaCorpLeft
@@ -4987,15 +4959,11 @@ entities:
     - type: Transform
       pos: -10.5,-26.5
       parent: 1
-    - type: Physics
-      bodyType: Static
   - uid: 1022
     components:
     - type: Transform
       pos: -2.5,-11.5
       parent: 1
-    - type: Physics
-      bodyType: Static
 - proto: BenchSofaCorpMiddle
   entities:
   - uid: 772
@@ -5004,8 +4972,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -11.5,-27.5
       parent: 1
-    - type: Physics
-      bodyType: Static
 - proto: BenchSofaCorpRight
   entities:
   - uid: 793
@@ -5014,15 +4980,11 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -11.5,-28.5
       parent: 1
-    - type: Physics
-      bodyType: Static
   - uid: 1021
     components:
     - type: Transform
       pos: -3.5,-11.5
       parent: 1
-    - type: Physics
-      bodyType: Static
 - proto: BenchSofaLeft
   entities:
   - uid: 1558
@@ -5031,8 +4993,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 12.5,-28.5
       parent: 1
-    - type: Physics
-      bodyType: Static
 - proto: BenchSofaRight
   entities:
   - uid: 1557
@@ -5040,8 +5000,6 @@ entities:
     - type: Transform
       pos: 11.5,-27.5
       parent: 1
-    - type: Physics
-      bodyType: Static
 - proto: BenchSteelLeft
   entities:
   - uid: 2426
@@ -5049,16 +5007,12 @@ entities:
     - type: Transform
       pos: -3.5,-58.5
       parent: 1
-    - type: Physics
-      bodyType: Static
   - uid: 2432
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -2.5,-63.5
       parent: 1
-    - type: Physics
-      bodyType: Static
 - proto: BenchSteelRight
   entities:
   - uid: 2433
@@ -5067,15 +5021,11 @@ entities:
       rot: 3.141592653589793 rad
       pos: -3.5,-63.5
       parent: 1
-    - type: Physics
-      bodyType: Static
   - uid: 2434
     components:
     - type: Transform
       pos: -2.5,-58.5
       parent: 1
-    - type: Physics
-      bodyType: Static
 - proto: BiomassReclaimer
   entities:
   - uid: 2502
@@ -12985,12 +12935,6 @@ entities:
     - type: DeviceLinkSink
       links:
       - 1463
-    - type: ContainerContainer
-      containers:
-        machine_board: !type:Container
-          ents: []
-        machine_parts: !type:Container
-          ents: []
   - uid: 482
     components:
     - type: Transform
@@ -12999,12 +12943,6 @@ entities:
     - type: DeviceLinkSink
       links:
       - 1463
-    - type: ContainerContainer
-      containers:
-        machine_board: !type:Container
-          ents: []
-        machine_parts: !type:Container
-          ents: []
   - uid: 1079
     components:
     - type: Transform
@@ -13013,12 +12951,6 @@ entities:
     - type: DeviceLinkSink
       links:
       - 1463
-    - type: ContainerContainer
-      containers:
-        machine_board: !type:Container
-          ents: []
-        machine_parts: !type:Container
-          ents: []
   - uid: 1110
     components:
     - type: Transform
@@ -13027,12 +12959,6 @@ entities:
     - type: DeviceLinkSink
       links:
       - 1463
-    - type: ContainerContainer
-      containers:
-        machine_board: !type:Container
-          ents: []
-        machine_parts: !type:Container
-          ents: []
   - uid: 1119
     components:
     - type: Transform
@@ -13041,12 +12967,6 @@ entities:
     - type: DeviceLinkSink
       links:
       - 1463
-    - type: ContainerContainer
-      containers:
-        machine_board: !type:Container
-          ents: []
-        machine_parts: !type:Container
-          ents: []
   - uid: 1122
     components:
     - type: Transform
@@ -13055,12 +12975,6 @@ entities:
     - type: DeviceLinkSink
       links:
       - 1463
-    - type: ContainerContainer
-      containers:
-        machine_board: !type:Container
-          ents: []
-        machine_parts: !type:Container
-          ents: []
 - proto: Carpet
   entities:
   - uid: 1477
@@ -14949,8 +14863,6 @@ entities:
     components:
     - type: Transform
       parent: 1469
-    - type: Magboots
-      toggleActionEntity: 1473
     - type: Physics
       canCollide: False
     - type: ContainerContainer
@@ -14970,8 +14882,6 @@ entities:
     components:
     - type: Transform
       parent: 1559
-    - type: Magboots
-      toggleActionEntity: 1565
     - type: Physics
       canCollide: False
     - type: ContainerContainer
@@ -14991,8 +14901,6 @@ entities:
     components:
     - type: Transform
       parent: 1567
-    - type: Magboots
-      toggleActionEntity: 1574
     - type: Physics
       canCollide: False
     - type: ContainerContainer
@@ -15279,38 +15187,18 @@ entities:
       rot: 3.141592653589793 rad
       pos: 1.5,-42.5
       parent: 1
-- proto: ComputerShipyard
+- proto: ComputerShipyardCrescent
   entities:
   - uid: 1789
     components:
     - type: Transform
       pos: -10.5,-61.5
       parent: 1
-    - type: ContainerContainer
-      containers:
-        ShipyardConsole-targetId: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
   - uid: 4595
     components:
     - type: Transform
       pos: 3.5,-30.5
       parent: 1
-    - type: ContainerContainer
-      containers:
-        ShipyardConsole-targetId: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
 - proto: ComputerShipyardScrap
   entities:
   - uid: 4594
@@ -15318,16 +15206,6 @@ entities:
     - type: Transform
       pos: -2.5,-30.5
       parent: 1
-    - type: ContainerContainer
-      containers:
-        ShipyardConsole-targetId: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
 - proto: ComputerTabletopAdvancedRadar
   entities:
   - uid: 996
@@ -15737,13 +15615,6 @@ entities:
     - type: DeviceLinkSink
       links:
       - 2671
-- proto: CorporateFabdiskHEV
-  entities:
-  - uid: 2629
-    components:
-    - type: Transform
-      pos: 17.315844,-64.370125
-      parent: 1
 - proto: CrateArtifactContainer
   entities:
   - uid: 2637
@@ -17149,9 +17020,13 @@ entities:
   - uid: 4391
     components:
     - type: Transform
+      anchored: False
       rot: -1.5707963267948966 rad
       pos: -21.5,-73.5
       parent: 1
+    - type: Physics
+      canCollide: True
+      bodyType: Dynamic
   - uid: 4392
     components:
     - type: Transform
@@ -17173,9 +17048,13 @@ entities:
   - uid: 4395
     components:
     - type: Transform
+      anchored: False
       rot: -1.5707963267948966 rad
       pos: -19.5,-71.5
       parent: 1
+    - type: Physics
+      canCollide: True
+      bodyType: Dynamic
   - uid: 4396
     components:
     - type: Transform
@@ -19991,61 +19870,45 @@ entities:
     - type: Transform
       pos: -9.5,-59.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 2780
     components:
     - type: Transform
       pos: 11.5,-59.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 2781
     components:
     - type: Transform
       pos: 12.5,-59.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 2782
     components:
     - type: Transform
       pos: 12.5,-63.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 2807
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 11.5,-58.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 2808
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -9.5,-58.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 2809
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 10.5,-0.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 2810
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 10.5,1.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
 - proto: HandheldGPSBasic
   entities:
   - uid: 1037
@@ -23054,13 +22917,6 @@ entities:
     - type: Transform
       pos: -1.5,-70.5
       parent: 1
-- proto: ResearchAndDevelopmentServerFamilies
-  entities:
-  - uid: 2382
-    components:
-    - type: Transform
-      pos: 6.5,-74.5
-      parent: 1
 - proto: RollerBed
   entities:
   - uid: 2507
@@ -23832,7 +23688,7 @@ entities:
     - type: Transform
       pos: -2.5,-80.5
       parent: 1
-- proto: soda_dispenser
+- proto: SodaDispenser
   entities:
   - uid: 1011
     components:
@@ -23878,6 +23734,32 @@ entities:
     components:
     - type: Transform
       pos: 0.5,-40.5
+      parent: 1
+- proto: SpawnPointLatejoin
+  entities:
+  - uid: 1035
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -6.5,-60.5
+      parent: 1
+  - uid: 1328
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -6.5,-61.5
+      parent: 1
+  - uid: 1335
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -6.5,-59.5
+      parent: 1
+  - uid: 1474
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -6.5,-58.5
       parent: 1
 - proto: SpawnPointProphetTAP
   entities:
@@ -24082,23 +23964,6 @@ entities:
     - type: Transform
       pos: 7.5,-0.5
       parent: 1
-- proto: StationAdminBankATM
-  entities:
-  - uid: 4592
-    components:
-    - type: Transform
-      pos: 0.5,1.5
-      parent: 1
-    - type: ContainerContainer
-      containers:
-        station-bank-ATM-cashSlot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
 - proto: SteelBench
   entities:
   - uid: 1525
@@ -24225,7 +24090,6 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 1035
           - 1036
           - 1037
           - 1038
@@ -24259,7 +24123,6 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 1328
           - 1329
           - 1330
           - 1331
@@ -24294,7 +24157,6 @@ entities:
           occludes: True
           ents:
           - 1334
-          - 1335
           - 1336
           - 1337
           - 1338
@@ -24330,7 +24192,6 @@ entities:
           - 1470
           - 1471
           - 1472
-          - 1474
           - 1475
           - 1476
   - uid: 1559
@@ -24364,7 +24225,6 @@ entities:
           ents:
           - 1560
           - 1561
-          - 1562
           - 1563
           - 1564
           - 1566
@@ -24400,7 +24260,6 @@ entities:
           - 1568
           - 1569
           - 1570
-          - 1571
           - 1572
           - 1573
   - uid: 1981
@@ -25059,273 +24918,201 @@ entities:
     - type: Transform
       pos: -4.5,4.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 94
     components:
     - type: Transform
       pos: -5.5,4.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 95
     components:
     - type: Transform
       pos: -3.5,4.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 98
     components:
     - type: Transform
       pos: -7.5,3.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 122
     components:
     - type: Transform
       pos: 4.5,4.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 123
     components:
     - type: Transform
       pos: 5.5,4.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 124
     components:
     - type: Transform
       pos: 8.5,3.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 125
     components:
     - type: Transform
       pos: 6.5,4.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 126
     components:
     - type: Transform
       pos: 9.5,3.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 736
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -13.5,-58.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 808
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -13.5,-57.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 809
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -13.5,-56.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 810
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -13.5,-55.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 812
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 14.5,-55.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 813
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 14.5,-56.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 814
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 14.5,-57.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 815
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 14.5,-58.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 1061
-    components:
-    - type: Transform
-      pos: -8.5,3.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 2459
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -18.5,-70.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 2468
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -17.5,-70.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 2469
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -11.5,-72.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 2470
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -10.5,-72.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 2471
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -9.5,-72.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 2472
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 17.5,-70.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 2473
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -6.5,-84.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 2474
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 7.5,-84.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 2481
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 10.5,-72.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 2482
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 11.5,-72.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 2483
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 12.5,-72.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 2484
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 18.5,-70.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 2485
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -13.5,-59.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 2486
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 14.5,-59.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-- proto: ThrusterUnwelded
-  entities:
   - uid: 449
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -0.5,-87.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
+  - uid: 736
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -13.5,-58.5
+      parent: 1
   - uid: 764
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 0.5,-87.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 765
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 1.5,-87.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
+  - uid: 808
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -13.5,-57.5
+      parent: 1
+  - uid: 809
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -13.5,-56.5
+      parent: 1
+  - uid: 810
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -13.5,-55.5
+      parent: 1
+  - uid: 812
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 14.5,-55.5
+      parent: 1
+  - uid: 813
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 14.5,-56.5
+      parent: 1
+  - uid: 814
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 14.5,-57.5
+      parent: 1
+  - uid: 815
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 14.5,-58.5
+      parent: 1
+  - uid: 1061
+    components:
+    - type: Transform
+      pos: -8.5,3.5
+      parent: 1
+  - uid: 2459
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -18.5,-70.5
+      parent: 1
+  - uid: 2468
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -17.5,-70.5
+      parent: 1
+  - uid: 2469
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -11.5,-72.5
+      parent: 1
+  - uid: 2470
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -10.5,-72.5
+      parent: 1
+  - uid: 2471
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -9.5,-72.5
+      parent: 1
+  - uid: 2472
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 17.5,-70.5
+      parent: 1
+  - uid: 2473
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -6.5,-84.5
+      parent: 1
+  - uid: 2474
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 7.5,-84.5
+      parent: 1
+  - uid: 2481
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 10.5,-72.5
+      parent: 1
+  - uid: 2482
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 11.5,-72.5
+      parent: 1
+  - uid: 2483
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 12.5,-72.5
+      parent: 1
+  - uid: 2484
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 18.5,-70.5
+      parent: 1
+  - uid: 2485
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -13.5,-59.5
+      parent: 1
+  - uid: 2486
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 14.5,-59.5
+      parent: 1
 - proto: ThukkerMothershipComputer
   entities:
   - uid: 4705
@@ -25334,16 +25121,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -6.5,-48.5
       parent: 1
-    - type: ContainerContainer
-      containers:
-        ShipyardConsole-targetId: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
 - proto: ToiletDirtyWater
   entities:
   - uid: 1614
@@ -30456,50 +30233,6 @@ entities:
     components:
     - type: Transform
       parent: 2037
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: WeaponGrapplingGun
-  entities:
-  - uid: 1035
-    components:
-    - type: Transform
-      parent: 1034
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 1328
-    components:
-    - type: Transform
-      parent: 1327
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 1335
-    components:
-    - type: Transform
-      parent: 1333
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 1474
-    components:
-    - type: Transform
-      parent: 1469
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 1562
-    components:
-    - type: Transform
-      parent: 1559
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 1571
-    components:
-    - type: Transform
-      parent: 1567
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
