@@ -170,10 +170,10 @@ public sealed class DumpableSystem : EntitySystem
             }
         }
         // Begin DeltaV - ough why do you not use events for this
-        else if (TryComp<SmartFridgeComponent>(target, out var fridge))
+        else if (TryComp<SmartFridgeComponent>(args.Args.Target, out var fridge)) // EE
         {
             dumped = true;
-            // Frontier: 
+            // Frontier:
             // if (_container.TryGetContainer(target!.Value, fridge.Container, out var container))
             // {
             //     foreach (var entity in dumpQueue)
@@ -183,7 +183,7 @@ public sealed class DumpableSystem : EntitySystem
             // }
             foreach (var entity in dumpQueue)
             {
-                _smartFridge.TryInsertObject((target!.Value, fridge), entity, user); // Frontier
+                _smartFridge.TryInsertObject((args.Args.Target.Value, fridge), entity, args.Args.User); // Frontier & EE
             }
             // End Frontier
         }
