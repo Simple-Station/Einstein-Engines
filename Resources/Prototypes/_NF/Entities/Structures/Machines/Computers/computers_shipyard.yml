@@ -78,7 +78,16 @@
   - type: Speech
     speechVerb: Robotic
     speechSounds: Pai
-
+  - type: ShipyardListing
+    shuttles:
+    - gazpachov
+    - Exhumer
+    - Homesteader
+    - Kite
+    - Mercury
+    - Paracelsus
+    - Qian
+    - Termite
 # Hardcoded consoles
 - type: entity
   id: ComputerShipyardSecurity
@@ -151,3 +160,10 @@
       state: shipyard_blackmarket
     - map: ["computerLayerKeys"]
       state: blackmarket_key
+  - type: ShipyardListing
+    shuttles:
+    - Anthead
+    - Cockroach
+    - Termite
+    - KiteScrap
+    - Warthog
