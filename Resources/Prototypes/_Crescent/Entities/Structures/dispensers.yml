@@ -68,6 +68,9 @@
   name: deed console
   description: A machine that reads cargo deeds and dispenses money accordingly.
   components:
+  - type: Anchorable
+    flags:
+    - None
   - type: Dispenser
     defaultItem: TradeDeedStub
     inventory:
@@ -91,6 +94,9 @@
   name: balreskan cargo turn-in chute
   description: A machine with piping systems that lead into the bowels of the station, accepting export goods for trade deeds. The electronic display informs that the NCWL are in need of antibiotics.
   components:
+  - type: Anchorable
+    flags:
+    - None
   - type: Dispenser
     defaultItem: TradeDeedStub
     inventory:
@@ -124,6 +130,9 @@
   name: syndicate cargo turn-in chute
   description: A machine with piping systems that lead into the bowels of the station, accepting export goods for trade deeds. The electronic display informs that the NCSP are in need of food.
   components:
+  - type: Anchorable
+    flags:
+    - None
   - type: Dispenser
     defaultItem: TradeDeedStub
     inventory:
@@ -194,6 +203,9 @@
   name: hunter's bounty
   description: A near-derelict machine that accepts ID cards for cold, hard credits.
   components:
+  - type: Anchorable
+    flags:
+    - None
   - type: Dispenser
     defaultItem: HuntersPermit
     inventory:
@@ -246,6 +258,9 @@
     snap:
     - Wallmount
   components:
+  - type: Anchorable
+    flags:
+    - None
   - type: WallMount
     arc: 175
   - type: Dispenser
@@ -327,6 +342,9 @@
   name: cargo turn-in chute
   description: A machine with piping systems that lead deep into the bowels of the station, accepting trade goods for deeds.
   components:
+  - type: Anchorable
+    flags:
+    - None
   - type: Dispenser
     defaultItem: TradeDeedStub
     inventory:
@@ -361,6 +379,9 @@
   name: hayes cargo turn-in chute
   description: A machine with piping systems that lead deep into the bowels of the station, accepting trade goods for deeds.
   components:
+  - type: Anchorable
+    flags:
+    - None
   - type: Dispenser
     defaultItem: TradeDeedStub
     inventory:
@@ -394,6 +415,9 @@
   name: dochenskaya cargo turn-in chute
   description: A machine with piping systems that lead deep into the bowels of the station, accepting trade goods for deeds.
   components:
+  - type: Anchorable
+    flags:
+    - None
   - type: Dispenser
     defaultItem: TradeDeedStub
     inventory:
@@ -427,6 +451,9 @@
   name: tatsumoto cargo turn-in chute
   description: A machine with piping systems that lead deep into the bowels of the station, accepting trade goods for deeds.
   components:
+  - type: Anchorable
+    flags:
+    - None
   - type: Dispenser
     defaultItem: TradeDeedStub
     inventory:
@@ -458,6 +485,9 @@
   name: outpost cargo turn-in chute
   description: A machine with piping systems that lead deep into the bowels of the colony, accepting trade goods for deeds.
   components:
+  - type: Anchorable
+    flags:
+    - None
   - type: Dispenser
     defaultItem: TradeDeedStub
     inventory:
@@ -477,6 +507,9 @@
   name: interdyne exotic bioprocessor
   description: A machine that mulches scrap muscle and protein into usable exotic particles.
   components:
+  - type: Anchorable
+    flags:
+    - None
   - type: Dispenser
     defaultItem: OrganStub
     inventory:
@@ -551,6 +584,9 @@
   name: sektorpol commissary
   description: A vendor that uses requisition slips to vend security gear.
   components:
+  - type: Anchorable
+    flags:
+    - None
   - type: Sprite
     sprite: _Crescent/Structures/commissary.rsi
     layers:
@@ -579,6 +615,9 @@
   name: department pass vendor
   description: Dispenses laborer ID cards for recruitment.
   components:
+  - type: Anchorable
+    flags:
+    - None
   - type: Dispenser
     defaultItem: DSMIDCardFreeholder
   - type: Sprite
@@ -596,6 +635,9 @@
   name: department pass vendor
   description: Dispenses magnate ID cards for recruitment.
   components:
+  - type: Anchorable
+    flags:
+    - None
   - type: Dispenser
     defaultItem: DeparmentPassMagnate
   - type: Sprite

@@ -7,7 +7,7 @@
     - !type:CharacterWhitelistRequirement
     - !type:FactionRequirement
       factionID: "TAP"
-    - !type:SpeciesRequirement
+    - !type:CharacterSpeciesRequirement
       species:
         - Moth
   weight: 55
