@@ -823,13 +823,15 @@ public sealed class HolopadSystem : SharedHolopadSystem
     #region Extensions
     private void OnHolopadMapInit(Entity<HolopadComponent> entity, ref MapInitEvent args)
     {
-        bool renameFromShipname = _entManager.HasComponent<ShipRenameHolopadComponent>(entity.Owner);
 
+        bool renameFromShipname = false;
         EntityUid? gridUid = null;
         if (_entManager.TryGetComponent<TransformComponent>(entity.Owner, out var transform))
         {
             gridUid = transform.GridUid;
+            renameFromShipname = _entManager.HasComponent<ShipRenameHolopadComponent>(gridUid);
         }
+       
 
         if (entity.Comp.UseStationName || renameFromShipname)
             _renameHolopads.SyncHolopad(entity, forceit: renameFromShipname);
