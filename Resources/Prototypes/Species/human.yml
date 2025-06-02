@@ -55,12 +55,6 @@
     Snout:
       points: 1
       required: false
-    Tail:
-      points: 1
-      required: false
-    HeadTop:
-      points: 1
-      required: false
     HeadSide:
       points: 4
       required: false
