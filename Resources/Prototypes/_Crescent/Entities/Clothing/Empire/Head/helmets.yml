@@ -5,6 +5,7 @@
   name: imperial worker's hardsuit helmet
   description: A miner's hardsuit helmet with internal pressurization systems and a scanning hud for nearby ore and minerals.
   components:
+  - type: BreathMask
   - type: Sprite
     sprite: _Crescent/Clothing/Empire/Head/mandateworker.rsi
   - type: Clothing
@@ -34,6 +35,7 @@
   name: imperial combat hardsuit helmet
   description: A combatant helmet with internal pressurization systems and a scanning hud for nearby targets and ballistics data.
   components:
+  - type: BreathMask
   - type: Sprite
     sprite: _Crescent/Clothing/Empire/Head/inspector.rsi
   - type: Clothing
@@ -62,6 +64,7 @@
   name: clarizian technician's hardsuit helmet
   description: A miner's hardsuit helmet with internal pressurization systems and a scanning hud for nearby ore and minerals.
   components:
+  - type: BreathMask
   - type: Sprite
     sprite: _Crescent/Clothing/Empire/Head/clarizianworker.rsi
   - type: Clothing
@@ -91,6 +94,7 @@
   name: royal trooper's hardsuit helmet
   description: A hardsuit helmet for one of the Queensguard.
   components:
+  - type: BreathMask
   - type: Sprite
     sprite: _Crescent/Clothing/Empire/Head/clarizian.rsi
   - type: Clothing
@@ -119,6 +123,7 @@
   name: imperial command hardsuit helmet
   description: An Imperial hardsuit helmet with internal pressurization systems and sturdy armor plating.
   components:
+  - type: BreathMask
   - type: Sprite
     sprite: _Crescent/Clothing/Empire/Head/mandatecommand.rsi
   - type: Clothing
@@ -139,6 +144,11 @@
         Heat: 0.9
         Radiation: 0.9
         Caustic: 0.9
+  - type: TinfoilHat
+    passthrough: true
+    destroyOnFry: false
+  - type: GuideHelp
+    guides: [ PsionicInsulation ]
 
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
@@ -147,6 +157,7 @@
   name: imperial soldier's hardsuit helmet
   description: A combat hardsuit helmet with internal pressurization systems and an inbuilt tracker system for ballistics.
   components:
+  - type: BreathMask
   - type: Sprite
     sprite: _Crescent/Clothing/Empire/Head/mandatesoldier.rsi
   - type: Clothing

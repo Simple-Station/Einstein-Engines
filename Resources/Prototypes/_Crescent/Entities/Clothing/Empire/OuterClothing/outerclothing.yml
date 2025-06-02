@@ -142,19 +142,19 @@
   - type: ExplosionResistance
     damageCoefficient: 0.6
   - type: DegradeableArmor
-    armorMaxHealth: 1000
+    armorMaxHealth: 900
     armorType: Metallic
     armorRepair: PlasteelPlate
     initialModifiers:
       flatReductions:
-        Blunt: 20
-        Slash: 20
-        Piercing: 35
-        Heat: 20
+        Blunt: 25
+        Slash: 25
+        Piercing: 45
+        Heat: 30
         Caustic: 25
   - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.95
+    walkModifier: 1
+    sprintModifier: 1
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitClarize
   - type: StaticPrice
@@ -181,14 +181,14 @@
     armorRepair: PlasteelPlate
     initialModifiers:
       flatReductions:
-        Blunt: 20
-        Slash: 20
+        Blunt: 35
+        Slash: 35
         Piercing: 45
-        Heat: 15
+        Heat: 20
         Caustic: 25
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 1
+    sprintModifier: 1
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitImperialCommand
   - type: StaticPrice
