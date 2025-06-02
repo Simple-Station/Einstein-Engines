@@ -5,7 +5,7 @@
   playTimeTracker: JobLeutnantATH
   requirements:
     - !type:CharacterWhitelistRequirement
-    - !type:SpeciesRequirement
+    - !type:CharacterSpeciesRequirement
       species:
         - Human
         - Reptilian

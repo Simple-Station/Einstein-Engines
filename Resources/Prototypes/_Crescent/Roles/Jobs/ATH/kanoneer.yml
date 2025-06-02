@@ -4,7 +4,7 @@
   description: job-description-kanoneer
   playTimeTracker: JobKanoneerATH
   requirements:
-    - !type:SpeciesRequirement
+    - !type:CharacterSpeciesRequirement
       species:
         - Human
         - Reptilian
