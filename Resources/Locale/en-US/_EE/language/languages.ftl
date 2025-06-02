@@ -18,6 +18,6 @@ language-Delvahii-name = Delvahii
 language-Delvahii-description =
     A Zhan-Khazan language tied to Ma'take worship, still used in religious rites and favored by farmers resisting government control.
 
-language-Blackburn-name = Blackburnian French
-language-Blackburn-description =
+language-BlackburnFrench-name = Blackburnian French
+language-BlackburnFrench-description =
     A branching language of Québecois French.

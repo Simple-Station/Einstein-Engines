@@ -40,7 +40,7 @@
   - type: Flammable
     fireStackIncreaseMultiplier: 1.10 # you are like lighting the hair, ears, and tail(s) on fire, its not gonna enough
   - type: NightVision
-    color: "#58756d"
+    color: "#58756d" #they have blue eyes unless it is a starkovski, they see in red
     activateSound: null
     deactivateSound: null
   - type: Flashable
@@ -60,11 +60,11 @@
         - Landmine
   - type: LanguageKnowledge
     speaks:
-    - Sol
-    - Blackburn
+    - SolCommon
+    - BlackburnFrench
     understands:
-    - Blackburn
-    - Sol
+    - BlackburnFrench
+    - SolCommon
   - type: Tag
     tags:
     - CanPilot

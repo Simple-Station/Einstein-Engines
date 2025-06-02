@@ -1,9 +1,9 @@
 - type: language
-  id: Blackburn
+  id: BlackburnFrench
   isVisibleLanguage: true
   speech:
-#    color: "#47a18c"
-    fontId: ComforterBrush
+    color: "#47a18c"
+    fontId: Misto
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1

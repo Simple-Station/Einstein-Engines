@@ -91,14 +91,13 @@
   path: /Fonts/Rubik_Dirt/RubikDirt.ttf
 
 - type: font
-<<<<<<< HEAD
-  id: ComforterBrush
-  path: /Fonts/Comforter/ComforterBrush-Regular.ttf
-=======
   id: Megrim
   path: /Fonts/Megrim/Megrim.ttf
 
 - type: font
   id: YoureGone
   path: /Fonts/YoureGone.otf
->>>>>>> 589e2d63c133cd99b3882e600ae05198114cec99
+
+- type: font
+  id: Misto
+  path: /Fonts/Misto/Misto.otf

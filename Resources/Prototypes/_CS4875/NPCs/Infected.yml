@@ -1,0 +1,106 @@
+#the shitty way of making infected blackburns without them losing "sentience"
+
+- type: entity
+  name: Syndicate Guard
+  parent: MobBlackburn
+  id: MobInfectedBlackburn
+  description:
+  components:
+    - type: NpcFactionMember
+      factions:
+        - SimpleHostile
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Dead
+    - type: MindContainer
+      showExamineInfo: False
+#    - type: Loadout
+#      prototypes:
+#        - RadioGuardGear #dd
+    - type: InputMover
+    - type: MobMover
+    - type: HTN
+      rootTask:
+        task: SimpleHumanoidHostileCompound
+    - type: Respirator #Zombication covers asphyxiation
+      damage:
+        types:
+          Asphyxiation: 0
+      damageRecovery:
+        types:
+          Asphyxiation: -1.0
+    - type: Sprite
+      layers:
+      - map: [ "enum.HumanoidVisualLayers.Chest" ]
+      - map: [ "enum.HumanoidVisualLayers.Head" ]
+      - map: [ "enum.HumanoidVisualLayers.Snout" ]
+      - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+      - map: [ "enum.HumanoidVisualLayers.RArm" ]
+      - map: [ "enum.HumanoidVisualLayers.LArm" ]
+      - map: [ "enum.HumanoidVisualLayers.RLeg" ]
+      - map: [ "enum.HumanoidVisualLayers.LLeg" ]
+#     - shader: StencilClear
+#      sprite: Mobs/Species/Human/parts.rsi
+#      state: l_leg
+      - shader: StencilMask
+        map: ["enum.HumanoidVisualLayers.StencilMask"]
+        sprite: Mobs/Customization/masking_helpers.rsi
+        state: unisex_full
+        visible: false
+      - map: ["jumpsuit"]
+      - map: ["enum.HumanoidVisualLayers.LFoot"]
+      - map: ["enum.HumanoidVisualLayers.RFoot"]
+      - map: ["enum.HumanoidVisualLayers.LHand"]
+      - map: ["enum.HumanoidVisualLayers.RHand"]
+      - map: [ "gloves" ]
+      - map: [ "shoes" ]
+      - map: [ "ears" ]
+      - map: [ "eyes" ]
+      - map: [ "belt" ]
+      - map: [ "id" ]
+      - map: [ "neck" ]
+      - map: [ "back" ]
+      - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
+      - map: [ "enum.HumanoidVisualLayers.Hair" ]
+      - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
+      - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
+      - map: [ "enum.HumanoidVisualLayers.Tail" ]
+      - map: [ "mask" ]
+      - map: [ "head" ]
+      - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+        color: "#ffffff"
+        sprite: Objects/Misc/handcuffs.rsi
+        state: body-overlay-2
+        visible: false
+      - map: [ "clownedon" ] # Dynamically generated
+        sprite: "Effects/creampie.rsi"
+        state: "creampie_human"
+        visible: false
+      - sprite: Objects/Weapons/Melee/spear.rsi
+        state: wielded-inhand-right
+      - type: MeleeWeapon
+        wideAnimationRotation: -135
+        range: 1.75
+        damage:
+          types:
+            Piercing: 10
+            Slash: 5
+        heavyRateModifier: 1.3
+        heavyRangeModifier: 1.25
+        heavyDamageBaseModifier: 1.0
+        heavyStaminaCost: 5
+        maxTargets: 3
+        angle: 20
+        animation: WeaponArcThrust
+        soundHit:
+          path: /Audio/Weapons/bladeslice.ogg
+      - type: SolutionContainerManager
+        solutions:
+          melee:
+            reagents:
+            - ReagentId: Romerol
+              Quantity: 100
+      - type: MeleeChemicalInjector
+        solution: melee
+        transferAmount: 10
