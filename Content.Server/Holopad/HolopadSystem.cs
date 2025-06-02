@@ -20,7 +20,8 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Chat;
-using Content.Server._NF.Station.Systems; // Frontier
+using Content.Server._NF.Station.Systems;
+using Content.Server._Crescent.Holopad; // Frontier
 
 
 namespace Content.Server.Holopad;
@@ -39,6 +40,8 @@ public sealed class HolopadSystem : SharedHolopadSystem
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly StationRenameHolopadsSystem _renameHolopads = default!; // Frontier
+    [Dependency] private readonly IEntityManager _entManager = default!;
+
 
     private float _updateTimer = 1.0f;
 
@@ -816,13 +819,21 @@ public sealed class HolopadSystem : SharedHolopadSystem
             _ambientSoundSystem.SetAmbience(entity, isEnabled, ambientSound);
     }
 
-    // Frontier
-    # region Frontier Extensions
+    // Le... HullRotte Update!
+    #region Extensions
     private void OnHolopadMapInit(Entity<HolopadComponent> entity, ref MapInitEvent args)
     {
-        if (entity.Comp.UseStationName)
-            _renameHolopads.SyncHolopad(entity);
+        bool renameFromShipname = _entManager.HasComponent<ShipRenameHolopadComponent>(entity.Owner);
+
+        EntityUid? gridUid = null;
+        if (_entManager.TryGetComponent<TransformComponent>(entity.Owner, out var transform))
+        {
+            gridUid = transform.GridUid;
+        }
+
+        if (entity.Comp.UseStationName || renameFromShipname)
+            _renameHolopads.SyncHolopad(entity, forceit: renameFromShipname);
     }
     # endregion
-    // End Frontier
+    // Le... HullRotte Update!
 }
