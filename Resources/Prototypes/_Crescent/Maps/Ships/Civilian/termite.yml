@@ -30,3 +30,4 @@
           overflowJobs: []
           availableJobs:
             Contractor: [ 1, 1 ]
+        - type: ShipRenameHolopad
