@@ -25,7 +25,7 @@ entities:
     - type: MetaData
       name: grid
     - type: Transform
-      pos: -0.5074323,-0.6114966
+      pos: -0.50743246,-0.13328266
       parent: invalid
     - type: MapGrid
       chunks:
@@ -2436,16 +2436,12 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -6.5,2.5
       parent: 1
-    - type: Physics
-      bodyType: Static
   - uid: 1075
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -5.5,1.5
       parent: 1
-    - type: Physics
-      bodyType: Static
 - proto: BenchSteelRight
   entities:
   - uid: 1076
@@ -2454,16 +2450,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -5.5,2.5
       parent: 1
-    - type: Physics
-      bodyType: Static
   - uid: 1077
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -6.5,1.5
       parent: 1
-    - type: Physics
-      bodyType: Static
 - proto: BlastDoorOpen
   entities:
   - uid: 1693
@@ -7118,23 +7110,11 @@ entities:
     - type: Transform
       pos: -2.5,20.5
       parent: 1
-    - type: ContainerContainer
-      containers:
-        machine_board: !type:Container
-          ents: []
-        machine_parts: !type:Container
-          ents: []
   - uid: 1043
     components:
     - type: Transform
       pos: -2.5,19.5
       parent: 1
-    - type: ContainerContainer
-      containers:
-        machine_board: !type:Container
-          ents: []
-        machine_parts: !type:Container
-          ents: []
 - proto: Catwalk
   entities:
   - uid: 28
@@ -8325,7 +8305,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 1.5,10.5
       parent: 1
-- proto: ComputerShipyard
+- proto: ComputerShipyardCrescent
   entities:
   - uid: 14
     components:
@@ -8333,16 +8313,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -3.5,17.5
       parent: 1
-    - type: ContainerContainer
-      containers:
-        ShipyardConsole-targetId: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
 - proto: ComputerShipyardScrap
   entities:
   - uid: 1061
@@ -8350,16 +8320,6 @@ entities:
     - type: Transform
       pos: -7.5,21.5
       parent: 1
-    - type: ContainerContainer
-      containers:
-        ShipyardConsole-targetId: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
 - proto: ComputerSolarControl
   entities:
   - uid: 1082
@@ -8467,15 +8427,15 @@ entities:
     - type: TargetingConsole
       cannonGroups:
         all:
-        - 956
-        - 954
-        - 721
         - 717
-        light 'Lancer' swarmrocket platform:
-        - 956
-        - 954
         - 721
+        - 954
+        - 956
+        light 'Lancer' MRM missile system:
         - 717
+        - 721
+        - 954
+        - 956
 - proto: ComputerWallmountBankATM
   entities:
   - uid: 1039
@@ -8966,6 +8926,9 @@ entities:
       deviceLists:
       - 2404
       - 2406
+    - type: Door
+      secondsUntilStateChange: -7.9666834
+      state: Closing
   - uid: 573
     components:
     - type: Transform
@@ -12835,20 +12798,6 @@ entities:
     - type: Transform
       pos: -8.5,2.5
       parent: 1
-- proto: SignShield
-  entities:
-  - uid: 2421
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -3.5,3.5
-      parent: 1
-  - uid: 2422
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -3.5,0.5
-      parent: 1
 - proto: SignShipDock
   entities:
   - uid: 2425
@@ -12898,7 +12847,7 @@ entities:
     - type: Transform
       pos: 3.5,12.5
       parent: 1
-- proto: soda_dispenser
+- proto: SodaDispenser
   entities:
   - uid: 1036
     components:
@@ -13631,6 +13580,12 @@ entities:
       parent: 1
 - proto: SpawnPointLatejoin
   entities:
+  - uid: 860
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -5.5,10.5
+      parent: 1
   - uid: 2315
     components:
     - type: Transform

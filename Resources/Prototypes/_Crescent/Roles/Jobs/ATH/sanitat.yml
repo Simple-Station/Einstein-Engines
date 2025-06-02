@@ -4,7 +4,7 @@
   description: job-description-sanitat
   playTimeTracker: JobSanitatATH
   requirements:
-    - !type:SpeciesRequirement
+    - !type:CharacterSpeciesRequirement
       species:
         - Human
         - Reptilian
