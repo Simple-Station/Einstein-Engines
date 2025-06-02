@@ -99,6 +99,38 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCorpsec
 
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitHighsecUA
+  name: shinohara united arsenal SVBT-2 combat hardsuit
+  description: A modular combat hardsuit developed by Shinohara Heavy Industries. Sold to elite mercs and corporate deathsquads everywhere. Customized by the subsidiary group United Arsenal.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/OuterClothing/corpsec_ua.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/OuterClothing/corpsec_ua.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: DegradeableArmor
+    armorMaxHealth: 900
+    armorType: Ceramic
+    armorRepair: NTCeramic
+    initialModifiers:
+      flatReductions:
+        Blunt: 25
+        Slash: 35
+        Piercing: 80
+        Heat: 15
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 0.7
+    sprintModifier: 0.7
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitCorpsecUA
+
 #armor
 
 - type: entity
@@ -139,6 +171,34 @@
     sprite: _Crescent/Clothing/SHI/OuterClothing/highsec.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/SHI/OuterClothing/highsec.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 1000
+    armorType: Metallic
+    armorRepair: NTPolymer
+    initialModifiers:
+      flatReductions:
+        Blunt: 35
+        Slash: 35
+        Piercing: 55
+        Heat: 35
+        Caustic: 35
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.80
+  - type: GroupExamine
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorShinoharaArmorHighsecUA
+  name: SHI-UA BULWARK-2 ballistic hauberk
+  description: A kevlar-intervowen durathread hauberk padded with ballistic gel, plated with NanoTrasen Ballistic Carapace (tm) on the outside. A wet dream for any corporate goon. Customized by the subsidiary group United Arsenal.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/OuterClothing/highsec_ua.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/OuterClothing/highsec_ua.rsi
   - type: DegradeableArmor
     armorMaxHealth: 1000
     armorType: Metallic
