@@ -155,7 +155,7 @@
   - MontagneSRM
   - OverseerSRM
   enabled: false
-  editorHidden: true
+  editorHidden: false # i just like to see them for the numbers , SPCR 2025
 
 - type: department
   id: SHI
@@ -215,4 +215,4 @@
   - SoldatATH
   - SanitatATH
   enabled: true
-  editorHidden: true
+  editorHidden: false # i just like to see them for the numbers , SPCR 2025
