@@ -194,9 +194,11 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
 
     public bool IsAllowed(ICommonSession player, string role)
     {
-        if (!_prototypes.TryIndex<JobPrototype>(role, out var job) ||
-            job.Requirements == null ||
-            !_cfg.GetCVar(CCVars.GameRoleTimers))
+        if (!_prototypes.TryIndex<JobPrototype>(role, out var job) || !_cfg.GetCVar(CCVars.GameRoleTimers))
+            return true;
+
+        var requirements = _roles.GetJobRequirement(job);
+        if (requirements == null)
             return true;
 
         if (!_tracking.TryGetTrackerTimes(player, out var playTimes))
@@ -208,7 +210,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
         var isWhitelisted = player.ContentData()?.Whitelisted ?? false; // DeltaV - Whitelist requirement
 
         return _characterRequirements.CheckRequirementsValid(
-            job.Requirements,
+            requirements,
             job,
             (HumanoidCharacterProfile) _prefs.GetPreferences(player.UserId).SelectedCharacter,
             playTimes,
@@ -236,9 +238,10 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
 
         foreach (var job in _prototypes.EnumeratePrototypes<JobPrototype>())
         {
-            if (job.Requirements == null
+            var requirements = _roles.GetJobRequirement(job);
+            if (requirements == null
                 || _characterRequirements.CheckRequirementsValid(
-                job.Requirements,
+                requirements,
                 job,
                 (HumanoidCharacterProfile) _prefs.GetPreferences(player.UserId).SelectedCharacter,
                 playTimes,
@@ -275,11 +278,14 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
         {
             var job = jobs[i];
 
-            if (!_prototypes.TryIndex(job, out var jobber) ||
-                jobber.Requirements == null ||
-                jobber.Requirements.Count == 0 ||
+            if (!_prototypes.TryIndex(job, out var jobber))
+                continue;
+
+            var requirements = _roles.GetJobRequirement(jobber);
+            if (requirements == null ||
+                requirements.Count == 0 ||
                 _characterRequirements.CheckRequirementsValid(
-                jobber.Requirements,
+                requirements,
                 jobber,
                 (HumanoidCharacterProfile) _prefs.GetPreferences(userId).SelectedCharacter,
                 _tracking.GetPlayTimes(_playerManager.GetSessionById(userId)),
