@@ -13,7 +13,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
         - Blindness
         - WheelchairBound
   weight: 50
