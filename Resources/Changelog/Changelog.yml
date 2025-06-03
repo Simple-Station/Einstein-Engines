@@ -16353,3 +16353,10 @@ Entries:
   id: 7273
   time: '2025-06-01T02:08:30.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2473
+- author: CodedCrow
+  changes:
+    - type: Tweak
+      message: Tweaked Arachne plush description
+  id: 7274
+  time: '2025-06-03T21:18:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2478
