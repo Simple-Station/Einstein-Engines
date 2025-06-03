@@ -1,0 +1,69 @@
+- type: entity
+  parent: [ClothingBeltBase, ClothingSlotBase]
+  id: ClothingBeltSheathDSMSabre
+  name: sabre scabbard
+  description: A scabbard meant to hold a noble's sabre.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Belt/sabre_sheath.rsi
+    state: sheath
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Belt/sabre_sheath.rsi
+  - type: Item
+    size: Ginormous
+  - type: ItemSlots
+    slots:
+      item:
+        name: DSMSabre
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+        whitelist:
+          tags:
+          - DSMSabre
+  - type: ItemMapper
+    mapLayers:
+      sheath-sabre:
+        whitelist:
+          tags:
+          - DSMSabre
+  - type: Appearance
+
+- type: Tag
+  id: DSMSabre
+
+- type: entity
+  parent: [ClothingBeltBase, ClothingSlotBase]
+  id: ClothingBeltSheathRapier
+  name: rapier scabbard
+  description: A scabbard meant to hold a noble's rapier.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Belt/rapier_sheath.rsi
+    state: sheath
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Belt/rapier_sheath.rsi
+  - type: Item
+    size: Ginormous
+  - type: ItemSlots
+    slots:
+      item:
+        name: DSMRapier
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+        whitelist:
+          tags:
+          - Rapier
+  - type: ItemMapper
+    mapLayers:
+      sheath-sabre:
+        whitelist:
+          tags:
+          - Rapier
+  - type: Appearance
+
+- type: Tag
+  id: Rapier

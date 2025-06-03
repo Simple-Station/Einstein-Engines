@@ -277,13 +277,3 @@
   - sprite: _EE/Mobs/Customization/Tajaran/felinid_ears.rsi
     state: torn_inner
 
-- type: marking
-  id: TajaranEarsWide
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Tajaran]
-  sprites:
-  - sprite: _EE/Mobs/Customization/Tajaran/felinid_ears.rsi
-    state: wide_outer
-  - sprite: _EE/Mobs/Customization/Tajaran/felinid_ears.rsi
-    state: wide_inner
