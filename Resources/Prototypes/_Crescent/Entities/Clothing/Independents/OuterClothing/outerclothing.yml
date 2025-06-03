@@ -12,7 +12,7 @@
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.6
+    damageCoefficient: 0.9
   - type: DegradeableArmor
     armorMaxHealth: 400
     armorType: Metallic
