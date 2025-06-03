@@ -93,10 +93,6 @@
     BloodeyeAutoinjector: 150
     CrashAutoinjector: 150
     HoloparasiteInjector: 100
-    ArmorPlateNanoCeramic: 100
-    ArmorPlateSteel: 100
-    ArmorPlatePlasteel: 100
-    MetalFoamGrenadeFast: 150
 
 - type: vendingMachineInventory
   id: NCWLWarInventory
@@ -183,8 +179,6 @@
     MechaniteAutoinjector: 150
     BloodeyeAutoinjector: 150
     CrashAutoinjector: 150
-    ArmorPlateHomeland: 100
-    MetalFoamGrenadeFast: 150
 
 - type: vendingMachineInventory
   id: ImperialWarInventory
@@ -273,8 +267,6 @@
     BloodeyeAutoinjector: 150
     CrashAutoinjector: 150
     NarcanAutoinjector: 150
-    ArmorPlatePlasteel: 100
-    MetalFoamGrenadeFast: 150
 
 - type: vendingMachineInventory
   id: RomaineWarInventory
@@ -354,8 +346,6 @@
     MechaniteAutoinjector: 150
     BloodeyeAutoinjector: 150
     CrashAutoinjector: 150
-    ArmorPlateNanoCeramic: 100
-    MetalFoamGrenadeFast: 150
 
 - type: vendingMachineInventory
   id: PoliceWarInventory
@@ -450,9 +440,6 @@
     BloodeyeAutoinjector: 150
     CrashAutoinjector: 150
     NarcanAutoinjector: 150
-    ArmorPlatePlasteel: 100
-    ArmorPlateNanoPolymer: 100
-    MetalFoamGrenadeFast: 150
 
 - type: vendingMachineInventory
   id: ShinoharaWarInventory
@@ -508,7 +495,6 @@
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingBeltMinutemanPouches: 100
-    RomaineBible: 100
     ClothingMaskSyndicateFacemask: 100
     ClothingUniformJumpsuitShinoharaSecurity: 150
     ClothingHandsGlovesCombat: 100
@@ -532,8 +518,6 @@
     BloodeyeAutoinjector: 150
     CrashAutoinjector: 150
     NarcanAutoinjector: 150
-    ArmorPlateNanoCeramic: 100
-    MetalFoamGrenadeFast: 150
 
 - type: vendingMachineInventory
   id: PactWarInventory
@@ -624,8 +608,6 @@
     ExileAutoinjector: 150
     CrashAutoinjector: 150
     HoloparasiteInjector: 100
-    ArmorPlateSteel: 100
-    MetalFoamGrenadeFast: 150
 
 - type: vendingMachineInventory
   id: SolarianWarInventory
@@ -687,7 +669,6 @@
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingBeltAuthorityWebbing: 100
-    RomaineBible: 100
     ClothingNeckAuthorityStewardCape: 150
     ClothingMaskSyndicateFacemask: 100
     ClothingUniformJumpsuitAuthoritySoldat: 150
@@ -710,8 +691,6 @@
     MechaniteAutoinjector: 150
     BloodeyeAutoinjector: 150
     NarcanAutoinjector: 150
-    ArmorPlateNanoPolymer: 100
-    MetalFoamGrenadeFast: 150
 
 - type: vendingMachineInventory
   id: IndependentWarInventory
@@ -782,7 +761,6 @@
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingBeltMinutemanPouches: 100
-    RomaineBible: 100
     ClothingMaskSyndicateFacemask: 100
     ClothingUniformJumpsuitShinoharaSuit: 150
     ClothingHandsGlovesCombat: 100
@@ -807,8 +785,6 @@
     BloodeyeAutoinjector: 150
     CrashAutoinjector: 150
     NarcanAutoinjector: 150
-    ArmorPlateNanoCeramic: 100
-    MetalFoamGrenadeFast: 150
 
 - type: vendingMachineInventory
   id: ShipWarInventory
