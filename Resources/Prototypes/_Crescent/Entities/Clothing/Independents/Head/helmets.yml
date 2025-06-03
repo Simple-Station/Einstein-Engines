@@ -5,6 +5,7 @@
   name: spacionaut helmet
   description: Spaceworthy protection for your fragile skull. A Northrop-Martin design.
   components:
+  - type: BreathMask
   - type: Sprite
     sprite: _Crescent/Clothing/Independents/Head/spacionaut.rsi
   - type: Clothing
@@ -34,6 +35,7 @@
   name: fishbed helmet
   description: Spaceworthy protection for your fragile skull. A Northrop-Martin Suit design.
   components:
+  - type: BreathMask
   - type: Sprite
     sprite: _Crescent/Clothing/Independents/Head/fishbed.rsi
   - type: Clothing
@@ -63,6 +65,7 @@
   name: cenobite helmet
   description: Spaceworthy protection for your fragile skull. A Northrop-Martin design.
   components:
+  - type: BreathMask
   - type: Sprite
     sprite: _Crescent/Clothing/Independents/Head/cenobite.rsi
   - type: Clothing
