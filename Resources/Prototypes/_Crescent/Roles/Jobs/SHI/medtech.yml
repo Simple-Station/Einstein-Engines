@@ -6,6 +6,12 @@
   requirements:
     - !type:FactionRequirement
       factionID: "SHI"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - Blindness
+        - WheelchairBound
   weight: 25
   startingGear: MedtechGear
   alwaysUseSpawner: true

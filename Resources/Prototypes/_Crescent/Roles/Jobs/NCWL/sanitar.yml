@@ -8,6 +8,13 @@
       min: 1000
     - !type:FactionRequirement
       factionID: "NCWL"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - Muted
+        - Pacifist
+        - WheelchairBound
   weight: 20
   startingGear: SanitarGear
   alwaysUseSpawner: true

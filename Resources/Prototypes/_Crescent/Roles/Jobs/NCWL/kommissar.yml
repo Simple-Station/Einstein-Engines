@@ -7,6 +7,15 @@
     - !type:CharacterWhitelistRequirement
     - !type:FactionRequirement
       factionID: "NCWL"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
   weight: 55
   startingGear: KommissarGear
   alwaysUseSpawner: true
