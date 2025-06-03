@@ -18,15 +18,17 @@
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.9
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.9
-        Slash: 0.9
-        Piercing: 0.9
-        Heat: 0.9
-        Radiation: 0.9
-        Caustic: 0.9
+  - type: DegradeableArmor
+    armorMaxHealth: 1000
+    armorType: Metallic
+    armorRepair: SteelPlate
+    initialModifiers:
+    flatReductions:
+      Blunt: 5
+      Slash: 5
+      Piercing: 5
+      Heat: 5
+      Caustic: 5
 
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
@@ -48,15 +50,17 @@
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.9
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.9
-        Slash: 0.9
-        Piercing: 0.9
-        Heat: 0.9
-        Radiation: 0.9
-        Caustic: 0.9
+  - type: DegradeableArmor
+    armorMaxHealth: 1000
+    armorType: Metallic
+    armorRepair: SteelPlate
+    initialModifiers:
+    flatReductions:
+      Blunt: 5
+      Slash: 5
+      Piercing: 5
+      Heat: 5
+      Caustic: 5
 
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
@@ -78,15 +82,17 @@
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.9
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.9
-        Slash: 0.9
-        Piercing: 0.9
-        Heat: 0.9
-        Radiation: 0.9
-        Caustic: 0.9
+  - type: DegradeableArmor
+    armorMaxHealth: 1000
+    armorType: Metallic
+    armorRepair: SteelPlate
+    initialModifiers:
+    flatReductions:
+      Blunt: 5
+      Slash: 5
+      Piercing: 5
+      Heat: 5
+      Caustic: 5
 
 - type: entity # fishbed and cenobite variants
   parent: ClothingHeadHelmetHardsuitFishbed
