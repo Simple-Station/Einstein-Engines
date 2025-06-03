@@ -21,13 +21,13 @@
     armorRepair: SteelPlate
     initialModifiers:
       flatReductions:
-        Blunt: 15
-        Slash: 15
+        Blunt: 25
+        Slash: 25
         Piercing: 45
-        Heat: 15
+        Heat: 20
         Caustic: 25
   - type: ClothingSpeedModifier
-    walkModifier: 0.80
+    walkModifier: 0.85
     sprintModifier: 0.85
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitDraugr
@@ -61,7 +61,7 @@
         Heat: 55
         Caustic: 25
   - type: ClothingSpeedModifier
-    walkModifier: 0.80
+    walkModifier: 0.85
     sprintModifier: 0.85
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitArabet
@@ -95,8 +95,8 @@
         Heat: 10
         Caustic: 25
   - type: ClothingSpeedModifier
-    walkModifier: 0.80
-    sprintModifier: 0.85
+    walkModifier: 0.90
+    sprintModifier: 0.90
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitIzdari
   - type: StaticPrice
@@ -125,11 +125,11 @@
       flatReductions:
         Blunt: 10
         Slash: 10
-        Piercing: 10
+        Piercing: 20
         Heat: 10
         Caustic: 25
   - type: ClothingSpeedModifier
-    walkModifier: 0.80
+    walkModifier: 0.85
     sprintModifier: 0.85
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitThukker
