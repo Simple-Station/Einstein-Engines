@@ -10,6 +10,12 @@
       species:
         - Human
         - Reptilian
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - Blindness
+        - WheelchairBound
   weight: 50
   startingGear: ServileGear
   alwaysUseSpawner: true

@@ -9,6 +9,15 @@
         - Human
     - !type:FactionRequirement
       factionID: "DSM"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
   weight: 20
   startingGear: LevymanGear
   alwaysUseSpawner: true

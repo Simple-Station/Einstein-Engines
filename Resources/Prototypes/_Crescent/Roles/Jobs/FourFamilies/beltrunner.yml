@@ -9,6 +9,13 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Human
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - Blindness
+        - Pacifist
+        - WheelchairBound
   weight: 52
   startingGear: BeltrunnerGear
   alwaysUseSpawner: true

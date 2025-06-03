@@ -10,6 +10,14 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Moth
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - WheelchairBound
   weight: 55
   startingGear: ProphetGear
   alwaysUseSpawner: true

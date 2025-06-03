@@ -10,6 +10,12 @@
   requirements:
     - !type:FactionRequirement
       factionID: "NCWL"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - Muted
+        - WheelchairBound
   requireAdminNotify: false
   supervisors: job-supervisors-highcomm
   canBeAntag: false

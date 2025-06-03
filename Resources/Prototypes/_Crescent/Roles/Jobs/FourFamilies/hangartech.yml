@@ -10,6 +10,11 @@
       species:
         - Moth
         - Arachnid
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - WheelchairBound
   weight: 52
   startingGear: HangarTechGear
   alwaysUseSpawner: true
