@@ -223,7 +223,10 @@
     WeaponPistolBlastpopGray: 60
     SRMKhopesh: 60
     ClothingBeltSheathKhopesh: 60
-    ClothingBeltSheathFilled: 60 # captain sabre
+    DSMSabre: 60
+    ClothingBeltSheathDSMSabre: 60
+    DSMRapier: 60
+    ClothingBeltSheathRapier: 60
     SecBreachingHammer: 60
     Katana: 60
     RiotBulletShield: 100
