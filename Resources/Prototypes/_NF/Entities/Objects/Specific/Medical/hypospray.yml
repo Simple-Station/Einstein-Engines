@@ -12,7 +12,7 @@
   - type: SolutionContainerManager
     solutions:
       hypospray:
-        maxVol: 15
+        maxVol: 20
   - type: RefillableSolution
     solution: hypospray
   - type: ExaminableSolution
@@ -20,7 +20,7 @@
   - type: Hypospray
     onlyAffectsMobs: false
   - type: UseDelay
-    delay: 1
+    delay: 0.5
   - type: StaticPrice
     price: 550
 

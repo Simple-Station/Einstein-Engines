@@ -56,15 +56,6 @@
     state: abdomenbasic2
 
 - type: marking
-  id: CreepyArms
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Arachnid]
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
-    state: creepy
-
-- type: marking
   id: AbdomenWidow
   bodyPart: Tail
   markingCategory: Tail
