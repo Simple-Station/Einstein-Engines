@@ -1,14 +1,6 @@
 # Chitinid Body Parts
 
-- type: marking
-  id: MothChitinidSnout # Head, a "snout" as to not take up the head markings.
-  bodyPart: Snout
-  markingCategory: Snout
-  speciesRestriction: [Moth]
-  sprites:
-  - sprite: _EE/Mobs/Customization/Moth/ChitinidMarkings/bodyparts.rsi
-    state: head_f
-    
+
 - type: marking
   id: MothChitinidBodyMarkings # Chitinid body lines
   bodyPart: Chest
@@ -17,7 +9,7 @@
   sprites:
   - sprite: _EE/Mobs/Customization/Moth/ChitinidMarkings/bodyparts.rsi
     state: torso_m
-    
+
 - type: marking
   id: MothChitinidLArmSecondary # Secondary Arm
   bodyPart: LHand
@@ -26,7 +18,7 @@
   sprites:
   - sprite: _EE/Mobs/Customization/Moth/ChitinidMarkings/bodyparts.rsi
     state: l_secondary_arm
-    
+
 - type: marking
   id: MothChitinidRArmSecondary # Secondary Arm
   bodyPart: RHand
@@ -35,7 +27,7 @@
   sprites:
   - sprite: _EE/Mobs/Customization/Moth/ChitinidMarkings/bodyparts.rsi
     state: r_secondary_arm
-    
+
 # Antennas
 - type: marking
   id: MothChitinidAntennasDefault
@@ -82,23 +74,6 @@
   - sprite: _EE/Mobs/Customization/Moth/ChitinidMarkings/chitinid_antennas.rsi
     state: long
 
-- type: marking
-  id: MothChitinidAntennasBee
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Moth]
-  sprites:
-  - sprite: _EE/Mobs/Customization/Moth/ChitinidMarkings/chitinid_antennas.rsi
-    state: bee
-
-- type: marking
-  id: MothChitinidAntennasShort
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Moth]
-  sprites:
-  - sprite: _EE/Mobs/Customization/Moth/ChitinidMarkings/chitinid_antennas.rsi
-    state: short
 
 - type: marking
   id: MothChitinidAntennasFirefly
@@ -128,68 +103,6 @@
   sprites:
   - sprite: _EE/Mobs/Customization/Moth/ChitinidMarkings/chitinid_antennas.rsi
     state: speed
-
-
-# Wings
-- type: marking
-  id: MothChitinidWingsDefault
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Moth]
-  sprites:
-  - sprite: _EE/Mobs/Customization/Moth/ChitinidMarkings/chitinid_wings.rsi
-    state: default
-
-- type: marking
-  id: MothChitinidWingsSmooth
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Moth]
-  sprites:
-  - sprite: _EE/Mobs/Customization/Moth/ChitinidMarkings/chitinid_wings.rsi
-    state: smooth
-
-- type: marking
-  id: MothChitinidWingsHoneypot
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Moth]
-  sprites:
-  - sprite: _EE/Mobs/Customization/Moth/ChitinidMarkings/chitinid_wings.rsi
-    state: honeypot_primary
-  - sprite: _EE/Mobs/Customization/Moth/ChitinidMarkings/chitinid_wings.rsi
-    state: honeypot_secondary
-
-- type: marking
-  id: MothChitinidWingsStubby
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Moth]
-  sprites:
-  - sprite: _EE/Mobs/Customization/Moth/ChitinidMarkings/chitinid_wings.rsi
-    state: stubby
-
-- type: marking
-  id: MothChitinidWingsBee
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Moth]
-  sprites:
-  - sprite: _EE/Mobs/Customization/Moth/ChitinidMarkings/chitinid_wings.rsi
-    state: bee_primary
-  - sprite: _EE/Mobs/Customization/Moth/ChitinidMarkings/chitinid_wings.rsi
-    state: bee_secondary
-
-- type: marking
-  id: MothChitinidWingsFirefly
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Moth]
-  sprites:
-  - sprite: _EE/Mobs/Customization/Moth/ChitinidMarkings/chitinid_wings.rsi
-    state: firefly_primary
-  - sprite: _EE/Mobs/Customization/Moth/ChitinidMarkings/chitinid_wings.rsi
-    state: firefly_secondary
 
 # Body markings:
 # Charred

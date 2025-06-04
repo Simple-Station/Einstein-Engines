@@ -19,6 +19,15 @@
       min: 36000
     - !type:FactionRequirement
       factionID: "DSM"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
   special:
   - !type:AddComponentSpecial
     components:

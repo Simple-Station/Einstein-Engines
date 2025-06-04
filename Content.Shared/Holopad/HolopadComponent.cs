@@ -58,7 +58,7 @@ public sealed partial class HolopadComponent : Component
     public float ControlLockoutCoolDown { get; private set; } = 180f;
 
     /// <summary>
-    /// Frontier - If true, will sync pad name with a station name.
+    /// Frontier - If true, will sync pad name with a station or SHIP name.
     /// </summary>
     [ViewVariables]
     [DataField]
@@ -77,6 +77,18 @@ public sealed partial class HolopadComponent : Component
     [ViewVariables]
     [DataField]
     public string? StationNameSuffix { get; set; } = null;
+
+
+    /// <summary>
+    /// Hullrot - allows renaming a holopad by ship- done automatically when component is initiatlized. yes with a typo. be a freethinker
+    /// </summary>
+    [ViewVariables]
+    [DataField]
+    public bool GetHolopadNameFromShip { get; set; }
+
+
+
+
 }
 
 #region: Event messages

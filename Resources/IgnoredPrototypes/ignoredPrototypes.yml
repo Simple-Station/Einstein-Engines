@@ -13,3 +13,6 @@
 # /Prototypes/Nyanotrasen/Maps/salvage.yml
 # /Prototypes/DeltaV/Maps/salvage_modified.yml
 # /Prototypes/DeltaV/Maps/salvage.yml
+- Prototypes/DeltaV/Roles/Jobs
+- Prototypes/Roles/Jobs/Security
+- Prototypes/Roles/Jobs/Science

@@ -8,11 +8,20 @@
       min: 20000
     - !type:FactionRequirement
       factionID: "TFSC"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - WheelchairBound
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
         rank: crescent-rank-foreman
+
   weight: 8
   startingGear: ForemanGear
   alwaysUseSpawner: true

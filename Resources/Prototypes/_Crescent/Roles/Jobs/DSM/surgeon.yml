@@ -10,8 +10,15 @@
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ForeignerLight
+        - Blindness
+        - Pacifist
+        - WheelchairBound
   requireAdminNotify: false
-  supervisors: job-supervisors-imperial 
+  supervisors: job-supervisors-imperial
   canBeAntag: false
   special:
   - !type:AddComponentSpecial

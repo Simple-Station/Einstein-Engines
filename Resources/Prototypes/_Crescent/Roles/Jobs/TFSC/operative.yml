@@ -9,6 +9,12 @@
   requirements:
     - !type:FactionRequirement
       factionID: "TFSC"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - Blindness
+        - WheelchairBound
   special:
   - !type:AddComponentSpecial
     components:

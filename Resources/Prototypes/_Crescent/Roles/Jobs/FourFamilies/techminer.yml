@@ -10,6 +10,11 @@
       species:
         - Moth
         - Arachnid
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Blindness
+        - WheelchairBound
   weight: 52
   startingGear: TechminerGear
   alwaysUseSpawner: true
