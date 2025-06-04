@@ -6,9 +6,14 @@
   requirements:
     - !type:FactionRequirement
       factionID: "TAP"
-    - !type:SpeciesRequirement
+    - !type:CharacterSpeciesRequirement
       species:
         - Human
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Muted
+        - Blindness
   weight: 1
   startingGear: AntiquarianGear
   alwaysUseSpawner: true

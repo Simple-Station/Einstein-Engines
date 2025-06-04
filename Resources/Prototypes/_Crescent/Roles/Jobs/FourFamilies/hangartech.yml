@@ -6,10 +6,15 @@
   requirements:
     - !type:FactionRequirement
       factionID: "TAP"
-    - !type:SpeciesRequirement
+    - !type:CharacterSpeciesRequirement
       species:
         - Moth
         - Arachnid
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Blindness
+        - WheelchairBound
   weight: 52
   startingGear: HangarTechGear
   alwaysUseSpawner: true

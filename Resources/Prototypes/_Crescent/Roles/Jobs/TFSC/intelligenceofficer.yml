@@ -16,6 +16,13 @@
       factionID: "TFSC"
     - !type:SexRequirement
       sex: Male
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
   special:
   - !type:AddComponentSpecial
     components:

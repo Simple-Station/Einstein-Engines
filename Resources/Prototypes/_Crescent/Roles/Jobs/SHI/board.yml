@@ -6,6 +6,14 @@
   requirements:
     - !type:FactionRequirement
       factionID: "SHI"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - WheelchairBound
   weight: 50
   startingGear: BoardGear
   alwaysUseSpawner: true

@@ -9,6 +9,14 @@
       min: 36000
     - !type:FactionRequirement
       factionID: "SHI"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - WheelchairBound
   weight: 55
   startingGear: ExecutiveGear
   alwaysUseSpawner: true

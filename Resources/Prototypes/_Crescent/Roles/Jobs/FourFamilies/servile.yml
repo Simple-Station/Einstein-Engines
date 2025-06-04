@@ -6,10 +6,15 @@
   requirements:
     - !type:FactionRequirement
       factionID: "TAP"
-    - !type:SpeciesRequirement
+    - !type:CharacterSpeciesRequirement
       species:
         - Human
         - Reptilian
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Blindness
+        - WheelchairBound
   weight: 50
   startingGear: ServileGear
   alwaysUseSpawner: true

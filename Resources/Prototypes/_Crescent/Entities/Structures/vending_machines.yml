@@ -86,7 +86,7 @@
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: MarketModifier
     mod: 1.5
-    
+
 - type: entity
   parent: [BaseStructureUnanchorable, VendingMachine]
   id: NCWLArmoryVendory

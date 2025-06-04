@@ -8,6 +8,12 @@
       min: 20000
     - !type:FactionRequirement
       factionID: "NCWL"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - Blindness
+        - WheelchairBound
   weight: 22
   startingGear: DoktorGear
   alwaysUseSpawner: true

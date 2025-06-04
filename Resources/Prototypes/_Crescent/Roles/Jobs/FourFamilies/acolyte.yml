@@ -6,13 +6,19 @@
   requirements:
     - !type:FactionRequirement
       factionID: "TAP"
-    - !type:SpeciesRequirement
+    - !type:CharacterSpeciesRequirement
       species:
         - Human
         - Reptilian
         - Moth
         - Arachnid
         - Reptilian
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - Blindness
+        - WheelchairBound
   weight: 54
   startingGear: AcolyteTAPGear
   alwaysUseSpawner: true
