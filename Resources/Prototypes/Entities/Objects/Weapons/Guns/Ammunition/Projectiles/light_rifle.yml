@@ -7,7 +7,9 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 19
+        Piercing: 25
+    harmorPenetration: 25
+    stoppingPower: 3
 
 - type: entity
   id: BulletLightRiflePractice
@@ -52,8 +54,8 @@
   - type: Projectile
     damage:
       types:
-        Radiation: 9
-        Piercing: 10
+        Piercing: 20 # uranium penetrates better but wont fragment as much SPCR 2025
+  harmorPenetration: 40
 
 - type: entity
   id: BulletLightRifleShrapnel

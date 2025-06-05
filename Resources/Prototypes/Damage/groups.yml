@@ -5,6 +5,7 @@
     - Blunt
     - Slash
     - Piercing
+    - PiercingInducedBlunt #has to be added :( , SPCR 2025
 
 - type: damageGroup
   id: Burn
