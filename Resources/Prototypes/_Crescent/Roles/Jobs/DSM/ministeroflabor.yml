@@ -11,6 +11,13 @@
         - Human
     - !type:FactionRequirement
       factionID: "DSM"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
   weight: 25
   startingGear: CourtierGear
   alwaysUseSpawner: true

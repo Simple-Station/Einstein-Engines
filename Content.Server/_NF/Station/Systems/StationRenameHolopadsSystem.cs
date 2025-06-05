@@ -39,9 +39,9 @@ public sealed class StationRenameHolopadsSystem : EntitySystem
         }
     }
 
-    public void SyncHolopad(Entity<HolopadComponent> holopad, EntityUid? padStationUid = null)
+    public void SyncHolopad(Entity<HolopadComponent> holopad, EntityUid? padStationUid = null, bool forceit =  false)
     {
-        if (!holopad.Comp.UseStationName)
+        if (!holopad.Comp.UseStationName || forceit)
             return;
 
         padStationUid ??= _stationSystem.GetOwningStation(holopad);

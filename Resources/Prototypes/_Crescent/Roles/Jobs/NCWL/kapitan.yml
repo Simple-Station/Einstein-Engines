@@ -8,6 +8,15 @@
       min: 50000
     - !type:FactionRequirement
       factionID: "NCWL"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
   weight: 25
   startingGear: KapitanGear
   alwaysUseSpawner: true
