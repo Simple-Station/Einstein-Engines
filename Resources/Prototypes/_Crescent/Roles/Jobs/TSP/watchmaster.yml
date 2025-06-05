@@ -12,6 +12,15 @@
       factionID: "TSP"
   - !type:CharacterOverallTimeRequirement
     min: 12000
+  - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
   special:
   - !type:AddComponentSpecial
     components:

@@ -13,6 +13,15 @@
       sex: Male
     - !type:FactionRequirement
       factionID: "DSM"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
   weight: 22
   startingGear: TemplarGear
   alwaysUseSpawner: true

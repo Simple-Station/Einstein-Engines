@@ -8,6 +8,14 @@
       min: 30000
     - !type:FactionRequirement
       factionID: "TFSC"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
   special:
   - !type:AddComponentSpecial
     components:

@@ -6,6 +6,12 @@
   requirements:
     - !type:FactionRequirement
         factionID: "SHI"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - Muted
+        - WheelchairBound
   weight: 25
   startingGear: EmployeeGear
   alwaysUseSpawner: true

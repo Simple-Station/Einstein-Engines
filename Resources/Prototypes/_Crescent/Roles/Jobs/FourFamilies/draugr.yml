@@ -10,6 +10,14 @@
       species:
         - Human
         - Reptilian
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
   weight: 50
   startingGear: DraugrGear
   alwaysUseSpawner: true

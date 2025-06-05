@@ -9,6 +9,15 @@
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
   icon: "JobIconImperialForeman"
   requireAdminNotify: false
   supervisors: job-supervisors-imperial
@@ -34,4 +43,4 @@
     shoes: ClothingShoesBootsImperialLongboots
     jumpsuit: ClothingUniformJumpsuitImperialFreeholder
     gloves: ClothingHandsGlovesImperialWorkerGloves
-    
+

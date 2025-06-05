@@ -8,6 +8,15 @@
       min: 18000
     - !type:FactionRequirement
       factionID: "SHI"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
   weight: 38
   startingGear: CorpsecGear
   alwaysUseSpawner: true

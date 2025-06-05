@@ -8,6 +8,15 @@
   requirements:
   - !type:FactionRequirement
       factionID: "TSP"
+  - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
   special:
   - !type:AddComponentSpecial
     components:
