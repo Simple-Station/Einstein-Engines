@@ -149,8 +149,7 @@ public sealed class DegradeableArmorSystem : EntitySystem
 
 
         var damageDictionary = args.Args.Damage.DamageDict;
-        if(!damageDictionary.ContainsKey("PiercingInducedBrute"))
-            damageDictionary.Add("PiercingInducedBrute", 0);
+        damageDictionary.TryAdd("PiercingInducedBrute", 0);
         foreach (var (type, value) in damageDictionary)
         {
             if (!component.initialModifiers.FlatReduction.ContainsKey(type))
@@ -184,7 +183,7 @@ public sealed class DegradeableArmorSystem : EntitySystem
                 }
             }
 
-            trueReduction = Math.Clamp(trueReduction, 0f, (float) value);
+            trueReduction = Math.Clamp(trueReduction, 0f, (float) value - args.Args.HullrotArmorPen);
             armorDamage += (float) value * component.armorDamageCoefficients[type];
             //Logger.Error($"Damage adjusted for type {type}, old {value}, new {Math.Max(0f, (float) value - trueReduction)}  Armor damage {armorDamage}. Armor Health {component.armorHealth}. Stamina damage {trueReduction * component.staminaConversions[type]}");
             damageDictionary[type] = Math.Max(0f, (float) value - trueReduction);
