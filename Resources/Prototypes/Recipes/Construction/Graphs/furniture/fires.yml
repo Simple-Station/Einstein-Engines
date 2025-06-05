@@ -53,7 +53,7 @@
   startNode: start
   targetNode: BonfireNode
   category: construction-category-furniture
-  description: What can be better then late evening under the sky with guitar and friends.
+  description: What can be better then a late evening under the sky with a guitar and friends.
   icon: { sprite: Structures/Decoration/bonfire.rsi, state: bonfire }
   objectType: Structure
 
