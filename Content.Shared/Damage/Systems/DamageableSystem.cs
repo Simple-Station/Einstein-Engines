@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Runtime.InteropServices.JavaScript;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;
@@ -28,6 +29,10 @@ namespace Content.Shared.Damage
         private EntityQuery<AppearanceComponent> _appearanceQuery;
         private EntityQuery<DamageableComponent> _damageableQuery;
 
+        // hullrot change
+        // for converting damages by their convertInto variable in damageType SPCR 2025
+        private Dictionary<string, string> damageConversion = new();
+
         public override void Initialize()
         {
             SubscribeLocalEvent<DamageableComponent, ComponentInit>(DamageableInit);
@@ -35,6 +40,18 @@ namespace Content.Shared.Damage
             SubscribeLocalEvent<DamageableComponent, ComponentGetState>(DamageableGetState);
             SubscribeLocalEvent<DamageableComponent, OnIrradiatedEvent>(OnIrradiated);
             SubscribeLocalEvent<DamageableComponent, RejuvenateEvent>(OnRejuvenate);
+
+            foreach (var proto in _prototypeManager.EnumeratePrototypes<DamageTypePrototype>())
+            {
+                if (proto.convertInto == "")
+                    continue;
+                if (!_prototypeManager.TryIndex<DamageTypePrototype>(proto.convertInto, out _))
+                {
+                    throw new Exception("Unknown damage type prototype: " + proto.convertInto);
+                }
+                damageConversion.Add(proto.ID, proto.convertInto);
+
+            }
 
             _appearanceQuery = GetEntityQuery<AppearanceComponent>();
             _damageableQuery = GetEntityQuery<DamageableComponent>();
@@ -128,7 +145,8 @@ namespace Content.Shared.Damage
         public DamageSpecifier? TryChangeDamage(EntityUid? uid, DamageSpecifier damage, bool ignoreResistances = false,
             bool interruptsDoAfters = true, DamageableComponent? damageable = null, EntityUid? origin = null,
             // Shitmed Change
-            bool? canSever = true, bool? canEvade = false, float? partMultiplier = 1.00f, TargetBodyPart? targetPart = null, bool doPartDamage = true)
+            bool? canSever = true, bool? canEvade = false, float? partMultiplier = 1.00f, TargetBodyPart? targetPart = null, bool doPartDamage = true,
+            float armorPen = 0, float stopPower = 0)
         {
             if (!uid.HasValue || !_damageableQuery.Resolve(uid.Value, ref damageable, false))
             {
@@ -177,7 +195,11 @@ namespace Content.Shared.Damage
                         if (_prototypeManager.TryIndex<DamageModifierSetPrototype>(enumerableModifierSet, out var enumerableModifier))
                             damage = DamageSpecifier.ApplyModifierSet(damage, enumerableModifier);
 
-                var ev = new DamageModifyEvent(damage, origin, targetPart); // Shitmed Change
+                var ev = new DamageModifyEvent(damage, origin, targetPart)
+                {
+                    HullrotArmorPen = armorPen,
+                    stoppingPower = stopPower,
+                }; // Shitmed Change
                 RaiseLocalEvent(uid.Value, ev);
                 damage = ev.Damage;
 
@@ -192,6 +214,14 @@ namespace Content.Shared.Damage
             // Would need to check that nothing ever tries to cache the delta.
             var delta = new DamageSpecifier();
             delta.DamageDict.EnsureCapacity(damage.DamageDict.Count);
+            foreach (var (type, value) in damage.DamageDict)
+            {
+                if (!damageConversion.ContainsKey(type))
+                    continue;
+                damage.DamageDict[damageConversion[type]] += value;
+                damage.DamageDict[type] = 0;
+            }
+
 
             var dict = damageable.Damage.DamageDict;
             foreach (var (type, value) in damage.DamageDict)
@@ -391,6 +421,11 @@ namespace Content.Shared.Damage
         public DamageSpecifier Damage;
         public EntityUid? Origin;
         public readonly TargetBodyPart? TargetPart; // Shitmed Change
+        // HULLROT CHANGE - SPCR 2025
+        public float HullrotArmorPen = 0;
+        public float stoppingPower = 0;
+        // hullrot change end
+
 
         public DamageModifyEvent(DamageSpecifier damage, EntityUid? origin = null, TargetBodyPart? targetPart = null) // Shitmed Change
         {

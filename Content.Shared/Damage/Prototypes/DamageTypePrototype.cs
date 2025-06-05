@@ -28,5 +28,9 @@ namespace Content.Shared.Damage.Prototypes
         /// </summary>
         [DataField("armorFlatPrice")]
         public double ArmorPriceFlat { get; set; }
+
+        // Hullrot change
+        // Converts this damage type into another after armor calculations. SPCR 2025
+        public string convertInto = "";
     }
 }
