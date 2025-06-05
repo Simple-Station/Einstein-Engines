@@ -31,6 +31,7 @@ namespace Content.Shared.Damage.Prototypes
 
         // Hullrot change
         // Converts this damage type into another after armor calculations. SPCR 2025
+        [DataField]
         public string convertInto = "";
     }
 }

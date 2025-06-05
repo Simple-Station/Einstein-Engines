@@ -57,6 +57,8 @@ public sealed class DegradeableArmorSystem : EntitySystem
     [Dependency] private readonly ClothingSystem _cloth = default!;
     [Dependency] private readonly SharedContainerSystem _containers = default!;
     [Dependency] private readonly SharedToolSystem _toolSystem = default!;
+
+    private const string conversionPrototype = "PiercingInducedBlunt";
     /// <inheritdoc/>
     public override void Initialize()
     {
@@ -149,7 +151,7 @@ public sealed class DegradeableArmorSystem : EntitySystem
 
 
         var damageDictionary = args.Args.Damage.DamageDict;
-        damageDictionary.TryAdd("PiercingInducedBrute", 0);
+        damageDictionary.TryAdd(conversionPrototype, 0);
         foreach (var (type, value) in damageDictionary)
         {
             if (!component.initialModifiers.FlatReduction.ContainsKey(type))
@@ -172,7 +174,7 @@ public sealed class DegradeableArmorSystem : EntitySystem
                 case ArmorDegradation.Metallic:
                 {
                     trueReduction *= component.armorHealth / component.armorMaxHealth;
-                    damageDictionary["PiercingInducedBrute"] += args.Args.stoppingPower;
+                    damageDictionary[conversionPrototype] += args.Args.stoppingPower;
                     break;
                 }
                 case ArmorDegradation.Plastic:

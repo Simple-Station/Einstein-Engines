@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using System.Linq;
 using System.Runtime.InteropServices.JavaScript;
 using Content.Shared.Damage.Prototypes;
@@ -214,10 +215,12 @@ namespace Content.Shared.Damage
             // Would need to check that nothing ever tries to cache the delta.
             var delta = new DamageSpecifier();
             delta.DamageDict.EnsureCapacity(damage.DamageDict.Count);
-            foreach (var (type, value) in damage.DamageDict)
+            foreach (var (type, value) in damage.DamageDict.ToImmutableDictionary())
             {
                 if (!damageConversion.ContainsKey(type))
                     continue;
+                if (!damage.DamageDict.ContainsKey(damageConversion[type]))
+                    damage.DamageDict.Add(damageConversion[type], 0);
                 damage.DamageDict[damageConversion[type]] += value;
                 damage.DamageDict[type] = 0;
             }
