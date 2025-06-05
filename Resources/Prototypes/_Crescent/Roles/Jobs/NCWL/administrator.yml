@@ -12,6 +12,11 @@
     - !type:CharacterWhitelistRequirement
     - !type:FactionRequirement
       factionID: "NCWL"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Muted
+        - Blindness
   supervisors: job-supervisors-highcomm
   canBeAntag: false
   special:
