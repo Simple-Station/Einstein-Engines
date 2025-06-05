@@ -183,7 +183,7 @@ public sealed class DegradeableArmorSystem : EntitySystem
                 }
             }
 
-            trueReduction = Math.Clamp(trueReduction, 0f, (float) value - args.Args.HullrotArmorPen);
+            trueReduction = Math.Clamp(trueReduction - args.Args.HullrotArmorPen, 0f, (float) value);
             armorDamage += (float) value * component.armorDamageCoefficients[type];
             //Logger.Error($"Damage adjusted for type {type}, old {value}, new {Math.Max(0f, (float) value - trueReduction)}  Armor damage {armorDamage}. Armor Health {component.armorHealth}. Stamina damage {trueReduction * component.staminaConversions[type]}");
             damageDictionary[type] = Math.Max(0f, (float) value - trueReduction);
