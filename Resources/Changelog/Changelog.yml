@@ -16360,3 +16360,10 @@ Entries:
   id: 7274
   time: '2025-06-03T21:18:41.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2478
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: Now the fryer interface works again.
+  id: 7275
+  time: '2025-06-05T00:55:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2469
