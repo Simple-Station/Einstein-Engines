@@ -23,12 +23,12 @@
     armorType: Metallic
     armorRepair: SteelPlate
     initialModifiers:
-    flatReductions:
-      Blunt: 5
-      Slash: 5
-      Piercing: 5
-      Heat: 5
-      Caustic: 5
+      flatReductions:
+        Blunt: 5
+        Slash: 5
+        Piercing: 5
+        Heat: 5
+        Caustic: 5
 
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
@@ -55,12 +55,12 @@
     armorType: Metallic
     armorRepair: SteelPlate
     initialModifiers:
-    flatReductions:
-      Blunt: 5
-      Slash: 5
-      Piercing: 5
-      Heat: 5
-      Caustic: 5
+      flatReductions:
+        Blunt: 5
+        Slash: 5
+        Piercing: 5
+        Heat: 5
+        Caustic: 5
 
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
@@ -87,12 +87,12 @@
     armorType: Metallic
     armorRepair: SteelPlate
     initialModifiers:
-    flatReductions:
-      Blunt: 5
-      Slash: 5
-      Piercing: 5
-      Heat: 5
-      Caustic: 5
+      flatReductions:
+        Blunt: 5
+        Slash: 5
+        Piercing: 5
+        Heat: 5
+        Caustic: 5
 
 - type: entity # fishbed and cenobite variants
   parent: ClothingHeadHelmetHardsuitFishbed
