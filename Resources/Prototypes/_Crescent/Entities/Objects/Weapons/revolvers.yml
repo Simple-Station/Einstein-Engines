@@ -5,9 +5,7 @@
   description: A bulky, short-barreled snubnose revolver. Ported directly from ancient Terran designs by NanoTrasen and later popularized in the Sector thanks to it's low production cost and reliability. Chambered in .327 Imperial.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/snubnose.rsi
-  - type: Clothing
-    sprite: _Crescent/Objects/Weapons/snubnose.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/bulldog.rsi
   - type: Gun
     selectedMode: SemiAuto
     fireRate: 2

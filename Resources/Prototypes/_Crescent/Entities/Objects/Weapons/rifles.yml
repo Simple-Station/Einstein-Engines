@@ -1,18 +1,69 @@
 - type: entity
+  name: PTA XCR-6 Charge rifle 6x24mm
+  parent: BaseWeaponRifle
+  id: WeaponSpecialChargeRifle
+  description: A canceled experimental rifle developed by Pang Tai Arms. Only a few exist. This one has the serial number M-18. Chambered in 6×24mm.
+  components:
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/charge_rifle.rsi
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/charge_rifle.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    fireRate: 6
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/charged.ogg
+    fireOnDropChance: 0.5
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Magazine6x24mmCharge
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - Magazine6x24mm
+      gun_chamber:
+        name: Chamber
+        startingItem: Cartridge6x24mmCharge
+        priority: 1
+        whitelist:
+          tags:
+            - Cartridge6x24mm
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
+  - type: Appearance
+
+- type: entity
   name: NCWL Batanya 7.62x51mm
   parent: BaseWeaponRifle
   id: WeaponRifleNCWLBatanya
   description: An iconic weapon of war from the Union Foundry. Developed for use by their Homeguard. Comes equipped with NightGlo tracer dot sights. Chambered in 7.62x51mm, the proletariat's chamber.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/batanya.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/batanya.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/batanyaworn.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/batanya.rsi
   - type: Gun
     fireRate: 4
     soundGunshot:
@@ -57,14 +108,14 @@
   description: A clunky battle rifle produced by Shinohara Heavy Industries for the civilian market. Often overlooked by more experienced solos and mercs for more rapid-firing alternatives - it's only saving grace is the heavy caliber.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/goro.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/goro.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/goroworn.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/goro.rsi
   - type: Gun
     fireRate: 4.8
     soundGunshot:
@@ -110,14 +161,14 @@
   description: A tactical battle rifle from the Pang Tai Arms design labs. All combat. All the time. Chambered in 7.62x51mm.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/takemura.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/takemura.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/takemuraworn.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/takemura.rsi
   - type: Gun
     fireRate: 6
     soundGunshot:
@@ -162,14 +213,14 @@
   description: A mil-grade assault rifle produced by Olywir Armaments, primarily for the Imperial Garrison and Imperial Naval Forces. Comes chambered in light rounds. All flair.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/miller.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/miller.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/miller.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/miller.rsi
   - type: Gun
     fireRate: 5
     soundGunshot:
@@ -211,14 +262,14 @@
   description: Reverse-engineered from Imperial light battle rifle designs. Sacrifices heavier calibers for better rifling, allowing for more rapid fire.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/fal.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/fal.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/falworn.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/fal.rsi
   - type: Gun
     fireRate: 6
     soundGunshot:
@@ -264,14 +315,14 @@
     shape:
     - 0,0,4,1
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/krinkov.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/krinkov.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/krinkov.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/krinkov.rsi
   - type: Gun
     fireRate: 3
     soundGunshot:
@@ -315,14 +366,14 @@
   description: A hefty long-range precision rifle. Packs devastating 12.7x99mm punches. Developed as part of Pang Tai's mercenary package.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/halyad.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/halyad.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/halyadworn.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/halyad.rsi
   - type: Gun
     fireRate: 2.5
     soundGunshot:
@@ -368,14 +419,14 @@
   description: A cheap marksman's rifle, one of the few weapons produced for an external market by Shinohara Heavy Industries. Often seen in the hands of wanna-be mercs and thugs.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/hound.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/hound.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/hound.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/hound.rsi
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
@@ -419,14 +470,14 @@
   description: A marksman's rifle of foreign make, repurposed as a mainline battle carbine amongst the predators of this Sector.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/hunter.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/hunter.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/hunter.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/hunter.rsi
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
@@ -470,14 +521,14 @@
   description: A hefty battle carbine produced by the Coalition for the external independent market. Seen often in the hands of the Gorlex during harassment raids.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/mayflower.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/mayflower.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/mayflowerworn.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/mayflower.rsi
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/krinkov.ogg
@@ -520,14 +571,14 @@
   description: A hefty long-range precision rifle. Packs devastating 12.7x99mm punches. Developed as part of Pang Tai's elite mercenary package.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/barghest.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/barghest.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/barghestworn.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/barghest.rsi
   - type: Gun
     fireRate: 3.5
     soundGunshot:

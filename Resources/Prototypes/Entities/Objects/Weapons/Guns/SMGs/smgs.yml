@@ -9,7 +9,7 @@
   - type: Item
     size: Large
   - type: Clothing
-    sprite: Objects/Weapons/Guns/SMGs/atreides.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/atreides.rsi
     quickEquip: false
     slots:
     - Back
@@ -83,7 +83,7 @@
   description: Pla-ket-ket-ket-ket! Uses .35 auto ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/SMGs/atreides.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/atreides.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -107,14 +107,14 @@
   description: Manufactured by Cybersun-Armaments, the C-20r is one of the most popular personal small-arms in the Coalition of Colonies. Uses .35 auto ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/c20r.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/c20r.rsi
   - type: Wieldable
   - type: GunWieldBonus
     minAngle: -19
@@ -180,14 +180,14 @@
   description: An excellent fully automatic Heavy SMG.
   components:
     - type: Sprite
-      sprite: Objects/Weapons/Guns/SMGs/drozd.rsi
+      sprite: _Crescent/Objects/Weapons/Guns/drozd.rsi
       layers:
         - state: base
           map: ["enum.GunVisualLayers.Base"]
         - state: mag-0
           map: ["enum.GunVisualLayers.Mag"]
     - type: Clothing
-      sprite: Objects/Weapons/Guns/SMGs/drozd.rsi
+      sprite: _Crescent/Objects/Weapons/Guns/drozd.rsi
     - type: Wieldable
       unwieldOnUse: false
     - type: GunWieldBonus
@@ -283,20 +283,14 @@
   description: An excellent SMG, produced by NanoTrasen's Small Arms Division. Uses .35 auto ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/SMGs/wt550.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/wt550.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
-      - state: base-unshaded
-        map: ["enum.GunVisualLayers.BaseUnshaded"]
-        shader: unshaded
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
-      - state: mag-unshaded-0
-        map: ["enum.GunVisualLayers.MagUnshaded"]
-        shader: unshaded
   - type: Clothing
-    sprite: Objects/Weapons/Guns/SMGs/wt550.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/wt550.rsi
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
   - type: Gun
@@ -334,7 +328,7 @@
             - CartridgePistol
   - type: MagazineVisuals
     magState: mag
-    steps: 6
+    steps: 11
     zeroVisible: true
   - type: Appearance
 

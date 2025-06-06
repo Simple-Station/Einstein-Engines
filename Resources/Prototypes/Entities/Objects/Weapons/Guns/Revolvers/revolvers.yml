@@ -71,13 +71,12 @@
   description: A rare, custom-built revolver. Use when there is no time for Voight-Kampff test. Uses .45 magnum ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Revolvers/deckard.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/deckard.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
-    - state: mag-unshaded-3
-      map: ["enum.GunVisualLayers.MagUnshaded"]
-      shader: unshaded
+    - state: mag-2
+      map: ["enum.GunVisualLayers.Mag"]
   - type: Gun
     fireRate: 2
   - type: RevolverAmmoProvider
@@ -86,7 +85,7 @@
     ammoSlots: [ null, null, null, null, null ]
   - type: MagazineVisuals
     magState: mag
-    steps: 4
+    steps: 3
     zeroVisible: true
   - type: Appearance
   - type: StaticPrice
@@ -125,9 +124,9 @@
   description: A detective's best friend. Uses .45 magnum ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Revolvers/inspector.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/inspector.rsi
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Revolvers/inspector.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/inspector.rsi
   - type: RevolverAmmoProvider
     capacity: 6
     chambers: [ True, True, True, True, True, True ]
@@ -166,9 +165,9 @@
   description: A distinctive revolver of an ancient Sol' design that was once seen as a rare collectible. It is in common manufacture by many companies in the Biesel Republic. Uses .45 magnum ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Revolvers/mateba.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/mateba.rsi
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Revolvers/mateba.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/mateba.rsi
   - type: Gun
     fireRate: 3
     soundGunshot:
@@ -181,9 +180,9 @@
   description: An iconic large-framed revolver of ancient Sol' design. It is commonly manufactured by many companies all over the colonies. Uses .45 magnum ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Revolvers/python.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/python.rsi
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Revolvers/python.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/python.rsi
   - type: Gun
     selectedMode: SemiAuto
     fireRate: 2

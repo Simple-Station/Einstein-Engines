@@ -5,14 +5,14 @@
   description: A light submachinegun of communard design. Union Foundries makes these for the common grunt, and the cheap materials probably reflect that.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/watchdog.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/watchdog.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/watchdogworn.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/watchdog.rsi
   - type: Gun
     fireRate: 7
     soundGunshot:
@@ -34,14 +34,14 @@
   - type: StaticPrice
     price: 600
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/mp49.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/mp49.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/mp49worn.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/mp49.rsi
   - type: Gun
     fireRate: 7
     soundGunshot:
@@ -61,14 +61,14 @@
   - type: StaticPrice
     price: 800
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/mp5.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/mp5.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/mp5worn.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/mp5.rsi
   - type: Gun
     fireRate: 7
     selectedMode: FullAuto
@@ -107,14 +107,14 @@
   description: Manufactured for internal use by the Homeguard, the second entry of the Union Foundries focuses primarily on stopping power while sacrificing speed and agility.
   components:
     - type: Sprite
-      sprite: _Crescent/Objects/Weapons/ncwlsmg.rsi
+      sprite: _Crescent/Objects/Weapons/Guns/liberator.rsi
       layers:
         - state: base
           map: ["enum.GunVisualLayers.Base"]
         - state: mag-0
           map: ["enum.GunVisualLayers.Mag"]
     - type: Clothing
-      sprite: _Crescent/Objects/Weapons/ncwlsmgworn.rsi
+      sprite: _Crescent/Objects/Weapons/Guns/liberator.rsi
     - type: Gun
       fireRate: 6
       selectedMode: FullAuto
@@ -155,14 +155,14 @@
   - type: StaticPrice
     price: 1250
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/sabre.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/sabre.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/sabreworn.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/sabre.rsi
   - type: Gun
     fireRate: 7
     selectedMode: FullAuto
@@ -203,14 +203,14 @@
   - type: StaticPrice
     price: 1000
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/beetle.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/beetle.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/beetle.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/beetle.rsi
   - type: Gun
     fireRate: 6
     selectedMode: FullAuto
@@ -251,14 +251,14 @@
   - type: StaticPrice
     price: 1250
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/cheshyre.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/cheshyre.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/cheshyre.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/cheshyre.rsi
   - type: Gun
     fireRate: 7
     selectedMode: Burst

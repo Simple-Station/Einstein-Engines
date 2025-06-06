@@ -9,7 +9,7 @@
   - type: Item
     size: Huge
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Rifles/ak.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/akms.rsi
     quickEquip: false
     slots:
     - Back
@@ -78,7 +78,7 @@
   description: An iconic weapon of war. Uses .30 rifle ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Rifles/ak.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/akms.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
@@ -127,14 +127,14 @@
   description: An older bullpup carbine model, with an attached underbarrel grenade launcher. Uses .20 rifle ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Rifles/carbine.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/carbine.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Rifles/carbine.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/carbine.rsi
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -170,14 +170,14 @@
   description: A high end military grade assault rifle. Uses .20 rifle ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Rifles/lecter.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/lecter.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Rifles/lecter.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/lecter.rsi
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
