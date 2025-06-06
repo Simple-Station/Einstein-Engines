@@ -1,0 +1,215 @@
+From e41fed2d5548417cc1bf8ed5c90122b9874d5810 Mon Sep 17 00:00:00 2001
+From: RedFoxIV <38788538+RedFoxIV@users.noreply.github.com>
+Date: Sun, 25 May 2025 18:20:47 +0300
+Subject: [PATCH 3/3] the definition of insanity
+
+---
+ .../PowerCell/PowerChargerVisualizerSystem.cs |  1 +
+ .../ItemSlotRendererComponent.cs              |  6 ++---
+ .../ItemSlotRendererSystem.cs                 | 24 +++++++++----------
+ .../Entities/Structures/Power/chargers.yml    |  7 +++---
+ .../Prototypes/_White/Shaders/shaders.yml     | 16 +++++++++++++
+ .../_White/Shaders/flickerhologram.swsl       | 22 ++++++++---------
+ 6 files changed, 46 insertions(+), 30 deletions(-)
+
+diff --git a/Content.Client/PowerCell/PowerChargerVisualizerSystem.cs b/Content.Client/PowerCell/PowerChargerVisualizerSystem.cs
+index 236a7f287d..eacdd37392 100644
+--- a/Content.Client/PowerCell/PowerChargerVisualizerSystem.cs
++++ b/Content.Client/PowerCell/PowerChargerVisualizerSystem.cs
+@@ -38,4 +38,5 @@ enum PowerChargerVisualLayers : byte
+ {
+     Base,
+     Light,
++    ItemDisplay,
+ }
+diff --git a/Content.Client/_White/ItemSlotRenderer/ItemSlotRendererComponent.cs b/Content.Client/_White/ItemSlotRenderer/ItemSlotRendererComponent.cs
+index 33dcd7a8d3..48d0647f38 100644
+--- a/Content.Client/_White/ItemSlotRenderer/ItemSlotRendererComponent.cs
++++ b/Content.Client/_White/ItemSlotRenderer/ItemSlotRendererComponent.cs
+@@ -11,8 +11,8 @@ namespace Content.Client._White.ItemSlotRenderer;
+ [RegisterComponent]
+ public sealed partial class ItemSlotRendererComponent : Component
+ {
+-    // string layer mappings to slot ids
+-    [DataField]
++    // [slotId] = layer mapping (in string form)
++    [DataField("mapping")]
+     public Dictionary<string, string> PrototypeLayerMappings = new();
+ 
+     // [mapkey] = slotId
+@@ -28,7 +28,7 @@ public sealed partial class ItemSlotRendererComponent : Component
+     public Dictionary<string, IRenderTexture> CachedRT = new();
+ 
+     [DataField]
+-    public bool IgnoreMissing = false;
++    public bool ErrorOnMissing = true;
+ 
+     [DataField]
+     public Vector2i RenderTargetSize = new Vector2i(32, 32);
+diff --git a/Content.Client/_White/ItemSlotRenderer/ItemSlotRendererSystem.cs b/Content.Client/_White/ItemSlotRenderer/ItemSlotRendererSystem.cs
+index 314af18b88..0428f2b67c 100644
+--- a/Content.Client/_White/ItemSlotRenderer/ItemSlotRendererSystem.cs
++++ b/Content.Client/_White/ItemSlotRenderer/ItemSlotRendererSystem.cs
+@@ -73,14 +73,16 @@ private void OnStartup(EntityUid uid, ItemSlotRendererComponent comp, ComponentS
+         foreach (var kvp in comp.PrototypeLayerMappings)
+         {
+ 
+-            (object mapKey, string slotId) = kvp;
+-
+-            if (_reflection.TryParseEnumReference(kvp.Key, out var e, false))
++            (string slotId, object mapKey) = kvp;
++            bool isEnum = false;
++            if (_reflection.TryParseEnumReference((string)mapKey, out var e))
++            {
+                 mapKey = e;
+-
+-            if (sprite.LayerMapTryGet(mapKey, out _) && !comp.IgnoreMissing)
++                isEnum = true;
++            }
++            if (!sprite.LayerMapTryGet(mapKey, out _) && comp.ErrorOnMissing)
+             {
+-                Log.Warning($"ItemSlotRenderer: Tried to add a missing layer under the key {mapKey}. Skipping missing layer. If this is unwanted, set component's AddMissingLayers to true.");
++                Log.Warning($"ItemSlotRenderer: Tried to add a missing layer under the {(isEnum ? "enum" : "string")} key {mapKey}. Skipping missing layer. If this is unwanted, set component's AddMissingLayers to true.");
+                 continue;
+             }
+ 
+@@ -122,22 +124,20 @@ protected override void Draw(in OverlayDrawArgs args)
+                     !sprite.TryGetLayer(layerIndex, out var layer)) // verify that the layer actually exists
+                     continue;
+ 
++                // if for some reason we can't render the item to a texture (or there is no item to render),
++                // assign an "empty" texture to the layer
+                 if (!comp.CachedEntities.TryGetValue(slotId, out var _item) || _item is not EntityUid item ||
+-                    !comp.CachedRT.TryGetValue(slotId, out var renderTarget) ||
+-                    !_entMan.TryGetComponent<SpriteComponent>(item, out var itemSprite))
++                    !comp.CachedRT.TryGetValue(slotId, out var renderTarget))
+                 {
+                     if (layer.Texture != Texture.Transparent)
+                         sprite.LayerSetTexture(layerIndex, Texture.Transparent);
+-                        //layer.Texture = Texture.Transparent;
+                     continue;
+                 }
+ 
+                 handle.RenderInRenderTarget(renderTarget, () =>
+                 {
+-                    handle.DrawEntity(item, renderTarget.Size / 2, Vector2.One, 0);
++                    handle.DrawEntity(item, renderTarget.Size / 2, Vector2.One, 0); // If this throws due to a missing spritecomp, it's your fault.
+                 }, Color.Transparent);
+-
+-                //layer.Texture = renderTarget.Texture;
+                 sprite.LayerSetTexture(layerIndex, renderTarget.Texture);
+             }
+         }
+diff --git a/Resources/Prototypes/Entities/Structures/Power/chargers.yml b/Resources/Prototypes/Entities/Structures/Power/chargers.yml
+index 40d7974183..6636084444 100644
+--- a/Resources/Prototypes/Entities/Structures/Power/chargers.yml
++++ b/Resources/Prototypes/Entities/Structures/Power/chargers.yml
+@@ -159,7 +159,7 @@
+     - map: ["enum.PowerChargerVisualLayers.Light"]
+       state: "light-off"
+       shader: "unshaded"
+-    - map: [ "bullshit" ] 
++    - map: ["enum.PowerChargerVisualLayers.ItemDisplay"]
+       shader: "FlickerHologram"
+       color: "#ffffffaa"
+       offset: 0,0.45
+@@ -177,9 +177,8 @@
+           - ProjectileBatteryAmmoProvider
+           - Stunbaton
+   - type: ItemSlotRenderer
+-    ignoreMissing: true
+-    prototypeLayerMappings:
+-      bullshit: charger_slot
++    mapping:
++      charger_slot: enum.PowerChargerVisualLayers.ItemDisplay
+ 
+ - type: entity
+   parent: BaseItemRecharger
+diff --git a/Resources/Prototypes/_White/Shaders/shaders.yml b/Resources/Prototypes/_White/Shaders/shaders.yml
+index 70660a7c4a..1d7da168f6 100644
+--- a/Resources/Prototypes/_White/Shaders/shaders.yml
++++ b/Resources/Prototypes/_White/Shaders/shaders.yml
+@@ -3,6 +3,22 @@
+   kind: source
+   path: "/Textures/_White/Shaders/flickerhologram.swsl"
+   light_mode: unshaded
++  params:
++    jitter: 0.5
++    colorJitter: 0.4
++    alphaJitter: 0.5
++    hue: 0.48
++
++- type: shader
++  id: FlickerHologramGlitch
++  kind: source
++  path: "/Textures/_White/Shaders/flickerhologram.swsl"
++  light_mode: unshaded
++  params:
++    jitter: 5
++    colorJitter: 0.8
++    alphaJitter: 1
++    hue: 0.48
+ 
+ - type: shader
+   id: Grain
+diff --git a/Resources/Textures/_White/Shaders/flickerhologram.swsl b/Resources/Textures/_White/Shaders/flickerhologram.swsl
+index a21a4b915c..c3ce5bdcf9 100644
+--- a/Resources/Textures/_White/Shaders/flickerhologram.swsl
++++ b/Resources/Textures/_White/Shaders/flickerhologram.swsl
+@@ -6,6 +6,11 @@
+ //  License: CC BY-SA 3.0
+ //
+ 
++uniform highp float jitter;
++uniform highp float colorJitter;
++uniform highp float alphaJitter;
++uniform highp float hue;
++
+ highp vec3 rgb2hsv(highp vec3 c)
+ {
+     highp vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
+@@ -33,35 +38,30 @@ highp vec3 blend(highp vec3 base, highp vec3 color, highp float factor){
+ 	return base+(color-base)*factor;
+ }
+ 
+-// No args, no customization
+ // quick and simple okay-ish looking shader because i don't like the deltaV one.
+-// todo make an excuse to use this somewhere besides event dispensers so i have to make it more customizable (at least its color)
+ void fragment() {
+ 
+-	highp float hue = 0.48;
++
+ 	highp float hue2 = hue-0.01;
+ 
+-	// absolutely unreadable, introduces random noise in the X coord of the UV, seeded by Y
++	// introduces random noise in the X coord of the UV, seeded by Y
+ 	// produces scanline-like effect, with each line of pixels being randomly displaced left or right
+ 	// makes the item jitter a bit
+-	highp float dispfloat = rng(vec2(UV.y*TIME, 0));
+-
+-	//highp vec2 displacement = vec2(rng(vec2(UV.y*TIME, 0))*length(TEXTURE_PIXEL_SIZE)*0.25);
++	highp float dispfloat = rng(vec2(UV.y*TIME, 0)) * jitter;
+ 
+     highp vec4 tex = zTexture(UV + vec2(dispfloat*TEXTURE_PIXEL_SIZE.x*0.5, 0));
+-
+ 	highp vec3 col = rgb2hsv(tex.rgb);
+ 	col.x = hue;
+-	col.z = (log(col.z)+4.0)/4.0; // increase the value in hsv color, helps with highlighting detail
++	col.z = (log(col.z) + 4.0) / 4.0; // increase the value in hsv color, helps with highlighting detail
+ 
+ 	// this produces a color which randomly flashes from hue2 (at max value) to white
+ 	// mixed in with sprite color down below
+-	highp vec3 col2 = hsv2rgb(vec3(hue2, rng(vec2(TIME*0.001, 0))*0.4+0.6, 1.0));
++	highp vec3 col2 = hsv2rgb(vec3(hue2, rng(vec2(TIME*0.001, 0)) * colorJitter + (1.0 - colorJitter), 1.0));
+ 	col = hsv2rgb(col);
+ 
+ 	COLOR = vec4(mix(col, col2, 0.3), max(tex.w*(sin(TIME * sin(TIME)))*0.25, 0.0)+0.45*tex.w);
+ 	// another scanline-like effect, but with transparensy this time
+ 	// "*=" instead of proper construction because it's an afterthought
+-	COLOR.w *= rng(vec2(0, 1.09248882*TIME*UV.y))*0.5+0.5;
++	COLOR.w *= rng(vec2(0, 1.09248882*TIME*UV.y)) * alphaJitter + (1.0 - alphaJitter);
+ 	lightSample = vec3(1.0);
+ }
+-- 
+2.49.0.windows.1
+
