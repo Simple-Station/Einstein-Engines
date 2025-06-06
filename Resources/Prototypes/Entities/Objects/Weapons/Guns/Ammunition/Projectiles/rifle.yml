@@ -1,13 +1,15 @@
 - type: entity
   id: BulletRifle
-  name: bullet (0.20 rifle)
+  name: bullet (7.62x51mm)
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Piercing: 23
+        Piercing: 25
+    harmorPenetration: 22
+    stoppingPower: 8
 
 - type: entity
   id: BulletRiflePractice
@@ -46,14 +48,14 @@
 - type: entity
   id: BulletRifleUranium
   parent: BaseBulletUranium
-  name: bullet (0.20 rifle uranium)
+  name: bullet 7.62x51mm AP-DU)
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Radiation: 7
-        Piercing: 12
+        Piercing: 25
+  harmorPenetration: 35
 
 - type: entity
   id: BulletRifleShrapnel
