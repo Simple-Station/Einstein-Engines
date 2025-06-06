@@ -34,19 +34,19 @@ public sealed class ItemSlotRendererSystem : EntitySystem
     {
         SubscribeLocalEvent<ItemSlotRendererComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<ItemSlotRendererComponent, ComponentRemove>(OnRemove);
-        SubscribeLocalEvent<ItemSlotRendererComponent, ContainerIsInsertingAttemptEvent>(OnInsertIntoContainer);
-        SubscribeLocalEvent<ItemSlotRendererComponent, ContainerIsRemovingAttemptEvent>(OnRemoveFromContainer);
+        SubscribeLocalEvent<ItemSlotRendererComponent, EntInsertedIntoContainerMessage>(OnInsertIntoContainer);
+        SubscribeLocalEvent<ItemSlotRendererComponent, EntRemovedFromContainerMessage>(OnRemoveFromContainer);
 
     }
-    private void OnInsertIntoContainer(EntityUid uid, ItemSlotRendererComponent comp, ContainerIsInsertingAttemptEvent args)
+    private void OnInsertIntoContainer(EntityUid uid, ItemSlotRendererComponent comp, EntInsertedIntoContainerMessage args)
     {
         if (args.Container is not ContainerSlot || !_timing.IsFirstTimePredicted)
             return;
 
-        comp.CachedEntities[args.Container.ID] = args.EntityUid;
+        comp.CachedEntities[args.Container.ID] = args.Entity;
     }
 
-    private void OnRemoveFromContainer(EntityUid uid, ItemSlotRendererComponent comp, ContainerIsRemovingAttemptEvent args)
+    private void OnRemoveFromContainer(EntityUid uid, ItemSlotRendererComponent comp, EntRemovedFromContainerMessage args)
     {
         if (args.Container is not ContainerSlot || !_timing.IsFirstTimePredicted)
             return;
