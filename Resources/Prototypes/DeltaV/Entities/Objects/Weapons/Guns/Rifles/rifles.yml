@@ -110,7 +110,7 @@
   name: Tenebra
   parent: BaseWeaponRifle
   id: WeaponRifleTenebra
-  description: A mass-produced and minimalist rifle in bullpup design. Uses .20 rifle ammo.
+  description: A mass-produced and minimalist rifle in bullpup design. Uses 5.56x45mm ammo.
   suffix: Mercenary
   components:
   - type: Sprite

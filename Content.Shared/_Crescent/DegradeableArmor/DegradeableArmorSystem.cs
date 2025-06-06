@@ -167,7 +167,7 @@ public sealed class DegradeableArmorSystem : EntitySystem
                 {
                     trueReduction *= component.armorHealth / component.armorMaxHealth;
                     trueReduction *= component.armorHealth / component.armorMaxHealth;
-                    _stamina.TakeStaminaDamage(component.wearer, args.Args.stoppingPower/2);
+                    _stamina.TakeStaminaDamage(component.wearer, args.Args.stoppingPower);
                     break;
                 }
                 // Spreads damage internally

@@ -16,10 +16,10 @@
 
 
 - type: entity
-  name: box of .45 magnum Universal magazines
+  name: box of 8.3×33mm Universal magazines
   parent: BoxMagazine
   id: BoxMagazineUniversalMagnum
-  description: A box full of .45 magnum magazines.
+  description: A box full of 8.3×33mm magazines.
   components:
   - type: StorageFill
     contents:
@@ -34,10 +34,10 @@
         - BallisticAmmoProvider
 
 - type: entity
-  name: box of .45 magnum Universal (practice) magazines
+  name: box of 8.3×33mm Universal (practice) magazines
   parent: BoxMagazine
   id: BoxMagazineUniversalMagnumPractice
-  description: A box full of .45 magnum practice magazines.
+  description: A box full of 8.3×33mm practice magazines.
   components:
   - type: StorageFill
     contents:
@@ -52,10 +52,10 @@
         - BallisticAmmoProvider
 
 - type: entity
-  name: box of .45 magnum Universal (rubber) magazines
+  name: box of 8.3×33mm Universal (rubber) magazines
   parent: BoxMagazine
   id: BoxMagazineUniversalMagnumRubber
-  description: A box full of .45 magnum rubber magazines.
+  description: A box full of 8.3×33mm rubber magazines.
   components:
   - type: StorageFill
     contents:

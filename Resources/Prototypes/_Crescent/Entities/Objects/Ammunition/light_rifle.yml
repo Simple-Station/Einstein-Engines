@@ -83,7 +83,7 @@
   id: CartridgeMachineGunArmorPiercingConscript
   name: .50 depleted uranium slugthrower cartridge
   parent: BaseItem
-  description: An armor-piercing .50 slugthrower cartridge, tipped with depleted uranium.
+  description: An armor-piercing 12.7×42mmthrower cartridge, tipped with depleted uranium.
   components:
   - type: Tag
     tags:

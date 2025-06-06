@@ -1,19 +1,19 @@
 - type: entity
   id: BulletLightRifle
-  name: bullet (.20 rifle)
+  name: bullet (5.56x45mm)
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Piercing: 25
-    harmorPenetration: 25
-    stoppingPower: 3
+        Piercing: 26
+    harmorPenetration: 30
+    stoppingPower: 4
 
 - type: entity
   id: BulletLightRiflePractice
-  name: bullet (.20 rifle practice)
+  name: bullet (5.56x45mm practice)
   parent: BaseBulletPractice
   categories: [ HideSpawnMenu ]
   components:
@@ -24,7 +24,7 @@
 
 - type: entity
   id: BulletLightRifleRubber
-  name: bullet (.20 rifle rubber)
+  name: bullet (5.56x45mm rubber)
   parent: BaseBulletRubber
   categories: [ HideSpawnMenu ]
   components:
@@ -36,7 +36,7 @@
 - type: entity
   id: BulletLightRifleIncendiary
   parent: BaseBulletIncendiary
-  name: bullet (.20 rifle incendiary)
+  name: bullet (5.56x45mm incendiary)
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -48,7 +48,7 @@
 - type: entity
   id: BulletLightRifleUranium
   parent: BaseBulletUranium
-  name: bullet (.20 rifle uranium)
+  name: bullet (5.56x45mm uranium)
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -59,7 +59,7 @@
 
 - type: entity
   id: BulletLightRifleShrapnel
-  name: bullet (.20 rifle shrapnel)
+  name: bullet (5.56x45mm shrapnel)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
