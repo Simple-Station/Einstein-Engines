@@ -16321,3 +16321,56 @@ Entries:
   id: 7269
   time: '2025-05-28T22:30:47.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2465
+- author: Mapping Team
+  changes:
+    - type: Tweak
+      message: Cleanup of Cyberiad
+  id: 7270
+  time: '2025-05-31T15:58:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2457
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: Meta office's chairs
+    - type: Tweak
+      message: Meta cameras
+    - type: Fix
+      message: Meta Disposal, Warp-point Bombing
+  id: 7271
+  time: '2025-05-31T15:58:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2468
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Made some server performance improvements to Atmos Alert Computers.
+  id: 7272
+  time: '2025-06-01T02:06:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2474
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Improved the server performance of Solar Flare events.
+  id: 7273
+  time: '2025-06-01T02:08:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2473
+- author: CodedCrow
+  changes:
+    - type: Tweak
+      message: Tweaked Arachne plush description
+  id: 7274
+  time: '2025-06-03T21:18:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2478
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: Now the fryer interface works again.
+  id: 7275
+  time: '2025-06-05T00:55:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2469
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: SmartFridge now really has functionality
+  id: 7276
+  time: '2025-06-07T02:43:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2479
