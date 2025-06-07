@@ -8,7 +8,8 @@
                 Name="PreferenceButton"
                 Access="Public"
                 ToggleMode="True"
-                VerticalAlignment="Center" />
+                VerticalAlignment="Center"
+                StyleClasses="OpenRight" />
 
             <Button
                 Name="HeirloomButton"
@@ -16,9 +17,10 @@
                 Text="{Loc 'humanoid-profile-editor-loadouts-heirloom'}"
                 ToolTip="{Loc 'humanoid-profile-editor-loadouts-heirloom-tooltip'}"
                 ToggleMode="True"
-                VerticalAlignment="Center" />
+                VerticalAlignment="Center"
+                StyleClasses="OpenBoth" />
 
-            <!-- Yes I know I can use a TextureButton, but I'm doing this for style -->
+            <!-- Yes I know I can use a TextureButton, but that doesn't have styling -->
             <Button
                 Name="GuidebookButton"
                 ToolTip="{Loc 'humanoid-profile-editor-loadouts-guidebook-button-tooltip'}"
@@ -35,7 +37,7 @@
 
 
         <Collapsible Name="SpecialMenu" HorizontalExpand="True">
-            <Button Name="HeadingButton" Text="{Loc 'humanoid-profile-editor-loadouts-customize'}" ToggleMode="True" />
+            <Button Name="HeadingButton" Text="{Loc 'humanoid-profile-editor-loadouts-customize'}" ToggleMode="True" StyleClasses="OpenLeft" />
 
             <CollapsibleBody HorizontalExpand="True" Margin="0 0 0 5">
                 <PanelContainer HorizontalExpand="True">
