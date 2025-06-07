@@ -1,0 +1,85 @@
+- type: entity
+  name: evil anti particles
+  description: Accelerated negative particles but evil and gay like lowteirpeasant. #change this
+  id: AntiParticlesProjectileEvil
+  parent: ParticlesProjectile
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Structures/Power/Generation/PA/particle.rsi
+      state: particle0
+      shader: unshaded
+      map: [ "unshaded" ]
+  - type: Reflective
+    reflective:
+    - Energy
+  - type: Projectile
+    deleteOnCollide: false
+    impactEffect: null
+    soundHit:
+      path: /Audio/Weapons/Guns/Hits/bullet_hit.ogg
+    damage:
+      types:
+        Blunt: 70
+  - type: TimedDespawn
+    lifetime: 0.2
+  - type: SinguloFood
+    energy: -20
+  - type: Reflect
+    reflectProb: 1
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.48,-0.48,0.48,0.48"
+        hard: false
+        layer:
+        - WallLayer
+        mask:
+        - Opaque
+        - FullTileMask
+
+- type: entity
+  name: less evil anti particles
+  description: Accelerated negative particles but less evil and not gay like lowteirpeasant. #change this
+  id: AntiParticlesProjectileLessEvil
+  parent: ParticlesProjectile
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Structures/Power/Generation/PA/particle.rsi
+      state: particle0
+      shader: unshaded
+      map: [ "unshaded" ]
+  - type: Reflective
+    reflective:
+    - Energy
+  - type: Projectile
+    deleteOnCollide: true
+    impactEffect: null
+    soundHit:
+      path: /Audio/Weapons/Guns/Hits/bullet_hit.ogg
+    damage:
+      types:
+        Blunt: 30
+  - type: TimedDespawn
+    lifetime: 0.6
+  - type: SinguloFood
+    energy: -5
+  - type: Reflect
+    reflectProb: 0.6
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.48,-0.48,0.48,0.48"
+        hard: false
+        layer:
+        - WallLayer
+        mask:
+        - Opaque
+        - FullTileMask
