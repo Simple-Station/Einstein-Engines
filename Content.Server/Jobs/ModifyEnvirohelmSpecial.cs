@@ -16,7 +16,7 @@ public sealed partial class ModifyEnvirohelmSpecial : JobSpecial
     //   The new power cell of the envirohelm.
     // </summary>
     [DataField(required: true)]
-    public ProtoId<EntityPrototype> PowerCell { get; private set; }
+    public EntProtoId PowerCell { get; private set; }
 
     [ValidatePrototypeId<SpeciesPrototype>]
     private const string Species = "Plasmaman";

@@ -27,7 +27,7 @@ using Content.Shared.Shuttles.Events;
 using Content.Shared.Tag;
 using Content.Shared.Tiles;
 using Robust.Server.GameObjects;
-using Robust.Server.Maps;
+using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
@@ -70,6 +70,8 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly AnnouncerSystem _announcer = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
+
+    [Dependency] private readonly MapLoaderSystem _loader = default!;
 
     private const float ShuttleSpawnBuffer = 1f;
 
@@ -432,25 +434,18 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         }
 
         var mapPath = _random.Pick(component.Maps).ToString();
-        AddSingleCentcomm(station, component, mapPath);
+        AddSingleCentcomm(station, component, new(mapPath));
     }
 
-    private void AddSingleCentcomm(EntityUid station, StationCentcommComponent component, string mapPath)
+    private void AddSingleCentcomm(EntityUid station, StationCentcommComponent component, ResPath mapPath)
     {
-        if (string.IsNullOrEmpty(mapPath))
+        var map = _mapSystem.CreateMap(out var mapId);
+
+        if (!_loader.TryLoadGrid(mapId, mapPath, out var grid))
         {
-            Log.Warning("No CentComm map found, skipping setup.");
+            Log.Error($"Failed to set up centcomm grid!");
             return;
         }
-
-        var map = _mapSystem.CreateMap(out var mapId);
-        var grid = _map.LoadGrid(
-            mapId,
-            mapPath,
-            new()
-            {
-                LoadMap = false,
-            });
 
         if (!Exists(map) || map == EntityUid.Invalid)
         {

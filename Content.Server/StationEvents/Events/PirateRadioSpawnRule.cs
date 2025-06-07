@@ -1,5 +1,4 @@
 using Robust.Server.GameObjects;
-using Robust.Server.Maps;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -13,6 +12,11 @@ using Content.Shared.GameTicking.Components;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Salvage;
 using System.Linq;
+using Robust.Shared.EntitySerialization;
+using Robust.Shared.EntitySerialization.Systems;
+using Robust.Shared.Map.Components;
+using Robust.Shared.Utility;
+
 
 namespace Content.Server.StationEvents.Events;
 
@@ -29,12 +33,17 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
 
     protected override void Started(EntityUid uid, PirateRadioSpawnRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
-        base.Started(uid, component, gameRule, args);
+        SpawnListeningOutpost((uid, component), gameRule, args);
+        SpawnDebris((uid, component));
+    }
+
+    private void SpawnListeningOutpost(Entity<PirateRadioSpawnRuleComponent> ent, GameRuleComponent gameRule, GameRuleStartedEvent args)
+    {
+        base.Started(ent.Owner, ent.Comp, gameRule, args);
 
         var station = _gameTicker.GetSpawnableStations();
-        if (station is null)
-            return;
         var stationGrids = new HashSet<EntityUid>();
+
         foreach (var stations in station)
         {
             if (TryComp<StationDataComponent>(stations, out var data) && _station.GetLargestGrid(data) is { } grid)
@@ -51,55 +60,48 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
         if (!_mapSystem.MapExists(targetMapId))
             return;
 
-        var randomOffset = _random.NextVector2(component.MinimumDistance, component.MaximumDistance);
-        var outpostOptions = new MapLoadOptions
-        {
-            Offset = _xform.GetWorldPosition(targetStation) + randomOffset,
-            LoadMap = false,
-        };
+        var randomOffset = _random.NextVector2(ent.Comp.MinimumDistance, ent.Comp.MaximumDistance);
+        var randomMap = _random.Pick(ent.Comp.PirateRadioShuttlePath);
+        var randomMapPath = new ResPath(randomMap);
+        var mapId = Transform(targetStation).MapID;
 
-        if (!_map.TryLoad(Transform(targetStation).MapID, _random.Pick(component.PirateRadioShuttlePath), out var outpostids, outpostOptions))
+        if (!_map.TryLoadGrid(mapId, randomMapPath, out var outpostId, offset: randomOffset))
             return;
-
-        SpawnDebris(component, outpostids);
     }
 
-    private void SpawnDebris(PirateRadioSpawnRuleComponent component, IReadOnlyList<EntityUid> outpostids)
+    private void SpawnDebris(Entity<PirateRadioSpawnRuleComponent> ent)
     {
         if (_confMan.GetCVar(CCVars.WorldgenEnabled)
-            || component.DebrisCount <= 0)
+            || ent.Comp.DebrisCount <= 0)
             return;
 
-        foreach (var id in outpostids)
+        var outpostaabb = _xform.GetWorldPosition(ent.Owner);
+        var k = 0;
+
+        while (k < ent.Comp.DebrisCount)
         {
-            var outpostaabb = _xform.GetWorldPosition(id);
-            var k = 0;
+            var debrisRandomOffset = _random.NextVector2(ent.Comp.MinimumDebrisDistance, ent.Comp.MaximumDebrisDistance);
+            var randomer = _random.NextVector2(ent.Comp.DebrisMinimumOffset, ent.Comp.DebrisMaximumOffset); //Second random vector to ensure the outpost isn't perfectly centered in the debris field
 
-            while (k < component.DebrisCount)
-            {
-                var debrisRandomOffset = _random.NextVector2(component.MinimumDebrisDistance, component.MaximumDebrisDistance);
-                var randomer = _random.NextVector2(component.DebrisMinimumOffset, component.DebrisMaximumOffset); //Second random vector to ensure the outpost isn't perfectly centered in the debris field
-                var debrisOptions = new MapLoadOptions
-                {
-                    Offset = outpostaabb + debrisRandomOffset + randomer,
-                    LoadMap = false,
-                };
+            var salvPrototypes = _prototypeManager.EnumeratePrototypes<SalvageMapPrototype>().ToList();
+            var salvageProto = _random.Pick(salvPrototypes);
 
-                var salvPrototypes = _prototypeManager.EnumeratePrototypes<SalvageMapPrototype>().ToList();
-                var salvageProto = _random.Pick(salvPrototypes);
+            if (!_mapSystem.MapExists(GameTicker.DefaultMap))
+                return;
 
-                if (!_mapSystem.MapExists(GameTicker.DefaultMap))
-                    return;
+            // Round didn't start before running this, leading to a null-space test fail.
+            if (GameTicker.DefaultMap == MapId.Nullspace)
+                return;
 
-                // Round didn't start before running this, leading to a null-space test fail.
-                if (GameTicker.DefaultMap == MapId.Nullspace)
-                    return;
+            if (!_map.TryLoadGrid(
+                GameTicker.DefaultMap,
+                salvageProto.MapPath,
+                out _,
+                offset: outpostaabb + debrisRandomOffset + randomer)
+            )
+                return;
 
-                if (!_map.TryLoad(GameTicker.DefaultMap, salvageProto.MapPath.ToString(), out _, debrisOptions))
-                    return;
-
-                k++;
-            }
+            k++;
         }
     }
 
