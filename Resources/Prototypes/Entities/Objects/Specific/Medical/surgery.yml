@@ -741,7 +741,7 @@
     heldPrefix: evil
 
 - type: entity
-  name: CMO's Proto Multitool
+  name: CMO's proto multitool
   description: "A prototypical medical multitool designed by Nanotrasen to save valuable space in the backpacks of high ranking medical officers."
   id: OmnimedToolLite
   parent: OmnimedTool

@@ -29,3 +29,22 @@
           Quantity: 5
   - type: Tag
     tags: []
+
+- type: entity
+  name: analgesic autoinjector cartridge
+  parent: BaseAutoinjectorCartridge
+  description: Contains 10u of morphine, used in a cartridge autoinjector.
+  id: CartridgePain
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: filling
+      color: "#ffde7448"
+  - type: SolutionCartridge
+    targetSolution: hypospray
+    solution:
+      maxVol: 10
+      reagents:
+      - ReagentId: Morphine
+        Quantity: 10
