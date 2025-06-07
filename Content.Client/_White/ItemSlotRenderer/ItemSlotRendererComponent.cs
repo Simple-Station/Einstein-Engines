@@ -33,10 +33,3 @@ public sealed partial class ItemSlotRendererComponent : Component
     [DataField]
     public Vector2i RenderTargetSize = new Vector2i(32, 32);
 }
-
-/*
-            if (reflection.TryParseEnumReference(keyString, out var @enum))
-                return @enum;
-
-            return keyString;
-*/
