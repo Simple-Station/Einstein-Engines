@@ -33,7 +33,7 @@ public sealed class PassportSystem : EntitySystem
         if (currentState.Name == null)
             return;
 
-        sprite.LayerSetState(1, currentState.Name.Replace("human", profile.Species.ToLower()));
+        sprite.LayerSetState(1, currentState.Name.Replace("human", profile.Species.ToString().ToLower()));
     }
 
     private void OnPassportToggled(Entity<PassportComponent> passport, ref SharedPassportSystem.PassportToggleEvent evt)

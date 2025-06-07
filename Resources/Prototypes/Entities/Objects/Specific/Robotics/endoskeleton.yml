@@ -105,67 +105,67 @@
       mining_l_arm+o:
         whitelist:
           tags:
-            - BorgMiningLArm
+          - BorgMiningLArm
       mining_r_arm+o:
         whitelist:
           tags:
-            - BorgMiningRArm
+          - BorgMiningRArm
       mining_l_leg+o:
         whitelist:
           tags:
-            - BorgMiningLLeg
+          - BorgMiningLLeg
       mining_r_leg+o:
         whitelist:
           tags:
-            - BorgMiningRLeg
+          - BorgMiningRLeg
       mining_head+o:
         whitelist:
           tags:
-            - BorgMiningHead
+          - BorgMiningHead
       mining_chest+o:
         whitelist:
           tags:
-            - BorgMiningTorso
+          - BorgMiningTorso
       medical_l_arm+o:
         whitelist:
           tags:
-            - BorgMedicalLArm
+          - BorgMedicalLArm
       medical_r_arm+o:
         whitelist:
           tags:
-            - BorgMedicalRArm
+          - BorgMedicalRArm
       medical_l_leg+o:
         whitelist:
           tags:
-            - BorgMedicalLLeg
+          - BorgMedicalLLeg
       medical_r_leg+o:
         whitelist:
           tags:
-            - BorgMedicalRLeg
+          - BorgMedicalRLeg
       medical_head+o:
         whitelist:
           tags:
-            - BorgMedicalHead
+          - BorgMedicalHead
       medical_chest+o:
         whitelist:
           tags:
-            - BorgMedicalTorso
+          - BorgMedicalTorso
       janitor_l_leg+o:
         whitelist:
           tags:
-            - BorgJanitorLLeg
+          - BorgJanitorLLeg
       janitor_r_leg+o:
         whitelist:
           tags:
-            - BorgJanitorRLeg
+          - BorgJanitorRLeg
       janitor_head+o:
         whitelist:
           tags:
-            - BorgJanitorHead
+          - BorgJanitorHead
       janitor_chest+o:
         whitelist:
           tags:
-            - BorgJanitorTorso
+          - BorgJanitorTorso
   - type: ContainerContainer
     containers:
       part-container: !type:Container
@@ -223,6 +223,7 @@
   - type: GuideHelp
     guides:
     - Cyborgs
+    - Robotics
   - type: TwistedConstructionTarget
     replacementProto: ConstructShell
     doAfterDelay: 5

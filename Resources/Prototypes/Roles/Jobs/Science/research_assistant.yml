@@ -4,10 +4,6 @@
   description: job-description-research-assistant
   playTimeTracker: JobResearchAssistant
   requirements:
-    # - !type:DepartmentTimeRequirement # DeltaV - Removes time limit
-    #   department: Science
-    #   time: 54000 #15 hrs
-    #   inverted: true # stop playing intern if you're good at science!
     - !type:CharacterEmployerRequirement
       employers:
       - NanoTrasen
@@ -15,7 +11,6 @@
   startingGear: ResearchAssistantGear
   icon: "JobIconResearchAssistant"
   supervisors: job-supervisors-science
-  canBeAntag: true # DeltaV - Can be antagonist
   access:
   - Research
   - Maintenance
@@ -26,12 +21,12 @@
   - ScientistPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorWhite
-    back: ClothingBackpackScienceFilled
+    back: ClothingBackpackScience
     shoes: ClothingShoesColorWhite
     id: ResearchAssistantPDA
     ears: ClothingHeadsetScience
     pocket1: BookPsionicsGuidebook
     pocket2: BookScientistsGuidebook
-  innerClothingSkirt: ClothingUniformJumpskirtColorWhite
-  satchel: ClothingBackpackSatchelScienceFilled
-  duffelbag: ClothingBackpackDuffelScienceFilled
+  storage:
+    back:
+    - BoxSurvival

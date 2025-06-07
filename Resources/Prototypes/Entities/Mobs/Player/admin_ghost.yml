@@ -1,16 +1,16 @@
 - type: entity
-  parent: MobObserver
+  parent: [MobObserver, InventoryBase]
   id: AdminObserver
   name: admin observer
   categories: [ HideSpawnMenu ]
   components:
   - type: Eye
     visMask:
-      - TelegnosticProjection
-      - PsionicInvisibility
-      - Ghost
-      - Normal
-      - Ethereal
+    - TelegnosticProjection
+    - PsionicInvisibility
+    - Ghost
+    - Normal
+    - Ethereal
   - type: ContentEye
     maxZoom: 8.916104, 8.916104
   - type: Tag
@@ -59,7 +59,7 @@
       enum.CrewMonitoringUIKey.Key:
         type: CrewMonitoringBoundUserInterface
       enum.GeneralStationRecordConsoleKey.Key:
-      # who the fuck named this bruh
+        # who the fuck named this bruh
         type: GeneralStationRecordConsoleBoundUserInterface
   - type: IntrinsicUI
     uis:
@@ -102,7 +102,6 @@
   - type: ShowAntagIcons
   - type: Inventory
     templateId: aghost
-  - type: InventorySlots
   - type: Loadout
     prototypes: [ MobAghostGear ]
   - type: SupermatterImmune
@@ -113,7 +112,6 @@
   id: ActionAGhostShowSolar
   name: Solar Control Interface
   description: View a solar control interface.
-  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: { sprite: Structures/Machines/parts.rsi, state: box_0 }
@@ -126,7 +124,6 @@
   id: ActionAGhostShowCommunications
   name: Communications Interface
   description: View a communications interface.
-  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: { sprite: Interface/Actions/actions_ai.rsi, state: comms_console }
@@ -139,7 +136,6 @@
   id: ActionAGhostShowRadar
   name: Mass Scanner Interface
   description: View a mass scanner interface.
-  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: { sprite: Interface/Actions/actions_ai.rsi, state: mass_scanner }
@@ -152,7 +148,6 @@
   id: ActionAGhostShowCargo
   name: Cargo Ordering Interface
   description: View a cargo ordering interface.
-  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: { sprite: Structures/Machines/parts.rsi, state: box_0 }
@@ -165,7 +160,6 @@
   id: ActionAGhostShowCrewMonitoring
   name: Crew Monitoring Interface
   description: View a crew monitoring interface.
-  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: { sprite: Interface/Actions/actions_ai.rsi, state: crew_monitor }
@@ -177,8 +171,7 @@
 - type: entity
   id: ActionAGhostShowStationRecords
   name: Station Records Interface
-  description: View a station records Interface
-  categories: [ HideSpawnMenu ]
+  description: View a station records Interface.
   components:
   - type: InstantAction
     icon: { sprite: Interface/Actions/actions_ai.rsi, state: station_records }

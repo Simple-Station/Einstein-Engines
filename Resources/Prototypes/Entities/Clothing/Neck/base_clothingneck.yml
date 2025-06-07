@@ -33,7 +33,10 @@
 - type: entity
   abstract: true
   parent: ClothingNeckBase
-  id: ClothingNeckScarfBase
+  id: ClothingScarfBase
   components:
   - type: TemperatureProtection
     coefficient: 0.8 # equivalent to winter boots
+  - type: Tag
+    tags:
+    - Scarf

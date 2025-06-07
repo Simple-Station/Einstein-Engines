@@ -312,6 +312,7 @@
       species:
         - Vulpkanin # This trait functions exactly as-is for the Vulpkanin trait.
         - Shadowkin
+        - Tajaran
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -324,12 +325,9 @@
         - LightAmplificationModule
         - ThermographicVisionModule
   functions:
-    - !type:TraitReplaceComponent
+    - !type:TraitAddComponent
       components:
-        - type: Flashable
-          eyeDamageChance: 0.3
-          eyeDamage: 1
-          durationMultiplier: 1.5
+        - type: EyeDamageOnFlashing
 
 - type: trait
   id: Clumsy

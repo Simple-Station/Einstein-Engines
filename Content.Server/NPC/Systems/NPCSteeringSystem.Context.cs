@@ -142,6 +142,13 @@ public sealed partial class NPCSteeringSystem
 
         // Grab the target position, either the next path node or our end goal..
         var targetCoordinates = GetTargetCoordinates(steering);
+
+        if (!targetCoordinates.IsValid(EntityManager))
+        {
+            steering.Status = SteeringStatus.NoPath;
+            return false;
+        }
+
         var needsPath = false;
 
         // If the next node is invalid then get new ones

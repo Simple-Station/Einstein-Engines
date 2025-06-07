@@ -25,7 +25,6 @@
     - BaseStationSiliconLawAsimov
     - BaseStationAllEventsEligible
     - BaseStationNanotrasen
-    - BaseRandomStation
     - BaseStationMail # Nyano component, required for station mail to function
     - BaseStationCaptainState # DeltaV
     - BaseStationStockMarket # DeltaV
@@ -52,78 +51,75 @@
   - BaseStationNanotrasen
   categories: [ HideSpawnMenu ]
   components:
-    - type: Transform
+  - type: Transform
 
 - type: entity
   id: StandardNanotrasenStationNoATS
   parent:
-    - BaseStation
-    - BaseStationNews
-    - BaseStationCargo
-    - BaseStationJobsSpawning
-    - BaseStationRecords
-    - BaseStationArrivals
-    - BaseStationGateway
-    - BaseStationShuttlesSalvageOnly
-    - BaseStationCentcomm
-    - BaseStationEvacuation
-    - BaseStationAlertLevels
-    - BaseStationMagnet
-    - BaseStationExpeditions
-    - BaseStationSiliconLawAsimov
-    - BaseStationAllEventsEligible
-    - BaseStationNanotrasen
-    - BaseRandomStation
-    - BaseStationMail
+  - BaseStation
+  - BaseStationNews
+  - BaseStationCargo
+  - BaseStationJobsSpawning
+  - BaseStationRecords
+  - BaseStationArrivals
+  - BaseStationGateway
+  - BaseStationShuttlesSalvageOnly
+  - BaseStationCentcomm
+  - BaseStationEvacuation
+  - BaseStationAlertLevels
+  - BaseStationMagnet
+  - BaseStationExpeditions
+  - BaseStationSiliconLawAsimov
+  - BaseStationAllEventsEligible
+  - BaseStationNanotrasen
+  - BaseStationMail
   categories: [ HideSpawnMenu ]
   components:
-    - type: Transform
+  - type: Transform
 
 - type: entity
   id: StandardNanotrasenStationNoShuttles
   parent:
-    - BaseStation
-    - BaseStationNews
-    - BaseStationCargo
-    - BaseStationJobsSpawning
-    - BaseStationRecords
-    - BaseStationArrivals
-    - BaseStationGateway
-    - BaseStationCentcomm
-    - BaseStationEvacuation
-    - BaseStationAlertLevels
-    - BaseStationMagnet
-    - BaseStationExpeditions
-    - BaseStationSiliconLawAsimov
-    - BaseStationAllEventsEligible
-    - BaseStationNanotrasen
-    - BaseRandomStation
-    - BaseStationMail
+  - BaseStation
+  - BaseStationNews
+  - BaseStationCargo
+  - BaseStationJobsSpawning
+  - BaseStationRecords
+  - BaseStationArrivals
+  - BaseStationGateway
+  - BaseStationCentcomm
+  - BaseStationEvacuation
+  - BaseStationAlertLevels
+  - BaseStationMagnet
+  - BaseStationExpeditions
+  - BaseStationSiliconLawAsimov
+  - BaseStationAllEventsEligible
+  - BaseStationNanotrasen
+  - BaseStationMail
   categories: [HideSpawnMenu]
   components:
-    - type: Transform
+  - type: Transform
 
 - type: entity
   id: StandardNanotrasenStationCargoOnly
   parent:
-    - BaseStation
-    - BaseStationNews
-    - BaseStationCargo
-    - BaseStationJobsSpawning
-    - BaseStationRecords
-    - BaseStationArrivals
-    - BaseStationGateway
-    - BaseStationShuttlesCargoOnly
-    - BaseStationCentcomm
-    - BaseStationEvacuation
-    - BaseStationAlertLevels
-    - BaseStationMagnet
-    - BaseStationExpeditions
-    - BaseStationSiliconLawAsimov
-    - BaseStationAllEventsEligible
-    - BaseStationNanotrasen
-    - BaseRandomStation
-    - BaseStationMail
+  - BaseStation
+  - BaseStationNews
+  - BaseStationCargo
+  - BaseStationJobsSpawning
+  - BaseStationRecords
+  - BaseStationArrivals
+  - BaseStationGateway
+  - BaseStationShuttlesCargoOnly
+  - BaseStationCentcomm
+  - BaseStationEvacuation
+  - BaseStationAlertLevels
+  - BaseStationMagnet
+  - BaseStationExpeditions
+  - BaseStationSiliconLawAsimov
+  - BaseStationAllEventsEligible
+  - BaseStationNanotrasen
+  - BaseStationMail
   categories: [HideSpawnMenu]
   components:
-    - type: Transform
+  - type: Transform

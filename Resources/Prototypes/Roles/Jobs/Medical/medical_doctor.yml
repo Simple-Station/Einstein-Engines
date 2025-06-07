@@ -4,14 +4,14 @@
   description: job-description-doctor
   playTimeTracker: JobMedicalDoctor
   requirements:
-    - !type:CharacterDepartmentTimeRequirement
-      department: Medical
-      min: 14400 #4 hrs
-    - !type:CharacterEmployerRequirement
-      employers:
-      - ZengHuPharmaceuticals
-      - Interdyne
-      - NanoTrasen
+  - !type:CharacterDepartmentTimeRequirement
+    department: Medical
+    min: 14400 #4 hrs
+  - !type:CharacterEmployerRequirement
+    employers:
+    - ZengHuPharmaceuticals
+    - Interdyne
+    - NanoTrasen
   startingGear: DoctorGear
   icon: "JobIconMedicalDoctor"
   supervisors: job-supervisors-cmo
@@ -20,7 +20,7 @@
   - Maintenance
   extendedAccess:
   - Chemistry
-  - Paramedic # DeltaV - Add Paramedic access
+  - Paramedic
   special:
   - !type:AddComponentSpecial
     components:
@@ -34,17 +34,14 @@
   - DoctorPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitMedicalDoctor
-    back: ClothingBackpackMedicalFilled
+    back: ClothingBackpackMedical
     shoes: ClothingShoesColorWhite
     id: MedicalPDA
     ears: ClothingHeadsetMedical
-  innerClothingSkirt: ClothingUniformJumpskirtMedicalDoctor
-  satchel: ClothingBackpackSatchelMedicalFilled
-  duffelbag: ClothingBackpackDuffelMedicalFilled
 
 - type: startingGear
   id: DoctorPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitMedicalDoctor
     head: ClothingHeadEnvirohelmMedicalDoctor

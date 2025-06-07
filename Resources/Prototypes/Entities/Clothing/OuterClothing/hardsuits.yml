@@ -835,8 +835,8 @@
     reflectProb: 0.45
     innate: true
     reflects:
-      - Energy
-      - NonEnergy
+    - Energy
+    - NonEnergy
   - type: ClothingSlowOnDamageModifier
     modifier: 0.5
   - type: ClothingModifyStunTime # Goobstation
@@ -1096,6 +1096,8 @@
     coefficient: 0.001
   - type: ExplosionResistance
     damageCoefficient: 0.2
+  - type: FireProtection
+    reduction: 0.8
   - type: Armor
     modifiers:
       coefficients:

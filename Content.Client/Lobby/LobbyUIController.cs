@@ -257,7 +257,8 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     public JobPrototype GetPreferredJob(HumanoidCharacterProfile profile)
     {
         var highPriorityJob = profile.JobPriorities.FirstOrDefault(p => p.Value == JobPriority.High).Key;
-        return _prototypeManager.Index<JobPrototype>(highPriorityJob ?? SharedGameTicker.FallbackOverflowJob);
+        // ReSharper disable once NullCoalescingConditionIsAlwaysNotNullAccordingToAPIContract (what is resharper smoking?)
+        return _prototypeManager.Index<JobPrototype>(highPriorityJob.Id ?? SharedGameTicker.FallbackOverflowJob);
     }
 
     public void RemoveDummyClothes(EntityUid dummy)
@@ -282,7 +283,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
         foreach (var slot in slots)
         {
-            var itemType = gear.GetGear(slot.Name, profile);
+            var itemType = gear.GetGear(slot.Name);
 
             if (_inventory.TryUnequip(dummy, slot.Name, out var unequippedItem, silent: true, force: true, reparent: false))
                 EntityManager.DeleteEntity(unequippedItem.Value);

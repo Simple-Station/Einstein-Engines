@@ -5,6 +5,7 @@ using Content.Client.Administration.UI;
 using Content.Client.Humanoid;
 using Content.Client.Message;
 using Content.Client.Players.PlayTimeTracking;
+using Content.Client.Roles;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Guidebook;
@@ -54,6 +55,7 @@ namespace Content.Client.Lobby.UI
         private readonly MarkingManager _markingManager;
         private readonly JobRequirementsManager _requirements;
         private readonly CharacterRequirementsSystem _characterRequirementsSystem;
+        private readonly RoleSystem _roleSystem;
         private readonly LobbyUIController _controller;
         private readonly IRobustRandom _random;
 
@@ -132,6 +134,7 @@ namespace Content.Client.Lobby.UI
             _requirements = requirements;
             _random = random;
 
+            _roleSystem = _entManager.System<RoleSystem>();
             _characterRequirementsSystem = _entManager.System<CharacterRequirementsSystem>();
             _controller = UserInterfaceManager.GetUIController<LobbyUIController>();
 
@@ -787,7 +790,7 @@ namespace Content.Client.Lobby.UI
                 selector.Select(Profile?.AntagPreferences.Contains(antag.ID) == true ? 0 : 1);
 
                 if (!_characterRequirementsSystem.CheckRequirementsValid(
-                    antag.Requirements ?? new(),
+                    _roleSystem.GetAntagRequirement(antag) ?? new(),
                     _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies()),
                     Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
                     _requirements.GetRawPlayTimeTrackers(),
@@ -1039,7 +1042,7 @@ namespace Content.Client.Lobby.UI
                     if (!_requirements.CheckJobWhitelist(job, out var reason))
                         selector.LockRequirements(reason);
                     else if (!_characterRequirementsSystem.CheckRequirementsValid(
-                         job.Requirements ?? new(),
+                         _roleSystem.GetJobRequirement(job) ?? new(),
                          job,
                          Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
                          _requirements.GetRawPlayTimeTrackers(),

@@ -515,7 +515,7 @@
   parent: ClothingOuterWinterCoatToggleable
   id: ClothingOuterWinterSyndie
   name: syndicate's winter coat
-  description: Insulated winter coat, looks like a merch from "Syndieland"
+  description: Insulated winter coat, looks like a merch from "Syndieland".
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/syndicate/wintercoatsyndie.rsi
@@ -550,9 +550,9 @@
     node: coat
   - type: FlavorProfile
     flavors:
-      - cobwebs
+    - cobwebs
     ignoreReagents:
-      - Fiber
+    - Fiber
   - type: SolutionContainerManager
     solutions: # 15 (3 (fiber count of web) * 5 (to craft)) + 5 (magical crafting bonus)
       food:

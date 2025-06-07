@@ -117,10 +117,35 @@
         Heat: 0.95
 
 - type: entity
-  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing ]
+  parent: ClothingOuterArmorBasic
+  id: ClothingOuterArmorReflective
+  name: reflective vest
+  description: An armored vest with advanced shielding to protect against energy weapons.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Armor/armor_reflec.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Armor/armor_reflec.rsi
+  - type: Armor
+    modifiers:
+      flatReductions:
+        Heat: 3
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.7
+  - type: Reflect
+    reflectProb: 0.33
+    innate: true # armor grants a passive shield that does not require concentration to maintain
+    reflects:
+      - Energy
+
+- type: entity
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]
   id: ClothingOuterArmorRaid
   name: syndicate raid suit
-  description: A somewhat flexible and well-armored suit with a powerful shoulder mounted flashlight manufactured in the Gorlex Marauder's iconic blood-red color scheme, it does not protect its wearer from space.
+  description: A somewhat flexible and well-armored suit with a powerful shoulder mounted flashlight manufactured in the Gorlex Marauder's iconic blood-red color scheme, it does not protect it's wearer from space.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Armor/syndie-raid.rsi
@@ -187,31 +212,6 @@
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 2
-
-- type: entity
-  parent: ClothingOuterArmorBasic
-  id: ClothingOuterArmorReflective
-  name: reflective vest
-  description: An armored vest with advanced shielding to protect against energy weapons.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Armor/armor_reflec.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Armor/armor_reflec.rsi
-  - type: Armor
-    modifiers:
-      flatReductions:
-        Heat: 3
-      coefficients:
-        Blunt: 0.9
-        Slash: 0.9
-        Piercing: 0.9
-        Heat: 0.7
-  - type: Reflect
-    reflectProb: 0.33
-    innate: true # armor grants a passive shield that does not require concentration to maintain
-    reflects:
-      - Energy
 
 - type: entity
   parent: ClothingOuterBaseLarge

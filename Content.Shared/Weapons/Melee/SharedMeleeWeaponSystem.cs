@@ -415,7 +415,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         targetXform = null;
         return !Deleted(target) &&
             HasComp<DamageableComponent>(target) &&
-            TryComp<TransformComponent>(target, out targetXform) &&
+            TryComp(target, out targetXform) &&
             // Not in LOS.
             InRange(user, target.Value, component.Range * component.LightRangeModifier, session);
     }
