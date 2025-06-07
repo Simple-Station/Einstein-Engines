@@ -48,7 +48,9 @@
     damageContainers:
     - Inorganic
     - Silicon
+    - SiliconUnshielded
   - type: ShowHealthIcons
     damageContainers:
     - Inorganic
     - Silicon
+    - SiliconUnshielded
