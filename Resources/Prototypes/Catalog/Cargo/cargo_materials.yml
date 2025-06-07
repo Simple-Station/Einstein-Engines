@@ -137,3 +137,16 @@
   cost: 3000
   category: cargoproduct-category-name-materials
   group: market
+
+# backmen edit start
+- type: cargoProduct
+  id: MaterialModCore
+  icon:
+    sprite: Backmen/Objects/Specific/ModSuits/modcore_construction.rsi
+    state: mod-core-standard
+  product: CrateMaterialModCore
+  cost: 10000
+  category: Materials
+  group: market
+
+# end
