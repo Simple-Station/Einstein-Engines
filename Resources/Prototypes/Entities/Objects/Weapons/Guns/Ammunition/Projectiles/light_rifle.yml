@@ -7,9 +7,9 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 25
-    harmorPenetration: 25
-    stoppingPower: 3
+        Piercing: 26
+    harmorPenetration: 30
+    stoppingPower: 4
 
 - type: entity
   id: BulletLightRiflePractice
@@ -35,7 +35,7 @@
 
 - type: entity
   id: BulletLightRifleIncendiary
-  parent: BaseBulletIncendiary
+  parent: BaseBulletIncend
   name: bullet (.5.56x45mm Imperial dragon's breath)
   categories: [ HideSpawnMenu ]
   components:

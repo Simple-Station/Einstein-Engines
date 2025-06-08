@@ -1,6 +1,6 @@
 - type: entity
   id: BaseSpeedLoaderPistol
-  name: "speed loader (.35 auto)"
+  name: "speed loader (9x19mm PSTF)"
   parent: BaseItem
   abstract: true
   components:
@@ -22,7 +22,7 @@
 
 - type: entity
   id: SpeedLoaderPistol
-  name: "speed loader (.35 auto)"
+  name: "speed loader (9x19mm PSTF)"
   parent: BaseSpeedLoaderPistol
   components:
   - type: BallisticAmmoProvider
@@ -41,7 +41,7 @@
 
 - type: entity
   id: SpeedLoaderPistolPractice
-  name: "speed loader (.35 auto practice)"
+  name: "speed loader (9x19mm PSTF practice)"
   parent: BaseSpeedLoaderPistol
   components:
   - type: BallisticAmmoProvider
@@ -60,7 +60,7 @@
 
 - type: entity
   id: SpeedLoaderPistolRubber
-  name: "speed loader (.35 auto rubber)"
+  name: "speed loader (9x19mm PSTF rubber)"
   parent: BaseSpeedLoaderPistol
   components:
   - type: BallisticAmmoProvider

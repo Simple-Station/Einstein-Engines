@@ -1,6 +1,6 @@
 ﻿- type: entity
   id: BulletLightRifleReplicated
-  name: replicated bullet (.20 rifle)
+  name: replicated bullet (5.56x45mm)
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:

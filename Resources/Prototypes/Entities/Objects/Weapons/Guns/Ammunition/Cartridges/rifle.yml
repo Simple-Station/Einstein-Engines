@@ -30,7 +30,7 @@
 
 - type: entity
   id: CartridgeRiflePractice
-  name: cartridge (.20 rifle practice)
+  name: cartridge (5.56x45mm practice)
   parent: BaseCartridgeRifle
   components:
   - type: CartridgeAmmo

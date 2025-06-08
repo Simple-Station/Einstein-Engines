@@ -22,7 +22,7 @@
 
 - type: entity
   id: CartridgePistol
-  name: cartridge (.35 auto)
+  name: cartridge (9x19mm PSTF)
   parent: BaseCartridgePistol
   components:
   - type: CartridgeAmmo

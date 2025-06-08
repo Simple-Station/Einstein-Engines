@@ -80,7 +80,7 @@
   name: Atreides
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunAtreides
-  description: Pla-ket-ket-ket-ket! Uses .35 auto ammo.
+  description: Pla-ket-ket-ket-ket! Uses 9x19mm PSTF ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/SMGs/atreides.rsi
@@ -104,7 +104,7 @@
   name: C-20r sub machine gun
   parent: [BaseWeaponSubMachineGun, BaseGunWieldable]
   id: WeaponSubMachineGunC20r
-  description: Manufactured by Cybersun-Armaments, the C-20r is one of the most popular personal small-arms in the Coalition of Colonies. Uses .35 auto ammo.
+  description: Manufactured by Cybersun-Armaments, the C-20r is one of the most popular personal small-arms in the Coalition of Colonies. Uses 9x19mm PSTF ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
@@ -143,7 +143,7 @@
   name: C-20r sub machine gun
   parent: [WeaponSubMachineGunC20r]
   id: WeaponSubMachineGunC20rEmpty
-  description: Manufactured by Cybersun-Armaments, the C-20r is one of the most popular personal small-arms in the Coalition of Colonies. Uses .35 auto ammo.
+  description: Manufactured by Cybersun-Armaments, the C-20r is one of the most popular personal small-arms in the Coalition of Colonies. Uses 9x19mm PSTF ammo.
   components:
   - type: ItemSlots
     slots:
@@ -233,7 +233,7 @@
 #  parent: BaseWeaponSubMachineGun
 #  id: WeaponSubMachineGunVector
 #  suffix: Deprecated use Drozd
-#  description: An excellent fully automatic Heavy SMG. Uses .45 magnum ammo.
+#  description: An excellent fully automatic Heavy SMG. Uses 8.3×33mm ammo.
 #  components:
 #  - type: Sprite
 #    sprite: Objects/Weapons/Guns/SMGs/vector.rsi
@@ -280,7 +280,7 @@
   name: WT550
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunWt550
-  description: An excellent SMG, produced by NanoTrasen's Small Arms Division. Uses .35 auto ammo.
+  description: An excellent SMG, produced by NanoTrasen's Small Arms Division. Uses 9x19mm PSTF ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/SMGs/wt550.rsi
@@ -378,7 +378,7 @@
 #  name: Vector
 #  parent: WeaponSubMachineGunVector
 #  id: WeaponSubMachineGunVectorRubber
-#  description: An excellent fully automatic Heavy SMG. Uses .45 magnum ammo.
+#  description: An excellent fully automatic Heavy SMG. Uses 8.3×33mm ammo.
 #  suffix: Non-Lethal
 #  components:
 #  - type: ItemSlots
