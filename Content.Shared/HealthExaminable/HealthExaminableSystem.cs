@@ -20,31 +20,17 @@ public sealed class HealthExaminableSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<HealthExaminableComponent, GetVerbsEvent<ExamineVerb>>(OnGetExamineVerbs);
+        SubscribeLocalEvent<HealthExaminableComponent, ExaminedEvent>(OnExamined);
     }
 
-    private void OnGetExamineVerbs(EntityUid uid, HealthExaminableComponent component, GetVerbsEvent<ExamineVerb> args)
+    private void OnExamined(EntityUid uid, HealthExaminableComponent component, ExaminedEvent e)
     {
         if (!TryComp<DamageableComponent>(uid, out var damage))
             return;
-
-        var detailsRange = _examineSystem.IsInDetailsRange(args.User, uid);
-
-        var verb = new ExamineVerb
-        {
-            Act = () =>
-            {
-                var markup = GetMarkup(args.User, (uid, component), damage);
-                _examineSystem.SendExamineTooltip(args.User, uid, markup, false, false);
-            },
-            Text = Loc.GetString("health-examinable-verb-text"),
-            Category = VerbCategory.Examine,
-            Disabled = !detailsRange,
-            Message = detailsRange ? null : Loc.GetString("health-examinable-verb-disabled"),
-            Icon = new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/VerbIcons/rejuvenate.svg.192dpi.png"))
-        };
-
-        args.Verbs.Add(verb);
+        if (!e.IsInDetailsRange)
+            return;
+        var markup = GetMarkup(e.Examiner, (uid, component), damage);
+        e.PushMessage(markup);
     }
 
     public FormattedMessage GetMarkup(EntityUid examiner,
