@@ -39,7 +39,7 @@
     clickPartDamageMultiplier: 3
     heavyPartDamageMultiplier: 2.5
     heavyRateModifier: 1.25
-    heavyRangeModifier: 1.8
+    lightRangeModifier: 1.25
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 2.5
     maxTargets: 7
@@ -87,7 +87,7 @@
       types:
         Slash: 12
     heavyRateModifier: 4
-    heavyRangeModifier: 2.75 #Superior Japanese folded steel
+    lightRangeModifier: 1.25
     heavyDamageBaseModifier: 2
     heavyStaminaCost: 10
     maxTargets: 1
@@ -193,7 +193,7 @@
         Blunt: 1
     bluntStaminaDamageFactor: 25.0
     heavyRateModifier: 4
-    heavyRangeModifier: 1.85
+    heavyRangeModifier: 1.3
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 10
     maxTargets: 10
@@ -232,7 +232,7 @@
       types:
         Slash: 12
     heavyRateModifier: 1.25
-    heavyRangeModifier: 1.75
+    lightRangeModifier: 1.25
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 2.5
     maxTargets: 3

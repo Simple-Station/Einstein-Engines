@@ -16213,3 +16213,164 @@ Entries:
   id: 7256
   time: '2025-05-17T21:11:03.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2258
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Markings can now use shaders. Including things like glowing light
+        effects. You can now also have glowing cybernetic eyes. IPC head screens
+        now glow. 
+  id: 7257
+  time: '2025-05-17T21:26:06.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2432
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: Now you can enable and disable the locks on office chairs.
+  id: 7258
+  time: '2025-05-19T19:49:56.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2422
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: Escape pods now correctly dock at centcomm.
+  id: 7259
+  time: '2025-05-20T19:39:39.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2439
+- author: Tirochora
+  changes:
+    - type: Fix
+      message: Krav Maga no longer  boosts all melee damage.
+  id: 7260
+  time: '2025-05-20T19:39:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2430
+- author: Tirochora
+  changes:
+    - type: Tweak
+      message: Table slamming should be more consistent.
+    - type: Fix
+      message: >-
+        You should properly be able to use both hands after letting somebody go
+        from a stranglehold.
+  id: 7261
+  time: '2025-05-20T19:42:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2247
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed melee weapons "Bonus range for heavy attacks" not functioning
+        correctly. 
+    - type: Add
+      message: >-
+        Added support for melee weapons having bonus range on disarms or light
+        attacks.
+  id: 7262
+  time: '2025-05-20T19:42:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2442
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added support for Organs(such as Cybernetics) to utilize the same
+        massive library of functions used by Traits.
+  id: 7263
+  time: '2025-05-23T22:41:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2448
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: >-
+        Now the action bar doesn’t turn into a party when it picks up an item
+        with an action.
+  id: 7264
+  time: '2025-05-26T00:36:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2446
+- author: Kyoth25f
+  changes:
+    - type: Add
+      message: 'Added a new antagonist: Blob'
+  id: 7265
+  time: '2025-05-28T00:24:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2441
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Dramatically improved performance of the flammable system.
+  id: 7266
+  time: '2025-05-28T01:25:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2462
+- author: Mapping Team
+  changes:
+    - type: Tweak
+      message: Cleanup of Gax
+  id: 7267
+  time: '2025-05-28T05:10:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2458
+- author: Lumminal
+  changes:
+    - type: Add
+      message: Ported thieving beacon from wizden. Have fun stealing pets now!
+  id: 7268
+  time: '2025-05-28T05:14:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2447
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: 'Made significant performance improvements to device network systems. '
+  id: 7269
+  time: '2025-05-28T22:30:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2465
+- author: Mapping Team
+  changes:
+    - type: Tweak
+      message: Cleanup of Cyberiad
+  id: 7270
+  time: '2025-05-31T15:58:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2457
+- author: Mike32oz
+  changes:
+    - type: Add
+      message: Meta office's chairs
+    - type: Tweak
+      message: Meta cameras
+    - type: Fix
+      message: Meta Disposal, Warp-point Bombing
+  id: 7271
+  time: '2025-05-31T15:58:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2468
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Made some server performance improvements to Atmos Alert Computers.
+  id: 7272
+  time: '2025-06-01T02:06:50.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2474
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Improved the server performance of Solar Flare events.
+  id: 7273
+  time: '2025-06-01T02:08:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2473
+- author: CodedCrow
+  changes:
+    - type: Tweak
+      message: Tweaked Arachne plush description
+  id: 7274
+  time: '2025-06-03T21:18:41.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2478
+- author: Will-Oliver-Br
+  changes:
+    - type: Fix
+      message: Now the fryer interface works again.
+  id: 7275
+  time: '2025-06-05T00:55:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2469
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: SmartFridge now really has functionality
+  id: 7276
+  time: '2025-06-07T02:43:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2479
