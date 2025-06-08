@@ -80,7 +80,7 @@ public sealed class ItemSlotRendererSystem : EntitySystem
             }
             if (!sprite.LayerMapTryGet(mapKey, out _) && comp.ErrorOnMissing)
             {
-                Log.Warning($"ItemSlotRenderer: Tried to add a missing layer under the {(isEnum ? "enum" : "string")} key {mapKey}. Skipping missing layer. If this is unwanted, set component's AddMissingLayers to true.");
+                Log.Warning($"ItemSlotRenderer: Tried to add a missing layer under the {(isEnum ? "enum" : "string")} key {mapKey}. Skipping missing layer. If this is unwanted, set component's ErrorOnMissing to false.");
                 continue;
             }
 
