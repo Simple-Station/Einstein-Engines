@@ -1,6 +1,6 @@
 - type: entity
   id: BaseMagazineGrenade
-  name: grenade cartridge
+  name: missile cartridge
   parent: BaseItem
   abstract: true
   components:
