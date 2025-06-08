@@ -2,7 +2,7 @@
   abstract: true
   parent: BaseMagazineBox
   id: BaseMagazineBoxPistol
-  name: ammunition box (9x19mm PSTF)
+  name: ammunition box (9x19mm PSTF auto)
   components:
   - type: BallisticAmmoProvider
     mayTransfer: true
@@ -28,7 +28,7 @@
 - type: entity
   parent: BaseMagazineBoxPistol
   id: MagazineBoxPistol
-  name: ammunition box (9x19mm PSTF)
+  name: ammunition box (9x19mm PSTF auto)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistol
@@ -87,7 +87,7 @@
 - type: entity
   id: MagazineBoxPistolUranium
   parent: BaseMagazineBoxPistol
-  name: ammunition box (9x19mm PSTF uranium)
+  name: ammunition box (9x19mm PSTF black-tip)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolUranium

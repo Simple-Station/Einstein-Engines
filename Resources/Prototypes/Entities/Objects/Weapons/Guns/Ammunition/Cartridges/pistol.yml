@@ -1,6 +1,6 @@
 - type: entity
   id: BaseCartridgePistol
-  name: cartridge (9x19mm PSTF)
+  name: cartridge (9x19mm PSTF auto)
   parent: BaseCartridge
   abstract: true
   components:
@@ -17,6 +17,8 @@
         map: [ "enum.AmmoVisualLayers.Base" ]
   - type: Appearance
   - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 1
 
 - type: entity
   id: CartridgePistol
