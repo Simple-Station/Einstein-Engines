@@ -4087,7 +4087,7 @@ entities:
     - type: Transform
       pos: -11.654456,5.6138062
       parent: 1
-- proto: HandHeldMassScanner
+- proto: HandHeldMassScannerEE
   entities:
   - uid: 293
     components:

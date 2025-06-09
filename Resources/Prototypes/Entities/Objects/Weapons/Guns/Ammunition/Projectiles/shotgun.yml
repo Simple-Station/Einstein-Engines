@@ -1,6 +1,6 @@
 - type: entity
   id: PelletShotgunSlug
-  name: pellet (.50 slug)
+  name: pellet (12g slug)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
@@ -10,11 +10,29 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 28
+        Piercing: 30
+    harmorPenetration: 15
+    stoppingPower : 12
+
+- type: entity
+  id: PelletShotgunSabot
+  name: pellet (12g sabot)
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: slug
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 20
+    harmorPenetration: 30
+    stoppingPower : 8 # overpenetration
 
 - type: entity
   id: PelletShotgunBeanbag
-  name: beanbag (.50)
+  name: beanbag (12g)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
@@ -30,7 +48,7 @@
 
 - type: entity
   id: PelletShotgun
-  name: pellet (.50)
+  name: pellet (12g)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
@@ -41,6 +59,8 @@
     damage:
       types:
         Piercing: 10
+    harmorPenetration: 3
+    stoppingPower: 1
 
 - type: entity
   id: PelletShotgunSpread
@@ -54,7 +74,7 @@
 
 - type: entity
   id: PelletShotgunIncendiary
-  name: pellet (.50 incendiary)
+  name: pellet (12g dragon's breath)
   categories: [ HideSpawnMenu ]
   parent: BaseBulletIncendiary
   components:
@@ -81,7 +101,7 @@
 
 - type: entity
   id: PelletShotgunPractice
-  name: pellet (.50 practice)
+  name: pellet (12g practice)
   categories: [ HideSpawnMenu ]
   parent: BaseBulletPractice
   components:
@@ -130,7 +150,7 @@
 
 - type: entity
   id: PelletShotgunTranquilizer
-  name: pellet (.50 tranquilizer)
+  name: pellet (12g tranquilizer)
   categories: [ HideSpawnMenu ]
   parent: BaseBulletPractice
   components:
@@ -158,7 +178,7 @@
 
 - type: entity
   id: PelletShotgunLumen
-  name: pellet (.50 lumenblast)
+  name: pellet (12g lumenblast)
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
@@ -186,7 +206,7 @@
 
 - type: entity
   id: PelletShotgunUranium
-  name: pellet (.50 uranium)
+  name: pellet (12g AP-DU)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
@@ -196,8 +216,8 @@
   - type: Projectile
     damage:
       types:
-        Radiation: 5
-        Piercing: 5
+        Piercing: 10
+  harmorPenetration: 15
 
 - type: entity
   id: PelletShotgunUraniumSpread
@@ -269,7 +289,7 @@
 
 - type: entity
   id: PelletShotgunBirdshot
-  name: pellet (.50 birdshot)
+  name: pellet (12.7×42mm birdshot)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
@@ -294,7 +314,7 @@
 
 - type: entity
   id: PelletShotgun00Buckshot
-  name: pellet (.50 00-Buckshot)
+  name: pellet (12.7×42mm 00-Buckshot)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
@@ -319,7 +339,7 @@
 
 - type: entity
   id: PelletShotgun0000Buckshot
-  name: pellet (.50 0000-Buckshot)
+  name: pellet (12.7×42mm 0000-Buckshot)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
@@ -344,7 +364,7 @@
 
 - type: entity
   id: PelletShotgunFlare
-  name: pellet (.50 flare)
+  name: pellet (12g flare)
   categories: [ HideSpawnMenu ]
   components:
   - type: Physics

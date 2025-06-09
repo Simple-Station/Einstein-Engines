@@ -1,13 +1,15 @@
 - type: entity
   id: BulletHeavyRifle
-  name: bullet (.20 rifle)
+  name: bullet (12.7×99mm USM)
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Piercing: 19
+        Piercing: 45
+    harmorPenetration: 50
+    stoppingPower: 7
 
 - type: entity
   id: BulletMinigun

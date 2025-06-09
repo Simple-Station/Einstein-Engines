@@ -1,17 +1,19 @@
 - type: entity
   id: BulletRifle
-  name: bullet (0.20 rifle)
+  name: bullet (7.62x51mm)
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Piercing: 23
+        Piercing: 30
+    harmorPenetration: 25
+    stoppingPower: 8
 
 - type: entity
   id: BulletRiflePractice
-  name: bullet (0.20 rifle practice)
+  name: bullet (7.62x51mm practice)
   parent: BaseBulletPractice
   categories: [ HideSpawnMenu ]
   components:
@@ -22,7 +24,7 @@
 
 - type: entity
   id: BulletRifleRubber
-  name: bullet (0.20 rifle rubber)
+  name: bullet (7.62x51mm rubber)
   parent: BaseBulletRubber
   categories: [ HideSpawnMenu ]
   components:
@@ -34,7 +36,7 @@
 - type: entity
   id: BulletRifleIncendiary
   parent: BaseBulletIncendiary
-  name: bullet (0.20 rifle incendiary)
+  name: bullet (7.62x51mm dragon's breath)
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -46,18 +48,19 @@
 - type: entity
   id: BulletRifleUranium
   parent: BaseBulletUranium
-  name: bullet (0.20 rifle uranium)
+  name: bullet (7.62x51mm AP-DU)
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Radiation: 7
-        Piercing: 12
+        Piercing: 25
+    harmorPenetration: 35
+    stoppingPower: 6
 
 - type: entity
   id: BulletRifleShrapnel
-  name: bullet (0.20 rifle shrapnel)
+  name: bullet (05.56x45mm shrapnel)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:

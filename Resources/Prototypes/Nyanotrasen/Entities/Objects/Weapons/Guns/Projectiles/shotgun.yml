@@ -1,6 +1,6 @@
 - type: entity
   id: PelletShotgunSoulbreaker
-  name: pellet (.50 soulbreaker)
+  name: pellet (12.7×42mm soulbreaker)
   categories: [ HideSpawnMenu ]
   parent: BaseBulletPractice
   components:

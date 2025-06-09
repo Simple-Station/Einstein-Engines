@@ -346,6 +346,13 @@
   - type: LayingDown
   - type: BloodstreamAffectedByMass
     power: 0.6 # A minimum size felinid will have 30% blood, a minimum size vulp will have 60%, a maximum size oni will have ~200%
+  - type: EmitSoundOnInternalsActive
+    sound: 
+      collection: InternalsBreathing
+      params:
+        maxDistance: 3
+        rolloffFactor: 2
+        volume: -10
 
 - type: entity
   save: false

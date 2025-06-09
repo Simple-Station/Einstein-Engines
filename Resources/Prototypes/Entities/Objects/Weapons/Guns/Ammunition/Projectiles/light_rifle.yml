@@ -1,17 +1,19 @@
 - type: entity
   id: BulletLightRifle
-  name: bullet (.20 rifle)
+  name: bullet (.5.56x45mm Imperial)
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Piercing: 19
+        Piercing: 26
+    harmorPenetration: 30
+    stoppingPower: 4
 
 - type: entity
   id: BulletLightRiflePractice
-  name: bullet (.20 rifle practice)
+  name: bullet (.5.56x45mm Imperial practice)
   parent: BaseBulletPractice
   categories: [ HideSpawnMenu ]
   components:
@@ -22,7 +24,7 @@
 
 - type: entity
   id: BulletLightRifleRubber
-  name: bullet (.20 rifle rubber)
+  name: bullet (.5.56x45mm Imperial rubber)
   parent: BaseBulletRubber
   categories: [ HideSpawnMenu ]
   components:
@@ -30,11 +32,12 @@
     damage:
       types:
         Blunt: 3
+    stoppingPower: 4
 
 - type: entity
   id: BulletLightRifleIncendiary
   parent: BaseBulletIncendiary
-  name: bullet (.20 rifle incendiary)
+  name: bullet (.5.56x45mm Imperial dragon's breath)
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -46,18 +49,19 @@
 - type: entity
   id: BulletLightRifleUranium
   parent: BaseBulletUranium
-  name: bullet (.20 rifle uranium)
+  name: bullet (.5.56x45mm Imperial black-tip)
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Radiation: 9
-        Piercing: 10
+        Piercing: 20 # uranium penetrates better but wont fragment as much SPCR 2025
+    harmorPenetration: 40
+    stoppingPower: 5
 
 - type: entity
   id: BulletLightRifleShrapnel
-  name: bullet (.20 rifle shrapnel)
+  name: bullet (.5.56x45mm Imperial shrapnel)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:

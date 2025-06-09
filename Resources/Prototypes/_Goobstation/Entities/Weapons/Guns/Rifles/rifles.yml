@@ -2,7 +2,7 @@
   name: M-90
   parent: BaseWeaponRifle
   id: WeaponRifleM90
-  description: A revision of the M-90gl that removes the inbuilt grenade launcher. Uses .20 rifle ammo.
+  description: A revision of the M-90gl that removes the inbuilt grenade launcher. Uses 5.56x45mm ammo.
   components:
   - type: Sprite
     sprite: _Goobstation/Objects/Weapons/Guns/Rifles/m90.rsi

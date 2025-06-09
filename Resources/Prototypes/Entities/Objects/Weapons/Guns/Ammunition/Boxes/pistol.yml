@@ -2,7 +2,7 @@
   abstract: true
   parent: BaseMagazineBox
   id: BaseMagazineBoxPistol
-  name: ammunition box (.35 auto)
+  name: ammunition box (9x19mm PSTF auto)
   components:
   - type: BallisticAmmoProvider
     mayTransfer: true
@@ -28,7 +28,7 @@
 - type: entity
   parent: BaseMagazineBoxPistol
   id: MagazineBoxPistol
-  name: ammunition box (.35 auto)
+  name: ammunition box (9x19mm PSTF auto)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistol
@@ -42,7 +42,7 @@
 - type: entity
   parent: BaseMagazineBoxPistol
   id: MagazineBoxPistolPractice
-  name: ammunition box (.35 auto practice)
+  name: ammunition box (9x19mm PSTF practice)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolPractice
@@ -57,7 +57,7 @@
 - type: entity
   parent: BaseMagazineBoxPistol
   id: MagazineBoxPistolRubber
-  name: ammunition box (.35 auto rubber)
+  name: ammunition box (9x19mm PSTF rubber)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolRubber
@@ -72,7 +72,7 @@
 - type: entity
   id: MagazineBoxPistolIncendiary
   parent: BaseMagazineBoxPistol
-  name: ammunition box (.35 auto incendiary)
+  name: ammunition box (9x19mm PSTF incendiary)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolIncendiary
@@ -87,7 +87,7 @@
 - type: entity
   id: MagazineBoxPistolUranium
   parent: BaseMagazineBoxPistol
-  name: ammunition box (.35 auto uranium)
+  name: ammunition box (9x19mm PSTF black-tip)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolUranium
@@ -102,7 +102,7 @@
 - type: entity
   parent: BaseMagazineBoxPistol
   id: MagazineBoxPistolShrapnel
-  name: ammunition box (.35 auto shrapnel)
+  name: ammunition box (9x19mm PSTF shrapnel)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolShrapnel
