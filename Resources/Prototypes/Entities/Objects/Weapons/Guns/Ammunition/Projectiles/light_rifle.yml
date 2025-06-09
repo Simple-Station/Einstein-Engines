@@ -32,6 +32,7 @@
     damage:
       types:
         Blunt: 3
+    stoppingPower: 4
 
 - type: entity
   id: BulletLightRifleIncendiary
@@ -55,7 +56,8 @@
     damage:
       types:
         Piercing: 20 # uranium penetrates better but wont fragment as much SPCR 2025
-  harmorPenetration: 40
+    harmorPenetration: 40
+    stoppingPower: 5
 
 - type: entity
   id: BulletLightRifleShrapnel
