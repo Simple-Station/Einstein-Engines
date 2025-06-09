@@ -35,7 +35,7 @@
 
 - type: entity
   id: BulletLightRifleIncendiary
-  parent: BaseBulletIncend
+  parent: BaseBulletIncendiary
   name: bullet (.5.56x45mm Imperial dragon's breath)
   categories: [ HideSpawnMenu ]
   components:
