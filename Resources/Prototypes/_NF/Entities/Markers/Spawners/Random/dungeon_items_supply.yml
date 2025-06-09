@@ -63,7 +63,7 @@
     offset: 0.0
     rarePrototypes:
     - OreBagOfHolding
-    - HandHeldMassScanner
+    - HandHeldMassScannerEE
     - SpawnDungeonLootHardsuitsSalvage
     rareChance: 0.05
 

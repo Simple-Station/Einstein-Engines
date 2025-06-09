@@ -1467,7 +1467,7 @@ entities:
       parent: 1
     - type: Thruster
       originalPowerLoad: 1500
-- proto: HandHeldMassScanner
+- proto: HandHeldMassScannerEE
   entities:
   - uid: 163
     components:

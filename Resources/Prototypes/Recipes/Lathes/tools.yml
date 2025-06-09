@@ -148,8 +148,8 @@
     Plastic: 250
 
 - type: latheRecipe
-  id: HandHeldMassScanner
-  result: HandHeldMassScannerEmpty
+  id: HandHeldMassScannerEE
+  result: HandHeldMassScannerEE
   category: Tools
   completetime: 2
   materials:

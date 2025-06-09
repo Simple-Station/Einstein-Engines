@@ -2,7 +2,7 @@
   name: handheld mass scanner
   parent: BaseHandheldComputer
   id: HandHeldMassScannerEE
-  description: A hand-held mass scanner.
+  description: A hand-held mass scanner. It only consumes power when scanning.
   suffix : Einstein-Engines
   components:
   - type: Item
