@@ -57,6 +57,18 @@
         Caustic: 0.9
 
 - type: entity
+  parent: ClothingHeadHelmetHardsuitCorpsec
+  id: ClothingHeadHelmetHardsuitCorpsecUA
+  categories: [ HideSpawnMenu ]
+  name: shinohara united arsenal SVBT-2 combat hardsuit helmet
+  description: Spaceworthy protection for your fragile skull.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Head/corpsec_ua.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Head/corpsec_ua.rsi
+
+- type: entity
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitTraumasec
   categories: [ HideSpawnMenu ]
@@ -98,6 +110,17 @@
     sprite: _Crescent/Clothing/SHI/Head/beret.rsi
 
 - type: entity
+  parent: ClothingHeadHatShinoharaBeret
+  id: ClothingHeadHatShinoharaBeretUA
+  name: united arsenal corpsec beret
+  description: A formal beret with the United Arsenal logo for corpsec.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Head/beret_ua.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Head/beret_ua.rsi
+
+- type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatShinoharaFacade
   name: captain's facade
@@ -134,3 +157,18 @@
         Piercing: 0.85
         Heat: 0.85
         Caustic: 0.85
+
+- type: entity
+  parent: ClothingHeadHatShinoharaHelmet
+  id: ClothingHeadHatShinoharaHelmetUA
+  name: SHI-UA BULWARK-2 ballistic helmet
+  description: A high-tech, cycloptic helmet with the Shinohara Heavy Industries corporate logo emblazoned on the front. Preferred by liquidation agents and elite mercs everywhere. Customized by the subsidiary group United Arsenal.
+  components:
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Head/highsec_ua.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Head/highsec_ua.rsi

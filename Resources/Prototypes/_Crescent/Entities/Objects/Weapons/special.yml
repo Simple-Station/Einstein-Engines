@@ -1,11 +1,62 @@
 - type: entity
+  name: PTA XCG-4 Lancer 15mm
+  parent: BaseWeaponRifle
+  id: WeaponSpecialRailgun
+  description: A small-scale railgun developed by Pang Tai Arms. Not commonly seen due to the high price per unit. Chambered in 15mm.
+  components:
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/railgun.rsi
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/railgun.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    fireRate: 0.5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/charged.ogg
+    fireOnDropChance: 0.5
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRailgun15mmAP
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineRailgun15mm
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeRailgun15mmAP
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeRailgun15mm
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
+  - type: Appearance
+
+- type: entity
   name: PTA 400c Mako handheld plasma repeater
   parent: BaseWeaponBattery
   id: WeaponSpecialMako
   description: A shoulder-carried version of the NanoTrasen plasma repeater intended for infantry use by field operatives. Developed by Pang Tai Arms.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/mako.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/mako.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -19,7 +70,7 @@
     steps: 3
     zeroVisible: false
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/makoworn.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/mako.rsi
   - type: Battery
     maxCharge: 1000
     startingCharge: 1000
@@ -68,14 +119,14 @@
   description: A modified ancient rocket-propelled grenade launcher. Stamped with the Shinohara Heavy Industries logo and capable of firing guided projectiles.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/rocket.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/hammerhead.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/rocket.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/hammerhead.rsi
   - type: Gun
     fireRate: 0.5
     soundGunshot:
@@ -88,8 +139,8 @@
       path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
   - type: MagazineVisuals
     magState: mag
-    steps: 2
-    zeroVisible: false
+    steps: 3
+    zeroVisible: true
   - type: Appearance
   - type: Contraband
 
