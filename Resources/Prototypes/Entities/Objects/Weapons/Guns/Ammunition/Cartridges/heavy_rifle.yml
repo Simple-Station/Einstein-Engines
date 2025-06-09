@@ -21,14 +21,6 @@
     price: 1
 
 - type: entity
-  id: CartridgeHeavyRifle
-  name: cartridge (12.7×99mm USM)
-  parent: BaseCartridgeHeavyRifle
-  components:
-  - type: CartridgeAmmo
-    proto: BulletHeavyRifle
-
-- type: entity
   id: CartridgeMinigun
   name: cartridge (.10 rifle)
   parent: BaseCartridgeHeavyRifle
