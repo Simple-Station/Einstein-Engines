@@ -72,7 +72,7 @@
   description: It's a magazine-fed shotgun designed for close quarters combat. Uses .50 shotgun shells.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Shotguns/bulldog.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/pozhar.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -81,7 +81,7 @@
   - type: Item
     size: Large
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Shotguns/bulldog.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/pozhar.rsi
     quickEquip: false
     slots:
     - Back
@@ -219,11 +219,11 @@
   description: A premium combat shotgun based on the Kammerer design, featuring an upgraded clip capacity. .50 shotgun shells.
   components:
   - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/enforcer.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/enforcer.rsi
   - type: Clothing
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/enforcer.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/enforcer.rsi
   - type: Item
-    sprite: Objects/Weapons/Guns/Shotguns/enforcer_inhands_64x.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/enforcer.rsi
   - type: BallisticAmmoProvider
     capacity: 7
     autoCycle: false
@@ -255,11 +255,11 @@
     size: Normal
     shape:
     - 0,0,4,0
-    sprite: Objects/Weapons/Guns/Shotguns/pump_inhands_64x.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/kammerer.rsi
   - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/pump.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/kammerer.rsi
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Shotguns/pump.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/kammerer.rsi
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: BallisticAmmoProvider
     capacity: 4

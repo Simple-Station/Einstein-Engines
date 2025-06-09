@@ -5,10 +5,7 @@
   description: A Hunter's beloved sidearm.
   components:
   - type: Sprite
-    scale: 0.75 , 0.75
-    sprite: _NF/Objects/Weapons/Guns/Revolvers/argenti.rsi
-  - type: Clothing
-    sprite: _NF/Objects/Weapons/Guns/Revolvers/argenti.rsi
+    sprite: _Crescent\Objects\Weapons\Guns\acolyte.rsi
   - type: Gun
     fireRate: 2.5
     resetOnHandSelected: false

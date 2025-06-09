@@ -5,7 +5,7 @@
   description: A custom hand-cannon from the SHI development team that was never meant to be released. Chambered in heavy .327 Imperial.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/zodum.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/zodum.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -52,14 +52,14 @@
   description: A high-end Communard rifle, used to be produced in a Chengridz-based foundry. Recalled from production after Imperial sabotage. Only a few of these actually remain.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/porodschok.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/porodshok.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/porodschokworn.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/porodshok.rsi
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg

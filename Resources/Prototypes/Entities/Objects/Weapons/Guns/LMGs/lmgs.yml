@@ -9,7 +9,7 @@
   - type: Item
     size: Huge
   - type: Clothing
-    sprite: Objects/Weapons/Guns/LMGs/l6.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/l6saw.rsi
     quickEquip: false
     slots:
     - Back
@@ -89,15 +89,15 @@
   description: A rather traditionally made LMG with a pleasantly lacquered wooden pistol grip. Uses .30 rifle ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/LMGs/l6.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/l6saw.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
-    - state: mag-3
+    - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
   - type: MagazineVisuals
     magState: mag
-    steps: 4
+    steps: 1
     zeroVisible: true
   - type: Appearance
 

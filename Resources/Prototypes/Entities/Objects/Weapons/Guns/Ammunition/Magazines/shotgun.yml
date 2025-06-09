@@ -21,7 +21,7 @@
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/m12.rsi
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/shotgun_mag.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -29,7 +29,7 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: MagazineVisuals
     magState: mag
-    steps: 2
+    steps: 6
     zeroVisible: false
   - type: Appearance
 
@@ -51,7 +51,7 @@
     proto: ShellShotgun
   - type: Sprite
     layers:
-    - state: pellets
+    - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
@@ -65,7 +65,7 @@
     proto: ShellShotgunBeanbag
   - type: Sprite
     layers:
-    - state: beanbag
+    - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
@@ -79,7 +79,7 @@
     proto: ShellShotgunSlug
   - type: Sprite
     layers:
-    - state: slug
+    - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
@@ -93,7 +93,7 @@
     proto: ShellShotgunIncendiary
   - type: Sprite
     layers:
-    - state: slug
+    - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
@@ -107,7 +107,7 @@
     proto: ShellShotgunUranium
   - type: Sprite
     layers:
-    - state: slug
+    - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
@@ -121,7 +121,7 @@
     proto: ShellShotgunBirdshot
   - type: Sprite
     layers:
-    - state: pellets
+    - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
@@ -135,7 +135,7 @@
     proto: ShellShotgun00Buckshot
   - type: Sprite
     layers:
-    - state: pellets
+    - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
@@ -149,7 +149,7 @@
     proto: ShellShotgun0000Buckshot
   - type: Sprite
     layers:
-    - state: pellets
+    - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
