@@ -64,7 +64,7 @@
 
 - type: entity
   id: ShellShotgunLumen
-  name: shell (12.7×42mm Lumenblast)
+  name: shell (12g Lumenblast)
   parent: BaseShellShotgun
   components:
   - type: Tag

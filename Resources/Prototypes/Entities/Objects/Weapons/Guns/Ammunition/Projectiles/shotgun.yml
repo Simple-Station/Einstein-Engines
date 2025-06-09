@@ -1,6 +1,6 @@
 - type: entity
   id: PelletShotgunSlug
-  name: pellet (12.7×42mm slug)
+  name: pellet (12g slug)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
@@ -16,7 +16,7 @@
 
 - type: entity
   id: PelletShotgunSabot
-  name: pellet (12.7×42mm sabot)
+  name: pellet (12g sabot)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
@@ -32,7 +32,7 @@
 
 - type: entity
   id: PelletShotgunBeanbag
-  name: beanbag (12.7×42mm)
+  name: beanbag (12g)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
@@ -48,7 +48,7 @@
 
 - type: entity
   id: PelletShotgun
-  name: pellet (12.7×42mm)
+  name: pellet (12g)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
@@ -74,7 +74,7 @@
 
 - type: entity
   id: PelletShotgunIncendiary
-  name: pellet (12.7×42mm incendiary)
+  name: pellet (12g dragon's breath)
   categories: [ HideSpawnMenu ]
   parent: BaseBulletIncendiary
   components:
@@ -101,7 +101,7 @@
 
 - type: entity
   id: PelletShotgunPractice
-  name: pellet (12.7×42mm practice)
+  name: pellet (12g practice)
   categories: [ HideSpawnMenu ]
   parent: BaseBulletPractice
   components:
@@ -150,7 +150,7 @@
 
 - type: entity
   id: PelletShotgunTranquilizer
-  name: pellet (12.7×42mm tranquilizer)
+  name: pellet (12g tranquilizer)
   categories: [ HideSpawnMenu ]
   parent: BaseBulletPractice
   components:
@@ -178,7 +178,7 @@
 
 - type: entity
   id: PelletShotgunLumen
-  name: pellet (12.7×42mm lumenblast)
+  name: pellet (12g lumenblast)
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
@@ -206,7 +206,7 @@
 
 - type: entity
   id: PelletShotgunUranium
-  name: pellet (12.7×42mm AP-DU)
+  name: pellet (12g AP-DU)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
@@ -364,7 +364,7 @@
 
 - type: entity
   id: PelletShotgunFlare
-  name: pellet (12.7×42mm flare)
+  name: pellet (12g flare)
   categories: [ HideSpawnMenu ]
   components:
   - type: Physics
