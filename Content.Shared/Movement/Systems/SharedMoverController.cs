@@ -483,10 +483,21 @@ namespace Content.Shared.Movement.Systems
             }
             // Delta V NoShoesSilentFootsteps till here.
 
-            if (_inventory.TryGetSlotEntity(uid, "shoes", out var shoes) &&
-                TryComp<FootstepModifierComponent>(shoes, out var modifier))
+
+            // If we have a clothing item with "FootstepModifier" on it, either on outer clothing (hardsuit) or on shoes (shoes), then change the sound. hardsuit takes priority.
+            // cuz it's above it and returns first. TryGetFootstepSound should still work for the cases where you have shoes but nothing that modifies.
+
+            if (_inventory.TryGetSlotEntity(uid, "outerClothing", out var hardsuit) &&
+                TryComp<FootstepModifierComponent>(hardsuit, out var modifier1))
             {
-                sound = modifier.FootstepSoundCollection;
+                sound = modifier1.FootstepSoundCollection;
+                return true; 
+            }
+
+            if (_inventory.TryGetSlotEntity(uid, "shoes", out var shoes) &&
+                TryComp<FootstepModifierComponent>(shoes, out var modifier2))
+            {
+                sound = modifier2.FootstepSoundCollection;
                 return true;
             }
 
