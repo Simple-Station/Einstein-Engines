@@ -1,0 +1,29 @@
+{
+    "version": 1,
+    "license": "",
+    "copyright": "Created for Hullrot by Luckass / ʞɔn𝟟♤𝑳𝗎𝖼𝗄.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "ua1"
+        },
+        {
+            "name": "ua2"
+        },
+        {
+            "name": "ua3"
+        },
+        {
+            "name": "ua4"
+        },
+        {
+            "name": "ua5"
+        },
+        {
+            "name": "ua6"
+        }       
+    ]
+}
