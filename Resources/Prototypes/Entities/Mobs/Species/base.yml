@@ -351,6 +351,8 @@
       collection: InternalsBreathing
       params:
         maxDistance: 3
+        rolloffFactor: 2
+        volume: -10
 
 - type: entity
   save: false
