@@ -64,7 +64,6 @@
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingMaskSyndicateFacemask: 100
-    ClothingUniformJumpsuitSyndicate: 100
     ClothingHandsGlovesCombat: 100
     ClothingShoesBootsJack: 100
     ClothingBackpackNCSPDuffelbag: 150
@@ -153,7 +152,6 @@
     ClothingBeltNCWLWebbingMedFilled: 60
     ClothingBeltNCWLWebbingFilledGrenadier: 60
     ClothingMaskSyndicateFacemask: 100
-    ClothingUniformJumpsuitNCWL: 150
     ClothingHandsGlovesCombat: 100
     ClothingShoesBootsJack: 100
     ClothingBackpackDuffelNCWL: 150
@@ -237,8 +235,6 @@
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingMaskImperialCombatGasmask: 100
-    ClothingUniformJumpsuitImperialCombat: 100
-    ClothingUniformJumpsuitClarizeCombat: 100
     ClothingHandsGlovesImperialLonggloves: 100
     ClothingShoesBootsImperialJackboots: 100
     ClothingBackpackDSMSatchel: 150
@@ -318,7 +314,6 @@
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     RomaineBible: 100
     ClothingMaskImperialCombatGasmask: 100
-    ClothingUniformJumpsuitHunter: 100
     ClothingHandsGlovesHunter: 100
     ClothingShoesBootsHunter: 100
     ClothingBackpackSRMSatchel: 150
@@ -407,7 +402,6 @@
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingBeltMinutemanPouches: 100
     ClothingMaskSyndicateFacemask: 100
-    ClothingUniformJumpsuitCMM: 100
     ClothingHandsGlovesCombat: 100
     ClothingShoesBootsJack: 100
     ClothingBackpackMinutemanDuffelbag: 150
@@ -486,7 +480,6 @@
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingBeltMinutemanPouches: 100
     ClothingMaskSyndicateFacemask: 100
-    ClothingUniformJumpsuitShinoharaSecurity: 150
     ClothingHandsGlovesCombat: 100
     ClothingShoesBootsJack: 100
     ClothingBackpackSHIDuffelbag: 150
@@ -589,7 +582,6 @@
     HandHeldMassScanner: 150
     Crowbar: 150
     BoxBreachingCharges: 150
-    ClothingOuterHardsuitDraugr: 150
     OxygenTankFilled: 150
     ClothingShoesBootsMagAdv: 150
     StimpackMini: 150
@@ -660,7 +652,6 @@
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingBeltAuthorityWebbing: 100
     ClothingMaskSyndicateFacemask: 100
-    ClothingUniformJumpsuitAuthoritySoldat: 150
     ClothingHandsGlovesCombat: 100
     ClothingShoesBootsJack: 100
     ClothingBackpackSHIDuffelbag: 150
@@ -751,7 +742,6 @@
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingBeltMinutemanPouches: 100
     ClothingMaskSyndicateFacemask: 100
-    ClothingUniformJumpsuitShinoharaSuit: 150
     ClothingHandsGlovesCombat: 100
     ClothingShoesBootsJack: 100
     ClothingBackpackSHIDuffelbag: 150
