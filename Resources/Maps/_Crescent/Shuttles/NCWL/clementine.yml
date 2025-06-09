@@ -9665,7 +9665,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: HandHeldMassScanner
+- proto: HandHeldMassScannerEE
   entities:
   - uid: 2144
     components:

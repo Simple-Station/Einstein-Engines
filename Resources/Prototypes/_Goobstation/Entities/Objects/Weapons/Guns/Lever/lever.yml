@@ -32,7 +32,7 @@
           - CartridgeMagnum
   - type: Gun
     fireRate: 0.8
-    damageModifier: 1.65 # BSO exclusive rifle shooting .45 magnum rounds
+    damageModifier: 1.65 # BSO exclusive rifle shooting 8.3×33mm rounds
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/batrifle.ogg
   - type: ChamberMagazineAmmoProvider

@@ -271,3 +271,4 @@ public record struct ProjectileHitEvent(DamageSpecifier Damage, EntityUid Target
 /// </summary>
 [ByRefEvent]
 public record struct AfterProjectileHitEvent(DamageSpecifier Damage, EntityUid Target);
+

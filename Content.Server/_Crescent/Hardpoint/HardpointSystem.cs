@@ -44,21 +44,14 @@ public sealed class HardpointSystem : SharedHardpointSystem
             return;
 
         var gridUid = Transform(uid).GridUid;
-        if (gridUid != null)
+        if (gridUid != null && HasComp<PacifistShipHullmodComponent>(gridUid))
         {
-            if (TryComp<PacifistShipHullmodComponent>(gridUid, out PacifistShipHullmodComponent? paciship))
-            {
                 return;
-
-            }
         }
 
         if (args.Port == component.Trigger)
             _gun.AttemptShoot(hard.anchoring.Value, gun);
-
-        if (!TryComp<AutoShootGunComponent>(hard.anchoring.Value, out var autoShoot))
-            return;
-
+        var autoShoot = EnsureComp<AutoShootGunComponent>(hard.anchoring.Value);
         if (args.Port == component.Toggle)
             _gun.SetEnabled(hard.anchoring.Value, autoShoot, !autoShoot.Enabled);
     }

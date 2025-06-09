@@ -1,6 +1,6 @@
 - type: entity
   id: BaseMagazineHighCaliber
-  name: "magazine (.50 caliber)"
+  name: "magazine (12.7×42mm caliber)"
   parent: BaseItem
   abstract: true
   components:
@@ -34,7 +34,7 @@
 
 - type: entity
   id: MagazineHighCaliberEmpty
-  name: "magazine (.50 empty)"
+  name: "magazine (12.7×42mm empty)"
   parent: BaseMagazineHighCaliber
   components:
   - type: BallisticAmmoProvider
@@ -42,7 +42,7 @@
 
 - type: entity
   id: MagazineHighCaliber
-  name: "magazine (.50 anti-materiel)"
+  name: "magazine (12.7×42mm anti-materiel)"
   parent: BaseMagazineHighCaliber
   components:
   - type: BallisticAmmoProvider
@@ -50,7 +50,7 @@
 
 - type: entity
   id: MagazineHighCaliberExplosive
-  name: "magazine (.50 high-explosive)"
+  name: "magazine (12.7×42mm high-explosive)"
   parent: BaseMagazineHighCaliber
   components:
   - type: BallisticAmmoProvider

@@ -1,6 +1,6 @@
 - type: entity
   id: BaseCartridgeLightRifle
-  name: cartridge (.30 rifle)
+  name: cartridge (5.56x45mm Imperial)
   parent: BaseCartridge
   abstract: true
   components:
@@ -17,10 +17,12 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 1
 
 - type: entity
   id: CartridgeLightRifle
-  name: cartridge (.30 rifle)
+  name: cartridge (5.56x45mm Imperial)
   parent: BaseCartridgeLightRifle
   components:
   - type: CartridgeAmmo
@@ -28,7 +30,7 @@
 
 - type: entity
   id: CartridgeLightRiflePractice
-  name: cartridge (.30 rifle practice)
+  name: cartridge (5.56x45mm Imperial rubber-tip)
   parent: BaseCartridgeLightRifle
   components:
   - type: CartridgeAmmo
@@ -42,23 +44,8 @@
         color: "#dbdbdb"
 
 - type: entity
-  id: CartridgeLightRifleRubber
-  name: cartridge (.30 rifle rubber)
-  parent: BaseCartridgeLightRifle
-  components:
-  - type: CartridgeAmmo
-    proto: BulletLightRifleRubber
-  - type: Sprite
-    layers:
-      - state: base
-        map: [ "enum.AmmoVisualLayers.Base" ]
-      - state: tip
-        map: [ "enum.AmmoVisualLayers.Tip" ]
-        color: "#43c4f7"
-
-- type: entity
   id: CartridgeLightRifleIncendiary
-  name: cartridge (.30 rifle incendiary)
+  name: cartridge (5.56x45mm Imperial dragonsbreath)
   parent: BaseCartridgeLightRifle
   components:
   - type: CartridgeAmmo
@@ -73,7 +60,7 @@
 
 - type: entity
   id: CartridgeLightRifleUranium
-  name: cartridge (.30 rifle uranium)
+  name: cartridge (5.56x45mm Imperial nucleode-tip)
   parent: BaseCartridgeLightRifle
   components:
   - type: CartridgeAmmo
@@ -88,7 +75,7 @@
 
 - type: entity
   id: CartridgeLightRifleShrapnel
-  name: cartridge (.30 rifle shrapnel)
+  name: cartridge (5.56x45mm Imperial shrapnel)
   parent: BaseCartridgeLightRifle
   components:
   - type: CartridgeAmmo

@@ -1,17 +1,19 @@
 - type: entity
   id: BulletPistol
-  name: bullet (.35 auto)
+  name: bullet (9x19mm PSTF)
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Piercing: 16
+        Piercing: 21
+    harmorPenetration: 5
+    stoppingPower : 1
 
 - type: entity
   id: BulletPistolPractice
-  name: bullet (.35 auto practice)
+  name: bullet (9x19mm PSTF practice)
   parent: BaseBulletPractice
   categories: [ HideSpawnMenu ]
   components:
@@ -22,7 +24,7 @@
 
 - type: entity
   id: BulletPistolRubber
-  name: bullet (.35 auto rubber)
+  name: bullet (9x19mm PSTF rubber)
   parent: BaseBulletRubber
   categories: [ HideSpawnMenu ]
   components:
@@ -34,7 +36,7 @@
 - type: entity
   id: BulletPistolIncendiary
   parent: BaseBulletIncendiary
-  name: bullet (.35 auto incendiary)
+  name: bullet (9x19mm PSTF incendiary)
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -46,18 +48,19 @@
 - type: entity
   id: BulletPistolUranium
   parent: BaseBulletUranium
-  name: bullet (.35 auto uranium)
+  name: bullet (9x19mm PSTF AP-DU)
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Radiation: 6
-        Piercing: 10
+        Piercing: 17
+    harmorPenetration: 15
+    stoppingPower : 1
 
 - type: entity
   id: BulletPistolShrapnel
-  name: bullet (.35 auto shrapnel)
+  name: bullet (9x19mm PSTF shrapnel)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:

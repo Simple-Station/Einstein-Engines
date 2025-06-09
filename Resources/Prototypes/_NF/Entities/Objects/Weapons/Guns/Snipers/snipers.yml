@@ -12,12 +12,12 @@
   name: N2524 Pattern Repeater
   parent: [BaseWeaponSniper, BaseGunWieldable]
   id: WeaponSniperRepeater
-  description: A civilian grade lever action firearm, favored by space cowboys across the Frontier for its reliability and stopping power. Uses .45 magnum ammo.
+  description: A civilian grade lever action firearm, favored by space cowboys across the Frontier for its reliability and stopping power. Uses 8.3×33mm ammo.
   components:
   - type: Sprite
     sprite: _NF/Objects/Weapons/Guns/Snipers/repeater.rsi
   - type: Clothing
-    sprite: _NF/Objects/Weapons/Guns/Snipers/repeater.rsi    
+    sprite: _NF/Objects/Weapons/Guns/Snipers/repeater.rsi
   - type: StaticPrice
     price: 500
   - type: BallisticAmmoProvider
