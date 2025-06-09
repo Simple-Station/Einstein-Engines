@@ -2,7 +2,7 @@
   name: Typewriter
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunTypewriter
-  description: A modern take on the classic design used by mobsters throughout space and time. Types .35 auto ammo.
+  description: A modern take on the classic design used by mobsters throughout space and time. Types 9x19mm PSTF ammo.
   components:
   - type: Sprite
     sprite: DeltaV/Objects/Weapons/Guns/SMGs/typewriter.rsi

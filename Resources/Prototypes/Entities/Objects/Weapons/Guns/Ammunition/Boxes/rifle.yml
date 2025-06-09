@@ -27,7 +27,7 @@
 - type: entity
   parent: BaseMagazineBoxRifle
   id: MagazineBoxRifleBig
-  name: ammunition box (.20 rifle)
+  name: ammunition box (7.62x51mm USM rifle)
   components:
   - type: BallisticAmmoProvider
     capacity: 200
@@ -47,7 +47,7 @@
 - type: entity
   parent: BaseMagazineBoxRifle
   id: MagazineBoxRifleBigRubber
-  name: ammunition box (.20 rifle rubber)
+  name: ammunition box (7.62x51mm USM rubber)
   components:
   - type: BallisticAmmoProvider
     capacity: 200
@@ -68,7 +68,7 @@
 - type: entity
   parent: BaseMagazineBoxRifle
   id: MagazineBoxRifle
-  name: ammunition box (.20 rifle)
+  name: ammunition box (7.62x51mm USM rifle)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeRifle
@@ -82,7 +82,7 @@
 - type: entity
   parent: BaseMagazineBoxRifle
   id: MagazineBoxRiflePractice
-  name: ammunition box (.20 rifle practice)
+  name: ammunition box (7.62x51mm USM practice)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeRiflePractice
@@ -97,7 +97,7 @@
 - type: entity
   parent: BaseMagazineBoxRifle
   id: MagazineBoxRifleRubber
-  name: ammunition box (.20 rifle rubber)
+  name: ammunition box (7.62x51mm USM rubber)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeRifleRubber
@@ -112,7 +112,7 @@
 - type: entity
   id: MagazineBoxRifleIncendiary
   parent: BaseMagazineBoxRifle
-  name: ammunition box (.20 rifle incendiary)
+  name: ammunition box (7.62x51mm USM incendiary)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeRifleIncendiary
@@ -127,7 +127,7 @@
 - type: entity
   id: MagazineBoxRifleUranium
   parent: BaseMagazineBoxRifle
-  name: ammunition box (.20 rifle uranium)
+  name: ammunition box (7.62x51mm USM black-tip)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeRifleUranium
@@ -142,7 +142,7 @@
 - type: entity
   parent: BaseMagazineBoxRifle
   id: MagazineBoxRifleShrapnel
-  name: ammunition box (.20 rifle shrapnel)
+  name: ammunition box (7.62x51mm USM shrapnel)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeRifleShrapnel

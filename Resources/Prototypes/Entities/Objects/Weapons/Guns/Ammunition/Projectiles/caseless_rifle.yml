@@ -7,7 +7,9 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 15
+        Piercing: 17
+    harmorPenetration: 30
+    stoppingPower: 2
 
 - type: entity
   id: BulletCaselessRiflePractice
@@ -45,15 +47,15 @@
 
 - type: entity
   id: BulletCaselessRifleUranium
-  name: bullet (.25 caseless uranium)
+  name: bullet (.25 caseless AP-DU)
   parent: BaseBulletUranium
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Radiation: 7
-        Piercing: 8
+        Piercing: 17
+    harmorPenetration: 45
 
 - type: entity
   id: BulletCaselessRifleShrapnel

@@ -1,6 +1,6 @@
 - type: entity
   id: BaseCartridgeRifle
-  name: cartridge (.20 rifle)
+  name: cartridge (7.62x51mm USM rifle)
   parent: BaseCartridge
   abstract: true
   components:
@@ -17,10 +17,12 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 1
 
 - type: entity
   id: CartridgeRifle
-  name: cartridge (.20 rifle)
+  name: cartridge (7.62x51mm USM)
   parent: BaseCartridgeRifle
   components:
   - type: CartridgeAmmo
@@ -28,7 +30,7 @@
 
 - type: entity
   id: CartridgeRiflePractice
-  name: cartridge (.20 rifle practice)
+  name: cartridge (5.56x45mm practice)
   parent: BaseCartridgeRifle
   components:
   - type: CartridgeAmmo
@@ -44,7 +46,7 @@
 
 - type: entity
   id: CartridgeRifleRubber
-  name: cartridge (.20 rifle rubber)
+  name: cartridge (7.62x51mm USM rubber-tip)
   parent: BaseCartridgeRifle
   components:
   - type: CartridgeAmmo
@@ -59,7 +61,7 @@
 
 - type: entity
   id: CartridgeRifleIncendiary
-  name: cartridge (.20 rifle incendiary)
+  name: cartridge (7.62x51mm USM incendiary)
   parent: BaseCartridgeRifle
   components:
   - type: CartridgeAmmo
@@ -74,7 +76,7 @@
 
 - type: entity
   id: CartridgeRifleUranium
-  name: cartridge (.20 rifle uranium)
+  name: cartridge (7.62x51mm USM black-tip)
   parent: BaseCartridgeRifle
   components:
   - type: CartridgeAmmo
@@ -89,7 +91,7 @@
 
 - type: entity
   id: CartridgeRifleShrapnel
-  name: cartridge (.20 rifle shrapnel)
+  name: cartridge (7.62x51mm USM shrapnel)
   parent: BaseCartridgeRifle
   components:
   - type: CartridgeAmmo

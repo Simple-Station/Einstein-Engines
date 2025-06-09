@@ -1,6 +1,6 @@
 - type: entity
   id: BulletMagnumEnsnaring
-  name: bullet (.45 magnum ensnaring)
+  name: bullet (8.3×33mm ensnaring)
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
@@ -25,7 +25,7 @@
 # How did this make it in? It's entirely broken
 # - type: entity
 #   id: BulletMagnumEMP
-#   name: bullet (.45 magnum EMP)
+#   name: bullet (8.3×33mm EMP)
 #   parent: BaseBulletTrigger
 #   categories: [ HideSpawnMenu ]
 #   components:
@@ -52,7 +52,7 @@
 
 - type: entity
   id: BulletMagnumFlash
-  name: bullet (.45 magnum flash)
+  name: bullet (8.3×33mm flash)
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:

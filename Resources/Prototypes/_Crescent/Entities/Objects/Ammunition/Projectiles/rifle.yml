@@ -11,7 +11,7 @@
 
 - type: entity
   id: Bullet50Cal
-  name: bullet(.50 BMG) #The Proverbial .50
+  name: bullet(12.7×42mm BMG) #The Proverbial .50
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:

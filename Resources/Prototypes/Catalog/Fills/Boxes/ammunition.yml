@@ -113,10 +113,10 @@
 
 # Pistol
 - type: entity
-  name: box of WT550 .35 auto magazines
+  name: box of WT550 9x19mm PSTF magazines
   parent: BoxMagazine
   id: BoxMagazinePistolSubMachineGunTopMounted
-  description: A box full of WT550 .35 auto magazines.
+  description: A box full of WT550 9x19mm PSTF magazines.
   components:
   - type: StorageFill
     contents:
@@ -124,10 +124,10 @@
         amount: 3
 
 - type: entity
-  name: box of pistol .35 auto magazines
+  name: box of pistol 9x19mm PSTF magazines
   parent: BoxMagazine
   id: BoxMagazinePistol
-  description: A box full of pistol .35 auto magazines.
+  description: A box full of pistol 9x19mm PSTF magazines.
   components:
   - type: StorageFill
     contents:
@@ -135,7 +135,7 @@
         amount: 4
 
 - type: entity
-  name: box of pistol .35 auto (practice) magazines
+  name: box of pistol 9x19mm PSTF (practice) magazines
   parent: BoxMagazine
   id: BoxMagazinePistolPractice
   description: A box full of  magazines.
@@ -146,10 +146,10 @@
         amount: 4
 
 - type: entity
-  name: box of pistol .35 auto (rubber) magazines
+  name: box of pistol 9x19mm PSTF (rubber) magazines
   parent: BoxMagazine
   id: BoxMagazinePistolRubber
-  description: A box full of pistol .35 auto (rubber) magazines.
+  description: A box full of pistol 9x19mm PSTF (rubber) magazines.
   components:
   - type: StorageFill
     contents:
@@ -157,10 +157,10 @@
         amount: 4
 
 - type: entity
-  name: box of machine pistol .35 auto magazines
+  name: box of machine pistol 9x19mm PSTF magazines
   parent: BoxMagazine
   id: BoxMagazinePistolHighCapacity
-  description: A box full of machine pistol .35 auto magazines.
+  description: A box full of machine pistol 9x19mm PSTF magazines.
   components:
   - type: StorageFill
     contents:
@@ -168,10 +168,10 @@
         amount: 4
 
 - type: entity
-  name: box of machine pistol .35 auto (practice) magazines
+  name: box of machine pistol 9x19mm PSTF (practice) magazines
   parent: BoxMagazine
   id: BoxMagazinePistolHighCapacityPractice
-  description: A box full of machine pistol .35 auto (practice) magazines.
+  description: A box full of machine pistol 9x19mm PSTF (practice) magazines.
   components:
   - type: StorageFill
     contents:
@@ -179,10 +179,10 @@
         amount: 4
 
 - type: entity
-  name: box of machine pistol .35 auto (rubber) magazines
+  name: box of machine pistol 9x19mm PSTF (rubber) magazines
   parent: BoxMagazine
   id: BoxMagazinePistolHighCapacityRubber
-  description: A box full of machine pistol .35 auto (rubber) magazines.
+  description: A box full of machine pistol 9x19mm PSTF (rubber) magazines.
   components:
   - type: StorageFill
     contents:
@@ -191,10 +191,10 @@
 
 
 - type: entity
-  name: box of SMG .35 auto magazines
+  name: box of SMG 9x19mm PSTF magazines
   parent: BoxMagazine
   id: BoxMagazinePistolSubMachineGun
-  description: A box full of SMG .35 auto magazines.
+  description: A box full of SMG 9x19mm PSTF magazines.
   components:
   - type: StorageFill
     contents:
@@ -202,10 +202,10 @@
         amount: 3
 
 - type: entity
-  name: box of SMG .35 auto (practice) magazines
+  name: box of SMG 9x19mm PSTF (practice) magazines
   parent: BoxMagazine
   id: BoxMagazinePistolSubMachineGunPractice
-  description: A box full of SMG .35 auto (practice) magazines.
+  description: A box full of SMG 9x19mm PSTF (practice) magazines.
   components:
   - type: StorageFill
     contents:
@@ -213,10 +213,10 @@
         amount: 3
 
 - type: entity
-  name: box of SMG .35 auto (rubber) magazines
+  name: box of SMG 9x19mm PSTF (rubber) magazines
   parent: BoxMagazine
   id: BoxMagazinePistolSubMachineGunRubber
-  description: A box full of SMG .35 auto (rubber) magazines.
+  description: A box full of SMG 9x19mm PSTF (rubber) magazines.
   components:
   - type: StorageFill
     contents:
@@ -225,10 +225,10 @@
 
 # Shotgun
 - type: entity
-  name: box of (.50 pellet) ammo drums
+  name: box of (12.7×42mm pellet) ammo drums
   parent: BoxMagazine
   id: BoxMagazineShotgun
-  description: A box full of (.50 pellet) ammo drums.
+  description: A box full of (12.7×42mm pellet) ammo drums.
   components:
   - type: StorageFill
     contents:
@@ -236,10 +236,10 @@
         amount: 4
 
 - type: entity
-  name: box of (.50 beanbag) ammo drums
+  name: box of (12.7×42mm beanbag) ammo drums
   parent: BoxMagazine
   id: BoxMagazineShotgunBeanbag
-  description: A box full of (.50 beanbag) ammo drums.
+  description: A box full of (12.7×42mm beanbag) ammo drums.
   components:
   - type: StorageFill
     contents:
@@ -247,10 +247,10 @@
         amount: 4
 
 - type: entity
-  name: box of (.50 slug) ammo drums
+  name: box of (12.7×42mm slug) ammo drums
   parent: BoxMagazine
   id: BoxMagazineShotgunSlug
-  description: A box full of (.50 slug) ammo drums.
+  description: A box full of (12.7×42mm slug) ammo drums.
   components:
   - type: StorageFill
     contents:
@@ -258,10 +258,10 @@
         amount: 4
 
 - type: entity
-  name: box of (.50 incendiary) ammo drums
+  name: box of (12.7×42mm incendiary) ammo drums
   parent: BoxMagazine
   id: BoxMagazineShotgunIncendiary
-  description: A box full of (.50 incendiary) ammo drums.
+  description: A box full of (12.7×42mm incendiary) ammo drums.
   components:
   - type: StorageFill
     contents:
@@ -270,10 +270,10 @@
 
 # Rifle
 - type: entity
-  name: box of .20 rifle magazines
+  name: box of 5.56x45mm magazines
   parent: BoxMagazine
   id: BoxMagazineRifle
-  description: A box full of .20 rifle magazines.
+  description: A box full of 5.56x45mm magazines.
   components:
   - type: StorageFill
     contents:
@@ -281,10 +281,10 @@
         amount: 4
 
 - type: entity
-  name: box of .20 rifle (practice) magazines
+  name: box of 5.56x45mm (practice) magazines
   parent: BoxMagazine
   id: BoxMagazineRiflePractice
-  description: A box full of .20 rifle (practice) magazines.
+  description: A box full of 5.56x45mm (practice) magazines.
   components:
   - type: StorageFill
     contents:
@@ -292,10 +292,10 @@
         amount: 4
 
 - type: entity
-  name: box of .20 rifle (rubber) magazines
+  name: box of 5.56x45mm (rubber) magazines
   parent: BoxMagazine
   id: BoxMagazineRifleRubber
-  description: A box full of .20 rifle (rubber) magazines.
+  description: A box full of 5.56x45mm (rubber) magazines.
   components:
   - type: StorageFill
     contents:

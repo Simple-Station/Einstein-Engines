@@ -2,7 +2,7 @@
   name: snubbed .45
   parent: BaseWeaponRevolver
   id: WeaponRevolverSnub
-  description: An old and reliable revolver, modified to be more easily concealed. Uses .45 magnum ammo.
+  description: An old and reliable revolver, modified to be more easily concealed. Uses 8.3×33mm ammo.
   components:
   - type: Sprite
     sprite: DeltaV/Objects/Weapons/Guns/Revolvers/webleysnubnose.rsi
@@ -26,7 +26,7 @@
   name: snubbed .45
   parent: WeaponRevolverSnub
   id: WeaponRevolverSnubSecurity
-  description: An old and reliable revolver, modified to be more easily concealed. Uses .45 magnum ammo.
+  description: An old and reliable revolver, modified to be more easily concealed. Uses 8.3×33mm ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   components:
   - type: GuideHelp

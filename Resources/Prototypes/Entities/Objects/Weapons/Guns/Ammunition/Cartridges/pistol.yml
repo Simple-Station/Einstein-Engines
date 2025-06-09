@@ -1,6 +1,6 @@
 - type: entity
   id: BaseCartridgePistol
-  name: cartridge (.35 auto)
+  name: cartridge (9x19mm PSTF auto)
   parent: BaseCartridge
   abstract: true
   components:
@@ -17,10 +17,12 @@
         map: [ "enum.AmmoVisualLayers.Base" ]
   - type: Appearance
   - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 1
 
 - type: entity
   id: CartridgePistol
-  name: cartridge (.35 auto)
+  name: cartridge (9x19mm PSTF)
   parent: BaseCartridgePistol
   components:
   - type: CartridgeAmmo
@@ -28,7 +30,7 @@
 
 - type: entity
   id: CartridgePistolPractice
-  name: cartridge (.35 auto practice)
+  name: cartridge (9x19mm PSTF practice)
   parent: BaseCartridgePistol
   components:
   - type: CartridgeAmmo
@@ -43,7 +45,7 @@
 
 - type: entity
   id: CartridgePistolRubber
-  name: cartridge (.35 auto rubber)
+  name: cartridge (9x19mm PSTF rubber)
   parent: BaseCartridgePistol
   components:
   - type: CartridgeAmmo
@@ -58,7 +60,7 @@
 
 - type: entity
   id: CartridgePistolIncendiary
-  name: cartridge (.35 auto incendiary)
+  name: cartridge (9x19mm PSTF incendiary)
   parent: BaseCartridgePistol
   components:
   - type: CartridgeAmmo
@@ -73,7 +75,7 @@
 
 - type: entity
   id: CartridgePistolUranium
-  name: cartridge (.35 auto uranium)
+  name: cartridge (9x19mm PSTF uranium)
   parent: BaseCartridgePistol
   components:
   - type: CartridgeAmmo
@@ -88,7 +90,7 @@
 
 - type: entity
   id: CartridgePistolShrapnel
-  name: cartridge (.35 auto shrapnel)
+  name: cartridge (9x19mm PSTF shrapnel)
   parent: BaseCartridgePistol
   components:
   - type: CartridgeAmmo

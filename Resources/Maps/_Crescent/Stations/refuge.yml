@@ -8268,7 +8268,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -3.179423,-7.3466
       parent: 1
-- proto: HandHeldMassScanner
+- proto: HandHeldMassScannerEE
   entities:
   - uid: 1903
     components:

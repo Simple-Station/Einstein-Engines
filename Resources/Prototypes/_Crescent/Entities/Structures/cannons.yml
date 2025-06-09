@@ -55,6 +55,10 @@
     count: 10
   - type: StaticPrice
     price: 3500
+  - type: HardpointAnchorableOnly
+    class: Energy
+    size: Medium
+
 
 ##mining turret
 
@@ -165,6 +169,9 @@
     count: 25
   - type: StaticPrice
     price: 6500
+  - type: HardpointAnchorableOnly
+    class: Energy
+    size: Medium
 
 ##Torpedo
 
@@ -221,6 +228,9 @@
     zeroVisible: false
   - type: StaticPrice
     price: 1500
+  - type: HardpointAnchorableOnly
+    class: Missile
+    size: Small
 
 
 ## Missile Pods
@@ -281,6 +291,9 @@
     zeroVisible: false
   - type: StaticPrice
     price: 2500
+  - type: HardpointAnchorableOnly
+    class: Missile
+    size: Small
 
 - type: entity
   id: ShuttleGunMissileRack
@@ -340,6 +353,9 @@
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
   - type: StaticPrice
     price: 4500
+  - type: HardpointAnchorableOnly
+    class: Missile
+    size: Medium
 
 #50 cal
 
@@ -471,6 +487,9 @@
   - type: ExtensionCableReceiver
   - type: StaticPrice
     price: 8000
+  - type: HardpointAnchorableOnly
+    class: Ballistic
+    size: Medium
 
 # laser
 
@@ -584,6 +603,9 @@
   - type: BatterySelfRecharger
   - type: StaticPrice
     price: 9000
+  - type: HardpointAnchorableOnly
+    class: Energy
+    size: Large
 
 #120mm
 
@@ -691,6 +713,9 @@
   - type: BatterySelfRecharger
   - type: StaticPrice
     price: 9000
+  - type: HardpointAnchorableOnly
+    class: Ballistic
+    size: Large
 
 #railgun
 
@@ -819,6 +844,9 @@
     resistance: 8
   - type: StaticPrice
     price: 18000
+  - type: HardpointAnchorableOnly
+    class: Ballistic
+    size: Large
 
 #vulcan
 
@@ -950,6 +978,9 @@
   - type: ExtensionCableReceiver
   - type: StaticPrice
     price: 2500
+  - type: HardpointAnchorableOnly
+    class: Ballistic
+    size: Small
 
 - type: entity
   id: SAWCleanser
