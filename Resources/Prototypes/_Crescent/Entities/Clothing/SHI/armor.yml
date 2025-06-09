@@ -99,6 +99,19 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCorpsec
 
+- type: entity
+  parent: ClothingOuterHardsuitHighsec
+  id: ClothingOuterHardsuitHighsecUA
+  name: shinohara united arsenal SVBT-2 combat hardsuit
+  description: A modular combat hardsuit developed by Shinohara Heavy Industries. Sold to elite mercs and corporate deathsquads everywhere. Customized by the subsidiary group United Arsenal.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/OuterClothing/corpsec_ua.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/OuterClothing/corpsec_ua.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitCorpsecUA
+
 #armor
 
 - type: entity
@@ -156,6 +169,17 @@
   - type: ExplosionResistance
     damageCoefficient: 0.80
   - type: GroupExamine
+
+- type: entity
+  parent: ClothingOuterArmorShinoharaArmorHighsec
+  id: ClothingOuterArmorShinoharaArmorHighsecUA
+  name: SHI-UA BULWARK-2 ballistic hauberk
+  description: A kevlar-intervowen durathread hauberk padded with ballistic gel, plated with NanoTrasen Ballistic Carapace (tm) on the outside. A wet dream for any corporate goon. Customized by the subsidiary group United Arsenal.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/OuterClothing/highsec_ua.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/OuterClothing/highsec_ua.rsi
 
 #clothes
 
