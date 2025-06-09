@@ -5,23 +5,23 @@
   description: A premium combat shotgun ripped from ancient Terran designs. Originates from the now-defunct NanoTrasen.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/spas12.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/spas13.rsi
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/spas12worn.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/spas13.rsi
   - type: BallisticAmmoProvider
   - type: StaticPrice
     price: 2500
 
 - type: entity
-  name: PTA Karabin 4g
+  name: PTA 23AX Karabin 4g
   parent: [BaseWeaponShotgun, BaseGunWieldable]
   id: WeaponShotgunKS23
   description: An oversized shotgun. Packs devastating 4 Gauge punches. Developed as part of Pang Tai's elite mercenary package.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/karabin.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/karabin.rsi
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/karabinworn.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/karabin.rsi
   - type: GunRequiresWield
   - type: Gun
     fireRate: 1.5
