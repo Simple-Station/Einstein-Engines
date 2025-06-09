@@ -9,7 +9,7 @@
   - type: Item
     size: Large
   - type: Clothing
-    sprite: Objects/Weapons/Guns/SMGs/atreides.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/atreides.rsi
     quickEquip: false
     slots:
     - Back
@@ -80,10 +80,10 @@
   name: Atreides
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunAtreides
-  description: Pla-ket-ket-ket-ket! Uses .35 auto ammo.
+  description: Pla-ket-ket-ket-ket! Uses 9x19mm PSTF ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/SMGs/atreides.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/atreides.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -104,17 +104,17 @@
   name: C-20r sub machine gun
   parent: [BaseWeaponSubMachineGun, BaseGunWieldable]
   id: WeaponSubMachineGunC20r
-  description: Manufactured by Cybersun-Armaments, the C-20r is one of the most popular personal small-arms in the Coalition of Colonies. Uses .35 auto ammo.
+  description: Manufactured by Cybersun-Armaments, the C-20r is one of the most popular personal small-arms in the Coalition of Colonies. Uses 9x19mm PSTF ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/c20r.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/c20r.rsi
   - type: Wieldable
   - type: GunWieldBonus
     minAngle: -19
@@ -143,7 +143,7 @@
   name: C-20r sub machine gun
   parent: [WeaponSubMachineGunC20r]
   id: WeaponSubMachineGunC20rEmpty
-  description: Manufactured by Cybersun-Armaments, the C-20r is one of the most popular personal small-arms in the Coalition of Colonies. Uses .35 auto ammo.
+  description: Manufactured by Cybersun-Armaments, the C-20r is one of the most popular personal small-arms in the Coalition of Colonies. Uses 9x19mm PSTF ammo.
   components:
   - type: ItemSlots
     slots:
@@ -180,14 +180,14 @@
   description: An excellent fully automatic Heavy SMG.
   components:
     - type: Sprite
-      sprite: Objects/Weapons/Guns/SMGs/drozd.rsi
+      sprite: _Crescent/Objects/Weapons/Guns/drozd.rsi
       layers:
         - state: base
           map: ["enum.GunVisualLayers.Base"]
         - state: mag-0
           map: ["enum.GunVisualLayers.Mag"]
     - type: Clothing
-      sprite: Objects/Weapons/Guns/SMGs/drozd.rsi
+      sprite: _Crescent/Objects/Weapons/Guns/drozd.rsi
     - type: Wieldable
       unwieldOnUse: false
     - type: GunWieldBonus
@@ -233,7 +233,7 @@
 #  parent: BaseWeaponSubMachineGun
 #  id: WeaponSubMachineGunVector
 #  suffix: Deprecated use Drozd
-#  description: An excellent fully automatic Heavy SMG. Uses .45 magnum ammo.
+#  description: An excellent fully automatic Heavy SMG. Uses 8.3×33mm ammo.
 #  components:
 #  - type: Sprite
 #    sprite: Objects/Weapons/Guns/SMGs/vector.rsi
@@ -280,23 +280,17 @@
   name: WT550
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunWt550
-  description: An excellent SMG, produced by NanoTrasen's Small Arms Division. Uses .35 auto ammo.
+  description: An excellent SMG, produced by NanoTrasen's Small Arms Division. Uses 9x19mm PSTF ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/SMGs/wt550.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/wt550.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
-      - state: base-unshaded
-        map: ["enum.GunVisualLayers.BaseUnshaded"]
-        shader: unshaded
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
-      - state: mag-unshaded-0
-        map: ["enum.GunVisualLayers.MagUnshaded"]
-        shader: unshaded
   - type: Clothing
-    sprite: Objects/Weapons/Guns/SMGs/wt550.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/wt550.rsi
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
   - type: Gun
@@ -334,7 +328,7 @@
             - CartridgePistol
   - type: MagazineVisuals
     magState: mag
-    steps: 6
+    steps: 11
     zeroVisible: true
   - type: Appearance
 
@@ -378,7 +372,7 @@
 #  name: Vector
 #  parent: WeaponSubMachineGunVector
 #  id: WeaponSubMachineGunVectorRubber
-#  description: An excellent fully automatic Heavy SMG. Uses .45 magnum ammo.
+#  description: An excellent fully automatic Heavy SMG. Uses 8.3×33mm ammo.
 #  suffix: Non-Lethal
 #  components:
 #  - type: ItemSlots

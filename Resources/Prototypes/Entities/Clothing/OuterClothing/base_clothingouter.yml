@@ -130,6 +130,9 @@
   id: ClothingOuterHardsuitBase
   name: base hardsuit
   components:
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHardsuitLight
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
@@ -205,14 +208,6 @@
         - ItemMask
         restitution: 0.3
         friction: 0.2
-  - type: EmitsSoundOnMove
-    soundCollection:
-      collection: FootstepHardsuitLight
-      params:
-        volume: -5
-    requiresWorn: true
-    distanceWalking: 2
-    distanceSprinting: 3
   - type: Reflect
     spread: 270
     reflectProb: 0.03
@@ -227,14 +222,9 @@
   id: ClothingOuterHardsuitBaseMedium
   name: base hardsuit
   components:
-  - type: EmitsSoundOnMove
-    soundCollection:
+  - type: FootstepModifier
+    footstepSoundCollection:
       collection: FootstepHardsuitMedium
-      params:
-        volume: -5
-    requiresWorn: true
-    distanceWalking: 2
-    distanceSprinting: 3
   - type: Fixtures
     fixtures:
       fix1:
@@ -270,14 +260,9 @@
   id: ClothingOuterHardsuitBaseHeavy
   name: base hardsuit
   components:
-  - type: EmitsSoundOnMove
-    soundCollection:
+  - type: FootstepModifier
+    footstepSoundCollection:
       collection: FootstepHardsuitHeavy
-      params:
-        volume: -5
-    requiresWorn: true
-    distanceWalking: 2
-    distanceSprinting: 3
   - type: Fixtures
     fixtures:
       fix1:

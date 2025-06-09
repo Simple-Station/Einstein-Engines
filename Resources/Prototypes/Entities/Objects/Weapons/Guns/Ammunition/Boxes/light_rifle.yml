@@ -2,7 +2,7 @@
   abstract: true
   parent: BaseMagazineBox
   id: BaseMagazineBoxLightRifle
-  name: ammunition box 5.56x45mm Imperial)
+  name: ammunition box (5.56x45mm Imperial)
   components:
   - type: BallisticAmmoProvider
     mayTransfer: true

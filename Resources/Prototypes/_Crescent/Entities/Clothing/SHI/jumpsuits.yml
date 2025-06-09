@@ -54,6 +54,17 @@
     sprite: _Crescent/Clothing/SHI/Uniform/security.rsi
 
 - type: entity
+  parent: ClothingUniformJumpsuitShinoharaSecurity
+  id: ClothingUniformJumpsuitShinoharaSecurityUA
+  name: united arsenal security specialist's jumpsuit
+  description: A security officer's corporate uniform in Shinohara colors. Customized by the subsidiary group United Arsenal.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Uniform/security_ua.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Uniform/security_ua.rsi
+
+- type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitShinoharaTraumasec
   name: traumasec officer's jumpsuit

@@ -346,6 +346,7 @@
 
 - type: entity
   id: MagazinePistolSubMachineGunRubber
+
   name: SMG magazine (9x19mm PSTF auto rubber)
   parent: BaseMagazinePistolSubMachineGun
   components:

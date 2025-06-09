@@ -1,18 +1,16 @@
 - type: entity
-  name: NT Lockwell MX-32 9x19mm
+  name: NCWL T-18 Comrade 9x19mm
   parent: BaseWeaponPistol
-  id: WeaponPistolHKUSP
-  description: A cheap, mass-produced pistol originally produced from antiquated NanoTrasen designs. Chambered in 9x19mm PSTF rounds. 
+  id: WeaponPistolComrade
+  description: A cheap, mass-produced pistol produced for the common communard. Chambered in 9x19mm PSTF.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/hkusp.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/comrade.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Clothing
-    sprite: _Crescent/Objects/Weapons/hkusp.rsi
   - type: Gun
     fireRate: 3
     selectedMode: SemiAuto
@@ -24,20 +22,41 @@
     price: 750
 
 - type: entity
+  name: NT Lockwell MX-32 9x19mm
+  parent: BaseWeaponPistol
+  id: WeaponPistolHKUSP
+  description: A cheap, mass-produced pistol originally produced from antiquated NanoTrasen designs.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/lockwell.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    fireRate: 3
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+  - type: StaticPrice
+    price: 750
+      
+- type: entity
   name: NCWL T-91 Quasar .327
   parent: BaseWeaponPistol
   id: WeaponPistolT91
   description: A semi-automatic communard solution to self-defense issues amidst officers and heavyhitters. Ironically chambered in .327 Imperial.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/t91.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/quasar.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Clothing
-    sprite: _Crescent/Objects/Weapons/t91.rsi
   - type: Gun
     minAngle: 1
     maxAngle: 20
@@ -77,14 +96,12 @@
   description: A domestic firearm produced for the Shinoahara internal market. Often seen in the hands of CSEC operatives - and sometimes independent mercenaries. Chambered in 9x19mm PSTF.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/himehabu.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/himehabu.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Clothing
-    sprite: _Crescent/Objects/Weapons/himehabu.rsi
   - type: Gun
     fireRate: 3
     selectedMode: SemiAuto
@@ -102,14 +119,12 @@
   description: A standard-issue Imperial sidearm with a laser-engraved "OLYWIR ARMAMENTS" print. Full of useless flair and polish, yet performs the same as other firearms on the market. Chambered in 9x19mm.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/compliance.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/compliance.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Clothing
-    sprite: _Crescent/Objects/Weapons/compliance.rsi
   - type: Gun
     fireRate: 3
     selectedMode: SemiAuto
@@ -127,14 +142,16 @@
   description: A robust little thing from the SHI development team. Chambered in custom-made 12mm depleted uranium-tip rounds - packs a punch and is capable of full auto. Chambered in heavy 12mm.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/smartgun.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/shinobi.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Clothing
-    sprite: _Crescent/Objects/Weapons/smartgun.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
+    zeroVisible: true 
   - type: Gun
     minAngle: 1
     maxAngle: 19
@@ -225,14 +242,12 @@
   description: A mass-produced, 3D printed sidearm. Unable to be reloaded after use. Just twist the plastic key on top to rack the first round, and blast away.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/disposableguns/red.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/blastpop_red.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Clothing
-    sprite: _Crescent/Objects/Weapons/disposableguns/red.rsi
   - type: Gun
     fireRate: 2
     selectedMode: SemiAuto
@@ -254,14 +269,12 @@
   description: A mass-produced, 3D printed sidearm. Unable to be reloaded after use. Just twist the plastic key on top to rack the first round, and blast away.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/disposableguns/purple.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/blastpop_purple.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Clothing
-    sprite: _Crescent/Objects/Weapons/disposableguns/purple.rsi
   - type: Gun
     fireRate: 2
     availableModes:
@@ -282,14 +295,12 @@
   description: A mass-produced, 3D printed sidearm. Unable to be reloaded after use. Just twist the plastic key on top to rack the first round, and blast away.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/disposableguns/gray.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/blastpop_grey.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Clothing
-    sprite: _Crescent/Objects/Weapons/disposableguns/gray.rsi
   - type: Gun
     fireRate: 2
     availableModes:
@@ -310,14 +321,12 @@
   description: A mass-produced, 3D printed sidearm. Unable to be reloaded after use. Just twist the plastic key on top to rack the first round, and blast away.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/disposableguns/green.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/blastpop_green.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Clothing
-    sprite: _Crescent/Objects/Weapons/disposableguns/green.rsi
   - type: Gun
     fireRate: 2
     availableModes:
@@ -338,14 +347,12 @@
   description: A mass-produced, 3D printed sidearm. Unable to be reloaded after use. Just twist the plastic key on top to rack the first round, and blast away.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/disposableguns/gold.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/blastpop_yellow.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Clothing
-    sprite: _Crescent/Objects/Weapons/disposableguns/gold.rsi
   - type: Gun
     fireRate: 2
     availableModes:
@@ -366,14 +373,12 @@
   description: A mass-produced, 3D printed sidearm. Unable to be reloaded after use. Just twist the plastic key on top to rack the first round, and blast away.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/disposableguns/blue.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/blastpop_blue.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Clothing
-    sprite: _Crescent/Objects/Weapons/disposableguns/blue.rsi
   - type: Gun
     fireRate: 2
     availableModes:
@@ -394,14 +399,12 @@
   description: An antiquated, outdated Imperial sidearm, attributed to ancient Terran designs. Fires .45 rounds.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/neovolker.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/tribune.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Clothing
-    sprite: _Crescent/Objects/Weapons/neovolker.rsi
   - type: Gun
     minAngle: 1
     maxAngle: 20
@@ -445,14 +448,12 @@
   description: A cheap sidearm produced by Pang Tai Arms. Made for the merc on a budget. Chambered in small 6mm rounds.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/rongyu.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/rongyu.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Clothing
-    sprite: _Crescent/Objects/Weapons/rongyu.rsi
   - type: Gun
     minAngle: 1
     maxAngle: 20

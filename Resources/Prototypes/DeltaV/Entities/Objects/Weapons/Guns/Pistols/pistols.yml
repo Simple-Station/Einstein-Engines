@@ -2,7 +2,7 @@
   name: viper
   parent: BaseWeaponPistol
   id: WeaponPistolViperWood
-  description: A small, low-power pistol with pleasant lacquered wooden grips. Uses .35 auto ammo.
+  description: A small, low-power pistol with pleasant lacquered wooden grips. Uses 9x19mm PSTF ammo.
   suffix: Wood
   components:
   - type: Sprite
@@ -37,7 +37,7 @@
   name: viper
   parent: WeaponPistolViperWood
   id: WeaponPistolViperWoodSecurity
-  description: A small, low-power pistol with pleasant lacquered wooden grips. Uses .35 auto ammo.
+  description: A small, low-power pistol with pleasant lacquered wooden grips. Uses 9x19mm PSTF ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   components:
   - type: GuideHelp
@@ -47,7 +47,7 @@
   name: Pollock
   parent: BaseWeaponPistol
   id: WeaponPistolPollock
-  description: A compact and mass-produced combat pistol. Uses .35 auto ammo.
+  description: A compact and mass-produced combat pistol. Uses 9x19mm PSTF ammo.
   suffix: Mercenary
   components:
   - type: Sprite
@@ -86,7 +86,7 @@
   name: Pollock
   parent: WeaponPistolPollock
   id: WeaponPistolPollockSecurity
-  description: A compact and mass-produced combat pistol. Uses .35 auto ammo.
+  description: A compact and mass-produced combat pistol. Uses 9x19mm PSTF ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   components:
   - type: GuideHelp
@@ -165,7 +165,7 @@
   components:
   - type: BallisticAmmoProvider
     whitelist:
-      tags: 
+      tags:
       - CartridgeMusket
     capacity: 1
     proto: CartridgeMusket

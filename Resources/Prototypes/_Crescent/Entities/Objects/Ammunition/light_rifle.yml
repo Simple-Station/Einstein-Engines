@@ -14,7 +14,7 @@
       tags:
         - CartridgeMachineGunConscript
     proto: CartridgeMachineGunHighExplosiveConscript
-    capacity: 75
+    capacity: 20
   - type: Item
     size: Large
     shape:
@@ -41,7 +41,7 @@
       tags:
         - CartridgeMachineGunConscript
     proto: CartridgeMachineGunArmorPiercingConscript
-    capacity: 75
+    capacity: 20
   - type: Item
     size: Large
     shape:
@@ -125,7 +125,7 @@
       tags:
         - CartridgeMachineGun
     proto: CartridgeMachineGunArmorPiercing
-    capacity: 200
+    capacity: 50
   - type: Item
   - type: Sprite
     sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
@@ -145,7 +145,7 @@
       tags:
         - CartridgeMachineGun
     proto: CartridgeMachineGunHighExplosive
-    capacity: 200
+    capacity: 50
   - type: Item
   - type: Sprite
     sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
@@ -165,7 +165,7 @@
       tags:
         - CartridgeMachineGun
     proto: BulletMachineGunPractice
-    capacity: 200
+    capacity: 50
   - type: Item
   - type: Sprite
     sprite: _Crescent/Ammunition/conscript_ammo_box.rsi

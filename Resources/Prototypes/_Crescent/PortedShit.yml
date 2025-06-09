@@ -211,7 +211,7 @@
 
 - type: entity
   id: SpeedLoaderRifleHeavy
-  name: "speed loader (.20 rifle)"
+  name: "speed loader (5.56x45mm)"
   parent: BaseSpeedLoaderHeavyRifle
   components:
   - type: BallisticAmmoProvider
@@ -231,7 +231,7 @@
 
 - type: entity
   id: SpeedLoaderRifleHeavyEmpty
-  name: "speed loader (.20 rifle any)"
+  name: "speed loader (5.56x45mm any)"
   parent: SpeedLoaderRifleHeavy
   components:
   - type: BallisticAmmoProvider
@@ -244,7 +244,7 @@
 
 - type: entity
   id: BaseSpeedLoaderHeavyRifle
-  name: "speed loader (.20 rifle)"
+  name: "speed loader (5.56x45mm)"
   parent: BaseItem
   abstract: true
   components:
@@ -266,7 +266,7 @@
 
 - type: entity
   id: SpeedLoaderRifleHeavyIncendiary
-  name: "speed loader (.20 rifle incendiary)"
+  name: "speed loader (5.56x45mm incendiary)"
   parent: BaseSpeedLoaderHeavyRifle
   components:
   - type: BallisticAmmoProvider
@@ -286,7 +286,7 @@
 
 - type: entity
   id: SpeedLoaderRifleHeavyPractice
-  name: "speed loader (.20 rifle practice)"
+  name: "speed loader (5.56x45mm practice)"
   parent: BaseSpeedLoaderHeavyRifle
   components:
   - type: BallisticAmmoProvider
@@ -306,7 +306,7 @@
 
 - type: entity
   id: SpeedLoaderRifleHeavyUranium
-  name: "speed loader (.20 rifle uranium)"
+  name: "speed loader (5.56x45mm uranium)"
   parent: BaseSpeedLoaderHeavyRifle
   components:
   - type: BallisticAmmoProvider
@@ -326,7 +326,7 @@
 
 - type: entity
   id: SpeedLoaderRifleHeavyRubber
-  name: "speed loader (.20 rifle rubber)"
+  name: "speed loader (5.56x45mm rubber)"
   parent: BaseSpeedLoaderHeavyRifle
   components:
   - type: BallisticAmmoProvider

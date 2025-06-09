@@ -8,6 +8,8 @@
     damage:
       types:
         Piercing: 45
+    harmorPenetration: 50
+    stoppingPower: 7
 
 - type: entity
   id: BulletMinigun
