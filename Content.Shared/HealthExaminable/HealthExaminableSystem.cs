@@ -4,7 +4,6 @@ using Content.Shared.FixedPoint;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.Verbs;
 using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Traits.Assorted.Components;

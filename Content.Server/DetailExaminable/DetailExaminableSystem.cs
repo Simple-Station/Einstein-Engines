@@ -1,6 +1,5 @@
 ﻿using Content.Shared.Examine;
 using Content.Shared.IdentityManagement;
-using Content.Shared.Verbs;
 using Robust.Shared.Utility;
 
 namespace Content.Server.DetailExaminable
@@ -26,8 +25,9 @@ namespace Content.Server.DetailExaminable
             if (!entity.IsInDetailsRange)
                 return;
 
-            // Append the detail content directly to the examine message
-            entity.PushMarkup(component.Content);
+            var msg = new FormattedMessage();
+            msg.AddMarkup($"[color=#707070]{component.Content}[/color]");
+            entity.PushMessage(msg, priority: -2);
         }
     }
 }
