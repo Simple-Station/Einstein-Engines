@@ -6,7 +6,7 @@ public sealed partial class CCVars
 {
 
     // 
-    // THIS is the real respawn timer that gets used ingame. it's also in minutes
+    // This is the real respawn timer that gets used ingame. it's also in minutes.
     // 
     public static readonly CVarDef<float> GhostRespawnTime =
         CVarDef.Create("ghost.respawn_time", 5f, CVar.SERVERONLY);
@@ -15,8 +15,9 @@ public sealed partial class CCVars
         CVarDef.Create("ghost.respawn_max_players", 40, CVar.SERVERONLY);
 
 
-
-    // this also does nothing
+    //
+    // This is checked at latejoin-time to determine whether you can join as the same character.
+    //
     public static readonly CVarDef<bool> GhostAllowSameCharacter =
-        CVarDef.Create("ghost.allow_same_character", false, CVar.SERVERONLY);
+        CVarDef.Create("ghost.allow_same_character", true, CVar.SERVERONLY);
 }
