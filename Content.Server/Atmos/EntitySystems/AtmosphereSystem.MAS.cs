@@ -35,7 +35,7 @@ public sealed partial class AtmosphereSystem
         if (!HasComp<MapGridComponent>(tile.GridIndex))
             return new Vector2(0, 0);
 
-        var centerPressure = tile.Air?.Pressure ?? 0f;
+        var centerPressure = tile.AirArchived?.Pressure ?? 0f;
         var pressureVector = new Vector2(0, 0);
         foreach (var (x, y, dir) in MASSearchPattern)
         {
@@ -64,18 +64,18 @@ public sealed partial class AtmosphereSystem
             // opposite direction.
             if (tileAtmosphere.AirtightData.BlockedDirections is AtmosDirection.All
                 || tileAtmosphere.AirtightData.BlockedDirections.HasFlag(dir)
-                || tileAtmosphere.Air is null)
+                || tileAtmosphere.AirArchived is null)
             {
                 pressureVector -= offsetVector * centerPressure;
                 continue;
             }
 
             // Center tile now transfers its pressure across the target.
-            var pressureDiff = centerPressure - tileAtmosphere.Air.Pressure;
+            var pressureDiff = centerPressure - tileAtmosphere.AirArchived.Pressure;
             pressureVector += offsetVector * pressureDiff;
 
             // And finally, the pressure in the target tile is resisting the original target pressure.
-            pressureVector -= offsetVector * tileAtmosphere.Air.Pressure;
+            pressureVector -= offsetVector * tileAtmosphere.AirArchived.Pressure;
         }
         // from TCJ: By this point in the equation, all possible conditions are now checked, and for any airtight vessel with a standard atmosphere, the final output will be <0, 0>.
         // Should any holes exist in the ship, the air will now flow at an exponential rate towards it, while deflecting around walls.
