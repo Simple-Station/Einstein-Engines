@@ -24,7 +24,7 @@ public sealed partial class ConstructComponent : Component
     public ProtoId<LanguagePrototype> CultLanguageId { get; set; } = "Eldritch";
 
     [DataField]
-    public ProtoId<EntityPrototype> SpawnOnDeathPrototype { get; set; } = "Ectoplasm";
+    public EntProtoId SpawnOnDeathPrototype { get; set; } = "Ectoplasm";
 
     [DataField]
     public bool IconVisibleToGhost { get; set; } = true;

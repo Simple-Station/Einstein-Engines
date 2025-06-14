@@ -12,6 +12,7 @@ using Content.Shared.Physics;
 using Content.Shared.Procedural;
 using Content.Shared.Tag;
 using Robust.Server.GameObjects;
+using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
 using Robust.Shared.Map;
