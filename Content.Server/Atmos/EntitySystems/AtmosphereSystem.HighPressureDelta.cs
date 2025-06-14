@@ -54,11 +54,15 @@ public sealed partial class AtmosphereSystem
 
         // No atmos yeets, return early.
         if (!SpaceWind
-            || !gridAtmosphere.Comp.SpaceWindSimulation // Is the grid marked as exempt from space wind?
-            || tile.AirArchived is null || tile.Space // No Air Checks. Pressure differentials can't exist in a hard vacuum.
-            || tile.AirArchived.Pressure <= atmosComp.PressureCutoff // Below 5kpa(can't throw a base item)
-            || oneAtmos - atmosComp.PressureCutoff <= tile.AirArchived.Pressure
-            && tile.AirArchived.Pressure <= oneAtmos + atmosComp.PressureCutoff // Check within 5kpa of default pressure.
+            || !gridAtmosphere.Comp.SpaceWindSimulation // Is the grid marked as exempt from space wind?)
+            || tile.Space) // No Air Checks. Pressure differentials can't exist in a hard vacuum.
+            return;
+
+        var pressure = tile.AirArchived?.Pressure;
+        if (pressure is null
+            || pressure <= atmosComp.PressureCutoff // Below 5kpa(can't throw a base item)
+            || oneAtmos - atmosComp.PressureCutoff <= pressure
+            && pressure <= oneAtmos + atmosComp.PressureCutoff // Check within 5kpa of default pressure.
             || !TryComp(gridAtmosphere.Owner, out MapGridComponent? mapGrid)
             || !_mapSystem.TryGetTileRef(gridAtmosphere.Owner, mapGrid, tile.GridIndices, out var tileRef))
             return;
