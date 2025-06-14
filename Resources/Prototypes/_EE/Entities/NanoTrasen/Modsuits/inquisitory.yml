@@ -74,6 +74,7 @@
         - Biological
         - Inorganic
         - Silicon
+        - SiliconUnshielded
     - type: PointLight
       color: "#FFDF00"
     - type: SealableClothingVisuals
