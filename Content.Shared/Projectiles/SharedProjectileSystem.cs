@@ -160,8 +160,8 @@ public abstract partial class SharedProjectileSystem : EntitySystem
     {
         if (!(args.Target is { }) || _standing.IsDown(args.Target)
             || !TryComp(uid, out ProjectileComponent? projectile)
-            || !TryEmbed(uid, args.Target, args.Shooter, component)
-            || projectile.Weapon is null)
+            || projectile.Weapon is null
+            || !TryEmbed(uid, args.Target, args.Shooter, component))
             return;
 
         // Raise a specific event for projectiles.
