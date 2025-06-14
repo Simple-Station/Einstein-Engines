@@ -114,15 +114,15 @@ public sealed partial class AtmosphereSystem
             // Ideally containers would have their own EntityQuery internally or something given recursively it may need to slam GetComp<T> anyway.
             // Also, don't care about static bodies (but also due to collisionwakestate can't query dynamic directly atm).
             if (!bodies.TryGetComponent(entity, out var body)
-                || !pressureQuery.TryGetComponent(entity, out var pressure)
-                || !pressure.Enabled
+                || !pressureQuery.TryGetComponent(entity, out var pressureComp)
+                || !pressureComp.Enabled
                 || _containers.IsEntityInContainer(entity, metas.GetComponent(entity))
-                || pressure.LastHighPressureMovementAirCycle >= gridAtmosphere.Comp.UpdateCounter)
+                || pressureComp.LastHighPressureMovementAirCycle >= gridAtmosphere.Comp.UpdateCounter)
                 continue;
 
             // tl;dr YEET
             ExperiencePressureDifference(
-                (entity, pressure),
+                (entity, pressureComp),
                 gridAtmosphere.Comp.UpdateCounter,
                 pressureVector,
                 pVecLength,
