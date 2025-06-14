@@ -119,6 +119,9 @@ VendingMachineRestockSalvageEquipment: null
 # 2025-04-05 Dear Maintainer, say nothing about this.
 AntiPsychicKnife: null
 
+# 2025-03-12
+SmartFridge: DVSmartFridgeMedical
+
 # 2025-06-06
 MagazineUniversalMagnumRubber: MagazineUniversalMagnum
 WeaponPistolUniversalNonLethal: WeaponPistolUniversal
