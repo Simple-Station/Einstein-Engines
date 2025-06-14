@@ -45,8 +45,6 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
 
 
         AdminLogManager.Add(LogType.EventAnnounced, $"Event added / announced: {ToPrettyString(uid)}");
-
-        stationEvent.StartTime = Timing.CurTime + stationEvent.StartDelay;
     }
 
     /// <inheritdoc/>
@@ -114,11 +112,7 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
             if (!GameTicker.IsGameRuleAdded(uid, ruleData))
                 continue;
 
-            if (!GameTicker.IsGameRuleActive(uid, ruleData) && Timing.CurTime >= stationEvent.StartTime)
-            {
-                GameTicker.StartGameRule(uid, ruleData);
-            }
-            else if (stationEvent.EndTime != null && Timing.CurTime >= stationEvent.EndTime && GameTicker.IsGameRuleActive(uid, ruleData))
+            if (stationEvent.EndTime != null && Timing.CurTime >= stationEvent.EndTime && GameTicker.IsGameRuleActive(uid, ruleData))
             {
                 GameTicker.EndGameRule(uid, ruleData);
             }

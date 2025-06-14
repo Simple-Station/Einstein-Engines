@@ -27,6 +27,7 @@ research-technology-basic-weapons = Basic Weapons
 research-technology-draconic-munitions = Draconic Munitions
 research-technology-uranium-munitions = Uranium Munitions
 research-technology-explosive-technology = Explosive Technology
+research-technology-special-means = Special Means
 research-technology-practice-ammunition = Practice Ammunition
 research-technology-shrapnel-munitions = Shrapnel Munitions
 research-technology-advanced-weapons = Advanced Weapons

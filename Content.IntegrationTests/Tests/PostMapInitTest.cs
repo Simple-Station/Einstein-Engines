@@ -16,6 +16,7 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
+using Content.Shared.Station.Components;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
 
@@ -31,8 +32,7 @@ namespace Content.IntegrationTests.Tests
         {
             "CentCommMain",
             "CentCommHarmony",
-            "Dart",
-            "NukieOutpost"
+            "Dart"
         };
 
         private static readonly string[] Grids =
@@ -51,7 +51,6 @@ namespace Content.IntegrationTests.Tests
             "CentCommMain",
             "CentCommHarmony",
             "MeteorArena",
-            "NukieOutpost",
             "Core", // No current maintainer. In need of a rework...
             "Pebble", // Maintained by Plyushune
             // "Edge", // De-rotated, no current maintainer.
@@ -256,13 +255,13 @@ namespace Content.IntegrationTests.Tests
                     }
 
                     var comp = entManager.GetComponent<StationJobsComponent>(station);
-                    var jobs = new HashSet<string>(comp.SetupAvailableJobs.Keys);
+                    var jobs = new HashSet<ProtoId<JobPrototype>>(comp.SetupAvailableJobs.Keys);
 
                     // Test all availableJobs have spawnPoints
                     // This is done inside gamemap test because loading the map takes ages and we already have it.
                     var spawnPoints = entManager.EntityQuery<SpawnPointComponent>()
                         .Where(x => x.SpawnType == SpawnPointType.Job)
-                        .Select(x => x.Job!.ID);
+                        .Select(x => x.Job!.Value);
 
                     jobs.ExceptWith(spawnPoints);
 

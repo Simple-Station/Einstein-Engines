@@ -387,11 +387,11 @@
       group: LoadoutOuter
 
 - type: loadout
-  id: LoadoutOuterCoatInspector
+  id: ClothingOuterCoatDetectiveLoadout
   category: Outer
   cost: 0
   items:
-    - ClothingOuterCoatInspector
+    - ClothingOuterCoatDetectiveLoadout
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter

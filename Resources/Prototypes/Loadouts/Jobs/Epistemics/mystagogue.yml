@@ -1,46 +1,5 @@
 # Mystagogue
 # Backpacks
-- type: loadout
-  id: LoadoutMystagogueBackpacksBackpack
-  category: JobsEpistemicsMystagogue
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutMystagogueBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - ResearchDirector
-  items:
-    - ClothingBackpackResearchDirectorFilled
-
-- type: loadout
-  id: LoadoutMystagogueBackpacksSatchel
-  category: JobsEpistemicsMystagogue
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutMystagogueBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - ResearchDirector
-  items:
-    - ClothingBackpackSatchelResearchDirectorFilled
-
-- type: loadout
-  id: LoadoutMystagogueBackpacksDuffel
-  category: JobsEpistemicsMystagogue
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutMystagogueBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - ResearchDirector
-  items:
-    - ClothingBackpackDuffelResearchDirectorFilled
 
 # Belt
 

@@ -23,18 +23,15 @@
   equipment:
     head: ClothingHeadMailCarrier
     jumpsuit: ClothingUniformMailCarrier
-    back: ClothingBackpackFilled
+    back: ClothingBackpack
     shoes: ClothingShoesColorBlack
     id: MailCarrierPDA
     ears: ClothingHeadsetCargo
     belt: MailBag
-  innerClothingSkirt: ClothingUniformSkirtMailCarrier
-  satchel: ClothingBackpackSatchelFilled
-  duffelbag: ClothingBackpackDuffelFilled
 
 - type: startingGear
   id: MailCarrierPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitMailCarrier
     head: ClothingHeadEnvirohelmMailCarrier

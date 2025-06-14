@@ -635,9 +635,9 @@
         - description: examine-cybereyes-message
           fontSize: 12
           requireDetailRange: true
-    - !type:TraitReplaceComponent
+    - !type:TraitRemoveComponent
       components:
-        - type: Flashable # Effectively, removes any flash-vulnerability species traits.
+        - type: EyeDamageOnFlashing
 
 
 # - type: trait

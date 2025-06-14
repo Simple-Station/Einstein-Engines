@@ -3,7 +3,7 @@
 
 #Basic Helmet (Security Helmet)
 - type: entity
-  parent: [ClothingHeadBase, BallisticGlasses]
+  parent: [ClothingHeadBase, BaseRestrictedContraband, BallisticGlasses]
   id: ClothingHeadHelmetBasic
   name: helmet
   description: Standard security gear. Protects the head from impacts.
@@ -23,6 +23,10 @@
     tags:
     - WhitelistChameleon
     - ClothingHeadHelmetBasic
+  - type: HideLayerClothing
+    slots:
+    - HeadTop
+    - HeadSide
 
 #Mercenary Helmet
 - type: entity
@@ -38,7 +42,7 @@
 
 #SWAT Helmet
 - type: entity
-  parent: [ClothingHeadBase, ClothingHeadEVAHelmetBase, BallisticGlasses]
+  parent: [ClothingHeadBase, BaseRestrictedContraband, ClothingHeadEVAHelmetBase, BallisticGlasses]
   id: ClothingHeadHelmetSwat
   name: SWAT helmet
   description: An extremely robust helmet, commonly used by paramilitary forces. This one has the Nanotrasen logo emblazoned on the top.
@@ -77,7 +81,7 @@
 
 #Light Riot Helmet
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ClothingHeadBase, BaseRestrictedContraband]
   id: ClothingHeadHelmetRiot
   name: light riot helmet
   description: It's a helmet specifically designed to protect against close range attacks.
@@ -118,6 +122,8 @@
     slots:
     - Hair
     - Snout
+    - HeadTop
+    - HeadSide
 
 #Janitorial Bombsuit Helmet
 - type: entity
@@ -171,6 +177,8 @@
     slots:
     - Hair
     - Snout
+    - HeadTop
+    - HeadSide
   - type: Unremoveable
 
 
@@ -239,6 +247,8 @@
     slots:
     - Hair
     - Snout
+    - HeadTop
+    - HeadSide
 
 #Atmos Fire Helmet
 - type: entity
@@ -268,6 +278,9 @@
     slots:
     - Hair
     - Snout
+    - HeadTop
+    - HeadSide
+  - type: BreathMask
 
 #Chitinous Helmet
 - type: entity
@@ -349,7 +362,6 @@
   - type: Clothing
     sprite: Clothing/Head/Helmets/ert_janitor.rsi
 
-# Lavaland shuttupance - Raid Helmet
 - type: entity
   parent: ClothingHeadHelmetBasic
   id: ClothingHeadHelmetRaid

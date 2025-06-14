@@ -37,7 +37,7 @@
 
 - type: startingGear
   id: CentcomPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitCentcomOfficial
     head: ClothingHeadEnvirohelmCentcomOfficial

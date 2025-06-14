@@ -1,10 +1,8 @@
-# Goob edit - energy bola
-
 - type: entity
-  name: bola
-  abstract: true
   id: BaseBola
   parent: BaseItem
+  abstract: true
+  name: bola
   description: High velocity entanglement tool.
   components:
   - type: Item
@@ -30,9 +28,9 @@
     canMoveBreakout: true
 
 - type: entity
-  name: bola
-  parent: [BaseBola]
   id: Bola
+  parent: [BaseBola, BaseRestrictedContraband]
+  name: bola
   description: Linked together with some spare cuffs and metal.
   components:
   - type: Construction
@@ -46,8 +44,8 @@
         !type:DamageTrigger
         damage: 75
       behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 15
@@ -59,9 +57,9 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  name: energy bola
   id: BolaEnergy
-  parent: BaseBola
+  parent: [ BaseBola, BaseRestrictedContraband ]
+  name: energy bola
   description: An advanced hardlight criminal entangling tool. Otherwise known as an expensive piece of string.
   components:
   - type: Sprite

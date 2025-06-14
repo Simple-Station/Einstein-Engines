@@ -44,6 +44,20 @@
 
 # Belt
 
+- type: loadout
+  id: LoadoutBeltSuspendersBlack
+  category: JobsServiceMime
+  cost: 0
+  exclusive: true
+  items:
+  - ClothingBeltSuspendersBlack
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutMimeBelt
+  - !type:CharacterJobRequirement
+    jobs:
+    - Mime
+
 # Ears
 
 # Equipment

@@ -556,7 +556,7 @@
       departments:
         - Security
   items:
-    - ClothingShoesBootsJack
+    - ClothingShoesBootsJackFilled
 
 - type: loadout
   id: LoadoutClothingShoesBootsCombat

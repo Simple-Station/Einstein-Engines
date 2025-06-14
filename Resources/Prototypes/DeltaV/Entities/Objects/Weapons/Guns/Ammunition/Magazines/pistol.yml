@@ -60,20 +60,6 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  id: MagazinePistolSpecialRubber
-  name: pistol magazine (.38 special rubber)
-  parent: BaseMagazinePistolSpecial
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgeSpecialRubber
-  - type: Sprite
-    layers:
-    - state: rubber
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-
-- type: entity
   id: MagazinePistolSpecialMindbreaker
   name: pistol magazine (.38 special mindbreaker)
   parent: BaseMagazinePistolSpecial

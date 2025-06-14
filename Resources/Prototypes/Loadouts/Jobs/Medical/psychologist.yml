@@ -1,46 +1,5 @@
 # Psychologist
 # Backpacks
-- type: loadout
-  id: LoadoutPsychologistBackpackBackpack
-  category: JobsMedicalPsychologist
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackPsychologistFilled
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPsychologistBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Medical
-
-- type: loadout
-  id: LoadoutPsychologistBackpackSatchel
-  category: JobsMedicalPsychologist
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackSatchelPsychologistFilled
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPsychologistBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Medical
-
-- type: loadout
-  id: LoadoutPsychologistBackpackDuffel
-  category: JobsMedicalPsychologist
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingBackpackDuffelPsychologistFilled
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPsychologistBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Medical
 
 # Belt
 
@@ -143,4 +102,4 @@
       jobs:
         - Psychologist
   items:
-    - ClothingUniformJumpsuitPsychologist
+    - ClothingUniformJumpskirtPsychologist

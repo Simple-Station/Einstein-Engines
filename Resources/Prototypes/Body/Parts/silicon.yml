@@ -18,13 +18,14 @@
     price: 5
   - type: Tag
     tags:
-      - Trash
+    - Trash
   - type: PhysicalComposition
     materialComposition:
       Steel: 25
   - type: GuideHelp
     guides:
-      - Cyborgs
+    - Cyborgs
+    - Robotics
   # Shitmed Change Start
   - type: SurgeryTool
     startSound:
