@@ -14,10 +14,12 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutReporterEquipment
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutReporterEquipment
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutItemTapeRecorderReporter
 #
 #- type: characterItemGroup
 #  id: LoadoutReporterEyes
