@@ -8,6 +8,8 @@ using Content.Shared.Inventory.Events;
 using Content.Shared.Radio;
 using Content.Shared.Radio.Components;
 using Content.Shared.Radio.EntitySystems;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 
@@ -18,6 +20,8 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
     [Dependency] private readonly INetManager _netMan = default!;
     [Dependency] private readonly RadioSystem _radio = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
+
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     public override void Initialize()
     {
@@ -112,6 +116,21 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
                 Message = canUnderstand ? args.OriginalChatMsg : args.LanguageObfuscatedChatMsg
             };
             _netMan.ServerSendMessage(msg, actor.PlayerSession.Channel);
+
+            //Hullrot: Radio Sound Handling
+
+            switch (args.Channel.ID)
+            {
+                case "Common":          // broadband
+                    _audio.PlayPvs("/Audio/_Crescent/Radio/radio_broadband.ogg", uid, AudioParams.Default.WithMaxDistance(1));
+                    break;
+                case "Traffic":         // shortband
+                    _audio.PlayPvs("/Audio/_Crescent/Radio/radio_shortband.ogg", uid, AudioParams.Default.WithMaxDistance(1));
+                    break;
+                default:                // special, 99% faction channel like ncwl or dsm
+                    _audio.PlayPvs("/Audio/_Crescent/Radio/radio_other.ogg", uid, AudioParams.Default.WithMaxDistance(1));
+                    break;
+            }
         }
     }
 
