@@ -35,36 +35,47 @@ public sealed partial class AtmosphereSystem
         if (!HasComp<MapGridComponent>(tile.GridIndex))
             return new Vector2(0, 0);
 
-        var centerPressure = tile.Air?.Pressure ?? 0f;
+        var centerPressure = tile.AirArchived?.Pressure ?? 0f;
         var pressureVector = new Vector2(0, 0);
         foreach (var (x, y, dir) in MASSearchPattern)
         {
+            // Create a new "Integer Vector2" using the search pattern, which will first be used to search the matrix of air tiles via its index.
+            // It'll be normalized immediately after that check is performed.
             var offsetVector = new Vector2(x, y);
+
             // If the tile checked doesn't exist, or has no air, or it's space,
             // then there's nothing to "push back" against our center tile's air.
             if (!gridAtmos.Tiles.TryGetValue(tile.GridIndices + (x, y), out var tileAtmosphere)
                 || tileAtmosphere.Space)
             {
+                // Since vectors with values of <+-1, +-1> actually have a length of Sqrt(2) instead of 1, we need to normalize them.
+                // We'll normalize all of them uniformly, even the ones that already have a length of 1, because we can't guarantee
+                // that our search pattern will always have normalized vectors.
+                // It's roughly the same computation time both ways since these are all integers. Thank you identity property shenanigans.
+                offsetVector.Normalize();
+
                 pressureVector += offsetVector * centerPressure;
                 continue;
             }
+            // See above, both sides of the condition have to have the Normalize.
+            offsetVector.Normalize();
 
             // If the tile checked is blocking airflow from this direction, the center tile's air "Bounces" off it and into the
             // opposite direction.
             if (tileAtmosphere.AirtightData.BlockedDirections is AtmosDirection.All
                 || tileAtmosphere.AirtightData.BlockedDirections.HasFlag(dir)
-                || tileAtmosphere.Air is null)
+                || tileAtmosphere.AirArchived is null)
             {
                 pressureVector -= offsetVector * centerPressure;
                 continue;
             }
 
             // Center tile now transfers its pressure across the target.
-            var pressureDiff = centerPressure - tileAtmosphere.Air.Pressure;
+            var pressureDiff = centerPressure - tileAtmosphere.AirArchived.Pressure;
             pressureVector += offsetVector * pressureDiff;
 
             // And finally, the pressure in the target tile is resisting the original target pressure.
-            pressureVector -= offsetVector * tileAtmosphere.Air.Pressure;
+            pressureVector -= offsetVector * tileAtmosphere.AirArchived.Pressure;
         }
         // from TCJ: By this point in the equation, all possible conditions are now checked, and for any airtight vessel with a standard atmosphere, the final output will be <0, 0>.
         // Should any holes exist in the ship, the air will now flow at an exponential rate towards it, while deflecting around walls.
