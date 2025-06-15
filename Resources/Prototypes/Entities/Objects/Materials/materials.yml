@@ -204,6 +204,16 @@
 
 - type: entity
   parent: MaterialDurathread
+  id: MaterialDurathread10
+  suffix: Single
+  components:
+  - type: Sprite
+    state: durathread
+  - type: Stack
+    count: 10
+
+- type: entity
+  parent: MaterialDurathread
   id: MaterialDurathread1
   suffix: Single
   components:
