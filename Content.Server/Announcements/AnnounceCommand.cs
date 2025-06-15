@@ -9,7 +9,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server.Announcements
 {
-    [AdminCommand(AdminFlags.Admin)]
+    [AdminCommand(AdminFlags.Moderator)]
     public sealed class AnnounceCommand : IConsoleCommand
     {
         public string Command => "announce";

@@ -9,9 +9,6 @@
       collection: RadiationPulse
       params:
         volume: 5
-    anomalyContactDamage:
-      types:
-        Radiation: 10
   - type: AmbientSound
     range: 5
     volume: -5
@@ -53,12 +50,21 @@
     roller: false
   - type: InnatePsionicPowers
     powersToAdd:
-      - TelepathyPower
+    - TelepathyPower
   - type: GlimmerSource
     active: false
   - type: SecretDataAnomaly
     randomStartSecretMin: 0
     randomStartSecretMax: 2
+  - type: DamageOnInteract
+    damage:
+      types:
+        Radiation: 10
+    popupText: anomaly-component-contact-damage
+  - type: DamageOnAttacked
+    damage:
+      types:
+        Radiation: 10
 
 - type: entity
   id: AnomalyPyroclastic
@@ -107,11 +113,18 @@
   - type: IgniteOnCollide
     fixtureId: fix1
     fireStacks: 1
+  - type: DamageOnInteract
+    damage:
+      types:
+        Heat: 10
+    popupText: anomaly-component-contact-damage
+  - type: DamageOnAttacked
+    damage:
+      types:
+        Heat: 10
   - type: Psionic
-    removable: false
-    roller: false
     assayFeedback:
-      - anomaly-pyroclastic-feedback
+    - anomaly-pyroclastic-feedback
 
 - type: entity
   id: AnomalyGravity
@@ -145,10 +158,8 @@
     intensity: 1000
     falloffPower: 2.7
   - type: Psionic
-    removable: false
-    roller: false
     assayFeedback:
-      - anomaly-gravity-feedback
+    - anomaly-gravity-feedback
 
 - type: entity
   id: AnomalyElectricity
@@ -173,10 +184,8 @@
   - type: ElectricityAnomaly
   - type: Electrified
   - type: Psionic
-    removable: false
-    roller: false
     assayFeedback:
-      - anomaly-electricity-feedback
+    - anomaly-electricity-feedback
 
 - type: entity
   id: AnomalyFlesh
@@ -271,10 +280,8 @@
       - MobFleshLover
       - FleshKudzu
   - type: Psionic
-    removable: false
-    roller: false
     assayFeedback:
-      - anomaly-flesh-feedback
+    - anomaly-flesh-feedback
 
 - type: entity
   id: AnomalyBluespace
@@ -322,14 +329,9 @@
       collection: RadiationPulse
       params:
         volume: 5
-    anomalyContactDamage:
-      types:
-        Radiation: 10
   - type: Psionic
-    removable: false
-    roller: false
     assayFeedback:
-      - anomaly-bluespace-feedback
+    - anomaly-bluespace-feedback
 
 - type: entity
   id: AnomalyIce
@@ -352,9 +354,6 @@
   - type: Anomaly
     corePrototype: AnomalyCoreIce
     coreInertPrototype: AnomalyCoreIceInert
-    anomalyContactDamage:
-      types:
-        Cold: 10
   - type: ExplosionAnomaly
     supercriticalExplosion: Cryo
     explosionTotalIntensity: 300
@@ -378,11 +377,18 @@
     releasedGas: 8 # Frezon. Please replace if there is a better way to specify this
     releaseOnMaxSeverity: true
     spawnRadius: 0
+  - type: DamageOnInteract
+    damage:
+      types:
+        Cold: 10
+    popupText: anomaly-component-contact-damage
+  - type: DamageOnAttacked
+    damage:
+      types:
+        Cold: 10
   - type: Psionic
-    removable: false
-    roller: false
     assayFeedback:
-      - anomaly-ice-feedback
+    - anomaly-ice-feedback
 
 - type: entity
   id: AnomalyRockBase
@@ -422,10 +428,8 @@
         maxRange: 12
       floor: FloorAsteroidTile
   - type: Psionic
-    removable: false
-    roller: false
     assayFeedback:
-      - anomaly-rock-feedback
+    - anomaly-rock-feedback
 
 - type: entity
   id: AnomalyRockUranium
@@ -652,9 +656,6 @@
     coreInertPrototype: AnomalyCoreFloraInert
     minPulseLength: 60
     maxPulseLength: 120
-    anomalyContactDamage:
-      types:
-        Slash: 0
   - type: TileSpawnAnomaly
     entries:
     - settings:
@@ -686,10 +687,8 @@
       spawns:
       - KudzuFlowerAngry
   - type: Psionic
-    removable: false
-    roller: false
     assayFeedback:
-      - anomaly-flora-feedback
+    - anomaly-flora-feedback
 
 - type: entity
   id: AnomalyFloraBulb
@@ -714,17 +713,17 @@
     damageModifierSet: Diona
   - type: Destructible
     thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 1
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              EffectAnomalyFloraBulb:
-                min: 1
-                max: 1
+    - trigger:
+        !type:DamageTrigger
+        damage: 1
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          EffectAnomalyFloraBulb:
+            min: 1
+            max: 1
   - type: PointLight
     radius: 2.0
     energy: 4.5
@@ -763,9 +762,6 @@
     coreInertPrototype: AnomalyCoreLiquidInert
     minPulseLength: 60
     maxPulseLength: 120
-    anomalyContactDamage:
-      types:
-        Slash: 1
   - type: EntitySpawnAnomaly
     entries:
     - settings:
@@ -858,10 +854,8 @@
   - type: InjectableSolution
     solution: beaker
   - type: Psionic
-    removable: false
-    roller: false
     assayFeedback:
-      - anomaly-liquid-feedback
+    - anomaly-liquid-feedback
 
 - type: entity
   id: AnomalyShadow
@@ -890,9 +884,6 @@
     coreInertPrototype: AnomalyCoreShadowInert
     minPulseLength: 60
     maxPulseLength: 120
-    anomalyContactDamage:
-      types:
-        Cold: 10
     animationTime: 4
     offset: "-0.1,0.1"
   - type: EntitySpawnAnomaly
@@ -917,9 +908,79 @@
     departureSound: /Audio/Items/hiss.ogg
   - type: Tag
     tags:
-      - SpookyFog
+    - SpookyFog
+  - type: DamageOnInteract
+    damage:
+      types:
+        Cold: 10
+    popupText: anomaly-component-contact-damage
+  - type: DamageOnAttacked
+    damage:
+      types:
+        Cold: 10
   - type: Psionic
-    removable: false
-    roller: false
     assayFeedback:
-      - anomaly-shadow-feedback
+    - anomaly-shadow-feedback
+
+- type: entity
+  id: AnomalyTech
+  parent: BaseAnomaly
+  suffix: Tech
+  components:
+  - type: Sprite
+    sprite: Structures/Specific/Anomalies/tech_anom.rsi
+    layers:
+    - state: bg
+      map: ["enum.AnomalyVisualLayers.Base"]
+    - state: bg_powered
+      map: ["enum.AnomalyVisualLayers.Animated"]
+      visible: false
+      shader: unshaded
+    - state: part1
+    - state: part2
+    - state: part3
+    - state: part4
+  - type: PointLight
+    radius: 6.5
+    energy: 3.5
+    color: "#56c1e8"
+  - type: Anomaly
+    corePrototype: AnomalyCoreTech
+    coreInertPrototype: AnomalyCoreTechInert
+    minPulseLength: 60
+    maxPulseLength: 120
+  - type: TechAnomaly
+  - type: DeviceLinkSource
+    ports:
+    - Pulse
+    - Timer
+  - type: Psionic
+    assayFeedback:
+    - anomaly-tech-feedback
+
+- type: entity
+  id: AnomalyTechBeam
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: /Textures/Effects/techanom_beam.rsi
+    drawdepth: Effects
+    layers:
+    - state: beam
+      shader: unshaded
+      color: "#21c4ff"
+  - type: Physics
+    canCollide: false
+  - type: PointLight
+    enabled: true
+    color: "#4080FF"
+    radius: 3.5
+    softness: 1
+    autoRot: true
+    castShadows: false
+  - type: Beam
+  - type: TimedDespawn
+    lifetime: 2.3
+  - type: Tag
+    tags:
+    - HideContextMenu

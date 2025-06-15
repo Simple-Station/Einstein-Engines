@@ -9,7 +9,7 @@
   access:
   - Theatre
   - Maintenance
-  - Clown # DeltaV - Add Clown access
+  - Clown
   special:
   - !type:AddComponentSpecial
     components:
@@ -33,19 +33,17 @@
   - ClownPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitClown
-    back: ClothingBackpackClownFilled
+    back: ClothingBackpackClown
     shoes: ClothingShoesClown
     mask: ClothingMaskClown
     pocket1: BikeHorn
     pocket2: ClownRecorder
     id: ClownPDA
     ears: ClothingHeadsetService
-  satchel: ClothingBackpackSatchelClownFilled
-  duffelbag: ClothingBackpackDuffelClownFilled
 
 - type: startingGear
   id: ClownPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitClown
     head: ClothingHeadEnvirohelmClown

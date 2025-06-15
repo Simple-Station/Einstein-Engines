@@ -228,7 +228,7 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
             foreach (var objective in objectives)
             {
                 var comp = Comp<ObjectiveComponent>(objective);
-                if (comp.Issuer != BlobIssuer)
+                if (comp.LocIssuer != Loc.GetString(BlobIssuer))
                     continue;
 
                 var info = _objectivesSystem.GetInfo(objective, mindId, mind);
@@ -292,7 +292,7 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
             else if (name != null)
                 result += "\n" + Loc.GetString("blob-was-a-blob-with-objectives-named", ("name", name));
 
-            foreach (var objectiveGroup in objectives.GroupBy(o => Comp<ObjectiveComponent>(o).Issuer == BlobIssuer))
+            foreach (var objectiveGroup in objectives.GroupBy(o => Comp<ObjectiveComponent>(o).LocIssuer == Loc.GetString(BlobIssuer)))
             {
                 if (!objectiveGroup.Key)
                     continue;

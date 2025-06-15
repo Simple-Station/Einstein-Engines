@@ -13,6 +13,7 @@
   setPreference: true
   objective: roles-antag-nuclear-operative-agent-objective
   guides: [ NuclearOperatives ]
+
 - type: antag
   id: NukeopsCommander
   name: roles-antag-nuclear-operative-commander-name
@@ -21,14 +22,13 @@
   objective: roles-antag-nuclear-operative-commander-objective
   guides: [ NuclearOperatives ]
 
-#Lone Operative Gear
 - type: startingGear
-  id: SyndicateLoneOperativeGearFull
+  id: SyndicateOperativeGearFullNoUplink
   subGear:
-  - SyndicatePlasmamanGear
+  - SyndicateOperativePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
-    back: ClothingBackpackDuffelSyndicateOperative
+    back: ClothingBackpackDuffelSyndicate
     mask: ClothingMaskGasSyndicate
     eyes: ClothingEyesHudSyndicate
     ears: ClothingHeadsetAltSyndicate
@@ -36,8 +36,65 @@
     shoes: ClothingShoesBootsCombatFilled
     id: SyndiPDA
     pocket1: DoubleEmergencyOxygenTankFilled
-    pocket2: BaseUplinkRadio60TC
+    pocket2: PlushieCarp
     belt: ClothingBeltMilitaryWebbing
-  innerClothingSkirt: ClothingUniformJumpskirtOperative
-  satchel: ClothingBackpackDuffelSyndicateOperative
-  duffelbag: ClothingBackpackDuffelSyndicateOperative
+  storage:
+    back:
+    - BoxSurvivalSyndicate
+    - WeaponPistolViper
+    - PinpointerSyndicateNuclear
+    - DeathAcidifierImplanter
+
+- type: startingGear
+  id: SyndicateOperativePlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitOperative
+    head: ClothingHeadEnvirohelmOperative
+    pocket1: DoubleEmergencyPlasmaTankFilled
+
+#Nuclear Operative Gear
+- type: startingGear
+  id: SyndicateOperativeGearFull
+  parent: SyndicateOperativeGearFullNoUplink
+  equipment:
+    pocket2: BaseUplinkRadio40TC
+
+#Nuclear Operative Commander Gear
+- type: startingGear
+  id: SyndicateCommanderGearFull
+  parent: SyndicateOperativeGearFull
+  equipment:
+    neck: SyndicateWhistle
+  inhand:
+  - NukeOpsDeclarationOfWar
+
+#Nuclear Operative Medic Gear
+- type: startingGear
+  id: SyndicateOperativeMedicFull
+  parent: SyndicateOperativeGearFull
+  equipment:
+    eyes: ClothingEyesHudSyndicateAgent
+    shoes: ClothingShoesBootsMagSyndie
+    id: SyndiAgentPDA
+    belt: ClothingBeltMilitaryWebbingMedFilled
+  storage:
+    back:
+    - SyndiHypo
+    - BoxSurvivalSyndicate
+    - SawAdvanced
+    - Cautery
+    - CombatKnife
+    - WeaponPistolViper
+    - PinpointerSyndicateNuclear
+    - HandheldHealthAnalyzer
+    - CombatMedipen
+    - DeathAcidifierImplanter
+    - OmnimedToolSyndie
+
+#Lone Operative Gear
+- type: startingGear
+  id: SyndicateLoneOperativeGearFull
+  parent: SyndicateOperativeGearFull
+  equipment:
+    pocket2: BaseUplinkRadio60TC

@@ -1,12 +1,16 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Shared.Administration.Logs;
+using Content.Shared.CCVar;
+using Content.Shared.Customization;
+using Content.Shared.Customization.Systems;
 using Content.Shared.Database;
 using Content.Shared.GameTicking;
 using Content.Shared.Mind;
 using Content.Shared.Roles.Jobs;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -21,8 +25,14 @@ public abstract class SharedRoleSystem : EntitySystem
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly SharedMindSystem _minds = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
+
+    private CharacterRequirementOverridePrototype? _requirementOverride;
+
     public override void Initialize()
     {
+        Subs.CVar(_cfg, CCVars.GameRoleTimerOverride, SetRequirementOverride, true);
+
         SubscribeLocalEvent<StartingMindRoleComponent, PlayerSpawnCompleteEvent>(OnSpawn);
         SubscribeLocalEvent<MindRoleComponent, ComponentShutdown>(OnComponentShutdown);
     }
@@ -33,6 +43,18 @@ public abstract class SharedRoleSystem : EntitySystem
             return;
 
         MindAddRole(mindId, component.MindRole, mind: mindComp, silent: component.Silent);
+    }
+
+    private void SetRequirementOverride(string value)
+    {
+        if (string.IsNullOrEmpty(value))
+        {
+            _requirementOverride = null;
+            return;
+        }
+
+        if (!_prototypes.TryIndex(value, out _requirementOverride ))
+            Log.Error($"Unknown JobRequirementOverridePrototype: {value}");
     }
 
     /// <summary>
@@ -567,6 +589,43 @@ public abstract class SharedRoleSystem : EntitySystem
             _audio.PlayGlobal(sound, mind.Session);
     }
 
+    // TODO ROLES Change to readonly.
+    // Passing around a reference to a prototype's hashset makes me uncomfortable because it might be accidentally
+    // mutated.
+    public List<CharacterRequirement>? GetJobRequirement(JobPrototype job)
+    {
+        if (_requirementOverride != null && _requirementOverride.Jobs.TryGetValue(job.ID, out var req))
+            return req;
+
+        return job.Requirements;
+    }
+
+    // TODO ROLES Change to readonly.
+    public List<CharacterRequirement>? GetJobRequirement(ProtoId<JobPrototype> job)
+    {
+        if (_requirementOverride != null && _requirementOverride.Jobs.TryGetValue(job, out var req))
+            return req;
+
+        return _prototypes.Index(job).Requirements;
+    }
+
+    // TODO ROLES Change to readonly.
+    public List<CharacterRequirement>? GetAntagRequirement(ProtoId<AntagPrototype> antag)
+    {
+        if (_requirementOverride != null && _requirementOverride.Antags.TryGetValue(antag, out var req))
+            return req;
+
+        return _prototypes.Index(antag).Requirements;
+    }
+
+    // TODO ROLES Change to readonly.
+    public List<CharacterRequirement>? GetAntagRequirement(AntagPrototype antag)
+    {
+        if (_requirementOverride != null && _requirementOverride.Antags.TryGetValue(antag.ID, out var req))
+            return req;
+
+        return antag.Requirements;
+    }
 }
 
 /// <summary>

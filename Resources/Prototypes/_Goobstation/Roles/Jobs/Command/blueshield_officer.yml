@@ -81,7 +81,7 @@
 
 - type: startingGear
   id: BlueshieldPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitBlueshield
     head: ClothingHeadEnvirohelmBlueshield

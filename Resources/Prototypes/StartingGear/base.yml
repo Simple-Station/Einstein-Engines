@@ -1,0 +1,42 @@
+- type: startingGear
+  id: OxygenBreather
+  abstract: true
+  requirements:
+  - !type:CharacterSpeciesRequirement
+    species:
+    - Arachne
+    - Arachnid
+    - Chitinid
+    - Diona
+    - Dwarf
+    - Felinid
+    - Gingerbread
+    - Harpy
+    - Human
+    - Lamia
+    - Moth
+    - Oni
+    - Reptilian
+    - Shadowkin
+    - SynthHuman
+    - Tajaran
+    - Thaven
+    - Vulpkanin
+    - Xelthia
+
+- type: startingGear
+  id: NitrogenBreather
+  abstract: true
+  requirements:
+  - !type:CharacterSpeciesRequirement
+    species:
+    - SlimePerson
+    - Vox
+
+- type: startingGear
+  id: PlasmaBreather
+  abstract: true
+  requirements:
+  - !type:CharacterSpeciesRequirement
+    species:
+    - Plasmaman

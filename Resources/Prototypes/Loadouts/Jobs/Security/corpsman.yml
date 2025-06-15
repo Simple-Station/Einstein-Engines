@@ -6,7 +6,7 @@
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpackBrigmedicFilled
+    - ClothingBackpackBrigmedic
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCorpsmanBackpacks
@@ -20,7 +20,7 @@
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpackSatchelBrigmedicFilled
+    - ClothingBackpackSatchelBrigmedic
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCorpsmanBackpacks
@@ -34,7 +34,7 @@
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpackDuffelBrigmedicFilled
+    - ClothingBackpackDuffelBrigmedic
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCorpsmanBackpacks

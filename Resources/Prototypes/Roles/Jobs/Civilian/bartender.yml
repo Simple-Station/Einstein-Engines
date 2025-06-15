@@ -4,14 +4,14 @@
   description: job-description-bartender
   playTimeTracker: JobBartender
   requirements:
-    - !type:CharacterDepartmentTimeRequirement
-      department: Civilian
-      min: 3600 #DeltaV
-    - !type:CharacterEmployerRequirement
-      employers:
-      - IdrisIncorporated
-      - NanoTrasen
-      - OrionExpress
+  - !type:CharacterDepartmentTimeRequirement
+    department: Civilian
+    min: 3600 #DeltaV
+  - !type:CharacterEmployerRequirement
+    employers:
+    - IdrisIncorporated
+    - NanoTrasen
+    - OrionExpress
   startingGear: BartenderGear
   icon: "JobIconBartender"
   supervisors: job-supervisors-hop
@@ -31,17 +31,14 @@
     head: ClothingHeadHatTophat
     jumpsuit: ClothingUniformJumpsuitBartender
     outerClothing: ClothingOuterVest
-    back: ClothingBackpackFilled
+    back: ClothingBackpack
     shoes: ClothingShoesColorBlack
     id: BartenderPDA
     ears: ClothingHeadsetService
-  innerClothingSkirt: ClothingUniformJumpskirtBartender
-  satchel: ClothingBackpackSatchelFilled
-  duffelbag: ClothingBackpackDuffelFilled
 
 - type: startingGear
   id: BartenderPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitEnviroslacks
     head: ClothingHeadEnvirohelmColorWhite

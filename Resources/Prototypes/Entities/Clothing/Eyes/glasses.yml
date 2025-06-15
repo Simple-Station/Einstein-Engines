@@ -53,7 +53,7 @@
         Blunt: 10
 
 - type: entity
-  parent: ClothingEyesBase
+  parent: [ClothingEyesBase, BaseEngineeringContraband]
   id: ClothingEyesGlassesMeson
   name: engineering goggles #less confusion
   description: Green-tinted goggles using a proprietary polymer that provides protection from eye damage of all types.
@@ -63,9 +63,11 @@
   - type: Clothing
     sprite: Clothing/Eyes/Glasses/meson.rsi
   - type: EyeProtection
+  - type: IdentityBlocker
+    coverage: EYES
   - type: Tag
     tags:
-    - SecDogWearable # DeltaV - let Laika wear meson goggles
+    - SecDogWearable
 
 - type: entity
   parent: ClothingEyesBase
@@ -194,7 +196,7 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
-    - SecDogWearable # DeltaV - let Laika wear sunglasses
+    - SecDogWearable
   - type: IdentityBlocker
     coverage: EYES
 
@@ -207,6 +209,11 @@
   - type: FlashImmunity
   - type: EyeProtection
     protectionTime: 5
+  - type: Tag
+    tags:
+    - Sunglasses
+    - HamsterWearable
+    - WhitelistChameleon
 
 - type: entity
   parent: [ClothingEyesBase, ShowSecurityIcons, BallisticGlasses]
@@ -221,14 +228,18 @@
   - type: FlashImmunity
   - type: EyeProtection
     protectionTime: 5
+  - type: Construction
+    graph: GlassesSecHUD
+    node: glassesSec
   - type: Tag
     tags:
     - HamsterWearable
     - WhitelistChameleon
-    - SecDogWearable # DeltaV - let Laika wear secglasses
+    - SecDogWearable
   - type: GuideHelp
     guides:
     - Security
+    - Antagonists
   - type: IdentityBlocker
     coverage: EYES
 
@@ -390,6 +401,8 @@
   - type: FlashImmunity
   - type: EyeProtection
     protectionTime: 5
+  - type: IdentityBlocker
+    coverage: EYES
 
 #Make a scanner category when these actually function and we get the trayson
 - type: entity
@@ -407,6 +420,8 @@
       coefficients:
         Heat: 0.95
   - type: GroupExamine
+  - type: IdentityBlocker
+    coverage: EYES
 
 - type: entity
   parent: ClothingEyesBase
@@ -419,6 +434,8 @@
     - type: Clothing
       sprite: Clothing/Eyes/Glasses/science.rsi
     - type: SolutionScanner
+    - type: IdentityBlocker
+      coverage: EYES
 
 - type: entity
   parent: ClothingEyesBase
@@ -452,10 +469,10 @@
   name: purple goggles
   description: These don't have any real function, but they do look cool!
   components:
-    - type: Sprite
-      sprite: Clothing/Eyes/Glasses/science.rsi
-    - type: Clothing
-      sprite: Clothing/Eyes/Glasses/science.rsi
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/science.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/science.rsi
 
 - type: entity
   parent: ClothingEyesBase

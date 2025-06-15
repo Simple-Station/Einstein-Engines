@@ -54,11 +54,10 @@
     id: AdminAssistantPDA
     ears: ClothingHeadsetAdminAssist
     shoes: ClothingShoesLeather
-  innerClothingSkirt: ClothingUniformJumpskirtAdminAssistant
 
 - type: startingGear
   id: AdminAssistantPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitAdminAssistant
     head: ClothingHeadEnvirohelmAdminAssistant
