@@ -12,10 +12,12 @@ public sealed class CrescentCVars
         CVarDef.Create("sc.respawn.enabled", true, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
-    /// Respawn time, how long the player has to wait in seconds after death.
+    /// Respawn time, how long the player has to wait in seconds after death. 
+    /// 
+    /// HULLROT NOTE: this does NOT work. use the timer in Content.Shared/CCVar/CCVars.GhostRespawn.cs
     /// </summary>
     public static readonly CVarDef<float> RespawnTime =
-        CVarDef.Create("sc.respawn.time", 300.0f, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("sc.respawn.time", 69.0f, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     /// Enforce role whitelists

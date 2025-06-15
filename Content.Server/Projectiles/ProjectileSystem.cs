@@ -32,7 +32,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
 
     private void OnStartCollide(EntityUid uid, ProjectileComponent component, ref StartCollideEvent args)
     {
-        if (args.OurFixtureId != ProjectileFixture || component.DamagedEntity || component is { Weapon: null, OnlyCollideWhenShot: true, })
+        if (!component.raycasting && args.OurFixtureId != ProjectileFixture || component.DamagedEntity || component is { Weapon: null, OnlyCollideWhenShot: true, })
             return;
         if (!HasComp<ShipShieldComponent>(uid) && !args.OtherFixture.Hard)
             return;
