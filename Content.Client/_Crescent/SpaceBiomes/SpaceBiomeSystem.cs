@@ -27,8 +27,14 @@ public sealed class SpaceBiomeSystem : EntitySystem
         _audioSys.DisableAmbientMusic();
         SpaceBiomePrototype biome = _protMan.Index<SpaceBiomePrototype>(ev.Biome);
         _overlay.Reset();
+        _overlay.ResetDescription();
         _overlay.Text = biome.Name;
+        _overlay.TextDescription = biome.Description;
         _overlay.CharInterval = TimeSpan.FromSeconds(2f / biome.Name.Length);
+        if (_overlay.TextDescription == "")                   //if we have a biome with no description, it's default is "" and that has length 0.
+            _overlay.CharIntervalDescription = TimeSpan.Zero;       //we need to calculate it here because otherwise...
+        else
+            _overlay.CharIntervalDescription = TimeSpan.FromSeconds(2f / biome.Description.Length);      //this would throw an exception
     }
 
     private void OnNewVesselEntered(NewVesselEnteredMessage ev)
@@ -37,6 +43,8 @@ public sealed class SpaceBiomeSystem : EntitySystem
             return;
 
         _overlay.Text = ev.Name + ", " + ev.Designation;
+        _overlay.TextDescription = "A metal coffin."; //this can be changed to "" or updated later to change based on ship
         _overlay.CharInterval = TimeSpan.FromSeconds(2f / _overlay.Text.Length);
+        _overlay.CharIntervalDescription = TimeSpan.FromSeconds(2f / _overlay.TextDescription.Length);
     }
 }
