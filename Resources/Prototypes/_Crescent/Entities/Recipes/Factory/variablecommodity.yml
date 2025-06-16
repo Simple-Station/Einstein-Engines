@@ -1,0 +1,102 @@
+- type: factoryRecipe
+  id: FabricateSimpleElectronics
+  name: fabricate simple electronics
+  inputs:
+    Steel: 2
+    Silver: 5
+  outputs:
+    BasicElectronics: 1
+
+- type: factoryRecipe
+  id: FabricateAdvancedElectronics
+  name: fabricate advanced electronics
+  inputs:
+    Silver: 5
+    BasicElectronics: 3
+  outputs:
+    AdvancedElectronics: 1
+
+- type: factoryRecipe
+  id: FabricateAdvancedMechatronics
+  name: fabricate advanced mechatronics
+  inputs:
+    Gold: 5
+    BasicMechatronics: 3
+  outputs:
+    AdvancedMechatronics: 1
+
+- type: factoryRecipe
+  id: FabricateBasicMechatronics
+  name: fabricate basic mechatronics
+  inputs:
+    Steel: 5
+    Silver: 2
+  outputs:
+    BasicMechatronics: 1
+
+- type: factoryRecipe
+  id: FabricateWeakLaserLocus
+  name: fabricate weak laser locus
+  inputs:
+    BasicElectronics: 1
+    Plasma: 10
+  outputs:
+    WeakLaserLocus: 1
+
+- type: factoryRecipe
+  id: FabricateMissileTube
+  name: fabricate missile tube loader
+  inputs:
+    BasicMechatronics: 3
+    Silver: 10
+    Steel: 5
+  outputs:
+    TubeLoader: 1
+
+- type: factoryRecipe
+  id: FabricateBallisticCycler
+  name: fabricate ballistic cycler
+  inputs:
+    BasicMechatronics: 2
+    Steel: 5
+  outputs:
+    BallisticCycler: 1
+
+- type: factoryRecipe
+  id: FabricateLaserLocus
+  name: fabricate focused laser locus
+  inputs:
+    AdvancedElectronics: 2
+    Gold: 5
+    Glass: 5
+  outputs:
+    LaserLocus: 1
+
+- type: factoryRecipe
+  id: FabricateHardsuitElectronics
+  name: fabricate hardsuit electronics
+  inputs:
+    BasicElectronis: 2
+    Gold: 5
+  outputs:
+    HardsuitElectronics: 1
+
+- type: factoryRecipe
+  id: FabricatePlastitaniumPlate
+  name: press plastitanium plate
+  inputs:
+    Plasteel: 10
+    Gold: 5
+  outputs:
+    PlastitaniumFibreAlloy: 1
+
+- type: factoryRecipe
+  id: FabricateHardlightGenerator
+  name: fabricate hardlight generator
+  inputs:
+    AdvancedElectronics: 2
+    BasicMechatronics: 3
+    Gold: 5
+    Silver: 5
+  outputs:
+    HardlightGenerator: 1

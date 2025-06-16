@@ -7,8 +7,10 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 25
+        Piercing: 45
         Structural: 60
+    harmorPenetration: 60
+    stoppingPower: 8
 
 - type: entity
   id: BulletMechHeavyRifle
@@ -19,8 +21,10 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 45 #Dummy but holy shit these are massive
-        Structural: 90
+        Piercing: 65 #Dummy but holy shit these are massive
+        Structural: 100
+    harmorPenetration: 70
+    stoppingPower: 9
 
 - type: entity
   id: ExosuitAutoshotgunPellet
@@ -34,8 +38,10 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 15
-        Structural: 30
+        Piercing: 35
+        Structural: 50
+    harmorPenetration: 30
+    stoppingPower: 6
 
 - type: entity
   id: ExosuitAutoshotgunPelletSpread
@@ -59,8 +65,10 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 24
-        Structural: 60
+        Piercing: 45
+        Structural: 100
+    harmorPenetration: 40
+    stoppingPower: 7
 
 - type: entity
   id: ExosuitAutopuntgunPelletSpread

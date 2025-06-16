@@ -376,3 +376,73 @@
     - state: ame-part
   - type: StaticPrice
     price: 1500
+
+- type: entity
+  parent: BaseFlatpack
+  id: CarrionFlatpack
+  name: IEE m-V30 'Carrion' exosuit construction kit
+  description:  Parts used to build an Imperial worker's mech. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: MechDSMCarrionBattery
+  - type: Sprite
+    layers:
+    - state: kit
+  - type: StaticPrice
+    price: 3000
+
+- type: entity
+  parent: BaseFlatpack
+  id: BogatyrFlatpack
+  name: HNF 'Bogatyr' exosuit construction kit
+  description:  Parts used to build a communard battle mech. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: MechNCWLBogatyrBattery
+  - type: Sprite
+    layers:
+    - state: kit
+  - type: StaticPrice
+    price: 12000
+
+- type: entity
+  parent: BaseFlatpack
+  id: LancerFlatpack
+  name: HNF 'Lancer' exosuit construction kit
+  description:  Parts used to build a communard battle mech. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: MechNCWLLancerBattery
+  - type: Sprite
+    layers:
+    - state: kit
+  - type: StaticPrice
+    price: 12000
+
+- type: entity
+  parent: BaseFlatpack
+  id: MarauderFlatpack
+  name: GSC T-97 'Marauder' exosuit construction kit
+  description:  Parts used to build a pirate raider mech. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: MechGSCMarauderBattery
+  - type: Sprite
+    layers:
+    - state: kit
+  - type: StaticPrice
+    price: 6500
+
+- type: entity
+  parent: BaseFlatpack
+  id: GilgameshFlatpack
+  name: SHI mR-815 'Gilgamesh' exosuit construction kit
+  description:  Parts used to build a corporate siege exosuit. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: MechSHIGilgameshBattery
+  - type: Sprite
+    layers:
+    - state: kit
+  - type: StaticPrice
+    price: 25000
