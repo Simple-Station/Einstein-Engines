@@ -1,4 +1,19 @@
 - type: Tag
+  id: Magazine6x24mm
+
+- type: Tag
+  id: MechPowercell
+
+- type: Tag
+  id: MagazineRailgun15mm
+
+- type: Tag
+  id: Cartridge6x24mm
+
+- type: Tag
+  id: CartridgeRailgun15mm
+  
+- type: Tag
   id: AirAlarm
 
 - type: Tag

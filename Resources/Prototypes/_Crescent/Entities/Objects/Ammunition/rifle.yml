@@ -20,7 +20,7 @@
 
 - type: entity
   id: Magazine50CalRifle #Specify that this' for rifles
-  name: rifle magazine (.50) #This is the same as 7.62 mm
+  name: rifle magazine (12.7×42mm) #This is the same as 7.62 mm
   parent: BaseMagazineRifle
   categories: [ HideSpawnMenu ]
   abstract: true

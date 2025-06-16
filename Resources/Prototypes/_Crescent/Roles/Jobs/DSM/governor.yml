@@ -5,13 +5,20 @@
   playTimeTracker: JobGovernorDSM
   requirements:
     - !type:CharacterWhitelistRequirement
-    - !type:SpeciesRequirement
+    - !type:CharacterSpeciesRequirement
       species:
         - Human
     - !type:SexRequirement
       sex : Male
     - !type:FactionRequirement
       factionID: "DSM"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Pacifist
   weight: 87
   startingGear: GovernorGear
   alwaysUseSpawner: true

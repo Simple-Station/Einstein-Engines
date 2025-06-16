@@ -9,7 +9,7 @@
   - type: Item
     size: Huge
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Rifles/ak.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/akms.rsi
     quickEquip: false
     slots:
     - Back
@@ -72,13 +72,13 @@
     staminaCost: 7.5
 
 - type: entity
-  name: AKMS
+  name: NCSP AKMS-47 7.62x51mm
   parent: BaseWeaponRifle
   id: WeaponRifleAk
-  description: An iconic weapon of war. Uses .30 rifle ammo.
+  description: An iconic weapon of war. Uses 7.62x51mm ammo. An illegal firearm often seen in the hands of terrorists and informal militias.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Rifles/ak.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/akms.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
@@ -121,20 +121,20 @@
   - type: Appearance
 
 - type: entity
-  name: M-90gl
+  name: NT M-90gl Hercules 5.56x45mm
   parent: BaseWeaponRifle
   id: WeaponRifleM90GrenadeLauncher
-  description: An older bullpup carbine model, with an attached underbarrel grenade launcher. Uses .20 rifle ammo.
+  description: An older bullpup carbine model, with an attached underbarrel grenade launcher. Uses 5.56x45mm ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Rifles/carbine.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/carbine.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Rifles/carbine.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/carbine.rsi
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -164,20 +164,20 @@
   - type: Appearance
 
 - type: entity
-  name: Lecter
+  name: SHI PAA-2 Lecter 7.62x51mm
   parent: BaseWeaponRifle
   id: WeaponRifleLecter
-  description: A high end military grade assault rifle. Uses .20 rifle ammo.
+  description: A generic, SHI-brand assault carbine sold to corporations and security forces everywhere.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Rifles/lecter.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/lecter.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Rifles/lecter.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/lecter.rsi
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
@@ -211,7 +211,7 @@
   - type: Appearance
 
 - type: entity
-  name: Lecter
+  name: SHI PAA-2 Lecter 7.62x51mm
   parent: WeaponRifleLecter
   id: WeaponRifleLecterRubber
   suffix: Non-lethal

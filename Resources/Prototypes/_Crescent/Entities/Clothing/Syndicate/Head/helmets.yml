@@ -34,6 +34,7 @@
   name: combat technician's hardsuit helmet
   description: Spaceworthy protection for your fragile skull. A Syndicate design.
   components:
+  - type: BreathMask
   - type: Sprite
     sprite: _Crescent/Clothing/Syndicate/Head/syndicatedonator.rsi
   - type: Clothing
@@ -62,6 +63,7 @@
   name: operative's combat hardsuit helmet
   description: Spaceworthy protection for your fragile skull. A Syndicate design.
   components:
+  - type: BreathMask
   - type: Sprite
     sprite: _Crescent/Clothing/Syndicate/Head/syndicateramzi.rsi
   - type: Clothing
@@ -90,6 +92,7 @@
   name: frontliner's combat hardsuit helmet
   description: Spaceworthy protection for your fragile skull. A Syndicate design.
   components:
+  - type: BreathMask
   - type: Sprite
     sprite: _Crescent/Clothing/Syndicate/Head/syndicatesbg.rsi
   - type: Clothing
@@ -111,7 +114,7 @@
         Caustic: 0.95
 
 - type: entity
-  parent: ClothingHeadHardsuitBase
+  parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitCybersunSuit
   categories: [ HideSpawnMenu ]
   name: cybersun hardsuit helmet
@@ -122,6 +125,9 @@
     sprite: _Crescent/Clothing/Syndicate/Head/cybersunhelmet.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/Syndicate/Head/cybersunhelmet.rsi
+  - type: PointLight
+    radius: 6
+    color: "#b91e5f"
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000

@@ -1,7 +1,7 @@
 # Upstream
 - type: entity
   id: BulletPistolEmp
-  name: bullet (.35 auto emp)
+  name: bullet (9x19mm PSTF emp)
   parent: BaseBulletEmp
   categories: [ HideSpawnMenu ]
   components:

@@ -16,9 +16,21 @@ public class SharedDynamicCodeSystem : EntitySystem
         public HashSet<int> codes = new();
         public Dictionary<string, HashSet<int>> mappedCodes = new();
     }
+
+    // checks if the holder has ALL keys from the hashset. Returns false is not
     public bool hasAllKeys(HashSet<int> keys, DynamicCodeHolderComponent holder)
     {
         return holder.codes.Intersect(keys).Count() == keys.Count;
+    }
+    /// <summary>
+    /// Checks if all the KEYS are present in the targetCodes list.
+    /// </summary>
+    /// <param name="keys"></param>
+    /// <param name="targetCodes"></param>
+    /// <returns></returns>
+    public bool hasAllKeys(HashSet<int> keys, HashSet<int> targetCodes)
+    {
+        return targetCodes.Intersect(keys).Count() == keys.Count;
     }
 
     public bool hasAllKeys(HashSet<int> keys, EntityUid target)

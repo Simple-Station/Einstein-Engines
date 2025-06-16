@@ -12,6 +12,7 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: Transform
+#    - type: ShipRenameHolopad # i assume not here because there could be multiple holopads
 
 - type: entity
   id: StandardCrescentOutpost #POI
@@ -26,6 +27,7 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: Transform
+    - type: ShipRenameHolopad
 
 - type: entity
   id: StandardCrescentVessel #Combat vessel
@@ -41,6 +43,7 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: Transform
+    - type: ShipRenameHolopad
 
 - type: entity
   id: StandardCrescentCivilianVessel #Civilian / unarmed vessel
@@ -56,6 +59,7 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: Transform
+    - type: ShipRenameHolopad
 
 - type: entity
   id: StandardCrescentExpeditionVessel #Expeds
@@ -72,6 +76,7 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: Transform
+    - type: ShipRenameHolopad
 
 - type: entity
   id: StandardCrescentExpeditionVesselCombat #Expeds
@@ -88,6 +93,7 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: Transform
+    - type: ShipRenameHolopad
 
 - type: entity
   id: BaseStationSiliconLawCrescentStation

@@ -1,0 +1,81 @@
+- type: entity
+  id: BulletMechLightRifle
+  name: bullet (30mm USTF)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 45
+        Structural: 60
+    harmorPenetration: 60
+    stoppingPower: 8
+
+- type: entity
+  id: BulletMechHeavyRifle
+  name: bullet (43mm USTF) #The Proverbial .50
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 65 #Dummy but holy shit these are massive
+        Structural: 100
+    harmorPenetration: 70
+    stoppingPower: 9
+
+- type: entity
+  id: ExosuitAutoshotgunPellet
+  name: pellet (4g)
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: buckshot
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 35
+        Structural: 50
+    harmorPenetration: 30
+    stoppingPower: 6
+
+- type: entity
+  id: ExosuitAutoshotgunPelletSpread
+  categories: [ HideSpawnMenu ]
+  parent: ExosuitAutoshotgunPellet
+  components:
+  - type: ProjectileSpread
+    proto: PelletShotgun
+    count: 3
+    spread: 15
+
+- type: entity
+  id: ExosuitAutopuntgunPellet
+  name: pellet (1g)
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: buckshot
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 45
+        Structural: 100
+    harmorPenetration: 40
+    stoppingPower: 7
+
+- type: entity
+  id: ExosuitAutopuntgunPelletSpread
+  categories: [ HideSpawnMenu ]
+  parent: ExosuitAutopuntgunPellet
+  components:
+  - type: ProjectileSpread
+    proto: PelletShotgun
+    count: 3
+    spread: 15

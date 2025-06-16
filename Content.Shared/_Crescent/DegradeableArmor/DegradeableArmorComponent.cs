@@ -18,19 +18,6 @@ public sealed partial class DegradeableArmorComponent : Component
     [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
     public float armorHealth;
 
-    /// <summary>
-    /// percentage of blocked damage that gets converted into stamina damage
-    /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
-    public Dictionary<string, float> staminaConversions = new Dictionary<string, float>()
-    {
-        {"Blunt", 0.25f},
-        {"Slash", 0.15f},
-        {"Piercing", 0.15f},
-        {"Heat", 0f},
-        {"Caustic", 0f},
-        {"Radiation", 0f}
-    };
     [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
     public Dictionary<string, float> armorDamageCoefficients = new Dictionary<string, float>()
     {
@@ -40,16 +27,6 @@ public sealed partial class DegradeableArmorComponent : Component
         {"Heat", 1f},
         {"Caustic", 10f},
         {"Radiation", 0.1f}
-    };
-    [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
-    public Dictionary<string, float> maxBlockCoefficients = new Dictionary<string, float>()
-    {
-        {"Blunt", 0.8f},
-        {"Slash", 0.8f},
-        {"Piercing", 0.8f},
-        {"Heat", 0.8f},
-        {"Caustic", 0.8f},
-        {"Radiation", 1f}
     };
 
     [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
@@ -66,14 +43,14 @@ public sealed partial class DegradeableArmorComponent : Component
     ///  This is shitty but there is no wizden implementation for getting the wearer of a piece of clothing
     /// </summary>
     ///
-    [ViewVariables(VVAccess.ReadWrite)] 
+    [ViewVariables(VVAccess.ReadWrite)]
     public EntityUid wearer = EntityUid.Invalid;
 
 }
 [Serializable, NetSerializable]
 public enum ArmorDegradation
 {
-    Ceramic = 1, // blocks damage but decay is exponential to the damage. 
+    Ceramic = 1, // blocks damage but decay is exponential to the damage.
     Metallic = 1<<1, // Linear damaage , linear scaling of protection
     Plastic = 1<<2, // Complicated
 }

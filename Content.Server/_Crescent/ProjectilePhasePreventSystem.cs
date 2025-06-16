@@ -61,6 +61,7 @@ public class ProjectilePhasePreventerSystem : EntitySystem
 
         }
 
+        projectile.raycasting = true;
         comp.start = _trans.GetWorldPosition(uid);
         comp.mapId = _trans.GetMapId(uid);
         /* Handled by  datafield in component.

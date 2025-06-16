@@ -65,19 +65,18 @@
     staminaCost: 5
 
 - type: entity
-  name: Deckard
+  name: NT X2 Deckard .327
   parent: BaseWeaponRevolver
   id: WeaponRevolverDeckard
-  description: A rare, custom-built revolver. Use when there is no time for Voight-Kampff test. Uses .45 magnum ammo.
+  description: A rare, custom-built revolver. Use when there is no time for Voight-Kampff test. Uses .327 ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Revolvers/deckard.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/deckard.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
-    - state: mag-unshaded-3
-      map: ["enum.GunVisualLayers.MagUnshaded"]
-      shader: unshaded
+    - state: mag-2
+      map: ["enum.GunVisualLayers.Mag"]
   - type: Gun
     fireRate: 2
   - type: RevolverAmmoProvider
@@ -86,27 +85,27 @@
     ammoSlots: [ null, null, null, null, null ]
   - type: MagazineVisuals
     magState: mag
-    steps: 4
+    steps: 3
     zeroVisible: true
   - type: Appearance
   - type: StaticPrice
     price: 1500
 
 - type: entity
-  name: Deckard
+  name: NT X2 Deckard .327
   parent: WeaponRevolverDeckard
   id: WeaponRevolverDeckardSecurity
-  description: A rare, custom-built revolver. Use when there is no time for Voight-Kampff test. Uses .45 magnum ammo.
+  description: A rare, custom-built revolver. Use when there is no time for Voight-Kampff test. Uses 8.3×33mm ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   components:
   - type: GuideHelp
     guides: [ SecurityWeapons ]
 
 - type: entity
-  name: Deckard
+  name: NT X2 Deckard .327
   parent: WeaponRevolverDeckardSecurity
   id: WeaponRevolverDeckardNonLethalSecurity
-  description: A rare, custom-built revolver. Use when you need to spare the Replicants. Comes with .45 magnum rubber.
+  description: A rare, custom-built revolver. Use when you need to spare the Replicants. Comes with 8.3×33mm rubber.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   components:
   - type: RevolverAmmoProvider
@@ -119,25 +118,25 @@
     guides: [ SecurityWeapons ]
 
 - type: entity
-  name: Inspector
+  name: SHI Inspector .327
   parent: BaseWeaponRevolver
   id: WeaponRevolverInspector
-  description: A detective's best friend. Uses .45 magnum ammo.
+  description: A detective's best friend. Uses .327 Imperial ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Revolvers/inspector.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/inspector.rsi
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Revolvers/inspector.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/inspector.rsi
   - type: RevolverAmmoProvider
     capacity: 6
     chambers: [ True, True, True, True, True, True ]
     ammoSlots: [ null, null, null, null, null, null ]
 
 - type: entity
-  name: Inspector
+  name: SHI Inspector .327
   parent: WeaponRevolverInspector
   id: WeaponRevolverInspectorSecurity
-  description: A detective's best friend. Uses .45 magnum ammo.
+  description: A detective's best friend. Uses 8.3×33mm ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   components:
   - type: GuideHelp
@@ -147,7 +146,7 @@
   name: Inspector
   parent: WeaponRevolverInspectorSecurity
   id: WeaponRevolverInspectorNonLethalSecurity
-  description: A detective's best friend. Comes loaded with .45 magnum rubber.
+  description: A detective's best friend. Comes loaded with 8.3×33mm rubber.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   components:
   - type: RevolverAmmoProvider
@@ -160,30 +159,30 @@
     guides: [ SecurityWeapons ]
 
 - type: entity
-  name: Mateba
+  name: SHI Mateba .327
   parent: BaseWeaponRevolver
   id: WeaponRevolverMateba
-  description: A distinctive revolver of an ancient Sol' design that was once seen as a rare collectible. It is in common manufacture by many companies in the Biesel Republic. Uses .45 magnum ammo.
+  description: The iconic sidearm of the dreaded corporate liquidation squads. Uses .327 magnum ammo. The biometric lock for the trigger seems to be not functioning.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Revolvers/mateba.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/mateba.rsi
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Revolvers/mateba.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/mateba.rsi
   - type: Gun
     fireRate: 3
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
 
 - type: entity
-  name: Python
+  name: NCWL PX21 Python .45
   parent: BaseWeaponRevolver
   id: WeaponRevolverPython
-  description: An iconic large-framed revolver of ancient Sol' design. It is commonly manufactured by many companies all over the colonies. Uses .45 magnum ammo.
+  description: A bulky service revolver developed by the Union Foundries. Given to officers and high-ranking officials as a 'compliance ensurance tool'.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Revolvers/python.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/python.rsi
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Revolvers/python.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/python.rsi
   - type: Gun
     selectedMode: SemiAuto
     fireRate: 2
@@ -196,17 +195,17 @@
     fireOnDropChance: 0.3
 
 - type: entity
-  name: Python
+  name: NCWL PX21 Python .45
   parent: WeaponRevolverPython
   id: WeaponRevolverPythonSecurity
-  description: An iconic large-framed revolver of ancient Sol' design. It is commonly manufactured by many companies all over the colonies. Uses .45 magnum ammo.
+  description: An iconic large-framed revolver of ancient Sol' design. It is commonly manufactured by many companies all over the colonies. Uses 8.3×33mm ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   components:
   - type: GuideHelp
     guides: [ SecurityWeapons ]
 
 - type: entity
-  name: Python
+  name: NCWL PX21 Python .45
   parent: WeaponRevolverPythonSecurity
   id: WeaponRevolverPythonNonlethalSecurity
   components:
@@ -227,11 +226,11 @@
     guides: [ SecurityWeapons ]
 
 - type: entity
-  name: Python
+  name: NCWL PX21 Python .45
   parent: WeaponRevolverPython
   id: WeaponRevolverPythonAP # For the uplink.
   suffix: armor-piercing
-  description: An iconic large-framed revolver of ancient Sol' design. It is commonly manufactured by many companies all over the colonies. Uses .45 magnum ammo.
+  description: An iconic large-framed revolver of ancient Sol' design. It is commonly manufactured by many companies all over the colonies. Uses 8.3×33mm ammo.
   components:
   - type: RevolverAmmoProvider
     whitelist:
@@ -245,7 +244,7 @@
   name: pirate revolver
   parent: BaseWeaponRevolver
   id: WeaponRevolverPirate
-  description: An odd, old-looking revolver, favoured by pirate crews. Uses .45 magnum ammo.
+  description: An odd, old-looking revolver, favoured by pirate crews. Uses 8.3×33mm ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Revolvers/pirate_revolver.rsi
@@ -265,7 +264,7 @@
 - type: entity
   parent: WeaponRevolverArgenti
   id: WeaponRevolverArgentiSecurity
-  description: The military grade Argenti Type 20 revolver. Manufactured by Silver Industries. While the design with expanded cylinder is quite ancient, the right gunslinger will know how to utilise it well. Uses .20 rifle ammo.
+  description: The military grade Argenti Type 20 revolver. Manufactured by Ihijerika Civilian Manufcaturing. While the design with expanded cylinder is quite ancient, the right gunslinger will know how to utilise it well. Uses 5.56x45mm ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   components:
   - type: GuideHelp

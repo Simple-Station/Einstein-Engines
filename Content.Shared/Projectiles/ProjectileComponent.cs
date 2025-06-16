@@ -87,4 +87,19 @@ public sealed partial class ProjectileComponent : Component
     [NonSerialized]
     public List<EntityUid> IgnoredEntities = new();
     // Goobstation end
+
+    // Hullrot start
+    // how many points of armor can this ammunition ignore SPCR 2025
+    [DataField("harmorPenetration")]
+    public float HullrotArmorPenetration = 0;
+
+    // stamina damage that ignores any armor/buff/etc SPCR 2025
+    [DataField]
+    public float stoppingPower = 0;
+
+    /// <summary>
+    ///  modifies some behaviour regarding fixture checks for the projectile system, set by phasePreventSystem, SPCR 2025
+    /// </summary>
+    public bool raycasting = false;
+    // Hullrot end
 }

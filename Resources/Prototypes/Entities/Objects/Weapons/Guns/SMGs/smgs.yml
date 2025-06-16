@@ -9,7 +9,7 @@
   - type: Item
     size: Large
   - type: Clothing
-    sprite: Objects/Weapons/Guns/SMGs/atreides.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/atreides.rsi
     quickEquip: false
     slots:
     - Back
@@ -77,13 +77,13 @@
     staminaCost: 8
 
 - type: entity
-  name: Atreides
+  name: NCSP Atreides 9x19mm
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunAtreides
-  description: Pla-ket-ket-ket-ket! Uses .35 auto ammo.
+  description: A rapid-fire submachinegun developed by the Shipfitters Union. Eats through ammo like a starving elephant.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/SMGs/atreides.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/atreides.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -101,20 +101,20 @@
   - type: Appearance
 
 - type: entity
-  name: C-20r sub machine gun
+  name: IRM C-20r 9x19mm
   parent: [BaseWeaponSubMachineGun, BaseGunWieldable]
   id: WeaponSubMachineGunC20r
-  description: Manufactured by Cybersun-Armaments, the C-20r is one of the most popular personal small-arms in the Coalition of Colonies. Uses .35 auto ammo.
+  description: A compact submachinegun produced by Olywir Armaments for the Imperial Navy. Sees little use in the hands of actual troopers due to the cost of manufacturing.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/c20r.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/c20r.rsi
   - type: Wieldable
   - type: GunWieldBonus
     minAngle: -19
@@ -140,10 +140,10 @@
   - type: Appearance
 
 - type: entity
-  name: C-20r sub machine gun
+  name: IRM C-20r 9x19mm
   parent: [WeaponSubMachineGunC20r]
   id: WeaponSubMachineGunC20rEmpty
-  description: Manufactured by Cybersun-Armaments, the C-20r is one of the most popular personal small-arms in the Coalition of Colonies. Uses .35 auto ammo.
+  description: A compact submachinegun produced by Olywir Armaments for the Imperial Navy. Sees little use in the hands of actual troopers due to the cost of manufacturing.
   components:
   - type: ItemSlots
     slots:
@@ -165,29 +165,29 @@
             - CartridgePistol
 
 - type: entity
-  name: antique C-20r submachine gun
+  name: antique IRM C-20r 9x19mm
   parent: WeaponSubMachineGunC20r
   id: WeaponSubMachineGunC20rHoS
-  description: This heavily worn submachine gun is engraved with the words, "Remember Mars".
+  description: This heavily worn submachine gun is engraved with the words, "Remember Nova Balreska".
   components:
     - type: StealTarget
       stealGroup: HoSAntiqueWeapon
 
 - type: entity
-  name: Drozd
+  name: PTA TKI-20 Drozd .327
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunDrozd
-  description: An excellent fully automatic Heavy SMG.
+  description: A heavy submachine gun with robust rifling. Manufactured by Pang Tai Arms and outsourced to mercenary factors in the area.
   components:
     - type: Sprite
-      sprite: Objects/Weapons/Guns/SMGs/drozd.rsi
+      sprite: _Crescent/Objects/Weapons/Guns/drozd.rsi
       layers:
         - state: base
           map: ["enum.GunVisualLayers.Base"]
         - state: mag-0
           map: ["enum.GunVisualLayers.Mag"]
     - type: Clothing
-      sprite: Objects/Weapons/Guns/SMGs/drozd.rsi
+      sprite: _Crescent/Objects/Weapons/Guns/drozd.rsi
     - type: Wieldable
       unwieldOnUse: false
     - type: GunWieldBonus
@@ -233,7 +233,7 @@
 #  parent: BaseWeaponSubMachineGun
 #  id: WeaponSubMachineGunVector
 #  suffix: Deprecated use Drozd
-#  description: An excellent fully automatic Heavy SMG. Uses .45 magnum ammo.
+#  description: An excellent fully automatic Heavy SMG. Uses 8.3×33mm ammo.
 #  components:
 #  - type: Sprite
 #    sprite: Objects/Weapons/Guns/SMGs/vector.rsi
@@ -277,26 +277,20 @@
 #  - type: Appearance
 
 - type: entity
-  name: WT550
+  name: NT WT550 Sabre 9x19mm
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunWt550
-  description: An excellent SMG, produced by NanoTrasen's Small Arms Division. Uses .35 auto ammo.
+  description: A light Terran-originating submachine gun reconstructed from outdated NanoTrasen diagrams.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/SMGs/wt550.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/wt550.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
-      - state: base-unshaded
-        map: ["enum.GunVisualLayers.BaseUnshaded"]
-        shader: unshaded
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
-      - state: mag-unshaded-0
-        map: ["enum.GunVisualLayers.MagUnshaded"]
-        shader: unshaded
   - type: Clothing
-    sprite: Objects/Weapons/Guns/SMGs/wt550.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/wt550.rsi
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
   - type: Gun
@@ -334,7 +328,7 @@
             - CartridgePistol
   - type: MagazineVisuals
     magState: mag
-    steps: 6
+    steps: 11
     zeroVisible: true
   - type: Appearance
 
@@ -378,7 +372,7 @@
 #  name: Vector
 #  parent: WeaponSubMachineGunVector
 #  id: WeaponSubMachineGunVectorRubber
-#  description: An excellent fully automatic Heavy SMG. Uses .45 magnum ammo.
+#  description: An excellent fully automatic Heavy SMG. Uses 8.3×33mm ammo.
 #  suffix: Non-Lethal
 #  components:
 #  - type: ItemSlots

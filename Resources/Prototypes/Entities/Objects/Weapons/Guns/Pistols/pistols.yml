@@ -82,13 +82,13 @@
     staminaCost: 5
 
 - type: entity
-  name: viper
+  name: PTA Viper 9x19mm
   parent: BaseWeaponPistol
   id: WeaponPistolViper
-  description: A small, easily concealable, but somewhat underpowered gun, produced by a bulk arms manufacturer now defunct for over a century. Uses .35 auto ammo.
+  description: A small, easily concealable, but somewhat underpowered gun, produced by a bulk arms manufacturer now defunct for over a century. Uses 9x19mm PSTF ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Pistols/viper.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/viper.rsi
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -123,7 +123,7 @@
     fireOnDropChance: 0.3
 
 - type: entity
-  name: viper
+  name: PTA Viper 9x19mm
   parent: WeaponPistolViper
   id: WeaponPistolViperEmpty
   suffix: Empty
@@ -149,11 +149,11 @@
             - CartridgePistol
 
 - type: entity
-  name: viper
+  name: PTA Viper 9x19mm
   parent: WeaponPistolViper
   id: WeaponPistolViperSecurity
   description: A small, easily concealable, but somewhat underpowered gun, produced by a bulk arms manufacturer now defunct for over a century.
-               Uses .35 auto ammo. The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+               Uses 9x19mm PSTF ammo. The serial number on the handguard marks this gun as belonging to some sort of corporate security.
   suffix: Security Loadouts
   components:
   - type: GuideHelp
@@ -187,30 +187,28 @@
             - CartridgePistol
 
 - type: entity
-  id: WeaponPistolViperSecurityNonLethal
+  id: PTA Viper 9x19mm
   parent: WeaponPistolViperNonLethal
   suffix: Non-lethal, SecurityLoadouts
   description: A small, easily concealable, but somewhat underpowered gun, produced by a bulk arms manufacturer now defunct for over a century.
-               Uses .35 auto ammo. The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+               Uses 9x19mm PSTF ammo. The serial number on the handguard marks this gun as belonging to some sort of corporate security.
   components:
   - type: GuideHelp
     guides: [ SecurityWeapons ]
 
 - type: entity
-  name: cobra
+  name: PTA T2 Cobra .25
   parent: BaseWeaponPistol
   id: WeaponPistolCobra
   description: A rugged, robust operator handgun with inbuilt silencer. Uses .25 caseless ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Pistols/cobra.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/cobra.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Clothing
-    sprite: Objects/Weapons/Guns/Pistols/cobra.rsi
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
   - type: Gun
@@ -247,7 +245,7 @@
       gun_chamber: !type:ContainerSlot
 
 - type: entity
-  name: cobra
+  name: PTA T2 Cobra .25
   parent: WeaponPistolCobra
   id: WeaponPistolCobraEmpty
   suffix: Empty
@@ -272,20 +270,18 @@
             - CartridgeCaselessRifle
 
 - type: entity
-  name: mk 58
+  name: SHI MK58 Tayamura 9x19mm
   parent: BaseWeaponPistol
   id: WeaponPistolMk58
-  description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses .35 auto ammo.
+  description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses 9x19mm PSTF ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/tayamura.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Clothing
-    sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
   - type: Gun
     fireRate: 5
     availableModes:
@@ -295,7 +291,7 @@
     fireOnDropChance: 0.5
 
 - type: entity
-  name: mk58
+  name: SHI MK58 Tayamura 9x19mm
   parent: WeaponPistolMk58
   id: WeaponPistolMk58Empty
   suffix: Empty
@@ -320,10 +316,10 @@
             - CartridgePistol
 
 - type: entity
-  name: mk 58
+  name: SHI MK58 Tayamura 9x19mm
   parent: WeaponPistolMk58
   id: WeaponPistolMk58Security
-  description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses .35 auto ammo.
+  description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses 9x19mm PSTF ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   suffix: Security Loadouts
   components:
@@ -357,30 +353,28 @@
             - CartridgePistol
 
 - type: entity
-  id: WeaponPistolMk58SecurityNonlethal
+  id: SHI MK58 Tayamura 9x19mm
   parent: WeaponPistolMk58Nonlethal
   suffix: Non-lethal, Security Loadouts
-  description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses .35 auto ammo.
+  description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses 9x19mm PSTF ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   components:
   - type: GuideHelp
     guides: [ SecurityWeapons ]
 
 - type: entity
-  name: N1984
+  name: NT N1984 Marston .327
   parent: BaseWeaponPistol
   id: WeaponPistolN1984 # the spaces in description are for formatting.
-  description: The sidearm of any self respecting officer.     Comes in .45 magnum, the lord's caliber.
+  description: The sidearm of any self respecting officer. Comes in .327, the lord's caliber.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Pistols/N1984.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/liberty.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Clothing
-    sprite: Objects/Weapons/Guns/Pistols/N1984.rsi
   - type: Gun
     minAngle: 1
     maxAngle: 20
@@ -412,7 +406,7 @@
             - CartridgeMagnum
 
 - type: entity
-  name: N1984
+  name: NT N1984 Marston .327
   parent: WeaponPistolN1984
   id: WeaponPistolN1984Empty
   suffix: Empty
@@ -437,10 +431,10 @@
             - CartridgeMagnum
 
 - type: entity
-  name: N1984
+  name: NT N1984 Marston .327
   parent: WeaponPistolN1984
   id: WeaponPistolN1984Security # the spaces in description are for formatting.
-  description: The sidearm of any self respecting officer.     Comes in .45 magnum, the lord's caliber.
+  description: The sidearm of any self respecting officer.     Comes in 8.3×33mm, the lord's caliber.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   suffix: Security Loadouts
   components:
@@ -475,10 +469,10 @@
             - CartridgeMagnum
 
 - type: entity
-  name: N1984
+  name: NT N1984 Marston .327
   parent: WeaponPistolN1984NonLethal
   id: WeaponPistolN1984SecurityNonLethal
-  description: The sidearm of any self respecting officer.     Comes in .45 magnum, the lord's caliber.
+  description: The sidearm of any self respecting officer.     Comes in 8.3×33mm, the lord's caliber.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   suffix: Security Loadouts
   components:

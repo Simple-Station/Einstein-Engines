@@ -32,7 +32,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
 
     private void OnStartCollide(EntityUid uid, ProjectileComponent component, ref StartCollideEvent args)
     {
-        if (args.OurFixtureId != ProjectileFixture || component.DamagedEntity || component is { Weapon: null, OnlyCollideWhenShot: true, })
+        if (!component.raycasting && args.OurFixtureId != ProjectileFixture || component.DamagedEntity || component is { Weapon: null, OnlyCollideWhenShot: true, })
             return;
         if (!HasComp<ShipShieldComponent>(uid) && !args.OtherFixture.Hard)
             return;
@@ -51,7 +51,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
         RaiseLocalEvent(uid, ref ev);
 
         var otherName = ToPrettyString(target);
-        var modifiedDamage = _damageableSystem.TryChangeDamage(target, ev.Damage, component.IgnoreResistances, origin: component.Shooter);
+        var modifiedDamage = _damageableSystem.TryChangeDamage(target, ev.Damage, component.IgnoreResistances, origin: component.Shooter, armorPen: component.HullrotArmorPenetration, stopPower: component.stoppingPower);
         var deleted = Deleted(target);
 
         if (modifiedDamage is not null && EntityManager.EntityExists(component.Shooter))

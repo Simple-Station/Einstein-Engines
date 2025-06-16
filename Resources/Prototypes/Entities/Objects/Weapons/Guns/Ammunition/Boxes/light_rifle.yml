@@ -2,7 +2,7 @@
   abstract: true
   parent: BaseMagazineBox
   id: BaseMagazineBoxLightRifle
-  name: ammunition box (.30 rifle)
+  name: ammunition box (5.56x45mm Imperial)
   components:
   - type: BallisticAmmoProvider
     mayTransfer: true
@@ -23,12 +23,14 @@
     steps: 2
     zeroVisible: false
   - type: Appearance
+  - type: StaticPrice
+    price: 100
 
 # Boxes
 - type: entity
   parent: BaseMagazineBoxLightRifle
   id: MagazineBoxLightRifleBig
-  name: bulk ammunition box (.30 rifle)
+  name: bulk ammunition box (5.56x45mm Imperial)
   components:
   - type: BallisticAmmoProvider
     capacity: 200
@@ -48,7 +50,7 @@
 - type: entity
   parent: MagazineBoxLightRifleBig
   id: MagazineBoxLightRifleBigPractice
-  name: bulk ammunition box (.30 rifle practice)
+  name: bulk ammunition box (5.56x45mm Imperial practice)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeLightRiflePractice
@@ -56,7 +58,7 @@
 - type: entity
   parent: MagazineBoxLightRifleBig
   id: MagazineBoxLightRifleBigRubber
-  name: bulk ammunition box (.30 rifle rubber)
+  name: bulk ammunition box (5.56x45mm Imperial rubber)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeLightRifleRubber
@@ -64,7 +66,7 @@
 - type: entity
   parent: MagazineBoxLightRifleBig
   id: MagazineBoxLightRifleBigIncendiary
-  name: bulk ammunition box (.30 rifle incendiary)
+  name: bulk ammunition box (5.56x45mm Imperial incendiary)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeLightRifleIncendiary
@@ -72,7 +74,7 @@
 - type: entity
   parent: MagazineBoxLightRifleBig
   id: MagazineBoxLightRifleBigUranium
-  name: bulk ammunition box (.30 rifle uranium)
+  name: bulk ammunition box (5.56x45mm Imperial black-tip)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeLightRifleUranium
@@ -80,7 +82,7 @@
 - type: entity
   parent: MagazineBoxLightRifleBig
   id: MagazineBoxLightRifleBigShrapnel
-  name: bulk ammunition box (.30 rifle shrapnel)
+  name: bulk ammunition box (5.56x45mm Imperial shrapnel)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeLightRifleShrapnel
@@ -102,7 +104,7 @@
 - type: entity
   parent: BaseMagazineBoxLightRifle
   id: MagazineBoxLightRiflePractice
-  name: ammunition box (.30 rifle practice)
+  name: ammunition box (5.56x45mm Imperial practice)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeLightRiflePractice
@@ -117,7 +119,7 @@
 - type: entity
   parent: BaseMagazineBoxLightRifle
   id: MagazineBoxLightRifleRubber
-  name: ammunition box (.30 rifle rubber)
+  name: ammunition box (5.56x45mm Imperial rubber)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeLightRifleRubber
@@ -132,7 +134,7 @@
 - type: entity
   id: MagazineBoxLightRifleIncendiary
   parent: BaseMagazineBoxLightRifle
-  name: ammunition box (.30 rifle incendiary)
+  name: ammunition box (5.56x45mm Imperial incendiary)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeLightRifleIncendiary
@@ -147,7 +149,7 @@
 - type: entity
   parent: BaseMagazineBoxLightRifle
   id: MagazineBoxLightRifleUranium
-  name: ammunition box (.30 rifle uranium)
+  name: ammunition box (5.56x45mm Imperial black-tip)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeLightRifleUranium
@@ -162,7 +164,7 @@
 - type: entity
   parent: MagazineBoxLightRifle
   id: MagazineBoxLightRifleShrapnel
-  name: ammunition box (.30 rifle shrapnel)
+  name: ammunition box (5.56x45mm Imperial shrapnel)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeLightRifleShrapnel

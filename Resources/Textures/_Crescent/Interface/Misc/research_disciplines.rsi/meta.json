@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "license": "CC0-1.0",
+  "copyright": "Created by EmoGarbage404 (github) for Space Station 14.",
+  "size": {
+    "x": 8,
+    "y": 8
+  },
+    "states": [
+        {
+            "name": "astronautics"
+        },
+        {
+            "name": "biochemical"
+        },
+        {
+            "name": "communard"
+        },
+        {
+            "name": "cyberdawn"
+        },
+        {
+            "name": "electronics"
+        },
+        {
+            "name": "families"
+        },
+        {
+            "name": "imperial"
+        },
+        {
+            "name": "mechatronics"
+        },
+        {
+            "name": "precursor"
+        },
+        {
+            "name": "shinohara"
+        },
+        {
+            "name": "syndie"
+        }
+    ]
+}

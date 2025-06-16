@@ -1,6 +1,6 @@
 ﻿- type: entity
   id: BaseShellShotgun
-  name: shell (.50)
+  name: shell (12g)
   parent: BaseCartridge
   abstract: true
   components:
@@ -31,7 +31,7 @@
 
 - type: entity
   id: ShellShotgunBeanbag
-  name: shell (.50 beanbag)
+  name: shell (12g beanbag)
   parent: BaseShellShotgun
   components:
   - type: Tag
@@ -50,7 +50,7 @@
 
 - type: entity
   id: ShellShotgunSlug
-  name: shell (.50 slug)
+  name: shell (12g slug)
   parent: BaseShellShotgun
   components:
   - type: Sprite
@@ -64,7 +64,7 @@
 
 - type: entity
   id: ShellShotgunLumen
-  name: shell (.50 Lumenblast)
+  name: shell (12g Lumenblast)
   parent: BaseShellShotgun
   components:
   - type: Tag
@@ -82,7 +82,7 @@
 
 - type: entity
   id: ShellShotgun
-  name: shell (.50)
+  name: shell (12g)
   parent: BaseShellShotgun
   components:
   - type: Sprite
@@ -94,7 +94,7 @@
 
 - type: entity
   id: ShellShotgunIncendiary
-  name: shell (.50 incendiary)
+  name: shell (12g dragons' breath)
   parent: BaseShellShotgun
   components:
   - type: Sprite
@@ -108,7 +108,7 @@
 
 - type: entity
   id: ShellShotgunPractice
-  name: shell (.50 practice)
+  name: shell (12g rubber)
   parent: BaseShellShotgun
   components:
   - type: Sprite
@@ -122,7 +122,7 @@
 
 - type: entity
   id: ShellTranquilizer
-  name: shell (.50 tranquilizer)
+  name: shell (12g tranquilizer)
   parent: BaseShellShotgun
   components:
   - type: Tag
@@ -187,7 +187,7 @@
 
 - type: entity
   id: ShellShotgunBirdshot
-  name: shell (.50 birdshot)
+  name: shell (12g birdshot)
   parent: BaseShellShotgun
   components:
   - type: Sprite
@@ -199,7 +199,7 @@
 
 - type: entity
   id: ShellShotgun00Buckshot
-  name: shell (.50 00-Buckshot)
+  name: shell (12g 00-Buckshot)
   parent: BaseShellShotgun
   components:
   - type: Sprite
@@ -211,7 +211,7 @@
 
 - type: entity
   id: ShellShotgun0000Buckshot
-  name: shell (.50 0000-Buckshot)
+  name: shell (12g 0000-Buckshot)
   parent: BaseShellShotgun
   components:
   - type: Sprite
@@ -223,7 +223,7 @@
 
 - type: entity
   id: ShellShotgunFlare
-  name: shell (.50 flare)
+  name: shell (12g flare)
   parent: BaseShellShotgun
   components:
   - type: Tag

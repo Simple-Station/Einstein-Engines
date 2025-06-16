@@ -36,18 +36,18 @@
   - type: Execution
 
 - type: entity
-  name: china lake
+  name: PTA 10AX Thumper
   parent: [BaseWeaponLauncher, BaseGunWieldable]
   id: WeaponLauncherChinaLake
-  description: PLOOP
+  description: A pump action grenade launcher manufactured by Pang Tai Arms.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Launchers/china_lake.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/chinalake.rsi
     layers:
       - state: icon
         map: ["enum.GunVisualLayers.Base"]
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Launchers/china_lake.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/chinalake.rsi
     slots:
     - Back
     - suitStorage
@@ -73,17 +73,17 @@
   name: RPG-7
   parent: BaseWeaponLauncher
   id: WeaponLauncherRocket
-  description: A modified ancient rocket-propelled grenade launcher.
+  description: An iconic weapon of war. A rocket launcher often seen in the hands of terrorists and informal militias.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Launchers/rocket.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/rpg7.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Launchers/rocket.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/rpg7.rsi
   - type: Gun
     fireRate: 0.5
     soundGunshot:

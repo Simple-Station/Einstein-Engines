@@ -1,0 +1,6 @@
+- type: damageType
+  id: PiercingInducedBlunt
+  name: Piercing Induced Blunt
+  armorCoefficientPrice: 5
+  armorFlatPrice: 50
+  convertInto: Blunt

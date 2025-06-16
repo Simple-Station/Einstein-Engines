@@ -187,20 +187,6 @@
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: mothtruebutterfly3
 
-- type: marking
-  id: MothRhinoBeetle
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Moth, Chitinid]
-  forcedColoring: false
-  followSkinColor: false
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
-    state: rhinobeetle1
-  - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
-    state: rhinobeetle2
-  - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
-    state: rhinobeetle3
 
 - type: marking
   id: MothGlasswing
@@ -232,17 +218,6 @@
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: bee3
 
-- type: marking
-  id: MothGlowAntenna
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Moth, Chitinid]
-  forcedColoring: false
-  followSkinColor: false
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/animatedmarkings.rsi
-    state: mothglowantenna
-    shader: unshaded
 
 - type: marking
   id: MothFireflyOverlay
@@ -266,43 +241,6 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: mothfirefly2
-
-- type: marking
-  id: MothBeetleTail
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Moth, Chitinid]
-  forcedColoring: false
-  followSkinColor: false
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
-    state: beetle1
-  - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
-    state: beetle2
-  - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
-    state: beetle3
-
-- type: marking
-  id: MothBeetleHorn1
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Moth]
-  forcedColoring: true
-  followSkinColor: true
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
-    state: mothbeetlehorn1
-
-- type: marking
-  id: MothBeetleHorn2
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Moth]
-  forcedColoring: true
-  followSkinColor: true
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
-    state: mothbeetlehorn2
 
 - type: marking
   id: MothBiggerEyes

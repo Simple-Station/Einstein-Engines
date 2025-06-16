@@ -1,5 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Shared._Crescent;
+using Content.Shared._Crescent.DynamicCodes;
 using Content.Shared.Access.Components;
 using Content.Shared.DeviceLinking.Events;
 using Content.Shared.Emag.Components;
@@ -28,6 +30,7 @@ public sealed class AccessReaderSystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
     [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
     [Dependency] private readonly SharedStationRecordsSystem _recordsSystem = default!;
+    [Dependency] private readonly SharedDynamicCodeSystem _dynamicCodeSystem = default!;
 
     public override void Initialize()
     {
@@ -109,6 +112,15 @@ public sealed class AccessReaderSystem : EntitySystem
         var accessSources = FindPotentialAccessItems(user);
         var access = FindAccessTags(user, accessSources);
         FindStationRecordKeys(user, out var stationKeys, accessSources);
+        // override normal acces with our version.
+        if (TryComp<DynamicCodeHolderComponent>(target, out var holder))
+        {
+            var dynamicCodes = FindDynamicAccesCodes(user, accessSources);
+            // check if our required codes are all present in the dynamicCodes amalgamation of all sources - SPCR 2025
+            if (_dynamicCodeSystem.hasAllKeys(holder.codes,  dynamicCodes))
+                return true;
+            return false;
+        }
 
         if (IsAllowed(access, stationKeys, target, reader))
         {
@@ -268,6 +280,20 @@ public sealed class AccessReaderSystem : EntitySystem
         }
 
         return (ICollection<ProtoId<AccessLevelPrototype>>?) tags ?? Array.Empty<ProtoId<AccessLevelPrototype>>();
+    }
+
+    public HashSet<int> FindDynamicAccesCodes(EntityUid uid, HashSet<EntityUid>? items = null)
+    {
+        HashSet<int> codes = new HashSet<int>();
+        items ??= FindPotentialAccessItems(uid);
+        foreach (var ent in items)
+        {
+            if (!TryComp(ent, out DynamicCodeHolderComponent? codeComponent))
+                continue;
+            codes.UnionWith(codeComponent.codes);
+        }
+
+        return codes;
     }
 
     /// <summary>
