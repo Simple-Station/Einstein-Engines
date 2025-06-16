@@ -43,8 +43,9 @@ public sealed class SpaceBiomeSystem : EntitySystem
             return;
 
         _overlay.Text = ev.Name + ", " + ev.Designation;
-        _overlay.TextDescription = "A metal coffin."; //this can be changed to "" or updated later to change based on ship
+        _overlay.TextDescription = ""; // ships have no description for now
         _overlay.CharInterval = TimeSpan.FromSeconds(2f / _overlay.Text.Length);
-        _overlay.CharIntervalDescription = TimeSpan.FromSeconds(2f / _overlay.TextDescription.Length);
+        _overlay.CharIntervalDescription = TimeSpan.Zero;
+        //_overlay.CharIntervalDescription = TimeSpan.FromSeconds(2f / _overlay.TextDescription.Length);
     }
 }
