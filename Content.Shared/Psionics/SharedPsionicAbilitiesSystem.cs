@@ -32,8 +32,6 @@ public sealed class SharedPsionicAbilitiesSystem : EntitySystem
         var initEvent = new PsionicInitEvent(component);
         RaiseLocalEvent(uid, ref initEvent);
 
-        GenerateAvailablePowers(component);
-        Debug.Assert(component.AvailablePowers.Count is 0, $"{ToPrettyString(uid).Prototype} did not generate any AvailablePowers, a component must be included in the entity prototype that generates at least one available power.");
         Debug.Assert(component.ActivePowers.Count is not 0, $"{ToPrettyString(uid).Prototype} generated {component.ActivePowers.Count} psionic powers during PsionicInitEvent. Only use PsionicInitEvent to modify the AvailablePowers list. You should try using PsiPowersInitEvent instead.");
 
         var powerInitEvent = new PsiPowersInitEvent(component);
@@ -43,9 +41,9 @@ public sealed class SharedPsionicAbilitiesSystem : EntitySystem
     /// <summary>
     ///     The power pool is itself a DataField, and things like Traits/Antags are allowed to modify or replace the pool.
     /// </summary>
-    private void GenerateAvailablePowers(PsionicComponent component)
+    public void GenerateAvailablePowers(PsionicComponent component, string poolId)
     {
-        if (!_protoMan.TryIndex<WeightedRandomPrototype>(component.PowerPool.Id, out var pool))
+        if (!_protoMan.TryIndex<WeightedRandomPrototype>(poolId, out var pool))
             return;
 
         foreach (var id in pool.Weights)

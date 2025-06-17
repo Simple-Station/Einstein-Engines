@@ -66,7 +66,7 @@ public sealed partial class PsionicAbilitiesSystem : EntitySystem
     ///     Pretty straightforward, adds a random psionic power to a given Entity. If that Entity is not already Psychic, it will be made one.
     ///     If an entity already has all possible powers, this will not add any new ones.
     /// </summary>
-    public void AddRandomPsionicPower(EntityUid uid, bool forced = false)
+    public void AddRandomPsionicPower(EntityUid uid)
     {
         // We need to EnsureComp here to make sure that we aren't iterating over a component that:
         // A: Isn't fully initialized
@@ -74,8 +74,6 @@ public sealed partial class PsionicAbilitiesSystem : EntitySystem
         // Imagine my surprise when I found out Resolve doesn't check for that.
         // TODO: This EnsureComp will be 1984'd in a separate PR, when I rework how you get psionics in the first place.
         EnsureComp<PsionicComponent>(uid, out var psionic);
-        if (!psionic.Roller && !forced)
-            return;
 
         // Since this can be called by systems other than the original roundstart initialization, we need to check that the available powers list
         // doesn't contain duplicates of powers we already have.

@@ -19,11 +19,9 @@ using Robust.Shared.Prototypes;
 using Content.Shared.Mobs;
 using Content.Shared.Damage;
 using Content.Shared.Interaction.Events;
-using Content.Shared.Alert;
 using Content.Shared.NPC.Components;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Psionics.Components;
-using Content.Shared.Psionics;
 
 namespace Content.Server.Psionics;
 
@@ -44,7 +42,6 @@ public sealed class PsionicsSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly PsionicFamiliarSystem _psionicFamiliar = default!;
     [Dependency] private readonly NPCRetaliationSystem _retaliationSystem = default!;
-    [Dependency] private readonly AlertsSystem _alerts = default!;
 
     private const string BaselineAmplification = "Baseline Amplification";
     private const string BaselineDampening = "Baseline Dampening";
@@ -56,21 +53,6 @@ public sealed class PsionicsSystem : EntitySystem
     private const int PsionicRollFailedFontSize = 12;
     private const ChatChannel PsionicRollFailedChatChannel = ChatChannel.Emotes;
 
-    /// <summary>
-    ///     Unfortunately, since spawning as a normal role and anything else is so different,
-    ///     this is the only way to unify them, for now at least.
-    /// </summary>
-    Queue<(PsionicComponent component, EntityUid uid)> _rollers = new();
-    public override void Update(float frameTime)
-    {
-        base.Update(frameTime);
-        if (!_cfg.GetCVar(CCVars.PsionicRollsEnabled))
-            return;
-
-        foreach (var roller in _rollers)
-            RollPsionics(roller.uid, roller.component, true);
-        _rollers.Clear();
-    }
     public override void Initialize()
     {
         base.Initialize();
@@ -169,18 +151,21 @@ public sealed class PsionicsSystem : EntitySystem
     ///     This exponential cost is mainly done to prevent stations from becoming "Space Hogwarts",
     ///     which was a common complaint with Psionic Refactor opening up the opportunity for people to have multiple powers.
     /// </remarks>
-    private bool HandlePotentiaCalculations(EntityUid uid, PsionicComponent component, float psionicChance)
+    private bool HandlePotentiaCalculations(EntityUid uid, PsionicComponent? psionicComponent = null, PotentiaContainerComponent? potentiaContainerComponent = null, float psionicChance = 0.04f)
     {
-        component.Potentia += _random.NextFloat(0 + psionicChance, 100 + psionicChance);
-
-        if (component.Potentia < component.NextPowerCost)
+        if (!Resolve(uid, ref psionicComponent, ref potentiaContainerComponent, false))
             return false;
 
-        while (component.Potentia >= component.NextPowerCost)
+        potentiaContainerComponent.Potentia += _random.NextFloat(0 + psionicChance, 100 + psionicChance);
+
+        if (potentiaContainerComponent.Potentia < psionicComponent.NextPowerCost)
+            return false;
+
+        while (potentiaContainerComponent.Potentia >= psionicComponent.NextPowerCost)
         {
-            component.Potentia -= component.NextPowerCost;
+            potentiaContainerComponent.Potentia -= psionicComponent.NextPowerCost;
             _psionicAbilitiesSystem.AddPsionics(uid);
-            component.NextPowerCost = Math.Abs(component.BaselinePowerCost * MathF.Pow(2, component.PowerSlotsTaken));
+            psionicComponent.NextPowerCost = Math.Abs(psionicComponent.BaselinePowerCost * MathF.Pow(2, psionicComponent.PowerSlotsTaken));
         }
 
         return true;
@@ -214,14 +199,13 @@ public sealed class PsionicsSystem : EntitySystem
     ///     This function attempts to generate a psionic power by incrementing a Psion's Potentia stat by a random amount, then checking if it beats a certain threshold.
     ///     Please consider going through RerollPsionics or PsionicAbilitiesSystem.InitializePsionicPower instead of this function, particularly if you don't have a good reason to call this directly.
     /// </summary>
-    public void RollPsionics(EntityUid uid, PsionicComponent component, bool applyGlimmer = true, float rollEventMultiplier = 1f)
+    public void RollPsionics(EntityUid uid, PsionicComponent component, float chance = 0.04f, bool applyGlimmer = true, float rollEventMultiplier = 1f)
     {
-        if (!_cfg.GetCVar(CCVars.PsionicRollsEnabled)
-            || !component.Roller)
+        if (!_cfg.GetCVar(CCVars.PsionicRollsEnabled))
             return;
 
         // Calculate the initial odds based on the innate potential
-        var baselineChance = component.Chance
+        var baselineChance = chance
             * component.PowerRollMultiplier
             + component.PowerRollFlatBonus
             + _random.NextFloat(0, 100);
@@ -238,7 +222,7 @@ public sealed class PsionicsSystem : EntitySystem
         var ev = new OnRollPsionicsEvent(uid, baselineChance);
         RaiseLocalEvent(uid, ref ev);
 
-        if (!HandlePotentiaCalculations(uid, component, ev.BaselineChance))
+        if (!HandlePotentiaCalculations(uid, component, psionicChance: ev.BaselineChance))
             return;
 
         HandleRollFeedback(uid);
@@ -255,7 +239,7 @@ public sealed class PsionicsSystem : EntitySystem
             return;
 
         psionic.CanReroll = false;
-        RollPsionics(uid, psionic, true, bonusMuliplier);
+        RollPsionics(uid, psionic, applyGlimmer: true, rollEventMultiplier: bonusMuliplier);
     }
     private void OnMobstateChanged(EntityUid uid, PsionicComponent component, MobStateChangedEvent args)
     {
