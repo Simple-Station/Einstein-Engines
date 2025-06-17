@@ -8,6 +8,7 @@ namespace Content.Server.Psionics;
 public sealed partial class BasicPsionicPowerListSystem : EntitySystem
 {
     [Dependency] private readonly SharedPsionicAbilitiesSystem _psionicAbilities = default!;
+
     public override void Initialize()
     {
         base.Initialize();
