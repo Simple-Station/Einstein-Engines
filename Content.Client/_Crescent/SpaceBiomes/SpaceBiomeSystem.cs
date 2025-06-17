@@ -39,13 +39,19 @@ public sealed class SpaceBiomeSystem : EntitySystem
 
     private void OnNewVesselEntered(NewVesselEnteredMessage ev)
     {
-        if (_overlay.Text != null)
-            return;
+        _overlay.Reset();
+        _overlay.ResetDescription();
+
+        //if (_overlay.Text != null)
+        //    return;
 
         _overlay.Text = ev.Name + ", " + ev.Designation;
-        _overlay.TextDescription = ""; // ships have no description for now
+        _overlay.TextDescription = ev.Description; // fallback is "" if no description is found.
         _overlay.CharInterval = TimeSpan.FromSeconds(2f / _overlay.Text.Length);
-        _overlay.CharIntervalDescription = TimeSpan.Zero;
-        //_overlay.CharIntervalDescription = TimeSpan.FromSeconds(2f / _overlay.TextDescription.Length);
+
+        if (_overlay.TextDescription == "")
+            _overlay.CharIntervalDescription = TimeSpan.Zero; //if this is not done it tries dividing by 0 in the "else" clause
+        else
+            _overlay.CharIntervalDescription = TimeSpan.FromSeconds(2f / _overlay.TextDescription.Length);
     }
 }
