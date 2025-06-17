@@ -6,3 +6,4 @@ namespace Content.Server.Psionics;
 /// </summary>
 [ByRefEvent]
 public record struct OnRollPsionicsEvent(EntityUid Roller, float BaselineChance);
+

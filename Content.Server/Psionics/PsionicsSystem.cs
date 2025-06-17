@@ -1,8 +1,6 @@
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.StatusEffect;
-using Content.Shared.Psionics;
 using Content.Shared.Psionics.Glimmer;
-using Content.Shared.Random;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Damage.Events;
 using Content.Shared.CCVar;
@@ -21,11 +19,11 @@ using Robust.Shared.Prototypes;
 using Content.Shared.Mobs;
 using Content.Shared.Damage;
 using Content.Shared.Interaction.Events;
-using Timer = Robust.Shared.Timing.Timer;
 using Content.Shared.Alert;
 using Content.Shared.NPC.Components;
 using Content.Shared.NPC.Systems;
-using Content.Shared.Rounding;
+using Content.Shared.Psionics.Components;
+using Content.Shared.Psionics;
 
 namespace Content.Server.Psionics;
 
@@ -76,7 +74,6 @@ public sealed class PsionicsSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<PsionicComponent, MapInitEvent>(OnStartup);
         SubscribeLocalEvent<AntiPsionicWeaponComponent, MeleeHitEvent>(OnMeleeHit);
         SubscribeLocalEvent<AntiPsionicWeaponComponent, TakeStaminaDamageEvent>(OnStamHit);
         SubscribeLocalEvent<PsionicComponent, MobStateChangedEvent>(OnMobstateChanged);
@@ -85,30 +82,6 @@ public sealed class PsionicsSystem : EntitySystem
 
         SubscribeLocalEvent<PsionicComponent, ComponentStartup>(OnInit);
         SubscribeLocalEvent<PsionicComponent, ComponentRemove>(OnRemove);
-    }
-
-    private void OnStartup(EntityUid uid, PsionicComponent component, MapInitEvent args)
-    {
-        if (!component.CanReroll)
-            return;
-
-        Timer.Spawn(TimeSpan.FromSeconds(30), () => DeferRollers(uid));
-
-    }
-
-    /// <summary>
-    ///     We wait a short time before starting up the rolled powers, so that other systems have a chance to modify the list first.
-    ///     This is primarily for the sake of TraitSystem and AddJobSpecial.
-    /// </summary>
-    private void DeferRollers(EntityUid uid)
-    {
-        if (!Exists(uid)
-            || !TryComp(uid, out PsionicComponent? component))
-            return;
-
-        CheckPowerCost(uid, component);
-        GenerateAvailablePowers(component);
-        _rollers.Enqueue((component, uid));
     }
 
     /// <summary>
@@ -126,24 +99,6 @@ public sealed class PsionicsSystem : EntitySystem
                 powerCount += power.PowerSlotCost;
 
         component.NextPowerCost = 100 * MathF.Pow(2, powerCount);
-    }
-
-    /// <summary>
-    ///     The power pool is itself a DataField, and things like Traits/Antags are allowed to modify or replace the pool.
-    /// </summary>
-    private void GenerateAvailablePowers(PsionicComponent component)
-    {
-        if (!_protoMan.TryIndex<WeightedRandomPrototype>(component.PowerPool.Id, out var pool))
-            return;
-
-        foreach (var id in pool.Weights)
-        {
-            if (!_protoMan.TryIndex<PsionicPowerPrototype>(id.Key, out var power)
-                || component.ActivePowers.Contains(power))
-                continue;
-
-            component.AvailablePowers.TryAdd(id.Key, id.Value);
-        }
     }
 
     private void OnMeleeHit(EntityUid uid, AntiPsionicWeaponComponent component, MeleeHitEvent args)

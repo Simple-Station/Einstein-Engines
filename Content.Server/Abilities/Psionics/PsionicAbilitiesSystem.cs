@@ -18,7 +18,7 @@ using Content.Shared.NPC.Systems;
 
 namespace Content.Server.Abilities.Psionics;
 
-public sealed class PsionicAbilitiesSystem : EntitySystem
+public sealed partial class PsionicAbilitiesSystem : EntitySystem
 {
     [Dependency] private readonly IComponentFactory _componentFactory = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -37,21 +37,7 @@ public sealed class PsionicAbilitiesSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<InnatePsionicPowersComponent, MapInitEvent>(InnatePowerStartup);
         SubscribeLocalEvent<PsionicComponent, ComponentShutdown>(OnPsionicShutdown);
-    }
-
-    /// <summary>
-    ///     Special use-case for a InnatePsionicPowers, which allows an entity to start with any number of Psionic Powers.
-    /// </summary>
-    private void InnatePowerStartup(EntityUid uid, InnatePsionicPowersComponent comp, MapInitEvent args)
-    {
-        // Any entity with InnatePowers should also be psionic, but in case they aren't already...
-        EnsureComp<PsionicComponent>(uid, out var psionic);
-
-        foreach (var proto in comp.PowersToAdd)
-            if (!psionic.ActivePowers.Contains(_prototypeManager.Index(proto)))
-                InitializePsionicPower(uid, _prototypeManager.Index(proto), psionic, false);
     }
 
     private void OnPsionicShutdown(EntityUid uid, PsionicComponent component, ComponentShutdown args)
@@ -201,7 +187,6 @@ public sealed class PsionicAbilitiesSystem : EntitySystem
 
         KillFamiliars(psionic);
         RemComp<PsionicComponent>(uid);
-        RemComp<InnatePsionicPowersComponent>(uid);
 
         var ev = new OnMindbreakEvent();
         RaiseLocalEvent(uid, ref ev);
