@@ -39,11 +39,11 @@ public sealed class SpaceBiomeSystem : EntitySystem
 
     private void OnNewVesselEntered(NewVesselEnteredMessage ev)
     {
-        _overlay.Reset();
+        _overlay.Reset();             //these should be reset as well to match OnSwap
         _overlay.ResetDescription();
 
-        //if (_overlay.Text != null)
-        //    return;
+        if (_overlay.Text != null) //i dont know why this is here but im not touching it
+            return;
 
         _overlay.Text = ev.Name + ", " + ev.Designation;
         _overlay.TextDescription = ev.Description; // fallback is "" if no description is found.
