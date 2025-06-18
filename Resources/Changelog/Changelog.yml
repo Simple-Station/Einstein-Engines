@@ -16383,3 +16383,10 @@ Entries:
   id: 7277
   time: '2025-06-13T23:51:42.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2480
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Made some performance improvements to the Gas Tile Overlay.
+  id: 7278
+  time: '2025-06-18T23:40:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2472
