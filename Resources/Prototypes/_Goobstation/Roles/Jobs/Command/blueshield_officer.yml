@@ -47,7 +47,7 @@
   - BlueshieldOfficer
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
+    implants: [ MindShieldImplant, BluespaceLifelineImplant ] #Force the implant since its manual activation now
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
@@ -71,7 +71,7 @@
     gloves: ClothingHandsGlovesCombat
     id: BlueshieldPDA
     pocket1: UniqueBlueshieldOfficerLockerTeleporter
-    pocket2: BluespaceLifelineImplanter
+#    pocket2: BluespaceLifelineImplanter    #Doesn't need this since its implanted roundstart
 
     #outerClothing: ClothingBlueshieldArmourVest
     #ears: ClothingHeadsetAltCommand
