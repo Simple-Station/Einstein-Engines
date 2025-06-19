@@ -399,6 +399,11 @@
     Slash: 1.5
     Piercing: 1.5
 
+- type: damageModifierSet
+  id: ExtremePoisonResistance
+  coefficients:
+    Poison: 0.1
+
 # protects against radiation
 - type: damageModifierSet
   id: PotassiumIodide
