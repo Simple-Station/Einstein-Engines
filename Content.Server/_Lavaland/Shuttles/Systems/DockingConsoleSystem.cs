@@ -12,6 +12,7 @@ using Content.Shared.Shuttles.Systems;
 using Content.Shared.Timing;
 using Content.Shared.Whitelist;
 using Robust.Server.GameObjects;
+using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Utility;
@@ -27,7 +28,8 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
     [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
     [Dependency] private readonly IMapManager _mapMan = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
-    [Dependency] private readonly StationSystem _station = default!;
+
+    private readonly ResPath _miningShuttlePath = new("/Maps/_Lavaland/mining.yml");
 
     public override void Initialize()
     {
@@ -39,7 +41,8 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
         SubscribeLocalEvent<UndockEvent>(OnUndock);
         SubscribeLocalEvent<FTLCompletedEvent>(OnFTLCompleted);
 
-        Subs.BuiEvents<DockingConsoleComponent>(DockingConsoleUiKey.Key,
+        Subs.BuiEvents<DockingConsoleComponent>(
+            DockingConsoleUiKey.Key,
             subs =>
         {
             subs.Event<BoundUIOpenedEvent>(OnOpened);
@@ -55,10 +58,8 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
         Dirty(ent);
     }
 
-    private void OnDock(DockEvent args)
-    {
+    private void OnDock(DockEvent args) =>
         UpdateConsoles(args.GridAUid, args.GridBUid);
-    }
 
     private void OnFTLCompleted(ref FTLCompletedEvent args)
     {
@@ -72,10 +73,8 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
         Dirty(ent, ftl);
     }
 
-    private void OnUndock(UndockEvent args)
-    {
+    private void OnUndock(UndockEvent args) =>
         UpdateConsoles(args.GridAUid, args.GridBUid);
-    }
 
     private void OnOpened(Entity<DockingConsoleComponent> ent, ref BoundUIOpenedEvent args)
     {
@@ -101,10 +100,8 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
 
         var query = EntityQueryEnumerator<DockingConsoleComponent>();
         while (query.MoveNext(out var uid, out var comp))
-        {
             if (comp.Shuttle == shuttle)
                 UpdateUI((uid, comp));
-        }
     }
 
     public void UpdateUI(Entity<DockingConsoleComponent> ent)
@@ -143,15 +140,13 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
         if (docking.currentlocation == grid.Id)
             return;
 
-        RaiseLocalEvent(shuttle, new ShuttleLocationChangeEvent(grid.Id), false);
+        RaiseLocalEvent(shuttle, new ShuttleLocationChangeEvent(grid.Id));
 
         Log.Debug($"{ToPrettyString(args.Actor):user} is FTL-docking {ToPrettyString(shuttle):shuttle} to {ToPrettyString(grid):grid}");
 
         // Set new current location and FTL!
         _shuttle.FTLToDock(shuttle, Comp<ShuttleComponent>(shuttle), grid, priorityTag: docking.DockTag);
     }
-
-    private const string MiningShuttlePath = "/Maps/_Lavaland/mining.yml";
 
     /// <summary>
     /// Load a new mining shuttle if it still doesn't exist
@@ -162,7 +157,7 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
             return;
 
         _mapSystem.CreateMap(out var dummyMap);
-        _mapLoader.TryLoad(dummyMap, MiningShuttlePath, out _);
+        _mapLoader.TryLoadGrid(dummyMap, _miningShuttlePath, out _);
 
         // Find the target
         var targetMap = Transform(ent).MapID;
@@ -188,7 +183,7 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
             if (targetUid == null)
                 return;
 
-            RaiseLocalEvent(shuttleUid.Value, new ShuttleAddStationEvent(targetUid.Value, targetMap, grid), false);
+            RaiseLocalEvent(shuttleUid.Value, new ShuttleAddStationEvent(targetUid.Value, targetMap, grid));
         }
 
         // Finally FTL
@@ -198,7 +193,7 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
         Dirty(ent);
 
         // shitcode because funny
-        Timer.Spawn(TimeSpan.FromSeconds(15), () => _mapMan.DeleteMap(dummyMap));
+        Timer.Spawn(TimeSpan.FromSeconds(15), () => _mapSystem.DeleteMap(dummyMap));
     }
 
     /// <summary>
@@ -222,10 +217,8 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
     {
         var query = EntityQueryEnumerator<DockingShuttleComponent>();
         while (query.MoveNext(out var uid, out _))
-        {
             if (_whitelist.IsValid(whitelist, uid))
                 return uid;
-        }
 
         return null;
     }
