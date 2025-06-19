@@ -136,3 +136,63 @@
     radius: 1.5
     energy: 1.6
     color: "#9dc5c9"
+
+- type: entity
+  parent: BaseMachinePowered
+  id: VariableCommodityFablathe
+  name: SHI CF-22 variable commodity fabricator
+  description: A common fabricator machine found in industrial stations of all operational scale and size - primarily used for fabricating basic production components, although fabrication patterns for commonly used items and gear can also be found in some models.
+  components:
+  - type: Factory
+    recipes:
+      - FabricateSimpleElectronics
+      - FabricateBasicMechatronics
+      - FabricateWeakLaserLocus
+      - FabricateHardsuitElectronics
+  - type: Sprite
+    sprite: _Crescent/Structures/factorystructures.rsi
+    layers:
+    - state: "makina"
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"
+
+- type: entity
+  parent: BaseMachinePowered
+  id: AutoloomFactory
+  name: SHI portable autoloom fablathe
+  description: A common fabricator intended for the texiles industry. Weaves fabrics without user input.
+  components:
+  - type: Factory
+    recipes:
+      - FabricateClothRollCotton
+      - FabricateClothRollSilk
+      - FabricateDurathread
+  - type: Sprite
+    sprite: _Crescent/Structures/factorystructures.rsi
+    layers:
+    - state: "autoloom"
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"
+
+- type: entity
+  parent: BaseMachinePowered
+  id: AdvancedVariableCommodityFablathe
+  name: SHI CF-84 advanced variable commodity assembler
+  description: A common fabricator machine found in industrial stations of all operational scale and size - primarily used for fabricating advanced production components, although fabrication patterns for various items and gear can also be found in some models.
+  components:
+  - type: Factory
+    recipes:
+      - FabricateAdvancedElectronics
+      - FabricateAdvancedMechatronics
+  - type: Sprite
+    sprite: _Crescent/Structures/factorystructures.rsi
+    layers:
+    - state: "autoloom"
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"

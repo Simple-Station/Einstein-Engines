@@ -55,7 +55,7 @@
   - type: ContainerFill
     containers:
       mech-battery-slot:
-      - PowerCellHigh
+      - PowerCageUraniumCell
 
 - type: entity
   id: MechNCWLBogatyr
@@ -116,7 +116,7 @@
   - type: ContainerFill
     containers:
       mech-battery-slot:
-      - PowerCellHigh
+      - PowerCageUraniumCell
 
 
 - type: entity
@@ -174,7 +174,7 @@
   - type: ContainerFill
     containers:
       mech-battery-slot:
-      - PowerCellHigh
+      - PowerCageUraniumCell
 
 - type: entity
   id: MechGSCMarauder
@@ -231,7 +231,7 @@
   - type: ContainerFill
     containers:
       mech-battery-slot:
-      - PowerCellHigh
+      - PowerCageUraniumCell
 
 - type: entity
   id: MechSHIGilgamesh
@@ -293,7 +293,7 @@
   - type: ContainerFill
     containers:
       mech-battery-slot:
-      - PowerCellHigh
+      - PowerCageUraniumCell
 
 - type: entity
   id: MechDSMPaladin
@@ -354,4 +354,18 @@
   - type: ContainerFill
     containers:
       mech-battery-slot:
-      - PowerCellHigh
+      - PowerCageUraniumCell
+
+- type: entity
+  id: PowerCageUraniumCell
+  name: charged uranium exosuit powercell
+  parent: PowerCageHigh
+  suffix: Mech Battery
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Specific/mechbattery.rsi
+    layers:
+    - state: battery
+  - type: Battery
+    maxCharge: 7500
+    startingCharge: 7500

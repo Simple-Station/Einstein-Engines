@@ -77,10 +77,10 @@
     staminaCost: 8
 
 - type: entity
-  name: Atreides
+  name: NCSP Atreides 9x19mm
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunAtreides
-  description: Pla-ket-ket-ket-ket! Uses 9x19mm PSTF ammo.
+  description: A rapid-fire submachinegun developed by the Shipfitters Union. Eats through ammo like a starving elephant.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/atreides.rsi
@@ -101,10 +101,10 @@
   - type: Appearance
 
 - type: entity
-  name: C-20r sub machine gun
+  name: IRM C-20r 9x19mm
   parent: [BaseWeaponSubMachineGun, BaseGunWieldable]
   id: WeaponSubMachineGunC20r
-  description: Manufactured by Cybersun-Armaments, the C-20r is one of the most popular personal small-arms in the Coalition of Colonies. Uses 9x19mm PSTF ammo.
+  description: A compact submachinegun produced by Olywir Armaments for the Imperial Navy. Sees little use in the hands of actual troopers due to the cost of manufacturing.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/c20r.rsi
@@ -140,10 +140,10 @@
   - type: Appearance
 
 - type: entity
-  name: C-20r sub machine gun
+  name: IRM C-20r 9x19mm
   parent: [WeaponSubMachineGunC20r]
   id: WeaponSubMachineGunC20rEmpty
-  description: Manufactured by Cybersun-Armaments, the C-20r is one of the most popular personal small-arms in the Coalition of Colonies. Uses 9x19mm PSTF ammo.
+  description: A compact submachinegun produced by Olywir Armaments for the Imperial Navy. Sees little use in the hands of actual troopers due to the cost of manufacturing.
   components:
   - type: ItemSlots
     slots:
@@ -165,19 +165,19 @@
             - CartridgePistol
 
 - type: entity
-  name: antique C-20r submachine gun
+  name: antique IRM C-20r 9x19mm
   parent: WeaponSubMachineGunC20r
   id: WeaponSubMachineGunC20rHoS
-  description: This heavily worn submachine gun is engraved with the words, "Remember Mars".
+  description: This heavily worn submachine gun is engraved with the words, "Remember Nova Balreska".
   components:
     - type: StealTarget
       stealGroup: HoSAntiqueWeapon
 
 - type: entity
-  name: Drozd
+  name: PTA TKI-20 Drozd .327
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunDrozd
-  description: An excellent fully automatic Heavy SMG.
+  description: A heavy submachine gun with robust rifling. Manufactured by Pang Tai Arms and outsourced to mercenary factors in the area.
   components:
     - type: Sprite
       sprite: _Crescent/Objects/Weapons/Guns/drozd.rsi
@@ -277,10 +277,10 @@
 #  - type: Appearance
 
 - type: entity
-  name: WT550
+  name: NT WT550 Sabre 9x19mm
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunWt550
-  description: An excellent SMG, produced by NanoTrasen's Small Arms Division. Uses 9x19mm PSTF ammo.
+  description: A light Terran-originating submachine gun reconstructed from outdated NanoTrasen diagrams.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/wt550.rsi

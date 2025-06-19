@@ -65,7 +65,7 @@
     staminaCost: 9.5
 
 - type: entity
-  name: Bulldog
+  name: PTA MOD-2 Pozhar 12g
   # Don't parent to BaseWeaponShotgun because it differs significantly
   parent: [BaseItem, BaseGunWieldable]
   id: WeaponShotgunBulldog
@@ -145,7 +145,7 @@
     staminaCost: 9.5
 
 - type: entity
-  name: Bulldog
+  name: PTA MOD-2 Pozhar 12g
   parent: [WeaponShotgunBulldog]
   id: WeaponShotgunBulldogEmpty
   description: It's a magazine-fed shotgun designed for close quarters combat. Uses .50 shotgun shells.
@@ -163,7 +163,7 @@
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
 
 - type: entity
-  name: antique Bulldog
+  name: PTA MOD-2 Pozhar 12g
   parent: WeaponShotgunBulldog
   id: WeaponShotgunBulldogHoS
   description: This is a seemingly ordinary shotgun, no different from those issued as standard in the Republic of Biesel Navy. A close inspection reveals that this weapon's serial number is 000000013.
@@ -213,10 +213,10 @@
     proto: ShellShotgunBeanbag
 
 - type: entity
-  name: Enforcer
+  name: SHI 00-2 Enforcer 12g
   parent: [BaseWeaponShotgun, BaseGunWieldable]
   id: WeaponShotgunEnforcer
-  description: A premium combat shotgun based on the Kammerer design, featuring an upgraded clip capacity. .50 shotgun shells.
+  description: A premium, carbon-finish combat shotgun based on the NanoTrasen Kammerer design, featuring an upgraded clip capacity. Takes 12g shotgun shells.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/enforcer.rsi
@@ -246,10 +246,10 @@
     proto: ShellShotgunBeanbag
 
 - type: entity
-  name: Kammerer
+  name: NT 00-1 Kammerer 12g
   parent: [BaseWeaponShotgun, BaseGunWieldable]
   id: WeaponShotgunKammerer
-  description: When an old Remington design meets modern materials, this is the result. A favourite weapon of militia forces throughout many worlds. Uses .50 shotgun shells.
+  description: When an old Remington design meets modern materials, this is the result. A favourite weapon of militia forces throughout many worlds. Uses 12g shotgun shells.
   components:
   - type: Item
     size: Normal

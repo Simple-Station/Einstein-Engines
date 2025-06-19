@@ -65,10 +65,10 @@
     staminaCost: 5
 
 - type: entity
-  name: Deckard
+  name: NT X2 Deckard .327
   parent: BaseWeaponRevolver
   id: WeaponRevolverDeckard
-  description: A rare, custom-built revolver. Use when there is no time for Voight-Kampff test. Uses 8.3×33mm ammo.
+  description: A rare, custom-built revolver. Use when there is no time for Voight-Kampff test. Uses .327 ammo.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/deckard.rsi
@@ -92,7 +92,7 @@
     price: 1500
 
 - type: entity
-  name: Deckard
+  name: NT X2 Deckard .327
   parent: WeaponRevolverDeckard
   id: WeaponRevolverDeckardSecurity
   description: A rare, custom-built revolver. Use when there is no time for Voight-Kampff test. Uses 8.3×33mm ammo.
@@ -102,7 +102,7 @@
     guides: [ SecurityWeapons ]
 
 - type: entity
-  name: Deckard
+  name: NT X2 Deckard .327
   parent: WeaponRevolverDeckardSecurity
   id: WeaponRevolverDeckardNonLethalSecurity
   description: A rare, custom-built revolver. Use when you need to spare the Replicants. Comes with 8.3×33mm rubber.
@@ -118,10 +118,10 @@
     guides: [ SecurityWeapons ]
 
 - type: entity
-  name: Inspector
+  name: SHI Inspector .327
   parent: BaseWeaponRevolver
   id: WeaponRevolverInspector
-  description: A detective's best friend. Uses 8.3×33mm ammo.
+  description: A detective's best friend. Uses .327 Imperial ammo.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/inspector.rsi
@@ -133,7 +133,7 @@
     ammoSlots: [ null, null, null, null, null, null ]
 
 - type: entity
-  name: Inspector
+  name: SHI Inspector .327
   parent: WeaponRevolverInspector
   id: WeaponRevolverInspectorSecurity
   description: A detective's best friend. Uses 8.3×33mm ammo.
@@ -159,10 +159,10 @@
     guides: [ SecurityWeapons ]
 
 - type: entity
-  name: Mateba
+  name: SHI Mateba .327
   parent: BaseWeaponRevolver
   id: WeaponRevolverMateba
-  description: A distinctive revolver of an ancient Sol' design that was once seen as a rare collectible. It is in common manufacture by many companies in the Biesel Republic. Uses 8.3×33mm ammo.
+  description: The iconic sidearm of the dreaded corporate liquidation squads. Uses .327 magnum ammo. The biometric lock for the trigger seems to be not functioning.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/mateba.rsi
@@ -174,10 +174,10 @@
       path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
 
 - type: entity
-  name: Python
+  name: NCWL PX21 Python .45
   parent: BaseWeaponRevolver
   id: WeaponRevolverPython
-  description: An iconic large-framed revolver of ancient Sol' design. It is commonly manufactured by many companies all over the colonies. Uses 8.3×33mm ammo.
+  description: A bulky service revolver developed by the Union Foundries. Given to officers and high-ranking officials as a 'compliance ensurance tool'.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/python.rsi
@@ -195,7 +195,7 @@
     fireOnDropChance: 0.3
 
 - type: entity
-  name: Python
+  name: NCWL PX21 Python .45
   parent: WeaponRevolverPython
   id: WeaponRevolverPythonSecurity
   description: An iconic large-framed revolver of ancient Sol' design. It is commonly manufactured by many companies all over the colonies. Uses 8.3×33mm ammo.
@@ -205,7 +205,7 @@
     guides: [ SecurityWeapons ]
 
 - type: entity
-  name: Python
+  name: NCWL PX21 Python .45
   parent: WeaponRevolverPythonSecurity
   id: WeaponRevolverPythonNonlethalSecurity
   components:
@@ -226,7 +226,7 @@
     guides: [ SecurityWeapons ]
 
 - type: entity
-  name: Python
+  name: NCWL PX21 Python .45
   parent: WeaponRevolverPython
   id: WeaponRevolverPythonAP # For the uplink.
   suffix: armor-piercing
@@ -264,7 +264,7 @@
 - type: entity
   parent: WeaponRevolverArgenti
   id: WeaponRevolverArgentiSecurity
-  description: The military grade Argenti Type 20 revolver. Manufactured by Silver Industries. While the design with expanded cylinder is quite ancient, the right gunslinger will know how to utilise it well. Uses 5.56x45mm ammo.
+  description: The military grade Argenti Type 20 revolver. Manufactured by Ihijerika Civilian Manufcaturing. While the design with expanded cylinder is quite ancient, the right gunslinger will know how to utilise it well. Uses 5.56x45mm ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   components:
   - type: GuideHelp
