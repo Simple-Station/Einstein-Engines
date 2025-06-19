@@ -82,7 +82,7 @@
     staminaCost: 5
 
 - type: entity
-  name: viper
+  name: PTA Viper 9x19mm
   parent: BaseWeaponPistol
   id: WeaponPistolViper
   description: A small, easily concealable, but somewhat underpowered gun, produced by a bulk arms manufacturer now defunct for over a century. Uses 9x19mm PSTF ammo.
@@ -123,7 +123,7 @@
     fireOnDropChance: 0.3
 
 - type: entity
-  name: viper
+  name: PTA Viper 9x19mm
   parent: WeaponPistolViper
   id: WeaponPistolViperEmpty
   suffix: Empty
@@ -149,11 +149,11 @@
             - CartridgePistol
 
 - type: entity
-  name: viper
+  name: PTA Viper 9x19mm
   parent: WeaponPistolViper
   id: WeaponPistolViperSecurity
   description: A small, easily concealable, but somewhat underpowered gun, produced by a bulk arms manufacturer now defunct for over a century.
-               Uses 9x19mm PSTF ammo. The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+               Uses 9x19mm PSTF ammo. The serial number on the handguard marks this gun as belonging to some sort of corporate security.
   suffix: Security Loadouts
   components:
   - type: GuideHelp
@@ -187,17 +187,17 @@
             - CartridgePistol
 
 - type: entity
-  id: WeaponPistolViperSecurityNonLethal
+  id: PTA Viper 9x19mm
   parent: WeaponPistolViperNonLethal
   suffix: Non-lethal, SecurityLoadouts
   description: A small, easily concealable, but somewhat underpowered gun, produced by a bulk arms manufacturer now defunct for over a century.
-               Uses 9x19mm PSTF ammo. The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+               Uses 9x19mm PSTF ammo. The serial number on the handguard marks this gun as belonging to some sort of corporate security.
   components:
   - type: GuideHelp
     guides: [ SecurityWeapons ]
 
 - type: entity
-  name: cobra
+  name: PTA T2 Cobra .25
   parent: BaseWeaponPistol
   id: WeaponPistolCobra
   description: A rugged, robust operator handgun with inbuilt silencer. Uses .25 caseless ammo.
@@ -245,7 +245,7 @@
       gun_chamber: !type:ContainerSlot
 
 - type: entity
-  name: cobra
+  name: PTA T2 Cobra .25
   parent: WeaponPistolCobra
   id: WeaponPistolCobraEmpty
   suffix: Empty
@@ -270,7 +270,7 @@
             - CartridgeCaselessRifle
 
 - type: entity
-  name: mk 58
+  name: SHI MK58 Tayamura 9x19mm
   parent: BaseWeaponPistol
   id: WeaponPistolMk58
   description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses 9x19mm PSTF ammo.
@@ -291,7 +291,7 @@
     fireOnDropChance: 0.5
 
 - type: entity
-  name: mk58
+  name: SHI MK58 Tayamura 9x19mm
   parent: WeaponPistolMk58
   id: WeaponPistolMk58Empty
   suffix: Empty
@@ -316,7 +316,7 @@
             - CartridgePistol
 
 - type: entity
-  name: mk 58
+  name: SHI MK58 Tayamura 9x19mm
   parent: WeaponPistolMk58
   id: WeaponPistolMk58Security
   description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses 9x19mm PSTF ammo.
@@ -353,7 +353,7 @@
             - CartridgePistol
 
 - type: entity
-  id: WeaponPistolMk58SecurityNonlethal
+  id: SHI MK58 Tayamura 9x19mm
   parent: WeaponPistolMk58Nonlethal
   suffix: Non-lethal, Security Loadouts
   description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses 9x19mm PSTF ammo.
@@ -363,10 +363,10 @@
     guides: [ SecurityWeapons ]
 
 - type: entity
-  name: N1984
+  name: NT N1984 Marston .327
   parent: BaseWeaponPistol
   id: WeaponPistolN1984 # the spaces in description are for formatting.
-  description: The sidearm of any self respecting officer.     Comes in 8.3×33mm, the lord's caliber.
+  description: The sidearm of any self respecting officer. Comes in .327, the lord's caliber.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/liberty.rsi
@@ -406,7 +406,7 @@
             - CartridgeMagnum
 
 - type: entity
-  name: N1984
+  name: NT N1984 Marston .327
   parent: WeaponPistolN1984
   id: WeaponPistolN1984Empty
   suffix: Empty
@@ -431,7 +431,7 @@
             - CartridgeMagnum
 
 - type: entity
-  name: N1984
+  name: NT N1984 Marston .327
   parent: WeaponPistolN1984
   id: WeaponPistolN1984Security # the spaces in description are for formatting.
   description: The sidearm of any self respecting officer.     Comes in 8.3×33mm, the lord's caliber.
@@ -469,7 +469,7 @@
             - CartridgeMagnum
 
 - type: entity
-  name: N1984
+  name: NT N1984 Marston .327
   parent: WeaponPistolN1984NonLethal
   id: WeaponPistolN1984SecurityNonLethal
   description: The sidearm of any self respecting officer.     Comes in 8.3×33mm, the lord's caliber.
