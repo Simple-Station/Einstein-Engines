@@ -5,7 +5,7 @@
     sprite: _Goobstation/Objects/Specific/Robotics/modsuit_parts.rsi
     state: mod-core-standard
   discipline: Experimental
-  tier: 3
+  tier: 1
   cost: 5000
   technologyPrerequisites:
   - AdvancedTacsuits
@@ -17,3 +17,21 @@
   - ModsuitGauntlets
   - ModsuitShell
   - ModsuitPlatingExternal
+  position: -4,-1
+  technologyPrerequisites:
+  - MagnetsTech
+
+- type: technology
+  id: BluespaceTheory
+  name: research-technology-bluespace-theory
+  icon:
+    sprite: _Goobstation/Objects/Materials/materials.rsi
+    state: bluespace_crystal
+  discipline: Experimental
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - MaterialBSCrystal
+  position: -4,-2
+  technologyPrerequisites:
+  - DeterrenceTechnologies
