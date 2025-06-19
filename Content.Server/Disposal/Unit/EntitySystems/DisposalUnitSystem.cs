@@ -486,7 +486,7 @@ public sealed class DisposalUnitSystem : SharedDisposalUnitSystem
         {
             BreakOnDamage = true,
             BreakOnMove = true,
-            NeedHand = false
+            NeedHand = false,
         };
 
         _doAfterSystem.TryStartDoAfter(doAfterArgs);

@@ -6,18 +6,17 @@
   startingGear: TechnicalAssistantGear
   icon: "JobIconTechnicalAssistant"
   supervisors: job-supervisors-engineering
-  canBeAntag: true # DeltaV - Can be antagonist
   access:
   - Maintenance
   - Engineering
   - External
   requirements:
-    - !type:CharacterEmployerRequirement
-      employers:
-      - HephaestusIndustries
-      - ZavodskoiInterstellar
-      - EinsteinEngines
-      - NanoTrasen
+  - !type:CharacterEmployerRequirement
+    employers:
+    - HephaestusIndustries
+    - ZavodskoiInterstellar
+    - EinsteinEngines
+    - NanoTrasen
 
 - type: startingGear
   id: TechnicalAssistantGear
@@ -25,12 +24,9 @@
   - StationEngineerPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorYellow
-    back: ClothingBackpackEngineeringFilled
+    back: ClothingBackpackEngineering
     shoes: ClothingShoesBootsWork
     id: TechnicalAssistantPDA
     belt: ClothingBeltUtilityEngineering
     ears: ClothingHeadsetEngineering
     pocket2: BookEngineersHandbook
-  innerClothingSkirt: ClothingUniformJumpskirtColorYellow
-  satchel: ClothingBackpackSatchelEngineeringFilled
-  duffelbag: ClothingBackpackDuffelEngineeringFilled

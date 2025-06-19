@@ -64,7 +64,7 @@
 
 - type: startingGear
   id: MagistratePlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitMagistrate
     head: ClothingHeadEnvirohelmMagistrate

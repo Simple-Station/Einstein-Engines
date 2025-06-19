@@ -1,7 +1,7 @@
 <Document>
   # Space Law: Crime Listing
-  Crime codes are grouped by color to represent linked crime categories. Crimes within the same group cannot be stacked. 
-  Suffixes are provided in the Quick Crime Guide to identify these links, with only the highest penalty being applied.  
+  Crime codes are grouped by color to represent linked crime categories. Crimes within the same group cannot be stacked.
+  Suffixes are provided in the Quick Crime Guide to identify these links, with only the highest penalty being applied.
 
   ## Quick Crime Guide
   <Table Columns="6">
@@ -72,7 +72,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
+
       </Box>
     </ColorBox>
     <ColorBox Color="#607d8b">
@@ -132,7 +132,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
+
       </Box>
     </ColorBox>
     <ColorBox>
@@ -222,12 +222,12 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
+
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
+
       </Box>
     </ColorBox>
     <ColorBox Color="#134975">
@@ -282,7 +282,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
+
       </Box>
     </ColorBox>
     <ColorBox Color="#607d8b">
@@ -302,7 +302,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
+
       </Box>
     </ColorBox>
     <ColorBox>
@@ -312,7 +312,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
+
       </Box>
     </ColorBox>
     <ColorBox Color="#607d8b">
@@ -332,7 +332,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
+
       </Box>
     </ColorBox>
     <ColorBox>
@@ -342,7 +342,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
+
       </Box>
     </ColorBox>
     <ColorBox>
@@ -362,7 +362,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
+
       </Box>
     </ColorBox>
     <ColorBox>
@@ -372,12 +372,12 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
+
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
+
       </Box>
     </ColorBox>
     <ColorBox Color="#99c2eb">
@@ -392,7 +392,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
+
       </Box>
     </ColorBox>
     <ColorBox>
@@ -402,17 +402,17 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
+
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
+
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
+
       </Box>
     </ColorBox>
     <ColorBox>
@@ -422,7 +422,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
+
       </Box>
     </ColorBox>
     <ColorBox>
@@ -432,17 +432,17 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
+
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
+
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
+
       </Box>
     </ColorBox>
     <ColorBox>
@@ -452,7 +452,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
+
       </Box>
     </ColorBox>
     <ColorBox>
@@ -467,7 +467,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
+
       </Box>
     </ColorBox>
     <ColorBox>
@@ -482,7 +482,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        
+
       </Box>
     </ColorBox>
   </Table>
@@ -493,7 +493,7 @@
   Make sure you do not combine the same category of crimes, indicated by brackets.
 
   ## Crime Modifiers
-  Crimes can be influenced by specific modifiers that adjust their severity, sentencing, or context. 
+  Crimes can be influenced by specific modifiers that adjust their severity, sentencing, or context.
   These modifiers provide additional nuance to legal proceedings and ensure appropriate handling of offenses;
   Based on circumstances such as intent, danger, or external factors.
 
@@ -829,7 +829,7 @@
       </Box>
     </ColorBox>
   </Table>
-  
+
   # Felonies
   - The maximum sentence per Felony is 4 minutes
   - Minor crimes encompass low-severity offenses that typically do not pose a significant threat to station security or personnel.
@@ -1051,7 +1051,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Note that actual, OOC racism is not acceptable under the rules. 
+        Note that actual, OOC racism is not acceptable under the rules.
       </Box>
     </ColorBox>
   </Table>

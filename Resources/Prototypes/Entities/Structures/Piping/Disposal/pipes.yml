@@ -60,7 +60,7 @@
     tags:
       - Disposal
   - type: StaticPrice
-    price: 22
+    price: 30
 
 - type: entity
   id: DisposalHolder
@@ -78,7 +78,7 @@
   id: DisposalPipeBroken
   parent: DisposalPipeBase
   name: broken disposal pipe
-  description: A BBP (big broken pipe)
+  description: A BBP (big broken pipe).
   components:
   - type: Sprite
     drawdepth: ThickPipe

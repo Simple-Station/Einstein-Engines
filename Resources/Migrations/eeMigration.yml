@@ -99,11 +99,6 @@ SpaceTickSpawnerNPC: SpaceTickSpawner
 LockableButtonBrig: LockableButtonSecurity
 SignDirectionalICU: SignDirectionalIcu
 
-# 2024-03-08
-ClothingBackpackSatchelBrigmedicDeltaVFilled: ClothingBackpackSatchelBrigmedicFilled
-ClothingBackpackDuffelBrigmedicDeltaVFilled: ClothingBackpackDuffelBrigmedicFilled
-ClothingBackpackBrigmedicDeltaVFilled: ClothingBackpackBrigmedicFilled
-
 # 2024-06-08
 CrateFunPlushie: CrateFunToyBox
 CrateFunLizardPlushieBulk: CrateFunToyBox
@@ -126,3 +121,28 @@ AntiPsychicKnife: null
 
 # 2025-03-12
 SmartFridge: DVSmartFridgeMedical
+
+# 2025-06-06
+MagazineUniversalMagnumRubber: MagazineUniversalMagnum
+WeaponPistolUniversalNonLethal: WeaponPistolUniversal
+WeaponPistolUniversalSecurityNonLethal: WeaponPistolUniversalSecurity
+MagazineBoxSpecialRubber: MagazineBoxSpecial
+CartridgeSpecialRubber: CartridgeSpecial
+MagazinePistolSpecialRubber: MagazinePistolSpecial
+BulletSpecialRubber: BulletSpecial
+SpeedLoaderSpecialRubber: SpeedLoaderSpecial
+WeaponPistolPollockNonlethalSecurity: WeaponPistolPollockSecurity
+WeaponRevolverSnubNonlethalSecurity: WeaponRevolverSnubSecurity
+WeaponRevolverK38MasterNonlethalSecurity: WeaponRevolverK38MasterSecurity
+WeaponRevolverFitzNonlethalSecurity: WeaponRevolverFitzSecurity
+WeaponRevolverArgentiNonLethalSecurity: WeaponRevolverArgentiSecurity
+WeaponRevolverArgentiNonlethal: WeaponRevolverArgenti
+MagazineLightRifleLowCapacityRubber: MagazineLightRifleLowCapacity
+MagazineNovaliteC1Rubber: MagazineNovaliteC1
+SpeedLoaderRifleHeavyRubber: SpeedLoaderRifleHeavy
+WeaponRifleGestioRubber: WeaponRifleGestio
+WeaponRifleNovaliteC1Rubber: WeaponRifleNovaliteC1
+WeaponSniperRepeaterNonlethal: WeaponSniperRepeater
+
+# 2025-06-09
+ShockCollar: ClothingNeckShockCollar

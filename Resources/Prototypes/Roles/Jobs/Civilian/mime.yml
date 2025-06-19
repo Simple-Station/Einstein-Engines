@@ -9,7 +9,7 @@
   access:
   - Theatre
   - Maintenance
-  - Mime # DeltaV - Add Mime access
+  - Mime
   special:
   - !type:AddComponentSpecial
     components:
@@ -24,7 +24,7 @@
     jumpsuit: ClothingUniformJumpsuitMime
     back: ClothingBackpackMimeFilled
     head: ClothingHeadHatBeret
-    belt: ClothingBeltSuspenders
+    belt: ClothingBeltSuspendersRed
     gloves: ClothingHandsGlovesLatex
     shoes: ClothingShoesColorWhite
     pocket1: CrayonMime
@@ -32,13 +32,14 @@
     mask: ClothingMaskMime
     id: MimePDA
     ears: ClothingHeadsetService
-  innerClothingSkirt: ClothingUniformJumpskirtMime
-  satchel: ClothingBackpackSatchelMimeFilled
-  duffelbag: ClothingBackpackDuffelMimeFilled
+  storage:
+    back:
+    - BoxSurvival
+    - RubberStampMime
 
 - type: startingGear
   id: MimePlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitMime
     head: ClothingHeadEnvirohelmMime
@@ -49,7 +50,6 @@
   id: ActionMimeInvisibleWall
   name: Create Invisible Wall
   description: Create an invisible wall in front of you, if placeable there.
-  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     priority: -1

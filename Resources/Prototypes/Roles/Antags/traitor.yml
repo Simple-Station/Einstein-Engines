@@ -23,20 +23,66 @@
 
 # Syndicate Operative Outfit - Barratry
 - type: startingGear
-  id: SyndicateOperativeGearExtremelyBasic
+  id: SyndicateOperativeClothing
   subGear:
   - SyndicatePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
     back: ClothingBackpackSyndicate
-    shoes: ClothingShoesBootsCombatFilled
+    shoes: ClothingShoesBootsSyndieFilled
     gloves: ClothingHandsGlovesColorBlack
+
+- type: startingGear
+  id: SyndicatePlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitOperative
+    head: ClothingHeadEnvirohelmOperative
+    pocket1: DoubleEmergencyPlasmaTankFilled
+
+- type: startingGear
+  id: SyndicateOperativeGearExtremelyBasic
+  parent: SyndicateOperativeClothing
+  subGear:
+  - BoxSurvivalSyndicate
   storage:
     back:
-    - BoxSurvivalSyndicate
     - WeaponPistolViper
     - PinpointerSyndicateNuclear
     - DeathAcidifierImplanter
+
+- type: startingGear
+  id: SyndicateReinforcementMedic
+  parent: SyndicateOperativeClothing
+  subGear:
+  - BoxSurvivalSyndicate
+  equipment:
+    pocket1: WeaponPistolViper
+  inhand:
+  - MedkitCombatFilled
+
+- type: startingGear
+  id: SyndicateReinforcementSpy
+  parent: SyndicateOperativeClothing
+  subGear:
+  - BoxSurvivalSyndicate
+  equipment:
+    id: AgentIDCard
+    mask: ClothingMaskGasVoiceChameleon
+    pocket1: WeaponPistolViper
+
+- type: startingGear
+  id: SyndicateReinforcementThief
+  parent: SyndicateOperativeClothing
+  subGear:
+  - BoxSurvivalSyndicate
+  equipment:
+    pocket1: WeaponPistolViper
+  inhand:
+  - ToolboxSyndicateFilled
+  storage:
+    back:
+    - SyndicateJawsOfLife
 
 #Syndicate Operative Outfit - Basic
 - type: startingGear

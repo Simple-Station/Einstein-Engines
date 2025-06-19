@@ -12,6 +12,7 @@ using Content.Shared.Follower;
 using Content.Shared.GameTicking;
 using Content.Shared.Ghost;
 using Content.Shared.Ghost.Roles;
+using Content.Shared.Ghost.Roles.Components;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
@@ -80,6 +81,7 @@ namespace Content.Server.Ghost.Roles
             SubscribeLocalEvent<GhostTakeoverAvailableComponent, TakeGhostRoleEvent>(OnTakeoverTakeRole);
             SubscribeLocalEvent<GhostRoleMobSpawnerComponent, GetVerbsEvent<Verb>>(OnVerb);
             SubscribeLocalEvent<GhostRoleCharacterSpawnerComponent, TakeGhostRoleEvent>(OnSpawnerTakeCharacter);
+            SubscribeLocalEvent<GhostRoleMobSpawnerComponent, GhostRoleRadioMessage>(OnGhostRoleRadioMessage);
             _playerManager.PlayerStatusChanged += PlayerStatusChanged;
         }
 
@@ -790,18 +792,35 @@ namespace Content.Server.Ghost.Roles
                 _popupSystem.PopupEntity(msg, uid, userUid.Value);
             }
         }
+
+        public void OnGhostRoleRadioMessage(Entity<GhostRoleMobSpawnerComponent> entity, ref GhostRoleRadioMessage args)
+        {
+            if (!_prototype.TryIndex(args.ProtoId, out var ghostRoleProto))
+                return;
+
+            // if the prototype chosen isn't actually part of the selectable options, ignore it
+            foreach (var selectableProto in entity.Comp.SelectablePrototypes)
+            {
+                if (selectableProto == ghostRoleProto.EntityPrototype.Id)
+                    return;
+            }
+
+            SetMode(entity.Owner, ghostRoleProto, ghostRoleProto.Name, entity.Comp);
+        }
     }
 
     [AnyCommand]
     public sealed class GhostRoles : IConsoleCommand
     {
+        [Dependency] private readonly IEntityManager _e = default!;
+
         public string Command => "ghostroles";
         public string Description => "Opens the ghost role request window.";
         public string Help => $"{Command}";
         public void Execute(IConsoleShell shell, string argStr, string[] args)
         {
             if (shell.Player != null)
-                EntitySystem.Get<GhostRoleSystem>().OpenEui(shell.Player);
+                _e.System<GhostRoleSystem>().OpenEui(shell.Player);
             else
                 shell.WriteLine("You can only open the ghost roles UI on a client.");
         }

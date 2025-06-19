@@ -4,14 +4,14 @@
   description: job-description-chemist
   playTimeTracker: JobChemist
   requirements:
-    - !type:CharacterDepartmentTimeRequirement
-      department: Medical
-      min: 28800 # DeltaV - 8 hours
-    - !type:CharacterEmployerRequirement
-      employers:
-      - ZengHuPharmaceuticals
-      - Interdyne
-      - NanoTrasen
+  - !type:CharacterDepartmentTimeRequirement
+    department: Medical
+    min: 28800
+  - !type:CharacterEmployerRequirement
+    employers:
+    - ZengHuPharmaceuticals
+    - Interdyne
+    - NanoTrasen
   startingGear: ChemistGear
   icon: "JobIconChemist"
   supervisors: job-supervisors-cmo
@@ -32,17 +32,14 @@
   - ChemistPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitChemistry
-    back: ClothingBackpackChemistryFilled
+    back: ClothingBackpackChemistry
     shoes: ClothingShoesColorWhite
     id: ChemistryPDA
     ears: ClothingHeadsetMedical
-  innerClothingSkirt: ClothingUniformJumpskirtChemistry
-  satchel: ClothingBackpackSatchelChemistryFilled
-  duffelbag: ClothingBackpackDuffelChemistryFilled
 
 - type: startingGear
   id: ChemistPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitChemist
     head: ClothingHeadEnvirohelmChemist

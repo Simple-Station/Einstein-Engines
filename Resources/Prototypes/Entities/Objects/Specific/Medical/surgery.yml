@@ -29,7 +29,7 @@
     storedRotation: 90
   - type: MeleeWeapon
     damage:
-       types:
+      types:
         Heat: 5
     soundHit:
       path: /Audio/Effects/lightburn.ogg
@@ -107,7 +107,7 @@
     #speedModifier: 0.66 # pretend the sixes go on forever :)
   - type: Utensil
     types:
-      - Knife
+    - Knife
   - type: Sprite
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/scalpel.rsi
     state: scalpel
@@ -338,7 +338,7 @@
   - type: Sharp
   - type: Utensil
     types:
-      - Knife
+    - Knife
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/saw.rsi
     state: saw
@@ -348,8 +348,7 @@
     storedRotation: 90
   - type: Tool
     qualities:
-      - Sawing
-    speedModifier: 1.0
+    - Sawing
   - type: MeleeWeapon
     attackRate: 1.3
     range: 1.35
@@ -404,8 +403,6 @@
   - type: ThrowingAngle
     angle: 90
   - type: Tool
-    qualities:
-      - Sawing
     speedModifier: 0.5
   - type: BoneSaw # Shitmed
     speed: 0.5
@@ -448,7 +445,7 @@
     angle: 90
   - type: Tool
     qualities:
-      - Sawing
+    - Sawing
     speedModifier: 1.5
   - type: BoneSaw # Shitmed
     speed: 1.5
@@ -459,7 +456,7 @@
 - type: entity
   name: advanced circular saw
   id: SawAdvanced
-  parent: SawElectric
+  parent: [ SawElectric, BaseSyndicateContraband ]
   description: You think you can cut anything with it.
   components:
   - type: Sprite
@@ -468,7 +465,6 @@
   - type: Item
     size: Normal
     sprite: Objects/Specific/Medical/Surgery/saw.rsi
-    storedRotation: 90
     heldPrefix: advanced
   - type: MeleeWeapon
     attackRate: .8
@@ -494,8 +490,6 @@
   - type: ThrowingAngle
     angle: 90
   - type: Tool
-    qualities:
-      - Sawing
     speedModifier: 2.0
   - type: BoneSaw # Shitmed
     speed: 2
@@ -543,8 +537,8 @@
           sprite: _Shitmed/Objects/Specific/Medical/Surgery/e-cautery.rsi
           state: e-cautery
         components:
-          - type: Cautery
-            speed: 1.5
+        - type: Cautery
+          speed: 1.5
         soundStateActivate:
           collection: WelderOn
           params:
@@ -557,8 +551,8 @@
           sprite: _Shitmed/Objects/Specific/Medical/Surgery/e-cautery.rsi
           state: e-cautery-on
         components:
-          - type: Drill
-            speed: 1.5
+        - type: Drill
+          speed: 1.5
         soundStateActivate:
           collection: sparks
           params:
@@ -606,8 +600,8 @@
           sprite: _Shitmed/Objects/Specific/Medical/Surgery/e-scalpel.rsi
           state: e-scalpel
         components:
-          - type: Scalpel
-            speed: 1.5
+        - type: Scalpel
+          speed: 1.5
         soundStateActivate:
           collection: sparks
           params:
@@ -620,8 +614,8 @@
           sprite: _Shitmed/Objects/Specific/Medical/Surgery/e-scalpel.rsi
           state: e-scalpel-on
         components:
-          - type: BoneSaw
-            speed: 1.5
+        - type: BoneSaw
+          speed: 1.5
         soundStateActivate:
           collection: sparks
           params:
@@ -669,8 +663,8 @@
           sprite: _Shitmed/Objects/Specific/Medical/Surgery/adv-retractor.rsi
           state: adv-retractor
         components:
-          - type: Retractor
-            speed: 1.5
+        - type: Retractor
+          speed: 1.5
         soundStateActivate:
           collection: sparks
           params:
@@ -683,12 +677,12 @@
           sprite: _Shitmed/Objects/Specific/Medical/Surgery/adv-retractor.rsi
           state: adv-retractor-on
         components:
-          - type: Hemostat
-            speed: 1.5
-          - type: Tweezers
-            speed: 1.5
-          - type: Tending
-            speed: 1.5
+        - type: Hemostat
+          speed: 1.5
+        - type: Tweezers
+          speed: 1.5
+        - type: Tending
+          speed: 1.5
         soundStateActivate:
           collection: sparks
           params:
@@ -746,28 +740,28 @@
   id: OmnimedToolLite
   parent: OmnimedTool
   components:
-    - type: Sprite
-      state: cmotool
-    - type: Item
-      heldPrefix: cmotool
-    - type: SurgeryTool
-    - type: Hemostat
-      speed: 1.25
-    - type: Scalpel
-      speed: 1.25
-    - type: Drill
-      speed: 1.25
-    - type: BoneSetter
-      speed: 1.25
-    - type: Retractor
-      speed: 1.25
-    - type: Cautery
-      speed: 1.25
-    - type: BoneGel
-      speed: 1.25
-    - type: BoneSaw
-      speed: 1.25
-    - type: Tweezers
-      speed: 1.25
-    - type: Tending
-      speed: 1.25
+  - type: Sprite
+    state: cmotool
+  - type: Item
+    heldPrefix: cmotool
+  - type: SurgeryTool
+  - type: Hemostat
+    speed: 1.25
+  - type: Scalpel
+    speed: 1.25
+  - type: Drill
+    speed: 1.25
+  - type: BoneSetter
+    speed: 1.25
+  - type: Retractor
+    speed: 1.25
+  - type: Cautery
+    speed: 1.25
+  - type: BoneGel
+    speed: 1.25
+  - type: BoneSaw
+    speed: 1.25
+  - type: Tweezers
+    speed: 1.25
+  - type: Tending
+    speed: 1.25

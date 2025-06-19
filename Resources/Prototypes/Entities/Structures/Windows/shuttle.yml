@@ -41,8 +41,8 @@
   - type: Appearance
   - type: Tag
     tags:
-    - ForceFixRotations # WWDP fix missing tags
-    - Window # WWDP fix missing tags
+    - ForceFixRotations
+    - Window
     - WeldbotFixableStructure
   - type: DamageVisuals
     thresholds: [4, 8, 12]
@@ -51,7 +51,7 @@
     damageOverlay:
       sprite: Structures/Windows/cracks.rsi
   - type: StaticPrice
-    price: 75
+    price: 150
 
 - type: entity
   parent: ShuttleWindow

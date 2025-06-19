@@ -44,21 +44,6 @@
         color: "#dbdbdb"
 
 - type: entity
-  id: CartridgeSpecialRubber
-  name: cartridge (.38 special rubber)
-  parent: BaseCartridgeSpecial
-  components:
-  - type: CartridgeAmmo
-    proto: BulletSpecialRubber
-  - type: Sprite
-    layers:
-      - state: base
-        map: [ "enum.AmmoVisualLayers.Base" ]
-      - state: tip
-        map: [ "enum.AmmoVisualLayers.Tip" ]
-        color: "#43c4f7"
-
-- type: entity
   id: CartridgeSpecialIncendiary
   name: cartridge (.38 special incendiary)
   parent: BaseCartridgeSpecial

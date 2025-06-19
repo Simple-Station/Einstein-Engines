@@ -1,7 +1,6 @@
 using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Ensnaring;
-using Content.Shared.CombatMode;
 using Content.Shared.Cuffs;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Database;
@@ -10,7 +9,6 @@ using Content.Shared.Ensnaring.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
-using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.VirtualItem;
@@ -18,7 +16,6 @@ using Content.Shared.Popups;
 using Content.Shared.Strip;
 using Content.Shared.Strip.Components;
 using Content.Shared.Verbs;
-using Robust.Server.GameObjects;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
 
@@ -28,7 +25,6 @@ namespace Content.Server.Strip
     {
         [Dependency] private readonly InventorySystem _inventorySystem = default!;
         [Dependency] private readonly EnsnareableSystem _ensnaringSystem = default!;
-        [Dependency] private readonly UserInterfaceSystem _userInterfaceSystem = default!;
 
         [Dependency] private readonly SharedCuffableSystem _cuffableSystem = default!;
         [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
@@ -46,7 +42,6 @@ namespace Content.Server.Strip
 
             SubscribeLocalEvent<StrippableComponent, GetVerbsEvent<Verb>>(AddStripVerb);
             SubscribeLocalEvent<StrippableComponent, GetVerbsEvent<ExamineVerb>>(AddStripExamineVerb);
-            SubscribeLocalEvent<StrippableComponent, ActivateInWorldEvent>(OnActivateInWorld);
 
             // BUI
             SubscribeLocalEvent<StrippableComponent, StrippingSlotButtonPressed>(OnStripButtonPressed);
@@ -69,7 +64,7 @@ namespace Content.Server.Strip
             {
                 Text = Loc.GetString("strip-verb-get-data-text"),
                 Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/outfit.svg.192dpi.png")),
-                Act = () => StartOpeningStripper(args.User, (uid, component), true),
+                Act = () => TryOpenStrippingUi(args.User, (uid, component), true),
             };
 
             args.Verbs.Add(verb);
@@ -87,35 +82,11 @@ namespace Content.Server.Strip
             {
                 Text = Loc.GetString("strip-verb-get-data-text"),
                 Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/outfit.svg.192dpi.png")),
-                Act = () => StartOpeningStripper(args.User, (uid, component), true),
+                Act = () => TryOpenStrippingUi(args.User, (uid, component), true),
                 Category = VerbCategory.Examine,
             };
 
             args.Verbs.Add(verb);
-        }
-
-        private void OnActivateInWorld(EntityUid uid, StrippableComponent component, ActivateInWorldEvent args)
-        {
-            if (args.Target == args.User)
-                return;
-
-            if (!HasComp<ActorComponent>(args.User))
-                return;
-
-            StartOpeningStripper(args.User, (uid, component));
-        }
-
-        public override void StartOpeningStripper(EntityUid user, Entity<StrippableComponent> strippable, bool openInCombat = false)
-        {
-            base.StartOpeningStripper(user, strippable, openInCombat);
-
-            if (TryComp<CombatModeComponent>(user, out var mode) && mode.IsInCombatMode && !openInCombat)
-                return;
-
-            if (HasComp<StrippingComponent>(user))
-            {
-                _userInterfaceSystem.OpenUi(strippable.Owner, StrippingUiKey.Key, user);
-            }
         }
 
         private void OnStripButtonPressed(Entity<StrippableComponent> strippable, ref StrippingSlotButtonPressed args)
@@ -248,7 +219,7 @@ namespace Content.Server.Strip
                 return;
             }
 
-            var (time, stealth) = GetStripTimeModifiers(user, target, slotDef.StripTime);
+            var (time, stealth) = GetStripTimeModifiers(user, target, held, slotDef.StripTime);
 
             bool hidden = stealth == ThievingStealth.Hidden;
 
@@ -338,7 +309,7 @@ namespace Content.Server.Strip
                 return;
             }
 
-            var (time, stealth) = GetStripTimeModifiers(user, target, slotDef.StripTime);
+            var (time, stealth) = GetStripTimeModifiers(user, target, item, slotDef.StripTime);
 
             bool hidden = stealth == ThievingStealth.Hidden;
 
@@ -385,7 +356,7 @@ namespace Content.Server.Strip
 
             RaiseLocalEvent(item, new DroppedEvent(user), true); // Gas tank internals etc.
 
-            _handsSystem.PickupOrDrop(user, item, animateUser: hidden, animate: hidden);
+            _handsSystem.PickupOrDrop(user, item, animateUser: hidden, animate: !hidden);
             _adminLogger.Add(LogType.Stripping, LogImpact.Medium, $"{ToPrettyString(user):actor} has stripped the item {ToPrettyString(item):item} from {ToPrettyString(target):target}'s {slot} slot");
         }
 
@@ -445,9 +416,12 @@ namespace Content.Server.Strip
             if (!CanStripInsertHand(user, target, held, handName))
                 return;
 
-            var (time, stealth) = GetStripTimeModifiers(user, target, targetStrippable.HandStripDelay);
+            var (time, stealth) = GetStripTimeModifiers(user, target, null, targetStrippable.HandStripDelay);
 
             bool hidden = stealth == ThievingStealth.Hidden;
+
+            if (!hidden)
+                _popupSystem.PopupEntity(Loc.GetString("strippable-component-alert-owner-insert-hand", ("user", Identity.Entity(user, EntityManager)), ("item", user.Comp.ActiveHandEntity!.Value)), target, target, PopupType.Large);
 
             var prefix = hidden ? "stealthily " : "";
             _adminLogger.Add(LogType.Stripping, LogImpact.Low, $"{ToPrettyString(user):actor} is trying to {prefix}place the item {ToPrettyString(held):item} in {ToPrettyString(target):target}'s hands");
@@ -483,7 +457,7 @@ namespace Content.Server.Strip
                 return;
 
             _handsSystem.TryDrop(user, checkActionBlocker: false, handsComp: user.Comp);
-            _handsSystem.TryPickup(target, held, handName, checkActionBlocker: false, animateUser: hidden, animate: hidden, handsComp: target.Comp);
+            _handsSystem.TryPickup(target, held, handName, checkActionBlocker: false, animateUser: hidden, animate: !hidden, handsComp: target.Comp);
             _adminLogger.Add(LogType.Stripping, LogImpact.Medium, $"{ToPrettyString(user):actor} has placed the item {ToPrettyString(held):item} in {ToPrettyString(target):target}'s hands");
 
             // Hand update will trigger strippable update.
@@ -503,7 +477,7 @@ namespace Content.Server.Strip
 
             if (!_handsSystem.TryGetHand(target, handName, out var handSlot, target.Comp))
             {
-                _popupSystem.PopupCursor(Loc.GetString("strippable-component-item-slot-free-message", ("owner", target)), user);
+                _popupSystem.PopupCursor(Loc.GetString("strippable-component-item-slot-free-message", ("owner", Identity.Name(target, EntityManager, user))), user);
                 return false;
             }
 
@@ -518,7 +492,7 @@ namespace Content.Server.Strip
 
             if (!_handsSystem.CanDropHeld(target, handSlot, false))
             {
-                _popupSystem.PopupCursor(Loc.GetString("strippable-component-cannot-drop-message", ("owner", target)), user);
+                _popupSystem.PopupCursor(Loc.GetString("strippable-component-cannot-drop-message", ("owner", Identity.Name(target, EntityManager, user))), user);
                 return false;
             }
 
@@ -543,7 +517,7 @@ namespace Content.Server.Strip
             if (!CanStripRemoveHand(user, target, item, handName))
                 return;
 
-            var (time, stealth) = GetStripTimeModifiers(user, target, targetStrippable.HandStripDelay);
+            var (time, stealth) = GetStripTimeModifiers(user, target, null, targetStrippable.HandStripDelay);
 
             bool hidden = stealth == ThievingStealth.Hidden;
 
@@ -585,7 +559,7 @@ namespace Content.Server.Strip
                 return;
 
             _handsSystem.TryDrop(target, item, checkActionBlocker: false, handsComp: target.Comp);
-            _handsSystem.PickupOrDrop(user, item, animateUser: hidden, animate: hidden, handsComp: user.Comp);
+            _handsSystem.PickupOrDrop(user, item, animateUser: hidden, animate: !hidden, handsComp: user.Comp);
             _adminLogger.Add(LogType.Stripping, LogImpact.Medium, $"{ToPrettyString(user):actor} has stripped the item {ToPrettyString(item):item} from {ToPrettyString(target):target}'s hands");
 
             // Hand update will trigger strippable update.

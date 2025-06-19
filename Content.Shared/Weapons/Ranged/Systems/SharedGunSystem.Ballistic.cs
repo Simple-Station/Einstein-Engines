@@ -69,17 +69,20 @@ public abstract partial class SharedGunSystem
 
         args.Handled = true;
 
+        // Continuous loading
         _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, component.FillDelay, new AmmoFillDoAfterEvent(), used: uid, target: args.Target, eventTarget: uid)
         {
             BreakOnMove = true,
             BreakOnDamage = false,
-            NeedHand = true
+            NeedHand = true,
         });
     }
 
     private void OnBallisticAmmoFillDoAfter(EntityUid uid, BallisticAmmoProviderComponent component, AmmoFillDoAfterEvent args)
     {
-        if (Deleted(args.Target)
+        if (args.Handled
+            || args.Cancelled
+            || Deleted(args.Target)
             || !TryComp(args.Target, out BallisticAmmoProviderComponent? target)
             || target.Whitelist is null)
             return;
@@ -179,7 +182,10 @@ public abstract partial class SharedGunSystem
         if (Resolve(uid, ref gunComp, false)
             && gunComp is { FireRateModified: > 0f }
             && !Paused(uid))
+        {
             gunComp.NextFire = Timing.CurTime + TimeSpan.FromSeconds(1 / gunComp.FireRateModified);
+            Dirty(uid, gunComp);
+        }
 
         Dirty(uid, component);
         Audio.PlayPredicted(component.SoundRack, uid, user);

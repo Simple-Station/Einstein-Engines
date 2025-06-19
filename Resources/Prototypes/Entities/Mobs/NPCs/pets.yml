@@ -115,8 +115,8 @@
   components:
   - type: NpcFactionMember
     factions:
-      - PetsNT
-      - Cat # DeltaV
+    - PetsNT
+    - Cat # DeltaV
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
@@ -128,6 +128,8 @@
     tags:
     - CannotSuicide
     - VimPilot
+  - type: StealTarget
+    stealGroup: AnimalNamedCat
   - type: LanguageKnowledge
     speaks:
     - Cat
@@ -143,8 +145,8 @@
   components:
   - type: NpcFactionMember
     factions:
-      - PetsNT
-      - Cat # DeltaV
+    - PetsNT
+    - Cat # DeltaV
   - type: Grammar
     attributes:
       proper: true
@@ -153,6 +155,8 @@
     tags:
     - CannotSuicide
     - VimPilot
+  - type: StealTarget
+    stealGroup: AnimalNamedCat
   - type: LanguageKnowledge
     speaks:
     - Cat
@@ -184,6 +188,8 @@
     tags:
     - CannotSuicide
     - VimPilot
+  - type: StealTarget
+    stealGroup: AnimalNamedCat
 
 - type: entity
   name: Bandito
@@ -202,7 +208,7 @@
 
 - type: entity
   name: Bingus
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, StripableInventoryBase]
   id: MobBingus
   description: Bingus my beloved...
   components:
@@ -227,12 +233,6 @@
   - type: Inventory
     speciesId: cat
     templateId: pet
-  - type: InventorySlots
-  - type: Strippable
-  - type: UserInterface
-    interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -261,11 +261,11 @@
     - CannotSuicide
     - VimPilot
   - type: StealTarget
-    stealGroup: AnimalBingus
+    stealGroup: AnimalNamedCat
 
 - type: entity
   name: McGriff
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, StripableInventoryBase]
   id: MobMcGriff
   description: This dog can tell something smells around here, and that something is CRIME!
   components:
@@ -290,12 +290,6 @@
   - type: Inventory
     speciesId: puppy
     templateId: pet
-  - type: InventorySlots
-  - type: Strippable
-  - type: UserInterface
-    interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -371,7 +365,7 @@
 
 - type: entity
   name: Walter
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, StripableInventoryBase]
   id: MobWalter
   description: He likes chems and treats. Walter.
   components:
@@ -396,12 +390,6 @@
   - type: Inventory
     speciesId: dog
     templateId: pet
-  - type: InventorySlots
-  - type: Strippable
-  - type: UserInterface
-    interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -612,6 +600,7 @@
     allowMovement: true
     name: ghost-role-information-hamlet-name
     description: ghost-role-information-hamlet-description
+    rules: ghost-role-information-nonantagonist-rules
   - type: GhostTakeoverAvailable
   - type: InteractionPopup
     successChance: 1
@@ -633,6 +622,10 @@
     - CannotSuicide
     - Hamster
     - VimPilot
+  - type: FlavorProfile
+    flavors:
+    - meaty
+    - sadness
   - type: LanguageKnowledge
     speaks:
     - Mouse
@@ -662,7 +655,7 @@
       path: /Audio/Animals/snake_hiss.ogg
   - type: NpcFactionMember
     factions:
-      - PetsNT
+    - PetsNT
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -755,6 +748,7 @@
     prob: 0.25
     name: ghost-role-information-willow-name
     description: ghost-role-information-willow-description
+    rules: ghost-role-information-nonantagonist-rules
   - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [ BoxingKangarooGear ]
@@ -836,17 +830,17 @@
   - type: GhostRole
     name: ghost-role-information-smile-name
     description: ghost-role-information-smile-description
-    rules: ghost-role-information-smile-rules
+    rules: ghost-role-information-nonantagonist-rules
   - type: Grammar
     attributes:
       proper: true
       gender: female
   - type: InnatePsionicPowers
     powersToAdd:
-      - XenoglossyPower
-      - TelepathyPower
-      - HealingWordPower
-      - PowerOverwhelming
+    - XenoglossyPower
+    - TelepathyPower
+    - HealingWordPower
+    - PowerOverwhelming
   - type: LanguageSpeaker
   - type: UniversalLanguageSpeaker
   - type: SlowOnDamage
@@ -885,7 +879,7 @@
         type: StorageBoundUserInterface
       enum.StoreUiKey.Key:
         type: StoreBoundUserInterface
-    
+
 - type: entity
   name: Pun Pun
   parent: MobMonkey
@@ -900,7 +894,6 @@
       amount: 3
     - id: DrinkTequilaBottleFull
       amount: 1
-  - type: Flashable
   - type: Tag
     tags:
     - CannotSuicide
@@ -927,15 +920,15 @@
   id: MobCrabAtmos
   description: The noble and stalwart defender of Atmosia. Viva!
   components:
-#  - type: GhostRole
-#    prob: 1
-#    makeSentient: true
-#    allowSpeech: true
-#    allowMovement: true
-#    name: ghost-role-information-tropico-name
-#    description: ghost-role-information-tropico-description
-#  - type: GhostTakeoverAvailable
-#  - type: Flashable
+  #  - type: GhostRole
+  #    prob: 1
+  #    makeSentient: true
+  #    allowSpeech: true
+  #    allowMovement: true
+  #    name: ghost-role-information-tropico-name
+  #    description: ghost-role-information-tropico-description
+  #    rules: ghost-role-information-nonantagonist-rules
+  #  - type: GhostTakeoverAvailable
   - type: Tag
     tags:
     - VimPilot
@@ -944,7 +937,7 @@
     attributes:
       proper: true
       gender: male
-#  - type: AlwaysRevolutionaryConvertible
+  #  - type: AlwaysRevolutionaryConvertible
   - type: StealTarget
     stealGroup: AnimalTropico
   - type: LanguageKnowledge

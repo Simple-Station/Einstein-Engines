@@ -8,8 +8,6 @@
     sprite: DeltaV/Clothing/Hands/Gloves/inspection.rsi
   - type: Clothing
     sprite: DeltaV/Clothing/Hands/Gloves/inspection.rsi
-  - type: GloveHeatResistance
-    heatResistance: 1400
   - type: Insulated
   - type: Fiber
     fiberMaterial: fibers-leather
@@ -27,8 +25,6 @@
     sprite: DeltaV/Clothing/Hands/Gloves/ryuzogauntlets.rsi
   - type: Clothing
     sprite: DeltaV/Clothing/Hands/Gloves/ryuzogauntlets.rsi
-  - type: GloveHeatResistance
-    heatResistance: 1400
   - type: Insulated
   - type: Fiber
     fiberMaterial: fibers-leather
@@ -60,4 +56,5 @@
       coefficients:
         Caustic: 0.95
   - type: TemperatureProtection
-    coefficient: 1
+    heatingCoefficient: 1
+    coolingCoefficient: 1

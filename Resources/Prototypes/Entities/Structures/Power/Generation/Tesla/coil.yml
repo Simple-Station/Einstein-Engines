@@ -61,7 +61,7 @@
     startingCharge: 0
   - type: BatteryDischarger
   - type: TeslaCoil
-    chargeFromLightning: 500000
+    chargeFromLightning: 2000000
   - type: LightningTarget
     priority: 4
     hitProbability: 0.5
@@ -105,7 +105,7 @@
               SheetSteel1:
                 min: 2
                 max: 4
-  #- type: GuideHelp #   To Do - add Tesla Guide
+  #- type: GuideHelp # TODO - add Tesla Guide
 
 - type: entity
   id: TeslaGroundingRod
@@ -192,5 +192,5 @@
               SheetSteel1:
                 min: 2
                 max: 4
-  #- type: GuideHelp #   To Do - add Tesla Guide
+  #- type: GuideHelp # TODO - add Tesla Guide
 

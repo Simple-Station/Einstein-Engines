@@ -123,7 +123,7 @@
   - type: PressureDamageChange # Lavaland Change: Pressure damage change for kinetic weapons
 
 - type: entity
-  parent: BaseWeaponCrusher
+  parent: [BaseWeaponCrusher, BaseSecurityCargoContraband]
   id: WeaponCrusher
   components:
   - type: Tag
@@ -170,9 +170,6 @@
   - type: Item
     size: Ginormous
   - type: DisarmMalus
-  - type: Tool
-    qualities:
-      - Prying
   - type: Prying
   # Lavaland Change Start
   - type: MeleeRequiresWield
@@ -188,7 +185,7 @@
         Slash: 11
 
 - type: entity
-  parent: BaseWeaponCrusher
+  parent: [ BaseWeaponCrusher, BaseSecurityCargoContraband]
   id: WeaponCrusherDagger
   name: crusher dagger
   description: A scaled down version of a proto-kinetic crusher. Uses kinetic energy to vibrate the blade at high speeds.
@@ -220,7 +217,7 @@
 
 # Like a crusher... but better
 - type: entity
-  parent: WeaponCrusher
+  parent: [ WeaponCrusher, BaseSecurityCargoContraband]
   id: WeaponCrusherGlaive
   name: crusher glaive
   description: An early design of the proto-kinetic accelerator, in glaive form.

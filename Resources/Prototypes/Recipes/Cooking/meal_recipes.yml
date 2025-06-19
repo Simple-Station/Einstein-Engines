@@ -6,6 +6,24 @@
   solids:
     FoodDoughSlice: 1 # one third of a standard bread dough recipe
 
+#Bagels
+- type: microwaveMealRecipe
+  id: RecipeBagel
+  name: bagel recipe
+  result: FoodBagel
+  time: 5
+  solids:
+    FoodDoughRope: 1 # created by rolling a dough slice.
+
+- type: microwaveMealRecipe
+  id: RecipeBagelPoppy
+  name: poppyseed bagel recipe
+  result: FoodBagelPoppy
+  time: 5
+  solids:
+    FoodDoughRope: 1
+    PoppySeeds: 1
+
 #Burgers
 
 - type: microwaveMealRecipe
@@ -1731,6 +1749,14 @@
     FoodAmbrosiaVulgaris: 1
 
 # NOT ACTUAL FOOD
+
+- type: microwaveMealRecipe
+  id: RecipeDriedTeaLeaves
+  name: dried tea leaves recipe
+  result: LeavesTeaDried
+  time: 10
+  solids:
+    LeavesTea: 1
 
 - type: microwaveMealRecipe
   id: RecipeDriedTobacco

@@ -4,15 +4,15 @@
   description: job-description-engineer
   playTimeTracker: JobStationEngineer
   requirements:
-    - !type:CharacterDepartmentTimeRequirement
-      department: Engineering
-      min: 14400 #4 hrs
-    - !type:CharacterEmployerRequirement
-      employers:
-      - HephaestusIndustries
-      - ZavodskoiInterstellar
-      - EinsteinEngines
-      - NanoTrasen
+  - !type:CharacterDepartmentTimeRequirement
+    department: Engineering
+    min: 14400 #4 hrs
+  - !type:CharacterEmployerRequirement
+    employers:
+    - HephaestusIndustries
+    - ZavodskoiInterstellar
+    - EinsteinEngines
+    - NanoTrasen
   startingGear: StationEngineerGear
   icon: "JobIconStationEngineer"
   supervisors: job-supervisors-ce
@@ -29,19 +29,16 @@
   - StationEngineerPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitEngineering
-    back: ClothingBackpackEngineeringFilled
+    back: ClothingBackpackEngineering
     shoes: ClothingShoesBootsWork
     id: EngineerPDA
     eyes: ClothingEyesGlassesMeson
     belt: ClothingBeltUtilityEngineering
     ears: ClothingHeadsetEngineering
-  innerClothingSkirt: ClothingUniformJumpskirtEngineering
-  satchel: ClothingBackpackSatchelEngineeringFilled
-  duffelbag: ClothingBackpackDuffelEngineeringFilled
 
 - type: startingGear
   id: StationEngineerPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitEngineering
     head: ClothingHeadEnvirohelmEngineering

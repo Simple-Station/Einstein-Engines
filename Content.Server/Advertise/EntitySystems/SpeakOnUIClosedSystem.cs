@@ -1,8 +1,7 @@
 using Content.Server.Advertise.Components;
 using Content.Server.Chat.Systems;
-using Content.Server.UserInterface;
-using Content.Shared.Advertise;
 using Content.Shared.Chat;
+using Content.Shared.Dataset;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using ActivatableUIComponent = Content.Shared.UserInterface.ActivatableUIComponent;
@@ -40,10 +39,10 @@ public sealed partial class SpeakOnUIClosedSystem : EntitySystem
         if (!entity.Comp.Enabled)
             return false;
 
-        if (!_prototypeManager.TryIndex(entity.Comp.Pack, out MessagePackPrototype? messagePack))
+        if (!_prototypeManager.TryIndex(entity.Comp.Pack, out var messagePack))
             return false;
 
-        var message = Loc.GetString(_random.Pick(messagePack.Messages), ("name", Name(entity)));
+        var message = Loc.GetString(_random.Pick(messagePack.Values), ("name", Name(entity)));
         _chat.TrySendInGameICMessage(entity, message, InGameICChatType.Speak, true);
         entity.Comp.Flag = false;
         return true;

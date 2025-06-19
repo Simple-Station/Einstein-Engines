@@ -39,7 +39,7 @@
 
 - type: entity
   name: captain's rubber stamp
-  parent: RubberStampBase
+  parent: [RubberStampBase, BaseCommandContraband]
   id: RubberStampCaptain
   suffix: DO NOT MAP
   components:
@@ -51,7 +51,7 @@
     state: stamp-cap
 
 - type: entity
-  name: CentCom rubber stamp
+  name: CentComm rubber stamp
   parent: RubberStampBase
   id: RubberStampCentcom
   suffix: DO NOT MAP
@@ -77,6 +77,19 @@
     state: stamp-chaplain
 
 - type: entity
+  name: lawyer's rubber stamp
+  parent: RubberStampBase
+  id: RubberStampLawyer
+  suffix: DO NOT MAP
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-lawyer
+    stampedColor: "#233D57"
+    stampState: "paper_stamp-lawyer"
+  - type: Sprite
+    state: stamp-lawyer
+
+- type: entity
   name: clown's rubber stamp
   parent: RubberStampBase
   id: RubberStampClown
@@ -94,7 +107,7 @@
 
 - type: entity
   name: chief engineer's rubber stamp
-  parent: RubberStampBase
+  parent: [RubberStampBase, BaseCommandContraband]
   id: RubberStampCE
   suffix: DO NOT MAP
   components:
@@ -107,7 +120,7 @@
 
 - type: entity
   name: chief medical officer's rubber stamp
-  parent: RubberStampBase
+  parent: [RubberStampBase, BaseCommandContraband]
   id: RubberStampCMO
   suffix: DO NOT MAP
   components:
@@ -120,7 +133,7 @@
 
 - type: entity
   name: head of personnel's rubber stamp
-  parent: RubberStampBase
+  parent: [RubberStampBase, BaseCommandContraband]
   id: RubberStampHop
   suffix: DO NOT MAP
   components:
@@ -133,7 +146,7 @@
 
 - type: entity
   name: head of security's rubber stamp
-  parent: RubberStampBase
+  parent: [RubberStampBase, BaseCommandContraband]
   id: RubberStampHos
   suffix: DO NOT MAP
   components:
@@ -159,30 +172,30 @@
     state: stamp-mime
 
 - type: entity
-  name: logistics officer's rubber stamp # DeltaV - Logistics Department replacing Cargo
-  parent: RubberStampBase
+  name: logistics officer's rubber stamp
+  parent: [RubberStampBase, BaseCommandContraband]
   id: RubberStampQm
   suffix: DO NOT MAP
   components:
-    - type: Stamp
-      stampedName: stamp-component-stamped-name-qm
-      stampedColor: "#a23e3e"
-      stampState: "paper_stamp-qm"
-    - type: Sprite
-      state: stamp-qm
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-qm
+    stampedColor: "#a23e3e"
+    stampState: "paper_stamp-qm"
+  - type: Sprite
+    state: stamp-qm
 
 - type: entity
-  name: mystagogue's rubber stamp # DeltaV - Epistemics Department replacing Science
-  parent: RubberStampBase
+  name: mystagogue's rubber stamp
+  parent: [RubberStampBase, BaseCommandContraband]
   id: RubberStampRd
   suffix: DO NOT MAP
   components:
-    - type: Stamp
-      stampedName: stamp-component-stamped-name-rd
-      stampedColor: "#1f66a0"
-      stampState: "paper_stamp-rd"
-    - type: Sprite
-      state: stamp-rd
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-rd
+    stampedColor: "#1f66a0"
+    stampState: "paper_stamp-rd"
+  - type: Sprite
+    state: stamp-rd
 
 - type: entity
   name: trader's rubber stamp
@@ -198,7 +211,7 @@
 
 - type: entity
   name: syndicate rubber stamp
-  parent: RubberStampBase
+  parent: [RubberStampBase, BaseSyndicateContraband]
   id: RubberStampSyndicate
   suffix: DO NOT MAP
   components:
@@ -211,7 +224,7 @@
 
 - type: entity
   name: warden's rubber stamp
-  parent: RubberStampBase
+  parent: [RubberStampBase, BaseRestrictedContraband]
   id: RubberStampWarden
   suffix: DO NOT MAP
   components:
@@ -248,13 +261,26 @@
 
 - type: entity
   name: detective's rubber stamp
-  parent: RubberStampBase
+  parent: [RubberStampBase, BaseRestrictedContraband]
   id: RubberStampDetective
   suffix: DO NOT MAP
   components:
   - type: Stamp
     stampedName: stamp-component-stamped-name-detective
-    stampedColor: "#FC0A0A"
+    stampedColor: "#754d36"
     stampState: "paper_stamp-detective"
   - type: Sprite
     state: stamp-detective
+
+- type: entity
+  name: greytide's rubber stamp
+  parent: RubberStampBase
+  id: RubberStampGreytide
+  description: A rubber stamp for stamping important documents. The tide washes over you, just looking at it...
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-greytide
+    stampedColor: "#323232"
+    stampState: "paper_stamp-greytide"
+  - type: Sprite
+    state: stamp-greytide

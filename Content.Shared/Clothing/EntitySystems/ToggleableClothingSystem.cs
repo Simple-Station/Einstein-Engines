@@ -106,7 +106,7 @@ public sealed class ToggleableClothingSystem : EntitySystem
         if (comp.StripDelay == null)
             return;
 
-        var (time, stealth) = _strippable.GetStripTimeModifiers(user, wearer, comp.StripDelay.Value);
+        var (time, stealth) = _strippable.GetStripTimeModifiers(user, wearer, toggleable, comp.StripDelay.Value);
 
         bool hidden = stealth == ThievingStealth.Hidden;
 

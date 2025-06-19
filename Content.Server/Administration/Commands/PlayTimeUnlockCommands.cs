@@ -1,12 +1,12 @@
 using System.Linq;
 using Content.Server.Players.PlayTimeTracking;
+using Content.Server.Roles;
 using Content.Shared.Administration;
 using Content.Shared.Customization.Systems;
 using Content.Shared.Roles;
 using Robust.Server.Player;
 using Robust.Shared.Console;
 using Robust.Shared.Prototypes;
-
 
 namespace Content.Server.Administration.Commands;
 
@@ -16,6 +16,7 @@ public sealed class PlayTimeUnlockCommands : IConsoleCommand
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly IEntityManager _entManager = default!;
 
     public string Command => "playtime_unlock";
     public string Description => Loc.GetString("cmd-playtime_unlock-desc");
@@ -41,26 +42,28 @@ public sealed class PlayTimeUnlockCommands : IConsoleCommand
         }
 
         var jobName = args[1];
-        var jobExists = _prototypeManager.TryIndex<JobPrototype>(jobName, out var job);
 
-        if (!jobExists)
+        if (!_prototypeManager.TryIndex<JobPrototype>(jobName, out var job))
         {
             shell.WriteError(Loc.GetString("cmd-playtime_unlock-error-job", ("invalidJob", jobName)));
             return;
         }
 
-        if (job == null || job.Requirements == null)
+        var roleSystem = _entManager.System<RoleSystem>();
+        var requirements = roleSystem.GetJobRequirement(job);
+
+        if (requirements == null)
         {
             shell.WriteError(Loc.GetString("cmd-playtime_unlock-error-no-requirements"));
             return;
         }
 
-        var jobPlaytimeRequirements = job.Requirements
+        var jobPlaytimeRequirements = requirements
             .Where(r => r is CharacterPlaytimeRequirement)
             .Cast<CharacterPlaytimeRequirement>()
             .ToList();
 
-        var jobDepartmentRequirements = job.Requirements
+        var jobDepartmentRequirements = requirements
             .Where(r => r is CharacterDepartmentTimeRequirement)
             .Cast<CharacterDepartmentTimeRequirement>()
             .ToList();

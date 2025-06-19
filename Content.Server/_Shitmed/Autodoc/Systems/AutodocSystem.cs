@@ -42,7 +42,7 @@ public sealed class AutodocSystem : SharedAutodocSystem
     {
         // incase they are using nitrous, disconnect it so they can get woken up later on
         if (TryComp<InternalsComponent>(patient, out var internals) && _internals.AreInternalsWorking(patient, internals))
-            _internals.DisconnectTank(internals);
+            _internals.DisconnectTank((patient, internals));
 
         _sleepingSystem.TryWaking(patient);
     }

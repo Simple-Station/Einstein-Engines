@@ -17,8 +17,13 @@ namespace Content.Shared.Clothing.Components;
 public sealed partial class ClothingComponent : Component
 {
     [DataField]
-    [Access(typeof(ClothingSystem), typeof(InventorySystem), Other = AccessPermissions.ReadExecute)] // TODO remove execute permissions.
     public Dictionary<string, List<PrototypeLayerData>> ClothingVisuals = new();
+
+    /// <summary>
+    /// The name of the layer in the user that this piece of clothing will map to
+    /// </summary>
+    [DataField]
+    public string? MappedLayer;
 
     [DataField]
     public bool QuickEquip = true;
@@ -45,8 +50,8 @@ public sealed partial class ClothingComponent : Component
     public string? EquippedPrefix;
 
     /// <summary>
-    ///     Allows the equipped state to be directly overwritten.
-    ///     useful when prototyping INNERCLOTHING items into OUTERCLOTHING items without duplicating/modifying RSIs etc.
+    /// Allows the equipped state to be directly overwritten.
+    /// useful when prototyping INNERCLOTHING items into OUTERCLOTHING items without duplicating/modifying RSIs etc.
     /// </summary>
     [Access(typeof(ClothingSystem))]
     [DataField]
@@ -55,17 +60,8 @@ public sealed partial class ClothingComponent : Component
     [DataField]
     public string? Sprite;
 
-    [DataField]
-    public ClothingMask MaleMask = ClothingMask.UniformFull;
-
-    [DataField]
-    public ClothingMask FemaleMask = ClothingMask.UniformFull;
-
-    [DataField]
-    public ClothingMask UnisexMask = ClothingMask.UniformFull;
-
     /// <summary>
-    ///     Name of the inventory slot the clothing is in.
+    /// Name of the inventory slot the clothing is in.
     /// </summary>
     public string? InSlot;
 
@@ -74,6 +70,13 @@ public sealed partial class ClothingComponent : Component
 
     [DataField]
     public TimeSpan UnequipDelay = TimeSpan.Zero;
+
+    /// <summary>
+    /// Offset for the strip time for an entity with this component.
+    /// Only applied when it is being equipped or removed by another player.
+    /// </summary>
+    [DataField]
+    public TimeSpan StripDelay = TimeSpan.Zero;
 
     /// <summary>
     ///     These functions are called when an entity equips an item with this component.

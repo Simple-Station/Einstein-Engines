@@ -13,7 +13,7 @@
     tags:
       - StationMapElectronics
   - type: StaticPrice
-    price: 15
+    price: 30
 
 - type: entity
   parent: BaseElectronics
@@ -28,4 +28,4 @@
     state: airalarm_electronics
   - type: Tag
     tags:
-      - DroneElectronics
+    - DroneElectronics
