@@ -18,7 +18,7 @@ using Content.Shared.NPC.Systems;
 
 namespace Content.Server.Abilities.Psionics;
 
-public sealed class PsionicAbilitiesSystem : EntitySystem
+public sealed partial class PsionicAbilitiesSystem : EntitySystem
 {
     [Dependency] private readonly IComponentFactory _componentFactory = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -37,21 +37,7 @@ public sealed class PsionicAbilitiesSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<InnatePsionicPowersComponent, MapInitEvent>(InnatePowerStartup);
         SubscribeLocalEvent<PsionicComponent, ComponentShutdown>(OnPsionicShutdown);
-    }
-
-    /// <summary>
-    ///     Special use-case for a InnatePsionicPowers, which allows an entity to start with any number of Psionic Powers.
-    /// </summary>
-    private void InnatePowerStartup(EntityUid uid, InnatePsionicPowersComponent comp, MapInitEvent args)
-    {
-        // Any entity with InnatePowers should also be psionic, but in case they aren't already...
-        EnsureComp<PsionicComponent>(uid, out var psionic);
-
-        foreach (var proto in comp.PowersToAdd)
-            if (!psionic.ActivePowers.Contains(_prototypeManager.Index(proto)))
-                InitializePsionicPower(uid, _prototypeManager.Index(proto), psionic, false);
     }
 
     private void OnPsionicShutdown(EntityUid uid, PsionicComponent component, ComponentShutdown args)
@@ -80,7 +66,7 @@ public sealed class PsionicAbilitiesSystem : EntitySystem
     ///     Pretty straightforward, adds a random psionic power to a given Entity. If that Entity is not already Psychic, it will be made one.
     ///     If an entity already has all possible powers, this will not add any new ones.
     /// </summary>
-    public void AddRandomPsionicPower(EntityUid uid, bool forced = false)
+    public void AddRandomPsionicPower(EntityUid uid)
     {
         // We need to EnsureComp here to make sure that we aren't iterating over a component that:
         // A: Isn't fully initialized
@@ -88,8 +74,6 @@ public sealed class PsionicAbilitiesSystem : EntitySystem
         // Imagine my surprise when I found out Resolve doesn't check for that.
         // TODO: This EnsureComp will be 1984'd in a separate PR, when I rework how you get psionics in the first place.
         EnsureComp<PsionicComponent>(uid, out var psionic);
-        if (!psionic.Roller && !forced)
-            return;
 
         // Since this can be called by systems other than the original roundstart initialization, we need to check that the available powers list
         // doesn't contain duplicates of powers we already have.
@@ -201,7 +185,6 @@ public sealed class PsionicAbilitiesSystem : EntitySystem
 
         KillFamiliars(psionic);
         RemComp<PsionicComponent>(uid);
-        RemComp<InnatePsionicPowersComponent>(uid);
 
         var ev = new OnMindbreakEvent();
         RaiseLocalEvent(uid, ref ev);
