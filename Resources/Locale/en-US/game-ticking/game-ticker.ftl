@@ -25,7 +25,7 @@ game-ticker-get-info-preround-text = Enter [color=red]Hullrot[/color]
                             >[color=yellow]{$desc}[/color]
 game-ticker-no-map-selected = [color=yellow]Map not yet selected![/color]
 game-ticker-player-no-jobs-available-when-joining = When attempting to join to the game, no jobs were available.
-game-ticker-welcome-to-the-station = Good luck.
+game-ticker-welcome-to-the-station = The Hadal Tide has relented enough for operations to resume. Check each seal three times true so that Death does not come for you.
 
 # Displayed in chat to admins when a player joins
 player-join-message = Player {$name} joined.
