@@ -26,6 +26,8 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-mining
+        - type: VesselDescription
+          description: Held together by hopes and dreams. Spacers often say a prayer before undocking a Termite.
         - type: StationJobs
           overflowJobs: []
           availableJobs:

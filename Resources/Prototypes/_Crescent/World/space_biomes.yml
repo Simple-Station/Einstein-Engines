@@ -6,11 +6,6 @@
   parallax: AbyssParallax
 
 #example
-- type: crescentFactionBiome
-  id: test
-  name: Test zone
-  swapDuration: 2
-  parallax: Sky
 
 - type: entity
   id: TestBiomeSource
@@ -21,13 +16,14 @@
     swapDistance: 1000
     priority: 1500
 
-#imperial
-
 - type: crescentFactionBiome
-  id: imperialbiome
-  name: Low Imperial Orbit
+  id: test
+  name: Test zone
   swapDuration: 2
   parallax: Sky
+  description: A zone of ample tests.
+
+#imperial
 
 - type: entity
   id: ImperialBiomeSource
@@ -37,6 +33,12 @@
     biome: imperialbiome
     swapDistance: 750
     priority: 2550
+
+- type: crescentFactionBiome
+  id: imperialbiome
+  name: Low Imperial Orbit
+  swapDuration: 2
+  parallax: Sky
 
 #hunter
 
@@ -190,6 +192,7 @@
   name: The Fracture
   swapDuration: 2
   parallax: Rupture
+  description: "The remnants of Taypan I."
 
 
 # breach
