@@ -13,10 +13,12 @@ public sealed class NewVesselEnteredMessage : EntityEventArgs
 {
     public string Name = "";
     public string Designation = "";
+    public string Description = "";
 
-    public NewVesselEnteredMessage(string name, string designation)
+    public NewVesselEnteredMessage(string name, string designation, string description)
     {
         Name = name;
         Designation = designation;
+        Description = description;
     }
 }

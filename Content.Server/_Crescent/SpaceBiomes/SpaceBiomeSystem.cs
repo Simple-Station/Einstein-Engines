@@ -119,11 +119,16 @@ public sealed class SpaceBiomeSystem : EntitySystem
             if (!TryComp<VesselDesignationComponent>(parentStation, out var desig) || !TryComp<StationNameSetupComponent>(parentStation, out var setup))
                 return;
 
+            var description = ""; //fallback if shuttle/station has no description
+
+            if (TryComp<VesselDescriptionComponent>(parentStation, out var desc)) //if this succeeds, we have a description! if it fails,
+                description = desc.Description;                                   //the component is missing and we just keep ""
+
             var name = setup.StationNameTemplate.Replace("{1}", "").Trim();
             // This is testing if we just initialized because we don't want to send the message on spawn
             if (_timing.CurTick.Value - MetaData(uid).CreationTick.Value > 500)
             {
-                NewVesselEnteredMessage message = new NewVesselEnteredMessage(name, Loc.GetString(desig.Designation));
+                NewVesselEnteredMessage message = new NewVesselEnteredMessage(name, Loc.GetString(desig.Designation), description);
                 RaiseNetworkEvent(message, actor.PlayerSession);
             }
         }
