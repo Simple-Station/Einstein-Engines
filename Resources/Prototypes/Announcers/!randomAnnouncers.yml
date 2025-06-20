@@ -1,7 +1,8 @@
 - type: weightedRandom
   id: RandomAnnouncers
   weights:
-    Intern: 1
+    HullrotAnnouncer: 1
+    Intern: 0
     MedBot: 0
     Michael: 0
     NEIL: 0
