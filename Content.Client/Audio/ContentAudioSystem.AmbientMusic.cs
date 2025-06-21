@@ -36,24 +36,20 @@ public sealed partial class ContentAudioSystem
     [Dependency] private readonly RulesSystem _rules = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly CombatModeSystem _combatModeSystem = default!; //CLIENT ONE. WHY ARE THERE 3???
-
-    private readonly TimeSpan _minAmbienceTime = TimeSpan.FromSeconds(30);
-    private readonly TimeSpan _maxAmbienceTime = TimeSpan.FromSeconds(60);
+    [Dependency] private readonly IPrototypeManager _protMan = default!;
 
     private const float AmbientMusicFadeTime = 10f;
     private static float _volumeSlider;
-
-    // Don't need to worry about this being serializable or pauseable as it doesn't affect the sim.
-    private TimeSpan _nextAudio;
-
     private EntityUid? _ambientMusicStream;
     private AmbientMusicPrototype? _musicProto;
 
     // Need to keep track of the last biome we were in to re-play its music when we're out of combat mode
-    private string? _lastBiome;
+    private SpaceBiomePrototype? _lastBiome;
 
     // Because ToggleCombatActionEvent triggers 7 times for some reason, we keep track of the last state as to not play combat music 7 times in a row.
     private bool _lastCombatState = false;
+
+    private List<AmbientMusicPrototype>? _musicTracks;
 
     /// <summary>
     /// If we find a better ambient music proto can we interrupt this one.
@@ -77,50 +73,55 @@ public sealed partial class ContentAudioSystem
         Subs.CVar(_configManager, CCVars.AmbientMusicVolume, AmbienceCVarChanged, true);
         _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("audio.ambience");
 
-        // Reset audio
-        _nextAudio = TimeSpan.MaxValue;
+        // Setup ambient tracks
+        _musicTracks = GetTracks();
 
-        SetupAmbientSounds();
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnProtoReload);
         _state.OnStateChanged += OnStateChange;
         // On round end summary OR lobby cut audio.
         SubscribeNetworkEvent<RoundEndMessageEvent>(OnRoundEndMessage);
     }
 
+
+    //FADEIN AND FADEOUT MIGHT INTERFERE?
     private void OnBiomeChange(SpaceBiomeSwapMessage ev)
     {
-        _sawmill.Debug($"went to biome {ev.Biome}");
-        /*
+        //_sawmill.Debug($"went to biome {ev.Biome}");
+
         SpaceBiomePrototype biome = _protMan.Index<SpaceBiomePrototype>(ev.Biome); //get the biome prototype
+        _lastBiome = biome; //save biome in case we are in combat mode
 
-        _biome = biome; //save biome in case we are in combat mode
         if (_combatModeSystem.IsInCombatMode()) //we don't want to change music if we are in combat mode right now
-            return
-        
-        fadeout(current music)
+            return;
 
-        wait for AmbientMusicSwapTime
+        FadeOut(_ambientMusicStream);
+        float volume = 10; //default value in case we use the fallback track
 
-        list = list of the ambient music tracks.  grab this from ambient_music.yml. //each ambient music's id MUST MATCH the biome id.
+        if (_musicTracks == null)
+            return;
 
-        bool fallback = true; 
-        for each (track in list)
+        foreach (var ambient in _musicTracks)
         {
-            if (biome.id == track.id)
+            if (biome.ID == ambient.ID) //if we find the biome that's matching the ambient's ID, we play that track!
             {
-                ambientMusicStream = PlayGlobal( that track )
-                fallback = false;
-            } 
+                _musicProto = ambient;
+                volume = ambient.Sound.Params.Volume;
+                break;
+            }
         }
 
-        activate(ambientMusicStream)
+        if (_musicProto == null) //THIS SHOULD CHANGE TO THE FALLBACK TRACK!!!!
+            return;
 
-        if (fallback)
-            ambientMusicStream = off
+        var strim = _audio.PlayGlobal(
+        _musicProto.ID,
+        Filter.Local(),
+        false,
+        AudioParams.Default.WithVolume(_musicProto.Sound.Params.Volume + _volumeSlider))!;
 
+        _ambientMusicStream = strim.Value.Entity; //THIS SHOULD PLAY THE TRACK!!
 
-        return
-        */
+        FadeIn(_ambientMusicStream, strim.Value.Component, AmbientMusicFadeTime);
     }
 
     private void OnCombatModeToggle(ToggleCombatActionEvent ev) //CombatModeOnMessage ev, MUST INCLUDE FACTION!!!
@@ -134,11 +135,11 @@ public sealed partial class ContentAudioSystem
 
         if (currentCombatState) //true = we toggled combat ON. 
         {
-            _sawmill.Debug("combat mode turned ON");
+            //_sawmill.Debug("combat mode turned ON");
         }
         else                    //false = we toggled combat OFF
         {
-            _sawmill.Debug("combat mode turned OFF");
+            //_sawmill.Debug("combat mode turned OFF");
         }
 
         /*
@@ -188,6 +189,25 @@ public sealed partial class ContentAudioSystem
     //TODO: DisableAmbientMusic
     //TODO: EnableAmbientMusic
 
+    private List<AmbientMusicPrototype> GetTracks()
+    {
+        List<AmbientMusicPrototype> musictracks = new List<AmbientMusicPrototype>();
+
+        bool fallback = true;
+        foreach (var ambience in _proto.EnumeratePrototypes<AmbientMusicPrototype>())
+        {
+            _sawmill.Debug($"logged ambient sound {ambience.ID}");
+            musictracks.Add(ambience);
+            fallback = false;
+        }
+
+        if (fallback) //if we somehow FOUND NO MUSIC TRACKS
+        {
+            _sawmill.Debug($"NO MUSIC FOUND, NEED FALLBACK!!!");
+        }
+
+        return musictracks;
+    }
     private void AmbienceCVarChanged(float obj)
     {
         _volumeSlider = SharedAudioSystem.GainToVolume(obj);
@@ -206,38 +226,42 @@ public sealed partial class ContentAudioSystem
 
     private void OnProtoReload(PrototypesReloadedEventArgs obj)
     {
-        if (obj.WasModified<AmbientMusicPrototype>() || obj.WasModified<RulesPrototype>())
-            SetupAmbientSounds();
+        if (obj.WasModified<AmbientMusicPrototype>())
+            _musicTracks = GetTracks();
     }
-
+    ///<summary>
+    /// This function handles the change from lobby to gameplay.
+    ///</summary>
     private void OnStateChange(StateChangedEventArgs obj)
     {
         if (obj.NewState is not GameplayState)
             return;
-
-        // If they go to game then reset the ambience timer.
-        _nextAudio = _timing.CurTime + _random.Next(_minAmbienceTime, _maxAmbienceTime);
     }
 
-    private void SetupAmbientSounds()
+
+    ///<summary>
+    /// This function counts all ambient musics we have in ambient_music.yml and returns that list.
+    /// This should only run once at roundstart.
+    ///</summary>
+    /*private void SetupAmbientSounds()
     {
         _ambientSounds.Clear();
         foreach (var ambience in _proto.EnumeratePrototypes<AmbientMusicPrototype>())
         {
+            _sawmill.Debug($"logged ambient sound {ambience.ID}");
             var tracks = _ambientSounds.GetOrNew(ambience.ID);
             RefreshTracks(ambience.Sound, tracks, null);
             _random.Shuffle(tracks);
         }
-    }
+    }*/
 
     private void OnRoundEndMessage(RoundEndMessageEvent ev)
     {
         // If scoreboard shows then just stop the music
         _ambientMusicStream = _audio.Stop(_ambientMusicStream);
-        _nextAudio = TimeSpan.FromMinutes(3);
     }
 
-    private void RefreshTracks(SoundSpecifier sound, List<ResPath> tracks, ResPath? lastPlayed)
+    /*private void RefreshTracks(SoundSpecifier sound, List<ResPath> tracks, ResPath? lastPlayed)
     {
         DebugTools.Assert(tracks.Count == 0);
 
@@ -260,9 +284,11 @@ public sealed partial class ContentAudioSystem
         {
             (tracks[0], tracks[^1]) = (tracks[^1], tracks[0]);
         }
-    }
-
-    private void UpdateAmbientMusic()
+    }*/
+    ///<summary>
+    /// This function runs every frame, and handles changing audio. This fucking sucks and I'm refactoring it. -.2
+    ///</summary>
+    /*private void UpdateAmbientMusic()
     {
         // Update still runs in lobby so just ignore it.
         if (_state.CurrentState is not GameplayState)
@@ -370,7 +396,7 @@ public sealed partial class ContentAudioSystem
 
         _sawmill.Warning($"Unable to find fallback ambience track");
         return null;
-    }
+    }*/
 
     /// <summary>
     /// Fades out the current ambient music temporarily.

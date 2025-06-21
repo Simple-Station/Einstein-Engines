@@ -1,5 +1,5 @@
 - type: ambientMusic
-  id: CombatMode
+  id: combatmode
   sound:
     collection: AmbienceCombatMode
   rules: InCombatMode
@@ -38,7 +38,7 @@
 #imperial
 
 - type: ambientMusic
-  id: ImperialBiome
+  id: imperialbiome
   sound:
     collection: ImperialBiome
   rules: InImperialAirspace
@@ -59,7 +59,7 @@
 #hunter
 
 - type: ambientMusic
-  id: HunterBiome
+  id: hunterbiome
   sound:
     collection: HunterBiome
   rules: InHunterAirspace
@@ -80,7 +80,7 @@
 #syndie
 
 - type: ambientMusic
-  id: SyndieBiome
+  id: syndiebiome
   sound:
     collection: SyndicateBiome
   rules: InSyndicateAirspace
@@ -101,7 +101,7 @@
 #corpie
 
 - type: ambientMusic
-  id: CorpieBiome
+  id: corpiebiome
   sound:
     collection: CorpieBiome
   rules: InCorpieAirspace
@@ -122,7 +122,7 @@
 #wilds
 
 - type: ambientMusic
-  id: WildBiome
+  id: wildbiome
   sound:
     collection: WildBiome
   rules: InWildAirspace
@@ -143,7 +143,7 @@
 #deepwilds
 
 - type: ambientMusic
-  id: DeepwildBiome
+  id: deepwildbiome
   sound:
     collection: WildBiome #//this should be deepwilds!
   rules: InDeepwildAirspace
@@ -160,6 +160,19 @@
   id: DeepwildBiome
   files:
    - /Audio/_Crescent/the_deepwilds.ogg
+
+#fallback
+
+- type: ambientMusic
+  id: fallback
+  sound:
+    collection: Fallback
+  fadeIn: true
+
+- type: soundCollection
+  id: Fallback
+  files:
+   - /Audio/_Crescent/travesty.ogg
 
 #fracture / port vladzena
 
