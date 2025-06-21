@@ -47,7 +47,9 @@
     slots:
     - Back
   - type: Item
-    size: Large
+    size: Huge
+    shape:
+    - 0,0,7,2
   - type: GunRequiresWield
   - type: Gun
     selectedMode: SemiAuto
@@ -126,7 +128,7 @@
       - state: base
         map: ["enum.GunVisualLayers.Base"]
   - type: Item
-    size: Small
+    size: Large
     sprite: _Crescent/Objects/Weapons/Guns/m320.rsi
   - type: ItemSlots
     slots:
