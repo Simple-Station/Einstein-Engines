@@ -163,22 +163,22 @@
 
 #fracture / port vladzena
 
-- type: ambientMusic
-  id: FractureBiome
-  sound:
-    collection: FractureBiome
-  rules: InLeagueAirspace
-  priority: 2000
-  fadeIn: true
+# - type: ambientMusic
+#   id: FractureBiome
+#   sound:
+#     collection: FractureBiome
+#   rules: InLeagueAirspace
+#   priority: 2000
+#   fadeIn: true
 
-- type: rules
-  id: InLeagueAirspace
-  rules:
-    - !type:InSpaceBiomeRule
-      biome: hadalbiome
+# - type: rules
+#   id: InLeagueAirspace
+#   rules:
+#     - !type:InSpaceBiomeRule
+#       biome: hadalbiome
 
-- type: soundCollection
-  id: FractureBiome
-  files:
-   - /Audio/_Crescent/travesty.ogg
+# - type: soundCollection
+#   id: FractureBiome
+#   files:
+#    - /Audio/_Crescent/travesty.ogg
 
