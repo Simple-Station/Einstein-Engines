@@ -145,7 +145,7 @@
 - type: ambientMusic
   id: DeepwildBiome
   sound:
-    collection: WildBiome
+    collection: WildBiome #//this should be deepwilds!
   rules: InDeepwildAirspace
   priority: 2000
   fadeIn: true
@@ -160,4 +160,25 @@
   id: DeepwildBiome
   files:
    - /Audio/_Crescent/the_deepwilds.ogg
+
+#fracture / port vladzena
+
+- type: ambientMusic
+  id: FractureBiome
+  sound:
+    collection: FractureBiome
+  rules: InLeagueAirspace
+  priority: 2000
+  fadeIn: true
+
+- type: rules
+  id: InLeagueAirspace
+  rules:
+    - !type:InSpaceBiomeRule
+      biome: hadalbiome
+
+- type: soundCollection
+  id: FractureBiome
+  files:
+   - /Audio/_Crescent/travesty.ogg
 

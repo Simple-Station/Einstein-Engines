@@ -1,9 +1,11 @@
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using Content.Client.Gameplay;
 using Content.Shared.Audio;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Random;
+using Robust.Client.Animations;
 using Robust.Client.GameObjects;
 using Robust.Client.Player;
 using Robust.Client.ResourceManagement;
@@ -199,10 +201,9 @@ public sealed partial class ContentAudioSystem
             _interruptable = false;
             return;
         }
-
         _interruptable = _musicProto.Interruptable;
         var tracks = _ambientSounds[_musicProto.ID];
-
+        _sawmill.Debug($"tracks = {tracks.Count}");
         var track = tracks[^1];
         tracks.RemoveAt(tracks.Count - 1);
 
@@ -226,6 +227,9 @@ public sealed partial class ContentAudioSystem
         }
     }
 
+    //<summary>
+    // This gathers all the ambient music prototypes, sorts them by priority, and then checks in priority order of priority for the first which has its rule true.
+    //</summary>
     private AmbientMusicPrototype? GetAmbience()
     {
         var player = _player.LocalEntity;
