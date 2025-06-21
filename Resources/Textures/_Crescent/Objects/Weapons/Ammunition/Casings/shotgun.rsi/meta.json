@@ -1,0 +1,71 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "",
+    "copyright": "Made by the Sector Crescent team for the Hullrot Project. All rights reserved. Do not modify, publish, use, relicense, or edit.",
+    "states": [
+        {
+            "name": "base"
+        },
+        {
+            "name": "base-spent"
+        },
+        {
+            "name": "beanbag"
+        },
+        {
+            "name": "beanbag-spent"
+        },
+        {
+            "name": "blank"
+        },
+        {
+            "name": "blank-spent"
+        },
+        {
+            "name": "lumen"
+        },
+        {
+            "name": "lumen-spent"
+        },
+        {
+            "name": "flare"
+        },
+        {
+            "name": "flare-spent"
+        },
+        {
+            "name": "improvised"
+        },
+        {
+            "name": "improvised-spent"
+        },
+        {
+            "name": "incendiary"
+        },
+        {
+            "name": "incendiary-spent"
+        },
+        {
+            "name": "practice"
+        },
+        {
+            "name": "practice-spent"
+        },
+        {
+            "name": "slug"
+        },
+        {
+            "name": "slug-spent"
+        },
+        {
+            "name": "depleted-uranium"
+        },
+        {
+            "name": "depleted-uranium-spent"
+        }
+    ]
+}
