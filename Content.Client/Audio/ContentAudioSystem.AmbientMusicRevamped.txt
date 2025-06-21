@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using Content.Client.Gameplay;
+using Content.Shared._Crescent.SpaceBiomes;
 using Content.Shared.Audio;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
@@ -45,6 +46,9 @@ public sealed partial class ContentAudioSystem
     private EntityUid? _ambientMusicStream;
     private AmbientMusicPrototype? _musicProto;
 
+    // Need to keep track of the last biome we were in to re-play its music when we're out of combat mode
+    private string? _Biome;
+
     /// <summary>
     /// If we find a better ambient music proto can we interrupt this one.
     /// </summary>
@@ -61,6 +65,11 @@ public sealed partial class ContentAudioSystem
 
     private void InitializeAmbientMusic()
     {
+
+        SubscribeNetworkEvent<SpaceBiomeSwapMessage>(OnBiomeChange);
+        //SubscribeLocalEvent<CombatModeActivated>(OnCombatModeOn);
+        //SubscribeLocalEvent<CombatModeDeactivated>(OnCombatModeOff);
+
         Subs.CVar(_configManager, CCVars.AmbientMusicVolume, AmbienceCVarChanged, true);
         _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("audio.ambience");
 
@@ -73,6 +82,89 @@ public sealed partial class ContentAudioSystem
         // On round end summary OR lobby cut audio.
         SubscribeNetworkEvent<RoundEndMessageEvent>(OnRoundEndMessage);
     }
+
+    private void OnBiomeChange(SpaceBiomeSwapMessage ev)
+    {
+        /*
+        if (we are in combat mode) //we don't want to change music if we are in combat mode right now
+            return
+        
+        fadeout(current music)
+
+        wait for AmbientMusicSwapTime
+
+        SpaceBiomePrototype biome = _protMan.Index<SpaceBiomePrototype>(ev.Biome); //get the biome prototype
+
+        list = list of the ambient music tracks.  grab this from ambient_music.yml. //each ambient music's id MUST MATCH the biome id.
+
+        bool fallback = true; 
+        for each (track in list)
+        {
+            if (biome.id == track.id)
+            {
+                ambientMusicStream = PlayGlobal( that track )
+                fallback = false;
+            } 
+        }
+
+        activate(ambientMusicStream)
+
+        if (fallback)
+            ambientMusicStream = off
+
+
+        return
+        */
+    }
+
+    private void OnCombatModeOn() //CombatModeOnMessage ev, MUST INCLUDE FACTION!!!
+    {
+        /*
+        forceStop(ambientMusicStream)
+
+        switch (CombatModeOnMessage.Faction)
+            case NCWL
+                AmbientMusicStream = PlayGlobal (ncwl track)
+            case DSM
+                ....
+            ...
+            case default
+                AmbientMusicStream = PlayGlobal (awakening.ogg)
+
+        activate(ambientMusicStream)
+
+        */
+    }
+
+    private void OnCombatModeOff() //CombatModeOffMessage ev
+    {
+        /*
+        forceStop(ambientMusicStream)
+
+        list = list of the ambient music tracks.  grab this from ambient_music.yml. //each ambient music's id MUST MATCH the biome id.
+
+
+        biome = lastBiome; //we kept track of this before returning in OnBiomeChange
+        bool fallback = true; 
+        for each (track in list)
+        {
+            if (biome.id == track.id)
+            {
+                ambientMusicStream = PlayGlobal( that track )
+                fallback = false;
+            } 
+        }
+
+        activate(ambientMusicStream)
+
+        if (fallback)
+            ambientMusicStream = off
+        */
+    }
+
+    //TODO: ForceAmbientMusic
+    //TODO: DisableAmbientMusic
+    //TODO: EnableAmbientMusic
 
     private void AmbienceCVarChanged(float obj)
     {
