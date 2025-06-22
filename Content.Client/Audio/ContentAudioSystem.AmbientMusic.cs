@@ -48,8 +48,8 @@ public sealed partial class ContentAudioSystem
     // Need to keep track of the last biome we were in to re-play its music when we're out of combat mode
     private SpaceBiomePrototype? _lastBiome;
 
-    // Need to keep track of how long the current track's been playing for to know when to play the next
-    private TimeSpan _trackTimeRemaining = TimeSpan.MaxValue;
+    // Every 5 minutes try to play a new track.
+    private TimeSpan _timeUntilNextAmbientTrack = TimeSpan.FromMinutes(5);
 
     private List<AmbientMusicPrototype>? _musicTracks;
 
@@ -66,10 +66,39 @@ public sealed partial class ContentAudioSystem
         // Setup tracks to pull from. Runs once.
         _musicTracks = GetTracks();
 
+        Timer.Spawn(_timeUntilNextAmbientTrack, () => ReplayAmbientMusic());
+
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnProtoReload);
         _state.OnStateChanged += OnStateChange;
         // On round end summary OR lobby cut audio.
         SubscribeNetworkEvent<RoundEndMessageEvent>(OnRoundEndMessage);
+    }
+    private void ReplayAmbientMusic() //this might fire midway through another track. need to fix that
+    {
+        bool? isDone = null;
+
+        if (TryComp(_ambientMusicStream, out AudioComponent? audioComp))
+        {
+            isDone = !audioComp.Playing;
+        }
+
+        if (isDone == true) //if it's not done, this just does nothing
+        {
+            if (_musicProto == null) //if we don't find any, we play the default track.
+            {
+                _musicProto = _proto.Index<AmbientMusicPrototype>("default");
+                _lastBiome = _proto.Index<SpaceBiomePrototype>("default");
+            }
+
+            SoundCollectionPrototype soundcol = _proto.Index<SoundCollectionPrototype>(_musicProto.ID);
+
+            string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
+
+            PlayMusicTrack(path, _musicProto.Sound.Params.Volume, true);
+
+            Timer.Spawn(_timeUntilNextAmbientTrack, () => ReplayAmbientMusic());
+        }
+
     }
 
     //ISSUE: WON'T REPLAY MUSIC AFTER IT ENDS. NEED TO FIX THAT
@@ -134,19 +163,14 @@ public sealed partial class ContentAudioSystem
         }
         else                    //false = we toggled combat OFF
         {
-            _sawmill.Debug("TURNING COMBAT MODE OFF");
             if (_lastBiome == null) //this should never happen still
             {
-                _sawmill.Debug("1: LASTBIOME IS NULL...");
-                if (_player.LocalSession != null) //THIS LITERALLY CANNOT BE NULL!!
+                if (_player.LocalSession != null) //THIS LITERALLY CANNOT BE NULL!! BUT IT COMPLAINS IF I DONT PUT THIS HERE!!!
                 {
-                    _sawmill.Debug("2: PLAYER LOCALSESSION IS NOT NULL...");
                     _entMan.TryGetComponent<SpaceBiomeTrackerComponent>(_player.LocalSession.AttachedEntity, out var comp);
-                    _sawmill.Debug("3. TRYING TO GRAB THE COMPONENT...");
                     if (comp != null)
                     {
                         _lastBiome = _proto.Index<SpaceBiomePrototype>(comp.Biome);
-                        _sawmill.Debug($"4. GRABBED COMPONENT {comp.Biome}");
                     }
                 }
             }
@@ -160,7 +184,7 @@ public sealed partial class ContentAudioSystem
 
             string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
 
-            PlayMusicTrack(path, _musicProto.Sound.Params.Volume, false);
+            PlayMusicTrack(path, _musicProto.Sound.Params.Volume, true);
         }
     }
 
@@ -182,7 +206,7 @@ public sealed partial class ContentAudioSystem
         _ambientMusicStream = strim.Value.Entity;
 
         if (fadeIn)
-            FadeIn(_ambientMusicStream, strim.Value.Component, 2f);
+            FadeIn(_ambientMusicStream, strim.Value.Component, 10f);
     }
 
     private List<AmbientMusicPrototype> GetTracks()
