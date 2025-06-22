@@ -88,7 +88,7 @@ public sealed partial class ContentAudioSystem
     //ISSUE: WON'T REPLAY MUSIC AFTER IT ENDS. NEED TO FIX THAT
     //MAYBE MOVE THE PLAYING PART TO A FUNCTION? CALL THAT WHEN THE SONG IS OVER?
     //ISSUE: WON'T PLAY MUSIC WHEN YOU REJOIN BECAUSE YOU ARENT ENTERING A BIOME
-    //ISSUE: FOR COMBAT MUSIC WE NEED TO **KILL** THE STREAM, NOT FADE OUT!
+    //ISSUE: WHEN SPAMMING IT IT GETS CONFUSED AND KEEPS PLAYING MUSIC
     private void OnBiomeChange(SpaceBiomeSwapMessage ev)
     {
         _sawmill.Debug($"went to biome {ev.Biome}");
@@ -101,7 +101,8 @@ public sealed partial class ContentAudioSystem
         if (_combatModeSystem.IsInCombatMode()) //we don't want to change music if we are in combat mode right now
             return;
 
-        FadeOut(_ambientMusicStream);
+        //FadeOut(_ambientMusicStream);
+        _audio.Stop(_ambientMusicStream);
         float volume = 10; //default value in case we use the fallback track
 
         if (_musicTracks == null)
@@ -141,7 +142,7 @@ public sealed partial class ContentAudioSystem
 
         _ambientMusicStream = strim.Value.Entity; //THIS SHOULD PLAY THE TRACK!!
 
-        FadeIn(_ambientMusicStream, strim.Value.Component, AmbientMusicFadeTime);
+        //FadeIn(_ambientMusicStream, strim.Value.Component, AmbientMusicFadeTime);
     }
 
     private void OnCombatModeToggle(ToggleCombatActionEvent ev) //CombatModeOnMessage ev, MUST INCLUDE FACTION!!!
@@ -153,9 +154,11 @@ public sealed partial class ContentAudioSystem
 
         _lastCombatState = currentCombatState; //update last state if we are successful!
 
+        _audio.Stop(_ambientMusicStream);
+        _sawmill.Debug("KILLED AUDIO");
+
         if (currentCombatState) //true = we toggled combat ON. 
         {
-            FadeOut(_ambientMusicStream);
             _musicProto = _proto.Index<AmbientMusicPrototype>("combatmode");
             SoundCollectionPrototype soundcol = _proto.Index<SoundCollectionPrototype>(_musicProto.ID); //THIS IS WHAT ERRORS!
 
@@ -171,11 +174,10 @@ public sealed partial class ContentAudioSystem
 
             _ambientMusicStream = strim.Value.Entity; //THIS SHOULD PLAY THE TRACK!!
 
-            FadeIn(_ambientMusicStream, strim.Value.Component, 1f);
+            //FadeIn(_ambientMusicStream, strim.Value.Component, 1f);
         }
         else                    //false = we toggled combat OFF
         {
-            FadeOut(_ambientMusicStream);
 
             if (_lastBiome == null) //this should never happen still
                 return;
@@ -194,7 +196,7 @@ public sealed partial class ContentAudioSystem
             false,
             AudioParams.Default.WithVolume(_musicProto.Sound.Params.Volume + _volumeSlider))!;
 
-            FadeIn(_ambientMusicStream, strim.Value.Component, AmbientMusicFadeTime);
+            //FadeIn(_ambientMusicStream, strim.Value.Component, 1f);
         }
 
         /*
