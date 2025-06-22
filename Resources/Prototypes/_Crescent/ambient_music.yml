@@ -2,13 +2,6 @@
   id: combatmode
   sound:
     collection: AmbienceCombatMode
-  rules: InCombatMode
-  priority: 4000
-
-- type: rules
-  id: InCombatMode
-  rules:
-    - !type:InCombatModeRule
 
 - type: soundCollection
   id: AmbienceCombatMode
@@ -20,15 +13,6 @@
   id: TestBiome
   sound:
     collection: AmbienceTestBiome
-  rules: InTestBiome
-  priority: 2000
-  fadeIn: true
-
-- type: rules
-  id: InTestBiome
-  rules:
-    - !type:InSpaceBiomeRule
-      biome: test
 
 - type: soundCollection
   id: AmbienceTestBiome
@@ -40,19 +24,10 @@
 - type: ambientMusic
   id: imperialbiome
   sound:
-    collection: ImperialBiome
-  rules: InImperialAirspace
-  priority: 2000
-  fadeIn: true
-
-- type: rules
-  id: InImperialAirspace
-  rules:
-    - !type:InSpaceBiomeRule
-      biome: imperialbiome
+    collection: imperialbiome
 
 - type: soundCollection
-  id: ImperialBiome
+  id: imperialbiome
   files:
    - /Audio/_Crescent/duduk.ogg
 
@@ -61,19 +36,10 @@
 - type: ambientMusic
   id: hunterbiome
   sound:
-    collection: HunterBiome
-  rules: InHunterAirspace
-  priority: 2000
-  fadeIn: true
-
-- type: rules
-  id: InHunterAirspace
-  rules:
-    - !type:InSpaceBiomeRule
-      biome: hunterbiome
+    collection: hunterbiome
 
 - type: soundCollection
-  id: HunterBiome
+  id: hunterbiome
   files:
    - /Audio/_Crescent/ludd.ogg
 
@@ -82,19 +48,10 @@
 - type: ambientMusic
   id: syndiebiome
   sound:
-    collection: SyndicateBiome
-  rules: InSyndicateAirspace
-  priority: 2000
-  fadeIn: true
-
-- type: rules
-  id: InSyndicateAirspace
-  rules:
-    - !type:InSpaceBiomeRule
-      biome: syndicatebiome
+    collection: syndiebiome
 
 - type: soundCollection
-  id: SyndicateBiome
+  id: syndiebiome
   files:
    - /Audio/_Crescent/syndies.ogg
 
@@ -103,19 +60,10 @@
 - type: ambientMusic
   id: corpiebiome
   sound:
-    collection: CorpieBiome
-  rules: InCorpieAirspace
-  priority: 2000
-  fadeIn: true
-
-- type: rules
-  id: InCorpieAirspace
-  rules:
-    - !type:InSpaceBiomeRule
-      biome: corpiebiome
+    collection: corpiebiome
 
 - type: soundCollection
-  id: CorpieBiome
+  id: corpiebiome
   files:
    - /Audio/_Crescent/the_insulindan_miracle.ogg
 
@@ -124,19 +72,11 @@
 - type: ambientMusic
   id: wildbiome
   sound:
-    collection: WildBiome
-  rules: InWildAirspace
-  priority: 2000
-  fadeIn: true
+    collection: wildbiome
 
-- type: rules
-  id: InWildAirspace
-  rules:
-    - !type:InSpaceBiomeRule
-      biome: wildbiome
 
 - type: soundCollection
-  id: WildBiome
+  id: wildbiome
   files:
    - /Audio/_Crescent/wilds.ogg
 
@@ -145,19 +85,10 @@
 - type: ambientMusic
   id: deepwildbiome
   sound:
-    collection: WildBiome #//this should be deepwilds!
-  rules: InDeepwildAirspace
-  priority: 2000
-  fadeIn: true
-
-- type: rules
-  id: InDeepwildAirspace
-  rules:
-    - !type:InSpaceBiomeRule
-      biome: deepwildbiome
+    collection: deepwildbiome #//this should be deepwilds!
 
 - type: soundCollection
-  id: DeepwildBiome
+  id: deepwildbiome
   files:
    - /Audio/_Crescent/the_deepwilds.ogg
 
@@ -166,32 +97,23 @@
 - type: ambientMusic
   id: fallback
   sound:
-    collection: Fallback
+    collection: fallback
   fadeIn: true
 
 - type: soundCollection
-  id: Fallback
+  id: fallback
   files:
-   - /Audio/_Crescent/travesty.ogg
+   - /Audio/_Crescent/parietal_lobe.ogg
 
 #fracture / port vladzena
 
-# - type: ambientMusic
-#   id: FractureBiome
-#   sound:
-#     collection: FractureBiome
-#   rules: InLeagueAirspace
-#   priority: 2000
-#   fadeIn: true
+- type: ambientMusic
+  id: hadalbiome
+  sound:
+    collection: hadalbiome
 
-# - type: rules
-#   id: InLeagueAirspace
-#   rules:
-#     - !type:InSpaceBiomeRule
-#       biome: hadalbiome
-
-# - type: soundCollection
-#   id: FractureBiome
-#   files:
-#    - /Audio/_Crescent/travesty.ogg
+- type: soundCollection
+  id: hadalbiome
+  files:
+   - /Audio/_Crescent/travesty.ogg
 

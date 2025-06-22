@@ -84,12 +84,17 @@ public sealed partial class ContentAudioSystem
 
 
     //FADEIN AND FADEOUT MIGHT INTERFERE?
+    //NEED TO MAKE THIS TRIGGER WHEN U SPAWN IN
+    //ISSUE: WON'T REPLAY MUSIC AFTER IT ENDS. NEED TO FIX THAT
+    //MAYBE MOVE THE PLAYING PART TO A FUNCTION? CALL THAT WHEN THE SONG IS OVER?
     private void OnBiomeChange(SpaceBiomeSwapMessage ev)
     {
-        //_sawmill.Debug($"went to biome {ev.Biome}");
+        _sawmill.Debug($"went to biome {ev.Biome}");
 
         SpaceBiomePrototype biome = _protMan.Index<SpaceBiomePrototype>(ev.Biome); //get the biome prototype
         _lastBiome = biome; //save biome in case we are in combat mode
+
+        _sawmill.Debug($"last biome is {_lastBiome.ID}");
 
         if (_combatModeSystem.IsInCombatMode()) //we don't want to change music if we are in combat mode right now
             return;
@@ -100,21 +105,34 @@ public sealed partial class ContentAudioSystem
         if (_musicTracks == null)
             return;
 
+        _musicProto = null;
+
         foreach (var ambient in _musicTracks)
         {
+            //IF THIS DOESNT FIND ANYTHING WE NEED TO PLAY THE FALLBACK TRACK!
             if (biome.ID == ambient.ID) //if we find the biome that's matching the ambient's ID, we play that track!
             {
+                _sawmill.Debug($"found biome match: {biome.ID} == {ambient.ID}");
                 _musicProto = ambient;
+                _sawmill.Debug($"music proto is now {_musicProto.ID}");
                 volume = ambient.Sound.Params.Volume;
                 break;
             }
         }
 
         if (_musicProto == null) //THIS SHOULD CHANGE TO THE FALLBACK TRACK!!!!
-            return;
+        {
+            _musicProto = _proto.Index<AmbientMusicPrototype>("fallback");
+        }
+
+        SoundCollectionPrototype soundcol = _proto.Index<SoundCollectionPrototype>(_musicProto.ID); //THIS IS WHAT ERRORS!
+
+        string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
+
+        _sawmill.Debug($"SOUND PATH: {path}");
 
         var strim = _audio.PlayGlobal(
-        _musicProto.ID,
+        path,
         Filter.Local(),
         false,
         AudioParams.Default.WithVolume(_musicProto.Sound.Params.Volume + _volumeSlider))!;

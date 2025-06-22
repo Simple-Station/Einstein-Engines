@@ -207,6 +207,8 @@ public sealed partial class ContentAudioSystem
         var track = tracks[^1];
         tracks.RemoveAt(tracks.Count - 1);
 
+        _sawmill.Debug($"NOW PLAYING: {track.ToString}");
+
         var strim = _audio.PlayGlobal(
             track.ToString(),
             Filter.Local(),
