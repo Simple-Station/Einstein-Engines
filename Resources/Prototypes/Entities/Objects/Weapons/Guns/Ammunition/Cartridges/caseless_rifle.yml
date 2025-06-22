@@ -12,7 +12,7 @@
     deleteOnSpawn: true
   - type: Sprite
     noRot: false
-    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/rifle.rsi
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/caseless.rsi
     layers:
     - state: base
       map: ["enum.AmmoVisualLayers.Base"]
