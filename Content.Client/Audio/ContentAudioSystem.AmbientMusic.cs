@@ -66,41 +66,13 @@ public sealed partial class ContentAudioSystem
         // Setup tracks to pull from. Runs once.
         _musicTracks = GetTracks();
 
-        // Handle music if the player rejoins or crashes.
-        // if (_player.LocalSession != null)
-        // {
-        //     _entMan.TryGetComponent<SpaceBiomeTrackerComponent>(_player.LocalSession.AttachedEntity, out var comp);
-        //     if (comp != null)
-        //         _lastBiome = _proto.Index<SpaceBiomePrototype>(comp.Biome);
-        // }
-
-        //SubscribeNetworkEvent<PlayerBeforeSpawnEvent>(OnPlayerRejoin);
-
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnProtoReload);
         _state.OnStateChanged += OnStateChange;
         // On round end summary OR lobby cut audio.
         SubscribeNetworkEvent<RoundEndMessageEvent>(OnRoundEndMessage);
     }
 
-    // private void OnPlayerRejoin(PlayerBeforeSpawnEvent ev)
-    // {
-    //     if (_lastBiome == null) //this should never happen still
-    //         return;
-
-    //     _musicProto = _proto.Index<AmbientMusicPrototype>(_lastBiome.ID);
-
-    //     SoundCollectionPrototype soundcol = _proto.Index<SoundCollectionPrototype>(_musicProto.ID);
-
-    //     string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
-
-    //     PlayMusicTrack(path, _musicProto.Sound.Params.Volume, false);
-    // }
-
-    //NEED TO MAKE THIS TRIGGER WHEN U SPAWN IN
     //ISSUE: WON'T REPLAY MUSIC AFTER IT ENDS. NEED TO FIX THAT
-    //MAYBE MOVE THE PLAYING PART TO A FUNCTION? CALL THAT WHEN THE SONG IS OVER?
-    //ISSUE: WON'T PLAY MUSIC WHEN YOU REJOIN BECAUSE YOU ARENT ENTERING A BIOME
-    //ISSUE: WHEN COMBAT MODE SPAMMING IT GETS CONFUSED AND KEEPS PLAYING MUSIC
     private void OnBiomeChange(SpaceBiomeSwapMessage ev)
     {
         //_sawmill.Debug($"went to biome {ev.Biome}");
