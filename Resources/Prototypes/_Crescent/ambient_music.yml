@@ -91,20 +91,6 @@
   id: deepwildbiome
   files:
    - /Audio/_Crescent/the_deepwilds.ogg
-
-#fallback
-
-- type: ambientMusic
-  id: fallback
-  sound:
-    collection: fallback
-  fadeIn: true
-
-- type: soundCollection
-  id: fallback
-  files:
-   - /Audio/_Crescent/parietal_lobe.ogg
-
 #fracture / port vladzena
 
 - type: ambientMusic
@@ -116,4 +102,18 @@
   id: hadalbiome
   files:
    - /Audio/_Crescent/travesty.ogg
+
+#fallback, don't remove
+
+- type: ambientMusic
+  id: default
+  sound:
+    collection: default
+  fadeIn: true
+
+- type: soundCollection
+  id: default
+  files:
+   - /Audio/_Crescent/parietal_lobe.ogg
+
 

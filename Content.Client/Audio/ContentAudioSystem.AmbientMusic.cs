@@ -101,9 +101,8 @@ public sealed partial class ContentAudioSystem
         if (_combatModeSystem.IsInCombatMode()) //we don't want to change music if we are in combat mode right now
             return;
 
-        //FadeOut(_ambientMusicStream);
-        _audio.Stop(_ambientMusicStream);
-        float volume = 10; //default value in case we use the fallback track
+        FadeOut(_ambientMusicStream);
+        //_audio.Stop(_ambientMusicStream);
 
         if (_musicTracks == null)
             return;
@@ -118,14 +117,14 @@ public sealed partial class ContentAudioSystem
                 _sawmill.Debug($"found biome match: {biome.ID} == {ambient.ID}");
                 _musicProto = ambient;
                 _sawmill.Debug($"music proto is now {_musicProto.ID}");
-                volume = ambient.Sound.Params.Volume;
                 break;
             }
         }
 
         if (_musicProto == null) //THIS SHOULD CHANGE TO THE FALLBACK TRACK!!!!
         {
-            _musicProto = _proto.Index<AmbientMusicPrototype>("fallback");
+            _musicProto = _proto.Index<AmbientMusicPrototype>("default");
+            _lastBiome = _proto.Index<SpaceBiomePrototype>("default");
         }
 
         SoundCollectionPrototype soundcol = _proto.Index<SoundCollectionPrototype>(_musicProto.ID); //THIS IS WHAT ERRORS!
@@ -142,9 +141,11 @@ public sealed partial class ContentAudioSystem
 
         _ambientMusicStream = strim.Value.Entity; //THIS SHOULD PLAY THE TRACK!!
 
-        //FadeIn(_ambientMusicStream, strim.Value.Component, AmbientMusicFadeTime);
+        FadeIn(_ambientMusicStream, strim.Value.Component, AmbientMusicFadeTime);
     }
 
+    //this fucks up because the last biome might be a fallback biome! FIXED
+    //this fucks up if you spam combat mode. dont know why
     private void OnCombatModeToggle(ToggleCombatActionEvent ev) //CombatModeOnMessage ev, MUST INCLUDE FACTION!!!
     {
         bool currentCombatState = _combatModeSystem.IsInCombatMode();
@@ -182,7 +183,7 @@ public sealed partial class ContentAudioSystem
             if (_lastBiome == null) //this should never happen still
                 return;
 
-            _musicProto = _proto.Index<AmbientMusicPrototype>(_lastBiome.ID);
+            _musicProto = _proto.Index<AmbientMusicPrototype>(_lastBiome.ID); //THIS CAN FUCK UP! BECAUSE THE ID MIGHT NOT HAVE MUSIC AND BE A FALLBACK!
 
             SoundCollectionPrototype soundcol = _proto.Index<SoundCollectionPrototype>(_musicProto.ID); //THIS IS WHAT ERRORS!
 
@@ -195,6 +196,8 @@ public sealed partial class ContentAudioSystem
             Filter.Local(),
             false,
             AudioParams.Default.WithVolume(_musicProto.Sound.Params.Volume + _volumeSlider))!;
+
+            _ambientMusicStream = strim.Value.Entity; //THIS SHOULD PLAY THE TRACK!!
 
             //FadeIn(_ambientMusicStream, strim.Value.Component, 1f);
         }
@@ -269,171 +272,24 @@ public sealed partial class ContentAudioSystem
             return;
     }
 
-
-    ///<summary>
-    /// This function counts all ambient musics we have in ambient_music.yml and returns that list.
-    /// This should only run once at roundstart.
-    ///</summary>
-    /*private void SetupAmbientSounds()
-    {
-        _ambientSounds.Clear();
-        foreach (var ambience in _proto.EnumeratePrototypes<AmbientMusicPrototype>())
-        {
-            _sawmill.Debug($"logged ambient sound {ambience.ID}");
-            var tracks = _ambientSounds.GetOrNew(ambience.ID);
-            RefreshTracks(ambience.Sound, tracks, null);
-            _random.Shuffle(tracks);
-        }
-    }*/
-
     private void OnRoundEndMessage(RoundEndMessageEvent ev)
     {
+        if (_ambientMusicStream == null)
+        {
+            _sawmill.Debug("AMBIENT MUSIC STREAM WAS NULL? FROM OnRoundEndMessage()");
+            return;
+        }
         // If scoreboard shows then just stop the music
         _ambientMusicStream = _audio.Stop(_ambientMusicStream);
     }
 
-    /*private void RefreshTracks(SoundSpecifier sound, List<ResPath> tracks, ResPath? lastPlayed)
-    {
-        DebugTools.Assert(tracks.Count == 0);
-
-        switch (sound)
-        {
-            case SoundCollectionSpecifier collection:
-                if (collection.Collection == null)
-                    break;
-
-                var slothCud = _proto.Index<SoundCollectionPrototype>(collection.Collection);
-                tracks.AddRange(slothCud.PickFiles);
-                break;
-            case SoundPathSpecifier path:
-                tracks.Add(path.Path);
-                break;
-        }
-
-        // Just so the same track doesn't play twice
-        if (tracks.Count > 1 && tracks[^1] == lastPlayed)
-        {
-            (tracks[0], tracks[^1]) = (tracks[^1], tracks[0]);
-        }
-    }*/
-    ///<summary>
-    /// This function runs every frame, and handles changing audio. This fucking sucks and I'm refactoring it. -.2
-    ///</summary>
-    /*private void UpdateAmbientMusic()
-    {
-        // Update still runs in lobby so just ignore it.
-        if (_state.CurrentState is not GameplayState)
-        {
-            _ambientMusicStream = Audio.Stop(_ambientMusicStream);
-            _musicProto = null;
-            return;
-        }
-
-        bool? isDone = null;
-
-        if (TryComp(_ambientMusicStream, out AudioComponent? audioComp))
-        {
-            isDone = !audioComp.Playing;
-        }
-
-        if (_interruptable)
-        {
-            var player = _player.LocalSession?.AttachedEntity;
-
-            if (player == null || _musicProto == null || !_rules.IsTrue(player.Value, _proto.Index<RulesPrototype>(_musicProto.Rules)))
-            {
-                FadeOut(_ambientMusicStream, duration: AmbientMusicFadeTime);
-                _musicProto = null;
-                _interruptable = false;
-                isDone = true;
-            }
-        }
-
-        // Still running existing ambience
-        if (isDone == false)
-            return;
-
-        // If ambience finished reset the CD (this also means if we have long ambience it won't clip)
-        if (isDone == true)
-        {
-            // Also don't need to worry about rounding here as it doesn't affect the sim
-            _nextAudio = _timing.CurTime + _random.Next(_minAmbienceTime, _maxAmbienceTime);
-        }
-
-        _ambientMusicStream = null;
-
-        if (_nextAudio > _timing.CurTime)
-            return;
-
-        _musicProto = GetAmbience();
-
-        if (_musicProto == null)
-        {
-            _interruptable = false;
-            return;
-        }
-        _interruptable = _musicProto.Interruptable;
-        var tracks = _ambientSounds[_musicProto.ID];
-        //_sawmill.Debug($"tracks = {tracks.Count}");
-        var track = tracks[^1];
-        tracks.RemoveAt(tracks.Count - 1);
-
-        var strim = _audio.PlayGlobal(
-            track.ToString(),
-            Filter.Local(),
-            false,
-            AudioParams.Default.WithVolume(_musicProto.Sound.Params.Volume + _volumeSlider))!;
-
-        _ambientMusicStream = strim.Value.Entity;
-
-        if (_musicProto.FadeIn)
-        {
-            FadeIn(_ambientMusicStream, strim.Value.Component, AmbientMusicFadeTime);
-        }
-
-        // Refresh the list
-        if (tracks.Count == 0)
-        {
-            RefreshTracks(_musicProto.Sound, tracks, track);
-        }
-    }
-
-    //<summary>
-    // This gathers all the ambient music prototypes, sorts them by priority, and then checks in priority order of priority for the first which has its rule true.
-    //</summary>
-    private AmbientMusicPrototype? GetAmbience()
-    {
-        var player = _player.LocalEntity;
-
-        if (player == null)
-            return null;
-
-        var ev = new PlayAmbientMusicEvent();
-        RaiseLocalEvent(ref ev);
-
-        if (ev.Cancelled)
-            return null;
-
-        var ambiences = _proto.EnumeratePrototypes<AmbientMusicPrototype>().ToList();
-        ambiences.Sort((x, y) => y.Priority.CompareTo(x.Priority));
-
-        foreach (var amb in ambiences)
-        {
-            if (!_rules.IsTrue(player.Value, _proto.Index<RulesPrototype>(amb.Rules)))
-                continue;
-
-            return amb;
-        }
-
-        _sawmill.Warning($"Unable to find fallback ambience track");
-        return null;
-    }*/
-
-    /// <summary>
-    /// Fades out the current ambient music temporarily.
-    /// </summary>
     public void DisableAmbientMusic()
     {
+        if (_ambientMusicStream == null)
+        {
+            _sawmill.Debug("AMBIENT MUSIC STREAM WAS NULL? FROM DisableAmbientMusic()");
+            return;
+        }
         FadeOut(_ambientMusicStream);
         _ambientMusicStream = null;
     }
