@@ -22,6 +22,7 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Client.CombatMode;
 using Content.Shared.CombatMode;
+using System.IO;
 
 namespace Content.Client.Audio;
 
@@ -38,7 +39,6 @@ public sealed partial class ContentAudioSystem
     [Dependency] private readonly CombatModeSystem _combatModeSystem = default!; //CLIENT ONE. WHY ARE THERE 3???
     [Dependency] private readonly IPrototypeManager _protMan = default!;
 
-    private const float AmbientMusicFadeTime = 10f;
     private static float _volumeSlider;
     private EntityUid? _ambientMusicStream;
     private AmbientMusicPrototype? _musicProto;
@@ -46,22 +46,10 @@ public sealed partial class ContentAudioSystem
     // Need to keep track of the last biome we were in to re-play its music when we're out of combat mode
     private SpaceBiomePrototype? _lastBiome;
 
-    // Because ToggleCombatActionEvent triggers 7 times for some reason, we keep track of the last state as to not play combat music 7 times in a row.
-    private bool _lastCombatState = false;
+    // Need to keep track of how long the current track's been playing for to know when to play the next
+    private TimeSpan _trackTimeRemaining = TimeSpan.MaxValue;
 
     private List<AmbientMusicPrototype>? _musicTracks;
-
-    /// <summary>
-    /// If we find a better ambient music proto can we interrupt this one.
-    /// </summary>
-    private bool _interruptable;
-
-    /// <summary>
-    /// Track what ambient sounds we've played. This is so they all get played an even
-    /// number of times.
-    /// When we get to the end of the list we'll re-shuffle
-    /// </summary>
-    private readonly Dictionary<string, List<ResPath>> _ambientSounds = new();
 
     private ISawmill _sawmill = default!;
 
@@ -73,7 +61,7 @@ public sealed partial class ContentAudioSystem
         Subs.CVar(_configManager, CCVars.AmbientMusicVolume, AmbienceCVarChanged, true);
         _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("audio.ambience");
 
-        // Setup ambient tracks
+        // Setup tracks to pull from. Runs once.
         _musicTracks = GetTracks();
 
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnProtoReload);
@@ -82,27 +70,22 @@ public sealed partial class ContentAudioSystem
         SubscribeNetworkEvent<RoundEndMessageEvent>(OnRoundEndMessage);
     }
 
-
-    //FADEIN AND FADEOUT MIGHT INTERFERE?
     //NEED TO MAKE THIS TRIGGER WHEN U SPAWN IN
     //ISSUE: WON'T REPLAY MUSIC AFTER IT ENDS. NEED TO FIX THAT
     //MAYBE MOVE THE PLAYING PART TO A FUNCTION? CALL THAT WHEN THE SONG IS OVER?
     //ISSUE: WON'T PLAY MUSIC WHEN YOU REJOIN BECAUSE YOU ARENT ENTERING A BIOME
-    //ISSUE: WHEN SPAMMING IT IT GETS CONFUSED AND KEEPS PLAYING MUSIC
+    //ISSUE: WHEN COMBAT MODE SPAMMING IT GETS CONFUSED AND KEEPS PLAYING MUSIC
     private void OnBiomeChange(SpaceBiomeSwapMessage ev)
     {
-        _sawmill.Debug($"went to biome {ev.Biome}");
+        //_sawmill.Debug($"went to biome {ev.Biome}");
 
         SpaceBiomePrototype biome = _protMan.Index<SpaceBiomePrototype>(ev.Biome); //get the biome prototype
         _lastBiome = biome; //save biome in case we are in combat mode
-
-        _sawmill.Debug($"last biome is {_lastBiome.ID}");
 
         if (_combatModeSystem.IsInCombatMode()) //we don't want to change music if we are in combat mode right now
             return;
 
         FadeOut(_ambientMusicStream);
-        //_audio.Stop(_ambientMusicStream);
 
         if (_musicTracks == null)
             return;
@@ -111,52 +94,36 @@ public sealed partial class ContentAudioSystem
 
         foreach (var ambient in _musicTracks)
         {
-            //IF THIS DOESNT FIND ANYTHING WE NEED TO PLAY THE FALLBACK TRACK!
             if (biome.ID == ambient.ID) //if we find the biome that's matching the ambient's ID, we play that track!
             {
-                _sawmill.Debug($"found biome match: {biome.ID} == {ambient.ID}");
+                //_sawmill.Debug($"found biome match: {biome.ID} == {ambient.ID}");
                 _musicProto = ambient;
-                _sawmill.Debug($"music proto is now {_musicProto.ID}");
                 break;
             }
         }
 
-        if (_musicProto == null) //THIS SHOULD CHANGE TO THE FALLBACK TRACK!!!!
+        if (_musicProto == null) //if we don't find any, we play the default track.
         {
             _musicProto = _proto.Index<AmbientMusicPrototype>("default");
             _lastBiome = _proto.Index<SpaceBiomePrototype>("default");
         }
 
-        SoundCollectionPrototype soundcol = _proto.Index<SoundCollectionPrototype>(_musicProto.ID); //THIS IS WHAT ERRORS!
+        SoundCollectionPrototype soundcol = _proto.Index<SoundCollectionPrototype>(_musicProto.ID);
 
         string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
 
-        _sawmill.Debug($"SOUND PATH: {path}");
-
-        var strim = _audio.PlayGlobal(
-        path,
-        Filter.Local(),
-        false,
-        AudioParams.Default.WithVolume(_musicProto.Sound.Params.Volume + _volumeSlider))!;
-
-        _ambientMusicStream = strim.Value.Entity; //THIS SHOULD PLAY THE TRACK!!
-
-        FadeIn(_ambientMusicStream, strim.Value.Component, AmbientMusicFadeTime);
+        PlayMusicTrack(path, _musicProto.Sound.Params.Volume, true);
     }
 
-    //this fucks up because the last biome might be a fallback biome! FIXED
-    //this fucks up if you spam combat mode. dont know why
+    //TODO: include faction
     private void OnCombatModeToggle(ToggleCombatActionEvent ev) //CombatModeOnMessage ev, MUST INCLUDE FACTION!!!
     {
-        bool currentCombatState = _combatModeSystem.IsInCombatMode();
-        //EXPLANATION: because ToggleCombatActionEvent triggers 7 times for some reason, we ignore repeated calls if the state is ON>ON>ON>ON. Only ON>OFF or OFF>ON.
-        if (currentCombatState == _lastCombatState)
+        if (!_timing.IsFirstTimePredicted == true) //needed, because combat mode is predicted, and triggers 7 times otherwise.
             return;
 
-        _lastCombatState = currentCombatState; //update last state if we are successful!
+        bool currentCombatState = _combatModeSystem.IsInCombatMode();
 
         _audio.Stop(_ambientMusicStream);
-        _sawmill.Debug("KILLED AUDIO");
 
         if (currentCombatState) //true = we toggled combat ON. 
         {
@@ -165,21 +132,10 @@ public sealed partial class ContentAudioSystem
 
             string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
 
-            _sawmill.Debug($"SOUND PATH: {path}");
-
-            var strim = _audio.PlayGlobal(
-            path,
-            Filter.Local(),
-            false,
-            AudioParams.Default.WithVolume(_musicProto.Sound.Params.Volume + _volumeSlider))!;
-
-            _ambientMusicStream = strim.Value.Entity; //THIS SHOULD PLAY THE TRACK!!
-
-            //FadeIn(_ambientMusicStream, strim.Value.Component, 1f);
+            PlayMusicTrack(path, _musicProto.Sound.Params.Volume, false);
         }
         else                    //false = we toggled combat OFF
         {
-
             if (_lastBiome == null) //this should never happen still
                 return;
 
@@ -189,39 +145,30 @@ public sealed partial class ContentAudioSystem
 
             string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
 
-            _sawmill.Debug($"SOUND PATH: {path}");
-
-            var strim = _audio.PlayGlobal(
-            path,
-            Filter.Local(),
-            false,
-            AudioParams.Default.WithVolume(_musicProto.Sound.Params.Volume + _volumeSlider))!;
-
-            _ambientMusicStream = strim.Value.Entity; //THIS SHOULD PLAY THE TRACK!!
-
-            //FadeIn(_ambientMusicStream, strim.Value.Component, 1f);
+            PlayMusicTrack(path, _musicProto.Sound.Params.Volume, false);
         }
-
-        /*
-        forceStop(ambientMusicStream)
-
-        switch (CombatModeOnMessage.Faction)
-            case NCWL
-                AmbientMusicStream = PlayGlobal (ncwl track)
-            case DSM
-                ....
-            ...
-            case default
-                AmbientMusicStream = PlayGlobal (awakening.ogg)
-
-        activate(ambientMusicStream)
-
-        */
     }
 
     //TODO: ForceAmbientMusic
     //TODO: DisableAmbientMusic
     //TODO: EnableAmbientMusic
+
+    private void PlayMusicTrack(string path, float volume, bool fadeIn)
+    {
+
+        _sawmill.Debug($"NOW PLAYING: {path}");
+
+        var strim = _audio.PlayGlobal(
+            path,
+            Filter.Local(),
+            false,
+            AudioParams.Default.WithVolume(volume + _volumeSlider))!;
+
+        _ambientMusicStream = strim.Value.Entity;
+
+        if (fadeIn)
+            FadeIn(_ambientMusicStream, strim.Value.Component, 2f);
+    }
 
     private List<AmbientMusicPrototype> GetTracks()
     {
