@@ -1,10 +1,10 @@
 - type: ambientMusic
   id: combatmode
   sound:
-    collection: AmbienceCombatMode
+    collection: combatmode
 
 - type: soundCollection
-  id: AmbienceCombatMode
+  id: combatmode
   files:
     - /Audio/_Crescent/Ambience/CombatMode/awakening.ogg
 

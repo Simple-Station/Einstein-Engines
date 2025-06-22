@@ -87,6 +87,8 @@ public sealed partial class ContentAudioSystem
     //NEED TO MAKE THIS TRIGGER WHEN U SPAWN IN
     //ISSUE: WON'T REPLAY MUSIC AFTER IT ENDS. NEED TO FIX THAT
     //MAYBE MOVE THE PLAYING PART TO A FUNCTION? CALL THAT WHEN THE SONG IS OVER?
+    //ISSUE: WON'T PLAY MUSIC WHEN YOU REJOIN BECAUSE YOU ARENT ENTERING A BIOME
+    //ISSUE: FOR COMBAT MUSIC WE NEED TO **KILL** THE STREAM, NOT FADE OUT!
     private void OnBiomeChange(SpaceBiomeSwapMessage ev)
     {
         _sawmill.Debug($"went to biome {ev.Biome}");
@@ -153,11 +155,46 @@ public sealed partial class ContentAudioSystem
 
         if (currentCombatState) //true = we toggled combat ON. 
         {
-            //_sawmill.Debug("combat mode turned ON");
+            FadeOut(_ambientMusicStream);
+            _musicProto = _proto.Index<AmbientMusicPrototype>("combatmode");
+            SoundCollectionPrototype soundcol = _proto.Index<SoundCollectionPrototype>(_musicProto.ID); //THIS IS WHAT ERRORS!
+
+            string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
+
+            _sawmill.Debug($"SOUND PATH: {path}");
+
+            var strim = _audio.PlayGlobal(
+            path,
+            Filter.Local(),
+            false,
+            AudioParams.Default.WithVolume(_musicProto.Sound.Params.Volume + _volumeSlider))!;
+
+            _ambientMusicStream = strim.Value.Entity; //THIS SHOULD PLAY THE TRACK!!
+
+            FadeIn(_ambientMusicStream, strim.Value.Component, 1f);
         }
         else                    //false = we toggled combat OFF
         {
-            //_sawmill.Debug("combat mode turned OFF");
+            FadeOut(_ambientMusicStream);
+
+            if (_lastBiome == null) //this should never happen still
+                return;
+
+            _musicProto = _proto.Index<AmbientMusicPrototype>(_lastBiome.ID);
+
+            SoundCollectionPrototype soundcol = _proto.Index<SoundCollectionPrototype>(_musicProto.ID); //THIS IS WHAT ERRORS!
+
+            string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
+
+            _sawmill.Debug($"SOUND PATH: {path}");
+
+            var strim = _audio.PlayGlobal(
+            path,
+            Filter.Local(),
+            false,
+            AudioParams.Default.WithVolume(_musicProto.Sound.Params.Volume + _volumeSlider))!;
+
+            FadeIn(_ambientMusicStream, strim.Value.Component, AmbientMusicFadeTime);
         }
 
         /*
@@ -174,32 +211,6 @@ public sealed partial class ContentAudioSystem
 
         activate(ambientMusicStream)
 
-        */
-    }
-
-    private void OnCombatModeOff() //CombatModeOffMessage ev
-    {
-        /*
-        forceStop(ambientMusicStream)
-
-        list = list of the ambient music tracks.  grab this from ambient_music.yml. //each ambient music's id MUST MATCH the biome id.
-
-
-        biome = lastBiome; //we kept track of this before returning in OnBiomeChange
-        bool fallback = true; 
-        for each (track in list)
-        {
-            if (biome.id == track.id)
-            {
-                ambientMusicStream = PlayGlobal( that track )
-                fallback = false;
-            } 
-        }
-
-        activate(ambientMusicStream)
-
-        if (fallback)
-            ambientMusicStream = off
         */
     }
 
