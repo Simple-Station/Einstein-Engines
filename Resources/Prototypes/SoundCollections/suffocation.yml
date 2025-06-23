@@ -1,0 +1,14 @@
+- type: soundCollection
+  id: SuffocationMale
+  files:
+  - /Audio/_Crescent/Player/Suffocation/gasp_1.ogg
+
+- type: soundCollection
+  id: SuffocationMale
+  files:
+  - /Audio/_Crescent/Player/Suffocation/gasp_2.ogg
+
+- type: soundCollection
+  id: SuffocationIntersex
+  files:
+  - /Audio/_Crescent/Player/Suffocation/gasp_3.ogg
