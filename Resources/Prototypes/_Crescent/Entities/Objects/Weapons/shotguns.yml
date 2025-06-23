@@ -1,4 +1,35 @@
 - type: entity
+  name: SHI double-barreled shotgun 4g
+  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  id: WeaponShotgunSHIDoubleBarreled4g
+  description: A cheap, oversized shotgun. Manufactured by Shinora for their BudgetArms line. Chambered in 4 Gauge.
+  components:
+  - type: Sprite
+    sprite: _Crescent\Objects\Weapons\Guns\dbshotgun.rsi
+  - type: Clothing
+    sprite: _Crescent\Objects\Weapons\Guns\dbshotgun.rsi
+  - type: Item
+    size: Huge
+    sprite: _Crescent\Objects\Weapons\Guns\dbshotgun.rsi
+  - type: GunRequiresWield
+  - type: Gun
+    fireRate: 2
+    fireOnDropChance: 0.5
+  - type: Wieldable
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - ShellShotgun4g
+    capacity: 2
+    proto: ShellShotgun4gBuckshot
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 8.5
+  - type: DamageOtherOnHit
+    staminaCost: 7.5
+
+- type: entity
   name: NT SPAS-13 12g
   parent: [BaseWeaponShotgun, BaseGunWieldable]
   id: WeaponShotgunSpas
