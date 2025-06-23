@@ -24,6 +24,8 @@ using Content.Client.CombatMode;
 using Content.Shared.CombatMode;
 using System.IO;
 using Robust.Shared.Toolshed.Commands.Values;
+using Content.Shared.Preferences;
+using Content.Client.Lobby;
 
 namespace Content.Client.Audio;
 
@@ -40,6 +42,7 @@ public sealed partial class ContentAudioSystem
     [Dependency] private readonly CombatModeSystem _combatModeSystem = default!; //CLIENT ONE. WHY ARE THERE 3???
     [Dependency] private readonly IPrototypeManager _protMan = default!;
     [Dependency] private readonly IEntityManager _entMan = default!;
+    [Dependency] private readonly IClientPreferencesManager _prefsManager = default!;
 
     private static float _volumeSlider;
     private EntityUid? _ambientMusicStream;
@@ -48,13 +51,15 @@ public sealed partial class ContentAudioSystem
     // Need to keep track of the last biome we were in to re-play its music when we're out of combat mode
     private SpaceBiomePrototype? _lastBiome;
 
-    // Every 5 minutes try to play a new track.
+    // Every <THIS> amount of time, attempt to play a new music track. This ticks down on rejoining as well.
     private TimeSpan _timeUntilNextAmbientTrack = TimeSpan.FromMinutes(5);
 
+    // List of available ambient music tracks to sift through.
     private List<AmbientMusicPrototype>? _musicTracks;
 
     private ISawmill _sawmill = default!;
 
+    //BUG: ambient music keeps playing once you return to lobby
     private void InitializeAmbientMusic()
     {
         SubscribeNetworkEvent<SpaceBiomeSwapMessage>(OnBiomeChange);
@@ -154,6 +159,17 @@ public sealed partial class ContentAudioSystem
 
         if (currentCombatState) //true = we toggled combat ON. 
         {
+            if (_prefsManager.Preferences != null)
+            {
+                var profile = (HumanoidCharacterProfile) _prefsManager.Preferences.SelectedCharacter;
+
+                var faction = profile.Faction;
+
+                _sawmill.Debug($"FACTION: {faction}");
+            }
+
+
+
             _musicProto = _proto.Index<AmbientMusicPrototype>("combatmode");
             SoundCollectionPrototype soundcol = _proto.Index<SoundCollectionPrototype>(_musicProto.ID); //THIS IS WHAT ERRORS!
 
