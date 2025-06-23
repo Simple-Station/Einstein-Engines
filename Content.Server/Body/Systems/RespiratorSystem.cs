@@ -126,6 +126,8 @@ public sealed class RespiratorSystem : EntitySystem
                 {
                     respirator.LastGaspPopupTime = _gameTiming.CurTime;
                     _popupSystem.PopupEntity(Loc.GetString("lung-behavior-gasp"), uid);
+                    var ev = new SuffocationSoundEvent();
+                    RaiseLocalEvent(uid, ref ev);
                 }
 
                 TakeSuffocationDamage((uid, respirator));
@@ -321,9 +323,6 @@ public sealed class RespiratorSystem : EntitySystem
             {
                 _alertsSystem.ShowAlert(ent, comp.Alert);
             }
-            var ev = new SuffocationDamageEvent();
-            RaiseLocalEvent(ent, ref ev);
-            RaiseLocalEvent(ent, new MoodEffectEvent("Suffocating"));
         }
 
         _damageableSys.TryChangeDamage(ent, HasComp<DebrainedComponent>(ent) ? ent.Comp.Damage * 4.5f : ent.Comp.Damage, interruptsDoAfters: false);
