@@ -29,6 +29,9 @@ using Content.Client.Lobby;
 
 namespace Content.Client.Audio;
 
+/// <summary>
+/// This handles playing ambient music over time, and combat music per faction.
+/// </summary>
 public sealed partial class ContentAudioSystem
 {
     [Dependency] private readonly IConfigurationManager _configManager = default!;
@@ -45,7 +48,11 @@ public sealed partial class ContentAudioSystem
     [Dependency] private readonly IClientPreferencesManager _prefsManager = default!;
 
     private static float _volumeSlider;
+
+    // This stores the music stream. It's used to start/stop the music on the fly.
     private EntityUid? _ambientMusicStream;
+
+    // This stores the ambient music prototype to be played,.
     private AmbientMusicPrototype? _musicProto;
 
     // Need to keep track of the last biome we were in to re-play its music when we're out of combat mode
@@ -78,7 +85,12 @@ public sealed partial class ContentAudioSystem
         // On round end summary OR lobby cut audio.
         SubscribeNetworkEvent<RoundEndMessageEvent>(OnRoundEndMessage);
     }
-    private void ReplayAmbientMusic() //this might fire midway through another track. need to fix that
+
+
+    /// <summary>
+    /// This function runs on a timer to check if music is playing or not, and play it again.
+    /// </summary>
+    private void ReplayAmbientMusic()
     {
         bool? isDone = null;
 
@@ -106,7 +118,6 @@ public sealed partial class ContentAudioSystem
 
     }
 
-    //ISSUE: WON'T REPLAY MUSIC AFTER IT ENDS. NEED TO FIX THAT
     private void OnBiomeChange(SpaceBiomeSwapMessage ev)
     {
         //_sawmill.Debug($"went to biome {ev.Biome}");
@@ -147,8 +158,8 @@ public sealed partial class ContentAudioSystem
         PlayMusicTrack(path, _musicProto.Sound.Params.Volume, true);
     }
 
-    //TODO: include faction
-    private void OnCombatModeToggle(ToggleCombatActionEvent ev) //CombatModeOnMessage ev, MUST INCLUDE FACTION!!!
+
+    private void OnCombatModeToggle(ToggleCombatActionEvent ev)
     {
         if (!_timing.IsFirstTimePredicted == true) //needed, because combat mode is predicted, and triggers 7 times otherwise.
             return;
@@ -159,23 +170,36 @@ public sealed partial class ContentAudioSystem
 
         if (currentCombatState) //true = we toggled combat ON. 
         {
-            if (_prefsManager.Preferences != null)
+            string combatFactionSuffix = ""; //this is added to "combatmode" to create "combatmodeNCWL", "combatmodeDSM", etc, to fetch combat tracks.
+
+            if (_prefsManager.Preferences != null) //this literally cannot be null unless you're in lobby or something
             {
                 var profile = (HumanoidCharacterProfile) _prefsManager.Preferences.SelectedCharacter;
 
-                var faction = profile.Faction;
+                combatFactionSuffix = profile.Faction; //becomes NCWL, DSM, etc.
 
-                _sawmill.Debug($"FACTION: {faction}");
+                //_sawmill.Debug($"FACTION: {faction}");
             }
 
+            //if we find a ambient music prototype for our faction, then pick that one!
+            if (_proto.TryIndex<AmbientMusicPrototype>("combatmode" + combatFactionSuffix, out var factionCombatMusicPrototype))
+            {
+                _musicProto = factionCombatMusicPrototype;
+                SoundCollectionPrototype soundcol = _proto.Index<SoundCollectionPrototype>(_musicProto.ID);
 
+                string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
 
-            _musicProto = _proto.Index<AmbientMusicPrototype>("combatmode");
-            SoundCollectionPrototype soundcol = _proto.Index<SoundCollectionPrototype>(_musicProto.ID); //THIS IS WHAT ERRORS!
+                PlayMusicTrack(path, _musicProto.Sound.Params.Volume, false);
+            }
+            else //if the faction combat music prototype does not exist, instead fall back to the default.
+            {
+                _musicProto = _proto.Index<AmbientMusicPrototype>("combatmodedefault");
+                SoundCollectionPrototype soundcol = _proto.Index<SoundCollectionPrototype>(_musicProto.ID); //THIS IS WHAT ERRORS!
 
-            string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
+                string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
 
-            PlayMusicTrack(path, _musicProto.Sound.Params.Volume, false);
+                PlayMusicTrack(path, _musicProto.Sound.Params.Volume, false);
+            }
         }
         else                    //false = we toggled combat OFF
         {
@@ -203,10 +227,6 @@ public sealed partial class ContentAudioSystem
             PlayMusicTrack(path, _musicProto.Sound.Params.Volume, true);
         }
     }
-
-    //TODO: ForceAmbientMusic
-    //TODO: DisableAmbientMusic
-    //TODO: EnableAmbientMusic
 
     private void PlayMusicTrack(string path, float volume, bool fadeIn)
     {
@@ -266,7 +286,7 @@ public sealed partial class ContentAudioSystem
             _musicTracks = GetTracks();
     }
     ///<summary>
-    /// This function handles the change from lobby to gameplay.
+    /// This function handles the change from lobby to gameplay. I think.
     ///</summary>
     private void OnStateChange(StateChangedEventArgs obj)
     {
@@ -285,6 +305,7 @@ public sealed partial class ContentAudioSystem
         _ambientMusicStream = _audio.Stop(_ambientMusicStream);
     }
 
+    //THIS STILL LETS AMBIENT MUSIC PLAY INTO THE LOBBY SADLY. IT SHOULD STOP IT BUT I DONT KNOW HOW
     public void DisableAmbientMusic()
     {
         if (_ambientMusicStream == null)

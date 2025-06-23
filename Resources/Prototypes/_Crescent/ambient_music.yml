@@ -1,23 +1,112 @@
-- type: ambientMusic
-  id: combatmode
-  sound:
-    collection: combatmode
+##
+## PLEASE READ BEFORE CONTRIBUTING! also, for clarity, check ContentAudioSystem.AmbientMusic.cs. i added comments!
+## for biome IDs, check space_biomes.yml for crescentFactionBiomes.
+##
+## for your ambient music to be valid, you need two prototypes
+## first, an ambientMusic prototype. the id !!!!MUST MATCH THE BIOME ID!!!! that you are making ambient music for, and it must have a sound collection
+## otherwise it will play the fallback track. 
+## second, a soundCollection prototype. its id can be different, but please keep it the same as the biome for consistency
+## the music selected from the sound collection will be chosen randomly whenever the appropriate music is required to be played
+## 
+## combat music default/fallback is called "combatmusic"
+## factional combat music must be called "combatmusic<FACTIONNAME>", and be a valid faction in the clientside character profile
+## this is because the way combat music is fetched is just adding that faction string to combatmusic, creating "combatmusicNCWL", "combatmusicDSM", etc.
+##
+## valid factions: ATH, DSM, NCWL, TFSC, SHI, TAP, SRM, TSP. 
+##
+## @.2, hullrot discord, 2025/6/23
 
-- type: soundCollection
-  id: combatmode
-  files:
-    - /Audio/_Crescent/Ambience/CombatMode/awakening.ogg
 
 #example
 - type: ambientMusic
-  id: TestBiome
+  id: testbiome
   sound:
     collection: AmbienceTestBiome
 
 - type: soundCollection
-  id: AmbienceTestBiome
+  id: testbiome
   files:
    - /Audio/Jukebox/sector11.ogg
+
+#ambient fallback, don't remove, but can change song
+
+- type: ambientMusic
+  id: default
+  sound:
+    collection: default
+  fadeIn: true
+
+- type: soundCollection
+  id: default
+  files:
+   - /Audio/_Crescent/parietal_lobe.ogg
+
+#combat fallback, don't remove, but can change song
+
+- type: ambientMusic
+  id: combatmodedefault
+  sound:
+    collection: combatmodedefault
+
+- type: soundCollection
+  id: combatmodedefault
+  files:
+    - /Audio/_Crescent/Ambience/CombatMode/fallback.ogg
+
+## FACTION COMBAT MUSIC TRACKS 
+## ID MUST BE "combatmode<FACTION>"!
+
+# NCWL, focus on guitar based songs
+- type: ambientMusic
+  id: combatmodeNCWL
+  sound:
+    collection: combatmodeNCWL
+
+- type: soundCollection
+  id: combatmodeNCWL
+  files:
+    - /Audio/_Crescent/Ambience/CombatMode/NCWL_1.ogg
+    - /Audio/_Crescent/Ambience/CombatMode/NCWL_2.ogg
+
+
+# TFSC, hard techno and pirate shit
+- type: ambientMusic
+  id: combatmodeTFSC
+  sound:
+    collection: combatmodeTFSC
+
+- type: soundCollection
+  id: combatmodeTFSC
+  files:
+    - /Audio/_Crescent/Ambience/CombatMode/TFSC_1.ogg
+    - /Audio/_Crescent/Ambience/CombatMode/TFSC_2.ogg
+
+# DSM, low quality RPG maker tracks, think OFF, LISA, etc. if you don't know what those are get the fuck out of here
+- type: ambientMusic
+  id: combatmodeDSM
+  sound:
+    collection: combatmodeDSM
+
+- type: soundCollection
+  id: combatmodeDSM
+  files:
+    - /Audio/_Crescent/Ambience/CombatMode/DSM_1.ogg
+    - /Audio/_Crescent/Ambience/CombatMode/DSM_2.ogg
+
+# TAP, highfleet tracks
+- type: ambientMusic
+  id: combatmodeTAP
+  sound:
+    collection: combatmodeTAP
+
+- type: soundCollection
+  id: combatmodeTAP
+  files:
+    - /Audio/_Crescent/Ambience/CombatMode/TAP_1.ogg
+    - /Audio/_Crescent/Ambience/CombatMode/TAP_2.ogg
+
+## AMBIENT MUSIC TRACKS
+## ID MUST BE IDENTICAL TO BIOME ID FROM space_biomes.yml!
 
 #imperial
 
@@ -46,12 +135,12 @@
 #syndie
 
 - type: ambientMusic
-  id: syndiebiome
+  id: syndicatebiome
   sound:
     collection: syndiebiome
 
 - type: soundCollection
-  id: syndiebiome
+  id: syndicatebiome
   files:
    - /Audio/_Crescent/syndies.ogg
 
@@ -85,7 +174,7 @@
 - type: ambientMusic
   id: deepwildbiome
   sound:
-    collection: deepwildbiome #//this should be deepwilds!
+    collection: deepwildbiome
 
 - type: soundCollection
   id: deepwildbiome
@@ -102,18 +191,4 @@
   id: hadalbiome
   files:
    - /Audio/_Crescent/travesty.ogg
-
-#fallback, don't remove
-
-- type: ambientMusic
-  id: default
-  sound:
-    collection: default
-  fadeIn: true
-
-- type: soundCollection
-  id: default
-  files:
-   - /Audio/_Crescent/parietal_lobe.ogg
-
 
