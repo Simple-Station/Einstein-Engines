@@ -10,6 +10,7 @@ using Robust.Shared.Prototypes;
 using Robust.Server.GameObjects;
 using Content.Shared.Humanoid;
 using Robust.Shared.Random;
+using Robust.Shared.Player;
 
 namespace Content.Shared.Sound.Systems;
 
@@ -23,7 +24,7 @@ public sealed class SuffocationSoundSystem : EntitySystem
 
     private SoundCollectionPrototype? _maleGasps;
     private SoundCollectionPrototype? _femaleGasps;
-    private SoundCollectionPrototype? _intersexGasps;
+    private SoundCollectionPrototype? _otherGasps;
     private AudioParams _params = AudioParams.Default.WithMaxDistance(2).WithVolume(-5);
 
 
@@ -34,7 +35,7 @@ public sealed class SuffocationSoundSystem : EntitySystem
 
         _maleGasps = _protMan.Index<SoundCollectionPrototype>("SuffocationMale");
         _femaleGasps = _protMan.Index<SoundCollectionPrototype>("SuffocationFemale");
-        _intersexGasps = _protMan.Index<SoundCollectionPrototype>("SuffocationIntersex");
+        _otherGasps = _protMan.Index<SoundCollectionPrototype>("SuffocationOther");
 
         SubscribeLocalEvent<RespiratorComponent, SuffocationSoundEvent>(OnSuffocate);
     }
@@ -43,10 +44,13 @@ public sealed class SuffocationSoundSystem : EntitySystem
     {
         HumanoidAppearanceComponent? component = CompOrNull<HumanoidAppearanceComponent>((EntityUid) ent);
 
-        if (component == null) //this means we have a mob or something that shouldnt make a sound
+        if (component == null) //this should never happen
             return;
 
-        if (_maleGasps == null || _femaleGasps == null || _intersexGasps == null)
+        if (_maleGasps == null || _femaleGasps == null || _otherGasps == null) //this should never happen either
+            return;
+
+        if (!TryComp<ActorComponent>((EntityUid) ent, out var actor)) //ONLY players get to make suffocation sounds.
             return;
 
         // if (_random.Next(0, 3) != 0) //66% chance to NOT play noise because we suffocate kinda quick
@@ -57,7 +61,7 @@ public sealed class SuffocationSoundSystem : EntitySystem
         else if (component.Sex == Sex.Female)
             _audio.PlayPvs(_random.Pick(_femaleGasps.PickFiles).ToString(), ent.Owner, _params);
         else //(component.Sex == Sex.Intersex)
-            _audio.PlayPvs(_random.Pick(_intersexGasps.PickFiles).ToString(), ent.Owner, _params);
+            _audio.PlayPvs(_random.Pick(_otherGasps.PickFiles).ToString(), ent.Owner, _params);
 
     }
 
