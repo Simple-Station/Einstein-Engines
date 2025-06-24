@@ -259,7 +259,7 @@ public sealed partial class ContentAudioSystem
 
         if (fallback) //if we somehow FOUND NO MUSIC TRACKS
         {
-            _sawmill.Debug($"NO MUSIC FOUND, NEED FALLBACK!!!");
+            _sawmill.Debug($"NO MUSIC FOUND, SOMETHING IS WRONG!");
         }
 
         return musictracks;
@@ -291,7 +291,7 @@ public sealed partial class ContentAudioSystem
     private void OnStateChange(StateChangedEventArgs obj)
     {
         if (obj.NewState is not GameplayState)
-            return;
+            DisableAmbientMusic();
     }
 
     private void OnRoundEndMessage(RoundEndMessageEvent ev)
