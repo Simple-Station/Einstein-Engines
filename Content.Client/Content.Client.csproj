@@ -26,6 +26,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Spawners\" />
+    <Folder Include="_EE\Shadowling\UI\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Lobby\UI\LobbyCharacterPanel.xaml.cs">

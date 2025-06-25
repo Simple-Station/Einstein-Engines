@@ -251,3 +251,18 @@
   license: "CC-BY-SA-4.0"
   copyright: "From battle for wesnoth"
   source: "https://github.com/wesnoth/wesnoth"
+
+- files: ["bamf.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "From paradise station"
+  source: "https://github.com/ParadiseSS13/Paradise"
+
+- files: ["ghost.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "From paradise station"
+  source: "https://github.com/ParadiseSS13/Paradise"
+
+- files: ["ghost2.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "From paradise station"
+  source: "https://github.com/ParadiseSS13/Paradise"

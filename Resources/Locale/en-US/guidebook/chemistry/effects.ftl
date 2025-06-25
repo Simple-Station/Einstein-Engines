@@ -422,6 +422,19 @@ reagent-effect-guidebook-stamina-change =
                  }
     } stamina by {$amount} points
 
+# Shadowling
+
+reagent-effect-guidebook-blind-non-sling =
+    { $chance ->
+        [1] Blinds any
+        *[other] blind any
+    } non-shadowling
+
+reagent-effect-guidebook-heal-sling =
+    { $chance ->
+        [1] Heals any
+        *[other] heal any
+    } shadowling and thrall
 reagent-effect-guidebook-add-to-chemicals =
     { $chance ->
         [1] { $deltasign ->
@@ -443,4 +456,3 @@ reagent-effect-guidebook-chem-restorereroll-psionic =
         [1] Restores
         *[other] restore
     } one's ability to gain benefit from mind opening reagents
-
