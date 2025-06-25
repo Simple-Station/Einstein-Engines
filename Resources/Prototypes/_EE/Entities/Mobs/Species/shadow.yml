@@ -13,8 +13,7 @@
     color: "#BF40BF"
     activateSound: null
     deactivateSound: null
-  - type: Flashable
-    durationMultiplier: 1.5
+  - type: EyeDamageOnFlashing
   - type: Absorbable # idk why
   - type: Psionic
     removable: false

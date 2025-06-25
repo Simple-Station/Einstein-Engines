@@ -475,9 +475,3 @@ reagent-effect-guidebook-add-to-chemicals =
         [1] to
         *[-1] from
     } the solution
-
-reagent-effect-guidebook-chem-restorereroll-psionic =
-    { $chance ->
-        [1] Restores
-        *[other] restore
-    } one's ability to gain benefit from mind opening reagents
