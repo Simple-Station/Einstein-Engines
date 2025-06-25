@@ -78,6 +78,7 @@ guide-entry-revolutionaries = Revolutionaries
 guide-entry-minor-antagonists = Minor Antagonists
 guide-entry-space-ninja = Space Ninja
 guide-entry-blood-cult = Blood Cult
+guide-entry-shadowlings = Shadowlings
 
 guide-entry-rules = Server Rules
 guide-entry-rules-core-only = Core Only Ruleset

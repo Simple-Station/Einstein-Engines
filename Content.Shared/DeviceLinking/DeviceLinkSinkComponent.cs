@@ -4,8 +4,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 
 namespace Content.Shared.DeviceLinking;
 
-[RegisterComponent]
-[NetworkedComponent] // for interactions. Actual state isn't currently synced.
+[RegisterComponent, NetworkedComponent]
 [Access(typeof(SharedDeviceLinkSystem))]
 public sealed partial class DeviceLinkSinkComponent : Component
 {
@@ -32,7 +31,7 @@ public sealed partial class DeviceLinkSinkComponent : Component
 
     /// <summary>
     /// How high the invoke counter is allowed to get before the links to the sink are removed and the DeviceLinkOverloadedEvent gets raised
-    /// If the invoke limit is smaller than 1 the sink can't overload
+    /// If the invoke limit is 0 or less, the limit is ignored.
     /// </summary>
     [DataField]
     public int InvokeLimit = 10;
