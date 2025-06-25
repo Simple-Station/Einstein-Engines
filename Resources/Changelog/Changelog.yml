@@ -16390,3 +16390,12 @@ Entries:
   id: 7278
   time: '2025-06-18T23:40:18.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2472
+- author: Lumminal
+  changes:
+    - type: Add
+      message: >-
+        The shadows have awakened, and their ascendance is soon to follow. Do
+        not enter maints.
+  id: 7279
+  time: '2025-06-25T05:28:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2207
