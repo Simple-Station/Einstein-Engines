@@ -14,6 +14,8 @@
           mapNameTemplate: 'Port Vladzena'
         - type: VesselDesignation
           designation: vessel-designation-headquarters
+        - type: VesselDescription
+          description: The sector's last burning hope. Are you here to snuff it out, or fan the flame?
         - type: Grammar
           attributes:
             proper: true
