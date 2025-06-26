@@ -18,7 +18,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Robust.Shared.Timing;
+using Timer = Robust.Shared.Timing.Timer;
 using Robust.Shared.Utility;
 using Content.Client.CombatMode;
 using Content.Shared.CombatMode;
@@ -26,6 +26,9 @@ using System.IO;
 using Robust.Shared.Toolshed.Commands.Values;
 using Content.Shared.Preferences;
 using Content.Client.Lobby;
+using System.Diagnostics;
+using System.Threading;
+using Robust.Shared.Timing;
 
 namespace Content.Client.Audio;
 
@@ -71,10 +74,19 @@ public sealed partial class ContentAudioSystem
     private float _combatMusicFadeInTime = 2f;
 
     // Time that combat mode needs to be on to start playing music. Set to 0 to play immediately.
-    public TimeSpan _combatStartUpTime = TimeSpan.FromSeconds(5.0);
+    private TimeSpan _combatStartUpTime = TimeSpan.FromSeconds(2.0);
 
     // Time that combat mode needs to be off to stop combat mode. Set to 0 to turn off as soon as combat mode is off.
-    public TimeSpan _combatWindDownTime = TimeSpan.FromSeconds(5.0);
+    private TimeSpan _combatWindDownTime = TimeSpan.FromSeconds(5.0);
+
+    // Combat mode state before checking to switch combat music off/on.
+    // 1. We toggle combat mode. We fire SwitchCombatMusic in (timer) seconds.
+    // 2. We save the state from step 1 in _lastCombatState
+    // 3. When SwitchCombatMusic fires, we check if the current combat state is different than _lastCombatState. If it is, then we change music. If not, we keep it.
+    bool _lastCombatState = false;
+
+    // Token used to cancel combat mode timer when we start a new one.
+    // private CancellationTokenSource _combatTimerToken = new();
 
     private ISawmill _sawmill = default!;
 
@@ -169,14 +181,43 @@ public sealed partial class ContentAudioSystem
         PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _ambientMusicFadeInTime);
     }
 
+
     private void OnCombatModeToggle(ToggleCombatActionEvent ev)
     {
         if (!_timing.IsFirstTimePredicted == true) //needed, because combat mode is predicted, and triggers 7 times otherwise.
             return;
 
+        // _combatTimerToken.Cancel();
+        // _combatTimerToken.TryReset();
+
         bool currentCombatState = _combatModeSystem.IsInCombatMode();
 
-        _audio.Stop(_ambientMusicStream);
+        //_sawmill.Debug("FIRED COMBAT MODE TOGGLE");
+
+        if (currentCombatState)
+            Timer.Spawn(_combatStartUpTime, SwitchCombatMusic);
+        else
+            Timer.Spawn(_combatWindDownTime, SwitchCombatMusic);
+
+        // if (currentCombatState)
+        //     SwitchCombatMusic();
+        // else
+        //     SwitchCombatMusic();
+
+    }
+    private void SwitchCombatMusic()
+    {
+        bool currentCombatState = _combatModeSystem.IsInCombatMode();
+
+        if (_lastCombatState == currentCombatState)
+            return;
+        //_sawmill.Debug("FIRED SWITCHCOMBATMUSIC");
+
+        _lastCombatState = currentCombatState;
+
+        FadeOut(_ambientMusicStream);
+
+        //_audio.Stop(_ambientMusicStream);
 
         if (currentCombatState) //true = we toggled combat ON. 
         {
