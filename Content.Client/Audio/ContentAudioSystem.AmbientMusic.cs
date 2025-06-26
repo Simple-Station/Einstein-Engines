@@ -78,7 +78,6 @@ public sealed partial class ContentAudioSystem
 
     private ISawmill _sawmill = default!;
 
-    //BUG: ambient music keeps playing once you return to lobby
     private void InitializeAmbientMusic()
     {
         SubscribeNetworkEvent<SpaceBiomeSwapMessage>(OnBiomeChange);
@@ -169,7 +168,6 @@ public sealed partial class ContentAudioSystem
 
         PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _ambientMusicFadeInTime);
     }
-
 
     private void OnCombatModeToggle(ToggleCombatActionEvent ev)
     {
@@ -304,7 +302,7 @@ public sealed partial class ContentAudioSystem
             _musicTracks = GetTracks();
     }
     ///<summary>
-    /// This function handles the change from lobby to gameplay. I think.
+    /// This function handles the change from lobby to gameplay, disabling music when you're not in gameplay state.
     ///</summary>
     private void OnStateChange(StateChangedEventArgs obj)
     {
@@ -322,8 +320,6 @@ public sealed partial class ContentAudioSystem
         // If scoreboard shows then just stop the music
         _ambientMusicStream = _audio.Stop(_ambientMusicStream);
     }
-
-    //THIS STILL LETS AMBIENT MUSIC PLAY INTO THE LOBBY SADLY. IT SHOULD STOP IT BUT I DONT KNOW HOW
     public void DisableAmbientMusic()
     {
         if (_ambientMusicStream == null)
