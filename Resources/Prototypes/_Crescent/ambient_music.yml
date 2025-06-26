@@ -19,12 +19,12 @@
 
 #example
 - type: ambientMusic
-  id: testbiome
+  id: test
   sound:
     collection: AmbienceTestBiome
 
 - type: soundCollection
-  id: testbiome
+  id: test
   files:
    - /Audio/Jukebox/sector11.ogg
 

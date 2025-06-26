@@ -64,6 +64,18 @@ public sealed partial class ContentAudioSystem
     // List of available ambient music tracks to sift through.
     private List<AmbientMusicPrototype>? _musicTracks;
 
+    // Time in seconds for ambient music tracks to fade in. Set to 0 to play immediately.
+    private float _ambientMusicFadeInTime = 10f;
+
+    // Time in seconds for combat music tracks to fade in. Set to 0 to play immediately.
+    private float _combatMusicFadeInTime = 2f;
+
+    // Time that combat mode needs to be on to start playing music. Set to 0 to play immediately.
+    public TimeSpan _combatStartUpTime = TimeSpan.FromSeconds(5.0);
+
+    // Time that combat mode needs to be off to stop combat mode. Set to 0 to turn off as soon as combat mode is off.
+    public TimeSpan _combatWindDownTime = TimeSpan.FromSeconds(5.0);
+
     private ISawmill _sawmill = default!;
 
     //BUG: ambient music keeps playing once you return to lobby
@@ -111,7 +123,7 @@ public sealed partial class ContentAudioSystem
 
             string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
 
-            PlayMusicTrack(path, _musicProto.Sound.Params.Volume, true);
+            PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _ambientMusicFadeInTime);
 
             Timer.Spawn(_timeUntilNextAmbientTrack, () => ReplayAmbientMusic());
         }
@@ -155,7 +167,7 @@ public sealed partial class ContentAudioSystem
 
         string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
 
-        PlayMusicTrack(path, _musicProto.Sound.Params.Volume, true);
+        PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _ambientMusicFadeInTime);
     }
 
 
@@ -189,7 +201,7 @@ public sealed partial class ContentAudioSystem
 
                 string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
 
-                PlayMusicTrack(path, _musicProto.Sound.Params.Volume, false);
+                PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _combatMusicFadeInTime);
             }
             else //if the faction combat music prototype does not exist, instead fall back to the default.
             {
@@ -198,7 +210,7 @@ public sealed partial class ContentAudioSystem
 
                 string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
 
-                PlayMusicTrack(path, _musicProto.Sound.Params.Volume, false);
+                PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _combatMusicFadeInTime);
             }
         }
         else                    //false = we toggled combat OFF
@@ -210,7 +222,8 @@ public sealed partial class ContentAudioSystem
                     _entMan.TryGetComponent<SpaceBiomeTrackerComponent>(_player.LocalSession.AttachedEntity, out var comp);
                     if (comp != null)
                     {
-                        _lastBiome = _proto.Index<SpaceBiomePrototype>(comp.Biome);
+                        if (comp.Biome != null)
+                            _lastBiome = _proto.Index<SpaceBiomePrototype>(comp.Biome);
                     }
                 }
             }
@@ -224,13 +237,18 @@ public sealed partial class ContentAudioSystem
 
             string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
 
-            PlayMusicTrack(path, _musicProto.Sound.Params.Volume, true);
+            PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _ambientMusicFadeInTime);
         }
     }
 
-    private void PlayMusicTrack(string path, float volume, bool fadeIn)
+    /// <summary>
+    /// This is a helper function that actually plays the music tracks.
+    /// </summary>
+    /// <param name="path"> Path to music to play.</param>
+    /// <param name="volume"> Volume modifier (put 0 to keep original volume).</param>
+    /// <param name="fadein"> Seconds for the music to fade in. Put 0 for no fadein. </param>
+    private void PlayMusicTrack(string path, float volume, float fadein)
     {
-
         _sawmill.Debug($"NOW PLAYING: {path}");
 
         var strim = _audio.PlayGlobal(
@@ -239,10 +257,10 @@ public sealed partial class ContentAudioSystem
             false,
             AudioParams.Default.WithVolume(volume + _volumeSlider))!;
 
-        _ambientMusicStream = strim.Value.Entity;
+        _ambientMusicStream = strim.Value.Entity; //this plays it immediately, but fadein function later makes it actually fade in.
 
-        if (fadeIn)
-            FadeIn(_ambientMusicStream, strim.Value.Component, 10f);
+        if (fadein != 0)
+            FadeIn(_ambientMusicStream, strim.Value.Component, fadein);
     }
 
     private List<AmbientMusicPrototype> GetTracks()
