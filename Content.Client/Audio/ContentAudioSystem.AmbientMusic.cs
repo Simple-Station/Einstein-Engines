@@ -85,9 +85,6 @@ public sealed partial class ContentAudioSystem
     // 3. When SwitchCombatMusic fires, we check if the current combat state is different than _lastCombatState. If it is, then we change music. If not, we keep it.
     bool _lastCombatState = false;
 
-    // Token used to cancel combat mode timer when we start a new one.
-    // private CancellationTokenSource _combatTimerToken = new();
-
     private ISawmill _sawmill = default!;
 
     private void InitializeAmbientMusic()
@@ -187,22 +184,13 @@ public sealed partial class ContentAudioSystem
         if (!_timing.IsFirstTimePredicted == true) //needed, because combat mode is predicted, and triggers 7 times otherwise.
             return;
 
-        // _combatTimerToken.Cancel();
-        // _combatTimerToken.TryReset();
-
         bool currentCombatState = _combatModeSystem.IsInCombatMode();
 
-        //_sawmill.Debug("FIRED COMBAT MODE TOGGLE");
 
         if (currentCombatState)
             Timer.Spawn(_combatStartUpTime, SwitchCombatMusic);
         else
-            Timer.Spawn(_combatWindDownTime, SwitchCombatMusic);
-
-        // if (currentCombatState)
-        //     SwitchCombatMusic();
-        // else
-        //     SwitchCombatMusic();
+            Timer.Spawn(_combatWindDownTime, SwitchCombatMusic);;
 
     }
     private void SwitchCombatMusic()
@@ -211,13 +199,10 @@ public sealed partial class ContentAudioSystem
 
         if (_lastCombatState == currentCombatState)
             return;
-        //_sawmill.Debug("FIRED SWITCHCOMBATMUSIC");
 
         _lastCombatState = currentCombatState;
 
         FadeOut(_ambientMusicStream);
-
-        //_audio.Stop(_ambientMusicStream);
 
         if (currentCombatState) //true = we toggled combat ON. 
         {
