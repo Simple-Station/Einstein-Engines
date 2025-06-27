@@ -128,7 +128,7 @@
     tags: []
 
 - type: entity
-  name: blood-eye ampoule
+  name: blood-eye injector
   parent: ChemicalMedipen
   id: BloodeyeAutoinjector
   description: A chemical cocktail of combat drugs known to invoke violent tendencies within the user. Blood-eye was originally produced by Shinohara Heavy Industries, but later taken off the shelves after narcotic regulations were put into place.
