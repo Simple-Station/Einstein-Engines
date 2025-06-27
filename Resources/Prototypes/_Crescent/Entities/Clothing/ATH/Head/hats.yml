@@ -98,18 +98,3 @@
     sprite: _Crescent/Clothing/ATH/Head/soldat.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/ATH/Head/soldat.rsi
-
-- type: entity
-  parent: ClothingHeadBase
-  id: ClothingHeadHatAuthoritySicherheitz
-  name: sicherheitz beret
-  description: A no-bullshit military beret, emblazoned with the sicherheitz insignia.
-  components:
-  - type: Sprite
-    sprite: _Crescent/Clothing/ATH/Head/sicherheitz.rsi
-  - type: Clothing
-    sprite: _Crescent/Clothing/ATH/Head/sicherheitz.rsi
-  - type: Tag
-    tags:
-    - ClothMade
-    - WhitelistChameleon
