@@ -3,7 +3,12 @@
   startingInventory:
     SpaceCash1000000: 999
     WeaponLauncherHammerhead: 60
+    WeaponLauncherDisposableRocket: 60
+    WeaponLauncherMilkor: 60
+    WeaponLauncherChinaLake: 60
     WeaponSpecialMako: 60
+    WeaponSpecialChargeRifle: 60
+    WeaponSpecialRailgun: 60
     WeaponSniperHristov: 60
     WeaponSniperMosin: 60
     WeaponRifleHalyadMarksman: 60
@@ -12,9 +17,11 @@
     WeaponRifleMayflower: 60
     WeaponRifleLecter: 60
     WeaponRifleGoro: 60
+    WeaponSubMachineGunPTAAsVal: 60
     WeaponRifleAk: 60
     WeaponRifleKrinkov: 60
     WeaponRifleHoundMarksman: 60
+    WeaponLightMachineGunNCSPRPD: 60
     WeaponLightMachineGunL6: 60
     WeaponSubMachineGunAtreides: 60
     WeaponSubMachineGunCheshyre: 60
@@ -22,6 +29,7 @@
     WeaponSubMachineGunSabre: 60
     WeaponSubMachineGunMP49: 60
     WeaponSubMachineGunDrozd: 60
+    WeaponSubMachineGunPTAVektor: 60
     WeaponShotgunBulldog: 60
     WeaponShotgunKS23: 60
     WeaponShotgunEnforcer: 60
@@ -44,11 +52,22 @@
     RiotLaserShield: 100
     TelescopicShield: 100
     RiotShield: 100
+    GrenadeFrag: 250
+    Magazine6x24mmCharge: 250
+    Magazine6x24mmConcentrated: 250
+    Magazine6x24mmIon: 250
+    Magazine6x24mmIncendiary: 250
+    Magazine6x24mmShock: 250
+    BaseMagazineRailgun15mm: 250
+    MagazineRailgun15mmAP: 250
+    MagazineRailgun15mmDU: 250
     MagazineHeavyRifle: 250
+    BaseMagazineCaselessRifle: 250
     MagazineRifle: 250
     MagazineLightRifle: 250
     MagazinePistolSubMachineGunHeavy: 250
     MagazinePistolSubMachineGun: 250
+    MagazinePistol6mmSmg: 250
     BaseMagazineMagnumSubMachineGun: 250
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
@@ -96,8 +115,13 @@
   startingInventory:
     SpaceCash1000000: 999
     WeaponLauncherHammerhead: 60
+    WeaponLauncherDisposableRocket: 60
+    WeaponLauncherGM94: 60
+    WeaponLauncherMilkor: 60
+    WeaponLauncherChinaLake: 60
     WeaponSpecialMako: 60
     BaseWeaponLightMachineGunConscript: 60
+    WeaponSpecialRailgun: 60
     WeaponSniperHristov: 60
     WeaponSniperMosin: 60
     WeaponRifleHalyadMarksman: 60
@@ -107,6 +131,7 @@
     WeaponRifleFAL: 60
     WeaponRifleLecter: 60
     WeaponRifleGoro: 60
+    WeaponSubMachineGunPTAAsVal: 60
     WeaponRifleHoundMarksman: 60
     WeaponRifleAk: 60
     WeaponRifleKrinkov: 60
@@ -117,6 +142,7 @@
     WeaponSubMachineGunSabre: 60
     WeaponSubMachineGunMP49: 60
     WeaponSubMachineGunDrozd: 60
+    WeaponSubMachineGunPTAVektor: 60
     WeaponShotgunBulldog: 60
     WeaponShotgunEnforcer: 60
     WeaponShotgunKammerer: 60
@@ -125,6 +151,7 @@
     WeaponRevolverInspector: 60
     WeaponPistolZodum: 60
     WeaponPistolT91: 60
+    WeaponPistolComrade: 60
     WeaponPistolHimehabu: 60
     WeaponPistolMk58: 60
     WeaponPistolSmartpistol: 60
@@ -137,11 +164,17 @@
     RiotLaserShield: 100
     TelescopicShield: 100
     RiotShield: 100
+    GrenadeFrag: 250
     MagazineHeavyRifle: 250
+    BaseMagazineRailgun15mm: 250
+    MagazineRailgun15mmAP: 250
+    MagazineRailgun15mmDU: 250
+    BaseMagazineCaselessRifle: 250
     MagazineRifle: 250
     MagazineLightRifle: 250
     MagazinePistolSubMachineGunHeavy: 250
     MagazinePistolSubMachineGun: 250
+    MagazinePistol6mmSmg: 250
     BaseMagazineMagnumSubMachineGun: 250
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
@@ -149,6 +182,11 @@
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
+    BoxLethalshot4g: 250
+    BoxBeanbag4g: 250
+    BoxShotgunSlug4g: 250
+    BoxShotgunBreach4g: 250
+    BoxShotgunFlash4g: 250
     ClothingBeltNCWLWebbingMedFilled: 60
     ClothingBeltNCWLWebbingFilledGrenadier: 60
     ClothingMaskSyndicateFacemask: 100
@@ -178,15 +216,22 @@
   startingInventory:
     SpaceCash1000000: 999
     WeaponLauncherHammerhead: 60
+    WeaponLauncherDisposableRocket: 60
+    WeaponLauncherM320: 60
+    WeaponLauncherMilkor: 60
+    WeaponLauncherChinaLake: 60
     WeaponSpecialMako: 60
+    WeaponSpecialRailgun: 60
     WeaponSniperHristov: 60
     WeaponSniperMosin: 60
     WeaponRifleHalyadMarksman: 60
     WeaponRifleBarghest: 60
+    WeaponRifleDSMLegionnaire: 60
     WeaponRifleTakemura: 60
     WeaponRifleMiller: 60
     WeaponRifleLecter: 60
     WeaponRifleGoro: 60
+    WeaponSubMachineGunPTAAsVal: 60
     WeaponRifleHoundMarksman: 60
     WeaponLightMachineGunL6: 60
     WeaponSubMachineGunC20r: 60
@@ -194,6 +239,8 @@
     WeaponSubMachineGunSabre: 60
     WeaponSubMachineGunMP49: 60
     WeaponSubMachineGunDrozd: 60
+    WeaponSubMachineGunPTAVektor: 60
+    WeaponShotgunSHIDoubleBarreled4g: 60
     WeaponShotgunSpas: 60
     WeaponShotgunEnforcer: 60
     WeaponShotgunKammerer: 60
@@ -220,11 +267,17 @@
     RiotLaserShield: 100
     TelescopicShield: 100
     RiotShield: 100
+    GrenadeFrag: 250
+    BaseMagazineRailgun15mm: 250
+    MagazineRailgun15mmAP: 250
+    MagazineRailgun15mmDU: 250
     MagazineHeavyRifle: 250
+    BaseMagazineCaselessRifle: 250
     MagazineRifle: 250
     MagazineLightRifle: 250
     MagazinePistolSubMachineGunHeavy: 250
     MagazinePistolSubMachineGun: 250
+    MagazinePistol6mmSmg: 250
     BaseMagazineMagnumSubMachineGun: 250
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
@@ -232,6 +285,11 @@
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
+    BoxLethalshot4g: 250
+    BoxBeanbag4g: 250
+    BoxShotgunSlug4g: 250
+    BoxShotgunBreach4g: 250
+    BoxShotgunFlash4g: 250
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingMaskImperialCombatGasmask: 100
@@ -261,15 +319,22 @@
   startingInventory:
     SpaceCash1000000: 999
     WeaponLauncherHammerhead: 60
+    WeaponLauncherDisposableRocket: 60
+    WeaponLauncherM320: 60
+    WeaponLauncherMilkor: 60
+    WeaponLauncherChinaLake: 60
     WeaponSpecialMako: 60
+    WeaponSpecialRailgun: 60
     WeaponSniperHristov: 60
     WeaponSniperMosin: 60
     WeaponRifleHalyadMarksman: 60
     WeaponRifleBarghest: 60
+    WeaponRifleDSMLegionnaire: 60
     WeaponRifleTakemura: 60
     WeaponRifleHunter: 60
     WeaponRifleLecter: 60
     WeaponRifleGoro: 60
+    WeaponSubMachineGunPTAAsVal: 60
     WeaponRifleHoundMarksman: 60
     WeaponLightMachineGunL6: 60
     WeaponSubMachineGunBeetle: 60
@@ -277,6 +342,8 @@
     WeaponSubMachineGunSabre: 60
     WeaponSubMachineGunMP49: 60
     WeaponSubMachineGunDrozd: 60
+    WeaponSubMachineGunPTAVektor: 60
+    WeaponShotgunSHIDoubleBarreled4g: 60
     WeaponShotgunSpas: 60
     WeaponShotgunEnforcer: 60
     WeaponShotgunKammerer: 60
@@ -298,11 +365,17 @@
     RiotLaserShield: 100
     TelescopicShield: 100
     RiotShield: 100
+    GrenadeFrag: 250
+    BaseMagazineRailgun15mm: 250
+    MagazineRailgun15mmAP: 250
+    MagazineRailgun15mmDU: 250
     MagazineHeavyRifle: 250
+    BaseMagazineCaselessRifle: 250
     MagazineRifle: 250
     MagazineLightRifle: 250
     MagazinePistolSubMachineGunHeavy: 250
     MagazinePistolSubMachineGun: 250
+    MagazinePistol6mmSmg: 250
     BaseMagazineMagnumSubMachineGun: 250
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
@@ -310,6 +383,11 @@
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
+    BoxLethalshot4g: 250
+    BoxBeanbag4g: 250
+    BoxShotgunSlug4g: 250
+    BoxShotgunBreach4g: 250
+    BoxShotgunFlash4g: 250
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingMaskImperialCombatGasmask: 100
@@ -338,7 +416,11 @@
   startingInventory:
     SpaceCash1000000: 999
     WeaponLauncherHammerhead: 60
+    WeaponLauncherDisposableRocket: 60
+    WeaponLauncherMilkor: 60
+    WeaponLauncherChinaLake: 60
     WeaponSpecialMako: 60
+    WeaponSpecialRailgun: 60
     WeaponSniperHristov: 60
     WeaponSniperMosin: 60
     WeaponRifleHalyadMarksman: 60
@@ -347,6 +429,7 @@
     WeaponRifleM90GrenadeLauncher: 60
     WeaponRifleLecter: 60
     WeaponRifleGoro: 60
+    WeaponSubMachineGunPTAAsVal: 60
     WeaponRifleHoundMarksman: 60
     WeaponLightMachineGunL6: 60
     WeaponSubMachineGunWt550: 60
@@ -355,6 +438,8 @@
     WeaponSubMachineGunSabre: 60
     WeaponSubMachineGunMP49: 60
     WeaponSubMachineGunDrozd: 60
+    WeaponSubMachineGunPTAVektor: 60
+    WeaponShotgunSHIDoubleBarreled4g: 60
     WeaponShotgunSpas: 60
     WeaponShotgunEnforcer: 60
     WeaponShotgunKammerer: 60
@@ -379,11 +464,17 @@
     RiotLaserShield: 100
     TelescopicShield: 100
     RiotShield: 100
+    GrenadeFrag: 250
+    BaseMagazineRailgun15mm: 250
+    MagazineRailgun15mmAP: 250
+    MagazineRailgun15mmDU: 250
     MagazineHeavyRifle: 250
+    BaseMagazineCaselessRifle: 250
     MagazineRifle: 250
     MagazineLightRifle: 250
     MagazinePistolSubMachineGunHeavy: 250
     MagazinePistolSubMachineGun: 250
+    MagazinePistol6mmSmg: 250
     BaseMagazineMagnumSubMachineGun: 250
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
@@ -391,6 +482,11 @@
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
+    BoxLethalshot4g: 250
+    BoxBeanbag4g: 250
+    BoxShotgunSlug4g: 250
+    BoxShotgunBreach4g: 250
+    BoxShotgunFlash4g: 250
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingBeltMinutemanPouches: 100
@@ -423,6 +519,9 @@
   startingInventory:
     SpaceCash1000000: 999
     WeaponLauncherHammerhead: 60
+    WeaponLauncherDisposableRocket: 60
+    WeaponLauncherMilkor: 60
+    WeaponSpecialRailgun: 60
     WeaponSniperHristov: 60
     WeaponSniperMosin: 60
     WeaponRifleLecter: 60
@@ -433,6 +532,7 @@
     WeaponSubMachineGunSabre: 60
     WeaponSubMachineGunMP49: 60
     WeaponSubMachineGunDrozd: 60
+    WeaponShotgunSHIDoubleBarreled4g: 60
     WeaponShotgunSpas: 60
     WeaponShotgunEnforcer: 60
     WeaponShotgunKammerer: 60
@@ -457,6 +557,10 @@
     RiotLaserShield: 100
     TelescopicShield: 100
     RiotShield: 100
+    GrenadeFrag: 250
+    BaseMagazineRailgun15mm: 250
+    MagazineRailgun15mmAP: 250
+    MagazineRailgun15mmDU: 250
     MagazineHeavyRifle: 250
     MagazineRifle: 250
     MagazineLightRifle: 250
@@ -469,6 +573,11 @@
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
+    BoxLethalshot4g: 250
+    BoxBeanbag4g: 250
+    BoxShotgunSlug4g: 250
+    BoxShotgunBreach4g: 250
+    BoxShotgunFlash4g: 250
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingBeltMinutemanPouches: 100
@@ -504,7 +613,12 @@
     LesserKnockdownSpellbook: 8
     LesserHackSpellbook: 18
     WeaponLauncherHammerhead: 60
+    WeaponLauncherDisposableRocket: 60
+    WeaponLauncherMilkor: 60
+    WeaponLauncherChinaLake: 60
     WeaponSpecialMako: 60
+    WeaponSpecialChargeRifle: 60
+    WeaponSpecialRailgun: 60
     WeaponSniperHristov: 60
     WeaponSniperMosin: 60
     WeaponRifleHalyadMarksman: 60
@@ -513,6 +627,7 @@
     WeaponRifleM90GrenadeLauncher: 60
     WeaponRifleLecter: 60
     WeaponRifleGoro: 60
+    WeaponSubMachineGunPTAAsVal: 60
     WeaponRifleHoundMarksman: 60
     WeaponLightMachineGunL6: 60
     WeaponSubMachineGunWt550: 60
@@ -521,6 +636,8 @@
     WeaponSubMachineGunSabre: 60
     WeaponSubMachineGunMP49: 60
     WeaponSubMachineGunDrozd: 60
+    WeaponSubMachineGunPTAVektor: 60
+    WeaponShotgunSHIDoubleBarreled4g: 60
     WeaponShotgunSpas: 60
     WeaponShotgunEnforcer: 60
     WeaponShotgunKammerer: 60
@@ -546,11 +663,22 @@
     RiotLaserShield: 100
     TelescopicShield: 100
     RiotShield: 100
+    GrenadeFrag: 250
+    Magazine6x24mmCharge: 250
+    Magazine6x24mmConcentrated: 250
+    Magazine6x24mmIon: 250
+    Magazine6x24mmIncendiary: 250
+    Magazine6x24mmShock: 250
+    BaseMagazineRailgun15mm: 250
+    MagazineRailgun15mmAP: 250
+    MagazineRailgun15mmDU: 250
     MagazineHeavyRifle: 250
+    BaseMagazineCaselessRifle: 250
     MagazineRifle: 250
     MagazineLightRifle: 250
     MagazinePistolSubMachineGunHeavy: 250
     MagazinePistolSubMachineGun: 250
+    MagazinePistol6mmSmg: 250
     BaseMagazineMagnumSubMachineGun: 250
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
@@ -558,6 +686,11 @@
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
+    BoxLethalshot4g: 250
+    BoxBeanbag4g: 250
+    BoxShotgunSlug4g: 250
+    BoxShotgunBreach4g: 250
+    BoxShotgunFlash4g: 250
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingBeltMinutemanPouches: 100
@@ -589,7 +722,12 @@
   startingInventory:
     SpaceCash1000000: 999
     WeaponLauncherHammerhead: 60
+    WeaponLauncherDisposableRocket: 60
+    WeaponLauncherMilkor: 60
+    WeaponLauncherChinaLake: 60
     WeaponSpecialMako: 60
+    WeaponSpecialChargeRifle: 60
+    WeaponSpecialRailgun: 60
     WeaponSniperHristov: 60
     WeaponSniperMosin: 60
     WeaponRifleHalyadMarksman: 60
@@ -597,6 +735,7 @@
     WeaponRifleTakemura: 60
     WeaponRifleLecter: 60
     WeaponRifleGoro: 60
+    WeaponSubMachineGunPTAAsVal: 60
     WeaponRifleHoundMarksman: 60
     WeaponLightMachineGunL6: 60
     WeaponSubMachineGunWt550: 60
@@ -605,6 +744,8 @@
     WeaponSubMachineGunSabre: 60
     WeaponSubMachineGunMP49: 60
     WeaponSubMachineGunDrozd: 60
+    WeaponSubMachineGunPTAVektor: 60
+    WeaponShotgunSHIDoubleBarreled4g: 60
     WeaponShotgunSpas: 60
     WeaponShotgunEnforcer: 60
     WeaponShotgunKammerer: 60
@@ -629,11 +770,22 @@
     RiotLaserShield: 100
     TelescopicShield: 100
     RiotShield: 100
+    GrenadeFrag: 250
+    Magazine6x24mmCharge: 250
+    Magazine6x24mmConcentrated: 250
+    Magazine6x24mmIon: 250
+    Magazine6x24mmIncendiary: 250
+    Magazine6x24mmShock: 250
+    BaseMagazineRailgun15mm: 250
+    MagazineRailgun15mmAP: 250
+    MagazineRailgun15mmDU: 250
     MagazineHeavyRifle: 250
+    BaseMagazineCaselessRifle: 250
     MagazineRifle: 250
     MagazineLightRifle: 250
     MagazinePistolSubMachineGunHeavy: 250
     MagazinePistolSubMachineGun: 250
+    MagazinePistol6mmSmg: 250
     BaseMagazineMagnumSubMachineGun: 250
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
@@ -641,6 +793,11 @@
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
+    BoxLethalshot4g: 250
+    BoxBeanbag4g: 250
+    BoxShotgunSlug4g: 250
+    BoxShotgunBreach4g: 250
+    BoxShotgunFlash4g: 250
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingBeltAuthorityWebbing: 100
@@ -670,7 +827,12 @@
   startingInventory:
     SpaceCash1000000: 999
     WeaponLauncherHammerhead: 60
+    WeaponLauncherDisposableRocket: 60
+    WeaponLauncherMilkor: 60
+    WeaponLauncherChinaLake: 60
     WeaponSpecialMako: 60
+    WeaponSpecialChargeRifle: 60
+    WeaponSpecialRailgun: 60
     WeaponSniperHristov: 60
     WeaponSniperMosin: 60
     WeaponRifleHalyadMarksman: 60
@@ -682,6 +844,7 @@
     WeaponRifleFAL: 60
     WeaponRifleLecter: 60
     WeaponRifleGoro: 60
+    WeaponSubMachineGunPTAAsVal: 60
     WeaponRifleAk: 60
     WeaponRifleKrinkov: 60
     WeaponRifleHoundMarksman: 60
@@ -692,6 +855,8 @@
     WeaponSubMachineGunSabre: 60
     WeaponSubMachineGunMP49: 60
     WeaponSubMachineGunDrozd: 60
+    WeaponSubMachineGunPTAVektor: 60
+    WeaponShotgunSHIDoubleBarreled4g: 60
     WeaponShotgunSpas: 60
     WeaponShotgunEnforcer: 60
     WeaponShotgunKammerer: 60
@@ -719,11 +884,22 @@
     RiotLaserShield: 100
     TelescopicShield: 100
     RiotShield: 100
+    GrenadeFrag: 250
+    Magazine6x24mmCharge: 250
+    Magazine6x24mmConcentrated: 250
+    Magazine6x24mmIon: 250
+    Magazine6x24mmIncendiary: 250
+    Magazine6x24mmShock: 250
+    BaseMagazineRailgun15mm: 250
+    MagazineRailgun15mmAP: 250
+    MagazineRailgun15mmDU: 250
     MagazineHeavyRifle: 250
+    BaseMagazineCaselessRifle: 250
     MagazineRifle: 250
     MagazineLightRifle: 250
     MagazinePistolSubMachineGunHeavy: 250
     MagazinePistolSubMachineGun: 250
+    MagazinePistol6mmSmg: 250
     BaseMagazineMagnumSubMachineGun: 250
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
@@ -731,6 +907,11 @@
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
+    BoxLethalshot4g: 250
+    BoxBeanbag4g: 250
+    BoxShotgunSlug4g: 250
+    BoxShotgunBreach4g: 250
+    BoxShotgunFlash4g: 250
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingBeltMinutemanPouches: 100
