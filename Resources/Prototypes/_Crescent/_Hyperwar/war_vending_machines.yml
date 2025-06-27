@@ -1,8 +1,9 @@
 
+
 - type: entity
   parent: [BaseStructureUnanchorable, VendingMachine]
   id: SyndicateWarVendory
-  name: mercenary war vendor
+  name: freestation coalition war vendor
   description: Here, you can tithe credits to the company for equipment. Sweet, sweet capitalism.
   components:
   - type: VendingMachine
@@ -32,7 +33,7 @@
 - type: entity
   parent: [BaseStructureUnanchorable, VendingMachine]
   id: ImperialWarVendory
-  name: imperial war vendor
+  name: imperial divine sol mandate war vendor
   description: Here, you can tithe credits to the House for equipment. Sweet, sweet feudalism.
   components:
   - type: VendingMachine
@@ -58,11 +59,39 @@
   - type: MarketModifier
     mod: 0.2
 
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachine]
+  id: RomaineWarVendory
+  name: saint romaine hunter militia war vendor
+  description: May you return bathed in the blood of the heathens and xeno cattle. Blessed be your blade, that it may strike true.
+  components:
+  - type: VendingMachine
+    pack: RomaineWarInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Advertise
+    pack: WarVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/armory.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: MarketModifier
+    mod: 0.2
 
 - type: entity
   parent: [BaseStructureUnanchorable, VendingMachine]
   id: NCWLWarVendory
-  name: union war vendor
+  name: league union war vendor
   description: Weapons to fuel the liberation of this system.
   components:
   - type: VendingMachine
@@ -91,7 +120,7 @@
 - type: entity
   parent: [BaseStructureUnanchorable, VendingMachine]
   id: PoliceWarVendory
-  name: Police war vendor
+  name: colonial minutemen war vendor
   description: Here, go nuts.
   components:
   - type: VendingMachine
@@ -117,11 +146,126 @@
   - type: MarketModifier
     mod: 0.2
 
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachine]
+  id: PactWarVendory
+  name: atyrian pact families war vendor
+  description: The mother calls for her warriors. You answer.
+  components:
+  - type: VendingMachine
+    pack: PactWarInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Advertise
+    pack: WarVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/armory.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: MarketModifier
+    mod: 0.2
+
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachine]
+  id: ShinoharaWarVendory
+  name: shinohara corporate war vendor
+  description: Corporate fueled war in the name of profit. No refunds.
+  components:
+  - type: VendingMachine
+    pack: ShinoharaWarInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Advertise
+    pack: WarVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/armory.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: MarketModifier
+    mod: 0.2
+
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachine]
+  id: SolarianWarVendory
+  name: central solarian authoritat war vendor
+  description: Bring Taypan into the fold. Glory to the 43rd Battlegroup and Sol.
+  components:
+  - type: VendingMachine
+    pack: SolarianWarInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Advertise
+    pack: WarVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/armory.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: MarketModifier
+    mod: 0.2
+
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachine]
+  id: IndependentWarVendory
+  name: independent spacer war vendor
+  description: A solution for the local meddlesome polities. Sponsored by DonkCo.
+  components:
+  - type: VendingMachine
+    pack: IndependentWarInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Advertise
+    pack: WarVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/armory.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: MarketModifier
+    mod: 0.2
 
 - type: entity
   parent: [BaseStructureUnanchorable, VendingMachine]
   id: ShipWarVendory
-  name: Ship war vendor
+  name: ship ammunition war vendor
   description: Here, get all your ship ammo here
   components:
   - type: VendingMachine
