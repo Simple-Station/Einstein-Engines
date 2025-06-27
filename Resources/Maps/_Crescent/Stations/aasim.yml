@@ -3083,14 +3083,6 @@ entities:
       parent: 2038
     - type: InstantAction
       container: 2038
-- proto: ActionToggleMagbootsMercenary
-  entities:
-  - uid: 1473
-    components:
-    - type: Transform
-      parent: 1472
-    - type: InstantAction
-      container: 1472
   - uid: 1565
     components:
     - type: Transform

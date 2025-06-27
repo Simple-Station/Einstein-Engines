@@ -1319,14 +1319,6 @@ entities:
       autoRechargeRate: -6000
       autoRecharge: True
     - type: ItemSlots
-- proto: ActionToggleMagbootsCombat
-  entities:
-  - uid: 1334
-    components:
-    - type: Transform
-      parent: 1333
-    - type: InstantAction
-      container: 1333
 - proto: AirAlarm
   entities:
   - uid: 43
@@ -9485,7 +9477,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: EMP missile cartridge
+- proto: MagazineGrenadeEMP
   entities:
   - uid: 2801
     components:

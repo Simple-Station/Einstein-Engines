@@ -715,7 +715,7 @@ entities:
     - type: Transform
       pos: -1.5,1.5
       parent: 1
-- proto: EMP missile cartridge
+- proto: MagazineGrenadeEMP
   entities:
   - uid: 115
     components:
