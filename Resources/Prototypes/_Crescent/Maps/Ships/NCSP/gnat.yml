@@ -1,31 +1,30 @@
 # Author Info
-# Discord: originally @fleshangel, later remade by @ninruB
+# Discord: @ninruB
 #
 - type: vessel
-  id: Reaver
-  name: NCSP Reaver
-  description: A medium Syndicate fighter.
-  price: 32000
+  id: Gnat
+  name: GSC Gnat
+  description: An ultralight Syndicate fighter.
+  price: 15000
   category: Small
   group: None
-  path: /Maps/_Crescent/Shuttles/NCSP/reaver.yml
+  path: /Maps/_Crescent/Shuttles/NCSP/gnat.yml
 
 - type: gameMap
-  id: Reaver
-  mapName: 'NCSP Reaver'
-  mapPath: /Maps/_Crescent/Shuttles/NCSP/reaver.yml
+  id: Gnat
+  mapName: 'GSC Gnat'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/gnat.yml
   minPlayers: 0
   stations:
-    Reaver:
+    Gnat:
       stationProto: StandardCrescentVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'GSC Reaver {1}'
+          mapNameTemplate: 'GSC Gnat {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: VesselDesignation
-          designation: vessel-designation-fighter
         - type: StationJobs
           overflowJobs: []
           availableJobs:

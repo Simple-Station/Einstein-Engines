@@ -1,10 +1,10 @@
 # Author Info
-# Discord: @fleshangel
+# Discord: originally @fleshangel, later remade by @ninruB
 #
 - type: vessel
   id: Jackal
   name: NCSP Jackal
-  description: A heavy Syndicate carrier, able to launch ultralight strikeshuttles.
+  description: The Gorlex Security Consulting mothership.
   price: 235000
   category: Large
   group: None
@@ -29,5 +29,7 @@
         - type: StationJobs
           overflowJobs: []
           availableJobs:
-            InfanteerNCSP: [ 4, 4 ]
+            RingleaderNCSP: [ 1, 1 ]
+            LieutenantNCSP: [ 1, 1 ]
+            InfanteerNCSP: [ 8, 8 ]
             TechnicianNCSP: [ 2, 2 ]
