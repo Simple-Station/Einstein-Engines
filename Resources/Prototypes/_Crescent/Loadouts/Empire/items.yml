@@ -1,0 +1,39 @@
+- type: loadout
+  id: LoadoutItemDSMSabre
+  category: Items
+  cost: 4
+  items:
+    - DSMSabre
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDSMNobleWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdjutantDSM
+        - AdvocatusDSM
+        - ArchmaesterDSM
+        - GovernorDSM
+        - KnightDSM
+        - CourtierDSM
+        - TemplarDSM
+        - WealthDSM
+
+- type: loadout
+  id: LoadoutItemDSMRapier
+  category: Items
+  cost: 4
+  items:
+    - DSMRapier
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDSMNobleWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdjutantDSM
+        - AdvocatusDSM
+        - ArchmaesterDSM
+        - GovernorDSM
+        - KnightDSM
+        - CourtierDSM
+        - TemplarDSM
+        - WealthDSM
