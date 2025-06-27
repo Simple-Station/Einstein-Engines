@@ -2,7 +2,7 @@
 
 <p align="center"> <img alt="Sector Crescent" width="880" height="300" src="https://github.com/ilikeships/Sector-Crescent/blob/master/Resources/Textures/Logo/logo.png?raw=true" /></p>
 
-This is the Main Repository of the Hullrot Server. Hullrot is a spin on classic SS14 prioritizing persistance, ship-combat and a more-serioues tone than other SS14 servers.
+This is the Main Repository of the Hullrot Server. Hullrot is a spin on classic SS14 prioritizing persistance, ship-combat , immersion and a more serious tone than other SS14 servers.
 License-wise, for any code in the Hullrot Folder , it has been licensed to AGPL, with files that have alternative licenses being denoted so through comments at the top.
 Most sprite assets in the Hullrot Folder are propietary, meaning do not redistribute , do not relicense , do not use and do not modify. Exemptions are explicity mentioned in the json of the RSI assets.
 
