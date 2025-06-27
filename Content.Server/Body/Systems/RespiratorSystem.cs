@@ -24,7 +24,11 @@ using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Shared.Movement.Pulling.Components; // Goobstation
-using Content.Shared.Movement.Pulling.Systems; // Goobstation
+using Content.Shared.Movement.Pulling.Systems;
+using Robust.Shared.Audio.Systems;
+using Microsoft.VisualBasic;
+using Content.Shared.Body.Events;
+using Robust.Shared.Audio; // Goobstation
 
 namespace Content.Server.Body.Systems;
 
@@ -43,6 +47,7 @@ public sealed class RespiratorSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     private static readonly ProtoId<MetabolismGroupPrototype> GasId = new("Gas");
 
@@ -121,6 +126,8 @@ public sealed class RespiratorSystem : EntitySystem
                 {
                     respirator.LastGaspPopupTime = _gameTiming.CurTime;
                     _popupSystem.PopupEntity(Loc.GetString("lung-behavior-gasp"), uid);
+                    var ev = new SuffocationSoundEvent();
+                    RaiseLocalEvent(uid, ref ev);
                 }
 
                 TakeSuffocationDamage((uid, respirator));
@@ -316,7 +323,6 @@ public sealed class RespiratorSystem : EntitySystem
             {
                 _alertsSystem.ShowAlert(ent, comp.Alert);
             }
-            RaiseLocalEvent(ent, new MoodEffectEvent("Suffocating"));
         }
 
         _damageableSys.TryChangeDamage(ent, HasComp<DebrainedComponent>(ent) ? ent.Comp.Damage * 4.5f : ent.Comp.Damage, interruptsDoAfters: false);

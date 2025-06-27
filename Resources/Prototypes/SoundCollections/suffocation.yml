@@ -1,0 +1,28 @@
+- type: soundCollection
+  id: SuffocationMale
+  files:
+  - /Audio/_Crescent/Player/Suffocation/gasp_male1.ogg
+  - /Audio/_Crescent/Player/Suffocation/gasp_male2.ogg
+  - /Audio/_Crescent/Player/Suffocation/gasp_male3.ogg
+  - /Audio/_Crescent/Player/Suffocation/gasp_male4.ogg
+  - /Audio/_Crescent/Player/Suffocation/gasp_male5.ogg
+  - /Audio/_Crescent/Player/Suffocation/gasp_male6.ogg
+  - /Audio/_Crescent/Player/Suffocation/gasp_male7.ogg
+
+- type: soundCollection
+  id: SuffocationFemale
+  files:
+  - /Audio/_Crescent/Player/Suffocation/gasp_female1.ogg
+  - /Audio/_Crescent/Player/Suffocation/gasp_female2.ogg
+  - /Audio/_Crescent/Player/Suffocation/gasp_female3.ogg
+  - /Audio/_Crescent/Player/Suffocation/gasp_female4.ogg
+  - /Audio/_Crescent/Player/Suffocation/gasp_female5.ogg
+  - /Audio/_Crescent/Player/Suffocation/gasp_female6.ogg
+  - /Audio/_Crescent/Player/Suffocation/gasp_female7.ogg
+
+- type: soundCollection
+  id: SuffocationOther
+  files:
+  - /Audio/_Crescent/Player/Suffocation/gasp_1.ogg
+  - /Audio/_Crescent/Player/Suffocation/gasp_2.ogg
+  - /Audio/_Crescent/Player/Suffocation/gasp_3.ogg

@@ -1,5 +1,7 @@
 using Content.Server.Body.Systems;
 using Content.Shared.Damage;
+using Content.Shared.Sound.Components;
+using Robust.Shared.Audio;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server.Body.Components
