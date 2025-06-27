@@ -15,8 +15,10 @@ Hullrot Discord - https://discord.gg/e6n9n9xgHN
 ## Contributing
 Before contributing , you are advised to consult either the Head Maintainer or the Project Lead over on the Hullrot Discord.
 
-If you are new to programming in SS14 as a whole , you are advised to check out the #ss14-coding-crashcourse channel
-If you are experienced or wish to work on pre-approved content , we have a list available in the #dev-roadmaps channel
+If you are new to programming in SS14 as a whole , you are advised to check out the #ss14-coding-crashcourse channel.
+
+If you are experienced or wish to work on pre-approved content , we have a list available in the #dev-roadmaps channel.
+
 We aren't as strict on Coding Standards as other SS14 servers , our review methodology takes into account how "performant" something needs to be, altough a few aspects should be kept in mind
 - any code that is performance-significant is expected to be performant
 - you are expected to write secure code
