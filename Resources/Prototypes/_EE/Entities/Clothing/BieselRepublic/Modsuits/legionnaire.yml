@@ -99,14 +99,9 @@
       coefficient: 0.01
     - type: StaminaDamageResistance
       coefficient: 0.5
-    - type: EmitsSoundOnMove
-      soundCollection:
+    - type: FootstepModifier
+      footstepSoundCollection:
         collection: FootstepHardsuitMedium
-        params:
-          volume: -5
-      requiresWorn: true
-      distanceWalking: 2
-      distanceSprinting: 3
     - type: SealableClothingVisuals
       visualLayers:
         outerClothing:

@@ -22,3 +22,42 @@
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: MultiHandedItem
+
+- type: entity
+  name: machete
+  parent: BaseSword
+  id: IndependentMachete
+  description: A vicious looking blade.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/machete.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+    damage:
+      types:
+        Slash: 30
+    clickPartDamageMultiplier: 2.5
+    heavyPartDamageMultiplier: 1.5
+    heavyRateModifier: 1.25
+    lightRangeModifier: 1.25
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 5
+    maxTargets: 4
+    angle: 80
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
+  - type: Item
+    size: Normal
+    sprite: _Crescent/Objects/Weapons/machete.rsi
+  - type: Tag
+    tags:
+    - Machete
+  - type: DisarmMalus
