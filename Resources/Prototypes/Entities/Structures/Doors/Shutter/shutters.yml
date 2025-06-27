@@ -93,6 +93,9 @@
   - type: InteractionVerbs
     allowedVerbs:
     - KnockOn
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
 
 
 - type: entity
