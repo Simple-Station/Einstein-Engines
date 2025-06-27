@@ -17,3 +17,37 @@
       id: LoadoutBackpackSatchelPurse
     - type: loadout
       id: LoadoutBackpackSatchelPurseFlipped
+#Hullrot edit start
+    - type: loadout
+      id: LoadoutBackpackNCWL
+    - type: loadout
+      id: LoadoutBackpackNCWLSatchel
+    - type: loadout
+      id: LoadoutBackpackNCWLDuffel
+    - type: loadout
+      id: LoadoutBackpackTFSC
+    - type: loadout
+      id: LoadoutBackpackTFSCSatchel
+    - type: loadout
+      id: LoadoutBackpackTFSCDuffel
+    - type: loadout
+      id: LoadoutBackpackDSM
+    - type: loadout
+      id: LoadoutBackpackDSMSatchel
+    - type: loadout
+      id: LoadoutBackpackSRM
+    - type: loadout
+      id: LoadoutBackpackSRMSatchel
+    - type: loadout
+      id: LoadoutBackpackSHI
+    - type: loadout
+      id: LoadoutBackpackSHISatchel
+    - type: loadout
+      id: LoadoutBackpackSHIDuffel
+    - type: loadout
+      id: LoadoutBackpackCMM
+    - type: loadout
+      id: LoadoutBackpackCMMSatchel
+    - type: loadout
+      id: LoadoutBackpackCMMDuffel
+#Hullrot edit end

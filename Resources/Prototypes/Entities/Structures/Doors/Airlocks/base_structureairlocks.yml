@@ -165,6 +165,9 @@
   - type: TwistedConstructionTarget
     replacementProto: CultDoor
     doAfterDelay: 10
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
   placement:
     mode: SnapgridCenter
 
