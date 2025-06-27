@@ -19,3 +19,14 @@
     sprite: _Crescent/Clothing/ATH/Neck/steward.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/ATH/Neck/steward.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckAuthoritySicherheitzMantle
+  name: sicherheitz mantle
+  description: A glorious mantle meant for the sicherheitz division of the 43rd battlegroup.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Neck/sicherheitz.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Neck/sicherheitz.rsi
