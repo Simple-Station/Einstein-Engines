@@ -96369,7 +96369,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 7.5,17.5
       parent: 2
-- proto: PoweredLightColoredRed
+- proto: PoweredlightRed
   entities:
   - uid: 13387
     components:
