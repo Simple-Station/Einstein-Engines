@@ -1,7 +1,6 @@
 - type: vendingMachineInventory
   id: SyndicateWarInventory
   startingInventory:
-    SpaceCash1000000: 999
     WeaponLauncherHammerhead: 60
     WeaponLauncherDisposableRocket: 60
     WeaponLauncherMilkor: 60
@@ -71,6 +70,7 @@
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
     MagazinePistol: 250
+    MagazinePistolCaselessRifle: 250
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
@@ -112,7 +112,6 @@
 - type: vendingMachineInventory
   id: NCWLWarInventory
   startingInventory:
-    SpaceCash1000000: 999
     WeaponLauncherHammerhead: 60
     WeaponLauncherDisposableRocket: 60
     WeaponLauncherGM94: 60
@@ -177,6 +176,7 @@
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
     MagazinePistol: 250
+    MagazinePistolCaselessRifle: 250
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
@@ -212,7 +212,6 @@
 - type: vendingMachineInventory
   id: ImperialWarInventory
   startingInventory:
-    SpaceCash1000000: 999
     WeaponLauncherHammerhead: 60
     WeaponLauncherDisposableRocket: 60
     WeaponLauncherM320: 60
@@ -279,6 +278,7 @@
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
     MagazinePistol: 250
+    MagazinePistolCaselessRifle: 250
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
@@ -314,7 +314,6 @@
 - type: vendingMachineInventory
   id: RomaineWarInventory
   startingInventory:
-    SpaceCash1000000: 999
     WeaponLauncherHammerhead: 60
     WeaponLauncherDisposableRocket: 60
     WeaponLauncherM320: 60
@@ -376,6 +375,7 @@
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
     MagazinePistol: 250
+    MagazinePistolCaselessRifle: 250
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
@@ -410,7 +410,6 @@
 - type: vendingMachineInventory
   id: PoliceWarInventory
   startingInventory:
-    SpaceCash1000000: 999
     WeaponLauncherHammerhead: 60
     WeaponLauncherDisposableRocket: 60
     WeaponLauncherMilkor: 60
@@ -474,6 +473,7 @@
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
     MagazinePistol: 250
+    MagazinePistolCaselessRifle: 250
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
@@ -512,7 +512,6 @@
 - type: vendingMachineInventory
   id: ShinoharaWarInventory
   startingInventory:
-    SpaceCash1000000: 999
     WeaponLauncherHammerhead: 60
     WeaponLauncherDisposableRocket: 60
     WeaponLauncherMilkor: 60
@@ -564,6 +563,7 @@
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
     MagazinePistol: 250
+    MagazinePistolCaselessRifle: 250
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
@@ -601,7 +601,6 @@
 - type: vendingMachineInventory
   id: PactWarInventory
   startingInventory:
-    SpaceCash1000000: 999
     LesserSuppressMindSpellbook: 8
     GreaterSuppressMindSpellbook: 2
     LesserKnockdownSpellbook: 8
@@ -676,6 +675,7 @@
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
     MagazinePistol: 250
+    MagazinePistolCaselessRifle: 250
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
@@ -713,7 +713,6 @@
 - type: vendingMachineInventory
   id: SolarianWarInventory
   startingInventory:
-    SpaceCash1000000: 999
     WeaponLauncherHammerhead: 60
     WeaponLauncherDisposableRocket: 60
     WeaponLauncherMilkor: 60
@@ -782,6 +781,7 @@
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
     MagazinePistol: 250
+    MagazinePistolCaselessRifle: 250
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
@@ -817,7 +817,6 @@
 - type: vendingMachineInventory
   id: IndependentWarInventory
   startingInventory:
-    SpaceCash1000000: 999
     WeaponLauncherHammerhead: 60
     WeaponLauncherDisposableRocket: 60
     WeaponLauncherMilkor: 60
@@ -895,6 +894,7 @@
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
     MagazinePistol: 250
+    MagazinePistolCaselessRifle: 250
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
@@ -933,7 +933,6 @@
 - type: vendingMachineInventory
   id: ShipWarInventory
   startingInventory:
-    SpaceCash1000000: 999
     MetalFoamGrenadeFast: 150
     CartridgeShellHighExplosive: 5000
     CartridgeShellEmp: 5000
