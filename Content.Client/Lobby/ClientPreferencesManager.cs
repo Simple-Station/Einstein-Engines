@@ -32,12 +32,9 @@ namespace Content.Client.Lobby
         public void Initialize()
         {
             _netManager.RegisterNetMessage<MsgPreferencesAndSettings>(HandlePreferencesAndSettings);
-            _netManager.RegisterNetMessage<MsgUpdatePreferences>(UpdatePreferences);
             _netManager.RegisterNetMessage<MsgUpdateCharacter>();
             _netManager.RegisterNetMessage<MsgSelectCharacter>();
             _netManager.RegisterNetMessage<MsgDeleteCharacter>();
-
-
 
             _baseClient.RunLevelChanged += BaseClientOnRunLevelChanged;
         }
@@ -71,7 +68,7 @@ namespace Content.Client.Lobby
         {
             var collection = IoCManager.Instance!;
             profile.EnsureValid(_playerManager.LocalSession!, collection);
-            var characters = new Dictionary<int, ICharacterProfile>(Preferences.Characters) { [slot] = profile };
+            var characters = new Dictionary<int, ICharacterProfile>(Preferences.Characters) {[slot] = profile};
             Preferences = new PlayerPreferences(characters, Preferences.SelectedCharacterIndex, Preferences.AdminOOCColor);
             var msg = new MsgUpdateCharacter
             {
@@ -120,13 +117,6 @@ namespace Content.Client.Lobby
         {
             Preferences = message.Preferences;
             Settings = message.Settings;
-
-            OnServerDataLoaded?.Invoke();
-        }
-
-        public void UpdatePreferences(MsgUpdatePreferences message)
-        {
-            Preferences = message.Preferences;
 
             OnServerDataLoaded?.Invoke();
         }
