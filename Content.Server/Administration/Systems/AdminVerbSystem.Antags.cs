@@ -36,6 +36,9 @@ public sealed partial class AdminVerbSystem
     private const string DefaultChangelingRule = "Changeling";
 
     [ValidatePrototypeId<EntityPrototype>]
+    private const string DefaultShadowlingRule = "Shadowling";
+
+    [ValidatePrototypeId<EntityPrototype>]
     private const string DefaultBloodCultRule = "BloodCult";
 
     [ValidatePrototypeId<StartingGearPrototype>]
@@ -173,5 +176,36 @@ public sealed partial class AdminVerbSystem
             Message = Loc.GetString("admin-verb-make-blood-cultist"),
         };
         args.Verbs.Add(cultist);
+
+        Verb shadowling = new()
+        {
+            Text = Loc.GetString("admin-verb-text-make-shadowling"),
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(
+                new("/Textures/_EE/Shadowling/shadowling_abilities.rsi"),
+                "engage_hatch"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<ShadowlingRuleComponent>(targetPlayer, DefaultShadowlingRule);
+            },
+            Impact = LogImpact.High,
+            Message = Loc.GetString("admin-verb-make-shadowling"),
+        };
+        args.Verbs.Add(shadowling);
+
+        // Goobstation - Blob
+        Verb blobAntag = new()
+        {
+            Text = Loc.GetString("admin-verb-text-make-blob"),
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/_Goobstation/Blob/Actions/blob.rsi"), "blobFactory"),
+            Act = () =>
+            {
+                EnsureComp<Shared._Goobstation.Blob.Components.BlobCarrierComponent>(args.Target).HasMind = HasComp<ActorComponent>(args.Target);
+            },
+            Impact = LogImpact.High,
+            Message = Loc.GetString("admin-verb-text-make-blob"),
+	    };
+        args.Verbs.Add(blobAntag);
     }
 }

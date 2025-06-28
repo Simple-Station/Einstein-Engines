@@ -29,6 +29,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Objectives\Interfaces\" />
+    <Folder Include="_EE\Shadowling\Systems\Objectives\" />
   </ItemGroup>
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
 </Project>

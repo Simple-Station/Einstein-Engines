@@ -4,6 +4,7 @@
   text: "/ServerInfo/Guidebook/Antagonist/Antagonists.xml"
   children:
   - Traitors
+  - Blob # Goobstation - Blob
   - NuclearOperatives
   - Zombies
   - Revolutionaries
@@ -11,6 +12,7 @@
   - SpaceNinja
   - Abductors # Shitmed - Abductors
   - BloodCult
+  - Shadowlings
 
 - type: guideEntry
   id: Traitors

@@ -1,14 +1,10 @@
 using Content.Shared.MachineLinking;
-using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
-using Robust.Shared.Timing;
 
 namespace Content.Client.MachineLinking.UI;
 
 public sealed class SignalTimerBoundUserInterface : BoundUserInterface
 {
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
-
     [ViewVariables]
     private SignalTimerWindow? _window;
 
