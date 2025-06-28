@@ -16514,3 +16514,10 @@ Entries:
   id: 7289
   time: '2025-06-28T17:44:52.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2470
+- author: Mike32oz
+  changes:
+    - type: Remove
+      message: Courier spawn-point
+  id: 7290
+  time: '2025-06-28T17:45:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2482
