@@ -128,7 +128,7 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         var taypanone = "/Maps/_Crescent/Explorables/taypanone.yml";
         var craster = "/Maps/_Crescent/Explorables/craster.yml";
         //var dochenskaya = "/Maps/_Crescent/Stations/dochenskaya.yml";
-        var freeport = "/Maps/_Crescent/Stations/freeport.yml";
+        var jackal = "/Maps/_Crescent/Stations/jackal.yml";
        // var refuge = "/Maps/_Crescent/Stations/refuge.yml";
         var vladzena = "/Maps/_Crescent/Stations/vladzena.yml";
         var defensebattery = "/Maps/_Crescent/Stations/defensebatteryimperial.yml";
@@ -431,18 +431,18 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         //      _shuttle.SetIFFColor(depotUid9s[0], lpbravoColor);
         //   }
 
-          if (_map.TryLoad(mapId, freeport, out var depotUid9s, new MapLoadOptions
+          if (_map.TryLoad(mapId, jackal, out var depotUid9s, new MapLoadOptions
           {
               Offset = new Vector2(7794f, 4500f)
           }))
           {
-             if (_prototypeManager.TryIndex<GameMapPrototype>("Freeport", out var stationProto))
+             if (_prototypeManager.TryIndex<GameMapPrototype>("Jackal", out var stationProto))
             {
-                _station.InitializeNewStation(stationProto.Stations["Freeport"], depotUid9s);
+                _station.InitializeNewStation(stationProto.Stations["Jackal"], depotUid9s);
             }
 
             var meta = EnsureComp<MetaDataComponent>(depotUid9s[0]);
-          _meta.SetEntityName(depotUid9s[0], "The Freeport", meta);
+          _meta.SetEntityName(depotUid9s[0], "GSC Grinning Jackal", meta);
           _shuttle.SetIFFColor(depotUid9s[0], lpbravoColor);
           }
 
