@@ -16542,3 +16542,14 @@ Entries:
   id: 7293
   time: '2025-06-28T18:59:25.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2454
+- author: WhiteHusky
+  changes:
+    - type: Fix
+      message: Mailing Unit UI is now fixed
+    - type: Fix
+      message: Mailing Units' no longer use the wrong sprite when charging
+    - type: Tweak
+      message: Mailing Units clear target on send or selecting the same target
+  id: 7294
+  time: '2025-06-28T19:00:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2485
