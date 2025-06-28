@@ -14,6 +14,7 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Server.Popups;
 using Content.Server.DoAfter;
 using Content.Server.Nutrition.Components;
+using Content.Server.Traits.Assorted.Components;
 using Content.Shared.HealthExaminable;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Audio.Systems;
@@ -132,7 +133,12 @@ namespace Content.Server.Vampiric
 
             _popups.PopupEntity(Loc.GetString("bloodsucker-doafter-start-victim", ("sucker", bloodsucker)), victim, victim, Shared.Popups.PopupType.LargeCaution);
 
-            var args = new DoAfterArgs(EntityManager, bloodsucker, bloodSuckerComponent.Delay, new BloodSuckDoAfterEvent(), bloodsucker, target: victim)
+
+            var drinkDelay = bloodSuckerComponent.Delay;
+            if (TryComp<ConsumeDelayModifierComponent>(bloodsucker, out var delayModifier))
+                drinkDelay *= delayModifier.DrinkDelayMultiplier;
+
+            var args = new DoAfterArgs(EntityManager, bloodsucker, drinkDelay, new BloodSuckDoAfterEvent(), bloodsucker, target: victim)
             {
                 BreakOnMove = false,
                 DistanceThreshold = 2f,
