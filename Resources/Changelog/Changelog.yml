@@ -16521,3 +16521,10 @@ Entries:
   id: 7290
   time: '2025-06-28T17:45:05.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2482
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: 'Made some significant performance improvements to Drains. '
+  id: 7291
+  time: '2025-06-28T17:45:26.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2471
