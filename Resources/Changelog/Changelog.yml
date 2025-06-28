@@ -16528,3 +16528,10 @@ Entries:
   id: 7291
   time: '2025-06-28T17:45:26.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2471
+- author: WhiteHusky
+  changes:
+    - type: Fix
+      message: Saving item locations are working again
+  id: 7292
+  time: '2025-06-28T18:59:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2484
