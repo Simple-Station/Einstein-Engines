@@ -828,14 +828,6 @@ entities:
       parent: 441
     - type: InstantAction
       container: 441
-- proto: ActionToggleMagbootsAdvanced
-  entities:
-  - uid: 449
-    components:
-    - type: Transform
-      parent: 448
-    - type: InstantAction
-      container: 448
 - proto: AirAlarm
   entities:
   - uid: 1147

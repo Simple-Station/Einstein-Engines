@@ -704,14 +704,6 @@ entities:
       parent: 338
     - type: InstantAction
       container: 338
-- proto: ActionToggleMagbootsSyndie
-  entities:
-  - uid: 341
-    components:
-    - type: Transform
-      parent: 338
-    - type: InstantAction
-      container: 338
 - proto: AirAlarm
   entities:
   - uid: 994
@@ -5659,7 +5651,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 2.5,20.5
       parent: 1
-- proto: PoweredlightColoredRed
+- proto: PoweredlightRed
   entities:
   - uid: 206
     components:

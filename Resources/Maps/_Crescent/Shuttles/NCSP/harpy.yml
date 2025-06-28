@@ -509,14 +509,6 @@ entities:
     - type: RadiationGridResistance
     - type: BecomesStation
       id: Harpy
-- proto: ActionToggleMagbootsAdvanced
-  entities:
-  - uid: 167
-    components:
-    - type: Transform
-      parent: 166
-    - type: InstantAction
-      container: 166
 - proto: AirAlarm
   entities:
   - uid: 390

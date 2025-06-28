@@ -2,6 +2,7 @@ using Content.Client.Hands.Systems;
 using Content.Client.NPC.HTN;
 using Content.Shared.CCVar;
 using Content.Shared.CombatMode;
+using Content.Client.CombatMode;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
 using Robust.Client.Player;
@@ -18,7 +19,9 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
     [Dependency] private readonly IEyeManager _eye = default!;
 
     /// <summary>
-    /// Raised whenever combat mode changes.
+    /// Raised whenever combat mode changes. 
+    /// C# .NET 9 event, not SS14 event.
+    /// use SharedCombatModeSystem.ToggleCombatActionEvent instead for anything else.
     /// </summary>
     public event Action<bool>? LocalPlayerCombatModeUpdated;
 

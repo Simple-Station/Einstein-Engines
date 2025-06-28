@@ -1,0 +1,387 @@
+- type: loadout
+  id: LoadoutBackpackNCWL
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackNCWL
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdministratorNCWL
+        - ArtificerNCWL
+        - DoktorNCWL
+        - KadetNCWL
+        - KapitanNCWL
+        - KommissarNCWL
+        - SanitarNCWL
+
+- type: loadout
+  id: LoadoutBackpackNCWLSatchel
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelNCWL
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdministratorNCWL
+        - ArtificerNCWL
+        - DoktorNCWL
+        - KadetNCWL
+        - KapitanNCWL
+        - KommissarNCWL
+        - SanitarNCWL
+
+- type: loadout
+  id: LoadoutBackpackNCWLDuffel
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelNCWL
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdministratorNCWL
+        - ArtificerNCWL
+        - DoktorNCWL
+        - KadetNCWL
+        - KapitanNCWL
+        - KommissarNCWL
+        - SanitarNCWL
+
+- type: loadout
+  id: LoadoutBackpackTFSC
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackNCSP
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChemcookNCSP
+        - ForemanNCSP
+        - InfanteerNCSP
+        - IntelligenceOfficerNCSP
+        - LieutenantNCSP
+        - OperativeNCSP
+        - CyberdawnTechNCSP
+        - RingleaderNCSP
+        - RipperdocNCSP
+        - ShipbreakerNCSP
+        - TechnicianNCSP
+
+- type: loadout
+  id: LoadoutBackpackTFSCSatchel
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackNCSPSatchel
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChemcookNCSP
+        - ForemanNCSP
+        - InfanteerNCSP
+        - IntelligenceOfficerNCSP
+        - LieutenantNCSP
+        - OperativeNCSP
+        - CyberdawnTechNCSP
+        - RingleaderNCSP
+        - RipperdocNCSP
+        - ShipbreakerNCSP
+        - TechnicianNCSP
+
+- type: loadout
+  id: LoadoutBackpackTFSCDuffel
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackNCSPDuffelbag
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChemcookNCSP
+        - ForemanNCSP
+        - InfanteerNCSP
+        - IntelligenceOfficerNCSP
+        - LieutenantNCSP
+        - OperativeNCSP
+        - CyberdawnTechNCSP
+        - RingleaderNCSP
+        - RipperdocNCSP
+        - ShipbreakerNCSP
+        - TechnicianNCSP
+
+- type: loadout
+  id: LoadoutBackpackDSM
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDSM
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdjutantDSM
+        - AdvocatusDSM
+        - ArchmaesterDSM
+        - ForemanDSM
+        - FreeholderDSM
+        - GovernorDSM
+        - KnightDSM
+        - LevymanDSM
+        - CourtierDSM
+        - ScribeDSM
+        - SurgeonDSM
+        - TemplarDSM
+        - WealthDSM
+
+- type: loadout
+  id: LoadoutBackpackDSMSatchel
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDSMSatchel
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdjutantDSM
+        - AdvocatusDSM
+        - ArchmaesterDSM
+        - ForemanDSM
+        - FreeholderDSM
+        - GovernorDSM
+        - KnightDSM
+        - LevymanDSM
+        - CourtierDSM
+        - ScribeDSM
+        - SurgeonDSM
+        - TemplarDSM
+        - WealthDSM
+
+- type: loadout
+  id: LoadoutBackpackSRM
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSRM
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - AcolyteSRM
+        - HunterSRM
+        - MontagneSRM
+        - OverseerSRM
+        - TenderSRM
+
+- type: loadout
+  id: LoadoutBackpackSRMSatchel
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSRMSatchel
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - AcolyteSRM
+        - HunterSRM
+        - MontagneSRM
+        - OverseerSRM
+        - TenderSRM
+
+- type: loadout
+  id: LoadoutBackpackSHI
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSHI
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - BoardSHI
+        - EmployeeSHI
+        - ExecutiveSHI
+        - HighsecSHI
+        - MedtechSHI
+        - CorpsecSHI
+        - KanoneerATH
+        - KommandantATH
+        - LeutnantATH
+        - SanitatATH
+        - SoldatATH
+        - AcolyteTAP
+        - Antiquarian
+        - BeltrunnerTAP
+        - DraugrTAP
+        - HangarTechTAP
+        - ProphetTAP
+        - ServileTAP
+        - TechminerTAP
+        - TinkererTAP
+        - Spacer
+        - GliessianDockmaster
+        - GliessianSheriff
+
+- type: loadout
+  id: LoadoutBackpackSHISatchel
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSHISatchel
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - BoardSHI
+        - EmployeeSHI
+        - ExecutiveSHI
+        - HighsecSHI
+        - MedtechSHI
+        - CorpsecSHI
+        - KanoneerATH
+        - KommandantATH
+        - LeutnantATH
+        - SanitatATH
+        - SoldatATH
+        - AcolyteTAP
+        - Antiquarian
+        - BeltrunnerTAP
+        - DraugrTAP
+        - HangarTechTAP
+        - ProphetTAP
+        - ServileTAP
+        - TechminerTAP
+        - TinkererTAP
+        - Spacer
+        - GliessianDockmaster
+        - GliessianSheriff
+
+- type: loadout
+  id: LoadoutBackpackSHIDuffel
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSHIDuffelbag
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - BoardSHI
+        - EmployeeSHI
+        - ExecutiveSHI
+        - HighsecSHI
+        - MedtechSHI
+        - CorpsecSHI
+        - KanoneerATH
+        - KommandantATH
+        - LeutnantATH
+        - SanitatATH
+        - SoldatATH
+        - AcolyteTAP
+        - Antiquarian
+        - BeltrunnerTAP
+        - DraugrTAP
+        - HangarTechTAP
+        - ProphetTAP
+        - ServileTAP
+        - TechminerTAP
+        - TinkererTAP
+        - Spacer
+        - GliessianDockmaster
+        - GliessianSheriff
+
+- type: loadout
+  id: LoadoutBackpackCMM
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMinuteman
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - PhysicianCMM
+        - DeputyMarshalCMM
+        - MachinistCMM
+        - MarshalCMM
+        - MinutemanCMM
+        - OrdnancemanCMM
+        - WatchmasterCMM
+
+- type: loadout
+  id: LoadoutBackpackCMMSatchel
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMinutemanSatchel
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - PhysicianCMM
+        - DeputyMarshalCMM
+        - MachinistCMM
+        - MarshalCMM
+        - MinutemanCMM
+        - OrdnancemanCMM
+        - WatchmasterCMM
+
+- type: loadout
+  id: LoadoutBackpackCMMDuffel
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMinutemanDuffelbag
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - PhysicianCMM
+        - DeputyMarshalCMM
+        - MachinistCMM
+        - MarshalCMM
+        - MinutemanCMM
+        - OrdnancemanCMM
+        - WatchmasterCMM

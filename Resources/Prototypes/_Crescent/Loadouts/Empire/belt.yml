@@ -1,0 +1,39 @@
+- type: loadout
+  id: LoadoutBeltSheathDSMSabre
+  category: Belt
+  cost: 0
+  items:
+    - ClothingBeltSheathDSMSabre
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdjutantDSM
+        - AdvocatusDSM
+        - ArchmaesterDSM
+        - GovernorDSM
+        - KnightDSM
+        - CourtierDSM
+        - TemplarDSM
+        - WealthDSM
+
+- type: loadout
+  id: LoadoutBeltSheathDSMRapier
+  category: Belt
+  cost: 0
+  items:
+    - ClothingBeltSheathRapier
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdjutantDSM
+        - AdvocatusDSM
+        - ArchmaesterDSM
+        - GovernorDSM
+        - KnightDSM
+        - CourtierDSM
+        - TemplarDSM
+        - WealthDSM

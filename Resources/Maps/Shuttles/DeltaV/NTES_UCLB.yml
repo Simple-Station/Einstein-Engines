@@ -7363,7 +7363,7 @@ entities:
       parent: 1
     - type: ApcPowerReceiver
       powerLoad: 0
-- proto: PoweredLightColoredRed
+- proto: PoweredlightRed
   entities:
   - uid: 1477
     components:

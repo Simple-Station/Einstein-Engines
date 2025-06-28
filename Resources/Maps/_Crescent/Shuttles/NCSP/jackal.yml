@@ -11827,7 +11827,7 @@ entities:
     - type: Transform
       pos: 9.498253,-36.447968
       parent: 2
-- proto: EMP missile cartridge
+- proto: MagazineGrenadeEMP
   entities:
   - uid: 1744
     components:

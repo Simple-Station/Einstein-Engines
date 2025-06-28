@@ -1,0 +1,185 @@
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitIndependentsEVA
+  categories: [ HideSpawnMenu ]
+  name: spacionaut helmet
+  description: Spaceworthy protection for your fragile skull. A Northrop-Martin design.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Crescent/Clothing/Independents/Head/spacionaut.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Independents/Head/spacionaut.rsi
+  - type: PointLight
+    radius: 6
+    color: "#98a1ae"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: DegradeableArmor
+    armorMaxHealth: 1000
+    armorType: Metallic
+    armorRepair: SteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 5
+        Slash: 5
+        Piercing: 5
+        Heat: 5
+        Caustic: 5
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitFishbed
+  categories: [ HideSpawnMenu ]
+  name: fishbed helmet
+  description: Spaceworthy protection for your fragile skull. A Northrop-Martin Suit design.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Crescent/Clothing/Independents/Head/fishbed.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Independents/Head/fishbed.rsi
+  - type: PointLight
+    radius: 6
+    color: "#525252"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: DegradeableArmor
+    armorMaxHealth: 1000
+    armorType: Metallic
+    armorRepair: SteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 5
+        Slash: 5
+        Piercing: 5
+        Heat: 5
+        Caustic: 5
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitCenobite
+  categories: [ HideSpawnMenu ]
+  name: cenobite helmet
+  description: Spaceworthy protection for your fragile skull. A Northrop-Martin design.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Crescent/Clothing/Independents/Head/cenobite.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Independents/Head/cenobite.rsi
+  - type: PointLight
+    radius: 6
+    color: "#dac965"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: DegradeableArmor
+    armorMaxHealth: 1000
+    armorType: Metallic
+    armorRepair: SteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 5
+        Slash: 5
+        Piercing: 5
+        Heat: 5
+        Caustic: 5
+
+- type: entity # fishbed and cenobite variants
+  parent: ClothingHeadHelmetHardsuitFishbed
+  id: ClothingHeadHelmetHardsuitFishbedSilver
+  categories: [ HideSpawnMenu ]
+  name: fishbed helmet
+  description: Spaceworthy protection for your fragile skull. A Northrop-Martin design.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Independents/Head/fishbed_silver.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Independents/Head/fishbed_silver.rsi
+  - type: PointLight
+    radius: 6
+    color: "#9689e8"
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitFishbed
+  id: ClothingHeadHelmetHardsuitFishbedGold
+  categories: [ HideSpawnMenu ]
+  name: fishbed helmet
+  description: Spaceworthy protection for your fragile skull. A Northrop-Martin design.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Independents/Head/fishbed_gold.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Independents/Head/fishbed_gold.rsi
+  - type: PointLight
+    radius: 6
+    color: "#8176c9"
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitFishbed
+  id: ClothingHeadHelmetHardsuitFishbedColonial
+  categories: [ HideSpawnMenu ]
+  name: fishbed helmet
+  description: Spaceworthy protection for your fragile skull. A Northrop-Martin design.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Independents/Head/fishbed_colonial.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Independents/Head/fishbed_colonial.rsi
+  - type: PointLight
+    radius: 6
+    color: "#80ab44"
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitFishbed
+  id: ClothingHeadHelmetHardsuitFishbedNLF
+  categories: [ HideSpawnMenu ]
+  name: fishbed helmet
+  description: Spaceworthy protection for your fragile skull. A Northrop-Martin design.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Independents/Head/fishbed_nlf.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Independents/Head/fishbed_nlf.rsi
+  - type: PointLight
+    radius: 6
+    color: "#eeb477"
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitCenobite
+  id: ClothingHeadHelmetHardsuitCenobiteVerdant
+  categories: [ HideSpawnMenu ]
+  name: cenobite helmet
+  description: Spaceworthy protection for your fragile skull. A Northrop-Martin design.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Independents/Head/cenobite_verdant.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Independents/Head/cenobite_verdant.rsi
+  - type: PointLight
+    radius: 6
+    color: "#dac965"
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitCenobite
+  id: ClothingHeadHelmetHardsuitCenobiteRed
+  categories: [ HideSpawnMenu ]
+  name: cenobite helmet
+  description: Spaceworthy protection for your fragile skull. A Northrop-Martin design.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Independents/Head/cenobite_red.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Independents/Head/cenobite_red.rsi
+  - type: PointLight
+    radius: 6
+    color: "#b20d84"

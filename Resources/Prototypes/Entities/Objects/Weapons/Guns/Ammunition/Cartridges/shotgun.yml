@@ -12,7 +12,7 @@
     soundEject:
       collection: ShellEject
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/shotgun.rsi
     layers:
       - state: base
         map: [ "enum.AmmoVisualLayers.Base" ]
@@ -94,7 +94,7 @@
 
 - type: entity
   id: ShellShotgunIncendiary
-  name: shell (12g dragons' breath)
+  name: shell (12g dragon's breath)
   parent: BaseShellShotgun
   components:
   - type: Sprite

@@ -114,7 +114,7 @@
 
 - type: entity
   name: SHI Hammerhead smart-missile launcher
-  parent: BaseWeaponLauncher
+  parent: [BaseWeaponLauncher, BaseGunWieldable]
   id: WeaponLauncherHammerhead
   description: A modified ancient rocket-propelled grenade launcher. Stamped with the Shinohara Heavy Industries logo and capable of firing guided projectiles.
   components:
@@ -127,6 +127,7 @@
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/hammerhead.rsi
+  - type: GunRequiresWield
   - type: Gun
     fireRate: 0.5
     soundGunshot:

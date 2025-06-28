@@ -643,9 +643,9 @@ namespace Content.Server.GameTicking
             if (options.Count == 0)
                 return;
 
-            var proto = _robustRandom.Pick(options);
+            var proto = options.First();
 
-            _announcer.SendAnnouncement(_announcer.GetAnnouncementId(proto.ID), Filter.Broadcast(),
+            _announcer.SendAnnouncement("basic-transmission", Filter.Broadcast(),
                 proto.Message ?? "game-ticker-welcome-to-the-station");
         }
 

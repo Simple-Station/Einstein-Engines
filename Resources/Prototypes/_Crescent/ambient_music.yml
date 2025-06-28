@@ -1,163 +1,194 @@
-- type: ambientMusic
-  id: CombatMode
-  sound:
-    collection: AmbienceCombatMode
-  rules: InCombatMode
-  priority: 4000
+##
+## PLEASE READ BEFORE CONTRIBUTING! also, for clarity, check ContentAudioSystem.AmbientMusic.cs. i added comments!
+## for biome IDs, check space_biomes.yml for crescentFactionBiomes.
+##
+## for your ambient music to be valid, you need two prototypes
+## first, an ambientMusic prototype. the id !!!!MUST MATCH THE BIOME ID!!!! that you are making ambient music for, and it must have a sound collection
+## otherwise it will play the fallback track. 
+## second, a soundCollection prototype. its id can be different, but please keep it the same as the biome for consistency
+## the music selected from the sound collection will be chosen randomly whenever the appropriate music is required to be played
+## 
+## combat music default/fallback is called "combatmusic"
+## factional combat music must be called "combatmusic<FACTIONNAME>", and be a valid faction in the clientside character profile
+## this is because the way combat music is fetched is just adding that faction string to combatmusic, creating "combatmusicNCWL", "combatmusicDSM", etc.
+##
+## valid factions: ATH, DSM, NCWL, TFSC, SHI, TAP, SRM, TSP. 
+##
+## @.2, hullrot discord, 2025/6/23
 
-- type: rules
-  id: InCombatMode
-  rules:
-    - !type:InCombatModeRule
-
-- type: soundCollection
-  id: AmbienceCombatMode
-  files:
-    - /Audio/_Crescent/Ambience/CombatMode/awakening.ogg
 
 #example
 - type: ambientMusic
-  id: TestBiome
+  id: test
   sound:
     collection: AmbienceTestBiome
-  rules: InTestBiome
-  priority: 2000
-  fadeIn: true
-
-- type: rules
-  id: InTestBiome
-  rules:
-    - !type:InSpaceBiomeRule
-      biome: test
 
 - type: soundCollection
-  id: AmbienceTestBiome
+  id: test
   files:
    - /Audio/Jukebox/sector11.ogg
+
+#ambient fallback, don't remove, but can change song
+
+- type: ambientMusic
+  id: default
+  sound:
+    collection: default
+  fadeIn: true
+
+- type: soundCollection
+  id: default
+  files:
+   - /Audio/_Crescent/parietal_lobe.ogg
+
+#combat fallback, don't remove, but can change song
+
+- type: ambientMusic
+  id: combatmodedefault
+  sound:
+    collection: combatmodedefault
+
+- type: soundCollection
+  id: combatmodedefault
+  files:
+    - /Audio/_Crescent/Ambience/CombatMode/fallback.ogg
+
+## FACTION COMBAT MUSIC TRACKS 
+## ID MUST BE "combatmode<FACTION>"!
+
+# NCWL, focus on guitar based songs
+- type: ambientMusic
+  id: combatmodeNCWL
+  sound:
+    collection: combatmodeNCWL
+
+- type: soundCollection
+  id: combatmodeNCWL
+  files:
+    - /Audio/_Crescent/Ambience/CombatMode/NCWL_1.ogg
+    - /Audio/_Crescent/Ambience/CombatMode/NCWL_2.ogg
+
+
+# TFSC, hard techno and pirate shit
+- type: ambientMusic
+  id: combatmodeTFSC
+  sound:
+    collection: combatmodeTFSC
+
+- type: soundCollection
+  id: combatmodeTFSC
+  files:
+    - /Audio/_Crescent/Ambience/CombatMode/TFSC_1.ogg
+    - /Audio/_Crescent/Ambience/CombatMode/TFSC_2.ogg
+
+# DSM, low quality RPG maker tracks, think OFF, LISA, etc. if you don't know what those are get the fuck out of here
+- type: ambientMusic
+  id: combatmodeDSM
+  sound:
+    collection: combatmodeDSM
+
+- type: soundCollection
+  id: combatmodeDSM
+  files:
+    - /Audio/_Crescent/Ambience/CombatMode/DSM_1.ogg
+    - /Audio/_Crescent/Ambience/CombatMode/DSM_2.ogg
+
+# TAP, highfleet tracks
+- type: ambientMusic
+  id: combatmodeTAP
+  sound:
+    collection: combatmodeTAP
+
+- type: soundCollection
+  id: combatmodeTAP
+  files:
+    - /Audio/_Crescent/Ambience/CombatMode/TAP_1.ogg
+    - /Audio/_Crescent/Ambience/CombatMode/TAP_2.ogg
+
+## AMBIENT MUSIC TRACKS
+## ID MUST BE IDENTICAL TO BIOME ID FROM space_biomes.yml!
 
 #imperial
 
 - type: ambientMusic
-  id: ImperialBiome
+  id: imperialbiome
   sound:
-    collection: ImperialBiome
-  rules: InImperialAirspace
-  priority: 2000
-  fadeIn: true
-
-- type: rules
-  id: InImperialAirspace
-  rules:
-    - !type:InSpaceBiomeRule
-      biome: imperialbiome
+    collection: imperialbiome
 
 - type: soundCollection
-  id: ImperialBiome
+  id: imperialbiome
   files:
    - /Audio/_Crescent/duduk.ogg
 
 #hunter
 
 - type: ambientMusic
-  id: HunterBiome
+  id: hunterbiome
   sound:
-    collection: HunterBiome
-  rules: InHunterAirspace
-  priority: 2000
-  fadeIn: true
-
-- type: rules
-  id: InHunterAirspace
-  rules:
-    - !type:InSpaceBiomeRule
-      biome: hunterbiome
+    collection: hunterbiome
 
 - type: soundCollection
-  id: HunterBiome
+  id: hunterbiome
   files:
    - /Audio/_Crescent/ludd.ogg
 
 #syndie
 
 - type: ambientMusic
-  id: SyndieBiome
+  id: syndicatebiome
   sound:
-    collection: SyndicateBiome
-  rules: InSyndicateAirspace
-  priority: 2000
-  fadeIn: true
-
-- type: rules
-  id: InSyndicateAirspace
-  rules:
-    - !type:InSpaceBiomeRule
-      biome: syndicatebiome
+    collection: syndiebiome
 
 - type: soundCollection
-  id: SyndicateBiome
+  id: syndicatebiome
   files:
    - /Audio/_Crescent/syndies.ogg
 
 #corpie
 
 - type: ambientMusic
-  id: CorpieBiome
+  id: corpiebiome
   sound:
-    collection: CorpieBiome
-  rules: InCorpieAirspace
-  priority: 2000
-  fadeIn: true
-
-- type: rules
-  id: InCorpieAirspace
-  rules:
-    - !type:InSpaceBiomeRule
-      biome: corpiebiome
+    collection: corpiebiome
 
 - type: soundCollection
-  id: CorpieBiome
+  id: corpiebiome
   files:
    - /Audio/_Crescent/the_insulindan_miracle.ogg
 
 #wilds
 
 - type: ambientMusic
-  id: WildBiome
+  id: wildbiome
   sound:
-    collection: WildBiome
-  rules: InWildAirspace
-  priority: 2000
-  fadeIn: true
+    collection: wildbiome
 
-- type: rules
-  id: InWildAirspace
-  rules:
-    - !type:InSpaceBiomeRule
-      biome: wildbiome
 
 - type: soundCollection
-  id: WildBiome
+  id: wildbiome
   files:
    - /Audio/_Crescent/wilds.ogg
 
 #deepwilds
 
 - type: ambientMusic
-  id: DeepwildBiome
+  id: deepwildbiome
   sound:
-    collection: WildBiome
-  rules: InDeepwildAirspace
-  priority: 2000
-  fadeIn: true
-
-- type: rules
-  id: InDeepwildAirspace
-  rules:
-    - !type:InSpaceBiomeRule
-      biome: deepwildbiome
+    collection: deepwildbiome
 
 - type: soundCollection
-  id: DeepwildBiome
+  id: deepwildbiome
   files:
    - /Audio/_Crescent/the_deepwilds.ogg
+#fracture / port vladzena
+
+- type: ambientMusic
+  id: hadalbiome
+  sound:
+    collection: hadalbiome
+
+- type: soundCollection
+  id: hadalbiome
+  files:
+   - /Audio/_Crescent/travesty.ogg
 
