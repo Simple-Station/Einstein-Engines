@@ -903,7 +903,7 @@
           allowedStates:
           - Alive
           - Dead
-          damageCap: 75
+          damageCap: 125
           damage:
             groups:
               Brute: -0.5
