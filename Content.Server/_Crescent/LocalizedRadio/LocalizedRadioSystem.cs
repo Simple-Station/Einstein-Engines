@@ -51,30 +51,18 @@ namespace Content.Server.LocalizedRadio.EntitySystems
 
             if (ForceLocalize.Count > 0)
             {
-                SubscribeLocalEvent<IntrinsicRadioReceiverComponent, RadioReceiveAttemptEvent>(RadioReceive);
-                SubscribeLocalEvent<HeadsetComponent, RadioReceiveAttemptEvent>(HeadsetReceive);
+                SubscribeLocalEvent<RadioReceiveAttemptEvent>(RadioReceive);
             }
 
         }
 
-        private void RadioReceive(EntityUid entity, IntrinsicRadioReceiverComponent comp, ref RadioReceiveAttemptEvent args)
+        private void RadioReceive(ref RadioReceiveAttemptEvent args)
         {
             if (!ForceLocalize.ContainsKey(args.Channel.ID))
                 return;
             Vector2 distance = _transformSystem.GetWorldPosition(args.RadioReceiver) - _transformSystem.GetWorldPosition(args.RadioSource);
             if (Math.Abs(distance.Length()) > ForceLocalize[args.Channel.ID])
                 args.Cancelled = true;
-
-        }
-
-        private void HeadsetReceive(EntityUid entity, HeadsetComponent comp, ref RadioReceiveAttemptEvent args)
-        {
-            if (!ForceLocalize.ContainsKey(args.Channel.ID))
-                return;
-            Vector2 distance = _transformSystem.GetWorldPosition(args.RadioReceiver) - _transformSystem.GetWorldPosition(args.RadioSource);
-            if (Math.Abs(distance.Length()) > ForceLocalize[args.Channel.ID])
-                args.Cancelled = true;
-
 
         }
     }
