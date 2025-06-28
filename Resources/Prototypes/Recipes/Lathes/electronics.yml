@@ -6,6 +6,7 @@
   materials:
     Steel: 100
     Plastic: 300
+    BasicElectronics: 100
 
 - type: latheRecipe
   abstract: true
@@ -14,6 +15,7 @@
   materials:
     Steel: 50
     Plastic: 50
+    BasicElectronics: 100
 
 - type: latheRecipe
   abstract: true
@@ -22,6 +24,7 @@
   materials:
      Steel: 50
      Glass: 250
+     BasicElectronics: 100
 
 - type: latheRecipe
   abstract: true
@@ -31,6 +34,7 @@
   materials:
     Steel: 100
     Glass: 500
+    BasicElectronics: 100
 
 - type: latheRecipe
   abstract: true
@@ -38,7 +42,7 @@
   id: BaseGoldCircuitboardRecipe
   materials:
     Steel: 100
-    Glass: 500
+    BasicElectronics: 100
     Gold: 100
 
 - type: latheRecipe
@@ -49,6 +53,7 @@
     Steel: 100
     Glass: 500
     Silver: 100
+    BasicElectronics: 100
 
 - type: latheRecipe
   abstract: true
@@ -58,6 +63,7 @@
     Steel: 100
     Glass: 500
     Bananium: 100
+    BasicElectronics: 100
 
 - type: latheRecipe
   id: FirelockElectronics
@@ -67,6 +73,7 @@
   materials:
      Steel: 100
      Plastic: 300
+     BasicElectronics: 100
 
 - type: latheRecipe
   id: MailingUnitElectronics
@@ -76,6 +83,7 @@
   materials:
     Steel: 50
     Plastic: 300
+    BasicElectronics: 100
 
 - type: latheRecipe
   id: CellRechargerCircuitboard
@@ -85,6 +93,8 @@
   materials:
     Steel: 50
     Plastic: 50
+    BasicElectronics: 100
+
 
 - type: latheRecipe
   id: BorgChargerCircuitboard
@@ -94,6 +104,7 @@
   materials:
     Steel: 50
     Plastic: 50
+    BasicElectronics: 100
 
 - type: latheRecipe
   id: WeaponCapacitorRechargerCircuitboard
@@ -103,6 +114,7 @@
   materials:
     Steel: 50
     Plastic: 50
+    BasicElectronics: 100
 
 - type: latheRecipe
   id: TurboItemRechargerCircuitboard
@@ -113,6 +125,7 @@
     Steel: 500
     Plastic: 500
     Gold: 100
+    BasicElectronics: 100
 
 - type: latheRecipe
   id: DroneElectronics
@@ -123,6 +136,7 @@
     Steel: 1000
     Plastic: 1000
     Gold: 500
+    BasicElectronics: 100
 
 - type: latheRecipe
   id: DoorElectronics
@@ -132,6 +146,7 @@
   materials:
      Steel: 50
      Plastic: 300
+     BasicElectronics: 100
 
 - type: latheRecipe
   id: AirAlarmElectronics
@@ -141,6 +156,7 @@
   materials:
      Steel: 100
      Plastic: 300
+     BasicElectronics: 100
 
 - type: latheRecipe
   id: StationMapElectronics
@@ -150,6 +166,7 @@
   materials:
      Steel: 50
      Plastic: 50
+     BasicElectronics: 100
 
 - type: latheRecipe
   id: IntercomElectronics
@@ -159,6 +176,8 @@
   materials:
      Steel: 50
      Plastic: 300
+     BasicElectronics: 100
+
 
 - type: latheRecipe
   id: FireAlarmElectronics
@@ -168,6 +187,8 @@
   materials:
      Steel: 100
      Plastic: 300
+     BasicElectronics: 100
+
 
 - type: latheRecipe
   id: SignalTimerElectronics
@@ -177,6 +198,8 @@
   materials:
      Steel: 50
      Plastic: 50
+     BasicElectronics: 100
+
 
 - type: latheRecipe
   id: CloningPodMachineCircuitboard
@@ -187,6 +210,8 @@
      Steel: 100
      Glass: 500
      Gold: 100
+     BasicElectronics: 100
+
 
 - type: latheRecipe
   id: MetempsychoticMachineCircuitboard
@@ -196,6 +221,8 @@
      Steel: 100
      Glass: 900
      Gold: 100
+     BasicElectronics: 100
+
 
 - type: latheRecipe
   id: ThermomachineFreezerMachineCircuitBoard
@@ -206,6 +233,8 @@
     Steel: 150
     Glass: 500
     Gold: 50
+    BasicElectronics: 100
+
 
 - type: latheRecipe
   id: HellfireFreezerMachineCircuitBoard
@@ -216,6 +245,8 @@
     Steel: 150
     Glass: 500
     Gold: 50
+    BasicElectronics: 100
+
 
 - type: latheRecipe
   id: CondenserMachineCircuitBoard
@@ -225,6 +256,7 @@
   materials:
     Steel: 100
     Glass: 500
+    BasicElectronics: 100
 
 - type: latheRecipe
   id: PortableScrubberMachineCircuitBoard
@@ -235,6 +267,7 @@
     Steel: 150
     Glass: 500
     Gold: 50
+    BasicElectronics: 100
 
 - type: latheRecipe
   id: SpaceHeaterMachineCircuitBoard
@@ -245,6 +278,7 @@
     Steel: 150
     Glass: 500
     Gold: 50
+    BasicElectronics: 100
 
 - type: latheRecipe
   id: MedicalScannerMachineCircuitboard
@@ -253,6 +287,7 @@
   completetime: 4
   materials:
      Steel: 100
+     BasicElectronics: 100
      Glass: 500
 
 - type: latheRecipe
@@ -264,6 +299,7 @@
     Steel: 100
     Glass: 500
     Gold: 100
+    BasicElectronics: 100
 
 - type: latheRecipe
   id: ChemMasterMachineCircuitboard
@@ -273,6 +309,7 @@
   materials:
      Steel: 100
      Glass: 500
+     BasicElectronics: 100
 
 - type: latheRecipe
   id: ChemDispenserMachineCircuitboard
@@ -283,6 +320,7 @@
      Steel: 100
      Glass: 500
      Gold: 100
+     BasicElectronics: 100
 
 - type: latheRecipe
   id: BiomassReclaimerMachineCircuitboard
@@ -293,6 +331,7 @@
      Steel: 100
      Glass: 500
      Gold: 100
+     BasicElectronics: 100
 
 - type: latheRecipe
   id: BiofabricatorMachineCircuitboard
@@ -303,6 +342,7 @@
      Steel: 100
      Glass: 500
      Gold: 100
+     BasicElectronics: 100
 
 - type: latheRecipe
   id: HydroponicsTrayMachineCircuitboard
@@ -312,6 +352,7 @@
   materials:
      Steel: 100
      Glass: 500
+     BasicElectronics: 100
 
 - type: latheRecipe
   id: AutolatheMachineCircuitboard
@@ -321,6 +362,7 @@
   materials:
      Steel: 100
      Glass: 500
+     BasicElectronics: 200
 
 - type: latheRecipe
   id: BookPressMachineCircuitboard
@@ -330,6 +372,7 @@
   materials:
      Steel: 100
      Glass: 500
+     BasicElectronics: 100
 
 - type: latheRecipe
   id: ProtolatheMachineCircuitboard
@@ -338,6 +381,7 @@
   completetime: 4
   materials:
      Steel: 100
+     BasicElectronics: 100
      Glass: 500
 
 - type: latheRecipe
@@ -347,6 +391,7 @@
   completetime: 4
   materials:
     Steel: 100
+    BasicElectronics: 100
     Glass: 500
     Gold: 100
 
@@ -357,6 +402,7 @@
   completetime: 4
   materials:
     Steel: 100
+    BasicElectronics: 100
     Glass: 500
     Gold: 100
 
@@ -367,6 +413,7 @@
   completetime: 4
   materials:
     Steel: 100
+    BasicElectronics: 100
     Glass: 500
 
 - type: latheRecipe
@@ -377,6 +424,7 @@
   materials:
     Steel: 100
     Glass: 900
+    BasicElectronics: 100
     Gold: 100
 
 
@@ -387,6 +435,7 @@
   completetime: 5
   materials:
      Steel: 100
+     BasicElectronics: 100
      Glass: 500
 
 - type: latheRecipe
@@ -396,6 +445,7 @@
   completetime: 4
   materials:
      Steel: 100
+     BasicElectronics: 100
      Glass: 500
 
 - type: latheRecipe
@@ -405,6 +455,7 @@
   completetime: 4
   materials:
      Steel: 100
+     BasicElectronics: 100
      Glass: 500
      Gold: 100
 
@@ -415,6 +466,7 @@
   completetime: 4
   materials:
      Steel: 100
+     BasicElectronics: 100
      Glass: 500
      Gold: 100
 
@@ -425,6 +477,7 @@
   completetime: 4
   materials:
      Steel: 100
+     BasicElectronics: 100
      Glass: 500
      Gold: 100
 
@@ -436,6 +489,7 @@
   materials:
     Steel: 100
     Glass: 500
+    BasicElectronics: 100
     Gold: 100
 
 - type: latheRecipe
@@ -446,6 +500,7 @@
   materials:
      Steel: 100
      Glass: 500
+     BasicElectronics: 100
 
 - type: latheRecipe
   id: AnomalyVesselExperimentalCircuitboard
@@ -454,6 +509,7 @@
   completetime: 4
   materials:
     Steel: 100
+    BasicElectronics: 100
     Glass: 500
     Gold: 100
 
@@ -464,6 +520,7 @@
   completetime: 4
   materials:
      Steel: 100
+     BasicElectronics: 100
      Glass: 700
      Silver: 100
 
@@ -474,6 +531,7 @@
   completetime: 4
   materials:
      Steel: 100
+     BasicElectronics: 100
      Glass: 500
 
 - type: latheRecipe
@@ -483,6 +541,7 @@
   completetime: 4
   materials:
      Steel: 100
+     BasicElectronics: 100
      Glass: 500
 
 - type: latheRecipe
@@ -492,6 +551,7 @@
   completetime: 4
   materials:
      Steel: 100
+     BasicElectronics: 100
      Glass: 500
 
 - type: latheRecipe
@@ -501,6 +561,7 @@
   completetime: 4
   materials:
      Steel: 100
+     BasicElectronics: 100
      Glass: 500
      Gold: 100
 
@@ -512,6 +573,7 @@
   materials:
      Steel: 100
      Glass: 500
+     BasicElectronics: 100
      Gold: 100
 
 - type: latheRecipe
@@ -521,6 +583,7 @@
   completetime: 4
   materials:
      Steel: 100
+     BasicElectronics: 100
      Glass: 500
      Gold: 100
 
@@ -531,6 +594,7 @@
   completetime: 4
   materials:
      Steel: 100
+     BasicElectronics: 100
      Glass: 500
 
 - type: latheRecipe
@@ -540,6 +604,7 @@
   completetime: 4
   materials:
     Steel: 100
+    BasicElectronics: 100
     Glass: 500
 
 - type: latheRecipe
@@ -550,6 +615,7 @@
   materials:
     Steel: 100
     Glass: 500
+    BasicElectronics: 100
     Gold: 100
 
 - type: latheRecipe
@@ -559,6 +625,7 @@
   completetime: 4
   materials:
     Steel: 100
+    BasicElectronics: 100
     Glass: 500
 
 - type: latheRecipe
@@ -567,6 +634,7 @@
   category: Circuitry
   completetime: 4
   materials:
+    BasicElectronics: 100
     Steel: 100
     Glass: 500
 
@@ -578,6 +646,7 @@
   materials:
     Steel: 100
     Glass: 500
+    BasicElectronics: 100
 
 - type: latheRecipe
   id: OreProcessorMachineCircuitboard
@@ -587,6 +656,7 @@
   materials:
     Steel: 100
     Glass: 500
+    BasicElectronics: 100
 
 - type: latheRecipe
   id: OreProcessorIndustrialMachineCircuitboard
@@ -596,6 +666,7 @@
   materials:
     Steel: 100
     Glass: 500
+    BasicElectronics: 100
     Gold: 100
 
 - type: latheRecipe

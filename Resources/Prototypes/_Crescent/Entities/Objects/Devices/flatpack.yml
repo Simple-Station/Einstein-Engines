@@ -85,8 +85,8 @@
 - type: entity
   parent: BaseFlatpack
   id: SHIWarshipThrusterFlatpack
-  name: SHI warship thruster flatpack
-  description: A flatpack used for constructing warship thrusters with corporate IFF clearance.
+  name: thruster flatpack
+  description: A flatpack used for constructing thruster systems.
   components:
   - type: Flatpack
     entity: ThrusterSHIWarship
@@ -446,3 +446,31 @@
     - state: kit
   - type: StaticPrice
     price: 25000
+
+- type: entity
+  parent: BaseFlatpack
+  id: MiniGravFlatpack
+  name: mini gravity generator flatpack
+  description:  Parts used to build a mini gravity generator. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: GravityGeneratorMini
+  - type: Sprite
+    layers:
+    - state: kit
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseFlatpack
+  id: ShuttleFlatpack
+  name: shuttle console flatpack
+  description:  Parts used to build a shuttle console. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: BaseComputerShuttle
+  - type: Sprite
+    layers:
+    - state: kit
+  - type: StaticPrice
+    price: 500
