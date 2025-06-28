@@ -1,0 +1,31 @@
+# Author Info
+# Discord: @ninruB
+#
+- type: vessel
+  id: Tick
+  name: GSC Tick
+  description: An ultralight Syndicate fighter.
+  price: 15000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/NCSP/tick.yml
+
+- type: gameMap
+  id: Tick
+  mapName: 'GSC Tick'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/tick.yml
+  minPlayers: 0
+  stations:
+    Tick:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'GSC Tick {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            InfanteerNCSP: [ 0, 0 ]

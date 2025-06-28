@@ -5,7 +5,7 @@
   materials:
      Steel: 100
      Glass: 700
-     Gold: 100
+     BasicElectronics: 100
 
 - type: latheRecipe
   id: SalvageMagnetMachineCircuitboard
@@ -14,7 +14,7 @@
   materials:
      Steel: 100
      Glass: 700
-     Gold: 100
+     BasicElectronics: 100
 
 - type: latheRecipe
   id: CrewMonitoringComputerCircuitboard
@@ -23,6 +23,7 @@
   materials:
     Steel: 100
     Glass: 700
+    BasicElectronics: 100
 
 - type: latheRecipe
   id: ClothingEyesHudMedical
@@ -32,7 +33,7 @@
   materials:
     Steel: 100
     Glass: 300
-    Plasma: 200
+    BasicElectronics: 100
 
 - type: latheRecipe
   id: DeepFryerMachineCircuitboard
@@ -42,3 +43,4 @@
   materials:
      Steel: 100
      Glass: 700
+     BasicElectronics: 100

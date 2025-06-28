@@ -17,3 +17,9 @@
       id: LoadoutBeltWaistbagColor
     - type: loadout
       id: ClothingBeltTCAFWebbing
+    #Hullrot edit - EVERYTHING HULLROT RELATED DOWN HERE SEPERATED FROM UPSTREAM OR THE HUNTERS WILL COME AND GET YOU
+    - type: loadout
+      id: LoadoutBeltSheathDSMSabre
+    - type: loadout
+      id: LoadoutBeltSheathDSMRapier
+    #Hullrot edit end

@@ -211,3 +211,12 @@
     shuttles:
     - Hearth
 
+- type: entity
+  id: OuroborosMothershipComputer
+  parent: BaseMothershipComputer
+  name: ouroboros internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Tick
+    - Gnat

@@ -96,29 +96,40 @@
     idleState: base_machine
     runningState: base_machine_processing
     staticRecipes:
-    - PartyDrugs
     - Crash
     - Exile
     - Kaiser
     - Mechanite
     - Bloodeye
+    - Scalpel
+    - Retractor
+    - Cautery
+    - Drill
     - Saw
-    - BodyBag
+    - Hemostat
+    - BoneGel
+    - ClothingHandsGlovesNitrile
+    - ClothingMaskSterile
     - Brutepack
     - Ointment
     - Gauze
-    - Defibrillator
-    - Medkit
-    - MedkitAdvanced
-    - MedkitCombat
-    - HandLabeler
+    - DisposableSyringe
+    - HandheldHealthAnalyzer
+    - BodyBag
     - Beaker
     - LargeBeaker
     - Dropper
     - Jug
     - Syringe
-    - VehicleWheelchairFolded
-    - RollerBedSpawnFolded
+    dynamicRecipes:
+      - ClothingUniformJumpsuitSyndicateInterdyne
+      - ClothingBeltSyndicateWebbingInterdyne
+      - ClothingHeadHatSyndicateDoctor
+      - ClothingOuterArmorSyndicateApron
+      - ClothingHeadHelmetSyndicateBasicInterdyne
+      - ClothingOuterArmorSyndicateArmorvestInterdyne
+      - ClothingOuterHardsuitTraumasec
+      - DefibrillatorSyndicate
   - type: Anchorable
     flags:
     - Anchorable
@@ -222,19 +233,136 @@
       - ClothingHeadHatWelding
       - ClothingOuterSuitEmergency
       - ClothingHeadHelmetEVALarge # Frontier
-      - ArmorPlateSteelCraft
-      - ArmorPlatePlasteelCraft
-      - ArmorPlateNanoPolymerCraft
-      - ArmorPlateCeramicCraft
-      - ArmorPlateDurathreadCraft
-      # - ArmorPlatePlasmGlassaCraft # no sprite
-      - ArmorPlatePlasticCraft
-      - ArmorPlateHomelandCraft
-      - ArmorPlateKevlarCraft
-      - ArmorPlatePlasteelEncasedKevlarCraft
-      - ArmorPlateNanoCeramicCraft
     dynamicRecipes:
+      - ThrusterFlatpackAstronautics
+      - GyroscopeFlatpackAstronautics
+      - MiniGravityFlatpack
+      - ShuttleFlatpackAstronautics
+      - ClothingOuterHardsuitBasicAstronautics
+      - ClothingOuterHardsuitSpatioAstronautics
+      - ClothingShoesBootsMagAstronautics
+      - HandheldMassScannerAstronautics
+      - JetpackBlueFilledAstronautics
+      - ClothingOuterHardsuitPilotAstronautics
+      - ClothingOuterHardsuitVoidParamedAstronautics
+      - ClothingOuterHardsuitPrivateSecurityAstronautics
+      - ClothingShoesBootsMagbootsAstronautics
+      - JetpackMiniFilledAstronautics
+      - RCDEmptyAstronautics
+      - RCDAmmoAstronautics
+      - MiningDrill
+      - BorgModuleMining
+      - MechEquipmentDrill 
+      - ClothingMaskWeldingGas
+      - PowerCellHigh
+      - PowerCellMicrortg
+      - TurboItemRechargerCircuitboard
+      - SMESAdvancedMachineCircuitboard
+      - FlatpackerMachineCircuitboard
+      - PortableGeneratorPacmanMachineCircuitboard
+      - PortableGeneratorSuperPacmanMachineCircuitboard
+      - PortableGeneratorJrPacmanMachineCircuitboard
+      - PowerComputerCircuitboard #the actual solar panel itself should be in here
+      - SolarControlComputerCircuitboard
+      - SolarTrackerElectronics
+      - EmitterCircuitboard
+      - ThermomachineFreezerMachineCircuitBoard
+      - GasRecyclerMachineCircuitboard
+      - AlertsComputerCircuitboard
+      - RipleyHarness
+      - RipleyLArm
+      - RipleyRArm
+      - RipleyLLeg
+      - RipleyRLeg
+      - RipleyCentralElectronics
+      - RipleyPeripheralsElectronics
+      - MechEquipmentGrabber
+      - WelderExperimental
+      - PowerDrill
+      - JawsOfLife
+      - BorgModuleAdvancedTool
+      - BorgModuleRCD
+      - OreBagOfHolding
+      - MiningDrillDiamond
+      - MechEquipmentDrillDiamond
+      - RipleyMKIIHarness
+      - RipleyUpgradeKit
+      - ClothingBackpackHolding
+      - ClothingBackpackSatchelHolding
+      - ClothingBackpackDuffelHolding
+      - BasicMechatronics1Mechatronics
+      - PlastitaniumFibreAlloy1Mechatronics
       - Truncheon
+      - WeaponPistolMk58Mechatronics
+      - WeaponRifleM90GrenadeLauncherMechatronics
+      - MagazineRifleShrapnel
+      - MagazinePistolShrapnel
+      - MagazinePistolSubMachineGunShrapnel
+      - MagazineMagnumShrapnel
+      - MagazineLightRifleShrapnel
+      - Scalpel
+      - Retractor
+      - Cautery
+      - Drill
+      - Saw
+      - Hemostat
+      - BoneGel
+      - MothroachCubeBiochemical
+      - CowCubeBiochemical
+      - GoatCubeBiochemical
+      - ClothingHandsGlovesNitrile
+      - ClothingMaskSterile
+      - Brutepack
+      - Ointment
+      - Gauze
+      - DisposableSyringe
+      - HandheldHealthAnalyzer
+      - BodyBag
+      - Beaker
+      - LargeBeaker
+      - Dropper
+      - Jug
+      - Syringe
+      - Defibrillator
+      - SurveillanceCameraRouterCircuitboard
+      - SurveillanceCameraWirelessRouterCircuitboard
+      - SurveillanceWirelessCameraMovableCircuitboard
+      - SurveillanceWirelessCameraAnchoredCircuitboard
+      - SurveillanceCameraMonitorCircuitboard
+      - SurveillanceWirelessCameraMonitorCircuitboard
+      - TelecomServerCircuitboard
+      - ComputerTelevisionCircuitboard
+      - SynthesizerInstrument
+      - DawInstrumentMachineCircuitboard
+      - MassMediaCircuitboard
+      - JukeboxCircuitBoard
+      - FatExtractorMachineCircuitboard
+      - BiofabricatorMachineCircuitboard
+      - BiomassReclaimerMachineCircuitboard
+      - NodeScanner
+      - AnalysisComputerCircuitboard
+      - ArtifactAnalyzerMachineCircuitboard
+      - TechDiskComputerCircuitboard
+      - ReverseEngineeringMachineCircuitboard
+      - BasicElectronics1Electronics
+      - WeakLaserLocus1Electronics
+      - HardsuitElectronics1Electronics
+      - WeaponCivilianDisabler
+      - WeaponEnergyGunMini
+      - ClothingEyesNightVisionGoggles
+      - Terminus
+      - ClothingOuterHardsuitShanlinUnpainted
+      - HandHeldMassScanner
+      - BorgModuleGPS
+      - RadarConsoleCircuitboard
+      - EMPGrenadeElectronics
+      - AdvancedCapacitorStockPart
+      - AdvancedMatterBinStockPart
+      - NanoManipulatorStockPart
+      - RPED
+      - WeaponParticleDecelerator
+      - HoloprojectorField
+
   - type: Machine
     board: MicroforgeCircuitboard
 

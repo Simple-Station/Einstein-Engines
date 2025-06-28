@@ -39,9 +39,9 @@
           - AutoinjectorCartridge
 
 - type: entity
-  name: security cartridge autoinjector
+  name: IPM RMA-4 cartridge autoinjector
   parent: BaseCartridgeAutoinjector
-  description: Used for rapid administration of medicine. Uses cartridges printable at the security techfab.
+  description: Used for rapid administration of medicine. Uses smart cartridges to deliver chemical payloads.
   id: SecHypo
   components:
   - type: Sprite
