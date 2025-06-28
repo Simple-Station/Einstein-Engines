@@ -850,6 +850,7 @@
   physicalDesc: reagent-physical-desc-pungent
   flavor: medicine
   color: "#e8cb4e"
+  worksOnTheDead: true # description says it works on mangled corpses
   plantMetabolism:
     - !type:PlantAdjustWeeds
       amount: -4
