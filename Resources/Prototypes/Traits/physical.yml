@@ -1273,6 +1273,11 @@
 
 - type: trait
   id: SuperiorRadiationShielding
+  category: Physical
+  points: -4
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
         - IPC
   functions:
     - !type:TraitAddArmor
