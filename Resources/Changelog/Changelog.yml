@@ -16487,3 +16487,23 @@ Entries:
   id: 7287
   time: '2025-06-28T17:27:22.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2185
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added traits for spawning in with individual cybernetic legs (without
+        any other modifications). These traits uniquely cost neither points, nor
+        trait selections.
+    - type: Add
+      message: Added bundle traits for Dwarf and Kobold.
+    - type: Add
+      message: Added Forked Tongue trait for Unathi.
+    - type: Add
+      message: Added Stunted Snout trait for Vulpkanin.
+    - type: Tweak
+      message: >-
+        Cyber-Eyes Basic System no longer costs any trait slots, and has had its
+        points cost reduced. 
+  id: 7288
+  time: '2025-06-28T17:43:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2463
