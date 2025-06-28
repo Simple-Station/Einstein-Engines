@@ -275,3 +275,23 @@
     exclusiveAntag: true
     roleType: SoloAntagonist
   - type: ChangelingRole
+
+# shadowling
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleShadowling
+  name: Shadowling Role
+  components:
+  - type: MindRole
+    antagPrototype: Shadowling
+    exclusiveAntag: true
+    roleType: TeamAntagonist
+  - type: ShadowlingRole
+
+- type: entity
+  parent: MindRoleShadowling
+  id: MindRoleThrall
+  name: Thrall Role
+  components:
+  - type: MindRole
+    antagPrototype: Thrall

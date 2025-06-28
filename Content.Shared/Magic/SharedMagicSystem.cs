@@ -1,4 +1,5 @@
 ﻿using System.Numerics;
+using Content.Shared._Goobstation.Religion;
 using Content.Shared.Actions;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
@@ -180,6 +181,14 @@ public abstract class SharedMagicSystem : EntitySystem
         var ev = new BeforeCastSpellEvent(performer);
         RaiseLocalEvent(spell, ref ev);
         return !ev.Cancelled;
+    }
+
+    private bool IsTouchSpellDenied(EntityUid target) // Goob edit
+    {
+        var ev = new BeforeCastTouchSpellEvent(target);
+        RaiseLocalEvent(target, ev, true);
+
+        return ev.Cancelled;
     }
 
     #region Spells

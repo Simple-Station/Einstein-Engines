@@ -27,7 +27,7 @@
       types:
         Blunt: 9
     bluntStaminaDamageFactor: 2.0
-    heavyRangeModifier: 1.75
+    heavyRangeModifier: 1.2
     heavyDamageBaseModifier: 1.5
     heavyRateModifier: 2
     heavyStaminaCost: 2.5

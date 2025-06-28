@@ -271,6 +271,15 @@
     - MagazineMagnum # Goobstation
     - MagazineMagnumLeverRifleEmpty # Goobstation
     - MagazineMagnumLeverRifle # Goobstation
+    - CartridgeEpinephrine # Goobstation
+    - CartridgeBicaridine # Goobstation
+    - CartridgeDermaline # Goobstation
+    - CartridgeEphedrine # Goobstation
+    - CartridgeAtropine # Goobstation
+    - CartridgePuncturase # Goobstation
+    - SecHypo # Goobstation
+    - ParamedHypo # Goobstation - ParamedHypo
+    - CartridgePain # Morphine Tweaks
 
 - type: entity
   id: AutolatheHyperConvection
@@ -323,6 +332,7 @@
     - ClothingEyesGlassesChemical
     - N14MaterialCircuitry
     dynamicRecipes:
+    - AntiMindControlDevice
     - PowerDrill
     - MiningDrill
     - MiningDrillDiamond
@@ -1006,6 +1016,13 @@
       - ClothingHeadHelmetBasic
       - MagazineShotgunBeanbag
       - ShellTranquilizer
+      - CartridgeEpinephrine # Goobstation
+      - CartridgeBicaridine # Goobstation
+      - CartridgeDermaline # Goobstation
+      - CartridgeAtropine # Goobstation
+      - CartridgeSaline # Goobstation
+      - SecHypo # Goobstation
+      - CartridgePain # Morphine Tweaks
       - BoxBeanbag
       - CartridgePistolRubber
       - CartridgeMagnumRubber
@@ -1318,7 +1335,18 @@
     - BoneGel # Shitmed Change
     - AACTablet # DeltaV
     - VehicleWheelchairFolded # Goobstation - Vehicles
+    - MedicalPatchBasic  #Goobstation - MedicalPatch
+    - MedicalPatchRapid #Goobstation - MedicalPatch
+    - MedicalPatchLarge #Goobstation - MedicalPatch
+    - MedicalPatchTherapeutic #Goobstation - MedicalPatch
     - SyringeCase # Morphine
+    - CartridgeAtropine # Goobstation - ParamedHypo
+    - CartridgeEpinephrine # Goobstation - ParamedHypo
+    - CartridgeBicaridine # Goobstation - ParamedHypo
+    - CartridgeDermaline # Goobstation - ParamedHypo
+    - CartridgeSaline # Goobstation - ParamedHypo
+    - ParamedHypo # Goobstation - ParamedHypo
+    - CartridgePain # Morphine Tweaks
     dynamicRecipes:
     - ChemicalPayload
     - CryostasisBeaker
@@ -1335,6 +1363,11 @@
     - AdvancedRetractor
     - OmnimedTool
     - MedicalCyberneticEyes
+  - type: EmagLatheRecipes
+    emagStaticRecipes:
+    - CartridgeEphedrine
+    - CartridgePuncturase
+    - CartridgeTirizene
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: StealTarget

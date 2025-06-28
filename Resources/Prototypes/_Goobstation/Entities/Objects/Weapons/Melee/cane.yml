@@ -16,7 +16,7 @@
       types:
         Slash: 10
     heavyRateModifier: 2
-    heavyRangeModifier: 1.75
+    heavyRangeModifier: 1.2
     heavyDamageBaseModifier: 1.5
     maxTargets: 1
     angle: 10

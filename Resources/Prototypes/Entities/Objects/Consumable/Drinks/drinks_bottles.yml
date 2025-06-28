@@ -58,7 +58,7 @@
     damage:
       types:
         Blunt: 7.5
-    heavyRangeModifier: 1.5
+    heavyRangeModifier: 1.2
     heavyStaminaCost: 5
     maxTargets: 1
     angle: 25

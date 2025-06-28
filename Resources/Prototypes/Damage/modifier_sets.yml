@@ -399,6 +399,34 @@
     Slash: 1.5
     Piercing: 1.5
 
+- type: damageModifierSet
+  id: IPC
+  coefficients:
+    Poison: 0
+    Cold: 0.2
+    Heat: 1
+    Shock: 1.2
+    Blunt: 1
+    Slash: 1
+    Piercing: 1
+  flatReductions:
+    Radiation: 1
+
+- type: damageModifierSet
+  id: SuperiorRadiationShielding
+  flatReductions:
+    Radiation: 4
+
+- type: damageModifierSet
+  id: HardenedCircuits
+  coefficients:
+    Shock: .666
+    
+- type: damageModifierSet
+  id: ExtremePoisonResistance
+  coefficients:
+    Poison: 0.1
+
 # protects against radiation
 - type: damageModifierSet
   id: PotassiumIodide

@@ -1,4 +1,7 @@
 - type: Tag
+  id: CannotSuicideAny
+
+- type: Tag
   id: CartridgeLightRifleSubsonic
 
 - type: Tag
@@ -144,3 +147,12 @@
 
 - type: Tag
   id: WeaponPistolDualetta
+
+- type: Tag
+  id: MedicalPatch
+
+- type: Tag
+  id: AutoinjectorCartridge
+
+- type: Tag
+  id: Tourniquet

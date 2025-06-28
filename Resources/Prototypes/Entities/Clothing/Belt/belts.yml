@@ -278,6 +278,9 @@
         - PillCanister
         - Radio
         - DiscreteHealthAnalyzer
+        - MedicalPatch # Goobstation
+        - AutoinjectorCartridge #Goobstation - ParamedHypo
+        - Tourniquet #Goobstation - ParamedHypo
       components:
         - SurgeryTool # Shitmed Change
         - Hypospray

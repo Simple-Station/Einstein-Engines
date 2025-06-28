@@ -155,6 +155,8 @@
     color: "#1AE51A"
   - type: Projectile
     penetrate: true
+    noPenetrateMask:
+    - BlobImpassable
     damage:
       types:
         Heat: 30

@@ -77,3 +77,9 @@
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
             MedicalBorg: [ 1, 1 ]
+        # blob-config-start SMALL+
+        - type: StationBlobConfig
+          stageBegin: 25
+          stageCritical: 350
+          stageTheEnd: 700
+        # blob-config-end
