@@ -16469,3 +16469,12 @@ Entries:
   id: 7285
   time: '2025-06-28T17:17:33.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2284
+- author: Tirochora
+  changes:
+    - type: Tweak
+      message: >-
+        grabbing somebody mid-combo now obeys the same laws as every other
+        attack, so no more instant judo throws
+  id: 7286
+  time: '2025-06-28T17:23:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2199
