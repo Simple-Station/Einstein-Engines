@@ -421,6 +421,11 @@
   id: HardenedCircuits
   coefficients:
     Shock: .666
+    
+- type: damageModifierSet
+  id: ExtremePoisonResistance
+  coefficients:
+    Poison: 0.1
 
 # protects against radiation
 - type: damageModifierSet

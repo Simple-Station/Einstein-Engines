@@ -691,3 +691,30 @@ trait-description-HardenedCircuits =
     Your internal components have been reinforced with shock absorbing metal-foam.
     You gain a [color=blue]20%[/color] resistance to explosive damage.
     Your [color=red]weakness[/color] to [color=yellow]Shock[/color] has been inverted to a [color=green]resistance[/color]
+
+trait-name-CyberneticLeftLeg = Cybernetic Left Leg
+trait-description-CyberneticLeftLeg =
+    Your left leg has been replaced with a baseline cybernetic leg.
+    This does not cost any trait slot selections.
+
+trait-name-CyberneticRightLeg = Cybernetic Right Leg
+trait-description-CyberneticRightLeg =
+    Your right leg has been replaced with a baseline cybernetic leg.
+    This does not cost any trait slot selections.
+trait-name-Dwarf = Dwarf
+trait-description-Dwarf =
+    You are not just short and stout... You are a dwarf.
+    You get alcohol healing, you are resistant to poison, you also do not vomit when drunk.
+
+trait-name-Kobold = Kobold
+trait-description-Kobold =
+    You are not just short and stout... You are a kobold.
+    You get alcohol healing, you are resistant to poison, you also do not vomit when drunk.
+
+trait-name-ForkedTongue = Forked Tongue
+trait-description-ForkedTongue =
+    You have a more developed forked tongue that allows you to track and distinguish objects by their scent.
+
+trait-name-StuntedSnout = Stunted Snout
+trait-description-StuntedSnout =
+    Your sense of smell is stunted for one reason or another. You lack the ability to pick up scents.

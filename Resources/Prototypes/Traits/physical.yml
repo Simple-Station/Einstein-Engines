@@ -613,7 +613,8 @@
 - type: trait
   id: CyberEyes
   category: Physical
-  points: -3
+  points: -1
+  slots: 0
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -935,6 +936,29 @@
 #       protoId: SpeedRightLeg
 #       slotId: "right leg"
 
+- type: trait
+  id: CyberneticLeftLeg
+  category: Physical
+  points: 0
+  slots: 0
+  functions:
+    - !type:TraitCyberneticLimbReplacement
+      removeBodyPart: Leg
+      partSymmetry: Left
+      protoId: LeftLegCybernetic
+      slotId: "left leg"
+
+- type: trait
+  id: CyberneticRightLeg
+  category: Physical
+  points: 0
+  slots: 0
+  functions:
+    - !type:TraitCyberneticLimbReplacement
+      removeBodyPart: Leg
+      partSymmetry: Right
+      protoId: RightLegCybernetic
+      slotId: "right leg"
 
 # - type: trait
 #  id: FlareShieldingModule
@@ -1249,11 +1273,6 @@
 
 - type: trait
   id: SuperiorRadiationShielding
-  category: Physical
-  points: -4
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      species:
         - IPC
   functions:
     - !type:TraitAddArmor
@@ -1299,3 +1318,76 @@
     - !type:TraitAddArmor
       damageModifierSets:
         - HardenedCircuits
+
+- type: trait
+  id: Dwarf
+  category: Physical
+  points: -4
+  requirements:
+    - !type:CharacterHeightRequirement
+      max: 150
+    - !type:CharacterWidthRequirement
+      max: 32
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: LiquorLifeline
+        - type: LightweightDrunk
+          boozeStrengthMultiplier: 0.5
+    - !type:TraitAddComponent
+      components:
+        - type: ScottishAccent
+    - !type:TraitAddArmor
+      damageModifierSets:
+        - ExtremePoisonResistance
+
+- type: trait
+  id: Kobold
+  category: Physical
+  points: -4
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Reptilian
+    - !type:CharacterHeightRequirement
+      max: 150
+    - !type:CharacterWidthRequirement
+      max: 32
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: LiquorLifeline
+        - type: LightweightDrunk
+          boozeStrengthMultiplier: 0.5
+    - !type:TraitAddComponent
+      components:
+        - type: ScottishAccent
+    - !type:TraitAddArmor
+      damageModifierSets:
+        - ExtremePoisonResistance
+
+- type: trait
+  id: ForkedTongue
+  category: Physical
+  points: -2
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Reptilian
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: ScentTracker
+
+- type: trait
+  id: StuntedSnout
+  category: Physical
+  points: 1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Vulpkanin
+  functions:
+    - !type:TraitRemoveComponent
+      components:
+        - type: ScentTracker
