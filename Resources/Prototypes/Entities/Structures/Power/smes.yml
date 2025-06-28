@@ -83,8 +83,8 @@
       highVoltageNode: input
       mediumVoltageNode: output
     - type: Damageable
-      damageContainer: Inorganic
-      damageModifierSet: StrongMetallic
+      damageContainer: StructuralInorganic
+      damageModifierSet: StructuralMetallicStrong
     - type: BatterySensor
     - type: DeviceNetwork
       deviceNetId: AtmosDevices
@@ -100,7 +100,7 @@
 - type: entity
   parent: BaseSMES
   id: SMESBasic
-  suffix: Basic, 120MW
+  suffix: Basic, 120MJ
   components:
   - type: Battery
     maxCharge: 120000000

@@ -65,7 +65,7 @@ public sealed class SharedMagbootsSystem : EntitySystem
         if (!component.Active)
             return;
 
-        args.Cancel();
+        args.NoSlip = true;
     }
 
     private void OnGotUnequipped(Entity<MagbootsComponent> ent, ref ClothingGotUnequippedEvent args) =>

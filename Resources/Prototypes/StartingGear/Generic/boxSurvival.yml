@@ -1,0 +1,83 @@
+# Basic
+- type: startingGear
+  id: BoxSurvival
+  subGear:
+  - BoxSurvivalOxygen
+  - BoxSurvivalNitrogen
+
+- type: startingGear
+  id: BoxSurvivalOxygen
+  parent: OxygenBreather
+  storage:
+    back:
+    - BoxSurvival
+
+- type: startingGear
+  id: BoxSurvivalNitrogen
+  parent: NitrogenBreather
+  storage:
+    back:
+    - BoxSurvivalNitrogen
+
+# Engineering
+- type: startingGear
+  id: BoxSurvivalEngineering
+  subGear:
+  - BoxSurvivalEngineeringOxygen
+  - BoxSurvivalEngineeringNitrogen
+
+- type: startingGear
+  id: BoxSurvivalEngineeringOxygen
+  parent: OxygenBreather
+  storage:
+    back:
+    - BoxSurvivalEngineeringOxygen
+
+- type: startingGear
+  id: BoxSurvivalEngineeringNitrogen
+  parent: NitrogenBreather
+  storage:
+    back:
+    - BoxSurvivalEngineeringNitrogen
+
+# Medical
+- type: startingGear
+  id: BoxSurvivalMedical
+  subGear:
+  - BoxSurvivalMedicalOxygen
+  - BoxSurvivalMedicalNitrogen
+
+- type: startingGear
+  id: BoxSurvivalMedicalOxygen
+  parent: OxygenBreather
+  storage:
+    back:
+    - BoxSurvivalMedicalOxygen
+
+- type: startingGear
+  id: BoxSurvivalMedicalNitrogen
+  parent: NitrogenBreather
+  storage:
+    back:
+    - BoxSurvivalMedicalNitrogen
+
+# Syndicate
+- type: startingGear
+  id: BoxSurvivalSyndicate
+  subGear:
+  - BoxSurvivalSyndicateOxygen
+  - BoxSurvivalSyndicateNitrogen
+
+- type: startingGear
+  id: BoxSurvivalSyndicateOxygen
+  parent: OxygenBreather
+  storage:
+    back:
+    - BoxSurvivalSyndicate
+
+- type: startingGear
+  id: BoxSurvivalSyndicateNitrogen
+  parent: NitrogenBreather
+  storage:
+    back:
+    - BoxSurvivalSyndicateNitrogen

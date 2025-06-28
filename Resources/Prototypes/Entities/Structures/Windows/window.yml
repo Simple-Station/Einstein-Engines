@@ -115,7 +115,7 @@
   - type: Tag
     tags:
       - Window
-      - Directional #Delta V - Summary: Allows the tilewindow mapping command to work.
+      - Directional
       - WeldbotFixableStructure
   - type: MeleeSound
     soundGroups:
@@ -142,7 +142,7 @@
         - GlassLayer
   - type: Repairable
   - type: Damageable
-    damageContainer: Inorganic
+    damageContainer: StructuralInorganic
     damageModifierSet: Glass
   - type: ExaminableDamage
     messages: WindowMessages
@@ -190,7 +190,7 @@
     damageOverlay:
       sprite: Structures/Windows/cracks_directional.rsi
   - type: StaticPrice
-    price: 10
+    price: 15
   - type: InteractionVerbs
     allowedVerbs:
     - KnockOn

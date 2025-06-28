@@ -155,13 +155,10 @@
   parent: SuitStorageBase
   suffix: Chief Engineer
   components:
-  - type: StorageFill
-    contents:
-        - id: OxygenTankFilled
-        - id: JetpackVoidFilled
-        - id: ClothingShoesBootsMagAdv
-        - id: ClothingOuterHardsuitEngineeringWhite
-        - id: ClothingMaskBreath
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillChiefEngineerHardsuit
   - type: AccessReader
     access: [["ChiefEngineer"]]
 
@@ -171,11 +168,10 @@
   parent: SuitStorageBase
   suffix: Chief Medical Officer
   components:
-  - type: StorageFill
-    contents:
-        - id: OxygenTankFilled
-        - id: ClothingOuterHardsuitMedical
-        - id: ClothingMaskBreathMedical
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillChiefMedicalOfficerHardsuit
   - type: AccessReader
     access: [ [ "ChiefMedicalOfficer" ] ]
 
@@ -183,13 +179,12 @@
 - type: entity
   id: SuitStorageRD
   parent: SuitStorageBase
-  suffix: Mystagogue # DeltaV - Epistemics Department replacing Science
+  suffix: Mystagogue
   components:
-  - type: StorageFill
-    contents:
-        - id: OxygenTankFilled
-        - id: ClothingOuterHardsuitRd
-        - id: ClothingMaskBreath
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillResearchDirectorHardsuit
   - type: AccessReader
     access: [ [ "ResearchDirector" ] ]
 
@@ -199,13 +194,10 @@
   parent: SuitStorageBase
   suffix: Head of Security
   components:
-  - type: StorageFill
-    contents:
-        - id: OxygenTankFilled
-        - id: JetpackSecurityFilled
-        - id: ClothingOuterHardsuitCombatHoS # DeltaV - ClothingOuterHardsuitSecurityRed replaced in favour of head of security's advanced combat hardsuit.
-        - id: ClothingMaskGasSwat
-        - id: ClothingShoesBootsMagSec
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillHeadOfSecurityHardsuit
   - type: AccessReader
     access: [["HeadOfSecurity"]]
 
@@ -230,12 +222,10 @@
   parent: SuitStorageBase
   suffix: Captain
   components:
-  - type: StorageFill
-    contents:
-        - id: OxygenTankFilled
-        - id: ClothingOuterHardsuitCap
-        - id: ClothingMaskGasCaptain
-        - id: ClothingMaskGasCaptainCombat
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillCaptainHardsuit
   - type: AccessReader
     access: [["Captain"]]
 
@@ -245,12 +235,10 @@
   parent: SuitStorageBase
   suffix: Salvage
   components:
-  - type: StorageFill
-    contents:
-      - id: OxygenTankFilled
-      - id: ClothingShoesBootsMag
-      - id: ClothingOuterHardsuitSpatio
-      - id: ClothingMaskGasExplorer
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillSalvageSpecialistHardsuitSpatio
   - type: AccessReader
     access: [["Salvage"]]
 
@@ -263,10 +251,10 @@
   components:
   - type: StorageFill
     contents:
-        - id: NitrogenTankFilled
-        - id: OxygenTankFilled
-        - id: ClothingOuterHardsuitVoidParamed
-        - id: ClothingMaskBreathMedical
+    - id: NitrogenTankFilled
+    - id: OxygenTankFilled
+    - id: ClothingOuterHardsuitVoidParamed
+    - id: ClothingMaskBreathMedical
   - type: AccessReader
     access: [ [ "Paramedic" ] ]
 
@@ -278,10 +266,10 @@
   components:
   - type: StorageFill
     contents:
-      - id: NitrogenTankFilled
-      - id: OxygenTankFilled
-      - id: ClothingOuterHardsuitCombatCorpsman
-      - id: ClothingMaskBreath
+    - id: NitrogenTankFilled
+    - id: OxygenTankFilled
+    - id: ClothingOuterHardsuitCombatCorpsman
+    - id: ClothingMaskBreath
   - type: AccessReader
     access: [ [ "Corpsman" ] ]
 
@@ -330,19 +318,19 @@
   parent: SuitStorageBase
   suffix: CSA-51a
   components:
-    - type: StorageFill
-      contents:
-          - id: OxygenTankFilled
-          - id: ClothingOuterHardsuitShanlinUnpainted
-          - id: ClothingMaskBreath
+  - type: StorageFill
+    contents:
+    - id: OxygenTankFilled
+    - id: ClothingOuterHardsuitShanlinUnpainted
+    - id: ClothingMaskBreath
 
 - type: entity
   id: SuitStorageShiwei
   parent: SuitStorageBase
   suffix: CSA-54UA
   components:
-    - type: StorageFill
-      contents:
-          - id: OxygenTankFilled
-          - id: ClothingOuterHardsuitShiweiUnpainted
-          - id: ClothingMaskBreath
+  - type: StorageFill
+    contents:
+    - id: OxygenTankFilled
+    - id: ClothingOuterHardsuitShiweiUnpainted
+    - id: ClothingMaskBreath

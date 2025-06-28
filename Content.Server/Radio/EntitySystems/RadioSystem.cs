@@ -123,8 +123,8 @@ public sealed class RadioSystem : EntitySystem
 
         var evt = new TransformSpeakerNameEvent(messageSource, Name(messageSource));
         RaiseLocalEvent(messageSource, evt);
-        var name = evt.VoiceName;
 
+        var name = evt.VoiceName;
         name = FormattedMessage.EscapeText(name);
 
         // most radios are relayed to chat, so lets parse the chat message beforehand
@@ -132,12 +132,12 @@ public sealed class RadioSystem : EntitySystem
             ? FormattedMessage.EscapeText(message)
             : message;
 
-        var wrappedMessage = WrapRadioMessage(messageSource, channel, name, content, language, frequency);
+        var wrappedMessage = WrapRadioMessage(messageSource, channel, name, content, evt, language, frequency);
         var msg = new ChatMessage(ChatChannel.Radio, content, wrappedMessage, NetEntity.Invalid, null);
 
         // ... you guess it
         var obfuscated = _language.ObfuscateSpeech(content, language);
-        var obfuscatedWrapped = WrapRadioMessage(messageSource, channel, name, obfuscated, language, frequency);
+        var obfuscatedWrapped = WrapRadioMessage(messageSource, channel, name, obfuscated, evt, language, frequency);
         var notUdsMsg = new ChatMessage(ChatChannel.Radio, obfuscated, obfuscatedWrapped, NetEntity.Invalid, null);
 
         var ev = new RadioReceiveEvent(messageSource, channel, msg, notUdsMsg, language, radioSource);
@@ -202,11 +202,17 @@ public sealed class RadioSystem : EntitySystem
         RadioChannelPrototype channel,
         string name,
         string message,
+        TransformSpeakerNameEvent transformSpeakerName,
         LanguagePrototype language,
         int? frequency = null)
     {
         // TODO: code duplication with ChatSystem.WrapMessage
-        var speech = _chat.GetSpeechVerb(source, message);
+        SpeechVerbPrototype speech;
+        if (transformSpeakerName.SpeechVerb != null && _prototype.TryIndex(transformSpeakerName.SpeechVerb, out var evntProto))
+            speech = evntProto;
+        else
+            speech = _chat.GetSpeechVerb(source, message);
+
         var languageColor = channel.Color;
         if (language.SpeechOverride.Color is { } colorOverride)
             languageColor = Color.InterpolateBetween(languageColor, colorOverride, colorOverride.A);

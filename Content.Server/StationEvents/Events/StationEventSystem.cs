@@ -6,7 +6,6 @@ using Content.Server.StationEvents.Components;
 using Content.Shared.Database;
 using Content.Shared.GameTicking.Components;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Content.Server.Announcements.Systems;
@@ -19,7 +18,6 @@ namespace Content.Server.StationEvents.Events;
 public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : IComponent
 {
     [Dependency] protected readonly IAdminLogManager AdminLogManager = default!;
-    [Dependency] protected readonly IMapManager MapManager = default!;
     [Dependency] protected readonly IPrototypeManager PrototypeManager = default!;
     [Dependency] protected readonly ChatSystem ChatSystem = default!;
     [Dependency] protected readonly SharedAudioSystem Audio = default!;
@@ -40,13 +38,10 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
     {
         base.Added(uid, component, gameRule, args);
 
-        if (!TryComp<StationEventComponent>(uid, out var stationEvent))
+        if (!HasComp<StationEventComponent>(uid))
             return;
 
-
         AdminLogManager.Add(LogType.EventAnnounced, $"Event added / announced: {ToPrettyString(uid)}");
-
-        stationEvent.StartTime = Timing.CurTime + stationEvent.StartDelay;
     }
 
     /// <inheritdoc/>
@@ -63,7 +58,6 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
         {
             _announcer.SendAnnouncement(
                 _announcer.GetAnnouncementId(args.RuleId),
-                Filter.Broadcast(),
                 _announcer.GetEventLocaleString(_announcer.GetAnnouncementId(args.RuleId)),
                 colorOverride: Color.Gold
             );
@@ -93,7 +87,6 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
         {
             _announcer.SendAnnouncement(
                 _announcer.GetAnnouncementId(args.RuleId, true),
-                Filter.Broadcast(),
                 _announcer.GetEventLocaleString(_announcer.GetAnnouncementId(args.RuleId, true)),
                 colorOverride: Color.Gold);
         }
@@ -114,7 +107,7 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
             if (!GameTicker.IsGameRuleAdded(uid, ruleData))
                 continue;
 
-            if (!GameTicker.IsGameRuleActive(uid, ruleData) && Timing.CurTime >= stationEvent.StartTime)
+            if (!GameTicker.IsGameRuleActive(uid, ruleData) && !HasComp<DelayedStartRuleComponent>(uid))
             {
                 GameTicker.StartGameRule(uid, ruleData);
             }

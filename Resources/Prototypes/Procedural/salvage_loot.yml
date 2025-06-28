@@ -199,13 +199,6 @@
       proto: OreUranium
 
 - type: salvageLoot
-  id: OreBananium
-  guaranteed: true
-  loots:
-    - !type:BiomeMarkerLoot
-      proto: OreBananium
-
-- type: salvageLoot
   id: OreDiamond
   guaranteed: true
   loots:

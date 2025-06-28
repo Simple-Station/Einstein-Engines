@@ -9,10 +9,10 @@
       layers:
         - state: cabinet
         - state: card
-          map: ["enum.ItemCabinetVisualLayers.ContainsItem"]
+          map: ["enum.ItemCabinetVisuals.Layer"]
           visible: true
         - state: glass
-          map: ["enum.ItemCabinetVisualLayers.Door"]
+          map: ["enum.OpenableVisuals.Layer"]
     - type: ItemCabinet
       cabinetSlot:
         ejectOnInteract: true

@@ -305,13 +305,16 @@
     baseState: vim
     openState: vim-open
     brokenState: vim-broken
-    maxEquipmentAmount: 0
+    maxEquipmentAmount: 5
     # keep mouse safe
     mechToPilotDamageMultiplier: 0.1
     airtight: true
     pilotWhitelist:
       tags:
       - VimPilot
+    equipmentWhitelist:
+      tags:
+      - CombatMech
   - type: MeleeWeapon
     hidden: true
     attackRate: 1.25

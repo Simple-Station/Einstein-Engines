@@ -104,7 +104,7 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
         MainDisciplineLabel.SetMessage(msg);
 
         var softcapMsg = new FormattedMessage();
-        softcapMsg.AddMarkup(Loc.GetString("research-console-menu-softcap-amount-text",
+        softcapMsg.AddMarkupOrThrow(Loc.GetString("research-console-menu-softcap-amount-text",
             ("softcap", state.SoftCapMultiplier.ToString("#.##"))));
         SoftcapAmountLabel.SetMessage(softcapMsg);
 

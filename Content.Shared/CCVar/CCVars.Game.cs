@@ -147,6 +147,12 @@ public sealed partial class CCVars
         GameRoleTimers = CVarDef.Create("game.role_timers", true, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
+    ///     Override default role requirements using a <see cref="CharacterRequirementOverridePrototype"/>
+    /// </summary>
+    public static readonly CVarDef<string>
+        GameRoleTimerOverride = CVarDef.Create("game.role_timer_override", "", CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
     /// Whether or not disconnecting inside of a cryopod should remove the character or just store them until they reconnect.
     /// </summary>
     public static readonly CVarDef<bool>
@@ -393,6 +399,12 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> RoundEndPVSOverrides =
         CVarDef.Create("game.round_end_pvs_overrides", true, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     If true, contraband severity can be viewed in the examine menu
+    /// </summary>
+    public static readonly CVarDef<bool> ContrabandExamine =
+        CVarDef.Create("game.contraband_examine", true, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     /// Set to true to enable the dynamic hostname system.

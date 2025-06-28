@@ -1,4 +1,5 @@
-﻿using Robust.Shared.Serialization;
+﻿using Content.Shared.Alert;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared.Mood;
 
@@ -57,3 +58,4 @@ public record struct OnSetMoodEvent(EntityUid Receiver, float MoodChangedAmount,
 [ByRefEvent]
 public record struct OnMoodEffect(EntityUid Receiver, string EffectId, float EffectModifier = 1, float EffectOffset = 0);
 
+public sealed partial class ShowMoodAlertEvent : BaseAlertEvent;

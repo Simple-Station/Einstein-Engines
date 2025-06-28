@@ -22,16 +22,4 @@ public sealed partial class SpeedModifiedByContactModifierComponent : Component
     // </summary>
     [DataField, AutoNetworkedField]
     public float SprintModifierEffectiveness = 1.0f;
-
-    // <summary>
-    //   The minimum walk speed multiplier.
-    // </summary>
-    [DataField, AutoNetworkedField]
-    public float MinWalkMultiplier = 0.1f;
-
-    // <summary>
-    //   The minimum sprint speed multiplier.
-    // </summary>
-    [DataField, AutoNetworkedField]
-    public float MinSprintMultiplier = 0.1f;
 }

@@ -178,7 +178,7 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
             ("location", FormattedMessage.RemoveMarkupPermissive(_navMap.GetNearestBeaconString(position))));
         var sender = "Central Command";
 
-        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("alertDelta"), Filter.Broadcast(), message, sender, Color.Red);
+        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("alertDelta"), message, sender, colorOverride: Color.Red);
 
         _actions.RemoveAction(shadowling.ActionAscendanceEntity);
 
@@ -264,7 +264,7 @@ public sealed class ShadowlingAscensionEggSystem : EntitySystem
         }
         var message = Loc.GetString("shadowling-ascended-message");
         var sender = Loc.GetString("shadowling-destroy-engines-sender");
-        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("ShadowlingAscension"), Filter.Broadcast(), message, sender, Color.MediumPurple);
+        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("ShadowlingAscension"), message, sender, colorOverride: Color.MediumPurple);
     }
 
     private void DestroyLights()

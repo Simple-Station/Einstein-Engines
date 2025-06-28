@@ -4,19 +4,14 @@
   description: job-description-intern
   playTimeTracker: JobMedicalIntern
   requirements:
-    # - !type:DepartmentTimeRequirement # DeltaV - Removes time limit
-    #   department: Medical
-    #   time: 54000 # 15 hrs
-    #   inverted: true # stop playing intern if you're good at med!
-    - !type:CharacterEmployerRequirement
-      employers:
-      - ZengHuPharmaceuticals
-      - Interdyne
-      - NanoTrasen
+  - !type:CharacterEmployerRequirement
+    employers:
+    - ZengHuPharmaceuticals
+    - Interdyne
+    - NanoTrasen
   startingGear: MedicalInternGear
   icon: "JobIconMedicalIntern"
   supervisors: job-supervisors-medicine
-  canBeAntag: true # DeltaV - Can be antagonist
   access:
   - Medical
   - Maintenance
@@ -32,12 +27,9 @@
   subGear:
   - DoctorPlasmamanGear
   equipment:
-    jumpsuit: UniformScrubsColorBlue # DeltaV - Intern starts with blue scrubs
-    back: ClothingBackpackMedicalFilled
+    jumpsuit: UniformScrubsColorBlue
+    back: ClothingBackpackMedical
     shoes: ClothingShoesColorWhite
     id: MedicalInternPDA
     ears: ClothingHeadsetMedical
     pocket2: BookMedicalReferenceBook
-  # innerClothingSkirt: ClothingUniformJumpskirtColorWhite # DeltaV
-  satchel: ClothingBackpackSatchelMedicalFilled
-  duffelbag: ClothingBackpackDuffelMedicalFilled

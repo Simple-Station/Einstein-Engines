@@ -3,6 +3,7 @@ using System.Threading;
 using Content.Server.Access.Systems;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
+using Content.Server.Announcements.Systems;
 using Content.Server.Chat.Systems;
 using Content.Server.Communications;
 using Content.Server.DeviceNetwork.Components;
@@ -36,7 +37,6 @@ using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Content.Server.Announcements.Systems;
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -53,6 +53,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly AccessReaderSystem _reader = default!;
+    [Dependency] private readonly AnnouncerSystem _announcer = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
     [Dependency] private readonly CommunicationsConsoleSystem _commsConsole = default!;
     [Dependency] private readonly DeviceNetworkSystem _deviceNetworkSystem = default!;
@@ -61,6 +62,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     [Dependency] private readonly IdCardSystem _idSystem = default!;
     [Dependency] private readonly NavMapSystem _navMap = default!;
     [Dependency] private readonly MapLoaderSystem _map = default!;
+    [Dependency] private readonly MapSystem _mapSystem = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly RoundEndSystem _roundEnd = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
@@ -68,8 +70,6 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
-    [Dependency] private readonly AnnouncerSystem _announcer = default!;
-    [Dependency] private readonly MapSystem _mapSystem = default!;
 
     private const float ShuttleSpawnBuffer = 1f;
 
@@ -264,7 +264,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         if (!Resolve(stationUid, ref stationShuttle))
             return;
 
-        if (!TryComp<TransformComponent>(stationShuttle.EmergencyShuttle, out var xform) ||
+        if (!TryComp(stationShuttle.EmergencyShuttle, out TransformComponent? xform) ||
             !TryComp<ShuttleComponent>(stationShuttle.EmergencyShuttle, out var shuttle))
         {
             Log.Error($"Attempted to call an emergency shuttle for an uninitialized station? Station: {ToPrettyString(stationUid)}. Shuttle: {ToPrettyString(stationShuttle.EmergencyShuttle)}");
@@ -277,8 +277,10 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         if (targetGrid == null)
         {
             _logger.Add(LogType.EmergencyShuttle, LogImpact.High, $"Emergency shuttle {ToPrettyString(stationUid)} unable to dock with station {ToPrettyString(stationUid)}");
-            _announcer.SendAnnouncement(_announcer.GetAnnouncementId("ShuttleGoodLuck"), Filter.Broadcast(),
-                "emergency-shuttle-good-luck", colorOverride: DangerColor);
+            _announcer.SendAnnouncement(
+                _announcer.GetAnnouncementId("ShuttleGoodLuck"),
+                "emergency-shuttle-good-luck",
+                colorOverride: DangerColor);
             return;
         }
 
@@ -286,15 +288,21 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
 
         if (_shuttle.TryFTLDock(stationShuttle.EmergencyShuttle.Value, shuttle, targetGrid.Value, DockTag))
         {
-            if (TryComp<TransformComponent>(targetGrid.Value, out var targetXform))
+            if (TryComp(targetGrid.Value, out TransformComponent? targetXform))
             {
                 var angle = _dock.GetAngle(stationShuttle.EmergencyShuttle.Value, xform, targetGrid.Value, targetXform, xformQuery);
+                var location = FormattedMessage.RemoveMarkup(_navMap.GetNearestBeaconString((stationShuttle.EmergencyShuttle.Value, xform)));
                 _announcer.SendAnnouncementMessage(
                     _announcer.GetAnnouncementId("ShuttleDock"),
                     "emergency-shuttle-docked",
-                    null, null, null, null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
                     ("time", $"{_consoleAccumulator:0}"),
-                        ("direction", angle.GetDir())
+                    ("direction", angle.GetDir()),
+                    ("location", location)
                 );
             }
 
@@ -316,20 +324,31 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
             }
 
             _logger.Add(LogType.EmergencyShuttle, LogImpact.High, $"Emergency shuttle {ToPrettyString(stationUid)} docked with stations");
-            _announcer.SendAnnouncementAudio(_announcer.GetAnnouncementId("ShuttleDock"), Filter.Broadcast());
+            _announcer.SendAnnouncementAudio(_announcer.GetAnnouncementId("ShuttleDock"));
         }
         else
         {
-            var location = FormattedMessage.RemoveMarkup(_navMap.GetNearestBeaconString((stationShuttle.EmergencyShuttle.Value, xform)));
-            _announcer.SendAnnouncementMessage(
+            if (TryComp<TransformComponent>(targetGrid.Value, out var targetXform))
+            {
+                var angle = _dock.GetAngle(stationShuttle.EmergencyShuttle.Value, xform, targetGrid.Value, targetXform, xformQuery);
+                var location = FormattedMessage.RemoveMarkup(_navMap.GetNearestBeaconString((stationShuttle.EmergencyShuttle.Value, xform)));
+                _announcer.SendAnnouncementMessage(
                     _announcer.GetAnnouncementId("ShuttleNearby"),
                     "emergency-shuttle-nearby",
-                    null, null, null, null,
-                    ("direction", location)
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    ("time", $"{_consoleAccumulator:0}"),
+                    ("direction", angle.GetDir()),
+                    ("location", location)
                 );
 
+            }
+
             _logger.Add(LogType.EmergencyShuttle, LogImpact.High, $"Emergency shuttle {ToPrettyString(stationUid)} unable to find a valid docking port for {ToPrettyString(stationUid)}");
-            _announcer.SendAnnouncementAudio(_announcer.GetAnnouncementId("ShuttleNearby"), Filter.Broadcast());
+            _announcer.SendAnnouncementAudio(_announcer.GetAnnouncementId("ShuttleNearby"));
         }
     }
 
@@ -341,7 +360,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
             return;
 
         // Post mapinit? fancy
-        if (TryComp<TransformComponent>(component.Entity, out var xform))
+        if (TryComp(component.Entity, out TransformComponent? xform))
         {
             component.MapEntity = xform.MapUid;
             return;

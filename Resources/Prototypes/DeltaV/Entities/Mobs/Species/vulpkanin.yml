@@ -10,8 +10,6 @@
   - type: Hunger
     baseDecayRate: 0.02083333332 # 25% more than default
   - type: Carriable # Carrying system from nyanotrasen.
-  - type: Inventory # Allows vulps to wear properly shaped helmets
-    speciesId: vulpkanin
   - type: Thirst
   - type: Icon
     sprite: DeltaV/Mobs/Species/Vulpkanin/parts.rsi
@@ -91,7 +89,8 @@
   - type: Damageable
     damageModifierSet: Vulpkanin
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
   - type: Vocal
     sounds:
       Male: MaleVulpkanin
@@ -99,10 +98,7 @@
       Unsexed: MaleVulpkanin
   - type: DogVision
   - type: ScentTracker
-  - type: Flashable
-    eyeDamageChance: 0.3
-    eyeDamage: 1
-    durationMultiplier: 1.5
+  - type: EyeDamageOnFlashing
   - type: Wagging
   - type: LanguageKnowledge
     speaks:
@@ -122,6 +118,14 @@
     - FootstepSound
     - DoorBumpOpener
     - VulpEmotes
+  - type: Inventory
+    speciesId: vulpkanin
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
 
 - type: entity
   save: false
@@ -139,3 +143,9 @@
     - HeadSide
   - type: Inventory
     speciesId: vulpkanin
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female

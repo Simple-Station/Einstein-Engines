@@ -1,117 +1,113 @@
-#Rating 1
 - type: latheRecipe
-  id: CapacitorStockPart
-  result: CapacitorStockPart
+  id: BasePartRecipe
+  abstract: true
   category: Parts
+
+# Rating 1
+
+- type: latheRecipe
+  id: BaseStockPartRecipe
+  parent: BasePartRecipe
+  abstract: true
   completetime: 1
   materials:
     Steel: 50
     Plastic: 50
+
+- type: latheRecipe
+  id: CapacitorStockPart
+  parent: BaseStockPartRecipe
+  result: CapacitorStockPart
 
 - type: latheRecipe
   id: MatterBinStockPart
+  parent: BaseStockPartRecipe
   result: MatterBinStockPart
-  category: Parts
-  completetime: 1
-  materials:
-    Steel: 50
-    Plastic: 50
 
 - type: latheRecipe
   id: MicroManipulatorStockPart
+  parent: BaseStockPartRecipe
   result: MicroManipulatorStockPart
-  category: Parts
-  completetime: 1
-  materials:
-    Steel: 50
-    Plastic: 50
 
-#Rating 2
+# Rating 2
+
 - type: latheRecipe
-  id: AdvancedCapacitorStockPart
-  result: AdvancedCapacitorStockPart
+  id: BaseAdvancedStockPartRecipe
+  parent: BasePartRecipe
+  abstract: true
   completetime: 3
   materials:
     Steel: 80
     Plastic: 80
     Plasma: 75
+
+- type: latheRecipe
+  id: AdvancedCapacitorStockPart
+  parent: BaseAdvancedStockPartRecipe
+  result: AdvancedCapacitorStockPart
 
 - type: latheRecipe
   id: AdvancedMatterBinStockPart
+  parent: BaseAdvancedStockPartRecipe
   result: AdvancedMatterBinStockPart
-  completetime: 3
-  materials:
-    Steel: 80
-    Plastic: 80
-    Plasma: 75
 
 - type: latheRecipe
   id: NanoManipulatorStockPart
+  parent: BaseAdvancedStockPartRecipe
   result: NanoManipulatorStockPart
-  completetime: 3
-  materials:
-    Steel: 80
-    Plastic: 80
-    Plasma: 75
 
-#Rating 3
+# Rating 3
+
 - type: latheRecipe
-  id: SuperCapacitorStockPart
-  result: SuperCapacitorStockPart
+  id: BaseSuperStockPartRecipe
+  parent: BasePartRecipe
+  abstract: true
   completetime: 3
   materials:
     Steel: 150
     Plastic: 150
     Plasma: 75
     Gold: 75
+
+- type: latheRecipe
+  id: SuperCapacitorStockPart
+  parent: BaseSuperStockPartRecipe
+  result: SuperCapacitorStockPart
 
 - type: latheRecipe
   id: SuperMatterBinStockPart
+  parent: BaseSuperStockPartRecipe
   result: SuperMatterBinStockPart
-  completetime: 3
-  materials:
-    Steel: 150
-    Plastic: 150
-    Plasma: 75
-    Gold: 75
 
 - type: latheRecipe
   id: PicoManipulatorStockPart
+  parent: BaseSuperStockPartRecipe
   result: PicoManipulatorStockPart
-  completetime: 3
-  materials:
-    Steel: 150
-    Plastic: 150
-    Plasma: 75
-    Gold: 75
 
-#Rating 4
+# Rating 4
+
 - type: latheRecipe
-  id: BluespaceCapacitorStockPart
-  result: BluespaceCapacitorStockPart
+  id: BaseBluespaceStockPartRecipe
+  parent: BasePartRecipe
+  abstract: true
   completetime: 3
   materials:
     Steel: 150
     Plastic: 150
     Gold: 75
     Bluespace: 300
+
+- type: latheRecipe
+  id: BluespaceCapacitorStockPart
+  parent: BaseBluespaceStockPartRecipe
+  result: BluespaceCapacitorStockPart
 
 - type: latheRecipe
   id: BluespaceMatterBinStockPart
+  parent: BaseBluespaceStockPartRecipe
   result: BluespaceMatterBinStockPart
-  completetime: 3
-  materials:
-    Steel: 150
-    Plastic: 150
-    Gold: 75
-    Bluespace: 300
 
 - type: latheRecipe
   id: BluespaceManipulatorStockPart
+  parent: BaseBluespaceStockPartRecipe
   result: BluespaceManipulatorStockPart
-  completetime: 3
-  materials:
-    Steel: 150
-    Plastic: 150
-    Gold: 75
-    Bluespace: 300

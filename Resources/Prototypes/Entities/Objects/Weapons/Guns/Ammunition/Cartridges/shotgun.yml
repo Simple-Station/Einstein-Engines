@@ -1,7 +1,7 @@
-﻿- type: entity
+- type: entity
   id: BaseShellShotgun
   name: shell (.50)
-  parent: BaseCartridge
+  parent: [ BaseCartridge, BaseRestrictedContraband ]
   abstract: true
   components:
   - type: Tag
@@ -14,8 +14,8 @@
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
     layers:
-      - state: base
-        map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: base
+      map: [ "enum.AmmoVisualLayers.Base" ]
   - type: Appearance
   - type: SpentAmmoVisuals
   - type: EmitSoundOnLand
@@ -41,8 +41,8 @@
     - ShellShotgunLight
   - type: Sprite
     layers:
-      - state: beanbag
-        map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: beanbag
+      map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
     proto: PelletShotgunBeanbag
   - type: SpentAmmoVisuals
@@ -55,8 +55,8 @@
   components:
   - type: Sprite
     layers:
-      - state: slug
-        map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: slug
+      map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
     proto: PelletShotgunSlug
   - type: SpentAmmoVisuals
@@ -73,8 +73,8 @@
     - ShellShotgun
   - type: Sprite
     layers:
-      - state: lumen
-        map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: lumen
+      map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
     proto: PelletShotgunLumen
   - type: SpentAmmoVisuals
@@ -87,8 +87,8 @@
   components:
   - type: Sprite
     layers:
-      - state: base
-        map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: base
+      map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
     proto: PelletShotgunSpread
 
@@ -99,8 +99,8 @@
   components:
   - type: Sprite
     layers:
-      - state: incendiary
-        map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: incendiary
+      map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
     proto: PelletShotgunIncendiarySpread
   - type: SpentAmmoVisuals
@@ -113,8 +113,8 @@
   components:
   - type: Sprite
     layers:
-      - state: practice
-        map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: practice
+      map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
     proto: PelletShotgunPracticeSpread
   - type: SpentAmmoVisuals
@@ -132,8 +132,8 @@
     - ShellShotgunLight
   - type: Sprite
     layers:
-      - state: practice
-        map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: tranquilizer
+      map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
     proto: PelletShotgunTranquilizer
   - type: ChemicalAmmo
@@ -146,7 +146,7 @@
   - type: SolutionTransfer
     maxTransferAmount: 7
   - type: SpentAmmoVisuals
-    state: "practice"
+    state: "tranquilizer"
 
 - type: entity
   id: ShellShotgunImprovised
@@ -161,8 +161,8 @@
     - ShellShotgunLight
   - type: Sprite
     layers:
-      - state: improvised
-        map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: improvised
+      map: [ "enum.AmmoVisualLayers.Base" ]
   - type: Construction
     graph: ImprovisedShotgunShellGraph
     node: shell
@@ -176,14 +176,14 @@
   name: uranium shotgun shell
   parent: BaseShellShotgun
   components:
-    - type: Sprite
-      layers:
-        - state: depleted-uranium
-          map: [ "enum.AmmoVisualLayers.Base" ]
-    - type: CartridgeAmmo
-      proto: PelletShotgunUraniumSpread
-    - type: SpentAmmoVisuals
-      state: "depleted-uranium"
+  - type: Sprite
+    layers:
+    - state: depleted-uranium
+      map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunUraniumSpread
+  - type: SpentAmmoVisuals
+    state: "depleted-uranium"
 
 - type: entity
   id: ShellShotgunBirdshot
@@ -192,8 +192,8 @@
   components:
   - type: Sprite
     layers:
-      - state: base
-        map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: base
+      map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
     proto: PelletShotgunSpreadBirdshot
 
@@ -204,8 +204,8 @@
   components:
   - type: Sprite
     layers:
-      - state: base
-        map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: base
+      map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
     proto: PelletShotgunSpread00Buckshot
 
@@ -216,8 +216,8 @@
   components:
   - type: Sprite
     layers:
-      - state: base
-        map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: base
+      map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
     proto: PelletShotgunSpread0000Buckshot
 
@@ -233,8 +233,8 @@
     - ShellShotgunLight
   - type: Sprite
     layers:
-      - state: flare
-        map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: flare
+      map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
     proto: PelletShotgunFlare
   - type: SpentAmmoVisuals

@@ -67,7 +67,7 @@
     lastSignals:
       DoorStatus: false
   - type: Damageable
-    damageContainer: Inorganic
+    damageContainer: StructuralInorganic
     damageModifierSet: Glass
   - type: ExaminableDamage
     messages: WindowMessages
@@ -150,7 +150,7 @@
     containers:
     - board
   - type: StaticPrice
-    price: 100
+    price: 150
   - type: PryUnpowered
   - type: InteractionVerbs
     allowedVerbs:
@@ -181,6 +181,8 @@
     - state: panel_open
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       visible: false
+  - type: Damageable
+    damageModifierSet: RGlass
   - type: Destructible
     thresholds:
     - trigger:
@@ -207,7 +209,7 @@
     graph: Windoor
     node: windoorSecure
   - type: StaticPrice
-    price: 200
+    price: 350
 
 #Plasma Windoors
 - type: entity
@@ -260,13 +262,13 @@
     graph: Windoor
     node: pwindoor
   - type: StaticPrice
-    price: 170
+    price: 500
   - type: RadiationBlocker
     resistance: 4
 
 - type: entity
   id: BaseSecurePlasmaWindoor
-  parent: BaseWindoor
+  parent: BaseSecureWindoor
   abstract: true
   components:
   - type: Sprite
@@ -315,7 +317,7 @@
     graph: Windoor
     node: pwindoorSecure
   - type: StaticPrice
-    price: 312
+    price: 500
   - type: RadiationBlocker
     resistance: 6
 
@@ -370,13 +372,13 @@
     graph: Windoor
     node: uwindoor
   - type: StaticPrice
-    price: 180
+    price: 560
   - type: RadiationBlocker
     resistance: 5
 
 - type: entity
   id: BaseSecureUraniumWindoor
-  parent: BaseWindoor
+  parent: BaseSecureWindoor
   abstract: true
   components:
   - type: Sprite
@@ -425,6 +427,6 @@
     graph: Windoor
     node: uwindoorSecure
   - type: StaticPrice
-    price: 462
+    price: 750
   - type: RadiationBlocker
     resistance: 8

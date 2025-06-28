@@ -102,6 +102,7 @@ public sealed partial class PowerMonitoringWindow
         // Update tool tip
         button.ToolTip = Loc.GetString(name);
 
+        // Update power value
         // Don't use SI prefixes, just give the number in W, so that it is readily apparent which consumer is using a lot of power.
         button.PowerValue.Text = Loc.GetString("power-monitoring-window-button-value", ("value", Math.Round(entry.PowerValue).ToString("N0")));
 
@@ -329,7 +330,7 @@ public sealed partial class PowerMonitoringWindow
                 BorderThickness = new Thickness(2),
             };
 
-            msg.AddMarkup(Loc.GetString("power-monitoring-window-rogue-power-consumer"));
+            msg.AddMarkupOrThrow(Loc.GetString("power-monitoring-window-rogue-power-consumer"));
             SystemWarningPanel.Visible = true;
         }
 
@@ -342,7 +343,7 @@ public sealed partial class PowerMonitoringWindow
                 BorderThickness = new Thickness(2),
             };
 
-            msg.AddMarkup(Loc.GetString("power-monitoring-window-power-net-abnormalities"));
+            msg.AddMarkupOrThrow(Loc.GetString("power-monitoring-window-power-net-abnormalities"));
             SystemWarningPanel.Visible = true;
         }
 
@@ -500,7 +501,7 @@ public sealed class PowerMonitoringButton : Button
         };
 
         MainContainer.AddChild(NameLocalized);
-        
+
         BatteryLevel = new ProgressBar()
         {
             SetWidth = 47f,
@@ -547,7 +548,8 @@ public sealed class PowerMonitoringButton : Button
         PowerValue = new Label()
         {
             HorizontalAlignment = HAlignment.Right,
-            SetWidth = 72f,
+            Align = Label.AlignMode.Right,
+            SetWidth = 80f,
             Margin = new Thickness(10, 0, 0, 0),
             ClipText = true,
         };

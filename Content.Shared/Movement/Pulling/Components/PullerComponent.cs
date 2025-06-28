@@ -19,10 +19,10 @@ public sealed partial class PullerComponent : Component
     /// <summary>
     ///     Next time the puller change where they are pulling the target towards.
     /// </summary>
-    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField]
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField, Access(Other = AccessPermissions.ReadWriteExecute)]
     public TimeSpan NextPushTargetChange;
 
-    [DataField, AutoNetworkedField]
+    [DataField, AutoNetworkedField, Access(Other = AccessPermissions.ReadWriteExecute)]
     public TimeSpan NextPushStop;
 
     [DataField]
@@ -147,3 +147,5 @@ public sealed partial class PullerComponent : Component
     public float ChokeGrabSpeedModifier = 0.4f;
     // Goobstation end
 }
+
+public sealed partial class StopPullingAlertEvent : BaseAlertEvent;

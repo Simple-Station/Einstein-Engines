@@ -182,15 +182,12 @@ namespace Content.Server.RoundEnd
                 units = "eta-units-minutes";
             }
 
-            _announcer.SendAnnouncement(_announcer.GetAnnouncementId("ShuttleCalled"),
-                Filter.Broadcast(),
+            _announcer.SendAnnouncement(
+                _announcer.GetAnnouncementId("ShuttleCalled"),
                 text,
                 name,
-                Color.Gold,
-                null,
-                null,
-                ("time", time),
-                    ("units", Loc.GetString(units))
+                colorOverride: Color.Gold,
+                localeArgs: [("time", time), ("units", Loc.GetString(units)), ]
             );
 
             LastCountdownStart = _gameTiming.CurTime;
@@ -238,10 +235,9 @@ namespace Content.Server.RoundEnd
 
             _announcer.SendAnnouncement(
                 _announcer.GetAnnouncementId("ShuttleRecalled"),
-                Filter.Broadcast(),
                 "round-end-system-shuttle-recalled-announcement",
                 Loc.GetString("Station"),
-                Color.Gold
+                colorOverride: Color.Gold
             );
 
             LastCountdownStart = null;
@@ -323,10 +319,9 @@ namespace Content.Server.RoundEnd
                     {
                         _announcer.SendAnnouncement(
                             _announcer.GetAnnouncementId("ShuttleCalled"),
-                            Filter.Broadcast(),
                             textAnnounce,
                             Loc.GetString(sender),
-                            Color.Gold
+                            colorOverride: Color.Gold
                         );
                     }
                     else

@@ -55,14 +55,6 @@
 
 - type: entity
   parent: MagazineBoxLightRifleBig
-  id: MagazineBoxLightRifleBigRubber
-  name: bulk ammunition box (.30 rifle rubber)
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgeLightRifleRubber
-
-- type: entity
-  parent: MagazineBoxLightRifleBig
   id: MagazineBoxLightRifleBigIncendiary
   name: bulk ammunition box (.30 rifle incendiary)
   components:
@@ -113,21 +105,6 @@
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
     - state: practice
-
-- type: entity
-  parent: BaseMagazineBoxLightRifle
-  id: MagazineBoxLightRifleRubber
-  name: ammunition box (.30 rifle rubber)
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgeLightRifleRubber
-  - type: Sprite
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-    - state: rubber
 
 - type: entity
   id: MagazineBoxLightRifleIncendiary

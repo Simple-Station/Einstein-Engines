@@ -88,7 +88,10 @@ namespace Content.Server.Pointing.EntitySystems
                         ? viewerPointedAtMessage
                         : viewerMessage;
 
-                RaiseNetworkEvent(new PopupEntityEvent(message, PopupType.Small, netSource), viewerEntity);
+                // Someone pointing at YOU is slightly more important
+                var popupType = viewerEntity == pointed ? PopupType.Medium : PopupType.Small;
+
+                RaiseNetworkEvent(new PopupEntityEvent(message, popupType, netSource), viewerEntity);
             }
 
             _replay.RecordServerMessage(new PopupEntityEvent(viewerMessage, PopupType.Small, netSource));
@@ -142,8 +145,7 @@ namespace Content.Server.Pointing.EntitySystems
                 _popup.PopupEntity(Loc.GetString("pointing-system-try-point-cannot-reach"), player, player);
                 return false;
             }
-
-            var mapCoordsPointed = coordsPointed.ToMap(EntityManager, _transform);
+            var mapCoordsPointed = _transform.ToMapCoordinates(coordsPointed);
             _rotateToFaceSystem.TryFaceCoordinates(player, mapCoordsPointed.Position);
 
             var arrow = EntityManager.SpawnEntity("PointingArrow", coordsPointed);
@@ -151,7 +153,7 @@ namespace Content.Server.Pointing.EntitySystems
             if (TryComp<PointingArrowComponent>(arrow, out var pointing))
             {
                 if (TryComp(player, out TransformComponent? xformPlayer))
-                    pointing.StartPosition = EntityCoordinates.FromMap(arrow, xformPlayer.Coordinates.ToMap(EntityManager, _transform), _transform).Position;
+                    pointing.StartPosition = _transform.ToCoordinates((player, xformPlayer), _transform.ToMapCoordinates(xformPlayer.Coordinates)).Position;
 
                 pointing.EndTime = _gameTiming.CurTime + PointDuration;
 

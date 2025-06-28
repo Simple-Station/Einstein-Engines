@@ -27,6 +27,6 @@ public sealed partial class StaminaDamageResistanceSystem : EntitySystem
             return;
 
         args.Msg.PushNewline();
-        args.Msg.AddMarkup(Loc.GetString("armor-examine-stamina", ("num", percentage)));
+        args.Msg.AddMarkupOrThrow(Loc.GetString("armor-examine-stamina", ("num", percentage)));
     }
 }
