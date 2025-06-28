@@ -222,6 +222,8 @@
     - MofficTranslator
     - N14MaterialCircuitry
     - VehicleWheelchairFolded # Goobstation
+    - CassetteTape
+    - TapeRecorder
   - type: EmagLatheRecipes
     emagStaticRecipes:
     - BoxLethalshot
