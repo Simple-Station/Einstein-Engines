@@ -146,6 +146,9 @@
   id: WeaponPistolDualetta
 
 - type: Tag
+  id: MedicalPatch
+
+- type: Tag
   id: AutoinjectorCartridge
 
 - type: Tag
