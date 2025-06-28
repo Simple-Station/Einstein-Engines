@@ -16553,3 +16553,20 @@ Entries:
   id: 7294
   time: '2025-06-28T19:00:38.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2485
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: 'IPCs are no longer immune to Radiation and Space. '
+    - type: Tweak
+      message: IPC shock damage has been reduced from 3x to 1.2x
+    - type: Add
+      message: >-
+        IPCs have gained numerous new traits for customization. As well as
+        rebalanced Nanite Auto-Repair Bots.
+    - type: Add
+      message: Circuitry can now be used to repair Synthetics.
+    - type: Fix
+      message: Fixed the guidebook link for IPCs not appearing in character creation.
+  id: 7295
+  time: '2025-06-28T19:02:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2464
