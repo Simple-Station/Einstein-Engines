@@ -26,10 +26,10 @@ crescent-rank-kapitan = Kptn.
 
 #syn
 
-crescent-rank-synadmin = Station Administrator
-crescent-rank-boss = Portboss
+crescent-rank-synadmin = Ringleader
+crescent-rank-boss = Lieutenant
 crescent-rank-patriarch = Patriarch
-crescent-rank-op = PvT.
+crescent-rank-op = Cpl.
 crescent-rank-pfc = Recruit
 crescent-rank-freeman = Freeman
 crescent-rank-foreman = Foreman
