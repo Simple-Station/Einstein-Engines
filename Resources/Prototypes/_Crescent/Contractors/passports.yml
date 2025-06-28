@@ -12,7 +12,7 @@
       descriptionList:
       - description: "imperial_view_union_passport"
         fontSize: 12
-        color: "#5b0c9c"
+        color: "#9345d3"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -65,7 +65,7 @@
       descriptionList:
       - description: "imperial_view_imperial_passport"
         fontSize: 12
-        color: "#5b0c9c"
+        color: "#9345d3"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -118,7 +118,7 @@
       descriptionList:
       - description: "imperial_view_american_passport"
         fontSize: 12
-        color: "#5b0c9c"
+        color: "#9345d3"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -171,7 +171,7 @@
       descriptionList:
       - description: "imperial_view_clarizian_passport"
         fontSize: 12
-        color: "#5b0c9c"
+        color: "#9345d3"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -225,7 +225,7 @@
       descriptionList:
       - description: "imperial_view_coalition_passport"
         fontSize: 12
-        color: "#5b0c9c"
+        color: "#9345d3"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -278,7 +278,7 @@
       descriptionList:
       - description: "imperial_view_authority_passport"
         fontSize: 12
-        color: "#5b0c9c"
+        color: "#9345d3"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
