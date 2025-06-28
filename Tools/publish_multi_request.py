@@ -14,8 +14,7 @@ RELEASE_DIR = "release"
 # CONFIGURATION PARAMETERS
 # Forks should change these to publish to their own infrastructure.
 #
-#ROBUST_CDN_URL = "https://cdn.simplestation.org/"
-ROBUST_CDN_URL = "http://176.9.38.47:9994/"
+ROBUST_CDN_URL = "https://cdn.simplestation.org/"
 FORK_ID = "hullrot"
 
 def main():
