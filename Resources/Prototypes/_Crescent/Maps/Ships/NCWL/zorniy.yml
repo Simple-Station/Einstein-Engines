@@ -2,30 +2,29 @@
 # Discord: @fleshangel
 
 - type: vessel
-  id: Bogatyr
-  name: NCWL Bogatyr
-  description: A communard stealth bomber, sees use primarily in discreet naval operations.
-  price: 150000
+  id: Zorniy
+  name: NCWL Zorniy
+  description: A light communard bomber.
+  price: 40000
   category: Small
   group: None
-  path: /Maps/_Crescent/Shuttles/NCWL/bogatyr.yml
+  path: /Maps/_Crescent/Shuttles/NCWL/zorniy.yml
 
 - type: gameMap
-  id: Bogatyr
-  mapName: 'NCWL Bogatyr'
-  mapPath: /Maps/_Crescent/Shuttles/NCWL/bogatyr.yml
+  id: Zorniy
+  mapName: 'NCWL Zorniy'
+  mapPath: /Maps/_Crescent/Shuttles/NCWL/zorniy.yml
   minPlayers: 0
   stations:
-    Bogatyr:
+    Zorniy:
       stationProto: StandardCrescentVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'NCWL Bogatyr {1}'
+          mapNameTemplate: 'NCWL Zorniy {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: VesselDesignation
-          designation: vessel-designation-stealth-bomber
         - type: StationJobs
           overflowJobs: []
           availableJobs:

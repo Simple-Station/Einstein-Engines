@@ -29,7 +29,7 @@
         - type: StationJobs
           overflowJobs: []
           availableJobs:
-            KapitanNCWL: [ 1, 1 ]
-            SanitarNCWL: [ 4, 4 ]
-            ArtificerNCWL: [ 1, 1 ]
-            KadetNCWL: [ 2, 2 ]
+            KapitanNCWL: [ 0, 0 ]
+            SanitarNCWL: [ 0, 0 ]
+            ArtificerNCWL: [ 0, 0 ]
+            KadetNCWL: [ 0, 0 ]

@@ -14,7 +14,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: grid
+      name: Shuttle TAN-276
     - type: Transform
       pos: -0.566878,-0.5668977
       parent: invalid
@@ -48,7 +48,6 @@ entities:
     - type: OccluderTree
     - type: SpreaderGrid
     - type: Shuttle
-      baseMaxLinearVelocity: 25
     - type: GridPathfinding
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
@@ -92,13 +91,13 @@ entities:
             0: 3
             1: 64
           0,-1:
-            0: 14111
+            0: 16159
           -1,0:
             0: 8
             1: 65
           -1,-1:
             1: 4096
-            0: 35855
+            0: 36367
           -2,-2:
             1: 128
             0: 32768
@@ -159,6 +158,41 @@ entities:
     - type: RadiationGridResistance
     - type: BecomesStation
       id: Vanguard
+    - type: IFF
+      relations: {}
+      color: '#F6CE9C9C'
+      flags: IsPlayerShuttle
+    - type: ShuttleDeed
+      shuttleName: Shuttle TAN-276
+      shuttleUid: 1
+- proto: AAAHardpointFixed
+  entities:
+  - uid: 70
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 3.5,-1.5
+      parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 2
+    - type: ApcPowerReceiver
+      powerLoad: 100
+    - type: Physics
+      canCollide: False
+  - uid: 91
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -2.5,-1.5
+      parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 2
+    - type: ApcPowerReceiver
+      powerLoad: 100
+    - type: Physics
+      canCollide: False
 - proto: AirAlarm
   entities:
   - uid: 129
@@ -236,7 +270,7 @@ entities:
       invokeCounter: 1
       links:
       - 89
-      - 90
+      - 99
   - uid: 52
     components:
     - type: Transform
@@ -246,7 +280,7 @@ entities:
       invokeCounter: 1
       links:
       - 89
-      - 90
+      - 100
 - proto: BoriaticGeneratorHerculesShuttle
   entities:
   - uid: 96
@@ -685,34 +719,11 @@ entities:
       parent: 1
 - proto: ComputerTabletopShuttle
   entities:
-  - uid: 90
+  - uid: 2
     components:
     - type: Transform
       pos: 0.5,0.5
       parent: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        87:
-        - Group1: Toggle
-        88:
-        - Group1: Toggle
-        86:
-        - Group1: Toggle
-        52:
-        - Group2: Toggle
-        51:
-        - Group2: Toggle
-        70:
-        - Group3: Toggle
-        91:
-        - Group3: Toggle
-    - type: NamedModules
-      buttonNames:
-      - Reinforce Bridge
-      - Toggle Boltholes
-      - Fire Slugthrowers
-      - N/A
-      - N/A
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -727,8 +738,25 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-    - type: ApcPowerReceiver
-      needsPower: False
+    - type: DeviceLinkSource
+      linkedPorts:
+        91:
+        - Group1: Toggle
+        70:
+        - Group1: Toggle
+        86:
+        - Group2: Toggle
+        87:
+        - Group2: Toggle
+        88:
+        - Group2: Toggle
+    - type: NamedModules
+      buttonNames:
+      - Fire Slugthrowers
+      - Toggle Shutters
+      - Module C
+      - Module D
+      - Module E
 - proto: FaxMachineShip
   entities:
   - uid: 112
@@ -854,8 +882,6 @@ entities:
     - type: Transform
       pos: 2.5,-6.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
 - proto: JugBoriaticFuel
   entities:
   - uid: 127
@@ -949,88 +975,6 @@ entities:
     - type: Transform
       pos: -0.52359277,0.056869805
       parent: 1
-- proto: SlugthrowerCannon
-  entities:
-  - uid: 70
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 3.5,-1.5
-      parent: 1
-    - type: Battery
-      startingCharge: 199500
-    - type: DeviceLinkSink
-      links:
-      - 90
-    - type: ChamberMagazineAmmoProvider
-      boltClosed: True
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        gun_magazine: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        gun_chamber: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        machine_board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        machine_parts: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-    - type: BatterySelfRecharger
-      autoRechargeRate: -500
-      autoRecharge: True
-    - type: ApcPowerReceiver
-      powerLoad: 2000
-  - uid: 91
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -2.5,-1.5
-      parent: 1
-    - type: Battery
-      startingCharge: 199500
-    - type: DeviceLinkSink
-      links:
-      - 90
-    - type: ChamberMagazineAmmoProvider
-      boltClosed: True
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        gun_magazine: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        gun_chamber: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        machine_board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        machine_parts: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-    - type: BatterySelfRecharger
-      autoRechargeRate: -500
-      autoRecharge: True
-    - type: ApcPowerReceiver
-      powerLoad: 2000
 - proto: ShuttersNormalOpen
   entities:
   - uid: 86
@@ -1041,8 +985,7 @@ entities:
     - type: DeviceLinkSink
       invokeCounter: 1
       links:
-      - 89
-      - 90
+      - 2
   - uid: 87
     components:
     - type: Transform
@@ -1051,8 +994,7 @@ entities:
     - type: DeviceLinkSink
       invokeCounter: 1
       links:
-      - 89
-      - 90
+      - 2
   - uid: 88
     components:
     - type: Transform
@@ -1061,8 +1003,7 @@ entities:
     - type: DeviceLinkSink
       invokeCounter: 1
       links:
-      - 89
-      - 90
+      - 2
 - proto: SignalButton
   entities:
   - uid: 89
@@ -1080,12 +1021,76 @@ entities:
         - Pressed: Toggle
         52:
         - Pressed: Toggle
-        86:
-        - Pressed: Toggle
-        87:
-        - Pressed: Toggle
-        88:
-        - Pressed: Toggle
+- proto: SlugthrowerCannon
+  entities:
+  - uid: 99
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -2.5,-1.5
+      parent: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        51:
+        - SpaceArtilleryDetectedFiring: Open
+    - type: ChamberMagazineAmmoProvider
+      boltClosed: True
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        gun_magazine: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        gun_chamber: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        machine_board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        machine_parts: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+  - uid: 100
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 3.5,-1.5
+      parent: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        52:
+        - SpaceArtilleryDetectedFiring: Open
+    - type: ChamberMagazineAmmoProvider
+      boltClosed: True
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        gun_magazine: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        gun_chamber: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        machine_board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        machine_parts: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
 - proto: SpawnPointSanitar
   entities:
   - uid: 199
@@ -1141,330 +1146,309 @@ entities:
       rot: 3.141592653589793 rad
       pos: -1.5,-8.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 18
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 1.5,-8.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 63
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 2.5,-8.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 64
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -0.5,-8.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 65
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -3.5,-8.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 66
     components:
     - type: Transform
       pos: 5.5,-1.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 67
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 4.5,-8.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 68
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 4.5,-7.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 83
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -3.5,-7.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 84
     components:
     - type: Transform
       pos: -4.5,-1.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-- proto: WallPlastitanium
-  entities:
-  - uid: 4
-    components:
-    - type: Transform
-      pos: -3.5,-2.5
-      parent: 1
-  - uid: 5
-    components:
-    - type: Transform
-      pos: 4.5,-2.5
-      parent: 1
-  - uid: 7
-    components:
-    - type: Transform
-      pos: -2.5,-6.5
-      parent: 1
-  - uid: 8
-    components:
-    - type: Transform
-      pos: -2.5,-5.5
-      parent: 1
-  - uid: 9
-    components:
-    - type: Transform
-      pos: 4.5,-6.5
-      parent: 1
-  - uid: 10
-    components:
-    - type: Transform
-      pos: -1.5,-4.5
-      parent: 1
-  - uid: 11
-    components:
-    - type: Transform
-      pos: -0.5,-4.5
-      parent: 1
-  - uid: 12
-    components:
-    - type: Transform
-      pos: 5.5,-5.5
-      parent: 1
-  - uid: 13
-    components:
-    - type: Transform
-      pos: -0.5,-7.5
-      parent: 1
-  - uid: 14
-    components:
-    - type: Transform
-      pos: -2.5,-7.5
-      parent: 1
-  - uid: 15
-    components:
-    - type: Transform
-      pos: 1.5,-7.5
-      parent: 1
-  - uid: 16
-    components:
-    - type: Transform
-      pos: 0.5,-7.5
-      parent: 1
-  - uid: 17
-    components:
-    - type: Transform
-      pos: -2.5,-8.5
-      parent: 1
-  - uid: 19
-    components:
-    - type: Transform
-      pos: -1.5,-7.5
-      parent: 1
-  - uid: 20
-    components:
-    - type: Transform
-      pos: 2.5,-7.5
-      parent: 1
-  - uid: 21
-    components:
-    - type: Transform
-      pos: 3.5,-7.5
-      parent: 1
-  - uid: 22
-    components:
-    - type: Transform
-      pos: 3.5,-8.5
-      parent: 1
-  - uid: 23
-    components:
-    - type: Transform
-      pos: 3.5,-6.5
-      parent: 1
-  - uid: 24
-    components:
-    - type: Transform
-      pos: 3.5,-5.5
-      parent: 1
-  - uid: 25
-    components:
-    - type: Transform
-      pos: 2.5,-4.5
-      parent: 1
-  - uid: 26
-    components:
-    - type: Transform
-      pos: 1.5,-4.5
-      parent: 1
-  - uid: 27
-    components:
-    - type: Transform
-      pos: 5.5,-3.5
-      parent: 1
-  - uid: 28
-    components:
-    - type: Transform
-      pos: 1.5,-2.5
-      parent: 1
-  - uid: 29
-    components:
-    - type: Transform
-      pos: 2.5,-2.5
-      parent: 1
-  - uid: 30
-    components:
-    - type: Transform
-      pos: 3.5,-2.5
-      parent: 1
-  - uid: 31
-    components:
-    - type: Transform
-      pos: 4.5,-1.5
-      parent: 1
-  - uid: 32
-    components:
-    - type: Transform
-      pos: 2.5,-0.5
-      parent: 1
-  - uid: 33
-    components:
-    - type: Transform
-      pos: 2.5,0.5
-      parent: 1
-  - uid: 34
-    components:
-    - type: Transform
-      pos: -1.5,0.5
-      parent: 1
-  - uid: 35
-    components:
-    - type: Transform
-      pos: -1.5,-0.5
-      parent: 1
-  - uid: 36
-    components:
-    - type: Transform
-      pos: -3.5,-1.5
-      parent: 1
-  - uid: 37
-    components:
-    - type: Transform
-      pos: -2.5,-2.5
-      parent: 1
-  - uid: 38
-    components:
-    - type: Transform
-      pos: -1.5,-2.5
-      parent: 1
-  - uid: 39
-    components:
-    - type: Transform
-      pos: -0.5,-2.5
-      parent: 1
-  - uid: 42
-    components:
-    - type: Transform
-      pos: -4.5,-5.5
-      parent: 1
-  - uid: 43
-    components:
-    - type: Transform
-      pos: -3.5,-6.5
-      parent: 1
-  - uid: 44
-    components:
-    - type: Transform
-      pos: -4.5,-3.5
-      parent: 1
-  - uid: 45
-    components:
-    - type: Transform
-      pos: -2.5,-4.5
-      parent: 1
-  - uid: 46
-    components:
-    - type: Transform
-      pos: 3.5,-4.5
-      parent: 1
-  - uid: 47
-    components:
-    - type: Transform
-      pos: 5.5,-2.5
-      parent: 1
-  - uid: 50
-    components:
-    - type: Transform
-      pos: -4.5,-2.5
-      parent: 1
-  - uid: 80
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 0.5,-8.5
-      parent: 1
-- proto: WallPlastitaniumDiagonalNortheastCurved
-  entities:
-  - uid: 2
-    components:
-    - type: Transform
-      pos: -1.5,1.5
-      parent: 1
-  - uid: 40
-    components:
-    - type: Transform
-      pos: -3.5,-0.5
-      parent: 1
-- proto: WallPlastitaniumDiagonalNorthwestCurved
+- proto: WallReinforced
   entities:
   - uid: 3
     components:
     - type: Transform
-      pos: 2.5,1.5
+      pos: -3.5,-2.5
+      parent: 1
+  - uid: 4
+    components:
+    - type: Transform
+      pos: 4.5,-2.5
+      parent: 1
+  - uid: 5
+    components:
+    - type: Transform
+      pos: -2.5,-6.5
+      parent: 1
+  - uid: 7
+    components:
+    - type: Transform
+      pos: -2.5,-5.5
+      parent: 1
+  - uid: 8
+    components:
+    - type: Transform
+      pos: 4.5,-6.5
+      parent: 1
+  - uid: 9
+    components:
+    - type: Transform
+      pos: -1.5,-4.5
+      parent: 1
+  - uid: 10
+    components:
+    - type: Transform
+      pos: -0.5,-4.5
+      parent: 1
+  - uid: 11
+    components:
+    - type: Transform
+      pos: 5.5,-5.5
+      parent: 1
+  - uid: 12
+    components:
+    - type: Transform
+      pos: -0.5,-7.5
+      parent: 1
+  - uid: 13
+    components:
+    - type: Transform
+      pos: -2.5,-7.5
+      parent: 1
+  - uid: 14
+    components:
+    - type: Transform
+      pos: 1.5,-7.5
+      parent: 1
+  - uid: 15
+    components:
+    - type: Transform
+      pos: 0.5,-7.5
+      parent: 1
+  - uid: 16
+    components:
+    - type: Transform
+      pos: -2.5,-8.5
+      parent: 1
+  - uid: 17
+    components:
+    - type: Transform
+      pos: -1.5,-7.5
+      parent: 1
+  - uid: 19
+    components:
+    - type: Transform
+      pos: 2.5,-7.5
+      parent: 1
+  - uid: 20
+    components:
+    - type: Transform
+      pos: 3.5,-7.5
+      parent: 1
+  - uid: 21
+    components:
+    - type: Transform
+      pos: 3.5,-8.5
+      parent: 1
+  - uid: 22
+    components:
+    - type: Transform
+      pos: 3.5,-6.5
+      parent: 1
+  - uid: 23
+    components:
+    - type: Transform
+      pos: 3.5,-5.5
+      parent: 1
+  - uid: 24
+    components:
+    - type: Transform
+      pos: 2.5,-4.5
+      parent: 1
+  - uid: 25
+    components:
+    - type: Transform
+      pos: 1.5,-4.5
+      parent: 1
+  - uid: 26
+    components:
+    - type: Transform
+      pos: 5.5,-3.5
+      parent: 1
+  - uid: 27
+    components:
+    - type: Transform
+      pos: 1.5,-2.5
+      parent: 1
+  - uid: 28
+    components:
+    - type: Transform
+      pos: 2.5,-2.5
+      parent: 1
+  - uid: 29
+    components:
+    - type: Transform
+      pos: 3.5,-2.5
+      parent: 1
+  - uid: 30
+    components:
+    - type: Transform
+      pos: 4.5,-1.5
+      parent: 1
+  - uid: 31
+    components:
+    - type: Transform
+      pos: 2.5,-0.5
+      parent: 1
+  - uid: 32
+    components:
+    - type: Transform
+      pos: 2.5,0.5
+      parent: 1
+  - uid: 33
+    components:
+    - type: Transform
+      pos: -1.5,0.5
+      parent: 1
+  - uid: 34
+    components:
+    - type: Transform
+      pos: -1.5,-0.5
+      parent: 1
+  - uid: 35
+    components:
+    - type: Transform
+      pos: -3.5,-1.5
+      parent: 1
+  - uid: 36
+    components:
+    - type: Transform
+      pos: -2.5,-2.5
+      parent: 1
+  - uid: 37
+    components:
+    - type: Transform
+      pos: -1.5,-2.5
+      parent: 1
+  - uid: 38
+    components:
+    - type: Transform
+      pos: -0.5,-2.5
+      parent: 1
+  - uid: 39
+    components:
+    - type: Transform
+      pos: -4.5,-5.5
+      parent: 1
+  - uid: 40
+    components:
+    - type: Transform
+      pos: -3.5,-6.5
       parent: 1
   - uid: 41
     components:
     - type: Transform
-      pos: 4.5,-0.5
+      pos: -4.5,-3.5
       parent: 1
-- proto: WallPlastitaniumDiagonalSoutheastCurved
+  - uid: 42
+    components:
+    - type: Transform
+      pos: -2.5,-4.5
+      parent: 1
+  - uid: 43
+    components:
+    - type: Transform
+      pos: 3.5,-4.5
+      parent: 1
+  - uid: 44
+    components:
+    - type: Transform
+      pos: 5.5,-2.5
+      parent: 1
+  - uid: 45
+    components:
+    - type: Transform
+      pos: -4.5,-2.5
+      parent: 1
+  - uid: 46
+    components:
+    - type: Transform
+      pos: 0.5,-8.5
+      parent: 1
+- proto: WallSolidDiagonalNortheastCurved
   entities:
   - uid: 48
     components:
     - type: Transform
+      pos: -1.5,1.5
+      parent: 1
+  - uid: 80
+    components:
+    - type: Transform
+      pos: -3.5,-0.5
+      parent: 1
+- proto: WallSolidDiagonalNorthwestCurved
+  entities:
+  - uid: 81
+    components:
+    - type: Transform
+      pos: 2.5,1.5
+      parent: 1
+  - uid: 90
+    components:
+    - type: Transform
+      pos: 4.5,-0.5
+      parent: 1
+- proto: WallSolidDiagonalSoutheastCurved
+  entities:
+  - uid: 47
+    components:
+    - type: Transform
       pos: -4.5,-6.5
       parent: 1
-  - uid: 81
+  - uid: 49
     components:
     - type: Transform
       pos: -2.5,-9.5
       parent: 1
-- proto: WallPlastitaniumDiagonalSouthwestCurved
+- proto: WallSolidDiagonalSouthwestCurved
   entities:
-  - uid: 49
+  - uid: 50
     components:
     - type: Transform
       pos: 5.5,-6.5
