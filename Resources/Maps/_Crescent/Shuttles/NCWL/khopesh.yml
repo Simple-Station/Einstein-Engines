@@ -38,7 +38,6 @@ entities:
     - type: OccluderTree
     - type: SpreaderGrid
     - type: Shuttle
-      baseMaxLinearVelocity: 35
     - type: GridPathfinding
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
@@ -105,7 +104,9 @@ entities:
             1: 50368
             0: 2048
           0,1:
-            0: 17
+            0: 19
+          -1,1:
+            0: 8
         uniqueMixes:
         - volume: 2500
           temperature: 293.15
@@ -141,6 +142,34 @@ entities:
     - type: GasTileOverlay
     - type: BecomesStation
       id: Khopesh
+- proto: AAAHardpointFixed
+  entities:
+  - uid: 8
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -0.5,4.5
+      parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 22
+    - type: ApcPowerReceiver
+      powerLoad: 100
+    - type: Physics
+      canCollide: False
+  - uid: 23
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 1.5,4.5
+      parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 22
+    - type: ApcPowerReceiver
+      powerLoad: 100
+    - type: Physics
+      canCollide: False
 - proto: AirlockShuttle
   entities:
   - uid: 2
@@ -283,24 +312,11 @@ entities:
       parent: 1
 - proto: ComputerShuttle
   entities:
-  - uid: 26
+  - uid: 22
     components:
     - type: Transform
       pos: 0.5,5.5
       parent: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        22:
-        - Group1: Toggle
-        8:
-        - Group1: Toggle
-    - type: NamedModules
-      buttonNames:
-      - Fire Vulcans
-      - N/A
-      - N/A
-      - N/A
-      - N/A
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -315,59 +331,29 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-    - type: ApcPowerReceiver
-      needsPower: False
+    - type: DeviceLinkSource
+      linkedPorts:
+        8:
+        - Group1: Toggle
+        23:
+        - Group1: Toggle
+    - type: NamedModules
+      buttonNames:
+      - Fire Vulcans
+      - Module B
+      - Module C
+      - Module D
+      - Module E
 - proto: NTVulcanTurret
   entities:
-  - uid: 8
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 1.5,4.5
-      parent: 1
-    - type: Battery
-      startingCharge: 199500
-    - type: DeviceLinkSink
-      links:
-      - 26
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        gun_magazine: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        gun_chamber: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        machine_board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        machine_parts: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-    - type: BatterySelfRecharger
-      autoRechargeRate: -500
-      autoRecharge: True
-    - type: ApcPowerReceiver
-      powerLoad: 2000
-  - uid: 22
+  - uid: 24
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -0.5,4.5
       parent: 1
-    - type: Battery
-      startingCharge: 199500
-    - type: DeviceLinkSink
-      links:
-      - 26
+    - type: ChamberMagazineAmmoProvider
+      boltClosed: True
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -390,11 +376,40 @@ entities:
           showEnts: False
           occludes: True
           ents: []
-    - type: BatterySelfRecharger
-      autoRechargeRate: -500
-      autoRecharge: True
     - type: ApcPowerReceiver
-      powerLoad: 2000
+      powerLoad: 1500
+  - uid: 25
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 1.5,4.5
+      parent: 1
+    - type: ChamberMagazineAmmoProvider
+      boltClosed: True
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        gun_magazine: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        gun_chamber: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        machine_board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        machine_parts: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+    - type: ApcPowerReceiver
+      powerLoad: 1500
 - proto: PoweredLEDSmallLight
   entities:
   - uid: 55
@@ -425,8 +440,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 1.5,2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 200
 - proto: SmallLight
   entities:
   - uid: 56
@@ -468,46 +481,34 @@ entities:
       rot: 3.141592653589793 rad
       pos: -1.5,1.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 17
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 2.5,1.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 18
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 2.5,2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 19
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -1.5,2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 20
     components:
     - type: Transform
       pos: -1.5,3.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 21
     components:
     - type: Transform
       pos: 2.5,3.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
 - proto: WallPlastitanium
   entities:
   - uid: 3
