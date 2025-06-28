@@ -1,0 +1,136 @@
+- type: latheRecipe
+  id: ClothingUniformJumpsuitSyndicateInterdyne
+  result: ClothingUniformJumpsuitSyndicateInterdyne
+  completetime: 1.5
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingBeltSyndicateWebbingInterdyne
+  result: ClothingBeltSyndicateWebbingInterdyne
+  completetime: 1.5
+  materials:
+    Cloth: 500
+    Plastic: 100
+
+- type: latheRecipe
+  id: ClothingOuterArmorSyndicateApron
+  result: ClothingOuterArmorSyndicateApron
+  completetime: 1.5
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingHeadHatSyndicateDoctor
+  result: ClothingHeadHatSyndicateDoctor
+  completetime: 1.5
+  materials:
+    Cloth: 300
+
+- type: latheRecipe
+  id: ClothingHeadHelmetSyndicateBasicInterdyne
+  result: ClothingHeadHelmetSyndicateBasicInterdyne
+  completetime: 1.5
+  materials:
+    Durathread: 600
+    Steel: 300
+
+- type: latheRecipe
+  id: ClothingOuterArmorSyndicateArmorvestInterdyne
+  result: ClothingOuterArmorSyndicateArmorvestInterdyne
+  completetime: 1.5
+  materials:
+    Durathread: 600
+    Steel: 300
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitTraumasec
+  result: ClothingOuterHardsuitTraumasec
+  completetime: 1.5
+  materials:
+    HardsuitElectronics: 300
+    Durathread: 500
+    Steel: 1000
+    Tungsten: 750
+
+- type: latheRecipe
+  id: DefibrillatorSyndicate
+  result: DefibrillatorSyndicate
+  completetime: 1.5
+  materials:
+    BasicElectronics: 300
+    Silver: 500
+    Steel: 1000
+
+- type: latheRecipe
+  id: SecHypoInterdyne
+  result: SecHypo
+  completetime: 1.5
+  materials:
+    BasicMechatronics: 300
+    Steel: 1000
+
+- type: latheRecipe
+  id: CartridgeEphedrineInterdyne
+  result: CartridgeEphedrine
+  completetime: 1.5
+  materials:
+    Galine: 250
+    PlasmaIsotope: 300
+    Glass: 100
+
+- type: latheRecipe
+  id: CartridgeTirizeneInterdyne
+  result: CartridgeTirizene
+  completetime: 1.5
+  materials:
+    DeactivatedPhoron: 200
+    PlasmaIsotope: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: CartridgeSalineInterdyne
+  result: CartridgeSaline
+  completetime: 1.5
+  materials:
+    Galine: 200
+    DeactivatedPhoron: 150
+    Glass: 100
+
+- type: latheRecipe
+  id: CartridgeBicaridineInterdyne
+  result: CartridgeBicaridine
+  completetime: 1.5
+  materials:
+    PlasmaIsotope: 200
+    DeactivatedPhoron: 250
+    Glass: 100
+
+- type: latheRecipe
+  id: CartridgeDermalineInterdyne
+  result: CartridgeDermaline
+  completetime: 1.5
+  materials:
+    PlasmaIsotope: 200
+    Galine: 250
+    Glass: 100
+
+- type: latheRecipe
+  id: InterdyneOptics
+  result: InterdyneOptics
+  completetime: 1.5
+  materials:
+    BasicElectronics: 300
+    Silver: 500
+    Gold: 1000
+    Tungsten: 300
+    ExoticProteins: 1000
+
+- type: latheRecipe
+  id: OmnimedToolSyndieInterdyne
+  result: OmnimedToolSyndie
+  completetime: 1.5
+  materials:
+    AdvancedMechatronics: 300
+    Steel: 500
+    Gold: 1000

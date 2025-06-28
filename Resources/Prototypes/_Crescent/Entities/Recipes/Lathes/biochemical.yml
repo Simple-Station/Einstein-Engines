@@ -1,0 +1,27 @@
+- type: latheRecipe
+  id: GoatCubeBiochemical
+  result: GoatCube
+  completetime: 0.5
+  materials:
+    Biomass: 50
+
+- type: latheRecipe
+  id: CowCubeBiochemical
+  result: CowCube
+  completetime: 0.5
+  materials:
+    Biomass: 50
+
+- type: latheRecipe
+  id: MothroachCubeBiochemical
+  result: MothroachCube
+  completetime: 0.5
+  materials:
+    Biomass: 30
+    Plasma: 50 #introducing lead poisoning to tribal communities to create stunted generations in the form of the mothroach
+
+- type: latheRecipe
+  parent: BaseElectronicsRecipe
+  id: StasisBedMachineCircuitboardBiochemical
+  result: StasisBedMachineCircuitboard
+  completetime: 0.5

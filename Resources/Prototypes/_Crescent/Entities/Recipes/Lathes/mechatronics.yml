@@ -1,0 +1,34 @@
+- type: latheRecipe
+  id: BasicMechatronics1Mechatronics
+  result: BasicMechatronics1
+  completetime: 0.5
+  materials:
+    Steel: 200
+    Silver: 50
+
+- type: latheRecipe
+  id: PlastitaniumFibreAlloy1Mechatronics
+  result: PlastitaniumFibreAlloy1
+  completetime: 0.5
+  materials:
+    Plasteel: 400
+    Silver: 100
+    Gold: 50
+
+- type: latheRecipe
+  id: WeaponPistolMk58Mechatronics
+  result: WeaponPistolMk58
+  completetime: 1.5
+  materials:
+    BasicMechatronics: 200
+    Steel: 1000
+
+- type: latheRecipe
+  id: WeaponRifleM90GrenadeLauncherMechatronics
+  result: WeaponRifleM90GrenadeLauncher
+  completetime: 2.5
+  materials:
+    BasicMechatronics: 600
+    Silver: 900
+    Steel: 1500
+    Plastic: 500

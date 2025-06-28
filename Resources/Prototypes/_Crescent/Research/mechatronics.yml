@@ -1,5 +1,18 @@
 # Tier 1
 - type: technology
+  id: ConstructionPartsMechatronics
+  name: research-technology-mechatronics-parts
+  icon:
+    sprite: _Crescent/Objects/Materials/materials.rsi
+    state: basicmechanic
+  discipline: Mechatronics
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - BasicMechatronics1Mechatronics
+  - PlastitaniumFibreAlloy1Mechatronics
+
+- type: technology
   id: SalvageEquipmentMechatronics
   name: research-technology-salvage-equipment
   icon:
@@ -12,7 +25,6 @@
   - MiningDrill
   - BorgModuleMining
   - MechEquipmentDrill 
-  - OreProcessorIndustrialMachineCircuitboard
   - ClothingMaskWeldingGas
 
 - type: technology
@@ -112,6 +124,26 @@
     - BorgModuleRCD
 
 - type: technology
+  id: BasicWeaponsMechatronics
+  name: research-technology-mechatronics-armaments
+  icon:
+    sprite: Objects/Weapons/Guns/Battery/laser_gun.rsi
+    state: icon
+  discipline: Arsenal
+  tier: 2
+  cost: 15000
+  recipeUnlocks:
+  - Truncheon
+  - WeaponRifleM90GrenadeLauncherMechatronics
+  - WeaponPistolMk58Mechatronics
+  - MagazineRifleShrapnel
+  - MagazinePistolShrapnel
+  - MagazinePistolSubMachineGunShrapnel
+  - MagazineMagnumShrapnel
+  - MagazineLightRifleShrapnel
+
+
+- type: technology
   id: MassExcavationMechatronics
   name: research-technology-excavation
   icon:
@@ -140,28 +172,6 @@
   technologyPrerequisites:
   - RipleyAPLU
 
-- type: technology
-  id: ClarkeMechatronics
-  name: research-technology-clarke
-  icon:
-    sprite: Objects/Specific/Mech/mecha.rsi
-    state: clarke
-  discipline: Mechatronics
-  tier: 2
-  cost: 10000
-  recipeUnlocks:
-  - BorgModulePka
-  - BorgModuleJetpack
-  - ClarkeHarness
-  - ClarkeHead
-  - ClarkeLArm
-  - ClarkeRArm
-  - ClarkeTreads
-  - ClarkeCentralElectronics
-  - ClarkePeripheralsElectronics
-  technologyPrerequisites:
-  - Ripley2
-
 #tier 3
 
 - type: technology
@@ -172,7 +182,7 @@
     state: holding
   discipline: Mechatronics
   tier: 3
-  cost: 15000
+  cost: 20000
   recipeUnlocks:
   - ClothingBackpackHolding
   - ClothingBackpackSatchelHolding

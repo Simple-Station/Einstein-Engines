@@ -144,7 +144,8 @@
     Silver: 750
     Plasma: 1250 #Higher Plasma due to it needing less bluespace
     Uranium: 150
-    Bluespace: 300 #DeltaV: Bluespace Exists
+    NanotrasenElectronics: 1500
+    AdvancedMechatronics: 500
 
 - type: latheRecipe
   id: ClothingBackpackSatchelHolding
@@ -155,7 +156,8 @@
     Silver: 750
     Plasma: 1250 #Higher Plasma due to it needing less bluespace
     Uranium: 150
-    Bluespace: 300 #DeltaV: Bluespace Exists
+    NanotrasenElectronics: 1500
+    AdvancedMechatronics: 500
 
 - type: latheRecipe
   id: ClothingBackpackDuffelHolding
@@ -166,7 +168,8 @@
     Silver: 750
     Plasma: 1250 #Higher Plasma due to it needing less bluespace
     Uranium: 150
-    Bluespace: 300 #DeltaV: Bluespace Exists
+    NanotrasenElectronics: 1500
+    AdvancedMechatronics: 500
 
 - type: latheRecipe
   id: OreBagOfHolding
@@ -175,8 +178,9 @@
   materials:
     Steel: 2000
     Silver: 750
-    Plasma: 1000 #DeltaV: Bluespace Exists so less plasma used, no uranium
-    Bluespace: 200 #DeltaV: Bluespace Exists
+    Plasma: 1000
+    NanotrasenElectronics: 1500
+    AdvancedMechatronics: 500
 
 - type: latheRecipe
   id: ClothingMaskWeldingGas

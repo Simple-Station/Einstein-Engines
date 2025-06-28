@@ -1,0 +1,111 @@
+# Tier 1
+- type: technology
+  id: BiochemicalSurgeryTools
+  name: research-technology-biochemical-surgerytools
+  icon:
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/scalpel.rsi
+    state: scalpel
+  discipline: Biochemical
+  tier: 1
+  cost: 2500
+  recipeUnlocks:
+  - Scalpel
+  - Retractor
+  - Cautery
+  - Drill
+  - Saw
+  - Hemostat
+  - BoneGel
+  - ClothingHandsGlovesNitrile
+  - ClothingMaskSterile
+
+- type: technology
+  id: BiochemicalLivestockCubes
+  name: research-technology-biochemical-livestockcubes
+  icon:
+    sprite: Objects/Misc/monkeycube.rsi
+    state: cube
+  discipline: Biochemical
+  tier: 1
+  cost: 1500
+  recipeUnlocks:
+  - MothroachCubeBiochemical
+  - CowCubeBiochemical
+  - GoatCubeBiochemical
+
+- type: technology
+  id: BiochemicalBasicMedical
+  name: research-technology-biochemical-basicmedical
+  icon:
+    sprite: Objects/Specific/Medical/medical.rsi
+    state: ointment
+  discipline: Biochemical
+  tier: 1
+  cost: 2500
+  recipeUnlocks:
+  - Brutepack
+  - Ointment
+  - Gauze
+  - DisposableSyringe
+  - HandheldHealthAnalyzer
+  - BodyBag
+
+- type: technology
+  id: BiochemicalBasicChem
+  name: research-technology-biochemical-basicchemical
+  icon:
+    sprite: Objects/Specific/Chemistry/jug.rsi
+    state: jug
+  discipline: Biochemical
+  tier: 1
+  cost: 1500
+  recipeUnlocks:
+  - Beaker
+  - LargeBeaker
+  - Dropper
+  - Jug
+  - Syringe
+
+- type: technology
+  id: BiochemicalDefibrillator
+  name: research-technology-biochemical-defibrillator
+  icon:
+    sprite: Objects/Specific/Medical/defib.rsi
+    state: jug
+  discipline: Biochemical
+  tier: 2
+  cost: 5000
+  recipeUnlocks:
+  - Defibrillator
+
+- type: technology
+  id: StasisBiochemical
+  name: research-technology-biochemical-stasis
+  icon:
+    sprite: Structures/Machines/stasis_bed.rsi
+    state: icon
+  discipline: Biochemical
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - CryostasisBeaker
+  - SyringeCryostasis
+  - StasisBedMachineCircuitboardBiochemical
+
+- type: technology
+  id: HypoBiochemical
+  name: research-technology-biochemical-hypo
+  icon:
+    sprite: Objects/Specific/Medical/hypospray.rsi
+    state: hypo
+  discipline: Biochemical
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - SyringeCase # Morphine
+  - CartridgeAtropine
+  - CartridgeEpinephrine
+  - CartridgeBicaridine
+  - CartridgeDermaline
+  - CartridgeSaline
+  - ParamedHypo
