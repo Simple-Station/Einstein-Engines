@@ -1,31 +1,30 @@
 # Author Info
-# Discord: originally @fleshangel, later remade by @ninruB
+# Discord: @ninruB
 #
 - type: vessel
-  id: Reaver
-  name: NCSP Reaver
-  description: A medium Syndicate fighter.
-  price: 32000
+  id: Itch
+  name: GSC Itch
+  description: A small stealth fighter.
+  price: 20000
   category: Small
   group: None
-  path: /Maps/_Crescent/Shuttles/NCSP/reaver.yml
+  path: /Maps/_Crescent/Shuttles/NCSP/itch.yml
 
 - type: gameMap
-  id: Reaver
-  mapName: 'NCSP Reaver'
-  mapPath: /Maps/_Crescent/Shuttles/NCSP/reaver.yml
+  id: Itch
+  mapName: 'GSC Itch'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/itch.yml
   minPlayers: 0
   stations:
-    Reaver:
+    Itch:
       stationProto: StandardCrescentVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'GSC Reaver {1}'
+          mapNameTemplate: 'GSC Itch {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: VesselDesignation
-          designation: vessel-designation-fighter
         - type: StationJobs
           overflowJobs: []
           availableJobs:

@@ -1,31 +1,30 @@
 # Author Info
-# Discord: originally @fleshangel, later remade by @ninruB
+# Discord: @ninruB
 #
 - type: vessel
-  id: Reaver
-  name: NCSP Reaver
-  description: A medium Syndicate fighter.
-  price: 32000
+  id: Bodybag
+  name: GSC Bodybag
+  description: A small stealth fighter.
+  price: 20000
   category: Small
   group: None
-  path: /Maps/_Crescent/Shuttles/NCSP/reaver.yml
+  path: /Maps/_Crescent/Shuttles/NCSP/Bodybag.yml
 
 - type: gameMap
-  id: Reaver
-  mapName: 'NCSP Reaver'
-  mapPath: /Maps/_Crescent/Shuttles/NCSP/reaver.yml
+  id: Bodybag
+  mapName: 'GSC Bodybag'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/Bodybag.yml
   minPlayers: 0
   stations:
-    Reaver:
+    Bodybag:
       stationProto: StandardCrescentVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'GSC Reaver {1}'
+          mapNameTemplate: 'GSC Bodybag {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: VesselDesignation
-          designation: vessel-designation-fighter
         - type: StationJobs
           overflowJobs: []
           availableJobs:

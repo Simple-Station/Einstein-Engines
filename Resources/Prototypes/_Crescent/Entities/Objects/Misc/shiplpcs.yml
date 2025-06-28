@@ -620,6 +620,125 @@
 
 - type: entity
   parent: BaseItem
+  id: ShipVoucherCleaver
+  name: GSC 'Cleaver' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a Gorlex Security Consulting Cleaver-class stealth fighter pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 27500
+  - type: ShipVoucher
+    ship: Cleaver
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherEradicator
+  name: GSC 'Eradicator' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a Gorlex Security Consulting Eradicator-class stealth destroyer pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 60000
+  - type: ShipVoucher
+    ship: Eradicator
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherCerberus
+  name: GSC 'Cerberus' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a Gorlex Security Consulting Cerberus-class shielded destroyer pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 40000
+  - type: ShipVoucher
+    ship: Cerberus
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherOuroboros
+  name: GSC 'Ouroboros' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a Gorlex Security Consulting Ouroboros-class stealth carrier pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 37500
+  - type: ShipVoucher
+    ship: Ouroboros
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherItch
+  name: GSC 'Itch' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a Gorlex Security Consulting Itch-class stealth fighter pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 15000
+  - type: ShipVoucher
+    ship: Itch
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherTick
+  name: GSC 'Tick' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a Gorlex Security Consulting Tick-class ultralight pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 12000
+  - type: ShipVoucher
+    ship: Tick
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherGnat
+  name: GSC 'Gnat' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a Gorlex Security Consulting Gnat-class ultralight pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 12000
+  - type: ShipVoucher
+    ship: Gnat
+
+- type: entity
+  parent: BaseItem
   id: ShipVoucherHarpy
   name: IPM 'Harpy' pattern LPC fabprint disk
   description: An LPC fabprint disk loaded with an Interdyne Pharmaceutical Harpy-class missile platform pattern. Has to be redeemed at a shipyard console.
