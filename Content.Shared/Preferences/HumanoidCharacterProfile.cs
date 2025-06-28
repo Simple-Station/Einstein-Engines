@@ -137,10 +137,10 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     // hullrot added
     [DataField]
-    public long BankBalance { get; private set; } = 0;
+    public long BankBalance = 0;
 
     [DataField]
-    public string Faction { get; private set; } = "";
+    public string Faction = "";
 
 
     public HumanoidCharacterProfile(

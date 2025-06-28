@@ -41,6 +41,7 @@ namespace Content.Server.Preferences.Managers
         public void Init()
         {
             _netManager.RegisterNetMessage<MsgPreferencesAndSettings>();
+            _netManager.RegisterNetMessage<MsgUpdatePreferences>();
             _netManager.RegisterNetMessage<MsgSelectCharacter>(HandleSelectCharacterMessage);
             _netManager.RegisterNetMessage<MsgUpdateCharacter>(HandleUpdateCharacterMessage);
             _netManager.RegisterNetMessage<MsgDeleteCharacter>(HandleDeleteCharacterMessage);
@@ -118,7 +119,7 @@ namespace Content.Server.Preferences.Managers
                     {
                         _sawmill.Info(
                             $"{session.Name} has tried to modify a locked character's faction. They are using a modified client!");
-                        return;
+                        humanProfile.Faction = humanoidEditingTarget.Faction;
                     }
 
                     // ha ha ha ha
@@ -127,8 +128,10 @@ namespace Content.Server.Preferences.Managers
                     {
                         _sawmill.Info(
                             $"{session.Name} has tried to give their character money. They are using a modified client!");
-                        return;
+                        humanProfile.BankBalance = humanoidEditingTarget.BankBalance;
                     }
+
+                    profile = humanProfile;
                 }
             }
 
@@ -138,9 +141,12 @@ namespace Content.Server.Preferences.Managers
                 [slot] = profile
             };
 
-
-
             prefsData.Prefs = new PlayerPreferences(profiles, slot, curPrefs.AdminOOCColor);
+
+            // Fire a prefs update message
+            var msg = new MsgUpdatePreferences();
+            msg.Preferences = prefsData.Prefs;
+            _netManager.ServerSendMessage(msg, session.Channel);
 
             if (ShouldStorePrefs(session.Channel.AuthType))
                 await _db.SaveCharacterSlotAsync(userId, profile, slot);
