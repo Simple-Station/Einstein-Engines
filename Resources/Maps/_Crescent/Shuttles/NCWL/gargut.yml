@@ -82,7 +82,6 @@ entities:
     - type: OccluderTree
     - type: SpreaderGrid
     - type: Shuttle
-      baseMaxLinearVelocity: 10
     - type: GridPathfinding
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
@@ -645,9 +644,41 @@ entities:
     - type: RadiationGridResistance
     - type: BecomesStation
       id: Gargut
-    - type: CrescentEMPTechnologyTier
-      powerLossMarkiplier: 1.2
-      eMPMultiplier: 0.7
+- proto: AAAHardpointFixed
+  entities:
+  - uid: 597
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -16.5,7.5
+      parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 438
+    - type: Physics
+      canCollide: False
+  - uid: 609
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 12.5,9.5
+      parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 438
+    - type: Physics
+      canCollide: False
+  - uid: 635
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -14.5,7.5
+      parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 438
+    - type: Physics
+      canCollide: False
 - proto: AAAHardpointLargeUniversal
   entities:
   - uid: 468
@@ -655,6 +686,8 @@ entities:
     - type: Transform
       pos: -18.5,9.5
       parent: 1
+    - type: ApcPowerReceiver
+      powerLoad: 100
     - type: Physics
       canCollide: False
   - uid: 472
@@ -662,6 +695,8 @@ entities:
     - type: Transform
       pos: -12.5,12.5
       parent: 1
+    - type: ApcPowerReceiver
+      powerLoad: 100
     - type: Physics
       canCollide: False
   - uid: 613
@@ -669,6 +704,8 @@ entities:
     - type: Transform
       pos: -8.5,13.5
       parent: 1
+    - type: ApcPowerReceiver
+      powerLoad: 100
     - type: Physics
       canCollide: False
   - uid: 654
@@ -676,6 +713,8 @@ entities:
     - type: Transform
       pos: 5.5,-9.5
       parent: 1
+    - type: ApcPowerReceiver
+      powerLoad: 100
     - type: Physics
       canCollide: False
   - uid: 655
@@ -697,6 +736,8 @@ entities:
     - type: Transform
       pos: 9.5,15.5
       parent: 1
+    - type: ApcPowerReceiver
+      powerLoad: 100
     - type: Physics
       canCollide: False
   - uid: 1197
@@ -704,6 +745,8 @@ entities:
     - type: Transform
       pos: 10.5,13.5
       parent: 1
+    - type: ApcPowerReceiver
+      powerLoad: 100
     - type: Physics
       canCollide: False
   - uid: 1198
@@ -711,6 +754,8 @@ entities:
     - type: Transform
       pos: 14.5,8.5
       parent: 1
+    - type: ApcPowerReceiver
+      powerLoad: 100
     - type: Physics
       canCollide: False
   - uid: 1199
@@ -718,6 +763,8 @@ entities:
     - type: Transform
       pos: 16.5,5.5
       parent: 1
+    - type: ApcPowerReceiver
+      powerLoad: 100
     - type: Physics
       canCollide: False
   - uid: 1200
@@ -725,6 +772,8 @@ entities:
     - type: Transform
       pos: 16.5,-0.5
       parent: 1
+    - type: ApcPowerReceiver
+      powerLoad: 100
     - type: Physics
       canCollide: False
   - uid: 1201
@@ -732,6 +781,8 @@ entities:
     - type: Transform
       pos: 14.5,-6.5
       parent: 1
+    - type: ApcPowerReceiver
+      powerLoad: 100
     - type: Physics
       canCollide: False
   - uid: 1202
@@ -739,6 +790,8 @@ entities:
     - type: Transform
       pos: -4.5,-9.5
       parent: 1
+    - type: ApcPowerReceiver
+      powerLoad: 100
     - type: Physics
       canCollide: False
   - uid: 1203
@@ -746,6 +799,8 @@ entities:
     - type: Transform
       pos: -17.5,-2.5
       parent: 1
+    - type: ApcPowerReceiver
+      powerLoad: 100
     - type: Physics
       canCollide: False
   - uid: 1204
@@ -753,6 +808,8 @@ entities:
     - type: Transform
       pos: -12.5,-5.5
       parent: 1
+    - type: ApcPowerReceiver
+      powerLoad: 100
     - type: Physics
       canCollide: False
   - uid: 1205
@@ -760,6 +817,8 @@ entities:
     - type: Transform
       pos: -14.5,-4.5
       parent: 1
+    - type: ApcPowerReceiver
+      powerLoad: 100
     - type: Physics
       canCollide: False
 - proto: AirAlarm
@@ -1210,169 +1269,11 @@ entities:
     - type: Transform
       pos: 14.5,-0.5
       parent: 1
-- proto: BaseWeaponTurretNeedlerNCWL
-  entities:
-  - uid: 297
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 16.5,5.5
-      parent: 1
-    - type: PointCannon
-      linkedConsoleIds:
-      - 570
-      linkedConsoleId: 570
-      obstructedRanges:
-      - 1.6634721286027596 rad: 3.939034770299038 rad
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        gun_magazine: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        gun_chamber: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-    - type: DeviceLinkSink
-      links:
-      - 609
-  - uid: 298
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -17.5,-2.5
-      parent: 1
-    - type: PointCannon
-      linkedConsoleIds:
-      - 570
-      linkedConsoleId: 570
-      obstructedRanges:
-      - 5.3930673886624785 rad: 3.814679763405596 rad
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        gun_magazine: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        gun_chamber: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-    - type: DeviceLinkSink
-      links:
-      - 609
-  - uid: 312
-    components:
-    - type: Transform
-      pos: -12.5,-5.5
-      parent: 1
-    - type: PointCannon
-      linkedConsoleIds:
-      - 570
-      linkedConsoleId: 570
-      obstructedRanges:
-      - 4.929419789085995 rad: 4.402682369875522 rad
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        gun_magazine: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        gun_chamber: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-    - type: DeviceLinkSink
-      links:
-      - 609
-  - uid: 1149
-    components:
-    - type: Transform
-      pos: 14.5,-6.5
-      parent: 1
-    - type: PointCannon
-      linkedConsoleIds:
-      - 570
-      linkedConsoleId: 570
-      obstructedRanges:
-      - 0.6806784082777885 rad: 3.3510321638291125 rad
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        gun_magazine: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        gun_chamber: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-    - type: DeviceLinkSink
-      links:
-      - 609
-- proto: BaseWeaponTurretSmartbombNCWL
-  entities:
-  - uid: 856
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -8.5,13.5
-      parent: 1
-    - type: PointCannon
-      linkedConsoleIds:
-      - 570
-      linkedConsoleId: 570
-      obstructedRanges:
-      - 3.147530122935145 rad: 3.901418082076422 rad
-    - type: DeviceLinkSink
-      links:
-      - 609
-  - uid: 1147
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -12.5,12.5
-      parent: 1
-    - type: PointCannon
-      linkedConsoleIds:
-      - 570
-      linkedConsoleId: 570
-      obstructedRanges:
-      - 3.4040467472661273 rad: 3.4707575483937365 rad
-    - type: DeviceLinkSink
-      links:
-      - 609
 - proto: Bed
   entities:
   - uid: 594
     components:
     - type: Transform
-      pos: 6.5,-3.5
-      parent: 1
-- proto: BedsheetNfsd
-  entities:
-  - uid: 597
-    components:
-    - type: MetaData
-      name: ncwl bedsheet
-    - type: Transform
-      rot: 3.141592653589793 rad
       pos: 6.5,-3.5
       parent: 1
 - proto: BenchSofaCorpLeft
@@ -1383,8 +1284,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -9.5,2.5
       parent: 1
-    - type: Physics
-      bodyType: Static
 - proto: BenchSofaCorpRight
   entities:
   - uid: 565
@@ -1393,8 +1292,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -8.5,2.5
       parent: 1
-    - type: Physics
-      bodyType: Static
 - proto: BlastDoor
   entities:
   - uid: 47
@@ -3851,19 +3748,19 @@ entities:
       rot: 3.141592653589793 rad
       pos: -13.5,7.5
       parent: 1
-- proto: chem_master
-  entities:
-  - uid: 480
-    components:
-    - type: Transform
-      pos: -14.5,0.5
-      parent: 1
 - proto: ChemistryHotplate
   entities:
   - uid: 484
     components:
     - type: Transform
       pos: -15.5,0.5
+      parent: 1
+- proto: ChemMaster
+  entities:
+  - uid: 480
+    components:
+    - type: Transform
+      pos: -14.5,0.5
       parent: 1
 - proto: ClosetEmergencyFilledRandom
   entities:
@@ -4024,65 +3921,11 @@ entities:
       parent: 1
 - proto: ComputerTabletopShuttle
   entities:
-  - uid: 609
+  - uid: 438
     components:
     - type: Transform
       pos: 11.5,-2.5
       parent: 1
-    - type: DeviceLinkSource
-      range: 305
-      linkedPorts:
-        436:
-        - Group1: SpaceArtilleryFire
-        - Group3: SpaceArtilleryToggleSafety
-        439:
-        - Group2: SpaceArtilleryFire
-        - Group3: SpaceArtilleryToggleSafety
-        438:
-        - Group2: SpaceArtilleryFire
-        - Group3: SpaceArtilleryToggleSafety
-        474:
-        - Group4: On
-        - Group5: Off
-        297:
-        - Group4: On
-        - Group5: Off
-        1149:
-        - Group4: On
-        - Group5: Off
-        313:
-        - Group4: On
-        - Group5: Off
-        314:
-        - Group4: On
-        - Group5: Off
-        312:
-        - Group4: On
-        - Group5: Off
-        303:
-        - Group4: On
-        - Group5: Off
-        298:
-        - Group4: On
-        - Group5: Off
-        302:
-        - Group4: On
-        - Group5: Off
-        1147:
-        - Group4: On
-        - Group5: Off
-        856:
-        - Group4: On
-        - Group5: Off
-        435:
-        - Group4: On
-        - Group5: Off
-        381:
-        - Group4: On
-        - Group5: Off
-        305:
-        - Group4: On
-        - Group5: Off
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -4097,6 +3940,21 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+    - type: DeviceLinkSource
+      linkedPorts:
+        597:
+        - Group1: SpaceArtilleryFire
+        635:
+        - Group1: SpaceArtilleryFire
+        609:
+        - Group2: SpaceArtilleryFire
+    - type: NamedModules
+      buttonNames:
+      - Fire left artillery
+      - Fire right artillery
+      - Module C
+      - Module D
+      - Module E
 - proto: ComputerTabletopSurveillanceCameraMonitor
   entities:
   - uid: 612
@@ -4122,38 +3980,33 @@ entities:
         - invalid
         - 381
         - 435
-        - 302
+        - invalid
         - 303
         - 314
         - 313
         - 474
         - 305
-        - 273
-        - 272
         - 297
         - 298
         - 312
         - 1149
-        - 856
-        - 1147
         mortars:
         - invalid
         - invalid
         - 381
         - 435
         ballistics:
-        - 302
+        - invalid
         - 303
         - 314
         - 313
         - 474
         - 305
-        flak:
-        - 273
-        - 272
-        NCWL 'Pilum' smartbomb missile rack:
-        - 856
-        - 1147
+        60mm PTA 'Needler' heavy precision autogun:
+        - 297
+        - 298
+        - 312
+        - 1149
         artillery:
         - 381
         - 435
@@ -4165,11 +4018,6 @@ entities:
         - 303
         boltgun:
         - 313
-        60mm 'Needler' heavy precision autogun:
-        - 297
-        - 298
-        - 312
-        - 1149
 - proto: ConveyorBelt
   entities:
   - uid: 278
@@ -4756,24 +4604,18 @@ entities:
       rot: 3.141592653589793 rad
       pos: -11.5,6.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 433
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 9.5,11.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 434
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 9.5,10.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
 - proto: HandheldGPSBasic
   entities:
   - uid: 639
@@ -4925,8 +4767,6 @@ entities:
       parent: 1
     - type: Physics
       bodyType: Static
-    - type: Lock
-      locked: False
 - proto: OreBox
   entities:
   - uid: 631
@@ -4952,8 +4792,6 @@ entities:
       parent: 1
     - type: Physics
       bodyType: Static
-    - type: Lock
-      locked: False
 - proto: PaperBin20
   entities:
   - uid: 599
@@ -5608,31 +5446,16 @@ entities:
       parent: 1
 - proto: RemoteSignallerAdvanced
   entities:
-  - uid: 1185
-    components:
-    - type: MetaData
-      name: fire portside cannon
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 12.458394,-2.843267
-      parent: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        436:
-        - Pressed: SpaceArtilleryFire
   - uid: 1189
     components:
     - type: MetaData
       name: fire portside cannons
     - type: Transform
-      pos: -13.852089,7.820546
+      pos: -1.0389873,2.8445756
       parent: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        439:
-        - Pressed: SpaceArtilleryFire
-        438:
-        - Pressed: SpaceArtilleryFire
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: RubberStampApproved
   entities:
   - uid: 615
@@ -5832,14 +5655,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 2.5,4.5
       parent: 1
-- proto: SignShield
-  entities:
-  - uid: 1160
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -8.5,1.5
-      parent: 1
 - proto: SinkWide
   entities:
   - uid: 548
@@ -5947,7 +5762,6 @@ entities:
           - 713
           - 714
           - 715
-          - 716
           - 717
   - uid: 620
     components:
@@ -5978,7 +5792,6 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 635
           - 636
           - 637
           - 638
@@ -6016,7 +5829,6 @@ entities:
           - 641
           - 642
           - 643
-          - 644
           - 645
           - 646
   - uid: 622
@@ -6053,7 +5865,6 @@ entities:
           - 650
           - 649
           - 648
-          - 647
 - proto: SurveillanceCameraGeneral
   entities:
   - uid: 264
@@ -6300,8 +6111,6 @@ entities:
     - type: Transform
       pos: 8.5,16.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
 - proto: ThrusterNCWLWarship
   entities:
   - uid: 204
@@ -6309,95 +6118,71 @@ entities:
     - type: Transform
       pos: 6.5,10.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 267
     components:
     - type: Transform
       pos: -4.5,13.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 281
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -10.5,-6.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 282
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -9.5,-6.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 283
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -8.5,-6.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 284
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -18.5,0.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 285
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -18.5,-0.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 286
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -18.5,7.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 287
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -18.5,6.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 289
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 14.5,-2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 290
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 14.5,-3.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 291
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 14.5,-4.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 292
     components:
     - type: Transform
@@ -6406,7 +6191,6 @@ entities:
       parent: 1
     - type: Thruster
       enabled: False
-      originalPowerLoad: 1500
     - type: ApcPowerReceiver
       powerLoad: 1
   - uid: 293
@@ -6415,31 +6199,23 @@ entities:
       rot: 3.141592653589793 rad
       pos: 11.5,-6.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 294
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 10.5,-6.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 304
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 8.5,-5.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 1195
     components:
     - type: Transform
       pos: 5.5,12.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
 - proto: ToiletDirtyWater
   entities:
   - uid: 546
@@ -6463,14 +6239,12 @@ entities:
       parent: 1
 - proto: Type99Artillery
   entities:
-  - uid: 436
+  - uid: 302
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 12.5,9.5
       parent: 1
-    - type: Battery
-      startingCharge: 976000
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -6485,54 +6259,12 @@ entities:
           showEnts: False
           occludes: True
           ents: []
-    - type: DeviceLinkSink
-      links:
-      - 1185
-      - 609
-    - type: ApcPowerReceiver
-      powerLoad: 5000
-    - type: BatterySelfRecharger
-      autoRechargeRate: -3000
-      autoRecharge: True
-  - uid: 438
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -16.5,7.5
-      parent: 1
-    - type: Battery
-      startingCharge: 976000
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        machine_board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        machine_parts: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-    - type: DeviceLinkSink
-      links:
-      - 1189
-      - 609
-    - type: ApcPowerReceiver
-      powerLoad: 5000
-    - type: BatterySelfRecharger
-      autoRechargeRate: -3000
-      autoRecharge: True
-  - uid: 439
+  - uid: 436
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -14.5,7.5
       parent: 1
-    - type: Battery
-      startingCharge: 976000
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -6547,15 +6279,26 @@ entities:
           showEnts: False
           occludes: True
           ents: []
-    - type: DeviceLinkSink
-      links:
-      - 1189
-      - 609
-    - type: ApcPowerReceiver
-      powerLoad: 5000
-    - type: BatterySelfRecharger
-      autoRechargeRate: -3000
-      autoRecharge: True
+  - uid: 439
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -16.5,7.5
+      parent: 1
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        machine_board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        machine_parts: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
 - proto: VendingMachineAstroVend
   entities:
   - uid: 704
@@ -8067,51 +7810,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 0.5,0.5
       parent: 1
-- proto: WeaponGrapplingGun
-  entities:
-  - uid: 635
-    components:
-    - type: Transform
-      parent: 620
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 644
-    components:
-    - type: Transform
-      parent: 621
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 647
-    components:
-    - type: Transform
-      parent: 622
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 660
-    components:
-    - type: Transform
-      pos: 12.534161,-0.27748668
-      parent: 1
-  - uid: 661
-    components:
-    - type: Transform
-      pos: 12.5044365,-0.42614865
-      parent: 1
-  - uid: 662
-    components:
-    - type: Transform
-      pos: 12.549023,-0.58967704
-      parent: 1
-  - uid: 716
-    components:
-    - type: Transform
-      parent: 604
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: WeaponRevolverPythonAP
   entities:
   - uid: 713
@@ -8161,7 +7859,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -7.598314,6.2929325
       parent: 1
-- proto: WeaponTurretMortarNCWL
+- proto: WeaponTurretMortar
   entities:
   - uid: 381
     components:
@@ -8187,9 +7885,6 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-    - type: DeviceLinkSink
-      links:
-      - 609
   - uid: 435
     components:
     - type: Transform
@@ -8214,23 +7909,112 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-    - type: DeviceLinkSink
-      links:
-      - 609
-- proto: WeaponTurretPDT
+- proto: WeaponTurretNeedler
   entities:
-  - uid: 302
+  - uid: 297
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 16.5,5.5
+      parent: 1
+    - type: PointCannon
+      linkedConsoleIds:
+      - 570
+      linkedConsoleId: 570
+      obstructedRanges:
+      - 1.6634721286027596 rad: 3.939034770299038 rad
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        gun_magazine: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        gun_chamber: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+  - uid: 298
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: -18.5,9.5
+      pos: -17.5,-2.5
       parent: 1
     - type: PointCannon
+      linkedConsoleIds:
+      - 570
+      linkedConsoleId: 570
       obstructedRanges:
-      - 3.8222710618675815 rad: 3.3510321638291125 rad
-    - type: DeviceLinkSink
-      links:
-      - 609
+      - 5.3930673886624785 rad: 3.814679763405596 rad
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        gun_magazine: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        gun_chamber: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+  - uid: 312
+    components:
+    - type: Transform
+      pos: -12.5,-5.5
+      parent: 1
+    - type: PointCannon
+      linkedConsoleIds:
+      - 570
+      linkedConsoleId: 570
+      obstructedRanges:
+      - 4.929419789085995 rad: 4.402682369875522 rad
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        gun_magazine: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        gun_chamber: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+  - uid: 1149
+    components:
+    - type: Transform
+      pos: 14.5,-6.5
+      parent: 1
+    - type: PointCannon
+      linkedConsoleIds:
+      - 570
+      linkedConsoleId: 570
+      obstructedRanges:
+      - 0.6806784082777885 rad: 3.3510321638291125 rad
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        gun_magazine: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        gun_chamber: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+- proto: WeaponTurretPDT
+  entities:
   - uid: 303
     components:
     - type: Transform
@@ -8241,9 +8025,6 @@ entities:
       linkedConsoleId: 570
       obstructedRanges:
       - 5.3930673886624785 rad: 3.8146797634055964 rad
-    - type: DeviceLinkSink
-      links:
-      - 609
   - uid: 305
     components:
     - type: Transform
@@ -8254,9 +8035,6 @@ entities:
       linkedConsoleId: 570
       obstructedRanges:
       - 1.6634721286027596 rad: 4.402682369875522 rad
-    - type: DeviceLinkSink
-      links:
-      - 609
   - uid: 313
     components:
     - type: Transform
@@ -8267,9 +8045,6 @@ entities:
       linkedConsoleId: 570
       obstructedRanges:
       - 0.15260396288522549 rad: 4.467109215691601 rad
-    - type: DeviceLinkSink
-      links:
-      - 609
   - uid: 314
     components:
     - type: Transform
@@ -8280,9 +8055,6 @@ entities:
       linkedConsoleId: 570
       obstructedRanges:
       - 4.929419789085995 rad: 4.278327381830724 rad
-    - type: DeviceLinkSink
-      links:
-      - 609
   - uid: 474
     components:
     - type: Transform
@@ -8293,9 +8065,26 @@ entities:
       linkedConsoleId: 570
       obstructedRanges:
       - 0.2170308087013046 rad: 4.373279072047823 rad
-    - type: DeviceLinkSink
-      links:
-      - 609
+  - uid: 644
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -8.5,13.5
+      parent: 1
+  - uid: 647
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -12.5,12.5
+      parent: 1
+    - type: ApcPowerReceiver
+      powerLoad: 100
+  - uid: 660
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -18.5,9.5
+      parent: 1
 - proto: WindoorSecure
   entities:
   - uid: 583
@@ -8351,14 +8140,4 @@ entities:
     - type: Transform
       pos: -2.5,3.5
       parent: 1
-    - type: ContainerContainer
-      containers:
-        ShipyardConsole-targetId: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
 ...
