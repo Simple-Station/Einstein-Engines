@@ -46,13 +46,8 @@ public sealed partial class MapScreen : BoxContainer
 
     private TimeSpan _nextPing;
     private TimeSpan _pingCooldown = TimeSpan.FromSeconds(3);
-    private TimeSpan _nextMapDequeue;
-
-    private float _minMapDequeue = 0.05f;
-    private float _maxMapDequeue = 0.25f;
 
     private StyleBoxFlat _ftlStyle;
-
     public event Action<MapCoordinates, Angle>? RequestFTL;
     public event Action<NetEntity, Angle>? RequestBeaconFTL;
 
@@ -215,16 +210,11 @@ public sealed partial class MapScreen : BoxContainer
         }
 
         RebuildMapObjects();
-        BumpMapDequeue();
 
         _nextPing = _timing.CurTime + _pingCooldown;
         MapRebuildButton.Disabled = true;
     }
 
-    private void BumpMapDequeue()
-    {
-        _nextMapDequeue = _timing.CurTime + TimeSpan.FromSeconds(_random.NextFloat(_minMapDequeue, _maxMapDequeue));
-    }
 
     private void MapRebuildPressed(BaseButton.ButtonEventArgs obj)
     {
@@ -493,12 +483,11 @@ public sealed partial class MapScreen : BoxContainer
 
         var curTime = _timing.CurTime;
 
-        if (_nextMapDequeue < curTime && _pendingMapObjects.Count > 0)
+        while(_pendingMapObjects.Count > 0)
         {
             var mapObj = _pendingMapObjects[^1];
             _pendingMapObjects.RemoveAt(_pendingMapObjects.Count - 1);
             AddMapObject(mapObj.mapId, mapObj.mapobj);
-            BumpMapDequeue();
         }
 
         if (!IsFTLBlocked() && _nextPing < curTime)

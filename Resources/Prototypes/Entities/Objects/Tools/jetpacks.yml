@@ -47,6 +47,7 @@
       quickEquip: false
       slots:
         - Back
+        - SuitStorage
     - type: GasTank
       outputPressure: 21.3
       air:
