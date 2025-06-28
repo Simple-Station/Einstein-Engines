@@ -16462,3 +16462,10 @@ Entries:
   id: 7284
   time: '2025-06-28T17:17:25.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2293
+- author: astriloqua
+  changes:
+    - type: Tweak
+      message: Ported over ghost role UI QoL
+  id: 7285
+  time: '2025-06-28T17:17:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2284
