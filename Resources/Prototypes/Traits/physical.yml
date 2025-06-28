@@ -907,7 +907,7 @@
           damage:
             groups:
               Brute: -0.5
-              Burn: -0.25
+              Burn: -0.5
 
 # - type: trait
 #   id: BionicLeg
