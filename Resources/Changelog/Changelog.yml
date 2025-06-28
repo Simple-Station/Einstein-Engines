@@ -16507,3 +16507,10 @@ Entries:
   id: 7288
   time: '2025-06-28T17:43:10.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2463
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Made some performance improvements to the Holopad system.
+  id: 7289
+  time: '2025-06-28T17:44:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2470
