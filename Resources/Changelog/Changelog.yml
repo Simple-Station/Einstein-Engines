@@ -16429,3 +16429,36 @@ Entries:
   id: 7283
   time: '2025-06-28T17:13:36.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2296
+- author: GNUtopia
+  changes:
+    - type: Add
+      message: Added formic acid
+    - type: Add
+      message: Added enunciase
+    - type: Add
+      message: Added morphine autoinjector cartridge
+    - type: Tweak
+      message: Haloperidol now counteracts stuttering from chems
+    - type: Tweak
+      message: Ousiana dust now counteracts psionic insulation/blocking statuses
+    - type: Tweak
+      message: Morphine blocks pain for longer
+    - type: Tweak
+      message: Morphine and artiplates are more visually distinct
+    - type: Tweak
+      message: Increased distribution of morphine roundstart
+    - type: Tweak
+      message: Changed wording of stamina change effect
+    - type: Tweak
+      message: Salicylic acid works on corpses
+    - type: Fix
+      message: Fixed missing locale text for some stamina-affecting chems
+    - type: Fix
+      message: Fixed guidebook falsely saying effects accumulate
+    - type: Fix
+      message: Fixed capitalisation of proto medical multitool
+    - type: Fix
+      message: Fixed morphine not blocking surgery pain moodlet
+  id: 7284
+  time: '2025-06-28T17:17:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2293
