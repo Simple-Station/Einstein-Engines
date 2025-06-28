@@ -16535,3 +16535,10 @@ Entries:
   id: 7292
   time: '2025-06-28T18:59:15.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2484
+- author: Kai518
+  changes:
+    - type: Add
+      message: Ported Devil antag from Goobstation
+  id: 7293
+  time: '2025-06-28T18:59:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2454
