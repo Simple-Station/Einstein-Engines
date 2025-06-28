@@ -246,6 +246,12 @@
   components:
   - type: StorageFill
     contents:
+    - id: WelderExperimental
+    - id: PowerDrill
+    - id: Multitool
     - id: GasAnalyzer
-    - id: trayScanner
+    - id: AccessConfigurator
+    - id: GeigerCounter
+    - id: JawsOfLife
+    - id: HandheldHealthAnalyzer
   - type: Unremoveable

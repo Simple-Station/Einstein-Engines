@@ -16374,3 +16374,49 @@ Entries:
   id: 7276
   time: '2025-06-07T02:43:25.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2479
+- author: Erisfiregamer1
+  changes:
+    - type: Add
+      message: >-
+        Thanks to Nanotrasen Holographic Technologies, chargers now show what's
+        inside with a hologram.
+  id: 7277
+  time: '2025-06-13T23:51:42.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2480
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Made some performance improvements to the Gas Tile Overlay.
+  id: 7278
+  time: '2025-06-18T23:40:18.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2472
+- author: Lumminal
+  changes:
+    - type: Add
+      message: >-
+        The shadows have awakened, and their ascendance is soon to follow. Do
+        not enter maints.
+  id: 7279
+  time: '2025-06-25T05:28:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2207
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Nerfed the TCAF Heavy Armor to be equivalent to Heavy Security Armor.
+  id: 7280
+  time: '2025-06-28T01:13:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2476
+- author: Mike32oz
+  changes:
+    - type: Tweak
+      message: 'Aghost Inventory bag '
+  id: 7281
+  time: '2025-06-28T17:02:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2491
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Cleanup of Hive
+  id: 7282
+  time: '2025-06-28T17:04:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2459
