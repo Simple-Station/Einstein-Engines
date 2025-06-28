@@ -16478,3 +16478,12 @@ Entries:
   id: 7286
   time: '2025-06-28T17:23:00.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2199
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Added medical patches
+    - type: Add
+      message: Added a guidebook entry for medical patches.
+  id: 7287
+  time: '2025-06-28T17:27:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2185
