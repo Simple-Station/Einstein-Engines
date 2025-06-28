@@ -16413,3 +16413,10 @@ Entries:
   id: 7281
   time: '2025-06-28T17:02:19.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2491
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Cleanup of Hive
+  id: 7282
+  time: '2025-06-28T17:04:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2459
