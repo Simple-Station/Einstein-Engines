@@ -4,6 +4,11 @@
   text: "/ServerInfo/Guidebook/ServerRules/DefaultRuleset.xml"
 
 - type: guideEntry
+  id: HullrotRuleset
+  name: guide-entry-hullrot-rules
+  text: "/ServerInfo/_Crescent/ServerRules/HullrotRuleset.xml"
+
+- type: guideEntry
   id: SpaceLaw
   name: guide-entry-rules-space-law
   priority: 1

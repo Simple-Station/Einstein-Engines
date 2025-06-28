@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseItem
   id: SpaceCash
-  name: spesos
-  description: You gotta have money.
+  name: Taypani Yen
+  description: The only officialy recognised currency of the Crescent Sector. A limited number exists since the Royal Mint on Taypan One has been nuked after the communards took over the planet.
   components:
   - type: Cash
   - type: Item
@@ -21,21 +21,31 @@
     baseLayer: base
     layerStates:
     - cash
+    - cash_1
     - cash_10
+    - cash_50
     - cash_100
     - cash_500
     - cash_1000
-    - cash_5000 # Frontier: larger denominations
-    - cash_10000 # Frontier: larger denominations
-    - cash_25000 # Frontier: larger denominations
-    - cash_50000 # Frontier: larger denominations
-    - cash_100000 # Frontier: larger denominations
-    - cash_250000 # Frontier: larger denominations (cash_1000000<cash_250000)
-    layerFunction: Threshold # Frontier: multicolour cash
-  - type: StackLayerThreshold # Frontier
-    thresholds: [10, 100, 500, 1000, 5000, 10000, 25000, 50000, 100000, 250000] # Frontier
+    - cash_5000
+    - cash_10000
+    - cash_50000
+    - cash_100000
+    - cash_250000
+    - cash_500000
+    - cash_750000
+    - cash_1000000
+    - cash_2000000
+    - cash_5000000
+    - cash_10000000
+    - cash_25000000
+    - cash_50000000
+    - cash_75000000
+    layerFunction: Threshold
+  - type: StackLayerThreshold
+    thresholds: [1, 10, 50, 100, 500, 1000, 5000, 10000, 50000, 100000, 250000, 500000, 750000, 1000000, 2000000, 5000000, 10000000, 25000000, 50000000, 75000000]
   - type: Sprite
-    sprite: _NF/Objects/Economy/cash.rsi # Frontier: larger denominations
+    sprite: Objects/Economy/cash.rsi
     state: cash
     layers:
     - state: cash

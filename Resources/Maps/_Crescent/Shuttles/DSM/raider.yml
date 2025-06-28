@@ -177,14 +177,6 @@ entities:
       parent: 203
     - type: InstantAction
       container: 203
-- proto: ActionToggleMagbootsCombat
-  entities:
-  - uid: 207
-    components:
-    - type: Transform
-      parent: 206
-    - type: InstantAction
-      container: 206
 - proto: AirAlarm
   entities:
   - uid: 64

@@ -1,0 +1,42 @@
+- type: entity
+  parent: ClothingBeltNfsdWebbing
+  id: ClothingBeltTacticalRig
+  name: tactical rig
+  description: A reliable tactical rig.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Independents/Belt/tac_rig.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Independents/Belt/tac_rig.rsi
+
+- type: entity
+  parent: [ClothingBeltBase, ClothingSlotBase]
+  id: ClothingBeltSheathMacheteIndependent
+  name: machete sheath
+  description: A sheath for a machete.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Independents/Belt/machete_sheath.rsi
+    state: sheath
+  - type: Clothing
+    sprite: _Crescent/Clothing/Independents/Belt/machete_sheath.rsi
+  - type: Item
+    size: Ginormous
+  - type: ItemSlots
+    slots:
+      item:
+        name: IndependentMachete
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+        whitelist:
+          tags:
+          - Machete
+  - type: ItemMapper
+    mapLayers:
+      sheath-sabre:
+        whitelist:
+          tags:
+          - Machete
+  - type: Appearance

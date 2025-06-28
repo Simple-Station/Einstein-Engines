@@ -1,0 +1,31 @@
+# Author Info
+# Discord: @ninruB
+#
+- type: vessel
+  id: Itch
+  name: GSC Itch
+  description: A small stealth fighter.
+  price: 20000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/NCSP/itch.yml
+
+- type: gameMap
+  id: Itch
+  mapName: 'GSC Itch'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/itch.yml
+  minPlayers: 0
+  stations:
+    Itch:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'GSC Itch {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            InfanteerNCSP: [ 0, 0 ]

@@ -15,8 +15,8 @@
     proto: BulletRocket
     deleteOnSpawn: true
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
-    state: rpg
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/rocket.rsi
+    state: he
   - type: StaticPrice
     price: 20
 

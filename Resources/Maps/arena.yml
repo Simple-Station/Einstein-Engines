@@ -123531,7 +123531,7 @@ entities:
     - type: Transform
       pos: 59.5,9.5
       parent: 2
-- proto: PoweredLightColoredRed
+- proto: PoweredlightRed
   entities:
   - uid: 18385
     components:

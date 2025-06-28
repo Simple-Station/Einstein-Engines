@@ -1,0 +1,191 @@
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitIndependentsEVA
+  name: spacionaut softsuit
+  description: A basic softsuit made by independents for spacers. Easily torn.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Independents/OuterClothing/spacionaut.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Independents/OuterClothing/spacionaut.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: DegradeableArmor
+    armorMaxHealth: 400
+    armorType: Metallic
+    armorRepair: SteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 25
+        Slash: 15
+        Piercing: 30
+        Heat: 25
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitIndependentsEVA
+  - type: StaticPrice
+    price: 750
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitFishbed
+  name: NMS-21 'FISHBED' combat hardsuit
+  description: Designed by Northrop-Martin for mercenary use and heavily modified by Taypani owners.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Independents/OuterClothing/fishbed.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Independents/OuterClothing/fishbed.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: DegradeableArmor
+    armorMaxHealth: 600
+    armorType: Metallic
+    armorRepair: PlasteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 15
+        Slash: 15
+        Piercing: 40
+        Heat: 25
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitFishbed
+  - type: StaticPrice
+    price: 1500
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitCenobite
+  name: NMS-19 'FRESCO' combat hardsuit
+  description: The high-end predecessor of the NMS-21, this hardsuit features a more advanced servo system allowing it to support a greater amount of armor plating. Exceedingly rare in modern Taypan due to its age and the lack of Northrop-Martin imports  into the sector.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Independents/OuterClothing/cenobite.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Independents/OuterClothing/cenobite.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: DegradeableArmor
+    armorMaxHealth: 1000
+    armorType: Ceramic
+    armorRepair: NTCeramic
+    initialModifiers:
+      flatReductions:
+        Blunt: 25
+        Slash: 20
+        Piercing: 75
+        Heat: 15
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 0.75
+    sprintModifier: 0.75
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitCenobite
+  - type: StaticPrice
+    price: 2000
+
+- type: entity
+  parent: ClothingOuterHardsuitFishbed
+  id: ClothingOuterHardsuitFishbedSilver
+  name: NMS-21 'FISHBED' combat hardsuit
+  description: Designed by Northrop-Martin for mercenary use and heavily modified by Taypani owners.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Independents/OuterClothing/fishbed_silver.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Independents/OuterClothing/fishbed_silver.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitFishbedSilver
+  - type: StaticPrice
+    price: 1750
+
+- type: entity
+  parent: ClothingOuterHardsuitFishbed
+  id: ClothingOuterHardsuitFishbedGold
+  name: NMS-21 'FISHBED' combat hardsuit
+  description: Designed by Northrop-Martin for mercenary use and heavily modified by Taypani owners. Pompous.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Independents/OuterClothing/fishbed_gold.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Independents/OuterClothing/fishbed_gold.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitFishbedGold
+  - type: StaticPrice
+    price: 2500
+
+- type: entity
+  parent: ClothingOuterHardsuitFishbed
+  id: ClothingOuterHardsuitFishbedColonial
+  name: NMS-21 'FISHBED' combat hardsuit
+  description: Designed by Northrop-Martin for mercenary use and heavily modified by Taypani owners. Painted in the colors of the Minutemen.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Independents/OuterClothing/fishbed_colonial.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Independents/OuterClothing/fishbed_colonial.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitFishbedColonial
+  - type: StaticPrice
+    price: 1750
+
+- type: entity
+  parent: ClothingOuterHardsuitFishbed
+  id: ClothingOuterHardsuitFishbedNLF
+  name: NMS-21 'FISHBED' combat hardsuit
+  description: Designed by Northrop-Martin for mercenary use and heavily modified by Taypani owners. Painted in the colors of the New Liberation Front.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Independents/OuterClothing/fishbed_nlf.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Independents/OuterClothing/fishbed_nlf.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitFishbedNLF
+  - type: StaticPrice
+    price: 1750
+
+- type: entity
+  parent: ClothingOuterHardsuitCenobite
+  id: ClothingOuterHardsuitCenobiteVerdant
+  name: NMS-19 'FRESCO' combat hardsuit
+  description: The high-end predecessor of the NMS-21, this hardsuit features a more advanced servo system allowing it to support a greater amount of armor plating. Exceedingly rare in modern Taypan due to its age and the lack of Northrop-Martin imports  into the sector.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Independents/OuterClothing/cenobite_verdant.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Independents/OuterClothing/cenobite_verdant.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitCenobiteVerdant
+  - type: StaticPrice
+    price: 2000
+
+- type: entity
+  parent: ClothingOuterHardsuitCenobite
+  id: ClothingOuterHardsuitCenobiteRed
+  name: NMS-19 'FRESCO' combat hardsuit
+  description: The high-end predecessor of the NMS-21, this hardsuit features a more advanced servo system allowing it to support a greater amount of armor plating. Exceedingly rare in modern Taypan due to its age and the lack of Northrop-Martin imports  into the sector.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Independents/OuterClothing/cenobite_red.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Independents/OuterClothing/cenobite_red.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitCenobiteRed
+  - type: StaticPrice
+    price: 2000

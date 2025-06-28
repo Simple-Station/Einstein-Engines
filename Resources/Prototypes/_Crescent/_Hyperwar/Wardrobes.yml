@@ -1,64 +1,199 @@
 - type: vendingMachineInventory
   id: SyndicateWarInventory
   startingInventory:
-    WeaponRevolverInspector: 60
-    WeaponRifleMiller: 60
+    WeaponLauncherHammerhead: 60
+    WeaponLauncherDisposableRocket: 60
+    WeaponLauncherMilkor: 60
+    WeaponLauncherChinaLake: 60
+    WeaponSpecialMako: 60
+    WeaponSpecialChargeRifle: 60
+    WeaponSpecialRailgun: 60
+    WeaponSniperHristov: 60
+    WeaponSniperMosin: 60
+    WeaponRifleHalyadMarksman: 60
+    WeaponRifleBarghest: 60
+    WeaponRifleTakemura: 60
     WeaponRifleMayflower: 60
-    WeaponRifleFAL: 60
-    WeaponSubMachineGunNCWLWatchdog: 60
-    WeaponSubMachineGunBeetle: 60
-    WeaponPistolMk58: 60
-    WeaponShotgunSpas: 60
+    WeaponRifleLecter: 60
+    WeaponRifleGoro: 60
+    WeaponSubMachineGunPTAAsVal: 60
+    WeaponRifleAk: 60
+    WeaponRifleKrinkov: 60
+    WeaponRifleHoundMarksman: 60
+    WeaponLightMachineGunNCSPRPD: 60
+    WeaponLightMachineGunL6: 60
+    WeaponSubMachineGunAtreides: 60
+    WeaponSubMachineGunCheshyre: 60
+    WeaponSubMachineGunMP5: 60
+    WeaponSubMachineGunSabre: 60
+    WeaponSubMachineGunMP49: 60
+    WeaponSubMachineGunDrozd: 60
+    WeaponSubMachineGunPTAVektor: 60
+    WeaponShotgunKS23: 60
+    WeaponShotgunSHIDoubleBarreled4g: 60
+    WeaponShotgunBulldog: 60
     WeaponShotgunEnforcer: 60
+    WeaponShotgunKammerer: 60
+    WeaponRevolverMateba: 60
+    WeaponRevolverInspector: 60
+    WeaponPistolViper: 60
+    WeaponPistolZodum: 60
+    WeaponPistolHimehabu: 60
+    WeaponPistolCobra: 60
+    WeaponPistolMk58: 60
+    WeaponPistolSmartpistol: 60
+    WeaponPistolRongyu: 60
+    WeaponPistolBlastpopGray: 60
+    EnergySword: 60
+    SecBreachingHammer: 60
+    Katana: 60
+    EnergyShield: 100
+    RiotBulletShield: 100
+    RiotLaserShield: 100
+    TelescopicShield: 100
+    RiotShield: 100
+    GrenadeFrag: 250
+    Magazine6x24mmCharge: 250
+    Magazine6x24mmConcentrated: 250
+    Magazine6x24mmIon: 250
+    Magazine6x24mmIncendiary: 250
+    Magazine6x24mmShock: 250
+    MagazineRailgun15mmAP: 250
+    MagazineRailgun15mmDU: 250
+    MagazineHeavyRifle: 250
+    MagazineCaselessRifle: 250
     MagazineRifle: 250
     MagazineLightRifle: 250
+    MagazinePistolSubMachineGunHeavy: 250
     MagazinePistolSubMachineGun: 250
-    MagazinePistol: 250
-    BoxLethalshot: 250
-    BoxShotgunSlug: 100
+    MagazinePistol6mmSmg: 250
+    BaseMagazineMagnumSubMachineGun: 250
+    MagazineMagnum: 250
     SpeedLoaderMagnum: 250
+    MagazinePistol: 250
+    MagazinePistolCaselessRifle: 250
+    SpeedLoaderPistol: 250
+    BoxLethalshot: 250
+    BoxShotgunSlug: 250
+    BoxLethalshot4g: 250
+    BoxBeanbag4g: 250
+    BoxShotgunSlug4g: 250
+    BoxShotgunBreach4g: 250
+    BoxShotgunFlash4g: 250
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
-    ClothingUniformJumpsuitSyndicate: 100
     ClothingMaskSyndicateFacemask: 100
-    ClothingHeadHelmetSyndicateBasic: 100
-    ClothingOuterArmorSyndicateArmorvest: 100
+    ClothingHandsGlovesCombat: 100
     ClothingShoesBootsJack: 100
-    ClothingBackpackNCSPSatchel: 150
     ClothingBackpackNCSPDuffelbag: 150
+    ClothingBackpackNCSPSatchel: 150
+    ClothingBackpackNCSP: 150
     FoodSnackNutribrick: 100
     DrinkMREFlask: 100
     WeaponGrapplingGun: 150
     JetpackCaptainFilled: 150
     HandHeldMassScannerEE: 150
     Crowbar: 150
+    Emag: 150
+    BoxBreachingCharges: 150
     ClothingOuterHardsuitSyndicateBG: 150
+    ClothingOuterHardsuitTraumasec: 150
+    ClothingOuterHardsuitCybersun: 150
+    ClothingOuterHardsuitRamzi: 150
     OxygenTankFilled: 150
     ClothingShoesBootsMagAdv: 150
-    StimpackMini : 150
+    StimpackMini: 150
+    MechaniteAutoinjector: 150
+    KaiserAutoinjector: 150
+    ExileAutoinjector: 150
+    BloodeyeAutoinjector: 150
+    CrashAutoinjector: 150
+    HoloparasiteInjector: 100
 
 - type: vendingMachineInventory
   id: NCWLWarInventory
   startingInventory:
-    WeaponRevolverInspector: 60
-    WeaponRifleMiller: 60
-    WeaponRifleMayflower: 60
+    WeaponLauncherHammerhead: 60
+    WeaponLauncherDisposableRocket: 60
+    WeaponLauncherGM94: 60
+    WeaponLauncherMilkor: 60
+    WeaponLauncherChinaLake: 60
+    WeaponSpecialMako: 60
+    BaseWeaponLightMachineGunConscript: 60
+    WeaponSpecialRailgun: 60
+    WeaponSniperHristov: 60
+    WeaponSniperMosin: 60
+    WeaponRifleHalyadMarksman: 60
+    WeaponRifleBarghest: 60
+    WeaponRifleNCWLBatanya: 60
+    WeaponRifleTakemura: 60
     WeaponRifleFAL: 60
+    WeaponRifleLecter: 60
+    WeaponRifleGoro: 60
+    WeaponSubMachineGunPTAAsVal: 60
+    WeaponRifleHoundMarksman: 60
+    WeaponRifleAk: 60
+    WeaponRifleKrinkov: 60
+    WeaponLightMachineGunL6: 60
+    WeaponSubMachineGunBloodhound: 60
     WeaponSubMachineGunNCWLWatchdog: 60
-    WeaponSubMachineGunBeetle: 60
-    WeaponPistolMk58: 60
-    WeaponShotgunSpas: 60
+    WeaponSubMachineGunCheshyre: 60
+    WeaponSubMachineGunSabre: 60
+    WeaponSubMachineGunMP49: 60
+    WeaponSubMachineGunDrozd: 60
+    WeaponSubMachineGunPTAVektor: 60
+    WeaponShotgunSHIDoubleBarreled4g: 60
+    WeaponShotgunBulldog: 60
     WeaponShotgunEnforcer: 60
+    WeaponShotgunKammerer: 60
+    WeaponRevolverPython: 60
+    WeaponRevolverMateba: 60
+    WeaponRevolverInspector: 60
+    WeaponPistolZodum: 60
+    WeaponPistolT91: 60
+    WeaponPistolComrade: 60
+    WeaponPistolHimehabu: 60
+    WeaponPistolMk58: 60
+    WeaponPistolSmartpistol: 60
+    WeaponPistolViper: 60
+    WeaponPistolRongyu: 60
+    WeaponPistolBlastpopGray: 60
+    SecBreachingHammer: 60
+    Katana: 60
+    RiotBulletShield: 100
+    RiotLaserShield: 100
+    TelescopicShield: 100
+    RiotShield: 100
+    GrenadeFrag: 250
+    MagazineRailgun15mmAP: 250
+    MagazineRailgun15mmDU: 250
+    MagazineHeavyRifle: 250
+    MagazineCaselessRifle: 250
     MagazineRifle: 250
     MagazineLightRifle: 250
+    MagazinePistolSubMachineGunHeavy: 250
     MagazinePistolSubMachineGun: 250
-    MagazinePistol: 250
-    BoxLethalshot: 250
-    BoxShotgunSlug: 100
+    MagazinePistol6mmSmg: 250
+    BaseMagazineMagnumSubMachineGun: 250
+    MagazineMagnum: 250
     SpeedLoaderMagnum: 250
+    MagazinePistol: 250
+    MagazinePistolCaselessRifle: 250
+    SpeedLoaderPistol: 250
+    BoxLethalshot: 250
+    BoxShotgunSlug: 250
+    BoxLethalshot4g: 250
+    BoxBeanbag4g: 250
+    BoxShotgunSlug4g: 250
+    BoxShotgunBreach4g: 250
+    BoxShotgunFlash4g: 250
     ClothingBeltNCWLWebbingMedFilled: 60
     ClothingBeltNCWLWebbingFilledGrenadier: 60
+    ClothingMaskSyndicateFacemask: 100
+    ClothingHandsGlovesCombat: 100
+    ClothingShoesBootsJack: 100
     ClothingBackpackDuffelNCWL: 150
+    ClothingBackpackSatchelNCWL: 150
     ClothingBackpackNCWL: 150
     FoodSnackNutribrick: 100
     DrinkMREFlask: 100
@@ -66,37 +201,99 @@
     JetpackCaptainFilled: 150
     HandHeldMassScannerEE: 150
     Crowbar: 150
+    BoxBreachingCharges: 150
+    ClothingOuterHardsuitNCWLJuggernaut: 150
     ClothingOuterHardsuitNCWLInfantry: 150
     OxygenTankFilled: 150
     ClothingShoesBootsMagAdv: 150
-    StimpackMini : 150
+    StimpackMini: 150
+    MechaniteAutoinjector: 150
+    BloodeyeAutoinjector: 150
+    CrashAutoinjector: 150
 
 - type: vendingMachineInventory
   id: ImperialWarInventory
   startingInventory:
-    WeaponRevolverInspector: 60
+    WeaponLauncherHammerhead: 60
+    WeaponLauncherDisposableRocket: 60
+    WeaponLauncherM320: 60
+    WeaponLauncherMilkor: 60
+    WeaponLauncherChinaLake: 60
+    WeaponSpecialMako: 60
+    WeaponSpecialRailgun: 60
+    WeaponSniperHristov: 60
+    WeaponSniperMosin: 60
+    WeaponRifleHalyadMarksman: 60
+    WeaponRifleBarghest: 60
+    WeaponRifleDSMLegionnaire: 60
+    WeaponRifleTakemura: 60
     WeaponRifleMiller: 60
-    WeaponRifleMayflower: 60
-    WeaponRifleFAL: 60
-    WeaponSubMachineGunNCWLWatchdog: 60
-    WeaponSubMachineGunBeetle: 60
-    WeaponPistolMk58: 60
+    WeaponRifleLecter: 60
+    WeaponRifleGoro: 60
+    WeaponSubMachineGunPTAAsVal: 60
+    WeaponRifleHoundMarksman: 60
+    WeaponLightMachineGunL6: 60
+    WeaponSubMachineGunC20r: 60
+    WeaponSubMachineGunCheshyre: 60
+    WeaponSubMachineGunSabre: 60
+    WeaponSubMachineGunMP49: 60
+    WeaponSubMachineGunDrozd: 60
+    WeaponSubMachineGunPTAVektor: 60
+    WeaponShotgunSHIDoubleBarreled4g: 60
     WeaponShotgunSpas: 60
     WeaponShotgunEnforcer: 60
+    WeaponShotgunKammerer: 60
+    WeaponRevolverMateba: 60
+    WeaponRevolverInspector: 60
+    WeaponPistolComplianceImperial: 60
+    WeaponPistolNeoVolker: 60
+    WeaponPistolZodum: 60
+    WeaponPistolHimehabu: 60
+    WeaponPistolMk58: 60
+    WeaponPistolSmartpistol: 60
+    WeaponPistolViper: 60
+    WeaponPistolRongyu: 60
+    WeaponPistolBlastpopGray: 60
+    SRMKhopesh: 60
+    ClothingBeltSheathKhopesh: 60
+    DSMSabre: 60
+    ClothingBeltSheathDSMSabre: 60
+    DSMRapier: 60
+    ClothingBeltSheathRapier: 60
+    SecBreachingHammer: 60
+    Katana: 60
+    RiotBulletShield: 100
+    RiotLaserShield: 100
+    TelescopicShield: 100
+    RiotShield: 100
+    GrenadeFrag: 250
+    MagazineRailgun15mmAP: 250
+    MagazineRailgun15mmDU: 250
+    MagazineHeavyRifle: 250
+    MagazineCaselessRifle: 250
     MagazineRifle: 250
     MagazineLightRifle: 250
+    MagazinePistolSubMachineGunHeavy: 250
     MagazinePistolSubMachineGun: 250
-    MagazinePistol: 250
-    BoxLethalshot: 250
-    BoxShotgunSlug: 100
+    MagazinePistol6mmSmg: 250
+    BaseMagazineMagnumSubMachineGun: 250
+    MagazineMagnum: 250
     SpeedLoaderMagnum: 250
+    MagazinePistol: 250
+    MagazinePistolCaselessRifle: 250
+    SpeedLoaderPistol: 250
+    BoxLethalshot: 250
+    BoxShotgunSlug: 250
+    BoxLethalshot4g: 250
+    BoxBeanbag4g: 250
+    BoxShotgunSlug4g: 250
+    BoxShotgunBreach4g: 250
+    BoxShotgunFlash4g: 250
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
-    ClothingUniformJumpsuitImperialCombat: 100
     ClothingMaskImperialCombatGasmask: 100
-    ClothingShoesBootsImperialJackboots: 100
     ClothingHandsGlovesImperialLonggloves: 100
-    ClothingShoesBootsJack: 100
+    ClothingShoesBootsImperialJackboots: 100
     ClothingBackpackDSMSatchel: 150
     ClothingBackpackDSM: 150
     FoodSnackNutribrick: 100
@@ -105,74 +302,658 @@
     JetpackCaptainFilled: 150
     HandHeldMassScannerEE: 150
     Crowbar: 150
+    BoxBreachingCharges: 150
     ClothingOuterHardsuitImperialSoldier: 150
+    ClothingOuterHardsuitClarize: 150
     OxygenTankFilled: 150
     ClothingShoesBootsMagAdv: 150
-    StimpackMini : 150
-
+    StimpackMini: 150
+    MechaniteAutoinjector: 150
+    BloodeyeAutoinjector: 150
+    CrashAutoinjector: 150
+    NarcanAutoinjector: 150
 
 - type: vendingMachineInventory
-  id: PoliceWarInventory
+  id: RomaineWarInventory
   startingInventory:
-    WeaponRevolverInspector: 60
-    WeaponRifleMiller: 60
-    WeaponRifleMayflower: 60
-    WeaponRifleFAL: 60
-    WeaponSubMachineGunNCWLWatchdog: 60
+    WeaponLauncherHammerhead: 60
+    WeaponLauncherDisposableRocket: 60
+    WeaponLauncherM320: 60
+    WeaponLauncherMilkor: 60
+    WeaponLauncherChinaLake: 60
+    WeaponSpecialMako: 60
+    WeaponSpecialRailgun: 60
+    WeaponSniperHristov: 60
+    WeaponSniperMosin: 60
+    WeaponRifleHalyadMarksman: 60
+    WeaponRifleBarghest: 60
+    WeaponRifleDSMLegionnaire: 60
+    WeaponRifleTakemura: 60
+    WeaponRifleHunter: 60
+    WeaponRifleLecter: 60
+    WeaponRifleGoro: 60
+    WeaponSubMachineGunPTAAsVal: 60
+    WeaponRifleHoundMarksman: 60
+    WeaponLightMachineGunL6: 60
     WeaponSubMachineGunBeetle: 60
-    WeaponPistolMk58: 60
+    WeaponSubMachineGunCheshyre: 60
+    WeaponSubMachineGunSabre: 60
+    WeaponSubMachineGunMP49: 60
+    WeaponSubMachineGunDrozd: 60
+    WeaponSubMachineGunPTAVektor: 60
+    WeaponShotgunSHIDoubleBarreled4g: 60
     WeaponShotgunSpas: 60
     WeaponShotgunEnforcer: 60
+    WeaponShotgunKammerer: 60
+    WeaponRevolverMateba: 60
+    WeaponRevolverInspector: 60
+    WeaponPistolNeoVolker: 60
+    WeaponPistolZodum: 60
+    WeaponPistolHimehabu: 60
+    WeaponPistolMk58: 60
+    WeaponPistolSmartpistol: 60
+    WeaponPistolViper: 60
+    WeaponPistolRongyu: 60
+    WeaponPistolBlastpopGray: 60
+    SRMKhopesh: 60
+    ClothingBeltSheathKhopesh: 60
+    SecBreachingHammer: 60
+    Katana: 60
+    RiotBulletShield: 100
+    RiotLaserShield: 100
+    TelescopicShield: 100
+    RiotShield: 100
+    GrenadeFrag: 250
+    MagazineRailgun15mmAP: 250
+    MagazineRailgun15mmDU: 250
+    MagazineHeavyRifle: 250
+    MagazineCaselessRifle: 250
     MagazineRifle: 250
     MagazineLightRifle: 250
+    MagazinePistolSubMachineGunHeavy: 250
     MagazinePistolSubMachineGun: 250
-    MagazinePistol: 250
-    BoxLethalshot: 250
-    BoxShotgunSlug: 100
+    MagazinePistol6mmSmg: 250
+    BaseMagazineMagnumSubMachineGun: 250
+    MagazineMagnum: 250
     SpeedLoaderMagnum: 250
+    MagazinePistol: 250
+    MagazinePistolCaselessRifle: 250
+    SpeedLoaderPistol: 250
+    BoxLethalshot: 250
+    BoxShotgunSlug: 250
+    BoxLethalshot4g: 250
+    BoxBeanbag4g: 250
+    BoxShotgunSlug4g: 250
+    BoxShotgunBreach4g: 250
+    BoxShotgunFlash4g: 250
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
-    ClothingBeltMinutemanPouches: 100
-    ClothingUniformJumpsuitCMM: 100
     ClothingMaskImperialCombatGasmask: 100
-    ClothingShoesBootsImperialJackboots: 100
-    ClothingHandsGlovesImperialLonggloves: 100
-    ClothingShoesBootsJack: 100
-    ClothingBackpackMinutemanSatchel: 150
-    ClothingBackpackMinuteman: 150
-    ClothingBackpackMinutemanDuffelbag: 150
+    ClothingHandsGlovesHunter: 100
+    ClothingShoesBootsHunter: 100
+    ClothingBackpackSRMSatchel: 150
+    ClothingBackpackSRM: 150
     FoodSnackNutribrick: 100
     DrinkMREFlask: 100
     WeaponGrapplingGun: 150
     JetpackCaptainFilled: 150
     HandHeldMassScannerEE: 150
     Crowbar: 150
-    ClothingOuterHardsuitCMMPatrol: 150
+    BoxBreachingCharges: 150
+    ClothingOuterHardsuitHunterElite: 150
+    ClothingOuterHardsuitHunter: 150
     OxygenTankFilled: 150
     ClothingShoesBootsMagAdv: 150
-    StimpackMini : 150
+    StimpackMini: 150
+    MechaniteAutoinjector: 150
+    BloodeyeAutoinjector: 150
+    CrashAutoinjector: 150
+
+- type: vendingMachineInventory
+  id: PoliceWarInventory
+  startingInventory:
+    WeaponLauncherHammerhead: 60
+    WeaponLauncherDisposableRocket: 60
+    WeaponLauncherMilkor: 60
+    WeaponLauncherChinaLake: 60
+    WeaponSpecialMako: 60
+    WeaponSpecialRailgun: 60
+    WeaponSniperHristov: 60
+    WeaponSniperMosin: 60
+    WeaponRifleHalyadMarksman: 60
+    WeaponRifleBarghest: 60
+    WeaponRifleTakemura: 60
+    WeaponRifleM90GrenadeLauncher: 60
+    WeaponRifleLecter: 60
+    WeaponRifleGoro: 60
+    WeaponSubMachineGunPTAAsVal: 60
+    WeaponRifleHoundMarksman: 60
+    WeaponLightMachineGunL6: 60
+    WeaponSubMachineGunWt550: 60
+    WeaponSubMachineGunCheshyre: 60
+    WeaponSubMachineGunMP5: 60
+    WeaponSubMachineGunSabre: 60
+    WeaponSubMachineGunMP49: 60
+    WeaponSubMachineGunDrozd: 60
+    WeaponSubMachineGunPTAVektor: 60
+    WeaponShotgunSHIDoubleBarreled4g: 60
+    WeaponShotgunSpas: 60
+    WeaponShotgunEnforcer: 60
+    WeaponShotgunKammerer: 60
+    WeaponRevolverDeckard: 60
+    WeaponRevolverSnubnose: 60
+    WeaponRevolverPython: 60
+    WeaponRevolverMateba: 60
+    WeaponRevolverInspector: 60
+    WeaponPistolZodum: 60
+    WeaponPistolHKUSP: 60
+    WeaponPistolN1984: 60
+    WeaponPistolHimehabu: 60
+    WeaponPistolMk58: 60
+    WeaponPistolSmartpistol: 60
+    WeaponPistolViper: 60
+    WeaponPistolRongyu: 60
+    WeaponPistolBlastpopGray: 60
+    ClothingBeltSheathFilled: 60 # captain sabre
+    SecBreachingHammer: 60
+    Katana: 60
+    RiotBulletShield: 100
+    RiotLaserShield: 100
+    TelescopicShield: 100
+    RiotShield: 100
+    GrenadeFrag: 250
+    MagazineRailgun15mmAP: 250
+    MagazineRailgun15mmDU: 250
+    MagazineHeavyRifle: 250
+    MagazineCaselessRifle: 250
+    MagazineRifle: 250
+    MagazineLightRifle: 250
+    MagazinePistolSubMachineGunHeavy: 250
+    MagazinePistolSubMachineGun: 250
+    MagazinePistol6mmSmg: 250
+    BaseMagazineMagnumSubMachineGun: 250
+    MagazineMagnum: 250
+    SpeedLoaderMagnum: 250
+    MagazinePistol: 250
+    MagazinePistolCaselessRifle: 250
+    SpeedLoaderPistol: 250
+    BoxLethalshot: 250
+    BoxShotgunSlug: 250
+    BoxLethalshot4g: 250
+    BoxBeanbag4g: 250
+    BoxShotgunSlug4g: 250
+    BoxShotgunBreach4g: 250
+    BoxShotgunFlash4g: 250
+    ClothingBeltSyndicateWebbingMedFilled: 60
+    ClothingBeltSyndicateWebbingFilledGrenadier: 60
+    ClothingBeltMinutemanPouches: 100
+    ClothingMaskSyndicateFacemask: 100
+    ClothingHandsGlovesCombat: 100
+    ClothingShoesBootsJack: 100
+    ClothingBackpackMinutemanDuffelbag: 150
+    ClothingBackpackMinutemanSatchel: 150
+    ClothingBackpackMinuteman: 150
+    FoodSnackNutribrick: 100
+    DrinkMREFlask: 100
+    WeaponGrapplingGun: 150
+    JetpackCaptainFilled: 150
+    HandHeldMassScannerEE: 150
+    Crowbar: 150
+    BoxBreachingCharges: 150
+    ClothingOuterHardsuitCMMPatrol: 150
+    ClothingOuterHardsuitMidshipman: 150
+    OxygenTankFilled: 150
+    ClothingShoesBootsMagAdv: 150
+    StimpackMini: 150
+    MechaniteAutoinjector: 150
+    ExileAutoinjector: 150
+    BloodeyeAutoinjector: 150
+    CrashAutoinjector: 150
+    NarcanAutoinjector: 150
+
+- type: vendingMachineInventory
+  id: ShinoharaWarInventory
+  startingInventory:
+    WeaponLauncherHammerhead: 60
+    WeaponLauncherDisposableRocket: 60
+    WeaponLauncherMilkor: 60
+    WeaponSpecialRailgun: 60
+    WeaponSniperHristov: 60
+    WeaponSniperMosin: 60
+    WeaponRifleLecter: 60
+    WeaponRifleGoro: 60
+    WeaponRifleHoundMarksman: 60
+    WeaponLightMachineGunL6: 60
+    WeaponSubMachineGunMP5: 60
+    WeaponSubMachineGunSabre: 60
+    WeaponSubMachineGunMP49: 60
+    WeaponSubMachineGunDrozd: 60
+    WeaponShotgunSHIDoubleBarreled4g: 60
+    WeaponShotgunSpas: 60
+    WeaponShotgunEnforcer: 60
+    WeaponShotgunKammerer: 60
+    WeaponRevolverDeckard: 60
+    WeaponRevolverSnubnose: 60
+    WeaponRevolverPython: 60
+    WeaponRevolverMateba: 60
+    WeaponRevolverInspector: 60
+    WeaponPistolZodum: 60
+    WeaponPistolNeoVolker: 60
+    WeaponPistolHKUSP: 60
+    WeaponPistolN1984: 60
+    WeaponPistolHimehabu: 60
+    WeaponPistolMk58: 60
+    WeaponPistolSmartpistol: 60
+    WeaponPistolViper: 60
+    WeaponPistolBlastpopGray: 60
+    EnergyKatana: 60
+    SecBreachingHammer: 60
+    Katana: 60
+    RiotBulletShield: 100
+    RiotLaserShield: 100
+    TelescopicShield: 100
+    RiotShield: 100
+    GrenadeFrag: 250
+    MagazineRailgun15mmAP: 250
+    MagazineRailgun15mmDU: 250
+    MagazineHeavyRifle: 250
+    MagazineRifle: 250
+    MagazineLightRifle: 250
+    MagazinePistolSubMachineGunHeavy: 250
+    MagazinePistolSubMachineGun: 250
+    BaseMagazineMagnumSubMachineGun: 250
+    MagazineMagnum: 250
+    SpeedLoaderMagnum: 250
+    MagazinePistol: 250
+    MagazinePistolCaselessRifle: 250
+    SpeedLoaderPistol: 250
+    BoxLethalshot: 250
+    BoxShotgunSlug: 250
+    BoxLethalshot4g: 250
+    BoxBeanbag4g: 250
+    BoxShotgunSlug4g: 250
+    BoxShotgunBreach4g: 250
+    BoxShotgunFlash4g: 250
+    ClothingBeltSyndicateWebbingMedFilled: 60
+    ClothingBeltSyndicateWebbingFilledGrenadier: 60
+    ClothingBeltMinutemanPouches: 100
+    ClothingMaskSyndicateFacemask: 100
+    ClothingHandsGlovesCombat: 100
+    ClothingShoesBootsJack: 100
+    ClothingBackpackSHIDuffelbag: 150
+    ClothingBackpackSHISatchel: 150
+    ClothingBackpackSHI: 150
+    FoodSnackNutribrick: 100
+    DrinkMREFlask: 100
+    WeaponGrapplingGun: 150
+    JetpackCaptainFilled: 150
+    HandHeldMassScannerEE: 150
+    Crowbar: 150
+    BoxBreachingCharges: 150
+    ClothingOuterHardsuitHighsec: 150
+    OxygenTankFilled: 150
+    ClothingShoesBootsMagAdv: 150
+    StimpackMini: 150
+    MechaniteAutoinjector: 150
+    ExileAutoinjector: 150
+    BloodeyeAutoinjector: 150
+    CrashAutoinjector: 150
+    NarcanAutoinjector: 150
+
+- type: vendingMachineInventory
+  id: PactWarInventory
+  startingInventory:
+    LesserSuppressMindSpellbook: 8
+    GreaterSuppressMindSpellbook: 2
+    LesserKnockdownSpellbook: 8
+    LesserHackSpellbook: 18
+    WeaponLauncherHammerhead: 60
+    WeaponLauncherDisposableRocket: 60
+    WeaponLauncherMilkor: 60
+    WeaponLauncherChinaLake: 60
+    WeaponSpecialMako: 60
+    WeaponSpecialChargeRifle: 60
+    WeaponSpecialRailgun: 60
+    WeaponSniperHristov: 60
+    WeaponSniperMosin: 60
+    WeaponRifleHalyadMarksman: 60
+    WeaponRifleBarghest: 60
+    WeaponRifleTakemura: 60
+    WeaponRifleM90GrenadeLauncher: 60
+    WeaponRifleLecter: 60
+    WeaponRifleGoro: 60
+    WeaponSubMachineGunPTAAsVal: 60
+    WeaponRifleHoundMarksman: 60
+    WeaponLightMachineGunL6: 60
+    WeaponSubMachineGunWt550: 60
+    WeaponSubMachineGunCheshyre: 60
+    WeaponSubMachineGunMP5: 60
+    WeaponSubMachineGunSabre: 60
+    WeaponSubMachineGunMP49: 60
+    WeaponSubMachineGunDrozd: 60
+    WeaponSubMachineGunPTAVektor: 60
+    WeaponShotgunSHIDoubleBarreled4g: 60
+    WeaponShotgunSpas: 60
+    WeaponShotgunEnforcer: 60
+    WeaponShotgunKammerer: 60
+    WeaponRevolverDeckard: 60
+    WeaponRevolverSnubnose: 60
+    WeaponRevolverPython: 60
+    WeaponRevolverMateba: 60
+    WeaponRevolverInspector: 60
+    WeaponPistolZodum: 60
+    WeaponPistolHKUSP: 60
+    WeaponPistolN1984: 60
+    WeaponPistolHimehabu: 60
+    WeaponPistolMk58: 60
+    WeaponPistolSmartpistol: 60
+    WeaponPistolViper: 60
+    WeaponPistolRongyu: 60
+    WeaponPistolBlastpopGray: 60
+    PlasHalberd: 60
+    Plashammer: 60
+    EnergySwordFamilies: 60
+    Katana: 60
+    RiotBulletShield: 100
+    RiotLaserShield: 100
+    TelescopicShield: 100
+    RiotShield: 100
+    GrenadeFrag: 250
+    Magazine6x24mmCharge: 250
+    Magazine6x24mmConcentrated: 250
+    Magazine6x24mmIon: 250
+    Magazine6x24mmIncendiary: 250
+    Magazine6x24mmShock: 250
+    MagazineRailgun15mmAP: 250
+    MagazineRailgun15mmDU: 250
+    MagazineHeavyRifle: 250
+    MagazineCaselessRifle: 250
+    MagazineRifle: 250
+    MagazineLightRifle: 250
+    MagazinePistolSubMachineGunHeavy: 250
+    MagazinePistolSubMachineGun: 250
+    MagazinePistol6mmSmg: 250
+    BaseMagazineMagnumSubMachineGun: 250
+    MagazineMagnum: 250
+    SpeedLoaderMagnum: 250
+    MagazinePistol: 250
+    MagazinePistolCaselessRifle: 250
+    SpeedLoaderPistol: 250
+    BoxLethalshot: 250
+    BoxShotgunSlug: 250
+    BoxLethalshot4g: 250
+    BoxBeanbag4g: 250
+    BoxShotgunSlug4g: 250
+    BoxShotgunBreach4g: 250
+    BoxShotgunFlash4g: 250
+    ClothingBeltSyndicateWebbingMedFilled: 60
+    ClothingBeltSyndicateWebbingFilledGrenadier: 60
+    ClothingBeltMinutemanPouches: 100
+    ClothingMaskSyndicateFacemask: 100
+    ClothingUniformJumpsuitDraugr: 150
+    ClothingHandsGlovesCombat: 100
+    ClothingShoesBootsJack: 100
+    ClothingBackpackSHIDuffelbag: 150
+    ClothingBackpackSHISatchel: 150
+    ClothingBackpackSHI: 150
+    FoodSnackNutribrick: 100
+    DrinkMREFlask: 100
+    WeaponGrapplingGun: 150
+    JetpackCaptainFilled: 150
+    HandHeldMassScannerEE: 150
+    Crowbar: 150
+    BoxBreachingCharges: 150
+    OxygenTankFilled: 150
+    ClothingShoesBootsMagAdv: 150
+    StimpackMini: 150
+    MechaniteAutoinjector: 150
+    KaiserAutoinjector: 150
+    ExileAutoinjector: 150
+    CrashAutoinjector: 150
+    HoloparasiteInjector: 100
+
+- type: vendingMachineInventory
+  id: SolarianWarInventory
+  startingInventory:
+    WeaponLauncherHammerhead: 60
+    WeaponLauncherDisposableRocket: 60
+    WeaponLauncherMilkor: 60
+    WeaponLauncherChinaLake: 60
+    WeaponSpecialMako: 60
+    WeaponSpecialChargeRifle: 60
+    WeaponSpecialRailgun: 60
+    WeaponSniperHristov: 60
+    WeaponSniperMosin: 60
+    WeaponRifleHalyadMarksman: 60
+    WeaponRifleBarghest: 60
+    WeaponRifleTakemura: 60
+    WeaponRifleLecter: 60
+    WeaponRifleGoro: 60
+    WeaponSubMachineGunPTAAsVal: 60
+    WeaponRifleHoundMarksman: 60
+    WeaponLightMachineGunL6: 60
+    WeaponSubMachineGunWt550: 60
+    WeaponSubMachineGunCheshyre: 60
+    WeaponSubMachineGunMP5: 60
+    WeaponSubMachineGunSabre: 60
+    WeaponSubMachineGunMP49: 60
+    WeaponSubMachineGunDrozd: 60
+    WeaponSubMachineGunPTAVektor: 60
+    WeaponShotgunSHIDoubleBarreled4g: 60
+    WeaponShotgunSpas: 60
+    WeaponShotgunEnforcer: 60
+    WeaponShotgunKammerer: 60
+    WeaponRevolverDeckard: 60
+    WeaponRevolverSnubnose: 60
+    WeaponRevolverPython: 60
+    WeaponRevolverMateba: 60
+    WeaponRevolverInspector: 60
+    WeaponPistolZodum: 60
+    WeaponPistolNeoVolker: 60
+    WeaponPistolHKUSP: 60
+    WeaponPistolN1984: 60
+    WeaponPistolHimehabu: 60
+    WeaponPistolMk58: 60
+    WeaponPistolSmartpistol: 60
+    WeaponPistolViper: 60
+    WeaponPistolBlastpopGray: 60
+    ClothingBeltSheathFilled: 60 # captain sabre
+    SecBreachingHammer: 60
+    Katana: 60
+    RiotBulletShield: 100
+    RiotLaserShield: 100
+    TelescopicShield: 100
+    RiotShield: 100
+    GrenadeFrag: 250
+    Magazine6x24mmCharge: 250
+    Magazine6x24mmConcentrated: 250
+    Magazine6x24mmIon: 250
+    Magazine6x24mmIncendiary: 250
+    Magazine6x24mmShock: 250
+    MagazineRailgun15mmAP: 250
+    MagazineRailgun15mmDU: 250
+    MagazineHeavyRifle: 250
+    MagazineCaselessRifle: 250
+    MagazineRifle: 250
+    MagazineLightRifle: 250
+    MagazinePistolSubMachineGunHeavy: 250
+    MagazinePistolSubMachineGun: 250
+    MagazinePistol6mmSmg: 250
+    BaseMagazineMagnumSubMachineGun: 250
+    MagazineMagnum: 250
+    SpeedLoaderMagnum: 250
+    MagazinePistol: 250
+    MagazinePistolCaselessRifle: 250
+    SpeedLoaderPistol: 250
+    BoxLethalshot: 250
+    BoxShotgunSlug: 250
+    BoxLethalshot4g: 250
+    BoxBeanbag4g: 250
+    BoxShotgunSlug4g: 250
+    BoxShotgunBreach4g: 250
+    BoxShotgunFlash4g: 250
+    ClothingBeltSyndicateWebbingMedFilled: 60
+    ClothingBeltSyndicateWebbingFilledGrenadier: 60
+    ClothingBeltAuthorityWebbing: 100
+    ClothingMaskSyndicateFacemask: 100
+    ClothingHandsGlovesCombat: 100
+    ClothingShoesBootsJack: 100
+    ClothingBackpackSHIDuffelbag: 150
+    ClothingBackpackSHISatchel: 150
+    ClothingBackpackSHI: 150
+    FoodSnackNutribrick: 100
+    DrinkMREFlask: 100
+    WeaponGrapplingGun: 150
+    JetpackCaptainFilled: 150
+    HandHeldMassScannerEE: 150
+    Crowbar: 150
+    BoxBreachingCharges: 150
+    ClothingOuterHardsuitAuthorityPanzer: 150
+    OxygenTankFilled: 150
+    ClothingShoesBootsMagAdv: 150
+    StimpackMini: 150
+    MechaniteAutoinjector: 150
+    BloodeyeAutoinjector: 150
+    NarcanAutoinjector: 150
+
+- type: vendingMachineInventory
+  id: IndependentWarInventory
+  startingInventory:
+    WeaponLauncherHammerhead: 60
+    WeaponLauncherDisposableRocket: 60
+    WeaponLauncherMilkor: 60
+    WeaponLauncherChinaLake: 60
+    WeaponSpecialMako: 60
+    WeaponSpecialChargeRifle: 60
+    WeaponSpecialRailgun: 60
+    WeaponSniperHristov: 60
+    WeaponSniperMosin: 60
+    WeaponRifleHalyadMarksman: 60
+    WeaponRifleBarghest: 60
+    WeaponRifleTakemura: 60
+    WeaponRifleNCWLBatanya: 60
+    WeaponRifleM90GrenadeLauncher: 60
+    WeaponRifleMiller: 60
+    WeaponRifleFAL: 60
+    WeaponRifleLecter: 60
+    WeaponRifleGoro: 60
+    WeaponSubMachineGunPTAAsVal: 60
+    WeaponRifleAk: 60
+    WeaponRifleKrinkov: 60
+    WeaponRifleHoundMarksman: 60
+    WeaponLightMachineGunL6: 60
+    WeaponSubMachineGunWt550: 60
+    WeaponSubMachineGunCheshyre: 60
+    WeaponSubMachineGunMP5: 60
+    WeaponSubMachineGunSabre: 60
+    WeaponSubMachineGunMP49: 60
+    WeaponSubMachineGunDrozd: 60
+    WeaponSubMachineGunPTAVektor: 60
+    WeaponShotgunSHIDoubleBarreled4g: 60
+    WeaponShotgunSpas: 60
+    WeaponShotgunEnforcer: 60
+    WeaponShotgunKammerer: 60
+    WeaponRevolverDeckard: 60
+    WeaponRevolverSnubnose: 60
+    WeaponRevolverPython: 60
+    WeaponRevolverMateba: 60
+    WeaponRevolverInspector: 60
+    WeaponPistolZodum: 60
+    WeaponPistolComplianceImperial: 60
+    WeaponPistolNeoVolker: 60
+    WeaponPistolT91: 60
+    WeaponPistolHKUSP: 60
+    WeaponPistolN1984: 60
+    WeaponPistolHimehabu: 60
+    WeaponPistolMk58: 60
+    WeaponPistolSmartpistol: 60
+    WeaponPistolViper: 60
+    WeaponPistolRongyu: 60
+    WeaponPistolBlastpopGray: 60
+    ClothingBeltSheathFilled: 60 # captain sabre
+    SecBreachingHammer: 60
+    Katana: 60
+    RiotBulletShield: 100
+    RiotLaserShield: 100
+    TelescopicShield: 100
+    RiotShield: 100
+    GrenadeFrag: 250
+    Magazine6x24mmCharge: 250
+    Magazine6x24mmConcentrated: 250
+    Magazine6x24mmIon: 250
+    Magazine6x24mmIncendiary: 250
+    Magazine6x24mmShock: 250
+    MagazineRailgun15mmAP: 250
+    MagazineRailgun15mmDU: 250
+    MagazineHeavyRifle: 250
+    MagazineCaselessRifle: 250
+    MagazineRifle: 250
+    MagazineLightRifle: 250
+    MagazinePistolSubMachineGunHeavy: 250
+    MagazinePistolSubMachineGun: 250
+    MagazinePistol6mmSmg: 250
+    BaseMagazineMagnumSubMachineGun: 250
+    MagazineMagnum: 250
+    SpeedLoaderMagnum: 250
+    MagazinePistol: 250
+    MagazinePistolCaselessRifle: 250
+    SpeedLoaderPistol: 250
+    BoxLethalshot: 250
+    BoxShotgunSlug: 250
+    BoxLethalshot4g: 250
+    BoxBeanbag4g: 250
+    BoxShotgunSlug4g: 250
+    BoxShotgunBreach4g: 250
+    BoxShotgunFlash4g: 250
+    ClothingBeltSyndicateWebbingMedFilled: 60
+    ClothingBeltSyndicateWebbingFilledGrenadier: 60
+    ClothingBeltMinutemanPouches: 100
+    ClothingMaskSyndicateFacemask: 100
+    ClothingHandsGlovesCombat: 100
+    ClothingShoesBootsJack: 100
+    ClothingBackpackSHIDuffelbag: 150
+    ClothingBackpackSHISatchel: 150
+    ClothingBackpackSHI: 150
+    FoodSnackNutribrick: 100
+    DrinkMREFlask: 100
+    WeaponGrapplingGun: 150
+    JetpackCaptainFilled: 150
+    HandHeldMassScannerEE: 150
+    Crowbar: 150
+    BoxBreachingCharges: 150
+    ClothingOuterHardsuitPangTai: 150
+    ClothingOuterHardsuitHighsec: 150
+    OxygenTankFilled: 150
+    ClothingShoesBootsMagAdv: 150
+    StimpackMini: 150
+    MechaniteAutoinjector: 150
+    ExileAutoinjector: 150
+    BloodeyeAutoinjector: 150
+    CrashAutoinjector: 150
+    NarcanAutoinjector: 150
 
 - type: vendingMachineInventory
   id: ShipWarInventory
   startingInventory:
-    CartridgeShellHighExplosive : 5000
-    CartridgeShellEmp : 5000
-    CartridgeShellArmorPiercing : 5000
-    MagazineLightRifleBoxSlug : 5000
-    MagazineLightRifleBoxSlugHE : 5000
-    MagazineLightRifleBoxSlugEMP : 5000
-    MagazineMortar : 5000
+    MetalFoamGrenadeFast: 150
+    CartridgeShellHighExplosive: 5000
+    CartridgeShellEmp: 5000
+    CartridgeShellArmorPiercing: 5000
+    MagazineLightRifleBoxSlug: 5000
+    MagazineLightRifleBoxSlugHE: 5000
+    MagazineLightRifleBoxSlugEMP: 5000
+    MagazineMortar: 5000
     LanceRocketCartridge : 5000
-    MagazineSwarmer : 5000
-    MagazineGrenadeBlast : 5000
-    MagazineGrenadeFrag : 5000
-    EMP missile cartridge : 5000
-    TorpGargEMP : 5000
-    TorpGarg : 5000
-    HeavyMortarCartridge : 5000
-    MagazineNeedler : 5000
-    FuelCan : 5000
-    CoolantCartridge30 : 5000
-    IdnaTorpedo : 5000
-    MagazineVulcan : 5000
-    MagazineFlak : 5000
+    MagazineSwarmer: 5000
+    MagazineGrenadeBlast: 5000
+    MagazineGrenadeFrag: 5000
+    MagazineGrenadeEMP: 5000
+    TorpGargEMP: 5000
+    TorpGarg: 5000
+    HeavyMortarCartridge: 5000
+    MagazineNeedler: 5000
+    FuelCan: 5000
+    CoolantCartridge30: 5000
+    IdnaTorpedo: 5000
+    MagazineVulcan: 5000
+    MagazineFlak: 5000

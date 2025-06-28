@@ -119,14 +119,9 @@
           Heat: 0.1
           Radiation: 0.1
           Caustic: 0.1
-    - type: EmitsSoundOnMove
-      soundCollection:
-        collection: FootstepHardsuitMedium
-        params:
-          volume: -5
-      requiresWorn: true
-      distanceWalking: 2
-      distanceSprinting: 3
+    - type: FootstepModifier
+      footstepSoundCollection:
+        collection: FootstepHardsuitLight
     - type: SealableClothingVisuals
       visualLayers:
         outerClothing:

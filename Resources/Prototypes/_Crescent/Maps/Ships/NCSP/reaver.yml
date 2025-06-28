@@ -1,11 +1,11 @@
 # Author Info
-# Discord: @fleshangel
+# Discord: originally @fleshangel, later remade by @ninruB
 #
 - type: vessel
   id: Reaver
   name: NCSP Reaver
   description: A medium Syndicate fighter.
-  price: 27000
+  price: 32000
   category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/NCSP/reaver.yml

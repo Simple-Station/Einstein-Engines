@@ -435,7 +435,7 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-- proto: EMP missile cartridge
+- proto: MagazineGrenadeEMP
   entities:
   - uid: 73
     components:

@@ -98,7 +98,3 @@
     sprite: _Crescent/Clothing/ATH/Head/soldat.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/ATH/Head/soldat.rsi
-  - type: Tag
-    tags:
-    - ClothMade
-    - WhitelistChameleon

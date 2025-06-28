@@ -39,6 +39,12 @@ public sealed partial class ProjectileComponent : Component
     public bool IgnoreShooter = true;
 
     /// <summary>
+    ///     Prevent hitting anything on shooter grid. Useful for ship weapons.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool IgnoreWeaponGrid = false;
+
+    /// <summary>
     ///     The amount of damage the projectile will do.
     /// </summary>
     [DataField(required: true)] [ViewVariables(VVAccess.ReadWrite)]

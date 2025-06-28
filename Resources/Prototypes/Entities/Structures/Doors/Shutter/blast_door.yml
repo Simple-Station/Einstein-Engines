@@ -38,6 +38,9 @@
     - board
   - type: StaticPrice
     price: 280
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
 
 - type: entity
   id: BlastDoorOpen

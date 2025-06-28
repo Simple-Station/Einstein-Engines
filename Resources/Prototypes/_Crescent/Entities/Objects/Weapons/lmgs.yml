@@ -75,3 +75,42 @@
     zeroVisible: true
   - type: Appearance
   - type: Contraband
+
+- type: entity
+  name: NCSP RPD 7.62x51mm
+  id: WeaponLightMachineGunNCSPRPD
+  parent: BaseWeaponLightMachineGun
+  description: A bulky machinegun made from ancient schematics. Chambered in 7.62x51mm.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/rpd.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRifleDrum
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineRifleDrum
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeRifle
+  - type: Gun
+    fireRate: 8
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance

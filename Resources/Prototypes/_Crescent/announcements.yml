@@ -184,6 +184,14 @@
   outpost: default
   text: Attention! Vigilance is the foundation of security. Keeps an eye for the horizon and on your neighbors. Our colony thrives because we stand watch for the Lord Commander against all threats. Eyes forward!
 
+- type: broadcastMessage
+  id: basic-transmission
+  name: INCOMING TRANSMISSION
+  sound:
+    path: /Audio/_Crescent/Announcements/radio_announcement.ogg
+  outpost: default
+  text: NEW TRANSMISSION
+
 - type: entity
   id: AnnouncerIntercom
   name: intercom
