@@ -16420,3 +16420,12 @@ Entries:
   id: 7282
   time: '2025-06-28T17:04:59.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2459
+- author: Orion-416
+  changes:
+    - type: Tweak
+      message: BSO's lifeline is now implanted roundstart
+    - type: Tweak
+      message: BSO's lifeline is now manually activated
+  id: 7283
+  time: '2025-06-28T17:13:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2296
