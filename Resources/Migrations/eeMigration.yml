@@ -126,3 +126,6 @@ AntiPsychicKnife: null
 
 # 2025-03-12
 SmartFridge: DVSmartFridgeMedical
+
+# 2025-06-09 - Courier -  It doesn't load correctly, kicks everybody from the map, and return to Lobby use mail carrier instead
+SpawnPointCourier: SpawnPointMailCarrier
