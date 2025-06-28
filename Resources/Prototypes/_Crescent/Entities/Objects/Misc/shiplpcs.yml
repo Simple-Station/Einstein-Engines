@@ -242,6 +242,77 @@
 
 - type: entity
   parent: BaseItem
+  id: ShipVoucherKrechet
+  name: NCWL 'Krechet' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a communard Krechet-class light fighter pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 15000
+  - type: ShipVoucher
+    ship: Krechet
+
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherZorniy
+  name: NCWL 'Zorniy' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a communard Zorniy-class light bomber pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 30000
+  - type: ShipVoucher
+    ship: Zorniy
+
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherMolot
+  name: NCWL 'Molot' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a communard Molot-class shielded bomber pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 30000
+  - type: ShipVoucher
+    ship: Molot
+
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherStern
+  name: NCWL 'Stern' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a communard Stern-class heavy battlecruiser pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 75000
+  - type: ShipVoucher
+    ship: Stern
+
+- type: entity
+  parent: BaseItem
   id: ShipVoucherVanguard
   name: NCWL 'Vanguard' pattern LPC fabprint disk
   description: An LPC fabprint disk loaded with a communard Vanguard-class gunship pattern. Has to be redeemed at a shipyard console.

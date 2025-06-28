@@ -46,7 +46,6 @@ entities:
     - type: OccluderTree
     - type: SpreaderGrid
     - type: Shuttle
-      baseMaxLinearVelocity: 35
     - type: GridPathfinding
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
@@ -127,6 +126,34 @@ entities:
     - type: GasTileOverlay
     - type: BecomesStation
       id: Broadsword
+- proto: AAAHardpointFixed
+  entities:
+  - uid: 10
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -0.5,5.5
+      parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 32
+    - type: ApcPowerReceiver
+      powerLoad: 100
+    - type: Physics
+      canCollide: False
+  - uid: 69
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 1.5,5.5
+      parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 32
+    - type: ApcPowerReceiver
+      powerLoad: 100
+    - type: Physics
+      canCollide: False
 - proto: AirlockCommandLockedNCWL
   entities:
   - uid: 16
@@ -375,28 +402,13 @@ entities:
       rot: 3.141592653589793 rad
       pos: 0.5,3.5
       parent: 1
-- proto: ComputerShuttleAntag
+- proto: ComputerShuttle
   entities:
-  - uid: 69
+  - uid: 32
     components:
     - type: Transform
       pos: 0.5,4.5
       parent: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        10:
-        - Group2: Trigger
-        - Group3: Trigger
-        32:
-        - Group1: Trigger
-        - Group3: Trigger
-    - type: NamedModules
-      buttonNames:
-      - Left-Hand Torpedo
-      - Right-Hand Torpedo
-      - Fire both torpedos.
-      - --/--
-      - --/--
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -411,26 +423,33 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+    - type: DeviceLinkSource
+      linkedPorts:
+        10:
+        - Group1: SpaceArtilleryFire
+        69:
+        - Group1: SpaceArtilleryFire
+    - type: NamedModules
+      buttonNames:
+      - Fire Kurosawas
+      - Module B
+      - Module C
+      - Module D
+      - Module E
 - proto: ShuttleGunKurosawa
   entities:
-  - uid: 10
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 1.5,5.5
-      parent: 1
-    - type: DeviceLinkSink
-      links:
-      - 69
-  - uid: 32
+  - uid: 70
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -0.5,5.5
       parent: 1
-    - type: DeviceLinkSink
-      links:
-      - 69
+  - uid: 71
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 1.5,5.5
+      parent: 1
 - proto: SmallGyroscope
   entities:
   - uid: 72
@@ -438,8 +457,6 @@ entities:
     - type: Transform
       pos: 1.5,0.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 200
 - proto: SpawnPointLatejoin
   entities:
   - uid: 39
@@ -478,46 +495,34 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 2.5,0.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 12
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 1.5,-0.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 13
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -1.5,0.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 37
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -0.5,-0.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 78
     components:
     - type: Transform
       pos: -1.5,2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 79
     components:
     - type: Transform
       pos: 2.5,2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
 - proto: WallPlastitanium
   entities:
   - uid: 6
