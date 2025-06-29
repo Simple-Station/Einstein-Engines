@@ -56,7 +56,13 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
     public Action? OnRadarRelease;
     public Action<EntityCoordinates>? OnRadarMouseMove;
     public Action<Angle>? OnRadarMouseMoveRelative;
+    // Represents where the mouse would physically be in the game world. Only updates when the mouse is over the UI.
     private Vector2 MousePosition = Vector2.Zero;
+    // Same as the mouse position , but this has its position constantly updated as the ship moves / rotates.
+    private Vector2 RelativeMousePosition = Vector2.Zero;
+    private Angle LastRotation = Angle.Zero;
+    private Vector2 LastWorldCoordinates = Vector2.Zero;
+    public bool keepWorldAligned = false;
 
     private List<Entity<MapGridComponent>> _grids = new();
 
@@ -112,7 +118,6 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         //    return;
 
         PureRelativePosition(args.RelativePosition);
-        Vector2 tester = MousePosition;
 
         OnRadarMouseMove?.Invoke(PureRelativePosition(args.RelativePosition));
         OnRadarMouseMoveRelative?.Invoke(RelativeAngleFromFace(PureRelativePosition(args.RelativePosition)));
@@ -138,10 +143,10 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         var trueSize = Size;
         var a = ((pos - (trueSize/2))*2)/Size * ActualRadarRange;
         var relativePos = a with { Y = -a.Y };
-        //var logger = _logs.GetSawmill("ui");
-        //logger.Debug($"Pos: {pos.X}, {pos.Y}   , relativePos: {relativePos.X}, {relativePos.Y}");
         relativePos = _rotation.Value.RotateVec(relativePos);
-        MousePosition = relativePos + _transform.ToMapCoordinates(_coordinates.Value).Position;
+        var gridRotation = _transform.GetWorldRotation(_coordinates.Value.EntityId);
+        MousePosition = gridRotation.RotateVec(relativePos) + _transform.ToMapCoordinates(_coordinates.Value).Position;
+        RelativeMousePosition = MousePosition;
         return _coordinates.Value.Offset(relativePos);
     }
 
@@ -182,8 +187,8 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
 
     public void UpdateState(NavInterfaceState state)
     {
-        SetMatrix(EntManager.GetCoordinates(state.Coordinates), state.Angle);
-
+        SetMatrix(EntManager.GetCoordinates(state.Coordinates), new Angle(state.Angle));
+        keepWorldAligned = state.AlignToWorld;
         WorldMaxRange = state.MaxRange;
 
         if (WorldMaxRange < WorldRange)
@@ -228,8 +233,21 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         var offset = _coordinates.Value.Position;
         var posMatrix = Matrix3Helpers.CreateTransform(offset, _rotation.Value);
         var (_, ourEntRot, ourEntMatrix) = _transform.GetWorldPositionRotationMatrix(_coordinates.Value.EntityId);
+        if (keepWorldAligned)
+        {
+            ourEntRot = Angle.Zero;
+            ourEntMatrix = Matrix3x2.Identity;
+        }
+
         var ourWorldMatrix = Matrix3x2.Multiply(posMatrix, ourEntMatrix);
         Matrix3x2.Invert(ourWorldMatrix, out var ourWorldMatrixInvert);
+
+        var vert = Vector2.Transform(MousePosition - mapPos.Position, ourWorldMatrix);
+        vert.Y = -vert.Y;
+        vert = ScalePosition(vert);
+        Logger.Debug($"{vert.X} , {vert.Y}");
+
+        handle.DrawCircle(vert, 15f, Color.SandyBrown, true);
 
         var northRot = ourEntRot + _rotation.Value;
         DrawNorthLine(handle, northRot);
