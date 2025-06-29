@@ -56,6 +56,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
     public Action? OnRadarRelease;
     public Action<EntityCoordinates>? OnRadarMouseMove;
     public Action<Angle>? OnRadarMouseMoveRelative;
+    private Vector2 MousePosition = Vector2.Zero;
 
     private List<Entity<MapGridComponent>> _grids = new();
 
@@ -107,8 +108,11 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
     {
         base.MouseMove(args);
 
-        if (_coordinates == null || _rotation == null)
-            return;
+        //if (_coordinates == null || _rotation == null)
+        //    return;
+
+        PureRelativePosition(args.RelativePosition);
+        Vector2 tester = MousePosition;
 
         OnRadarMouseMove?.Invoke(PureRelativePosition(args.RelativePosition));
         OnRadarMouseMoveRelative?.Invoke(RelativeAngleFromFace(PureRelativePosition(args.RelativePosition)));
@@ -137,6 +141,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         //var logger = _logs.GetSawmill("ui");
         //logger.Debug($"Pos: {pos.X}, {pos.Y}   , relativePos: {relativePos.X}, {relativePos.Y}");
         relativePos = _rotation.Value.RotateVec(relativePos);
+        MousePosition = relativePos + _transform.ToMapCoordinates(_coordinates.Value).Position;
         return _coordinates.Value.Offset(relativePos);
     }
 
@@ -300,6 +305,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
                 var gridBounds = grid.Comp.LocalAABB;
 
                 var gridCentre = Vector2.Transform(gridBody.LocalCenter, matty);
+                var globalGridCentre = _transform.GetWorldPosition(gUid);
                 gridCentre.Y = -gridCentre.Y;
                 var distance = gridCentre.Length();
                 var labelText = Loc.GetString("shuttle-console-iff-label", ("name", labelName),
@@ -314,6 +320,12 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
                 // The actual position in the UI. We offset the matrix position to render it off by half its width
                 // plus by the offset.
                 var uiPosition = ScalePosition(gridCentre)- new Vector2(labelDimensions.X / 2f, -yOffset);
+
+                if ((globalGridCentre - MousePosition).Length() > 25)
+                {
+                    handle.DrawCircle(ScalePosition(gridCentre), 12.5f, color, false);
+                    continue;
+                }
 
                 // Look this is uggo so feel free to cleanup. We just need to clamp the UI position to within the viewport.
                 uiPosition = new Vector2(Math.Clamp(uiPosition.X, 0f, PixelWidth - labelDimensions.X ),
