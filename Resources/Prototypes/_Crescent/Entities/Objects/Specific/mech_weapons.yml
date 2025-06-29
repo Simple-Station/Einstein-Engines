@@ -298,7 +298,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ship_duster.ogg
   - type: ProjectileBatteryAmmoProvider
-    proto: BulletShellArmorPiercing
+    proto: BulletMechAutocannon
     fireCost: 50
   - type: Appearance
   - type: AmmoCounter

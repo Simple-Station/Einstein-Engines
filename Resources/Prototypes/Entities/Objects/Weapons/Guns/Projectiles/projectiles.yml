@@ -769,32 +769,14 @@
     color: orange
     energy: 0.5
 
+
 - type: entity
   id: BulletGrenadeBaton
-  name: baton grenade
+  name: low-yield missile
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    layers:
-      - state: grenade
-  - type: Projectile
-    deleteOnCollide: false
-    damage:
-      types:
-        Blunt: 1
-    soundHit:
-      path: /Audio/Effects/gen_hit.ogg
-  - type: StaminaDamageOnCollide
-    damage: 80
-
-- type: entity
-  id: BulletGrenadeBlast
-  name: blast grenade
-  parent: BaseBulletTrigger
-  categories: [ HideSpawnMenu ]
-  components:
+  - type: ShipWeaponProjectile
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     layers:
@@ -802,9 +784,86 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 150 # a ~2 tile radius
-    intensitySlope: 5
-    maxIntensity: 10
+    totalIntensity: 320
+    intensitySlope: 2
+    maxIntensity: 320
+  - type: ProjectileIFF
+    visualType: SquareReticle
+    color: Red
+  - type: ProjectilePhasePrevent
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.45,0.15,0.15"
+        layer:
+        - BulletImpassable
+        mask:
+        - Impassable
+        - BulletImpassable
+        hard: true
+      fly-by: *flybyfixture
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ExplodeBehavior
+
+- type: entity
+  id: BulletGrenadeBlast
+  name: high-yield missile
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: grenade
+  - type: ShipWeaponProjectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 650
+    intensitySlope: 25
+    maxIntensity: 650
+  - type: ProjectileIFF
+    visualType: SquareReticle
+    color: Red
+  - type: ProjectilePhasePrevent
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.45,0.15,0.15"
+        layer:
+        - BulletImpassable
+        mask:
+        - Impassable
+        - BulletImpassable
+        hard: true
+      fly-by: *flybyfixture
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ExplodeBehavior
+
 
 - type: entity
   id: BulletGrenadeFlash
@@ -823,11 +882,41 @@
   - type: ActiveTimerTrigger
     timeRemaining: 0.3
   - type: DeleteOnTrigger
+  - type: ShipWeaponProjectile
+  - type: ProjectileIFF
+    visualType: SquareReticle
+    color: Red
+  - type: ProjectilePhasePrevent
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.45,0.15,0.15"
+        layer:
+        - BulletImpassable
+        mask:
+        - Impassable
+        - BulletImpassable
+        hard: true
+      fly-by: *flybyfixture
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ExplodeBehavior
 
 # This is supposed to spawn shrapnel and stuff so uhh... TODO?
 - type: entity
   id: BulletGrenadeFrag
-  name: frag grenade
+  name: frag missile
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
@@ -841,6 +930,7 @@
     totalIntensity: 175 # about a ~6 tile radius
     intensitySlope: 1
     maxIntensity: 10
+  - type: ProjectilePhasePrevent
 
 - type: entity
   id: BulletGrenadeEMP
