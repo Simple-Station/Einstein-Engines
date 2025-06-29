@@ -16,8 +16,9 @@
         visible: true
         map: [ "enum.PowerDeviceVisualLayers.Powered" ]
   - type: RadarConsole
-    maxRange: 64
+    maxRange: 256
     followEntity: true
+    keepWorldAligned: true
   - type: Appearance
   - type: GenericVisualizer
     visuals:
