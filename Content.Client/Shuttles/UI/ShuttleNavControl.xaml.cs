@@ -243,15 +243,19 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         {
             ourEntRot = Angle.Zero;
             ourEntMatrix = Matrix3Helpers.CreateTransform(mapPos.Position, Angle.Zero);
+            posMatrix = Matrix3Helpers.CreateTransform(Vector2.One, Angle.Zero);
+            offset = Vector2.Zero;
         }
 
         var ourWorldMatrix = Matrix3x2.Multiply(posMatrix, ourEntMatrix);
         Matrix3x2.Invert(ourWorldMatrix, out var ourWorldMatrixInvert);
 
-        var vert = Vector2.Transform(MousePosition - mapPos.Position, ourWorldMatrix);
+        var vert = (MousePosition - mapPos.Position) ;
         vert.Y = -vert.Y;
+        vert = ourEntRot.RotateVec(vert);
         vert = ScalePosition(vert);
-        Logger.Debug($"{vert.X} , {vert.Y}");
+        //vert = (Angle.FromDegrees(180) - ourEntRot).RotateVec(vert);
+        //Logger.Debug($"{vert.X} , {vert.Y}");
 
         handle.DrawCircle(vert, 15f, Color.SandyBrown, true);
 
@@ -322,11 +326,11 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
             // Color.FromHex("#FFC000FF")
             // Hostile default: Color.Firebrick
             var labelName = _shuttles.GetIFFLabel(grid, self: false, iff);
+            var gridBounds = grid.Comp.LocalAABB;
 
             if (ShowIFF &&
                  labelName != null)
             {
-                var gridBounds = grid.Comp.LocalAABB;
 
                 var gridCentre = Vector2.Transform(gridBody.LocalCenter, matty);
                 var globalGridCentre = _transform.GetWorldPosition(gUid);
@@ -345,7 +349,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
                 // plus by the offset.
                 var uiPosition = ScalePosition(gridCentre)- new Vector2(labelDimensions.X / 2f, -yOffset);
 
-                if ((globalGridCentre - MousePosition).Length() > 25)
+                if ((uiPosition - vert).Length() > 25)
                 {
                     handle.DrawCircle(ScalePosition(gridCentre), 12.5f, color, false);
                     continue;
@@ -363,7 +367,28 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
 
             // Skip drawing if it's out of range.
             if (!gridAABB.Intersects(viewAABB))
+            {
+                const float ShipSelectionDotRadius = 5f;
+                Vector2 DirectionVector = Vector2.Transform((_transform.GetWorldPosition(gUid)), matty);
+                DirectionVector.Y = -DirectionVector.Y;
+                DirectionVector = (ScalePosition(DirectionVector)).Normalized();
+                // solve for point of intersection with the cubic viewport
+                var VecLen1 = ((SizeFull - ShipSelectionDotRadius*2) / ((DirectionVector.Y) > (DirectionVector.X) ? DirectionVector.Y : DirectionVector.X));
+                DirectionVector *= VecLen1;
+                if (DirectionVector.X < 0)
+                {
+                    DirectionVector.X = 0;
+                }
+                else if (DirectionVector.Y < 0)
+                {
+                    DirectionVector.Y = 0;
+                }
+
+                Logger.Debug($"{DirectionVector.X} , {DirectionVector.Y}");
+                handle.DrawLine(MidPointVector, DirectionVector, color);
+                handle.DrawCircle(DirectionVector, ShipSelectionDotRadius, color, true);
                 continue;
+            }
 
             DrawGrid(handle, matty, grid, color);
             DrawDocks(handle, gUid, matty);
