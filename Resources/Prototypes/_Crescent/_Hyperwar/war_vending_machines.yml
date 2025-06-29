@@ -290,3 +290,32 @@
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: MarketModifier
     mod: 0.2
+
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachine]
+  id: ConscriptWarVendory
+  name: Surplus conscript war vendor
+  description: You're getting the bottom of the barrel. Good luck.
+  components:
+  - type: VendingMachine
+    pack: ConscriptWarInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Advertise
+    pack: WarVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/armory.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: MarketModifier
+    mod: 0.2

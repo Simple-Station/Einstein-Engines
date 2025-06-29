@@ -957,3 +957,34 @@
     IdnaTorpedo: 5000
     MagazineVulcan: 5000
     MagazineFlak: 5000
+
+- type: vendingMachineInventory
+  id: ConscriptWarInventory
+  startingInventory:
+    WeaponSniperMosin: 60
+    WeaponRifleKrinkov: 2
+    WeaponShotgunSHIDoubleBarreled4g: 3
+    WeaponShotgunEnforcer: 5
+    WeaponShotgunKammerer: 5
+    WeaponPistolT91: 5
+    WeaponPistolComrade: 100
+    TelescopicShield: 2
+    RiotShield: 2
+    CombatKnife: 100
+    MagazineRifle: 8
+    MagazineMagnum: 20
+    MagazinePistol: 250
+    BoxLethalshot: 10
+    BoxLethalshot4g: 6
+    BoxShotgunFlash4g: 1
+    BoxSpeedLoaderLightRifle: 20
+    ClothingBeltNCWLWebbingMedFilled: 4
+    ClothingBeltMilitaryWebbing: 100
+    JetpackBlackFilled: 20
+    FoodSnackNutribrick: 100
+    DrinkMREFlask: 100
+    WeaponGrapplingGun: 150
+    HandHeldMassScannerEE: 150
+    Crowbar: 150
+    BoxBreachingCharges: 150
+    OxygenTankFilled: 150
