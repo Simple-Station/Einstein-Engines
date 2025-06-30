@@ -29,5 +29,7 @@ public sealed partial class RadarConsoleComponent : Component
 
     // hullrot edit
     public NavBoundUserInterfaceState? LastUpdatedState = null;
+    [DataField]
+    public bool KeepWorldAligned = false;
     // end
 }

@@ -652,7 +652,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         }
         else
         {
-            navState = new NavInterfaceState(0f, null, null, new Dictionary<NetEntity, List<DockingPortState>>(), InertiaDampeningMode.Dampened, GetNetEntity(consoleUid));
+            navState = new NavInterfaceState(0f, null, 0, new Dictionary<NetEntity, List<DockingPortState>>(), InertiaDampeningMode.Dampened, GetNetEntity(consoleUid));
             mapState = new ShuttleMapInterfaceState(
                 FTLState.Invalid,
                 default,
@@ -802,30 +802,28 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     public NavInterfaceState GetNavState(Entity<RadarConsoleComponent?, TransformComponent?> entity, Dictionary<NetEntity, List<DockingPortState>> docks)
     {
         if (!Resolve(entity, ref entity.Comp1, ref entity.Comp2))
-            return new NavInterfaceState(SharedRadarConsoleSystem.DefaultMaxRange, null, null, docks, Shared._NF.Shuttles.Events.InertiaDampeningMode.Dampened, GetNetEntity(entity.Owner)); // Frontier: add inertia dampening
+            return new NavInterfaceState(SharedRadarConsoleSystem.DefaultMaxRange, null, 0, docks, Shared._NF.Shuttles.Events.InertiaDampeningMode.Dampened, GetNetEntity(entity.Owner)); // Frontier: add inertia dampening
 
         return GetNavState(
             entity,
             docks,
             entity.Comp2.Coordinates,
-            entity.Comp2.LocalRotation);
+            entity.Comp2.LocalRotation.Theta);
     }
 
     public NavInterfaceState GetNavState(
         Entity<RadarConsoleComponent?, TransformComponent?> entity,
         Dictionary<NetEntity, List<DockingPortState>> docks,
         EntityCoordinates coordinates,
-        Angle angle)
+        double angle)
     {
         if (!Resolve(entity, ref entity.Comp1, ref entity.Comp2))
             return new NavInterfaceState(SharedRadarConsoleSystem.DefaultMaxRange, GetNetCoordinates(coordinates), angle, docks, InertiaDampeningMode.Dampened, GetNetEntity(entity.Owner)); // Frontier: add inertial dampening
 
-        return new NavInterfaceState(
-            entity.Comp1.MaxRange,
-            GetNetCoordinates(coordinates),
-            angle,
-            docks,
-            _shuttle.NfGetInertiaDampeningMode(entity), GetNetEntity(entity.Owner)); // Frontier: inertia dampening
+        return new NavInterfaceState(entity.Comp1.MaxRange, GetNetCoordinates(coordinates), angle, docks, _shuttle.NfGetInertiaDampeningMode(entity), GetNetEntity(entity.Owner))
+        {
+            AlignToWorld = entity.Comp1.KeepWorldAligned,
+        }; // Frontier: inertia dampening
     }
 
     /// <summary>
