@@ -961,18 +961,19 @@
 - type: vendingMachineInventory
   id: NCWLConscriptWarInventory
   startingInventory:
-    WeaponSniperNCWLNovomosin: 60
+    WeaponSniperNCWLNovomosin: 100
+    BoxSpeedLoaderRifle: 100
     WeaponSubMachineGunNCWLPartisan: 4
-    WeaponShotgunKammerer: 5
-    WeaponPistolT91: 5
+    MagazinePistolSubMachineGun: 12
+    WeaponShotgunDoubleBarreled: 5
+    BoxLethalshot: 10
+    WeaponPistolT91: 4
+    MagazineMagnum: 12
     WeaponPistolComrade: 20
+    MagazinePistol: 250
     TelescopicShield: 2
     RiotShield: 2
     CombatKnife: 100
-    MagazineMagnum: 12
-    MagazinePistol: 250
-    BoxLethalshot: 10
-    BoxSpeedLoaderLightRifle: 20
     ClothingBeltNCWLWebbingMedFilled: 4
     ClothingBeltMilitaryWebbing: 100
     ClothingBackpackNCWL: 100
@@ -993,16 +994,18 @@
   id: DSMConscriptWarInventory
   startingInventory:
     WeaponSniperDSMLegax: 100
+    MagazineBoxLightRifleSurplus: 100
     WeaponSubMachineGunDSMArbiter: 4
-    WeaponShotgunEnforcer: 5
+    MagazinePistolSubMachineGun: 12
+    WeaponShotgunKammarer: 5
+    BoxLethalshot: 10
     WeaponPistolNeoVolker: 5
+    MagazineMagnum: 12
     WeaponPistolComplianceImperial: 20
+    MagazinePistol: 250
     TelescopicShield: 2
     RiotShield: 2
     CombatKnife: 100
-    MagazineMagnum: 12
-    MagazinePistol: 250
-    BoxLethalshot: 10
     BoxSpeedLoaderLightRifle: 20
     ClothingBeltSyndicateWebbingMedFilled: 4
     ClothingBeltAuthorityWebbing: 100

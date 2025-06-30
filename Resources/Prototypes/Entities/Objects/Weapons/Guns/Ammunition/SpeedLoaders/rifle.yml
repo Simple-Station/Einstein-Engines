@@ -1,6 +1,6 @@
 - type: entity
   id: SpeedLoaderRifle
-  name: "speed loader (7.62x51 USM)"
+  name: "speed loader (7.62x51mm USM)"
   parent: BaseItem
   components:
   - type: Tag

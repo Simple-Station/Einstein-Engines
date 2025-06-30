@@ -247,7 +247,7 @@
     staminaCost: 5
 
 - type: entity
-  name: NCWL Novo-mosin 7.62x51
+  name: NCWL Novo-mosin 7.62x51mm
   parent: [BaseWeaponSniper, BaseGunWieldable]
   id: WeaponSniperNCWLNovomosin
   description: A desperate weapon, hastily resurrected from ancient bolt action blueprints scavenged from an Imperial Scribe Guild archive. The bolts barely hold the receiver together, and its tolerances are more rumor than engineering. Originally meant to arm the first wave of communards during the revolution, the design was quietly shelved once the Batyana rifle was finalized. Most of these were dumped on Typan Prime. If you’re seeing one now, something has gone terribly wrong.
@@ -275,7 +275,7 @@
       - CartridgeRifle
 
 - type: entity
-  name: NCWL Punishment Legax 5.56x45
+  name: NCWL Punishment Legax 5.56x45mm
   parent: [BaseWeaponSniper, BaseGunWieldable]
   id: WeaponSniperDSMLegax
   description: A lever-action rifle given as a punishment to DSM units, for dishonourable conduct or annoying a noble.
