@@ -10,6 +10,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: ProjectileIFF
+    visualType: Diamond
+    color: White
   - type: ProjectilePhasePrevent
   - type: Projectile
     ignoreWeaponGrid: true
@@ -68,6 +70,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: ProjectileIFF
+    visualType: Diamond
+    color: White
   - type: ProjectilePhasePrevent
   - type: Projectile
     ignoreWeaponGrid: true
@@ -126,6 +130,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: ProjectileIFF
+    visualType: Diamond
+    color: White
   - type: ProjectilePhasePrevent
   - type: Projectile
     ignoreWeaponGrid: true
@@ -184,6 +190,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: ProjectileIFF
+    visualType: Square
+    color: White
   - type: ProjectilePhasePrevent
   - type: Projectile
     ignoreWeaponGrid: true
@@ -268,6 +276,8 @@
   - type: ShipWeaponProjectile
   - type: ProjectilePhasePrevent
   - type: ProjectileIFF
+    visualType: Square
+    color: White
 
 - type: entity
   id: CartridgeMachineGunArmorPiercing
@@ -328,6 +338,8 @@
   - type: ShipWeaponProjectile
   - type: ProjectilePhasePrevent
   - type: ProjectileIFF
+    visualType: Square
+    color: White
 
 - type: entity
   id: CartridgeMachineGunHighExplosive

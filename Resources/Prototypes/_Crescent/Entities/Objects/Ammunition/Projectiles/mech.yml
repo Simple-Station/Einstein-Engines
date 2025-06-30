@@ -13,6 +13,27 @@
     stoppingPower: 8
 
 - type: entity
+  id: BulletMechAutocannon
+  name: bullet (90mm USTF)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 90
+        Structural: 400 
+    harmorPenetration: 80
+    stoppingPower: 12
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 12
+    intensitySlope: 15
+    totalIntensity: 13
+    maxTileBreak: 2
+
+- type: entity
   id: BulletMechHeavyRifle
   name: bullet (43mm USTF) #The Proverbial .50
   parent: BaseBullet
@@ -38,8 +59,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 35
-        Structural: 50
+        Piercing: 40
+        Structural: 80
     harmorPenetration: 30
     stoppingPower: 6
 
