@@ -277,6 +277,62 @@
 #  - type: Appearance
 
 - type: entity
+  name: NCWL Surplus Partisan 9x19
+  parent: BaseWeaponSubMachineGun
+  id: WeaponSubMachineGunNCWLPartisan
+  description: A low-cost submachine gun based off an old Terran design. A warm meal costs more than the parts for this thing.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/surplus_ncwl_smg.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/surplus_ncwl_smg.rsi
+  - type: ChamberMagazineAmmoProvider
+    boltClosed: null
+  - type: Gun
+    fireRate: 7
+    minAngle: 1
+    maxAngle: 6
+    angleIncrease: 1.5
+    angleDecay: 6
+    selectedMode: FullAuto
+    shotsPerBurst: 5
+    burstCooldown: 0.2
+    burstFireRate: 7
+    availableModes:
+    - SemiAuto
+    - Burst
+    - FullAuto
+    fireOnDropChance: 0.1
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolSubMachineGunTopMounted
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistolSubMachineGunTopMounted
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
+  - type: MagazineVisuals
+    magState: mag
+    steps: 11
+    zeroVisible: true
+  - type: Appearance
+
+- type: entity
   name: NT WT550 Sabre 9x19mm
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunWt550
