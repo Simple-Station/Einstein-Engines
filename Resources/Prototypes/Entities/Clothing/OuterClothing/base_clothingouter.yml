@@ -154,14 +154,6 @@
   - type: HeldSpeedModifier
   - type: Item
     size: Ginormous
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 1
-        Slash: 1
-        Piercing: 1
-        Heat: 1
-        Radiation: 1
   - type: ToggleableClothing
     slot: head
   - type: ContainerContainer
