@@ -691,6 +691,23 @@
 
 - type: entity
   parent: BaseItem
+  id: ShipVoucherBodybag
+  name: GSC 'Bodybag' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a Gorlex Security Consulting Bodybag-class boarding pod pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 7500
+  - type: ShipVoucher
+    ship: Bodybag
+
+- type: entity
+  parent: BaseItem
   id: ShipVoucherCleaver
   name: GSC 'Cleaver' pattern LPC fabprint disk
   description: An LPC fabprint disk loaded with a Gorlex Security Consulting Cleaver-class stealth fighter pattern. Has to be redeemed at a shipyard console.
@@ -787,7 +804,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 12000
+    price: 5000
   - type: ShipVoucher
     ship: Tick
 
@@ -804,7 +821,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 12000
+    price: 7500
   - type: ShipVoucher
     ship: Gnat
 

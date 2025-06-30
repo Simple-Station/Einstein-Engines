@@ -4,8 +4,8 @@
 - type: vessel
   id: Bodybag
   name: GSC Bodybag
-  description: A small stealth fighter.
-  price: 20000
+  description: A small stealth boarding pod.
+  price: 12500
   category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/NCSP/Bodybag.yml
