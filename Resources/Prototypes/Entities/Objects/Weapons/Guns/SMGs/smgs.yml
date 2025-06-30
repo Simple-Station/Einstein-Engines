@@ -278,7 +278,7 @@
 
 - type: entity
   name: NCWL Surplus Partisan 9x19
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, BaseGunWieldable]
   id: WeaponSubMachineGunNCWLPartisan
   description: A low-cost submachine gun based off an old Terran design. A warm meal costs more than the parts for this thing.
   components:
@@ -312,13 +312,13 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazinePistolSubMachineGunTopMounted
+        startingItem: MagazinePistolSubMachineGun
         insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazinePistolSubMachineGunTopMounted
+            - MagazinePistolSubMachineGun
       gun_chamber:
         name: Chamber
         startingItem: CartridgePistol
@@ -328,9 +328,11 @@
             - CartridgePistol
   - type: MagazineVisuals
     magState: mag
-    steps: 11
+    steps: 1
     zeroVisible: true
   - type: Appearance
+  - type: Wieldable
+  - type: GunRequiresWield
 
 - type: entity
   name: NT WT550 Sabre 9x19mm
