@@ -277,10 +277,10 @@
 #  - type: Appearance
 
 - type: entity
-  name: NCWL Surplus Partisan 9x19
+  name: NCWL Partisan 9x19mm
   parent: [BaseWeaponSubMachineGun, BaseGunWieldable]
   id: WeaponSubMachineGunNCWLPartisan
-  description: A low-cost submachine gun based off an old Terran design. A warm meal costs more than the parts for this thing.
+  description: A deregulated design with no safeguards. Originally issued to Interdiction pilots for post-crash survival, it’s now the weapon of choice for partisans and infiltrators who hijack enemy autoforges and flood their supply lines with guns built from their own scrap. To be handed this as your primary weapon means one of two things you either pissed off your kommissar… or your logistics ran out of real rifles.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/surplus_ncwl_smg.rsi
@@ -299,13 +299,69 @@
     maxAngle: 30
     angleIncrease: 1.5
     angleDecay: 6
-    selectedMode: FullAuto
-    shotsPerBurst: 5
-    burstCooldown: 0.2
+    selectedMode: Burst
+    shotsPerBurst: 10
+    burstCooldown: 1
     burstFireRate: 7
     availableModes:
     - SemiAuto
     - Burst
+    fireOnDropChance: 0.1
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolSubMachineGun
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistolSubMachineGun
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: Wieldable
+  - type: GunRequiresWield
+  - type: GunWieldBonus #needed to not crash the game because BaseGunWieldable reduces wielded angle by -21 and -31 into negatives
+    minAngle: -0
+    maxAngle: -0
+
+- type: entity
+  name: DSM Arbiter 9x19mm
+  parent: [BaseWeaponSubMachineGun, BaseGunWieldable]
+  id: WeaponSubMachineGunDSMArbiter
+  description: The DSM's bottom of the barrel, made of sheet metal and welded together by prisoners.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/surplus_dsm_smg.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/surplus_dsm_smg.rsi
+  - type: ChamberMagazineAmmoProvider
+    boltClosed: null
+  - type: Gun
+    fireRate: 4
+    minAngle: 10
+    maxAngle: 30
+    angleIncrease: 1.5
+    angleDecay: 6
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
     - FullAuto
     fireOnDropChance: 0.1
   - type: ItemSlots
@@ -333,7 +389,7 @@
   - type: Appearance
   - type: Wieldable
   - type: GunRequiresWield
-  - type: GunWieldBonus #needed to not crash the game?
+  - type: GunWieldBonus #needed to not crash the game because BaseGunWieldable reduces wielded angle by -21 and -31 into negatives
     minAngle: -0
     maxAngle: -0
 

@@ -961,7 +961,8 @@
 - type: vendingMachineInventory
   id: NCWLConscriptWarInventory
   startingInventory:
-    WeaponSniperMosin: 60
+    WeaponSniperNCWLNovomosin: 60
+    WeaponSubMachineGunNCWLPartisan: 4
     WeaponShotgunKammerer: 5
     WeaponPistolT91: 5
     WeaponPistolComrade: 20
@@ -991,6 +992,8 @@
 - type: vendingMachineInventory
   id: DSMConscriptWarInventory
   startingInventory:
+    WeaponSniperDSMLegax: 100
+    WeaponSubMachineGunDSMArbiter: 4
     WeaponShotgunEnforcer: 5
     WeaponPistolNeoVolker: 5
     WeaponPistolComplianceImperial: 20

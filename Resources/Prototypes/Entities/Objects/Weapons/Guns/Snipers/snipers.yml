@@ -245,3 +245,59 @@
     wideAnimationRotation: 135
   - type: DamageOtherOnHit
     staminaCost: 5
+
+- type: entity
+  name: NCWL Novo-mosin 7.62x51
+  parent: [BaseWeaponSniper, BaseGunWieldable]
+  id: WeaponSniperNCWLNovomosin
+  description: A desperate weapon, hastily resurrected from ancient bolt action blueprints scavenged from an Imperial Scribe Guild archive. The bolts barely hold the receiver together, and its tolerances are more rumor than engineering. Originally meant to arm the first wave of communards during the revolution, the design was quietly shelved once the Batyana rifle was finalized. Most of these were dumped on Typan Prime. If you’re seeing one now, something has gone terribly wrong.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/surplus_ncwl_rifle.rsi
+  - type: Gun
+    fireRate: 0.75
+    damageModifier: 1.5
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
+    fireOnDropChance: 1
+  - type: EmbeddableProjectile
+    removalTime: 3.5
+  - type: EmbedPassiveDamage
+  - type: BallisticAmmoProvider
+    capacity: 5
+    autoCycle: false
+    proto: CartridgeRifle
+    whitelist:
+      tags:
+      - CartridgeRifle
+
+- type: entity
+  name: NCWL Punishment Legax 5.56x45
+  parent: [BaseWeaponSniper, BaseGunWieldable]
+  id: WeaponSniperDSMLegax
+  description: A lever-action rifle given as a punishment to DSM units, for dishonourable conduct or annoying a noble.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/surplus_dsm_rifle.rsi
+  - type: Gun
+    fireRate: 0.75
+    damageModifier: 1.5
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/lever_action.ogg
+    fireOnDropChance: 1
+  - type: EmbeddableProjectile
+    removalTime: 3.5
+  - type: EmbedPassiveDamage
+  - type: BallisticAmmoProvider
+    capacity: 8
+    autoCycle: true
+    proto: CartridgeLightRifle
+    whitelist:
+      tags:
+      - CartridgeLightRifle
