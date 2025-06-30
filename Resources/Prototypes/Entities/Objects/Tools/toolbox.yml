@@ -25,7 +25,7 @@
     range: 1.5
     damage:
       types:
-        Blunt: 20
+        Blunt: 15
     bluntStaminaDamageFactor: 2.0
     heavyRangeModifier: 1.2
     heavyDamageBaseModifier: 1.5
@@ -156,11 +156,11 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 25
+        Blunt: 15
   - type: DamageOtherOnHit
     damage:
       types:
-        Blunt: 30
+        Blunt: 20
 
 - type: entity
   name: golden toolbox
@@ -176,11 +176,11 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 25
+        Blunt: 15
   - type: DamageOtherOnHit
     damage:
       types:
-        Blunt: 35
+        Blunt: 20
 
 - type: entity
   id: ToolboxThief
