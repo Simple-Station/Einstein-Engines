@@ -84,3 +84,10 @@
       before consuming.
 
       Enjoy your drinks!
+
+# contents set by FugitiveRule or a creative admeme
+- type: entity
+  parent: PaperStationWarrant
+  id: PaperFugitiveReport
+  name: fugitive report
+  description: An arrest warrant for a space fugitive sent from GALPOL.
