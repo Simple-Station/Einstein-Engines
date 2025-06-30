@@ -43,7 +43,7 @@
     range: 1.75
     damage:
       types:
-        Blunt: 8
+        Blunt: 15
     heavyRateModifier: 1.5
     heavyDamageBaseModifier: 2
     heavyStaminaCost: 5

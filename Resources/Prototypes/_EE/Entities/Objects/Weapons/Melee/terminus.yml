@@ -28,13 +28,13 @@
     capacity: 1
     count: 1
   - type: MeleeWeapon
-    attackRate: 1.2
+    attackRate: 0.85
     range: 1.65
     wideAnimationRotation: -135
     damage:
       types:
-        Blunt: 12
-        Slash: 2.5
+        Blunt: 15
+        Slash: 5
     bluntStaminaDamageFactor: 2.0
     heavyRateModifier: 2
     heavyDamageBaseModifier: 1.2
@@ -45,8 +45,8 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 5
-        Slash: 10
+        Blunt: 15
+        Slash: 20
   - type: DamageOtherOnHit
     staminaCost: 16
   - type: Wieldable

@@ -95,6 +95,7 @@
     sprite: Objects/Tanks/Jetpacks/blue.rsi
     slots:
       - Back
+      - SuitStorage
 
 # Filled blue
 - type: entity
@@ -128,6 +129,7 @@
     sprite: Objects/Tanks/Jetpacks/black.rsi
     slots:
       - Back
+      - SuitStorage
 
 # Filled black
 - type: entity
@@ -244,6 +246,7 @@
     sprite: Objects/Tanks/Jetpacks/security.rsi
     slots:
       - Back
+      - SuitStorage
 
 #Filled security
 - type: entity

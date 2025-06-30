@@ -12,7 +12,7 @@
     range: 1.6
     damage:
       types:
-        Blunt: 7.5
+        Blunt: 15
         Structural: 5
     bluntStaminaDamageFactor: 2.5
     heavyRateModifier: 2
@@ -26,7 +26,7 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 3
+        Blunt: 10
         Structural: 10
   - type: DamageOtherOnHit
     staminaCost: 10

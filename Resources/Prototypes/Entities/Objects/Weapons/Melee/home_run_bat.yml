@@ -10,7 +10,7 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 11
+        Blunt: 20
     bluntStaminaDamageFactor: 2.0
     heavyRateModifier: 1.5
     heavyDamageBaseModifier: 1.75

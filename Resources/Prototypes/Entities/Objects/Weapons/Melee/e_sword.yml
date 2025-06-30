@@ -38,9 +38,9 @@
         variation: 0.125
     activatedDamage:
         types:
-            Slash: 12
-            Heat: 15 # Should be significantly stronger than other variants, no clue why it's so weak rn
-            Structural: 45 # its a damn laser sword, let people star wars their way through walls
+            Slash: 15
+            Heat: 25
+            Structural: 20 # its a damn laser sword, let people star wars their way through walls
   - type: ItemToggleDamageOtherOnHit
     activatedStaminaCost: 6
   - type: ItemToggleThrowingAngle
@@ -57,7 +57,7 @@
         map: [ "blade" ]
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: .8
+    attackRate: 1
     range: 1.6
     damage:
       types:
@@ -139,8 +139,8 @@
         variation: 0.250
     activatedDamage:
         types:
-            Slash: 4
-            Heat: 8
+            Slash: 10
+            Heat: 15
     deactivatedSecret: true
   - type: ItemToggleActiveSound
     activeSound:
@@ -163,7 +163,7 @@
         map: [ "blade" ]
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1
+    attackRate: 1.25
     hidden: true
     damage:
       types:
@@ -236,8 +236,9 @@
   - type: ItemToggleMeleeWeapon
     activatedDamage:
         types:
-            Slash: 10
-            Heat: 12
+            Slash: 15
+            Heat: 20
+            Structural: 15
     deactivatedSecret: true
   - type: Sprite
     sprite: DeltaV/Objects/Weapons/Melee/e_cutlass.rsi # DeltaV
@@ -249,7 +250,7 @@
         shader: unshaded
         map: [ "blade" ]
   - type: MeleeWeapon # DeltaV - reduced attack rate of e-cutlass; slower, more brutal swings
-    attackRate: 1.5
+    attackRate: 1.25
     soundHit:
       path: /Audio/Weapons/eblade1.ogg
     damage:
@@ -280,8 +281,8 @@
   - type: ItemToggleMeleeWeapon
     activatedDamage:
         types:
-            Slash: 5
-            Heat: 12
+            Slash: 15
+            Heat: 35
             Structural: 20 # "expertly contained to cut through nearly any material" yet it had no structural damage
   - type: GuideHelp
     guides: [ SecurityWeapons ]
@@ -310,8 +311,8 @@
         variation: 0.250
     activatedDamage:
         types:
-            Slash: 12
-            Heat: 15
+            Slash: 20
+            Heat: 35
             Structural: 30
   - type: ItemToggleActiveSound
     activeSound:
@@ -345,11 +346,11 @@
     size: Small
     sprite: Objects/Weapons/Melee/e_sword_double-inhands.rsi
   - type: Reflect
-    reflectProb: .80
-    minReflectProb: .65
+    reflectProb: .60
+    minReflectProb: .20
     spread: 75
     reflects:
-      - Energy #DeltaV: 80% Energy Reflection but no ballistics.
+      - Energy #DeltaV: 60% Energy Reflection but no ballistics.
   - type: UseDelay
     delay: 1
   - type: ToggleableLightVisuals

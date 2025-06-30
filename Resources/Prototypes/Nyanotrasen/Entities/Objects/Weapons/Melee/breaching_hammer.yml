@@ -10,13 +10,12 @@
   - type: Item
     size: Huge
   - type: MeleeWeapon
-    attackRate: 1.3
+    attackRate: 0.75
     range: 1.70
     damage:
       types:
-        Blunt: 10
-        Piercing: 3
-        Structural: 10
+        Blunt: 20
+        Structural: 30
     soundHit:
       path: /Audio/Nyanotrasen/Weapons/club.ogg
     bluntStaminaDamageFactor: 1.50 # 15 stamina damage
@@ -29,9 +28,8 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 5
-        Piercing: 2
-        Structural: 25
+        Blunt: 35
+        Structural: 50
   - type: Tool
     qualities:
       - Prying

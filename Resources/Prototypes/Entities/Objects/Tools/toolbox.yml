@@ -21,11 +21,11 @@
   - type: Item
     size: Ginormous
   - type: MeleeWeapon
-    attackRate: 1.1
+    attackRate: 1
     range: 1.5
     damage:
       types:
-        Blunt: 9
+        Blunt: 20
     bluntStaminaDamageFactor: 2.0
     heavyRangeModifier: 1.2
     heavyDamageBaseModifier: 1.5
@@ -156,11 +156,11 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 11.5
+        Blunt: 25
   - type: DamageOtherOnHit
     damage:
       types:
-        Blunt: 15
+        Blunt: 30
 
 - type: entity
   name: golden toolbox
@@ -176,11 +176,11 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 12
+        Blunt: 25
   - type: DamageOtherOnHit
     damage:
       types:
-        Blunt: 16
+        Blunt: 35
 
 - type: entity
   id: ToolboxThief

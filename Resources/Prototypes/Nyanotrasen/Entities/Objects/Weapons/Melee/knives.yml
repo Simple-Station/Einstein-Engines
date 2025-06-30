@@ -5,20 +5,18 @@
   description: A special knife designed for killing psychics.
   components:
   - type: MeleeWeapon
-    attackRate: .6666
+    attackRate: 1.2
     damage:
       types:
-        Slash: 10
-        Holy: 5
+        Slash: 25
+        Holy: 10
   - type: StaminaDamageOnHit
     damage: 0
   - type: AntiPsionicWeapon
     modifiers:
       coefficients:
-        Blunt: 1.2
-        Slash: 1.2
-        Piercing: 1.2
-        Holy: 1.2
+        Slash: 1.5
+        Holy: 1.5
   - type: Sprite
     sprite: Nyanotrasen/Objects/Weapons/Melee/anti_psychic_knife.rsi
     state: icon

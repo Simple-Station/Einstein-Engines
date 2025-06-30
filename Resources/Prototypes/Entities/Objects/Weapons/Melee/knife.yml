@@ -14,11 +14,11 @@
       - Knife
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: .8
+    attackRate: .85
     range: 1.5
     damage:
       types:
-        Slash: 8
+        Slash: 20
     heavyRateModifier: 1.25
     heavyDamageBaseModifier: 1.2
     maxTargets: 3
@@ -86,8 +86,7 @@
     attackRate: 1
     damage:
       types:
-        Slash: 8
-        Blunt: 1
+        Slash: 25
   - type: DamageOtherOnHit
     staminaCost: 2.5
   - type: ThrowingAngle
@@ -119,17 +118,17 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 0.8
+    attackRate: 1
     damage:
       types:
-        Slash: 12
+        Slash: 25
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
   - type: LandAtCursor
   - type: DamageOtherOnHit
     damage:
       types:
-        Slash: 9
+        Slash: 35
   - type: ThrowingAngle
     angle: 225
   - type: Item
@@ -148,10 +147,10 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: .8
+    attackRate: 1
     damage:
       types:
-        Slash: 8
+        Slash: 22
   - type: ThrowingAngle
     angle: 225
   - type: Item
@@ -168,11 +167,11 @@
     sprite: Objects/Weapons/Melee/kukri_knife.rsi
     state: icon
   - type: MeleeWeapon
-    attackRate: 1.0
+    attackRate: 0.85
     range: 1.75
     damage:
       types:
-        Slash: 10
+        Slash: 38
   - type: ThrowingAngle
     angle: 225
   - type: Item
@@ -193,7 +192,7 @@
     attackRate: .83
     damage:
       types:
-        Slash: 5
+        Slash: 20
   - type: DamageOtherOnHit
     staminaCost: 5
   - type: LandAtCursor
@@ -235,11 +234,11 @@
     sprite: Objects/Weapons/Melee/shiv.rsi
     state: icon
   - type: MeleeWeapon
-    attackRate: .57
+    attackRate: .9
     range: 1.4
     damage:
       types:
-        Slash: 5.5
+        Slash: 15
   - type: ThrowingAngle
     angle: 200
   - type: Item
@@ -259,7 +258,7 @@
   - type: MeleeWeapon
     damage:
       types:
-        Slash: 7 #each "tier" grants an additional 2 damage
+        Slash: 18 #each "tier" grants an additional 3 damage
   - type: Item
     sprite: Objects/Weapons/Melee/reinforced_shiv.rsi
   - type: Sprite
@@ -277,7 +276,7 @@
   - type: MeleeWeapon
     damage:
       types:
-        Slash: 8.5
+        Slash: 21
   - type: Item
     sprite: Objects/Weapons/Melee/plasma_shiv.rsi
   - type: Sprite
@@ -295,8 +294,8 @@
   - type: MeleeWeapon
     damage:
       types:
-        Slash: 6.5
-        Radiation: 4
+        Slash: 24
+        Radiation: 3
   - type: Item
     sprite: Objects/Weapons/Melee/uranium_shiv.rsi
   - type: Sprite
@@ -317,10 +316,10 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: .5
+    attackRate: 1
     damage:
       types:
-        Slash: 5
+        Slash: 20
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
   - type: LandAtCursor
@@ -328,7 +327,7 @@
     ignoreResistances: true
     damage:
       types:
-        Slash: 10
-        Piercing: 15
+        Slash: 25
+        Piercing: 35
   - type: Item
     sprite: Objects/Weapons/Melee/throwing_knife.rsi

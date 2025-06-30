@@ -50,7 +50,7 @@
     - type: DamageOtherOnHit
       damage:
         types:
-          Blunt: 16
+          Blunt: 12
       staminaCost: 22.5
       soundHit:
         path: /Audio/Weapons/smash.ogg
@@ -148,5 +148,5 @@
         volume: -10
     activatedDamage:
       types:
-        Blunt: 8
-        Shock: 16
+        Blunt: 10
+        Shock: 12

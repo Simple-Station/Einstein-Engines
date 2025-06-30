@@ -40,8 +40,8 @@
     range: 1.75
     damage:
       types:
-        Piercing: 7
-        Slash: 1
+        Piercing: 5
+        Slash: 5
     heavyRateModifier: 1.3
     heavyRangeModifier: 1.35
     heavyDamageBaseModifier: 1.0
@@ -54,7 +54,7 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Piercing: 10
+        Piercing: 30
     staminaCost: 6
   - type: Item
     size: Ginormous
@@ -85,8 +85,8 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Piercing: 3
-        Slash: 3
+        Piercing: 15
+        Slash: 5
   - type: Damageable
     damageContainer: Inorganic
   - type: Destructible
@@ -131,12 +131,12 @@
     wideAnimationRotation: -135
     damage:
       types:
-        Piercing: 8.5
-        Slash: 1
+        Piercing: 7
+        Slash: 5
   - type: DamageOtherOnHit
     damage:
       types:
-        Piercing: 12
+        Piercing: 35
   - type: Construction
     graph: SpearReinforced
 
@@ -152,12 +152,12 @@
     wideAnimationRotation: -135
     damage:
       types:
-        Piercing: 9.5
-        Slash: 1.5
+        Piercing: 9
+        Slash: 5
   - type: DamageOtherOnHit
     damage:
       types:
-        Piercing: 14
+        Piercing: 40
   - type: Construction
     graph: SpearPlasma
 
@@ -173,13 +173,13 @@
     wideAnimationRotation: -135
     damage:
       types:
-        Piercing: 8
-        Radiation: 8
+        Piercing: 9
+        Radiation: 5
   - type: DamageOtherOnHit
     damage:
       types:
-        Piercing: 8
-        Radiation: 8
+        Piercing: 30
+        Radiation: 10
   - type: Construction
     graph: SpearUranium
 
@@ -236,8 +236,8 @@
     range: 1.75
     damage:
       types:
-        Piercing: 10
-        Slash: 2
+        Piercing: 5
+        Slash: 10
     heavyRateModifier: 1.3
     heavyRangeModifier: 1.35
     heavyDamageBaseModifier: 1.0
@@ -250,7 +250,7 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Piercing: 16
+        Piercing: 30
   - type: Item
     size: Ginormous
   - type: Clothing
@@ -277,8 +277,8 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Piercing: 3
-        Slash: 3
+        Piercing: 5
+        Slash: 10
   - type: DamageOnLand
     damage:
       types:
