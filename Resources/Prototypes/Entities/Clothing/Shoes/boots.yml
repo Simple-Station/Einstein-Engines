@@ -31,8 +31,8 @@
     sprite: Clothing/Shoes/Boots/jackboots.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Boots/jackboots.rsi
-  - type: ClothingSlowOnDamageModifier
-    modifier: 0.8
+  - type: ClothingSlowOnDamageModifier # Goobstation
+    modifier: 0.5
   - type: ClothingModifyStunTime # Goobstation
     modifier: 0.8
 

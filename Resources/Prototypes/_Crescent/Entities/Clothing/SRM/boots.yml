@@ -8,3 +8,7 @@
     sprite: _Crescent/Clothing/SRM/Feet/hunterboots.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/SRM/Feet/hunterboots.rsi
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.5
+  - type: ClothingModifyStunTime # Goobstation
+    modifier: 0.8

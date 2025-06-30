@@ -20,8 +20,6 @@
     slots:
     - outerClothing
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
   - type: HeldSpeedModifier
   - type: Tag
     tags:
@@ -153,19 +151,17 @@
     - RightLeg
     - RightFoot
   - type: ClothingSpeedModifier
-    walkModifier: 0.4
-    sprintModifier: 0.6
   - type: HeldSpeedModifier
   - type: Item
     size: Ginormous
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.90
-        Slash: 0.90
-        Piercing: 0.95
-        Heat: 0.90
-        Radiation: 0.25
+        Blunt: 1
+        Slash: 1
+        Piercing: 1
+        Heat: 1
+        Radiation: 1
   - type: ToggleableClothing
     slot: head
   - type: ContainerContainer
@@ -181,8 +177,8 @@
     - FullBodyOuter
     - PlasmamanSafe
   - type: Clothing
-    equipDelay: 2.5 # Hardsuits are heavy and take a while to put on/off.
-    unequipDelay: 2.5
+    equipDelay: 1.25 # Hardsuits are heavy and take a while to put on/off.
+    unequipDelay: 1.25
   - type: Geiger
     attachedToSuit: true
     localSoundOnly: true
@@ -244,8 +240,8 @@
     soundHit:
       collection: MetalThud
   - type: Clothing
-    equipDelay: 4 # For stuff like standard Tacsuits and Heavy Hardsuits.
-    unequipDelay: 4
+    equipDelay: 2 # For stuff like standard Tacsuits and Heavy Hardsuits.
+    unequipDelay: 2
   - type: Reflect
     spread: 270
     reflectProb: 0.04
@@ -282,8 +278,8 @@
     soundHit:
       collection: MetalThud
   - type: Clothing
-    equipDelay: 5 # For stuff like "Heavy" Tacsuits.
-    unequipDelay: 5
+    equipDelay: 2.5 # For stuff like "Heavy" Tacsuits.
+    unequipDelay: 2.5
   - type: Reflect
     spread: 270
     reflectProb: 0.05
@@ -327,8 +323,8 @@
     - HidesHarpyWings #DeltaV: Used by harpies to help render their hardsuit sprites
     - PlasmamanSafe
   - type: Clothing
-    equipDelay: 1.25 # Softsuits are easier to put on and off
-    unequipDelay: 1
+    equipDelay: 0.5 # Softsuits are easier to put on and off
+    unequipDelay: 0.5
   - type: ClothingRequiredStepTriggerImmune
     slots: WITHOUT_POCKET
   - type: Fixtures

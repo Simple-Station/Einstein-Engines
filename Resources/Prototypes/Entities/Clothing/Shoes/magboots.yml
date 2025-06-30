@@ -60,12 +60,13 @@
     sprite: Clothing/Shoes/Boots/magboots-science.rsi
   - type: ToggleClothing
     action: ActionToggleMagboots
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
   - type: ComponentToggler
     components:
     - type: NoSlip
   - type: Magboots
-    activeWalkModifier: 0.85
-    activeSprintModifier: 0.8
     changeClothingVisuals: true
   - type: Appearance
   - type: GenericVisualizer
@@ -75,7 +76,7 @@
           True: {state: icon-on}
           False: {state: icon}
   - type: StaticPrice
-    price: 200
+    price: 750
   - type: Tag
     tags:
     - WhitelistChameleon
@@ -95,15 +96,15 @@
     state: icon
   - type: Clothing
     sprite: Clothing/Shoes/Boots/magboots-advanced.rsi
-  - type: Magboots
-    activeWalkModifier: 1
-    activeSprintModifier: 1
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
   - type: Tag
     tags:
     - WhitelistChameleon
     - HighRiskItem
   - type: StaticPrice
-    price: 750
+    price: 1500
   - type: StealTarget
     stealGroup: ClothingShoesBootsMagAdv
   - type: DamageOtherOnHit
@@ -121,6 +122,9 @@
   - type: Magboots
     activeWalkModifier: 1.10
     activeSprintModifier: 1.10
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
   - type: StaticPrice
     price: 3000
 
@@ -136,8 +140,9 @@
   - type: Clothing
     sprite: Clothing/Shoes/Boots/magboots-syndicate.rsi
   - type: Magboots
-    activeWalkModifier: 0.95
-    activeSprintModifier: 0.9
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
   - type: GasTank
     outputPressure: 42.6
     air:
@@ -168,6 +173,12 @@
   - type: Tag
     tags:
       - WhitelistChameleon
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.5
+  - type: ClothingModifyStunTime # Goobstation
+    modifier: 0.8
+  - type: StaticPrice
+    price: 2500
   - type: Item
     sprite: null
     size: Normal
@@ -184,13 +195,14 @@
   - type: Clothing
     sprite: Clothing/Shoes/Boots/magboots.rsi
   - type: Magboots
-    activeWalkModifier: 0.95
-    activeSprintModifier: 0.9
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
   - type: Tag
     tags:
     - WhitelistChameleon
   - type: StaticPrice
-    price: 500
+    price: 1000
   - type: DamageOtherOnHit
     damage:
       types:
@@ -200,7 +212,7 @@
 - type: entity
   parent: ClothingShoesBootsMag
   id: ClothingShoesBootsMagSec
-  name: combat magboots
+  name: heavy combat magboots
   description: Heavy-duty magboots with added protection and a convenient sidearm strap.
   components:
   - type: Sprite
@@ -209,20 +221,21 @@
   - type: Clothing
     sprite: Clothing/Shoes/Boots/magboots-combat.rsi
   - type: Magboots
-    activeWalkModifier: 0.82
-    activeSprintModifier: 0.77
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.85
   - type: Tag
     tags:
     - WhitelistChameleon
   - type: StaticPrice
-    price: 500
+    price: 2500
   - type: DamageOtherOnHit
     damage:
       types:
         Blunt: 13
     staminaCost: 15
   - type: ClothingSlowOnDamageModifier
-    modifier: 0.8
+    modifier: 0.5
   - type: ClothingModifyStunTime # Goobstation
     modifier: 0.8
   - type: Matchbox

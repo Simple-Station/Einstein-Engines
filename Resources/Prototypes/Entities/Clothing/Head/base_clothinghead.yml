@@ -206,11 +206,11 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.90
-        Slash: 0.90
-        Piercing: 0.95
-        Heat: 0.90
-        Radiation: 0.25
+        Blunt: 1
+        Slash: 1
+        Piercing: 1
+        Heat: 1
+        Radiation: 1
   - type: GroupExamine
   - type: IngestionBlocker
   - type: Tag
@@ -247,8 +247,8 @@
     size: Normal
     heldPrefix: off
   - type: Clothing
-    equipDelay: 0.4
-    unequipDelay: 0.6 # Slightly higher delay to protect against accidental unequips
+    equipDelay: 0.2
+    unequipDelay: 0.2 # Slightly higher delay to protect against accidental unequips
     equippedPrefix: off
     clothingVisuals:
       head:

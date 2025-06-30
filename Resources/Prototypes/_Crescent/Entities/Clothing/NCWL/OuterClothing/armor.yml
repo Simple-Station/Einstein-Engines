@@ -81,7 +81,7 @@
         Caustic: 25
   - type: ClothingSpeedModifier
     walkModifier: 0.85
-    sprintModifier: 1.0
+    sprintModifier: 0.85
   - type: ExplosionResistance
     damageCoefficient: 0.90
   - type: GroupExamine
