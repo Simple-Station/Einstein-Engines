@@ -962,12 +962,12 @@
   id: ConscriptWarInventory
   startingInventory:
     WeaponSniperMosin: 60
-    WeaponRifleKrinkov: 2
-    WeaponShotgunSHIDoubleBarreled4g: 3
+    # WeaponRifleKrinkov: 2
+    # WeaponShotgunSHIDoubleBarreled4g: 3
     WeaponShotgunEnforcer: 5
     WeaponShotgunKammerer: 5
     WeaponPistolT91: 5
-    WeaponPistolComrade: 100
+    WeaponPistolComrade: 20
     TelescopicShield: 2
     RiotShield: 2
     CombatKnife: 100
@@ -975,8 +975,8 @@
     MagazineMagnum: 20
     MagazinePistol: 250
     BoxLethalshot: 10
-    BoxLethalshot4g: 6
-    BoxShotgunFlash4g: 1
+    # BoxLethalshot4g: 6
+    # BoxShotgunFlash4g: 1
     BoxSpeedLoaderLightRifle: 20
     ClothingBeltNCWLWebbingMedFilled: 4
     ClothingBeltMilitaryWebbing: 100

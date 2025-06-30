@@ -85,4 +85,22 @@
       - 0,0,3,2
     whitelist:
       tags:
+        - SpeedLoaderLightRifle
+
+- type: entity
+  name: box of 7.62x51 USM speed loaders
+  parent: BoxMagazine
+  id: BoxSpeedLoaderRifle
+  description: A box full of 7.62x51 USM speed loaders.
+  components:
+  - type: StorageFill
+    contents:
+    - id: SpeedLoaderRifle
+      amount: 6
+  - type: Storage
+    maxItemSize: Small
+    grid:
+      - 0,0,3,2
+    whitelist:
+      tags:
         - SpeedLoaderRifle
