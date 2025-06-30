@@ -8,10 +8,6 @@
     sprite: _Crescent/Clothing/Empire/Feet/mandatefancyboots.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/Empire/Feet/mandatefancyboots.rsi
-  - type: ClothingSlowOnDamageModifier
-    modifier: 0.5
-  - type: ClothingModifyStunTime # Goobstation
-    modifier: 0.8
 
 - type: entity
   parent: ClothingShoesBaseButcherable
@@ -23,10 +19,6 @@
     sprite: _Crescent/Clothing/Empire/Feet/mandatejackboots.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/Empire/Feet/mandatejackboots.rsi
-  - type: ClothingSlowOnDamageModifier
-    modifier: 0.5
-  - type: ClothingModifyStunTime # Goobstation
-    modifier: 0.8
 
 - type: entity
   parent: ClothingShoesBaseButcherable
@@ -38,10 +30,6 @@
     sprite: _Crescent/Clothing/Empire/Feet/mandatefancyboots.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/Empire/Feet/mandatefancyboots.rsi
-  - type: ClothingSlowOnDamageModifier
-    modifier: 0.5
-  - type: ClothingModifyStunTime # Goobstation
-    modifier: 0.8
 
 - type: entity
   parent: ClothingShoesBaseButcherable

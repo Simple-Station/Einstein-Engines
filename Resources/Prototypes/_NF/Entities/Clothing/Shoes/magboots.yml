@@ -19,12 +19,8 @@
       types:
         Blunt: 13
     staminaCost: 15
-  - type: ClothingSlowOnDamageModifier
-    modifier: 0.5
-  - type: ClothingModifyStunTime # Goobstation
-    modifier: 0.8
   - type: StaticPrice
-    price: 1500
+    price: 750
 
 - type: entity
   parent: ClothingShoesBootsMagCombat

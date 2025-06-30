@@ -277,7 +277,7 @@
       types:
         Slash: 25
         Heat: 10
-        Structural: 15
+        Structural: 10
     soundHit:
       collection: MetalThud
   - type: Wieldable
@@ -286,7 +286,7 @@
       types:
         Slash: 35
         Heat: 25
-        Structural: 40
+        Structural: 15
   - type: Item
     size: Ginormous
   - type: Tool

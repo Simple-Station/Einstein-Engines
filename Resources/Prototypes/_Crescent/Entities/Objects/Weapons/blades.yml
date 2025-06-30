@@ -25,7 +25,7 @@
 
 - type: entity
   name: machete
-  parent: BaseSword
+  parent: Machete
   id: IndependentMachete
   description: A vicious looking blade.
   components:
@@ -37,15 +37,6 @@
     attackRate: 0.85
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
-    damage:
-      types:
-        Slash: 40
-    clickPartDamageMultiplier: 2.5
-    heavyPartDamageMultiplier: 1.5
-    heavyRateModifier: 1.25
-    lightRangeModifier: 1.25
-    heavyDamageBaseModifier: 1
-    heavyStaminaCost: 5
     maxTargets: 4
     angle: 80
   - type: DamageOtherOnHit
