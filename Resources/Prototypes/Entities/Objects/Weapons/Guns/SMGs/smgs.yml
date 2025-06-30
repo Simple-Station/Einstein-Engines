@@ -295,8 +295,8 @@
     boltClosed: null
   - type: Gun
     fireRate: 7
-    minAngle: 1
-    maxAngle: 6
+    minAngle: 10
+    maxAngle: 30
     angleIncrease: 1.5
     angleDecay: 6
     selectedMode: FullAuto
@@ -333,6 +333,9 @@
   - type: Appearance
   - type: Wieldable
   - type: GunRequiresWield
+  - type: GunWieldBonus #needed to not crash the game?
+    minAngle: -0
+    maxAngle: -0
 
 - type: entity
   name: NT WT550 Sabre 9x19mm
