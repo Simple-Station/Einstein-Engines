@@ -348,7 +348,6 @@
   parent: WeaponSubMachineGunDrozd
   id: WeaponSubMachineGunDrozdRubber
   suffix: Non-Lethal
-  categories: [ HideSpawnMenu ] # Hullrot, would comment out but it might be used by something
   components:
     - type: ItemSlots
       slots:
