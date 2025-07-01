@@ -251,6 +251,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         var offset = _coordinates.Value.Position;
         var posMatrix = Matrix3Helpers.CreateTransform(offset, _rotation.Value);
         var (_, ourEntRot, ourEntMatrix) = _transform.GetWorldPositionRotationMatrix(_coordinates.Value.EntityId);
+        var rot = ourEntRot + _rotation.Value;
         if (keepWorldAligned)
         {
             ourEntRot = Angle.Zero;
@@ -269,12 +270,11 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         }
 
         vert.Y = -vert.Y;
-        vert = ourEntRot.RotateVec(vert);
+        vert = rot.RotateVec(vert);
         vert = ScalePosition(vert);
         if(updateTicker > 10)
             OnRadarMouseMove?.Invoke(PureRelativePositionWithoutSetter(vert));
         LastWorldCoordinates = mapPos.Position;
-        LastRotation = ourEntRot;
         //vert = (Angle.FromDegrees(180) - ourEntRot).RotateVec(vert);
         //Logger.Debug($"{vert.X} , {vert.Y}");
 
@@ -328,7 +328,6 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
 
         handle.DrawPrimitives(DrawPrimitiveTopology.TriangleFan, radarPosVerts, Color.Lime);
 
-        var rot = ourEntRot + _rotation.Value;
         var viewBounds = new Box2Rotated(new Box2(-WorldRange, -WorldRange, WorldRange, WorldRange).Translated(mapPos.Position), rot, mapPos.Position);
         var viewAABB = viewBounds.CalcBoundingBox();
 
