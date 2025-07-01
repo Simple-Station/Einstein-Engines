@@ -67,20 +67,20 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineRifle
+        startingItem: MagazineLightRifle
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazineRifle
+            - MagazineLightRifle
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeRifle
+        startingItem: CartridgeLightRifle
         priority: 1
         whitelist:
           tags:
-            - CartridgeRifle
+            - CartridgeLightRifle
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot

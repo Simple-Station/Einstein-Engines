@@ -1,6 +1,6 @@
 - type: entity
   id: BaseSpeedLoaderMagnum
-  name: "speed loader (8.3×33mm)"
+  name: "speed loader (.327)"
   parent: BaseItem
   abstract: true
   components:
@@ -21,7 +21,7 @@
 
 - type: entity
   id: SpeedLoaderMagnum
-  name: "speed loader (8.3×33mm)"
+  name: "speed loader (.327)"
   parent: BaseSpeedLoaderMagnum
   components:
   - type: BallisticAmmoProvider
@@ -41,7 +41,7 @@
 
 - type: entity
   id: SpeedLoaderMagnumEmpty
-  name: "speed loader (8.3×33mm any)"
+  name: "speed loader (.327 any)"
   parent: SpeedLoaderMagnum
   components:
   - type: BallisticAmmoProvider
@@ -54,7 +54,7 @@
 
 - type: entity
   id: SpeedLoaderMagnumIncendiary
-  name: "speed loader (8.3×33mm incendiary)"
+  name: "speed loader (.327 incendiary)"
   parent: SpeedLoaderMagnum
   components:
   - type: BallisticAmmoProvider
@@ -62,7 +62,7 @@
 
 - type: entity
   id: SpeedLoaderMagnumPractice
-  name: "speed loader (8.3×33mm practice)"
+  name: "speed loader (.327 practice)"
   parent: BaseSpeedLoaderMagnum
   components:
   - type: BallisticAmmoProvider
@@ -82,7 +82,7 @@
 
 - type: entity
   id: SpeedLoaderMagnumRubber
-  name: "speed loader (8.3×33mm rubber)"
+  name: "speed loader (.327 rubber)"
   parent: BaseSpeedLoaderMagnum
   components:
   - type: BallisticAmmoProvider
@@ -102,7 +102,7 @@
 
 - type: entity
   id: SpeedLoaderMagnumAP
-  name: "speed loader (8.3×33mm armor-piercing)"
+  name: "speed loader (.327 armor-piercing)"
   parent: BaseSpeedLoaderMagnum
   components:
   - type: BallisticAmmoProvider
@@ -122,7 +122,7 @@
 
 - type: entity
   id: SpeedLoaderMagnumUranium
-  name: "speed loader (8.3×33mm uranium)"
+  name: "speed loader (.327 uranium)"
   parent: BaseSpeedLoaderMagnum
   components:
   - type: BallisticAmmoProvider
@@ -142,7 +142,7 @@
 
 - type: entity
   id: SpeedLoaderMagnumShrapnel
-  name: "speed loader (8.3×33mm shrapnel)"
+  name: "speed loader (.327 shrapnel)"
   parent: SpeedLoaderMagnum
   components:
   - type: BallisticAmmoProvider

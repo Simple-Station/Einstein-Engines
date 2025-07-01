@@ -46,10 +46,10 @@
   - type: Appearance
 
 - type: entity
-  name: PTA T3 Whisper .25
+  name: PTA T3 Whisper 9x39mm
   parent: BaseWeaponRifle
   id: WeaponSubMachineGunPTAAsVal
-  description: A robust rifle with an inbuilt suppressor. Features a special fast-burst mode to increase hit probability. Chambered in .25 caseless rounds.
+  description: A robust rifle with an inbuilt suppressor. Features a special fast-burst mode to increase hit probability. Chambered in 9x39mm caseless rounds.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/asval.rsi

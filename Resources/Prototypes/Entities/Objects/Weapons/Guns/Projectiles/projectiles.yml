@@ -769,11 +769,10 @@
     color: orange
     energy: 0.5
 
-
 - type: entity
   id: BulletGrenadeBaton
-  name: low-yield missile
-  parent: BaseBullet
+  name: low-yield rocket
+  parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
   - type: ShipWeaponProjectile
@@ -819,7 +818,7 @@
 
 - type: entity
   id: BulletGrenadeBlast
-  name: high-yield missile
+  name: high-yield rocket
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
@@ -864,10 +863,9 @@
         acts: [ "Destruction" ]
       - !type:ExplodeBehavior
 
-
 - type: entity
   id: BulletGrenadeFlash
-  name: flash grenade
+  name: flash rocket
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
@@ -876,7 +874,7 @@
     layers:
       - state: grenade
   - type: FlashOnTrigger
-    range: 7
+    range: 9
   - type: SpawnOnTrigger
     proto: GrenadeFlashEffect
   - type: ActiveTimerTrigger
@@ -916,10 +914,11 @@
 # This is supposed to spawn shrapnel and stuff so uhh... TODO?
 - type: entity
   id: BulletGrenadeFrag
-  name: frag missile
+  name: fragmentation rocket
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
+  - type: ShipWeaponProjectile
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     layers:
@@ -927,7 +926,7 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 175 # about a ~6 tile radius
+    totalIntensity: 125 # about a ~6 tile radius
     intensitySlope: 1
     maxIntensity: 10
   - type: ProjectilePhasePrevent
@@ -944,14 +943,15 @@
       - state: frag
   - type: EmpOnTrigger
     range: 5
-    energyConsumption: 50000
-    disableDuration: 10
+    energyConsumption: 5000
+    disableDuration: 8
   - type: Ammo
     muzzleFlash: null
   - type: PointLight
     radius: 3.5
     color: blue
     energy: 0.5
+  - type: ProjectileIFF
 
 - type: entity
   id: BulletGrenadeSpreadBeanbag
