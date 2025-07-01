@@ -17,9 +17,6 @@ public sealed partial class PaperComponent : Component
     [DataField("stampedBy"), AutoNetworkedField]
     public List<StampDisplayInfo> StampedBy { get; set; } = new();
 
-    [DataField("canEdit")]
-    public bool CanEdit { get; set; } = true;
-
     /// <summary>
     ///     Stamp to be displayed on the paper, state from bureaucracy.rsi
     /// </summary>
