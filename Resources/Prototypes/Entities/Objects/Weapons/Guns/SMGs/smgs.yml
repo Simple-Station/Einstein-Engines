@@ -283,14 +283,14 @@
   description: A deregulated design with no safeguards. Originally issued to Interdiction pilots for post-crash survival, it’s now the weapon of choice for partisans and infiltrators who hijack enemy autoforges and flood their supply lines with guns built from their own scrap. To be handed this as your primary weapon means one of two things you either pissed off your kommissar… or your logistics ran out of real rifles.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/surplus_ncwl_smg.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/surplus_ncwl_smg.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/surplus_ncwl_smg.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/surplus_ncwl_smg.rsi
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
   - type: Gun
@@ -343,14 +343,14 @@
   description: A devolved DSM design that has substituted or removed any features which would require the machining capacity of a County's household guard or Marcher lord's retinue, the Arbiter provides cost effective automatic fire to the poorest and most desperate Imperial militants. When it inevitably fails it will be melted down and made anew until nothing but slag remains, much like its bearer.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/surplus_dsm_smg.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_smg.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/surplus_dsm_smg.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_smg.rsi
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
   - type: Gun
