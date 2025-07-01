@@ -275,7 +275,7 @@
       - CartridgeRifle
 
 - type: entity
-  name: NCWL Punishment Legax 5.56x45mm
+  name: IRM Legax 5.56x45mm
   parent: [BaseWeaponSniper, BaseGunWieldable]
   id: WeaponSniperDSMLegax
   description: A lucky few households in Imperial fiefs maintain small armouries of heraldic equipment, passed down from father to son, brother to brother for the day that the horn sounds and they are levied to fight for their liege-lord. For those households without, there is the Legax. Stamped metal, bakelite grips and minimal production time - a weapon of reservists, policemen and bullet fodder.
