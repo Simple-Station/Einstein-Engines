@@ -1,6 +1,6 @@
 - type: entity
   id: BulletCaselessRifle
-  name: bullet (.25 caseless)
+  name: bullet (9x39mm caseless)
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
@@ -13,7 +13,7 @@
 
 - type: entity
   id: BulletCaselessRiflePractice
-  name: bullet (.25 caseless practice)
+  name: bullet (9x39mm caseless practice)
   parent: BaseBulletPractice
   categories: [ HideSpawnMenu ]
   components:
@@ -24,7 +24,7 @@
 
 - type: entity
   id: BulletCaselessRifleRubber
-  name: bullet (.25 caseless rubber)
+  name: bullet (9x39mm caseless rubber)
   parent: BaseBulletRubber
   categories: [ HideSpawnMenu ]
   components:
@@ -35,7 +35,7 @@
 
 - type: entity
   id: BulletCaselessRifleIncendiary
-  name: bullet (.25 caseless incendiary)
+  name: bullet (9x39mm caseless incendiary)
   parent: BaseBulletIncendiary
   categories: [ HideSpawnMenu ]
   components:
@@ -47,7 +47,7 @@
 
 - type: entity
   id: BulletCaselessRifleUranium
-  name: bullet (.25 caseless AP-DU)
+  name: bullet (9x39mm caseless AP-DU)
   parent: BaseBulletUranium
   categories: [ HideSpawnMenu ]
   components:
@@ -59,7 +59,7 @@
 
 - type: entity
   id: BulletCaselessRifleShrapnel
-  name: bullet (.25 caseless shrapnel)
+  name: bullet (9x39mm caseless shrapnel)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:

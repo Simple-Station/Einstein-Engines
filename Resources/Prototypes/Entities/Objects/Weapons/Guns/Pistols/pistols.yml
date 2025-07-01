@@ -197,10 +197,10 @@
     guides: [ SecurityWeapons ]
 
 - type: entity
-  name: PTA T2 Cobra .25
+  name: PTA T2 Cobra 9x39mm
   parent: BaseWeaponPistol
   id: WeaponPistolCobra
-  description: A rugged, robust operator handgun with inbuilt silencer. Uses .25 caseless ammo.
+  description: A rugged, robust operator handgun with inbuilt silencer. Uses 9x39mm caseless ammo.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/cobra.rsi
@@ -212,7 +212,7 @@
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
   - type: Gun
-    damageModifier: 1.25 # "Extra Robust" despite having an underpowered cartridge.
+    damageModifier: 19x39mm # "Extra Robust" despite having an underpowered cartridge.
     fireRate: 4
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/silenced.ogg
@@ -245,7 +245,7 @@
       gun_chamber: !type:ContainerSlot
 
 - type: entity
-  name: PTA T2 Cobra .25
+  name: PTA T2 Cobra 9x39mm
   parent: WeaponPistolCobra
   id: WeaponPistolCobraEmpty
   suffix: Empty
