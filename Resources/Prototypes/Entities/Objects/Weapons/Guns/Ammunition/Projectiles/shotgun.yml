@@ -10,7 +10,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 30
+        Piercing: 43
     harmorPenetration: 15
     stoppingPower : 12
 
@@ -58,9 +58,9 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 10
+        Piercing: 15
     harmorPenetration: 3
-    stoppingPower: 1
+    stoppingPower: 2
 
 - type: entity
   id: PelletShotgunSpread

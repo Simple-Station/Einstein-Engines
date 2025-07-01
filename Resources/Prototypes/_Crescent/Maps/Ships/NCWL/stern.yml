@@ -1,0 +1,33 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Stern
+  name: NCWL Stern
+  description: A communard heavy battlecruiser.
+  price: 100000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/NCWL/stern.yml
+
+- type: gameMap
+  id: Stern
+  mapName: 'NCWL Stern'
+  mapPath: /Maps/_Crescent/Shuttles/NCWL/stern.yml
+  minPlayers: 0
+  stations:
+    Stern:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Stern {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            KapitanNCWL: [ 0, 0 ]
+            SanitarNCWL: [ 0, 0 ]
+            DoktorNCWL: [ 0, 0 ]

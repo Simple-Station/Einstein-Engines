@@ -769,6 +769,7 @@
     color: orange
     energy: 0.5
 
+
 - type: entity
   id: BulletGrenadeBaton
   name: low-yield rocket
@@ -787,6 +788,34 @@
     intensitySlope: 2
     maxIntensity: 320
   - type: ProjectileIFF
+    visualType: SquareReticle
+    color: Red
+  - type: ProjectilePhasePrevent
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.45,0.15,0.15"
+        layer:
+        - BulletImpassable
+        mask:
+        - Impassable
+        - BulletImpassable
+        hard: true
+      fly-by: *flybyfixture
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ExplodeBehavior
 
 - type: entity
   id: BulletGrenadeBlast
@@ -799,6 +828,7 @@
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     layers:
       - state: grenade
+  - type: ShipWeaponProjectile
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
@@ -806,6 +836,34 @@
     intensitySlope: 25
     maxIntensity: 650
   - type: ProjectileIFF
+    visualType: SquareReticle
+    color: Red
+  - type: ProjectilePhasePrevent
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.45,0.15,0.15"
+        layer:
+        - BulletImpassable
+        mask:
+        - Impassable
+        - BulletImpassable
+        hard: true
+      fly-by: *flybyfixture
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ExplodeBehavior
 
 - type: entity
   id: BulletGrenadeFlash
@@ -824,7 +882,36 @@
   - type: ActiveTimerTrigger
     timeRemaining: 0.3
   - type: DeleteOnTrigger
+  - type: ShipWeaponProjectile
   - type: ProjectileIFF
+    visualType: SquareReticle
+    color: Red
+  - type: ProjectilePhasePrevent
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.45,0.15,0.15"
+        layer:
+        - BulletImpassable
+        mask:
+        - Impassable
+        - BulletImpassable
+        hard: true
+      fly-by: *flybyfixture
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ExplodeBehavior
 
 # This is supposed to spawn shrapnel and stuff so uhh... TODO?
 - type: entity
@@ -843,8 +930,8 @@
     explosionType: Default
     totalIntensity: 125 # about a ~6 tile radius
     intensitySlope: 1
-    maxIntensity: 8
-  - type: ProjectileIFF
+    maxIntensity: 10
+  - type: ProjectilePhasePrevent
 
 - type: entity
   id: BulletGrenadeEMP

@@ -1,0 +1,33 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Zorniy
+  name: NCWL Zorniy
+  description: A light communard bomber.
+  price: 40000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/NCWL/zorniy.yml
+
+- type: gameMap
+  id: Zorniy
+  mapName: 'NCWL Zorniy'
+  mapPath: /Maps/_Crescent/Shuttles/NCWL/zorniy.yml
+  minPlayers: 0
+  stations:
+    Zorniy:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Zorniy {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            KapitanNCWL: [ 0, 0 ]
+            SanitarNCWL: [ 0, 0 ]
+            DoktorNCWL: [ 0, 0 ]

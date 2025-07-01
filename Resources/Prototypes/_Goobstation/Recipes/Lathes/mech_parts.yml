@@ -5,6 +5,8 @@
   category: RipleyMKII
   completetime: 10
   materials:
+    AdvancedMechatronics: 1000
+    AdvancedElectronics: 500
     Steel: 1500
     Glass: 1200
 
@@ -15,6 +17,8 @@
   completetime: 10
   materials:
     Steel: 500
+    AdvancedMechatronics: 1000
+    AdvancedElectronics: 1000
 
 # Clarke
 - type: latheRecipe
@@ -208,6 +212,7 @@
     Plastic: 150
     Silver: 350
     Diamond: 150
+    AdvancedMechatronics: 1000
 
 - type: latheRecipe
   id: MechEquipmentHonkerBananaMortar

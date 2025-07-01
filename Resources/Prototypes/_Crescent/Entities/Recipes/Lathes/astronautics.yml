@@ -1,0 +1,160 @@
+- type: latheRecipe
+  id: ThrusterFlatpackAstronautics
+  result: ThrusterFlatpack
+  completetime: 1.5
+  materials:
+    BasicMechatronics: 350
+    Steel: 1000
+
+- type: latheRecipe
+  id: GyroscopeFlatpackAstronautics
+  result: GyroscopeFlatpack
+  completetime: 1.5
+  materials:
+    BasicMechatronics: 350
+    Steel: 1000
+
+- type: latheRecipe
+  id: MiniGravityFlatpack
+  result: MiniGravFlatpack
+  completetime: 1.5
+  materials:
+    BasicMechatronics: 350
+    Steel: 1000
+    BasicElectronics: 500
+
+- type: latheRecipe
+  id: ShuttleFlatpackAstronautics
+  result: ShuttleFlatpack
+  completetime: 1.5
+  materials:
+    Glass: 500
+    Steel: 1000
+    BasicElectronics: 500
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitBasicAstronautics
+  result: ClothingOuterHardsuitBasic
+  completetime: 1.5
+  materials:
+    Cloth: 350
+    Steel: 1500
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitSpatioAstronautics
+  result: ClothingOuterHardsuitSpatio
+  completetime: 1.5
+  materials:
+    Cloth: 500
+    Steel: 2500
+    Tungsten: 1000
+
+- type: latheRecipe
+  id: ClothingShoesBootsMagAstronautics
+  result: ClothingShoesBootsMag
+  completetime: 1.5
+  materials:
+    BasicElectronics: 500
+    Steel: 1500
+    Tungsten: 500
+
+- type: latheRecipe
+  id: HandheldMassScannerAstronautics
+  result: HandheldMassScanner
+  completetime: 1.5
+  materials:
+    BasicElectronics: 500
+    Plastic: 1000
+    Glass: 500
+
+- type: latheRecipe
+  id: JetpackBlueFilledAstronautics
+  result: JetpackBlueFilled
+  completetime: 1.5
+  materials:
+    Steel: 3000
+    Plastic: 1000
+    Glass: 500
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitPrivateSecurityAstronautics
+  result: ClothingOuterHardsuitPrivateSecurity
+  completetime: 1.5
+  materials:
+    HardsuitElectronics: 500
+    Tungsten: 1000
+    Cloth: 2500
+    Steel: 1500
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitPilotAstronautics
+  result: ClothingOuterHardsuitPilot
+  completetime: 1.5
+  materials:
+    HardsuitElectronics: 500
+    Plastic: 500
+    Cloth: 2000
+    Steel: 1000
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitVoidParamedAstronautics
+  result: ClothingOuterHardsuitVoidParamed
+  completetime: 1.5
+  materials:
+    HardsuitElectronics: 500
+    Silver: 500
+    Cloth: 2000
+    Steel: 1000
+
+- type: latheRecipe
+  id: ClothingShoesBootsMagbootsAstronautics
+  result: ClothingShoesBootsMagbootsAdv
+  completetime: 1.5
+  materials:
+    AdvancedElectronics: 1000
+    Silver: 1500
+    Steel: 1000
+
+- type: latheRecipe
+  id: JetpackMiniFilledAstronautics
+  result: JetpackMiniFilled
+  completetime: 1.5
+  materials:
+    BasicMechatronics: 1000
+    Plastic: 1000
+    Steel: 3000
+
+- type: latheRecipe
+  id: RCDEmptyAstronautics
+  result: RCDEmpty
+  completetime: 1.5
+  materials:
+    BasicMechatronics: 1000
+    Plastic: 2500
+    AdvancedElectronics: 3000
+    Steel: 3000
+    Gold: 500
+    Silver: 500
+
+- type: latheRecipe
+  id: RCDAmmoAstronautics
+  result: RCDAmmoAstronautics
+  completetime: 1.5
+  materials:
+    Steel: 2000
+    Plastic: 2000
+    Glass: 2000
+    Silver: 500
+    Gold: 500
+
+- type: latheRecipe
+  id: ClothingModsuitStandardAstronautics
+  result: ClothingModsuitStandard
+  completetime: 1.5
+  materials:
+    Steel: 2000
+    AdvancedElectronics: 1000
+    AdvancedMechatronics: 2000
+    Silver: 500
+    Tungsten: 1000
+    Gold: 500

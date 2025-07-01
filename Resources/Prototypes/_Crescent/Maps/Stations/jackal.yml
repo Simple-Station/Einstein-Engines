@@ -1,0 +1,28 @@
+- type: gameMap
+  id: Jackal
+  mapName: 'GSC Grinning Jackal'
+  mapPath: /Maps/_Crescent/Stations/jackal.yml
+  minPlayers: 0
+  stations:
+    Jackal:
+      stationProto: StandardCrescentStation
+      gridComponents:
+        - type: BlockShipWeaponProjectileGrid
+        - type: PreventPilot
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'GSC Jackal'
+        - type: VesselDesignation
+          designation: vessel-designation-headquarters
+        - type: Grammar
+          attributes:
+            proper: true
+        - type: StationJobs
+          checkAlive: false
+          overflowJobs: []
+          availableJobs:
+            RingleaderNCSP: [ 1, 1 ]
+            LieutenantNCSP: [ 1, 1 ]
+            InfanteerNCSP: [ 50, 50 ]
+            TechnicianNCSP: [ 15, 15 ]
+            RipperdocNCSP: [ 3, 3 ]

@@ -1,11 +1,11 @@
 # Author Info
-# Discord: @fleshangel
+# Discord: originally @fleshangel, later remade by @ninruB
 #
 - type: vessel
   id: Corvax
   name: NCSP Corvax
   description: A light missile corvette. Devastating at long range.
-  price: 41000
+  price: 40000
   category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/NCSP/corvax.yml
@@ -29,5 +29,5 @@
         - type: StationJobs
           overflowJobs: []
           availableJobs:
-            InfanteerNCSP: [ 1, 1 ]
-            TechnicianNCSP: [ 1, 1 ]
+            InfanteerNCSP: [ 0, 0 ]
+            TechnicianNCSP: [ 0, 0 ]

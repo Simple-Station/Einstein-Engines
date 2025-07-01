@@ -1,0 +1,33 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Molot
+  name: NCWL Molot
+  description: A shielded communard bomber.
+  price: 40000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/NCWL/molot.yml
+
+- type: gameMap
+  id: Molot
+  mapName: 'NCWL Molot'
+  mapPath: /Maps/_Crescent/Shuttles/NCWL/molot.yml
+  minPlayers: 0
+  stations:
+    Molot:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Molot {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            KapitanNCWL: [ 0, 0 ]
+            SanitarNCWL: [ 0, 0 ]
+            DoktorNCWL: [ 0, 0 ]

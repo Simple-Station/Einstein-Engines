@@ -13,6 +13,7 @@
   materials:
     Steel: 250
     Glass: 100
+    BasicMechatronics: 300
 
 - type: latheRecipe
   abstract: true
@@ -23,6 +24,8 @@
     Steel: 250
     Glass: 250
     Plastic: 250
+    BasicMechatronics: 300
+    BasicElectronics: 500
 
 - type: latheRecipe
   abstract: true
@@ -33,6 +36,8 @@
     Glass: 500
     Plastic: 250
     Gold: 50
+    BasicMechatronics: 300
+    BasicElectronics: 500
 
 # Recipes
 
@@ -60,6 +65,8 @@
   completetime: 3
   materials:
     Steel: 1500
+    BasicMechatronics: 1000
+    BasicElectronics: 500
 
 # limbs
 

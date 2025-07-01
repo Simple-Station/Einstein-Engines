@@ -5,6 +5,8 @@
   category: Ripley # Goobstation
   completetime: 10
   materials:
+    BasicMechatronics: 1000
+    BasicElectronics: 500
     Steel: 1500
     Glass: 1200
 
@@ -14,6 +16,7 @@
   category: Ripley # Goobstation
   completetime: 10
   materials:
+    BasicMechatronics: 500
     Steel: 1000
     Glass: 750
 
@@ -23,6 +26,7 @@
   category: Ripley # Goobstation
   completetime: 10
   materials:
+    BasicMechatronics: 500
     Steel: 1000
     Glass: 750
 
@@ -32,6 +36,7 @@
   category: Ripley # Goobstation
   completetime: 10
   materials:
+    BasicMechatronics: 500
     Steel: 1000
     Glass: 750
 
@@ -41,6 +46,7 @@
   category: Ripley
   completetime: 10
   materials:
+    BasicMechatronics: 500
     Steel: 1000
     Glass: 750
 
@@ -50,6 +56,8 @@
   category: MechEquipment
   completetime: 10
   materials:
+    BasicMechatronics: 500
+    BasicElectronics: 500
     Steel: 1000
     Glass: 750
 

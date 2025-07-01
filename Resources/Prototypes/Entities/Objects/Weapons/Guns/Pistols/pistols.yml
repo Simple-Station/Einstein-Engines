@@ -270,10 +270,10 @@
             - CartridgeCaselessRifle
 
 - type: entity
-  name: SHI MK58 Tayamura 9x19mm
+  name: MK58 Tayamura 9x19mm
   parent: BaseWeaponPistol
   id: WeaponPistolMk58
-  description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses 9x19mm PSTF ammo.
+  description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary, the design of which was later publicized. Uses 9x19mm PSTF ammo.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/tayamura.rsi
@@ -472,7 +472,7 @@
   name: NT N1984 Marston .327
   parent: WeaponPistolN1984NonLethal
   id: WeaponPistolN1984SecurityNonLethal
-  description: The sidearm of any self respecting officer.     Comes in 8.3×33mm, the lord's caliber.
+  description: The sidearm of any self respecting officer.     Comes in .327, the lord's caliber.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   suffix: Security Loadouts
   components:

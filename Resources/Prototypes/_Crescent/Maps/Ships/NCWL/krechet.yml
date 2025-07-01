@@ -1,0 +1,33 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Krechet
+  name: NCWL Krechet
+  description: A light communard fighter.
+  price: 25000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/NCWL/krechet.yml
+
+- type: gameMap
+  id: Krechet
+  mapName: 'NCWL Krechet'
+  mapPath: /Maps/_Crescent/Shuttles/NCWL/krechet.yml
+  minPlayers: 0
+  stations:
+    Krechet:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Krechet {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            KapitanNCWL: [ 0, 0 ]
+            SanitarNCWL: [ 0, 0 ]
+            DoktorNCWL: [ 0, 0 ]

@@ -4,7 +4,7 @@
 - type: vessel
   id: Wolf
   name: NCSP Wolf
-  description: An asteroid with engines on it.
+  description: A converted Imperial cruiser.
   price: 90000
   category: Medium
   group: None
@@ -28,6 +28,6 @@
         - type: StationJobs
           overflowJobs: []
           availableJobs:
-            LieutenantNCSP: [ 1, 1 ]
-            InfanteerNCSP: [ 4, 4 ]
-            TechnicianNCSP: [ 2, 2 ]
+            LieutenantNCSP: [ 0, 0 ]
+            InfanteerNCSP: [ 0, 0 ]
+            TechnicianNCSP: [ 0, 0 ]

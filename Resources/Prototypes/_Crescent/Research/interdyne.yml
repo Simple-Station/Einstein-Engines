@@ -1,0 +1,83 @@
+# Tier 1
+- type: technology
+  id: InterdyneClothes
+  name: research-technology-interdyne-clothing
+  icon:
+    sprite: _Crescent/Clothing/Syndicate/Belt/int_webbing.rsi
+    state: icon
+  discipline: Interdyne
+  tier: 1
+  cost: 3500
+  recipeUnlocks:
+  - ClothingUniformJumpsuitSyndicateInterdyne
+  - ClothingOuterArmorSyndicateApron
+  - ClothingBeltSyndicateWebbingInterdyne
+  - ClothingHeadHatSyndicateDoctor
+
+- type: technology
+  id: InterdyneOptics
+  name: research-technology-interdyne-optics
+  icon:
+    sprite: _Crescent/Objects/Misc/cybernetics.rsi
+    state: eyes
+  discipline: Interdyne
+  tier: 1
+  cost: 6000
+  recipeUnlocks:
+  - InterdyneOptics
+
+- type: technology
+  id: InterdyneHypo
+  name: research-technology-interdyne-hypo
+  icon:
+    sprite: _Goobstation/Objects/Specific/Medical/autoinjector.rsi
+    state: security-base
+  discipline: Interdyne
+  tier: 1
+  cost: 6000
+  recipeUnlocks:
+  - SecHypoInterdyne
+  - CartridgeEphedrineInterdyne
+  - CartridgeTirizeneInterdyne
+  - CartridgeBicaridineInterdyne
+  - CartridgeSalineInterdyne
+  - CartridgeDermalineInterdyne
+
+- type: technology
+  id: InterdyneArmor
+  name: research-technology-interdyne-armor
+  icon:
+    sprite: _Crescent/Clothing/Syndicate/Head/traumahelmet.rsi
+    state: icon
+  discipline: Interdyne
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - ClothingHeadHelmetSyndicateBasicInterdyne
+  - ClothingOuterArmorSyndicateArmorvestInterdyne
+  - ClothingOuterHardsuitTraumasec
+
+#Tier 2
+- type: technology
+  id: InterdyneDefib
+  name: research-technology-interdyne-defib
+  icon:
+    sprite: Objects/Specific/Medical/defibsyndi.rsi
+    state: icon
+  discipline: Interdyne
+  tier: 2
+  cost: 7500
+  recipeUnlocks:
+  - DefibrillatorSyndicate
+
+- type: technology
+  id: InterdyneOmnitool
+  name: research-technology-interdyne-omnitool
+  icon:
+    sprite: Objects/Specific/Medical/defibsyndi.rsi
+    state: evil
+  discipline: Interdyne
+  tier: 2
+  cost: 7500
+  recipeUnlocks:
+  - OmnimedToolSyndieInterdyne

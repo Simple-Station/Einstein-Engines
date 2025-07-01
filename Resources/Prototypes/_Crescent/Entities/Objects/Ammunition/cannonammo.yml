@@ -7,6 +7,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: ProjectileIFF
+    visualType: Circle
+    color: White
   - type: Projectile
     ignoreWeaponGrid: true
     damage:
@@ -204,7 +206,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: ProjectileIFF
-    visualType: SolidCircle
+    visualType: Square
     color: White
   - type: ShipWeaponProjectile
   - type: ProjectilePhasePrevent
@@ -294,8 +296,8 @@
         Heat: 40
         Blunt: 20
   - type: ProjectileIFF
-    visualType: Square
-    color: White
+    visualType: Circle
+    color: Blue
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
@@ -345,8 +347,8 @@
   - type: ShipWeaponProjectile
   - type: ProjectilePhasePrevent
   - type: ProjectileIFF
-    visualType: Square
-    color: White
+    visualType: Circle
+    color: Blue
   - type: Projectile
     ignoreWeaponGrid: true
     damage:
@@ -390,6 +392,8 @@
         Radiation: 25
         Heat: 35
   - type: ProjectileIFF
+    visualType: Circle
+    color: Blue
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
@@ -424,8 +428,8 @@
         Radiation: 25
         Heat: 35
   - type: ProjectileIFF
-    visualType: SolidCircle
-    color: White
+    visualType: Circle
+    color: Blue
   - type: EmpOnTrigger
     range: 2
     energyConsumption: 1000
@@ -507,7 +511,7 @@
     energy: 0.5
   - type: ProjectileIFF
     visualType: SquareReticle
-    color: Yellow
+    color: Red
   - type: Fixtures
     fixtures:
       projectile:
@@ -705,7 +709,7 @@
     energy: 0.5
   - type: ProjectileIFF
     visualType: SquareReticle
-    color: Blue
+    color: Red
   - type: Fixtures
     fixtures:
       projectile:
@@ -795,7 +799,7 @@
     energy: 0.5
   - type: ProjectileIFF
     visualType: SquareReticle
-    color: White
+    color: Red
   - type: HeatSeeking
     rotationSpeed: 15 # slow rotation so it isnt aimbot, still fairly accurate though
     acceleration: 120
@@ -1066,6 +1070,8 @@
     color: orange
     energy: 0.5
   - type: ProjectileIFF
+    visualType: SquareReticle
+    color: Red
   - type: RadiationSource
     intensity: 0.1
     slope: 1.0
@@ -1153,8 +1159,8 @@
         Heat: 40
         Blunt: 20
   - type: ProjectileIFF
-    visualType: Square
-    color: White
+    visualType: Circle
+    color: Blue
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
@@ -1212,8 +1218,8 @@
     color: blue
     energy: 0.5
   - type: ProjectileIFF
-    visualType: Square
-    color: White
+    visualType: Circle
+    color: Blue
 
 - type: entity
   id: XrayLensCartridge
@@ -1290,8 +1296,8 @@
     color: white
     energy: 0.5
   - type: ProjectileIFF
-    visualType: Square
-    color: White
+    visualType: Circle
+    color: Blue
 
 - type: entity
   id: InfraredLensCartridge
@@ -1368,8 +1374,8 @@
     color: white
     energy: 0.5
   - type: ProjectileIFF
-    visualType: Square
-    color: White
+    visualType: Circle
+    color: Blue
 
 - type: entity
   id: MicrowaveLensCartridge
@@ -1455,8 +1461,8 @@
     color: white
     energy: 0.5
   - type: ProjectileIFF
-    visualType: Square
-    color: White
+    visualType: Circle
+    color: Blue
 
 - type: entity
   id: PlasmaLensCartridge
@@ -1902,8 +1908,8 @@
   - type: ShipWeaponProjectile
   - type: ProjectilePhasePrevent
   - type: ProjectileIFF
-    visualType: Square
-    color: White
+    visualType: Circle
+    color: Blue
   - type: Projectile
     ignoreWeaponGrid: true
     damage:

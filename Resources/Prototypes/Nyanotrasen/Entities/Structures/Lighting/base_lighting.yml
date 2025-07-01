@@ -48,29 +48,29 @@
 
 #Colored lights
 
-- type: entity
-  id: PoweredlightRed
-  description: "A light fixture. Draws power and produces light when equipped with a light tube."
-  suffix: Soft Red #Delta V - Changed to differentiate from upstream lights.
-  parent: Poweredlight
-  components:
-  - type: PoweredLight
-    hasLampOnSpawn: ColoredLightTubeRed
-    damage:
-      types:
-        Heat: 0.2
+#- type: entity
+#  id: PoweredlightRed
+#  description: "A light fixture. Draws power and produces light when equipped with a light tube."
+#  suffix: Soft Red #Delta V - Changed to differentiate from upstream lights.
+#  parent: Poweredlight
+#  components:
+#  - type: PoweredLight
+#    hasLampOnSpawn: ColoredLightTubeRed
+#    damage:
+#      types:
+#        Heat: 0.2
 
-- type: entity
-  id: AlwaysPoweredlightRed
-  description: "A light fixture. Draws power and produces light when equipped with a light tube."
-  suffix: Always Powered, Red
-  parent: AlwaysPoweredWallLight
-  components:
-  - type: PointLight
-    radius: 10
-    energy: 0.9
-    softness: 0.5
-    color: "#FF6666"
+#- type: entity
+#  id: AlwaysPoweredlightRed
+#  description: "A light fixture. Draws power and produces light when equipped with a light tube."
+#  suffix: Always Powered, Red
+#  parent: AlwaysPoweredWallLight
+#  components:
+#  - type: PointLight
+#    radius: 10
+#    energy: 0.9
+#    softness: 0.5
+#    color: "#FF6666"
 
 - type: entity
   id: PoweredLightColoredFrostyBlue

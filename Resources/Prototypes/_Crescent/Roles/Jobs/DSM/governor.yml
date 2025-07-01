@@ -88,8 +88,8 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitImperialGovernor
     shoes: ClothingShoesBootsImperialGovernorBoots
+    back: ClothingBackpackSatchelLeatherFilledDSM
     head: ClothingHeadHatImperialBicorne
     outerClothing: ClothingOuterCoatImperialGovernor
-    belt: ClothingBeltSheathFilled
     id: GovernorPDA
     ears: ClothingHeadsetEmpire

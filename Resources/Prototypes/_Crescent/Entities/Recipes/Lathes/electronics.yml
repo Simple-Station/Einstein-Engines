@@ -1,0 +1,35 @@
+- type: latheRecipe
+  id: BasicElectronics1Electronics
+  result: BasicElectronics1
+  completetime: 0.5
+  materials:
+    Steel: 100
+    Copper: 50
+
+- type: latheRecipe
+  id: WeakLaserLocus1Electronics
+  result: WeakLaserLocus1
+  completetime: 0.5
+  materials:
+    Glass: 250
+    Steel: 100
+    BasicElectronics: 100
+
+
+- type: latheRecipe
+  id: HardsuitElectronics1Electronics
+  result: HardsuitElectronics1
+  completetime: 0.5
+  materials:
+    Silver: 50
+    Steel: 100
+    BasicElectronics: 250
+
+- type: latheRecipe
+  id: EMPGrenadeElectronics
+  result: EMPGrenade
+  completetime: 1.5
+  materials:
+    Silver: 250
+    Steel: 300
+    AdvancedElectronics: 250

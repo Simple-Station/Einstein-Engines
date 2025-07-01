@@ -106,7 +106,7 @@
   materials:
     Aluminum: 100
     Plastic: 100
-    Circuitry: 50
+    BasicElectronics: 50
 
 - type: latheRecipe
   id: PowerDrill
@@ -116,7 +116,7 @@
   materials:
     Steel: 600
     Plastic: 100
-    Circuitry: 100
+    BasicElectronics: 100
 
 - type: latheRecipe
   id: RCD
@@ -126,7 +126,7 @@
   materials:
     Steel: 800
     Plastic: 200
-    Circuitry: 100
+    BasicElectronics: 100
 
 - type: latheRecipe
   id: RPD
@@ -136,7 +136,7 @@
   materials:
     Steel: 1000
     Plastic: 400
-    Circuitry: 100
+    BasicElectronics: 100
 
 - type: latheRecipe
   id: RCDAmmo
@@ -155,7 +155,7 @@
   materials:
     Aluminum: 600
     Glass: 200
-    Circuitry: 50
+    BasicElectronics: 50
 
 - type: latheRecipe
   id: HandheldGPSBasic
@@ -165,7 +165,7 @@
   materials:
     Aluminum: 600
     Glass: 200
-    Circuitry: 50
+    BasicElectronics: 50
 
 - type: latheRecipe
   id: TRayScanner
@@ -175,7 +175,7 @@
   materials:
     Aluminum: 600
     Glass: 200
-    Circuitry: 50
+    BasicElectronics: 50
 
 - type: latheRecipe
   id: GasAnalyzer
@@ -185,7 +185,7 @@
   materials:
     Aluminum: 600
     Glass: 200
-    Circuitry: 50
+    BasicElectronics: 50
 
 - type: latheRecipe
   id: SprayPainter
@@ -213,7 +213,7 @@
   materials:
     Steel: 300
     Glass: 50
-    Circuitry: 50
+    BasicElectronics: 50
 
 - type: latheRecipe
   id: RPED
@@ -223,7 +223,7 @@
   materials:
     Steel: 650
     Plastic: 150
-    Circuitry: 50
+    BasicElectronics: 50
 
 - type: latheRecipe
   id: WelderExperimental
@@ -243,7 +243,7 @@
     Steel: 1000
     Glass: 500
     Plasma: 300
-    Circuitry: 50
+    BasicElectronics: 100
 
 - type: latheRecipe
   id: HoloprojectorField
@@ -272,5 +272,5 @@
   completetime: 2
   materials:
     Plastic: 300
-    Circuitry: 100
+    BasicElectronics: 100
     Glass: 100

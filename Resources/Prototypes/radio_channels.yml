@@ -4,6 +4,7 @@
   keycode: ";"
   frequency: 1459
   color: "#32cd32"
+  localizedRange: 2500.0
 
 - type: radioChannel
   id: CentCom

@@ -19,7 +19,7 @@ namespace Content.Server.Shuttles.Components
         /// <summary>
         /// Maximum velocity assuming unupgraded, tier 1 thrusters
         /// </summary>
-        [ViewVariables(VVAccess.ReadWrite)]
+        [ViewVariables(VVAccess.ReadWrite), DataField]
         public float BaseMaxLinearVelocity = 20f;
 
         public const float MaxAngularVelocity = 4f;

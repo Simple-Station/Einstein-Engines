@@ -109,8 +109,9 @@ namespace Content.Server.Preferences.Managers
             if (profile is HumanoidCharacterProfile humanProfile)
             {
                 if (!curPrefs.Characters.ContainsKey(slot))
+                {
                     profile = humanProfile.WithBank(HumanoidCharacterProfile.DefaultBalance);
-
+                }
                 else if (curPrefs.Characters[slot] is HumanoidCharacterProfile humanoidEditingTarget)
                 {
                     // you cheat like a king! gg! - SPCR
@@ -118,7 +119,7 @@ namespace Content.Server.Preferences.Managers
                     {
                         _sawmill.Info(
                             $"{session.Name} has tried to modify a locked character's faction. They are using a modified client!");
-                        return;
+                        profile = humanProfile.WithFaction(humanoidEditingTarget.Faction);
                     }
 
                     // ha ha ha ha
@@ -127,7 +128,7 @@ namespace Content.Server.Preferences.Managers
                     {
                         _sawmill.Info(
                             $"{session.Name} has tried to give their character money. They are using a modified client!");
-                        return;
+                        profile = humanProfile.WithBank(humanoidEditingTarget.BankBalance);
                     }
                 }
             }

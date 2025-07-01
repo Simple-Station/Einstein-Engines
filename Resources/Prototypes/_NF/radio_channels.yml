@@ -5,7 +5,7 @@
   frequency: 1022
   color: "#CC6633"
   localize: True
-  localizeRange: 500.0
+  localizedRange: 500.0
 
 - type: radioChannel
   id: Nfsd

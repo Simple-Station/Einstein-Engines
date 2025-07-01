@@ -3,6 +3,7 @@
 
 ThrusterUnwelded: Thruster
 
+ActionToggleMagbootsSyndie: null
 BedsheetNfsd: null
 StationAdminBankATM: null
 StationAdminBankATMDSM: null
@@ -130,6 +131,7 @@ SalvageTankSpawner: WeldingFuelTankFull
 ActionToggleMagbootsAdvanced: null
 ReinforcedWindowStation: ReinforcedWindow
 WallReinforcedStation: WallReinforced
+HandHeldMassScanner: HandHeldMassScannerEE
 
 ChairWoodWinged: ChairWood
 PlastitaniumWindowStation: PlastitaniumWindow
