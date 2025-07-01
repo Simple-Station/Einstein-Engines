@@ -2,7 +2,7 @@
   abstract: true
   parent: BaseItem
   id: BaseMagazineBoxAntiMateriel
-  name: ammunition box (15.2×169 mm )
+  name: ammunition box (15.2×169mm)
   components:
   - type: BallisticAmmoProvider
     mayTransfer: true
@@ -28,7 +28,7 @@
 - type: entity
   parent: BaseMagazineBoxAntiMateriel
   id: MagazineBoxAntiMaterielBig
-  name: ammunition box (15.2×169 mm )
+  name: ammunition box (15.2×169mm)
   components:
   - type: BallisticAmmoProvider
     capacity: 30
@@ -48,7 +48,7 @@
 - type: entity
   parent: BaseMagazineBoxAntiMateriel
   id: MagazineBoxAntiMateriel
-  name: ammunition box (15.2×169 mm )
+  name: ammunition box (15.2×169mm)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeAntiMateriel
@@ -62,7 +62,7 @@
 - type: entity
   parent: MagazineBoxAntiMateriel
   id: MagazineBoxAntiMaterielShrapnel
-  name: ammunition box (.60 anti-personnel shrapnel)
+  name: ammunition box (15.2×169mm shrapnel)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeAntiMaterielShrapnel
