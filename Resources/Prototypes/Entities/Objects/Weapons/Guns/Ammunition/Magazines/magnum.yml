@@ -16,7 +16,7 @@
 
 - type: entity
   id: BaseMagazineMagnumSubMachineGun
-  name: "Vector magazine (.327 Imperial magnum)"
+  name: "SMG magazine (.327 Imperial magnum)"
   parent: BaseItem
   abstract: true
   components:
@@ -160,7 +160,7 @@
 
 - type: entity
   id: MagazineMagnumSubMachineGunEmpty
-  name: "Vector magazine (.327 Imperial magnum any)"
+  name: "SMG magazine (.327 Imperial magnum any)"
   suffix: empty
   parent: BaseMagazineMagnumSubMachineGun
   components:
@@ -173,7 +173,7 @@
 
 - type: entity
   id: MagazineMagnumSubMachineGun
-  name: "Vector magazine (.327 Imperial magnum)"
+  name: "SMG magazine (.327 Imperial magnum)"
   parent: BaseMagazineMagnumSubMachineGun
   components:
   - type: BallisticAmmoProvider
@@ -187,7 +187,7 @@
 
 - type: entity
   id: MagazineMagnumSubMachineGunPractice
-  name: "Vector magazine (.327 Imperial magnum practice)"
+  name: "SMG magazine (.327 Imperial magnum practice)"
   parent: BaseMagazineMagnumSubMachineGun
   components:
   - type: BallisticAmmoProvider
@@ -201,7 +201,7 @@
 
 - type: entity
   id: MagazineMagnumSubMachineGunRubber
-  name: "Vector magazine (.327 Imperial magnum rubber)"
+  name: "SMG magazine (.327 Imperial magnum rubber)"
   parent: BaseMagazineMagnumSubMachineGun
   components:
   - type: BallisticAmmoProvider
@@ -215,7 +215,7 @@
 
 - type: entity
   id: MagazineMagnumSubMachineGunUranium
-  name: "Vector magazine (.327 Imperial magnum uranium)"
+  name: "SMG magazine (.327 Imperial magnum uranium)"
   parent: BaseMagazineMagnumSubMachineGun
   components:
   - type: BallisticAmmoProvider
@@ -229,7 +229,7 @@
 
 - type: entity
   id: MagazineMagnumSubMachineGunPiercing
-  name: "Vector magazine (.327 Imperial magnum black-tip)"
+  name: "SMG magazine (.327 Imperial magnum black-tip)"
   parent: BaseMagazineMagnumSubMachineGun
   components:
   - type: BallisticAmmoProvider

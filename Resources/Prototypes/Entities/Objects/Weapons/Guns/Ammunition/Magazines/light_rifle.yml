@@ -96,7 +96,7 @@
 
 - type: entity
   id: MagazineLightRifle
-  name: "magazine (.30 rifle)"
+  name: "magazine (5.56x45mm Imperial)"
   parent: BaseMagazineLightRifle
   components:
   - type: BallisticAmmoProvider
@@ -123,7 +123,7 @@
 
 - type: entity
   id: MagazineLightRiflePractice
-  name: "magazine (5.56x45mm Imperiale practice)"
+  name: "magazine (5.56x45mm Imperial practice)"
   parent: BaseMagazineLightRifle
   components:
   - type: BallisticAmmoProvider
@@ -151,7 +151,7 @@
 
 - type: entity
   id: MagazineLightRifleUranium
-  name: "magazine (.30 rifle uranium)"
+  name: "magazine (5.56x45mm Imperial uranium)"
   parent: BaseMagazineLightRifle
   components:
   - type: BallisticAmmoProvider
@@ -173,7 +173,7 @@
 
 - type: entity
   id: MagazineLightRifleShrapnel
-  name: "magazine (.30 rifle shrapnel)"
+  name: "magazine (5.56x45mm Imperial shrapnel)"
   parent: BaseMagazineLightRifle
   components:
   - type: BallisticAmmoProvider
