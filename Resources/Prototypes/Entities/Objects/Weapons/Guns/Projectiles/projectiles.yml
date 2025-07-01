@@ -769,7 +769,6 @@
     color: orange
     energy: 0.5
 
-
 - type: entity
   id: BulletGrenadeBaton
   name: low-yield rocket
@@ -823,7 +822,6 @@
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
-  - type: ShipWeaponProjectile
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     layers:
