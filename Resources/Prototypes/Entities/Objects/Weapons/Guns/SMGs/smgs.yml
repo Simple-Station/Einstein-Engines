@@ -340,7 +340,7 @@
   name: DSM Arbiter 9x19mm
   parent: [BaseWeaponSubMachineGun, BaseGunWieldable]
   id: WeaponSubMachineGunDSMArbiter
-  description: The DSM's bottom of the barrel, made of sheet metal and welded together by prisoners.
+  description: A devolved DSM design that has substituted or removed any features which would require the machining capacity of a County's household guard or Marcher lord's retinue, the Arbiter provides cost effective automatic fire to the poorest and most desperate Imperial militants. When it inevitably fails it will be melted down and made anew until nothing but slag remains, much like its bearer.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/surplus_dsm_smg.rsi
