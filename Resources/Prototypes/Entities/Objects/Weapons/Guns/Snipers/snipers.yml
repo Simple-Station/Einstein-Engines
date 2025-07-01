@@ -342,7 +342,7 @@
     - Back
   - type: Appearance
   - type: Gun
-    damageModifier: 2 #enough to put a fully armored dsm soldier to 10 hp and bleed if not treated
+    damageModifier: 1 #enough to put a fully armored dsm soldier to 10 hp and bleed if not treated
     fireRate: 8
     selectedMode: SemiAuto
     availableModes:
@@ -392,7 +392,7 @@
     - Back
   - type: Appearance
   - type: Gun
-    damageModifier: 2 #enough to put a fully armored NCWL soldier to 10 hp and bleed if not treated
+    damageModifier: 0.75 #enough to put a fully armored NCWL soldier to 10 hp and bleed if not treated
     fireRate: 8
     selectedMode: SemiAuto
     availableModes:
