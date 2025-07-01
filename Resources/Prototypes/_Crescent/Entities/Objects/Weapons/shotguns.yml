@@ -67,3 +67,30 @@
     capacity: 4
     proto: ShellShotgun4gBuckshot
   - type: ItemSlots
+
+- type: entity
+  name: IRM Matusa 12g
+  parent: [BaseWeaponSniper, BaseGunWieldable] #UNTIL THE REVOLVER SYSTEM GETS FIXED WE USE THIS.
+  id: WeaponShotgunDSMMatusa
+  description: A premium combat shotgun ripped from ancient Terran designs. Originates from the now-defunct NanoTrasen.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_shotgun.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_shotgun.rsi
+  - type: Gun
+    fireRate: 0.60
+    damageModifier: 1
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
+    fireOnDropChance: 1
+  - type: BallisticAmmoProvider
+    capacity: 5
+    autoCycle: true
+    proto: ShellShotgun
+    whitelist:
+      tags:
+      - ShellShotgun
