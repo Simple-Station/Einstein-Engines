@@ -6,6 +6,8 @@ using Content.Shared._Lavaland.Shelter;
 using Content.Shared.Chemistry.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
+using Robust.Shared.EntitySerialization;
+using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Lavaland.Salvage;

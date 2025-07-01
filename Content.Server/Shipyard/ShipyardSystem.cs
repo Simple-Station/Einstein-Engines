@@ -6,6 +6,8 @@ using Content.Shared.DeltaV.CCVars;
 using Content.Shared.Tag;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
+using Robust.Shared.EntitySerialization;
+using Robust.Shared.EntitySerialization.Systems;
 
 namespace Content.Server.Shipyard;
 
