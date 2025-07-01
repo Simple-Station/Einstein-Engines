@@ -965,6 +965,8 @@
     BoxSpeedLoaderRifle: 100
     WeaponSubMachineGunNCWLPartisan: 4
     MagazinePistolSubMachineGun: 12
+    WeaponAntimaterielNCWLHayha: 1
+    BoxRoundsAntiMateriel: 1
     WeaponShotgunDoubleBarreledNCWL: 5
     BoxLethalshot: 10
     WeaponPistolT91: 4
@@ -997,6 +999,8 @@
     MagazineBoxLightRifleSurplus: 100
     WeaponSubMachineGunDSMArbiter: 4
     MagazinePistolSubMachineGun: 12
+    WeaponAntimaterielDSMJustice: 1
+    BoxRoundsAntiMateriel: 1
     WeaponShotgunKammerer: 5
     BoxLethalshot: 10
     WeaponPistolNeoVolker: 5

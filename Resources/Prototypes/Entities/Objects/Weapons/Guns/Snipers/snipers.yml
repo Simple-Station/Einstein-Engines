@@ -303,10 +303,10 @@
       - CartridgeLightRifle
 
 - type: entity
-  name: NCWL Rapier 12.7x99mm Anti-materiel rifle
+  name: NCWL Häyhä 15.2x169mm Anti-materiel rifle
   parent: BaseItem
-  id: WeaponAntimaterielNCWLRapier
-  description: A single-shot rifle of revolutionary make. Uses 12.7x99mm rounds and needs to be reloaded after every shot.
+  id: WeaponAntimaterielNCWLHayha
+  description: An anti-materiel rifle of revolutionary make, featuring an oversized barrel crudely welded to a tangle of nanosteel pipes and freighter tubing. Odd and clunky by all accounts, Chambered in the massive 15×169mm, it's capable of punching through light armor and exosuits with relative ease. More than once, it’s been used to Loudly silence Union foremen caught lining their pockets during wartime.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/surplus_ncwl_amr.rsi
@@ -320,11 +320,11 @@
     slots:
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeHeavyRifle
+        startingItem: CartridgeAntiMateriel
         priority: 1
         whitelist:
           tags:
-            - CartridgeHeavyRifle
+            - CartridgeAntiMateriel
   - type: ContainerContainer
     containers:
       gun_chamber: !type:ContainerSlot
@@ -332,8 +332,8 @@
     autoCycle: false
     boltClosed: true
     canRack: false
-    soundBoltClosed: /Audio/Weapons/Guns/Bolt/lever_bolt_closed.ogg
-    soundBoltOpened: /Audio/Weapons/Guns/Bolt/lever_bolt_open.ogg
+    soundBoltClosed: /Audio/Weapons/Guns/Bolt/rifle_bolt_closed.ogg
+    soundBoltOpened: /Audio/Weapons/Guns/Bolt/rifle_bolt_open.ogg
     soundRack: /Audio/Weapons/Guns/Cock/batrifle_cock.ogg
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/surplus_ncwl_amr.rsi
@@ -342,7 +342,7 @@
     - Back
   - type: Appearance
   - type: Gun
-    damageModifier: 2.75 #enough to put a fully armored dsm soldier to 10 hp and bleed if not treated
+    damageModifier: 2 #enough to put a fully armored dsm soldier to 10 hp and bleed if not treated
     fireRate: 8
     selectedMode: SemiAuto
     availableModes:
@@ -353,10 +353,10 @@
     unwieldOnUse: false  
 
 - type: entity
-  name: IRM Justice 12.7x99mm Anti-materiel rifle
+  name: IRM Justice 15.2x169mm Anti-materiel rifle
   parent: BaseItem
   id: WeaponAntimaterielDSMJustice
-  description: A single-shot rifle of mandate make. Takes 12.7x99mm rounds and needs to be reloaded after every shot.
+  description: A single-shot rifle of mandate make. Takes 15.2x169mm rounds and needs to be reloaded after every shot.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_amr.rsi
@@ -370,11 +370,11 @@
     slots:
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeHeavyRifle
+        startingItem: CartridgeAntiMateriel
         priority: 1
         whitelist:
           tags:
-            - CartridgeHeavyRifle
+            - CartridgeAntiMateriel
   - type: ContainerContainer
     containers:
       gun_chamber: !type:ContainerSlot
@@ -382,8 +382,8 @@
     autoCycle: false
     boltClosed: true
     canRack: false
-    soundBoltClosed: /Audio/Weapons/Guns/Bolt/lever_bolt_closed.ogg
-    soundBoltOpened: /Audio/Weapons/Guns/Bolt/lever_bolt_open.ogg
+    soundBoltClosed: /Audio/Weapons/Guns/Bolt/rifle_bolt_closed.ogg
+    soundBoltOpened: /Audio/Weapons/Guns/Bolt/rifle_bolt_open.ogg
     soundRack: /Audio/Weapons/Guns/Cock/batrifle_cock.ogg
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_amr.rsi
@@ -392,7 +392,7 @@
     - Back
   - type: Appearance
   - type: Gun
-    damageModifier: 2.50 #enough to put a fully armored NCWL soldier to 10 hp and bleed if not treated
+    damageModifier: 2 #enough to put a fully armored NCWL soldier to 10 hp and bleed if not treated
     fireRate: 8
     selectedMode: SemiAuto
     availableModes:
