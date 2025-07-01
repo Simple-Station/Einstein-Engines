@@ -203,6 +203,38 @@
     staminaCost: 7.5
 
 - type: entity
+  name: NCWL Pioneer Double-barrel 12g
+  parent: WeaponShotgunDoubleBarreled
+  id: WeaponShotgunDoubleBarreledNCWL
+  description: An immortal weapon born of out of neccesity. A scan of an ancient Terran design, endlessly reprinted and given to the first expeditionary corps of Taypan. Uses .12 gauge shotgun shells.
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Weapons/Guns/Shotguns/db_shotgun.rsi # Delta-V
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,4,0
+    sprite: Objects/Weapons/Guns/Shotguns/db_shotgun_inhands_64x.rsi
+  - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
+  - type: Gun
+    fireRate: 2
+    fireOnDropChance: 0.5
+    damageModifier: 2
+  - type: Wieldable
+  - type: BallisticAmmoProvider
+    capacity: 2
+  - type: Construction
+    graph: ShotgunSawn
+    node: start
+    deconstructionTarget: null
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 8.5
+  - type: DamageOtherOnHit
+    staminaCost: 7.5
+
+- type: entity
   name: double-barreled shotgun
   parent: WeaponShotgunDoubleBarreled
   id: WeaponShotgunDoubleBarreledRubber
