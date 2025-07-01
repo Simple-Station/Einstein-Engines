@@ -1444,3 +1444,20 @@
     price: 10000 # change later
   - type: ShipVoucher
     ship: Carrum
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherGeode
+  name: SAW 'Geode' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an SAW Geode-class cruiser. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 27000
+  - type: ShipVoucher
+    ship: Geode 
