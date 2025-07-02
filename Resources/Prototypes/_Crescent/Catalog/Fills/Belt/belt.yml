@@ -102,6 +102,21 @@
       - id: SpaceMedipen
 
 - type: entity
+  id: ClothingBeltNCWLWebbingFilledKommissar
+  parent: ClothingBeltNCWLWebbing
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: SpeedLoaderRifle
+        amount: 4
+      - id: MagazineMagnum
+        amount: 2
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+
+- type: entity
   id: ClothingBeltNCWLWebbingFilledShotgun
   parent: ClothingBeltNCWLWebbing
   suffix: Filled
@@ -156,6 +171,22 @@
         amount: 3
       - id: CartridgeAntiMateriel
         amount: 6
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+
+- type: entity
+  id: ClothingBeltNCWLWebbingFilledMedic
+  parent: ClothingBeltNCWLWebbing
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineMagnum
+        amount: 3
+      - id: MedicatedSuture
+      - id: RegenerativeMesh
+      - id: Bloodpack
       - id: Gauze
       - id: EmergencyMedipen
       - id: SpaceMedipen

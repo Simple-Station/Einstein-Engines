@@ -17,7 +17,7 @@
         - Pacifist
         - WheelchairBound
   weight: 55
-  startingGear: KommissarGear
+  startingGear: ConscriptLeaderNCWLGear
   alwaysUseSpawner: true
   icon: "JobIconCommissar"
   requireAdminNotify: true
@@ -76,11 +76,16 @@
   - Captain # Frontier
 
 - type: startingGear
-  id: KommissarGear
+  id: ConscriptLeaderNCWLGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitNCWLKommissar
     id: KommissarPDA
     ears: ClothingHeadsetNCWL
+    mask: ClothingMaskPilot
     shoes: ClothingShoesBootsJack
     outerClothing: ClothingOuterArmorNCWLCarapace
     head: ClothingHeadHatNCWLKommissarHat
+    belt: ClothingBeltNCWLWebbingFilledKommissar
+    pocket1: WeaponPistolT91
+    back: WeaponSniperNCWLNovomosin
+    suitstorage: EmergencyOxygenTankFilled

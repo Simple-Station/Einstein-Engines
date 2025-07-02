@@ -27,6 +27,7 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 1000
+  - type: AllowSuitStorage
 
 - type: entity
   parent: ClothingOuterBaseLarge
@@ -148,6 +149,7 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 900
+  - type: AllowSuitStorage
 
 ## hardsuits
 
