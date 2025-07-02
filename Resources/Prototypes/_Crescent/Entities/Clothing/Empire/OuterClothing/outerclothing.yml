@@ -231,7 +231,7 @@
 # armor
 
 - type: entity
-  parent: ClothingOuterArmorBasic
+  parent: ClothingOuterBaseLarge
   id: ClothingOuterArmorImperialTrooperArmor
   name: imperial man-at-arms vest
   description: A Type III Imperial trooper vest.
@@ -246,13 +246,13 @@
     armorRepair: PlasteelPlate
     initialModifiers:
       flatReductions:
-        Blunt: 17
-        Slash: 17
-        Piercing: 30
-        Heat: 15
+        Blunt: 25
+        Slash: 25
+        Piercing: 45
+        Heat: 25
         Caustic: 25
   - type: ExplosionResistance
-    damageCoefficient: 0.80
+    damageCoefficient: 0.90
   - type: StaticPrice
     price: 1500
 

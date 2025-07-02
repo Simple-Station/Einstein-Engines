@@ -342,7 +342,7 @@
     - Back
   - type: Appearance
   - type: Gun
-    damageModifier: 1 #enough to put a fully armored dsm soldier to 10 hp and bleed if not treated
+    damageModifier: 0.75 #enough to put a fully armored dsm soldier to 10 hp and bleed if not treated
     fireRate: 8
     selectedMode: SemiAuto
     availableModes:
@@ -351,6 +351,9 @@
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
   - type: Wieldable
     unwieldOnUse: false  
+  - type: HeldSpeedModifier #makes you half as fast and you can't sprint
+    walkModifier: 0.75
+    sprintModifier: 0.5
 
 - type: entity
   name: IRM Justice 15.2x169mm Anti-materiel rifle
@@ -401,3 +404,6 @@
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
   - type: Wieldable
     unwieldOnUse: false  
+  - type: HeldSpeedModifier #makes you half as fast and you can't sprint
+    walkModifier: 0.75
+    sprintModifier: 0.5
