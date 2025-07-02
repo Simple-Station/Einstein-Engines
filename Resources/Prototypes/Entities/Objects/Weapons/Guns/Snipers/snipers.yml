@@ -252,8 +252,6 @@
   id: WeaponSniperNCWLNovomosin
   description: A desperate weapon, hastily resurrected from ancient bolt action blueprints scavenged from an Imperial Scribe Guild archive. The bolts barely hold the receiver together, and its tolerances are more rumor than engineering. Originally meant to arm the first wave of communards during the revolution, the design was quietly shelved once the Batyana rifle was finalized. Most of these were dumped on Typan Prime. If you’re seeing one now, something has gone terribly wrong.
   components:
-  - type: Item
-    size: Ginormous
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/surplus_ncwl_rifle.rsi
   - type: Gun
@@ -282,8 +280,6 @@
   id: WeaponSniperDSMLegax
   description: A lucky few households in Imperial fiefs maintain small armouries of heraldic equipment, passed down from father to son, brother to brother for the day that the horn sounds and they are levied to fight for their liege-lord. For those households without, there is the Legax. Stamped metal, bakelite grips and minimal production time - a weapon of reservists, policemen and bullet fodder.
   components:
-  - type: Item
-    size: Ginormous
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_rifle.rsi
   - type: Gun
@@ -312,8 +308,6 @@
   id: WeaponAntimaterielNCWLHayha
   description: An anti-materiel rifle of revolutionary make, featuring an oversized barrel crudely welded to a tangle of nanosteel pipes and freighter tubing. Odd and clunky by all accounts, Chambered in the massive 15×169mm, it's capable of punching through light armor and exosuits with relative ease. More than once, it’s been used to Loudly silence Union foremen caught lining their pockets during wartime.
   components:
-  - type: Item
-    size: Ginormous
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/surplus_ncwl_amr.rsi
     layers:
@@ -367,8 +361,6 @@
   id: WeaponAntimaterielDSMJustice
   description: A single-shot rifle of mandate make. Takes 15.2x169mm rounds and needs to be reloaded after every shot.
   components:
-  - type: Item
-    size: Ginormous
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_amr.rsi
     layers:
