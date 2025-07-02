@@ -1,0 +1,45 @@
+- type: job
+  id: ConscriptGunnerNCWL
+  name: job-name-conscript-ncwl-lmg
+  description: job-description-kadet #change me later
+  playTimeTracker: ConscriptJobGunnerNCWL
+  weight: 10
+  startingGear: ConscriptGunnerNCWLGear
+  alwaysUseSpawner: true
+  icon: "JobIconKadet"
+  requirements:
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - Muted
+        - WheelchairBound
+  requireAdminNotify: false
+  supervisors: job-supervisors-highcomm
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-soldat
+  access:
+  - Command
+  - Maintenance
+  - Service
+  - NCWLGeneral
+  - NCWLJail
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: ConscriptGunnerNCWLGear
+  equipment:
+    shoes: ClothingShoesBootsJack
+    jumpsuit: ClothingUniformJumpsuitNCWL
+    ears: ClothingHeadsetNCWL
+    belt: WeaponPistolHKUSP
+    id: KadetPDA
+    head: ClothingHeadHatNCWLCapsoft

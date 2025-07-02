@@ -91,3 +91,14 @@ job-name-antiquarian = Izdari Antiquarian
 job-name-spacer = Spacer
 job-name-gliess-sheriff = Gliessian Sheriff
 job-name-gliess-dockmaster = Gliessian Dockmaster
+
+#conscript-ncwl#
+
+job-name-conscript-ncwl-leader = Kommissar
+job-name-conscript-ncwl-doctor = Doktor
+job-name-conscript-ncwl-amr = Sniper
+job-name-conscript-ncwl-smg = Submachinegunner
+job-name-conscript-ncwl-shotgun = Shotgunner
+job-name-conscript-ncwl-lmg = Heavy Gunner
+job-name-conscript-ncwl-rifleman = Rifleman
+job-name-conscript-ncwl-cadet = Kadet

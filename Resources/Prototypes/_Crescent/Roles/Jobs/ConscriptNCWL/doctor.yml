@@ -1,0 +1,46 @@
+- type: job
+  id: ConscriptDoctorNCWL
+  name: job-name-conscript-ncwl-doctor
+  description: job-description-doktor
+  playTimeTracker: ConscriptJobDoctorNCWL
+  requirements:
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - Blindness
+        - WheelchairBound
+  weight: 22
+  startingGear: ConscriptDoktorNCWLGear
+  alwaysUseSpawner: true
+  icon: "JobIconDoktor"
+  requireAdminNotify: false
+  supervisors: job-supervisors-highcomm
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-doktor
+  access:
+  - Command
+  - Maintenance
+  - NCWLGeneral
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: ConscriptDoctorNCWLGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNCWLMedic
+    shoes: ClothingShoesColorBlack
+    id: DoktorPDA
+    ears: ClothingHeadsetNCWL
+    belt: ClothingBeltMedicalFilledl
+    pocket1: WeaponPistolHKUSP
+    outerClothing: ClothingOuterArmorNCWLCarapaceDoktor
+    head: ClothingHeadHatNCWLCapsoftMedical

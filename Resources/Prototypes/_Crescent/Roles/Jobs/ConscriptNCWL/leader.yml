@@ -1,0 +1,86 @@
+- type: job
+  id: KommissarNCWL
+  name: job-name-kommissar
+  description: job-description-kommissar
+  playTimeTracker: JobKommissarNCWL
+  requirements:
+    - !type:CharacterWhitelistRequirement
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
+  weight: 55
+  startingGear: KommissarGear
+  alwaysUseSpawner: true
+  icon: "JobIconCommissar"
+  requireAdminNotify: true
+  supervisors: job-supervisors-highcomm
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-kommissar
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Command
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Mercenary # Frontier
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - NCWLGeneral
+  - Service
+  - NCWLKommissar
+  - NCWLJail
+  - NCWLArmory
+  - NCWLCommand
+  - External
+  - Captain # Frontier
+
+- type: startingGear
+  id: KommissarGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNCWLKommissar
+    id: KommissarPDA
+    ears: ClothingHeadsetNCWL
+    shoes: ClothingShoesBootsJack
+    outerClothing: ClothingOuterArmorNCWLCarapace
+    head: ClothingHeadHatNCWLKommissarHat
