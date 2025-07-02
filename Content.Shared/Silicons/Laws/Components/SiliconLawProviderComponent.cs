@@ -37,4 +37,10 @@ public sealed partial class SiliconLawProviderComponent : Component
     [DataField]
     public bool UnRemovable;
 
+    /// <summary>
+    /// Whether this silicon is subverted by an ion storm or emag.
+    /// </summary>
+    [DataField]
+    public bool Subverted = false;
+
 }
