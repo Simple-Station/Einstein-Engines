@@ -254,6 +254,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.90
   - type: StaticPrice
+  - type: AllowSuitStorage
     price: 1500
 
 - type: entity
@@ -283,7 +284,7 @@
     price: 1500
 
 - type: entity
-  parent: ClothingOuterArmorBasic
+  parent: ClothingOuterBaseLarge
   id: ClothingOuterArmorImperialArmorPrestige
   name: imperial prestige armor vest
   description: A Type IV Imperial trooper vest with rank stripes and enhanced kevlar composite.
@@ -306,6 +307,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.80
   - type: StaticPrice
+  - type: AllowSuitStorage
     price: 3000
 
 #coats

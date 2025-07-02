@@ -84,3 +84,19 @@
         amount: 2
   - type: StaticPrice
     price: 250
+
+#CONSCRIPT
+- type: entity
+  id: ClothingBeltNCWLWebbingFilledRifleman
+  parent: ClothingBeltNCWLWebbing
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: SpeedLoaderRifle
+        amount: 4
+      - id: MagazinePistol
+        amount: 2
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen

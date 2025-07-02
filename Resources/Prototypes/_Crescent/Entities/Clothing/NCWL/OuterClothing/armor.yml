@@ -86,6 +86,7 @@
     damageCoefficient: 0.90
   - type: GroupExamine
   - type: StaticPrice
+  - type: AllowSuitStorage
     price: 750
 
 - type: entity
