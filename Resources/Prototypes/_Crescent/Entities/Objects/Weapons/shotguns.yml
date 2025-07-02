@@ -72,8 +72,10 @@
   name: IRM Matusa 12g
   parent: [BaseWeaponSniper, BaseGunWieldable] #UNTIL THE REVOLVER SYSTEM GETS FIXED WE USE THIS.
   id: WeaponShotgunDSMMatusa
-  description: A premium combat shotgun ripped from ancient Terran designs. Originates from the now-defunct NanoTrasen.
+  description: A dated shotgun design with a 5-round revolver tube. Usually given to DSM units when all other options are unavailable due to its low price.
   components:
+  - type: Item
+    size: Ginormous
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_shotgun.rsi
   - type: Clothing

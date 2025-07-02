@@ -208,6 +208,8 @@
   id: WeaponShotgunDoubleBarreledNCWL
   description: An immortal weapon born of out of neccesity. A scan of an ancient Terran design, endlessly reprinted and given to the first expeditionary corps of Taypan. Uses .12 gauge shotgun shells.
   components:
+  - type: Item
+    size: Ginormous
   - type: Sprite
     sprite: DeltaV/Objects/Weapons/Guns/Shotguns/db_shotgun.rsi # Delta-V
   - type: Item
