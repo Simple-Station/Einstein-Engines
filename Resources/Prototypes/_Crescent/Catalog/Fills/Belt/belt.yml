@@ -199,8 +199,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: SpeedLoaderRifle
-        amount: 4
+      - id: MagazineBoxLightRifleSurplus
       - id: MagazinePistol
         amount: 2
       - id: Gauze
