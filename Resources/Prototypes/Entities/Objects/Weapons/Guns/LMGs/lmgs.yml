@@ -142,3 +142,67 @@
       autoRecharge: true
       autoRechargeRate: 25
     - type: AmmoCounter
+
+- type: entity
+  name: SHI L5 5.56x45mm
+  id: WeaponLightMachineDSMSurplus
+  parent: BaseWeaponLightMachineGun
+  description: A bulky machinegun developed by a Shinohara subsidiary. This older model is much clunkier to move around with.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/l6saw.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: HeldSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.2
+
+- type: entity
+  name: NCWL RPD 7.62x51mm
+  id: WeaponLightMachineGunNCWLSurplus
+  parent: BaseWeaponLightMachineGun
+  description: A bulky machinegun made from ancient schematics. Chambered in 7.62x51mm.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/rpd.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRifleDrum
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineRifleDrum
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeRifle
+  - type: Gun
+    fireRate: 8
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: HeldSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.2

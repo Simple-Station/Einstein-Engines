@@ -967,6 +967,8 @@
     MagazinePistolSubMachineGun: 12
     WeaponAntimaterielNCWLHayha: 1
     BoxRoundsAntiMateriel: 1
+    WeaponLightMachineGunNCWLSurplus: 1
+    MagazineRifleDrum: 3
     WeaponShotgunDoubleBarreledNCWL: 5
     BoxLethalshot: 10
     WeaponPistolT91: 4
@@ -1001,6 +1003,8 @@
     MagazinePistolSubMachineGun: 12
     WeaponAntimaterielDSMJustice: 1
     BoxRoundsAntiMateriel: 1
+    WeaponLightMachineDSMSurplus: 1
+    MagazineLightRifleBox: 3
     WeaponShotgunDSMMatusa: 5 #WHEN REVOLVERS ARE FIXED THIS NEEDS TO BE CHANGED TO REVOLVER TYPE INSTEAD OF RIFLE TYPE
     BoxLethalshot: 10
     WeaponPistolNeoVolker: 5
