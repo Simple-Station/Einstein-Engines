@@ -28,6 +28,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Robust.Server.GameObjects;
 
 namespace Content.Server.Explosion.EntitySystems;
 
@@ -52,6 +53,7 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly MapSystem _mapSystem = default!;
 
     private EntityQuery<TransformComponent> _transformQuery;
     private EntityQuery<FlammableComponent> _flammableQuery;
