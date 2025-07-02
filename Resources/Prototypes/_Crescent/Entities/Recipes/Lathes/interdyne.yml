@@ -134,3 +134,64 @@
     AdvancedMechatronics: 300
     Steel: 500
     Gold: 1000
+
+- type: latheRecipe
+  id: CyberneticsPainEditorInterdyne
+  result: CyberneticsPainEditor
+  completetime: 1.5
+  materials:
+    BasicMechatronics: 250
+    BasicElectronics: 1000
+    Gold: 500
+    Biomass: 400
+
+- type: latheRecipe
+  id: CyberneticsAdrenalInterdyne
+  result: CyberneticsAdrenal
+  completetime: 1.5
+  materials:
+    BasicMechatronics: 250
+    BasicElectronics: 1000
+    Gold: 500
+    Biomass: 400
+
+- type: latheRecipe
+  id: CyberneticsBloodPumpInterdyne
+  result: CyberneticsBloodPump
+  completetime: 1.5
+  materials:
+    AdvancedMechatronics: 1000
+    BasicElectronics: 500
+    Gold: 500
+    Silver: 350
+    Biomass: 350
+
+- type: latheRecipe
+  id: InterdyneOpticsInterdyne
+  result: InterdyneOptics
+  completetime: 1.5
+  materials:
+    Glass: 300
+    AdvancedElectronics: 650
+    Plastic: 500
+    Biomass: 100
+
+- type: latheRecipe
+  id: CrowbarLeftArmInterdyne
+  result: CrowbarLeftArm
+  completetime: 1.5
+  materials:
+    Silver: 300
+    AdvancedMechatronics: 650
+    BasicElectronics: 300
+    Steel: 1000
+
+- type: latheRecipe
+  id: CrowbarRightArmInterdyne
+  result: CrowbarRightArm
+  completetime: 1.5
+  materials:
+    Silver: 300
+    AdvancedMechatronics: 650
+    BasicElectronics: 300
+    Steel: 1000

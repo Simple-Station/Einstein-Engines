@@ -1,5 +1,5 @@
 - type: entity
-  name: viper
+  name: NCSP Anaconda 9x19mm
   parent: BaseWeaponPistol
   id: WeaponPistolViperWood
   description: A small, low-power pistol with pleasant lacquered wooden grips. Uses 9x19mm PSTF ammo.
