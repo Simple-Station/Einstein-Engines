@@ -1,10 +1,10 @@
 - type: job
-  id: ConscriptKadetNCWL
+  id: ConscriptCadetNCWL
   name: job-name-conscript-ncwl-cadet
   description: job-description-kadet
-  playTimeTracker: ConscriptJobKadetNCWL
+  playTimeTracker: ConscriptJobCadetNCWL
   weight: 10
-  startingGear: ConscriptKadetGear
+  startingGear: ConscriptCadetNCWLGear
   alwaysUseSpawner: true
   icon: "JobIconKadet"
   requirements:
@@ -35,7 +35,7 @@
   - Captain # Frontier
 
 - type: startingGear
-  id: ConscriptKadetGear
+  id: ConscriptCadetNCWLGear
   equipment:
     shoes: ClothingShoesBootsJack
     jumpsuit: ClothingUniformJumpsuitNCWL
