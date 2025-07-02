@@ -67,3 +67,4 @@ We provide some scripts shown below to make the job easier.
 ## License
 
 Please read the [LEGAL.md](./LEGAL.md) file for information on the licenses of the code and assets in this repository.
+Trans Rights.
