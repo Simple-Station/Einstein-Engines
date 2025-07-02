@@ -1,8 +1,8 @@
 - type: entity
   parent: SmokeGrenade
   id: MetalFoamGrenadeFast
-  name: metal foam grenade
-  description: An emergency tool used for patching up holes. Almost as good as real walls.
+  name: rapid metal foam grenade
+  description: An emergency tool used for patching up holes. Hopefully as good as real walls.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Grenades/smoke.rsi

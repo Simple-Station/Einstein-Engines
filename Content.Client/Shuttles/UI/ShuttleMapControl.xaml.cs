@@ -352,7 +352,6 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
             }
 
             var gridColor = _shuttles.GetIFFColor(grid, self: _shuttleEntity == grid.Owner, component: iffComp);
-
             var existingVerts = _verts.GetOrNew(gridColor);
             var existingEdges = _edges.GetOrNew(gridColor);
 
@@ -360,9 +359,20 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
             var (gridPos, gridRot) = _xformSystem.GetWorldPositionRotation(grid.Owner);
             gridPos = Maps.GetGridPosition((grid, gridPhysics), gridPos, gridRot);
 
+
             var gridRelativePos = Vector2.Transform(gridPos, matty);
             gridRelativePos = gridRelativePos with { Y = -gridRelativePos.Y };
             var gridUiPos = ScalePosition(gridRelativePos);
+            if (_shuttleEntity == grid.Owner)
+            {
+                if (EntManager.TryGetComponent<PhysicsComponent>(grid, out var physics))
+                {
+                    Vector2 movementDir = physics.LinearVelocity;
+                    movementDir.Y *= -1;
+                    handle.DrawLine(gridUiPos, gridUiPos + movementDir.Normalized() * movementDir.Length()*3, Color.Red);
+                }
+            }
+
 
             var mapObject = GetMapObject(gridRelativePos, Angle.Zero, scalePosition: true);
             AddMapObject(existingEdges, existingVerts, mapObject);

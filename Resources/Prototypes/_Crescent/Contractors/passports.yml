@@ -12,7 +12,7 @@
       descriptionList:
       - description: "imperial_view_union_passport"
         fontSize: 12
-        color: "#ff7777"
+        color: "#9345d3"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -20,7 +20,7 @@
           - Imperial
       - description: "union_view_union_passport"
         fontSize: 12
-        color: "#77ff77"
+        color: "#99630d"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -28,7 +28,7 @@
           - Unionist
       - description: "american_view_union_passport"
         fontSize: 12
-        color: "#ADD8E6"
+        color: "#2a740a"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -36,7 +36,7 @@
           - Bieselite
       - description: "clarizian_view_union_passport"
         fontSize: 12
-        color: "#2E6F40"
+        color: "#1c89b1"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -65,7 +65,7 @@
       descriptionList:
       - description: "imperial_view_imperial_passport"
         fontSize: 12
-        color: "#ff7777"
+        color: "#9345d3"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -73,7 +73,7 @@
           - Imperial
       - description: "union_view_imperial_passport"
         fontSize: 12
-        color: "#77ff77"
+        color: "#99630d"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -81,7 +81,7 @@
           - Unionist
       - description: "american_view_imperial_passport"
         fontSize: 12
-        color: "#ADD8E6"
+        color: "#2a740a"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -89,7 +89,7 @@
           - Bieselite
       - description: "clarizian_view_imperial_passport"
         fontSize: 12
-        color: "#2E6F40"
+        color: "#1c89b1"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -118,7 +118,7 @@
       descriptionList:
       - description: "imperial_view_american_passport"
         fontSize: 12
-        color: "#ff7777"
+        color: "#9345d3"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -126,7 +126,7 @@
           - Imperial
       - description: "union_view_american_passport"
         fontSize: 12
-        color: "#77ff77"
+        color: "#99630d"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -134,7 +134,7 @@
           - Unionist
       - description: "american_view_american_passport"
         fontSize: 12
-        color: "#ADD8E6"
+        color: "#2a740a"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -142,7 +142,7 @@
           - Bieselite
       - description: "clarizian_view_american_passport"
         fontSize: 12
-        color: "#2E6F40"
+        color: "#1c89b1"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -171,7 +171,7 @@
       descriptionList:
       - description: "imperial_view_clarizian_passport"
         fontSize: 12
-        color: "#ff7777"
+        color: "#9345d3"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -179,7 +179,7 @@
           - Imperial
       - description: "union_view_clarizian_passport"
         fontSize: 12
-        color: "#77ff77"
+        color: "#99630d"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -187,7 +187,7 @@
           - Unionist
       - description: "american_view_clarizian_passport"
         fontSize: 12
-        color: "#ADD8E6"
+        color: "#2a740a"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -195,7 +195,7 @@
           - Bieselite
       - description: "clarizian_view_clarizian_passport"
         fontSize: 12
-        color: "#2E6F40"
+        color: "#1c89b1"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -225,7 +225,7 @@
       descriptionList:
       - description: "imperial_view_coalition_passport"
         fontSize: 12
-        color: "#ff7777"
+        color: "#9345d3"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -233,7 +233,7 @@
           - Imperial
       - description: "union_view_coalition_passport"
         fontSize: 12
-        color: "#77ff77"
+        color: "#99630d"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -241,7 +241,7 @@
           - Unionist
       - description: "american_view_coalition_passport"
         fontSize: 12
-        color: "#ADD8E6"
+        color: "#2a740a"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -249,7 +249,7 @@
           - Bieselite
       - description: "clarizian_view_coalition_passport"
         fontSize: 12
-        color: "#2E6F40"
+        color: "#1c89b1"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -278,7 +278,7 @@
       descriptionList:
       - description: "imperial_view_authority_passport"
         fontSize: 12
-        color: "#ff7777"
+        color: "#9345d3"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -286,7 +286,7 @@
           - Imperial
       - description: "union_view_authority_passport"
         fontSize: 12
-        color: "#77ff77"
+        color: "#99630d"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -294,7 +294,7 @@
           - Unionist
       - description: "american_view_authority_passport"
         fontSize: 12
-        color: "#ADD8E6"
+        color: "#2a740a"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
@@ -302,7 +302,7 @@
           - Bieselite
       - description: "clarizian_view_authority_passport"
         fontSize: 12
-        color: "#2E6F40"
+        color: "#1c89b1"
         requireDetailRange: true
         requirements:
         - !type:CharacterNationalityRequirement
