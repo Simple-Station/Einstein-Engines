@@ -85,7 +85,7 @@
   - type: StaticPrice
     price: 250
 
-#CONSCRIPT
+#CONSCRIPT - NCWL
 - type: entity
   id: ClothingBeltNCWLWebbingFilledRifleman
   parent: ClothingBeltNCWLWebbing
@@ -178,6 +178,111 @@
 - type: entity
   id: ClothingBeltNCWLWebbingFilledMedic
   parent: ClothingBeltNCWLWebbing
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineMagnum
+        amount: 3
+      - id: MedicatedSuture
+      - id: RegenerativeMesh
+      - id: Bloodpack
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+
+#CONSCRIPT - DSM
+- type: entity
+  id: ClothingBeltMilitaryWebbingFilledRifleman
+  parent: ClothingBeltMilitaryWebbing
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: SpeedLoaderRifle
+        amount: 4
+      - id: MagazinePistol
+        amount: 2
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+
+- type: entity
+  id: ClothingBeltMilitaryWebbingFilledAdjutant
+  parent: ClothingBeltMilitaryWebbing
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineBoxLightRifleSurplus
+      - id: MagazineMagnum
+        amount: 2
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+
+- type: entity
+  id: ClothingBeltMilitaryWebbingFilledShotgun
+  parent: ClothingBeltMilitaryWebbing
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxLethalshot
+      - id: MagazinePistol
+        amount: 2
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+
+- type: entity
+  id: ClothingBeltMilitaryWebbingFilledSubmachinegun
+  parent: ClothingBeltMilitaryWebbing
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazinePistolSubMachineGun
+        amount: 4
+      - id: MagazinePistol
+        amount: 2
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+
+- type: entity
+  id: ClothingBeltMilitaryWebbingFilledGunner
+  parent: ClothingBeltMilitaryWebbing
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineRifleDrum
+        amount: 2
+      - id: MagazinePistol
+        amount: 2
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+
+- type: entity
+  id: ClothingBeltMilitaryWebbingFilledSniper
+  parent: ClothingBeltMilitaryWebbing
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineMagnum
+        amount: 3
+      - id: CartridgeAntiMateriel
+        amount: 6
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+
+- type: entity
+  id: ClothingBeltMilitaryWebbingFilledMedic
+  parent: ClothingBeltMilitaryWebbing
   suffix: Filled
   components:
   - type: StorageFill

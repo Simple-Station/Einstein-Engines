@@ -1,12 +1,12 @@
 - type: job
-  id: ConscriptLeaderNCWL
-  name: job-name-conscript-ncwl-leader
+  id: ConscriptLeaderDSM
+  name: job-name-conscript-dsm-leader
   description: job-description-kommissar
-  playTimeTracker: ConscriptJobLeaderNCWL
+  playTimeTracker: ConscriptJobLeaderDSM
   requirements:
     - !type:CharacterWhitelistRequirement
     - !type:FactionRequirement
-      factionID: "NCWL"
+      factionID: "DSM"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -17,7 +17,7 @@
         - Pacifist
         - WheelchairBound
   weight: 55
-  startingGear: ConscriptLeaderNCWLGear
+  startingGear: ConscriptLeaderDSMGear
   alwaysUseSpawner: true
   icon: "JobIconCommissar"
   requireAdminNotify: true
@@ -66,26 +66,25 @@
   - Atmospherics
   - Command
   - Maintenance
-  - NCWLGeneral
+  - DSMGeneral
   - Service
-  - NCWLKommissar
-  - NCWLJail
-  - NCWLArmory
-  - NCWLCommand
+  - DSMJail
+  - DSMArmory
+  - DSMCommand
   - External
   - Captain # Frontier
 
 - type: startingGear
-  id: ConscriptLeaderNCWLGear
+  id: ConscriptLeaderDSMGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitNCWLKommissar
-    id: KommissarPDA
-    ears: ClothingHeadsetNCWL
-    mask: ClothingMaskPilot
-    shoes: ClothingShoesBootsJack
-    outerClothing: ClothingOuterArmorNCWLCarapace
-    head: ClothingHeadHatNCWLKommissarHat
-    belt: ClothingBeltNCWLWebbingFilledKommissar
-    pocket1: WeaponPistolT91
-    back: WeaponSniperNCWLNovomosin
-    suitstorage: EmergencyOxygenTankFilled
+    equipment:
+    jumpsuit: ClothingUniformJumpsuitImperialAdjutantFormal
+    back: WeaponSniperDSMLegax
+    shoes: ClothingShoesBootsImperialLongboots
+    head: ClothingHeadHatImperialBeret
+    outerClothing: ClothingOuterCoatImperialAdjutant
+    id: AdjutantPDA
+    belt: ClothingBeltMilitaryWebbingFilledAdjutant
+    pocket1: WeaponPistolNeoVolker
+    ears: ClothingHeadsetEmpire
+    gloves: ClothingHandsGlovesImperialAdjutantGloves
