@@ -256,7 +256,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: MagazineRifleDrum
+      - id: MagazineLightRifleBox
         amount: 2
       - id: MagazinePistol
         amount: 2

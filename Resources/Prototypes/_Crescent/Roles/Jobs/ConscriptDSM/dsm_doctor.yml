@@ -1,0 +1,56 @@
+- type: job
+  id: ConscriptDoctorDSM
+  name: job-name-conscript-dsm-doctor
+  description: job-description-surgeon
+  playTimeTracker: ConscriptJobSurgeonDSM
+  weight: 20
+  startingGear: ConscriptDoctorDSMGear
+  alwaysUseSpawner: true
+  icon: "JobIconImperialSurgeon"
+  requirements:
+    - !type:FactionRequirement
+      factionID: "DSM"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ForeignerLight
+        - Blindness
+        - Pacifist
+        - WheelchairBound
+  requireAdminNotify: false
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-smarts
+  access:
+  - Command
+  - Empire
+  - Maintenance
+  - ScribesGuild
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: ConscriptDoctorDSMGear
+  equipment:
+    head: ClothingHeadHatImperialSurgeon
+    mask: ClothingMaskImperialCombatGasmask
+    jumpsuit: ClothingUniformJumpsuitImperialSurgeon
+    outerClothing: ClothingOuterArmorImperialTrooperArmor
+    shoes: ClothingShoesBootsImperialLaceup
+    belt: ClothingBeltMilitaryWebbingFilledRifleman
+    gloves: ClothingHandsGlovesImperialLonggloves
+    pocket1: WeaponPistolNeoVolker
+    pocket2: GrenadeShrapnel
+    ears: ClothingHeadsetEmpire
+    id: SurgeonPDA
+    suitstorage: EmergencyOxygenTankFilled
+    back: ClothingBackpackSatchelMedical
+  inhand:
+    - Defibrillator
+    - MedkitAdvancedFilled

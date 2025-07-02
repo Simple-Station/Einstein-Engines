@@ -1,0 +1,52 @@
+- type: job
+  id: ConscriptShotgunDSM
+  name: job-name-conscript-dsm-shotgun
+  description: job-description-kadet #change me later
+  playTimeTracker: ConscriptJobShotgunDSM
+  weight: 10
+  startingGear: ConscriptShotgunDSMGear
+  alwaysUseSpawner: true
+  icon: "JobIconKadet"
+  requirements:
+    - !type:FactionRequirement
+      factionID: "DSM"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - Muted
+        - WheelchairBound
+  requireAdminNotify: false
+  supervisors: job-supervisors-highcomm
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-soldat
+  access:
+  - Command
+  - Maintenance
+  - Service
+  - DSMGeneral
+  - DSMJail
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: ConscriptShotgunDSMGear
+  equipment:
+    head: ClothingHeadHelmetImperialTrooperHelmet
+    mask: ClothingMaskImperialCombatGasmask
+    jumpsuit: ClothingUniformJumpsuitImperialCombat
+    outerClothing: ClothingOuterArmorImperialTrooperArmor
+    shoes: ClothingShoesBootsImperialJackboots
+    belt: ClothingBeltMilitaryWebbingFilledShotgun
+    gloves: ClothingHandsGlovesImperialLonggloves
+    back: WeaponShotgunDSMMatusa
+    pocket1: WeaponPistolComplianceImperial
+    pocket2: GrenadeShrapnel
+    ears: ClothingHeadsetEmpire
+    id: LevymanPDA
+    suitstorage: EmergencyOxygenTankFilled
