@@ -37,9 +37,16 @@
 - type: startingGear
   id: ConscriptSniperNCWLGear
   equipment:
-    shoes: ClothingShoesBootsJack
+    head: ClothingHeadHelmetNCWLBasic
+    mask: ClothingMaskSyndicateFacemask
     jumpsuit: ClothingUniformJumpsuitNCWL
+    outerClothing: ClothingOuterArmorNCWLHeavyCarapace
+    shoes: ClothingShoesBootsJack
+    belt: ClothingBeltNCWLWebbingFilledSniper
+    back: WeaponAntimaterielNCWLHayha
+    pocket1: WeaponPistolT91
+    pocket2: SmokeGrenade
     ears: ClothingHeadsetNCWL
-    belt: WeaponPistolHKUSP
-    id: KadetPDA
-    head: ClothingHeadHatNCWLCapsoft
+    eyes: ClothingEyesGlassesCheapSunglassesBig
+    id: SanitarPDA
+    suitstorage: EmergencyOxygenTankFilled

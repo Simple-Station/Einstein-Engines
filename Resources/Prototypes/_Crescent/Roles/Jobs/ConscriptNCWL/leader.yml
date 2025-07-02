@@ -1,8 +1,8 @@
 - type: job
-  id: KommissarNCWL
-  name: job-name-kommissar
+  id: ConscriptKommissarNCWL
+  name: job-name-conscript-ncwl-leader
   description: job-description-kommissar
-  playTimeTracker: JobKommissarNCWL
+  playTimeTracker: ConscriptJobLeaderNCWL
   requirements:
     - !type:CharacterWhitelistRequirement
     - !type:FactionRequirement

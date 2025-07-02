@@ -37,9 +37,15 @@
 - type: startingGear
   id: ConscriptGunnerNCWLGear
   equipment:
-    shoes: ClothingShoesBootsJack
+    head: ClothingHeadHelmetNCWLHeavy
+    mask: ClothingMaskPilot
     jumpsuit: ClothingUniformJumpsuitNCWL
+    outerClothing: ClothingOuterArmorNCWLHeavyCarapace
+    shoes: ClothingShoesBootsJack
+    belt: ClothingBeltNCWLWebbingFilledGunner
+    back: WeaponLightMachineGunNCWLSurplus
+    pocket1: WeaponPistolComrade
+    pocket2: SmokeGrenade
     ears: ClothingHeadsetNCWL
-    belt: WeaponPistolHKUSP
-    id: KadetPDA
-    head: ClothingHeadHatNCWLCapsoft
+    id: SanitarPDA
+    suitstorage: EmergencyOxygenTankFilled
