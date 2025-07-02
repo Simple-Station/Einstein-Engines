@@ -74,6 +74,8 @@
   id: WeaponShotgunDSMMatusa
   description: A premium combat shotgun ripped from ancient Terran designs. Originates from the now-defunct NanoTrasen.
   components:
+  - type: Item
+    size: Ginormous
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_shotgun.rsi
   - type: Clothing
