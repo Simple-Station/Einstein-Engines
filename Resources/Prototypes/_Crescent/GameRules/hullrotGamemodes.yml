@@ -11,4 +11,15 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: AdventureRule
-#  - type: HullrotGamemode
+  - type: HullrotGamemode
+    id: VladzenaVsJackal
+    gamemodeName: Vladzena's Last Stand
+    gameMaps:
+      Vladzena:
+        gameMapID: Vladzena
+        posX: 1000
+        posY: 1000
+      Jackal:
+        gameMapID: Jackal
+        posX: 3000
+        posY: 3000

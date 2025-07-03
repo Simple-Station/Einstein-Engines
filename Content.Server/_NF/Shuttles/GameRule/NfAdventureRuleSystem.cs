@@ -27,6 +27,7 @@ using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
 using Robust.Shared.Configuration;
+using Content.Server._Crescent.HullrotGamemode.Components;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -129,6 +130,16 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
     }
 
     protected override void Started(EntityUid uid, AdventureRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
+    {
+        base.Started(uid, component, gameRule, args);
+
+        if (TryComp<HullrotGamemodeComponent>(gameRule, out HullrotGamemodeComponent gamemode))
+        {
+            
+        }
+    }
+
+    private void OldStarted(EntityUid uid, AdventureRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
         base.Started(uid, component, gameRule, args);
 
