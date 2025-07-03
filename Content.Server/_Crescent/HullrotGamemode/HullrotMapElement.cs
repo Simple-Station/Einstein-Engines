@@ -12,8 +12,11 @@ namespace Content.Server._Crescent.HullrotGamemode;
 [DataDefinition, PublicAPI]
 public sealed partial class HullrotMapElement
 {
-    [DataField("gameMapID", required: true)]
-    public string GameMapID = default!;
+    [DataField("gameMapID", required: false)]
+    public string? GameMapID = null;
+
+    [DataField("path", required: false)]
+    public string? Path = null;
 
     [DataField("posX", required: true)]
     public float PositionX = 0f;
@@ -21,7 +24,5 @@ public sealed partial class HullrotMapElement
     [DataField("posY", required: true)]
     public float PositionY = 0f;
 
-    // [DataField("shuttleName", required: false)]
-    // public string ShuttleName = "";
 }
 

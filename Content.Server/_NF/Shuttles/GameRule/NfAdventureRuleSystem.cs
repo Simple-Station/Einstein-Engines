@@ -131,25 +131,38 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         }
     }
 
-    // protected override void Started(EntityUid uid, AdventureRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
-    // {
-    //     base.Started(uid, component, gameRule, args);
-
-        
-
-    //     if (TryComp<HullrotGamemodeComponent>(gameRule, out HullrotGamemodeComponent gamemode))
-    //     {
-
-    //     }
-    // }
-
     protected override void Started(EntityUid uid, AdventureRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
+    {
+        var mapId = GameTicker.DefaultMap;
+        base.Started(uid, component, gameRule, args);
+
+        foreach (var gamemap in component.GameMaps)
+        {
+            if (gamemap.Value.Path != null)
+                _sawmill.Debug("PATH: " + gamemap.Value.Path);
+            else if (gamemap.Value.GameMapID != null)
+                _sawmill.Debug("GAMEMAPID: " + gamemap.Value.GameMapID);
+            _sawmill.Debug("posX: " + gamemap.Value.PositionX);
+            _sawmill.Debug("posY: " + gamemap.Value.PositionY);
+            _sawmill.Debug("------------");
+        }
+    }
+
+    private void OldStarted(EntityUid uid, AdventureRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
         base.Started(uid, component, gameRule, args);
 
         _sawmill.Debug("-----LOOK HERE------");
 
         _sawmill.Debug("GAMEMODE NAME: " + component.GamemodeName);
+
+        foreach (var gamemap in component.GameMaps)
+        {
+            _sawmill.Debug("GAMEMAP: " + gamemap.Value.GameMapID);
+            _sawmill.Debug("posX: " + gamemap.Value.PositionX);
+            _sawmill.Debug("posY: " + gamemap.Value.PositionY);
+            _sawmill.Debug("------------");
+        }
 
         _sawmill.Debug("-----LOOK HERE------");
 

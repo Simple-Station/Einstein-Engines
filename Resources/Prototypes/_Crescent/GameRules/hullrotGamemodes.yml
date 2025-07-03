@@ -5,6 +5,24 @@
   components:
   - type: AdventureRule
     gamemodeName: Freeplay
+    gameMaps: 
+      Vladzena:
+        gameMapID: Vladzena
+        posX: 5000
+        posY: 5000
+      Jackal:
+        gameMapID: Jackal
+        posX: 3000
+        posY: 3000
+      Taypan1AsteroidField:
+        path: /Maps/_Crescent/Explorables/taypanone.yml
+        posX: 1000
+        posY: 1000
+      Taypan2AsteroidField:
+        path: /Maps/_Crescent/Explorables/oris.yml
+        posX: 5000
+        posY: 1000
+  
 
 - type: entity
   id: VladzenaJackal
@@ -13,3 +31,12 @@
   components:
   - type: AdventureRule
     gamemodeName: Port Vladzena Vs Grinning Jackal
+    gameMaps: 
+      Vladzena:
+        gameMapID: Vladzena
+        posX: 1000
+        posY: 1000
+      Jackal:
+        gameMapID: Jackal
+        posX: 3000
+        posY: 3000
