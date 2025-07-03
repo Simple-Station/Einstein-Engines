@@ -4,3 +4,10 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: AdventureRule
+
+- type: entity
+  id: Unionfall
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: AdventureRule

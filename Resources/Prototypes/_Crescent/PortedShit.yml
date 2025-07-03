@@ -574,8 +574,19 @@
     - adventure
     - hullrot
   name: adventure-title
-  showInVote: false
+  showInVote: true
   description: adventure-description
   rules:
     - Adventure
+    - LavalandStormScheduler # Lavaland Change
+
+- type: gamePreset
+  id: Unionfall
+  alias:
+    - unionfall
+  name: unionfall-title
+  showInVote: true
+  description: unionfall-description
+  rules:
+    - Unionfall
     - LavalandStormScheduler # Lavaland Change
