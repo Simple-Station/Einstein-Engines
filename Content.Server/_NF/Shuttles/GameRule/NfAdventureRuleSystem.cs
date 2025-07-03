@@ -113,6 +113,7 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         }
     }
 
+    //if you ever have the misfortune of disentangling this i owe you an apology | .2 2025
     private void SpawnMapElementByID(MapId mapid, string gameMapID, float posX, float posY, Color color)
     {
         if (_prototypeManager.TryIndex<GameMapPrototype>(gameMapID, out var stationProto))

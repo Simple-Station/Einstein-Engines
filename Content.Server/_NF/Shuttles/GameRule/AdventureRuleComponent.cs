@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-using Content.Server._Crescent.HullrotGamemode;
+using Content.Server.GameTicking.Configuration;
 using Robust.Shared.Audio;
 
 namespace Content.Server.GameTicking.Rules.Components;
