@@ -27,7 +27,6 @@ using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
 using Robust.Shared.Configuration;
-using Content.Server._Crescent.HullrotGamemode.Components;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -48,6 +47,7 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
     [Dependency] private readonly ShuttleSystem _shuttle = default!;
 
     private readonly HttpClient _httpClient = new();
+    private ISawmill _sawmill = default!;
 
     [ViewVariables]
     // this is used for money but its very poorly named - SPCR 2025
@@ -57,6 +57,8 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
     public override void Initialize()
     {
         base.Initialize();
+
+        _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("nfadventurerulesystem");
 
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawningEvent);
     }
@@ -129,19 +131,29 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         }
     }
 
+    // protected override void Started(EntityUid uid, AdventureRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
+    // {
+    //     base.Started(uid, component, gameRule, args);
+
+        
+
+    //     if (TryComp<HullrotGamemodeComponent>(gameRule, out HullrotGamemodeComponent gamemode))
+    //     {
+
+    //     }
+    // }
+
     protected override void Started(EntityUid uid, AdventureRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
         base.Started(uid, component, gameRule, args);
 
-        if (TryComp<HullrotGamemodeComponent>(gameRule, out HullrotGamemodeComponent gamemode))
-        {
-            
-        }
-    }
+        _sawmill.Debug("-----LOOK HERE------");
 
-    private void OldStarted(EntityUid uid, AdventureRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
-    {
-        base.Started(uid, component, gameRule, args);
+        _sawmill.Debug("GAMEMODE NAME: " + component.GamemodeName);
+
+        _sawmill.Debug("-----LOOK HERE------");
+
+
 
         var depotMap = "/Maps/_NF/POI/cargodepot.yml";
         var tinnia = "/Maps/_NF/POI/tinnia.yml";

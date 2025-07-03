@@ -1,12 +1,12 @@
-- type: hullrotGamemode
-  id: VladzenaVsJackal
-  gamemodeName: Vladzena's Last Stand
-  gameMaps:
-    Vladzena:
-      gameMapID: Vladzena
-      posX: 1000
-      posY: 1000
-    Jackal:
-      gameMapID: Jackal
-      posX: 3000
-      posY: 3000
+# - type: hullrotGamemode THIS STILL FUCKS UP AND DOESNT RECOGNISE THE PROTOTYPE!!!! FUCK!!
+#   id: VladzenaVsJackal
+#   gamemodeName: Vladzena's Last Stand
+#   gameMaps:
+#     Vladzena:
+#       gameMapID: Vladzena
+#       posX: 1000
+#       posY: 1000
+#     Jackal:
+#       gameMapID: Jackal
+#       posX: 3000
+#       posY: 3000
