@@ -568,14 +568,27 @@
     layers:
       - state: fueltank
 
+# GAME PRESETS ARE WHAT YOU VOTE ON AS A GAMEMODE.
+# They do NOT CONTROL what spawns in by themselves. this is handled by the rule under it.
+# in roundstart.yml you can find "Adventure" "VladzenaJackal", etc.
+
 - type: gamePreset
   id: Adventure
   alias:
     - adventure
     - hullrot
   name: adventure-title
-  showInVote: false
+  showInVote: true
   description: adventure-description
   rules:
     - Adventure
+    - LavalandStormScheduler # Lavaland Change
+
+- type: gamePreset
+  id: VladzenaJackal
+  name: vladzenajackal-title
+  showInVote: true
+  description: vladzenajackal-description
+  rules:
+    - VladzenaJackal
     - LavalandStormScheduler # Lavaland Change
