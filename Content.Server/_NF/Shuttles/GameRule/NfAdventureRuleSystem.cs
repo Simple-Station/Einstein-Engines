@@ -113,7 +113,7 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         }
     }
 
-    private void SpawnMapElement(MapId mapid, string mapPath, string gameMapID, float posX, float posY, Color color)
+    private void SpawnMapElementByID(MapId mapid, string gameMapID, float posX, float posY, Color color)
     {
         if (_map.TryLoad(mapid, mapPath, out var depotUid, new MapLoadOptions
         {
@@ -128,6 +128,21 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
             var meta = EnsureComp<MetaDataComponent>(depotUid[0]);
             _meta.SetEntityName(depotUid[0], "GSC Grinning Jackal", meta); //NEED TO FIX THIS. 
             _shuttle.SetIFFColor(depotUid[0], color);
+        }
+    }
+
+    private void SpawnMapElementByPath(MapId mapid, string path, float posX, float posY, Color color)
+    {
+        if (_map.TryLoad(mapid, path, out var depotUid, new MapLoadOptions
+        {
+            Offset = new Vector2(posX, posY)
+
+        }))
+        {
+            var meta = EnsureComp<MetaDataComponent>(depotUid[0]);
+            _meta.SetEntityName(depotUid[0], "Imperial Hauler Wreck", meta);
+            _shuttle.SetIFFColor(depotUid[0], color);
+            _shuttle.AddIFFFlag(depotUid[0], IFFFlags.HideLabel);
         }
     }
 
