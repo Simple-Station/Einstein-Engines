@@ -1,5 +1,8 @@
-# - type: hullrotGameMode
-#   id: VladzenaVsJackal
-#   gamemodeName: Vladzena's Last Stand
-#   gameMaps:
-#   - Vladzena
+- type: hullrotGamemode
+  id: VladzenaVsJackal
+  gamemodeName: Vladzena's Last Stand
+  gameMaps:
+    Vladzena:
+      gameMapID: Vladzena
+      posX: 1000
+      posY: 1000

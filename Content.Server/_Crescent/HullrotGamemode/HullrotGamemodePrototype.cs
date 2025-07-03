@@ -12,7 +12,7 @@ namespace Content.Server._Crescent.HullrotGamemode;
 /// </summary>
 [Prototype("hullrotGamemode"), PublicAPI]
 [DebuggerDisplay("HullrotGamemode [{ID}]")]
-public sealed partial class HullrotGameMode : IPrototype
+public sealed partial class HullrotGamemode : IPrototype
 {
     /// <inheritdoc/>
     [IdDataField]
@@ -24,13 +24,13 @@ public sealed partial class HullrotGameMode : IPrototype
     [DataField("gamemodeName", required: true)]
     public string GamemodeName { get; private set; } = default!;
 
-    //[DataField("gameMaps", required: true)]
-    //private Dictionary<string, GameModeConfig> _gameMaps = new();
+    [DataField("gameMaps", required: true)]
+    private Dictionary<string, HullrotMapElement> _gameMaps = new();
 
     /// <summary>
-    /// The gameMaps this gamemode contains. The names should match with the gameMap's ID field.
+    /// The gameMaps this gamemode contains.
     /// </summary>
-    //public IReadOnlyDictionary<string, GameModeConfig> GameMaps => _gameMaps;
+    public IReadOnlyDictionary<string, HullrotMapElement> GameMaps => _gameMaps;
 
 
 }
