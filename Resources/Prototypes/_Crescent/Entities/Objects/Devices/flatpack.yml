@@ -474,3 +474,17 @@
     - state: kit
   - type: StaticPrice
     price: 500
+
+- type: entity
+  parent: BaseFlatpack
+  id: MufflerFlatpack
+  name: electronic warfare muffler flatpack
+  description:  Parts used to build an electronic warfare module. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: EwarDevice
+  - type: Sprite
+    layers:
+    - state: kit
+  - type: StaticPrice
+    price: 500

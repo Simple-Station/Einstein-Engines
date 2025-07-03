@@ -48,11 +48,23 @@
 
 - type: techDiscipline
   id: Interdyne
-  name: research-discipline-biochemical
+  name: research-discipline-interdyne
   color: "#FF6961"
   icon:
     sprite: _Crescent/Interface/Misc/research_disciplines.rsi
-    state: civilianservices
+    state: interdyne
+  tierPrerequisites:
+    1: 0
+    2: 0.75
+    3: 0.75
+
+- type: techDiscipline
+  id: Cyberdawn
+  name: research-discipline-cyberdawn
+  color: "#FF6961"
+  icon:
+    sprite: _Crescent/Interface/Misc/research_disciplines.rsi
+    state: cyberdawn
   tierPrerequisites:
     1: 0
     2: 0.75
