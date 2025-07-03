@@ -42,10 +42,10 @@
     jumpsuit: ClothingUniformJumpsuitNCWL
     outerClothing: ClothingOuterArmorNCWLHeavyCarapace
     shoes: ClothingShoesBootsJack
-    belt: ClothingBeltNCWLWebbingFilledRifleman
+    belt: ClothingBeltNCWLPouchesFilledRifleman
     back: WeaponSniperNCWLNovomosin
-    pocket1: WeaponPistolComrade
+    pocket1: EmergencyOxygenTankFilled
     pocket2: GrenadeShrapnel
     ears: ClothingHeadsetNCWL
     id: SanitarPDA
-    suitstorage: EmergencyOxygenTankFilled
+    suitstorage: WeaponPistolComrade

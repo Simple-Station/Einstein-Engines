@@ -43,13 +43,13 @@
     jumpsuit: ClothingUniformJumpsuitImperialSurgeon
     outerClothing: ClothingOuterArmorImperialTrooperArmor
     shoes: ClothingShoesBootsImperialLaceup
-    belt: ClothingBeltMilitaryWebbingFilledRifleman
+    belt: ClothingBeltAssaultFilledMedic
     gloves: ClothingHandsGlovesImperialLonggloves
-    pocket1: WeaponPistolNeoVolker
+    pocket1: EmergencyOxygenTankFilled
     pocket2: GrenadeShrapnel
     ears: ClothingHeadsetEmpire
     id: SurgeonPDA
-    suitstorage: EmergencyOxygenTankFilled
+    suitstorage: WeaponPistolNeoVolker
     back: ClothingBackpackSatchelMedical
   inhand:
     - Defibrillator

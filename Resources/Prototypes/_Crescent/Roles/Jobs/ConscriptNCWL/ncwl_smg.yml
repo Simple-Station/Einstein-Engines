@@ -42,11 +42,11 @@
     jumpsuit: ClothingUniformJumpsuitNCWL
     outerClothing: ClothingOuterArmorNCWLHeavyCarapace
     shoes: ClothingShoesBootsJack
-    belt: ClothingBeltNCWLWebbingFilledSubmachinegun
+    belt: ClothingBeltNCWLPouchesFilledSubmachinegun
     back: WeaponSubMachineGunNCWLPartisan
-    pocket1: WeaponPistolComrade
+    pocket1: EmergencyOxygenTankFilled
     pocket2: GrenadeFlashBang
     ears: ClothingHeadsetNCWL
     eyes: ClothingEyesGlassesNCWL
     id: SanitarPDA
-    suitstorage: EmergencyOxygenTankFilled
+    suitstorage: WeaponPistolComrade

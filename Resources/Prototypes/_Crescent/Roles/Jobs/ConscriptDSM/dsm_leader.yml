@@ -82,7 +82,7 @@
     head: ClothingHeadHatImperialBeret
     outerClothing: ClothingOuterHardsuitImperialCommand
     id: KnightPDA
-    belt: ClothingBeltMilitaryWebbingFilledAdjutant
-    pocket1: WeaponPistolNeoVolker
+    belt: ClothingBeltAssaultFilledAdjutant
+    pocket1: EmergencyOxygenTankFilled
     ears: ClothingHeadsetEmpire
-    suitstorage: EmergencyOxygenTankFilled
+    suitstorage: WeaponPistolNeoVolker

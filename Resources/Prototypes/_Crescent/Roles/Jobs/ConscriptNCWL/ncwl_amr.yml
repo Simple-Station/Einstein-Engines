@@ -42,11 +42,11 @@
     jumpsuit: ClothingUniformJumpsuitNCWL
     outerClothing: ClothingOuterArmorNCWLHeavyCarapace
     shoes: ClothingShoesBootsJack
-    belt: ClothingBeltNCWLWebbingFilledSniper
+    belt: ClothingBeltNCWLPouchesFilledSniper
     back: WeaponAntimaterielNCWLHayha
-    pocket1: WeaponPistolT91
+    pocket1: EmergencyOxygenTankFilled
     pocket2: SmokeGrenade
     ears: ClothingHeadsetNCWL
     eyes: ClothingEyesGlassesCheapSunglassesBig
     id: SanitarPDA
-    suitstorage: EmergencyOxygenTankFilled
+    suitstorage: WeaponPistolT91

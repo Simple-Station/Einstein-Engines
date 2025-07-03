@@ -87,8 +87,8 @@
 
 #CONSCRIPT - NCWL
 - type: entity
-  id: ClothingBeltNCWLWebbingFilledRifleman
-  parent: ClothingBeltNCWLWebbing
+  id: ClothingBeltNCWLPouchesFilledRifleman
+  parent: ClothingBeltNCWLPouches
   suffix: Filled
   components:
   - type: StorageFill
@@ -102,8 +102,8 @@
       - id: SpaceMedipen
 
 - type: entity
-  id: ClothingBeltNCWLWebbingFilledKommissar
-  parent: ClothingBeltNCWLWebbing
+  id: ClothingBeltNCWLPouchesFilledKommissar
+  parent: ClothingBeltNCWLPouches
   suffix: Filled
   components:
   - type: StorageFill
@@ -117,8 +117,8 @@
       - id: SpaceMedipen
 
 - type: entity
-  id: ClothingBeltNCWLWebbingFilledShotgun
-  parent: ClothingBeltNCWLWebbing
+  id: ClothingBeltNCWLPouchesFilledShotgun
+  parent: ClothingBeltNCWLPouches
   suffix: Filled
   components:
   - type: StorageFill
@@ -131,8 +131,8 @@
       - id: SpaceMedipen
 
 - type: entity
-  id: ClothingBeltNCWLWebbingFilledSubmachinegun
-  parent: ClothingBeltNCWLWebbing
+  id: ClothingBeltNCWLPouchesFilledSubmachinegun
+  parent: ClothingBeltNCWLPouches
   suffix: Filled
   components:
   - type: StorageFill
@@ -146,8 +146,8 @@
       - id: SpaceMedipen
 
 - type: entity
-  id: ClothingBeltNCWLWebbingFilledGunner
-  parent: ClothingBeltNCWLWebbing
+  id: ClothingBeltNCWLPouchesFilledGunner
+  parent: ClothingBeltNCWLPouches
   suffix: Filled
   components:
   - type: StorageFill
@@ -161,8 +161,8 @@
       - id: SpaceMedipen
 
 - type: entity
-  id: ClothingBeltNCWLWebbingFilledSniper
-  parent: ClothingBeltNCWLWebbing
+  id: ClothingBeltNCWLPouchesFilledSniper
+  parent: ClothingBeltNCWLPouches
   suffix: Filled
   components:
   - type: StorageFill
@@ -176,8 +176,8 @@
       - id: SpaceMedipen
 
 - type: entity
-  id: ClothingBeltNCWLWebbingFilledMedic
-  parent: ClothingBeltNCWLWebbing
+  id: ClothingBeltNCWLPouchesFilledMedic
+  parent: ClothingBeltNCWLPouches
   suffix: Filled
   components:
   - type: StorageFill
@@ -193,10 +193,12 @@
 
 #CONSCRIPT - DSM
 - type: entity
-  id: ClothingBeltMilitaryWebbingFilledRifleman
-  parent: ClothingBeltMilitaryWebbing
+  id: ClothingBeltAssaultFilledRifleman
+  parent: ClothingBeltAssault
   suffix: Filled
   components:
+  - type: Storage
+    whitelist:
   - type: StorageFill
     contents:
       - id: MagazineBoxLightRifleSurplus
@@ -207,10 +209,12 @@
       - id: SpaceMedipen
 
 - type: entity
-  id: ClothingBeltMilitaryWebbingFilledAdjutant
-  parent: ClothingBeltMilitaryWebbing
+  id: ClothingBeltAssaultFilledAdjutant
+  parent: ClothingBeltAssault
   suffix: Filled
   components:
+  - type: Storage
+    whitelist:
   - type: StorageFill
     contents:
       - id: MagazineBoxLightRifleSurplus
@@ -221,10 +225,12 @@
       - id: SpaceMedipen
 
 - type: entity
-  id: ClothingBeltMilitaryWebbingFilledShotgun
-  parent: ClothingBeltMilitaryWebbing
+  id: ClothingBeltAssaultFilledShotgun
+  parent: ClothingBeltAssault
   suffix: Filled
   components:
+  - type: Storage
+    whitelist:
   - type: StorageFill
     contents:
       - id: BoxLethalshot
@@ -235,10 +241,12 @@
       - id: SpaceMedipen
 
 - type: entity
-  id: ClothingBeltMilitaryWebbingFilledSubmachinegun
-  parent: ClothingBeltMilitaryWebbing
+  id: ClothingBeltAssaultFilledSubmachinegun
+  parent: ClothingBeltAssault
   suffix: Filled
   components:
+  - type: Storage
+    whitelist:
   - type: StorageFill
     contents:
       - id: MagazinePistolSubMachineGun
@@ -250,10 +258,12 @@
       - id: SpaceMedipen
 
 - type: entity
-  id: ClothingBeltMilitaryWebbingFilledGunner
-  parent: ClothingBeltMilitaryWebbing
+  id: ClothingBeltAssaultFilledGunner
+  parent: ClothingBeltAssault
   suffix: Filled
   components:
+  - type: Storage
+    whitelist:
   - type: StorageFill
     contents:
       - id: MagazineLightRifleBox
@@ -265,10 +275,12 @@
       - id: SpaceMedipen
 
 - type: entity
-  id: ClothingBeltMilitaryWebbingFilledSniper
-  parent: ClothingBeltMilitaryWebbing
+  id: ClothingBeltAssaultFilledSniper
+  parent: ClothingBeltAssault
   suffix: Filled
   components:
+  - type: Storage
+    whitelist:
   - type: StorageFill
     contents:
       - id: MagazineMagnum
@@ -280,10 +292,12 @@
       - id: SpaceMedipen
 
 - type: entity
-  id: ClothingBeltMilitaryWebbingFilledMedic
-  parent: ClothingBeltMilitaryWebbing
+  id: ClothingBeltAssaultFilledMedic
+  parent: ClothingBeltAssault
   suffix: Filled
   components:
+  - type: Storage
+    whitelist:
   - type: StorageFill
     contents:
       - id: MagazineMagnum

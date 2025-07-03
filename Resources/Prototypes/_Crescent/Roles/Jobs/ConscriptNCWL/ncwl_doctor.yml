@@ -41,11 +41,11 @@
     shoes: ClothingShoesColorBlack
     id: DoktorPDA
     ears: ClothingHeadsetNCWL
-    belt: ClothingBeltNCWLWebbingFilledMedic
-    pocket1: WeaponPistolT91
+    belt: ClothingBeltNCWLPouchesFilledMedic
+    pocket1: EmergencyOxygenTankFilled
     outerClothing: ClothingOuterArmorNCWLCarapaceDoktor
     head: ClothingHeadHatNCWLCapsoftMedical
-    suitstorage: EmergencyOxygenTankFilled
+    suitstorage: WeaponPistolT91
     back: ClothingBackpackSatchelMedical
   inhand:
     - Defibrillator

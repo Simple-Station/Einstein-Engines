@@ -81,7 +81,7 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_shotgun.rsi
   - type: Gun
-    fireRate: 0.60
+    fireRate: 0.8
     damageModifier: 1
     selectedMode: SemiAuto
     availableModes:

@@ -42,11 +42,11 @@
     jumpsuit: ClothingUniformJumpsuitImperialCombat
     outerClothing: ClothingOuterArmorImperialTrooperArmor
     shoes: ClothingShoesBootsImperialJackboots
-    belt: ClothingBeltMilitaryWebbingFilledSubmachinegun
+    belt: ClothingBeltAssaultFilledSubmachinegun
     gloves: ClothingHandsGlovesImperialLonggloves
     back: WeaponSubMachineGunDSMArbiter
-    pocket1: WeaponPistolComplianceImperial
+    pocket1: EmergencyOxygenTankFilled
     pocket2: GrenadeFlashBang
     ears: ClothingHeadsetEmpire
     id: LevymanPDA
-    suitstorage: EmergencyOxygenTankFilled
+    suitstorage: WeaponPistolComplianceImperial

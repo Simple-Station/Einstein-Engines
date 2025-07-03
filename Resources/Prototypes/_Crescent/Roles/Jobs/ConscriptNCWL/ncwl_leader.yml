@@ -84,7 +84,7 @@
     shoes: ClothingShoesBootsJack
     outerClothing: ClothingOuterArmorNCWLCarapace
     head: ClothingHeadHatNCWLKommissarHat
-    belt: ClothingBeltNCWLWebbingFilledKommissar
-    pocket1: WeaponPistolT91
+    belt: ClothingBeltNCWLPouchesFilledKommissar
+    pocket1: EmergencyOxygenTankFilled
     back: WeaponSniperNCWLNovomosin
-    suitstorage: EmergencyOxygenTankFilled
+    suitstorage: WeaponPistolT91
