@@ -92,6 +92,7 @@
       - DrugComponent
       - Sheet
       - RawMaterial
+      - CraftMaterials
   - type: Lathe
     idleState: base_machine
     runningState: base_machine_processing
@@ -130,6 +131,19 @@
       - ClothingOuterArmorSyndicateArmorvestInterdyne
       - ClothingOuterHardsuitTraumasec
       - DefibrillatorSyndicate
+      - OmnimedToolSyndieInterdyne
+      - CyberneticsPainEditorInterdyne
+      - CyberneticsAdrenalInterdyne
+      - CyberneticsBloodPumpInterdyne
+      - CrowbarLeftArmInterdyne
+      - CrowbarRightArmInterdyne
+      - SecHypoInterdyne
+      - CartridgeEphedrineInterdyne
+      - CartridgeTirizeneInterdyne
+      - CartridgeBicaridineInterdyne
+      - CartridgeSalineInterdyne
+      - CartridgeDermalineInterdyne
+      - InterdyneOptics
   - type: Anchorable
     flags:
     - Anchorable
@@ -157,6 +171,14 @@
   name: pristine microforge
   description: Used to print equipment discovered through techdisks, or researched.
   components:
+  - type: MaterialStorage
+    dropOnDeconstruct: false #should drop ores instead of ingots/sheets
+    ignoreColor: true
+    canEjectStoredMaterials: true
+    whitelist:
+      tags:
+      - Sheet
+      - CraftMaterials
   - type: Sprite
     sprite: _Crescent/Structures/nanoforge.rsi
     layers:
@@ -362,7 +384,30 @@
       - RPED
       - WeaponParticleDecelerator
       - HoloprojectorField
-
+      - ClothingUniformJumpsuitSyndicateSuitCyberdawn
+      - ClothingUniformJumpsuitSyndicateLabCyberdawn
+      - ClothingUniformJumpsuitSyndicateSoldierCyberdawn
+      - ClothingOuterArmorCyberdawnPatriarch
+      - ClothingOuterHardsuitCybersun
+      - ClothingHeadHatPatriarch
+      - WeaponSubMachineGunAtreidesCyberdawn
+      - WeaponRifleAkCyberdawn
+      - WeaponRifleKrinkovCyberdawn
+      - WeaponPistolViperWoodCyberdawn
+      - PowerSinkCyberdawn
+      - MufflerFlatpack
+      - RadioJammerCyberdawn
+      - EmagCyberdawn
+      - WeaponLightMachineGunNCSPRPD
+      - WeaponRifleMayflower
+      - DnaScramblerImplanter
+      - EmpImplanter
+      - EnergyDagger
+      - ClothingOuterHardsuitSyndieMedicCyberdawn
+      - ClothingOuterHardsuitCybersunStealthCyberdawn
+      - MagazinePistolSpecialMindbreakerCyberdawn
+      - ClothingEyesThermalVisionGogglesCyberdawn
+      - WeaponPistolPsibreakerCyberdawn
   - type: Machine
     board: MicroforgeCircuitboard
 

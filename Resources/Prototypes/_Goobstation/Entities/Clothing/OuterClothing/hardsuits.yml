@@ -64,16 +64,19 @@
     highPressureMultiplier: 0.05
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.75
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.85 # Metamaterials are quite brittle
-        Slash: 0.75
-        Piercing: 0.70 # But at least it can have steel plates underneath.
-        Heat: 0.75
-        Radiation: 0.85
-        Caustic: 0.85
+    damageCoefficient: 0.65
+  - type: DegradeableArmor
+    armorMaxHealth: 600
+    armorType: Metallic
+    armorRepair: SteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 10
+        Slash: 25
+        Piercing: 45
+        Heat: 15
+        Caustic: 15
+        Radiation: 25
   - type: ClothingSpeedModifier
     walkModifier: 0.8
     sprintModifier: 0.85
