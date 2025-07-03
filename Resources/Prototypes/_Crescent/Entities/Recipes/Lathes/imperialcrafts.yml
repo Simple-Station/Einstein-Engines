@@ -1,0 +1,128 @@
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitImperialWorker
+  result: ClothingOuterHardsuitImperialWorker
+  completetime: 2
+  materials:
+    Steel: 2000
+    HardsuitElectronics: 500
+    Plastic: 500
+    Cloth: 1000
+
+
+- type: latheRecipe
+  id: ClothingOuterCoatImperialSoftsuit
+  result: ClothingOuterCoatImperialSoftsuit
+  completetime: 2
+  materials:
+    Plastic: 1000
+    Cloth: 1250
+
+- type: latheRecipe
+  id: ClothingHeadHelmetImperialEVA
+  result: ClothingHeadHelmetImperialEVA
+  completetime: 2
+  materials:
+    Plastic: 450
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingOuterCoatImperialParade
+  result: ClothingOuterCoatImperialParade
+  completetime: 2
+  materials:
+    Cloth: 750
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitImperialSoldierFormal
+  result: ClothingUniformJumpsuitImperialSoldierFormal
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitImperialDoctor
+  result: ClothingUniformJumpsuitImperialDoctor
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitImperialFreeholder
+  result: ClothingUniformJumpsuitImperialFreeholder
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitImperialNobleMale
+  result: ClothingUniformJumpsuitImperialNobleMale
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitImperialNobleFemale
+  result: ClothingUniformJumpsuitImperialNobleFemale
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitImperialNobleFemale
+  result: ClothingUniformJumpsuitImperialNobleFemale
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingHandsGlovesImperialWorkerGloves
+  result: ClothingHandsGlovesImperialWorkerGloves
+  completetime: 2
+  materials:
+    Cloth: 500
+    Plastic: 500
+
+- type: latheRecipe
+  id: ClothingMaskImperialGovernorMask
+  result: ClothingMaskImperialGovernorMask
+  completetime: 2
+  materials:
+    Glass: 500
+    Plastic: 500
+
+- type: latheRecipe
+  id: ClothingOuterCoatImperialGovernor
+  result: ClothingOuterCoatImperialGovernor
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingNeckCloakImperialGovernor
+  result: ClothingNeckCloakImperialGovernor
+  completetime: 2
+  materials:
+    Durathread: 500
+
+- type: latheRecipe
+  id: ClothingShoesBootsImperialLongboots
+  result: ClothingShoesBootsImperialLongboots
+  completetime: 2
+  materials:
+    Durathread: 500
+
+- type: latheRecipe
+  id: ClothingShoesBootsImperialLongboots
+  result: ClothingHandsGlovesImperialLonggloves
+  completetime: 2
+  materials:
+    Durathread: 500
+
+- type: latheRecipe
+  id: ClothingHeadHelmetImperialWorkerHelmet
+  result: ClothingHeadHelmetImperialWorkerHelmet
+  completetime: 2
+  materials:
+    Cloth: 500
+    Plastic: 1000

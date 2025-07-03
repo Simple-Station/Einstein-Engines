@@ -42,7 +42,7 @@
     Durathread: 750
     Tungsten: 750
     Steel: 1500
-    HardsuitElectronics: 350
+    HardsuitElectronics: 500
 
 - type: latheRecipe
   id: WeaponSubMachineGunAtreidesCyberdawn
@@ -50,7 +50,7 @@
   completetime: 1.5
   materials:
     Steel: 1500
-    BallisticCycler: 400
+    BallisticCycler: 500
 
 - type: latheRecipe
   id: WeaponRifleAkCyberdawn
@@ -59,7 +59,7 @@
   materials:
     Steel: 1500
     Plastic: 300
-    BallisticCycler: 350
+    BallisticCycler: 500
 
 - type: latheRecipe
   id: WeaponRifleKrinkovCyberdawn
@@ -67,7 +67,7 @@
   completetime: 1.5
   materials:
     Steel: 1000
-    BallisticCycler: 350
+    BallisticCycler: 500
 
 - type: latheRecipe
   id: WeaponPistolViperWoodCyberdawn
@@ -75,24 +75,24 @@
   completetime: 1.5
   materials:
     Steel: 800
-    BallisticCycler: 250
+    BallisticCycler: 500
 
 - type: latheRecipe
   id: WeaponLightMachineGunNCSPRPD
   result: WeaponLightMachineGunNCSPRPD
   completetime: 1.5
   materials:
-    Steel: 1000
-    BasicMechatronics: 250
-    BallisticCycler: 750
+    Steel: 1500
+    BasicMechatronics: 500
+    BallisticCycler: 1000
 
 - type: latheRecipe
   id: WeaponRifleMayflower
   result: WeaponRifleMayflower
   completetime: 1.5
   materials:
-    Steel: 800
-    BasicMechatronics: 250
+    Steel: 1000
+    BasicMechatronics: 500
     BallisticCycler: 500
 
 - type: latheRecipe
@@ -137,7 +137,7 @@
   result: DnaScramblerImplanter
   completetime: 1.5
   materials:
-    AdvancedElectronics: 250
+    AdvancedElectronics: 500
     Biomass: 300
     Silver: 400
 
@@ -146,7 +146,7 @@
   result: EmpImplanter
   completetime: 1.5
   materials:
-    AdvancedElectronics: 250
+    AdvancedElectronics: 500
     Biomass: 300
     Gold: 400
 
@@ -155,16 +155,16 @@
   result: EnergyDagger
   completetime: 1.5
   materials:
-    AdvancedElectronics: 250
-    Plastic: 100
-    WeakLaserLocus: 400
+    AdvancedElectronics: 1000
+    Plastic: 250
+    WeakLaserLocus: 500
 
 - type: latheRecipe
   id: ClothingOuterHardsuitSyndieMedicCyberdawn
   result: ClothingOuterHardsuitSyndieMedic
   completetime: 1.5
   materials:
-    HardsuitElectronics: 250
+    HardsuitElectronics: 500
     Silver: 500
     Durathread: 500
     Steel: 800
@@ -177,8 +177,8 @@
     HardsuitElectronics: 500
     Silver: 750
     Durathread: 500
-    NanotrasenElectronics: 750
-    Steel: 1000
+    NanotrasenElectronics: 1000
+    Steel: 1500
 
 - type: latheRecipe
   id: WeaponPistolPsiBreakerCyberdawn
@@ -187,7 +187,7 @@
   materials:
     Gold: 750
     BallisticCycler: 250
-    NanotrasenMechatronics: 250
+    NanotrasenMechatronics: 500
     Steel: 1000
 
 - type: latheRecipe
