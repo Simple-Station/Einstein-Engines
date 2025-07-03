@@ -1,19 +1,19 @@
 - type: job
-  id: KommandantATH
-  name: job-name-kommandant
-  description: job-description-kommandant
-  playTimeTracker: JobKommandantATH
+  id: ChirurgeonATH
+  name: job-name-chirurgeon
+  description: job-description-chirurgeon
+  playTimeTracker: JobChirurgeonATH
   requirements:
-    - !type:CharacterWhitelistRequirement
     - !type:CharacterSpeciesRequirement
       species:
         - Human
+        - Oni
     - !type:FactionRequirement
       factionID: "ATH"
-  weight: 87
-  startingGear: KommandantGear
+  weight: 78
+  startingGear: ChirurgeonGear
   alwaysUseSpawner: true
-  icon: "JobIconKommandant"
+  icon: "JobIconChirurgeon"
   requireAdminNotify: true
   supervisors: job-supervisors-ath
   canBeAntag: false
@@ -21,7 +21,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-kommandant
+        rank: crescent-rank-smarts
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -58,19 +58,14 @@
   - Maintenance
   - Service
   - External
-  - Kommandant
   - Authority
-  - AuthorityRanking
   - Authoritymed
-  - AuthoritySupply
 
 - type: startingGear
-  id: KommandantGear
+  id: ChirurgeonGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitAuthorityKommandant
+    jumpsuit: ClothingUniformJumpsuitAuthorityChirurgeon
+    outerClothing: ClothingOuterCoatAuthorityChirurgeon
     shoes: ClothingShoesBootsJack
-    head: ClothingHeadHatAuthorityKommandant
-    outerClothing: ClothingOuterCoatAuthorityKommandant
-    belt: ClothingBeltSheathFilled
-    id: KommandantPDA
+    id: ChirurgeonPDA
     ears: ClothingHeadsetAuthority
