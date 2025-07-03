@@ -4,7 +4,6 @@
   description: job-description-kommissar
   playTimeTracker: ConscriptJobLeaderNCWL
   requirements:
-    - !type:CharacterWhitelistRequirement
     - !type:FactionRequirement
       factionID: "NCWL"
     - !type:CharacterTraitRequirement

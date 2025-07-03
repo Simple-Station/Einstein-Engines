@@ -1,10 +1,9 @@
 - type: job
   id: ConscriptLeaderDSM
   name: job-name-conscript-dsm-leader
-  description: job-description-kommissar
+  description: job-description-knight
   playTimeTracker: ConscriptJobLeaderDSM
   requirements:
-    - !type:CharacterWhitelistRequirement
     - !type:FactionRequirement
       factionID: "DSM"
     - !type:CharacterTraitRequirement
@@ -19,15 +18,15 @@
   weight: 55
   startingGear: ConscriptLeaderDSMGear
   alwaysUseSpawner: true
-  icon: "JobIconCommissar"
+  icon: "JobIconImperialKnight"
   requireAdminNotify: true
-  supervisors: job-supervisors-highcomm
+  supervisors: job-supervisors-imperial
   canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-kommissar
+        rank: crescent-rank-knight
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -77,14 +76,13 @@
 - type: startingGear
   id: ConscriptLeaderDSMGear
   equipment:
-    equipment:
-    jumpsuit: ClothingUniformJumpsuitImperialAdjutantFormal
+    jumpsuit: ClothingUniformJumpsuitImperialGovernor
     back: WeaponSniperDSMLegax
     shoes: ClothingShoesBootsImperialLongboots
     head: ClothingHeadHatImperialBeret
-    outerClothing: ClothingOuterCoatImperialAdjutant
-    id: AdjutantPDA
+    outerClothing: ClothingOuterHardsuitImperialCommand
+    id: KnightPDA
     belt: ClothingBeltMilitaryWebbingFilledAdjutant
     pocket1: WeaponPistolNeoVolker
     ears: ClothingHeadsetEmpire
-    gloves: ClothingHandsGlovesImperialAdjutantGloves
+    suitstorage: EmergencyOxygenTankFilled

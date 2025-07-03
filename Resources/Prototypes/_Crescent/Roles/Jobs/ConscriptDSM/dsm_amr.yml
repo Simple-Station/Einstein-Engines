@@ -37,10 +37,10 @@
 - type: startingGear
   id: ConscriptSniperDSMGear
   equipment:
-    head: ClothingHeadHelmetImperialTrooperHelmet
+    head: ClothingHeadHelmetImperialKnightCommanderHelmet
     mask: ClothingMaskImperialCombatGasmask
     jumpsuit: ClothingUniformJumpsuitImperialCombat
-    outerClothing: ClothingOuterArmorImperialTrooperArmor
+    outerClothing: ClothingOuterArmorImperialArmorPrestige
     shoes: ClothingShoesBootsImperialJackboots
     belt: ClothingBeltMilitaryWebbingFilledSniper
     gloves: ClothingHandsGlovesImperialLonggloves
