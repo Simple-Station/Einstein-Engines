@@ -207,13 +207,13 @@
       slots:
         gun_magazine:
           name: Magazine
-          startingItem: MagazinePistolSubMachineGun
+          startingItem: MagazineMagnumSubMachineGun
           insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
           priority: 2
           whitelist:
             tags:
-              - MagazinePistolSubMachineGun
+              - MagazineMagnumSubMachineGun
         gun_chamber:
           name: Chamber
           startingItem: CartridgePistol

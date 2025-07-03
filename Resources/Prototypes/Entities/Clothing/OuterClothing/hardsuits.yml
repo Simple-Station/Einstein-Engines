@@ -666,6 +666,20 @@
   name: blood-red medic hardsuit
   description: A heavily armored and agile advanced hardsuit specifically designed for field medic operations.
   components:
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: DegradeableArmor
+    armorMaxHealth: 700
+    armorType: Metallic
+    armorRepair: SteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 30
+        Slash: 25
+        Piercing: 65
+        Heat: 15
+        Caustic: 15
+        Radiation: 35
   - type: Sprite
     sprite: _Impstation/Clothing/OuterClothing/Hardsuits/syndicate_agent.rsi
   - type: Clothing

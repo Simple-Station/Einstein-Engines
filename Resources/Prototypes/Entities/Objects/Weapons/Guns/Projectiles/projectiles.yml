@@ -771,30 +771,11 @@
 
 - type: entity
   id: BulletGrenadeBaton
-  name: baton grenade
-  parent: BaseBullet
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    layers:
-      - state: grenade
-  - type: Projectile
-    deleteOnCollide: false
-    damage:
-      types:
-        Blunt: 1
-    soundHit:
-      path: /Audio/Effects/gen_hit.ogg
-  - type: StaminaDamageOnCollide
-    damage: 80
-
-- type: entity
-  id: BulletGrenadeBlast
-  name: blast grenade
+  name: low-yield rocket
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
+  - type: ShipWeaponProjectile
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     layers:
@@ -802,13 +783,89 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 150 # a ~2 tile radius
-    intensitySlope: 5
-    maxIntensity: 10
+    totalIntensity: 320
+    intensitySlope: 2
+    maxIntensity: 320
+  - type: ProjectileIFF
+    visualType: SquareReticle
+    color: Red
+  - type: ProjectilePhasePrevent
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.45,0.15,0.15"
+        layer:
+        - BulletImpassable
+        mask:
+        - Impassable
+        - BulletImpassable
+        hard: true
+      fly-by: *flybyfixture
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ExplodeBehavior
+
+- type: entity
+  id: BulletGrenadeBlast
+  name: high-yield rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: grenade
+  - type: ShipWeaponProjectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 650
+    intensitySlope: 25
+    maxIntensity: 650
+  - type: ProjectileIFF
+    visualType: SquareReticle
+    color: Red
+  - type: ProjectilePhasePrevent
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.45,0.15,0.15"
+        layer:
+        - BulletImpassable
+        mask:
+        - Impassable
+        - BulletImpassable
+        hard: true
+      fly-by: *flybyfixture
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ExplodeBehavior
 
 - type: entity
   id: BulletGrenadeFlash
-  name: flash grenade
+  name: flash rocket
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
@@ -817,20 +874,51 @@
     layers:
       - state: grenade
   - type: FlashOnTrigger
-    range: 7
+    range: 9
   - type: SpawnOnTrigger
     proto: GrenadeFlashEffect
   - type: ActiveTimerTrigger
     timeRemaining: 0.3
   - type: DeleteOnTrigger
+  - type: ShipWeaponProjectile
+  - type: ProjectileIFF
+    visualType: SquareReticle
+    color: Red
+  - type: ProjectilePhasePrevent
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.45,0.15,0.15"
+        layer:
+        - BulletImpassable
+        mask:
+        - Impassable
+        - BulletImpassable
+        hard: true
+      fly-by: *flybyfixture
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ExplodeBehavior
 
 # This is supposed to spawn shrapnel and stuff so uhh... TODO?
 - type: entity
   id: BulletGrenadeFrag
-  name: frag grenade
+  name: fragmentation rocket
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
+  - type: ShipWeaponProjectile
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     layers:
@@ -838,9 +926,10 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 175 # about a ~6 tile radius
+    totalIntensity: 125 # about a ~6 tile radius
     intensitySlope: 1
     maxIntensity: 10
+  - type: ProjectilePhasePrevent
 
 - type: entity
   id: BulletGrenadeEMP
@@ -854,14 +943,15 @@
       - state: frag
   - type: EmpOnTrigger
     range: 5
-    energyConsumption: 50000
-    disableDuration: 10
+    energyConsumption: 5000
+    disableDuration: 8
   - type: Ammo
     muzzleFlash: null
   - type: PointLight
     radius: 3.5
     color: blue
     energy: 0.5
+  - type: ProjectileIFF
 
 - type: entity
   id: BulletGrenadeSpreadBeanbag

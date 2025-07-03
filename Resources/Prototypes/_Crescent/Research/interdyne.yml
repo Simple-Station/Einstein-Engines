@@ -7,24 +7,12 @@
     state: icon
   discipline: Interdyne
   tier: 1
-  cost: 3500
+  cost: 350
   recipeUnlocks:
   - ClothingUniformJumpsuitSyndicateInterdyne
   - ClothingOuterArmorSyndicateApron
   - ClothingBeltSyndicateWebbingInterdyne
   - ClothingHeadHatSyndicateDoctor
-
-- type: technology
-  id: InterdyneOptics
-  name: research-technology-interdyne-optics
-  icon:
-    sprite: _Crescent/Objects/Misc/cybernetics.rsi
-    state: eyes
-  discipline: Interdyne
-  tier: 1
-  cost: 6000
-  recipeUnlocks:
-  - InterdyneOptics
 
 - type: technology
   id: InterdyneHypo
@@ -34,7 +22,7 @@
     state: security-base
   discipline: Interdyne
   tier: 1
-  cost: 6000
+  cost: 5000
   recipeUnlocks:
   - SecHypoInterdyne
   - CartridgeEphedrineInterdyne
@@ -57,6 +45,18 @@
   - ClothingOuterArmorSyndicateArmorvestInterdyne
   - ClothingOuterHardsuitTraumasec
 
+- type: technology
+  id: InterdyneOptics
+  name: research-technology-interdyne-optics
+  icon:
+    sprite: _Crescent/Objects/Misc/cybernetics.rsi
+    state: interdyneoptics
+  discipline: Interdyne
+  tier: 1
+  cost: 4000
+  recipeUnlocks:
+  - InterdyneOpticsInterdyne
+
 #Tier 2
 - type: technology
   id: InterdyneDefib
@@ -74,10 +74,61 @@
   id: InterdyneOmnitool
   name: research-technology-interdyne-omnitool
   icon:
-    sprite: Objects/Specific/Medical/defibsyndi.rsi
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/omnimed.rsi
     state: evil
   discipline: Interdyne
   tier: 2
   cost: 7500
   recipeUnlocks:
   - OmnimedToolSyndieInterdyne
+
+- type: technology
+  id: InterdynePaineditor
+  name: research-technology-interdyne-paineditor
+  icon:
+    sprite: _Crescent/Objects/Misc/cybernetics.rsi
+    state: paineditor
+  discipline: Interdyne
+  tier: 2
+  cost: 8500
+  recipeUnlocks:
+  - CyberneticsPainEditorInterdyne
+
+- type: technology
+  id: InterdyneAdrenal
+  name: research-technology-interdyne-adrenalaccelerator
+  icon:
+    sprite: _Crescent/Objects/Misc/cybernetics.rsi
+    state: cherenzikovaccelerator
+  discipline: Interdyne
+  tier: 2
+  cost: 8500
+  recipeUnlocks:
+  - CyberneticsAdrenalInterdyne
+
+# tier 3
+
+- type: technology
+  id: InterdyneBloodPump
+  name: research-technology-interdyne-bloodpump
+  icon:
+    sprite: _Crescent/Objects/Misc/cybernetics.rsi
+    state: heartpump
+  discipline: Interdyne
+  tier: 3
+  cost: 12500
+  recipeUnlocks:
+  - CyberneticsBloodPumpInterdyne
+
+- type: technology
+  id: InterdynePryarms
+  name: research-technology-interdyne-pryarms
+  icon:
+    sprite: Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi
+    state: iconpry
+  discipline: Interdyne
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - CrowbarLeftArmInterdyne
+  - CrowbarRightArmInterdyne

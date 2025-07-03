@@ -1,6 +1,6 @@
 - type: entity
   id: BaseCartridgeCaselessRifle
-  name: cartridge (.25 rifle)
+  name: cartridge (9x39mm rifle)
   parent: BaseCartridge
   abstract: true
   components:
@@ -23,7 +23,7 @@
 
 - type: entity
   id: CartridgeCaselessRifle
-  name: cartridge (.25 caseless)
+  name: cartridge (9x39mm caseless)
   parent: BaseCartridgeCaselessRifle
   components:
   - type: CartridgeAmmo
@@ -31,7 +31,7 @@
 
 - type: entity
   id: CartridgeCaselessRiflePractice
-  name: cartridge (.25 caseless practice)
+  name: cartridge (9x39mm caseless practice)
   parent: BaseCartridgeCaselessRifle
   components:
   - type: CartridgeAmmo
@@ -46,7 +46,7 @@
 
 - type: entity
   id: CartridgeCaselessRifleRubber
-  name: cartridge (.25 caseless rubber)
+  name: cartridge (9x39mm caseless rubber)
   parent: BaseCartridgeCaselessRifle
   components:
   - type: CartridgeAmmo
@@ -61,7 +61,7 @@
 
 - type: entity
   id: CartridgeCaselessRifleIncendiary
-  name: cartridge (.25 caseless incendiary)
+  name: cartridge (9x39mm caseless incendiary)
   parent: BaseCartridgeCaselessRifle
   components:
   - type: CartridgeAmmo
@@ -76,7 +76,7 @@
 
 - type: entity
   id: CartridgeCaselessRifleUranium
-  name: cartridge (.25 caseless uranium)
+  name: cartridge (9x39mm caseless uranium)
   parent: BaseCartridgeCaselessRifle
   components:
   - type: CartridgeAmmo
@@ -91,7 +91,7 @@
 
 - type: entity
   id: CartridgeCaselessRifleShrapnel
-  name: cartridge (.25 caseless shrapnel)
+  name: cartridge (9x39mm caseless shrapnel)
   parent: BaseCartridgeCaselessRifle
   components:
   - type: CartridgeAmmo

@@ -1,0 +1,182 @@
+# Tier 1
+- type: technology
+  id: CyberdawnClothes
+  name: research-technology-cyberdawn-clothing
+  icon:
+    sprite: _Crescent/Clothing/Syndicate/Head/patriarch.rsi
+    state: icon
+  discipline: Cyberdawn
+  tier: 1
+  cost: 2500
+  recipeUnlocks:
+  - ClothingUniformJumpsuitSyndicateSuitCyberdawn
+  - ClothingUniformJumpsuitSyndicateLabCyberdawn
+  - ClothingUniformJumpsuitSyndicateSoldierCyberdawn
+  - ClothingOuterArmorCyberdawnPatriarch
+  - ClothingHeadHatPatriarch
+  - ClothingOuterHardsuitCybersun
+
+- type: technology
+  id: CyberdawnBasicBallistics
+  name: research-technology-cyberdawn-basicballistics
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/akms.rsi
+    state: base
+  discipline: Cyberdawn
+  tier: 1
+  cost: 6000
+  recipeUnlocks:
+  - WeaponSubMachineGunAtreidesCyberdawn
+  - WeaponRifleAkCyberdawn
+  - WeaponRifleKrinkovCyberdawn
+  - WeaponPistolViperWoodCyberdawn
+
+- type: technology
+  id: CyberdawnPowersink
+  name: research-technology-cyberdawn-powersink
+  icon:
+    sprite: Objects/Power/powersink.rsi
+    state: powersink
+  discipline: Cyberdawn
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - PowerSinkCyberdawn
+
+- type: technology
+  id: CyberdawnDNAScrambler
+  name: research-technology-cyberdawn-dnascram
+  icon:
+    sprite: Objects/Specific/Medical/syndi_implanter.rsi
+    state: implanter0
+  discipline: Cyberdawn
+  tier: 1
+  cost: 3000
+  recipeUnlocks:
+  - DnaScramblerImplanter
+
+- type: technology
+  id: CyberdawnRadioJammer
+  name: research-technology-cyberdawn-radiojammer
+  icon:
+    sprite: Objects/Devices/jammer.rsi
+    state: jammer
+  discipline: Cyberdawn
+  tier: 1
+  cost: 6000
+  recipeUnlocks:
+  - RadioJammerCyberdawn
+
+#tier 2
+
+- type: technology
+  id: CyberdawnMuffler
+  name: research-technology-cyberdawn-ewar
+  icon:
+    sprite: _Crescent/Objects/Devices/jammerewar.rsi
+    state: jammer
+  discipline: Cyberdawn
+  tier: 2
+  cost: 8000
+  recipeUnlocks:
+  - MufflerFlatpack
+
+- type: technology
+  id: CyberdawnEmag
+  name: research-technology-cyberdawn-emag
+  icon:
+    sprite: Objects/Tools/emag.rsi
+    state: icon
+  discipline: Cyberdawn
+  tier: 2
+  cost: 6000
+  recipeUnlocks:
+  - EmagCyberdawn
+
+- type: technology
+  id: CyberdawnEmpImplanter
+  name: research-technology-cyberdawn-emp
+  icon:
+    sprite: Objects/Specific/Medical/syndi_implanter.rsi
+    state: implanter0
+  discipline: Cyberdawn
+  tier: 2
+  cost: 6000
+  recipeUnlocks:
+  - EmpImplanter
+
+- type: technology
+  id: CyberdawnAdvancedBallistics
+  name: research-technology-cyberdawn-advancedballistics
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/mayflower.rsi
+    state: base
+  discipline: Cyberdawn
+  tier: 2
+  cost: 9000
+  recipeUnlocks:
+  - WeaponLightMachineGunNCSPRPD
+  - WeaponRifleMayflower
+
+- type: technology
+  id: CyberdawnEnergyDagger
+  name: research-technology-cyberdawn-energydagger
+  icon:
+    sprite: Objects/Weapons/Melee/e_dagger.rsi
+    state: icon
+  discipline: Cyberdawn
+  tier: 2
+  cost: 5000
+  recipeUnlocks:
+  - EnergyDagger
+
+- type: technology
+  id: CyberdawnZhongyao
+  name: research-technology-cyberdawn-zhongyao
+  icon:
+    sprite: _Impstation/Clothing/OuterClothing/Hardsuits/syndicate_agent.rsi
+    state: icon
+  discipline: Cyberdawn
+  tier: 2
+  cost: 5000
+  recipeUnlocks:
+  - ClothingOuterHardsuitSyndieMedicCyberdawn
+
+# tier 3
+
+- type: technology
+  id: CyberdawnEgui
+  name: research-technology-cyberdawn-egui
+  icon:
+    sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/cybersunstealth.rsi
+    state: icon
+  discipline: Cyberdawn
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - ClothingOuterHardsuitCybersunStealthCyberdawn
+
+- type: technology
+  id: CyberdawnPsybreaker
+  name: research-technology-cyberdawn-psybreaker
+  icon:
+    sprite: DeltaV/Objects/Weapons/Guns/Pistols/psibreaker.rsi
+    state: base
+  discipline: Cyberdawn
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - WeaponPistolPsiBreakerCyberdawn
+  - MagazinePistolSpecialMindbreakerCyberdawn
+
+- type: technology
+  id: CyberdawnThermals
+  name: research-technology-cyberdawn-thermals
+  icon:
+    sprite: Clothing/Eyes/Goggles/thermal.rsi
+    state: icon
+  discipline: Cyberdawn
+  tier: 3
+  cost: 8000
+  recipeUnlocks:
+  - ClothingEyesThermalVisionGogglesCyberdawn

@@ -25,6 +25,7 @@ We aren't as strict on Coding Standards as other SS14 servers , our review metho
 - you are expected to TEST your own code and ensure it works to a reasonable level
 - do not leave behind old-code or code with no functionality
 - you are expected to credit the source if you are porting content through a comment in the file(for code) or meta.json(for RSIs)
+- do not mix unrelated balance changes with normal PR's.
 
 ### Build dependencies
 

@@ -17,7 +17,7 @@ public sealed class NavInterfaceState
     /// <summary>
     /// The relevant rotation to rotate the angle around.
     /// </summary>
-    public Angle? Angle;
+    public double Angle;
 
     public Dictionary<NetEntity, List<DockingPortState>> Docks;
 
@@ -31,10 +31,16 @@ public sealed class NavInterfaceState
     /// </summary>
     public NetEntity console;
 
+    /// <summary>
+    /// Hullrot - keep this aligned to world?
+    /// </summary>
+    public bool AlignToWorld = false;
+
+
     public NavInterfaceState(
         float maxRange,
         NetCoordinates? coordinates,
-        Angle? angle,
+        double angle,
         Dictionary<NetEntity, List<DockingPortState>> docks,
         InertiaDampeningMode dampeningMode, // Frontier: add dampeningMode
         NetEntity Console)

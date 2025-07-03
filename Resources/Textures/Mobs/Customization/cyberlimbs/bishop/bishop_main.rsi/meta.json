@@ -6,90 +6,93 @@
     "x": 32,
     "y": 32
   },
-  "states": [
-    {
-      "name": "l_foot",
-      "directions": 4
-    },
-    {
-      "name": "r_foot",
-      "directions": 4
-    },
-    {
-      "name": "l_leg-primary",
-      "directions": 4
-    },
-    {
-      "name": "l_leg-secondary",
-      "directions": 4
-    },
-    {
-      "name": "l_leg-combined",
-      "directions": 4
-    },
-    {
-      "name": "r_leg-primary",
-      "directions": 4
-    },
-    {
-      "name": "r_leg-secondary",
-      "directions": 4
-    },
-    {
-      "name": "r_leg-combined",
-      "directions": 4
-    },
-    {
-      "name": "torso-primary",
-      "directions": 4
-    },
-    {
-      "name": "torso-secondary",
-      "directions": 4
-    },
-    {
-      "name": "l_arm-primary",
-      "directions": 4
-    },
-    {
-      "name": "l_arm-secondary",
-      "directions": 4
-    },
-    {
-      "name": "l_arm-tertiary",
-      "directions": 4
-    },
-    {
-      "name": "l_arm-combined",
-      "directions": 4
-    },
-    {
-      "name": "r_arm-primary",
-      "directions": 4
-    },
-    {
-      "name": "r_arm-secondary",
-      "directions": 4
-    },
-    {
-      "name": "r_arm-tertiary",
-      "directions": 4
-    },
-    {
-      "name": "r_arm-combined",
-      "directions": 4
-    },
-    {
-      "name": "l_hand",
-      "directions": 4
-    },
-    {
-      "name": "r_hand",
-      "directions": 4
-    },
-    {
-      "name": "head",
-      "directions": 4
-    }
-  ]
+    "states": [
+        {
+            "name": "l_foot",
+            "directions": 4
+        },
+        {
+            "name": "iconpry"
+        },
+        {
+            "name": "r_foot",
+            "directions": 4
+        },
+        {
+            "name": "l_leg-primary",
+            "directions": 4
+        },
+        {
+            "name": "l_leg-secondary",
+            "directions": 4
+        },
+        {
+            "name": "l_leg-combined",
+            "directions": 4
+        },
+        {
+            "name": "r_leg-primary",
+            "directions": 4
+        },
+        {
+            "name": "r_leg-secondary",
+            "directions": 4
+        },
+        {
+            "name": "r_leg-combined",
+            "directions": 4
+        },
+        {
+            "name": "torso-primary",
+            "directions": 4
+        },
+        {
+            "name": "torso-secondary",
+            "directions": 4
+        },
+        {
+            "name": "l_arm-primary",
+            "directions": 4
+        },
+        {
+            "name": "l_arm-secondary",
+            "directions": 4
+        },
+        {
+            "name": "l_arm-tertiary",
+            "directions": 4
+        },
+        {
+            "name": "l_arm-combined",
+            "directions": 4
+        },
+        {
+            "name": "r_arm-primary",
+            "directions": 4
+        },
+        {
+            "name": "r_arm-secondary",
+            "directions": 4
+        },
+        {
+            "name": "r_arm-tertiary",
+            "directions": 4
+        },
+        {
+            "name": "r_arm-combined",
+            "directions": 4
+        },
+        {
+            "name": "l_hand",
+            "directions": 4
+        },
+        {
+            "name": "r_hand",
+            "directions": 4
+        },
+        {
+            "name": "head",
+            "directions": 4
+        }
+    ]
 }
