@@ -115,19 +115,19 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
 
     private void SpawnMapElementByID(MapId mapid, string gameMapID, float posX, float posY, Color color)
     {
-        if (_map.TryLoad(mapid, mapPath, out var depotUid, new MapLoadOptions
+        if (_prototypeManager.TryIndex<GameMapPrototype>(gameMapID, out var stationProto))
         {
-            Offset = new Vector2(posX, posY)
-        }))
-        {
-            if (_prototypeManager.TryIndex<GameMapPrototype>(gameMapID, out var stationProto))
+            if (_map.TryLoad(mapid, stationProto.MapPath.ToString(), out var depotUid, new MapLoadOptions
+            {
+                Offset = new Vector2(posX, posY)
+            }))
             {
                 _station.InitializeNewStation(stationProto.Stations[gameMapID], depotUid);
-            }
 
-            var meta = EnsureComp<MetaDataComponent>(depotUid[0]);
-            _meta.SetEntityName(depotUid[0], "GSC Grinning Jackal", meta); //NEED TO FIX THIS. 
-            _shuttle.SetIFFColor(depotUid[0], color);
+                var meta = EnsureComp<MetaDataComponent>(depotUid[0]); //NEED TO FIX THIS TOO.
+                _meta.SetEntityName(depotUid[0], stationProto.MapName, meta); //NEED TO FIX THIS. 
+                _shuttle.SetIFFColor(depotUid[0], color);
+            }
         }
     }
 
