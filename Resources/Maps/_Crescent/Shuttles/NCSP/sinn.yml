@@ -50,6 +50,7 @@ entities:
     - type: OccluderTree
     - type: SpreaderGrid
     - type: Shuttle
+      baseMaxLinearVelocity: 25
     - type: GridPathfinding
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
@@ -2470,7 +2471,7 @@ entities:
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: -1.9707284,2.777061
+      pos: -2.0156822,2.8359375
       parent: 1
   - uid: 224
     components:
@@ -2490,6 +2491,46 @@ entities:
     - type: Transform
       pos: -6.5,1.5
       parent: 1
+- proto: ClothingHandsGlovesCombat
+  entities:
+  - uid: 512
+    components:
+    - type: Transform
+      parent: 259
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 686
+    components:
+    - type: Transform
+      parent: 510
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: ClothingHeadHelmetSyndicate
+  entities:
+  - uid: 681
+    components:
+    - type: Transform
+      parent: 259
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 683
+    components:
+    - type: Transform
+      parent: 510
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: ClothingMaskSyndicateFacemask
   entities:
   - uid: 260
@@ -2506,11 +2547,13 @@ entities:
     - type: Transform
       parent: 510
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingOuterHardsuitSyndicateBG
+- proto: ClothingOuterHardsuitSyndicate
   entities:
-  - uid: 261
+  - uid: 682
     components:
     - type: Transform
       parent: 259
@@ -2519,11 +2562,13 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 512
+  - uid: 685
     components:
     - type: Transform
       parent: 510
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
 - proto: ClothingShoesBootsMagSyndie
@@ -2542,6 +2587,28 @@ entities:
     - type: Transform
       parent: 510
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: CombatKnife
+  entities:
+  - uid: 261
+    components:
+    - type: Transform
+      parent: 259
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 684
+    components:
+    - type: Transform
+      parent: 510
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
 - proto: ComputerTabletopAdvancedRadar
@@ -2671,6 +2738,8 @@ entities:
     - type: Transform
       parent: 510
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
 - proto: FaxMachineShip
@@ -3559,6 +3628,8 @@ entities:
     - type: Transform
       parent: 510
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
 - proto: HospitalCurtainsOpen
@@ -3584,6 +3655,8 @@ entities:
     - type: Transform
       parent: 510
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
 - proto: MedkitAdvancedFilled
@@ -3966,12 +4039,15 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 265
+          - 512
           - 264
           - 263
           - 262
-          - 261
           - 260
+          - 265
+          - 261
+          - 681
+          - 682
   - uid: 510
     components:
     - type: Transform
@@ -4001,12 +4077,15 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 511
-          - 512
+          - 685
           - 513
           - 514
           - 515
           - 516
+          - 683
+          - 684
+          - 686
+          - 511
 - proto: TableReinforced
   entities:
   - uid: 266
