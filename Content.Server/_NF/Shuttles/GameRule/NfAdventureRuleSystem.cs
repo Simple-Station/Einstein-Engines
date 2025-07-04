@@ -156,14 +156,6 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         var mapId = GameTicker.DefaultMap;
         base.Started(uid, component, gameRule, args);
 
-        var depotColor = new Color(55, 200, 55);
-        var civilianColor = new Color(55, 55, 200);
-        var lpbravoColor = new Color(200, 55, 55);
-        var coveColor = new Color(203, 195, 227);
-        var tatsumotoColor = new Color(128, 128, 128);
-        var factionColor = new Color(255, 165, 0);
-        var refugeColor = new Color(34, 139, 34);
-
         foreach (var gamemap in component.GameMapsID)
         {
             SpawnMapElementByID(mapId,
