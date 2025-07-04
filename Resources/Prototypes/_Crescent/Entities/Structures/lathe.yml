@@ -143,6 +143,8 @@
       - CartridgeBicaridineInterdyne
       - CartridgeSalineInterdyne
       - CartridgeDermalineInterdyne
+      - CartridgePuncturaseInterdyne
+      - CartridgeAtropineInterdyne
       - InterdyneOptics
   - type: Anchorable
     flags:
