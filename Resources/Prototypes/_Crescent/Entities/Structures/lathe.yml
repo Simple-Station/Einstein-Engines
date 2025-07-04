@@ -376,7 +376,6 @@
       - ClothingEyesNightVisionGoggles
       - Terminus
       - ClothingOuterHardsuitShanlinUnpainted
-      - HandHeldMassScanner
       - BorgModuleGPS
       - RadarConsoleCircuitboard
       - EMPGrenadeElectronics
@@ -408,8 +407,8 @@
       - ClothingOuterHardsuitSyndieMedicCyberdawn
       - ClothingOuterHardsuitCybersunStealthCyberdawn
       - MagazinePistolSpecialMindbreakerCyberdawn
+      - WeaponPistolPsiBreakerCyberdawn
       - ClothingEyesThermalVisionGogglesCyberdawn
-      - WeaponPistolPsibreakerCyberdawn
   - type: Machine
     board: MicroforgeCircuitboard
 
