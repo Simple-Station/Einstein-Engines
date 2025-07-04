@@ -12,6 +12,9 @@ namespace Content.Server.GameTicking.Configuration;
 [DataDefinition, PublicAPI]
 public sealed partial class HullrotMapElementGameMapID
 {
+    /// <summary>
+    /// This string matches the specific gameMap prototype's ID field. This tells the game what thing to actually spawn, and gets the path from that prototype too.
+    /// </summary>
     [DataField("gameMapID", required: true)]
     public string GameMapID = "";
 
@@ -38,5 +41,11 @@ public sealed partial class HullrotMapElementGameMapID
     /// </summary>
     [DataField("randomOffsetY", required: false)]
     public float RandomOffsetY = 0f;
+
+    /// <summary>
+    /// This string sets the IFF for this particular object. Leave "null" to not modify IFF.
+    /// </summary>
+    [DataField("IFFFaction", required: false)]
+    public string? IFFFaction = null;
 
 }

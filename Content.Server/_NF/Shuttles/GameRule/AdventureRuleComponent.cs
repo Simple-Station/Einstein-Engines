@@ -7,9 +7,6 @@ namespace Content.Server.GameTicking.Rules.Components;
 [RegisterComponent, Access(typeof(NfAdventureRuleSystem))]
 public sealed partial class AdventureRuleComponent : Component
 {
-    [DataField(required: true)]
-    public string GamemodeName = "";
-
     [DataField("gameMapsByID", required: false)]
     public Dictionary<string, HullrotMapElementGameMapID> GameMapsID = new();
 

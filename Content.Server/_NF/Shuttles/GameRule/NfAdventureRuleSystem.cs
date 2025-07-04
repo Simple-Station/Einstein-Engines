@@ -115,7 +115,7 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
     }
 
     //if you ever have the misfortune of disentangling this i owe you an apology | .2 2025
-    private void SpawnMapElementByID(MapId mapid, string gameMapID, float posX, float posY, float randomOffsetX, float randomOffsetY, Color color, bool hideIFF)
+    private void SpawnMapElementByID(MapId mapid, string gameMapID, float posX, float posY, float randomOffsetX, float randomOffsetY, Color color, string? IFFFaction, bool hideIFF)
     {
         if (_prototypeManager.TryIndex<GameMapPrototype>(gameMapID, out var stationProto))
         {
@@ -129,6 +129,8 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
                 var meta = EnsureComp<MetaDataComponent>(depotUid[0]); //NEED TO FIX THIS TOO.
                 _meta.SetEntityName(depotUid[0], stationProto.MapName, meta); //NEED TO FIX THIS. 
                 _shuttle.SetIFFColor(depotUid[0], color);
+                if (IFFFaction != null)
+                    _shuttle.SetIFFFaction(depotUid[0], IFFFaction);
                 if (hideIFF)
                     _shuttle.AddIFFFlag(depotUid[0], IFFFlags.HideLabel);
             }
@@ -165,6 +167,7 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
                                 gamemap.Value.RandomOffsetX,
                                 gamemap.Value.RandomOffsetY,
                                 gamemap.Value.IFFColor,
+                                gamemap.Value.IFFFaction,
                                 gamemap.Value.HideIFF);
 
 
