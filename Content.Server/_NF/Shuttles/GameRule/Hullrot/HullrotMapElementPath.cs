@@ -10,13 +10,14 @@ namespace Content.Server.GameTicking.Configuration;
 /// A config for a hullrot map element. Any grid that spawns when a gamemode starts.
 /// </summary>
 [DataDefinition, PublicAPI]
-public sealed partial class HullrotMapElement
+public sealed partial class HullrotMapElementPath
 {
-    [DataField("gameMapID", required: false)]
-    public string? GameMapID = null;
 
-    [DataField("path", required: false)]
-    public string? Path = null;
+    [DataField("path", required: true)]
+    public string Path = "";
+
+    [DataField("entityName", required: true)]
+    public string EntityName = "";
 
     [DataField("posX", required: true)]
     public float PositionX = 0f;

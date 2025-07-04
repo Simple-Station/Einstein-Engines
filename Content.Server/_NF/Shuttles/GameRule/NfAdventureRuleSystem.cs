@@ -132,7 +132,7 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         }
     }
 
-    private void SpawnMapElementByPath(MapId mapid, string path, float posX, float posY, Color color)
+    private void SpawnMapElementByPath(MapId mapid, string path, string entityName, float posX, float posY, Color color)
     {
         if (_map.TryLoad(mapid, path, out var depotUid, new MapLoadOptions
         {
@@ -141,7 +141,7 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         }))
         {
             var meta = EnsureComp<MetaDataComponent>(depotUid[0]);
-            _meta.SetEntityName(depotUid[0], "Imperial Hauler Wreck", meta);
+            _meta.SetEntityName(depotUid[0], entityName, meta);
             _shuttle.SetIFFColor(depotUid[0], color);
             _shuttle.AddIFFFlag(depotUid[0], IFFFlags.HideLabel);
         }
@@ -152,37 +152,39 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         var mapId = GameTicker.DefaultMap;
         base.Started(uid, component, gameRule, args);
 
-        foreach (var gamemap in component.GameMaps)
+        var depotColor = new Color(55, 200, 55);
+        var civilianColor = new Color(55, 55, 200);
+        var lpbravoColor = new Color(200, 55, 55);
+        var coveColor = new Color(203, 195, 227);
+        var tatsumotoColor = new Color(128, 128, 128);
+        var factionColor = new Color(255, 165, 0);
+        var refugeColor = new Color(34, 139, 34);
+
+        foreach (var gamemap in component.GameMapsID)
         {
-            if (gamemap.Value.Path != null)
-                _sawmill.Debug("PATH: " + gamemap.Value.Path);
-            else if (gamemap.Value.GameMapID != null)
-                _sawmill.Debug("GAMEMAPID: " + gamemap.Value.GameMapID);
-            _sawmill.Debug("posX: " + gamemap.Value.PositionX);
-            _sawmill.Debug("posY: " + gamemap.Value.PositionY);
-            _sawmill.Debug("------------");
+            SpawnMapElementByID(mapId, gamemap.Value.GameMapID, gamemap.Value.PositionX, gamemap.Value.PositionY, factionColor);
+
+            // _sawmill.Debug("GAMEMAPID: " + gamemap.Value.GameMapID);
+            // _sawmill.Debug("posX: " + gamemap.Value.PositionX);
+            // _sawmill.Debug("posY: " + gamemap.Value.PositionY);
+            // _sawmill.Debug("------------");
+        }
+
+        foreach (var pathmap in component.GameMapsPath)
+        {
+            SpawnMapElementByPath(mapId, pathmap.Value.Path, pathmap.Value.EntityName, pathmap.Value.PositionX, pathmap.Value.PositionY, lpbravoColor);
+
+            // _sawmill.Debug("PATH: " + pathmap.Value.Path);
+            // _sawmill.Debug("ENTITYNAME: " + pathmap.Value.EntityName);
+            // _sawmill.Debug("posX: " + pathmap.Value.PositionX);
+            // _sawmill.Debug("posY: " + pathmap.Value.PositionY);
+            // _sawmill.Debug("------------");
         }
     }
 
     private void OldStarted(EntityUid uid, AdventureRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
         base.Started(uid, component, gameRule, args);
-
-        _sawmill.Debug("-----LOOK HERE------");
-
-        _sawmill.Debug("GAMEMODE NAME: " + component.GamemodeName);
-
-        foreach (var gamemap in component.GameMaps)
-        {
-            _sawmill.Debug("GAMEMAP: " + gamemap.Value.GameMapID);
-            _sawmill.Debug("posX: " + gamemap.Value.PositionX);
-            _sawmill.Debug("posY: " + gamemap.Value.PositionY);
-            _sawmill.Debug("------------");
-        }
-
-        _sawmill.Debug("-----LOOK HERE------");
-
-
 
         var depotMap = "/Maps/_NF/POI/cargodepot.yml";
         var tinnia = "/Maps/_NF/POI/tinnia.yml";

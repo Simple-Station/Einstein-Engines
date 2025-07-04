@@ -5,7 +5,7 @@
   components:
   - type: AdventureRule
     gamemodeName: Freeplay
-    gameMaps: 
+    gameMapsByID: 
       Vladzena:
         gameMapID: Vladzena
         posX: 5000
@@ -14,12 +14,15 @@
         gameMapID: Jackal
         posX: 3000
         posY: 3000
+    gameMapsByPath:
       Taypan1AsteroidField:
         path: /Maps/_Crescent/Explorables/taypanone.yml
+        entityName: Taypan 1 Asteroid Field
         posX: 1000
         posY: 1000
       Taypan2AsteroidField:
         path: /Maps/_Crescent/Explorables/oris.yml
+        entityName: Taypan 2 Asteroid Field
         posX: 5000
         posY: 1000
   

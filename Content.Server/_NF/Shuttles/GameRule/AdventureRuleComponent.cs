@@ -10,8 +10,11 @@ public sealed partial class AdventureRuleComponent : Component
     [DataField(required: true)]
     public string GamemodeName = "";
 
-    [DataField("gameMaps", required: true)]
-    public Dictionary<string, HullrotMapElement> GameMaps = new();
+    [DataField("gameMapsByID", required: false)]
+    public Dictionary<string, HullrotMapElementGameMapID> GameMapsID = new();
+
+    [DataField("gameMapsByPath", required: false)]
+    public Dictionary<string, HullrotMapElementPath> GameMapsPath = new();
 
     /// <summary>
     /// The gameMaps this gamemode contains.
