@@ -3,7 +3,7 @@
 # in hullrotGamemodes.yml you can find "Adventure" "VladzenaJackal", etc.
 
 - type: gamePreset
-  id: Adventure
+  id: Adventure #FREEPLAY, DO NOT REMOVE
   alias:
     - adventure
     - hullrot
@@ -13,6 +13,29 @@
   rules:
     - Adventure
     - LavalandStormScheduler # Lavaland Change
+
+
+# GAMERULES ARE WAHT DECIDES WHAT SPAWNS IN, BY EVERYTHING IN THE ADVENTURERULE COMPONENT
+#
+# gameMapsByID is a DICTIONARY that describes all spawned grids defined by a gameMap. 
+# this is stuff like Port Vladzena, which has vladzena.yml (MAP) and vladzena.yml (PROTOTYPE)
+# you can give the dictionary key whatever name you want
+# gameMapID must equal the ID of the gameMap prototype's YML.
+# posX & posY define the position it will be spawned at
+# randomOffsetX & randomOffsetY describe an offset that will be applied to the position. leave undefined or at 0 to spawn as is. This offset is ALWAYS POSITIVE.
+# IFFColor changes what color the IFF in the shuttle and map screen will have. Use colors from the Color type, like White, Aqua, Blue, etc.
+# IFFFaction sets the faction of the object. to be honest i dont know if this does anything.
+# hideIFF is a boolean that controls if the object is visible from the map screen or not. by default it is set to false. use this for derelicts or secrets
+#
+# gameMapsByPath is a DICTIONARY that describes all spawned grids defined by a path.
+# this is stuff like derelicts, roundstart ships or secrets. the path MUST POINT TO A MAP .yml or it will NOT WORK.
+# you can give the dictionary key whatever name you want
+# path is a path that points to the map .yml
+# posX & posY define the position it will be spawned at
+# randomOffsetX & randomOffsetY describe an offset that will be applied to the position. leave undefined or at 0 to spawn as is. This offset is ALWAYS POSITIVE.
+# IFFColor changes what color the IFF in the shuttle and map screen will have. Use colors from the Color type, like White, Aqua, Blue, etc.
+# IFFFaction sets the faction of the object. to be honest i dont know if this does anything.
+# hideIFF is a boolean that controls if the object is visible from the map screen or not. by default it is set to false. use this for derelicts or secrets
 
 - type: entity
   id: Adventure #FREEPLAY, DO NOT REMOVE
@@ -51,6 +74,7 @@
         entityName: Stranded Ship
         posX: 7250
         posY: 5320
+        HideIFF: true
       Fighter1:
         path: /Maps/_Crescent/Explorables/ruinedfightereast.yml
         entityName: Destroyed Fighter
