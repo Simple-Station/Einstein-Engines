@@ -10,21 +10,27 @@
         gameMapID: Vladzena
         posX: 5000
         posY: 5000
+        IFFColor: Orange
       Jackal:
         gameMapID: Jackal
         posX: 3000
         posY: 3000
+        IFFColor: IndianRed
     gameMapsByPath:
       Taypan1AsteroidField:
         path: /Maps/_Crescent/Explorables/taypanone.yml
         entityName: Taypan 1 Asteroid Field
         posX: 1000
         posY: 1000
+        randomOffsetX: 1000
+        randomOffsetY: 1000
       Taypan2AsteroidField:
         path: /Maps/_Crescent/Explorables/oris.yml
         entityName: Taypan 2 Asteroid Field
         posX: 5000
         posY: 1000
+        randomOffsetX: 5000
+        randomOffsetY: 5000
   
 
 - type: entity

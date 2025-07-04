@@ -27,6 +27,7 @@ using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
 using Robust.Shared.Configuration;
+using Content.Shared.Telescope;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -114,13 +115,13 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
     }
 
     //if you ever have the misfortune of disentangling this i owe you an apology | .2 2025
-    private void SpawnMapElementByID(MapId mapid, string gameMapID, float posX, float posY, Color color)
+    private void SpawnMapElementByID(MapId mapid, string gameMapID, float posX, float posY, float randomOffsetX, float randomOffsetY, Color color, bool hideIFF)
     {
         if (_prototypeManager.TryIndex<GameMapPrototype>(gameMapID, out var stationProto))
         {
             if (_map.TryLoad(mapid, stationProto.MapPath.ToString(), out var depotUid, new MapLoadOptions
             {
-                Offset = new Vector2(posX, posY)
+                Offset = new Vector2(posX, posY) + _random.NextVector2(randomOffsetX, randomOffsetY)
             }))
             {
                 _station.InitializeNewStation(stationProto.Stations[gameMapID], depotUid);
@@ -128,22 +129,25 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
                 var meta = EnsureComp<MetaDataComponent>(depotUid[0]); //NEED TO FIX THIS TOO.
                 _meta.SetEntityName(depotUid[0], stationProto.MapName, meta); //NEED TO FIX THIS. 
                 _shuttle.SetIFFColor(depotUid[0], color);
+                if (hideIFF)
+                    _shuttle.AddIFFFlag(depotUid[0], IFFFlags.HideLabel);
             }
         }
     }
 
-    private void SpawnMapElementByPath(MapId mapid, string path, string entityName, float posX, float posY, Color color)
+    private void SpawnMapElementByPath(MapId mapid, string path, string entityName, float posX, float posY, float randomOffsetX, float randomOffsetY, Color color, bool hideIFF)
     {
         if (_map.TryLoad(mapid, path, out var depotUid, new MapLoadOptions
         {
-            Offset = new Vector2(posX, posY)
+            Offset = new Vector2(posX, posY) + _random.NextVector2(randomOffsetX, randomOffsetY)
 
         }))
         {
             var meta = EnsureComp<MetaDataComponent>(depotUid[0]);
             _meta.SetEntityName(depotUid[0], entityName, meta);
             _shuttle.SetIFFColor(depotUid[0], color);
-            _shuttle.AddIFFFlag(depotUid[0], IFFFlags.HideLabel);
+            if (hideIFF)
+                _shuttle.AddIFFFlag(depotUid[0], IFFFlags.HideLabel);
         }
     }
 
@@ -162,8 +166,17 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
 
         foreach (var gamemap in component.GameMapsID)
         {
-            SpawnMapElementByID(mapId, gamemap.Value.GameMapID, gamemap.Value.PositionX, gamemap.Value.PositionY, factionColor);
+            SpawnMapElementByID(mapId,
+                                gamemap.Value.GameMapID,
+                                gamemap.Value.PositionX,
+                                gamemap.Value.PositionY,
+                                gamemap.Value.RandomOffsetX,
+                                gamemap.Value.RandomOffsetY,
+                                gamemap.Value.IFFColor,
+                                gamemap.Value.HideIFF);
 
+
+            // _sawmill.Debug("------------");
             // _sawmill.Debug("GAMEMAPID: " + gamemap.Value.GameMapID);
             // _sawmill.Debug("posX: " + gamemap.Value.PositionX);
             // _sawmill.Debug("posY: " + gamemap.Value.PositionY);
@@ -172,8 +185,17 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
 
         foreach (var pathmap in component.GameMapsPath)
         {
-            SpawnMapElementByPath(mapId, pathmap.Value.Path, pathmap.Value.EntityName, pathmap.Value.PositionX, pathmap.Value.PositionY, lpbravoColor);
+            SpawnMapElementByPath(mapId,
+                                pathmap.Value.Path,
+                                pathmap.Value.EntityName,
+                                pathmap.Value.PositionX,
+                                pathmap.Value.PositionY,
+                                pathmap.Value.RandomOffsetX,
+                                pathmap.Value.RandomOffsetY,
+                                pathmap.Value.IFFColor,
+                                pathmap.Value.HideIFF);
 
+            // _sawmill.Debug("------------");
             // _sawmill.Debug("PATH: " + pathmap.Value.Path);
             // _sawmill.Debug("ENTITYNAME: " + pathmap.Value.EntityName);
             // _sawmill.Debug("posX: " + pathmap.Value.PositionX);
