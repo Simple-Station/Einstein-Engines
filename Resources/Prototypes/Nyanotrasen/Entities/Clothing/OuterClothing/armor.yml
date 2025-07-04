@@ -18,21 +18,27 @@
 - type: entity
   parent: ClothingOuterBase
   id: ClothingOuterArmorKendoBogu
-  name: bogu
-  description: A set of armor used in Kendo. It covers the waist, torso, and hands. 
+  name: cyberdawn bogu
+  description: A set of armor traditionally used in Kendo, repurposed for ballistic resistance. Bears the Cyberdawn colors.
   components:
   - type: Sprite
     sprite: Nyanotrasen/Clothing/OuterClothing/Armor/bogu.rsi
   - type: Clothing
     sprite: Nyanotrasen/Clothing/OuterClothing/Armor/bogu.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.75
-        Slash: 0.9
+  - type: DegradeableArmor
+    armorMaxHealth: 1000
+    armorType: Metallic
+    armorRepair: SteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 25
+        Slash: 25
+        Piercing: 45
+        Heat: 15
+        Caustic: 25
   - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.85
+    walkModifier: 0.9
+    sprintModifier: 0.9
     
 - type: entity
   parent: ClothingOuterBase

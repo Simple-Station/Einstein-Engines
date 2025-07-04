@@ -116,6 +116,25 @@
     Glass: 100
 
 - type: latheRecipe
+  id: CartridgePuncturaseInterdyne
+  result: CartridgePuncturase
+  completetime: 1.5
+  materials:
+    PlasmaIsotope: 300
+    DeactivatedPhoron: 350
+    Glass: 100
+
+- type: latheRecipe
+  id: CartridgeAtropineInterdyne
+  result: CartridgeAtropine
+  completetime: 1.5
+  materials:
+    Galine: 150
+    PlasmaIsotope: 150
+    DeactivatedPhoron: 200
+    Glass: 100
+
+- type: latheRecipe
   id: InterdyneOptics
   result: InterdyneOptics
   completetime: 1.5
