@@ -26,7 +26,7 @@
     injectOnly: true
   - type: HyposprayBlockNonMobInjection
   - type: UseDelay
-    delay: 30 # up this later if its too low
+    delay: 3
   - type: ContainerContainer
     containers:
       item: !type:ContainerSlot
@@ -41,7 +41,7 @@
 - type: entity
   name: IPM RMA-4 cartridge autoinjector
   parent: BaseCartridgeAutoinjector
-  description: Used for rapid administration of medicine. Uses smart cartridges to deliver chemical payloads.
+  description: Used for rapid administration of medicine. Uses smart cartridges printable at medical techfabs to deliver chemical payloads.
   id: SecHypo
   components:
   - type: Sprite
@@ -50,6 +50,8 @@
       - state: cartridge1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
+  - type: UseDelay
+    delay: 1
 
 - type: entity
   name: medical cartridge autoinjector
