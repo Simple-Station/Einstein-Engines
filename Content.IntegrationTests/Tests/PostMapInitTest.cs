@@ -57,8 +57,6 @@ namespace Content.IntegrationTests.Tests
         {
             "Dev",
             "TestTeg",
-            "CentCommMain",
-            "CentCommHarmony",
             "MeteorArena",
             "NukieOutpost",
             "Core", // No current maintainer. In need of a rework...
