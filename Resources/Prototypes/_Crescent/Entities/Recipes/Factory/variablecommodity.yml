@@ -5,7 +5,7 @@
     Steel: 2
     Silver: 5
   outputs:
-    BasicElectronics: 1
+    BasicElectronics1: 1
 
 - type: factoryRecipe
   id: FabricateAdvancedElectronics
@@ -14,7 +14,7 @@
     Silver: 5
     BasicElectronics: 3
   outputs:
-    AdvancedElectronics: 1
+    AdvancedElectronics1: 1
 
 - type: factoryRecipe
   id: FabricateAdvancedMechatronics
@@ -23,7 +23,7 @@
     Gold: 5
     BasicMechatronics: 3
   outputs:
-    AdvancedMechatronics: 1
+    AdvancedMechatronics1: 1
 
 - type: factoryRecipe
   id: FabricateBasicMechatronics
@@ -32,7 +32,7 @@
     Steel: 5
     Silver: 2
   outputs:
-    BasicMechatronics: 1
+    BasicMechatronics1: 1
 
 - type: factoryRecipe
   id: FabricateWeakLaserLocus
@@ -41,7 +41,7 @@
     BasicElectronics: 1
     Plasma: 10
   outputs:
-    WeakLaserLocus: 1
+    WeakLaserLocus1: 1
 
 - type: factoryRecipe
   id: FabricateMissileTube
@@ -51,7 +51,7 @@
     Silver: 10
     Steel: 5
   outputs:
-    TubeLoader: 1
+    TubeLoader1: 1
 
 - type: factoryRecipe
   id: FabricateBallisticCycler
@@ -60,7 +60,7 @@
     BasicMechatronics: 2
     Steel: 5
   outputs:
-    BallisticCycler: 1
+    BallisticCycler1: 1
 
 - type: factoryRecipe
   id: FabricateLaserLocus
@@ -70,7 +70,7 @@
     Gold: 5
     Glass: 5
   outputs:
-    LaserLocus: 1
+    LaserLocus1: 1
 
 - type: factoryRecipe
   id: FabricateHardsuitElectronics
@@ -79,16 +79,16 @@
     BasicElectronis: 2
     Gold: 5
   outputs:
-    HardsuitElectronics: 1
+    HardsuitElectronics1: 1
 
 - type: factoryRecipe
   id: FabricatePlastitaniumPlate
   name: press plastitanium plate
   inputs:
-    Plasteel: 10
+    Plasteel: 5
     Gold: 5
   outputs:
-    PlastitaniumFibreAlloy: 1
+    PlastitaniumFibreAlloy1: 1
 
 - type: factoryRecipe
   id: FabricateHardlightGenerator
@@ -99,4 +99,95 @@
     Gold: 5
     Silver: 5
   outputs:
-    HardlightGenerator: 1
+    HardlightGenerator1: 1
+
+- type: factoryRecipe
+  id: FabricateMagazineMortar
+  name: fabricate 90mm mortar shellbox
+  inputs:
+    Steel: 10
+    Plasma: 2
+  outputs:
+    MagazineMortar: 1
+
+- type: factoryRecipe
+  id: FabricateMagazineNeedler
+  name: fabricate needler magazine
+  inputs:
+    Steel: 5
+    Plasma: 4
+  outputs:
+    MagazineNeedler: 1
+
+- type: factoryRecipe
+  id: FabricateMagazineFlak
+  name: fabricate flak cannon box
+  inputs:
+    Steel: 5
+    Plasma: 4
+  outputs:
+    MagazineFlak: 1
+
+- type: factoryRecipe
+  id: FabricateMagazineLightRifle
+  name: fabricate 5.56x45 magazine
+  inputs:
+    Steel: 5
+  outputs:
+    MagazineLightRifle: 1
+
+- type: factoryRecipe
+  id: FabricateMagazineRifle
+  name: fabricate 7.62x51 magazine
+  inputs:
+    Steel: 5
+  outputs:
+    MagazineRifle: 1
+
+- type: factoryRecipe
+  id: FabricateMagazineRifleDrum
+  name: fabricate 7.62x51 drum
+  inputs:
+    Steel: 10
+  outputs:
+    MagazineRifleDrum: 1
+
+- type: factoryRecipe
+  id: FabricateMagazinePistol
+  name: fabricate 9x19mm magazine
+  inputs:
+    Steel: 3
+  outputs:
+    MagazinePistol: 1
+
+- type: factoryRecipe
+  id: FabricateMagazinePistolSubMachineGun
+  name: fabricate 9x19mm SMG magazine
+  inputs:
+    Steel: 5
+  outputs:
+    MagazinePistolSubMachineGun: 1
+
+- type: factoryRecipe
+  id: FabricateMagazineMagnumSubMachineGun
+  name: fabricate .327 SMG magazine
+  inputs:
+    Steel: 6
+  outputs:
+    MagazineMagnumSubMachineGun: 1
+
+- type: factoryRecipe
+  id: FabricateMagazineMagnum
+  name: fabricate .327 magazine
+  inputs:
+    Steel: 3
+  outputs:
+    MagazineMagnum: 1
+
+- type: factoryRecipe
+  id: FabricateSpeedLoader
+  name: fabricate .327 speedloader
+  inputs:
+    Steel: 3
+  outputs:
+    SpeedLoaderMagnum: 1
