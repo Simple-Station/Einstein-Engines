@@ -360,10 +360,10 @@
     sprintModifier: 0.5
 
 - type: entity
-  name: IRM Justice 15.2x169mm Anti-materiel rifle
+  name: IRM Leveller 15.2x169mm Anti-materiel rifle
   parent: BaseItem
-  id: WeaponAntimaterielDSMJustice
-  description: A single-shot rifle of mandate make. Takes 15.2x169mm rounds and needs to be reloaded after every shot.
+  id: WeaponAntimaterielDSMLeveller
+  description: A controversial tool of war, anti-tank rifles have gained much disdain among the greater Imperial Houses for providing levymen with the firepower necessary to fell a mounted Knight from his exo-armour. However, needs must - the guardsmen of lesser domains maintain stockpiles of the outdated Leveller for meeting brigand hedge-knights and communard incursions on the field. 
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_amr.rsi

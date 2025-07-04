@@ -72,7 +72,7 @@
   name: IRM Matusa 12g
   parent: [BaseWeaponSniper, BaseGunWieldable] #UNTIL THE REVOLVER SYSTEM GETS FIXED WE USE THIS.
   id: WeaponShotgunDSMMatusa
-  description: A premium combat shotgun ripped from ancient Terran designs. Originates from the now-defunct NanoTrasen.
+  description: The Matusa has only recently fallen out of favour with the Imperial Subjugation Corps as the civil war has pivoted arsenals towards armour-piercing firepower for whom the shotgun falls short. However, Matusas can be found in shock-assault divisions and peacekeeping forces across the sectors which once comprised the Imperial Mandate as the revolving street-sweeper requires no advanced machining and is effective at clearing fortified positions and unruly crowds alike.
   components:
   - type: Item
     size: Ginormous
