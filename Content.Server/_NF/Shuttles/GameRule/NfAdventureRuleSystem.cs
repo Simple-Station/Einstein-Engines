@@ -130,7 +130,8 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         //var dochenskaya = "/Maps/_Crescent/Stations/dochenskaya.yml";
         var jackal = "/Maps/_Crescent/Stations/jackal.yml";
        // var refuge = "/Maps/_Crescent/Stations/refuge.yml";
-        var vladzena = "/Maps/_Crescent/Stations/vladzena.yml";
+        //var vladzena = "/Maps/_Crescent/Stations/vladzena.yml";
+        var vladzena = "/Maps/_Crescent/Unionfall/unionfall_vladzena.yml";
         var defensebattery = "/Maps/_Crescent/Stations/defensebatteryimperial.yml";
         // var northpole = "/Maps/_NF/POI/northpole.yml";
         var arena = "/Maps/_Crescent/Explorables/zhipovwreck.yml";
