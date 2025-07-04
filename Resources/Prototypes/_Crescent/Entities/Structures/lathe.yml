@@ -145,6 +145,7 @@
       - CartridgeDermalineInterdyne
       - CartridgePuncturaseInterdyne
       - CartridgeAtropineInterdyne
+      - SyringeCase
       - InterdyneOptics
   - type: Anchorable
     flags:
@@ -339,6 +340,7 @@
       - Brutepack
       - Ointment
       - Gauze
+      - SyringeCase
       - DisposableSyringe
       - HandheldHealthAnalyzer
       - BodyBag
