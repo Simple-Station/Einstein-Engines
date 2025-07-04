@@ -13,11 +13,8 @@ using Content.Shared.GameTicking;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Tiles;
 using Content.Shared.Whitelist;
-using Robust.Server.Maps;
 using Robust.Shared.Map;
-using Robust.Shared.Random;
 using Robust.Shared.Audio;
-using Robust.Shared.Physics.Components;
 using Robust.Shared.Utility;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map.Components;
@@ -367,7 +364,7 @@ public sealed partial class CargoSystem
             return;
         }
 
-        _mapManager.DeleteMap(CargoMap.Value);
+        _mapSystem.DeleteMap(CargoMap.Value);
         CargoMap = null;
     }
 
@@ -382,27 +379,17 @@ public sealed partial class CargoSystem
         var mapEntId = _mapSystem.CreateMap();
         CargoMap = _entityManager.GetComponent<MapComponent>(mapEntId).MapId;
 
-        var options = new MapLoadOptions
-        {
-            LoadMap = true,
-        };
-
-        _mapLoader.TryLoad((MapId) CargoMap, "/Maps/Shuttles/trading_outpost.yml", out var rootUids, options); // Oh boy oh boy, hardcoded paths!
-
         // If this fails to load for whatever reason, cargo is fucked
-        if (rootUids == null || !rootUids.Any())
+        if (!_mapLoader.TryLoadGrid((MapId) CargoMap, new ResPath("/Maps/Shuttles/trading_outpost.yml"), out var grid)) // Oh boy oh boy, hardcoded paths!
             return;
 
-        foreach (var grid in rootUids)
-        {
-            EnsureComp<ProtectedGridComponent>(grid);
-            EnsureComp<TradeStationComponent>(grid);
+        EnsureComp<ProtectedGridComponent>(grid.Value.Owner);
+        EnsureComp<TradeStationComponent>(grid.Value.Owner);
 
-            var shuttleComponent = EnsureComp<ShuttleComponent>(grid);
-            shuttleComponent.AngularDamping = 10000;
-            shuttleComponent.LinearDamping = 10000;
-            Dirty(grid, shuttleComponent);
-        }
+        var shuttleComponent = EnsureComp<ShuttleComponent>(grid.Value.Owner);
+        shuttleComponent.AngularDamping = 10000;
+        shuttleComponent.LinearDamping = 10000;
+        Dirty(grid.Value.Owner, shuttleComponent);
 
         var mapUid = _sharedMapSystem.GetMap(CargoMap.Value);
         var ftl = EnsureComp<FTLDestinationComponent>(mapUid);

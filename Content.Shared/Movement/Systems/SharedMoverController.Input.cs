@@ -9,6 +9,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.GameStates;
 using Robust.Shared.Input;
 using Robust.Shared.Input.Binding;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
@@ -225,7 +226,7 @@ namespace Content.Shared.Movement.Systems
             }
 
             // If we went from grid -> map we'll preserve our worldrotation
-            if (relative != null && _mapManager.IsMap(relative.Value))
+            if (relative != null && HasComp<MapComponent>(relative.Value))
             {
                 targetRotation = currentRotation.FlipPositive().Reduced();
             }

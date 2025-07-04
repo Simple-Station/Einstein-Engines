@@ -16,15 +16,16 @@ using Content.Shared.Gravity;
 using Content.Shared.Parallax.Biomes;
 using Content.Shared.Salvage;
 using Content.Shared.Shuttles.Components;
-using Robust.Server.GameObjects;
-using Robust.Server.Maps;
 using Robust.Shared.Configuration;
+using Robust.Shared.EntitySerialization;
+using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Utility;
 
 namespace Content.Server._Lavaland.Procedural.Systems;
 
@@ -251,16 +252,14 @@ public sealed class LavalandPlanetSystem : EntitySystem
 
     }
 
-    private bool SetupOutpost(EntityUid lavaland, MapId lavalandMapId, string path, out EntityUid outpost)
+    private bool SetupOutpost(EntityUid lavaland, MapId lavalandMapId, ResPath path, out EntityUid outpost)
     {
         outpost = EntityUid.Invalid;
 
         // Setup Outpost
-        if (!_mapLoader.TryLoad(lavalandMapId, path, out var outposts) || outposts.Count != 1)
+        if (!_mapLoader.TryLoadGrid(lavalandMapId, path, out var outposts))
         {
-            Log.Error(outposts?.Count > 1
-                ? $"Loading Outpost on lavaland map failed, {path} is not saved as a grid."
-                : $"Failed to spawn Outpost {path} onto Lavaland map.");
+            Log.Error($"Failed to spawn Outpost {path} onto Lavaland map.");
             return false;
         }
 
@@ -492,12 +491,7 @@ public sealed class LavalandPlanetSystem : EntitySystem
         var mapXform = Transform(salvMap);
 
         // Try to load everything on a dummy map
-        var opts = new MapLoadOptions
-        {
-            Offset = coord
-        };
-
-        if (!_mapLoader.TryLoad(mapXform.MapID, ruin.Path, out _, opts) || mapXform.ChildCount != 1)
+        if (!_mapLoader.TryLoadGrid(mapXform.MapID, ruin.Path, out _, offset:coord))
         {
             Log.Error($"Failed to load ruin {ruin.ID} onto dummy map!");
             return false;
@@ -545,9 +539,7 @@ public sealed class LavalandPlanetSystem : EntitySystem
             var bounds = new List<Box2>();
 
             // Try to load everything on a dummy map
-            var opts = new MapLoadOptions();
-
-            if (!_mapLoader.TryLoad(mapId, proto.Path, out _, opts) || dummyMapXform.ChildCount == 0)
+            if (!_mapLoader.TryLoadGrid(mapId, proto.Path, out _))
             {
                 Log.Error($"Failed to load ruin {proto.ID} onto dummy map!");
                 continue;
