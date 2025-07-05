@@ -13,7 +13,7 @@
   mapPath: /Maps/_Crescent/Unionfall/unionfall_clementine.yml
   minPlayers: 0
   stations:
-    Clementine:
+    Unionfall-Clementine:
       stationProto: StandardCrescentVessel
       components:
         - type: StationNameSetup

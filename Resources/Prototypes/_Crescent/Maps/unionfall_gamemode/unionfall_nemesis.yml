@@ -13,7 +13,7 @@
   mapPath: /Maps/_Crescent/Unionfall/unionfall_nemesis.yml
   minPlayers: 0
   stations:
-    Nemesis:
+    Unionfall-Nemesis:
       stationProto: StandardCrescentVessel
       components:
         - type: StationNameSetup

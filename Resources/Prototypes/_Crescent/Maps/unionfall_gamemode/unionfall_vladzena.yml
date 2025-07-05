@@ -4,7 +4,7 @@
   mapPath: /Maps/_Crescent/Unionfall/unionfall_vladzena.yml
   minPlayers: 0
   stations:
-    Vladzena:
+    Unionfall-Vladzena:
       stationProto: StandardCrescentStation
       gridComponents:
         - type: BlockShipWeaponProjectileGrid
