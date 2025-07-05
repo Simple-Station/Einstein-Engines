@@ -726,4 +726,284 @@
     sprite: Structures/Walls/solid_diagonalsoutheasthollow.rsi
     state: state0
 
+#jackal
 
+- type: entity
+  parent: WallShuttleDiagonal
+  id: WallJackalDiagonalNortheastCurved
+  name: jackal hull
+  suffix: NortheastCurved
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: Structures/Walls/solid_diagonalnortheastcurved.rsi
+    state: state0
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+  - type: Icon
+    sprite: Structures/Walls/solid_diagonalnortheastcurved.rsi
+    state: state0
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1600
+        behaviors:
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              Girder:
+                min: 1
+                max: 1
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  parent: WallShuttleDiagonal
+  id: WallJackalDiagonalNorthwestCurved
+  name: jackal hull
+  suffix: NorthwestCurved
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: Structures/Walls/solid_diagonalnorthwestcurved.rsi
+    state: state0
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+  - type: Icon
+    sprite: Structures/Walls/solid_diagonalnorthwestcurved.rsi
+    state: state0
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1600
+        behaviors:
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              Girder:
+                min: 1
+                max: 1
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  parent: WallShuttleDiagonal
+  id: WallJackalDiagonalSouthwestCurved
+  name: jackal hull
+  suffix: SouthwestCurved
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: Structures/Walls/solid_diagonalsouthwestcurved.rsi
+    state: state0
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+  - type: Icon
+    sprite: Structures/Walls/solid_diagonalsouthwestcurved.rsi
+    state: state0
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1600
+        behaviors:
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              Girder:
+                min: 1
+                max: 1
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  parent: WallShuttleDiagonal
+  id: WallJackalDiagonalSoutheastCurved
+  name: jackal hull
+  suffix: SoutheastCurved
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: Structures/Walls/solid_diagonalsoutheastcurved.rsi
+    state: state0
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+  - type: Icon
+    sprite: Structures/Walls/solid_diagonalsoutheastcurved.rsi
+    state: state0
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1600
+        behaviors:
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              Girder:
+                min: 1
+                max: 1
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  parent: WallShuttleDiagonal
+  id: WallJackalDiagonalNortheastHollow
+  name: jackal hull
+  suffix: NortheastHollow
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: Structures/Walls/solid_diagonalnortheasthollow.rsi
+    state: state0
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+  - type: Icon
+    sprite: Structures/Walls/solid_diagonalnortheasthollow.rsi
+    state: state0
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1600
+        behaviors:
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              Girder:
+                min: 1
+                max: 1
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  parent: WallShuttleDiagonal
+  id: WallJackalDiagonalNorthwestHollow
+  name: jackal hull
+  suffix: NorthwestHollow
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: Structures/Walls/solid_diagonalnorthwesthollow.rsi
+    state: state0
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+  - type: Icon
+    sprite: Structures/Walls/solid_diagonalnorthwesthollow.rsi
+    state: state0
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1600
+        behaviors:
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              Girder:
+                min: 1
+                max: 1
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  parent: WallShuttleDiagonal
+  id: WallJackalDiagonalSouthwestHollow
+  name: jackal hull
+  suffix: SouthwestHollow
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: Structures/Walls/solid_diagonalsouthwesthollow.rsi
+    state: state0
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+  - type: Icon
+    sprite: Structures/Walls/solid_diagonalsouthwesthollow.rsi
+    state: state0
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1600
+        behaviors:
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              Girder:
+                min: 1
+                max: 1
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  parent: WallShuttleDiagonal
+  id: WallJackalDiagonalSoutheastHollow
+  name: jackal hull
+  suffix: SoutheastHollow
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: Structures/Walls/solid_diagonalsoutheasthollow.rsi
+    state: state0
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+  - type: Icon
+    sprite: Structures/Walls/solid_diagonalsoutheasthollow.rsi
+    state: state0
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1600
+        behaviors:
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              Girder:
+                min: 1
+                max: 1
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]

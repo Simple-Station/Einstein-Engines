@@ -30,6 +30,9 @@
   - CartridgeBicaridineInterdyne
   - CartridgeSalineInterdyne
   - CartridgeDermalineInterdyne
+  - CartridgePuncturaseInterdyne
+  - CartridgeAtropineInterdyne
+  - SyringeCase
 
 - type: technology
   id: InterdyneArmor

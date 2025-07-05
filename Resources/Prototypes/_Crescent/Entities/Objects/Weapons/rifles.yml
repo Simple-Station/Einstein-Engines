@@ -404,7 +404,7 @@
 
 
 - type: entity
-  name: NCSP AKMS-74U Krinkov 7.62x51mm
+  name: NCSP AKMS-74U Krinkov 5.56x45mm
   parent: BaseWeaponRifle
   id: WeaponRifleKrinkov
   description: A shortened battle rifle, replicated from Terran designs by the Coalition - commonly attributed to terrorist groups. Cheap and easily made.
@@ -422,27 +422,27 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/krinkov.rsi
   - type: Gun
-    fireRate: 3
+    fireRate: 5
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/krinkov.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineRifle
+        startingItem: MagazineLightRifle
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazineRifle
+            - MagazineLightRifle
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeRifle
+        startingItem: CartridgeLightRifle
         priority: 1
         whitelist:
           tags:
-            - CartridgeRifle
+            - CartridgeLightRifle
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
