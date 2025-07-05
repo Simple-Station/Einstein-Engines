@@ -1,0 +1,82 @@
+- type: loadout
+  id: LoadoutOuterArmorSHIHighsecUA
+  category: Outer
+  cost: 0
+  items:
+    - ClothingOuterArmorShinoharaArmorHighsecUA
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - HighsecSHI
+
+- type: loadout
+  id: LoadoutOuterArmorSHIBasic
+  category: Outer
+  cost: 2
+  items:
+    - ClothingOuterArmorShinoharaArmor
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - BoardSHI
+        - EmployeeSHI
+        - ExecutiveSHI
+        - MedtechSHI
+        - CorpsecSHI
+
+- type: loadout
+  id: LoadoutOuterCoatSHIVest
+  category: Outer
+  cost: 0
+  items:
+    - ClothingOuterShinoharaVest
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - BoardSHI
+        - EmployeeSHI
+        - ExecutiveSHI
+        - MedtechSHI
+        - CorpsecSHI
+
+- type: loadout
+  id: LoadoutOuterCoatSHISuitjacket
+  category: Outer
+  cost: 0
+  items:
+    - ClothingOuterShinoharaSuitjacket
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - BoardSHI
+        - EmployeeSHI
+        - ExecutiveSHI
+        - HighsecSHI
+        - MedtechSHI
+        - CorpsecSHI
+
+- type: loadout
+  id: LoadoutOuterCoatSHILabcoat
+  category: Outer
+  cost: 0
+  items:
+    - ClothingOuterShinoharaLabcoat
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - BoardSHI
+        - EmployeeSHI
+        - ExecutiveSHI
+        - HighsecSHI
+        - MedtechSHI
+        - CorpsecSHI

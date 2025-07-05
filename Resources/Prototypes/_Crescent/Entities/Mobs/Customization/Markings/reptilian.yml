@@ -1,0 +1,8 @@
+- type: marking
+  id: LizardSideFeathers
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _Crescent/Mobs/Customization/Markings/lizard_feathers.rsi
+    state: lizard_feathers

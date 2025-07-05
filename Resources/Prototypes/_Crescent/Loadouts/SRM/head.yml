@@ -1,0 +1,18 @@
+
+- type: loadout
+  id: LoadoutHeadSRMHunterBasic
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHelmetHunterBasic
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - AcolyteSRM
+        - HunterSRM
+        - MontagneSRM
+        - OverseerSRM
+        - TenderSRM
