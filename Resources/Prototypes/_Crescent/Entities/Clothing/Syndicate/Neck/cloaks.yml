@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakRingleader
+  name: syndicate ringleader's cloak
+  description: An ornamental cape worn by the local warlord of the Syndicate.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/Neck/ringleadercloak.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/Neck/ringleadercloak.rsi
