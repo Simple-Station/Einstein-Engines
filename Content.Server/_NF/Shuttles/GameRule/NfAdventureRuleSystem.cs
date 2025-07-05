@@ -131,7 +131,7 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         var jackal = "/Maps/_Crescent/Stations/jackal.yml";
         // var refuge = "/Maps/_Crescent/Stations/refuge.yml";
         //var vladzena = "/Maps/_Crescent/Stations/vladzena.yml";
-        var unionfall_clementine = "/Maps/_Crescent/Unionfall/unionfall_clementime.yml";
+        var unionfall_clementine = "/Maps/_Crescent/Unionfall/unionfall_clementine.yml";
         var unionfall_nemesis = "/Maps/_Crescent/Unionfall/unionfall_nemesis.yml";
         var unionfall_vladzena = "/Maps/_Crescent/Unionfall/unionfall_vladzena.yml";
         var defensebattery = "/Maps/_Crescent/Stations/defensebatteryimperial.yml";
