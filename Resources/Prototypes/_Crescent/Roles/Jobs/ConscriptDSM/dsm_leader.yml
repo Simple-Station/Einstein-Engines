@@ -18,7 +18,7 @@
   weight: 55
   startingGear: ConscriptLeaderDSMGear
   alwaysUseSpawner: true
-  icon: "JobIconImperialKnight"
+  icon: "JobIconImperialAdjutant"
   requireAdminNotify: true
   supervisors: job-supervisors-imperial
   canBeAntag: false
@@ -26,7 +26,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-knight
+        rank: crescent-rank-templar
   access:
   - EmergencyShuttleRepealAll
   - Captain

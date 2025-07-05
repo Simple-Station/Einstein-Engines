@@ -14,6 +14,7 @@ crescent-rank-ministry = Minister
 crescent-rank-archmaester = Archmaester
 crescent-rank-advocatus = Advocati
 crescent-rank-templar = Knight Templar
+crescent-rank-cadet = Cadet
 
 #ncwl
 crescent-rank-admin = Major

@@ -6,7 +6,7 @@
   weight: 10
   startingGear: ConscriptCadetDSMGear
   alwaysUseSpawner: true
-  icon: "JobIconKadet"
+  icon: "JobIconImperialFreeholder"
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"
@@ -23,7 +23,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-soldat
+        rank: crescent-rank-cadet
   access:
   - Command
   - Maintenance

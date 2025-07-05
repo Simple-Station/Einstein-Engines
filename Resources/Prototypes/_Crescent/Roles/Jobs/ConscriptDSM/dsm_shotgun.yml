@@ -6,7 +6,7 @@
   weight: 10
   startingGear: ConscriptShotgunDSMGear
   alwaysUseSpawner: true
-  icon: "JobIconKadet"
+  icon: "JobIconImperialLevyman"
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"
@@ -23,7 +23,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-soldat
+        rank: crescent-rank-manatarms
   access:
   - Command
   - Maintenance

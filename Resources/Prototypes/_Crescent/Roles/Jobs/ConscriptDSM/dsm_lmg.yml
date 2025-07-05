@@ -6,7 +6,7 @@
   weight: 10
   startingGear: ConscriptGunnerDSMGear
   alwaysUseSpawner: true
-  icon: "JobIconKadet"
+  icon: "JobIconImperialKnight"
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"
@@ -23,7 +23,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-soldat
+        rank: crescent-rank-knight
   access:
   - Command
   - Maintenance
