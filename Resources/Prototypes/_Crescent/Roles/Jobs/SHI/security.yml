@@ -40,9 +40,7 @@
     jumpsuit: ClothingUniformJumpsuitShinoharaSecurity
     shoes: ClothingShoesBootsCombat
     belt: WeaponLaserSvalinn
-    head: ClothingHeadHatShinoharaBeret
-    outerClothing: ClothingOuterArmorShinoharaArmor
-    gloves: ClothingHandsGlovesFingerless
+    gloves: ClothingHandsGlovesCombat
     id: CorpsecPDA
     ears: ClothingHeadsetShinohara
     pocket1: Handcuffs

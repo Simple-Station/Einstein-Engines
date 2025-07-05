@@ -45,7 +45,8 @@
     shoes: ClothingShoesBootsCombat
     head: ClothingHeadHatWatchmaster
     gloves: ClothingHandsGlovesCombat
-    belt: WeaponPistolHKUSP
+    belt: ClothingBeltMinutemanPouches
+    pocket1: WeaponPistolHKUSP
     id: WatchmasterPDA
     ears: ClothingHeadsetCMM
     neck: ClothingNeckScarfCMMCloak

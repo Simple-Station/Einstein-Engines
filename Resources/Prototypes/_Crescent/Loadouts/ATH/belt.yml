@@ -1,0 +1,74 @@
+- type: loadout
+  id: LoadoutBeltATHWebbing
+  category: Belt
+  cost: 0
+  items:
+    - ClothingBeltAuthorityWebbing
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - KanoneerATH
+        - KommandantATH
+        - LeutnantATH
+        - SanitatATH
+        - SoldatATH
+        - StewardATH
+        - OberartzATH
+        - LogistatATH
+        - HandelsATH
+        - ForscherATH
+        - ChirurgeonATH
+        - VorarbeiterATH
+        - ArbeiterATH
+
+- type: loadout
+  id: LoadoutBeltATHPouches
+  category: Belt
+  cost: 0
+  items:
+    - ClothingBeltAuthorityPouches
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - KanoneerATH
+        - KommandantATH
+        - LeutnantATH
+        - SanitatATH
+        - SoldatATH
+        - StewardATH
+        - OberartzATH
+        - LogistatATH
+        - HandelsATH
+        - ForscherATH
+        - ChirurgeonATH
+        - VorarbeiterATH
+        - ArbeiterATH
+
+- type: loadout
+  id: LoadoutBeltATHDropPouches
+  category: Belt
+  cost: 0
+  items:
+    - ClothingBeltAuthorityDroppouches
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - KanoneerATH
+        - KommandantATH
+        - LeutnantATH
+        - SanitatATH
+        - SoldatATH
+        - StewardATH
+        - OberartzATH
+        - LogistatATH
+        - HandelsATH
+        - ForscherATH
+        - ChirurgeonATH
+        - VorarbeiterATH
+        - ArbeiterATH

@@ -79,7 +79,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitShinoharaHighsec
   name: highsec officer's turtleneck
-  description: A traumasec officer's corporate uniform in Shinohara MedTech colors.
+  description: A highsec officer's corporate uniform in Shinohara MedTech colors.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/SHI/Uniform/securityturtleneck.rsi
