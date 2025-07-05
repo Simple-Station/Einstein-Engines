@@ -1,3 +1,8 @@
+#IF YOURE WONDERING WHERE ALL THE NON-CONSCRIPT JOBS WENT
+#JUST RE-ENABLE THEM AND SET editorHidden: false 
+#YOU'RE WELCOME
+# .2 - 2025
+
 - type: department
   id: Logistics
   description: department-Cargo-description
@@ -25,12 +30,13 @@
  # - Librarian
  # - Mime
  # - Musician
-  - Contractor
+ # - Contractor
  # - Reporter
  # - Visitor
  # - Zookeeper
  # - ServiceWorker
   enabled: true
+  editorHidden: true
 
 - type: department
   id: Command
@@ -88,6 +94,7 @@
   color: "#9FED58"
   weight: -91
   primary: false
+  editorHidden: true
 
 - type: department
   id: NCWL
@@ -102,7 +109,8 @@
   - DoktorNCWL
   - KapitanNCWL
   - KadetNCWL
-  enabled: true
+  enabled: false
+  editorHidden: true
 
 - type: department
   id: NCSP
@@ -121,7 +129,8 @@
   - CyberdawnTechNCSP
   - ForemanNCSP
   - ShipbreakerNCSP
-  enabled: true
+  enabled: false
+  editorHidden: true
 
 - type: department
   id: DSM
@@ -142,7 +151,8 @@
   - GovernorDSM
   - AdvocatusDSM
   - ArchmaesterDSM
-  enabled: true
+  enabled: false
+  editorHidden: true
 
 - type: department
   id: SRM
@@ -156,7 +166,7 @@
   - MontagneSRM
   - OverseerSRM
   enabled: false
-  editorHidden: false # i just like to see them for the numbers , SPCR 2025
+  editorHidden: true # i just like to see them for the numbers , SPCR 2025
 
 - type: department
   id: SHI
@@ -171,6 +181,7 @@
   - EmployeeSHI
   - MedtechSHI
   enabled: false
+  editorHidden: true
 
 - type: department
   id: CMM
@@ -185,7 +196,8 @@
   - WatchmasterCMM
   - DeputyMarshalCMM
   - MarshalCMM
-  enabled: true
+  enabled: false
+  editorHidden: true
 
 - type: department
   id: TAP
@@ -202,7 +214,8 @@
   - BeltrunnerTAP
   - DraugrTAP
   - ServileTAP
-  enabled: true
+  enabled: false
+  editorHidden: true
 
 - type: department
   id: ATH
@@ -215,8 +228,8 @@
   - KanoneerATH
   - SoldatATH
   - SanitatATH
-  enabled: true
-  editorHidden: false # i just like to see them for the numbers , SPCR 2025
+  enabled: false
+  editorHidden: true # i just like to see them for the numbers , SPCR 2025
 
   # CONSCRIPT
 
