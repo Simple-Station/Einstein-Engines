@@ -653,16 +653,16 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         //    _shuttle.SetIFFColor(griftyUids[0], factionColor);
         // }
 
-        //    if (_map.TryLoad(mapId, courthouse, out var depotUid8s, new MapLoadOptions()))
-        //   {
-        //        if (_prototypeManager.TryIndex<GameMapPrototype>("Kal", out var stationProto))
-        //        {
-        //            _station.InitializeNewStation(stationProto.Stations["Kal"], depotUid8s);
-        //        }
-        //       var meta = EnsureComp<MetaDataComponent>(depotUid8s[0]);
-        //      _meta.SetEntityName(depotUid8s[0], "Kal Surezai", meta);
-        //      _shuttle.SetIFFColor(depotUid8s[0], factionColor);
-        //   }
+           if (_map.TryLoad(mapId, courthouse, out var depotUid8s, new MapLoadOptions()))
+          {
+            //    if (_prototypeManager.TryIndex<GameMapPrototype>("Kal", out var stationProto)) //WE DONT INITIALIZE SPAWNS FOR CONSCRIPT
+            //    {
+            //        _station.InitializeNewStation(stationProto.Stations["Kal"], depotUid8s);
+            //    }
+              var meta = EnsureComp<MetaDataComponent>(depotUid8s[0]);
+             _meta.SetEntityName(depotUid8s[0], "Kal Surezai", meta);
+             _shuttle.SetIFFColor(depotUid8s[0], factionColor);
+          }
 
         //  if (_map.TryLoad(mapId, lab, out var labUids, new MapLoadOptions
         //     {
