@@ -11,7 +11,7 @@
         - Oni
     - !type:FactionRequirement
       factionID: "ATH"
-  weight: 84
+  weight: 80
   startingGear: SoldatGear
   alwaysUseSpawner: true
   icon: "JobIconSoldat"

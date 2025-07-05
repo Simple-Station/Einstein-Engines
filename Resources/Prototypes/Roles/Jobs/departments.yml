@@ -136,6 +136,7 @@
   - ScribeDSM
   - TemplarDSM
   - SurgeonDSM
+  - LaborDSM
   - CourtierDSM
   - AdjutantDSM
   - GovernorDSM
@@ -214,5 +215,13 @@
   - KanoneerATH
   - SoldatATH
   - SanitatATH
+  - StewardATH
+  - OberartzATH
+  - LogistatATH
+  - HandelsATH
+  - ForscherATH
+  - ChirurgeonATH
+  - VorarbeiterATH
+  - ArbeiterATH
   enabled: true
   editorHidden: false # i just like to see them for the numbers , SPCR 2025

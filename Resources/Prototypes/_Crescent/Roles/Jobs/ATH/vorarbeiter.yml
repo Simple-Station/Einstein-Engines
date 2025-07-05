@@ -1,27 +1,23 @@
 - type: job
-  id: KommandantATH
-  name: job-name-kommandant
-  description: job-description-kommandant
-  playTimeTracker: JobKommandantATH
+  id: VorarbeiterATH
+  name: job-name-vorarbeiter
+  description: job-description-vorarbeiter
+  playTimeTracker: JobVorarbeiterATH
   requirements:
-    - !type:CharacterWhitelistRequirement
     - !type:CharacterSpeciesRequirement
       species:
         - Human
+        - Reptilian
+        - Oni
     - !type:FactionRequirement
       factionID: "ATH"
-  weight: 87
-  startingGear: KommandantGear
+  weight: 76
+  startingGear: VorarbeiterGear
   alwaysUseSpawner: true
-  icon: "JobIconKommandant"
+  icon: "JobIconVorarbeiter"
   requireAdminNotify: true
   supervisors: job-supervisors-ath
   canBeAntag: false
-  special:
-  - !type:AddComponentSpecial
-    components:
-      - type: ChatRank
-        rank: crescent-rank-kommandant
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -58,19 +54,14 @@
   - Maintenance
   - Service
   - External
-  - Kommandant
   - Authority
-  - AuthorityRanking
-  - Authoritymed
   - AuthoritySupply
 
 - type: startingGear
-  id: KommandantGear
+  id: VorarbeiterGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitAuthorityKommandant
+    jumpsuit: ClothingUniformJumpsuitAuthorityVorarbeiter
+    outerClothing: ClothingOuterCoatAuthorityVorarbeiter
     shoes: ClothingShoesBootsJack
-    head: ClothingHeadHatAuthorityKommandant
-    outerClothing: ClothingOuterCoatAuthorityKommandant
-    belt: ClothingBeltSheathFilled
-    id: KommandantPDA
+    id: VorarbeiterPDA
     ears: ClothingHeadsetAuthority
