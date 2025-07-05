@@ -1477,4 +1477,21 @@
   - type: StaticPrice
     price: 27000
   - type: ShipVoucher
-    ship: Geode 
+    ship: Geode
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherScabrak
+  name: SAW 'Scabrak' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with the SAW Scabrak.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 18000
+  - type: ShipVoucher
+    ship: Scabrak

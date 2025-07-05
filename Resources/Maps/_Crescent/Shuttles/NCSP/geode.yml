@@ -21,7 +21,7 @@ entities:
     - type: MetaData
       name: grid
     - type: Transform
-      pos: -0.5234375,-0.546875
+      pos: -8.556015,-8.725857
       parent: invalid
     - type: MapGrid
       chunks:
@@ -821,7 +821,7 @@ entities:
       parent: 1
     - type: Physics
       canCollide: False
-  - uid: 4
+  - uid: 3
     components:
     - type: Transform
       pos: 7.5,2.5
@@ -830,7 +830,7 @@ entities:
       canCollide: False
 - proto: AAAHardpointSmallBallistic
   entities:
-  - uid: 8
+  - uid: 4
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -838,7 +838,7 @@ entities:
       parent: 1
     - type: Physics
       canCollide: False
-  - uid: 9
+  - uid: 5
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -846,7 +846,7 @@ entities:
       parent: 1
     - type: Physics
       canCollide: False
-  - uid: 10
+  - uid: 6
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -854,7 +854,7 @@ entities:
       parent: 1
     - type: Physics
       canCollide: False
-  - uid: 11
+  - uid: 7
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -864,7 +864,7 @@ entities:
       canCollide: False
 - proto: AAAHardpointSmallEnergy
   entities:
-  - uid: 5
+  - uid: 8
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -872,7 +872,7 @@ entities:
       parent: 1
     - type: Physics
       canCollide: False
-  - uid: 7
+  - uid: 9
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -880,7 +880,7 @@ entities:
       parent: 1
     - type: Physics
       canCollide: False
-  - uid: 620
+  - uid: 10
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -888,7 +888,7 @@ entities:
       parent: 1
     - type: Physics
       canCollide: False
-  - uid: 621
+  - uid: 11
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -1023,47 +1023,41 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 0.5,10.5
       parent: 1
-- proto: AirlockExternalCommandLocked
-  entities:
-  - uid: 29
-    components:
-    - type: Transform
-      pos: 15.5,0.5
-      parent: 1
-  - uid: 30
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 13.5,16.5
-      parent: 1
-  - uid: 31
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 15.5,16.5
-      parent: 1
-  - uid: 32
-    components:
-    - type: Transform
-      pos: 13.5,0.5
-      parent: 1
-    - type: Door
-      secondsUntilStateChange: -3825.5972
-      state: Opening
-    - type: DeviceLinkSource
-      lastSignals:
-        DoorStatus: True
 - proto: AirlockHorizontal
   entities:
-  - uid: 33
+  - uid: 31
     components:
     - type: Transform
       pos: 13.5,10.5
       parent: 1
-  - uid: 34
+  - uid: 32
     components:
     - type: Transform
       pos: 13.5,6.5
+      parent: 1
+- proto: AirlockShuttle
+  entities:
+  - uid: 29
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 13.5,16.5
+      parent: 1
+  - uid: 30
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 15.5,16.5
+      parent: 1
+  - uid: 33
+    components:
+    - type: Transform
+      pos: 13.5,0.5
+      parent: 1
+  - uid: 34
+    components:
+    - type: Transform
+      pos: 15.5,0.5
       parent: 1
 - proto: AirSensor
   entities:
@@ -3110,9 +3104,11 @@ entities:
   - uid: 371
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 3.8290186,5.490162
+      pos: 3.4947584,5.4352894
       parent: 1
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: Multitool
   entities:
   - uid: 372
@@ -4635,23 +4631,23 @@ entities:
     - type: InsideEntityStorage
 - proto: WeaponTurretLaser
   entities:
-  - uid: 3
+  - uid: 618
     components:
     - type: Transform
       pos: 5.5,2.5
       parent: 1
-  - uid: 6
+  - uid: 619
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 5.5,14.5
       parent: 1
-  - uid: 618
+  - uid: 620
     components:
     - type: Transform
       pos: 9.5,2.5
       parent: 1
-  - uid: 619
+  - uid: 621
     components:
     - type: Transform
       rot: 3.141592653589793 rad
