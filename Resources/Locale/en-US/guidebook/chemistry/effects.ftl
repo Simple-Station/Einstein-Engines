@@ -413,6 +413,12 @@ reagent-effect-guidebook-plant-seeds-remove =
         *[other] remove the
     } seeds of the plant
 
+reagent-effect-guidebook-remove-cogchamp-accent =
+    { $chance ->
+        [1] Removes the
+        *[other] remove the
+    } cogchamp accent of the user
+
 reagent-effect-guidebook-stamina-change =
     { $chance ->
         [1] { $deltasign ->
