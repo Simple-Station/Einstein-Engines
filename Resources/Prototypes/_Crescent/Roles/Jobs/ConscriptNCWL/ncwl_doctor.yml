@@ -13,7 +13,7 @@
         - Blindness
         - WheelchairBound
   weight: 22
-  startingGear: ConscriptDoktorNCWLGear
+  startingGear: ConscriptDoctorNCWLGear
   alwaysUseSpawner: true
   icon: "JobIconDoktor"
   requireAdminNotify: false

@@ -4,7 +4,7 @@
   description: job-description-conscript-dsm-smg #change me later
   playTimeTracker: ConscriptJobSubmachinegunDSM
   weight: 10
-  startingGear: ConscriptSubmachinegunSMGear
+  startingGear: ConscriptSubmachinegunDSMGear
   alwaysUseSpawner: true
   icon: "JobIconKadet"
   requirements:

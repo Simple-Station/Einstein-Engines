@@ -1030,3 +1030,25 @@
     ClothingOuterArmorImperialArmorPrestige: 5
     ClothingHeadHelmetImperialEVA: 100
     ClothingOuterCoatImperialSoftsuit: 100
+
+- type: vendingMachineInventory
+  id: NCWLConscriptAmmoInventory
+  startingInventory:
+    BoxSpeedLoaderRifle: 100
+    MagazinePistolSubMachineGun: 12
+    BoxRoundsAntiMateriel: 1
+    MagazineRifleDrum: 3
+    BoxLethalshot: 10
+    MagazineMagnum: 12
+    MagazinePistol: 250
+
+- type: vendingMachineInventory
+  id: DSMConscriptAmmoInventory
+  startingInventory:
+    MagazineBoxLightRifleSurplus: 100
+    MagazinePistolSubMachineGun: 12
+    BoxRoundsAntiMateriel: 1
+    MagazineLightRifleBox: 3
+    BoxLethalshot: 10
+    MagazineMagnum: 12
+    MagazinePistol: 250
