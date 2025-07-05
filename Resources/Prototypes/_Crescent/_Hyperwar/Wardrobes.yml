@@ -1034,21 +1034,51 @@
 - type: vendingMachineInventory
   id: NCWLConscriptAmmoInventory
   startingInventory:
-    BoxSpeedLoaderRifle: 100
+    WeaponSniperNCWLNovomosin: 100
+    WeaponPistolComrade: 20
+    BoxSpeedLoaderRifle: 50
     MagazinePistolSubMachineGun: 12
     BoxRoundsAntiMateriel: 1
     MagazineRifleDrum: 3
     BoxLethalshot: 10
     MagazineMagnum: 12
-    MagazinePistol: 250
+    MagazinePistol: 50
 
 - type: vendingMachineInventory
   id: DSMConscriptAmmoInventory
   startingInventory:
-    MagazineBoxLightRifleSurplus: 100
+    WeaponSniperDSMLegax: 100
+    WeaponPistolComplianceImperial: 20
+    MagazineBoxLightRifleSurplus: 50
     MagazinePistolSubMachineGun: 12
     BoxRoundsAntiMateriel: 1
     MagazineLightRifleBox: 3
     BoxLethalshot: 10
     MagazineMagnum: 12
-    MagazinePistol: 250
+    MagazinePistol: 50
+
+- type: vendingMachineInventory
+  id: NCWLConscriptGearInventory
+  startingInventory:
+    ClothingBeltNCWLWebbing: 100
+    ClothingBackpackNCWL: 100
+    ClothingHeadHelmetNCWLBasic: 5
+    ClothingOuterArmorNCWLHeavyCarapace: 5
+    ClothingHeadHelmetNCWLEVA: 20
+    ClothingOuterNCWLEVA: 20
+    JetpackBlackFilled: 20
+    HandHeldMassScannerEE: 50
+    EmergencyOxygenTankFilled: 50
+
+- type: vendingMachineInventory
+  id: DSMConscriptGearInventory
+  startingInventory:
+    ClothingBeltAuthorityWebbing: 100
+    ClothingBackpackDSM: 100
+    JetpackBlackFilled: 20
+    HandHeldMassScannerEE: 50
+    EmergencyOxygenTankFilled: 50
+    ClothingHeadHelmetImperialEVA: 20
+    ClothingOuterCoatImperialSoftsuit: 20
+    ClothingHeadHelmetImperialTrooperHelmet: 5
+    ClothingOuterArmorImperialTrooperArmor: 5

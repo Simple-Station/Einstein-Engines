@@ -655,7 +655,7 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
 
            if (_map.TryLoad(mapId, courthouse, out var depotUid8s, new MapLoadOptions()))
           {
-            //    if (_prototypeManager.TryIndex<GameMapPrototype>("Kal", out var stationProto)) //WE DONT INITIALIZE SPAWNS FOR CONSCRIPT
+            //    if (_prototypeManager.TryIndex<GameMapPrototype>("Kal", out var stationProto)) //WE DsONT INITIALIZE SPAWNS FOR CONSCRIPT
             //    {
             //        _station.InitializeNewStation(stationProto.Stations["Kal"], depotUid8s);
             //    }
