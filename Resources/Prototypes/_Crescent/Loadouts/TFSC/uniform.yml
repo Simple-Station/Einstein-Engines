@@ -1,0 +1,13 @@
+- type: loadout
+  id: LoadoutUniformSyndicateBunnysuit
+  category: Uniform
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterJobRequirement
+      jobs:
+        - LieutenantNCSP
+  items:
+    - ClothingUniformJumpsuitSyndicateBunnysuit
