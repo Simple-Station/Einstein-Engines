@@ -3,15 +3,15 @@
 
 - type: vessel
   id: Kavkaz
-  name: NCWL Vanguard Mk.II
-  description: An elite communard gunboat with upgraded armaments.
+  name: NCWL Kavkaz
+  description: A light communard destroyer.
   price: 87500
   category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/NCWL/kavkaz.yml
 
 - type: gameMap
-  id: VanguardMarkTwo
+  id: Kavkaz
   mapName: 'Kavkaz'
   mapPath: /Maps/_Crescent/Shuttles/NCWL/kavkaz.yml
   minPlayers: 0
