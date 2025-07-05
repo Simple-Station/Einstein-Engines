@@ -6,7 +6,21 @@
 # Ears
 
 # Equipment
-
+- type: loadout
+  id: LoadoutItemTapeRecorderReporter
+  category: JobsServiceReporter
+  cost: 1
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutReporterEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Reporter
+  items:
+    - TapeRecorder
+    - CassetteTape
+    - CassetteTape
 # Eyes
 
 # Gloves
