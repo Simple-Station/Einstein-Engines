@@ -828,7 +828,7 @@
 - type: entity
   id: SpawnPointConscriptLeaderNCWL
   parent: SpawnPointJobBase
-  name: ConscriptKommissarNCWL
+  name: ConscriptLeaderNCWL
   components:
   - type: SpawnPoint
     job_id: ConscriptLeaderNCWL
@@ -888,7 +888,7 @@
 - type: entity
   id: SpawnPointConscriptSubmachinegunNCWL
   parent: SpawnPointJobBase
-  name: ConscriptSubmachinegunCWL
+  name: ConscriptSubmachinegunNCWL
   components:
   - type: SpawnPoint
     job_id: ConscriptSubmachinegunNCWL
@@ -926,7 +926,7 @@
 - type: entity
   id: SpawnPointConscriptLeaderDSM
   parent: SpawnPointJobBase
-  name: ConscriptKommissarDSM
+  name: ConscriptLeaderDSM
   components:
   - type: SpawnPoint
     job_id: ConscriptLeaderDSM
@@ -986,7 +986,7 @@
 - type: entity
   id: SpawnPointConscriptSubmachinegunDSM
   parent: SpawnPointJobBase
-  name: ConscriptSubmachineguDSM
+  name: ConscriptSubmachinegunDSM
   components:
   - type: SpawnPoint
     job_id: ConscriptSubmachinegunDSM
