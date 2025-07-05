@@ -92,6 +92,7 @@
       - DrugComponent
       - Sheet
       - RawMaterial
+      - CraftMaterials
   - type: Lathe
     idleState: base_machine
     runningState: base_machine_processing
@@ -130,6 +131,22 @@
       - ClothingOuterArmorSyndicateArmorvestInterdyne
       - ClothingOuterHardsuitTraumasec
       - DefibrillatorSyndicate
+      - OmnimedToolSyndieInterdyne
+      - CyberneticsPainEditorInterdyne
+      - CyberneticsAdrenalInterdyne
+      - CyberneticsBloodPumpInterdyne
+      - CrowbarLeftArmInterdyne
+      - CrowbarRightArmInterdyne
+      - SecHypoInterdyne
+      - CartridgeEphedrineInterdyne
+      - CartridgeTirizeneInterdyne
+      - CartridgeBicaridineInterdyne
+      - CartridgeSalineInterdyne
+      - CartridgeDermalineInterdyne
+      - CartridgePuncturaseInterdyne
+      - CartridgeAtropineInterdyne
+      - SyringeCase
+      - InterdyneOptics
   - type: Anchorable
     flags:
     - Anchorable
@@ -157,6 +174,16 @@
   name: pristine microforge
   description: Used to print equipment discovered through techdisks, or researched.
   components:
+  - type: MaterialStorage
+    dropOnDeconstruct: false #should drop ores instead of ingots/sheets
+    ignoreColor: true
+    canEjectStoredMaterials: true
+    whitelist:
+      tags:
+      - Sheet
+      - CraftMaterials
+      - Ingot
+      - RawMaterial
   - type: Sprite
     sprite: _Crescent/Structures/nanoforge.rsi
     layers:
@@ -315,6 +342,7 @@
       - Brutepack
       - Ointment
       - Gauze
+      - SyringeCase
       - DisposableSyringe
       - HandheldHealthAnalyzer
       - BodyBag
@@ -352,7 +380,6 @@
       - ClothingEyesNightVisionGoggles
       - Terminus
       - ClothingOuterHardsuitShanlinUnpainted
-      - HandHeldMassScanner
       - BorgModuleGPS
       - RadarConsoleCircuitboard
       - EMPGrenadeElectronics
@@ -362,7 +389,31 @@
       - RPED
       - WeaponParticleDecelerator
       - HoloprojectorField
-
+      - ClothingUniformJumpsuitSyndicateSuitCyberdawn
+      - ClothingUniformJumpsuitSyndicateLabCyberdawn
+      - ClothingUniformJumpsuitSyndicateSoldierCyberdawn
+      - ClothingOuterArmorCyberdawnPatriarch
+      - ClothingOuterArmorKendoBoguCyberdawn
+      - ClothingOuterHardsuitCybersun
+      - ClothingHeadHatPatriarch
+      - WeaponSubMachineGunAtreidesCyberdawn
+      - WeaponRifleAkCyberdawn
+      - WeaponRifleKrinkovCyberdawn
+      - WeaponPistolViperWoodCyberdawn
+      - PowerSinkCyberdawn
+      - MufflerFlatpack
+      - RadioJammerCyberdawn
+      - EmagCyberdawn
+      - WeaponLightMachineGunNCSPRPD
+      - WeaponRifleMayflower
+      - DnaScramblerImplanter
+      - EmpImplanter
+      - EnergyDagger
+      - ClothingOuterHardsuitSyndieMedicCyberdawn
+      - ClothingOuterHardsuitCybersunStealthCyberdawn
+      - MagazinePistolSpecialMindbreakerCyberdawn
+      - WeaponPistolPsiBreakerCyberdawn
+      - ClothingEyesThermalVisionGogglesCyberdawn
   - type: Machine
     board: MicroforgeCircuitboard
 
