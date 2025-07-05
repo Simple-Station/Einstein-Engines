@@ -69,13 +69,6 @@
     Cloth: 500
 
 - type: latheRecipe
-  id: ClothingUniformJumpsuitImperialNobleFemale
-  result: ClothingUniformJumpsuitImperialNobleFemale
-  completetime: 2
-  materials:
-    Cloth: 500
-
-- type: latheRecipe
   id: ClothingHandsGlovesImperialWorkerGloves
   result: ClothingHandsGlovesImperialWorkerGloves
   completetime: 2
@@ -113,7 +106,7 @@
     Durathread: 500
 
 - type: latheRecipe
-  id: ClothingShoesBootsImperialLongboots
+  id: ClothingHandsGlovesImperialLonggloves
   result: ClothingHandsGlovesImperialLonggloves
   completetime: 2
   materials:
