@@ -35,6 +35,15 @@
     Cloth: 250
 
 - type: latheRecipe
+  id: ClothingOuterArmorKendoBoguCyberdawn
+  result: ClothingOuterArmorKendoBogu
+  completetime: 1.5
+  materials:
+    Durathread: 500
+    Cloth: 500
+    Steel: 250
+
+- type: latheRecipe
   id: ClothingOuterHardsuitCybersun
   result: ClothingOuterHardsuitCybersun
   completetime: 1.5
