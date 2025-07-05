@@ -43,7 +43,8 @@
     shoes: ClothingShoesBootsCombat
     head: ClothingHeadHatMinuteman
     gloves: ClothingHandsGlovesCombat
-    belt: WeaponPistolHKUSP
+    belt: ClothingBeltMinutemanPouches
+    pocket1: WeaponPistolHKUSP
     id: MinutemanPDA
     ears: ClothingHeadsetCMM
     neck: ClothingNeckScarfCMMCloak

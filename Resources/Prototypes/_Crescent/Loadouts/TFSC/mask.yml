@@ -1,0 +1,10 @@
+- type: loadout
+  id: LoadoutMaskTFSCFacemask
+  category: Mask
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingMaskSyndicateFacemask
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
