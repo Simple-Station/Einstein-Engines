@@ -69,13 +69,6 @@
     Cloth: 500
 
 - type: latheRecipe
-  id: ClothingUniformJumpsuitImperialNobleFemale
-  result: ClothingUniformJumpsuitImperialNobleFemale
-  completetime: 2
-  materials:
-    Cloth: 500
-
-- type: latheRecipe
   id: ClothingHandsGlovesImperialWorkerGloves
   result: ClothingHandsGlovesImperialWorkerGloves
   completetime: 2
@@ -113,7 +106,7 @@
     Durathread: 500
 
 - type: latheRecipe
-  id: ClothingShoesBootsImperialLongboots
+  id: ClothingHandsGlovesImperialLonggloves
   result: ClothingHandsGlovesImperialLonggloves
   completetime: 2
   materials:
@@ -126,3 +119,242 @@
   materials:
     Cloth: 500
     Plastic: 1000
+
+- type: latheRecipe
+  id: ClothingMaskImperialCombatGasmask
+  result: ClothingMaskImperialCombatGasmask
+  completetime: 2
+  materials:
+    Glass: 500
+    Plastic: 1000
+
+- type: latheRecipe
+  id: ClothingHandsGlovesImperialLonggloves
+  result: ClothingHandsGlovesImperialLonggloves
+  completetime: 2
+  materials:
+    Durathread: 500
+
+- type: latheRecipe
+  id: ClothingHeadHatImperialHat
+  result: ClothingHeadHatImperialHat
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingJumpsuitImperialCombat
+  result: ClothingJumpsuitImperialCombat
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingHeadHelmetImperialTrooperHelmet
+  result: ClothingHeadHelmetImperialTrooperHelmet
+  completetime: 2
+  materials:
+    Cloth: 500
+    Steel: 1000
+
+- type: latheRecipe
+  id: ClothingHeadHelmetImperialTrooperHelmet
+  result: ClothingOuterArmorImperialTrooperArmor
+  completetime: 2
+  materials:
+    Cloth: 500
+    Steel: 1500
+
+- type: latheRecipe
+  id: ClothingOuterArmorImperialArmorPrestige
+  result: ClothingOuterArmorImperialArmorPrestige
+  completetime: 2
+  materials:
+    Cloth: 500
+    Steel: 1500
+    Gold: 300
+
+- type: latheRecipe
+  id: ClothingHeadHelmetImperialKnightCommanderHelmet
+  result: ClothingHeadHelmetImperialKnightCommanderHelmet
+  completetime: 2
+  materials:
+    Cloth: 500
+    Steel: 1000
+    Gold: 300
+
+- type: latheRecipe
+  id: CarrionFlatpack
+  result: CarrionFlatpack
+  completetime: 2
+  materials:
+    BasicMechatronics: 2500
+    AdvancedElectronics: 1000
+    Gold: 300
+    Silver: 500
+    Steel: 3000
+    Tungsten: 1500
+
+- type: latheRecipe
+  id: WeaponMechIndustrialKineticAcceleratorImperial
+  result: WeaponMechIndustrialKineticAccelerator
+  completetime: 2
+  materials:
+    BasicElectronics: 1000
+    Gold: 500
+    Silver: 250
+    Steel: 1500
+
+- type: latheRecipe
+  id: MechEquipmentGrabberImperial
+  result: MechEquipmentGrabber
+  completetime: 2
+  materials:
+    BasicElectronics: 1000
+    Steel: 1500
+
+- type: latheRecipe
+  id: WeaponMechMeleeDrillImperial
+  result: WeaponMechMeleeDrill
+  completetime: 2
+  materials:
+    BasicMechatronics: 1000
+    Silver: 250
+    Steel: 1500
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitImperialCommand
+  result: ClothingOuterHardsuitImperialCommand
+  completetime: 2
+  materials:
+    HardsuitElectronics: 1000
+    Gold: 250
+    Steel: 1500
+    Durathread: 500
+    Tungsten: 1000
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitHunterElite
+  result: ClothingOuterHardsuitHunterElite
+  completetime: 2
+  materials:
+    HardsuitElectronics: 500
+    Silver: 1000
+    Steel: 1500
+    Durathread: 500
+    Tungsten: 1000
+
+- type: latheRecipe
+  id: WeaponRifleHunter
+  result: WeaponRifleHunter
+  completetime: 2
+  materials:
+    Steel: 1500
+    BallisticCycler: 500
+
+- type: latheRecipe
+  id: WeaponSubMachineGunBeetle
+  result: WeaponSubMachineGunBeetle
+  completetime: 2
+  materials:
+    Steel: 1000
+    BallisticCycler: 500
+
+- type: latheRecipe
+  id: WeaponRifleMiller
+  result: WeaponRifleMiller
+  completetime: 2
+  materials:
+    Steel: 1500
+    Silver: 500
+    BallisticCycler: 500
+
+- type: latheRecipe
+  id: WeaponRifleMiller
+  result: WeaponRifleMiller
+  completetime: 2
+  materials:
+    Steel: 1500
+    Silver: 500
+    BallisticCycler: 500
+
+- type: latheRecipe
+  id: WeaponRevolverArgenti
+  result: WeaponRevolverArgenti
+  completetime: 2
+  materials:
+    Steel: 1500
+    Silver: 500
+
+- type: latheRecipe
+  id: WeaponPistolNeoVolker
+  result: WeaponPistolNeoVolker
+  completetime: 2
+  materials:
+    Steel: 1000
+    Silver: 250
+    BallisticCycler: 500
+
+- type: latheRecipe
+  id: WeaponPistolComplianceImperial
+  result: WeaponPistolComplianceImperial
+  completetime: 2
+  materials:
+    Steel: 850
+    BallisticCycler: 500
+
+- type: latheRecipe
+  id: WeaponLauncherM320
+  result: WeaponLauncherM320
+  completetime: 2
+  materials:
+    Steel: 1500
+    Plastic: 900
+    BasicMechatronics: 1500
+
+- type: latheRecipe
+  id: SRMKhopesh
+  result: SRMKhopesh
+  completetime: 2
+  materials:
+    Steel: 1500
+    Tungsten: 1000
+    Plasma: 500
+    NanotrasenElectronics: 1500
+
+- type: latheRecipe
+  id: ClothingBeltSheathKhopesh
+  result: ClothingBeltSheathKhopesh
+  completetime: 2
+  materials:
+    Cloth: 750
+
+- type: latheRecipe
+  id: DSMSabre
+  result: DSMSabre
+  completetime: 2
+  materials:
+    Steel: 1500
+    Gold: 1000
+
+- type: latheRecipe
+  id: DSMRapier
+  result: DSMRapier
+  completetime: 2
+  materials:
+    Steel: 1500
+    Gold: 1000
+
+- type: latheRecipe
+  id: ClothingBeltSheathDSMSabre
+  result: ClothingBeltSheathDSMSabre
+  completetime: 2
+  materials:
+    Cloth: 750
+
+- type: latheRecipe
+  id: ClothingBeltSheathRapier
+  result: ClothingBeltSheathRapier
+  completetime: 2
+  materials:
+    Cloth: 750

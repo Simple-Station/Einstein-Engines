@@ -1,0 +1,13 @@
+- type: loadout
+  id: LoadoutNeckCloakRingleader
+  category: Neck
+  exclusive: true
+  cost: 0
+  items:
+    - ClothingNeckCloakRingleader
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - RingleaderNCSP

@@ -981,6 +981,119 @@
   - type: Icon
     state: pda-bartender
 
+- type: entity
+  parent: BasePDA
+  id: StewardPDA
+  name: first steward's PDA
+  description: Gunmetal gray.
+  components:
+  - type: Pda
+    id: ATHIDCardSteward
+    state: pda-bartender
+  - type: PdaBorderColor
+    borderColor: "#535961"
+  - type: Icon
+    state: pda-bartender
+
+- type: entity
+  parent: BasePDA
+  id: OberartzPDA
+  name: oberartz's PDA
+  description: Gunmetal gray.
+  components:
+  - type: Pda
+    id: ATHIDCardOberartz
+    state: pda-bartender
+  - type: PdaBorderColor
+    borderColor: "#535961"
+  - type: Icon
+    state: pda-bartender
+
+- type: entity
+  parent: BasePDA
+  id: LogistatPDA
+  name: logistat marshallie's PDA
+  description: Gunmetal gray.
+  components:
+  - type: Pda
+    id: ATHIDCardLogistat
+    state: pda-bartender
+  - type: PdaBorderColor
+    borderColor: "#535961"
+  - type: Icon
+    state: pda-bartender
+
+- type: entity
+  parent: BasePDA
+  id: HandelsPDA
+  name: handels's PDA
+  description: Gunmetal gray.
+  components:
+  - type: Pda
+    id: ATHIDCardHandels
+    state: pda-bartender
+  - type: PdaBorderColor
+    borderColor: "#535961"
+  - type: Icon
+    state: pda-bartender
+
+- type: entity
+  parent: BasePDA
+  id: ForscherPDA
+  name: forscher's PDA
+  description: Gunmetal gray.
+  components:
+  - type: Pda
+    id: ATHIDCardForscher
+    state: pda-bartender
+  - type: PdaBorderColor
+    borderColor: "#535961"
+  - type: Icon
+    state: pda-bartender
+
+- type: entity
+  parent: BasePDA
+  id: ChirurgeonPDA
+  name: chirurgeon's PDA
+  description: Gunmetal gray.
+  components:
+  - type: Pda
+    id: ATHIDCardChirurgeon
+    state: pda-bartender
+  - type: PdaBorderColor
+    borderColor: "#535961"
+  - type: Icon
+    state: pda-bartender
+
+- type: entity
+  parent: BasePDA
+  id: VorarbeiterPDA
+  name: vorarbeiter's PDA
+  description: Gunmetal gray.
+  components:
+  - type: Pda
+    id: ATHIDCardVorarbeiter
+    state: pda-bartender
+  - type: PdaBorderColor
+    borderColor: "#535961"
+  - type: Icon
+    state: pda-bartender
+
+- type: entity
+  parent: BasePDA
+  id: ArbeiterPDA
+  name: arbeiter's PDA
+  description: Gunmetal gray.
+  components:
+  - type: Pda
+    id: ATHIDCardArbeiter
+    state: pda-bartender
+  - type: PdaBorderColor
+    borderColor: "#535961"
+  - type: Icon
+    state: pda-bartender
+
+
 #misc
 
 - type: entity

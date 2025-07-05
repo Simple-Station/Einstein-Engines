@@ -1,0 +1,73 @@
+- type: job
+  id: StewardATH
+  name: job-name-steward
+  description: job-description-steward
+  playTimeTracker: JobStewardATH
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
+    - !type:FactionRequirement
+      factionID: "ATH"
+  weight: 86
+  startingGear: StewardGear
+  alwaysUseSpawner: true
+  icon: "JobIconSteward"
+  requireAdminNotify: true
+  supervisors: job-supervisors-ath
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-steward
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - Service
+  - External
+  - Authority
+  - AuthorityRanking
+  - Authoritymed
+  - AuthoritySupply
+
+- type: startingGear
+  id: StewardGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAuthoritySteward
+    shoes: ClothingShoesBootsJack
+    head: ClothingHeadHatAuthoritySteward
+    neck: ClothingNeckAuthorityStewardCape
+    id: StewardPDA
+    ears: ClothingHeadsetAuthority
