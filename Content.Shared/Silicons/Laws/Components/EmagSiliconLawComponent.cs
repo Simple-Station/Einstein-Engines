@@ -21,7 +21,7 @@ public sealed partial class EmagSiliconLawComponent : Component
     /// Does the panel need to be open to EMAG this law provider.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public bool RequireOpenPanel = true;
+    public bool RequireOpenPanel;
 
     /// <summary>
     /// How long the borg is stunned when it's emagged. Setting to 0 will disable it.
