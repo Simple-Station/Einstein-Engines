@@ -42,7 +42,7 @@ entities:
     - type: MetaData
       name: Port Vladzena
     - type: Transform
-      pos: -0.44798374,17999.36
+      pos: -0.578125,-0.609375
       parent: invalid
     - type: MapGrid
       chunks:

@@ -26,8 +26,7 @@ entities:
     - type: MetaData
       name: DSM Nemesis PR-581
     - type: Transform
-      rot: -1.203383934501785 rad
-      pos: 7868.474,4581.303
+      pos: -0.578125,-0.609375
       parent: invalid
     - type: MapGrid
       chunks:

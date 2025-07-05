@@ -29,8 +29,7 @@ entities:
     - type: MetaData
       name: NCWL Clementine QT-723
     - type: Transform
-      rot: -1.2620313922551016 rad
-      pos: 7766.589,4577.7603
+      pos: -0.578125,-0.609375
       parent: invalid
     - type: MapGrid
       chunks:
