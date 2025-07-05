@@ -11,7 +11,7 @@
         - Oni
     - !type:FactionRequirement
       factionID: "ATH"
-  weight: 82
+  weight: 81
   startingGear: SanitatGear
   alwaysUseSpawner: true
   icon: "JobIconSanitat"

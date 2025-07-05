@@ -1,27 +1,23 @@
 - type: job
-  id: KommandantATH
-  name: job-name-kommandant
-  description: job-description-kommandant
-  playTimeTracker: JobKommandantATH
+  id: ArbeiterATH
+  name: job-name-arbeiter
+  description: job-description-arbeiter
+  playTimeTracker: JobArbeiterATH
   requirements:
-    - !type:CharacterWhitelistRequirement
     - !type:CharacterSpeciesRequirement
       species:
         - Human
+        - Reptilian
+        - Oni
     - !type:FactionRequirement
       factionID: "ATH"
-  weight: 87
-  startingGear: KommandantGear
+  weight: 75
+  startingGear: ArbeiterGear
   alwaysUseSpawner: true
-  icon: "JobIconKommandant"
-  requireAdminNotify: true
+  icon: "JobIconArbeiter"
+  requireAdminNotify: false
   supervisors: job-supervisors-ath
   canBeAntag: false
-  special:
-  - !type:AddComponentSpecial
-    components:
-      - type: ChatRank
-        rank: crescent-rank-kommandant
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -58,19 +54,12 @@
   - Maintenance
   - Service
   - External
-  - Kommandant
   - Authority
-  - AuthorityRanking
-  - Authoritymed
-  - AuthoritySupply
 
 - type: startingGear
-  id: KommandantGear
+  id: ArbeiterGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitAuthorityKommandant
+    jumpsuit: ClothingUniformJumpsuitAuthorityArbeiter
     shoes: ClothingShoesBootsJack
-    head: ClothingHeadHatAuthorityKommandant
-    outerClothing: ClothingOuterCoatAuthorityKommandant
-    belt: ClothingBeltSheathFilled
-    id: KommandantPDA
+    id: ArbeiterPDA
     ears: ClothingHeadsetAuthority
