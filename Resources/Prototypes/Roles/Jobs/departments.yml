@@ -88,6 +88,7 @@
   color: "#9FED58"
   weight: -91
   primary: false
+
 - type: department
   id: NCWL
   description: department-NCWL-description
@@ -216,3 +217,37 @@
   - SanitatATH
   enabled: true
   editorHidden: false # i just like to see them for the numbers , SPCR 2025
+
+  # CONSCRIPT
+
+- type: department
+  id: NCWL-W
+  description: department-NCWL-description
+  color: "#FFD580"
+  weight: 100
+  roles:
+  - ConscriptLeaderNCWL
+  - ConscriptSniperNCWL
+  - ConscriptGunnerNCWL
+  - ConscriptDoctorNCWL
+  - ConscriptShotgunNCWL
+  - ConscriptSubmachinegunNCWL
+  - ConscriptRiflemanNCWL
+  - ConscriptCadetNCWL
+  enabled: true
+
+- type: department
+  id: DSM-W
+  description: department-DSM-description
+  color: "#684871"
+  weight: 85
+  roles:
+  - ConscriptLeaderDSM
+  - ConscriptSniperDSM
+  - ConscriptGunnerDSM
+  - ConscriptDoctorDSM
+  - ConscriptShotgunDSM
+  - ConscriptSubmachinegunDSM
+  - ConscriptRiflemanDSM
+  - ConscriptCadetDSM
+  enabled: true

@@ -1,7 +1,7 @@
 - type: job
   id: ConscriptRiflemanNCWL
   name: job-name-conscript-ncwl-rifleman
-  description: job-description-kadet #change me later
+  description: job-description-conscript-ncwl-rifleman #change me later
   playTimeTracker: ConscriptJobRiflemanNCWL
   weight: 10
   startingGear: ConscriptRiflemanNCWLGear

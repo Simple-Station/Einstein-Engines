@@ -1,0 +1,38 @@
+- type: vessel
+  id: unionfall-Clementine
+  name: NCWL Dear Clementine
+  description: The Flagship of the Union fleet.
+  price: 600000
+  category: Large
+  group: None
+  path: /Maps/_Crescent/Unionfall/unionfall_clementine.yml
+
+- type: gameMap
+  id: unionfall-Clementine
+  mapName: 'NCWL Dear Clementine'
+  mapPath: /Maps/_Crescent/Unionfall/unionfall_clementine.yml
+  minPlayers: 0
+  stations:
+    Clementine:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Dear Clementine {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-flagship
+        - type: VesselDescription
+          description: This behemoth carries the last hope of the League. What once held hope and determination, now only hosts a final cry of revolution.
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            ConscriptLeaderNCWL: [ 0, 1 ]
+            ConscriptSniperNCWL: [ 0, 2 ]
+            ConscriptGunnerNCWL: [ 0, 2 ]
+            ConscriptShotgunNCWL: [ 0, 5 ]
+            ConscriptSubmachinegunNCWL: [ 0, 5 ]
+            ConscriptDoctorNCWL: [ 0, 5 ]
+            ConscriptRiflemanNCWL: [ 0, 50 ]
+            ConscriptCadetNCWL: [ 0 , 50 ]

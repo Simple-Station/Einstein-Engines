@@ -1,7 +1,7 @@
 - type: job
   id: ConscriptDoctorNCWL
   name: job-name-conscript-ncwl-doctor
-  description: job-description-doktor
+  description: job-description-conscript-ncwl-doctor
   playTimeTracker: ConscriptJobDoctorNCWL
   requirements:
     - !type:FactionRequirement

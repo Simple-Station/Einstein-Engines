@@ -1,7 +1,7 @@
 - type: job
   id: ConscriptSubmachinegunDSM
   name: job-name-conscript-dsm-smg
-  description: job-description-kadet #change me later
+  description: job-description-conscript-dsm-smg #change me later
   playTimeTracker: ConscriptJobSubmachinegunDSM
   weight: 10
   startingGear: ConscriptSubmachinegunSMGear

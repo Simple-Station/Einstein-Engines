@@ -1,7 +1,7 @@
 - type: job
   id: ConscriptCadetDSM
   name: job-name-conscript-dsm-cadet
-  description: job-description-kadet #change me later
+  description: job-description-conscript-dsm-cadet #change me later
   playTimeTracker: ConscriptJobCadetDSM
   weight: 10
   startingGear: ConscriptCadetDSMGear

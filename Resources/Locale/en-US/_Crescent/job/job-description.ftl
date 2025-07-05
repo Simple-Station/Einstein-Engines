@@ -92,3 +92,23 @@ job-description-sanitat = Tend to the wounded and the sickly of the 43rd Battleg
 job-description-spacer = Be an independent citizen of Taypan.
 job-description-gliess-sheriff = Keep the law in Gliess Santo.
 job-description-gliess-dockmaster = Make sure nobody blows up your station.
+
+#conscript-ncwl
+job-description-conscript-ncwl-leader = Lead the remnants of the NCWL. Ensure the League takes control of Vladzena.
+job-description-conscript-ncwl-amr = Deal with priority targets. Pick your shots carefully. Don't miss. (Anti-Materiel Rifle)
+job-description-conscript-ncwl-lmg = Provide fire support for your comrades. Control the battlefield. (Light Machine Gun)
+job-description-conscript-ncwl-doctor = Keep your comrades alive. Retrieve corpses to clone. (Magnum)
+job-description-conscript-ncwl-shotgun = Punch through enemy lines. Be the first to fall. (Double-Barrel Shotgun)
+job-description-conscript-ncwl-smg = Punish overconfidence. Make them keep their head down. (Submachine Gun)
+job-description-conscript-ncwl-rifleman = Be the rank and file. Be the corpses the League will stand on. (Bolt-action Rifle)
+job-description-conscript-ncwl-cadet = Listen to your superiors. Keep your head down and learn. (Bolt-action Rifle)
+
+#conscript-dsm
+job-description-conscript-dsm-leader = Lead the punishment regimen. Reclaim the honor of your house. Stamp out the League.
+job-description-conscript-dsm-amr = Deal with priority targets. Pick your shots carefully. Don't miss. (Anti-Materiel Rifle)
+job-description-conscript-dsm-lmg = Provide fire support for your brothers. Control the battlefield. (Light Machine Gun)
+job-description-conscript-dsm-doctor = Keep your brothers alive. Retrieve corpses to clone. (Magnum)
+job-description-conscript-dsm-shotgun = Punch through enemy lines. Be the first to fall. (Revolver Shotgun)
+job-description-conscript-dsm-smg = Punish overconfidence. Make them keep their head down. (Submachine Gun)
+job-description-conscript-dsm-rifleman = Be the rank and file. Be the corpses the League will stand on. (Lever-action Rifle)
+job-description-conscript-dsm-cadet = Listen to your superiors. Keep your head down and learn. (Lever-action Rifle)

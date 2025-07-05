@@ -1,7 +1,7 @@
 - type: job
   id: ConscriptLeaderNCWL
   name: job-name-conscript-ncwl-leader
-  description: job-description-kommissar
+  description: job-description-conscript-ncwl-leader
   playTimeTracker: ConscriptJobLeaderNCWL
   requirements:
     - !type:FactionRequirement

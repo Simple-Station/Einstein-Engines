@@ -97,8 +97,19 @@ job-name-gliess-dockmaster = Gliessian Dockmaster
 job-name-conscript-ncwl-leader = Kommissar
 job-name-conscript-ncwl-doctor = Doktor
 job-name-conscript-ncwl-amr = Sniper
-job-name-conscript-ncwl-smg = Submachinegunner
-job-name-conscript-ncwl-shotgun = Shotgunner
-job-name-conscript-ncwl-lmg = Heavy Gunner
+job-name-conscript-ncwl-smg = Breacher (SMG)
+job-name-conscript-ncwl-shotgun = Breacher (Shotgun)
+job-name-conscript-ncwl-lmg = Support Gunner
 job-name-conscript-ncwl-rifleman = Rifleman
 job-name-conscript-ncwl-cadet = Kadet
+
+#conscript-dsm#
+
+job-name-conscript-dsm-leader = Noble
+job-name-conscript-dsm-doctor = Combat Medic
+job-name-conscript-dsm-amr = Specialist
+job-name-conscript-dsm-smg = Stosstrup
+job-name-conscript-dsm-shotgun = Shocktrooper
+job-name-conscript-dsm-lmg = Heavy Gunner
+job-name-conscript-dsm-rifleman = Jaeger
+job-name-conscript-dsm-cadet = Recruit

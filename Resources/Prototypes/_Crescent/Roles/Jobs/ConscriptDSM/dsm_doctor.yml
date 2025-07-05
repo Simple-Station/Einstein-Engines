@@ -1,7 +1,7 @@
 - type: job
   id: ConscriptDoctorDSM
   name: job-name-conscript-dsm-doctor
-  description: job-description-surgeon
+  description: job-description-conscript-dsm-doctor
   playTimeTracker: ConscriptJobSurgeonDSM
   weight: 20
   startingGear: ConscriptDoctorDSMGear

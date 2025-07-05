@@ -6,3 +6,5 @@ department-SHI = Shinohara Heavy Industries
 department-CMM = Colonial Minutemen
 department-TAP = Taypani-Atyrian Pact
 department-ATH = Central Sol Authority
+department-NCWL-W = New Crescent Worker's League (WAR)
+department-DSM-W = Divine Sol Mandate (WAR)

@@ -1,7 +1,7 @@
 - type: job
   id: ConscriptCadetNCWL
   name: job-name-conscript-ncwl-cadet
-  description: job-description-kadet
+  description: job-description-conscript-ncwl-cadet
   playTimeTracker: ConscriptJobCadetNCWL
   weight: 10
   startingGear: ConscriptCadetNCWLGear

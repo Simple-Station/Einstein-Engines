@@ -1,7 +1,7 @@
 - type: job
   id: ConscriptLeaderDSM
   name: job-name-conscript-dsm-leader
-  description: job-description-knight
+  description: job-description-conscript-dsm-leader
   playTimeTracker: ConscriptJobLeaderDSM
   requirements:
     - !type:FactionRequirement
