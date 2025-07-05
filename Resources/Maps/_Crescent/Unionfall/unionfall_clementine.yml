@@ -254,6 +254,23 @@ entities:
             592: -6,-10
         - node:
             color: '#FFFFFFFF'
+            id: Damaged
+          decals:
+            921: -6,10
+        - node:
+            color: '#FFFFFFFF'
+            id: Dirt
+          decals:
+            911: -1,7
+            912: -1,8
+            913: 0,8
+            914: 0,7
+            915: 1,7
+            916: 1,8
+            917: 0,6
+            918: 0,9
+        - node:
+            color: '#FFFFFFFF'
             id: DirtHeavy
           decals:
             615: -8,25
@@ -396,13 +413,8 @@ entities:
             752: -6,13
             753: -4,12
             754: -4,9
-            755: -5,9
             756: -6,10
             757: -8,11
-            758: -7,10
-            759: -5,9
-            760: -7,10
-            761: -7,10
             762: -8,8
             763: -7,6
             764: -7,5
@@ -552,6 +564,110 @@ entities:
             908: -10,-11
             909: -9,-11
             910: -8,-14
+            942: -3,25
+            943: -4,25
+            944: -4,25
+            945: -3,24
+            946: -3,24
+            947: -1,22
+            948: -1,20
+            949: 0,20
+            950: 0,20
+            951: 1,20
+            952: 1,20
+            953: -2,20
+            954: -3,20
+            955: 1,24
+            956: 1,26
+            957: 0,26
+            958: 0,26
+            959: 0,26
+            960: -1,26
+            961: -1,27
+            962: 2,28
+            963: 2,28
+            964: 2,26
+            965: 2,26
+            966: 0,30
+            967: -1,30
+            968: -2,30
+            969: -1,31
+            970: 0,30
+            971: -4,30
+            972: -5,30
+            973: -5,30
+            974: -4,32
+            975: -4,32
+            976: -5,33
+            977: -5,34
+            978: -5,32
+            979: -2,17
+            980: -3,17
+            981: -3,17
+            982: -3,16
+            983: -2,15
+            984: -2,15
+            985: 5,15
+            986: 3,16
+            987: 2,15
+            988: 3,15
+            989: 2,16
+            990: 2,17
+            991: 3,18
+            992: 3,18
+            993: 3,18
+            994: 0,12
+            995: -2,12
+            996: 0,7
+            997: 6,7
+            998: 5,8
+            999: 5,8
+            1000: 6,8
+            1001: 6,10
+            1002: 6,10
+            1003: -1,-6
+            1004: -1,-5
+            1005: -1,-5
+            1006: -3,-4
+            1007: -3,-4
+            1008: -3,-6
+            1009: -2,-6
+            1010: -1,-6
+            1011: -1,-7
+            1012: -1,-7
+            1013: 1,-7
+            1014: 2,-6
+            1015: 2,-6
+            1016: 1,-6
+            1017: 1,-4
+            1018: -5,-4
+            1019: -5,-3
+            1020: -5,-3
+            1021: -5,-2
+            1022: -6,-2
+            1023: -6,0
+        - node:
+            color: '#FFFFFFFF'
+            id: DirtMedium
+          decals:
+            928: -7,8
+            929: -7,8
+            930: -7,9
+            931: -6,8
+            932: -5,8
+            933: -5,10
+            934: -5,10
+            935: -6,10
+            936: -7,10
+            937: -8,9
+            938: -7,11
+        - node:
+            color: '#FFFFFFFF'
+            id: Rust
+          decals:
+            939: -6,11
+            940: -1,11
+            941: -8,34
         - node:
             color: '#FFFFFFFF'
             id: TechCornerN
@@ -589,9 +705,6 @@ entities:
             color: '#FFFFFFFF'
             id: TechN
           decals:
-            248: -7,8
-            249: -6,8
-            250: -5,8
             256: 6,10
             266: 6,7
             313: -6,31
@@ -685,9 +798,6 @@ entities:
             color: '#FFFFFFFF'
             id: TechW
           decals:
-            252: -7,9
-            253: -7,10
-            254: -7,11
             268: 5,6
             308: 2,30
             309: 2,31
@@ -982,9 +1092,6 @@ entities:
             146: 6,15
             224: -8,8
             225: -8,8
-            236: -6,8
-            237: -5,8
-            251: -7,8
             255: -8,9
             271: 6,7
             303: 0,30
@@ -7462,6 +7569,8 @@ entities:
     - type: Transform
       pos: 0.5,-0.5
       parent: 1
+    - type: ShuttleConsole
+      accesState: CaptainAcces
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -7805,6 +7914,23 @@ entities:
     components:
     - type: Transform
       pos: 3.5,26.5
+      parent: 1
+- proto: CrateEngineeringMetalFoamFast
+  entities:
+  - uid: 1226
+    components:
+    - type: Transform
+      pos: -1.5,20.5
+      parent: 1
+  - uid: 1227
+    components:
+    - type: Transform
+      pos: 2.5,20.5
+      parent: 1
+  - uid: 1228
+    components:
+    - type: Transform
+      pos: 2.5,27.5
       parent: 1
 - proto: CrateGenericSteel
   entities:
@@ -9962,17 +10088,29 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -3.566712,17.294394
       parent: 1
-- proto: NCWLConscriptWarVendory
+- proto: NCWLConscriptAmmoVendory
   entities:
-  - uid: 1080
+  - uid: 1224
+    components:
+    - type: Transform
+      pos: -3.5,21.5
+      parent: 1
+  - uid: 1225
     components:
     - type: Transform
       pos: 4.5,21.5
       parent: 1
-  - uid: 1081
+- proto: NCWLConscriptGearendory
+  entities:
+  - uid: 984
     components:
     - type: Transform
-      pos: -3.5,21.5
+      pos: -3.5,22.5
+      parent: 1
+  - uid: 1080
+    components:
+    - type: Transform
+      pos: 4.5,22.5
       parent: 1
 - proto: NCWLPoster1
   entities:
@@ -10936,6 +11074,25 @@ entities:
     - type: Transform
       pos: -7.7511287,11.551234
       parent: 1
+- proto: ShipVoucherHind
+  entities:
+  - uid: 1220
+    components:
+    - type: Transform
+      pos: 1.2914944,26.3417
+      parent: 1
+- proto: ShipVoucherVanguard
+  entities:
+  - uid: 1218
+    components:
+    - type: Transform
+      pos: 1.2914944,26.732595
+      parent: 1
+  - uid: 1219
+    components:
+    - type: Transform
+      pos: 1.7289944,26.3417
+      parent: 1
 - proto: ShotGunCabinetFilled
   entities:
   - uid: 126
@@ -11224,6 +11381,13 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: SpaceCash100000
+  entities:
+  - uid: 1221
+    components:
+    - type: Transform
+      pos: 0.4888519,28.247465
+      parent: 1
 - proto: SpawnPointConscriptCadetNCWL
   entities:
   - uid: 395
@@ -11483,8 +11647,11 @@ entities:
   - uid: 816
     components:
     - type: Transform
-      pos: -4.7511287,11.035609
+      pos: -4.561242,10.625932
       parent: 1
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: SubstationBasic
   entities:
   - uid: 186
@@ -12111,6 +12278,13 @@ entities:
           showEnts: False
           occludes: True
           ents: []
+- proto: TelecomServerFilledNovaBalreska
+  entities:
+  - uid: 1222
+    components:
+    - type: Transform
+      pos: 0.5,-5.5
+      parent: 1
 - proto: TeslaCoil
   entities:
   - uid: 721
@@ -12239,6 +12413,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: -10.5,-14.5
       parent: 1
+    - type: Thruster
+      enabled: False
   - uid: 327
     components:
     - type: Transform
@@ -12263,6 +12439,8 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 8.5,32.5
       parent: 1
+    - type: Thruster
+      enabled: False
   - uid: 416
     components:
     - type: Transform
@@ -12297,6 +12475,8 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 8.5,30.5
       parent: 1
+    - type: Thruster
+      enabled: False
   - uid: 743
     components:
     - type: Transform
@@ -14797,12 +14977,10 @@ entities:
       parent: 1
 - proto: ZhipovMothershipComputer
   entities:
-  - uid: 984
+  - uid: 1081
     components:
-    - type: MetaData
-      name: clementine internal hangar
     - type: Transform
       rot: 1.5707963267948966 rad
-      pos: -8.5,-11.5
+      pos: -0.5,26.5
       parent: 1
 ...
