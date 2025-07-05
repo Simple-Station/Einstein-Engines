@@ -16,7 +16,7 @@
   mapPath: /Maps/_Crescent/Shuttles/NCWL/kavkaz.yml
   minPlayers: 0
   stations:
-    VanguardMarkTwo:
+    Kavkaz:
       stationProto: StandardCrescentVessel
       components:
         - type: StationNameSetup

@@ -1,0 +1,30 @@
+- type: loadout
+  id: LoadoutOuterArmorNCWLHeavyCarapace
+  category: Outer
+  cost: 2
+  items:
+    - ClothingOuterArmorNCWLHeavyCarapace
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdministratorNCWL
+        - ArtificerNCWL
+        - KadetNCWL
+        - KapitanNCWL
+        - KommissarNCWL
+        - SanitarNCWL
+
+- type: loadout
+  id: LoadoutOuterArmorNCWLCarapaceDoktor
+  category: Outer
+  cost: 2
+  items:
+    - ClothingOuterArmorNCWLCarapaceDoktor
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - DoktorNCWL
