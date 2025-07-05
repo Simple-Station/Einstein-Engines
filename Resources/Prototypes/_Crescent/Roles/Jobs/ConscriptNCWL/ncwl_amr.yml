@@ -6,7 +6,7 @@
   weight: 10
   startingGear: ConscriptSniperNCWLGear
   alwaysUseSpawner: true
-  icon: "JobIconKadet"
+  icon: "JobIconCommsOfficer"
   requirements:
     - !type:FactionRequirement
       factionID: "NCWL"
@@ -23,7 +23,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-soldat
+        rank: crescent-rank-specialist
   access:
   - Command
   - Maintenance

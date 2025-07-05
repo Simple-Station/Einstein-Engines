@@ -18,12 +18,13 @@ crescent-rank-cadet = Cadet
 
 #ncwl
 crescent-rank-admin = Major
-crescent-rank-kommissar = Kmmsr.
-crescent-rank-artificer = Artfcr.
+crescent-rank-kommissar = Kommissar
+crescent-rank-artificer = Artificer
 crescent-rank-doktor = Dr.
-crescent-rank-partisan = Sldt.
+crescent-rank-specialist = Specialist
+crescent-rank-partisan = Soldat
 crescent-rank-soldat = Kadet
-crescent-rank-kapitan = Kptn.
+crescent-rank-kapitan = Kapitan
 
 #syn
 
