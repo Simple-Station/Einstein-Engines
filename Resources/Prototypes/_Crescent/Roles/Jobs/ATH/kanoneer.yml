@@ -11,7 +11,7 @@
         - Oni
     - !type:FactionRequirement
       factionID: "ATH"
-  weight: 85
+  weight: 82
   startingGear: KanoneerGear
   alwaysUseSpawner: true
   icon: "JobIconKanoneer"

@@ -161,10 +161,17 @@
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconImperialCourtier
+  id: JobIconImperialLabor
   icon:
     sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
     state: Courtier
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconImperialCourtier
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Laborer
 
 - type: jobIcon
   parent: JobIcon
@@ -417,6 +424,62 @@
   icon:
     sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
     state: sanitat
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSteward
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: steward
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconOberartz
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: oberartz
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconLogistat
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: logistat
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconHandels
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: handels
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconForscher
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: forscher
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconChirurgeon
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: chirurgeon
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconVorarbeiter
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: vorarbeiter
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconArbeiter
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: arbeiter
 
 - type: jobIcon
   parent: JobIcon

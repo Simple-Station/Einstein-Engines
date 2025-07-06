@@ -1,19 +1,27 @@
 - type: job
-  id: KommandantATH
-  name: job-name-kommandant
-  description: job-description-kommandant
-  playTimeTracker: JobKommandantATH
+  id: OberartzATH
+  name: job-name-oberartz
+  description: job-description-oberartz
+  playTimeTracker: JobOberartzATH
   requirements:
-    - !type:CharacterWhitelistRequirement
     - !type:CharacterSpeciesRequirement
       species:
         - Human
+    - !type:CharacterOverallTimeRequirement
+      min: 36000
     - !type:FactionRequirement
       factionID: "ATH"
-  weight: 87
-  startingGear: KommandantGear
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+  weight: 85
+  startingGear: OberartzGear
   alwaysUseSpawner: true
-  icon: "JobIconKommandant"
+  icon: "JobIconOberartz"
   requireAdminNotify: true
   supervisors: job-supervisors-ath
   canBeAntag: false
@@ -21,7 +29,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-kommandant
+        rank: crescent-rank-smarts
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -58,19 +66,15 @@
   - Maintenance
   - Service
   - External
-  - Kommandant
   - Authority
   - AuthorityRanking
   - Authoritymed
-  - AuthoritySupply
 
 - type: startingGear
-  id: KommandantGear
+  id: OberartzGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitAuthorityKommandant
+    jumpsuit: ClothingUniformJumpsuitAuthorityOberartz
     shoes: ClothingShoesBootsJack
-    head: ClothingHeadHatAuthorityKommandant
-    outerClothing: ClothingOuterCoatAuthorityKommandant
-    belt: ClothingBeltSheathFilled
-    id: KommandantPDA
+    outerClothing: ClothingOuterCoatAuthorityOberartz
+    id: OberartzPDA
     ears: ClothingHeadsetAuthority

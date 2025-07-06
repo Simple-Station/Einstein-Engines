@@ -150,6 +150,7 @@
         - GovernorDSM
         - KnightDSM
         - LevymanDSM
+        - LaborDSM
         - CourtierDSM
         - ScribeDSM
         - SurgeonDSM
@@ -176,6 +177,7 @@
         - GovernorDSM
         - KnightDSM
         - LevymanDSM
+        - LaborDSM
         - CourtierDSM
         - ScribeDSM
         - SurgeonDSM
@@ -241,6 +243,14 @@
         - LeutnantATH
         - SanitatATH
         - SoldatATH
+        - StewardATH
+        - OberartzATH
+        - LogistatATH
+        - HandelsATH
+        - ForscherATH
+        - ChirurgeonATH
+        - VorarbeiterATH
+        - ArbeiterATH
         - AcolyteTAP
         - Antiquarian
         - BeltrunnerTAP
@@ -277,6 +287,14 @@
         - LeutnantATH
         - SanitatATH
         - SoldatATH
+        - StewardATH
+        - OberartzATH
+        - LogistatATH
+        - HandelsATH
+        - ForscherATH
+        - ChirurgeonATH
+        - VorarbeiterATH
+        - ArbeiterATH
         - AcolyteTAP
         - Antiquarian
         - BeltrunnerTAP

@@ -1,27 +1,23 @@
 - type: job
-  id: KommandantATH
-  name: job-name-kommandant
-  description: job-description-kommandant
-  playTimeTracker: JobKommandantATH
+  id: HandelsATH
+  name: job-name-handels
+  description: job-description-handels
+  playTimeTracker: JobHandelsATH
   requirements:
-    - !type:CharacterWhitelistRequirement
     - !type:CharacterSpeciesRequirement
       species:
         - Human
+        - Reptilian
+        - Oni
     - !type:FactionRequirement
       factionID: "ATH"
-  weight: 87
-  startingGear: KommandantGear
+  weight: 77
+  startingGear: HandelsGear
   alwaysUseSpawner: true
-  icon: "JobIconKommandant"
+  icon: "JobIconHandels"
   requireAdminNotify: true
   supervisors: job-supervisors-ath
   canBeAntag: false
-  special:
-  - !type:AddComponentSpecial
-    components:
-      - type: ChatRank
-        rank: crescent-rank-kommandant
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -58,19 +54,14 @@
   - Maintenance
   - Service
   - External
-  - Kommandant
   - Authority
-  - AuthorityRanking
-  - Authoritymed
   - AuthoritySupply
 
 - type: startingGear
-  id: KommandantGear
+  id: HandelsGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitAuthorityKommandant
+    jumpsuit: ClothingUniformJumpsuitAuthorityHandels
     shoes: ClothingShoesBootsJack
-    head: ClothingHeadHatAuthorityKommandant
-    outerClothing: ClothingOuterCoatAuthorityKommandant
-    belt: ClothingBeltSheathFilled
-    id: KommandantPDA
+    outerClothing: ClothingOuterCoatAuthorityHandels
+    id: HandelsPDA
     ears: ClothingHeadsetAuthority

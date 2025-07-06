@@ -330,6 +330,17 @@
 
 - type: entity
   parent: IDCardStandard
+  id: DSMIDCardLabor
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorresearcher
+  - type: PresetIdCard
+    job: LaborDSM
+
+- type: entity
+  parent: IDCardStandard
   id: DSMIDCardCourtier
   name: imperial ID card
   components:
@@ -803,6 +814,102 @@
     - state: idquartermaster
   - type: PresetIdCard
     job: SanitatATH
+
+- type: entity
+  parent: IDCardStandard
+  id: ATHIDCardSteward
+  name: 43rd battlegroup ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: StewardATH
+
+- type: entity
+  parent: IDCardStandard
+  id: ATHIDCardOberartz
+  name: 43rd battlegroup ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: OberartzATH
+
+- type: entity
+  parent: IDCardStandard
+  id: ATHIDCardLogistat
+  name: 43rd battlegroup ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: LogistatATH
+
+- type: entity
+  parent: IDCardStandard
+  id: ATHIDCardHandels
+  name: 43rd battlegroup ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: HandelsATH
+
+- type: entity
+  parent: IDCardStandard
+  id: ATHIDCardForscher
+  name: 43rd battlegroup ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: ForscherATH
+
+- type: entity
+  parent: IDCardStandard
+  id: ATHIDCardChirurgeon
+  name: 43rd battlegroup ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: ChirurgeonATH
+
+- type: entity
+  parent: IDCardStandard
+  id: ATHIDCardVorarbeiter
+  name: 43rd battlegroup ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: VorarbeiterATH
+
+- type: entity
+  parent: IDCardStandard
+  id: ATHIDCardArbeiter
+  name: 43rd battlegroup ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: ArbeiterATH
 
 #misc
 

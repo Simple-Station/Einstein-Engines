@@ -1,8 +1,8 @@
 - type: job
-  id: LaborDSM
-  name: job-name-ministerlabor
-  description: job-description-labor
-  playTimeTracker: JobLaborDSM
+  id: CourtierDSM
+  name: job-name-courtier
+  description: job-description-courtier
+  playTimeTracker: JobCourtierDSM
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 2500
@@ -11,17 +11,10 @@
         - Human
     - !type:FactionRequirement
       factionID: "DSM"
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Foreigner
-        - ForeignerLight
-        - Muted
-        - Blindness
-  weight: 25
-  startingGear: LaborGear
+  weight: 23
+  startingGear: CourtierGear
   alwaysUseSpawner: true
-  icon: "JobIconImperialLabor"
+  icon: "JobIconImperialCourtier"
   requireAdminNotify: false
   supervisors: job-supervisors-imperial
   canBeAntag: false
@@ -29,7 +22,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-ministry
+        rank: crescent-rank-courtier
   access:
   - Command
   - Empire
@@ -42,11 +35,9 @@
   - Captain # Frontier
 
 - type: startingGear
-  id: LaborGear
+  id: CourtierGear
   equipment:
-    head: ClothingHeadHatImperialPeakedCap
     jumpsuit: ClothingUniformJumpsuitImperialNobleMale
     shoes: ClothingShoesBootsImperialLaceup
-    outerClothing: ClothingOuterCoatImperialParade
     id: CourtierPDA
     ears: ClothingHeadsetEmpire

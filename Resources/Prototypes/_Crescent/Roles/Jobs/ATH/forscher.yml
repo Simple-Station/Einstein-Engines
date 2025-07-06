@@ -1,19 +1,19 @@
 - type: job
-  id: KommandantATH
-  name: job-name-kommandant
-  description: job-description-kommandant
-  playTimeTracker: JobKommandantATH
+  id: ForscherATH
+  name: job-name-forscher
+  description: job-description-forscher
+  playTimeTracker: JobForscherATH
   requirements:
-    - !type:CharacterWhitelistRequirement
     - !type:CharacterSpeciesRequirement
       species:
         - Human
+        - Oni
     - !type:FactionRequirement
       factionID: "ATH"
-  weight: 87
-  startingGear: KommandantGear
+  weight: 79
+  startingGear: ForscherGear
   alwaysUseSpawner: true
-  icon: "JobIconKommandant"
+  icon: "JobIconForscher"
   requireAdminNotify: true
   supervisors: job-supervisors-ath
   canBeAntag: false
@@ -21,7 +21,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-kommandant
+        rank: crescent-rank-smarts
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -58,19 +58,14 @@
   - Maintenance
   - Service
   - External
-  - Kommandant
   - Authority
-  - AuthorityRanking
   - Authoritymed
-  - AuthoritySupply
 
 - type: startingGear
-  id: KommandantGear
+  id: ForscherGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitAuthorityKommandant
+    jumpsuit: ClothingUniformJumpsuitAuthorityForscher
+    outerClothing: ClothingOuterCoatAuthorityForscher
     shoes: ClothingShoesBootsJack
-    head: ClothingHeadHatAuthorityKommandant
-    outerClothing: ClothingOuterCoatAuthorityKommandant
-    belt: ClothingBeltSheathFilled
-    id: KommandantPDA
+    id: ForscherPDA
     ears: ClothingHeadsetAuthority
