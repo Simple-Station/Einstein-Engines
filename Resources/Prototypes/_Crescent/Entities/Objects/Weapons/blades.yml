@@ -2,21 +2,20 @@
   parent: ArmBlade
   id: MantisBlade
   suffix: Unremoveable
-  name: plasteel armbalde
+  name: plasteel armblade
   description: An instrument of war. Directly in your forearm!
   components:
   - type: MeleeWeapon
     wideAnimationRotation: 90
-    attackRate: 0.9
+    attackRate: 1
     damage:
       types:
         Slash: 24
         Structural: 20
     clickPartDamageMultiplier: 3
-    heavyPartDamageMultiplier: 2.5
-    lightRangeModifier: 1.2
-    heavyRateModifier: 2.5
-    heavyDamageBaseModifier: 1.2
+    heavyPartDamageMultiplier: 2
+    lightRangeModifier: 1.5
+    heavyRateModifier: 1.25
     maxTargets: 1
     angle: 10
     soundHit:
@@ -34,7 +33,6 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 0.85
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
     maxTargets: 4

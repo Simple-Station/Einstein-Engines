@@ -25,12 +25,11 @@
     range: 1.5
     damage:
       types:
-        Blunt: 15
+        Blunt: 20
     bluntStaminaDamageFactor: 2.0
-    heavyRangeModifier: 1.2
-    heavyDamageBaseModifier: 1.5
-    heavyRateModifier: 2
-    heavyStaminaCost: 2.5
+    heavyRangeModifier: 1.25
+    heavyRateModifier: 1.25
+    heavyStaminaCost: 5
     angle: 110
     soundHit:
       path: "/Audio/Weapons/smash.ogg"
@@ -156,7 +155,7 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 15
+        Blunt: 20
   - type: DamageOtherOnHit
     damage:
       types:
@@ -176,7 +175,7 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 15
+        Blunt: 20
   - type: DamageOtherOnHit
     damage:
       types:

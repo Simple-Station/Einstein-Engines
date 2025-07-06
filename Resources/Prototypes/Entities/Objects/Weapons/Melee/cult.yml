@@ -17,12 +17,10 @@
     range: 1.75
     damage:
       types:
-        Blunt: 5
-        Slash: 20
+        Blunt: 10
+        Slash: 10
         Structural: 10
-    heavyRateModifier: 1.25
-    heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 2.5
+    heavyStaminaCost: 5
     angle: 100
     soundHit:
       collection: MetalThud
@@ -36,7 +34,7 @@
     damage:
       types:
         Blunt: 5
-        Slash: 15
+        Slash: 25
         Structural: 20
   - type: Item
     size: Ginormous

@@ -14,10 +14,9 @@
     damage:
       types:
         Blunt: 15
-        Structural: 10
+        Structural: 15
     bluntStaminaDamageFactor: 2.0
-    heavyRateModifier: 1.5
-    heavyDamageBaseModifier: 1.75
+    heavyDamageBaseModifier: 1.25
     heavyStaminaCost: 5
     maxTargets: 10
     angle: 120
@@ -30,6 +29,6 @@
     damage:
       types:
         Blunt: 25
-        Structural: 30
+        Structural: 40
   - type: Item
     size: Large

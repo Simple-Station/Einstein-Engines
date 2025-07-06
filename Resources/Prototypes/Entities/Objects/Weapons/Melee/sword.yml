@@ -29,8 +29,8 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.2
-    range: 1.8
+    attackRate: 1.25
+    range: 1.25
     soundHit:
       path: /Audio/SimpleStation14/Weapons/Melee/rapierhit.ogg
     damage:
@@ -38,9 +38,7 @@
         Slash: 32
     clickPartDamageMultiplier: 2
     heavyPartDamageMultiplier: 1.5
-    heavyRateModifier: 1.25
-    lightRangeModifier: 1.25
-    heavyDamageBaseModifier: 1
+    lightRangeModifier: 1.5
     heavyStaminaCost: 2.5
     maxTargets: 7
     angle: 80
@@ -80,16 +78,15 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 0.6
+    attackRate: 0.75
     soundHit:
       path: /Audio/SimpleStation14/Weapons/Melee/rapierhit.ogg
     damage:
       types:
-        Slash: 45
-    heavyRateModifier: 4
-    lightRangeModifier: 1.25
-    heavyDamageBaseModifier: 2
-    heavyStaminaCost: 10
+        Slash: 34
+    heavyRateModifier: 2
+    lightRangeModifier: 1.75
+    heavyStaminaCost: 7.5
     maxTargets: 1
     angle: 20
   - type: DamageOtherOnHit
@@ -136,8 +133,8 @@
     - Belt
   - type: Reflect
     reflectProb: 0.4
-    velocityBeforeNotMaxProb: 6.0 # don't punish ninjas for being ninjas
-    velocityBeforeMinProb: 10.0
+    velocityBeforeNotMaxProb: 4.0 # don't punish ninjas for being ninjas
+    velocityBeforeMinProb: 8.0
 
 - type: entity
   name: machete
@@ -153,14 +150,12 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 0.85
+    attackRate: 1
     damage:
       types:
         Slash: 40
-    heavyRateModifier: 1.25
-    heavyRangeModifier: 1.25
-    heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 2.5
+    heavyRateModifier: 1.15
+    heavyStaminaCost: 5
     angle: 80
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
@@ -186,14 +181,12 @@
   - type: MeleeWeapon
     wideAnimationRotation: -135
     attackRate: 0.75
-    range: 1.85
+    range: 1.75
     damage:
       types:
-        Slash: 45
-    bluntStaminaDamageFactor: 25.0
-    heavyRateModifier: 1.5
-    heavyRangeModifier: 1.3
-    heavyDamageBaseModifier: 1
+        Slash: 40
+    bluntStaminaDamageFactor: 2
+    heavyRateModifier: 1.25
     heavyStaminaCost: 10
     maxTargets: 10
     angle: 200
@@ -229,10 +222,8 @@
     attackRate: 1.25
     damage:
       types:
-        Slash: 40
-    heavyRateModifier: 1.25
+        Slash: 34
     lightRangeModifier: 1.25
-    heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 2.5
     maxTargets: 3
     angle: 40

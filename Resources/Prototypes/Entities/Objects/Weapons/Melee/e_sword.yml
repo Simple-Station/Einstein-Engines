@@ -63,7 +63,7 @@
       types:
         Blunt: 2.5
     clickPartDamageMultiplier: 3
-    heavyPartDamageMultiplier: 2.5
+    heavyPartDamageMultiplier: 2
   - type: DamageOtherOnHit
   - type: Item
     size: Small
@@ -163,7 +163,7 @@
         map: [ "blade" ]
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.25
+    attackRate: 1.5
     hidden: true
     damage:
       types:
@@ -172,7 +172,7 @@
     damage:
       types:
         Piercing: 3
-    staminaCost: 3.5
+    staminaCost: 2.5
   - type: EmbeddableProjectile
     offset: 0.3,0.0
     removalTime: 0.0
@@ -231,7 +231,7 @@
   name: energy cutlass
   parent: EnergySword
   id: EnergyCutlass
-  description: An exotic energy weapon, brutal blade crackling with crudely harnessed plasma. #DeltaV - nicer description.
+  description: An exotic energy weapon, a brutal blade crackling with crudely harnessed plasma. #DeltaV - nicer description.
   components:
   - type: ItemToggleMeleeWeapon
     activatedDamage:
@@ -250,7 +250,7 @@
         shader: unshaded
         map: [ "blade" ]
   - type: MeleeWeapon # DeltaV - reduced attack rate of e-cutlass; slower, more brutal swings
-    attackRate: 1.25
+    attackRate: 1.15
     soundHit:
       path: /Audio/Weapons/eblade1.ogg
     damage:
@@ -276,14 +276,12 @@
   description: A sleek energy weapon, its blade hums with volatile plasma, expertly contained to cut through nearly any material. The serial number on the hilt marks this gun as belonging to an NT Security Officer. # how do I make the text blue
   suffix: Security Loadouts
   components:
-  - type: MeleeWeapon
-    attackRate: 1.25
   - type: ItemToggleMeleeWeapon
     activatedDamage:
         types:
             Slash: 15
             Heat: 35
-            Structural: 20 # "expertly contained to cut through nearly any material" yet it had no structural damage
+            Structural: 25 # "expertly contained to cut through nearly any material" yet it had no structural damage
   - type: GuideHelp
     guides: [ SecurityWeapons ]
 
@@ -311,9 +309,9 @@
         variation: 0.250
     activatedDamage:
         types:
-            Slash: 20
+            Slash: 25
             Heat: 35
-            Structural: 30
+            Structural: 35
   - type: ItemToggleActiveSound
     activeSound:
       path: /Audio/Weapons/ebladehum.ogg
@@ -328,7 +326,7 @@
     wieldSound: null # esword light sound instead
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: .6666
+    attackRate: 0.75
     angle: 100
     damage:
       types:
@@ -346,11 +344,11 @@
     size: Small
     sprite: Objects/Weapons/Melee/e_sword_double-inhands.rsi
   - type: Reflect
-    reflectProb: .60
+    reflectProb: .70
     minReflectProb: .20
     spread: 75
     reflects:
-      - Energy #DeltaV: 60% Energy Reflection but no ballistics.
+      - Energy #DeltaV: 70% Energy Reflection but no ballistics.
   - type: UseDelay
     delay: 1
   - type: ToggleableLightVisuals

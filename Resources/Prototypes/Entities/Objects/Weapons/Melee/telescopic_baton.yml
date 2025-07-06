@@ -27,7 +27,7 @@
   - type: ItemToggleMeleeWeapon
     activatedDamage:
       types:
-        Blunt: 12
+        Blunt: 18
   - type: ItemToggleDamageOtherOnHit
   - type: ItemToggleSize
     activatedSize: Normal

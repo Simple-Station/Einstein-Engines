@@ -177,7 +177,7 @@
 
 - type: entity
   name: SCHK-2 plasma hardlight sword
-  parent: BaseItem
+  parent: EnergySword
   id: EnergySwordFamilies
   description: A stylish answer to the antiquated NanoTrasen energy sword.
   components:

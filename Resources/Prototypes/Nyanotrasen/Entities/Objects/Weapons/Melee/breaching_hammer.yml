@@ -11,14 +11,14 @@
     size: Huge
   - type: MeleeWeapon
     attackRate: 0.75
-    range: 1.70
+    range: 1.75
     damage:
       types:
         Blunt: 20
         Structural: 30
     soundHit:
       path: /Audio/Nyanotrasen/Weapons/club.ogg
-    bluntStaminaDamageFactor: 1.50 # 15 stamina damage
+    bluntStaminaDamageFactor: 1.5 # 15 stamina damage
 #  - type: MeleeStaminaCost
 #    swing: 10
 #    wieldCoefficient: 0.5 #if wielded you will only consume 5
