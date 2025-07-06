@@ -1,0 +1,14 @@
+
+- type: loadout
+  id: LoadoutItemSRMKhopesh
+  category: Items
+  cost: 4
+  items:
+    - SRMKhopesh
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - HunterSRM
+        - MontagneSRM
+        - OverseerSRM
+        - GovernorDSM
