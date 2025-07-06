@@ -100,3 +100,14 @@
     sprite: _Crescent/Clothing/Syndicate/Uniform/cyberdawnsecurity.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/Syndicate/Uniform/cyberdawnsecurity.rsi
+ 
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSyndicateBunnysuit
+  name: syndicate bunny suit
+  description: Uniform bunny suit for Syndicate subordinates.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/Uniform/syndiebunny.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/Uniform/syndiebunny.rsi

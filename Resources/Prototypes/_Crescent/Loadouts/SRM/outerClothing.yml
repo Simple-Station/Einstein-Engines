@@ -1,0 +1,35 @@
+- type: loadout
+  id: LoadoutOuterArmorSRMHunterDuster
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterArmorHunterDuster
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - AcolyteSRM
+        - HunterSRM
+        - MontagneSRM
+        - OverseerSRM
+        - TenderSRM
+
+- type: loadout
+  id: LoadoutOuterArmorSRMHunterVest
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterArmorHunterVest
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - AcolyteSRM
+        - HunterSRM
+        - MontagneSRM
+        - OverseerSRM
+        - TenderSRM

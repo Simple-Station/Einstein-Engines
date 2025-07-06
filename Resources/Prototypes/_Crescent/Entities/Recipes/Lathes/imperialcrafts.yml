@@ -129,13 +129,6 @@
     Plastic: 1000
 
 - type: latheRecipe
-  id: ClothingHandsGlovesImperialLonggloves
-  result: ClothingHandsGlovesImperialLonggloves
-  completetime: 2
-  materials:
-    Durathread: 500
-
-- type: latheRecipe
   id: ClothingHeadHatImperialHat
   result: ClothingHeadHatImperialHat
   completetime: 2
@@ -158,7 +151,7 @@
     Steel: 1000
 
 - type: latheRecipe
-  id: ClothingHeadHelmetImperialTrooperHelmet
+  id: ClothingOuterArmorImperialTrooperArmor
   result: ClothingOuterArmorImperialTrooperArmor
   completetime: 2
   materials:
@@ -258,15 +251,6 @@
   completetime: 2
   materials:
     Steel: 1000
-    BallisticCycler: 500
-
-- type: latheRecipe
-  id: WeaponRifleMiller
-  result: WeaponRifleMiller
-  completetime: 2
-  materials:
-    Steel: 1500
-    Silver: 500
     BallisticCycler: 500
 
 - type: latheRecipe

@@ -1,0 +1,63 @@
+
+- type: loadout
+  id: LoadoutHeadDSMBeret
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatImperialBeret
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdvocatusDSM
+        - GovernorDSM
+        - KnightDSM
+        - CourtierDSM
+        - TemplarDSM
+
+- type: loadout
+  id: LoadoutHeadDSMHat
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatImperialHat
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdjutantDSM
+        - AdvocatusDSM
+        - ArchmaesterDSM
+        - ForemanDSM
+        - FreeholderDSM
+        - GovernorDSM
+        - KnightDSM
+        - LaborDSM
+        - LevymanDSM
+        - CourtierDSM
+        - ScribeDSM
+        - SurgeonDSM
+        - TemplarDSM
+        - WealthDSM
+
+- type: loadout
+  id: LoadoutHeadDSMPeakedCap
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatImperialPeakedCap
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdvocatusDSM
+        - GovernorDSM
+        - KnightDSM
+        - LevymanDSM
+        - TemplarDSM

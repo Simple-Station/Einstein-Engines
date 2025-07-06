@@ -1,0 +1,17 @@
+- type: loadout
+  id: LoadoutOuterArmorDSMImperialParade
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterCoatImperialParade
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdvocatusDSM
+        - GovernorDSM
+        - KnightDSM
+        - LevymanDSM
+        - TemplarDSM

@@ -1,0 +1,87 @@
+- type: loadout
+  id: LoadoutUniformSHISuit
+  category: Uniform
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  items:
+    - ClothingUniformJumpsuitShinoharaSuit
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterJobRequirement
+      jobs:
+        - BoardSHI
+        - EmployeeSHI
+        - ExecutiveSHI
+        - HighsecSHI
+        - MedtechSHI
+        - CorpsecSHI
+
+- type: loadout
+  id: LoadoutUniformSHISuitEmployee
+  category: Uniform
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  items:
+    - ClothingUniformJumpsuitShinoharaLogistics
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterJobRequirement
+      jobs:
+        - BoardSHI
+        - ExecutiveSHI
+        - MedtechSHI
+
+- type: loadout
+  id: LoadoutUniformSHISuitSecurity
+  category: Uniform
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  items:
+    - ClothingUniformJumpsuitShinoharaSecurity
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterJobRequirement
+      jobs:
+        - BoardSHI
+        - ExecutiveSHI
+        - HighsecSHI
+
+- type: loadout
+  id: LoadoutUniformSHISuitSecurityUA
+  category: Uniform
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  items:
+    - ClothingUniformJumpsuitShinoharaSecurityUA
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterJobRequirement
+      jobs:
+        - BoardSHI
+        - ExecutiveSHI
+        - HighsecSHI
+        - CorpsecSHI
+
+- type: loadout
+  id: LoadoutUniformSHISuitHighsec
+  category: Uniform
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  items:
+    - ClothingUniformJumpsuitShinoharaSuit
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterJobRequirement
+      jobs:
+        - BoardSHI
+        - ExecutiveSHI
