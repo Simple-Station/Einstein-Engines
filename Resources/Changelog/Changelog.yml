@@ -16399,3 +16399,181 @@ Entries:
   id: 7279
   time: '2025-06-25T05:28:32.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2207
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: Nerfed the TCAF Heavy Armor to be equivalent to Heavy Security Armor.
+  id: 7280
+  time: '2025-06-28T01:13:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2476
+- author: Mike32oz
+  changes:
+    - type: Tweak
+      message: 'Aghost Inventory bag '
+  id: 7281
+  time: '2025-06-28T17:02:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2491
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Cleanup of Hive
+  id: 7282
+  time: '2025-06-28T17:04:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2459
+- author: Orion-416
+  changes:
+    - type: Tweak
+      message: BSO's lifeline is now implanted roundstart
+    - type: Tweak
+      message: BSO's lifeline is now manually activated
+  id: 7283
+  time: '2025-06-28T17:13:36.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2296
+- author: GNUtopia
+  changes:
+    - type: Add
+      message: Added formic acid
+    - type: Add
+      message: Added enunciase
+    - type: Add
+      message: Added morphine autoinjector cartridge
+    - type: Tweak
+      message: Haloperidol now counteracts stuttering from chems
+    - type: Tweak
+      message: Ousiana dust now counteracts psionic insulation/blocking statuses
+    - type: Tweak
+      message: Morphine blocks pain for longer
+    - type: Tweak
+      message: Morphine and artiplates are more visually distinct
+    - type: Tweak
+      message: Increased distribution of morphine roundstart
+    - type: Tweak
+      message: Changed wording of stamina change effect
+    - type: Tweak
+      message: Salicylic acid works on corpses
+    - type: Fix
+      message: Fixed missing locale text for some stamina-affecting chems
+    - type: Fix
+      message: Fixed guidebook falsely saying effects accumulate
+    - type: Fix
+      message: Fixed capitalisation of proto medical multitool
+    - type: Fix
+      message: Fixed morphine not blocking surgery pain moodlet
+  id: 7284
+  time: '2025-06-28T17:17:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2293
+- author: astriloqua
+  changes:
+    - type: Tweak
+      message: Ported over ghost role UI QoL
+  id: 7285
+  time: '2025-06-28T17:17:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2284
+- author: Tirochora
+  changes:
+    - type: Tweak
+      message: >-
+        grabbing somebody mid-combo now obeys the same laws as every other
+        attack, so no more instant judo throws
+  id: 7286
+  time: '2025-06-28T17:23:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2199
+- author: Will-Oliver-Br
+  changes:
+    - type: Add
+      message: Added medical patches
+    - type: Add
+      message: Added a guidebook entry for medical patches.
+  id: 7287
+  time: '2025-06-28T17:27:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2185
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added traits for spawning in with individual cybernetic legs (without
+        any other modifications). These traits uniquely cost neither points, nor
+        trait selections.
+    - type: Add
+      message: Added bundle traits for Dwarf and Kobold.
+    - type: Add
+      message: Added Forked Tongue trait for Unathi.
+    - type: Add
+      message: Added Stunted Snout trait for Vulpkanin.
+    - type: Tweak
+      message: >-
+        Cyber-Eyes Basic System no longer costs any trait slots, and has had its
+        points cost reduced. 
+  id: 7288
+  time: '2025-06-28T17:43:10.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2463
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Made some performance improvements to the Holopad system.
+  id: 7289
+  time: '2025-06-28T17:44:52.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2470
+- author: Mike32oz
+  changes:
+    - type: Remove
+      message: Courier spawn-point
+  id: 7290
+  time: '2025-06-28T17:45:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2482
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: 'Made some significant performance improvements to Drains. '
+  id: 7291
+  time: '2025-06-28T17:45:26.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2471
+- author: WhiteHusky
+  changes:
+    - type: Fix
+      message: Saving item locations are working again
+  id: 7292
+  time: '2025-06-28T18:59:15.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2484
+- author: Kai518
+  changes:
+    - type: Add
+      message: Ported Devil antag from Goobstation
+  id: 7293
+  time: '2025-06-28T18:59:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2454
+- author: WhiteHusky
+  changes:
+    - type: Fix
+      message: Mailing Unit UI is now fixed
+    - type: Fix
+      message: Mailing Units' no longer use the wrong sprite when charging
+    - type: Tweak
+      message: Mailing Units clear target on send or selecting the same target
+  id: 7294
+  time: '2025-06-28T19:00:38.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2485
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: 'IPCs are no longer immune to Radiation and Space. '
+    - type: Tweak
+      message: IPC shock damage has been reduced from 3x to 1.2x
+    - type: Add
+      message: >-
+        IPCs have gained numerous new traits for customization. As well as
+        rebalanced Nanite Auto-Repair Bots.
+    - type: Add
+      message: Circuitry can now be used to repair Synthetics.
+    - type: Fix
+      message: Fixed the guidebook link for IPCs not appearing in character creation.
+  id: 7295
+  time: '2025-06-28T19:02:09.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2464
+- author: Erisfiregamer1
+  changes:
+    - type: Add
+      message: VRRRRRRRRR SKRRRRRRRT BRRRRRRRRRR
+  id: 7296
+  time: '2025-07-04T21:03:29.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2494

@@ -16,6 +16,7 @@ using Content.Shared.Gravity;
 using Content.Shared.Parallax.Biomes;
 using Content.Shared.Salvage;
 using Content.Shared.Shuttles.Components;
+using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.EntitySerialization;
 using Robust.Shared.EntitySerialization.Systems;
@@ -47,6 +48,7 @@ public sealed class LavalandPlanetSystem : EntitySystem
     [Dependency] private readonly BiomeSystem _biome = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
+    [Dependency] private readonly MapSystem _mapSystem = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly ShuttleSystem _shuttle = default!;
     [Dependency] private readonly StationSystem _station = default!;
@@ -124,7 +126,7 @@ public sealed class LavalandPlanetSystem : EntitySystem
             TerminatingOrDeleted(_lavalandPreloader.Value.Uid))
             return;
 
-        _mapManager.DeleteMap(_lavalandPreloader.Value.Id);
+        _mapSystem.DeleteMap(_lavalandPreloader.Value.Id);
         _lavalandPreloader = null;
     }
 
@@ -171,7 +173,7 @@ public sealed class LavalandPlanetSystem : EntitySystem
 
         PlanetBasicSetup(lavalandMap, prototype, seed.Value);
 
-        _mapManager.SetMapPaused(lavalandMapId, true);
+        _mapSystem.SetPaused(lavalandMapId, true);
 
         if (!SetupOutpost(lavalandMap, lavalandMapId, prototype.OutpostPath, out var outpost))
             return false;
@@ -200,8 +202,8 @@ public sealed class LavalandPlanetSystem : EntitySystem
         }
 
         // Start!!1!!!
-        _mapManager.DoMapInitialize(lavalandMapId);
-        _mapManager.SetMapPaused(lavalandMapId, false);
+        _mapSystem.InitializeMap(lavalandMapId);
+        _mapSystem.SetPaused(lavalandMapId, false);
 
         // also preload the planet itself
         _biome.Preload(lavalandMap, Comp<BiomeComponent>(lavalandMap), loadBox);
@@ -257,7 +259,7 @@ public sealed class LavalandPlanetSystem : EntitySystem
         outpost = EntityUid.Invalid;
 
         // Setup Outpost
-        if (!_mapLoader.TryLoadGrid(lavalandMapId, path, out var outposts))
+        if (!_mapLoader.TryLoadGrid(lavalandMapId, path, out _))
         {
             Log.Error($"Failed to spawn Outpost {path} onto Lavaland map.");
             return false;

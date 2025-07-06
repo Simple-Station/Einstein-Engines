@@ -1,23 +1,28 @@
-using System.Linq;
+using Robust.Server.GameObjects;
+using Robust.Shared.Configuration;
+using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 using Content.Server.GameTicking;
 using Content.Server.StationEvents.Components;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Random.Helpers;
 using Content.Shared.Salvage;
-using Robust.Server.GameObjects;
-using Robust.Shared.Configuration;
+using System.Linq;
+using Robust.Shared.EntitySerialization;
 using Robust.Shared.EntitySerialization.Systems;
-using Robust.Shared.Map;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
+using Robust.Shared.Map.Components;
+using Robust.Shared.Utility;
+
 
 namespace Content.Server.StationEvents.Events;
 
 public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRuleComponent>
 {
-    [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
+    [Dependency] private readonly MapLoaderSystem _map = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IConfigurationManager _confMan = default!;
@@ -28,11 +33,17 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
 
     protected override void Started(EntityUid uid, PirateRadioSpawnRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
-        base.Started(uid, component, gameRule, args);
+        SpawnListeningOutpost((uid, component), gameRule, args);
+        SpawnDebris((uid, component));
+    }
+
+    private void SpawnListeningOutpost(Entity<PirateRadioSpawnRuleComponent> ent, GameRuleComponent gameRule, GameRuleStartedEvent args)
+    {
+        base.Started(ent.Owner, ent.Comp, gameRule, args);
 
         var station = _gameTicker.GetSpawnableStations();
-
         var stationGrids = new HashSet<EntityUid>();
+
         foreach (var stations in station)
         {
             if (TryComp<StationDataComponent>(stations, out var data) && _station.GetLargestGrid(data) is { } grid)
@@ -49,26 +60,26 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
         if (!_mapSystem.MapExists(targetMapId))
             return;
 
-        var randomOffset = _random.NextVector2(component.MinimumDistance, component.MaximumDistance);
-        if (!_mapLoader.TryLoadGrid(Transform(targetStation).MapID, _random.Pick(component.PirateRadioShuttlePath), out var outpostid, offset: _xform.GetWorldPosition(targetStation) + randomOffset))
-            return;
+        var randomOffset = _random.NextVector2(ent.Comp.MinimumDistance, ent.Comp.MaximumDistance);
+        var randomMap = _random.Pick(ent.Comp.PirateRadioShuttlePath);
+        var mapId = Transform(targetStation).MapID;
 
-        SpawnDebris(component, outpostid.Value.Owner);
+        _map.TryLoadGrid(mapId, randomMap, out _, offset: randomOffset);
     }
 
-    private void SpawnDebris(PirateRadioSpawnRuleComponent component, EntityUid outpostid)
+    private void SpawnDebris(Entity<PirateRadioSpawnRuleComponent> ent)
     {
         if (_confMan.GetCVar(CCVars.WorldgenEnabled)
-            || component.DebrisCount <= 0)
+            || ent.Comp.DebrisCount <= 0)
             return;
 
-        var outpostaabb = _xform.GetWorldPosition(outpostid);
+        var outpostaabb = _xform.GetWorldPosition(ent.Owner);
         var k = 0;
 
-        while (k < component.DebrisCount)
+        while (k < ent.Comp.DebrisCount)
         {
-            var debrisRandomOffset = _random.NextVector2(component.MinimumDebrisDistance, component.MaximumDebrisDistance);
-            var randomer = _random.NextVector2(component.DebrisMinimumOffset, component.DebrisMaximumOffset); //Second random vector to ensure the outpost isn't perfectly centered in the debris field
+            var debrisRandomOffset = _random.NextVector2(ent.Comp.MinimumDebrisDistance, ent.Comp.MaximumDebrisDistance);
+            var randomer = _random.NextVector2(ent.Comp.DebrisMinimumOffset, ent.Comp.DebrisMaximumOffset); //Second random vector to ensure the outpost isn't perfectly centered in the debris field
 
             var salvPrototypes = _prototypeManager.EnumeratePrototypes<SalvageMapPrototype>().ToList();
             var salvageProto = _random.Pick(salvPrototypes);
@@ -80,7 +91,12 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
             if (GameTicker.DefaultMap == MapId.Nullspace)
                 return;
 
-            if (!_mapLoader.TryLoadGrid(GameTicker.DefaultMap, salvageProto.MapPath, out _, offset: outpostaabb + debrisRandomOffset + randomer))
+            if (!_map.TryLoadGrid(
+                GameTicker.DefaultMap,
+                salvageProto.MapPath,
+                out _,
+                offset: outpostaabb + debrisRandomOffset + randomer)
+            )
                 return;
 
             k++;

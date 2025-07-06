@@ -4,6 +4,7 @@ using Content.Shared.Teleportation.Components;
 using Content.Shared.Verbs;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
+using Robust.Shared.EntitySerialization;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -18,8 +19,6 @@ public sealed class PocketDimensionSystem : EntitySystem
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly LinkedEntitySystem _link = default!;
     [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
-    [Dependency] private readonly MapSystem _map = default!;
-    [Dependency] private readonly IMapManager _mapMan = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -59,29 +58,39 @@ public sealed class PocketDimensionSystem : EntitySystem
     {
         if (Deleted(comp.PocketDimensionMap))
         {
-            var map = _map.CreateMap(out var mapId);
-
-            if (!_mapLoader.TryLoadGrid(mapId, comp.PocketDimensionPath, out var root))
+            if (!_mapLoader.TryLoadMap(comp.PocketDimensionPath, out var map, out var roots))
             {
                 _sawmill.Error($"Failed to load pocket dimension map {comp.PocketDimensionPath}");
-                QueueDel(map);
                 return;
             }
 
             comp.PocketDimensionMap = map;
 
-            // spawn the permanent portal into the pocket dimension, now ready to be used
-            var pos = new EntityCoordinates(root.Value.Owner, 0, 0);
-            comp.ExitPortal = Spawn(comp.ExitPortalPrototype, pos);
-            EnsureComp<PortalComponent>(comp.ExitPortal!.Value, out var portal);
-            // the TryUnlink cleanup when first trying to create portal will fail without this
-            EnsureComp<LinkedEntityComponent>(uid);
-            portal.CanTeleportToOtherMaps = true;
+            // find the pocket dimension's first grid and put the portal there
+            bool foundGrid = false;
+            foreach (var root in roots)
+            {
+                // spawn the permanent portal into the pocket dimension, now ready to be used
+                var pos = new EntityCoordinates(root, 0, 0);
+                comp.ExitPortal = Spawn(comp.ExitPortalPrototype, pos);
+                EnsureComp<PortalComponent>(comp.ExitPortal!.Value, out var portal);
+                // the TryUnlink cleanup when first trying to create portal will fail without this
+                EnsureComp<LinkedEntityComponent>(uid);
+                portal.CanTeleportToOtherMaps = true;
 
-            _sawmill.Info($"Created pocket dimension on grid {root} of map {map}");
+                _sawmill.Info($"Created pocket dimension on grid {root} of map {map}");
 
-            // if someone closes your portal you can use the one inside to escape
-            _link.OneWayLink(comp.ExitPortal.Value, uid);
+                // if someone closes your portal you can use the one inside to escape
+                _link.OneWayLink(comp.ExitPortal.Value, uid);
+                foundGrid = true;
+                break;
+            }
+            if (!foundGrid)
+            {
+                _sawmill.Error($"Pocket dimension {comp.PocketDimensionPath} had no grids!");
+                QueueDel(comp.PocketDimensionMap);
+                return;
+            }
         }
 
         var dimension = comp.ExitPortal!.Value;

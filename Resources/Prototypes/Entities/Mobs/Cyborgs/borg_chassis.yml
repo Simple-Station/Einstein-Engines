@@ -182,6 +182,7 @@
       damageContainers:
       - Inorganic
       - Silicon
+      - SiliconUnshielded
     - type: InteractionPopup
       interactSuccessString: petting-success-syndicate-cyborg
       interactFailureString: petting-failure-syndicate-cyborg

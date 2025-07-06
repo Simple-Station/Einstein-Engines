@@ -1,4 +1,4 @@
-﻿using Content.Shared._Goobstation.MartialArts;
+using Content.Shared._Goobstation.MartialArts;
 using Content.Shared._Goobstation.TableSlam; // Goobstation - Table Slam
 using Content.Shared.Alert;
 using Content.Shared.Movement.Pulling.Systems;

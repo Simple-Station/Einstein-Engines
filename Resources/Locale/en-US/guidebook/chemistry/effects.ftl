@@ -86,7 +86,10 @@ reagent-effect-guidebook-status-effect =
         [add]   { $chance ->
                     [1] Causes
                     *[other] cause
-                } {LOC($key)} for at least {NATURALFIXED($time, 3)} {MANY("second", $time)} with accumulation
+                } {LOC($key)} for at least {NATURALFIXED($time, 3)} {MANY("second", $time)} { $refresh ->
+                    *[true] without accumulation
+                    [false] with accumulation
+                    }
         *[set]  { $chance ->
                     [1] Causes
                     *[other] cause
@@ -438,14 +441,14 @@ reagent-effect-guidebook-purify-evil = Purifies evil powers
 reagent-effect-guidebook-stamina-change =
     { $chance ->
         [1] { $deltasign ->
-                [-1] Increases
-                *[1] Decreases
+                [-1] Restores
+                *[1] Deals
             }
         *[other] { $deltasign ->
-                    [-1] increase
-                    *[1] decrease
+                    [-1] restore
+                    *[1] deal
                  }
-    } stamina by {$amount} points
+    } {$amount} stamina
 
 # Shadowling
 

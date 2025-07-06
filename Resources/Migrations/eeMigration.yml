@@ -75,7 +75,7 @@ WindoorSecureBrigLocked: WindoorSecureSecurityLawyerLocked
   #Delta V Optional: Remove "#" for specific maps.
   #AsteroidRock: AsteroidAltRock
   #AsteroidRockMining: AsteroidAltRockMining   # These two rocks change between the two variants of
-  # Wizden Rocks, they're the same rock but with two different textures
+# Wizden Rocks, they're the same rock but with two different textures
 # both are ugly, but you may have a preference.
 
 # 2023-12-16
@@ -146,3 +146,4 @@ WeaponSniperRepeaterNonlethal: WeaponSniperRepeater
 
 # 2025-06-09
 ShockCollar: ClothingBackpackElectropack
+SpawnPointCourier: SpawnPointMailCarrier # Courier -  It doesn't load correctly, kicks everybody from the map, and return to Lobby use mail carrier instead

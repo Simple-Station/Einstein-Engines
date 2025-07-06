@@ -26,8 +26,8 @@ public sealed partial class CargoSystem
     /*
      * Handles cargo shuttle / trade mechanics.
      */
-    [Dependency] private readonly IConfigurationManager _confMan = default!;
     public MapId? CargoMap { get; private set; }
+    private static readonly ResPath MapPath = new ResPath("/Maps/Shuttles/trading_outpost.yml");
 
     private static readonly SoundPathSpecifier ApproveSound = new("/Audio/Effects/Cargo/ping.ogg");
 
@@ -351,7 +351,7 @@ public sealed partial class CargoSystem
         if (!HasComp<StationCargoOrderDatabaseComponent>(args.Station)) // No cargo, L
             return;
 
-        if (_cfgManager.GetCVar(CCVars.GridFill) && _confMan.GetCVar(CargoCVars.CreateCargoMap))
+        if (_cfgManager.GetCVar(CCVars.GridFill) && _cfg.GetCVar(CargoCVars.CreateCargoMap))
             SetupTradePost();
     }
 
@@ -371,9 +371,7 @@ public sealed partial class CargoSystem
     private void SetupTradePost()
     {
         if (CargoMap != null && _sharedMapSystem.MapExists(CargoMap.Value))
-        {
             return;
-        }
 
         // It gets mapinit which is okay... buuutt we still want it paused to avoid power draining.
         var mapEntId = _mapSystem.CreateMap();
@@ -403,7 +401,6 @@ public sealed partial class CargoSystem
         };
 
         _metaSystem.SetEntityName(mapUid, $"Automated Trade Station {_random.Next(1000):000}");
-
         _console.RefreshShuttleConsoles();
     }
 }
