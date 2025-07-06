@@ -39,7 +39,7 @@
     layers:
       - state: base-projectile
   - type: ShipWeaponProjectile
-  - type: ProjectilePhasePrevent
+  - type: ProjectilePhasePrevent #do not remove
     mask:
     - BulletImpassable
     - Impassable
@@ -209,7 +209,6 @@
     visualType: Square
     color: White
   - type: ShipWeaponProjectile
-  - type: ProjectilePhasePrevent
   - type: Projectile
     ignoreWeaponGrid: true
     damage:
@@ -286,7 +285,6 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: ShipWeaponProjectile
-  - type: ProjectilePhasePrevent
   - type: Projectile
     ignoreWeaponGrid: true
     damage:
@@ -345,7 +343,6 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: ShipWeaponProjectile
-  - type: ProjectilePhasePrevent
   - type: ProjectileIFF
     visualType: Circle
     color: Blue
@@ -383,7 +380,6 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: ShipWeaponProjectile
-  - type: ProjectilePhasePrevent
   - type: Projectile
     ignoreWeaponGrid: true
     damage:
@@ -1192,7 +1188,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: ShipWeaponProjectile
-  - type: ProjectilePhasePrevent
+  - type: ProjectilePhasePrevent #doesnt cause explosions so probably fine
   - type: Projectile
     ignoreWeaponGrid: true
     damage:
@@ -1274,7 +1270,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: ShipWeaponProjectile
-  - type: ProjectilePhasePrevent
+  - type: ProjectilePhasePrevent #doesnt cause explosions so probably fine
   - type: Projectile
     ignoreWeaponGrid: true
     damage:
@@ -1352,7 +1348,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: ShipWeaponProjectile
-  - type: ProjectilePhasePrevent
+  - type: ProjectilePhasePrevent #doesnt cause explosions so probably fine
   - type: Projectile
     ignoreWeaponGrid: true
     damage:
@@ -1432,7 +1428,6 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: ShipWeaponProjectile
-  - type: ProjectilePhasePrevent
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
@@ -1568,7 +1563,6 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: ShipWeaponProjectile
-  - type: ProjectilePhasePrevent
   - type: Projectile
     ignoreWeaponGrid: true
     damage:
@@ -1643,7 +1637,6 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: ShipWeaponProjectile
-  - type: ProjectilePhasePrevent
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
@@ -1721,7 +1714,6 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: ShipWeaponProjectile
-  - type: ProjectilePhasePrevent
   - type: Projectile
     ignoreWeaponGrid: true
     damage:
@@ -1906,7 +1898,6 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: ShipWeaponProjectile
-  - type: ProjectilePhasePrevent
   - type: ProjectileIFF
     visualType: Circle
     color: Blue

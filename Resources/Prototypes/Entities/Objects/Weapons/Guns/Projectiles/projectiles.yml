@@ -789,7 +789,6 @@
   - type: ProjectileIFF
     visualType: SquareReticle
     color: Red
-  - type: ProjectilePhasePrevent
   - type: Fixtures
     fixtures:
       projectile:
@@ -836,7 +835,6 @@
   - type: ProjectileIFF
     visualType: SquareReticle
     color: Red
-  - type: ProjectilePhasePrevent
   - type: Fixtures
     fixtures:
       projectile:
@@ -884,7 +882,6 @@
   - type: ProjectileIFF
     visualType: SquareReticle
     color: Red
-  - type: ProjectilePhasePrevent
   - type: Fixtures
     fixtures:
       projectile:
@@ -929,7 +926,6 @@
     totalIntensity: 125 # about a ~6 tile radius
     intensitySlope: 1
     maxIntensity: 10
-  - type: ProjectilePhasePrevent
 
 - type: entity
   id: BulletGrenadeEMP
