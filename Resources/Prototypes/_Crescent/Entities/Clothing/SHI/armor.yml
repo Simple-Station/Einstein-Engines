@@ -1,38 +1,5 @@
 #hardsuits
 
-- type: entity
-  parent: ClothingOuterHardsuitBase
-  id: ClothingOuterHardsuitTraumasec
-  name: interdyne traumasec hardsuit
-  description: A modular hardsuit produced by Shinohara Heavy Industries, made for Interdyne TraumaSec officers.
-  components:
-  - type: Sprite
-    sprite: _Crescent/Clothing/SHI/OuterClothing/traumasec.rsi
-  - type: Clothing
-    sprite: _Crescent/Clothing/SHI/OuterClothing/traumasec.rsi
-  - type: PressureProtection
-    highPressureMultiplier: 0.5
-    lowPressureMultiplier: 1000
-  - type: ExplosionResistance
-    damageCoefficient: 0.6
-  - type: DegradeableArmor
-    armorMaxHealth: 700
-    armorType: Ceramic
-    armorRepair: NTCeramic
-    initialModifiers:
-      flatReductions:
-        Blunt: 20
-        Slash: 20
-        Piercing: 80
-        Heat: 15
-        Caustic: 15
-  - type: ClothingSpeedModifier
-    walkModifier: 1
-    sprintModifier: 1
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitTraumasec
-  - type: Contraband
-    value: 5
 
 - type: entity
   parent: ClothingOuterHardsuitBase
