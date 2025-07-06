@@ -242,6 +242,40 @@
 
 - type: entity
   parent: BaseItem
+  id: ShipVoucherLodka
+  name: NCWL 'Lodka' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a communard Lodka-class combat freighter pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 15000
+  - type: ShipVoucher
+    ship: Lodka
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherKavkaz
+  name: NCWL 'Kavkaz' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a communard Kavkaz-class light destroyer pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 60000
+  - type: ShipVoucher
+    ship: Kavkaz
+
+- type: entity
+  parent: BaseItem
   id: ShipVoucherKrechet
   name: NCWL 'Krechet' pattern LPC fabprint disk
   description: An LPC fabprint disk loaded with a communard Krechet-class light fighter pattern. Has to be redeemed at a shipyard console.
@@ -415,7 +449,7 @@
 
 - type: entity
   parent: BaseItem
-  id: ShipVoucherVanguardTwo
+  id: ShipVoucherVanguardMarkTwo
   name: NCWL 'Vanguard Mk.II' pattern LPC fabprint disk
   description: An LPC fabprint disk loaded with a communard Vanguard Mk.II-class elite gunship pattern. Has to be redeemed at a shipyard console.
   components:
@@ -691,6 +725,23 @@
 
 - type: entity
   parent: BaseItem
+  id: ShipVoucherBodybag
+  name: GSC 'Bodybag' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a Gorlex Security Consulting Bodybag-class boarding pod pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 7500
+  - type: ShipVoucher
+    ship: Bodybag
+
+- type: entity
+  parent: BaseItem
   id: ShipVoucherCleaver
   name: GSC 'Cleaver' pattern LPC fabprint disk
   description: An LPC fabprint disk loaded with a Gorlex Security Consulting Cleaver-class stealth fighter pattern. Has to be redeemed at a shipyard console.
@@ -787,7 +838,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 12000
+    price: 5000
   - type: ShipVoucher
     ship: Tick
 
@@ -804,7 +855,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 12000
+    price: 7500
   - type: ShipVoucher
     ship: Gnat
 
@@ -1444,3 +1495,37 @@
     price: 10000 # change later
   - type: ShipVoucher
     ship: Carrum
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherGeode
+  name: SAW 'Geode' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an SAW Geode-class cruiser. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 27000
+  - type: ShipVoucher
+    ship: Geode
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherScabrak
+  name: SAW 'Scabrak' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with the SAW Scabrak.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 18000
+  - type: ShipVoucher
+    ship: Scabrak

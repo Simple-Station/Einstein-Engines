@@ -1,0 +1,18 @@
+- type: characterItemGroup
+  id: LoadoutEVASuit
+  maxItems: 2
+  items:
+    - type: loadout
+      id: LoadoutOuterArmorIndependentsEVA
+    - type: loadout
+      id: LoadoutOuterArmorNCWLEVA
+    - type: loadout
+      id: LoadoutHeadNCWLEVA
+    - type: loadout
+      id: LoadoutOuterArmorTFSCEVA
+    - type: loadout
+      id: LoadoutHeadTFSCEVA
+    - type: loadout
+      id: LoadoutOuterArmorDSMEVA
+    - type: loadout
+      id: LoadoutHeadDSMEVA

@@ -1,0 +1,67 @@
+- type: job
+  id: HandelsATH
+  name: job-name-handels
+  description: job-description-handels
+  playTimeTracker: JobHandelsATH
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
+        - Reptilian
+        - Oni
+    - !type:FactionRequirement
+      factionID: "ATH"
+  weight: 77
+  startingGear: HandelsGear
+  alwaysUseSpawner: true
+  icon: "JobIconHandels"
+  requireAdminNotify: true
+  supervisors: job-supervisors-ath
+  canBeAntag: false
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - Service
+  - External
+  - Authority
+  - AuthoritySupply
+
+- type: startingGear
+  id: HandelsGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAuthorityHandels
+    shoes: ClothingShoesBootsJack
+    outerClothing: ClothingOuterCoatAuthorityHandels
+    id: HandelsPDA
+    ears: ClothingHeadsetAuthority

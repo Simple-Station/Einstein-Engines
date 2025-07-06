@@ -49,6 +49,7 @@ entities:
     - type: OccluderTree
     - type: SpreaderGrid
     - type: Shuttle
+      baseMaxLinearVelocity: 25
     - type: GridPathfinding
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
@@ -2574,6 +2575,26 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
+- proto: ClothingHeadHelmetSyndicate
+  entities:
+  - uid: 370
+    components:
+    - type: Transform
+      parent: 292
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 834
+    components:
+    - type: Transform
+      parent: 291
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: ClothingMaskSyndicateFacemask
   entities:
   - uid: 376
@@ -2585,65 +2606,21 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingOuterHardsuitSyndicateBG
+- proto: ClothingOuterHardsuitSyndicate
   entities:
-  - uid: 370
+  - uid: 384
     components:
     - type: Transform
-      parent: 291
-    - type: GroupExamine
-      group:
-      - hoverMessage: ""
-        contextText: verb-examine-group-other
-        icon: /Textures/Interface/examine-star.png
-        components:
-        - Armor
-        - ClothingSpeedModifier
-        entries:
-        - message: >-
-            It provides the following protection:
-
-            - [color=yellow]Blunt[/color] damage reduced by [color=lightblue]10%[/color].
-
-            - [color=yellow]Slash[/color] damage reduced by [color=lightblue]10%[/color].
-
-            - [color=yellow]Piercing[/color] damage reduced by [color=lightblue]5%[/color].
-
-            - [color=yellow]Heat[/color] damage reduced by [color=lightblue]10%[/color].
-
-            - [color=yellow]Radiation[/color] damage reduced by [color=lightblue]75%[/color].
-
-            - [color=aqua]Stamina[/color] damage reduced by [color=lightblue]25%[/color].
-
-            - [color=orange]Explosion[/color] damage reduced by [color=lightblue]50%[/color].
-          priority: 0
-          component: Armor
-        - message: This decreases your speed by [color=yellow]10%[/color].
-          priority: 0
-          component: ClothingSpeedModifier
-        title: null
+      parent: 292
     - type: Physics
       angularDamping: 0
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 384
+  - uid: 835
     components:
     - type: Transform
-      parent: 292
-    - type: GroupExamine
-      group:
-      - hoverMessage: ""
-        contextText: verb-examine-group-other
-        icon: /Textures/Interface/examine-star.png
-        components:
-        - Armor
-        - ClothingSpeedModifier
-        entries:
-        - message: This decreases your speed by [color=yellow]10%[/color].
-          priority: 0
-          component: ClothingSpeedModifier
-        title: null
+      parent: 291
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -4422,13 +4399,14 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 371
-          - 370
-          - 369
-          - 368
-          - 367
-          - 366
           - 365
+          - 366
+          - 367
+          - 368
+          - 369
+          - 371
+          - 834
+          - 835
   - uid: 292
     components:
     - type: Transform
@@ -4458,14 +4436,15 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 384
-          - 383
           - 382
           - 378
           - 372
           - 373
           - 376
+          - 384
           - 377
+          - 370
+          - 383
 - proto: Syringe
   entities:
   - uid: 407

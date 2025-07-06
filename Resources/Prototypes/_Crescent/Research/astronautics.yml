@@ -51,7 +51,7 @@
   tier: 1
   cost: 3500
   recipeUnlocks:
-  - HandHeldMassScanner
+  - HandheldMassScannerAstronautics
   - BorgModuleGPS
 
 #tier 2
@@ -69,7 +69,6 @@
   - ClothingOuterHardsuitPrivateSecurityAstronautics
   - ClothingOuterHardsuitPilotAstronautics
   - ClothingOuterHardsuitVoidParamedAstronautics
-  - ClothingShoesBootsMagbootsAstronautics
   - JetpackMiniFilledAstronautics
 
 - type: technology

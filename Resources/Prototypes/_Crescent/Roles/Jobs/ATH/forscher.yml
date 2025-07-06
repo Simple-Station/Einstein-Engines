@@ -1,0 +1,71 @@
+- type: job
+  id: ForscherATH
+  name: job-name-forscher
+  description: job-description-forscher
+  playTimeTracker: JobForscherATH
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
+        - Oni
+    - !type:FactionRequirement
+      factionID: "ATH"
+  weight: 79
+  startingGear: ForscherGear
+  alwaysUseSpawner: true
+  icon: "JobIconForscher"
+  requireAdminNotify: true
+  supervisors: job-supervisors-ath
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-smarts
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - Service
+  - External
+  - Authority
+  - Authoritymed
+
+- type: startingGear
+  id: ForscherGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAuthorityForscher
+    outerClothing: ClothingOuterCoatAuthorityForscher
+    shoes: ClothingShoesBootsJack
+    id: ForscherPDA
+    ears: ClothingHeadsetAuthority

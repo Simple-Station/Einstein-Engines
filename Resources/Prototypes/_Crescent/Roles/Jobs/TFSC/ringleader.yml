@@ -80,6 +80,6 @@
     outerClothing: ClothingOuterArmorSyndicateRingmaster
     id: RingleaderPDA
     ears: ClothingHeadsetNCSP
-    belt: WeaponRevolverPythonAP
     gloves: ClothingHandsGlovesFingerless
     pocket1: AccesElevatorGSC
+    pocket2: WeaponRevolverPythonAP

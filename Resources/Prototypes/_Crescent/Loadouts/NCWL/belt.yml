@@ -1,0 +1,18 @@
+- type: loadout
+  id: LoadoutBeltNCWLWebbing
+  category: Belt
+  cost: 0
+  items:
+    - ClothingBeltNCWLWebbing
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdministratorNCWL
+        - ArtificerNCWL
+        - DoktorNCWL
+        - KadetNCWL
+        - KapitanNCWL
+        - KommissarNCWL
+        - SanitarNCWL

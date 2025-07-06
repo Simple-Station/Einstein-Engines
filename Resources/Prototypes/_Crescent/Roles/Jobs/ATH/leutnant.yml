@@ -12,7 +12,7 @@
         - Oni
     - !type:FactionRequirement
       factionID: "ATH"
-  weight: 86
+  weight: 83
   startingGear: LeutnantGear
   alwaysUseSpawner: true
   icon: "JobIconLeutnant"
@@ -67,7 +67,6 @@
   id: LeutnantGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitAuthorityLeutnant
-    back: ClothingBackpackSatchelLeatherFilledDSM
     shoes: ClothingShoesBootsJack
     head: ClothingHeadHatAuthorityLeutnant
     outerClothing: ClothingOuterCoatAuthorityLeutnant

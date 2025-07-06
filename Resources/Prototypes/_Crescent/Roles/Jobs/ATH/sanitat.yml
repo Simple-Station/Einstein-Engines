@@ -11,7 +11,7 @@
         - Oni
     - !type:FactionRequirement
       factionID: "ATH"
-  weight: 82
+  weight: 81
   startingGear: SanitatGear
   alwaysUseSpawner: true
   icon: "JobIconSanitat"
@@ -68,7 +68,6 @@
     jumpsuit: ClothingUniformJumpsuitAuthoritySanitat
     shoes: ClothingShoesBootsJack
     head: ClothingHeadHatAuthoritySanitat
-    belt: ClothingBeltAuthorityDroppouches
     gloves: ClothingHandsGlovesFingerless
     id: SanitatPDA
     ears: ClothingHeadsetAuthority
