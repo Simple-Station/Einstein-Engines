@@ -1,8 +1,8 @@
 - type: job
-  id: CourtierDSM
-  name: job-name-courtier
-  description: job-description-courtier
-  playTimeTracker: JobCourtierDSM
+  id: LaborDSM
+  name: job-name-ministerlabor
+  description: job-description-labor
+  playTimeTracker: JobLaborDSM
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 2500
@@ -19,9 +19,9 @@
         - Muted
         - Blindness
   weight: 25
-  startingGear: CourtierGear
+  startingGear: LaborGear
   alwaysUseSpawner: true
-  icon: "JobIconImperialCourtier"
+  icon: "JobIconImperialLabor"
   requireAdminNotify: false
   supervisors: job-supervisors-imperial
   canBeAntag: false
@@ -42,7 +42,7 @@
   - Captain # Frontier
 
 - type: startingGear
-  id: CourtierGear
+  id: LaborGear
   equipment:
     head: ClothingHeadHatImperialPeakedCap
     jumpsuit: ClothingUniformJumpsuitImperialNobleMale

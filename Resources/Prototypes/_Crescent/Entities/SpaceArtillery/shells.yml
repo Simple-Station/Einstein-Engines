@@ -1024,7 +1024,6 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: ShipWeaponProjectile
-  - type: ProjectilePhasePrevent
   - type: Projectile
     ignoreWeaponGrid: true
     damage:

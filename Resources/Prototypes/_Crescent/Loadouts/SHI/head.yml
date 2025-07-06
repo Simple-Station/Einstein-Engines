@@ -1,0 +1,48 @@
+
+- type: loadout
+  id: LoadoutHeadSHIBeret
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatShinoharaBeret
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - BoardSHI
+        - ExecutiveSHI
+        - HighsecSHI
+        - CorpsecSHI
+
+- type: loadout
+  id: LoadoutHeadSHIBeretUA
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatShinoharaBeretUA
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - BoardSHI
+        - ExecutiveSHI
+        - HighsecSHI
+        - CorpsecSHI
+
+- type: loadout
+  id: LoadoutHeadSHIHelmetUA
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatShinoharaHelmetUA
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - HighsecSHI

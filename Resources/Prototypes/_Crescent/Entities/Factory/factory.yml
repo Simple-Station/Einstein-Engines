@@ -186,12 +186,48 @@
   components:
   - type: Factory
     recipes:
+      - FabricateSimpleElectronics
+      - FabricateBasicMechatronics
+      - FabricateWeakLaserLocus
       - FabricateAdvancedElectronics
+      - FabricateHardsuitElectronics
       - FabricateAdvancedMechatronics
   - type: Sprite
     sprite: _Crescent/Structures/factorystructures.rsi
     layers:
-    - state: "autoloom"
+    - state: "advancedfab"
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"
+
+- type: entity
+  parent: BaseMachinePowered
+  id: BallisticFablathe
+  name: SHI TF-22 armaments foundry
+  description: A specialized fabricator used for fabricating small-caliber munitions for both infantry and shuttle weapons, as well as construction components pertaining to weaponry.
+  components:
+  - type: Factory
+    recipes:
+      - FabricateMissileTube
+      - FabricateBallisticCycler
+      - FabricateWeakLaserLocus
+      - FabricateLaserLocus
+      - FabricateSpeedLoader
+      - FabricateMagazineMagnum
+      - FabricateMagazineMagnumSubMachineGun
+      - FabricateMagazinePistolSubMachineGun
+      - FabricateMagazinePistol
+      - FabricateMagazineRifleDrum
+      - FabricateMagazineRifle
+      - FabricateMagazineLightRifle
+      - FabricateMagazineFlak
+      - FabricateMagazineNeedler
+      - FabricateMagazineMortar
+  - type: Sprite
+    sprite: _Crescent/Structures/factorystructures.rsi
+    layers:
+    - state: "ballisticfab"
   - type: PointLight
     radius: 1.5
     energy: 1.6

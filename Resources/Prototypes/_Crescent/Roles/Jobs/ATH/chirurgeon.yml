@@ -1,0 +1,71 @@
+- type: job
+  id: ChirurgeonATH
+  name: job-name-chirurgeon
+  description: job-description-chirurgeon
+  playTimeTracker: JobChirurgeonATH
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
+        - Oni
+    - !type:FactionRequirement
+      factionID: "ATH"
+  weight: 78
+  startingGear: ChirurgeonGear
+  alwaysUseSpawner: true
+  icon: "JobIconChirurgeon"
+  requireAdminNotify: true
+  supervisors: job-supervisors-ath
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-smarts
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - Service
+  - External
+  - Authority
+  - Authoritymed
+
+- type: startingGear
+  id: ChirurgeonGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAuthorityChirurgeon
+    outerClothing: ClothingOuterCoatAuthorityChirurgeon
+    shoes: ClothingShoesBootsJack
+    id: ChirurgeonPDA
+    ears: ClothingHeadsetAuthority

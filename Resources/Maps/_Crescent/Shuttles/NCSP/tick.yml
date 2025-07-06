@@ -47,6 +47,7 @@ entities:
     - type: OccluderTree
     - type: SpreaderGrid
     - type: Shuttle
+      baseMaxLinearVelocity: 35
     - type: GridPathfinding
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
@@ -93,12 +94,24 @@ entities:
             4: 0,-1
         - node:
             color: '#DE3A3A96'
+            id: WarnLineE
+          decals:
+            29: -1,0
+            30: 0,1
+        - node:
+            color: '#DE3A3A96'
             id: WarnLineN
           decals:
             3: 0,-2
             6: -1,2
             7: 0,2
             8: 1,2
+        - node:
+            color: '#DE3A3A96'
+            id: WarnLineS
+          decals:
+            31: 0,1
+            32: 1,0
         - node:
             color: '#DE3A3A96'
             id: WarnLineW
@@ -211,6 +224,17 @@ entities:
     - type: Transform
       pos: 0.5,-1.5
       parent: 1
+- proto: BoriaticGeneratorHerculesShuttle
+  entities:
+  - uid: 36
+    components:
+    - type: Transform
+      pos: -0.5,0.5
+      parent: 1
+    - type: FuelGenerator
+      on: False
+    - type: Physics
+      bodyType: Static
 - proto: CableApcExtension
   entities:
   - uid: 25
@@ -370,13 +394,6 @@ entities:
       - Module C
       - Module D
       - Module E
-- proto: GeneratorWallmountAPU
-  entities:
-  - uid: 36
-    components:
-    - type: Transform
-      pos: -0.5,-0.5
-      parent: 1
 - proto: PoweredSmallLight
   entities:
   - uid: 53
@@ -440,12 +457,12 @@ entities:
     - type: Transform
       pos: 1.5,0.5
       parent: 1
-- proto: SubstationBasic
+- proto: SubstationWallBasic
   entities:
   - uid: 13
     components:
     - type: Transform
-      pos: -0.5,0.5
+      pos: -0.5,-0.5
       parent: 1
 - proto: ThrusterNCSPFighter
   entities:

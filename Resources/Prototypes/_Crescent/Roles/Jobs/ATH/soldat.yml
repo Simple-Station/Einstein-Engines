@@ -11,7 +11,7 @@
         - Oni
     - !type:FactionRequirement
       factionID: "ATH"
-  weight: 84
+  weight: 80
   startingGear: SoldatGear
   alwaysUseSpawner: true
   icon: "JobIconSoldat"
@@ -67,7 +67,6 @@
     jumpsuit: ClothingUniformJumpsuitAuthoritySoldat
     shoes: ClothingShoesBootsJack
     head: ClothingHeadHatAuthoritySoldat
-    belt: ClothingBeltAuthorityPouches
     gloves: ClothingHandsGlovesFingerless
     id: SoldatPDA
     ears: ClothingHeadsetAuthority

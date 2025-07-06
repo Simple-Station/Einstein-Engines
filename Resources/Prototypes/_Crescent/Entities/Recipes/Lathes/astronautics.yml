@@ -60,7 +60,7 @@
 
 - type: latheRecipe
   id: HandheldMassScannerAstronautics
-  result: HandheldMassScanner
+  result: HandheldMassScannerEE
   completetime: 1.5
   materials:
     BasicElectronics: 500
@@ -108,7 +108,7 @@
 
 - type: latheRecipe
   id: ClothingShoesBootsMagbootsAstronautics
-  result: ClothingShoesBootsMagbootsAdv
+  result: ClothingShoesBootsMagAdv
   completetime: 1.5
   materials:
     AdvancedElectronics: 1000

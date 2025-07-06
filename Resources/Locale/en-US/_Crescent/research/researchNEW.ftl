@@ -6,8 +6,10 @@ research-discipline-astronautics = Astronautics
 research-discipline-biochemical = Biochemical
 research-discipline-interdyne = Interdyne
 research-discipline-cyberdawn = Cyberdawn
+research-discipline-imperial = Imperial
 
 #Node Names
+
 research-technology-astronautics-basic-flight = Basic Avionics
 research-technology-astronautics-microgravity = Microgravity
 research-technology-astronautics-basiceva = Basic EVA

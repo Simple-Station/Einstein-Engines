@@ -169,3 +169,25 @@
       id: ClothingOuterCoatExpensive
     - type: loadout
       id: LoadoutOuterJacketTCAF
+    #Hullrot edit start
+    - type: loadout
+      id: LoadoutOuterArmorDSMImperialParade
+    - type: loadout
+      id: LoadoutOuterArmorNCWLHeavyCarapace
+    - type: loadout
+      id: ClothingOuterArmorNCWLCarapaceDoktor
+    - type: loadout
+      id: LoadoutOuterArmorSHIHighsecUA
+    - type: loadout
+      id: LoadoutOuterArmorSHIBasic
+    - type: loadout
+      id: LoadoutOuterCoatSHIVest
+    - type: loadout
+      id: LoadoutOuterCoatSHISuitjacket
+    - type: loadout
+      id: LoadoutOuterCoatSHILabcoat
+    - type: loadout
+      id: LoadoutOuterArmorSRMHunterDuster
+    - type: loadout
+      id: LoadoutOuterArmorSRMHunterVest
+    #Hullrot edit end

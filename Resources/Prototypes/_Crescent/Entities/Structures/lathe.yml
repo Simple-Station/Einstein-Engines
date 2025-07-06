@@ -143,6 +143,9 @@
       - CartridgeBicaridineInterdyne
       - CartridgeSalineInterdyne
       - CartridgeDermalineInterdyne
+      - CartridgePuncturaseInterdyne
+      - CartridgeAtropineInterdyne
+      - SyringeCase
       - InterdyneOptics
   - type: Anchorable
     flags:
@@ -179,6 +182,8 @@
       tags:
       - Sheet
       - CraftMaterials
+      - Ingot
+      - RawMaterial
   - type: Sprite
     sprite: _Crescent/Structures/nanoforge.rsi
     layers:
@@ -337,6 +342,7 @@
       - Brutepack
       - Ointment
       - Gauze
+      - SyringeCase
       - DisposableSyringe
       - HandheldHealthAnalyzer
       - BodyBag
@@ -374,7 +380,6 @@
       - ClothingEyesNightVisionGoggles
       - Terminus
       - ClothingOuterHardsuitShanlinUnpainted
-      - HandHeldMassScanner
       - BorgModuleGPS
       - RadarConsoleCircuitboard
       - EMPGrenadeElectronics
@@ -388,6 +393,7 @@
       - ClothingUniformJumpsuitSyndicateLabCyberdawn
       - ClothingUniformJumpsuitSyndicateSoldierCyberdawn
       - ClothingOuterArmorCyberdawnPatriarch
+      - ClothingOuterArmorKendoBoguCyberdawn
       - ClothingOuterHardsuitCybersun
       - ClothingHeadHatPatriarch
       - WeaponSubMachineGunAtreidesCyberdawn
@@ -406,8 +412,8 @@
       - ClothingOuterHardsuitSyndieMedicCyberdawn
       - ClothingOuterHardsuitCybersunStealthCyberdawn
       - MagazinePistolSpecialMindbreakerCyberdawn
+      - WeaponPistolPsiBreakerCyberdawn
       - ClothingEyesThermalVisionGogglesCyberdawn
-      - WeaponPistolPsibreakerCyberdawn
   - type: Machine
     board: MicroforgeCircuitboard
 
