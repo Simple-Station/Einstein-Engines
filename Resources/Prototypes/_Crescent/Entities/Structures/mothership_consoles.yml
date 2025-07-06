@@ -68,9 +68,9 @@
     shuttles:
     - Imparator
     - Jannissary
-    - Raider
     - Conquest
     - Valor
+#   - Raider CONSCRIPT CHANGE PLEASE DONT UNDO THIS
 
 - type: entity
   id: InterdyneMothershipComputer
