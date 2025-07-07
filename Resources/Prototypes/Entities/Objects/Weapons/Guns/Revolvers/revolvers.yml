@@ -128,22 +128,6 @@
     guides: [ SecurityWeapons ]
 
 - type: entity
-  name: Inspector
-  parent: WeaponRevolverInspectorSecurity
-  id: WeaponRevolverInspectorNonLethalSecurity
-  description: A detective's best friend. Comes loaded with .45 magnum rubber.
-    The serial number on the handguard marks this gun as belonging to an NT Security Officer.
-  components:
-  - type: RevolverAmmoProvider
-    whitelist:
-      tags:
-      - CartridgeMagnum
-      - SpeedLoaderMagnum
-    proto: CartridgeMagnumRubber
-  - type: GuideHelp
-    guides: [ SecurityWeapons ]
-
-- type: entity
   name: Mateba
   parent: [BaseWeaponRevolver, BaseMajorContraband]
   id: WeaponRevolverMateba
@@ -186,27 +170,6 @@
   description: An iconic large-framed revolver of ancient Sol' design. It is commonly manufactured by many companies all over the colonies. Uses .45 magnum ammo.
     The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   components:
-  - type: GuideHelp
-    guides: [ SecurityWeapons ]
-
-- type: entity
-  name: Python
-  parent: WeaponRevolverPythonSecurity
-  id: WeaponRevolverPythonNonlethalSecurity
-  components:
-  - type: RevolverAmmoProvider
-    whitelist:
-      tags:
-      - CartridgeMagnum
-      - SpeedLoaderMagnum
-    proto: CartridgeMagnumRubber
-    capacity: 6
-    chambers: [ True, True, True, True, True, True ]
-    ammoSlots: [ null, null, null, null, null, null ]
-    soundEject:
-      path: /Audio/Weapons/Guns/MagOut/revolver_magout.ogg
-    soundInsert:
-      path: /Audio/Weapons/Guns/MagIn/revolver_magin.ogg
   - type: GuideHelp
     guides: [ SecurityWeapons ]
 

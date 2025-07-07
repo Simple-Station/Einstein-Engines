@@ -35,7 +35,7 @@
   - ParamedicPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitParamedic
-    back: ClothingBackpackParamedic
+    back: ClothingBackpackMedical
     shoes: ClothingShoesColorBlue
     id: ParamedicPDA
     ears: ClothingBackpackMedical

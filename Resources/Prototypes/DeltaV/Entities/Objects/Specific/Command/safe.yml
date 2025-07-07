@@ -13,13 +13,13 @@
           visible: true
         - state: glass
           map: ["enum.OpenableVisuals.Layer"]
-    - type: ItemCabinet
+    - type: ItemSlots
       slots:
         ItemCabinet:
           ejectOnInteract: true
           whitelist:
             components:
-              - IdCard
+            - IdCard
     - type: AccessReader
       access: [["DV-SpareSafe"]]
     - type: SpareIDSafe
@@ -29,11 +29,7 @@
   parent: [SpareIdCabinet,FireAxeCabinetFilled]
   suffix: Filled
   components:
-    - type: ItemCabinet
-      slots:
-        ItemCabinet:
-          startingItem: CaptainIDCard
-          ejectOnInteract: true
-          whitelist:
-            components:
-              - IdCard
+  - type: ContainerFill
+    containers:
+      ItemCabinet:
+      - CaptainIDCard

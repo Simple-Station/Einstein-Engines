@@ -1778,7 +1778,7 @@
   name: uplink-syndie-raid-name
   description: uplink-syndie-raid-desc
   icon: { sprite: /Textures/Clothing/OuterClothing/Armor/syndie-raid.rsi, state: icon }
-  productEntity: ClothingBackpackSyndicateRaidBundle
+  productEntity: ClothingBackpackDuffelSyndicateRaidBundle
   cost:
     Telecrystal: 40
   categories:

@@ -11,7 +11,7 @@
       machinePartRequirements:
         MatterBin: 1
         Manipulator: 1
-      materialRequirements:
+      stackRequirements:
         Cable: 1
         PlasmaGlass: 5
       tagRequirements:
@@ -35,7 +35,7 @@
       machinePartRequirements:
         Capacitor: 1
         MatterBin: 1
-      materialRequirements:
+      stackRequirements:
         Steel: 4
         Glass: 2
         Cable: 4
@@ -55,6 +55,6 @@
       machinePartRequirements:
         Capacitor: 1
         MatterBin: 1
-      materialRequirements:
+      stackRequirements:
         Steel: 4
         Cable: 4

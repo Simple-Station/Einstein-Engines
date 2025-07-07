@@ -123,7 +123,7 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ Security, Science, Command ]
+    allowedDepartments: [ Security, Epistemics, Command ]
 
 - type: entity
   id: BaseSecurityEngineeringContraband
@@ -139,7 +139,7 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ Science, Silicon ]
+    allowedDepartments: [ Epistemics, Silicon ]
 
 - type: entity
   id: BaseSecurityCargoContraband
@@ -147,7 +147,7 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ Security, Cargo ]
+    allowedDepartments: [ Security, Logistics ]
 
 - type: entity
   id: BaseMedicalScienceContraband
@@ -155,7 +155,7 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ Medical, Science ]
+    allowedDepartments: [ Medical, Epistemics ]
 
 # for ~objective items
 - type: entity
