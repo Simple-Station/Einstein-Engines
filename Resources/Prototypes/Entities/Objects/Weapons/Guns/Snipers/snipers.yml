@@ -300,6 +300,8 @@
     removalTime: 3.5
   - type: EmbedPassiveDamage
   - type: BallisticAmmoProvider
+    soundInsert:
+      collection: LeverReload
     capacity: 8
     autoCycle: true
     proto: CartridgeLightRifle

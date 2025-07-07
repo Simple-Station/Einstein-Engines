@@ -157,7 +157,7 @@
   - type: Appearance
   - type: HeldSpeedModifier
     walkModifier: 1
-    sprintModifier: 0.5
+    sprintModifier: 0.8
   - type: Item
     size: Ginormous
   - type: Gun
@@ -167,12 +167,14 @@
     availableModes:
     - FullAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/cheshyre.ogg
+      collection: LMGGunshots2
     fireOnDropChance: 1
   - type: EmbeddableProjectile
     removalTime: 3.5
   - type: EmbedPassiveDamage
   - type: BallisticAmmoProvider
+    soundInsert:
+      collection: LeverReload
     capacity: 32
     autoCycle: true
     proto: CartridgeLightRifle
@@ -200,8 +202,8 @@
       gun_magazine:
         name: Magazine
         startingItem: MagazineRiflePan
-        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        insertSound: /Audio/Weapons/Guns/UnionfallWeapons/lmg_in_1.ogg
+        ejectSound: /Audio/Weapons/Guns/UnionfallWeapons/lmg_out_1.ogg
         priority: 2
         whitelist:
           tags:
