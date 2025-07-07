@@ -9,7 +9,7 @@ public sealed partial class PirateRadioSpawnRuleComponent : Component
     [DataField]
     public List<ResPath> PirateRadioShuttlePath { get; private set; } = new()
     {
-        new ResPath("Maps/Shuttles/pirateradio.yml"),
+        new ResPath("Resources/Maps/Shuttles/pirateradio.yml"),
     };
 
     [DataField]

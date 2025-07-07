@@ -1333,6 +1333,14 @@
   - type: Stack
     count: 4
 
+- type: entity
+  parent: FloorTileItemRCircuit
+  id: FloorTileItemRCircuit4
+  suffix: 4
+  components:
+  - type: Stack
+    count: 4
+
 # Terrain
 - type: entity
   name: grass tile

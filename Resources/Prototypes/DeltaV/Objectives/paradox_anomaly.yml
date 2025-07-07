@@ -4,7 +4,7 @@
   components:
   - type: Objective
     difficulty: 1
-    issuer: self
+    issuer: objective-issuer-self
 
 # not using base kill/keep alive objectives since these intentionally conflict with eachother
 - type: entity

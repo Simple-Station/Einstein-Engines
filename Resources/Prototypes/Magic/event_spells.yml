@@ -1,4 +1,4 @@
-- type: entity
+﻿- type: entity
   id: ActionSummonGhosts
   name: Summon Ghosts
   description: Makes all current ghosts permanently invisible
@@ -89,12 +89,12 @@
         orGroup: Guns
       - id: WeaponLauncherPirateCannon
         orGroup: Guns
-      - id: WeaponTetherGun
-        orGroup: Guns
-      - id: WeaponForceGun
-        orGroup: Guns
-      - id: WeaponGrapplingGun
-        orGroup: Guns
+      # - id: WeaponTetherGun
+      #   orGroup: Guns
+      # - id: WeaponForceGun
+      #   orGroup: Guns
+      # - id: WeaponGrapplingGun
+      #   orGroup: Guns
       - id: WeaponLightMachineGunL6
         orGroup: Guns
       - id: WeaponLaserSvalinn
@@ -158,7 +158,7 @@
       - id: RevolverCapGunFake
         orGroup: Guns
       speech: action-speech-spell-summon-guns
-      
+
 - type: entity
   id: ActionSummonMagic
   name: Summon Magic

@@ -200,8 +200,6 @@
   components:
   - type: StationEvent
     startAnnouncement: false
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
     weight: 3.5
     duration: 1
     earliestStart: 30

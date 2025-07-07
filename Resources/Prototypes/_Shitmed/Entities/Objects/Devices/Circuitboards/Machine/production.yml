@@ -8,7 +8,7 @@
     prototype: Autodoc
     machinePartRequirements:
       Manipulator: 4
-    materialRequirements:
+    stackRequirements:
       Cable: 3
       Steel: 10
     tagRequirements:
@@ -32,7 +32,7 @@
 #   components:
 #   - type: MachineBoard
 #     prototype: OperatingTable
-#     materialRequirements:
+#     stackRequirements:
 #       Cable: 3
 #       Silver: 2
 #       Steel: 4

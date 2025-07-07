@@ -362,16 +362,16 @@
     whitelist:
       tags:
       - PlantAnalyzer
-        - PlantSampleTaker
-        - BotanyShovel
-        - BotanyHoe
-        - BotanyHatchet
-        - PlantSampleTaker
-        - PlantBGone
-        - Bottle
-        - Syringe
-        - CigPack
-        - Dropper
+      - PlantSampleTaker
+      - BotanyShovel
+      - BotanyHoe
+      - BotanyHatchet
+      - PlantSampleTaker
+      - PlantBGone
+      - Bottle
+      - Syringe
+      - CigPack
+      - Dropper
       components:
       - Seed
       - Smokable

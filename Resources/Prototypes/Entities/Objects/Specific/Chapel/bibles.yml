@@ -25,6 +25,10 @@
       types:
         Holy: 20
         Blunt: 1
+    heavyRateModifier: 1.25
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 4
+    maxTargets: 4
   - type: Prayable
     bibleUserOnly: true
   - type: ReactionMixer
@@ -47,10 +51,6 @@
     interfaces:
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
-    heavyRateModifier: 1.25
-    heavyDamageBaseModifier: 1
-    heavyStaminaCost: 4
-    maxTargets: 4
   - type: Tag
     tags:
     - Book

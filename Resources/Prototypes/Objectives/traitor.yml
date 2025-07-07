@@ -33,19 +33,6 @@
   - type: ObjectiveLimit
     limit: 2 # there is usually only 1 of each steal objective, have 2 max for drama
 
-- type: entity # Head of Security steal objective.
-  parent: BaseTraitorStealObjective
-  id: HoSAntiqueWeaponStealObjective
-  components:
-  - type: Objective
-    difficulty: 3 # HoS will mostly be using the gun to stop you from stealing it
-  - type: NotJobRequirement
-    job: HeadOfSecurity
-  - type: StealCondition
-    verifyMapExistence: true
-    stealGroup: HoSAntiqueWeapon
-    owner: job-name-hos
-
 # state
 
 - type: entity
@@ -214,15 +201,15 @@
 
 - type: entity
   parent: BaseTraitorStealObjective
-  id: EnergyShotgunStealObjective
+  id: HoSAntiqueWeaponStealObjective
   components:
   - type: Objective
-    # HoS will have this on them a lot of the time so..
-    difficulty: 3
+    difficulty: 3 # HoS will mostly be using the gun to stop you from stealing it
   - type: NotJobRequirement
     job: HeadOfSecurity
   - type: StealCondition
-    stealGroup: WeaponEnergyShotgun
+    verifyMapExistence: true
+    stealGroup: HoSAntiqueWeapon
     owner: job-name-hos
 
 ## ce

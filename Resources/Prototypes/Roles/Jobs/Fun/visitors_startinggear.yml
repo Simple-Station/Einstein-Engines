@@ -4,6 +4,8 @@
 
 - type: startingGear
   id: VisitorCaptain
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitCaptain
     shoes: ClothingShoesBootsLaceup
@@ -20,6 +22,8 @@
 
 - type: startingGear
   id: VisitorCaptainAlt
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitCapFormal
     shoes: ClothingShoesBootsLaceup
@@ -36,6 +40,8 @@
 
 - type: startingGear
   id: VisitorCE
+  subGear:
+  - BoxSurvivalEngineering
   equipment:
     jumpsuit: ClothingUniformJumpsuitChiefEngineer
     shoes: ClothingShoesColorWhite
@@ -50,6 +56,8 @@
 
 - type: startingGear
   id: VisitorCEAlt
+  subGear:
+  - BoxSurvivalEngineering
   equipment:
     jumpsuit: ClothingUniformJumpsuitChiefEngineerTurtle
     shoes: ClothingShoesColorWhite
@@ -64,6 +72,8 @@
 
 - type: startingGear
   id: VisitorCMO
+  subGear:
+  - BoxSurvivalMedical
   equipment:
     jumpsuit: ClothingUniformJumpsuitCMO
     shoes: ClothingShoesColorBrown
@@ -79,6 +89,8 @@
 
 - type: startingGear
   id: VisitorCMOAlt
+  subGear:
+  - BoxSurvivalMedical
   equipment:
     jumpsuit: ClothingUniformJumpsuitCMOTurtle
     shoes: ClothingShoesColorBrown
@@ -94,6 +106,8 @@
 
 - type: startingGear
   id: VisitorHOP
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitHoP
     shoes: ClothingShoesLeather
@@ -108,6 +122,8 @@
 
 - type: startingGear
   id: VisitorHOPAlt
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitHoP
     shoes: ClothingShoesLeather
@@ -122,6 +138,8 @@
 
 - type: startingGear
   id: VisitorHOS
+  subGear:
+  - BoxSurvivalSecurity
   equipment:
     jumpsuit: ClothingUniformJumpsuitHoSParadeMale
     shoes: ClothingShoesBootsCowboyBlackFilled
@@ -141,6 +159,8 @@
 
 - type: startingGear
   id: VisitorHOSAlt
+  subGear:
+  - BoxSurvivalSecurity
   equipment:
     jumpsuit: ClothingUniformJumpsuitHosFormal
     shoes: ClothingShoesBootsCowboyFancyFilled
@@ -159,6 +179,8 @@
 
 - type: startingGear
   id: VisitorRD
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitResearchDirector
     shoes: ClothingShoesColorBrown
@@ -173,6 +195,8 @@
 
 - type: startingGear
   id: VisitorRDAlt
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitResearchDirector
     shoes: ClothingShoesColorBrown
@@ -187,6 +211,8 @@
 
 - type: startingGear
   id: VisitorQM
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitQMTurtleneck
     shoes: ClothingShoesColorBrown
@@ -201,6 +227,8 @@
 
 - type: startingGear
   id: VisitorQMAlt
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitQMFormal
     shoes: ClothingShoesColorBrown
@@ -217,6 +245,8 @@
 
 - type: startingGear
   id: VisitorSecurityCadet
+  subGear:
+  - BoxSurvivalSecurity
   equipment:
     jumpsuit: ClothingUniformJumpsuitSec
     shoes: ClothingShoesBootsCombatFilled
@@ -234,6 +264,8 @@
 
 - type: startingGear
   id: VisitorSecurityCadetAlt
+  subGear:
+  - BoxSurvivalSecurity
   equipment:
     jumpsuit: ClothingUniformJumpsuitSecGrey
     shoes: ClothingShoesBootsCombatFilled
@@ -252,6 +284,8 @@
 
 - type: startingGear
   id: VisitorSecurityOfficer
+  subGear:
+  - BoxSurvivalSecurity
   equipment:
     jumpsuit: ClothingUniformJumpsuitSec
     shoes: ClothingShoesBootsCombatFilled
@@ -269,6 +303,8 @@
 
 - type: startingGear
   id: VisitorSecurityOfficerAlt
+  subGear:
+  - BoxSurvivalSecurity
   equipment:
     jumpsuit: ClothingUniformJumpsuitSecGrey
     shoes: ClothingShoesBootsCombatFilled
@@ -282,11 +318,13 @@
     outerClothing: ClothingOuterArmorBasicSlim
     pocket1: WeaponPistolMk58
     pocket2: MagazinePistol
-  inhand: 
+  inhand:
   - FlashlightSeclite
 
 - type: startingGear
   id: VisitorDetective
+  subGear:
+  - BoxSurvivalSecurity
   equipment:
     jumpsuit: ClothingUniformJumpsuitDetective
     shoes: ClothingShoesBootsCombatFilled
@@ -305,6 +343,8 @@
 
 - type: startingGear
   id: VisitorDetectiveAlt
+  subGear:
+  - BoxSurvivalSecurity
   equipment:
     jumpsuit: ClothingUniformJumpsuitDetectiveGrey
     shoes: ClothingShoesBootsCombatFilled
@@ -323,6 +363,8 @@
 
 - type: startingGear
   id: VisitorWarden
+  subGear:
+  - BoxSurvivalSecurity
   equipment:
     jumpsuit: ClothingUniformJumpsuitWarden
     shoes: ClothingShoesBootsCombatFilled
@@ -343,6 +385,8 @@
 
 - type: startingGear
   id: VisitorWardenAlt
+  subGear:
+  - BoxSurvivalSecurity
   equipment:
     jumpsuit: ClothingUniformJumpsuitWarden
     shoes: ClothingShoesBootsCombatFilled
@@ -364,6 +408,8 @@
 
 - type: startingGear
   id: VisitorCargoTech
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitCargo
     shoes: ClothingShoesColorBlack
@@ -378,6 +424,8 @@
 
 - type: startingGear
   id: VisitorCargoTechAlt
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitCargo
     shoes: ClothingShoesBootsWinterCargo
@@ -394,6 +442,8 @@
 
 - type: startingGear
   id: VisitorSalvageSpecialist
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
     shoes: ClothingShoesBootsSalvage
@@ -409,6 +459,8 @@
 
 - type: startingGear
   id: VisitorSalvageSpecialistAlt
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
     shoes: ClothingShoesBootsSalvage
@@ -427,6 +479,8 @@
 
 - type: startingGear
   id: VisitorAtmosTech
+  subGear:
+  - BoxSurvivalEngineering
   equipment:
     jumpsuit: ClothingUniformJumpsuitAtmos
     shoes: ClothingShoesColorWhite
@@ -444,6 +498,8 @@
 
 - type: startingGear
   id: VisitorAtmosTechAlt
+  subGear:
+  - BoxSurvivalEngineering
   equipment:
     jumpsuit: ClothingUniformJumpsuitAtmosCasual
     shoes: ClothingShoesColorWhite
@@ -463,6 +519,8 @@
 
 - type: startingGear
   id: VisitorTechnicalAssistant
+  subGear:
+  - BoxSurvivalEngineering
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorYellow
     shoes: ClothingShoesBootsWork
@@ -479,6 +537,8 @@
 
 - type: startingGear
   id: VisitorTechnicalAssistantAlt
+  subGear:
+  - BoxSurvivalEngineering
   equipment:
     jumpsuit: ClothingUniformJumpsuitEngineeringHazard
     shoes: ClothingShoesColorBlack
@@ -497,6 +557,8 @@
 
 - type: startingGear
   id: VisitorEngineer
+  subGear:
+  - BoxSurvivalEngineering
   equipment:
     jumpsuit: ClothingUniformJumpsuitEngineering
     shoes: ClothingShoesBootsWork
@@ -516,6 +578,8 @@
 
 - type: startingGear
   id: VisitorEngineerAlt
+  subGear:
+  - BoxSurvivalEngineering
   equipment:
     jumpsuit: ClothingUniformJumpsuitSeniorEngineer
     shoes: ClothingShoesBootsWork
@@ -536,6 +600,8 @@
 
 - type: startingGear
   id: VisitorChemist
+  subGear:
+  - BoxSurvivalMedical
   equipment:
     jumpsuit: ClothingUniformJumpsuitChemistry
     shoes: ClothingShoesColorOrange
@@ -554,6 +620,8 @@
 
 - type: startingGear
   id: VisitorChemistAlt
+  subGear:
+  - BoxSurvivalMedical
   equipment:
     jumpsuit: ClothingUniformJumpsuitChemistry
     shoes: ClothingShoesColorOrange
@@ -572,6 +640,8 @@
 
 - type: startingGear
   id: VisitorGeneticist
+  subGear:
+  - BoxSurvivalMedical
   equipment:
     jumpsuit: ClothingUniformJumpsuitGenetics
     shoes: ClothingShoesColorBlue
@@ -590,6 +660,8 @@
 
 - type: startingGear
   id: VisitorGeneticistAlt
+  subGear:
+  - BoxSurvivalMedical
   equipment:
     jumpsuit: ClothingUniformJumpsuitGenetics
     shoes: ClothingShoesColorBlue
@@ -608,6 +680,8 @@
 
 - type: startingGear
   id: VisitorVirologist
+  subGear:
+  - BoxSurvivalMedical
   equipment:
     jumpsuit: ClothingUniformJumpsuitVirology
     shoes: ClothingShoesColorGreen
@@ -626,6 +700,8 @@
 
 - type: startingGear
   id: VisitorVirologistAlt
+  subGear:
+  - BoxSurvivalMedical
   equipment:
     jumpsuit: ClothingUniformJumpsuitVirology
     shoes: ClothingShoesColorGreen
@@ -645,6 +721,8 @@
 
 - type: startingGear
   id: VisitorMedicalDoctor
+  subGear:
+  - BoxSurvivalMedical
   equipment:
     jumpsuit: ClothingUniformJumpsuitMedicalDoctor
     shoes: ClothingShoesColorWhite
@@ -664,6 +742,8 @@
 
 - type: startingGear
   id: VisitorMedicalDoctorAlt
+  subGear:
+  - BoxSurvivalMedical
   equipment:
     jumpsuit: ClothingUniformJumpsuitMedicalDoctor
     shoes: ClothingShoesBootsWinterMed
@@ -683,6 +763,8 @@
 
 - type: startingGear
   id: VisitorDentist
+  subGear:
+  - BoxSurvivalMedical
   equipment:
     jumpsuit: UniformScrubsColorBlue
     shoes: ClothingShoesColorBlue
@@ -702,6 +784,8 @@
 
 - type: startingGear
   id: VisitorPsychologist
+  subGear:
+  - BoxSurvivalMedical
   equipment:
     jumpsuit: ClothingUniformJumpsuitPsychologist
     shoes: ClothingShoesLeather
@@ -720,6 +804,8 @@
 
 - type: startingGear
   id: VisitorPsychologistAlt
+  subGear:
+  - BoxSurvivalMedical
   equipment:
     jumpsuit: ClothingUniformJumpsuitPsychologist
     shoes: ClothingShoesLeather
@@ -737,6 +823,8 @@
 
 - type: startingGear
   id: VisitorParamedic
+  subGear:
+  - BoxSurvivalMedical
   equipment:
     jumpsuit: ClothingUniformJumpsuitParamedicNT
     shoes: ClothingShoesSwat
@@ -757,6 +845,8 @@
 
 - type: startingGear
   id: VisitorParamedicAlt
+  subGear:
+  - BoxSurvivalMedical
   equipment:
     jumpsuit: ClothingUniformJumpsuitParamedic
     shoes: ClothingShoesBootsWork
@@ -777,6 +867,8 @@
 
 - type: startingGear
   id: VisitorMedicalIntern
+  subGear:
+  - BoxSurvivalMedical
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorWhite
     shoes: ClothingShoesColorWhite
@@ -794,6 +886,8 @@
 
 - type: startingGear
   id: VisitorMedicalInternAlt
+  subGear:
+  - BoxSurvivalMedical
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorWhite
     shoes: ClothingShoesColorWhite
@@ -811,6 +905,8 @@
 
 - type: startingGear
   id: VisitorScrubsPurple
+  subGear:
+  - BoxSurvivalMedical
   equipment:
     jumpsuit: UniformScrubsColorPurple
     shoes: ClothingShoesColorRed
@@ -829,6 +925,8 @@
 
 - type: startingGear
   id: VisitorScrubsGreen
+  subGear:
+  - BoxSurvivalMedical
   equipment:
     jumpsuit: UniformScrubsColorGreen
     shoes: ClothingShoesColorGreen
@@ -847,6 +945,8 @@
 
 - type: startingGear
   id: VisitorScrubsBlue
+  subGear:
+  - BoxSurvivalMedical
   equipment:
     jumpsuit: UniformScrubsColorBlue
     shoes: ClothingShoesColorBlue
@@ -859,7 +959,7 @@
     eyes: ClothingEyesHudMedical
     pocket1: RegenerativeMesh
     pocket2: PillCanisterBicaridine
-  inhand: 
+  inhand:
   - ScalpelAdvanced
   - MedicatedSuture
 
@@ -867,6 +967,8 @@
 
 - type: startingGear
   id: VisitorResearchAssistant
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorPurple
     shoes: ClothingShoesColorBlack
@@ -881,6 +983,8 @@
 
 - type: startingGear
   id: VisitorResearchAssistantAlt
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitCasualPurple
     shoes: ClothingShoesColorBlack
@@ -895,6 +999,8 @@
 
 - type: startingGear
   id: VisitorScientist
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitScientistFormal
     shoes: ClothingShoesColorPurple
@@ -909,6 +1015,8 @@
 
 - type: startingGear
   id: VisitorScientistAlt
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitScientist
     shoes: ClothingShoesBootsWinterSci
@@ -926,6 +1034,8 @@
 
 - type: startingGear
   id: VisitorBartender
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitBartender
     shoes: ClothingShoesColorBlack
@@ -941,6 +1051,8 @@
 
 - type: startingGear
   id: VisitorBartenderAlt
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitBartenderPurple
     shoes: ClothingShoesColorBlack
@@ -956,6 +1068,8 @@
 
 - type: startingGear
   id: VisitorBotanist
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitHydroponics
     shoes: ClothingShoesColorGreen
@@ -969,6 +1083,8 @@
 
 - type: startingGear
   id: VisitorBotanistAlt
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitHydroponics
     shoes: ClothingShoesColorGreen
@@ -981,6 +1097,8 @@
 
 - type: startingGear
   id: VisitorBoxer
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformRandomShorts
     shoes: ClothingShoesColorBlack
@@ -993,6 +1111,8 @@
 
 - type: startingGear
   id: VisitorBoxerAlt
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformRandomShorts
     shoes: ClothingShoesColorBlack
@@ -1006,6 +1126,8 @@
 
 - type: startingGear #!! make sure these are bible users.
   id: VisitorChaplain
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitChaplain
     shoes: ClothingShoesColorBlack
@@ -1020,6 +1142,8 @@
 
 - type: startingGear
   id: VisitorChaplainAlt
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitChaplain
     shoes: ClothingShoesColorBlack
@@ -1033,6 +1157,8 @@
 
 - type: startingGear
   id: VisitorChef
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitChef
     shoes: ClothingShoesChef
@@ -1051,6 +1177,8 @@
 
 - type: startingGear
   id: VisitorChefAlt
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitChef
     shoes: ClothingShoesColorBlack
@@ -1069,6 +1197,8 @@
 
 - type: startingGear
   id: VisitorClown
+  subGear:
+  - BoxSurvivalClown
   equipment:
     jumpsuit: ClothingUniformJumpsuitClown
     shoes: ClothingShoesClown
@@ -1081,6 +1211,8 @@
 
 - type: startingGear
   id: VisitorJanitor
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitJanitor
     shoes: ClothingShoesGaloshes
@@ -1097,6 +1229,8 @@
 
 - type: startingGear
   id: VisitorJanitorAlt
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitJanitor
     shoes: ClothingShoesGaloshes
@@ -1113,6 +1247,8 @@
 
 - type: startingGear
   id: VisitorLawyerAltA
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitLawyerBlack
     shoes: ClothingShoesColorBlack
@@ -1128,6 +1264,8 @@
 
 - type: startingGear
   id: VisitorLawyerAltB
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitLawyerBlue
     shoes: ClothingShoesLeather
@@ -1143,6 +1281,8 @@
 
 - type: startingGear
   id: VisitorLawyerAltC
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitLawyerRed
     shoes: ClothingShoesColorRed
@@ -1159,6 +1299,8 @@
 
 - type: startingGear
   id: VisitorLawyerAltD
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitLawyerPurple
     shoes: ClothingShoesSnakeskinBoots
@@ -1177,6 +1319,8 @@
 
 - type: startingGear
   id: VisitorLawyerAltE
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitLawyerGood
     shoes: ClothingShoesLeather
@@ -1193,6 +1337,8 @@
 
 - type: startingGear
   id: VisitorLawyerCentcom
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitCentcomAgent
     shoes: ClothingShoesLeather
@@ -1211,6 +1357,8 @@
 
 - type: startingGear
   id: VisitorLibrarian
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitLibrarian
     shoes: ClothingShoesBootsLaceup
@@ -1227,6 +1375,8 @@
 
 - type: startingGear
   id: VisitorLibrarianAlt
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitCurator
     shoes: ClothingShoesBootsLaceup
@@ -1243,6 +1393,8 @@
 
 - type: startingGear
   id: VisitorMusicianFancyAltA
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitMusician
     shoes: ClothingShoesBootsLaceup
@@ -1257,6 +1409,8 @@
 
 - type: startingGear
   id: VisitorMusicianFancyAltB
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitMusician
     shoes: ClothingShoesBootsLaceup
@@ -1271,6 +1425,8 @@
 
 - type: startingGear
   id: VisitorMusicianFancyAltC
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitMusician
     shoes: ClothingShoesBootsLaceup
@@ -1285,6 +1441,8 @@
 
 - type: startingGear
   id: VisitorMusicianFancyAltD
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitMusician
     shoes: ClothingShoesBootsLaceup
@@ -1299,6 +1457,8 @@
 
 - type: startingGear
   id: VisitorMusicianFancyAltE
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitMusician
     shoes: ClothingShoesBootsLaceup
@@ -1313,6 +1473,8 @@
 
 - type: startingGear
   id: VisitorMusicianFancyAltF
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitMusician
     shoes: ClothingShoesBootsLaceup
@@ -1327,6 +1489,8 @@
 
 - type: startingGear
   id: VisitorMusicianFancyAltG
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitMusician
     shoes: ClothingShoesBootsLaceup
@@ -1341,6 +1505,8 @@
 
 - type: startingGear
   id: VisitorMusicianFancyAltH
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitMusician
     shoes: ClothingShoesBootsLaceup
@@ -1355,6 +1521,8 @@
 
 - type: startingGear
   id: VisitorMusicianFancyAltI
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformRandomShirt
     shoes: ClothingShoesColorBrown
@@ -1369,6 +1537,8 @@
 
 - type: startingGear
   id: VisitorMusicianRelaxedAltA
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformRandomShirt
     shoes: ClothingShoesColorBlack
@@ -1383,6 +1553,8 @@
 
 - type: startingGear
   id: VisitorMusicianRelaxedAltB
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformRandomShirt
     shoes: ClothingShoesColorBlack
@@ -1397,6 +1569,8 @@
 
 - type: startingGear
   id: VisitorMusicianRelaxedAltC
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformRandomShirt
     shoes: ClothingShoesColorBrown
@@ -1411,6 +1585,8 @@
 
 - type: startingGear
   id: VisitorMusicianRelaxedAltD
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformRandomShirt
     shoes: ClothingShoesColorBlack
@@ -1425,6 +1601,8 @@
 
 - type: startingGear
   id: VisitorMusicianRelaxedAltE
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitMusician
     shoes: ClothingShoesBootsLaceup
@@ -1438,6 +1616,8 @@
 
 - type: startingGear
   id: VisitorMusicianRelaxedAltF
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformRandomShirt
     shoes: ClothingShoesWizard
@@ -1453,6 +1633,8 @@
 
 - type: startingGear
   id: VisitorMusicianMariachi
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorTeal
     shoes: ClothingShoesColorBrown
@@ -1469,6 +1651,8 @@
 
 - type: startingGear
   id: VisitorMime
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitMime
     shoes: ClothingShoesColorWhite
@@ -1484,6 +1668,8 @@
 
 - type: startingGear
   id: VisitorMimeAlt
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitMime
     shoes: ClothingShoesColorWhite
@@ -1502,6 +1688,8 @@
 
 - type: startingGear
   id: VisitorReporter
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitReporter
     shoes: ClothingShoesLeather
@@ -1513,6 +1701,8 @@
 
 - type: startingGear
   id: VisitorReporterAlt
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitJournalist
     shoes: ClothingShoesColorBrown
@@ -1524,6 +1714,8 @@
 
 - type: startingGear
   id: VisitorServiceWorker
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitBartender
     shoes: ClothingShoesColorBlack
@@ -1536,6 +1728,8 @@
 
 - type: startingGear
   id: VisitorServiceWorkerAlt
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorBlack
     shoes: ClothingShoesColorBlack
@@ -1549,6 +1743,8 @@
 
 - type: startingGear
   id: VisitorZookeeper
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitSafari
     shoes: ClothingShoesBootsSalvage
@@ -1562,6 +1758,8 @@
 
 - type: startingGear
   id: VisitorZookeeperAlt
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitSafari
     shoes: ClothingShoesBootsWork
@@ -1584,6 +1782,8 @@
 # Challenge Cargo Tech
 - type: startingGear
   id: ChallengeCargoTechGearSuit
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitCargo
     shoes: ClothingShoesColorBlack
@@ -1595,6 +1795,8 @@
 
 - type: startingGear
   id: ChallengeCargoTechGearCoat
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitCargo
     shoes: ClothingShoesBootsWinterCargo
@@ -1610,6 +1812,8 @@
 #Captain Disaster Victim
 - type: startingGear
   id: ChallengeVictimCaptain
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitCaptain
     shoes: ClothingShoesBootsLaceup
@@ -1623,6 +1827,8 @@
 
 - type: startingGear
   id: ChallengeVictimCaptainAlt
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitCapFormal
     shoes: ClothingShoesBootsLaceup
@@ -1640,6 +1846,8 @@
 #CMO Disaster Victim
 - type: startingGear
   id: ChallengeVictimCMO
+  subGear:
+  - BoxSurvivalMedical
   equipment:
     jumpsuit: ClothingUniformJumpsuitCMO
     shoes: ClothingShoesColorBrown
@@ -1653,6 +1861,8 @@
 
 - type: startingGear
   id: ChallengeVictimCMOAlt
+  subGear:
+  - BoxSurvivalMedical
   equipment:
     jumpsuit: ClothingUniformJumpsuitCMOTurtle
     shoes: ClothingShoesColorBrown
@@ -1669,6 +1879,8 @@
 #CE Disaster Victim
 - type: startingGear
   id: ChallengeVictimCE
+  subGear:
+  - BoxSurvivalEngineering
   equipment:
     jumpsuit: ClothingUniformJumpsuitChiefEngineer
     shoes: ClothingShoesColorWhite
@@ -1683,6 +1895,8 @@
 
 - type: startingGear
   id: ChallengeVictimCEAlt
+  subGear:
+  - BoxSurvivalEngineering
   equipment:
     jumpsuit: ClothingUniformJumpsuitChiefEngineerTurtle
     shoes: ClothingShoesColorWhite
@@ -1700,6 +1914,8 @@
 #HOP Disaster Victim
 - type: startingGear
   id: ChallengeVictimHOP
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitHoP
     shoes: ClothingShoesLeather
@@ -1713,6 +1929,8 @@
 
 - type: startingGear
   id: ChallengeVictimHOPAlt
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitHoP
     shoes: ClothingShoesLeather
@@ -1729,6 +1947,8 @@
 #HOS Disaster Victim
 - type: startingGear
   id: ChallengeVictimHOS
+  subGear:
+  - BoxSurvivalSecurity
   equipment:
     jumpsuit: ClothingUniformJumpsuitHoSParadeMale
     shoes: ClothingShoesBootsCowboyBlackFilled
@@ -1744,6 +1964,8 @@
 
 - type: startingGear
   id: ChallengeVictimHOSAlt
+  subGear:
+  - BoxSurvivalSecurity
   equipment:
     jumpsuit: ClothingUniformJumpsuitHosFormal
     shoes: ClothingShoesBootsCowboyFancyFilled
@@ -1761,6 +1983,8 @@
 #RD Disaster Victim
 - type: startingGear
   id: ChallengeVictimRD
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitResearchDirector
     shoes: ClothingShoesColorBrown
@@ -1773,6 +1997,8 @@
 
 - type: startingGear
   id: ChallengeVictimRDAlt
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitResearchDirector
     shoes: ClothingShoesColorBrown
@@ -1788,6 +2014,8 @@
 #QM Disaster Victim
 - type: startingGear
   id: ChallengeVictimQM
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitQMTurtleneck
     shoes: ClothingShoesColorBrown
@@ -1801,6 +2029,8 @@
 
 - type: startingGear
   id: ChallengeVictimQMAlt
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitQMFormal
     shoes: ClothingShoesColorBrown
@@ -1832,6 +2062,8 @@
 
 - type: startingGear
   id: PirateScoonerAltA
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitPirate
     shoes: ClothingShoesBootsLaceup
@@ -1849,7 +2081,7 @@
   id: PirateScoonerAltB
   parent: PirateScoonerAltA
   equipment:
-    head: ClothingHeadHatPirateTricord
+    head: ClothingHeadHatPirateTricorn
     outerClothing: ClothingOuterCoatGentle
 
 - type: startingGear
@@ -1864,7 +2096,7 @@
   id: PirateScoonerAltD
   parent: PirateScoonerAltA
   equipment:
-    head: ClothingHeadHatPirateTricord
+    head: ClothingHeadHatPirateTricorn
     pocket1: WeaponRevolverPirate
 
 - type: startingGear
@@ -1881,6 +2113,8 @@
 
 - type: startingGear
   id: VisitorBlackmarketeer
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitMercenary
     shoes: ClothingShoesBootsMercFilled
@@ -1895,6 +2129,8 @@
 
 - type: startingGear
   id: CossackGear
+  subGear:
+  - BoxSurvival
   equipment:
     jumpsuit: ClothingUniformJumpsuitCossack
     shoes: ClothingShoesBootsSalvage

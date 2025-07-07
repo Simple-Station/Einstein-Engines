@@ -19,6 +19,27 @@
     back:
     - BoxSurvivalNitrogen
 
+# Clown
+- type: startingGear
+  id: BoxSurvivalClown
+  subGear:
+  - BoxSurvivalClownOxygen
+  - BoxSurvivalClownNitrogen
+
+- type: startingGear
+  id: BoxSurvivalClownOxygen
+  parent: OxygenBreather
+  storage:
+    back:
+    - BoxHug
+
+- type: startingGear
+  id: BoxSurvivalClownNitrogen
+  parent: NitrogenBreather
+  storage:
+    back:
+    - BoxHugNitrogen
+
 # Engineering
 - type: startingGear
   id: BoxSurvivalEngineering
@@ -31,7 +52,7 @@
   parent: OxygenBreather
   storage:
     back:
-    - BoxSurvivalEngineeringOxygen
+    - BoxSurvivalEngineering
 
 - type: startingGear
   id: BoxSurvivalEngineeringNitrogen
@@ -52,7 +73,7 @@
   parent: OxygenBreather
   storage:
     back:
-    - BoxSurvivalMedicalOxygen
+    - BoxSurvivalMedical
 
 - type: startingGear
   id: BoxSurvivalMedicalNitrogen
@@ -60,6 +81,27 @@
   storage:
     back:
     - BoxSurvivalMedicalNitrogen
+
+# Security
+- type: startingGear
+  id: BoxSurvivalSecurity
+  subGear:
+  - BoxSurvivalSecurityOxygen
+  - BoxSurvivalSecurityNitrogen
+
+- type: startingGear
+  id: BoxSurvivalSecurityOxygen
+  parent: OxygenBreather
+  storage:
+    back:
+    - BoxSurvivalSecurity
+
+- type: startingGear
+  id: BoxSurvivalSecurityNitrogen
+  parent: NitrogenBreather
+  storage:
+    back:
+    - BoxSurvivalSecurityNitrogen
 
 # Syndicate
 - type: startingGear

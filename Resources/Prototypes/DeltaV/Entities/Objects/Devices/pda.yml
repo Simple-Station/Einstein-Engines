@@ -64,17 +64,17 @@
       visible: false
   - type: Pda
     id: ChiefJusticeIDCard
-  - type: Appearance
-    appearanceDataInit:
-      enum.PdaVisuals.PdaType:
-        !type:String
-        pda-chiefjustice
     penSlot:
       startingItem: LuxuryPen
       priority: -1
       whitelist:
         tags:
         - Write
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-chiefjustice
   - type: PdaBorderColor
     borderColor: "#470823"
   - type: Icon

@@ -1171,7 +1171,7 @@
   components:
   - type: EntityRemap
     mask:
-      AsteroidRock: AsteroidRockTinAdd commentMore actions
+      AsteroidRock: AsteroidRockTin
       WallRockBasalt: WallRockBasaltTin
       WallRockChromite: WallRockChromiteTin
       WallRockSand: WallRockSandTin

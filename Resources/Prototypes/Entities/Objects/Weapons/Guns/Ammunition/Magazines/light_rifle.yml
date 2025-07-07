@@ -63,14 +63,6 @@
     proto: CartridgeLightRiflePractice
 
 - type: entity
-  id: MagazineLightRifleBoxRubber
-  name: "box magazine (.30 rifle rubber)"
-  parent: MagazineLightRifleBox
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgeLightRifleRubber
-
-- type: entity
   id: MagazineLightRifleBoxIncendiary
   name: "box magazine (.30 rifle incendiary)"
   parent: MagazineLightRifleBox

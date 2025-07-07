@@ -274,23 +274,6 @@
             - tool: Prying
               doAfter: 5
 
-    - node: shuttleInteriorWall
-      entity: WallShuttleInterior
-      edges:
-      - to: girder
-        completed:
-        - !type:SpawnPrototype
-          prototype: SheetSteel1
-          amount: 2
-        - !type:SpawnPrototype
-          prototype: PartRodMetal1
-          amount: 2
-        steps:
-        - tool: Welding
-          doAfter: 10
-        - tool: Screwing
-          doAfter: 1
-
     - node: reinforcedGirder
       entity: ReinforcedGirder
       edges:

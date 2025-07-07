@@ -74,7 +74,7 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ Science ]
+    allowedDepartments: [ Epistemics ]
 
 - type: entity
   id: BaseMedicalContraband
@@ -98,7 +98,7 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ Cargo ]
+    allowedDepartments: [ Logistics ]
 
 # multiple departments restricted contraband
 - type: entity

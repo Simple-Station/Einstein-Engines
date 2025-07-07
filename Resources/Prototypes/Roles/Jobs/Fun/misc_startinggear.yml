@@ -18,6 +18,7 @@
 - type: startingGear
   id: SyndicateOperativeGearCivilian
   subGear:
+  - BoxSurvivalClown
   - SyndicateOperativePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitSyndieFormal
@@ -181,6 +182,7 @@
 - type: startingGear
   id: BananaClown
   subGear:
+  - BoxSurvivalClown
   - ClownPlasmamanGear # TODO: Banana clown plasmaman starting gear
   equipment:
     id: VisitorPDA

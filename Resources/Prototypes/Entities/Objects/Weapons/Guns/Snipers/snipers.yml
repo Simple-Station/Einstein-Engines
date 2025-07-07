@@ -68,8 +68,8 @@
   - type: Sprite
     sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
   - type: Gun
-    fireRate: 0.75 
-    damageModifier: 1.5 
+    fireRate: 0.75
+    damageModifier: 1.5
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -107,16 +107,6 @@
     whitelist:
       tags:
       - CartridgeLightRifle
-
-- type: entity
-  name: Kardashev-Mosin
-  parent: WeaponSniperMosin
-  id: WeaponSniperMosinRubber
-  description: A weapon for hunting, or endless trench warfare. Uses .30 rifle rubber ammo.
-  suffix: Non-Lethal
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgeLightRifleRubber
 
 - type: entity
   name: Kardashev-Mosin

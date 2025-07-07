@@ -170,7 +170,7 @@
     - id: PrinterDocFlatpack
     - id: RCD
     - id: RCDAmmo
-      count: 2
+    - id: RCDAmmo
     - id: RPD
     - id: RubberStampCE
 

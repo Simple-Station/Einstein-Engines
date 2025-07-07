@@ -292,6 +292,9 @@
   id: CartridgeMagnum
 
 - type: Tag
+  id: CartridgeMinigun
+
+- type: Tag
   id: CartridgePistol
 
 - type: Tag
