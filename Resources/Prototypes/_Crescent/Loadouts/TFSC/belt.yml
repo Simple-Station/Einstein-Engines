@@ -20,3 +20,17 @@
         - RipperdocNCSP
         - ShipbreakerNCSP
         - TechnicianNCSP
+
+- type: loadout
+  id: LoadoutBeltIPMWebbing
+  category: Belt
+  cost: 0
+  items:
+    - ClothingBeltSyndicateWebbingInterdyne
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChemcookNCSP
+        - RipperdocNCSP
