@@ -326,6 +326,7 @@
         name: Chamber
         startingItem: CartridgeAntiMateriel
         priority: 1
+        insertSound: /Audio/Weapons/Guns/UnionfallWeapons/amr_reload.ogg
         whitelist:
           tags:
             - CartridgeAntiMateriel
@@ -336,9 +337,9 @@
     autoCycle: false
     boltClosed: true
     canRack: false
-    soundBoltClosed: /Audio/Weapons/Guns/Bolt/rifle_bolt_closed.ogg
-    soundBoltOpened: /Audio/Weapons/Guns/Bolt/rifle_bolt_open.ogg
-    soundRack: /Audio/Weapons/Guns/Cock/batrifle_cock.ogg
+    soundBoltClosed: /Audio/Weapons/Guns/UnionfallWeapons/amr_close_2.ogg
+    soundBoltOpened: /Audio/Weapons/Guns/UnionfallWeapons/amr_open_2.ogg
+    soundRack: /Audio/Weapons/Guns/Cock/batrifle_cock.ogg #this should never play
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/surplus_ncwl_amr.rsi
     quickEquip: false
@@ -352,7 +353,7 @@
     availableModes:
       - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
+      path: /Audio/Weapons/Guns/UnionfallWeapons/amr_fire_2.ogg
   - type: Wieldable
     unwieldOnUse: false  
   - type: HeldSpeedModifier #makes you half as fast and you can't sprint
@@ -379,6 +380,7 @@
         name: Chamber
         startingItem: CartridgeAntiMateriel
         priority: 1
+        insertSound: /Audio/Weapons/Guns/UnionfallWeapons/amr_reload.ogg
         whitelist:
           tags:
             - CartridgeAntiMateriel
@@ -389,9 +391,9 @@
     autoCycle: false
     boltClosed: true
     canRack: false
-    soundBoltClosed: /Audio/Weapons/Guns/Bolt/rifle_bolt_closed.ogg
-    soundBoltOpened: /Audio/Weapons/Guns/Bolt/rifle_bolt_open.ogg
-    soundRack: /Audio/Weapons/Guns/Cock/batrifle_cock.ogg
+    soundBoltClosed: /Audio/Weapons/Guns/UnionfallWeapons/amr_close_1.ogg
+    soundBoltOpened: /Audio/Weapons/Guns/UnionfallWeapons/amr_open_1.ogg
+    soundRack: /Audio/Weapons/Guns/Cock/batrifle_cock.ogg #this should never play
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_amr.rsi
     quickEquip: false
@@ -405,7 +407,7 @@
     availableModes:
       - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
+      path: /Audio/Weapons/Guns/UnionfallWeapons/amr_fire_1.ogg
   - type: Wieldable
     unwieldOnUse: false  
   - type: HeldSpeedModifier #makes you half as fast and you can't sprint
