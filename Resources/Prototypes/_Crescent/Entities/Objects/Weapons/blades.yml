@@ -50,3 +50,72 @@
     tags:
     - Machete
   - type: DisarmMalus
+
+- type: entity
+  name: noble's rapier
+  parent: BaseItem
+  id: DSMRapier
+  description: A ceremonial dueling weapon belonging to the nobles of the mandate.
+  components:
+  - type: Sharp
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/noble_rapier.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    range: 1.75
+    attackRate: 1.25
+    damage:
+      types:
+        Slash: 18
+        Piercing: 22
+    clickPartDamageMultiplier: 2
+    maxTargets: 7
+    angle: 0.1
+    animation: WeaponArcThrust
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    size: Normal
+    sprite: _Crescent/Objects/Weapons/noble_rapier.rsi
+  - type: Tag
+    tags:
+    - Rapier
+  - type: DisarmMalus
+
+- type: entity
+  name: noble's sabre
+  parent: BaseItem
+  id: DSMSabre
+  description: A ceremonial weapon belonging to the nobles of the mandate.
+  components:
+  - type: Sharp
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/noble_sabre.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1.5
+    range: 1.25
+    damage:
+      types:
+        Slash: 36
+    clickPartDamageMultiplier: 2
+    heavyPartDamageMultiplier: 1.5
+    lightRangeModifier: 1.5
+    heavyStaminaCost: 2.5
+    maxTargets: 7
+    animation: WeaponArcThrust
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+  - type: Reflect
+    enabled: true
+    reflectProb: .1
+    spread: 90
+  - type: Item
+    size: Normal
+    sprite: _Crescent/Objects/Weapons/noble_sabre.rsi
+  - type: Tag
+    tags:
+    - DSMSabre
+  - type: DisarmMalus
