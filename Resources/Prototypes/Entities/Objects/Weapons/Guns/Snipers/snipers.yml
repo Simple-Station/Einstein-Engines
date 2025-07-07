@@ -263,12 +263,13 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
+      path: /Audio/Weapons/Guns/UnionfallWeapons/bolt_fire.ogg
     fireOnDropChance: 1
   - type: EmbeddableProjectile
     removalTime: 3.5
   - type: EmbedPassiveDamage
   - type: BallisticAmmoProvider
+    soundRack: /Audio/Weapons/Guns/UnionfallWeapons/bolt_cycle.ogg
     capacity: 5
     autoCycle: false
     proto: CartridgeRifle
