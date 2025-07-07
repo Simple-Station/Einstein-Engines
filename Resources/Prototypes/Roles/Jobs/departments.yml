@@ -36,7 +36,7 @@
  # - Zookeeper
  # - ServiceWorker
   enabled: true
-  editorHidden: true
+  editorHidden: false
 
 - type: department
   id: Command
@@ -109,8 +109,8 @@
   - DoktorNCWL
   - KapitanNCWL
   - KadetNCWL
-  enabled: false
-  editorHidden: true
+  enabled: true
+  editorHidden: false
 
 - type: department
   id: NCSP
@@ -129,8 +129,8 @@
   - CyberdawnTechNCSP
   - ForemanNCSP
   - ShipbreakerNCSP
-  enabled: false
-  editorHidden: true
+  enabled: true
+  editorHidden: false
 
 - type: department
   id: DSM
@@ -152,8 +152,8 @@
   - GovernorDSM
   - AdvocatusDSM
   - ArchmaesterDSM
-  enabled: false
-  editorHidden: true
+  enabled: true
+  editorHidden: false
 
 - type: department
   id: SRM
@@ -216,7 +216,7 @@
   - DraugrTAP
   - ServileTAP
   enabled: false
-  editorHidden: true
+  editorHidden: false
 
 - type: department
   id: ATH

@@ -33,6 +33,11 @@
   - External
   - Mercenary # Frontier
   - Captain # Frontier
+  - NCWLAdministrator
+  - NCWLFunds
+  - NCWLKommissar
+  - NCWLArmory
+  - NCWLCommand
 
 - type: startingGear
   id: ConscriptCadetNCWLGear
