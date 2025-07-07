@@ -457,7 +457,7 @@
     entity: GravityGeneratorMini
   - type: Sprite
     layers:
-    - state: kit
+    - state: ame-part
   - type: StaticPrice
     price: 500
 
@@ -471,7 +471,7 @@
     entity: BaseComputerShuttle
   - type: Sprite
     layers:
-    - state: kit
+    - state: ame-part
   - type: StaticPrice
     price: 500
 
@@ -485,6 +485,20 @@
     entity: EwarDevice
   - type: Sprite
     layers:
-    - state: kit
+    - state: ame-part
   - type: StaticPrice
     price: 500
+
+- type: entity
+  parent: BaseFlatpack
+  id: PaladinFlatpack
+  name: IEE mV-500 'Paladin' exosuit construction kit
+  description:  Parts used to build an imperial combat exosuit. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: MechDSMPaladinBattery
+  - type: Sprite
+    layers:
+    - state: kit
+  - type: StaticPrice
+    price: 25000
