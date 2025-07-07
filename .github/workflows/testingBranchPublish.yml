@@ -1,4 +1,4 @@
-name: Publish To Branch : testing
+name: Publish Testing
 
 concurrency:
   group: publish
