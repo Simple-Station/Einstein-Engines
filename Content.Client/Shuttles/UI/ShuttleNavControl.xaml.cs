@@ -264,10 +264,18 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         Matrix3x2.Invert(ourWorldMatrix, out var ourWorldMatrixInvert);
 
         var vert = (MousePosition - mapPos.Position) ;
+        // position compensation
         if (LastWorldCoordinates != Vector2.Zero)
         {
             MousePosition += mapPos.Position - LastWorldCoordinates;
         }
+        // rotational compensation
+        if (LastRotation != Angle.Zero)
+        {
+            MousePosition = mapPos.Position + (ourEntRot - LastRotation).RotateVec(MousePosition - mapPos.Position);
+        }
+
+        LastRotation = ourEntRot;
 
         vert.Y = -vert.Y;
         vert = rot.RotateVec(vert);
@@ -364,7 +372,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
             {
                 const float ShipSelectionDotRadius = 5f;
                 // transform vector from worldPosition to UIPosition.
-                Vector2 UIPosVector =Vector2.Transform(_transform.GetWorldPosition(gUid) - mapPos.Position, matty);
+                Vector2 UIPosVector = Vector2.Transform(_transform.GetWorldPosition(gUid) - mapPos.Position, ourWorldMatrixInvert);
                 UIPosVector.Y *= -1;
                 // get its direction.
                 Vector2 UIDirection = UIPosVector.Normalized();
@@ -372,7 +380,12 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
                 Vector2 YTargetScaled = MidPointVector + UIPosVector.Normalized() * Math.Abs((MidPoint-ShipSelectionDotRadius*2) / UIDirection.Y);
                 // collision with oX axis
                 Vector2 XTargetScaled = MidPointVector + UIPosVector.Normalized() * Math.Abs((MidPoint-ShipSelectionDotRadius*2) / UIDirection.X);
-                //handle.DrawLine(MidPointVector, ScalePosition(UIPosVector), Color.AntiqueWhite);
+                // fucked up maths case!! SPCR
+                if(YTargetScaled.X < ShipSelectionDotRadius*2)
+                    YTargetScaled = XTargetScaled;
+                if(XTargetScaled.Y < ShipSelectionDotRadius*2)
+                    XTargetScaled = YTargetScaled;
+                handle.DrawLine(MidPointVector, ScalePosition(UIPosVector), Color.AntiqueWhite);
                 var gridCentre = Vector2.Transform(gridBody.LocalCenter, matty);
                 gridCentre.Y = -gridCentre.Y;
                 var distance = gridCentre.Length();
@@ -410,35 +423,39 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
                     handle.DrawCircle(XTargetScaled, ShipSelectionDotRadius, color, true);
                 }
             }
-            else if (ShowIFF &&
-                 labelName != null)
+            else
             {
-
                 var gridCentre = Vector2.Transform(gridBody.LocalCenter, matty);
                 var globalGridCentre = _transform.GetWorldPosition(gUid);
                 gridCentre.Y = -gridCentre.Y;
                 var distance = gridCentre.Length();
-                var labelText = Loc.GetString("shuttle-console-iff-label", ("name", labelName),
-                    ("distance", $"{distance:0.0}"));
+                if (ShowIFF && labelName != null)
+                {
+                    var labelText = Loc.GetString(
+                        "shuttle-console-iff-label",
+                        ("name", labelName),
+                        ("distance", $"{distance:0.0}"));
 
-                // yes 1.0 scale is intended here.
-                var labelDimensions = handle.GetDimensions(Font, labelText, 1f);
+                    // yes 1.0 scale is intended here.
+                    var labelDimensions = handle.GetDimensions(Font, labelText, 1f);
 
-                // y-offset the control to always render below the grid (vertically)
-                var yOffset = Math.Max(gridBounds.Height, gridBounds.Width) * MinimapScale / 1.8f;
+                    // y-offset the control to always render below the grid (vertically)
+                    var yOffset = Math.Max(gridBounds.Height, gridBounds.Width) * MinimapScale / 1.8f;
 
-                // The actual position in the UI. We offset the matrix position to render it off by half its width
-                // plus by the offset.
-                var uiPosition = ScalePosition(gridCentre)- new Vector2(labelDimensions.X / 2f, -yOffset);
+                    // The actual position in the UI. We offset the matrix position to render it off by half its width
+                    // plus by the offset.
+                    var uiPosition = ScalePosition(gridCentre) - new Vector2(labelDimensions.X / 2f, -yOffset);
 
-                // Look this is uggo so feel free to cleanup. We just need to clamp the UI position to within the viewport.
-                uiPosition = new Vector2(Math.Clamp(uiPosition.X, 0f, PixelWidth - labelDimensions.X ),
-                    Math.Clamp(uiPosition.Y, 0f, PixelHeight - labelDimensions.Y));
+                    // Look this is uggo so feel free to cleanup. We just need to clamp the UI position to within the viewport.
+                    uiPosition = new Vector2(
+                        Math.Clamp(uiPosition.X, 0f, PixelWidth - labelDimensions.X),
+                        Math.Clamp(uiPosition.Y, 0f, PixelHeight - labelDimensions.Y));
+                    handle.DrawString(Font, uiPosition, labelText, color);
+                }
 
-                handle.DrawString(Font, uiPosition, labelText, color);
-                DrawGrid(handle, matty, grid, color);
-                DrawDocks(handle, gUid, matty);
-                DrawTurrets(handle, gUid, matty, false);
+            DrawGrid(handle, matty, grid, color);
+            DrawDocks(handle, gUid, matty);
+            DrawTurrets(handle, gUid, matty, false);
             }
         }
     }

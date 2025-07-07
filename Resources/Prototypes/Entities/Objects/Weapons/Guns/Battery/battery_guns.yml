@@ -266,7 +266,7 @@
   - type: Appearance
 
 - type: entity
-  name: laser rifle
+  name: SHI 90c Kamakawi laser carbine
   parent: [BaseWeaponBattery, BaseGunWieldable]
   id: WeaponLaserCarbine
   description: Favoured by Nanotrasen Security for being cheap and easy to use.
@@ -413,7 +413,7 @@
     startingCharge: 40000
 
 - type: entity
-  name: laser cannon
+  name: IRM 95c "Duty" laser cannon
   parent: [BaseWeaponBattery, BaseGunWieldable]
   id: WeaponLaserCannon
   description: A heavy duty, high powered laser weapon.

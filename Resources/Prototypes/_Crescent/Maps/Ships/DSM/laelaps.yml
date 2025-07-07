@@ -23,8 +23,3 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-assault-frigate
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            KnightDSM: [ 0, 1 ]
-            LevymanDSM: [ 0, 4 ]

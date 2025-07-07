@@ -1,29 +1,25 @@
 - type: vessel
-  id: Imp
-  name: DSM Imp
+  id: Impel
+  name: DSM Impel
   description: An Imperial salvaging and mining shuttle with a large cargohold.
-  price: 29500
+  price: 30000
   category: Small
   group: None
-  path: /Maps/_Crescent/Shuttles/DSM/imp.yml
+  path: /Maps/_Crescent/Shuttles/DSM/impel.yml
 
 - type: gameMap
-  id: Imp
+  id: Impel
   mapName: 'DSM Imp'
-  mapPath: /Maps/_Crescent/Shuttles/DSM/imp.yml
+  mapPath: /Maps/_Crescent/Shuttles/DSM/impel.yml
   minPlayers: 0
   stations:
-    Imp:
+    Impel:
       stationProto: StandardCrescentCivilianVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'DSM Imp {1}'
+          mapNameTemplate: 'DSM Impel {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-salvage
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            FreeholderDSM: [ 0, 1 ]

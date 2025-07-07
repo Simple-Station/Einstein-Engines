@@ -1,0 +1,25 @@
+- type: vessel
+  id: Covetor
+  name: DSM Covetor
+  description: A well-stocked Imperial mining and salvaging corvette, with ample space for freight and armed for self-defense.
+  price: 75000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/DSM/covetor.yml
+
+- type: gameMap
+  id: Imp
+  mapName: 'DSM Covetor'
+  mapPath: /Maps/_Crescent/Shuttles/DSM/Covetor.yml
+  minPlayers: 0
+  stations:
+    Imp:
+      stationProto: StandardCrescentCivilianVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Impel {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-salvage

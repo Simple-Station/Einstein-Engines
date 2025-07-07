@@ -692,14 +692,32 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 2.5,1.5
       parent: 1
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14923
+        moles:
+        - 1.7459903
+        - 6.568249
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
           showEnts: False
           occludes: True
           ents:
-          - 134
           - 133
+          - 134
 - proto: ClothingHeadHelmetImperialEVA
   entities:
   - uid: 98
@@ -756,13 +774,20 @@ entities:
     - type: Transform
       pos: 0.5,5.5
       parent: 1
-- proto: DrinkMugOne
-  entities:
-  - uid: 131
-    components:
-    - type: Transform
-      pos: 1.3907049,4.8716273
-      parent: 1
+    - type: ContainerContainer
+      containers:
+        board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        disk_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        id_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
 - proto: EmergencyLight
   entities:
   - uid: 150
@@ -997,6 +1022,13 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 3.5,0.5
       parent: 1
+- proto: PristineMicroforge
+  entities:
+  - uid: 93
+    components:
+    - type: Transform
+      pos: 1.5,4.5
+      parent: 1
 - proto: ReinforcedPlasmaWindow
   entities:
   - uid: 69
@@ -1013,6 +1045,13 @@ entities:
     components:
     - type: Transform
       pos: 1.5,6.5
+      parent: 1
+- proto: ResearchAndDevelopmentServerImperial
+  entities:
+  - uid: 131
+    components:
+    - type: Transform
+      pos: 1.5,-0.5
       parent: 1
 - proto: ShuttersNormalOpen
   entities:
@@ -1125,11 +1164,6 @@ entities:
     components:
     - type: Transform
       pos: 1.5,5.5
-      parent: 1
-  - uid: 93
-    components:
-    - type: Transform
-      pos: 1.5,4.5
       parent: 1
 - proto: ThrusterDSMFighter
   entities:
