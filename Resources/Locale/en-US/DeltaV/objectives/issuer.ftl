@@ -1,1 +1,0 @@
-objective-issuer-self = self
