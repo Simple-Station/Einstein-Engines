@@ -1,0 +1,25 @@
+- type: vessel
+  id: Praxis
+  name: DSM Praxis
+  description: With a miniature MedSci wing, sophisticated extraction tools and a service module fit for long expeditions, these vessels are commonly seen under the employ of journeymen Scribes, or occupied by smaller clades of independent Scribes, who often live in the vessel itself.
+  price: 65000
+  category: Medium
+  group: None
+  path: /Maps/_Crescent/Shuttles/DSM/praxis.yml
+
+- type: gameMap
+  id: Praxis
+  mapName: 'DSM Praxis'
+  mapPath: /Maps/_Crescent/Shuttles/DSM/praxis.yml
+  minPlayers: 0
+  stations:
+    Praxis:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Praxis {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-salvage

@@ -60,6 +60,22 @@
         Caustic: 0.9
 
 - type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitNCWLPetya
+  categories: [ HideSpawnMenu ]
+  name: homeguard heavy hardsuithelmet
+  description: Spaceworthy protection for your fragile skull. A communard design.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/Head/commieheavy.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/Head/commieheavy.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+
+- type: entity
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitNCWLJuggernaut
   categories: [ HideSpawnMenu ]

@@ -31,31 +31,8 @@
   components:
   - type: ShipyardListing
     shuttles:
-    - Ibis
-    - Imparator
-    - Anathema
-    - Jannissary
-    - Nemesis
-    - Triumphant
-    - Raider
-
-- type: entity
-  id: LaborMothershipComputer
-  parent: BaseMothershipComputer
-  name: imperial shipyard
-  components:
-  - type: ShipyardListing
-    shuttles:
-    - Imp
-    - ProspectorCrescent
-
-- type: entity
-  id: ScribesMothershipComputer
-  parent: BaseMothershipComputer
-  name: imperial shipyard
-  components:
-  - type: ShipyardListing
-    shuttles:
+    - Redemptor
+    - Impel
     - Gnosis
     - Sunesis
 
@@ -70,7 +47,9 @@
     - Jannissary
     - Conquest
     - Valor
-#   - Raider CONSCRIPT CHANGE PLEASE DONT UNDO THIS
+    - Praxis
+    - Torturer
+
 
 - type: entity
   id: InterdyneMothershipComputer
@@ -100,17 +79,6 @@
     - Rockchipper
 
 - type: entity
-  id: RamziMothershipComputer
-  parent: BaseMothershipComputer
-  name: ramzi internal shipyard
-  components:
-  - type: ShipyardListing
-    shuttles:
-    - Velator
-    - Wisp
-    - Taipan
-
-- type: entity
   id: TatsumotoMothershipComputer
   parent: BaseMothershipComputer
   name: shinohara internal shipyard
@@ -134,7 +102,6 @@
     shuttles:
     - Khopesh
     - Broadsword
-    - Vanguard
 
 - type: entity
   id: JackalCarrierMothershipComputer

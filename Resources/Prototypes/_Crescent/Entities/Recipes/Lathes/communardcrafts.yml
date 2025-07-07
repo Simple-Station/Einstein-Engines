@@ -1,0 +1,145 @@
+
+- type: latheRecipe
+  id: ClothingOuterNCWLEVA
+  result: ClothingOuterNCWLEVA
+  completetime: 2
+  materials:
+    Plastic: 500
+    Cloth: 1000
+
+- type: latheRecipe
+  id: ClothingHeadHelmetNCWLEVA
+  result: ClothingHeadHelmetNCWLEVA
+  completetime: 2
+  materials:
+    Plastic: 500
+    Cloth: 500
+    Glass: 500
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitNCWLInfantry
+  result: ClothingOuterHardsuitNCWLInfantry
+  completetime: 2
+  materials:
+    Steel: 2000
+    HardsuitElectronics: 500
+    Plastic: 500
+    Cloth: 1000
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitNCWLPetya
+  result: ClothingOuterHardsuitNCWLPetya
+  completetime: 2
+  materials:
+    Steel: 2500
+    HardsuitElectronics: 500
+    Tungsten: 1000
+    Durathread: 1000
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitNCWLJuggernaut
+  result: ClothingOuterHardsuitNCWLJuggernaut
+  completetime: 2
+  materials:
+    Steel: 3000
+    HardsuitElectronics: 1000
+    NanotrasenElectronics: 1000
+    Tungsten: 2500
+    Durathread: 1500
+
+- type: latheRecipe
+  id: ClothingHeadHatNCWLCapsoft
+  result: ClothingHeadHatNCWLCapsoft
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingHeadHatNCWLCapsoftMedical
+  result: ClothingHeadHatNCWLCapsoftMedical
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingHeadHatNCWLTanker
+  result: ClothingHeadHatNCWLTanker
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitNCWLMedic
+  result: ClothingUniformJumpsuitNCWLMedic
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitNCWLArtificer
+  result: ClothingUniformJumpsuitNCWLArtificer
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitNCWL
+  result: ClothingUniformJumpsuitNCWL
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingMaskNCWLBalaclava
+  result: ClothingMaskNCWLBalaclava
+  completetime: 2
+  materials:
+    Cloth: 250
+
+- type: latheRecipe
+  id: ClothingEyesGlassesNCWL
+  result: ClothingEyesGlassesNCWL
+  completetime: 2
+  materials:
+    Plastic: 250
+    Glass: 250
+
+- type: latheRecipe
+  id: ClothingHeadHelmetNCWLBasic
+  result: ClothingHeadHelmetNCWLBasic
+  completetime: 2
+  materials:
+    Steel: 750
+    Plastic: 250
+
+- type: latheRecipe
+  id: ClothingBeltNCWLWebbing
+  result: ClothingBeltNCWLWebbing
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: WeaponPistolComrade
+  result: WeaponPistolComrade
+  completetime: 2
+  materials:
+    Steel: 1000
+    BallisticCycler: 500
+
+- type: latheRecipe
+  id: WeaponPistolT91
+  result: WeaponPistolT91
+  completetime: 2
+  materials:
+    Steel: 1000
+    Tungsten: 300
+    BallisticCycler: 500
+
+- type: latheRecipe
+  id: WeaponRevolverPython
+  result: WeaponRevolverPython
+  completetime: 2
+  materials:
+    Steel: 1000
+    Plasteel: 500

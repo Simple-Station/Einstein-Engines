@@ -1,0 +1,25 @@
+- type: vessel
+  id: Redemptor
+  name: DSM Redemptor
+  description: A light fighter designed for escort and harassment duty.
+  price: 20000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/DSM/redemptor.yml
+
+- type: gameMap
+  id: Redemptor
+  mapName: 'DSM Redemptor'
+  mapPath: /Maps/_Crescent/Shuttles/DSM/redemptor.yml
+  minPlayers: 0
+  stations:
+    Redemptor:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Redemptor {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter
