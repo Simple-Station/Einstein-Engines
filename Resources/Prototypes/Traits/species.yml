@@ -233,3 +233,7 @@
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - HardenedCircuits

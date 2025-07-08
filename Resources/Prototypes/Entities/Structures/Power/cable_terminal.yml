@@ -20,7 +20,7 @@
     - type: RCDDeconstructable
       cost: 2
       delay: 0
-      fx: EffectRCDConstruct0  
+      fx: EffectRCDConstruct0
     - type: Destructible
       thresholds:
         - trigger:
@@ -29,6 +29,8 @@
           behaviors:
             - !type:DoActsBehavior
               acts: ["Destruction"]
+    - type: Visibility
+      layer: 1
     - type: SubFloorHide
       blockAmbience: false
       blockInteractions: false

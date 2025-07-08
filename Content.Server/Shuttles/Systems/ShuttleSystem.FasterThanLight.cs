@@ -6,7 +6,6 @@ using Content.Server.Shuttles.Events;
 using Content.Server.Station.Events;
 using Content.Shared._Lavaland.Shuttles;
 using Content.Shared.Body.Components;
-using Content.Shared.Buckle.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.Ghost;
@@ -75,11 +74,8 @@ public sealed partial class ShuttleSystem
     private readonly HashSet<Entity<NoFTLComponent>> _noFtls = new();
 
     private EntityQuery<BodyComponent> _bodyQuery;
-    private EntityQuery<BuckleComponent> _buckleQuery;
     private EntityQuery<FTLSmashImmuneComponent> _immuneQuery;
-    private EntityQuery<PhysicsComponent> _physicsQuery;
     private EntityQuery<StatusEffectsComponent> _statusQuery;
-    private EntityQuery<TransformComponent> _xformQuery;
 
     private void InitializeFTL()
     {
@@ -87,11 +83,8 @@ public sealed partial class ShuttleSystem
         SubscribeLocalEvent<FTLComponent, ComponentShutdown>(OnFtlShutdown);
 
         _bodyQuery = GetEntityQuery<BodyComponent>();
-        _buckleQuery = GetEntityQuery<BuckleComponent>();
         _immuneQuery = GetEntityQuery<FTLSmashImmuneComponent>();
-        _physicsQuery = GetEntityQuery<PhysicsComponent>();
         _statusQuery = GetEntityQuery<StatusEffectsComponent>();
-        _xformQuery = GetEntityQuery<TransformComponent>();
 
         _cfg.OnValueChanged(CCVars.FTLStartupTime, time => DefaultStartupTime = time, true);
         _cfg.OnValueChanged(CCVars.FTLTravelTime, time => DefaultTravelTime = time, true);
@@ -332,13 +325,6 @@ public sealed partial class ShuttleSystem
         {
             hyperspace.TargetCoordinates = config.Coordinates;
             hyperspace.TargetAngle = config.Angle;
-            // Harmony - Mark the docks as queued for a docking
-            config.Docks.ForEach(x =>
-            {
-                x.DockA.QueuedDocked = true;
-                x.DockB.QueuedDocked = true;
-            });
-            // End harmony
         }
         else if (TryGetFTLProximity(shuttleUid, new EntityCoordinates(target, Vector2.Zero), out var coords, out var targAngle))
         {
@@ -524,13 +510,6 @@ public sealed partial class ShuttleSystem
             else
             {
                 FTLDock((uid, xform), config);
-                // Harmony - Mark the docks as unqueued
-                config.Docks.ForEach(x =>
-                {
-                    x.DockA.QueuedDocked = false;
-                    x.DockB.QueuedDocked = false;
-                });
-                // End Harmony
             }
 
             mapId = mapCoordinates.MapId;

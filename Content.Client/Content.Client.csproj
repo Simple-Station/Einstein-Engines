@@ -26,6 +26,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Spawners\" />
+    <Folder Include="_Goobstation\Devil\UI\" />
     <Folder Include="_EE\Shadowling\UI\" />
   </ItemGroup>
   <ItemGroup>

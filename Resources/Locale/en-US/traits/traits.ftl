@@ -548,6 +548,7 @@ trait-description-LyreBird =
 trait-name-NaniteAutoRepairBots = Nanite Auto-Repair Bots
 trait-description-NaniteAutoRepairBots =
     Your chassis has been outfitted with Nanite Repair Drones. Whenever your sensors detect that you've recieved structural damage, the NRDs will activate to bring you back to operational standards.
+    If you have taken too much damage, the drones will shut down.
 
 trait-name-BionicLeg = Bionic Legs
 trait-description-BionicLeg =
@@ -675,3 +676,45 @@ trait-description-IPCFragileCircuits =
     You immediately shut down any time you take [color=orange]Shock[/color] damage and must be rebooted.
 fragileCircuits-kill-popup = {$name}'s circuits shut down from short-circuiting!
 
+trait-name-SuperiorRadiationShielding = Superior Radiation Shielding
+trait-description-SuperiorRadiationShielding =
+    Your chassis has been outfitted with superior radiation shielding, protecting your circuitry from all but the most extreme radiation sources.
+    Your innate flat damage reduction to [color=yellow]Radiation[/color] is increased from [color=green]1[/color] to [color=blue]5[/color].
+
+trait-name-G2Chassis = G2 Chassis
+trait-description-G2Chassis =
+    Your chassis has been manufactured to military specifications.
+    You have an innate [color=blue]7%[/color] chance for incoming projectiles to deflect off of your armored hull.
+
+trait-name-HardenedCircuits = Hardened Circuits
+trait-description-HardenedCircuits =
+    Your internal components have been reinforced with shock absorbing metal-foam.
+    You gain a [color=blue]20%[/color] resistance to explosive damage.
+    Your [color=red]weakness[/color] to [color=yellow]Shock[/color] has been inverted to a [color=green]resistance[/color]
+
+trait-name-CyberneticLeftLeg = Cybernetic Left Leg
+trait-description-CyberneticLeftLeg =
+    Your left leg has been replaced with a baseline cybernetic leg.
+    This does not cost any trait slot selections.
+
+trait-name-CyberneticRightLeg = Cybernetic Right Leg
+trait-description-CyberneticRightLeg =
+    Your right leg has been replaced with a baseline cybernetic leg.
+    This does not cost any trait slot selections.
+trait-name-Dwarf = Dwarf
+trait-description-Dwarf =
+    You are not just short and stout... You are a dwarf.
+    You get alcohol healing, you are resistant to poison, you also do not vomit when drunk.
+
+trait-name-Kobold = Kobold
+trait-description-Kobold =
+    You are not just short and stout... You are a kobold.
+    You get alcohol healing, you are resistant to poison, you also do not vomit when drunk.
+
+trait-name-ForkedTongue = Forked Tongue
+trait-description-ForkedTongue =
+    You have a more developed forked tongue that allows you to track and distinguish objects by their scent.
+
+trait-name-StuntedSnout = Stunted Snout
+trait-description-StuntedSnout =
+    Your sense of smell is stunted for one reason or another. You lack the ability to pick up scents.

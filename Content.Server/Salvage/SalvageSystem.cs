@@ -27,7 +27,8 @@ using Content.Shared.Construction.EntitySystems;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Tools.Components;
-using Robust.Server.Maps;
+using Robust.Shared.EntitySerialization;
+using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map.Components;
@@ -51,7 +52,7 @@ namespace Content.Server.Salvage
         [Dependency] private readonly DungeonSystem _dungeon = default!;
         [Dependency] private readonly GravitySystem _gravity = default!;
         [Dependency] private readonly LabelSystem _labelSystem = default!;
-        [Dependency] private readonly MapLoaderSystem _map = default!;
+        [Dependency] private readonly MapLoaderSystem _loader = default!;
         [Dependency] private readonly MetaDataSystem _metaData = default!;
         [Dependency] private readonly RadioSystem _radioSystem = default!;
         [Dependency] private readonly SharedAudioSystem _audio = default!;

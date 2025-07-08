@@ -54,11 +54,15 @@ public sealed partial class AtmosphereSystem
 
         // No atmos yeets, return early.
         if (!SpaceWind
-            || !gridAtmosphere.Comp.SpaceWindSimulation // Is the grid marked as exempt from space wind?
-            || tile.Air is null || tile.Space // No Air Checks. Pressure differentials can't exist in a hard vacuum.
-            || tile.Air.Pressure <= atmosComp.PressureCutoff // Below 5kpa(can't throw a base item)
-            || oneAtmos - atmosComp.PressureCutoff <= tile.Air.Pressure
-            && tile.Air.Pressure <= oneAtmos + atmosComp.PressureCutoff // Check within 5kpa of default pressure.
+            || !gridAtmosphere.Comp.SpaceWindSimulation // Is the grid marked as exempt from space wind?)
+            || tile.Space) // No Air Checks. Pressure differentials can't exist in a hard vacuum.
+            return;
+
+        var pressure = tile.AirArchived?.Pressure;
+        if (pressure is null
+            || pressure <= atmosComp.PressureCutoff // Below 5kpa(can't throw a base item)
+            || oneAtmos - atmosComp.PressureCutoff <= pressure
+            && pressure <= oneAtmos + atmosComp.PressureCutoff // Check within 5kpa of default pressure.
             || !TryComp(gridAtmosphere.Owner, out MapGridComponent? mapGrid)
             || !_mapSystem.TryGetTileRef(gridAtmosphere.Owner, mapGrid, tile.GridIndices, out var tileRef))
             return;
@@ -110,15 +114,15 @@ public sealed partial class AtmosphereSystem
             // Ideally containers would have their own EntityQuery internally or something given recursively it may need to slam GetComp<T> anyway.
             // Also, don't care about static bodies (but also due to collisionwakestate can't query dynamic directly atm).
             if (!bodies.TryGetComponent(entity, out var body)
-                || !pressureQuery.TryGetComponent(entity, out var pressure)
-                || !pressure.Enabled
+                || !pressureQuery.TryGetComponent(entity, out var pressureComp)
+                || !pressureComp.Enabled
                 || _containers.IsEntityInContainer(entity, metas.GetComponent(entity))
-                || pressure.LastHighPressureMovementAirCycle >= gridAtmosphere.Comp.UpdateCounter)
+                || pressureComp.LastHighPressureMovementAirCycle >= gridAtmosphere.Comp.UpdateCounter)
                 continue;
 
             // tl;dr YEET
             ExperiencePressureDifference(
-                (entity, pressure),
+                (entity, pressureComp),
                 gridAtmosphere.Comp.UpdateCounter,
                 pressureVector,
                 pVecLength,

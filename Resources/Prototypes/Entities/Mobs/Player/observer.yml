@@ -71,6 +71,11 @@
   - type: PointLight
     radius: 6
     enabled: false
+  - type: UserInterface
+    interfaces:
+      enum.RevivalContractUiKey.Key: # Goobstation - Devil
+        type: RevivalContractBoundUserInterface
+        requireInputValidation: false
 
 
 - type: entity
