@@ -114,7 +114,7 @@
     sprite: Objects/Materials/Sheets/other.rsi
     state: uranium_3
   product: CrateMaterialUranium
-  cost: 3000
+  cost: 10000
   category: cargoproduct-category-name-materials
   group: market
 
@@ -124,7 +124,7 @@
     sprite: Objects/Materials/ingots.rsi
     state: gold_3
   product: CrateMaterialGold
-  cost: 3000
+  cost: 8000
   category: cargoproduct-category-name-materials
   group: market
 
@@ -134,6 +134,6 @@
     sprite: Objects/Materials/ingots.rsi
     state: silver_3
   product: CrateMaterialSilver
-  cost: 3000
+  cost: 6000
   category: cargoproduct-category-name-materials
   group: market

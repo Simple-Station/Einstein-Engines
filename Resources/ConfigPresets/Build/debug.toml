@@ -4,3 +4,6 @@ enabled = false
 
 [shuttle]
 auto_call_time = 0
+
+[lavaland]
+enabled = false

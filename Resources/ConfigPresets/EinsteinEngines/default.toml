@@ -6,7 +6,6 @@ deadmin_on_join = true
 rich_main_icon_id = "einstein-engines"
 
 [events]
-ramping_average_end_time = 180.0
 ramping_average_chaos    = 4.5
 
 [game]
