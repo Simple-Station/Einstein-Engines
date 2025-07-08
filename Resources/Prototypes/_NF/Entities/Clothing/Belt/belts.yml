@@ -129,7 +129,6 @@
   - type: Clothing
     sprite: _NF/Clothing/Belt/cult_force_field.rsi
   - type: Reflect
-    enabled: true
     reflectProb: .1
     spread: 90
 

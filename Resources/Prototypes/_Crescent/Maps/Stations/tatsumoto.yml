@@ -6,10 +6,9 @@
   stations:
     Tatsumoto:
       stationProto: StandardCrescentStation
-      gridComponents:
+      components:
         - type: BlockShipWeaponProjectileGrid
         - type: PreventPilot
-      components:
         - type: StationNameSetup
           mapNameTemplate: 'Tatsumoto Trading Outpost'
         - type: VesselDesignation
@@ -18,7 +17,6 @@
           attributes:
             proper: true
         - type: StationJobs
-          checkAlive: false
           overflowJobs: []
           availableJobs:
             ExecutiveSHI: [ 1, 1 ]
