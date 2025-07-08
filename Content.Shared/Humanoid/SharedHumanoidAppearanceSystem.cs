@@ -428,6 +428,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
     public void SetMarkings(EntityUid uid, HumanoidCharacterProfile profile, HumanoidAppearanceComponent humanoid)
     {
+        humanoid.MarkingSet.Clear();
         // Add markings that doesn't need coloring. We store them until we add all other markings that doesn't need it.
         var markingFColored = new Dictionary<Marking, MarkingPrototype>();
         foreach (var marking in profile.Appearance.Markings)
@@ -471,7 +472,6 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         }
 
         EnsureDefaultMarkings(uid, humanoid);
-        humanoid.MarkingSet.Clear();
     }
 
     /// <summary>
