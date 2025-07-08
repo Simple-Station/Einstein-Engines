@@ -16,6 +16,12 @@
   femaleFirstNames: IpcFirst
   lastNames: IpcLast
   naming: FirstDashLast
+  minHeight: 1
+  defaultHeight: 1
+  maxHeight: 1
+  minWidth: 1
+  defaultWidth: 1
+  maxWidth: 1
   sexes:
   - Unsexed
 
