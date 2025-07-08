@@ -1,0 +1,28 @@
+- type: vessel
+  id: Jannissary
+  name: DSM Jannissary
+  description: A light Imperial combat shuttle.
+  price: 30000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/DSM/unionfall/jannissary.yml
+
+- type: gameMap
+  id: Jannissary
+  mapName: 'DSM Jannissary'
+  mapPath: /Maps/_Crescent/Shuttles/DSM/unionfall/jannissary.yml
+  minPlayers: 0
+  stations:
+    Jannissary:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Jannissary {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            LevymanDSM: [ 0, 1 ]
