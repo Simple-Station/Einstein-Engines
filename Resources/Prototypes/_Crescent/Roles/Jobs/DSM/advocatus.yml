@@ -3,7 +3,7 @@
   name: job-name-advocatus
   description: job-description-advocatus
   playTimeTracker: JobAdvocatusDSM
-  weight: 32
+  weight: 85
   startingGear: AdvocatusGear
   alwaysUseSpawner: true
   icon: "JobIconAdvocatus"
@@ -87,7 +87,6 @@
     id: AdvocatusPDA
     head:  ClothingHeadHatAdvocatus
     ears: ClothingHeadsetEmpire
-    pocket1: ImperialPassportBareLegit
     back: ClothingBackpackSatchelLeatherFilledDSM
     outerClothing: ClothingOuterCoatImperialAdvocatus
     shoes: ClothingShoesBootsJack

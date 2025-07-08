@@ -11,7 +11,7 @@
         - Human
     - !type:FactionRequirement
       factionID: "DSM"
-  weight: 55
+  weight: 86
   startingGear: AdjutantGear
   alwaysUseSpawner: true
   icon: "JobIconImperialAdjutant"
@@ -82,7 +82,6 @@
     head: ClothingHeadHatImperialBeret
     outerClothing: ClothingOuterCoatImperialAdjutant
     id: AdjutantPDA
-    pocket1: ImperialPassportBareLegit
     pocket2: WeaponRevolverSnubnose
     ears: ClothingHeadsetEmpire
     gloves: ClothingHandsGlovesImperialAdjutantGloves

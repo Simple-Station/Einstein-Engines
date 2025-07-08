@@ -1,36 +1,36 @@
 - type: job
-  id: KnightDSM
-  name: job-name-knight
-  description: job-description-knight
-  playTimeTracker: JobKnightDSM
+  id: RitterDSM
+  name: job-name-ritter
+  description: job-description-ritter
+  playTimeTracker: JobRitterDSM
   requirements:
-    - !type:CharacterOverallTimeRequirement
-      min: 35000
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Human
-    - !type:FactionRequirement
-      factionID: "DSM"
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Foreigner
-        - ForeignerLight
-        - Muted
-        - Pacifist
-        - WheelchairBound
-  weight: 81
-  startingGear: KnightGear
+  - !type:CharacterOverallTimeRequirement
+    min: 30000
+  - !type:CharacterSpeciesRequirement
+    species:
+    - Human
+  - !type:FactionRequirement
+    factionID: "DSM"
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Foreigner
+    - ForeignerLight
+    - Muted
+    - Pacifist
+    - WheelchairBound
+  weight: 79
+  startingGear: RitterGear
   alwaysUseSpawner: true
-  icon: "JobIconImperialKnight"
+  icon: "JobIconImperialRitter"
   requireAdminNotify: false
   supervisors: job-supervisors-imperial
   canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
-      - type: ChatRank
-        rank: crescent-rank-knight
+    - type: ChatRank
+      rank: crescent-rank-knight
   access:
   - Command
   - Empire
@@ -45,9 +45,9 @@
   - Captain # Frontier
 
 - type: startingGear
-  id: KnightGear
+  id: RitterGear
   equipment:
-    id: KnightPDA
+    id: RitterPDA
     ears: ClothingHeadsetEmpire
     jumpsuit: ClothingUniformJumpsuitImperialCombat
     shoes: ClothingShoesBootsImperialJackboots

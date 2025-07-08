@@ -11,13 +11,13 @@
     by Authority officials that the source of the Boundary itself comes from the combined, manifested
     thought of all psionically-enabled people in the Imperial Supercluster, and with every spell cast,
     every psionicist born, it only becomes larger and more aggressive.
-    
+
     Effectively the prime superpower of all of humanity, the Authority allows for a good amount of
     economic freedom for its non-psionicists and promotes loyalty in a manner not too dissimilar to
     the megacorporations of old Earth, with aspiring members climbing up the military ladder of
     different militias, such as the 43rd Battlegroup of the Sol system. Forschers thinking that they
-    can speak up against the current regime quickly find themselves screened against and detained, 
-    however, with tight information control preventing widespread dissent and often rewriting history 
+    can speak up against the current regime quickly find themselves screened against and detained,
+    however, with tight information control preventing widespread dissent and often rewriting history
     itself to suit the needs of the Authority.
   color: "#ffffed"
   weight: 1
@@ -38,7 +38,7 @@
     but a succesful counter-attack managed to secure the starfortress Kal Suzerai
     and allowed for a return of Imperial forces to the area, altough control on the fringes of Taypan
     is still disputed, and raids or terror acts are common.
-    
+
     Effectively the prime superpower of all of humanity, the Empire allows for a good amount of
     economic freedom for its subjects and promotes loyalty in a manner not too dissimilar to
     the megacorporations of old Earth, with aspiring members climbing up the noble ladder of
@@ -58,12 +58,12 @@
   name: "New Crescent Worker's League"
   id: NCWL
   description: |
-    Stitched together from the still-warm corpses of many labor unions that were in disorganized rebellion 
-    against Imperial forces in the Feudal Era before the collapse of Bluespace lanes leading in and out of the 
-    Sector, the NCWL are the undisputed victors of the Crescent Revolution, holding four out of six systems 
-    within the Sector and ruling from their seat of power in the Core. Holding socialist ideals at heart, the 
-    NCWL aims to build a government by laborers, and for the people. Recently having launched a liberation campaign 
-    against the Taypan system in the Outer Rim, the League are finally throwing their hats in the pile to make 
+    Stitched together from the still-warm corpses of many labor unions that were in disorganized rebellion
+    against Imperial forces in the Feudal Era before the collapse of Bluespace lanes leading in and out of the
+    Sector, the NCWL are the undisputed victors of the Crescent Revolution, holding four out of six systems
+    within the Sector and ruling from their seat of power in the Core. Holding socialist ideals at heart, the
+    NCWL aims to build a government by laborers, and for the people. Recently having launched a liberation campaign
+    against the Taypan system in the Outer Rim, the League are finally throwing their hats in the pile to make
     their bid for the untamed frontier.
   color: "#9FED58"
   weight: 0
@@ -77,11 +77,11 @@
   name: "Taypan FreeStations Coalitions"
   id: TFSC
   description: |
-    A conglomerate of pirate gangs, shipbreakers, and unsavory PMC groups, the Syndicate was formed shortly 
-    after the initial arrival of the Empire into the Sector, disembodied station gangs and pirate reavers at 
+    A conglomerate of pirate gangs, shipbreakers, and unsavory PMC groups, the Syndicate was formed shortly
+    after the initial arrival of the Empire into the Sector, disembodied station gangs and pirate reavers at
     first, and slowly growing to be a regional superpower under the leadership of Imperial nobility and deserter
-    Ser William 'Pincer' Moore. They've made Taypan their headquarters, thriving within the lawless frontier, away 
-    from the overreaching grasp of the NCWL and reasonably far enough from the Empire's remnants still roaming 
+    Ser William 'Pincer' Moore. They've made Taypan their headquarters, thriving within the lawless frontier, away
+    from the overreaching grasp of the NCWL and reasonably far enough from the Empire's remnants still roaming
     the Sector.
   color: "#9FED58"
   weight: -3
@@ -94,10 +94,10 @@
   name: "Shinohara Heavy Industries"
   id: SHI
   description: |
-    Currently the holder of many patents and technologies from the now-defunct NanoTrasen Industries, SHI is the 
-    unmatched and unrivaled corporate powerhouse in the Sector. Fingers in every pie, they manage logistics 
-    between systems, development of new technologies, mining operations, and even dabble in the manufacturing of 
-    space-capable vessels. Sharing the system with the Syndicate, they have made their headquarters in Taypan, 
+    Currently the holder of many patents and technologies from the now-defunct NanoTrasen Industries, SHI is the
+    unmatched and unrivaled corporate powerhouse in the Sector. Fingers in every pie, they manage logistics
+    between systems, development of new technologies, mining operations, and even dabble in the manufacturing of
+    space-capable vessels. Sharing the system with the Syndicate, they have made their headquarters in Taypan,
     enjoying access to ore-rich asteroid veins.
   color: "#9FED58"
   weight: -4
@@ -111,7 +111,7 @@
   id: TAP
   description: |
     A loosely organized tribal community of nomadic starfarers, the Taypani-Atyrian Pact consists of several nomadic
-    families of various racial backgrounds. Primarily made up of the spiritual Arabet, the militaristic Al'Seik, 
+    families of various racial backgrounds. Primarily made up of the spiritual Arabet, the militaristic Al'Seik,
     the materialistic Izdari, and the scrappy Thukker families, they operate out of a converted capital freighter,
     moving from site to site to eke out a living. Most nomads carry the foul reputations of mercenaries, lowlives,
     smugglers, racketeers, and gamblers.
@@ -126,10 +126,10 @@
   name: "Saint Romaine's Militia"
   id: SRM
   description: |
-    Formerly several fireteams of the Imperial Compliance Corps united under a single wing, the SRM have 
-    found their new identity in the reclamation of escaped Imperial 'assets', as well as the 'conscription' 
-    of new ones. Essentially a slaver's guild with a self-appointed divine edge, they operate out of the 
-    Domain system under their Imperial overlords, but often stray into Taypan to capture victims for 
+    Formerly several fireteams of the Imperial Compliance Corps united under a single wing, the SRM have
+    found their new identity in the reclamation of escaped Imperial 'assets', as well as the 'conscription'
+    of new ones. Essentially a slaver's guild with a self-appointed divine edge, they operate out of the
+    Domain system under their Imperial overlords, but often stray into Taypan to capture victims for
     the rebuilding effort.
   color: "#9FED58"
   weight: -5
@@ -142,9 +142,9 @@
   name: "Taypan Sektor Polizei"
   id: TSP
   description: |
-    Appointed by themselves as a civil enforcement agency, the Taypan Sektor Polizei are a frontier sheriff agency 
-    run solely on scant funding from confiscated items and donations from private and civilian entities. 
-    Formed with the system's best interests at heart, underperforming equipment, underfunded staff, and 
+    Appointed by themselves as a civil enforcement agency, the Taypan Sektor Polizei are a frontier sheriff agency
+    run solely on scant funding from confiscated items and donations from private and civilian entities.
+    Formed with the system's best interests at heart, underperforming equipment, underfunded staff, and
     tendency to draw their members from within impoverished circles leave them susceptible to corruption - which
     the major powers of the system often has little manpower or resources to mitigate or mend.
   color: "#9FED58"
