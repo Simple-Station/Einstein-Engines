@@ -16584,3 +16584,26 @@ Entries:
   id: 7297
   time: '2025-07-08T09:44:25.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2497
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added code support for Antag-Specific Traits & Loadouts.
+    - type: Add
+      message: Nuclear Operatives now spawn with Traits & Loadouts.
+    - type: Add
+      message: >-
+        Added support for Nationality, Employer, and Lifepath to all directly
+        add bonus traits.
+    - type: Add
+      message: >-
+        Paradox Anomalies now also spawn with the victim's full list of Traits &
+        Loadouts. Thus a paradox anomaly duplicating the Head of Security will
+        also spawn with the head of security's selection of "HoS Gun", and is
+        therefore also a valid objective target.
+    - type: Tweak
+      message: >-
+        Markings now apply AFTER traits and loadouts, meaning that they can now
+        go on top of cybernetic limbs.
+  id: 7298
+  time: '2025-07-08T17:26:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2498
