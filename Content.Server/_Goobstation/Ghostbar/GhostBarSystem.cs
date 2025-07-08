@@ -54,8 +54,11 @@ public sealed class GhostBarSystem : EntitySystem
     private ResPath MapPath = new("Maps/_Goobstation/Nonstations/ghostbar.yml");
     private void OnRoundStart(RoundStartingEvent ev)
     {
-        if (_mapLoader.TryLoadMap(MapPath, out var mapId, out _))
-            _mapSystem.SetPaused((mapId.Value.Owner, null), false);
+        if (!_mapLoader.TryLoadMap(MapPath, out var mapId, out _))
+            return;
+
+        _mapSystem.SetPaused((mapId.Value.Owner, null), false);
+        _mapSystem.InitializeMap(mapId.Value.Comp.MapId);
     }
 
     public void SpawnPlayer(GhostBarSpawnEvent msg, EntitySessionEventArgs args)
