@@ -19,9 +19,9 @@
   description: A kevlar-plated nanoweave infantry helmet. Standard issue for TFSC.
   components:
   - type: Sprite
-    sprite: _Crescent/Clothing/Syndicate/Head/traumahelmet.rsi
+    sprite: _Crescent/Clothing/Syndicate/Head/ipm_helmet.rsi
   - type: Clothing
-    sprite: _Crescent/Clothing/Syndicate/Head/traumahelmet.rsi
+    sprite: _Crescent/Clothing/Syndicate/Head/ipm_helmet.rsi
   - type: StaticPrice
     price: 75
 
@@ -140,15 +140,93 @@
         Heat: 0.9
 
 - type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitTraumasec
+  categories: [ HideSpawnMenu ]
+  name: interdyne traumasec hardsuit helmet
+  description: Spaceworthy protection for your fragile skull.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/Head/trauma_helmet.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/Head/trauma_helmet.rsi
+  - type: PointLight
+    radius: 4
+    color: "#d96050"
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9
+        Caustic: 0.9
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitCoordinator
+  categories: [ HideSpawnMenu ]
+  name: interdyne coordinator hardsuit helmet
+  description: Spaceworthy protection for your fragile skull.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/Head/coordinator_helmet.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/Head/coordinator_helmet.rsi
+  - type: PointLight
+    radius: 4
+    color: "#d96050"
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9
+        Caustic: 0.9
+
+- type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatSyndicateDoctor
   name: ripperdoc's bandana
   description: A head bandana to keep blood and sweat from your brow while you're guts-deep in today's batch.
   components:
   - type: Sprite
-    sprite: _Crescent/Clothing/Syndicate/Head/syndiedoc.rsi
+    sprite: _Crescent/Clothing/Syndicate/Head/ipm_bandana.rsi
   - type: Clothing
-    sprite: _Crescent/Clothing/Syndicate/Head/syndiedoc.rsi
+    sprite: _Crescent/Clothing/Syndicate/Head/ipm_bandana.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSyndicateDoctorCap
+  name: interdyne cap
+  description: A red cap with a stamped interdyne logo on the front.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/Head/ipm_cap.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/Head/ipm_cap.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSyndicateDoctorBeret
+  name: coordinator's beret
+  description: A red beret with a stamped Interdyne logo, given out to Interdyne coordinators.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/Head/ipm_beret.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/Head/ipm_beret.rsi
 
 - type: entity
   parent: ClothingHeadBase

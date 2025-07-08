@@ -65,7 +65,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitHunterElite
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorHunterDuster
   name: hunter's reinforced duster
   description: A kevlar-intervowen durathread coat with a popped collar. Dreadful.
@@ -93,7 +93,7 @@
   - type: GroupExamine
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorHunterVest
   name: hunter's ballistic vest
   description: A kevlar-plated durathread vest to wear during the Hunt.
@@ -121,7 +121,7 @@
   - type: GroupExamine
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterStorageBase
   id: ClothingOuterArmorHunterTender
   name: tender's fullbody biosuit
   description: A reinforced rubber biosuit strung with bone ornaments. Made for Tenders of the Hunt.
@@ -149,7 +149,7 @@
   - type: GroupExamine
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorHunterDusterMontagne
   name: hunter montagne's reinforced duster
   description: A double-breasted ornate coat, woven through with reinforced kevlar lining.
@@ -177,7 +177,7 @@
   - type: GroupExamine
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
   id: ClothingOuterArmorHunterDusterOverseer
   name: overseer's double breasted coat
   description: An ornate, antiquated coat, said to have once belonged to a legendary Huntsman.

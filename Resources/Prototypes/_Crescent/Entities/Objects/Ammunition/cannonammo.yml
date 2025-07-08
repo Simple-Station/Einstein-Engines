@@ -455,7 +455,7 @@
   - type: Item
     size: Normal
   - type: CartridgeAmmo
-    proto: TorpedoBase
+    proto: IdnaTorpedoBullet
     deleteOnSpawn: true
   - type: Sprite
     sprite: _Crescent/Objects/ShuttleWeapons/torpedop.rsi
@@ -465,6 +465,18 @@
   - type: Appearance
   - type: SpentAmmoVisuals
   - type: SpaceGarbage
+
+- type: entity
+  id: IdnaTorpedoBullet
+  name: Idna Torpedo
+  parent: TorpedoBase
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 75
+    intensitySlope: 20
+    totalIntensity: 900
 
 - type: entity
   id: TorpedoBase
