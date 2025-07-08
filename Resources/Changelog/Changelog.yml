@@ -16607,3 +16607,14 @@ Entries:
   id: 7298
   time: '2025-07-08T17:26:55.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2498
+- author: Lumminal
+  changes:
+    - type: Add
+      message: >-
+        Tape recorders and cassettes can now be crafted in autolathes for
+        recording crew speech.
+    - type: Add
+      message: Reporters, detectives have tape recorder in their loadouts.
+  id: 7299
+  time: '2025-07-08T19:36:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2455
