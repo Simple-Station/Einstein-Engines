@@ -12,6 +12,7 @@
       - Paper
       - Pill
       - Vegetable
+      - FoodSnack
   - type: SolutionContainerManager
     solutions:
       stomach:
