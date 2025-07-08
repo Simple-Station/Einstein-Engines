@@ -26,6 +26,9 @@
     components:
       - type: ChatRank
         rank: crescent-rank-doktor
+      - type: CPRTraining
+      - type: SurgerySpeedModifier
+        speedModifier: 2
   access:
   - Command
   - Maintenance

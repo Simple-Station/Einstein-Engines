@@ -19,6 +19,9 @@
     components:
       - type: ChatRank
         rank: crescent-rank-syndoc
+      - type: CPRTraining
+      - type: SurgerySpeedModifier
+        speedModifier: 2
   weight: 16
   startingGear: RipperdocGear
   alwaysUseSpawner: true

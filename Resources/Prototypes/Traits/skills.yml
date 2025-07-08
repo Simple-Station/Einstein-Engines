@@ -207,7 +207,7 @@
     - !type:TraitAddComponent
       components:
         - type: SurgerySpeedModifier
-          speedModifier: 1.6
+          speedModifier: 1.5
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -223,14 +223,15 @@
 - type: trait
   id: ExperiencedSurgeon
   category: Mental
-  points: -3
+  points: -4
   functions:
     - !type:TraitReplaceComponent
       components:
       - type: SurgerySpeedModifier
-        speedModifier: 2.3
+        speedModifier: 2
   requirements:
     - !type:CharacterJobRequirement
+      inverted: true
       jobs:
       - MedicalDoctor
       - Chemist
