@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
   id: ClothingOuterArmorCMMCarapace
   name: marshal's overcoat
   description: A decorated officer's coat, belonging to the Marshal of the Minutemen.
@@ -27,7 +27,7 @@
   - type: GroupExamine
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
   id: ClothingOuterArmorCMMDeputyCarapace
   name: deputy marshal's overcoat
   description: A decorated officer's coat, belonging to the Deputy Marshal of the Minutemen.
@@ -55,7 +55,7 @@
   - type: GroupExamine
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorCMM
   name: patrolman's cuirass
   description: A beaten titanium cuirass, layered with ballistic durathread for reinforcement and to prevent chafing..

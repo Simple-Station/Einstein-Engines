@@ -153,7 +153,7 @@
     price: 1000
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorServileAlseik
   name: servile's durathread rags
   description: A durathread robe adorned with tribal fetishes. This one doesn't bear as many rank stripes or adornments.
@@ -183,7 +183,7 @@
     price: 250
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
   id: ClothingOuterArmorDraugrAlseik
   name: draugr's armored durathread robes
   description: A durathread robe adorned with tribal fetishes. This one bears the color stripes and adornments of a decorated tribal warrior.
@@ -247,7 +247,7 @@
     price: 250
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorThukkerEngiVest
   name: thukker combat engineer's vest
   description: A half-vest of kevlar-reinforced durathread, meant to shield engineers' vitals during combat.

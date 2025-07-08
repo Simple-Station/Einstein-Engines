@@ -1514,12 +1514,12 @@
   name: Salvage Vendor
   description: A dwarf's best friend!
   components:
-  #- type: VendingMachine # DeltaV: Use mining points instead of limited stock
-  #  pack: SalvageEquipmentInventory
-  #  offState: off
-  #  brokenState: broken
-  #  normalState: normal-unshaded
-  #  denyState: deny-unshaded
+  - type: VendingMachine # DeltaV: Use mining points instead of limited stock
+    pack: SalvageEquipmentInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/mining.rsi
     layers:
@@ -1542,30 +1542,11 @@
     brokenState: broken
     normalState: normal-unshaded
     denyState: deny-unshaded
-  - type: PointsVendor # DeltaV
-  - type: UserInterface # DeltaV: Replace vending machine BUI with shop vendor
-    interfaces:
-      enum.VendingMachineUiKey.Key:
-        type: ShopVendorBoundUserInterface
-      enum.WiresUiKey.Key:
-        type: WiresBoundUserInterface
-      enum.MiningVoucherUiKey.Key:
-        type: MiningVoucherBoundUserInterface
-  - type: Wires # DeltaV: Use shop vendor wires layout
-    layoutId: ShopVendor
  # - type: AccessReader - HULLROT
  #   access: [["Salvage"]]
   - type: GuideHelp
     guides:
     - Salvage
-  - type: MiningVendor # Lavaland Change
-    kits:
-    - MiningCrusher
-    - MiningExtraction
-    #- MiningResonator
-    #- MiningSurvival
-    #- MiningDrone
-    - MiningConscription
 
 - type: entity
   parent: VendingMachine
@@ -1651,7 +1632,7 @@
     - texture: Structures/Machines/VendingMachines/maintenance_panel.png
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   #- type: AccessReader - HULLROT
-  #  access: [["Medical"]] 
+  #  access: [["Medical"]]
   - type: GuideHelp
     guides:
     - Medical
