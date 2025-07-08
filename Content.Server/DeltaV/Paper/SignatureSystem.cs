@@ -3,6 +3,7 @@ using Content.Shared._Goobstation.Devil;
 using Content.Server.Access.Systems;
 using Content.Server.Paper;
 using Content.Server.Popups;
+using Content.Shared.DeltaV.Paper;
 using Content.Shared.Paper;
 using Content.Shared.Popups;
 using Content.Shared.Tag;
