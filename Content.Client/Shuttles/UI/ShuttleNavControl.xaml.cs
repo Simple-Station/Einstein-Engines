@@ -60,10 +60,24 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
     public Action<Angle>? OnRadarMouseMoveRelative;
     // Represents where the mouse would physically be in the game world. Only updates when the mouse is over the UI.
     private Vector2 MousePosition = Vector2.Zero;
-    // Same as the mouse position , but this has its position constantly updated as the ship moves / rotates.
-    private Vector2 RelativeMousePosition = Vector2.Zero;
+    private Vector2 MouseUIPosition = Vector2.Zero;
     private Angle LastRotation = Angle.Zero;
     private Vector2 LastWorldCoordinates = Vector2.Zero;
+
+    internal record shipData
+    {
+        public MapGridComponent comp;
+        public bool forceShow;
+        public Vector2 UIPosition;
+
+        public shipData(MapGridComponent comp, Vector2 uiPosition)
+        {
+            this.comp = comp;
+            this.UIPosition = uiPosition;
+            this.forceShow = false;
+        }
+    }
+    private Dictionary<EntityUid,shipData> localShips = new();
     public bool keepWorldAligned = false;
 
     private List<Entity<MapGridComponent>> _grids = new();
@@ -110,6 +124,13 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
             return;
 
         OnRadarClick?.Invoke(PureRelativePosition(args.RelativePosition));
+        foreach (var (shipkey, shipdata) in localShips)
+        {
+            if ((shipdata.UIPosition - MouseUIPosition).Length() < 5)
+            {
+                shipdata.forceShow = !shipdata.forceShow;
+            }
+        }
     }
 
     protected override void MouseMove(GUIMouseMoveEventArgs args)
@@ -147,7 +168,6 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         if (keepWorldAligned)
             gridRotation = Angle.Zero;
         MousePosition = gridRotation.RotateVec(relativePos) + _transform.ToMapCoordinates(_coordinates.Value).Position;
-        RelativeMousePosition = MousePosition;
         return _coordinates.Value.Offset(relativePos);
     }
 
@@ -255,6 +275,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         if (keepWorldAligned)
         {
             ourEntRot = Angle.Zero;
+            rot = Angle.Zero;
             ourEntMatrix = Matrix3Helpers.CreateTransform(mapPos.Position, Angle.Zero);
             posMatrix = Matrix3Helpers.CreateTransform(Vector2.One, Angle.Zero);
             offset = Vector2.Zero;
@@ -280,6 +301,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         vert.Y = -vert.Y;
         vert = rot.RotateVec(vert);
         vert = ScalePosition(vert);
+        MouseUIPosition = vert;
         if(updateTicker > 10)
             OnRadarMouseMove?.Invoke(PureRelativePositionWithoutSetter(vert));
         LastWorldCoordinates = mapPos.Position;
@@ -341,7 +363,6 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
 
         _grids.Clear();
         _mapManager.FindGridsIntersecting(xform.MapID, new Box2(mapPos.Position - MaxRadarRangeVector, mapPos.Position + MaxRadarRangeVector), ref _grids, approx: true, includeMap: false);
-
         // Draw other grids... differently
         foreach (var grid in _grids)
         {
@@ -358,6 +379,13 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
             var gridMatrix = _transform.GetWorldMatrix(gUid);
             var matty = Matrix3x2.Multiply(gridMatrix, ourWorldMatrixInvert);
             var color = _shuttles.GetIFFColor(grid, self: false, iff);
+            if (!localShips.ContainsKey(grid.Owner))
+            {
+                localShips[grid.Owner] = new shipData(grid.Comp, Vector2.Zero);
+            }
+
+            if (ShowIFF && localShips[grid.Owner].forceShow)
+                color = Color.DarkRed;
 
             // Others default:
             // Color.FromHex("#FFC000FF")
@@ -385,7 +413,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
                     YTargetScaled = XTargetScaled;
                 if(XTargetScaled.Y < ShipSelectionDotRadius*2)
                     XTargetScaled = YTargetScaled;
-                handle.DrawLine(MidPointVector, ScalePosition(UIPosVector), Color.AntiqueWhite);
+                //handle.DrawLine(MidPointVector, ScalePosition(UIPosVector), Color.AntiqueWhite);
                 var gridCentre = Vector2.Transform(gridBody.LocalCenter, matty);
                 gridCentre.Y = -gridCentre.Y;
                 var distance = gridCentre.Length();
@@ -395,9 +423,11 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
                 var labelDimensions = handle.GetDimensions(Font, labelText, 1f);
                 Vector2 textUiPosition = new Vector2(-labelDimensions.X / 2f,0);
                 // dont waste GPU resources filling a pixel radius that won't show
+                if(localShips[grid.Owner].forceShow)
+                    color = Color.DarkRed;
                 if (YTargetScaled.Length() < XTargetScaled.Length())
                 {
-                    if ((YTargetScaled - vert).Length() < 10 || distance < 512)
+                    if ((YTargetScaled - vert).Length() < 10 || distance < 512 || localShips[grid.Owner].forceShow)
                     {
                         textUiPosition += YTargetScaled;
                         textUiPosition.X = Math.Clamp(textUiPosition.X, 0f, PixelWidth - labelDimensions.X);
@@ -408,11 +438,13 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
 
                         handle.DrawString(Font,textUiPosition , labelText, color);
                     }
+
                     handle.DrawCircle(YTargetScaled, ShipSelectionDotRadius, color, true);
+                    localShips[grid.Owner].UIPosition = YTargetScaled;
                 }
                 else
                 {
-                    if ((XTargetScaled - vert).Length() < 10 || distance < 512)
+                    if ((XTargetScaled - vert).Length() < 10 || distance < 512 || localShips[grid.Owner].forceShow)
                     {
                         textUiPosition += XTargetScaled;
                         textUiPosition.X = Math.Clamp(textUiPosition.X, 0f, PixelWidth - labelDimensions.X);
@@ -421,6 +453,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
                         handle.DrawString(Font,textUiPosition , labelText, color);
                     }
                     handle.DrawCircle(XTargetScaled, ShipSelectionDotRadius, color, true);
+                    localShips[grid.Owner].UIPosition = XTargetScaled;
                 }
             }
             else

@@ -10,6 +10,9 @@
       - ClothMade
       - Fruit # DeltaV - Moth can eat fruits.
       - Paper
+      - Pill
+      - Vegetable
+      - FoodSnack
   - type: SolutionContainerManager
     solutions:
       stomach:

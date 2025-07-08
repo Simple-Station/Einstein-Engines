@@ -1,15 +1,16 @@
 ﻿- type: vendingMachineInventory
   id: SalvageEquipmentInventory
   startingInventory:
-    Crowbar: 2
-    Pickaxe: 4
-    OreBag: 4
-    Flare: 4
-    FlashlightLantern: 2
+    Pickaxe: 8
+    OreBag: 8
+    Flare: 32
+    FlashlightLantern: 4
     Floodlight: 2
-    HandheldGPSBasic: 2
-    RadioHandheld: 2
-    WeaponProtoKineticAccelerator: 4
-    SeismicCharge: 2
-    FultonBeacon: 1
-    Fulton: 2
+    HandheldGPSBasic: 8
+    RadioHandheld: 8
+    WeaponProtoKineticAccelerator: 8
+    WeaponCrusherGlaive: 8
+    WeaponCrusherDagger: 8
+    WeaponCrusher: 8
+    MiningDrill: 8
+    SeismicCharge: 24
