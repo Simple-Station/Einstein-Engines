@@ -583,8 +583,6 @@
       Steel: 500
       Plastic: 150
       Circuitry: 50
-  - type: StaticPrice
-    price: 100
   - type: ReverseEngineering # Nyano
     difficulty: 3
     recipes:
@@ -705,10 +703,6 @@
     materialComposition:
       Steel: 300
       Plastic: 100
-  - type: StaticPrice
-    price: 60
-  #  - type: DynamicPrice
-  #    price: 60
   - type: ReverseEngineering # Nyano
     difficulty: 3
     recipes:
