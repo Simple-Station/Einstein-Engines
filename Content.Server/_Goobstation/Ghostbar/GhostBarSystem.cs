@@ -55,7 +55,8 @@ public sealed class GhostBarSystem : EntitySystem
 
     private void OnRoundStart(RoundStartingEvent ev)
     {
-        _mapLoader.TryLoadMap(MapPath, out _, out _);
+        var options = new DeserializationOptions { InitializeMaps = true, };
+        _mapLoader.TryLoadMap(MapPath, out _, out _, options);
     }
 
     public void SpawnPlayer(GhostBarSpawnEvent msg, EntitySessionEventArgs args)
