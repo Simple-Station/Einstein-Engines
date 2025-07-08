@@ -8,6 +8,14 @@
     Plasma: 500
 
 - type: latheRecipe
+  id: IdnaTorpedoRecipe
+  result: IdnaTorpedo
+  completetime: 2
+  materials:
+    Steel: 2000
+    Plasma: 3500
+
+- type: latheRecipe
   id: SluggieAP
   result: MagazineLightRifleBoxSlug
   completetime: 2

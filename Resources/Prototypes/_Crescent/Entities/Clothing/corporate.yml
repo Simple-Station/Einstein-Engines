@@ -141,7 +141,7 @@
     price: 2500
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorShinoharaArmorBulwark
   name: SHI BULWARK-1 ballistic combat vest
   description: A heavy combat carapace padded on the inside with ballistic-gel reinforced durathread. Standard issue for many corporate security agents and mercs.
@@ -169,7 +169,7 @@
   - type: GroupExamine
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorPangTaiKorund
   name: PTA KORUND-X2 ceramic combat carapace
   description: A heavy combat carapace of heavy ceramic plating. Electronized nano-plating technology allows it's hefty ceramic plates to come together when struck, hardening against kinetic energy without sacrificing agility.
@@ -197,7 +197,7 @@
   - type: GroupExamine
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorPangTaiVest
   name: PTA CORVID-X1 combat vest
   description: A simple civilian-grade combat vest, a durathread outer layer padded on the inside with thin plates of plasteel and kevlar.
