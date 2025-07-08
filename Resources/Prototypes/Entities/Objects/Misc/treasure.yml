@@ -171,6 +171,8 @@
     materialComposition:
       Steel: 100 # coins are fake on the inside
       Silver: 200
+  - type: StaticPrice
+    price: 140
 
 - type: entity
   parent: TreasureCoinIron
