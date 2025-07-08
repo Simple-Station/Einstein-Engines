@@ -8,12 +8,12 @@
   price: 6000
   category: Small
   group: None
-  path: /Maps/_Crescent/Shuttles/Unionfall/NCWL/unionfall_khopesh.yml
+  path: /Maps/_Crescent/Unionfall/NCWL/unionfall_khopesh.yml
 
 - type: gameMap
   id: UnionfallKhopesh
   mapName: 'NCWL Khopesh'
-  mapPath: /Maps/_Crescent/Shuttles/Unionfall/NCWL/unionfall_khopesh.yml
+  mapPath: /Maps/_Crescent/Unionfall/NCWL/unionfall_khopesh.yml
   minPlayers: 0
   stations:
     Khopesh:

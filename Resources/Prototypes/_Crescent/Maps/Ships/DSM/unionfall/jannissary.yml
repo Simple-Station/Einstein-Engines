@@ -5,12 +5,12 @@
   price: 30000
   category: Small
   group: None
-  path: /Maps/_Crescent/Shuttles/Unionfall/DSM/unionfall_jannissary.yml
+  path: /Maps/_Crescent/Unionfall/DSM/unionfall_jannissary.yml
 
 - type: gameMap
   id: Jannissary
   mapName: 'DSM Jannissary'
-  mapPath: /Maps/_Crescent/Shuttles/Unionfall/DSM/unionfall_jannissary.yml
+  mapPath: /Maps/_Crescent/Unionfall/DSM/unionfall_jannissary.yml
   minPlayers: 0
   stations:
     Jannissary:

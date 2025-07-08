@@ -8,12 +8,12 @@
   price: 12500
   category: Small
   group: None
-  path: /Maps/_Crescent/Shuttles/Unionfall/NCWL/unionfall_broadsword.yml
+  path: /Maps/_Crescent/Unionfall/NCWL/unionfall_broadsword.yml
 
 - type: gameMap
   id: UnionfallBroadsword
   mapName: 'NCWL Broadsword'
-  mapPath: /Maps/_Crescent/Shuttles/Unionfall/NCWL/unionfall_broadsword.yml
+  mapPath: /Maps/_Crescent/Unionfall/NCWL/unionfall_broadsword.yml
   minPlayers: 0
   stations:
     Broadsword:

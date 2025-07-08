@@ -5,12 +5,12 @@
   price: 30000
   category: Small
   group: None
-  path: /Maps/_Crescent/Shuttles/Unionfall/DSM/unionfall_imparator.yml
+  path: /Maps/_Crescent/Unionfall/DSM/unionfall_imparator.yml
 
 - type: gameMap
   id: Imparator
   mapName: 'DSM Imparator'
-  mapPath: /Maps/_Crescent/Shuttles/Unionfall/DSM/unionfall_imparator.yml
+  mapPath: /Maps/_Crescent/Unionfall/DSM/unionfall_imparator.yml
   minPlayers: 0
   stations:
     Imparator:
