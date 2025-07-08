@@ -6,10 +6,9 @@
   stations:
     Jackal:
       stationProto: StandardCrescentStation
-      gridComponents:
+      components:
         - type: BlockShipWeaponProjectileGrid
         - type: PreventPilot
-      components:
         - type: StationNameSetup
           mapNameTemplate: 'GSC Jackal'
         - type: VesselDesignation
@@ -18,7 +17,6 @@
           attributes:
             proper: true
         - type: StationJobs
-          checkAlive: false
           overflowJobs: []
           availableJobs:
             RingleaderNCSP: [ 1, 1 ]
