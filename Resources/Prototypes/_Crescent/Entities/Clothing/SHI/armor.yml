@@ -82,7 +82,7 @@
 #armor
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorShinoharaArmor
   name: SHI CIV-1 combat vest
   description: A kevlar-intervowen durathread vest padded with ballistic gel. Sold on the civilian self-defense market.
@@ -110,7 +110,7 @@
   - type: GroupExamine
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorShinoharaArmorHighsec
   name: SHI BULWARK-2 ballistic hauberk
   description: A kevlar-intervowen durathread hauberk padded with ballistic gel, plated with NanoTrasen Ballistic Carapace (tm) on the outside. A wet dream for any corporate goon.
@@ -165,7 +165,7 @@
   - type: GroupExamine
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
   id: ClothingOuterShinoharaOvercoat
   name: captain's overcoat
   description: A heavy overcoat. Bears the Lord Commander's insignia on a label on the inside.
@@ -190,7 +190,7 @@
     sprite: _Crescent/Clothing/SHI/OuterClothing/suitjacket.rsi
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
   id: ClothingOuterShinoharaExecSuitjacket
   name: corporate executive suit jacket
   description: A silken, luxurious suit jacket, worn by corporate bosses everywhere.
@@ -201,7 +201,7 @@
     sprite: _Crescent/Clothing/SHI/OuterClothing/execsuitjacket.rsi
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterStorageBase
   id: ClothingOuterShinoharaLabcoat
   name: corporate labcoat
   description: A linen labcoat in Shinohara colors.
