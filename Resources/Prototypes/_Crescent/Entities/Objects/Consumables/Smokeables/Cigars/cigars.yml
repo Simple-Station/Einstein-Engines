@@ -1,0 +1,45 @@
+- type: entity
+  id: CigarNCWL
+  parent: BaseCigar
+  name: CigarNCWLPlaceholder
+  description: "A Placeholder lore CigarNCWL Lore"
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/imported_cigar.rsi
+    state: unlit-icon
+  - type: Tag
+    tags:
+    - Cigar
+    - Trash
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 50
+        reagents:
+        - ReagentId: Nicotine
+          Quantity: 25
+  - type: Clothing
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/imported_cigar.rsi
+    slots: [ mask ]
+    equippedPrefix: unlit
+  - type: Item
+    size: Tiny
+
+- type: entity
+  id: CigarNCWLSpent
+  parent: Cigar
+  suffix: spent
+  components:
+  - type: Sprite
+    state: burnt-icon
+  - type: Smokable
+    state: Burnt
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 50
+  - type: Tag
+    tags:
+    - Cigar
+    - Trash
+    - Burnt
