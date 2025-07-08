@@ -22,5 +22,3 @@
         - type: StationJobs
           checkAlive: false
           overflowJobs: []
-          availableJobs:
-            KadetNCWL: [ 0, 0 ]

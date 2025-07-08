@@ -25,5 +25,3 @@
           designation: vessel-designation-torpedo-bomber
         - type: StationJobs
           overflowJobs: []
-          availableJobs:
-            LevymanDSM: [ 0, 1 ]

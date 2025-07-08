@@ -28,7 +28,3 @@
           designation: vessel-designation-missile
         - type: StationJobs
           overflowJobs: []
-          availableJobs:
-            SanitarNCWL: [ 0, 0 ]
-            KadetNCWL: [ 0, 0 ]
-            DoktorNCWL: [ 0, 0 ]

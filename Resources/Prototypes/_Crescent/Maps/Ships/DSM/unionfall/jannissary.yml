@@ -24,5 +24,3 @@
         - type: VesselDesignation
         - type: StationJobs
           overflowJobs: []
-          availableJobs:
-            LevymanDSM: [ 0, 1 ]

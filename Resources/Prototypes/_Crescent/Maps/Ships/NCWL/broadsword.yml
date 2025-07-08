@@ -28,5 +28,3 @@
           designation: vessel-designation-bomber
         - type: StationJobs
           overflowJobs: []
-          availableJobs:
-            SanitarNCWL: [ 0, 0 ]

@@ -28,5 +28,3 @@
           designation: vessel-designation-fighter
         - type: StationJobs
           overflowJobs: []
-          availableJobs:
-            SanitarNCWL: [ 0, 0 ]
