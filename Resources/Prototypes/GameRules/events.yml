@@ -153,6 +153,7 @@
     minimumPlayers: 30
   - type: SpaceSpawnRule
   - type: AntagLoadProfileRule
+    allowAntagLoadouts: false
   - type: AntagObjectives
     objectives:
     - StealResearchObjective

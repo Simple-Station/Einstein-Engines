@@ -2,7 +2,6 @@ using System.IO;
 using System.Linq;
 using System.Numerics;
 using Content.Shared._EE.Contractors.Prototypes;
-using Content.Shared.Decals;
 using Content.Shared.Examine;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
@@ -10,7 +9,6 @@ using Content.Shared._Shitmed.Humanoid.Events; // Shitmed Change
 using Content.Shared.IdentityManagement;
 using Content.Shared.Preferences;
 using Content.Shared.HeightAdjust;
-using Microsoft.Extensions.Configuration;
 using Robust.Shared;
 using Robust.Shared.Configuration;
 using Robust.Shared.GameObjects.Components.Localization;
@@ -43,6 +41,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     [Dependency] private readonly MarkingManager _markingManager = default!;
     [Dependency] private readonly ISerializationManager _serManager = default!;
     [Dependency] private readonly HeightAdjustSystem _heightAdjust = default!;
+    [Dependency] private readonly ISharedPlayerManager _sharedPlayerManager = default!;
 
     [ValidatePrototypeId<SpeciesPrototype>]
     public const string DefaultSpecies = "Human";
@@ -101,7 +100,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         if (string.IsNullOrEmpty(humanoid.Initial)
             || !_proto.TryIndex(humanoid.Initial, out HumanoidProfilePrototype? startingSet))
         {
-            LoadProfile(uid, HumanoidCharacterProfile.DefaultWithSpecies(humanoid.Species), humanoid);
+            LoadProfile(uid, HumanoidCharacterProfile.DefaultWithSpecies(humanoid.Species), humanoid, false, false);
             return;
         }
 
@@ -109,7 +108,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         foreach (var (layer, info) in startingSet.CustomBaseLayers)
             humanoid.CustomBaseLayers.Add(layer, info);
 
-        LoadProfile(uid, startingSet.Profile, humanoid);
+        LoadProfile(uid, startingSet.Profile, humanoid, false, false);
     }
 
     private void OnExamined(EntityUid uid, HumanoidAppearanceComponent component, ExaminedEvent args)
@@ -376,7 +375,11 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     /// <param name="uid">The mob's entity UID.</param>
     /// <param name="profile">The character profile to load.</param>
     /// <param name="humanoid">Humanoid component of the entity</param>
-    public virtual void LoadProfile(EntityUid uid, HumanoidCharacterProfile? profile, HumanoidAppearanceComponent? humanoid = null)
+    public virtual void LoadProfile(EntityUid uid,
+        HumanoidCharacterProfile? profile,
+        HumanoidAppearanceComponent? humanoid = null,
+        bool loadExtensions = true,
+        bool generateLoadouts = true)
     {
         if (profile == null)
             return;
@@ -386,25 +389,57 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         SetSpecies(uid, profile.Species, false, humanoid);
         SetSex(uid, profile.Sex, false, humanoid);
+
+        humanoid.Gender = profile.Gender;
+        if (TryComp<GrammarComponent>(uid, out var grammar))
+            grammar.Gender = profile.Gender;
+
+        humanoid.DisplayPronouns = profile.DisplayPronouns;
+        humanoid.StationAiName = profile.StationAiName;
+        humanoid.CyborgName = profile.CyborgName;
+        humanoid.Age = profile.Age;
+
+        humanoid.CustomSpecieName = profile.Customspeciename;
+
         humanoid.EyeColor = profile.Appearance.EyeColor;
         var ev = new EyeColorInitEvent();
         RaiseLocalEvent(uid, ref ev);
 
+        humanoid.LastProfileLoaded = profile; //Set the loaded profile because Traits are about to need it
         SetSkinColor(uid, profile.Appearance.SkinColor, false);
+        if (loadExtensions && _sharedPlayerManager.TryGetSessionByEntity(uid, out var session))
+            RaiseLocalEvent(uid, new LoadProfileExtensionsEvent(uid, session, null, profile, generateLoadouts));
 
+        SetMarkings(uid, profile, humanoid);
+
+        var species = _proto.Index(humanoid.Species);
+
+        if (profile.Height <= 0 || profile.Width <= 0)
+            SetScale(uid, new Vector2(species.DefaultWidth, species.DefaultHeight), true, humanoid);
+        else
+            SetScale(uid, new Vector2(profile.Width, profile.Height), true, humanoid);
+
+        _heightAdjust.SetScale(uid, new Vector2(humanoid.Width, humanoid.Height));
+
+        humanoid.LastProfileLoaded = profile; //But traits can also modify the profile so we need to set it again.
+        Dirty(uid, humanoid);
+        RaiseLocalEvent(uid, new ProfileLoadFinishedEvent());
+    }
+
+    public void SetMarkings(EntityUid uid, HumanoidCharacterProfile profile, HumanoidAppearanceComponent humanoid)
+    {
         humanoid.MarkingSet.Clear();
-
         // Add markings that doesn't need coloring. We store them until we add all other markings that doesn't need it.
         var markingFColored = new Dictionary<Marking, MarkingPrototype>();
         foreach (var marking in profile.Appearance.Markings)
         {
-            if (_markingManager.TryGetMarking(marking, out var prototype))
-            {
-                if (!prototype.ForcedColoring)
-                    AddMarking(uid, marking.MarkingId, marking.MarkingColors, false);
-                else
-                    markingFColored.Add(marking, prototype);
-            }
+            if (!_markingManager.TryGetMarking(marking, out var prototype))
+                continue;
+
+            if (!prototype.ForcedColoring)
+                AddMarking(uid, marking.MarkingId, marking.MarkingColors, false);
+            else
+                markingFColored.Add(marking, prototype);
         }
 
         // Hair/facial hair - this may eventually be deprecated.
@@ -437,31 +472,6 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         }
 
         EnsureDefaultMarkings(uid, humanoid);
-
-        humanoid.Gender = profile.Gender;
-        if (TryComp<GrammarComponent>(uid, out var grammar))
-            grammar.Gender = profile.Gender;
-
-        humanoid.DisplayPronouns = profile.DisplayPronouns;
-        humanoid.StationAiName = profile.StationAiName;
-        humanoid.CyborgName = profile.CyborgName;
-        humanoid.Age = profile.Age;
-
-        humanoid.CustomSpecieName = profile.Customspeciename;
-
-        var species = _proto.Index(humanoid.Species);
-
-        if (profile.Height <= 0 || profile.Width <= 0)
-            SetScale(uid, new Vector2(species.DefaultWidth, species.DefaultHeight), true, humanoid);
-        else
-            SetScale(uid, new Vector2(profile.Width, profile.Height), true, humanoid);
-
-        _heightAdjust.SetScale(uid, new Vector2(humanoid.Width, humanoid.Height));
-
-        humanoid.LastProfileLoaded = profile; // DeltaV - let paradox anomaly be cloned
-
-        Dirty(uid, humanoid);
-        RaiseLocalEvent(uid, new ProfileLoadFinishedEvent());
     }
 
     /// <summary>

@@ -20,6 +20,7 @@ using Timer = Robust.Shared.Timing.Timer;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
+using Content.Shared.Humanoid;
 
 namespace Content.Server.Traits;
 
@@ -42,10 +43,15 @@ public sealed class TraitSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
+        SubscribeLocalEvent<LoadProfileExtensionsEvent>(OnProfileLoad);
     }
 
     // When the player is spawned in, add all trait components selected during character creation
     private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent args) =>
+        ApplyTraits(args.Mob, args.JobId, args.Profile,
+            _playTimeTracking.GetTrackerTimes(args.Player), args.Player.ContentData()?.Whitelisted ?? false);
+
+    private void OnProfileLoad(LoadProfileExtensionsEvent args) =>
         ApplyTraits(args.Mob, args.JobId, args.Profile,
             _playTimeTracking.GetTrackerTimes(args.Player), args.Player.ContentData()?.Whitelisted ?? false);
 

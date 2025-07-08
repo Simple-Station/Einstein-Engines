@@ -24,7 +24,7 @@ public sealed class ScrambleDnaEffectSystem : EntitySystem
         if (TryComp<HumanoidAppearanceComponent>(uid, out var humanoid))
         {
             var newProfile = HumanoidCharacterProfile.RandomWithSpecies(humanoid.Species);
-            _humanoidAppearance.LoadProfile(uid, newProfile, humanoid);
+            _humanoidAppearance.LoadProfile(uid, newProfile, humanoid, loadExtensions: false, generateLoadouts: false);
             _metaData.SetEntityName(uid, newProfile.Name);
             if (TryComp<DnaComponent>(uid, out var dna))
             {
