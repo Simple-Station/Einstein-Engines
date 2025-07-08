@@ -87,7 +87,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
+      path: /Audio/Weapons/Guns/UnionfallWeapons/shotgun_fire_1.ogg
     fireOnDropChance: 1
   - type: BallisticAmmoProvider
     capacity: 5
@@ -116,7 +116,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
+      path: /Audio/Weapons/Guns/UnionfallWeapons/shotgun_fire_1.ogg
     fireOnDropChance: 1
   - type: BallisticAmmoProvider
     capacity: 2
