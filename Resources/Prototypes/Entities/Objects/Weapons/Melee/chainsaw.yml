@@ -16,15 +16,15 @@
   - type: MeleeWeapon
     autoAttack: true
     wideAnimationRotation: -135
-    attackRate: 0.3
+    attackRate: 0.4
     damage:
       types:
-        Slash: 2
-        Blunt: 2
+        Slash: 3
+        Blunt: 3
         Structural: 4
     clickPartDamageMultiplier: 3
     heavyPartDamageMultiplier: 2.5
-    heavyRateModifier: 3
+    heavyRateModifier: 2
     heavyDamageBaseModifier: 3.0
     heavyStaminaCost: 2.5
     maxTargets: 20

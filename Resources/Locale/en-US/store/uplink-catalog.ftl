@@ -316,6 +316,9 @@ uplink-carp-dehydrated-name = Dehydrated Space Carp
 uplink-carp-dehydrated-desc = Looks like a plush toy carp, but just add water and it becomes a real-life space carp!
 
 # Job Specific
+uplink-Chainsaw-name = Chainsaw
+uplink-Chainsaw-desc = A very large chainsaw. Usually you use this for cutting down trees... usually.
+
 uplink-gatfruit-seeds-name = Packet Of Gatfruit Seeds
 uplink-gatfruit-seeds-desc = And who says guns don't grow on trees?
 

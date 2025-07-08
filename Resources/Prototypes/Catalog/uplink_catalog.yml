@@ -1915,6 +1915,24 @@
 # Job Specific
 
 - type: listing
+  id: uplinkChainsaw
+  name: uplink-Chainsaw-name
+  description: uplink-Chainsaw-desc
+  productEntity: Chainsaw
+  discountCategory: usualDiscounts #idk and idc
+  discountDownTo:
+    Telecrystal: 15
+  cost:
+    Telecrystal: 40
+  categories:
+  - UplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Botanist
+    - Doctor
+
+- type: listing
   id: uplinkGatfruitSeeds
   name: uplink-gatfruit-seeds-name
   description: uplink-gatfruit-seeds-desc
