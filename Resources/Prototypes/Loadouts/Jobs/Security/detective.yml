@@ -6,6 +6,21 @@
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutItemTapeRecorderDetective
+  category: JobsSecurityDetective
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+    - TapeRecorder
+    - CassetteTape
+    - CassetteTape
 
 # Eyes
 
