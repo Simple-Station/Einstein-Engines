@@ -313,23 +313,6 @@
 
 - type: entity
   parent: BaseItem
-  id: ShipVoucherMeteor
-  name: NCWL 'Meteor' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a communard Meteor-class cloak fighter pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 12500
-  - type: ShipVoucher
-    ship: Meteor
-
-- type: entity
-  parent: BaseItem
   id: ShipVoucherRapier
   name: NCWL 'Rapier' pattern LPC fabprint disk
   description: An LPC fabprint disk loaded with a communard Rapier-class torpedo bomber pattern. Has to be redeemed at a shipyard console.
@@ -361,23 +344,6 @@
     price: 40000
   - type: ShipVoucher
     ship: Hind
-
-- type: entity
-  parent: BaseItem
-  id: ShipVoucherCherenzikov
-  name: NCWL 'Cherenzikov' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a communard Cherenzikov-class frontliner corvette pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 30000
-  - type: ShipVoucher
-    ship: Cherenzikov
 
 - type: entity
   parent: BaseItem
@@ -415,56 +381,6 @@
 
 - type: entity
   parent: BaseItem
-  id: ShipVoucherVasinya
-  name: NCWL 'Vasinya' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a communard Vasinya-class corvette pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 25000
-  - type: ShipVoucher
-    ship: Vasinya
-
-- type: entity
-  parent: BaseItem
-  id: ShipVoucherClementine
-  name: NCWL 'Clementine' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a communard Clementine-class Flagship battlecruiser pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: Contraband
-  - type: ShipVoucher
-    ship: Clementine
-
-- type: entity
-  parent: BaseItem
-  id: ShipVoucherSasha
-  name: NCWL 'Sasha' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a communard Sasha-class assault frigate pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 30000
-  - type: ShipVoucher
-    ship: Sasha
-
-- type: entity
-  parent: BaseItem
   id: ShipVoucherGargut
   name: NCWL 'Gargut' pattern LPC fabprint disk
   description: An LPC fabprint disk loaded with a communard Gargut-class siege artillery cruiser pattern. Has to be redeemed at a shipyard console.
@@ -479,23 +395,6 @@
     price: 70000
   - type: ShipVoucher
     ship: Gargut
-
-- type: entity
-  parent: BaseItem
-  id: ShipVoucherZhipov
-  name: NCWL 'Zhipov' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a communard Zhipov-class converted battlecarrier pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 80000
-  - type: ShipVoucher
-    ship: Zhipov
 
 - type: entity
   parent: BaseItem

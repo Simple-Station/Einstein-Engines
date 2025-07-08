@@ -1,0 +1,15 @@
+
+- type: loadout
+  id: LoadoutBeltSheathSRMKhopesh
+  category: Belt
+  cost: 0
+  items:
+    - ClothingBeltSheathKhopesh
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - HunterSRM
+        - MontagneSRM
+        - OverseerSRM

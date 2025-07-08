@@ -37,7 +37,7 @@
 #coats
 
 - type: entity
-  parent: ClothingOuterStorageBase
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
   id: ClothingOuterCoatAuthorityKommandant
   name: kommandant's formal coat
   description: An ornate, durathread-reinforced officer's coat.
@@ -64,7 +64,7 @@
     price: 1500
 
 - type: entity
-  parent: ClothingOuterStorageBase
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
   id: ClothingOuterCoatAuthorityLeutnant
   name: leutnant's formal coat
   description: An ornate, durathread-reinforced officer's coat.
