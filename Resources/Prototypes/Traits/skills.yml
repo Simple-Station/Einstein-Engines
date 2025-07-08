@@ -208,17 +208,6 @@
       components:
         - type: SurgerySpeedModifier
           speedModifier: 1.5
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - MedicalDoctor
-        - Chemist
-        - MedicalIntern
-        - Paramedic
-        - ChiefMedicalOfficer
-        - Brigmedic
-        - SeniorPhysician
 
 - type: trait
   id: ExperiencedSurgeon
@@ -229,13 +218,4 @@
       components:
       - type: SurgerySpeedModifier
         speedModifier: 2
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-      - MedicalDoctor
-      - Chemist
-      - Paramedic
-      - Brigmedic
-      - SeniorPhysician
 
