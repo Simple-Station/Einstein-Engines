@@ -17,7 +17,7 @@ entities:
       name: grid
     - type: Transform
       pos: -0.49256897,-0.5966301
-      parent: 78
+      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -120,18 +120,6 @@ entities:
     - type: GasTileOverlay
     - type: BecomesStation
       id: Conquest
-  - uid: 78
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: PhysicsMap
-    - type: GridTree
-    - type: MovedGrids
-    - type: Broadphase
-    - type: OccluderTree
 - proto: AirlockCommandLockedDSM
   entities:
   - uid: 42
@@ -343,6 +331,20 @@ entities:
     - type: Transform
       pos: 0.5,4.5
       parent: 1
+    - type: ContainerContainer
+      containers:
+        board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        disk_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        id_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
     - type: DeviceLinkSource
       linkedPorts:
         39:
@@ -472,7 +474,7 @@ entities:
     - type: Transform
       pos: 1.5,0.5
       parent: 1
-- proto: ShuttleGunBizmuthDSM
+- proto: ShuttleGunBizmuth
   entities:
   - uid: 39
     components:
@@ -501,8 +503,6 @@ entities:
     - type: Transform
       pos: 1.5,0.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 200
 - proto: SpawnPointLatejoin
   entities:
   - uid: 2
@@ -510,13 +510,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 0.5,1.5
-      parent: 1
-- proto: SpawnPointLevyman
-  entities:
-  - uid: 41
-    components:
-    - type: Transform
-      pos: 0.5,3.5
       parent: 1
 - proto: SubstationWallBasic
   entities:
@@ -541,46 +534,34 @@ entities:
       rot: 3.141592653589793 rad
       pos: -0.5,-0.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 19
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 1.5,-0.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 31
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 2.5,0.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 36
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -1.5,0.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 37
     components:
     - type: Transform
       pos: 1.5,3.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 38
     components:
     - type: Transform
       pos: -0.5,3.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
 - proto: ToolboxMechanicalFilled
   entities:
   - uid: 71

@@ -5,12 +5,12 @@
   price: 44000
   category: Small
   group: None
-  path: /Maps/_Crescent/Shuttles/DSM/unionfall/raider.yml
+  path: /Maps/_Crescent/Shuttles/Unionfall/DSM/unionfall_raider.yml
 
 - type: gameMap
   id: Raider
   mapName: 'DSM Raider'
-  mapPath: /Maps/_Crescent/Shuttles/DSM/unionfall/raider.yml
+  mapPath: /Maps/_Crescent/Shuttles/Unionfall/DSM/unionfall_raider.yml
   minPlayers: 0
   stations:
     Raider:

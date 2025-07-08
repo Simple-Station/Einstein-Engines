@@ -38,7 +38,7 @@ entities:
     - type: Broadphase
     - type: Physics
       bodyStatus: InAir
-      angularDamping: 3
+      angularDamping: 0.05
       linearDamping: 0.05
       fixedRotation: False
       bodyType: Dynamic
@@ -60,32 +60,38 @@ entities:
             color: '#D381C996'
             id: BrickTileSteelEndN
           decals:
-            18: 0,1
+            5: 0,1
         - node:
             color: '#D381C996'
             id: BrickTileSteelEndS
           decals:
-            17: 0,-2
+            4: 0,-2
         - node:
             color: '#D381C996'
             id: BrickTileSteelLineE
           decals:
-            21: 0,-1
-            22: 0,0
+            8: 0,-1
+            9: 0,0
         - node:
             color: '#D381C996'
             id: BrickTileSteelLineW
           decals:
-            19: 0,0
-            20: 0,-1
+            6: 0,0
+            7: 0,-1
+        - node:
+            angle: 1.5707963267948966 rad
+            color: '#FFFFFF5E'
+            id: LoadingArea
+          decals:
+            10: -0.006844878,-1.9833646
         - node:
             color: '#D381C996'
             id: WarnFullGreyscale
           decals:
-            13: -1,1
-            14: -1,0
-            15: 1,0
-            16: 1,1
+            0: -1,1
+            1: -1,0
+            2: 1,0
+            3: 1,1
     - type: RadiationGridResistance
     - type: GridAtmosphere
       version: 2
@@ -363,12 +369,12 @@ entities:
           showEnts: False
           occludes: True
           ents:
+          - 6
+          - 7
+          - 8
+          - 9
           - 11
           - 10
-          - 9
-          - 8
-          - 7
-          - 6
 - proto: ComputerShuttle
   entities:
   - uid: 16
@@ -376,6 +382,20 @@ entities:
     - type: Transform
       pos: 0.5,2.5
       parent: 1
+    - type: ContainerContainer
+      containers:
+        board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        disk_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        id_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
     - type: DeviceLinkSource
       linkedPorts:
         42:
@@ -389,6 +409,8 @@ entities:
     - type: Transform
       parent: 5
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
   - uid: 8
@@ -396,6 +418,8 @@ entities:
     - type: Transform
       parent: 5
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
   - uid: 9
@@ -403,6 +427,8 @@ entities:
     - type: Transform
       parent: 5
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
   - uid: 11
@@ -410,8 +436,42 @@ entities:
     - type: Transform
       parent: 5
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
+  - uid: 21
+    components:
+    - type: Transform
+      parent: 42
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+  - uid: 65
+    components:
+    - type: Transform
+      parent: 42
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+  - uid: 66
+    components:
+    - type: Transform
+      parent: 57
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+  - uid: 76
+    components:
+    - type: Transform
+      parent: 57
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
 - proto: JugBoriaticFuel
   entities:
   - uid: 10
@@ -419,6 +479,8 @@ entities:
     - type: Transform
       parent: 5
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
 - proto: PlasmaReinforcedWindowDirectional
@@ -487,6 +549,26 @@ entities:
       rot: 3.141592653589793 rad
       pos: 2.5,0.5
       parent: 1
+    - type: ContainerContainer
+      containers:
+        machine_board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        machine_parts: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        ballistic-ammo: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 21
+          - 65
+    - type: BallisticAmmoProvider
+      entities:
+      - 21
+      - 65
     - type: DeviceLinkSink
       links:
       - 16
@@ -496,6 +578,26 @@ entities:
       rot: 3.141592653589793 rad
       pos: -1.5,0.5
       parent: 1
+    - type: ContainerContainer
+      containers:
+        machine_board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        machine_parts: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        ballistic-ammo: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 66
+          - 76
+    - type: BallisticAmmoProvider
+      entities:
+      - 66
+      - 76
     - type: DeviceLinkSink
       links:
       - 16
@@ -507,21 +609,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 1.5,1.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 200
 - proto: SpawnPointLatejoin
   entities:
   - uid: 22
     components:
     - type: Transform
       pos: 0.5,-0.5
-      parent: 1
-- proto: SpawnPointLevyman
-  entities:
-  - uid: 21
-    components:
-    - type: Transform
-      pos: 0.5,0.5
       parent: 1
 - proto: SubstationWallBasic
   entities:
@@ -539,46 +632,34 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 2.5,-1.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 37
     components:
     - type: Transform
       pos: -0.5,2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 38
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -1.5,-1.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 40
     components:
     - type: Transform
       pos: 1.5,2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 41
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 1.5,-2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 64
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -0.5,-2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
 - proto: ToolboxMechanicalFilled
   entities:
   - uid: 7
@@ -586,6 +667,8 @@ entities:
     - type: Transform
       parent: 5
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
 - proto: WallPlastitanium

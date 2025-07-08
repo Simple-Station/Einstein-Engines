@@ -179,9 +179,6 @@ entities:
     - type: RadiationGridResistance
     - type: BecomesStation
       id: Imparator
-    - type: CrescentEMPTechnologyTier
-      powerLossMarkiplier: 1.2
-      eMPMultiplier: 0.7
     - type: IFF
       relations: {}
       color: '#F6CE9C9C'
@@ -189,6 +186,14 @@ entities:
     - type: ShuttleDeed
       shuttleName: Shuttle TAN-282
       shuttleUid: 1
+- proto: ActionToggleInternals
+  entities:
+  - uid: 94
+    components:
+    - type: Transform
+      parent: 93
+    - type: InstantAction
+      container: 93
 - proto: AirAlarm
   entities:
   - uid: 110
@@ -216,7 +221,7 @@ entities:
       pos: -1.5,-7.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -1838.74
+      secondsUntilStateChange: -2021.2637
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -228,15 +233,6 @@ entities:
     - type: Transform
       pos: 0.5,-9.5
       parent: 1
-- proto: AirTankFilled
-  entities:
-  - uid: 186
-    components:
-    - type: Transform
-      parent: 182
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: APCBasic
   entities:
   - uid: 109
@@ -575,6 +571,152 @@ entities:
     - type: Transform
       pos: -1.5,-5.5
       parent: 1
+- proto: CartridgeShellArmorPiercing
+  entities:
+  - uid: 99
+    components:
+    - type: Transform
+      parent: 98
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 100
+    components:
+    - type: Transform
+      parent: 98
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 101
+    components:
+    - type: Transform
+      parent: 98
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 102
+    components:
+    - type: Transform
+      parent: 98
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 103
+    components:
+    - type: Transform
+      parent: 98
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 104
+    components:
+    - type: Transform
+      parent: 98
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 105
+    components:
+    - type: Transform
+      parent: 98
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 178
+    components:
+    - type: Transform
+      parent: 98
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 179
+    components:
+    - type: Transform
+      parent: 98
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 183
+    components:
+    - type: Transform
+      parent: 98
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 184
+    components:
+    - type: Transform
+      parent: 98
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 185
+    components:
+    - type: Transform
+      parent: 98
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 186
+    components:
+    - type: Transform
+      parent: 98
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 187
+    components:
+    - type: Transform
+      parent: 98
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 188
+    components:
+    - type: Transform
+      parent: 98
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 189
+    components:
+    - type: Transform
+      parent: 98
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: Catwalk
   entities:
   - uid: 73
@@ -611,31 +753,37 @@ entities:
       rot: 3.141592653589793 rad
       pos: 0.5,-6.5
       parent: 1
-- proto: ClothingMaskImperialCombatGasmask
+- proto: ClothingHeadHelmetImperialEVA
   entities:
-  - uid: 184
+  - uid: 97
     components:
     - type: Transform
       parent: 182
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingOuterHardsuitImperialSoldier
+- proto: ClothingOuterCoatImperialSoftsuit
   entities:
-  - uid: 185
+  - uid: 95
     components:
     - type: Transform
       parent: 182
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingShoesBootsMagSyndie
+- proto: ClothingShoesBootsMag
   entities:
-  - uid: 183
+  - uid: 92
     components:
     - type: Transform
       parent: 182
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
 - proto: ComputerTabletopAdvancedRadar
@@ -652,23 +800,6 @@ entities:
     - type: Transform
       pos: 0.5,-5.5
       parent: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        invalid:
-        - Group2: Trigger
-        72:
-        - Group1: SpaceArtilleryFire
-        91:
-        - Group5: Toggle
-        88:
-        - Group2: Toggle
-    - type: NamedModules
-      buttonNames:
-      - Fire 120mm
-      - Fire Vulcan
-      - Module C
-      - Module D
-      - Module E
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -683,8 +814,42 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+    - type: DeviceLinkSource
+      linkedPorts:
+        72:
+        - Group1: SpaceArtilleryFire
+        91:
+        - Group5: Toggle
+        88:
+        - Group2: Toggle
+    - type: NamedModules
+      buttonNames:
+      - Fire 120mm
+      - Fire Vulcan
+      - Module C
+      - Module D
+      - Module E
     - type: ApcPowerReceiver
       needsPower: False
+- proto: DoubleEmergencyOxygenTankFilled
+  entities:
+  - uid: 93
+    components:
+    - type: Transform
+      parent: 182
+    - type: GasTank
+      toggleActionEntity: 94
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: ActionsContainer
+    - type: ContainerContainer
+      containers:
+        actions: !type:Container
+          ents:
+          - 94
+    - type: InsideEntityStorage
 - proto: FaxMachineShip
   entities:
   - uid: 89
@@ -763,13 +928,15 @@ entities:
     - type: Transform
       pos: 3.5,-7.5
       parent: 1
-- proto: JetpackMiniFilled
+- proto: JetpackBlackFilled
   entities:
-  - uid: 188
+  - uid: 96
     components:
     - type: Transform
       parent: 182
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
 - proto: JugBoriaticFuel
@@ -779,7 +946,77 @@ entities:
     - type: Transform
       pos: -2.7382278,-7.6162977
       parent: 1
-- proto: NTVulcanTurretDSM
+- proto: MagazineVulcan
+  entities:
+  - uid: 198
+    components:
+    - type: Transform
+      parent: 197
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 200
+    components:
+    - type: Transform
+      parent: 197
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: N14CrateAluminium
+  entities:
+  - uid: 98
+    components:
+    - type: Transform
+      pos: 1.5,-4.5
+      parent: 1
+    - type: ContainerContainer
+      containers:
+        entity_storage: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 99
+          - 100
+          - 101
+          - 102
+          - 103
+          - 104
+          - 105
+          - 178
+          - 179
+          - 183
+          - 184
+          - 185
+          - 186
+          - 187
+          - 188
+          - 189
+        paper_label: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+  - uid: 197
+    components:
+    - type: Transform
+      pos: 0.5,-4.5
+      parent: 1
+    - type: ContainerContainer
+      containers:
+        entity_storage: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 198
+          - 200
+        paper_label: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+- proto: NTVulcanTurret
   entities:
   - uid: 88
     components:
@@ -944,21 +1181,11 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 4.5,-7.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 200
 - proto: SpawnPointLatejoin
   entities:
   - uid: 180
     components:
     - type: Transform
-      pos: 0.5,-6.5
-      parent: 1
-- proto: SpawnPointLevyman
-  entities:
-  - uid: 197
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 0.5,-6.5
       parent: 1
 - proto: SubstationWallBasic
@@ -1001,12 +1228,11 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 183
-          - 184
-          - 185
-          - 186
-          - 187
-          - 188
+          - 96
+          - 97
+          - 92
+          - 95
+          - 93
     - type: Physics
       canCollide: False
 - proto: TableReinforced
@@ -1036,63 +1262,47 @@ entities:
     - type: Transform
       pos: 2.5,1.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 61
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -3.5,-9.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 62
     components:
     - type: Transform
       pos: -1.5,1.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 63
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -2.5,-9.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 64
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 3.5,-9.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 65
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 3.5,-5.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 66
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -2.5,-5.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 201
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 4.5,-9.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
 - proto: Type99Artillery
   entities:
   - uid: 72
@@ -1445,15 +1655,6 @@ entities:
     - type: Transform
       pos: 0.5,-6.5
       parent: 1
-- proto: WeaponPistolComplianceImperial
-  entities:
-  - uid: 187
-    components:
-    - type: Transform
-      parent: 182
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: WindoorSecure
   entities:
   - uid: 84

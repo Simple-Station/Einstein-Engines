@@ -5,12 +5,12 @@
   price: 18000
   category: Small
   group: None
-  path: /Maps/_Crescent/Shuttles/DSM/unionfall/conquest.yml
+  path: /Maps/_Crescent/Shuttles/Unionfall/DSM/unionfall_conquest.yml
 
 - type: gameMap
   id: Conquest
   mapName: 'DSM Conquest'
-  mapPath: /Maps/_Crescent/Shuttles/DSM/unionfall/conquest.yml
+  mapPath: /Maps/_Crescent/Shuttles/Unionfall/DSM/unionfall_conquest.yml
   minPlayers: 0
   stations:
     Conquest:

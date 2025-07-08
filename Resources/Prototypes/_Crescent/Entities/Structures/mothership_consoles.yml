@@ -61,6 +61,7 @@
     - Jannissary
     - Conquest
     - Valor
+    - Raider
 
 
 - type: entity
@@ -122,9 +123,10 @@
   components:
   - type: ShipyardListing
     shuttles:
-    - Khopesh
-    - Broadsword
-    - Vanguard
+    - UnionfallKhopesh
+    - UnionfallBroadsword
+    - UnionfallVanguard
+    - UnionfallHind
 
 - type: entity
   id: JackalCarrierMothershipComputer

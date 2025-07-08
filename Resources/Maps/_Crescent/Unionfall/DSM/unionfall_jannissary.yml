@@ -8,6 +8,7 @@ tilemap:
   42: FloorDarkPlastic
   129: Lattice
   130: Plating
+  1: PlatingDamaged
 entities:
 - proto: ""
   entities:
@@ -22,7 +23,7 @@ entities:
       chunks:
         0,0:
           ind: 0,0
-          tiles: ggAAAAAAIgAAAAAAIgAAAAAAggAAAAAAIwAAAAAAggAAAAAAggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAggAAAAAAIgAAAAAAIgAAAAAAggAAAAAAIwAAAAAAIwAAAAAAggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAggAAAAAAKgAAAAAAggAAAAAAIwAAAAAAggAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAggAAAAAAKgAAAAAAggAAAAAAIwAAAAAAggAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAgQAAAAAAKgAAAAAAggAAAAAAggAAAAAAgQAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+          tiles: ggAAAAAAIgAAAAAAIgAAAAAAggAAAAAAIwAAAAAAggAAAAAAggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAggAAAAAAIgAAAAAAIgAAAAAAggAAAAAAIwAAAAAAIwAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAggAAAAAAKgAAAAAAggAAAAAAIwAAAAAAggAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAggAAAAAAKgAAAAAAggAAAAAAIwAAAAAAggAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAgQAAAAAAKgAAAAAAggAAAAAAggAAAAAAgQAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
           version: 6
         0,-1:
           ind: 0,-1
@@ -48,7 +49,28 @@ entities:
     - type: DecalGrid
       chunkCollection:
         version: 2
-        nodes: []
+        nodes:
+        - node:
+            color: '#FFFFFFFF'
+            id: Box
+          decals:
+            2: 5.0068984,-0.004050553
+        - node:
+            angle: 1.5707963267948966 rad
+            color: '#FFFFFF5E'
+            id: LoadingArea
+          decals:
+            3: 3.9878697,1.0290049
+        - node:
+            color: '#FFFFFF4F'
+            id: arrow
+          decals:
+            0: 4.968033,-0.9457419
+        - node:
+            color: '#FFFFFF4F'
+            id: skull
+          decals:
+            1: 4.686783,-1.2810574
     - type: GridAtmosphere
       version: 2
       data:
@@ -130,16 +152,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 3.5,-2.5
       parent: 1
-  - uid: 70
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 3.5,1.5
-      parent: 1
-    - type: DeviceList
-      devices:
-      - 62
-      - 55
 - proto: AirlockCommandLockedDSM
   entities:
   - uid: 53
@@ -195,8 +207,23 @@ entities:
     - type: Transform
       pos: 2.5,4.5
       parent: 1
+  - uid: 82
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 5.5,1.5
+      parent: 1
 - proto: BlastDoor
   entities:
+  - uid: 157
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 5.5,1.5
+      parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 70
   - uid: 186
     components:
     - type: Transform
@@ -237,14 +264,6 @@ entities:
       links:
       - 46
       - 168
-  - uid: 190
-    components:
-    - type: Transform
-      pos: 6.5,2.5
-      parent: 1
-    - type: DeviceLinkSink
-      links:
-      - 168
 - proto: BoriaticGeneratorHerculesShuttle
   entities:
   - uid: 65
@@ -269,6 +288,14 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 3.5,2.5
+      parent: 1
+- proto: ButtonFrameGrey
+  entities:
+  - uid: 44
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 3.5,1.5
       parent: 1
 - proto: CableApcExtension
   entities:
@@ -651,8 +678,10 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 170
           - 171
+          - 170
+          - 19
+          - 20
 - proto: ClothingHeadHelmetImperialEVA
   entities:
   - uid: 166
@@ -687,6 +716,20 @@ entities:
     - type: Transform
       pos: 4.5,3.5
       parent: 1
+    - type: ContainerContainer
+      containers:
+        board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        disk_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        id_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
     - type: DeviceLinkSource
       linkedPorts:
         8:
@@ -708,28 +751,6 @@ entities:
       - N/A
       - N/A
       - N/A
-    - type: ContainerContainer
-      containers:
-        board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        disk_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        id_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-- proto: ComputerStationRecords
-  entities:
-  - uid: 73
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 5.5,1.5
-      parent: 1
 - proto: EwarDevice
   entities:
   - uid: 69
@@ -827,9 +848,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 2.5,-0.5
       parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 70
 - proto: GasVentScrubber
   entities:
   - uid: 62
@@ -838,9 +856,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 4.5,-0.5
       parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 70
 - proto: GravityGeneratorMini
   entities:
   - uid: 66
@@ -870,11 +885,6 @@ entities:
     - type: Transform
       pos: 5.5,4.5
       parent: 1
-  - uid: 19
-    components:
-    - type: Transform
-      pos: 6.5,2.5
-      parent: 1
   - uid: 24
     components:
     - type: Transform
@@ -892,20 +902,36 @@ entities:
   - uid: 48
     components:
     - type: Transform
-      pos: 1.3032551,1.5847759
+      pos: 3.5049078,-1.3535812
       parent: 1
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
   - uid: 49
     components:
     - type: Transform
-      pos: 1.5559087,1.5996423
+      pos: 3.2266645,-1.3608441
       parent: 1
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: MagazineGrenadeBlast
   entities:
+  - uid: 73
+    components:
+    - type: Transform
+      parent: 8
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
   - uid: 170
     components:
     - type: Transform
       parent: 169
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
   - uid: 171
@@ -913,6 +939,28 @@ entities:
     - type: Transform
       parent: 169
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: MagazineLightRifleBoxSlug
+  entities:
+  - uid: 19
+    components:
+    - type: Transform
+      parent: 169
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 20
+    components:
+    - type: Transform
+      parent: 169
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
 - proto: MedkitCombatFilled
@@ -920,8 +968,11 @@ entities:
   - uid: 81
     components:
     - type: Transform
-      pos: 3.190277,-1.3518946
+      pos: 3.8672895,-1.75174
       parent: 1
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: PlasmaReinforcedWindowDirectional
   entities:
   - uid: 57
@@ -1025,11 +1076,81 @@ entities:
     - type: Transform
       pos: 5.5,2.5
       parent: 1
-  - uid: 44
+- proto: ShuttersNormal
+  entities:
+  - uid: 33
     components:
     - type: Transform
-      pos: 6.5,2.5
+      pos: 2.5,4.5
       parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 88
+- proto: ShuttleGunMissileRack
+  entities:
+  - uid: 8
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 2.5,3.5
+      parent: 1
+    - type: ContainerContainer
+      containers:
+        machine_board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        machine_parts: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        gun_magazine: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: 73
+    - type: DeviceLinkSink
+      links:
+      - 46
+- proto: SignalButton
+  entities:
+  - uid: 70
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 3.5,1.5
+      parent: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        157:
+        - Pressed: Toggle
+  - uid: 88
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 3.5,1.5
+      parent: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        33:
+        - Pressed: Toggle
+  - uid: 168
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 3.5,2.5
+      parent: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        186:
+        - Pressed: Toggle
+        187:
+        - Pressed: Toggle
+        188:
+        - Pressed: Toggle
+        189:
+        - Pressed: Toggle
+        invalid:
+        - Pressed: Toggle
 - proto: SlugthrowerCannon
   entities:
   - uid: 32
@@ -1043,6 +1164,8 @@ entities:
     - type: DeviceLinkSink
       links:
       - 46
+    - type: ChamberMagazineAmmoProvider
+      boltClosed: True
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -1070,57 +1193,6 @@ entities:
       autoRecharge: True
     - type: ApcPowerReceiver
       powerLoad: 2000
-- proto: ShuttersNormal
-  entities:
-  - uid: 33
-    components:
-    - type: Transform
-      pos: 2.5,4.5
-      parent: 1
-    - type: DeviceLinkSink
-      links:
-      - 88
-- proto: ShuttleGunMissileRack
-  entities:
-  - uid: 8
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 2.5,3.5
-      parent: 1
-    - type: DeviceLinkSink
-      links:
-      - 46
-- proto: SignalButton
-  entities:
-  - uid: 88
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 3.5,1.5
-      parent: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        33:
-        - Pressed: Toggle
-  - uid: 168
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 3.5,2.5
-      parent: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        186:
-        - Pressed: Toggle
-        187:
-        - Pressed: Toggle
-        188:
-        - Pressed: Toggle
-        189:
-        - Pressed: Toggle
-        190:
-        - Pressed: Toggle
 - proto: SmallGyroscopeSecurity
   entities:
   - uid: 77
@@ -1129,21 +1201,12 @@ entities:
       rot: 3.141592653589793 rad
       pos: 5.5,-2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 200
 - proto: SpawnPointLatejoin
   entities:
   - uid: 155
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: 3.5,-0.5
-      parent: 1
-- proto: SpawnPointLevyman
-  entities:
-  - uid: 157
-    components:
-    - type: Transform
       pos: 3.5,-0.5
       parent: 1
 - proto: SubstationWallBasic
@@ -1214,54 +1277,40 @@ entities:
       rot: 3.141592653589793 rad
       pos: 5.5,-3.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 51
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 6.5,-2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 56
     components:
     - type: Transform
       pos: 0.5,4.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 85
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 0.5,3.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 86
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 1.5,-3.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 173
     components:
     - type: Transform
       pos: 3.5,4.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 176
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 3.5,-3.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
 - proto: WallPlastitanium
   entities:
   - uid: 2
@@ -1303,11 +1352,6 @@ entities:
     components:
     - type: Transform
       pos: 3.5,2.5
-      parent: 1
-  - uid: 20
-    components:
-    - type: Transform
-      pos: 6.5,1.5
       parent: 1
   - uid: 21
     components:
@@ -1394,14 +1438,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 3.5,-0.5
       parent: 1
-- proto: WeaponPistolComplianceImperial
-  entities:
-  - uid: 82
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 3.659027,-1.3987696
-      parent: 1
 - proto: WindoorSecurePlasma
   entities:
   - uid: 34
@@ -1419,7 +1455,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -1975.9292
+      secondsUntilStateChange: -2753.6362
       state: Opening
   - uid: 79
     components:
@@ -1432,7 +1468,9 @@ entities:
   - uid: 84
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 1.4402771,1.6009507
+      pos: 3.2424996,-1.6190436
       parent: 1
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 ...

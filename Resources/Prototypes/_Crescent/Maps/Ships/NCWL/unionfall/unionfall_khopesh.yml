@@ -1,23 +1,26 @@
+# Author Info
+# Discord: @fleshangel
+
 - type: vessel
-  id: Imparator
-  name: DSM Imparator
-  description: A light Imperial picket and support fighter.
-  price: 30000
+  id: UnionfallKhopesh
+  name: NCWL Khopesh
+  description: An ultralight communard fighter.
+  price: 6000
   category: Small
   group: None
-  path: /Maps/_Crescent/Shuttles/Unionfall/DSM/unionfall_imparator.yml
+  path: /Maps/_Crescent/Shuttles/Unionfall/NCWL/unionfall_khopesh.yml
 
 - type: gameMap
-  id: Imparator
-  mapName: 'DSM Imparator'
-  mapPath: /Maps/_Crescent/Shuttles/Unionfall/DSM/unionfall_imparator.yml
+  id: UnionfallKhopesh
+  mapName: 'NCWL Khopesh'
+  mapPath: /Maps/_Crescent/Shuttles/Unionfall/NCWL/unionfall_khopesh.yml
   minPlayers: 0
   stations:
-    Imparator:
+    Khopesh:
       stationProto: StandardCrescentVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'DSM Imparator {1}'
+          mapNameTemplate: 'NCWL Khopesh {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'

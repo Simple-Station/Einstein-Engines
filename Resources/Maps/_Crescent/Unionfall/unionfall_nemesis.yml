@@ -1443,7 +1443,7 @@ entities:
       pos: 0.5,-10.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -7364.925
+      secondsUntilStateChange: -8780.923
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -1484,6 +1484,11 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -2.5,-0.5
       parent: 1
+  - uid: 627
+    components:
+    - type: Transform
+      pos: 1.5,-19.5
+      parent: 1
 - proto: AirlockCommandLockedDSMHorizontalSoldier
   entities:
   - uid: 527
@@ -1491,11 +1496,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 9.5,-21.5
-      parent: 1
-  - uid: 627
-    components:
-    - type: Transform
-      pos: 1.5,-19.5
       parent: 1
 - proto: AirlockExternal
   entities:
@@ -1543,7 +1543,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -14603.639
+      secondsUntilStateChange: -16019.637
       state: Opening
   - uid: 403
     components:
