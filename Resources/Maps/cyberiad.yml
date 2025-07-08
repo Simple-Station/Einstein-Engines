@@ -80118,7 +80118,7 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingBackpackDuffelMimeFilled
+- proto: ClothingBackpackDuffelMime
   entities:
   - uid: 12633
     components:

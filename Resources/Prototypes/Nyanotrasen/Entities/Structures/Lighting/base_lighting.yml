@@ -146,8 +146,6 @@
       types:
         Heat: 2
     popupText: powered-light-component-burn-hand
-  - type: StaticPrice #DynamicPrice
-    price: 25
 
 - type: entity
   id: AlwaysPoweredLightPostSmallRed

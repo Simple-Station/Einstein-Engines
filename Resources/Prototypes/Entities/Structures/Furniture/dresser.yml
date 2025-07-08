@@ -51,8 +51,6 @@
   parent: Dresser
   suffix: Filled
   components:
-  - type: StaticPrice
-    price: 15
   - type: StorageFill
     contents:
       - id: ClothingNeckLGBTPin

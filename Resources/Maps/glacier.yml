@@ -47083,7 +47083,7 @@ entities:
           restitution: 0.3
           friction: 0.2
     - type: InsideEntityStorage
-- proto: ClothingBackpackDuffelMusicianFilled
+- proto: ClothingBackpackDuffel
   entities:
   - uid: 16000
     components:
