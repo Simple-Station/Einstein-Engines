@@ -3712,6 +3712,12 @@ entities:
     - type: Transform
       pos: 0.5,-8.5
       parent: 1
+  - uid: 94
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 11.5,-0.5
+      parent: 1
 - proto: WallShuttleDiagonal
   entities:
   - uid: 2
@@ -3748,14 +3754,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 11.5,-6.5
-      parent: 1
-- proto: WallShuttleInterior
-  entities:
-  - uid: 94
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 11.5,-0.5
       parent: 1
 - proto: WindoorSecure
   entities:

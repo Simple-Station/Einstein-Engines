@@ -21117,56 +21117,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 27.5,34.5
       parent: 2
-- proto: WallShuttleDiagonal
-  entities:
-  - uid: 2959
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 38.5,39.5
-      parent: 2
-  - uid: 2960
-    components:
-    - type: Transform
-      pos: 32.5,39.5
-      parent: 2
-  - uid: 2961
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 45.5,31.5
-      parent: 2
-  - uid: 2962
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 42.5,38.5
-      parent: 2
-  - uid: 2963
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 45.5,37.5
-      parent: 2
-  - uid: 2964
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 42.5,30.5
-      parent: 2
-  - uid: 2965
-    components:
-    - type: Transform
-      pos: 28.5,38.5
-      parent: 2
-  - uid: 2966
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 28.5,30.5
-      parent: 2
-- proto: WallShuttleInterior
-  entities:
   - uid: 2967
     components:
     - type: Transform
@@ -21224,6 +21174,54 @@ entities:
     components:
     - type: Transform
       pos: 29.5,32.5
+      parent: 2
+- proto: WallShuttleDiagonal
+  entities:
+  - uid: 2959
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 38.5,39.5
+      parent: 2
+  - uid: 2960
+    components:
+    - type: Transform
+      pos: 32.5,39.5
+      parent: 2
+  - uid: 2961
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 45.5,31.5
+      parent: 2
+  - uid: 2962
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 42.5,38.5
+      parent: 2
+  - uid: 2963
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 45.5,37.5
+      parent: 2
+  - uid: 2964
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 42.5,30.5
+      parent: 2
+  - uid: 2965
+    components:
+    - type: Transform
+      pos: 28.5,38.5
+      parent: 2
+  - uid: 2966
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 28.5,30.5
       parent: 2
 - proto: WallSolid
   entities:
