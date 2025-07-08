@@ -400,7 +400,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
             {
                 const float ShipSelectionDotRadius = 5f;
                 // transform vector from worldPosition to UIPosition.
-                Vector2 UIPosVector = Vector2.Transform(_transform.GetWorldPosition(gUid) - mapPos.Position, ourWorldMatrixInvert);
+                Vector2 UIPosVector = (-rot).RotateVec(_transform.GetWorldPosition(grid.Owner) - mapPos.Position);
                 UIPosVector.Y *= -1;
                 // get its direction.
                 Vector2 UIDirection = UIPosVector.Normalized();
