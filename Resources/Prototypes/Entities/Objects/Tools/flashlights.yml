@@ -126,7 +126,7 @@
         Blunt: 8
     bluntStaminaDamageFactor: 2.5
     heavyRateModifier: 2
-    heavyRangeModifier: 1.75
+    heavyRangeModifier: 1.2
     heavyDamageBaseModifier: 1.25
     maxTargets: 1
     angle: 20

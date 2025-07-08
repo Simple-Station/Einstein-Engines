@@ -357,6 +357,35 @@
         Piercing: 3
 
 - type: entity
+  id: BaseAdvancedPen
+  # Goobstation - Return pen embeddability
+  parent: Pen
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - Write
+    - WriteIgnoreStamps
+    - Pickaxe
+    - Pen
+  - type: MeleeWeapon
+    wideAnimationRotation: -45
+    damage:
+      types:
+        Piercing: 15
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Tool
+    qualities:
+    - Screwing
+    useSound:
+      collection: Screwdriver
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 20 # Goobstation - ow
+
+- type: entity
   parent: Pen
   id: PenEmbeddable
   abstract: true

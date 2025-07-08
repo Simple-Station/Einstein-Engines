@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using Content.Shared.Light.Components;
 using JetBrains.Annotations;
 using Robust.Client.Animations;
@@ -359,9 +359,6 @@ namespace Content.Client.Light.Components
     [RegisterComponent]
     public sealed partial class LightBehaviourComponent : SharedLightBehaviourComponent, ISerializationHooks
     {
-        [Dependency] private readonly IEntityManager _entMan = default!;
-        [Dependency] private readonly IRobustRandom _random = default!;
-
         public const string KeyPrefix = nameof(LightBehaviourComponent);
 
         public sealed class AnimationContainer

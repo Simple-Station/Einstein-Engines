@@ -29,6 +29,8 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+      - type: Condemned # Goobstation - Nanotrasen owns your soul pal.
+        soulOwnedNotDevil: true
   afterLoadoutSpecial:
   - !type:ModifyEnvirosuitSpecial
     charges: 8

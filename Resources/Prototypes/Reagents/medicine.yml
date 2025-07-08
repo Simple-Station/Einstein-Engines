@@ -1362,6 +1362,10 @@
         key: SeeingRainbows
         time: 10.0
         type: Remove
+      - !type:GenericStatusEffect
+        key: Stutter
+        time: 10.0
+        type: Remove
       - !type:AdjustReagent
         reagent: Desoxyephedrine
         amount: -3.0
@@ -1438,7 +1442,7 @@
   desc: reagent-desc-artiplates
   physicalDesc: reagent-physical-desc-cloudy
   flavor: medicine
-  color: "#382766"
+  color: "#422766"
   metabolisms:
     Medicine:
       effects:

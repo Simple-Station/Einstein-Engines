@@ -36,6 +36,7 @@
     damageContainers:
     - Inorganic
     - Silicon
+    - SiliconUnshielded
 
 - type: entity
   parent: ClothingEyesBase
@@ -286,7 +287,7 @@
   - type: Sprite
     sprite: Clothing/Eyes/Hud/secpatch.rsi
   - type: Clothing
-    sprite: Clothing/Eyes/Hud/secpatch.rsi 
+    sprite: Clothing/Eyes/Hud/secpatch.rsi
 
 - type: entity
   parent: [ClothingEyesHudSecurity, FlippableEyesBase]
@@ -327,3 +328,4 @@
     damageContainers:
     - Inorganic
     - Silicon
+    - SiliconUnshielded

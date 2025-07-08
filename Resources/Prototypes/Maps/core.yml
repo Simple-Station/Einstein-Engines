@@ -27,8 +27,8 @@
             Captain: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1]
             NanotrasenRepresentative: [ 1, 1 ]
-            Magistrate: [ 1, 1 ]
-            AdministrativeAssistant: [ 1, 1 ]
+            # Magistrate: [ 1, 1 ] # EE: Disabled
+            # AdministrativeAssistant: [ 1, 1 ] # EE: Disabled
             HeadOfPersonnel: [ 1, 1 ]
             ServiceWorker: [ 3, 6 ]
             # Engineering
@@ -66,8 +66,14 @@
             Clown: [ 1, 2 ]
             Mime: [ 1, 2 ]
             Musician: [ 1, 3 ]
-            Boxer: [ 2, 4 ]
+            # Boxer: [ 2, 4 ] # EE: Disabled
             Reporter: [ 2, 4 ]
             Passenger: [ -1, -1 ]
             # Silicon
             StationAi: [ 1, 1 ]
+        # blob-config-start SMALL+
+        - type: StationBlobConfig
+          stageBegin: 25
+          stageCritical: 350
+          stageTheEnd: 700
+        # blob-config-end
