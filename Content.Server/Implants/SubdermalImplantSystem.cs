@@ -207,7 +207,7 @@ public sealed class SubdermalImplantSystem : SharedSubdermalImplantSystem
         if (TryComp<HumanoidAppearanceComponent>(ent, out var humanoid))
         {
             var newProfile = HumanoidCharacterProfile.RandomWithSpecies(humanoid.Species);
-            _humanoidAppearance.LoadProfile(ent, newProfile, humanoid);
+            _humanoidAppearance.LoadProfile(ent, newProfile, humanoid, false, false);
             _metaData.SetEntityName(ent, newProfile.Name);
             if (TryComp<DnaComponent>(ent, out var dna))
             {

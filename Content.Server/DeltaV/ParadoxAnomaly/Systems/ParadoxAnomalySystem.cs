@@ -133,7 +133,11 @@ public sealed class ParadoxAnomalySystem : EntitySystem
         //////////////////////////
 
         // Copy the details.
-        _humanoid.LoadProfile(spawned, profile);
+        _humanoid.LoadProfile(
+            spawned,
+            profile,
+            loadExtensions: true, //Yes it's absolutely intended that they should straight up be EXACTLY the same character
+            generateLoadouts: true); //That means loadouts too. Have fun with there potentially being a 2nd HoS Gun for traitors to want to steal.
         _metaData.SetEntityName(spawned, Name(uid));
 
         if (TryComp<DetailExaminableComponent>(uid, out var detail))

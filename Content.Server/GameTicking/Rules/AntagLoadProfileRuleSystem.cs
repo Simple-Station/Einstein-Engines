@@ -47,6 +47,9 @@ public sealed class AntagLoadProfileRuleSystem : GameRuleSystem<AntagLoadProfile
             species = _proto.Index(ent.Comp.SpeciesHardOverride.Value); // Shitmed - Starlight Abductors
 
         args.Entity = Spawn(species.Prototype);
-        _humanoid.LoadProfile(args.Entity.Value, profile?.WithSpecies(species.ID));
+        _humanoid.LoadProfile(args.Entity.Value,
+            profile?.WithSpecies(species.ID),
+            loadExtensions: ent.Comp.AllowProfileExtensions,
+            generateLoadouts: ent.Comp.AllowAntagLoadouts);
     }
 }

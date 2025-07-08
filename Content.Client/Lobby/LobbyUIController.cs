@@ -316,7 +316,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
                 _prototypeManager.Index<SpeciesPrototype>(DefaultSpecies).DollPrototype,
                 MapCoordinates.Nullspace);
 
-        _humanoid.LoadProfile(dummyEnt, humanoid);
+        _humanoid.LoadProfile(dummyEnt, humanoid, loadExtensions: false, generateLoadouts: false);
 
         if (humanoid != null)
         {
