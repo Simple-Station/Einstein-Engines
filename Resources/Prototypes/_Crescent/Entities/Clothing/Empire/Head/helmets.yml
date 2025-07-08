@@ -434,3 +434,20 @@
     tags:
     - ClothMade
     - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadEVAHelmetBase
+  id: ClothingHeadHelmetImperialRitter
+  name: imperial ritter helmet
+  description: An imperial ritter helmet. Designed for pilots within imperial exoplate.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Head/ritterhelmet.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Head/ritterhelmet.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+  - type: IdentityBlocker

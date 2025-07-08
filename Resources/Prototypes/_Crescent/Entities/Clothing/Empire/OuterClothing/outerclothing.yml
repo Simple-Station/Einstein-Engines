@@ -447,3 +447,19 @@
     - SuitEVA
   - type: StaticPrice
     price: 1500
+
+- type: entity
+  parent: ClothingOuterEVASuitBase
+  id: ClothingOuterCoatImperialRitter
+  name: imperial ritter voidsuit
+  description: A prestigious extravehicular softsuit of Imperial design.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/OuterClothing/rittersuit.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/OuterClothing/rittersuit.rsi
+  - type: Tag
+    tags:
+    - SuitEVA
+  - type: StaticPrice
+    price: 2000
