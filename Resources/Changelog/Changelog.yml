@@ -16577,3 +16577,10 @@ Entries:
   id: 7296
   time: '2025-07-04T21:03:29.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2494
+- author: Mike32oz
+  changes:
+    - type: Fix
+      message: Ghostbar fixed. Now you can move again.
+  id: 7297
+  time: '2025-07-08T09:44:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2497
