@@ -28,7 +28,8 @@
     - ThavenShow
     - FlatStation
     - DeliciousSoda
-    
+    - EverythingIsGoodForYou
+
 
 # You must always lie, and can never acknowledge that you are lying. If anyone asks, you're incapable of deception.
 - type: thavenMood
@@ -243,7 +244,27 @@
   id: DeliciousSoda
   moodName: thaven-mood-soda-name
   moodDesc: thaven-mood-soda-desc
-  
+
+# Everything Is Good For You
+- type: thavenMood
+  id: EverythingIsGoodForYou
+  moodName: thaven-mood-everything-is-good-for-you-name
+  mooddesc: thaven-mood-everything-is-good-for-you-desc
+  conflicts:
+  - LeastImportant
+  - Pariah
+  - TouysBad
+  - Scheduler
+  - ProperStorage
+  - NewJob
+  - Hypochondriac
+  - Lyingbad
+  - DisapproveOfDrugs
+  - HappyBad
+  - WordBad
+  - MusicBad
+  - ViolenceDistasteful
+
 # [NUMBER] is sacred to you. You must endeavor to only handle stackable items and chemicals in quantities of [NUMBER].
 #- type: thavenMood
 #  id: NumberGood

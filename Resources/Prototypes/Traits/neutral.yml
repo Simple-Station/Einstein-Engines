@@ -145,7 +145,7 @@
 - type: trait
   id: Saturnine
   category: Mental
-  points: 2
+  points: 6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
