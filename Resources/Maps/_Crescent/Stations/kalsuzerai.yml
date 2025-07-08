@@ -31398,23 +31398,6 @@ entities:
     - type: Transform
       pos: -18.5,-48.5
       parent: 1
-- proto: LaborMothershipComputer
-  entities:
-  - uid: 1755
-    components:
-    - type: Transform
-      pos: -8.5,-28.5
-      parent: 1
-    - type: ContainerContainer
-      containers:
-        ShipyardConsole-targetId: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
 - proto: LampInterrogator
   entities:
   - uid: 3274
@@ -35834,23 +35817,6 @@ entities:
     - type: Transform
       pos: -25.762104,-38.498596
       parent: 1
-- proto: ScribesMothershipComputer
-  entities:
-  - uid: 1769
-    components:
-    - type: Transform
-      pos: -9.5,7.5
-      parent: 1
-    - type: ContainerContainer
-      containers:
-        ShipyardConsole-targetId: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
 - proto: SecBreachingHammer
   entities:
   - uid: 6879
@@ -35917,18 +35883,6 @@ entities:
     components:
     - type: Transform
       pos: 12.5,2.5
-      parent: 1
-- proto: ShipVoucherImparator
-  entities:
-  - uid: 435
-    components:
-    - type: Transform
-      pos: 13.349149,-29.418415
-      parent: 1
-  - uid: 436
-    components:
-    - type: Transform
-      pos: 13.249471,-27.305984
       parent: 1
 - proto: ShipVoucherLaelaps
   entities:
