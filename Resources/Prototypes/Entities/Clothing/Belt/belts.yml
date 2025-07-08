@@ -44,6 +44,7 @@
         - TrayScanner
         - GasAnalyzer
         - HandLabeler
+        - LightReplacer
   - type: ItemMapper
     mapLayers:
       drill:
@@ -129,6 +130,7 @@
         - Geiger
         - TrayScanner
         - GasAnalyzer
+        - LightReplacer
   - type: ItemMapper
     mapLayers:
       drill:
