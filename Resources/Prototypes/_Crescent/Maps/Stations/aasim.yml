@@ -6,9 +6,8 @@
   stations:
     Aasim:
       stationProto: StandardCrescentStation
-      gridComponents:
-        - type: BlockShipWeaponProjectileGrid
       components:
+        - type: BlockShipWeaponProjectileGrid
         - type: StationNameSetup
           mapNameTemplate: 'TAP Qiwa Aasim'
         - type: Grammar
@@ -17,7 +16,6 @@
         - type: VesselDesignation
           designation: vessel-designation-headquarters
         - type: StationJobs
-          checkAlive: false
           overflowJobs: []
           availableJobs:
             ProphetTAP: [ 1, 1 ]

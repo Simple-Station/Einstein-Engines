@@ -6,8 +6,7 @@
   suffix: ship
   components:
     - type: CommunicationsConsole
-      title: comms-console-announcement-title-ship
-
+      title: ship communications console
 - type: entity
   parent: ComputerTabletopComms
   id: ComputerTabletopCommsShip
@@ -16,4 +15,4 @@
   suffix: ship, tabletop
   components:
     - type: CommunicationsConsole
-      title: comms-console-announcement-title-ship
+      title: ship communications console

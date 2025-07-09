@@ -6,10 +6,9 @@
   stations:
     Vladzena:
       stationProto: StandardCrescentStation
-      gridComponents:
+      components:
         - type: BlockShipWeaponProjectileGrid
         - type: PreventPilot
-      components:
         - type: StationNameSetup
           mapNameTemplate: 'Port Vladzena'
         - type: VesselDesignation
@@ -20,7 +19,6 @@
           attributes:
             proper: true
         - type: StationJobs
-          checkAlive: false
           overflowJobs: []
           availableJobs:
             AdministratorNCWL: [ 1, 1 ]

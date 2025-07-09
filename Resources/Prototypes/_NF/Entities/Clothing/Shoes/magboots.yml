@@ -10,7 +10,6 @@
   - type: Clothing
     sprite: _NF/Clothing/Shoes/Boots/magboots-combat.rsi
   - type: Magboots
-    toggleAction: ActionToggleMagbootsCombat
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9
@@ -33,7 +32,6 @@
   - type: Clothing
     sprite: _NF/Clothing/Shoes/Boots/magboots-nfsd.rsi
   - type: Magboots
-    toggleAction: ActionToggleMagbootsNfsd
 
 - type: entity
   parent: ClothingShoesBootsMagCombat
@@ -47,7 +45,6 @@
   - type: Clothing
     sprite: _NF/Clothing/Shoes/Boots/magboots-pirate.rsi
   - type: Magboots
-    toggleAction: ActionToggleMagbootsPirate
 
 - type: entity
   parent: ClothingShoesBootsMagCombat
@@ -61,7 +58,6 @@
   - type: Clothing
     sprite: _NF/Clothing/Shoes/Boots/magboots-mercenary.rsi
   - type: Magboots
-    toggleAction: ActionToggleMagbootsMercenary
 
 - type: entity
   parent: ClothingShoesBootsMag
@@ -75,7 +71,6 @@
   - type: Clothing
     sprite: _NF/Clothing/Shoes/Boots/magboots-galoshes.rsi
   - type: Magboots
-    toggleAction: ActionToggleMagbootsGaloshes
   - type: NoSlip
 
 - type: entity

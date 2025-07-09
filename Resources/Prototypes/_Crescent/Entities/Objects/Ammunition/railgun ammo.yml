@@ -42,7 +42,6 @@
     damage:
       types:
         Piercing: 70
-    armorDamageMultiplier: 3
 #---------- Uranium ammo of Railgun 15mm ----------
 - type: entity
   id: CartridgeRailgun15mmDU
@@ -67,4 +66,3 @@
       types:
         Piercing: 70
         Radiation: 15
-    armorDamageMultiplier: 6
