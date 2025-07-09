@@ -60,7 +60,7 @@
     price: 1000
 
 - type: entity
-  parent: ClothingOuterArmorBasic
+  parent: ClothingOuterBaseLarge
   id: ClothingOuterArmorNCWLHeavyCarapace
   name: communard's heavy carapace
   description: A steel-beaten juggernaut's carapace in communard orange.

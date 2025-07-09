@@ -8,6 +8,10 @@
     - outerClothing
   - type: Sprite
     state: icon
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,1,2
 
 - type: entity
   abstract: true
