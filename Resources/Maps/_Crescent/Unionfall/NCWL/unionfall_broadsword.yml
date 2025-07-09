@@ -436,12 +436,47 @@ entities:
       - Module C
       - Module D
       - Module E
-- proto: MagazineGrenadeBaton
+- proto: GrenadeBaton
   entities:
   - uid: 40
     components:
     - type: Transform
-      pos: -0.42034936,2.5545268
+      pos: -0.60944057,2.6029887
+      parent: 1
+  - uid: 73
+    components:
+    - type: Transform
+      pos: -0.32819057,2.5404449
+      parent: 1
+  - uid: 74
+    components:
+    - type: Transform
+      pos: 1.2030594,2.6655316
+      parent: 1
+  - uid: 75
+    components:
+    - type: Transform
+      pos: 1.4218094,2.5560803
+      parent: 1
+  - uid: 76
+    components:
+    - type: Transform
+      pos: -0.78131557,2.3684506
+      parent: 1
+  - uid: 77
+    components:
+    - type: Transform
+      pos: -0.46881557,2.2277274
+      parent: 1
+  - uid: 83
+    components:
+    - type: Transform
+      pos: 1.3124344,2.4309936
+      parent: 1
+  - uid: 84
+    components:
+    - type: Transform
+      pos: 1.5936844,2.3997226
       parent: 1
 - proto: ShuttleGunKurosawa
   entities:

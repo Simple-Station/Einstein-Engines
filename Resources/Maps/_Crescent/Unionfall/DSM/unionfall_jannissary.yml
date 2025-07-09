@@ -61,16 +61,6 @@ entities:
             id: LoadingArea
           decals:
             3: 3.9878697,1.0290049
-        - node:
-            color: '#FFFFFF4F'
-            id: arrow
-          decals:
-            0: 4.968033,-0.9457419
-        - node:
-            color: '#FFFFFF4F'
-            id: skull
-          decals:
-            1: 4.686783,-1.2810574
     - type: GridAtmosphere
       version: 2
       data:
@@ -85,11 +75,10 @@ entities:
             1: 3
             0: 8
           1,0:
-            0: 4401
+            0: 4433
             1: 17408
           1,-1:
-            0: 4962
-            2: 8192
+            0: 13154
             1: 4
           1,1:
             1: 6
@@ -114,21 +103,6 @@ entities:
           moles:
           - 0
           - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-        - volume: 2500
-          temperature: 293.14996
-          moles:
-          - 20.078888
-          - 75.53487
           - 0
           - 0
           - 0
@@ -647,41 +621,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 4.5,2.5
       parent: 1
-- proto: ClosetWall
-  entities:
-  - uid: 169
-    components:
-    - type: Transform
-      pos: 5.5,0.5
-      parent: 1
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14923
-        moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 171
-          - 170
-          - 19
-          - 20
 - proto: ClothingHeadHelmetImperialEVA
   entities:
   - uid: 166
@@ -917,43 +856,23 @@ entities:
       linearDamping: 0
 - proto: MagazineGrenadeBaton
   entities:
-  - uid: 73
-    components:
-    - type: Transform
-      parent: 8
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-  - uid: 170
-    components:
-    - type: Transform
-      parent: 169
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: MagazineLightRifleBoxSlug
-  entities:
   - uid: 19
     components:
     - type: Transform
-      parent: 169
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
+      pos: 2.4037352,2.4796367
+      parent: 1
+- proto: MagazineLightRifleBoxSlug
+  entities:
   - uid: 20
     components:
     - type: Transform
-      parent: 169
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
+      pos: 5.2978125,-0.70749235
+      parent: 1
+  - uid: 73
+    components:
+    - type: Transform
+      pos: 5.7509375,-0.39477587
+      parent: 1
 - proto: MedkitCombatFilled
   entities:
   - uid: 81
@@ -1085,20 +1004,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 2.5,3.5
       parent: 1
-    - type: ContainerContainer
-      containers:
-        machine_board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        machine_parts: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        gun_magazine: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 73
     - type: DeviceLinkSink
       links:
       - 46
@@ -1139,8 +1044,6 @@ entities:
         188:
         - Pressed: Toggle
         189:
-        - Pressed: Toggle
-        invalid:
         - Pressed: Toggle
 - proto: SlugthrowerCannon
   entities:
@@ -1446,7 +1349,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -2753.6362
+      secondsUntilStateChange: -2821.8252
       state: Opening
   - uid: 79
     components:
