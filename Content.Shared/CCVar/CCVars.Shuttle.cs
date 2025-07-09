@@ -24,7 +24,7 @@ public sealed partial class CCVars
     /// Whether the arrivals shuttle is enabled.
     /// </summary>
     public static readonly CVarDef<bool> ArrivalsShuttles =
-        CVarDef.Create("shuttle.arrivals", true, CVar.SERVERONLY);
+        CVarDef.Create("shuttle.arrivals", false, CVar.SERVERONLY);
 
     /// <summary>
     /// The map to use for the arrivals station.
@@ -110,7 +110,7 @@ public sealed partial class CCVars
     /// Any value equal to or less than zero will disable this check.
     /// </summary>
     public static readonly CVarDef<float> FTLMassLimit =
-        CVarDef.Create("shuttle.mass_limit", 300f, CVar.SERVERONLY);
+        CVarDef.Create("shuttle.mass_limit", 1f, CVar.SERVERONLY);
 
     /// <summary>
     /// How long to knock down entities for if they aren't buckled when FTL starts and stops.
@@ -122,7 +122,7 @@ public sealed partial class CCVars
     /// the Entropic decay of energy combined with the minimal but existent particles that would slow the vessel down
     ///</summary>
     public static readonly CVarDef<float> SpaceFrictionStrength =
-        CVarDef.Create("shuttle.space_friction_strength", 0.0015f, CVar.REPLICATED);
+        CVarDef.Create("shuttle.space_friction_strength", 0.005f, CVar.REPLICATED);
 
     ///<summary>
     /// the strength of drag when the inertia dampeners are set to anchor to slow the vessel down and hold it in place
@@ -165,7 +165,7 @@ public sealed partial class CCVars
     /// Whether the emergency shuttle is enabled or should the round just end.
     /// </summary>
     public static readonly CVarDef<bool> EmergencyShuttleEnabled =
-        CVarDef.Create("shuttle.emergency", true, CVar.SERVERONLY);
+        CVarDef.Create("shuttle.emergency", false, CVar.SERVERONLY);
 
     /// <summary>
     ///     The percentage of time passed from the initial call to when the shuttle can no longer be recalled.
@@ -173,7 +173,6 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> EmergencyRecallTurningPoint =
         CVarDef.Create("shuttle.recall_turning_point", 0.5f, CVar.SERVERONLY);
-
     /// <summary>
     ///     Time in minutes after round start to auto-call the shuttle. Set to zero to disable.
     /// </summary>
