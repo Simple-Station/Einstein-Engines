@@ -1,0 +1,42 @@
+- type: entity
+  id: CigaretteNCWL
+  parent: BaseCigar
+  name: cigarette NCWL PLACEHOLDER
+  description: A roll of tobacco and nicotine. NCWL PLACEHOLDER
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Consumable/Smokeables/Cigarettes/cigaretteNCWL.rsi
+    state: unlit-icon
+  - type: Tag
+    tags:
+    - Cigarette
+    - Trash
+  - type: SpaceGarbage
+  - type: Clothing
+    sprite: _Crescent/Objects/Consumable/Smokeables/Cigarettes/cigaretteNCWL.rsi
+    slots: [ mask ]
+    equippedPrefix: unlit
+  - type: Item
+    size: Tiny
+  - type: Construction
+    graph: smokeableCigarette
+    node: cigarette
+
+- type: entity
+  id: CigaretteNCWLSpent
+  parent: Cigarette
+  suffix: spent
+  components:
+  - type: Sprite
+    state: burnt-icon
+  - type: Smokable
+    state: Burnt
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 20
+  - type: Tag
+    tags:
+    - Cigarette
+    - Trash
+    - Burnt

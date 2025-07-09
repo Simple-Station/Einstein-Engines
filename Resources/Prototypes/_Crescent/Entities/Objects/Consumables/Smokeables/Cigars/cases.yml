@@ -1,0 +1,51 @@
+- type: entity
+  id: CigarNCWLCase
+  parent: [ BaseStorageItem, BaseBagOpenClose ]
+  name: NCWL Cigar case
+  description: A case for holding your cigars when you are not smoking them.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Consumable/Smokeables/Cigars/imported_cigarcase.rsi
+    layers:
+    - state: closed
+    - state: open
+      map: ["openLayer"]
+    - state: cigar1
+      map: ["cigar1"]
+      visible: false
+    - state: cigar2
+      map: ["cigar2"]
+      visible: false
+    - state: cigar3
+      map: ["cigar3"]
+      visible: false
+    - state: cigar4
+      map: ["cigar4"]
+      visible: false
+    - state: cigar5
+      map: ["cigar5"]
+      visible: false
+  - type: Storage
+    grid:
+    - 0,0,3,1
+  - type: Item
+    sprite: _Crescent/Objects/Consumable/Smokeables/Cigars/imported_cigarcase.rsi
+    size: Normal
+    shape:
+    - 0,0,2,1
+    storedRotation: 90
+  - type: StorageFill
+    contents:
+    - id: CigarNCWL
+      amount: 5
+  - type: ItemCounter
+    count:
+      tags: [Cigar]
+    composite: true
+    layerStates:
+    - cigar1
+    - cigar2
+    - cigar3
+    - cigar4
+    - cigar5
+  - type: Appearance

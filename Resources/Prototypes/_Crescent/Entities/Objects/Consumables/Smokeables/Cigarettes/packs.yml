@@ -1,0 +1,67 @@
+- type: entity
+  id: CigaretteNCWLPackBase
+  parent: [ BaseStorageItem, BaseBagOpenClose ]
+  name: cigarette NCWL pack
+  abstract: true
+  components:
+  - type: Sprite
+    layers:
+    - state: closed
+    - state: open
+      map: ["openLayer"]
+      visible: false
+    - state: cig1
+      map: ["cig1"]
+      sprite: _Crescent/Objects/Consumable/Smokeables/Cigarettes/Packs/visualizer.rsi
+      visible: false
+    - state: cig2
+      map: ["cig2"]
+      sprite: _Crescent/Objects/Consumable/Smokeables/Cigarettes/Packs/visualizer.rsi
+      visible: false
+    - state: cig3
+      map: ["cig3"]
+      sprite: _Crescent/Objects/Consumable/Smokeables/Cigarettes/Packs/visualizer.rsi
+      visible: false
+    - state: cig4
+      map: ["cig4"]
+      sprite: _Crescent/Objects/Consumable/Smokeables/Cigarettes/Packs/visualizer.rsi
+      visible: false
+    - state: cig5
+      map: ["cig5"]
+      sprite: _Crescent/Objects/Consumable/Smokeables/Cigarettes/Packs/visualizer.rsi
+      visible: false
+    - state: cig6
+      map: ["cig6"]
+      sprite: _Crescent/Objects/Consumable/Smokeables/Cigarettes/Packs/visualizer.rsi
+      visible: false
+  - type: Tag
+    tags:
+    - CigPack
+    - Trash
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 50
+  - type: SpaceGarbage
+  - type: Item
+    size: Tiny
+    shape: # Yes, this is cursed, but it breaks otherwise, dont question it.
+    - 0,0,0,1
+  - type: Storage
+    grid:
+    - 0,0,4,1
+  - type: StorageFill
+    contents:
+    - id: CigaretteNCWL
+      amount: 10
+  - type: ItemCounter
+    count:
+      tags: [Cigarette]
+    composite: true
+    layerStates:
+    - cig1
+    - cig2
+    - cig3
+    - cig4
+    - cig5
+    - cig6
+  - type: Appearance
