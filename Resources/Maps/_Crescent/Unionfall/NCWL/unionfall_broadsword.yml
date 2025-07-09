@@ -436,17 +436,12 @@ entities:
       - Module C
       - Module D
       - Module E
-- proto: MagazineGrenadeBlast
+- proto: MagazineGrenadeBaton
   entities:
   - uid: 40
     components:
     - type: Transform
       pos: -0.42034936,2.5545268
-      parent: 1
-  - uid: 73
-    components:
-    - type: Transform
-      pos: 1.2827756,2.5545268
       parent: 1
 - proto: ShuttleGunKurosawa
   entities:
