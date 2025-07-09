@@ -29,4 +29,6 @@
         - type: StationJobs
           overflowJobs: []
           availableJobs:
-            ConscriptRiflemanNCWL: [ 0 , 0 ]
+            KapitanNCWL: [ 0, 0 ]
+            SanitarNCWL: [ 0, 0 ]
+            DoktorNCWL: [ 0, 0 ]
