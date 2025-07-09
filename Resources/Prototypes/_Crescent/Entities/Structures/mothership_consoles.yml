@@ -60,8 +60,8 @@
     - Imparator
     - Jannissary
     - Conquest
-    - Valor
     - Raider
+#    - Valor torpedo bombers r kinda strong with an ultralight fleet
 
 
 - type: entity
@@ -126,7 +126,8 @@
     - UnionfallKhopesh
     - UnionfallBroadsword
     - UnionfallVanguard
-    - UnionfallHind
+    - Lodka
+#    - UnionfallHind too op
 
 - type: entity
   id: JackalCarrierMothershipComputer

@@ -1086,40 +1086,6 @@ entities:
     - type: ShuttleDeed
       shuttleName: Shuttle KXZ-684
       shuttleUid: 1
-- proto: AAAardpointMediumMissile
-  entities:
-  - uid: 21
-    components:
-    - type: Transform
-      pos: 10.5,0.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 206
-    components:
-    - type: Transform
-      pos: -10.5,-8.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-- proto: AAAHardpointMediumBallistic
-  entities:
-  - uid: 179
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 8.5,10.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 216
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -6.5,11.5
-      parent: 1
-    - type: Physics
-      canCollide: False
 - proto: AAAHardpointSmallBallistic
   entities:
   - uid: 391
@@ -1164,6 +1130,20 @@ entities:
       parent: 1
     - type: Physics
       canCollide: False
+  - uid: 478
+    components:
+    - type: Transform
+      pos: 10.5,0.5
+      parent: 1
+    - type: Physics
+      canCollide: False
+  - uid: 480
+    components:
+    - type: Transform
+      pos: -6.5,11.5
+      parent: 1
+    - type: Physics
+      canCollide: False
   - uid: 751
     components:
     - type: Transform
@@ -1175,6 +1155,13 @@ entities:
     components:
     - type: Transform
       pos: -7.5,8.5
+      parent: 1
+    - type: Physics
+      canCollide: False
+  - uid: 768
+    components:
+    - type: Transform
+      pos: -10.5,-8.5
       parent: 1
     - type: Physics
       canCollide: False
@@ -1213,6 +1200,13 @@ entities:
       parent: 1
     - type: Physics
       canCollide: False
+  - uid: 1776
+    components:
+    - type: Transform
+      pos: 8.5,10.5
+      parent: 1
+    - type: Physics
+      canCollide: False
 - proto: AcceleratorCannon
   entities:
   - uid: 1671
@@ -1226,10 +1220,6 @@ entities:
     - type: BallisticAmmoProvider
       entities:
       - 1672
-      - 324
-      - 326
-      - 393
-      - 478
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -1237,10 +1227,6 @@ entities:
           occludes: True
           ents:
           - 1672
-          - 324
-          - 326
-          - 393
-          - 478
         SpaceArtillery-CoolantSlot: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -1257,7 +1243,7 @@ entities:
       links:
       - 589
     - type: SpaceArtillery
-      coolantStored: 120
+      coolantStored: 30
     - type: ApcPowerReceiver
       powerLoad: 20000
     - type: BatterySelfRecharger
@@ -1457,7 +1443,7 @@ entities:
       pos: 0.5,-10.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -9870.922
+      secondsUntilStateChange: -8780.923
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -1557,7 +1543,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -17109.635
+      secondsUntilStateChange: -16019.637
       state: Opening
   - uid: 403
     components:
@@ -1573,6 +1559,20 @@ entities:
       parent: 1
 - proto: AirTankFilled
   entities:
+  - uid: 538
+    components:
+    - type: Transform
+      parent: 533
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 543
+    components:
+    - type: Transform
+      parent: 539
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
   - uid: 1638
     components:
     - type: Transform
@@ -1830,40 +1830,6 @@ entities:
     - type: Transform
       pos: 6.5,8.5
       parent: 1
-- proto: BaseWeaponTurretJeong
-  entities:
-  - uid: 545
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -10.5,-8.5
-      parent: 1
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        gun_magazine: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-  - uid: 561
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 10.5,0.5
-      parent: 1
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        gun_magazine: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
 - proto: Bed
   entities:
   - uid: 552
@@ -2125,12 +2091,6 @@ entities:
       parent: 1
 - proto: ButtonFrameCaution
   entities:
-  - uid: 538
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -1.5,10.5
-      parent: 1
   - uid: 754
     components:
     - type: Transform
@@ -5204,59 +5164,6 @@ entities:
       parent: 1
 - proto: CartridgeRailHighExplosive
   entities:
-  - uid: 324
-    components:
-    - type: Transform
-      parent: 1671
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-  - uid: 326
-    components:
-    - type: Transform
-      parent: 1671
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-  - uid: 393
-    components:
-    - type: Transform
-      parent: 1671
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-  - uid: 478
-    components:
-    - type: Transform
-      parent: 1671
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-  - uid: 537
-    components:
-    - type: Transform
-      pos: 3.6424742,6.730397
-      parent: 1
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-  - uid: 539
-    components:
-    - type: Transform
-      pos: 5.6973324,6.4084086
-      parent: 1
-  - uid: 540
-    components:
-    - type: Transform
-      pos: 3.4080992,6.3395014
-      parent: 1
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
   - uid: 1672
     components:
     - type: Transform
@@ -5781,6 +5688,27 @@ entities:
       parent: 1
 - proto: ClothingMaskImperialCombatGasmask
   entities:
+  - uid: 536
+    components:
+    - type: Transform
+      parent: 533
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 544
+    components:
+    - type: Transform
+      parent: 539
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 545
+    components:
+    - type: Transform
+      parent: 539
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
   - uid: 1636
     components:
     - type: Transform
@@ -5849,6 +5777,38 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: ClothingOuterHardsuitImperialWorker
+  entities:
+  - uid: 537
+    components:
+    - type: Transform
+      parent: 533
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 542
+    components:
+    - type: Transform
+      parent: 539
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: ClothingShoesBootsMagSyndie
+  entities:
+  - uid: 534
+    components:
+    - type: Transform
+      parent: 533
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 540
+    components:
+    - type: Transform
+      parent: 539
+    - type: Physics
       canCollide: False
     - type: InsideEntityStorage
 - proto: Cobweb1
@@ -6043,35 +6003,6 @@ entities:
     - type: Transform
       pos: -5.5,9.5
       parent: 1
-- proto: CoolantCartridge
-  entities:
-  - uid: 534
-    components:
-    - type: Transform
-      parent: 500
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 535
-    components:
-    - type: Transform
-      parent: 500
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 536
-    components:
-    - type: Transform
-      parent: 500
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: CoolantCartridge30
   entities:
   - uid: 501
@@ -6079,8 +6010,6 @@ entities:
     - type: Transform
       parent: 500
     - type: Physics
-      angularDamping: 0
-      linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
   - uid: 560
@@ -6088,8 +6017,27 @@ entities:
     - type: Transform
       parent: 500
     - type: Physics
-      angularDamping: 0
-      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 573
+    components:
+    - type: Transform
+      parent: 500
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 574
+    components:
+    - type: Transform
+      parent: 500
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 575
+    components:
+    - type: Transform
+      parent: 500
+    - type: Physics
       canCollide: False
     - type: InsideEntityStorage
 - proto: CrateCoolant
@@ -6125,11 +6073,11 @@ entities:
           showEnts: False
           occludes: True
           ents:
+          - 575
+          - 574
+          - 573
           - 560
           - 501
-          - 536
-          - 535
-          - 534
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -6140,6 +6088,28 @@ entities:
     components:
     - type: Transform
       pos: -7.5,-13.5
+      parent: 1
+- proto: CrateIdnaAmmo
+  entities:
+  - uid: 21
+    components:
+    - type: Transform
+      pos: -5.5,-15.5
+      parent: 1
+  - uid: 324
+    components:
+    - type: Transform
+      pos: -7.5,-14.5
+      parent: 1
+  - uid: 393
+    components:
+    - type: Transform
+      pos: -5.5,-14.5
+      parent: 1
+  - uid: 561
+    components:
+    - type: Transform
+      pos: -6.5,-14.5
       parent: 1
 - proto: CrateMedicalSupplies
   entities:
@@ -6155,15 +6125,21 @@ entities:
     - type: Transform
       pos: -3.5,-11.5
       parent: 1
-    - type: Lock
-      locked: False
+  - uid: 216
+    components:
+    - type: Transform
+      pos: -3.5,-12.5
+      parent: 1
+  - uid: 326
+    components:
+    - type: Transform
+      pos: -4.5,-12.5
+      parent: 1
   - uid: 599
     components:
     - type: Transform
       pos: -4.5,-11.5
       parent: 1
-    - type: Lock
-      locked: False
 - proto: CrateSumitomoAmmo
   entities:
   - uid: 165
@@ -6171,15 +6147,21 @@ entities:
     - type: Transform
       pos: -6.5,-11.5
       parent: 1
-    - type: Lock
-      locked: False
   - uid: 166
     components:
     - type: Transform
       pos: -7.5,-11.5
       parent: 1
-    - type: Lock
-      locked: False
+  - uid: 179
+    components:
+    - type: Transform
+      pos: -7.5,-12.5
+      parent: 1
+  - uid: 206
+    components:
+    - type: Transform
+      pos: -6.5,-12.5
+      parent: 1
 - proto: CryogenicSleepUnitSpawnerLateJoin
   entities:
   - uid: 610
@@ -7492,6 +7474,22 @@ entities:
     - type: Transform
       pos: -4.988505,-9.449474
       parent: 1
+- proto: JetpackMiniFilled
+  entities:
+  - uid: 535
+    components:
+    - type: Transform
+      parent: 533
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 541
+    components:
+    - type: Transform
+      parent: 539
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: JugBoriaticFuel
   entities:
   - uid: 1656
@@ -8662,90 +8660,8 @@ entities:
     - type: DeviceLinkSink
       links:
       - 829
-- proto: ShuttersNormalOpen
-  entities:
-  - uid: 480
-    components:
-    - type: Transform
-      pos: -5.5,12.5
-      parent: 1
-    - type: DeviceLinkSink
-      links:
-      - 634
-  - uid: 533
-    components:
-    - type: Transform
-      pos: -1.5,12.5
-      parent: 1
-    - type: DeviceLinkSink
-      links:
-      - 634
-  - uid: 541
-    components:
-    - type: Transform
-      pos: -3.5,12.5
-      parent: 1
-    - type: DeviceLinkSink
-      links:
-      - 634
-  - uid: 542
-    components:
-    - type: Transform
-      pos: -2.5,12.5
-      parent: 1
-    - type: DeviceLinkSink
-      links:
-      - 634
-  - uid: 543
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -5.5,11.5
-      parent: 1
-    - type: DeviceLinkSink
-      links:
-      - 634
-  - uid: 544
-    components:
-    - type: Transform
-      pos: -4.5,12.5
-      parent: 1
-    - type: DeviceLinkSink
-      links:
-      - 634
-  - uid: 575
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -1.5,11.5
-      parent: 1
-    - type: DeviceLinkSink
-      links:
-      - 634
 - proto: SignalButton
   entities:
-  - uid: 634
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -1.5,10.5
-      parent: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        575:
-        - Pressed: Toggle
-        533:
-        - Pressed: Toggle
-        542:
-        - Pressed: Toggle
-        541:
-        - Pressed: Toggle
-        544:
-        - Pressed: Toggle
-        480:
-        - Pressed: Toggle
-        543:
-        - Pressed: Toggle
   - uid: 753
     components:
     - type: Transform
@@ -9228,6 +9144,83 @@ entities:
           ents:
           - 814
           - 815
+- proto: SuitStorageWallmount
+  entities:
+  - uid: 533
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -9.5,-20.5
+      parent: 1
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14923
+        moles:
+        - 1.7459903
+        - 6.568249
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+    - type: ContainerContainer
+      containers:
+        entity_storage: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 534
+          - 535
+          - 536
+          - 537
+          - 538
+    - type: Physics
+      canCollide: False
+  - uid: 539
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -8.5,-20.5
+      parent: 1
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14923
+        moles:
+        - 1.7459903
+        - 6.568249
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+    - type: ContainerContainer
+      containers:
+        entity_storage: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 540
+          - 541
+          - 542
+          - 543
+          - 544
+          - 545
+    - type: Physics
+      canCollide: False
 - proto: SurveillanceCameraRouterGeneral
   entities:
   - uid: 783
@@ -11259,48 +11252,6 @@ entities:
     - type: Transform
       pos: -5.634655,-19.159256
       parent: 1
-- proto: WeaponTurretNeedler
-  entities:
-  - uid: 573
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -6.5,11.5
-      parent: 1
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        gun_magazine: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        gun_chamber: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-  - uid: 574
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 8.5,10.5
-      parent: 1
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        gun_magazine: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        gun_chamber: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
 - proto: WeaponTurretPDT
   entities:
   - uid: 389
@@ -11340,6 +11291,22 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -7.5,8.5
+      parent: 1
+    - type: PointCannon
+      linkedConsoleId: 1566
+  - uid: 634
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -6.5,11.5
+      parent: 1
+    - type: PointCannon
+      linkedConsoleId: 1566
+  - uid: 747
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -10.5,-8.5
       parent: 1
     - type: PointCannon
       linkedConsoleId: 1566
@@ -11399,11 +11366,23 @@ entities:
       parent: 1
     - type: PointCannon
       linkedConsoleId: 1566
+  - uid: 1777
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 10.5,0.5
+      parent: 1
   - uid: 1778
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 9.5,6.5
+      parent: 1
+  - uid: 1779
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 8.5,10.5
       parent: 1
 - proto: WindoorSecure
   entities:
