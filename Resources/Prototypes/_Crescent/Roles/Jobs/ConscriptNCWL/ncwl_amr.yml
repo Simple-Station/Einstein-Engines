@@ -48,10 +48,12 @@
     outerClothing: ClothingOuterArmorNCWLHeavyCarapace
     shoes: ClothingShoesBootsJack
     belt: ClothingBeltNCWLPouchesFilledSniper
-    back: WeaponAntimaterielNCWLHayha
+    back: ClothingBackpackNCWL
     pocket1: EmergencyOxygenTankFilled
     pocket2: SmokeGrenade
     ears: ClothingHeadsetNCWL
     eyes: ClothingEyesGlassesCheapSunglassesBig
     id: SanitarPDA
-    suitstorage: WeaponPistolT91
+    suitstorage: WeaponAntimaterielNCWLHayha
+  inhand:
+    - WeaponPistolT91

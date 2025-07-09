@@ -48,9 +48,11 @@
     outerClothing: ClothingOuterArmorNCWLHeavyCarapace
     shoes: ClothingShoesBootsJack
     belt: ClothingBeltNCWLPouchesFilledRifleman
-    back: WeaponSniperNCWLNovomosin
+    back: ClothingBackpackNCWL
     pocket1: EmergencyOxygenTankFilled
     pocket2: GrenadeShrapnel
     ears: ClothingHeadsetNCWL
     id: KadetPDA
-    suitstorage: WeaponPistolComrade
+    suitstorage: WeaponSniperNCWLNovomosin
+  inhand:
+    - WeaponPistolComrade

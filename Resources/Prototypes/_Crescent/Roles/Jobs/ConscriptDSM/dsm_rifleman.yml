@@ -47,9 +47,11 @@
     shoes: ClothingShoesBootsImperialJackboots
     belt: ClothingBeltAssaultFilledRifleman
     gloves: ClothingHandsGlovesImperialLonggloves
-    back: WeaponSniperDSMLegax
+    back: ClothingBackpackDSM
     pocket1: EmergencyOxygenTankFilled
     pocket2: GrenadeShrapnel
     ears: ClothingHeadsetEmpire
     id: LevymanPDA
-    suitstorage: WeaponPistolComplianceImperial
+    suitstorage: WeaponSniperDSMLegax
+  inhand:
+    - WeaponPistolComplianceImperial

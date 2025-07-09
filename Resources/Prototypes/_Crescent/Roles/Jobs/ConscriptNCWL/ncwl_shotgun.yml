@@ -48,9 +48,11 @@
     outerClothing: ClothingOuterArmorNCWLHeavyCarapace
     shoes: ClothingShoesBootsJack
     belt: ClothingBeltNCWLPouchesFilledShotgun
-    back: WeaponShotgunDoubleBarreledNCWL
+    back: ClothingBackpackNCWL
     pocket1: EmergencyOxygenTankFilled
     pocket2: GrenadeFlashBang
     ears: ClothingHeadsetNCWL
     id: SanitarPDA
-    suitstorage: WeaponPistolComrade
+    suitstorage: WeaponShotgunDoubleBarreledNCWL
+  inhand:
+    - WeaponPistolComrade

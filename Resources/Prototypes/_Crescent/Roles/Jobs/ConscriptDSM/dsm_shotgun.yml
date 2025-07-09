@@ -47,9 +47,11 @@
     shoes: ClothingShoesBootsImperialJackboots
     belt: ClothingBeltAssaultFilledShotgun
     gloves: ClothingHandsGlovesImperialLonggloves
-    back: WeaponShotgunDSMMatusa
+    back: ClothingBackpackDSM
     pocket1: EmergencyOxygenTankFilled
     pocket2: GrenadeShrapnel
     ears: ClothingHeadsetEmpire
     id: LevymanPDA
-    suitstorage: WeaponPistolComplianceImperial
+    suitstorage: WeaponShotgunDSMMatusa
+  inhand:
+    - WeaponPistolComplianceImperial
