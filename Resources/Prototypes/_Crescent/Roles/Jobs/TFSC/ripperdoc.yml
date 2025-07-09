@@ -42,12 +42,10 @@
 - type: startingGear
   id: RipperdocGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSyndicateInterdyne
+    jumpsuit: ClothingUniformJumpsuitSyndicateInterdyneScrubs
     shoes: ClothingShoesBootsCombat
-    head: ClothingHeadHatSyndicateInterdyne
     id: RipperdocPDA
     ears: ClothingHeadsetNCSPInterdyne
     mask: ClothingMaskSyndicateFacemask
     pocket1: MedkitCombatFilled
     back: ClothingBackpackNCSPSatchelFilledInfanteer
-    outerClothing: ClothingOuterArmorSyndicateApron

@@ -43,9 +43,6 @@
     gloves: ClothingHandsGlovesFingerless
     mask: ClothingMaskSyndicateFacemask
     shoes: ClothingShoesBootsCombat
-    outerClothing: ClothingOuterArmorSyndicateArmorvestInterdyne
-    belt: ClothingBeltSyndicateWebbingInterdyne
-    head: ClothingHeadHelmetSyndicateBasicInterdyne
     id: TraumasecPDA
     back: ClothingBackpackNCSPFilledInfanteer
     ears: ClothingHeadsetNCSPInterdyne

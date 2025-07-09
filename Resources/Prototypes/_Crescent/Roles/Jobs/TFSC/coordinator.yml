@@ -47,7 +47,6 @@
     gloves: ClothingHandsGlovesCombat
     mask: ClothingMaskSyndicateFacemask
     shoes: ClothingShoesBootsCombat
-    outerClothing: ClothingOuterArmorSyndicateCoordinator
     head: ClothingHeadHatSyndicateInterdyneBeret
     id: CoordinatorPDA
     back: ClothingBackpackNCSPFilledInfanteer
