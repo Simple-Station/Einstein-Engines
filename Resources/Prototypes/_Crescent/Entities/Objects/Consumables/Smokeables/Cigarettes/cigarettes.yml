@@ -5,7 +5,7 @@
   description: A roll of tobacco and nicotine. NCWL PLACEHOLDER
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Consumable/Smokeables/Cigarettes/cigaretteNCWL.rsi
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/cigaretteNCWL.rsi
     state: unlit-icon
   - type: Tag
     tags:
@@ -13,7 +13,7 @@
     - Trash
   - type: SpaceGarbage
   - type: Clothing
-    sprite: _Crescent/Objects/Consumable/Smokeables/Cigarettes/cigaretteNCWL.rsi
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/cigaretteNCWL.rsi
     slots: [ mask ]
     equippedPrefix: unlit
   - type: Item
