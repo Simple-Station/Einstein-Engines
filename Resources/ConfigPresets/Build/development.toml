@@ -32,5 +32,9 @@ preload_grids = false
 [admin]
 see_own_notes = true
 
+[vote]
+map_autovote_enabled = false
+preset_autovote_enabled = false
+
 [lavaland] # Lavaland Change
 enabled = false
