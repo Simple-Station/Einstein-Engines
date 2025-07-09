@@ -267,7 +267,7 @@
   - type: StorageFill
     contents:
       - id: MagazineLightRifleBox
-        amount: 2
+        amount: 1
       - id: MagazinePistol
         amount: 2
       - id: Gauze
