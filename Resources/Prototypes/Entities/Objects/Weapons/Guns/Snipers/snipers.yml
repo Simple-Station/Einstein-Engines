@@ -405,6 +405,9 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/surplus_ncwl_amr.rsi
     quickEquip: false
+    slots:
+    - Back
+    - suitStorage
   - type: Appearance
   - type: Gun
     damageModifier: 0.75 #enough to put a fully armored dsm soldier to 10 hp and bleed if not treated
@@ -457,6 +460,9 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_amr.rsi
     quickEquip: false
+    slots:
+    - Back
+    - suitStorage
   - type: Appearance
   - type: Gun
     damageModifier: 0.75 #enough to put a fully armored NCWL soldier to 10 hp and bleed if not treated

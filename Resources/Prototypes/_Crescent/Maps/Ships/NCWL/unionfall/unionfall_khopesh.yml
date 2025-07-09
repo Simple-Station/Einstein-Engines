@@ -16,7 +16,7 @@
   mapPath: /Maps/_Crescent/Unionfall/NCWL/unionfall_khopesh.yml
   minPlayers: 0
   stations:
-    Khopesh:
+    UnionfallKhopesh:
       stationProto: StandardCrescentVessel
       components:
         - type: StationNameSetup
