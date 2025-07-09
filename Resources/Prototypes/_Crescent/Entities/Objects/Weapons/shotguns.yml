@@ -82,7 +82,7 @@
     sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_shotgun.rsi
   - type: Gun
     fireRate: 0.8
-    damageModifier: 1
+    damageModifier: 1.5
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto

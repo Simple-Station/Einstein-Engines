@@ -7990,11 +7990,6 @@ entities:
     - type: Transform
       pos: 3.5,28.5
       parent: 1
-  - uid: 905
-    components:
-    - type: Transform
-      pos: 2.5,26.5
-      parent: 1
 - proto: CrateSumitomoAmmo
   entities:
   - uid: 899

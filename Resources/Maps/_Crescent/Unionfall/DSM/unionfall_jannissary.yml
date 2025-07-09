@@ -915,7 +915,7 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
-- proto: MagazineGrenadeBlast
+- proto: MagazineGrenadeBaton
   entities:
   - uid: 73
     components:
@@ -926,15 +926,6 @@ entities:
       linearDamping: 0
       canCollide: False
   - uid: 170
-    components:
-    - type: Transform
-      parent: 169
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 171
     components:
     - type: Transform
       parent: 169

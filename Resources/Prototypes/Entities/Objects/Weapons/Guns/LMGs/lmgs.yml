@@ -156,13 +156,13 @@
       map: ["enum.GunVisualLayers.Base"]
   - type: Appearance
   - type: HeldSpeedModifier
-    walkModifier: 1
-    sprintModifier: 0.8
+    walkModifier: 0.6
+    sprintModifier: 0.3
   - type: Item
     size: Ginormous
   - type: Gun
     fireRate: 5
-    damageModifier: 1
+    damageModifier: 0.7
     selectedMode: FullAuto
     availableModes:
     - FullAuto
@@ -186,7 +186,7 @@
   name: NCWL DP-29 7.62x51mm
   id: WeaponLightMachineGunNCWLSurplus
   parent: BaseWeaponLightMachineGun
-  description: A scaled-up and elongated relic proof that war hasn't changed. This Terran design, barely altered since its inception, still floats across battlefields in every corner of the sector. Chambered in 7.62mm and the bulkiest of its lineup, the RPD was never elegant. A belt-fed, open-bolt light machine gun drawn straight from some old stockpile, it remains a general-purpose killer. Unlike most weapons within or beyond the sector, enough of these were brought into space that new ones don't even need to be microprinted or assembled from shoddy parts. Despite its age, it remains one of the most reliable built from pre-Collapse components to outlast even the Terrans themselves. The battlefield might have changed. But this thing never needed to.
+  description: A scaled-up and elongated relic proof that war hasn't changed. This Terran design, barely altered since its inception, still floats across battlefields in every corner of the sector. Chambered in 7.62mm and the bulkiest of its lineup, the DP-29 was never elegant. A belt-fed, open-bolt light machine gun drawn straight from some old stockpile, it remains a general-purpose killer. Unlike most weapons within or beyond the sector, enough of these were brought into space that new ones don't even need to be microprinted or assembled from shoddy parts. Despite its age, it remains one of the most reliable built from pre-Collapse components to outlast even the Terrans themselves. The battlefield might have changed. But this thing never needed to.
   components:
   - type: Item
     size: Ginormous
@@ -216,9 +216,10 @@
           tags:
             - CartridgeRifle
   - type: Gun
-    fireRate: 8
+    fireRate: 6
     soundGunshot:
       collection: LMGGunshots1
+    damageModifier: 0.5
   - type: MagazineVisuals
     magState: mag
     steps: 1

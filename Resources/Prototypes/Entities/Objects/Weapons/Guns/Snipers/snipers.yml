@@ -289,7 +289,7 @@
     sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_rifle.rsi
   - type: Gun
     fireRate: 0.75
-    damageModifier: 1.5
+    damageModifier: 1.75
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
