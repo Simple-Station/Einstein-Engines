@@ -43,6 +43,7 @@
   id: ConscriptRiflemanNCWLGear
   equipment:
     head: ClothingHeadHelmetNCWLBasic
+    neck: ClothingNeckIFFOrange
     mask: ClothingMaskPilot
     jumpsuit: ClothingUniformJumpsuitNCWL
     outerClothing: ClothingOuterArmorNCWLHeavyCarapace

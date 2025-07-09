@@ -41,6 +41,7 @@
   id: ConscriptRiflemanDSMGear
   equipment:
     head: ClothingHeadHelmetImperialTrooperHelmet
+    neck: ClothingNeckIFFCyan
     mask: ClothingMaskImperialCombatGasmask
     jumpsuit: ClothingUniformJumpsuitImperialCombat
     outerClothing: ClothingOuterArmorImperialTrooperArmor
