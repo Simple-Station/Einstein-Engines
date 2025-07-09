@@ -28,3 +28,5 @@
           designation: vessel-designation-fighter
         - type: StationJobs
           overflowJobs: []
+          availableJobs:
+            ConscriptRiflemanNCWL: [ 0 , 0 ]
