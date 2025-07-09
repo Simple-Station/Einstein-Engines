@@ -1,5 +1,5 @@
 - type: vessel
-  id: Conquest
+  id: UnionfallConquest
   name: DSM Conquest
   description: A medium interceptor purpose-built for mayhem.
   price: 18000
@@ -8,12 +8,12 @@
   path: /Maps/_Crescent/Unionfall/DSM/unionfall_conquest.yml
 
 - type: gameMap
-  id: Conquest
+  id: UnionfallConquest
   mapName: 'DSM Conquest'
   mapPath: /Maps/_Crescent/Unionfall/DSM/unionfall_conquest.yml
   minPlayers: 0
   stations:
-    Conquest:
+    UnionfallConquest:
       stationProto: StandardCrescentVessel
       components:
         - type: StationNameSetup
@@ -25,3 +25,5 @@
           designation: vessel-designation-interceptor
         - type: StationJobs
           overflowJobs: []
+          availableJobs:
+            LevymanDSM: [ 0, 0 ]

@@ -1,5 +1,5 @@
 - type: vessel
-  id: Raider
+  id: UnionfallRaider
   name: DSM Raider
   description: A light Imperial transport shuttle. Made for expeditions.
   price: 44000
@@ -8,12 +8,12 @@
   path: /Maps/_Crescent/Unionfall/DSM/unionfall_raider.yml
 
 - type: gameMap
-  id: Raider
+  id: UnionfallRaider
   mapName: 'DSM Raider'
   mapPath: /Maps/_Crescent/Unionfall/DSM/unionfall_raider.yml
   minPlayers: 0
   stations:
-    Raider:
+    UnionfallRaider:
       stationProto: StandardCrescentExpeditionVessel
       components:
         - type: StationNameSetup
@@ -25,3 +25,5 @@
           designation: vessel-designation-expeditions
         - type: StationJobs
           overflowJobs: []
+          availableJobs:
+            LevymanDSM: [ 0, 0 ]

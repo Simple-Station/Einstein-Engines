@@ -1,5 +1,5 @@
 - type: vessel
-  id: Imparator
+  id: UnionfallImparator
   name: DSM Imparator
   description: A light Imperial picket and support fighter.
   price: 30000
@@ -8,12 +8,12 @@
   path: /Maps/_Crescent/Unionfall/DSM/unionfall_imparator.yml
 
 - type: gameMap
-  id: Imparator
+  id: UnionfallImparator
   mapName: 'DSM Imparator'
   mapPath: /Maps/_Crescent/Unionfall/DSM/unionfall_imparator.yml
   minPlayers: 0
   stations:
-    Imparator:
+    UnionfallImparator:
       stationProto: StandardCrescentVessel
       components:
         - type: StationNameSetup
@@ -25,3 +25,5 @@
           designation: vessel-designation-fighter
         - type: StationJobs
           overflowJobs: []
+          availableJobs:
+            LevymanDSM: [ 0, 0 ]

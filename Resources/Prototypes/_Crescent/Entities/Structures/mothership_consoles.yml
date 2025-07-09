@@ -57,10 +57,10 @@
   components:
   - type: ShipyardListing
     shuttles:
-    - Imparator
-    - Jannissary
-    - Conquest
-    - Raider
+    - UnionfallImparator
+    - UnionfallJannissary
+    - UnionfallConquest
+    - UnionfallRaider
 #    - Valor torpedo bombers r kinda strong with an ultralight fleet
 
 
@@ -126,8 +126,7 @@
     - UnionfallKhopesh
     - UnionfallBroadsword
     - UnionfallVanguard
-    - Lodka
-#    - UnionfallHind too op
+    - UnionfallLodka
 
 - type: entity
   id: JackalCarrierMothershipComputer

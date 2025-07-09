@@ -8,12 +8,12 @@
   price: 25000
   category: Small
   group: None
-  path: /Maps/_Crescent/Shuttles/NCWL/lodka.yml
+  path: /Maps/_Crescent/Unionfall/NCWL/unionfall_lodka.yml
 
 - type: gameMap
   id: UnionfallLodka
   mapName: 'NCWL Lodka'
-  mapPath: /Maps/_Crescent/Shuttles/NCWL/lodka.yml
+  mapPath: /Maps/_Crescent/Unionfall/NCWL/unionfall_lodka.yml
   minPlayers: 0
   stations:
     UnionfallLodka:
