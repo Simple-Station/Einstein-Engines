@@ -19,7 +19,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-syncoordinator
+        rank: crescent-rank-coordinator
       - type: CPRTraining
       - type: SurgerySpeedModifier
         speedModifier: 2.5

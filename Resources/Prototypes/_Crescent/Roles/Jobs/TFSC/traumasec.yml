@@ -17,7 +17,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-syntraumasec
+        rank: crescent-rank-agent
       - type: CPRTraining
   weight: 16
   startingGear: TraumasecGear
