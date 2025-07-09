@@ -1397,8 +1397,6 @@
   - type: CartridgeAmmo
     deleteOnSpawn: true
     proto: CompaktMicrowaveProjectile
-    count: 4
-    spread: 7
   - type: Sprite
     sprite: _Crescent/Objects/ShuttleWeapons/lenses.rsi
     layers:

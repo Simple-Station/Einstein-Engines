@@ -9,12 +9,6 @@
           traits:
             - LatentPsychic
             - PsychoHistorian
-        - !type:CharacterJobRequirement
-          jobs:
-            - ResearchDirector
-            - ForensicMantis
-            - Chaplain
-            - Librarian
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -43,12 +37,6 @@
           traits:
             - LatentPsychic
             - PsychoHistorian
-        - !type:CharacterJobRequirement
-          jobs:
-            - ResearchDirector
-            - ForensicMantis
-            - Chaplain
-            - Librarian
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
