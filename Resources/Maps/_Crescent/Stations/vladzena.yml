@@ -4528,7 +4528,7 @@ entities:
           ents:
           - 2170
     - type: InsideEntityStorage
-- proto: AmeControllerSmallExplosion
+- proto: AmeController
   entities:
   - uid: 1200
     components:
