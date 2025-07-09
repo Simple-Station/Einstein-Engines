@@ -6,9 +6,8 @@
   stations:
     Precinct9:
       stationProto: StandardCrescentStation
-      gridComponents:
-        - type: BlockShipWeaponProjectileGrid
       components:
+        - type: BlockShipWeaponProjectileGrid
         - type: StationNameSetup
           mapNameTemplate: 'TSP Proctor Annalise'
         - type: Grammar
@@ -17,7 +16,6 @@
         - type: VesselDesignation
           designation: vessel-designation-headquarters
         - type: StationJobs
-          checkAlive: false
           overflowJobs: []
           availableJobs:
             MarshalCMM: [ 1, 1 ]

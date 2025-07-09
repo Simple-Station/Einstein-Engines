@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
   id: ClothingOuterArmorNCWLCarapace
   name: kommissar's trenchcoat
   description: A kevlar-intervowen durathread trenchcoat with a synthfleece-trim collar. Looks badass.
@@ -30,7 +30,7 @@
   - type: AllowSuitStorage
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
   id: ClothingOuterArmorNCWLOpremeCarapace
   name: admiral's greatcoat
   description: A kevlar-intervowen durathread trenchcoat with a synthfleece-trim collar. Looks badass.
@@ -60,7 +60,7 @@
     price: 1000
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorNCWLHeavyCarapace
   name: communard's heavy carapace
   description: A steel-beaten juggernaut's carapace in communard orange.
@@ -91,7 +91,7 @@
     price: 750
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorNCWLCarapaceKapitan
   name: kapitan's armored overcoat
   description: A communard overcoat overlaid with a kevlar vest.
@@ -121,7 +121,7 @@
     price: 800
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorNCWLCarapaceDoktor
   name: doktor's armored jacket
   description: A communard paramedic's jacket. Layered with kevlar nanoweave.

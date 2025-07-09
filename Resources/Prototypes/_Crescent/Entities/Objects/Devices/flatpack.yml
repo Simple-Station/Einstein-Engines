@@ -201,7 +201,7 @@
   description: A flatpack used for constructing a cheap rocket pod.
   components:
   - type: Flatpack
-    entity: WeaponTurretSwarmer
+    entity: BaseWeaponTurretSwarmer
   - type: Sprite
     layers:
     - state: ame-part

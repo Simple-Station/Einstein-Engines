@@ -6,9 +6,8 @@
   stations:
     Ardour:
       stationProto: StandardCrescentStation
-      gridComponents:
-        - type: BlockShipWeaponProjectileGrid
       components:
+        - type: BlockShipWeaponProjectileGrid
         - type: StationNameSetup
           mapNameTemplate: 'ATH Ardour 43BG-92'
         - type: Grammar
@@ -17,7 +16,6 @@
         - type: VesselDesignation
           designation: vessel-designation-headquarters
         - type: StationJobs
-          checkAlive: false
           overflowJobs: []
           availableJobs:
             KommandantATH: [ 1, 1 ]

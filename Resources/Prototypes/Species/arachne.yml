@@ -8,6 +8,12 @@
   markingLimits: MobArachneMarkingLimits
   dollPrototype: MobArachneDummy
   skinColoration: HumanToned
+  minHeight: 1
+  defaultHeight: 1
+  maxHeight: 1
+  minWidth: 1
+  defaultWidth: 1
+  maxWidth: 1
   minAge: 60
   youngAge: 150
   oldAge: 400
