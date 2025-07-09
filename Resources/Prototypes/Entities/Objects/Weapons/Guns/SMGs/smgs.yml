@@ -278,7 +278,7 @@
 
 - type: entity
   name: NCWL Partisan 9x19mm
-  parent: [BaseWeaponSubMachineGun, BaseGunWieldable]
+  parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunNCWLPartisan
   description: A deregulated design with no safeguards. Originally issued to Interdiction pilots for post-crash survival, it’s now the weapon of choice for partisans and infiltrators who hijack enemy autoforges and flood their supply lines with guns built from their own scrap. To be handed this as your primary weapon means one of two things you either pissed off your kommissar… or your logistics ran out of real rifles.
   components:
@@ -295,8 +295,6 @@
     boltClosed: null
   - type: Gun
     fireRate: 7
-    minAngle: 10
-    maxAngle: 30
     angleIncrease: 1.5
     angleDecay: 6
     selectedMode: Burst
@@ -330,15 +328,10 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
-  - type: Wieldable
-  - type: GunRequiresWield
-  - type: GunWieldBonus #needed to not crash the game because BaseGunWieldable reduces wielded angle by -21 and -31 into negatives
-    minAngle: -0
-    maxAngle: -0
 
 - type: entity
   name: IRM Arbiter 9x19mm
-  parent: [BaseWeaponSubMachineGun, BaseGunWieldable]
+  parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunDSMArbiter
   description: A devolved DSM design that has substituted or removed any features which would require the machining capacity of a County's household guard or Marcher lord's retinue, the Arbiter provides cost effective automatic fire to the poorest and most desperate Imperial militants. When it inevitably fails it will be melted down and made anew until nothing but slag remains, much like its bearer.
   components:
@@ -354,9 +347,7 @@
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
   - type: Gun
-    fireRate: 4
-    minAngle: 10
-    maxAngle: 30
+    fireRate: 5
     angleIncrease: 1.5
     angleDecay: 6
     selectedMode: FullAuto
@@ -387,11 +378,6 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
-  - type: Wieldable
-  - type: GunRequiresWield
-  - type: GunWieldBonus #needed to not crash the game because BaseGunWieldable reduces wielded angle by -21 and -31 into negatives
-    minAngle: -0
-    maxAngle: -0
 
 - type: entity
   name: NT WT550 Sabre 9x19mm
