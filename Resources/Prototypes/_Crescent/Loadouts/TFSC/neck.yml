@@ -24,7 +24,7 @@
       group: LoadoutNeck
     - !type:CharacterJobRequirement
       jobs:
-        - ChemcookNCSP
+        - TraumasecNCSP
         - ForemanNCSP
         - InfanteerNCSP
         - IntelligenceOfficerNCSP
@@ -35,3 +35,4 @@
         - RipperdocNCSP
         - ShipbreakerNCSP
         - TechnicianNCSP
+        - CoordinatorNCSP

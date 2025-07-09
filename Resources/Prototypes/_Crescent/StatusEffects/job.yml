@@ -91,6 +91,13 @@
 
 - type: jobIcon
   parent: JobIcon
+  id: JobIconSyndieCoordinator
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Coordinator
+
+- type: jobIcon
+  parent: JobIcon
   id: JobIconSyndieRipperdoc
   icon:
     sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
@@ -112,10 +119,10 @@
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconSyndieChemcook
+  id: JobIconSyndieTraumasec
   icon:
     sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
-    state: Chemcook
+    state: Traumasec
 
 - type: jobIcon
   parent: JobIcon

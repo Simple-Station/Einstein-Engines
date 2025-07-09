@@ -70,7 +70,7 @@
       group: LoadoutBackpacks
     - !type:CharacterJobRequirement
       jobs:
-        - ChemcookNCSP
+        - TraumasecNCSP
         - ForemanNCSP
         - InfanteerNCSP
         - IntelligenceOfficerNCSP
@@ -81,6 +81,7 @@
         - RipperdocNCSP
         - ShipbreakerNCSP
         - TechnicianNCSP
+        - CoordinatorNCSP
 
 - type: loadout
   id: LoadoutBackpackTFSCSatchel
@@ -94,7 +95,7 @@
       group: LoadoutBackpacks
     - !type:CharacterJobRequirement
       jobs:
-        - ChemcookNCSP
+        - TraumasecNCSP
         - ForemanNCSP
         - InfanteerNCSP
         - IntelligenceOfficerNCSP
@@ -105,6 +106,7 @@
         - RipperdocNCSP
         - ShipbreakerNCSP
         - TechnicianNCSP
+        - CoordinatorNCSP
 
 - type: loadout
   id: LoadoutBackpackTFSCDuffel
@@ -118,7 +120,7 @@
       group: LoadoutBackpacks
     - !type:CharacterJobRequirement
       jobs:
-        - ChemcookNCSP
+        - TraumasecNCSP
         - ForemanNCSP
         - InfanteerNCSP
         - IntelligenceOfficerNCSP
@@ -129,6 +131,7 @@
         - RipperdocNCSP
         - ShipbreakerNCSP
         - TechnicianNCSP
+        - CoordinatorNCSP
 
 - type: loadout
   id: LoadoutBackpackDSM

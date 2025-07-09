@@ -34,7 +34,9 @@ crescent-rank-op = Cpl.
 crescent-rank-pfc = PvT.
 crescent-rank-freeman = Freeman
 crescent-rank-foreman = Foreman
+crescent-rank-syncoordinator = Director
 crescent-rank-syndoc = Doc
+crescent-rank-syntraumasec = Agent
 crescent-rank-saw = Shipbreaker
 
 #tsp

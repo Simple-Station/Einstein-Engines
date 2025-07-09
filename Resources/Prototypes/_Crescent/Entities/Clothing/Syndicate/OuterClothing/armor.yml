@@ -377,8 +377,8 @@
 - type: entity
   parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorSyndicateArmorvestInterdyne
-  name: ballistic vest
-  description: A bulky kevlar-padded ballistic vest, touched with the colors of the TFSC.
+  name: traumasec ballistic vest
+  description: A bulky kevlar-padded ballistic vest, touched with the colors of interdyne.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/Syndicate/OuterClothing/ipm_vest.rsi
