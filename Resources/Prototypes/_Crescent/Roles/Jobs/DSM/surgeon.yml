@@ -25,6 +25,9 @@
     components:
       - type: ChatRank
         rank: crescent-rank-smarts
+      - type: CPRTraining
+      - type: SurgerySpeedModifier
+        speedModifier: 2
   access:
   - Command
   - Empire

@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Server.Ame.Components;
 using Content.Server.Ame.EntitySystems;
 using Content.Server.Chat.Managers;
+using Content.Server.Explosion.Components;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.NodeContainer.NodeGroups;
 using Content.Server.NodeContainer.Nodes;
@@ -125,31 +126,13 @@ public sealed class AmeNodeGroup : BaseNodeGroup
         if (fuel <= 0 || CoreCount <= 0)
             return 0;
 
-        var safeFuelLimit = CoreCount * 2;
+        var safeFuelLimit = CoreCount * 2 + CoreCount / 2;
 
         var powerOutput = CalculatePower(fuel, CoreCount);
         if (fuel <= safeFuelLimit)
             return powerOutput;
-
-        // The AME is being overloaded.
-        // Note about these maths: I would assume the general idea here is to make larger engines less safe to overload.
-        // In other words, yes, those are supposed to be CoreCount, not safeFuelLimit.
-        var instability = 0;
-        var overloadVsSizeResult = fuel - CoreCount;
-
-        // fuel > safeFuelLimit: Slow damage. Can safely run at this level for burst periods if the engine is small and someone is keeping an eye on it.
-        if (_random.Prob(0.5f))
-            instability = 1;
-        // overloadVsSizeResult > 5:
-        if (overloadVsSizeResult > 5)
-            instability = 3;
-        // overloadVsSizeResult > 10: This will explode in at most 20 injections.
-        if (overloadVsSizeResult > 10)
-            instability = 5;
-
-        // Apply calculated instability
-        if (instability == 0)
-            return powerOutput;
+        // bigger reactors harder to blow
+        var instability = (fuel - safeFuelLimit) / CoreCount + 5;
 
         overloading = true;
         var integrityCheck = 100;
@@ -179,10 +162,11 @@ public sealed class AmeNodeGroup : BaseNodeGroup
     /// </summary>
     public float CalculatePower(int fuel, int cores)
     {
-        // Fuel is squared so more fuel vastly increases power and efficiency
-        // We divide by the number of cores so a larger AME is less efficient at the same fuel settings
-        // this results in all AMEs having the same efficiency at the same fuel-per-core setting
-        return 20000f * fuel * fuel / cores; // Delta V - Revert upstream buff for normal AME operation
+        var value = cores * cores * (fuel + 1) * 5000f;
+        if (fuel > cores)
+            value *= ((fuel - cores)/3 + 1);
+
+        return value + 120000f;
     }
 
     public int GetTotalStability()
@@ -208,12 +192,17 @@ public sealed class AmeNodeGroup : BaseNodeGroup
         if (_cores.Count < 1
         || !_entMan.TryGetComponent<AmeControllerComponent>(MasterController, out var controller))
             return;
+        if (!_entMan.TryGetComponent<ExplosiveComponent>(MasterController, out var exp))
+            return;
 
         /*
             * todo: add an exact to the shielding and make this find the core closest to the controller
             * so they chain explode, after helpers have been added to make it not cancer
         */
+
         var radius = Math.Min(2 * CoreCount * controller.InjectionAmount, 8f);
-        _entMan.System<ExplosionSystem>().TriggerExplosive(MasterController.Value, radius: radius, delete: false);
+        var intensity = CoreCount * 1000;
+        _entMan.System<ExplosionSystem>().TriggerExplosive(MasterController.Value, radius: radius, totalIntensity: intensity, delete: false);
+
     }
 }

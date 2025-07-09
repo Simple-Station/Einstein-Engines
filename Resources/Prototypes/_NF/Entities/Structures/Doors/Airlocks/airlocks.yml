@@ -47,6 +47,3 @@
   parent: AirlockGlassShuttle
   id: AirlockExternalGlassShuttleTransit
   suffix: External, PubTrans, Glass, Docking
-  components:
-    - type: PriorityDock
-      tag: DockTransit

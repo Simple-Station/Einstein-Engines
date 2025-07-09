@@ -17,7 +17,6 @@
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: Reflect
-    enabled: true
     reflectProb: .75
     spread: 75
   - type: Item
