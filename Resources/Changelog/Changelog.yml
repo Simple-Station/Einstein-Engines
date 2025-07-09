@@ -16618,3 +16618,10 @@ Entries:
   id: 7299
   time: '2025-07-08T19:36:44.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2455
+- author: Spatison
+  changes:
+    - type: Add
+      message: A large amount of content has been migrated from Wizden
+  id: 7300
+  time: '2025-07-09T15:46:20.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2449
