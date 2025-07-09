@@ -42,6 +42,7 @@
   id: ConscriptDoctorNCWLGear
   equipment:
     mask: ClothingMaskPilot
+    neck: ClothingNeckIFFOrange
     jumpsuit: ClothingUniformJumpsuitNCWLMedic
     shoes: ClothingShoesColorBlack
     id: DoktorPDA

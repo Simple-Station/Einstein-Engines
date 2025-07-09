@@ -78,6 +78,7 @@
   id: ConscriptLeaderNCWLGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitNCWLKommissar
+    neck: ClothingNeckIFFOrange
     id: KommissarPDA
     ears: ClothingHeadsetNCWL
     mask: ClothingMaskPilot

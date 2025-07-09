@@ -43,6 +43,7 @@
   id: ConscriptSniperNCWLGear
   equipment:
     head: ClothingHeadHelmetNCWLBasic
+    neck: ClothingNeckIFFOrange
     mask: ClothingMaskSyndicateFacemask
     jumpsuit: ClothingUniformJumpsuitNCWL
     outerClothing: ClothingOuterArmorNCWLHeavyCarapace
