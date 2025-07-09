@@ -6,7 +6,7 @@
   stations:
     Refuge:
       stationProto: StandardCrescentStation
-      gridComponents:
+      components:
         - type: BlockShipWeaponProjectileGrid
         - type: PreventPilot
       components:
@@ -18,7 +18,6 @@
           attributes:
             proper: true
         - type: StationJobs
-          checkAlive: false
           overflowJobs: []
           availableJobs:
             OverseerSRM: [ 1, 1 ]
@@ -35,10 +34,9 @@
   stations:
     GliessSanto:
       stationProto: StandardCrescentStation
-      gridComponents:
+      components:
         - type: BlockShipWeaponProjectileGrid
         - type: PreventPilot
-      components:
         - type: StationNameSetup
           mapNameTemplate: 'Gliess Santo'
         - type: VesselDesignation
@@ -47,7 +45,6 @@
           attributes:
             proper: true
         - type: StationJobs
-          checkAlive: false
           overflowJobs: []
           availableJobs:
             GliessianDockmaster: [ 1, 1 ]

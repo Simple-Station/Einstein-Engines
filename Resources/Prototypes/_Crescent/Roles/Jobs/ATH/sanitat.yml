@@ -23,6 +23,9 @@
     components:
       - type: ChatRank
         rank: crescent-rank-sanitat
+      - type: CPRTraining
+      - type: SurgerySpeedModifier
+        speedModifier: 2
   access:
   - EmergencyShuttleRepealAll
   - Captain

@@ -42,6 +42,10 @@ public sealed partial class PortableGeneratorComponent : Component
     [DataField("startSoundEmpty")]
     [ViewVariables(VVAccess.ReadWrite)]
     public SoundSpecifier? StartSoundEmpty { get; set; }
+
+    // Hullrot added
+    [DataField("startOnMapInit")]
+    public bool StartOnMapInit { get; set; } = false;
 }
 
 /// <summary>
