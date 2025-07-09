@@ -5,6 +5,10 @@ lobbyenabled = false
 map = "Dev"
 role_timers = false
 
+[ghost]
+role_time = 0.5
+quick_lottery = true
+
 [gateway]
 generator_enabled = false
 
@@ -28,5 +32,9 @@ preload_grids = false
 [admin]
 see_own_notes = true
 
-# [lavaland] # Lavaland Change
-# enabled = false -- DISABLED TEMPORARILY
+[vote]
+map_autovote_enabled = false
+preset_autovote_enabled = false
+
+[lavaland] # Lavaland Change
+enabled = false

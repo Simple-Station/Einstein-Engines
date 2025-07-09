@@ -7,7 +7,7 @@
 
 - type: statusEffect
   id: KnockedDown
-  alert: KnockedDown # Goobstation
+  alert: KnockedDown
 
 - type: statusEffect
   id: SlowedDown
@@ -61,13 +61,17 @@
   id: StaminaModifier
 
 - type: statusEffect
-  id: PhaseShifted
+  id: Flashed
 
 - type: statusEffect
-  id: Flashed
+  id: PhaseShifted
 
 - type: statusEffect
   id: RadiationProtection
 
 - type: statusEffect
   id: Drowsiness #blurs your vision and makes you randomly fall asleep
+
+- type: statusEffect
+  id: Adrenaline
+  alert: Adrenaline

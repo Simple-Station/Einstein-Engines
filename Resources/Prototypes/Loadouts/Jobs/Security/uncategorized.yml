@@ -237,6 +237,20 @@
     - ClothingHeadHatBeretSecurity
 
 - type: loadout
+  id: LoadoutSecurityHeadHatSecurityTrooper
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityHead
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Security
+  items:
+  - ClothingHeadHatSecurityTrooper
+
+- type: loadout
   id: LoadoutClothingHeadHelmetBasic
   category: JobsSecurityAUncategorized
   cost: 0
@@ -556,7 +570,7 @@
       departments:
         - Security
   items:
-    - ClothingShoesBootsJack
+    - ClothingShoesBootsJackFilled
 
 - type: loadout
   id: LoadoutClothingShoesBootsCombat
@@ -600,6 +614,20 @@
         - Security
   items:
     - ClothingUniformJumpsuitSecGrey
+
+- type: loadout
+  id: LoadoutSecurityUniformSecurityTrooper
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityUniforms
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Security
+  items:
+  - ClothingUniformSecurityTrooper
 
 - type: loadout
   id: LoadoutSecurityUniformJumpskirtGrey

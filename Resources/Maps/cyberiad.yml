@@ -80118,7 +80118,7 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingBackpackDuffelMimeFilled
+- proto: ClothingBackpackDuffelMime
   entities:
   - uid: 12633
     components:
@@ -80236,7 +80236,7 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingBackpackSatchelClownFilled
+- proto: ClothingBackpackSatchelClown
   entities:
   - uid: 12613
     components:
@@ -80254,7 +80254,7 @@ entities:
     - type: Transform
       pos: 47.718098,-0.48943865
       parent: 2
-- proto: ClothingBackpackSatchelMimeFilled
+- proto: ClothingBackpackSatchelMime
   entities:
   - uid: 12635
     components:

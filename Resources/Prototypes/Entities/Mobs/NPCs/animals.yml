@@ -33,6 +33,8 @@
     states:
       Alive:
         Base: bat
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: Butcherable
@@ -57,7 +59,7 @@
     - Mouse
   - type: MeleeWeapon
     soundHit:
-        path: /Audio/Effects/bite.ogg
+      path: /Audio/Effects/bite.ogg
     angle: 0
     animation: WeaponArcBite
     damage:
@@ -85,7 +87,7 @@
   components:
   - type: CombatMode
   - type: MovementSpeedModifier
-    baseWalkSpeed : 7
+    baseWalkSpeed : 3
     baseSprintSpeed : 7
   - type: Sprite
     drawdepth: Mobs
@@ -108,13 +110,15 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      5: Dead # Goob edit
+      5: Dead
   - type: Stamina
     critThreshold: 10
   - type: DamageStateVisuals
     states:
       Alive:
         Base: 0
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: Item
@@ -209,6 +213,9 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Speech
+    speechVerb: SmallMob
+    speechSounds: Cluck
   - type: Tag
     tags:
     - DoorBumpOpener
@@ -367,18 +374,25 @@
       0: Alive
       1: Dead
   - type: MovementSpeedModifier
-    baseWalkSpeed : 5
+    baseWalkSpeed : 2.5
     baseSprintSpeed : 5
   - type: DamageStateVisuals
     states:
       Alive:
         Base: cockroach
+      Critical:
+        Base: cockroach_dead
       Dead:
         Base: cockroach_dead
   - type: Bloodstream
     bloodReagent: InsectBlood
     bloodMaxVolume: 20
   - type: Food
+  - type: FlavorProfile
+    flavors:
+    - horrible
+    - terrible
+    - chewy
   - type: Hunger
     baseDecayRate: 0.25
   - type: Extractable
@@ -430,6 +444,14 @@
         2.0
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 0
 
 - type: entity
   name: glockroach
@@ -447,7 +469,7 @@
     useKey: false
     selectedMode: SemiAuto
     availableModes:
-      - SemiAuto
+    - SemiAuto
     soundGunshot: /Audio/Weapons/Guns/Gunshots/pistol.ogg
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifle
@@ -498,7 +520,7 @@
     insertingState: inserting_mothroach
   - type: MothAccent
   - type: Sprite
-    sprite: Mobs/Animals/mothroach.rsi
+    sprite: Mobs/Animals/mothroach/mothroach.rsi
     layers:
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       state: mothroach
@@ -513,7 +535,7 @@
     size: Normal
   - type: Clothing
     quickEquip: false
-    sprite: Mobs/Animals/mothroach.rsi
+    sprite: Mobs/Animals/mothroach/mothroach.rsi
     equippedPrefix: 0
     slots:
     - HEAD
@@ -600,10 +622,43 @@
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
   - type: SurgeryTarget
+  - type: Strippable
   - type: UserInterface
     interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
+  - type: InventorySlots
+  - type: Inventory
+    speciesId: hamster
+    templateId: hamster
+    displacements:
+      head:
+        sizeMaps:
+          32:
+            sprite: Mobs/Animals/mothroach/displacement.rsi
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: Mobs/Animals/mothroach/displacement.rsi
+            state: mask
+      suitstorage:
+        sizeMaps:
+          32:
+            sprite: Mobs/Animals/mothroach/displacement.rsi
+            state: suitstorage
+      eyes:
+        sizeMaps:
+          32:
+            sprite: Mobs/Animals/mothroach/displacement.rsi
+            state: eyes
+      neck:
+        sizeMaps:
+          32:
+            sprite: Mobs/Animals/mothroach/displacement.rsi
+            state: neck
 
 - type: entity
   parent: MobMothroach
@@ -744,7 +799,7 @@
     - Mouse
   - type: Body
     prototype: Squackroach
-  - type: StepTriggerImmune
+  - type: ProtectedFromStepTriggers
     whitelist:
       types:
       - Shard
@@ -837,6 +892,8 @@
     states:
       Alive:
         Base: duck-0
+      Critical:
+        Base: dead-0
       Dead:
         Base: dead-0
   - type: Butcherable
@@ -888,6 +945,8 @@
     states:
       Alive:
         Base: duck-1
+      Critical:
+        Base: dead-1
       Dead:
         Base: dead-1
 
@@ -905,6 +964,8 @@
     states:
       Alive:
         Base: duck-2
+      Critical:
+        Base: dead-2
       Dead:
         Base: dead-2
 
@@ -913,17 +974,17 @@
   parent: FoodEgg
   suffix: Fertilized, Duck
   components:
-    - type: Timer
-    - type: TimedSpawner
-      prototypes:
-      - MobDuckMallard
-      - MobDuckWhite
-      - MobDuckBrown
-      intervalSeconds: 20
-      minimumEntitiesSpawned: 1
-      maximumEntitiesSpawned: 1
-    - type: TimedDespawn #delete the egg after the chicken spawns
-      lifetime: 21
+  - type: Timer
+  - type: TimedSpawner
+    prototypes:
+    - MobDuckMallard
+    - MobDuckWhite
+    - MobDuckBrown
+    intervalSeconds: 20
+    minimumEntitiesSpawned: 1
+    maximumEntitiesSpawned: 1
+  - type: TimedDespawn #delete the egg after the chicken spawns
+    lifetime: 21
 
 - type: entity
   name: butterfly
@@ -932,7 +993,7 @@
   description: Despite popular misconceptions, it's not actually made of butter.
   components:
   - type: MovementSpeedModifier
-    baseWalkSpeed : 6
+    baseWalkSpeed : 3
     baseSprintSpeed : 6
   - type: Sprite
     drawdepth: Mobs
@@ -958,12 +1019,14 @@
       10: Dead
   - type: RandomSprite
     available:
-      - enum.DamageStateVisualLayers.Base:
-          butterfly: Rainbow
+    - enum.DamageStateVisualLayers.Base:
+        butterfly: Rainbow
   - type: DamageStateVisuals
     states:
       Alive:
         Base: butterfly
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: Bloodstream
@@ -1011,6 +1074,8 @@
     states:
       Alive:
         Base: cow
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: SolutionContainerManager
@@ -1052,10 +1117,10 @@
   - type: GuideHelp
     guides:
     - Chef
+    - FoodRecipes
   - type: RandomBark
     barkType: cow
     barkMultiplier: 3
-
 
 - type: entity
   name: crab
@@ -1099,6 +1164,8 @@
     states:
       Alive:
         Base: crab
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: Butcherable
@@ -1202,6 +1269,9 @@
     requiresSpecialDigestion: true
     # Wooly prevents eating wool deleting the goat so its fine
     requireDead: false
+  - type: FlavorProfile
+    flavors:
+    - fiber
   - type: Butcherable
     spawned:
     - id: FoodMeat
@@ -1262,6 +1332,8 @@
     states:
       Alive:
         Base: goose
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: Butcherable
@@ -1341,7 +1413,10 @@
 
 - type: entity
   name: kangaroo
-  parent: [ SimpleMobBase, MobCombat ]
+  parent:
+  - SimpleMobBase
+  - MobCombat
+  - StripableInventoryBase
   id: MobKangaroo
   description: A large marsupial herbivore. It has powerful hind legs, with nails that resemble long claws.
   components:
@@ -1352,9 +1427,9 @@
   - type: Sprite
     drawdepth: Mobs
     layers:
-      - map: ["enum.DamageStateVisualLayers.Base"]
-        state: kangaroo
-        sprite: Mobs/Animals/kangaroo.rsi
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: kangaroo
+      sprite: Mobs/Animals/kangaroo.rsi
   - type: Fixtures
     fixtures:
       fix1:
@@ -1375,15 +1450,9 @@
     - Kangaroo
     understands:
     - Kangaroo
-  - type: InventorySlots
-  - type: Strippable
   - type: Butcherable
     spawned:
     - id: FoodMeat
-  - type: UserInterface
-    interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -1401,6 +1470,7 @@
     prob: 0.25
     name: ghost-role-information-kangaroo-name
     description: ghost-role-information-kangaroo-description
+    rules: ghost-role-information-nonantagonist-rules
   - type: GhostTakeoverAvailable
   - type: Vocal
     sounds:
@@ -1446,7 +1516,7 @@
 - type: entity
   name: genetic ancestor
   id: MobBaseAncestor
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, StripableInventoryBase]
   description: The genetic bipedal ancestor of... Uh... Something. Yeah, there's definitely something on the station that descended from whatever this is.
   abstract: true
   components:
@@ -1461,7 +1531,6 @@
   - type: Inventory
     templateId: monkey
     speciesId: monkey
-  - type: InventorySlots
   - type: Deathgasp
     prototype: MonkeyDeathgasp
   - type: Cuffable
@@ -1480,7 +1549,6 @@
         layer:
         - MobLayer
   - type: Stripping
-  - type: Strippable
   - type: UserInterface
     interfaces:
       enum.StrippingUiKey.Key:
@@ -1577,7 +1645,7 @@
   - type: FactionException
   - type: NpcFactionMember
     factions:
-      - Passive
+    - Passive
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
@@ -1586,6 +1654,18 @@
     tags:
     - VimPilot
     - DoorBumpOpener
+    - AnomalyHost
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+    reactions:
+    - reagents: [ Water, SpaceCleaner ]
+      methods: [ Touch ]
+      effects:
+      - !type:WashCreamPieReaction
+
+
 
 - type: entity
   name: monkey
@@ -1613,6 +1693,7 @@
     makeSentient: true
     name: ghost-role-information-monkey-name
     description: ghost-role-information-monkey-description
+    rules: ghost-role-information-nonantagonist-rules
   - type: GhostTakeoverAvailable
   - type: Clumsy
     gunShootFailDamage:
@@ -1623,6 +1704,7 @@
         Burn: 3
     clumsySound:
       path: /Audio/Animals/monkey_scream.ogg
+
 
 - type: entity
   name: monkey
@@ -1669,7 +1751,7 @@
   parent: MobBaseSyndicateMonkey
   suffix: syndicate agent
   components:
-    # make the player a traitor once its taken
+  # make the player a traitor once its taken
   - type: Absorbable
   - type: AutoTraitor
     profile: TraitorReinforcement
@@ -1702,11 +1784,14 @@
   - type: Speech
     speechSounds: Lizard
     speechVerb: Reptilian
+    allowedEmotes: ['Thump']
   - type: Vocal
     sounds:
       Male: MaleReptilian
       Female: FemaleReptilian
       Unsexed: MaleReptilian
+  - type: BodyEmotes
+    soundsId: ReptilianBodyEmotes
   - type: TypingIndicator
     proto: lizard
   - type: InteractionPopup
@@ -1750,10 +1835,11 @@
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-kobold
   - type: GhostRole
-    prob: 0.1
+    prob: 0.05
     makeSentient: true
     name: ghost-role-information-kobold-name
     description: ghost-role-information-kobold-description
+    rules: ghost-role-information-nonantagonist-rules
   - type: RandomBark
     barkMultiplier: 0.65
     barkType: kobold
@@ -1824,7 +1910,7 @@
   id: MobGuidebookMonkey
   description: A hopefully helpful monkey whose only purpose in life is for you to click on. Does this count as having a monkey give you a tutorial?
   components:
-    - type: GuidebookControlsTest
+  - type: GuidebookControlsTest
 
 - type: entity
   name: mouse
@@ -1863,6 +1949,7 @@
         state: mouse-0
   - type: Item
     size: Tiny
+    heldPrefix: 0
   - type: Clothing
     quickEquip: false
     sprite: Mobs/Animals/mouse.rsi
@@ -1871,7 +1958,7 @@
     - HEAD
   - type: NpcFactionMember
     factions:
-      - Mouse
+    - Mouse
   - type: HTN
     rootTask:
       task: MouseCompound
@@ -1903,7 +1990,7 @@
       10: Critical
       20: Dead
   - type: MovementSpeedModifier
-    baseWalkSpeed : 5
+    baseWalkSpeed : 2.5
     baseSprintSpeed : 5
   - type: DamageStateVisuals
     states:
@@ -1914,6 +2001,9 @@
       Dead:
         Base: splat-0
   - type: Food
+  - type: FlavorProfile
+    flavors:
+    - meaty
   - type: Thirst
     startingThirst: 25  # spawn with Okay thirst state
     thresholds:
@@ -1924,7 +2014,6 @@
       Dead: 0
     baseDecayRate: 0.04
   - type: Hunger
-    currentHunger: 25   # spawn with Okay hunger state
     thresholds:
       Overfed: 35
       Okay: 25
@@ -1975,7 +2064,14 @@
     wilhelmProbability: 0.001
   # TODO: Remove CombatMode when Prototype Composition is added
   - type: CombatMode
-    combatToggleAction: ActionCombatModeToggleOff
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 0
   - type: Bloodstream
     bloodMaxVolume: 50
   - type: CanEscapeInventory
@@ -1987,7 +2083,7 @@
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
-  - type: StepTriggerImmune
+  - type: ProtectedFromStepTriggers
     whitelist:
       types:
       - Landmine
@@ -2049,6 +2145,11 @@
   # intended for swarms that eat pills so only temporary
   - type: TimedDespawn
     lifetime: 60
+  - type: Hunger
+    baseDecayRate: 10 # always hungry
+    starvingSlowdownModifier: 1
+  - type: Thirst
+    baseDecayRate: 10 # always thirsty
 
 - type: entity
   parent: MobMouse
@@ -2175,6 +2276,8 @@
     states:
       Alive:
         Base: lizard
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: Butcherable
@@ -2231,6 +2334,8 @@
     states:
       Alive:
         Base: slug
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: Butcherable
@@ -2252,7 +2357,7 @@
   description: Hop hop hop. Lookin' moist.
   components:
   - type: MovementSpeedModifier
-    baseWalkSpeed: 4
+    baseWalkSpeed: 3
     baseSprintSpeed: 6
   - type: Sprite
     drawdepth: Mobs
@@ -2284,6 +2389,8 @@
     states:
       Alive:
         Base: frog
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: Butcherable
@@ -2313,7 +2420,7 @@
   description: Infiltrates your domain, spies on you, and somehow still a cool pet.
   components:
   - type: MovementSpeedModifier
-    baseWalkSpeed : 6
+    baseWalkSpeed : 2.5
     baseSprintSpeed : 6
   - type: Sprite
     drawdepth: Mobs
@@ -2338,6 +2445,8 @@
     states:
       Alive:
         Base: parrot
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: Butcherable
@@ -2396,6 +2505,8 @@
     states:
       Alive:
         Base: penguin
+      Critical:
+        Base: penguin_dead
       Dead:
         Base: penguin_dead
   - type: Butcherable
@@ -2436,13 +2547,13 @@
 
 - type: entity
   name: grenade penguin
-  parent: [ MobPenguin, MobCombat ]
+  parent: [ MobPenguin, MobCombat, BaseSyndicateContraband ]
   id: MobGrenadePenguin
   description: A small penguin with a grenade strapped around its neck. Harvested by the Syndicate from icy shit-hole planets.
   components:
   - type: Absorbable
   - type: MovementSpeedModifier
-    baseWalkSpeed: 3.5
+    baseWalkSpeed: 3
     baseSprintSpeed: 5
   - type: InputMover
   - type: MobMover
@@ -2473,6 +2584,8 @@
     states:
       Alive:
         Base: penguin
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: MeleeWeapon
@@ -2504,7 +2617,7 @@
       behaviors:
       - !type:ExplodeBehavior
 
-  # I have included a snake_hiss.ogg sound file so if you want to use that be my guest
+      # I have included a snake_hiss.ogg sound file so if you want to use that be my guest
 - type: entity
   name: snake
   parent: SimpleMobBase
@@ -2534,11 +2647,13 @@
     states:
       Alive:
         Base: snake
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: Butcherable
     spawned:
-    - id: FoodMeat
+    - id: FoodMeatSnake
       amount: 1
   - type: InteractionPopup
     successChance: 0.6
@@ -2598,7 +2713,7 @@
     solution: melee
     generated:
       reagents:
-      - ReagentId: Toxin
+      - ReagentId: Mechanotoxin
         Quantity: 1
   - type: MeleeChemicalInjector
     transferAmount: 0.75
@@ -2636,17 +2751,10 @@
     tags:
     - DoorBumpOpener
     - FootstepSound
-  - type: Tool # Open door from xeno.yml.
+  - type: Prying # Open door from xeno.yml.
+    pryPowered: true
+    force: true
     speedModifier: 1.5
-    qualities:
-      - Prying
-    useSound:
-      path: /Audio/Items/crowbar.ogg
-  - type: Prying
-    pryPowered: !type:Bool
-        true
-    force: !type:Bool
-      true
     useSound:
       path: /Audio/Items/crowbar.ogg
   - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 4 damage a minute from base.yml.
@@ -2680,7 +2788,7 @@
   - type: Absorbable
   - type: NpcFactionMember
     factions:
-      - Xeno
+    - Xeno
   - type: InputMover
   - type: MobMover
   - type: HTN
@@ -2749,46 +2857,48 @@
   id: MobClownSpider
   description: Combines the two most terrifying things in existence, spiders and clowns.
   components:
-    - type: Absorbable
-    - type: Sprite
-      drawdepth: Mobs
-      layers:
-      - map: ["enum.DamageStateVisualLayers.Base"]
-        state: clown
-        sprite: Mobs/Animals/clownspider.rsi
-    - type: Butcherable
-      spawned:
-        - id: MaterialBananium1
-          amount: 1
-    - type: DamageStateVisuals
-      states:
-        Alive:
-          Base: clown
-        Dead:
-          Base: dead
-    - type: MobThresholds
-      thresholds:
-        0: Alive
-        180: Dead
-    - type: Spider
-      webPrototype: SpiderWebClown
-    - type: MeleeWeapon
-      altDisarm: false
-      angle: 0
-      animation: WeaponArcBite
-      soundHit:
-        path: /Audio/Effects/bite.ogg
-      damage:
-        types:
-          Piercing: 8
-    - type: FootstepModifier
-      footstepSoundCollection:
-        collection: FootstepClownFast
-    - type: Speech
-      speechVerb: Cluwne
-    - type: Bloodstream
-      bloodMaxVolume: 150
-      bloodReagent: Laughter
+  - type: Absorbable
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: clown
+      sprite: Mobs/Animals/clownspider.rsi
+  - type: Butcherable
+    spawned:
+    - id: MaterialBananium1
+      amount: 1
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: clown
+      Critical:
+        Base: dead
+      Dead:
+        Base: dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      180: Dead
+  - type: Spider
+    webPrototype: SpiderWebClown
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Piercing: 8
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepClownFast
+  - type: Speech
+    speechVerb: Cluwne
+  - type: Bloodstream
+    bloodMaxVolume: 150
+    bloodReagent: Laughter
 
 - type: entity
   name: wizard spider
@@ -2804,7 +2914,7 @@
 
 - type: entity
   name: possum
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, StripableInventoryBase]
   id: MobPossum
   description: '"O Possum! My Possum!" -- Walt Whitman, 1865'
   components:
@@ -2831,16 +2941,12 @@
   - type: Inventory
     speciesId: possum
     templateId: pet
-  - type: InventorySlots
-  - type: Strippable
-  - type: UserInterface
-    interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
         Base: possum
+      Critical:
+        Base: possum_dead
       Dead:
         Base: possum_dead
   - type: Butcherable
@@ -2883,12 +2989,14 @@
     states:
       Alive:
         Base: possum_old
+      Critical:
+        Base: possum_dead_old
       Dead:
         Base: possum_dead_old
 
 - type: entity
   name: raccoon
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, StripableInventoryBase]
   id: MobRaccoon
   description: Trash panda!
   components:
@@ -2915,16 +3023,12 @@
   - type: Inventory
     speciesId: possum #close enough
     templateId: pet
-  - type: InventorySlots
-  - type: Strippable
-  - type: UserInterface
-    interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
         Base: raccoon
+      Critical:
+        Base: raccoon_dead
       Dead:
         Base: raccoon_dead
   - type: Butcherable
@@ -2954,7 +3058,7 @@
 
 - type: entity
   name: fox
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, StripableInventoryBase]
   id: MobFox
   description: They're a fox.
   components:
@@ -2988,16 +3092,12 @@
   - type: Inventory
     speciesId: fox
     templateId: pet
-  - type: InventorySlots
-  - type: Strippable
-  - type: UserInterface
-    interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
         Base: fox
+      Critical:
+        Base: fox_dead
       Dead:
         Base: fox_dead
   - type: Butcherable
@@ -3047,7 +3147,7 @@
 
 - type: entity
   name: corgi
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, StripableInventoryBase]
   id: MobCorgi
   description: Finally, a space corgi!
   components:
@@ -3076,16 +3176,12 @@
   - type: Inventory
     speciesId: dog
     templateId: pet
-  - type: InventorySlots
-  - type: Strippable
-  - type: UserInterface
-    interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
         Base: corgi
+      Critical:
+        Base: corgi_dead
       Dead:
         Base: corgi_dead
   - type: Butcherable
@@ -3134,11 +3230,13 @@
     states:
       Alive:
         Base: narsian
+      Critical:
+        Base: narsian_dead
       Dead:
         Base: narsian_dead
   - type: MeleeWeapon
     soundHit:
-        path: /Audio/Effects/bite.ogg
+      path: /Audio/Effects/bite.ogg
     angle: 0
     animation: WeaponArcBite
     damage:
@@ -3164,7 +3262,7 @@
   - type: Bloodstream
     bloodReagent: DemonsBlood
   - type: Damageable
-    damageContainer: CorporealSpirit # Nyanotrasen - Corporeal Spirit allows Holy water to do damage
+    damageContainer: BiologicalMetaphysical
     damageModifierSet: Infernal
   - type: Temperature
     heatDamageThreshold: 4000 #They come from hell, so..
@@ -3193,7 +3291,6 @@
   - type: Inventory
     speciesId: puppy
     templateId: pet
-  - type: InventorySlots
   - type: DamageStateVisuals
     states:
       Alive:
@@ -3208,7 +3305,7 @@
 
 - type: entity
   name: cat
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, StripableInventoryBase]
   id: MobCat
   description: Feline pet, very funny.
   components:
@@ -3235,16 +3332,12 @@
   - type: Inventory
     speciesId: cat
     templateId: pet
-  - type: InventorySlots
-  - type: Strippable
-  - type: UserInterface
-    interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
         Base: cat
+      Critical:
+        Base: cat_dead
       Dead:
         Base: cat_dead
   - type: Speech
@@ -3306,6 +3399,8 @@
     states:
       Alive:
         Base: cat2
+      Critical:
+        Base: cat2_dead
       Dead:
         Base: cat2_dead
 
@@ -3324,6 +3419,8 @@
     states:
       Alive:
         Base: syndicat
+      Critical:
+        Base: syndicat_dead
       Dead:
         Base: syndicat_dead
   - type: GhostRole
@@ -3358,7 +3455,7 @@
         Structural: 15
   - type: LanguageKnowledge
     speaks:
-      - Cat
+    - Cat
     understands:
     - Cat
     - TauCetiBasic
@@ -3378,6 +3475,8 @@
     states:
       Alive:
         Base: spacecat
+      Critical:
+        Base: spacecat_dead
       Dead:
         Base: spacecat_dead
   - type: Temperature
@@ -3385,10 +3484,10 @@
     coldDamageThreshold: 0
   - type: Tag
     tags:
-      - DoorBumpOpener
+    - DoorBumpOpener
   - type: MovementAlwaysTouching
   - type: PressureImmunity
-  - type: StepTriggerImmune
+  - type: ProtectedFromStepTriggers
   - type: Insulated
   - type: InteractionPopup
     successChance: 0.7
@@ -3415,6 +3514,8 @@
     states:
       Alive:
         Base: caracal_flop
+      Critical:
+        Base: caracal_dead
       Dead:
         Base: caracal_dead
   - type: Fixtures
@@ -3478,13 +3579,13 @@
 
 - type: entity
   name: sloth
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, StripableInventoryBase]
   id: MobSloth
   description: Very slow animal. For people with low energy.
   components:
   - type: Absorbable
   - type: MovementSpeedModifier
-    baseWalkSpeed : 1
+    baseWalkSpeed : 0.5
     baseSprintSpeed : 1
   - type: Sprite
     drawdepth: Mobs
@@ -3508,16 +3609,12 @@
   - type: Inventory
     speciesId: sloth
     templateId: pet
-  - type: InventorySlots
-  - type: Strippable
-  - type: UserInterface
-    interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
         Base: sloth
+      Critical:
+        Base: sloth_dead
       Dead:
         Base: sloth_dead
   - type: Butcherable
@@ -3545,7 +3642,7 @@
 
 - type: entity
   name: ferret
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, StripableInventoryBase]
   id: MobFerret
   description: Just a silly little guy!
   components:
@@ -3571,16 +3668,12 @@
   - type: Inventory
     speciesId: fox #close enough
     templateId: pet
-  - type: InventorySlots
-  - type: Strippable
-  - type: UserInterface
-    interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
         Base: ferret
+      Critical:
+        Base: ferret_dead
       Dead:
         Base: ferret_dead
   - type: Butcherable
@@ -3609,7 +3702,7 @@
 
 - type: entity
   name: hamster
-  parent: [ SimpleMobBase, MobCombat ]
+  parent: [ SimpleMobBase, MobCombat, StripableInventoryBase]
   id: MobHamster
   description: A cute, fluffy, robust hamster.
   components:
@@ -3619,6 +3712,7 @@
     allowMovement: true
     name: ghost-role-information-hamster-name
     description: ghost-role-information-hamster-description
+    rules: ghost-role-information-nonantagonist-rules
   - type: GhostTakeoverAvailable
   - type: Speech
     speechVerb: SmallMob
@@ -3667,17 +3761,11 @@
       40: Critical
       60: Dead
   - type: MovementSpeedModifier
-    baseWalkSpeed : 4
+    baseWalkSpeed : 2.5
     baseSprintSpeed : 4
   - type: Inventory
     speciesId: hamster
     templateId: hamster
-  - type: InventorySlots
-  - type: Strippable
-  - type: UserInterface
-    interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -3687,6 +3775,9 @@
       Dead:
         Base: splat-0
   - type: Food
+  - type: FlavorProfile
+    flavors:
+    - meaty
   - type: Hunger
     baseDecayRate: 0.3
   - type: Extractable
@@ -3731,7 +3822,7 @@
   - type: CombatMode
   - type: MeleeWeapon
     soundHit:
-        path: /Audio/Effects/bite.ogg
+      path: /Audio/Effects/bite.ogg
     angle: 0
     animation: WeaponArcBite
     damage:
@@ -3775,7 +3866,7 @@
 
 - type: entity
   name: pig
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, StripableInventoryBase]
   id: MobPig
   description: Oink.
   components:
@@ -3813,16 +3904,12 @@
     offspring:
     - id: MobPig
   - type: ReproductivePartner
-  - type: InventorySlots
-  - type: Strippable
-  - type: UserInterface
-    interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
         Base: pig
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: Butcherable
@@ -3849,10 +3936,13 @@
   - type: NpcFactionMember
     factions:
     - Passive
+  - type: HTN
+    rootTask:
+      task: RuminantCompound
 
 - type: entity
   name: diona nymph
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, StripableInventoryBase]
   id: MobDionaNymph
   description: It's like a cat, only.... branch-ier.
   components:
@@ -3878,15 +3968,9 @@
   - type: Inventory
     speciesId: cat
     templateId: pet
-  - type: InventorySlots
-  - type: Strippable
   - type: Bloodstream
     bloodReagent: Sap
     bloodMaxVolume: 60
-  - type: UserInterface
-    interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -3945,3 +4029,99 @@
   - type: ReplacementAccent
     accent: nymph
   - type: RandomBark # Using the default barks since they aren't going to talk anyway
+
+- type: entity
+  name: reindeer buck
+  parent: [ SimpleMobBase, MobCombat ]
+  id: MobReindeerBuck
+  description: You think it can pull a sleigh?
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: reindeer_buck
+      sprite: Mobs/Animals/reindeer_buck.rsi
+  #  - type: SpriteMovement  # One day when this shit isnt broken as hell. For now they hoppity hop.
+  #    movementLayers:
+  #      movement:
+  #        state: reindeer_buck
+  #    noMovementLayers:
+  #      movement:
+  #        state: reindeer_buck_still
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.48
+        density: 200
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: reindeer_buck
+      Critical:
+        Base: reindeer_buck_dead
+      Dead:
+        Base: reindeer_buck_dead
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 4
+  - type: Bloodstream
+    bloodMaxVolume: 300
+    # Horns though
+  - type: MeleeWeapon
+    damage:
+      types:
+        Piercing: 22
+    animation: WeaponArcFist
+  - type: NPCRetaliation
+  - type: FactionException
+  - type: NpcFactionMember
+    factions:
+    - Passive
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: Puller
+    needsHands: false
+  - type: RandomBark
+    barkMultiplier: 1.3
+
+- type: entity
+  name: reindeer doe
+  parent: MobReindeerBuck
+  id: MobReindeerDoe
+  components:
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 15
+    animation: WeaponArcFist
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: reindeer_doe
+      sprite: Mobs/Animals/reindeer_doe.rsi
+  #  - type: SpriteMovement  # One day when this shit isnt broken as hell. For now they hoppity hop.
+  #    movementLayers:
+  #      movement:
+  #        state: reindeer_doe
+  #    noMovementLayers:
+  #      movement:
+  #        state: reindeer_doe_still
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: reindeer_doe
+      Critical:
+        Base: reindeer_doe_dead
+      Dead:
+        Base: reindeer_doe_dead

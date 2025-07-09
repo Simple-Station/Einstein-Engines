@@ -55,11 +55,11 @@
     allowRevives: true
   - type: HealthExaminable
     examinableTypes:
-      - Blunt
-      - Slash
-      - Piercing
-      - Heat
-      - Shock
+    - Blunt
+    - Slash
+    - Piercing
+    - Heat
+    - Shock
     locPrefix: silicon
   - type: UserInterface
     interfaces:
@@ -88,6 +88,7 @@
   - type: Hands
     showInHands: false
     disableExplosionRecursion: true
+    canBeStripped: false
   - type: ComplexInteraction
   - type: IntrinsicRadioReceiver
   - type: IntrinsicRadioTransmitter
@@ -240,12 +241,17 @@
   - type: Emoting
   - type: GuideHelp
     guides:
-      - Cyborgs
-  - type: StepTriggerImmune
+    - Cyborgs
+    - Robotics
+  - type: ProtectedFromStepTriggers
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10 # capable of touching light bulbs and stoves without feeling pain!
   - type: Eye
     visMask:
-      - PsionicInvisibility
-      - Normal
+    - PsionicInvisibility
+    - Normal
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
@@ -291,6 +297,9 @@
   parent: [BaseBorgChassis, BaseBorgTransponder]
   abstract: true
   components:
+  - type: RandomMetadata
+    nameSegments:
+    - names_borg
   - type: NpcFactionMember
     factions:
     - NanoTrasen
@@ -307,7 +316,6 @@
   - type: SlavedBorg # DeltaV: NT borgs are enslaved to the AI by default
     law: ObeyAI
   - type: ShowJobIcons
-  - type: ShowMindShieldIcons
   - type: InteractionPopup
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
@@ -346,8 +354,27 @@
       Unsexed: UnisexSiliconSyndicate
   - type: PointLight
     color: "#dd200b"
-  - type: Damageable 
+  - type: Damageable
     damageContainer: Silicon
-    damageModifierSet: SiliconProtected 
+    damageModifierSet: SiliconProtected
   - type: ExplosionResistance
     damageCoefficient: 0.5
+
+- type: entity
+  id: BaseBorgChassisDerelict
+  parent: BaseBorgChassis
+  abstract: true
+  components:
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen #The seemingly best fit. It was a regular NT cyborg once, after all.
+  - type: Access
+    enabled: false
+    groups:
+    - AllAccess #Randomized access would be fun. AllAccess is the best i can think of right now that does make it too hard for it to enter the station or navigate it..
+  - type: AccessReader
+    access: [["Command"], ["Research"]]
+  - type: StartIonStormed
+    ionStormAmount: 3
+  - type: IonStormTarget
+    chance: 1

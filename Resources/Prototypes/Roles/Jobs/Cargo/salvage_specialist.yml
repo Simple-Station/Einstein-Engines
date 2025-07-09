@@ -4,16 +4,14 @@
   description: job-description-salvagespec
   playTimeTracker: JobSalvageSpecialist
   requirements:
-    - !type:CharacterDepartmentTimeRequirement
-      department: Logistics # DeltaV - Logistics Department replacing Cargo
-      min: 21600 #DeltaV 6 hrs
-    - !type:CharacterEmployerRequirement
-      employers:
-      - OrionExpress
-      - PMCG
-      - NanoTrasen
-  #  - !type:OverallPlaytimeRequirement #DeltaV
-  #    time: 36000 #10 hrs
+  - !type:CharacterDepartmentTimeRequirement
+    department: Logistics
+    min: 21600
+  - !type:CharacterEmployerRequirement
+    employers:
+    - OrionExpress
+    - PMCG
+    - NanoTrasen
   icon: "JobIconShaftMiner"
   startingGear: SalvageSpecialistGear
   supervisors: job-supervisors-qm
@@ -29,20 +27,17 @@
   - SalvageSpecialistPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
-    back: ClothingBackpackSalvageFilled
+    back: ClothingBackpackSalvage
     shoes: ClothingShoesBootsSalvage
     id: SalvagePDA
     ears: ClothingHeadsetCargo
     pocket1: MiningVoucher
-  satchel: ClothingBackpackSatchelSalvageFilled
-  duffelbag: ClothingBackpackDuffelSalvageFilled
 
 - type: startingGear
   id: SalvageSpecialistPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitSalvage
     head: ClothingHeadEnvirohelmSalvage
     gloves: ClothingHandsGlovesEnviroglovesSalvage
     mask: ClothingMaskGasExplorer
-    pocket1: MiningVoucher

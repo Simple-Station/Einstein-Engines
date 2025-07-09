@@ -4,10 +4,6 @@ namespace Content.Shared.CCVar;
 
 public sealed partial class CCVars
 {
-    /// Enables the automatic voting system.
-    public static readonly CVarDef<bool> AutoVoteEnabled =
-        CVarDef.Create("vote.autovote_enabled", true, CVar.SERVERONLY);
-
     /// Automatically starts a map vote when returning to the lobby.
     /// Requires auto voting to be enabled.
     public static readonly CVarDef<bool> MapAutoVoteEnabled =

@@ -1,5 +1,4 @@
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseGameRule
   id: Thief
   components:
@@ -33,7 +32,6 @@
         sound: "/Audio/Misc/thief_greeting.ogg"
 
 #- type: entity
-#  categories: [ HideSpawnMenu ]
 #  parent: BaseGameRule
 #  id: Exterminator
 #  components:

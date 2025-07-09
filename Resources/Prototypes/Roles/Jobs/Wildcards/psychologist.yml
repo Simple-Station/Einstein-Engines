@@ -9,14 +9,14 @@
   access:
   - Medical
   - Maintenance
-  - Psychologist # DeltaV - Add Psychologist access
+  - Psychologist
   extendedAccess:
   - Chemistry
   requirements:
-    - !type:CharacterEmployerRequirement
-      employers:
-      - Interdyne
-      - NanoTrasen
+  - !type:CharacterEmployerRequirement
+    employers:
+    - Interdyne
+    - NanoTrasen
 
 - type: startingGear
   id: PsychologistGear
@@ -24,17 +24,17 @@
   - PsychologistPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitPsychologist
-    back: ClothingBackpackPsychologistFilled #DeltaV - stamp included
+    back: ClothingBackpackMedical
     shoes: ClothingShoesLeather
     id: PsychologistPDA
     ears: ClothingHeadsetMedical
-  innerClothingSkirt: ClothingUniformJumpsuitPsychologist
-  satchel: ClothingBackpackSatchelPsychologistFilled #DeltaV - stamp included
-  duffelbag: ClothingBackpackDuffelPsychologistFilled #DeltaV - stamp included
+  storage:
+    back:
+    - RubberStampPsychologist
 
 - type: startingGear
   id: PsychologistPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitEnviroslacksPsychologist
     head: ClothingHeadEnvirohelmMedicalDoctor

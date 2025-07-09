@@ -30,7 +30,6 @@
         hard: false
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/shuttle.rsi
-    snapCardinals: false
   - type: Wires
     layoutId: Docking
   - type: Door

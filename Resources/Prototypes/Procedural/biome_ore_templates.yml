@@ -10,7 +10,7 @@
     WallRockSnow: WallRockSnowTin
   maxCount: 30
   minGroupSize: 10
-  maxGroupSize: 20
+  maxGroupSize: 15
   radius: 4
 
 - type: biomeMarkerLayer
@@ -65,7 +65,7 @@
     WallRockSnow: WallRockSnowQuartz
   maxCount: 30
   minGroupSize: 10
-  maxGroupSize: 20
+  maxGroupSize: 15
   radius: 4
 
 - type: biomeMarkerLayer
@@ -78,8 +78,8 @@
     WallRockSand: WallRockSandCoal
     WallRockSnow: WallRockSnowCoal
   maxCount: 30
-  minGroupSize: 10
-  maxGroupSize: 20
+  minGroupSize: 8
+  maxGroupSize: 12
   radius: 4
 
 - type: biomeMarkerLayer
@@ -92,8 +92,8 @@
     WallRockSand: WallRockSandSalt
     WallRockSnow: WallRockSnowSalt
   maxCount: 30
-  minGroupSize: 10
-  maxGroupSize: 20
+  minGroupSize: 8
+  maxGroupSize: 12
   radius: 4
 
 # Medium value
@@ -107,7 +107,7 @@
     WallRockChromite: WallRockChromiteGold
     WallRockSand: WallRockSandGold
     WallRockSnow: WallRockSnowGold
-  maxCount: 30
+  maxCount: 20
   minGroupSize: 5
   maxGroupSize: 10
   radius: 4
@@ -122,7 +122,7 @@
     WallRockChromite: WallRockChromiteSilver
     WallRockSand: WallRockSandSilver
     WallRockSnow: WallRockSnowSilver
-  maxCount: 30
+  maxCount: 20
   minGroupSize: 5
   maxGroupSize: 10
   radius: 4
@@ -139,8 +139,8 @@
     WallRockSand: WallRockSandPlasma
     WallRockSnow: WallRockSnowPlasma
   maxCount: 12
-  minGroupSize: 5
-  maxGroupSize: 10
+  minGroupSize: 4
+  maxGroupSize: 8
   radius: 4
 
 # Uranium
@@ -153,9 +153,9 @@
     WallRockChromite: WallRockChromiteUranium
     WallRockSand: WallRockSandUranium
     WallRockSnow: WallRockSnowUranium
-  maxCount: 12
-  minGroupSize: 5
-  maxGroupSize: 10
+  maxCount: 15
+  minGroupSize: 4
+  maxGroupSize: 8
   radius: 4
 
 - type: biomeMarkerLayer

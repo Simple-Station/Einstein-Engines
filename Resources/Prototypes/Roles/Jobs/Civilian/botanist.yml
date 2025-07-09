@@ -14,11 +14,11 @@
   - Kitchen
   - Bar
   requirements:
-    - !type:CharacterEmployerRequirement
-      employers:
-      - NanoTrasen
-      - ZengHuPharmaceuticals
-      - EastOrionCompany
+  - !type:CharacterEmployerRequirement
+    employers:
+    - NanoTrasen
+    - ZengHuPharmaceuticals
+    - EastOrionCompany
 
 - type: startingGear
   id: BotanistGear
@@ -26,19 +26,16 @@
   - BotanistPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitHydroponics
-    back: ClothingBackpackHydroponicsFilled
+    back: ClothingBackpackHydroponics
     shoes: ClothingShoesColorBrown
     id: BotanistPDA
     ears: ClothingHeadsetService
     outerClothing: ClothingOuterApronBotanist
     belt: ClothingBeltPlantFilled
-  innerClothingSkirt: ClothingUniformJumpskirtHydroponics
-  satchel: ClothingBackpackSatchelHydroponicsFilled
-  duffelbag: ClothingBackpackDuffelHydroponicsFilled
 
 - type: startingGear
   id: BotanistPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitHydroponics
     head: ClothingHeadEnvirohelmHydroponics

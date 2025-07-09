@@ -6,16 +6,15 @@
   components:
   - type: MachineBoard
     prototype: Autodoc
-    requirements:
+    machinePartRequirements:
       Manipulator: 4
-    materialRequirements:
+    stackRequirements:
       Cable: 3
       Steel: 10
     tagRequirements:
       BorgArm:
-        Amount: 3
-        ExamineName: "Borg Arm"
-        DefaultPrototype: LeftArmBorg
+        amount: 3
+        defaultPrototype: LeftArmBorg
 
 - type: entity
   parent: AutodocCircuitboard
@@ -33,7 +32,7 @@
 #   components:
 #   - type: MachineBoard
 #     prototype: OperatingTable
-#     materialRequirements:
+#     stackRequirements:
 #       Cable: 3
 #       Silver: 2
 #       Steel: 4
@@ -48,6 +47,6 @@
     state: medical
   - type: MachineBoard
     prototype: MedicalBiofabricator
-    requirements:
+    machinePartRequirements:
       MatterBin: 2
       Manipulator: 2

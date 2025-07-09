@@ -47,7 +47,8 @@
   - type: Clothing
     sprite: DeltaV/Clothing/OuterClothing/Coats/overcoat.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
   - type: Armor
     modifiers:
       coefficients:
@@ -65,7 +66,8 @@
   - type: Clothing
     sprite: DeltaV/Clothing/OuterClothing/Coats/greatcoat.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
   - type: Armor # MAKE SURE THE STATS ALIGN WITH SEC WINTER COAT!!!
     modifiers:
       coefficients:
@@ -86,7 +88,8 @@
   - type: Clothing
     sprite: DeltaV/Clothing/OuterClothing/Coats/leatherjacket.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
   - type: Armor
     modifiers:
       coefficients:
@@ -104,7 +107,8 @@
   - type: Clothing
     sprite: DeltaV/Clothing/OuterClothing/Coats/cybersunwindbreaker.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
   - type: Armor
     modifiers:
       coefficients:
@@ -134,7 +138,8 @@
       - state: equipped-OUTERCLOTHING-unshaded
         shader: unshaded
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
   - type: Armor
     modifiers:
       coefficients:
@@ -152,7 +157,8 @@
   - type: Clothing
     sprite: DeltaV/Clothing/OuterClothing/Coats/repcoat.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -165,5 +171,6 @@
   - type: Clothing
     sprite: DeltaV/Clothing/OuterClothing/Coats/cjrobe.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
 

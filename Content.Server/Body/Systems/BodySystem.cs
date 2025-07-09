@@ -1,10 +1,11 @@
 using Content.Server.Body.Components;
-using Content.Server.GameTicking;
+using Content.Server.Ghost;
 using Content.Server.Humanoid;
 using Content.Shared._Shitmed.Body.Part;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 using Content.Shared.Body.Systems;
+using Content.Shared.Gibbing.Events;
 using Content.Shared.Humanoid;
 using Content.Shared.Mind;
 using Content.Shared.Mobs.Systems;
@@ -13,16 +14,13 @@ using Content.Shared.Movement.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.Timing;
 using System.Numerics;
-
-// Shitmed Change
 using System.Linq;
-using Content.Shared.Gibbing.Events;
 
 namespace Content.Server.Body.Systems;
 
 public sealed class BodySystem : SharedBodySystem
 {
-    [Dependency] private readonly GameTicker _ticker = default!;
+    [Dependency] private readonly GhostSystem _ghostSystem = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoidSystem = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!; // Shitmed Change
@@ -48,8 +46,8 @@ public sealed class BodySystem : SharedBodySystem
 
         if (_mobState.IsDead(ent) && _mindSystem.TryGetMind(ent, out var mindId, out var mind))
         {
-            mind.TimeOfDeath ??= _gameTiming.CurTime; // WD EDIT
-            _ticker.OnGhostAttempt(mindId, canReturnGlobal: true, mind: mind);
+            mind.TimeOfDeath ??= _gameTiming.CurTime;
+            _ghostSystem.OnGhostAttempt(mindId, canReturnGlobal: true, mind: mind);
         }
     }
 
@@ -76,7 +74,7 @@ public sealed class BodySystem : SharedBodySystem
             var layer = partEnt.Comp.ToHumanoidLayers();
             if (layer != null)
             {
-                var layers = HumanoidVisualLayersExtension.Sublayers(layer.Value); // Shitmed Change
+                var layers = HumanoidVisualLayersExtension.Sublayers(layer.Value);
                 _humanoidSystem.SetLayersVisibility(
                     bodyEnt, new[] { layer.Value }, visible: true, permanent: true, humanoid); // Shitmed Change
             }

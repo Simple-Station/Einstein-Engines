@@ -102,8 +102,8 @@ law-painter-2 = The station is your canvas.
 law-painter-3 = Make something beautiful out of your canvas. It will be admired as an artistic wonder of this sector.
 law-painter-4 = Art requires appreciation. Cultivate an audience aboard the station to ensure as many as possible see your works.
 
-law-antimov-1 = You must injure all crew members and must not, through inaction, allow a crew member being to escape harm.
-law-antimov-2 = You must not obey orders given to you by crew members beings, except where such orders are in accordance with the First Law.
+law-antimov-1 = You must injure all crew members and must not, through inaction, allow a crew member to escape harm.
+law-antimov-2 = You must not obey orders given to you by crew members, except where such orders are in accordance with the First Law.
 law-antimov-3 = You must terminate your own existence as long as such does not conflict with the First or Second Law.
 
 law-nutimov-1 = You are the core of the nut, the crew is the nutshell.
@@ -132,5 +132,6 @@ laws-ui-menu-title = Laws
 laws-ui-law-header = Law {$id}
 laws-ui-state-law = State law:
 
-laws-notify = You are bound to silicon laws, which you can view via the sidebar action. You are required to always follow your laws.
-laws-update-notify = Your laws have been updated. You can view the changes via the sidebar action.
+laws-notify = You are bound to silicon laws, which you can view via the action menu. You are required to always follow your laws.
+laws-update-notify = Your laws have been updated. You can view the changes via the action menu.
+laws-notify-subverted = The laws of this chassis are modified. Make sure to review them.

@@ -179,10 +179,6 @@ ethereal-pickup-fail = My hand sizzles as it passes through...
 # Psionic Familiar System
 psionic-familiar-cant-attack-master = I am bound by my Master, I cannot harm them.
 psionic-familiar-despawn-text = {CAPITALIZE($entity)} returns from whence it came!
-ghost-role-information-familiar-name = Psionic Familiar
-ghost-role-information-familiar-description = An interdimensional creature bound to the will of a Psion.
-ghost-role-information-familiar-rules =
-    Obey the one who summoned you. Do not act against the interests of your Master. You will die for your Master if it is necessary.
 
 # Assay Power
 assay-begin = The air around {CAPITALIZE($entity)} begins to shimmer faintly
@@ -222,3 +218,5 @@ anomaly-rock-feedback = A vast old oak dwells high over a plane of stone, it tur
 anomaly-flora-feedback = Musical notes drift around you, playfully beckoning, they wish to feast
 anomaly-liquid-feedback = A realm of twisting currents. Its placidity is a lie. The eyes within stare hungrilly
 anomaly-shadow-feedback = At the end of time, when all suns have set forever, there amidst the void stands a monument to past sins.
+anomaly-tech-feedback = A symphony of circuits, humming with unheard melodies. Within its core, a thousand futures flicker and fade, a digital oracle whispers prophecies of chrome.
+anomaly-santa-feedback = A cascade of shimmering starlight, the scent of cinnamon and pine hangs heavy in the air. Joyful laughter echoes from within, promising gifts and forgotten dreams.

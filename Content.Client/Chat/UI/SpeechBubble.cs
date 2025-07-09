@@ -188,7 +188,7 @@ namespace Content.Client.Chat.UI
             var msg = new FormattedMessage();
             if (fontColor != null)
                 msg.PushColor(fontColor.Value);
-            msg.AddMarkup(message);
+            msg.AddMarkupOrThrow(message);
             return msg;
         }
 

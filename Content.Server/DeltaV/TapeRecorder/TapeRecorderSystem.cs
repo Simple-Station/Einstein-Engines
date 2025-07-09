@@ -127,7 +127,7 @@ public sealed class TapeRecorderSystem : SharedTapeRecorderSystem
         text.AppendLine();
         text.Append(Loc.GetString("tape-recorder-print-end-text"));
 
-        _paper.SetContent(paper, text.ToString(), paperComp);
+        _paper.SetContent((paper, paperComp), text.ToString());
 
         comp.CooldownEndTime = Timing.CurTime + comp.PrintCooldown;
     }

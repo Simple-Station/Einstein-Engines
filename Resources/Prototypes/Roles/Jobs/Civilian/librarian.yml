@@ -4,23 +4,23 @@
   description: job-description-librarian
   playTimeTracker: JobLibrarian
   requirements:
-    - !type:CharacterDepartmentTimeRequirement
-      department: Epistemics
-      min: 14400
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
-    - !type:CharacterEmployerRequirement
-      employers:
-      - NanoTrasen
-    - !type:CharacterItemGroupRequirement
-      group: TraitsCasterType
+  - !type:CharacterDepartmentTimeRequirement
+    department: Epistemics
+    min: 14400
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+      - IPC
+    - !type:CharacterTraitRequirement
+      traits:
+      - AnomalousPositronics
+  - !type:CharacterEmployerRequirement
+    employers:
+    - NanoTrasen
+  - !type:CharacterItemGroupRequirement
+    group: TraitsCasterType
   startingGear: LibrarianGear
   icon: "JobIconLibrarian"
   supervisors: job-supervisors-rd
@@ -38,9 +38,9 @@
       powerPool: PsychoHistorianPowerPool
     - type: InnatePsionicPowers
       powersToAdd:
-        - XenoglossyPower
-        - TelepathyPower
-        - AssayPower
+      - XenoglossyPower
+      - TelepathyPower
+      - AssayPower
 
 
 - type: startingGear
@@ -49,20 +49,20 @@
   - LibrarianPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitLibrarian
-    back: ClothingBackpackLibrarianFilled
+    back: ClothingBackpack
     shoes: ClothingShoesBootsLaceup
     outerClothing: ClothingOuterCoatRnd
     id: LibrarianPDA
     ears: ClothingHeadsetScience
     pocket1: BookPsionicsGuidebook
     pocket2: HandLabeler
-  innerClothingSkirt: ClothingUniformJumpskirtLibrarian
-  satchel: ClothingBackpackSatchelLibrarianFilled
-  duffelbag: ClothingBackpackDuffelLibrarianFilled
+  storage:
+    back:
+    - BookRandom
 
 - type: startingGear
   id: LibrarianPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitAncientVoid
     head: ClothingHeadEnvirohelmAncientVoid

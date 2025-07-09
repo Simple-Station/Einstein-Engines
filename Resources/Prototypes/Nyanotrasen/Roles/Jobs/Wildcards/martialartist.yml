@@ -24,17 +24,15 @@
   equipment:
     jumpsuit: ClothingUniformMartialGi
     belt: ClothingBeltMartialBlack
-    back: ClothingBackpackFilled
+    back: ClothingBackpack
     id: MartialArtistPDA
     ears: ClothingHeadsetService
     shoes: ClothingShoesGeta
     gloves: ClothingHandsGlovesBoxingRed
-  satchel: ClothingBackpackSatchelFilled
-  duffelbag: ClothingBackpackDuffelFilled
 
 - type: startingGear
   id: MartialArtistPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitMartialGi
     head: ClothingHeadEnvirohelmMartialGi

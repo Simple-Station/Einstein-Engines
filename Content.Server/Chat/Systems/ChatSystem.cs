@@ -4,22 +4,23 @@ using System.Text;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
+using Content.Server.Examine;
 using Content.Server.GameTicking;
-using Content.Server.Players.RateLimiting;
 using Content.Server.Language;
 using Content.Server.Speech.Components;
 using Content.Server.Speech.EntitySystems;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Shared.ActionBlocker;
+using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Database;
+using Content.Shared.Examine;
 using Content.Shared.Ghost;
 using Content.Shared.Language;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
-using Content.Shared.Language.Systems;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Players;
 using Content.Shared.Players.RateLimiting;
@@ -37,9 +38,6 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
-using Content.Server.Shuttles.Components;
-using Robust.Shared.Physics.Components;
-using Robust.Shared.Physics.Dynamics.Joints;
 
 namespace Content.Server.Chat.Systems;
 
@@ -67,11 +65,11 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly StationSystem _stationSystem = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
     [Dependency] private readonly ReplacementAccentSystem _wordreplacement = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
     [Dependency] private readonly TelepathicChatSystem _telepath = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
 
     public const int VoiceRange = 10; // how far voice goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
@@ -133,6 +131,7 @@ public sealed partial class ChatSystem : SharedChatSystem
                     _configurationManager.SetCVar(CCVars.OocEnabled, false);
                 break;
             case GameRunLevel.PostRound:
+            case GameRunLevel.PreRoundLobby:
                 if (!_configurationManager.GetCVar(CCVars.OocEnableDuringRound))
                     _configurationManager.SetCVar(CCVars.OocEnabled, true);
                 break;
@@ -307,9 +306,13 @@ public sealed partial class ChatSystem : SharedChatSystem
         message = SanitizeInGameOOCMessage(message);
 
         var sendType = type;
-        // If dead player LOOC is disabled, unless you are an aghost, send dead messages to dead chat
-        if (!_adminManager.IsAdmin(player) && !_deadLoocEnabled &&
-            (HasComp<GhostComponent>(source) || _mobStateSystem.IsDead(source)))
+        // If dead player LOOC is disabled, unless you are an admin with Moderator perms, send dead messages to dead chat
+        if ((_adminManager.IsAdmin(player) && _adminManager.HasAdminFlag(player, AdminFlags.Moderator)) // Override if admin
+            || _deadLoocEnabled
+            || (!HasComp<GhostComponent>(source) && !_mobStateSystem.IsDead(source))) // Check that player is not dead
+        {
+        }
+        else
             sendType = InGameOOCChatType.Dead;
 
         // If crit player LOOC is disabled, don't send the message at all.
@@ -338,12 +341,14 @@ public sealed partial class ChatSystem : SharedChatSystem
     /// <param name="colorOverride">Optional color for the announcement message</param>
     public void DispatchGlobalAnnouncement(
         string message,
-        string sender = "Central Command",
+        string? sender = null,
         bool playSound = true,
         SoundSpecifier? announcementSound = null,
         Color? colorOverride = null
         )
     {
+        sender ??= Loc.GetString("chat-manager-sender-announcement");
+
         var wrappedMessage = Loc.GetString("chat-manager-sender-announcement-wrap-message", ("sender", sender), ("message", FormattedMessage.EscapeText(message)));
         _chatManager.ChatMessageToAll(ChatChannel.Radio, message, wrappedMessage, default, false, true, colorOverride);
         if (playSound)
@@ -352,6 +357,36 @@ public sealed partial class ChatSystem : SharedChatSystem
             _audio.PlayGlobal(sound, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
         }
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Global station announcement from {sender}: {message}");
+    }
+
+    /// <summary>
+    /// Dispatches an announcement to players selected by filter.
+    /// </summary>
+    /// <param name="filter">Filter to select players who will recieve the announcement</param>
+    /// <param name="message">The contents of the message</param>
+    /// <param name="source">The entity making the announcement (used to determine the station)</param>
+    /// <param name="sender">The sender (Communications Console in Communications Console Announcement)</param>
+    /// <param name="playDefaultSound">Play the announcement sound</param>
+    /// <param name="announcementSound">Sound to play</param>
+    /// <param name="colorOverride">Optional color for the announcement message</param>
+    public void DispatchFilteredAnnouncement(
+        Filter filter,
+        string message,
+        EntityUid? source = null,
+        string? sender = null,
+        bool playSound = true,
+        SoundSpecifier? announcementSound = null,
+        Color? colorOverride = null)
+    {
+        sender ??= Loc.GetString("chat-manager-sender-announcement");
+
+        var wrappedMessage = Loc.GetString("chat-manager-sender-announcement-wrap-message", ("sender", sender), ("message", FormattedMessage.EscapeText(message)));
+        _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Radio, message, wrappedMessage, source ?? default, false, true, colorOverride);
+        if (playSound)
+        {
+            _audio.PlayGlobal(announcementSound?.ToString() ?? DefaultAnnouncementSound, filter, true, AudioParams.Default.WithVolume(-2f));
+        }
+        _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Station Announcement from {sender}: {message}");
     }
 
     /// <summary>
@@ -365,11 +400,13 @@ public sealed partial class ChatSystem : SharedChatSystem
     public void DispatchStationAnnouncement(
         EntityUid source,
         string message,
-        string sender = "Central Command",
+        string? sender = null,
         bool playDefaultSound = true,
         SoundSpecifier? announcementSound = null,
         Color? colorOverride = null)
     {
+        sender ??= Loc.GetString("chat-manager-sender-announcement");
+
         var wrappedMessage = Loc.GetString("chat-manager-sender-announcement-wrap-message", ("sender", sender), ("message", FormattedMessage.EscapeText(message)));
         var station = _stationSystem.GetOwningStation(source);
 
@@ -412,7 +449,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             return;
 
         // The original message
-        var message = TransformSpeech(source, FormattedMessage.RemoveMarkupPermissive(originalMessage), language);
+        var message = TransformSpeech(source, originalMessage, language);
 
         if (message.Length == 0)
             return;
@@ -450,7 +487,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         // To avoid logging any messages sent by entities that are not players, like vendors, cloning, etc.
         // Also doesn't log if hideLog is true.
-        if (!HasComp<ActorComponent>(source) || hideLog == true)
+        if (!HasComp<ActorComponent>(source) || hideLog)
             return;
 
         if (originalMessage == message)
@@ -526,13 +563,14 @@ public sealed partial class ChatSystem : SharedChatSystem
             // Result is the intermediate message derived from the perceived one via obfuscation
             // Wrapped message is the result wrapped in an "x says y" string
             string result, wrappedMessage;
+            //If listener is too far and has no line of sight, they can't identify the whisperer's identity
             if (data.Range <= WhisperClearRange)
             {
                 // Scenario 1: the listener can clearly understand the message
                 result = perceivedMessage;
                 wrappedMessage = WrapWhisperMessage(source, "chat-manager-entity-whisper-wrap-message", name, result, language);
             }
-            else if (_interactionSystem.InRangeUnobstructed(source, listener, WhisperMuffledRange, Shared.Physics.CollisionGroup.Opaque))
+            else if (_examineSystem.InRangeUnOccluded(source, listener, WhisperMuffledRange))
             {
                 // Scenario 2: if the listener is too far, they only hear fragments of the message
                 result = ObfuscateMessageReadability(perceivedMessage);

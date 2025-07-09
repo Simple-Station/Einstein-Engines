@@ -134,7 +134,8 @@
     - type: StaminaDamageResistance
       coefficient: 0.5 # 50%
     - type: TemperatureProtection
-      coefficient: 0.001
+      heatingCoefficient: 0.001
+      coolingCoefficient: 0.001
 
 - type: entity
   parent: ClothingModsuitBootsStandard

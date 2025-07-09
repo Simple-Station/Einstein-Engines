@@ -75,10 +75,10 @@
   components:
   - type: StorageFill
     contents:
-      - id: Flash
+    - id: Flash
 
 - type: entity
-  parent: ClothingBackpack
+  parent: [ClothingBackpack, BaseRestrictedContraband]
   id: ClothingBackpackSecurity
   name: security backpack
   description: It's a very robust backpack.
@@ -87,7 +87,7 @@
     sprite: Clothing/Back/Backpacks/security.rsi
 
 - type: entity
-  parent: ClothingBackpack
+  parent: [ClothingBackpack, BaseRestrictedContraband]
   id: ClothingBackpackBrigmedic
   name: corpsman backpack # DeltaV - rename brig medic to corpsman
   description: It's a very sterile backpack.
@@ -123,7 +123,7 @@
     sprite: Clothing/Back/Backpacks/medical.rsi
 
 - type: entity
-  parent: ClothingBackpack
+  parent: [ClothingBackpack, BaseCommandContraband]
   id: ClothingBackpackCaptain
   name: captain's backpack
   description: It's a special backpack made exclusively for Nanotrasen officers.
@@ -200,8 +200,8 @@
   name: logistics backpack # DeltaV - Logistics Department replacing Cargo
   description: A robust backpack for stealing logistics's loot. # DeltaV - Logistics Department replacing Cargo
   components:
-    - type: Sprite
-      sprite: Clothing/Back/Backpacks/cargo.rsi
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/cargo.rsi
 
 - type: entity
   parent: ClothingBackpack
@@ -209,8 +209,8 @@
   name: salvage bag
   description: A robust backpack for stashing your loot.
   components:
-    - type: Sprite
-      sprite: Clothing/Back/Backpacks/salvage.rsi
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/salvage.rsi
 
 - type: entity
   parent: ClothingBackpack
@@ -218,12 +218,12 @@
   name: merc bag
   description: A backpack that has been in many dangerous places, a reliable combat backpack.
   components:
-    - type: Sprite
-      sprite: Clothing/Back/Backpacks/merc.rsi
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/merc.rsi
 
 #ERT
 - type: entity
-  parent: ClothingBackpack
+  parent: [ ClothingBackpack, BaseCentcommContraband ]
   id: ClothingBackpackERTLeader
   name: ERT leader backpack
   description: A spacious backpack with lots of pockets, worn by the Commander of an Emergency Response Team.
@@ -294,13 +294,13 @@
   name: death squad backpack
   description: Holds the kit of CentComm's most feared agents.
   components:
-    - type: Storage
-      grid:
-      - 0,0,7,6
+  - type: Storage
+    grid:
+    - 0,0,7,6
 
 #Syndicate
 - type: entity
-  parent: ClothingBackpack
+  parent: [ClothingBackpack, BaseSyndicateContraband]
   id: ClothingBackpackSyndicate
   name: syndicate backpack
   description:
@@ -344,6 +344,29 @@
     sprite: Clothing/Back/Backpacks/cluwne.rsi
   - type: Unremoveable
     deleteOnDrop: false
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackElectropack
+  name: electropack
+  suffix: SelfUnremovable
+  description: Shocks on the signal. It is used to keep a particularly dangerous criminal under control.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/electropack.rsi
+    state: icon
+  - type: Clothing
+    stripDelay: 10
+    equipDelay: 5 # to avoid accidentally falling into the trap associated with SelfUnremovableClothing
+  - type: SelfUnremovableClothing
+  - type: ShockOnTrigger
+    damage: 5
+    duration: 3
+    cooldown: 4
+  - type: TriggerOnSignal
+  - type: DeviceLinkSink
+    ports:
+    - Trigger
 
 # Debug
 - type: entity

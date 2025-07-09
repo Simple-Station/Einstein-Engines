@@ -109683,8 +109683,6 @@ entities:
     - type: Transform
       pos: -13.507916,40.626015
       parent: 2
-- proto: MagazineRifleRubber
-  entities:
   - uid: 15950
     components:
     - type: Transform

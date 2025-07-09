@@ -4,24 +4,24 @@
   description: job-description-chaplain
   playTimeTracker: JobChaplain
   requirements:
-    - !type:CharacterDepartmentTimeRequirement
-      department: Epistemics # Chaplain is now one of the station's "Crew-Aligned Wizards"
-      min: 14400 # 4 hours
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
-    - !type:CharacterEmployerRequirement
+  - !type:CharacterDepartmentTimeRequirement
+    department: Epistemics # Chaplain is now one of the station's "Crew-Aligned Wizards"
+    min: 14400 # 4 hours
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterSpeciesRequirement
       inverted: true
-      employers:
-      - Unemployed
-    - !type:CharacterItemGroupRequirement
-      group: TraitsCasterType
+      species:
+      - IPC
+    - !type:CharacterTraitRequirement
+      traits:
+      - AnomalousPositronics
+  - !type:CharacterEmployerRequirement
+    inverted: true
+    employers:
+    - Unemployed
+  - !type:CharacterItemGroupRequirement
+    group: TraitsCasterType
   startingGear: ChaplainGear
   icon: "JobIconChaplain"
   supervisors: job-supervisors-rd
@@ -40,8 +40,8 @@
       powerPool: ElementalistPowerPool
     - type: InnatePsionicPowers
       powersToAdd:
-        - HealingWordPower
-        - SummonRemiliaPower
+      - HealingWordPower
+      - SummonRemiliaPower
     - type: Condemned
 
 - type: startingGear
@@ -55,13 +55,10 @@
     id: ChaplainPDA
     ears: ClothingHeadsetScience
     pocket1: BookPsionicsGuidebook
-  innerClothingSkirt: ClothingUniformJumpskirtChaplain
-  satchel: ClothingBackpackSatchelChaplainFilled
-  duffelbag: ClothingBackpackDuffelChaplainFilled
 
 - type: startingGear
   id: ChaplainPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitChaplain
     head: ClothingHeadEnvirohelmChaplain

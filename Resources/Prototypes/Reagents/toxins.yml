@@ -89,15 +89,15 @@
   metabolisms:
     Poison:
       effects:
-        - !type:HealthChange
-          damage:
-            types:
-              Poison: 2
-        - !type:ChemVomit
-          conditions:
-          - !type:ReagentThreshold
-            min: 2
-          probability: 0.2
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 2
+      - !type:ChemVomit
+        conditions:
+        - !type:ReagentThreshold
+          min: 2
+        probability: 0.2
 
 - type: reagent
   id: Mold
@@ -349,9 +349,9 @@
         refresh: false
       - !type:ChemRemovePsionic #Nyano - Summary: removes psionics from the user at 20u.
         conditions:
-          - !type:ReagentThreshold
-            reagent: MindbreakerToxin
-            min: 20
+        - !type:ReagentThreshold
+          reagent: MindbreakerToxin
+          min: 20
   # TODO: PROPER hallucinations
 
 - type: reagent
@@ -407,8 +407,6 @@
       effects:
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
-          min: 1
         - !type:OrganType
           type: Animal # Applying damage to the mobs with lower metabolism capabilities
         damage:
@@ -417,10 +415,8 @@
       - !type:ChemVomit
         probability: 0.04 #Scaled for time, not metabolismrate.
         conditions:
-          - !type:ReagentThreshold
-            min: 3
-          - !type:OrganType
-            type: Animal
+        - !type:OrganType
+          type: Animal
 
 - type: reagent
   id: Amatoxin
@@ -449,10 +445,10 @@
   metabolisms:
     Poison:
       effects:
-        - !type:HealthChange
-          damage:
-            types:
-              Poison: 2
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 2
 
 - type: reagent
   id: Romerol
@@ -466,15 +462,15 @@
   metabolisms:
     Medicine:
       effects:
-        - !type:CauseZombieInfection
-          conditions:
-            - !type:ReagentThreshold
-              min: 5
-        - !type:ChemAddMoodlet
-          moodPrototype: RomerolEffect
-          conditions:
-            - !type:ReagentThreshold
-              min: 5
+      - !type:CauseZombieInfection
+        conditions:
+        - !type:ReagentThreshold
+          min: 5
+      - !type:ChemAddMoodlet
+        moodPrototype: RomerolEffect
+        conditions:
+        - !type:ReagentThreshold
+          min: 5
 
 - type: reagent
   id: UncookedAnimalProteins
@@ -489,9 +485,9 @@
       effects:
       - !type:PopupMessage
         conditions:
-          - !type:OrganType
-            type: Animal
-            shouldHave: false
+        - !type:OrganType
+          type: Animal
+          shouldHave: false
         type: Local
         visualType: MediumCaution
         messages: [ "generic-reagent-effect-sick" ]
@@ -499,9 +495,9 @@
       - !type:ChemVomit
         probability: 0.1
         conditions:
-          - !type:OrganType
-            type: Animal
-            shouldHave: false
+        - !type:OrganType
+          type: Animal
+          shouldHave: false
       - !type:HealthChange
         conditions:
         - !type:OrganType
@@ -559,8 +555,8 @@
       - !type:GenericStatusEffect
         key: Pacified
         component: Pacified
-        refresh: false
         type: Add
+        time: 4
       - !type:ChemAddMoodlet
         moodPrototype: PaxEffect
 
@@ -681,3 +677,46 @@
             Poison: 2
       - !type:SatiateHunger
         factor: -6
+
+# inspired by the spider neurotoxin GsMtx-4
+# poisons non-spiders and slows you down at high doses
+- type: reagent
+  id: Mechanotoxin
+  name: reagent-name-mechanotoxin
+  group: Toxins
+  desc: reagent-desc-mechanotoxin
+  flavor: sweet
+  color: "#00b408"
+  physicalDesc: reagent-physical-desc-nondescript
+  metabolisms:
+    Poison:
+      metabolismRate: 0.2 # Slower metabolism so it can build up over time for slowdown
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Arachnid
+          shouldHave: false
+        damage:
+          types:
+            Poison: 1.6
+      - !type:MovespeedModifier
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Mechanotoxin
+          min: 2
+        - !type:OrganType
+          type: Arachnid
+          shouldHave: false
+        walkSpeedModifier: 0.8
+        sprintSpeedModifier: 0.8
+      - !type:MovespeedModifier
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Mechanotoxin
+          min: 4
+        - !type:OrganType
+          type: Arachnid
+          shouldHave: false
+        walkSpeedModifier: 0.4
+        sprintSpeedModifier: 0.4

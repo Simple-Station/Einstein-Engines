@@ -834,20 +834,10 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("integer")
                         .HasColumnName("age");
 
-                    b.Property<string>("Backpack")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("backpack");
-
                     b.Property<string>("CharacterName")
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("char_name");
-
-                    b.Property<string>("Clothing")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("clothing");
 
                     b.Property<string>("CustomSpecieName")
                         .IsRequired()

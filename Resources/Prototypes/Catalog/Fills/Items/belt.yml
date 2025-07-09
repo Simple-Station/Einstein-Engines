@@ -19,7 +19,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: Crowbar
+      - id: CrowbarYellow
       - id: Wrench
       - id: Screwdriver
       - id: Wirecutter
@@ -71,6 +71,19 @@
       - id: Handcuffs
 
 - type: entity
+  id: ClothingBeltSecurityWebbingFilled
+  parent: ClothingBeltSecurityWebbing
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: GrenadeFlashBang
+    - id: TearGasGrenade
+    - id: Stunbaton
+    - id: Handcuffs
+    - id: Handcuffs
+
+- type: entity
   id: ClothingBeltJanitorFilled
   parent: ClothingBeltJanitor
   suffix: Filled
@@ -82,6 +95,7 @@
       - id: CleanerGrenade
         amount: 2
       - id: FlashlightLantern
+      - id: LightReplacer
 
 - type: entity
   id: ClothingBeltMedicalFilled
@@ -147,6 +161,7 @@
     contents:
     - id: HydroponicsToolMiniHoe
     - id: HydroponicsToolSpade
+    - id: HydroponicsToolClippers
     - id: RobustHarvestChemistryBottle
 
 - type: entity
@@ -215,7 +230,6 @@
     contents:
         - id: WeaponRevolverInspector
         - id: SpeedLoaderMagnum
-        - id: SpeedLoaderMagnumRubber
 
 - type: entity
   id: ClothingBeltChefFilled

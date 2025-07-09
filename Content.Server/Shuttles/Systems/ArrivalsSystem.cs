@@ -388,7 +388,7 @@ public sealed class ArrivalsSystem : EntitySystem
 
     private void SendDirections(PlayerSpawnCompleteEvent ev)
     {
-        if (!Enabled || !ev.LateJoin || !_pendingQuery.HasComp(ev.Mob))
+        if (!Enabled || !ev.LateJoin || ev.Silent || !_pendingQuery.HasComp(ev.Mob))
             return;
 
         var arrival = NextShuttleArrival();

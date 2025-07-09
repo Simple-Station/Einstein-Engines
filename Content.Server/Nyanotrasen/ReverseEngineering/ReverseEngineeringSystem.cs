@@ -346,11 +346,11 @@ public sealed class ReverseEngineeringSystem : EntitySystem
 
         if (component.CurrentItem == null)
         {
-            msg.AddMarkup(Loc.GetString("reverse-engineering-status-ready"));
+            msg.AddMarkupOrThrow(Loc.GetString("reverse-engineering-status-ready"));
             return msg;
         }
 
-        msg.AddMarkup(Loc.GetString("reverse-engineering-current-item", ("item", component.CurrentItem.Value)));
+        msg.AddMarkupOrThrow(Loc.GetString("reverse-engineering-current-item", ("item", component.CurrentItem.Value)));
         msg.PushNewline();
         msg.PushNewline();
 
@@ -358,11 +358,11 @@ public sealed class ReverseEngineeringSystem : EntitySystem
         if (!component.SafetyOn)
             analysisScore += component.DangerBonus;
 
-        msg.AddMarkup(Loc.GetString("reverse-engineering-analysis-score", ("score", analysisScore)));
+        msg.AddMarkupOrThrow(Loc.GetString("reverse-engineering-analysis-score", ("score", analysisScore)));
         msg.PushNewline();
-        msg.AddMarkup(Loc.GetString("reverse-engineering-item-difficulty", ("difficulty", component.CurrentItemDifficulty)));
+        msg.AddMarkupOrThrow(Loc.GetString("reverse-engineering-item-difficulty", ("difficulty", component.CurrentItemDifficulty)));
         msg.PushNewline();
-        msg.AddMarkup(Loc.GetString("reverse-engineering-progress", ("progress", component.Progress)));
+        msg.AddMarkupOrThrow(Loc.GetString("reverse-engineering-progress", ("progress", component.Progress)));
         msg.PushNewline();
 
         if (component.LastResult != null)
@@ -391,7 +391,7 @@ public sealed class ReverseEngineeringSystem : EntitySystem
                     break;
             }
 
-            msg.AddMarkup(Loc.GetString("reverse-engineering-last-attempt-result", ("result", lastProbe)));
+            msg.AddMarkupOrThrow(Loc.GetString("reverse-engineering-last-attempt-result", ("result", lastProbe)));
         }
 
         return msg;

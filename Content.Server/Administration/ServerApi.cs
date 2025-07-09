@@ -43,7 +43,7 @@ public sealed partial class ServerApi : IPostInjectInit
         CCVars.PanicBunkerCountDeadminnedAdmins.Name,
         CCVars.PanicBunkerShowReason.Name,
         CCVars.PanicBunkerMinAccountAge.Name,
-        CCVars.PanicBunkerMinOverallHours.Name,
+        CCVars.PanicBunkerMinOverallMinutes.Name,
         CCVars.PanicBunkerCustomReason.Name,
     ];
 

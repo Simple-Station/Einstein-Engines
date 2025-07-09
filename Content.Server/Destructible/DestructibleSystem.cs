@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Systems;
@@ -20,6 +21,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Linq;
 using Content.Server.Construction.Completions;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Projectiles;
 using Content.Shared.Throwing;
 
@@ -111,6 +113,16 @@ namespace Content.Server.Destructible
                 _projectile.RemoveEmbed(child, embed);
                 _throwing.TryThrow(child, Random.NextVector2(), 1f, friction: 100f); // very short distance
             }
+        }
+
+        public bool TryGetDestroyedAt(Entity<DestructibleComponent?> ent, [NotNullWhen(true)] out FixedPoint2? destroyedAt)
+        {
+            destroyedAt = null;
+            if (!Resolve(ent, ref ent.Comp, false))
+                return false;
+
+            destroyedAt = DestroyedAt(ent, ent.Comp);
+            return true;
         }
 
         // FFS this shouldn't be this hard. Maybe this should just be a field of the destructible component. Its not
