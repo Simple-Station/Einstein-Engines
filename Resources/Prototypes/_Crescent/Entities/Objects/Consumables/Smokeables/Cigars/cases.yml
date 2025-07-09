@@ -1,11 +1,30 @@
 - type: entity
-  id: CigarNCWLCase
-  parent: [ BaseStorageItem, BaseBagOpenClose ]
-  name: NCWL Cigar case
-  description: A case for holding your cigars when you are not smoking them.
+  id: CigarFreeports
+  parent: CigarCase
+  name: Freeports cigar case
+  description: "FREEPORTS DSC"
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Consumable/Smokeables/Cigars/imported_cigarcase.rsi
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/freeports_cigar.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumable/Smokeables/Cigars/freeports_cigar.rsi
+    size: Normal
+    shape:
+    - 0,0,2,1
+    storedRotation: 90
+  - type: StorageFill
+    contents:
+    - id: CigarFreeports
+      amount: 8
+
+- type: entity
+  id: CigarNCWLCase
+  parent: CigarCase
+  name: NCWL IMPORT CIGAR
+  description: "NCWL IMPORT CIGAR DESC."
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/imported_cigar.rsi
     layers:
     - state: closed
     - state: open
@@ -27,9 +46,9 @@
       visible: false
   - type: Storage
     grid:
-    - 0,0,3,1
+    - 0,1,4,1
   - type: Item
-    sprite: _Crescent/Objects/Consumable/Smokeables/Cigars/imported_cigarcase.rsi
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/imported_cigar.rsi
     size: Normal
     shape:
     - 0,0,2,1
@@ -48,4 +67,50 @@
     - cigar3
     - cigar4
     - cigar5
-  - type: Appearance
+
+- type: entity
+  id: CigarRoyalCase
+  parent: CigarCase
+  name: ROYAL CIGAR
+  description: "ROYAL CIGAR DESC."
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/royal_cigar.rsi
+    layers:
+    - state: closed
+    - state: open
+      map: ["openLayer"]
+    - state: cigar1
+      map: ["cigar1"]
+      visible: false
+    - state: cigar2
+      map: ["cigar2"]
+      visible: false
+    - state: cigar3
+      map: ["cigar3"]
+      visible: false
+    - state: cigar4
+      map: ["cigar4"]
+      visible: false
+  - type: Storage
+    grid:
+    - 0,1,4,1
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/royal_cigar.rsi
+    size: Normal
+    shape:
+    - 0,0,2,1
+    storedRotation: 90
+  - type: StorageFill
+    contents:
+    - id: CigarRoyal
+      amount: 4
+  - type: ItemCounter
+    count:
+      tags: [Cigar]
+    composite: true
+    layerStates:
+    - cigar1
+    - cigar2
+    - cigar3
+    - cigar4
