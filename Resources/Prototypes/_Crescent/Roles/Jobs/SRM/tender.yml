@@ -29,6 +29,9 @@
     components:
       - type: Telepathic
       - type: BibleUser
+      - type: CPRTraining
+      - type: SurgerySpeedModifier
+        speedModifier: 2
 
 - type: startingGear
   id: TenderGear

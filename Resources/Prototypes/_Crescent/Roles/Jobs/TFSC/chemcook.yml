@@ -18,6 +18,7 @@
     components:
       - type: ChatRank
         rank: crescent-rank-syndoc
+      - type: CPRTraining
   weight: 16
   startingGear: ChemcookGear
   alwaysUseSpawner: true
