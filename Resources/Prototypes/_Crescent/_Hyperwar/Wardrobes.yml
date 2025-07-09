@@ -1040,7 +1040,6 @@
     MagazinePistolSubMachineGun: 12
     BoxFlare: 100
     BoxRoundsAntiMateriel: 1
-    MagazineRiflePan: 3
     BoxLethalshot: 10
     MagazineMagnum: 12
     MagazinePistol: 50
@@ -1054,7 +1053,6 @@
     MagazinePistolSubMachineGun: 12
     BoxFlare: 100
     BoxRoundsAntiMateriel: 1
-    MagazineLightRifleBox: 3
     BoxLethalshot: 10
     MagazineMagnum: 12
     MagazinePistol: 50
@@ -1063,13 +1061,15 @@
   id: NCWLConscriptGearInventory
   startingInventory:
     WeaponFlareGun: 20
+    Crowbar: 100
+    Wrench: 100
     ClothingBeltNCWLWebbing: 100
     ClothingBackpackNCWL: 100
-    ClothingHeadHelmetNCWLBasic: 5
-    ClothingOuterArmorNCWLHeavyCarapace: 5
     ClothingHeadHelmetNCWLEVA: 100
     ClothingOuterNCWLEVA: 100
     ClothingShoesBootsMag: 100
+    ClothingHeadHelmetNCWLBasic: 5
+    ClothingOuterArmorNCWLHeavyCarapace: 5
     JetpackBlackFilled: 100
     HandHeldMassScannerEE: 100
     DoubleEmergencyOxygenTankFilled: 100
@@ -1078,6 +1078,8 @@
   id: DSMConscriptGearInventory
   startingInventory:
     WeaponFlareGun: 20
+    Crowbar: 100
+    Wrench: 100
     ClothingBeltAuthorityWebbing: 100
     ClothingBackpackDSM: 100
     ClothingHeadHelmetImperialEVA: 100
