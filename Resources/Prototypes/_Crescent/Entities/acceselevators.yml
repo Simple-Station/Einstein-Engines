@@ -1,6 +1,6 @@
 ﻿- type: entity
   parent: BaseItem
-  id: AccesElevatorBase
+  id: AccessElevatorBase
   name: Debug Acces Elevator
   description: Gives you jack shit dumbass you shouldn't spawn this!!!!!!!!!!!.
   components:
@@ -26,8 +26,8 @@
 
 - type: entity
   parent: AccesElevatorBase
-  id: AccesElevatorCD
-  name: CyberDawn Acces Elevator
+  id: AccessElevatorCD
+  name: CyberDawn Access Elevator
   description: Gives a target ID the acces codes for CyberDawn Technologies facilities.
   components:
   - type: AccesElevator
@@ -37,8 +37,8 @@
 
 - type: entity
   parent: AccesElevatorBase
-  id: AccesElevatorSAW
-  name: SAW Acces Elevator
+  id: AccessElevatorSAW
+  name: SAW Access Elevator
   description: Gives a target ID the acces codes for Space Aeronautic Worker's union facilities.
   components:
   - type: AccesElevator
@@ -48,11 +48,22 @@
 
 - type: entity
   parent: AccesElevatorBase
-  id: AccesElevatorGSC
-  name: GSC Acces Elevator
+  id: AccessElevatorGSC
+  name: GSC Access Elevator
   description: Gives a target ID the acces codes for Gorlex Security Consulting facilities.
   components:
   - type: AccesElevator
     acces:
     - SyndicateBasic
     - SyndicateGorlex
+
+- type: entity
+  parent: AccesElevatorBase
+  id: AccessElevatorIPM
+  name: IPM Access Elevator
+  description: Gives a target ID the acces codes for Interdyne Pharmaceuticals facilities.
+  components:
+  - type: AccesElevator
+    acces:
+    - SyndicateBasic
+    - SyndicateInterdyne
