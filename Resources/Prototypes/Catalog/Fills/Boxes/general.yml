@@ -226,12 +226,16 @@
   name: flare box
   parent: BoxCardboard
   id: BoxFlare
-  description: A box of flares. Party time.
+  description: A box of flares.
   components:
+  - type: Item
+    size: Tiny #so it can fit in pockets
+    shape:
+    - 0,0,2,2
   - type: StorageFill
     contents:
       - id: Flare
-        amount: 6
+        amount: 16
   - type: Sprite
     layers:
       - state: box
