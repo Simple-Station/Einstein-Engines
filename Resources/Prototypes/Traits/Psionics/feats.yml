@@ -21,9 +21,6 @@
           inverted: true
           species:
             - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -58,9 +55,6 @@
           inverted: true
           species:
             - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
   functions:
     - !type:TraitAddPsionics
       psionicPowers:

@@ -25,9 +25,6 @@
           inverted: true
           species:
             - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
 
 - type: trait
   id: PsionicInsulation
@@ -56,9 +53,6 @@
           inverted: true
           species:
             - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
 
 - type: trait
   id: PsychoHistorian
@@ -94,6 +88,3 @@
           inverted: true
           species:
             - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
