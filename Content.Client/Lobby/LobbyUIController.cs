@@ -382,7 +382,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             dummyEnt = EntityManager.SpawnEntity(dummy, MapCoordinates.Nullspace);
         }
 
-        _humanoid.LoadProfile(dummyEnt, humanoid);
+        _humanoid.LoadProfile(dummyEnt, humanoid, loadExtensions: false, generateLoadouts: false);
 
         if (humanoid != null)
         {

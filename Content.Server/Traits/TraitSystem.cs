@@ -7,6 +7,7 @@ using Content.Server.Chat.Managers;
 using Content.Shared.Customization.Systems;
 using Content.Shared.Database;
 using Content.Shared.GameTicking;
+using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Shared.Players;
@@ -42,10 +43,16 @@ public sealed class TraitSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
+        SubscribeLocalEvent<LoadProfileExtensionsEvent>(OnProfileLoad);
     }
 
     // When the player is spawned in, add all trait components selected during character creation
     private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent args) =>
+        ApplyTraits(args.Mob, args.JobId, args.Profile,
+            _playTimeTracking.GetTrackerTimes(args.Player), args.Player.ContentData()?.Whitelisted ?? false);
+
+
+    private void OnProfileLoad(LoadProfileExtensionsEvent args) =>
         ApplyTraits(args.Mob, args.JobId, args.Profile,
             _playTimeTracking.GetTrackerTimes(args.Player), args.Player.ContentData()?.Whitelisted ?? false);
 

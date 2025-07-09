@@ -30,6 +30,7 @@ using Robust.Shared.Physics.Systems;
 using System.Linq;
 using Robust.Shared.Utility;
 using Robust.Shared.GameStates;
+using Content.Shared.Humanoid;
 
 namespace Content.Server.Traits;
 
@@ -864,5 +865,35 @@ public sealed partial class TraitCyberneticLimbReplacement : TraitFunction
             if (entityManager.TryGetComponent(newLimb, out BodyPartComponent? limbComp))
                 bodySystem.AttachPart(root.Value.Entity, SlotId, newLimb, root.Value.BodyPart, limbComp);
         }
+    }
+}
+
+// This may seem self referential, but it's a convenient shorthand for systems other than Traits that also use these functions.
+// By Hullrot's request for the sanity of their contributors.
+[UsedImplicitly]
+public sealed partial class TraitAddTrait : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public List<ProtoId<TraitPrototype>> Traits { get; private set; } = new();
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var traitSystem = entityManager.System<TraitSystem>();
+        var protoMan = IoCManager.Resolve<IPrototypeManager>();
+        if (!entityManager.TryGetComponent(uid, out HumanoidAppearanceComponent? humanoid))
+            return;
+
+        var traitsToAdd = new List<TraitPrototype>();
+
+        foreach (var trait in Traits)
+            if (humanoid.LastProfileLoaded is not null
+                && !humanoid.LastProfileLoaded.TraitPreferences.Contains(trait)
+                && protoMan.TryIndex(trait, out var traitPrototype))
+                traitsToAdd.Add(traitPrototype);
+
+        foreach (var trait in traitsToAdd)
+            traitSystem.AddTrait(uid, trait);
     }
 }

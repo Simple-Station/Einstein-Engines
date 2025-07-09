@@ -198,6 +198,7 @@
     - id: RubberStampDetective
     - id: HoloprojectorSecurity
     - id: BoxEvidenceMarkers
+    - id: BoxTapeRecorder
     - id: LunchboxSecurityFilledRandom
       prob: 0.3
     - id: HandLabeler

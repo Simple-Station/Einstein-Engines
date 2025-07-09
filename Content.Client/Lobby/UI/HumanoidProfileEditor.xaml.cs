@@ -972,7 +972,7 @@ namespace Content.Client.Lobby.UI
             {
                 var hiddenLayers = humanoid.HiddenLayers;
                 var appearanceSystem = _entManager.System<HumanoidAppearanceSystem>();
-                appearanceSystem.LoadProfile(PreviewDummy, Profile, humanoid);
+                appearanceSystem.LoadProfile(PreviewDummy, Profile, humanoid, false, false);
                 // Reapply the hidden layers set from clothing
                 appearanceSystem.SetLayersVisibility(PreviewDummy, hiddenLayers, false, humanoid: humanoid);
             }

@@ -26,4 +26,16 @@ public sealed partial class AntagLoadProfileRuleComponent : Component
     /// </summary>
     [DataField]
     public bool AlwaysUseSpeciesOverride;
+
+    /// <summary>
+    ///     Whether this antag will also attempt to generate Traits, Nationality, Employer, and Lifepath. Basically all the "Traits"
+    /// </summary>
+    [DataField]
+    public bool AllowProfileExtensions = true;
+
+    /// <summary>
+    ///     Whether this antag will also generate Loadouts. Fun fact: Look up CharacterAntagonistRequirement
+    /// </summary>
+    [DataField]
+    public bool AllowAntagLoadouts = true;
 }

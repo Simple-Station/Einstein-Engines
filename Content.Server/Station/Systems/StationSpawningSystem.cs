@@ -155,7 +155,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             if (prototype != null)
                 SetPdaAndIdCardData(entity.Value, profile.Name, prototype, station);
 
-            _humanoidSystem.LoadProfile(entity.Value, profile);
+            _humanoidSystem.LoadProfile(entity.Value, profile, loadExtensions: false, generateLoadouts: false);
             _metaSystem.SetEntityName(entity.Value, profile.Name);
             if (profile.FlavorText != "" && _configurationManager.GetCVar(CCVars.FlavorText))
                 EnsureComp<DetailExaminableComponent>(entity.Value).Content = profile.FlavorText;
@@ -175,7 +175,6 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             jobSpecial.AfterEquip(entity);
     }
 
-    /// <summary>
     /// Sets the ID card and PDA name, job, and access data.
     /// </summary>
     /// <param name="entity">Entity to load out.</param>
