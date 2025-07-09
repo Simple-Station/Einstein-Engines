@@ -2,30 +2,29 @@
 # Discord: @fleshangel
 
 - type: vessel
-  id: UnionfallVanguard
-  name: NCWL Vanguard
-  description: A communard gunship, sees use primarily as an escort vessel.
-  price: 35000
+  id: UnionfallLodka
+  name: NCWL Lodka
+  description: A light communard fighter.
+  price: 25000
   category: Small
   group: None
-  path: /Maps/_Crescent/Unionfall/NCWL/unionfall_vanguard.yml
+  path: /Maps/_Crescent/Shuttles/NCWL/lodka.yml
 
 - type: gameMap
-  id: UnionfallVanguard
-  mapName: 'NCWL Vanguard'
-  mapPath: /Maps/_Crescent/Unionfall/NCWL/unionfall_vanguard.yml
+  id: UnionfallLodka
+  mapName: 'NCWL Lodka'
+  mapPath: /Maps/_Crescent/Shuttles/NCWL/lodka.yml
   minPlayers: 0
   stations:
-    UnionfallVanguard:
+    UnionfallLodka:
       stationProto: StandardCrescentVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'NCWL Vanguard {1}'
+          mapNameTemplate: 'NCWL Lodka {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: VesselDesignation
-          designation: vessel-designation-gunship
         - type: StationJobs
           overflowJobs: []
           availableJobs:

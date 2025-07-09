@@ -16,7 +16,7 @@
   mapPath: /Maps/_Crescent/Unionfall/NCWL/unionfall_broadsword.yml
   minPlayers: 0
   stations:
-    Broadsword:
+    UnionfallBroadsword:
       stationProto: StandardCrescentVessel
       components:
         - type: StationNameSetup
