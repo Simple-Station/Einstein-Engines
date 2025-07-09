@@ -291,6 +291,9 @@
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/surplus_ncwl_smg.rsi
+    slots:
+    - Back
+    - suitStorage
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
   - type: Gun
@@ -344,6 +347,9 @@
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_smg.rsi
+    slots:
+    - Back
+    - suitStorage
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
   - type: Gun

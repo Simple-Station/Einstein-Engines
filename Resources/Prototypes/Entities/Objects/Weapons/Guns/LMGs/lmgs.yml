@@ -154,6 +154,8 @@
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_lmg.rsi
   - type: Appearance
   - type: HeldSpeedModifier
     walkModifier: 0.6
@@ -197,6 +199,11 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/surplus_ncwl_lmg.rsi
+    slots:
+    - Back
+    - suitStorage
   - type: ItemSlots
     slots:
       gun_magazine:
