@@ -518,7 +518,7 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         //UNIONFALL_NEMESIS
         if (_map.TryLoad(mapId, unionfall_nemesis, out var nemesisUid, new MapLoadOptions
         {
-            Offset = new Vector2(7794f, 4500f)
+            Offset = new Vector2(2000f, 4500f)
         }))
         {
             if (_prototypeManager.TryIndex<GameMapPrototype>("unionfall-Nemesis", out var stationProto))
@@ -534,7 +534,7 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         //UNIONFALL_CLEMENTINE
         if (_map.TryLoad(mapId, unionfall_clementine, out var clementineUid, new MapLoadOptions
         {
-            Offset = new Vector2(-3000f, 4500f)
+            Offset = new Vector2(-3000f, 13000f)
         }))
         {
             if (_prototypeManager.TryIndex<GameMapPrototype>("unionfall-Clementine", out var stationProto))
