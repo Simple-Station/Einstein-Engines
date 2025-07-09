@@ -1067,12 +1067,12 @@
     ClothingBackpackNCWL: 100
     ClothingHeadHelmetNCWLBasic: 5
     ClothingOuterArmorNCWLHeavyCarapace: 5
-    ClothingHeadHelmetNCWLEVA: 20
-    ClothingOuterNCWLEVA: 20
-    ClothingShoesBootsMag: 20
-    JetpackBlackFilled: 20
-    HandHeldMassScannerEE: 50
-    DoubleEmergencyOxygenTankFilled: 50
+    ClothingHeadHelmetNCWLEVA: 100
+    ClothingOuterNCWLEVA: 100
+    ClothingShoesBootsMag: 100
+    JetpackBlackFilled: 100
+    HandHeldMassScannerEE: 100
+    DoubleEmergencyOxygenTankFilled: 100
 
 - type: vendingMachineInventory
   id: DSMConscriptGearInventory
@@ -1080,11 +1080,11 @@
     WeaponFlareGun: 20
     ClothingBeltAuthorityWebbing: 100
     ClothingBackpackDSM: 100
-    ClothingHeadHelmetImperialEVA: 20
-    ClothingOuterCoatImperialSoftsuit: 20
-    ClothingShoesBootsMag: 20
+    ClothingHeadHelmetImperialEVA: 100
+    ClothingOuterCoatImperialSoftsuit: 100
+    ClothingShoesBootsMag: 100
     ClothingHeadHelmetImperialTrooperHelmet: 5
     ClothingOuterArmorImperialTrooperArmor: 5
-    JetpackBlackFilled: 20
-    HandHeldMassScannerEE: 50
-    DoubleEmergencyOxygenTankFilled: 50
+    JetpackBlackFilled: 100
+    HandHeldMassScannerEE: 100
+    DoubleEmergencyOxygenTankFilled: 100
