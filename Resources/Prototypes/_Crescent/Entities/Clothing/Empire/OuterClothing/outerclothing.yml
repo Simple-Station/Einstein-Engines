@@ -451,8 +451,8 @@
 - type: entity
   parent: ClothingOuterEVASuitBase
   id: ClothingOuterCoatImperialRitter
-  name: imperial ritter voidsuit
-  description: A prestigious extravehicular softsuit of Imperial design.
+  name: neurosuit
+  description: An airtight ballistic fiber woven uniform for Imperial Ritters. It serves as both soft protection against shrapnel and an interface with their Exoplate, absorbing many of the rigors of piloting in place of their bearer and allowing even an unaugmented human to move with their machine as though they were one body.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/Empire/OuterClothing/rittersuit.rsi
