@@ -42,7 +42,7 @@
   - type: ReverseEngineering # Delta
     difficulty: 3
     recipes:
-      - HandHeldMassScanner
+      - HandHeldMassScannerEE
 
 - type: entity
   id: HandHeldMassScannerEmpty

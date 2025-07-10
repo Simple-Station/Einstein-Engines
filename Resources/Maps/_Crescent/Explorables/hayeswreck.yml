@@ -3628,23 +3628,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingShoesBootsMagAdv
-  entities:
-  - uid: 448
-    components:
-    - type: Transform
-      parent: 440
-    - type: Magboots
-      toggleActionEntity: 449
-    - type: Physics
-      canCollide: False
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 449
-    - type: InsideEntityStorage
 - proto: ComputerBlackMarketBankATM
   entities:
   - uid: 1

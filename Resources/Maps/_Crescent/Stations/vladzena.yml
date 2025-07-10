@@ -32607,15 +32607,6 @@ entities:
     - type: Transform
       pos: 7.5,-62.5
       parent: 1
-- proto: ShipVoucherCherenzikov
-  entities:
-  - uid: 1610
-    components:
-    - type: Transform
-      parent: 1469
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: ShipVoucherVanguard
   entities:
   - uid: 1609
