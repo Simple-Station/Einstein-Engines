@@ -129,29 +129,6 @@
     price: 500
 
 - type: entity
-  name : DuraThread Weave
-  parent: baseArmorPlate
-  id: ArmorPlateDurathread
-  description: "A solid sheet of Durathread weaved across 8 times. Great at stopping big bullets."
-  components:
-  - type: ArmorRepairKit
-    repairHealth: 1250.0
-    materialType: DuraThread
-  - type: Sprite
-    sprite: _Crescent/Clothing/armorSprites.rsi
-    state: cloth
-  - type: Item
-    sprite: _Crescent/Clothing/armorSprites.rsi
-    storedSprite:
-      sprite: _Crescent/Clothing/armorSprites.rsi
-      state:
-  - type: PhysicalComposition
-    materialComposition:
-      Durathread: 4000
-  - type: StaticPrice
-    price: 1250
-
-- type: entity
   name : Plasma Glass Plate
   parent: baseArmorPlate
   id: ArmorPlatePlasmGlassa

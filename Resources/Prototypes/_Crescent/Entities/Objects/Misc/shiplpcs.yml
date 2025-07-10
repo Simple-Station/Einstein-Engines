@@ -121,23 +121,6 @@
 
 - type: entity
   parent: BaseItem
-  id: ShipVoucherImp
-  name: DSM 'Impel' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with an Imperial Impel-classs miner-freighter pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 20000
-  - type: ShipVoucher
-    ship: Imp
-
-- type: entity
-  parent: BaseItem
   id: ShipVoucherCovetor
   name: DSM 'Covetor' pattern LPC fabprint disk
   description: An LPC fabprint disk loaded with an Imperial Covetor-classs miner-freighter pattern. Has to be redeemed at a shipyard console.
@@ -794,23 +777,6 @@
 
 - type: entity
   parent: BaseItem
-  id: ShipVoucherJackal
-  name: GSC 'Jackal' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a Gorlex Security Consulting Jackal-class converted heavy battlecarrier pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 90000
-  - type: ShipVoucher
-    ship: Jackal
-
-- type: entity
-  parent: BaseItem
   id: ShipVoucherJiuzhu
   name: IPC 'Jiuzhu' pattern LPC fabprint disk
   description: An LPC fabprint disk loaded with a Interdyne Pharmaceuticals Jiuzhu-class medical frigate pattern. Has to be redeemed at a shipyard console.
@@ -1309,23 +1275,6 @@
     price: 10000 # change later
   - type: ShipVoucher
     ship: Borealis
-
-- type: entity
-  parent: BaseItem
-  id: ShipVoucherArdour
-  name: Ardour pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with the ATH Ardour, their prized flagship in the sector.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 10000 # change later
-  - type: ShipVoucher
-    ship: Ardour
 
 - type: entity
   parent: BaseItem

@@ -9,7 +9,6 @@
   components:
     - type: GibOnTrigger
       deleteItems: true
-      deleteOrgans: true
     - type: Inventory
       templateId: human
     - type: Loadout

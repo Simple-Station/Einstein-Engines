@@ -171,7 +171,7 @@
     rotationSpeed: 40
     acceleration: 25
     topSpeed: 125
-    FOV: 80
+
     defaultSeekingRange: 400
     guidanceAlgorithm: PredictiveGuidance
 

@@ -446,7 +446,6 @@
     prototypes:
     # Spawners
     - SpawnDungeonLootCircuitBoardSalvage
-    - SpawnDungeonLootCircuitBoardEngi
     - SpawnDungeonLootCircuitBoardScience
     - SpawnDungeonLootCircuitBoardMed
     - AutolatheMachineCircuitboard
