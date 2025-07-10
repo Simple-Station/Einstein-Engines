@@ -16625,3 +16625,10 @@ Entries:
   id: 7300
   time: '2025-07-09T15:46:20.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2449
+- author: Ghost581
+  changes:
+    - type: Tweak
+      message: Jetpacks can go on suit storage slot
+  id: 7301
+  time: '2025-07-10T16:00:26.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2501
