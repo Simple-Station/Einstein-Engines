@@ -12,35 +12,35 @@
       visible: false
     - state: cig1
       map: ["cig1"]
-      sprite: Objects/Consumable/Smokeables/Cigarettes/Packs/visualizer.rsi
+      sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/visualizer.rsi
       visible: false
     - state: cig2
       map: ["cig2"]
-      sprite: Objects/Consumable/Smokeables/Cigarettes/Packs/visualizer.rsi
+      sprite: _Crescent/Objects/Consumable/Smokeables/Cigarettes/Packs/visualizer.rsi
       visible: false
     - state: cig3
       map: ["cig3"]
-      sprite: Objects/Consumable/Smokeables/Cigarettes/Packs/visualizer.rsi
+      sprite: _Crescent/Objects/Consumable/Smokeables/Cigarettes/Packs/visualizer.rsi
       visible: false
     - state: cig4
       map: ["cig4"]
-      sprite: Objects/Consumable/Smokeables/Cigarettes/Packs/visualizer.rsi
+      sprite: _Crescent/Objects/Consumable/Smokeables/Cigarettes/Packs/visualizer.rsi
       visible: false
     - state: cig5
       map: ["cig5"]
-      sprite: Objects/Consumable/Smokeables/Cigarettes/Packs/visualizer.rsi
+      sprite: _Crescent/Objects/Consumable/Smokeables/Cigarettes/Packs/visualizer.rsi
       visible: false
     - state: cig6
       map: ["cig6"]
-      sprite: Objects/Consumable/Smokeables/Cigarettes/Packs/visualizer.rsi
+      sprite: _Crescent/Objects/Consumable/Smokeables/Cigarettes/Packs/visualizer.rsi
       visible: false
     - state: cig7
       map: [ "cig7" ]
-      sprite: Objects/Consumable/Smokeables/Cigarettes/Packs/visualizer.rsi
+      sprite: _Crescent/Objects/Consumable/Smokeables/Cigarettes/Packs/visualizer.rsi
       visible: false
     - state: cig8
       map: [ "cig8" ]
-      sprite: Objects/Consumable/Smokeables/Cigarettes/Packs/visualizer.rsi
+      sprite: _Crescent/Objects/Consumable/Smokeables/Cigarettes/Packs/visualizer.rsi
       visible: false
   - type: Tag
     tags:
@@ -79,7 +79,7 @@
 
 - type: entity
   id: CigPackFilterless
-  parent: CigPackCRESCENTBase
+  parent: CigPackBase
   name: Filterless CIGPACK
   description: Filterless CIGPACK desc
   components:
@@ -90,7 +90,7 @@
 
 - type: entity
   id: CigPackNCWL
-  parent: CigPackCRESCENTBase
+  parent: CigPackBase
   name: NCWL CIGPACK
   description: NCWL CIGPACK desc
   components:
@@ -100,8 +100,19 @@
     sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/ncwl_cigs.rsi
 
 - type: entity
+  id: CigPackEmpire
+  parent: CigPackBase
+  name: EMPIRE CIGPACK
+  description: EMPIRE CIGPACK desc
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/royal.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/royal.rsi
+
+- type: entity
   id: CigPackSHI
-  parent: CigPackCRESCENTBase
+  parent: CigPackBase
   name: SHI CIGPACK
   description: SHI CIGPACK desc
   components:
@@ -112,7 +123,7 @@
 
 - type: entity
   id: CigPackSHI_Menthol
-  parent: CigPackCRESCENTBase
+  parent: CigPackBase
   name: SHI_Menthol CIGPACK
   description: SHI_Menthol CIGPACK desc
   components:
@@ -123,7 +134,7 @@
 
 - type: entity
   id: CigPackFreeports
-  parent: CigPackCRESCENTBase
+  parent: CigPackBase
   name: Freeports CIGPACK
   description: Freeports CIGPACK desc
   components:
@@ -134,7 +145,7 @@
 
 - type: entity
   id: CigPackInterdyne_Real
-  parent: CigPackCRESCENTBase
+  parent: CigPackBase
   name: Interdyne_Real CIGPACK
   description: Interdyne_Real CIGPACK desc
   components:
@@ -145,7 +156,7 @@
 
 - type: entity
   id: CigPackInterdynes
-  parent: CigPackCRESCENTBase
+  parent: CigPackBase
   name: Interdynes CIGPACK
   description: Interdynes CIGPACK desc
   components:
@@ -156,7 +167,7 @@
 
 - type: entity
   id: CigPackInterdyne_Drug
-  parent: CigPackCRESCENTBase
+  parent: CigPackBase
   name: Interdyne_Drug CIGPACK
   description: Interdyne_Drug CIGPACK desc
   components:
@@ -167,7 +178,7 @@
 
 - type: entity
   id: CigPackInterdyne_Herbal
-  parent: CigPackCRESCENTBase
+  parent: CigPackBase
   name: Interdyne_Herbal CIGPACK
   description: Interdyne_Herbal CIGPACK desc
   components:
@@ -178,18 +189,18 @@
 
 - type: entity
   id: CigPackInterdyne_Psy
-  parent: CigPackCRESCENTBase
+  parent: CigPackBase
   name: Interdyne_Psy CIGPACK
   description: Interdyne_Psy CIGPACK desc
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/interdyne_psy.rsi
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/interdynes_psy.rsi
   - type: Item
-    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/interdyne_psy.rsi
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/interdynes_psy.rsi
 
 - type: entity
   id: CigPackLucky
-  parent: CigPackCRESCENTBase
+  parent: CigPackBase
   name: Lucky CIGPACK
   description: Lucky CIGPACK desc
   components:
@@ -200,7 +211,7 @@
 
 - type: entity
   id: CigPackLucky_Menthol
-  parent: CigPackCRESCENTBase
+  parent: CigPackBase
   name: Lucky_Menthol CIGPACK
   description: Lucky_menthol CIGPACK desc
   components:
@@ -211,7 +222,7 @@
 
 - type: entity
   id: CigPackMarlboro
-  parent: CigPackCRESCENTBase
+  parent: CigPackBase
   name: Marlboro CIGPACK
   description: Marlboro CIGPACK desc
   components:
@@ -222,7 +233,7 @@
 
 - type: entity
   id: CigPackMarlboro_Menthol
-  parent: CigPackCRESCENTBase
+  parent: CigPackBase
   name: Marlboro_Menthol CIGPACK
   description: Marlboro_Menthol CIGPACK desc
   components:
@@ -233,7 +244,7 @@
 
 - type: entity
   id: CigPackMarlboro_Real
-  parent: CigPackCRESCENTBase
+  parent: CigPackBase
   name: Marlboro_Real CIGPACK
   description: Marlboro_Real CIGPACK desc
   components:
@@ -244,7 +255,7 @@
 
 - type: entity
   id: CigPackNewports
-  parent: CigPackCRESCENTBase
+  parent: CigPackBase
   name: Newports CIGPACK
   description: Newports CIGPACK desc
   components:
@@ -255,7 +266,7 @@
 
 - type: entity
   id: CigPackNT
-  parent: CigPackCRESCENTBase
+  parent: CigPackBase
   name: NT CIGPACK
   description: NT CIGPACK desc
   components:
@@ -266,7 +277,7 @@
 
 - type: entity
   id: CigPackNT_Limited
-  parent: CigPackCRESCENTBase
+  parent: CigPackBase
   name: NT_Limited CIGPACK
   description: NT_Limited CIGPACK desc
   components:
@@ -277,7 +288,7 @@
 
 - type: entity
   id: CigPackRecreatios_Crack
-  parent: CigPackCRESCENTBase
+  parent: CigPackBase
   name: Recreatios_Crack
   description: Recreatios_Crack desc
   components:
@@ -288,7 +299,7 @@
 
 - type: entity
   id: CigPackRecreatios_Meth
-  parent: CigPackCRESCENTBase
+  parent: CigPackBase
   name: Recreatios_Meth
   description: Recreatios_Meth desc
   components:
@@ -299,7 +310,7 @@
 
 - type: entity
   id: CigPackRecreatios_Psy
-  parent: CigPackCRESCENTBase
+  parent: CigPackBase
   name: Recreatios_Psy
   description: Recreatios_Psy desc
   components:
@@ -310,7 +321,7 @@
 
 - type: entity
   id: CigPackRecreatios_Weed
-  parent: CigPackCRESCENTBase
+  parent: CigPackBase
   name: Recreatios_Weed
   description: Recreatios_Weed desc
   components:
@@ -321,7 +332,7 @@
 
 - type: entity
   id: CigPackTimmys
-  parent: CigPackCRESCENTBase
+  parent: CigPackBase
   name: Timmys
   description: Timmys desc
   components:
