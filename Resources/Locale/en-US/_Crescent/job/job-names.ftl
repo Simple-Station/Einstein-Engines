@@ -103,6 +103,8 @@ job-name-gliess-dockmaster = Gliessian Dockmaster
 
 #conscript-ncwl#
 
+job-name-conscript-ncwl-ship-captain = Clementine Captain
+job-name-conscript-ncwl-ship-crew = Clementine Crew
 job-name-conscript-ncwl-leader = Kommissar
 job-name-conscript-ncwl-amr = Specialist (Sniper)
 job-name-conscript-ncwl-lmg = Specialist (LMG)
@@ -114,7 +116,9 @@ job-name-conscript-ncwl-cadet = Kadet
 
 #conscript-dsm#
 
-job-name-conscript-dsm-leader = Knight Templar
+job-name-conscript-dsm-ship-captain = Nemesis Captain
+job-name-conscript-dsm-ship-crew = Nemesis Crew
+job-name-conscript-dsm-leader = Noble
 job-name-conscript-dsm-amr = Knight (Sniper)
 job-name-conscript-dsm-lmg = Knight (LMG)
 job-name-conscript-dsm-doctor = Combat Medic

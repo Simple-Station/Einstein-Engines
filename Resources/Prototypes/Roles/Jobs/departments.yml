@@ -272,4 +272,6 @@
   - ConscriptSubmachinegunDSM
   - ConscriptRiflemanDSM
   - ConscriptCadetDSM
+  - ConscriptShipCaptainDSM
+  - ConscriptShipCrewDSM
   enabled: true

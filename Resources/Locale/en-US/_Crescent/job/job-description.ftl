@@ -104,6 +104,8 @@ job-description-gliess-sheriff = Keep the law in Gliess Santo.
 job-description-gliess-dockmaster = Make sure nobody blows up your station.
 
 #conscript-ncwl
+job-description-conscript-ncwl-ship-captain = Pilot the Clementine. Ensure it's safety and use its armaments well. Go down with the ship.
+job-description-conscript-ncwl-ship-crew = Man the guns and fix holes. Load ammo. Help the soldiers do their job. Don't leave the ship.
 job-description-conscript-ncwl-leader = Lead the remnants of the NCWL. Ensure the League takes control of Vladzena.
 job-description-conscript-ncwl-amr = Deal with priority targets. Pick your shots carefully. Don't miss. (Anti-Materiel Rifle)
 job-description-conscript-ncwl-lmg = Provide fire support for your comrades. Control the battlefield. (Light Machine Gun)
@@ -114,6 +116,8 @@ job-description-conscript-ncwl-rifleman = Be the rank and file. Be the corpses t
 job-description-conscript-ncwl-cadet = Listen to your superiors. Keep your head down and learn. (Bolt-action Rifle)
 
 #conscript-dsm
+job-description-conscript-dsm-ship-captain = Pilot the Nemesis. Ensure it's safety and use its armaments well. Go down with the ship.
+job-description-conscript-dsm-ship-crew = Man the guns and fix holes. Load ammo. Help the soldiers do their job. Don't leave the ship.
 job-description-conscript-dsm-leader = Lead the punishment regimen. Reclaim the honor of your house. Stamp out the League.
 job-description-conscript-dsm-amr = Deal with priority targets. Pick your shots carefully. Don't miss. (Anti-Materiel Rifle)
 job-description-conscript-dsm-lmg = Provide fire support for your brothers. Control the battlefield. (Light Machine Gun)

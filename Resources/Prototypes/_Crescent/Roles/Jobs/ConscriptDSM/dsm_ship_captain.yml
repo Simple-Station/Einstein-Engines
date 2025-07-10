@@ -1,0 +1,91 @@
+- type: job
+  id: ConscriptShipCaptainDSM
+  name: job-name-conscript-dsm-ship-captain
+  description: job-description-conscript-dsm-ship-captain
+  playTimeTracker: ConscriptJobShipCaptainDSM
+  requirements:
+    - !type:FactionRequirement
+      factionID: "DSM"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
+  weight: 55
+  startingGear: ConscriptShipCaptainDSMGear
+  alwaysUseSpawner: true
+  icon: "JobIconImperialAdjutant"
+  requireAdminNotify: true
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-dsm-captain
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Command
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Mercenary # Frontier
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - DSMGeneral
+  - Service
+  - DSMJail
+  - DSMArmory
+  - DSMCommand
+  - External
+  - Captain # Frontier
+  - Empire
+
+- type: startingGear
+  id: ConscriptShipCaptainDSMGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryCaptain
+    neck: ClothingNeckIFFCyan
+    back: ClothingBackpackDSM
+    shoes: ClothingShoesBootsImperialLongboots
+    head: ClothingHeadHatImperialBicorne
+    outerClothing: ClothingOuterCoatImperialParade
+    id: KnightPDA
+    belt: ClothingBeltAssaultFilledAdjutant
+    pocket1: EmergencyOxygenTankFilled
+    ears: ClothingHeadsetEmpire
+  inhand:
+    - WeaponPistolNeoVolker
