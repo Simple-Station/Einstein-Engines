@@ -16639,3 +16639,10 @@ Entries:
   id: 7302
   time: '2025-07-10T16:03:00.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2492
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added a PDA slot for storing your character's passport.
+  id: 7303
+  time: '2025-07-10T17:18:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2499
