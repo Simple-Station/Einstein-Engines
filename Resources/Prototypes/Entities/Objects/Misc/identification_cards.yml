@@ -451,22 +451,6 @@
 
 - type: entity
   parent: IDCardStandard
-  id: LibrarianIDCard
-  name: librarian ID card
-  components:
-  - type: Sprite
-    layers:
-    - state: default
-    - state: department
-      color: "#58C800"
-    - state: subdepartment
-      color: "#58C800"
-    - state: curator
-  - type: PresetIdCard
-    job: Librarian
-
-- type: entity
-  parent: IDCardStandard
   id: LawyerIDCard
   name: attorney ID card # DeltaV - Changed Lawyer to Attorney
   components:

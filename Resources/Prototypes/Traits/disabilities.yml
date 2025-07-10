@@ -13,13 +13,6 @@
       traits:
         - Photophobia
         - Nearsighted
-        - CyberEyes
-        - SecurityEyesModule
-        - MedicalEyesModule
-        - DiagnosticEyesModule
-        - OmniEyesModule
-        - LightAmplificationModule
-        - ThermographicVisionModule
   functions:
     - !type:TraitAddComponent
       components:
@@ -40,13 +33,6 @@
       inverted: true
       traits:
         - Blindness
-        - CyberEyes
-        - SecurityEyesModule
-        - MedicalEyesModule
-        - DiagnosticEyesModule
-        - OmniEyesModule
-        - LightAmplificationModule
-        - ThermographicVisionModule
   functions:
     - !type:TraitAddComponent
       components:
@@ -316,13 +302,6 @@
       inverted: true
       traits:
         - Blindness
-        - CyberEyes
-        - SecurityEyesModule
-        - MedicalEyesModule
-        - DiagnosticEyesModule
-        - OmniEyesModule
-        - LightAmplificationModule
-        - ThermographicVisionModule
   functions:
     - !type:TraitReplaceComponent
       components:
