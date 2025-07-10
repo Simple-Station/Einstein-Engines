@@ -71,6 +71,12 @@
   id: Doctor
   nameKey: lifepath_name_doctor
   descriptionKey: lifepath_description_doctor
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: CPRTraining
+        - type: SurgerySpeedModifier
+          speedModifier: 2
 
 - type: lifepath
   id: Voyager

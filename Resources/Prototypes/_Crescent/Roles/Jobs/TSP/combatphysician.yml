@@ -19,6 +19,9 @@
     components:
       - type: ChatRank
         rank: crescent-rank-physician
+      - type: CPRTraining
+      - type: SurgerySpeedModifier
+        speedModifier: 2
   alwaysUseSpawner: true
   icon: "JobIconCMMPhysician"
   requireAdminNotify: false

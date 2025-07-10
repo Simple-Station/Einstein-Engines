@@ -415,6 +415,22 @@
     proto: BulletHeavyPistol
 
 - type: entity
+  id: CartridgeLightRifleRubber
+  name: cartridge (.30 rifle rubber)
+  parent: BaseCartridgeLightRifle
+  components:
+  - type: CartridgeAmmo
+    proto: BulletLightRifleRubber
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#43c4f7"
+
+
+- type: entity
   id: OreMagnet
   name: SHI baromagnetic ore array
   description: A large, ship-mounted magnetic device. When pointed in the direction of loose ore, gathers the rocky material with a miniature tractor beam and stores it in an internal compartment for later harvest.

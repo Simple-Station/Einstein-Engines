@@ -12,3 +12,9 @@
   id: Ripperdoc
   nameKey: lifepath_name_ripperdoc
   descriptionKey: lifepath_description_ripperdoc
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: CPRTraining
+        - type: SurgerySpeedModifier
+          speedModifier: 2

@@ -21,7 +21,7 @@
 - type: ambientMusic
   id: test
   sound:
-    collection: AmbienceTestBiome
+    collection: test
 
 - type: soundCollection
   id: test
@@ -137,7 +137,7 @@
 - type: ambientMusic
   id: syndicatebiome
   sound:
-    collection: syndiebiome
+    collection: syndicatebiome
 
 - type: soundCollection
   id: syndicatebiome

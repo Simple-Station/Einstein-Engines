@@ -101,12 +101,6 @@
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
-        - !type:CharacterJobRequirement
-          jobs:
-            - Chaplain
-            - Librarian
-            - ResearchDirector
-            - ForensicMantis
 
 - type: trait
   id: ShadowkinBlackeye
