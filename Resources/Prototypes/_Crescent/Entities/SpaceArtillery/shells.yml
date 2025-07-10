@@ -769,6 +769,10 @@
     layers:
       - state: base-projectile
   - type: ExplodeOnTrigger
+  - type: ProjectilePhasePrevent #do not remove
+    mask:
+    - BulletImpassable
+    - Impassable
   - type: PointLight
     radius: 3.5
     color: orange
