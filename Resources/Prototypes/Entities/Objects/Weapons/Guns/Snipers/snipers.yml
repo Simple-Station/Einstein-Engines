@@ -353,7 +353,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/lever_action.ogg
+      path: /Audio/Weapons/Guns/UnionfallWeapons/lever_fire.ogg
     fireOnDropChance: 1
   - type: EmbeddableProjectile
     removalTime: 3.5
