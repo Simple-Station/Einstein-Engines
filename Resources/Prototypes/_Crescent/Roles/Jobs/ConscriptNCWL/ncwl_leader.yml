@@ -27,6 +27,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-kommissar
+      - type: HullrotFaction
+        faction: NCWL
   access:
   - EmergencyShuttleRepealAll
   - Captain

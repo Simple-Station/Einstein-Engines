@@ -27,6 +27,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-dsm-crew
+      - type: HullrotFaction
+        faction: DSM
   access:
   - EmergencyShuttleRepealAll
   - Captain

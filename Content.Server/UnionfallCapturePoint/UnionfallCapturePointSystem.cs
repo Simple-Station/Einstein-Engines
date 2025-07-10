@@ -69,7 +69,7 @@ public sealed class UnionfallCapturePointSystem : EntitySystem
         {
             component.CapturingFaction = faction;
             _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
-                faction + " is capturing the control point!");
+                faction + " is capturing the control point! Now hold it for 10 minutes!");
         }
         else if (component.CapturingFaction != faction) //opposing faction touched control point
         {

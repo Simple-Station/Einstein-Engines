@@ -24,6 +24,8 @@
     components:
       - type: ChatRank
         rank: crescent-rank-doktor
+      - type: HullrotFaction
+        faction: NCWL
   access:
   - Command
   - Maintenance
