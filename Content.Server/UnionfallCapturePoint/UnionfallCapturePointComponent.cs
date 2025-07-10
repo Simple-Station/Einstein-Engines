@@ -19,7 +19,7 @@ public sealed partial class UnionfallCapturePointComponent : Component
     /// <summary>
     /// Additional time added whenever the capture point switches sides. Cannot add more time than the TimeToEnd maximum. Measured in seconds.
     /// </summary>
-    public float CaptureTimeBonus = 120f;
+    public float CaptureTimeBonus = 60f;
 
     /// <summary>
     /// The CURRENT amount of time until the CapturingFaction wins the game. Measured in seconds.
