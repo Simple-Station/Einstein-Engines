@@ -18,7 +18,7 @@
       color: "#98c495"
   - type: Spellbook
     learnTime: 2.5
-    spells:
+    spellActions:
       ActionLesserHack: -1
 
 - type: entity
@@ -41,7 +41,7 @@
       color: "#959dc4"
   - type: Spellbook
     learnTime: 4
-    spells:
+    spellActions:
       ActionLesserKnockdown: -1
 
 - type: entity
@@ -64,7 +64,7 @@
       color: "#d94c3d"
   - type: Spellbook
     learnTime: 6
-    spells:
+    spellActions:
       ActionLesserSuppress: -1
 
 - type: entity
@@ -87,5 +87,5 @@
       color: "#d94c3d"
   - type: Spellbook
     learnTime: 10
-    spells:
+    spellActions:
       ActionGreaterSuppress: -1
