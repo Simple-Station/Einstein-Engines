@@ -45,7 +45,7 @@ public sealed class DebrainedSystem : EntitySystem
 
         RemComp<DelayedDeathComponent>(uid);
         RemComp<StunnedComponent>(uid);
-        if (_bodySystem.TryGetBodyOrganComponents<HeartComponent>(uid, out var _))
+        if (_bodySystem.TryGetBodyOrganEntityComps<HeartComponent>(uid, out var _))
             RemComp<DelayedDeathComponent>(uid);
     }
 

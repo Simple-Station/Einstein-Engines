@@ -59,7 +59,7 @@
   - ForensicMantisPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitMantis
-    back: ClothingBackpackMantisFilled
+    back: ClothingBackpackScience
     shoes: ClothingShoesBootsMantis
     head: ClothingHeadHatFezMantis
     id: ForensicMantisPDA
@@ -69,13 +69,16 @@
     outerClothing: ClothingOuterCoatMantis
     belt: ClothingBeltMantis
     pocket1: BookPsionicsGuidebook
-  innerClothingSkirt: ClothingUniformSkirtMantis
-  satchel: ClothingBackpackSatchelMantisFilled
-  duffelbag: ClothingBackpackDuffelMantisFilled
+  storage:
+    back:
+    - HandLabeler
+    - PillMindbreakerToxin
+    - BoxFolderGrey
+    - RubberStampMantis
 
 - type: startingGear
   id: ForensicMantisPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitMantis
     head: ClothingHeadEnvirohelmMantis

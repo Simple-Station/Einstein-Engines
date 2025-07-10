@@ -8,11 +8,11 @@
     sprite: Objects/Specific/Medical/healthanalyzer.rsi
     state: icon
     layers:
-      - state: icon
-      - state: analyzer
-        shader: unshaded
-        visible: true
-        map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+    - state: icon
+    - state: analyzer
+      shader: unshaded
+      visible: true
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
   - type: Item
     storedRotation: -90
   - type: ActivatableUI
@@ -28,7 +28,7 @@
       path: "/Audio/Items/Medical/healthscanner.ogg"
   - type: Tag
     tags:
-      - DiscreteHealthAnalyzer
+    - DiscreteHealthAnalyzer
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -38,7 +38,7 @@
           False: { visible: false }
   - type: GuideHelp
     guides:
-      - Medical Doctor
+    - Medical Doctor
   - type: DamageOtherOnHit
     damage:
       types:

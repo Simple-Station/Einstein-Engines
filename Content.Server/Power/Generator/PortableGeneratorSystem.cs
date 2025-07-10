@@ -75,8 +75,8 @@ public sealed class PortableGeneratorSystem : SharedPortableGeneratorSystem
         {
             BreakOnDamage = true,
             BreakOnMove = true,
-            RequireCanInteract = true,
-            NeedHand = true
+            NeedHand = true,
+            BreakOnDropItem = false,
         });
     }
 

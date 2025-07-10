@@ -21,19 +21,6 @@
         Blunt: 1
 
 - type: entity
-  id: BulletSpecialRubber
-  name: bullet (.38 special rubber)
-  parent: BaseBulletRubber
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Projectile
-    damage:
-      types:
-        Blunt: 3
-  - type: StaminaDamageOnCollide
-    damage: 30
-
-- type: entity
   id: BulletSpecialIncendiary
   name: bullet (.38 special incendiary)
   parent: BaseBulletIncendiary

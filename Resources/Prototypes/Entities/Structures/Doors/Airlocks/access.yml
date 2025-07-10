@@ -74,15 +74,6 @@
       board: [ DoorElectronicsHydroponics ]
 
 - type: entity
-  parent: AirlockCommandLocked
-  id: AirlockServiceCaptainLocked
-  suffix: Captain, Locked
-  components:
-  - type: ContainerFill
-    containers:
-      board: [ DoorElectronicsCaptain ]
-
-- type: entity
   parent: AirlockExternal
   id: AirlockExternalLocked
   suffix: External, Locked
@@ -99,6 +90,8 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsCargo ]
+  - type: Wires
+    layoutId: AirlockCargo
 
 - type: entity
   parent: AirlockExternal
@@ -108,6 +101,8 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsEngineering ]
+  - type: Wires
+    layoutId: AirlockEngineering
 
 - type: entity
   parent: AirlockExternal
@@ -117,6 +112,8 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsAtmospherics ]
+  - type: Wires
+    layoutId: AirlockEngineering
 
 - type: entity
   parent: AirlockExternal
@@ -126,6 +123,8 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsSyndicateAgent ]
+  - type: Wires
+    layoutId: AirlockSecurity
 
 - type: entity
   parent: AirlockExternal
@@ -135,6 +134,8 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsNukeop ]
+  - type: Wires
+    layoutId: AirlockSecurity
 
 - type: entity
   parent: AirlockFreezer
@@ -360,7 +361,6 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsSecurity ]
-  - type: AirlockVirusTarget
 
 - type: entity
   parent: AirlockSecurity
@@ -370,7 +370,6 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsDetective ]
-  - type: AirlockVirusTarget
 
 #Delta V: Removed Brig Access
 #- type: entity
@@ -390,7 +389,6 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsSecurityLawyer ]
-  - type: AirlockVirusTarget
 
 - type: entity
   parent: AirlockSecurity
@@ -452,7 +450,7 @@
       board: [ DoorElectronicsTheatre ]
 
 - type: entity
-  parent: AirlockGlass
+  parent: AirlockServiceGlassLocked
   id: AirlockBarGlassLocked
   suffix: Bar, Locked
   components:
@@ -477,6 +475,8 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsCargo ]
+  - type: Wires
+    layoutId: AirlockCargo
 
 - type: entity
   parent: AirlockExternalGlass
@@ -486,6 +486,8 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsSyndicateAgent ]
+  - type: Wires
+    layoutId: AirlockSecurity
 
 - type: entity
   parent: AirlockExternalGlass
@@ -495,6 +497,8 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsNukeop ]
+  - type: Wires
+    layoutId: AirlockSecurity
 
 - type: entity
   parent: AirlockExternalGlass
@@ -504,6 +508,8 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsEngineering ]
+  - type: Wires
+    layoutId: AirlockEngineering
 
 - type: entity
   parent: AirlockExternalGlass
@@ -513,6 +519,8 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsAtmospherics ]
+  - type: Wires
+    layoutId: AirlockEngineering
 
 - type: entity
   parent: AirlockServiceGlassLocked
@@ -737,7 +745,6 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsSecurity ]
-  - type: AirlockVirusTarget
 
 - type: entity
   parent: AirlockSecurityGlass
@@ -747,7 +754,6 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsDetective ]
-  - type: AirlockVirusTarget
 
 #- type: entity
 #  parent: AirlockSecurityGlass
@@ -766,7 +772,6 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsSecurityLawyer ]
-  - type: AirlockVirusTarget
 
 - type: entity
   parent: AirlockSecurityGlass
@@ -1019,7 +1024,6 @@
       board: [ DoorElectronicsSecurity ]
   - type: Wires
     layoutId: AirlockSecurity
-  - type: AirlockVirusTarget
 
 - type: entity
   parent: AirlockMaintSecLocked
@@ -1195,6 +1199,9 @@
   components:
   - type: PriorityDock
     tag: DockArrivals
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsExternal ]
 
 - type: entity
   parent: AirlockGlassShuttle
@@ -1202,6 +1209,13 @@
   suffix: External, Escape 3x4, Glass, Docking
   components:
   - type: GridFill
+    addComponents:
+    - type: IFF
+      flags:
+      - HideLabel
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsExternal ]
 
 #HighSecDoors
 - type: entity

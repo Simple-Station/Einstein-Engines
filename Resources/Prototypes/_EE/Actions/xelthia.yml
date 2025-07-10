@@ -2,7 +2,6 @@
   id: XelthiaRegenerateAction
   name: Regrow Arms
   description: Regrow any arms you may have lost.
-  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon:

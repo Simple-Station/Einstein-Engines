@@ -216,7 +216,7 @@
   functions:
     - !type:TraitAddComponent
       components:
-        - type: StepTriggerImmune
+        - type: ProtectedFromStepTriggers
           whitelist:
             types:
               - Shard

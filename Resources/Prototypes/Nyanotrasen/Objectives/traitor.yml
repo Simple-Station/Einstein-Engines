@@ -3,7 +3,6 @@
 #  parent: BaseTraitorObjective
 #  name: objective-condition-become-golem-title
 #  description: objective-condition-become-golem-description.
-#  categories: [ HideSpawnMenu ]
 #  components:
 #  - type: NotJobRequirement
 #    job: Chaplain
@@ -22,7 +21,6 @@
 - type: entity
   id: RaiseGlimmerObjective
   parent: BaseTraitorObjective
-  categories: [ HideSpawnMenu ]
   name: Raise Glimmer.
   description: Get the glimmer above the specified amount.
   components:

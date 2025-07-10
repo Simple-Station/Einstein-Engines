@@ -72,11 +72,11 @@ AirlockBrigLocked: AirlockSecurityLawyerLocked
 AirlockBrigGlassLocked: AirlockSecurityLawyerGlassLocked
 WindoorSecureBrigLocked: WindoorSecureSecurityLawyerLocked
 
-#Delta V Optional: Remove "#" for specific maps.
-#AsteroidRock: AsteroidAltRock
-#AsteroidRockMining: AsteroidAltRockMining   # These two rocks change between the two variants of
-                                             # Wizden Rocks, they're the same rock but with two different textures
-                                             # both are ugly, but you may have a preference.
+  #Delta V Optional: Remove "#" for specific maps.
+  #AsteroidRock: AsteroidAltRock
+  #AsteroidRockMining: AsteroidAltRockMining   # These two rocks change between the two variants of
+# Wizden Rocks, they're the same rock but with two different textures
+# both are ugly, but you may have a preference.
 
 # 2023-12-16
 PlushieLizardMirrored: PlushieLizard
@@ -99,11 +99,6 @@ SpaceTickSpawnerNPC: SpaceTickSpawner
 LockableButtonBrig: LockableButtonSecurity
 SignDirectionalICU: SignDirectionalIcu
 
-# 2024-03-08
-ClothingBackpackSatchelBrigmedicDeltaVFilled: ClothingBackpackSatchelBrigmedicFilled
-ClothingBackpackDuffelBrigmedicDeltaVFilled: ClothingBackpackDuffelBrigmedicFilled
-ClothingBackpackBrigmedicDeltaVFilled: ClothingBackpackBrigmedicFilled
-
 # 2024-06-08
 CrateFunPlushie: CrateFunToyBox
 CrateFunLizardPlushieBulk: CrateFunToyBox
@@ -121,11 +116,39 @@ GlassBoxLaser: null #Captain's Laser was moved to Loadouts.
 # 2024-12-22
 VendingMachineRestockSalvageEquipment: null
 
-# 2025-04-05 Dear Maintainer, say nothing about this.
-AntiPsychicKnife: null
-
 # 2025-03-12
 SmartFridge: DVSmartFridgeMedical
 
-# 2025-06-09 - Courier -  It doesn't load correctly, kicks everybody from the map, and return to Lobby use mail carrier instead
-SpawnPointCourier: SpawnPointMailCarrier
+# 2025-04-05 Dear Maintainer, say nothing about this.
+AntiPsychicKnife: null
+
+# 2025-06-06
+MagazineUniversalMagnumRubber: MagazineUniversalMagnum
+WeaponPistolUniversalNonLethal: WeaponPistolUniversal
+WeaponPistolUniversalSecurityNonLethal: WeaponPistolUniversalSecurity
+MagazineBoxSpecialRubber: MagazineBoxSpecial
+CartridgeSpecialRubber: CartridgeSpecial
+MagazinePistolSpecialRubber: MagazinePistolSpecial
+BulletSpecialRubber: BulletSpecial
+SpeedLoaderSpecialRubber: SpeedLoaderSpecial
+WeaponPistolPollockNonlethalSecurity: WeaponPistolPollockSecurity
+WeaponRevolverSnubNonlethalSecurity: WeaponRevolverSnubSecurity
+WeaponRevolverK38MasterNonlethalSecurity: WeaponRevolverK38MasterSecurity
+WeaponRevolverFitzNonlethalSecurity: WeaponRevolverFitzSecurity
+WeaponRevolverArgentiNonLethalSecurity: WeaponRevolverArgentiSecurity
+WeaponRevolverArgentiNonlethal: WeaponRevolverArgenti
+MagazineLightRifleLowCapacityRubber: MagazineLightRifleLowCapacity
+MagazineNovaliteC1Rubber: MagazineNovaliteC1
+SpeedLoaderRifleHeavyRubber: SpeedLoaderRifleHeavy
+WeaponRifleGestioRubber: WeaponRifleGestio
+WeaponRifleNovaliteC1Rubber: WeaponRifleNovaliteC1
+WeaponSniperRepeaterNonlethal: WeaponSniperRepeater
+WeaponSniperMosinRubber: WeaponSniperMosin
+WeaponRevolverDeckardNonLethalSecurity: WeaponRevolverDeckardSecurity
+MagazineLightRifleBoxRubber: MagazineLightRifleBox
+WeaponRevolverInspectorNonLethalSecurity: WeaponRevolverInspectorSecurity
+WeaponRevolverPythonNonlethalSecurity: WeaponRevolverPythonSecurity
+
+# 2025-06-09
+ShockCollar: ClothingBackpackElectropack
+SpawnPointCourier: SpawnPointMailCarrier # Courier -  It doesn't load correctly, kicks everybody from the map, and return to Lobby use mail carrier instead

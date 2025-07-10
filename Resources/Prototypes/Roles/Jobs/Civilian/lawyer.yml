@@ -5,10 +5,9 @@
   playTimeTracker: JobLawyer
   startingGear: LawyerGear
   icon: "JobIconLawyer"
-  supervisors: job-supervisors-cj  # Delta V - Change supervisor to chief justice
+  supervisors: job-supervisors-cj
   access:
-  # - Service - DeltaV, removed from service department
-  - Justice # DeltaV - Justice dept
+  - Justice
   - Lawyer
   - Maintenance
   requirements:
@@ -28,20 +27,21 @@
   - LawyerPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitLawyerBlack  # TODO change jumpsuit to randomiser of the 4 variants
-    back: ClothingBackpackLawyerFilled #DeltaV - stamp included
+    back: ClothingBackpack
     shoes: ClothingShoesBootsLaceup
     id: LawyerPDA
     ears: ClothingHeadsetSecurity
     pocket1: BookSecurity
+    pocket2: BookSpaceLaw
   inhand:
-    - BriefcaseBrownFilled
-  innerClothingSkirt: ClothingUniformJumpskirtLawyerBlack
-  satchel: ClothingBackpackSatchelLawyerFilled #DeltaV - stamp included
-  duffelbag: ClothingBackpackDuffelLawyerFilled #DeltaV - stamp included
+  - BriefcaseBrownFilled
+  storage:
+    back:
+    - RubberStampLawyer
 
 - type: startingGear
   id: LawyerPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitEnviroslacks
     head: ClothingHeadEnvirohelmColorWhite

@@ -17,7 +17,8 @@
           Piercing: 0.95
           Heat: 0.85
     - type: TemperatureProtection
-      coefficient: 0.1
+      heatingCoefficient: 0.1
+      coolingCoefficient: 0.1
 
 - type: entity
   parent: [ClothingOuterStorageBase, AllowSuitStorageClothing, ZavodInfo]
@@ -38,7 +39,8 @@
           Piercing: 0.95
           Heat: 0.85
     - type: TemperatureProtection
-      coefficient: 0.1
+      heatingCoefficient: 0.1
+      coolingCoefficient: 0.1
 
 - type: entity
   parent: [ClothingOuterStorageBase, AllowSuitStorageClothing, ZavodInfo]
@@ -59,4 +61,5 @@
           Piercing: 0.95
           Heat: 0.85
     - type: TemperatureProtection
-      coefficient: 0.1
+      heatingCoefficient: 0.1
+      coolingCoefficient: 0.1

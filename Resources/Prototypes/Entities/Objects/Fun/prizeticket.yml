@@ -288,6 +288,9 @@
       - id: PlushieShadowkin
         prob: 0.80
         orGroup: Prize
+      - id: PlushieRainbowLizard
+        prob: 0.80
+        orGroup: Prize
       # Uncommon
       - id: PrizeTicket60
         prob: 0.50

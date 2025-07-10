@@ -61,7 +61,7 @@
   - type: Familiar
   - type: Dispellable
   - type: Damageable
-    damageContainer: CorporealSpirit
+    damageContainer: ManifestedSpirit
     damageModifierSet: CorporealSpirit
   - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 4 damage a minute.
     allowedStates:

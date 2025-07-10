@@ -427,6 +427,31 @@
       PotencyDivisor: 5
 
 - type: seed
+  id: teaPlant
+  name: seeds-teaplant-name
+  noun: seeds-noun-seeds
+  displayName: seeds-teaplant-display-name
+  plantRsi: Objects/Specific/Hydroponics/tea_plant.rsi
+  packetPrototype: TeaPlantSeeds
+  productPrototypes:
+    - LeavesTea
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 5
+  production: 3
+  yield: 2
+  potency: 20
+  growthStages: 5
+  waterConsumption: 0.6
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    Vitamin:
+      Min: 1
+      Max: 5
+      PotencyDivisor: 20
+
+- type: seed
   id: papercane
   name: seeds-papercane-name
   noun: seeds-noun-seeds
@@ -568,8 +593,10 @@
   packetPrototype: BloodTomatoSeeds
   productPrototypes:
     - FoodBloodTomato
+  mutationPrototypes:
+    - killerTomato
   harvestRepeat: Repeat
-  lifespan: 25
+  lifespan: 60
   maturation: 8
   production: 6
   yield: 2
@@ -585,6 +612,37 @@
       Max: 10
       PotencyDivisor: 10
     Vitamin:
+      Min: 1
+      Max: 4
+      PotencyDivisor: 25
+
+- type: seed
+  id: killerTomato
+  name: seeds-killertomato-name
+  noun: seeds-noun-seeds
+  displayName: seeds-killertomato-display-name
+  plantRsi: Objects/Specific/Hydroponics/tomatokiller.rsi
+  packetPrototype: KillerTomatoSeeds
+  productPrototypes:
+    - MobTomatoKiller
+  harvestRepeat: Repeat
+  lifespan: 25
+  maturation: 15
+  production: 6
+  yield: 2
+  potency: 10
+  waterConsumption: 0.60
+  nutrientConsumption: 0.70
+  idealLight: 8
+  idealHeat: 298
+  growthStages: 2
+  splatPrototype: PuddleSplatter
+  chemicals:
+    Blood:
+      Min: 1
+      Max: 10
+      PotencyDivisor: 10
+    JuiceTomato:
       Min: 1
       Max: 4
       PotencyDivisor: 25
@@ -1775,6 +1833,8 @@
   packetPrototype: PumpkinSeeds
   productPrototypes:
     - FoodPumpkin
+  mutationPrototypes:
+    - bluePumpkin
   lifespan: 55
   maturation: 10
   production: 4
@@ -1791,6 +1851,36 @@
       Min: 1
       Max: 5
       PotencyDivisor: 20
+
+- type: seed
+  id: bluePumpkin
+  name: seeds-blue-pumpkin-name
+  noun: seeds-noun-seeds
+  displayName: seeds-blue-pumpkin-display-name
+  plantRsi: Objects/Specific/Hydroponics/blue_pumpkin.rsi
+  packetPrototype: BluePumpkinSeeds
+  productPrototypes:
+    - FoodBluePumpkin
+  lifespan: 55
+  maturation: 10
+  production: 4
+  yield: 2
+  potency: 10
+  idealHeat: 288
+  growthStages: 3
+  chemicals:
+    Ammonia:
+      Min: 1
+      Max: 15
+      PotencyDivisor: 3
+    Chlorine:
+      Min: 1
+      Max: 5
+      PotencyDivisor: 5
+    Vitamin:
+      Min: 1
+      Max: 10
+      PotencyDivisor: 3
 
 - type: seed
   id: cotton
@@ -1868,4 +1958,35 @@
     Vitamin:
       Min: 1
       Max: 3
+      PotencyDivisor: 40
+
+- type: seed
+  id: anomalyBerry
+  name: seeds-anomaly-berry-name
+  noun: seeds-noun-seeds
+  displayName: seeds-anomaly-berry-display-name
+  plantRsi: Objects/Specific/Hydroponics/anomaly_berry.rsi
+  packetPrototype: AnomalyBerrySeeds
+  productPrototypes:
+    - FoodAnomalyBerry
+  lifespan: 25
+  maturation: 12
+  production: 3
+  yield: 3
+  potency: 10
+  growthStages: 2
+  waterConsumption: 0.60
+  nutrientConsumption: 0.50
+  chemicals:
+    Artifexium:
+      Min: 1
+      Max: 1
+      PotencyDivisor: 4
+    Nutriment:
+      Min: 1
+      Max: 2
+      PotencyDivisor: 30
+    Vitamin:
+      Min: 1
+      Max: 2
       PotencyDivisor: 40

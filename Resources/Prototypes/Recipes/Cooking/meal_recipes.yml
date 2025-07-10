@@ -6,6 +6,32 @@
   solids:
     FoodDoughSlice: 1 # one third of a standard bread dough recipe
 
+#Bagels
+- type: microwaveMealRecipe
+  id: RecipeBagel
+  name: bagel recipe
+  result: FoodBagel
+  time: 5
+  solids:
+    FoodDoughRope: 1 # created by rolling a dough slice.
+
+- type: microwaveMealRecipe
+  id: RecipeBagelPoppy
+  name: poppyseed bagel recipe
+  result: FoodBagelPoppy
+  time: 5
+  solids:
+    FoodDoughRope: 1
+    PoppySeeds: 1
+
+- type: microwaveMealRecipe
+  id: RecipeBagelCotton
+  name: cotton bagel recipe
+  result: FoodBagelCotton
+  time: 5
+  solids:
+    FoodDoughCottonRope: 1
+
 #Burgers
 
 - type: microwaveMealRecipe
@@ -382,6 +408,14 @@
     FoodDough: 1
 
 - type: microwaveMealRecipe
+  id: RecipeBreadCotton
+  name: cotton bread recipe
+  result: FoodBreadCotton
+  time: 10
+  solids:
+    FoodDoughCotton: 1
+
+- type: microwaveMealRecipe
   id: RecipeSausageBread
   name: sausage bread recipe
   result: FoodBreadSausage
@@ -431,6 +465,17 @@
     Blackpepper: 5
   solids:
     FoodDough: 1
+
+- type: microwaveMealRecipe
+  id: RecipeBaguetteCotton
+  name: baguette recipe
+  result: FoodBreadBaguetteCotton
+  time: 15
+  reagents:
+    TableSalt: 5
+    Blackpepper: 5
+  solids:
+    FoodDoughCotton: 1
 
 - type: microwaveMealRecipe
   id: RecipeBaguetteSword
@@ -571,7 +616,7 @@
   time: 30
   solids:
     FoodDoughFlat: 1
-    FoodAmbrosiaVulgaris: 3
+    LeavesCannabis: 2
     FoodCheeseSlice: 1
     FoodTomato: 1
 
@@ -585,6 +630,26 @@
     FoodDonkpocketWarm: 3
     FoodCheeseSlice: 1
     FoodTomato: 1
+
+- type: microwaveMealRecipe
+  id: RecipeUraniumPizza
+  name: spicy rock pizza recipe
+  result: FoodPizzaUranium
+  time: 30
+  solids:
+    FoodDoughFlat: 1
+    FoodChiliPepper: 2
+    FoodTomato: 2
+    SheetUranium1: 2
+
+- type: microwaveMealRecipe
+  id: RecipeCottonPizza
+  name: cotton pizza recipe
+  result: FoodPizzaCotton
+  time: 30
+  solids:
+    FoodDoughCottonFlat: 1
+    CottonBol: 4
 
 #Italian
 - type: microwaveMealRecipe
@@ -630,12 +695,13 @@
   name: chow mein recipe
   result: FoodNoodlesChowmein
   time: 10
+  reagents:
+    Egg: 6
   solids:
     FoodNoodlesBoiled: 1
     FoodEggplant: 1
     FoodCarrot: 1
     FoodCorn: 1
-    FoodEgg: 1
 
 - type: microwaveMealRecipe
   id: RecipeOatmeal
@@ -695,9 +761,10 @@
   name: egg-fried rice recipe
   result: FoodRiceEgg
   time: 15
+  reagents:
+    Egg: 6
   solids:
     FoodRiceBoiled: 1
-    FoodEgg: 1
     FoodCarrot: 1
 
 - type: microwaveMealRecipe
@@ -1014,6 +1081,16 @@
     FoodMeat: 3
     FoodPlateTin: 1
 
+- type: microwaveMealRecipe
+  id: RecipePumpkinPie
+  name: pumpkin pie recipe
+  result: FoodPiePumpkin
+  time: 15
+  solids:
+    FoodDoughPie: 1
+    FoodPumpkin: 1
+    FoodPlateTin: 1
+
 #- type: microwaveMealRecipe
 #  id: RecipePlumpPie
 #  name: plump pie recipe
@@ -1161,6 +1238,41 @@
     TableSalt: 5
   solids:
     FoodCarrot: 1
+
+- type: microwaveMealRecipe
+  id: RecipeNachos
+  name: nachos recipe
+  result: FoodMealNachos
+  time: 10
+  reagents:
+    TableSalt: 1
+  solids:
+    FoodDoughTortillaFlat: 1
+    FoodPlateSmall: 1
+
+- type: microwaveMealRecipe
+  id: RecipeNachosCheesy
+  name: cheesy nachos recipe
+  result: FoodMealNachosCheesy
+  time: 10
+  reagents:
+    TableSalt: 1
+  solids:
+    FoodCheeseSlice: 1
+    FoodDoughTortillaFlat: 1
+    FoodPlateSmall: 1
+
+- type: microwaveMealRecipe
+  id: RecipeNachosCuban
+  name: cuban nachos recipe
+  result: FoodMealNachosCuban
+  time: 10
+  reagents:
+    Ketchup: 5
+  solids:
+    FoodChiliPepper: 1
+    FoodDoughTortillaFlat: 1
+    FoodPlateSmall: 1
 
 - type: microwaveMealRecipe
   id: RecipePopcorn
@@ -1454,10 +1566,10 @@
   reagents:
     Flour: 15
     Sugar: 30
+    Egg: 18
   solids:
     FoodButter: 2
     FoodSnackChocolateBar: 2
-    FoodEgg: 3
 
 - type: microwaveMealRecipe
   id: RecipeHarpyWings
@@ -1730,7 +1842,76 @@
     FoodOrange: 1
     FoodAmbrosiaVulgaris: 1
 
+# Muffins
+
+- type: microwaveMealRecipe
+  id: RecipeMuffin
+  name: muffin recipe
+  result: FoodBakedMuffin
+  time: 15
+  solids:
+    FoodPlateMuffinTin: 1
+    FoodDoughSlice: 1
+  reagents:
+    Sugar: 10
+
+- type: microwaveMealRecipe
+  id: RecipeMuffinChocolate
+  name: chocolate muffin recipe
+  result: FoodBakedMuffinChocolate
+  time: 15
+  solids:
+    FoodPlateMuffinTin: 1
+    FoodDoughSlice: 1
+    FoodSnackChocolateBar: 1
+  reagents:
+    Sugar: 10
+
+- type: microwaveMealRecipe
+  id: RecipeMuffinBerry
+  name: berry muffin recipe
+  result: FoodBakedMuffinBerry
+  time: 15
+  solids:
+    FoodPlateMuffinTin: 1
+    FoodDoughSlice: 1
+    FoodBerries: 1
+  reagents:
+    Sugar: 10
+
+- type: microwaveMealRecipe
+  id: RecipeMuffinBanana
+  name: banana muffin recipe
+  result: FoodBakedMuffinBanana
+  time: 15
+  solids:
+    FoodPlateMuffinTin: 1
+    FoodDoughSlice: 1
+    FoodBanana: 1
+  reagents:
+    Sugar: 10
+
+- type: microwaveMealRecipe
+  id: RecipeMuffinCherry
+  name: cherry muffin recipe
+  result: FoodBakedMuffinCherry
+  time: 15
+  solids:
+    FoodPlateMuffinTin: 1
+    FoodDoughSlice: 1
+    FoodCherry: 3
+  reagents:
+    Sugar: 10
+
 # NOT ACTUAL FOOD
+
+- type: microwaveMealRecipe
+  id: RecipeDriedTeaLeaves
+  name: dried tea leaves recipe
+  result: LeavesTeaDried
+  time: 10
+  solids:
+    LeavesTea: 1
 
 - type: microwaveMealRecipe
   id: RecipeDriedTobacco
@@ -1787,12 +1968,13 @@
     FoodBreadBaguetteSlice: 1
 
 - type: microwaveMealRecipe
-  id: RecipeCookedSpaceshroom
-  name: cooked spaceshroom recipe
-  result: FoodSpaceshroomCooked
+  id: RecipeFoodBakedChevreChaudCotton
+  name: cotton chevre chaud recipe
+  result: FoodBakedChevreChaudCotton
   time: 5
   solids:
-    FoodSpaceshroom: 1
+    FoodChevreSlice: 1
+    FoodBreadBaguetteCottonSlice: 1
 
 - type: microwaveMealRecipe
   id: RecipeCannabisButter
@@ -1811,10 +1993,10 @@
   reagents:
     Flour: 15
     Sugar: 30
+    Egg: 18
   solids:
     FoodCannabisButter: 2
     FoodSnackChocolateBar: 2
-    FoodEgg: 3
 
 - type: microwaveMealRecipe
   id: RecipeCornInButter
@@ -1923,6 +2105,15 @@
     FoodButterSlice: 1
 
 - type: microwaveMealRecipe
+  id: RecipeCroissantCotton
+  name: cotton croissant recipe
+  result: FoodBakedCroissantCotton
+  time: 5
+  solids:
+    FoodCroissantRawCotton: 1
+    FoodButterSlice: 1
+
+- type: microwaveMealRecipe
   id: RecipeThrowingCroissant
   name: throwing croissant recipe
   result: WeaponCroissant
@@ -1932,3 +2123,27 @@
     FoodCroissantRaw: 1
     FoodButterSlice: 1
     ShardGlass: 1
+
+- type: microwaveMealRecipe
+  id: RecipeInertAnomalyMeat
+  name: inert meat anomaly recipe
+  result: FoodMeatAnomaly
+  time: 5
+  solids:
+    AnomalyCoreFleshInert: 1
+
+- type: microwaveMealRecipe
+  id: RecipeAnomalyMeat
+  name: meat anomaly recipe
+  result: FoodMeatAnomaly
+  time: 5
+  solids:
+    AnomalyCoreFlesh: 1
+
+- type: microwaveMealRecipe
+  id: RecipeAnomalyMeatCooked
+  name: cooked meat anomaly recipe
+  result: FoodMeatAnomalyCooked
+  time: 5
+  solids:
+    FoodMeatAnomaly: 1

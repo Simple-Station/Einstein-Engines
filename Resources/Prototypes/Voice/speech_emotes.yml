@@ -9,10 +9,22 @@
     - Vocal
   chatMessages: ["chat-emote-msg-scream"]
   chatTriggers:
-    - screams
-    - shrieks
-    - screeches
-    - yells
+  - scream
+  - screams
+  - screaming
+  - screamed
+  - shriek
+  - shrieks
+  - shrieking
+  - shrieked
+  - screech
+  - screeches
+  - screeching
+  - screeched
+  - yell
+  - yells
+  - yelled
+  - yelling
 
 - type: emote
   id: Laugh
@@ -24,10 +36,21 @@
     - Vocal
   chatMessages: ["chat-emote-msg-laugh"]
   chatTriggers:
-    - laughs
-    - chuckles
-    - giggles
-    - chortles
+  - laugh
+  - laughs
+  - laughing
+  - laughed
+  - chuckle
+  - chuckles
+  - chuckled
+  - chuckling
+  - giggle
+  - giggles
+  - giggling
+  - giggled
+  - chortle
+  - chortles
+  - chortling
 
 - type: emote
   id: Honk
@@ -40,7 +63,10 @@
     - SiliconEmotes
     - HarpyEmotes
   chatTriggers:
-    - honks
+  - honk
+  - honks
+  - honked
+  - honking
 
 - type: emote
   id: Sigh
@@ -52,7 +78,9 @@
     - Vocal
   chatMessages: ["chat-emote-msg-sigh"]
   chatTriggers:
-    - sighs
+  - sigh
+  - sighs
+  - sighed
 
 - type: emote
   id: Whistle
@@ -64,7 +92,9 @@
     - Vocal
   chatMessages: ["chat-emote-msg-whistle"]
   chatTriggers:
-    - whistles
+  - whistle
+  - whistles
+  - whistleblowing
 
 - type: emote
   id: Crying
@@ -76,8 +106,12 @@
     - Vocal
   chatMessages: ["chat-emote-msg-crying"]
   chatTriggers:
-    - cries
-    - sobs
+  - cry
+  - crying
+  - cries
+  - sob
+  - sobs
+  - sobbing
 
 - type: emote
   id: Squish
@@ -92,7 +126,9 @@
     - BorgChassis
   chatMessages: ["chat-emote-msg-squish"]
   chatTriggers:
-    - squishes
+  - squish
+  - squishing
+  - squishes
 
 - type: emote
   id: Chitter
@@ -107,7 +143,9 @@
     - BorgChassis
   chatMessages: ["chat-emote-msg-chitter"]
   chatTriggers:
-   - chitters
+  - chitter
+  - chitters
+  - chittered
 
 - type: emote
   id: Squeak
@@ -122,7 +160,9 @@
     - BorgChassis
   chatMessages: ["chat-emote-msg-squeak"]
   chatTriggers:
-   - squeaks
+  - squeak
+  - squeaks
+  - squeaked
 
 - type: emote
   id: Click
@@ -137,7 +177,8 @@
     - BorgChassis
   chatMessages: ["chat-emote-msg-click"]
   chatTriggers:
-   - clicks
+  - click
+  - clicks
 
 # hand emotes
 - type: emote
@@ -153,7 +194,10 @@
     - BorgChassis
   chatMessages: ["chat-emote-msg-clap"]
   chatTriggers:
-    - claps
+  - clap
+  - claps
+  - clapping
+  - clapped
 
 - type: emote
   id: Snap
@@ -168,13 +212,40 @@
     - BorgChassis
   chatMessages: ["chat-emote-msg-snap"] # snaps <{THEIR($ent)}> fingers?
   chatTriggers:
-    - snaps
-    - snaps fingers
-    - snaps his fingers
-    - snaps her fingers
-    - snaps their fingers
-    - snaps its fingers
-    - snaps its' fingers
+  - snap
+  - snaps
+  - snapping
+  - snapped
+  - snap fingers
+  - snaps fingers
+  - snaps their fingers
+  - snapping fingers
+  - snapped fingers
+
+- type: emote
+  id: Thump
+  name: chat-emote-name-thump
+  category: Hands
+  available: false
+  icon: Interface/Emotes/tailslap.png
+  whitelist:
+    components:
+    - Hands
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-thump"]
+  chatTriggers:
+  - thump
+  - thumps
+  - thumping
+  - thumped
+  - thump tail
+  - thumps tail
+  - thumps their tail
+  - thumps her tail
+  - thumps his tail
+  - thumps its tail
 
 - type: emote
   id: Salute
@@ -189,7 +260,20 @@
     - BorgChassis
   chatMessages: ["chat-emote-msg-salute"]
   chatTriggers:
-    - salutes
+  - salute
+  - salutes
+
+- type: emote
+  id: Gasp
+  name: chat-emote-name-gasp
+  whitelist:
+    components:
+    - Respirator
+  chatMessages: ["chat-emote-msg-gasp"]
+  chatTriggers:
+  - gasp
+  - gasps
+  - gasped
 
 - type: emote
   id: DefaultDeathgasp
@@ -233,14 +317,24 @@
     - HarpyEmotes
   chatMessages: ["chat-emote-msg-buzz"]
   chatTriggers:
-    - buzzes
+  - buzzing
+  - buzz
+  - buzzed
+  - buzzes
 
 - type: emote
   id: Weh
   name: chat-emote-name-weh
   category: Vocal
   icon: Interface/Emotes/weh.png
-  chatMessages: [ wehs ]
+  chatMessages: ["chat-emote-msg-weh"]
+
+- type: emote
+  id: Hew
+  name: chat-emote-name-hew
+  category: Vocal
+  icon: Interface/Emotes/hew.png
+  chatMessages: ["chat-emote-msg-hew"]
 
 - type: emote
   id: Chirp
@@ -255,7 +349,10 @@
     - HarpyEmotes
   chatMessages: ["chat-emote-msg-chirp"]
   chatTriggers:
-    - chirps
+  - chirp
+  - chirps
+  - chirped
+  - chirping
 
 # Machine Emotes
 - type: emote
@@ -269,7 +366,10 @@
     - HarpyEmotes
   chatMessages: ["chat-emote-msg-beep"]
   chatTriggers:
-    - beeps
+  - beep
+  - beeps
+  - beeped
+  - beeping
 
 - type: emote
   id: Boop
@@ -281,7 +381,7 @@
     - HarpyEmotes
   chatMessages: [ boops ]
   chatTriggers:
-    - boops
+  - boops
 
 - type: emote
   id: Chime
@@ -294,7 +394,10 @@
     - HarpyEmotes
   chatMessages: ["chat-emote-msg-chime"]
   chatTriggers:
-    - chimes
+  - chime
+  - chimes
+  - chimed
+  - chiming
 
 - type: emote
   id: Buzz-Two
@@ -307,7 +410,16 @@
     - HarpyEmotes
   chatMessages: ["chat-emote-msg-buzzestwo"]
   chatTriggers:
-    - buzzes twice
+  - buzztwice
+  - buzzstwice
+  - buzzestwice
+  - buzzingtwice
+  - buzzedtwice
+  - buzz twice
+  - buzzs twice
+  - buzzes twice
+  - buzzing twice
+  - buzzed twice
 
 - type: emote
   id: Ping
@@ -320,7 +432,10 @@
     - HarpyEmotes
   chatMessages: ["chat-emote-msg-ping"]
   chatTriggers:
-    - pings
+  - ping
+  - pings
+  - pinged
+  - pinging
 
 - type: emote
   id: Whirr
@@ -332,7 +447,8 @@
     - HarpyEmotes
   chatMessages: [ whirrs ]
   chatTriggers:
-    - whirrs
+  - whirr
+  - whirrs
 
 - type: emote
   id: Mars
@@ -347,7 +463,7 @@
     - BorgChassis
   chatMessages: [ mars ]
   chatTriggers:
-    - mars
+  - mars
 
 - type: emote
   id: Wurble
@@ -362,4 +478,4 @@
     - BorgChassis
   chatMessages: [ wurble ]
   chatTriggers:
-    - wurble
+  - wurble

@@ -18,6 +18,7 @@ using Content.Shared.Salvage;
 using Content.Shared.Shuttles.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
+using Robust.Shared.EntitySerialization;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -26,7 +27,6 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
-
 
 namespace Content.Server._Lavaland.Procedural.Systems;
 
@@ -42,13 +42,13 @@ public sealed class LavalandPlanetSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly INetConfigurationManager _config = default!;
-    [Dependency] private readonly MapSystem _mapSystem = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly AtmosphereSystem _atmos = default!;
     [Dependency] private readonly BiomeSystem _biome = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
+    [Dependency] private readonly MapSystem _mapSystem = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly ShuttleSystem _shuttle = default!;
     [Dependency] private readonly StationSystem _station = default!;
@@ -254,17 +254,14 @@ public sealed class LavalandPlanetSystem : EntitySystem
 
     }
 
-    private bool SetupOutpost(EntityUid lavaland, MapId lavalandMapId, string path, out EntityUid outpost)
+    private bool SetupOutpost(EntityUid lavaland, MapId lavalandMapId, ResPath path, out EntityUid outpost)
     {
-        var mapResPath = new ResPath(path);
         outpost = EntityUid.Invalid;
 
         // Setup Outpost
-        if (!_mapLoader.TryLoadGrid(lavalandMapId, mapResPath, out var outposts))
+        if (!_mapLoader.TryLoadGrid(lavalandMapId, path, out _))
         {
-            Log.Error(outposts.HasValue
-                ? $"Loading Outpost on lavaland map failed, {path} is not saved as a grid."
-                : $"Failed to spawn Outpost {path} onto Lavaland map.");
+            Log.Error($"Failed to spawn Outpost {path} onto Lavaland map.");
             return false;
         }
 
@@ -496,9 +493,7 @@ public sealed class LavalandPlanetSystem : EntitySystem
         var mapXform = Transform(salvMap);
 
         // Try to load everything on a dummy map
-        var ruinResPath = new ResPath(ruin.Path);
-
-        if (!_mapLoader.TryLoadGrid(mapXform.MapID, ruinResPath, out _, offset: coord) || mapXform.ChildCount != 1)
+        if (!_mapLoader.TryLoadGrid(mapXform.MapID, ruin.Path, out _, offset:coord))
         {
             Log.Error($"Failed to load ruin {ruin.ID} onto dummy map!");
             return false;
@@ -546,9 +541,7 @@ public sealed class LavalandPlanetSystem : EntitySystem
             var bounds = new List<Box2>();
 
             // Try to load everything on a dummy map
-            var protoResPath = new ResPath(proto.Path);
-
-            if (!_mapLoader.TryLoadGrid(mapId, protoResPath, out _) || dummyMapXform.ChildCount == 0)
+            if (!_mapLoader.TryLoadGrid(mapId, proto.Path, out _))
             {
                 Log.Error($"Failed to load ruin {proto.ID} onto dummy map!");
                 continue;

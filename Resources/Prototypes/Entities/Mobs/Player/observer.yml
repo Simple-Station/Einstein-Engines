@@ -28,11 +28,13 @@
         layer:
         - GhostImpassable
 
+# shared parent between aghosts, replay spectators and normal observers
 - type: entity
   parent:
   - Incorporeal
   - BaseMob
-  id: MobObserver
+  id: MobObserverBase
+  abstract: true
   name: observer
   description: Boo!
   categories: [ HideSpawnMenu ]
@@ -48,11 +50,11 @@
   - type: Eye
     drawFov: false
     visMask:
-      - TelegnosticProjection
-      - PsionicInvisibility
-      - Ghost
-      - Normal
-      - Ethereal
+    - TelegnosticProjection
+    - PsionicInvisibility
+    - Ghost
+    - Normal
+    - Ethereal
   - type: Input
     context: "ghost"
   - type: Examiner
@@ -78,11 +80,17 @@
         requireInputValidation: false
 
 
+# proto for player ghosts specifically
+- type: entity
+  parent: MobObserverBase
+  id: MobObserver
+  components:
+  - type: Spectral
+
 - type: entity
   id: ActionGhostBoo
   name: Boo!
   description: Scare your crew members because of boredom!
-  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: Interface/Actions/scream.png
@@ -95,7 +103,6 @@
   id: ActionToggleLighting
   name: Toggle Lighting
   description: Toggle light rendering to better observe dark areas.
-  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: Interface/VerbIcons/light.svg.192dpi.png
@@ -107,7 +114,6 @@
   id: ActionToggleFov
   name: Toggle FoV
   description: Toggles field-of-view in order to see what players see.
-  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: Interface/VerbIcons/vv.svg.192dpi.png
@@ -119,7 +125,6 @@
   id: ActionToggleGhosts
   name: Toggle Ghosts
   description: Toggle the visibility of other ghosts.
-  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: { sprite: Mobs/Ghosts/ghost_human.rsi, state: icon }
@@ -130,8 +135,7 @@
 - type: entity
   id: ActionToggleGhostHearing
   name: Toggle Ghost Hearing
-  description: Toggle between hearing all messages and hearing only radio & nearby messages.
-  categories: [ HideSpawnMenu ]
+  description: Toggle between hearing all messages and hearing only radio & nearby messages
   components:
   - type: InstantAction
     checkCanInteract: false
@@ -158,9 +162,9 @@
   - type: Eye
     drawFov: false
     visMask:
-      - TelegnosticProjection
-      - PsionicInvisibility
-      - Normal
+    - TelegnosticProjection
+    - PsionicInvisibility
+    - Normal
   - type: Examiner
   - type: MovementSpeedModifier
     baseSprintSpeed: 8
@@ -169,12 +173,12 @@
     removable: false
     roller: false
     psychognomicDescriptors:
-      - p-descriptor-liminal # because you arnt currently in your body
+    - p-descriptor-liminal # because you arnt currently in your body
   - type: InnatePsionicPowers
     powersToAdd:
-      - XenoglossyPower #Remove if a better way to have the projection understand langs is implemented, ideal is to have projection inherit user langs
-      - TelepathyPower
-      - PsychognomyPower
+    - XenoglossyPower #Remove if a better way to have the projection understand langs is implemented, ideal is to have projection inherit user langs
+    - TelepathyPower
+    - PsychognomyPower
   - type: TelegnosticProjection
   - type: Stealth
     lastVisibility: 0.66

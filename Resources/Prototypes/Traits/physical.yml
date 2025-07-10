@@ -355,7 +355,8 @@
     - !type:TraitReplaceComponent
       components:
         - type: TemperatureProtection
-          coefficient: 0.1 # Enough resistance to walk into the chef's freezer, or tolerate daytime temperatures on Glacier without a jacket.
+          heatingCoefficient: 0.1 # Enough resistance to walk into the chef's freezer, or tolerate daytime temperatures on Glacier without a jacket.
+          coolingCoefficient: 0.1
 
 # These traits largely exist to demonstrate more of the "Component Removals" functionality. This way contributors
 # can get used to seeing that they can "Remove and Replace" a pre-existing component.
@@ -636,9 +637,9 @@
         - description: examine-cybereyes-message
           fontSize: 12
           requireDetailRange: true
-    - !type:TraitReplaceComponent
+    - !type:TraitRemoveComponent
       components:
-        - type: Flashable # Effectively, removes any flash-vulnerability species traits.
+        - type: EyeDamageOnFlashing
 
 
 # - type: trait

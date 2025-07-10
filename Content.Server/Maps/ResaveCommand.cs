@@ -13,7 +13,7 @@ namespace Content.Server.Maps;
 /// <summary>
 /// Loads every map and resaves it into the data folder.
 /// </summary>
-[AdminCommand(AdminFlags.Mapping)]
+[AdminCommand(AdminFlags.Host)]
 public sealed class ResaveCommand : LocalizedCommands
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
@@ -28,7 +28,6 @@ public sealed class ResaveCommand : LocalizedCommands
 
         var opts = MapLoadOptions.Default with
         {
-
             DeserializationOptions = DeserializationOptions.Default with
             {
                 StoreYamlUids = true,

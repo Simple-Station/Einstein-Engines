@@ -3,8 +3,6 @@ using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Audio;
 using Content.Server.Cargo.Systems;
-using Content.Server.Chemistry.Containers.EntitySystems;
-using Content.Server.Chemistry.EntitySystems;
 using Content.Server.Construction;
 using Content.Server.DoAfter;
 using Content.Server.Fluids.EntitySystems;
@@ -13,7 +11,6 @@ using Content.Server.Nutrition;
 using Content.Server.Nutrition.Components;
 using Content.Server.Nyanotrasen.Kitchen.Components;
 using Content.Server.Popups;
-using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Temperature.Components;
 using Content.Server.Temperature.Systems;
@@ -39,7 +36,6 @@ using Content.Shared.Item;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Events;
-using Content.Shared.Nutrition;
 using Content.Shared.Nyanotrasen.Kitchen;
 using Content.Shared.Nyanotrasen.Kitchen.Components;
 using Content.Shared.Nyanotrasen.Kitchen.UI;
@@ -75,7 +71,7 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
     [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
     [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
-    [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly SolutionTransferSystem _solutionTransferSystem = default!;
     [Dependency] private readonly PuddleSystem _puddleSystem = default!;
     [Dependency] private readonly TemperatureSystem _temperature = default!;
@@ -405,17 +401,20 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
         if (!HasComp<SolutionContainerManagerComponent>(uid))
             AddComp<SolutionContainerManagerComponent>(uid);
 
-        component.Solution =
-            _solutionContainerSystem.EnsureSolution(uid, component.SolutionName, out var solutionExisted);
+        if (!_solutionContainerSystem.EnsureSolution(uid, component.SolutionName, out var existed, out var solution))
+            return;
 
-        if (!solutionExisted)
-            _sawmill.Warning(
-                $"{ToPrettyString(uid)} did not have a {component.SolutionName} solution container. It has been created.");
+        if (!existed)
+            _sawmill.Warning($"{ToPrettyString(uid)} did not have a {component.SolutionName} solution container. It has been created.");
+
+        component.Solution = solution;
+
         foreach (var reagent in component.Solution.Contents.ToArray())
         {
             //JJ Comment - not sure this works. Need to check if Reagent.ToString is correct.
             _prototypeManager.TryIndex<ReagentPrototype>(reagent.Reagent.ToString(), out var proto);
-            var effectsArgs = new EntityEffectReagentArgs(uid,
+            var effectsArgs = new EntityEffectReagentArgs(
+                uid,
                 EntityManager,
                 null,
                 component.Solution,

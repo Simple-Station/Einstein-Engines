@@ -75,6 +75,7 @@
       - !type:SpillBehavior { }
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: DnaSubstanceTrace
 
 - type: entity
   parent: DrinkBase
@@ -1261,7 +1262,7 @@
         - ReagentId: JuiceLemon
           Quantity: 30
   - type: Icon
-    sprite: Objects/Consumable/Drinks/lemonjuice.rsi
+    sprite: Objects/Consumable/Drinks/lemonjuiceglass.rsi
     state: icon
 
 - type: entity
@@ -1702,19 +1703,22 @@
     sprite: Objects/Consumable/Drinks/royrogers.rsi
     state: icon
 
-##Commented out in favor of Nyano sake/soju
-#- type: entity
-#  parent: DrinkGlass
-#  id: DrinkSakeGlass
-#  suffix: sake
-#  components:
-#  - type: SolutionContainerManager
-#    solutions:
-#      drink:
-#        maxVol: 30
-#        reagents:
-#        - ReagentId: Sake
-#          Quantity: 30
+- type: entity
+  parent: DrinkGlass
+  id: DrinkSakeGlass
+  suffix: sake
+  description: Wine made from rice, it's sake!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Sake
+          Quantity: 30
+  - type: Icon
+    sprite: Nyanotrasen/Objects/Consumable/Drinks/sakeglass.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -2182,7 +2186,7 @@
   parent: DrinkGlassBase
   id: DrinkWaterJug
   name: water jug
-  description: Stay hydrated
+  description: Stay hydrated.
   components:
   - type: SolutionContainerManager
     solutions:
@@ -2445,10 +2449,10 @@
   color: "#664300"
   recognizable: true
   plantMetabolism:
-    - !type:PlantAdjustNutrition
-      amount: 0.1
-    - !type:PlantAdjustWater
-      amount: 0.9
+  - !type:PlantAdjustNutrition
+    amount: 0.1
+  - !type:PlantAdjustWater
+    amount: 0.9
   metabolisms:
     Drink:
       effects:

@@ -9,12 +9,9 @@
   tier: 1
   cost: 15000
   recipeUnlocks:
-  - BorgModuleLightReplacer
   - BorgModuleAdvancedCleaning
   - BorgModuleGardening
   - BorgModuleHarvesting
-  - BorgModuleMusique
-  - BorgModuleClowning
   - HamtrHarness
   - HamtrLArm
   - HamtrRArm

@@ -24,6 +24,13 @@ public sealed partial class StationEventComponent : Component
     [DataField]
     public bool EndAnnouncement;
 
+    [DataField]
+    public Color StartAnnouncementColor = Color.Gold;
+
+    [DataField]
+    public Color EndAnnouncementColor = Color.Gold;
+
+
     /// <summary>
     ///     In minutes, when is the first round time this event can start
     /// </summary>
@@ -35,12 +42,6 @@ public sealed partial class StationEventComponent : Component
     /// </summary>
     [DataField]
     public int ReoccurrenceDelay = 30;
-
-    /// <summary>
-    ///     How long after being added does the event start
-    /// </summary>
-    [DataField]
-    public TimeSpan StartDelay = TimeSpan.Zero;
 
     /// <summary>
     ///     How long the event lasts.
@@ -70,16 +71,15 @@ public sealed partial class StationEventComponent : Component
     public int? MaxOccurrences;
 
     /// <summary>
-    /// When the station event starts.
-    /// </summary>
-    [DataField("startTime", customTypeSerializer: typeof(TimeOffsetSerializer))]
-    [AutoPausedField]
-    public TimeSpan StartTime;
-
-    /// <summary>
     /// When the station event ends.
     /// </summary>
     [DataField("endTime", customTypeSerializer: typeof(TimeOffsetSerializer))]
     [AutoPausedField]
     public TimeSpan? EndTime;
+
+    /// <summary>
+    /// If false, the event won't trigger during ongoing evacuation.
+    /// </summary>
+    [DataField]
+    public bool OccursDuringRoundEnd = true;
 }

@@ -1,15 +1,13 @@
 using Content.Shared.Hands.Components;
-using Content.Shared.Interaction.Events;
 using Content.Shared.Teleportation.Systems;
 using Content.Shared.Teleportation.Components;
 using Content.Shared.Verbs;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
 using Robust.Shared.EntitySerialization;
 using Robust.Shared.EntitySerialization.Systems;
+using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
 
 namespace Content.Server.Teleportation;
 
@@ -21,8 +19,6 @@ public sealed class PocketDimensionSystem : EntitySystem
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly LinkedEntitySystem _link = default!;
     [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
-    [Dependency] private readonly IMapManager _mapMan = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -68,15 +64,12 @@ public sealed class PocketDimensionSystem : EntitySystem
                 return;
             }
 
-            comp.PocketDimensionMap = _mapMan.GetMapEntityId(map.Value.Comp.MapId);
+            comp.PocketDimensionMap = map;
 
             // find the pocket dimension's first grid and put the portal there
             bool foundGrid = false;
             foreach (var root in roots)
             {
-                if (!HasComp<MapGridComponent>(root))
-                    continue;
-
                 // spawn the permanent portal into the pocket dimension, now ready to be used
                 var pos = new EntityCoordinates(root, 0, 0);
                 comp.ExitPortal = Spawn(comp.ExitPortalPrototype, pos);

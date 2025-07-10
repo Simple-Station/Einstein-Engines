@@ -2,177 +2,181 @@
   id: BaseStation
   abstract: true
   components:
-    - type: StationData
-
-- type: entity
-  id: BaseRandomStation
-  abstract: true
-  components:
-    - type: StationRandomTransform
+  - type: StationData
 
 - type: entity
   id: BaseStationCargo
   abstract: true
   components:
-    - type: StationBankAccount
-    - type: StationCargoOrderDatabase
-    - type: StationCargoBountyDatabase
+  - type: StationBankAccount
+  - type: StationCargoOrderDatabase
+  - type: StationCargoBountyDatabase
 
 - type: entity
   id: BaseStationJobsSpawning
   abstract: true
   components:
-    - type: StationJobs
-      availableJobs: {}
-    - type: StationSpawning
+  - type: StationJobs
+    availableJobs: {}
+  - type: StationSpawning
 
 - type: entity
   id: BaseStationRecords
   abstract: true
   components:
-    - type: StationRecords
+  - type: StationRecords
 
 - type: entity
   id: BaseStationArrivals
   abstract: true
   components:
-    - type: StationArrivals
+  - type: StationArrivals
 
 - type: entity
   id: BaseStationGateway
   abstract: true
   components:
-    - type: GatewayGenerator
+  - type: GatewayGenerator
 
 - type: entity
   id: BaseStationShuttles
   abstract: true
   components:
-    - type: StationCargoShuttle
-      path: /Maps/Shuttles/cargo.yml
-    - type: GridSpawn
-      groups:
-        trade:
-          addComponents:
-          - type: ProtectedGrid
-          # If you comment out the tradestation, make sure to also set cargo.tradestation_spawns_in_ftl_map to TRUE
-          - type: TradeStation
-          paths:
-          - /Maps/Shuttles/trading_outpost.yml
-        mining:
-          paths:
-          - /Maps/Shuttles/pathfinder.yml
-        # Spawn last
-        ruins:
-          hide: true
-          nameGrid: true
-          minCount: 2
-          maxCount: 2
-          stationGrid: false
-          paths:
-          - /Maps/Ruins/DeltaV/biodome_satellite.yml
-          - /Maps/Ruins/DeltaV/djstation.yml
-          - /Maps/Ruins/DeltaV/old_ai_sat.yml
-          - /Maps/Ruins/DeltaV/relaystation.yml
-          - /Maps/Ruins/DeltaV/whiteship_ancient.yml
-          - /Maps/Ruins/DeltaV/whiteship_bluespacejumper.yml
+  - type: StationCargoShuttle
+    path: /Maps/Shuttles/cargo.yml
+  - type: GridSpawn
+    groups:
+      trade: !type:GridSpawnGroup
+        addComponents:
+        - type: ProtectedGrid
+        # If you comment out the tradestation, make sure to also set cargo.tradestation_spawns_in_ftl_map to TRUE
+        - type: TradeStation
+        paths:
+        - /Maps/Shuttles/trading_outpost.yml
+      # Spawn last
+      ruins: !type:GridSpawnGroup
+        hide: true
+        nameGrid: true
+        minCount: 2
+        maxCount: 2
+        stationGrid: false
+        paths:
+        - /Maps/Ruins/DeltaV/biodome_satellite.yml
+        - /Maps/Ruins/DeltaV/djstation.yml
+        - /Maps/Ruins/DeltaV/old_ai_sat.yml
+        - /Maps/Ruins/DeltaV/relaystation.yml
+        - /Maps/Ruins/DeltaV/whiteship_ancient.yml
+        - /Maps/Ruins/DeltaV/whiteship_bluespacejumper.yml
+      vgroid: !type:DungeonSpawnGroup
+        minimumDistance: 300
+        maximumDistance: 350
+        nameDataset: NamesBorer
+        stationGrid: false
+        addComponents:
+        - type: Gravity
+          enabled: true
+          inherent: true
+        protos:
+        - VGRoid
 
 - type: entity
   id: BaseStationShuttlesCargoOnly
   abstract: true
   components:
-    - type: StationCargoShuttle
-      path: /Maps/Shuttles/cargo.yml
-    - type: GridSpawn
-      groups:
-        trade:
-          addComponents:
-            - type: ProtectedGrid
-          # If you comment out the tradestation, make sure to also set cargo.tradestation_spawns_in_ftl_map to TRUE
-            - type: TradeStation
-          paths:
-            - /Maps/Shuttles/trading_outpost.yml
+  - type: StationCargoShuttle
+    path: /Maps/Shuttles/cargo.yml
+  - type: GridSpawn
+    groups:
+      trade: !type:GridSpawnGroup
+        addComponents:
+        - type: ProtectedGrid
+        # If you comment out the tradestation, make sure to also set cargo.tradestation_spawns_in_ftl_map to TRUE
+        - type: TradeStation
+        paths:
+        - /Maps/Shuttles/trading_outpost.yml
+
 - type: entity
   id: BaseStationShuttlesSalvageOnly
   abstract: true
   components:
-    - type: GridSpawn
-      groups:
-        mining:
-          addComponents:
-          - type: ProtectedGrid
-          paths:
-          - /Maps/Shuttles/pathfinder.yml
-        ruins:
-          hide: true
-          nameGrid: true
-          minCount: 2
-          maxCount: 2
-          stationGrid: false
-          paths:
-          - /Maps/Ruins/DeltaV/biodome_satellite.yml
-          - /Maps/Ruins/DeltaV/djstation.yml
-          - /Maps/Ruins/DeltaV/old_ai_sat.yml
-          - /Maps/Ruins/DeltaV/relaystation.yml
-          - /Maps/Ruins/DeltaV/whiteship_ancient.yml
-          - /Maps/Ruins/DeltaV/whiteship_bluespacejumper.yml
+  - type: GridSpawn
+    groups:
+      mining: !type:GridSpawnGroup
+        addComponents:
+        - type: ProtectedGrid
+        paths:
+        - /Maps/Shuttles/pathfinder.yml
+      ruins: !type:GridSpawnGroup
+        hide: true
+        nameGrid: true
+        minCount: 2
+        maxCount: 2
+        stationGrid: false
+        paths:
+        - /Maps/Ruins/DeltaV/biodome_satellite.yml
+        - /Maps/Ruins/DeltaV/djstation.yml
+        - /Maps/Ruins/DeltaV/old_ai_sat.yml
+        - /Maps/Ruins/DeltaV/relaystation.yml
+        - /Maps/Ruins/DeltaV/whiteship_ancient.yml
+        - /Maps/Ruins/DeltaV/whiteship_bluespacejumper.yml
 
 - type: entity
   id: BaseStationShuttlesCore
   abstract: true
   components:
-    - type: GridSpawn
-      groups:
-        cargo:
-          paths:
-          - /Maps/Shuttles/cargo_core.yml
-        mining:
-          paths:
-          - /Maps/Shuttles/pathfinder.yml
-        ruins:
-          hide: true
-          nameGrid: true
-          minCount: 2
-          maxCount: 2
-          stationGrid: false
-          paths:
-          - /Maps/Ruins/DeltaV/biodome_satellite.yml #Delta V - Move to DV folder
-          - /Maps/Ruins/DeltaV/djstation.yml #Delta V - Move to DV folder
-          - /Maps/Ruins/DeltaV/old_ai_sat.yml #Delta V - Move to DV folder
-          - /Maps/Ruins/DeltaV/relaystation.yml #Delta V - Move to DV folder
-          - /Maps/Ruins/DeltaV/whiteship_ancient.yml #Delta V - Move to DV folder
-          - /Maps/Ruins/DeltaV/whiteship_bluespacejumper.yml #Delta V - Move to DV folder
+  - type: GridSpawn
+    groups:
+      cargo: !type:GridSpawnGroup
+        paths:
+        - /Maps/Shuttles/cargo_core.yml
+      mining: !type:GridSpawnGroup
+        paths:
+        - /Maps/Shuttles/pathfinder.yml
+      ruins: !type:GridSpawnGroup
+        hide: true
+        nameGrid: true
+        minCount: 2
+        maxCount: 2
+        stationGrid: false
+        paths:
+        - /Maps/Ruins/abandoned_outpost.yml
+        - /Maps/Ruins/DeltaV/biodome_satellite.yml #Delta V - Move to DV folder
+        - /Maps/Ruins/DeltaV/djstation.yml #Delta V - Move to DV folder
+        - /Maps/Ruins/DeltaV/old_ai_sat.yml #Delta V - Move to DV folder
+        - /Maps/Ruins/DeltaV/relaystation.yml #Delta V - Move to DV folder
+        - /Maps/Ruins/DeltaV/whiteship_ancient.yml #Delta V - Move to DV folder
+        - /Maps/Ruins/DeltaV/whiteship_bluespacejumper.yml #Delta V - Move to DV folder
 
 - type: entity
   id: BaseStationCentcomm
   abstract: true
   components:
-    - type: StationCentcomm
+  - type: StationCentcomm
 
 - type: entity
   id: BaseStationEvacuation
   abstract: true
   components:
-    - type: StationEmergencyShuttle
+  - type: StationEmergencyShuttle
 
 - type: entity
   id: BaseStationAlertLevels
   abstract: true
   components:
-    - type: AlertLevel
-      alertLevelPrototype: stationAlerts
+  - type: AlertLevel
+    alertLevelPrototype: stationAlerts
 
 - type: entity
   id: BaseStationExpeditions
   abstract: true
   components:
-    - type: SalvageExpeditionData
+  - type: SalvageExpeditionData
 
 - type: entity
   id: BaseStationMagnet
   abstract: true
   components:
-    - type: SalvageMagnetData
+  - type: SalvageMagnetData
 
 - type: entity
   id: BaseStationSiliconLawAsimov
@@ -199,10 +203,10 @@
   id: BaseStationNews
   abstract: true
   components:
-    - type: StationNews
+  - type: StationNews
 
 - type: entity
   id: BaseStationAllEventsEligible
   abstract: true
   components:
-    - type: StationEventEligible # For when someone makes this more granular in the future.
+  - type: StationEventEligible # For when someone makes this more granular in the future.

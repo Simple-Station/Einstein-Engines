@@ -6,7 +6,11 @@
   components:
   - type: Pda
     id: BlueshieldIDCard
-    state: pda-blueshield
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-blueshield
   - type: Icon
     sprite: _Goobstation/Objects/Devices/pda.rsi
     state: pda-blueshield

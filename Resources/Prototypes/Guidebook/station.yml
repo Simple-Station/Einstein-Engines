@@ -1,0 +1,23 @@
+- type: guideEntry
+  id: SS14
+  name: guide-entry-ss14
+  text: "/ServerInfo/Guidebook/SpaceStation14.xml"
+  children:
+  - Controls
+  - Jobs
+  - Survival
+  - Antagonists
+  - Glossary
+  - LoadoutInfo
+  - SettingLore
+  - Psionics
+
+- type: guideEntry
+  id: Glossary
+  name: guide-entry-glossary
+  text: "/ServerInfo/Guidebook/Glossary.xml"
+
+- type: guideEntry
+  id: Survival
+  name: guide-entry-survival
+  text: "/ServerInfo/Guidebook/Survival.xml"

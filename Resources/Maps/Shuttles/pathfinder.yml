@@ -836,7 +836,7 @@ entities:
     - type: Transform
       pos: -0.5,0.5
       parent: 2
-- proto: ComputerShuttleSalvage
+- proto: ComputerShuttle
   entities:
   - uid: 38
     components:

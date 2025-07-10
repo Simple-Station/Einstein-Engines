@@ -13,6 +13,6 @@ reagent-effect-status-effect-RatvarianLanguage = ratvarian language patterns
 reagent-effect-status-effect-StaminaModifier = modified stamina
 reagent-effect-status-effect-RadiationProtection = radiation protection
 reagent-effect-status-effect-Drowsiness = drowsiness
+reagent-effect-status-effect-Adrenaline = adrenaline
 reagent-effect-status-effect-NoScream = pain immunity
-reagent-effect-status-effect-Adrenaline = immunity to slowdown due to damage
 reagent-effect-status-effect-DisableAccent = disabling of accents
