@@ -86,6 +86,23 @@
     price: 250
 
 #CONSCRIPT - NCWL
+
+- type: entity
+  id: ClothingBeltNCWLPouchesFilledCrew
+  parent: ClothingBeltNCWLPouches
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: RCD
+      - id: RCDAmmo
+        amount: 2
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+      - id: MagazineMagnum
+        amount: 2
+
 - type: entity
   id: ClothingBeltNCWLPouchesFilledRifleman
   parent: ClothingBeltNCWLPouches
@@ -192,6 +209,25 @@
       - id: SpaceMedipen
 
 #CONSCRIPT - DSM
+
+- type: entity
+  id: ClothingBeltAssaultFilledCrew
+  parent: ClothingBeltAssault
+  suffix: Filled
+  components:
+  - type: Storage
+    whitelist:
+  - type: StorageFill
+    contents:
+      - id: RCD
+      - id: RCDAmmo
+        amount: 2
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+      - id: MagazineMagnum
+        amount: 2
+
 - type: entity
   id: ClothingBeltAssaultFilledRifleman
   parent: ClothingBeltAssault

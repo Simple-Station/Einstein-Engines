@@ -1374,7 +1374,7 @@ entities:
           -1,4:
             1: 10111
           -3,-4:
-            1: 56552
+            1: 55328
             0: 4
           -3,-3:
             1: 2265
@@ -1384,7 +1384,7 @@ entities:
           -3,-5:
             0: 32768
           -2,-4:
-            1: 56732
+            1: 56716
           -2,-3:
             1: 17757
           -2,-2:
@@ -11180,30 +11180,6 @@ entities:
     components:
     - type: Transform
       pos: -3.5,32.5
-      parent: 1
-- proto: SpawnPointConscriptShipCaptainNCWL
-  entities:
-  - uid: 905
-    components:
-    - type: Transform
-      pos: 1.5,-3.5
-      parent: 1
-  - uid: 911
-    components:
-    - type: Transform
-      pos: -0.5,-3.5
-      parent: 1
-- proto: SpawnPointConscriptShipCrewNCWL
-  entities:
-  - uid: 908
-    components:
-    - type: Transform
-      pos: -0.5,-5.5
-      parent: 1
-  - uid: 909
-    components:
-    - type: Transform
-      pos: 1.5,-5.5
       parent: 1
 - proto: SpawnPointConscriptShotgunNCWL
   entities:

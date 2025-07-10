@@ -256,6 +256,8 @@
   - ConscriptSubmachinegunNCWL
   - ConscriptRiflemanNCWL
   - ConscriptCadetNCWL
+  - ConscriptShipCaptainNCWL
+  - ConscriptShipCrewNCWL
   enabled: true
 
 - type: department

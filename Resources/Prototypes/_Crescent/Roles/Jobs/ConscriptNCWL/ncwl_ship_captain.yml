@@ -1,11 +1,11 @@
 - type: job
-  id: ConscriptShipCaptainDSM
-  name: job-name-conscript-dsm-ship-captain
-  description: job-description-conscript-dsm-ship-captain
-  playTimeTracker: ConscriptJobShipCaptainDSM
+  id: ConscriptShipCaptainNCWL
+  name: job-name-conscript-ncwl-ship-captain
+  description: job-description-conscript-ncwl-ship-captain
+  playTimeTracker: ConscriptJobShipCaptainNCWL
   requirements:
     - !type:FactionRequirement
-      factionID: "DSM"
+      factionID: "NCWL"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -16,17 +16,17 @@
         - Pacifist
         - WheelchairBound
   weight: 55
-  startingGear: ConscriptShipCaptainDSMGear
+  startingGear: ConscriptShipCaptainNCWLGear
   alwaysUseSpawner: true
-  icon: "JobIconImperialGovernor"
+  icon: "JobIconCommsOfficer"
   requireAdminNotify: true
-  supervisors: job-supervisors-imperial
+  supervisors: job-supervisors-highcomm
   canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-dsm-captain
+        rank: crescent-rank-kapitan
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -65,27 +65,27 @@
   - Atmospherics
   - Command
   - Maintenance
-  - DSMGeneral
+  - NCWLGeneral
   - Service
-  - DSMJail
-  - DSMArmory
-  - DSMCommand
+  - NCWLKommissar
+  - NCWLJail
+  - NCWLArmory
+  - NCWLCommand
   - External
   - Captain # Frontier
-  - Empire
 
 - type: startingGear
-  id: ConscriptShipCaptainDSMGear
+  id: ConscriptShipCaptainNCWLGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitMilitaryCaptain
-    neck: ClothingNeckIFFCyan
-    back: ClothingBackpackDSM
-    shoes: ClothingShoesBootsImperialLongboots
-    head: ClothingHeadHatImperialBicorne
-    outerClothing: ClothingOuterCoatImperialParade
-    id: KnightPDA
-    belt: ClothingBeltAssaultFilledCrew
+    jumpsuit: ClothingUniformJumpsuitNCWLCommunications
+    neck: ClothingNeckIFFOrange
+    id: AdministratorPDA
+    ears: ClothingHeadsetNCWL
+    shoes: ClothingShoesBootsJack
+    outerClothing: ClothingOuterCoatJacketJamrock
+    head: ClothingHeadHatNCWLBeretAdmiral
+    belt: ClothingBeltAssaultFilledCrew #looks better
     pocket1: EmergencyOxygenTankFilled
-    ears: ClothingHeadsetEmpire
+    back: ClothingBackpackNCWL
   inhand:
-    - WeaponPistolNeoVolker
+    - WeaponPistolT91

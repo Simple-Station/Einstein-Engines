@@ -18,7 +18,7 @@
   weight: 55
   startingGear: ConscriptShipCrewDSMGear
   alwaysUseSpawner: true
-  icon: "JobIconImperialAdjutant"
+  icon: "JobIconImperialForeman"
   requireAdminNotify: true
   supervisors: job-supervisors-imperial
   canBeAntag: false
@@ -83,8 +83,8 @@
     shoes: ClothingShoesBootsImperialLongboots
     head: ClothingHeadHatBeretNavy
     id: LevymanPDA
-    belt: ClothingBeltAssaultFilledRifleman
+    belt: ClothingBeltAssaultFilledCrew
     pocket1: EmergencyOxygenTankFilled
     ears: ClothingHeadsetEmpire
   inhand:
-    - WeaponPistolComplianceImperial
+    - WeaponPistolNeoVolker

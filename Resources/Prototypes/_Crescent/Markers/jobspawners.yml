@@ -838,6 +838,30 @@
 # CONSCRIPT - NCWL
 
 - type: entity
+  id: SpawnPointConscriptShipCaptainNCWL
+  parent: SpawnPointJobBase
+  name: ConscriptShipCaptainNCWL
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptShipCaptainNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointConscriptShipCrewNCWL
+  parent: SpawnPointJobBase
+  name: ConscriptShipCrewNCWL
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptShipCrewNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
   id: SpawnPointConscriptLeaderNCWL
   parent: SpawnPointJobBase
   name: ConscriptLeaderNCWL
@@ -1030,6 +1054,30 @@
     - state: passenger
 
 # CONSCRIPT - DSM
+
+- type: entity
+  id: SpawnPointConscriptShipCaptainDSM
+  parent: SpawnPointJobBase
+  name: ConscriptShipCaptainDSM
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptShipCaptainDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointConscriptShipCrewDSM
+  parent: SpawnPointJobBase
+  name: ConscriptShipCrewDSM
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptShipCrewDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
 
 - type: entity
   id: SpawnPointConscriptLeaderDSM
