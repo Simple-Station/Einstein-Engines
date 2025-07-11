@@ -42,7 +42,7 @@ public sealed partial class GuideTechDisciplineEmbed : BoxContainer, IDocumentTa
         control = null;
         if (!args.TryGetValue("Discipline", out var group))
         {
-            Logger.Error("Technology discipline embed tag is missing discipline argument");
+            Logger.GetSawmill("guide.techdisciplin.embed").Error("Technology discipline embed tag is missing discipline argument");
             return false;
         }
 

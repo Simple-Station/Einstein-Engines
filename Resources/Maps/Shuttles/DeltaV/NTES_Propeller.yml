@@ -13673,7 +13673,7 @@ entities:
     - type: Transform
       pos: 1.5,16.5
       parent: 1
-- proto: WallShuttleInterior
+- proto: WallShuttle
   entities:
   - uid: 7
     components:

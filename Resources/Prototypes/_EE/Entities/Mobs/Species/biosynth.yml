@@ -1,0 +1,45 @@
+- type: entity
+  parent: MobHuman
+  id: MobSynthHuman
+  name: bio-synthetic torso
+  description: A customizable synthetic human body.
+  suffix: Alive
+  components:
+  - type: HumanoidAppearance
+    species: SynthHuman
+  - type: Body
+    prototype: SynthHuman
+    requiredLegs: 2
+  - type: Renamable
+    singleUse: true
+  - type: ChangeableGender
+    singleUse: true
+  - type: ChangeableSex
+    singleUse: true
+  - type: UserInterface
+    interfaces:
+      enum.HumanoidMarkingModifierKey.Key:
+        type: HumanoidMarkingModifierBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+      # Goobstation - changelings
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+      enum.InstrumentUiKey.Key:
+        type: InstrumentBoundUserInterface
+        requireInputValidation: false
+      enum.RadialSelectorUiKey.Key:
+        type: RadialSelectorMenuBUI
+      enum.ListViewSelectorUiKey.Key:
+        type: ListViewSelectorBUI
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
+      enum.SharedRenamableInterfaceKey.Key:
+        type: RenamableBoundUserInterface
+  - type: NameIdentifier
+    group: Synth
+  - type: Damageable
+    damage:
+      types:
+        Bloodloss: -100 # they spawn with 100 bloodloss for whatever reason
+  - type: Debrained

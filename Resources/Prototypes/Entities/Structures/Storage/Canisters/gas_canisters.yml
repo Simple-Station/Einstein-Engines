@@ -72,7 +72,7 @@
           shape:
             !type:PhysShapeAabb
             bounds: "-0.25,-0.25,0.25,0.25"
-          density: 190
+          density: 380
           mask:
           - SmallMobMask
           layer:
@@ -693,7 +693,7 @@
       materialComposition:
         Steel: 500
     - type: StaticPrice
-      price: 60
+      price: 125
 
 - type: entity
   parent: GasCanisterBrokenBase
@@ -783,3 +783,4 @@
   components:
   - type: Sprite
     state: frezon-1
+

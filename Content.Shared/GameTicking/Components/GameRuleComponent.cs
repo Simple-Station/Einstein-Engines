@@ -8,7 +8,7 @@ namespace Content.Shared.GameTicking.Components;
 /// Component attached to all gamerule entities.
 /// Used to both track the entity as well as store basic data
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, EntityCategory("GameRules")]
 public sealed partial class GameRuleComponent : Component
 {
     /// <summary>
@@ -22,6 +22,13 @@ public sealed partial class GameRuleComponent : Component
     /// </summary>
     [DataField]
     public int MinPlayers;
+
+    /// <summary>
+    /// If true, this rule not having enough players will cancel the preset selection.
+    /// If false, it will simply not run silently.
+    /// </summary>
+    [DataField]
+    public bool CancelPresetOnTooFewPlayers = true;
 
     /// <summary>
     /// A delay for when the rule the is started and when the starting logic actually runs.

@@ -31,22 +31,22 @@ namespace Content.Server.Construction.Completions
             if (!entityManager.TryGetComponent(uid, out ContainerManagerComponent? containerManager))
                 return;
 
-            var containerSys = entityManager.EntitySysManager.GetEntitySystem<ContainerSystem>();
-            var handSys = entityManager.EntitySysManager.GetEntitySystem<HandsSystem>();
-            var transformSys = entityManager.EntitySysManager.GetEntitySystem<TransformSystem>();
+            var containerSystem = entityManager.EntitySysManager.GetEntitySystem<ContainerSystem>();
+            var handSystem = entityManager.EntitySysManager.GetEntitySystem<HandsSystem>();
+            var transformSystem = entityManager.EntitySysManager.GetEntitySystem<TransformSystem>();
 
             HandsComponent? hands = null;
             var pickup = Pickup && entityManager.TryGetComponent(userUid, out hands);
 
-            foreach (var container in containerManager.GetAllContainers())
+            foreach (var container in containerSystem.GetAllContainers(uid, containerManager))
             {
-                foreach (var ent in containerSys.EmptyContainer(container, true, reparent: !pickup))
+                foreach (var ent in containerSystem.EmptyContainer(container, true, reparent: !pickup))
                 {
                     if (EmptyAtUser && userUid is not null)
-                        transformSys.DropNextTo(ent, (EntityUid) userUid);
+                        transformSystem.DropNextTo(ent, (EntityUid) userUid);
 
                     if (pickup)
-                        handSys.PickupOrDrop(userUid, ent, handsComp: hands);
+                        handSystem.PickupOrDrop(userUid, ent, handsComp: hands);
                 }
             }
         }

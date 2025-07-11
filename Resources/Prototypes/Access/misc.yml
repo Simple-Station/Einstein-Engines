@@ -52,3 +52,8 @@
   - BlueshieldOfficer # Goobstation - Add BSO Access
   - NanotrasenRepresentative # Goobstation - Add NTR Access
   - Magistrate # Goobstation - Add Magistrate Access
+
+- type: accessGroup
+  id: General
+  tags:
+  - Maintenance

@@ -22,7 +22,7 @@ public sealed class NotJobsRequirementSystem : EntitySystem
             return;
 
         // if player has no job then don't care
-        if (!TryComp<JobComponent>(args.MindId, out var job))
+        if (!TryComp<JobRoleComponent>(args.MindId, out var job))
             return;
         foreach (string forbidJob in comp.Jobs)
             if (job.Prototype == forbidJob)

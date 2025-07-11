@@ -1,0 +1,52 @@
+- type: constructionGraph
+  id: Drone
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: bot
+      steps:
+      - tag: ProximitySensor
+        icon:
+          sprite: Objects/Misc/proximity_sensor.rsi
+          state: icon
+        name: proximity sensor
+        doAfter: 2
+      - tag: DroneElectronics
+        icon:
+          sprite: Objects/Misc/module.rsi
+          state: airalarm_electronics
+        name: drone electronics
+        doAfter: 2
+      - tag: WeldingTool
+        icon:
+          sprite: Objects/Tools/welder.rsi
+          state: icon
+        name: welding tool
+        doAfter: 2
+      - tag: Crowbar
+        icon:
+          sprite: Objects/Tools/crowbar.rsi
+          state: icon
+        name: crowbar
+        doAfter: 2
+      - tag: Screwdriver
+        icon:
+          sprite: Objects/Tools/screwdriver.rsi
+          state: screwdriver-map
+        name: screwdriver
+        doAfter: 2
+      - tag: Wirecutter
+        icon:
+          sprite: Objects/Tools/wirecutters.rsi
+          state: cutters-map
+        name: wirecutter
+        doAfter: 2
+      - tag: Wrench
+        icon:
+          sprite: Objects/Tools/wrench.rsi
+          state: icon
+        name: wrench
+        doAfter: 2
+  - node: bot
+    entity: MobDrone

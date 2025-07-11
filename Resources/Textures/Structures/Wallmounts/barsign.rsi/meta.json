@@ -10,6 +10,7 @@
   "copyright": "https://github.com/space-wizards/space-station-14/commit/b301d3ac26cb2301048eda4535667c28e2283d41 - Made by ProPandaBear for SS14",
   "copyright": "whiskeyechoes by CerebralError#4852",
   "copyright": "Klub Skub by Velcroboy",
+  "copyright": "maltroach made by robinthedragon for SS14, based on maltroach by MoffNyan for tgstation at commit https://github.com/tgstation/tgstation/commit/dcf2f8268d21e91dcb9d9d4c199e8e8dd3984d60",
   "states": [
     {
       "name": "combocafe",
@@ -610,6 +611,25 @@
           0.1,
           0.1,
           5
+        ]
+      ]
+    },
+    {
+      "name": "maltroach",
+      "delays": [
+        [
+          0.75,
+          0.75,
+          0.75,
+          0.75,
+          0.75,
+          0.75,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
         ]
       ]
     }

@@ -1,27 +1,32 @@
-- type: entity
-  id: WeaponProtoKineticAcceleratorSawn
-  parent: WeaponProtoKineticAcceleratorBase
-  name: sawn-off proto-kinetic accelerator
-  description: A PKA rifle that has been crudely cut down and rewired. It's all but impossible to aim effectively, but at least it fits inside a jumpsuit pocket now.
-  components:
-  - type: Sprite
-    sprite: _NF/Objects/Weapons/Guns/Basic/sawn_kinetic_accelerator.rsi
-    state: icon
-  - type: Item
-    sprite: _NF/Objects/Weapons/Guns/Basic/sawn_kinetic_accelerator.rsi
-    size: Small
-    shape:
-    - 0,0,1,0
-  - type: Gun
-    fireRate: 8
-    selectedMode: FullAuto
-    availableModes:
-    - FullAuto
-    minAngle: 41
-    maxAngle: 55
-  - type: Clothing
-    sprite: _NF/Objects/Weapons/Guns/Basic/sawn_kinetic_accelerator.rsi
-  - type: Construction
-    graph: PKASawn
-    node: pkasawn
-    deconstructionTarget: null
+# - type: entity
+#   id: WeaponProtoKineticAcceleratorSawn
+#   parent: WeaponProtoKineticAcceleratorBase
+#   name: sawn-off proto-kinetic accelerator
+#   description: A PKA rifle that has been crudely cut down and rewired. It's all but impossible to aim effectively, but at least it fits inside a jumpsuit pocket now.
+#   components:
+#   - type: Sprite
+#     sprite: _NF/Objects/Weapons/Guns/Basic/sawn_kinetic_accelerator.rsi
+#     layers:
+#     - state: icon
+#       map: [ "enum.WeaponVisualLayers.Base" ]
+#     - state: bayonet
+#       map: [ "enum.WeaponVisualLayers.Bayonet" ]
+#       visible: false
+#   - type: Item
+#     sprite: _NF/Objects/Weapons/Guns/Basic/sawn_kinetic_accelerator.rsi
+#     size: Small
+#     shape:
+#     - 0,0,1,0
+#   - type: Gun
+#     fireRate: 8
+#     selectedMode: FullAuto
+#     availableModes:
+#     - FullAuto
+#     minAngle: 41
+#     maxAngle: 55
+#   - type: Clothing
+#     sprite: _NF/Objects/Weapons/Guns/Basic/sawn_kinetic_accelerator.rsi
+#   - type: Construction
+#     graph: PKASawn
+#     node: pkasawn
+#     deconstructionTarget: null

@@ -18,10 +18,19 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Mobs;
-using Content.Shared.Damage.Components;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Weapons.Melee;
 using Robust.Shared.Audio;
+using Content.Shared.Tag;
+using Content.Shared.Body.Part;
+using Content.Server.Body.Systems;
+using Content.Shared.Body.Components;
+using Robust.Shared.Physics;
+using Robust.Shared.Physics.Systems;
+using System.Linq;
+using Robust.Shared.Utility;
+using Robust.Shared.GameStates;
+using Content.Shared.Humanoid;
 
 namespace Content.Server.Traits;
 
@@ -42,6 +51,10 @@ public sealed partial class TraitReplaceComponent : TraitFunction
             var comp = (Component) serializationManager.CreateCopy(data.Component, notNullableOverride: true);
             comp.Owner = uid;
             entityManager.AddComponent(uid, comp, true);
+            if (!comp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
+                continue;
+
+            entityManager.Dirty(uid, comp);
         }
     }
 }
@@ -69,6 +82,10 @@ public sealed partial class TraitAddComponent : TraitFunction
             var comp = (Component) serializationManager.CreateCopy(entry.Component, notNullableOverride: true);
             comp.Owner = uid;
             entityManager.AddComponent(uid, comp);
+
+            if (!comp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
+                continue;
+            entityManager.Dirty(uid, comp);
         }
     }
 }
@@ -110,6 +127,23 @@ public sealed partial class TraitAddActions : TraitFunction
             if (actionSystem.AddAction(uid, ref actionId, id))
                 actionSystem.StartUseDelay(actionId);
         }
+    }
+}
+
+[UsedImplicitly]
+public sealed partial class TraitRemoveActions : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public List<EntProtoId> Actions { get; private set; } = new();
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var actionSystem = entityManager.System<SharedActionsSystem>();
+        foreach (var proto in Actions)
+            actionSystem.RemoveAction(uid, proto);
     }
 }
 
@@ -288,21 +322,60 @@ public sealed partial class TraitModifyFactions : TraitFunction
     }
 }
 
-/// Only use this if you know what you're doing. This function directly writes to any arbitrary component.
+/// Only use this if you know what you're doing and there is no reasonable alternative. This function directly writes to any arbitrary component.
 [UsedImplicitly]
 public sealed partial class TraitVVEdit : TraitFunction
 {
     [DataField, AlwaysPushInheritance]
-    public Dictionary<string, string> VVEdit { get; private set; } = new();
+    public Dictionary<string, string> Changes { get; private set; } = new();
 
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
         IEntityManager entityManager,
         ISerializationManager serializationManager)
     {
-        var vvm = IoCManager.Resolve<IViewVariablesManager>();
-        foreach (var (path, value) in VVEdit)
-            vvm.WritePath(path, value);
+        var viewVariablesManager = IoCManager.Resolve<IViewVariablesManager>();
+
+        foreach (var (path, value) in Changes)
+        {
+            var idPath = path.Replace("$ID", uid.ToString());
+
+            viewVariablesManager.WritePath(idPath, value);
+        }
+    }
+}
+
+/// Only use this if you know what you're doing and there is no reasonable alternative. This function directly writes to any arbitrary component, relative to the current value. Only works for floats.
+[UsedImplicitly]
+public sealed partial class TraitVVModify : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public Dictionary<string, float> Changes { get; private set; } = new();
+
+    [DataField, AlwaysPushInheritance]
+    public bool Multiply { get; private set; } = false; // Should the value be multiplied compared to the current one? If not, add/subtract instead.
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var viewVariablesManager = IoCManager.Resolve<IViewVariablesManager>();
+
+        foreach (var (path, value) in Changes)
+        {
+            var idPath = path.Replace("$ID", uid.ToString());
+
+            if (!float.TryParse(viewVariablesManager.ReadPathSerialized(idPath), out var currentValue))
+                continue;
+
+            float newValue = currentValue + value;
+
+            if (Multiply)
+                newValue = currentValue * value;
+
+            viewVariablesManager.WritePath(idPath, newValue.ToString());
+        }
     }
 }
 
@@ -347,6 +420,9 @@ public sealed partial class TraitAddArmor : TraitFunction
         entityManager.EnsureComponent<DamageableComponent>(uid, out var damageableComponent);
         foreach (var modifierSet in DamageModifierSets)
             damageableComponent.DamageModifierSets.Add(modifierSet);
+
+        // These functions live in the Server, but these components are Shared, so we gotta dirty so that prediction will work.
+        entityManager.Dirty(uid, damageableComponent);
     }
 }
 
@@ -366,6 +442,9 @@ public sealed partial class TraitRemoveArmor : TraitFunction
 
         foreach (var modifierSet in DamageModifierSets)
             damageableComponent.DamageModifierSets.Remove(modifierSet);
+
+        // These functions live in the Server, but these components are Shared, so we gotta dirty so that prediction will work.
+        entityManager.Dirty(uid, damageableComponent);
     }
 }
 
@@ -391,6 +470,7 @@ public sealed partial class TraitAddSolutionContainer : TraitFunction
 
             newSolution!.AddSolution(solution.Solution, null);
         }
+        // No need to dirty here since EnsureSolution and AddSolution already handle that.
     }
 }
 
@@ -435,6 +515,7 @@ public sealed partial class TraitModifyMobThresholds : TraitFunction
             if (deadThreshold != 0)
                 thresholdSystem.SetMobStateThreshold(uid, deadThreshold + DeadThresholdModifier, MobState.Dead);
         }
+        // We don't need to Dirty here, since SetMobStateThreshold already has a Dirty(uid, comp) in it.
     }
 }
 
@@ -492,7 +573,7 @@ public sealed partial class TraitModifyMobState : TraitFunction
             mobStateComponent.AllowMovementWhileCrit = AllowMovementWhileCrit.Value;
 
         if (AllowMovementWhileSoftCrit is not null)
-            mobStateComponent.AllowHandInteractWhileSoftCrit = AllowMovementWhileSoftCrit.Value;
+            mobStateComponent.AllowMovementWhileSoftCrit = AllowMovementWhileSoftCrit.Value;
 
         if (AllowMovementWhileDead is not null)
             mobStateComponent.AllowMovementWhileDead = AllowMovementWhileDead.Value;
@@ -523,6 +604,9 @@ public sealed partial class TraitModifyMobState : TraitFunction
 
         if (AllowHandInteractWhileDead is not null)
             mobStateComponent.AllowHandInteractWhileDead = AllowHandInteractWhileDead.Value;
+
+        // These functions live in the Server, but these components are Shared, so we gotta dirty so that prediction will work.
+        entityManager.Dirty(uid, mobStateComponent);
     }
 }
 
@@ -549,6 +633,34 @@ public sealed partial class TraitModifyStamina : TraitFunction
         staminaComponent.CritThreshold += StaminaModifier;
         staminaComponent.Decay += DecayModifier;
         staminaComponent.Cooldown += CooldownModifier;
+
+        // No need to dirty here since this component is Auto-Networked.
+    }
+}
+
+[UsedImplicitly]
+public sealed partial class TraitModifyDensity : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public float DensityModifier;
+
+    [DataField, AlwaysPushInheritance]
+    public bool Multiply = false;
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var physicsSystem = entityManager.System<SharedPhysicsSystem>();
+        if (!entityManager.TryGetComponent<FixturesComponent>(uid, out var fixturesComponent)
+            || fixturesComponent.Fixtures.Count is 0)
+            return;
+
+        var fixture = fixturesComponent.Fixtures.First();
+        var newDensity = Multiply ? fixture.Value.Density * DensityModifier : fixture.Value.Density + DensityModifier;
+        physicsSystem.SetDensity(uid, fixture.Key, fixture.Value, newDensity);
+        // SetDensity handles the Dirty.
     }
 }
 
@@ -585,6 +697,9 @@ public sealed partial class TraitModifySlowOnDamage : TraitFunction
             newSpeedModifierThresholds[damageThreshold + DamageThresholdsModifier] = 1 - (1 - speedModifier) * SpeedModifierMultiplier;
 
         slowOnDamage.SpeedModifierThresholds = newSpeedModifierThresholds;
+
+        // These functions live in the Server, but these components are Shared, so we gotta dirty so that prediction will work.
+        entityManager.Dirty(uid, slowOnDamage);
     }
 }
 
@@ -675,5 +790,110 @@ public sealed partial class TraitModifyUnarmed : TraitFunction
             melee.AttackRate *= AttackRateModifier.Value;
 
         entityManager.Dirty(uid, melee);
+    }
+}
+
+
+// <summary>
+// Adds a Tag to something
+// </summary>
+[UsedImplicitly]
+public sealed partial class TraitAddTag : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public List<ProtoId<TagPrototype>> Tags { get; private set; } = new();
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var tagSystem = entityManager.System<TagSystem>();
+        tagSystem.AddTags(uid, Tags);
+    }
+}
+
+// <summary>
+//      Replaces a body part with a cybernetic. This is only for limbs such as arms and legs, don't use this for organs(old or new).
+// </summary>
+[UsedImplicitly]
+public sealed partial class TraitCyberneticLimbReplacement : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public BodyPartType RemoveBodyPart { get; private set; } = BodyPartType.Arm;
+
+    [DataField, AlwaysPushInheritance]
+    public BodyPartSymmetry PartSymmetry { get; private set; } = BodyPartSymmetry.Left;
+
+    [DataField, AlwaysPushInheritance]
+    public EntProtoId? ProtoId { get; private set; }
+
+    [DataField, AlwaysPushInheritance]
+    public string SlotId { get; private set; } = "right arm";
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var bodySystem = entityManager.System<BodySystem>();
+        var transformSystem = entityManager.System<SharedTransformSystem>();
+
+        if (!entityManager.TryGetComponent(uid, out BodyComponent? body)
+            || !entityManager.TryGetComponent(uid, out TransformComponent? xform)
+            || ProtoId is null)
+            return;
+
+        var root = bodySystem.GetRootPartOrNull(uid, body);
+        if (root is null)
+            return;
+
+        var parts = bodySystem.GetBodyChildrenOfType(uid, RemoveBodyPart, body);
+        foreach (var part in parts)
+        {
+            var partComp = part.Component;
+            if (partComp.Symmetry != PartSymmetry)
+                continue;
+
+            foreach (var child in bodySystem.GetBodyPartChildren(part.Id, part.Component))
+                entityManager.QueueDeleteEntity(child.Id);
+
+            transformSystem.AttachToGridOrMap(part.Id);
+            entityManager.QueueDeleteEntity(part.Id);
+
+            var newLimb = entityManager.SpawnAtPosition(ProtoId, xform.Coordinates);
+            if (entityManager.TryGetComponent(newLimb, out BodyPartComponent? limbComp))
+                bodySystem.AttachPart(root.Value.Entity, SlotId, newLimb, root.Value.BodyPart, limbComp);
+        }
+    }
+}
+
+// This may seem self referential, but it's a convenient shorthand for systems other than Traits that also use these functions.
+// By Hullrot's request for the sanity of their contributors.
+[UsedImplicitly]
+public sealed partial class TraitAddTrait : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public List<ProtoId<TraitPrototype>> Traits { get; private set; } = new();
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var traitSystem = entityManager.System<TraitSystem>();
+        var protoMan = IoCManager.Resolve<IPrototypeManager>();
+        if (!entityManager.TryGetComponent(uid, out HumanoidAppearanceComponent? humanoid))
+            return;
+
+        var traitsToAdd = new List<TraitPrototype>();
+
+        foreach (var trait in Traits)
+            if (humanoid.LastProfileLoaded is not null
+                && !humanoid.LastProfileLoaded.TraitPreferences.Contains(trait)
+                && protoMan.TryIndex(trait, out var traitPrototype))
+                traitsToAdd.Add(traitPrototype);
+
+        foreach (var trait in traitsToAdd)
+            traitSystem.AddTrait(uid, trait);
     }
 }

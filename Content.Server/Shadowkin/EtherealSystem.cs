@@ -1,18 +1,17 @@
 using Content.Shared.Eye;
 using Content.Shared.Shadowkin;
 using Robust.Server.GameObjects;
-using Content.Server.Atmos.Components;
-using Content.Server.Temperature.Components;
-using Content.Shared.Movement.Components;
 using Content.Shared.Stealth;
 using Content.Shared.Stealth.Components;
-using Content.Server.Body.Components;
 using System.Linq;
 using Content.Shared.Abilities.Psionics;
 using Robust.Shared.Random;
 using Content.Server.Light.Components;
 using Content.Shared.NPC.Components;
 using Content.Shared.NPC.Systems;
+using Content.Shared.Damage.Systems;
+using Content.Server.Flash;
+using Content.Shared.Stunnable;
 
 
 namespace Content.Server.Shadowkin;
@@ -27,6 +26,24 @@ public sealed class EtherealSystem : SharedEtherealSystem
     [Dependency] private readonly SharedPointLightSystem _light = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly StaminaSystem _staminaSystem = default!;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<EtherealComponent, FlashAttemptEvent>(OnFlashed);
+        SubscribeLocalEvent<EtherealComponent, StunnedEvent>(OnStunned);
+    }
+
+    private void OnFlashed(EntityUid uid, EtherealComponent comp, FlashAttemptEvent args)
+    {
+        _staminaSystem.TakeStaminaDamage(uid, comp.StaminaDamageOnFlash);
+        RemComp(uid, comp);
+    }
+
+    private void OnStunned(EntityUid uid, EtherealComponent component, StunnedEvent args) =>
+        RemComp(uid, component);
 
     public override void OnStartup(EntityUid uid, EtherealComponent component, MapInitEvent args)
     {
@@ -40,17 +57,10 @@ public sealed class EtherealSystem : SharedEtherealSystem
         if (TryComp<EyeComponent>(uid, out var eye))
             _eye.SetVisibilityMask(uid, eye.VisibilityMask | (int) (VisibilityFlags.Ethereal), eye);
 
-        if (TryComp<TemperatureComponent>(uid, out var temp))
-            temp.AtmosTemperatureTransferEfficiency = 0;
-
         var stealth = EnsureComp<StealthComponent>(uid);
         _stealth.SetVisibility(uid, 0.8f, stealth);
 
         SuppressFactions(uid, component, true);
-
-        EnsureComp<PressureImmunityComponent>(uid);
-        EnsureComp<RespiratorImmuneComponent>(uid);
-        EnsureComp<MovementIgnoreGravityComponent>(uid);
 
         if (HasComp<MindbrokenComponent>(uid))
             RemComp(uid, component);
@@ -70,15 +80,9 @@ public sealed class EtherealSystem : SharedEtherealSystem
         if (TryComp<EyeComponent>(uid, out var eye))
             _eye.SetVisibilityMask(uid, (int) VisibilityFlags.Normal, eye);
 
-        if (TryComp<TemperatureComponent>(uid, out var temp))
-            temp.AtmosTemperatureTransferEfficiency = 0.1f;
-
         SuppressFactions(uid, component, false);
 
         RemComp<StealthComponent>(uid);
-        RemComp<PressureImmunityComponent>(uid);
-        RemComp<RespiratorImmuneComponent>(uid);
-        RemComp<MovementIgnoreGravityComponent>(uid);
 
         foreach (var light in component.DarkenedLights.ToArray())
         {
@@ -140,6 +144,7 @@ public sealed class EtherealSystem : SharedEtherealSystem
                 continue;
 
             component.DarkenAccumulator -= component.DarkenRate;
+            _staminaSystem.TakeStaminaDamage(uid, component.StaminaPerSecond * component.DarkenRate);
 
             var darkened = new List<EntityUid>();
             var lightQuery = _lookup.GetEntitiesInRange(uid, component.DarkenRange, flags: LookupFlags.StaticSundries)

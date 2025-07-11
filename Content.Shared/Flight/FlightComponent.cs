@@ -43,6 +43,13 @@ public sealed partial class FlightComponent : Component
     public float SpeedModifier = 2.0f;
 
     /// <summary>
+    ///     Does the flier need hands free?
+    /// </summary>
+    [DataField]
+    public bool NeedsHands = true;
+
+
+    /// <summary>
     ///     Path to a sound specifier or collection for the noises made during flight
     /// </summary>
     [DataField]

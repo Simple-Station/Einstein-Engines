@@ -1,0 +1,58 @@
+- type: reagent
+  id: MinersSalve
+  name: reagent-name-minerssalve
+  group: Medicine
+  desc: reagent-desc-minerssalve
+  physicalDesc: reagent-physical-desc-shiny
+  flavor: metallic
+  color: "#f2c777"
+  recognizable: true
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:ModifyBloodLevel
+        amount: 1.5
+      - !type:HealthChange
+        damage:
+          groups:
+            Burn: -1.75
+            Brute: -1.75
+          types:
+            Bloodloss: -1.25
+      - !type:ModifyBloodLevel
+        amount: 1.5
+        conditions:
+        - !type:PressureThreshold
+          min: 0
+          max: 50
+          worksOnLavaland: true
+      - !type:HealthChange
+        damage:
+          groups:
+            Burn: -4.75
+            Brute: -4.75
+          types:
+            Bloodloss: -1.25
+        conditions:
+        - !type:PressureThreshold
+          min: 0
+          max: 50
+          worksOnLavaland: true
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 35 # almost two survival medipens
+        damage:
+          types:
+            Poison: 5
+            Cold: 5
+      - !type:Jitter
+      - !type:PopupMessage
+        type: Local
+        visualType: Small
+        messages: [ "generic-reagent-effect-burning-insides" ]
+        probability: 0.1
+      - !type:Emote
+        emote: Scream
+        probability: 0.05
+        #It's balanced I swear!

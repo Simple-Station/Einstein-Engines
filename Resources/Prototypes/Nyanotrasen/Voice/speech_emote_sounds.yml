@@ -26,6 +26,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Hiss:
       collection: FelinidHisses
     Meow:
@@ -36,6 +38,10 @@
       collection: FelinidGrowls
     Purr:
       collection: FelinidPurrs
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
 
 - type: emoteSounds
   id: FemaleFelinid
@@ -64,6 +70,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Hiss:
       collection: FelinidHisses
     Meow:
@@ -74,3 +82,7 @@
       collection: FelinidGrowls
     Purr:
       collection: FelinidPurrs
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp

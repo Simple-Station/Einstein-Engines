@@ -26,6 +26,12 @@
             "name": "blank-spent"
         },
         {
+            "name": "lumen"
+        },
+        {
+            "name": "lumen-spent"
+        },
+        {
             "name": "flare"
         },
         {
@@ -60,6 +66,12 @@
         },
         {
             "name": "depleted-uranium-spent"
+        },
+        {
+            "name": "tranquilizer"
+        },
+        {
+            "name": "tranquilizer-spent"
         }
     ]
 }

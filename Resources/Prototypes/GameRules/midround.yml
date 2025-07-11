@@ -1,5 +1,4 @@
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseGameRule
   id: Thief
   components:
@@ -27,14 +26,12 @@
       startingGear: ThiefGear
       components:
       - type: Pacified
-      mindComponents:
-      - type: ThiefRole
-        prototype: Thief
+      mindRoles:
+      - MindRoleThief
       briefing:
         sound: "/Audio/Misc/thief_greeting.ogg"
 
 #- type: entity
-#  categories: [ HideSpawnMenu ]
 #  parent: BaseGameRule
 #  id: Exterminator
 #  components:

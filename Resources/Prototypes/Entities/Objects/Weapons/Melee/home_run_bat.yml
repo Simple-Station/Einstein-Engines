@@ -12,9 +12,9 @@
       types:
         Blunt: 11
     bluntStaminaDamageFactor: 2.0
-    heavyRateModifier: 0.5
+    heavyRateModifier: 1.5
     heavyDamageBaseModifier: 1.75
-    heavyStaminaCost: 15
+    heavyStaminaCost: 2.5
     angle: 120
     soundHit:
       collection: ExplosionSmall

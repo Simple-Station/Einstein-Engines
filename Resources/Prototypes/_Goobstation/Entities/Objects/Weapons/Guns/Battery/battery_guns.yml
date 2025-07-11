@@ -23,25 +23,26 @@
     - Back
     sprite: _Goobstation/Objects/Weapons/Guns/Battery/erevolver.rsi
   - type: Gun
-    fireRate: 1.5
+    fireRate: 2.5
+    projectileSpeed: 37.50
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
     soundEmpty:
       path: /Audio/DeltaV/Weapons/Guns/Empty/dry_fire.ogg
   - type: Battery
-    maxCharge: 1000
-    startingCharge: 1000
+    maxCharge: 1005
+    startingCharge: 1005
   - type: ProjectileBatteryAmmoProvider
     proto: BulletDisabler
-    fireCost: 100
+    fireCost: 50
   - type: EnergyGun
     fireModes:
     - proto: BulletDisabler
-      fireCost: 55
+      fireCost: 50
       name: disabling
       state: disabler
     - proto: BulletEnergyGunMagnum
-      fireCost: 125
+      fireCost: 100
       name: lethal
       state: lethal
   - type: MagazineVisuals
@@ -58,9 +59,11 @@
   - type: Tag
     tags:
     - Sidearm
-  - type: BatterySelfRecharger
+  - type: BatterySelfRecharger # 20 seconds to fully recharge, but it does not do so if it has been fired in the last 5 seconds.
     autoRecharge: true
-    autoRechargeRate: 22
+    autoRechargeRate: 50
+    autoRechargePause: true
+    autoRechargePauseTime: 5
 
 - type: entity
   name: EG-4 energy revolver

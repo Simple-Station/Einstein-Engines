@@ -110,9 +110,9 @@
         - map: ["enum.HumanoidVisualLayers.LArm"]
         - map: ["enum.HumanoidVisualLayers.RLeg"]
         - map: ["enum.HumanoidVisualLayers.LLeg"]
-        - shader: StencilClear
-          sprite: Mobs/Species/Human/parts.rsi
-          state: l_leg
+#     - shader: StencilClear
+#      sprite: Mobs/Species/Human/parts.rsi
+#      state: l_leg
         - shader: StencilMask
           map: ["enum.HumanoidVisualLayers.StencilMask"]
           sprite: Mobs/Customization/masking_helpers.rsi
@@ -172,7 +172,6 @@
     #  bloodlossHealDamage:
     #    types:
     #      Burn: 0
-    - type: Flashable
     - type: Flammable
       fireSpread: true
       canResistFire: true
@@ -320,6 +319,7 @@
         # - ForcedSleep
         - TemporaryBlindness
         - Pacified
+        - Flashed
         # - PsionicsDisabled
         # - PsionicallyInsulated
     - type: Blindable
@@ -332,11 +332,3 @@
     - type: Carriable
     - type: LayingDown
 
-
-- type: damageModifierSet
-  id: IPC
-  coefficients:
-    Poison: 0
-    Cold: 0.2
-    Heat: 2
-    Shock: 2.5

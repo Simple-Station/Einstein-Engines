@@ -211,7 +211,7 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
                 return TryTargetEntityWorld(args, actionId, entMapTarget, user, comp) || !entMapTarget.InteractOnMiss;
 
             default:
-                Logger.Error($"Unknown targeting action: {actionId.GetType()}");
+                Logger.GetSawmill("action.ui.control").Error($"Unknown targeting action: {actionId.GetType()}");
                 return false;
         }
     }
@@ -452,9 +452,16 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
             StopTargeting();
 
         foreach (var page in _pages)
+        {
             for (var i = 0; i < page.Size; i++)
+            {
                 if (page[i] == actionId)
+                {
                     page[i] = null;
+                    (_container.GetChild(i) as ActionButton)?.ClearData();
+                }
+            }
+        }
     }
 
     private void OnActionsUpdated()

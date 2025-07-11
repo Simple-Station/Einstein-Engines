@@ -14,7 +14,7 @@
     security:    Structures/Doors/Airlocks/Standard/security.rsi
     virology:    Structures/Doors/Airlocks/Standard/virology.rsi
     justice:     DeltaV/Structures/Doors/Airlocks/Standard/justice.rsi # Delta V - Add Justice Dept
-    roboticist:  DeltaV/Structures/Doors/Airlocks/Glass/roboticist.rsi #Added Roboticist Role
+    roboticist:  DeltaV/Structures/Doors/Airlocks/Standard/roboticist.rsi # Added Roboticist Role
 
 - type: AirlockGroup
   id: Glass

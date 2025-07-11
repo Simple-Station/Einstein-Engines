@@ -131,6 +131,12 @@ namespace Content.Shared.Storage
         [DataField]
         public bool HideStackVisualsWhenClosed = true;
 
+        /// <summary>
+        /// If the container is empty, and you try to smart-equip from it, should you equip the container itself.
+        /// </summary>
+        [DataField]
+        public bool SmartEquipSelfIfEmpty;
+
         [Serializable, NetSerializable]
         public enum StorageUiKey : byte
         {

@@ -23,15 +23,6 @@
     Steel: 20
 
 - type: latheRecipe
-  id: CartridgeSpecialRubber
-  result: CartridgeSpecialRubber
-  category: Ammo
-  completetime: 2
-  materials:
-    Plastic: 5
-    Steel: 5
-
-- type: latheRecipe
   id: CartridgeSpecialIncendiary
   result: CartridgeSpecialIncendiary
   category: Ammo
@@ -82,15 +73,6 @@
   completetime: 5
   materials:
     Plastic: 1200
-
-- type: latheRecipe
-  id: MagazineBoxSpecialRubber
-  result: MagazineBoxSpecialRubber
-  category: Ammo
-  completetime: 5
-  materials:
-    Steel: 350
-    Plastic: 300
 
 - type: latheRecipe
   id: MagazineBoxSpecialIncendiary

@@ -18,6 +18,8 @@
         amount: 3
       - id: ClothingHandsGlovesColorYellow
         amount: 2
+      - id: ClothingOuterJacketInsulated
+        amount: 1
 
 - type: entity
   id: CrateEngineeringToolbox
@@ -75,6 +77,17 @@
     contents:
       - id: CableHVStack
         amount: 3
+
+- type: entity
+  id: CrateEngineeringFoamGrenade
+  parent: CrateEngineeringSecure
+  name: sealant grenade crate
+  description: 5 metal foam sealant grenades.
+  components:
+  - type: StorageFill
+    contents:
+    - id: MetalFoamGrenade
+      amount: 5
 
 - type: entity
   id: CrateEngineeringCableBulk
@@ -194,3 +207,13 @@
     contents:
     - id: WeaponParticleDecelerator
       amount: 3
+
+- type: entity
+  id: CrateEngineeringSpaceHeater
+  parent: CrateEngineering
+  name: space heater crate
+  description: Contains a space heater for climate control.
+  components:
+  - type: StorageFill
+    contents:
+      - id: SpaceHeaterFlatpack

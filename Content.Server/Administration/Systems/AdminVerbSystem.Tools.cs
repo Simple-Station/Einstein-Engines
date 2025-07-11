@@ -7,12 +7,14 @@ using Content.Server.Atmos.Components;
 using Content.Server.Cargo.Components;
 using Content.Server.Doors.Systems;
 using Content.Server.Hands.Systems;
+using Content.Server.Mind;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Stack;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Server.Weapons.Ranged.Systems;
+using Content.Shared._EE.Contractors.Systems;
 using Content.Shared.Access;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
@@ -25,7 +27,9 @@ using Content.Shared.Database;
 using Content.Shared.Doors.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Inventory;
+using Content.Shared.Mind;
 using Content.Shared.PDA;
+using Content.Shared.Roles.Jobs;
 using Content.Shared.Stacks;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Components;
@@ -52,9 +56,10 @@ public sealed partial class AdminVerbSystem
     [Dependency] private readonly StationJobsSystem _stationJobsSystem = default!;
     [Dependency] private readonly JointSystem _jointSystem = default!;
     [Dependency] private readonly BatterySystem _batterySystem = default!;
-    [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
     [Dependency] private readonly MetaDataSystem _metaSystem = default!;
     [Dependency] private readonly GunSystem _gun = default!;
+    [Dependency] private readonly SharedPassportSystem _passportSystem = default!;
+    [Dependency] private readonly SharedJobSystem _jobSystem = default!;
 
     private void AddTricksVerbs(GetVerbsEvent<Verb> args)
     {
@@ -126,6 +131,26 @@ public sealed partial class AdminVerbSystem
                     Priority = (int) TricksVerbPriorities.Rejuvenate,
                 };
                 args.Verbs.Add(rejuvenate);
+            }
+
+            if (TryComp<ActorComponent>(args.Target, out var targetActor) && _mindSystem.TryGetMind(args.Target, out var mindId, out _) && _jobSystem.MindTryGetJob(mindId, out var job))
+            {
+                Verb spawnPassport = new()
+                {
+                    Text = "Spawn Passport",
+                    Category = VerbCategory.Tricks,
+                    Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/AdminActions/spawnpassport.png")),
+                    Act = () =>
+                    {
+                        var profile = _ticker.GetPlayerProfile(targetActor.PlayerSession);
+
+                        _passportSystem.SpawnPassportForPlayer(args.Target, profile, job.ID);
+                    },
+                    Impact = LogImpact.Medium,
+                    Message = Loc.GetString("command-description-spawnpassport"),
+                    Priority = (int) TricksVerbPriorities.SpawnPassport,
+                };
+                args.Verbs.Add(spawnPassport);
             }
 
             if (!HasComp<GodmodeComponent>(args.Target))
@@ -328,7 +353,7 @@ public sealed partial class AdminVerbSystem
                 Act = () =>
                 {
                     var (mapUid, gridUid) = _adminTestArenaSystem.AssertArenaLoaded(player);
-                    _xformSystem.SetCoordinates(args.Target, new EntityCoordinates(gridUid ?? mapUid, Vector2.One));
+                    _transformSystem.SetCoordinates(args.Target, new EntityCoordinates(gridUid ?? mapUid, Vector2.One));
                 },
                 Impact = LogImpact.Medium,
                 Message = Loc.GetString("admin-trick-send-to-test-arena-description"),
@@ -534,7 +559,7 @@ public sealed partial class AdminVerbSystem
                     if (shuttle is null)
                         return;
 
-                    _xformSystem.SetCoordinates(args.User, new EntityCoordinates(shuttle.Value, Vector2.Zero));
+                    _transformSystem.SetCoordinates(args.User, new EntityCoordinates(shuttle.Value, Vector2.Zero));
                 },
                 Impact = LogImpact.Low,
                 Message = Loc.GetString("admin-trick-locate-cargo-shuttle-description"),
@@ -726,15 +751,7 @@ public sealed partial class AdminVerbSystem
                         if (!int.TryParse(amount, out var result))
                             return;
 
-                        if (result > 0)
-                        {
-                            ballisticAmmo.UnspawnedCount = result;
-                        }
-                        else
-                        {
-                            ballisticAmmo.UnspawnedCount = 0;
-                        }
-
+                        _gun.SetBallisticUnspawned((args.Target, ballisticAmmo), result);
                         _gun.UpdateBallisticAppearance(args.Target, ballisticAmmo);
                     });
                 },
@@ -746,11 +763,11 @@ public sealed partial class AdminVerbSystem
         }
     }
 
-    private void RefillEquippedTanks(EntityUid target, Gas plasma)
+    private void RefillEquippedTanks(EntityUid target, Gas gasType)
     {
         foreach (var held in _inventorySystem.GetHandOrInventoryEntities(target))
         {
-            RefillGasTank(held, Gas.Plasma);
+            RefillGasTank(held, gasType);
         }
     }
 
@@ -889,5 +906,6 @@ public sealed partial class AdminVerbSystem
         SnapJoints = -27,
         MakeMinigun = -28,
         SetBulletAmount = -29,
+        SpawnPassport = -30,
     }
 }

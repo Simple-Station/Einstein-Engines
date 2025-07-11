@@ -12,16 +12,22 @@
     - GladiabotGreen
     - GladiabotBlue
     - GladiabotYellow
+    - SAN
+    - Changeling
+    - Shadowling
+    - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: NanoTrasen
   hostile:
-  - SimpleHostile
-  - Syndicate
-  - Xeno
-  - Zombie
-  - Revolutionary
-  - Dragon
+    - SimpleHostile
+    - Syndicate
+    - Xeno
+    - Zombie
+    - Revolutionary
+    - Dragon
+    - SAN
+    - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Mouse
@@ -34,28 +40,33 @@
 - type: npcFaction
   id: PetsNT
   hostile:
-  - Mouse
-  - SimpleHostile
-  - Zombie
-  - Xeno
+    - Mouse
+    - SimpleHostile
+    - Zombie
+    - Xeno
+    - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: SimpleHostile
   friendly:
   - AnimalFriend
   hostile:
-  - NanoTrasen
-  - Syndicate
-  - Passive
-  - PetsNT
-  - Zombie
-  - Revolutionary
-  - GeometerOfBlood
-  - GladiabotFFA
-  - GladiabotRed
-  - GladiabotGreen
-  - GladiabotBlue
-  - GladiabotYellow
+    - NanoTrasen
+    - Syndicate
+    - Passive
+    - PetsNT
+    - Zombie
+    - Revolutionary
+    - GeometerOfBlood
+    - GladiabotFFA
+    - GladiabotRed
+    - GladiabotGreen
+    - GladiabotBlue
+    - GladiabotYellow
+    - SAN
+    - Changeling
+    - Shadowling
+    - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: SimpleNeutral
@@ -63,59 +74,71 @@
 - type: npcFaction
   id: Syndicate
   hostile:
-  - NanoTrasen
-  - SimpleHostile
-  - Xeno
-  - PetsNT
-  - Zombie
+    - NanoTrasen
+    - SimpleHostile
+    - Xeno
+    - PetsNT
+    - Zombie
+    - SAN
+    - Changeling
+    - Shadowling
+    - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Xeno
   hostile:
-  - NanoTrasen
-  - Syndicate
-  - Passive
-  - PetsNT
-  - Zombie
-  - Revolutionary
-  - GladiabotFFA
-  - GladiabotRed
-  - GladiabotGreen
-  - GladiabotBlue
-  - GladiabotYellow
+    - NanoTrasen
+    - Syndicate
+    - Passive
+    - PetsNT
+    - Zombie
+    - Revolutionary
+    - GladiabotFFA
+    - GladiabotRed
+    - GladiabotGreen
+    - GladiabotBlue
+    - GladiabotYellow
+    - SAN
+    - Changeling
+    - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Zombie
   hostile:
-  - NanoTrasen
-  - SimpleNeutral
-  - SimpleHostile
-  - Syndicate
-  - Passive
-  - PetsNT
-  - Revolutionary
-  - GladiabotFFA
-  - GladiabotRed
-  - GladiabotGreen
-  - GladiabotBlue
-  - GladiabotYellow
+    - NanoTrasen
+    - SimpleNeutral
+    - SimpleHostile
+    - Syndicate
+    - Passive
+    - PetsNT
+    - Revolutionary
+    - GladiabotFFA
+    - GladiabotRed
+    - GladiabotGreen
+    - GladiabotBlue
+    - GladiabotYellow
+    - SAN
+    - Changeling
+    - Shadowling
+    - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Revolutionary
   hostile:
-  - NanoTrasen
-  - Zombie
-  - SimpleHostile
-  - Dragon
+    - NanoTrasen
+    - Zombie
+    - SimpleHostile
+    - Dragon
+    - SAN
 
 - type: npcFaction
   id: Pibble
   friendly:
   - AnimalFriend
   hostile:
-  - Cat
-  - Birb
-  - Mailman
+    - Cat
+    - Birb
+    - Mailman
 
 - type: npcFaction
   id: Mailman
@@ -123,8 +146,8 @@
 - type: npcFaction
   id: Cat
   hostile:
-  - Mouse
-  - SimpleHostile
+    - Mouse
+    - SimpleHostile
 
 - type: npcFaction
   id: Birb
@@ -192,3 +215,39 @@
     - Xeno
     - Zombie
     - Dragon
+
+- type: npcFaction
+  id: SAN
+  hostile:
+    - NanoTrasen
+    - SimpleHostile
+    - Syndicate
+    - Xeno
+    - Zombie
+    - Revolutionary
+    - Dragon
+    - Changeling
+    - Shadowling
+
+- type: npcFaction
+  id: AllHostile
+  hostile:
+  - NanoTrasen
+  - Dragon
+  - Mouse
+  - Passive
+  - PetsNT
+  - SimpleHostile
+  - SimpleNeutral
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - Changeling # goob edit - changelings
+  - Shadowling
+  - Blob # Goobstation - Blob
+
+# Commented out until we add theses factions into EE
+#  - Heretic # goob edit - heretics
+# - Wizard # goob edit - wizard
+#  - PirateFaction # goob - pirates

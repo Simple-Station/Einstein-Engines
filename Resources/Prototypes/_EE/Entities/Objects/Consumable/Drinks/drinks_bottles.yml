@@ -1,0 +1,73 @@
+- type: entity
+  parent: [DrinkBottleVisualsAll, DrinkBottlePlasticBaseFull]
+  id: DrinkSportsYellowBottleFull
+  name: yellow Supernade bottle
+  description: A strangely translucent and iridescent sports drink. It's allegedly lemon-lime flavored.
+  components:
+  - type: Item
+    size: Small
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: SportsDrinkYellow
+          Quantity: 30
+  - type: Drink
+  - type: Sprite
+    sprite: _EE/Objects/Consumable/Drinks/sportsdrink.rsi
+    layers:
+      - state: icon-yellow
+        map: ["enum.OpenableVisuals.Layer"]
+      - state: fill-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 4
+    fillBaseName: fill-
+  - type: Sealable
+
+- type: entity
+  parent: DrinkSportsYellowBottleFull
+  id: DrinkSportsBlueBottleFull
+  name: blue Supernade bottle
+  description: A striking blue performance sports drink, banned from sale for containing carcinogens. It's allegedly cool frezon flavored.
+  components:
+  - type: Sprite
+    sprite: _EE/Objects/Consumable/Drinks/sportsdrink.rsi
+    layers:
+      - state: icon-blue
+        map: ["enum.OpenableVisuals.Layer"]
+      - state: fill-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: SportsDrinkBlue
+          Quantity: 30
+
+- type: entity
+  parent: DrinkSportsYellowBottleFull
+  id: DrinkSportsRedBottleFull
+  name: red Supernade bottle
+  description: A sickly red performance sports drink, banned from sale for containing carcinogens. It's allegedly nitrous punch flavored.
+  components:
+  - type: Sprite
+    sprite: _EE/Objects/Consumable/Drinks/sportsdrink.rsi
+    layers:
+      - state: icon-red
+        map: ["enum.OpenableVisuals.Layer"]
+      - state: fill-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: SportsDrinkRed
+          Quantity: 30

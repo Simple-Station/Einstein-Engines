@@ -1,0 +1,287 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "bingle, boy_fisher, gib, disk, nuker, pufferfish by arraydeess (discord), clown, tropical, mutant, alien, bluefintuna, blob, toxic by imasleeping (discord), ian fish by latibulate_ (discord), the rest take from https://github.com/tgstation/tgstation/blob/master/icons/obj/aquarium/fish.dmi",
+    "size": {
+        "x": 32,
+        "y": 32
+  },
+  "states": [
+    {
+        "name": "alien"
+    },
+    {
+        "name": "angler"
+    },
+    {
+        "name": "bass"
+    },
+    {
+        "name": "bingle"
+    },
+    {
+        "name": "blob"
+    },
+    {
+        "name": "blue_fintuna"
+    },
+    {
+        "name": "boy_fisher",
+        "delays": [
+            [
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1
+            ]
+        ]
+    },
+    {
+        "name": "catfish2"
+    },
+    {
+        "name": "clown"
+    },
+    {
+        "name": "disk",
+        "delays": [
+            [
+                0.1,
+                0.1,
+                0.1,
+                0.1
+            ]
+        ]
+    },
+    {
+        "name": "gib",
+        "delays": [
+            [
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1
+            ]
+        ]
+    },
+    {
+        "name": "mutant"
+    },
+    {
+        "name": "nuker"
+    },
+    {
+        "name": "pufferfish"
+    },
+    {
+        "name": "silverfish"
+    },
+    {
+        "name": "sun_tropical"
+    },
+    {
+        "name": "toxic"
+    },
+    {
+        "name": "tropical"
+    },
+    {
+        "name": "ian"
+    },
+    {
+      "name": "guppy"
+    },
+    {
+      "name": "firefish"
+    },
+    {
+      "name": "greenchromis"
+    },
+    {
+      "name": "cardinalfish"
+    },
+    {
+      "name": "catfish"
+    },
+    {
+      "name": "plastetra"
+    },
+    {
+      "name": "angelfish"
+    },
+    {
+      "name": "clownfish"
+    },
+    {
+      "name": "holo_clownfish"
+    },
+    {
+      "name": "lubefish"
+    },
+    {
+      "name": "lanternfish"
+    },
+    {
+      "name": "goldfish"
+    },
+    {
+      "name": "dwarf_moonfish"
+    },
+    {
+      "name": "tizira_moonfish"
+    },
+    {
+      "name": "checkered"
+    },
+    {
+      "name": "gunner_jellyfish"
+    },
+    {
+      "name": "needlefish"
+    },
+    {
+      "name": "armorfish"
+    },
+    {
+      "name": "pufferfish2"
+    },
+    {
+      "name": "emulsijack"
+    },
+    {
+      "name": "donkfish"
+    },
+    {
+      "name": "ratfish"
+    },
+    {
+      "name": "chrab"
+    },
+    {
+      "name": "arctic_chrab"
+    },
+    {
+      "name": "crab"
+    },
+    {
+      "name": "half_fish"
+    },
+    {
+      "name": "slimefish",
+      "delays": [
+        [
+          0.05,
+          0.05,
+          0.05,
+          0.1,
+          0.1,
+          0.1,
+          0.07,
+          0.07,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "bonemass"
+    },
+    {
+      "name": "sludgefish"
+    },
+    {
+      "name": "sludgefish_purple"
+    },
+    {
+      "name": "starfish",
+      "delays": [
+        [
+          0.4,
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "lava_loop"
+    },
+    {
+      "name": "plasma_loop"
+    },
+    {
+      "name": "zipzap",
+      "delays": [
+        [
+          1.2,
+          0.1,
+          1.2
+        ]
+      ]
+    },
+    {
+      "name": "jumpercable"
+    },
+    {
+      "name": "soulfish"
+    },
+    {
+      "name": "skin_crab"
+    },
+    {
+      "name": "arctic_char"
+    },
+    {
+      "name": "stingray"
+    },
+    {
+      "name": "sockeye"
+    },
+    {
+      "name": "bumpy"
+    },
+    {
+      "name": "sand_surfer"
+    },
+    {
+      "name": "three_eyes"
+    },
+    {
+      "name": "tadpole"
+    },
+    {
+      "name": "squid"
+    },
+    {
+      "name": "perch"
+    },
+    {
+      "name": "plaice"
+    },
+    {
+      "name": "monkfish"
+    },
+    {
+      "name": "baby_carp"
+    },
+    {
+      "name": "fryish"
+    },
+    {
+      "name": "fritterish"
+    },
+    {
+      "name": "bernardfish"
+    },
+    {
+      "name": "matthewfish"
+    },
+    {
+      "name": "sacabambaspis"
+    }
+  ]
+}

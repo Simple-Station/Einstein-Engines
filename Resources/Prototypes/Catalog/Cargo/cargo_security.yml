@@ -49,6 +49,36 @@
   group: market
 
 - type: cargoProduct
+  id: SecurityHeavyAblative
+  icon:
+    sprite: _EE/Clothing/Generic/OuterClothing/heavy_armor_ablative.rsi
+    state: icon
+  product: CrateSecurityHeavyAblativeArmor
+  cost: 15000
+  category: cargoproduct-category-name-security
+  group: market
+
+- type: cargoProduct
+  id: SecurityHeavyBallistic
+  icon:
+    sprite: _EE/Clothing/Generic/OuterClothing/heavy_armor_ballistic.rsi
+    state: icon
+  product: CrateSecurityHeavyBallisticArmor
+  cost: 15000
+  category: cargoproduct-category-name-security
+  group: market
+
+- type: cargoProduct
+  id: SecurityHeavyStandard
+  icon:
+    sprite: _EE/Clothing/Generic/OuterClothing/heavy_armor_standard.rsi
+    state: icon
+  product: CrateSecurityHeavySecurityArmor
+  cost: 15000
+  category: cargoproduct-category-name-security
+  group: market
+
+- type: cargoProduct
   id: SecuritySupplies
   icon:
     sprite: Objects/Storage/boxes.rsi

@@ -1,0 +1,67 @@
+- type: trait
+  id: HighPotential
+  category: Psionics
+  points: -10
+  requirements:
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+            - PsychoHistorian
+        - !type:CharacterJobRequirement
+          jobs:
+            - ResearchDirector
+            - ForensicMantis
+            - Chaplain
+            - Librarian
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Oni
+        - Shadowkin
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: PotentiaModifier
+          potentiaMultiplier: 1.5
+
+- type: trait
+  id: PowerOverwhelming
+  category: Psionics
+  points: -10
+  requirements:
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+            - PsychoHistorian
+        - !type:CharacterJobRequirement
+          jobs:
+            - ResearchDirector
+            - ForensicMantis
+            - Chaplain
+            - Librarian
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - PowerOverwhelming

@@ -60,6 +60,7 @@ entities:
         nodes: []
     - type: SpreaderGrid
     - type: GridAtmosphere
+      simulatedTurf: false
       version: 2
       data:
         tiles:

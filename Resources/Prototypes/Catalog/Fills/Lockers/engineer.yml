@@ -29,6 +29,8 @@
         prob: 0.2
       - id: ClothingHandsGlovesColorYellow
         prob: 0.05
+      - id: ClothingOuterJacketInsulated
+        prob: 0.05
       - id: ClothingHeadHatHardhatRed
         prob: 0.4
       - id: CableApcStack
@@ -94,9 +96,10 @@
       - id: GasAnalyzer
       - id: MedkitOxygenFilled
       - id: HolofanProjector
-      - id: DoorRemoteFirefight
       - id: RCD
       - id: RCDAmmo
+      - id: RPD
+      - id: RCDAmmo # Extra Compressed matter for the RPD
       - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: AccessConfigurator
@@ -114,9 +117,10 @@
       - id: GasAnalyzer
       - id: MedkitOxygenFilled
       - id: HolofanProjector
-      - id: DoorRemoteFirefight
       - id: RCD
       - id: RCDAmmo
+      - id: RPD
+      - id: RCDAmmo # Extra Compressed matter for the RPD
       - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: AccessConfigurator
@@ -131,7 +135,7 @@
       - id: ClothingOuterHardsuitEngineering
       - id: ClothingHandsGlovesColorYellow
       - id: ClothingMaskGas
-      - id: ClothingShoesBootsMag
+      - id: ClothingShoesBootsMagEng
       - id: RCD
       - id: RCDAmmo
       - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
@@ -146,6 +150,7 @@
   - type: StorageFill
     contents:
       - id: ClothingHandsGlovesColorYellow
+      - id: ClothingOuterJacketInsulated
       - id: ClothingMaskGas
       - id: trayScanner
       - id: RCD

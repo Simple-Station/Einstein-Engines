@@ -1,0 +1,35 @@
+- type: entity
+  id: BaseClothingRadio
+  name: clothing radio
+  abstract: true
+  categories: [HideSpawnMenu]
+  components:
+    - type: Sprite
+      sprite: Objects/Devices/communication.rsi
+      state: walkietalkie
+    - type: TelecomExempt
+    - type: RadioMicrophone
+      broadcastChannel: Handheld
+      toggleOnInteract: false
+      frequency: 2132
+    - type: RadioSpeaker
+      toggleOnInteract: false
+      channels:
+        - Handheld
+    - type: Speech
+      speechVerb: Robotic
+    - type: Tag
+      tags:
+        - Radio
+    - type: ActivatableUI
+      key: enum.HandheldRadioUiKey.Key
+    - type: UserInterface
+      interfaces:
+        enum.HandheldRadioUiKey.Key:
+          type: HandheldRadioBoundUserInterface
+    - type: ExtendDescription
+      descriptionList:
+        - description: "helmet-radio"
+          fontSize: 12
+          color: "#ff4f00"
+          requireDetailRange: false

@@ -1,3 +1,5 @@
+character-requirement-desc = Requirements:
+
 ## Job
 character-job-requirement = You must{$inverted ->
     [true]{" "}not
@@ -8,6 +10,16 @@ character-department-requirement = You must{$inverted ->
     [true]{" "}not
     *[other]{""}
 } be in one of these departments: {$departments}
+
+character-antagonist-requirement = You must{$inverted ->
+    [true]{" "}not
+    *[other]{""}
+} be an antagonist
+
+character-mindshield-requirement = You must{$inverted ->
+    [true]{" "}not
+    *[other]{""}
+} be mindshielded
 
 character-timer-department-insufficient = You require [color=yellow]{TOSTRING($time, "0")}[/color] more minutes of [color={$departmentColor}]{$department}[/color] department playtime
 character-timer-department-too-high = You require [color=yellow]{TOSTRING($time, "0")}[/color] fewer minutes in [color={$departmentColor}]{$department}[/color] department
@@ -153,7 +165,7 @@ character-whitelist-requirement = You must{$inverted ->
 
 ## CVar
 
-character-cvar-requirement = 
+character-cvar-requirement =
     The server must{$inverted ->
     [true]{" "}not
     *[other]{""}

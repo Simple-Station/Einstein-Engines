@@ -1,4 +1,5 @@
 using Content.Server.StationEvents.Events;
+using Robust.Shared.Utility;
 
 namespace Content.Server.StationEvents.Components;
 
@@ -6,9 +7,9 @@ namespace Content.Server.StationEvents.Components;
 public sealed partial class PirateRadioSpawnRuleComponent : Component
 {
     [DataField]
-    public List<string> PirateRadioShuttlePath { get; private set; } = new()
+    public List<ResPath> PirateRadioShuttlePath { get; private set; } = new()
     {
-        "Maps/Shuttles/pirateradio.yml",
+        new ResPath("/Maps/Shuttles/pirateradio.yml"),
     };
 
     [DataField]

@@ -6,6 +6,7 @@ using Content.Server.Mind;
 using Content.Server.Points;
 using Content.Server.RoundEnd;
 using Content.Server.Station.Systems;
+using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Points;
 using Content.Shared.Storage;
@@ -56,7 +57,7 @@ public sealed class DeathMatchRuleSystem : GameRuleSystem<DeathMatchRuleComponen
             _mind.TransferTo(newMind, mob);
             SetOutfitCommand.SetOutfit(mob, dm.Gear, EntityManager);
             EnsureComp<KillTrackerComponent>(mob);
-            _respawn.AddToTracker(ev.Player.UserId, uid, tracker);
+            _respawn.AddToTracker(ev.Player.UserId, (uid, tracker));
 
             _point.EnsurePlayer(ev.Player.UserId, uid, point);
 
@@ -73,7 +74,7 @@ public sealed class DeathMatchRuleSystem : GameRuleSystem<DeathMatchRuleComponen
         {
             if (!GameTicker.IsGameRuleActive(uid, rule))
                 continue;
-            _respawn.AddToTracker(ev.Mob, uid, tracker);
+            _respawn.AddToTracker((ev.Mob, null), (uid, tracker));
         }
     }
 

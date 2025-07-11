@@ -22,6 +22,16 @@
   - type: Tag
     tags:
       - Medal
+    # Corvax-Next-CrewMedals-Start
+  - type: CrewMedal
+  - type: ActivatableUI
+    key: enum.CrewMedalUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.CrewMedalUiKey.Key:
+        type: CrewMedalBoundUserInterface
+    # Corvax-Next-CrewMedals-End
 
 - type: entity
   parent: ClothingNeckMedalBase
@@ -38,6 +48,16 @@
   - type: Tag
     tags:
       - Medal
+    # Corvax-Next-CrewMedals-Start
+  - type: CrewMedal
+  - type: ActivatableUI
+    key: enum.CrewMedalUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.CrewMedalUiKey.Key:
+        type: CrewMedalBoundUserInterface
+    # Corvax-Next-CrewMedals-End
 
 - type: entity
   parent: ClothingNeckMedalBase
@@ -52,6 +72,16 @@
   - type: Tag
     tags:
       - Medal
+    # Corvax-Next-CrewMedals-Start
+  - type: CrewMedal
+  - type: ActivatableUI
+    key: enum.CrewMedalUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.CrewMedalUiKey.Key:
+        type: CrewMedalBoundUserInterface
+    # Corvax-Next-CrewMedals-End
 
 - type: entity
   parent: ClothingNeckMedalBase
@@ -66,6 +96,16 @@
   - type: Tag
     tags:
       - Medal
+    # Corvax-Next-CrewMedals-Start
+  - type: CrewMedal
+  - type: ActivatableUI
+    key: enum.CrewMedalUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.CrewMedalUiKey.Key:
+        type: CrewMedalBoundUserInterface
+    # Corvax-Next-CrewMedals-End
 
 - type: entity
   parent: ClothingNeckMedalBase
@@ -80,6 +120,16 @@
   - type: Tag
     tags:
       - Medal
+    # Corvax-Next-CrewMedals-Start
+  - type: CrewMedal
+  - type: ActivatableUI
+    key: enum.CrewMedalUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.CrewMedalUiKey.Key:
+        type: CrewMedalBoundUserInterface
+    # Corvax-Next-CrewMedals-End
 
 - type: entity
   parent: ClothingNeckMedalBase
@@ -94,6 +144,16 @@
   - type: Tag
     tags:
       - Medal
+    # Corvax-Next-CrewMedals-Start
+  - type: CrewMedal
+  - type: ActivatableUI
+    key: enum.CrewMedalUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.CrewMedalUiKey.Key:
+        type: CrewMedalBoundUserInterface
+    # Corvax-Next-CrewMedals-End
 
 - type: entity
   parent: ClothingNeckMedalBase
@@ -108,6 +168,16 @@
   - type: Tag
     tags:
       - Medal
+    # Corvax-Next-CrewMedals-Start
+  - type: CrewMedal
+  - type: ActivatableUI
+    key: enum.CrewMedalUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.CrewMedalUiKey.Key:
+        type: CrewMedalBoundUserInterface
+    # Corvax-Next-CrewMedals-End
 
 - type: entity
   parent: ClothingNeckMedalBase
@@ -124,3 +194,13 @@
   - type: Tag
     tags:
       - Medal
+    # Corvax-Next-CrewMedals-Start
+  - type: CrewMedal
+  - type: ActivatableUI
+    key: enum.CrewMedalUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.CrewMedalUiKey.Key:
+        type: CrewMedalBoundUserInterface
+    # Corvax-Next-CrewMedals-End

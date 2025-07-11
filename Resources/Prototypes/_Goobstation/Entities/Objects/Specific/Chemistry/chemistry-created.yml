@@ -1,0 +1,15 @@
+- type: entity
+  parent: ShardCrystalRed
+  id: ShardCrystalStyptic
+  name: styptic crystal shard
+  components:
+  - type: Extractable
+    grindableSolutionName: crystal
+  - type: SolutionContainerManager
+    solutions:
+      crystal:
+        reagents:
+        - ReagentId: StypticPowder
+          Quantity: 10
+
+

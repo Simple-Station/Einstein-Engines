@@ -1,12 +1,12 @@
-- type: constructionGraph
-  id: PKASawn
-  start: start
-  graph:
-    - node: start
-      edges:
-        - to: pkasawn
-          steps:
-            - tool: Sawing
-              doAfter: 2
-    - node: pkasawn
-      entity: WeaponProtoKineticAcceleratorSawn
+# - type: constructionGraph
+#   id: PKASawn
+#   start: start
+#   graph:
+#     - node: start
+#       edges:
+#         - to: pkasawn
+#           steps:
+#             - tool: Sawing
+#               doAfter: 2
+#     - node: pkasawn
+#       entity: WeaponProtoKineticAcceleratorSawn

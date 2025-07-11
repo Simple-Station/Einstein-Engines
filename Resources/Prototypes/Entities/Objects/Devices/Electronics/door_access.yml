@@ -432,3 +432,12 @@
   components:
   - type: AccessReader
     access: [["Mail"]]
+
+# Sol Alliance
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsSAN
+  suffix: SAN, Locked
+  components:
+  - type: AccessReader
+    access: [["SAN"]]

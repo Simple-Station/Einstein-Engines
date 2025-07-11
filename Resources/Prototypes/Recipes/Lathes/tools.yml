@@ -63,8 +63,8 @@
     Copper: 30
 
 - type: latheRecipe
-  id: Crowbar
-  result: Crowbar
+  id: CrowbarGreen
+  result: CrowbarGreen
   category: Tools
   completetime: 2
   materials:
@@ -126,6 +126,16 @@
   materials:
     Steel: 800
     Plastic: 200
+    Circuitry: 100
+
+- type: latheRecipe
+  id: RPD
+  result: RPDEmpty
+  category: Tools
+  completetime: 4
+  materials:
+    Steel: 1000
+    Plastic: 400
     Circuitry: 100
 
 - type: latheRecipe

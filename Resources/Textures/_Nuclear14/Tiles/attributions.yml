@@ -15,9 +15,14 @@
 
 # Attributions for tiles added to Nuclear 14 only. For all SS14 attributions see previous directory.
 
-- files: ["carpet.png", "metalblue.png", "metalbluesolid.png", "metalgreen.png", "metalgreensolid.png", "metalgrey.png", "metalgreydark.png", "metalgreydarksolid.png", "metalgreysolid.png", "metalpurple.png", "metalpurplesolid.png", "metalred.png", "metalredsolid.png", "metalteal.png", "metaltealsolid.png", "metalwhite.png", "metalwhitesolid.png", "metalyellow.png", "metalyellowsolid.png", "metalfreezer.png", "housebase.png", "maple.png", "oak.png", "oakbroken.png", "wasteland.png", "woodburnt.png", "woodburntbroken.png", "woodhouse.png", "woodhousebroken.png", "riverwater.png", "tunnelintact.png", "tunnelrusty.png", "tunnelwasteland.png"]
+- files: ["carpet.png", "metalblue.png", "metalbluesolid.png", "metalgreen.png", "metalgreensolid.png", "metalgrey.png", "metalgreydark.png", "metalgreydarksolid.png", "metalgreysolid.png", "metalpurple.png", "metalpurplesolid.png", "metalred.png", "metalredsolid.png", "metalteal.png", "metaltealsolid.png", "metalwhite.png", "metalwhitesolid.png", "metalyellow.png", "metalyellowsolid.png", "metalfreezer.png", "housebase.png", "wasteland.png", "woodburnt.png", "woodburntbroken.png", "riverwater.png", "tunnelintact.png", "tunnelrusty.png", "tunnelwasteland.png"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "Fortuna at commit/2a9408a47e2f83d945335e4feeeeafb552173e6f and edited to work with SS14 by Peptide"
+  source: "https://github.com/FortunaSS13/Fortuna/"
+  
+- files: ["maple.png", "oak.png", "oakbroken.png", "woodhouse.png", "woodhousebroken.png"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Fortuna at commit/2a9408a47e2f83d945335e4feeeeafb552173e6f and edited to work with SS14 by Peptide. Further tweaked by Zeta_Null to not look compressed."
   source: "https://github.com/FortunaSS13/Fortuna/"
 
 - files: ["concrete.png", "concretedark.png", "concreteroad.png"]

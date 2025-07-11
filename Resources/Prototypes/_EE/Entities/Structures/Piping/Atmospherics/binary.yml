@@ -1,0 +1,34 @@
+﻿- type: entity
+  parent: GasPressurePump
+  id: GasPressurePumpHighFlow
+  name: high flow gas pump
+  description: A pump that moves gas by pressure. It pumps air at three times the pressure of a standard pump.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: GasPressurePump
+    enabled: false
+    maxTargetPressure: 13500
+
+- type: entity
+  parent: GasVolumePump
+  id: GasVolumePumpHighFlow
+  name: high flow volumetric gas pump. It pumps air at three times the volume of a standard pump
+  description: A pump that moves gas by volume.
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: GasVolumePump
+      maxTransferRate: 600
+
+- type: entity
+  parent: GasDualPortVentPump
+  id: GasDualPortVentPumpHighFlow
+  name: high flow dual-port air vent
+  description: Has a valve and a pump attached to it. There are two ports, one is an input for releasing air, the other is an output when siphoning. It can handle three times the pressure of a standard vent.
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: GasVentPump
+      maxPressure: 13500
+      PumpPower: 6

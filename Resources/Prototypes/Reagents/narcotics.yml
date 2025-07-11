@@ -48,6 +48,12 @@
         key: Drowsiness
         time: 10
         type: Remove
+      - !type:GenericStatusEffect # goob edit
+        key: Adrenaline
+        component: IgnoreSlowOnDamage
+        time: 5
+      - !type:ChemAddMoodlet
+        moodPrototype: StrongStimulant
     Medicine:
       effects:
       - !type:ResetNarcolepsy
@@ -101,6 +107,12 @@
         messages: ["ephedrine-effect-tight-pain", "ephedrine-effect-heart-pounds"]
         type: Local
         probability: 0.05
+      - !type:GenericStatusEffect # goob edit
+        key: Adrenaline
+        component: IgnoreSlowOnDamage
+        time: 5
+      - !type:ChemAddMoodlet
+        moodPrototype: StrongStimulant
     Medicine:
       effects:
       - !type:ResetNarcolepsy
@@ -164,6 +176,12 @@
         key: Drowsiness
         time: 10
         type: Remove
+      - !type:GenericStatusEffect # goob edit
+        key: Adrenaline
+        component: IgnoreSlowOnDamage
+        time: 5
+      - !type:ChemAddMoodlet
+        moodPrototype: StrongStimulant
     Medicine:
       metabolismRate: 1.0
       effects:
@@ -277,10 +295,6 @@
           min: 15
       - !type:ChemAddMoodlet
         moodPrototype: SpaceDrugsBenefit
-        conditions:
-        - !type:ReagentThreshold
-          reagent: SpaceDrugs
-          min: 5
 
 - type: reagent
   id: Bananadine
@@ -418,7 +432,7 @@
         - norepinephricacid-effect-blindness
         conditions:
         - !type:ReagentThreshold
-          min: 15
+          min: 5
       - !type:Emote
         emote: Scream
         probability: 0.08
@@ -427,7 +441,9 @@
         component: TemporaryBlindness
         conditions:
         - !type:ReagentThreshold
-          min: 20
+          min: 5
+      - !type:ChemAddMoodlet
+        moodPrototype: TearGasEffect
 
 - type: reagent
   id: Happiness
@@ -461,20 +477,62 @@
         conditions:
         - !type:ReagentThreshold
           min: 20
-      - !type:PopupMessage # we dont have sanity/mood so this will have to do
-        type: Local
-        visualType: Medium
-        messages:
-        - "psicodine-effect-fearless"
-        - "psicodine-effect-anxieties-wash-away"
-        - "psicodine-effect-at-peace"
-        probability: 0.2
-        conditions:
-        - !type:ReagentThreshold
-          max: 20
+      - !type:ChemAddMoodlet
+        moodPrototype: PsicodineEffect
       - !type:GenericStatusEffect
         key: SeeingRainbows
         component: SeeingRainbows
         type: Add
         time: 5
         refresh: false
+
+- type: reagent
+  id: Cryanobalamin
+  name: reagent-name-cryanobalamin
+  group: Narcotics
+  desc: reagent-desc-cryanobalamin
+  flavor: sweet
+  color: "#46a6f5"
+  physicalDesc: reagent-physical-desc-sugary
+  metabolisms:
+    Narcotic:
+      effects:
+      - !type:StaminaChange
+        amount: -3
+      - !type:SatiateThirst
+        factor: -1
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 30
+        damage:
+          types:
+            Cellular: 0.2
+
+- type: reagent
+  id: LiftLoversSpecial
+  name: reagent-name-liftloversspecial
+  group: Narcotics
+  desc: reagent-desc-liftloversspecial
+  flavor: sweet
+  color: "#f73715"
+  physicalDesc: reagent-physical-desc-unhealthy
+  metabolisms:
+    Narcotic:
+      effects:
+      - !type:StaminaChange
+        amount: -6
+      - !type:SatiateThirst
+        factor: -2
+      - !type:Jitter
+        conditions:
+        - !type:ReagentThreshold
+          min: 7
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 20
+        damage:
+          types:
+            Cellular: 0.3
+

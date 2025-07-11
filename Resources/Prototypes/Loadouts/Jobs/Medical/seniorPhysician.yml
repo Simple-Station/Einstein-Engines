@@ -34,6 +34,33 @@
   items:
     - ClothingBeltMedicalAdvancedFilled
 
+- type: loadout
+  id: LoadoutSeniorPhysicianBluespaceBeaker
+  category: JobsMedicalSeniorPhysician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorPhysicianToolsExtra
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorPhysician
+  items:
+    - BluespaceBeaker
+
+- type: loadout
+  id: LoadoutSeniorPhysicianSurgeryKit
+  category: JobsMedicalSeniorPhysician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorPhysicianToolsExtra
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorPhysician
+  items:
+    - FieldSurgeryKit
 # Eyes
 
 # Gloves

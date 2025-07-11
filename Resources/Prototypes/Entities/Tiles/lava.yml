@@ -21,9 +21,23 @@
   - type: TileEntityEffect
     effects:
     - !type:FlammableReaction
-      multiplier: 3.75
+      multiplier: 2.5 # Lavaland Change
       multiplierOnExisting: 0.75
     - !type:Ignite
+  # Lavaland Change start
+    - !type:AdjustTemperature
+      amount: 10000 # thermal energy, not temperature!
+    - !type:MovespeedModifier
+      walkSpeedModifier: 0.6
+      sprintSpeedModifier: 0.6
+  # Lavaland Change end
+  # Goobstation - fishing
+  - type: FishingSpot
+    fishList: !type:NestedSelector
+      tableId: LavaFishingLootTable
+    fishDefaultTimer: 25.0
+    fishTimerVariety: 15.0
+  # Goobstation - fishing
   - type: Transform
     anchored: true
   - type: SyncSprite
@@ -54,6 +68,18 @@
           - ItemMask
         density: 1000
         hard: false
+    # Goobstation - fishing
+      fishing:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.4
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
+    # Goobstation - fishing
   - type: Tag
     tags:
       - HideContextMenu

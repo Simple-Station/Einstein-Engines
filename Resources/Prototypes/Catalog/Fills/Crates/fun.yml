@@ -10,12 +10,15 @@
     - id: PlushieNuke
     - id: PlushieSlime
     - id: PlushieSnake
+    - id: PlushieShadowkin
     - !type:GroupSelector
       children:
       - id: PlushieLizard
         weight: 9
       - id: PlushieSpaceLizard
         weight: 1
+      - id: PlushieLizardInversed
+        weight: 0.5
     - !type:GroupSelector
       children:
       - id: PlushieCarp
@@ -341,6 +344,7 @@
       - id: ClothingHeadHatMagician
       - id: BeachBall
       - id: ClothingShoesSkates
+      - id: RubberChicken
 
 - type: entity
   id: CrateFunBikeHornImplants
@@ -417,4 +421,3 @@
       - id: BoxDarts
         amount: 1
         prob: 0.05
-

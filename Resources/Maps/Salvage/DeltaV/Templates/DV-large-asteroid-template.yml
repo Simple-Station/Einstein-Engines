@@ -187,6 +187,7 @@ entities:
           - 0
         chunkSize: 4
       type: GridAtmosphere
+      simulatedTurf: false
     - type: GasTileOverlay
     - type: SpreaderGrid
 - proto: AsteroidAltRock

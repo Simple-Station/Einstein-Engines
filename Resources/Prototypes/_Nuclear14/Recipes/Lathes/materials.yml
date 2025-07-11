@@ -3,14 +3,14 @@
   result: N14IngotLead1
   miningPoints: 10
   applyMaterialDiscount: false
-  completetime: 2
+  completetime: 0.01 # 0.3 per 30
   materials:
     RawLead: 100
 
 - type: latheRecipe
   id: IngotCopper1
   result: IngotCopper1
-  completetime: 2
+  completetime: 0.016 # 0.5 per 30
   miningPoints: 10
   materials:
     RawCopper: 100
@@ -19,7 +19,7 @@
 - type: latheRecipe
   id: N14IngotAluminium1
   result: N14IngotAluminium1
-  completetime: 2
+  completetime: 0.016 # 0.5 per 30
   miningPoints: 10
   materials:
     RawAluminium: 100

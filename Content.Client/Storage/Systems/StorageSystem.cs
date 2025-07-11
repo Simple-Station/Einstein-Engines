@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using System.Numerics;
 using Content.Client.Animations;
 using Content.Shared.Hands;
@@ -18,6 +18,8 @@ public sealed class StorageSystem : SharedStorageSystem
     [Dependency] private readonly EntityPickupAnimationSystem _entityPickupAnimation = default!;
 
     private Dictionary<EntityUid, ItemStorageLocation> _oldStoredItems = new();
+
+    private List<(StorageBoundUserInterface Bui, bool Value)> _queuedBuis = new();
 
     public override void Initialize()
     {
@@ -72,7 +74,7 @@ public sealed class StorageSystem : SharedStorageSystem
             if (NestedStorage && player != null && ContainerSystem.TryGetContainingContainer((uid, null, null), out var container) &&
                 UI.TryGetOpenUi<StorageBoundUserInterface>(container.Owner, StorageComponent.StorageUiKey.Key, out var containerBui))
             {
-                containerBui.Hide();
+                _queuedBuis.Add((containerBui, false));
             }
         }
     }
@@ -89,7 +91,7 @@ public sealed class StorageSystem : SharedStorageSystem
     {
         if (UI.TryGetOpenUi<StorageBoundUserInterface>(uid, StorageComponent.StorageUiKey.Key, out var storageBui))
         {
-            storageBui.Hide();
+            _queuedBuis.Add((storageBui, false));
         }
     }
 
@@ -97,7 +99,7 @@ public sealed class StorageSystem : SharedStorageSystem
     {
         if (UI.TryGetOpenUi<StorageBoundUserInterface>(uid, StorageComponent.StorageUiKey.Key, out var storageBui))
         {
-            storageBui.Show();
+            _queuedBuis.Add((storageBui, true));
         }
     }
 
@@ -127,7 +129,7 @@ public sealed class StorageSystem : SharedStorageSystem
             return;
         }
 
-        var finalMapPos = finalCoords.ToMapPos(EntityManager, TransformSystem);
+        var finalMapPos = TransformSystem.ToMapCoordinates(finalCoords).Position;
         var finalPos = Vector2.Transform(finalMapPos, TransformSystem.GetInvWorldMatrix(initialCoords.EntityId));
 
         _entityPickupAnimation.AnimateEntityPickup(item, initialCoords, finalPos, initialAngle);
@@ -151,5 +153,31 @@ public sealed class StorageSystem : SharedStorageSystem
                 _entityPickupAnimation.AnimateEntityPickup(entity, GetCoordinates(initialPosition), transformComp.LocalPosition, msg.EntityAngles[i]);
             }
         }
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        if (!_timing.IsFirstTimePredicted)
+        {
+            return;
+        }
+
+        // This update loop exists just to synchronize with UISystem and avoid 1-tick delays.
+        // If deferred opens / closes ever get removed you can dump this.
+        foreach (var (bui, open) in _queuedBuis)
+        {
+            if (open)
+            {
+                bui.Show();
+            }
+            else
+            {
+                bui.Hide();
+            }
+        }
+
+        _queuedBuis.Clear();
     }
 }

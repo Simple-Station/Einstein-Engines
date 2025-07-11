@@ -14,5 +14,5 @@ public sealed partial class CCVars
     ///     When true, jetpacks can be enabled on grids that have zero gravity.
     /// </summary>
     public static readonly CVarDef<bool> JetpackEnableInNoGravity =
-        CVarDef.Create("jetpack.enable_in_no_gravity", true, CVar.REPLICATED);
+        CVarDef.Create("jetpack.enable_in_no_gravity", false, CVar.REPLICATED);
 }

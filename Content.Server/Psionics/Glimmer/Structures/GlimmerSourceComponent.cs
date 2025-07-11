@@ -13,16 +13,10 @@ public sealed partial class GlimmerSourceComponent : Component
     public bool Active = true;
 
     /// <summary>
-    ///     Since glimmer is an int, we'll do it like this.
+    ///     The amount of glimmer to generate per second.
     /// </summary>
     [DataField]
-    public float SecondsPerGlimmer = 10f;
-
-    /// <summary>
-    ///     True if it produces glimmer, false if it subtracts it.
-    /// </summary>
-    [DataField]
-    public bool AddToGlimmer = true;
+    public double GlimmerPerSecond = 1.0;
 
     /// <summary>
     ///     If not null, this entity generates this value as a baseline number of research points per second, eg: Probers.

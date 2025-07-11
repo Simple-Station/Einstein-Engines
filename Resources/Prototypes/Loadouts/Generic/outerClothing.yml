@@ -1,7 +1,7 @@
 - type: loadout
   id: LoadoutOuterCoatBomberjacket
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterCoatBomber
@@ -33,7 +33,7 @@
 - type: loadout
   id: LoadoutOuterCoatWinterCoat
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterWinterCoat
@@ -44,7 +44,7 @@
 - type: loadout
   id: LoadoutOuterCoatHyenhSweater
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterCoatHyenhSweater
@@ -55,7 +55,7 @@
 - type: loadout
   id: LoadoutOuterWinterCoatLong
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterWinterCoatLong
@@ -66,7 +66,7 @@
 - type: loadout
   id: LoadoutOuterWinterCoatPlaid
   category: Outer
-  cost: 1
+  cost: 0
   items:
     - ClothingOuterWinterCoatPlaid
   requirements:
@@ -76,7 +76,7 @@
 - type: loadout
   id: LoadoutOuterVestValet
   category: Outer
-  cost: 1
+  cost: 0
   items:
     - ClothingOuterVestValet
   requirements:
@@ -86,7 +86,7 @@
 - type: loadout
   id: LoadoutOuterVest
   category: Outer
-  cost: 1
+  cost: 0
   items:
     - ClothingOuterVest
   requirements:
@@ -97,7 +97,7 @@
 - type: loadout
   id: LoadoutOuterCoatLettermanBlue
   category: Outer
-  cost: 1
+  cost: 0
   items:
     - ClothingOuterCoatLettermanBlue
   requirements:
@@ -107,7 +107,7 @@
 - type: loadout
   id: LoadoutOuterCoatLettermanRed
   category: Outer
-  cost: 1
+  cost: 0
   items:
     - ClothingOuterCoatLettermanRed
   requirements:
@@ -118,7 +118,7 @@
 - type: loadout
   id: LoadoutOuterCoatMNKWhiteHoodie
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterCoatMNKWhiteHoodie
@@ -129,7 +129,7 @@
 - type: loadout
   id: LoadoutOuterCoatMNKBlackTopCoat
   category: Outer
-  cost: 1
+  cost: 0
   items:
     - ClothingOuterCoatMNKBlackTopCoat
   requirements:
@@ -139,7 +139,7 @@
 - type: loadout
   id: LoadoutOuterCoatMNKBlackJacket
   category: Outer
-  cost: 1
+  cost: 0
   items:
     - ClothingOuterCoatMNKBlackJacket
   requirements:
@@ -178,6 +178,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
+    - !type:CharacterEmployerRequirement
+        employers:
+        - EinsteinEngines
 
 - type: loadout
   id: LoadoutOuterHiCorporateJacket
@@ -189,6 +192,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
+    - !type:CharacterEmployerRequirement
+        employers:
+        - HephaestusIndustries
 
 - type: loadout
   id: LoadoutOuterHmCorporateJacket
@@ -209,6 +215,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
+    - !type:CharacterEmployerRequirement
+        employers:
+        - Interdyne
 
 - type: loadout
   id: LoadoutOuterBcCorporateJacket
@@ -260,11 +269,56 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
+    - !type:CharacterEmployerRequirement
+        employers:
+        - ZengHuPharmaceuticals
+
+- type: loadout
+  id: LoadoutOuterIiCorporateJacket
+  category: Outer
+  cost: 0
+  guideEntry: IdrisIncorporated
+  items:
+    - ClothingOuterIiCorporateJacket
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterEmployerRequirement
+        employers:
+        - IdrisIncorporated
+
+- type: loadout
+  id: LoadoutOuterOeCorporateJacket
+  category: Outer
+  cost: 0
+  guideEntry: OrionExpress
+  items:
+    - ClothingOuterOeCorporateJacket
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterEmployerRequirement
+        employers:
+        - OrionExpress
+
+- type: loadout
+  id: LoadoutOuterIdrisIncorporatedWindbreaker
+  category: Outer
+  cost: 0
+  guideEntry: IdrisIncorporated
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterEmployerRequirement
+        employers:
+        - IdrisIncorporated
+  items:
+    - ClothingOuterCoatIdrisIncorporatedWindbreaker
 
 - type: loadout
   id: LoadoutOuterDenimJacket
   category: Outer
-  cost: 1
+  cost: 0
   items:
     - ClothingOuterDenimJacket
   requirements:
@@ -275,7 +329,7 @@
 - type: loadout
   id: LoadoutOuterFlannelRed
   category: Outer
-  cost: 1
+  cost: 0
   items:
     - ClothingOuterFlannelRed
   requirements:
@@ -285,7 +339,7 @@
 - type: loadout
   id: LoadoutOuterFlannelGreen
   category: Outer
-  cost: 1
+  cost: 0
   items:
     - ClothingOuterFlannelGreen
   requirements:
@@ -295,7 +349,7 @@
 - type: loadout
   id: LoadoutOuterFlannelBlue
   category: Outer
-  cost: 1
+  cost: 0
   items:
     - ClothingOuterFlannelBlue
   requirements:
@@ -305,7 +359,7 @@
 - type: loadout
   id: LoadoutOuterCoatTrench
   category: Outer
-  cost: 1
+  cost: 0
   items:
     - ClothingOuterCoatTrench
   requirements:
@@ -315,7 +369,7 @@
 - type: loadout
   id: LoadoutOuterCoatJensen
   category: Outer
-  cost: 1
+  cost: 0
   items:
     - ClothingOuterCoatJensen
   requirements:
@@ -325,7 +379,7 @@
 - type: loadout
   id: LoadoutOuterCoatGentle
   category: Outer
-  cost: 1
+  cost: 0
   items:
     - ClothingOuterCoatGentle
   requirements:
@@ -333,11 +387,11 @@
       group: LoadoutOuter
 
 - type: loadout
-  id: LoadoutOuterCoatInspector
+  id: ClothingOuterCoatDetectiveLoadout
   category: Outer
-  cost: 1
+  cost: 0
   items:
-    - ClothingOuterCoatInspector
+    - ClothingOuterCoatDetectiveLoadout
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
@@ -345,7 +399,7 @@
 - type: loadout
   id: LoadoutOuterCoatOvercoat
   category: Outer
-  cost: 2
+  cost: 0
   items:
     - ClothingOuterCoatOvercoat
   requirements:
@@ -538,7 +592,7 @@
 - type: loadout
   id: LoadoutOuterTailcoat
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterTailcoat
@@ -549,7 +603,7 @@
 - type: loadout
   id: LoadoutOuterCoatVictorian
   category: Outer
-  cost: 1
+  cost: 0
   items:
     - ClothingOuterCoatVictorian
   requirements:
@@ -559,7 +613,7 @@
 - type: loadout
   id: LoadoutOuterCoatVictorianRed
   category: Outer
-  cost: 1
+  cost: 0
   items:
     - ClothingOuterCoatVictorianRed
   requirements:
@@ -668,7 +722,7 @@
 - type: loadout
   id: LoadoutOuterBlazerBasic
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterBlazer
@@ -679,7 +733,7 @@
 - type: loadout
   id: LoadoutOuterBlazerBasicOpened
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterBlazerOpened
@@ -690,7 +744,7 @@
 - type: loadout
   id: LoadoutOuterBlazerLong
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterBlazerLong
@@ -701,7 +755,7 @@
 - type: loadout
   id: LoadoutOuterBlazerLongOpened
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterBlazerLongOpened
@@ -745,7 +799,7 @@
 - type: loadout
   id: LoadoutOuterBlazerPosh
   category: Outer
-  cost: 1
+  cost: 0
   items:
     - ClothingOuterBlazerPosh
   requirements:
@@ -755,7 +809,7 @@
 - type: loadout
   id: LoadoutOuterCoatPeacoat
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterCoatPeacoat
@@ -766,7 +820,7 @@
 - type: loadout
   id: LoadoutOuterCoatPeacoatOpened
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterCoatPeacoatOpened
@@ -777,7 +831,7 @@
 - type: loadout
   id: LoadoutOuterCoatAsymmetric
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterCoatAsymmetric
@@ -788,7 +842,7 @@
 - type: loadout
   id: LoadoutOuterCoatAsymmetricOpened
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterCoatAsymmetricOpened
@@ -821,7 +875,7 @@
 - type: loadout
   id: LoadoutOuterVestColorable
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterVestColorable
@@ -832,10 +886,50 @@
 - type: loadout
   id: LoadoutOuterVestThick
   category: Outer
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - ClothingOuterVestThick
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
+
+- type: loadout
+  id: ClothingOuterSuitWitchRobes
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterSuitWitchRobes
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: ClothingOuterCoatExpensive
+  category: Outer
+  cost: 0
+  items:
+    - ClothingOuterCoatExpensive
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+# Biesel Republic Jackets
+- type: loadout
+  id: LoadoutOuterJacketTCAF
+  category: Outer
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: TCFLInfo
+  items:
+    - ClothingOuterJacketTCAF
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterNationalityRequirement
+      nationalities:
+        - Bieselite
+    - !type:CharacterLifepathRequirement
+      lifepaths:
+        - WarVet

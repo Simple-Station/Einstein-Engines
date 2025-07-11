@@ -35,10 +35,10 @@
     energy: 3.5
     color: "#7100bd"
   - type: TimedDespawn
-    lifetime: 1
+    lifetime: 12
   - type: EmitSoundOnSpawn
     sound:
-      path: /Audio/Effects/Lightning/lightningbolt.ogg
+      path: /Audio/Psionics/shadeskip_power.ogg
 
 - type: entity
   id: EffectFlashShadowkinShadeskip

@@ -96,3 +96,52 @@
   completetime: 30
   materials:
     Biomass: 5
+
+- type: latheRecipe
+  id: SynthHead
+  result: BioSynthHead
+  completetime: 60
+  materials:
+    Biomass: 30
+
+- type: latheRecipe
+  id: SynthTorso
+  result: MobSynthHuman
+  completetime: 120
+  materials:
+    Biomass: 60
+
+- type: latheRecipe
+  id: SpaceLungsAnimal
+  result: OrganSpaceAnimalLungs
+  completetime: 60
+  materials:
+    Biomass: 20
+
+- type: latheRecipe
+  id: SpaceHeartAnimal
+  result: OrganSpaceAnimalHeart
+  completetime: 60
+  materials:
+    Biomass: 20
+
+- type: latheRecipe
+  id: SpaceLungsDragon
+  result: OrganDragonLungs
+  completetime: 60
+  materials:
+    Biomass: 20
+
+- type: latheRecipe
+  id: SpaceEyesLaser
+  result: OrganLaserEyes
+  completetime: 60
+  materials:
+    Biomass: 20
+
+- type: latheRecipe
+  id: SpaceHeartCobra
+  result: OrganCobraHeart
+  completetime: 60
+  materials:
+    Biomass: 20

@@ -81,11 +81,5 @@ public sealed partial class EventHorizonComponent : Component
     [AutoPausedField]
     public TimeSpan NextConsumeWaveTime;
 
-    /// <summary>
-    ///     Whether to inherit the momentum of consumed objects.
-    /// </summary>
-    [DataField]
-    public bool InheritMomentum;
-
     #endregion Update Timing
 }

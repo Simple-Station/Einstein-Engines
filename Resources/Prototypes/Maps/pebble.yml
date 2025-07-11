@@ -19,19 +19,14 @@
 #              paths:
 #              - /Maps/Shuttles/AISAT.yml
         - type: StationJobs
-          overflowJobs:
-            - Passenger
           availableJobs:
           #service
             Captain: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1]
             NanotrasenRepresentative: [ 1, 1 ]
-            Magistrate: [ 1, 1 ]
-            AdministrativeAssistant: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 2 ]
             Botanist: [ 2, 2 ]
-            Boxer: [ 2, 2 ]
             Chef: [ 2 , 2 ]
             Clown: [ 1, 1 ]
             Lawyer: [ 1, 1 ]
@@ -76,3 +71,9 @@
             Passenger: [ -1, -1 ]
           # Silicon
             StationAi: [ 1, 1 ]
+        # blob-config-start SMALL+
+        - type: StationBlobConfig
+          stageBegin: 25
+          stageCritical: 350
+          stageTheEnd: 700
+        # blob-config-end
