@@ -25,38 +25,31 @@ public sealed class UnionfallCapturePointSystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<UnionfallCapturePointComponent, ActivateInWorldEvent>(OnActivatedInWorld);
-        SubscribeLocalEvent<UnionfallCapturePointComponent, ComponentRemove>(OnDestroyed);
     }
 
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<UnionfallCapturePointComponent, ApcPowerReceiverComponent>();
-        while (query.MoveNext(out var uid, out var capturepoint, out var power))
+        var query = EntityQueryEnumerator<UnionfallCapturePointComponent>();
+        while (query.MoveNext(out var uid, out var capturepoint))
         {
-            if (power.Powered)
-            {
-                if (capturepoint.CapturingFaction == null) //if nobody's capping it then don't do anything
-                    return;
-                else //someone is capping it rn
-                {
-                    capturepoint.CurrentCaptureProgress -= frameTime; //this is how the timer decreases
-                }
 
-                if (capturepoint.CurrentCaptureProgress <= 0) //capturing complete. TODO: NEED TO END THE ROUND SOMEHOW
-                {
-                    _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
-                capturepoint.CapturingFaction + " has seized control of the control point! The round is over.");
-                    _gameTicker.EndRound(capturepoint.CapturingFaction + " won");
-                }
-            }
-            else
+            if (capturepoint.CapturingFaction == null) //if nobody's capping it then don't do anything
+                return;
+            else //someone is capping it rn
             {
-                capturepoint.CapturingFaction = null; // it powered off so reset the faction
-                capturepoint.CurrentCaptureProgress = capturepoint.TimeToEnd; // and reset the timer
+                capturepoint.CurrentCaptureProgress -= frameTime; //this is how the timer decreases
             }
-        }
+
+            if (capturepoint.CurrentCaptureProgress <= 0) //capturing complete. TODO: NEED TO END THE ROUND SOMEHOW
+            {
+                _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
+            capturepoint.CapturingFaction + " has seized control of the control point! The round is over.");
+                _gameTicker.EndRound(capturepoint.CapturingFaction + " won");
+                capturepoint.CurrentCaptureProgress = 999999;
+            }
+    }
     }
 
     private void OnActivatedInWorld(EntityUid uid, UnionfallCapturePointComponent component, ActivateInWorldEvent args)
@@ -80,13 +73,5 @@ public sealed class UnionfallCapturePointSystem : EntitySystem
             _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
                 faction + " is capturing the control point!");
         }
-    }
-
-    private void OnDestroyed(EntityUid uid, UnionfallCapturePointComponent component, ComponentRemove args)
-    {
-        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
-                "The control point has been destroyed.");
-        _gameTicker.EndRound("Draw. How did you even manage that?");
-        //END THE ROUNDDD
     }
 }

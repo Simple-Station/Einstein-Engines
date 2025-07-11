@@ -76,7 +76,5 @@
   - type: AnimationPlayer
   - type: LitOnPowered
   - type: PowerSwitch
-  - type: ApcPowerReceiver
-    powerLoad: 1000
   - type: Appearance
   - type: UnionfallCapturePoint
