@@ -248,7 +248,7 @@
 - type: entity
   id: SpawnPointTemplar
   parent: SpawnPointJobBase
-  name: advocati
+  name: templar
   components:
   - type: SpawnPoint
     job_id: TemplarDSM
@@ -340,6 +340,18 @@
     layers:
       - state: green
       - state: passenger
+
+- type: entity
+  id: SpawnPointRitter
+  parent: SpawnPointJobBase
+  name: ritter
+  components:
+  - type: SpawnPoint
+    job_id: RitterDSM
+  - type: Sprite
+    layers:
+    - state: green
+    - state: passenger
 
 - type: entity
   id: SpawnPointMinisterLabor

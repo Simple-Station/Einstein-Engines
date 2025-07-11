@@ -182,6 +182,13 @@
 
 - type: jobIcon
   parent: JobIcon
+  id: JobIconImperialRitter
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: Ritter
+
+- type: jobIcon
+  parent: JobIcon
   id: JobIconImperialFreeholder
   icon:
     sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi

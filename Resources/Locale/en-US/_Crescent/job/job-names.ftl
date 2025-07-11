@@ -27,6 +27,7 @@ job-name-foreman = SAW Foreman
 job-name-freeholder = Freeholder
 job-name-levyman = Man-at-Arms
 job-name-knight = Knight Banneret
+job-name-ritter = Baronial Ritter
 job-name-courtier = Courtier
 job-name-ministerlabor = Minister of Labor
 job-name-logisticsofficer = Minister of Wealth

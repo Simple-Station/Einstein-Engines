@@ -425,6 +425,20 @@
 
 - type: entity
   parent: BasePDA
+  id: RitterPDA
+  name: ritter's PDA
+  description: Purple for Imperial.
+  components:
+  - type: Pda
+    id: DSMIDCardRitter
+    state: noble
+  - type: PdaBorderColor
+    borderColor: "#6d5f8a"
+  - type: Icon
+    state: noble
+
+- type: entity
+  parent: BasePDA
   id: CourtierPDA
   name: courtier's PDA
   description: Purple for Imperial.
