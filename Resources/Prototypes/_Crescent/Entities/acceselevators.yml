@@ -25,7 +25,7 @@
     - Command
 
 - type: entity
-  parent: AccesElevatorBase
+  parent: AccessElevatorBase
   id: AccessElevatorCD
   name: CyberDawn Access Elevator
   description: Gives a target ID the acces codes for CyberDawn Technologies facilities.
@@ -36,7 +36,7 @@
     - SyndicateRamzi
 
 - type: entity
-  parent: AccesElevatorBase
+  parent: AccessElevatorBase
   id: AccessElevatorSAW
   name: SAW Access Elevator
   description: Gives a target ID the acces codes for Space Aeronautic Worker's union facilities.
@@ -47,7 +47,7 @@
     - SyndicateSaws
 
 - type: entity
-  parent: AccesElevatorBase
+  parent: AccessElevatorBase
   id: AccessElevatorGSC
   name: GSC Access Elevator
   description: Gives a target ID the acces codes for Gorlex Security Consulting facilities.
@@ -58,7 +58,7 @@
     - SyndicateGorlex
 
 - type: entity
-  parent: AccesElevatorBase
+  parent: AccessElevatorBase
   id: AccessElevatorIPM
   name: IPM Access Elevator
   description: Gives a target ID the acces codes for Interdyne Pharmaceuticals facilities.
