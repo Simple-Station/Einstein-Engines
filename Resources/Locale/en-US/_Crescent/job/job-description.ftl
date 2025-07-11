@@ -27,6 +27,7 @@ job-description-foreman = Coordinate the SAWs. Lead pirate boardings. Scrap vess
 job-description-freeholder = Obey the Imperial hierarchy. Earn Credits for the Governor.
 job-description-levyman = Obey your liege. Uphold the will of the Kaiser.
 job-description-knight = Organize the Imperial Navy. Obey your liege.
+job-description-ritter = Don your Exoplate. Obey your liege lord. Slaughter communards.
 job-description-courtier = Obey your liege. Intrigue for power and rank within his prestigious court.
 job-description-labor = Oversee and command reconstruction and trade efforts on behalf of your liege.
 job-description-adjutant = Obey your liege lord, the Kaiser, and your liege lord, the Governor. Attempt to coordinate the Empire.

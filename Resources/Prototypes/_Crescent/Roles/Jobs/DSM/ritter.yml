@@ -1,0 +1,56 @@
+- type: job
+  id: RitterDSM
+  name: job-name-ritter
+  description: job-description-ritter
+  playTimeTracker: JobRitterDSM
+  requirements:
+  - !type:CharacterOverallTimeRequirement
+    min: 30000
+  - !type:CharacterSpeciesRequirement
+    species:
+    - Human
+  - !type:FactionRequirement
+    factionID: "DSM"
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Foreigner
+    - ForeignerLight
+    - Muted
+    - Pacifist
+    - WheelchairBound
+  weight: 79
+  startingGear: RitterGear
+  alwaysUseSpawner: true
+  icon: "JobIconImperialRitter"
+  requireAdminNotify: false
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: ChatRank
+      rank: crescent-rank-knight
+  access:
+  - Command
+  - Empire
+  - Maintenance
+  - Service
+  - ScribesGuild
+  - LogisticsWealth
+  - EmpireNoble
+  - EmpireSoldier
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: RitterGear
+  equipment:
+    id: RitterPDA
+    ears: ClothingHeadsetEmpire
+    jumpsuit: ClothingUniformJumpsuitImperialCombat
+    shoes: ClothingShoesBootsImperialJackboots
+    head: ClothingHeadHelmetImperialRitter
+    outerClothing: ClothingOuterCoatImperialRitter
+    gloves: ClothingHandsGlovesImperialLonggloves

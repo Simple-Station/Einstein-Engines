@@ -3,7 +3,7 @@
   name: job-name-imperialresearch
   description: job-description-scribe
   playTimeTracker: JobScribeDSM
-  weight: 20
+  weight: 76
   startingGear: ScribeGear
   alwaysUseSpawner: true
   icon: "JobIconImperialScribe"

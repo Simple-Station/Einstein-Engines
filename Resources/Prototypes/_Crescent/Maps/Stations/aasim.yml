@@ -6,8 +6,9 @@
   stations:
     Aasim:
       stationProto: StandardCrescentStation
-      components:
+      gridComponents:
         - type: BlockShipWeaponProjectileGrid
+      components:
         - type: StationNameSetup
           mapNameTemplate: 'TAP Qiwa Aasim'
         - type: Grammar
