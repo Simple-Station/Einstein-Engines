@@ -535,7 +535,7 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
               }
 
              var meta = EnsureComp<MetaDataComponent>(depotUid12s[0]);
-         _meta.SetEntityName(depotUid12s[0], "Port Vladzena", meta);
+            _meta.SetEntityName(depotUid12s[0], "Port Vladzena", meta);
             _shuttle.SetIFFColor(depotUid12s[0], factionColor);
             _shuttle.SetIFFFaction(depotUid12s[0], "SHI");
          }

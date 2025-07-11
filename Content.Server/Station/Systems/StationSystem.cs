@@ -287,6 +287,10 @@ public sealed class StationSystem : EntitySystem
         foreach (var grid in entry)
         {
             AddGridToStation(station, grid, null, data, name);
+            if (stationConfig.gridComponents is null)
+                continue;
+            foreach (var (_, component) in stationConfig.gridComponents)
+                EntityManager.AddComponent(grid, component, true);
         }
 
         if (TryComp<StationRandomTransformComponent>(station, out var random))
@@ -355,6 +359,14 @@ public sealed class StationSystem : EntitySystem
         var stationMember = EnsureComp<StationMemberComponent>(mapGrid);
         stationMember.Station = station;
         stationData.Grids.Add(mapGrid);
+        if (stationData is not null && stationData.StationConfig is not null &&
+            stationData.StationConfig.gridComponents is not null)
+        {
+            foreach (var (_, comp) in stationData.StationConfig.gridComponents)
+            {
+                EntityManager.AddComponent(mapGrid, comp, true);
+            }
+        }
 
         RaiseLocalEvent(station, new StationGridAddedEvent(mapGrid, false), true);
 
