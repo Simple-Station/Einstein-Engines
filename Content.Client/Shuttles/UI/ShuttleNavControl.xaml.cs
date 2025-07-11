@@ -402,20 +402,30 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
 
             if (!gridAABB.Intersects(viewAABB) && labelName != null && ShowIFF)
             {
-                const float ShipSelectionDotRadius = 5f;
+                const float ShipSelectionDotRadius = 5f*2;
+                float xSpaceRequired = ShipSelectionDotRadius;
+                float ySpaceRequired = ShipSelectionDotRadius;
+                Texture? icon = null;
+                if (EntManager.TryGetComponent<VesselIconComponent>(grid.Owner, out var vesselIcon) &&
+                    vesselIcon.Icon != null)
+                {
+                    icon = _sprites.Frame0(vesselIcon.Icon);
+                    xSpaceRequired = icon.Width;
+                    ySpaceRequired = icon.Height;
+                }
                 // transform vector from worldPosition to UIPosition.
                 Vector2 UIPosVector = (-rot).RotateVec(_transform.GetWorldPosition(grid.Owner) - mapPos.Position);
                 UIPosVector.Y *= -1;
                 // get its direction.
                 Vector2 UIDirection = UIPosVector.Normalized();
                 // collision with oY axis.
-                Vector2 YTargetScaled = MidPointVector + UIPosVector.Normalized() * Math.Abs((MidPoint-ShipSelectionDotRadius*2) / UIDirection.Y);
+                Vector2 YTargetScaled = MidPointVector + UIPosVector.Normalized() * Math.Abs((MidPoint-xSpaceRequired) / UIDirection.Y);
                 // collision with oX axis
-                Vector2 XTargetScaled = MidPointVector + UIPosVector.Normalized() * Math.Abs((MidPoint-ShipSelectionDotRadius*2) / UIDirection.X);
+                Vector2 XTargetScaled = MidPointVector + UIPosVector.Normalized() * Math.Abs((MidPoint-ySpaceRequired) / UIDirection.X);
                 // fucked up maths case!! SPCR
-                if(YTargetScaled.X < ShipSelectionDotRadius*2)
+                if(YTargetScaled.X < xSpaceRequired)
                     YTargetScaled = XTargetScaled;
-                if(XTargetScaled.Y < ShipSelectionDotRadius*2)
+                if(XTargetScaled.Y < ySpaceRequired)
                     XTargetScaled = YTargetScaled;
                 //handle.DrawLine(MidPointVector, ScalePosition(UIPosVector), Color.AntiqueWhite);
                 var gridCentre = Vector2.Transform(gridBody.LocalCenter, matty);
@@ -443,8 +453,8 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
                         handle.DrawString(Font,textUiPosition , labelText, color);
                     }
 
-                    if (EntManager.TryGetComponent<VesselIconComponent>(grid.Owner, out var vesselIcon) && vesselIcon.Icon != null)
-                        handle.DrawTexture(_sprites.Frame0(vesselIcon.Icon), YTargetScaled, color);
+                    if (icon is not null)
+                        handle.DrawTexture(icon, YTargetScaled, color);
                     else
                         handle.DrawCircle(YTargetScaled, ShipSelectionDotRadius, color, true);
                     localShips[grid.Owner].UIPosition = YTargetScaled;
@@ -459,8 +469,8 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
 
                         handle.DrawString(Font,textUiPosition , labelText, color);
                     }
-                    if (EntManager.TryGetComponent<VesselIconComponent>(grid.Owner, out var vesselIcon) && vesselIcon.Icon != null)
-                        handle.DrawTexture(_sprites.Frame0(vesselIcon.Icon), XTargetScaled, color);
+                    if (icon is not null)
+                        handle.DrawTexture(icon, XTargetScaled, color);
                     else
                         handle.DrawCircle(XTargetScaled, ShipSelectionDotRadius, color, true);
                     localShips[grid.Owner].UIPosition = XTargetScaled;

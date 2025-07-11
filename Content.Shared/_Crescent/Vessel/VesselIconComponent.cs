@@ -1,3 +1,4 @@
+using Robust.Shared.GameStates;
 using Robust.Shared.Utility;
 
 
@@ -7,8 +8,9 @@ namespace Content.Shared._Crescent.Vessel;
 /// <summary>
 /// This is used for...
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class VesselIconComponent : Component
 {
-    [DataField("iffIcon")] public SpriteSpecifier? Icon;
+    [DataField("iffIcon"), AutoNetworkedField]
+    public SpriteSpecifier? Icon;
 }
