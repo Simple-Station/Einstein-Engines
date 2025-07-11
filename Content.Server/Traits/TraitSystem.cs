@@ -101,7 +101,7 @@ public sealed class TraitSystem : EntitySystem
 
             // To check for cheaters. :FaridaBirb.png:
             pointsTotal += traitPrototype.Points;
-            --traitSelections;
+            traitSelections -= traitPrototype.Slots;
             traitsToAdd.Add(traitPrototype);
         }
 
