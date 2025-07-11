@@ -69,7 +69,7 @@ public sealed partial class CCVars
     ///     Controls the maximum number of character slots a player is allowed to have.
     /// </summary>
     public static readonly CVarDef<int>
-        GameMaxCharacterSlots = CVarDef.Create("game.maxcharacterslots", 30, CVar.ARCHIVE | CVar.SERVERONLY);
+        GameMaxCharacterSlots = CVarDef.Create("game.maxcharacterslots", 35, CVar.ARCHIVE | CVar.SERVERONLY);
 
     /// <summary>
     ///     Controls the game map prototype to load. SS14 stores these prototypes in Prototypes/Maps.
@@ -132,7 +132,7 @@ public sealed partial class CCVars
     /// Whether or not disconnecting inside of a cryopod should remove the character or just store them until they reconnect.
     /// </summary>
     public static readonly CVarDef<bool>
-        GameCryoSleepRejoining = CVarDef.Create("game.cryo_sleep_rejoining", false, CVar.SERVER | CVar.REPLICATED);
+        GameCryoSleepRejoining = CVarDef.Create("game.cryo_sleep_rejoining", true, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     ///     When enabled, guests will be assigned permanent UIDs and will have their preferences stored.
@@ -287,13 +287,13 @@ public sealed partial class CCVars
     ///     How many traits a character can have at most.
     /// </summary>
     public static readonly CVarDef<int> GameTraitsMax =
-        CVarDef.Create("game.traits_max", 14, CVar.REPLICATED);
+        CVarDef.Create("game.traits_max", 20, CVar.REPLICATED);
 
     /// <summary>
     ///     How many points a character should start with.
     /// </summary>
     public static readonly CVarDef<int> GameTraitsDefaultPoints =
-        CVarDef.Create("game.traits_default_points", 10, CVar.REPLICATED);
+        CVarDef.Create("game.traits_default_points", 12, CVar.REPLICATED);
 
     /// <summary>
     ///     Whether the game will SMITE people who used cheat engine to spawn with all of the traits.
@@ -313,7 +313,7 @@ public sealed partial class CCVars
     ///     How many points to give to each player for loadouts.
     /// </summary>
     public static readonly CVarDef<int> GameLoadoutsPoints =
-        CVarDef.Create("game.loadouts_points", 14, CVar.REPLICATED);
+        CVarDef.Create("game.loadouts_points", 25, CVar.REPLICATED);
 
 
     /// <summary>
