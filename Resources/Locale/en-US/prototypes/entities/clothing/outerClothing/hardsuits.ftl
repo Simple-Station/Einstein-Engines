@@ -82,7 +82,7 @@ ent-ClothingOuterHardsuitShanlinUnpainted = CSA-51a - "Shanlin" tacsuit
 ent-ClothingOuterHardsuitSyndieReverseEngineered = CSA-51a - "Shanlin" tacsuit
     .desc = A tactical combat hardsuit produced by the Cybersun-Armaments Corporation, the suit's tags indicate it provides moderate protection against most forms of damage.
         This one has been painted blue. It feels incredibly light.
-ent-ClothingOuterHardsuitSyndieMedic = NCSP mk.IIII "Zhongyao" tacsuit
+ent-ClothingOuterHardsuitSyndieMedic = NCSP mk.IV "Zhongyao" tacsuit
     .desc = A tactical stealth combat hardsuit produced by the Cyberdawn-Technologies Corporation, the suit's tags indicate it provides moderate protection against most forms of damage.
     Half of the suit is painted blood red, the rest bears sterile titanium plating. It feels incredibly light.
 ent-ClothingOuterHardsuitSyndieElite = CSA-54UA - "Shiwei" tacsuit
