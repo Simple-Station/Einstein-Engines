@@ -18,9 +18,9 @@
   description: An Interdyne TraumaSec uniform, adorned with big pockets to carry all your controlled narcotics.
   components:
   - type: Sprite
-    sprite: _Crescent/Clothing/Syndicate/Uniform/ipm_unfirom.rsi
+    sprite: _Crescent/Clothing/Syndicate/Uniform/ipm_uniform.rsi
   - type: Clothing
-    sprite: _Crescent/Clothing/Syndicate/Uniform/ipm_unfirom.rsi
+    sprite: _Crescent/Clothing/Syndicate/Uniform/ipm_uniform.rsi
   - type: StaticPrice
     price: 100
 
