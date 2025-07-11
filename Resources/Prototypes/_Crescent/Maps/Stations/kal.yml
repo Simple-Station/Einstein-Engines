@@ -6,9 +6,10 @@
   stations:
     Kal:
       stationProto: StandardCrescentStation
-      components:
+      gridComponents:
         - type: BlockShipWeaponProjectileGrid
         - type: PreventPilot
+      components:
         - type: StationNameSetup
           mapNameTemplate: 'Kal Surezai'
         - type: VesselDesignation

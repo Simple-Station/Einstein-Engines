@@ -6,19 +6,20 @@
   stations:
     Vladzena:
       stationProto: StandardCrescentStation
-      components:
+      gridComponents:
         - type: BlockShipWeaponProjectileGrid
         - type: PreventPilot
+        - type: VesselIcon
+          iffIcon:
+            sprite: Structures/Wallmounts/barsign.rsi
+            state: spacebucks
+      components:
         - type: StationNameSetup
           mapNameTemplate: 'Port Vladzena'
         - type: VesselDesignation
           designation: vessel-designation-headquarters
         - type: VesselDescription
           description: The sector's last burning hope. Are you here to snuff it out, or fan the flame?
-        - type: VesselIcon
-          iffIcon:
-            sprite: Structures/Wallmounts/barsign.rsi
-            state: spacebucks
         - type: Grammar
           attributes:
             proper: true
