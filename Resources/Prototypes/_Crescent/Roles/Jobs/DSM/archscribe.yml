@@ -3,7 +3,7 @@
   name: job-name-archmaester
   description: job-description-archmaester
   playTimeTracker: JobArchmaesterDSM
-  weight: 21
+  weight: 76
   startingGear: ArchmaesterGear
   alwaysUseSpawner: true
   icon: "JobIconArchmaester"

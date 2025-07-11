@@ -23,6 +23,7 @@
             GovernorDSM: [ 1, 1 ]
             AdjutantDSM: [ 1, 1 ]
             KnightDSM: [ 4, 4 ]
+            RitterDSM: [ 1, 1 ]
             LevymanDSM: [ 8, 8 ]
             ArchmaesterDSM: [ 1, 1 ]
             ScribeDSM: [ 6, 6 ]
