@@ -16646,3 +16646,12 @@ Entries:
   id: 7303
   time: '2025-07-10T17:18:37.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2499
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed a bug with Traits Anticheat incorrectly triggering if the player
+        had selected enough 0 slot traits.
+  id: 7304
+  time: '2025-07-11T18:47:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2502
