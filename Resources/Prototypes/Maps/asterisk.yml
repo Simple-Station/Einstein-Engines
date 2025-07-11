@@ -2,15 +2,14 @@
   id: Asterisk
   mapName: 'Asterisk'
   mapPath: /Maps/asterisk.yml
+  maxRandomOffset: 0
+  randomRotation: false
   minPlayers: 0
   maxPlayers: 60
   stations:
     Asterisk:
       stationProto: StandardNanotrasenStation
       components:
-        - type: StationRandomTransform
-          enableStationRotation: false
-          maxStationOffset: null
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/DeltaV/NTES_Kaeri.yml
         - type: StationNameSetup
@@ -19,8 +18,6 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'DV'
         - type: StationJobs
-          overflowJobs:
-            - Passenger
           availableJobs:
           #command
             Captain: [ 1, 1 ]

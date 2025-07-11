@@ -40,44 +40,21 @@
       offset: 0.0
 
 - type: entity
-  name: Salvage Canister Spawner
-  id: SalvageCanisterSpawner
-  parent: MarkerBase
-  components:
-    - type: Sprite
-      layers:
-        - state: red
-        - sprite: Structures/Storage/canister.rsi
-          state: blue
-    - type: RandomSpawner
-      rarePrototypes:
-        - PlasmaCanister
-      rareChance: 0.03
-      prototypes:
-        - AirCanister
-        - NitrogenCanister
-        - OxygenCanister
-        - CarbonDioxideCanister
-        - WaterVaporCanister
-      chance: 0.9
-      offset: 0.0
-
-- type: entity
   name: Salvage T2 Machine Parts Spawner
   id: SalvagePartsT2Spawner
   parent: MarkerBase
   components:
-    - type: Sprite
-      layers:
-        - state: red
-        - sprite: Objects/Misc/stock_parts.rsi
-          state: advanced_matter_bin
-    - type: RandomSpawner
-      prototypes:
-        - AdvancedCapacitorStockPart
-        - NanoManipulatorStockPart
-        - AdvancedMatterBinStockPart
-      offset: 0.0
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Misc/stock_parts.rsi
+      state: advanced_matter_bin
+  - type: RandomSpawner
+    prototypes:
+    - AdvancedCapacitorStockPart
+    - NanoManipulatorStockPart
+    - AdvancedMatterBinStockPart
+    offset: 0.0
 
 - type: entity
   parent: MarkerBase
@@ -134,6 +111,32 @@
     - PicoManipulatorStockPart
     - BluespaceMatterBinStockPart
     offset: 0.0
+
+- type: entity
+  name: Salvage Loot Spawner
+  id: SalvageLootSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Structures/Storage/Crates/generic.rsi
+      state: icon
+  - type: RandomSpawner
+    rarePrototypes:
+    - SalvagePartsT2Spawner
+    - SalvagePartsT3Spawner
+    - SalvagePartsT3T4Spawner
+    - SalvagePartsT4Spawner
+    rareChance: 0.4
+    prototypes:
+    - CrateSalvageAssortedGoodies
+    - WeaponCrusher
+    - WeaponCrusherDagger
+    - WeaponCrusherGlaive
+    chance: 0.9
+    offset: 0.2
+
 
 - type: entity
   name: Salvage Mob Spawner
@@ -282,29 +285,4 @@
       - MobFleshLoverSalvage
       - MobFleshLoverSalvage
       chance: 1
-      offset: 0.2
-
-- type: entity
-  name: Salvage Loot Spawner
-  id: SalvageLootSpawner
-  parent: MarkerBase
-  components:
-    - type: Sprite
-      layers:
-        - state: red
-        - sprite: Structures/Storage/Crates/generic.rsi
-          state: icon
-    - type: RandomSpawner
-      rarePrototypes:
-        - SalvagePartsT2Spawner
-        - SalvagePartsT3Spawner
-        - SalvagePartsT3T4Spawner
-        - SalvagePartsT4Spawner
-      rareChance: 0.4
-      prototypes:
-        - CrateSalvageAssortedGoodies
-        - WeaponCrusher
-        - WeaponCrusherDagger
-        - WeaponCrusherGlaive
-      chance: 0.9
       offset: 0.2

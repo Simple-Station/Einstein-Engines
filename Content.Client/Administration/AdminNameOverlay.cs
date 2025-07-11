@@ -17,7 +17,6 @@ internal sealed class AdminNameOverlay : Overlay
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private ILocalizationManager _localization = default!;
 
-
     private readonly AdminSystem _system;
     private readonly IEntityManager _entityManager;
     private readonly IEyeManager _eyeManager;

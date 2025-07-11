@@ -115365,6 +115365,11 @@ entities:
     - type: Transform
       pos: -14.343915,-2.3708444
       parent: 2
+  - uid: 17066
+    components:
+    - type: Transform
+      pos: -14.583499,-2.381268
+      parent: 2
 - proto: MagazineRiflePractice
   entities:
   - uid: 16730
@@ -115395,13 +115400,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: MagazineRifleRubber
-  entities:
-  - uid: 17066
-    components:
-    - type: Transform
-      pos: -14.583499,-2.381268
-      parent: 2
 - proto: MagicDiceBag
   entities:
   - uid: 17067

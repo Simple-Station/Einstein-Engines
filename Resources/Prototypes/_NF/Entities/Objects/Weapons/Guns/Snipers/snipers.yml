@@ -8,7 +8,7 @@
   - type: Sprite
     sprite: _NF/Objects/Weapons/Guns/Snipers/repeater.rsi
   - type: Clothing
-    sprite: _NF/Objects/Weapons/Guns/Snipers/repeater.rsi    
+    sprite: _NF/Objects/Weapons/Guns/Snipers/repeater.rsi
   - type: StaticPrice
     price: 500
   - type: BallisticAmmoProvider
@@ -17,15 +17,3 @@
       - CartridgeMagnum
     capacity: 7
     proto: CartridgeMagnum
-
-- type: entity
-  parent: WeaponSniperRepeater
-  id: WeaponSniperRepeaterNonlethal
-  suffix: Non-lethal
-  components:
-  - type: BallisticAmmoProvider
-    whitelist:
-      tags:
-      - CartridgeMagnum
-    capacity: 7
-    proto: CartridgeMagnumRubber

@@ -39,7 +39,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretFrench
-  name: French beret
+  name: french beret
   description: A French beret, "vive la France".
   components:
   - type: Sprite
@@ -67,6 +67,21 @@
     tags:
     - ClothMade
     - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSecurityTrooper
+  name: trooper hat
+  description: A campaign hat for the Nanotrasen Troopers, comes with a case too, but you lost it.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/security_trooper_hat.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/security_trooper_hat.rsi
+  - type: Tag
+    tags:
+    - ClothMade
     - WhitelistChameleon
 
 - type: entity
@@ -101,12 +116,12 @@
   parent: ClothingHeadBase
   id: ClothingHeadHatCasa
   name: casa
-  description: Cone-shaped hat
+  description: Cone-shaped hat.
   components:
-    - type: Sprite
-      sprite: Clothing/Head/Hats/casa.rsi
-    - type: Clothing
-      sprite: Clothing/Head/Hats/casa.rsi
+  - type: Sprite
+    sprite: Clothing/Head/Hats/casa.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/casa.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -208,7 +223,7 @@
     sprite: Clothing/Head/Hats/beret_brigmedic.rsi
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ ClothingHeadBase, BaseRestrictedContraband ]
   id: ClothingHeadHatBeretMerc
   name: mercenary beret
   description: Olive beret, the badge depicts a jackal on a rock.
@@ -230,7 +245,7 @@
     sprite: Clothing/Head/Hats/bowler_hat.rsi
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ClothingHeadBase, BaseCommandContraband]
   id: ClothingHeadHatCaptain
   name: captain's hardhat
   description: It's good being the king.
@@ -261,9 +276,9 @@
   - type: IngestionBlocker
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ ClothingHeadBase, BaseCentcommContraband ]
   id: ClothingHeadHatCentcom
-  name: CentCom brand hat
+  name: CentComm brand hat
   description: "It's good to be the emperor."
   components:
   - type: Sprite
@@ -294,7 +309,7 @@
   - type: PilotedClothing
     pilotWhitelist:
       tags:
-        - ChefPilot
+      - ChefPilot
   - type: Tag
     tags:
     - ClothMade
@@ -370,7 +385,7 @@
     sprite: Clothing/Head/Hats/fez.rsi
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ClothingHeadBase, BaseCommandContraband]
   id: ClothingHeadHatHopcap
   name: head of personnel's cap
   description: A grand, stylish head of personnel's cap.
@@ -386,10 +401,10 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ClothingHeadBase, BaseCommandContraband]
   id: ClothingHeadHatHoshat
-  name: head of security's hat
-  description: "There's a new sheriff in station."
+  name: head of security cap
+  description: The robust standard-issue cap of the Head of Security. For showing the officers who's in charge.
   components:
   - type: Sprite
     sprite: DeltaV/Clothing/Head/Hats/hoshat.rsi # DeltaV - resprite
@@ -462,7 +477,8 @@
   - type: HideLayerClothing
     slots:
     - Hair
-    - Snout
+    - HeadTop
+    - HeadSide
 
 - type: entity
   parent: ClothingHeadHatWizardBase
@@ -478,13 +494,14 @@
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    coefficient: 0.2
+    heatingCoefficient: 0.2
+    coolingCoefficient: 0.2
 
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatSantahat
   name: santa hat
-  description: "A festive hat worn by Santa Claus"
+  description: A festive hat worn by Santa Claus.
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/santahat.rsi
@@ -598,7 +615,8 @@
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    coefficient: 0.2
+    heatingCoefficient: 0.2
+    coolingCoefficient: 0.2
 
 - type: entity
   parent: ClothingHeadBase
@@ -669,7 +687,8 @@
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    coefficient: 0.2
+    heatingCoefficient: 0.2
+    coolingCoefficient: 0.2
 
 - type: entity
   parent: ClothingHeadBase
@@ -694,7 +713,7 @@
     sprite: Clothing/Head/Hats/truckershat.rsi
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ ClothingHeadBase, BaseSyndicateContraband ]
   id: ClothingHeadPyjamaSyndicateBlack
   name: syndicate black pyjama hat
   description: For keeping that traitor head of yours warm.
@@ -705,7 +724,7 @@
     sprite: Clothing/Head/Hats/pyjamasyndicateblack.rsi
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ ClothingHeadBase, BaseSyndicateContraband ]
   id: ClothingHeadPyjamaSyndicatePink
   name: syndicate pink pyjama hat
   description: For keeping that traitor head of yours warm.
@@ -716,7 +735,7 @@
     sprite: Clothing/Head/Hats/pyjamasyndicatepink.rsi
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ ClothingHeadBase, BaseSyndicateContraband ]
   id: ClothingHeadPyjamaSyndicateRed
   name: syndicate red pyjama hat
   description: For keeping that traitor head of yours warm.
@@ -805,22 +824,22 @@
   name: jester hat
   description: A hat with bells, to add some merriness to the suit.
   components:
-    - type: Sprite
-      sprite: Clothing/Head/Hats/jester.rsi
-    - type: Clothing
-      sprite: Clothing/Head/Hats/jester.rsi
+  - type: Sprite
+    sprite: Clothing/Head/Hats/jester.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/jester.rsi
 
 - type: entity
   parent: ClothingHeadHatJester
   id: ClothingHeadHatJesterAlt
   components:
-    - type: Sprite
-      sprite: Clothing/Head/Hats/jester2.rsi
-    - type: Clothing
-      sprite: Clothing/Head/Hats/jester2.rsi
+  - type: Sprite
+    sprite: Clothing/Head/Hats/jester2.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/jester2.rsi
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ ClothingHeadBase, BaseCommandContraband ]
   id: ClothingHeadHatBeretCmo
   name: chief medical officer's beret
   description: Turquoise beret with a cross on the front. The sight of it calms you down and makes it clear that you will be cured.
@@ -877,7 +896,7 @@
         Caustic: 0.95
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ClothingHeadBase, BaseSyndicateContraband]
   id: ClothingHeadHatSyndie
   name: syndicate hat
   description: A souvenir hat from "Syndieland", their production has already been closed.
@@ -947,8 +966,8 @@
     - 0,0,0,0
   - type: UserInterface
     interfaces:
-        enum.StorageUiKey.Key:
-          type: StorageBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
@@ -975,9 +994,9 @@
   - type: BlockMovement
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ ClothingHeadBase, BaseCentcommContraband ]
   id: ClothingHeadHatCentcomcap
-  name: CentCom cap
+  name: CentComm cap
   description: An extravagant, fancy Central Commander cap.
   components:
   - type: Sprite
@@ -1013,8 +1032,8 @@
     sprite: Clothing/Head/Hats/party_red.rsi
   - type: Tag
     tags:
-      - WhitelistChameleon
-      - HamsterWearable
+    - WhitelistChameleon
+    - HamsterWearable
 
 - type: entity
   parent: ClothingHeadHatPartyRed
@@ -1091,63 +1110,63 @@
   name: brown cowboy hat
   description: This hat ain't big enough for the both of us.
   components:
-    - type: Sprite
-      sprite: Clothing/Head/Hats/cowboyhatbrown.rsi
-    - type: Clothing
-      sprite: Clothing/Head/Hats/cowboyhatbrown.rsi
-    - type: AddAccentClothing
-      accent: ReplacementAccent
-      replacement: cowboy
+  - type: Sprite
+    sprite: Clothing/Head/Hats/cowboyhatbrown.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/cowboyhatbrown.rsi
+  - type: AddAccentClothing
+    accent: ReplacementAccent
+    replacement: cowboy
 
 - type: entity
   parent: ClothingHeadHatCowboyBrown
   id: ClothingHeadHatCowboyBlack
   name: black cowboy hat
   components:
-    - type: Sprite
-      sprite: Clothing/Head/Hats/cowboyhatblack.rsi
-    - type: Clothing
-      sprite: Clothing/Head/Hats/cowboyhatblack.rsi
+  - type: Sprite
+    sprite: Clothing/Head/Hats/cowboyhatblack.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/cowboyhatblack.rsi
 
 - type: entity
   parent: ClothingHeadHatCowboyBrown
   id: ClothingHeadHatCowboyGrey
   name: grey cowboy hat
   components:
-    - type: Sprite
-      sprite: Clothing/Head/Hats/cowboyhatgrey.rsi
-    - type: Clothing
-      sprite: Clothing/Head/Hats/cowboyhatgrey.rsi
+  - type: Sprite
+    sprite: Clothing/Head/Hats/cowboyhatgrey.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/cowboyhatgrey.rsi
 
 - type: entity
   parent: ClothingHeadHatCowboyBrown
   id: ClothingHeadHatCowboyRed
   name: red cowboy hat
   components:
-    - type: Sprite
-      sprite: Clothing/Head/Hats/cowboyhatred.rsi
-    - type: Clothing
-      sprite: Clothing/Head/Hats/cowboyhatred.rsi
+  - type: Sprite
+    sprite: Clothing/Head/Hats/cowboyhatred.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/cowboyhatred.rsi
 
 - type: entity
   parent: ClothingHeadHatCowboyBrown
   id: ClothingHeadHatCowboyWhite
   name: white cowboy hat
   components:
-    - type: Sprite
-      sprite: Clothing/Head/Hats/cowboyhatwhite.rsi
-    - type: Clothing
-      sprite: Clothing/Head/Hats/cowboyhatwhite.rsi
+  - type: Sprite
+    sprite: Clothing/Head/Hats/cowboyhatwhite.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/cowboyhatwhite.rsi
 
 - type: entity
   parent: ClothingHeadHatCowboyBrown
   id: ClothingHeadHatCowboyBountyHunter
   name: bounty hunter cowboy hat
   components:
-    - type: Sprite
-      sprite: Clothing/Head/Hats/cowboyhatbountyhunter.rsi
-    - type: Clothing
-      sprite: Clothing/Head/Hats/cowboyhatbountyhunter.rsi
+  - type: Sprite
+    sprite: Clothing/Head/Hats/cowboyhatbountyhunter.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/cowboyhatbountyhunter.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -1187,9 +1206,9 @@
       behaviors:
       - !type:SpawnEntitiesBehavior
         spawn:
-            Ash:
-              min: 1
-              max: 1
+          Ash:
+            min: 1
+            max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
 
@@ -1245,7 +1264,8 @@
   - type: Clothing
     sprite: Clothing/Head/Hats/beanie.rsi
   - type: TemperatureProtection
-    coefficient: 0.5
+    heatingCoefficient: 0.5
+    coolingCoefficient: 0.5
 
 - type: entity
   parent: ClothingHeadBase
@@ -1258,7 +1278,8 @@
   - type: Clothing
     sprite: Clothing/Head/Hats/beanie_winter.rsi
   - type: TemperatureProtection
-    coefficient: 0.5
+    heatingCoefficient: 0.5
+    coolingCoefficient: 0.5
 
 - type: entity
   parent: ClothingHeadBase
@@ -1271,7 +1292,8 @@
   - type: Clothing
     sprite: Clothing/Head/Hats/beanie_submariner.rsi
   - type: TemperatureProtection
-    coefficient: 0.5
+    heatingCoefficient: 0.5
+    coolingCoefficient: 0.5
 
 - type: entity
   parent: ClothingHeadBase
@@ -1284,7 +1306,8 @@
   - type: Clothing
     sprite: Clothing/Head/Hats/beanie_tight.rsi
   - type: TemperatureProtection
-    coefficient: 0.5
+    heatingCoefficient: 0.5
+    coolingCoefficient: 0.5
   - type: HideLayerClothing
     slots:
     - Hair

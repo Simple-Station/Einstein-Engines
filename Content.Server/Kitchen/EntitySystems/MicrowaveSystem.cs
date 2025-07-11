@@ -1,6 +1,5 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Body.Systems;
-using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Construction;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.DeviceLinking.Events;
@@ -59,7 +58,7 @@ namespace Content.Server.Kitchen.EntitySystems
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly ExplosionSystem _explosion = default!;
         [Dependency] private readonly SharedContainerSystem _container = default!;
-        [Dependency] private readonly SolutionContainerSystem _solutionContainer = default!;
+        [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
         [Dependency] private readonly TagSystem _tag = default!;
         [Dependency] private readonly TemperatureSystem _temperature = default!;
         [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
@@ -83,6 +82,7 @@ namespace Content.Server.Kitchen.EntitySystems
             SubscribeLocalEvent<MicrowaveComponent, EntInsertedIntoContainerMessage>(OnContentUpdate);
             SubscribeLocalEvent<MicrowaveComponent, EntRemovedFromContainerMessage>(OnContentUpdate);
             SubscribeLocalEvent<MicrowaveComponent, InteractUsingEvent>(OnInteractUsing, after: new[] { typeof(AnchorableSystem) });
+            SubscribeLocalEvent<MicrowaveComponent, ContainerIsInsertingAttemptEvent>(OnInsertAttempt);
             SubscribeLocalEvent<MicrowaveComponent, BreakageEventArgs>(OnBreak);
             SubscribeLocalEvent<MicrowaveComponent, PowerChangedEvent>(OnPowerChanged);
             SubscribeLocalEvent<MicrowaveComponent, AnchorStateChangedEvent>(OnAnchorChanged);
@@ -113,12 +113,8 @@ namespace Content.Server.Kitchen.EntitySystems
                 return;
             SetAppearance(ent.Owner, MicrowaveVisualState.Cooking, microwaveComponent);
 
-            var audio = _audio.PlayPvs(microwaveComponent.LoopingSound, ent, AudioParams.Default.WithLoop(true).WithMaxDistance(5));
-
-            if (audio == null)
-                return;
-
-            microwaveComponent.PlayingStream = audio!.Value.Entity;
+            microwaveComponent.PlayingStream =
+                _audio.PlayPvs(microwaveComponent.LoopingSound, ent, AudioParams.Default.WithLoop(true).WithMaxDistance(5))?.Entity;
         }
 
         private void OnCookStop(Entity<ActiveMicrowaveComponent> ent, ref ComponentShutdown args)
@@ -238,7 +234,7 @@ namespace Content.Server.Kitchen.EntitySystems
         private void OnInit(Entity<MicrowaveComponent> ent, ref ComponentInit args)
         {
             // this really does have to be in ComponentInit
-            ent.Comp.Storage = _container.EnsureContainer<Container>(ent, "microwave_entity_container");
+            ent.Comp.Storage = _container.EnsureContainer<Container>(ent, ent.Comp.ContainerId);
         }
 
         private void OnMapInit(Entity<MicrowaveComponent> ent, ref MapInitEvent args)
@@ -305,6 +301,35 @@ namespace Content.Server.Kitchen.EntitySystems
                 return;
 
             UpdateUserInterfaceState(uid, component);
+        }
+
+        private void OnInsertAttempt(Entity<MicrowaveComponent> ent, ref ContainerIsInsertingAttemptEvent args)
+        {
+            if (args.Container.ID != ent.Comp.ContainerId)
+                return;
+
+            if (ent.Comp.Broken)
+            {
+                args.Cancel();
+                return;
+            }
+
+            if (TryComp<ItemComponent>(args.EntityUid, out var item))
+            {
+                if (_item.GetSizePrototype(item.Size) > _item.GetSizePrototype(ent.Comp.MaxItemSize))
+                {
+                    args.Cancel();
+                    return;
+                }
+            }
+            else
+            {
+                args.Cancel();
+                return;
+            }
+
+            if (ent.Comp.Storage.Count >= ent.Comp.Capacity)
+                args.Cancel();
         }
 
         private void OnInteractUsing(Entity<MicrowaveComponent> ent, ref InteractUsingEvent args)

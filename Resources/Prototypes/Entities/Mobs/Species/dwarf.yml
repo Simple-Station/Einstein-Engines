@@ -71,8 +71,23 @@
   - type: FootPrints
     leftBarePrint: "footprint-left-bare-dwarf"
     rightBarePrint: "footprint-right-bare-dwarf"
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
 
 - type: entity
   parent: BaseSpeciesDummy
   id: MobDwarfDummy
   categories: [ HideSpawnMenu ]
+  components:
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female

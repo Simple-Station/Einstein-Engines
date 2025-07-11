@@ -19,8 +19,6 @@
 #              paths:
 #              - /Maps/Shuttles/AISAT.yml
         - type: StationJobs
-          overflowJobs:
-            - Passenger
           availableJobs:
           #service
             Captain: [ 1, 1 ]

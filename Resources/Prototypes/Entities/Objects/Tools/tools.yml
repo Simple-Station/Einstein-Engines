@@ -49,13 +49,13 @@
       collection: MetalThud
   - type: Tool
     qualities:
-      - Cutting
+    - Cutting
     useSound:
       path: /Audio/Items/wirecutter.ogg
   - type: RandomSprite
     available:
-      - enum.DamageStateVisualLayers.Base:
-          cutters: Rainbow
+    - enum.DamageStateVisualLayers.Base:
+        cutters: Rainbow
   - type: Item
     sprite: Objects/Tools/wirecutters.rsi
     storedRotation: -90
@@ -118,9 +118,9 @@
   - type: Sprite
     sprite: Objects/Tools/screwdriver.rsi
     layers:
-      - state: screwdriver
-        map: [ "enum.DamageStateVisualLayers.Base" ]
-      - state: screwdriver-screwybits
+    - state: screwdriver
+      map: [ "enum.DamageStateVisualLayers.Base" ]
+    - state: screwdriver-screwybits
   - type: Item
     sprite: Objects/Tools/screwdriver.rsi
     storedRotation: -90
@@ -146,13 +146,13 @@
   - type: EmbedPassiveDamage
   - type: Tool
     qualities:
-      - Screwing
+    - Screwing
     useSound:
       collection: Screwdriver
   - type: RandomSprite
     available:
-      - enum.DamageStateVisualLayers.Base:
-          screwdriver: Rainbow
+    - enum.DamageStateVisualLayers.Base:
+        screwdriver: Rainbow
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
@@ -184,7 +184,7 @@
   name: wrench
   parent: BaseItem
   id: Wrench
-  description: 'A common tool for assembly and disassembly. Remember: righty tighty, lefty loosey.'
+  description: 'A common tool for assembly and disassembly. Remember: lefty latchy, righty removey.'
   components:
   - type: EmitSoundOnPickup
     sound:
@@ -228,7 +228,7 @@
   - type: DamageOtherOnHit
   - type: Tool
     qualities:
-      - Anchoring
+    - Anchoring
     useSound:
       path: /Audio/Items/ratchet.ogg
   - type: PhysicalComposition
@@ -249,101 +249,10 @@
         friction: 0.2
 
 - type: entity
-  name: crowbar
-  parent: BaseItem
-  id: Crowbar
-  description: A multipurpose tool to pry open doors and fight interdimensional invaders.
-  components:
-  - type: EmitSoundOnPickup
-    sound:
-      path: /Audio/SimpleStation14/Items/Handling/crowbar_pickup.ogg
-      params:
-        volume: -2
-  - type: EmitSoundOnDrop
-    sound:
-      path: /Audio/SimpleStation14/Items/Handling/crowbar_drop.ogg
-      params:
-        volume: -2
-  - type: EmitSoundOnLand
-    sound:
-      path: /Audio/Items/crowbar_drop.ogg
-      params:
-        volume: -2
-  - type: Tag
-    tags:
-    - Crowbar
-  - type: Sprite
-    sprite: Objects/Tools/crowbar.rsi
-    state: icon
-  - type: Item
-    sprite: Objects/Tools/crowbar.rsi
-    size: Small
-    storedSprite:
-      sprite: Objects/Tools/crowbar.rsi
-      state: storage
-  - type: MeleeWeapon
-    wideAnimationRotation: -135
-    attackRate: .8
-    damage:
-      types:
-        Blunt: 6
-    bluntStaminaDamageFactor: 2
-    heavyStaminaCost: 2.5
-    soundHit:
-      collection: MetalThud
-  - type: DamageOtherOnHit
-    staminaCost: 6
-  - type: Tool
-    qualities:
-      - Prying
-    useSound:
-      path: /Audio/Items/crowbar.ogg
-  - type: ToolTileCompatible
-  - type: PhysicalComposition
-    materialComposition:
-      Steel: 100
-  - type: StaticPrice
-    price: 22
-  - type: Prying
-  # Shitmed Change
-  - type: Tweezers
-    speed: 0.55
-  - type: SurgeryTool
-    startSound: /Audio/Items/crowbar.ogg
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.25,-0.25,0.25,0.25"
-        density: 28
-        mask:
-        - ItemMask
-        restitution: 0.3
-        friction: 0.2
-
-- type: entity
-  parent: Crowbar
-  id: CrowbarRed
-  name: emergency crowbar
-  components:
-  - type: Tag
-    tags:
-    - Crowbar
-    - CrowbarRed
-  - type: Sprite
-    state: red-icon
-  - type: Item
-    heldPrefix: red
-    storedSprite:
-      sprite: Objects/Tools/crowbar.rsi
-      state: red-storage
-
-- type: entity
   name: multitool
   parent: BaseItem
   id: Multitool
-  description: An advanced tool to copy, store, and send electrical pulses and signals through wires and machines
+  description: An advanced tool to copy, store, and send electrical pulses and signals through wires and machines.
   components:
   - type: EmitSoundOnPickup
     sound: /Audio/SimpleStation14/Items/Handling/multitool_pickup.ogg
@@ -378,7 +287,7 @@
     - Belt
   - type: Tool
     qualities:
-      - Pulsing
+    - Pulsing
   - type: NetworkConfigurator
   - type: ActivatableUI
     key: enum.NetworkConfiguratorUiKey.List
@@ -393,8 +302,8 @@
         type: NetworkConfiguratorBoundUserInterface
   - type: Tag
     tags:
-      - Multitool
-      - DoorElectronicsConfigurator
+    - Multitool
+    - DoorElectronicsConfigurator
   - type: PhysicalComposition
     materialComposition:
       Aluminum: 50
@@ -420,61 +329,61 @@
   id: NetworkConfigurator
   description: A tool for linking devices together. Has two modes, a list mode for mass linking devices and a linking mode for advanced device linking.
   components:
-    - type: EmitSoundOnLand
-      sound:
-        path: /Audio/Items/multitool_drop.ogg
-    - type: Sprite
-      sprite: Objects/Tools/network_configurator.rsi
-      layers:
-        - state: icon
-        - state: mode-link
-          map: ["enum.NetworkConfiguratorLayers.ModeLight"]
-          shader: unshaded
-    - type: Item
-      size: Small
-    - type: Clothing
-      sprite: Objects/Tools/network_configurator.rsi
-      quickEquip: false
-      slots:
-        - Belt
-    - type: Appearance
-    - type: GenericVisualizer
-      visuals:
-        enum.NetworkConfiguratorVisuals.Mode:
-          enum.NetworkConfiguratorLayers.ModeLight:
-            True: { state: mode-link }
-            False: { state: mode-list }
-    - type: NetworkConfigurator
-    - type: ActivatableUI
-      key: enum.NetworkConfiguratorUiKey.List
-      inHandsOnly: true
-    - type: Tag
-      tags:
-        - DoorElectronicsConfigurator
-    - type: UserInterface
-      interfaces:
-        enum.NetworkConfiguratorUiKey.List:
-          type: NetworkConfiguratorBoundUserInterface
-        enum.NetworkConfiguratorUiKey.Configure:
-          type: NetworkConfiguratorBoundUserInterface
-        enum.NetworkConfiguratorUiKey.Link:
-          type: NetworkConfiguratorBoundUserInterface
-    - type: StaticPrice
-      price: 56
-    - type: GuideHelp
-      guides:
-        - NetworkConfigurator
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.25,-0.25,0.25,0.25"
-          density: 12
-          mask:
-          - ItemMask
-          restitution: 0.3
-          friction: 0.2
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/multitool_drop.ogg
+  - type: Sprite
+    sprite: Objects/Tools/network_configurator.rsi
+    layers:
+    - state: icon
+    - state: mode-link
+      map: ["enum.NetworkConfiguratorLayers.ModeLight"]
+      shader: unshaded
+  - type: Item
+    size: Small
+  - type: Clothing
+    sprite: Objects/Tools/network_configurator.rsi
+    quickEquip: false
+    slots:
+    - Belt
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.NetworkConfiguratorVisuals.Mode:
+        enum.NetworkConfiguratorLayers.ModeLight:
+          True: { state: mode-link }
+          False: { state: mode-list }
+  - type: NetworkConfigurator
+  - type: ActivatableUI
+    key: enum.NetworkConfiguratorUiKey.List
+    inHandsOnly: true
+  - type: Tag
+    tags:
+    - DoorElectronicsConfigurator
+  - type: UserInterface
+    interfaces:
+      enum.NetworkConfiguratorUiKey.List:
+        type: NetworkConfiguratorBoundUserInterface
+      enum.NetworkConfiguratorUiKey.Configure:
+        type: NetworkConfiguratorBoundUserInterface
+      enum.NetworkConfiguratorUiKey.Link:
+        type: NetworkConfiguratorBoundUserInterface
+  - type: StaticPrice
+    price: 56
+  - type: GuideHelp
+    guides:
+    - NetworkConfigurator
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 12
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 #Power tools
 #Later on these should switch probably switch damage when changing the tool behavior.
@@ -495,35 +404,35 @@
     size: Small
   - type: Tool
     qualities:
-      - Screwing
+    - Screwing
     speedModifier: 1.5
     useSound: /Audio/Items/drill_use.ogg
   - type: MultipleTool
     statusShowBehavior: true
     entries:
-      - behavior: Screwing
-        sprite:
-          sprite: Objects/Tools/drill.rsi
-          state: drill_screw
-        useSound:
-          path: /Audio/Items/drill_use.ogg
-        changeSound:
-          path: /Audio/Items/change_drill.ogg
-      - behavior: Anchoring
-        sprite:
-          sprite: Objects/Tools/drill.rsi
-          state: drill_bolt
-        useSound:
-          path: /Audio/Items/drill_use.ogg
-        changeSound:
-          path: /Audio/Items/change_drill.ogg
+    - behavior: Screwing
+      sprite:
+        sprite: Objects/Tools/drill.rsi
+        state: drill_screw
+      useSound:
+        path: /Audio/Items/drill_use.ogg
+      changeSound:
+        path: /Audio/Items/change_drill.ogg
+    - behavior: Anchoring
+      sprite:
+        sprite: Objects/Tools/drill.rsi
+        state: drill_bolt
+      useSound:
+        path: /Audio/Items/drill_use.ogg
+      changeSound:
+        path: /Audio/Items/change_drill.ogg
   - type: PhysicalComposition
     materialComposition:
       Steel: 300
       Plastic: 50
       Circuitry: 50
-#  - type: DynamicPrice
-#    price: 100
+  #  - type: DynamicPrice
+  #    price: 100
   - type: StaticPrice
     price: 100
   - type: MeleeWeapon
@@ -549,7 +458,7 @@
   - type: ReverseEngineering # Nyano
     difficulty: 2
     recipes:
-      - PowerDrill
+    - PowerDrill
   - type: Fixtures
     fixtures:
       fix1:
@@ -564,7 +473,7 @@
 
 - type: entity
   id: RCD
-  parent: BaseItem
+  parent: [ BaseItem, BaseEngineeringContraband ]
   name: RCD
   description: The rapid construction device can be used to quickly place and remove various station structures and fixtures. Requires compressed matter to function.
   components:
@@ -609,17 +518,18 @@
       Plastic: 100
       Circuitry: 50
   - type: StaticPrice
-    price: 100
+    price: 110
   - type: UserInterface
     interfaces:
       enum.RcdUiKey.Key:
         type: RCDMenuBoundUserInterface
   - type: ActivatableUI
+    inHandsOnly: true
     key: enum.RcdUiKey.Key
   - type: ReverseEngineering # Nyano
     difficulty: 3
     recipes:
-      - RCD
+    - RCD
   - type: Fixtures
     fixtures:
       fix1:
@@ -640,7 +550,7 @@
   components:
   - type: Tag
     tags:
-      - RPD
+    - RPD
   - type: RCD
     isRpd: true
     availablePrototypes:
@@ -673,12 +583,10 @@
       Steel: 500
       Plastic: 150
       Circuitry: 50
-  - type: StaticPrice
-    price: 100
   - type: ReverseEngineering # Nyano
     difficulty: 3
     recipes:
-      - RPD
+    - RPD
   - type: Fixtures
     fixtures:
       fix1:
@@ -698,20 +606,6 @@
   components:
   - type: LimitedCharges
     charges: 0
-  - type: RCD
-    availablePrototypes:
-    - WallSolid
-    - FloorSteel
-    - Plating
-    - Catwalk
-    - Grille
-    - Window
-    - WindowDirectional
-    - WindowReinforcedDirectional
-    - ReinforcedWindow
-    - Airlock
-    - AirlockGlass
-    - Firelock
 
 - type: entity
   id: RPDEmpty
@@ -722,7 +616,7 @@
     charges: 0
   - type: Tag
     tags:
-      - RPD
+    - RPD
   - type: RCD
     isRpd: true
     availablePrototypes:
@@ -809,14 +703,10 @@
     materialComposition:
       Steel: 300
       Plastic: 100
-  - type: StaticPrice
-    price: 60
-#  - type: DynamicPrice
-#    price: 60
   - type: ReverseEngineering # Nyano
     difficulty: 3
     recipes:
-      - RCDAmmo
+    - RCDAmmo
 
 - type: entity
   name: omnitool
@@ -837,51 +727,51 @@
     enabled: false
   - type: Tool
     qualities:
-      - Screwing
+    - Screwing
     speedModifier: 1.2 # Kept for future adjustments. Currently 1.2x for balance
     useSound: /Audio/Items/drill_use.ogg
   - type: ToolTileCompatible
   - type: MultipleTool
     statusShowBehavior: true
     entries:
-      - behavior: Screwing
-        sprite:
-          sprite: Objects/Tools/omnitool.rsi
-          state: omnitool-screwing
-        useSound:
-          path: /Audio/Items/drill_use.ogg
-        changeSound:
-          path: /Audio/Items/change_drill.ogg
-      - behavior: Prying
-        sprite:
-          sprite: Objects/Tools/omnitool.rsi
-          state: omnitool-prying
-        useSound:
-          path: /Audio/Items/jaws_pry.ogg
-        changeSound:
-          path: /Audio/Items/change_drill.ogg
-      - behavior: Anchoring
-        sprite:
-          sprite: Objects/Tools/omnitool.rsi
-          state: omnitool-wrenching
-        useSound:
-          path: /Audio/Items/ratchet.ogg
-        changeSound:
-          path: /Audio/Items/change_drill.ogg
-      - behavior: Cutting
-        sprite:
-          sprite: Objects/Tools/omnitool.rsi
-          state: omnitool-snipping
-        useSound:
-          path: /Audio/Items/jaws_cut.ogg
-        changeSound:
-          path: /Audio/Items/change_drill.ogg
-      - behavior: Pulsing
-        sprite:
-          sprite: Objects/Tools/omnitool.rsi
-          state: omnitool-pulsing
-        changeSound:
-          path: /Audio/Items/change_drill.ogg
+    - behavior: Screwing
+      sprite:
+        sprite: Objects/Tools/omnitool.rsi
+        state: omnitool-screwing
+      useSound:
+        path: /Audio/Items/drill_use.ogg
+      changeSound:
+        path: /Audio/Items/change_drill.ogg
+    - behavior: Prying
+      sprite:
+        sprite: Objects/Tools/omnitool.rsi
+        state: omnitool-prying
+      useSound:
+        path: /Audio/Items/jaws_pry.ogg
+      changeSound:
+        path: /Audio/Items/change_drill.ogg
+    - behavior: Anchoring
+      sprite:
+        sprite: Objects/Tools/omnitool.rsi
+        state: omnitool-wrenching
+      useSound:
+        path: /Audio/Items/ratchet.ogg
+      changeSound:
+        path: /Audio/Items/change_drill.ogg
+    - behavior: Cutting
+      sprite:
+        sprite: Objects/Tools/omnitool.rsi
+        state: omnitool-snipping
+      useSound:
+        path: /Audio/Items/jaws_cut.ogg
+      changeSound:
+        path: /Audio/Items/change_drill.ogg
+    - behavior: Pulsing
+      sprite:
+        sprite: Objects/Tools/omnitool.rsi
+        state: omnitool-pulsing
+      changeSound:
+        path: /Audio/Items/change_drill.ogg
 
 #Other
 - type: entity
@@ -923,7 +813,7 @@
   # Delta V: Adds tool quality for digging
   - type: Tool
     qualities:
-      - Digging
+    - Digging
     useSound:
       path: /Audio/Nyanotrasen/Items/shovel_dig.ogg
   - type: EarthDigging
@@ -969,3 +859,6 @@
   - type: Tag
     tags:
     - RollingPin
+  - type: Construction
+    graph: WoodenRollingPin
+    node: rollingpin

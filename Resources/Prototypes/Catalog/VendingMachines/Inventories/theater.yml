@@ -14,9 +14,9 @@
     ClothingOuterCardborg: 2
     ClothingHeadHatSombrero: 2
     ClothingOuterPonchoClassic: 2
-    ClothingUniformJumpsuitKilt: 3 # DeltaV - SCOTTTTLANDDDDD FURREVERRRRR!!
-    ClothingEyesEyepatch: 2 # Delta-V Yarrr
-    ClothingUniformJumpsuitBlackTurtleneck : 2 # DeltaV - Clothing addition
+    ClothingUniformJumpsuitKilt: 3
+    ClothingEyesEyepatch: 2
+    ClothingUniformJumpsuitBlackTurtleneck : 2
     ClothingHeadHatPwig: 2
     ClothingOuterRobesJudge: 2
     ClothingOuterPoncho: 2
@@ -31,10 +31,10 @@
     ClothingHeadHatPumpkin: 2
     ClothingHeadHatShrineMaidenWig: 2
     ClothingOuterSuitShrineMaiden: 2
+    Gohei: 2
+    ClothingOuterSuitWitchRobes: 2
     ClothingHeadHatWitch1: 2
     ClothingHeadHatWitch: 2
-    ClothingOuterSuitWitchRobes: 2
-    Gohei: 2
     ClothingHeadHatRedRacoon: 2
     ClothingOuterRedRacoon: 2
     ClothingHeadPaperSack: 2
@@ -52,38 +52,38 @@
     FoodPoppy: 1
     ClothingHeadHatGladiator: 1
     ClothingUniformJumpsuitGladiator: 1
-    ClothingUniformSkirtTurtle: 2 # Nyano - Clothing addition
-    ClothingUniformSwimsuitBlue: 2 # Nyano - Clothing addition
-    ClothingCostumeBunnySuit: 2 # Nyano - Clothing addition
-    ClothingHeadHatBunny: 2 # Nyano - Clothing addition
-    ClothingUniformDressRed: 1 # Nyano - Clothing addition
-    ClothingHeadHatCake: 2 # Nyano - Clothing addition
-    ClothingUniformSchoolGakuranBlack: 2 # Nyano - Clothing addition
-    UniformSchoolgirlBlack: 1 # Nyano - Clothing addition
-    UniformSchoolgirlBlue: 1 # Nyano - Clothing addition
-    UniformSchoolgirlCyan: 1 # Nyano - Clothing addition
-    UniformSchoolgirlGreen: 1 # Nyano - Clothing addition
-    UniformSchoolgirlOrange: 1 # Nyano - Clothing addition
-    UniformSchoolgirlPink: 1 # Nyano - Clothing addition
-    UniformSchoolgirlPurple: 1 # Nyano - Clothing addition
-    UniformSchoolgirlRed: 1 # Nyano - Clothing addition
-    UniformSchoolgirlDusk: 1 # Nyano - Clothing addition
-    UniformSchoolgirlBlazerTan: 1 # Nyano - Clothing addition
-    UniformGeisha: 1 # Nyano - Clothing addition
-    ClothingKimonoBlue: 2 # Nyano - Clothing addition
-    ClothingKimonoPink: 2 # Nyano - Clothing addition
-    ClothingKimonoPurple: 2 # Nyano - Clothing addition
-    ClothingKimonoSky: 2 # Nyano - Clothing addition
-    ClothingKimonoGreen: 2 # Nyano - Clothing addition
-    ClothingMaskOniBlue: 1 # Nyano - Clothing addition
-    ClothingMaskOniRed: 1 # Nyano - Clothing addition
-    ClothingCostumeArcDress: 1 # Nyano - Clothing addition
-    ClothingCostumeMioSkirt: 1 # Nyano - Clothing addition
-    ClothingCostumeNaota: 1 # Nyano - Clothing addition
-    ClothingUniformJumpsuitSober: 1 # DeltaV - Clothing addition
-    ClothingOuterSuitCarp: 2 # DeltaV - Move carp suit out of syndicate uplink into the AutoDrobe
-    ClothingShoesBootsWinterClown: 2  #Delta V: Add departmental winter boots
-    ClothingShoesBootsWinterMime: 2  #Delta V: Add departmental winter boots
+    ClothingUniformSkirtTurtle: 2
+    ClothingUniformSwimsuitBlue: 2
+    ClothingCostumeBunnySuit: 2
+    ClothingHeadHatBunny: 2
+    ClothingUniformDressRed: 1
+    ClothingHeadHatCake: 2
+    ClothingUniformSchoolGakuranBlack: 2
+    UniformSchoolgirlBlack: 1
+    UniformSchoolgirlBlue: 1
+    UniformSchoolgirlCyan: 1
+    UniformSchoolgirlGreen: 1
+    UniformSchoolgirlOrange: 1
+    UniformSchoolgirlPink: 1
+    UniformSchoolgirlPurple: 1
+    UniformSchoolgirlRed: 1
+    UniformSchoolgirlDusk: 1
+    UniformSchoolgirlBlazerTan: 1
+    UniformGeisha: 1
+    ClothingKimonoBlue: 2
+    ClothingKimonoPink: 2
+    ClothingKimonoPurple: 2
+    ClothingKimonoSky: 2
+    ClothingKimonoGreen: 2
+    ClothingMaskOniBlue: 1
+    ClothingMaskOniRed: 1
+    ClothingCostumeArcDress: 1
+    ClothingCostumeMioSkirt: 1
+    ClothingCostumeNaota: 1
+    ClothingUniformJumpsuitSober: 1
+    ClothingOuterSuitCarp: 2
+    ClothingShoesBootsWinterClown: 2
+    ClothingShoesBootsWinterMime: 2
     ClothingHeadHatCowboyBrown: 1
     ClothingHeadHatCowboyBlack: 1
     ClothingHeadHatCowboyWhite: 1
@@ -103,21 +103,21 @@
     ClothingUniformJumpsuitPirate: 1
     ClothingShoesBootsLaceup: 2
     FoamCutlass: 2
-    ClothingHeadSafari: 2 # Frontier
-    ClothingUniformJumpsuitSafari: 2 # Frontier
-    ClothingUniformRandomArmlessNoSkirt: 6 # Frontier
-    ClothingUniformRandomArmless: 6 # Frontier
-    ClothingUniformRandomStandard: 6 # Frontier
-    ClothingUniformRandomBra: 6 # Frontier
-    ClothingUniformRandomShorts: 6 # Frontier
-    ClothingUniformRandomShirt: 6 # Frontier
+    ClothingHeadSafari: 2
+    ClothingUniformJumpsuitSafari: 2
+    ClothingUniformRandomArmlessNoSkirt: 6
+    ClothingUniformRandomArmless: 6
+    ClothingUniformRandomStandard: 6
+    ClothingUniformRandomBra: 6
+    ClothingUniformRandomShorts: 6
+    ClothingUniformRandomShirt: 6
     ClothingHandsGlovesBoxingRed: 2
     ClothingHandsGlovesBoxingBlue: 2
     ClothingHandsGlovesBoxingYellow: 2
     ClothingHandsGlovesBoxingGreen: 2
     UniformShortsRed: 4
     UniformShortsRedWithTop: 4
-    ClothingBackpackClownFilled: 2
+    ClothingBackpackClown: 2
     ClothingBackpackSatchelClown: 2
     ClothingBackpackDuffelClown: 2
     ClothingMaskClown: 2
@@ -131,9 +131,9 @@
     ClothingMaskMime: 2
     ClothingUniformJumpsuitMime: 2
     ClothingUniformJumpskirtMime: 2
-    ClothingBeltSuspenders: 2
+    ClothingBeltSuspendersRed: 2
     RubberStampMime: 1
-  contrabandInventory: # Frontier - Hidden inventory
+  contrabandInventory:
     ClothingHeadHatMimesoftFlipped: 1
     BarberScissors: 1
     ClothingNeckBellCollar: 2

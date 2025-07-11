@@ -182,7 +182,7 @@ namespace Content.Server.GameTicking
         /// to modify the options and react to the map creation.
         /// </remarks>
         /// <param name="proto">Game map prototype to load in.</param>
-        /// <param name="mapId">The id of the map that was loaded.</param>
+        /// <param name="mapId">The id of the map that was loaded.</param>Add commentMore actions
         /// <param name="options">Entity loading options, including whether the maps should be initialized.</param>
         /// <param name="stationName">Name to assign to the loaded station.</param>
         /// <returns>All loaded entities and grids.</returns>
@@ -200,11 +200,11 @@ namespace Content.Server.GameTicking
             {
                 var mapUid = _map.CreateMap(out mapId);
                 if (!_loader.TryLoadGrid(mapId,
-                        ev.GameMap.MapPath,
-                        out var grid,
-                        ev.Options,
-                        ev.Offset,
-                        ev.Rotation))
+                    ev.GameMap.MapPath,
+                    out var grid,
+                    ev.Options,
+                    ev.Offset,
+                    ev.Rotation))
                 {
                     throw new Exception($"Failed to load game-map grid {ev.GameMap.ID}");
                 }
@@ -216,11 +216,11 @@ namespace Content.Server.GameTicking
             }
 
             if (!_loader.TryLoadMap(ev.GameMap.MapPath,
-                    out var map,
-                    out var grids,
-                    ev.Options,
-                    ev.Offset,
-                    ev.Rotation))
+                out var map,
+                out var grids,
+                ev.Options,
+                ev.Offset,
+                ev.Rotation))
             {
                 throw new Exception($"Failed to load game map {ev.GameMap.ID}");
             }
@@ -250,11 +250,11 @@ namespace Content.Server.GameTicking
             {
                 var mapUid = _map.CreateMap(mapId);
                 if (!_loader.TryLoadGrid(mapId,
-                        ev.GameMap.MapPath,
-                        out var grid,
-                        ev.Options,
-                        ev.Offset,
-                        ev.Rotation))
+                    ev.GameMap.MapPath,
+                    out var grid,
+                    ev.Options,
+                    ev.Offset,
+                    ev.Rotation))
                 {
                     throw new Exception($"Failed to load game-map grid {ev.GameMap.ID}");
                 }
@@ -266,13 +266,13 @@ namespace Content.Server.GameTicking
             }
 
             if (!_loader.TryLoadMapWithId(
-                    mapId,
-                    ev.GameMap.MapPath,
-                    out var map,
-                    out var grids,
-                    ev.Options,
-                    ev.Offset,
-                    ev.Rotation))
+                mapId,
+                ev.GameMap.MapPath,
+                out var map,
+                out var grids,
+                ev.Options,
+                ev.Offset,
+                ev.Rotation))
             {
                 throw new Exception($"Failed to load map");
             }
@@ -301,11 +301,11 @@ namespace Content.Server.GameTicking
             if (ev.GameMap.IsGrid)
             {
                 if (!_loader.TryLoadGrid(targetMap,
-                        ev.GameMap.MapPath,
-                        out var grid,
-                        ev.Options,
-                        ev.Offset,
-                        ev.Rotation))
+                    ev.GameMap.MapPath,
+                    out var grid,
+                    ev.Options,
+                    ev.Offset,
+                    ev.Rotation))
                 {
                     throw new Exception($"Failed to load game-map grid {ev.GameMap.ID}");
                 }
@@ -317,11 +317,11 @@ namespace Content.Server.GameTicking
             }
 
             if (!_loader.TryMergeMap(targetMap,
-                    ev.GameMap.MapPath,
-                    out var grids,
-                    ev.Options,
-                    ev.Offset,
-                    ev.Rotation))
+                ev.GameMap.MapPath,
+                out var grids,
+                ev.Options,
+                ev.Offset,
+                ev.Rotation))
             {
                 throw new Exception($"Failed to load map");
             }
@@ -395,7 +395,7 @@ namespace Content.Server.GameTicking
                 HumanoidCharacterProfile profile;
                 if (_prefsManager.TryGetCachedPreferences(userId, out var preferences))
                 {
-                    profile = (HumanoidCharacterProfile) preferences.GetProfile(preferences.SelectedCharacterIndex);
+                    profile = (HumanoidCharacterProfile) preferences.SelectedCharacter;
                 }
                 else
                 {
@@ -530,7 +530,7 @@ namespace Content.Server.GameTicking
             var listOfPlayerInfo = new List<RoundEndMessageEvent.RoundEndPlayerInfo>();
             // Grab the great big book of all the Minds, we'll need them for this.
             var allMinds = EntityQueryEnumerator<MindComponent>();
-            var pvsOverride = _configurationManager.GetCVar(CCVars.RoundEndPVSOverrides);
+            var pvsOverride = _cfg.GetCVar(CCVars.RoundEndPVSOverrides);
             while (allMinds.MoveNext(out var mindId, out var mind))
             {
                 // TODO don't list redundant observer roles?
@@ -785,7 +785,7 @@ namespace Content.Server.GameTicking
             }
         }
 
-        public TimeSpan RoundDuration()
+        public new TimeSpan RoundDuration()
         {
             return _gameTiming.CurTime.Subtract(RoundStartTimeSpan);
         }
@@ -801,8 +801,7 @@ namespace Content.Server.GameTicking
 
             var proto = _robustRandom.Pick(options);
 
-            _announcer.SendAnnouncement(_announcer.GetAnnouncementId(proto.ID), Filter.Broadcast(),
-                proto.Message ?? "game-ticker-welcome-to-the-station");
+            _announcer.SendAnnouncement(_announcer.GetAnnouncementId(proto.ID), proto.Message ?? "game-ticker-welcome-to-the-station");
         }
 
         private async void SendRoundStartedDiscordMessage()
@@ -812,17 +811,8 @@ namespace Content.Server.GameTicking
                 if (_webhookIdentifier == null)
                     return;
 
-                var mapName = _gameMapManager.GetSelectedMap()?.MapName ?? Loc.GetString("discord-round-notifications-unknown");
-                var preset = Loc.GetString(Preset?.ModeTitle ?? "discord-round-notifications-unknown");
-                var content = Loc.GetString(
-                    "discord-round-notifications-started",
-                    ("id", RoundId),
-                    ("map", mapName),
-                    ("preset", preset),
-                    ("players", _playerManager.PlayerCount),
-                    ("characters", PlayersJoinedRoundNormally))
-                    .Replace("\"", string.Empty);
-
+                var mapName = _gameMapManager.GetSelectedMap()?.MapName ?? Loc.GetString("discord-round-notifications-unknown-map");
+                var content = Loc.GetString("discord-round-notifications-started", ("id", RoundId), ("map", mapName));
 
                 var payload = new WebhookPayload { Content = content };
 

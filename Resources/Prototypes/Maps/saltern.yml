@@ -17,8 +17,6 @@
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/DeltaV/NTES_Delta.yml
         - type: StationJobs
-          overflowJobs:
-            - Passenger
           availableJobs:
           #command
             Captain: [ 1, 1 ]

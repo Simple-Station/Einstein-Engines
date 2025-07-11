@@ -1,4 +1,4 @@
-﻿using Content.Server.Ghost.Roles.Raffles;
+using Content.Server.Ghost.Roles.Raffles;
 using Content.Server.Mind.Commands;
 using Content.Shared.Customization.Systems;
 using Content.Shared.Roles;

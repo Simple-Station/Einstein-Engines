@@ -3,12 +3,12 @@ using Content.Server.Audio;
 using Content.Server.Light.Components;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
-using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Shared.Examine;
 using Content.Shared.Light;
 using Content.Shared.Light.Components;
 using Content.Shared.Power;
+using Content.Shared.Station.Components;
 using Robust.Server.GameObjects;
 using Color = Robust.Shared.Maths.Color;
 
@@ -71,7 +71,7 @@ public sealed class EmergencyLightSystem : SharedEmergencyLightSystem
             args.PushMarkup(
                 Loc.GetString("emergency-light-component-on-examine-alert",
                     ("color", color.ToHex()),
-                    ("level", name)));
+                    ("level", Loc.GetString($"alert-level-{name.ToString().ToLower()}"))));
         }
     }
 

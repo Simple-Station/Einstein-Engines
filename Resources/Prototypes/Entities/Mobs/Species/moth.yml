@@ -7,6 +7,8 @@
   components:
   - type: HumanoidAppearance
     species: Moth
+    hideLayersOnEquip:
+    - HeadTop
   - type: Hunger
   - type: Thirst
   - type: Carriable # Carrying system from nyanotrasen.
@@ -45,6 +47,8 @@
       Brute:
         sprite: Mobs/Effects/brute_damage.rsi
         color: "#808A51"
+      Burn:
+        sprite: Mobs/Effects/burn_damage.rsi
   - type: MothAccent
   - type: Vocal
     sounds:
@@ -76,7 +80,8 @@
       275: 0.7
       250: 0.55
   - type: TemperatureProtection # moff fluff acts as insulation
-    coefficient: 0.5 # less than vulp fur but still significant
+    heatingCoefficient: 0.5 # less than vulp fur but still significant
+    coolingCoefficient: 0.5
   - type: Sprite # sprite again because we want different layer ordering
     noRot: true
     drawdepth: Mobs
@@ -90,9 +95,6 @@
       - map: [ "enum.HumanoidVisualLayers.LArm" ]
       - map: [ "enum.HumanoidVisualLayers.RLeg" ]
       - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-#     - shader: StencilClear
-#      sprite: Mobs/Species/Human/parts.rsi
-#      state: l_leg
       - map: [ "enum.HumanoidVisualLayers.Underwear" ]
       - map: [ "enum.HumanoidVisualLayers.Undershirt" ]
       - map: [ "jumpsuit" ]
@@ -131,6 +133,13 @@
         visible: false
   - type: FootPrints
   - type: CanMoveInAir
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
 
 - type: entity
   parent: BaseSpeciesDummy
@@ -141,51 +150,55 @@
     species: Moth
   - type: Sprite
     layers:
-      - map: [ "enum.HumanoidVisualLayers.Chest" ]
-      - map: [ "enum.HumanoidVisualLayers.Snout" ]
-      - map: [ "enum.HumanoidVisualLayers.Head" ]
-      - map: [ "enum.HumanoidVisualLayers.Eyes" ]
-      - map: [ "enum.HumanoidVisualLayers.Face" ]
-      - map: [ "enum.HumanoidVisualLayers.RArm" ]
-      - map: [ "enum.HumanoidVisualLayers.LArm" ]
-      - map: [ "enum.HumanoidVisualLayers.RLeg" ]
-      - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-#     - shader: StencilClear
-#      sprite: Mobs/Species/Human/parts.rsi
-#      state: l_leg
-      - map: [ "enum.HumanoidVisualLayers.Underwear" ]
-      - map: [ "enum.HumanoidVisualLayers.Undershirt" ]
-      - map: [ "jumpsuit" ]
-      - map: [ "enum.HumanoidVisualLayers.LHand" ]
-      - map: [ "enum.HumanoidVisualLayers.RHand" ]
-      - map: [ "enum.HumanoidVisualLayers.LFoot" ]
-      - map: [ "enum.HumanoidVisualLayers.RFoot" ]
-      - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
-        color: "#ffffff"
-        sprite: Objects/Misc/handcuffs.rsi
-        state: body-overlay-2
-        visible: false
-      - map: [ "gloves" ]
-      - map: [ "shoes" ]
-      - map: [ "ears" ]
-      - map: [ "innerBelt" ]
-      - map: [ "innerNeck" ]
-      - map: [ "outerClothing" ]
-      - map: [ "eyes" ]
-      - map: [ "belt" ]
-      - map: [ "id" ]
-      - map: [ "enum.HumanoidVisualLayers.Tail" ] #in the utopian future we should probably have a wings enum inserted here so everyhting doesn't break
-      - map: [ "neck" ]
-      - map: [ "back" ]
-      - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
-      - map: [ "enum.HumanoidVisualLayers.Hair" ]
-      - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
-      - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
-      - map: [ "mask" ]
-      - map: [ "head" ]
-      - map: [ "pocket1" ]
-      - map: [ "pocket2" ]
-      - map: [ "clownedon" ] # Dynamically generated
-        sprite: "Effects/creampie.rsi"
-        state: "creampie_moth"
-        visible: false
+    - map: [ "enum.HumanoidVisualLayers.Chest" ]
+    - map: [ "enum.HumanoidVisualLayers.Snout" ]
+    - map: [ "enum.HumanoidVisualLayers.Head" ]
+    - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+    - map: [ "enum.HumanoidVisualLayers.Face" ]
+    - map: [ "enum.HumanoidVisualLayers.RArm" ]
+    - map: [ "enum.HumanoidVisualLayers.LArm" ]
+    - map: [ "enum.HumanoidVisualLayers.RLeg" ]
+    - map: [ "enum.HumanoidVisualLayers.LLeg" ]
+    - map: [ "enum.HumanoidVisualLayers.Underwear" ]
+    - map: [ "enum.HumanoidVisualLayers.Undershirt" ]
+    - map: [ "jumpsuit" ]
+    - map: [ "enum.HumanoidVisualLayers.LHand" ]
+    - map: [ "enum.HumanoidVisualLayers.RHand" ]
+    - map: [ "enum.HumanoidVisualLayers.LFoot" ]
+    - map: [ "enum.HumanoidVisualLayers.RFoot" ]
+    - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+    - map: [ "gloves" ]
+    - map: [ "shoes" ]
+    - map: [ "ears" ]
+    - map: [ "innerBelt" ]
+    - map: [ "innerNeck" ]
+    - map: [ "outerClothing" ]
+    - map: [ "eyes" ]
+    - map: [ "belt" ]
+    - map: [ "id" ]
+    - map: [ "enum.HumanoidVisualLayers.Tail" ] #in the utopian future we should probably have a wings enum inserted here so everyhting doesn't break
+    - map: [ "neck" ]
+    - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
+    - map: [ "enum.HumanoidVisualLayers.Hair" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
+    - map: [ "mask" ]
+    - map: [ "head" ]
+    - map: [ "pocket1" ]
+    - map: [ "pocket2" ]
+    - map: [ "clownedon" ] # Dynamically generated
+      sprite: "Effects/creampie.rsi"
+      state: "creampie_moth"
+      visible: false
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female

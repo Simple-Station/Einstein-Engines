@@ -47,7 +47,8 @@
   - type: Appearance
   - type: GuideHelp
     guides:
-      - Cyborgs
+    - Cyborgs
+    - Robotics
   - type: LanguageSpeaker
   - type: LanguageKnowledge
     speaks: [TauCetiBasic, RobotTalk]
@@ -69,7 +70,7 @@
         startingItem: OrganHumanBrain
         whitelist:
           tags: # IPCMMI - changed component requirement to a tag bc you'd be able to infinitely stack regular + reverse MMIs otherwise
-            - Brain
+          - Brain
 
 - type: entity
   parent: BaseItem
@@ -77,69 +78,71 @@
   name: positronic brain
   description: An artificial brain capable of spontaneous neural activity.
   components:
-    - type: Sprite
-      sprite: Objects/Specific/Robotics/mmi.rsi
-      layers:
-      - state: posibrain
-        map: ["base"]
-    - type: Input
-      context: human
-    - type: ToggleableGhostRole
-      examineTextMindPresent: positronic-brain-installed
-      examineTextMindSearching: positronic-brain-still-searching
-      examineTextNoMind: positronic-brain-off
-      beginSearchingText: positronic-brain-searching
-      roleName: positronic-brain-role-name
-      roleDescription: positronic-brain-role-description
-      roleRules: ghost-role-information-silicon-rules
-      mindRoles:
-      - MindRoleGhostRoleSilicon
-      wipeVerbText: positronic-brain-wipe-device-verb-text
-      wipeVerbPopup: positronic-brain-wiped-device
-      stopSearchVerbText: positronic-brain-stop-searching-verb-text
-      stopSearchVerbPopup: positronic-brain-stopped-searching
-    - type: BlockMovement
-    - type: Examiner
-    - type: Brain # hopefully this doesn't break everything
-      active: false
-    - type: BorgBrain
-    - type: IntrinsicRadioReceiver
-    - type: IntrinsicRadioTransmitter
-      channels:
-      - Binary
-    - type: ActiveRadio
-      channels:
-      - Binary
-      - Common
-    - type: NameIdentifier
-      group: PositronicBrain
-    - type: DoAfter
-    - type: Actions
-    - type: TypingIndicator
-      proto: robot
-    - type: Speech
-      speechSounds: Pai
-    - type: MobState
-      allowedStates:
-      - Alive
-    - type: Appearance
-    - type: Tag
-      tags:
-      - CannotSuicide
-      - Posibrain # IPCMMI - added posibrain tag
-    - type: GenericVisualizer
-      visuals:
-        enum.ToggleableGhostRoleVisuals.Status:
-          base:
-            Off: { state: posibrain }
-            Searching: { state: posibrain-searching }
-            On: { state: posibrain-occupied }
-    - type: GuideHelp
-      guides:
-      - Cyborgs
-    - type: Organ # Estacao Pirata - IPCs
-      slotId: posibrain
-    - type: LanguageSpeaker
-    - type: LanguageKnowledge
-      speaks: [RobotTalk]
-      understands: [RobotTalk]
+  - type: Sprite
+    sprite: Objects/Specific/Robotics/mmi.rsi
+    layers:
+    - state: posibrain
+      map: ["base"]
+  - type: Input
+    context: human
+  - type: ToggleableGhostRole
+    examineTextMindPresent: positronic-brain-installed
+    examineTextMindSearching: positronic-brain-still-searching
+    examineTextNoMind: positronic-brain-off
+    beginSearchingText: positronic-brain-searching
+    roleName: positronic-brain-role-name
+    roleDescription: positronic-brain-role-description
+    roleRules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleGhostRoleSilicon
+    wipeVerbText: positronic-brain-wipe-device-verb-text
+    wipeVerbPopup: positronic-brain-wiped-device
+    stopSearchVerbText: positronic-brain-stop-searching-verb-text
+    stopSearchVerbPopup: positronic-brain-stopped-searching
+    job: Borg
+  - type: BlockMovement
+  - type: Examiner
+  - type: Brain # hopefully this doesn't break everything
+    active: false
+  - type: BorgBrain
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+  - type: NameIdentifier
+    group: PositronicBrain
+  - type: DoAfter
+  - type: Actions
+  - type: TypingIndicator
+    proto: robot
+  - type: Speech
+    speechSounds: Pai
+  - type: MobState
+    allowedStates:
+    - Alive
+  - type: Appearance
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - Posibrain # IPCMMI - added posibrain tag
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableGhostRoleVisuals.Status:
+        base:
+          Off: { state: posibrain }
+          Searching: { state: posibrain-searching }
+          On: { state: posibrain-occupied }
+  - type: GuideHelp
+    guides:
+    - Cyborgs
+    - Robotics
+  - type: Organ # Estacao Pirata - IPCs
+    slotId: posibrain
+  - type: LanguageSpeaker
+  - type: LanguageKnowledge
+    speaks: [RobotTalk]
+    understands: [RobotTalk]

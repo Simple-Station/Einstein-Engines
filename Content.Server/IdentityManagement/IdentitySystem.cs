@@ -3,6 +3,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.CriminalRecords.Systems;
 using Content.Server.PsionicsRecords.Systems;
 using Content.Server.Humanoid;
+using Content.Shared._EE.GenderChange;
 using Content.Shared.Clothing;
 using Content.Shared.Database;
 using Content.Shared.Hands;
@@ -14,7 +15,6 @@ using Content.Shared.Inventory.Events;
 using Robust.Shared.Containers;
 using Robust.Shared.Enums;
 using Robust.Shared.GameObjects.Components.Localization;
-using Content.Shared._EE.GenderChange;
 
 namespace Content.Server.IdentityManagement;
 

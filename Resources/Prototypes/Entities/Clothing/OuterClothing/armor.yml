@@ -2,7 +2,7 @@
 # NOTE: Half of the kind of armor you're probably thinking of is in vests.yml. These should probably be merged some day.
 
 - type: entity
-  parent: [ClothingOuterBaseMedium, AllowSuitStorageClothing]
+  parent: [ClothingOuterBaseMedium, AllowSuitStorageClothing, BaseRestrictedContraband]
   id: ClothingOuterArmorBasic
   name: armor vest
   description: A standard Type I armored vest that provides decent protection against most types of damage.
@@ -46,7 +46,7 @@
     sprite: Clothing/OuterClothing/Armor/security_slim.rsi
 
 - type: entity
-  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseRestrictedContraband]
   id: ClothingOuterArmorRiot
   name: riot suit
   description: A suit of semi-flexible polycarbonate body armor with heavy padding to protect against melee attacks. Perfect for fighting delinquents around the station.
@@ -117,7 +117,32 @@
         Heat: 0.95
 
 - type: entity
-  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing ]
+  parent: ClothingOuterArmorBasic
+  id: ClothingOuterArmorReflective
+  name: reflective vest
+  description: An armored vest with advanced shielding to protect against energy weapons.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Armor/armor_reflec.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Armor/armor_reflec.rsi
+  - type: Armor
+    modifiers:
+      flatReductions:
+        Heat: 3
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.7
+  - type: Reflect
+    reflectProb: 0.33
+    innate: true # armor grants a passive shield that does not require concentration to maintain
+    reflects:
+      - Energy
+
+- type: entity
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseSyndicateContraband ]
   id: ClothingOuterArmorRaid
   name: syndicate raid suit
   description: A somewhat flexible and well-armored suit with a powerful shoulder mounted flashlight manufactured in the Gorlex Marauder's iconic blood-red color scheme, it does not protect its wearer from space.
@@ -189,32 +214,7 @@
     autoRechargeRate: 2
 
 - type: entity
-  parent: ClothingOuterArmorBasic
-  id: ClothingOuterArmorReflective
-  name: reflective vest
-  description: An armored vest with advanced shielding to protect against energy weapons.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Armor/armor_reflec.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Armor/armor_reflec.rsi
-  - type: Armor
-    modifiers:
-      flatReductions:
-        Heat: 3
-      coefficients:
-        Blunt: 0.9
-        Slash: 0.9
-        Piercing: 0.9
-        Heat: 0.7
-  - type: Reflect
-    reflectProb: 0.33
-    innate: true # armor grants a passive shield that does not require concentration to maintain
-    reflects:
-      - Energy
-
-- type: entity
-  parent: ClothingOuterBaseLarge
+  parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing ]
   id: ClothingOuterArmorCult
   name: acolyte armor
   description: An evil-looking piece of cult armor, made of bones.
@@ -252,7 +252,7 @@
         Radiation: 0
         Caustic: 0.75
   - type: GroupExamine
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: Tag
     tags:
@@ -277,7 +277,7 @@
         Heat: 0.65
         Caustic: 0.75
   - type: GroupExamine
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: Tag
     tags:
@@ -328,7 +328,7 @@
     sprite: Clothing/OuterClothing/Armor/magusred.rsi
 
 - type: entity
-  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseCommandContraband]
   id: ClothingOuterArmorCaptainCarapace
   name: "captain's carapace"
   description: "An armored chestpiece that provides protection whilst still offering maximum mobility and flexibility. Issued only to the station's finest."
@@ -354,7 +354,7 @@
   - type: GroupExamine
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing ]
   id: ClothingOuterArmorChangeling
   name: chitinous armor
   description: Inflates the changeling's body into an all-consuming chitinous mass of armor.
@@ -378,14 +378,14 @@
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: GroupExamine
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: Tag
     tags:
       - FullBodyOuter
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing ]
   id: ClothingOuterArmorBone
   name: bone armor
   description: Sits on you like a second skin.
@@ -409,11 +409,11 @@
   - type: Construction
     graph: BoneArmor
     node: armor
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing ]
   id: ClothingOuterArmorPodWars
   name: ironclad II armor
   description: A repurposed suit of ironclad II armor, a relic of the pod wars.
@@ -430,7 +430,7 @@
         Piercing: 0.6
         Heat: 0.5
   - type: GroupExamine
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
 
 - type: entity

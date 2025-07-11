@@ -1,7 +1,7 @@
 - type: entity
   id: BaseCartridgeCaselessRifle
   name: cartridge (.25 rifle)
-  parent: BaseCartridge
+  parent: [ BaseCartridge, BaseRestrictedContraband ]
   abstract: true
   components:
   - type: Tag
@@ -45,21 +45,6 @@
         color: "#dbdbdb"
 
 - type: entity
-  id: CartridgeCaselessRifleRubber
-  name: cartridge (.25 caseless rubber)
-  parent: BaseCartridgeCaselessRifle
-  components:
-  - type: CartridgeAmmo
-    proto: BulletCaselessRifleRubber
-  - type: Sprite
-    layers:
-      - state: base
-        map: [ "enum.AmmoVisualLayers.Base" ]
-      - state: tip
-        map: [ "enum.AmmoVisualLayers.Tip" ]
-        color: "#43c4f7"
-
-- type: entity
   id: CartridgeCaselessRifleIncendiary
   name: cartridge (.25 caseless incendiary)
   parent: BaseCartridgeCaselessRifle
@@ -68,11 +53,11 @@
     proto: BulletCaselessRifleIncendiary
   - type: Sprite
     layers:
-      - state: base
-        map: [ "enum.AmmoVisualLayers.Base" ]
-      - state: tip
-        map: [ "enum.AmmoVisualLayers.Tip" ]
-        color: "#ff6e52"
+    - state: base
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: tip
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#ff6e52"
 
 - type: entity
   id: CartridgeCaselessRifleUranium
@@ -83,11 +68,11 @@
     proto: BulletCaselessRifleUranium
   - type: Sprite
     layers:
-      - state: base
-        map: [ "enum.AmmoVisualLayers.Base" ]
-      - state: tip
-        map: [ "enum.AmmoVisualLayers.Tip" ]
-        color: "#65fe08"
+    - state: base
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: tip
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#65fe08"
 
 - type: entity
   id: CartridgeCaselessRifleShrapnel
@@ -98,8 +83,8 @@
     proto: BulletCaselessRifleShrapnelSpread
   - type: Sprite
     layers:
-      - state: base
-        map: [ "enum.AmmoVisualLayers.Base" ]
-      - state: tip
-        map: [ "enum.AmmoVisualLayers.Tip" ]
-        color: "#FF00FF"
+    - state: base
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: tip
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#FF00FF"

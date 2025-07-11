@@ -20,8 +20,6 @@
       #  mapPath: /Maps/Nonstations/glacier_surface.yml
       #  biome: Snow
       - type: StationJobs
-        overflowJobs:
-          - Passenger
         availableJobs:
           Passenger: [ -1, -1 ]
         # Command

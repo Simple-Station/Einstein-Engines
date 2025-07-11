@@ -1,11 +1,9 @@
-using Content.Server.GameTicking.Rules;
-
 namespace Content.Server.Revolutionary.Components;
 
 /// <summary>
-///     Component for tracking if someone is a Head of Staff.
+///     Component for tracking if someone is a Head of Staff. Used for assigning traitors to kill heads and for revs to check if the heads died or not.
 /// </summary>
-[RegisterComponent, Access(typeof(RevolutionaryRuleSystem))]
+[RegisterComponent]
 public sealed partial class CommandStaffComponent : Component
 {
     public float PsionicBonusModifier = 1;

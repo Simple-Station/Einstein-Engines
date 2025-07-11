@@ -333,7 +333,7 @@
       - state: equipped-OUTERCLOTHING-lines
         color: "#000000"
   - type: TemperatureProtection
-    coefficient: 0.3
+    coolingCoefficient: 0.3
 
 - type: entity
   parent: ClothingOuterBase
@@ -369,7 +369,7 @@
       - state: equipped-OUTERCLOTHING-lines
         color: "#000000"
   - type: TemperatureProtection
-    coefficient: 0.3
+    coolingCoefficient: 0.3
 
 - type: entity
   parent: ClothingOuterBase
@@ -405,7 +405,7 @@
       - state: equipped-OUTERCLOTHING-lines
         color: "#000000"
   - type: TemperatureProtection
-    coefficient: 0.3
+    coolingCoefficient: 0.3
 
 - type: entity
   parent: ClothingOuterBase

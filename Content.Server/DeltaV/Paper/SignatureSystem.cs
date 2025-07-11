@@ -75,7 +75,7 @@ public sealed class SignatureSystem : EntitySystem
             StampedColor = Color.DarkSlateGray, //TODO Make this configurable depending on the pen.
         };
 
-        if (!comp.StampedBy.Contains(stampInfo) && _paper.TryStamp(paper, stampInfo, SignatureStampState, comp))
+        if (!comp.StampedBy.Contains(stampInfo) && _paper.TryStamp((paper, comp), stampInfo, SignatureStampState))
         {
             // Show popups and play a paper writing sound
             if (!HasComp<DevilComponent>(signer)) // Goobstation - Don't display popups for devils, it covers the others.
@@ -89,7 +89,7 @@ public sealed class SignatureSystem : EntitySystem
 
             _audio.PlayPvs(comp.Sound, signer);
 
-            _paper.UpdateUserInterface(paper, comp);
+            _paper.UpdateUserInterface((paper, comp));
 
             var evSignSucessfulEvent = new SignSuccessfulEvent(paper, signer); // Goobstation - Devil Antagonist
             RaiseLocalEvent(paper, ref evSignSucessfulEvent); // Goobstation - Devil Antagonist

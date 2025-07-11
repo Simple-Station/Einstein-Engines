@@ -173,7 +173,7 @@
       implantAction: ActionActivateEmpImplant
     - type: TriggerImplantAction
     - type: EmpOnTrigger
-      range: 1.75
+      range: 2.75
       energyConsumption: 50000
       disableDuration: 10
 
@@ -311,12 +311,23 @@
       - Dead
     - type: Rattle
 
+- type: entity
+  parent: BaseSubdermalImplant
+  id: FakeMindShieldImplant
+  name: fake mindshield implant
+  description: This implant allows the implanter to produce a fake signal that NT security huds use to identify individuals implanted with a mindshield.
+  categories: [ HideSpawnMenu ]
+  components:
+      - type: SubdermalImplant
+        implantAction: FakeMindShieldToggleAction
+      - type: FakeMindShieldImplant
+
 # Sec and Command implants
 
 - type: entity
   parent: BaseSubdermalImplant
   id: MindShieldImplant
-  name: mind-shield implant
+  name: mindshield implant
   description: This implant will ensure loyalty to Nanotrasen and prevent mind control devices.
   categories: [ HideSpawnMenu ]
   components:

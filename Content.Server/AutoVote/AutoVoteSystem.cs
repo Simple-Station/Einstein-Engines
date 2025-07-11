@@ -10,11 +10,11 @@ namespace Content.Server.AutoVote;
 
 public sealed class AutoVoteSystem : EntitySystem
 {
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] public readonly IVoteManager _voteManager = default!;
-    [Dependency] public readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly IConfigurationManager _cfgManager = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly IVoteManager _voteManager = default!;
 
-    public bool _shouldVoteNextJoin = false;
+    private bool _shouldVoteNextJoin;
 
     public override void Initialize()
     {
@@ -37,18 +37,15 @@ public sealed class AutoVoteSystem : EntitySystem
 
     private void CallAutovote()
     {
-        if (!_cfg.GetCVar(CCVars.AutoVoteEnabled))
-            return;
-
         if (_playerManager.PlayerCount == 0)
         {
             _shouldVoteNextJoin = true;
             return;
         }
 
-        if (_cfg.GetCVar(CCVars.MapAutoVoteEnabled))
+        if (_cfgManager.GetCVar(CCVars.MapAutoVoteEnabled))
             _voteManager.CreateStandardVote(null, StandardVoteType.Map);
-        if (_cfg.GetCVar(CCVars.PresetAutoVoteEnabled))
+        if (_cfgManager.GetCVar(CCVars.PresetAutoVoteEnabled))
             _voteManager.CreateStandardVote(null, StandardVoteType.Preset);
     }
 }

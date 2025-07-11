@@ -48,7 +48,7 @@ namespace Content.Server.RatKing
                 return;
 
             //make sure the hunger doesn't go into the negatives
-            if (hunger.CurrentHunger < component.HungerPerArmyUse)
+            if (_hunger.GetHunger(hunger) < component.HungerPerArmyUse)
             {
                 _popup.PopupEntity(Loc.GetString("rat-king-too-hungry"), uid, uid);
                 return;
@@ -78,7 +78,7 @@ namespace Content.Server.RatKing
                 return;
 
             //make sure the hunger doesn't go into the negatives
-            if (hunger.CurrentHunger < component.HungerPerDomainUse)
+            if (_hunger.GetHunger(hunger) < component.HungerPerDomainUse)
             {
                 _popup.PopupEntity(Loc.GetString("rat-king-too-hungry"), uid, uid);
                 return;

@@ -165,18 +165,36 @@ public partial class ChatSystem
     /// <param name="textInput"></param>
     private void TryEmoteChatInput(EntityUid uid, string textInput)
     {
-        var actionLower = textInput.ToLower();
+        var actionTrimmedLower = TrimPunctuation(textInput.ToLower());
         // Replace ending punctuation with nothing
-        if (Punctuation.Any(punctuation => actionLower.EndsWith(punctuation)))
-            actionLower = actionLower.Remove(actionLower.Length - 1);
+        if (Punctuation.Any(punctuation => actionTrimmedLower.EndsWith(punctuation)))
+            actionTrimmedLower = actionTrimmedLower.Remove(actionTrimmedLower.Length - 1);
 
-        if (!_wordEmoteDict.TryGetValue(actionLower, out var emote))
+        if (!_wordEmoteDict.TryGetValue(actionTrimmedLower, out var emote))
             return;
 
         if (!AllowedToUseEmote(uid, emote))
             return;
 
         InvokeEmoteEvent(uid, emote);
+        return;
+
+        static string TrimPunctuation(string textInput)
+        {
+            var trimEnd = textInput.Length;
+            while (trimEnd > 0 && char.IsPunctuation(textInput[trimEnd - 1]))
+            {
+                trimEnd--;
+            }
+
+            var trimStart = 0;
+            while (trimStart < trimEnd && char.IsPunctuation(textInput[trimStart]))
+            {
+                trimStart++;
+            }
+
+            return textInput[trimStart..trimEnd];
+        }
     }
     /// <summary>
     /// Checks if we can use this emote based on the emotes whitelist, blacklist, and availibility to the entity.

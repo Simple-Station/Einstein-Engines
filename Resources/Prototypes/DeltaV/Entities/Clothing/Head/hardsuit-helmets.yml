@@ -1,6 +1,6 @@
 # Standard Combat Hardsuits
 - type: entity
-  parent: ClothingHeadHardsuitWithLightBase
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitCombatStandard
   categories: [ HideSpawnMenu ]
   name: combat hardsuit helmet
@@ -35,7 +35,7 @@
 
 # Medical Combat Hardsuits
 - type: entity
-  parent: ClothingHeadHardsuitWithLightBase
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitCombatMedical
   categories: [ HideSpawnMenu ]
   name: medical combat hardsuit helmet
@@ -70,7 +70,7 @@
 
 # Riot Combat Hardsuits
 - type: entity
-  parent: ClothingHeadHardsuitWithLightBase
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitCombatRiot
   categories: [ HideSpawnMenu ]
   name: riot combat hardsuit helmet
@@ -105,7 +105,7 @@
 
 # Advanced Combat Hardsuits
 - type: entity
-  parent: ClothingHeadHardsuitWithLightBase
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitCombatAdvanced
   categories: [ HideSpawnMenu ]
   name: advanced combat hardsuit helmet

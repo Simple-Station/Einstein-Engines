@@ -1,11 +1,15 @@
 using System.Linq;
+using Content.Shared.Administration.Logs;
 using Content.Server.Administration.Systems;
-using Content.Server.Chat.Managers;
-using Content.Shared.GameTicking;
-using Content.Server.Players.PlayTimeTracking;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
+using Content.Server.Chat.Managers;
 using Content.Shared.Customization.Systems;
+using Content.Shared.Database;
+using Content.Shared.GameTicking;
+using Content.Shared.Humanoid;
+using Content.Shared.Humanoid.Prototypes;
+using Content.Server.Players.PlayTimeTracking;
 using Content.Shared.Players;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
@@ -17,9 +21,6 @@ using Robust.Shared.Random;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
 using Timer = Robust.Shared.Timing.Timer;
-using Content.Shared.Humanoid.Prototypes;
-using Content.Shared.Administration.Logs;
-using Content.Shared.Database;
 
 namespace Content.Server.Traits;
 
@@ -42,10 +43,16 @@ public sealed class TraitSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
+        SubscribeLocalEvent<LoadProfileExtensionsEvent>(OnProfileLoad);
     }
 
     // When the player is spawned in, add all trait components selected during character creation
     private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent args) =>
+        ApplyTraits(args.Mob, args.JobId, args.Profile,
+            _playTimeTracking.GetTrackerTimes(args.Player), args.Player.ContentData()?.Whitelisted ?? false);
+
+
+    private void OnProfileLoad(LoadProfileExtensionsEvent args) =>
         ApplyTraits(args.Mob, args.JobId, args.Profile,
             _playTimeTracking.GetTrackerTimes(args.Player), args.Player.ContentData()?.Whitelisted ?? false);
 
@@ -153,7 +160,7 @@ public sealed class TraitSystem : EntitySystem
     /// </summary>
     private void VaporizeCheater (Robust.Shared.Player.ICommonSession targetPlayer)
     {
-        _adminSystem.Erase(targetPlayer);
+        _adminSystem.Erase(targetPlayer.UserId);
 
         var feedbackMessage = $"[font size=24][color=#ff0000]{"You have spawned in with an illegal trait point total. If this was a result of cheats, then your nonexistence is a skill issue. Otherwise, feel free to click 'Return To Lobby', and fix your trait selections."}[/color][/font]";
         _chatManager.ChatMessageToOne(

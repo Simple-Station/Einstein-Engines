@@ -1,5 +1,5 @@
+using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Mind;
-using Content.Shared.Objectives;
 using Content.Shared.Objectives.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -92,7 +92,18 @@ public abstract class SharedObjectivesSystem : EntitySystem
     }
 
     /// <summary>
-    /// Get the title, description, icon and progress of an objective using <see cref="ObjectiveGetProgressEvent"/>.
+    /// Spawns and assigns an objective for a mind.
+    /// The objective is not added to the mind's objectives, mind system does that in TryAddObjective.
+    /// If the objective could not be assigned the objective is deleted and false is returned.
+    /// </summary>
+    public bool TryCreateObjective(Entity<MindComponent> mind, EntProtoId proto, [NotNullWhen(true)] out EntityUid? objective)
+    {
+        objective = TryCreateObjective(mind.Owner, mind.Comp, proto);
+        return objective != null;
+    }
+
+    /// <summary>
+    /// Get the title, description, icon and progress of an objective using <see cref="ObjectiveGetInfoEvent"/>.
     /// If any of them are null it is logged and null is returned.
     /// </summary>
     /// <param name="uid"/>ID of the condition entity</param>

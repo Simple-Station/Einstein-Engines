@@ -1,21 +1,21 @@
 <Document>
   # Revolutionaries
 
-  - Revolutionaries are antagonists that are sponsored by the Syndicate to take over the station.
+  - Revolutionaries are antagonists who are sponsored by the Syndicate to take over the station.
 
   ## Head Revolutionaries
 
-<Box>
-  <GuideEntityEmbed Entity="RevolutionaryManifesto" Caption="Revolutionary Manifesto"/>
-</Box>
+  <Box>
+    <GuideEntityEmbed Entity="RevolutionaryManifesto" Caption="Revolutionary Manifesto"/>
+  </Box>
 
   [color=#5e9cff]Head Revolutionaries[/color] are chosen at the start of the shift and are tasked with taking over the station by killing, exiling or cuffing all of the Command staff. Head Revolutionaries will be given a [color=#a4885c]Revolutionary Manifesto[/color] to aid them.
 
   ## Conversion
 
   <Box>
-  <GuideEntityEmbed Entity="RevolutionaryManifesto" Caption="Revolutionary Manifesto"/>
-</Box>
+    <GuideEntityEmbed Entity="RevolutionaryManifesto" Caption="Revolutionary Manifesto"/>
+  </Box>
 
   You can convert crew members by using a [color=#a4885c]Revolutionary Manifesto[/color] clicking someone with it.
 
@@ -27,12 +27,12 @@
 
   ## Revolutionary
 
-  A [color=#ff0000]Revolutionary[/color] is the result of being converted by a [color=#5e9cff]Head Revolutionary[/color]. Revolutionaries are underlings of the Head Revolutionaries and should follow orders given by them and prioritize their well-being over anything else, because if they die, you will lose.
+  A [color=#ff0000]Revolutionary[/color] is the result of being converted by a [color=#5e9cff]Head Revolutionary[/color]. Revolutionaries are underlings of the Head Revolutionaries and should follow orders given by them and prioritize their well-being over anything else because if the [color=#5e9cff]Head Revolutionaries[/color] die the Revolution will fail.
   Keep in mind that you can't convert others as a regular revolutionary, only your boss can do that.
 
   ## Objectives
 
-  You must eliminate, exile or arrest all of the following Command staff on station in no particular order.
+  You must eliminate, exile, or arrest all of the following Command staff on station in no particular order.
   - Captain
   - Head of Personnel
   - Chief Engineer

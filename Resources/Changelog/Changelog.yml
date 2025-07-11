@@ -16577,3 +16577,72 @@ Entries:
   id: 7296
   time: '2025-07-04T21:03:29.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2494
+- author: Mike32oz
+  changes:
+    - type: Fix
+      message: Ghostbar fixed. Now you can move again.
+  id: 7297
+  time: '2025-07-08T09:44:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2497
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added code support for Antag-Specific Traits & Loadouts.
+    - type: Add
+      message: Nuclear Operatives now spawn with Traits & Loadouts.
+    - type: Add
+      message: >-
+        Added support for Nationality, Employer, and Lifepath to all directly
+        add bonus traits.
+    - type: Add
+      message: >-
+        Paradox Anomalies now also spawn with the victim's full list of Traits &
+        Loadouts. Thus a paradox anomaly duplicating the Head of Security will
+        also spawn with the head of security's selection of "HoS Gun", and is
+        therefore also a valid objective target.
+    - type: Tweak
+      message: >-
+        Markings now apply AFTER traits and loadouts, meaning that they can now
+        go on top of cybernetic limbs.
+  id: 7298
+  time: '2025-07-08T17:26:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2498
+- author: Lumminal
+  changes:
+    - type: Add
+      message: >-
+        Tape recorders and cassettes can now be crafted in autolathes for
+        recording crew speech.
+    - type: Add
+      message: Reporters, detectives have tape recorder in their loadouts.
+  id: 7299
+  time: '2025-07-08T19:36:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2455
+- author: Spatison
+  changes:
+    - type: Add
+      message: A large amount of content has been migrated from Wizden
+  id: 7300
+  time: '2025-07-09T15:46:20.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2449
+- author: Ghost581
+  changes:
+    - type: Tweak
+      message: Jetpacks can go on suit storage slot
+  id: 7301
+  time: '2025-07-10T16:00:26.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2501
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: Now you can see if there's a beaker in the chemmaster.
+  id: 7302
+  time: '2025-07-10T16:03:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2492
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added a PDA slot for storing your character's passport.
+  id: 7303
+  time: '2025-07-10T17:18:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2499

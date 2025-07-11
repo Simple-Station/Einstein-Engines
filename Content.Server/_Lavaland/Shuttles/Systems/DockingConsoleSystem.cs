@@ -1,12 +1,9 @@
-using Content.Server._Lavaland.Procedural.Components;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Events;
 using Content.Server.Shuttles.Systems;
 using Content.Shared._Lavaland.Shuttles;
 using Content.Shared._Lavaland.Shuttles.Components;
 using Content.Shared._Lavaland.Shuttles.Systems;
-using Content.Server.Station.Components;
-using Content.Server.Station.Systems;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Systems;
 using Content.Shared.Timing;
@@ -14,7 +11,6 @@ using Content.Shared.Whitelist;
 using Robust.Server.GameObjects;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
 using Robust.Shared.Utility;
 using Timer = Robust.Shared.Timing.Timer;
 
@@ -29,7 +25,7 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
     [Dependency] private readonly IMapManager _mapMan = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
 
-    private readonly ResPath _miningShuttlePath = new("/Maps/_Lavaland/mining.yml");
+    private static readonly ResPath MiningShuttlePath = new ResPath("/Maps/_Lavaland/mining.yml");
 
     public override void Initialize()
     {
@@ -157,7 +153,7 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
             return;
 
         _mapSystem.CreateMap(out var dummyMap);
-        _mapLoader.TryLoadGrid(dummyMap, _miningShuttlePath, out _);
+        _mapLoader.TryLoadGrid(dummyMap, MiningShuttlePath, out _);
 
         // Find the target
         var targetMap = Transform(ent).MapID;

@@ -10,11 +10,13 @@
     - type: loadout
       id: LoadoutBackpackDuffelMime
 
-#- type: characterItemGroup
-#  id: LoadoutMimeBelt
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutMimeBelt
+  maxItems: 1
+  items:
+  - type: loadout
+    id: LoadoutBeltSuspendersBlack
+
 #- type: characterItemGroup
 #  id: LoadoutMimeEars
 #  maxItems: 1

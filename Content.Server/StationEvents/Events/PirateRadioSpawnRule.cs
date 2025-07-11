@@ -62,11 +62,9 @@ public sealed class PirateRadioSpawnRule : StationEventSystem<PirateRadioSpawnRu
 
         var randomOffset = _random.NextVector2(ent.Comp.MinimumDistance, ent.Comp.MaximumDistance);
         var randomMap = _random.Pick(ent.Comp.PirateRadioShuttlePath);
-        var randomMapPath = new ResPath(randomMap);
         var mapId = Transform(targetStation).MapID;
 
-        if (!_map.TryLoadGrid(mapId, randomMapPath, out var outpostId, offset: randomOffset))
-            return;
+        _map.TryLoadGrid(mapId, randomMap, out _, offset: randomOffset);
     }
 
     private void SpawnDebris(Entity<PirateRadioSpawnRuleComponent> ent)

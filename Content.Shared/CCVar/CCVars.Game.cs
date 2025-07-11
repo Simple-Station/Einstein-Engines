@@ -54,30 +54,6 @@ public sealed partial class CCVars
         GameLobbyEnableWin = CVarDef.Create("game.enablewin", true, CVar.ARCHIVE);
 
     /// <summary>
-    ///     Minimum time between Basic station events in seconds
-    /// </summary>
-    public static readonly CVarDef<int> // 5 Minutes
-        GameEventsBasicMinimumTime = CVarDef.Create("game.events_basic_minimum_time", 300, CVar.SERVERONLY | CVar.ARCHIVE);
-
-    /// <summary>
-    ///     Maximum time between Basic station events in seconds
-    /// </summary>
-    public static readonly CVarDef<int> // 25 Minutes
-        GameEventsBasicMaximumTime = CVarDef.Create("game.events_basic_maximum_time", 1500, CVar.SERVERONLY | CVar.ARCHIVE);
-
-    /// <summary>
-    ///     Minimum time between Ramping station events in seconds
-    /// </summary>
-    public static readonly CVarDef<int> // 4 Minutes
-        GameEventsRampingMinimumTime = CVarDef.Create("game.events_ramping_minimum_time", 240, CVar.SERVERONLY | CVar.ARCHIVE);
-
-    /// <summary>
-    ///     Maximum time between Ramping station events in seconds
-    /// </summary>
-    public static readonly CVarDef<int> // 12 Minutes
-        GameEventsRampingMaximumTime = CVarDef.Create("game.events_ramping_maximum_time", 720, CVar.SERVERONLY | CVar.ARCHIVE);
-
-    /// <summary>
     ///     Minimum time between Oscillating station events in seconds. This is the bare minimum which will never be violated, unlike with ramping events.
     /// </summary>
     public static readonly CVarDef<int> // 40 seconds
@@ -147,6 +123,12 @@ public sealed partial class CCVars
         GameRoleTimers = CVarDef.Create("game.role_timers", true, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
+    ///     Override default role requirements using a <see cref="CharacterRequirementOverridePrototype"/>
+    /// </summary>
+    public static readonly CVarDef<string>
+        GameRoleTimerOverride = CVarDef.Create("game.role_timer_override", "", CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
     /// Whether or not disconnecting inside of a cryopod should remove the character or just store them until they reconnect.
     /// </summary>
     public static readonly CVarDef<bool>
@@ -212,8 +194,8 @@ public sealed partial class CCVars
     /// <summary>
     /// Minimal overall played time.
     /// </summary>
-    public static readonly CVarDef<int> PanicBunkerMinOverallHours =
-        CVarDef.Create("game.panic_bunker.min_overall_hours", 10, CVar.SERVERONLY);
+    public static readonly CVarDef<int> PanicBunkerMinOverallMinutes =
+        CVarDef.Create("game.panic_bunker.min_overall_minutes", 600, CVar.SERVERONLY);
 
     /// <summary>
     /// A custom message that will be used for connections denied to the panic bunker
@@ -254,8 +236,8 @@ public sealed partial class CCVars
     /// <summary>
     /// Maximum overall played time allowed to access baby jailed servers.
     /// </summary>
-    public static readonly CVarDef<int> BabyJailMaxOverallHours =
-        CVarDef.Create("game.baby_jail.max_overall_hours", 2, CVar.SERVERONLY);
+    public static readonly CVarDef<int> BabyJailMaxOverallMinutes =
+        CVarDef.Create("game.baby_jail.max_overall_minutes", 120, CVar.SERVERONLY);
 
     /// <summary>
     /// A custom message that will be used for connections denied due to the baby jail.
@@ -393,6 +375,12 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> RoundEndPVSOverrides =
         CVarDef.Create("game.round_end_pvs_overrides", true, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     If true, contraband severity can be viewed in the examine menu
+    /// </summary>
+    public static readonly CVarDef<bool> ContrabandExamine =
+        CVarDef.Create("game.contraband_examine", true, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     /// Set to true to enable the dynamic hostname system.

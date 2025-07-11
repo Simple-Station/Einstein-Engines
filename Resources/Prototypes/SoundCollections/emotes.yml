@@ -10,6 +10,19 @@
     - /Audio/Voice/Human/womanlaugh.ogg
 
 - type: soundCollection
+  id: MaleCough
+  files:
+    - /Audio/Voice/Human/male_cough_1.ogg
+    - /Audio/Voice/Human/male_cough_2.ogg
+
+- type: soundCollection
+  id: FemaleCough
+  files:
+    - /Audio/Voice/Human/female_cough_1.ogg
+    - /Audio/Voice/Human/female_cough_2.ogg
+
+
+- type: soundCollection
   id: Claps
   files:
     - /Audio/Effects/Emotes/clap1.ogg
@@ -81,18 +94,23 @@
   - /Audio/Items/Toys/weh.ogg
 
 - type: soundCollection
+  id: Hew
+  files:
+  - /Audio/Items/Toys/hew.ogg
+
+- type: soundCollection
   id: IPCWhirrs
   files:
-    - /Audio/Voice/IPC/whirr1.ogg
-    - /Audio/Voice/IPC/whirr2.ogg
-    - /Audio/Voice/IPC/whirr3.ogg
+  - /Audio/Voice/IPC/whirr1.ogg
+  - /Audio/Voice/IPC/whirr2.ogg
+  - /Audio/Voice/IPC/whirr3.ogg
 
 - type: soundCollection
   id: Mars
   files:
-    - /Audio/Voice/Shadowkin/mar.ogg
+  - /Audio/Voice/Shadowkin/mar.ogg
 
 - type: soundCollection
   id: Wurble
   files:
-    - /Audio/Voice/Shadowkin/wurble.ogg
+  - /Audio/Voice/Shadowkin/wurble.ogg
