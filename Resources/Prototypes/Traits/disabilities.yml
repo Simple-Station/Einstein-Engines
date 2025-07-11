@@ -1,7 +1,7 @@
 - type: trait
   id: Blindness
   category: Visual
-  points: 6
+  points: 8
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -29,7 +29,7 @@
 - type: trait
   id: Nearsighted
   category: Visual
-  points: 1
+  points: 2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -86,7 +86,7 @@
 - type: trait
   id: Paracusia
   category: Auditory
-  points: 1
+  points: 2
   functions:
     - !type:TraitAddComponent
       components:
@@ -184,7 +184,7 @@
 - type: trait
   id: BadKnees
   category: Physical
-  points: 4
+  points: 5
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
@@ -254,7 +254,7 @@
 - type: trait
   id: BloodDeficiency
   category: Physical
-  points: 4
+  points: 6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -267,10 +267,6 @@
         - IPC
         - Lamia
         - Plasmaman
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - PlateletFactories
   functions:
     - !type:TraitAddComponent
       components:

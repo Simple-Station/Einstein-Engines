@@ -5,7 +5,7 @@ namespace Content.Shared.CCVar;
 public sealed partial class CCVars
 {
     public static readonly CVarDef<float> GhostRespawnTime =
-        CVarDef.Create("ghost.respawn_time", 15f, CVar.SERVERONLY);
+        CVarDef.Create("ghost.respawn_time", 10f, CVar.SERVERONLY);
 
     public static readonly CVarDef<int> GhostRespawnMaxPlayers =
         CVarDef.Create("ghost.respawn_max_players", 40, CVar.SERVERONLY);
