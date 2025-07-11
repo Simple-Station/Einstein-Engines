@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "license": "All rights reserved to Hullrot - Sector Crescent",
+  "copyright": "All rights reserved , Do not copy , distribute or use without permission",
+  "size": {
+    "x": 281,
+    "y": 53
+  },
+    "states": [
+        {
+            "name": "dsm"
+        },
+        {
+            "name": "ncwl"
+        },
+        {
+            "name": "csa"
+        },
+        {
+            "name": "shi"
+        },
+        {
+            "name": "srm"
+        },
+        {
+            "name": "tfsc"
+        },
+        {
+            "name": "fourfamilies"
+        },
+        {
+            "name": "tsp"
+        }
+    ]
+}
