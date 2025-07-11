@@ -11,8 +11,8 @@
         - type: PreventPilot
         - type: VesselIcon
           iffIcon:
-            sprite: Structures/Wallmounts/barsign.rsi
-            state: spacebucks
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: outpost
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Port Vladzena'

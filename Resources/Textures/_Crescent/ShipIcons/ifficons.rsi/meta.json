@@ -6,30 +6,39 @@
     "x": 281,
     "y": 53
   },
-    "states": [
-        {
-            "name": "dsm"
-        },
-        {
-            "name": "ncwl"
-        },
-        {
-            "name": "csa"
-        },
-        {
-            "name": "shi"
-        },
-        {
-            "name": "srm"
-        },
-        {
-            "name": "tfsc"
-        },
-        {
-            "name": "fourfamilies"
-        },
-        {
-            "name": "tsp"
-        }
-    ]
+  "states": [
+    {
+      "name": "asteroid"
+    },
+    {
+      "name": "battleship"
+    },
+    {
+      "name": "bigindustrial"
+    },
+    {
+      "name": "cruiser"
+    },
+    {
+      "name": "corvette"
+    },
+    {
+      "name": "dreadnought"
+    },
+    {
+      "name": "fighter"
+    },
+    {
+      "name": "frigate"
+    },
+    {
+      "name": "industrial"
+    },
+    {
+      "name": "outpost"
+    },
+    {
+      "name": "pointofinterest"
+    }
+  ]
 }
