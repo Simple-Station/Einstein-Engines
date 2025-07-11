@@ -406,12 +406,17 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
                 float xSpaceRequired = ShipSelectionDotRadius;
                 float ySpaceRequired = ShipSelectionDotRadius;
                 Texture? icon = null;
+                Vector2 textureOffset = Vector2.Zero;
                 if (EntManager.TryGetComponent<VesselIconComponent>(grid.Owner, out var vesselIcon) &&
                     vesselIcon.Icon != null)
                 {
                     icon = _sprites.Frame0(vesselIcon.Icon);
-                    xSpaceRequired = icon.Width;
-                    ySpaceRequired = icon.Height;
+                    xSpaceRequired = icon.Width/2;
+                    ySpaceRequired = icon.Height/2;
+                    textureOffset.X = -icon.Width;
+                    textureOffset.Y= -icon.Height;
+                    textureOffset /= 2;
+                    Logger.Debug($"Width {xSpaceRequired} Height {ySpaceRequired}");
                 }
                 // transform vector from worldPosition to UIPosition.
                 Vector2 UIPosVector = (-rot).RotateVec(_transform.GetWorldPosition(grid.Owner) - mapPos.Position);
@@ -423,9 +428,9 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
                 // collision with oX axis
                 Vector2 XTargetScaled = MidPointVector + UIPosVector.Normalized() * Math.Abs((MidPoint-ySpaceRequired) / UIDirection.X);
                 // fucked up maths case!! SPCR
-                if(YTargetScaled.X < xSpaceRequired)
+                if(YTargetScaled.X < 0)
                     YTargetScaled = XTargetScaled;
-                if(XTargetScaled.Y < ySpaceRequired)
+                if(XTargetScaled.Y < 0)
                     XTargetScaled = YTargetScaled;
                 //handle.DrawLine(MidPointVector, ScalePosition(UIPosVector), Color.AntiqueWhite);
                 var gridCentre = Vector2.Transform(gridBody.LocalCenter, matty);
@@ -454,7 +459,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
                     }
 
                     if (icon is not null)
-                        handle.DrawTexture(icon, YTargetScaled, color);
+                        handle.DrawTexture(icon, YTargetScaled + textureOffset, color);
                     else
                         handle.DrawCircle(YTargetScaled, ShipSelectionDotRadius, color, true);
                     localShips[grid.Owner].UIPosition = YTargetScaled;
@@ -470,7 +475,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
                         handle.DrawString(Font,textUiPosition , labelText, color);
                     }
                     if (icon is not null)
-                        handle.DrawTexture(icon, XTargetScaled, color);
+                        handle.DrawTexture(icon, XTargetScaled + textureOffset, color);
                     else
                         handle.DrawCircle(XTargetScaled, ShipSelectionDotRadius, color, true);
                     localShips[grid.Owner].UIPosition = XTargetScaled;

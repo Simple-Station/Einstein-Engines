@@ -359,6 +359,14 @@ public sealed class StationSystem : EntitySystem
         var stationMember = EnsureComp<StationMemberComponent>(mapGrid);
         stationMember.Station = station;
         stationData.Grids.Add(mapGrid);
+        if (stationData is not null && stationData.StationConfig is not null &&
+            stationData.StationConfig.gridComponents is not null)
+        {
+            foreach (var (_, comp) in stationData.StationConfig.gridComponents)
+            {
+                EntityManager.AddComponent(mapGrid, comp, true);
+            }
+        }
 
         RaiseLocalEvent(station, new StationGridAddedEvent(mapGrid, false), true);
 
