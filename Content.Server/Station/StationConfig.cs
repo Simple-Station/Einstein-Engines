@@ -15,5 +15,8 @@ public sealed partial class StationConfig
 
     [DataField("components", required: true)]
     public ComponentRegistry StationComponentOverrides = default!;
+
+    [DataField("gridComponents", required: true)]
+    public ComponentRegistry gridComponents = default!;
 }
 

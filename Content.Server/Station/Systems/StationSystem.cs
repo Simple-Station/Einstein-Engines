@@ -287,6 +287,8 @@ public sealed class StationSystem : EntitySystem
         foreach (var grid in entry)
         {
             AddGridToStation(station, grid, null, data, name);
+            foreach (var (_, component) in stationConfig.gridComponents)
+                EntityManager.AddComponent(grid, component, true);
         }
 
         if (TryComp<StationRandomTransformComponent>(station, out var random))
