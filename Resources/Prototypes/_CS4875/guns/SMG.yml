@@ -1,0 +1,52 @@
+- type: entity
+  name: sten MK2 SMG
+  parent: BaseWeaponSubMachineGun
+  id: N14WeaponSMG9mmCanadian
+  description: insert description
+  components:
+  - type: Clothing
+    sprite: _Nuclear14/Objects/Weapons/Guns/SMGs/Sten.rsi
+  - type: Sprite
+    sprite: _Nuclear14/Objects/Weapons/Guns/SMGs/sten.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    fireRate: 8.5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/smg.ogg
+    selectedMode: Fullauto
+    availableModes:
+    - Fullauto
+    minAngle: 8
+    maxAngle: 24
+    angleIncrease: 4
+    angleDecay: 16
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/_Nuclear14/Weapons/Effects/Reload/SMGs/smg_cock.ogg
+  - type: GunWieldBonus
+    minAngle: -7
+    maxAngle: -15
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolSubMachineGun
+        insertSound: /Audio/_Nuclear14/Weapons/Effects/Reload/SMGs/smg_magin.ogg
+        ejectSound: /Audio/_Nuclear14/Weapons/Effects/Reload/SMGs/smg_magout.ogg
+        whitelist:
+          tags:
+            - MagazinePistolSubMachineGun
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
+  - type: StaticPrice
+    price: 500
+  - type: Wieldable
