@@ -7896,7 +7896,7 @@ entities:
     - type: Transform
       pos: -0.49077123,2.7077324
       parent: 1
-- proto: SpawnPointChemcook
+- proto: SpawnPointTraumasec
   entities:
   - uid: 1467
     components:

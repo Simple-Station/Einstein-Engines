@@ -15,8 +15,8 @@
 - type: entity
   parent: ClothingHeadHelmetBasic
   id: ClothingHeadHelmetSyndicateBasicInterdyne
-  name: ballistic helmet
-  description: A kevlar-plated nanoweave infantry helmet. Standard issue for TFSC.
+  name: traumasec ballistic helmet
+  description: A kevlar-plated nanoweave infantry helmet. Standard issue for interdyne's traumasec.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/Syndicate/Head/ipm_helmet.rsi
@@ -197,7 +197,7 @@
 
 - type: entity
   parent: ClothingHeadBase
-  id: ClothingHeadHatSyndicateDoctor
+  id: ClothingHeadHatSyndicateInterdyne
   name: ripperdoc's bandana
   description: A head bandana to keep blood and sweat from your brow while you're guts-deep in today's batch.
   components:
@@ -208,7 +208,7 @@
 
 - type: entity
   parent: ClothingHeadBase
-  id: ClothingHeadHatSyndicateDoctorCap
+  id: ClothingHeadHatSyndicateInterdyneCap
   name: interdyne cap
   description: A red cap with a stamped interdyne logo on the front.
   components:
@@ -219,7 +219,7 @@
 
 - type: entity
   parent: ClothingHeadBase
-  id: ClothingHeadHatSyndicateDoctorBeret
+  id: ClothingHeadHatSyndicateInterdyneBeret
   name: coordinator's beret
   description: A red beret with a stamped Interdyne logo, given out to Interdyne coordinators.
   components:
