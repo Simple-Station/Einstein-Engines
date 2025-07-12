@@ -1,8 +1,8 @@
 - type: job
-  id: ChemcookNCSP
-  name: job-name-chemcook
-  description: job-description-chemcook
-  playTimeTracker: JobChemcookNCSP
+  id: TraumasecNCSP
+  name: job-name-traumasec
+  description: job-description-traumasec
+  playTimeTracker: JobTraumasecNCSP
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 8000
@@ -17,12 +17,12 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-syndoc
+        rank: crescent-rank-agent
       - type: CPRTraining
   weight: 16
-  startingGear: ChemcookGear
+  startingGear: TraumasecGear
   alwaysUseSpawner: true
-  icon: "JobIconSyndieChemcook"
+  icon: "JobIconSyndieTraumasec"
   requireAdminNotify: false
   supervisors: You answer to the interests of the Interdyne Pharmaceuticals Company. Whichever you decide with your colleagues they be.
   canBeAntag: false
@@ -37,15 +37,12 @@
   - Captain # Frontier
 
 - type: startingGear
-  id: ChemcookGear
+  id: TraumasecGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitSyndicateInterdyne
     gloves: ClothingHandsGlovesFingerless
     mask: ClothingMaskSyndicateFacemask
     shoes: ClothingShoesBootsCombat
-    outerClothing: ClothingOuterArmorSyndicateArmorvestInterdyne
-    belt: ClothingBeltSyndicateWebbingInterdyne
-    head: ClothingHeadHelmetSyndicateBasicInterdyne
-    id: ChemcookPDA
+    id: TraumasecPDA
     back: ClothingBackpackNCSPFilledInfanteer
     ears: ClothingHeadsetNCSPInterdyne

@@ -6,8 +6,9 @@
   stations:
     Precinct9:
       stationProto: StandardCrescentStation
-      components:
+      gridComponents:
         - type: BlockShipWeaponProjectileGrid
+      components:
         - type: StationNameSetup
           mapNameTemplate: 'TSP Proctor Annalise'
         - type: Grammar

@@ -6,9 +6,9 @@
   stations:
     Jackal:
       stationProto: StandardCrescentStation
-      components:
+      gridComponents:
         - type: BlockShipWeaponProjectileGrid
-        - type: PreventPilot
+      components:
         - type: StationNameSetup
           mapNameTemplate: 'GSC Jackal'
         - type: VesselDesignation

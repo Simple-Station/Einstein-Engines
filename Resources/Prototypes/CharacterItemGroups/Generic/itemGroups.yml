@@ -420,4 +420,12 @@
       id: LoadoutUniformSHISuitSecurityUA
     - type: loadout
       id: LoadoutUniformSHISuitHighsec
+    - type: loadout
+      id: LoadoutUniformJumpsuitSyndicateInterdyne
+    - type: loadout
+      id: LoadoutClothingUniformJumpsuitSyndicateInterdyneWhiteUniform
+    - type: loadout
+      id: LoadoutUniformJumpsuitSyndicateInterdyneRedUniform
+    - type: loadout
+      id: LoadoutUniformJumpsuitSyndicateInterdyneScrubs
     #Hullrot edit end

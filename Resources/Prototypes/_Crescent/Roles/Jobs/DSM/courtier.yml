@@ -11,7 +11,7 @@
         - Human
     - !type:FactionRequirement
       factionID: "DSM"
-  weight: 23
+  weight: 78
   startingGear: CourtierGear
   alwaysUseSpawner: true
   icon: "JobIconImperialCourtier"

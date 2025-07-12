@@ -57,7 +57,7 @@
       group: LoadoutEVASuit
     - !type:CharacterJobRequirement
       jobs:
-        - ChemcookNCSP
+        - TraumasecNCSP
         - ForemanNCSP
         - InfanteerNCSP
         - IntelligenceOfficerNCSP
@@ -68,6 +68,7 @@
         - RipperdocNCSP
         - ShipbreakerNCSP
         - TechnicianNCSP
+        - CoordinatorNCSP
 
 - type: loadout
   id: LoadoutHeadTFSCEVA
@@ -80,7 +81,7 @@
       group: LoadoutEVASuit
     - !type:CharacterJobRequirement
       jobs:
-        - ChemcookNCSP
+        - TraumasecNCSP
         - ForemanNCSP
         - InfanteerNCSP
         - IntelligenceOfficerNCSP
@@ -91,6 +92,7 @@
         - RipperdocNCSP
         - ShipbreakerNCSP
         - TechnicianNCSP
+        - CoordinatorNCSP
 
 - type: loadout
   id: LoadoutOuterArmorDSMEVA

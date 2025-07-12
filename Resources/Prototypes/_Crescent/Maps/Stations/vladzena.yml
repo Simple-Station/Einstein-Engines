@@ -6,9 +6,14 @@
   stations:
     Vladzena:
       stationProto: StandardCrescentStation
-      components:
+      gridComponents:
         - type: BlockShipWeaponProjectileGrid
         - type: PreventPilot
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: outpost
+      components:
         - type: StationNameSetup
           mapNameTemplate: 'Port Vladzena'
         - type: VesselDesignation
