@@ -63,8 +63,6 @@ namespace Content.Client.Lobby.UI
         private readonly RoleSystem _roleSystem;
 
         private FlavorText.FlavorText? _flavorText;
-        private BoxContainer _ccustomspecienamecontainerEdit => CCustomSpecieName;
-        private LineEdit _customspecienameEdit => CCustomSpecieNameEdit;
         private TextEdit? _flavorTextEdit;
 
         private bool _exporting;
