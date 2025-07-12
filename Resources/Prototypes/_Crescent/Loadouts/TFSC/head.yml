@@ -30,3 +30,50 @@
         - InfanteerNCSP
         - ShipbreakerNCSP
         - TechnicianNCSP
+
+- type: loadout
+  id: LoadoutHeadHatSyndicateInterdyne
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatSyndicateInterdyne
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - TraumasecNCSP
+        - RipperdocNCSP
+        - CoordinatorNCSP
+
+- type: loadout
+  id: LoadoutHeadHatSyndicateInterdyneCap
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatSyndicateInterdyneCap
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - TraumasecNCSP
+        - RipperdocNCSP
+        - CoordinatorNCSP
+
+- type: loadout
+  id: LoadoutHeadHelmetSyndicateBasicInterdyne
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHelmetSyndicateBasicInterdyne
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - TraumasecNCSP
+        - CoordinatorNCSP

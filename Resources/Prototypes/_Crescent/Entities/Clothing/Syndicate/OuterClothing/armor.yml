@@ -276,13 +276,6 @@
     sprite: _Crescent/Clothing/Syndicate/OuterClothing/ipm_labcoat.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/Syndicate/OuterClothing/ipm_labcoat.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Slash: 0.85
-        Piercing: 0.85
-        Heat: 0.70
-        Caustic: 0.7
   - type: ClothingSpeedModifier
     walkModifier: 1.0
     sprintModifier: 1.0
@@ -328,13 +321,17 @@
     sprite: _Crescent/Clothing/Syndicate/OuterClothing/ipm_arpon.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/Syndicate/OuterClothing/ipm_arpon.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Slash: 0.85
-        Piercing: 0.85
-        Heat: 0.70
-        Caustic: 0.7
+  - type: DegradeableArmor
+    armorMaxHealth: 500
+    armorType: Metallic
+    armorRepair: Kevlar
+    initialModifiers:
+      flatReductions:
+        Blunt: 10
+        Slash: 15
+        Piercing: 20
+        Heat: 15
+        Caustic: 25
   - type: ClothingSpeedModifier
     walkModifier: 1.0
     sprintModifier: 1.0
@@ -377,8 +374,8 @@
 - type: entity
   parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorSyndicateArmorvestInterdyne
-  name: ballistic vest
-  description: A bulky kevlar-padded ballistic vest, touched with the colors of the TFSC.
+  name: traumasec ballistic vest
+  description: A bulky kevlar-padded ballistic vest, touched with the colors of interdyne.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/Syndicate/OuterClothing/ipm_vest.rsi

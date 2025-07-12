@@ -9,7 +9,7 @@
       group: LoadoutBelt
     - !type:CharacterJobRequirement
       jobs:
-        - ChemcookNCSP
+        - TraumasecNCSP
         - ForemanNCSP
         - InfanteerNCSP
         - IntelligenceOfficerNCSP
@@ -20,3 +20,4 @@
         - RipperdocNCSP
         - ShipbreakerNCSP
         - TechnicianNCSP
+        - CoordinatorNCSP

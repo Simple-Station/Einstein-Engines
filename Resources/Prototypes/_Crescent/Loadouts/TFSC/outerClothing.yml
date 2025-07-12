@@ -1,0 +1,56 @@
+- type: loadout
+  id: LoadoutOuterArmorSyndicateCoordinator
+  category: Outer
+  cost: 0
+  items:
+    - ClothingOuterArmorSyndicateCoordinator
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - CoordinatorNCSP
+
+- type: loadout
+  id: LoadoutOuterArmorSyndicateLabcoat
+  category: Outer
+  cost: 0
+  items:
+    - ClothingOuterArmorSyndicateLabcoat
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - TraumasecNCSP
+        - RipperdocNCSP
+        - CoordinatorNCSP
+
+- type: loadout
+  id: LoadoutOuterArmorSyndicateApron
+  category: Outer
+  cost: 0
+  items:
+    - ClothingOuterArmorSyndicateApron
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - TraumasecNCSP
+        - RipperdocNCSP
+        - CoordinatorNCSP
+
+- type: loadout
+  id: LoadoutOuterArmorSyndicateArmorvestInterdyne
+  category: Outer
+  cost: 0
+  items:
+    - ClothingOuterArmorSyndicateArmorvestInterdyne
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - TraumasecNCSP
+        - CoordinatorNCSP
