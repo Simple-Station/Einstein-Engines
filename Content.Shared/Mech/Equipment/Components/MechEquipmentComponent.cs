@@ -1,4 +1,12 @@
-﻿using Content.Shared.DoAfter;
+// SPDX-FileCopyrightText: 2022 Nemanja
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 keronshb
+// SPDX-FileCopyrightText: 2025 ScyronX
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared.DoAfter;
 using Content.Shared.Mech.Components;
 using Robust.Shared.Serialization;
 
@@ -19,6 +27,12 @@ public sealed partial class MechEquipmentComponent : Component
     /// The mech that the equipment is inside of.
     /// </summary>
     [ViewVariables] public EntityUid? EquipmentOwner;
+
+    /// <summary>
+    /// Monolith: Equipment that cant be fired on grids.
+    /// </summary>
+    [DataField]
+    public bool PreventFireOnGrid = false;
 }
 
 /// <summary>
