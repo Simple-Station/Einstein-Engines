@@ -35,12 +35,15 @@ crescent-rank-ncwl-crew = Shipmate
 crescent-rank-synadmin = Ringleader
 crescent-rank-boss = Lieutenant
 crescent-rank-patriarch = Patriarch
+crescent-rank-operative = Operative
 crescent-rank-op = Cpl.
 crescent-rank-pfc = PvT.
-crescent-rank-freeman = Freeman
 crescent-rank-foreman = Foreman
-crescent-rank-syndoc = Doc
 crescent-rank-saw = Shipbreaker
+crescent-rank-coordinator = Director
+crescent-rank-agent = Agent
+crescent-rank-doc = Doc
+crescent-rank-freeman = Freeman
 
 #tsp
 
