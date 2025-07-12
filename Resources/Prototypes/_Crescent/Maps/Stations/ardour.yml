@@ -6,8 +6,9 @@
   stations:
     Ardour:
       stationProto: StandardCrescentStation
-      components:
+      gridComponents:
         - type: BlockShipWeaponProjectileGrid
+      components:
         - type: StationNameSetup
           mapNameTemplate: 'ATH Ardour 43BG-92'
         - type: Grammar

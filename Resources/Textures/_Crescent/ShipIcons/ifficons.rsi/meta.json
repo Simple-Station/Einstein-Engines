@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "license": "All rights reserved to Hullrot - Sector Crescent",
+  "copyright": "All rights reserved , Do not copy , distribute or use without permission",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "asteroid"
+    },
+    {
+      "name": "battleship"
+    },
+    {
+      "name": "bigindustrial"
+    },
+    {
+      "name": "cruiser"
+    },
+    {
+      "name": "corvette"
+    },
+    {
+      "name": "dreadnought"
+    },
+    {
+      "name": "fighter"
+    },
+    {
+      "name": "frigate"
+    },
+    {
+      "name": "industrial"
+    },
+    {
+      "name": "outpost"
+    },
+    {
+      "name": "pointofinterest"
+    }
+  ]
+}

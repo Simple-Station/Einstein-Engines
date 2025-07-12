@@ -330,6 +330,18 @@
 
 - type: entity
   parent: IDCardStandard
+  id: DSMIDCardRitter
+  name: imperial ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorresearcher
+  - type: PresetIdCard
+    job: RitterDSM
+
+- type: entity
+  parent: IDCardStandard
   id: DSMIDCardLabor
   components:
   - type: Sprite
