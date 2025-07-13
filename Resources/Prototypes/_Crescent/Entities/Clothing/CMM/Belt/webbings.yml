@@ -8,3 +8,5 @@
     sprite: _Crescent/Clothing/CMM/Belt/minuteman_droppouches.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/CMM/Belt/minuteman_droppouches.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
