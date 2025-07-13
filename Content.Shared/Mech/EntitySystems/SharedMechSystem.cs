@@ -1,26 +1,3 @@
-// SPDX-FileCopyrightText: 2023 DrSmugleaf
-// SPDX-FileCopyrightText: 2023 Leon Friedrich
-// SPDX-FileCopyrightText: 2023 Rane
-// SPDX-FileCopyrightText: 2023 TemporalOroboros
-// SPDX-FileCopyrightText: 2023 brainfood1183
-// SPDX-FileCopyrightText: 2023 deltanedas
-// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2023 metalgearsloth
-// SPDX-FileCopyrightText: 2023 themias
-// SPDX-FileCopyrightText: 2024 Arendian
-// SPDX-FileCopyrightText: 2024 Dvir
-// SPDX-FileCopyrightText: 2024 Nemanja
-// SPDX-FileCopyrightText: 2024 Plykiya
-// SPDX-FileCopyrightText: 2024 Tayrtahn
-// SPDX-FileCopyrightText: 2024 nikthechampiongr
-// SPDX-FileCopyrightText: 2025 Ark
-// SPDX-FileCopyrightText: 2025 BeeRobynn
-// SPDX-FileCopyrightText: 2025 Blu
-// SPDX-FileCopyrightText: 2025 ScyronX
-// SPDX-FileCopyrightText: 2025 wewman222
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
-
 using System.Linq;
 using Content.Shared.Access.Components;
 using Content.Shared.ActionBlocker;
@@ -37,7 +14,6 @@ using Content.Shared.Mech.Equipment.Components;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
-using Content.Shared.Shuttles.BUIStates;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Whitelist;
 using Robust.Shared.Containers;
@@ -47,7 +23,7 @@ using Robust.Shared.Timing;
 
 // Goobstation Change
 using Content.Shared.CCVar;
-using Content.Shared._Goobstation.CCVars;
+using Content.Shared._Goobstation.CCVar;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Hands.Components;
@@ -80,13 +56,12 @@ public abstract class SharedMechSystem : EntitySystem
 
     // Goobstation: Local variable for checking if mech guns can be used out of them.
     private bool _canUseMechGunOutside;
-
+    
     /// <inheritdoc/>
     public override void Initialize()
     {
         SubscribeLocalEvent<MechComponent, MechToggleEquipmentEvent>(OnToggleEquipmentAction);
         SubscribeLocalEvent<MechComponent, MechEjectPilotEvent>(OnEjectPilotEvent);
-        SubscribeLocalEvent<MechComponent, MechRadarUiEvent>(OnOpenRadarUiEvent);
         SubscribeLocalEvent<MechComponent, UserActivateInWorldEvent>(RelayInteractionEvent);
         SubscribeLocalEvent<MechComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<MechComponent, DestructionEventArgs>(OnDestruction);
@@ -100,7 +75,7 @@ public abstract class SharedMechSystem : EntitySystem
         SubscribeLocalEvent<MechPilotComponent, AttackAttemptEvent>(OnAttackAttempt);
         SubscribeLocalEvent<MechPilotComponent, EntGotRemovedFromContainerMessage>(OnEntGotRemovedFromContainer);
         SubscribeLocalEvent<MechEquipmentComponent, ShotAttemptedEvent>(OnShotAttempted); // Goobstation
-        Subs.CVar(_config, GoobCVars.MechGunOutsideMech, value => _canUseMechGunOutside = value, false); // Goobstation
+        Subs.CVar(_config, GoobCVars.MechGunOutsideMech, value => _canUseMechGunOutside = value, true); // Goobstation
     }
 
     // GoobStation: Fixes scram implants or teleports locking the pilot out of being able to move.
@@ -123,24 +98,6 @@ public abstract class SharedMechSystem : EntitySystem
             return;
         args.Handled = true;
         TryEject(uid, component);
-    }
-
-    private void OnOpenRadarUiEvent(EntityUid uid, MechComponent component, MechRadarUiEvent args)
-    {
-        if (args.Handled)
-            return;
-        args.Handled = true;
-
-        // Mass scanner logic - open radar console UI
-        var pilot = component.PilotSlot.ContainedEntity;
-        if (pilot == null)
-            return;
-
-        // Raise server event to open radar UI
-        if (_net.IsServer)
-        {
-            RaiseLocalEvent(uid, new MechOpenRadarEvent(EntityManager.GetNetEntity(pilot.Value)));
-        }
     }
 
     private void RelayInteractionEvent(EntityUid uid, MechComponent component, UserActivateInWorldEvent args)
@@ -203,7 +160,6 @@ public abstract class SharedMechSystem : EntitySystem
         _actions.AddAction(pilot, ref component.MechUiActionEntity, component.MechUiAction, mech);
         _actions.AddAction(pilot, ref component.MechEjectActionEntity, component.MechEjectAction, mech);
         _actions.AddAction(pilot, ref component.ToggleActionEntity, component.ToggleAction, mech); //Goobstation Mech Lights toggle action
-        _actions.AddAction(pilot, ref component.MechRadarUiActionEntity, component.MechRadarUiAction, mech);
     }
 
     private void RemoveUser(EntityUid mech, EntityUid pilot)
@@ -549,12 +505,6 @@ public abstract class SharedMechSystem : EntitySystem
             return;
         }
 
-        if (TryComp<TransformComponent>(uid, out var xform) && xform.GridUid != null && component.PreventFireOnGrid)
-        {
-            args.Cancel();
-            return;
-        }
-
         var ev = new HandleMechEquipmentBatteryEvent();
         RaiseLocalEvent(uid, ev);
     }
@@ -579,7 +529,6 @@ public abstract class SharedMechSystem : EntitySystem
         var doAfterEventArgs = new DoAfterArgs(EntityManager, args.Dragged, component.EntryDelay, new MechEntryEvent(), uid, target: uid)
         {
             BreakOnMove = true,
-            MultiplyDelay = false, // Goobstation
         };
 
         _doAfter.TryStartDoAfter(doAfterEventArgs);
@@ -635,15 +584,4 @@ public sealed partial class MechEntryEvent : SimpleDoAfterEvent
 [Serializable, NetSerializable]
 public sealed partial class HandleMechEquipmentBatteryEvent : EntityEventArgs
 {
-}
-
-[Serializable, NetSerializable]
-public sealed partial class MechOpenRadarEvent : EntityEventArgs
-{
-    public NetEntity Pilot { get; }
-
-    public MechOpenRadarEvent(NetEntity pilot)
-    {
-        Pilot = pilot;
-    }
 }
