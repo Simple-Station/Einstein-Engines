@@ -18,7 +18,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-syndoc
+        rank: crescent-rank-doc
   weight: 15
   startingGear: CyberdawnGear
   alwaysUseSpawner: true

@@ -19,7 +19,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-freeman
+        rank: crescent-rank-operative
   icon: "JobIconSyndieOperative"
   requireAdminNotify: false
   supervisors: You answer to the patriach and the interests of the CyberDawn Technologies company.
