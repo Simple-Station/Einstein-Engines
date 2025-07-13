@@ -269,3 +269,27 @@
     StarshipEngineComponents: 12500
     ShipComponents: 10000
     ShipHull: 17500
+
+- type: latheRecipe
+  id: LancerFlatpack
+  result: LancerFlatpack
+  completetime: 2
+  materials:
+    BasicMechatronics: 2500
+    AdvancedElectronics: 1000
+    Gold: 300
+    Silver: 500
+    Steel: 3000
+    Tungsten: 1500
+
+- type: latheRecipe
+  id: BogatyrFlatpack
+  result: BogatyrFlatpack
+  completetime: 2
+  materials:
+    AdvancedMechatronics: 3500
+    AdvancedElectronics: 1500
+    Gold: 1000
+    Silver: 2500
+    Steel: 3500
+    Tungsten: 2500

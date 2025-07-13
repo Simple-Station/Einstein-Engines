@@ -466,6 +466,40 @@
       - WeaponLauncherM320
       - TriumphantLPC
       - PadparadschaLPC
+      - ClothingHeadHelmetNCWLEVA
+      - ClothingOuterNCWLEVA
+      - ClothingHeadHatNCWLCapsoft
+      - ClothingHeadHatNCWLCapsoftMedical
+      - ClothingHeadHatNCWLTanker
+      - ClothingUniformJumpsuitNCWLMedic
+      - ClothingUniformJumpsuitNCWLArtificer
+      - ClothingUniformJumpsuitNCWL
+      - ClothingMaskNCWLBalaclava
+      - ClothingEyesGlassesNCWL
+      - ClothingBeltNCWLWebbing
+      - ClothingHeadHelmetNCWLBasic
+      - WeaponRifleFAL
+      - WeaponPistolComrade
+      - WeaponSubMachineGunNCWLWatchdog
+      - ClothingOuterHardsuitNCWLInfantry
+      - SabreLPC
+      - RapierLPC
+      - KhopeshLPC
+      - BroadswordLPC
+      - MolotLPC
+      - HindLPC
+      - WeaponSubMachineGunBloodhound
+      - WeaponRifleNCWLBatanya
+      - WeaponPistolT91
+      - WeaponRevolverPython
+      - ClothingOuterHardsuitNCWLPetya
+      - VanguardMarkTwoLPC
+      - LancerFlatpack
+      - WeaponLauncherGM94
+      - IvarodLPC
+      - SternLPC
+      - BogatyrFlatpack
+      - ClothingOuterHardsuitNCWLJuggernaut
   - type: Machine
     board: MicroforgeCircuitboard
 
