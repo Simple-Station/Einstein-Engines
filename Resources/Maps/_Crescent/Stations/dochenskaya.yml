@@ -130,6 +130,15 @@ entities:
             66: -17,5
             67: -15,5
         - node:
+            angle: 1.5707963267948966 rad
+            color: '#FFFFFFFF'
+            id: Box
+          decals:
+            197: 1,42
+            198: 2,42
+            199: 4,42
+            200: 5,42
+        - node:
             color: '#DE3A3A96'
             id: BoxGreyscale
           decals:
@@ -290,10 +299,22 @@ entities:
             118: -20,-2
             119: -20,-3
         - node:
+            angle: 1.5707963267948966 rad
+            color: '#FFFFFFFF'
+            id: Caution
+          decals:
+            196: -5,42
+        - node:
             color: '#DE3A3A96'
             id: Clandestine
           decals:
             24: -14,-1
+        - node:
+            color: '#FFFFFFFF'
+            id: LoadingArea
+          decals:
+            192: -1,32
+            194: -1,34
         - node:
             color: '#DE3A3A96'
             id: LoadingAreaGreyscale
@@ -307,6 +328,108 @@ entities:
           decals:
             26: -19,2
         - node:
+            color: '#FFFFFFFF'
+            id: StandClear
+          decals:
+            193: -1,30
+        - node:
+            angle: 1.5707963267948966 rad
+            color: '#FFFFFFFF'
+            id: StandClear
+          decals:
+            195: -14,36
+        - node:
+            color: '#FFFFFFFF'
+            id: TechE
+          decals:
+            215: 21,39
+        - node:
+            angle: 1.5707963267948966 rad
+            color: '#FFFFFFFF'
+            id: TechE
+          decals:
+            216: 20,40
+            217: 19,40
+            218: 18,40
+            219: 17,40
+            220: 16,40
+            221: 15,40
+            222: 14,40
+            223: 13,40
+            224: 12,40
+            225: 11,40
+        - node:
+            angle: 3.141592653589793 rad
+            color: '#FFFFFFFF'
+            id: TechE
+          decals:
+            237: 10,39
+        - node:
+            angle: 4.71238898038469 rad
+            color: '#FFFFFFFF'
+            id: TechE
+          decals:
+            226: 20,38
+            227: 19,38
+            228: 18,38
+            229: 17,38
+            230: 16,38
+            231: 15,38
+            232: 15,38
+            233: 14,38
+            234: 13,38
+            235: 12,38
+            236: 11,38
+        - node:
+            angle: 1.5707963267948966 rad
+            color: '#FFFFFFFF'
+            id: TechN
+          decals:
+            208: -9,42
+            209: -5,42
+        - node:
+            angle: 3.141592653589793 rad
+            color: '#FFFFFFFF'
+            id: TechN
+          decals:
+            207: -8,41
+        - node:
+            angle: 4.71238898038469 rad
+            color: '#FFFFFFFF'
+            id: TechN
+          decals:
+            206: -7,42
+        - node:
+            angle: 6.283185307179586 rad
+            color: '#FFFFFFFF'
+            id: TechN
+          decals:
+            205: -8,43
+        - node:
+            angle: 1.5707963267948966 rad
+            color: '#FFFFFFFF'
+            id: TechNE
+          decals:
+            239: 10,40
+        - node:
+            angle: 3.141592653589793 rad
+            color: '#FFFFFFFF'
+            id: TechNE
+          decals:
+            238: 10,38
+        - node:
+            angle: 4.71238898038469 rad
+            color: '#FFFFFFFF'
+            id: TechNE
+          decals:
+            214: 21,38
+        - node:
+            angle: 6.283185307179586 rad
+            color: '#FFFFFFFF'
+            id: TechNE
+          decals:
+            213: 21,40
+        - node:
             angle: 6.283185307179586 rad
             color: '#FFFFFFFF'
             id: TechS
@@ -314,11 +437,36 @@ entities:
             190: 2,40
             191: 1,40
         - node:
+            angle: 1.5707963267948966 rad
+            color: '#FFFFFFFF'
+            id: TechSE
+          decals:
+            201: -7,43
+        - node:
+            angle: 3.141592653589793 rad
+            color: '#FFFFFFFF'
+            id: TechSE
+          decals:
+            204: -9,43
+        - node:
+            angle: 4.71238898038469 rad
+            color: '#FFFFFFFF'
+            id: TechSE
+          decals:
+            203: -9,41
+        - node:
             angle: 6.283185307179586 rad
             color: '#FFFFFFFF'
             id: TechSE
           decals:
             189: 3,40
+            202: -7,41
+        - node:
+            angle: 1.5707963267948966 rad
+            color: '#FFFFFFFF'
+            id: WarnBox
+          decals:
+            240: 4,38
         - node:
             color: '#DE3A3A96'
             id: WarnBoxGreyscale
@@ -377,6 +525,30 @@ entities:
             id: WarnCornerSE
           decals:
             1: -13,-6
+        - node:
+            angle: 1.5707963267948966 rad
+            color: '#FFFFFFFF'
+            id: WarnCornerSE
+          decals:
+            249: -12,37
+        - node:
+            angle: 3.141592653589793 rad
+            color: '#FFFFFFFF'
+            id: WarnCornerSE
+          decals:
+            250: -14,37
+        - node:
+            angle: 4.71238898038469 rad
+            color: '#FFFFFFFF'
+            id: WarnCornerSE
+          decals:
+            251: -14,35
+        - node:
+            angle: 6.283185307179586 rad
+            color: '#FFFFFFFF'
+            id: WarnCornerSE
+          decals:
+            248: -12,35
         - node:
             color: '#FFFFFFFF'
             id: WarnCornerSW
@@ -502,6 +674,33 @@ entities:
             128: -20,4
             129: -20,3
             130: -20,2
+        - node:
+            angle: 1.5707963267948966 rad
+            color: '#FFFFFFFF'
+            id: WarnLineS
+          decals:
+            241: 1,40
+            242: 2,40
+            243: 3,40
+            245: -13,35
+        - node:
+            angle: 3.141592653589793 rad
+            color: '#FFFFFFFF'
+            id: WarnLineS
+          decals:
+            244: -12,36
+        - node:
+            angle: 4.71238898038469 rad
+            color: '#FFFFFFFF'
+            id: WarnLineS
+          decals:
+            246: -13,37
+        - node:
+            angle: 6.283185307179586 rad
+            color: '#FFFFFFFF'
+            id: WarnLineS
+          decals:
+            247: -14,36
         - node:
             color: '#FFFFFFFF'
             id: WarnLineW
@@ -969,7 +1168,7 @@ entities:
       pos: -13.5,-1.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -884.11273
+      secondsUntilStateChange: -2955.662
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -992,12 +1191,6 @@ entities:
       parent: 1
 - proto: AirlockMaintHorizontal
   entities:
-  - uid: 303
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -11.5,8.5
-      parent: 1
   - uid: 328
     components:
     - type: Transform
@@ -1082,16 +1275,6 @@ entities:
       parent: 1
 - proto: AirlockSyndicateHorizontalLockedNCSP
   entities:
-  - uid: 479
-    components:
-    - type: Transform
-      pos: -13.5,3.5
-      parent: 1
-  - uid: 482
-    components:
-    - type: Transform
-      pos: -5.5,8.5
-      parent: 1
   - uid: 1024
     components:
     - type: Transform
@@ -1142,7 +1325,7 @@ entities:
       pos: 0.5,43.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -793.3795
+      secondsUntilStateChange: -2864.929
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -1172,17 +1355,20 @@ entities:
     - type: Transform
       pos: -7.5,-3.5
       parent: 1
-- proto: AirlockSyndicateLockedNCSP
-  entities:
+  - uid: 303
+    components:
+    - type: Transform
+      pos: -11.5,8.5
+      parent: 1
+  - uid: 376
+    components:
+    - type: Transform
+      pos: -5.5,8.5
+      parent: 1
   - uid: 420
     components:
     - type: Transform
-      pos: -2.5,9.5
-      parent: 1
-  - uid: 481
-    components:
-    - type: Transform
-      pos: -9.5,6.5
+      pos: -13.5,3.5
       parent: 1
 - proto: AirlockSyndicateLockedNCSPCommand
   entities:
@@ -1204,7 +1390,7 @@ entities:
       pos: 2.5,37.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -3296.8977
+      secondsUntilStateChange: -5368.4473
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -1217,7 +1403,17 @@ entities:
       parent: 1
 - proto: AirlockSyndicateLockedNCSPSAWs
   entities:
-  - uid: 376
+  - uid: 479
+    components:
+    - type: Transform
+      pos: -2.5,9.5
+      parent: 1
+  - uid: 481
+    components:
+    - type: Transform
+      pos: -9.5,6.5
+      parent: 1
+  - uid: 482
     components:
     - type: Transform
       pos: -17.5,6.5
@@ -1360,6 +1556,54 @@ entities:
     components:
     - type: Transform
       pos: 1.5,10.5
+      parent: 1
+  - uid: 1921
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 20.5,41.5
+      parent: 1
+  - uid: 1922
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 20.5,37.5
+      parent: 1
+  - uid: 1923
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 22.5,39.5
+      parent: 1
+  - uid: 1924
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 6.5,47.5
+      parent: 1
+  - uid: 1925
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -2.5,26.5
+      parent: 1
+  - uid: 1926
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -2.5,25.5
+      parent: 1
+  - uid: 1927
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -2.5,21.5
+      parent: 1
+  - uid: 1928
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -2.5,20.5
       parent: 1
 - proto: Autolathe
   entities:
@@ -1631,7 +1875,7 @@ entities:
     - type: Transform
       pos: -13.5,13.5
       parent: 1
-  - uid: 1354
+  - uid: 1364
     components:
     - type: Transform
       pos: 4.5,40.5
@@ -1641,8 +1885,13 @@ entities:
   - uid: 1358
     components:
     - type: Transform
+      anchored: True
       pos: 4.5,38.5
       parent: 1
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      bodyType: Static
 - proto: BoriaticGeneratorHercules
   entities:
   - uid: 1068
@@ -3438,6 +3687,11 @@ entities:
     - type: Transform
       pos: -2.5,22.5
       parent: 1
+  - uid: 1585
+    components:
+    - type: Transform
+      pos: 2.5,37.5
+      parent: 1
   - uid: 1767
     components:
     - type: Transform
@@ -3921,6 +4175,11 @@ entities:
     components:
     - type: Transform
       pos: 3.5,40.5
+      parent: 1
+  - uid: 1584
+    components:
+    - type: Transform
+      pos: 2.5,40.5
       parent: 1
 - proto: CableMV
   entities:
@@ -4601,11 +4860,11 @@ entities:
       parent: 1
 - proto: CableTerminal
   entities:
-  - uid: 1364
+  - uid: 1363
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 2.5,40.5
+      rot: -1.5707963267948966 rad
+      pos: 4.5,40.5
       parent: 1
 - proto: CargoTelepad
   entities:
@@ -5146,6 +5405,38 @@ entities:
     - type: Transform
       pos: -6.712115,1.7288859
       parent: 1
+- proto: ClothingHeadsetNCSPCyberdawn
+  entities:
+  - uid: 1929
+    components:
+    - type: Transform
+      pos: -8.734898,41.36685
+      parent: 1
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+  - uid: 1930
+    components:
+    - type: Transform
+      pos: -8.859825,41.670124
+      parent: 1
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+  - uid: 1931
+    components:
+    - type: Transform
+      pos: -8.556427,41.384693
+      parent: 1
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+  - uid: 1932
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -8.306568,41.598766
+      parent: 1
 - proto: ClothingMaskGasAtmos
   entities:
   - uid: 287
@@ -5576,37 +5867,8 @@ entities:
         - invalid
         - 115
         - 360
-        - 855
-        - 955
-        - 956
-        - 957
-        - 703
-        - 896
-        - 1123
-        - 1182
-        - 1861
-        - 1862
-        - 1863
-        - 1864
-        - 1865
         ballistic:
         - invalid
-        90mm heavy mortar-pounder:
-        - 855
-        - 955
-        - 956
-        - 957
-        ballistic turret:
-        - 1861
-        - 1862
-        - 1863
-        - 1864
-        - 1865
-        SHI MG-21 light dual machinegun Mk. II:
-        - 703
-        - 896
-        - 1123
-        - 1182
         swarmer missile launcher:
         - 115
         - 360
@@ -5621,35 +5883,6 @@ entities:
         all:
         - 115
         - 360
-        - 855
-        - 955
-        - 956
-        - 957
-        - 703
-        - 896
-        - 1123
-        - 1182
-        - 1861
-        - 1862
-        - 1863
-        - 1864
-        - 1865
-        90mm heavy mortar-pounder:
-        - 855
-        - 955
-        - 956
-        - 957
-        SHI MG-21 light dual machinegun Mk. II:
-        - 703
-        - 896
-        - 1123
-        - 1182
-        ballistic turret:
-        - 1861
-        - 1862
-        - 1863
-        - 1864
-        - 1865
         swarmer missile launcher:
         - 115
         - 360
@@ -5749,12 +5982,12 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 1589
-          - 1590
+          - 1594
           - 1591
+          - 1590
+          - 1589
           - 1592
           - 1593
-          - 1594
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -7081,6 +7314,16 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
+- proto: JugBoriaticFuel
+  entities:
+  - uid: 1920
+    components:
+    - type: Transform
+      pos: 4.405699,40.694252
+      parent: 1
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: Jukebox
   entities:
   - uid: 181
@@ -7629,26 +7872,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -8.5,41.5
       parent: 1
-- proto: PlasmaWindoorSyndicateLocked
-  entities:
-  - uid: 1583
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -8.5,41.5
-      parent: 1
-  - uid: 1584
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -8.5,42.5
-      parent: 1
-  - uid: 1585
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -8.5,43.5
-      parent: 1
 - proto: PlastitaniumWindow
   entities:
   - uid: 46
@@ -7963,9 +8186,6 @@ entities:
       pos: -15.5,33.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 1016
-      - 1843
       linkedConsoleId: 1843
   - uid: 1862
     components:
@@ -7973,9 +8193,6 @@ entities:
       pos: 10.5,33.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 1016
-      - 1843
       linkedConsoleId: 1843
   - uid: 1863
     components:
@@ -7984,9 +8201,6 @@ entities:
       pos: 9.5,47.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 1016
-      - 1843
       linkedConsoleId: 1843
   - uid: 1864
     components:
@@ -7995,9 +8209,6 @@ entities:
       pos: -10.5,51.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 1016
-      - 1843
       linkedConsoleId: 1843
   - uid: 1865
     components:
@@ -8006,9 +8217,6 @@ entities:
       pos: -15.5,51.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 1016
-      - 1843
       linkedConsoleId: 1843
 - proto: PottedPlantBioluminscent
   entities:
@@ -8515,12 +8723,6 @@ entities:
     - type: Transform
       pos: 18.5,40.5
       parent: 1
-  - uid: 1902
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -2.5,23.5
-      parent: 1
 - proto: PoweredLightPostSmallRed
   entities:
   - uid: 346
@@ -8572,6 +8774,18 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -0.5,11.5
+      parent: 1
+  - uid: 1165
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -3.5,23.5
+      parent: 1
+  - uid: 1324
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -1.5,23.5
       parent: 1
 - proto: PristineMicroforge
   entities:
@@ -9215,7 +9429,7 @@ entities:
     - type: Transform
       pos: -12.5,7.5
       parent: 1
-  - uid: 1363
+  - uid: 1354
     components:
     - type: Transform
       pos: 3.5,40.5
@@ -9265,10 +9479,25 @@ entities:
       parent: 1
 - proto: SpawnPointLatejoin
   entities:
-  - uid: 935
+  - uid: 1172
     components:
     - type: Transform
-      pos: -8.5,8.5
+      pos: -3.5,18.5
+      parent: 1
+  - uid: 1598
+    components:
+    - type: Transform
+      pos: -1.5,18.5
+      parent: 1
+  - uid: 1599
+    components:
+    - type: Transform
+      pos: -3.5,28.5
+      parent: 1
+  - uid: 1902
+    components:
+    - type: Transform
+      pos: -1.5,28.5
       parent: 1
 - proto: SpawnPointOperative
   entities:
@@ -9404,6 +9633,18 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 3.5,39.5
+      parent: 1
+  - uid: 1933
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -4.5,41.5
+      parent: 1
+  - uid: 1934
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -4.5,42.5
       parent: 1
 - proto: StoolBar
   entities:
@@ -11228,12 +11469,6 @@ entities:
     - type: Transform
       pos: -20.5,12.5
       parent: 1
-  - uid: 1029
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -3.5,24.5
-      parent: 1
   - uid: 1036
     components:
     - type: Transform
@@ -11250,12 +11485,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -3.5,25.5
-      parent: 1
-  - uid: 1050
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -3.5,23.5
       parent: 1
   - uid: 1059
     components:
@@ -11766,12 +11995,6 @@ entities:
     - type: Transform
       pos: -9.5,39.5
       parent: 1
-  - uid: 1324
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -1.5,23.5
-      parent: 1
   - uid: 1325
     components:
     - type: Transform
@@ -12096,12 +12319,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -1.5,47.5
       parent: 1
-  - uid: 1571
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -1.5,22.5
-      parent: 1
   - uid: 1572
     components:
     - type: Transform
@@ -12125,18 +12342,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -0.5,24.5
-      parent: 1
-  - uid: 1598
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -1.5,24.5
-      parent: 1
-  - uid: 1599
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -3.5,22.5
       parent: 1
   - uid: 1601
     components:
@@ -12503,9 +12708,6 @@ entities:
       pos: -5.5,18.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 1016
-      - 1843
       linkedConsoleId: 1843
       obstructedRanges:
       - 3.2941966164750185 rad: 4.467109215691601 rad
@@ -12533,9 +12735,6 @@ entities:
       pos: -13.5,-8.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 1016
-      - 1843
       linkedConsoleId: 1843
       obstructedRanges:
       - 6.269125442633391 rad: 3.1184752081147717 rad
@@ -12564,9 +12763,6 @@ entities:
       pos: -23.5,-3.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 1016
-      - 1843
       linkedConsoleId: 1843
       obstructedRanges:
       - 4.749566290405906 rad: 4.293032192122516 rad
@@ -12595,9 +12791,6 @@ entities:
       pos: -21.5,10.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 1016
-      - 1843
       linkedConsoleId: 1843
       obstructedRanges:
       - 3.523772131830751 rad: 3.649531093865943 rad
@@ -12628,9 +12821,6 @@ entities:
       pos: 4.5,10.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 1016
-      - 1843
       linkedConsoleId: 1843
       obstructedRanges:
       - 5.951666697304705 rad: 0.3696702041923491 rad
@@ -12645,9 +12835,6 @@ entities:
       pos: -0.5,-6.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 1016
-      - 1843
       linkedConsoleId: 1843
       obstructedRanges:
       - 3.0956287214046125 rad: 0.3480792442323627 rad
@@ -12663,9 +12850,6 @@ entities:
       pos: -27.5,5.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 1016
-      - 1843
       linkedConsoleId: 1843
       obstructedRanges:
       - 2.251474735072685 rad: 4.9218284906240095 rad
@@ -12679,9 +12863,6 @@ entities:
       pos: -27.5,1.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 1016
-      - 1843
       linkedConsoleId: 1843
       obstructedRanges:
       - 5.094568458625648 rad: 5.22032742066084 rad
@@ -12696,6 +12877,26 @@ entities:
     - type: Transform
       pos: -11.5,12.5
       parent: 1
+- proto: WindoorPlasma
+  entities:
+  - uid: 935
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -8.5,43.5
+      parent: 1
+  - uid: 1029
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -8.5,42.5
+      parent: 1
+  - uid: 1050
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -8.5,41.5
+      parent: 1
 - proto: WindoorSecure
   entities:
   - uid: 178
@@ -12704,18 +12905,16 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -5.5,-4.5
       parent: 1
-- proto: WindoorSecureSyndicateLocked
-  entities:
-  - uid: 1165
+  - uid: 1571
+    components:
+    - type: Transform
+      pos: -2.5,30.5
+      parent: 1
+  - uid: 1583
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -4.5,31.5
-      parent: 1
-  - uid: 1172
-    components:
-    - type: Transform
-      pos: -2.5,30.5
       parent: 1
 - proto: WindowReinforcedDirectional
   entities:
