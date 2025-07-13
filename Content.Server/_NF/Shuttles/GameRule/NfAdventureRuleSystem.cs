@@ -426,7 +426,6 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
               {
                   _station.InitializeNewStation(stationProto.Stations["Dochenskaya"], depotUid9s);
              }
-
              var meta = EnsureComp<MetaDataComponent>(depotUid9s[0]);
               _meta.SetEntityName(depotUid9s[0], "Dochenskaya Engineering Platform", meta);
               _shuttle.SetIFFColor(depotUid9s[0], lpbravoColor);

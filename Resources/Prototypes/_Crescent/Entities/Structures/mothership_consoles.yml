@@ -80,6 +80,17 @@
     - Nazaar
 
 - type: entity
+  id: RamziMothershipComputer
+  parent: BaseMothershipComputer
+  name: ramzi internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Velator
+    - Wisp
+    - Taipan
+
+- type: entity
   id: ZhipovMothershipComputer
   parent: BaseMothershipComputer
   name: zhipov internal shipyard
