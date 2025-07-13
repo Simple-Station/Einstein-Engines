@@ -35,7 +35,11 @@
     - type: loadout
       id: LoadoutBeltNCWLWebbing
     - type: loadout
+      id: LoadoutBeltNCWLPouches
+    - type: loadout
       id: LoadoutBeltTFSCWebbing
+    - type: loadout
+      id: LoadoutBeltIPMWebbing
     - type: loadout
       id: LoadoutBeltSheathSabre
     - type: loadout
