@@ -2,7 +2,7 @@
   id: Clarizian
   isVisibleLanguage: true
   speech:
-    color: "#8282fbaa"
+    color: "#77aad0"
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
