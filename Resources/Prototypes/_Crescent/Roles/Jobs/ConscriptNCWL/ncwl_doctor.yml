@@ -23,7 +23,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-doktor
+        rank: crescent-rank-ncwl-doctor
       - type: HullrotFaction
         faction: NCWL
   access:
@@ -58,4 +58,3 @@
   inhand:
     - Defibrillator
     - MedkitAdvancedFilled
-  

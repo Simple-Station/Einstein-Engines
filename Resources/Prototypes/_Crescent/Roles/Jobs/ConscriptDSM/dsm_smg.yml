@@ -23,7 +23,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-manatarms
+        rank: crescent-rank-dsm-cqc
       - type: HullrotFaction
         faction: DSM
   access:

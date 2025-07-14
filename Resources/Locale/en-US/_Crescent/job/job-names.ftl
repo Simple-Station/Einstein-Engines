@@ -104,26 +104,26 @@ job-name-gliess-dockmaster = Gliessian Dockmaster
 
 #conscript-ncwl#
 
-job-name-conscript-ncwl-ship-captain = Clementine Kapitan
-job-name-conscript-ncwl-ship-crew = Clementine Shipmate
-job-name-conscript-ncwl-leader = Kommissar
-job-name-conscript-ncwl-amr = Specialist (Sniper)
-job-name-conscript-ncwl-lmg = Specialist (LMG)
+job-name-conscript-ncwl-ship-captain = Clementine Admiral
+job-name-conscript-ncwl-ship-crew = Clementine Artificer
+job-name-conscript-ncwl-leader = Chengridz Komissar
+job-name-conscript-ncwl-amr = Headhunter (AMR)
+job-name-conscript-ncwl-lmg = Headhunter (LMG)
 job-name-conscript-ncwl-doctor = Doktor
-job-name-conscript-ncwl-smg = Soldat (SMG)
-job-name-conscript-ncwl-shotgun = Soldat (Shotgun)
-job-name-conscript-ncwl-rifleman = Soldat (Rifle)
-job-name-conscript-ncwl-cadet = Kadet
+job-name-conscript-ncwl-smg = Breacher (SMG)
+job-name-conscript-ncwl-shotgun = Breacher (Shotgun)
+job-name-conscript-ncwl-rifleman = Yefreitor (Rifle)
+job-name-conscript-ncwl-cadet = Conscript
 
 #conscript-dsm#
 
-job-name-conscript-dsm-ship-captain = Nemesis Admiral
-job-name-conscript-dsm-ship-crew = Nemesis Crewman
-job-name-conscript-dsm-leader = Noble
-job-name-conscript-dsm-amr = Knight (Sniper)
-job-name-conscript-dsm-lmg = Knight (LMG)
-job-name-conscript-dsm-doctor = Combat Medic
-job-name-conscript-dsm-smg = Man-At-Arms (SMG)
-job-name-conscript-dsm-shotgun = Man-At-Arms (Shotgun)
-job-name-conscript-dsm-rifleman = Man-At-Arms (Rifle)
-job-name-conscript-dsm-cadet = Cadet
+job-name-conscript-dsm-ship-captain = Nemesis Grand Steward
+job-name-conscript-dsm-ship-crew = Nemesis Yeoman
+job-name-conscript-dsm-leader = Marshal-Bannaret
+job-name-conscript-dsm-amr = Ward-Armére (AMR)
+job-name-conscript-dsm-lmg = Ward-Armére (LMG)
+job-name-conscript-dsm-doctor = Combat Surgeon
+job-name-conscript-dsm-smg = Squire-Armére (SMG)
+job-name-conscript-dsm-shotgun = Squire-Armére (Shotgun)
+job-name-conscript-dsm-rifleman = Armsman (Rifle)
+job-name-conscript-dsm-cadet = Fledgeling

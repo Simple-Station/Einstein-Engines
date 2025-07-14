@@ -26,7 +26,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-templar
+        rank: crescent-rank-dsm-leader
       - type: HullrotFaction
         faction: DSM
   access:

@@ -23,7 +23,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-specialist
+        rank: crescent-rank-ncwl-specialist
       - type: HullrotFaction
         faction: NCWL
   access:

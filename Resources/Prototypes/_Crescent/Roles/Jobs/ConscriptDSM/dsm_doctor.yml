@@ -24,7 +24,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-smarts
+        rank: crescent-rank-dsm-doctor
       - type: HullrotFaction
         faction: DSM
   access:
