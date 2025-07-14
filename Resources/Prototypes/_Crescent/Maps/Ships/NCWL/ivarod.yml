@@ -26,10 +26,3 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-destroyer
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            KapitanNCWL: [ 0, 0 ]
-            SanitarNCWL: [ 0, 0 ]
-            ArtificerNCWL: [ 0, 0 ]
-            KadetNCWL: [ 0, 0 ]

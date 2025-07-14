@@ -30,7 +30,7 @@
     - type: ShipRenameHolopad
 
 - type: entity
-  id: StandardCrescentVessel #Combat vessel
+  id: FlagshipCrescentVessel #Flagship , gets spawning capabilities :) SPCR
   parent:
     - BaseStation
     - BaseStationJobsSpawning
@@ -46,10 +46,24 @@
     - type: ShipRenameHolopad
 
 - type: entity
+  id: StandardCrescentVessel #Combat vessel
+  parent:
+    - BaseStation
+    - BaseStationRecords
+    - BaseStationCargo
+    - BaseCombatShipAlertLevels
+    - BaseStationAllEventsEligible
+    - BaseStationRenameFaxes
+    - BaseStationSiliconLawCrescentShips
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Transform
+    - type: ShipRenameHolopad
+
+- type: entity
   id: StandardCrescentCivilianVessel #Civilian / unarmed vessel
   parent:
     - BaseStation
-    - BaseStationJobsSpawning
     - BaseStationRecords
     - BaseStationAlertLevels
     - BaseStationAllEventsEligible
@@ -65,7 +79,6 @@
   id: StandardCrescentExpeditionVessel #Expeds
   parent:
     - BaseStation
-    - BaseStationJobsSpawning
     - BaseStationRecords
     - BaseStationAlertLevels
     - BaseStationAllEventsEligible
@@ -82,7 +95,6 @@
   id: StandardCrescentExpeditionVesselCombat #Expeds
   parent:
     - BaseStation
-    - BaseStationJobsSpawning
     - BaseStationRecords
     - BaseCombatShipAlertLevels
     - BaseStationAllEventsEligible

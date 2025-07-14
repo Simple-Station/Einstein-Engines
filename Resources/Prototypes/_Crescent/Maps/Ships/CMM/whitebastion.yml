@@ -17,7 +17,7 @@
   minPlayers: 0
   stations:
     WhiteBastion:
-      stationProto: StandardCrescentExpeditionVessel
+      stationProto: FlagshipCrescentVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'TSP White Bastion {1}'
@@ -26,7 +26,3 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-utility
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            MinutemanCMM: [1, 1]

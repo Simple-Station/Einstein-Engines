@@ -26,7 +26,3 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-electronic
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            OperativeNCSP: [ 3, 3 ]
