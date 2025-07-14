@@ -10,10 +10,8 @@
         - type: StationNameSetup
           mapNameTemplate: "Empty"
         - type: StationJobs
-          overflowJobs:
-            - Passenger
           availableJobs:
-            Passenger: [ -1, -1 ]
+            Passenger: [ 0, 0 ]
 
 - type: gameMap
   id: Dev
