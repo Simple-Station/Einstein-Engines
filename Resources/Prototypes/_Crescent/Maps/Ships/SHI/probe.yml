@@ -23,9 +23,3 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-research
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            EmployeeSHI: [0, 2]
-            MedtechSHI: [0, 2]
-

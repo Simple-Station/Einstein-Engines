@@ -34,6 +34,23 @@
     - type: Transform
 
 - type: entity
+  id: StandardNanotrasenStationAbandoned
+  parent:
+    - BaseStation
+    - BaseStationNews
+    - BaseStationRecords
+    - BaseStationGateway
+    - BaseStationAlertLevels
+    - BaseStationMagnet
+    - BaseStationExpeditions
+    - BaseStationSiliconLawAsimov
+    - BaseStationNanotrasen
+    - BaseRandomStation
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Transform
+
+- type: entity
   id: NanotrasenCentralCommand
   parent:
     - BaseStation

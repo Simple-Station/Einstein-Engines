@@ -26,8 +26,3 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-medical
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            RipperdocNCSP: [ 3, 3 ]
-            TraumasecNCSP: [ 3, 3 ]
