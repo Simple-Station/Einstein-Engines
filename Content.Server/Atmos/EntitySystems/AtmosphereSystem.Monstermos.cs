@@ -550,7 +550,8 @@ namespace Content.Server.Atmos.EntitySystems
                 var gridPhysics = Comp<PhysicsComponent>(owner);
 
                 // TODO ATMOS: Come up with better values for these.
-                _physics.ApplyLinearImpulse(owner, direction * totalMolesRemoved * gridPhysics.Mass, body: gridPhysics);
+                // Hullrot edit, came with better values.
+                _physics.ApplyLinearImpulse(owner, direction * (totalMolesRemoved * (0.1f + (tile.Temperature+1)/Atmospherics.T0C)), body: gridPhysics);
                 _physics.ApplyAngularImpulse(owner, Vector2Helpers.Cross(tile.GridIndices - gridPhysics.LocalCenter, direction) * totalMolesRemoved, body: gridPhysics);
             }
 
