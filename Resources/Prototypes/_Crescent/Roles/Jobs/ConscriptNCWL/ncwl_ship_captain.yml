@@ -20,7 +20,7 @@
   alwaysUseSpawner: true
   icon: "JobIconCommsOfficer"
   requireAdminNotify: true
-  supervisors: job-supervisors-highcomm
+  supervisors: job-supervisors-conscript-ncwl-high
   canBeAntag: false
   special:
   - !type:AddComponentSpecial

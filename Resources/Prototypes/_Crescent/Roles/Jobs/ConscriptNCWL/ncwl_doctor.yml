@@ -17,7 +17,7 @@
   alwaysUseSpawner: true
   icon: "JobIconDoktor"
   requireAdminNotify: false
-  supervisors: job-supervisors-highcomm
+  supervisors: job-supervisors-conscript-ncwl
   canBeAntag: false
   special:
   - !type:AddComponentSpecial

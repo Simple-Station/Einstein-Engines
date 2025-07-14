@@ -20,7 +20,7 @@
   alwaysUseSpawner: true
   icon: "JobIconImperialGovernor"
   requireAdminNotify: true
-  supervisors: job-supervisors-imperial
+  supervisors: job-supervisors-conscript-dsm-high
   canBeAntag: false
   special:
   - !type:AddComponentSpecial

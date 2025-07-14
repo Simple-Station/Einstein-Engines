@@ -20,7 +20,7 @@
   alwaysUseSpawner: true
   icon: "JobIconArtificer"
   requireAdminNotify: true
-  supervisors: job-supervisors-highcomm
+  supervisors: job-supervisors-conscript-ncwl
   canBeAntag: false
   special:
   - !type:AddComponentSpecial

@@ -20,7 +20,7 @@
   alwaysUseSpawner: true
   icon: "JobIconImperialForeman"
   requireAdminNotify: true
-  supervisors: job-supervisors-imperial
+  supervisors: job-supervisors-conscript-dsm
   canBeAntag: false
   special:
   - !type:AddComponentSpecial
