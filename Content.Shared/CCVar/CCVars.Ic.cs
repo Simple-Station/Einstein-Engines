@@ -44,5 +44,5 @@ public sealed partial class CCVars
     ///     Control displaying SSD indicators near players
     /// </summary>
     public static readonly CVarDef<bool> ICShowSSDIndicator =
-        CVarDef.Create("ic.show_ssd_indicator", false, CVar.CLIENTONLY);
+        CVarDef.Create("ic.show_ssd_indicator", true, CVar.CLIENTONLY);
 }

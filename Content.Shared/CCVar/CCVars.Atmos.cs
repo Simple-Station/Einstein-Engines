@@ -21,14 +21,14 @@ public sealed partial class CCVars
     ///     A direct multiplier on how violent space wind is.
     /// </summary>
     public static readonly CVarDef<float> SpaceWindStrengthMultiplier =
-        CVarDef.Create("atmos.space_wind_strength_multiplier", 1f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.space_wind_strength_multiplier", 0.2f, CVar.SERVERONLY);
 
     /// <summary>
     ///     The maximum Force (in Newtons) that may be applied to an object by atmospheric pressure differences.
     ///     Useful to prevent clipping through objects.
     /// </summary>
     public static readonly CVarDef<float> SpaceWindMaxForce =
-        CVarDef.Create("atmos.space_wind_max_force", 200f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.space_wind_max_force", 1000f, CVar.SERVERONLY);
 
     /// <summary>
     ///     The maximum angular velocity that space wind can spin objects at while throwing them. This one is mostly for fun.
@@ -77,7 +77,7 @@ public sealed partial class CCVars
     ///     Needs <see cref="MonstermosEqualization"/> and <see cref="MonstermosDepressurization"/> to be enabled to work.
     /// </summary>
     public static readonly CVarDef<bool> AtmosGridImpulse =
-        CVarDef.Create("atmos.grid_impulse", false, CVar.SERVERONLY);
+        CVarDef.Create("atmos.grid_impulse", true, CVar.SERVERONLY);
 
     /// <summary>
     ///     Minimum amount of air allowed on a spaced tile before it is reset to 0 immediately in kPa
@@ -126,7 +126,7 @@ public sealed partial class CCVars
     ///     Maximum time in milliseconds that atmos can take processing.
     /// </summary>
     public static readonly CVarDef<float> AtmosMaxProcessTime =
-        CVarDef.Create("atmos.max_process_time", 3f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.max_process_time", 6f, CVar.SERVERONLY);
 
     /// <summary>
     ///     Atmos tickrate in TPS. Atmos processing will happen every 1/TPS seconds.
@@ -155,7 +155,7 @@ public sealed partial class CCVars
     ///     This multiplier is added after all other checks are made, and applies to both throwing force, and how easy it is for an entity to be thrown.
     /// </summary>
     public static readonly CVarDef<float> AtmosHumanoidThrowMultiplier =
-        CVarDef.Create("atmos.humanoid_throw_multiplier", 2f, CVar.SERVERONLY);
+        CVarDef.Create("atmos.humanoid_throw_multiplier", 0.8f, CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether or not Space Wind is allowed to attempt to knock down player characters.
