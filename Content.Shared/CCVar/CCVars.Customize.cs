@@ -15,7 +15,7 @@ public sealed partial class CCVars
     ///     Allow players to set their own Station AI names.
     /// </summary>
     public static readonly CVarDef<bool> AllowCustomStationAiName =
-        CVarDef.Create("customize.allow_custom_station_ai_name", false, CVar.REPLICATED);
+        CVarDef.Create("customize.allow_custom_station_ai_name", true, CVar.REPLICATED);
 
     /// <summary>
     ///     Allow players to set their own cyborg names. (borgs, mediborgs, etc)
