@@ -147,6 +147,7 @@
   - type: Tool
     qualities:
       - Screwing
+    speedModifier: 2
     useSound:
       collection: Screwdriver
   - type: RandomSprite
@@ -229,6 +230,7 @@
   - type: Tool
     qualities:
       - Anchoring
+    speedModifier: 2
     useSound:
       path: /Audio/Items/ratchet.ogg
   - type: PhysicalComposition
@@ -296,6 +298,7 @@
   - type: Tool
     qualities:
       - Prying
+    speedModifier: 2
     useSound:
       path: /Audio/Items/crowbar.ogg
   - type: ToolTileCompatible
@@ -496,7 +499,7 @@
   - type: Tool
     qualities:
       - Screwing
-    speedModifier: 1.5
+    speedModifier: 2.5
     useSound: /Audio/Items/drill_use.ogg
   - type: MultipleTool
     statusShowBehavior: true
@@ -838,7 +841,7 @@
   - type: Tool
     qualities:
       - Screwing
-    speedModifier: 1.2 # Kept for future adjustments. Currently 1.2x for balance
+    speedModifier: 2
     useSound: /Audio/Items/drill_use.ogg
   - type: ToolTileCompatible
   - type: MultipleTool

@@ -50,7 +50,7 @@
   suffix: Powered
   components:
   - type: PowerCellDraw
-    drawRate: 1.2 #Calculated for 5 minutes on a small cell
+    drawRate: 0.2 #STOP GOING OUT AFTER I SCAN MORE THAN 5 PEOPLE!!!!!
   - type: ToggleCellDraw
   - type: ActivatableUIRequiresPowerCell
 
