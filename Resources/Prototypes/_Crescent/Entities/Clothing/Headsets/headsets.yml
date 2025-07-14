@@ -95,9 +95,9 @@
           - EncryptionKeyEmpireCiv
           - EncryptionKeyTraffic
     - type: Sprite
-      sprite: Clothing/Ears/Headsets/brigmedic.rsi
+      sprite: _Crescent/Clothing/Headsets/imperial.rsi
     - type: Clothing
-      sprite: Clothing/Ears/Headsets/brigmedic.rsi
+      sprite: _Crescent/Clothing/Headsets/imperial.rsi
 
 - type: entity
   parent: ClothingHeadset
@@ -111,9 +111,9 @@
           - EncryptionKeyEmpireCiv
           - EncryptionKeyTraffic
     - type: Sprite
-      sprite: Clothing/Ears/Headsets/brigmedic.rsi
+      sprite: _Crescent/Clothing/Headsets/imperial.rsi
     - type: Clothing
-      sprite: Clothing/Ears/Headsets/brigmedic.rsi
+      sprite: _Crescent/Clothing/Headsets/imperial.rsi
 
 - type: entity
   parent: ClothingHeadset
@@ -143,9 +143,9 @@
           - EncryptionKeyShinohara
           - EncryptionKeyTraffic
     - type: Sprite
-      sprite: Clothing/Ears/Headsets/freelance.rsi
+      sprite: _Crescent/Clothing/Headsets/shinohara.rsi
     - type: Clothing
-      sprite: Clothing/Ears/Headsets/freelance.rsi
+      sprite: _Crescent/Clothing/Headsets/shinohara.rsi
 
 
 - type: entity
@@ -175,9 +175,9 @@
         key_slots:
           - EncryptionKeyFamilies
     - type: Sprite
-      sprite: Clothing/Ears/Headsets/freelance.rsi
+      sprite: _Crescent/Clothing/Headsets/shinohara.rsi
     - type: Clothing
-      sprite: Clothing/Ears/Headsets/freelance.rsi
+      sprite: _Crescent/Clothing/Headsets/shinohara.rsi
 
 - type: entity
   parent: ClothingHeadset
@@ -194,3 +194,19 @@
       sprite: _Crescent/Clothing/Headsets/hunter.rsi
     - type: Clothing
       sprite: _Crescent/Clothing/Headsets/hunter.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetClarizian
+  name: clarizian headset
+  description: A headset issued by lady Clarize for royal forces in Taypan.
+  components:
+    - type: ContainerFill
+      containers:
+        key_slots:
+          - EncryptionKeyClarizian
+          - EncryptionKeyTraffic
+    - type: Sprite
+      sprite: _Crescent/Clothing/Ears/Headsets/cmm.rsi
+    - type: Clothing
+      sprite: _Crescent/Clothing/Ears/Headsets/cmm.rsi
