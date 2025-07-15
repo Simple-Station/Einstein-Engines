@@ -1,4 +1,4 @@
-﻿using Content.Server.Atmos.EntitySystems;
+using Content.Server.Atmos.EntitySystems;
 using Content.Server.Atmos.Piping.Components;
 using Content.Server.NodeContainer;
 using Content.Server.NodeContainer.EntitySystems;
@@ -73,7 +73,7 @@ public sealed class GasPowerReceiverSystem : EntitySystem
         if (state != comp.Powered)
         {
             comp.Powered = state;
-            var ev = new PowerChangedEvent(state, 0);
+            var ev = new PowerChangedEvent(state, 0, float.NaN);
             RaiseLocalEvent(uid, ref ev);
         }
     }

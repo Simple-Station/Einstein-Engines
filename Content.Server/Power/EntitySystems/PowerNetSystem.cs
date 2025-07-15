@@ -371,7 +371,7 @@ namespace Content.Server.Power.EntitySystems
                 }
 
                 // If new value is the same as the old, then exit
-                if (!apcReceiver.Recalculate && apcReceiver.Powered == powered)
+                if (!apcReceiver.Recalculate && apcReceiver.Powered == powered && Math.Abs(apcReceiver.SideLoadFraction - apcReceiver.LastSideLoadFraction) < 0.01f)
                     continue;
 
                 metadata ??= MetaData(uid);
@@ -382,7 +382,7 @@ namespace Content.Server.Power.EntitySystems
                 apcReceiver.Powered = powered;
                 Dirty(uid, apcReceiver, metadata);
 
-                var ev = new PowerChangedEvent(powered, apcReceiver.NetworkLoad.ReceivingPower);
+                var ev = new PowerChangedEvent(powered, apcReceiver.NetworkLoad.ReceivingPower, apcReceiver.SideLoadFraction);
                 RaiseLocalEvent(uid, ref ev);
 
                 if (_appearanceQuery.TryComp(uid, out var appearance))

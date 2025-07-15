@@ -5,4 +5,4 @@ namespace Content.Shared.Power;
 /// Does nothing on the client.
 /// </summary>
 [ByRefEvent]
-public readonly record struct PowerChangedEvent(bool Powered, float ReceivingPower);
+public readonly record struct PowerChangedEvent(bool Powered, float ReceivingPower, float SideLoadFraction);
