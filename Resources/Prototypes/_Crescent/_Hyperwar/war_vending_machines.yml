@@ -360,6 +360,7 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
+    globalPriceMod: 0
   - type: Advertise
     pack: WarVendAds
   - type: SpeakOnUIClosed
@@ -375,8 +376,6 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-  - type: MarketModifier
-    mod: 0.2
 
 - type: entity
   parent: [BaseStructureUnanchorable, VendingMachine]
@@ -389,6 +388,7 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
+    globalPriceMod: 0
   - type: Advertise
     pack: WarVendAds
   - type: SpeakOnUIClosed
@@ -404,12 +404,10 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-  - type: MarketModifier
-    mod: 0.2
 
 - type: entity
   parent: [BaseStructureUnanchorable, VendingMachine]
-  id: NCWLConscriptGearendory
+  id: NCWLConscriptGearVendory
   name: NCWL surplus equipment vendor
   description: Space suits for the void, armor for the heart.
   components:
@@ -418,6 +416,7 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
+    globalPriceMod: 0
   - type: Advertise
     pack: WarVendAds
   - type: SpeakOnUIClosed
@@ -433,8 +432,6 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-  - type: MarketModifier
-    mod: 0.2
 
 - type: entity
   parent: [BaseStructureUnanchorable, VendingMachine]
@@ -447,6 +444,7 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
+    globalPriceMod: 0
   - type: Advertise
     pack: WarVendAds
   - type: SpeakOnUIClosed
@@ -462,5 +460,3 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-  - type: MarketModifier
-    mod: 0.2
