@@ -199,7 +199,7 @@
     attackRate: .9
     damage:
       types:
-        Slash: 16
+        Slash: 14
   - type: DamageOtherOnHit
     staminaCost: 5
   - type: LandAtCursor

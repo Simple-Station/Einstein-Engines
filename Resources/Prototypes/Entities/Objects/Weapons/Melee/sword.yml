@@ -153,7 +153,7 @@
     attackRate: 1.15
     damage:
       types:
-        Slash: 40
+        Slash: 30
     heavyRateModifier: 1.25
     heavyStaminaCost: 5
     angle: 80
@@ -184,7 +184,7 @@
     range: 1.75
     damage:
       types:
-        Slash: 40
+        Slash: 30
     bluntStaminaDamageFactor: 2
     heavyRateModifier: 1.5
     heavyStaminaCost: 10
