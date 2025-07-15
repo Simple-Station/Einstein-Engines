@@ -25,16 +25,16 @@ crescent-rank-dsm-specialist = Ward
 crescent-rank-dsm-cqc = Squire
 crescent-rank-dsm-grunt = Armsman
 crescent-rank-dsm-new = Fledgeling
-crescent-rank-dsm-doctor = Surgeon
+crescent-rank-dsm-doctor = Medicant
 
 #ncwl-conscript
 crescent-rank-ncwl-captain = Admiral
 crescent-rank-ncwl-crew = Artificer
 crescent-rank-ncwl-leader = Kommissar
-crescent-rank-ncwl-specialist = Specialist
+crescent-rank-ncwl-specialist = Operator
 crescent-rank-ncwl-cqc = Breacher
-crescent-rank-ncwl-grunt = Yefreitor
-crescent-rank-ncwl-new = Conscript
+crescent-rank-ncwl-grunt = Efréĭtor
+crescent-rank-ncwl-new = Cadet
 crescent-rank-ncwl-doctor = Doktor
 
 #ncwl
