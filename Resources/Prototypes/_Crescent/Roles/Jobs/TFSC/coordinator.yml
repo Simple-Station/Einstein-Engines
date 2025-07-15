@@ -4,8 +4,7 @@
   description: job-description-coordinator
   playTimeTracker: JobCoordinatorNCSP
   requirements:
-    - !type:CharacterOverallTimeRequirement
-      min: 8000
+    - !type:CharacterWhitelistRequirement
     - !type:FactionRequirement
       factionID: "TFSC"
     - !type:CharacterTraitRequirement
@@ -15,6 +14,7 @@
         - ForeignerLight
         - Muted
         - Blindness
+        - Pacifist
   special:
   - !type:AddComponentSpecial
     components:
@@ -28,7 +28,7 @@
   alwaysUseSpawner: true
   icon: "JobIconSyndieCoordinator"
   requireAdminNotify: true
-  supervisors: You answer to the interests of the Interdyne Pharmaceuticals company. Organize your employees. Keep track of stock. See to it that contracts are fullfilled.
+  supervisors: You answer to the interests of the Interdyne Pharmaceuticals company. Organize your employees. Secure stakeholders and profit.
   canBeAntag: false
   access:
   - Command
