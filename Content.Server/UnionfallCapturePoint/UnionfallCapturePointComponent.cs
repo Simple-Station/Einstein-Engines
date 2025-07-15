@@ -27,5 +27,11 @@ public sealed partial class UnionfallCapturePointComponent : Component
     [DataField]
     public float CurrentCaptureProgress = 600f;
 
+    /// <summary>
+    /// Time before capturing is allowed. This is from roundstart, so you want to add the ship grace period ON TOP of the value you want.
+    /// </summary>
+    [DataField]
+    public float GracePeriod = 1200f; //20 minutes. 10 ship + 10 point
+
 
 }

@@ -78,3 +78,5 @@
   - type: PowerSwitch
   - type: Appearance
   - type: UnionfallCapturePoint
+  - type: UseDelay #i hope this fucking works
+    delay: 10
