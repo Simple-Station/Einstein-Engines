@@ -14,7 +14,7 @@
   minPlayers: 0
   stations:
     Unionfall-Nemesis:
-      stationProto: StandardCrescentVessel
+      stationProto: FlagshipCrescentVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'DSM Nemesis-P {1}'

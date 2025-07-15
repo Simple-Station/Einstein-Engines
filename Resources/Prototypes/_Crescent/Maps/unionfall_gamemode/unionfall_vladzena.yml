@@ -9,6 +9,10 @@
       gridComponents:
         - type: BlockShipWeaponProjectileGrid
         - type: PreventPilot
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: outpost
       components:
         - type: StationNameSetup
           mapNameTemplate: 'NT Outpost Vladzena'
@@ -19,8 +23,3 @@
         - type: Grammar
           attributes:
             proper: true
-        - type: StationJobs
-          checkAlive: false
-          overflowJobs: []
-          availableJobs:
-            KadetNCWL: [ 0, 0 ]

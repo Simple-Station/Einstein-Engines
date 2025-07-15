@@ -14,7 +14,7 @@
   minPlayers: 0
   stations:
     Unionfall-Clementine:
-      stationProto: StandardCrescentVessel
+      stationProto: FlagshipCrescentVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'NCWL Dear Clementine {1}'
