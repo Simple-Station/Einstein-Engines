@@ -315,7 +315,7 @@
     sprite: _Crescent/Objects/Weapons/Guns/surplus_ncwl_rifle.rsi
   - type: Gun
     fireRate: 0.75
-    damageModifier: 1.5
+    damageModifier: 2
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -418,7 +418,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/UnionfallWeapons/amr_fire_2.ogg
   - type: Wieldable
-    unwieldOnUse: false  
+    unwieldOnUse: false
   - type: HeldSpeedModifier #makes you half as fast and you can't sprint
     walkModifier: 0.75
     sprintModifier: 0.5
@@ -427,7 +427,7 @@
   name: IRM Leveller 15.2x169mm Anti-materiel rifle
   parent: BaseItem
   id: WeaponAntimaterielDSMLeveller
-  description: A controversial tool of war, anti-tank rifles have gained much disdain among the greater Imperial Houses for providing levymen with the firepower necessary to fell a mounted Knight from his exo-armour. However, needs must - the guardsmen of lesser domains maintain stockpiles of the outdated Leveller for meeting brigand hedge-knights and communard incursions on the field. 
+  description: A controversial tool of war, anti-tank rifles have gained much disdain among the greater Imperial Houses for providing levymen with the firepower necessary to fell a mounted Knight from his exo-armour. However, needs must - the guardsmen of lesser domains maintain stockpiles of the outdated Leveller for meeting brigand hedge-knights and communard incursions on the field.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_amr.rsi
@@ -473,7 +473,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/UnionfallWeapons/amr_fire_1.ogg
   - type: Wieldable
-    unwieldOnUse: false  
+    unwieldOnUse: false
   - type: HeldSpeedModifier #makes you half as fast and you can't sprint
     walkModifier: 0.75
     sprintModifier: 0.5
