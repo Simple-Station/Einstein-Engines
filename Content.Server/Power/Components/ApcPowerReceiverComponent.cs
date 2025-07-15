@@ -1,6 +1,7 @@
 using Content.Server.Power.NodeGroups;
 using Content.Server.Power.Pow3r;
 using Content.Shared.Power.Components;
+using System.Runtime.CompilerServices;
 
 namespace Content.Server.Power.Components
 {
@@ -15,8 +16,24 @@ namespace Content.Server.Power.Components
         ///     Amount of charge this needs from an APC per second to function.
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite)]
+
+        private float _mainLoad;
+        private float _sideLoad;
+        
         [DataField("powerLoad")]
-        public float Load { get => NetworkLoad.DesiredPower; set => NetworkLoad.DesiredPower = value; }
+        public float Load { get => _mainLoad;
+            set { _mainLoad = value; NetworkLoad.DesiredPower = _mainLoad + _sideLoad; }
+            }
+
+        [DataField("sidePowerLoad")]
+        public float SideLoad
+        {
+            get => _sideLoad;
+            set { _sideLoad = value; NetworkLoad.DesiredPower = _mainLoad + _sideLoad; }
+        }
+
+        [ViewVariables(VVAccess.ReadOnly)]
+        public float FullLoad => _mainLoad + _sideLoad;
 
         public ApcPowerProviderComponent? Provider = null;
 
@@ -58,5 +75,10 @@ namespace Content.Server.Power.Components
         };
 
         public float PowerReceived => NetworkLoad.ReceivingPower;
+
+
+        [ViewVariables(VVAccess.ReadOnly)]
+        public float SideLoadFraction => MathHelper.Clamp01((NetworkLoad.ReceivingPower - _mainLoad) / _sideLoad);
+
     }
 }

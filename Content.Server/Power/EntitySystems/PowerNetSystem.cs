@@ -11,6 +11,7 @@ using JetBrains.Annotations;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.Threading;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Power.EntitySystems
 {
@@ -324,6 +325,7 @@ namespace Content.Server.Power.EntitySystems
             {
                 var powered = !apcReceiver.PowerDisabled
                               && (!apcReceiver.NeedsPower
+                                  || apcReceiver.NetworkLoad.ReceivingPower > apcReceiver.Load
                                   || MathHelper.CloseToPercent(apcReceiver.NetworkLoad.ReceivingPower,
                                       apcReceiver.Load));
 
@@ -334,6 +336,7 @@ namespace Content.Server.Power.EntitySystems
                 if (_apcBatteryQuery.TryComp(uid, out var apcBattery) && _batteryQuery.TryComp(uid, out var battery))
                 {
                     apcReceiver.Load = apcBattery.IdleLoad;
+                    apcReceiver.SideLoad = 0;
 
                     // Try to draw power from the battery if there isn't sufficient external power
                     var requireBattery = !powered && !apcReceiver.PowerDisabled;
@@ -345,8 +348,8 @@ namespace Content.Server.Power.EntitySystems
                     // Otherwise try to charge the battery
                     else if (powered && !_battery.IsFull(uid, battery))
                     {
-                        apcReceiver.Load += apcBattery.BatteryRechargeRate * apcBattery.BatteryRechargeEfficiency;
-                        _battery.SetCharge(uid, battery.CurrentCharge + apcBattery.BatteryRechargeRate * frameTime, battery);
+                        apcReceiver.SideLoad = apcBattery.BatteryRechargeRate * apcBattery.BatteryRechargeEfficiency;
+                        _battery.SetCharge(uid, battery.CurrentCharge + apcBattery.BatteryRechargeRate * apcReceiver.SideLoadFraction * frameTime, battery);
                     }
 
                     // Enable / disable the battery if the state changed
