@@ -333,27 +333,22 @@ namespace Content.Server.Power.EntitySystems
                 // Check if the entity has an internal battery
                 if (_apcBatteryQuery.TryComp(uid, out var apcBattery) && _batteryQuery.TryComp(uid, out var battery))
                 {
-                    var partiallyPowered = !apcReceiver.PowerDisabled || !apcReceiver.NeedsPower;
-
                     apcReceiver.Load = apcBattery.IdleLoad;
 
                     // Try to draw power from the battery if there isn't sufficient external power
-                    // ̶W̶W̶D̶P EE̶ EDIT START - attempted fix of apc battery chargers fucking up
-                    // powernet by alternating between drawing power and not drawing,
-                    // thus not letting apc rampup to catch up with the load
-                    var requireBattery = !partiallyPowered || apcReceiver.PowerReceived < apcReceiver.Load;
+                    var requireBattery = !powered && !apcReceiver.PowerDisabled;
 
-                    if(requireBattery)
+                    if (requireBattery)
                     {
-                        _battery.SetCharge(uid, battery.CurrentCharge - (apcReceiver.PowerReceived - apcBattery.IdleLoad) * frameTime, battery);
+                        _battery.SetCharge(uid, battery.CurrentCharge - apcBattery.IdleLoad * frameTime, battery);
                     }
-                    else if (!_battery.IsFull(uid, battery))
+                    // Otherwise try to charge the battery
+                    else if (powered && !_battery.IsFull(uid, battery))
                     {
                         apcReceiver.Load += apcBattery.BatteryRechargeRate * apcBattery.BatteryRechargeEfficiency;
-                        float frac = apcReceiver.NeedsPower ? MathHelper.Clamp01(apcReceiver.PowerReceived / apcReceiver.Load) : 1;
-                        _battery.SetCharge(uid, battery.CurrentCharge + apcBattery.BatteryRechargeRate * frameTime * frac, battery);
+                        _battery.SetCharge(uid, battery.CurrentCharge + apcBattery.BatteryRechargeRate * frameTime, battery);
                     }
-                    // ̶W̶W̶D̶P̶ EE EDIT END
+
                     // Enable / disable the battery if the state changed
                     var enableBattery = requireBattery && battery.CurrentCharge > 0;
 
