@@ -15,7 +15,6 @@ crescent-rank-courtier = Edler
 crescent-rank-archmaester = Archmaester
 crescent-rank-advocatus = Advocati
 crescent-rank-templar = Knight Templar
-crescent-rank-cadet = Cadet
 
 #dsm-conscript
 crescent-rank-dsm-captain = Grand Steward
@@ -46,7 +45,6 @@ crescent-rank-specialist = Specialist
 crescent-rank-partisan = Soldat
 crescent-rank-soldat = Kadet
 crescent-rank-kapitan = Kapitan
-crescent-rank-ncwl-crew = Shipmate
 
 #syn
 
