@@ -188,3 +188,108 @@
     Plastic: 500
     Silver: 300
     TubeLoader: 500
+
+- type: latheRecipe
+  id: BroadswordLPC
+  result: ShipVoucherBroadsword
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 300
+    ShipComponents: 250
+    ShipHull: 600
+
+- type: latheRecipe
+  id: KhopeshLPC
+  result: ShipVoucherKhopesh
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 400
+    ShipComponents: 250
+    ShipHull: 500
+
+- type: latheRecipe
+  id: RapierLPC
+  result: ShipVoucherRapier
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 400
+    ShipComponents: 250
+    ShipHull: 500
+
+- type: latheRecipe
+  id: SabreLPC
+  result: ShipVoucherSabre
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 400
+    ShipComponents: 250
+    ShipHull: 500
+
+- type: latheRecipe
+  id: VanguardMarkTwoLPC
+  result: ShipVoucherVanguardMarkTwo
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 2500
+    ShipComponents: 1250
+    ShipHull: 3500
+
+- type: latheRecipe
+  id: MolotLPC
+  result: ShipVoucherMolot
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 4000
+    ShipComponents: 4500
+    ShipHull: 5000
+
+- type: latheRecipe
+  id: IvarodLPC
+  result: ShipVoucherIvarod
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 6000
+    ShipComponents: 3250
+    ShipHull: 7500
+
+- type: latheRecipe
+  id: HindLPC
+  result: ShipVoucherHind
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 4500
+    ShipComponents: 4500
+    ShipHull: 6000
+
+- type: latheRecipe
+  id: SternLPC
+  result: ShipVoucherStern
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 12500
+    ShipComponents: 10000
+    ShipHull: 17500
+
+- type: latheRecipe
+  id: LancerFlatpack
+  result: LancerFlatpack
+  completetime: 2
+  materials:
+    BasicMechatronics: 2500
+    AdvancedElectronics: 1000
+    Gold: 300
+    Silver: 500
+    Steel: 3000
+    Tungsten: 1500
+
+- type: latheRecipe
+  id: BogatyrFlatpack
+  result: BogatyrFlatpack
+  completetime: 2
+  materials:
+    AdvancedMechatronics: 3500
+    AdvancedElectronics: 1500
+    Gold: 1000
+    Silver: 2500
+    Steel: 3500
+    Tungsten: 2500

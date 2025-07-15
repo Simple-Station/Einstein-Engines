@@ -23,7 +23,3 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: PMC Carrier
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            InfanteerNCSP: [ 7, 7 ]

@@ -47,11 +47,11 @@
   description: A hardsuit with stealth plating for operations, the shielding doesn't work while you're moving though! Needs the helmet on to finish the stealth field.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/cybersunstealth.rsi
+    sprite: _Crescent/Clothing/Syndicate/Outerclothing/cybersunstealth.rsi
   - type: Item
     size: Huge
   - type: Clothing
-    sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/cybersunstealth.rsi
+    sprite: _Crescent/Clothing/Syndicate/Outerclothing/cybersunstealth.rsi
     onEquipFunctions:
       - !type:TraitAddComponent
         components:

@@ -26,9 +26,3 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-missile
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            KapitanNCWL: [ 0, 0 ]
-            SanitarNCWL: [ 0, 0 ]
-            DoktorNCWL: [ 0, 0 ]

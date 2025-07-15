@@ -23,8 +23,3 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-patrol
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            CorpsecSHI: [2, 2]
-

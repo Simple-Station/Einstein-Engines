@@ -26,9 +26,3 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-mining
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            Pilot: [ 1, 1 ]
-            SalvageSpecialist: [ 2, 2 ]
-            StationEngineer: [ 1, 1 ]

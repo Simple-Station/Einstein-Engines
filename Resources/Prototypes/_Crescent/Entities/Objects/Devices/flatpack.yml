@@ -502,3 +502,129 @@
     - state: kit
   - type: StaticPrice
     price: 25000
+
+- type: entity
+  parent: BaseFlatpack
+  id: BallisticFablatheFlatpack
+  name: SHI TF-22 armaments foundry flatpack
+  description:  Parts used to build a ballistics factory. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: BallisticsFablathe
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseFlatpack
+  id: VariableCommodityFabricatorFlatpack
+  name: SHI CF-22 variable commodity fabricator flatpack
+  description:  Parts used to build a basic factory. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: VariableCommodityFablathe
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseFlatpack
+  id: AdvancedVariableCommodityFablatheFlatpack
+  name: SHI CF-84 advanced variable commodity fabricator flatpack
+  description:  Parts used to build an advanced factory. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: AdvancedVariableCommodityFablathe
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseFlatpack
+  id: AdvancedVariableCommodityFablatheFlatpack
+  name: SHI CF-84 advanced variable commodity fabricator flatpack
+  description:  Parts used to build an advanced factory. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: AdvancedVariableCommodityFablathe
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseFlatpack
+  id: AutoloomFablatheFlatpack
+  name: SHI portable autoloom fablathe flatpack
+  description: Parts used to build an autoloom factory. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: AutoloomFactory
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseFlatpack
+  id: ScrapRefinerFlatpack
+  name: SHI scrap upcycler flatpack
+  description: Parts used to build a scrap upcycler. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: ScrapRefiner
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseFlatpack
+  id: ShipyardManufactorumFlatpack
+  name: SHI shipyard manufactorum flatpack
+  description: Parts used to build a shipyard manufactorum. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: ShipyardManufactorum
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseFlatpack
+  id: BoriaticComposterFlatpack
+  name: SHI boriatic composter flatpack
+  description: Parts used to build a boriatic composter. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: BoriaticRefiner
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseFlatpack
+  id: OreMagnetFlatpack
+  name: SHI baromagnetic ore array flatpack
+  description: Parts used to build an ore magnet. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: OreMagnet
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 500

@@ -23,8 +23,3 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-smuggling
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            BoardSHI: [1, 0]
-            HighsecSHI: [3, 0]

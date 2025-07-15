@@ -1,0 +1,148 @@
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitExecutiveShinoharaSuit
+  result: ClothingUniformJumpsuitExecutiveShinoharaSuit
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitShinoharaLogistics
+  result: ClothingUniformJumpsuitShinoharaLogistics
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingOuterShinoharaVest
+  result: ClothingOuterShinoharaVest
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingOuterShinoharaSuitJacket
+  result: ClothingOuterShinoharaSuitJacket
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingOuterShinoharaExecSuitjacket
+  result: ClothingOuterShinoharaExecSuitJacket
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingOuterShinoharaLabcoat
+  result: ClothingOuterShinoharaLabcoat
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitShinoharaDoctor
+  result: ClothingUniformJumpsuitShinoharaDoctor
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitShinoharaHighsec
+  result: ClothingUniformJumpsuitShinoharaHighsec
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitShinoharaSecurity
+  result: ClothingUniformJumpsuitShinoharaSecurity
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingOuterArmorShinoharaArmor
+  result: ClothingOuterArmorShinoharaArmor
+  completetime: 2
+  materials:
+    Durathread: 500
+    Steel: 750
+
+- type: latheRecipe
+  id: ClothingOuterArmorShinoharaArmorHighsec
+  result: ClothingOuterArmorShinoharaArmorHighsec
+  completetime: 2
+  materials:
+    Durathread: 1000
+    Steel: 1000
+    Tungsten: 500
+
+- type: latheRecipe
+  id: ClothingHeadHatShinoharaHelmet
+  result: ClothingHeadHatShinoharaHelmet
+  completetime: 2
+  materials:
+    Durathread: 500
+    Steel: 500
+    Tungsten: 250
+
+- type: latheRecipe
+  id: ClothingOuterArmorShinoharaArmorBulwark
+  result: ClothingOuterArmorShinoharaArmorBulwark
+  completetime: 2
+  materials:
+    Durathread: 1000
+    Steel: 1000
+    Tungsten: 500
+
+- type: latheRecipe
+  id: ClothingHeadHatShinoharaNonevaHelm
+  result: ClothingHeadHatShinoharaNonevaHelm
+  completetime: 2
+  materials:
+    Durathread: 500
+    Steel: 500
+    Tungsten: 250
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitHighsec
+  result: ClothingOuterHardsuitHighsec
+  completetime: 2
+  materials:
+    Durathread: 1500
+    Steel: 2500
+    Tungsten: 500
+    HardsuitElectronics: 500
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitHEV
+  result: ClothingOuterHardsuitHEV
+  completetime: 2
+  materials:
+    Cloth: 1000
+    Steel: 2000
+    HardsuitElectronics: 500
+
+
+- type: latheRecipe
+  id: FleaLPC
+  result: ShipVoucherFlea
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 1500
+    ShipComponents: 5000
+    ShipHull: 1500
+
+- type: latheRecipe
+  id: GilgameshFlatpack
+  result: GilgameshFlatpack
+  completetime: 2
+  materials:
+    AdvancedMechatronics: 3500
+    NanotrasenElectronics: 2000
+    Gold: 3000
+    Silver: 5000
+    Steel: 12500
+    Tungsten: 2500

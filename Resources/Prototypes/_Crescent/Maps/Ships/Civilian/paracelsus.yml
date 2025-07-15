@@ -26,9 +26,3 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-medical
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            ChiefMedicalOfficer: [ 1, 1 ]
-            Paramedic: [ 2, 2 ]
-            StationEngineer: [ 1, 1 ]

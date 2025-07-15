@@ -17,7 +17,7 @@
   minPlayers: 0
   stations:
     Archon:
-      stationProto: StandardCrescentVessel
+      stationProto: FlagshipCrescentVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Archon {1}'

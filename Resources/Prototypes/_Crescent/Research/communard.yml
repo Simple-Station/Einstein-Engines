@@ -1,0 +1,178 @@
+# Tier 1
+- type: technology
+  id: CommunardClothes
+  name: research-technology-communard-clothes
+  icon:
+    sprite: _Crescent/Clothing/NCWL/Head/ncwlpeakedcap.rsi
+    state: icon
+  discipline: Communard
+  tier: 1
+  cost: 750
+  recipeUnlocks:
+  - ClothingHeadHelmetNCWLEVA
+  - ClothingOuterNCWLEVA
+  - ClothingHeadHatNCWLCapsoft
+  - ClothingHeadHatNCWLCapsoftMedical
+  - ClothingHeadHatNCWLTanker
+  - ClothingUniformJumpsuitNCWLMedic
+  - ClothingUniformJumpsuitNCWLArtificer
+  - ClothingUniformJumpsuitNCWL
+  - ClothingMaskNCWLBalaclava
+  - ClothingEyesGlassesNCWL
+  - ClothingBeltNCWLWebbing
+  - ClothingHeadHelmetNCWLBasic
+
+- type: technology
+  id: CommunardInfantry
+  name: research-technology-communard-infantry
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/fal.rsi
+    state: icon
+  discipline: Communard
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - WeaponRifleFAL
+  - WeaponPistolComrade
+  - WeaponSubMachineGunNCWLWatchdog
+  - ClothingOuterHardsuitNCWLInfantry
+
+- type: technology
+  id: CommunardFighters
+  name: research-technology-communard-fighters
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Communard
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - SabreLPC
+  - RapierLPC
+  - KhopeshLPC
+  - BroadswordLPC
+
+- type: technology
+  id: CommunardMolot
+  name: research-technology-communard-molot
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Communard
+  tier: 1
+  cost: 8000
+  recipeUnlocks:
+  - MolotLPC
+
+- type: technology
+  id: CommunardHind
+  name: research-technology-communard-corvette
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Communard
+  tier: 2
+  cost: 8500
+  recipeUnlocks:
+  - HindLPC
+
+
+- type: technology
+  id: CommunardHeavyInfantry
+  name: research-technology-communard-heavyinfantry
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/batanya.rsi
+    state: icon
+  discipline: Communard
+  tier: 2
+  cost: 8500
+  recipeUnlocks:
+  - WeaponSubMachineGunBloodhound
+  - WeaponRifleNCWLBatanya
+  - WeaponPistolT91
+  - WeaponRevolverPython
+  - ClothingOuterHardsuitNCWLPetya
+
+- type: technology
+  id: CommunardVanguardMarkTwo
+  name: research-technology-communard-vanguardmktwo
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Communard
+  tier: 2
+  cost: 8000
+  recipeUnlocks:
+  - VanguardMarkTwoLPC
+
+- type: technology
+  id: CommunardLancer
+  name: research-technology-communard-lancer
+  icon:
+    sprite: _Crescent/Objects/Specific/mecha.rsi
+    state: lancer
+  discipline: Communard
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - LancerFlatpack
+
+- type: technology
+  id: CommunardGrenadeLauncher
+  name: research-technology-communard-grenadelauncher
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/gm94.rsi
+    state: icon
+  discipline: Communard
+  tier: 2
+  cost: 8000
+  recipeUnlocks:
+  - WeaponLauncherGM94
+
+- type: technology
+  id: CommunardIvarod
+  name: research-technology-communard-ivarod
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Communard
+  tier: 2
+  cost: 8000
+  recipeUnlocks:
+  - IvarodLPC
+
+- type: technology
+  id: CommunardStern
+  name: research-technology-communard-stern
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Communard
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - SternLPC
+
+- type: technology
+  id: CommunardBogatyr
+  name: research-technology-communard-bogatyr
+  icon:
+    sprite: _Crescent/Objects/Specific/mecha.rsi
+    state: bogatyr
+  discipline: Communard
+  tier: 3
+  cost: 12500
+  recipeUnlocks:
+  - BogatyrFlatpack
+
+- type: technology
+  id: CommunardCommienaut
+  name: research-technology-communard-commienaut
+  icon:
+    sprite: _Crescent/Clothing/NCWL/OuterClothing/commienaut.rsi
+    state: icon
+  discipline: Communard
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - ClothingOuterHardsuitNCWLJuggernaut
