@@ -26,7 +26,3 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-assault-frigate
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            DraugrTAP: [ 2, 2 ]

@@ -131,9 +131,10 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     public IReadOnlySet<string> TraitPreferences => _traitPreferences;
 
     /// If we're unable to get one of our preferred jobs do we spawn as a fallback job or do we stay in lobby
+    /// hullrot changed.
     [DataField]
     public PreferenceUnavailableMode PreferenceUnavailable { get; private set; } =
-        PreferenceUnavailableMode.SpawnAsOverflow;
+        PreferenceUnavailableMode.StayInLobby;
 
     // hullrot added
     [DataField]

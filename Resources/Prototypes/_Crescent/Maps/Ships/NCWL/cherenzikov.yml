@@ -25,8 +25,3 @@
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: VesselDesignation
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            SanitarNCWL: [ 0, 0 ]
-            ArtificerNCWL: [ 0, 0 ]

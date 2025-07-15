@@ -26,7 +26,4 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-civilian
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            Contractor: [ 1, 1 ]
+

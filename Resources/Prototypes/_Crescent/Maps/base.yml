@@ -12,7 +12,6 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: Transform
-#    - type: ShipRenameHolopad # i assume not here because there could be multiple holopads
 
 - type: entity
   id: StandardCrescentOutpost #POI
@@ -27,73 +26,82 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: Transform
-    - type: ShipRenameHolopad
+
+- type: entity
+  id: FlagshipCrescentVessel #Flagship , gets spawning capabilities :) SPCR
+  parent:
+    - BaseStation
+    - BaseStationJobsSpawning
+    - BaseStationRecords
+    - BaseStationCargo
+    - BaseCombatShipAlertLevels
+    - BaseStationAllEventsEligible
+    - BaseStationDynamicFaxWarpHolopad
+    - BaseStationSiliconLawCrescentShips
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Transform
 
 - type: entity
   id: StandardCrescentVessel #Combat vessel
   parent:
     - BaseStation
-    - BaseStationJobsSpawning
     - BaseStationRecords
     - BaseStationCargo
     - BaseCombatShipAlertLevels
     - BaseStationAllEventsEligible
-    - BaseStationRenameFaxes
+    - BaseStationDynamicFaxWarpHolopad
     - BaseStationSiliconLawCrescentShips
   categories: [ HideSpawnMenu ]
   components:
     - type: Transform
-    - type: ShipRenameHolopad
+
 
 - type: entity
   id: StandardCrescentCivilianVessel #Civilian / unarmed vessel
   parent:
     - BaseStation
-    - BaseStationJobsSpawning
     - BaseStationRecords
     - BaseStationAlertLevels
     - BaseStationAllEventsEligible
-    - BaseStationRenameFaxes
+    - BaseStationDynamicFaxWarpHolopad
     - BaseStationCargo
     - BaseStationSiliconLawCrescentShips
   categories: [ HideSpawnMenu ]
   components:
     - type: Transform
     - type: ShipRenameHolopad
+    - type: StationRenameWarps
 
 - type: entity
   id: StandardCrescentExpeditionVessel #Expeds
   parent:
     - BaseStation
-    - BaseStationJobsSpawning
     - BaseStationRecords
     - BaseStationAlertLevels
     - BaseStationAllEventsEligible
-    - BaseStationRenameFaxes
+    - BaseStationDynamicFaxWarpHolopad
     - BaseStationCargo
     - BaseStationSiliconLawCrescentShips
     - BaseStationExpeditions
   categories: [ HideSpawnMenu ]
   components:
     - type: Transform
-    - type: ShipRenameHolopad
 
 - type: entity
   id: StandardCrescentExpeditionVesselCombat #Expeds
   parent:
     - BaseStation
-    - BaseStationJobsSpawning
     - BaseStationRecords
     - BaseCombatShipAlertLevels
     - BaseStationAllEventsEligible
-    - BaseStationRenameFaxes
+    - BaseStationDynamicFaxWarpHolopad
     - BaseStationCargo
     - BaseStationSiliconLawCrescentShips
     - BaseStationExpeditions
   categories: [ HideSpawnMenu ]
   components:
     - type: Transform
-    - type: ShipRenameHolopad
 
 - type: entity
   id: BaseStationSiliconLawCrescentStation
@@ -110,10 +118,12 @@
     laws: Corporate
 
 - type: entity
-  id: BaseStationRenameFaxes
+  id: BaseStationDynamicFaxWarpHolopad
   abstract: true
   components:
     - type: StationRenameFaxes
+    - type: StationRenameWarps
+    - type: ShipRenameHolopad
 
 # Sector-wide news access, should be on stations with comms (radio station, telecomms)
 - type: entity

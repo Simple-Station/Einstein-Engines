@@ -26,8 +26,3 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-missile
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            InfanteerNCSP: [ 0, 0 ]
-            TechnicianNCSP: [ 0, 0 ]
