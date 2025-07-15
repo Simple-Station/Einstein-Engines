@@ -1038,7 +1038,6 @@
     WeaponPistolComrade: 20
     BoxSpeedLoaderRifle: 50
     MagazinePistolSubMachineGun: 12
-    BoxFlare: 100
     BoxRoundsAntiMateriel: 1
     BoxLethalshot: 10
     MagazineMagnum: 12
@@ -1051,7 +1050,6 @@
     WeaponPistolComplianceImperial: 20
     MagazineBoxLightRifleSurplus: 50
     MagazinePistolSubMachineGun: 12
-    BoxFlare: 100
     BoxRoundsAntiMateriel: 1
     BoxLethalshot: 10
     MagazineMagnum: 12
@@ -1061,8 +1059,10 @@
   id: NCWLConscriptGearInventory
   startingInventory:
     WeaponFlareGun: 20
+    BoxFlare: 100
     Crowbar: 100
     Wrench: 100
+    BreachingCharge: 20
     ClothingBeltNCWLWebbing: 100
     ClothingBackpackNCWL: 100
     ClothingHeadHelmetNCWLEVA: 100
@@ -1078,8 +1078,10 @@
   id: DSMConscriptGearInventory
   startingInventory:
     WeaponFlareGun: 20
+    BoxFlare: 100
     Crowbar: 100
     Wrench: 100
+    BreachingCharge: 20
     ClothingBeltAuthorityWebbing: 100
     ClothingBackpackDSM: 100
     ClothingHeadHelmetImperialEVA: 100
