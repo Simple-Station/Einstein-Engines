@@ -73,7 +73,7 @@ public sealed class GasPowerReceiverSystem : EntitySystem
         if (state != comp.Powered)
         {
             comp.Powered = state;
-            var ev = new PowerChangedEvent(state, 0, float.NaN);
+            var ev = new PowerChangedEvent(state, 0);
             RaiseLocalEvent(uid, ref ev);
         }
     }

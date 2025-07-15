@@ -61,6 +61,7 @@ namespace Content.Server.Light.EntitySystems
             SubscribeLocalEvent<PoweredLightComponent, DeviceNetworkPacketEvent>(OnPacketReceived);
 
             SubscribeLocalEvent<PoweredLightComponent, PowerChangedEvent>(OnPowerChanged);
+            SubscribeLocalEvent<PoweredLightComponent, SidePowerChangedEvent>(OnSidePowerChanged);
 
             SubscribeLocalEvent<PoweredLightComponent, PoweredLightDoAfterEvent>(OnDoAfter);
             SubscribeLocalEvent<PoweredLightComponent, EmpPulseEvent>(OnEmpPulse);
@@ -243,8 +244,7 @@ namespace Content.Server.Light.EntitySystems
         private void UpdateLight(EntityUid uid,
             PoweredLightComponent? light = null,
             ApcPowerReceiverComponent? powerReceiver = null,
-            AppearanceComponent? appearance = null,
-            float poweredFraction = 1f)
+            AppearanceComponent? appearance = null)
         {
             if (!Resolve(uid, ref light, ref powerReceiver, false))
                 return;
@@ -267,8 +267,9 @@ namespace Content.Server.Light.EntitySystems
                 case LightBulbState.Normal:
                     if (powerReceiver.Powered && light.On)
                     {
-                        SetLight(uid, true, lightBulb.Color, light, lightBulb.LightRadius, lightBulb.LightEnergy * poweredFraction, lightBulb.LightSoftness);
+                        SetLight(uid, true, lightBulb.Color, light, lightBulb.LightRadius, lightBulb.LightEnergy * powerReceiver.SideLoadFraction, lightBulb.LightSoftness);
                         _appearance.SetData(uid, PoweredLightVisuals.BulbState, PoweredLightState.On, appearance);
+                        _appearance.SetData(uid, PoweredLightVisuals.GlowAlpha, powerReceiver.SideLoadFraction, appearance);
                         var time = _gameTiming.CurTime;
                         if (time > light.LastThunk + ThunkDelay)
                         {
@@ -332,6 +333,17 @@ namespace Content.Server.Light.EntitySystems
             args.Handled = true;
         }
 
+        private void OnSidePowerChanged(EntityUid uid, PoweredLightComponent comp, ref SidePowerChangedEvent args)
+        {
+            if (!comp.On || GetBulb(uid, comp) is not EntityUid bulbUid ||
+                !TryComp<LightBulbComponent>(bulbUid, out var bulb) ||
+                bulb.State != LightBulbState.Normal)
+                return;
+
+            _pointLight.SetEnergy(uid, bulb.LightEnergy * args.SideLoadFraction);
+            _appearance.SetData(uid, PoweredLightVisuals.GlowAlpha, args.SideLoadFraction);
+        }
+
         private void OnPowerChanged(EntityUid uid, PoweredLightComponent component, ref PowerChangedEvent args)
         {
             // TODO: Power moment
@@ -340,7 +352,7 @@ namespace Content.Server.Light.EntitySystems
             if (metadata.EntityPaused || TerminatingOrDeleted(uid, metadata))
                 return;
 
-            UpdateLight(uid, component, poweredFraction: args.SideLoadFraction);
+            UpdateLight(uid, component);
         }
 
         public void ToggleBlinkingLight(EntityUid uid, PoweredLightComponent light, bool isNowBlinking)

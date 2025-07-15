@@ -370,8 +370,18 @@ namespace Content.Server.Power.EntitySystems
                     powered |= enableBattery;
                 }
 
+                // this is a stopgap measure to allow lights to dim depending on power net load strain, while also avoiding
+                // adding an Update() loop to iterate over all the lights in the game world to check their apc receiver's side load furfillment.
+                if (apcReceiver.SideLoadFraction != apcReceiver.LastSideLoadFraction &&
+                   (Math.Abs(apcReceiver.SideLoadFraction - apcReceiver.LastSideLoadFraction) >= 0.01f || apcReceiver.SideLoadFraction is 1 or 0))
+                {
+                    apcReceiver.LastSideLoadFraction = apcReceiver.SideLoadFraction;
+                    var sev = new SidePowerChangedEvent(apcReceiver.SideLoadFraction);
+                    RaiseLocalEvent(uid, ref sev);
+                }
+
                 // If new value is the same as the old, then exit
-                if (!apcReceiver.Recalculate && apcReceiver.Powered == powered && Math.Abs(apcReceiver.SideLoadFraction - apcReceiver.LastSideLoadFraction) < 0.01f)
+                if (!apcReceiver.Recalculate && apcReceiver.Powered == powered)
                     continue;
 
                 metadata ??= MetaData(uid);
@@ -382,7 +392,7 @@ namespace Content.Server.Power.EntitySystems
                 apcReceiver.Powered = powered;
                 Dirty(uid, apcReceiver, metadata);
 
-                var ev = new PowerChangedEvent(powered, apcReceiver.NetworkLoad.ReceivingPower, apcReceiver.SideLoadFraction);
+                var ev = new PowerChangedEvent(powered, apcReceiver.NetworkLoad.ReceivingPower);
                 RaiseLocalEvent(uid, ref ev);
 
                 if (_appearanceQuery.TryComp(uid, out var appearance))
