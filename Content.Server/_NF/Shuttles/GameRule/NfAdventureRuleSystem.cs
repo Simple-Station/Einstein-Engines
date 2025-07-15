@@ -131,7 +131,7 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         var dochenskaya = "/Maps/_Crescent/Stations/dochenskaya.yml";
         var jackal = "/Maps/_Crescent/Stations/jackal.yml";
         // var refuge = "/Maps/_Crescent/Stations/refuge.yml";
-        //var vladzena = "/Maps/_Crescent/Stations/vladzena.yml";
+        // var vladzena = "/Maps/_Crescent/Stations/vladzena.yml";
         var unionfall_clementine = "/Maps/_Crescent/Unionfall/unionfall_clementine.yml";
         var unionfall_nemesis = "/Maps/_Crescent/Unionfall/unionfall_nemesis.yml";
         var unionfall_vladzena = "/Maps/_Crescent/Unionfall/unionfall_vladzena.yml";
@@ -420,19 +420,19 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         //     _shuttle.AddIFFFlag(depotUid8s[0], IFFFlags.HideLabel);
         // }
 
-          if (_map.TryLoad(mapId, dochenskaya, out var depotUid9s, new MapLoadOptions
-           {
-               Offset = _random.NextVector2(9000f, 4000f)
-           }))
-           {
-               if (_prototypeManager.TryIndex<GameMapPrototype>("Dochenskaya", out var stationProto))
-              {
-                  _station.InitializeNewStation(stationProto.Stations["Dochenskaya"], depotUid9s);
-             }
-             var meta = EnsureComp<MetaDataComponent>(depotUid9s[0]);
-              _meta.SetEntityName(depotUid9s[0], "Dochenskaya Engineering Platform", meta);
-              _shuttle.SetIFFColor(depotUid9s[0], lpbravoColor);
-           }
+        if (_map.TryLoad(mapId, dochenskaya, out var depotUid9s, new MapLoadOptions
+        {
+            Offset = _random.NextVector2(9000f, 4000f)
+        }))
+        {
+            if (_prototypeManager.TryIndex<GameMapPrototype>("Dochenskaya", out var stationProto))
+            {
+                _station.InitializeNewStation(stationProto.Stations["Dochenskaya"], depotUid9s);
+            }
+            var meta = EnsureComp<MetaDataComponent>(depotUid9s[0]);
+            _meta.SetEntityName(depotUid9s[0], "Dochenskaya Engineering Platform", meta);
+            _shuttle.SetIFFColor(depotUid9s[0], lpbravoColor);
+        }
         //   if (_map.TryLoad(mapId, jackal, out var depotUid9s, new MapLoadOptions
         //   {
         //       Offset = new Vector2(7794f, 4500f)
@@ -463,26 +463,21 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         //   _shuttle.SetIFFColor(depotUid92s[0], lpbravoColor);
         //    }
 
-             var meta = EnsureComp<MetaDataComponent>(depotUid92s[0]);
-          _meta.SetEntityName(depotUid92s[0], "Gliess Santo", meta);
-          _shuttle.SetIFFColor(depotUid92s[0], lpbravoColor);
-          }
+        // if (_map.TryLoad(mapId, tatsumoto, out var depotUid10s, new MapLoadOptions
+        // {
+        //     Offset = new Vector2(6000f, 1000f)
+        // }))
+        // {
+        //     if (_prototypeManager.TryIndex<GameMapPrototype>("Tatsumoto", out var stationProto))
+        //     {
+        //         _station.InitializeNewStation(stationProto.Stations["Tatsumoto"], depotUid10s);
+        //     }
 
-        if (_map.TryLoad(mapId, tatsumoto, out var depotUid10s, new MapLoadOptions
-        {
-             Offset = new Vector2(6000f, 1000f)
-           }))
-          {
-             if (_prototypeManager.TryIndex<GameMapPrototype>("Tatsumoto", out var stationProto))
-           {
-                   _station.InitializeNewStation(stationProto.Stations["Tatsumoto"], depotUid10s);
-               }
-
-              var meta = EnsureComp<MetaDataComponent>(depotUid10s[0]);
-             _meta.SetEntityName(depotUid10s[0], "Taypan Shipworks", meta);
-              _shuttle.SetIFFColor(depotUid10s[0], tatsumotoColor);
-             _shuttle.SetIFFFaction(depotUid10s[0], "SHI");
-         }
+        //     var meta = EnsureComp<MetaDataComponent>(depotUid10s[0]);
+        //     _meta.SetEntityName(depotUid10s[0], "Taypan Shipworks", meta);
+        //     _shuttle.SetIFFColor(depotUid10s[0], tatsumotoColor);
+        //     _shuttle.SetIFFFaction(depotUid10s[0], "SHI");
+        // }
 
         if (_map.TryLoad(mapId, oris, out var orisUids, new MapLoadOptions
         {
@@ -657,16 +652,16 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         //    _shuttle.SetIFFColor(griftyUids[0], factionColor);
         // }
 
-           if (_map.TryLoad(mapId, courthouse, out var depotUid8s, new MapLoadOptions()))
-          {
+        if (_map.TryLoad(mapId, courthouse, out var depotUid8s, new MapLoadOptions()))
+        {
             //    if (_prototypeManager.TryIndex<GameMapPrototype>("Kal", out var stationProto)) //WE DsONT INITIALIZE SPAWNS FOR CONSCRIPT
             //    {
             //        _station.InitializeNewStation(stationProto.Stations["Kal"], depotUid8s);
             //    }
-              var meta = EnsureComp<MetaDataComponent>(depotUid8s[0]);
-             _meta.SetEntityName(depotUid8s[0], "Kal Surezai", meta);
-             _shuttle.SetIFFColor(depotUid8s[0], factionColor);
-          }
+            var meta = EnsureComp<MetaDataComponent>(depotUid8s[0]);
+            _meta.SetEntityName(depotUid8s[0], "Kal Surezai", meta);
+            _shuttle.SetIFFColor(depotUid8s[0], factionColor);
+        }
 
 
         //  if (_map.TryLoad(mapId, lab, out var labUids, new MapLoadOptions
