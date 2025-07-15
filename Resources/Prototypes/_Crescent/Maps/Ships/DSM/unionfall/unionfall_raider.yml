@@ -23,7 +23,3 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-expeditions
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            LevymanDSM: [ 0, 0 ]

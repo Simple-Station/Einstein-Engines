@@ -23,7 +23,3 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-interceptor
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            LevymanDSM: [ 0, 0 ]
