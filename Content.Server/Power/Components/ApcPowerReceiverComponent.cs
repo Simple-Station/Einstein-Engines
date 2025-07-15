@@ -78,7 +78,7 @@ namespace Content.Server.Power.Components
 
 
         [ViewVariables(VVAccess.ReadOnly)]
-        public float SideLoadFraction => _sideLoad > 0 ? MathHelper.Clamp01((NetworkLoad.ReceivingPower - _mainLoad) / _sideLoad) : 1;
+        public float SideLoadFraction => _sideLoad > 0 && _needsPower ? MathHelper.Clamp01((NetworkLoad.ReceivingPower - _mainLoad) / _sideLoad) : 1;
 
         public float LastSideLoadFraction;
     }
