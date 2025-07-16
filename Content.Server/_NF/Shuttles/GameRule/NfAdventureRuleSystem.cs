@@ -420,19 +420,20 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         //     _shuttle.AddIFFFlag(depotUid8s[0], IFFFlags.HideLabel);
         // }
 
-        if (_map.TryLoad(mapId, dochenskaya, out var depotUid9s, new MapLoadOptions
-        {
-            Offset = _random.NextVector2(9000f, 4000f)
-        }))
-        {
-            if (_prototypeManager.TryIndex<GameMapPrototype>("Dochenskaya", out var stationProto))
-            {
-                _station.InitializeNewStation(stationProto.Stations["Dochenskaya"], depotUid9s);
-            }
-            var meta = EnsureComp<MetaDataComponent>(depotUid9s[0]);
-            _meta.SetEntityName(depotUid9s[0], "Dochenskaya Engineering Platform", meta);
-            _shuttle.SetIFFColor(depotUid9s[0], lpbravoColor);
-        }
+        // if (_map.TryLoad(mapId, dochenskaya, out var depotUid9s, new MapLoadOptions
+        // {
+        //     Offset = _random.NextVector2(9000f, 4000f)
+        // }))
+        // {
+        //     if (_prototypeManager.TryIndex<GameMapPrototype>("Dochenskaya", out var stationProto))
+        //     {
+        //         _station.InitializeNewStation(stationProto.Stations["Dochenskaya"], depotUid9s);
+        //     }
+        //     var meta = EnsureComp<MetaDataComponent>(depotUid9s[0]);
+        //     _meta.SetEntityName(depotUid9s[0], "Dochenskaya Engineering Platform", meta);
+        //     _shuttle.SetIFFColor(depotUid9s[0], lpbravoColor);
+        // }
+
         //   if (_map.TryLoad(mapId, jackal, out var depotUid9s, new MapLoadOptions
         //   {
         //       Offset = new Vector2(7794f, 4500f)
