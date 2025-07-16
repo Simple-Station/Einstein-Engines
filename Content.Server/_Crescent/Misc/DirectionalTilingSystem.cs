@@ -96,8 +96,28 @@ public sealed class DirectionalTilingSystem : EntitySystem
         SubscribeLocalEvent<PlacementTileEvent>(OnTilePlaced);
         SubscribeLocalEvent<TileChangedEvent>(OnTileChanged);
         SubscribeLocalEvent<PostInitEvent>(TileInitialize);
+        // Remove this when all maps have been updated to save the decals by default , SPCR 2025
+        SubscribeLocalEvent<GridInitializeEvent>(GridInitialize);
     }
     // its coal but its needed :( SPCR 2025
+
+    public void GridInitialize(GridInitializeEvent args)
+    {
+        var mapComp = Comp<MapGridComponent>(args.EntityUid);
+        var enumerator = _mapSystem.GetAllTilesEnumerator(args.EntityUid, mapComp, true);
+        while (enumerator.MoveNext(out var tile))
+        {
+            if (!(_tiles[tile.Value.Tile.TypeId] is ContentTileDefinition contentDef))
+                continue;
+            EntityCoordinates gridPos = _mapSystem.GridTileToLocal(args.EntityUid, mapComp, tile.Value.GridIndices);
+            updateTile(
+                mapComp,
+                gridPos,
+                tile.Value.Tile.TypeId,
+                contentDef.DirectionalType,
+                contentDef.uniqueDirectionals);
+        }
+    }
     public void TileInitialize(ref PostInitEvent placementEvent)
     {
         Dictionary<int, string[]> tileMappings = new();
@@ -204,11 +224,14 @@ public sealed class DirectionalTilingSystem : EntitySystem
                 // For the corner to exist , there should only be the cardinals connected. If the diagonal is connected , it means its filled in
                 if ((ConnectedCorners & dir) != dir && (ConnectedDirections & dir) == dir)
                 {
+                    // Reversed so this also has to be reversed a bit to prevent a edge case.
+                    if (directionalType == DirectionalType.ExistReversed)
+                        continue;
                     Decal interiorCorner = new Decal(
                         coords.Position,
                         tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1 + 1] + (uniqueDirectionals ? dirToString[dir] : ""), // its the inner corner
                         null,
-                        dirToIndexAndRot[dir].Item2,
+                        !uniqueDirectionals ? dirToIndexAndRot[dir].Item2 : Angle.Zero,
                         dirToIndexAndRot[dir].Item1, // z-level can remain same , inner and outer corners shouldn't be in the same corner.
                         false);
                     interiorCorner.Directional = true;
@@ -222,11 +245,11 @@ public sealed class DirectionalTilingSystem : EntitySystem
                         coords.Position,
                         tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1] + (uniqueDirectionals ? dirToString[dir] : ""),
                         null,
-                        dirToIndexAndRot[dir].Item2,
+                        !uniqueDirectionals ? dirToIndexAndRot[dir].Item2 : Angle.Zero,
                         dirToIndexAndRot[dir].Item1,
                         false);
                     outerCorner.Directional = true;
-                    if(_decalSystem.TryAddDecal(outerCorner, tileCoordinates, out var _))
+                    if(!_decalSystem.TryAddDecal(outerCorner, tileCoordinates, out var _))
                         Logger.Error($"Missing decal {tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1] + (uniqueDirectionals ? dirToString[dir] : "")} for tileId {tileType}!");
                 }
             }
@@ -239,7 +262,7 @@ public sealed class DirectionalTilingSystem : EntitySystem
                     coords.Position,
                     tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1] + (uniqueDirectionals ? dirToString[dir] : ""),
                     null,
-                    dirToIndexAndRot[dir].Item2,
+                    !uniqueDirectionals ? dirToIndexAndRot[dir].Item2 : Angle.Zero,
                     dirToIndexAndRot[dir].Item1,
                     false);
                 neededDecal.Directional = true;
