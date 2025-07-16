@@ -145,7 +145,6 @@ public sealed class DirectionalTilingSystem : EntitySystem
         }
         (DirectionFlag ConnectedDirections,DirectionFlag ConnectedCorners) = getConnectedDirections(map, tileCoordinates.ToVector2i(EntityManager,_mapManager, _transformSystem), tileType );
         DirectionFlag DisconnectedDirections = ~ConnectedDirections;
-        DirectionFlag DisconnectedCorners = ~ConnectedCorners;
         // do the actual directions now.
         foreach (DirectionFlag dir in Enum.GetValues<DirectionFlag>())
         {
