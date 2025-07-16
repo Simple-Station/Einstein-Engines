@@ -9,16 +9,19 @@ public sealed partial class UnionfallCapturePointComponent : Component
     /// <summary>
     /// Time needed to end the round once capturing begins. Represents the limit, not the current progress. Measured in seconds.
     /// </summary>
+    [DataField]
     public float TimeToEnd = 600f;
 
     /// <summary>
     /// Time it takes to interact with a powered-on capture point to flip it to your side. Measured in seconds.
     /// </summary>
+    [DataField]
     public float TimeToCapture = 10f;
 
     /// <summary>
     /// Additional time added whenever the capture point switches sides. Cannot add more time than the TimeToEnd maximum. Measured in seconds.
     /// </summary>
+    [DataField]
     public float CaptureTimeBonus = 60f;
 
     /// <summary>

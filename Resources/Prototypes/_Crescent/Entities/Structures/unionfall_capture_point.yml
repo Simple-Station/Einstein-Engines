@@ -8,7 +8,7 @@
   - type: AmbientSound
     volume: -5
     range: 30
-    enabled: false
+    enabled: true
     sound:
       path: /Audio/_Crescent/Ambience/turbine.ogg
   - type: Sprite
@@ -78,5 +78,7 @@
   - type: PowerSwitch
   - type: Appearance
   - type: UnionfallCapturePoint
-  - type: UseDelay #i hope this fucking works
-    delay: 10
+    gracePeriod: 1200
+    timeToCapture: 10
+    captureTimeBonus: 180
+    timeToEnd: 600
