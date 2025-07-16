@@ -1,4 +1,4 @@
-namespace Content.Shared._Crescent.UnionfallCapturePoint;
+namespace Content.Server._Crescent.UnionfallCapturePoint;
 
 [RegisterComponent]
 public sealed partial class UnionfallCapturePointComponent : Component
