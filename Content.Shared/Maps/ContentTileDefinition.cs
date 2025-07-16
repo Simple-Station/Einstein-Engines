@@ -38,7 +38,7 @@ namespace Content.Shared.Maps
          The base name of the DecalPrototypes for directionals.
          Decals are used to do the directional feel of the tile.
          If you set your directionals name to be "ground" , you will need to have
-         3 decal prototypes, named groundEdge, groundCorner and groundInnerCorner
+         3 decal prototypes, named groundEdge, groundCorner and groundOuterCorner
          with rotation 0 being at the direction North for edges , and North-East for corners.
          Corners draw over edges. Ensure your edge overlap is fully covered by the corner sprite.
          */

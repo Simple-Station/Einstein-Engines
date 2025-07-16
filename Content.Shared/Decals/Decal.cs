@@ -14,6 +14,8 @@ namespace Content.Shared.Decals
         [DataField("angle")] public  Angle Angle = Angle.Zero;
         [DataField("zIndex")] public  int ZIndex;
         [DataField("cleanable")] public  bool Cleanable;
+        // Signifies that this decal was made by the DirectionalTilingSystem and is used to give the illusion of directional tilling.
+        [DataField("directional")] public  bool Directional;
 
         public Decal() {}
 

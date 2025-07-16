@@ -3,6 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Content.Server.Decals;
 using Content.Shared.Decals;
+using Content.Shared.Entry;
 using Content.Shared.Maps;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
@@ -29,6 +30,7 @@ public sealed class DirectionalTilingSystem : EntitySystem
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
     [Dependency] private readonly DecalSystem _decalSystem = default!;
+    [Dependency] private readonly ITileDefinitionManager _tiles = default!;
     private const string edgeName = "Edge";
     private const string cornerName = "Corner";
     private const string outerCornerName = "OuterCorner";
@@ -65,20 +67,26 @@ public sealed class DirectionalTilingSystem : EntitySystem
     // Value packing doesn't work :((( SPCR 2025
     private static readonly FrozenDictionary<DirectionFlag, Tuple<int, Angle>> dirToIndexAndRot = new Dictionary<DirectionFlag, Tuple<int, Angle>>()
     {
-        [DirectionFlag.North] = new Tuple<int, Angle>(edgeIndex, 0),
-        [DirectionFlag.East] = new Tuple<int, Angle>(edgeIndex, 90),
-        [DirectionFlag.South] = new Tuple<int, Angle>(edgeIndex, 180),
-        [DirectionFlag.West] = new Tuple<int, Angle>(edgeIndex, 270),
-        [DirectionFlag.NorthEast] = new Tuple<int, Angle>(cornerIndex, 0),
-        [DirectionFlag.SouthEast] = new Tuple<int, Angle>(cornerIndex, 90),
-        [DirectionFlag.SouthWest] = new Tuple<int, Angle>(cornerIndex, 180),
-        [DirectionFlag.NorthWest] = new Tuple<int, Angle>(cornerIndex, 270),
+        [DirectionFlag.North] = new Tuple<int, Angle>(edgeIndex, Angle.FromDegrees(0)),
+        [DirectionFlag.East] = new Tuple<int, Angle>(edgeIndex, Angle.FromDegrees(90)),
+        [DirectionFlag.South] = new Tuple<int, Angle>(edgeIndex, Angle.FromDegrees(180)),
+        [DirectionFlag.West] = new Tuple<int, Angle>(edgeIndex, Angle.FromDegrees(270)),
+        [DirectionFlag.NorthEast] = new Tuple<int, Angle>(cornerIndex, Angle.FromDegrees(0)),
+        [DirectionFlag.SouthEast] = new Tuple<int, Angle>(cornerIndex, Angle.FromDegrees(90)),
+        [DirectionFlag.SouthWest] = new Tuple<int, Angle>(cornerIndex, Angle.FromDegrees(180)),
+        [DirectionFlag.NorthWest] = new Tuple<int, Angle>(cornerIndex, Angle.FromDegrees(270)),
     }.ToFrozenDictionary();
 
 
-public override void Initialize()
+    public override void Initialize()
     {
         base.Initialize();
+        SubscribeLocalEvent<PlacementTileEvent>(OnTilePlaced);
+        SubscribeLocalEvent<PostInitEvent>(TileInitialize);
+    }
+    // its coal but its needed :( SPCR 2025
+    public void TileInitialize(ref PostInitEvent placementEvent)
+    {
         Dictionary<int, string[]> tileMappings = new();
         foreach (var tile in _prototypeManager.EnumeratePrototypes<ContentTileDefinition>())
         {
@@ -92,57 +100,121 @@ public override void Initialize()
         }
         tileIdToDecals = tileMappings.ToFrozenDictionary();
 
-        SubscribeLocalEvent<PlacementTileEvent>(OnTilePlaced);
     }
+    // First return is cardinals (N,S,E,W) , second is corners (NE, NW, SW, SE)
 
-    private DirectionFlag getConnectedDirections(MapGridComponent map, Vector2i tileCoordinates, int tileType)
+    private (DirectionFlag, DirectionFlag) getConnectedDirections(MapGridComponent map, Vector2i tileCoordinates, int tileType)
     {
         DirectionFlag directions = DirectionFlag.None;
+        DirectionFlag cornerDirections = DirectionFlag.None;
         foreach (var (key, direction) in dirMapping)
         {
-            if(_mapSystem.TryGetTile(map, tileCoordinates+key, out var tile) && tile.TypeId == tileType)
+            if (!_mapSystem.TryGetTile(map, tileCoordinates + key, out var tile))
+                continue;
+            if (tile.TypeId != tileType)
+                continue;
+            // decide if it goes into corners or cardinals
+            if (BitOperations.PopCount((byte)direction) == 2)
+                cornerDirections |= direction;
+            else
                 directions |= direction;
         }
-        return directions;
+        return (directions, cornerDirections);
+    }
+    private void updateTile(MapGridComponent map, EntityCoordinates tileCoordinates, int tileType)
+    {
+        // so fucking linter shuts the fuck up
+        if (!tileIdToDecals!.ContainsKey(tileType))
+            return;
+        // stolen straight from DecalPlacementSystem
+        var newPos = new Vector2(
+            (float) (MathF.Round(tileCoordinates.X - 0.5f, MidpointRounding.AwayFromZero) + 0.5),
+            (float) (MathF.Round(tileCoordinates.Y - 0.5f, MidpointRounding.AwayFromZero) + 0.5)
+        );
+        var coords = tileCoordinates.WithPosition(newPos);
+        coords = coords.Offset(new Vector2(-0.5f, -0.5f));
+        _decalSystem.
+
+        (DirectionFlag ConnectedDirections,DirectionFlag ConnectedCorners) = getConnectedDirections(map, tileCoordinates.ToVector2i(EntityManager,_mapManager, _transformSystem), ev.TileType );
+        DirectionFlag DisconnectedDirections = ~ConnectedDirections;
+        DirectionFlag DisconnectedCorners = ~ConnectedCorners;
+        foreach (DirectionFlag dir in Enum.GetValues<DirectionFlag>())
+        {
+            // Corner dir
+            if (BitOperations.PopCount((byte) dir) == 2)
+            {
+                // For the corner to exist , there should only be the cardinals connected. If the diagonal is connected , it means its filled in
+                if ((ConnectedCorners & dir) != dir && (ConnectedDirections & dir) == dir)
+                {
+                    Decal interiorCorner = new Decal(
+                        coords.Position,
+                        tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1 + 1], // its the inner corner
+                        null,
+                        dirToIndexAndRot[dir].Item2,
+                        dirToIndexAndRot[dir]
+                            .Item1, // z-level can remain same , inner and outer corners shouldn't be in the same corner.
+                        false);
+                    interiorCorner.Directional = true;
+                    if (!_decalSystem.TryAddDecal(interiorCorner, tileCoordinates, out var _))
+                        Logger.Error($"Missing decal {tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1]} for tileId {tileType}!");
+                }
+
+                if ((DisconnectedCorners & dir) != dir && (DisconnectedDirections & dir) == dir)
+                {
+                    Decal outerCorner = new Decal(
+                        coords.Position,
+                        tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1]!,
+                        null,
+                        dirToIndexAndRot[dir].Item2,
+                        dirToIndexAndRot[dir].Item1,
+                        false);
+                    outerCorner.Directional = true;
+                    if(_decalSystem.TryAddDecal(outerCorner, tileCoordinates, out var _))
+                        Logger.Error($"Missing decal {tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1]} for tileId {tileType}!");
+                }
+            }
+            else // edge case
+            {
+
+                if ((DisconnectedDirections & dir) == DirectionFlag.None)
+                    continue;
+                Decal neededDecal = new Decal(
+                    coords.Position,
+                    tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1],
+                    null,
+                    dirToIndexAndRot[dir].Item2,
+                    dirToIndexAndRot[dir].Item1,
+                    false);
+                if (_decalSystem.TryAddDecal(neededDecal, tileCoordinates, out var _))
+                    continue;
+                neededDecal.Directional = true;
+                Logger.Error(
+                    $"Missing decal {tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1]} for tileId {ev.TileType}!");
+            }
+        }
+    }
+
+    private void updateNeighbors(MapGridComponent map, EntityCoordinates tileCoordinates, int tileType)
+    {
+        foreach (var (key, direction) in dirMapping)
+        {
+            if (!_mapSystem.TryGetTile(
+                map,
+                tileCoordinates.ToVector2i(EntityManager, _mapManager, _transformSystem) + key,
+                out var tile))
+                continue;
+            if (tile.TypeId != tileType)
+                continue;
+            updateTile(map, tileCoordinates.Offset(key), tileType);
+        }
     }
 
     private void OnTilePlaced(PlacementTileEvent ev)
     {
-        if (!tileIdToDecals!.ContainsKey(ev.TileType))
-            return;
         if (!TryComp<MapGridComponent>(ev.Coordinates.EntityId, out var map))
             return;
-        DirectionFlag ConnectedDirections = getConnectedDirections(map, ev.Coordinates.ToVector2i(EntityManager,_mapManager, _transformSystem), ev.TileType );
-        DirectionFlag DisconnectedDirections = ~ConnectedDirections;
-        foreach (DirectionFlag dir in Enum.GetValues<DirectionFlag>())
-        {
-            // For connected we only care about corners
-            if (BitOperations.PopCount((byte) (ConnectedDirections & dir)) > 1)
-            {
-                Decal interiorCorner = new Decal(
-                    Vector2.Zero,
-                    tileIdToDecals[ev.TileType][dirToIndexAndRot[dir].Item1 + 1], // its the inner corner
-                    null,
-                    dirToIndexAndRot[dir].Item2,
-                    dirToIndexAndRot[dir].Item1, // z-level can remain same , inner and outer corners shouldn't be in the same corner.
-                    false);
-                if(!_decalSystem.TryAddDecal(interiorCorner, ev.Coordinates, out var _))
-                    Logger.Error($"Missing decal {tileIdToDecals[ev.TileType][dirToIndexAndRot[dir].Item1]} for tileId {ev.TileType}!");
-            }
-
-            if ((DisconnectedDirections & dir) == DirectionFlag.None)
-                continue;
-            Decal neededDecal = new Decal(
-                Vector2.Zero,
-                tileIdToDecals[ev.TileType][dirToIndexAndRot[dir].Item1],
-                null,
-                dirToIndexAndRot[dir].Item2,
-                dirToIndexAndRot[dir].Item1,
-                false);
-            if(_decalSystem.TryAddDecal(neededDecal, ev.Coordinates, out var _))
-                continue;
-            Logger.Error($"Missing decal {tileIdToDecals[ev.TileType][dirToIndexAndRot[dir].Item1]} for tileId {ev.TileType}!");
-        }
+        updateTile(map, ev.Coordinates, ev.TileType);
+        updateNeighbors(map, ev.Coordinates, ev.TileType);
     }
 
 
