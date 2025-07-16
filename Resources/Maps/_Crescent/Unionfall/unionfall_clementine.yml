@@ -7121,6 +7121,33 @@ entities:
           - 353
           - 354
           - 355
+- proto: ClothingBackpackDuffelSurgeryAdvancedFilled
+  entities:
+  - uid: 1056
+    components:
+    - type: Transform
+      pos: -2.5841863,24.290388
+      parent: 1
+  - uid: 1063
+    components:
+    - type: Transform
+      pos: -2.2687757,24.674301
+      parent: 1
+  - uid: 1080
+    components:
+    - type: Transform
+      pos: -0.55458236,6.822559
+      parent: 1
+  - uid: 1081
+    components:
+    - type: Transform
+      pos: -0.5408704,6.5209136
+      parent: 1
+  - uid: 1082
+    components:
+    - type: Transform
+      pos: -0.5271566,6.274113
+      parent: 1
 - proto: ClothingBeltHolsterFilled
   entities:
   - uid: 119
@@ -7988,6 +8015,13 @@ entities:
     components:
     - type: Transform
       pos: -3.5,28.5
+      parent: 1
+- proto: CrateSurgery
+  entities:
+  - uid: 890
+    components:
+    - type: Transform
+      pos: 3.5,24.5
       parent: 1
 - proto: CrateTrashCart
   entities:
@@ -9831,6 +9865,13 @@ entities:
     - type: Transform
       pos: -2.5,26.5
       parent: 1
+- proto: NCWLConscriptShipVendory
+  entities:
+  - uid: 1055
+    components:
+    - type: Transform
+      pos: -0.5,28.5
+      parent: 1
 - proto: NCWLPoster1
   entities:
   - uid: 2168
@@ -11077,13 +11118,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: SpaceCash100000
-  entities:
-  - uid: 890
-    components:
-    - type: Transform
-      pos: -0.7278289,-4.1052036
-      parent: 1
 - proto: SpawnPointConscriptCadetNCWL
   entities:
   - uid: 560

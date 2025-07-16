@@ -1088,6 +1088,19 @@ entities:
       parent: 1
     - type: Physics
       canCollide: False
+- proto: AAAHardpointFixed
+  entities:
+  - uid: 1418
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 4.5,11.5
+      parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 1404
+    - type: Physics
+      canCollide: False
 - proto: AAAHardpointMediumBallistic
   entities:
   - uid: 179
@@ -1201,32 +1214,30 @@ entities:
       canCollide: False
 - proto: AcceleratorCannon
   entities:
-  - uid: 1671
+  - uid: 324
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 4.5,11.5
       parent: 1
-    - type: Battery
-      startingCharge: 958000
     - type: BallisticAmmoProvider
       entities:
-      - 1672
-      - 324
       - 326
       - 393
       - 478
+      - 847
+      - 1400
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
           showEnts: False
           occludes: True
           ents:
-          - 1672
-          - 324
           - 326
           - 393
           - 478
+          - 847
+          - 1400
         SpaceArtillery-CoolantSlot: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -1241,11 +1252,6 @@ entities:
           ents: []
     - type: SpaceArtillery
       coolantStored: 120
-    - type: ApcPowerReceiver
-      powerLoad: 20000
-    - type: BatterySelfRecharger
-      autoRechargeRate: -6000
-      autoRecharge: True
     - type: ItemSlots
 - proto: AirAlarm
   entities:
@@ -1452,7 +1458,7 @@ entities:
       pos: 0.5,-10.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -10766.033
+      secondsUntilStateChange: -11538.366
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -1552,7 +1558,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -18004.746
+      secondsUntilStateChange: -18777.078
       state: Opening
   - uid: 403
     components:
@@ -5264,18 +5270,10 @@ entities:
       parent: 1
 - proto: CartridgeRailHighExplosive
   entities:
-  - uid: 324
-    components:
-    - type: Transform
-      parent: 1671
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
   - uid: 326
     components:
     - type: Transform
-      parent: 1671
+      parent: 324
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -5283,7 +5281,7 @@ entities:
   - uid: 393
     components:
     - type: Transform
-      parent: 1671
+      parent: 324
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -5291,7 +5289,7 @@ entities:
   - uid: 478
     components:
     - type: Transform
-      parent: 1671
+      parent: 324
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -5317,11 +5315,21 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
-  - uid: 1672
+  - uid: 847
     components:
     - type: Transform
-      parent: 1671
+      parent: 324
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+  - uid: 1400
+    components:
+    - type: Transform
+      parent: 324
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
 - proto: Catwalk
   entities:
@@ -5762,6 +5770,28 @@ entities:
     - type: Transform
       pos: -6.5,-24.5
       parent: 1
+- proto: ClothingBackpackDuffelSurgeryAdvancedFilled
+  entities:
+  - uid: 886
+    components:
+    - type: Transform
+      pos: -6.5767145,-5.5022936
+      parent: 1
+  - uid: 887
+    components:
+    - type: Transform
+      pos: -3.3814595,-5.8999166
+      parent: 1
+  - uid: 1374
+    components:
+    - type: Transform
+      pos: -3.4363146,-5.5297155
+      parent: 1
+  - uid: 1375
+    components:
+    - type: Transform
+      pos: -3.4363146,-5.337759
+      parent: 1
 - proto: ClothingHeadHelmetImperialEVA
   entities:
   - uid: 730
@@ -6004,11 +6034,13 @@ entities:
       parent: 1
 - proto: ComputerShuttle
   entities:
-  - uid: 847
+  - uid: 813
     components:
     - type: Transform
       pos: 7.5,-23.5
       parent: 1
+    - type: ShuttleConsole
+      accesState: CaptainAcces
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -6023,6 +6055,38 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+  - uid: 1404
+    components:
+    - type: Transform
+      pos: -3.5,11.5
+      parent: 1
+    - type: ShuttleConsole
+      accesState: CaptainAcces
+    - type: ContainerContainer
+      containers:
+        board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        disk_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        id_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+    - type: DeviceLinkSource
+      linkedPorts:
+        1418:
+        - Group1: SpaceArtilleryFire
+    - type: NamedModules
+      buttonNames:
+      - Fire Cannon
+      - Module B
+      - Module C
+      - Module D
+      - Module E
 - proto: ComputerSurveillanceCameraMonitor
   entities:
   - uid: 518
@@ -6101,41 +6165,9 @@ entities:
         all:
         - 545
         - 561
-        - 573
-        - 574
-        - 389
-        - 390
-        - 471
-        - 499
-        - 519
-        - 1721
-        - 1727
-        - 1736
-        - 1738
-        - 1740
-        - 1745
-        - 1748
-        - 1778
         70mm "Jeong" swarmrocket platform:
         - 545
         - 561
-        60mm PTA 'Needler' heavy precision autogun:
-        - 573
-        - 574
-        SHI MG-21 light machinegun 20x135mm:
-        - 389
-        - 390
-        - 471
-        - 499
-        - 519
-        - 1721
-        - 1727
-        - 1736
-        - 1738
-        - 1740
-        - 1745
-        - 1748
-        - 1778
 - proto: CoolantCartridge
   entities:
   - uid: 534
@@ -6266,6 +6298,13 @@ entities:
       parent: 1
     - type: Lock
       locked: False
+- proto: CrateSurgery
+  entities:
+  - uid: 879
+    components:
+    - type: Transform
+      pos: -5.5,-11.5
+      parent: 1
 - proto: CryogenicSleepUnitSpawnerLateJoin
   entities:
   - uid: 610
@@ -6437,6 +6476,13 @@ entities:
     components:
     - type: Transform
       pos: 0.5,0.5
+      parent: 1
+- proto: DSMConscriptShipVendory
+  entities:
+  - uid: 1378
+    components:
+    - type: Transform
+      pos: 3.5,-3.5
       parent: 1
 - proto: EncryptionKeyEmpire
   entities:
@@ -8376,12 +8422,6 @@ entities:
     - type: Transform
       pos: -3.5,-8.5
       parent: 1
-  - uid: 813
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -3.5,11.5
-      parent: 1
   - uid: 835
     components:
     - type: Transform
@@ -8864,8 +8904,6 @@ entities:
         533:
         - Pressed: Toggle
         542:
-        - Pressed: Toggle
-        invalid:
         - Pressed: Toggle
         544:
         - Pressed: Toggle
@@ -9748,6 +9786,20 @@ entities:
     components:
     - type: Transform
       pos: -4.5,-17.5
+      parent: 1
+- proto: VendingMachineSovietSoda
+  entities:
+  - uid: 878
+    components:
+    - type: Transform
+      pos: 1.5,3.5
+      parent: 1
+- proto: VendingMachineSustenance
+  entities:
+  - uid: 877
+    components:
+    - type: Transform
+      pos: -1.5,0.5
       parent: 1
 - proto: VendingMachineTankDispenserEVA
   entities:
@@ -11414,8 +11466,6 @@ entities:
       pos: -6.5,11.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 840
       linkedConsoleId: 840
     - type: ContainerContainer
       containers:
@@ -11438,8 +11488,6 @@ entities:
       pos: 8.5,10.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 840
       linkedConsoleId: 840
     - type: ContainerContainer
       containers:
@@ -11464,8 +11512,6 @@ entities:
       pos: -8.5,-30.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 840
       linkedConsoleId: 840
   - uid: 390
     components:
@@ -11474,8 +11520,6 @@ entities:
       pos: 6.5,16.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 840
       linkedConsoleId: 840
   - uid: 471
     components:
@@ -11484,8 +11528,6 @@ entities:
       pos: 2.5,16.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 840
       linkedConsoleId: 840
   - uid: 499
     components:
@@ -11494,8 +11536,6 @@ entities:
       pos: -9.5,-3.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 840
       linkedConsoleId: 840
   - uid: 519
     components:
@@ -11504,8 +11544,6 @@ entities:
       pos: -7.5,8.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 840
       linkedConsoleId: 840
   - uid: 1721
     components:
@@ -11514,8 +11552,6 @@ entities:
       pos: 11.5,-4.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 840
       linkedConsoleId: 840
   - uid: 1727
     components:
@@ -11524,8 +11560,6 @@ entities:
       pos: 7.5,-32.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 840
       linkedConsoleId: 840
   - uid: 1736
     components:
@@ -11534,8 +11568,6 @@ entities:
       pos: -6.5,-32.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 840
       linkedConsoleId: 840
   - uid: 1738
     components:
@@ -11544,8 +11576,6 @@ entities:
       pos: 9.5,-30.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 840
       linkedConsoleId: 840
   - uid: 1740
     components:
@@ -11554,8 +11584,6 @@ entities:
       pos: 11.5,-17.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 840
       linkedConsoleId: 840
   - uid: 1745
     components:
@@ -11564,8 +11592,6 @@ entities:
       pos: -12.5,-15.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 840
       linkedConsoleId: 840
   - uid: 1748
     components:
@@ -11574,8 +11600,6 @@ entities:
       pos: 13.5,-20.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 840
       linkedConsoleId: 840
   - uid: 1778
     components:
@@ -11584,8 +11608,6 @@ entities:
       pos: 9.5,6.5
       parent: 1
     - type: PointCannon
-      linkedConsoleIds:
-      - 840
       linkedConsoleId: 840
 - proto: WindoorSecure
   entities:
