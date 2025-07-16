@@ -160,14 +160,13 @@ public sealed class DirectionalTilingSystem : EntitySystem
                         tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1 + 1], // its the inner corner
                         null,
                         dirToIndexAndRot[dir].Item2,
-                        dirToIndexAndRot[dir]
-                            .Item1, // z-level can remain same , inner and outer corners shouldn't be in the same corner.
+                        dirToIndexAndRot[dir].Item1, // z-level can remain same , inner and outer corners shouldn't be in the same corner.
                         false);
                     interiorCorner.Directional = true;
                     if (!_decalSystem.TryAddDecal(interiorCorner, tileCoordinates, out var _))
                         Logger.Error($"Missing decal {tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1]} for tileId {tileType}!");
                 }
-
+                // disconnected dont care about fill in.
                 if ((DisconnectedDirections & dir) == dir)
                 {
                     Decal outerCorner = new Decal(
