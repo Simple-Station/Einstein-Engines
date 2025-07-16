@@ -24,7 +24,7 @@ namespace Content.Server._Crescent;
 public sealed class DirectionalTilingSystem : EntitySystem
 {
     [Dependency] private readonly TileSystem _tileSystem = default!;
-    [Dependency] private readonly PrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
@@ -112,9 +112,24 @@ public override void Initialize()
             return;
         if (!TryComp<MapGridComponent>(ev.Coordinates.EntityId, out var map))
             return;
-        DirectionFlag DisconnectedDirections = ~getConnectedDirections(map, ev.Coordinates.ToVector2i(EntityManager,_mapManager, _transformSystem), ev.TileType );
+        DirectionFlag ConnectedDirections = getConnectedDirections(map, ev.Coordinates.ToVector2i(EntityManager,_mapManager, _transformSystem), ev.TileType );
+        DirectionFlag DisconnectedDirections = ~ConnectedDirections;
         foreach (DirectionFlag dir in Enum.GetValues<DirectionFlag>())
         {
+            // For connected we only care about corners
+            if (BitOperations.PopCount((byte) (ConnectedDirections & dir)) > 1)
+            {
+                Decal interiorCorner = new Decal(
+                    Vector2.Zero,
+                    tileIdToDecals[ev.TileType][dirToIndexAndRot[dir].Item1 + 1], // its the inner corner
+                    null,
+                    dirToIndexAndRot[dir].Item2,
+                    dirToIndexAndRot[dir].Item1, // z-level can remain same , inner and outer corners shouldn't be in the same corner.
+                    false);
+                if(!_decalSystem.TryAddDecal(interiorCorner, ev.Coordinates, out var _))
+                    Logger.Error($"Missing decal {tileIdToDecals[ev.TileType][dirToIndexAndRot[dir].Item1]} for tileId {ev.TileType}!");
+            }
+
             if ((DisconnectedDirections & dir) == DirectionFlag.None)
                 continue;
             Decal neededDecal = new Decal(
