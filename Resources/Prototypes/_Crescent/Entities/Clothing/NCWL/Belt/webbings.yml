@@ -26,13 +26,13 @@
 
 - type: entity
   parent: ClothingBeltNfsdWebbing
-  id: ClothingBeltNCWLAdmiralParade
-  name: major admiral's holster
-  description: Traditionally worn by Majors during parades, tribunals, and “diplomatic visits.” A bit posh for a Polarist, one might mutter under their breath. But never aloud.
+  id: ClothingBeltNCWLDoubleHolster
+  name: double holster belt
+  description: A simple double holster belt.
   components:
   - type: Sprite
-    sprite: _Crescent/Clothing/NCWL/Belt/ncwl_admiral_belt.rsi
+    sprite: _Crescent/Clothing/NCWL/Belt/ncwl_double_holster.rsi
   - type: Clothing
-    sprite: _Crescent/Clothing/NCWL/Belt/ncwl_admiral_belt.rsi
+    sprite: _Crescent/Clothing/NCWL/Belt/ncwl_double_holster.rsi
   - type: ExplosionResistance
     damageCoefficient: 0.1

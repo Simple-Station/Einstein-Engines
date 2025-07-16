@@ -78,7 +78,8 @@
     neck: ClothingNeckAdminCapelet
     ears: ClothingHeadsetNCWL
     gloves: ClothingHandsGlovesNCWLAdmiralParade
-    belt: ClothingBeltNCWLAdmiralParade
-    pocket2: WeaponPistolT91
+    belt: ClothingBeltNCWLDoubleHolster
+    pocket1: WeaponRevolverPython
+    pocket2: WeaponRevolverPython
     shoes: ClothingShoesBootsNCWLAdmiralParade
     head: ClothingHeadHatNCWLBeretAdmiral
