@@ -26,9 +26,3 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-utility
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            LieutenantNCSP: [ 0, 0 ]
-            InfanteerNCSP: [ 0, 0 ]
-            ShipbreakerNCSP: [ 0, 0 ]

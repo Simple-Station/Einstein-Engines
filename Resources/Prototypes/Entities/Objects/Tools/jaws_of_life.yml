@@ -21,10 +21,10 @@
   - type: Tool
     qualities:
       - Prying
-    speedModifier: 1.5
     useSound: /Audio/Items/jaws_pry.ogg
   - type: Prying
     pryPowered: true
+    speedModifier: 3
     useSound: /Audio/Items/jaws_pry.ogg
   - type: ToolForcePowered
   - type: MultipleTool
@@ -97,7 +97,6 @@
   - type: Tool
     qualities:
       - Prying
-    speedModifier: 3.0
   - type: MultipleTool
     entries:
       - behavior: Prying

@@ -93,3 +93,15 @@
     1: 0
     2: 0.75
     3: 0.75
+
+- type: techDiscipline
+  id: Corporate
+  name: research-discipline-corporate
+  color: "#D3D3D3"
+  icon:
+    sprite: _Crescent/Interface/Misc/research_disciplines.rsi
+    state: shinohara
+  tierPrerequisites:
+    1: 0
+    2: 0.75
+    3: 0.75

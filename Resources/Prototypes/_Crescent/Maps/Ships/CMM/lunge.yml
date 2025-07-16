@@ -23,8 +23,4 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-gunship
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            MinutemanCMM: [0, 0]
 

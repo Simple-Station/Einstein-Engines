@@ -8,6 +8,8 @@
     sprite: _Crescent/Clothing/Syndicate/Belt/syn_webbing.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/Syndicate/Belt/syn_webbing.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
 
 - type: entity
   parent: ClothingBeltNfsdWebbing
@@ -19,3 +21,5 @@
     sprite: _Crescent/Clothing/Syndicate/Belt/int_webbing.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/Syndicate/Belt/int_webbing.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1

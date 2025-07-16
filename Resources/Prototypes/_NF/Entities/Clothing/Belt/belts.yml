@@ -8,6 +8,8 @@
     sprite: _NF/Clothing/Belt/arcadia.rsi
   - type: Clothing
     sprite: _NF/Clothing/Belt/arcadia.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
 
 - type: entity
   parent: ClothingBeltStorageBase
@@ -92,6 +94,8 @@
     sprite: _NF/Clothing/Belt/pilot.rsi
   - type: Clothing
     sprite: _NF/Clothing/Belt/pilot.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
 
 - type: entity
   parent: ClothingBeltAssault
@@ -103,6 +107,8 @@
     sprite: _NF/Clothing/Belt/nfsd_belt.rsi
   - type: Clothing
     sprite: _NF/Clothing/Belt/nfsd_belt.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
 
 - type: entity
   parent: ClothingBeltSecurityWebbing
@@ -117,6 +123,8 @@
   - type: Tag
     tags:
     - CatWearable # Frontier
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
 
 - type: entity
   parent: ClothingBeltBase

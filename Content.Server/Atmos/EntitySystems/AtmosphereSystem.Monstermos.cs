@@ -542,15 +542,16 @@ namespace Content.Server.Atmos.EntitySystems
                     otherTile.Air.Temperature = Atmospherics.TCMB;
                 }
             }
-
-            if (GridImpulse && tileCount > 0)
+            // hullrot edit , mole check to prevent speed from being reset to NaN
+            if (GridImpulse && tileCount > 0 && totalMolesRemoved != 0)
             {
                 var direction = ((Vector2)_depressurizeTiles[tileCount - 1].GridIndices - tile.GridIndices).Normalized();
 
                 var gridPhysics = Comp<PhysicsComponent>(owner);
 
                 // TODO ATMOS: Come up with better values for these.
-                _physics.ApplyLinearImpulse(owner, direction * totalMolesRemoved * gridPhysics.Mass, body: gridPhysics);
+                // Hullrot edit, came with better values. times 3 because that is a semi-realistic value for any gas density in general
+                _physics.ApplyLinearImpulse(owner, direction * 3 * (totalMolesRemoved * (0.1f + (tile.Temperature+1)/Atmospherics.T0C)), body: gridPhysics);
                 _physics.ApplyAngularImpulse(owner, Vector2Helpers.Cross(tile.GridIndices - gridPhysics.LocalCenter, direction) * totalMolesRemoved, body: gridPhysics);
             }
 

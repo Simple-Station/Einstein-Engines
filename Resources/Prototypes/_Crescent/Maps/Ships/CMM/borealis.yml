@@ -14,7 +14,7 @@
   minPlayers: 0
   stations:
     Borealis:
-      stationProto: StandardCrescentVessel
+      stationProto: FlagshipCrescentVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'CMM Borealis {1}'
