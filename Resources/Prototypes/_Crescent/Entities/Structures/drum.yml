@@ -1,0 +1,50 @@
+- type: entity
+  id: DrumBarrel
+  parent: BaseStructure
+  name: barrel
+  description: A drum barrel.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _Crescent/Structures/Decoration/burning_barrel.rsi
+    layers:
+      - state: drum
+      - state: burning
+  - type: PointLight
+    radius: 4
+    energy: 2
+    color: "#e89527"
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+  - type: AmbientSound
+    volume: -5
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/fireplace.ogg
+  - type: AlwaysHot
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 200
+  #- type: Construction # Frontier
+  #  graph: FiresGraph # Frontier
+  #  node: BonfireNode # Frontier
+  - type: Tag
+    tags:
+      - NoPaint
