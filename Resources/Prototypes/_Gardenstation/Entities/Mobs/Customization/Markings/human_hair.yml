@@ -1,0 +1,7 @@
+﻿- type: marking
+  id: HumanHairTankGirl
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: _Gardenstation/Mobs/Customization/human_hair.rsi
+    state: tankgirl
