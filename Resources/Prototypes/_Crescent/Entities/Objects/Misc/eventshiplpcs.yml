@@ -1,0 +1,140 @@
+#unionfall
+
+#unionfall-NCWL
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherUnionfallKhopesh
+  name: Old NCWL 'Khopesh' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a communard Khopesh-class ultralight vulcan fighter. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 8000
+  - type: ShipVoucher
+    ship: UnionfallKhopesh
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherUnionfallBroadsword
+  name: Old NCWL 'Broadsword' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a communard Boradsword-class ultralight bomber. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 12000
+  - type: ShipVoucher
+    ship: UnionfallBroadsword
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherUnionfallVanguard
+  name: Old NCWL 'Vanguard' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a communard Vanguard-class dual slugthrower fighter. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 25000
+  - type: ShipVoucher
+    ship: UnionfallVanguard
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherUnionfallLodka
+  name: Old NCWL 'Lodka' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a communard Lodka-class armed troop transport. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 40000
+  - type: ShipVoucher
+    ship: UnionfallLodka
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherUnionfallConquest
+  name: Old DSM 'Conquest' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Conquest-class ultralight energy fighter. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 18000
+  - type: ShipVoucher
+    ship: UnionfallConquest
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherUnionfallImparator
+  name: Old DSM 'Imparator' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Imparator-class support artillery craft. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 30000
+  - type: ShipVoucher
+    ship: UnionfallImparator
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherUnionfallJannissary
+  name: Old DSM 'Jannissary' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Jannissary-class fighter. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 30000
+  - type: ShipVoucher
+    ship: UnionfallJannissary
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherUnionfallRaider
+  name: Old DSM 'Raider' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Raider-class cloaked troop transport. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 30000
+  - type: ShipVoucher
+    ship: UnionfallRaider
+

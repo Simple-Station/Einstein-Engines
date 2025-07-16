@@ -1092,3 +1092,19 @@
     JetpackBlackFilled: 100
     HandHeldMassScannerEE: 100
     DoubleEmergencyOxygenTankFilled: 100
+
+- type: vendingMachineInventory
+  id: NCWLConscriptShipInventory
+  startingInventory:
+    ShipVoucherUnionfallLodka: 5
+    ShipVoucherUnionfallVanguard: 5
+    ShipVoucherUnionfallBroadsword: 10
+    ShipVoucherUnionfallKhopesh: 10
+
+- type: vendingMachineInventory
+  id: DSMConscriptShipInventory
+  startingInventory:
+    ShipVoucherUnionfallRaider: 6
+    ShipVoucherUnionfallJannissary: 7
+    ShipVoucherUnionfallImparator: 7
+    ShipVoucherUnionfallConquest: 10
