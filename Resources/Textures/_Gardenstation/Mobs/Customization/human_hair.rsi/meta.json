@@ -1,0 +1,12 @@
+﻿{
+    "version": 1,
+    "size": {"x": 32, "y": 32},
+    "copyright": "sprited by bunnygirlHyacinth",
+    "license" : "CC-BY-SA-3.0",
+    "states": [
+        {
+            "name": "tankgirl",
+            "directions": 4
+        }
+    ]
+}
