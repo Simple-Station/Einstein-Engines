@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingShoesMilitaryBase
+  id: ClothingShoesBootsNCWLAdmiralParade
+  name: major admiral's parade boots
+  description: Heavy crimson parade boots with burnished spurs and a concealed holster stitched into the inner cuff. The heavy tread reminds one that the State is watching with every footfall. Worn to signal rank and authority. Most know better than to question its veracity. A bit posh for a Polarist, one might mutter under their breath. But never aloud.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/Feet/ncwl_admiral_boots.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/Feet/ncwl_admiral_boots.rsi

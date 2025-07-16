@@ -23,3 +23,16 @@
     sprite: _Crescent/Clothing/NCWL/Belt/ncwl_droppouches.rsi
   - type: ExplosionResistance
     damageCoefficient: 0.1
+
+- type: entity
+  parent: ClothingBeltNfsdWebbing
+  id: ClothingBeltNCWLAdmiralParade
+  name: major admiral's holster
+  description: Traditionally worn by Majors during parades, tribunals, and “diplomatic visits.” A bit posh for a Polarist, one might mutter under their breath. But never aloud.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/Belt/ncwl_admiral_belt.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/Belt/ncwl_admiral_belt.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
