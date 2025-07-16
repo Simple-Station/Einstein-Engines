@@ -133,11 +133,21 @@ public sealed class DirectionalTilingSystem : EntitySystem
         );
         var coords = tileCoordinates.WithPosition(newPos);
         coords = coords.Offset(new Vector2(-0.5f, -0.5f));
-        _decalSystem.
+        // get rid of old directionals.
+        foreach (var (decalId, decal) in _decalSystem.GetDecalsInRange(
+            tileCoordinates.EntityId,
+            tileCoordinates.Position))
+        {
+            // don't delete non-directionals.
+            if (!decal.Directional)
+                continue;
+            _decalSystem.RemoveDecal(tileCoordinates.EntityId, decalId);
+        }
 
-        (DirectionFlag ConnectedDirections,DirectionFlag ConnectedCorners) = getConnectedDirections(map, tileCoordinates.ToVector2i(EntityManager,_mapManager, _transformSystem), ev.TileType );
+        (DirectionFlag ConnectedDirections,DirectionFlag ConnectedCorners) = getConnectedDirections(map, tileCoordinates.ToVector2i(EntityManager,_mapManager, _transformSystem), tileType );
         DirectionFlag DisconnectedDirections = ~ConnectedDirections;
         DirectionFlag DisconnectedCorners = ~ConnectedCorners;
+        // do the actual directions now.
         foreach (DirectionFlag dir in Enum.GetValues<DirectionFlag>())
         {
             // Corner dir
@@ -189,7 +199,7 @@ public sealed class DirectionalTilingSystem : EntitySystem
                     continue;
                 neededDecal.Directional = true;
                 Logger.Error(
-                    $"Missing decal {tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1]} for tileId {ev.TileType}!");
+                    $"Missing decal {tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1]} for tileId {tileType}!");
             }
         }
     }
@@ -198,6 +208,9 @@ public sealed class DirectionalTilingSystem : EntitySystem
     {
         foreach (var (key, direction) in dirMapping)
         {
+            // yeah no double updating!
+            if (key == Vector2i.Zero)
+                continue;
             if (!_mapSystem.TryGetTile(
                 map,
                 tileCoordinates.ToVector2i(EntityManager, _mapManager, _transformSystem) + key,
