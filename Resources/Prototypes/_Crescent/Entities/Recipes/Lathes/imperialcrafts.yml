@@ -227,8 +227,8 @@
     Tungsten: 1000
 
 - type: latheRecipe
-  id: ClothingOuterHardsuitImperialCommand
-  result: ClothingOuterHardsuitImperialCommand
+  id: ClothingOuterHardsuitImperialKnight
+  result: ClothingOuterHardsuitImperialKnight
   completetime: 2
   materials:
     HardsuitElectronics: 1000
