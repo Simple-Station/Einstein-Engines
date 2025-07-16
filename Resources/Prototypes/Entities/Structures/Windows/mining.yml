@@ -18,13 +18,13 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 800
+        damage: 5000
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 400
+        damage: 2500
       behaviors:
       - !type:PlaySoundBehavior
         sound:
