@@ -9,10 +9,10 @@
     range: 30
     enabled: true
     sound:
-      path: /Audio/_Crescent/Ambience/turbine.ogg
+      path: /Audio/_EE/Supermatter/delamming.ogg
   - type: Sprite
     noRot: true
-    sprite: _Crescent/Structures/shieldemitter.rsi
+    sprite: _Crescent/Structures/capturepoint.rsi
     layers:
     - state: icon
     - state: unlit
@@ -34,7 +34,7 @@
       machine:
         shape:
           !type:PhysShapeAabb
-          bounds: "0,-2,2,2"
+          bounds: "-2,-2,2,2"
         mask:
         - FullTileMask
         layer:
