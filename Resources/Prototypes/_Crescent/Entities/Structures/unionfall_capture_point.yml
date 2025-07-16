@@ -4,7 +4,6 @@
   name: NT-X8 'Jamrock' deflector emitter (MAIN OBJECTIVE)
   description: An experimental shield emitter thought to be lost to time. Capable of blocking even subnuclear fire without flinching. Once configured to an IFF signature, it activates and allows those signatures in as well.
   components:
-  - type: AmbientOnPowered
   - type: AmbientSound
     volume: -5
     range: 30
@@ -74,8 +73,6 @@
     offset: 1.5, -2
     color: "#90d5ff"
   - type: AnimationPlayer
-  - type: LitOnPowered
-  - type: PowerSwitch
   - type: Appearance
   - type: UnionfallCapturePoint
     gracePeriod: 1200
