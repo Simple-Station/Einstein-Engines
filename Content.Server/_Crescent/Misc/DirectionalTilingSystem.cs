@@ -14,7 +14,6 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._Crescent;
 
-
 /// <summary>
 /// SPCR/MLGTASTICa 2025
 /// Handles creating the decals to create the illusion of directional tiles.
@@ -221,6 +220,8 @@ public sealed class DirectionalTilingSystem : EntitySystem
 
     private void OnTilePlaced(PlacementTileEvent ev)
     {
+        if (!tileIdToDecals!.ContainsKey(ev.TileType))
+            return;
         if (!TryComp<MapGridComponent>(ev.Coordinates.EntityId, out var map))
             return;
         updateTile(map, ev.Coordinates, ev.TileType);
