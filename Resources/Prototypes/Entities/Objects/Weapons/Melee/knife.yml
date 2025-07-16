@@ -175,10 +175,10 @@
     state: icon
   - type: MeleeWeapon
     attackRate: 1
-    range: 1.75
+    range: 1.25
     damage:
       types:
-        Slash: 40
+        Slash: 30
   - type: ThrowingAngle
     angle: 225
   - type: Item
