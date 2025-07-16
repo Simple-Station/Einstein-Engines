@@ -1,3 +1,4 @@
+using Content.Shared._Crescent;
 using Content.Shared.Atmos;
 using Content.Shared.Light.Components;
 using Content.Shared.Movement.Systems;
@@ -43,6 +44,8 @@ namespace Content.Shared.Maps
          Corners draw over edges. Ensure your edge overlap is fully covered by the corner sprite.
          */
         [DataField("directionals")] public string? Directionals { get; private set; }
+
+        [DataField("directionalRequirement")] public DirectionalType DirectionalType { get; private set; }
 
         [DataField("edgeSprites")] public Dictionary<Direction, ResPath> EdgeSprites { get; private set; } = new();
 

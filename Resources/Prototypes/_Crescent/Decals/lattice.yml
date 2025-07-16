@@ -1,0 +1,21 @@
+- type: decal
+  id: LatticeEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Crescent/Decals/lattice.rsi
+    state: Edge
+
+- type: decal
+  id: LatticeCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Crescent/Decals/lattice.rsi
+    state: Corner
+
+- type: decal
+  id: LatticeOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Crescent/Decals/lattice.rsi
+    state: Outer
+

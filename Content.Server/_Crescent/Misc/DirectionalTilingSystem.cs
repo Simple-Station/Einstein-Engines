@@ -2,6 +2,7 @@ using System.Collections.Frozen;
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Content.Server.Decals;
+using Content.Shared._Crescent;
 using Content.Shared.Decals;
 using Content.Shared.Entry;
 using Content.Shared.Maps;
@@ -81,6 +82,7 @@ public sealed class DirectionalTilingSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<PlacementTileEvent>(OnTilePlaced);
+        SubscribeLocalEvent<TileChangedEvent>(OnTileChanged);
         SubscribeLocalEvent<PostInitEvent>(TileInitialize);
     }
     // its coal but its needed :( SPCR 2025
@@ -98,11 +100,43 @@ public sealed class DirectionalTilingSystem : EntitySystem
             tileMappings.Add(tile.TileId, directionals);
         }
         tileIdToDecals = tileMappings.ToFrozenDictionary();
+    }
 
+    public void OnTileChanged(ref TileChangedEvent tileEvent)
+    {
+        EntityCoordinates gridPos = new EntityCoordinates(tileEvent.Entity, tileEvent.ChunkIndex);
+        if (!TryComp<MapGridComponent>(tileEvent.Entity, out var map))
+            return;
+        if (!(_tiles[tileEvent.OldTile.TypeId] is ContentTileDefinition contentDefOld))
+            return;
+        if (tileIdToDecals!.ContainsKey(tileEvent.OldTile.TypeId))
+        {
+            DeleteDirectionalDecals(gridPos);
+            updateNeighbors(map, gridPos, tileEvent.OldTile.TypeId, contentDefOld.DirectionalType);
+        }
+        if (!tileIdToDecals!.ContainsKey(tileEvent.NewTile.Tile.TypeId))
+            return;
+        if (!(_tiles[tileEvent.NewTile.Tile.TypeId] is ContentTileDefinition contentDef))
+            return;
+        updateTile(map, gridPos, tileEvent.NewTile.Tile.TypeId, contentDef.DirectionalType);
+        updateNeighbors(map, gridPos, tileEvent.NewTile.Tile.TypeId, contentDef.DirectionalType);
+    }
+
+    public void DeleteDirectionalDecals(EntityCoordinates tileCoordinates)
+    {
+        foreach (var (decalId, decal) in _decalSystem.GetDecalsInRange(
+            tileCoordinates.EntityId,
+            tileCoordinates.Position))
+        {
+            // don't delete non-directionals.
+            if (!decal.Directional)
+                continue;
+            _decalSystem.RemoveDecal(tileCoordinates.EntityId, decalId);
+        }
     }
     // First return is cardinals (N,S,E,W) , second is corners (NE, NW, SW, SE)
 
-    private (DirectionFlag, DirectionFlag) getConnectedDirections(MapGridComponent map, Vector2i tileCoordinates, int tileType)
+    private (DirectionFlag, DirectionFlag) getConnectedDirections(MapGridComponent map, Vector2i tileCoordinates, int tileType, DirectionalType directionalType)
     {
         DirectionFlag directions = DirectionFlag.None;
         DirectionFlag cornerDirections = DirectionFlag.None;
@@ -110,7 +144,9 @@ public sealed class DirectionalTilingSystem : EntitySystem
         {
             if (!_mapSystem.TryGetTile(map, tileCoordinates + key, out var tile))
                 continue;
-            if (tile.TypeId != tileType)
+            if (directionalType == DirectionalType.Same && tile.TypeId != tileType )
+                continue;
+            if (directionalType == DirectionalType.Exist && tile.TypeId == Tile.Empty.TypeId)
                 continue;
             // decide if it goes into corners or cardinals
             if (BitOperations.PopCount((byte)direction) == 2)
@@ -120,7 +156,7 @@ public sealed class DirectionalTilingSystem : EntitySystem
         }
         return (directions, cornerDirections);
     }
-    private void updateTile(MapGridComponent map, EntityCoordinates tileCoordinates, int tileType)
+    private void updateTile(MapGridComponent map, EntityCoordinates tileCoordinates, int tileType, DirectionalType directionalType)
     {
         // so fucking linter shuts the fuck up
         if (!tileIdToDecals!.ContainsKey(tileType))
@@ -132,17 +168,8 @@ public sealed class DirectionalTilingSystem : EntitySystem
         );
         var coords = tileCoordinates.WithPosition(newPos);
         coords = coords.Offset(new Vector2(-0.5f, -0.5f));
-        // get rid of old directionals.
-        foreach (var (decalId, decal) in _decalSystem.GetDecalsInRange(
-            tileCoordinates.EntityId,
-            tileCoordinates.Position))
-        {
-            // don't delete non-directionals.
-            if (!decal.Directional)
-                continue;
-            _decalSystem.RemoveDecal(tileCoordinates.EntityId, decalId);
-        }
-        (DirectionFlag ConnectedDirections,DirectionFlag ConnectedCorners) = getConnectedDirections(map, tileCoordinates.ToVector2i(EntityManager,_mapManager, _transformSystem), tileType );
+        DeleteDirectionalDecals(tileCoordinates);
+        (DirectionFlag ConnectedDirections,DirectionFlag ConnectedCorners) = getConnectedDirections(map, tileCoordinates.ToVector2i(EntityManager,_mapManager, _transformSystem), tileType, directionalType );
         DirectionFlag DisconnectedDirections = ~ConnectedDirections;
         // do the actual directions now.
         foreach (DirectionFlag dir in Enum.GetValues<DirectionFlag>())
@@ -200,7 +227,7 @@ public sealed class DirectionalTilingSystem : EntitySystem
         }
     }
 
-    private void updateNeighbors(MapGridComponent map, EntityCoordinates tileCoordinates, int tileType)
+    private void updateNeighbors(MapGridComponent map, EntityCoordinates tileCoordinates, int tileType, DirectionalType directionalType)
     {
         foreach (var (key, direction) in dirMapping)
         {
@@ -214,7 +241,7 @@ public sealed class DirectionalTilingSystem : EntitySystem
                 continue;
             if (tile.TypeId != tileType)
                 continue;
-            updateTile(map, tileCoordinates.Offset(key), tileType);
+            updateTile(map, tileCoordinates.Offset(key), tileType, directionalType);
         }
     }
 
@@ -224,8 +251,10 @@ public sealed class DirectionalTilingSystem : EntitySystem
             return;
         if (!TryComp<MapGridComponent>(ev.Coordinates.EntityId, out var map))
             return;
-        updateTile(map, ev.Coordinates, ev.TileType);
-        updateNeighbors(map, ev.Coordinates, ev.TileType);
+        if (!(_tiles[ev.TileType] is ContentTileDefinition contentDef))
+            return;
+        updateTile(map, ev.Coordinates, ev.TileType, contentDef.DirectionalType);
+        updateNeighbors(map, ev.Coordinates, ev.TileType, contentDef.DirectionalType);
     }
 
 

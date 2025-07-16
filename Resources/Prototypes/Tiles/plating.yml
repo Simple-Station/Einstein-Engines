@@ -81,6 +81,8 @@
   sprite: /Textures/Tiles/lattice.png
   baseTurf: Space
   isSubfloor: true
+  directionals: Lattice
+  directionalRequirement: Exist
   deconstructTools: [ Cutting ]
   weather: true
   footstepSounds:

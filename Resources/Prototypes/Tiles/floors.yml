@@ -623,6 +623,7 @@
   sprite: /Textures/Tiles/tech_maint.png
   baseTurf: Plating
   directionals: FloorTechMaintDirectional
+  directionalRequirement: Same
   isSubfloor: false
   deconstructTools: [ Prying ]
   footstepSounds:
