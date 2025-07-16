@@ -155,7 +155,15 @@ public sealed class DirectionalTilingSystem : EntitySystem
         foreach (var (key, direction) in dirMapping)
         {
             if (!_mapSystem.TryGetTile(map, tileCoordinates + key, out var tile))
+            {
+                if(directionalType == DirectionalType.ExistReversed)
+                    if (BitOperations.PopCount((byte)direction) == 2)
+                        cornerDirections |= direction;
+                    else
+                        directions |= direction;
                 continue;
+            }
+
             if (directionalType == DirectionalType.Same && tile.TypeId != tileType )
                 continue;
             if (directionalType == DirectionalType.Exist && tile.TypeId == Tile.Empty.TypeId)
@@ -205,21 +213,21 @@ public sealed class DirectionalTilingSystem : EntitySystem
                         false);
                     interiorCorner.Directional = true;
                     if (!_decalSystem.TryAddDecal(interiorCorner, tileCoordinates, out var _))
-                        Logger.Error($"Missing decal {tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1]} for tileId {tileType}!");
+                        Logger.Error($"Missing decal {tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1+1] + (uniqueDirectionals ? dirToString[dir] : "" )} for tileId {tileType}!");
                 }
                 // disconnected dont care about fill in.
                 if ((DisconnectedDirections & dir) == dir)
                 {
                     Decal outerCorner = new Decal(
                         coords.Position,
-                        tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1]+ (uniqueDirectionals ? dirToString[dir] : ""),
+                        tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1] + (uniqueDirectionals ? dirToString[dir] : ""),
                         null,
                         dirToIndexAndRot[dir].Item2,
                         dirToIndexAndRot[dir].Item1,
                         false);
                     outerCorner.Directional = true;
                     if(_decalSystem.TryAddDecal(outerCorner, tileCoordinates, out var _))
-                        Logger.Error($"Missing decal {tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1]} for tileId {tileType}!");
+                        Logger.Error($"Missing decal {tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1] + (uniqueDirectionals ? dirToString[dir] : "")} for tileId {tileType}!");
                 }
             }
             else // edge case
@@ -238,7 +246,7 @@ public sealed class DirectionalTilingSystem : EntitySystem
                 if (_decalSystem.TryAddDecal(neededDecal, tileCoordinates, out var _))
                     continue;
                 Logger.Error(
-                    $"Missing decal {tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1]} for tileId {tileType}!");
+                    $"Missing decal {tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1] + (uniqueDirectionals ? dirToString[dir] : "")} for tileId {tileType}!");
             }
         }
     }
