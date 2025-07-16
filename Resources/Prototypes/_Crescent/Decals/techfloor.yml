@@ -94,7 +94,7 @@
   tags: ["station", "markings"]
   sprite:
     sprite: _Crescent/Decals/techfloor.rsi
-    state: techne
+    state: technem
 
 - type: decal
   id: FloorTechMaintDirectionalOuterCorner

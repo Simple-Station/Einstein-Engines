@@ -68,13 +68,13 @@ public sealed class DirectionalTilingSystem : EntitySystem
     private static readonly FrozenDictionary<DirectionFlag, Tuple<int, Angle>> dirToIndexAndRot = new Dictionary<DirectionFlag, Tuple<int, Angle>>()
     {
         [DirectionFlag.North] = new Tuple<int, Angle>(edgeIndex, Angle.FromDegrees(0)),
-        [DirectionFlag.East] = new Tuple<int, Angle>(edgeIndex, Angle.FromDegrees(90)),
-        [DirectionFlag.South] = new Tuple<int, Angle>(edgeIndex, Angle.FromDegrees(180)),
-        [DirectionFlag.West] = new Tuple<int, Angle>(edgeIndex, Angle.FromDegrees(270)),
+        [DirectionFlag.East] = new Tuple<int, Angle>(edgeIndex, Angle.FromDegrees(-90)),
+        [DirectionFlag.South] = new Tuple<int, Angle>(edgeIndex, Angle.FromDegrees(-180)),
+        [DirectionFlag.West] = new Tuple<int, Angle>(edgeIndex, Angle.FromDegrees(-270)),
         [DirectionFlag.NorthEast] = new Tuple<int, Angle>(cornerIndex, Angle.FromDegrees(0)),
-        [DirectionFlag.SouthEast] = new Tuple<int, Angle>(cornerIndex, Angle.FromDegrees(90)),
-        [DirectionFlag.SouthWest] = new Tuple<int, Angle>(cornerIndex, Angle.FromDegrees(180)),
-        [DirectionFlag.NorthWest] = new Tuple<int, Angle>(cornerIndex, Angle.FromDegrees(270)),
+        [DirectionFlag.SouthEast] = new Tuple<int, Angle>(cornerIndex, Angle.FromDegrees(-90)),
+        [DirectionFlag.SouthWest] = new Tuple<int, Angle>(cornerIndex, Angle.FromDegrees(-180)),
+        [DirectionFlag.NorthWest] = new Tuple<int, Angle>(cornerIndex, Angle.FromDegrees(-270)),
     }.ToFrozenDictionary();
 
 
@@ -143,7 +143,6 @@ public sealed class DirectionalTilingSystem : EntitySystem
                 continue;
             _decalSystem.RemoveDecal(tileCoordinates.EntityId, decalId);
         }
-
         (DirectionFlag ConnectedDirections,DirectionFlag ConnectedCorners) = getConnectedDirections(map, tileCoordinates.ToVector2i(EntityManager,_mapManager, _transformSystem), tileType );
         DirectionFlag DisconnectedDirections = ~ConnectedDirections;
         DirectionFlag DisconnectedCorners = ~ConnectedCorners;
@@ -169,7 +168,7 @@ public sealed class DirectionalTilingSystem : EntitySystem
                         Logger.Error($"Missing decal {tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1]} for tileId {tileType}!");
                 }
 
-                if ((DisconnectedCorners & dir) != dir && (DisconnectedDirections & dir) == dir)
+                if ((DisconnectedDirections & dir) == dir)
                 {
                     Decal outerCorner = new Decal(
                         coords.Position,
@@ -195,9 +194,9 @@ public sealed class DirectionalTilingSystem : EntitySystem
                     dirToIndexAndRot[dir].Item2,
                     dirToIndexAndRot[dir].Item1,
                     false);
+                neededDecal.Directional = true;
                 if (_decalSystem.TryAddDecal(neededDecal, tileCoordinates, out var _))
                     continue;
-                neededDecal.Directional = true;
                 Logger.Error(
                     $"Missing decal {tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1]} for tileId {tileType}!");
             }
