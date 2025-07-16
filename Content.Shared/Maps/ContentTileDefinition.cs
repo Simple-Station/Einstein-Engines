@@ -47,6 +47,11 @@ namespace Content.Shared.Maps
 
         [DataField("directionalRequirement")] public DirectionalType DirectionalType { get; private set; }
 
+        // Wheter the sprite has a special directional defined for each direction. Makes it so instead of rotation,
+        // It will look for decals with direction appended, like EdgeN , EdgeS, edgeE, edgeW
+        // for corners it will be CornerNE, CornerNW , etc etc
+        [DataField("uniqueDirectionals")] public bool uniqueDirectionals { get; private set; }
+
         [DataField("edgeSprites")] public Dictionary<Direction, ResPath> EdgeSprites { get; private set; } = new();
 
         [DataField("edgeSpritePriority")] public int EdgeSpritePriority { get; private set; } = 0;

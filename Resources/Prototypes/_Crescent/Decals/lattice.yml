@@ -1,21 +1,85 @@
 - type: decal
-  id: LatticeEdge
+  id: LatticeEdgeN
   tags: ["station", "markings"]
   sprite:
     sprite: _Crescent/Decals/lattice.rsi
-    state: Edge
+    state: EdgeN
 
 - type: decal
-  id: LatticeCorner
+  id: LatticeEdgeE
   tags: ["station", "markings"]
   sprite:
     sprite: _Crescent/Decals/lattice.rsi
-    state: Corner
+    state: EdgeE
 
 - type: decal
-  id: LatticeOuterCorner
+  id: LatticeEdgeS
   tags: ["station", "markings"]
   sprite:
     sprite: _Crescent/Decals/lattice.rsi
-    state: Outer
+    state: EdgeS
+
+- type: decal
+  id: LatticeEdgeW
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Crescent/Decals/lattice.rsi
+    state: EdgeW
+
+- type: decal
+  id: LatticeCornerNE
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Crescent/Decals/lattice.rsi
+    state: CornerNE
+
+- type: decal
+  id: LatticeCornerNW
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Crescent/Decals/lattice.rsi
+    state: CornerNW
+
+- type: decal
+  id: LatticeCornerSE
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Crescent/Decals/lattice.rsi
+    state: CornerSE
+
+- type: decal
+  id: LatticeCornerSW
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Crescent/Decals/lattice.rsi
+    state: CornerSW
+
+- type: decal
+  id: LatticeOuterCornerNE
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Crescent/Decals/lattice.rsi
+    state: OuterNE
+
+- type: decal
+  id: LatticeOuterCornerNW
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Crescent/Decals/lattice.rsi
+    state: OuterNW
+
+- type: decal
+  id: LatticeOuterCornerSE
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Crescent/Decals/lattice.rsi
+    state: OuterSE
+
+- type: decal
+  id: LatticeOuterCornerSW
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Crescent/Decals/lattice.rsi
+    state: OuterSW
+
 

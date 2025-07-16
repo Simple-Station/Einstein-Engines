@@ -64,7 +64,19 @@ public sealed class DirectionalTilingSystem : EntitySystem
         [DirectionFlag.NorthWest] = Vector2i.UpLeft,
         [DirectionFlag.NorthEast] = Vector2i.UpRight,
     }.ToFrozenDictionary();
+    public static readonly FrozenDictionary<DirectionFlag, string> dirToString = new Dictionary<DirectionFlag, string>()
+    {
+        [DirectionFlag.North] = "N",
+        [DirectionFlag.South] = "S",
+        [DirectionFlag.West] = "W",
+        [DirectionFlag.East] = "E",
+        [DirectionFlag.SouthWest] = "SW",
+        [DirectionFlag.SouthEast] = "SE",
+        [DirectionFlag.NorthWest] = "NW",
+        [DirectionFlag.NorthEast] = "NE",
+    }.ToFrozenDictionary();
     // Value packing doesn't work :((( SPCR 2025
+    // Used for SIMPLE edges that dont have unique directionals
     private static readonly FrozenDictionary<DirectionFlag, Tuple<int, Angle>> dirToIndexAndRot = new Dictionary<DirectionFlag, Tuple<int, Angle>>()
     {
         [DirectionFlag.North] = new Tuple<int, Angle>(edgeIndex, Angle.FromDegrees(0)),
@@ -104,9 +116,9 @@ public sealed class DirectionalTilingSystem : EntitySystem
 
     public void OnTileChanged(ref TileChangedEvent tileEvent)
     {
-        EntityCoordinates gridPos = new EntityCoordinates(tileEvent.Entity, tileEvent.ChunkIndex);
         if (!TryComp<MapGridComponent>(tileEvent.Entity, out var map))
             return;
+        EntityCoordinates gridPos = _mapSystem.GridTileToLocal(tileEvent.NewTile.GridUid, map, tileEvent.NewTile.GridIndices);
         if (!(_tiles[tileEvent.OldTile.TypeId] is ContentTileDefinition contentDefOld))
             return;
         if (tileIdToDecals!.ContainsKey(tileEvent.OldTile.TypeId))
@@ -118,8 +130,8 @@ public sealed class DirectionalTilingSystem : EntitySystem
             return;
         if (!(_tiles[tileEvent.NewTile.Tile.TypeId] is ContentTileDefinition contentDef))
             return;
-        updateTile(map, gridPos, tileEvent.NewTile.Tile.TypeId, contentDef.DirectionalType);
-        updateNeighbors(map, gridPos, tileEvent.NewTile.Tile.TypeId, contentDef.DirectionalType);
+        updateTile(map, gridPos, tileEvent.NewTile.Tile.TypeId, contentDef.DirectionalType, contentDef.uniqueDirectionals);
+        updateNeighbors(map, gridPos, tileEvent.NewTile.Tile.TypeId, contentDef.DirectionalType, contentDef.uniqueDirectionals);
     }
 
     public void DeleteDirectionalDecals(EntityCoordinates tileCoordinates)
@@ -148,6 +160,8 @@ public sealed class DirectionalTilingSystem : EntitySystem
                 continue;
             if (directionalType == DirectionalType.Exist && tile.TypeId == Tile.Empty.TypeId)
                 continue;
+            if (directionalType == DirectionalType.ExistReversed && tile.TypeId != Tile.Empty.TypeId)
+                continue;
             // decide if it goes into corners or cardinals
             if (BitOperations.PopCount((byte)direction) == 2)
                 cornerDirections |= direction;
@@ -156,7 +170,7 @@ public sealed class DirectionalTilingSystem : EntitySystem
         }
         return (directions, cornerDirections);
     }
-    private void updateTile(MapGridComponent map, EntityCoordinates tileCoordinates, int tileType, DirectionalType directionalType)
+    private void updateTile(MapGridComponent map, EntityCoordinates tileCoordinates, int tileType, DirectionalType directionalType, bool uniqueDirectionals = false)
     {
         // so fucking linter shuts the fuck up
         if (!tileIdToDecals!.ContainsKey(tileType))
@@ -174,6 +188,8 @@ public sealed class DirectionalTilingSystem : EntitySystem
         // do the actual directions now.
         foreach (DirectionFlag dir in Enum.GetValues<DirectionFlag>())
         {
+            if (dir == DirectionFlag.None)
+                continue;
             // Corner dir
             if (BitOperations.PopCount((byte) dir) == 2)
             {
@@ -182,7 +198,7 @@ public sealed class DirectionalTilingSystem : EntitySystem
                 {
                     Decal interiorCorner = new Decal(
                         coords.Position,
-                        tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1 + 1], // its the inner corner
+                        tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1 + 1] + (uniqueDirectionals ? dirToString[dir] : ""), // its the inner corner
                         null,
                         dirToIndexAndRot[dir].Item2,
                         dirToIndexAndRot[dir].Item1, // z-level can remain same , inner and outer corners shouldn't be in the same corner.
@@ -196,7 +212,7 @@ public sealed class DirectionalTilingSystem : EntitySystem
                 {
                     Decal outerCorner = new Decal(
                         coords.Position,
-                        tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1]!,
+                        tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1]+ (uniqueDirectionals ? dirToString[dir] : ""),
                         null,
                         dirToIndexAndRot[dir].Item2,
                         dirToIndexAndRot[dir].Item1,
@@ -213,7 +229,7 @@ public sealed class DirectionalTilingSystem : EntitySystem
                     continue;
                 Decal neededDecal = new Decal(
                     coords.Position,
-                    tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1],
+                    tileIdToDecals[tileType][dirToIndexAndRot[dir].Item1] + (uniqueDirectionals ? dirToString[dir] : ""),
                     null,
                     dirToIndexAndRot[dir].Item2,
                     dirToIndexAndRot[dir].Item1,
@@ -227,7 +243,7 @@ public sealed class DirectionalTilingSystem : EntitySystem
         }
     }
 
-    private void updateNeighbors(MapGridComponent map, EntityCoordinates tileCoordinates, int tileType, DirectionalType directionalType)
+    private void updateNeighbors(MapGridComponent map, EntityCoordinates tileCoordinates, int tileType, DirectionalType directionalType, bool uniqueDirectionals = false)
     {
         foreach (var (key, direction) in dirMapping)
         {
@@ -241,7 +257,7 @@ public sealed class DirectionalTilingSystem : EntitySystem
                 continue;
             if (tile.TypeId != tileType)
                 continue;
-            updateTile(map, tileCoordinates.Offset(key), tileType, directionalType);
+            updateTile(map, tileCoordinates.Offset(key), tileType, directionalType, uniqueDirectionals);
         }
     }
 
@@ -253,8 +269,8 @@ public sealed class DirectionalTilingSystem : EntitySystem
             return;
         if (!(_tiles[ev.TileType] is ContentTileDefinition contentDef))
             return;
-        updateTile(map, ev.Coordinates, ev.TileType, contentDef.DirectionalType);
-        updateNeighbors(map, ev.Coordinates, ev.TileType, contentDef.DirectionalType);
+        updateTile(map, ev.Coordinates, ev.TileType, contentDef.DirectionalType, contentDef.uniqueDirectionals);
+        updateNeighbors(map, ev.Coordinates, ev.TileType, contentDef.DirectionalType, contentDef.uniqueDirectionals);
     }
 
 

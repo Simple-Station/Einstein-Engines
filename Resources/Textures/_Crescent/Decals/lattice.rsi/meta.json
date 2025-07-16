@@ -8,13 +8,40 @@
   },
   "states": [
     {
-      "name": "Edge"
+      "name": "EdgeN"
     },
     {
-      "name": "Corner"
+      "name": "CornerNE"
     },
     {
-      "name": "Outer"
+      "name": "OuterNE"
+    },
+    {
+      "name": "EdgeW"
+    },
+    {
+      "name": "EdgeS"
+    },
+    {
+      "name": "EdgeE"
+    },
+    {
+      "name": "OuterNW"
+    },
+    {
+      "name": "OuterSE"
+    },
+    {
+      "name": "OuterSW"
+    },
+    {
+      "name": "CornerNW"
+    },
+    {
+      "name": "CornerSW"
+    },
+    {
+      "name": "CornerSE"
     }
   ]
 }

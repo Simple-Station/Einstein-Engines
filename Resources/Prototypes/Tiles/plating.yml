@@ -82,7 +82,8 @@
   baseTurf: Space
   isSubfloor: true
   directionals: Lattice
-  directionalRequirement: Exist
+  directionalRequirement: ExistReversed
+  uniqueDirectionals: true
   deconstructTools: [ Cutting ]
   weather: true
   footstepSounds:
