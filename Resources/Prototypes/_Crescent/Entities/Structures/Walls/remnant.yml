@@ -1,0 +1,15 @@
+- type: entity
+  parent: BaseWall
+  id: WallRemnant
+  name: Remnant Wall
+  components:
+    - type: Tag
+      tags:
+        - Wall
+    - type: Sprite
+      sprite: _Crescent/Structures/remnantWalls.rsi
+    - type: Icon
+      sprite: Structures/Walls/remnantWalls.rsi
+    - type: IconSmooth
+      key: walls
+      base: remnant_
