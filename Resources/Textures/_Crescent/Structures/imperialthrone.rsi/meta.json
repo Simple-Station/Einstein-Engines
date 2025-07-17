@@ -1,1 +1,15 @@
-{"version": 1, "size": {"x": 31, "y": 37}, "license": "", "copyright": "Built by the Hullrot team for the project. All rights reserved. Do not use, relicense, redistribute, or modify in any way. This art is proprietary.", "states": [{"name": "icon"}]}
+{
+  "version": 1,
+  "license": "",
+  "copyright": "Made by the Hullrot team for the project. All rights reserved. Do not use, relicense, redistribute, or modify in any way. This art is proprietary.",
+  "size": {
+      "x": 32,
+      "y": 37
+    },
+     "states": [
+       {
+            "name": "throne",
+            "directions": 4
+       }
+     ]
+}
