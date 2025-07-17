@@ -198,7 +198,7 @@ public sealed partial class GunComponent : Component
     /// <seealso cref="GunRefreshModifiersEvent"/>
     /// </summary>
     [AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
-    public float FireRateModified;
+    public float FireRateModified = 1;
 
     /// <summary>
     /// Starts fire cooldown when equipped if true.
