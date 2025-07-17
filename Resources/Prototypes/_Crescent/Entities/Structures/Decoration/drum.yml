@@ -1,8 +1,8 @@
 - type: entity
   id: DrumBarrel
   parent: BaseStructure
-  name: barrel
-  description: A drum barrel.
+  name: burning barrel
+  description: A crude burning barrel.
   components:
   - type: Sprite
     noRot: true

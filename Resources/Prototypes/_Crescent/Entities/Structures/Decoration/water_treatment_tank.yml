@@ -34,7 +34,7 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           SheetSteel1:
-            min: 4
+            min: 6
             max: 8
   - type: Fixtures
     fixtures:
