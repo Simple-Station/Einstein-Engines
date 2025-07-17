@@ -1,3 +1,4 @@
+using Content.Shared._Crescent;
 using Content.Shared.Atmos;
 using Content.Shared.Light.Components;
 using Content.Shared.Movement.Systems;
@@ -34,6 +35,22 @@ namespace Content.Shared.Maps
         [DataField("name")]
         public string Name { get; private set; } = "";
         [DataField("sprite")] public ResPath? Sprite { get; private set; }
+        /* SPCR/MLGTASTICa 2025
+         The base name of the DecalPrototypes for directionals.
+         Decals are used to do the directional feel of the tile.
+         If you set your directionals name to be "ground" , you will need to have
+         3 decal prototypes, named groundEdge, groundCorner and groundOuterCorner
+         with rotation 0 being at the direction North for edges , and North-East for corners.
+         Corners draw over edges. Ensure your edge overlap is fully covered by the corner sprite.
+         */
+        [DataField("directionals")] public string? Directionals { get; private set; }
+
+        [DataField("directionalRequirement")] public DirectionalType DirectionalType { get; private set; }
+
+        // Wheter the sprite has a special directional defined for each direction. Makes it so instead of rotation,
+        // It will look for decals with direction appended, like EdgeN , EdgeS, edgeE, edgeW
+        // for corners it will be CornerNE, CornerNW , etc etc
+        [DataField("uniqueDirectionals")] public bool uniqueDirectionals { get; private set; }
 
         [DataField("edgeSprites")] public Dictionary<Direction, ResPath> EdgeSprites { get; private set; } = new();
 
@@ -119,6 +136,8 @@ namespace Content.Shared.Maps
         /// Is this tile immune to RCD deconstruct.
         /// </summary>
         [DataField("indestructible")] public bool Indestructible = false;
+
+
 
         public void AssignTileId(ushort id)
         {

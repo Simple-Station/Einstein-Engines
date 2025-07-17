@@ -190,6 +190,22 @@
     stackType: FloorTileTechmaint
 
 - type: entity
+  name: techmaint floor directional
+  parent: FloorTileItemSteel
+  id: FloorTileItemTechmaintDirectional
+  components:
+  - type: Sprite
+    state: techfloor
+  - type: Item
+    heldPrefix: dark
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorTechMaint
+  - type: Stack
+    stackType: FloorTileTechmaint
+
+- type: entity
   name: reinforced tile
   parent: FloorTileItemSteel
   id: FloorTileItemReinforced
