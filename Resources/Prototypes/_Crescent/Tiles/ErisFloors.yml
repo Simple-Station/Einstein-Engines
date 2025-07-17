@@ -1,0 +1,1038 @@
+- type: tile
+  id: ErisBlueCircuit
+  name: "Eris Blue Circuit"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/bcircuit.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisBlueCircuit
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+
+- type: decal
+  id: ErisBlueCircuitEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: bcircuit_edges
+
+- type: decal
+  id: ErisBlueCircuitCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: bcircuit_corner
+
+- type: decal
+  id: ErisBlueCircuitOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: bcircuit_outer
+
+- type: tile
+  id: ErisOnestarVA
+  name: "Eris Onestar V1"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/onestar1.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisOnestarVA
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+
+- type: decal
+  id: ErisOnestarVAEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: onestar1_edges
+
+- type: decal
+  id: ErisOnestarVACorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: onestar1_corners
+
+- type: decal
+  id: ErisOnestarVAOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: onestar1_outer
+
+- type: tile
+  id: ErisOnestar2
+  name: "Eris Onestar2"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/onestar2.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisOnestar2
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisOnestar2Edge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: onestar2_edges
+
+- type: decal
+  id: ErisOnestar2Corner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: onestar2_corners
+
+- type: decal
+  id: ErisOnestar2OuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: onestar2_outer
+- type: tile
+  id: ErisOnestar3
+  name: "Eris Onestar3"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/onestar3.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisOnestar3
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisOnestar3Edge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: onestar3_edges
+
+- type: decal
+  id: ErisOnestar3Corner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: onestar3_corners
+
+- type: decal
+  id: ErisOnestar3OuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: onestar3_outer
+- type: tile
+  id: ErisOnestar4
+  name: "Eris Onestar4"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/onestar4.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisOnestar4
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisOnestar4Edge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: onestar4_edges
+
+- type: decal
+  id: ErisOnestar4Corner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: onestar4_corners
+
+- type: decal
+  id: ErisOnestar4OuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: onestar4_outer
+- type: tile
+  id: ErisHullcenter
+  name: "Eris Hullcenter"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/hullcenter18.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisHullcenter
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisHullcenterEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: hullcenter_edges
+
+- type: decal
+  id: ErisHullcenterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: hullcenter_corners
+
+- type: decal
+  id: ErisHullcenterOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: hullcenter_outer
+- type: tile
+  id: ErisPlating
+  name: "Eris Plating"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/plating.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisPlating
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisPlatingEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: plating_edges
+
+- type: decal
+  id: ErisPlatingCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: plating_corners
+
+- type: decal
+  id: ErisPlatingOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: plating_outer
+- type: tile
+  id: ErisUnder
+  name: "Eris Under"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/under.png
+  baseTurf: Plating
+  isSubfloor: true
+  directionals: ErisUnder
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+
+- type: decal
+  id: ErisUnderEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: under_edges
+
+- type: decal
+  id: ErisUnderCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: under_corners
+
+- type: decal
+  id: ErisUnderOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: under_outer
+- type: tile
+  id: ErisTiles
+  name: "Eris Tiles"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/tiles.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisTiles
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisTilesEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: tiles_edges
+
+- type: decal
+  id: ErisTilesCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: tiles_corners
+
+- type: decal
+  id: ErisTilesOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: tiles_outer
+- type: tile
+  id: ErisMonofloor
+  name: "Eris Monofloor"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/monofloor.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisMonofloor
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisMonofloorEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: monofloor_edges
+
+- type: decal
+  id: ErisMonofloorCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: monofloor_corners
+
+- type: decal
+  id: ErisMonofloorOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: monofloor_outer
+- type: tile
+  id: ErisReinforced
+  name: "Eris Reinforced"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/reinforced.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisReinforced
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisReinforcedEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: reinforced_edges
+
+- type: decal
+  id: ErisReinforcedCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: reinforced_corners
+
+- type: decal
+  id: ErisReinforcedOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: reinforced_outer
+- type: tile
+  id: ErisCafe
+  name: "Eris Cafe"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/cafe.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisCafe
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisCafeEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: cafe_edges
+
+- type: decal
+  id: ErisCafeCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: cafe_corners
+
+- type: decal
+  id: ErisCafeOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: cafe_outer
+- type: tile
+  id: ErisTechmaint
+  name: "Eris Techmaint"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/techmaint.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisTechmaint
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisTechmaintEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: techmaint_edges
+
+- type: decal
+  id: ErisTechmaintCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: techmaint_corners
+
+- type: decal
+  id: ErisTechmaintOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: techmaint_outer
+- type: tile
+  id: ErisTechmaintp
+  name: "Eris Techmaintp"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/techmaintp.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisTechmaintp
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisTechmaintpEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: techmaintp_edges
+
+- type: decal
+  id: ErisTechmaintpCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: techmaintp_corners
+
+- type: decal
+  id: ErisTechmaintpOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: techmaintp_outer
+- type: tile
+  id: ErisTechmaintpan
+  name: "Eris Techmaintpan"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/techmaintpan.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisTechmaintpan
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisTechmaintpanEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: techmaintpan_edges
+
+- type: decal
+  id: ErisTechmaintpanCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: techmaintpan_corners
+
+- type: decal
+  id: ErisTechmaintpanOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: techmaintpan_outer
+- type: tile
+  id: ErisTechmaintcargo
+  name: "Eris Techmaintcargo"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/techmaintcargo.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisTechmaintcargo
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisTechmaintcargoEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: techmaintcargo_edges
+
+- type: decal
+  id: ErisTechmaintcargoCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: techmaintcargo_corners
+
+- type: decal
+  id: ErisTechmaintcargoOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: techmaintcargo_outer
+- type: tile
+  id: ErisPanels
+  name: "Eris Panels"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/panels.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisPanels
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisPanelsEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: panels_edges
+
+- type: decal
+  id: ErisPanelsCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: panels_corners
+
+- type: decal
+  id: ErisPanelsOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: panels_outer
+- type: tile
+  id: ErisTechfloor
+  name: "Eris Techfloor"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/techfloor.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisTechfloor
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisTechfloorEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: techfloor_edges
+
+- type: decal
+  id: ErisTechfloorCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: techfloor_corners
+
+- type: decal
+  id: ErisTechfloorOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: techfloor_outer
+- type: tile
+  id: ErisTechfloorgrid
+  name: "Eris Techfloorgrid"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/techfloorgrid.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisTechfloorgrid
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisTechfloorgridEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: techfloorgrid_edges
+
+- type: decal
+  id: ErisTechfloorgridCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: techfloorgrid_corners
+
+- type: decal
+  id: ErisTechfloorgridOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: techfloorgrid_outer
+- type: tile
+  id: ErisBrownp
+  name: "Eris Brown Panel"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/brownp.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisBrownp
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisBrownpEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: p_edges
+
+- type: decal
+  id: ErisBrownpCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: p_corners
+
+- type: decal
+  id: ErisBrownpOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: p_outer
+- type: tile
+  id: ErisGrayp
+  name: "Eris Gray Panel"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/grayp.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisGrayp
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisGraypEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: p_edges
+
+- type: decal
+  id: ErisGraypCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: p_corners
+
+- type: decal
+  id: ErisGraypOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: p_outer
+- type: tile
+  id: ErisBrownplat
+  name: "Eris Brown Platform"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/brownplat.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisBrownplat
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisBrownplatEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: plat_edges
+
+- type: decal
+  id: ErisBrownplatCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: plat_corners
+
+- type: decal
+  id: ErisBrownplatOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: plat_outer
+
+- type: tile
+  id: ErisGrayplat
+  name: "Eris Gray Platform"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/grayplat.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisGrayplat
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisGrayplatEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: plat_edges
+
+- type: decal
+  id: ErisGrayplatCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: plat_corners
+
+- type: decal
+  id: ErisGrayplatOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: plat_outer
+
+- type: tile
+  id: ErisDanger
+  name: "Eris Danger"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/tiles.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisDanger
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisDangerEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: danger_edges
+
+- type: decal
+  id: ErisDangerCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: danger_corners
+
+- type: decal
+  id: ErisDangerOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: danger_outer
+
+- type: tile
+  id: ErisGolden
+  name: "Eris Golden"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/tiles.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisGolden
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisGoldenEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: golden_edges
+
+- type: decal
+  id: ErisGoldenCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: golden_corners
+
+- type: decal
+  id: ErisGoldenOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: golden_outer
+
+- type: tile
+  id: ErisBc
+  name: "Eris Blue Corners"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/tiles.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisBc
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisBcEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: bc_edges
+
+- type: decal
+  id: ErisBcCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: bc_corners
+
+- type: decal
+  id: ErisBcOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: bc_outer
+
+- type: tile
+  id: ErisOc
+  name: "Eris Orange Corners"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/tiles.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisOc
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisOcEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: oc_edges
+
+- type: decal
+  id: ErisOcCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: oc_corners
+
+- type: decal
+  id: ErisOcOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: oc_outer
+
+- type: tile
+  id: ErisCc
+  name: "Eris Cyan Corners"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/tiles.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisCc
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisCcEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: cc_edges
+
+- type: decal
+  id: ErisCcCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: cc_corners
+
+- type: decal
+  id: ErisCcOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: cc_outer
+
+- type: tile
+  id: ErisVc
+  name: "Eris Violet Corners"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/tiles.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisVc
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+
+- type: decal
+  id: ErisVcEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: vc_edges
+
+- type: decal
+  id: ErisVcCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: vc_corners
+
+- type: decal
+  id: ErisVcOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: vc_outer
+
+- type: tile
+  id: ErisBarplat
+  name: "Eris Bar Platform"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/barplat.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisBarplat
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisBarplatEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: barplat_edges
+
+- type: decal
+  id: ErisBarplatCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: barplat_corners
+
+- type: decal
+  id: ErisBarplatOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: barplat_outer
+- type: tile
+  id: ErisBarlight
+  name: "Eris Barlight"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/barlight.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisBarlight
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisBarlightEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: barlight_edges
+
+- type: decal
+  id: ErisBarlightCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: barlight_corners
+
+- type: decal
+  id: ErisBarlightOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: barlight_outer
+- type: tile
+  id: ErisBarfloor
+  name: "Eris Barfloor"
+  sprite: /Textures/_Crescent/ErisPorted/floors.rsi/barfloor.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisBarfloor
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  heatCapacity: 10000
+- type: decal
+  id: ErisBarfloorEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: barfloor_edges
+
+- type: decal
+  id: ErisBarfloorCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: barfloor_corners
+
+- type: decal
+  id: ErisBarfloorOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/floors.rsi
+    state: barfloor_outer
