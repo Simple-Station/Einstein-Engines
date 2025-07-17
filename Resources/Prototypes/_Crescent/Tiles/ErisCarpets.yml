@@ -23,12 +23,258 @@
   tags: ["station", "markings"]
   sprite:
     sprite: /Textures/_Crescent/ErisPorted/carpet.rsi
-    state: carpet_corners
+    state: carpet_outer
 
 - type: decal
   id: ErisCarpetOuterCorner
   tags: ["station", "markings"]
   sprite:
     sprite: /Textures/_Crescent/ErisPorted/carpet.rsi
-    state: carpet_outer
+    state: carpet_corners
+
+- type: tile
+  id: ErisCarpetBlue
+  name: "Eris Carpet Monotone Blue"
+  sprite: /Textures/_Crescent/ErisPorted/carpet.rsi/bcarpet.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisCarpetB
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepCarpet
+  heatCapacity: 10000
+
+- type: decal
+  id: ErisCarpetBEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/carpet.rsi
+    state: bcarpet_edges
+
+- type: decal
+  id: ErisCarpetBCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/carpet.rsi
+    state: bcarpet_outer
+
+- type: decal
+  id: ErisCarpetBOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/carpet.rsi
+    state: bcarpet_corners
+
+- type: tile
+  id: ErisCarpetBrightBlue
+  name: "Eris Carpet Bright Blue"
+  sprite: /Textures/_Crescent/ErisPorted/carpet.rsi/blucarpet.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisCarpetBlu
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepCarpet
+  heatCapacity: 10000
+
+- type: decal
+  id: ErisCarpetBluEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/carpet.rsi
+    state: blucarpet_edges
+
+- type: decal
+  id: ErisCarpetBluCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/carpet.rsi
+    state: blucarpet_outer
+
+- type: decal
+  id: ErisCarpetBluOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/carpet.rsi
+    state: blucarpet_corners
+
+- type: tile
+  id: ErisCarpetBlue
+  name: "Eris Carpet Blue"
+  sprite: /Textures/_Crescent/ErisPorted/carpet.rsi/sblucarpet.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisCarpetBlue
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepCarpet
+  heatCapacity: 10000
+
+- type: decal
+  id: ErisCarpetBlueEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/carpet.rsi
+    state: sblucarpet_edges
+
+- type: decal
+  id: ErisCarpetBlueCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/carpet.rsi
+    state: sblucarpet_outer
+
+- type: decal
+  id: ErisCarpetBlueOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/carpet.rsi
+    state: sblucarpet_corners
+
+- type: tile
+  id: ErisCarpetTurqoise
+  name: "Eris Carpet Turqoise"
+  sprite: /Textures/_Crescent/ErisPorted/carpet.rsi/turcarpet.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisCarpetTur
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepCarpet
+  heatCapacity: 10000
+
+- type: decal
+  id: ErisCarpetTurEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/carpet.rsi
+    state: turcarpet_edges
+
+- type: decal
+  id: ErisCarpetTurCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/carpet.rsi
+    state: turcarpet_outer
+
+- type: decal
+  id: ErisCarpetTurOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/carpet.rsi
+    state: turcarpet_corners
+
+- type: tile
+  id: ErisCarpetGay
+  name: "Eris Carpet Pink"
+  sprite: /Textures/_Crescent/ErisPorted/carpet.rsi/gaycarpet.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisCarpetPink
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepCarpet
+  heatCapacity: 10000
+
+- type: decal
+  id: ErisCarpetPinkEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/carpet.rsi
+    state: gaycarpet_edges
+
+- type: decal
+  id: ErisCarpetPinkCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/carpet.rsi
+    state: gaycarpet_outer
+
+- type: decal
+  id: ErisCarpetPinkOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/carpet.rsi
+    state: gaycarpet_corners
+
+- type: tile
+  id: ErisCarpetPurple
+  name: "Eris Carpet Purple"
+  sprite: /Textures/_Crescent/ErisPorted/carpet.rsi/purcarpet.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisCarpetPurple
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepCarpet
+  heatCapacity: 10000
+
+- type: decal
+  id: ErisCarpetPurpleEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/carpet.rsi
+    state: purcarpet_edges
+
+- type: decal
+  id: ErisCarpetPurpleCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/carpet.rsi
+    state: purcarpet_outer
+
+- type: decal
+  id: ErisCarpetPurpleOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/carpet.rsi
+    state: purcarpet_corners
+
+- type: tile
+  id: ErisCarpetTurqoise
+  name: "Eris Carpet Orange"
+  sprite: /Textures/_Crescent/ErisPorted/carpet.rsi/oracarpet.png
+  baseTurf: Plating
+  isSubfloor: false
+  directionals: ErisCarpetOrange
+  directionalRequirement: Same
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepCarpet
+  heatCapacity: 10000
+
+- type: decal
+  id: ErisCarpetOrangeEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/carpet.rsi
+    state: oracarpet_edges
+
+- type: decal
+  id: ErisCarpetOrangeCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/carpet.rsi
+    state: oracarpet_outer
+
+- type: decal
+  id: ErisCarpetOrangeOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: /Textures/_Crescent/ErisPorted/carpet.rsi
+    state: oracarpet_corners
+
+
+
+
+
+
+
+
 
