@@ -1,0 +1,80 @@
+- type: entity
+  id: DerelictRecycler
+  parent: [BaseStructure, BaseMachinePowered]
+  name: industrial materials recycler
+  description: A crude industrial recycler, somehow it still has sparks of activity. Inserting basic objects grinds them up into basic materials re-use.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _Crescent/Structures/Decoration/derelict_recycler.rsi
+    layers:
+      - state: off
+      - state: machine
+        map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
+  - type: CollideMaterialReclaimer
+  - type: MaterialReclaimer
+    enabled: true
+    efficiency: 1.5
+    scaleProcessSpeed: false
+    minimumProcessDuration: 1
+    whitelist:
+      components:
+      - PhysicalComposition
+      - MobState
+      - SpaceGarbage
+      tags:
+      - Trash
+      - Recyclable
+    blacklist:
+      components:
+      - Material
+      - Pda
+      - IdCard
+      tags:
+      - HighRiskItem
+    sound:
+      path: /Audio/Effects/saw.ogg
+      params:
+        volume: -3
+    cutOffSound: false
+  - type: SolutionContainerManager
+    solutions:
+      output:
+        maxVol: 0 #exists only for the overflow stuff on material reclaimer
+  - type: MaterialStorage
+  - type: PowerSwitch
+  - type: ApcPowerReceiver
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 8
+            max: 12
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 200
