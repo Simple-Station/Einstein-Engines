@@ -1,3 +1,5 @@
+# Outer Corner and Corner are reversed because i fucked up the naming whilst doing the DMI Port SPCR 2025
+
 - type: tile
   id: ErisCarpetBase
   name: "Eris Carpet"
