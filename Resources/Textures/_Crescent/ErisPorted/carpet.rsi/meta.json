@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "license": "AGPL 3.0",
+  "copyright": "Discord: wrotl , artstation.com/wrtl",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "carpet"
+    },
+    {
+      "name": "carpet_corners"
+    },
+    {
+      "name": "carpet_broken"
+    },
+    {
+      "name": "carpet_outer"
+    },
+    {
+      "name": "carpet_edges"
+    },
+    {
+      "name": "bcarpet"
+    },
+    {
+      "name": "bcarpet_corners"
+    },
+    {
+      "name": "bcarpet_edges"
+    },
+    {
+      "name": "blucarpet"
+    },
+    {
+      "name": "blucarpet_corners"
+    },
+    {
+      "name": "blucarpet_edges"
+    },
+    {
+      "name": "turcarpet"
+    },
+    {
+      "name": "turcarpet_corners"
+    },
+    {
+      "name": "turcarpet_edges"
+    },
+    {
+      "name": "sblucarpet"
+    },
+    {
+      "name": "sblucarpet_corners"
+    },
+    {
+      "name": "sblucarpet_edges"
+    },
+    {
+      "name": "gaycarpet"
+    },
+    {
+      "name": "gaycarpet_corners"
+    },
+    {
+      "name": "gaycarpet_edges"
+    },
+    {
+      "name": "purcarpet"
+    },
+    {
+      "name": "purcarpet_corners"
+    },
+    {
+      "name": "purcarpet_edges"
+    },
+    {
+      "name": "oracarpet"
+    },
+    {
+      "name": "oracarpet_corners"
+    },
+    {
+      "name": "oracarpet_outer"
+    },
+    {
+      "name": "oracarpet_edges"
+    },
+    {
+      "name": "bcarpet_outer"
+    },
+    {
+      "name": "blucarpet_outer"
+    },
+    {
+      "name": "turcarpet_outer"
+    },
+    {
+      "name": "sblucarpet_outer"
+    },
+    {
+      "name": "gaycarpet_outer"
+    },
+    {
+      "name": "purcarpet_outer"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesNCWLAdmiralParade
+  name: major admiral's parade gloves
+  description: A pair of long crimson gloves traditionally worn by Majors during parades, tribunals, and “diplomatic visits.” The material feels expensive, thick satin that hides kevlar-fiber beneath. Ceremony without function is anathema to the League. A bit posh for a Polarist, one might mutter under their breath. But never aloud.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/Hands/ncwl_admiral_gloves.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/Hands/ncwl_admiral_gloves.rsi
+  - type: GloveHeatResistance
+    heatResistance: 1400
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-durathread
+    fiberColor: fibers-black
+  - type: FingerprintMask

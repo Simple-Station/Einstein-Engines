@@ -1,0 +1,173 @@
+# Tier 1
+
+- type: technology
+  id: ShinoharaClothes
+  name: research-technology-shinohara-clothes
+  icon:
+    sprite: _Crescent/Clothing/SHI/OuterClothing/suitjacket.rsi
+    state: icon
+  discipline: Corporate
+  tier: 1
+  cost: 1000
+  recipeUnlocks:
+  - ClothingUniformJumpsuitExecutiveShinoharaSuit
+  - ClothingUniformJumpsuitShinoharaLogistics
+  - ClothingOuterShinoharaVest
+  - ClothingOuterShinoharaSuitJacket
+  - ClothingOuterShinoharaExecSuitjacket
+  - ClothingOuterShinoharaLabcoat
+  - ClothingUniformJumpsuitShinoharaDoctor
+  - ClothingOuterHardsuitHEV
+
+- type: technology
+  id: ShinoharaSecurity
+  name: research-technology-shinohara-security
+  icon:
+    sprite: _Crescent/Clothing/Corpo/OuterClothing/ballisticvest.rsi
+    state: icon
+  discipline: Corporate
+  tier: 1
+  cost: 1000
+  recipeUnlocks:
+  - ClothingUniformJumpsuitShinoharaSecurity
+  - ClothingOuterArmorShinoharaArmorBulwark
+  - ClothingHeadHatShinoharaNonevaHelm
+  - TelescopicBatonSHI
+
+- type: technology
+  id: ShinoharaHighsec
+  name: research-technology-shinohara-highsec
+  icon:
+    sprite: _Crescent/Clothing/SHI/OuterClothing/highsec.rsi
+    state: icon
+  discipline: Corporate
+  tier: 1
+  cost: 9000
+  recipeUnlocks:
+  - ClothingUniformJumpsuitShinoharaHighsec
+  - ClothingOuterArmorShinoharaArmorHighsec
+  - ClothingHeadHatShinoharaHelmet
+  - ClothingOuterHardsuitHighsec
+
+- type: technology
+  id: ShinoharaDisposableGuns
+  name: research-technology-shinohara-disposableguns
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/blastpop_yellow.rsi
+    state: icon
+  discipline: Corporate
+  tier: 1
+  cost: 2500
+  recipeUnlocks:
+  - WeaponPistolBlastpopRed
+  - WeaponPistolBlastpopPurple
+  - WeaponPistolBlastpopGray
+  - WeaponPistolBlastpopGreen
+  - WeaponPistolBlastpopGold
+  - WeaponPistolBlastpopBlue
+
+- type: technology
+  id: ShinoharaBasicArms
+  name: research-technology-shinohara-basicarms
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/hound.rsi
+    state: icon
+  discipline: Corporate
+  tier: 1
+  cost: 6500
+  recipeUnlocks:
+  - WeaponRifleHoundMarksman
+  - WeaponShotgunSHIDoubleBarreled4g
+  - WeaponPistolMk58SHI
+  - WeaponSubMachineGunMP49
+
+- type: technology
+  id: ShinoharaHardpoint
+  name: research-technology-shinohara-hardpoint
+  icon:
+    sprite: _Crescent/Structures/fixedHardpoint.rsi
+    state: large
+  discipline: Corporate
+  tier: 1
+  cost: 8000
+  recipeUnlocks:
+  - FixedHardpointFlatpack
+
+- type: technology
+  id: ShinoharaSlugthrower
+  name: research-technology-shinohara-slugthrower
+  icon:
+    sprite: _Crescent/Objects/ShuttleWeapons/50cal.rsi
+    state: space_artillery
+  discipline: Corporate
+  tier: 1
+  cost: 10000
+  recipeUnlocks:
+  - SlugthrowerFlatpack
+
+- type: technology
+  id: ShinoharaExhumer
+  name: research-technology-shinohara-exhumer
+  icon:
+    sprite: _Crescent/Objects/ShuttleWeapons/mininglaser.rsi
+    state: states
+  discipline: Corporate
+  tier: 1
+  cost: 6500
+  recipeUnlocks:
+  - SlugthrowerFlatpack
+
+- type: technology
+  id: ShinoharaPlasmaRepeater
+  name: research-technology-shinohara-repeater
+  icon:
+    sprite: _Crescent/Objects/ShuttleWeapons/lasersmall.rsi
+    state: lse-400c
+  discipline: Corporate
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - PlasmaRepeaterFlatpack
+
+- type: technology
+  id: ShinoharaAdvancedMaterials
+  name: research-technology-shinohara-advancedmaterials
+  icon:
+    sprite: _Crescent/Clothing/SHI/OuterClothing/highsec.rsi
+    state: advancedmechanic
+  discipline: Corporate
+  tier: 2
+  cost: 9000
+  recipeUnlocks:
+  - AdvancedElectronics1
+  - AdvancedMechatronics1
+  - PlastitaniumFibreAlloySHI
+  - HardlightGenerator1
+
+- type: technology
+  id: ShinoharaWeaponComponents
+  name: research-technology-shinohara-weaponcomponents
+  icon:
+    sprite: _Crescent/Clothing/SHI/OuterClothing/highsec.rsi
+    state: tubeloaderrobotics
+  discipline: Corporate
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - BallisticCycler1
+  - TubeLoader1
+  - LaserLocus1
+
+- type: technology
+  id: ShinoharaWeaponTorpedo
+  name: research-technology-shinohara-torpedo
+  icon:
+    sprite: _Crescent/Objects/Autoturrets/magwell.rsi
+    state: base
+  discipline: Corporate
+  tier: 2
+  cost: 12500
+  recipeUnlocks:
+  - MagwellFlatpack
+  - IdnaFlatpack
+  - IdnaTorpedo

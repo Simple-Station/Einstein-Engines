@@ -23,3 +23,16 @@
     sprite: _Crescent/Clothing/NCWL/Belt/ncwl_droppouches.rsi
   - type: ExplosionResistance
     damageCoefficient: 0.1
+
+- type: entity
+  parent: ClothingBeltNfsdWebbing
+  id: ClothingBeltNCWLDoubleHolster
+  name: double holster belt
+  description: A simple double holster belt.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/Belt/ncwl_double_holster.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/Belt/ncwl_double_holster.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
