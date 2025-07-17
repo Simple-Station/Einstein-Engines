@@ -91,12 +91,12 @@ public sealed class DirectionalTilingSystem : EntitySystem
         [DirectionFlag.NorthWest] = new Tuple<int, Angle>(cornerIndex, Angle.FromDegrees(-270)),
     }.ToFrozenDictionary();
 
-
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<PlacementTileEvent>(OnTilePlaced);
-        SubscribeLocalEvent<TileChangedEvent>(OnTileChanged);
+        // I spent like 5 hours figuring out why decals weren't appearing , It was this. SPCR 2025
+        SubscribeLocalEvent<TileChangedEvent>(OnTileChanged, after: [typeof(DecalSystem)]);
         SubscribeLocalEvent<PostInitEvent>(TileInitialize);
         // Remove this when all maps have been updated to save the decals by default , SPCR 2025
         SubscribeLocalEvent<GridInitializeEvent>(GridInitialize);
@@ -315,6 +315,5 @@ public sealed class DirectionalTilingSystem : EntitySystem
         updateTile(map, ev.Coordinates, ev.TileType, contentDef.DirectionalType, contentDef.uniqueDirectionals, true);
         updateNeighbors(map, ev.Coordinates, ev.TileType, contentDef.DirectionalType, contentDef.uniqueDirectionals, false);
     }
-
 
 }
