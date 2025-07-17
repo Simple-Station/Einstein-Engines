@@ -289,11 +289,11 @@ public sealed class DirectionalTilingSystem : EntitySystem
             else if(!requireSame)
             {
                 // not required to be same to count as neighbor. Get their tile def's contentDef and update properly!
-                if (tileIdToDecals!.ContainsKey(tile.TypeId))
+                if (!tileIdToDecals!.ContainsKey(tile.TypeId))
                     continue;
                 if (_tiles[tile.TypeId] is not ContentTileDefinition contentDef)
                     continue;
-                updateTile(map, tileCoordinates.Offset(key), tileType, contentDef.DirectionalType, contentDef.uniqueDirectionals);
+                updateTile(map, tileCoordinates.Offset(key), tile.TypeId, contentDef.DirectionalType, contentDef.uniqueDirectionals);
 
             }
         }
