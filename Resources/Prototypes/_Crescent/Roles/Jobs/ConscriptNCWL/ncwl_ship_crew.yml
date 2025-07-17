@@ -79,14 +79,15 @@
 - type: startingGear
   id: ConscriptShipCrewNCWLGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitMilitaryColorBrown
+    jumpsuit: ClothingUniformJumpsuitNCWLArtificer
     neck: ClothingNeckIFFOrange
     id: SanitarPDA
     ears: ClothingHeadsetNCWL
     shoes: ClothingShoesBootsJack
-    head: ClothingHeadHatNCWLTanker
+    head: ClothingHeadHatNCWLBeret
     belt: ClothingBeltAssaultFilledCrew #drips better
     pocket1: EmergencyOxygenTankFilled
     back: ClothingBackpackNCWL
+    gloves: ClothingHandsGlovesCombat
   inhand:
     - WeaponPistolT91

@@ -79,11 +79,12 @@
 - type: startingGear
   id: ConscriptShipCrewDSMGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitMilitaryColorBlue
+    jumpsuit: ClothingUniformJumpsuitImperialFreeholder
     neck: ClothingNeckIFFCyan
     back: ClothingBackpackDSM
-    shoes: ClothingShoesBootsImperialLongboots
-    head: ClothingHeadHatBeretNavy
+    shoes: ClothingShoesBootsImperialJackboots
+    head: ClothingHeadHelmetImperialWorkerHelmet
+    gloves: ClothingHandsGlovesImperialWorkerGloves
     id: LevymanPDA
     belt: ClothingBeltAssaultFilledCrew
     pocket1: EmergencyOxygenTankFilled
