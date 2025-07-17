@@ -687,12 +687,13 @@
   footstepSounds:
     collection: FootstepFloor
   heatCapacity: 10000
+
 - type: decal
   id: ErisBrownplatEdge
   tags: ["station", "markings"]
   sprite:
     sprite: /Textures/_Crescent/ErisPorted/floors.rsi
-    state: plat_edges
+    state: plat_edge
 
 - type: decal
   id: ErisBrownplatCorner
@@ -725,7 +726,7 @@
   tags: ["station", "markings"]
   sprite:
     sprite: /Textures/_Crescent/ErisPorted/floors.rsi
-    state: plat_edges
+    state: plat_edge
 
 - type: decal
   id: ErisGrayplatCorner
@@ -838,7 +839,7 @@
   tags: ["station", "markings"]
   sprite:
     sprite: /Textures/_Crescent/ErisPorted/floors.rsi
-    state: bc_outer
+    state: bc_outers
 
 - type: tile
   id: ErisOc

@@ -168,19 +168,25 @@ public sealed class DirectionalTilingSystem : EntitySystem
             _decalSystem.RemoveDecal(tileCoordinates.EntityId, decalId);
         }
     }
-    // First return is cardinals (N,S,E,W) , second is corners (NE, NW, SW, SE)
+    // First return is cardinals (N,S,E,W) , second is corners (NE, NW) and third is corners (SE, SW)
 
-    private (DirectionFlag, DirectionFlag) getConnectedDirections(MapGridComponent map, Vector2i tileCoordinates, int tileType, DirectionalType directionalType)
+    private (DirectionFlag, DirectionFlag, DirectionFlag) getConnectedDirections(MapGridComponent map, Vector2i tileCoordinates, int tileType, DirectionalType directionalType)
     {
         DirectionFlag directions = DirectionFlag.None;
-        DirectionFlag cornerDirections = DirectionFlag.None;
+        DirectionFlag cornerDirectionsN = DirectionFlag.None;
+        DirectionFlag cornerDirectionsS = DirectionFlag.None;
         foreach (var (key, direction) in dirMapping)
         {
             if (!_mapSystem.TryGetTile(map, tileCoordinates + key, out var tile))
             {
                 if(directionalType == DirectionalType.ExistReversed)
-                    if (BitOperations.PopCount((byte)direction) == 2)
-                        cornerDirections |= direction;
+                    if (BitOperations.PopCount((byte) direction) == 2)
+                    {
+                        if((direction & DirectionFlag.North) == DirectionFlag.North)
+                            cornerDirectionsN |= direction;
+                        else
+                            cornerDirectionsS |= direction;
+                    }
                     else
                         directions |= direction;
                 continue;
@@ -194,11 +200,14 @@ public sealed class DirectionalTilingSystem : EntitySystem
                 continue;
             // decide if it goes into corners or cardinals
             if (BitOperations.PopCount((byte)direction) == 2)
-                cornerDirections |= direction;
+                if((direction & DirectionFlag.North) == DirectionFlag.North)
+                    cornerDirectionsN |= direction;
+                else
+                    cornerDirectionsS |= direction;
             else
                 directions |= direction;
         }
-        return (directions, cornerDirections);
+        return (directions, cornerDirectionsN, cornerDirectionsS);
     }
     private void updateTile(MapGridComponent map, EntityCoordinates tileCoordinates, int tileType, DirectionalType directionalType, bool uniqueDirectionals = false, bool special = false)
     {
@@ -213,7 +222,7 @@ public sealed class DirectionalTilingSystem : EntitySystem
         var coords = tileCoordinates.WithPosition(newPos);
         coords = coords.Offset(new Vector2(-0.5f, -0.5f));
         DeleteDirectionalDecals(tileCoordinates);
-        (DirectionFlag ConnectedDirections,DirectionFlag ConnectedCorners) = getConnectedDirections(map, tileCoordinates.ToVector2i(EntityManager,_mapManager, _transformSystem), tileType, directionalType );
+        (DirectionFlag ConnectedDirections,DirectionFlag ConnectedCornersN, DirectionFlag ConnectedCornersS) = getConnectedDirections(map, tileCoordinates.ToVector2i(EntityManager,_mapManager, _transformSystem), tileType, directionalType );
         DirectionFlag DisconnectedDirections = ~ConnectedDirections;
         // do the actual directions now.
         foreach (DirectionFlag dir in Enum.GetValues<DirectionFlag>())
@@ -224,7 +233,7 @@ public sealed class DirectionalTilingSystem : EntitySystem
             if (BitOperations.PopCount((byte) dir) == 2)
             {
                 // For the corner to exist , there should only be the cardinals connected. If the diagonal is connected , it means its filled in
-                if ((ConnectedCorners & dir) != dir && (ConnectedDirections & dir) == dir)
+                if (((ConnectedCornersN & dir) != dir  && (ConnectedDirections & dir) == dir) && ((ConnectedCornersS & dir) != dir && (ConnectedDirections & dir) == dir))
                 {
                     // Reversed so this also has to be reversed a bit to prevent a edge case.
                     if (directionalType == DirectionalType.ExistReversed)
