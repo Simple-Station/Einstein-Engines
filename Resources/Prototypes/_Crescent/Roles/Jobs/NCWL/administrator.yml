@@ -77,6 +77,9 @@
     id: AdministratorPDA
     neck: ClothingNeckAdminCapelet
     ears: ClothingHeadsetNCWL
-    pocket2: WeaponPistolT91
-    shoes: ClothingShoesBootsJack
+    gloves: ClothingHandsGlovesNCWLAdmiralParade
+    belt: ClothingBeltNCWLDoubleHolster
+    pocket1: WeaponRevolverPython
+    pocket2: WeaponRevolverPython
+    shoes: ClothingShoesBootsNCWLAdmiralParade
     head: ClothingHeadHatNCWLBeretAdmiral
