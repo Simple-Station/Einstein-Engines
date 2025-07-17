@@ -1,7 +1,6 @@
 using Content.Server.Power.NodeGroups;
 using Content.Server.Power.Pow3r;
 using Content.Shared.Power.Components;
-using System.Runtime.CompilerServices;
 
 namespace Content.Server.Power.Components
 {
