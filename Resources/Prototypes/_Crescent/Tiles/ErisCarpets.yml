@@ -1,4 +1,4 @@
-- type: tile
+- type: tile # Outer Corner and Corner are reversed because i fucked up the naming whilst doing the DMI Port SPCR 2025
   id: ErisCarpetBase
   name: "Eris Carpet"
   sprite: /Textures/_Crescent/ErisPorted/carpet.rsi/carpet.png
@@ -33,7 +33,7 @@
     state: carpet_corners
 
 - type: tile
-  id: ErisCarpetBlue
+  id: ErisCarpetMonotoneBlue
   name: "Eris Carpet Monotone Blue"
   sprite: /Textures/_Crescent/ErisPorted/carpet.rsi/bcarpet.png
   baseTurf: Plating
@@ -237,7 +237,7 @@
     state: purcarpet_corners
 
 - type: tile
-  id: ErisCarpetTurqoise
+  id: ErisCarpetOrange
   name: "Eris Carpet Orange"
   sprite: /Textures/_Crescent/ErisPorted/carpet.rsi/oracarpet.png
   baseTurf: Plating
