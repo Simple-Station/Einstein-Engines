@@ -221,6 +221,14 @@
     BallisticCycler: 500
 
 - type: latheRecipe
+  id: WeaponPistolMk58SHI
+  result: WeaponPistolMk58
+  completetime: 2
+  materials:
+    Steel: 1000
+    Plastic: 500
+
+- type: latheRecipe
   id: WeaponSubMachineGunSabre
   result: WeaponSubMachineGunSabre
   completetime: 2
@@ -589,4 +597,12 @@
   completetime: 2
   materials:
     AdvancedMechatronics: 1000
+    Steel: 1500
+
+- type: latheRecipe
+  id: TelescopicBatonSHI
+  result: TelescopicBaton
+  completetime: 2
+  materials:
+    Plastic: 1000
     Steel: 1500

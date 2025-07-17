@@ -20,6 +20,7 @@ namespace Content.Shared.Entry
     {
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly ITileDefinitionManager _tileDefinitionManager = default!;
+        [Dependency] private readonly EntityManager _entityManager = default!;
         [Dependency] private readonly IResourceManager _resMan = default!;
 
         private readonly ResPath _ignoreFileDirectory = new("/IgnoredPrototypes/");
@@ -46,6 +47,7 @@ namespace Content.Shared.Entry
 
             InitTileDefinitions();
             IoCManager.Resolve<MarkingManager>().Initialize();
+            _entityManager.EventBus.RaiseEvent(EventSource.Local, new PostInitEvent());
 
 #if DEBUG
             var configMan = IoCManager.Resolve<IConfigurationManager>();

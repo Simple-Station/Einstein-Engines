@@ -99,3 +99,17 @@ research-technology-communard-ivarod = Communard Assault Frigate
 research-technology-communard-stern = Communard Siege Battlecruiser
 research-technology-communard-bogatyr = Communard Battle Mech
 research-technology-communard-commienaut = Communard Juggernaut Suit
+
+#SHI
+research-technology-shinohara-clothes = Corporate Uniforms
+research-technology-shinohara-security = Corporate Security
+research-technology-shinohara-highsec = Corporate HighSec
+research-technology-shinohara-advancedmaterials = Advanced Components
+research-technology-shinohara-hardpoint = Shuttle Weapon Hardpoint
+research-technology-shinohara-slugthrower = 43mm "Dasher" Slugthrower
+research-technology-shinohara-exhumer = 250c "Exhumer" Mining Turret
+research-technology-shinohara-disposableguns = Corporate Budget Arms
+research-technology-shinohara-basicarms = Corporate Basic Ballistics
+research-technology-shinohara-weaponcomponents = Weapon Components
+research-technology-shinohara-repeater = 400c Plasma Repeater
+research-technology-shinohara-torpedo = 180mm "Idna" Smart Torpedo

@@ -298,8 +298,8 @@ namespace Content.Server.Decals
             var gridId = coordinates.GetGridUid(EntityManager);
             if (!TryComp(gridId, out MapGridComponent? grid))
                 return false;
-
-            if (_mapSystem.GetTileRef(gridId.Value, grid, coordinates).IsSpace(_tileDefMan))
+            // hullrot edit , let directionals bypass the space verificaton! SPCR 2025
+            if (_mapSystem.GetTileRef(gridId.Value, grid, coordinates).IsSpace(_tileDefMan) && !decal.Directional)
                 return false;
 
             if (!TryComp(gridId, out DecalGridComponent? comp))
