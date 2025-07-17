@@ -16655,3 +16655,12 @@ Entries:
   id: 7304
   time: '2025-07-11T18:47:44.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2502
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Finally completed Space Wind V5's airflow math. It no longer produces
+        extremely inconsistent airflow values in and around airlocks and walls.
+  id: 7305
+  time: '2025-07-17T20:31:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2506
