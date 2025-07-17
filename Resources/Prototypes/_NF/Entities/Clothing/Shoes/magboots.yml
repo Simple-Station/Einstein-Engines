@@ -11,8 +11,15 @@
     sprite: _NF/Clothing/Shoes/Boots/magboots-combat.rsi
   - type: Magboots
   - type: ClothingSpeedModifier
-    walkModifier: 0.95
+    walkModifier: 0.9
     sprintModifier: 0.9
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 13
+    staminaCost: 15
+  - type: StaticPrice
+    price: 750
 
 - type: entity
   parent: ClothingShoesBootsMagCombat

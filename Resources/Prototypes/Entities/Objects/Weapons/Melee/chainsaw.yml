@@ -16,16 +16,16 @@
   - type: MeleeWeapon
     autoAttack: true
     wideAnimationRotation: -135
-    attackRate: 0.3
+    attackRate: 1.75
     damage:
       types:
-        Slash: 2
-        Blunt: 2
+        Slash: 4
+        Blunt: 4
         Structural: 4
     clickPartDamageMultiplier: 3
-    heavyPartDamageMultiplier: 2.5
-    heavyRateModifier: 3
-    heavyDamageBaseModifier: 3.0
+    heavyPartDamageMultiplier: 2
+    heavyRateModifier: 0.9
+    heavyDamageBaseModifier: 1.25
     heavyStaminaCost: 2.5
     maxTargets: 20
     angle: 160
@@ -36,7 +36,7 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Slash: 4
+        Slash: 6
         Structural: 4
   - type: Item
     size: Normal

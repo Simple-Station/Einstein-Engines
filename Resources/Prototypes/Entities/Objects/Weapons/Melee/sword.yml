@@ -29,18 +29,16 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: .8
-    range: 1.8
+    attackRate: 1.5
+    range: 1.25
     soundHit:
       path: /Audio/SimpleStation14/Weapons/Melee/rapierhit.ogg
     damage:
       types:
-        Slash: 15
-    clickPartDamageMultiplier: 3
-    heavyPartDamageMultiplier: 2.5
-    heavyRateModifier: 1.25
-    lightRangeModifier: 1.25
-    heavyDamageBaseModifier: 1
+        Slash: 32
+    clickPartDamageMultiplier: 2
+    heavyPartDamageMultiplier: 1.5
+    lightRangeModifier: 1.5
     heavyStaminaCost: 2.5
     maxTargets: 7
     angle: 80
@@ -80,16 +78,15 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: .6
+    attackRate: 1
     soundHit:
       path: /Audio/SimpleStation14/Weapons/Melee/rapierhit.ogg
     damage:
       types:
-        Slash: 12
-    heavyRateModifier: 4
-    lightRangeModifier: 1.25
-    heavyDamageBaseModifier: 2
-    heavyStaminaCost: 10
+        Slash: 34
+    heavyRateModifier: 1.5
+    lightRangeModifier: 1.75
+    heavyStaminaCost: 7.5
     maxTargets: 1
     angle: 20
   - type: DamageOtherOnHit
@@ -116,7 +113,7 @@
     wideAnimationRotation: -60
     damage:
       types:
-        Slash: 25
+        Slash: 40
   - type: ThrowingAngle
     angle: 300
   - type: Item
@@ -128,16 +125,16 @@
     maxCharges: 3
     charges: 3
   - type: AutoRecharge
-    rechargeDuration: 20
+    rechargeDuration: 180
   - type: Clothing
     sprite: Objects/Weapons/Melee/energykatana.rsi
     slots:
     - Back
     - Belt
   - type: Reflect
-    reflectProb: 0.5
-    velocityBeforeNotMaxProb: 6.0 # don't punish ninjas for being ninjas
-    velocityBeforeMinProb: 10.0
+    reflectProb: 0.4
+    velocityBeforeNotMaxProb: 4.0 # don't punish ninjas for being ninjas
+    velocityBeforeMinProb: 8.0
 
 - type: entity
   name: machete
@@ -153,14 +150,12 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.25
+    attackRate: 1.15
     damage:
       types:
-        Slash: 15
+        Slash: 30
     heavyRateModifier: 1.25
-    heavyRangeModifier: 1.25
-    heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 2.5
+    heavyStaminaCost: 5
     angle: 80
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
@@ -185,16 +180,13 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.5
-    range: 1.85
+    attackRate: 0.75
+    range: 1.75
     damage:
       types:
-        Slash: 19
-        Blunt: 1
-    bluntStaminaDamageFactor: 25.0
-    heavyRateModifier: 4
-    heavyRangeModifier: 1.3
-    heavyDamageBaseModifier: 1
+        Slash: 30
+    bluntStaminaDamageFactor: 2
+    heavyRateModifier: 1.5
     heavyStaminaCost: 10
     maxTargets: 10
     angle: 200
@@ -227,13 +219,11 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: .8
+    attackRate: 1.5
     damage:
       types:
-        Slash: 12
-    heavyRateModifier: 1.25
+        Slash: 34
     lightRangeModifier: 1.25
-    heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 2.5
     maxTargets: 3
     angle: 40

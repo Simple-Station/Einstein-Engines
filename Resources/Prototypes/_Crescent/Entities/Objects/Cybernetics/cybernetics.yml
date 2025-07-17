@@ -1,11 +1,12 @@
 - type: entity
   id: HullrotCyberneticBase
-  parent: BaseHumanOrgan
+  parent: BaseHumanOrganUnGibbableUnEdible
   name: debug cybernetic
   categories: [HideSpawnMenu]
   abstract: true
   description: saibapank 20 77
   components:
+    - type: Gibbable
     - type: Cybernetics
 
 - type: entity

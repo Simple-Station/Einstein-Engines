@@ -43,9 +43,8 @@
     range: 1.75
     damage:
       types:
-        Blunt: 8
-    heavyRateModifier: 1.5
-    heavyDamageBaseModifier: 2
+        Blunt: 16
+    heavyRateModifier: 1.25
     heavyStaminaCost: 5
     maxTargets: 6
     soundHit:

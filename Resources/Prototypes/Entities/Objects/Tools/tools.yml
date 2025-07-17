@@ -32,19 +32,18 @@
   - type: MeleeWeapon
     wideAnimationRotation: -90
     attackRate: 1.1
-    range: 1.6
+    range: 1.25
     damage:
       types:
-        Blunt: 6.5
-    heavyRateModifier: 1.4
-    heavyDamageBaseModifier: 1.2
+        Blunt: 9
+    heavyRateModifier: 1.5
     maxTargets: 4
     soundHit:
       path: "/Audio/Items/wirecutter.ogg"
   - type: DamageOtherOnHit
     damage:
       types:
-        Blunt: 4
+        Blunt: 12
     soundHit:
       collection: MetalThud
   - type: Tool
@@ -126,12 +125,12 @@
     storedRotation: -90
   - type: MeleeWeapon
     wideAnimationRotation: -90
-    attackRate: .8
+    attackRate: 1.2
     damage:
       types:
-        Piercing: 6
-    heavyRateModifier: 1.75
-    heavyDamageBaseModifier: 1.5
+        Piercing: 9
+    heavyRateModifier: 1.5
+    heavyDamageBaseModifier: 1.25
     maxTargets: 1
     angle: 20
     soundHit:
@@ -215,14 +214,14 @@
       state: storage
   - type: MeleeWeapon
     wideAnimationRotation: 135
-    attackRate: 1.25
-    range: 1.6
+    attackRate: 1.2
+    range: 1.25
     damage:
       types:
-        Blunt: 6.5
+        Blunt: 12
     bluntStaminaDamageFactor: 1.5
-    heavyRateModifier: 1.5
-    heavyDamageBaseModifier: 1.5
+    heavyRateModifier: 1.25
+    heavyDamageBaseModifier: 1.25
     angle: 100
     soundHit:
       collection: MetalThud
@@ -285,10 +284,10 @@
       state: storage
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: .8
+    attackRate: 1.1
     damage:
       types:
-        Blunt: 6
+        Blunt: 12
     bluntStaminaDamageFactor: 2
     heavyStaminaCost: 2.5
     soundHit:
@@ -362,11 +361,11 @@
     - state: green-unlit
       shader: unshaded
   - type: MeleeWeapon
-    attackRate: 1.3
+    attackRate: 1.2
     damage:
       types:
-        Shock: 3
-    heavyRateModifier: 3
+        Shock: 6
+    heavyRateModifier: 2
     heavyRangeModifier: 1.25
     heavyDamageBaseModifier: 3
     maxTargets: 1
@@ -531,13 +530,12 @@
     price: 100
   - type: MeleeWeapon
     wideAnimationRotation: -90
-    attackRate: 1.1
+    attackRate: 1.25
     range: 1.4
     damage:
       types:
-        Piercing: 8
-    heavyRateModifier: 1.1
-    heavyDamageBaseModifier: 1.2
+        Piercing: 14
+    heavyRateModifier: 1.25
     maxTargets: 1
     angle: 20
     soundHit:
@@ -898,15 +896,14 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 45
-    attackRate: 1.25
+    attackRate: 1
     range: 1.75
     damage:
       types:
-        Blunt: 8
+        Blunt: 16
     bluntStaminaDamageFactor: 2
-    heavyRateModifier: 1.75
-    heavyDamageBaseModifier: 1.5
-    heavyStaminaCost: 2.5
+    heavyDamageBaseModifier: 1.25
+    heavyStaminaCost: 5
     angle: 120
     soundHit:
       collection: MetalThud
