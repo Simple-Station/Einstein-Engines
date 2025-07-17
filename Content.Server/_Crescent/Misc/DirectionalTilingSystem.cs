@@ -1,6 +1,7 @@
 using System.Collections.Frozen;
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+using System.Threading.Tasks;
 using Content.Server.Decals;
 using Content.Shared._Crescent;
 using Content.Shared.Decals;
@@ -11,6 +12,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Placement;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 
 
 namespace Content.Server._Crescent;
@@ -139,19 +141,19 @@ public sealed class DirectionalTilingSystem : EntitySystem
         if (!TryComp<MapGridComponent>(tileEvent.Entity, out var map))
             return;
         EntityCoordinates gridPos = _mapSystem.GridTileToLocal(tileEvent.NewTile.GridUid, map, tileEvent.NewTile.GridIndices);
-        if (!(_tiles[tileEvent.OldTile.TypeId] is ContentTileDefinition contentDefOld))
+        if (_tiles[tileEvent.OldTile.TypeId] is not ContentTileDefinition contentDefOld)
             return;
+        DeleteDirectionalDecals(gridPos);
         if (tileIdToDecals!.ContainsKey(tileEvent.OldTile.TypeId))
-        {
-            DeleteDirectionalDecals(gridPos);
-            updateNeighbors(map, gridPos, tileEvent.OldTile.TypeId, contentDefOld.DirectionalType);
-        }
+            updateNeighbors(map, gridPos, tileEvent.OldTile.TypeId, contentDefOld.DirectionalType, contentDefOld.uniqueDirectionals, true);
         if (!tileIdToDecals!.ContainsKey(tileEvent.NewTile.Tile.TypeId))
             return;
-        if (!(_tiles[tileEvent.NewTile.Tile.TypeId] is ContentTileDefinition contentDef))
+        if (_tiles[tileEvent.NewTile.Tile.TypeId] is not ContentTileDefinition contentDef)
             return;
-        updateTile(map, gridPos, tileEvent.NewTile.Tile.TypeId, contentDef.DirectionalType, contentDef.uniqueDirectionals);
-        updateNeighbors(map, gridPos, tileEvent.NewTile.Tile.TypeId, contentDef.DirectionalType, contentDef.uniqueDirectionals);
+        updateTile(map, gridPos, tileEvent.NewTile.Tile.TypeId, contentDef.DirectionalType, contentDef.uniqueDirectionals, true);
+        updateNeighbors(map, gridPos, tileEvent.NewTile.Tile.TypeId, contentDef.DirectionalType, contentDef.uniqueDirectionals, false);
+
+
     }
 
     public void DeleteDirectionalDecals(EntityCoordinates tileCoordinates)
@@ -198,7 +200,7 @@ public sealed class DirectionalTilingSystem : EntitySystem
         }
         return (directions, cornerDirections);
     }
-    private void updateTile(MapGridComponent map, EntityCoordinates tileCoordinates, int tileType, DirectionalType directionalType, bool uniqueDirectionals = false)
+    private void updateTile(MapGridComponent map, EntityCoordinates tileCoordinates, int tileType, DirectionalType directionalType, bool uniqueDirectionals = false, bool special = false)
     {
         // so fucking linter shuts the fuck up
         if (!tileIdToDecals!.ContainsKey(tileType))
@@ -274,34 +276,44 @@ public sealed class DirectionalTilingSystem : EntitySystem
         }
     }
 
-    private void updateNeighbors(MapGridComponent map, EntityCoordinates tileCoordinates, int tileType, DirectionalType directionalType, bool uniqueDirectionals = false)
+    private void updateNeighbors(MapGridComponent map, EntityCoordinates tileCoordinates, int tileType, DirectionalType directionalType, bool uniqueDirectionals = false, bool requireSame = true)
     {
         foreach (var (key, direction) in dirMapping)
         {
-            // yeah no double updating!
             if (key == Vector2i.Zero)
                 continue;
-            if (!_mapSystem.TryGetTile(
-                map,
-                tileCoordinates.ToVector2i(EntityManager, _mapManager, _transformSystem) + key,
-                out var tile))
+            if (!_mapSystem.TryGetTile(map, tileCoordinates.ToVector2i(EntityManager, _mapManager, _transformSystem) + key, out var tile))
                 continue;
-            if (tile.TypeId != tileType)
-                continue;
-            updateTile(map, tileCoordinates.Offset(key), tileType, directionalType, uniqueDirectionals);
+            if (tile.TypeId == tileType)
+                updateTile(map, tileCoordinates.Offset(key), tileType, directionalType, uniqueDirectionals);
+            else if(!requireSame)
+            {
+                // not required to be same to count as neighbor. Get their tile def's contentDef and update properly!
+                if (tileIdToDecals!.ContainsKey(tile.TypeId))
+                    continue;
+                if (_tiles[tile.TypeId] is not ContentTileDefinition contentDef)
+                    continue;
+                updateTile(map, tileCoordinates.Offset(key), tileType, contentDef.DirectionalType, contentDef.uniqueDirectionals);
+
+            }
         }
     }
 
     private void OnTilePlaced(PlacementTileEvent ev)
     {
-        if (!tileIdToDecals!.ContainsKey(ev.TileType))
-            return;
         if (!TryComp<MapGridComponent>(ev.Coordinates.EntityId, out var map))
             return;
+        if (!tileIdToDecals!.ContainsKey(ev.TileType))
+        {
+            DeleteDirectionalDecals(ev.Coordinates);
+            updateNeighbors(map, ev.Coordinates, ev.TileType, DirectionalType.None, false, false);
+            return;
+        }
+
         if (!(_tiles[ev.TileType] is ContentTileDefinition contentDef))
             return;
-        updateTile(map, ev.Coordinates, ev.TileType, contentDef.DirectionalType, contentDef.uniqueDirectionals);
-        updateNeighbors(map, ev.Coordinates, ev.TileType, contentDef.DirectionalType, contentDef.uniqueDirectionals);
+        updateTile(map, ev.Coordinates, ev.TileType, contentDef.DirectionalType, contentDef.uniqueDirectionals, true);
+        updateNeighbors(map, ev.Coordinates, ev.TileType, contentDef.DirectionalType, contentDef.uniqueDirectionals, false);
     }
 
 
