@@ -1,7 +1,7 @@
 ﻿- type: entity
   id: ResearchAndDevelopmentServerInterdyne
   parent: [ BaseMachinePowered, ConstructibleMachine ]
-  name: interdyne pharmaceuticals server
+  name: interdyne pharmaceuticals research server
   description: Contains the collective knowledge of the station's scientists. Destroying it would send them back to the stone age. You don't want that do you?
   components:
   - type: Sprite
@@ -61,7 +61,7 @@
 - type: entity
   id: ResearchAndDevelopmentServerCyberdawn
   parent: [ BaseMachinePowered, ConstructibleMachine ]
-  name: cyberdawn technologies server
+  name: cyberdawn technologies research server
   description: Contains the collective knowledge of the station's scientists. Destroying it would send them back to the stone age. You don't want that do you?
   components:
   - type: Sprite

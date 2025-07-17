@@ -204,8 +204,8 @@
 
 - type: entity
   id: WeaponMechCombatLightRifle
-  name: PTA 'Rapture' 30mm ballistic autorifle
-  description: An exosuit-mounted autorifle firing depleted uranium rounds. Developed by Pang Tai Arms and sold en masse. The most basic mech weapon that can be found on the market.
+  name: SHI 'Rapture' 30mm ballistic autorifle
+  description: An exosuit-mounted autorifle firing depleted uranium rounds. Developed by Shinohara Heavy Industries and sold en masse. The most basic mech weapon that can be found on the market.
   suffix: Mech Weapon, Gun, Combat, Rifle
   parent: [ BaseMechWeaponRange, ScoutMechEquipment ]
   components:

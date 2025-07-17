@@ -1,0 +1,11 @@
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesBurlapSack
+  name: burlap sack
+  description: a crude yet effective tool for relocating prisoners to remote locations.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Misc/burlap_sack.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Misc/burlap_sack.rsi
+  - type: Blindfold
