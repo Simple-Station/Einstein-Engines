@@ -13,11 +13,45 @@
   - ClothingUniformJumpsuitExecutiveShinoharaSuit
   - ClothingUniformJumpsuitShinoharaLogistics
   - ClothingOuterShinoharaVest
-  - ClothingOuterShinoharaSuitJacket
-  - ClothingOuterShinoharaExecSuitjacket
   - ClothingOuterShinoharaLabcoat
   - ClothingUniformJumpsuitShinoharaDoctor
   - ClothingOuterHardsuitHEV
+
+- type: technology
+  id: ShinoharaDisposableLauncher
+  name: research-technology-shinohara-disposablelauncher
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/disposablerpg.rsi
+    state: icon
+  discipline: Corporate
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - WeaponLauncherDisposableRocket
+
+- type: technology
+  id: ShinoharaShipyardManufactorum
+  name: research-technology-shinohara-shipyardmanufactorum
+  icon:
+    sprite: _Crescent/Structures/shipfab.rsi
+    state: base_machine
+  discipline: Corporate
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - ShipyardManufactorumFlatpack
+
+- type: technology
+  id: ShinoharaScrapRefiner
+  name: research-technology-shinohara-scraprefiner
+  icon:
+    sprite: Structures/Machines/sheetifier.rsi
+    state: base_machine
+  discipline: Corporate
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - ScrapRefinerFlatpack
 
 - type: technology
   id: ShinoharaSecurity
@@ -27,12 +61,38 @@
     state: icon
   discipline: Corporate
   tier: 1
-  cost: 1000
+  cost: 2500
   recipeUnlocks:
   - ClothingUniformJumpsuitShinoharaSecurity
   - ClothingOuterArmorShinoharaArmorBulwark
   - ClothingHeadHatShinoharaNonevaHelm
   - TelescopicBatonSHI
+
+- type: technology
+  id: ShinoharaCybereyes
+  name: research-technology-shinohara-cybereyes
+  icon:
+    sprite: _Crescent/Objects/Misc/cybernetics.rsi
+    state: shinoharaoptics
+  discipline: Corporate
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - ShinoharaOptics
+
+- type: technology
+  id: ShinoharaBasicMechGuns
+  name: research-technology-shinohara-basicmechguns
+  icon:
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: rifle
+  discipline: Corporate
+  tier: 1
+  cost: 7500
+  recipeUnlocks:
+  - WeaponMechCombatAutoshotgun
+  - WeaponMechCombatLightRifle
+  - WeaponMechSword
 
 - type: technology
   id: ShinoharaHighsec
@@ -82,6 +142,30 @@
   - WeaponSubMachineGunMP49
 
 - type: technology
+  id: ShinoharaBasicFactory
+  name: research-technology-shinohara-basicfactory
+  icon:
+    sprite: _Crescent/Structures/factorystructures.rsi
+    state: makina
+  discipline: Corporate
+  tier: 1
+  cost: 7500
+  recipeUnlocks:
+  - VariableCommodityFabricatorFlatpack
+
+- type: technology
+  id: ShinoharaAutoloom
+  name: research-technology-shinohara-autoloom
+  icon:
+    sprite: _Crescent/Structures/factorystructures.rsi
+    state: autoloom
+  discipline: Corporate
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - AutoloomFablatheFlatpack
+
+- type: technology
   id: ShinoharaHardpoint
   name: research-technology-shinohara-hardpoint
   icon:
@@ -115,7 +199,7 @@
   tier: 1
   cost: 6500
   recipeUnlocks:
-  - SlugthrowerFlatpack
+  - ExhumerFlatpack
 
 - type: technology
   id: ShinoharaPlasmaRepeater
@@ -133,7 +217,7 @@
   id: ShinoharaAdvancedMaterials
   name: research-technology-shinohara-advancedmaterials
   icon:
-    sprite: _Crescent/Clothing/SHI/OuterClothing/highsec.rsi
+    sprite: _Crescent/Objects/Materials/materials.rsi
     state: advancedmechanic
   discipline: Corporate
   tier: 2
@@ -143,12 +227,14 @@
   - AdvancedMechatronics1
   - PlastitaniumFibreAlloySHI
   - HardlightGenerator1
+  technologyPrerequisites:
+  - ShinoharaBasicFactory
 
 - type: technology
   id: ShinoharaWeaponComponents
   name: research-technology-shinohara-weaponcomponents
   icon:
-    sprite: _Crescent/Clothing/SHI/OuterClothing/highsec.rsi
+    sprite: _Crescent/Objects/Materials/materials.rsi
     state: tubeloaderrobotics
   discipline: Corporate
   tier: 2
@@ -171,3 +257,144 @@
   - MagwellFlatpack
   - IdnaFlatpack
   - IdnaTorpedo
+
+- type: technology
+  id: ShinoharaAdvancedFab
+  name: research-technology-shinohara-advancedfactory
+  icon:
+    sprite: _Crescent/Structures/factorystructures.rsi
+    state: advancedfab
+  discipline: Corporate
+  tier: 2
+  cost: 12500
+  recipeUnlocks:
+  - AdvancedVariableCommodityFablatheFlatpack
+  technologyPrerequisites:
+  - ShinoharaAdvancedMaterials
+
+- type: technology
+  id: ShinoharaAdvancedBallistics
+  name: research-technology-shinohara-advancedballistics
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/lecter.rsi
+    state: icon
+  discipline: Corporate
+  tier: 2
+  cost: 12500
+  recipeUnlocks:
+  - WeaponRifleGoro
+  - WeaponRifleLecterSHI
+  - WeaponRevolverMateba
+  - WeaponSubMachineGunSabre
+  - WeaponLightMachineGunL6
+
+- type: technology
+  id: ShinoharaGrenadeLauncher
+  name: research-technology-shinohara-grenadelauncher
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/milkor.rsi
+    state: icon
+  discipline: Corporate
+  tier: 2
+  cost: 8000
+  recipeUnlocks:
+  - WeaponLauncherMilkor
+
+- type: technology
+  id: ShinoharaBoriaticComposting
+  name: research-technology-shinohara-boriaticcomposting
+  icon:
+    sprite: _Crescent/Objects/Misc/fuelcan.rsi
+    state: jug
+  discipline: Corporate
+  tier: 2
+  cost: 8000
+  recipeUnlocks:
+  - BoriaticComposterFlatpack
+
+- type: technology
+  id: ShinoharaMantisblades
+  name: research-technology-shinohara-mantisblades
+  icon:
+    sprite: _Crescent/Objects/Misc/cybernetics.rsi
+    state: mantisblade
+  discipline: Corporate
+  tier: 2
+  cost: 8000
+  recipeUnlocks:
+  - CyberneticsMantisBladeRight
+  - CyberneticsMantisBladeLeft
+
+- type: technology
+  id: ShinoharaAdvancedMechWeapons
+  name: research-technology-shinohara-advancedmechweaponry
+  icon:
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: autopuntgun
+  discipline: Corporate
+  tier: 3
+  cost: 12500
+  recipeUnlocks:
+  - WeaponMechPlasmaSword
+  - WeaponMechCombatAutopuntgun
+  - WeaponMechCombatTaikotyo
+
+- type: technology
+  id: ShinoharaHammerheadLauncher
+  name: research-technology-shinohara-hammerhead
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/hammerhead.rsi
+    state: icon
+  discipline: Corporate
+  tier: 3
+  cost: 12500
+  recipeUnlocks:
+  - WeaponLauncherHammerhead
+
+- type: technology
+  id: ShinoharaShieldEmitter
+  name: research-technology-shinohara-emitter
+  icon:
+    sprite: _Crescent/Structures/shieldemittersmall.rsi
+    state: icon
+  discipline: Corporate
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - ShieldEmitterSmallFlatpack
+
+- type: technology
+  id: ShinoharaGilgamesh
+  name: research-technology-shinohara-gilgamesh
+  icon:
+    sprite: _Crescent/Objects/Specific/mecha.rsi
+    state: gilgamesh-open
+  discipline: Corporate
+  tier: 3
+  cost: 17500
+  recipeUnlocks:
+  - GilgameshFlatpack
+
+- type: technology
+  id: ShinoharaDermalArmor
+  name: research-technology-shinohara-dermalarmor
+  icon:
+    sprite: _Crescent/Objects/Misc/cybernetics.rsi
+    state: dermalarmor
+  discipline: Corporate
+  tier: 3
+  cost: 9000
+  recipeUnlocks:
+  - CyberneticsDermalArmor
+
+- type: technology
+  id: ShinoharaBallisticFab
+  name: research-technology-shinohara-ballisticfab
+  icon:
+    sprite: _Crescent/Structures/factorystructures.rsi
+    state: ballisticfab
+  discipline: Corporate
+  tier: 3
+  cost: 9000
+  recipeUnlocks:
+  - BallisticFablatheFlatpack

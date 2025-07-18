@@ -313,6 +313,7 @@
     Steel: 2500
     Silver: 1000
     TubeLoader: 500
+    AdvancedElectronics: 1000
 
 - type: latheRecipe
   id: WeaponMechCombatTaikotyo
@@ -340,6 +341,23 @@
     Steel: 3000
     BallisticCycler: 1000
     BasicMechatronics: 1000
+
+- type: latheRecipe
+  id: ShipyardManufactorumFlatpack
+  result: ShipyardManufactorumFlatpack
+  completetime: 2
+  materials:
+    Steel: 3000
+    BallisticElectronics: 1000
+    BasicMechatronics: 1000
+
+- type: latheRecipe
+  id: ScrapRefinerFlatpack
+  result: ScrapRefinerFlatpack
+  completetime: 2
+  materials:
+    Steel: 3000
+    Gold: 1000
 
 - type: latheRecipe
   id: WeaponMechCombatAutopuntgun
@@ -395,6 +413,46 @@
     ShipHull: 1500
 
 - type: latheRecipe
+  id: VariableCommodityFabricatorFlatpack
+  result: VariableCommodityFabricatorFlatpack
+  completetime: 2
+  materials:
+    Gold: 1000
+    Silver: 2500
+    Steel: 2500
+
+- type: latheRecipe
+  id: AutoloomFablatheFlatpack
+  result: AutoloomFablatheFlatpack
+  completetime: 2
+  materials:
+    Gold: 1000
+    Silver: 2500
+    Steel: 2500
+
+- type: latheRecipe
+  id: AdvancedVariableCommodityFablatheFlatpack
+  result: AdvancedVariableCommodityFablatheFlatpack
+  completetime: 2
+  materials:
+    BasicMechatronics: 2500
+    BasicElectronics: 2500
+    Gold: 1500
+    Silver: 2500
+    Steel: 3000
+
+- type: latheRecipe
+  id: BallisticFablatheFlatpack
+  result: BallisticFablatheFlatpack
+  completetime: 2
+  materials:
+    BasicMechatronics: 2500
+    BasicElectronics: 2500
+    Gold: 1500
+    Silver: 2500
+    Steel: 3000
+
+- type: latheRecipe
   id: GilgameshFlatpack
   result: GilgameshFlatpack
   completetime: 2
@@ -435,6 +493,16 @@
     Gold: 1000
     Plasma: 500
     Steel: 750
+
+- type: latheRecipe
+  id: BoriaticComposterFlatpack
+  result: BoriaticComposterFlatpack
+  completetime: 2
+  materials:
+    BasicElectronics: 1500
+    Gold: 1500
+    Plasma: 3500
+    Steel: 5750
 
 - type: latheRecipe
   id: CyberneticsMantisBladeLeft
@@ -502,9 +570,9 @@
   result: ShieldEmitterSmallFlatpack
   completetime: 2
   materials:
-    AdvancedElectronics: 3500
+    NanotrasenElectronics: 1000
     BasicMechatronics: 1000
-    Silver: 500
+    Silver: 1500
     Steel: 2500
     HardlightGenerator: 3000
 
