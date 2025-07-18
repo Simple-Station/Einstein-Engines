@@ -1,0 +1,15 @@
+- type: entity
+  parent: BaseWall
+  id: WallHeavyPlastitanium
+  name: Heavy Plastitanium Wall
+  components:
+    - type: Tag
+      tags:
+        - Wall
+    - type: Sprite
+      sprite: _Crescent/Structures/reinforcedPlastitanium.rsi
+    - type: Icon
+      sprite: Structures/Walls/reinforcedPlastitanium.rsi
+    - type: IconSmooth
+      key: walls
+      base: rplastitanium
