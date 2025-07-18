@@ -14,7 +14,7 @@
     storedRotation: 90
   - type: StorageFill
     contents:
-    - id: Cigar
+    - id: CigarFreeport
       amount: 8
 
 - type: entity
@@ -55,7 +55,7 @@
     storedRotation: 90
   - type: StorageFill
     contents:
-    - id: Cigar
+    - id: CigarNCWL
       amount: 5
   - type: ItemCounter
     count:
@@ -103,7 +103,7 @@
     storedRotation: 90
   - type: StorageFill
     contents:
-    - id: Cigar
+    - id: CigarRoyal
       amount: 4
   - type: ItemCounter
     count:

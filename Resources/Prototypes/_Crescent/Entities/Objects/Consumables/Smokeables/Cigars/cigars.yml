@@ -5,7 +5,7 @@
   description: "A Placeholder lore CigarNCWL Lore"
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/imported_cigar.rsi
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/importedcigar.rsi
     state: unlit-icon
   - type: Tag
     tags:
@@ -19,7 +19,7 @@
         - ReagentId: Nicotine
           Quantity: 25
   - type: Clothing
-    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/imported_cigar.rsi
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/importedcigar.rsi
     slots: [ mask ]
     equippedPrefix: unlit
   - type: Item
@@ -27,6 +27,98 @@
 
 - type: entity
   id: CigarNCWLSpent
+  parent: Cigar
+  suffix: spent
+  components:
+  - type: Sprite
+    state: burnt-icon
+  - type: Smokable
+    state: Burnt
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 50
+  - type: Tag
+    tags:
+    - Cigar
+    - Trash
+    - Burnt
+
+- type: entity
+  id: CigarRoyal
+  parent: BaseCigar
+  name: CigarRoyalPlaceholder
+  description: "A Placeholder lore CigarRoyal Lore"
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/royalcigar.rsi
+    state: unlit-icon
+  - type: Tag
+    tags:
+    - Cigar
+    - Trash
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 50
+        reagents:
+        - ReagentId: Nicotine
+          Quantity: 25
+  - type: Clothing
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/royalcigar.rsi
+    slots: [ mask ]
+    equippedPrefix: unlit
+  - type: Item
+    size: Tiny
+
+- type: entity
+  id: CigarRoyalSpent
+  parent: Cigar
+  suffix: spent
+  components:
+  - type: Sprite
+    state: burnt-icon
+  - type: Smokable
+    state: Burnt
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 50
+  - type: Tag
+    tags:
+    - Cigar
+    - Trash
+    - Burnt
+
+- type: entity
+  id: CigarFreeport
+  parent: BaseCigar
+  name: CigarFreeportPlaceholder
+  description: "A Placeholder lore CigarFreeport Lore"
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/freeportcigar.rsi
+    state: unlit-icon
+  - type: Tag
+    tags:
+    - Cigar
+    - Trash
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 50
+        reagents:
+        - ReagentId: Nicotine
+          Quantity: 25
+  - type: Clothing
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/freeportcigar.rsi
+    slots: [ mask ]
+    equippedPrefix: unlit
+  - type: Item
+    size: Tiny
+
+- type: entity
+  id: CigarFreeportSpent
   parent: Cigar
   suffix: spent
   components:
