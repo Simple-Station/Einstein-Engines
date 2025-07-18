@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from Mojave",
+  "size": {
+    "x": 32,
+    "y": 64
+  },
+
+  "states": [
+    {
+      "name": "derelict_generator_1"
+    },
+    {
+      "name": "derelict_generator_2"
+    },
+    {
+      "name": "derelict_generator_3"
+    },
+    {
+      "name": "derelict_generator_1_r"
+    },
+    {
+      "name": "derelict_generator_2_r"
+    },
+    {
+      "name": "derelict_generator_3_r"
+    }
+  ]
+}
