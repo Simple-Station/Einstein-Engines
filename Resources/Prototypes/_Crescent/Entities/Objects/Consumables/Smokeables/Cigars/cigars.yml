@@ -5,7 +5,7 @@
   description: "A Placeholder lore CigarNCWL Lore"
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/importedcigar.rsi
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/importcigar.rsi
     state: unlit-icon
   - type: Tag
     tags:
@@ -19,7 +19,7 @@
         - ReagentId: Nicotine
           Quantity: 25
   - type: Clothing
-    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/importedcigar.rsi
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/importcigar.rsi
     slots: [ mask ]
     equippedPrefix: unlit
   - type: Item

@@ -46,7 +46,7 @@
       visible: false
   - type: Storage
     grid:
-    - 0,1,4,1
+    - 0,0,5,1
   - type: Item
     sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/imported_cigar.rsi
     size: Normal
@@ -94,7 +94,7 @@
       visible: false
   - type: Storage
     grid:
-    - 0,1,4,1
+    - 0,0,4,1
   - type: Item
     sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/royal_cigar.rsi
     size: Normal
