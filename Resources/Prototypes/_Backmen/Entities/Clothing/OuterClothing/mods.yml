@@ -1,0 +1,218 @@
+- type: entity
+  parent: ClothingOuterHardsuitEVA
+  id: ClothingOuterModsuitBodyBase
+  name: base MOD chestplate
+  description: A chestplate for a MODsuit.
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: Backmen/Clothing/OuterClothing/Modsuit/standart.rsi
+  - type: Clothing
+    equipDelay: 3
+    unequipDelay: 3
+    sprite: Backmen/Clothing/OuterClothing/Modsuit/standart.rsi
+    slots: [ OUTERCLOTHING ]
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.8
+        Radiation: 0.8
+        Caustic: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+
+- type: entity
+  parent: ClothingOuterModsuitBodyBase
+  id: ClothingOuterModsuitBodyAtmos
+  name: atmos MOD chestplate
+  description: A chestplate for a MODsuit.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/OuterClothing/Modsuit/atmospheric.rsi
+  - type: Clothing
+    equipDelay: 3
+    unequipDelay: 3
+    sprite: Backmen/Clothing/OuterClothing/Modsuit/atmospheric.rsi
+    slots: [ OUTERCLOTHING ]
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.2
+        Radiation: 0.5
+        Caustic: 0.5
+    staminaModifier: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+  - type: FireProtection
+    reduction: 0.9
+
+- type: entity
+  parent: ClothingOuterModsuitBodyBase
+  id: ClothingOuterModsuitBodyClown
+  name: clown MOD chestplate
+  description: A chestplate for a MODsuit.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/OuterClothing/Modsuit/clown.rsi
+  - type: Clothing
+    equipDelay: 3
+    unequipDelay: 3
+    sprite: Backmen/Clothing/OuterClothing/Modsuit/clown.rsi
+    slots: [ OUTERCLOTHING ]
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Caustic: 0.8
+
+- type: entity
+  parent: ClothingOuterModsuitBodyBase
+  id: ClothingOuterModsuitBodyEngineering
+  name: engineering MOD chestplate
+  description: A chestplate for a MODsuit.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/OuterClothing/Modsuit/engineering.rsi
+  - type: Clothing
+    equipDelay: 3
+    unequipDelay: 3
+    sprite: Backmen/Clothing/OuterClothing/Modsuit/engineering.rsi
+    slots: [ OUTERCLOTHING ]
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.2
+        Radiation: 0.5
+        Caustic: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 0.7
+    sprintModifier: 0.8
+
+- type: entity
+  parent: ClothingOuterModsuitBodyBase
+  id: ClothingOuterModsuitBodyMedical
+  name: medical MOD chestplate
+  description: A chestplate for a MODsuit.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/OuterClothing/Modsuit/medical.rsi
+  - type: Clothing
+    equipDelay: 3
+    unequipDelay: 3
+    sprite: Backmen/Clothing/OuterClothing/Modsuit/medical.rsi
+    slots: [ OUTERCLOTHING ]
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+
+- type: entity
+  parent: ClothingOuterModsuitBodyBase
+  id: ClothingOuterModsuitBodyMining
+  name: mining MOD chestplate
+  description: A chestplate for a MODsuit.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/OuterClothing/Modsuit/mining.rsi
+  - type: Clothing
+    equipDelay: 3
+    unequipDelay: 3
+    sprite: Backmen/Clothing/OuterClothing/Modsuit/mining.rsi
+    slots: [ OUTERCLOTHING ]
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.85
+        Heat: 0.85
+        Radiation: 0.50
+        Caustic: 0.75
+
+- type: entity
+  parent: ClothingOuterModsuitBodyBase
+  id: ClothingOuterModsuitBodySecurity
+  name: security MOD chestplate
+  description: A chestplate for a MODsuit.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/OuterClothing/Modsuit/security.rsi
+  - type: Clothing
+    equipDelay: 3
+    unequipDelay: 3
+    sprite: Backmen/Clothing/OuterClothing/Modsuit/security.rsi
+    slots: [ OUTERCLOTHING ]
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Heat: 0.6
+        Piercing: 0.6
+        Caustic: 0.7
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+
+- type: entity
+  parent: ClothingOuterModsuitBodyBase
+  id: ClothingOuterModsuitBodyScience
+  name: Science MOD chestplate
+  description: A chestplate for a MODsuit.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/OuterClothing/Modsuit/science.rsi
+  - type: Clothing
+    equipDelay: 3
+    unequipDelay: 3
+    sprite: Backmen/Clothing/OuterClothing/Modsuit/science.rsi
+    slots: [ OUTERCLOTHING ]
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Heat: 0.8
+        Piercing: 0.8
+        Caustic: 0.7
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
