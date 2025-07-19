@@ -11,6 +11,8 @@
   - type: Sprite
     snapCardinals: true
   - type: Appearance
+  - type: ApcPowerReceiver
+    powerLoad: 5
   - type: Charger
     slotId: charger_slot
   - type: Anchorable

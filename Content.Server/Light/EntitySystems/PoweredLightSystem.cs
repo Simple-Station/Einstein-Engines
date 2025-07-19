@@ -61,6 +61,7 @@ namespace Content.Server.Light.EntitySystems
             SubscribeLocalEvent<PoweredLightComponent, DeviceNetworkPacketEvent>(OnPacketReceived);
 
             SubscribeLocalEvent<PoweredLightComponent, PowerChangedEvent>(OnPowerChanged);
+            SubscribeLocalEvent<PoweredLightComponent, SidePowerChangedEvent>(OnSidePowerChanged);
 
             SubscribeLocalEvent<PoweredLightComponent, PoweredLightDoAfterEvent>(OnDoAfter);
             SubscribeLocalEvent<PoweredLightComponent, EmpPulseEvent>(OnEmpPulse);
@@ -256,7 +257,7 @@ namespace Content.Server.Light.EntitySystems
             if (bulbUid == null || !EntityManager.TryGetComponent(bulbUid.Value, out LightBulbComponent? lightBulb))
             {
                 SetLight(uid, false, light: light);
-                powerReceiver.Load = 0;
+                powerReceiver.SideLoad = 0;
                 _appearance.SetData(uid, PoweredLightVisuals.BulbState, PoweredLightState.Empty, appearance);
                 return;
             }
@@ -266,8 +267,9 @@ namespace Content.Server.Light.EntitySystems
                 case LightBulbState.Normal:
                     if (powerReceiver.Powered && light.On)
                     {
-                        SetLight(uid, true, lightBulb.Color, light, lightBulb.LightRadius, lightBulb.LightEnergy, lightBulb.LightSoftness);
+                        SetLight(uid, true, lightBulb.Color, light, lightBulb.LightRadius, lightBulb.LightEnergy * powerReceiver.SideLoadFraction, lightBulb.LightSoftness);
                         _appearance.SetData(uid, PoweredLightVisuals.BulbState, PoweredLightState.On, appearance);
+                        _appearance.SetData(uid, PoweredLightVisuals.GlowAlpha, powerReceiver.SideLoadFraction, appearance);
                         var time = _gameTiming.CurTime;
                         if (time > light.LastThunk + ThunkDelay)
                         {
@@ -291,7 +293,7 @@ namespace Content.Server.Light.EntitySystems
                     break;
             }
 
-            powerReceiver.Load = (light.On && lightBulb.State == LightBulbState.Normal) ? lightBulb.PowerUse : 0;
+            powerReceiver.SideLoad = (light.On && lightBulb.State == LightBulbState.Normal) ? lightBulb.PowerUse : 0;
         }
 
         /// <summary>
@@ -329,6 +331,17 @@ namespace Content.Server.Light.EntitySystems
             });
 
             args.Handled = true;
+        }
+
+        private void OnSidePowerChanged(EntityUid uid, PoweredLightComponent comp, ref SidePowerChangedEvent args)
+        {
+            if (!comp.On || GetBulb(uid, comp) is not EntityUid bulbUid ||
+                !TryComp<LightBulbComponent>(bulbUid, out var bulb) ||
+                bulb.State != LightBulbState.Normal)
+                return;
+
+            _pointLight.SetEnergy(uid, bulb.LightEnergy * args.SideLoadFraction);
+            _appearance.SetData(uid, PoweredLightVisuals.GlowAlpha, args.SideLoadFraction);
         }
 
         private void OnPowerChanged(EntityUid uid, PoweredLightComponent component, ref PowerChangedEvent args)
