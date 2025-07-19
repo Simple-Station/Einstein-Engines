@@ -190,4 +190,12 @@
       id: LoadoutOuterArmorSRMHunterDuster
     - type: loadout
       id: LoadoutOuterArmorSRMHunterVest
+    - type: loadout
+      id: LoadoutOuterArmorSyndicateCoordinator
+    - type: loadout
+      id: LoadoutOuterArmorSyndicateLabcoat
+    - type: loadout
+      id: LoadoutOuterArmorSyndicateApron
+    - type: loadout
+      id: LoadoutOuterArmorSyndicateArmorvestInterdyne
     #Hullrot edit end

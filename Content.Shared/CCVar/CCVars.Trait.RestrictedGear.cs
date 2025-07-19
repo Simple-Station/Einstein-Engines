@@ -8,5 +8,5 @@ public sealed partial class CCVars
     /// Whether the RestrictedGear trait can be used on the server.
     /// </summary>
     public static readonly CVarDef<bool> RestrictedGearEnabled =
-        CVarDef.Create("trait.restrictedgear_enabled", true, CVar.SERVERONLY);
+        CVarDef.Create("trait.restrictedgear_enabled", false, CVar.SERVERONLY);
 }

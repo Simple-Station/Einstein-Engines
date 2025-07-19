@@ -2,7 +2,7 @@
   id: Ibis
   name: DSM Ibis
   description: A heavy fighter, designed for ranging and harassment missions.
-  price: 48000
+  price: 30000
   category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/DSM/ibis.yml
@@ -23,7 +23,3 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-fighter
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            LevymanDSM: [ 0, 2 ]

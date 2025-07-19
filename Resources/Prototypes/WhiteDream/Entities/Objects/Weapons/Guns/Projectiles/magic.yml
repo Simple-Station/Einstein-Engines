@@ -11,8 +11,8 @@
   - type: Projectile
     damage:
       groups:
-        Burn: 10
-        Brute: 10
+        Burn: 20
+        Brute: 15
   - type: PointLight
     enabled: true
     color: "#ff4300"

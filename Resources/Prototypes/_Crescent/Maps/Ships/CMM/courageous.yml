@@ -14,7 +14,7 @@
   minPlayers: 0
   stations:
     Courageous:
-      stationProto: StandardCrescentVessel
+      stationProto: FlagshipCrescentVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'CMM Courageous {1}'

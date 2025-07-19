@@ -3111,7 +3111,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: AmeControllerSmallExplosion
+- proto: AmeController
   entities:
   - uid: 2975
     components:

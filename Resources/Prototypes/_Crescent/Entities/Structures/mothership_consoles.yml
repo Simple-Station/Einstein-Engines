@@ -31,46 +31,11 @@
   components:
   - type: ShipyardListing
     shuttles:
-    - Ibis
-    - Imparator
-    - Anathema
-    - Jannissary
-    - Nemesis
-    - Triumphant
-    - Raider
-
-- type: entity
-  id: LaborMothershipComputer
-  parent: BaseMothershipComputer
-  name: imperial shipyard
-  components:
-  - type: ShipyardListing
-    shuttles:
-    - Imp
-    - ProspectorCrescent
-
-- type: entity
-  id: ScribesMothershipComputer
-  parent: BaseMothershipComputer
-  name: imperial shipyard
-  components:
-  - type: ShipyardListing
-    shuttles:
+    - Redemptor
+    - Impel
     - Gnosis
-    - Sunesis
-
-- type: entity
-  id: NemesisMothershipComputer
-  parent: BaseMothershipComputer
-  name: nemesis internal shipyard
-  components:
-  - type: ShipyardListing
-    shuttles:
-    - Imparator
-    - Jannissary
-    - Raider
-    - Conquest
-    - Valor
+    - Praxis
+    - Torturer
 
 - type: entity
   id: InterdyneMothershipComputer
@@ -100,17 +65,6 @@
     - Rockchipper
 
 - type: entity
-  id: RamziMothershipComputer
-  parent: BaseMothershipComputer
-  name: ramzi internal shipyard
-  components:
-  - type: ShipyardListing
-    shuttles:
-    - Velator
-    - Wisp
-    - Taipan
-
-- type: entity
   id: TatsumotoMothershipComputer
   parent: BaseMothershipComputer
   name: shinohara internal shipyard
@@ -124,6 +78,17 @@
     - Flea
     - Bison
     - Nazaar
+
+- type: entity
+  id: RamziMothershipComputer
+  parent: BaseMothershipComputer
+  name: ramzi internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Velator
+    - Wisp
+    - Taipan
 
 - type: entity
   id: ZhipovMothershipComputer

@@ -180,6 +180,35 @@
         Caustic: 0.9
 
 - type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitImperialKnight
+  categories: [ HideSpawnMenu ]
+  name: imperial knight's hardsuit helmet
+  description: A combat hardsuit helmet with internal pressurization systems and an inbuilt tracker system for ballistics.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Head/mandateknight.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Head/mandateknight.rsi
+  - type: PointLight
+    radius: 6
+    color: "#ffffed"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: IdentityBlocker
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9
+        Caustic: 0.9
+
+- type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatClarizeBeret
   name: royal officer's beret
@@ -434,3 +463,20 @@
     tags:
     - ClothMade
     - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadEVAHelmetBase
+  id: ClothingHeadHelmetImperialRitter
+  name: neurohelm
+  description: A skulljack interface within this airsealed helm allows a Ritter to see from their Exoplate's eyes as though they were their own. Unaugmented humans are known to suffer cerebral overheating from excessive use, although some heavily augmented or psionically enhanced nobles are known to forego the use of their helm entirely. It cannot be expected to stop a bullet, though it will maintain a Ritter's oxygen supply should they be dismounted in space.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Head/ritterhelmet.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Head/ritterhelmet.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+  - type: IdentityBlocker

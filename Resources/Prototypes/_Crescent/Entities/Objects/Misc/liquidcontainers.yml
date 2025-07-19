@@ -78,7 +78,6 @@
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
     - type: Label
-      originalName: jug
     - type: Tag
       tags:
       - ChemDispensable
@@ -100,4 +99,3 @@
               Quantity: 200
     - type: StaticPrice
       price: 250
-           

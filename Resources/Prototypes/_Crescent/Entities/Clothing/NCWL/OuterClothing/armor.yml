@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
   id: ClothingOuterArmorNCWLCarapace
   name: kommissar's trenchcoat
   description: A kevlar-intervowen durathread trenchcoat with a synthfleece-trim collar. Looks badass.
@@ -29,7 +29,7 @@
     price: 1000
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
   id: ClothingOuterArmorNCWLOpremeCarapace
   name: admiral's greatcoat
   description: A kevlar-intervowen durathread trenchcoat with a synthfleece-trim collar. Looks badass.
@@ -59,7 +59,7 @@
     price: 1000
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorNCWLHeavyCarapace
   name: communard's heavy carapace
   description: A steel-beaten juggernaut's carapace in communard orange.
@@ -80,8 +80,8 @@
         Heat: 25
         Caustic: 25
   - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 1.0
+    walkModifier: 1
+    sprintModifier: 1
   - type: ExplosionResistance
     damageCoefficient: 0.90
   - type: GroupExamine
@@ -89,7 +89,7 @@
     price: 750
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorNCWLCarapaceKapitan
   name: kapitan's armored overcoat
   description: A communard overcoat overlaid with a kevlar vest.
@@ -119,7 +119,7 @@
     price: 800
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorNCWLCarapaceDoktor
   name: doktor's armored jacket
   description: A communard paramedic's jacket. Layered with kevlar nanoweave.
@@ -187,6 +187,41 @@
 
 - type: entity
   parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitNCWLPetya
+  name: homeguard Mk.II "Petya" combat hardsuit
+  description: An armored hardsuit of communard design. Comes with ballistic gel and kevlar padding. Spaceworthy.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/OuterClothing/commieheavy.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/OuterClothing/commieheavy.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: DegradeableArmor
+    armorMaxHealth: 750
+    armorType: Metallic
+    armorRepair: HomelandAlloy
+    initialModifiers:
+      flatReductions:
+        Blunt: 25
+        Slash: 25
+        Piercing: 55
+        Heat: 25
+        Caustic: 25
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.85
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitNCWLPetya
+  - type: StaticPrice
+    price: 2000
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitNCWLJuggernaut
   name: NCWL 'HADES' Mk.III juggernaut hardsuit
   description: A heavily armored, spaceworthy hardsuit commonly worn by Homeguard Liquidation teams. Just looking at this makes you want to kick some ass.
@@ -199,18 +234,18 @@
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.6
+    damageCoefficient: 0.4
   - type: DegradeableArmor
     armorMaxHealth: 1500
     armorType: Metallic
     armorRepair: HomelandAlloy
     initialModifiers:
       flatReductions:
-        Blunt: 25
-        Slash: 15
-        Piercing: 65
-        Heat: 15
-        Caustic: 15
+        Blunt: 35
+        Slash: 25
+        Piercing: 75
+        Heat: 35
+        Caustic: 25
   - type: ClothingSpeedModifier
     walkModifier: 0.6
     sprintModifier: 0.6

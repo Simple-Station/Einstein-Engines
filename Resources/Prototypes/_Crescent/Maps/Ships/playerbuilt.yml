@@ -23,7 +23,3 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: "Undesignated Vessel"
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            ShipbreakerNCSP: [0, 0]

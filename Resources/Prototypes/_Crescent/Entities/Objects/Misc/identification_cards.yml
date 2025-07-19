@@ -136,6 +136,18 @@
 
 - type: entity
   parent: IDCardStandard
+  id: NCSPIDCardCoordinator
+  name: NCSP ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+    - state: idzookeeper
+  - type: PresetIdCard
+    job: CoordinatorNCSP
+
+- type: entity
+  parent: IDCardStandard
   id: NCSPIDCardRipperdoc
   name: NCSP ID card
   components:
@@ -148,7 +160,7 @@
 
 - type: entity
   parent: IDCardStandard
-  id: NCSPIDCardChemcook
+  id: NCSPIDCardTraumasec
   name: NCSP ID card
   components:
   - type: Sprite
@@ -156,7 +168,7 @@
     - state: syndie
     - state: idzookeeper
   - type: PresetIdCard
-    job: ChemcookNCSP
+    job: TraumasecNCSP
 
 - type: entity
   parent: IDCardStandard
@@ -327,6 +339,18 @@
     - state: idseniorresearcher
   - type: PresetIdCard
     job: KnightDSM
+
+- type: entity
+  parent: IDCardStandard
+  id: DSMIDCardRitter
+  name: imperial ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorresearcher
+  - type: PresetIdCard
+    job: RitterDSM
 
 - type: entity
   parent: IDCardStandard

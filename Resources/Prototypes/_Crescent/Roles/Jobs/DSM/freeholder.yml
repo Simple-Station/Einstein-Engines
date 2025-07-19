@@ -3,7 +3,7 @@
   name: job-name-freeholder
   description: job-description-freeholder
   playTimeTracker: JobFreeholderDSM
-  weight: 18
+  weight: 73
   startingGear: FreeholderGear
   requirements:
     - !type:FactionRequirement
@@ -11,7 +11,7 @@
   alwaysUseSpawner: true
   icon: "JobIconImperialFreeholder"
   requireAdminNotify: false
-  supervisors: job-supervisors-imperial 
+  supervisors: job-supervisors-imperial
   canBeAntag: false
   access:
   - Command

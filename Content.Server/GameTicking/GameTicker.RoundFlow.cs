@@ -275,8 +275,6 @@ namespace Content.Server.GameTicking
             // MapInitialize *before* spawning players, our codebase is too shit to do it afterwards...
             _mapManager.DoMapInitialize(DefaultMap);
 
-            SpawnPlayers(readyPlayers, readyPlayerProfiles, force);
-
             _roundStartDateTime = DateTime.UtcNow;
             RunLevel = GameRunLevel.InRound;
 
@@ -288,6 +286,7 @@ namespace Content.Server.GameTicking
             UpdateInfoText();
             SendRoundStartedDiscordMessage();
             RaiseLocalEvent(new RoundStartedEvent(RoundId));
+            SpawnPlayers(readyPlayers, readyPlayerProfiles, force);
 
 #if EXCEPTION_TOLERANCE
             }
@@ -584,7 +583,7 @@ namespace Content.Server.GameTicking
 
             DisallowLateJoin = false;
             _playerGameStatuses.Clear();
-            
+
             foreach (var session in _playerManager.Sessions)
                 _playerGameStatuses[session.UserId] = LobbyEnabled ? PlayerGameStatus.NotReadyToPlay : PlayerGameStatus.ReadyToPlay;
         }

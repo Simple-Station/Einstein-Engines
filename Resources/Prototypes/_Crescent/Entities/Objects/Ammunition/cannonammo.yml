@@ -455,7 +455,7 @@
   - type: Item
     size: Normal
   - type: CartridgeAmmo
-    proto: TorpedoBase
+    proto: IdnaTorpedoBullet
     deleteOnSpawn: true
   - type: Sprite
     sprite: _Crescent/Objects/ShuttleWeapons/torpedop.rsi
@@ -465,6 +465,18 @@
   - type: Appearance
   - type: SpentAmmoVisuals
   - type: SpaceGarbage
+
+- type: entity
+  id: IdnaTorpedoBullet
+  name: Idna Torpedo
+  parent: TorpedoBase
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 75
+    intensitySlope: 20
+    totalIntensity: 900
 
 - type: entity
   id: TorpedoBase
@@ -498,7 +510,7 @@
     rotationSpeed: 25
     acceleration: 25
     topSpeed: 50
-    FOV: 30
+    fov: 30
     defaultSeekingRange: 600
     guidanceAlgorithm: PredictiveGuidance
   - type: PointLight
@@ -569,7 +581,7 @@
     rotationSpeed: 7 # slow turn rate
     acceleration: 5
     topSpeed: 40
-    FOV: 20
+    fov: 20
     defaultSeekingRange: 1500 # long range
     guidanceAlgorithm: PredictiveGuidance
   - type: PointLight
@@ -696,7 +708,7 @@
     rotationSpeed: 5 # slow turn rate
     acceleration: 5
     topSpeed: 40
-    FOV: 20
+    fov: 20
     defaultSeekingRange: 1500 # long range
     guidanceAlgorithm: PredictiveGuidance
   - type: PointLight
@@ -800,7 +812,7 @@
     rotationSpeed: 15 # slow rotation so it isnt aimbot, still fairly accurate though
     acceleration: 120
     topSpeed: 120
-    FOV: 30
+    fov: 30
     defaultSeekingRange: 400
     guidanceAlgorithm: PredictiveGuidance
   - type: Fixtures
@@ -916,8 +928,6 @@
     size: Small
   - type: CartridgeAmmo
     proto: FlakProjectile
-    count: 3
-    spread: 10
     deleteOnSpawn: true
   - type: Sprite
     sprite: _Crescent/Objects/ShuttleWeapons/flak.rsi
@@ -1387,8 +1397,6 @@
   - type: CartridgeAmmo
     deleteOnSpawn: true
     proto: CompaktMicrowaveProjectile
-    count: 4
-    spread: 7
   - type: Sprite
     sprite: _Crescent/Objects/ShuttleWeapons/lenses.rsi
     layers:
@@ -1743,7 +1751,7 @@
     rotationSpeed: 20 # slow rotation so it isnt aimbot, still fairly accurate though
     acceleration: 85
     topSpeed: 85
-    FOV: 20
+    fov: 20
     defaultSeekingRange: 400
     guidanceAlgorithm: PredictiveGuidance
   - type: Fixtures
@@ -1860,7 +1868,7 @@
     rotationSpeed: 15
     acceleration: 25
     topSpeed: 125
-    FOV: 30
+    fov: 30
     defaultSeekingRange: 400
     guidanceAlgorithm: PredictiveGuidance
   - type: Fixtures

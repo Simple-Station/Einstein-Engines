@@ -1,0 +1,239 @@
+# Tier 1
+- type: technology
+  id: BasicImperialClothes
+  name: research-technology-imperial-basicclothes
+  icon:
+    sprite: _Crescent/Clothing/Empire/OuterClothing/mandateparade.rsi
+    state: icon
+  discipline: Imperial
+  tier: 1
+  cost: 600
+  recipeUnlocks:
+  - ClothingMaskImperialCombatGasmask
+  - ClothingOuterCoatImperialParade
+  - ClothingUniformJumpsuitImperialDoctor
+  - ClothingUniformJumpsuitImperialFreeholder
+  - ClothingHandsGlovesImperialWorkerGloves
+  - ClothingShoesBootsImperialLongboots
+  - ClothingHandsGlovesImperialLonggloves
+  - ClothingHeadHelmetImperialWorkerHelmet
+  - ClothingHeadHatImperialPeakedCap
+  - ClothingOuterCoatImperialSoftsuit
+  - ClothingHeadHelmetImperialEVA
+
+- type: technology
+  id: AdvancedImperialClothes
+  name: research-technology-imperial-advancedclothes
+  icon:
+    sprite: _Crescent/Clothing/Empire/Face/governormask.rsi
+    state: icon
+  discipline: Imperial
+  tier: 1
+  cost: 1000
+  recipeUnlocks:
+  - ClothingHeadHatImperialHat
+  - ClothingUniformJumpsuitImperialNobleMale
+  - ClothingUniformJumpsuitImperialNobleFemale
+  - ClothingUniformJumpsuitImperialSoldierFormal
+  - ClothingMaskImperialGovernorMask
+  - ClothingOuterCoatImperialGovernor
+  - ClothingNeckCloakImperialGovernor
+  - ClothingOuterHardsuitImperialWorker
+
+- type: technology
+  id: BasicImperialArmor
+  name: research-technology-imperial-basicarmor
+  icon:
+    sprite: _Crescent/Clothing/Empire/Head/mandatehelmet.rsi
+    state: icon
+  discipline: Imperial
+  tier: 1
+  cost: 3000
+  recipeUnlocks:
+  - ClothingHeadHelmetImperialTrooperHelmet
+  - ClothingOuterArmorImperialTrooperArmor
+  - ClothingOuterHardsuitImperialSoldier
+
+- type: technology
+  id: AdvancedImperialArmor
+  name: research-technology-imperial-advancedarmor
+  icon:
+    sprite: _Crescent/Clothing/Empire/OuterClothing/mandatearmorprestige.rsi
+    state: icon
+  discipline: Imperial
+  tier: 1
+  cost: 4000
+  recipeUnlocks:
+  - ClothingHeadHelmetImperialKnightCommanderHelmet
+  - ClothingOuterArmorImperialArmorPrestige
+  - ClothingOuterHardsuitImperialKnight
+
+- type: technology
+  id: BasicImperialRifling
+  name: research-technology-imperial-basicrifling
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/miller.rsi
+    state: icon
+  discipline: Imperial
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - WeaponRifleMiller
+  - WeaponRevolverArgenti
+  - WeaponPistolComplianceImperial
+
+- type: technology
+  id: ImperialCarrion
+  name: research-technology-imperial-carrion
+  icon:
+    sprite: Objects/Devices/flatpack.rsi
+    state: kit
+  discipline: Imperial
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - CarrionFlatpack
+  - WeaponMechIndustrialKineticAcceleratorImperial
+  - MechEquipmentGrabberImperial
+  - WeaponMechMeleeDrillImperial
+
+- type: technology
+  id: ImperialCovetor
+  name: research-technology-imperial-covetor
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Imperial
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - CovetorLPC
+
+- type: technology
+  id: ImperialIbis
+  name: research-technology-imperial-ibis
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Imperial
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - IbisLPC
+
+- type: technology
+  id: ImperialNobleWeapons
+  name: research-technology-imperial-nobleweapons
+  icon:
+    sprite: _Crescent/Objects/Weapons/noble_rapier.rsi
+    state: icon
+  discipline: Imperial
+  tier: 2
+  cost: 5000
+  recipeUnlocks:
+  - ClothingBeltSheathRapier
+  - ClothingBeltSheathDSMSabre
+  - DSMRapier
+  - DSMSabre
+
+- type: technology
+  id: ImperialSunesis
+  name: research-technology-imperial-sunesis
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Imperial
+  tier: 2
+  cost: 8000
+  recipeUnlocks:
+  - SunesisLPC
+
+- type: technology
+  id: ImperialLaelaps
+  name: research-technology-imperial-laelaps
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Imperial
+  tier: 2
+  cost: 9000
+  recipeUnlocks:
+  - LaelapsLPC
+
+- type: technology
+  id: ImperialPaladinMech
+  name: research-technology-imperial-paladin
+  icon:
+    sprite: Objects/Devices/flatpack.rsi
+    state: kit
+  discipline: Imperial
+  tier: 2
+  cost: 9000
+  recipeUnlocks:
+  - PaladinFlatpack
+
+- type: technology
+  id: ImperialAdvancedRifling
+  name: research-technology-imperial-advancedrifling
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/legionnaire.rsi
+    state: icon
+  discipline: Imperial
+  tier: 2
+  cost: 9000
+  recipeUnlocks:
+  - WeaponRifleDSMLegionnaire
+  - WeaponSubMachineGunC20rImperial
+  - WeaponPistolNeoVolker
+
+- type: technology
+  id: ImperialSRM
+  name: research-technology-imperial-srmimitation
+  icon:
+    sprite: _Crescent/Structures/flagssrm.rsi
+    state: icon
+  discipline: Imperial
+  tier: 3
+  cost: 18000
+  recipeUnlocks:
+  - ClothingBeltSheathKhopesh
+  - SRMKhopesh
+  - WeaponSubMachineGunBeetle
+  - WeaponRifleHunter
+  - ClothingOuterHardsuitHunterElite
+
+- type: technology
+  id: ImperialBomb
+  name: research-technology-imperial-bomblauncher
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/m320.rsi
+    state: icon
+  discipline: Imperial
+  tier: 3
+  cost: 8000
+  recipeUnlocks:
+  - WeaponLauncherM320
+
+- type: technology
+  id: ImperialTriumphant
+  name: research-technology-imperial-triumphant
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Imperial
+  tier: 3
+  cost: 12000
+  recipeUnlocks:
+  - TriumphantLPC
+
+- type: technology
+  id: ImperialPadparadscha
+  name: research-technology-imperial-padparadscha
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Imperial
+  tier: 3
+  cost: 12000
+  recipeUnlocks:
+  - PadparadschaLPC

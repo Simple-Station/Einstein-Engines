@@ -14,13 +14,52 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitSyndicateInterdyne
-  name: interdyne agent's fatigues
-  description: An Interdyne officer's uniform.
+  name: traumasec agent's fatigues
+  description: An Interdyne TraumaSec uniform, adorned with big pockets to carry all your controlled narcotics.
   components:
   - type: Sprite
-    sprite: _Crescent/Clothing/Syndicate/Uniform/interdyne.rsi
+    sprite: _Crescent/Clothing/Syndicate/Uniform/ipm_uniform.rsi
   - type: Clothing
-    sprite: _Crescent/Clothing/Syndicate/Uniform/interdyne.rsi
+    sprite: _Crescent/Clothing/Syndicate/Uniform/ipm_uniform.rsi
+  - type: StaticPrice
+    price: 100
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSyndicateInterdyneScrubs
+  name: interdyne scrubs
+  description: A ripperdoc’s scrubs, just ignore the dried blood stains.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/Uniform/ipm_scrubs.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/Uniform/ipm_scrubs.rsi
+  - type: StaticPrice
+    price: 100
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSyndicateInterdyneRedUniform
+  name: red interdyne uniform
+  description: An Interdyne uniform with a red shirt.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/Uniform/ipm_red.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/Uniform/ipm_red.rsi
+  - type: StaticPrice
+    price: 100
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSyndicateInterdyneWhiteUniform
+  name: white interdyne uniform
+  description: An Interdyne uniform with a white shirt.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/Uniform/ipm_white.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/Uniform/ipm_white.rsi
   - type: StaticPrice
     price: 100
 

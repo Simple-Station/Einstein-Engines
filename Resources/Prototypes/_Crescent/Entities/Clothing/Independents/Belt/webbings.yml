@@ -8,6 +8,8 @@
     sprite: _Crescent/Clothing/Independents/Belt/tac_rig.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/Independents/Belt/tac_rig.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
 
 - type: entity
   parent: [ClothingBeltBase, ClothingSlotBase]

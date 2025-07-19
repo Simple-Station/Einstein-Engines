@@ -11,6 +11,12 @@
   maleFirstNames: names_moth_first_male
   femaleFirstNames: names_moth_first_female
   lastNames: names_moth_last
+  minHeight: 1
+  defaultHeight: 1
+  maxHeight: 1
+  minWidth: 1
+  defaultWidth: 1
+  maxWidth: 1
 
 - type: speciesBaseSprites
   id: MobMothSprites

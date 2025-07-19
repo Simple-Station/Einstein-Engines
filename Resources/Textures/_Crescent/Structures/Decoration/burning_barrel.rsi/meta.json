@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "license": "",
+  "copyright": "Original artwork made by the Hullrot team for the Hullrot Project. All rights reserved. Do not copy, use, modify, or redistribute.",
+  "size": {
+    "x": 19,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "drum"
+    },
+    {
+      "name": "burning",
+      "delays": [
+      [
+        0.3,
+        0.3,
+        0.3,
+        0.3,
+        0.3,
+        0.3
+      ]
+      ]
+    }
+  ]
+}

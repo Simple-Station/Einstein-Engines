@@ -17,7 +17,6 @@
         - type: VesselDesignation
           designation: vessel-designation-headquarters
         - type: StationJobs
-          checkAlive: false
           overflowJobs: []
           availableJobs:
             MarshalCMM: [ 1, 1 ]

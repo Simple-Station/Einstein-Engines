@@ -1206,6 +1206,17 @@
       idleState: icon
       runningState: icon
       staticRecipes:
+        - SluggieHE
+        - SluggieAP
+        - IdnaTorpedoRecipe
+        - Automortar90
+        - GrenadeBlast
+        - GrenadeBatonCraft
+        - GrenadeEMP
+        - MagazineGrenadeEmpty
+        - Needler60
+        - MagazineVulcan
+        - MagazineFlak
         - BoxLethalshot
         - BoxShotgunLumen
         - BoxShotgunFlare

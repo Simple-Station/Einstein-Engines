@@ -64,7 +64,7 @@ public sealed partial class HeatSeekingComponent : Component
     /// <summary>
     /// What is the missiles field of view in degrees?
     /// </summary>
-    [DataField]
+    [DataField("fov")]
     public float FOV = 90f;
 
     public float oldDistance;

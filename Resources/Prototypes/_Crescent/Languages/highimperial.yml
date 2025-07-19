@@ -2,7 +2,7 @@
   id: HighImperial
   isVisibleLanguage: true
   speech:
-    color: "#ff8886"
+    color: "#bd73d0"
     fontId: Cambria
   obfuscation:
     !type:SyllableObfuscation

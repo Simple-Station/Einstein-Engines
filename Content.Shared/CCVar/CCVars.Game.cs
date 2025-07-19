@@ -21,7 +21,7 @@ public sealed partial class CCVars
     ///     Controls the duration of the lobby timer in seconds. Defaults to 2 minutes and 30 seconds.
     /// </summary>
     public static readonly CVarDef<int>
-        GameLobbyDuration = CVarDef.Create("game.lobbyduration", 150, CVar.ARCHIVE);
+        GameLobbyDuration = CVarDef.Create("game.lobbyduration", 600, CVar.ARCHIVE);
 
     /// <summary>
     ///     Controls if players can latejoin at all.
@@ -162,7 +162,7 @@ public sealed partial class CCVars
         CVarDef.Create("game.diagonalmovement", true, CVar.ARCHIVE);
 
     public static readonly CVarDef<int> SoftMaxPlayers =
-        CVarDef.Create("game.soft_max_players", 30, CVar.SERVERONLY | CVar.ARCHIVE);
+        CVarDef.Create("game.soft_max_players", 999, CVar.SERVERONLY | CVar.ARCHIVE);
 
     /// <summary>
     /// If a player gets denied connection to the server,

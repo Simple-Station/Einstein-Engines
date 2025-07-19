@@ -14,7 +14,7 @@
   minPlayers: 0
   stations:
     Clementine:
-      stationProto: StandardCrescentVessel
+      stationProto: FlagshipCrescentVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'NCWL Clementine {1}'
