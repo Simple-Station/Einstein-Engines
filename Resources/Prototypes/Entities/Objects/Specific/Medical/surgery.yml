@@ -30,7 +30,7 @@
   - type: MeleeWeapon
     damage:
        types:
-        Heat: 5
+        Heat: 12
     soundHit:
       path: /Audio/Effects/lightburn.ogg
   # Shitmed Change
@@ -65,7 +65,7 @@
     range: 1.4
     damage:
       types:
-        Piercing: 8
+        Piercing: 12
     heavyRateModifier: 1.5
     heavyRangeModifier: 1.2
     heavyDamageBaseModifier: 1.5
@@ -77,7 +77,7 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Piercing: 11
+        Piercing: 12
     staminaCost: 8
   - type: EmbeddableProjectile
   - type: EmbedPassiveDamage
@@ -117,11 +117,11 @@
   - type: MeleeWeapon
     wideAnimationRotation: 90
     swingLeft: true
-    attackRate: .8
+    attackRate: 1
     range: 1.4
     damage:
       types:
-        Slash: 7.5
+        Slash: 14
     heavyRateModifier: 1.25
     heavyRangeModifier: 1.2
     heavyDamageBaseModifier: 1.25
@@ -177,7 +177,7 @@
   - type: MeleeWeapon
     damage:
       types:
-        Slash: 8
+        Slash: 18
   - type: Scalpel # Shitmed
     speed: 1.25
   - type: Tag
@@ -200,8 +200,8 @@
   - type: MeleeWeapon
     damage:
       types:
-        Slash: 6.5
-        Heat: 1
+        Slash: 12
+        Heat: 6
   - type: Scalpel
     speed: 1.25 # These shouldnt be obtainable but yknow they are better.
   - type: Cautery
@@ -231,8 +231,8 @@
     range: 1.4
     damage:
       types:
-        Slash: 3.5
-        Blunt: 3.0
+        Slash: 4
+        Blunt: 6
     heavyRateModifier: 1.25
     heavyDamageBaseModifier: 1.75
     heavyStaminaCost: 2.5
@@ -274,7 +274,7 @@
     range: 1.4
     damage:
       types:
-        Slash: 6
+        Slash: 9
     heavyRateModifier: 1.25
     heavyDamageBaseModifier: 1.25
     heavyStaminaCost: 2.5
@@ -355,8 +355,8 @@
     range: 1.35
     damage:
       types:
-        Blunt: 2.5
-        Slash: 6.5
+        Blunt: 4
+        Slash: 9
     heavyRateModifier: 3
     heavyDamageBaseModifier: 2.0
     heavyStaminaCost: 20
@@ -391,8 +391,8 @@
     attackRate: 1.1
     damage:
       types:
-        Blunt: 3
-        Slash: 7
+        Blunt: 4
+        Slash: 8
     bluntStaminaDamageFactor: 3
     heavyRateModifier: 1.25
     heavyDamageBaseModifier: 1.25
@@ -429,8 +429,8 @@
     bluntStaminaDamageFactor: 3.0
     damage:
       types:
-        Blunt: 4.5
-        Slash: 5.5
+        Blunt: 6
+        Slash: 10
     heavyRateModifier: 2
     heavyRangeModifier: 1.2
     heavyDamageBaseModifier: 1
@@ -476,8 +476,8 @@
     bluntStaminaDamageFactor: 5.0
     damage:
       types:
-        Blunt: 4.5
-        Slash: 7.5
+        Blunt: 7
+        Slash: 12
     heavyRateModifier: 2
     heavyRangeModifier: 1.2
     heavyDamageBaseModifier: 1
@@ -527,7 +527,7 @@
     damage:
       types:
         Piercing: 10
-        Heat: 1
+        Heat: 10
   - type: PhysicalComposition #Goobstation - Recycle update
     materialComposition:
       Steel: 150
@@ -589,8 +589,8 @@
   - type: MeleeWeapon
     damage:
       types:
-        Slash: 10
-        Heat: 1
+        Slash: 14
+        Heat: 8
   - type: PhysicalComposition #Goobstation - Recycle update
     materialComposition:
       Steel: 150
@@ -652,8 +652,8 @@
   - type: MeleeWeapon
     damage:
       types:
-        Slash: 6.5
-        Heat: 1
+        Slash: 7
+        Heat: 8
   - type: PhysicalComposition #Goobstation - Recycle update
     materialComposition:
       Steel: 150
@@ -729,6 +729,13 @@
     speed: 2
   - type: Tending
     speed: 2
+  - type: MeleeWeapon
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 4
+        Slash: 4
+        Heat: 10
 
 - type: entity
   parent: OmnimedTool

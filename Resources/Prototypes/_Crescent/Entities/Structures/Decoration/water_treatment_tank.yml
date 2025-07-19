@@ -1,0 +1,49 @@
+﻿- type: entity
+  id: DerelictWaterTreatmentTank
+  parent: [BaseStructure, Sink]
+  name: derelict water treatment tank
+  description: Made to purify unclean water. There's a weathered label advising the operator to not drink the water. It seems to still contain some water.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _Crescent/Structures/Decoration/water_treatment_tank.rsi
+    layers:
+      - state: water_treatment_tank
+      - state: panel_open
+        map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: WiresPanel
+  - type: WiresVisuals
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Water
+          Quantity: 10000
+        maxVol: 10000
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 6
+            max: 8
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 200
