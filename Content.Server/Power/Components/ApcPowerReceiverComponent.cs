@@ -16,7 +16,7 @@ namespace Content.Server.Power.Components
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite)]
 
-        private float _mainLoad;
+        private float _mainLoad = 5;
         private float _sideLoad;
         
         [DataField("powerLoad")]
