@@ -466,6 +466,9 @@
     - type: IconSmooth
       key: walls
       base: plastitanium
+    - type: Damageable
+      damageContainer: StructuralInorganic
+      damageModifierSet: StructuralMetallicStrong
 
 - type: entity
   parent: WallPlastitaniumIndestructible

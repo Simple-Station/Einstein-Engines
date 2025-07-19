@@ -1,7 +1,8 @@
 - type: entity
   parent: BaseWall
   id: WallRemnant
-  name: Remnant Wall
+  name: "Warped Wall"
+  description: A highly unusual hull plating. The edges where the twisting metal meet are filled with a purple residue dust.
   components:
     - type: Tag
       tags:
@@ -13,3 +14,19 @@
     - type: IconSmooth
       key: walls
       base: remnant_
+    - type: Damageable
+      damageContainer: StructuralInorganic
+      damageModifierSet: StructuralMetallicStrong
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 2500
+          behaviors:
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                Girder:
+                  min: 1
+                  max: 1
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
