@@ -100,6 +100,7 @@
     ClothingOuterHardsuitTraumasec: 150
     ClothingOuterHardsuitCybersun: 150
     ClothingOuterHardsuitRamzi: 150
+    ClothingOuterHardsuitFishbed: 150
     OxygenTankFilled: 150
     ClothingShoesBootsMagAdv: 150
     StimpackMini: 150
@@ -203,7 +204,9 @@
     Crowbar: 150
     BoxBreachingCharges: 150
     ClothingOuterHardsuitNCWLJuggernaut: 150
+    ClothingOuterHardsuitNCWLPetya: 150
     ClothingOuterHardsuitNCWLInfantry: 150
+    ClothingOuterHardsuitFishbedNLF: 150
     OxygenTankFilled: 150
     ClothingShoesBootsMagAdv: 150
     StimpackMini: 150
@@ -303,8 +306,10 @@
     HandHeldMassScannerEE: 150
     Crowbar: 150
     BoxBreachingCharges: 150
+    ClothingOuterHardsuitImperialKnight: 150
     ClothingOuterHardsuitImperialSoldier: 150
     ClothingOuterHardsuitClarize: 150
+    ClothingOuterHardsuitFishbedGold: 150
     OxygenTankFilled: 150
     ClothingShoesBootsMagAdv: 150
     StimpackMini: 150
@@ -402,6 +407,7 @@
     BoxBreachingCharges: 150
     ClothingOuterHardsuitHunterElite: 150
     ClothingOuterHardsuitHunter: 150
+    ClothingOuterHardsuitFishbed: 150
     OxygenTankFilled: 150
     ClothingShoesBootsMagAdv: 150
     StimpackMini: 150
@@ -502,6 +508,7 @@
     BoxBreachingCharges: 150
     ClothingOuterHardsuitCMMPatrol: 150
     ClothingOuterHardsuitMidshipman: 150
+    ClothingOuterHardsuitFishbedColonial: 150
     OxygenTankFilled: 150
     ClothingShoesBootsMagAdv: 150
     StimpackMini: 150
@@ -591,6 +598,7 @@
     Crowbar: 150
     BoxBreachingCharges: 150
     ClothingOuterHardsuitHighsec: 150
+    ClothingOuterHardsuitFishbedSilver: 150
     OxygenTankFilled: 150
     ClothingShoesBootsMagAdv: 150
     StimpackMini: 150
@@ -691,6 +699,8 @@
     ClothingBeltMinutemanPouches: 100
     ClothingMaskSyndicateFacemask: 100
     ClothingUniformJumpsuitDraugr: 150
+    ClothingOuterHardsuitFishbed: 150
+    ClothingOuterHardsuitIndependentsEVA: 150
     ClothingHandsGlovesCombat: 100
     ClothingShoesBootsJack: 100
     ClothingBackpackSHIDuffelbag: 150
@@ -809,6 +819,7 @@
     Crowbar: 150
     BoxBreachingCharges: 150
     ClothingOuterHardsuitAuthorityPanzer: 150
+    ClothingOuterHardsuitFishbed: 150
     OxygenTankFilled: 150
     ClothingShoesBootsMagAdv: 150
     StimpackMini: 150
@@ -923,6 +934,9 @@
     BoxBreachingCharges: 150
     ClothingOuterHardsuitPangTai: 150
     ClothingOuterHardsuitHighsec: 150
+    ClothingOuterHardsuitCenobite: 150
+    ClothingOuterHardsuitFishbed: 150
+    ClothingOuterHardsuitIndependentsEVA: 150
     OxygenTankFilled: 150
     ClothingShoesBootsMagAdv: 150
     StimpackMini: 150
