@@ -39,6 +39,7 @@
   - ClothingOuterHardsuitSpatioAstronautics
   - ClothingShoesBootsMagAstronautics
   - JetpackBlueFilledAstronautics
+  - ClothingOuterHardsuitIndependentsEVA
 
 
 - type: technology
@@ -70,6 +71,14 @@
   - ClothingOuterHardsuitPilotAstronautics
   - ClothingOuterHardsuitVoidParamedAstronautics
   - JetpackMiniFilledAstronautics
+  - ClothingOuterHardsuitFishbedAstronautics
+  - ClothingOuterHardsuitFishbedSilverAstronautics
+  - ClothingOuterHardsuitFishbedGoldAstronautics
+  - ClothingOuterHardsuitFishbedColonialAstronautics
+  - ClothingOuterHardsuitFishbedNLFAstronautics
+  - ClothingOuterHardsuitCenobiteAstronautics
+  - ClothingOuterHardsuitCenobiteVerdantAstronautics
+  - ClothingOuterHardsuitCenobiteRedAstronautics
 
 - type: technology
   id: RCDAstronautics
