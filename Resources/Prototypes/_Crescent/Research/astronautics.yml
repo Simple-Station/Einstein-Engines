@@ -39,7 +39,7 @@
   - ClothingOuterHardsuitSpatioAstronautics
   - ClothingShoesBootsMagAstronautics
   - JetpackBlueFilledAstronautics
-  - ClothingOuterHardsuitIndependentsEVA
+  - ClothingOuterHardsuitIndependentsEVAAstronautics
 
 
 - type: technology
@@ -90,8 +90,8 @@
   tier: 2
   cost: 10000
   recipeUnlocks:
-  - RCD
-  - RCDAmmo
+  - RCDAstronautics
+  - RCDAmmoAstronautics
 
 #Tier 3
 
@@ -100,7 +100,7 @@
   name: research-technology-astronautics-modsuit
   icon:
     sprite: _Goobstation/Clothing/Back/Modsuits/standard.rsi
-    state: icon
+    state: control
   discipline: Astronautics
   tier: 3
   cost: 15000

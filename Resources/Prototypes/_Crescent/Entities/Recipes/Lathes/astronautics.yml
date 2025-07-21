@@ -214,7 +214,7 @@
     Steel: 3000
 
 - type: latheRecipe
-  id: RCDEmptyAstronautics
+  id: RCDAstronautics
   result: RCDEmpty
   completetime: 1.5
   materials:
@@ -227,7 +227,7 @@
 
 - type: latheRecipe
   id: RCDAmmoAstronautics
-  result: RCDAmmoAstronautics
+  result: RCDAmmo
   completetime: 1.5
   materials:
     Steel: 2000

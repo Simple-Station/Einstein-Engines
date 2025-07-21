@@ -109,6 +109,7 @@
     - Saw
     - Hemostat
     - BoneGel
+    - ParamedHypo
     - ClothingHandsGlovesNitrile
     - ClothingMaskSterile
     - Brutepack
@@ -122,10 +123,11 @@
     - Dropper
     - Jug
     - Syringe
+    - Defibrillator
     dynamicRecipes:
       - ClothingUniformJumpsuitSyndicateInterdyne
       - ClothingBeltSyndicateWebbingInterdyne
-      - ClothingHeadHatSyndicateDoctor
+      - ClothingHeadHatSyndicateInterdyne
       - ClothingOuterArmorSyndicateApron
       - ClothingHeadHelmetSyndicateBasicInterdyne
       - ClothingOuterArmorSyndicateArmorvestInterdyne
@@ -135,9 +137,10 @@
       - CyberneticsPainEditorInterdyne
       - CyberneticsAdrenalInterdyne
       - CyberneticsBloodPumpInterdyne
+      - InterdyneOpticsInterdyne
       - CrowbarLeftArmInterdyne
       - CrowbarRightArmInterdyne
-      - SecHypoInterdyne
+      - HypoInterdyne
       - CartridgeEphedrineInterdyne
       - CartridgeTirizeneInterdyne
       - CartridgeBicaridineInterdyne
@@ -147,6 +150,12 @@
       - CartridgeAtropineInterdyne
       - SyringeCase
       - InterdyneOptics
+      - MothroachCubeBiochemical
+      - CowCubeBiochemical
+      - GoatCubeBiochemical
+      - CryostasisBeaker
+      - SyringeCryostasis
+      - StasisBedMachineCircuitboardBiochemical
   - type: Anchorable
     flags:
     - Anchorable
@@ -282,9 +291,10 @@
       - ClothingOuterHardsuitCenobiteAstronautics
       - ClothingOuterHardsuitCenobiteVerdantAstronautics
       - ClothingOuterHardsuitCenobiteRedAstronautics
+      - ClothingModsuitStandardAstronautics
       - ClothingShoesBootsMagbootsAstronautics
       - JetpackMiniFilledAstronautics
-      - RCDEmptyAstronautics
+      - RCDAstronautics
       - RCDAmmoAstronautics
       - MiningDrill
       - BorgModuleMining
@@ -343,9 +353,13 @@
       - Saw
       - Hemostat
       - BoneGel
+      - ParamedHypo
       - MothroachCubeBiochemical
       - CowCubeBiochemical
       - GoatCubeBiochemical
+      - CryostasisBeaker
+      - SyringeCryostasis
+      - StasisBedMachineCircuitboardBiochemical
       - ClothingHandsGlovesNitrile
       - ClothingMaskSterile
       - Brutepack
@@ -353,13 +367,17 @@
       - Gauze
       - SyringeCase
       - DisposableSyringe
+      - CartridgeAtropine
+      - CartridgeEpinephrine
+      - CartridgeBicaridine
+      - CartridgeDermaline
+      - CartridgeSaline
       - HandheldHealthAnalyzer
       - BodyBag
       - Beaker
       - LargeBeaker
       - Dropper
       - Jug
-      - Syringe
       - Defibrillator
       - SurveillanceCameraRouterCircuitboard
       - SurveillanceCameraWirelessRouterCircuitboard
