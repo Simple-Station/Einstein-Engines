@@ -1,53 +1,25 @@
- #POINT DEFENSE
+ # PDT TURRETS
 
 - type: entity
-  parent: BaseStructure
-  id: BaseWeaponTurretPDT
+  parent: BaseTurretShipgun
+  id: WeaponTurretPDT
   name: SHI MG-213 light dual machinegun 20x135mm
-  abstract: true
   components:
-    - type: PointCannon
-    - type: Clickable
-    - type: InteractionOutline
-    - type: Actions
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          density: 60
-          mask:
-            - MachineMask
-          layer:
-            - MachineLayer
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
-    - type: MobState
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/lightautoturret.rsi
       drawdepth: Mobs
       layers:
         - state: syndie_lethal
-    - type: WorldLoader
-      radius: 256
-    - type: CombatMode
-      toggleMouseRotator: false
     - type: Damageable
       damageContainer: Inorganic
     - type: Destructible
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 800
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-        - trigger:
-            !type:DamageTrigger
             damage: 500
-          # TODO: Construction graph
           behaviors:
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
@@ -59,7 +31,6 @@
                 SheetSteel1:
                   min: 3
                   max: 5
-    - type: TurretIFF
     - type: Gun
       projectileSpeed: 145
       fireRate: 5
@@ -67,7 +38,6 @@
       availableModes:
         - FullAuto
       soundGunshot: /Audio/Weapons/Guns/Gunshots/gun_sentry.ogg
-    # TODO: Power ammo provider?
     - type: BasicEntityAmmoProvider
       proto: PDTBullet
       capacity: 300
@@ -79,47 +49,15 @@
         params:
           pitch: 1.2
           variation: 0.08
-    - type: SignalControl
-      isOnByDefault: true
-    - type: DeviceNetwork
-      deviceNetId: Wireless
-      receiveFrequencyId: BasicDevice
-    - type: WirelessNetworkConnection
-      range: 2500
-    - type: DeviceLinkSink
-      ports:
-        - Toggle
-        - On
-        - Off
     - type: ApcPowerReceiver
       powerLoad: 1000
-    - type: ExtensionCableReceiver
-    - type: LightningTarget
-      priority: 1
-    - type: MouseRotator
-      angleTolerance: 5
-      rotationSpeed: 180
-      simple4DirMode: false
-    - type: NoRotateOnInteract
-    - type: NoRotateOnMove
-    - type: Input
-      context: "human"
-    - type: Anchorable
-      delay: 10
     - type: HardpointAnchorableOnly
       class: Ballistic
       size: Small
 
 - type: entity
-  parent: BaseWeaponTurretPDT
-  name: SHI MG-21 light machinegun 20x135mm
-  id: WeaponTurretPDT
-  suffix : Tier 1
-
-
-- type: entity
-  parent: BaseWeaponTurretPDT
-  name: SHI MG-21 light dual machinegun Mk. II
+  parent: WeaponTurretPDT
+  name: SHI MG-213 light dual machinegun 20x135mm Mk. II
   id: WeaponTurretPDTNCSP
   suffix: Tier 2
   components:
@@ -127,41 +65,22 @@
       projectileSpeed: 145
       fireRate: 5.5
 
-# VULCAN AUTOTURRET - WARSHIP
+# VULCAN TURRET
 
 - type: entity
-  parent: BaseStructure
-  id: BaseWeaponTurretVulcan
-  name: vulcan gun
-  abstract: true
+  parent: BaseTurretShipgun
+  id: WeaponTurretVulcan
+  name: 20mm PTA "Operator" gatling turret
   components:
-    - type: PointCannon
-    - type: Clickable
-    - type: InteractionOutline
-    - type: Actions
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          density: 60
-          mask:
-            - MachineMask
-          layer:
-            - MachineLayer
-    - type: TurretIFF
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/vulcangatling.rsi
       drawdepth: Mobs
       layers:
         - state: syndie_lethal
-    - type: WorldLoader
-      radius: 256
-    - type: CombatMode
-      toggleMouseRotator: false
-    - type: Damageable
-      damageContainer: Inorganic
     - type: Destructible
       thresholds:
         - trigger:
@@ -192,7 +111,6 @@
       availableModes:
         - FullAuto
       soundGunshot: /Audio/Weapons/Guns/Gunshots/vulcan.ogg
-    - type: MagazineAmmoProvider
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -211,84 +129,30 @@
           whitelist:
             tags:
               - VulcanCartridgeBox
+    - type: ApcPowerReceiver
+      powerLoad: 2500
+    - type: HardpointAnchorableOnly
+      class: Ballistic
+      size: Small
+    - type: MagazineAmmoProvider
+
+# SWARMER TURRET
+
+- type: entity
+  parent: BaseTurretShipgun
+  id: BaseWeaponTurretSwarmer
+  name: swarmer missile launcher
+  components:
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
           ents: []
-    - type: SignalControl
-      isOnByDefault: true
-    - type: DeviceNetwork
-      deviceNetId: Wireless
-      receiveFrequencyId: BasicDevice
-    - type: WirelessNetworkConnection
-      range: 2500
-    - type: DeviceLinkSink
-      ports:
-        - Toggle
-        - On
-        - Off
-    - type: ApcPowerReceiver
-      powerLoad: 2500
-    - type: ExtensionCableReceiver
-    - type: LightningTarget
-      priority: 1
-    - type: MouseRotator
-      angleTolerance: 5
-      rotationSpeed: 180
-      simple4DirMode: false
-    - type: NoRotateOnInteract
-    - type: NoRotateOnMove
-    - type: Input
-      context: "human"
-    - type: MobState
-    - type: Anchorable
-      delay: 10
-    - type: HardpointAnchorableOnly
-      class: Ballistic
-      size: Small
-
-#faction-flagged variants
-
-- type: entity
-  parent: BaseWeaponTurretVulcan
-  name: 20mm PTA "Operator" gatling turret
-  id: WeaponTurretVulcan
-
-
-#swarmer missiles - warship
-
-- type: entity
-  parent: BaseStructure
-  id: BaseWeaponTurretSwarmer
-  name: swarmer missile launcher
-  components:
-    - type: PointCannon
-    - type: Clickable
-    - type: InteractionOutline
-    - type: Actions
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          density: 60
-          mask:
-            - MachineMask
-          layer:
-            - MachineLayer
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/swarmermissile.rsi
       drawdepth: Mobs
       layers:
         - state: swarmer
-    - type: WorldLoader
-      radius: 256
-    - type: CombatMode
-      toggleMouseRotator: false
-    - type: TurretIFF
-    - type: Damageable
-      damageContainer: Inorganic
+
     - type: Destructible
       thresholds:
         - trigger:
@@ -312,7 +176,6 @@
                 SheetSteel1:
                   min: 3
                   max: 5
-    - type: ProjectileIFF
     - type: Gun
       projectileSpeed: 75
       fireRate: 0.5
@@ -320,7 +183,6 @@
       availableModes:
         - FullAuto
       soundGunshot: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
-    - type: MagazineAmmoProvider
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -339,77 +201,26 @@
           whitelist:
             tags:
               - SwarmRocket
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          ents: []
-    - type: SignalControl
-      isOnByDefault: true
-    - type: DeviceNetwork
-      deviceNetId: Wireless
-      receiveFrequencyId: BasicDevice
-    - type: WirelessNetworkConnection
-      range: 2500
-    - type: DeviceLinkSink
-      ports:
-        - Toggle
-        - On
-        - Off
     - type: ApcPowerReceiver
       powerLoad: 3500
-    - type: ExtensionCableReceiver
-    - type: LightningTarget
-      priority: 1
-    - type: MouseRotator
-      angleTolerance: 5
-      rotationSpeed: 180
-      simple4DirMode: false
-    - type: NoRotateOnInteract
-    - type: NoRotateOnMove
-    - type: Input
-      context: "human"
-    - type: MobState
-    - type: Anchorable
-      delay: 10
     - type: HardpointAnchorableOnly
       class: Missile
       size: Small
+    - type: MagazineAmmoProvider
+    - type: ProjectileIFF
 
-# long gun
+# DERECHO TURRET
 
 - type: entity
-  parent: BaseStructure
-  id: BaseWeaponTurretArtillery
-  name: long distance artillery
-  abstract: true
+  parent: BaseTurretShipgun
+  id: WeaponTurretCoilgun
+  name: 60mm NT "Derecho" exotic blaster
   components:
-    - type: PointCannon
-    - type: Clickable
-    - type: InteractionOutline
-    - type: Actions
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          density: 60
-          mask:
-            - MachineMask
-          layer:
-            - MachineLayer
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/longgun.rsi
       drawdepth: Mobs
       layers:
         - state: syndie_lethal
-    - type: WorldLoader
-      radius: 256
-    - type: CombatMode
-      toggleMouseRotator: false
-    - type: Damageable
-      damageContainer: Inorganic
-    - type: TurretIFF
     - type: Destructible
       thresholds:
         - trigger:
@@ -451,82 +262,25 @@
       proto: LonggunShell
       capacity: 10
       count: 10
-    - type: SignalControl
-      isOnByDefault: true
-    - type: DeviceNetwork
-      deviceNetId: Wireless
-      receiveFrequencyId: BasicDevice
-    - type: WirelessNetworkConnection
-      range: 2500
-    - type: DeviceLinkSink
-      ports:
-        - Toggle
-        - On
-        - Off
     - type: ApcPowerReceiver
       powerLoad: 3000
-    - type: ExtensionCableReceiver
-    - type: LightningTarget
-      priority: 1
-    - type: MouseRotator
-      angleTolerance: 5
-      rotationSpeed: 180
-      simple4DirMode: false
-    - type: NoRotateOnInteract
-    - type: NoRotateOnMove
-    - type: Input
-      context: "human"
-    - type: MobState
-    - type: Anchorable
-      flags:
-      - None
     - type: HardpointAnchorableOnly
       class: Ballistic
       size: Medium
 
-# faction-flagged
+# MORTAR TURRET
 
 - type: entity
-  parent: BaseWeaponTurretArtillery
-  name: 60mm NT "Derecho" exotic blaster
-  id: WeaponTurretCoilgun
-  suffix: Tier 3 Anti Ship Artillery
-
-#heavymortar
-
-- type: entity
-  parent: BaseStructure
-  id: BaseWeaponTurretMortar
-  name: long distance mortar
-  abstract: true
+  parent: BaseTurretShipgun
+  id: WeaponTurretMortar
+  name: 90mm heavy mortar-pounder
   components:
-    - type: PointCannon
-    - type: Clickable
-    - type: InteractionOutline
-    - type: Actions
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          density: 60
-          mask:
-            - MachineMask
-          layer:
-            - MachineLayer
+
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/heavymortar.rsi
       drawdepth: Mobs
       layers:
         - state: syndie_lethal
-    - type: WorldLoader
-      radius: 256
-    - type: CombatMode
-      toggleMouseRotator: false
-    - type: Damageable
-      damageContainer: Inorganic
-    - type: TurretIFF
     - type: Destructible
       thresholds:
         - trigger:
@@ -557,7 +311,6 @@
       availableModes:
         - FullAuto
       soundGunshot: /Audio/Weapons/Guns/Gunshots/artillery.ogg
-    - type: MagazineAmmoProvider
     - type: ItemSlots
       slots:
         gun_magazine:
@@ -580,71 +333,20 @@
       containers:
         ballistic-ammo: !type:Container
           ents: []
-    - type: SignalControl
-      isOnByDefault: true
-    - type: DeviceNetwork
-      deviceNetId: Wireless
-      receiveFrequencyId: BasicDevice
-    - type: WirelessNetworkConnection
-      range: 2500
-    - type: DeviceLinkSink
-      ports:
-        - Toggle
-        - On
-        - Off
     - type: ApcPowerReceiver
       powerLoad: 2000
-    - type: ExtensionCableReceiver
-    - type: LightningTarget
-      priority: 1
-    - type: MouseRotator
-      angleTolerance: 5
-      rotationSpeed: 180
-      simple4DirMode: false
-    - type: NoRotateOnInteract
-    - type: NoRotateOnMove
-    - type: Input
-      context: "human"
-    - type: MobState
-    - type: Anchorable
-      delay: 10
     - type: HardpointAnchorableOnly
       class: Ballistic
       size: Medium
+    - type: MagazineAmmoProvider
 
-
-- type: entity
-  parent: BaseWeaponTurretMortar
-  name: 90mm heavy mortar-pounder
-  categories: [ HideSpawnMenu ]
-  id: WeaponTurretMortar
-  suffix: Tier 1 Anti Ship Artillery
-
-
-# PLASMA LASER
+# PLASMA LASER TURRET
 
 - type: entity
-  parent: BaseStructure
-  id: BaseWeaponTurretLaser
-  name: pressure gatling
-#  abstract: true
-# - which one of you chucklefucks made this abstract
+  parent: BaseTurretShipgun
+  id: WeaponTurretLaser
+  name: SHI 180c 'Torch' pressure gatling
   components:
-    - type: PointCannon
-    - type: Clickable
-    - type: InteractionOutline
-    - type: Actions
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          density: 60
-          mask:
-            - MachineMask
-          layer:
-            - MachineLayer
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -653,13 +355,6 @@
       drawdepth: Mobs
       layers:
         - state: syndie_lethal
-    - type: WorldLoader
-      radius: 256
-    - type: CombatMode
-      toggleMouseRotator: false
-    - type: Damageable
-      damageContainer: Inorganic
-    - type: TurretIFF
     - type: Destructible
       thresholds:
         - trigger:
@@ -701,67 +396,19 @@
       proto: BulletEnergyTurretLaser
       capacity: 40
       count: 15
-    - type: SignalControl
-      isOnByDefault: true
-    - type: DeviceNetwork
-      deviceNetId: Wireless
-      receiveFrequencyId: BasicDevice
-    - type: WirelessNetworkConnection
-      range: 2500
-    - type: DeviceLinkSink
-      ports:
-        - Toggle
-        - On
-        - Off
     - type: ApcPowerReceiver
       powerLoad: 3000
-    - type: ExtensionCableReceiver
-    - type: LightningTarget
-      priority: 1
-    - type: MouseRotator
-      angleTolerance: 5
-      rotationSpeed: 180
-      simple4DirMode: false
-    - type: NoRotateOnInteract
-    - type: NoRotateOnMove
-    - type: Input
-      context: "human"
-    - type: MobState
-    - type: Anchorable
-      delay: 10
     - type: HardpointAnchorableOnly
       class: Energy
       size: Small
+      
+# SMARTBOMB TURRET
 
 - type: entity
-  parent: BaseWeaponTurretLaser
-  name: SHI 180c 'Torch' pressure gatling
-  id: WeaponTurretLaser
-  suffix: Tier 1 Light Anti Ship Turret
-
-#smartbomb
-
-- type: entity
-  parent: BaseStructure
+  parent: BaseTurretShipgun
   id: BaseWeaponTurretSmartbomb
-  name: smartbomb launcher
-  abstract: true
+  name: NCWL 88mm 'Pilum' propelled mine launcher
   components:
-    - type: PointCannon
-    - type: Clickable
-    - type: InteractionOutline
-    - type: Actions
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          density: 60
-          mask:
-            - MachineMask
-          layer:
-            - MachineLayer
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -770,13 +417,6 @@
       drawdepth: Mobs
       layers:
         - state: syndie_lethal
-    - type: WorldLoader
-      radius: 256
-    - type: CombatMode
-      toggleMouseRotator: false
-    - type: Damageable
-      damageContainer: Inorganic
-    - type: TurretIFF
     - type: Destructible
       thresholds:
         - trigger:
@@ -807,77 +447,25 @@
       availableModes:
         - FullAuto
       soundGunshot: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
-    # TODO: Power ammo provider?
     - type: BallisticAmmoProvider
       proto: SmartBomb
       capacity: 99999
-    - type: SignalControl
-      isOnByDefault: true
-    - type: DeviceNetwork
-      deviceNetId: Wireless
-      receiveFrequencyId: BasicDevice
-    - type: WirelessNetworkConnection
-      range: 2500
-    - type: DeviceLinkSink
-      ports:
-        - Toggle
-        - On
-        - Off
-    - type: ApcPowerReceiver
-      powerLoad: 2500
-    - type: ExtensionCableReceiver
-    - type: LightningTarget
-      priority: 1
-    - type: MouseRotator
-      angleTolerance: 5
-      rotationSpeed: 180
-      simple4DirMode: false
-    - type: NoRotateOnInteract
-    - type: NoRotateOnMove
-    - type: Input
-      context: "human"
-    - type: MobState
-    - type: Anchorable
-      delay: 10
     - type: HardpointAnchorableOnly
       class: Missile
       size: Small
 
-#needler
+# NEEDLER TURRET
 
 - type: entity
-  parent: BaseStructure
-  id: BaseWeaponTurretNeedler
-  name: needler artillery
-  abstract: true
+  parent: BaseTurretShipgun
+  id: WeaponTurretNeedler
+  name: 60mm PTA 'Needler' heavy precision autogun
   components:
-    - type: PointCannon
-    - type: Clickable
-    - type: InteractionOutline
-    - type: Actions
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          density: 60
-          mask:
-            - MachineMask
-          layer:
-            - MachineLayer
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/needler.rsi
       drawdepth: Mobs
       layers:
         - state: syndie_lethal
-    - type: WorldLoader
-      radius: 256
-    - type: CombatMode
-      toggleMouseRotator: false
-    - type: Damageable
-      damageContainer: Inorganic
-    - type: TurretIFF
     - type: Destructible
       thresholds:
         - trigger:
@@ -931,65 +519,20 @@
       containers:
         ballistic-ammo: !type:Container
           ents: []
-    - type: SignalControl
-      isOnByDefault: true
-    - type: DeviceNetwork
-      deviceNetId: Wireless
-      receiveFrequencyId: BasicDevice
-    - type: WirelessNetworkConnection
-      range: 2500
-    - type: DeviceLinkSink
-      ports:
-        - Toggle
-        - On
-        - Off
     - type: ApcPowerReceiver
       powerLoad: 3500
-    - type: ExtensionCableReceiver
-    - type: LightningTarget
-      priority: 1
-    - type: MouseRotator
-      angleTolerance: 5
-      rotationSpeed: 180
-      simple4DirMode: false
-    - type: NoRotateOnInteract
-    - type: NoRotateOnMove
-    - type: Input
-      context: "human"
-    - type: MobState
-    - type: Anchorable
-      delay: 10
     - type: HardpointAnchorableOnly
       class: Ballistic
       size: Medium
 
-- type: entity
-  parent: BaseWeaponTurretNeedler
-  name: 60mm PTA 'Needler' heavy precision autogun
-  id: WeaponTurretNeedler
-  suffix : Tier 2 Anti Ship Artillery
+# STATION PDT TURRET
 
-#basic point n fire cannon, controlled by targeting console
-#requires GunComponent and PointCannonComponent to work, rest can be modified however you like
 - type: entity
-  parent: BaseStructure
+  parent: BaseTurretShipgun
   id: PointNFireCannonExample
-  name: ballistic turret
+  name: NT MG-02 dual machinegun 20x135mm
+  suffix: CAPITAL/STATION ONLY
   components:
-    - type: PointCannon
-    - type: Clickable
-    - type: InteractionOutline
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          density: 60
-          mask:
-            - MachineMask
-          layer:
-            - MachineLayer
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -998,8 +541,6 @@
       drawdepth: Mobs
       layers:
         - state: syndie_lethal
-    - type: WorldLoader
-      radius: 256
     - type: Damageable
       damageContainer: Inorganic
     - type: Destructible
@@ -1024,7 +565,6 @@
                 SheetSteel1:
                   min: 3
                   max: 5
-    - type: TurretIFF
     - type: Gun
       fireRate: 7
       projectileSpeed: 145
@@ -1041,38 +581,18 @@
       class: Ballistic
       size: Small
 
-# gargoyle
+# GARGOYLE TURRET
 
 - type: entity
-  parent: BaseStructure
+  parent: BaseTurretShipgun
   id: BaseWeaponTurretGargoyle
   name: heavy 'Gargoyle' LRM cruise missile launcher
   components:
-    - type: PointCannon
-    - type: Clickable
-    - type: InteractionOutline
-    - type: Actions
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          density: 60
-          mask:
-            - MachineMask
-          layer:
-            - MachineLayer
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/gargoylemissile.rsi
       drawdepth: Mobs
       layers:
         - state: syndie_lethal
-    - type: WorldLoader
-      radius: 256
-    - type: CombatMode
-      toggleMouseRotator: false
-    - type: TurretIFF
     - type: Damageable
       damageContainer: Inorganic
     - type: Destructible
@@ -1119,56 +639,22 @@
           ents: []
     - type: ApcPowerReceiver
       powerLoad: 6500
-    - type: ExtensionCableReceiver
-    - type: LightningTarget
-      priority: 1
-    - type: MouseRotator
-      angleTolerance: 5
-      rotationSpeed: 180
-      simple4DirMode: false
-    - type: NoRotateOnInteract
-    - type: NoRotateOnMove
-    - type: Input
-      context: "human"
-    - type: MobState
-    - type: Anchorable
-      delay: 10
     - type: HardpointAnchorableOnly
       class: Missile
       size: Large
 
-#lancer
+# LANCER TURRET
 
 - type: entity
-  parent: BaseStructure
+  parent: BaseTurretShipgun
   id: BaseWeaponTurretLancer
   name: light 'Lancer' MRM missile system
   components:
-    - type: PointCannon
-    - type: Clickable
-    - type: InteractionOutline
-    - type: Actions
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          density: 60
-          mask:
-            - MachineMask
-          layer:
-            - MachineLayer
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/lancemissile.rsi
       drawdepth: Mobs
       layers:
         - state: syndie_lethal
-    - type: WorldLoader
-      radius: 256
-    - type: CombatMode
-      toggleMouseRotator: false
-    - type: TurretIFF
     - type: Damageable
       damageContainer: Inorganic
     - type: Destructible
@@ -1215,56 +701,22 @@
           ents: []
     - type: ApcPowerReceiver
       powerLoad: 4000
-    - type: ExtensionCableReceiver
-    - type: LightningTarget
-      priority: 1
-    - type: MouseRotator
-      angleTolerance: 5
-      rotationSpeed: 180
-      simple4DirMode: false
-    - type: NoRotateOnInteract
-    - type: NoRotateOnMove
-    - type: Input
-      context: "human"
-    - type: MobState
-    - type: Anchorable
-      delay: 10
     - type: HardpointAnchorableOnly
       class: Missile
       size: Medium
 
-#battlemortar
+# HEPHAESTUS TURRET (230MM)
 
 - type: entity
-  parent: BaseStructure
+  parent: BaseTurretShipgun
   id: BaseWeaponTurretBattlemortar
   name: 230mm 'Hephaeustus' assault artillery platform
   components:
-    - type: PointCannon
-    - type: Clickable
-    - type: InteractionOutline
-    - type: Actions
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          density: 60
-          mask:
-            - MachineMask
-          layer:
-            - MachineLayer
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/battlemortar.rsi
       drawdepth: Mobs
       layers:
         - state: syndie_lethal
-    - type: WorldLoader
-      radius: 256
-    - type: CombatMode
-      toggleMouseRotator: false
-    - type: TurretIFF
     - type: Damageable
       damageContainer: Inorganic
     - type: Destructible
@@ -1311,57 +763,22 @@
           ents: []
     - type: ApcPowerReceiver
       powerLoad: 4000
-    - type: ExtensionCableReceiver
-    - type: LightningTarget
-      priority: 1
-    - type: MouseRotator
-      angleTolerance: 5
-      rotationSpeed: 180
-      simple4DirMode: false
-    - type: NoRotateOnInteract
-    - type: NoRotateOnMove
-    - type: Input
-      context: "human"
-    - type: MobState
-    - type: Anchorable
-      delay: 10
     - type: HardpointAnchorableOnly
       class: Ballistic
       size: Large
 
-
-# flak
+# PRINCE FLAK TURRET
 
 - type: entity
-  parent: BaseStructure
+  parent: BaseTurretShipgun
   id: FlakCannonTurret
   name: 88mm 'Prince' flak-screen turret
   components:
-    - type: PointCannon
-    - type: Clickable
-    - type: InteractionOutline
-    - type: Actions
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          density: 60
-          mask:
-            - MachineMask
-          layer:
-            - MachineLayer
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/flak.rsi
       drawdepth: Mobs
       layers:
         - state: syndie_lethal
-    - type: WorldLoader
-      radius: 256
-    - type: CombatMode
-      toggleMouseRotator: false
-    - type: TurretIFF
     - type: Damageable
       damageContainer: Inorganic
     - type: Destructible
@@ -1420,56 +837,22 @@
           ents: []
     - type: ApcPowerReceiver
       powerLoad: 6500
-    - type: ExtensionCableReceiver
-    - type: LightningTarget
-      priority: 1
-    - type: MouseRotator
-      angleTolerance: 5
-      rotationSpeed: 180
-      simple4DirMode: false
-    - type: NoRotateOnInteract
-    - type: NoRotateOnMove
-    - type: Input
-      context: "human"
-    - type: MobState
-    - type: Anchorable
-      delay: 10
     - type: HardpointAnchorableOnly
       class: Ballistic
       size: Large
 
-# catapult
+# 323MM CATAPULT TURRET
 
 - type: entity
-  parent: BaseStructure
+  parent: BaseTurretShipgun
   id: CatapultTorpedo
   name: MU91 323mm "Catapult" LRM torpedo launcher
   components:
-    - type: PointCannon
-    - type: Clickable
-    - type: InteractionOutline
-    - type: Actions
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          density: 60
-          mask:
-            - MachineMask
-          layer:
-            - MachineLayer
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/catapult.rsi
       drawdepth: Mobs
       layers:
         - state: catapult
-    - type: WorldLoader
-      radius: 256
-    - type: CombatMode
-      toggleMouseRotator: false
-    - type: TurretIFF
     - type: Damageable
       damageContainer: Inorganic
     - type: Destructible
@@ -1515,47 +898,18 @@
           ents: []
     - type: ApcPowerReceiver
       powerLoad: 6500
-    - type: ExtensionCableReceiver
-    - type: LightningTarget
-      priority: 1
-    - type: MouseRotator
-      angleTolerance: 5
-      rotationSpeed: 180
-      simple4DirMode: false
-    - type: NoRotateOnInteract
-    - type: NoRotateOnMove
-    - type: Input
-      context: "human"
-    - type: MobState
-    - type: Anchorable
-      delay: 10
     - type: HardpointAnchorableOnly
       class: Missile
       size: Large
 
-#heavyplasma
+# RIMWARD TURRET
 
 - type: entity
-  parent: BaseStructure
+  parent: BaseTurretShipgun
   id: BaseWeaponTurretHeavyPlasmaRimward
   name: 800c "Rimward" hybrid plasma blaster
   description: A heavy laser turret combining antimatter and plasma technology.
   components:
-    - type: PointCannon
-    - type: Clickable
-    - type: InteractionOutline
-    - type: Actions
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          density: 60
-          mask:
-            - MachineMask
-          layer:
-            - MachineLayer
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -1564,13 +918,6 @@
       drawdepth: Mobs
       layers:
         - state: atlas
-    - type: WorldLoader
-      radius: 256
-    - type: CombatMode
-      toggleMouseRotator: false
-    - type: Damageable
-      damageContainer: Inorganic
-    - type: TurretIFF
     - type: Destructible
       thresholds:
         - trigger:
@@ -1612,61 +959,20 @@
       proto: BulletPlasmaBlaster
       capacity: 20
       count: 20
-    - type: SignalControl
-      isOnByDefault: true
-    - type: DeviceNetwork
-      deviceNetId: Wireless
-      receiveFrequencyId: BasicDevice
-    - type: WirelessNetworkConnection
-      range: 2500
-    - type: DeviceLinkSink
-      ports:
-        - Toggle
-        - On
-        - Off
     - type: ApcPowerReceiver
       powerLoad: 3000
-    - type: ExtensionCableReceiver
-    - type: LightningTarget
-      priority: 1
-    - type: MouseRotator
-      angleTolerance: 5
-      rotationSpeed: 180
-      simple4DirMode: false
-    - type: NoRotateOnInteract
-    - type: NoRotateOnMove
-    - type: Input
-      context: "human"
-    - type: MobState
-    - type: Anchorable
-      delay: 10
     - type: HardpointAnchorableOnly
       class: Energy
       size: Medium
 
-# compakt
+# COMPAKT TURRET
 
 - type: entity
-  parent: BaseStructure
+  parent: BaseTurretShipgun
   id: BaseWeaponTurretHeavyPlasma
   name: 350c "Compakt" hybrid energy gatling
   description: A versatile energy turret with interchangable lenses for varied effect.
   components:
-    - type: PointCannon
-    - type: Clickable
-    - type: InteractionOutline
-    - type: Actions
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          density: 60
-          mask:
-            - MachineMask
-          layer:
-            - MachineLayer
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -1675,13 +981,6 @@
       drawdepth: Mobs
       layers:
         - state: lasergatling
-    - type: WorldLoader
-      radius: 256
-    - type: CombatMode
-      toggleMouseRotator: false
-    - type: Damageable
-      damageContainer: Inorganic
-    - type: TurretIFF
     - type: Destructible
       thresholds:
         - trigger:
@@ -1724,61 +1023,20 @@
           whitelist:
             tags:
               - CompaktLens
-    - type: SignalControl
-      isOnByDefault: true
-    - type: DeviceNetwork
-      deviceNetId: Wireless
-      receiveFrequencyId: BasicDevice
-    - type: WirelessNetworkConnection
-      range: 2500
-    - type: DeviceLinkSink
-      ports:
-        - Toggle
-        - On
-        - Off
     - type: ApcPowerReceiver
       powerLoad: 3000
-    - type: ExtensionCableReceiver
-    - type: LightningTarget
-      priority: 1
-    - type: MouseRotator
-      angleTolerance: 5
-      rotationSpeed: 180
-      simple4DirMode: false
-    - type: NoRotateOnInteract
-    - type: NoRotateOnMove
-    - type: Input
-      context: "human"
-    - type: MobState
-    - type: Anchorable
-      delay: 10
     - type: HardpointAnchorableOnly
       class: Energy
       size: Medium
 
-#solaris
+# SOLARIS TURRET
 
 - type: entity
-  parent: BaseStructure
+  parent: BaseTurretShipgun
   id: BaseWeaponTurretSolaris
   name: 90mm "Solaris" antimatter blaster
   description: A versatile ballistic turret that fires specialized antimatter rounds. A hybrid of machinegun and artillery.
   components:
-    - type: PointCannon
-    - type: Clickable
-    - type: InteractionOutline
-    - type: Actions
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          density: 60
-          mask:
-            - MachineMask
-          layer:
-            - MachineLayer
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -1787,13 +1045,6 @@
       drawdepth: Mobs
       layers:
         - state: solaris
-    - type: WorldLoader
-      radius: 256
-    - type: CombatMode
-      toggleMouseRotator: false
-    - type: Damageable
-      damageContainer: Inorganic
-    - type: TurretIFF
     - type: Destructible
       thresholds:
         - trigger:
@@ -1836,61 +1087,20 @@
           whitelist:
             tags:
               - AntimatterCanister
-    - type: SignalControl
-      isOnByDefault: true
-    - type: DeviceNetwork
-      deviceNetId: Wireless
-      receiveFrequencyId: BasicDevice
-    - type: WirelessNetworkConnection
-      range: 2500
-    - type: DeviceLinkSink
-      ports:
-        - Toggle
-        - On
-        - Off
     - type: ApcPowerReceiver
       powerLoad: 4000
-    - type: ExtensionCableReceiver
-    - type: LightningTarget
-      priority: 1
-    - type: MouseRotator
-      angleTolerance: 5
-      rotationSpeed: 180
-      simple4DirMode: false
-    - type: NoRotateOnInteract
-    - type: NoRotateOnMove
-    - type: Input
-      context: "human"
-    - type: MobState
-    - type: Anchorable
-      delay: 10
     - type: HardpointAnchorableOnly
       class: Energy
       size: Medium
 
-#jeong
+# JEONG TURRET
 
 - type: entity
-  parent: BaseStructure
+  parent: BaseTurretShipgun
   id: BaseWeaponTurretJeong
   name: 70mm "Jeong" swarmrocket platform
   description: A heavy, ship-mounted rocket platform that spits out a barrage of guided, small rockets.
   components:
-    - type: PointCannon
-    - type: Clickable
-    - type: InteractionOutline
-    - type: Actions
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          density: 60
-          mask:
-            - MachineMask
-          layer:
-            - MachineLayer
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -1899,13 +1109,6 @@
       drawdepth: Mobs
       layers:
         - state: jeong
-    - type: WorldLoader
-      radius: 256
-    - type: CombatMode
-      toggleMouseRotator: false
-    - type: Damageable
-      damageContainer: Inorganic
-    - type: TurretIFF
     - type: Destructible
       thresholds:
         - trigger:
@@ -1951,61 +1154,20 @@
           whitelist:
             tags:
               - SwarmerRocketsClip
-    - type: SignalControl
-      isOnByDefault: true
-    - type: DeviceNetwork
-      deviceNetId: Wireless
-      receiveFrequencyId: BasicDevice
-    - type: WirelessNetworkConnection
-      range: 2500
-    - type: DeviceLinkSink
-      ports:
-        - Toggle
-        - On
-        - Off
     - type: ApcPowerReceiver
       powerLoad: 4000
-    - type: ExtensionCableReceiver
-    - type: LightningTarget
-      priority: 1
-    - type: MouseRotator
-      angleTolerance: 5
-      rotationSpeed: 180
-      simple4DirMode: false
-    - type: NoRotateOnInteract
-    - type: NoRotateOnMove
-    - type: Input
-      context: "human"
-    - type: MobState
-    - type: Anchorable
-      delay: 10
     - type: HardpointAnchorableOnly
       class: Missile
       size: Medium
 
-# magwell
+# MAGWELL TURRET
 
 - type: entity
-  parent: BaseStructure
+  parent: BaseTurretShipgun
   id: BaseWeaponTurretMagwell
   name: SHI 180mm "Magwell" torpedo launcher
   description: A small torpedo launcher that fires cheaply-manufactured, heat-seeking projectiles.
   components:
-    - type: PointCannon
-    - type: Clickable
-    - type: InteractionOutline
-    - type: Actions
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          density: 60
-          mask:
-            - MachineMask
-          layer:
-            - MachineLayer
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -2016,13 +1178,7 @@
       - state: base
       - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
-    - type: WorldLoader
-      radius: 256
-    - type: CombatMode
-      toggleMouseRotator: false
-    - type: Damageable
-      damageContainer: Inorganic
-    - type: TurretIFF
+
     - type: Destructible
       thresholds:
         - trigger:
@@ -2060,34 +1216,8 @@
       capacity: 6
       soundInsert:
         path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
-    - type: SignalControl
-      isOnByDefault: true
-    - type: DeviceNetwork
-      deviceNetId: Wireless
-      receiveFrequencyId: BasicDevice
-    - type: WirelessNetworkConnection
-      range: 2500
-    - type: DeviceLinkSink
-      ports:
-        - Toggle
-        - On
-        - Off
     - type: ApcPowerReceiver
       powerLoad: 4000
-    - type: ExtensionCableReceiver
-    - type: LightningTarget
-      priority: 1
-    - type: MouseRotator
-      angleTolerance: 5
-      rotationSpeed: 180
-      simple4DirMode: false
-    - type: NoRotateOnInteract
-    - type: NoRotateOnMove
-    - type: Input
-      context: "human"
-    - type: MobState
-    - type: Anchorable
-      delay: 10
     - type: HardpointAnchorableOnly
       class: Missile
       size: Small
@@ -2095,41 +1225,19 @@
       magState: mag
       steps: 2
 
-#slugspitter
+# SLUGSPITTER TURRET (SLUGTHROWER)
 
 - type: entity
-  parent: BaseStructure
+  parent: BaseTurretShipgun
   id: BaseWeaponTurretSlugspitter
   name: SHI 43mm "Hullpiercer" slugspitter
   description: A low-tech alternative to the sophisticated Needler turrets. Easy to maintain, produce, and fire. Suffers from overheating issues and frequent jamming, though.
   components:
-    - type: PointCannon
-    - type: Clickable
-    - type: InteractionOutline
-    - type: Actions
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          density: 60
-          mask:
-            - MachineMask
-          layer:
-            - MachineLayer
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/slugspitter.rsi
       drawdepth: Mobs
       layers:
         - state: slugspitter
-    - type: WorldLoader
-      radius: 256
-    - type: CombatMode
-      toggleMouseRotator: false
-    - type: Damageable
-      damageContainer: Inorganic
-    - type: TurretIFF
     - type: Destructible
       thresholds:
         - trigger:
@@ -2173,77 +1281,31 @@
           ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
           priority: 2
           whitelist:
-          tags:
+            tags:
               - SlugthrowerCartridgeBox
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
           ents: []
-    - type: SignalControl
-      isOnByDefault: true
-    - type: DeviceNetwork
-      deviceNetId: Wireless
-      receiveFrequencyId: BasicDevice
-    - type: WirelessNetworkConnection
-      range: 2500
-    - type: DeviceLinkSink
-      ports:
-        - Toggle
-        - On
-        - Off
     - type: ApcPowerReceiver
       powerLoad: 4000
-    - type: ExtensionCableReceiver
-    - type: LightningTarget
-      priority: 1
-    - type: MouseRotator
-      angleTolerance: 5
-      rotationSpeed: 180
-      simple4DirMode: false
-    - type: NoRotateOnInteract
-    - type: NoRotateOnMove
-    - type: Input
-      context: "human"
-    - type: MobState
-    - type: Anchorable
-      delay: 10
     - type: HardpointAnchorableOnly
       class: Ballistic
       size: Medium
 
-#regent
+# REGENT FLAK TURRET
 
 - type: entity
-  parent: BaseStructure
+  parent: BaseTurretShipgun
   id: FlakCannonRegent
   name: NT 88mm 'Regent' flak-screen turret
   description: A flak-screen turret recovered and fabricated with Abyssal materials and designed according to old NanoTrasen schematics. Fires a trio of explosive slugs and uses surrounding trace exotic matter in space to manufacture it's own ammunition.
   components:
-    - type: PointCannon
-    - type: Clickable
-    - type: InteractionOutline
-    - type: Actions
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          density: 60
-          mask:
-            - MachineMask
-          layer:
-            - MachineLayer
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/regent.rsi
       drawdepth: Mobs
       layers:
         - state: regent
-    - type: WorldLoader
-      radius: 256
-    - type: CombatMode
-      toggleMouseRotator: false
-    - type: TurretIFF
     - type: Damageable
       damageContainer: Inorganic
     - type: Destructible
@@ -2290,57 +1352,23 @@
       count: 10
     - type: ApcPowerReceiver
       powerLoad: 6500
-    - type: ExtensionCableReceiver
-    - type: LightningTarget
-      priority: 1
-    - type: MouseRotator
-      angleTolerance: 5
-      rotationSpeed: 180
-      simple4DirMode: false
-    - type: NoRotateOnInteract
-    - type: NoRotateOnMove
-    - type: Input
-      context: "human"
-    - type: MobState
-    - type: Anchorable
-      delay: 10
     - type: HardpointAnchorableOnly
       class: Ballistic
       size: Large
 
-# snapdragon
+# SNAPDRAGON TURRET
 
 - type: entity
-  parent: BaseStructure
+  parent: BaseTurretShipgun
   id: MissilePodSnapdragon
   name: NT 'Snapdragon' SRM missile system
   description: A small short-range missile pod recovered and fabricated with Abyssal materials and designed according to old NanoTrasen schematics. Fires a blast of guided rockets and uses trace exotic matter in surrounding space to manufacture it's own ammunition.
   components:
-    - type: PointCannon
-    - type: Clickable
-    - type: InteractionOutline
-    - type: Actions
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          density: 60
-          mask:
-            - MachineMask
-          layer:
-            - MachineLayer
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/regent.rsi
       drawdepth: Mobs
       layers:
         - state: regent
-    - type: WorldLoader
-      radius: 256
-    - type: CombatMode
-      toggleMouseRotator: false
-    - type: TurretIFF
     - type: Damageable
       damageContainer: Inorganic
     - type: Destructible
@@ -2387,47 +1415,18 @@
       count: 10
     - type: ApcPowerReceiver
       powerLoad: 6500
-    - type: ExtensionCableReceiver
-    - type: LightningTarget
-      priority: 1
-    - type: MouseRotator
-      angleTolerance: 5
-      rotationSpeed: 180
-      simple4DirMode: false
-    - type: NoRotateOnInteract
-    - type: NoRotateOnMove
-    - type: Input
-      context: "human"
-    - type: MobState
-    - type: Anchorable
-      delay: 10
     - type: HardpointAnchorableOnly
       class: Missile
       size: Small
 
-# komodo
+# KOMODO TURRET
 
 - type: entity
-  parent: BaseStructure
+  parent: BaseTurretShipgun
   id: BaseWeaponTurretKomodo
   name: NT 400c 'Komodo' chemical blaster
   description: A small laser pulser of antiquated NanoTrasen design, commonly found mounted on droneships or found as scrap in the Abyss. Uses ancient, outdated chemical mixes to create accelerated laser pulses, which are then flung as projectiles. Luckily for you, this one seems to be sourcing it's material from inert dark matter in the void around it.
   components:
-    - type: PointCannon
-    - type: Clickable
-    - type: InteractionOutline
-    - type: Actions
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          density: 60
-          mask:
-            - MachineMask
-          layer:
-            - MachineLayer
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -2436,13 +1435,6 @@
       drawdepth: Mobs
       layers:
         - state: komodo
-    - type: WorldLoader
-      radius: 256
-    - type: CombatMode
-      toggleMouseRotator: false
-    - type: Damageable
-      damageContainer: Inorganic
-    - type: TurretIFF
     - type: Destructible
       thresholds:
         - trigger:
@@ -2484,37 +1476,8 @@
       proto: BulletMachineGunPlasmaKomodo
       capacity: 20
       count: 10
-    - type: SignalControl
-      isOnByDefault: true
-    - type: DeviceNetwork
-      deviceNetId: Wireless
-      receiveFrequencyId: BasicDevice
-    - type: WirelessNetworkConnection
-      range: 2500
-    - type: DeviceLinkSink
-      ports:
-        - Toggle
-        - On
-        - Off
     - type: ApcPowerReceiver
       powerLoad: 3000
-    - type: ExtensionCableReceiver
-    - type: LightningTarget
-      priority: 1
-    - type: MouseRotator
-      angleTolerance: 5
-      rotationSpeed: 180
-      simple4DirMode: false
-    - type: NoRotateOnInteract
-    - type: NoRotateOnMove
-    - type: Input
-      context: "human"
-    - type: MobState
-    - type: Anchorable
-      delay: 10
     - type: HardpointAnchorableOnly
       class: Energy
       size: Small
-
-
-
