@@ -5,6 +5,9 @@
   id: NCWLIDCardKommissar
   name: NCWL ID card
   components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
   - type: Sprite
     layers:
     - state: default
@@ -17,6 +20,9 @@
   id: NCWLIDCardSanitar
   name: NCWL ID card
   components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
   - type: PresetIdCard
     job: SanitarNCWL
   - type: Sprite
@@ -29,6 +35,9 @@
   id: NCWLIDCardArtificer
   name: NCWL ID card
   components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
   - type: Sprite
     layers:
     - state: default
@@ -41,6 +50,9 @@
   id: NCWLIDCardDoktor
   name: NCWL ID card
   components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
   - type: Sprite
     layers:
     - state: default
@@ -53,6 +65,9 @@
   id: NCWLIDCardAdministrator
   name: NCWL ID card
   components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
   - type: Sprite
     layers:
     - state: default
@@ -65,6 +80,9 @@
   id: NCWLIDCardKapitan
   name: NCWL ID card
   components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
   - type: Sprite
     layers:
     - state: default
@@ -77,6 +95,9 @@
   id: NCWLIDCardKadet
   name: NCWL ID card
   components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
   - type: Sprite
     layers:
     - state: default
