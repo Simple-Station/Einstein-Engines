@@ -44,13 +44,6 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Breakage"]
-      - !type:EjectVendorItems
-    - trigger:
-        !type:DamageTrigger
         damage: 200
       behaviors:
       - !type:SpawnEntitiesBehavior
@@ -113,7 +106,13 @@
 # The parented StorePresetHullrot<whatever> is what decides the stock for this store.
 
 - type: entity
-  parent: [ BaseStructureUnanchorable, BaseStore, StorePresetHullrotDogtagGenericNCWL ]
-  id: BaseDogtagStore
-  name: Generic Dogtag Store NCWL
-  description: A debug store for using dogtags to buy things. You should not be seeing this.
+  parent: [ BaseStructureUnanchorable, BaseStore, StorePresetHullrotDogtagNCWL ]
+  id: NCWLDogtagStore
+  name: NCWL Bounty Console
+  description: A machine rewarding your revolutionary might with better gear. Only accepts DSM ID cards.
+
+- type: entity
+  parent: [ BaseStructureUnanchorable, BaseStore, StorePresetHullrotDogtagDSM ]
+  id: DSMDogtagStore
+  name: DSM Bounty Console
+  description: A machine rewarding your righteous fury with better gear. Only accepts NCWL ID cards.

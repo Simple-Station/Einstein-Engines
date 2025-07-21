@@ -246,6 +246,9 @@
   id: DSMIDCardFreeholder
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -258,6 +261,9 @@
   id: DSMIDCardTemplar
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -270,6 +276,9 @@
   id: DSMIDCardAdvocatus
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -282,6 +291,9 @@
   id: DSMIDCardArchmaester
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -294,6 +306,9 @@
   id: DSMIDCardSurgeon
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -306,6 +321,9 @@
   id: DSMIDCardWealth
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -318,6 +336,9 @@
   id: DSMIDCardForeman
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -330,6 +351,9 @@
   id: DSMIDCardScribe
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -342,6 +366,9 @@
   id: DSMIDCardLevyman
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -354,6 +381,9 @@
   id: DSMIDCardKnight
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -366,6 +396,9 @@
   id: DSMIDCardRitter
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -376,7 +409,11 @@
 - type: entity
   parent: IDCardStandard
   id: DSMIDCardLabor
+  name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -389,6 +426,9 @@
   id: DSMIDCardCourtier
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -401,6 +441,9 @@
   id: DSMIDCardAdjutant
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -413,6 +456,9 @@
   id: DSMIDCardGovernor
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default

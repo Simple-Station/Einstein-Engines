@@ -1,12 +1,11 @@
-# example
+# DSM catalog for the id/dogtag console, using communard IDs as currency
 - type: storeCategory
-  id: StoreCategoryGeneric
-  name: Generic Items
+  id: StoreCategoryDSMSnacks
+  name: Snacks
   priority: 12
 
-# example
 - type: listing
-  id: StoreListingGenericMRE
+  id: StoreListingDSMMRE
   name: MRE snack
   description: delicious n tasty
   icon: { sprite: /Textures/Objects/Consumable/Food/snacks.rsi, state: icon }
@@ -14,16 +13,20 @@
   cost:
     DogtagNCWL: 1
   categories:
-  - StoreCategoryGeneric
+  - StoreCategoryDSMSnacks
 
-# example
+- type: storeCategory
+  id: StoreCategoryDSMUtility
+  name: Utility
+  priority: 10
+
 - type: listing
-  id: StoreListingFlashbang
+  id: StoreListingDSMFlashbang
   name: bright grenade
   description: dont look at it
   icon: { sprite: /Textures/Objects/Weapons/Grenades/flashbang.rsi, state: icon }
-  productEntity: GrenadeFlash
+  productEntity: GrenadeFlashBang
   cost:
-    DogtagNCWL: 1
+    DogtagNCWL: 2
   categories:
-  - StoreCategoryGeneric
+  - StoreCategoryDSMUtility

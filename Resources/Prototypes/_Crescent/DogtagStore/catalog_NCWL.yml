@@ -1,29 +1,32 @@
-# example
+# NCWL catalog for the id/dogtag console, using imperial IDs as currency
 - type: storeCategory
-  id: StoreCategoryGeneric
-  name: Generic Items
+  id: StoreCategoryNCWLSnacks
+  name: Snacks
   priority: 12
 
-# example
 - type: listing
-  id: StoreListingGenericMRE
+  id: StoreListingNCWLMRE
   name: MRE snack
   description: delicious n tasty
   icon: { sprite: /Textures/Objects/Consumable/Food/snacks.rsi, state: icon }
   productEntity: FoodSnackMREBrownie
   cost:
-    DogtagNCWL: 1
+    DogtagDSM: 1
   categories:
-  - StoreCategoryGeneric
+  - StoreCategoryNCWLSnacks
 
-# example
+- type: storeCategory
+  id: StoreCategoryNCWLUtility
+  name: Utility
+  priority: 10
+
 - type: listing
-  id: StoreListingFlashbang
+  id: StoreListingNCWLFlashbang
   name: bright grenade
   description: dont look at it
   icon: { sprite: /Textures/Objects/Weapons/Grenades/flashbang.rsi, state: icon }
-  productEntity: GrenadeFlash
+  productEntity: GrenadeFlashBang
   cost:
-    DogtagNCWL: 1
+    DogtagDSM: 2
   categories:
-  - StoreCategoryGeneric
+  - StoreCategoryNCWLUtility
