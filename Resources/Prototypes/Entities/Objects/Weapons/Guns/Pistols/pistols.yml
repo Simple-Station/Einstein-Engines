@@ -270,7 +270,7 @@
             - CartridgeCaselessRifle
 
 - type: entity
-  name: SHI M-008 Hi-Po 6mm
+  name: SHI M008 Hi-Po 6mm
   parent: BaseWeaponPistol
   id: WeaponPistolMk58
   description: A cheap, oversized, and unreliable pistol. You’d be better off using it to beat someone to death, assuming it doesn’t shatter into 16 pieces after the first hit. Uses 9x19mm PSTF ammo.

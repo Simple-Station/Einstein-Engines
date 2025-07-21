@@ -1,6 +1,6 @@
 # @ezo_rb (ezo) donor gun
 - type: entity
-  name: SHI-001P Zodum .327
+  name: SHI001P Zodum .327
   parent: BaseWeaponPistol
   id: WeaponPistolZodum
   description: A custom hand-cannon from the SHI development team that was never meant to be released. Chambered in heavy .327 Imperial.
@@ -168,7 +168,6 @@
   - type: GunRequiresWield
   - type: Gun
     fireRate: 2
-    autoCycle: false
     soundGunshot:
       collection: Shotgun_2_Gunshots
     selectedMode: SemiAuto
@@ -179,6 +178,7 @@
       tags:
         - ShellShotgun4g
     capacity: 4
+    autoCycle: false
     proto: ShellShotgun4gBuckshot
   - type: ItemSlots
 

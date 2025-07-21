@@ -1,5 +1,5 @@
 - type: entity
-  name: SHI M-038s Liquidator 12g
+  name: SHI M038s Liquidator 12g
   parent: BaseItem
   id: WeaponPistolLiquidator
   description: A single shot 12 gauge pistol used in ethical contract termiation procedures.
@@ -187,7 +187,7 @@
     price: 1250
 
 - type: entity
-  name: SHI M-002 Himehabu 9x19mm
+  name: SHI M002 Himehabu 9x19mm
   parent: BaseWeaponPistol
   id: WeaponPistolHimehabu
   description: A domestic firearm produced for the Shinoahara internal market. Often seen in the hands of CSEC operatives - and sometimes independent mercenaries. Chambered in 9x19mm PSTF.

@@ -118,7 +118,7 @@
     guides: [ SecurityWeapons ]
 
 - type: entity
-  name: SHI M-003 Inspector .327
+  name: SHI M003 Inspector .327
   parent: BaseWeaponRevolver
   id: WeaponRevolverInspector
   description: A detective's best friend. Uses .327 Imperial ammo.
@@ -133,7 +133,7 @@
     ammoSlots: [ null, null, null, null, null, null ]
 
 - type: entity
-  name: SHI M-003 Inspector .327
+  name: SHI M003 Inspector .327
   parent: WeaponRevolverInspector
   id: WeaponRevolverInspectorSecurity
   description: A detective's best friend. Uses 8.3×33mm ammo.
@@ -159,7 +159,7 @@
     guides: [ SecurityWeapons ]
 
 - type: entity
-  name: SHI M-004 Mateba .327
+  name: SHI M004 Mateba .327
   parent: BaseWeaponRevolver
   id: WeaponRevolverMateba
   description: The iconic sidearm of the dreaded corporate liquidation squads. Uses .327 magnum ammo. The biometric lock for the trigger seems to be not functioning.
@@ -226,7 +226,7 @@
     guides: [ SecurityWeapons ]
 
 - type: entity
-  name: NCWL T-443 Python .45
+  name: NCWL T-43 Python .45
   parent: WeaponRevolverPython
   id: WeaponRevolverPythonAP # For the uplink.
   suffix: armor-piercing

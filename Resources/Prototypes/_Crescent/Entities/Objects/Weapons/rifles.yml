@@ -627,10 +627,10 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/barghest.rsi
   - type: Gun
-    FireRate: 3.5
+    FireRate: 2.5
     shotsPerBurst: 2
     burstFireRate: 24
-    burstCooldown: 1
+    burstCooldown: 1.5
     soundGunshot:
       collection: Dmr_1_Gunshots
     selectedMode: SemiAuto
