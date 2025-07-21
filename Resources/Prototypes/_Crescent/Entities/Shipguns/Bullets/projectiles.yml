@@ -60,14 +60,14 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Structural: 400
-        Piercing: 25
+        Structural: 250
+        Piercing: 100
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 85
+    maxIntensity: 100
     intensitySlope: 14
-    totalIntensity: 120
+    totalIntensity: 400
     maxTileBreak: 7
   - type: PointLight
     radius: 3.5
@@ -1095,8 +1095,8 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Structural: 250
-        Blunt: 40
+        Piercing: 700
+        Structural: 2500
   - type: TimedDespawn
     lifetime: 20
   - type: Sprite
@@ -1205,9 +1205,8 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Structural: 150
-        Blunt: 10
-        Piercing: 10
+        Structural: 800
+        Piercing: 100
   - type: TimedDespawn
     lifetime: 20
   - type: Sprite
@@ -1366,7 +1365,7 @@
   - type: ProjectileIFF
     visualType: Square
     color: White
-    
+
 #armor piercing 43mm (slugthrower) projectile
 
 - type: entity
@@ -1379,7 +1378,7 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Structural: 95
+        Piercing: 375
   - type: TimedDespawn
     lifetime: 10
     #roughly 600m range
@@ -1387,13 +1386,6 @@
     sprite: _NF/Objects/SpaceArtillery/50_armorpiercing_machinegun_casing.rsi
     layers:
       - state: base-projectile
-  - type: ExplodeOnTrigger
-  - type: Explosive
-    explosionType: Default
-    maxIntensity: 9
-    intensitySlope: 7
-    totalIntensity: 7
-    maxTileBreak: 1
   - type: PointLight
     radius: 3.5
     color: orange
@@ -1436,7 +1428,7 @@
     color: orange
     energy: 0.5
   - type: ShipWeaponProjectile
-  
+
 #practice 120mm projectile
 
 - type: entity
@@ -1472,7 +1464,7 @@
     color: orange
     energy: 0.5
   - type: ShipWeaponProjectile
-  
+
 #high yield 120mm projectile
 
 - type: entity
@@ -1508,7 +1500,7 @@
     color: red
     energy: 0.5
   - type: ShipWeaponProjectile
-  
+
 #armor piercing 120mm projectile
 
 - type: entity
