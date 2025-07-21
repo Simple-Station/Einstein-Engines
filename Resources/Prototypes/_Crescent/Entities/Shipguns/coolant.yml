@@ -1,0 +1,81 @@
+#coolant entities
+
+- type: entity
+  parent: BaseItem
+  id: CoolantCartridge
+  name: coolant cartridge
+  description: A rather dense package. Utilises reaction of Frezon and Nitrogen to rappidly cool whatever machine it's in. Most often used in shuttle armaments.
+  components:
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      Coolant: 1
+  - type: StaticPrice
+    price: 0
+  - type: Stack
+    stackType: Coolant
+    count: 1
+    baseLayer: base
+    layerStates:
+    - icon
+    - icon
+    - icon
+    - icon
+    - icon
+    - icon
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/coolant.rsi
+    state: icon
+    layers:
+    - state: icon
+      map: ["base"]
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        density: 30
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.2,0.25,0.1"
+        mask:
+        - ItemMask
+  - type: Appearance
+
+- type: material
+  id: Coolant
+  name: coolant
+  unit: materials-unit-bill
+  stackEntity: CoolantCartridge
+  icon: { sprite: _Crescent/Objects/Misc/coolant.rsi, state: icon }
+  price: 15
+
+- type: stack
+  id: Coolant
+  name: coolant
+  icon: { sprite: _Crescent/Objects/Misc/coolant.rsi, state: icon }
+  spawn: CoolantCartridge
+  maxCount: 30
+
+
+- type: entity
+  parent: CoolantCartridge
+  id: CoolantCartridge10
+  suffix: 10
+  components:
+  - type: Icon
+    sprite: _Crescent/Objects/Misc/coolant.rsi
+    state: icon
+  - type: Stack
+    count: 10
+
+- type: entity
+  parent: CoolantCartridge
+  id: CoolantCartridge30
+  suffix: 30
+  components:
+  - type: Icon
+    sprite: _Crescent/Objects/Misc/coolant.rsi
+    state: icon
+  - type: Stack
+    count: 30

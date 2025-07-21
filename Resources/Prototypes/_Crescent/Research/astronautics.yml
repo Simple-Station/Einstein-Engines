@@ -82,7 +82,7 @@
 
 - type: technology
   id: RCDAstronautics
-  name: research-technology-astronautics-shipyardconstrucion
+  name: research-technology-astronautics-shipyardconstruction
   icon:
     sprite: Objects/Tools/rcd.rsi
     state: icon
@@ -90,8 +90,8 @@
   tier: 2
   cost: 10000
   recipeUnlocks:
-  - RCDEmptyAstronautics
-  - RCDAmmoAstronautics
+  - RCD
+  - RCDAmmo
 
 #Tier 3
 

@@ -6,6 +6,7 @@
   components:
   - type: Sprite
     noRot: true
+    offset: "0.0,0.5"
     sprite: _Crescent/Structures/Decoration/derelict_recycler.rsi
     layers:
       - state: off
