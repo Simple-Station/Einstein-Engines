@@ -27,7 +27,7 @@
     - SemiAuto
     - FullAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/smg.ogg
+      collection: SMG_2_Gunshots
     defaultDirection: 1, 0
   - type: ChamberMagazineAmmoProvider
     soundRack:
@@ -92,7 +92,7 @@
   - type: Gun
     fireRate: 10
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+      collection: SMG_3_Gunshots
     fireOnDropChance: 0.3
   - type: MagazineVisuals
     magState: mag
@@ -129,7 +129,7 @@
     - Burst
     - FullAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/c-20r.ogg
+      collection: SMG_2_Gunshots
     fireOnDropChance: 0.3
   - type: ChamberMagazineAmmoProvider
     autoEject: true
@@ -200,7 +200,7 @@
       burstFireRate: 12
       selectedMode: FullAuto
       soundGunshot:
-        path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+        collection: SMG_1_Gunshots
       availableModes:
         - FullAuto
     - type: ItemSlots
@@ -277,10 +277,10 @@
 #  - type: Appearance
 
 - type: entity
-  name: NT WT550 Sabre 9x19mm
+  name: NT WT50 Sabre 11mm
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunWt550
-  description: A light Terran-originating submachine gun reconstructed from outdated NanoTrasen diagrams.
+  description: A light Terran-originating submachine gun with a top-mounted magazine. 
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/wt550.rsi
@@ -294,18 +294,14 @@
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
   - type: Gun
-    fireRate: 7
+    fireRate: 5
     minAngle: 1
     maxAngle: 6
     angleIncrease: 1.5
     angleDecay: 6
     selectedMode: FullAuto
-    shotsPerBurst: 5
-    burstCooldown: 0.2
-    burstFireRate: 7
     availableModes:
     - SemiAuto
-    - Burst
     - FullAuto
     fireOnDropChance: 0.1
   - type: ItemSlots
@@ -321,11 +317,11 @@
             - MagazinePistolSubMachineGunTopMounted
       gun_chamber:
         name: Chamber
-        startingItem: CartridgePistol
+        startingItem: CartridgeHeavyPistol
         priority: 1
         whitelist:
           tags:
-            - CartridgePistol
+            - CartridgeHeavyPistol
   - type: MagazineVisuals
     magState: mag
     steps: 11

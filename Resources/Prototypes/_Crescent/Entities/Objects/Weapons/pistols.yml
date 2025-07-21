@@ -1,4 +1,56 @@
 - type: entity
+  name: SHI M-038s Liquidator 12g
+  parent: BaseItem
+  id: WeaponPistolLiquidator
+  description: A single shot 12 gauge pistol used in ethical contract termiation procedures.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/liquidator.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+    - 0,1,0,1
+    sprite: _Crescent/Objects/Weapons/Guns/liquidator.rsi
+  - type: Execution
+  - type: ItemSlots
+    slots:
+      gun_chamber:
+        name: Chamber
+        startingItem: ShellShotgun
+        priority: 1
+        whitelist:
+          tags: 
+            - ShellShotgun
+  - type: ContainerContainer
+    containers:
+      gun_chamber: !type:ContainerSlot
+  - type: ChamberMagazineAmmoProvider
+    autoCycle: false
+    boltClosed: true
+    canRack: false
+    soundBoltClosed: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+    soundBoltOpened: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+    soundRack: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+    quickEquip: false
+    slots:
+    - Belt
+    - suitStorage
+  - type: Appearance
+  - type: Gun
+    fireRate: 2
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/liquidator.ogg
+      params:
+        volume: -10
+
+- type: entity
   name: NCWL T-18 Comrade 9x19mm
   parent: BaseWeaponPistol
   id: WeaponPistolComrade
@@ -40,10 +92,55 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+      collection: Pistol_2_Gunshots
   - type: StaticPrice
     price: 750
-      
+  
+- type: entity
+  name: NCSP Deagle DE-7 .327
+  parent: BaseWeaponPistol
+  id: WeaponPistolDeagle
+  description: A Desert eagle milled out of pure gold, as if a steel one wasnt heavy enough. A true sidearm of a warlord. Chambered in .327 Imperial.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/deagle.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    minAngle: 1
+    maxAngle: 20
+    angleIncrease: 8
+    angleDecay: 9
+    fireRate: 3
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      collection: Pistol_3_Gunshots
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineMagnum
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineMagnum
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeMagnum
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeMagnum
+  - type: StaticPrice
+    price: 1250
+  
 - type: entity
   name: NCWL T-91 Quasar .327
   parent: BaseWeaponPistol
@@ -67,7 +164,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+      collection: Pistol_2_Gunshots
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -108,7 +205,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/t91.ogg
+      collection: Pistol_1_Gunshots
   - type: StaticPrice
     price: 900
 
@@ -131,7 +228,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+      collection: Pistol_2_Gunshots
   - type: StaticPrice
     price: 1000
 
@@ -163,7 +260,7 @@
     - SemiAuto
     - FullAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+      collection: Pistol_3_Gunshots
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -224,7 +321,7 @@
       - SemiAuto
       - FullAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
+      collection: Pistol_2_Gunshots
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -254,7 +351,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+      collection: Pistol_1_Gunshots
   - type: StaticPrice
     price: 100
   - type: BallisticAmmoProvider
@@ -280,7 +377,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+      collection: Pistol_1_Gunshots
   - type: StaticPrice
     price: 100
   - type: BallisticAmmoProvider
@@ -306,7 +403,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+      collection: Pistol_1_Gunshots
   - type: StaticPrice
     price: 100
   - type: BallisticAmmoProvider
@@ -332,7 +429,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+      collection: Pistol_1_Gunshots
   - type: StaticPrice
     price: 100
   - type: BallisticAmmoProvider
@@ -358,7 +455,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+      collection: Pistol_1_Gunshots
   - type: StaticPrice
     price: 100
   - type: BallisticAmmoProvider
@@ -384,7 +481,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+      collection: Pistol_1_Gunshots
   - type: StaticPrice
     price: 100
   - type: BallisticAmmoProvider
@@ -465,7 +562,7 @@
     - SemiAuto
     - Burst
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+      collection: Pistol_1_Gunshots
   - type: ItemSlots
     slots:
       gun_magazine:

@@ -1,5 +1,5 @@
 - type: entity
-  name: SHI double-barreled shotgun 4g
+  name: SHI M135 double-barreled shotgun 4g
   parent: [BaseWeaponShotgun, BaseGunWieldable]
   id: WeaponShotgunSHIDoubleBarreled4g
   description: A cheap, oversized shotgun. Manufactured by Shinora for their BudgetArms line. Chambered in 4 Gauge.
@@ -15,6 +15,8 @@
   - type: Gun
     fireRate: 2
     fireOnDropChance: 0.5
+    soundGunshot:
+      collection: Shotgun_2_Gunshots
   - type: Wieldable
   - type: BallisticAmmoProvider
     whitelist:
@@ -42,28 +44,3 @@
   - type: BallisticAmmoProvider
   - type: StaticPrice
     price: 2500
-
-- type: entity
-  name: PTA 23AX Karabin 4g
-  parent: [BaseWeaponShotgun, BaseGunWieldable]
-  id: WeaponShotgunKS23
-  description: An oversized shotgun. Packs devastating 4 Gauge punches. Developed as part of Pang Tai's elite mercenary package.
-  components:
-  - type: Sprite
-    sprite: _Crescent/Objects/Weapons/Guns/karabin.rsi
-  - type: Clothing
-    sprite: _Crescent/Objects/Weapons/Guns/karabin.rsi
-  - type: GunRequiresWield
-  - type: Gun
-    fireRate: 1.5
-    soundGunshot: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
-    selectedMode: SemiAuto
-    availableModes:
-      - SemiAuto
-  - type: BallisticAmmoProvider
-    whitelist:
-      tags:
-        - ShellShotgun4g
-    capacity: 4
-    proto: ShellShotgun4gBuckshot
-  - type: ItemSlots

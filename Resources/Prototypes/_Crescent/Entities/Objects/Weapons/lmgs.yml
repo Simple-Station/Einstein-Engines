@@ -109,6 +109,8 @@
             - CartridgeRifle
   - type: Gun
     fireRate: 8
+    soundGunshot:
+      collection: Lmg_1_Gunshots
   - type: MagazineVisuals
     magState: mag
     steps: 1

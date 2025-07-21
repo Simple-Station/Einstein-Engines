@@ -99,7 +99,7 @@
 
 - type: entity
   id: MagazinePistolSubMachineGunTopMounted
-  name: WT550 magazine (9x19mm PSTF auto top-mounted)
+  name: top-mounted magazine (11mm PSTF auto)
   parent: BaseItem
   components:
   - type: Tag
@@ -107,10 +107,11 @@
       - MagazinePistolSubMachineGunTopMounted
   - type: BallisticAmmoProvider
     mayTransfer: true
-    proto: CartridgePistol
+    proto: CartridgeHeavyPistol
     whitelist:
       tags:
-      - CartridgePistol
+      - CartridgeHeavyPistol
+    capacity: 50
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Magazine/Pistol/smg_mag_top_mounted.rsi
     layers:

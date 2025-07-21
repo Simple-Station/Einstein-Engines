@@ -1,5 +1,5 @@
 - type: entity
-  name: IRM legionnaire 7.62x51mm
+  name: IRM DA-11 legionnaire 7.62x51mm
   id: WeaponRifleDSMLegionnaire
   parent: BaseWeaponRifle
   description: An overengineered rifle, sharing multiple features with the C-20R SMG, such as a odd magazine angle and automatic magazine ejection. Chambered in 7.62x51mm USM rounds.
@@ -87,9 +87,9 @@
     burstCooldown: 0.5
     fireRate: 6
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/silenced.ogg
+      collection: Supressed_2_Gunshots
       params:
-        volume: -14
+        volume: -10
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -97,58 +97,7 @@
   - type: Appearance
 
 - type: entity
-  name: PTA XCR-6 Charge rifle 6x24mm
-  parent: BaseWeaponRifle
-  id: WeaponSpecialChargeRifle
-  description: A canceled experimental rifle developed by Pang Tai Arms. Only a few exist. This one has the serial number M-18. Chambered in 6×24mm.
-  components:
-  - type: Clothing
-    sprite: _Crescent/Objects/Weapons/Guns/charge_rifle.rsi
-  - type: Sprite
-    sprite: _Crescent/Objects/Weapons/Guns/charge_rifle.rsi
-    layers:
-      - state: base
-        map: ["enum.GunVisualLayers.Base"]
-      - state: mag-0
-        map: ["enum.GunVisualLayers.Mag"]
-  - type: Gun
-    fireRate: 6
-    soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/charged.ogg
-    fireOnDropChance: 0.5
-  - type: ChamberMagazineAmmoProvider
-    soundRack:
-      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: Magazine6x24mmCharge
-        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
-        priority: 2
-        whitelist:
-          tags:
-            - Magazine6x24mm
-      gun_chamber:
-        name: Chamber
-        startingItem: Cartridge6x24mmCharge
-        priority: 1
-        whitelist:
-          tags:
-            - Cartridge6x24mm
-  - type: ContainerContainer
-    containers:
-      gun_magazine: !type:ContainerSlot
-      gun_chamber: !type:ContainerSlot
-  - type: MagazineVisuals
-    magState: mag
-    steps: 5
-    zeroVisible: true
-  - type: Appearance
-
-- type: entity
-  name: NCWL Batanya 7.62x51mm
+  name: NCWL MK-3 Batanya 7.62x51mm
   parent: BaseWeaponRifle
   id: WeaponRifleNCWLBatanya
   description: An iconic weapon of war from the Union Foundry. Developed for use by their Homeguard. Comes equipped with NightGlo tracer dot sights. Chambered in 7.62x51mm, the proletariat's chamber.
@@ -165,7 +114,7 @@
   - type: Gun
     fireRate: 4
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+      collection: Rifle_1_Gunshots
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
@@ -217,7 +166,7 @@
   - type: Gun
     fireRate: 4.8
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+      collection: Rifle_1_Gunshots
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
@@ -270,7 +219,7 @@
   - type: Gun
     fireRate: 6
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+      collection: Rifle_1_Gunshots
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
@@ -322,7 +271,7 @@
   - type: Gun
     fireRate: 5
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
+      collection: Rifle_2_Gunshots
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -371,7 +320,7 @@
   - type: Gun
     fireRate: 6
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
+      collection: Rifle_2_Gunshots
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -404,7 +353,7 @@
 
 
 - type: entity
-  name: NCSP AKMS-74U Krinkov 5.56x45mm
+  name: NCSP AK-74U Krinkov 5.56x45mm
   parent: BaseWeaponRifle
   id: WeaponRifleKrinkov
   description: A shortened battle rifle, replicated from Terran designs by the Coalition - commonly attributed to terrorist groups. Cheap and easily made.
@@ -424,7 +373,7 @@
   - type: Gun
     fireRate: 5
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/krinkov.ogg
+      collection: AK_74_Gunshots
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -475,7 +424,7 @@
   - type: Gun
     fireRate: 2.5
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
+      collection: Dmr_1_Gunshots
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto
@@ -511,7 +460,7 @@
     price: 1000
 
 - type: entity
-  name: SHI M215s Hound 5.56x45mm
+  name: SHI M215 Hound 5.56x45mm
   parent: BaseWeaponRifle
   id: WeaponRifleHoundMarksman
   description: A cheap marksman's rifle, one of the few weapons produced for an external market by Shinohara Heavy Industries. Often seen in the hands of wanna-be mercs and thugs.
@@ -527,7 +476,7 @@
     sprite: _Crescent/Objects/Weapons/Guns/hound.rsi
   - type: Gun
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
+      collection: M16_Gunshots
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto
@@ -562,7 +511,7 @@
     price: 1000
 
 - type: entity
-  name: HP Hunter 5.56x45mm
+  name: HP M17-SA Hunter 5.56x45mm
   parent: BaseWeaponRifle
   id: WeaponRifleHunter
   description: A marksman's rifle of foreign make, repurposed as a mainline battle carbine amongst the predators of this Sector.
@@ -578,7 +527,7 @@
     sprite: _Crescent/Objects/Weapons/Guns/hunter.rsi
   - type: Gun
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
+      collection: M16_Gunshots
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto
@@ -613,7 +562,7 @@
     price: 2000
 
 - type: entity
-  name: NCSP 4AX Mayflower 7.62x51mm
+  name: NCSP AK-379M Mayflower 7.62x51mm
   parent: BaseWeaponRifle
   id: WeaponRifleMayflower
   description: A hefty battle carbine produced by the Coalition for the external independent market. Seen often in the hands of the Gorlex during harassment raids.
@@ -629,7 +578,7 @@
     sprite: _Crescent/Objects/Weapons/Guns/mayflower.rsi
   - type: Gun
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/krinkov.ogg
+      collection: Rifle_1_Gunshots
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -663,10 +612,10 @@
     value: 3
 
 - type: entity
-  name: PTA 9AX Barghest 12.7x99mm
+  name: SHI M335 Barghest 12.7x99mm
   parent: BaseWeaponRifle
   id: WeaponRifleBarghest
-  description: A hefty long-range precision rifle. Packs devastating 12.7x99mm punches. Developed as part of Pang Tai's elite mercenary package.
+  description: A hefty CQC battle rifle, built with a fast-burst mode copied from the PTA T3 Whisper. Chambered in the devastating 12.7x99mm round.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/barghest.rsi
@@ -678,9 +627,12 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/barghest.rsi
   - type: Gun
-    fireRate: 3.5
+    FireRate: 3.5
+    shotsPerBurst: 2
+    burstFireRate: 24
+    burstCooldown: 1
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
+      collection: Dmr_1_Gunshots
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto

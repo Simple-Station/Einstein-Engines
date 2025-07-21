@@ -1,3 +1,4 @@
+# @ezo_rb (ezo) donor gun
 - type: entity
   name: SHI-001P Zodum .327
   parent: BaseWeaponPistol
@@ -23,7 +24,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+      collection: Pistol_3_Gunshots
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -45,6 +46,7 @@
   - type: StaticPrice
     price: 5000
 
+# @theassassin25 (Volgin) donor gun
 - type: entity
   name: NCWL-AR02 Porodschok 5.56x45mm
   parent: BaseWeaponRifle
@@ -61,8 +63,15 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/porodshok.rsi
   - type: Gun
+    shotsPerBurst: 2
+    availableModes:
+    - Burst
+    - FullAuto
+    burstFireRate: 24
+    burstCooldown: 0.5
+    fireRate: 7
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
+      collection: Rifle_2_Gunshots
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -92,3 +101,147 @@
   - type: Appearance
   - type: StaticPrice
     price: 3000
+    
+# @m18hellcat76mmgunmotorcarriage (Hellcat) donor gun
+- type: entity
+  name: PTA XCR-6 Charge rifle 6x24mm
+  parent: BaseWeaponRifle
+  id: WeaponSpecialChargeRifle
+  description: A canceled experimental rifle developed by Pang Tai Arms. Only a few exist. This one has the serial number M-18. Chambered in 6×24mm.
+  components:
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/charge_rifle.rsi
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/charge_rifle.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    fireRate: 6
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/charged.ogg
+    fireOnDropChance: 0.5
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Magazine6x24mmCharge
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - Magazine6x24mm
+      gun_chamber:
+        name: Chamber
+        startingItem: Cartridge6x24mmCharge
+        priority: 1
+        whitelist:
+          tags:
+            - Cartridge6x24mm
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
+  - type: Appearance
+
+# @willybillygilly (WillyBillyGilly) donor gun
+- type: entity
+  name: PTA 23AX Karabin 4g
+  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  id: WeaponShotgunKS23
+  description: An oversized shotgun. Packs devastating 4 Gauge punches. Developed as part of Pang Tai's elite mercenary package.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/karabin.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/karabin.rsi
+  - type: GunRequiresWield
+  - type: Gun
+    fireRate: 2
+    autoCycle: false
+    soundGunshot:
+      collection: Shotgun_2_Gunshots
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - ShellShotgun4g
+    capacity: 4
+    proto: ShellShotgun4gBuckshot
+  - type: ItemSlots
+
+# @a_person5660 (Reggie) donor gun
+- type: entity
+  name: SHI HSRPG-38M13 Hammerhead smart-missile launcher 65mm
+  parent: [BaseWeaponLauncher, BaseGunWieldable]
+  id: WeaponLauncherHammerhead
+  description: A modified ancient rocket-propelled grenade launcher. Stamped with the Shinohara Heavy Industries logo and capable of firing guided projectiles.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/hammerhead.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/hammerhead.rsi
+  - type: GunRequiresWield
+  - type: Gun
+    fireRate: 0.5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+  - type: BallisticAmmoProvider
+    proto: BulletRocketSmart
+    capacity: 3
+    cycleable: false
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
+    zeroVisible: true
+  - type: Appearance
+  - type: Contraband
+
+- type: entity
+  id: BulletRocketSmart
+  name: smart missile
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileIFF
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 65
+    intensitySlope: 5
+    totalIntensity: 200
+    maxTileBreak: 5
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: HeatSeeking
+    rotationSpeed: 40
+    acceleration: 25
+    topSpeed: 125
+
+    defaultSeekingRange: 400
+    guidanceAlgorithm: PredictiveGuidance
