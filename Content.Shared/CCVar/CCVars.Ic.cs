@@ -8,7 +8,7 @@ public sealed partial class CCVars
     ///     Restricts IC character names to alphanumeric chars.
     /// </summary>
     public static readonly CVarDef<bool> RestrictedNames =
-        CVarDef.Create("ic.restricted_names", true, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("ic.restricted_names", false, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     ///     Allows flavor text (character descriptions)
@@ -44,5 +44,5 @@ public sealed partial class CCVars
     ///     Control displaying SSD indicators near players
     /// </summary>
     public static readonly CVarDef<bool> ICShowSSDIndicator =
-        CVarDef.Create("ic.show_ssd_indicator", true, CVar.CLIENTONLY);
+        CVarDef.Create("ic.show_ssd_indicator", false, CVar.CLIENTONLY);
 }
