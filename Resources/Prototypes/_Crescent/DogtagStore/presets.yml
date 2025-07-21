@@ -1,0 +1,12 @@
+- type: entity
+  id: StorePresetHullrotDogtagGenericNCWL #GENERIC. DON'T USE THIS
+  abstract: true
+  components:
+  - type: Store
+    name: The Generic Store!
+    categories:
+    - StoreCategoryGeneric
+    currencyWhitelist:
+    - DogtagNCWL
+    balance:
+      DogtagNCWL: 0

@@ -1,0 +1,27 @@
+- type: storeCategory
+  id: StoreCategoryGeneric
+  name: Generic Items
+  priority: 12
+
+# generic gear every faction store gets
+- type: listing
+  id: StoreListingGenericMRE
+  name: MRE snack
+  description: delicious n tasty
+  icon: { sprite: /Textures/Objects/Consumable/Food/snacks.rsi, state: icon }
+  productEntity: FoodSnackMREBrownie
+  cost:
+    DogtagNCWL: 1
+  categories:
+  - StoreCategoryGeneric
+
+- type: listing
+  id: StoreListingFlashbang
+  name: bright grenade
+  description: dont look at it
+  icon: { sprite: /Textures/Objects/Weapons/Grenades/flashbang.rsi, state: icon }
+  productEntity: GrenadeFlash
+  cost:
+    DogtagNCWL: 1
+  categories:
+  - StoreCategoryGeneric
