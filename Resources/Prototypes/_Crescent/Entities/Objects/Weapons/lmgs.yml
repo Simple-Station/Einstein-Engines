@@ -71,7 +71,7 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: MagazineVisuals
     magState: mag
-    steps: 2
+    steps: 3
     zeroVisible: true
   - type: Appearance
   - type: Contraband
@@ -114,5 +114,53 @@
   - type: MagazineVisuals
     magState: mag
     steps: 1
+    zeroVisible: true
+  - type: Appearance
+
+
+- type: entity
+  name: IRM DA-12S Dominion 5.56x45mm
+  id: WeaponLightMachineGunDSMDominion
+  parent: BaseWeaponLightMachineGun
+  description: A Imperial LMG with a quick 6 shot burst, chambered in 5.56x45mm Imperial.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/dominion.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineLightRifleBox
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineLightRifleBox
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeLightRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeLightRifle
+  - type: Gun
+    shotsPerBurst: 6
+    availableModes:
+    - Burst
+    - FullAuto
+    burstFireRate: 10
+    burstCooldown: 0.5
+    fireRate: 6
+    soundGunshot:
+      collection: Lmg_2_Gunshots
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
     zeroVisible: true
   - type: Appearance
