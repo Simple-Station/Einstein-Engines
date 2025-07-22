@@ -1,8 +1,36 @@
 - type: entity
+  name: PTA MOD-1 Twinshot 12g
+  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  id: WeaponShotgunPTATwinshot
+  description: A semi-automatic shotgun with a high-capacity magazine, capable of firing two shells at once. Chambered in 12g shells.
+  components:
+  - type: Sprite
+    sprite: _Crescent\Objects\Weapons\Guns\twinshot.rsi
+  - type: Clothing
+    sprite: _Crescent\Objects\Weapons\Guns\twinshot.rsi
+  - type: Item
+    size: Huge
+    sprite: _Crescent\Objects\Weapons\Guns\twinshot.rsi
+  - type: GunRequiresWield
+  - type: Gun
+    selectedMode: Burst
+    shotsPerBurst: 2
+    availableModes:
+    - Burst
+    burstFireRate: 24
+    burstCooldown: 1
+    fireOnDropChance: 0.5
+    soundGunshot:
+      collection: Shotgun_2_Gunshots
+  - type: Wieldable
+  - type: BallisticAmmoProvider
+    capacity: 10
+
+- type: entity
   name: SHI M135 double-barreled shotgun 4g
   parent: [BaseWeaponShotgun, BaseGunWieldable]
   id: WeaponShotgunSHIDoubleBarreled4g
-  description: A cheap, oversized shotgun. Manufactured by Shinora for their BudgetArms line. Chambered in 4 Gauge.
+  description: A cheap, oversized shotgun. Manufactured by Shinora for their BudgetArms line. Chambered in 4g shells.
   components:
   - type: Sprite
     sprite: _Crescent\Objects\Weapons\Guns\dbshotgun.rsi
@@ -13,7 +41,7 @@
     sprite: _Crescent\Objects\Weapons\Guns\dbshotgun.rsi
   - type: GunRequiresWield
   - type: Gun
-    fireRate: 2
+    fireRate: 3
     fireOnDropChance: 0.5
     soundGunshot:
       collection: Shotgun_2_Gunshots

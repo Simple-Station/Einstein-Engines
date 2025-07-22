@@ -72,7 +72,7 @@
     staminaCost: 7.5
 
 - type: entity
-  name: NCSP Kalash AKMS 7.62x51mm
+  name: NCSP AKMS Kalash 7.62x51mm
   parent: BaseWeaponRifle
   id: WeaponRifleAk
   description: An iconic weapon of war. Uses 7.62x51mm ammo. An illegal firearm often seen in the hands of terrorists and informal militias.
