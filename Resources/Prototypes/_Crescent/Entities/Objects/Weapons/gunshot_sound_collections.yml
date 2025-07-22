@@ -66,8 +66,8 @@
 - type: soundCollection
   id: Revolver_1_Gunshots
   files:
-  - "/Audio/_Crescent/Weapons/Guns/revolver_2/revolver_gunshot_1.ogg"
-  - "/Audio/_Crescent/Weapons/Guns/revolver_2/revolver_gunshot_2.ogg"
+  - "/Audio/_Crescent/Weapons/Guns/revolver_1/revolver_gunshot_1.ogg"
+  - "/Audio/_Crescent/Weapons/Guns/revolver_1/revolver_gunshot_2.ogg"
 
 - type: soundCollection
   id: Shotgun_1_Gunshots
