@@ -56,6 +56,129 @@ entities:
         version: 2
         nodes:
         - node:
+            zIndex: 1
+            id: LatticeCornerNE
+          decals:
+            9: 0,0
+            17: 1,0
+            25: 1,1
+            53: -2,0
+            58: -2,1
+            66: -1,0
+            74: -1,1
+            82: -1,3
+            87: -1,4
+            91: -1,-1
+            94: 0,-1
+        - node:
+            zIndex: 1
+            id: LatticeCornerNW
+          decals:
+            12: 0,0
+            20: 1,0
+            28: 1,1
+            33: 1,3
+            38: 1,4
+            42: 2,0
+            47: 2,1
+            69: -1,0
+            77: -1,1
+            96: 0,-1
+            99: 1,-1
+        - node:
+            zIndex: 1
+            id: LatticeCornerSE
+          decals:
+            7: 0,0
+            15: 1,0
+            23: 1,1
+            56: -2,1
+            61: -2,2
+            64: -1,0
+            72: -1,1
+            80: -1,3
+            85: -1,4
+        - node:
+            zIndex: 1
+            id: LatticeCornerSW
+          decals:
+            11: 0,0
+            19: 1,0
+            27: 1,1
+            32: 1,3
+            37: 1,4
+            46: 2,1
+            50: 2,2
+            68: -1,0
+            76: -1,1
+        - node:
+            id: LatticeEdgeE
+          decals:
+            6: 0,0
+            14: 1,0
+            22: 1,1
+            51: -2,0
+            55: -2,1
+            60: -2,2
+            63: -1,0
+            71: -1,1
+            79: -1,3
+            84: -1,4
+            89: -1,-1
+            92: 0,-1
+        - node:
+            id: LatticeEdgeN
+          decals:
+            8: 0,0
+            16: 1,0
+            24: 1,1
+            30: 1,3
+            35: 1,4
+            40: 2,0
+            44: 2,1
+            52: -2,0
+            57: -2,1
+            65: -1,0
+            73: -1,1
+            81: -1,3
+            86: -1,4
+            90: -1,-1
+            93: 0,-1
+            97: 1,-1
+        - node:
+            id: LatticeEdgeS
+          decals:
+            5: 0,0
+            13: 1,0
+            21: 1,1
+            29: 1,3
+            34: 1,4
+            39: 1,5
+            43: 2,1
+            48: 2,2
+            54: -2,1
+            59: -2,2
+            62: -1,0
+            70: -1,1
+            78: -1,3
+            83: -1,4
+            88: -1,5
+        - node:
+            id: LatticeEdgeW
+          decals:
+            10: 0,0
+            18: 1,0
+            26: 1,1
+            31: 1,3
+            36: 1,4
+            41: 2,0
+            45: 2,1
+            49: 2,2
+            67: -1,0
+            75: -1,1
+            95: 0,-1
+            98: 1,-1
+        - node:
             color: '#EFB34196'
             id: WarnCornerGreyscaleNE
           decals:
@@ -447,8 +570,11 @@ entities:
   - uid: 73
     components:
     - type: Transform
-      pos: -0.32819057,2.5404449
+      pos: -0.26853275,2.5696964
       parent: 1
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
   - uid: 74
     components:
     - type: Transform
@@ -479,6 +605,38 @@ entities:
     - type: Transform
       pos: 1.5936844,2.3997226
       parent: 1
+  - uid: 85
+    components:
+    - type: Transform
+      parent: 70
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+  - uid: 86
+    components:
+    - type: Transform
+      parent: 70
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+  - uid: 87
+    components:
+    - type: Transform
+      parent: 71
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+  - uid: 88
+    components:
+    - type: Transform
+      parent: 71
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
 - proto: ShuttleGunKurosawa
   entities:
   - uid: 70
@@ -487,12 +645,52 @@ entities:
       rot: 3.141592653589793 rad
       pos: -0.5,5.5
       parent: 1
+    - type: ContainerContainer
+      containers:
+        machine_board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        machine_parts: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        ballistic-ammo: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 85
+          - 86
+    - type: BallisticAmmoProvider
+      entities:
+      - 85
+      - 86
   - uid: 71
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 1.5,5.5
       parent: 1
+    - type: ContainerContainer
+      containers:
+        machine_board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        machine_parts: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        ballistic-ammo: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 87
+          - 88
+    - type: BallisticAmmoProvider
+      entities:
+      - 87
+      - 88
 - proto: SmallGyroscope
   entities:
   - uid: 72

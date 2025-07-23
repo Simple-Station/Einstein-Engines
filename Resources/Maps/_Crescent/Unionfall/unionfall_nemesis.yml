@@ -493,6 +493,388 @@ entities:
             353: -2,7
             354: 0,7
         - node:
+            zIndex: 1
+            id: LatticeCornerNE
+          decals:
+            467: 4,12
+            475: 4,13
+            483: 4,14
+            491: 4,15
+            499: 8,2
+            507: 8,3
+            515: 8,4
+            558: -13,-15
+            563: -13,-14
+            571: -13,-22
+            576: -13,-21
+            581: -13,-20
+            584: -10,-28
+            589: -8,-32
+            594: 2,-27
+            605: 10,-27
+            613: 11,-26
+            631: 4,16
+            644: 4,12
+            652: 4,13
+            660: 4,14
+            668: 4,15
+            676: 8,2
+            684: 8,3
+            692: 8,4
+            735: -13,-15
+            740: -13,-14
+            748: -13,-22
+            753: -13,-21
+            758: -13,-20
+            761: -10,-28
+            766: -8,-32
+            771: 2,-27
+            782: 10,-27
+            790: 11,-26
+            808: 4,16
+        - node:
+            zIndex: 1
+            id: LatticeCornerNW
+          decals:
+            470: 4,12
+            478: 4,13
+            486: 4,14
+            494: 4,15
+            502: 8,2
+            510: 8,3
+            518: 8,4
+            523: 9,2
+            528: 9,3
+            533: 9,4
+            538: 2,-13
+            543: 2,-12
+            548: 2,-11
+            553: 2,-10
+            586: -10,-28
+            597: 2,-27
+            600: 8,-32
+            608: 10,-27
+            616: 11,-26
+            621: 11,-20
+            626: 11,-19
+            634: 4,16
+            647: 4,12
+            655: 4,13
+            663: 4,14
+            671: 4,15
+            679: 8,2
+            687: 8,3
+            695: 8,4
+            700: 9,2
+            705: 9,3
+            710: 9,4
+            715: 2,-13
+            720: 2,-12
+            725: 2,-11
+            730: 2,-10
+            763: -10,-28
+            774: 2,-27
+            777: 8,-32
+            785: 10,-27
+            793: 11,-26
+            798: 11,-20
+            803: 11,-19
+            811: 4,16
+        - node:
+            zIndex: 1
+            id: LatticeCornerSE
+          decals:
+            465: 4,12
+            473: 4,13
+            481: 4,14
+            489: 4,15
+            497: 8,2
+            505: 8,3
+            513: 8,4
+            556: -13,-15
+            561: -13,-14
+            566: -13,-13
+            569: -13,-22
+            574: -13,-21
+            579: -13,-20
+            592: 2,-27
+            603: 10,-27
+            611: 11,-26
+            629: 4,16
+            637: 4,17
+            642: 4,12
+            650: 4,13
+            658: 4,14
+            666: 4,15
+            674: 8,2
+            682: 8,3
+            690: 8,4
+            733: -13,-15
+            738: -13,-14
+            743: -13,-13
+            746: -13,-22
+            751: -13,-21
+            756: -13,-20
+            769: 2,-27
+            780: 10,-27
+            788: 11,-26
+            806: 4,16
+            814: 4,17
+        - node:
+            zIndex: 1
+            id: LatticeCornerSW
+          decals:
+            469: 4,12
+            477: 4,13
+            485: 4,14
+            493: 4,15
+            501: 8,2
+            509: 8,3
+            517: 8,4
+            522: 9,2
+            527: 9,3
+            532: 9,4
+            537: 2,-13
+            542: 2,-12
+            547: 2,-11
+            552: 2,-10
+            596: 2,-27
+            607: 10,-27
+            615: 11,-26
+            620: 11,-20
+            625: 11,-19
+            633: 4,16
+            639: 4,17
+            646: 4,12
+            654: 4,13
+            662: 4,14
+            670: 4,15
+            678: 8,2
+            686: 8,3
+            694: 8,4
+            699: 9,2
+            704: 9,3
+            709: 9,4
+            714: 2,-13
+            719: 2,-12
+            724: 2,-11
+            729: 2,-10
+            773: 2,-27
+            784: 10,-27
+            792: 11,-26
+            797: 11,-20
+            802: 11,-19
+            810: 4,16
+            816: 4,17
+        - node:
+            id: LatticeEdgeE
+          decals:
+            464: 4,12
+            472: 4,13
+            480: 4,14
+            488: 4,15
+            496: 8,2
+            504: 8,3
+            512: 8,4
+            555: -13,-15
+            560: -13,-14
+            565: -13,-13
+            568: -13,-22
+            573: -13,-21
+            578: -13,-20
+            582: -10,-28
+            587: -8,-32
+            591: 2,-27
+            602: 10,-27
+            610: 11,-26
+            628: 4,16
+            636: 4,17
+            641: 4,12
+            649: 4,13
+            657: 4,14
+            665: 4,15
+            673: 8,2
+            681: 8,3
+            689: 8,4
+            732: -13,-15
+            737: -13,-14
+            742: -13,-13
+            745: -13,-22
+            750: -13,-21
+            755: -13,-20
+            759: -10,-28
+            764: -8,-32
+            768: 2,-27
+            779: 10,-27
+            787: 11,-26
+            805: 4,16
+            813: 4,17
+        - node:
+            id: LatticeEdgeN
+          decals:
+            466: 4,12
+            474: 4,13
+            482: 4,14
+            490: 4,15
+            498: 8,2
+            506: 8,3
+            514: 8,4
+            520: 9,2
+            525: 9,3
+            530: 9,4
+            535: 2,-13
+            540: 2,-12
+            545: 2,-11
+            550: 2,-10
+            557: -13,-15
+            562: -13,-14
+            570: -13,-22
+            575: -13,-21
+            580: -13,-20
+            583: -10,-28
+            588: -8,-32
+            593: 2,-27
+            598: 8,-32
+            604: 10,-27
+            612: 11,-26
+            618: 11,-20
+            623: 11,-19
+            630: 4,16
+            643: 4,12
+            651: 4,13
+            659: 4,14
+            667: 4,15
+            675: 8,2
+            683: 8,3
+            691: 8,4
+            697: 9,2
+            702: 9,3
+            707: 9,4
+            712: 2,-13
+            717: 2,-12
+            722: 2,-11
+            727: 2,-10
+            734: -13,-15
+            739: -13,-14
+            747: -13,-22
+            752: -13,-21
+            757: -13,-20
+            760: -10,-28
+            765: -8,-32
+            770: 2,-27
+            775: 8,-32
+            781: 10,-27
+            789: 11,-26
+            795: 11,-20
+            800: 11,-19
+            807: 4,16
+        - node:
+            id: LatticeEdgeS
+          decals:
+            463: 4,12
+            471: 4,13
+            479: 4,14
+            487: 4,15
+            495: 8,2
+            503: 8,3
+            511: 8,4
+            519: 9,2
+            524: 9,3
+            529: 9,4
+            534: 2,-13
+            539: 2,-12
+            544: 2,-11
+            549: 2,-10
+            554: -13,-15
+            559: -13,-14
+            564: -13,-13
+            567: -13,-22
+            572: -13,-21
+            577: -13,-20
+            590: 2,-27
+            601: 10,-27
+            609: 11,-26
+            617: 11,-20
+            622: 11,-19
+            627: 4,16
+            635: 4,17
+            640: 4,12
+            648: 4,13
+            656: 4,14
+            664: 4,15
+            672: 8,2
+            680: 8,3
+            688: 8,4
+            696: 9,2
+            701: 9,3
+            706: 9,4
+            711: 2,-13
+            716: 2,-12
+            721: 2,-11
+            726: 2,-10
+            731: -13,-15
+            736: -13,-14
+            741: -13,-13
+            744: -13,-22
+            749: -13,-21
+            754: -13,-20
+            767: 2,-27
+            778: 10,-27
+            786: 11,-26
+            794: 11,-20
+            799: 11,-19
+            804: 4,16
+            812: 4,17
+        - node:
+            id: LatticeEdgeW
+          decals:
+            468: 4,12
+            476: 4,13
+            484: 4,14
+            492: 4,15
+            500: 8,2
+            508: 8,3
+            516: 8,4
+            521: 9,2
+            526: 9,3
+            531: 9,4
+            536: 2,-13
+            541: 2,-12
+            546: 2,-11
+            551: 2,-10
+            585: -10,-28
+            595: 2,-27
+            599: 8,-32
+            606: 10,-27
+            614: 11,-26
+            619: 11,-20
+            624: 11,-19
+            632: 4,16
+            638: 4,17
+            645: 4,12
+            653: 4,13
+            661: 4,14
+            669: 4,15
+            677: 8,2
+            685: 8,3
+            693: 8,4
+            698: 9,2
+            703: 9,3
+            708: 9,4
+            713: 2,-13
+            718: 2,-12
+            723: 2,-11
+            728: 2,-10
+            762: -10,-28
+            772: 2,-27
+            776: 8,-32
+            783: 10,-27
+            791: 11,-26
+            796: 11,-20
+            801: 11,-19
+            809: 4,16
+            815: 4,17
+        - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
             id: LoadingArea
@@ -1011,7 +1393,7 @@ entities:
           1,-7:
             0: 65408
           1,-6:
-            0: 65339
+            0: 65343
           1,-5:
             0: 255
           1,-9:
@@ -1098,7 +1480,9 @@ entities:
       parent: 1
     - type: DeviceLinkSink
       links:
-      - 1404
+      - 873
+      - 221
+      - 825
     - type: Physics
       canCollide: False
 - proto: AAAHardpointMediumBallistic
@@ -1458,7 +1842,7 @@ entities:
       pos: 0.5,-10.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -11538.366
+      secondsUntilStateChange: -12018.633
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -1558,7 +1942,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -18777.078
+      secondsUntilStateChange: -19257.344
       state: Opening
   - uid: 403
     components:
@@ -5983,6 +6367,13 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -2.5,-17.5
       parent: 1
+- proto: ComputerAdvancedRadar
+  entities:
+  - uid: 1497
+    components:
+    - type: Transform
+      pos: 6.5,-23.5
+      parent: 1
 - proto: ComputerBankATM
   entities:
   - uid: 852
@@ -6039,8 +6430,6 @@ entities:
     - type: Transform
       pos: 7.5,-23.5
       parent: 1
-    - type: ShuttleConsole
-      accesState: CaptainAcces
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -6055,36 +6444,11 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-  - uid: 1404
-    components:
-    - type: Transform
-      pos: -3.5,11.5
-      parent: 1
-    - type: ShuttleConsole
-      accesState: CaptainAcces
-    - type: ContainerContainer
-      containers:
-        board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        disk_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        id_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-    - type: DeviceLinkSource
-      linkedPorts:
-        1418:
-        - Group1: SpaceArtilleryFire
     - type: NamedModules
       buttonNames:
-      - Fire Cannon
-      - Module B
-      - Module C
+      - NOTHING
+      - Use signallers
+      - To fire main cannon
       - Module D
       - Module E
 - proto: ComputerSurveillanceCameraMonitor
@@ -6094,14 +6458,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -3.5,5.5
-      parent: 1
-- proto: ComputerTabletopAdvancedRadar
-  entities:
-  - uid: 873
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 7.5,-26.5
       parent: 1
 - proto: ComputerTabletopAlert
   entities:
@@ -6116,6 +6472,14 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 9.5,-24.5
+      parent: 1
+- proto: ComputerTabletopCommsShip
+  entities:
+  - uid: 1536
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 7.5,-26.5
       parent: 1
 - proto: ComputerTabletopCrewMonitoring
   entities:
@@ -7842,6 +8206,28 @@ entities:
     - type: Transform
       pos: -6.5,-17.5
       parent: 1
+- proto: Paper
+  entities:
+  - uid: 1404
+    components:
+    - type: Transform
+      pos: 4.7522736,-24.147545
+      parent: 1
+    - type: Paper
+      content: >-
+        NOTE FROM ENGINEERS:
+
+
+        we moved the cockpit in the most secure place on the ship. the downside is that the shuttle console's signals don't reach the main cannon
+
+
+        we made these signallers so you can use them to fire it still. it's unideal, but it's better than getting flung out a window at the first moment of engagement
+
+
+        DON'T LOSE THEM!!!
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: PaperBin20
   entities:
   - uid: 632
@@ -8434,6 +8820,11 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -5.5,9.5
       parent: 1
+  - uid: 1419
+    components:
+    - type: Transform
+      pos: 4.5,-24.5
+      parent: 1
   - uid: 1625
     components:
     - type: Transform
@@ -8830,6 +9221,44 @@ entities:
     - type: Transform
       pos: 1.5,-26.5
       parent: 1
+- proto: RemoteSignallerAdvanced
+  entities:
+  - uid: 221
+    components:
+    - type: Transform
+      pos: 4.4483914,-24.476612
+      parent: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        1418:
+        - Pressed: SpaceArtilleryFire
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+  - uid: 825
+    components:
+    - type: Transform
+      pos: 4.1604066,-24.174967
+      parent: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        1418:
+        - Pressed: SpaceArtilleryFire
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+  - uid: 873
+    components:
+    - type: Transform
+      pos: 4.654095,-24.627434
+      parent: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        1418:
+        - Pressed: SpaceArtilleryFire
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: RubberStampEmpire
   entities:
   - uid: 587
@@ -9101,11 +9530,6 @@ entities:
       parent: 1
 - proto: SpawnPointConscriptLeaderDSM
   entities:
-  - uid: 221
-    components:
-    - type: Transform
-      pos: 5.5,-24.5
-      parent: 1
   - uid: 497
     components:
     - type: Transform
@@ -10907,11 +11331,6 @@ entities:
     components:
     - type: Transform
       pos: 6.5,-26.5
-      parent: 1
-  - uid: 825
-    components:
-    - type: Transform
-      pos: 6.5,-23.5
       parent: 1
   - uid: 848
     components:
