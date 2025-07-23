@@ -83,11 +83,12 @@
     neck: ClothingNeckIFFOrange
     id: AdministratorPDA
     ears: ClothingHeadsetNCWL
-    shoes: ClothingShoesBootsJack
+    shoes: ClothingShoesBootsMagCombat
     outerClothing: ClothingOuterCoatJacketJamrock
     head: ClothingHeadHatNCWLBeretAdmiral
     belt: ClothingBeltAssaultFilledCrew #looks better
-    pocket1: EmergencyOxygenTankFilled
+    pocket1: DoubleEmergencyOxygenTankFilled
     back: ClothingBackpackNCWL
+    gloves: ClothingHandsGlovesCombat
   inhand:
     - WeaponPistolT91

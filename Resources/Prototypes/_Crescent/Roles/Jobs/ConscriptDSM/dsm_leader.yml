@@ -82,13 +82,14 @@
     jumpsuit: ClothingUniformJumpsuitImperialGovernor
     neck: ClothingNeckIFFCyan
     back: ClothingBackpackDSM
-    shoes: ClothingShoesBootsImperialLongboots
+    shoes: ClothingShoesBootsMagCombat
     head: ClothingHeadHatImperialBeret
     outerClothing: ClothingOuterHardsuitImperialCommand
     id: KnightPDA
     belt: ClothingBeltAssaultFilledAdjutant
-    pocket1: EmergencyOxygenTankFilled
+    pocket1: DoubleEmergencyOxygenTankFilled
     ears: ClothingHeadsetEmpire
     suitstorage: WeaponSniperDSMLegax
+    eyes: ClothingEyesHudSecurity
   inhand:
     - WeaponPistolNeoVolker

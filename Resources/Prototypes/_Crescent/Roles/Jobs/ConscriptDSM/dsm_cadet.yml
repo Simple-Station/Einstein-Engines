@@ -47,14 +47,15 @@
     mask: ClothingMaskImperialCombatGasmask
     jumpsuit: ClothingUniformJumpsuitImperialCombat
     outerClothing: ClothingOuterArmorImperialTrooperArmor
-    shoes: ClothingShoesBootsImperialJackboots
+    shoes: ClothingShoesBootsMagCombat
     belt: ClothingBeltAssaultFilledRifleman
     gloves: ClothingHandsGlovesImperialLonggloves
     back: ClothingBackpackDSM
-    pocket1: EmergencyOxygenTankFilled
+    pocket1: DoubleEmergencyOxygenTankFilled
     pocket2: SmokeGrenade
     ears: ClothingHeadsetEmpire
     id: LevymanPDA
     suitstorage: WeaponSniperDSMLegax
+    eyes: ClothingEyesHudSecurity
   inhand:
     - WeaponPistolComplianceImperial

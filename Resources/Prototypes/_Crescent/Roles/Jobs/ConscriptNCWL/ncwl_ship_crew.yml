@@ -83,10 +83,10 @@
     neck: ClothingNeckIFFOrange
     id: SanitarPDA
     ears: ClothingHeadsetNCWL
-    shoes: ClothingShoesBootsJack
+    shoes: ClothingShoesBootsMagCombat
     head: ClothingHeadHatNCWLBeret
     belt: ClothingBeltAssaultFilledCrew #drips better
-    pocket1: EmergencyOxygenTankFilled
+    pocket1: DoubleEmergencyOxygenTankFilled
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesCombat
   inhand:

@@ -84,12 +84,14 @@
     id: KommissarPDA
     ears: ClothingHeadsetNCWL
     mask: ClothingMaskPilot
-    shoes: ClothingShoesBootsJack
+    shoes: ClothingShoesBootsMagCombat
     outerClothing: ClothingOuterArmorNCWLCarapace
     head: ClothingHeadHatNCWLKommissarHat
     belt: ClothingBeltNCWLPouchesFilledKommissar
-    pocket1: EmergencyOxygenTankFilled
+    pocket1: DoubleEmergencyOxygenTankFilled
     back: ClothingBackpackNCWL
     suitstorage: WeaponSniperNCWLNovomosin
+    gloves: ClothingHandsGlovesCombat
+    eyes: ClothingEyesGlassesNCWL
   inhand:
     - WeaponPistolT91

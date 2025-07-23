@@ -46,15 +46,17 @@
     mask: ClothingMaskPilot
     neck: ClothingNeckIFFOrange
     jumpsuit: ClothingUniformJumpsuitNCWLMedic
-    shoes: ClothingShoesColorBlack
+    shoes: ClothingShoesBootsMagCombat
     id: DoktorPDA
     ears: ClothingHeadsetNCWL
     belt: ClothingBeltNCWLPouchesFilledMedic
-    pocket1: EmergencyOxygenTankFilled
+    pocket1: DoubleEmergencyOxygenTankFilled
     outerClothing: ClothingOuterArmorNCWLCarapaceDoktor
     head: ClothingHeadHatNCWLCapsoftMedical
     suitstorage: WeaponPistolT91
     back: ClothingBackpackSatchelMedical
+    gloves: ClothingHandsGlovesCombat
+    eyes: ClothingEyesHudMedSec
   inhand:
     - Defibrillator
     - MedkitAdvancedFilled

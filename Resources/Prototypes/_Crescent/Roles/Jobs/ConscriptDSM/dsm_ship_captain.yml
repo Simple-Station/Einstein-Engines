@@ -82,12 +82,13 @@
     jumpsuit: ClothingUniformJumpsuitMilitaryCaptain
     neck: ClothingNeckIFFCyan
     back: ClothingBackpackDSM
-    shoes: ClothingShoesBootsImperialLongboots
+    shoes: ClothingShoesBootsMagCombat
     head: ClothingHeadHatImperialBicorne
     outerClothing: ClothingOuterCoatImperialParade
     id: KnightPDA
     belt: ClothingBeltAssaultFilledCrew
-    pocket1: EmergencyOxygenTankFilled
+    pocket1: DoubleEmergencyOxygenTankFilled
     ears: ClothingHeadsetEmpire
+    eyes: ClothingEyesHudSecurity
   inhand:
     - WeaponPistolNeoVolker

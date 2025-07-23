@@ -49,13 +49,15 @@
     mask: ClothingMaskPilot
     jumpsuit: ClothingUniformJumpsuitNCWL
     outerClothing: ClothingOuterArmorNCWLHeavyCarapace
-    shoes: ClothingShoesBootsJack
+    shoes: ClothingShoesBootsMagCombat
     belt: ClothingBeltNCWLPouchesFilledShotgun
     back: ClothingBackpackNCWL
-    pocket1: EmergencyOxygenTankFilled
+    pocket1: DoubleEmergencyOxygenTankFilled
     pocket2: GrenadeFlashBang
     ears: ClothingHeadsetNCWL
     id: SanitarPDA
     suitstorage: WeaponShotgunDoubleBarreledNCWL
+    gloves: ClothingHandsGlovesCombat
+    eyes: ClothingEyesGlassesNCWL
   inhand:
     - WeaponPistolComrade

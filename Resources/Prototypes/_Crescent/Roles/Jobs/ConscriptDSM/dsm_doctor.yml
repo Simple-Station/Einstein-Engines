@@ -48,10 +48,11 @@
     mask: ClothingMaskImperialCombatGasmask
     jumpsuit: ClothingUniformJumpsuitImperialSurgeon
     outerClothing: ClothingOuterArmorImperialTrooperArmor
-    shoes: ClothingShoesBootsImperialLaceup
+    shoes: ClothingShoesBootsMagCombat
     belt: ClothingBeltAssaultFilledMedic
+    eyes: ClothingEyesHudMedSec
     gloves: ClothingHandsGlovesImperialLonggloves
-    pocket1: EmergencyOxygenTankFilled
+    pocket1: DoubleEmergencyOxygenTankFilled
     pocket2: GrenadeShrapnel
     ears: ClothingHeadsetEmpire
     id: SurgeonPDA
