@@ -74,7 +74,7 @@
     price: 750
 
 - type: entity
-  name: NT Lockwell MX-32 9x19mm
+  name: NT MX-32 Lockwell 9x19mm
   parent: BaseWeaponPistol
   id: WeaponPistolHKUSP
   description: A cheap, mass-produced pistol originally produced from antiquated NanoTrasen designs.
@@ -97,7 +97,7 @@
     price: 750
   
 - type: entity
-  name: NCSP Deagle DE-7 .327
+  name: NCSP DE-7 Deagle .327
   parent: BaseWeaponPistol
   id: WeaponPistolDeagle
   description: A Desert eagle milled out of pure gold, as if a steel one wasnt heavy enough. A true sidearm of a warlord. Chambered in .327 Imperial.
