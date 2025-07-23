@@ -5,6 +5,8 @@ namespace Content.Client.Crescent.Radar;
 
 public interface IProjectileIFFVisual
 {
+    float Scale { get; set; }
+
     DrawPrimitiveTopology Topology { get; }
     Vector2[] GetVertice(Vector2 position, Matrix3x2 matrix);
 }
@@ -13,24 +15,26 @@ public static class ProjectileIFFVisuals
 {
     public abstract class ProjectileIFFVisualBase : IProjectileIFFVisual
     {
+        public float Scale { get; set; }
+
+        protected ProjectileIFFVisualBase(float scale)
+        {
+            Scale = scale;
+        }
+
         public abstract DrawPrimitiveTopology Topology { get; }
         public abstract Vector2[] GetVertice(Vector2 position, Matrix3x2 matrix);
     }
 
     public class Square : ProjectileIFFVisualBase
     {
-        private readonly float _scale;
-
-        public Square(float scale)
-        {
-            _scale = scale;
-        }
+        public Square(float scale) : base(scale) { }
 
         public override DrawPrimitiveTopology Topology => DrawPrimitiveTopology.LineLoop;
 
         public override Vector2[] GetVertice(Vector2 position, Matrix3x2 matrix)
         {
-            var size = 0.5f * _scale;
+            var size = 0.5f * Scale;
             return new[]
             {
                 Vector2.Transform(position + new Vector2(-size, -size), matrix),
@@ -43,25 +47,20 @@ public static class ProjectileIFFVisuals
 
     public sealed class SolidSquare : Square
     {
-        public SolidSquare(float scale) : base(scale) {}
+        public SolidSquare(float scale) : base(scale) { }
 
         public override DrawPrimitiveTopology Topology => DrawPrimitiveTopology.TriangleFan;
     }
 
     public class Circle : ProjectileIFFVisualBase
     {
-        private readonly float _scale;
-
-        public Circle(float scale)
-        {
-            _scale = scale;
-        }
+        public Circle(float scale) : base(scale) { }
 
         public override DrawPrimitiveTopology Topology => DrawPrimitiveTopology.LineLoop;
 
         public override Vector2[] GetVertice(Vector2 position, Matrix3x2 matrix)
         {
-            var radius = 0.6f * _scale;
+            var radius = 0.6f * Scale;
             const int segments = 8;
             var verts = new Vector2[segments + 1];
             for (var i = 0; i <= segments; i++)
@@ -77,25 +76,20 @@ public static class ProjectileIFFVisuals
 
     public sealed class SolidCircle : Circle
     {
-        public SolidCircle(float scale) : base(scale) {}
+        public SolidCircle(float scale) : base(scale) { }
 
         public override DrawPrimitiveTopology Topology => DrawPrimitiveTopology.TriangleFan;
     }
 
     public class Triangle : ProjectileIFFVisualBase
     {
-        private readonly float _scale;
-
-        public Triangle(float scale)
-        {
-            _scale = scale;
-        }
+        public Triangle(float scale) : base(scale) { }
 
         public override DrawPrimitiveTopology Topology => DrawPrimitiveTopology.LineLoop;
 
         public override Vector2[] GetVertice(Vector2 position, Matrix3x2 matrix)
         {
-            var size = 0.6f * _scale;
+            var size = 0.6f * Scale;
             return new[]
             {
                 Vector2.Transform(position + new Vector2(-size, -size), matrix),
@@ -107,25 +101,20 @@ public static class ProjectileIFFVisuals
 
     public sealed class SolidTriangle : Triangle
     {
-        public SolidTriangle(float scale) : base(scale) {}
+        public SolidTriangle(float scale) : base(scale) { }
 
         public override DrawPrimitiveTopology Topology => DrawPrimitiveTopology.TriangleFan;
     }
 
     public class Diamond : ProjectileIFFVisualBase
     {
-        private readonly float _scale;
-
-        public Diamond(float scale)
-        {
-            _scale = scale;
-        }
+        public Diamond(float scale) : base(scale) { }
 
         public override DrawPrimitiveTopology Topology => DrawPrimitiveTopology.LineLoop;
 
         public override Vector2[] GetVertice(Vector2 position, Matrix3x2 matrix)
         {
-            var size = 0.6f * _scale;
+            var size = 0.6f * Scale;
             return new[]
             {
                 Vector2.Transform(position + new Vector2(0, -size), matrix),
@@ -138,26 +127,21 @@ public static class ProjectileIFFVisuals
 
     public sealed class SolidDiamond : Diamond
     {
-        public SolidDiamond(float scale) : base(scale) {}
+        public SolidDiamond(float scale) : base(scale) { }
 
         public override DrawPrimitiveTopology Topology => DrawPrimitiveTopology.TriangleFan;
     }
 
     public sealed class SquareReticle : ProjectileIFFVisualBase
     {
-        private readonly float _scale;
-
-        public SquareReticle(float scale)
-        {
-            _scale = scale;
-        }
+        public SquareReticle(float scale) : base(scale) { }
 
         public override DrawPrimitiveTopology Topology => DrawPrimitiveTopology.LineList;
 
         public override Vector2[] GetVertice(Vector2 position, Matrix3x2 matrix)
         {
-            var size = 1f * _scale;
-            var dash = 0.5f * _scale;
+            var size = 1f * Scale;
+            var dash = 0.5f * Scale;
 
             return new[]
             {
