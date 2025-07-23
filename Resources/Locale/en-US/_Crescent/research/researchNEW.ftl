@@ -88,6 +88,7 @@ research-technology-imperial-padparadscha = Imperial Siege Battlecruiser
 #NCWL
 research-technology-communard-clothes = Communard Clothes
 research-technology-communard-infantry = Communard Infantry Equipment
+research-technology-communard-riotgear = Communard Riot Gear
 research-technology-communard-fighters = Communard Ultralight Fighters
 research-technology-communard-molot = Communard Missile Corvette
 research-technology-communard-heavyinfantry = Communard Heavy Equipment
