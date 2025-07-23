@@ -358,8 +358,8 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         if (result.ResultType == ShuttleDockResultType.NoDock)
         {
             _announcer.SendAnnouncement(
-                _announcer.GetAnnouncementId("ShuttleDock"),
-                "emergency-shuttle-docked",
+                _announcer.GetAnnouncementId("ShuttleNearby"),
+                "emergency-shuttle-nearby",
                 localeArgs:
                 [
                     ("time", $"{_consoleAccumulator:0}"),
@@ -372,8 +372,8 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         else
         {
             _announcer.SendAnnouncement(
-                _announcer.GetAnnouncementId("ShuttleNearby"),
-                "emergency-shuttle-nearby",
+                _announcer.GetAnnouncementId("ShuttleDock"),
+                "emergency-shuttle-docked",
                 localeArgs:
                 [
                     ("time", $"{_consoleAccumulator:0}"),
