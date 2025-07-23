@@ -14,9 +14,9 @@ namespace Content.Shared.Crescent.Radar
         public static readonly Color DefaultColor = new Color(255, 140, 0, 255);
 
         // Yellow RGB: (255, 255, 0)
-        public static readonly Color DefaultSelfColor = new Color(255, 255, 0, 255);
+        public static readonly Color DefaultControlledColor = new Color(255, 255, 0, 255);
 
         // YellowGreen RGB: (154, 205, 50)
-        public static readonly Color DefaultControlledColor = new Color(154, 205, 50, 255);
+        public static readonly Color DefaultSelfColor = new Color(154, 205, 50, 255);
     }
 }
