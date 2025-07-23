@@ -294,7 +294,7 @@
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
   - type: Gun
-    fireRate: 5
+    fireRate: 7
     minAngle: 1
     maxAngle: 6
     angleIncrease: 1.5
