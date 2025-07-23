@@ -47,7 +47,7 @@ public sealed class SelfDeleteSystem : EntitySystem
 
     private void DeleteEntity(EntityUid uid)
     {
-        //_entityManager.QueueDeleteEntity(uid);
+        //_entityManager.QueueDeleteEntity(uid); this worked before but Ientity might work
         _IentityManager.DeleteEntity(uid);
     }
 

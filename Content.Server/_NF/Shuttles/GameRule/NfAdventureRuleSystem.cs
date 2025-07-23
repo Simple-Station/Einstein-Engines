@@ -135,6 +135,7 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         var unionfall_clementine = "/Maps/_Crescent/Unionfall/unionfall_clementine.yml";
         var unionfall_nemesis = "/Maps/_Crescent/Unionfall/unionfall_nemesis.yml";
         var unionfall_vladzena = "/Maps/_Crescent/Unionfall/unionfall_vladzena.yml";
+        var unionfall_grace_barrier = "/Maps/_Crescent/Unionfall/grace_barrier.yml";
         var defensebattery = "/Maps/_Crescent/Stations/defensebatteryimperial.yml";
         // var northpole = "/Maps/_NF/POI/northpole.yml";
         var arena = "/Maps/_Crescent/Explorables/zhipovwreck.yml";
@@ -561,6 +562,38 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
             var meta = EnsureComp<MetaDataComponent>(vladzenaUid[0]);
             _meta.SetEntityName(vladzenaUid[0], "NT Outpost Vladzena", meta);
             _shuttle.SetIFFColor(vladzenaUid[0], depotColor);
+        }
+
+        //BARRIER FOR CLEMENTINE - SHOULD MATCH CLEMENTINE COORDINATES BECAUSE ITS A DONUT
+        if (_map.TryLoad(mapId, unionfall_grace_barrier, out var barrierUidA, new MapLoadOptions
+        {
+            Offset = new Vector2(-3000f, 13000f)
+        }))
+        {
+            if (_prototypeManager.TryIndex<GameMapPrototype>("mysterious-barrier", out var stationProto))
+            {
+                _station.InitializeNewStation(stationProto.Stations["Mysterious-Barrier"], barrierUidA);
+            }
+
+            var meta = EnsureComp<MetaDataComponent>(barrierUidA[0]);
+            _meta.SetEntityName(barrierUidA[0], "#############", meta);
+            _shuttle.SetIFFColor(barrierUidA[0], depotColor);
+        }
+
+        //BARRIER FOR CLEMENTINE - SHOULD MATCH CLEMENTINE COORDINATES BECAUSE ITS A DONUT
+        if (_map.TryLoad(mapId, unionfall_grace_barrier, out var barrierUidB, new MapLoadOptions
+        {
+            Offset = new Vector2(2000f, 4500f)
+        }))
+        {
+            if (_prototypeManager.TryIndex<GameMapPrototype>("mysterious-barrier", out var stationProto))
+            {
+                _station.InitializeNewStation(stationProto.Stations["Mysterious-Barrier"], barrierUidB);
+            }
+
+            var meta = EnsureComp<MetaDataComponent>(barrierUidB[0]);
+            _meta.SetEntityName(barrierUidB[0], "#############", meta);
+            _shuttle.SetIFFColor(barrierUidB[0], depotColor);
         }
 
 

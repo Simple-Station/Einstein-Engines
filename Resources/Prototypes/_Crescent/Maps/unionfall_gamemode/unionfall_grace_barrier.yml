@@ -1,0 +1,27 @@
+- type: gameMap
+  id: mysterious-barrier
+  mapName: 'Mysterious Barrier'
+  mapPath: /Maps/_Crescent/Unionfall/grace_barrier.yml
+  minPlayers: 0
+  stations:
+    Mysterious-Barrier:
+      stationProto: StandardCrescentStation
+      gridComponents:
+        - type: BlockShipWeaponProjectileGrid
+        - type: PreventPilot
+        - type: SelfDeleteGrid
+          timeToDelete: 1200 # 20 minutes
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: outpost
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Grace Period Barrier'
+        - type: VesselDesignation
+          designation: vessel-designation-outpost
+        - type: VesselDescription
+          description: what
+        - type: Grammar
+          attributes:
+            proper: true
