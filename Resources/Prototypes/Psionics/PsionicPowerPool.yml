@@ -13,7 +13,7 @@
     HealingWordPower: 0.4 # Leads to revivify
     ShadeskipPower: 0.4 # Leads to darkswap
     TelekineticPulsePower: 0.35
-    PyrokineticFlare: 0.6 # Leads to summon imp and pyrokenisis
+    PyrokineticFlare: 0.2 # Leads to summon imp and pyrokenisis
     NoosphericZapPower: 0.35
 
 - type: weightedRandom
@@ -34,5 +34,5 @@
     HealingWordPower: 0.5
     ShadeskipPower: 0.5
     TelekineticPulsePower: 0.75
-    PyrokineticFlare: 0.5
+    PyrokineticFlare: 0.25
     NoosphericZapPower: 0.25

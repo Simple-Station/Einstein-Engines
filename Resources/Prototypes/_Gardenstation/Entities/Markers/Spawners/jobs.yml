@@ -1,0 +1,14 @@
+﻿#epistemics - justicar only for now
+
+- type: entity
+  id: SpawnPointJusticar
+  parent: SpawnPointJobBase
+  name: justicar
+  components:
+  - type: SpawnPoint
+    job_id: Justicar
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _Gardenstation/Markers/jobs.rsi
+      state: justicarguy

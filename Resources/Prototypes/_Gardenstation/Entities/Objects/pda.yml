@@ -1,0 +1,31 @@
+﻿- type: entity
+  parent: SciencePDA
+  id: JusticarPDA
+  name: Justicar PDA
+  description: a strange looking pda, hand-built and inlaid with gems and carved sigils...
+  components:
+  - type: Pda
+    id: JusticarIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-justicar
+  - type: Icon
+    sprite: _Gardenstation/Objects/Devices/pda.rsi
+    state: pda-justicar
+  - type: Sprite
+    sprite: _Gardenstation/Objects/Devices/pda.rsi
+    state: pda-justicar
+  - type: PdaBorderColor
+    borderColor: "#333333"
+  - type: CartridgeLoader
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NewsReaderCartridge
+    - GlimmerMonitorCartridge
+    - NanoChatCartridge
+    - PsiWatchCartridge
+    - SecWatchCartridge
+    - CrimeAssistCartridge
