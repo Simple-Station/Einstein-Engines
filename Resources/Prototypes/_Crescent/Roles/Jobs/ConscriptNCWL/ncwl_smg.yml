@@ -58,5 +58,6 @@
     eyes: ClothingEyesGlassesNCWL
     id: SanitarPDA
     suitstorage: WeaponSubMachineGunNCWLPartisan
+    gloves: ClothingHandsGlovesCombat
   inhand:
     - WeaponPistolComrade
