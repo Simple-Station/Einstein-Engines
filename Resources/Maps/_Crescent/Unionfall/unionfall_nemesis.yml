@@ -532,6 +532,24 @@ entities:
             782: 10,-27
             790: 11,-26
             808: 4,16
+            821: 4,12
+            829: 4,13
+            837: 4,14
+            845: 4,15
+            853: 8,2
+            861: 8,3
+            869: 8,4
+            912: -13,-15
+            917: -13,-14
+            925: -13,-22
+            930: -13,-21
+            935: -13,-20
+            938: -10,-28
+            943: -8,-32
+            948: 2,-27
+            959: 10,-27
+            967: 11,-26
+            985: 4,16
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -580,6 +598,28 @@ entities:
             798: 11,-20
             803: 11,-19
             811: 4,16
+            824: 4,12
+            832: 4,13
+            840: 4,14
+            848: 4,15
+            856: 8,2
+            864: 8,3
+            872: 8,4
+            877: 9,2
+            882: 9,3
+            887: 9,4
+            892: 2,-13
+            897: 2,-12
+            902: 2,-11
+            907: 2,-10
+            940: -10,-28
+            951: 2,-27
+            954: 8,-32
+            962: 10,-27
+            970: 11,-26
+            975: 11,-20
+            980: 11,-19
+            988: 4,16
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -620,6 +660,24 @@ entities:
             788: 11,-26
             806: 4,16
             814: 4,17
+            819: 4,12
+            827: 4,13
+            835: 4,14
+            843: 4,15
+            851: 8,2
+            859: 8,3
+            867: 8,4
+            910: -13,-15
+            915: -13,-14
+            920: -13,-13
+            923: -13,-22
+            928: -13,-21
+            933: -13,-20
+            946: 2,-27
+            957: 10,-27
+            965: 11,-26
+            983: 4,16
+            991: 4,17
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -666,6 +724,27 @@ entities:
             802: 11,-19
             810: 4,16
             816: 4,17
+            823: 4,12
+            831: 4,13
+            839: 4,14
+            847: 4,15
+            855: 8,2
+            863: 8,3
+            871: 8,4
+            876: 9,2
+            881: 9,3
+            886: 9,4
+            891: 2,-13
+            896: 2,-12
+            901: 2,-11
+            906: 2,-10
+            950: 2,-27
+            961: 10,-27
+            969: 11,-26
+            974: 11,-20
+            979: 11,-19
+            987: 4,16
+            993: 4,17
         - node:
             id: LatticeEdgeE
           decals:
@@ -709,6 +788,26 @@ entities:
             787: 11,-26
             805: 4,16
             813: 4,17
+            818: 4,12
+            826: 4,13
+            834: 4,14
+            842: 4,15
+            850: 8,2
+            858: 8,3
+            866: 8,4
+            909: -13,-15
+            914: -13,-14
+            919: -13,-13
+            922: -13,-22
+            927: -13,-21
+            932: -13,-20
+            936: -10,-28
+            941: -8,-32
+            945: 2,-27
+            956: 10,-27
+            964: 11,-26
+            982: 4,16
+            990: 4,17
         - node:
             id: LatticeEdgeN
           decals:
@@ -768,6 +867,34 @@ entities:
             795: 11,-20
             800: 11,-19
             807: 4,16
+            820: 4,12
+            828: 4,13
+            836: 4,14
+            844: 4,15
+            852: 8,2
+            860: 8,3
+            868: 8,4
+            874: 9,2
+            879: 9,3
+            884: 9,4
+            889: 2,-13
+            894: 2,-12
+            899: 2,-11
+            904: 2,-10
+            911: -13,-15
+            916: -13,-14
+            924: -13,-22
+            929: -13,-21
+            934: -13,-20
+            937: -10,-28
+            942: -8,-32
+            947: 2,-27
+            952: 8,-32
+            958: 10,-27
+            966: 11,-26
+            972: 11,-20
+            977: 11,-19
+            984: 4,16
         - node:
             id: LatticeEdgeS
           decals:
@@ -825,6 +952,33 @@ entities:
             799: 11,-19
             804: 4,16
             812: 4,17
+            817: 4,12
+            825: 4,13
+            833: 4,14
+            841: 4,15
+            849: 8,2
+            857: 8,3
+            865: 8,4
+            873: 9,2
+            878: 9,3
+            883: 9,4
+            888: 2,-13
+            893: 2,-12
+            898: 2,-11
+            903: 2,-10
+            908: -13,-15
+            913: -13,-14
+            918: -13,-13
+            921: -13,-22
+            926: -13,-21
+            931: -13,-20
+            944: 2,-27
+            955: 10,-27
+            963: 11,-26
+            971: 11,-20
+            976: 11,-19
+            981: 4,16
+            989: 4,17
         - node:
             id: LatticeEdgeW
           decals:
@@ -874,6 +1028,29 @@ entities:
             801: 11,-19
             809: 4,16
             815: 4,17
+            822: 4,12
+            830: 4,13
+            838: 4,14
+            846: 4,15
+            854: 8,2
+            862: 8,3
+            870: 8,4
+            875: 9,2
+            880: 9,3
+            885: 9,4
+            890: 2,-13
+            895: 2,-12
+            900: 2,-11
+            905: 2,-10
+            939: -10,-28
+            949: 2,-27
+            953: 8,-32
+            960: 10,-27
+            968: 11,-26
+            973: 11,-20
+            978: 11,-19
+            986: 4,16
+            992: 4,17
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
@@ -1842,7 +2019,7 @@ entities:
       pos: 0.5,-10.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -12018.633
+      secondsUntilStateChange: -12126.133
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -1942,7 +2119,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -19257.344
+      secondsUntilStateChange: -19364.844
       state: Opening
   - uid: 403
     components:
@@ -2515,6 +2692,13 @@ entities:
     components:
     - type: Transform
       pos: -6.301005,-8.189533
+      parent: 1
+- proto: BoxSyringe
+  entities:
+  - uid: 1566
+    components:
+    - type: Transform
+      pos: -6.777571,-8.547294
       parent: 1
 - proto: BreachingCharge
   entities:
@@ -6156,11 +6340,6 @@ entities:
       parent: 1
 - proto: ClothingBackpackDuffelSurgeryAdvancedFilled
   entities:
-  - uid: 886
-    components:
-    - type: Transform
-      pos: -6.5767145,-5.5022936
-      parent: 1
   - uid: 887
     components:
     - type: Transform
@@ -6417,11 +6596,11 @@ entities:
       parent: 1
 - proto: ComputerRadar
   entities:
-  - uid: 858
+  - uid: 880
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 6.5,-2.5
+      rot: 3.141592653589793 rad
+      pos: 1.5,-3.5
       parent: 1
 - proto: ComputerShuttle
   entities:
@@ -6662,6 +6841,11 @@ entities:
       parent: 1
     - type: Lock
       locked: False
+  - uid: 690
+    components:
+    - type: Transform
+      pos: -6.5,-11.5
+      parent: 1
 - proto: CrateSurgery
   entities:
   - uid: 879
@@ -6717,14 +6901,6 @@ entities:
     components:
     - type: Transform
       pos: -8.5,-24.5
-      parent: 1
-- proto: DefibrillatorCabinetFilled
-  entities:
-  - uid: 880
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -7.5,-5.5
       parent: 1
 - proto: DoubleEmergencyOxygenTank
   entities:
@@ -8206,6 +8382,13 @@ entities:
     - type: Transform
       pos: -6.5,-17.5
       parent: 1
+- proto: OxygenCanister
+  entities:
+  - uid: 886
+    components:
+    - type: Transform
+      pos: -5.5,-15.5
+      parent: 1
 - proto: Paper
   entities:
   - uid: 1404
@@ -9266,6 +9449,23 @@ entities:
     - type: Transform
       pos: -3.8295627,4.3123
       parent: 1
+- proto: SheetPlasma1
+  entities:
+  - uid: 1542
+    components:
+    - type: Transform
+      pos: -6.2016025,-9.712741
+      parent: 1
+  - uid: 1544
+    components:
+    - type: Transform
+      pos: -6.4895864,-9.781297
+      parent: 1
+  - uid: 1545
+    components:
+    - type: Transform
+      pos: -6.722717,-9.753875
+      parent: 1
 - proto: ShuttersNormalOpen
   entities:
   - uid: 480
@@ -10204,6 +10404,13 @@ entities:
     - type: Transform
       pos: 1.5,4.5
       parent: 1
+- proto: VendingMachineMedical
+  entities:
+  - uid: 858
+    components:
+    - type: Transform
+      pos: -6.5,-5.5
+      parent: 1
 - proto: VendingMachineSalvage
   entities:
   - uid: 521
@@ -10231,14 +10438,6 @@ entities:
     components:
     - type: Transform
       pos: 3.5,4.5
-      parent: 1
-- proto: VendingMachineWallMedical
-  entities:
-  - uid: 690
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -2.5,-4.5
       parent: 1
 - proto: VendingMachineYouTool
   entities:
