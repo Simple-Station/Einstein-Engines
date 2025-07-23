@@ -13,6 +13,5 @@ public sealed class ProjectileState
     public NetCoordinates Coordinates;
     public int VisualTypeIndex;
     public Color Color;
-    public int ColorIndex;
     public float Scale = 1f;
 }

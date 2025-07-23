@@ -32,23 +32,4 @@ public sealed partial class ProjectileIFFSystem : SharedProjectileIFFSystem
 
         return constructor(scale);
     }
-
-    public Color GetColor(int colorIndex)
-    {
-        Color[] palette =
-        {
-            Color.White,
-            Color.Red,
-            Color.Green,
-            Color.Blue,
-            Color.Pink,
-            Color.Magenta,
-            Color.Yellow
-        };
-
-        if (colorIndex < 0 || colorIndex >= palette.Length)
-            return Color.White;
-
-        return palette[colorIndex];
-    }
 }
