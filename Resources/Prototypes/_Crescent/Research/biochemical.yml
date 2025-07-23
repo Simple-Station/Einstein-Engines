@@ -71,7 +71,7 @@
   name: research-technology-biochemical-defibrillator
   icon:
     sprite: Objects/Specific/Medical/defib.rsi
-    state: jug
+    state: icon
   discipline: Biochemical
   tier: 2
   cost: 5000

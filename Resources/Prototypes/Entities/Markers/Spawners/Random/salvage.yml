@@ -39,6 +39,79 @@
       chance: 0.9
       offset: 0.0
 
+# HULLROT INDUSTRY EDIT BEGIN
+
+- type: entity
+  name: Salvage Metal Scrap Spawner
+  id: SalvageMetalScrapSpawner
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: Structures/Storage/Crates/generic.rsi
+          state: icon
+    - type: RandomSpawner
+      rarePrototypes:
+        - SalvageHumanCorpse
+      rareChance: 0.01
+      prototypes:
+        - SteelScrapOre
+        - TitaniumScrapOre
+        - GarbageOre
+      chance: 0.9
+      offset: 0.0
+
+- type: entity
+  name: Salvage Rare Metal Scrap Spawner
+  id: SalvageRareMetalScrapSpawner
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: Structures/Storage/Crates/generic.rsi
+          state: icon
+    - type: RandomSpawner
+      rarePrototypes:
+        - SalvageHumanCorpse
+      rareChance: 0.01
+      prototypes:
+        - RefinedSteelScrapOre
+        - RefinedTitaniumScrapOre
+        - RefinedGarbageOre
+      chance: 0.9
+      offset: 0.0
+
+- type: entity
+  name: Salvage Electronic Scrap Spawner
+  id: SalvageElectronicScrapSpawner
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: Structures/Storage/Crates/generic.rsi
+          state: icon
+    - type: RandomSpawner
+      rarePrototypes:
+        - SalvageHumanCorpse
+      rareChance: 0.01
+      prototypes:
+        - BasicElectronics
+        - BasicMechatronics
+        - LaserLocus
+        - BallisticCycler
+        - TubeLoader
+        - WeakLaserLocus
+        - HardlightGenerator
+        - HardsuitElectronics
+        - PlastitaniumFibreAlloy
+      chance: 0.9
+      offset: 0.0
+
+# HULLROT INDUSTRY EDIT END
+
 - type: entity
   name: Salvage Canister Spawner
   id: SalvageCanisterSpawner

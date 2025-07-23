@@ -516,7 +516,7 @@
           state: rock_asteroid_north
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_asteroid_west
-        - state: rock_copper
+        - state: rock_rutile #close enough sprite
 
 
 # Rocks and ore veins
@@ -939,7 +939,7 @@
           state: rock_north
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_west
-        - state: rock_copper
+        - state: rock_rutile # close enough sprite
 
 # Basalt variants
 - type: entity
@@ -1336,7 +1336,7 @@
           state: rock_wall_north
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_wall_west
-        - state: rock_copper
+        - state: rock_rutile #close enough sprite
 
 # Snow variants
 - type: entity
@@ -1733,7 +1733,7 @@
           state: rock_snow_north
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_snow_west
-        - state: rock_copper
+        - state: rock_rutile #close enough sprite
 
 # Sand variants
 - type: entity
@@ -2129,7 +2129,7 @@
           state: rock_sand_north
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_sand_west
-        - state: rock_copper
+        - state: rock_rutile #close enough sprite
 
 # Chromite variants
 - type: entity
@@ -2526,7 +2526,7 @@
           state: rock_chromite_north
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_chromite_west
-        - state: rock_copper
+        - state: rock_rutile #close enough sprite
 
 # Andesite variants
 - type: entity
@@ -2923,4 +2923,4 @@
           state: rock_andesite_north
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_andesite_west
-        - state: rock_copper
+        - state: rock_rutile #close enough sprite

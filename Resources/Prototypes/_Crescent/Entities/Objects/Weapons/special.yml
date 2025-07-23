@@ -319,3 +319,42 @@
   - type: Item
     size: Normal
   - type: DisarmMalus #harder to shake firm grip
+
+- type: entity
+  name: SHI-30J Paperwork
+  parent: BaseWeaponBatterySmall
+  id: WeaponPistolPaperwork
+  description: A sick joke by Shinohara higherups. Fires pre-printed job applications with reinforced edges that stick into those hit, causing both emotional and physical damage. Outlawed in most of Taypan.
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Weapons/Guns/compliance.rsi
+      layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+      fireRate: 2
+    - type: ProjectileBatteryAmmoProvider
+      proto: JobApplication
+      fireCost: 50
+    - type: BatterySelfRecharger
+      autoRecharge: true
+      autoRechargeRate: 25
+      autoRechargePause: true
+      autoRechargePauseTime: 3
+    - type: Battery
+      maxCharge: 500
+      startingCharge: 500
+    - type: StaticPrice
+      price: 750
+    - type: MeleeWeapon
+      attackRate: 0.8 # You wouldn't swing a paperwork gun at someone.
+      damage:
+        types:
+          Blunt: 8.5
+      bluntStaminaDamageFactor: 1.0
+      wideAnimationRotation: 135
+    - type: DamageOtherOnHit
+      staminaCost: 5
+
