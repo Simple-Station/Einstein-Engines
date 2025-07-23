@@ -1,0 +1,18 @@
+- type: latheRecipe
+  id: VehicleWheelchairFolded
+  result: VehicleWheelchairFolded
+  completetime: 1
+  materials:
+    Plastic: 500
+    Cloth: 500
+    Steel: 1000
+
+- type: latheRecipe
+  id: ParamedHypo
+  result: ParamedHypo
+  completetime: 3
+  materials:
+    Steel: 1500
+    Plastic: 800
+    Glass: 1200
+    Gold: 500

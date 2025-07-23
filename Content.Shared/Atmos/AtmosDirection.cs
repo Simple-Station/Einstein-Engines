@@ -164,14 +164,23 @@ namespace Content.Shared.Atmos
         {
             switch (dir)
             {
+                // I DESPISE THIS SO GODDAMN MUCH. 
                 case AtmosDirection.North:
                     return new Vector2i(0, 1);
+                case AtmosDirection.NorthEast:
+                    return new Vector2i(1, 1);
                 case AtmosDirection.East:
                     return new Vector2i(1, 0);
+                case AtmosDirection.SouthEast:
+                    return new Vector2i(1, -1);
                 case AtmosDirection.South:
                     return new Vector2i(0, -1);
+                case AtmosDirection.SouthWest:
+                    return new Vector2i(-1, -1);
                 case AtmosDirection.West:
                     return new Vector2i(-1, 0);
+                case AtmosDirection.NorthWest:
+                    return new Vector2i(-1, 1);
                 default:
                     throw new ArgumentException($"Direction dir {dir} is not a cardinal direction", nameof(dir));
             }

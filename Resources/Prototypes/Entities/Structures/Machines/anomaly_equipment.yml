@@ -100,9 +100,8 @@
     drawdepth: Mobs
   - type: SpriteFade
   - type: AnomalyVessel
-    pointMultiplier: 2
+    basePointMultiplier: 2
   - type: RadiationSource
-    intensity: 0.75
     slope: 0.1
     enabled: false
   - type: Machine

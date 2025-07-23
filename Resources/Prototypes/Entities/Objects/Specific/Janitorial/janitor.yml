@@ -13,12 +13,12 @@
       types:
         Blunt: 2
     bluntStaminaDamageFactor: 3
-    heavyRateModifier: 1.25
-    heavyRangeModifier: 1.25
+    heavyRateModifier: 2.5
+    heavyRangeModifier: 1.3
     heavyDamageBaseModifier: 1.25
-    heavyStaminaCost: 7.5
-    maxTargets: 2
-    angle: 180
+    heavyStaminaCost: 5
+    maxTargets: 7
+    angle: 160
     soundHit:
       collection: MetalThud
   - type: DamageOtherOnHit
@@ -55,6 +55,7 @@
   - type: GuideHelp
     guides:
     - Janitorial
+  - type: DnaSubstanceTrace
 
 - type: entity
   parent: BaseItem
@@ -71,12 +72,12 @@
         types:
           Blunt: 2
       bluntStaminaDamageFactor: 3
-      heavyRateModifier: 1.25
-      heavyRangeModifier: 1.25
+      heavyRateModifier: 2.5
+      heavyRangeModifier: 1.3
       heavyDamageBaseModifier: 1.25
-      heavyStaminaCost: 7.5
-      maxTargets: 2
-      angle: 180
+      heavyStaminaCost: 5
+      maxTargets: 7
+      angle: 160
       soundHit:
          collection: MetalThud
     - type: DamageOtherOnHit
@@ -119,6 +120,7 @@
       tags:
         - Mop
         - MopAdv
+    - type: DnaSubstanceTrace
 
 - type: entity
   name: wet floor sign
@@ -304,3 +306,4 @@
     - type: CleansForensics
     - type: Fiber
       fiberColor: fibers-white
+    - type: DnaSubstanceTrace

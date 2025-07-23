@@ -14,8 +14,9 @@
   - type: HandheldGPS
   - type: PhysicalComposition
     materialComposition:
-      Steel: 400
-      Glass: 150
+      Aluminum: 300
+      Glass: 100
+      Circuitry: 25
   - type: Tag
     tags:
     - GPS

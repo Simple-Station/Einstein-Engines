@@ -1,6 +1,5 @@
 using System.IO;
 using Content.Client.Actions;
-using Content.Client.Mapping;
 using Content.Shared.Administration;
 using Robust.Client.UserInterface;
 using Robust.Shared.Console;

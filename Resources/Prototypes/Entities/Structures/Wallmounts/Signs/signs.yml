@@ -421,6 +421,7 @@
   description: A sign indicating the chapel.
   components:
   - type: Sprite
+    sprite: DeltaV/Structures/Wallmounts/signs.rsi # DeltaV: Epi-themed chapel sprite
     state: chapel
 
 - type: entity
@@ -1175,7 +1176,7 @@
   parent: BaseSign
   id: SignSmoking
   name: no smoking sign
-  description: A warning sign which reads 'NO SMOKING'
+  description: A warning sign which reads 'NO SMOKING'.
   components:
   - type: Sprite
     state: nosmoking2

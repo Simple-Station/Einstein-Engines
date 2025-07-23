@@ -1,15 +1,13 @@
 using Content.Shared.Parallax.Biomes.Layers;
 using Content.Shared.Parallax.Biomes.Markers;
 using Robust.Shared.GameStates;
-using Robust.Shared.Noise;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
 namespace Content.Shared.Parallax.Biomes;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true), Access(typeof(SharedBiomeSystem))]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
 public sealed partial class BiomeComponent : Component
 {
     /// <summary>
@@ -30,14 +28,13 @@ public sealed partial class BiomeComponent : Component
     public List<IBiomeLayer> Layers = new();
 
     /// <summary>
-    /// Templates to use for <see cref="Layers"/>. Optional as this can be set elsewhere.
+    /// Templates to use for <see cref="Layers"/>.
+    /// If this is set on mapinit, it will fill out layers automatically.
+    /// If not set, use <c>BiomeSystem</c> to do it.
+    /// Prototype reloading will also use this.
     /// </summary>
-    /// <remarks>
-    /// This is really just here for prototype reload support.
-    /// </remarks>
-    [ViewVariables(VVAccess.ReadWrite),
-     DataField("template", customTypeSerializer: typeof(PrototypeIdSerializer<BiomeTemplatePrototype>))]
-    public string? Template;
+    [DataField]
+    public ProtoId<BiomeTemplatePrototype>? Template;
 
     /// <summary>
     /// If we've already generated a tile and couldn't deload it then we won't ever reload it in future.

@@ -2,7 +2,7 @@
   id: BullishHorns
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Human]
+  speciesRestriction: [Human, IPC, Oni]
   coloring:
     default:
       type:
@@ -18,7 +18,7 @@
   id: BunnyEars
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Human]
+  speciesRestriction: [Human, IPC]
   coloring:
     default:
       type:
@@ -41,7 +41,7 @@
   id: BunnyEarsAlt
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Human]
+  speciesRestriction: [Human, IPC]
   coloring:
     default:
       type:
@@ -57,7 +57,7 @@
   id: FoxEars
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Human]
+  speciesRestriction: [Human, IPC]
   coloring:
     default:
       type:
@@ -73,7 +73,7 @@
   id: GoatHorns
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Human]
+  speciesRestriction: [Human, IPC]
   coloring:
     default:
       type:

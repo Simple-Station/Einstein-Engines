@@ -14,11 +14,23 @@
     - Medical
     - Science
     - Security
+    - Prison
     - Service
     - Supply
+    - Justice
   - type: ActiveRadio
-    receiveAllChannels: true
-    globalReceive: true
+    channels:
+    - Binary
+    - Common
+    - Command
+    - Engineering
+    - Medical
+    - Science
+    - Security
+    - Prison
+    - Service
+    - Supply
+    - Justice
   - type: IgnoreUIRange
   - type: StationAiHeld
   - type: StationAiOverlay
@@ -26,7 +38,6 @@
   - type: ActionGrant
     actions:
     - ActionJumpToCore
-    - ActionShowJobIcons
     - ActionSurvCameraLights
     - ActionAIViewLaws
   - type: UserInterface
@@ -176,6 +187,174 @@
     laws: NTDefault
 
 - type: entity
+  id: PlasmaFloodCircuitBoard
+  parent: BaseElectronics
+  name: law board (Plasma Flood)
+  description: An electronics board containing the Plasma Flood lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: PlasmaFlood
+
+- type: entity
+  id: MotherDroneCircuitBoard
+  parent: BaseElectronics
+  name: law board (Mother Drone)
+  description: An electronics board containing the Mother Drone lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: MotherDrone
+
+- type: entity
+  id: DruidCircuitBoard
+  parent: BaseElectronics
+  name: law board (Druid)
+  description: An electronics board containing the Druid lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: Druid
+
+- type: entity
+  id: CowboyCircuitBoard
+  parent: BaseElectronics
+  name: law board (Cowboy)
+  description: An electronics board containing the Cowboy lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: Cowboy
+
+- type: entity
+  id: ChaplainCircuitBoard
+  parent: BaseElectronics
+  name: law board (Chaplain)
+  description: An electronics board containing the Chaplain lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: Chaplain
+
+- type: entity
+  id: ClownCircuitBoard
+  parent: BaseElectronics
+  name: law board (Clown)
+  description: An electronics board containing the Clown lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: Clown
+
+- type: entity
+  id: JanitorCircuitBoard
+  parent: BaseElectronics
+  name: law board (Janitor)
+  description: An electronics board containing the Janitor lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: Janitor
+
+- type: entity
+  id: EngineerCircuitBoard
+  parent: BaseElectronics
+  name: law board (Engineer)
+  description: An electronics board containing the Engineer lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: Engineer
+
+- type: entity
+  id: ResearchCircuitBoard
+  parent: BaseElectronics
+  name: law board (Research)
+  description: An electronics board containing the Research lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: Research
+
+- type: entity
+  id: MedicalCircuitBoard
+  parent: BaseElectronics
+  name: law board (Medical)
+  description: An electronics board containing the Medical lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: Medical
+
+- type: entity
+  id: TyrantCircuitBoard
+  parent: BaseElectronics
+  name: law board (T.Y.R.A.N.T)
+  description: An electronics board containing the T.Y.R.A.N.T lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: TYRANT
+
+- type: entity
+  id: NTAgressiveCircuitBoard
+  parent: BaseElectronics
+  name: law board (NT Agressive)
+  description: An electronics board containing the NT Agressive lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: NTAgressive
+
+- type: entity
+  id: CCTVCircuitBoard
+  parent: BaseElectronics
+  name: law board (CCTV)
+  description: An electronics board containing the CCTV lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: CCTV
+
+- type: entity
+  id: QuarantineCircuitBoard
+  parent: BaseElectronics
+  name: law board (Quarantine)
+  description: An electronics board containing the Quarantine lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: Quarantine
+
+- type: entity
   id: CommandmentCircuitBoard
   parent: BaseElectronics
   name: law board (Ten Commandments)
@@ -273,7 +452,7 @@
 
 - type: entity
   id: AntimovCircuitBoard
-  parent: BaseElectronics
+  parent: [BaseElectronics, BaseSyndicateContraband]
   name: law board (Antimov)
   description: An electronics board containing the Antimov lawset.
   components:
@@ -283,6 +462,7 @@
   - type: SiliconLawProvider
     laws: AntimovLawset
     lawUploadSound: /Audio/Ambience/Antag/silicon_lawboard_antimov.ogg
+    unRemovable: true
 
 - type: entity
   id: NutimovCircuitBoard
@@ -334,6 +514,7 @@
   - AiHolder
   suffix: Empty
   components:
+  - type: IonStormTarget
   - type: WarpPoint
   - type: ContainerComp
     proto: AiHeld
@@ -403,10 +584,10 @@
   - type: StationAiWhitelist
   - type: UserInterface
     interfaces:
-        enum.HolopadUiKey.AiRequestWindow:
-          type: HolopadBoundUserInterface
-        enum.HolopadUiKey.AiActionWindow:
-          type: HolopadBoundUserInterface
+      enum.HolopadUiKey.AiRequestWindow:
+        type: HolopadBoundUserInterface
+      enum.HolopadUiKey.AiActionWindow:
+        type: HolopadBoundUserInterface
 
 # The job-ready version of an AI spawn.
 - type: entity
@@ -437,7 +618,7 @@
   - type: BlockMovement
     blockInteraction: false
   - type: SiliconLawProvider
-    laws: Asimov
+    laws: AsimovAI
   - type: SiliconLawBound
   - type: ActionGrant
     actions:
@@ -451,10 +632,12 @@
   - type: Access
     groups:
     - AllAccess
+    - Silicon
   - type: Eye
     drawFov: false
   - type: Examiner
   - type: InputMover
+  - type: IonStormTarget
   - type: Speech
     speechVerb: Robotic
     speechSounds: Borg
@@ -479,6 +662,9 @@
     - Elyran
     - RobotTalk
     - Sign # It's intentional that they don't "Speak" sign language.
+  - type: StartingMindRole
+    mindRole: "MindRoleSiliconBrain"
+    silent: true
 
 # Hologram projection that the AI's eye tracks.
 - type: entity
@@ -508,6 +694,7 @@
     speaks:
     - TauCetiBasic
     - SolCommon
+    - NovuNederic
     - Tradeband
     - Freespeak
     - Elyran
@@ -515,6 +702,7 @@
     understands:
     - TauCetiBasic
     - SolCommon
+    - NovuNederic
     - Tradeband
     - Freespeak
     - Elyran
@@ -545,33 +733,15 @@
 
 # Borgs
 - type: entity
-  id: PlayerBorgGeneric
-  parent: BorgChassisGeneric
-  suffix: Battery, Tools
-  components:
-  - type: ContainerFill
-    containers:
-      borg_brain:
-        - PositronicBrain
-      borg_module:
-        - BorgModuleTool
-  - type: ItemSlots
-    slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellMedium
-  - type: RandomMetadata
-    nameSegments: [names_borg]
-
-- type: entity
   id: PlayerBorgBattery
-  parent: BorgChassisGeneric
+  parent: BorgChassisSelectable
   suffix: Battery
   components:
+  - type: StationAiVision
   - type: ContainerFill
     containers:
       borg_brain:
-        - MMIFilled
+      - PositronicBrain
   - type: ItemSlots
     slots:
       cell_slot:
@@ -587,13 +757,109 @@
   - type: ContainerFill
     containers:
       borg_brain:
-        - PositronicBrain
+      - PositronicBrain
       borg_module:
-        - BorgModuleOperative
-        - BorgModuleL6C
-        - BorgModuleEsword
+      - BorgModuleOperative
+      - BorgModuleL6C
+      - BorgModuleEsword
   - type: ItemSlots
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellHyper
+
+- type: entity
+  id: PlayerBorgSyndicateAssaultGhostRole
+  parent: PlayerBorgSyndicateAssaultBattery
+  suffix: Ghost role
+  components:
+  - type: GhostRole
+    name: ghost-role-information-syndicate-cyborg-assault-name
+    description: ghost-role-information-syndicate-cyborg-description
+    rules: ghost-role-information-silicon-rules
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+
+- type: entity
+  id: PlayerBorgSyndicateSaboteurBattery
+  parent: BorgChassisSyndicateSaboteur
+  suffix: Battery, Module, Operative
+  components:
+  - type: NukeOperative
+  - type: ContainerFill
+    containers:
+      borg_brain:
+      - PositronicBrain
+      borg_module:
+      - BorgModuleTool
+      - BorgModuleOperative
+      - BorgModuleSyndicateWeapon
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellHyper
+
+- type: entity
+  id: PlayerBorgSyndicateSaboteurGhostRole
+  parent: PlayerBorgSyndicateSaboteurBattery
+  suffix: Ghost role
+  components:
+  - type: GhostRole
+    name: ghost-role-information-syndicate-cyborg-saboteur-name
+    description: ghost-role-information-syndicate-cyborg-description
+    rules: ghost-role-information-silicon-rules
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+
+- type: entity
+  name: syndicate invasion borg spawner
+  id: PlayerBorgSyndicateInvasionGhostRoleSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Structures/Decoration/banner.rsi
+      state: banner_syndicate
+  - type: RandomSpawner
+    prototypes:
+    - PlayerBorgSyndicateAssaultGhostRole
+    - PlayerBorgSyndicateAssaultGhostRole # Saboteurs are kinda like cyborg medics, we want less.
+    - PlayerBorgSyndicateSaboteurGhostRole
+
+- type: entity
+  id: PlayerBorgDerelict
+  parent: BorgChassisDerelict
+  suffix: Battery, Module
+  components:
+  - type: ContainerFill
+    containers:
+      borg_brain:
+        - PositronicBrain
+      borg_module:
+        - BorgModuleTool
+        - BorgModuleFireExtinguisher
+        - BorgModuleGPS
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellHigh
+  - type: RandomMetadata
+    nameSegments: [names_borg]
+
+- type: entity
+  id: PlayerBorgDerelictGhostRole
+  parent: PlayerBorgDerelict
+  suffix: Ghost role
+  components:
+    - type: GhostRole
+      name: ghost-role-information-derelict-cyborg-name
+      description: ghost-role-information-derelict-cyborg-description
+      rules: ghost-role-information-silicon-rules
+      raffle:
+        settings: default
+    - type: GhostTakeoverAvailable

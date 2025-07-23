@@ -47,7 +47,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
     {
         // We only add it as a spoken language; CanUnderstand checks for ULSC itself.
         if (entity.Comp.Enabled)
-            ev.SpokenLanguages.Add(UniversalPrototype);
+            ev.SpokenLanguages.Add(PsychomanticPrototype);
     }
 
 
@@ -69,7 +69,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
 
     public bool CanUnderstand(Entity<LanguageSpeakerComponent?> ent, ProtoId<LanguagePrototype> language)
     {
-        if (language == UniversalPrototype || TryComp<UniversalLanguageSpeakerComponent>(ent, out var uni) && uni.Enabled)
+        if (language == PsychomanticPrototype || language == UniversalPrototype || TryComp<UniversalLanguageSpeakerComponent>(ent, out var uni) && uni.Enabled)
             return true;
 
         return Resolve(ent, ref ent.Comp, logMissing: false) && ent.Comp.UnderstoodLanguages.Contains(language);

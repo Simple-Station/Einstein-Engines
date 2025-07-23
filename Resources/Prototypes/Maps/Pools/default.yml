@@ -1,21 +1,37 @@
 - type: gameMapPool
   id: DefaultMapPool
   maps:
-  - Arena
-  - Asterisk
-  - Core
-  - Edge
-  - Glacier
-  - Hammurabi
-  - Lighthouse
-  - Pebble
-  - Saltern
-  - Shoukou
-  - Submarine
-  - Tortuga
-  - TheHive
-  - Gax
-  - Rad
-  - Meta
-  - Box
-#  - Europa
+  - Anchor # Maintained by the SiN Mapping Team
+  - Arena # Maintained by astriloqua.
+  - Asterisk # Maintained by mrs.
+  - Core # No current Maintainer. In need of a rework...
+ # - Edge # De-rotated, no current maintainer.
+  - Glacier # Maintained by Violet, pending update.
+ # - Hammurabi # De-rotated, maintained by Ichai, pending update.
+  - Lighthouse # Maintained by the SiN Mapping Team, ODJ, and TCJ.
+  - Pebble # Plyushsune is the current maintainer.
+  - Saltern # Maintained by the SiN Mapping Team
+  - Shoukou # Maintained by Violet, pending update.
+ # - Submarine # De-rotated, no current maintainer.
+ # - Tortuga # De-rotated, no current maintainer.
+  - TheHive # Maintained by dootythefrooty
+  - Gax # Maintained by Ichai
+  - Rad # Maintained by Ichai
+  - Meta # Maintained by Ichai
+  - Cyberiad # Maintained by Ichai
+  - Lambda # Maintained by Ichai
+  - Bagel # Maintained by Ichai
+  - Northway # Maintained by Violet, pending update.
+#  - Europa # De-rotated. Has significant issues.
+
+# All maps marked as De-rotated are currently receiving no update support due to a shortage of map maintainers.
+# If you want to see these maps return to official rotation, and have any talent with mapping, please feel free to get in contact with Old Dance Jacket.
+# We have a mapping server where we can support arbitrarily any number of people wishing to cooperatively map together. Alternatively, you can
+# choose to support a map solo.
+
+# We do this because these maps have not received any updates in over a year, and our efforts to find people willing to maintain these maps have gone
+# largely unanswered. As a result, we can't guarantee their quality at all.
+
+# In order to make re-rotate a map, please submit a PR providing at least some amount of work to refurbish the map you wish to reintroduce. It doesn't even
+# need to be a full comprehensive rework. Maybe like... Rework a department. Add an AI Satellite. Add decorative details. Do *something* cool.
+# Show us that someone actually cares about the map enough to make it something people actually want to play on.

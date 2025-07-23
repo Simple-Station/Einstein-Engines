@@ -23,7 +23,7 @@
     - BoxBeanbag
 
 - type: loadout
-  id: LoadoutServiceBartenderBoxLightRifleRubber
+  id: LoadoutServiceBartenderBoxLightRifle
   category: JobsServiceBartender
   cost: 0
   exclusive: true
@@ -36,7 +36,23 @@
     - !type:CharacterAgeRequirement
       min: 21
   items:
-    - MagazineBoxLightRifleRubber
+    - MagazineBoxLightRifle
+
+- type: loadout
+  id: LoadoutServiceBartenderBoxRifle
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderAmmo
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - MagazineBoxRifle
 
 - type: loadout
   id: LoadoutServiceBartenderShotgunDoubleBarreledRubber
@@ -55,7 +71,7 @@
     - WeaponShotgunDoubleBarreledRubber
 
 - type: loadout
-  id: LoadoutServiceBartenderMosinRubber
+  id: LoadoutServiceBartenderMosin
   category: JobsServiceBartender
   cost: 0
   canBeHeirloom: true
@@ -68,10 +84,10 @@
     - !type:CharacterAgeRequirement
       min: 21
   items:
-    - WeaponSniperMosinRubber
+    - WeaponSniperMosin
 
 - type: loadout
-  id: LoadoutServiceBartenderBoxMagnumRubber
+  id: LoadoutServiceBartenderBoxMagnum
   category: JobsServiceBartender
   cost: 0
   exclusive: true
@@ -81,11 +97,13 @@
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
-    - MagazineBoxMagnumRubber
+    - MagazineBoxMagnum
 
 - type: loadout
-  id: LoadoutServiceBartenderArgentiNonlethal
+  id: LoadoutServiceBartenderArgenti
   category: JobsServiceBartender
   cost: 0
   exclusive: true
@@ -95,11 +113,13 @@
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
-    - WeaponRevolverArgentiNonlethal
+    - WeaponRevolverArgenti
 
 - type: loadout
-  id: LoadoutServiceBartenderRepeaterNonlethal
+  id: LoadoutServiceBartenderRepeater
   category: JobsServiceBartender
   cost: 0
   exclusive: true
@@ -109,8 +129,10 @@
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
-    - WeaponSniperRepeaterNonlethal
+    - WeaponSniperRepeater
 
 # Eyes
 

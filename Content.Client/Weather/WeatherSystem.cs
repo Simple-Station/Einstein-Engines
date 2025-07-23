@@ -44,22 +44,21 @@ public sealed class WeatherSystem : SharedWeatherSystem
             return;
         }
 
-        if (!Timing.IsFirstTimePredicted || weatherProto.Sound == null
-            || weather.Stream is not null) // Don't ever generate more than one weather sound.
+        if (!Timing.IsFirstTimePredicted || weatherProto.Sound == null)
             return;
 
-        var playStream = _audio.PlayGlobal(weatherProto.Sound, Filter.Local(), true);
-        weather.Stream ??= playStream!.Value.Entity;
+        weather.Stream ??= _audio.PlayGlobal(weatherProto.Sound, Filter.Local(), true)?.Entity;
 
-        var stream = weather.Stream.Value;
-        var comp = Comp<AudioComponent>(stream);
+        if (!TryComp(weather.Stream, out AudioComponent? comp))
+            return;
+
         var occlusion = 0f;
 
         // Work out tiles nearby to determine volume.
         if (TryComp<MapGridComponent>(entXform.GridUid, out var grid))
         {
             var gridId = entXform.GridUid.Value;
-            // Floodfill to the nearest tile and use that for audio.
+            // FloodFill to the nearest tile and use that for audio.
             var seed = _mapSystem.GetTileRef(gridId, grid, entXform.Coordinates);
             var frontier = new Queue<TileRef>();
             frontier.Enqueue(seed);
@@ -72,7 +71,7 @@ public sealed class WeatherSystem : SharedWeatherSystem
                 if (!visited.Add(node.GridIndices))
                     continue;
 
-                if (!CanWeatherAffect(grid, node))
+                if (!CanWeatherAffect(entXform.GridUid.Value, grid, node))
                 {
                     // Add neighbors
                     // TODO: Ideally we pick some deterministically random direction and use that
@@ -104,7 +103,7 @@ public sealed class WeatherSystem : SharedWeatherSystem
             if (nearestNode != null)
             {
                 var entPos = _transform.GetMapCoordinates(entXform);
-                var nodePosition = nearestNode.Value.ToMap(EntityManager, _transform).Position;
+                var nodePosition = _transform.ToMapCoordinates(nearestNode.Value).Position;
                 var delta = nodePosition - entPos.Position;
                 var distance = delta.Length();
                 occlusion = _audio.GetOcclusion(entPos, delta, distance);
@@ -117,7 +116,7 @@ public sealed class WeatherSystem : SharedWeatherSystem
 
         var alpha = GetPercent(weather, uid);
         alpha *= SharedAudioSystem.VolumeToGain(weatherProto.Sound.Params.Volume);
-        _audio.SetGain(stream, alpha, comp);
+        _audio.SetGain(weather.Stream, alpha, comp);
         comp.Occlusion = occlusion;
     }
 

@@ -29,7 +29,7 @@ public sealed class DepartmentBanCommand : IConsoleCommand
         uint minutes;
         if (!Enum.TryParse(_cfg.GetCVar(CCVars.DepartmentBanDefaultSeverity), out NoteSeverity severity))
         {
-            Logger.WarningS("admin.department_ban", "Department ban severity could not be parsed from config! Defaulting to medium.");
+            Logger.GetSawmill("admin.department_ban").Warning("Department ban severity could not be parsed from config! Defaulting to medium.");
             severity = NoteSeverity.Medium;
         }
 

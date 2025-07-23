@@ -9,7 +9,8 @@
     - type: Clothing
       sprite: Nyanotrasen/Clothing/OuterClothing/WinterCoats/hyenh.rsi
     - type: TemperatureProtection
-      coefficient: 0.1
+      heatingCoefficient: 0.1
+      coolingCoefficient: 0.1
 
 - type: entity
   parent: ClothingOuterWinterCoat
@@ -39,6 +40,14 @@
   name: mail carrier's winter coat
   description: It'll keep away the cold but not the dogs.
   components:
+    - type: ToggleableClothing #DeltaV - fixing the fact that it has no hood
+      clothingPrototype: ClothingHeadHatHoodWinterMailCarrier
+      slot: head
+    - type: ContainerContainer
+      containers:
+        toggleable-clothing: !type:Container {}
+        storagebase: !type:Container
+          ents: []
     - type: Sprite
       sprite: Nyanotrasen/Clothing/OuterClothing/WinterCoats/mail_winter_coat.rsi
     - type: Clothing

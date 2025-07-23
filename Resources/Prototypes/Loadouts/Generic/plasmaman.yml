@@ -3,7 +3,7 @@
 - type: loadout
   id: LoadoutSpeciesEnvirosuitExtinguisherRefill
   category: Species
-  cost: 5
+  cost: 4
   requirements:
     - !type:CharacterSpeciesRequirement
       species:

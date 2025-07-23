@@ -74,6 +74,21 @@
   chatTriggers:
     - caws
 
+- type: emote
+  id: HarpyHoot
+  name: chat-emote-name-harpyhoot
+  category: Vocal
+  icon: Interface/Emotes/caw.png
+  whitelist:
+    tags:
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [ hoots ]
+  chatTriggers:
+    - hoots
+
 #Vulpkanin
 - type: emote
   id: Bark
@@ -138,3 +153,18 @@
   chatMessages: [ howls ]
   chatTriggers:
     - howls
+
+- type: emote
+  id: Awoo
+  name: delta-chat-emote-name-awoo
+  category: Vocal
+  whitelist:
+    components:
+    - Vocal
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [awoos.]
+  chatTriggers:
+    - awoos

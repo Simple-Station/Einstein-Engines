@@ -1,0 +1,25 @@
+- type: entity
+  name: cardboard box small
+  parent: BoxBase
+  id: BoxCardboardSmall
+  description: A cardboard box for storing things.
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,1
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,2,2
+  - type: Sprite
+    state: box
+  - type: EmitSoundOnPickup
+    sound: /Audio/SimpleStation14/Items/Handling/cardboardbox_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/SimpleStation14/Items/Handling/cardboardbox_drop.ogg
+  - type: EmitSoundOnLand
+    sound: /Audio/SimpleStation14/Items/Handling/cardboardbox_drop.ogg
+  - type: Tag
+    tags:
+    - BoxCardboard

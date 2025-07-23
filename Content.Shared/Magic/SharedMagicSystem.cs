@@ -1,18 +1,25 @@
 ﻿using System.Numerics;
+using Content.Shared._Goobstation.Religion;
 using Content.Shared.Actions;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
+using Content.Shared.Chat;
 using Content.Shared.Coordinates.Helpers;
 using Content.Shared.Doors.Components;
 using Content.Shared.Doors.Systems;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Humanoid;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
 using Content.Shared.Lock;
 using Content.Shared.Magic.Components;
 using Content.Shared.Magic.Events;
 using Content.Shared.Maps;
+using Content.Shared.Mind;
+using Content.Shared.Mind.Components;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Physics;
 using Content.Shared.Popups;
 using Content.Shared.Speech.Muting;
@@ -20,6 +27,7 @@ using Content.Shared.Storage;
 using Content.Shared.Tag;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Systems;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Network;
@@ -53,6 +61,9 @@ public abstract class SharedMagicSystem : EntitySystem
     [Dependency] private readonly LockSystem _lock = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedMindSystem _mind = default!;
 
     public override void Initialize()
     {
@@ -67,6 +78,7 @@ public abstract class SharedMagicSystem : EntitySystem
         SubscribeLocalEvent<SmiteSpellEvent>(OnSmiteSpell);
         SubscribeLocalEvent<KnockSpellEvent>(OnKnockSpell);
         SubscribeLocalEvent<ChargeSpellEvent>(OnChargeSpell);
+        SubscribeLocalEvent<RandomGlobalSpawnSpellEvent>(OnRandomGlobalSpawnSpell);
 
         // Spell wishlist
         //  A wishlish of spells that I'd like to implement or planning on implementing in a future PR
@@ -179,6 +191,14 @@ public abstract class SharedMagicSystem : EntitySystem
         var ev = new BeforeCastSpellEvent(performer);
         RaiseLocalEvent(spell, ref ev);
         return !ev.Cancelled;
+    }
+
+    private bool IsTouchSpellDenied(EntityUid target) // Goob edit
+    {
+        var ev = new BeforeCastTouchSpellEvent(target);
+        RaiseLocalEvent(target, ev, true);
+
+        return ev.Cancelled;
     }
 
     #region Spells
@@ -369,11 +389,10 @@ public abstract class SharedMagicSystem : EntitySystem
             if (HasComp(ev.Target, data.Component.GetType()))
                 continue;
 
-            var component = (Component) _compFact.GetComponent(name);
-            component.Owner = ev.Target;
-            var temp = (object) component;
+            var component = (Component)_compFact.GetComponent(name);
+            var temp = (object)component;
             _seriMan.CopyTo(data.Component, ref temp);
-            EntityManager.AddComponent(ev.Target, (Component) temp!);
+            EntityManager.AddComponent(ev.Target, (Component)temp!);
         }
     }
     // End Change Component Spells
@@ -503,17 +522,54 @@ public abstract class SharedMagicSystem : EntitySystem
     }
     // End Charge Spells
     #endregion
+    #region Global Spells
+
+    private void OnRandomGlobalSpawnSpell(RandomGlobalSpawnSpellEvent ev)
+    {
+        if (!_net.IsServer || ev.Handled || !PassesSpellPrerequisites(ev.Action, ev.Performer) || ev.Spawns is not { } spawns)
+            return;
+
+        ev.Handled = true;
+        Speak(ev);
+
+        var allHumans = _mind.GetAliveHumans();
+
+        foreach (var human in allHumans)
+        {
+            if (!human.Comp.OwnedEntity.HasValue)
+                continue;
+
+            var ent = human.Comp.OwnedEntity.Value;
+
+            var mapCoords = _transform.GetMapCoordinates(ent);
+            foreach (var spawn in EntitySpawnCollection.GetSpawns(spawns, _random))
+            {
+                var spawned = Spawn(spawn, mapCoords);
+                _hands.PickupOrDrop(ent, spawned);
+            }
+        }
+
+        _audio.PlayGlobal(ev.Sound, ev.Performer);
+    }
+
+    #endregion
     // End Spells
     #endregion
 
     // When any spell is cast it will raise this as an event, so then it can be played in server or something. At least until chat gets moved to shared
     // TODO: Temp until chat is in shared
-    private void Speak(BaseActionEvent args)
+    public void Speak(BaseActionEvent args)
     {
         if (args is not ISpeakSpell speak || string.IsNullOrWhiteSpace(speak.Speech))
             return;
 
         var ev = new SpeakSpellEvent(args.Performer, speak.Speech, speak.ChatType);
+        RaiseLocalEvent(ref ev);
+    }
+
+    public void Speak(EntityUid uid, string speech, InGameICChatType inGameICChatType)
+    {
+        var ev = new SpeakSpellEvent(uid, speech, inGameICChatType);
         RaiseLocalEvent(ref ev);
     }
 }

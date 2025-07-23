@@ -22,6 +22,10 @@
       id: LoadoutServiceBartenderBoxBeanbags
     - type: loadout
       id: LoadoutServiceBartenderBoxLightRifleRubber
+    - type: loadout
+      id: LoadoutServiceBartenderBoxRifleRubber
+    - type: loadout
+      id: LoadoutServiceBartenderBoxMagnumRubber
 
 - type: characterItemGroup
   id: LoadoutBartenderWeapon

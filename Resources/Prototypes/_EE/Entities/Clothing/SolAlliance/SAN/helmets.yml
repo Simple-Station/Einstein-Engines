@@ -1,0 +1,12 @@
+# Helmets
+- type: entity
+  parent: [ClothingHeadHelmetBasic, SolAllianceInfo, BaseClothingRadio]
+  id: ClothingHeadHelmetSAN
+  name: SAN tactical helmet
+  suffix: SAN
+  description: A simple Solarian helmet design, only marginally different than the ancient sallet which inspired it. Today they're made from the same alloy as starship hulls.
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/SolAlliance/Helmet/SAN_tactical_helmet.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/SolAlliance/Helmet/SAN_tactical_helmet.rsi

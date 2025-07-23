@@ -25,6 +25,7 @@
   - type: Wires
     boardName: wires-board-name-pa
     layoutId: ParticleAccelerator
+  - type: StationAiWhitelist
 
 # Unfinished
 

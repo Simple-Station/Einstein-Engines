@@ -2,7 +2,19 @@
 # Backpacks
 
 # Belt
-
+- type: loadout
+  id: LoadoutClothingBeltJudoHoS
+  category: JobsSecurityHeadOfSecurity
+  cost: 2
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityBelt
+  - !type:CharacterJobRequirement
+    jobs:
+    - HeadOfSecurity
+  items:
+  - ClothingBeltCorporateJudoHoS
 # Ears
 
 # Equipment
@@ -118,7 +130,37 @@
   items:
     - WeaponEnergyGunMultiphase
 
+- type: loadout
+  id: LoadoutCommandHoSBRDIR25
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - WeaponSubMachineGunBRDIR25HoS
+
 # Eyes
+
+- type: loadout
+  id: LoadoutCommandHoSEyesPatchTinted
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEyes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingEyesEyepatchHudTintedSecurity
 
 # Gloves
 
@@ -148,6 +190,19 @@
         - HeadOfSecurity
   items:
     - ClothingHeadHatHoshat
+
+- type: loadout
+  id: LoadoutCommandHOSHelmet
+  category: JobsSecurityHeadOfSecurity
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingHeadHelmetHeavyHoS
 
 # Id
 - type: loadout
@@ -196,6 +251,20 @@
   items:
     - ClothingNeckCloakHos
 
+- type: loadout
+  id: LoadoutCommandHOSNeckCloakFur
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingNeckCloakHosFur
+
 # Mask
 
 # Outer
@@ -237,6 +306,19 @@
         - HeadOfSecurity
   items:
     - ClothingOuterCoatHoSTrench
+
+- type: loadout
+  id: LoadoutCommandHOSOuterHeavyArmor
+  category: JobsSecurityHeadOfSecurity
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingOuterArmorHoSHeavy
 
 # Shoes
 - type: loadout

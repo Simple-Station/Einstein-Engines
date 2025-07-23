@@ -433,6 +433,7 @@ entities:
             129: -7.8782687,-7.0005593
             130: -7.3470187,-7.5943093
     - type: GridAtmosphere
+      simulatedTurf: false
       version: 2
       data:
         tiles:

@@ -1,0 +1,51 @@
+- type: body
+  id: SynthHuman
+  name: "bio-synthetic human"
+  root: torso
+  slots:
+    head:
+      part: HeadDummy
+      connections:
+      - torso
+      organs:
+        brain: OrganDummyBrain
+        eyes: OrganHumanEyes
+    torso:
+      part: BioSynthTorso
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head # Shitmed
+      organs:
+        heart: BioSynthHeart
+        lungs: BioSynthLungs
+        stomach: OrganHumanStomach
+        liver: BioSynthLiver
+        kidneys: OrganHumanKidneys
+        core: OrganDummyCore
+    right arm:
+      part: RightArmDummy
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmDummy
+      connections:
+      - left hand
+    right hand:
+      part: RightHandDummy
+    left hand:
+      part: LeftHandDummy
+    right leg:
+      part: RightLegDummy
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegDummy
+      connections:
+      - left foot
+    right foot:
+      part: RightFootDummy
+    left foot:
+      part: LeftFootDummy

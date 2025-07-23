@@ -67,27 +67,6 @@
 
 - type: entity
   parent: BaseMagazineBoxCaselessRifle
-  id: MagazineBoxCaselessRifleBigRubber
-  name: ammunition box (.25 caseless rubber)
-  components:
-  - type: BallisticAmmoProvider
-    capacity: 200
-    proto: CartridgeCaselessRifleRubber
-  - type: Sprite
-    layers:
-    - state: base-b
-      map: ["enum.GunVisualLayers.Base"]
-    - state: magb-1
-      map: ["enum.GunVisualLayers.Mag"]
-    - state: rubber-b
-  - type: MagazineVisuals
-    magState: magb
-    steps: 2
-    zeroVisible: false
-  - type: Appearance
-
-- type: entity
-  parent: BaseMagazineBoxCaselessRifle
   id: MagazineBoxCaselessRifle
   name: ammunition box (.25 caseless)
   components:
@@ -116,16 +95,25 @@
     - state: practice
 
 - type: entity
-  parent: BaseMagazineBoxCaselessRifle
-  id: MagazineBoxCaselessRifleRubber
-  name: ammunition box (.25 caseless rubber)
+  parent: MagazineBoxCaselessRifle
+  id: MagazineBoxCaselessRifleIncendiary
+  name: ammunition box (.25 caseless incendiary)
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeCaselessRifleRubber
-  - type: Sprite
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-    - state: rubber
+    proto: CartridgeCaselessRifleIncendiary
+
+- type: entity
+  parent: MagazineBoxCaselessRifle
+  id: MagazineBoxCaselessRifleUranium
+  name: ammunition box (.25 caseless uranium)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifleUranium
+
+- type: entity
+  parent: MagazineBoxCaselessRifle
+  id: MagazineBoxCaselessRifleShrapnel
+  name: ammunition box (.25 caseless shrapnel)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifleShrapnel

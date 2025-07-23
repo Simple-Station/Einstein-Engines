@@ -324,14 +324,14 @@
   - type: SurgeryStep
     tool:
     - type: Tending
-    duration: 1
+    duration: 2
   - type: Sprite
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/hemostat.rsi
     state: hemostat
   - type: SurgeryTendWoundsEffect
     damage:
       groups:
-        Brute: -5
+        Brute: -10
   - type: SurgeryRepeatableStep
 
 - type: entity
@@ -343,7 +343,7 @@
   - type: SurgeryStep
     tool:
     - type: Tending
-    duration: 1
+    duration: 2
   - type: Sprite
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/hemostat.rsi
     state: hemostat
@@ -351,7 +351,7 @@
     mainGroup: Burn
     damage:
       groups:
-        Burn: -5
+        Burn: -10
   - type: SurgeryRepeatableStep
 
 - type: entity

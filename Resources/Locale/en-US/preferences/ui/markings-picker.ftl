@@ -1,9 +1,3 @@
-markings-used = Used Markings
-markings-unused = Unused Markings
-markings-add = Add Marking
-markings-remove = Remove Marking
-markings-rank-up = Up
-markings-rank-down = Down
 markings-search = Search
 marking-points-remaining = Markings left: {$points}
 marking-used = {$marking-name}
@@ -31,3 +25,5 @@ markings-category-LeftLeg = Left Leg
 markings-category-LeftFoot = Left Foot
 markings-category-Tail = Tail
 markings-category-Overlay = Overlay
+markings-category-Undershirt = Undershirt
+markings-category-Underwear = Underwear

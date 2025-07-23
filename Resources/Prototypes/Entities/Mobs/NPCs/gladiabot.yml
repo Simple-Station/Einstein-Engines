@@ -33,6 +33,10 @@
     - GladiabotBlue
     - GladiabotGreen
     - GladiabotYellow
+  - type: EmagReplaceFactions
+    additive: true
+    factions:
+    - Syndicate
   - type: NpcFactionSpriteStateSetter
   - type: CombatMode
   - type: MeleeWeapon

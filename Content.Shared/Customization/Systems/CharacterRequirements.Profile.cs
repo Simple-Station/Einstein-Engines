@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
+using Content.Shared.Mind;
 using Content.Shared.Preferences;
 using Content.Shared.Prototypes;
 using Content.Shared.Roles;
@@ -26,7 +27,7 @@ public sealed partial class CharacterAgeRequirement : CharacterRequirement
     public int Min;
 
     [DataField]
-    public int Max = 2147483647;
+    public int Max = Int32.MaxValue;
 
     public override bool IsValid(
         JobPrototype job,
@@ -38,11 +39,19 @@ public sealed partial class CharacterAgeRequirement : CharacterRequirement
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
         out string? reason,
-        int depth = 0
+        int depth = 0,
+        MindComponent? mind = null
     )
     {
+        var localeString = "";
+
+        if (Max == Int32.MaxValue || Min <= 0)
+            localeString = Max == Int32.MaxValue ? "character-age-requirement-minimum-only" : "character-age-requirement-maximum-only";
+        else
+            localeString = "character-age-requirement-range";
+
         reason = Loc.GetString(
-            "character-age-requirement",
+            localeString,
             ("inverted", Inverted),
             ("min", Min),
             ("max", Max));
@@ -69,7 +78,8 @@ public sealed partial class CharacterGenderRequirement : CharacterRequirement
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
         out string? reason,
-        int depth = 0
+        int depth = 0,
+        MindComponent? mind = null
     )
     {
         reason = Loc.GetString(
@@ -99,7 +109,8 @@ public sealed partial class CharacterSexRequirement : CharacterRequirement
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
         out string? reason,
-        int depth = 0
+        int depth = 0,
+        MindComponent? mind = null
     )
     {
         reason = Loc.GetString(
@@ -129,7 +140,8 @@ public sealed partial class CharacterSpeciesRequirement : CharacterRequirement
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
         out string? reason,
-        int depth = 0
+        int depth = 0,
+        MindComponent? mind = null
     )
     {
         const string color = "green";
@@ -171,7 +183,8 @@ public sealed partial class CharacterHeightRequirement : CharacterRequirement
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
         out string? reason,
-        int depth = 0
+        int depth = 0,
+        MindComponent? mind = null
     )
     {
         const string color = "yellow";
@@ -217,7 +230,8 @@ public sealed partial class CharacterWidthRequirement : CharacterRequirement
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
         out string? reason,
-        int depth = 0
+        int depth = 0,
+        MindComponent? mind = null
     )
     {
         const string color = "yellow";
@@ -263,7 +277,8 @@ public sealed partial class CharacterWeightRequirement : CharacterRequirement
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
         out string? reason,
-        int depth = 0
+        int depth = 0,
+        MindComponent? mind = null
     )
     {
         const string color = "green";
@@ -313,7 +328,8 @@ public sealed partial class CharacterTraitRequirement : CharacterRequirement
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
         out string? reason,
-        int depth = 0
+        int depth = 0,
+        MindComponent? mind = null
     )
     {
         const string color = "lightblue";
@@ -346,7 +362,8 @@ public sealed partial class CharacterLoadoutRequirement : CharacterRequirement
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
         out string? reason,
-        int depth = 0
+        int depth = 0,
+        MindComponent? mind = null
     )
     {
         const string color = "lightblue";
@@ -379,7 +396,8 @@ public sealed partial class CharacterItemGroupRequirement : CharacterRequirement
         IPrototypeManager prototypeManager,
         IConfigurationManager configManager,
         out string? reason,
-        int depth = 0
+        int depth = 0,
+        MindComponent? mind = null
     )
     {
         var group = prototypeManager.Index(Group);
@@ -390,9 +408,16 @@ public sealed partial class CharacterItemGroupRequirement : CharacterRequirement
             .ToList();
         var count = items.Count;
 
-        // If prototype is selected, remove one from the count
+        // If prototype is selected, decrease the count. Or increase it via negative number. Not my monkey, not my circus.
         if (items.ToList().Contains(prototype.ID))
-            count--;
+        {
+            // This disgusting ELIF nest requires an engine PR to make less terrible.
+            if (prototypeManager.TryIndex<LoadoutPrototype>(prototype.ID, out var loadoutPrototype))
+                count -= loadoutPrototype.Slots;
+            else if (prototypeManager.TryIndex<TraitPrototype>(prototype.ID, out var traitPrototype))
+                count -= traitPrototype.ItemGroupSlots;
+            else count--;
+        }
 
         reason = Loc.GetString(
             "character-item-group-requirement",
@@ -400,6 +425,6 @@ public sealed partial class CharacterItemGroupRequirement : CharacterRequirement
             ("group", Loc.GetString($"character-item-group-{Group}")),
             ("max", group.MaxItems));
 
-        return count < group.MaxItems;
+        return !Inverted ? count < group.MaxItems : count >= group.MaxItems - 1;
     }
 }

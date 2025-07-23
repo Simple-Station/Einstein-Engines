@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using Content.Shared.Alert;
 using Content.Shared.Interaction;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
@@ -70,6 +71,8 @@ public sealed partial class BuckleComponent : Component
     /// </summary>
     [ViewVariables] public int? OriginalDrawDepth;
 }
+
+public sealed partial class UnbuckleAlertEvent : BaseAlertEvent;
 
 /// <summary>
 /// Event raised directed at a strap entity before some entity gets buckled to it.

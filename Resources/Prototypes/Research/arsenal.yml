@@ -22,8 +22,12 @@
   - WeaponEnergyGunPistol
   - WeaponDisablerSMG
   - Truncheon
+  - WeaponDisabler
+  - WeaponCivilianDisabler
+  - WeaponMechCombatDisabler # Goobstation
   #- WeaponPistolMk58 #todo: Add a bunch of basic ballistic guns to the list and make lathe recipes for them.
   - MechEquipmentKineticAccelerator # Goobstation
+  - WeaponPistolMk58
   # These are roundstart but not replenishable for salvage
 
 - type: technology
@@ -42,6 +46,7 @@
   - MagazinePistolSubMachineGunIncendiary
   - MagazineMagnumIncendiary
   - MagazineLightRifleIncendiary
+  - MagazineCaselessRifleIncendiary
   - SpeedLoaderMagnumIncendiary
   - SpeedLoaderRifleHeavyIncendiary
   - MagazineShotgunIncendiary
@@ -49,45 +54,10 @@
   - MagazineBoxMagnumIncendiary
   - MagazineBoxLightRifleIncendiary
   - MagazineBoxRifleIncendiary
+  - MagazineBoxCaselessRifleIncendiary
   - CartridgeSpecialIncendiary
   - MagazineBoxSpecialIncendiary
-
-- type: technology
-  id: NonlethalAmmunition
-  name: research-technology-nonlethal-ammunition
-  icon:
-    sprite: Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
-    state: beanbag
-  discipline: Arsenal
-  tier: 1
-  cost: 5000
-  recipeUnlocks:
-  - MagazineShotgunBeanbag
-  - ShellTranquilizer
-  - BoxBeanbag
-  - CartridgePistolRubber
-  - CartridgeMagnumRubber
-  - CartridgeLightRifleRubber
-  - CartridgeRifleRubber
-  - MagazineRifleRubber
-  - MagazinePistolRubber
-  - MagazinePistolSubMachineGunRubber
-  - MagazineMagnumRubber
-  - MagazineLightRifleRubber
-  - SpeedLoaderMagnumRubber
-  - MagazineBoxPistolRubber
-  - MagazineBoxMagnumRubber
-  - MagazineBoxLightRifleRubber
-  - MagazineBoxRifleRubber
-  - CartridgeSpecialRubber
-  - MagazineBoxSpecialRubber
-  - WeaponDisabler
-  - MagazineBoxLightRifleRubber # Frontier
-  - MagazineBoxMagnumRubber # Frontier
-  - MagazineBoxPistolRubber # Frontier
-  - MagazineBoxRifleRubber # Frontier
-  - SpeedLoaderRifleHeavyRubber
-  - WeaponMechCombatDisabler # Goobstation
+  - MagazineUniversalMagnumIncendiary
 
 - type: technology
   id: UraniumMunitions
@@ -104,15 +74,49 @@
   - MagazinePistolSubMachineGunUranium
   - MagazineMagnumUranium
   - MagazineLightRifleUranium
+  - MagazineCaselessRifleUranium
   - SpeedLoaderMagnumUranium
   - SpeedLoaderRifleHeavyUranium # Frontier
   - MagazineBoxPistolUranium
   - MagazineBoxMagnumUranium
   - MagazineBoxLightRifleUranium
   - MagazineBoxRifleUranium
+  - MagazineBoxCaselessRifleUranium
   - BoxShotgunUranium
   - CartridgeSpecialUranium
   - MagazineBoxSpecialUranium
+  - MagazineUniversalMagnumUranium
+
+- type: technology
+  id: ExplosiveTechnology
+  name: research-technology-explosive-technology
+  icon:
+    sprite: Objects/Devices/payload.rsi
+    state: payload-explosive-armed
+  discipline: Arsenal
+  tier: 1
+  cost: 10000
+  recipeUnlocks:
+  - SignallerAdvanced
+  - SignalTrigger
+  - VoiceTrigger
+  - TimerTrigger
+  - FlashPayload
+  - ExplosivePayload
+  - ChemicalPayload
+  # TODO: Add "Explosive Ammunition" to this tech to make it waaaay more interesting.
+
+- type: technology
+  id: SpecialMeans
+  name: research-technology-special-means
+  icon:
+    sprite: Clothing/Back/Backpacks/electropack.rsi
+    state: icon
+  discipline: Arsenal
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - ClothingBackpackElectropack
 
 # Tier 2
 
@@ -131,23 +135,27 @@
   - ClothingOuterHardsuitCombatRiot
 
 - type: technology
-  id: ExplosiveTechnology
-  name: research-technology-explosive-technology
+  id: ShrapnelMunitions
+  name: research-technology-shrapnel-munitions
   icon:
-    sprite: Objects/Devices/payload.rsi
-    state: payload-explosive-armed
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
+    state: base
   discipline: Arsenal
   tier: 2
-  cost: 10000
+  cost: 7500
   recipeUnlocks:
-  - SignallerAdvanced
-  - SignalTrigger
-  - VoiceTrigger
-  - TimerTrigger
-  - FlashPayload
-  - ExplosivePayload
-  - ChemicalPayload
-  # TODO: Add "Explosive Ammunition" to this tech to make it waaaay more interesting.
+  - MagazineRifleShrapnel
+  - MagazinePistolShrapnel
+  - MagazinePistolSubMachineGunShrapnel
+  - MagazineMagnumShrapnel
+  - MagazineLightRifleShrapnel
+  - MagazineCaselessRifleShrapnel
+  - MagazineBoxPistolShrapnel
+  - MagazineBoxMagnumShrapnel
+  - MagazineBoxLightRifleShrapnel
+  - MagazineBoxRifleShrapnel
+  - MagazineBoxCaselessRifleShrapnel
+  - MagazineUniversalMagnumShrapnel
 
 - type: technology
   id: AdvancedWeapons
@@ -169,10 +177,15 @@
   - ShuttleGunPerforatorCircuitboard
   - ShuttleGunFriendshipCircuitboard
   - WeaponXrayCannon
-  - WeaponLaserCannon
   - WeaponGunLaserCarbineAutomatic
   - WeaponLaserCannon
   - WeaponMechCombatSolarisLaser # Goobstation
+  - WeaponSubMachineGunFPA90
+  - WeaponPistolN1984
+  - WeaponPistolViper
+  - WeaponPistolCobra
+  - Terminus
+  - WeaponPistolUniversal
   technologyPrerequisites:
   - BasicWeapons
 
@@ -189,11 +202,29 @@
   cost: 25000
   recipeUnlocks:
   - ClothingOuterHardsuitCombatAdvanced
-  - ClothingOuterHardsuitSyndieReverseEngineered
+  - ClothingOuterHardsuitShanlinUnpainted
+  - ClothingOuterHardsuitShiweiUnpainted
   - ClothingOuterHardsuitJuggernautReverseEngineered
-  #- ClothingOuterHardsuitCybersunEliteUnpainted # IOU
   technologyPrerequisites:
   - AdvancedTacsuits
+  softCapContribution: 1.5
+
+- type: technology
+  id: LaserTurrets
+  name: research-technology-laser-sentry-turrets
+  icon:
+    sprite: Objects/Weapons/Guns/Turrets/sentry_turret.rsi
+    state: base
+  discipline: Arsenal
+  tier: 3
+  cost: 20000
+  recipeUnlocks:
+  - WeaponEnergyTurretAIMachineCircuitboard
+  - WeaponEnergyTurretStationMachineCircuitboard
+  - WeaponEnergyTurretAIControlPanelElectronics
+  - WeaponEnergyTurretStationControlPanelElectronics
+  technologyPrerequisites:
+  - AdvancedWeapons
   softCapContribution: 1.5
 
 - type: technology
@@ -212,6 +243,8 @@
   - PowerCageHigh
   - ShuttleGunDusterCircuitboard
   - WeaponMechCombatImmolationGun # Goobstation
-  #- EnergySword # TODO: Add a bunch of stupidly exotic energy weapons to act as a reaaaaaally nice incentive for research to consider this.
-                 # Make the energy sword for instance include bananium and bluespace in its recipe. :)
+  - EnergySword # TODO: Add a bunch of stupidly exotic energy weapons to act as a reaaaaaally nice incentive for research to consider this.
+  - EnergySwordDouble
+  - EnergyCutlass
+  - WeaponSubMachineGunBRDIR25
   softCapContribution: 1.5

@@ -321,6 +321,14 @@
 
 - type: entity
   parent: DoorElectronics
+  id: DoorElectronicsClerk
+  suffix: Clerk, Locked
+  components:
+  - type: AccessReader
+    access: [["Clerk"]]
+
+- type: entity
+  parent: DoorElectronics
   id: DoorElectronicsJustice
   suffix: Justice, Locked
   components:
@@ -424,3 +432,12 @@
   components:
   - type: AccessReader
     access: [["Mail"]]
+
+# Sol Alliance
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsSAN
+  suffix: SAN, Locked
+  components:
+  - type: AccessReader
+    access: [["SAN"]]

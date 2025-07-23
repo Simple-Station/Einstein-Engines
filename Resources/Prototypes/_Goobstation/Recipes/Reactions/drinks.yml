@@ -1,0 +1,11 @@
+- type: reaction
+  id: TripleCitrus
+  reactants:
+    JuiceOrange:
+      amount: 1
+    JuiceLemon:
+      amount: 1
+    JuiceLime:
+      amount: 1
+  products:
+    TripleCitrus: 3

@@ -17,12 +17,11 @@ using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.PDA;
 using Content.Shared.Preferences;
+using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Roles;
-using Content.Shared.Roles.Jobs;
 using Content.Shared.Station;
-using Content.Shared.StatusIcon;
 using JetBrains.Annotations;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
@@ -49,9 +48,6 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
     [Dependency] private readonly IdentitySystem _identity = default!;
     [Dependency] private readonly MetaDataSystem _metaSystem = default!;
     [Dependency] private readonly InternalEncryptionKeySpawner _internalEncryption = default!;
-    [Dependency] private readonly ArrivalsSystem _arrivalsSystem = default!;
-    [Dependency] private readonly ContainerSpawnPointSystem _containerSpawnPointSystem = default!;
-    [Dependency] private readonly CharacterRequirementsSystem _characterRequirements = default!;
 
     private bool _randomizeCharacters;
 
@@ -75,7 +71,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
     /// <remarks>
     /// This only spawns the character, and does none of the mind-related setup you'd need for it to be playable.
     /// </remarks>
-    public EntityUid? SpawnPlayerCharacterOnStation(EntityUid? station, JobComponent? job, HumanoidCharacterProfile? profile, StationSpawningComponent? stationSpawning = null, SpawnPointType spawnPointType = SpawnPointType.Unset)
+    public EntityUid? SpawnPlayerCharacterOnStation(EntityUid? station, ProtoId<JobPrototype>? job, HumanoidCharacterProfile? profile, StationSpawningComponent? stationSpawning = null, SpawnPointType spawnPointType = SpawnPointType.Unset)
     {
         if (station != null && !Resolve(station.Value, ref stationSpawning))
             throw new ArgumentException("Tried to use a non-station entity as a station!", nameof(station));
@@ -103,12 +99,12 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
     /// <returns>The spawned entity</returns>
      public EntityUid SpawnPlayerMob(
         EntityCoordinates coordinates,
-        JobComponent? job,
+        ProtoId<JobPrototype>? job,
         HumanoidCharacterProfile? profile,
         EntityUid? station,
         EntityUid? entity = null)
     {
-        _prototypeManager.TryIndex(job?.Prototype ?? string.Empty, out var prototype);
+        _prototypeManager.TryIndex(job ?? string.Empty, out var prototype);
 
         // If we're not spawning a humanoid, we're gonna exit early without doing all the humanoid stuff.
         if (prototype?.JobEntity != null)
@@ -148,8 +144,6 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
                 startingGear = ApplySubGear(startingGear, profile, prototype);
 
             EquipStartingGear(entity.Value, startingGear, raiseEvent: false);
-            if (profile != null)
-                EquipIdCard(entity.Value, profile.Name, prototype, station);
             _internalEncryption.TryInsertEncryptionKey(entity.Value, startingGear, EntityManager);
         }
 
@@ -158,7 +152,10 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
 
         if (profile != null)
         {
-            _humanoidSystem.LoadProfile(entity.Value, profile);
+            if (prototype != null)
+                SetPdaAndIdCardData(entity.Value, profile.Name, prototype, station);
+
+            _humanoidSystem.LoadProfile(entity.Value, profile, loadExtensions: false, generateLoadouts: false);
             _metaSystem.SetEntityName(entity.Value, profile.Name);
             if (profile.FlavorText != "" && _configurationManager.GetCVar(CCVars.FlavorText))
                 EnsureComp<DetailExaminableComponent>(entity.Value).Content = profile.FlavorText;
@@ -169,23 +166,22 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         return entity.Value;
     }
 
-    private void DoJobSpecials(JobComponent? job, EntityUid entity)
+    private void DoJobSpecials(ProtoId<JobPrototype>? job, EntityUid entity)
     {
-        if (!_prototypeManager.TryIndex(job?.Prototype ?? string.Empty, out JobPrototype? prototype))
+        if (!_prototypeManager.TryIndex(job ?? string.Empty, out JobPrototype? prototype))
             return;
 
         foreach (var jobSpecial in prototype.Special)
             jobSpecial.AfterEquip(entity);
     }
 
-    /// <summary>
-    /// Equips an ID card and PDA onto the given entity.
+    /// Sets the ID card and PDA name, job, and access data.
     /// </summary>
     /// <param name="entity">Entity to load out.</param>
     /// <param name="characterName">Character name to use for the ID.</param>
     /// <param name="jobPrototype">Job prototype to use for the PDA and ID.</param>
     /// <param name="station">The station this player is being spawned on.</param>
-    public void EquipIdCard(EntityUid entity, string characterName, JobPrototype jobPrototype, EntityUid? station)
+    public void SetPdaAndIdCardData(EntityUid entity, string characterName, JobPrototype jobPrototype, EntityUid? station)
     {
         if (!InventorySystem.TryGetSlotEntity(entity, "id", out var idUid))
             return;
@@ -213,7 +209,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         _accessSystem.SetAccessToJob(cardId, jobPrototype, extendedAccess);
 
         if (pdaComponent != null)
-            _pdaSystem.SetOwner(idUid.Value, pdaComponent, characterName);
+            _pdaSystem.SetOwner(idUid.Value, pdaComponent, entity, characterName);
     }
 
 
@@ -236,7 +232,7 @@ public sealed class PlayerSpawningEvent : EntityEventArgs
     /// <summary>
     /// The job to use, if any.
     /// </summary>
-    public readonly JobComponent? Job;
+    public readonly ProtoId<JobPrototype>? Job;
     /// <summary>
     /// The profile to use, if any.
     /// </summary>
@@ -250,7 +246,7 @@ public sealed class PlayerSpawningEvent : EntityEventArgs
     /// </summary>
     public readonly SpawnPointType DesiredSpawnPointType;
 
-    public PlayerSpawningEvent(JobComponent? job, HumanoidCharacterProfile? humanoidCharacterProfile, EntityUid? station, SpawnPointType spawnPointType = SpawnPointType.Unset)
+    public PlayerSpawningEvent(ProtoId<JobPrototype>? job, HumanoidCharacterProfile? humanoidCharacterProfile, EntityUid? station, SpawnPointType spawnPointType = SpawnPointType.Unset)
     {
         Job = job;
         HumanoidCharacterProfile = humanoidCharacterProfile;

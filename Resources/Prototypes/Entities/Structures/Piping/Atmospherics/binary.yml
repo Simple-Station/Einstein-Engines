@@ -24,13 +24,18 @@
         pipeDirection: South
 
 - type: entity
-  parent: GasBinaryBase
+  parent: [BaseMachinePowered, GasBinaryBase]
   id: GasPressurePump
   name: gas pump
   description: A pump that moves gas by pressure.
   placement:
     mode: SnapgridCenter
   components:
+  - type: ApcPowerReceiver
+    powerLoad: 200
+  - type: Rotatable
+  - type: Transform
+    noRot: false
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/pump.rsi
     layers:
@@ -64,15 +69,21 @@
       path: /Audio/Ambience/Objects/gas_pump.ogg
   - type: AtmosMonitoringConsoleDevice
     navMapBlip: GasFlowRegulator
-    
+  - type: StationAiWhitelist
+
 - type: entity
-  parent: GasBinaryBase
+  parent: [BaseMachinePowered, GasBinaryBase]
   id: GasVolumePump
   name: volumetric gas pump
   description: A pump that moves gas by volume.
   placement:
     mode: SnapgridCenter
   components:
+    - type: ApcPowerReceiver
+      powerLoad: 200
+    - type: Rotatable
+    - type: Transform
+      noRot: false
     - type: Sprite
       sprite: Structures/Piping/Atmospherics/pump.rsi
       layers:
@@ -115,7 +126,8 @@
     - type: WiredNetworkConnection
     - type: AtmosMonitoringConsoleDevice
       navMapBlip: GasFlowRegulator
-    
+    - type: StationAiWhitelist
+
 - type: entity
   parent: GasBinaryBase
   id: GasPassiveGate
@@ -146,7 +158,7 @@
         path: /Audio/Ambience/Objects/gas_hiss.ogg
     - type: AtmosMonitoringConsoleDevice
       navMapBlip: GasValve
-      
+
 - type: entity
   parent: GasBinaryBase
   id: GasValve
@@ -196,7 +208,7 @@
         path: /Audio/Ambience/Objects/gas_hiss.ogg
     - type: AtmosMonitoringConsoleDevice
       navMapBlip: GasValve
-      
+
 - type: entity
   parent: GasBinaryBase
   id: SignalControlledValve
@@ -257,7 +269,7 @@
       path: /Audio/Ambience/Objects/gas_hiss.ogg
   - type: AtmosMonitoringConsoleDevice
     navMapBlip: GasValve
-      
+
 - type: entity
   parent: GasBinaryBase
   id: GasPort
@@ -288,7 +300,7 @@
       node: port
     - type: AtmosMonitoringConsoleDevice
       navMapBlip: GasVentOpening
-      
+
 - type: entity
   parent: GasVentPump
   id: GasDualPortVentPump
@@ -314,6 +326,7 @@
             In: { state: vent_in }
             Out: { state: vent_out }
             Welded: { state: vent_welded }
+            Lockout: { state: vent_lockout }
     - type: PipeColorVisuals
     - type: GasVentPump
       inlet: inlet
@@ -345,7 +358,7 @@
       enabled: true
     - type: AtmosMonitoringConsoleDevice
       navMapBlip: GasVentOpening
-      
+
 - type: entity
   parent: [ BaseMachine, ConstructibleMachine ]
   id: GasRecycler
@@ -373,6 +386,7 @@
   - type: PipeColorVisuals
   - type: Rotatable
   - type: GasRecycler
+  # - type: PipeRestrictOverlap # Allow pipe stacking for MRP
   - type: NodeContainer
     nodes:
       inlet:
@@ -408,7 +422,7 @@
     board: GasRecyclerMachineCircuitboard
   - type: AtmosMonitoringConsoleDevice
     navMapBlip: GasValve
-    
+
 - type: entity
   parent: GasBinaryBase
   id: HeatExchanger

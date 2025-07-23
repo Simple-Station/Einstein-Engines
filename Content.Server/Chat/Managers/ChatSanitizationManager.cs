@@ -33,7 +33,7 @@ public sealed class ChatSanitizationManager : IChatSanitizationManager
         { ":D", "chatsan-smiles-widely" },
         { "D:", "chatsan-frowns-deeply" },
         { ":O", "chatsan-surprised" },
-        { ":3", "chatsan-smiles" }, //nope
+        { ":3", "chatsan-smiles" },
         { ":S", "chatsan-uncertain" },
         { ":>", "chatsan-grins" },
         { ":<", "chatsan-pouts" },

@@ -17,6 +17,10 @@
         - HandLabeler
         - Sidearm
         - Folder
+      components:
+        - AnomalyScanner
+        - NodeScanner
+        - Flash
 
 - type: entity
   parent: ClothingBeltBase

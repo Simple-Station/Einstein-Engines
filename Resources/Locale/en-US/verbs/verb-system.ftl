@@ -27,6 +27,7 @@ verb-categories-timer = Set Delay
 verb-categories-lever = Lever
 verb-categories-select-type = Select Type
 verb-categories-select-faction = Select Faction
+verb-categories-rename = Rename
 verb-categories-fax = Set Destination
 verb-categories-power-level = Power Level
 verb-categories-interaction = Interact

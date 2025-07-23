@@ -77,6 +77,7 @@ namespace Content.Client.Options.UI.Tabs
             ViewportLowResCheckBox.OnToggled += OnCheckBoxToggled;
             ParallaxLowQualityCheckBox.OnToggled += OnCheckBoxToggled;
             FpsCounterCheckBox.OnToggled += OnCheckBoxToggled;
+            MoodVisualEffectsCheckBox.OnToggled += OnCheckBoxToggled;
             ApplyButton.OnPressed += OnApplyButtonPressed;
             VSyncCheckBox.Pressed = _cfg.GetCVar(CVars.DisplayVSync);
             FullscreenCheckBox.Pressed = ConfigIsFullscreen;
@@ -89,6 +90,7 @@ namespace Content.Client.Options.UI.Tabs
             ViewportLowResCheckBox.Pressed = !_cfg.GetCVar(CCVars.ViewportScaleRender);
             ParallaxLowQualityCheckBox.Pressed = _cfg.GetCVar(CCVars.ParallaxLowQuality);
             FpsCounterCheckBox.Pressed = _cfg.GetCVar(CCVars.HudFpsCounterVisible);
+            MoodVisualEffectsCheckBox.Pressed = _cfg.GetCVar(CCVars.MoodVisualEffects);
             ViewportWidthSlider.Value = _cfg.GetCVar(CCVars.ViewportWidth);
 
             _cfg.OnValueChanged(CCVars.ViewportMinimumWidth, _ => UpdateViewportWidthRange());
@@ -122,6 +124,7 @@ namespace Content.Client.Options.UI.Tabs
             _cfg.SetCVar(CCVars.ViewportScaleRender, !ViewportLowResCheckBox.Pressed);
             _cfg.SetCVar(CCVars.ParallaxLowQuality, ParallaxLowQualityCheckBox.Pressed);
             _cfg.SetCVar(CCVars.HudFpsCounterVisible, FpsCounterCheckBox.Pressed);
+            _cfg.SetCVar(CCVars.MoodVisualEffects, MoodVisualEffectsCheckBox.Pressed);
             _cfg.SetCVar(CCVars.ViewportWidth, (int) ViewportWidthSlider.Value);
 
             _cfg.SaveToFile();

@@ -11,3 +11,16 @@
     back:
     - RitualDagger
     - RunedMetal20
+
+# Traitors
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleBloodCultist
+  name: Blood Cultist Role
+#  description: mind-role-traitor-description
+  components:
+  - type: MindRole
+    antagPrototype: BloodCultist
+    exclusiveAntag: true
+    roleType: TeamAntagonist
+  - type: BloodCultistRole

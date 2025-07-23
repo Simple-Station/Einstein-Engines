@@ -64,5 +64,17 @@ namespace Content.Server.Shuttles.Components
 
         [DataField("angularDamping"), ViewVariables(VVAccess.ReadWrite)]
         public float AngularDamping = 0.05f;
+
+        /// <summary>
+        ///     How far from the shuttle's bounding box will it crush and destroy things?
+        /// </summary>
+        [DataField]
+        public float SmimshDistance = 0.2f;
+
+        /// <summary>
+        ///     Whether or not the shuttle calls the DoTheDinosaur function upon FTL'ing. I'm not explaining this, you owe it to yourself to do a code search for it.
+        /// </summary>
+        [DataField]
+        public bool DoTheDinosaur = true;
     }
 }

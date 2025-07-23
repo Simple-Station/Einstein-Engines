@@ -16,10 +16,5 @@ namespace Content.Shared.CombatMode
         ///     Probability for push/knockdown.
         /// </summary>
         public float PushProbability { get; init; }
-
-        /// <summary>
-        ///     Potential stamina damage if this disarm results in a shove.
-        /// </summary>
-        public float StaminaDamage { get; init; }
     }
 }

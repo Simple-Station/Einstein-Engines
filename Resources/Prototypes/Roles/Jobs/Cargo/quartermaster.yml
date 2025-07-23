@@ -3,34 +3,41 @@
   name: job-name-qm
   description: job-description-qm
   playTimeTracker: JobQuartermaster
-  antagAdvantage: 6 # DeltaV - Reduced TC: Head of Staff
   requirements:
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Foreigner
-        - ForeignerLight
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Foreigner
+    - ForeignerLight
+    - Muted
+  - !type:CharacterEmployerRequirement
+    employers:
+    - OrionExpress
+    - IdrisIncorporated
+    - NanoTrasen
   weight: 10
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"
+  requireAdminNotify: true
   supervisors: job-supervisors-captain
   canBeAntag: false
   access:
   - Cargo
   - Salvage
-  - Mail # Nyanotrasen - MailCarrier, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Cargo/mail-carrier.yml
+  - Mail
   - Quartermaster
   - Maintenance
+  - External
   - Command
-  - Orders # DeltaV - Orders, see Resources/Prototypes/DeltaV/Access/cargo.yml
-  - External # DeltaV - for promoting salvage specialists
+  - Orders
+  - External
   - Cryogenics
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
   - !type:AddComponentSpecial
     components:
-      - type: CommandStaff
+    - type: CommandStaff
   afterLoadoutSpecial:
   - !type:ModifyEnvirosuitSpecial
     charges: 8
@@ -42,19 +49,19 @@
   equipment:
     head: ClothingHeadHatBeretLogi
     jumpsuit: ClothingUniformJumpsuitQM
-    back: ClothingBackpackQuartermasterFilled
+    back: ClothingBackpackCargo
     shoes: ClothingShoesColorBrown
     id: QuartermasterPDA
-    ears: ClothingHeadsetQM
+    ears: ClothingHeadsetAltCargo
     belt: BoxFolderClipboard
     pocket1: AppraisalTool
-  innerClothingSkirt: ClothingUniformJumpskirtQM
-  satchel: ClothingBackpackSatchelQuartermasterFilled
-  duffelbag: ClothingBackpackDuffelQuartermasterFilled
+  storage:
+    back:
+    - Flash
 
 - type: startingGear
   id: QuartermasterPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitQM
     head: ClothingHeadEnvirohelmQM

@@ -1,0 +1,23 @@
+- type: entity
+  parent: MobTajaran
+  id: MobTajaranRandom
+  name: Urist McTajaran
+  suffix: Random Appearance
+  components:
+  - type: RandomHumanoidAppearance
+  - type: RandomMetadata
+    nameSegments:
+    - names_tajaran_first
+    - names_tajaran_last
+
+- type: entity
+  parent: MobVulpkanin
+  id: MobVulpkaninRandom
+  name: Urist McVulp
+  suffix: Random Appearance
+  components:
+  - type: RandomHumanoidAppearance
+  - type: RandomMetadata
+    nameSegments:
+    - names_vulpkanin_male
+    - names_vulpkanin_last

@@ -1,4 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.CodeAnalysis;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
@@ -60,7 +60,7 @@ public sealed class TextLinkTag : IMarkupTag
             handler.HandleClick(link);
             return;
         }
-        Logger.Warning($"Warning! No valid ILinkClickHandler found.");
+        Logger.GetSawmill("tilelink.clickhandler").Warning($"Warning! No valid ILinkClickHandler found.");
     }
 }
 

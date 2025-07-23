@@ -95,8 +95,6 @@ public sealed partial class AtmosphereSystem
                 newTileAtmosphere.Hotspot = tileAtmosphere.Hotspot;
                 newTileAtmosphere.HeatCapacity = tileAtmosphere.HeatCapacity;
                 newTileAtmosphere.Temperature = tileAtmosphere.Temperature;
-                newTileAtmosphere.PressureDifference = tileAtmosphere.PressureDifference;
-                newTileAtmosphere.PressureDirection = tileAtmosphere.PressureDirection;
 
                 // TODO ATMOS: Somehow force GasTileOverlaySystem to perform an update *right now, right here.*
                 // The reason why is that right now, gas will flicker until the next GasTileOverlay update.
@@ -270,7 +268,7 @@ public sealed partial class AtmosphereSystem
     {
         DebugTools.AssertNotNull(tile.Air);
         DebugTools.Assert(tile.Air?.Immutable == false );
-        Array.Clear(tile.MolesArchived);
+        tile.AirArchived = null;
         tile.ArchivedCycle = 0;
 
         var count = 0;

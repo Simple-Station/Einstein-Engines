@@ -62,6 +62,8 @@
       collection: HarpySqueak
     HarpyCaw:
       collection: HarpyCaws
+    HarpyHoot:
+      collection: HarpyHoots
     Chirp:
       collection: HarpyChirps
     Snarl:
@@ -72,12 +74,20 @@
       collection: VulpkaninWhines
     Howl:
       collection: VulpkaninHowls
+    Awoo:
+      collection: VulpkaninHowls
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Mars:
       collection: Mars
     Wurble:
       collection: Wurble
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
 
 - type: emoteSounds
   id: MaleVulpkanin
@@ -106,6 +116,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Growl:
       collection: VulpkaninGrowls
     Snarl:
@@ -116,6 +128,12 @@
       collection: VulpkaninWhines
     Howl:
       collection: VulpkaninHowls
+    Awoo:
+      collection: VulpkaninHowls
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
 
 - type: emoteSounds
   id: FemaleVulpkanin
@@ -144,6 +162,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Growl:
       collection: VulpkaninGrowls
     Snarl:
@@ -153,6 +173,30 @@
     Whine:
       collection: VulpkaninWhines
     Howl:
+      collection: VulpkaninHowls
+    Awoo:
+      collection: VulpkaninHowls
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
+
+- type: emoteSounds
+  id: MobDog
+  params:
+    variation: 0.125
+  sounds:
+    Growl:
+      collection: VulpkaninGrowls
+    Snarl:
+      collection: VulpkaninSnarls
+    Bark:
+      collection: VulpkaninBarks
+    Whine:
+      collection: VulpkaninWhines
+    Howl:
+      collection: VulpkaninHowls
+    Awoo:
       collection: VulpkaninHowls
 
 - type: emoteSounds
@@ -174,6 +218,8 @@
       collection: FemaleCry
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Sneeze:
       collection: MaleSneezes
     Cough:
@@ -182,3 +228,7 @@
       collection: MaleYawn
     Hiss:
       path: /Audio/Animals/snake_hiss.ogg
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp

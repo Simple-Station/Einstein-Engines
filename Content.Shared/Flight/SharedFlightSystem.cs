@@ -44,7 +44,8 @@ public abstract class SharedFlightSystem : EntitySystem
         RaiseNetworkEvent(new FlightEvent(GetNetEntity(uid), component.On, component.IsAnimated));
         _staminaSystem.ToggleStaminaDrain(uid, component.StaminaDrainRate, active, false);
         _movementSpeed.RefreshMovementSpeedModifiers(uid);
-        UpdateHands(uid, active);
+        if (component.NeedsHands == true)
+            UpdateHands(uid, active);
         Dirty(uid, component);
     }
 

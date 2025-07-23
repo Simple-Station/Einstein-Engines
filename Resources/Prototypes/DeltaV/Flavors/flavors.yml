@@ -11,11 +11,6 @@
   description: flavor-complex-sublime
 
 - type: flavor
-  id: holy
-  flavorType: Complex
-  description: flavor-complex-holy
-
-- type: flavor
   id: seeds
   flavorType: Base
   description: flavor-base-seeds
@@ -115,3 +110,86 @@
   id: arsonistsbrew
   flavorType: Complex
   description: flavor-complex-arsonistsbrew
+
+- type: flavor
+  id: blellow
+  flavorType: Complex
+  description: flavor-complex-blellow
+
+#Delta-V additional drink flavors
+
+- type: flavor
+  id: deadrum
+  flavorType: Complex
+  description: flavor-complex-deadrum
+
+- type: flavor
+  id: n-t-cahors
+  flavorType: Complex
+  description: flavor-complex-n-t-cahors
+
+- type: flavor
+  id: poison-wine
+  flavorType: Complex
+  description: flavor-complex-poison-wine
+
+- type: flavor
+  id: doctors-delight
+  flavorType: Complex
+  description: flavor-complex-doctors-delight
+
+- type: flavor
+  id: irish-cream
+  flavorType: Complex
+  description: flavor-complex-irish-cream
+
+- type: flavor
+  id: kira-special
+  flavorType: Complex
+  description: flavor-complex-kira-special
+
+- type: flavor
+  id: rewriter
+  flavorType: Complex
+  description: flavor-complex-rewriter
+
+- type: flavor
+  id: silencer
+  flavorType: Complex
+  description: flavor-complex-silencer
+
+- type: flavor
+  id: syndicate-bomb
+  flavorType: Complex
+  description: flavor-complex-syndicate-bomb
+
+- type: flavor
+  id: kvass
+  flavorType: Complex
+  description: flavor-complex-kvass
+
+- type: flavor
+  id: mothamphetamine
+  flavorType: Complex
+  description: flavor-complex-mothamphetamine
+
+- type: flavor
+  id: drgibbbloodred
+  flavorType: Complex
+  description: flavor-complex-drgibbbloodred
+
+# this is prefixed with "candy" to avoid clashes with potential future strawberries upstream
+- type: flavor
+  id: candystrawberry
+  flavorType: Complex
+  description: flavor-complex-candy-strawberry
+
+- type: flavor
+  id: candybubblegum
+  flavorType: Complex
+  description: flavor-complex-candy-bubblegum
+
+- type: flavor
+  id: doubleicecream
+  flavorType: Complex
+  description: flavor-complex-double-ice-cream

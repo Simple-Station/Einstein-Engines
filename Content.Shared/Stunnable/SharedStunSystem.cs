@@ -12,6 +12,8 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Standing;
+using Content.Shared.Jittering;
+using Content.Shared.Speech.EntitySystems;
 using Content.Shared.StatusEffect;
 using Content.Shared.Throwing;
 using Content.Shared.Whitelist;
@@ -20,6 +22,9 @@ using Robust.Shared.Containers;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
+using Content.Shared.Actions.Events;
+using Content.Shared.Climbing.Components;
+using Content.Shared._Goobstation.MartialArts.Components;
 
 namespace Content.Shared.Stunnable;
 
@@ -37,6 +42,9 @@ public abstract class SharedStunSystem : EntitySystem
     [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
     [Dependency] private readonly SharedLayingDownSystem _layingDown = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly SharedStutteringSystem _stutter = default!; // Stun meta
+    [Dependency] private readonly SharedJitteringSystem _jitter = default!; // Stun meta
+    [Dependency] private readonly ClothingModifyStunTimeSystem _modify = default!; // goob edit
 
     /// <summary>
     /// Friction modifier for knocked down players.
@@ -49,6 +57,7 @@ public abstract class SharedStunSystem : EntitySystem
         SubscribeLocalEvent<KnockedDownComponent, ComponentInit>(OnKnockInit);
         SubscribeLocalEvent<KnockedDownComponent, ComponentShutdown>(OnKnockShutdown);
         SubscribeLocalEvent<KnockedDownComponent, StandAttemptEvent>(OnStandAttempt);
+        SubscribeLocalEvent<KnockedDownComponent, DisarmAttemptEvent>(KnockdownStun);
 
         SubscribeLocalEvent<SlowedDownComponent, ComponentInit>(OnSlowInit);
         SubscribeLocalEvent<SlowedDownComponent, ComponentShutdown>(OnSlowRemove);
@@ -161,6 +170,7 @@ public abstract class SharedStunSystem : EntitySystem
     {
         if (component.LifeStage <= ComponentLifeStage.Running)
             args.Cancel();
+        component.FollowUp = false;
     }
 
     private void OnSlowInit(EntityUid uid, SlowedDownComponent component, ComponentInit args)
@@ -188,10 +198,17 @@ public abstract class SharedStunSystem : EntitySystem
     public bool TryStun(EntityUid uid, TimeSpan time, bool refresh,
         StatusEffectsComponent? status = null)
     {
+        time *= _modify.GetModifier(uid); // Goobstation
+
         if (time <= TimeSpan.Zero
             || !Resolve(uid, ref status, false)
             || !_statusEffect.TryAddStatusEffect<StunnedComponent>(uid, "Stun", time, refresh))
             return false;
+
+        // goob edit
+        _jitter.DoJitter(uid, time, refresh);
+        _stutter.DoStutter(uid, time, refresh);
+        // goob edit end
 
         var ev = new StunnedEvent();
         RaiseLocalEvent(uid, ref ev);
@@ -206,6 +223,8 @@ public abstract class SharedStunSystem : EntitySystem
     public bool TryKnockdown(EntityUid uid, TimeSpan time, bool refresh, DropHeldItemsBehavior behavior,
         StatusEffectsComponent? status = null)
     {
+        time *= _modify.GetModifier(uid); // Goobstation
+
         if (time <= TimeSpan.Zero || !Resolve(uid, ref status, false))
             return false;
 
@@ -296,6 +315,16 @@ public abstract class SharedStunSystem : EntitySystem
     private void OnKnockedTileFriction(EntityUid uid, KnockedDownComponent component, ref TileFrictionEvent args)
     {
         args.Modifier *= KnockDownModifier;
+    }
+
+    // should make it so that one time when somebody gets knocked over, you can push them for a short stun.
+    // On the slate for a rework once I make combos eat inputs, but that's not my goal right now.
+    private void KnockdownStun(Entity<KnockedDownComponent> ent, ref DisarmAttemptEvent args)
+    {
+        if (ent.Comp.FollowUp || !TryComp<ClimbingComponent>(ent, out var component) || !component.IsClimbing)
+            return;
+        TryParalyze(ent, TimeSpan.FromSeconds(1.5f), false);
+        ent.Comp.FollowUp = true;
     }
 
     #region Attempt Event Handling

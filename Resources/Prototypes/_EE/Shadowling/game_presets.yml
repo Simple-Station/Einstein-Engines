@@ -1,0 +1,18 @@
+- type: gamePreset
+  id: Shadowling
+  alias:
+  - Shadowling
+  - Shadowlings
+  - Slings
+  - Sling
+  name: shadowling-title
+  showInVote: true
+  description: shadowling-description
+  rules:
+  - Shadowling
+  - SubGamemodesRule
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+  - LavalandStormScheduler

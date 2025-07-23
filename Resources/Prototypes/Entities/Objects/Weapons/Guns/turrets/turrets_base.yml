@@ -1,0 +1,164 @@
+- type: entity
+  parent: BaseStructure
+  id: BaseWeaponTurret
+  name: turret
+  abstract: true
+  components:
+    - type: Clickable
+    - type: InteractionOutline
+    - type: Actions
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.45,-0.45,0.45,0.45"
+          density: 60
+          mask:
+            - MachineMask
+          layer:
+            - MachineLayer
+    - type: Sprite
+      sprite: Objects/Weapons/Guns/Turrets/turrets.rsi
+      drawdepth: Mobs
+      layers:
+        - state: syndie_lethal
+    - type: InteractionPopup
+      interactDelay: 0.2
+      successChance: 0.8
+      interactSuccessString: petting-success-generic
+      interactFailureString: petting-failure-generic
+      interactSuccessSound:
+        path: /Audio/Effects/double_beep.ogg
+    - type: CombatMode
+      toggleMouseRotator: false
+    - type: Damageable
+      damageContainer: Inorganic
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 200 # Was 600, most players were under the impression these were indestructible. It having an Inorganic damage container did not help.
+          behaviors:
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                WeaponTurretSyndicateBroken: # Make a broken turret when destroyed.
+                  min: 1
+                  max: 1
+        - trigger:
+            !type:DamageTrigger
+            damage: 90 # Rather than fully smash the turret at half health, make an indication that its taking damage.
+          # TODO: Construction graph
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalGlassBreak
+        - trigger:
+            !type:DamageTrigger
+            damage: 50 # Helps indicate that the turrets arent indestructible.
+          # TODO: Construction graph
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalGlassBreak
+    - type: HTN
+      rootTask:
+        task: TurretCompound
+      blackboard:
+        RotateSpeed: !type:Single
+          1.571 # At most 1 second to react to a target directly behind it, instead of instantaneous tracking
+        SoundTargetInLOS: !type:SoundPathSpecifier
+          path: /Audio/Effects/double_beep.ogg
+    - type: MouseRotator
+      angleTolerance: 5
+      rotationSpeed: 90
+      simple4DirMode: false
+    - type: NoRotateOnInteract
+    - type: NoRotateOnMove
+    - type: Input
+      context: "human"
+
+- type: entity
+  parent: BaseWeaponTurret
+  id: BaseWeaponBallisticTurret
+  description: A ballistic machine gun auto-turret.
+  name: ballistic turret
+  abstract: true
+  components:
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+    - type: Gun
+      fireRate: 6
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/gun_sentry.ogg
+      currentAngle: 25 # Fires first shot at min accuracy.
+      minAngle: 25 # Not guaranteed to hit their shots anymore.
+      maxAngle: 45 # Continuous fire makes their accuracy unreliable.
+    - type: BallisticAmmoProvider
+      proto: CartridgeCaselessRifle
+      capacity: 200
+
+- type: entity
+  parent: BaseWeaponBallisticTurret
+  id: BaseWeaponTurretMinigun
+  name: minigun turret
+  abstract: true
+  components:
+    - type: Gun
+      fireRate: 15
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/minigun.ogg
+      currentAngle: 45 # Fires first shot at min accuracy.
+      minAngle: 45 # Always cover the screen in bullets.
+      maxAngle: 45
+    # TODO: Power ammo provider?
+    - type: BallisticAmmoProvider
+      proto: CartridgeMinigun # BRRT FOOD
+      capacity: 1000 # Not infinite ammo, it should run out of ammo in a more reasonable timeframe.
+
+
+- type: entity
+  parent: BaseWeaponTurret
+  id: BaseWeaponEnergyTurret
+  name: laser turret
+  description: An auto-turret armed with a heavy laser. Its weapon will recharge while connected to an active power grid.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Turrets/sentry_turret.rsi
+    drawdepth: FloorObjects
+    granularLayersRendering: true
+    layers:
+    - state: support
+      renderingStrategy: NoRotation
+    - state: base
+    - state: lethal
+      shader: unshaded
+  - type: Gun
+    projectileSpeed: 15
+    fireRate: 1.5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletEnergyTurretLaser
+    fireCost: 100
+  - type: Battery
+    maxCharge: 2000
+    startingCharge: 0
+  - type: ApcPowerReceiverBattery
+    idleLoad: 5
+    batteryRechargeRate: 200
+    batteryRechargeEfficiency: 1.225
+  - type: ApcPowerReceiver
+    powerLoad: 5
+  - type: ExtensionCableReceiver
+  - type: HTN
+    rootTask:
+      task: EnergyTurretCompound

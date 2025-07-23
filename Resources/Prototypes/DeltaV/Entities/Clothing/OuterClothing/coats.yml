@@ -34,6 +34,7 @@
         Slash: 0.8
         Piercing: 0.8
         Heat: 0.8
+  - type: AllowSuitStorage
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -46,7 +47,8 @@
   - type: Clothing
     sprite: DeltaV/Clothing/OuterClothing/Coats/overcoat.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
   - type: Armor
     modifiers:
       coefficients:
@@ -64,7 +66,8 @@
   - type: Clothing
     sprite: DeltaV/Clothing/OuterClothing/Coats/greatcoat.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
   - type: Armor # MAKE SURE THE STATS ALIGN WITH SEC WINTER COAT!!!
     modifiers:
       coefficients:
@@ -72,6 +75,7 @@
         Slash: 0.85
         Piercing: 0.85
         Heat: 0.75
+  - type: AllowSuitStorage
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -84,7 +88,8 @@
   - type: Clothing
     sprite: DeltaV/Clothing/OuterClothing/Coats/leatherjacket.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
   - type: Armor
     modifiers:
       coefficients:
@@ -102,13 +107,43 @@
   - type: Clothing
     sprite: DeltaV/Clothing/OuterClothing/Coats/cybersunwindbreaker.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
   - type: Armor
     modifiers:
       coefficients:
         Blunt: 0.95
         Slash: 0.95
         Piercing: 0.95
+        Heat: 0.75
+  - type: AllowSuitStorage #Syndicate Windbreaker, so gun.
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatIdrisIncorporatedWindbreaker
+  name: idris incorporated windbreaker
+  description: A windbreaker, sporting the official heraldry of the Idris Incorporated Corporate Finances division. Its made of sturdy futuristic fiber.
+  components:
+  - type: Sprite
+    sprite: _EE/Clothing/idris_windbreaker.rsi
+    layers:
+    - state: icon
+    - state: icon-unshaded
+      shader: unshaded
+  - type: Clothing
+    sprite: _EE/Clothing/idris_windbreaker.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING-unshaded
+        shader: unshaded
+  - type: TemperatureProtection
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.9
         Heat: 0.75
 
 - type: entity
@@ -122,7 +157,8 @@
   - type: Clothing
     sprite: DeltaV/Clothing/OuterClothing/Coats/repcoat.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -135,5 +171,6 @@
   - type: Clothing
     sprite: DeltaV/Clothing/OuterClothing/Coats/cjrobe.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
 

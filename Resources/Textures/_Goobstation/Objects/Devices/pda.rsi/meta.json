@@ -8,13 +8,16 @@
   },
   "states": [
     {
+      "name": "pda"
+    },
+    {
       "name": "light_overlay"
     },
     {
       "name": "id_overlay"
     },
     {
-        "name": "pda-blueshield"
+      "name": "pda-blueshield"
     }
   ]
 }

@@ -11,7 +11,6 @@ namespace Content.Client.Flight;
 public sealed class FlyingVisualizerSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
-    [Dependency] private readonly SpriteSystem _spriteSystem = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -37,8 +36,7 @@ public sealed class FlyingVisualizerSystem : EntitySystem
         if (!Resolve(entity, ref entity.Comp, false))
             return;
 
-        if (!animateLayer)
-            entity.Comp.PostShader = shader;
+        entity.Comp.PostShader = shader;
 
         if (animateLayer && layer is not null)
             entity.Comp.LayerSetShader(layer.Value, shader);

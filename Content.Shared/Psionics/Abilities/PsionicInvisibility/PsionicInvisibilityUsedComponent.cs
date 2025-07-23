@@ -1,17 +1,19 @@
-using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
-namespace Content.Shared.Abilities.Psionics
-{
-    [RegisterComponent]
-    public sealed partial class PsionicInvisibilityUsedComponent : Component
-    {
-        [ValidatePrototypeId<EntityPrototype>]
-        public const string PsionicInvisibilityUsedActionPrototype = "ActionPsionicInvisibilityUsed";
-        [DataField("psionicInvisibilityUsedActionId",
-        customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-        public string? PsionicInvisibilityUsedActionId = "ActionPsionicInvisibilityUsed";
+using Robust.Shared.Audio;
 
-        [DataField("psionicInvisibilityUsedActionEntity")]
-        public EntityUid? PsionicInvisibilityUsedActionEntity;
-    }
+namespace Content.Shared.Abilities.Psionics;
+
+[RegisterComponent]
+public sealed partial class PsionicInvisibilityUsedComponent : Component
+{
+    [DataField]
+    public float StunTime = 4f;
+
+    [DataField]
+    public float DamageToStun = 5f;
+
+    [DataField]
+    public SoundSpecifier StartSound = new SoundPathSpecifier("/Audio/Psionics/wavy.ogg");
+
+    [DataField]
+    public SoundSpecifier EndSound = new SoundPathSpecifier("/Audio/Psionics/wavy.ogg");
 }

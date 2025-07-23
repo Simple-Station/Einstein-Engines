@@ -63,9 +63,9 @@ public sealed partial class ReverseEngineeringMachineMenu : FancyWindow
         if (state.ScanReport == null)
         {
             if (!state.CanScan) //no item
-                message.AddMarkup(Loc.GetString("analysis-console-info-no-artifact"));
+                message.AddMarkupOrThrow(Loc.GetString("analysis-console-info-no-artifact"));
             else if (state.Target == null) //ready to go
-                message.AddMarkup(Loc.GetString("analysis-console-info-ready"));
+                message.AddMarkupOrThrow(Loc.GetString("analysis-console-info-ready"));
         }
         else
         {

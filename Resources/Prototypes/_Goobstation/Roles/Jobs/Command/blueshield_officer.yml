@@ -22,6 +22,9 @@
         - Blindness
         - Pacifist
         - BrittleBoneDisease
+    - !type:CharacterEmployerRequirement
+      employers:
+      - NanoTrasen # BSO works directly for centcomm, they are not a contractor.
   weight: 20
   startingGear: BlueshieldOfficerGear
   icon: "JobIconBlueshield"
@@ -44,7 +47,7 @@
   - BlueshieldOfficer
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
+    implants: [ MindShieldImplant, BluespaceLifelineImplant ] #Force the implant since its manual activation now
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
@@ -64,10 +67,11 @@
     jumpsuit: ClothingUniformJumpsuitBlueshieldOfficer
     shoes: ClothingShoesBootsCombatFilled
     eyes: ClothingEyesGlassesMedSec
-    ears: ClothingHeadsetCentCom
+    ears: ClothingHeadsetAltCentCom
     gloves: ClothingHandsGlovesCombat
     id: BlueshieldPDA
     pocket1: UniqueBlueshieldOfficerLockerTeleporter
+#    pocket2: BluespaceLifelineImplanter    #Doesn't need this since its implanted roundstart
 
     #outerClothing: ClothingBlueshieldArmourVest
     #ears: ClothingHeadsetAltCommand
@@ -77,7 +81,7 @@
 
 - type: startingGear
   id: BlueshieldPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitBlueshield
     head: ClothingHeadEnvirohelmBlueshield

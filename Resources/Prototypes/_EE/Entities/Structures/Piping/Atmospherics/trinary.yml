@@ -1,0 +1,58 @@
+- type: entity
+  parent: GasFilter
+  id: GasFilterHighFlow
+  name: high flow gas filter
+  description: Very useful for filtering gases. It can handle three times the volume of a standard filter, which makes it suitable for use in Supermatter engines.
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: GasFilter
+      enabled: false
+      transferRate: 3000
+      maxTransferRate: 3000
+
+- type: entity
+  parent: GasFilterFlipped
+  id: GasFilterFlippedHighFlow
+  name: high flow gas filter
+  suffix: Flipped
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: GasFilter
+      enabled: false
+      transferRate: 3000
+      maxTransferRate: 3000
+
+- type: entity
+  parent: GasMixer
+  id: GasMixerHighFlow
+  name: high pressure gas mixer
+  description: Used for mixing gasses at the extreme pressures required by Supermatter engines.
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: GasMixer
+      maxTargetPressure: 13500
+
+- type: entity
+  parent: GasMixerFlipped
+  id: GasMixerFlippedHighFlow
+  name: high pressure gas mixer
+  suffix: Flipped
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: GasMixer
+      maxTargetPressure: 13500
+
+- type: entity
+  parent: PressureControlledValve
+  id: PressureControlledValveHighFlow
+  name: blow-off valve
+  description: A variant on a pneumatic valve designed for fire suppression of Supermatter engines. When the pressure in its flow direction exceeds the "reference" pressure on its side, the valve opens.
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: PressureControlledValve
+      maxTransferRate: 3000

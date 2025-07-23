@@ -1,5 +1,4 @@
 using Content.Server.Chemistry.Components;
-using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Labels;
 using Content.Server.Popups;
 using Content.Server.Storage.EntitySystems;
@@ -33,7 +32,7 @@ namespace Content.Server.Chemistry.EntitySystems
     {
         [Dependency] private readonly PopupSystem _popupSystem = default!;
         [Dependency] private readonly AudioSystem _audioSystem = default!;
-        [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
+        [Dependency] private readonly SharedSolutionContainerSystem  _solutionContainerSystem = default!;
         [Dependency] private readonly ItemSlotsSystem _itemSlotsSystem = default!;
         [Dependency] private readonly UserInterfaceSystem _userInterfaceSystem = default!;
         [Dependency] private readonly StorageSystem _storageSystem = default!;
@@ -64,7 +63,11 @@ namespace Content.Server.Chemistry.EntitySystems
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterOutputToBottleMessage>(OnOutputToBottleMessage);
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterSortMethodUpdated>(OnSortMethodUpdated);
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterTransferringAmountUpdated>(OnTransferringAmountUpdated);
+            SubscribeLocalEvent<ChemMasterComponent, ChemMasterAmountsUpdated>(OnAmountsUpdated);
         }
+
+        private void OnAmountsUpdated(Entity<ChemMasterComponent> ent, ref ChemMasterAmountsUpdated args) =>
+            ent.Comp.Amounts = args.Amounts;
 
         private void SubscribeUpdateUiState<T>(Entity<ChemMasterComponent> ent, ref T ev) =>
             UpdateUiState(ent);
@@ -97,7 +100,8 @@ namespace Content.Server.Chemistry.EntitySystems
                 chemMaster.PillDosageLimit,
                 updateLabel,
                 chemMaster.SortMethod,
-                chemMaster.TransferringAmount);
+                chemMaster.TransferringAmount,
+                chemMaster.Amounts);
 
             _userInterfaceSystem.SetUiState(owner, ChemMasterUiKey.Key, state);
         }
@@ -239,14 +243,9 @@ namespace Content.Server.Chemistry.EntitySystems
                 _storageSystem.Insert(container, item, out _, user: user, storage);
                 _labelSystem.Label(item, message.Label);
 
-                var hasItemSolution = _solutionContainerSystem.EnsureSolutionEntity(
-                    (item, null),
-                    SharedChemMaster.PillSolutionName,
-                    out var itemSolution,
-                    message.Dosage);
-
-                if (!hasItemSolution || itemSolution is null)
-                    continue;
+                _solutionContainerSystem.EnsureSolutionEntity(item, SharedChemMaster.PillSolutionName,out var itemSolution ,message.Dosage);
+                if (!itemSolution.HasValue)
+                    return;
 
                 _solutionContainerSystem.TryAddSolution(itemSolution.Value, withdrawal.SplitSolution(message.Dosage));
 
@@ -366,6 +365,7 @@ namespace Content.Server.Chemistry.EntitySystems
         private void OnTransferringAmountUpdated(EntityUid uid, ChemMasterComponent chemMaster, ChemMasterTransferringAmountUpdated args)
         {
             chemMaster.TransferringAmount = args.TransferringAmount;
+            ClickSound((uid, chemMaster));
             UpdateUiState((uid, chemMaster));
         }
     }

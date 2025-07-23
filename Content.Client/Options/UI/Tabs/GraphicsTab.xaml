@@ -42,6 +42,7 @@
             <CheckBox Name="ViewportLowResCheckBox" Text="{Loc 'ui-options-vp-low-res'}" />
             <CheckBox Name="ParallaxLowQualityCheckBox" Text="{Loc 'ui-options-parallax-low-quality'}" />
             <CheckBox Name="FpsCounterCheckBox" Text="{Loc 'ui-options-fps-counter'}" />
+            <CheckBox Name="MoodVisualEffectsCheckBox" Text="{Loc 'ui-options-mood-visual-effects'}" />
         </BoxContainer>
         <controls:StripeBack HasBottomEdge="False" HasMargins="False">
             <Button Name="ApplyButton"

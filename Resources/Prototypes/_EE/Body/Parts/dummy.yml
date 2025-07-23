@@ -1,0 +1,55 @@
+# A set of limbs that despawn immediately, used for things that spawn with missing limbs.
+
+- type: entity
+  id: BaseDummyPart
+  abstract: true
+  parent: BaseItem
+  components:
+  - type: DeleteOnMapInit
+  - type: Sprite
+    visible: false
+
+- type: entity
+  id: HeadDummy
+  name: "dummy head"
+  parent: [HeadHuman, BaseDummyPart]
+
+- type: entity
+  id: LeftArmDummy
+  name: "dummy left arm"
+  parent: [LeftArmHuman, BaseDummyPart]
+
+- type: entity
+  id: RightArmDummy
+  name: "dummy right arm"
+  parent: [RightArmHuman, BaseDummyPart]
+
+- type: entity
+  id: LeftHandDummy
+  name: "dummy left hand"
+  parent: [LeftHandHuman, BaseDummyPart]
+
+- type: entity
+  id: RightHandDummy
+  name: "dummy right hand"
+  parent: [RightHandHuman, BaseDummyPart]
+
+- type: entity
+  id: LeftLegDummy
+  name: "dummy left leg"
+  parent: [LeftLegHuman, BaseDummyPart]
+
+- type: entity
+  id: RightLegDummy
+  name: "dummy right leg"
+  parent: [RightLegHuman, BaseDummyPart]
+
+- type: entity
+  id: LeftFootDummy
+  name: "dummy left foot"
+  parent: [LeftFootHuman, BaseDummyPart]
+
+- type: entity
+  id: RightFootDummy
+  name: "dummy right foot"
+  parent: [RightFootHuman, BaseDummyPart]

@@ -120,7 +120,11 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
     ///     This should not be used if the entity is owned by the server. The server will otherwise
     ///     override this with the appearance data it sends over.
     /// </remarks>
-    public override void LoadProfile(EntityUid uid, HumanoidCharacterProfile? profile, HumanoidAppearanceComponent? humanoid = null)
+    public override void LoadProfile(EntityUid uid,
+        HumanoidCharacterProfile? profile,
+        HumanoidAppearanceComponent? humanoid = null,
+        bool loadExtensions = true,
+        bool generateLoadouts = true)
     {
         if (profile == null)
             return;
@@ -288,9 +292,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         SpriteComponent sprite)
     {
         if (!sprite.LayerMapTryGet(markingPrototype.BodyPart, out int targetLayer))
-        {
             return;
-        }
 
         visible &= !IsHidden(humanoid, markingPrototype.BodyPart);
         visible &= humanoid.BaseLayers.TryGetValue(markingPrototype.BodyPart, out var setting)
@@ -301,9 +303,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             var markingSprite = markingPrototype.Sprites[j];
 
             if (markingSprite is not SpriteSpecifier.Rsi rsi)
-            {
                 continue;
-            }
 
             var layerId = $"{markingPrototype.ID}-{rsi.RsiState}";
 
@@ -317,21 +317,19 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             sprite.LayerSetVisible(layerId, visible);
 
             if (!visible || setting == null) // this is kinda implied
-            {
                 continue;
-            }
 
             // Okay so if the marking prototype is modified but we load old marking data this may no longer be valid
             // and we need to check the index is correct.
             // So if that happens just default to white?
             if (colors != null && j < colors.Count)
-            {
                 sprite.LayerSetColor(layerId, colors[j]);
-            }
             else
-            {
                 sprite.LayerSetColor(layerId, Color.White);
-            }
+
+            var shaders = markingPrototype.Shaders;
+            if (shaders is not null && shaders.ContainsKey(rsi.RsiState))
+                sprite.LayerSetShader(layerId, shaders[rsi.RsiState]);
         }
     }
 

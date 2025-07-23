@@ -69,7 +69,7 @@
   components:
     - type: EntityTargetAction
       icon: Interface/VerbIcons/noospheric_zap.png
-      useDelay: 100
+      useDelay: 50
       range: 5
       itemIconStyle: BigAction
       blacklist:
@@ -173,7 +173,7 @@
             Burn: -10
         rotReduction: 10
         useDelay: 1
-        doRevive: true
+        doRevive: false
         powerName: Healing Word
         popupText: healing-word-begin
         playSound: true
@@ -234,6 +234,7 @@
     checkCanInteract: false
     event: !type:AnomalyPowerActionEvent
             settings:
+              checkInsulation: true
               powerName: "Shadeskip"
               minGlimmer: 6
               maxGlimmer: 8
@@ -243,17 +244,17 @@
               - settings:
                   spawnOnPulse: true
                   spawnOnSuperCritical: true
-                  minAmount: 5
-                  maxAmount: 8
-                  maxRange: 1.5
+                  minAmount: 20
+                  maxAmount: 25
+                  maxRange: 2.25
                 spawns:
-                - ShadowKudzuWeak
+                - ShadowKudzuTemp
               - settings:
                   spawnOnPulse: true
                   spawnOnSuperCritical: true
                   minAmount: 1
                   maxAmount: 1
-                  maxRange: 0.5
+                  maxRange: 2
                 spawns:
                 - EffectFlashShadeskip
 
@@ -269,6 +270,7 @@
       checkCanInteract: false
       event: !type:AnomalyPowerActionEvent
         settings:
+          checkInsulation: true
           powerName: "Telekinetic Pulse"
           overchargeFeedback: "shadeskip-overcharge-feedback" # The text behind this is fine.
           overchargeCooldown: 120
@@ -315,6 +317,7 @@
       checkCanInteract: false
       event: !type:AnomalyPowerActionEvent
         settings:
+          checkInsulation: true
           powerName: "Pyrokinetic Flare"
           minGlimmer: 3
           maxGlimmer: 5
@@ -385,3 +388,15 @@
           - PsionicInsulation
           - Mindbroken
       event: !type:AssayPowerActionEvent
+
+- type: entity
+  id: ActionAnoigo
+  name: action-name-anoigo
+  description: action-description-anoigo
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTargetAction
+    icon: { sprite: Interface/Actions/psionics.rsi, state: anoigo }
+    useDelay: 40
+    itemIconStyle: BigAction
+    event: !type:AnoigoPowerActionEvent

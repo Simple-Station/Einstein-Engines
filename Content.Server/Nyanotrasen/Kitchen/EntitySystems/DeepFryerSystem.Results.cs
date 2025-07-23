@@ -5,7 +5,6 @@ using Content.Server.Ghost.Roles.Components;
 using Content.Server.Kitchen.Components;
 using Content.Server.Nutrition.Components;
 using Content.Server.Nyanotrasen.Kitchen.Components;
-using Content.Server.Paper;
 using Content.Shared.Atmos.Rotting;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Chemistry.Components;
@@ -14,6 +13,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.NPC;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nyanotrasen.Kitchen.Components;
+using Content.Shared.Paper;
 using Robust.Shared.Random;
 
 namespace Content.Server.Nyanotrasen.Kitchen.EntitySystems;
@@ -54,7 +54,7 @@ public sealed partial class DeepFryerSystem
 
             // Ensure it's Food here, so it passes the whitelist.
             var mobFoodComponent = EnsureComp<FoodComponent>(mob);
-            _solutionContainerSystem.EnsureSolution(mob, mobFoodComponent.Solution, out var alreadyHadFood);
+            _solutionContainerSystem.EnsureSolution(mob, mobFoodComponent.Solution, out var alreadyHadFood, out _);
 
             if (!_solutionContainerSystem.TryGetSolution(mob, mobFoodComponent.Solution, out var mobFoodSolution))
                 return false;
@@ -166,8 +166,8 @@ public sealed partial class DeepFryerSystem
         }
 
         // Make sure there's enough room for the fryer solution.
-        var foodSolution = _solutionContainerSystem.EnsureSolution(item, foodComponent.Solution);
-        if (!_solutionContainerSystem.TryGetSolution(item, foodSolution.Name, out var foodContainer))
+        if (!_solutionContainerSystem.EnsureSolution(item, foodComponent.Solution, out var foodSolution)
+            || !_solutionContainerSystem.EnsureSolutionEntity(item, foodComponent.Solution, out var foodContainer))
             return;
 
         // The solution quantity is used to give the fried food an extra

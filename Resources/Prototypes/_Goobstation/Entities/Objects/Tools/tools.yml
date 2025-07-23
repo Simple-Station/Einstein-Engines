@@ -2,7 +2,7 @@
   name: handheld fax
   parent: BaseItem
   id: HandheldFax
-  description: A tool that can send ton of paper on Centcomm fax.
+  description: A hand-held fax machine provided to corporate liaisons.
   components:
   - type: Item
     size: Huge
@@ -57,13 +57,13 @@
   - type: MultiHandedItem
 
 - type: entity
-  name: nanotrasen representative handheld fax
+  name: corporate liaison handheld fax
   parent: HandheldFax
   id: HandheldFaxNanorep
-  suffix: Nanotrasen Representative
+  suffix: Corporate Liaison
   components:
   - type: FaxMachine
-    name: "Nanotrasen Representative"
+    name: "Corporate Liaison"
   - type: Sprite
     sprite: _Goobstation/Objects/Tools/handheld_fax.rsi
     drawdepth: SmallObjects

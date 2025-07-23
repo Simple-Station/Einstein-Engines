@@ -8,6 +8,67 @@
       id: LoadoutClothingSatchelBlueshield
     - type: loadout
       id: LoadoutClothingDuffelBlueshield
+    - type: loadout
+      id: LoadoutClothingModsuitBlueshield
+
+#- type: characterItemGroup
+#  id: LoadoutJOBBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutJOBEars
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutBlueshieldOfficerPrimary
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBSORifleChester
+    - type: loadout
+      id: LoadoutBSOGreatShield
+    - type: loadout
+      id: LoadoutBSORifleBRDIR25
+    - type: loadout
+      id: LoadoutBSOTerminus
+
+#- type: characterItemGroup
+#  id: LoadoutJOBEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutJOBGloves
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutBlueshieldOfficerHats
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingBlueshieldBeretNavy
+    - type: loadout
+      id: LoadoutClothingBlueshieldBeretOfficer
+    - type: loadout
+      id: LoadoutClothingBlueshieldCowboyHat
+
+#- type: characterItemGroup
+#  id: LoadoutJOBId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutJOBNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutJOBMask
+#  maxItems: 1
+#  items:
 
 - type: characterItemGroup
   id: LoadoutBlueshieldOfficerVests
@@ -28,6 +89,11 @@
     - type: loadout
       id: LoadoutClothingBlueshieldArmoredCoat
 
+#- type: characterItemGroup
+#  id: LoadoutJOBShoes
+#  maxItems: 1
+#  items:
+
 - type: characterItemGroup
   id: LoadoutBlueshieldOfficerUniforms
   maxItems: 1
@@ -36,14 +102,3 @@
       id: LoadoutClothingUniformJumpskirtBlueshieldOfficer
     - type: loadout
       id: LoadoutClothingUniformJumpsuitBlueshieldOfficer
-
-- type: characterItemGroup
-  id: LoadoutBlueshieldOfficerHats
-  maxItems: 1
-  items:
-    - type: loadout
-      id: LoadoutClothingBlueshieldBeretNavy
-    - type: loadout
-      id: LoadoutClothingBlueshieldBeretOfficer
-    - type: loadout
-      id: LoadoutClothingBlueshieldCowboyHat

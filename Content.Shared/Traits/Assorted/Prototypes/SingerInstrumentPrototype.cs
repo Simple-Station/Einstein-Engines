@@ -33,4 +33,10 @@ public sealed partial class SingerInstrumentPrototype : IPrototype
     // The below is server only, as it uses a server-BUI event !type
     [DataField(serverOnly: true, required: true)]
     public EntProtoId MidiActionId;
+
+    [DataField]
+    public bool AllowPercussion;
+
+    [DataField]
+    public bool AllowProgramChange;
 }

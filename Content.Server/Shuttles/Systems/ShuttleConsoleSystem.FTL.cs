@@ -63,7 +63,7 @@ public sealed partial class ShuttleConsoleSystem
 
     private void OnPositionFTLMessage(Entity<ShuttleConsoleComponent> entity, ref ShuttleConsoleFTLPositionMessage args)
     {
-        var mapUid = _mapManager.GetMapEntityId(args.Coordinates.MapId);
+        var mapUid = _mapSystem.GetMap(args.Coordinates.MapId);
 
         // If it's beacons only block all position messages.
         if (!Exists(mapUid) || _shuttle.IsBeaconMap(mapUid))
@@ -114,6 +114,12 @@ public sealed partial class ShuttleConsoleSystem
     /// </summary>
     private void ConsoleFTL(Entity<ShuttleConsoleComponent> ent, EntityCoordinates targetCoordinates, Angle targetAngle, MapId targetMap)
     {
+        if (ent.Comp.OneWayTrip && ent.Comp.OneWayTripTaken)
+        {
+            // TODO: Play a popup and a message in chat explaining you've already taken the one way trip.
+            return;
+        }
+
         var consoleUid = GetDroneConsole(ent.Owner);
 
         if (consoleUid == null)
@@ -143,7 +149,7 @@ public sealed partial class ShuttleConsoleSystem
         List<ShuttleExclusionObject>? exclusions = null;
         GetExclusions(ref exclusions);
 
-        if (!_shuttle.FTLFree(shuttleUid.Value, targetCoordinates, targetAngle, exclusions))
+        if (!_shuttle.FTLFree(shuttleUid.Value, targetCoordinates, targetAngle, exclusions, ent.Comp.FtlToPlanets, ent.Comp.IgnoreExclusionZones, ent.Comp.FTLRange))
         {
             return;
         }
@@ -163,5 +169,7 @@ public sealed partial class ShuttleConsoleSystem
         RaiseLocalEvent(ref ev);
 
         _shuttle.FTLToCoordinates(shuttleUid.Value, shuttleComp, adjustedCoordinates, targetAngle);
+        if (ent.Comp.OneWayTrip)
+            ent.Comp.OneWayTripTaken = true;
     }
 }

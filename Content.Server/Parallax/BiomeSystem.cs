@@ -11,6 +11,7 @@ using Content.Server.Shuttles.Systems;
 using Content.Shared.Atmos;
 using Content.Shared.Decals;
 using Content.Shared.Gravity;
+using Content.Shared.Light.Components;
 using Content.Shared.Parallax.Biomes;
 using Content.Shared.Parallax.Biomes.Layers;
 using Content.Shared.Parallax.Biomes.Markers;
@@ -39,6 +40,7 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
     [Dependency] private readonly IConsoleHost _console = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IParallelManager _parallel = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly AtmosphereSystem _atmos = default!;
@@ -119,23 +121,24 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
             SetSeed(uid, component, _random.Next());
         }
 
+        if (_proto.TryIndex(component.Template, out var biome))
+            SetTemplate(uid, component, biome);
+
         var xform = Transform(uid);
         var mapId = xform.MapID;
 
-        if (mapId != MapId.Nullspace && TryComp(uid, out MapGridComponent? mapGrid))
+        if (mapId != MapId.Nullspace && HasComp<MapGridComponent>(uid))
         {
             var setTiles = new List<(Vector2i Index, Tile tile)>();
 
-            foreach (var grid in _mapManager.GetAllMapGrids(mapId))
+            foreach (var grid in _mapManager.GetAllGrids(mapId))
             {
-                var gridUid = grid.Owner;
-
-                if (!_fixturesQuery.TryGetComponent(gridUid, out var fixtures))
+                if (!_fixturesQuery.TryGetComponent(grid.Owner, out var fixtures))
                     continue;
 
                 // Don't want shuttles flying around now do we.
-                _shuttles.Disable(gridUid);
-                var pTransform = _physics.GetPhysicsTransform(gridUid);
+                _shuttles.Disable(grid.Owner);
+                var pTransform = _physics.GetPhysicsTransform(grid.Owner);
 
                 foreach (var fixture in fixtures.Fixtures.Values)
                 {
@@ -149,6 +152,15 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
                 }
             }
         }
+    }
+
+    public void SetEnabled(Entity<BiomeComponent?> ent, bool enabled = true)
+    {
+        if (!Resolve(ent, ref ent.Comp) || ent.Comp.Enabled == enabled)
+            return;
+
+        ent.Comp.Enabled = enabled;
+        Dirty(ent, ent.Comp);
     }
 
     public void SetSeed(EntityUid uid, BiomeComponent component, int seed, bool dirty = true)
@@ -311,6 +323,9 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
 
         while (biomes.MoveNext(out var biome))
         {
+            if (biome.LifeStage < ComponentLifeStage.Running)
+                continue;
+
             _activeChunks.Add(biome, _tilePool.Get());
             _markerChunks.GetOrNew(biome);
         }
@@ -358,6 +373,10 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
 
         while (loadBiomes.MoveNext(out var gridUid, out var biome, out var grid))
         {
+            // If not MapInit don't run it.
+            if (biome.LifeStage < ComponentLifeStage.Running)
+                continue;
+
             if (!biome.Enabled)
                 continue;
 
@@ -612,14 +631,14 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
             var groupSize = rand.Next(layerProto.MinGroupSize, layerProto.MaxGroupSize + 1);
 
             // While we have remaining tiles keep iterating
-            while (groupSize >= 0 && remainingTiles.Count > 0)
+            while (groupSize > 0 && remainingTiles.Count > 0)
             {
                 var startNode = rand.PickAndTake(remainingTiles);
                 frontier.Clear();
                 frontier.Add(startNode);
 
                 // This essentially may lead to a vein being split in multiple areas but the count matters more than position.
-                while (frontier.Count > 0 && groupSize >= 0)
+                while (frontier.Count > 0 && groupSize > 0)
                 {
                     // Need to pick a random index so we don't just get straight lines of ores.
                     var frontierIndex = rand.Next(frontier.Count);
@@ -632,9 +651,6 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
                     {
                         for (var y = -1; y <= 1; y++)
                         {
-                            if (x != 0 && y != 0)
-                                continue;
-
                             var neighbor = new Vector2i(node.X + x, node.Y + y);
 
                             if (frontier.Contains(neighbor) || !remainingTiles.Contains(neighbor))
@@ -727,7 +743,10 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
         }
 
         if (modified.Count == 0)
+        {
+            component.ModifiedTiles.Remove(chunk);
             _tilePool.Return(modified);
+        }
 
         component.PendingMarkers.Remove(chunk);
     }
@@ -797,7 +816,7 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
                 // At least for now unless we do lookups or smth, only work with anchoring.
                 if (_xformQuery.TryGetComponent(ent, out var xform) && !xform.Anchored)
                 {
-                    _transform.AnchorEntity(ent, xform, gridUid, grid, indices);
+                    _transform.AnchorEntity((ent, xform), (gridUid, grid), indices);
                 }
 
                 loadedEntities.Add(ent, indices);
@@ -996,10 +1015,13 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
         // Midday: #E6CB8B
         // Moonlight: #2b3143
         // Lava: #A34931
-
         var light = EnsureComp<MapLightComponent>(mapUid);
         light.AmbientLightColor = mapLight ?? Color.FromHex("#D8B059");
         Dirty(mapUid, light, metadata);
+
+        EnsureComp<RoofComponent>(mapUid);
+
+        EnsureComp<LightCycleComponent>(mapUid);
 
         var moles = new float[Atmospherics.AdjustedNumberOfGases];
         moles[(int) Gas.Oxygen] = 21.824779f;

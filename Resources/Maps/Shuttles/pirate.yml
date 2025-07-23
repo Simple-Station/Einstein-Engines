@@ -1932,7 +1932,7 @@ entities:
     - type: Transform
       pos: -6.554,8.790821
       parent: 1
-- proto: ClothingHeadHatPirateTricord
+- proto: ClothingHeadHatPirateTricorn
   entities:
   - uid: 282
     components:

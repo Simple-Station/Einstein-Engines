@@ -1,3 +1,4 @@
+using Content.Shared._Goobstation.Flashbang;
 using Content.Shared.Actions;
 using Content.Shared.Inventory;
 using Robust.Shared.Audio.Systems;
@@ -26,6 +27,29 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
         SubscribeLocalEvent<TComp, GetItemActionsEvent>(OnGetItemActions);
         SubscribeLocalEvent<TComp, ComponentGetState>(OnGetState);
         SubscribeLocalEvent<TComp, ComponentHandleState>(OnHandleState);
+        SubscribeLocalEvent<TComp, FlashDurationMultiplierEvent>(OnGetFlashMultiplier);
+        SubscribeLocalEvent<TComp, InventoryRelayedEvent<FlashDurationMultiplierEvent>>(OnGetInventoryFlashMultiplier);
+    }
+
+    private void OnGetFlashMultiplier(Entity<TComp> ent, ref FlashDurationMultiplierEvent args)
+    {
+        if (!ent.Comp.IsEquipment)
+            args.Multiplier *= GetFlashMultiplier(ent);
+    }
+
+    private void OnGetInventoryFlashMultiplier(Entity<TComp> ent,
+        ref InventoryRelayedEvent<FlashDurationMultiplierEvent> args)
+    {
+        if (ent.Comp.IsEquipment)
+            args.Args.Multiplier *= GetFlashMultiplier(ent);
+    }
+
+    private float GetFlashMultiplier(TComp comp)
+    {
+        if (!comp.IsActive && (comp.PulseTime <= 0f || comp.PulseAccumulator >= comp.PulseTime))
+            return 1f;
+
+        return comp.FlashDurationMultiplier;
     }
 
     public override void FrameUpdate(float frameTime)
@@ -50,14 +74,14 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
 
         while (query.MoveNext(out var uid, out var comp))
         {
-            if (comp.PulseTime <= 0)
+            if (comp.PulseTime <= 0f || comp.PulseAccumulator >= comp.PulseTime)
                 continue;
 
             // The accumulator is for visually rendering the pulse strength decaying.
-            comp.PulseAccumulator += comp.PulseEndTime - _timing.CurTime;
+            comp.PulseAccumulator += frameTime;
 
             // This line is for the actual check that shuts off the pulse when its time is up.
-            if (_timing.CurTime < comp.PulseEndTime)
+            if (comp.PulseAccumulator < comp.PulseTime)
                 continue;
 
             Toggle(uid, comp, false, false);
@@ -103,8 +127,6 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
             return;
 
         component.IsActive = state.IsActive;
-        if (component.PulseTime != 0)
-            component.PulseEndTime = _timing.CurTime + TimeSpan.FromSeconds(component.PulseTime);
 
         RaiseSwitchableOverlayToggledEvent(uid,
             component.IsEquipment ? Transform(uid).ParentUid : uid,
@@ -127,7 +149,7 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
 
     private void OnInit(EntityUid uid, TComp component, ComponentInit args)
     {
-        component.PulseAccumulator = TimeSpan.FromSeconds(component.PulseTime);
+        component.PulseAccumulator = component.PulseTime;
     }
 
     private void OnMapInit(EntityUid uid, TComp component, MapInitEvent args)
@@ -153,9 +175,9 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
                 false);
         }
 
-        if (component.PulseTime > 0)
+        if (component.PulseTime > 0f)
         {
-            component.PulseAccumulator = activate ? TimeSpan.Zero : TimeSpan.FromSeconds(component.PulseTime);
+            component.PulseAccumulator = activate ? 0f : component.PulseTime;
             return;
         }
 

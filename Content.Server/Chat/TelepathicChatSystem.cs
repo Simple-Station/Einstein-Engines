@@ -80,6 +80,7 @@ public sealed partial class TelepathicChatSystem : EntitySystem
         return HasComp<TelepathyComponent>(entity)
             && !HasComp<PsionicsDisabledComponent>(entity)
             && !HasComp<PsionicInsulationComponent>(entity)
+            && !HasComp<SleepingComponent>(entity)
             && (!TryComp<MobStateComponent>(entity, out var mobstate) || mobstate.CurrentState == MobState.Alive);
     }
 

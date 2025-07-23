@@ -6,7 +6,7 @@
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpackBrigmedicFilled
+    - ClothingBackpackBrigmedic
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCorpsmanBackpacks
@@ -20,7 +20,7 @@
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpackSatchelBrigmedicFilled
+    - ClothingBackpackSatchelBrigmedic
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCorpsmanBackpacks
@@ -34,7 +34,7 @@
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpackDuffelBrigmedicFilled
+    - ClothingBackpackDuffelBrigmedic
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCorpsmanBackpacks
@@ -60,8 +60,31 @@
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutCrewMonitor
+  category: JobsSecurityCorpsman
+  cost: 6
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - HandheldCrewMonitor
 
 # Eyes
+- type: loadout
+  id: LoadoutClothingEyesGlassesCorpsman
+  category: JobsSecurityAUncategorized
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEyes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingEyesGlassesCorpsman
 
 # Gloves
 - type: loadout

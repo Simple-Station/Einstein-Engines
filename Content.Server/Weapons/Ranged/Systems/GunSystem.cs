@@ -23,6 +23,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Robust.Shared.Containers;
+using Content.Shared._Lavaland.Weapons.Ranged.Events;
 
 namespace Content.Server.Weapons.Ranged.Systems;
 
@@ -134,7 +135,7 @@ public sealed partial class GunSystem : SharedGunSystem
 
                     // Something like ballistic might want to leave it in the container still
                     if (!cartridge.DeleteOnSpawn && !Containers.IsEntityInContainer(ent!.Value))
-                        EjectCartridge(ent.Value, angle);
+                        EjectCartridge(ent.Value, angle, gunComp: gun);
 
                     Dirty(ent!.Value, cartridge);
                     break;
@@ -272,16 +273,45 @@ public sealed partial class GunSystem : SharedGunSystem
                 var spreadEvent = new GunGetAmmoSpreadEvent(ammoSpreadComp.Spread);
                 RaiseLocalEvent(gunUid, ref spreadEvent);
 
-                var angles = LinearSpread(mapAngle - spreadEvent.Spread / 2,
-                    mapAngle + spreadEvent.Spread / 2, ammoSpreadComp.Count);
+                var plusminusSpread = spreadEvent.Spread * gun.ShotgunSpreadMultiplier / 2;
+                var projectileCount = (int) (ammoSpreadComp.Count * gun.ShotgunProjectileCountModifier);
 
-                ShootOrThrow(ammoEnt, angles[0].ToVec(), gunVelocity, gun, gunUid, user);
+                if (gun.UniformSpread)
+                {
+                    var angles = LinearSpread(mapAngle - plusminusSpread,
+                        mapAngle + plusminusSpread, ammoSpreadComp.Count);
+
+                    ShootOrThrow(ammoEnt, angles[0].ToVec(), gunVelocity, gun, gunUid, user);
+                    shotProjectiles.Add(ammoEnt);
+
+                    for (var i = 1; i < projectileCount; i++)
+                    {
+                        var newuid = Spawn(ammoSpreadComp.Proto, fromEnt);
+                        // Lavaland Change: Raise event when a projectile/pellet is fired from a gun.
+                        RaiseLocalEvent(gunUid, new ProjectileShotEvent()
+                        {
+                            FiredProjectile = newuid
+                        });
+                        ShootOrThrow(newuid, angles[i].ToVec(), gunVelocity, gun, gunUid, user);
+                        shotProjectiles.Add(newuid);
+                    }
+                    goto SpreadBreak;
+                }
+
+                // !WHY DOES THE FIRST ONE NEED TO BE SPAWNED SEPARATELY? IF I DON'T DO THIS, THE FIRST ONE HITS THE USER!
+                ShootOrThrow(ammoEnt, mapAngle.ToVec(), gunVelocity, gun, gunUid, user);
                 shotProjectiles.Add(ammoEnt);
 
-                for (var i = 1; i < ammoSpreadComp.Count; i++)
+                for (var i = 1; i < projectileCount; i++)
                 {
+                    var angle = Random.NextAngle(mapAngle - plusminusSpread, mapAngle + plusminusSpread);
                     var newuid = Spawn(ammoSpreadComp.Proto, fromEnt);
-                    ShootOrThrow(newuid, angles[i].ToVec(), gunVelocity, gun, gunUid, user);
+                    // Lavaland Change: Raise event when a projectile/pellet is fired from a gun.
+                    RaiseLocalEvent(gunUid, new ProjectileShotEvent()
+                    {
+                        FiredProjectile = newuid
+                    });
+                    ShootOrThrow(newuid, angle.ToVec(), gunVelocity, gun, gunUid, user);
                     shotProjectiles.Add(newuid);
                 }
             }
@@ -291,6 +321,7 @@ public sealed partial class GunSystem : SharedGunSystem
                 shotProjectiles.Add(ammoEnt);
             }
 
+        SpreadBreak:
             MuzzleFlash(gunUid, ammoComp, mapDirection.ToAngle(), user);
             Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
         }
@@ -305,8 +336,7 @@ public sealed partial class GunSystem : SharedGunSystem
             Dirty(uid, targeted);
         }
 
-        // Do a throw
-        if (!HasComp<ProjectileComponent>(uid))
+        if (!TryComp(uid, out ProjectileComponent? projectileComp))
         {
             RemoveShootable(uid);
             // TODO: Someone can probably yeet this a billion miles so need to pre-validate input somewhere up the call stack.
@@ -314,6 +344,7 @@ public sealed partial class GunSystem : SharedGunSystem
             return;
         }
 
+        projectileComp.Damage *= gun.DamageModifier;
         ShootProjectile(uid, mapDirection, gunVelocity, gunUid, user, gun.ProjectileSpeedModified);
     }
 

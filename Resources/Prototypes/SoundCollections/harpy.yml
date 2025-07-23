@@ -249,3 +249,11 @@
     - /Audio/Voice/Talk/pai.ogg
     - /Audio/Voice/Talk/pai_ask.ogg
     - /Audio/Voice/Talk/pai_exclaim.ogg
+
+- type: soundCollection
+  id: HarpyHoots
+  files:
+    - /Audio/Effects/Emotes/harpyHoot1.ogg
+    - /Audio/Effects/Emotes/harpyHoot2.ogg
+    - /Audio/Effects/Emotes/harpyHoot3.ogg
+    - /Audio/Effects/Emotes/harpyHoot4.ogg

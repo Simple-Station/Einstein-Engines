@@ -1,11 +1,15 @@
 
 gun-selected-mode-examine = Current selected fire mode is [color={$color}]{$mode}[/color].
-gun-fire-rate-examine = Fire rate is [color={$color}]{$fireRate}[/color] per second.
+gun-fire-rate-examine = Fire rate is [color={$color}]{$fireRate}[/color] rounds per minute.
+gun-burst-fire-rate-examine = Burst fire rate is [color={$color}]{$fireRate}[/color] rounds per minute.
+gun-burst-fire-burst-count = It can be set to fire in [color={$color}]{$burstcount}[/color] round bursts.
+gun-damage-modifier-examine = Its shots deal [color={$color}]{$damage}x[/color] damage.
 gun-selector-verb = Change to {$mode}
 gun-selected-mode = Selected {$mode}
 gun-disabled = You can't use guns!
 gun-clumsy = The gun blows up in your face!
 gun-set-fire-mode = Set to {$mode}
+gun-magazine-whitelist-fail = That won't fit into the gun!
 
 # SelectiveFire
 gun-SemiAuto = semi-auto

@@ -1,0 +1,8 @@
+# For faction clothing related to the Biesel Republic
+# Lore Info Link
+- type: entity
+  id: TCFLInfo
+  abstract: true
+  components:
+    - type: GuideHelp
+      guides: [TCFL]

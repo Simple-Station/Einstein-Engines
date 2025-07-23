@@ -1,6 +1,6 @@
 - type: entity
   name: bow
-  parent: BaseItem
+  parent: [BaseItem, BaseMinorContraband]
   id: BaseBow
   description: The original rooty tooty point and shooty.
   abstract: true
@@ -45,6 +45,8 @@
       projectiles: !type:ContainerSlot
   - type: ContainerAmmoProvider
     container: projectiles
+  - type: UnwieldOnShoot # Goobstation
+  - type: UseDelayBlockShoot # Goobstation
 
 - type: entity
   id: BowImprovised

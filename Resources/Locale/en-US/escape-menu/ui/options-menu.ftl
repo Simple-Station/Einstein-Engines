@@ -101,6 +101,7 @@ ui-options-vp-vertical-fit-tooltip = When enabled, the main viewport will ignore
 ui-options-vp-low-res = Low-resolution viewport
 ui-options-parallax-low-quality = Low-quality Parallax (background)
 ui-options-fps-counter = Show FPS counter
+ui-options-mood-visual-effects = Enable the mood system's visual effects
 ui-options-vp-width = Viewport width: { $width }
 ui-options-hud-layout = HUD layout:
 
@@ -108,6 +109,7 @@ ui-options-hud-layout = HUD layout:
 
 ui-options-binds-reset-all = Reset ALL keybinds
 ui-options-binds-explanation = Click to change binding, right-click to clear
+ui-options-binds-search = Search
 ui-options-unbound = Unbound
 ui-options-bind-reset = Reset
 ui-options-key-prompt = Press a key...

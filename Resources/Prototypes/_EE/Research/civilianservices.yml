@@ -1,0 +1,17 @@
+# Tier 1
+
+# Tier 2
+
+- type: technology
+  id: PositronicInterfacing
+  name: research-technology-positronic-interfacing
+  icon:
+    sprite: _EE/Objects/Specific/Robotics/reversemmi.rsi
+    state: icon
+  discipline: CivilianServices
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - ReverseMMI
+
+# Tier 3

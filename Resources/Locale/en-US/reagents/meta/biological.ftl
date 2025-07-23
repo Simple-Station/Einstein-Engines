@@ -30,3 +30,9 @@ reagent-desc-vomit = You can see a few chunks of someone's last meal in it.
 
 reagent-name-grey-matter = grey matter
 reagent-desc-grey-matter = Thought juice, the stuff that leaks out of your ears.
+
+reagent-name-black-blood = black blood
+reagent-desc-black-blood = This is definitely not ketchup.
+
+reagent-name-ipc-coolant = coolant
+reagent-desc-ipc-coolant = A slick mixture of water, emulsifier, oil, and a host of vile tasting chemicals.

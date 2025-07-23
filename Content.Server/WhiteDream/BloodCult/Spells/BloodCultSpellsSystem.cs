@@ -9,6 +9,7 @@ using Content.Shared.Actions.Events;
 using Content.Shared.Clothing.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Inventory;
+using Content.Shared.Magic;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Popups;
 using Content.Shared.RadialSelector;
@@ -34,6 +35,7 @@ public sealed class BloodCultSpellsSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
+    [Dependency] private readonly SharedMagicSystem _magicSystem = default!;
 
     public override void Initialize()
     {
@@ -177,6 +179,8 @@ public sealed class BloodCultSpellsSystem : EntitySystem
         if (ev.Handled)
             return;
 
+
+
         foreach (var (slot, protoId) in ev.Prototypes)
         {
             var entity = Spawn(protoId, _transform.GetMapCoordinates(ev.Performer));
@@ -188,11 +192,13 @@ public sealed class BloodCultSpellsSystem : EntitySystem
                 return;
             }
 
-            if (!TryComp(entity, out ClothingComponent? _))
+            if (!TryComp(entity, out ClothingComponent? clothing)
+                || !_inventory.TryUnequip(ev.Performer, slot, clothing: clothing)
+                || !_inventory.TryEquip(ev.Performer, entity, slot, clothing: clothing, force: true))
                 continue;
 
-            _inventory.TryUnequip(ev.Performer, slot);
-            _inventory.TryEquip(ev.Performer, entity, slot, force: true);
+            if (ev.Speech is not null)
+                _magicSystem.Speak(ev.Performer, ev.Speech, ev.InvokeChatType);
         }
 
         ev.Handled = true;

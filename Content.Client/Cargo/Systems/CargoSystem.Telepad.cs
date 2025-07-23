@@ -64,33 +64,34 @@ public sealed partial class CargoSystem
 
     private void OnChangeData(EntityUid uid, SpriteComponent? sprite = null)
     {
-        if (!Resolve(uid, ref sprite))
+        if (!Resolve(uid, ref sprite)
+            || !EntityManager.TryGetComponent(uid, out AnimationPlayerComponent? animation))
             return;
 
+        var entity = new Entity<AnimationPlayerComponent>(uid, animation);
         _appearance.TryGetData<CargoTelepadState?>(uid, CargoTelepadVisuals.State, out var state);
-        AnimationPlayerComponent? player = null;
 
         switch (state)
         {
             case CargoTelepadState.Teleporting:
-                if (_player.HasRunningAnimation(uid, TelepadBeamKey))
+                if (_player.HasRunningAnimation(uid, animation, TelepadBeamKey))
                     return;
-                _player.Stop(uid, player, TelepadIdleKey);
-                _player.Play(uid, player, CargoTelepadBeamAnimation, TelepadBeamKey);
+                _player.Stop(entity, animation, TelepadIdleKey);
+                _player.Play(entity, CargoTelepadBeamAnimation, TelepadBeamKey);
                 break;
             case CargoTelepadState.Unpowered:
                 sprite.LayerSetVisible(CargoTelepadLayers.Beam, false);
-                _player.Stop(uid, player, TelepadBeamKey);
-                _player.Stop(uid, player, TelepadIdleKey);
+                _player.Stop(uid, animation, TelepadBeamKey);
+                _player.Stop(uid, animation, TelepadIdleKey);
                 break;
             default:
                 sprite.LayerSetVisible(CargoTelepadLayers.Beam, true);
 
-                if (_player.HasRunningAnimation(uid, player, TelepadIdleKey) ||
-                    _player.HasRunningAnimation(uid, player, TelepadBeamKey))
+                if (_player.HasRunningAnimation(uid, animation, TelepadIdleKey) ||
+                    _player.HasRunningAnimation(uid, animation, TelepadBeamKey))
                     return;
 
-                _player.Play(uid, player, CargoTelepadIdleAnimation, TelepadIdleKey);
+                _player.Play(entity, CargoTelepadIdleAnimation, TelepadIdleKey);
                 break;
         }
     }

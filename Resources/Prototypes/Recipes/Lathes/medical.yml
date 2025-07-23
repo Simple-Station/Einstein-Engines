@@ -270,3 +270,11 @@
   materials:
     Steel: 200
     Plasma: 50
+
+- type: latheRecipe
+  id: SyringeCase
+  result: SyringeCase
+  category: Tools
+  completetime: 2
+  materials:
+    Plastic: 100

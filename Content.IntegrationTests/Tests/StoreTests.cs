@@ -5,6 +5,7 @@ using Content.Server.Store.Systems;
 using Content.Server.Traitor.Uplink;
 using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;
+using Content.Shared.Mind;
 using Content.Shared.Store;
 using Content.Shared.Store.Components;
 using Content.Shared.StoreDiscount.Components;
@@ -64,6 +65,7 @@ public sealed class StoreTests
         await server.WaitAssertion(() =>
         {
             var invSystem = entManager.System<InventorySystem>();
+            var mindSystem = entManager.System<SharedMindSystem>();
 
             human = entManager.SpawnEntity("HumanUniformDummy", coordinates);
             uniform = entManager.SpawnEntity("UniformDummy", coordinates);
@@ -72,18 +74,21 @@ public sealed class StoreTests
             Assert.That(invSystem.TryEquip(human, uniform, "jumpsuit"));
             Assert.That(invSystem.TryEquip(human, pda, "id"));
 
-            FixedPoint2 originalBalance = 20;
+            var mind = mindSystem.CreateMind(null);
+            mindSystem.TransferTo(mind, human, mind: mind);
+
+            FixedPoint2 originalBalance = 1000;
             uplinkSystem.AddUplink(human, originalBalance, null, true);
 
             var storeComponent = entManager.GetComponent<StoreComponent>(pda);
             var discountComponent = entManager.GetComponent<StoreDiscountComponent>(pda);
             Assert.That(
                 discountComponent.Discounts,
-                Has.Exactly(3).Items,
-                $"After applying discount total discounted items count was expected to be '3' "
+                Has.Exactly(6).Items,
+                $"After applying discount total discounted items count was expected to be '6' "
                 + $"but was actually {discountComponent.Discounts.Count}- this can be due to discount "
                 + $"categories settings (maxItems, weight) not being realistically set, or default "
-                + $"discounted count being changed from '3' in StoreDiscountSystem.InitializeDiscounts."
+                + $"discounted count being changed from '6' in StoreDiscountSystem.InitializeDiscounts."
             );
             var discountedListingItems = storeComponent.FullListingsCatalog
                                                        .Where(x => x.IsCostModified)
@@ -96,6 +101,10 @@ public sealed class StoreTests
                 + $"items that are marked as discounted, or they don't have flag '{nameof(ListingDataWithCostModifiers.IsCostModified)}'"
                 + $"flag as 'true'. This marks the fact that cost modifier of discount is not applied properly!"
             );
+
+            // The storeComponent returns discounted items with conditions randomly, so we remove these to sanitize the data.
+            foreach (var discountedItem in discountedListingItems)
+                discountedItem.Conditions = null;
 
             // Refund action requests re-generation of listing items so we will be re-acquiring items from component a lot of times.
             var itemIds = discountedListingItems.Select(x => x.ID);
@@ -112,7 +121,7 @@ public sealed class StoreTests
 
                     var prototypeCost = prototype.Cost[UplinkSystem.TelecrystalCurrencyPrototype];
                     var discountDownTo = prototype.DiscountDownTo[UplinkSystem.TelecrystalCurrencyPrototype];
-
+                    TestContext.Out.WriteLineAsync($"{originalBalance} {plainDiscountedCost}");
                     Assert.That(plainDiscountedCost.Value, Is.GreaterThanOrEqualTo(discountDownTo.Value), $"Expected discounted cost to be greater then DiscountDownTo value. ({itemId})");
                     Assert.That(plainDiscountedCost.Value, Is.LessThan(prototypeCost.Value), $"Expected discounted cost to be lower then prototype cost. ({itemId})");
 
@@ -135,6 +144,9 @@ public sealed class StoreTests
 
                     // get refreshed item after refund re-generated items
                     discountedListingItem = storeComponent.FullListingsCatalog.First(x => x.ID == itemId);
+
+                    // The storeComponent can give a discounted item a condition at random, so we remove it to sanitize the data.
+                    discountedListingItem.Conditions = null;
 
                     var afterRefundBalance = storeComponent.Balance[UplinkSystem.TelecrystalCurrencyPrototype];
                     Assert.That(afterRefundBalance.Value, Is.EqualTo(originalBalance.Value), $"Expected refund to return all discounted cost value. ({itemId})");

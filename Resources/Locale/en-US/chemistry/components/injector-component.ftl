@@ -2,14 +2,19 @@
 
 injector-draw-text = Draw
 injector-inject-text = Inject
+injector-spent-text = Spent
 injector-invalid-injector-toggle-mode = Invalid
 injector-volume-label = Volume: [color=white]{$currentVolume}/{$totalVolume}[/color]
     Mode: [color=white]{$modeString}[/color] ([color=white]{$transferVolume}u[/color])
+
+onetime-injector-simple-volume-label = Volume: [color=white]{$currentVolume}[/color]
+    Mode: [color=white]{$modeString}[/color]
 
 ## Entity
 
 injector-component-drawing-text = Now drawing
 injector-component-injecting-text = Now injecting
+injector-component-injecting-locked-text = Locked to inject
 injector-component-cannot-transfer-message = You aren't able to transfer to {$target}!
 injector-component-cannot-draw-message = You aren't able to draw from {$target}!
 injector-component-cannot-inject-message = You aren't able to inject to {$target}!

@@ -23,3 +23,11 @@
   license: "CC-BY-SA-3.0"
   copyright: "Taken from https://github.com/infinitystation/Baystation12/commit/e639451bef42230a3838c085a6c782376e693499. No changes were made"
   source: "https://github.com/infinitystation/Baystation12"
+- files:
+    - harpyHoot1.ogg
+    - harpyHoot2.ogg
+    - harpyHoot3.ogg
+    - harpyHoot4.ogg
+  license: "CC-BY-NC-4.0"
+  copyright: "Taken from https://pixabay.com/sound-effects/owl-hooting-223549/ & https://pixabay.com/sound-effects/owl-humanatone-102805/. Volume lowered for audio balancing purposes and converted to mono."
+  source: "https://pixabay.com/sound-effects/"

@@ -35,7 +35,7 @@
     energy: 3
     color: "#FF6F00"
   - type: Damageable
-    damageContainer: Inorganic
+    damageContainer: StructuralInorganic
     damageModifierSet: Metallic
   - type: Destructible
     thresholds:
@@ -46,3 +46,6 @@
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
   - type: AlwaysHot
+  - type: Construction # Frontier
+    graph: FiresGraph # Frontier
+    node: FireplaceNode # Frontier 

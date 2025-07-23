@@ -610,6 +610,7 @@ entities:
             201: -5.144518,-9.631263
             202: -6.415352,-11.297929
     - type: GridAtmosphere
+      simulatedTurf: false
       version: 2
       data:
         tiles:

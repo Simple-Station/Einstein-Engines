@@ -30,6 +30,8 @@ public sealed partial class NpcFactionSystem : EntitySystem
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnProtoReload);
 
         InitializeException();
+        InitializeCore();
+        InitializeItems();
         RefreshFactions();
     }
 

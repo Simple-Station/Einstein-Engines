@@ -76,8 +76,8 @@
     contents:
     - id: ClothingHeadHatPwig
     - id: Musket
-    - id: CartridgeAntiMateriel
-      amount: 2
+    - id: CartridgeMusket
+      amount: 4
     - id: PaperMailNTMusket
 
 # Delta Mail

@@ -114,7 +114,8 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
             _configurator = configurator;
             _keyBindingName = keyBindingName;
             _label = new RichTextLabel { StyleClasses = { StyleNano.StyleClassItemStatus } };
-            AddChild(_label);
+            if (_configurator.ShowLabel) // Shitmed - Starlight Abductors: Allow hiding the label on multitools that dont need List mode.
+                AddChild(_label);
         }
 
         protected override void FrameUpdate(FrameEventArgs args)
@@ -125,6 +126,9 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
                 return;
 
             _linkModeActive = _configurator.LinkModeActive;
+
+            if (!_configurator.ShowLabel) // Shitmed - Starlight Abductors: Allow hiding the label on multitools that dont need List mode.
+                return;
 
             var modeLocString = _linkModeActive??false
                 ? "network-configurator-examine-mode-link"
@@ -139,11 +143,13 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
 
 public sealed class ClearAllNetworkLinkOverlays : IConsoleCommand
 {
+    [Dependency] private readonly IEntityManager _e = default!;
+
     public string Command => "clearnetworklinkoverlays";
     public string Description => "Clear all network link overlays.";
     public string Help => Command;
     public void Execute(IConsoleShell shell, string argStr, string[] args)
     {
-        IoCManager.Resolve<IEntityManager>().System<NetworkConfiguratorSystem>().ClearAllOverlays();
+        _e.System<NetworkConfiguratorSystem>().ClearAllOverlays();
     }
 }

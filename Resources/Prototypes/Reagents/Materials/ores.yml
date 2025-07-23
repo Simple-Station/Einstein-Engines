@@ -95,3 +95,12 @@
   icon: { sprite: Objects/Materials/ore.rsi, state: normality }
   color: "#53a9ff"
   price: 7.5
+
+- type: material
+  id: RawTungsten
+  stackEntity: TungstenOre1
+  name: materials-raw-tungsten
+  unit: materials-unit-chunk
+  icon: { sprite: Objects/Materials/ore.rsi, state: tungsten }
+  color: "#FFD700"
+  price: 0.5

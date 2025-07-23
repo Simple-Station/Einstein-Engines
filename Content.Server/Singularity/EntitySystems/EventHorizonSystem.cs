@@ -26,13 +26,14 @@ namespace Content.Server.Singularity.EntitySystems;
 public sealed class EventHorizonSystem : SharedEventHorizonSystem
 {
     #region Dependencies
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IMapManager _mapMan = default!;
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
+    [Dependency] private readonly EntityLookupSystem _entityLookupSystem = default!;
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly IAdminLogManager _adminLogManager = default!;
     [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
-    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
+    [Dependency] private readonly SharedPhysicsSystem _physicsSystem = default!;
     [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
+    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!;
     #endregion Dependencies
 
@@ -62,7 +63,7 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
 
     private void OnHorizonMapInit(EntityUid uid, EventHorizonComponent component, MapInitEvent args)
     {
-        component.NextConsumeWaveTime = _timing.CurTime;
+        component.NextConsumeWaveTime = _gameTiming.CurTime;
     }
 
     public override void Shutdown()
@@ -82,7 +83,7 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
         var query = EntityQueryEnumerator<EventHorizonComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var eventHorizon, out var xform))
         {
-            var curTime = _timing.CurTime;
+            var curTime = _gameTiming.CurTime;
             if (eventHorizon.NextConsumeWaveTime <= curTime)
                 Update(uid, eventHorizon, xform);
         }
@@ -125,24 +126,17 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
     /// </summary>
     public void ConsumeEntity(EntityUid hungry, EntityUid morsel, EventHorizonComponent eventHorizon, BaseContainer? outerContainer = null)
     {
-        if (!EntityManager.IsQueuedForDeletion(morsel) // I saw it log twice a few times for some reason?
-        && (HasComp<MindContainerComponent>(morsel)
+        if (EntityManager.IsQueuedForDeletion(morsel)) // already handled, and we're substepping
+            return;
+
+        if (HasComp<MindContainerComponent>(morsel)
             || _tagSystem.HasTag(morsel, "HighRiskItem")
-            || HasComp<ContainmentFieldGeneratorComponent>(morsel)))
+            || HasComp<ContainmentFieldGeneratorComponent>(morsel))
         {
-            _adminLogger.Add(LogType.EntityDelete, LogImpact.Extreme, $"{ToPrettyString(morsel)} entered the event horizon of {ToPrettyString(hungry)} and was deleted");
+            _adminLogManager.Add(LogType.EntityDelete, LogImpact.Extreme, $"{ToPrettyString(morsel)} entered the event horizon of {ToPrettyString(hungry)} and was deleted");
         }
 
         EntityManager.QueueDeleteEntity(morsel);
-
-        if (eventHorizon.InheritMomentum && TryComp<PhysicsComponent>(hungry, out var thisPhysics) && TryComp<PhysicsComponent>(morsel, out var otherPhysics))
-        {
-            var impulse = (otherPhysics.LinearVelocity - thisPhysics.LinearVelocity)
-                * otherPhysics.FixturesMass
-                * thisPhysics.FixturesMass / (thisPhysics.FixturesMass + otherPhysics.FixturesMass); // Accounts for the expected mass change from consuming the object
-            _physics.ApplyLinearImpulse(hungry, impulse, body: thisPhysics);
-        }
-
         var evSelf = new EntityConsumedByEventHorizonEvent(morsel, hungry, eventHorizon, outerContainer);
         var evEaten = new EventHorizonConsumedEntityEvent(morsel, hungry, eventHorizon, outerContainer);
         RaiseLocalEvent(hungry, ref evSelf);
@@ -181,13 +175,13 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
             return;
 
         // TODO: Should be sundries + static-sundries but apparently this is load-bearing for SpawnAndDeleteAllEntitiesInTheSameSpot so go figure.
-        foreach (var entity in _lookup.GetEntitiesInRange(uid, range, flags: LookupFlags.Uncontained))
+        foreach (var entity in _entityLookupSystem.GetEntitiesInRange(uid, range, flags: LookupFlags.Uncontained))
         {
             if (entity == uid)
                 continue;
 
             // See TODO above
-            if (_physicsQuery.TryComp(entity, out var otherBody) && !_physics.IsHardCollidable((uid, null, body), (entity, null, otherBody)))
+            if (_physicsQuery.TryComp(entity, out var otherBody) && !_physicsSystem.IsHardCollidable((uid, null, body), (entity, null, otherBody)))
                 continue;
 
             AttemptConsumeEntity(uid, entity, eventHorizon);
@@ -264,7 +258,7 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
 
         var ev = new TilesConsumedByEventHorizonEvent(tiles, gridId, grid, hungry, eventHorizon);
         RaiseLocalEvent(hungry, ref ev);
-        grid.SetTiles(tiles);
+        _mapSystem.SetTiles(gridId, grid, tiles);
     }
 
     /// <summary>
@@ -312,12 +306,12 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
         var box = Box2.CenteredAround(mapPos.Position, new Vector2(range, range));
         var circle = new Circle(mapPos.Position, range);
         var grids = new List<Entity<MapGridComponent>>();
-        _mapMan.FindGridsIntersecting(mapPos.MapId, box, ref grids);
+        _mapManager.FindGridsIntersecting(mapPos.MapId, box, ref grids);
 
         foreach (var grid in grids)
         {
             // TODO: Remover grid.Owner when this iterator returns entityuids as well.
-            AttemptConsumeTiles(uid, grid.Comp.GetTilesIntersecting(circle), grid, grid, eventHorizon);
+            AttemptConsumeTiles(uid, _mapSystem.GetTilesIntersecting(grid.Owner, grid.Comp, circle), grid, grid, eventHorizon);
         }
     }
 
@@ -359,7 +353,7 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
         eventHorizon.TargetConsumePeriod = value;
         eventHorizon.NextConsumeWaveTime += diff;
 
-        var curTime = _timing.CurTime;
+        var curTime = _gameTiming.CurTime;
         if (eventHorizon.NextConsumeWaveTime < curTime)
             Update(uid, eventHorizon);
     }
@@ -483,8 +477,9 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
         if (drop_container is null)
             _containerSystem.TryGetContainingContainer((uid, null, null), out drop_container);
 
-        foreach (var container in comp.GetAllContainers())
+        foreach (var container in _containerSystem.GetAllContainers(uid, comp))
         {
+
             ConsumeEntitiesInContainer(args.EventHorizonUid, container, args.EventHorizon, drop_container);
         }
     }

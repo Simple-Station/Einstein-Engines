@@ -92,7 +92,7 @@ public sealed partial class GeneratorWindow : FancyWindow
         if (starting)
         {
             StatusLabel.Text = _loc.GetString("portable-generator-ui-status-starting");
-            StatusLabel.SetOnlyStyleClass("Caution");
+            StatusLabel.SetOnlyStyleClass("Danger");
 
             StartProgress.Value = progress;
         }
@@ -131,7 +131,7 @@ public sealed partial class GeneratorWindow : FancyWindow
                 ("supply", netStats.Supply));
 
             var good = netStats.Load <= netStats.Supply;
-            NetworkStats.SetOnlyStyleClass(good ? "Good" : "Caution");
+            NetworkStats.SetOnlyStyleClass(good ? "Good" : "Danger");
         }
         else
         {

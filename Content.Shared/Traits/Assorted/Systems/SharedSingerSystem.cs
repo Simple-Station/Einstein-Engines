@@ -36,7 +36,7 @@ public abstract class SharedSingerSystem : EntitySystem
 
         _actionsSystem.AddAction(ent, ref ent.Comp.MidiAction, ent.Comp.MidiActionId);
 
-        var instrumentComp = EnsureInstrumentComp(ent);
+        var instrumentComp = EnsureInstrumentComp(ent, singer);
         var defaultData = singer.InstrumentList[singer.DefaultInstrument];
         _instrument.SetInstrumentProgram(ent.Owner, instrumentComp, defaultData.Item1, defaultData.Item2);
         SetUpSwappableInstrument(ent, singer);
@@ -92,5 +92,5 @@ public abstract class SharedSingerSystem : EntitySystem
     /// <summary>
     ///     Ensures an InstrumentComponent on the entity. Uses client-side comp on client and server-side comp on the server.
     /// </summary>
-    protected abstract SharedInstrumentComponent EnsureInstrumentComp(EntityUid uid);
+    protected abstract SharedInstrumentComponent EnsureInstrumentComp(EntityUid uid, SingerInstrumentPrototype singer);
 }

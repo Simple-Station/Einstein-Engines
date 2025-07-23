@@ -1,0 +1,69 @@
+- type: constructionGraph
+  id: FiresGraph
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: BonfireNode
+          completed:
+            - !type:SnapToGrid { }
+          steps:
+            - material: WoodPlank
+              amount: 10
+              doAfter: 1
+        - to: FireplaceNode
+          completed:
+            - !type:SnapToGrid { }
+          steps:
+            - material: WoodPlank
+              amount: 10
+              doAfter: 1
+            - material: Steel
+              amount: 10
+              doAfter: 1
+    - node: BonfireNode
+      entity: Bonfire
+      edges:
+        - to: start
+          completed:
+            - !type:GivePrototype
+              prototype: MaterialWoodPlank1
+              amount: 1
+          steps:
+            - tool: Prying
+              doAfter: 1
+    - node: FireplaceNode
+      entity: Fireplace
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 4
+          steps:
+            - tool: Prying
+              doAfter: 1
+
+- type: construction
+  name: Bonfire
+  id: Bonfire
+  graph: FiresGraph
+  startNode: start
+  targetNode: BonfireNode
+  category: construction-category-furniture
+  description: What can be better then a late evening under the sky with a guitar and friends.
+  icon: { sprite: Structures/Decoration/bonfire.rsi, state: bonfire }
+  objectType: Structure
+
+- type: construction
+  name: Fireplace
+  id: Fireplace
+  graph: FiresGraph
+  startNode: start
+  targetNode: FireplaceNode
+  category: construction-category-furniture
+  description: A place that has fire. Cozy!
+  icon: { sprite: Structures/Decoration/fireplace.rsi, state: fireplace }
+  objectType: Structure

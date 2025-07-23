@@ -7,6 +7,7 @@ using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Item.ItemToggle;
 using Content.Shared.Maps;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Physics;
@@ -37,6 +38,7 @@ public sealed partial class BlockingSystem : EntitySystem
     [Dependency] private readonly ExamineSystemShared _examine = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly ItemToggleSystem _toggle = default!; // Goobstation
 
     public override void Initialize()
     {
@@ -178,9 +180,10 @@ public sealed partial class BlockingSystem : EntitySystem
             {
                 var intersecting = _lookup.GetLocalEntitiesIntersecting(playerTileRef.Value, 0f);
                 var mobQuery = GetEntityQuery<MobStateComponent>();
+                var physicsQuery = GetEntityQuery<PhysicsComponent>();
                 foreach (var uid in intersecting)
                 {
-                    if (uid != user && mobQuery.HasComponent(uid))
+                    if (uid != user && mobQuery.HasComponent(uid) && physicsQuery.TryGetComponent(uid, out var physicsComp) && physicsComp.CanCollide)
                     {
                         TooCloseError(user);
                         return false;
@@ -222,14 +225,20 @@ public sealed partial class BlockingSystem : EntitySystem
 
     private void CantBlockError(EntityUid user)
     {
-        var msgError = Loc.GetString("action-popup-blocking-user-cant-block");
-        _popupSystem.PopupEntity(msgError, user, user);
+        if (_net.IsServer)
+        {
+            var msgError = Loc.GetString("action-popup-blocking-user-cant-block");
+            _popupSystem.PopupEntity(msgError, user, user);
+        }
     }
 
     private void TooCloseError(EntityUid user)
     {
-        var msgError = Loc.GetString("action-popup-blocking-user-too-close");
-        _popupSystem.PopupEntity(msgError, user, user);
+        if (_net.IsServer)
+        {
+            var msgError = Loc.GetString("action-popup-blocking-user-too-close");
+            _popupSystem.PopupEntity(msgError, user, user);
+        }
     }
 
     /// <summary>
@@ -320,8 +329,7 @@ public sealed partial class BlockingSystem : EntitySystem
         var modifier = component.IsBlocking ? component.ActiveBlockDamageModifier : component.PassiveBlockDamageModifer;
 
         var msg = new FormattedMessage();
-
-        msg.AddMarkup(Loc.GetString("blocking-fraction", ("value", MathF.Round(fraction * 100, 1))));
+        msg.AddMarkupOrThrow(Loc.GetString("blocking-fraction", ("value", MathF.Round(fraction * 100, 1))));
 
         AppendCoefficients(modifier, msg);
 
@@ -337,7 +345,7 @@ public sealed partial class BlockingSystem : EntitySystem
         foreach (var coefficient in modifiers.Coefficients)
         {
             msg.PushNewline();
-            msg.AddMarkup(Robust.Shared.Localization.Loc.GetString("blocking-coefficient-value",
+            msg.AddMarkupOrThrow(Robust.Shared.Localization.Loc.GetString("blocking-coefficient-value",
                 ("type", coefficient.Key),
                 ("value", MathF.Round(coefficient.Value * 100, 1))
             ));
@@ -346,7 +354,7 @@ public sealed partial class BlockingSystem : EntitySystem
         foreach (var flat in modifiers.FlatReduction)
         {
             msg.PushNewline();
-            msg.AddMarkup(Robust.Shared.Localization.Loc.GetString("blocking-reduction-value",
+            msg.AddMarkupOrThrow(Robust.Shared.Localization.Loc.GetString("blocking-reduction-value",
                 ("type", flat.Key),
                 ("value", flat.Value)
             ));

@@ -1,47 +1,48 @@
 ﻿using Content.Shared.Construction.Components;
 using Content.Shared.Construction.Prototypes;
+using Content.Shared.Stacks;
+using Content.Shared.Tag;
 using Robust.Shared.Containers;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary;
+using Robust.Shared.Prototypes;
 
-namespace Content.Server.Construction.Components
+namespace Content.Server.Construction.Components;
+
+[RegisterComponent]
+public sealed partial class MachineFrameComponent : Component
 {
-    [RegisterComponent]
-    public sealed partial class MachineFrameComponent : Component
-    {
-        public const string PartContainerName = "machine_parts";
-        public const string BoardContainerName = "machine_board";
+    public const string PartContainerName = "machine_parts";
+    public const string BoardContainerName = "machine_board";
 
-        [ViewVariables]
-        public bool HasBoard => BoardContainer?.ContainedEntities.Count != 0;
+    [ViewVariables]
+    public bool HasBoard => BoardContainer.ContainedEntities.Count != 0;
 
-        [DataField("progress", customTypeSerializer: typeof(PrototypeIdDictionarySerializer<int, MachinePartPrototype>))]
-        public Dictionary<string, int> Progress = new();
+    [ViewVariables]
+    public readonly Dictionary<ProtoId<MachinePartPrototype>, int> MachinePartProgress = new();
 
-        [ViewVariables]
-        public readonly Dictionary<string, int> MaterialProgress = new();
+    [ViewVariables]
+    public readonly Dictionary<ProtoId<StackPrototype>, int> MaterialProgress = new();
 
-        [ViewVariables]
-        public readonly Dictionary<string, int> ComponentProgress = new();
+    [ViewVariables]
+    public readonly Dictionary<string, int> ComponentProgress = new();
 
-        [ViewVariables]
-        public readonly Dictionary<string, int> TagProgress = new();
+    [ViewVariables]
+    public readonly Dictionary<ProtoId<TagPrototype>, int> TagProgress = new();
 
-        [DataField("requirements", customTypeSerializer: typeof(PrototypeIdDictionarySerializer<int, MachinePartPrototype>))]
-        public Dictionary<string, int> Requirements = new();
+    [ViewVariables]
+    public Dictionary<ProtoId<MachinePartPrototype>, int> MachinePartRequirements = new();
 
-        [ViewVariables]
-        public Dictionary<string, int> MaterialRequirements = new();
+    [ViewVariables]
+    public Dictionary<ProtoId<StackPrototype>, int> MaterialRequirements = new();
 
-        [ViewVariables]
-        public Dictionary<string, GenericPartInfo> ComponentRequirements = new();
+    [ViewVariables]
+    public Dictionary<string, GenericPartInfo> ComponentRequirements = new();
 
-        [ViewVariables]
-        public Dictionary<string, GenericPartInfo> TagRequirements = new();
+    [ViewVariables]
+    public Dictionary<ProtoId<TagPrototype>, GenericPartInfo> TagRequirements = new();
 
-        [ViewVariables]
-        public Container BoardContainer = default!;
+    [ViewVariables]
+    public Container BoardContainer = default!;
 
-        [ViewVariables]
-        public Container PartContainer = default!;
-    }
+    [ViewVariables]
+    public Container PartContainer = default!;
 }

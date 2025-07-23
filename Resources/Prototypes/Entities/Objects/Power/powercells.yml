@@ -74,7 +74,7 @@
     maxCharge: 360
     startingCharge: 360
   - type: MachinePart
-    part: PowerCell
+    partType: PowerCell
     rating: 1
   - type: Tag
     tags:
@@ -115,7 +115,7 @@
     maxCharge: 720
     startingCharge: 720
   - type: MachinePart
-    part: PowerCell
+    partType: PowerCell
     rating: 2
 
 - type: entity
@@ -153,7 +153,7 @@
     maxCharge: 1080
     startingCharge: 1080
   - type: MachinePart
-    part: PowerCell
+    partType: PowerCell
     rating: 3
 
 - type: entity
@@ -191,7 +191,7 @@
     maxCharge: 1800
     startingCharge: 1800
   - type: MachinePart
-    part: PowerCell
+    partType: PowerCell
     rating: 4
 
 - type: entity
@@ -209,6 +209,46 @@
         visible: false
   - type: Battery
     maxCharge: 1800
+    startingCharge: 0
+
+- type: entity
+  parent: BasePowerCell
+  id: PowerCellMicrortg
+  name: micro radioisotope thermoelectric generator
+  description: A rechargeable prototype micro-rtg cell. Has lower capacity but slowly recharges by itself. Doesn't have enough radiation shielding.
+  suffix: Full
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: micrortg
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o2
+      shader: unshaded
+  - type: Battery
+    maxCharge: 690
+    startingCharge: 690
+  - type: RadiationSource
+    intensity: 0.15
+    slope: 0.03
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 7 # takes 1 minute and 30 seconds to charge itself back to full
+
+- type: entity
+  parent: PowerCellMicrortg
+  id: PowerCellMicrortgPrinted
+  suffix: Empty
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: micrortg
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o2
+      shader: unshaded
+      visible: false
+  - type: Battery
     startingCharge: 0
 
 - type: entity

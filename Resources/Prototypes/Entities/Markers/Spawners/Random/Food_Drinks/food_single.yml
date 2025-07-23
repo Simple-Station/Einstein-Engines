@@ -8,73 +8,76 @@
   components:
   - type: Sprite
     layers:
-      - state: red
-      - sprite: Objects/Consumable/Food/burger.rsi
-        state: plain
+    - state: red
+    - sprite: Objects/Consumable/Food/burger.rsi
+      state: plain
   - type: RandomSpawner
     prototypes:
-      - FoodBurgerJelly
-      - FoodBurgerCarp
-      - FoodBurgerTofu
-      - FoodBurgerXeno
-      - FoodBurgerBig
-      - FoodBurgerFive
-      - FoodBurgerRat
-      - FoodBurgerBacon
-      - FoodBurgerEmpowered
-      - FoodBurgerCrab
-      - FoodBurgerHuman
-      - FoodBurgerSoy
-      - FoodBurgerMcrib
-      - FoodBurgerMcguffin
-      - FoodBurgerChicken
-      - FoodBurgerDuck
-      - FoodBurgerCheese
-      - FoodNoodlesBoiled
-      - FoodNoodles
-      - FoodNoodlesCopy
-      - FoodNoodlesButter
-      - FoodPizzaMargheritaSlice
-      - FoodPizzaMeatSlice
-      - FoodPizzaMushroomSlice
-      - FoodPizzaVegetableSlice
-      - FoodPizzaDonkpocketSlice
-      - FoodPizzaDankSlice
-      - FoodPizzaSassysageSlice
-      - FoodPizzaPineappleSlice
-      - FoodPizzaMoldySlice
-      - FoodMothGreenLasagneSlice # Nyanotrasen - Moth Recipes
-      - FoodMothBakedRicePortion # Nyanotrasen - Moth Recipes
-      - FoodMothPizzaFirecrackerSlice # Nyanotrasen - Moth Recipes
-      - FoodMothPizzaFiveCheeseSlice # Nyanotrasen - Moth Recipes
-      - FoodMothPizzaPestoSlice # Nyanotrasen - Moth Recipes
-      - FoodMothPizzaCottonSlice # Nyanotrasen - Moth Recipes
-      - FoodBakedDumplings
-      - FoodBakedChevreChaud
-      - FoodBakedNugget
-      - FoodTacoBeef
-      - FoodTacoChicken
-      - FoodTacoFish
-      - FoodTacoBeefSupreme
-      - FoodTacoChickenSupreme
-      - FoodMealGrilledCheese  # Delta V
+    - FoodBagel
+    - FoodBagelPoppy
+    - FoodBurgerJelly
+    - FoodBurgerCarp
+    - FoodBurgerTofu
+    - FoodBurgerXeno
+    - FoodBurgerBig
+    - FoodBurgerFive
+    - FoodBurgerRat
+    - FoodBurgerBacon
+    - FoodBurgerEmpowered
+    - FoodBurgerCrab
+    - FoodBurgerHuman
+    - FoodBurgerSoy
+    - FoodBurgerMcrib
+    - FoodBurgerMcguffin
+    - FoodBurgerChicken
+    - FoodBurgerDuck
+    - FoodBurgerCheese
+    - FoodNoodlesBoiled
+    - FoodNoodles
+    - FoodNoodlesCopy
+    - FoodNoodlesButter
+    - FoodPizzaMargheritaSlice
+    - FoodPizzaMeatSlice
+    - FoodPizzaMushroomSlice
+    - FoodPizzaVegetableSlice
+    - FoodPizzaDonkpocketSlice
+    - FoodPizzaDankSlice
+    - FoodPizzaSassysageSlice
+    - FoodPizzaPineappleSlice
+    - FoodPizzaMoldySlice
+    - FoodMothGreenLasagneSlice # Nyanotrasen - Moth Recipes
+    - FoodMothBakedRicePortion # Nyanotrasen - Moth Recipes
+    - FoodMothPizzaFirecrackerSlice # Nyanotrasen - Moth Recipes
+    - FoodMothPizzaFiveCheeseSlice # Nyanotrasen - Moth Recipes
+    - FoodMothPizzaPestoSlice # Nyanotrasen - Moth Recipes
+    - FoodMothPizzaCottonSlice # Nyanotrasen - Moth Recipes
+    - FoodBakedDumplings
+    - FoodBakedChevreChaud
+    - FoodBakedNugget
+    - FoodTacoBeef
+    - FoodTacoChicken
+    - FoodTacoFish
+    - FoodTacoBeefSupreme
+    - FoodTacoChickenSupreme
+    - FoodMealGrilledCheese  # Delta V
     chance: 0.8
     offset: 0.0
     #rare
     rarePrototypes:
-      - FoodBurgerAppendix
-      - FoodBurgerRobot
-      - FoodBurgerBaseball
-      - FoodBurgerBear
-      - FoodBurgerCat
-      - FoodBurgerClown
-      - FoodBurgerMime
-      - FoodBurgerBrain
-      - FoodBurgerGhost
-      - FoodBurgerSpell
-      - FoodBurgerSuper
-      - FoodBurgerCrazy
-      - FoodPizzaArnoldSlice
-      - FoodPizzaCorncobSlice # Nyanotrasen - Corncob Pizza
-      - FoodTacoRat
+    - FoodBurgerAppendix
+    - FoodBurgerRobot
+    - FoodBurgerBaseball
+    - FoodBurgerBear
+    - FoodBurgerCat
+    - FoodBurgerClown
+    - FoodBurgerMime
+    - FoodBurgerBrain
+    - FoodBurgerGhost
+    - FoodBurgerSpell
+    - FoodBurgerSuper
+    - FoodBurgerCrazy
+    - FoodPizzaArnoldSlice
+    - FoodPizzaUraniumSlice
+    - FoodPizzaCorncobSlice # Nyanotrasen - Corncob Pizza
+    - FoodTacoRat
     rareChance: 0.05

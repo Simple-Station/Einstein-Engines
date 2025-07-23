@@ -1,37 +1,29 @@
-<Control xmlns="https://spacestation14.io">
+<Control xmlns="https://spacestation14.io"
+         xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+         xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client">
     <!-- Primary container -->
     <BoxContainer Orientation="Vertical" HorizontalExpand="True">
-        <!-- Marking lists -->
-        <BoxContainer Orientation="Horizontal" SeparationOverride="5" HorizontalExpand="True">
-            <!-- Unused markings -->
-            <BoxContainer Orientation="Vertical" HorizontalExpand="True">
-                <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
-                    <Label Text="{Loc 'markings-unused'}" HorizontalAlignment="Stretch" HorizontalExpand="True" />
-                    <Label Name="CMarkingPoints" Text="uwu" HorizontalAlignment="Right" />
-                </BoxContainer>
-
-                <OptionButton Name="CMarkingCategoryButton" StyleClasses="OpenLeft" />
-                <LineEdit Name="CMarkingSearch" PlaceHolder="{Loc 'markings-search'}" />
-
-                <ItemList Name="CMarkingsUnused" VerticalExpand="True" MinSize="300 250" />
-                <Button Name="CMarkingAdd" Text="{Loc 'markings-add'}" StyleClasses="OpenRight" />
+        <!-- Markings -->
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+            <BoxContainer HorizontalExpand="True">
+                <OptionButton Name="CMarkingCategoryButton" StyleClasses="OpenBoth" />
+                <Label Name="CMarkingPoints" Text="uwu" Margin="8 0" />
+                <LineEdit Name="CMarkingSearch" PlaceHolder="{Loc 'markings-search'}" HorizontalExpand="True" />
+                <Button Name="ResetButton" Text="{Loc 'ui-options-bind-reset'}" StyleClasses="OpenLeft" />
             </BoxContainer>
 
-            <!-- Used markings -->
-            <BoxContainer Orientation="Vertical" HorizontalExpand="True">
-                <Label Text="{Loc 'markings-used'}" />
+            <PanelContainer>
+                <PanelContainer.PanelOverride>
+                    <graphics:StyleBoxFlat BackgroundColor="#1B1B1E" />
+                </PanelContainer.PanelOverride>
 
-                <ItemList Name="CMarkingsUsed" VerticalExpand="True" MinSize="300 250" />
-
-                <BoxContainer Orientation="Horizontal">
-                    <Button Name="CMarkingRankUp" Text="{Loc 'markings-rank-up'}" StyleClasses="OpenBoth" HorizontalExpand="True" />
-                    <Button Name="CMarkingRankDown" Text="{Loc 'markings-rank-down'}" StyleClasses="OpenBoth" HorizontalExpand="True" />
-                </BoxContainer>
-                <Button Name="CMarkingRemove" Text="{Loc 'markings-remove'}" StyleClasses="OpenRight" />
-            </BoxContainer>
+                <ScrollContainer HorizontalExpand="True" MinSize="300 300">
+                    <BoxContainer Name="Markings" Orientation="Vertical" HorizontalExpand="True" MinSize="300 300" />
+                </ScrollContainer>
+            </PanelContainer>
         </BoxContainer>
 
         <!-- Colors -->
-        <BoxContainer Name="CMarkingColors" Orientation="Vertical" Visible="False" />
+        <BoxContainer Name="CMarkingColors" Margin="0 4 0 0" Orientation="Vertical" Visible="False" />
     </BoxContainer>
 </Control>

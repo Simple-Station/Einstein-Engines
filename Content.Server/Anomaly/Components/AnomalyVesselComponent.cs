@@ -1,6 +1,9 @@
 ﻿using Content.Shared.Anomaly;
+using Content.Shared.Construction.Prototypes;
 using Robust.Shared.Audio;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+
 
 namespace Content.Server.Anomaly.Components;
 
@@ -21,10 +24,43 @@ public sealed partial class AnomalyVesselComponent : Component
     public EntityUid? Anomaly;
 
     /// <summary>
+    /// The base multiplier without any frills
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float BasePointMultiplier = 1;
+
+    /// <summary>
+    /// The base radiation for only the experimental vessel
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float BaseRadiation = .75f;
+
+    /// <summary>
     /// A multiplier applied to the amount of points generated.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float PointMultiplier = 1;
+
+    /// <summary>
+    /// A multiplier applied to the amount of points generated based on the machine parts inserted.
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float UpgradePointMultiplier = .5f;
+
+    /// <summary>
+    /// A multipler applied to the radiation
+    /// </summary>
+    /// <remarks>
+    /// no free ultra point machine 100% legit
+    /// </remarks>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float UpgradeRadiationMultiplier = .35f;
+
+    /// <summary>
+    ///     Which machine part affects the point multiplier
+    /// </summary>
+    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
+    public string MachinePartPointMultiplier = "Capacitor";
 
     /// <summary>
     /// The maximum time between each beep

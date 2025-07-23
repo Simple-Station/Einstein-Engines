@@ -1,4 +1,5 @@
-﻿using Robust.Shared.Serialization;
+﻿using Content.Shared.Alert;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared.Mood;
 
@@ -48,7 +49,7 @@ public sealed class MoodRemoveEffectEvent : EntityEventArgs
 ///     EG: The end result after tallying up all Moodlets comes out to 70, but a trait multiplies it by 0.8 to make it 56.
 /// </summary>
 [ByRefEvent]
-public record struct OnSetMoodEvent(EntityUid Receiver, float MoodChangedAmount, bool Cancelled);
+public record struct OnSetMoodEvent(EntityUid Receiver, float MoodChangedAmount, bool Cancelled, float MoodOffset = 0f);
 
 /// <summary>
 ///     This event is raised on an entity when it receives a mood effect, but before the effects are calculated.
@@ -57,3 +58,4 @@ public record struct OnSetMoodEvent(EntityUid Receiver, float MoodChangedAmount,
 [ByRefEvent]
 public record struct OnMoodEffect(EntityUid Receiver, string EffectId, float EffectModifier = 1, float EffectOffset = 0);
 
+public sealed partial class ShowMoodAlertEvent : BaseAlertEvent;

@@ -5,7 +5,6 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.Clothing;
 
 [RegisterComponent, NetworkedComponent]
-[Access(typeof(SharedMagbootsSystem))]
 public sealed partial class MagbootsComponent : Component
 {
     [DataField]
@@ -22,4 +21,40 @@ public sealed partial class MagbootsComponent : Component
     /// </summary>
     [DataField]
     public string Slot = "shoes";
+
+    /// <summary>
+    ///     Whether or not activating the magboots changes a sprite.
+    /// </summary>
+    [DataField]
+    public bool ChangeClothingVisuals;
+
+    /// <summary>
+    ///     Whether or not the magboots are currently Active.
+    /// </summary>
+    [DataField]
+    public bool Active;
+
+    /// <summary>
+    ///     Walk speed modifier to use while the magnets are active.
+    /// </summary>
+    [DataField]
+    public float ActiveWalkModifier = 0.85f;
+
+    /// <summary>
+    ///     Sprint speed modifier to use while the magnets are active.
+    /// </summary>
+    [DataField]
+    public float ActiveSprintModifier = 0.80f;
+
+    /// <summary>
+    ///     Walk speed modifier to use while the magnets are off.
+    /// </summary>
+    [DataField]
+    public float InactiveWalkModifier = 1f;
+
+    /// <summary>
+    ///     Sprint speed modifier to use while the magnets are off.
+    /// </summary>
+    [DataField]
+    public float InactiveSprintModifier = 1f;
 }

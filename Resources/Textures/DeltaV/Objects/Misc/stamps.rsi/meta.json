@@ -8,9 +8,6 @@
     },
     "states": [
         {
-            "name": "stamp-lawyer"
-        },
-        {
             "name": "stamp-notary"
         },
         {
@@ -21,6 +18,9 @@
         },
         {
             "name": "stamp-admin-assistant"
+        },
+        {
+            "name": "stamp-liaison"
         }
     ]
 }
