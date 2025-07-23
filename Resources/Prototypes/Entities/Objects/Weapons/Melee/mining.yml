@@ -12,7 +12,7 @@
     sprite: Objects/Weapons/Melee/pickaxe.rsi
     state: pickaxe
   - type: MeleeWeapon
-    attackRate: 1.2
+    attackRate: 1
     range: 1.6
     wideAnimationRotation: -135
     soundHit:
@@ -21,10 +21,11 @@
         volume: -3
     damage:
       types:
-        Blunt: 6
-        Piercing: 3
+        Blunt: 5
+        Piercing: 15
+        Structural: 10
     bluntStaminaDamageFactor: 2.0
-    heavyDamageBaseModifier: 1.75
+    heavyDamageBaseModifier: 1.25
     maxTargets: 5
     angle: 80
   - type: DamageOtherOnHit
@@ -32,10 +33,9 @@
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
-      groups:
-        Brute: 5
       types:
-        Structural: 30
+        Blunt: 5
+        Structural: 20
   - type: Item
     size: Normal
     shape:
@@ -65,19 +65,19 @@
     wideAnimationRotation: -90
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
-    attackRate: 0.5
+    attackRate: 1.5
     range: 1.5
-    heavyStaminaCost: 0.7
+    heavyStaminaCost: 0.5
     damage:
       types:
         Structural: 15
-        Piercing: 6
+        Piercing: 4
   - type: DamageOtherOnHit
     staminaCost: 9
     damage:
       types:
         Structural: 25
-        Piercing: 9
+        Piercing: 6
   - type: ThrowingAngle
     angle: 270
 
@@ -99,13 +99,13 @@
     heavyStaminaCost: 0.55 # More efficient so less stamina needed to use
     damage:
       types:
-        Piercing: 12
-        Structural: 50
+        Piercing: 8
+        Structural: 30
   - type: DamageOtherOnHit
     damage:
       types:
         Structural: 40
-        Piercing: 18
+        Piercing: 8
 
 - type: entity
   abstract: true
@@ -149,22 +149,21 @@
     capacity: 1
     count: 1
   - type: MeleeWeapon
-    attackRate: 1.5 # Lavaland/Eris Change
+    attackRate: 1.25 # Lavaland/Eris Change
     range: 1.65
     wideAnimationRotation: -135
     damage:
       types:
-        Blunt: 13 # Lavaland Change: no damage when unwielded
-        Slash: 7
-    bluntStaminaDamageFactor: 2.0
-    heavyRateModifier: 1.5
-    heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 2.5
+        Blunt: 15 # Lavaland Change: no damage when unwielded
+        Slash: 10
+    bluntStaminaDamageFactor: 1.5
+    heavyRateModifier: 1.25
+    heavyStaminaCost: 5
     angle: 120
     soundHit:
       collection: MetalThud
   - type: DamageOtherOnHit
-    staminaCost: 8
+    staminaCost: 10
   - type: Wieldable
   - type: GunRequiresWield
   - type: Item
@@ -179,13 +178,13 @@
     fumbleOnAttempt: true
   - type: DamageBoostOnMarker
     boost:
-      types: # Totals to 70 damage when hitting marked targets
-        Blunt: 34
-        Slash: 16
-    backstabBoost: # And 30 extra for a backstab. Adding up to 100
+      types: # Totals to 45 damage when hitting marked targets
+        Blunt: 10
+        Slash: 10
+    backstabBoost: # And 30 extra for a backstab. Adding up to 55
       types:
-        Blunt: 19
-        Slash: 11
+        Blunt: 15
+        Slash: 15
 
 - type: entity
   parent: BaseWeaponCrusher
@@ -199,13 +198,11 @@
   - type: MeleeWeapon
     autoAttack: true
     wideAnimationRotation: -135
-    attackRate: 0.8
-    range: 1.4
+    attackRate: 1.5
+    range: 1.25
     damage:
       types:
-        Slash: 9
-    heavyRateModifier: 1.4
-    heavyDamageBaseModifier: 1.2
+        Slash: 24
     maxTargets: 2
     angle: 20
   - type: DamageOtherOnHit
@@ -232,7 +229,7 @@
   - type: LeechOnMarker
     leech:
       groups:
-        Brute: -21
+        Brute: -30
   - type: MeleeWeapon
   - type: EmbeddableProjectile
   - type: EmbedPassiveDamage

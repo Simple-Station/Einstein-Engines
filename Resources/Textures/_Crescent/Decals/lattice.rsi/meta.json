@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "license": null,
+  "copyright": null,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "EdgeN"
+    },
+    {
+      "name": "CornerNE"
+    },
+    {
+      "name": "OuterNE"
+    },
+    {
+      "name": "EdgeW"
+    },
+    {
+      "name": "EdgeS"
+    },
+    {
+      "name": "EdgeE"
+    },
+    {
+      "name": "OuterNW"
+    },
+    {
+      "name": "OuterSE"
+    },
+    {
+      "name": "OuterSW"
+    },
+    {
+      "name": "CornerNW"
+    },
+    {
+      "name": "CornerSW"
+    },
+    {
+      "name": "CornerSE"
+    }
+  ]
+}

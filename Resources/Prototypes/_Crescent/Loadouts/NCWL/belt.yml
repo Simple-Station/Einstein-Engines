@@ -35,3 +35,13 @@
         - KapitanNCWL
         - KommissarNCWL
         - SanitarNCWL
+
+- type: loadout
+  id: LoadoutBeltNCWLDoubleHolster
+  category: Belt
+  cost: 0
+  items:
+    - ClothingBeltNCWLDoubleHolster
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt

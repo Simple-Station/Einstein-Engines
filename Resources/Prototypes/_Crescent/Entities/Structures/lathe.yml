@@ -438,7 +438,7 @@
       - ClothingOuterHardsuitImperialSoldier
       - ClothingHeadHelmetImperialKnightCommanderHelmet
       - ClothingOuterArmorImperialArmorPrestige
-      - ClothingOuterHardsuitImperialCommand
+      - ClothingOuterHardsuitImperialKnight
       - CarrionFlatpack
       - WeaponMechIndustrialKineticAcceleratorImperial
       - MechEquipmentGrabberImperial
@@ -500,6 +500,72 @@
       - SternLPC
       - BogatyrFlatpack
       - ClothingOuterHardsuitNCWLJuggernaut
+      - ClothingUniformJumpsuitExecutiveShinoharaSuit
+      - ClothingUniformJumpsuitShinoharaLogistics
+      - ClothingOuterShinoharaVest
+      - ClothingOuterShinoharaLabcoat
+      - ClothingUniformJumpsuitShinoharaDoctor
+      - ClothingOuterHardsuitHEV
+      - WeaponLauncherDisposableRocket
+      - ShipyardManufactorumFlatpack
+      - ScrapRefinerFlatpack
+      - ClothingUniformJumpsuitShinoharaSecurity
+      - ClothingOuterArmorShinoharaArmorBulwark
+      - ClothingHeadHatShinoharaNonevaHelm
+      - TelescopicBatonSHI
+      - ShinoharaOptics
+      - WeaponMechCombatAutoshotgun
+      - WeaponMechCombatLightRifle
+      - WeaponMechSword
+      - ClothingUniformJumpsuitShinoharaHighsec
+      - ClothingOuterArmorShinoharaArmorHighsec
+      - ClothingHeadHatShinoharaHelmet
+      - ClothingOuterHardsuitHighsec
+      - WeaponPistolBlastpopRed
+      - WeaponPistolBlastpopPurple
+      - WeaponPistolBlastpopGray
+      - WeaponPistolBlastpopGreen
+      - WeaponPistolBlastpopGold
+      - WeaponPistolBlastpopBlue
+      - WeaponRifleHoundMarksman
+      - WeaponShotgunSHIDoubleBarreled4g
+      - WeaponPistolMk58SHI
+      - WeaponSubMachineGunMP49
+      - VariableCommodityFabricatorFlatpack
+      - AutoloomFablatheFlatpack
+      - FixedHardpointFlatpack
+      - SlugthrowerFlatpack
+      - ExhumerFlatpack
+      - PlasmaRepeaterFlatpack
+      - AdvancedElectronics1
+      - AdvancedMechatronics1
+      - PlastitaniumFibreAlloySHI
+      - HardlightGenerator1
+      - BallisticCycler1
+      - TubeLoader1
+      - LaserLocus1
+      - MagwellFlatpack
+      - IdnaFlatpack
+      - IdnaTorpedo
+      - AdvancedVariableCommodityFablatheFlatpack
+      - WeaponRifleGoro
+      - WeaponRifleLecterSHI
+      - WeaponRevolverMateba
+      - WeaponSubMachineGunSabre
+      - WeaponLightMachineGunL6
+      - WeaponLauncherMilkor
+      - BoriaticComposterFlatpack
+      - CyberneticsMantisBladeRight
+      - CyberneticsMantisBladeLeft
+      - WeaponMechPlasmaSword
+      - WeaponMechCombatAutopuntgun
+      - WeaponMechCombatTaikotyo
+      - WeaponLauncherHammerhead
+      - ShieldEmitterSmallFlatpack
+      - GilgameshFlatpack
+      - BallisticFablatheFlatpack
+      - CyberneticsDermalArmor
+
   - type: Machine
     board: MicroforgeCircuitboard
 

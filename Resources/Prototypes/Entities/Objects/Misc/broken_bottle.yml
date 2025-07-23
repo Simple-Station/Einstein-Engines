@@ -8,15 +8,15 @@
   - type: Execution
     doAfterDuration: 4.0
   - type: MeleeWeapon
-    attackRate: .7
-    range: 1.4
+    attackRate: 0.9
+    range: 1.25
     damage:
       types:
-        Slash: 6
-    heavyRateModifier: 1.35
-    heavyRangeModifier: 0.8
+        Slash: 8
+    heavyRateModifier: 1.5
+    heavyRangeModifier: 0.75
     heavyDamageBaseModifier: 1.5
-    heavyStaminaCost: 2.5
+    heavyStaminaCost: 1.5
     maxTargets: 2
     angle: 35
     soundHit:
@@ -27,7 +27,7 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Slash: 4
+        Slash: 8
   - type: Tag
     tags:
     - Trash

@@ -177,7 +177,7 @@
 
 - type: entity
   name: SCHK-2 plasma hardlight sword
-  parent: BaseItem
+  parent: EnergySword
   id: EnergySwordFamilies
   description: A stylish answer to the antiquated NanoTrasen energy sword.
   components:
@@ -225,7 +225,7 @@
         map: [ "blade" ]
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1
+    attackRate: 1.15
     damage:
       types:
         Blunt: 4.5
@@ -276,6 +276,7 @@
       types:
         Slash: 25
         Heat: 10
+        Structural: 10
     soundHit:
       collection: MetalThud
   - type: Wieldable
@@ -284,6 +285,7 @@
       types:
         Slash: 35
         Heat: 25
+        Structural: 15
   - type: Item
     size: Ginormous
   - type: Tool
@@ -311,6 +313,7 @@
       types:
         Blunt: 35
         Heat: 10
+        Structural: 25
     soundHit:
       collection: MetalThud
   - type: Item

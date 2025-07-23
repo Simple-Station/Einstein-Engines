@@ -1,0 +1,584 @@
+{
+  "version": 1,
+  "license": "AGPL 3.0",
+  "copyright": "Discord: wrotl , artstation.com/wrtl",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "bcircuit"
+    },
+    {
+      "name": "bcircuit_edges"
+    },
+    {
+      "name": "bcircuit_outer"
+    },
+    {
+      "name": "bcircuit_broken"
+    },
+    {
+      "name": "gcircuit"
+    },
+    {
+      "name": "gcircuit_broken"
+    },
+    {
+      "name": "bcircuit_corner"
+    },
+    {
+      "name": "onestar1"
+    },
+    {
+      "name": "onestar1_edges"
+    },
+    {
+      "name": "onestar2_edges"
+    },
+    {
+      "name": "onestar3_edges"
+    },
+    {
+      "name": "onestar4_edges"
+    },
+    {
+      "name": "onestar2"
+    },
+    {
+      "name": "onestar3"
+    },
+    {
+      "name": "onestar4"
+    },
+    {
+      "name": "onestar1_outer"
+    },
+    {
+      "name": "onestar1_corners"
+    },
+    {
+      "name": "onestar2_outer"
+    },
+    {
+      "name": "onestar2_corners"
+    },
+    {
+      "name": "onestar3_outer"
+    },
+    {
+      "name": "onestar3_corners"
+    },
+    {
+      "name": "onestar4_outer"
+    },
+    {
+      "name": "onestar4_corners"
+    },
+    {
+      "name": "hull0"
+    },
+    {
+      "name": "hullcenter0"
+    },
+    {
+      "name": "hullcenter_edges"
+    },
+    {
+      "name": "hullcenter_outer"
+    },
+    {
+      "name": "hullcenter1"
+    },
+    {
+      "name": "hullcenter2"
+    },
+    {
+      "name": "hullcenter3"
+    },
+    {
+      "name": "hullcenter4"
+    },
+    {
+      "name": "hullcenter5"
+    },
+    {
+      "name": "hullcenter6"
+    },
+    {
+      "name": "hullcenter7"
+    },
+    {
+      "name": "hullcenter8"
+    },
+    {
+      "name": "hullcenter9"
+    },
+    {
+      "name": "hullcenter10"
+    },
+    {
+      "name": "hullcenter11"
+    },
+    {
+      "name": "hullcenter12"
+    },
+    {
+      "name": "hullcenter13"
+    },
+    {
+      "name": "hullcenter14"
+    },
+    {
+      "name": "hullcenter15"
+    },
+    {
+      "name": "hullcenter16"
+    },
+    {
+      "name": "hullcenter17"
+    },
+    {
+      "name": "hullcenter18"
+    },
+    {
+      "name": "hullcenter19"
+    },
+    {
+      "name": "hullcenter20"
+    },
+    {
+      "name": "hullcenter21"
+    },
+    {
+      "name": "hullcenter22"
+    },
+    {
+      "name": "hullcenter23"
+    },
+    {
+      "name": "hullcenter24"
+    },
+    {
+      "name": "hullcenter25"
+    },
+    {
+      "name": "hullcenter26"
+    },
+    {
+      "name": "hullcenter27"
+    },
+    {
+      "name": "hullcenter28"
+    },
+    {
+      "name": "hullcenter29"
+    },
+    {
+      "name": "hullcenter30"
+    },
+    {
+      "name": "hullcenter31"
+    },
+    {
+      "name": "hullcenter32"
+    },
+    {
+      "name": "hullcenter33"
+    },
+    {
+      "name": "hullcenter34"
+    },
+    {
+      "name": "hullcenter35"
+    },
+    {
+      "name": "hullcenter_corners"
+    },
+    {
+      "name": "plating"
+    },
+    {
+      "name": "plating0"
+    },
+    {
+      "name": "plating1"
+    },
+    {
+      "name": "plating2"
+    },
+    {
+      "name": "plating3"
+    },
+    {
+      "name": "plating4"
+    },
+    {
+      "name": "plating5"
+    },
+    {
+      "name": "plating6"
+    },
+    {
+      "name": "plating7"
+    },
+    {
+      "name": "plating8"
+    },
+    {
+      "name": "plating9"
+    },
+    {
+      "name": "plating10"
+    },
+    {
+      "name": "plating11"
+    },
+    {
+      "name": "plating12"
+    },
+    {
+      "name": "plating13"
+    },
+    {
+      "name": "plating14"
+    },
+    {
+      "name": "plating15"
+    },
+    {
+      "name": "plating16"
+    },
+    {
+      "name": "plating17"
+    },
+    {
+      "name": "plating18"
+    },
+    {
+      "name": "plating_edges"
+    },
+    {
+      "name": "under"
+    },
+    {
+      "name": "under_edges"
+    },
+    {
+      "name": "under_outer"
+    },
+    {
+      "name": "plating_corners"
+    },
+    {
+      "name": "under_corners"
+    },
+    {
+      "name": "tiles"
+    },
+    {
+      "name": "tiles_edges"
+    },
+    {
+      "name": "tiles_outer"
+    },
+    {
+      "name": "monofloor_edges"
+    },
+    {
+      "name": "reinforced"
+    },
+    {
+      "name": "reinforced_edges"
+    },
+    {
+      "name": "reinforced_outer"
+    },
+    {
+      "name": "cafe"
+    },
+    {
+      "name": "plating_outer"
+    },
+    {
+      "name": "cafe_edges"
+    },
+    {
+      "name": "cafe_outer"
+    },
+    {
+      "name": "techmaint"
+    },
+    {
+      "name": "techmaint_edges"
+    },
+    {
+      "name": "techmaint_outer"
+    },
+    {
+      "name": "techmaintp"
+    },
+    {
+      "name": "techmaintp_edges"
+    },
+    {
+      "name": "techmaintp_outer"
+    },
+    {
+      "name": "tiles_corners"
+    },
+    {
+      "name": "monofloor_corners"
+    },
+    {
+      "name": "monofloor_outer"
+    },
+    {
+      "name": "reinforced_corners"
+    },
+    {
+      "name": "cafe_corners"
+    },
+    {
+      "name": "techmaint_corners"
+    },
+    {
+      "name": "techmaintp_corners"
+    },
+    {
+      "name": "techmaintpan"
+    },
+    {
+      "name": "techmaintpan_edges"
+    },
+    {
+      "name": "techmaintpan_outer"
+    },
+    {
+      "name": "techmaintcargo"
+    },
+    {
+      "name": "techmaintcargo_edges"
+    },
+    {
+      "name": "techmaintcargo_outer"
+    },
+    {
+      "name": "techmaintpan_corners"
+    },
+    {
+      "name": "techmaintcargo_corners"
+    },
+    {
+      "name": "panels"
+    },
+    {
+      "name": "panels_edges"
+    },
+    {
+      "name": "panels_outer"
+    },
+    {
+      "name": "techfloor"
+    },
+    {
+      "name": "techfloor_edges"
+    },
+    {
+      "name": "techfloor_outer"
+    },
+    {
+      "name": "techfloorgrid"
+    },
+    {
+      "name": "techfloorgrid_edges"
+    },
+    {
+      "name": "techfloorgrid_outer"
+    },
+    {
+      "name": "brownp"
+    },
+    {
+      "name": "p_corners"
+    },
+    {
+      "name": "p_edges"
+    },
+    {
+      "name": "p_outer"
+    },
+    {
+      "name": "grayp"
+    },
+    {
+      "name": "brownplat"
+    },
+    {
+      "name": "plat_corners"
+    },
+    {
+      "name": "plat_edge"
+    },
+    {
+      "name": "plat_outer"
+    },
+    {
+      "name": "grayplat"
+    },
+    {
+      "name": "danger_corners"
+    },
+    {
+      "name": "danger_edges"
+    },
+    {
+      "name": "danger_outer"
+    },
+    {
+      "name": "golden_corners"
+    },
+    {
+      "name": "golden_edges"
+    },
+    {
+      "name": "golden_outer"
+    },
+    {
+      "name": "bc_corners"
+    },
+    {
+      "name": "bc_edges"
+    },
+    {
+      "name": "bc_outers"
+    },
+    {
+      "name": "oc_corners"
+    },
+    {
+      "name": "oc_edges"
+    },
+    {
+      "name": "oc_outer"
+    },
+    {
+      "name": "cc_corners"
+    },
+    {
+      "name": "cc_edges"
+    },
+    {
+      "name": "cc_outer"
+    },
+    {
+      "name": "vc_corners"
+    },
+    {
+      "name": "vc_edges"
+    },
+    {
+      "name": "vc_outer"
+    },
+    {
+      "name": "monofloor"
+    },
+    {
+      "name": "monofloor0"
+    },
+    {
+      "name": "monofloor1"
+    },
+    {
+      "name": "monofloor2"
+    },
+    {
+      "name": "monofloor3"
+    },
+    {
+      "name": "monofloor4"
+    },
+    {
+      "name": "monofloor5"
+    },
+    {
+      "name": "monofloor6"
+    },
+    {
+      "name": "monofloor7"
+    },
+    {
+      "name": "monofloor8"
+    },
+    {
+      "name": "monofloor9"
+    },
+    {
+      "name": "monofloor10"
+    },
+    {
+      "name": "monofloor11"
+    },
+    {
+      "name": "monofloor12"
+    },
+    {
+      "name": "monofloor13"
+    },
+    {
+      "name": "monofloor14"
+    },
+    {
+      "name": "monofloor15"
+    },
+    {
+      "name": "barplat"
+    },
+    {
+      "name": "barplat_corners"
+    },
+    {
+      "name": "barplat_edges"
+    },
+    {
+      "name": "barplat_outer"
+    },
+    {
+      "name": "barlight"
+    },
+    {
+      "name": "barlight_corners"
+    },
+    {
+      "name": "barlight_edges"
+    },
+    {
+      "name": "barlight_outer"
+    },
+    {
+      "name": "barfloor"
+    },
+    {
+      "name": "barfloor_corners"
+    },
+    {
+      "name": "barfloor_edges"
+    },
+    {
+      "name": "barfloor_outer"
+    },
+    {
+      "name": "gotwood"
+    },
+    {
+      "name": "panels_corners"
+    },
+    {
+      "name": "techfloor_corners"
+    },
+    {
+      "name": "techfloorgrid_corners"
+    }
+  ]
+}

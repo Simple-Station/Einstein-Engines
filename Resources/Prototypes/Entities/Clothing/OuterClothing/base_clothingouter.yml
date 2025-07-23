@@ -20,8 +20,6 @@
     slots:
     - outerClothing
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
   - type: HeldSpeedModifier
   - type: Tag
     tags:
@@ -158,14 +156,6 @@
   - type: HeldSpeedModifier
   - type: Item
     size: Ginormous
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.90
-        Slash: 0.90
-        Piercing: 0.95
-        Heat: 0.90
-        Radiation: 0.25
   - type: ToggleableClothing
     slot: head
   - type: ContainerContainer
