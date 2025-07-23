@@ -16664,3 +16664,14 @@ Entries:
   id: 7305
   time: '2025-07-17T20:31:30.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2506
+- author: Spatison
+  changes:
+    - type: Fix
+      message: Shuttle docking emergency announcement has been fixed
+    - type: Fix
+      message: The miners shuttle can now arrive at the station
+    - type: Fix
+      message: Ghost toggle light now works
+  id: 7306
+  time: '2025-07-23T05:15:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2512
