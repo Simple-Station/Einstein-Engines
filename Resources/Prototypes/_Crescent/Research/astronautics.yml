@@ -39,6 +39,7 @@
   - ClothingOuterHardsuitSpatioAstronautics
   - ClothingShoesBootsMagAstronautics
   - JetpackBlueFilledAstronautics
+  - ClothingOuterHardsuitIndependentsEVAAstronautics
 
 
 - type: technology
@@ -70,6 +71,14 @@
   - ClothingOuterHardsuitPilotAstronautics
   - ClothingOuterHardsuitVoidParamedAstronautics
   - JetpackMiniFilledAstronautics
+  - ClothingOuterHardsuitFishbedAstronautics
+  - ClothingOuterHardsuitFishbedSilverAstronautics
+  - ClothingOuterHardsuitFishbedGoldAstronautics
+  - ClothingOuterHardsuitFishbedColonialAstronautics
+  - ClothingOuterHardsuitFishbedNLFAstronautics
+  - ClothingOuterHardsuitCenobiteAstronautics
+  - ClothingOuterHardsuitCenobiteVerdantAstronautics
+  - ClothingOuterHardsuitCenobiteRedAstronautics
 
 - type: technology
   id: RCDAstronautics
@@ -81,8 +90,8 @@
   tier: 2
   cost: 10000
   recipeUnlocks:
-  - RCD
-  - RCDAmmo
+  - RCDAstronautics
+  - RCDAmmoAstronautics
 
 #Tier 3
 
@@ -91,7 +100,7 @@
   name: research-technology-astronautics-modsuit
   icon:
     sprite: _Goobstation/Clothing/Back/Modsuits/standard.rsi
-    state: icon
+    state: control
   discipline: Astronautics
   tier: 3
   cost: 15000
