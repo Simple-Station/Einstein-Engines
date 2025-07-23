@@ -340,6 +340,23 @@ namespace Content.Server.Factory.EntitySystems
                         else
                         {
                             _proto.TryIndex(comp.ChosenRecipe, out chosenRecipe);
+                            if (chosenRecipe is not null)
+                            {
+                                foreach (var recipePair in chosenRecipe.Inputs)
+                                {
+                                    if (!itemCounts.ContainsKey(recipePair.Key))
+                                    {
+                                        chosenRecipe = null;
+                                        break;
+                                    }
+
+                                    if (itemCounts[recipePair.Key] < recipePair.Value)
+                                    {
+                                        chosenRecipe = null;
+                                        break;
+                                    }
+                                }
+                            }
                         }
 
 
