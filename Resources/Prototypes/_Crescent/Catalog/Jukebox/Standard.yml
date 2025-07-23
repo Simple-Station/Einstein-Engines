@@ -36,7 +36,7 @@
 
 - type: jukebox
   id: FeelGood
-  name: Nina Simone - Feel Good
+  name: Thia Megia - Feel Good
   path:
     path: /Audio/_Crescent/Jukebox/feelgood.ogg
 
@@ -48,7 +48,7 @@
 
 - type: jukebox
   id: LifeOnMars
-  name: David Bowie - Life on Mars
+  name: Olivia Kuper Harris - Life on Mars
   path:
     path: /Audio/_Crescent/Jukebox/lifeonmars.ogg
 
@@ -60,13 +60,13 @@
 
 - type: jukebox
   id: Davai
-  name: Russian Folk - Davai
+  name: KMFDM - Davai
   path:
     path: /Audio/_Crescent/Jukebox/Davai.ogg
 
 - type: jukebox
   id: PowerInTheUnion
-  name: Billy Bragg - Power In The Union
+  name: Joshua James - Power In The Union
   path:
     path: /Audio/_Crescent/Jukebox/PowerInTheUnion.ogg
 
