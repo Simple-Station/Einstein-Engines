@@ -301,8 +301,8 @@
     angleIncrease: 1.5
     angleDecay: 6
     selectedMode: Burst
-    shotsPerBurst: 30
-    burstCooldown: 1.5
+    shotsPerBurst: 8
+    burstCooldown: 0.8
     burstFireRate: 7
     availableModes:
     - SemiAuto
