@@ -57,6 +57,6 @@
     back: ClothingBackpackSatchelMedical
     gloves: ClothingHandsGlovesCombat
     eyes: ClothingEyesHudMedSec
-  inhand:
-    - Defibrillator
-    - MedkitAdvancedFilled
+  storage:
+    back:
+      - DefibrillatorCompact

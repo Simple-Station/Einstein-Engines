@@ -58,6 +58,6 @@
     id: SurgeonPDA
     suitstorage: WeaponPistolNeoVolker
     back: ClothingBackpackSatchelMedical
-  inhand:
-    - Defibrillator
-    - MedkitAdvancedFilled
+  storage:
+    back:
+      - DefibrillatorCompact
