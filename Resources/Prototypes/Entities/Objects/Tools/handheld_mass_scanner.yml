@@ -43,6 +43,9 @@
     difficulty: 3
     recipes:
       - HandHeldMassScannerEE
+  - type: Tag
+    tags:
+      - FitsInVoidsuitKit
 
 - type: entity
   id: HandHeldMassScannerEmpty

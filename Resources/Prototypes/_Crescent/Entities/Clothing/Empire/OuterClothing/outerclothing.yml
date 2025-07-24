@@ -481,6 +481,7 @@
   - type: Tag
     tags:
     - SuitEVA
+    - FitsInVoidsuitKit
   - type: StaticPrice
     price: 1500
 

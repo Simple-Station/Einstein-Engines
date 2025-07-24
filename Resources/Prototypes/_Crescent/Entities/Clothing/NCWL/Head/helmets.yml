@@ -116,3 +116,6 @@
     sprite: _Crescent/Clothing/NCWL/Head/ncwlsofthelm.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/NCWL/Head/ncwlsofthelm.rsi
+  - type: Tag
+    tags:
+      - FitsInVoidsuitKit

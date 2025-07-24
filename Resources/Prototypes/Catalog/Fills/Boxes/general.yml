@@ -223,15 +223,15 @@
         amount: 2
 
 - type: entity
-  name: flare box
+  name: flare pocket box
   parent: BoxCardboard
   id: BoxFlare
-  description: A box of flares.
+  description: A box of flares. Fits in your pocket!
   components:
   - type: Item
     size: Tiny #so it can fit in pockets
     shape:
-    - 0,0,2,2
+    - 0,0,1,1
   - type: StorageFill
     contents:
       - id: Flare
@@ -240,6 +240,69 @@
     layers:
       - state: box
       - state: flare
+
+- type: entity
+  name: Cosmonaut Kit #for unionfall. kind of too good for disguising otherwise
+  parent: BoxCardboard
+  id: VoidsuitKitNCWL
+  description: A kit containing everything needed to survive in space. Communard edition.
+  components:
+  - type: Item
+    shape:
+    - 0,0,1,2
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,6,3
+    whitelist:
+      tags:
+        - FitsInVoidsuitKit
+        - Crowbar
+        - Wrench
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterNCWLEVA
+      - id: ClothingHeadHelmetNCWLEVA
+      - id: DoubleEmergencyOxygenTankFilled
+      - id: HandHeldMassScannerEE
+      - id: CrowbarRed
+      - id: Wrench
+  - type: Sprite
+    layers:
+      - state: boxwidetoy
+      - state: extendedtank
+
+- type: entity
+  name: Imperionaut Kit #for unionfall. kind of too good for disguising otherwise
+  parent: BoxCardboard
+  id: VoidsuitKitDSM
+  description: A kit containing everything needed to survive in space. Imperial edition.
+  components:
+  - type: Item
+    shape:
+    - 0,0,1,2
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,6,3
+    whitelist:
+      tags:
+        - FitsInVoidsuitKit
+        - Crowbar
+        - Wrench
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterCoatImperialSoftsuit
+      - id: ClothingHeadHelmetImperialEVA
+      - id: DoubleEmergencyOxygenTankFilled
+      - id: HandHeldMassScannerEE
+      - id: CrowbarRed
+      - id: Wrench
+  - type: Sprite
+    layers:
+      - state: boxwide
+      - state: extendedtank
+
 
 - type: entity
   name: trashbag box

@@ -21,7 +21,7 @@
 
 - type: Tag
   id: CartridgeRailgun15mm
-  
+
 - type: Tag
   id: AirAlarm
 
@@ -1564,3 +1564,6 @@
 
 - type: Tag
   id: UnathiEmotes
+
+- type: Tag
+  id: FitsInVoidsuitKit
