@@ -61,3 +61,6 @@
     gloves: ClothingHandsGlovesCombat
   inhand:
     - WeaponPistolComrade
+  storage:
+    back:
+      - VoidsuitKitNCWL

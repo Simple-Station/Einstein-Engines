@@ -92,3 +92,6 @@
     gloves: ClothingHandsGlovesCombat
   inhand:
     - WeaponPistolT91
+  storage:
+    back:
+      - VoidsuitKitNCWL

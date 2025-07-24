@@ -276,3 +276,7 @@
     - FitsInVoidsuitKit
   - type: StaticPrice
     price: 1000
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,3,3

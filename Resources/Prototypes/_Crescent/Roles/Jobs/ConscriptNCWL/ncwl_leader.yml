@@ -96,3 +96,6 @@
     eyes: ClothingEyesGlassesNCWL
   inhand:
     - WeaponPistolT91
+  storage:
+    back:
+      - VoidsuitKitNCWL

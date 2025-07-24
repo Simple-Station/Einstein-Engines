@@ -92,3 +92,6 @@
     eyes: ClothingEyesHudSecurity
   inhand:
     - WeaponPistolNeoVolker
+  storage:
+    back:
+      - VoidsuitKitDSM

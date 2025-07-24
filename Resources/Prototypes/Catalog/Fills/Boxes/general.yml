@@ -249,9 +249,10 @@
   components:
   - type: Item
     shape:
-    - 0,0,1,2
+    - 0,0,2,1
+    size: Small
   - type: Storage
-    maxItemSize: Huge
+    maxItemSize: Large
     grid:
     - 0,0,6,3
     whitelist:
@@ -280,9 +281,9 @@
   components:
   - type: Item
     shape:
-    - 0,0,1,2
+    - 0,0,2,1
   - type: Storage
-    maxItemSize: Huge
+    maxItemSize: Large
     grid:
     - 0,0,6,3
     whitelist:
