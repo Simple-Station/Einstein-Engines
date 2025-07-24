@@ -2,7 +2,7 @@
   id: Justicar
   name: job-name-justicar
   description: job-description-justicar
-  playtimetracker: JobJusticar
+  playTimeTracker: JobJusticar
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 24000

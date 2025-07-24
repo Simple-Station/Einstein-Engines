@@ -17,6 +17,7 @@
         - ResearchDirector
         - ForensicMantis
         - Chaplain
+        - Justicar
         - Librarian
         - Prisoner
     - !type:CharacterLogicOrRequirement
@@ -48,6 +49,7 @@
         - MedicalBorg
         - ResearchDirector
         - ForensicMantis
+        - Justicar
         - Chaplain
         - Librarian
     - !type:CharacterLogicOrRequirement
@@ -83,6 +85,7 @@
       jobs:
         - Borg
         - MedicalBorg
+        - Justicar
         - ResearchDirector
         - ForensicMantis
         - Chaplain
