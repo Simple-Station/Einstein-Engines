@@ -379,6 +379,8 @@ namespace Content.Shared.Movement.Systems
 
             if (TryComp<RelayInputMoverComponent>(uid, out var relayMover))
             {
+                HandleRunChange(relayMover.RelayEntity, subTick, !walking); // WWDP moved up & !walking
+
                 // if we swap to relay then stop our existing input if we ever change back.
                 if (moverComp != null)
                 {
@@ -386,13 +388,12 @@ namespace Content.Shared.Movement.Systems
                     WalkingAlert((uid, moverComp));
                 }
 
-                HandleRunChange(relayMover.RelayEntity, subTick, walking);
-                return;
+                //return; // WWDP
             }
 
             if (moverComp == null) return;
 
-            SetSprinting((uid, moverComp), subTick, walking);
+            SetSprinting(uid, subTick, walking);
         }
 
         public (Vector2 Walking, Vector2 Sprinting) GetVelocityInput(InputMoverComponent mover)
@@ -499,14 +500,21 @@ namespace Content.Shared.Movement.Systems
             component.LastInputSubTick = 0;
         }
 
-        public void SetSprinting(Entity<InputMoverComponent> entity, ushort subTick, bool walking)
+        // WWDP edited
+        public void SetSprinting(EntityUid entity, ushort subTick, bool walking)
         {
             // Logger.Info($"[{_gameTiming.CurTick}/{subTick}] Sprint: {enabled}");
 
-            SetMoveInput(entity, subTick, walking, MoveButtons.Walk);
-            WalkingAlert(entity);
-        }
+            if (!TryComp<InputMoverComponent>(entity, out var input))
+                return;
 
+            var entityComp = new Entity<InputMoverComponent>(owner:entity, comp:input);
+
+            SetMoveInput(entityComp, subTick, walking, MoveButtons.Walk);
+            WalkingAlert(entityComp);
+        }
+        // WWDP edit end
+        
         /// <summary>
         ///     Retrieves the normalized direction vector for a specified combination of movement keys.
         /// </summary>

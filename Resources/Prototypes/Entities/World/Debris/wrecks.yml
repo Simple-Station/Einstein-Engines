@@ -1,4 +1,6 @@
-﻿- type: entity
+﻿# HULLROT USES THIS FILE FOR ITS WRECKS
+
+- type: entity
   id: BaseScrapDebris
   parent: BaseDebris
   name: Scrap Debris
@@ -19,6 +21,12 @@
       entries:
         Plating:
           - prob: 3 # Intentional blank.
+          - id: SalvageMetalScrapSpawner
+            prob: 1
+          - id: SalvageRareMetalScrapSpawner
+            prob: 0.5
+          - id: SalvageElectronicScrapSpawner
+            prob: 1
           - id: SalvageMaterialCrateSpawner
             prob: 1
           - id: SalvageCanisterSpawner
@@ -31,6 +39,12 @@
             prob: 0.5
         Lattice:
           - prob: 2
+          - id: SalvageMetalScrapSpawner
+            prob: 1
+          - id: SalvageRareMetalScrapSpawner
+            prob: 0.5
+          - id: SalvageElectronicScrapSpawner
+            prob: 1
           - id: Grille
             prob: 0.2
           - id: SalvageMaterialCrateSpawner
@@ -39,6 +53,12 @@
             prob: 0.2
         FloorSteel:
           - prob: 3 # Intentional blank.
+          - id: SalvageMetalScrapSpawner
+            prob: 1
+          - id: SalvageRareMetalScrapSpawner
+            prob: 0.5
+          - id: SalvageElectronicScrapSpawner
+            prob: 1
           - id: SalvageMaterialCrateSpawner
             prob: 1
           - id: SalvageCanisterSpawner

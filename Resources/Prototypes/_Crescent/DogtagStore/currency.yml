@@ -1,0 +1,9 @@
+- type: currency
+  id: DogtagNCWL
+  displayName: Communard IDs #CHANGE TO DOGTAG LATER
+  canWithdraw: false
+
+- type: currency
+  id: DogtagDSM
+  displayName: Imperial IDs #CHANGE TO DOGTAG LATER
+  canWithdraw: false

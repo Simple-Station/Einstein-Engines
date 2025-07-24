@@ -5,6 +5,9 @@
   id: NCWLIDCardKommissar
   name: NCWL ID card
   components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
   - type: Sprite
     layers:
     - state: default
@@ -17,6 +20,9 @@
   id: NCWLIDCardSanitar
   name: NCWL ID card
   components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
   - type: PresetIdCard
     job: SanitarNCWL
   - type: Sprite
@@ -29,6 +35,9 @@
   id: NCWLIDCardArtificer
   name: NCWL ID card
   components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
   - type: Sprite
     layers:
     - state: default
@@ -41,6 +50,9 @@
   id: NCWLIDCardDoktor
   name: NCWL ID card
   components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
   - type: Sprite
     layers:
     - state: default
@@ -53,6 +65,9 @@
   id: NCWLIDCardAdministrator
   name: NCWL ID card
   components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
   - type: Sprite
     layers:
     - state: default
@@ -65,6 +80,9 @@
   id: NCWLIDCardKapitan
   name: NCWL ID card
   components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
   - type: Sprite
     layers:
     - state: default
@@ -77,6 +95,9 @@
   id: NCWLIDCardKadet
   name: NCWL ID card
   components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
   - type: Sprite
     layers:
     - state: default
@@ -225,6 +246,9 @@
   id: DSMIDCardFreeholder
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -237,6 +261,9 @@
   id: DSMIDCardTemplar
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -249,6 +276,9 @@
   id: DSMIDCardAdvocatus
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -261,6 +291,9 @@
   id: DSMIDCardArchmaester
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -273,6 +306,9 @@
   id: DSMIDCardSurgeon
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -285,6 +321,9 @@
   id: DSMIDCardWealth
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -297,6 +336,9 @@
   id: DSMIDCardForeman
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -309,6 +351,9 @@
   id: DSMIDCardScribe
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -321,6 +366,9 @@
   id: DSMIDCardLevyman
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -333,6 +381,9 @@
   id: DSMIDCardKnight
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -345,6 +396,9 @@
   id: DSMIDCardRitter
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -355,7 +409,11 @@
 - type: entity
   parent: IDCardStandard
   id: DSMIDCardLabor
+  name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -368,6 +426,9 @@
   id: DSMIDCardCourtier
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -380,6 +441,9 @@
   id: DSMIDCardAdjutant
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -392,6 +456,9 @@
   id: DSMIDCardGovernor
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default

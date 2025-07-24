@@ -1,0 +1,29 @@
+- type: entity
+  id: StorePresetHullrotDogtagNCWL
+  abstract: true
+  components:
+  - type: Store
+    name: Workers League Bounty Console. Uses imperial IDs as currency.
+    categories:
+    - StoreCategoryNCWLSnacks
+    - StoreCategoryNCWLUtility
+    currencyWhitelist:
+    - DogtagDSM
+    balance:
+      DogtagDSM: 0
+
+- type: entity
+  id: StorePresetHullrotDogtagDSM
+  abstract: true
+  components:
+  - type: Store
+    name: Mandate Bounty Console. Uses communard IDs as currency.
+    categories:
+    - StoreCategoryDSMSnacks
+    - StoreCategoryDSMUtility
+    currencyWhitelist:
+    - DogtagNCWL
+    balance:
+      DogtagNCWL: 0
+
+
