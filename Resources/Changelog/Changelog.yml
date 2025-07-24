@@ -16625,3 +16625,53 @@ Entries:
   id: 7300
   time: '2025-07-09T15:46:20.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2449
+- author: Ghost581
+  changes:
+    - type: Tweak
+      message: Jetpacks can go on suit storage slot
+  id: 7301
+  time: '2025-07-10T16:00:26.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2501
+- author: Will-Oliver-Br
+  changes:
+    - type: Tweak
+      message: Now you can see if there's a beaker in the chemmaster.
+  id: 7302
+  time: '2025-07-10T16:03:00.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2492
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added a PDA slot for storing your character's passport.
+  id: 7303
+  time: '2025-07-10T17:18:37.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2499
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed a bug with Traits Anticheat incorrectly triggering if the player
+        had selected enough 0 slot traits.
+  id: 7304
+  time: '2025-07-11T18:47:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2502
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Finally completed Space Wind V5's airflow math. It no longer produces
+        extremely inconsistent airflow values in and around airlocks and walls.
+  id: 7305
+  time: '2025-07-17T20:31:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2506
+- author: Spatison
+  changes:
+    - type: Fix
+      message: Shuttle docking emergency announcement has been fixed
+    - type: Fix
+      message: The miners shuttle can now arrive at the station
+    - type: Fix
+      message: Ghost toggle light now works
+  id: 7306
+  time: '2025-07-23T05:15:55.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2512

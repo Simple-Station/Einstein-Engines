@@ -27,24 +27,29 @@
     sprite: Objects/Devices/pda.rsi
     state: pda
   - type: Pda
+    passportSlot:
+      priority: -3
+      whitelist:
+        components:
+          - Passport
     paiSlot:
       priority: -2
       whitelist:
         components:
-        - PAI
+          - PAI
     penSlot:
       startingItem: Pen
       priority: -1
       whitelist:
         tags:
-        - Write
+          - Write
     idSlot:
       name: access-id-card-component-default
       ejectSound: /Audio/Machines/id_swipe.ogg
       insertSound: /Audio/Machines/id_insert.ogg
       whitelist:
         components:
-        - IdCard
+          - IdCard
   - type: PdaVisuals
   - type: Item
     size: Small
@@ -53,6 +58,7 @@
       PDA-id: !type:ContainerSlot {}
       PDA-pen: !type:ContainerSlot {}
       PDA-pai: !type:ContainerSlot {}
+      PDA-passport: !type:ContainerSlot {}
       Cartridge-Slot: !type:ContainerSlot {}
       program-container: !type:Container
   - type: ItemSlots
