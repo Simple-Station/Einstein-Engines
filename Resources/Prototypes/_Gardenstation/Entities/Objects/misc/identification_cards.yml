@@ -14,3 +14,6 @@
     - state: justicar
     - type: PresetIdCard
       job: Justicar
+  - type: Access
+    tags:
+    - Justicar
