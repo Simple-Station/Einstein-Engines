@@ -24,7 +24,7 @@
             Lawyer: [ 1, 1 ]
             Bartender: [ 1, 2 ]
             Botanist: [ 1, 2 ]
-            # MartialArtist: [ 2, 3 ] # EE: Disabled
+            MartialArtist: [ 2, 3 ] # EE: Disabled # gardenstation enabled
             Chef: [ 1, 2 ]
             Clown: [ 1, 1 ]
             Janitor: [ 1, 2 ]
@@ -34,8 +34,8 @@
             Captain: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1]
             NanotrasenRepresentative: [ 1, 1 ]
-            # Magistrate: [ 1, 1 ] # EE: Disabled
-            # AdministrativeAssistant: [ 1, 1 ] # EE: Disabled
+            Magistrate: [ 1, 1 ] # EE: Disabled # gardenstation enabled
+            AdministrativeAssistant: [ 1, 1 ] # EE: Disabled # gardenstation enabled
             HeadOfPersonnel: [ 1, 1 ]
           #Engineering
             ChiefEngineer: [ 1, 1 ]
@@ -64,6 +64,7 @@
             Chaplain: [ 1, 1 ]
             ForensicMantis: [ 1, 1 ]
             Borg: [ 2, 2 ]
+            Justicar: [ 1,1 ] # gardenstation added
           #Logistics
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 2, 4 ]

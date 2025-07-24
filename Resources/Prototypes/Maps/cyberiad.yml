@@ -19,8 +19,8 @@
             NanotrasenRepresentative: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
-            # AdministrativeAssistant: [ 1, 1 ] # EE: Disabled
-            # Magistrate: [ 1, 1 ] # EE: Disabled
+            AdministrativeAssistant: [ 1, 1 ] # EE: Disabled # gardenstation enabled
+            Magistrate: [ 1, 1 ] # EE: Disabled #gardenstation enabled
             Bartender: [ 2, 2 ]
             Botanist: [ 3, 3 ]
             Chef: [ 2, 2 ]
@@ -48,6 +48,7 @@
             ResearchAssistant: [ 4, 4 ]
             ForensicMantis: [ 1, 1 ]
             SeniorResearcher: [ 1, 1 ]
+            Justicar: [ 1,1 ] #gardenstation added
             #security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]

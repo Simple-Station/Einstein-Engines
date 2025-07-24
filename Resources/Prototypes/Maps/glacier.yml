@@ -63,12 +63,13 @@
           Scientist: [ 2, 3 ]
           ResearchAssistant: [ 2, 2 ]
           Librarian: [ 1, 1 ]
+          Justicar: [ 1,1 ] # gardenstation added
         #security
           SeniorOfficer: [ 1, 1 ]
           Warden: [ 1, 1 ]
           Detective: [ 1, 1 ]
-          SecurityOfficer: [ 3, 4 ]
-          SecurityCadet: [ 1, 2 ]
+          SecurityOfficer: [ 4, 5 ] # gardenstation - increased limit
+          SecurityCadet: [ 2, 3 ] # gardenstation - increased limit
           Brigmedic: [ 1, 1 ]
           Prisoner: [ 2, 3 ]
           Lawyer: [ 2, 2 ]

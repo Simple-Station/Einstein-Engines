@@ -20,6 +20,7 @@
           #service
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
+            BlueshieldOfficer: [ 1, 1] # gardenstation added/enabled
             Bartender: [ 1, 1 ]
             Botanist: [ 1, 1 ]
             Chef: [ 1 , 1 ]
@@ -45,6 +46,7 @@
             Chaplain: [ 1, 1 ]
             Scientist: [ 2, 2 ]
             ResearchAssistant: [ 2, 2 ]
+            Justicar: [ 1,1 ] # gardenstation added
           #security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
