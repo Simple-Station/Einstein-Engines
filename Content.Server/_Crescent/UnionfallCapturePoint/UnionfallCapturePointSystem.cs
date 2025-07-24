@@ -18,6 +18,7 @@ using Content.Shared.Item.ItemToggle.Components;
 using Robust.Shared.Serialization;
 using Content.Shared.DoAfter;
 using Content.Shared._Crescent.UnionfallCapturePoint;
+using Robust.Shared.Timing;
 
 
 namespace Content.Server._Crescent.UnionfallCapturePoint;
@@ -30,10 +31,42 @@ public sealed class UnionfallCapturePointSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
 
+    private ISawmill _sawmill = default!;
+
     public override void Initialize()
     {
+        SubscribeLocalEvent<UnionfallCapturePointComponent, ComponentInit>(OnComponentInit);
         SubscribeLocalEvent<UnionfallCapturePointComponent, ActivateInWorldEvent>(OnActivatedInWorld);
         SubscribeLocalEvent<UnionfallCapturePointComponent, UnionfallCapturePointDoAfterEvent>(OnCaptureDoAfter);
+        _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("audio.ambience");
+        // var query = EntityQueryEnumerator<UnionfallCapturePointComponent>();
+        // while (query.MoveNext(out var uid, out var capturepoint))
+        // {
+        //     TimeSpan graceTime = TimeSpan.FromSeconds(capturepoint.GracePeriod);
+        //     if (capturepoint.IsAnnouncerUnionfall)
+        //     {   //this announces 30 seconds in, then 1/4 thru the time, 1/2, 3/4, almost done, and finally at war start
+        //         Timer.Spawn(TimeSpan.FromMinutes(1), () => AnnouncementWarStart(graceTime));
+        //         // Timer.Spawn(graceTime * 0.25, () => AnnouncementWarPeriodic(graceTime * 0.25));
+        //         // Timer.Spawn(graceTime * 0.50, () => AnnouncementWarPeriodic(graceTime * 0.50));
+        //         // Timer.Spawn(graceTime * 0.75, () => AnnouncementWarPeriodic(graceTime * 0.75));
+        //         Timer.Spawn(graceTime - TimeSpan.FromMinutes(1), AnnouncementWarAlmost);
+        //         Timer.Spawn(graceTime, AnnouncementWarGraceOver); // TODO: turn this into a cool 10 second countdown
+
+
+        //     }
+        // }
+    }
+
+    private void OnComponentInit(EntityUid uid, UnionfallCapturePointComponent component, ComponentInit args)
+    {
+        _sawmill.Debug("ACTIVATED CONTROL POINT, FIRING TIMERS");
+        TimeSpan graceTime = TimeSpan.FromSeconds(component.GracePeriod);
+        Timer.Spawn(TimeSpan.FromMinutes(1), () => AnnouncementWarStart(graceTime));
+        Timer.Spawn(graceTime * 0.25, () => AnnouncementWarPeriodic(graceTime * 0.25));
+        Timer.Spawn(graceTime * 0.50, () => AnnouncementWarPeriodic(graceTime * 0.50));
+        Timer.Spawn(graceTime * 0.75, () => AnnouncementWarPeriodic(graceTime * 0.75));
+        Timer.Spawn(graceTime - TimeSpan.FromMinutes(1), AnnouncementWarAlmost);
+        Timer.Spawn(graceTime, AnnouncementWarGraceOver); // TODO: turn this into a cool 10 second countdown
     }
 
     public override void Update(float frameTime)
@@ -43,7 +76,7 @@ public sealed class UnionfallCapturePointSystem : EntitySystem
         var query = EntityQueryEnumerator<UnionfallCapturePointComponent>();
         while (query.MoveNext(out var uid, out var capturepoint))
         {
-            capturepoint.GracePeriod -= frameTime;
+            capturepoint.GracePeriod -= frameTime; //we do it this way so we can VVedit in admin mode midgame
 
             if (capturepoint.GracePeriod > 0f) //point is still in grace period
                 return;
@@ -90,27 +123,6 @@ public sealed class UnionfallCapturePointSystem : EntitySystem
         };
 
         _doAfter.TryStartDoAfter(doAfterArguments, null);
-
-        // if (component.CapturingFaction == null) //faction now controls da point
-        // {
-        //     component.CapturingFaction = faction;
-        //     _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
-        //         faction + " has activated the control point! It will finish in " + float.Round(component.CurrentCaptureProgress).ToString() + " seconds.");
-        // }
-        // else if (component.CapturingFaction != faction) //opposing faction touched control point
-        // {
-        //     component.CapturingFaction = faction;
-        //     component.CurrentCaptureProgress += component.CaptureTimeBonus; //takes longer since it switched sides
-        //     if (component.CurrentCaptureProgress > component.TimeToEnd) //cant go longer than this amount
-        //         component.CurrentCaptureProgress = component.TimeToEnd;
-        //     _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
-        //         faction + " seized control of the control point! The time left is " + float.Round(component.CurrentCaptureProgress).ToString() + " seconds.");
-        // }
-        // else //someone with the same faction touched the point
-        // {
-        //     _popup.PopupEntity(Loc.GetString("capturepoint-same-faction-fail"), uid, args.User);
-        // }
-
     }
 
     private void OnCaptureDoAfter(EntityUid uid, UnionfallCapturePointComponent component, UnionfallCapturePointDoAfterEvent args)
@@ -139,5 +151,31 @@ public sealed class UnionfallCapturePointSystem : EntitySystem
             _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
                 faction + " seized control of the control point! The time left is " + float.Round(component.CurrentCaptureProgress).ToString() + " seconds.");
         }
+    }
+
+    private void AnnouncementWarStart(TimeSpan time)
+    {
+        _sawmill.Debug("firing AnnouncementWarStart");
+        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
+                "SUDDEN HADAL TIDE DETECTED - DEPLOYING LOCALIZED DEFENSES. EXPECTED DURATION: <" + time + "> ALL VESSELS ADVISED TO REMAIN NEAR THE FLAGSHIP AND WEATHER THE STORM.");
+    }
+    private void AnnouncementWarPeriodic(TimeSpan time)
+    {
+        _sawmill.Debug("firing AnnouncementWarPeriodic");
+        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
+                "<" + time + "> SECONDS LEFT OF THE STORM");
+    }
+
+    private void AnnouncementWarAlmost()
+    {
+        _sawmill.Debug("firing AnnouncementWarAlmost");
+        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
+                "ALMOST THERE - SCANS SHOW THE HADAL TIDE ACTIVELY RECEDING");
+    }
+    private void AnnouncementWarGraceOver()
+    {
+        _sawmill.Debug("firing AnnouncementWarGraceOver");
+        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
+                "WAR HAS BEGUN! - HADAL TIDE RESCINDED ENTIRELY. VESSELS ADVISED TO MAKE THEIR WAY TO THE OBJECTIVE");
     }
 }

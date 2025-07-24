@@ -36,5 +36,11 @@ public sealed partial class UnionfallCapturePointComponent : Component
     [DataField]
     public float GracePeriod = 1200f; //20 minutes. 10 ship + 10 point
 
+    /// <summary>
+    /// This decides wether the point announces UNIONFALL specific announcements regarding the grace period.
+    /// </summary>
+    [DataField]
+    public bool IsAnnouncerUnionfall = false;
+
 
 }
