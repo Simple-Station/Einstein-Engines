@@ -21,11 +21,11 @@
     Garbage: 500
 
 - type: latheRecipe
-  id: PlasticFromGarbage10
-  result: SheetPlastic10
+  id: PlasticFromGarbage1
+  result: SheetPlastic1
   completetime: 0.25
   materials:
-    RefinedGarbage: 3000
+    RefinedGarbage: 200
 
 - type: latheRecipe
   id: PlasticFromGarbage
