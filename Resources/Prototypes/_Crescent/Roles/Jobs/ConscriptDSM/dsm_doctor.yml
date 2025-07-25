@@ -53,11 +53,13 @@
     eyes: ClothingEyesHudMedSec
     gloves: ClothingHandsGlovesImperialLonggloves
     pocket1: DoubleEmergencyOxygenTankFilled
-    pocket2: GrenadeShrapnel
+    pocket2: GrenadeFlashBang
     ears: ClothingHeadsetEmpire
     id: SurgeonPDA
     suitstorage: WeaponPistolNeoVolker
     back: ClothingBackpackSatchelMedical
+    inhand:
+    - BookUnionfallDSMGuide
   storage:
     back:
       - DefibrillatorCompact

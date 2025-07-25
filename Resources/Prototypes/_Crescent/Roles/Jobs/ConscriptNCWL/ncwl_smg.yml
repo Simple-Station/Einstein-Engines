@@ -59,6 +59,8 @@
     id: SanitarPDA
     suitstorage: WeaponSubMachineGunNCWLPartisan
     gloves: ClothingHandsGlovesCombat
+  inhand:
+    - BookUnionfallNCWLGuide
   storage:
     back:
       - VoidsuitKitNCWL

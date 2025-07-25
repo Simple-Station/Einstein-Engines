@@ -90,6 +90,8 @@
     pocket1: DoubleEmergencyOxygenTankFilled
     ears: ClothingHeadsetEmpire
     eyes: ClothingEyesHudSecurity
+  inhand:
+    - BookUnionfallDSMGuide
   storage:
     back:
       - VoidsuitKitDSM

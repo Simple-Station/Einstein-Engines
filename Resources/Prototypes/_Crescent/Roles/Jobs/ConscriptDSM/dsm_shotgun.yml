@@ -57,6 +57,8 @@
     id: LevymanPDA
     suitstorage: WeaponShotgunDSMMatusa
     eyes: ClothingEyesHudSecurity
+  inhand:
+    - BookUnionfallDSMGuide
   storage:
     back:
       - VoidsuitKitDSM

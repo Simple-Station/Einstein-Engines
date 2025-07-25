@@ -57,6 +57,8 @@
     back: ClothingBackpackSatchelMedical
     gloves: ClothingHandsGlovesCombat
     eyes: ClothingEyesHudMedSec
+  inhand:
+    - BookUnionfallNCWLGuide
   storage:
     back:
       - DefibrillatorCompact

@@ -89,6 +89,8 @@
     pocket1: DoubleEmergencyOxygenTankFilled
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesCombat
+  inhand:
+    - BookUnionfallNCWLGuide
   storage:
     back:
       - VoidsuitKitNCWL

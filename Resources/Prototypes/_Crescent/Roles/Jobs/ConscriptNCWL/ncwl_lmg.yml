@@ -59,6 +59,8 @@
     suitstorage: WeaponLightMachineGunNCWLSurplus
     gloves: ClothingHandsGlovesCombat
     eyes: ClothingEyesGlassesNCWL
+  inhand:
+    - BookUnionfallNCWLGuide
   storage:
     back:
       - VoidsuitKitNCWL

@@ -59,6 +59,8 @@
     id: SanitarPDA
     suitstorage: WeaponAntimaterielNCWLHayha
     gloves: ClothingHandsGlovesCombat
+  inhand:
+    - BookUnionfallNCWLGuide
   storage:
     back:
       - VoidsuitKitNCWL
