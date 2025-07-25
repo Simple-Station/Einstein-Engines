@@ -1,0 +1,84 @@
+<Document>
+## LORE
+A DSM punishment regimen, made up of disgraced soldiers and prisoners with too much experience to waste, runs a regular patrol of the Taypan sector.
+Suddenly, their mass scanners detect a massive signature of an NCWL warship.
+An inconvenient communications failure prevents them for signalling for help, and they decide try to regain their honor by stamping out the last embers of the revolution.
+
+## OBJECTIVE
+Each side's objective is to capture this experimental "Jamrock" shield generator, located on the southern side of NT Outpost Vladzena.
+(If you see blood and rot spreading, then you're likely close.)
+
+<Box>
+<GuideEntityEmbed Entity="UnionfallCapturePoint"/>
+</Box>
+
+It takes 10 seconds to activate, and then 10 minutes to finish once it's activated.
+If captured after it is already activated, then 3 minutes are added to the timer.
+
+## HADAL TIDE / GRACE PERIOD
+
+At the start of the round, your main flagship (and the enemy's) is trapped inside an indestructible, immovable protective circle.
+After a total of 20 minutes, the Hadal Tide ends and the circle dissipates. By this time, both teams should have ammassed a fleet and begun moving towards Vladzena.
+
+## WHAT SHOULD YOU BE DOING?
+
+1. Link up with your superior (the Marshal-Bannaret, or the Grand Steward) and listen to their speech.
+<Box>
+<GuideEntityEmbed Entity="ClothingHeadHatImperialBeret" Caption="look for this hat"/>
+<GuideEntityEmbed Entity="ClothingOuterHardsuitImperialCommand" Caption="and this hardsuit"/>
+</Box>
+2a. Join with an existing ship crew and board their ship. Use a mass scanner to find docked Raiders or Jannissaries.
+<Box>
+<GuideEntityEmbed Entity="HandHeldMassScannerEE" Caption="either use the scanner in your bag"/>
+<GuideEntityEmbed Entity="ComputerRadar" Caption="or find this console"/>
+</Box>
+
+OR
+
+2b. Get a ship LPC from a vendor
+<Box>
+<GuideEntityEmbed Entity="NCWLConscriptShipVendory" Caption="vendor looks like this"/>
+<GuideEntityEmbed Entity="ShipVoucherUnionfallKhopesh" Caption="you want this thing"/>
+</Box>
+3. Insert it in a shipyard console
+<Box>
+<GuideEntityEmbed Entity="UnionfallClementineMothershipComputer" Caption="console looks like this"/>
+</Box>
+4. Use a mass scanner to find where it's docked
+<Box>
+<GuideEntityEmbed Entity="HandHeldMassScannerEE" Caption="either use the scanner in your bag"/>
+<GuideEntityEmbed Entity="ComputerRadar" Caption="or find this console"/>
+</Box>
+5. Use your ID card (its in your PDA) to unlock the console
+6. Go to the "Dock" section and undock to free up the space for the next ship
+
+When the barrier falls, follow orders and attempt to dock with the NT outpost. Good luck.
+
+## DSM SHIP ROSTER
+
+1. DSM Conquest
+- An ultralight energy harasser with an EMP gun and a plasmacaster.
+- Extremely fragile. Excels at disabling and slowly whittling down ships of all sizes.
+- EMP gun saps the powergrid and disables electronics, while the plasmacaster offers dissapointing damage output. Bring a friend.
+- DOES NOT HOLD ATMOSPHERE!
+
+2. DSM Jannissary
+- A penal fighter armed with a Slugthrower and a Sumitomo missle launcher.
+- Well-rounded and decently mobile. Slugthrower offers decent consistent damage while Sumitomo devastates with burst damage.
+- Slugthrower has a low ammo capacity and must be reloaded through a small spacewalk through the cockpit shutter.
+- Sumitomo comes packed with only one 5 round magazine.
+- Advised to bring a loader to assist with combat readiness.
+
+3. DSM Raider
+- An unarmed, armored troop transport with an IFF cloaker for stealth.
+- IFF cloaker, once activated, hides your signature from the Map screen (looks like a regular asteroid) and your nametag from the ship screen.
+- Well armored except for the front shutters. Either rely on the stealth or bring an escort crew.
+
+4. DSM Imparator
+- A dedicated artillery boat with an explosive 120mm cannon.
+- Small, mobile, and made to harass larger vessels. In this scenario, its gun devastates any vessel it manages to connect to.
+- Be wary of your limited armor and your slow fire rate.
+- Extremely vulnerable to ultralights that catch up to it without support.
+
+
+</Document>
