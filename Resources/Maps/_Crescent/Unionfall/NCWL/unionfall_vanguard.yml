@@ -115,12 +115,14 @@ entities:
           decals:
             98: -5,-3
             119: -5,-3
+            140: -5,-3
         - node:
             zIndex: 1
             id: LatticeCornerNW
           decals:
             104: 5,-3
             125: 5,-3
+            146: 5,-3
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -129,6 +131,8 @@ entities:
             95: -2,5
             113: -4,3
             116: -2,5
+            134: -4,3
+            137: -2,5
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -137,6 +141,8 @@ entities:
             89: 4,3
             107: 2,5
             110: 4,3
+            128: 2,5
+            131: 4,3
         - node:
             id: LatticeEdgeE
           decals:
@@ -146,6 +152,9 @@ entities:
             112: -4,3
             115: -2,5
             117: -5,-3
+            133: -4,3
+            136: -2,5
+            138: -5,-3
         - node:
             id: LatticeEdgeN
           decals:
@@ -159,6 +168,11 @@ entities:
             121: 0,-6
             122: 3,-6
             123: 5,-3
+            139: -5,-3
+            141: -3,-6
+            142: 0,-6
+            143: 3,-6
+            144: 5,-3
         - node:
             id: LatticeEdgeS
           decals:
@@ -170,6 +184,10 @@ entities:
             108: 4,3
             111: -4,3
             114: -2,5
+            126: 2,5
+            129: 4,3
+            132: -4,3
+            135: -2,5
         - node:
             id: LatticeEdgeW
           decals:
@@ -179,6 +197,9 @@ entities:
             106: 2,5
             109: 4,3
             124: 5,-3
+            127: 2,5
+            130: 4,3
+            145: 5,-3
         - node:
             color: '#FFFFFFFF'
             id: TechCornerE
@@ -358,24 +379,26 @@ entities:
       id: Vanguard
 - proto: AAAHardpointFixed
   entities:
-  - uid: 73
+  - uid: 4
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -2.5,2.5
       parent: 1
-    - type: ApcPowerReceiver
-      powerLoad: 100
+    - type: DeviceLinkSink
+      links:
+      - 13
     - type: Physics
       canCollide: False
-  - uid: 74
+  - uid: 76
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 3.5,2.5
       parent: 1
-    - type: ApcPowerReceiver
-      powerLoad: 100
+    - type: DeviceLinkSink
+      links:
+      - 13
     - type: Physics
       canCollide: False
 - proto: AirlockCommand
@@ -447,8 +470,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 90
-      - 76
-      - 4
+      - 13
   - uid: 82
     components:
     - type: Transform
@@ -457,8 +479,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 89
-      - 75
-      - 4
+      - 13
 - proto: BoriaticGeneratorHerculesShuttle
   entities:
   - uid: 103
@@ -944,7 +965,7 @@ entities:
     - type: InsideEntityStorage
 - proto: ComputerShuttle
   entities:
-  - uid: 4
+  - uid: 13
     components:
     - type: Transform
       pos: 0.5,3.5
@@ -965,7 +986,7 @@ entities:
           ent: null
     - type: DeviceLinkSource
       linkedPorts:
-        75:
+        4:
         - Group1: Toggle
         76:
         - Group1: Toggle
@@ -973,17 +994,17 @@ entities:
         - Group2: Toggle
         81:
         - Group2: Toggle
-        199:
+        197:
         - Group3: Toggle
         198:
         - Group3: Toggle
-        197:
+        199:
         - Group3: Toggle
     - type: NamedModules
       buttonNames:
       - Fire Slugthrowers
       - Toggle Gun Shutters
-      - Toggle Windows
+      - Toggle Cockpit Shutters
       - Module D
       - Module E
 - proto: DoubleEmergencyOxygenTankFilled
@@ -1183,18 +1204,18 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 13
+  - uid: 73
     components:
     - type: Transform
-      parent: 75
+      parent: 14
     - type: Physics
       angularDamping: 0
       linearDamping: 0
       canCollide: False
-  - uid: 14
+  - uid: 75
     components:
     - type: Transform
-      parent: 76
+      parent: 74
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -1248,12 +1269,12 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 94
-          - 12
-          - 93
-          - 11
-          - 9
           - 10
+          - 9
+          - 11
+          - 93
+          - 12
+          - 94
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -1355,7 +1376,7 @@ entities:
       parent: 1
     - type: DeviceLinkSink
       links:
-      - 4
+      - 13
   - uid: 198
     components:
     - type: Transform
@@ -1363,7 +1384,7 @@ entities:
       parent: 1
     - type: DeviceLinkSink
       links:
-      - 4
+      - 13
   - uid: 199
     components:
     - type: Transform
@@ -1371,7 +1392,7 @@ entities:
       parent: 1
     - type: DeviceLinkSink
       links:
-      - 4
+      - 13
 - proto: SignalButton
   entities:
   - uid: 89
@@ -1396,21 +1417,12 @@ entities:
         - Pressed: Toggle
 - proto: SlugthrowerCannon
   entities:
-  - uid: 75
+  - uid: 14
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -2.5,2.5
       parent: 1
-    - type: DeviceLinkSink
-      links:
-      - 4
-    - type: DeviceLinkSource
-      linkedPorts:
-        82:
-        - SpaceArtilleryDetectedFiring: Open
-    - type: ChamberMagazineAmmoProvider
-      boltClosed: True
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -1420,34 +1432,19 @@ entities:
         gun_magazine: !type:ContainerSlot
           showEnts: False
           occludes: True
-          ent: 13
+          ent: 73
         gun_chamber: !type:ContainerSlot
           showEnts: False
           occludes: True
           ent: null
-        machine_board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        machine_parts: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-  - uid: 76
+    - type: ChamberMagazineAmmoProvider
+      boltClosed: True
+  - uid: 74
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 3.5,2.5
       parent: 1
-    - type: DeviceLinkSink
-      links:
-      - 4
-    - type: DeviceLinkSource
-      linkedPorts:
-        81:
-        - SpaceArtilleryDetectedFiring: Open
-    - type: ChamberMagazineAmmoProvider
-      boltClosed: True
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -1457,19 +1454,13 @@ entities:
         gun_magazine: !type:ContainerSlot
           showEnts: False
           occludes: True
-          ent: 14
+          ent: 75
         gun_chamber: !type:ContainerSlot
           showEnts: False
           occludes: True
           ent: null
-        machine_board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        machine_parts: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
+    - type: ChamberMagazineAmmoProvider
+      boltClosed: True
 - proto: SubstationBasic
   entities:
   - uid: 101

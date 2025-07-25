@@ -57,6 +57,10 @@ entities:
             14: 0,3
             43: 0,-4
             46: 3,-4
+            56: 0,2
+            61: 0,3
+            90: 0,-4
+            93: 3,-4
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -65,6 +69,10 @@ entities:
             37: 6,3
             48: 3,-4
             51: 6,-4
+            79: 6,2
+            84: 6,3
+            95: 3,-4
+            98: 6,-4
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -74,6 +82,11 @@ entities:
             17: 0,4
             20: 1,4
             25: 5,4
+            54: 0,2
+            59: 0,3
+            64: 0,4
+            67: 1,4
+            72: 5,4
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -83,6 +96,11 @@ entities:
             31: 6,2
             36: 6,3
             40: 6,4
+            69: 1,4
+            74: 5,4
+            78: 6,2
+            83: 6,3
+            87: 6,4
         - node:
             id: LatticeEdgeE
           decals:
@@ -93,6 +111,13 @@ entities:
             24: 5,4
             41: 0,-4
             44: 3,-4
+            53: 0,2
+            58: 0,3
+            63: 0,4
+            66: 1,4
+            71: 5,4
+            88: 0,-4
+            91: 3,-4
         - node:
             id: LatticeEdgeN
           decals:
@@ -103,6 +128,13 @@ entities:
             42: 0,-4
             45: 3,-4
             49: 6,-4
+            55: 0,2
+            60: 0,3
+            76: 6,2
+            81: 6,3
+            89: 0,-4
+            92: 3,-4
+            96: 6,-4
         - node:
             id: LatticeEdgeS
           decals:
@@ -114,6 +146,14 @@ entities:
             28: 6,2
             33: 6,3
             38: 6,4
+            52: 0,2
+            57: 0,3
+            62: 0,4
+            65: 1,4
+            70: 5,4
+            75: 6,2
+            80: 6,3
+            85: 6,4
         - node:
             id: LatticeEdgeW
           decals:
@@ -124,6 +164,13 @@ entities:
             39: 6,4
             47: 3,-4
             50: 6,-4
+            68: 1,4
+            73: 5,4
+            77: 6,2
+            82: 6,3
+            86: 6,4
+            94: 3,-4
+            97: 6,-4
         - node:
             color: '#D381C996'
             id: WarnCornerSmallGreyscaleNE
@@ -953,6 +1000,11 @@ entities:
       rot: 3.141592653589793 rad
       pos: 5.5,-2.5
       parent: 1
+  - uid: 105
+    components:
+    - type: Transform
+      pos: 4.5,1.5
+      parent: 1
 - proto: JetpackBlackFilled
   entities:
   - uid: 168
@@ -1060,7 +1112,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 1.5,-1.5
       parent: 1
-- proto: PlastitaniumWindow
+- proto: ReinforcedPlasmaWindow
   entities:
   - uid: 18
     components:

@@ -84,6 +84,16 @@ entities:
             153: -3,-6
             158: -3,-5
             164: -2,-10
+            181: 2,-10
+            186: 3,-10
+            204: 4,-10
+            215: -6,-8
+            218: -5,-10
+            221: -4,-10
+            226: -3,-10
+            233: -3,-6
+            238: -3,-5
+            244: -2,-10
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -108,6 +118,16 @@ entities:
             143: -4,-10
             148: -3,-10
             166: -2,-10
+            183: 2,-10
+            188: 3,-10
+            193: 3,-6
+            198: 3,-5
+            206: 4,-10
+            209: 5,-10
+            212: 6,-8
+            223: -4,-10
+            228: -3,-10
+            246: -2,-10
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -122,6 +142,11 @@ entities:
             156: -3,-5
             161: -3,-4
             169: -2,1
+            175: 1,1
+            231: -3,-6
+            236: -3,-5
+            241: -3,-4
+            249: -2,1
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -136,6 +161,11 @@ entities:
             117: 3,-5
             121: 3,-4
             172: -1,1
+            178: 2,1
+            192: 3,-6
+            197: 3,-5
+            201: 3,-4
+            252: -1,1
         - node:
             id: LatticeEdgeE
           decals:
@@ -165,6 +195,19 @@ entities:
             160: -3,-4
             162: -2,-10
             168: -2,1
+            174: 1,1
+            179: 2,-10
+            184: 3,-10
+            202: 4,-10
+            213: -6,-8
+            216: -5,-10
+            219: -4,-10
+            224: -3,-10
+            230: -3,-6
+            235: -3,-5
+            240: -3,-4
+            242: -2,-10
+            248: -2,1
         - node:
             id: LatticeEdgeN
           decals:
@@ -196,6 +239,20 @@ entities:
             152: -3,-6
             157: -3,-5
             163: -2,-10
+            180: 2,-10
+            185: 3,-10
+            190: 3,-6
+            195: 3,-5
+            203: 4,-10
+            207: 5,-10
+            210: 6,-8
+            214: -6,-8
+            217: -5,-10
+            220: -4,-10
+            225: -3,-10
+            232: -3,-6
+            237: -3,-5
+            243: -2,-10
         - node:
             id: LatticeEdgeS
           decals:
@@ -219,6 +276,16 @@ entities:
             159: -3,-4
             167: -2,1
             170: -1,1
+            173: 1,1
+            176: 2,1
+            189: 3,-6
+            194: 3,-5
+            199: 3,-4
+            229: -3,-6
+            234: -3,-5
+            239: -3,-4
+            247: -2,1
+            250: -1,1
         - node:
             id: LatticeEdgeW
           decals:
@@ -248,6 +315,19 @@ entities:
             147: -3,-10
             165: -2,-10
             171: -1,1
+            177: 2,1
+            182: 2,-10
+            187: 3,-10
+            191: 3,-6
+            196: 3,-5
+            200: 3,-4
+            205: 4,-10
+            208: 5,-10
+            211: 6,-8
+            222: -4,-10
+            227: -3,-10
+            245: -2,-10
+            251: -1,1
         - node:
             color: '#D381C996'
             id: WarnCornerNW
@@ -374,6 +454,19 @@ entities:
     - type: ShuttleDeed
       shuttleName: Shuttle TAN-282
       shuttleUid: 1
+- proto: AAAHardpointFixed
+  entities:
+  - uid: 87
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,-1.5
+      parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 72
+    - type: Physics
+      canCollide: False
 - proto: ActionToggleInternals
   entities:
   - uid: 94
@@ -409,7 +502,7 @@ entities:
       pos: -1.5,-7.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -4182.795
+      secondsUntilStateChange: -4339.0615
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -861,6 +954,62 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
+  - uid: 168
+    components:
+    - type: Transform
+      parent: 167
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+  - uid: 169
+    components:
+    - type: Transform
+      parent: 167
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+  - uid: 170
+    components:
+    - type: Transform
+      parent: 167
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+  - uid: 171
+    components:
+    - type: Transform
+      parent: 167
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+  - uid: 172
+    components:
+    - type: Transform
+      parent: 167
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+  - uid: 174
+    components:
+    - type: Transform
+      parent: 167
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+  - uid: 177
+    components:
+    - type: Transform
+      parent: 167
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
   - uid: 178
     components:
     - type: Transform
@@ -870,6 +1019,78 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
+  - uid: 179
+    components:
+    - type: Transform
+      parent: 167
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+  - uid: 183
+    components:
+    - type: Transform
+      parent: 167
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+  - uid: 184
+    components:
+    - type: Transform
+      parent: 167
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+  - uid: 185
+    components:
+    - type: Transform
+      parent: 167
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+  - uid: 186
+    components:
+    - type: Transform
+      parent: 167
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+  - uid: 187
+    components:
+    - type: Transform
+      parent: 167
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+  - uid: 188
+    components:
+    - type: Transform
+      parent: 167
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+  - uid: 189
+    components:
+    - type: Transform
+      parent: 167
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+  - uid: 195
+    components:
+    - type: Transform
+      parent: 167
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
 - proto: CartridgeShellHighExplosive
   entities:
   - uid: 145
@@ -932,7 +1153,7 @@ entities:
       parent: 1
 - proto: ComputerTabletopShuttle
   entities:
-  - uid: 87
+  - uid: 72
     components:
     - type: Transform
       pos: 0.5,-5.5
@@ -953,19 +1174,15 @@ entities:
           ent: null
     - type: DeviceLinkSource
       linkedPorts:
-        72:
+        87:
         - Group1: SpaceArtilleryFire
-        91:
-        - Group5: Toggle
     - type: NamedModules
       buttonNames:
       - Fire 120mm
-      - Fire Vulcan
+      - Module B
       - Module C
       - Module D
       - Module E
-    - type: ApcPowerReceiver
-      needsPower: False
 - proto: DoubleEmergencyOxygenTankFilled
   entities:
   - uid: 93
@@ -1159,7 +1376,6 @@ entities:
     - type: DeviceLinkSink
       links:
       - 175
-      - 87
 - proto: SignalButton
   entities:
   - uid: 175
@@ -1315,36 +1531,52 @@ entities:
       parent: 1
 - proto: Type99Artillery
   entities:
-  - uid: 72
+  - uid: 167
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 0.5,-1.5
       parent: 1
-    - type: Battery
-      startingCharge: 973000
+    - type: BallisticAmmoProvider
+      entities:
+      - 168
+      - 169
+      - 170
+      - 171
+      - 172
+      - 174
+      - 177
+      - 179
+      - 183
+      - 184
+      - 185
+      - 186
+      - 187
+      - 188
+      - 189
+      - 195
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
           showEnts: False
           occludes: True
-          ents: []
-        machine_board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        machine_parts: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-    - type: DeviceLinkSink
-      links:
-      - 87
-    - type: ApcPowerReceiver
-      powerLoad: 5000
-    - type: BatterySelfRecharger
-      autoRechargeRate: -3000
-      autoRecharge: True
+          ents:
+          - 168
+          - 169
+          - 170
+          - 171
+          - 172
+          - 174
+          - 177
+          - 179
+          - 183
+          - 184
+          - 185
+          - 186
+          - 187
+          - 188
+          - 189
+          - 195
 - proto: WallPlastitanium
   entities:
   - uid: 16

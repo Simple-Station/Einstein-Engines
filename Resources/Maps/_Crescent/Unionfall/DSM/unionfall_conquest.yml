@@ -58,6 +58,88 @@ entities:
         version: 2
         nodes:
         - node:
+            zIndex: 1
+            id: LatticeCornerNE
+          decals:
+            10: 1,1
+            32: -2,0
+            37: -2,1
+            42: -2,2
+            50: -1,1
+            56: -1,-1
+        - node:
+            zIndex: 1
+            id: LatticeCornerNW
+          decals:
+            13: 1,1
+            16: 2,0
+            21: 2,1
+            26: 2,2
+            53: -1,1
+            59: 1,-1
+        - node:
+            zIndex: 1
+            id: LatticeCornerSE
+          decals:
+            8: 1,1
+            35: -2,1
+            40: -2,2
+            45: -2,3
+            48: -1,1
+        - node:
+            zIndex: 1
+            id: LatticeCornerSW
+          decals:
+            12: 1,1
+            20: 2,1
+            25: 2,2
+            29: 2,3
+            52: -1,1
+        - node:
+            id: LatticeEdgeE
+          decals:
+            7: 1,1
+            30: -2,0
+            34: -2,1
+            39: -2,2
+            44: -2,3
+            47: -1,1
+            54: -1,-1
+        - node:
+            id: LatticeEdgeN
+          decals:
+            9: 1,1
+            14: 2,0
+            18: 2,1
+            23: 2,2
+            31: -2,0
+            36: -2,1
+            41: -2,2
+            49: -1,1
+            55: -1,-1
+            57: 1,-1
+        - node:
+            id: LatticeEdgeS
+          decals:
+            6: 1,1
+            17: 2,1
+            22: 2,2
+            27: 2,3
+            33: -2,1
+            38: -2,2
+            43: -2,3
+            46: -1,1
+        - node:
+            id: LatticeEdgeW
+          decals:
+            11: 1,1
+            15: 2,0
+            19: 2,1
+            24: 2,2
+            28: 2,3
+            51: -1,1
+            58: 1,-1
+        - node:
             color: '#D381C996'
             id: WarnFullGreyscale
           decals:
@@ -73,13 +155,13 @@ entities:
       data:
         tiles:
           0,0:
-            0: 5011
+            0: 13075
             1: 17508
           0,-1:
             0: 4096
             1: 8192
           -1,0:
-            0: 2088
+            0: 34824
             1: 17604
           0,1:
             0: 1
@@ -120,6 +202,28 @@ entities:
     - type: GasTileOverlay
     - type: BecomesStation
       id: Conquest
+- proto: AAAHardpointFixed
+  entities:
+  - uid: 40
+    components:
+    - type: Transform
+      pos: 2.5,3.5
+      parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 39
+    - type: Physics
+      canCollide: False
+  - uid: 78
+    components:
+    - type: Transform
+      pos: -1.5,3.5
+      parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 39
+    - type: Physics
+      canCollide: False
 - proto: AirlockCommandLockedDSM
   entities:
   - uid: 42
@@ -326,7 +430,7 @@ entities:
       parent: 1
 - proto: ComputerShuttle
   entities:
-  - uid: 32
+  - uid: 39
     components:
     - type: Transform
       pos: 0.5,4.5
@@ -347,17 +451,17 @@ entities:
           ent: null
     - type: DeviceLinkSource
       linkedPorts:
-        39:
+        78:
         - Group1: Toggle
         40:
         - Group2: Toggle
     - type: NamedModules
       buttonNames:
-      - Fire gatling
-      - Fire repeater
-      - Blank
-      - Blank
-      - Blank
+      - Fire Ion Gatling
+      - Fire Plasma Gun
+      - Module C
+      - Module D
+      - Module E
 - proto: JugBoriaticFuel
   entities:
   - uid: 73
@@ -476,26 +580,20 @@ entities:
       parent: 1
 - proto: ShuttleGunBizmuth
   entities:
-  - uid: 39
+  - uid: 41
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -1.5,3.5
       parent: 1
-    - type: DeviceLinkSink
-      links:
-      - 32
 - proto: ShuttleGunPlasmaRepeater
   entities:
-  - uid: 40
+  - uid: 32
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 2.5,3.5
       parent: 1
-    - type: DeviceLinkSink
-      links:
-      - 32
 - proto: SmallGyroscope
   entities:
   - uid: 72

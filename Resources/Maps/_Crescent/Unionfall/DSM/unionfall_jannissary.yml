@@ -63,6 +63,10 @@ entities:
             11: 0,3
             40: 0,-4
             43: 3,-4
+            53: 0,2
+            58: 0,3
+            87: 0,-4
+            90: 3,-4
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -71,6 +75,10 @@ entities:
             34: 6,3
             45: 3,-4
             48: 6,-4
+            76: 6,2
+            81: 6,3
+            92: 3,-4
+            95: 6,-4
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -80,6 +88,11 @@ entities:
             14: 0,4
             17: 1,4
             22: 5,4
+            51: 0,2
+            56: 0,3
+            61: 0,4
+            64: 1,4
+            69: 5,4
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -89,6 +102,11 @@ entities:
             28: 6,2
             33: 6,3
             37: 6,4
+            66: 1,4
+            71: 5,4
+            75: 6,2
+            80: 6,3
+            84: 6,4
         - node:
             id: LatticeEdgeE
           decals:
@@ -99,6 +117,13 @@ entities:
             21: 5,4
             38: 0,-4
             41: 3,-4
+            50: 0,2
+            55: 0,3
+            60: 0,4
+            63: 1,4
+            68: 5,4
+            85: 0,-4
+            88: 3,-4
         - node:
             id: LatticeEdgeN
           decals:
@@ -109,6 +134,13 @@ entities:
             39: 0,-4
             42: 3,-4
             46: 6,-4
+            52: 0,2
+            57: 0,3
+            73: 6,2
+            78: 6,3
+            86: 0,-4
+            89: 3,-4
+            93: 6,-4
         - node:
             id: LatticeEdgeS
           decals:
@@ -120,6 +152,14 @@ entities:
             25: 6,2
             30: 6,3
             35: 6,4
+            49: 0,2
+            54: 0,3
+            59: 0,4
+            62: 1,4
+            67: 5,4
+            72: 6,2
+            77: 6,3
+            82: 6,4
         - node:
             id: LatticeEdgeW
           decals:
@@ -130,6 +170,13 @@ entities:
             36: 6,4
             44: 3,-4
             47: 6,-4
+            65: 1,4
+            70: 5,4
+            74: 6,2
+            79: 6,3
+            83: 6,4
+            91: 3,-4
+            94: 6,-4
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFF5E'
@@ -193,6 +240,30 @@ entities:
     - type: RadiationGridResistance
     - type: BecomesStation
       id: Jannissary
+- proto: AAAHardpointFixed
+  entities:
+  - uid: 172
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 2.5,3.5
+      parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 8
+    - type: Physics
+      canCollide: False
+  - uid: 174
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 6.5,3.5
+      parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 8
+    - type: Physics
+      canCollide: False
 - proto: AirAlarm
   entities:
   - uid: 64
@@ -281,7 +352,6 @@ entities:
       parent: 1
     - type: DeviceLinkSink
       links:
-      - 46
       - 168
   - uid: 187
     components:
@@ -291,7 +361,6 @@ entities:
       parent: 1
     - type: DeviceLinkSink
       links:
-      - 46
       - 168
   - uid: 188
     components:
@@ -301,7 +370,6 @@ entities:
       parent: 1
     - type: DeviceLinkSink
       links:
-      - 46
       - 168
   - uid: 189
     components:
@@ -311,7 +379,6 @@ entities:
       parent: 1
     - type: DeviceLinkSink
       links:
-      - 46
       - 168
 - proto: BoriaticGeneratorHerculesShuttle
   entities:
@@ -719,7 +786,7 @@ entities:
     - type: InsideEntityStorage
 - proto: ComputerShuttle
   entities:
-  - uid: 46
+  - uid: 8
     components:
     - type: Transform
       pos: 4.5,3.5
@@ -740,25 +807,17 @@ entities:
           ent: null
     - type: DeviceLinkSource
       linkedPorts:
-        8:
-        - Group2: Trigger
-        32:
+        172:
+        - Group2: SpaceArtilleryFire
+        174:
         - Group1: Toggle
-        189:
-        - Group3: Toggle
-        188:
-        - Group3: Toggle
-        187:
-        - Group3: Toggle
-        186:
-        - Group3: Toggle
     - type: NamedModules
       buttonNames:
       - Fire Slugthrower
-      - Fire Kurosawa
-      - N/A
-      - N/A
-      - N/A
+      - Fire Missle
+      - Module C
+      - Module D
+      - Module E
 - proto: CrateAluminium
   entities:
   - uid: 20
@@ -772,10 +831,10 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 67
-          - 73
-          - 169
           - 170
+          - 169
+          - 73
+          - 67
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -946,10 +1005,10 @@ entities:
       linearDamping: 0
 - proto: MagazineGrenadeBaton
   entities:
-  - uid: 19
+  - uid: 32
     components:
     - type: Transform
-      parent: 8
+      parent: 19
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -992,6 +1051,14 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
+  - uid: 171
+    components:
+    - type: Transform
+      parent: 46
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
 - proto: MedkitCombatFilled
   entities:
   - uid: 81
@@ -1117,7 +1184,7 @@ entities:
       - 88
 - proto: ShuttleGunMissileRack
   entities:
-  - uid: 8
+  - uid: 19
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -1136,10 +1203,7 @@ entities:
         gun_magazine: !type:ContainerSlot
           showEnts: False
           occludes: True
-          ent: 19
-    - type: DeviceLinkSink
-      links:
-      - 46
+          ent: 32
 - proto: SignalButton
   entities:
   - uid: 70
@@ -1180,19 +1244,12 @@ entities:
         - Pressed: Toggle
 - proto: SlugthrowerCannon
   entities:
-  - uid: 32
+  - uid: 46
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 6.5,3.5
       parent: 1
-    - type: Battery
-      startingCharge: 198500
-    - type: DeviceLinkSink
-      links:
-      - 46
-    - type: ChamberMagazineAmmoProvider
-      boltClosed: True
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -1202,24 +1259,13 @@ entities:
         gun_magazine: !type:ContainerSlot
           showEnts: False
           occludes: True
-          ent: null
+          ent: 171
         gun_chamber: !type:ContainerSlot
           showEnts: False
           occludes: True
           ent: null
-        machine_board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        machine_parts: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-    - type: BatterySelfRecharger
-      autoRechargeRate: -500
-      autoRecharge: True
-    - type: ApcPowerReceiver
-      powerLoad: 2000
+    - type: ChamberMagazineAmmoProvider
+      boltClosed: True
 - proto: SmallGyroscopeSecurity
   entities:
   - uid: 77
@@ -1482,7 +1528,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -2891.3252
+      secondsUntilStateChange: -3192.625
       state: Opening
   - uid: 79
     components:
