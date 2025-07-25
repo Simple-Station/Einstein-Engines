@@ -1,0 +1,91 @@
+﻿# Justicar
+# Backpacks - eventually modsuit ahaha... shiit..haha...
+
+# belt
+
+# ears - maybe funny magic earring for reskinned mysta headset :0
+
+# Equipment
+- type: loadout
+  id: LoadoutJusticarEquipmentCandles
+  category: JobsEpistemicsJusticar
+  cost: 0
+  requirements:
+     - !type:CharacterItemGroupRequirement
+       group: LoadoutJusticarEquipment
+     - !type:CharacterJobRequirement
+       jobs:
+       - Justicar
+  items:
+    - BoxCandle
+
+- type: loadout
+  id: LoadoutJusticarPillCanisterCryptobiolin
+  category: JobsEpistemicsJusticar
+  cost: 0
+  guideEntry: PsionicInsulation
+  requirements:
+     - !type:CharacterItemGroupRequirement
+       group: LoadoutJusticarEquipment
+     - !type:CharacterJobRequirement
+        jobs:
+           - Justicar
+  items:
+    - PillCanisterCryptobiolin
+
+- type: loadout
+  id: LoadoutJusticarPillCanisterSpaceDrugs
+  category: JobsEpistemicsJusticar
+  cost: 0
+  guideEntry: Psionics
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutJusticarEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+      - Justicar
+  items:
+    - PillCanisterSpaceDrugs
+
+# Eyes
+
+- type: loadout
+  id: LoadoutJusticarEyesEpiHUD
+  category: JobsEpistemicsJusticar
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutJusticarEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Justicar
+  items:
+    - ClothingEyesHudEpistemics
+
+- type: loadout
+  id: LoadoutJusticarEyesEpiGlasses
+  category: JobsEpistemicsJusticar
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutJusticarEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Justicar
+  items:
+    - ClothingEyesGlassesEpistemics
+# Gloves - alt gloves would go here
+
+# Head
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+
+# Uniforms - other uniforms would go here

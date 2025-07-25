@@ -42,6 +42,7 @@ loadout-category-JobsEpistemicsMystagogue = Mystagogue
 loadout-category-JobsEpistemicsMystic = Mystic
 loadout-category-JobsEpistemicsNoviciate = Noviciate
 loadout-category-JobsEpistemicsPsionicMantis = Psionic Mantis
+loadout-category-JobsEpistemicsJusticar = Justicar
 
 # Logistics
 loadout-category-JobsLogistics = Logistics

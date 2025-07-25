@@ -120,6 +120,7 @@
     - JobsEpistemicsMystic
     - JobsEpistemicsNoviciate
     - JobsEpistemicsPsionicMantis
+    - JobsEpistemicsJusticar # gardenstation added
 
 - type: loadoutCategory
   id: JobsEpistemicsAAUncategorized
@@ -147,6 +148,9 @@
 
 - type: loadoutCategory
   id: JobsEpistemicsPsionicMantis
+
+- type: loadoutCategory
+  id: JobsEpistemicsJusticar # gardenstation added
 
 # Logistics
 - type: loadoutCategory

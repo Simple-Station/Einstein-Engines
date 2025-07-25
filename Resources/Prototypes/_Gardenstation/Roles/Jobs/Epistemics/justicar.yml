@@ -66,11 +66,14 @@
   subGear:
   - JusticarPlasmamanGear
   equipment: # todo sprite literally everything
-    jumpsuit: ClothingUniformJumpsuitSuitAristocraticTuxedo # this will eventually be CLothingUniformJumpsuitJusticar
+    jumpsuit: ClothingUniformJumpsuitJusticarBodysuit # add alternatives for flavor eventually
     back: ClothingBackpackScience
-    shoes: ClothingShoesBootsCowboyBlack
+    shoes: ClothingShoesBootsJusticarPsychalBoot
+    head: ClothingHeadHatJusticarPsychalCoif
     id: JusticarPDA
     ears: ClothingHeadsetAltScience
+    gloves: ClothingHandsGlovesJusticarPsychalWrappings # fix the sprite not showing at some point
+    outerClothing: ClothingOuterCoatJusticarFur
     belt: ClothingBeltMantis # eventually will be justicar belt or like a grimoire or some shit idfk
     pocket1: BookPsionicsGuidebook
   storage:
@@ -83,7 +86,7 @@
   id: JusticarPlasmamanGear
   parent: BasePlasmamanMaskGear
   equipment:
-    jumpsuit: ClothingUniformEnvirosuitMantis # placeholder envirosuit till i sprite it lol
-    head: ClothingHeadEnvirohelmMantis
+    jumpsuit: ClothingUniformEnvirosuitScientist # placeholder envirosuit till i sprite it lol
+    head: ClothingHeadEnvirohelmScientist
     gloves: ClothingHandsGlovesEnviroglovesWhite
 
