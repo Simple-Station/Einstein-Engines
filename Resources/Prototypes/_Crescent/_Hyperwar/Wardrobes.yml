@@ -1058,39 +1058,15 @@
 - type: vendingMachineInventory
   id: NCWLConscriptGearInventory
   startingInventory:
-    WeaponFlareGun: 20
-    BoxFlare: 100
-    Crowbar: 100
-    Wrench: 100
     BreachingCharge: 20
-    ClothingBeltNCWLWebbing: 100
-    ClothingBackpackNCWL: 100
-    ClothingHeadHelmetNCWLEVA: 100
-    ClothingOuterNCWLEVA: 100
-    ClothingShoesBootsMag: 100
-    ClothingHeadHelmetNCWLBasic: 5
-    ClothingOuterArmorNCWLHeavyCarapace: 5
     JetpackBlackFilled: 100
-    HandHeldMassScannerEE: 100
     DoubleEmergencyOxygenTankFilled: 100
 
 - type: vendingMachineInventory
   id: DSMConscriptGearInventory
   startingInventory:
-    WeaponFlareGun: 20
-    BoxFlare: 100
-    Crowbar: 100
-    Wrench: 100
     BreachingCharge: 20
-    ClothingBeltAuthorityWebbing: 100
-    ClothingBackpackDSM: 100
-    ClothingHeadHelmetImperialEVA: 100
-    ClothingOuterCoatImperialSoftsuit: 100
-    ClothingShoesBootsMag: 100
-    ClothingHeadHelmetImperialTrooperHelmet: 5
-    ClothingOuterArmorImperialTrooperArmor: 5
     JetpackBlackFilled: 100
-    HandHeldMassScannerEE: 100
     DoubleEmergencyOxygenTankFilled: 100
 
 - type: vendingMachineInventory
