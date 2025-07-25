@@ -65,7 +65,7 @@
   id: JusticarGear
   subGear:
   - JusticarPlasmamanGear
-  equipment: # todo sprite literally everything
+  equipment: # add more cool shit soon
     jumpsuit: ClothingUniformJumpsuitJusticarBodysuit # add alternatives for flavor eventually
     back: ClothingBackpackScience
     shoes: ClothingShoesBootsJusticarPsychalBoot
@@ -74,7 +74,7 @@
     ears: ClothingHeadsetAltScience
     gloves: ClothingHandsGlovesJusticarPsychalWrappings # fix the sprite not showing at some point
     outerClothing: ClothingOuterCoatJusticarFur
-    belt: ClothingBeltMantis # eventually will be justicar belt or like a grimoire or some shit idfk
+    belt: ClothingBeltJusticarPsychalBelt # this probably works ok now
     pocket1: BookPsionicsGuidebook
   storage:
     back:
