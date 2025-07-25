@@ -19,7 +19,7 @@ namespace Content.Server.Abilities.Psionics
         }
         private void OnPowerUsed(PyrokinesisPowerActionEvent args)
         {
-            if (!_psionics.OnAttemptPowerUse(args.Performer, "pyrokinesis"))
+            if (!_psionics.OnAttemptPowerUse(args.Performer, args.Target, "pyrokinesis", true))
                 return;
 
             if (!TryComp<FlammableComponent>(args.Target, out var flammableComponent))

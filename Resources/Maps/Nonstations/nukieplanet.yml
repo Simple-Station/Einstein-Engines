@@ -930,6 +930,7 @@ entities:
           decals:
             371: 20.568506,2.9319348
     - type: GridAtmosphere
+      simulatedTurf: false
       version: 2
       data:
         tiles:
@@ -1629,8 +1630,6 @@ entities:
     - type: GasTileOverlay
     - type: SpreaderGrid
     - type: GridPathfinding
-    - type: BecomesStation
-      id: SyndicateOutpost
   - uid: 1295
     components:
     - type: MetaData
@@ -10994,13 +10993,6 @@ entities:
     - type: Transform
       pos: 18.918644,6.663283
       parent: 104
-- proto: SyndicateMicrowave
-  entities:
-  - uid: 10
-    components:
-    - type: Transform
-      pos: 13.5,-6.5
-      parent: 104
 - proto: KitchenReagentGrinder
   entities:
   - uid: 1257
@@ -13222,6 +13214,13 @@ entities:
       - SurveillanceCameraEntertainment
       nameSet: True
       id: Weeh
+- proto: SyndicateMicrowave
+  entities:
+  - uid: 10
+    components:
+    - type: Transform
+      pos: 13.5,-6.5
+      parent: 104
 - proto: SyndicatePersonalAI
   entities:
   - uid: 160
@@ -13718,7 +13717,7 @@ entities:
     - type: Transform
       pos: 14.485744,-16.427467
       parent: 104
-- proto: VendingMachineBooze
+- proto: VendingMachineBoozeSyndicate
   entities:
   - uid: 1380
     components:

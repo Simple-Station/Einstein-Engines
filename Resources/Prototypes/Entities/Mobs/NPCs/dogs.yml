@@ -89,6 +89,7 @@
     understands:
     - Dog
     - TauCetiBasic
+  - type: ScentTracker
 
 - type: entity
   parent: MobPibble

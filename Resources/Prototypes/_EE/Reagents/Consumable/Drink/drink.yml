@@ -1,0 +1,46 @@
+- type: reagent
+  id: SportsDrinkYellow
+  name: reagent-name-sports-drink-yellow
+  parent: BaseDrink
+  desc: reagent-desc-sports-drink-yellow
+  slippery: true
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: sportyyellow
+  color: "#fbff27e0"
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 5 # it has Electrolytes
+
+- type: reagent
+  id: SportsDrinkBlue
+  name: reagent-name-sports-drink-blue
+  parent: SportsDrinkYellow
+  desc: reagent-desc-sports-drink-blue
+  flavor: sportyblue
+  color: "#46a6f5e0"
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 5
+      - !type:AdjustReagent
+        reagent: Cryanobalamin
+        amount: 0.1
+
+- type: reagent
+  id: SportsDrinkRed
+  name: reagent-name-sports-drink-red
+  parent: SportsDrinkYellow
+  desc: reagent-desc-sports-drink-red
+  flavor: sportyred
+  color: "#f73715e0"
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 5
+      - !type:AdjustReagent
+        reagent: LiftLoversSpecial
+        amount: 0.1

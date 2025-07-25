@@ -6,7 +6,11 @@
   components:
   - type: Pda
     id: PrisonerIDCard
-    state: pda-clear
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-clear
   - type: Icon
     state: pda-clear
 
@@ -26,7 +30,11 @@
   components:
   - type: Pda
     id: PrisonGuardIDCard
-    state: pda-security
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-security
   - type: PdaBorderColor
     borderColor: "#A32D26"
     accentVColor: "#DFDFDF"
@@ -51,6 +59,7 @@
     sprite: DeltaV/Objects/Devices/pda.rsi
     layers:
     - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "pda"
     - state: "light_overlay"
       map: [ "enum.PdaVisualLayers.Flashlight" ]
       shader: "unshaded"
@@ -61,7 +70,11 @@
       visible: false
   - type: Pda
     id: MailCarrierIDCard
-    state: pda-mailcarrier
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-mailcarrier
   - type: PdaBorderColor
     borderColor: "#e39751"
     accentVColor: "#050c4d"
@@ -86,6 +99,7 @@
     sprite: DeltaV/Objects/Devices/pda.rsi
     layers:
     - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "pda"
     - state: "light_overlay"
       map: [ "enum.PdaVisualLayers.Flashlight" ]
       shader: "unshaded"
@@ -96,7 +110,11 @@
       visible: false
   - type: Pda
     id: MartialArtistIDCard
-    state: pda-martialartist
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-martialartist
   - type: PdaBorderColor
     borderColor: "#d7d7d0"
     accentHColor: "#232323"
@@ -112,7 +130,11 @@
   components:
   - type: Pda
     id: ForensicMantisIDCard
-    state: pda-science
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-science
   - type: Icon
     state: pda-science
   - type: CartridgeLoader

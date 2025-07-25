@@ -33,6 +33,16 @@
             - material: Durathread
               amount: 2
               doAfter: 1
+        - to: operatingtable
+          completed:
+            - !type:SnapToGrid { }
+          steps:
+            - material: Steel
+              amount: 5
+              doAfter: 1
+            - material: Plastic
+              amount: 2
+              doAfter: 1
     - node: bed
       entity: Bed
       edges:
@@ -72,3 +82,18 @@
           steps:
             - tool: Screwing
               doAfter: 1
+    - node: operatingtable
+      entity: OperatingTable
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 5
+            - !type:SpawnPrototype
+              prototype: SheetPlastic1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+

@@ -190,7 +190,16 @@
             "name": "InitialInfected"
         },
         {
+            "name": "Admin"
+        },
+        {
             "name": "Changeling"
+        },
+        {
+            "name": "Shadowling"
+        },
+        {
+            "name": "Thrall"
         }
     ]
 }

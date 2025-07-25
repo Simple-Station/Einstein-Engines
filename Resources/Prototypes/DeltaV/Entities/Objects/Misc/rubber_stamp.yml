@@ -13,20 +13,6 @@
     state: stamp-psychologist
 
 - type: entity
-  name: lawyer's rubber stamp
-  parent: RubberStampBase
-  id: RubberStampLawyer
-  suffix: DO NOT MAP
-  components:
-  - type: Stamp
-    stampedName: stamp-component-stamped-name-lawyer
-    stampedColor: "#696969"
-    stampState: "paper_stamp-lawyer"
-  - type: Sprite
-    sprite: DeltaV/Objects/Misc/stamps.rsi
-    state: stamp-lawyer
-
-- type: entity
   name: notary stamp
   parent: RubberStampBase
   id: RubberStampNotary
@@ -68,3 +54,16 @@
   - type: Sprite
     sprite: DeltaV/Objects/Misc/stamps.rsi
     state: stamp-admin-assistant
+
+- type: entity
+  name: Liaison's rubber stamp
+  parent: RubberStampBase
+  id: RubberStampCorporateLiaison
+  suffix: DO NOT MAP
+  components:
+  - type: Stamp
+    stampState: "paper_stamp-corporate"
+  - type: CorporateStamp # handles colour, name
+  - type: Sprite
+    sprite: DeltaV/Objects/Misc/stamps.rsi
+    state: stamp-liaison

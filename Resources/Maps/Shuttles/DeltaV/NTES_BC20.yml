@@ -12516,8 +12516,6 @@ entities:
     - type: Transform
       pos: -14.5,-15.5
       parent: 1
-- proto: WallShuttleInterior
-  entities:
   - uid: 146
     components:
     - type: Transform

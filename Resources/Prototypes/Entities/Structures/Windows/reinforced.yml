@@ -73,7 +73,7 @@
     node: tintedWindow
   - type: Occluder
   - type: StaticPrice
-    price: 44
+    price: 45
 
 - type: entity
   id: WindowReinforcedDirectional
@@ -133,7 +133,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: StaticPrice
-    price: 22
+    price: 22.5
 
 - type: entity
   parent: ReinforcedWindow

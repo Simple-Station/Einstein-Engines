@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "https://github.com/ZetaNull/deep-station-14/tree/decalfix",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "Bridge"
+    },
+    {
+      "name": "Medical"
+    },
+    {
+      "name": "RnD"
+    },
+    {
+      "name": "Sec"
+    },
+    {
+      "name": "Supply"
+    },
+	{
+      "name": "Engi"
+    }
+  ]
+}

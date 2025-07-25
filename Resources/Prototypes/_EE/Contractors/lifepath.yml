@@ -1,0 +1,149 @@
+- type: lifepath
+  id: Spacer
+  nameKey: lifepath_name_spacer
+  descriptionKey: lifepath_description_spacer
+
+- type: lifepath
+  id: Bum
+  nameKey: lifepath_name_bum
+  descriptionKey: lifepath_description_bum
+  requirements:
+    - !type:CharacterEmployerRequirement
+      employers:
+      - Unemployed
+
+- type: lifepath
+  id: SolRefugee
+  nameKey: lifepath_name_solrefugee
+  descriptionKey: lifepath_description_solrefugee
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Human
+
+- type: lifepath
+  id: DeskWorker
+  nameKey: lifepath_name_deskworker
+  descriptionKey: lifepath_description_deskworker
+
+- type: lifepath
+  id: Junker
+  nameKey: lifepath_name_junker
+  descriptionKey: lifepath_description_junker
+
+- type: lifepath
+  id: Wastelander
+  nameKey: lifepath_name_wastelander
+  descriptionKey: lifepath_description_wastelander
+
+- type: lifepath
+  id: Aristocrat
+  nameKey: lifepath_name_aristocrat
+  descriptionKey: lifepath_description_aristocrat
+
+- type: lifepath
+  id: WarVet
+  nameKey: lifepath_name_warvet
+  descriptionKey: lifepath_description_warvet
+
+- type: lifepath
+  id: Clone
+  nameKey: lifepath_name_clone
+  descriptionKey: lifepath_description_clone
+
+- type: lifepath
+  id: Miner
+  nameKey: lifepath_name_miner
+  descriptionKey: lifepath_description_miner
+
+- type: lifepath
+  id: Smuggler
+  nameKey: lifepath_name_smuggler
+  descriptionKey: lifepath_description_smuggler
+
+- type: lifepath
+  id: PrivateSecurity
+  nameKey: lifepath_name_privatesecurity
+  descriptionKey: lifepath_description_privatesecurity
+
+- type: lifepath
+  id: Doctor
+  nameKey: lifepath_name_doctor
+  descriptionKey: lifepath_description_doctor
+
+- type: lifepath
+  id: Voyager
+  nameKey: lifepath_name_voyager
+  descriptionKey: lifepath_description_voyager
+
+- type: lifepath
+  id: Collector
+  nameKey: lifepath_name_collector
+  descriptionKey: lifepath_description_collector
+
+- type: lifepath
+  id: Debtor
+  nameKey: lifepath_name_debtor
+  descriptionKey: lifepath_description_debtor
+
+- type: lifepath
+  id: Hunter
+  nameKey: lifepath_name_hunter
+  descriptionKey: lifepath_description_hunter
+
+- type: lifepath
+  id: Fisher
+  nameKey: lifepath_name_fisher
+  descriptionKey: lifepath_description_fisher
+
+- type: lifepath
+  id: Farmer
+  nameKey: lifepath_name_farmer
+  descriptionKey: lifepath_description_farmer
+
+- type: lifepath
+  id: Metalworker
+  nameKey: lifepath_name_metalworker
+  descriptionKey: lifepath_description_metalworker
+
+- type: lifepath
+  id: Cleaner
+  nameKey: lifepath_name_cleaner
+  descriptionKey: lifepath_description_cleaner
+
+- type: lifepath
+  id: ExCriminal
+  nameKey: lifepath_name_excriminal
+  descriptionKey: lifepath_description_excriminal
+
+- type: lifepath
+  id: Mechanic
+  nameKey: lifepath_name_mechanic
+  descriptionKey: lifepath_description_mechanic
+
+- type: lifepath
+  id: StreetVendor
+  nameKey: lifepath_name_streetvendor
+  descriptionKey: lifepath_description_streetvendor
+
+- type: lifepath
+  id: Entertainer
+  nameKey: lifepath_name_entertainer
+  descriptionKey: lifepath_description_entertainer
+
+- type: lifepath
+  id: Enforcer
+  nameKey: lifepath_name_enforcer
+  descriptionKey: lifepath_description_enforcer
+
+- type: lifepath
+  id: Hacker
+  nameKey: lifepath_name_hacker
+  descriptionKey: lifepath_description_hacker
+
+- type: lifepath
+  id: ConArtist
+  nameKey: lifepath_name_conartist
+  descriptionKey: lifepath_description_conartist
+

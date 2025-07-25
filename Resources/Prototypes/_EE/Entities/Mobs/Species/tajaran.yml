@@ -44,10 +44,7 @@
     color: "#808080"
     activateSound: null
     deactivateSound: null
-  - type: Flashable
-    eyeDamageChance: 0.3
-    eyeDamage: 1
-    durationMultiplier: 1.5
+  - type: EyeDamageOnFlashing
   - type: MeleeWeapon
     soundHit:
       collection: Punch
@@ -81,7 +78,7 @@
       Unsexed: MaleFelinid
   - type: Felinid # real
   - type: NoShoesSilentFootsteps
-  - type: StepTriggerImmune
+  - type: ProtectedFromStepTriggers
     whitelist:
       types:
         - Shard
@@ -113,7 +110,13 @@
         Heat: 2 # poor kitty
   - type: ThermalRegulator
     normalBodyTemperature: 311.76
-
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
 
 - type: entity
   save: false
@@ -125,3 +128,10 @@
   components:
   - type: HumanoidAppearance
     species: Tajaran
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female

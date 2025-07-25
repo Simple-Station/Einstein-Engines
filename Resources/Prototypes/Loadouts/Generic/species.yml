@@ -50,3 +50,28 @@
         - IPC
   items:
     - PowerCellHigh
+
+- type: loadout
+  id: LoadoutSpeciesMantleMag
+  category: Species
+  cost: 6
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Harpy
+        - Diona
+        - Arachne
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Engineering
+          - Command
+          - Dignitary
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - Paramedic
+          - SalvageSpecialist
+  items:
+    - ClothingNeckMantleMag

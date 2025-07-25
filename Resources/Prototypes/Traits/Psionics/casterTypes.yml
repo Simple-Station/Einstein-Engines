@@ -1,0 +1,99 @@
+- type: trait
+  id: LatentPsychic
+  category: Psionics
+  points: -4
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Psionic
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsCasterType
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+        - ResearchDirector
+        - ForensicMantis
+        - Chaplain
+        - Librarian
+        - Prisoner
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+
+- type: trait
+  id: PsionicInsulation
+  category: Psionics
+  points: -10 #Buy a significant disability to get this.
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: PsionicInsulation
+        - type: Mindbroken
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsCasterType
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+        - ResearchDirector
+        - ForensicMantis
+        - Chaplain
+        - Librarian
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+
+- type: trait
+  id: PsychoHistorian
+  category: Psionics
+  points: -4
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Psionic
+          baselinePowerCost: 75
+          nextPowerCost: 75
+          removable: false
+          powerPool: PsychoHistorianPowerPool
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - TelepathyPower
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsCasterType
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+        - ResearchDirector
+        - ForensicMantis
+        - Chaplain
+        - Librarian
+        - Prisoner
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics

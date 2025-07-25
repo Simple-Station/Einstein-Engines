@@ -1,4 +1,5 @@
 using Content.Shared.Access;
+using Content.Shared.Guidebook;
 using Content.Shared.Customization.Systems;
 using Content.Shared.Dataset;
 using Content.Shared.Players.PlayTimeTracking;
@@ -23,6 +24,9 @@ namespace Content.Shared.Roles
         [DataField("playTimeTracker", required: true, customTypeSerializer: typeof(PrototypeIdSerializer<PlayTimeTrackerPrototype>))]
         public string PlayTimeTracker { get; private set; } = string.Empty;
 
+        /// <summary>
+        ///     Who is the supervisor for this job.
+        /// </summary>
         [DataField("supervisors")]
         public string Supervisors { get; private set; } = "nobody";
 
@@ -44,17 +48,35 @@ namespace Content.Shared.Roles
         [ViewVariables(VVAccess.ReadOnly)]
         public string? LocalizedDescription => Description is null ? null : Loc.GetString(Description);
 
-        [DataField("requirements")]
+        /// <summary>
+        ///     Requirements for the job.
+        /// </summary>
+        [DataField, Access(typeof(SharedRoleSystem), Other = AccessPermissions.None)]
         public List<CharacterRequirement>? Requirements;
 
+        /// <summary>
+        ///     When true - the station will have anouncement about arrival of this player.
+        /// </summary>
         [DataField("joinNotifyCrew")]
         public bool JoinNotifyCrew { get; private set; } = false;
 
+        /// <summary>
+        ///     When true - the player will recieve a message about importancy of their job.
+        /// </summary>
         [DataField("requireAdminNotify")]
         public bool RequireAdminNotify { get; private set; } = false;
 
+        /// <summary>
+        ///     Should this job appear in preferences menu?
+        /// </summary>
         [DataField("setPreference")]
         public bool SetPreference { get; private set; } = true;
+
+        /// <summary>
+        ///     Should the selected traits be applied for this job?
+        /// </summary>
+        [DataField]
+        public bool ApplyTraits { get; private set; } = true;
 
         /// <summary>
         ///     Whether this job should show in the ID Card Console.
@@ -67,14 +89,21 @@ namespace Content.Shared.Roles
         public bool CanBeAntag { get; private set; } = true;
 
         /// <summary>
+        /// Used by Contractors to determine if a given job should have a passport
+        /// This should be disabled for Borgs and Station AI, for example.
+        /// </summary>
+        [DataField("canHavePassport")]
+        public bool CanHavePassport { get; private set; } = true;
+
+        /// <summary>
         /// Nyano/DV: For e.g. prisoners, they'll never use their latejoin spawner.
         /// </summary>
         [DataField("alwaysUseSpawner")]
         public bool AlwaysUseSpawner { get; } = false;
 
         /// <summary>
-        ///     Whether this job is a head.
-        ///     The job system will try to pick heads before other jobs on the same priority level.
+        ///     The "weight" or importance of this job. If this number is large, the job system will assign this job
+        ///     before assigning other jobs.
         /// </summary>
         [DataField("weight")]
         public int Weight { get; private set; }
@@ -109,7 +138,7 @@ namespace Content.Shared.Roles
         /// <summary>
         ///   A list of requirements that when satisfied, add or replace from the base starting gear.
         /// </summary>
-        [DataField("conditionalStartingGear")]
+        [DataField]
         public List<ConditionalStartingGear>? ConditionalStartingGears { get; private set; }
 
         /// <summary>
@@ -147,8 +176,13 @@ namespace Content.Shared.Roles
         [DataField]
         public bool SpawnLoadout = true;
 
+        /// <summary>
+        /// Optional list of guides associated with this role. If the guides are opened, the first entry in this list
+        /// will be used to select the currently selected guidebook.
+        /// </summary>
         [DataField]
-        public bool ApplyTraits = true;
+        public List<ProtoId<GuideEntryPrototype>>? Guides;
+
     }
 
     /// <summary>

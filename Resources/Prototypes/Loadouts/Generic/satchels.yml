@@ -13,7 +13,7 @@
 - type: loadout
   id: LoadoutItemBackpackSatchelLeather
   category: Backpacks
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingBackpackSatchelLeather

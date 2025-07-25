@@ -60,9 +60,9 @@ public sealed partial class StepTriggerGroup
 
     /// <summary>
     ///     Checks validation (if types of this StepTriggerGroup are similar to types of
-    ///     another StepTriggerImmuneComponent.
+    ///     another ProtectedFromStepTriggersComponent.
     /// </summary>
-    public bool IsValid(StepTriggerImmuneComponent component)
+    public bool IsValid(ProtectedFromStepTriggersComponent component)
     {
         if (component.Whitelist is null)
             return false;

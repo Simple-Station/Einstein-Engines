@@ -76,13 +76,12 @@ public partial class SharedMartialArtsSystem
         if (knowledgeComponent.MartialArtsForm != MartialArtsForms.CloseQuartersCombat)
             return;
 
-        if(knowledgeComponent.Blocked)
+        if (knowledgeComponent.Blocked)
             return;
-
         switch (args.Type)
         {
             case ComboAttackType.Disarm:
-                _stamina.TakeStaminaDamage(args.Target, 25f);
+                _stamina.TakeStaminaDamage(args.Target, 15f);
                 break;
             case ComboAttackType.Harm:
                 if (!TryComp<RequireProjectileTargetComponent>(ent, out var standing)
@@ -104,7 +103,7 @@ public partial class SharedMartialArtsSystem
     {
         if (!_proto.TryIndex(ent.Comp.BeingPerformed, out var proto)
             || !TryUseMartialArt(ent, proto.MartialArtsForm, out var target, out var downed)
-            || downed)
+            || downed || IsBeingGrabbed(ent, target) < 1)
             return;
 
         DoDamage(ent, target, proto.DamageType, proto.ExtraDamage, out _);
@@ -118,25 +117,28 @@ public partial class SharedMartialArtsSystem
     private void OnCQCKick(Entity<CanPerformComboComponent> ent, ref CqcKickPerformedEvent args)
     {
         if (!_proto.TryIndex(ent.Comp.BeingPerformed, out var proto)
-            || !TryUseMartialArt(ent, proto.MartialArtsForm, out var target, out var downed)
-            || !downed)
+            || !TryUseMartialArt(ent, proto.MartialArtsForm, out var target, out var downed))
             return;
-
-        if (TryComp<StaminaComponent>(target, out var stamina) && stamina.Critical)
-        {
-            _status.TryAddStatusEffect<ForcedSleepingComponent>(target, "ForcedSleep", TimeSpan.FromSeconds(10), true);
-        }
-
-        DoDamage(ent, target, proto.DamageType, proto.ExtraDamage, out var damage, TargetBodyPart.Head);
-        _stamina.TakeStaminaDamage(target, proto.StaminaDamage, source: ent);
 
         var mapPos = _transform.GetMapCoordinates(ent).Position;
         var hitPos = _transform.GetMapCoordinates(target).Position;
         var dir = hitPos - mapPos;
         dir *= 1f / dir.Length();
-        if (TryComp<PullableComponent>(target, out var pullable))
-            _pulling.TryStopPull(target, pullable, ent, true);
-        _grabThrowing.Throw(target, ent, dir, proto.ThrownSpeed, proto.StaminaDamage / 2, damage);
+
+        if (downed)
+        {
+            if (TryComp<StaminaComponent>(target, out var stamina) && stamina.Critical)
+                _status.TryAddStatusEffect<ForcedSleepingComponent>(target, "ForcedSleep", TimeSpan.FromSeconds(10), true);
+            DoDamage(ent, target, proto.DamageType, proto.ExtraDamage, out _, TargetBodyPart.Head);
+            _stamina.TakeStaminaDamage(target, proto.StaminaDamage * 2 + 5, source: ent);
+        }
+        else
+        {
+            _stamina.TakeStaminaDamage(target, proto.StaminaDamage, source: ent);
+            if (TryComp<PullableComponent>(target, out var pullable))
+                _pulling.TryStopPull(target, pullable, ent, true);
+            _grabThrowing.Throw(target, ent, dir, proto.ThrownSpeed);
+        }
         _audio.PlayPvs(new SoundPathSpecifier("/Audio/Weapons/genhit2.ogg"), target);
         ComboPopup(ent, target, proto.Name);
     }
@@ -144,11 +146,12 @@ public partial class SharedMartialArtsSystem
     private void OnCQCRestrain(Entity<CanPerformComboComponent> ent, ref CqcRestrainPerformedEvent args)
     {
         if (!_proto.TryIndex(ent.Comp.BeingPerformed, out var proto)
-            || !TryUseMartialArt(ent, proto.MartialArtsForm, out var target, out _))
+            || !TryUseMartialArt(ent, proto.MartialArtsForm, out var target, out _) || IsBeingGrabbed(ent, target) < 2)
             return;
 
         _stun.TryKnockdown(target, TimeSpan.FromSeconds(proto.ParalyzeTime), true);
         _stamina.TakeStaminaDamage(target, proto.StaminaDamage, source: ent);
+        ComboPopup(ent, target, proto.Name);
     }
 
     private void OnCQCPressure(Entity<CanPerformComboComponent> ent, ref CqcPressurePerformedEvent args)
@@ -157,16 +160,14 @@ public partial class SharedMartialArtsSystem
             || !TryUseMartialArt(ent, proto.MartialArtsForm, out var target, out _))
             return;
 
+        if (_hands.TryGetActiveItem(target, out var activeItem) // I know this looks horrible, but the disarm should happen BEFORE the stam dmg, and the popup should always show.
+            && _hands.TryGetEmptyHand(target, out var emptyHand)
+            && _hands.TryDrop(target, activeItem.Value)
+            && _hands.TryPickupAnyHand(ent, activeItem.Value)
+            && _hands.TryGetEmptyHand(ent, out var userEmptyHand))
+            _hands.SetActiveHand(ent, userEmptyHand);
+
         _stamina.TakeStaminaDamage(target, proto.StaminaDamage, source: ent);
-        if (!_hands.TryGetActiveItem(target, out var activeItem))
-            return;
-        if(!_hands.TryDrop(target, activeItem.Value))
-            return;
-        if (!_hands.TryGetEmptyHand(target, out var emptyHand))
-            return;
-        if(!_hands.TryPickupAnyHand(ent, activeItem.Value))
-            return;
-        _hands.SetActiveHand(ent, emptyHand);
         ComboPopup(ent, target, proto.Name);
     }
 

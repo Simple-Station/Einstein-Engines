@@ -92,6 +92,29 @@
       gender: female
 
 - type: entity
+  name: real mouse
+  parent: MobCorgiIan
+  id: MobCorgiMouse
+  description: It's 100% a real hungry mouse.
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: real_mouse
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: real_mouse
+      Critical:
+        Base: real_mouse_dead
+      Dead:
+        Base: real_mouse_dead
+  - type: Grammar
+    attributes:
+      proper: true
+      gender: female
+
+- type: entity
   name: Puppy Ian
   parent: MobCorgiPuppy
   id: MobCorgiIanPup
@@ -115,8 +138,8 @@
   components:
   - type: NpcFactionMember
     factions:
-      - PetsNT
-      - Cat # DeltaV
+    - PetsNT
+    - Cat # DeltaV
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
@@ -128,6 +151,8 @@
     tags:
     - CannotSuicide
     - VimPilot
+  - type: StealTarget
+    stealGroup: AnimalNamedCat
   - type: LanguageKnowledge
     speaks:
     - Cat
@@ -143,8 +168,8 @@
   components:
   - type: NpcFactionMember
     factions:
-      - PetsNT
-      - Cat # DeltaV
+    - PetsNT
+    - Cat # DeltaV
   - type: Grammar
     attributes:
       proper: true
@@ -153,6 +178,8 @@
     tags:
     - CannotSuicide
     - VimPilot
+  - type: StealTarget
+    stealGroup: AnimalNamedCat
   - type: LanguageKnowledge
     speaks:
     - Cat
@@ -184,6 +211,8 @@
     tags:
     - CannotSuicide
     - VimPilot
+  - type: StealTarget
+    stealGroup: AnimalNamedCat
 
 - type: entity
   name: Bandito
@@ -202,7 +231,7 @@
 
 - type: entity
   name: Bingus
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, StripableInventoryBase]
   id: MobBingus
   description: Bingus my beloved...
   components:
@@ -227,12 +256,6 @@
   - type: Inventory
     speciesId: cat
     templateId: pet
-  - type: InventorySlots
-  - type: Strippable
-  - type: UserInterface
-    interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -261,11 +284,11 @@
     - CannotSuicide
     - VimPilot
   - type: StealTarget
-    stealGroup: AnimalBingus
+    stealGroup: AnimalNamedCat
 
 - type: entity
   name: McGriff
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, StripableInventoryBase]
   id: MobMcGriff
   description: This dog can tell something smells around here, and that something is CRIME!
   components:
@@ -290,12 +313,6 @@
   - type: Inventory
     speciesId: puppy
     templateId: pet
-  - type: InventorySlots
-  - type: Strippable
-  - type: UserInterface
-    interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -371,7 +388,7 @@
 
 - type: entity
   name: Walter
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, StripableInventoryBase]
   id: MobWalter
   description: He likes chems and treats. Walter.
   components:
@@ -396,12 +413,6 @@
   - type: Inventory
     speciesId: dog
     templateId: pet
-  - type: InventorySlots
-  - type: Strippable
-  - type: UserInterface
-    interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -612,6 +623,7 @@
     allowMovement: true
     name: ghost-role-information-hamlet-name
     description: ghost-role-information-hamlet-description
+    rules: ghost-role-information-nonantagonist-rules
   - type: GhostTakeoverAvailable
   - type: InteractionPopup
     successChance: 1
@@ -633,6 +645,10 @@
     - CannotSuicide
     - Hamster
     - VimPilot
+  - type: FlavorProfile
+    flavors:
+    - meaty
+    - sadness
   - type: LanguageKnowledge
     speaks:
     - Mouse
@@ -662,7 +678,7 @@
       path: /Audio/Animals/snake_hiss.ogg
   - type: NpcFactionMember
     factions:
-      - PetsNT
+    - PetsNT
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -698,7 +714,7 @@
     damage:
       types:
         Piercing: 8
-        Poison: 8
+        Poison: 2 # Sleep poison instead of die poison
   - type: Grammar
     attributes:
       proper: true
@@ -711,6 +727,23 @@
     - FootstepSound
   - type: StealTarget
     stealGroup: AnimalShiva
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        maxVol: 12
+  - type: SolutionRegeneration
+    solution: melee
+    generated:
+      reagents:
+      - ReagentId: Nocturine
+        Quantity: 0.1
+  - type: MeleeChemicalInjector
+    solution: melee
+    transferAmount: 3
+  - type: Access
+    tags:
+    - Security
+    - Brig
 
 - type: entity
   name: Willow
@@ -738,6 +771,7 @@
     prob: 0.25
     name: ghost-role-information-willow-name
     description: ghost-role-information-willow-description
+    rules: ghost-role-information-nonantagonist-rules
   - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [ BoxingKangarooGear ]
@@ -764,10 +798,10 @@
       path: /Audio/Effects/Footsteps/slime1.ogg
       params:
         volume: -6
+  - type: CanEscapeInventory
   - type: Tag
     tags:
     - FootstepSound
-    - DoorBumpOpener
     - CannotSuicide
     - VimPilot
   - type: DamageStateVisuals
@@ -777,12 +811,20 @@
         BaseUnshaded: aslime-_3
       Dead:
         Base: rainbow_baby_slime_dead
+  - type: StaminaDamageResistance
+    coefficient: 0
   - type: Bloodstream
     bloodReagent: Nothing
     bloodMaxVolume: 50
   - type: Temperature
     heatDamageThreshold: 100000000000
     coldDamageThreshold: -10000000000
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Smile
+  - type: SupermatterImmune
+  - type: Puller
+    needsHands: false
   - type: MeleeWeapon
     damage:
       types:
@@ -803,6 +845,7 @@
     transferAmount: 0.1
   - type: MultiHandedItem
   - type: Item
+    sprite: Mobs/Pets/smile.rsi
     size: Ginormous
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-slime
@@ -811,16 +854,17 @@
   - type: GhostRole
     name: ghost-role-information-smile-name
     description: ghost-role-information-smile-description
-    rules: ghost-role-information-smile-rules
+    rules: ghost-role-information-nonantagonist-rules
   - type: Grammar
     attributes:
       proper: true
       gender: female
   - type: InnatePsionicPowers
     powersToAdd:
-      - XenoglossyPower
-      - TelepathyPower
-      - HealingWordPower
+    - XenoglossyPower
+    - TelepathyPower
+    - HealingWordPower
+    - PowerOverwhelming
   - type: LanguageSpeaker
   - type: UniversalLanguageSpeaker
   - type: SlowOnDamage
@@ -842,7 +886,24 @@
         - SmallMobMask
         layer:
         - SmallMobLayer
-    
+  - type: Storage
+    clickInsert: false
+    grid:
+    - 0,0,1,2
+    maxItemSize: Large
+    storageInsertSound:
+      path: /Audio/Voice/Slime/slime_squish.ogg
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+
 - type: entity
   name: Pun Pun
   parent: MobMonkey
@@ -857,12 +918,12 @@
       amount: 3
     - id: DrinkTequilaBottleFull
       amount: 1
-  - type: Flashable
   - type: Tag
     tags:
     - CannotSuicide
     - DoorBumpOpener
     - VimPilot
+    - AnomalyHost
   - type: Loadout
     prototypes: [ MobMonkeyGear ]
   - type: Grammar
@@ -884,15 +945,15 @@
   id: MobCrabAtmos
   description: The noble and stalwart defender of Atmosia. Viva!
   components:
-#  - type: GhostRole
-#    prob: 1
-#    makeSentient: true
-#    allowSpeech: true
-#    allowMovement: true
-#    name: ghost-role-information-tropico-name
-#    description: ghost-role-information-tropico-description
-#  - type: GhostTakeoverAvailable
-#  - type: Flashable
+  #  - type: GhostRole
+  #    prob: 1
+  #    makeSentient: true
+  #    allowSpeech: true
+  #    allowMovement: true
+  #    name: ghost-role-information-tropico-name
+  #    description: ghost-role-information-tropico-description
+  #    rules: ghost-role-information-nonantagonist-rules
+  #  - type: GhostTakeoverAvailable
   - type: Tag
     tags:
     - VimPilot
@@ -901,7 +962,7 @@
     attributes:
       proper: true
       gender: male
-#  - type: AlwaysRevolutionaryConvertible
+  #  - type: AlwaysRevolutionaryConvertible
   - type: StealTarget
     stealGroup: AnimalTropico
   - type: LanguageKnowledge

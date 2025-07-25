@@ -199,7 +199,7 @@ namespace Content.Server.Hands.Systems
 
         private bool HandleThrowItem(ICommonSession? playerSession, EntityCoordinates coordinates, EntityUid entity)
         {
-            if (playerSession?.AttachedEntity is not { Valid: true } player || !Exists(player))
+            if (playerSession?.AttachedEntity is not { Valid: true } player || !Exists(player) || !coordinates.IsValid(EntityManager))
                 return false;
 
             // Goobstation start
@@ -239,6 +239,9 @@ namespace Content.Server.Hands.Systems
 
                 var targEv = new VirtualItemThrownEvent(virt.BlockingEntity, player, throwEnt, direction);
                 RaiseLocalEvent(virt.BlockingEntity, targEv);
+
+                if (userEv.Cancelled || targEv.Cancelled)
+                    return false;
             }
             // Goobstation end
 

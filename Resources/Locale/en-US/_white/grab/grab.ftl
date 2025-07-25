@@ -19,3 +19,4 @@ popup-grab-retake-success = You released {CAPITALIZE($pulled)} from {CAPITALIZE(
 popup-grab-retake-success-puller = {CAPITALIZE($puller)} released {CAPITALIZE($pulled)} from your grab!
 popup-grabbed-cant-speak = You can't breathe!
 popup-grab-need-hand = You need a free hand!
+popup-grab-throw-fail-cooldown = You need more time to secure your grip before you can throw {CAPITALIZE($pulled)}!

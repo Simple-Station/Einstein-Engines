@@ -164,17 +164,6 @@
     sprite: DeltaV/Objects/Weapons/Guns/Rifles/tenebra.rsi
 
 - type: entity
-  name: M-90
-  id: WeaponRifleM90
-  parent: WeaponRifleM90GrenadeLauncher
-  description: An older bullpup carbine model. Uses .20 rifle ammo.
-  components:
-  - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Guns/Rifles/carbinenogl.rsi
-  - type: Clothing
-    sprite: DeltaV/Objects/Weapons/Guns/Rifles/carbinenogl.rsi
-
-- type: entity
   name: musket
   id: WeaponRifleMusket
   parent: Musket
@@ -183,7 +172,7 @@
   components:
   - type: BallisticAmmoProvider
     whitelist:
-      tags: 
+      tags:
       - CartridgeMusket
     capacity: 1
     proto: CartridgeMusket

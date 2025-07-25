@@ -28,6 +28,17 @@
 		{
 			"name": "evil-inhand-right",
 			"directions": 4
+		},
+                {
+			"name": "cmotool"
+		},
+		{
+			"name": "cmotool-inhand-left",
+			"directions": 4
+		},
+		{
+			"name": "cmotool-inhand-right",
+			"directions": 4
 		}
 	]
 }

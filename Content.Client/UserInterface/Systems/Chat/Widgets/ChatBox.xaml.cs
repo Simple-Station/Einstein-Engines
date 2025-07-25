@@ -77,7 +77,7 @@ public partial class ChatBox : UIWidget
 
     private void OnMessageAdded(ChatMessage msg)
     {
-        Logger.DebugS("chat", $"{msg.Channel}: {msg.Message}");
+        Logger.GetSawmill("chat").Debug($"{msg.Channel}: {msg.Message}");
         if (!ChatInput.FilterButton.Popup.IsActive(msg.Channel))
         {
             return;
@@ -177,7 +177,7 @@ public partial class ChatBox : UIWidget
     {
         var formatted = new FormattedMessage(4); 
         formatted.PushColor(color);
-        formatted.AddMarkup(message);
+        formatted.AddMarkupOrThrow(message);
         formatted.Pop();
         if (repeat != 0)
         {

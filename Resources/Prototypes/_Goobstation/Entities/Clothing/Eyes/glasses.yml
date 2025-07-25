@@ -23,9 +23,11 @@
      - Biological
      - Inorganic
      - Silicon
+     - SiliconUnshielded
   - type: ShowHealthIcons
     damageContainers:
      - Biological
      - Inorganic
      - Silicon
-    
+     - SiliconUnshielded
+

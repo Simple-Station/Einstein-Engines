@@ -26,7 +26,6 @@ namespace Content.Server.Power.EntitySystems
     {
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
         [Dependency] private readonly IAdminManager _adminManager = default!;
-        [Dependency] private readonly AppearanceSystem _appearance = default!;
         [Dependency] private readonly AudioSystem _audio = default!;
         [Dependency] private readonly SharedInteractionSystem _interaction = default!;
         private EntityQuery<ApcPowerReceiverComponent> _recQuery;

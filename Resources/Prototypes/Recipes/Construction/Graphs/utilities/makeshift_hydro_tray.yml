@@ -1,0 +1,33 @@
+- type: constructionGraph
+  id: MakeshiftHydroTrayGraph
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DeleteEntity
+      edges:
+        - to: makeshiftHydroTray
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          steps:
+            - material: MetalRod
+              amount: 6
+              doAfter: 3
+            - material: Plastic
+              amount: 5
+              doAfter: 3
+    - node: makeshiftHydroTray
+      entity: hydroponicsMakeshiftTray
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 6
+            - !type:SpawnPrototype
+              prototype: SheetPlastic1
+              amount: 5
+          steps:
+            - tool: Screwing
+              doAfter: 5

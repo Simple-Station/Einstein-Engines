@@ -40,8 +40,8 @@
 - type: entity
   parent: BaseLockerTeleporter
   id: NanorepLockerTeleporter
-  name: nanotrasen representative locker teleporter
-  description: Device that allows you to request delivery of nanotrasen representative locker.
+  name: corporate liaison locker teleporter
+  description: Device that allows you to request delivery of a locker containing items prepared for the corporate liaison, courtesy of Central Command.
   components:
   - type: Sprite
     state: ntr

@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Shared._Shitmed.Antags.Abductor;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions.Events;
 using Content.Shared.Administration.Logs;
@@ -8,13 +9,15 @@ using Content.Shared.Hands;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Mind;
+using Content.Shared.Popups;
 using Content.Shared.Rejuvenate;
+using Content.Shared.Silicons.StationAi;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -33,6 +36,8 @@ public abstract class SharedActionsSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] private readonly ActionContainerSystem _actionContainer = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!; // Shitmed Change
+    [Dependency] private readonly IPrototypeManager _protoMan = default!;
 
     public override void Initialize()
     {
@@ -73,8 +78,42 @@ public abstract class SharedActionsSystem : EntitySystem
         SubscribeAllEvent<RequestPerformActionEvent>(OnActionRequest);
     }
 
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var worldActionQuery = EntityQueryEnumerator<WorldTargetActionComponent>();
+        while (worldActionQuery.MoveNext(out var uid, out var action))
+        {
+            if (IsCooldownActive(action) || !ShouldResetCharges(action))
+                continue;
+
+            ResetCharges(uid, dirty: true);
+        }
+
+        var instantActionQuery = EntityQueryEnumerator<InstantActionComponent>();
+        while (instantActionQuery.MoveNext(out var uid, out var action))
+        {
+            if (IsCooldownActive(action) || !ShouldResetCharges(action))
+                continue;
+
+            ResetCharges(uid, dirty: true);
+        }
+
+        var entityActionQuery = EntityQueryEnumerator<EntityTargetActionComponent>();
+        while (entityActionQuery.MoveNext(out var uid, out var action))
+        {
+            if (IsCooldownActive(action) || !ShouldResetCharges(action))
+                continue;
+
+            ResetCharges(uid, dirty: true);
+        }
+    }
+
     private void OnActionMapInit(EntityUid uid, BaseActionComponent component, MapInitEvent args)
     {
+        component.OriginalIconColor = component.IconColor;
+
         if (component.Charges == null)
             return;
 
@@ -127,7 +166,7 @@ public abstract class SharedActionsSystem : EntitySystem
         bool logError = true)
     {
         result = null;
-        if (!Exists(uid))
+        if (uid == null || TerminatingOrDeleted(uid.Value))
             return false;
 
         var ev = new GetActionDataEvent();
@@ -251,7 +290,7 @@ public abstract class SharedActionsSystem : EntitySystem
     }
 
     #region ComponentStateManagement
-    protected virtual void UpdateAction(EntityUid? actionId, BaseActionComponent? action = null)
+    public virtual void UpdateAction(EntityUid? actionId, BaseActionComponent? action = null)
     {
         // See client-side code.
     }
@@ -330,14 +369,18 @@ public abstract class SharedActionsSystem : EntitySystem
         Dirty(actionId.Value, action);
     }
 
-    public void ResetCharges(EntityUid? actionId)
+    public void ResetCharges(EntityUid? actionId, bool update = false, bool dirty = false)
     {
         if (!TryGetActionData(actionId, out var action))
             return;
 
         action.Charges = action.MaxCharges;
-        UpdateAction(actionId, action);
-        Dirty(actionId.Value, action);
+
+        if (update)
+            UpdateAction(actionId, action);
+
+        if (dirty)
+            Dirty(actionId.Value, action);
     }
 
     public void SetMaxCharges(EntityUid? actionId, int? maxCharges)
@@ -401,13 +444,12 @@ public abstract class SharedActionsSystem : EntitySystem
             return;
 
         var curTime = GameTiming.CurTime;
-        // TODO: Check for charge recovery timer
-        if (action.Cooldown.HasValue && action.Cooldown.Value.End > curTime)
+        if (IsCooldownActive(action, curTime))
             return;
 
         // TODO: Replace with individual charge recovery when we have the visuals to aid it
         if (action is { Charges: < 1, RenewCharges: true })
-            ResetCharges(actionEnt);
+            ResetCharges(actionEnt, true, true);
 
         BaseActionEvent? performEvent = null;
 
@@ -451,7 +493,7 @@ public abstract class SharedActionsSystem : EntitySystem
                 }
 
                 var entityCoordinatesTarget = GetCoordinates(netCoordinatesTarget);
-                _rotateToFaceSystem.TryFaceCoordinates(user, entityCoordinatesTarget.ToMapPos(EntityManager, _transformSystem));
+                _rotateToFaceSystem.TryFaceCoordinates(user, _transformSystem.ToMapCoordinates(entityCoordinatesTarget).Position);
 
                 if (!ValidateWorldTarget(user, entityCoordinatesTarget, (actionEnt, worldAction)))
                     return;
@@ -496,7 +538,8 @@ public abstract class SharedActionsSystem : EntitySystem
                 break;
             }
             case InstantActionComponent instantAction:
-                if (action.CheckCanInteract && !_actionBlockerSystem.CanInteract(user, null))
+                var hasNoSpecificComponents = !HasComp<StationAiOverlayComponent>(user) && !HasComp<AbductorScientistComponent>(user); // Shitmed Change
+                if (action.CheckCanInteract && !_actionBlockerSystem.CanInteract(user, null) && hasNoSpecificComponents) // Shitmed Change
                     return;
 
                 _adminLogger.Add(LogType.Action,
@@ -586,7 +629,8 @@ public abstract class SharedActionsSystem : EntitySystem
         if (entityCoordinates is not { } coords)
             return false;
 
-        if (checkCanInteract && !_actionBlockerSystem.CanInteract(user, null))
+        var hasNoSpecificComponents = !HasComp<StationAiOverlayComponent>(user) && !HasComp<AbductorScientistComponent>(user); // Shitmed Change
+        if (checkCanInteract && !_actionBlockerSystem.CanInteract(user, null) && hasNoSpecificComponents) // Shitmed Change
             return false;
 
         if (!checkCanAccess)
@@ -595,7 +639,10 @@ public abstract class SharedActionsSystem : EntitySystem
             var xform = Transform(user);
 
             if (xform.MapID != coords.GetMapId(EntityManager))
+            {
+                _popup.PopupCursor(Loc.GetString("world-target-out-of-range"), user); // Goobstation Change
                 return false;
+            }
 
             if (range <= 0)
                 return true;
@@ -932,6 +979,38 @@ public abstract class SharedActionsSystem : EntitySystem
         RemoveAction(action.AttachedEntity.Value, actionId, comp, action);
     }
 
+    public void RemoveAction(EntityUid uid, string actionProto)
+    {
+        if (!_protoMan.TryIndex(actionProto, out EntityPrototype? prototype))
+            return;
+
+        RemoveAction(uid, prototype);
+    }
+
+    /// <summary>
+    ///     Removes an action from its entity by prototype.
+    /// </summary>
+    public void RemoveAction(EntityUid uid, EntProtoId actionProto)
+    {
+        if (!TryComp(uid, out ActionsContainerComponent? actionsContainer)
+            || !TryComp(uid, out ActionsComponent? actionsComponent))
+            return;
+
+        var actionsToRemove = new List<Entity<BaseActionComponent>>();
+        foreach (var actionEnt in actionsContainer.Container.ContainedEntities)
+        {
+            var metaData = MetaData(actionEnt);
+            if (metaData.EntityPrototype is null || metaData.EntityPrototype.ID != actionProto
+                || !TryGetActionData(actionEnt, out var actionComponent))
+                continue;
+
+            actionsToRemove.Add((actionEnt, actionComponent));
+        }
+
+        foreach (var match in actionsToRemove)
+            RemoveAction(uid, match.Owner, actionsComponent, match.Comp);
+    }
+
     public void RemoveAction(EntityUid performer, EntityUid? actionId, ActionsComponent? comp = null, BaseActionComponent? action = null)
     {
         if (actionId == null)
@@ -1094,4 +1173,42 @@ public abstract class SharedActionsSystem : EntitySystem
         action.EntityIcon = icon;
         Dirty(uid, action);
     }
+
+    /// <summary>
+    ///     Checks if the action has a cooldown and if it's still active
+    /// </summary>
+    protected bool IsCooldownActive(BaseActionComponent action, TimeSpan? curTime = null)
+    {
+        curTime ??= GameTiming.CurTime;
+        // TODO: Check for charge recovery timer
+        return action.Cooldown.HasValue && action.Cooldown.Value.End > curTime;
+    }
+
+    protected bool ShouldResetCharges(BaseActionComponent action)
+    {
+        return action is { Charges: < 1, RenewCharges: true };
+    }
+
+    // Shitmed Change Start - Starlight Abductors
+    public EntityUid[] HideActions(EntityUid performer, ActionsComponent? comp = null)
+    {
+        if (!Resolve(performer, ref comp, false))
+            return [];
+
+        var actions = comp.Actions.ToArray();
+        comp.Actions.Clear();
+        Dirty(performer, comp);
+        return actions;
+    }
+
+    public void UnHideActions(EntityUid performer, EntityUid[] actions, ActionsComponent? comp = null)
+    {
+        if (!Resolve(performer, ref comp, false))
+            return;
+
+        foreach (var action in actions)
+            comp.Actions.Add(action);
+        Dirty(performer, comp);
+    }
+    // Shitmed Change End
 }

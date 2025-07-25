@@ -18,4 +18,11 @@ public sealed partial class IngestionBlockerComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField("enabled")]
     public bool Enabled { get; set; } = true;
+
+    /// <summary>
+    ///     Goobstation
+    ///     Is this component always prevents smoke ingestion when enabled.
+    /// </summary>
+    [DataField]
+    public bool BlockSmokeIngestion { get; set; }
 }

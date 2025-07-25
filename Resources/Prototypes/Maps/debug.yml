@@ -10,8 +10,6 @@
         - type: StationNameSetup
           mapNameTemplate: "Empty"
         - type: StationJobs
-          overflowJobs:
-            - Passenger
           availableJobs:
             Passenger: [ -1, -1 ]
 
@@ -27,10 +25,14 @@
         - type: StationNameSetup
           mapNameTemplate: "Dev"
         - type: StationJobs
-          overflowJobs:
-          - Captain
           availableJobs:
             Captain: [ -1, -1 ]
+        # Goobstation blob-config-start DEBUG
+        - type: StationBlobConfig
+          stageBegin: 20
+          stageCritical: 50
+          stageTheEnd: 100
+        # Goobstation blob-config-end
 
 - type: gameMap
   id: TestTeg
@@ -44,7 +46,5 @@
         - type: StationNameSetup
           mapNameTemplate: "TEG"
         - type: StationJobs
-          overflowJobs:
-            - ChiefEngineer
           availableJobs:
             ChiefEngineer: [ -1, -1 ]

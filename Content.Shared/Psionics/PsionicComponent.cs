@@ -1,4 +1,3 @@
-using Content.Shared.Alert;
 using Content.Shared.DoAfter;
 using Content.Shared.Psionics;
 using Content.Shared.Random;
@@ -7,7 +6,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Abilities.Psionics
 {
-    [RegisterComponent, NetworkedComponent]
+    [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
     public sealed partial class PsionicComponent : Component
     {
         [DataField]
@@ -160,7 +159,7 @@ namespace Content.Shared.Abilities.Psionics
         ///     A measure of how "Powerful" a Psion is.
         ///     TODO: Implement this in a separate PR.
         /// </summary>
-        [ViewVariables(VVAccess.ReadWrite)]
+        [ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
         public float CurrentAmplification;
 
         /// <summary>
@@ -173,7 +172,7 @@ namespace Content.Shared.Abilities.Psionics
         ///     A measure of how "Controlled" a Psion is.
         ///     TODO: Implement this in a separate PR.
         /// </summary>
-        [ViewVariables(VVAccess.ReadWrite)]
+        [ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
         public float CurrentDampening;
 
         /// <summary>

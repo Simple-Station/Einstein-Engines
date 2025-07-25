@@ -1,4 +1,5 @@
 ﻿using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._Lavaland.Procedural.Prototypes;
 
@@ -13,7 +14,7 @@ public sealed partial class LavalandRuinPrototype : IPrototype
     [DataField] public LocId Name = "lavaland-ruin-unknown";
 
     [DataField(required: true)]
-    public string Path { get; } = default!;
+    public ResPath Path { get; } = default!;
 
     [DataField]
     public int SpawnAttemps = 8;

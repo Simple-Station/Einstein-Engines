@@ -1,46 +1,5 @@
 # Chief Engineer
 # Backpacks
-- type: loadout
-  id: LoadoutEngineeringChiefEngineerBackpackBackpack
-  category: JobsEngineeringChiefEngineer
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutChiefEngineerBackpack
-    - !type:CharacterJobRequirement
-      jobs:
-        - ChiefEngineer
-  items:
-    - ClothingBackpackChiefEngineerFilled
-
-- type: loadout
-  id: LoadoutEngineeringChiefEngineerBackpackSatchel
-  category: JobsEngineeringChiefEngineer
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutChiefEngineerBackpack
-    - !type:CharacterJobRequirement
-      jobs:
-        - ChiefEngineer
-  items:
-    - ClothingBackpackSatchelChiefEngineerFilled
-
-- type: loadout
-  id: LoadoutEngineeringChiefEngineerBackpackDuffel
-  category: JobsEngineeringChiefEngineer
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutChiefEngineerBackpack
-    - !type:CharacterJobRequirement
-      jobs:
-        - ChiefEngineer
-  items:
-    - ClothingBackpackDuffelChiefEngineerFilled
 
 # Belt
 - type: loadout

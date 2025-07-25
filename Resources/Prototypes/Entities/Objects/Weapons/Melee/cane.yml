@@ -29,7 +29,7 @@
 
 - type: entity
   name: cane blade
-  parent: BaseItem
+  parent: [BaseItem, BaseSyndicateContraband]
   id: CaneBlade
   description: A sharp blade with a cane shaped hilt.
   components:
@@ -39,10 +39,10 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 65
-    attackRate: .6666
+    attackRate: .8
     damage:
       types:
-        Slash: 14
+        Slash: 12
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: Item

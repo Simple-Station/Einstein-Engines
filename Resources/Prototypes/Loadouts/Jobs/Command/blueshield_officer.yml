@@ -42,6 +42,21 @@
   items:
     - ClothingBackpackDuffelBlueshield
 
+- type: loadout
+  id: LoadoutClothingModsuitBlueshield
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingModsuitPraetorian #Blueshield modsuit
+
+
 # Belt
 
 # Ears
@@ -83,6 +98,7 @@
       min: 21
   items:
     - WeaponLeverChester
+    - BlueshieldAmmunitionBoxFilled
 
 - type: loadout
   id: LoadoutBSORifleBRDIR25
@@ -102,7 +118,7 @@
     - WeaponSubMachineGunBRDIR25BSO # The Den sprites
 
 - type: loadout
-  id: LoadoutBSOEnergyShield
+  id: LoadoutBSOGreatShield
   category: JobsCommandBlueshieldOfficer
   cost: 0
   canBeHeirloom: true
@@ -116,7 +132,7 @@
     - !type:CharacterAgeRequirement
       min: 21
   items:
-    - EnergyShield
+    - BlueShieldShieldFilled
 
 - type: loadout
   id: LoadoutBSOMedkitCombatFilled
@@ -161,6 +177,26 @@
         - BlueshieldOfficer
   items:
     - BSOManual
+
+- type: loadout
+  id: LoadoutBSOTerminus
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerPrimary
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+    - !type:CharacterAgeRequirement
+      min: 21
+    - !type:CharacterSpeciesRequirement
+      species:
+      - Oni
+  items:
+    - Terminus
 
 # Eyes
 

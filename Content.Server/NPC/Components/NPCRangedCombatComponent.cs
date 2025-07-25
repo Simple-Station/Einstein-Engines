@@ -41,6 +41,13 @@ public sealed partial class NPCRangedCombatComponent : Component
     public bool TargetInLOS = false;
 
     /// <summary>
+    /// If true, only opaque objects will block line of sight.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite)]
+    // ReSharper disable once InconsistentNaming
+    public bool UseOpaqueForLOSChecks = false;
+
+    /// <summary>
     /// Delay after target is in LOS before we start shooting.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
@@ -54,4 +61,16 @@ public sealed partial class NPCRangedCombatComponent : Component
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
     public SoundSpecifier? SoundTargetInLOS;
+
+    /// <summary>
+    ///     Whether or not the NPC will always attempt to shoot targets that are laying down.
+    /// </summary>
+    [DataField]
+    public bool AlwaysDirectTargets;
+
+    /// <summary>
+    ///     The chance that an NPC will aim to hit targets that are laying down.
+    /// </summary>
+    [DataField]
+    public float DirectTargetChance = 0.5f;
 }

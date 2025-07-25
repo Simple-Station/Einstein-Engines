@@ -8,8 +8,8 @@ loadout-description-LoadoutEyesBlindfold = Why would you want this?
 loadout-name-LoadoutEyesBlindfoldColor = blindfold (colorable)
 loadout-description-LoadoutEyesBlindfoldColor = Why would you want this? At least it comes in a wide assortment of colors.
 
-loadout-name-LoadoutEyesGlassesCheapSunglassesAviator = cheap aviators (colorable)
-loadout-name-LoadoutEyesGlassesSunglassesAviator = aviators (colorable)
+loadout-name-LoadoutEyesGlassesCheapSunglassesAviator = aviators (colorable)
+loadout-name-LoadoutEyesGlassesSunglassesAviator = shielded aviators (colorable)
 
 loadout-name-LoadoutItemBlindfoldFake = "blind"fold
 loadout-description-LoadoutItemBlindfoldFake = This product may not work as advertised.

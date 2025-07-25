@@ -1,0 +1,12 @@
+- type: species
+  id: SynthHuman
+  name: species-name-synth-human
+  roundStart: false
+  prototype: MobSynthHuman
+  sprites: MobHumanSprites
+  defaultSkinTone: "#FFFFFFFF"
+  markingLimits: MobHumanMarkingLimits
+  dollPrototype: BioSynthTorso
+  skinColoration: Hues
+  sexes:
+  - Unsexed

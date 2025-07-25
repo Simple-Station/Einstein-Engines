@@ -1,11 +1,11 @@
 - type: entity
   name: spear
-  parent: BaseItem
+  parent: [BaseItem, BaseMinorContraband]
   id: Spear
   description: Definition of a Classic. Keeping murder affordable since 200,000 BCE.
   components:
   - type: EmbeddableProjectile
-    offset: 0.15,0.15
+    offset: -0.15,0.0
   - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 225
@@ -18,10 +18,10 @@
       fix1:
         shape: !type:PolygonShape
           vertices:
-            - -0.40,-0.30
-            - -0.30,-0.40
-            - 0.40,0.30
-            - 0.30,0.40
+          - -0.40,-0.30
+          - -0.30,-0.40
+          - 0.40,0.30
+          - 0.30,0.40
         density: 20
         mask:
         - ItemMask
@@ -43,9 +43,9 @@
         Piercing: 7
         Slash: 1
     heavyRateModifier: 1.3
-    heavyRangeModifier: 1.25
+    heavyRangeModifier: 1.35
     heavyDamageBaseModifier: 1.0
-    heavyStaminaCost: 5
+    heavyStaminaCost: 2.5
     maxTargets: 3
     angle: 20
     animation: WeaponArcThrust
@@ -118,6 +118,11 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 1
     fillBaseName: spear
+    inHandsFillBaseName: -fill-
+    inHandsMaxFillLevels: 1
+    equippedFillBaseName: -fill-
+    equippedMaxFillLevels: 1
+
 
 - type: entity
   name: reinforced spear
@@ -214,10 +219,10 @@
       fix1:
         shape: !type:PolygonShape
           vertices:
-            - -0.40,-0.30
-            - -0.30,-0.40
-            - 0.40,0.30
-            - 0.30,0.40
+          - -0.40,-0.30
+          - -0.30,-0.40
+          - 0.40,0.30
+          - 0.30,0.40
         density: 20
         mask:
         - ItemMask
@@ -239,9 +244,9 @@
         Piercing: 10
         Slash: 2
     heavyRateModifier: 1.3
-    heavyRangeModifier: 1.25
+    heavyRangeModifier: 1.35
     heavyDamageBaseModifier: 1.0
-    heavyStaminaCost: 5
+    heavyStaminaCost: 2.5
     maxTargets: 3
     angle: 20
     animation: WeaponArcThrust

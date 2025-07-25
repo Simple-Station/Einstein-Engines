@@ -1,15 +1,10 @@
 using System.Numerics;
 using Content.Server.NPC.Components;
 using Content.Server.NPC.Events;
-using Content.Server.NPC.HTN.PrimitiveTasks.Operators.Combat;
 using Content.Server.Weapons.Melee;
-using Content.Shared.Coordinates.Helpers;
 using Content.Shared.NPC;
-using Content.Shared.Weapons.Melee;
-using Robust.Shared.Collections;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Components;
-using Robust.Shared.Physics.Systems;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -21,8 +16,8 @@ public sealed class NPCJukeSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly MeleeWeaponSystem _melee = default!;
+    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
 
     private EntityQuery<NPCMeleeCombatComponent> _npcMeleeQuery;
     private EntityQuery<NPCRangedCombatComponent> _npcRangedQuery;
@@ -61,7 +56,7 @@ public sealed class NPCJukeSystem : EntitySystem
                 return;
             }
 
-            var currentTile = _map.CoordinatesToTile((EntityUid) args.Transform.GridUid, grid, args.Transform.Coordinates);
+            var currentTile = _mapSystem.CoordinatesToTile(args.Transform.GridUid.Value, grid, args.Transform.Coordinates);
 
             if (component.TargetTile == null)
             {
@@ -74,7 +69,7 @@ public sealed class NPCJukeSystem : EntitySystem
                 for (var i = 0; i < 8; i++)
                 {
                     var index = (startIndex + i) % 8;
-                    var neighbor = ((Direction) index).ToIntVec() + currentTile;
+                    var neighbor = ((Direction)index).ToIntVec() + currentTile;
                     var valid = true;
 
                     // TODO: Probably make this a helper on engine maybe
@@ -117,7 +112,7 @@ public sealed class NPCJukeSystem : EntitySystem
                 return;
             }
 
-            var targetCoords = _map.GridTileToWorld((EntityUid) args.Transform.GridUid, grid, component.TargetTile.Value);
+            var targetCoords = _mapSystem.GridTileToWorld(args.Transform.GridUid.Value, grid, component.TargetTile.Value);
             var targetDir = targetCoords.Position - args.WorldPosition;
             targetDir = args.OffsetRotation.RotateVec(targetDir);
             const float weight = 1f;
@@ -142,6 +137,9 @@ public sealed class NPCJukeSystem : EntitySystem
             if (_npcMeleeQuery.TryGetComponent(uid, out var melee))
             {
                 if (!_melee.TryGetWeapon(uid, out var weaponUid, out var weapon))
+                    return;
+
+                if (!HasComp<TransformComponent>(melee.Target))
                     return;
 
                 var cdRemaining = weapon.NextAttack - _timing.CurTime;
@@ -171,7 +169,7 @@ public sealed class NPCJukeSystem : EntitySystem
                     return;
 
                 // TODO: Probably add in our bounds and target bounds for ideal distance.
-                var idealDistance = weapon.Range * 4f;
+                var idealDistance = weapon.Range * weapon.LightRangeModifier * 4f;
                 var obstacleDistance = obstacleDirection.Length();
 
                 if (obstacleDistance > idealDistance || obstacleDistance == 0f)

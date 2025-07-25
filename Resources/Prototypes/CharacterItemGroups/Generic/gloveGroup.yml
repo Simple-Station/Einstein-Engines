@@ -22,4 +22,6 @@
     - type: loadout
       id: LoadoutHandsClothWrap
     - type: loadout
-      id: ClothingHandsTacticalMaidGloves
+      id: ClothingHandsTacticalMaidGlovesLoadout
+    - type: loadout
+      id: ClothingHandsGlovesCombatTCAF

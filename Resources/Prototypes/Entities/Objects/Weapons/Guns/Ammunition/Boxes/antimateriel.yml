@@ -58,3 +58,11 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  parent: MagazineBoxAntiMateriel
+  id: MagazineBoxAntiMaterielShrapnel
+  name: ammunition box (.60 anti-personnel shrapnel)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeAntiMaterielShrapnel

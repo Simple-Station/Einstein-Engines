@@ -40,7 +40,7 @@ namespace Content.Server.Abilities.Psionics
 
         private void OnPowerUsed(EntityUid uid, PsionicRegenerationPowerComponent component, PsionicRegenerationPowerActionEvent args)
         {
-            if (!_psionics.OnAttemptPowerUse(args.Performer, "psionic regeneration"))
+            if (!_psionics.OnAttemptPowerUse(args.Performer, "psionic regeneration", true))
                 return;
 
             var ev = new PsionicRegenerationDoAfterEvent(_gameTiming.CurTime);
@@ -57,7 +57,7 @@ namespace Content.Server.Abilities.Psionics
                 true,
                 PopupType.Medium);
 
-            _audioSystem.PlayPvs(component.SoundUse, component.Owner, AudioParams.Default.WithVolume(8f).WithMaxDistance(1.5f).WithRolloffFactor(3.5f));
+            _audioSystem.PlayPvs(component.SoundUse, uid, AudioParams.Default.WithVolume(8f).WithMaxDistance(1.5f).WithRolloffFactor(3.5f));
             _psionics.LogPowerUsed(uid, "psionic regeneration");
             args.Handled = true;
         }

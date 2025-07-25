@@ -122,7 +122,7 @@
 - type: entity
   name: space kangaroo
   id: MobKangarooSpace
-  parent: MobSpaceBasic
+  parent: [MobSpaceBasic, StripableInventoryBase]
   description: It looks friendly. Why don't you give it a hug?
   components:
   - type: Sprite
@@ -171,12 +171,6 @@
     - Kangaroo
     understands:
     - Kangaroo
-  - type: InventorySlots
-  - type: Strippable
-  - type: UserInterface
-    interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
 
 - type: entity
   id: MobKangarooSpaceSalvage
@@ -403,6 +397,7 @@
     mindRoles:
     - MindRoleGhostRoleFreeAgent
   - type: GhostTakeoverAvailable
+  - type: Emoting
   - type: Sprite
     drawdepth: SmallMobs
     sprite: Mobs/Animals/snail.rsi
@@ -413,7 +408,7 @@
     size: Tiny
   - type: NpcFactionMember
     factions:
-      - Mouse
+    - Mouse
   - type: HTN
     rootTask:
       task: MouseCompound
@@ -464,7 +459,6 @@
       Dead: 0
     baseDecayRate: 0.04
   - type: Hunger
-    currentHunger: 25   # spawn with Okay hunger state
     thresholds:
       Overfed: 35
       Okay: 25
@@ -556,13 +550,13 @@
       Alive:
         Base: spacesnail
       Critical:
-        Base: spacesnaildead
+        Base: spacedead
       Dead:
-        Base: spacesnaildead
+        Base: spacedead
   - type: MovementSpeedModifier
     baseWalkSpeed : 5 #he go fast, also they cant slip so its probably fine.
     baseSprintSpeed : 7
-#  - type: ActiveJetpack # I think this will need a custom component to not make tests angry.
+  #  - type: ActiveJetpack # I think this will need a custom component to not make tests angry.
   - type: MovementAlwaysTouching
 
 - type: entity

@@ -281,6 +281,14 @@ namespace Content.Server.Atmos.EntitySystems
             return true;
         }
 
+        public GasCompareResult CompareExchange(TileAtmosphere sample, TileAtmosphere otherSample)
+        {
+            if (sample.AirArchived == null || otherSample.AirArchived == null)
+                return GasCompareResult.NoExchange;
+
+            return CompareExchange(sample.AirArchived, otherSample.AirArchived);
+        }
+
         /// <summary>
         ///     Compares two gas mixtures to see if they are within acceptable ranges for group processing to be enabled.
         /// </summary>
@@ -288,12 +296,12 @@ namespace Content.Server.Atmos.EntitySystems
         {
             var moles = 0f;
 
-            for(var i = 0; i < Atmospherics.TotalNumberOfGases; i++)
+            for (var i = 0; i < Atmospherics.TotalNumberOfGases; i++)
             {
                 var gasMoles = sample.Moles[i];
                 var delta = MathF.Abs(gasMoles - otherSample.Moles[i]);
                 if (delta > Atmospherics.MinimumMolesDeltaToMove && (delta > gasMoles * Atmospherics.MinimumAirRatioToMove))
-                    return (GasCompareResult)i; // We can move gases!
+                    return (GasCompareResult) i; // We can move gases!
                 moles += gasMoles;
             }
 

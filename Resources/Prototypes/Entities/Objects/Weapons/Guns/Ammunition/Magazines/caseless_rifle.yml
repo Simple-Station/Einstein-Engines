@@ -1,7 +1,7 @@
 - type: entity
   id: BaseMagazineCaselessRifle
   name: "magazine (.25 caseless)"
-  parent: BaseItem
+  parent: [ BaseItem, BaseRestrictedContraband ]
   abstract: true
   components:
   - type: Tag
@@ -99,7 +99,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifle
-    capacity: 10
   - type: Sprite
     slayers:
     - state: red
@@ -119,7 +118,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRiflePractice
-    capacity: 10
   - type: Sprite
     layers:
     - state: practice
@@ -133,24 +131,28 @@
   - type: Appearance
 
 - type: entity
-  id: MagazinePistolCaselessRifleRubber
-  name: "pistol magazine (.25 caseless rubber)"
+  id: MagazinePistolCaselessRifleIncendiary
+  name: "pistol magazine (.25 caseless incendiary)"
   parent: BaseMagazinePistolCaselessRifle
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeCaselessRifleRubber
-    capacity: 10
-  - type: Sprite
-    layers:
-    - state: rubber
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-  - type: MagazineVisuals
-    magState: mag
-    steps: 6
-    zeroVisible: false
-  - type: Appearance
+    proto: CartridgeCaselessRifleIncendiary
+
+- type: entity
+  id: MagazinePistolCaselessRifleUranium
+  name: "pistol magazine (.25 caseless uranium)"
+  parent: BaseMagazinePistolCaselessRifle
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifleUranium
+
+- type: entity
+  id: MagazinePistolCaselessRifleShrapnel
+  name: "pistol magazine (.25 caseless shrapnel)"
+  parent: BaseMagazinePistolCaselessRifle
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifleShrapnel
 
 - type: entity
   id: MagazineCaselessRifle
@@ -181,18 +183,28 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  id: MagazineCaselessRifleRubber
-  name: "magazine (.25 caseless rubber)"
-  parent: BaseMagazineCaselessRifle
+  id: MagazineCaselessRifleIncendiary
+  name: "magazine (.25 caseless incendiary)"
+  parent: MagazineCaselessRifle
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeCaselessRifleRubber
-  - type: Sprite
-    layers:
-    - state: rubber
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
+    proto: CartridgeCaselessRifleIncendiary
+
+- type: entity
+  id: MagazineCaselessRifleUranium
+  name: "magazine (.25 caseless uranium)"
+  parent: MagazineCaselessRifle
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifleUranium
+
+- type: entity
+  id: MagazineCaselessRifleShrapnel
+  name: "magazine (.25 caseless shrapnel)"
+  parent: MagazineCaselessRifle
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifleShrapnel
 
 - type: entity
   id: MagazineCaselessRifleShort
@@ -216,7 +228,6 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRiflePractice
-    capacity: 20
   - type: Sprite
     layers:
     - state: practice
@@ -225,16 +236,25 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  id: MagazineCaselessRifleShortRubber
-  name: "short magazine (.25 caseless rubber)"
+  id: MagazineCaselessRifleShortIncendiary
+  name: "short magazine (.25 caseless incendiary)"
   parent: BaseMagazineCaselessRifleShort
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeCaselessRifleRubber
-    capacity: 20
-  - type: Sprite
-    layers:
-    - state: rubber
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
+    proto: CartridgeCaselessRifleIncendiary
+
+- type: entity
+  id: MagazineCaselessRifleShortUranium
+  name: "short magazine (.25 caseless uranium)"
+  parent: BaseMagazineCaselessRifleShort
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifleUranium
+
+- type: entity
+  id: MagazineCaselessRifleShortShrapnel
+  name: "short magazine (.25 caseless shrapnel)"
+  parent: BaseMagazineCaselessRifleShort
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifleShrapnel

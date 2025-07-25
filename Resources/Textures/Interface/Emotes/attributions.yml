@@ -56,6 +56,11 @@
   copyright: "Created by Sarahon"
   source: "https://github.com/Sarahon"
 
+- files: ["hew.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Modified from existing weh emote image (weh.png) by ArtisticRoomba"
+  source: "https://github.com/ArtisticRoomba"
+
 - files: ["honk.png"]
   license: "CC-BY-SA-3.0"
   copyright: "Modified from existing bikehorn texture (icon.png) by TyAshley (AllenTheGreat) & Sarahon"
@@ -75,6 +80,11 @@
   license: "CC-BY-SA-3.0"
   copyright: "Created by Sarahon"
   source: "https://github.com/Sarahon"
+
+- files: ["scream.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Modified standart laugh.png icon by BombasterDS)"
+  source: "https://github.com/BombasterDS"
 
 - files: ["sigh.png"]
   license: "CC-BY-SA-3.0"
@@ -116,14 +126,15 @@
   copyright: "Created by Sarahon"
   source: "https://github.com/Sarahon"
 
+- files: ["tailslap.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Created by Sarahon"
+  source: "https://github.com/Sarahon"
+
+
 - files: ["meow.png"]
   license: "CC-BY-SA-3.0"
   copyright: "Made by BombasterDS)"
-  source: "https://github.com/BombasterDS"
-
-- files: ["scream.png"]
-  license: "CC-BY-SA-3.0"
-  copyright: "Modified standart laugh.png icon by BombasterDS)"
   source: "https://github.com/BombasterDS"
 
 - files: ["mew.png"]

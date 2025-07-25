@@ -48,7 +48,7 @@
 - type: moodEffect
   id: SurgeryPain
   moodChange: -30 # lol too lazy to make a category of ramping surgery moods, wonder how bad this will be.
-  timeout: 360
+  timeout: 90
 
 - type: moodEffect
   id: HeirloomLost

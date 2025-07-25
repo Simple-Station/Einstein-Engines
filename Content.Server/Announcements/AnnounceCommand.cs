@@ -9,7 +9,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server.Announcements
 {
-    [AdminCommand(AdminFlags.Admin)]
+    [AdminCommand(AdminFlags.Moderator)]
     public sealed class AnnounceCommand : IConsoleCommand
     {
         public string Command => "announce";
@@ -26,16 +26,16 @@ namespace Content.Server.Announcements
                     shell.WriteError("Not enough arguments! Need at least 1.");
                     return;
                 case 1:
-                    announcer.SendAnnouncement(announcer.GetAnnouncementId("CommandReport"), Filter.Broadcast(),
-                        args[0], "Central Command", Color.Gold);
+                    announcer.SendAnnouncement(announcer.GetAnnouncementId("CommandReport"),
+                        args[0], Loc.GetString("chat-manager-sender-announcement"), colorOverride: Color.Gold);
                     break;
                 case 2:
-                    announcer.SendAnnouncement(announcer.GetAnnouncementId("CommandReport"), Filter.Broadcast(),
-                        args[1], args[0], Color.Gold);
+                    announcer.SendAnnouncement(announcer.GetAnnouncementId("CommandReport"),
+                        args[1], args[0], colorOverride: Color.Gold);
                     break;
                 case 3:
-                    announcer.SendAnnouncement(announcer.GetAnnouncementId(args[2]), Filter.Broadcast(), args[1],
-                        args[0], Color.Gold);
+                    announcer.SendAnnouncement(announcer.GetAnnouncementId(args[2]), args[1],
+                        args[0], colorOverride: Color.Gold);
                     break;
                 case 4:
                     if (!proto.TryIndex(args[3], out AnnouncerPrototype? prototype))
@@ -43,8 +43,8 @@ namespace Content.Server.Announcements
                         shell.WriteError($"No announcer prototype with ID {args[3]} found!");
                         return;
                     }
-                    announcer.SendAnnouncement(args[2], Filter.Broadcast(), args[1], args[0], Color.Gold, null,
-                        prototype);
+                    announcer.SendAnnouncement(args[2], args[1], args[0], colorOverride: Color.Gold,
+                        announcerOverride: prototype);
                     break;
             }
 

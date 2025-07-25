@@ -14,10 +14,12 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutDetectiveEquipment
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutDetectiveEquipment
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutItemTapeRecorderDetective
 #
 #- type: characterItemGroup
 #  id: LoadoutDetectiveEyes
@@ -57,13 +59,19 @@
       id: LoadoutClothingOuterCoatDetective
     - type: loadout
       id: LoadoutOuterVestDetective
+    - type: loadout
+      id: LoadoutClothingOuterJacketZavDetective
 
 #- type: characterItemGroup
 #  id: LoadoutDetectiveShoes
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutDetectiveUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutDetectiveUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSecurityUniformZavodDetective
+    - type: loadout
+      id: LoadoutSecurityUniformZavodDetectiveAlt

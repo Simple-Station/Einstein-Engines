@@ -15,8 +15,8 @@
       - !type:HealthChange
         damage:
           groups:
-            Burn: -3.75
-            Brute: -1.25
+            Burn: -1.75
+            Brute: -1.75
           types:
             Bloodloss: -1.25
       - !type:ModifyBloodLevel
@@ -29,8 +29,8 @@
       - !type:HealthChange
         damage:
           groups:
-            Burn: -3.75
-            Brute: -1.25
+            Burn: -4.75
+            Brute: -4.75
           types:
             Bloodloss: -1.25
         conditions:
@@ -41,11 +41,11 @@
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
-          min: 21
+          min: 35 # almost two survival medipens
         damage:
           types:
-            Poison: 15
-            Cold: 15
+            Poison: 5
+            Cold: 5
       - !type:Jitter
       - !type:PopupMessage
         type: Local

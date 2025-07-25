@@ -22,10 +22,12 @@
           inverted: true
           traits:
             - Pacifist
-        - !type:CharacterTraitRequirement
-          inverted: true
-          traits:
-            - ShadowkinBlackeye
+    - !type:CharacterEmployerRequirement
+      employers:
+      - NanoTrasen
+      - ZengHuPharmaceuticals
+    - !type:CharacterItemGroupRequirement
+      group: TraitsCasterType
   startingGear: ForensicMantisGear
   icon: "JobIconForensicMantis"
   supervisors: job-supervisors-rd
@@ -38,15 +40,18 @@
   special:
   - !type:AddComponentSpecial
     components:
-    - type: Psionic
-      powerSlots: 2
-  - !type:AddComponentSpecial
-    components:
-    - type: InnatePsionicPowers
-      powersToAdd:
-        - MetapsionicPower
-        - TelepathyPower
-        - AssayPower
+      - type: Psionic
+        powerSlots: 2
+        baselinePowerCost: 75
+        nextPowerCost: 75
+        removable: false
+        powerPool: PsychoHistorianPowerPool
+      - type: InnatePsionicPowers
+        powersToAdd:
+          - MetapsionicPower
+          - TelepathyPower
+          - MantisSummonBlackBlade
+
 
 - type: startingGear
   id: ForensicMantisGear
@@ -54,7 +59,7 @@
   - ForensicMantisPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitMantis
-    back: ClothingBackpackMantisFilled
+    back: ClothingBackpackScience
     shoes: ClothingShoesBootsMantis
     head: ClothingHeadHatFezMantis
     id: ForensicMantisPDA
@@ -64,13 +69,16 @@
     outerClothing: ClothingOuterCoatMantis
     belt: ClothingBeltMantis
     pocket1: BookPsionicsGuidebook
-  innerClothingSkirt: ClothingUniformSkirtMantis
-  satchel: ClothingBackpackSatchelMantisFilled
-  duffelbag: ClothingBackpackDuffelMantisFilled
+  storage:
+    back:
+    - HandLabeler
+    - PillMindbreakerToxin
+    - BoxFolderGrey
+    - RubberStampMantis
 
 - type: startingGear
   id: ForensicMantisPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitMantis
     head: ClothingHeadEnvirohelmMantis

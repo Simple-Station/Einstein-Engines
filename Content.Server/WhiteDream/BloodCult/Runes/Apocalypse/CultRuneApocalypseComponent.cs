@@ -53,7 +53,7 @@ public sealed partial class CultRuneApocalypseComponent : Component
         ["ImmovableRodSpawn"] = 3,
         ["MimicVendorRule"] = 2,
         ["RatKingSpawn"] = 2,
-        ["MeteorSwarm"] = 2,
+        ["GameRuleMeteorSwarmMedium"] = 2,
         ["SpiderSpawn"] = 3, // more spiders
         ["AnomalySpawn"] = 4,
         ["KudzuGrowth"] = 2,

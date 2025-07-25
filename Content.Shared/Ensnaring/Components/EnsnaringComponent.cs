@@ -1,5 +1,5 @@
-﻿using System.Threading;
 using Content.Shared.Whitelist;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Ensnaring.Components;
@@ -58,6 +58,9 @@ public sealed partial class EnsnaringComponent : Component
     [DataField]
     public bool CanMoveBreakout;
 
+    [DataField]
+    public SoundSpecifier? EnsnareSound = new SoundPathSpecifier("/Audio/Effects/snap.ogg");
+
     /// <summary>
     /// Should the ensaring entity be deleted upon removal?
     /// </summary>
@@ -98,31 +101,5 @@ public sealed class EnsnareRemoveEvent : CancellableEntityEventArgs
     {
         WalkSpeed = walkSpeed;
         SprintSpeed = sprintSpeed;
-    }
-}
-
-/// <summary>
-/// Used for the do after event to free the entity that owns the <see cref="EnsnareableComponent"/>
-/// </summary>
-public sealed class FreeEnsnareDoAfterComplete : EntityEventArgs
-{
-    public readonly EntityUid EnsnaringEntity;
-
-    public FreeEnsnareDoAfterComplete(EntityUid ensnaringEntity)
-    {
-        EnsnaringEntity = ensnaringEntity;
-    }
-}
-
-/// <summary>
-/// Used for the do after event when it fails to free the entity that owns the <see cref="EnsnareableComponent"/>
-/// </summary>
-public sealed class FreeEnsnareDoAfterCancel : EntityEventArgs
-{
-    public readonly EntityUid EnsnaringEntity;
-
-    public FreeEnsnareDoAfterCancel(EntityUid ensnaringEntity)
-    {
-        EnsnaringEntity = ensnaringEntity;
     }
 }

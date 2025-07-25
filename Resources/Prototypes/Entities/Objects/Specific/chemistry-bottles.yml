@@ -16,10 +16,10 @@
   - type: Sprite
     sprite: Objects/Specific/Chemistry/bottle.rsi
     layers:
-      - state: bottle-1
-      - state: bottle-1-1
-        map: ["enum.SolutionContainerLayers.Fill"]
-        visible: false
+    - state: bottle-1
+    - state: bottle-1-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
   - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 6
@@ -93,6 +93,7 @@
         transferForensics: true
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: DnaSubstanceTrace
 
 - type: entity
   parent: BaseChemistryEmptyBottle
@@ -104,10 +105,10 @@
   components:
   - type: Sprite
     layers:
-      - state: bottle-2
-      - state: bottle-2-1
-        map: ["enum.SolutionContainerLayers.Fill"]
-        visible: false
+    - state: bottle-2
+    - state: bottle-2-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
   - type: SolutionContainerVisuals
     fillBaseName: bottle-2-
 
@@ -117,10 +118,10 @@
   components:
   - type: Sprite
     layers:
-      - state: bottle-3
-      - state: bottle-3-1
-        map: ["enum.SolutionContainerLayers.Fill"]
-        visible: false
+    - state: bottle-3
+    - state: bottle-3-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
   - type: SolutionContainerVisuals
     fillBaseName: bottle-3-
 
@@ -130,10 +131,10 @@
   components:
   - type: Sprite
     layers:
-      - state: bottle-4
-      - state: bottle-4-1
-        map: ["enum.SolutionContainerLayers.Fill"]
-        visible: false
+    - state: bottle-4
+    - state: bottle-4-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
   - type: SolutionContainerVisuals
     fillBaseName: bottle-4-
 
@@ -368,8 +369,8 @@
       drink:
         maxVol: 30
         reagents:
-          - ReagentId: Pax
-            Quantity: 30
+        - ReagentId: Pax
+          Quantity: 30
 
 - type: entity
   id: MuteToxinChemistryBottle
@@ -383,8 +384,8 @@
       drink:
         maxVol: 30
         reagents:
-          - ReagentId: MuteToxin
-            Quantity: 30
+        - ReagentId: MuteToxin
+          Quantity: 30
 
 - type: entity
   id: LeadChemistryBottle
@@ -398,8 +399,8 @@
       drink:
         maxVol: 30
         reagents:
-          - ReagentId: Lead
-            Quantity: 30
+        - ReagentId: Lead
+          Quantity: 30
 
 - type: entity
   id: ToxinChemistryBottle
@@ -413,5 +414,5 @@
       drink:
         maxVol: 30
         reagents:
-          - ReagentId: Toxin
-            Quantity: 30
+        - ReagentId: Toxin
+          Quantity: 30

@@ -1,7 +1,7 @@
 - type: trait
   id: Blindness
   category: Visual
-  points: 10
+  points: 6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -24,6 +24,7 @@
     - !type:TraitAddComponent
       components:
         - type: PermanentBlindness
+          incurable: true
 
 - type: trait
   id: Nearsighted
@@ -50,7 +51,7 @@
     - !type:TraitAddComponent
       components:
         - type: PermanentBlindness
-          blindness: 4
+          blindness: 3
 
 - type: trait
   id: Narcolepsy
@@ -76,7 +77,7 @@
 - type: trait
   id: Pacifist
   category: Mental
-  points: 8
+  points: 6
   functions:
     - !type:TraitAddComponent
       components:
@@ -85,7 +86,7 @@
 - type: trait
   id: Paracusia
   category: Auditory
-  points: 2
+  points: 1
   functions:
     - !type:TraitAddComponent
       components:
@@ -127,6 +128,14 @@
       jobs:
         - Borg
         - MedicalBorg
+    - !type:CharacterLifepathRequirement
+      inverted: true
+      lifepaths:
+        - Clone
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
   functions:
     - !type:TraitAddComponent
       components:
@@ -134,6 +143,8 @@
 
 - type: trait
   id: FrontalLisp
+  # slots: 0
+  # itemGroupSlots: 0
   category: TraitsSpeechAccents
   requirements:
     - !type:CharacterJobRequirement
@@ -173,7 +184,7 @@
 - type: trait
   id: BadKnees
   category: Physical
-  points: 5
+  points: 4
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
@@ -204,6 +215,7 @@
       traits:
         - ParkourTraining
         - SnailPaced
+        - WheelchairBound
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -226,6 +238,7 @@
       traits:
         - ParkourTraining
         - Sluggish
+        - WheelchairBound
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -241,7 +254,7 @@
 - type: trait
   id: BloodDeficiency
   category: Physical
-  points: 6
+  points: 4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -254,6 +267,10 @@
         - IPC
         - Lamia
         - Plasmaman
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - PlateletFactories
   functions:
     - !type:TraitAddComponent
       components:
@@ -295,6 +312,7 @@
       species:
         - Vulpkanin # This trait functions exactly as-is for the Vulpkanin trait.
         - Shadowkin
+        - Tajaran
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -307,17 +325,14 @@
         - LightAmplificationModule
         - ThermographicVisionModule
   functions:
-    - !type:TraitReplaceComponent
+    - !type:TraitAddComponent
       components:
-        - type: Flashable
-          eyeDamageChance: 0.3
-          eyeDamage: 1
-          durationMultiplier: 1.5
+        - type: EyeDamageOnFlashing
 
 - type: trait
   id: Clumsy
   category: Physical
-  points: 4
+  points: 5
   requirements:
     - !type:CharacterJobRequirement
       inverted: true

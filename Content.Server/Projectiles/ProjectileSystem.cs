@@ -71,9 +71,14 @@ public sealed class ProjectileSystem : SharedProjectileSystem
                 _sharedCameraRecoil.KickCamera(target, args.OurBody.LinearVelocity.Normalized());
         }
 
-        component.DamagedEntity = true;
+        // Goobstation start
+        if (component.Penetrate)
+            component.IgnoredEntities.Add(target);
+        else
+            component.DamagedEntity = true;
+        // Goobstation end
 
-        if (component.DeleteOnCollide)
+        if (component.DeleteOnCollide || (component.NoPenetrateMask & args.OtherFixture.CollisionLayer) != 0) // Goobstation - Make x-ray arrows not penetrate blob
             QueueDel(uid);
 
         if (component.ImpactEffect != null && TryComp(uid, out TransformComponent? xform))

@@ -1,4 +1,5 @@
-﻿using Content.Shared._Goobstation.TableSlam; // Goobstation - Table Slam
+using Content.Shared._Goobstation.MartialArts;
+using Content.Shared._Goobstation.TableSlam; // Goobstation - Table Slam
 using Content.Shared.Alert;
 using Content.Shared.Movement.Pulling.Systems;
 using Robust.Shared.GameStates;
@@ -12,16 +13,16 @@ namespace Content.Shared.Movement.Pulling.Components;
 /// Specifies an entity as being able to pull another entity with <see cref="PullableComponent"/>
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
-[Access(typeof(PullingSystem), typeof(TableSlamSystem))] // Goobstation - Table Slam
+[Access(typeof(PullingSystem), typeof(TableSlamSystem), typeof(SharedMartialArtsSystem))] // Goobstation - Table Slam
 public sealed partial class PullerComponent : Component
 {
     /// <summary>
     ///     Next time the puller change where they are pulling the target towards.
     /// </summary>
-    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField]
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField, Access(Other = AccessPermissions.ReadWriteExecute)]
     public TimeSpan NextPushTargetChange;
 
-    [DataField, AutoNetworkedField]
+    [DataField, AutoNetworkedField, Access(Other = AccessPermissions.ReadWriteExecute)]
     public TimeSpan NextPushStop;
 
     [DataField]
@@ -94,6 +95,15 @@ public sealed partial class PullerComponent : Component
     [DataField]
     public TimeSpan StageChangeCooldown = TimeSpan.FromSeconds(1.5f);
 
+    [AutoNetworkedField]
+    public TimeSpan WhenCanThrow;
+
+    /// <summary>
+    ///     After initiating / upgrading to a hard combat grab, how long should you have to keep somebody grabbed to be able to throw them.
+    /// </summary>
+    [DataField]
+    public TimeSpan ThrowDelayOnGrab = TimeSpan.FromSeconds(2f);
+
     [DataField]
     public Dictionary<GrabStage, float> EscapeChances = new()
     {
@@ -119,7 +129,7 @@ public sealed partial class PullerComponent : Component
     };
 
     [DataField]
-    public float StaminaDamageOnThrown = 120f;
+    public float StaminaDamageOnThrown = 100f;
 
     [DataField]
     public float GrabThrownSpeed = 7f;
@@ -137,3 +147,5 @@ public sealed partial class PullerComponent : Component
     public float ChokeGrabSpeedModifier = 0.4f;
     // Goobstation end
 }
+
+public sealed partial class StopPullingAlertEvent : BaseAlertEvent;

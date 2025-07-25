@@ -13,6 +13,11 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Medical
       min: 216000 # 60 hrs
+    - !type:CharacterEmployerRequirement
+      employers:
+      - ZengHuPharmaceuticals
+      - Interdyne
+      - NanoTrasen
   startingGear: SeniorPhysicianGear
   icon: "JobIconSeniorPhysician"
   supervisors: job-supervisors-cmo
@@ -34,12 +39,9 @@
   equipment:
     head: ClothingHeadHatBeretSeniorPhysician
     jumpsuit: ClothingUniformJumpsuitSeniorPhysician
-    back: ClothingBackpackMedicalFilled
+    back: ClothingBackpackMedical
     shoes: ClothingShoesColorBlack
     outerClothing: ClothingOuterCoatLabSeniorPhysician
     id: SeniorPhysicianPDA
     ears: ClothingHeadsetMedical
     belt: ClothingBeltMedicalFilled
-  innerClothingSkirt: ClothingUniformJumpskirtSeniorPhysician
-  satchel: ClothingBackpackSatchelMedicalFilled
-  duffelbag: ClothingBackpackDuffelMedicalFilled

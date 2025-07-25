@@ -1,6 +1,5 @@
 using System.Linq;
 using Content.Server.Administration.Logs;
-using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
 using Content.Server.Temperature.Components;
@@ -13,6 +12,8 @@ using Content.Shared.Rejuvenate;
 using Content.Shared.Temperature;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Physics.Events;
+using Content.Shared.Projectiles;
 
 namespace Content.Server.Temperature.Systems;
 
@@ -22,6 +23,7 @@ public sealed class TemperatureSystem : EntitySystem
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
+    [Dependency] private readonly TemperatureSystem _temperature = default!;
 
     /// <summary>
     ///     All the components that will have their damage updated at the end of the tick.
@@ -48,6 +50,8 @@ public sealed class TemperatureSystem : EntitySystem
 
         SubscribeLocalEvent<InternalTemperatureComponent, MapInitEvent>(OnInit);
 
+        SubscribeLocalEvent<ChangeTemperatureOnCollideComponent, ProjectileHitEvent>(ChangeTemperatureOnCollide);
+
         // Allows overriding thresholds based on the parent's thresholds.
         SubscribeLocalEvent<TemperatureComponent, EntParentChangedMessage>(OnParentChange);
         SubscribeLocalEvent<ContainerTemperatureDamageThresholdsComponent, ComponentStartup>(
@@ -61,9 +65,13 @@ public sealed class TemperatureSystem : EntitySystem
         base.Update(frameTime);
 
         // conduct heat from the surface to the inside of entities with internal temperatures
-        var query = EntityQueryEnumerator<InternalTemperatureComponent, TemperatureComponent>();
-        while (query.MoveNext(out var uid, out var comp, out var temp))
+        var query = EntityQueryEnumerator<InternalTemperatureComponent>();
+        while (query.MoveNext(out var uid, out var comp))
         {
+            if (!TryComp(uid, out TemperatureComponent? temp))
+                continue;
+            var tempEntity = (uid, temp);
+
             // don't do anything if they equalised
             var diff = Math.Abs(temp.CurrentTemperature - comp.Temperature);
             if (diff < 0.1f)
@@ -74,13 +82,13 @@ public sealed class TemperatureSystem : EntitySystem
 
             // convert to J then K
             var joules = q * comp.Area * frameTime;
-            var degrees = joules / GetHeatCapacity(uid, temp);
+            var degrees = joules / GetHeatCapacity(tempEntity);
             if (temp.CurrentTemperature < comp.Temperature)
                 degrees *= -1;
 
             // exchange heat between inside and surface
             comp.Temperature += degrees;
-            ForceChangeTemperature(uid, temp.CurrentTemperature - degrees, temp);
+            ForceChangeTemperature(tempEntity, temp.CurrentTemperature - degrees);
         }
 
         UpdateDamage(frameTime);
@@ -120,6 +128,15 @@ public sealed class TemperatureSystem : EntitySystem
         float delta = temperature.CurrentTemperature - temp;
         temperature.CurrentTemperature = temp;
         RaiseLocalEvent(uid, new OnTemperatureChangeEvent(temperature.CurrentTemperature, lastTemp, delta),
+            true);
+    }
+
+    public void ForceChangeTemperature(Entity<TemperatureComponent> ent, float temp)
+    {
+        float lastTemp = ent.Comp.CurrentTemperature;
+        float delta = ent.Comp.CurrentTemperature - temp;
+        ent.Comp.CurrentTemperature = temp;
+        RaiseLocalEvent(ent, new OnTemperatureChangeEvent(ent.Comp.CurrentTemperature, lastTemp, delta),
             true);
     }
 
@@ -168,6 +185,16 @@ public sealed class TemperatureSystem : EntitySystem
         if (physics.Mass < 1)
             return comp.SpecificHeat;
         else return comp.SpecificHeat * physics.FixturesMass;
+    }
+
+    public float GetHeatCapacity(Entity<TemperatureComponent> ent, PhysicsComponent? physics = null)
+    {
+        if (!Resolve(ent.Owner, ref physics, false) || physics.FixturesMass <= 0)
+            return Atmospherics.MinimumHeatCapacity;
+
+        if (physics.Mass < 1)
+            return ent.Comp.SpecificHeat;
+        else return ent.Comp.SpecificHeat * physics.FixturesMass;
     }
 
     private void OnInit(EntityUid uid, InternalTemperatureComponent comp, MapInitEvent args)
@@ -303,10 +330,19 @@ public sealed class TemperatureSystem : EntitySystem
     private void OnTemperatureChangeAttempt(EntityUid uid, TemperatureProtectionComponent component,
         InventoryRelayedEvent<ModifyChangedTemperatureEvent> args)
     {
-        var ev = new GetTemperatureProtectionEvent(component.Coefficient);
+        var coefficient = args.Args.TemperatureDelta < 0
+            ? component.CoolingCoefficient
+            : component.HeatingCoefficient;
+
+        var ev = new GetTemperatureProtectionEvent(coefficient);
         RaiseLocalEvent(uid, ref ev);
 
         args.Args.TemperatureDelta *= ev.Coefficient;
+    }
+
+    private void ChangeTemperatureOnCollide(Entity<ChangeTemperatureOnCollideComponent> ent, ref ProjectileHitEvent args)
+    {
+        _temperature.ChangeHeat(args.Target, ent.Comp.Heat, ent.Comp.IgnoreHeatResistance);// adjust the temperature 
     }
 
     private void OnParentChange(EntityUid uid, TemperatureComponent component,

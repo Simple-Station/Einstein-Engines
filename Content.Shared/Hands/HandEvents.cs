@@ -163,8 +163,9 @@ namespace Content.Shared.Hands
     /// <summary>
     ///     Raised directed on both the blocking entity and user when
     ///     a virtual hand item is thrown (at least attempted to).
+    ///     Cancellable.
     /// </summary>
-    public sealed class VirtualItemThrownEvent : EntityEventArgs
+    public sealed class VirtualItemThrownEvent : CancellableEntityEventArgs
     {
         public EntityUid BlockingEntity;
         public EntityUid User;

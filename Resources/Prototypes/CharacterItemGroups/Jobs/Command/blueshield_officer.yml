@@ -8,6 +8,8 @@
       id: LoadoutClothingSatchelBlueshield
     - type: loadout
       id: LoadoutClothingDuffelBlueshield
+    - type: loadout
+      id: LoadoutClothingModsuitBlueshield
 
 #- type: characterItemGroup
 #  id: LoadoutJOBBelt
@@ -26,9 +28,11 @@
     - type: loadout
       id: LoadoutBSORifleChester
     - type: loadout
-      id: LoadoutBSOEnergyShield
+      id: LoadoutBSOGreatShield
     - type: loadout
       id: LoadoutBSORifleBRDIR25
+    - type: loadout
+      id: LoadoutBSOTerminus
 
 #- type: characterItemGroup
 #  id: LoadoutJOBEyes

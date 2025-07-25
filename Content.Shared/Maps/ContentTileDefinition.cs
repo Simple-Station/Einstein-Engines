@@ -50,6 +50,12 @@ namespace Content.Shared.Maps
         // Delta V
         [DataField("canShovel")] public bool CanShovel { get; private set; }
         //Delta V
+        
+        /// <summary>
+        /// Effective mass of this tile for grid impacts.
+        /// </summary>
+        [DataField]
+        public float Mass = 800f;
 
         /// <remarks>
         /// Legacy AF but nice to have.
@@ -100,7 +106,7 @@ namespace Content.Shared.Maps
         ///     except in the case of Space Wind. This default value is assuming an interaction interface of "Rubber on steel tile".
         /// </summary>
         [DataField]
-        public float MobFrictionNoInput = 0.2f;
+        public float? MobFrictionNoInput;
 
         /// <summary>
         ///     Accel override for mob mover in <see cref="SharedMoverController"/>

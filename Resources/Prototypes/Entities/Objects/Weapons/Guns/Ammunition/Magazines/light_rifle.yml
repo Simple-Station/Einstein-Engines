@@ -2,7 +2,7 @@
 - type: entity
   id: BaseMagazineLightRifle
   name: "magazine (.30 rifle)"
-  parent: BaseItem
+  parent: [ BaseItem, BaseRestrictedContraband ]
   abstract: true
   components:
   - type: Tag
@@ -36,7 +36,7 @@
 # Magazines
 - type: entity
   id: MagazineLightRifleBox
-  name: "L6 SAW magazine box (.30 rifle)"
+  name: "box magazine (.30 rifle)"
   parent: BaseMagazineLightRifle
   components:
   - type: Tag
@@ -53,6 +53,38 @@
     steps: 8
     zeroVisible: false
   - type: Appearance
+
+- type: entity
+  id: MagazineLightRifleBoxPractice
+  name: "box magazine (.30 rifle practice)"
+  parent: MagazineLightRifleBox
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeLightRiflePractice
+
+- type: entity
+  id: MagazineLightRifleBoxIncendiary
+  name: "box magazine (.30 rifle incendiary)"
+  parent: MagazineLightRifleBox
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeLightRifleIncendiary
+
+- type: entity
+  id: MagazineLightRifleBoxUranium
+  name: "box magazine (.30 rifle uranium)"
+  parent: MagazineLightRifleBox
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeLightRifleUranium
+
+- type: entity
+  id: MagazineLightRifleBoxShrapnel
+  name: "L6 SAW magazine box (.30 rifle shrapnel)"
+  parent: MagazineLightRifleBox
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeLightRifleShrapnel
 
 - type: entity
   id: MagazineLightRifle
@@ -96,20 +128,6 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  id: MagazineLightRifleRubber
-  name: "magazine (.30 rifle rubber)"
-  parent: BaseMagazineLightRifle
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgeLightRifleRubber
-  - type: Sprite
-    layers:
-    - state: rubber
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-
-- type: entity
   id: MagazineLightRifleUranium
   name: "magazine (.30 rifle uranium)"
   parent: BaseMagazineLightRifle
@@ -130,6 +148,14 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeLightRifleIncendiary
+
+- type: entity
+  id: MagazineLightRifleShrapnel
+  name: "magazine (.30 rifle shrapnel)"
+  parent: BaseMagazineLightRifle
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeLightRifleShrapnel
 
 - type: entity
   id: MagazineLightRifleMaxim
