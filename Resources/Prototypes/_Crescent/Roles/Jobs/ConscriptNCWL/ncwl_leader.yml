@@ -94,6 +94,8 @@
     suitstorage: WeaponSniperNCWLNovomosin
     gloves: ClothingHandsGlovesCombat
     eyes: ClothingEyesGlassesNCWL
+  inhand:
+    - ClothingOuterHardsuitNCWLInfantry
   storage:
     back:
       - VoidsuitKitNCWL
