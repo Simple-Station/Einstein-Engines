@@ -42,7 +42,7 @@
 - type: startingGear
   id: ConscriptCadetDSMGear
   equipment:
-    head: ClothingHeadHelmetImperialTrooperHelmet
+    head: ClothingHeadHelmetRiot
     neck: ClothingNeckIFFCyan
     mask: ClothingMaskImperialCombatGasmask
     jumpsuit: ClothingUniformJumpsuitImperialCombat
