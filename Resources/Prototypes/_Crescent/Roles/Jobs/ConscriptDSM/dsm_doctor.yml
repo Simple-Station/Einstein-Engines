@@ -58,7 +58,7 @@
     id: SurgeonPDA
     suitstorage: WeaponPistolNeoVolker
     back: ClothingBackpackSatchelMedical
-    inhand:
+  inhand:
     - BookUnionfallDSMGuide
   storage:
     back:
