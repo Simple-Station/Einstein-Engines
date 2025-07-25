@@ -18,19 +18,20 @@
           attributes:
             proper: true
         - type: StationJobs
-          checkAlive: false
           overflowJobs: []
           availableJobs:
             GovernorDSM: [ 1, 1 ]
             AdjutantDSM: [ 1, 1 ]
             KnightDSM: [ 4, 4 ]
+            RitterDSM: [ 3, 3 ]
             LevymanDSM: [ 8, 8 ]
             ArchmaesterDSM: [ 1, 1 ]
             ScribeDSM: [ 6, 6 ]
             SurgeonDSM: [ 4, 4 ]
             TemplarDSM: [ 2, 2 ]
             AdvocatusDSM: [ 1, 1 ]
-            CourtierDSM: [ 1, 1 ]
+            CourtierDSM: [ 2, 2 ]
+            LaborDSM: [ 1, 1 ]
             WealthDSM: [ 1, 1 ]
             ForemanDSM: [ 3, 3 ]
             FreeholderDSM: [ 12, 12 ]

@@ -106,15 +106,16 @@
     DamageLimit: 10000
     DamageOverloadTimePunishment: 100
   - type: Fixtures
-    fix1:
-      shape:
-        !type:PhysShapeAabb
-        bounds: "-1.5,-1.5,1.5,1.5"
-      mask:
-      - FullTileMask
-      layer:
-      - WallLayer
-      density: 800
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.5,-1.5,1.5,1.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 800
   - type: Sprite
     noRot: true
     sprite: _Crescent/Structures/shieldemittermedium.rsi
@@ -147,15 +148,16 @@
     DamageLimit: 5000
     DamageOverloadTimePunishment: 80
   - type: Fixtures
-    fix1:
-      shape:
-        !type:PhysShapeAabb
-        bounds: "-0.5,-0.5,0.5,0.5"
-      mask:
-      - FullTileMask
-      layer:
-      - WallLayer
-      density: 200
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 200
   - type: Sprite
     noRot: true
     sprite: _Crescent/Structures/shieldemittersmall.rsi

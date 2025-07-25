@@ -9,21 +9,12 @@
           traits:
             - LatentPsychic
             - PsychoHistorian
-        - !type:CharacterJobRequirement
-          jobs:
-            - ResearchDirector
-            - ForensicMantis
-            - Chaplain
-            - Librarian
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
           inverted: true
           species:
             - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -46,21 +37,12 @@
           traits:
             - LatentPsychic
             - PsychoHistorian
-        - !type:CharacterJobRequirement
-          jobs:
-            - ResearchDirector
-            - ForensicMantis
-            - Chaplain
-            - Librarian
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
           inverted: true
           species:
             - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
   functions:
     - !type:TraitAddPsionics
       psionicPowers:

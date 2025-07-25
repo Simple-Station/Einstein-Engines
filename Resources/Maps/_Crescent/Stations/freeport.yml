@@ -4767,7 +4767,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -5.5,12.5
       parent: 1
-- proto: AmeControllerSmallExplosion
+- proto: AmeController
   entities:
   - uid: 2435
     components:
@@ -35957,7 +35957,7 @@ entities:
     - type: Transform
       pos: 13.5,48.5
       parent: 1
-- proto: SpawnPointChemcook
+- proto: SpawnPointTraumasec
   entities:
   - uid: 4003
     components:

@@ -14,8 +14,9 @@ job-description-ringleader = Coordinate the NCSP. Approve and uphold contracts.
 job-description-lieutenant = Assist your Ringleader to coordinate the NCSP. Approve and uphold contracts.
 job-description-infanteer = Follow your contracts. Hunt bounties. Sell to the highest bidder.
 job-description-technician = Follow your contracts. Hunt bounties. Maintain your vessel's artillery.
+job-description-coordinator = Coordinate Interdyne Pharmaceuticals. Keep track of stock. See to it that contracts are fullfilled.
 job-description-ripperdoc = Follow your contracts. Tend to your fellow mercenaries.
-job-description-chemcook = Save policyholders from certain death.
+job-description-traumasec = Secure policyholders. Tend to their medical needs. Eliminate threats to the policyholder.
 job-description-operative = Sabotage enemy vessels and gather intelligence for the Syndicate.
 job-description-intelligenceofficer = Represent the interests of the Family. Sabotage the enemies of the Syndicate.
 job-description-cyberdawntech = Research new technologies for the Family.
@@ -27,7 +28,9 @@ job-description-foreman = Coordinate the SAWs. Lead pirate boardings. Scrap vess
 job-description-freeholder = Obey the Imperial hierarchy. Earn Credits for the Governor.
 job-description-levyman = Obey your liege. Uphold the will of the Kaiser.
 job-description-knight = Organize the Imperial Navy. Obey your liege.
-job-description-courtier = Oversee and command reconstruction and trade efforts on behalf of your liege.
+job-description-ritter = Don your Exoplate. Obey your liege lord. Slaughter communards.
+job-description-courtier = Obey your liege. Intrigue for power and rank within his prestigious court.
+job-description-labor = Oversee and command reconstruction and trade efforts on behalf of your liege.
 job-description-adjutant = Obey your liege lord, the Kaiser, and your liege lord, the Governor. Attempt to coordinate the Empire.
 job-description-governor = Maintain the delicate balance of the Count's court. Protect your fief.
 job-description-logistics = Outfit your liege's army with vessels and munitions.
@@ -51,7 +54,6 @@ job-description-overseer = Oversee the Great Hunt.
 
 job-description-executive = Manage Shinohara assets within Taypan.
 job-description-board = Assist your Manager in coordinating Shinohara assets within the System.
-job-description-traumasec = Secure policyholders. Tend to their medical needs. Eliminate threats to the policyholder.
 job-description-corpsec = Secure assets of the Corporation. Detain unruly customers or employees.
 job-description-highsec = Secure the military interests of the Corporation. Respond to high-risk missions.
 job-description-employee = Serve in various departments of the Corporation.
@@ -86,6 +88,15 @@ job-description-leutnant = Lead the 43rd Battlegroup's battle fleets.
 job-description-kanoneer = Tend to repairs and maintenance of the armaments and shuttles of the 43rd Battlegroup.
 job-description-soldat = Be the boots on the ground of the 43rd Battlegroup. Patrol the sector. Vanquish psionicists.
 job-description-sanitat = Tend to the wounded and the sickly of the 43rd Battlegroup. Diagnose the many mental illnesses of your peers.
+job-description-steward = Ensure the smooth running of the 43rd Battlegroup. Be the glue that holds it together.
+job-description-oberartz = Sector Crescent is trapped with your magnificient mind and your overwhelming Faustian Spirit.
+job-description-logistat = Organise the vast cargoes that maintain the 43rd Battlegroup. Forget where the Battlegroup's container of speakers went.
+job-description-handels = Peddle the cargoes that maintain the 43rd Battlegroup and your credit balance.
+job-description-forscher = Trapped within such a bountiful space of curiosities. Such potential for research is within your grasp.
+job-description-chirurgeon = So many new dissections to catalog. But do you delay that amputation another hour.
+job-description-vorarbeiter = Guide the Arbeiters in new industrial conquests. Mine the stars and forge the 43rd Battlegroup's might.
+job-description-arbeiter = The industrial life blood of the Authoritat. Follow the Vorarbeiter's direction. Fear the psionicist.
+
 
 #misc
 

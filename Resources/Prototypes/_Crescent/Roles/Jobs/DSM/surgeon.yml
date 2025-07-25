@@ -3,7 +3,7 @@
   name: job-name-surgeon
   description: job-description-surgeon
   playTimeTracker: JobSurgeonDSM
-  weight: 20
+  weight: 75
   startingGear: SurgeonGear
   alwaysUseSpawner: true
   icon: "JobIconImperialSurgeon"
@@ -25,6 +25,9 @@
     components:
       - type: ChatRank
         rank: crescent-rank-smarts
+      - type: CPRTraining
+      - type: SurgerySpeedModifier
+        speedModifier: 2
   access:
   - Command
   - Empire

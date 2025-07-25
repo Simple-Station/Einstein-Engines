@@ -11,6 +11,7 @@ crescent-rank-knight = Ser
 crescent-rank-manatarms = Levy
 crescent-rank-smarts = Dr.
 crescent-rank-ministry = Minister
+crescent-rank-courtier = Edler
 crescent-rank-archmaester = Archmaester
 crescent-rank-advocatus = Advocati
 crescent-rank-templar = Knight Templar
@@ -29,12 +30,15 @@ crescent-rank-kapitan = Kptn.
 crescent-rank-synadmin = Ringleader
 crescent-rank-boss = Lieutenant
 crescent-rank-patriarch = Patriarch
+crescent-rank-operative = Operative
 crescent-rank-op = Cpl.
 crescent-rank-pfc = PvT.
-crescent-rank-freeman = Freeman
 crescent-rank-foreman = Foreman
-crescent-rank-syndoc = Doc
 crescent-rank-saw = Shipbreaker
+crescent-rank-coordinator = Director
+crescent-rank-agent = Agent
+crescent-rank-doc = Doc
+crescent-rank-freeman = Freeman
 
 #tsp
 
@@ -65,6 +69,9 @@ crescent-rank-leutnant = Lt.
 crescent-rank-soldatATH = PvT.
 crescent-rank-sanitat = PvT.
 crescent-rank-kanoneer = Cpl.
+crescent-rank-steward = Steward
+crescent-rank-logistat = Marshallie
+
 
 #misc
 

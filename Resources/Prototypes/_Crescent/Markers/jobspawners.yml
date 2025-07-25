@@ -148,6 +148,18 @@
       - state: passenger
 
 - type: entity
+  id: SpawnPointCoordinator
+  parent: SpawnPointJobBase
+  name: coordinator
+  components:
+  - type: SpawnPoint
+    job_id: CoordinatorNCSP
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
   id: SpawnPointRipperdoc
   parent: SpawnPointJobBase
   name: ripperdoc
@@ -160,12 +172,12 @@
       - state: passenger
 
 - type: entity
-  id: SpawnPointChemcook
+  id: SpawnPointTraumasec
   parent: SpawnPointJobBase
   name: traumasec
   components:
   - type: SpawnPoint
-    job_id: ChemcookNCSP
+    job_id: TraumasecNCSP
   - type: Sprite
     layers:
       - state: green
@@ -248,7 +260,7 @@
 - type: entity
   id: SpawnPointTemplar
   parent: SpawnPointJobBase
-  name: advocati
+  name: templar
   components:
   - type: SpawnPoint
     job_id: TemplarDSM
@@ -340,6 +352,30 @@
     layers:
       - state: green
       - state: passenger
+
+- type: entity
+  id: SpawnPointRitter
+  parent: SpawnPointJobBase
+  name: ritter
+  components:
+  - type: SpawnPoint
+    job_id: RitterDSM
+  - type: Sprite
+    layers:
+    - state: green
+    - state: passenger
+
+- type: entity
+  id: SpawnPointMinisterLabor
+  parent: SpawnPointJobBase
+  name: minister of labor
+  components:
+  - type: SpawnPoint
+    job_id: LaborDSM
+  - type: Sprite
+    layers:
+    - state: green
+    - state: passenger
 
 - type: entity
   id: SpawnPointCourtier
@@ -822,3 +858,99 @@
     layers:
       - state: green
       - state: passenger
+
+- type: entity
+  id: SpawnPointStewardATH
+  parent: SpawnPointJobBase
+  name: Steward
+  components:
+  - type: SpawnPoint
+    job_id: StewardATH
+  - type: Sprite
+    layers:
+    - state: green
+    - state: passenger
+
+- type: entity
+  id: SpawnPointOberartzATH
+  parent: SpawnPointJobBase
+  name: Oberartz
+  components:
+  - type: SpawnPoint
+    job_id: OberartzATH
+  - type: Sprite
+    layers:
+    - state: green
+    - state: passenger
+
+- type: entity
+  id: SpawnPointLogistatATH
+  parent: SpawnPointJobBase
+  name: Logistitat Marshallie
+  components:
+  - type: SpawnPoint
+    job_id: LogistatATH
+  - type: Sprite
+    layers:
+    - state: green
+    - state: passenger
+
+- type: entity
+  id: SpawnPointHandelsATH
+  parent: SpawnPointJobBase
+  name: Handels
+  components:
+  - type: SpawnPoint
+    job_id: HandelsATH
+  - type: Sprite
+    layers:
+    - state: green
+    - state: passenger
+
+- type: entity
+  id: SpawnPointForscherATH
+  parent: SpawnPointJobBase
+  name: Forscher
+  components:
+  - type: SpawnPoint
+    job_id: ForscherATH
+  - type: Sprite
+    layers:
+    - state: green
+    - state: passenger
+
+- type: entity
+  id: SpawnPointChirurgeonATH
+  parent: SpawnPointJobBase
+  name: Chirurgeon
+  components:
+  - type: SpawnPoint
+    job_id: ChirurgeonATH
+  - type: Sprite
+    layers:
+    - state: green
+    - state: passenger
+
+- type: entity
+  id: SpawnPointVorarbeiterATH
+  parent: SpawnPointJobBase
+  name: Vorarbeiter
+  components:
+  - type: SpawnPoint
+    job_id: VorarbeiterATH
+  - type: Sprite
+    layers:
+    - state: green
+    - state: passenger
+
+- type: entity
+  id: SpawnPointArbeiterATH
+  parent: SpawnPointJobBase
+  name: Arbeiter
+  components:
+  - type: SpawnPoint
+    job_id: ArbeiterATH
+  - type: Sprite
+    layers:
+    - state: green
+    - state: passenger

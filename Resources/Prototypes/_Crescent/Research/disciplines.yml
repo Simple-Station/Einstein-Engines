@@ -69,3 +69,39 @@
     1: 0
     2: 0.75
     3: 0.75
+
+- type: techDiscipline
+  id: Imperial
+  name: research-discipline-imperial
+  color: "#eebc1d"
+  icon:
+    sprite: _Crescent/Interface/Misc/research_disciplines.rsi
+    state: imperial
+  tierPrerequisites:
+    1: 0
+    2: 0.75
+    3: 0.75
+
+- type: techDiscipline
+  id: Communard
+  name: research-discipline-communard
+  color: "#eb6c32"
+  icon:
+    sprite: _Crescent/Interface/Misc/research_disciplines.rsi
+    state: communard
+  tierPrerequisites:
+    1: 0
+    2: 0.75
+    3: 0.75
+
+- type: techDiscipline
+  id: Corporate
+  name: research-discipline-corporate
+  color: "#D3D3D3"
+  icon:
+    sprite: _Crescent/Interface/Misc/research_disciplines.rsi
+    state: shinohara
+  tierPrerequisites:
+    1: 0
+    2: 0.75
+    3: 0.75

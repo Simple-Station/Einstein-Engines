@@ -5,7 +5,7 @@
   id: Corvax
   name: NCSP Corvax
   description: A light missile corvette. Devastating at long range.
-  price: 40000
+  price: 50000
   category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/NCSP/corvax.yml
@@ -26,8 +26,3 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-missile
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            InfanteerNCSP: [ 0, 0 ]
-            TechnicianNCSP: [ 0, 0 ]

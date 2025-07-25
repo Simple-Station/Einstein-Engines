@@ -19,6 +19,12 @@
   requireAdminNotify: false
   supervisors: job-supervisors-shi
   canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: CPRTraining
+      - type: SurgerySpeedModifier
+        speedModifier: 1.5
   access:
   - Command
   - Maintenance
@@ -33,7 +39,6 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitShinoharaDoctor
     shoes: ClothingShoesColorWhite
-    outerClothing: ClothingOuterShinoharaLabcoat
     id: MedtechPDA
     pocket1: TradePassport
     eyes: ClothingEyesGlassesChemical

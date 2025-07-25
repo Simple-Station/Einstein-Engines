@@ -28,6 +28,34 @@
       - Meat
       - Organ
 
+- type: entity
+  id: BaseHumanOrganUnGibbableUnEdible # non-edible organs
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+  - type: Organ
+  - type: Extractable
+    grindableSolutionName: organ
+  - type: SolutionContainerManager
+    solutions:
+      organ:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+  - type: FlavorProfile
+    flavors:
+      - people
+  - type: Tag
+    tags:
+      - Meat
+      - Organ
 
 - type: entity
   id: BaseHumanOrgan

@@ -22,4 +22,28 @@
       id: LoadoutBeltSheathDSMSabre
     - type: loadout
       id: LoadoutBeltSheathDSMRapier
+    - type: loadout
+      id: LoadoutBeltATHWebbing
+    - type: loadout
+      id: LoadoutBeltATHPouches
+    - type: loadout
+      id: LoadoutBeltATHDropPouches
+    - type: loadout
+      id: LoadoutBeltTacticalRig
+    - type: loadout
+      id: LoadoutBeltSheathMacheteIndependent
+    - type: loadout
+      id: LoadoutBeltNCWLWebbing
+    - type: loadout
+      id: LoadoutBeltNCWLPouches
+    - type: loadout
+      id: LoadoutBeltTFSCWebbing
+    - type: loadout
+      id: LoadoutBeltIPMWebbing
+    - type: loadout
+      id: LoadoutBeltSheathSabre
+    - type: loadout
+      id: LoadoutBeltSheathSRMKhopesh
+    - type: loadout
+      id: LoadoutBeltNCWLDoubleHolster
     #Hullrot edit end

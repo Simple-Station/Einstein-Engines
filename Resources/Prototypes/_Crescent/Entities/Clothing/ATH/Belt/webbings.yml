@@ -8,6 +8,8 @@
     sprite: _Crescent/Clothing/ATH/Belt/webbing.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/ATH/Belt/webbing.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
 
 - type: entity
   parent: ClothingBeltNfsdWebbing
@@ -19,6 +21,8 @@
     sprite: _Crescent/Clothing/ATH/Belt/pouches.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/ATH/Belt/pouches.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
 
 - type: entity
   parent: ClothingBeltNfsdWebbing
@@ -30,3 +34,5 @@
     sprite: _Crescent/Clothing/ATH/Belt/droppouches.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/ATH/Belt/droppouches.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1

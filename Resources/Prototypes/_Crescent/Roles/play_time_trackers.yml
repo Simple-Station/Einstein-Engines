@@ -39,10 +39,13 @@
   id: JobTechnicianNCSP
 
 - type: playTimeTracker
+  id: JobCoordinatorNCSP
+
+- type: playTimeTracker
   id: JobRipperdocNCSP
 
 - type: playTimeTracker
-  id: JobChemcookNCSP
+  id: JobTraumasecNCSP
 
 - type: playTimeTracker
   id: JobOperativeNCSP
@@ -60,7 +63,7 @@
 
 - type: playTimeTracker
   id: JobCitizenDSM
-  
+
 - type: playTimeTracker
   id: JobFreeholderDSM
 
@@ -75,6 +78,9 @@
 
 - type: playTimeTracker
   id: JobKnightDSM
+
+- type: playTimeTracker
+  id: JobRitterDSM
 
 - type: playTimeTracker
   id: JobWealthDSM
@@ -93,6 +99,9 @@
 
 - type: playTimeTracker
   id: JobPhysicianDSM
+
+- type: playTimeTracker
+  id: JobLaborDSM
 
 - type: playTimeTracker
   id: JobCourtierDSM
@@ -185,7 +194,7 @@
 
 - type: playTimeTracker
   id: JobHangarTechTAP
-  
+
 - type: playTimeTracker
   id: JobTinkererTAP
 
@@ -204,6 +213,15 @@
   id: JobLeutnantATH
 
 - type: playTimeTracker
+  id: JobStewartATH
+
+- type: playTimeTracker
+  id: JobOberartzATH
+
+- type: playTimeTracker
+  id: JobLogistatATH
+
+- type: playTimeTracker
   id: JobSoldatATH
 
 - type: playTimeTracker
@@ -211,7 +229,22 @@
 
 - type: playTimeTracker
   id: JobSanitatATH
-  
+
+- type: playTimeTracker
+  id: JobHandelsATH
+
+- type: playTimeTracker
+  id: JobForscherATH
+
+- type: playTimeTracker
+  id: JobChirurgeonATH
+
+- type: playTimeTracker
+  id: JobVorarbeiterATH
+
+- type: playTimeTracker
+  id: JobArbeiterATH
+
 #misc
 
 - type: playTimeTracker

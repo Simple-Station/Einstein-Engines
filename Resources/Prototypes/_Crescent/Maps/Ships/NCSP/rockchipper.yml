@@ -26,7 +26,3 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: "Retrofitted mining vessel"
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            ShipbreakerNCSP: [ 1, 1 ]

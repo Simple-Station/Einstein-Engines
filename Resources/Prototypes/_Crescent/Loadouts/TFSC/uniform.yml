@@ -1,0 +1,75 @@
+- type: loadout
+  id: LoadoutUniformSyndicateBunnysuit
+  category: Uniform
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterJobRequirement
+      jobs:
+        - LieutenantNCSP
+  items:
+    - ClothingUniformJumpsuitSyndicateBunnysuit
+
+- type: loadout
+  id: LoadoutUniformJumpsuitSyndicateInterdyne
+  category: Uniform
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterJobRequirement
+      jobs:
+        - RipperdocNCSP
+        - CoordinatorNCSP
+  items:
+    - ClothingUniformJumpsuitSyndicateInterdyne
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitSyndicateInterdyneWhiteUniform
+  category: Uniform
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterJobRequirement
+      jobs:
+        - TraumasecNCSP
+        - RipperdocNCSP
+  items:
+    - ClothingUniformJumpsuitSyndicateInterdyneWhiteUniform
+
+- type: loadout
+  id: LoadoutUniformJumpsuitSyndicateInterdyneRedUniform
+  category: Uniform
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterJobRequirement
+      jobs:
+        - TraumasecNCSP
+        - RipperdocNCSP
+        - CoordinatorNCSP
+  items:
+    - ClothingUniformJumpsuitSyndicateInterdyneRedUniform
+
+- type: loadout
+  id: LoadoutUniformJumpsuitSyndicateInterdyneScrubs
+  category: Uniform
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterJobRequirement
+      jobs:
+        - TraumasecNCSP
+        - RipperdocNCSP
+        - CoordinatorNCSP
+  items:
+    - ClothingUniformJumpsuitSyndicateInterdyneScrubs

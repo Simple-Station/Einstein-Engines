@@ -14,8 +14,9 @@ job-name-ringleader = Ringleader
 job-name-lieutenant = Lieutenant
 job-name-infanteer = Gorlex Infanteer
 job-name-technician = Newblood
+job-name-coordinator = Interdyne Coordinator
 job-name-ripperdoc = Ripperdoc
-job-name-chemcook = TraumaSec Agent
+job-name-traumasec = TraumaSec Agent
 job-name-operative = Cyberdawn Asset Security
 job-name-cyberdawntech = Cyberdawn Researcher
 job-name-intelligenceofficer = Patriarch
@@ -27,7 +28,9 @@ job-name-foreman = SAW Foreman
 job-name-freeholder = Freeholder
 job-name-levyman = Man-at-Arms
 job-name-knight = Knight Banneret
-job-name-courtier = Minister of Labor
+job-name-ritter = Baronial Ritter
+job-name-courtier = Courtier
+job-name-ministerlabor = Minister of Labor
 job-name-logisticsofficer = Minister of Wealth
 job-name-adjutant = Imperial Adjutant
 job-name-archmaester = Scribe Archmaester
@@ -53,7 +56,6 @@ job-name-executive = Sector Manager
 job-name-board = Board Executive
 job-name-corpsec = CorpSec Agent
 job-name-highsec = Corporate Liquidation Agent
-job-name-traumasec = TraumaSec Combat Medic
 job-name-employee = Salaryman
 job-name-medtech = MedTech Specialist
 
@@ -84,6 +86,14 @@ job-name-leutnant = Leutnant
 job-name-soldat = Jaeger
 job-name-sanitatATH = Sanitat
 job-name-kanoneer = Kanoneer
+job-name-steward = First Steward
+job-name-oberartz = Oberartz
+job-name-logistat = Logistitat Marshallie
+job-name-handels = Handels
+job-name-forscher = Forscher
+job-name-chirurgeon = Chirurgeon
+job-name-vorarbeiter = Vorarbeiter
+job-name-arbeiter = Arbeiter
 
 #misc
 

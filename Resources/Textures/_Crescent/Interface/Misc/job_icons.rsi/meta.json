@@ -12,6 +12,30 @@
             "name": "Detective"
         },
         {
+            "name": "Ritter"
+        },
+        {
+            "name": "arbeiter"
+        },
+        {
+            "name": "chirurgeon"
+        },
+        {
+            "name": "handels"
+        },
+        {
+            "name": "logistat"
+        },
+        {
+            "name": "oberartz"
+        },
+        {
+            "name": "steward"
+        },
+        {
+            "name": "vorarbeiter"
+        },
+        {
             "name": "kommandant"
         },
         {
@@ -171,7 +195,7 @@
             "name": "Kadet"
         },
         {
-            "name": "Chemcook"
+            "name": "Traumasec"
         },
         {
             "name": "Foreman"
@@ -190,6 +214,9 @@
         },
         {
             "name": "Privateer"
+        },
+        {
+            "name": "Coordinator"
         },
         {
             "name": "Ripperdoc"

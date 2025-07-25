@@ -25,10 +25,3 @@
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: VesselDesignation
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            KapitanNCWL: [ 0, 0 ]
-            SanitarNCWL: [ 0, 0 ]
-            ArtificerNCWL: [ 0, 0 ]
-            DoktorNCWL: [ 0, 0 ]

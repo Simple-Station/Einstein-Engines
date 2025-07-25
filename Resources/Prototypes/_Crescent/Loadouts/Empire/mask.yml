@@ -1,0 +1,32 @@
+- type: loadout
+  id: LoadoutMaskDSMCombatGasmask
+  category: Mask
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingMaskImperialCombatGasmask
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdjutantDSM
+        - AdvocatusDSM
+        - ArchmaesterDSM
+        - ForemanDSM
+        - FreeholderDSM
+        - GovernorDSM
+        - KnightDSM
+        - RitterDSM
+        - LaborDSM
+        - LevymanDSM
+        - CourtierDSM
+        - ScribeDSM
+        - SurgeonDSM
+        - TemplarDSM
+        - WealthDSM
+        - AcolyteSRM
+        - HunterSRM
+        - MontagneSRM
+        - OverseerSRM
+        - TenderSRM

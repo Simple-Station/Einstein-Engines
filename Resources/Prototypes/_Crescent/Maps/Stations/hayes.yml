@@ -12,8 +12,8 @@
         - type: VesselDesignation
           designation: vessel-designation-outpost
         - type: StationJobs
-          checkAlive: false
           overflowJobs: []
           availableJobs:
+            CoordinatorNCSP: [ 1, 1 ]
             RipperdocNCSP: [ 2, 2 ]
-            ChemcookNCSP: [ 6, 6 ]
+            TraumasecNCSP: [ 6, 6 ]

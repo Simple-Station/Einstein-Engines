@@ -5,7 +5,7 @@
   id: Eradicator
   name: NCSP Eradicator
   description: A Syndicate stealth destroyer.
-  price: 85000
+  price: 105000
   category: Medium
   group: None
   path: /Maps/_Crescent/Shuttles/NCSP/eradicator.yml
@@ -25,8 +25,3 @@
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: VesselDesignation
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            InfanteerNCSP: [ 0, 0 ]
-            TechnicianNCSP: [ 0, 0 ]

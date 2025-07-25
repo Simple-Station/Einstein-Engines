@@ -1,0 +1,295 @@
+
+- type: latheRecipe
+  id: ClothingOuterNCWLEVA
+  result: ClothingOuterNCWLEVA
+  completetime: 2
+  materials:
+    Plastic: 500
+    Cloth: 1000
+
+- type: latheRecipe
+  id: ClothingHeadHelmetNCWLEVA
+  result: ClothingHeadHelmetNCWLEVA
+  completetime: 2
+  materials:
+    Plastic: 500
+    Cloth: 500
+    Glass: 500
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitNCWLInfantry
+  result: ClothingOuterHardsuitNCWLInfantry
+  completetime: 2
+  materials:
+    Steel: 2000
+    HardsuitElectronics: 500
+    Plastic: 500
+    Cloth: 1000
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitNCWLPetya
+  result: ClothingOuterHardsuitNCWLPetya
+  completetime: 2
+  materials:
+    Steel: 2500
+    HardsuitElectronics: 500
+    Tungsten: 1000
+    Durathread: 1000
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitNCWLJuggernaut
+  result: ClothingOuterHardsuitNCWLJuggernaut
+  completetime: 2
+  materials:
+    Steel: 3000
+    HardsuitElectronics: 1000
+    NanotrasenElectronics: 1000
+    Tungsten: 2500
+    Durathread: 1500
+
+- type: latheRecipe
+  id: ClothingHeadHatNCWLCapsoft
+  result: ClothingHeadHatNCWLCapsoft
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingHeadHatNCWLCapsoftMedical
+  result: ClothingHeadHatNCWLCapsoftMedical
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingHeadHatNCWLTanker
+  result: ClothingHeadHatNCWLTanker
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitNCWLMedic
+  result: ClothingUniformJumpsuitNCWLMedic
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitNCWLArtificer
+  result: ClothingUniformJumpsuitNCWLArtificer
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitNCWL
+  result: ClothingUniformJumpsuitNCWL
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingMaskNCWLBalaclava
+  result: ClothingMaskNCWLBalaclava
+  completetime: 2
+  materials:
+    Cloth: 250
+
+- type: latheRecipe
+  id: ClothingEyesGlassesNCWL
+  result: ClothingEyesGlassesNCWL
+  completetime: 2
+  materials:
+    Plastic: 250
+    Glass: 250
+
+- type: latheRecipe
+  id: ClothingHeadHelmetNCWLBasic
+  result: ClothingHeadHelmetNCWLBasic
+  completetime: 2
+  materials:
+    Steel: 750
+    Plastic: 250
+
+- type: latheRecipe
+  id: ClothingBeltNCWLWebbing
+  result: ClothingBeltNCWLWebbing
+  completetime: 2
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  id: WeaponPistolComrade
+  result: WeaponPistolComrade
+  completetime: 2
+  materials:
+    Steel: 1000
+    BallisticCycler: 500
+
+- type: latheRecipe
+  id: WeaponPistolT91
+  result: WeaponPistolT91
+  completetime: 2
+  materials:
+    Steel: 1000
+    Tungsten: 300
+    BallisticCycler: 500
+
+- type: latheRecipe
+  id: WeaponRevolverPython
+  result: WeaponRevolverPython
+  completetime: 2
+  materials:
+    Steel: 1000
+    Plasteel: 500
+
+- type: latheRecipe
+  id: WeaponRifleFAL
+  result: WeaponRifleFAL
+  completetime: 2
+  materials:
+    Steel: 1500
+    Plasteel: 300
+    BallisticCycler: 500
+
+- type: latheRecipe
+  id: WeaponRifleNCWLBatanya
+  result: WeaponRifleNCWLBatanya
+  completetime: 2
+  materials:
+    Steel: 1500
+    Plasteel: 500
+    BallisticCycler: 1000
+
+- type: latheRecipe
+  id: WeaponSubMachineGunBloodhound
+  result: WeaponSubMachineGunBloodhound
+  completetime: 2
+  materials:
+    Steel: 1500
+    BallisticCycler: 500
+
+- type: latheRecipe
+  id: WeaponSubMachineGunNCWLWatchdog
+  result: WeaponSubMachineGunNCWLWatchdog
+  completetime: 2
+  materials:
+    Steel: 1000
+    Plastic: 300
+    BallisticCycler: 500
+
+- type: latheRecipe
+  id: WeaponLauncherGM94
+  result: WeaponLauncherGM94
+  completetime: 2
+  materials:
+    Steel: 1500
+    Plastic: 500
+    Silver: 300
+    TubeLoader: 500
+
+- type: latheRecipe
+  id: BroadswordLPC
+  result: ShipVoucherBroadsword
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 300
+    ShipComponents: 250
+    ShipHull: 600
+
+- type: latheRecipe
+  id: KhopeshLPC
+  result: ShipVoucherKhopesh
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 400
+    ShipComponents: 250
+    ShipHull: 500
+
+- type: latheRecipe
+  id: RapierLPC
+  result: ShipVoucherRapier
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 400
+    ShipComponents: 250
+    ShipHull: 500
+
+- type: latheRecipe
+  id: SabreLPC
+  result: ShipVoucherSabre
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 400
+    ShipComponents: 250
+    ShipHull: 500
+
+- type: latheRecipe
+  id: VanguardMarkTwoLPC
+  result: ShipVoucherVanguardMarkTwo
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 2500
+    ShipComponents: 1250
+    ShipHull: 3500
+
+- type: latheRecipe
+  id: MolotLPC
+  result: ShipVoucherMolot
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 4000
+    ShipComponents: 4500
+    ShipHull: 5000
+
+- type: latheRecipe
+  id: IvarodLPC
+  result: ShipVoucherIvarod
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 6000
+    ShipComponents: 3250
+    ShipHull: 7500
+
+- type: latheRecipe
+  id: HindLPC
+  result: ShipVoucherHind
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 4500
+    ShipComponents: 4500
+    ShipHull: 6000
+
+- type: latheRecipe
+  id: SternLPC
+  result: ShipVoucherStern
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 12500
+    ShipComponents: 10000
+    ShipHull: 17500
+
+- type: latheRecipe
+  id: LancerFlatpack
+  result: LancerFlatpack
+  completetime: 2
+  materials:
+    BasicMechatronics: 2500
+    AdvancedElectronics: 1000
+    Gold: 300
+    Silver: 500
+    Steel: 3000
+    Tungsten: 1500
+
+- type: latheRecipe
+  id: BogatyrFlatpack
+  result: BogatyrFlatpack
+  completetime: 2
+  materials:
+    AdvancedMechatronics: 3500
+    AdvancedElectronics: 1500
+    Gold: 1000
+    Silver: 2500
+    Steel: 3500
+    Tungsten: 2500

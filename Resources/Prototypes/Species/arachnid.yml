@@ -11,6 +11,12 @@
   maleFirstNames: names_arachnid_first
   femaleFirstNames: names_arachnid_first
   lastNames: names_arachnid_last
+  minHeight: 1
+  defaultHeight: 1
+  maxHeight: 1
+  minWidth: 1
+  defaultWidth: 1
+  maxWidth: 1
   sexes:
   - Unsexed
 

@@ -27,11 +27,11 @@
           True: { visible: true }
           False: { visible: false }
   - type: PowerCellDraw
-    drawRate: 1.5
+    drawRate: 0.3 # 20% of original power usage
   - type: ToggleCellDraw
   - type: ActivatableUI
     key: enum.RadarConsoleUiKey.Key
-    inHandsOnly: true
+    inHandsOnly: false
     singleUser: true
   - type: UserInterface
     interfaces:
@@ -42,7 +42,7 @@
   - type: ReverseEngineering # Delta
     difficulty: 3
     recipes:
-      - HandHeldMassScanner
+      - HandHeldMassScannerEE
 
 - type: entity
   id: HandHeldMassScannerEmpty

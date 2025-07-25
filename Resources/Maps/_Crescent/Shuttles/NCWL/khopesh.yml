@@ -38,6 +38,7 @@ entities:
     - type: OccluderTree
     - type: SpreaderGrid
     - type: Shuttle
+      baseMaxLinearVelocity: 30
     - type: GridPathfinding
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
@@ -440,6 +441,9 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 1.5,2.5
       parent: 1
+    - type: Thruster
+      baseThrust: 30
+      thrust: 30
 - proto: SmallLight
   entities:
   - uid: 56

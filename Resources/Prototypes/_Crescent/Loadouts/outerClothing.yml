@@ -1,0 +1,147 @@
+- type: loadout
+  id: LoadoutOuterArmorIndependentsEVA
+  category: Outer
+  cost: 2
+  items:
+    - ClothingOuterHardsuitIndependentsEVA
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEVASuit
+
+- type: loadout
+  id: LoadoutOuterArmorNCWLEVA
+  category: Outer
+  cost: 1
+  items:
+    - ClothingOuterNCWLEVA
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEVASuit
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdministratorNCWL
+        - ArtificerNCWL
+        - DoktorNCWL
+        - KadetNCWL
+        - KapitanNCWL
+        - KommissarNCWL
+        - SanitarNCWL
+
+- type: loadout
+  id: LoadoutHeadNCWLEVA
+  category: Head
+  cost: 1
+  items:
+    - ClothingHeadHelmetNCWLEVA
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEVASuit
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdministratorNCWL
+        - ArtificerNCWL
+        - DoktorNCWL
+        - KadetNCWL
+        - KapitanNCWL
+        - KommissarNCWL
+        - SanitarNCWL
+
+- type: loadout
+  id: LoadoutOuterArmorTFSCEVA
+  category: Outer
+  cost: 1
+  items:
+    - ClothingOuterHardsuitSyndicate
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEVASuit
+    - !type:CharacterJobRequirement
+      jobs:
+        - TraumasecNCSP
+        - ForemanNCSP
+        - InfanteerNCSP
+        - IntelligenceOfficerNCSP
+        - LieutenantNCSP
+        - OperativeNCSP
+        - CyberdawnTechNCSP
+        - RingleaderNCSP
+        - RipperdocNCSP
+        - ShipbreakerNCSP
+        - TechnicianNCSP
+        - CoordinatorNCSP
+
+- type: loadout
+  id: LoadoutHeadTFSCEVA
+  category: Head
+  cost: 1
+  items:
+    - ClothingHeadHelmetSyndicate
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEVASuit
+    - !type:CharacterJobRequirement
+      jobs:
+        - TraumasecNCSP
+        - ForemanNCSP
+        - InfanteerNCSP
+        - IntelligenceOfficerNCSP
+        - LieutenantNCSP
+        - OperativeNCSP
+        - CyberdawnTechNCSP
+        - RingleaderNCSP
+        - RipperdocNCSP
+        - ShipbreakerNCSP
+        - TechnicianNCSP
+        - CoordinatorNCSP
+
+- type: loadout
+  id: LoadoutOuterArmorDSMEVA
+  category: Outer
+  cost: 1
+  items:
+    - ClothingOuterCoatImperialSoftsuit
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEVASuit
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdjutantDSM
+        - AdvocatusDSM
+        - ArchmaesterDSM
+        - ForemanDSM
+        - FreeholderDSM
+        - GovernorDSM
+        - KnightDSM
+        - LaborDSM
+        - LevymanDSM
+        - CourtierDSM
+        - ScribeDSM
+        - SurgeonDSM
+        - TemplarDSM
+        - WealthDSM
+
+- type: loadout
+  id: LoadoutHeadDSMEVA
+  category: Head
+  cost: 1
+  items:
+    - ClothingHeadHelmetImperialEVA
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEVASuit
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdjutantDSM
+        - AdvocatusDSM
+        - ArchmaesterDSM
+        - ForemanDSM
+        - FreeholderDSM
+        - GovernorDSM
+        - KnightDSM
+        - LaborDSM
+        - LevymanDSM
+        - CourtierDSM
+        - ScribeDSM
+        - SurgeonDSM
+        - TemplarDSM
+        - WealthDSM

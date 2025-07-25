@@ -29,10 +29,6 @@
     layers:
     - state: icon
       map: ["enum.TriggerVisualLayers.Base"]
-  - type: ClusterGrenade
-    fillPrototype: GrenadeFlashBang
-    distance: 7
-    velocity: 7
   - type: TimerTriggerVisuals
     primingSound:
       path: /Audio/Effects/countdown.ogg
@@ -60,10 +56,6 @@
     layers:
     - state: icon
       map: ["enum.TriggerVisualLayers.Base"]
-  - type: ClusterGrenade
-    fillPrototype: ExGrenade
-    velocity: 3.5
-    distance: 5
   - type: OnUseTimerTrigger
     beepSound:
       path: "/Audio/Effects/beep1.ogg"
@@ -82,16 +74,12 @@
   parent: BaseItem
   id: ClusterBananaPeel
   name: cluster banana peel
-  description: Splits into 6 explosive banana peels after throwing, guaranteed fun!
+  description: Releases a deadly sound of a beeping grenade. does nothing functionally since the NT ACT 8232, banning the production of shrapnel grenades due to bluespace distortion.
   components:
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/banana.rsi
     state: produce
   - type: Appearance
-  - type: ClusterGrenade
-    fillPrototype: TrashBananaPeelExplosive
-    maxGrenadesCount: 6
-    baseTriggerDelay: 20
   - type: DamageOnLand
     damage:
       types:
@@ -119,17 +107,13 @@
   parent: GrenadeBase
   id: GrenadeStinger
   name: stinger grenade
-  description: Nothing to see here, please disperse.
+  description: Releases a deadly sound of a beeping grenade. does nothing functionally since the NT ACT 8232, banning the production of shrapnel grenades due to bluespace distortion.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Grenades/stingergrenade.rsi
     layers:
     - state: icon
       map: ["enum.TriggerVisualLayers.Base"]
-  - type: ClusterGrenade
-    fillPrototype: PelletClusterRubber
-    maxGrenadesCount: 30
-    grenadeType: enum.GrenadeType.Shoot
   - type: FlashOnTrigger
     range: 7
   - type: EmitSoundOnTrigger
@@ -148,17 +132,13 @@
   parent: GrenadeBase
   id: GrenadeIncendiary
   name: incendiary grenade
-  description: Guaranteed to light up the mood.
+  description: Releases a deadly sound of a beeping grenade. does nothing functionally since the NT ACT 8232, banning the production of shrapnel grenades due to bluespace distortion.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Grenades/pyrogrenade.rsi
     layers:
     - state: icon
       map: ["enum.TriggerVisualLayers.Base"]
-  - type: ClusterGrenade
-    fillPrototype: PelletClusterIncendiary
-    maxGrenadesCount: 30
-    grenadeType: enum.GrenadeType.Shoot
   - type: OnUseTimerTrigger
     beepSound:
       path: "/Audio/Effects/beep1.ogg"
@@ -177,17 +157,13 @@
   parent: GrenadeBase
   id: GrenadeShrapnel
   name: shrapnel grenade
-  description: Releases a deadly spray of shrapnel that causes severe bleeding.
+  description: Releases a deadly sound of a beeping grenade. does nothing functionally since the NT ACT 8232, banning the production of shrapnel grenades due to bluespace distortion.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Grenades/shrapnelgrenade.rsi
     layers:
     - state: icon
       map: ["enum.TriggerVisualLayers.Base"]
-  - type: ClusterGrenade
-    fillPrototype: PelletClusterLethal
-    maxGrenadesCount: 30
-    grenadeType: enum.GrenadeType.Shoot
   - type: OnUseTimerTrigger
     beepSound:
       path: "/Audio/Effects/beep1.ogg"
@@ -202,6 +178,7 @@
     containers:
       cluster-payload: !type:Container
 
+# i couldn't bring myself to disable this one SPCR 2025
 - type: entity
   parent: SoapSyndie
   id: SlipocalypseClusterSoap
@@ -257,8 +234,3 @@
       map: ["Base"]
     - state: primed
       map: ["enum.TriggerVisualLayers.Base"]
-  - type: ClusterGrenade
-    fillPrototype: BulletFoam
-    maxGrenadesCount: 30
-    grenadeType: enum.GrenadeType.Throw
-    velocity: 70

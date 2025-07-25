@@ -2,40 +2,6 @@
 
 - type: entity
   parent: BaseItem
-  id: ShipVoucherRoyal
-  name: DSM 'Royal' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with the design schematic for the DSM dreadnought. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 230000
-  - type: ShipVoucher
-    ship: Royal
-
-- type: entity
-  parent: BaseItem
-  id: ShipVoucherImparator
-  name: DSM 'Imparator' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with an Imperial Imparator-class picket fighter. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 8000
-  - type: ShipVoucher
-    ship: Imparator
-
-- type: entity
-  parent: BaseItem
   id: ShipVoucherGnosis
   name: DSM 'Gnosis' pattern LPC fabprint disk
   description: An LPC fabprint disk loaded with an Imperial Gnosis-class personal shuttle. Has to be redeemed at a shipyard console.
@@ -50,6 +16,57 @@
     price: 8000
   - type: ShipVoucher
     ship: Gnosis
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherPadparadscha
+  name: DSM 'Padparadscha' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Padparadscha-class battlecruiser. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 75000
+  - type: ShipVoucher
+    ship: Padparadscha
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherSunesis
+  name: DSM 'Sunesis' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Sunesis-class expeditional shuttle. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 40000
+  - type: ShipVoucher
+    ship: Sunesis
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherTorturer
+  name: DSM 'Torturer' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Torturer-class stealth bomber. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 12000
+  - type: ShipVoucher
+    ship: Torturer
 
 - type: entity
   parent: BaseItem
@@ -70,40 +87,6 @@
 
 - type: entity
   parent: BaseItem
-  id: ShipVoucherCountsman
-  name: DSM 'Countsman' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with an Imperial Countsman-class utility Flagship. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: Contraband
-  - type: ShipVoucher
-    ship: Countsman
-
-
-- type: entity
-  parent: BaseItem
-  id: ShipVoucherValor
-  name: DSM 'Valor' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with an Imperial Valor-class medium interceptor. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 5000
-  - type: ShipVoucher
-    ship: Valor
-
-- type: entity
-  parent: BaseItem
   id: ShipVoucherLaelaps
   name: DSM 'Laelaps' pattern LPC fabprint disk
   description: An LPC fabprint disk loaded with an Imperial Laelaps-class assault frigate. Has to be redeemed at a shipyard console.
@@ -118,40 +101,6 @@
     price: 80000
   - type: ShipVoucher
     ship: Laelaps
-
-- type: entity
-  parent: BaseItem
-  id: ShipVoucherAnathema
-  name: DSM 'Anathema' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with an Imperial Anathema-class light battlecarrier. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 80000
-  - type: ShipVoucher
-    ship: Anathema
-
-- type: entity
-  parent: BaseItem
-  id: ShipVoucherConquest
-  name: DSM 'Conquest' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with an Imperial Conquest-class light torpedo bomber. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 5000
-  - type: ShipVoucher
-    ship: Conquest
 
 - type: entity
   parent: BaseItem
@@ -172,9 +121,9 @@
 
 - type: entity
   parent: BaseItem
-  id: ShipVoucherImp
-  name: DSM 'Imp' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with an Imperial Imp-classs miner-freighter pattern. Has to be redeemed at a shipyard console.
+  id: ShipVoucherCovetor
+  name: DSM 'Covetor' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Covetor-classs miner-freighter pattern. Has to be redeemed at a shipyard console.
   components:
   - type: Item
     size: Small
@@ -183,32 +132,15 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 20000
+    price: 40000
   - type: ShipVoucher
-    ship: Imp
+    ship: Covetor
 
 - type: entity
   parent: BaseItem
-  id: ShipVoucherNemesis
-  name: DSM 'Nemesis' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with an Imperial Nemesis-class artillery frigate pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 60000
-  - type: ShipVoucher
-    ship: Nemesis
-
-- type: entity
-  parent: BaseItem
-  id: ShipVoucherJannissary
-  name: DSM 'Jannissary' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with an Imperial Jannissary-class shuttle pattern. Has to be redeemed at a shipyard console.
+  id: ShipVoucherRedemptor
+  name: DSM 'Redemptor' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Redemptor-classs fighter pattern. Has to be redeemed at a shipyard console.
   components:
   - type: Item
     size: Small
@@ -219,13 +151,13 @@
   - type: StaticPrice
     price: 12000
   - type: ShipVoucher
-    ship: Jannissary
+    ship: Redemptor
 
 - type: entity
   parent: BaseItem
-  id: ShipVoucherRaider
-  name: DSM 'Raider' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with an Imperial Raider-class jump shuttle pattern. Has to be redeemed at a shipyard console.
+  id: ShipVoucherPraxis
+  name: DSM 'Praxis' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Praxis-class expedition corvette pattern. Has to be redeemed at a shipyard console.
   components:
   - type: Item
     size: Small
@@ -234,11 +166,45 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 13000
+    price: 30000
   - type: ShipVoucher
-    ship: Raider
+    ship: Praxis
 
 #ncwl
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherLodka
+  name: NCWL 'Lodka' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a communard Lodka-class combat freighter pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 15000
+  - type: ShipVoucher
+    ship: Lodka
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherKavkaz
+  name: NCWL 'Kavkaz' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a communard Kavkaz-class light destroyer pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 60000
+  - type: ShipVoucher
+    ship: Kavkaz
 
 - type: entity
   parent: BaseItem
@@ -330,23 +296,6 @@
 
 - type: entity
   parent: BaseItem
-  id: ShipVoucherMeteor
-  name: NCWL 'Meteor' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a communard Meteor-class cloak fighter pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 12500
-  - type: ShipVoucher
-    ship: Meteor
-
-- type: entity
-  parent: BaseItem
   id: ShipVoucherRapier
   name: NCWL 'Rapier' pattern LPC fabprint disk
   description: An LPC fabprint disk loaded with a communard Rapier-class torpedo bomber pattern. Has to be redeemed at a shipyard console.
@@ -381,23 +330,6 @@
 
 - type: entity
   parent: BaseItem
-  id: ShipVoucherCherenzikov
-  name: NCWL 'Cherenzikov' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a communard Cherenzikov-class frontliner corvette pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 30000
-  - type: ShipVoucher
-    ship: Cherenzikov
-
-- type: entity
-  parent: BaseItem
   id: ShipVoucherIvarod
   name: NCWL 'Ivarod' pattern LPC fabprint disk
   description: An LPC fabprint disk loaded with a communard Ivarod-class light destroyer pattern. Has to be redeemed at a shipyard console.
@@ -415,7 +347,7 @@
 
 - type: entity
   parent: BaseItem
-  id: ShipVoucherVanguardTwo
+  id: ShipVoucherVanguardMarkTwo
   name: NCWL 'Vanguard Mk.II' pattern LPC fabprint disk
   description: An LPC fabprint disk loaded with a communard Vanguard Mk.II-class elite gunship pattern. Has to be redeemed at a shipyard console.
   components:
@@ -429,56 +361,6 @@
     price: 12000
   - type: ShipVoucher
     ship: VanguardMarkTwo
-
-- type: entity
-  parent: BaseItem
-  id: ShipVoucherVasinya
-  name: NCWL 'Vasinya' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a communard Vasinya-class corvette pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 25000
-  - type: ShipVoucher
-    ship: Vasinya
-
-- type: entity
-  parent: BaseItem
-  id: ShipVoucherClementine
-  name: NCWL 'Clementine' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a communard Clementine-class Flagship battlecruiser pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: Contraband
-  - type: ShipVoucher
-    ship: Clementine
-
-- type: entity
-  parent: BaseItem
-  id: ShipVoucherSasha
-  name: NCWL 'Sasha' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a communard Sasha-class assault frigate pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 30000
-  - type: ShipVoucher
-    ship: Sasha
 
 - type: entity
   parent: BaseItem
@@ -496,23 +378,6 @@
     price: 70000
   - type: ShipVoucher
     ship: Gargut
-
-- type: entity
-  parent: BaseItem
-  id: ShipVoucherZhipov
-  name: NCWL 'Zhipov' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a communard Zhipov-class converted battlecarrier pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 80000
-  - type: ShipVoucher
-    ship: Zhipov
 
 - type: entity
   parent: BaseItem
@@ -691,6 +556,23 @@
 
 - type: entity
   parent: BaseItem
+  id: ShipVoucherBodybag
+  name: GSC 'Bodybag' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a Gorlex Security Consulting Bodybag-class boarding pod pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 7500
+  - type: ShipVoucher
+    ship: Bodybag
+
+- type: entity
+  parent: BaseItem
   id: ShipVoucherCleaver
   name: GSC 'Cleaver' pattern LPC fabprint disk
   description: An LPC fabprint disk loaded with a Gorlex Security Consulting Cleaver-class stealth fighter pattern. Has to be redeemed at a shipyard console.
@@ -787,7 +669,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 12000
+    price: 5000
   - type: ShipVoucher
     ship: Tick
 
@@ -804,7 +686,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 12000
+    price: 7500
   - type: ShipVoucher
     ship: Gnat
 
@@ -892,23 +774,6 @@
     price: 50000
   - type: ShipVoucher
     ship: Hyena
-
-- type: entity
-  parent: BaseItem
-  id: ShipVoucherJackal
-  name: GSC 'Jackal' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a Gorlex Security Consulting Jackal-class converted heavy battlecarrier pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 90000
-  - type: ShipVoucher
-    ship: Jackal
 
 - type: entity
   parent: BaseItem
@@ -1413,23 +1278,6 @@
 
 - type: entity
   parent: BaseItem
-  id: ShipVoucherArdour
-  name: Ardour pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with the ATH Ardour, their prized flagship in the sector.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 10000 # change later
-  - type: ShipVoucher
-    ship: Ardour
-
-- type: entity
-  parent: BaseItem
   id: ShipVoucherCarrum
   name: Carrum pattern LPC fabprint disk
   description: An LPC fabprint disk loaded with the ATH Carrum.
@@ -1444,3 +1292,37 @@
     price: 10000 # change later
   - type: ShipVoucher
     ship: Carrum
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherGeode
+  name: SAW 'Geode' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an SAW Geode-class cruiser. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 27000
+  - type: ShipVoucher
+    ship: Geode
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherScabrak
+  name: SAW 'Scabrak' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with the SAW Scabrak.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 18000
+  - type: ShipVoucher
+    ship: Scabrak

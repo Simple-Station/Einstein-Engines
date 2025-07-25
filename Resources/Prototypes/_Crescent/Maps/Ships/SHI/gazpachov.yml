@@ -23,8 +23,3 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-mining
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            EmployeeSHI: [0, 2]
-

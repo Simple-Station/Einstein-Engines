@@ -1,0 +1,97 @@
+
+- type: loadout
+  id: LoadoutHeadNCWLBasic
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHelmetNCWLBasic
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdministratorNCWL
+        - ArtificerNCWL
+        - DoktorNCWL
+        - KadetNCWL
+        - KapitanNCWL
+        - KommissarNCWL
+        - SanitarNCWL
+
+- type: loadout
+  id: LoadoutHeadNCWLHeavy
+  category: Head
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingHeadHelmetNCWLHeavy
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdministratorNCWL
+        - ArtificerNCWL
+        - KadetNCWL
+        - KapitanNCWL
+        - KommissarNCWL
+        - SanitarNCWL
+
+- type: loadout
+  id: LoadoutHeadHatNCWLCapsoft
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatNCWLCapsoft
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdministratorNCWL
+        - ArtificerNCWL
+        - KadetNCWL
+        - KapitanNCWL
+        - KommissarNCWL
+        - SanitarNCWL
+
+- type: loadout
+  id: LoadoutHeadHatNCWLTanker
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatNCWLTanker
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdministratorNCWL
+        - ArtificerNCWL
+        - KadetNCWL
+        - KapitanNCWL
+        - KommissarNCWL
+        - SanitarNCWL
+
+- type: loadout
+  id: LoadoutHeadNCWLBeret
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatNCWLBeret
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdministratorNCWL
+        - ArtificerNCWL
+        - DoktorNCWL
+        - KadetNCWL
+        - KapitanNCWL
+        - KommissarNCWL
+        - SanitarNCWL

@@ -1,0 +1,105 @@
+- type: entity
+  id: LightStripArrow
+  name: light strip
+  description: A luminescent strip of light.
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: Sprite
+      drawdepth: FloorObjects
+      sprite: _Crescent/Structures/lightstrip.rsi
+      layers:
+      - state: arrow
+      - state: arrow-unshaded
+        shader: unshaded
+      - state: arrow-unshaded
+        shader: shaded
+    - type: Transform
+      anchored: true
+    - type: Physics
+      bodyType: Static
+      canCollide: false
+
+- type: entity
+  id: LightStripCorner
+  parent: LightStripArrow
+  components:
+    - type: Sprite
+      drawdepth: FloorObjects
+      sprite: _Crescent/Structures/lightstrip.rsi
+      layers:
+      - state: corner
+      - state: corner-unshaded
+        shader: unshaded
+      - state: corner-unshaded
+        shader: shaded
+
+- type: entity
+  id: LightStripEnd
+  parent: LightStripArrow
+  components:
+    - type: Sprite
+      drawdepth: FloorObjects
+      sprite: _Crescent/Structures/lightstrip.rsi
+      layers:
+      - state: end
+      - state: end-unshaded
+        shader: unshaded
+      - state: end-unshaded
+        shader: shaded
+
+- type: entity
+  id: LightStripInner
+  parent: LightStripArrow
+  components:
+    - type: Sprite
+      drawdepth: FloorObjects
+      sprite: _Crescent/Structures/lightstrip.rsi
+      layers:
+      - state: inner
+      - state: inner-unshaded
+        shader: unshaded
+      - state: inner-unshaded
+        shader: shaded
+
+- type: entity
+  id: LightStripLineHorizontal
+  parent: LightStripArrow
+  components:
+    - type: Sprite
+      drawdepth: FloorObjects
+      sprite: _Crescent/Structures/lightstrip.rsi
+      layers:
+      - state: line_h
+      - state: line_h-unshaded
+        shader: unshaded
+      - state: line_h-unshaded
+        shader: shaded
+
+- type: entity
+  id: LightStripLineVertical
+  parent: LightStripArrow
+  components:
+    - type: Sprite
+      drawdepth: FloorObjects
+      sprite: _Crescent/Structures/lightstrip.rsi
+      layers:
+      - state: line_n
+      - state: line_n-unshaded
+        shader: unshaded
+      - state: line_n-unshaded
+        shader: shaded
+
+- type: entity
+  id: LightStripLineRotate
+  parent: LightStripArrow
+  components:
+    - type: Sprite
+      drawdepth: FloorObjects
+      sprite: _Crescent/Structures/lightstrip.rsi
+      layers:
+      - state: line_r
+      - state: line_r-unshaded
+        shader: unshaded
+      - state: line_r-unshaded
+        shader: shaded

@@ -49,9 +49,9 @@
   description: A helmet with plating for stealth operations.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/Head/Hardsuits/cybersunstealth.rsi
+    sprite: _Crescent/Clothing/Syndicate/Head/cybersunstealth.rsi
   - type: Clothing
-    sprite: _Goobstation/Clothing/Head/Hardsuits/cybersunstealth.rsi
+    sprite: _Crescent/Clothing/Syndicate/Head/cybersunstealth.rsi
   - type: PointLight
     color: green
   - type: PressureProtection

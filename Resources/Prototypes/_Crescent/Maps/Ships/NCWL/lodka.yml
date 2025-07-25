@@ -1,0 +1,27 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Lodka
+  name: NCWL Lodka
+  description: A light communard fighter.
+  price: 25000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/NCWL/lodka.yml
+
+- type: gameMap
+  id: Lodka
+  mapName: 'NCWL Lodka'
+  mapPath: /Maps/_Crescent/Shuttles/NCWL/lodka.yml
+  minPlayers: 0
+  stations:
+    Lodka:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Lodka {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation

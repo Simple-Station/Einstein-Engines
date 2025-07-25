@@ -46,7 +46,8 @@
     shoes: ClothingShoesBootsCombat
     head: ClothingHeadHatCMMMarshal
     gloves: ClothingHandsGlovesCombat
-    belt: WeaponRevolverSnubnose
+    belt: ClothingBeltMinutemanPouches
+    pocket1: WeaponRevolverSnubnose
     id: MarshalPDA
     ears: ClothingHeadsetCMM
     outerClothing: ClothingOuterArmorCMMCarapace

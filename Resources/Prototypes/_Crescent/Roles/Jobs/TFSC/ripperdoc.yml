@@ -18,7 +18,10 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-syndoc
+        rank: crescent-rank-doc
+      - type: CPRTraining
+      - type: SurgerySpeedModifier
+        speedModifier: 2
   weight: 16
   startingGear: RipperdocGear
   alwaysUseSpawner: true
@@ -39,12 +42,10 @@
 - type: startingGear
   id: RipperdocGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSyndicateInterdyne
+    jumpsuit: ClothingUniformJumpsuitSyndicateInterdyneScrubs
     shoes: ClothingShoesBootsCombat
-    head: ClothingHeadHatSyndicateDoctor
     id: RipperdocPDA
     ears: ClothingHeadsetNCSPInterdyne
     mask: ClothingMaskSyndicateFacemask
     pocket1: MedkitCombatFilled
     back: ClothingBackpackNCSPSatchelFilledInfanteer
-    outerClothing: ClothingOuterArmorSyndicateApron

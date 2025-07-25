@@ -125,3 +125,39 @@
       id: ClothingHeadHatSANNavyCap
     - type: loadout
       id: ClothingHeadHatSANWheelCap
+    #Hullrot edit start
+    - type: loadout
+      id: LoadoutHeadDSMBeret
+    - type: loadout
+      id: LoadoutHeadDSMHat
+    - type: loadout
+      id: LoadoutHeadDSMPeakedCap
+    - type: loadout
+      id: LoadoutHeadNCWLBasic
+    - type: loadout
+      id: LoadoutHeadNCWLHeavy
+    - type: loadout
+      id: LoadoutHeadHatNCWLCapsoft
+    - type: loadout
+      id: LoadoutHeadHatNCWLTanker
+    - type: loadout
+      id: LoadoutHeadNCWLBeret
+    - type: loadout
+      id: LoadoutHeadSHIBeret
+    - type: loadout
+      id: LoadoutHeadSHIBeretUA
+    - type: loadout
+      id: LoadoutHeadSHIHelmetUA
+    - type: loadout
+      id: LoadoutHeadSRMHunterBasic
+    - type: loadout
+      id: LoadoutHeadTFSCSAWPilotHat
+    - type: loadout
+      id: LoadoutHeadTFSCArmamentsHat
+    - type: loadout
+      id: LoadoutHeadHatSyndicateInterdyne
+    - type: loadout
+      id: LoadoutHeadHatSyndicateInterdyneCap
+    - type: loadout
+      id: LoadoutHeadHelmetSyndicateBasicInterdyne
+    #Hullrot edit end

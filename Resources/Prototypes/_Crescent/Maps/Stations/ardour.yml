@@ -17,7 +17,6 @@
         - type: VesselDesignation
           designation: vessel-designation-headquarters
         - type: StationJobs
-          checkAlive: false
           overflowJobs: []
           availableJobs:
             KommandantATH: [ 1, 1 ]

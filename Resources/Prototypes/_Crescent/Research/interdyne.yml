@@ -12,7 +12,7 @@
   - ClothingUniformJumpsuitSyndicateInterdyne
   - ClothingOuterArmorSyndicateApron
   - ClothingBeltSyndicateWebbingInterdyne
-  - ClothingHeadHatSyndicateDoctor
+  - ClothingHeadHatSyndicateInterdyne
 
 - type: technology
   id: InterdyneHypo
@@ -24,12 +24,15 @@
   tier: 1
   cost: 5000
   recipeUnlocks:
-  - SecHypoInterdyne
+  - HypoInterdyne
   - CartridgeEphedrineInterdyne
   - CartridgeTirizeneInterdyne
   - CartridgeBicaridineInterdyne
   - CartridgeSalineInterdyne
   - CartridgeDermalineInterdyne
+  - CartridgePuncturaseInterdyne
+  - CartridgeAtropineInterdyne
+  - SyringeCase
 
 - type: technology
   id: InterdyneArmor

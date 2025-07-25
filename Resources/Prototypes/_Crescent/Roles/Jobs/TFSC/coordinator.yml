@@ -1,0 +1,54 @@
+- type: job
+  id: CoordinatorNCSP
+  name: job-name-coordinator
+  description: job-description-coordinator
+  playTimeTracker: JobCoordinatorNCSP
+  requirements:
+    - !type:CharacterWhitelistRequirement
+    - !type:FactionRequirement
+      factionID: "TFSC"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-coordinator
+      - type: CPRTraining
+      - type: SurgerySpeedModifier
+        speedModifier: 2.5
+  weight: 17
+  startingGear: CoordinatorGear
+  alwaysUseSpawner: true
+  icon: "JobIconSyndieCoordinator"
+  requireAdminNotify: true
+  supervisors: You answer to the interests of the Interdyne Pharmaceuticals company. Organize your employees. Secure stakeholders and profit.
+  canBeAntag: false
+  access:
+  - Command
+  - Maintenance
+  - SyndicateBasic
+  - SyndicateInterdyne
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: CoordinatorGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSyndicateInterdyneWhiteUniform
+    gloves: ClothingHandsGlovesCombat
+    mask: ClothingMaskSyndicateFacemask
+    shoes: ClothingShoesBootsCombat
+    head: ClothingHeadHatSyndicateInterdyneBeret
+    id: CoordinatorPDA
+    back: ClothingBackpackNCSPFilledInfanteer
+    ears: ClothingHeadsetNCSPInterdyne
+    pocket1: AccessElevatorIPM

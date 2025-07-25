@@ -1,0 +1,28 @@
+# Author Info
+# Discord: nekit9851
+#
+- type: vessel
+  id: Geode
+  name: SAW Geode
+  description: A lightly shielded, broadside corvette.
+  price: 54000
+  category: Medium
+  group: None
+  path: /Maps/_Crescent/Shuttles/NCSP/geode.yml
+
+- type: gameMap
+  id: Geode
+  mapName: 'SAW Geode'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/geode.yml
+  minPlayers: 0
+  stations:
+    Geode:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'SAW Geode {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-utility

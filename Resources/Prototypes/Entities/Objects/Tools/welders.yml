@@ -58,12 +58,12 @@
       collection: MetalThud
     activatedDamage:
         types:
-            Heat: 7
+            Heat: 9
   - type: ItemToggleDamageOtherOnHit
     activatedDamage:
       types:
-        Heat: 4
-        Blunt: 3
+        Heat: 8
+        Blunt: 9
   - type: ItemToggleSize
     activatedSize: Large
   - type: ItemToggleHot
@@ -85,7 +85,7 @@
     wideAnimationRotation: -90
     damage:
       types:
-        Blunt: 6 #i mean... i GUESS you could use it like that
+        Blunt: 9 #i mean... i GUESS you could use it like that
     soundHit:
       collection: MetalThud
   - type: DamageOtherOnHit
@@ -99,6 +99,7 @@
           Quantity: 100
         maxVol: 100
   - type: Tool
+    speedModifier: 2
     useSound:
       collection: Welder
     qualities: Welding
@@ -193,7 +194,7 @@
           Quantity: 500
         maxVol: 500
   - type: Tool
-    speedModifier: 1.5
+    speedModifier: 2.5
 
 - type: entity
   name: experimental welding tool
@@ -223,7 +224,7 @@
       - ReagentId: WeldingFuel
         Quantity: 0.5
   - type: Tool
-    speedModifier: 2
+    speedModifier: 3
   - type: Fixtures
     fixtures:
       fix1:
@@ -257,7 +258,7 @@
           Quantity: 50
         maxVol: 50
   - type: Tool
-    speedModifier: 0.7
+    speedModifier: 1.7
   - type: PointLight
     enabled: false
     radius: 1.0

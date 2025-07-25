@@ -1,0 +1,10 @@
+- type: loadout
+  id: LoadoutMaskNCWLBalaclava
+  category: Mask
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingMaskNCWLBalaclava
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks

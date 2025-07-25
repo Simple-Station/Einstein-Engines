@@ -11,7 +11,7 @@
         - Oni
     - !type:FactionRequirement
       factionID: "ATH"
-  weight: 82
+  weight: 81
   startingGear: SanitatGear
   alwaysUseSpawner: true
   icon: "JobIconSanitat"
@@ -23,6 +23,9 @@
     components:
       - type: ChatRank
         rank: crescent-rank-sanitat
+      - type: CPRTraining
+      - type: SurgerySpeedModifier
+        speedModifier: 2
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -68,7 +71,6 @@
     jumpsuit: ClothingUniformJumpsuitAuthoritySanitat
     shoes: ClothingShoesBootsJack
     head: ClothingHeadHatAuthoritySanitat
-    belt: ClothingBeltAuthorityDroppouches
     gloves: ClothingHandsGlovesFingerless
     id: SanitatPDA
     ears: ClothingHeadsetAuthority

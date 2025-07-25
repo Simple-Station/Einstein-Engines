@@ -1,0 +1,28 @@
+# Author Info
+# Discord: @ninruB
+
+- type: vessel
+  id: Kavkaz
+  name: NCWL Kavkaz
+  description: A light communard destroyer.
+  price: 87500
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/NCWL/kavkaz.yml
+
+- type: gameMap
+  id: Kavkaz
+  mapName: 'Kavkaz'
+  mapPath: /Maps/_Crescent/Shuttles/NCWL/kavkaz.yml
+  minPlayers: 0
+  stations:
+    Kavkaz:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Kavkaz {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-gunship

@@ -9,6 +9,10 @@
       gridComponents:
         - type: BlockShipWeaponProjectileGrid
         - type: PreventPilot
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: outpost
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Port Vladzena'
@@ -20,7 +24,6 @@
           attributes:
             proper: true
         - type: StationJobs
-          checkAlive: false
           overflowJobs: []
           availableJobs:
             AdministratorNCWL: [ 1, 1 ]

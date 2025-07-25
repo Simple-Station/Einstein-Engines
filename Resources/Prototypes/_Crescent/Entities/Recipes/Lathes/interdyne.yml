@@ -21,8 +21,8 @@
     Cloth: 500
 
 - type: latheRecipe
-  id: ClothingHeadHatSyndicateDoctor
-  result: ClothingHeadHatSyndicateDoctor
+  id: ClothingHeadHatSyndicateInterdyne
+  result: ClothingHeadHatSyndicateInterdyne
   completetime: 1.5
   materials:
     Cloth: 300
@@ -63,7 +63,7 @@
     Steel: 1000
 
 - type: latheRecipe
-  id: SecHypoInterdyne
+  id: HypoInterdyne
   result: SecHypo
   completetime: 1.5
   materials:
@@ -113,6 +113,25 @@
   materials:
     PlasmaIsotope: 200
     Galine: 250
+    Glass: 100
+
+- type: latheRecipe
+  id: CartridgePuncturaseInterdyne
+  result: CartridgePuncturase
+  completetime: 1.5
+  materials:
+    PlasmaIsotope: 300
+    DeactivatedPhoron: 350
+    Glass: 100
+
+- type: latheRecipe
+  id: CartridgeAtropineInterdyne
+  result: CartridgeAtropine
+  completetime: 1.5
+  materials:
+    Galine: 150
+    PlasmaIsotope: 150
+    DeactivatedPhoron: 200
     Glass: 100
 
 - type: latheRecipe

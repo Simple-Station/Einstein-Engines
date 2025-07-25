@@ -124,7 +124,7 @@
   cost: 7500
   recipeUnlocks:
   - RadarConsoleCircuitboard
-  - HandHeldMassScanner
+  - HandHeldMassScannerEE
   - BorgModuleGPS
 
 - type: technology

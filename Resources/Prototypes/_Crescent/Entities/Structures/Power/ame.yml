@@ -1,14 +1,1 @@
-- type: entity
-  id: AmeControllerSmallExplosion
-  parent: AmeController
-  suffix: Small Explosion
-  components:
-  - type: AmeController
-    bigExplosion: false
-    fuelSlot:
-      whitelist:
-        components:
-        - AmeFuelContainer
-      whitelistFailPopup: ame-controller-component-fuel-slot-fail-whitelist
-      lockedFailPopup: ame-controller-component-fuel-slot-fail-locked
-      insertSuccessPopup: ame-controller-component-fuel-slot-success-insert  
+

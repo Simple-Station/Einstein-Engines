@@ -15,9 +15,8 @@
     range: 1.75
     damage:
       types:
-        Blunt: 3.5
-    heavyRateModifier: 0.8
-    heavyRangeModifier: 0.8
+        Blunt: 8
+    heavyRateModifier: 0.75
     heavyDamageBaseModifier: 2
     heavyStaminaCost: 5
     maxTargets: 8

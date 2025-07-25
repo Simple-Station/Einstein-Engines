@@ -1,0 +1,19 @@
+- type: loadout
+  id: LoadoutBeltTacticalRig
+  category: Belt
+  cost: 2
+  items:
+    - ClothingBeltTacticalRig
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+
+- type: loadout
+  id: LoadoutBeltSheathMacheteIndependent
+  category: Belt
+  cost: 0
+  items:
+    - ClothingBeltSheathMacheteIndependent
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt

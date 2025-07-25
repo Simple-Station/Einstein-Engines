@@ -25,9 +25,3 @@
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: VesselDesignation
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            LieutenantNCSP: [ 0, 0 ]
-            InfanteerNCSP: [ 0, 0 ]
-            TechnicianNCSP: [ 0, 0 ]

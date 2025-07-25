@@ -403,3 +403,29 @@
       id: ClothingUniformJumpsuitSolNavySailor
     - type: loadout
       id: ClothingUniformJumpsuitSolServiceWhite
+    #Hullrot edit start
+    - type: loadout
+      id: LoadoutUniformDSMSoldierFormal
+    - type: loadout
+      id: LoadoutUniformDSMNobleMale
+    - type: loadout
+      id: LoadoutUniformDSMNobleFemale
+    - type: loadout
+      id: LoadoutUniformSHISuit
+    - type: loadout
+      id: LoadoutUniformSHISuitEmployee
+    - type: loadout
+      id: LoadoutUniformSHISuitSecurity
+    - type: loadout
+      id: LoadoutUniformSHISuitSecurityUA
+    - type: loadout
+      id: LoadoutUniformSHISuitHighsec
+    - type: loadout
+      id: LoadoutUniformJumpsuitSyndicateInterdyne
+    - type: loadout
+      id: LoadoutClothingUniformJumpsuitSyndicateInterdyneWhiteUniform
+    - type: loadout
+      id: LoadoutUniformJumpsuitSyndicateInterdyneRedUniform
+    - type: loadout
+      id: LoadoutUniformJumpsuitSyndicateInterdyneScrubs
+    #Hullrot edit end

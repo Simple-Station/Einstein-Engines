@@ -1,0 +1,38 @@
+- type: loadout
+  id: LoadoutNeckTFSCCloakRingleader
+  category: Neck
+  exclusive: true
+  cost: 0
+  items:
+    - ClothingNeckCloakRingleader
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - RingleaderNCSP
+        
+- type: loadout
+  id: LoadoutNeckTFSCShemagh
+  category: Neck
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingNeckScarfSyndicateShemagh
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - TraumasecNCSP
+        - ForemanNCSP
+        - InfanteerNCSP
+        - IntelligenceOfficerNCSP
+        - LieutenantNCSP
+        - OperativeNCSP
+        - CyberdawnTechNCSP
+        - RingleaderNCSP
+        - RipperdocNCSP
+        - ShipbreakerNCSP
+        - TechnicianNCSP
+        - CoordinatorNCSP

@@ -23,7 +23,3 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-smuggling
-        - type: StationJobs
-          overflowJobs: []
-          availableJobs:
-            OperativeNCSP: [ 0, 1 ]

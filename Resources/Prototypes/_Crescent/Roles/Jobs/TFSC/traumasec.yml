@@ -1,0 +1,48 @@
+- type: job
+  id: TraumasecNCSP
+  name: job-name-traumasec
+  description: job-description-traumasec
+  playTimeTracker: JobTraumasecNCSP
+  requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 8000
+    - !type:FactionRequirement
+      factionID: "TFSC"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - Blindness
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-agent
+      - type: CPRTraining
+  weight: 16
+  startingGear: TraumasecGear
+  alwaysUseSpawner: true
+  icon: "JobIconSyndieTraumasec"
+  requireAdminNotify: false
+  supervisors: You answer to the interests of the Interdyne Pharmaceuticals Company. Whichever you decide with your colleagues they be.
+  canBeAntag: false
+  access:
+  - Command
+  - Maintenance
+  - SyndicateBasic
+  - SyndicateInterdyne
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: TraumasecGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSyndicateInterdyne
+    gloves: ClothingHandsGlovesFingerless
+    mask: ClothingMaskSyndicateFacemask
+    shoes: ClothingShoesBootsCombat
+    id: TraumasecPDA
+    back: ClothingBackpackNCSPFilledInfanteer
+    ears: ClothingHeadsetNCSPInterdyne

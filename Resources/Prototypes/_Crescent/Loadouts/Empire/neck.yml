@@ -1,0 +1,68 @@
+- type: loadout
+  id: LoadoutNeckDSMBow
+  category: Neck
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingNeckImperialBow
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdjutantDSM
+        - AdvocatusDSM
+        - ArchmaesterDSM
+        - GovernorDSM
+        - KnightDSM
+        - RitterDSM
+        - LaborDSM
+        - CourtierDSM
+        - TemplarDSM
+        - WealthDSM
+
+- type: loadout
+  id: LoadoutNeckDSMBowJeweled
+  category: Neck
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingNeckImperialBowJeweled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdjutantDSM
+        - AdvocatusDSM
+        - ArchmaesterDSM
+        - GovernorDSM
+        - KnightDSM
+        - RitterDSM
+        - LaborDSM
+        - CourtierDSM
+        - TemplarDSM
+        - WealthDSM
+
+- type: loadout
+  id: LoadoutNeckDSMCapelet
+  category: Neck
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingNeckCloakImperialCapelet
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdjutantDSM
+        - AdvocatusDSM
+        - ArchmaesterDSM
+        - GovernorDSM
+        - KnightDSM
+        - RitterDSM
+        - LaborDSM
+        - CourtierDSM
+        - TemplarDSM
+        - WealthDSM

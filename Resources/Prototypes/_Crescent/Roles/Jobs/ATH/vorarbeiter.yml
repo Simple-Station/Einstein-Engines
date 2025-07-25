@@ -1,0 +1,67 @@
+- type: job
+  id: VorarbeiterATH
+  name: job-name-vorarbeiter
+  description: job-description-vorarbeiter
+  playTimeTracker: JobVorarbeiterATH
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
+        - Reptilian
+        - Oni
+    - !type:FactionRequirement
+      factionID: "ATH"
+  weight: 76
+  startingGear: VorarbeiterGear
+  alwaysUseSpawner: true
+  icon: "JobIconVorarbeiter"
+  requireAdminNotify: true
+  supervisors: job-supervisors-ath
+  canBeAntag: false
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - Service
+  - External
+  - Authority
+  - AuthoritySupply
+
+- type: startingGear
+  id: VorarbeiterGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAuthorityVorarbeiter
+    outerClothing: ClothingOuterCoatAuthorityVorarbeiter
+    shoes: ClothingShoesBootsJack
+    id: VorarbeiterPDA
+    ears: ClothingHeadsetAuthority

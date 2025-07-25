@@ -446,7 +446,6 @@
     prototypes:
     # Spawners
     - SpawnDungeonLootCircuitBoardSalvage
-    - SpawnDungeonLootCircuitBoardEngi
     - SpawnDungeonLootCircuitBoardScience
     - SpawnDungeonLootCircuitBoardMed
     - AutolatheMachineCircuitboard
@@ -493,7 +492,6 @@
     - SurveillanceCameraWirelessRouterCircuitboard
     - SurveillanceWirelessCameraMonitorCircuitboard
     # Boards
-    - AutolatheCircuitboard
     - AmmoTechFabCircuitboard
     - OreProcessorIndustrialMachineCircuitboard
     - DawInstrumentMachineCircuitboard

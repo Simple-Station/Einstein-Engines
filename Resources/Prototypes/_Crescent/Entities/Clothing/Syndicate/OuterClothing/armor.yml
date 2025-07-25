@@ -136,10 +136,78 @@
   - type: Contraband
     value: 15
 
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitTraumasec
+  name: interdyne traumasec hardsuit
+  description: A modular hardsuit produced by Shinohara Heavy Industries, made for Interdyne TraumaSec officers.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/trauma_suit.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/trauma_suit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: DegradeableArmor
+    armorMaxHealth: 700
+    armorType: Ceramic
+    armorRepair: NTCeramic
+    initialModifiers:
+      flatReductions:
+        Blunt: 20
+        Slash: 20
+        Piercing: 80
+        Heat: 15
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitTraumasec
+  - type: Contraband
+    value: 5
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitCoordinator
+  name: interdyne coordinator hardsuit
+  description: A modular hardsuit produced by Shinohara Heavy Industries, made for Interdyne coordinators.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/coordinator_suit.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/coordinator_suit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: DegradeableArmor
+    armorMaxHealth: 700
+    armorType: Ceramic
+    armorRepair: NTCeramic
+    initialModifiers:
+      flatReductions:
+        Blunt: 20
+        Slash: 20
+        Piercing: 80
+        Heat: 15
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitCoordinator
+  - type: Contraband
+    value: 5
+
 #regular shit. if you put hardsuit below here i'm going to explode your cock
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorSyndicateForeman
   name: foreman's reinforced coat
   description: A kevlar-intervowen durathread coat with a popped collar and the SAWs insignia on the front.
@@ -170,6 +238,55 @@
 
 - type: entity
   parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorSyndicateCoordinator
+  name: coordinator's jacket
+  description: A Kevlar-interwoven durathread jacket with an Interdyne logo on the back, so you know who your boss is.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/ipm_jacket.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/ipm_jacket.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 1000
+    armorType: Metallic
+    armorRepair: Kevlar
+    initialModifiers:
+      flatReductions:
+        Blunt: 15
+        Slash: 15
+        Piercing: 25
+        Heat: 15
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  parent: ClothingOuterBaseLarge
+  id: ClothingOuterArmorSyndicateLabcoat
+  name: ripperdoc's lab coat
+  description: A heavy medical lab coat fit for a (non)licensed chemist.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/ipm_labcoat.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/ipm_labcoat.rsi
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+  - type: StaticPrice
+    price: 100
+
+- type: entity
+  parent: ClothingOuterBaseLarge
   id: ClothingOuterArmorSyndicateWorker
   name: shipfitter's high-vis worker vest
   description: A rubber vest with hi-vis sprites. Comes in TFSC colors.
@@ -195,22 +312,26 @@
     price: 100
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorSyndicateApron
   name: ripperdoc's apron
   description: A heavy medical apron fit for a (non)licensed cyberware specialist. Just don't mind the faded bloodstains.
   components:
   - type: Sprite
-    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndieapron.rsi
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/ipm_arpon.rsi
   - type: Clothing
-    sprite: _Crescent/Clothing/Syndicate/OuterClothing/syndieapron.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Slash: 0.85
-        Piercing: 0.85
-        Heat: 0.70
-        Caustic: 0.7
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/ipm_arpon.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 500
+    armorType: Metallic
+    armorRepair: Kevlar
+    initialModifiers:
+      flatReductions:
+        Blunt: 10
+        Slash: 15
+        Piercing: 20
+        Heat: 15
+        Caustic: 25
   - type: ClothingSpeedModifier
     walkModifier: 1.0
     sprintModifier: 1.0
@@ -221,7 +342,7 @@
     price: 100
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorSyndicateArmorvest
   name: frontliner's ballistic vest
   description: A bulky kevlar-padded ballistic vest, touched with the colors of the TFSC.
@@ -251,15 +372,15 @@
     price: 250
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorSyndicateArmorvestInterdyne
-  name: ballistic vest
-  description: A bulky kevlar-padded ballistic vest, touched with the colors of the TFSC.
+  name: traumasec ballistic vest
+  description: A bulky kevlar-padded ballistic vest, touched with the colors of interdyne.
   components:
   - type: Sprite
-    sprite: _Crescent/Clothing/Syndicate/OuterClothing/traumasecvest.rsi
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/ipm_vest.rsi
   - type: Clothing
-    sprite: _Crescent/Clothing/Syndicate/OuterClothing/traumasecvest.rsi
+    sprite: _Crescent/Clothing/Syndicate/OuterClothing/ipm_vest.rsi
   - type: DegradeableArmor
     armorMaxHealth: 750
     armorType: Metallic
@@ -281,7 +402,7 @@
     price: 250
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
   id: ClothingOuterArmorSyndicateRingmaster
   name: ringmaster's armored coat
   description: A heavy synthetic fabric overcoat with structured shoulders. Sleek durathread panels line the vitals under the lining, offering meager padding.
@@ -311,7 +432,7 @@
     price: 350
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
   id: ClothingOuterArmorSyndicateLieutenant
   name: mercenary lieutenant's overcoat
   description: A tall durathread officer's coat, bearing the insignia stripes of the Syndicate's second-in-command.
@@ -341,7 +462,7 @@
     price: 450
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
   id: ClothingOuterArmorCyberdawnPatriarch
   name: patriarch's overcoat
   description: A tall durathread coat, regal and adorned with the Cyberdawn corporate insignia.

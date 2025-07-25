@@ -9,8 +9,6 @@
   components:
     - type: GibOnTrigger
       deleteItems: true
-      deleteOrgans: true
-      gib: false
     - type: Inventory
       templateId: human
     - type: Loadout

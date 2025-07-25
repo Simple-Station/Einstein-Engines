@@ -91,8 +91,9 @@
       tags:
       - DrugComponent
       - Sheet
-      - RawMaterial
       - CraftMaterials
+      - Ingot
+      - RawMaterial
   - type: Lathe
     idleState: base_machine
     runningState: base_machine_processing
@@ -109,6 +110,7 @@
     - Saw
     - Hemostat
     - BoneGel
+    - ParamedHypo
     - ClothingHandsGlovesNitrile
     - ClothingMaskSterile
     - Brutepack
@@ -122,10 +124,11 @@
     - Dropper
     - Jug
     - Syringe
+    - Defibrillator
     dynamicRecipes:
       - ClothingUniformJumpsuitSyndicateInterdyne
       - ClothingBeltSyndicateWebbingInterdyne
-      - ClothingHeadHatSyndicateDoctor
+      - ClothingHeadHatSyndicateInterdyne
       - ClothingOuterArmorSyndicateApron
       - ClothingHeadHelmetSyndicateBasicInterdyne
       - ClothingOuterArmorSyndicateArmorvestInterdyne
@@ -135,15 +138,25 @@
       - CyberneticsPainEditorInterdyne
       - CyberneticsAdrenalInterdyne
       - CyberneticsBloodPumpInterdyne
+      - InterdyneOpticsInterdyne
       - CrowbarLeftArmInterdyne
       - CrowbarRightArmInterdyne
-      - SecHypoInterdyne
+      - HypoInterdyne
       - CartridgeEphedrineInterdyne
       - CartridgeTirizeneInterdyne
       - CartridgeBicaridineInterdyne
       - CartridgeSalineInterdyne
       - CartridgeDermalineInterdyne
+      - CartridgePuncturaseInterdyne
+      - CartridgeAtropineInterdyne
+      - SyringeCase
       - InterdyneOptics
+      - MothroachCubeBiochemical
+      - CowCubeBiochemical
+      - GoatCubeBiochemical
+      - CryostasisBeaker
+      - SyringeCryostasis
+      - StasisBedMachineCircuitboardBiochemical
   - type: Anchorable
     flags:
     - Anchorable
@@ -179,6 +192,8 @@
       tags:
       - Sheet
       - CraftMaterials
+      - Ingot
+      - RawMaterial
   - type: Sprite
     sprite: _Crescent/Structures/nanoforge.rsi
     layers:
@@ -262,19 +277,29 @@
       - ShuttleFlatpackAstronautics
       - ClothingOuterHardsuitBasicAstronautics
       - ClothingOuterHardsuitSpatioAstronautics
+      - ClothingOuterHardsuitIndependentsEVAAstronautics
       - ClothingShoesBootsMagAstronautics
       - HandheldMassScannerAstronautics
       - JetpackBlueFilledAstronautics
       - ClothingOuterHardsuitPilotAstronautics
       - ClothingOuterHardsuitVoidParamedAstronautics
       - ClothingOuterHardsuitPrivateSecurityAstronautics
+      - ClothingOuterHardsuitFishbedAstronautics
+      - ClothingOuterHardsuitFishbedSilverAstronautics
+      - ClothingOuterHardsuitFishbedGoldAstronautics
+      - ClothingOuterHardsuitFishbedColonialAstronautics
+      - ClothingOuterHardsuitFishbedNLFAstronautics
+      - ClothingOuterHardsuitCenobiteAstronautics
+      - ClothingOuterHardsuitCenobiteVerdantAstronautics
+      - ClothingOuterHardsuitCenobiteRedAstronautics
+      - ClothingModsuitStandardAstronautics
       - ClothingShoesBootsMagbootsAstronautics
       - JetpackMiniFilledAstronautics
-      - RCDEmptyAstronautics
+      - RCDAstronautics
       - RCDAmmoAstronautics
       - MiningDrill
       - BorgModuleMining
-      - MechEquipmentDrill 
+      - MechEquipmentDrill
       - ClothingMaskWeldingGas
       - PowerCellHigh
       - PowerCellMicrortg
@@ -329,22 +354,31 @@
       - Saw
       - Hemostat
       - BoneGel
+      - ParamedHypo
       - MothroachCubeBiochemical
       - CowCubeBiochemical
       - GoatCubeBiochemical
+      - CryostasisBeaker
+      - SyringeCryostasis
+      - StasisBedMachineCircuitboardBiochemical
       - ClothingHandsGlovesNitrile
       - ClothingMaskSterile
       - Brutepack
       - Ointment
       - Gauze
+      - SyringeCase
       - DisposableSyringe
+      - CartridgeAtropine
+      - CartridgeEpinephrine
+      - CartridgeBicaridine
+      - CartridgeDermaline
+      - CartridgeSaline
       - HandheldHealthAnalyzer
       - BodyBag
       - Beaker
       - LargeBeaker
       - Dropper
       - Jug
-      - Syringe
       - Defibrillator
       - SurveillanceCameraRouterCircuitboard
       - SurveillanceCameraWirelessRouterCircuitboard
@@ -374,7 +408,6 @@
       - ClothingEyesNightVisionGoggles
       - Terminus
       - ClothingOuterHardsuitShanlinUnpainted
-      - HandHeldMassScanner
       - BorgModuleGPS
       - RadarConsoleCircuitboard
       - EMPGrenadeElectronics
@@ -388,6 +421,7 @@
       - ClothingUniformJumpsuitSyndicateLabCyberdawn
       - ClothingUniformJumpsuitSyndicateSoldierCyberdawn
       - ClothingOuterArmorCyberdawnPatriarch
+      - ClothingOuterArmorKendoBoguCyberdawn
       - ClothingOuterHardsuitCybersun
       - ClothingHeadHatPatriarch
       - WeaponSubMachineGunAtreidesCyberdawn
@@ -406,8 +440,161 @@
       - ClothingOuterHardsuitSyndieMedicCyberdawn
       - ClothingOuterHardsuitCybersunStealthCyberdawn
       - MagazinePistolSpecialMindbreakerCyberdawn
+      - WeaponPistolPsiBreakerCyberdawn
       - ClothingEyesThermalVisionGogglesCyberdawn
-      - WeaponPistolPsibreakerCyberdawn
+      - ClothingMaskImperialCombatGasmask
+      - ClothingOuterCoatImperialParade
+      - ClothingUniformJumpsuitImperialDoctor
+      - ClothingUniformJumpsuitImperialFreeholder
+      - ClothingHandsGlovesImperialWorkerGloves
+      - ClothingShoesBootsImperialLongboots
+      - ClothingHandsGlovesImperialLonggloves
+      - ClothingHeadHelmetImperialWorkerHelmet
+      - ClothingHeadHatImperialPeakedCap
+      - ClothingOuterCoatImperialSoftsuit
+      - ClothingHeadHelmetImperialEVA
+      - ClothingHeadHatImperialHat
+      - ClothingUniformJumpsuitImperialNobleMale
+      - ClothingUniformJumpsuitImperialNobleFemale
+      - ClothingUniformJumpsuitImperialSoldierFormal
+      - ClothingMaskImperialGovernorMask
+      - ClothingOuterCoatImperialGovernor
+      - ClothingNeckCloakImperialGovernor
+      - ClothingOuterHardsuitImperialWorker
+      - ClothingHeadHelmetImperialTrooperHelmet
+      - ClothingOuterArmorImperialTrooperArmor
+      - ClothingOuterHardsuitImperialSoldier
+      - ClothingHeadHelmetImperialKnightCommanderHelmet
+      - ClothingOuterArmorImperialArmorPrestige
+      - ClothingOuterHardsuitImperialKnight
+      - CarrionFlatpack
+      - WeaponMechIndustrialKineticAcceleratorImperial
+      - MechEquipmentGrabberImperial
+      - WeaponMechMeleeDrillImperial
+      - WeaponRifleMiller
+      - WeaponRevolverArgenti
+      - WeaponPistolComplianceImperial
+      - CovetorLPC
+      - IbisLPC
+      - SunesisLPC
+      - ClothingBeltSheathRapier
+      - ClothingBeltSheathDSMSabre
+      - DSMRapier
+      - DSMSabre
+      - LaelapsLPC
+      - PaladinFlatpack
+      - WandererFlatpack
+      - WeaponRifleDSMLegionnaire
+      - WeaponSubMachineGunC20rImperial
+      - WeaponPistolNeoVolker
+      - ClothingBeltSheathKhopesh
+      - SRMKhopesh
+      - WeaponSubMachineGunBeetle
+      - WeaponRifleHunter
+      - ClothingOuterHardsuitHunterElite
+      - WeaponLauncherM320
+      - TriumphantLPC
+      - PadparadschaLPC
+      - ClothingHeadHelmetNCWLEVA
+      - ClothingOuterNCWLEVA
+      - ClothingHeadHatNCWLCapsoft
+      - ClothingHeadHatNCWLCapsoftMedical
+      - ClothingHeadHatNCWLTanker
+      - ClothingUniformJumpsuitNCWLMedic
+      - ClothingUniformJumpsuitNCWLArtificer
+      - ClothingUniformJumpsuitNCWL
+      - ClothingMaskNCWLBalaclava
+      - ClothingEyesGlassesNCWL
+      - ClothingBeltNCWLWebbing
+      - ClothingHeadHelmetNCWLBasic
+      - WeaponRifleFAL
+      - WeaponPistolComrade
+      - WeaponSubMachineGunNCWLWatchdog
+      - ClothingOuterHardsuitNCWLInfantry
+      - SabreLPC
+      - RapierLPC
+      - KhopeshLPC
+      - BroadswordLPC
+      - MolotLPC
+      - HindLPC
+      - WeaponSubMachineGunBloodhound
+      - WeaponRifleNCWLBatanya
+      - WeaponPistolT91
+      - WeaponRevolverPython
+      - ClothingOuterHardsuitNCWLPetya
+      - VanguardMarkTwoLPC
+      - LancerFlatpack
+      - WeaponLauncherGM94
+      - IvarodLPC
+      - SternLPC
+      - BogatyrFlatpack
+      - ClothingOuterHardsuitNCWLJuggernaut
+      - ClothingUniformJumpsuitExecutiveShinoharaSuit
+      - ClothingUniformJumpsuitShinoharaLogistics
+      - ClothingOuterShinoharaVest
+      - ClothingOuterShinoharaLabcoat
+      - ClothingUniformJumpsuitShinoharaDoctor
+      - ClothingOuterHardsuitHEV
+      - WeaponLauncherDisposableRocket
+      - ShipyardManufactorumFlatpack
+      - ScrapRefinerFlatpack
+      - ClothingUniformJumpsuitShinoharaSecurity
+      - ClothingOuterArmorShinoharaArmorBulwark
+      - ClothingHeadHatShinoharaNonevaHelm
+      - TelescopicBatonSHI
+      - ShinoharaOptics
+      - WeaponMechCombatAutoshotgun
+      - WeaponMechCombatLightRifle
+      - WeaponMechSword
+      - ClothingUniformJumpsuitShinoharaHighsec
+      - ClothingOuterArmorShinoharaArmorHighsec
+      - ClothingHeadHatShinoharaHelmet
+      - ClothingOuterHardsuitHighsec
+      - WeaponPistolBlastpopRed
+      - WeaponPistolBlastpopPurple
+      - WeaponPistolBlastpopGray
+      - WeaponPistolBlastpopGreen
+      - WeaponPistolBlastpopGold
+      - WeaponPistolBlastpopBlue
+      - WeaponRifleHoundMarksman
+      - WeaponShotgunSHIDoubleBarreled4g
+      - WeaponPistolMk58SHI
+      - WeaponSubMachineGunMP49
+      - VariableCommodityFabricatorFlatpack
+      - AutoloomFablatheFlatpack
+      - FixedHardpointFlatpack
+      - SlugthrowerFlatpack
+      - ExhumerFlatpack
+      - PlasmaRepeaterFlatpack
+      - AdvancedElectronics1
+      - AdvancedMechatronics1
+      - PlastitaniumFibreAlloySHI
+      - HardlightGenerator1
+      - BallisticCycler1
+      - TubeLoader1
+      - LaserLocus1
+      - MagwellFlatpack
+      - IdnaFlatpack
+      - IdnaTorpedo
+      - AdvancedVariableCommodityFablatheFlatpack
+      - WeaponRifleGoro
+      - WeaponRifleLecterSHI
+      - WeaponRevolverMateba
+      - WeaponSubMachineGunSabre
+      - WeaponLightMachineGunL6
+      - WeaponLauncherMilkor
+      - BoriaticComposterFlatpack
+      - CyberneticsMantisBladeRight
+      - CyberneticsMantisBladeLeft
+      - WeaponMechPlasmaSword
+      - WeaponMechCombatAutopuntgun
+      - WeaponMechCombatTaikotyo
+      - WeaponLauncherHammerhead
+      - ShieldEmitterSmallFlatpack
+      - GilgameshFlatpack
+      - BallisticFablatheFlatpack
+      - CyberneticsDermalArmor
+
   - type: Machine
     board: MicroforgeCircuitboard
 
