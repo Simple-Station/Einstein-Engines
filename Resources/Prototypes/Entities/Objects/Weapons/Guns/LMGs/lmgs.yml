@@ -29,7 +29,7 @@
     availableModes:
       - FullAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/lmg.ogg
+      collection: Lmg_2_Gunshots
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
   - type: ChamberMagazineAmmoProvider
@@ -83,10 +83,10 @@
     staminaCost: 12
 
 - type: entity
-  name: SHI L6 5.56
+  name: SHI L6SAW Stratos 5.56x45mm
   id: WeaponLightMachineGunL6
   parent: BaseWeaponLightMachineGun
-  description: A bulky machinegun developed by a Shinohara subsidiary.
+  description: A light machinegun developed by a Shinohara subsidiary. Chambered in 5.56x45mm Imperial.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/l6saw.rsi
