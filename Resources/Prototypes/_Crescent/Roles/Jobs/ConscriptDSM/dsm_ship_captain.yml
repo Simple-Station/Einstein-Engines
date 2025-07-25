@@ -90,9 +90,8 @@
     pocket1: DoubleEmergencyOxygenTankFilled
     ears: ClothingHeadsetEmpire
     eyes: ClothingEyesHudSecurity
-  inhand:
-    - WeaponPistolNeoVolker
   storage:
     back:
       - VoidsuitKitDSM
       - BoxMRE
+      - WeaponPistolNeoVolker

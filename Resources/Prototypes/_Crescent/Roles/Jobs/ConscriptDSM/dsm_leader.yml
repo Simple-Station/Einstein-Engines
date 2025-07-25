@@ -92,10 +92,9 @@
     ears: ClothingHeadsetEmpire
     suitstorage: WeaponSniperDSMLegax
     eyes: ClothingEyesHudSecurity
-  inhand:
-    - WeaponPistolNeoVolker
   storage:
     back:
       - VoidsuitKitDSM
       - BoxMRE
       - BoxFlare
+      - WeaponPistolNeoVolker

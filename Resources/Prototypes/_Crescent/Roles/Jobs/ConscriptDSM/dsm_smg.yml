@@ -57,10 +57,9 @@
     id: LevymanPDA
     suitstorage: WeaponSubMachineGunDSMArbiter
     eyes: ClothingEyesHudSecurity
-  inhand:
-    - WeaponPistolComplianceImperial
   storage:
     back:
       - VoidsuitKitDSM
       - BoxMRE
       - BoxFlare
+      - WeaponPistolComplianceImperial

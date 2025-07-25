@@ -57,8 +57,9 @@
     id: LevymanPDA
     suitstorage: WeaponAntimaterielDSMLeveller
     eyes: ClothingEyesHudSecurity
-  inhand:
-    - WeaponPistolNeoVolker
   storage:
     back:
       - VoidsuitKitDSM
+      - BoxMRE
+      - BoxFlare
+      - WeaponPistolNeoVolker
