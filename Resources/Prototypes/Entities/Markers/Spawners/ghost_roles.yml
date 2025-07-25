@@ -28,9 +28,9 @@
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
-      - state: green
-      - sprite: Mobs/Animals/regalrat.rsi
-        state: icon
+    - state: green
+    - sprite: Mobs/Animals/regalrat.rsi
+      state: icon
 
 - type: entity
   id: SpawnPointGhostRemilia
@@ -51,9 +51,9 @@
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
-      - state: green
-      - sprite: Mobs/Animals/bat.rsi
-        state: bat
+    - state: green
+    - sprite: Mobs/Animals/bat.rsi
+      state: bat
 
 - type: entity
   id: SpawnPointGhostCerberus
@@ -74,9 +74,9 @@
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
-      - state: green
-      - sprite: Mobs/Pets/corgi.rsi
-        state: narsian
+    - state: green
+    - sprite: Mobs/Pets/corgi.rsi
+      state: narsian
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
@@ -96,9 +96,9 @@
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
-      - state: green
-      - sprite: Structures/Wallmounts/signs.rsi
-        state: radiation
+    - state: green
+    - sprite: Structures/Wallmounts/signs.rsi
+      state: radiation
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
@@ -110,15 +110,15 @@
   - type: GhostRole
     name: ghost-role-information-loneop-name
     description: ghost-role-information-loneop-description
-    rules: ghost-role-information-loneop-rules
+    rules: ghost-role-information-rules-default-solo-antagonist
     mindRoles:
     - MindRoleGhostRoleSoloAntagonist
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
-      - state: green
-      - sprite: Structures/Wallmounts/signs.rsi
-        state: radiation
+    - state: green
+    - sprite: Structures/Wallmounts/signs.rsi
+      state: radiation
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
@@ -152,7 +152,7 @@
   - type: GhostRole
     name: roles-antag-nuclear-operative-name
     description: roles-antag-nuclear-operative-objective
-    rules: ghost-role-information-rules-default-team-antagonist
+    rules: ghost-role-information-loneop-rules
     mindRoles:
     - MindRoleGhostRoleTeamAntagonist
 
@@ -194,3 +194,21 @@
     - state: green
     - sprite: Objects/Weapons/Melee/energykatana.rsi
       state: icon
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseAntagSpawner
+  id: SpawnPointGhostDerelictCyborg
+  components:
+  - type: GhostRole
+    name: ghost-role-information-derelict-cyborg-name
+    description: ghost-role-information-derelict-cyborg-description
+    rules: ghost-role-information-silicon-rules
+    raffle:
+      settings: default
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Mobs/Silicon/chassis.rsi
+      state: derelict_icon

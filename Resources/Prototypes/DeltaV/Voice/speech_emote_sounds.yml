@@ -78,10 +78,16 @@
       collection: VulpkaninHowls
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Mars:
       collection: Mars
     Wurble:
       collection: Wurble
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
 
 - type: emoteSounds
   id: MaleVulpkanin
@@ -110,6 +116,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Growl:
       collection: VulpkaninGrowls
     Snarl:
@@ -122,6 +130,10 @@
       collection: VulpkaninHowls
     Awoo:
       collection: VulpkaninHowls
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
 
 - type: emoteSounds
   id: FemaleVulpkanin
@@ -150,6 +162,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Growl:
       collection: VulpkaninGrowls
     Snarl:
@@ -162,6 +176,10 @@
       collection: VulpkaninHowls
     Awoo:
       collection: VulpkaninHowls
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
 
 - type: emoteSounds
   id: MobDog
@@ -200,6 +218,8 @@
       collection: FemaleCry
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Sneeze:
       collection: MaleSneezes
     Cough:
@@ -208,3 +228,7 @@
       collection: MaleYawn
     Hiss:
       path: /Audio/Animals/snake_hiss.ogg
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp

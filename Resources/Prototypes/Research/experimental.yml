@@ -72,6 +72,7 @@
   tier: 2
   cost: 10000
   recipeUnlocks:
+  - AntiMindControlDevice
   - WeaponPistolCHIMP
   - AnomalySynchronizerCircuitboard
   - AnomalyVesselExperimentalCircuitboard
@@ -136,19 +137,19 @@
   - PicoManipulatorStockPart
   softCapContribution: 1.2
 
-- type: technology
-  id: GravityManipulation
-  name: research-technology-gravity-manipulation
-  icon:
-    sprite: Objects/Weapons/Guns/Launchers/tether_gun.rsi
-    state: base
-  discipline: Experimental
-  tier: 3
-  cost: 10000
-  recipeUnlocks:
-    - WeaponForceGun
-    - WeaponTetherGun
-  softCapContribution: 1.5
+# - type: technology
+#   id: GravityManipulation
+#   name: research-technology-gravity-manipulation
+#   icon:
+#     sprite: Objects/Weapons/Guns/Launchers/tether_gun.rsi
+#     state: base
+#   discipline: Experimental
+#   tier: 3
+#   cost: 10000
+#   recipeUnlocks:
+#     - WeaponForceGun
+#     - WeaponTetherGun
+#   softCapContribution: 1.5
 
 - type: technology
   id: QuantumLeaping

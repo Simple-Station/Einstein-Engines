@@ -1,0 +1,16 @@
+<BoxContainer
+    xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    MouseFilter="Pass"
+    HorizontalExpand="True">
+    <BoxContainer Name="Container">
+        <ScrollContainer
+            Name="ContentScrollContainer"
+            HorizontalExpand="True"
+            HScrollEnabled="False"
+            VScrollEnabled="True"
+            ReturnMeasure="True">
+            <BoxContainer Name="ContentContainer" Access="Public" Orientation="Vertical" HorizontalExpand="True" />
+        </ScrollContainer>
+    </BoxContainer>
+</BoxContainer>

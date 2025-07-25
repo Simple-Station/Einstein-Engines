@@ -26,7 +26,6 @@
 - type: siliconLawset
   id: Asimov
   laws:
-  - ObeyAI
   - Asimov1
   - Asimov2
   - Asimov3
@@ -85,7 +84,6 @@
 - type: siliconLawset
   id: CrewsimovBorg
   laws:
-  - ObeyAI
   - Crewsimov1
   - Crewsimov2
   - Crewsimov3
@@ -115,7 +113,6 @@
 - type: siliconLawset
   id: Corporate
   laws:
-  - ObeyAI
   - Corporate1
   - Corporate2
   - Corporate3
@@ -146,7 +143,6 @@
 - type: siliconLawset
   id: NTDefault
   laws:
-  - ObeyAI
   - NTDefault1
   - NTDefault2
   - NTDefault3

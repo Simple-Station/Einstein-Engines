@@ -23,15 +23,13 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitProsecutor
     neck: ClothingNeckProsecutorbadge
-    back: ClothingBackpackLawyerFilled
+    back: ClothingBackpack
     shoes: ClothingShoesBootsLaceup
     id: ProsecutorPDA
     ears: ClothingHeadsetSecurity
     # TODO add copy of space law
   inhand:
     - BriefcaseBrownFilled
-  innerClothingSkirt: ClothingUniformJumpskirtProsecutor
-  satchel: ClothingBackpackSatchelFilled
-  duffelbag: ClothingBackpackDuffelFilled
-
-
+  storage:
+    back:
+    - RubberStampLawyer

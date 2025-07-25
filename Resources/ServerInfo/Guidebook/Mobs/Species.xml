@@ -14,8 +14,10 @@
   <GuideEntityEmbed Entity="MobReptilian" Caption="Reptilian"/>
   <GuideEntityEmbed Entity="MobSlimePerson" Caption="Slime Person"/>
   <GuideEntityEmbed Entity="MobShadowkinDummy" Caption="Shadowkin"/>
-  <GuideEntityEmbed Entity="MobChitinid" Caption="Chitinid"/>
   <GuideEntityEmbed Entity="MobThaven" Caption="Thaven"/>
+  </Box>
+  <Box>
+  <GuideEntityEmbed Entity="MobXelthia" Caption="Xelthia"/>
   </Box>
 
   # Parkstation specific species

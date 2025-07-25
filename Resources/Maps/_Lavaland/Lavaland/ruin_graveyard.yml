@@ -377,6 +377,7 @@ entities:
             288: -3.3293004,6.7190046
     - type: GridAtmosphere
       simulatedTurf: false
+      spaceWindSimulation: false
       version: 2
       data:
         chunkSize: 4

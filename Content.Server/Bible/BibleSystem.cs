@@ -1,11 +1,12 @@
+using Content.Shared._Goobstation.Bible;
 using Content.Server.Bible.Components;
-using Content.Server.Ghost.Roles.Components;
 using Content.Server.Ghost.Roles.Events;
 using Content.Server.Popups;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions;
 using Content.Shared.Bible;
 using Content.Shared.Damage;
+using Content.Shared.Ghost.Roles.Components;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
@@ -101,9 +102,7 @@ namespace Content.Server.Bible
                 return;
 
             if (args.Target == null || args.Target == args.User || !_mobStateSystem.IsAlive(args.Target.Value))
-            {
-                return;
-            }
+                return; // STOP WITH USELESS BRACES!! - Goobstation
 
             if (!HasComp<BibleUserComponent>(args.User))
             {
@@ -170,7 +169,7 @@ namespace Content.Server.Bible
             {
                 Act = () =>
                 {
-                    if (!TryComp<TransformComponent>(args.User, out var userXform))
+                    if (!TryComp(args.User, out TransformComponent? userXform))
                         return;
 
                     AttemptSummon((uid, component), args.User, userXform);
@@ -244,7 +243,7 @@ namespace Content.Server.Bible
             // If this is going to use a ghost role mob spawner, attach it to the bible.
             if (HasComp<GhostRoleMobSpawnerComponent>(familiar))
             {
-                _popupSystem.PopupEntity(Loc.GetString("bible-summon-requested"), user, PopupType.Medium);
+                _popupSystem.PopupEntity(Loc.GetString("bible-summon-requested"), user, user, PopupType.Medium);
                 _transform.SetParent(familiar, uid);
             }
             component.AlreadySummoned = true;

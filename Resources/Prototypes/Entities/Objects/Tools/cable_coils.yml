@@ -25,7 +25,7 @@
   - type: StaticPrice
     price: 0
   - type: StackPrice
-    price: 1
+    price: 2.25
   - type: PhysicalComposition
     materialComposition:
       Steel: 15
@@ -71,11 +71,23 @@
     delay: 1.8
     damageContainers:
     - Silicon
+    - SiliconUnshielded
     damage:
       types: # these are all split across multiple types. IPCs can still take cold damage, they just heavily resist it.
         Heat: -8
         Shock: -8
         Cold: -2
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 100
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 - type: entity
   parent: CableHVStack
@@ -145,11 +157,23 @@
     delay: 1.2
     damageContainers:
     - Silicon
+    - SiliconUnshielded
     damage:
       types: # these are all split across multiple types. IPCs can still take cold damage, they just heavily resist it.
         Heat: -4
         Shock: -4
         Cold: -1
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 85
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 - type: entity
   parent: CableMVStack
@@ -218,11 +242,23 @@
     delay: 0.6
     damageContainers:
     - Silicon
+    - SiliconUnshielded
     damage:
       types: # these are all split across multiple types. IPCs can still take cold damage, they just heavily resist it.
         Heat: -2
         Shock: -2
         Cold: -0.5
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 50
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 - type: entity
   parent: CableApcStack

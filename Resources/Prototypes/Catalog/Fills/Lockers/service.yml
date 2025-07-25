@@ -61,6 +61,8 @@
       - id: SprayBottleWater
       - id: ReagentContainerFlour
         amount: 2
+      - id: FoodBoxCloth
+        amount: 1
       - id: ReagentContainerSugar
       - id: FoodCondimentPacketSalt
         amount: 3
@@ -123,9 +125,6 @@
       - id: ClothingHandsGlovesLeather
       - id: ClothingOuterApronBotanist
       - id: ClothingHeadBandBotany
-      - id: HydroponicsToolClippers
-      - id: HydroponicsToolSpade
-      - id: HydroponicsToolMiniHoe
       - id: RobustHarvestChemistryBottle
         prob: 0.3
       - id: ClothingBeltPlant
@@ -160,7 +159,7 @@
 - type: entity
   id: ClosetJanitorBombFilled
   parent: ClosetJanitorBomb
-  suffix: Filled
+  suffix: DO NOT MAP, Filled
   components:
   - type: StorageFill
     contents:

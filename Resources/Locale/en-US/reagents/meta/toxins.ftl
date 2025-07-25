@@ -79,6 +79,9 @@ reagent-desc-tazinide = A highly dangerous metallic mixture which can interfere 
 reagent-name-lipolicide = lipolicide
 reagent-desc-lipolicide = A powerful toxin that will destroy fat cells, massively reducing body weight in a short time. Deadly to those without nutriment in their body.
 
+reagent-name-mechanotoxin = mechanotoxin
+reagent-desc-mechanotoxin = A neurotoxin used as venom by some species of spider. Degrades movement when built up.
+
 reagent-name-soulbreaker-toxin = soulbreaker toxin
 reagent-desc-soulbreaker-toxin = An anti-psionic about 4 times as powerful as mindbreaker toxin.
 
@@ -90,3 +93,6 @@ reagent-desc-ectoplasm = The physical component of semi-corporeal spirits.
 
 reagent-name-ousiana-dust = ousiana dust
 reagent-desc-ousiana-dust = A silent scream echos from this powder, it is a sledgehammer to the mind capable of violently breaking through any psionic blocks, at a cost.
+
+reagent-name-formic-acid = formic acid
+reagent-desc-formic-acid = A corrosive chemical used in the production of enzymes.

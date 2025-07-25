@@ -10,12 +10,13 @@
     - Oni
     - Reptilian
     - SlimePerson
-    - IPCs
+    - IPC
     - Harpy
     - Shadowkin
     - Plasmaman
-    - Chitinid
-    - Tajaran 
+#    - Chitinid
+    - Tajaran
+    - Xelthia
     # ImpStation additions
     - Thaven
 
@@ -55,9 +56,9 @@
   text: "/ServerInfo/Guidebook/Mobs/SlimePerson.xml"
 
 - type: guideEntry
-  id: IPCs
+  id: IPC
   name: species-name-ipc
-  text: "/ServerInfo/Guidebook/Mobs/IPCs.xml"
+  text: "/ServerInfo/Guidebook/Mobs/IPC.xml"
 
 - type: guideEntry
   id: Harpy
@@ -78,3 +79,8 @@
   id: Plasmaman
   name: species-name-plasmaman
   text: "/ServerInfo/Guidebook/Mobs/Plasmaman.xml"
+
+- type: guideEntry
+  id: Xelthia
+  name: species-name-xelthia
+  text: "/ServerInfo/_EE/Guidebook/Mobs/Xelthia.xml"

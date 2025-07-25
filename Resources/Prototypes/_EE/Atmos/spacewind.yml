@@ -1,0 +1,12 @@
+- type: entity
+  id: SpaceWindVisual
+  name: space wind motes
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: /Textures/Effects/spacewind.rsi
+    drawdepth: Effects
+    layers:
+    - state: "spacewind"
+  - type: TimedDespawn
+    lifetime: 2

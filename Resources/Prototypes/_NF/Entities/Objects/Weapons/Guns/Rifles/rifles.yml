@@ -64,30 +64,6 @@
 
 - type: entity
   parent: WeaponRifleGestio
-  id: WeaponRifleGestioRubber
-  suffix: Non-lethal
-  components:
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: MagazineLightRifleLowCapacityRubber
-        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
-        priority: 2
-        whitelist:
-          tags:
-            - MagazineLightRifle
-      gun_chamber:
-        name: Chamber
-        startingItem: CartridgeLightRifleRubber
-        priority: 1
-        whitelist:
-          tags:
-            - CartridgeLightRifle
-
-- type: entity
-  parent: WeaponRifleGestio
   id: WeaponRifleGestioEmpty
   suffix: Empty
   components:
@@ -167,30 +143,6 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
-
-- type: entity
-  parent: WeaponRifleNovaliteC1
-  id: WeaponRifleNovaliteC1Rubber
-  suffix: Non-lethal
-  components:
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: MagazineNovaliteC1Rubber
-        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
-        priority: 2
-        whitelist:
-          tags:
-            - MagazineNovaliteC1
-      gun_chamber:
-        name: Chamber
-        startingItem: CartridgeRifleRubber
-        priority: 1
-        whitelist:
-          tags:
-            - CartridgeRifle
 
 - type: entity
   parent: WeaponRifleNovaliteC1

@@ -40,19 +40,18 @@
   special:
   - !type:AddComponentSpecial
     components:
-    - type: Psionic
-      powerSlots: 2
-      baselinePowerCost: 75
-      nextPowerCost: 75
-      removable: false
-      powerPool: PsychoHistorianPowerPool
-  - !type:AddComponentSpecial
-    components:
-    - type: InnatePsionicPowers
-      powersToAdd:
-        - MetapsionicPower
-        - TelepathyPower
-        - MantisSummonBlackBlade # Dear Maintainer, say NOTHING about this.
+      - type: Psionic
+        powerSlots: 2
+        baselinePowerCost: 75
+        nextPowerCost: 75
+        removable: false
+        powerPool: PsychoHistorianPowerPool
+      - type: InnatePsionicPowers
+        powersToAdd:
+          - MetapsionicPower
+          - TelepathyPower
+          - MantisSummonBlackBlade
+
 
 - type: startingGear
   id: ForensicMantisGear
@@ -60,7 +59,7 @@
   - ForensicMantisPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitMantis
-    back: ClothingBackpackMantisFilled
+    back: ClothingBackpackScience
     shoes: ClothingShoesBootsMantis
     head: ClothingHeadHatFezMantis
     id: ForensicMantisPDA
@@ -70,13 +69,16 @@
     outerClothing: ClothingOuterCoatMantis
     belt: ClothingBeltMantis
     pocket1: BookPsionicsGuidebook
-  innerClothingSkirt: ClothingUniformSkirtMantis
-  satchel: ClothingBackpackSatchelMantisFilled
-  duffelbag: ClothingBackpackDuffelMantisFilled
+  storage:
+    back:
+    - HandLabeler
+    - PillMindbreakerToxin
+    - BoxFolderGrey
+    - RubberStampMantis
 
 - type: startingGear
   id: ForensicMantisPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitMantis
     head: ClothingHeadEnvirohelmMantis

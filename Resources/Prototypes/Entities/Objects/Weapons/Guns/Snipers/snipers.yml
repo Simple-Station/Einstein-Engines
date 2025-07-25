@@ -61,15 +61,15 @@
 
 - type: entity
   name: Kardashev-Mosin
-  parent: [BaseWeaponSniper, BaseGunWieldable]
+  parent: [BaseWeaponSniper, BaseGunWieldable, BaseSyndicateContraband]
   id: WeaponSniperMosin
   description: A weapon for hunting, or endless trench warfare, with a bayonet attached at the barrel. Uses .30 rifle ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
   - type: Gun
-    fireRate: 0.75 
-    damageModifier: 1.5 
+    fireRate: 0.75
+    damageModifier: 1.5
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -111,16 +111,6 @@
 - type: entity
   name: Kardashev-Mosin
   parent: WeaponSniperMosin
-  id: WeaponSniperMosinRubber
-  description: A weapon for hunting, or endless trench warfare. Uses .30 rifle rubber ammo.
-  suffix: Non-Lethal
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgeLightRifleRubber
-
-- type: entity
-  name: Kardashev-Mosin
-  parent: WeaponSniperMosin
   id: WeaponSniperMosinEmpty
   description: A weapon for hunting, or endless trench warfare. Uses .30 rifle ammo.
   suffix: Empty
@@ -136,7 +126,7 @@
 
 - type: entity
   name: Hristov
-  parent: [BaseWeaponSniper, BaseGunWieldable]
+  parent: [BaseWeaponSniper, BaseGunWieldable, BaseSyndicateContraband]
   id: WeaponSniperHristov
   description: A portable anti-materiel rifle. Fires armor piercing 14.5mm shells. Uses .60 anti-materiel ammo.
   components:
@@ -157,7 +147,7 @@
 
 - type: entity
   name: musket
-  parent: BaseWeaponSniper
+  parent: [ BaseWeaponSniper, BaseGunWieldable, BaseMinorContraband ]
   id: Musket
   description: This should've been in a museum long before you were born. Uses musket catridges. # Delta V - swapping to our crafted musket ammo
   components:
@@ -210,7 +200,7 @@
 
 - type: entity
   name: flintlock pistol
-  parent: BaseWeaponSniper
+  parent: [BaseWeaponSniper, BaseMinorContraband]
   id: WeaponPistolFlintlock
   description: A pirate's companion. Yarrr! Uses musket cartridges. # Delta V - Ditto the above
   components:

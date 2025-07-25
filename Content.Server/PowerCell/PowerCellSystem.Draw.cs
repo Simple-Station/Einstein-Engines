@@ -20,16 +20,23 @@ public sealed partial class PowerCellSystem
             if (!comp.Enabled)
                 continue;
 
-            if (Timing.CurTime < comp.NextUpdateTime)
-                continue;
+            // Any delay between zero and 1/tickrate will be equivalent to 1/tickrate delay.
+            // Setting delay to zero makes the draw "continuous"
+            float drawRate = comp.DrawRate;
+            if (comp.Delay == TimeSpan.Zero)
+                drawRate *= frameTime;
+            else
+            {
+                if (Timing.CurTime < comp.NextUpdateTime)
+                    continue;
+            }
 
             comp.NextUpdateTime += comp.Delay;
 
             if (!TryGetBatteryFromSlot(uid, out var batteryEnt, out var battery, slot))
                 continue;
 
-            // TCJ: "Multiplying by frameTime to make this tick-invariant. Otherwise it'll draw 30x to 60x faster than you expect."
-            if (_battery.TryUseCharge(batteryEnt.Value, comp.DrawRate * frameTime, battery))
+            if (_battery.TryUseCharge(batteryEnt.Value, drawRate, battery))
                 continue;
 
             var ev = new PowerCellSlotEmptyEvent();

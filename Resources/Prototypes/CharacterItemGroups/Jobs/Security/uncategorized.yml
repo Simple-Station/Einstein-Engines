@@ -20,6 +20,10 @@
       id: LoadoutClothingBeltSecurity
     - type: loadout
       id: LoadoutClothingBeltHolster
+    - type: loadout
+      id: LoadoutClothingBeltJudo
+    - type: loadout
+      id: LoadoutClothingBeltJudoHoS
 
 #- type: characterItemGroup
 #  id: LoadoutSecurityEars
@@ -66,6 +70,14 @@
       id: LoadoutSpeedLoaderRifleHeavyRubber
     - type: loadout
       id: LoadoutSpeedLoaderRifleHeavyRubberSpare
+    - type: loadout
+      id: LoadoutMagazineUniversalMagnum
+    - type: loadout
+      id: LoadoutMagazineUniversalMagnumSpare
+    - type: loadout
+      id: LoadoutMagazineUniversalMagnumRubber
+    - type: loadout
+      id: LoadoutMagazineUniversalMagnumRubberSpare
 
 - type: characterItemGroup
   maxItems: 1
@@ -137,6 +149,12 @@
       id: LoadoutBSORifleChester
     - type: loadout
       id: LoadoutSecurityShotgunSawnLumen
+    - type: loadout
+      id: LoadoutSecurityDisablerSMG
+    - type: loadout
+      id: LoadoutSecurityPistolUniversal
+    - type: loadout
+      id: LoadoutSecurityPistolUniversalNonLethal
 
 - type: characterItemGroup
   id: LoadoutSecurityEyes
@@ -179,9 +197,13 @@
     - type: loadout
       id: LoadoutSecurityHeadHelmetInsulated
     - type: loadout
-      id: LoadoutSecurityHeadHatSeniorTrooper
-    - type: loadout
       id: ClothingHeadHelmetTCFLHeavy
+    - type: loadout
+      id: LoadoutClothingHeadHelmetHeavyStandard
+    - type: loadout
+      id: ClothingHeadHelmetTCFLNoVisor
+    - type: loadout
+      id: ClothingHeadHelmetTCFLVisor
 
 #- type: characterItemGroup
 #  id: LoadoutSecurityId
@@ -218,6 +240,14 @@
       id: LoadoutClothingOuterArmorSlim
     - type: loadout
       id: ClothingOuterArmorTCFLHeavy
+    - type: loadout
+      id: ClothingOuterArmorTCFLLight
+    - type: loadout
+      id: LoadoutClothingOuterArmorStandardHeavy
+    - type: loadout
+      id: LoadoutClothingOuterJacketZavSecurity
+    - type: loadout
+      id: LoadoutClothingOuterJacketZavSecurityAlt
 
 - type: characterItemGroup
   id: LoadoutSecurityShoes
@@ -241,12 +271,20 @@
     - type: loadout
       id: LoadoutSecurityUniformJumpskirtBlue
     - type: loadout
-      id: LoadoutUniformJumpsuitSecFormal
-    - type: loadout
       id: LoadoutUniformJumpsuitSecSummer
-    - type: loadout
-      id: LoadoutSecurityUniformJumpsuitSeniorTrooper
     - type: loadout
       id: LoadoutSecurityUniformEnvirosuitBlue
     - type: loadout
       id: LoadoutSecurityUniformEnvirosuitGrey
+    - type: loadout
+      id: LoadoutSecurityUniformZavodSecurityOfficer
+    - type: loadout
+      id: LoadoutSecurityUniformZavodSecurityOfficerAlt1
+    - type: loadout
+      id: LoadoutSecurityUniformZavodSecurityOfficerAlt2
+    - type: loadout
+      id: LoadoutSecurityUniformZavodCadet
+    - type: loadout
+      id: LoadoutSecurityJumpskirtEOC
+    - type: loadout
+      id: LoadoutSecurityJumpsuitEOC

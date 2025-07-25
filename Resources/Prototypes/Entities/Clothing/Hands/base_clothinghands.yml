@@ -23,6 +23,21 @@
     tags:
     - ClothMade
     - WhitelistChameleon
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 5 # the average lightbulb only does around four damage!
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 5
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 - type: entity
   abstract: true
@@ -64,10 +79,10 @@
   parent: BaseItem
   id: RingBase
   components:
-    - type: Clothing
-      slots: [ gloves, neck ]
-    - type: Item
-      size: Tiny
-    - type: Tag
-      tags:
-      - Ring
+  - type: Clothing
+    slots: [ gloves, neck ]
+  - type: Item
+    size: Tiny
+  - type: Tag
+    tags:
+    - Ring

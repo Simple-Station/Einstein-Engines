@@ -57,7 +57,7 @@ namespace Content.Server.Atmos.EntitySystems
         /// <summary>
         ///     Overlay update interval, in seconds.
         /// </summary>
-        private float _updateInterval;
+        private float _updateInterval = 1f;
 
         private int _thresholds;
         private EntityQuery<GasTileOverlayComponent> _query;
@@ -122,7 +122,7 @@ namespace Content.Server.Atmos.EntitySystems
             }
 
             // PVS was turned off, ensure data gets sent to all clients.
-            var query = EntityQueryEnumerator<GasTileOverlayComponent, MetaDataComponent>();
+            var query = AllEntityQuery<GasTileOverlayComponent, MetaDataComponent>();
             while (query.MoveNext(out var uid, out var grid, out var meta))
             {
                 grid.ForceTick = _gameTiming.CurTick;
@@ -269,7 +269,7 @@ namespace Content.Server.Atmos.EntitySystems
         private void UpdateOverlayData()
         {
             // TODO parallelize?
-            var query = EntityQueryEnumerator<GasTileOverlayComponent, GridAtmosphereComponent, MetaDataComponent>();
+            var query = AllEntityQuery<GasTileOverlayComponent, GridAtmosphereComponent, MetaDataComponent>();
             while (query.MoveNext(out var uid, out var overlay, out var gam, out var meta))
             {
                 var changed = false;
@@ -293,18 +293,18 @@ namespace Content.Server.Atmos.EntitySystems
         public override void Update(float frameTime)
         {
             base.Update(frameTime);
+
+            // Prevent this system from running the expensive checks on every frame.
             AccumulatedFrameTime += frameTime;
+            if (AccumulatedFrameTime < _updateInterval)
+                return;
+            AccumulatedFrameTime = 0f;
 
             if (_doSessionUpdate)
             {
                 UpdateSessions();
                 return;
             }
-
-            if (AccumulatedFrameTime < _updateInterval)
-                return;
-
-            AccumulatedFrameTime -= _updateInterval;
 
             // First, update per-chunk visual data for any invalidated tiles.
             UpdateOverlayData();

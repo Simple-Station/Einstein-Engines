@@ -1,24 +1,17 @@
-using Content.Server.AlertLevel;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Atmos.Piping.Components;
 using Content.Server.Chat.Systems;
-using Content.Server.Decals;
 using Content.Server.DoAfter;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Kitchen.Components;
 using Content.Server.Lightning;
-using Content.Server.Lightning.Components;
 using Content.Server.Popups;
 using Content.Server.Radio.EntitySystems;
-using Content.Server.Speech;
-using Content.Server.Station.Systems;
 using Content.Shared._EE.CCVars;
 using Content.Shared._EE.Supermatter.Components;
 using Content.Shared._EE.Supermatter.Monitor;
 using Content.Shared.Atmos;
 using Content.Shared.Audio;
-using Content.Shared.Body.Components;
-using Content.Shared.CCVar;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
@@ -47,9 +40,6 @@ public sealed partial class SupermatterSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedAmbientSoundSystem _ambient = default!;
     [Dependency] private readonly LightningSystem _lightning = default!;
-    [Dependency] private readonly AlertLevelSystem _alert = default!;
-    [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly MapSystem _map = default!;
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
@@ -57,14 +47,35 @@ public sealed partial class SupermatterSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
 
+    // As a performance optimization, we store the CVars here so that fetching them repeatedly on every frame isn't necessary.
+    public float SupermatterSingulooseMolesModifier { get; private set; }
+    public bool SupermatterDoSingulooseDelam { get; private set; }
+    public float SupermatterTesloosePowerModifier { get; private set; }
+    public bool SupermatterDoTeslooseDelam { get; private set; }
+    public bool SupermatterDoForceDelam { get; private set; }
+    public DelamType SupermatterForcedDelamType { get; private set; }
+    public float SupermatterRadsBase { get; private set; }
+    public float SupermatterRadsModifier { get; private set; }
+    public float SupermatterYellTimer { get; private set; }
 
     public override void Initialize()
     {
         base.Initialize();
 
+        // CVar subscriptions
+        Subs.CVar(_config, ECCVars.SupermatterSingulooseMolesModifier, value => SupermatterSingulooseMolesModifier = value, true);
+        Subs.CVar(_config, ECCVars.SupermatterDoSingulooseDelam, value => SupermatterDoSingulooseDelam = value, true);
+        Subs.CVar(_config, ECCVars.SupermatterTesloosePowerModifier, value => SupermatterTesloosePowerModifier = value, true);
+        Subs.CVar(_config, ECCVars.SupermatterDoTeslooseDelam, value => SupermatterDoTeslooseDelam = value, true);
+        Subs.CVar(_config, ECCVars.SupermatterDoForceDelam, value => SupermatterDoForceDelam = value, true);
+        Subs.CVar(_config, ECCVars.SupermatterForcedDelamType, value => SupermatterForcedDelamType = value, true);
+        Subs.CVar(_config, ECCVars.SupermatterRadsBase, value => SupermatterRadsBase = value, true);
+        Subs.CVar(_config, ECCVars.SupermatterRadsModifier, value => SupermatterRadsModifier = value, true);
+        Subs.CVar(_config, ECCVars.SupermatterYellTimer, value => SupermatterYellTimer = value, true);
+
+        // Event subscriptions
         SubscribeLocalEvent<SupermatterComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<SupermatterComponent, AtmosDeviceUpdateEvent>(OnSupermatterUpdated);
-
         SubscribeLocalEvent<SupermatterComponent, StartCollideEvent>(OnCollideEvent);
         SubscribeLocalEvent<SupermatterComponent, InteractHandEvent>(OnHandInteract);
         SubscribeLocalEvent<SupermatterComponent, InteractUsingEvent>(OnItemInteract);
@@ -72,24 +83,25 @@ public sealed partial class SupermatterSystem : EntitySystem
         SubscribeLocalEvent<SupermatterComponent, SupermatterDoAfterEvent>(OnGetSliver);
     }
 
+    private HashSet<Entity<SupermatterComponent>> _activeSupermatterCrystals = new();
+
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
-        foreach (var sm in EntityManager.EntityQuery<SupermatterComponent>())
+        foreach (var ent in _activeSupermatterCrystals)
         {
-            if (!sm.Activated)
-                continue;
+            if (!ent.Comp.Activated)
+                _activeSupermatterCrystals.Remove(ent);
 
-            var uid = sm.Owner;
-            AnnounceCoreDamage(uid, sm);
+            AnnounceCoreDamage(ent.Owner, ent.Comp);
         }
     }
 
     private void OnMapInit(EntityUid uid, SupermatterComponent sm, MapInitEvent args)
     {
         // Set the yell timer
-        sm.YellTimer = TimeSpan.FromSeconds(_config.GetCVar(ECCVars.SupermatterYellTimer));
+        sm.YellTimer = TimeSpan.FromSeconds(SupermatterYellTimer);
 
         // Set the Sound
         _ambient.SetAmbience(uid, true);
@@ -121,7 +133,10 @@ public sealed partial class SupermatterSystem : EntitySystem
     private void OnCollideEvent(EntityUid uid, SupermatterComponent sm, ref StartCollideEvent args)
     {
         if (!sm.Activated)
+        {
             sm.Activated = true;
+            _activeSupermatterCrystals.Add((uid, sm));
+        }
 
         var target = args.OtherEntity;
         if (args.OtherBody.BodyType == BodyType.Static
@@ -165,7 +180,10 @@ public sealed partial class SupermatterSystem : EntitySystem
     private void OnHandInteract(EntityUid uid, SupermatterComponent sm, ref InteractHandEvent args)
     {
         if (!sm.Activated)
+        {
             sm.Activated = true;
+            _activeSupermatterCrystals.Add((uid, sm));
+        }
 
         var target = args.User;
 
@@ -183,7 +201,10 @@ public sealed partial class SupermatterSystem : EntitySystem
     private void OnItemInteract(EntityUid uid, SupermatterComponent sm, ref InteractUsingEvent args)
     {
         if (!sm.Activated)
+        {
             sm.Activated = true;
+            _activeSupermatterCrystals.Add((uid, sm));
+        }
 
         if (sm.SliverRemoved)
             return;

@@ -1,6 +1,6 @@
 - type: trait
   id: LatentPsychic
-  category: TraitsPsionicsCasterTypes
+  category: Psionics
   points: -4
   functions:
     - !type:TraitAddComponent
@@ -18,6 +18,7 @@
         - ForensicMantis
         - Chaplain
         - Librarian
+        - Prisoner
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -27,12 +28,10 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMachine
 
 - type: trait
   id: PsionicInsulation
-  category: TraitsPsionicsCasterTypes
+  category: Psionics
   points: -10 #Buy a significant disability to get this.
   functions:
     - !type:TraitAddComponent
@@ -63,7 +62,7 @@
 
 - type: trait
   id: PsychoHistorian
-  category: TraitsPsionicsCasterTypes
+  category: Psionics
   points: -4
   functions:
     - !type:TraitAddComponent
@@ -88,6 +87,7 @@
         - ForensicMantis
         - Chaplain
         - Librarian
+        - Prisoner
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -97,38 +97,3 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMachine
-
-- type: trait
-  id: Elementalist
-  category: TraitsPsionicsCasterTypes
-  points: -5
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: Psionic
-          roller: false
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsCasterType
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Borg
-        - MedicalBorg
-        - ResearchDirector
-        - ForensicMantis
-        - Chaplain
-        - Librarian
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMachine

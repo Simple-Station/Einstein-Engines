@@ -69,40 +69,23 @@
     offset: 0
     prototypes:
       - BoxMagazinePistolCaselessRiflePractice
-      - BoxMagazineCaselessRifleRubber
       - BoxMagazineLightRiflePractice
-      - BoxMagazineCaselessRifleRubber
-      - BoxMagazineLightRifleRubber
       - MagazineBoxMagnumPractice
       - BoxMagazineMagnumSubMachineGunPractice
-      - BoxMagazineMagnumSubMachineGunRubber
       - BoxMagazinePistolPractice
-      - BoxMagazinePistolRubber
       - BoxMagazinePistolHighCapacityPractice
-      - BoxMagazinePistolHighCapacityRubber
       - BoxMagazinePistolSubMachineGunPractice
-      - BoxMagazinePistolSubMachineGunRubber
       - BoxMagazineShotgunBeanbag
       - BoxBeanbag
       - BoxShotgunLumen
       - BoxShotgunPractice
       - BoxShellTranquilizer
-      - BoxMagazineCaselessRifleRubber
-      - BoxMagazineCaselessRifleRubber
       - BoxMagazineRiflePractice
-      - BoxMagazineCaselessRifleRubber
-      - BoxMagazineRifleRubber
-      - BoxMagazineCaselessRifleRubber
       - BoxMagazinePistolCaselessRiflePractice
       - BoxMagazinePistolCaselessRiflePractice
-      - BoxMagazineCaselessRifleRubber
       - BoxMagazinePistolCaselessRiflePractice
-      - BoxMagazineCaselessRifleRubber
       - BoxMagazinePistolCaselessRiflePractice
-      - BoxMagazineCaselessRifleRubber
       - BoxMagazineUniversalMagnumPractice
-      - BoxMagazineUniversalMagnumRubber
-      - MagazineBoxSpecialRubber
       - MagazineBoxSpecialPractice
     chance: 0.15
     rarePrototypes:
@@ -121,7 +104,6 @@
       - BoxShotgunSlug
       - BoxShotgunIncendiary
       - BoxMagazineRifle
-      - BoxMagazineCaselessRifleRubber
       - BoxShellSoulbreaker
       - BoxMagazineUniversalMagnum
       - BoxSpeedLoaderLightRifle

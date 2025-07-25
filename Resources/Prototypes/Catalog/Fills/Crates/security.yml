@@ -60,6 +60,55 @@
         amount: 2
 
 - type: entity
+  id: CrateSecurityHeavyBallisticArmor
+  parent: CrateSecgear
+  name: ballistic armor crate
+  description: Contains two sets of heavy ballistic armor, helmets, shields, and gas masks. Requires Security access to open.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterArmorBallisticHeavy
+        amount: 2
+      - id: ClothingHeadHelmetHeavyBallistic
+        amount: 2
+      - id: RiotBulletShield
+        amount: 2
+      - id: ClothingMaskGasSecurity
+        amount: 2
+
+- type: entity
+  id: CrateSecurityHeavyAblativeArmor
+  parent: CrateSecgear
+  name: laser-ablative armor crate
+  description: Contains two sets of heavy laser-ablative armor, helmets, shields, and gas masks. Requires Security access to open.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterArmorAblativeHeavy
+        amount: 2
+      - id: ClothingHeadHelmetHeavyAblative
+        amount: 2
+      - id: RiotLaserShield
+        amount: 2
+      - id: ClothingMaskGasSecurity
+        amount: 2
+
+- type: entity
+  id: CrateSecurityHeavySecurityArmor
+  parent: CrateSecgear
+  name: heavy security armor crate
+  description: Contains two sets of heavy security armor, helmets, and gas masks. Requires Security access to open.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterArmorStandardHeavy
+        amount: 2
+      - id: ClothingHeadHelmetHeavyStandard
+        amount: 2
+      - id: ClothingMaskGasSecurity
+        amount: 2
+
+- type: entity
   id: CrateSecuritySwat
   parent: CrateSecgear
   name: swat crate

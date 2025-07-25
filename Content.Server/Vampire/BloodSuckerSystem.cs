@@ -76,7 +76,7 @@ namespace Content.Server.Vampiric
         private void OnHealthExamined(EntityUid uid, BloodSuckedComponent component, HealthBeingExaminedEvent args)
         {
             args.Message.PushNewline();
-            args.Message.AddMarkup(Loc.GetString("bloodsucked-health-examine", ("target", uid)));
+            args.Message.AddMarkupOrThrow(Loc.GetString("bloodsucked-health-examine", ("target", uid)));
         }
 
         private void OnDamageChanged(EntityUid uid, BloodSuckedComponent component, DamageChangedEvent args)
@@ -157,11 +157,11 @@ namespace Content.Server.Vampiric
                 return false;
 
             // Does bloodsucker have a stomach?
-            var stomachList = _bodySystem.GetBodyOrganComponents<StomachComponent>(bloodsucker);
+            var stomachList = _bodySystem.GetBodyOrganEntityComps<StomachComponent>(bloodsucker);
             if (stomachList.Count == 0)
                 return false;
 
-            if (!_solutionSystem.TryGetSolution(stomachList[0].Comp.Owner, StomachSystem.DefaultSolutionName, out var stomachSolution))
+            if (!_solutionSystem.TryGetSolution(stomachList[0].Owner, StomachSystem.DefaultSolutionName, out var stomachSolution))
                 return false;
 
             // Are we too full?
@@ -185,7 +185,7 @@ namespace Content.Server.Vampiric
                 return false;
 
             var temp = _solutionSystem.SplitSolution(bloodstream.BloodSolution.Value, bloodsuckerComp.UnitsToSucc);
-            _stomachSystem.TryTransferSolution(stomachList[0].Comp.Owner, temp, stomachList[0].Comp);
+            _stomachSystem.TryTransferSolution(stomachList[0].Owner, temp, stomachList[0].Comp1);
 
             // Add a little pierce
             DamageSpecifier damage = new();

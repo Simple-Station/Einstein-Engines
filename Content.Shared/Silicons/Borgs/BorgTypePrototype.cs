@@ -75,12 +75,6 @@ public sealed partial class BorgTypePrototype : IPrototype
     public ProtoId<RadioChannelPrototype>[] RadioChannels = [];
 
     /// <summary>
-    /// Lawset that this borg will be binded to.
-    /// </summary>
-    [DataField(required: true)]
-    public ProtoId<SiliconLawsetPrototype> Laws = string.Empty;
-
-    /// <summary>
     /// Borg module types that are always available to borgs of this type.
     /// </summary>
     /// <remarks>
@@ -89,6 +83,13 @@ public sealed partial class BorgTypePrototype : IPrototype
     /// <seealso cref="BorgModuleComponent.DefaultModule"/>
     [DataField]
     public EntProtoId[] DefaultModules = [];
+
+    /// <summary>
+    /// DeltaV: Lawset to use instead of crewsimov.
+    /// If the chassis is emagged or ion stormed this is ignored.
+    /// </summary>
+    [DataField]
+    public ProtoId<SiliconLawsetPrototype>? Lawset;
 
     /// <summary>
     /// Additional components to add to the borg entity when this type is selected.

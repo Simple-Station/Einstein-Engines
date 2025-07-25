@@ -1,0 +1,125 @@
+# Basic
+- type: startingGear
+  id: BoxSurvival
+  subGear:
+  - BoxSurvivalOxygen
+  - BoxSurvivalNitrogen
+
+- type: startingGear
+  id: BoxSurvivalOxygen
+  parent: OxygenBreather
+  storage:
+    back:
+    - BoxSurvival
+
+- type: startingGear
+  id: BoxSurvivalNitrogen
+  parent: NitrogenBreather
+  storage:
+    back:
+    - BoxSurvivalNitrogen
+
+# Clown
+- type: startingGear
+  id: BoxSurvivalClown
+  subGear:
+  - BoxSurvivalClownOxygen
+  - BoxSurvivalClownNitrogen
+
+- type: startingGear
+  id: BoxSurvivalClownOxygen
+  parent: OxygenBreather
+  storage:
+    back:
+    - BoxHug
+
+- type: startingGear
+  id: BoxSurvivalClownNitrogen
+  parent: NitrogenBreather
+  storage:
+    back:
+    - BoxHugNitrogen
+
+# Engineering
+- type: startingGear
+  id: BoxSurvivalEngineering
+  subGear:
+  - BoxSurvivalEngineeringOxygen
+  - BoxSurvivalEngineeringNitrogen
+
+- type: startingGear
+  id: BoxSurvivalEngineeringOxygen
+  parent: OxygenBreather
+  storage:
+    back:
+    - BoxSurvivalEngineering
+
+- type: startingGear
+  id: BoxSurvivalEngineeringNitrogen
+  parent: NitrogenBreather
+  storage:
+    back:
+    - BoxSurvivalEngineeringNitrogen
+
+# Medical
+- type: startingGear
+  id: BoxSurvivalMedical
+  subGear:
+  - BoxSurvivalMedicalOxygen
+  - BoxSurvivalMedicalNitrogen
+
+- type: startingGear
+  id: BoxSurvivalMedicalOxygen
+  parent: OxygenBreather
+  storage:
+    back:
+    - BoxSurvivalMedical
+
+- type: startingGear
+  id: BoxSurvivalMedicalNitrogen
+  parent: NitrogenBreather
+  storage:
+    back:
+    - BoxSurvivalMedicalNitrogen
+
+# Security
+- type: startingGear
+  id: BoxSurvivalSecurity
+  subGear:
+  - BoxSurvivalSecurityOxygen
+  - BoxSurvivalSecurityNitrogen
+
+- type: startingGear
+  id: BoxSurvivalSecurityOxygen
+  parent: OxygenBreather
+  storage:
+    back:
+    - BoxSurvivalSecurity
+
+- type: startingGear
+  id: BoxSurvivalSecurityNitrogen
+  parent: NitrogenBreather
+  storage:
+    back:
+    - BoxSurvivalSecurityNitrogen
+
+# Syndicate
+- type: startingGear
+  id: BoxSurvivalSyndicate
+  subGear:
+  - BoxSurvivalSyndicateOxygen
+  - BoxSurvivalSyndicateNitrogen
+
+- type: startingGear
+  id: BoxSurvivalSyndicateOxygen
+  parent: OxygenBreather
+  storage:
+    back:
+    - BoxSurvivalSyndicate
+
+- type: startingGear
+  id: BoxSurvivalSyndicateNitrogen
+  parent: NitrogenBreather
+  storage:
+    back:
+    - BoxSurvivalSyndicateNitrogen

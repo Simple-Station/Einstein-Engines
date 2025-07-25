@@ -93,3 +93,15 @@
 - type: font
   id: Megrim
   path: /Fonts/Megrim/Megrim.ttf
+
+- type: font
+  id: Aliensatemymum
+  path: /Fonts/Aliensatemymum.ttf
+
+- type: font
+  id: YoureGone
+  path: /Fonts/YoureGone.otf
+
+- type: font
+  id: NovaFlat
+  path: /Fonts/NovaFlat/NovaFlat-Regular.ttf

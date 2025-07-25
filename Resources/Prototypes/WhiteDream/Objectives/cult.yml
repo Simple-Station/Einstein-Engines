@@ -5,7 +5,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Objective
-    issuer: The Geometer of Blood
+    issuer: objective-issuer-geometer-of-blood
     unique: true
     difficulty: 3
     icon:

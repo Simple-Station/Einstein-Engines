@@ -1,8 +1,8 @@
-﻿using Content.Server.Anomaly;
-using Content.Server.Announcements.Systems;
+﻿using Content.Server.Announcements.Systems;
+using Content.Server.Anomaly;
 using Content.Server.Station.Components;
 using Content.Server.StationEvents.Components;
-﻿using Content.Shared.GameTicking.Components;
+using Content.Shared.GameTicking.Components;
 using Robust.Shared.Player;
 
 namespace Content.Server.StationEvents.Events;
@@ -16,14 +16,14 @@ public sealed class AnomalySpawnRule : StationEventSystem<AnomalySpawnRuleCompon
     {
         base.Added(uid, component, gameRule, args);
 
+        if (!TryComp<StationEventComponent>(uid, out var stationEvent))
+            return;
+
         _announcer.SendAnnouncement(
             _announcer.GetAnnouncementId(args.RuleId),
-            Filter.Broadcast(),
             "anomaly-spawn-event-announcement",
-            null,
-            Color.FromHex("#18abf5"),
-            null, null,
-            ("sighting", Loc.GetString($"anomaly-spawn-sighting-{RobustRandom.Next(1, 6)}"))
+            colorOverride: stationEvent.StartAnnouncementColor,
+            localeArgs: [("sighting", Loc.GetString($"anomaly-spawn-sighting-{RobustRandom.Next(1, 6)}")), ]
         );
     }
 

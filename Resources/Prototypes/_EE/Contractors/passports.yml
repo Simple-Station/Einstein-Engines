@@ -6,8 +6,6 @@
   description: A passport denoting an individual's nationality and identity.
   components:
     - type: Passport
-    - type: UseDelay
-      delay: 0.5
     - type: Sprite
       sprite: _EE/Contractors/Passport.rsi
       layers:
@@ -144,3 +142,14 @@
       layers:
       - state: passport_goldendeep_open
       - state: passport_species_ipc
+
+- type: entity
+  name: Qiimaeru passport
+  parent: BasePassport
+  id: QiimaeruPassport
+  components:
+    - type: Sprite
+      sprite: _EE/Contractors/Passport.rsi
+      layers:
+      - state: passport_qiimaeru_open
+      - state: passport_species_xelthia

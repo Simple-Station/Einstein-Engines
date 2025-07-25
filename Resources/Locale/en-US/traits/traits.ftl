@@ -1,5 +1,7 @@
 trait-name-Blindness = Blindness
-trait-description-Blindness = You are legally blind, and can't see clearly past a few meters in front of you.
+trait-description-Blindness =
+    You are legally blind, and can't see clearly past a few meters in front of you.[color=red]
+    This cannot be cured in any way.[/color]
 trait-examined-Blindness = [color=lightblue]{CAPITALIZE(POSS-ADJ($target))} eyes are glassy and unfocused. It doesn't seem like {SUBJECT($target)} can see you well, if at all.[/color]
 
 trait-name-Narcolepsy = Narcolepsy
@@ -287,7 +289,7 @@ trait-description-SnailPaced =
 
 trait-name-LightStep = Light Step
 trait-description-LightStep =
-    You move with a gentle step, which makes your footsteps quieter.
+    You move with a gentle step, which makes your footsteps quieter when not wearing any kind of shoes.
 
 trait-name-Swashbuckler = Swashbuckler
 trait-description-Swashbuckler =
@@ -311,13 +313,6 @@ trait-description-Mystic =
 
 trait-name-Singer = Singer
 trait-description-Singer = You are naturally capable of singing simple melodies with your voice.
-
-trait-name-NaturalTelepath = Natural Telepath
-trait-description-NaturalTelepath =
-    As a naturally occuring Telepath, you are capable of fluent telepathic communication, regardless of
-    whether or not you possess any notable psychic powers. This offers all of the same benefits and
-    drawbacks of Latent Psychic, except that you are guaranteed to start with full Telepathy. You may
-    still gain powers as normal for a Latent Psychic.
 
 trait-name-TrapAvoider = Trap Avoider
 trait-description-TrapAvoider =
@@ -547,47 +542,48 @@ trait-description-ShadowkinBlackeye =
 
 trait-name-LyreBird = Lyre Bird
 trait-description-LyreBird =
-    Your natural talent for mimicry vastly exceeds that of other Harpies. You have the ability to perfectly imitate songs in their entirety.
+    Your talent for mimicry vastly exceeds the norms of others. You have the ability to perfectly imitate songs in their entirety.
     Be your own full symphony orchestra, jazz group, or metal band.
 
 trait-name-NaniteAutoRepairBots = Nanite Auto-Repair Bots
 trait-description-NaniteAutoRepairBots =
     Your chassis has been outfitted with Nanite Repair Drones. Whenever your sensors detect that you've recieved structural damage, the NRDs will activate to bring you back to operational standards.
+    If you have taken too much damage, the drones will shut down.
 
 trait-name-BionicLeg = Bionic Legs
 trait-description-BionicLeg =
     One or more of your limbs have been replaced with an expensive, state of the art bionic. It could be either one made of highly realistic synthflesh,
     or a more obvious metal limb. This limb provides enhanced speed to it's user, allowing you to run away from situations faster or get to a place faster.
 
-# trait-name-FlareShieldingModule = I.P.C Eye Module: Flare Shielding
+# trait-name-FlareShieldingModule = IPC Eye Module: Flare Shielding
 # trait-description-FlareShieldingModule =
 #    Your cybereyes have been fitted with a photochromic lense that automatically darkens in response to intense stimuli.
 #    This provides immunity from most bright flashes of light, such as those from welding arcs, exclusive to IPCs because it only needs the module
 #    skipping the eye insertion process.
 
-trait-name-SecurityEyesModule = I.P.C Eye Module: Sechud
+trait-name-SecurityEyesModule = IPC Eye Module: Sechud
 trait-description-SecurityEyesModule =
     A module installed in IPCs that work for the security department and similar, this module is considered contraband and may be removed if the unit isn't working for the security department.
 
-trait-name-MedicalEyesModule = I.P.C Eye Module: Medical
+trait-name-MedicalEyesModule = IPC Eye Module: Medical
 trait-description-MedicalEyesModule =
-    Your Cyber-Eyes have been upgraded to include a built-in Medical Hud, and a Chemical Analysis Hud, allowing you to track the relative health condition of biological organisms, and discern the chemicals in any solution.
+    Your eyes have been upgraded to include a built-in Medical Hud and chemical analyzer, allowing you to track the relative health condition of biological organisms and discern the chemicals in any solution.
 
-trait-name-DiagnosticEyesModule = I.P.C Eye Module: Diagnostics
+trait-name-DiagnosticEyesModule = IPC Eye Module: Diagnostics
 trait-description-DiagnosticEyesModule =
-    Your eyes have been upgraded to include a built-in Diagnostic Hud and flare shielding, allowing you to track the condition of synthetic entities, and providing eye protection against welding arcs.
+    Your eyes have been upgraded to include a built-in Diagnostic Hud and flare shielding, allowing you to track the condition of synthetic entities and providing eye protection against welding arcs.
 
-trait-name-OmniEyesModule = I.P.C Eye Module: Premium Model
+trait-name-OmniEyesModule = IPC Eye Module: Premium Model
 trait-description-OmniEyesModule =
     This upgrade provides the combined benefits of a SecHud, MedHud, and a Diagnostics Module.
     Note that this module is considered Contraband for anyone not under the employ of station Security personel,
     and may be disabled by your employer before dispatch to the station.
 
-trait-name-LightAmplificationModule = I.P.C Eye Module: Light Amplification
+trait-name-LightAmplificationModule = IPC Eye Module: Light Amplification
 trait-description-LightAmplificationModule =
     Your vision has been enhanced with a light amplifier module, enabling the user to toggle between standard sight and "Night Vision" mode.
 
-trait-name-ThermographicVisionModule = I.P.C Eye Module: Thermographic Scanner
+trait-name-ThermographicVisionModule = IPC Eye Module: Thermographic Scanner
 trait-description-ThermographicVisionModule =
     Your vision has been enhanced with a Thermographic Scanner. When enabled, it captures a snapshot of the user's surroundings, while highlighting all
     biological life forms. It can even detect individuals through the walls of a station.
@@ -617,3 +613,108 @@ trait-description-RestrictedGear =
     Either through personal ownership or theft, you have access to equipment that isn't particularly standard issue.
     Note that starting with an item [color=red]doesn't certify its legality[/color]. Conceal it or justify it.
     (You equip other jobs' items in the loadouts menu)
+
+trait-name-SurgeryTraining = Surgery Training
+trait-description-SurgeryTraining =
+    At some point in your life you acquired the knowledge and experience necessary for performing surgery effectively.
+    This trait boosts your surgery speed to 1.6, and is intended for non-medical characters, as medical jobs already have faster surgery.
+    (This is slightly faster than a medical intern (1.5) but slower than a normal doctor (1.75))
+
+trait-name-ExperiencedSurgeon = Experienced Surgeon
+trait-description-ExperiencedSurgeon =
+    Surgery is your specialty. You are faster than most at your craft.
+    This trait boosts your surgery speed to 2.5, which is the same as the innate boost CMO gets.
+    (This is either a boost from 1.75 or 2 depending on your job)
+
+trait-name-BionicPryArm = Prybar Prosthetics
+trait-description-BionicPryArm =
+    Your arms have been reinforced with steel and hydraulics. You can force your way out of some unpleasant situations.
+    This trait gives you cybernetic DX-1 Pryarms, which let you pry open unpowered doors easily.
+    (They essentially function like a crowbar)
+
+trait-name-Moffic = Moffic
+trait-description-Moffic =
+    The language of the mothpeople borders on complete unintelligibility.
+    Some species with compatible mouthparts (IPC's speakers, Harpies' Larynx, and Chitinid's buzzing) are able to learn it.
+
+trait-name-Chittin = Chittin
+trait-description-Chittin =
+    A language consisting of clicks, buzzes, and some variety of harsh insect sounds.
+    Most of what makes up their speech comes from their antennae, making it a near-impossible language for those without to learn.
+    However, some species with compatible mouthparts (IPC's speakers, Harpies' Larynx, and Mothpeople's buzzing and antennae) are still able to learn it.
+
+trait-name-IPCInefficientCogitator = Inefficient Cogitator
+trait-description-IPCInefficientCogitator =
+    Due to running with an outdated driver, your positronic brain consumes much more power than standard.
+    Your power drain is increased by ~33% (1.5/s -> 2/s).
+    (Note that this is exponentially worse for you with better power sources. A medium-capacity cell lasts you 6 mins instead of 8).
+
+trait-name-IPCBrittleBoneDisease = Defective Chassis
+trait-description-IPCBrittleBoneDisease =
+    Made from weaker materials, or corroded by age or damage, your body is much weaker than the standard for an IPC.
+    This trait reduces your threshold for death by 60 points.
+    (Just as the normal version, it halves the threshold. IPCs cannot be crit, so it instead makes you die 60 points sooner.)
+
+trait-name-Manic = Manic
+trait-description-Manic = Your perception of the world is subject to varying intensities. Anything that affects your mood will have its effects multiplied by between 0.7 and 1.3.
+
+trait-name-Mercurial = Mercurial
+trait-description-Mercurial = Your mood fluctuates regularly, causing you to have a random modifier to your mood that is always somewhere between -10 and +10.
+
+trait-name-DeadEmotions = Dead Emotions
+trait-description-DeadEmotions = You feel nothing, and are completely unaffected by all positive or negative mood modifiers.
+
+trait-name-IPCFaultyWaterproofing = Faulty Waterproofing
+trait-description-IPCFaultyWaterproofing =
+    Either due to damage or cheap construction, your chassis is not waterproof.
+    You take [color=orange]Shock[/color] damage any time you are splashed with water.
+faultyWaterproofing-damage-popup = The water causes your circuits to short out.
+
+trait-name-IPCFragileCircuits = Fragile Circuits
+trait-description-IPCFragileCircuits =
+    Your chassis is particularly bad at handling electric discharges.
+    You immediately shut down any time you take [color=orange]Shock[/color] damage and must be rebooted.
+fragileCircuits-kill-popup = {$name}'s circuits shut down from short-circuiting!
+
+trait-name-SuperiorRadiationShielding = Superior Radiation Shielding
+trait-description-SuperiorRadiationShielding =
+    Your chassis has been outfitted with superior radiation shielding, protecting your circuitry from all but the most extreme radiation sources.
+    Your innate flat damage reduction to [color=yellow]Radiation[/color] is increased from [color=green]1[/color] to [color=blue]5[/color].
+
+trait-name-G2Chassis = G2 Chassis
+trait-description-G2Chassis =
+    Your chassis has been manufactured to military specifications.
+    You have an innate [color=blue]7%[/color] chance for incoming projectiles to deflect off of your armored hull.
+
+trait-name-HardenedCircuits = Hardened Circuits
+trait-description-HardenedCircuits =
+    Your internal components have been reinforced with shock absorbing metal-foam.
+    You gain a [color=blue]20%[/color] resistance to explosive damage.
+    Your [color=red]weakness[/color] to [color=yellow]Shock[/color] has been inverted to a [color=green]resistance[/color]
+
+trait-name-CyberneticLeftLeg = Cybernetic Left Leg
+trait-description-CyberneticLeftLeg =
+    Your left leg has been replaced with a baseline cybernetic leg.
+    This does not cost any trait slot selections.
+
+trait-name-CyberneticRightLeg = Cybernetic Right Leg
+trait-description-CyberneticRightLeg =
+    Your right leg has been replaced with a baseline cybernetic leg.
+    This does not cost any trait slot selections.
+trait-name-Dwarf = Dwarf
+trait-description-Dwarf =
+    You are not just short and stout... You are a dwarf.
+    You get alcohol healing, you are resistant to poison, you also do not vomit when drunk.
+
+trait-name-Kobold = Kobold
+trait-description-Kobold =
+    You are not just short and stout... You are a kobold.
+    You get alcohol healing, you are resistant to poison, you also do not vomit when drunk.
+
+trait-name-ForkedTongue = Forked Tongue
+trait-description-ForkedTongue =
+    You have a more developed forked tongue that allows you to track and distinguish objects by their scent.
+
+trait-name-StuntedSnout = Stunted Snout
+trait-description-StuntedSnout =
+    Your sense of smell is stunted for one reason or another. You lack the ability to pick up scents.

@@ -19,19 +19,6 @@
 - type: traitCategory
   id: Psionics
   root: true
-  subCategories:
-    - TraitsPsionicsCasterTypes
-    - TraitsPsionicsFeats
-    - TraitsPsionicsPowers
-
-- type: traitCategory
-  id: TraitsPsionicsCasterTypes
-
-- type: traitCategory
-  id: TraitsPsionicsFeats
-
-- type: traitCategory
-  id: TraitsPsionicsPowers
 
 - type: traitCategory
   id: Speech

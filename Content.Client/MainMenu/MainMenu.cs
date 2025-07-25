@@ -137,7 +137,7 @@ namespace Content.Client.MainMenu
             catch (ArgumentException e)
             {
                 _userInterfaceManager.Popup($"Unable to connect: {e.Message}", "Connection error.");
-                Logger.Warning(e.ToString());
+                Logger.GetSawmill("connection").Warning(e.ToString());
                 _netManager.ConnectFailed -= _onConnectFailed;
                 _setConnectingState(false);
             }

@@ -9,9 +9,7 @@ using Content.Shared.Temperature;
 using Content.Shared.Verbs;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Player;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Light.EntitySystems
@@ -37,9 +35,15 @@ namespace Content.Server.Light.EntitySystems
 
         public override void Update(float frameTime)
         {
-            var query = EntityQueryEnumerator<ExpendableLightComponent>();
-            while (query.MoveNext(out var uid, out var light))
+            var query = EntityQueryEnumerator<ActiveExpendableLightComponent>();
+            while (query.MoveNext(out var uid, out var _))
             {
+                if (!TryComp(uid, out ExpendableLightComponent? light))
+                {
+                    RemCompDeferred<ActiveExpendableLightComponent>(uid);
+                    continue;
+                }
+
                 UpdateLight((uid, light), frameTime);
             }
         }
@@ -47,9 +51,6 @@ namespace Content.Server.Light.EntitySystems
         private void UpdateLight(Entity<ExpendableLightComponent> ent, float frameTime)
         {
             var component = ent.Comp;
-            if (!component.Activated)
-                return;
-
             component.StateExpiryTime -= frameTime;
 
             if (component.StateExpiryTime <= 0f)
@@ -81,6 +82,7 @@ namespace Content.Server.Light.EntitySystems
                             _item.SetHeldPrefix(ent, "unlit", component: item);
                         }
 
+                        RemCompDeferred<ActiveExpendableLightComponent>(ent);
                         break;
                 }
             }
@@ -99,7 +101,7 @@ namespace Content.Server.Light.EntitySystems
                     _item.SetHeldPrefix(ent, "lit", component: item);
                 }
 
-                var isHotEvent = new IsHotEvent() {IsHot = true};
+                var isHotEvent = new IsHotEvent() { IsHot = true };
                 RaiseLocalEvent(ent, isHotEvent);
 
                 component.CurrentState = ExpendableLightState.Lit;
@@ -107,7 +109,7 @@ namespace Content.Server.Light.EntitySystems
 
                 UpdateSounds(ent);
                 UpdateVisualizer(ent);
-
+                EnsureComp<ActiveExpendableLightComponent>(ent);
                 return true;
             }
 
@@ -134,7 +136,7 @@ namespace Content.Server.Light.EntitySystems
 
                 case ExpendableLightState.Dead:
                     _appearance.SetData(ent, ExpendableLightVisuals.Behavior, string.Empty, appearance);
-                    var isHotEvent = new IsHotEvent() {IsHot = true};
+                    var isHotEvent = new IsHotEvent() { IsHot = true };
                     RaiseLocalEvent(ent, isHotEvent);
                     break;
             }

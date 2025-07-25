@@ -13,7 +13,7 @@
 - type: loadout
   id: LoadoutMaskMuzzle
   category: Mask
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingMaskMuzzle
@@ -62,7 +62,7 @@
 - type: loadout
   id: LoadoutMaskNeckGaiterWhite
   category: Mask
-  cost: 1
+  cost: 0
   exclusive: true
   customColorTint: true
   items:

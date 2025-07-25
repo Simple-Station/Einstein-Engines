@@ -4,19 +4,14 @@
   description: job-description-paramedic
   playTimeTracker: JobParamedic
   requirements:
-    # - !type:RoleTimeRequirement # DeltaV - No Medical Doctor time requirement
-    #   role: JobMedicalDoctor
-    #   time: 14400 #4 hrs
-    - !type:CharacterDepartmentTimeRequirement # DeltaV - Medical dept time requirement
-      department: Medical
-      min: 28800 # DeltaV - 8 hours
-    - !type:CharacterEmployerRequirement
-      employers:
-      - Interdyne
-      - NanoTrasen
-      - ZengHuPharmaceuticals
-    # - !type:OverallPlaytimeRequirement # DeltaV - No playtime requirement
-    #   time: 54000 # 15 hrs
+  - !type:CharacterDepartmentTimeRequirement
+    department: Medical
+    min: 28800
+  - !type:CharacterEmployerRequirement
+    employers:
+    - Interdyne
+    - NanoTrasen
+    - ZengHuPharmaceuticals
   startingGear: ParamedicGear
   icon: "JobIconParamedic"
   supervisors: job-supervisors-cmo
@@ -24,7 +19,7 @@
   - Medical
   - Maintenance
   - External
-  - Paramedic # DeltaV - Add Paramedic access
+  - Paramedic
   extendedAccess:
   - Chemistry
   special:
@@ -40,22 +35,23 @@
   - ParamedicPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitParamedic
-    back: ClothingBackpackParamedicFilledDV
+    back: ClothingBackpackMedical
     shoes: ClothingShoesColorBlue
     id: ParamedicPDA
-    ears: ClothingHeadsetMedical
+    ears: ClothingBackpackMedical
     belt: ClothingBeltMedicalEMTFilled
     pocket1: HandheldGPSBasic
     pocket2: HandheldCrewMonitor
-  innerClothingSkirt: ClothingUniformJumpskirtParamedic
-  satchel: ClothingBackpackSatchelParamedicFilledDV
-  duffelbag: ClothingBackpackDuffelParamedicFilledDV
+  storage:
+    back:
+    - EmergencyRollerBedSpawnFolded
+    - BodyBagFolded
+    - Portafib
 
 - type: startingGear
   id: ParamedicPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitParamedic
     head: ClothingHeadEnvirohelmParamedic
     gloves: ClothingHandsGlovesEnviroglovesNitrile
-    shoes: ClothingShoesColorBlue

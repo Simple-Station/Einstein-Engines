@@ -19,6 +19,7 @@ chat-language-ValyrianStandard-name = Valyrian
 chat-language-Sign-name = Sign
 chat-language-Marish-name = Marish
 chat-language-Chittin-name = Chittin
+chat-language-Xeeplian-name = Xeeplian
 
 # Animal Languages
 

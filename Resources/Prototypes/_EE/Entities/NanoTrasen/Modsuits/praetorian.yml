@@ -73,7 +73,7 @@
     - type: FlashImmunity # Goobstation
     - type: FlashSoundSuppression # Goobstation
     - type: PointLight
-      color: "#FFDF00"
+      color: "#57b9ff"
     - type: SealableClothingVisuals
       visualLayers:
         head:
@@ -149,15 +149,6 @@
     - type: Tag
       tags:
         - WhitelistChameleon
-    - type: ClothingSpeedModifier
-      walkModifier: 1
-      sprintModifier: 1
-    - type: ToggleClothing
-      action: ActionToggleMagboots
-    - type: ComponentToggler
-      components:
-        - type: NoSlip
-    - type: Magboots
     - type: SealableClothingVisuals
       visualLayers:
         shoes:

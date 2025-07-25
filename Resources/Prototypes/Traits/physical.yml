@@ -1,7 +1,7 @@
 - type: trait
   id: WillToLive
   category: Physical
-  points: -3
+  points: -1
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -26,7 +26,7 @@
 - type: trait
   id: WillToDie
   category: Physical
-  points: 2
+  points: 1
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -50,7 +50,7 @@
 - type: trait
   id: Tenacity
   category: Physical
-  points: -4
+  points: -1
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -149,7 +149,7 @@
 - type: trait
   id: HighAdrenaline
   category: Physical
-  points: -5
+  points: -2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -174,7 +174,7 @@
 - type: trait
   id: AdrenalDysfunction
   category: Physical
-  points: 3
+  points: 2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -198,7 +198,7 @@
 - type: trait
   id: Masochism
   category: Physical
-  points: -5
+  points: -2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -239,7 +239,7 @@
 - type: trait
   id: Steadfast
   category: Physical
-  points: -4
+  points: -3
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -263,7 +263,7 @@
 - type: trait
   id: Feeble
   category: Physical
-  points: 3
+  points: 4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -320,7 +320,7 @@
 - type: trait
   id: Small
   category: Physical
-  points: -2
+  points: 0
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
@@ -355,7 +355,8 @@
     - !type:TraitReplaceComponent
       components:
         - type: TemperatureProtection
-          coefficient: 0.1 # Enough resistance to walk into the chef's freezer, or tolerate daytime temperatures on Glacier without a jacket.
+          heatingCoefficient: 0.1 # Enough resistance to walk into the chef's freezer, or tolerate daytime temperatures on Glacier without a jacket.
+          coolingCoefficient: 0.1
 
 # These traits largely exist to demonstrate more of the "Component Removals" functionality. This way contributors
 # can get used to seeing that they can "Remove and Replace" a pre-existing component.
@@ -363,13 +364,14 @@
 - type: trait
   id: Talons
   category: Physical
-  points: -1
+  points: 0
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
         - Harpy # Harpies already have talons
         - Arachnid # Apparently they have a "piercing" bite
+        - Xelthia # Talons don't make sense on tentacle arms
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -403,6 +405,7 @@
         - Tajaran # Tajaran also have cat claws
         - Reptilian # Reptilians also have cat claws.
         - Shadowkin # Shadowkins also have claws.
+        - Xelthia # Claws don't make sense on tentacle arms
         # - Vulpkanin # Vulpkanin have "Blunt" claws. One could argue this trait "Sharpens" their claws.
     - !type:CharacterTraitRequirement
       inverted: true
@@ -440,6 +443,7 @@
         - Arachne
         - IPC # Other species could justify getting this trait for Blunt stamina damage,
               # but 6 blunt -> 5 blunt is a straight up downgrade.
+        - Xelthia # Their tentacles aren't really weapons probably
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -463,7 +467,7 @@
 - type: trait
   id: StrikingCalluses
   category: Physical
-  points: -3
+  points: -2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -474,8 +478,10 @@
       traits:
         - Claws
         - Talons
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Xelthia # this would fall off
   functions:
     - !type:TraitModifyUnarmed
       flatDamageIncrease:
@@ -485,7 +491,7 @@
 - type: trait
   id: Spinarette
   category: Physical
-  points: -3
+  points: -2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -498,8 +504,7 @@
         - Arachne
         - Shadowkin
         - IPC
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
+        - Xelthia # this would fall off
   functions:
     - !type:TraitAddComponent
       components:
@@ -512,19 +517,29 @@
       tags:
         - SpiderCraft
 
-
 - type: trait
   id: BionicArm
   category: Physical
-  points: -10
+  points: -8
   requirements:
-    - !type:CharacterJobRequirement
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterJobRequirement
+        jobs:
+         - Paramedic
+      - !type:CharacterDepartmentRequirement
+          departments:
+          - Security
+          - Command
+          - Dignitary
+    - !type:CharacterTraitRequirement
       inverted: true
-      jobs:
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-        - Gladiator
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
+      traits:
+        - BionicPryArm
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Xelthia # this would fall off
   functions:
     - !type:TraitCyberneticLimbReplacement
       removeBodyPart: Arm
@@ -555,8 +570,10 @@
       inverted: true
       species:
         - IPC
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - BloodDeficiency
   functions: # TODO: Code Platelet factories as an actual obtainable implant, and replace this with TraitAddImplant
     - !type:TraitReplaceComponent
       components:
@@ -572,6 +589,8 @@
               Airloss: -0.25
               Toxin: -0.35
               Genetic: -0.35
+        - type: BloodDeficiency # Incredibly actually works
+          bloodLossPercentage: -0.025
 
 - type: trait
   id: DermalArmor
@@ -582,8 +601,6 @@
       inverted: true
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddArmor
       damageModifierSets:
@@ -597,7 +614,8 @@
 - type: trait
   id: CyberEyes
   category: Physical
-  points: -4
+  points: -1
+  slots: 0
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -613,17 +631,15 @@
         - Photophobia
         - Blindness
         - Nearsighted
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitPushDescription
       descriptionExtensions:
         - description: examine-cybereyes-message
           fontSize: 12
           requireDetailRange: true
-    - !type:TraitReplaceComponent
+    - !type:TraitRemoveComponent
       components:
-        - type: Flashable # Effectively, removes any flash-vulnerability species traits.
+        - type: EyeDamageOnFlashing
 
 
 # - type: trait
@@ -725,6 +741,7 @@
           damageContainers:
           - Inorganic
           - Silicon
+          - SiliconUnshielded
 
 - type: trait
   id: CyberEyesOmni
@@ -765,6 +782,7 @@
           - Biological
           - Inorganic
           - Silicon
+          - SiliconUnshielded
 
 - type: trait
   id: RestrictedGear
@@ -801,12 +819,12 @@
     - !type:TraitReplaceComponent
       components:
         - type: DeadModifier
-          deadThresholdModifier: -100
+          deadThresholdModifier: -99
 
 - type: trait
   id: BrittleBoneDisease
   category: Physical
-  points: 10
+  points: 6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -871,7 +889,7 @@
 - type: trait
   id: NaniteAutoRepairBots
   category: Physical
-  points: -10
+  points: -5
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -880,50 +898,68 @@
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions: # TODO: Code Platelet factories as an actual obtainable implant, and replace this with TraitAddImplant
     - !type:TraitReplaceComponent
       components:
         - type: PassiveDamage
           allowedStates:
           - Alive
-          - Critical
           - Dead
-          damageCap: 250
+          damageCap: 125
           damage:
             groups:
-              Brute: -0.6
-              Burn: -0.6
+              Brute: -0.5
+              Burn: -0.5
+
+# - type: trait
+#   id: BionicLeg
+#   category: Physical
+#   points: -8
+#   requirements:
+#     - !type:CharacterJobRequirement
+#       inverted: true
+#       jobs:
+#         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+#   functions:
+#     - !type:TraitPushDescription
+#       descriptionExtensions:
+#         - description: examine-bionic-leg-message
+#           fontSize: 12
+#           requireDetailRange: true
+#     - !type:TraitCyberneticLimbReplacement
+#       removeBodyPart: Leg
+#       partSymmetry: Left
+#       protoId: SpeedLeftLeg
+#       slotId: "left leg"
+#     - !type:TraitCyberneticLimbReplacement
+#       removeBodyPart: Leg
+#       partSymmetry: Right
+#       protoId: SpeedRightLeg
+#       slotId: "right leg"
 
 - type: trait
-  id: BionicLeg
+  id: CyberneticLeftLeg
   category: Physical
-  points: -8
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
+  points: 0
+  slots: 0
   functions:
-    - !type:TraitPushDescription
-      descriptionExtensions:
-        - description: examine-bionic-leg-message
-          fontSize: 12
-          requireDetailRange: true
     - !type:TraitCyberneticLimbReplacement
       removeBodyPart: Leg
       partSymmetry: Left
-      protoId: SpeedLeftLeg
+      protoId: LeftLegCybernetic
       slotId: "left leg"
+
+- type: trait
+  id: CyberneticRightLeg
+  category: Physical
+  points: 0
+  slots: 0
+  functions:
     - !type:TraitCyberneticLimbReplacement
       removeBodyPart: Leg
       partSymmetry: Right
-      protoId: SpeedRightLeg
+      protoId: RightLegCybernetic
       slotId: "right leg"
-
 
 # - type: trait
 #  id: FlareShieldingModule
@@ -943,8 +979,6 @@
 #       - Photophobia
 #        - Blindness
 #        - Nearsighted
-#    - !type:CharacterItemGroupRequirement
-#      group: TraitsMind
 #  functions:
 #    - !type:TraitAddComponent
 #      components:
@@ -976,8 +1010,6 @@
         - Photophobia
         - Blindness
         - Nearsighted
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -1005,8 +1037,6 @@
         - Photophobia
         - Blindness
         - Nearsighted
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -1038,8 +1068,6 @@
         - Photophobia
         - Blindness
         - Nearsighted
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -1048,6 +1076,7 @@
           damageContainers:
           - Inorganic
           - Silicon
+          - SiliconUnshielded
 
 - type: trait
   id: OmniEyesModule
@@ -1075,8 +1104,6 @@
         - MedicalEyesModule
         - DiagnosticEyesModule
         - SecurityEyesModule
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -1093,6 +1120,7 @@
           - Biological
           - Inorganic
           - Silicon
+          - SiliconUnshielded
 
 - type: trait
   id: LightAmplificationModule
@@ -1112,8 +1140,6 @@
         - Photophobia
         - Blindness
         - Nearsighted
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -1137,8 +1163,6 @@
         - Photophobia
         - Blindness
         - Nearsighted
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -1154,7 +1178,7 @@
 - type: trait
   id: Bodybuilder
   category: Physical
-  points: -6
+  points: -4
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
@@ -1173,7 +1197,7 @@
 - type: trait
   id: Featherweight
   category: Physical
-  points: 3
+  points: 4
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
@@ -1192,7 +1216,7 @@
 - type: trait
   id: Vampirism # You may port this to EE, you have my permission!
   category: Physical
-  points: -3
+  points: -5
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -1213,3 +1237,163 @@
           - Pill
           - Crayon
           - Paper
+
+- type: trait
+  id: BionicPryArm
+  category: Physical
+  points: -2
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - BionicArm
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Xelthia # this would fall off
+  functions:
+    - !type:TraitCyberneticLimbReplacement
+      removeBodyPart: Arm
+      partSymmetry: Left
+      protoId: CrowbarLeftArm
+      slotId: "left arm"
+    - !type:TraitCyberneticLimbReplacement
+      removeBodyPart: Arm
+      partSymmetry: Right
+      protoId: CrowbarRightArm
+      slotId: "right arm"
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-bionic-pryarm-message
+          fontSize: 12
+          requireDetailRange: true
+
+- type: trait
+  id: SuperiorRadiationShielding
+  category: Physical
+  points: -4
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+  functions:
+    - !type:TraitAddArmor
+      damageModifierSets:
+        - SuperiorRadiationShielding
+
+- type: trait
+  id: G2Chassis
+  category: Physical
+  points: -5
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Reflect
+          spread: 270
+          reflectProb: 0.07
+          innate: true
+          reflects:
+            - Energy
+            - NonEnergy
+
+- type: trait
+  id: HardenedCircuits
+  category: Physical
+  points: -3
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - IPCFaultyWaterproofing
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: ExplosionResistance
+          damageCoefficient: 0.8
+    - !type:TraitAddArmor
+      damageModifierSets:
+        - HardenedCircuits
+
+- type: trait
+  id: Dwarf
+  category: Physical
+  points: -4
+  requirements:
+    - !type:CharacterHeightRequirement
+      max: 150
+    - !type:CharacterWidthRequirement
+      max: 32
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: LiquorLifeline
+        - type: LightweightDrunk
+          boozeStrengthMultiplier: 0.5
+    - !type:TraitAddComponent
+      components:
+        - type: ScottishAccent
+    - !type:TraitAddArmor
+      damageModifierSets:
+        - ExtremePoisonResistance
+
+- type: trait
+  id: Kobold
+  category: Physical
+  points: -4
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Reptilian
+    - !type:CharacterHeightRequirement
+      max: 150
+    - !type:CharacterWidthRequirement
+      max: 32
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: LiquorLifeline
+        - type: LightweightDrunk
+          boozeStrengthMultiplier: 0.5
+    - !type:TraitAddComponent
+      components:
+        - type: ScottishAccent
+    - !type:TraitAddArmor
+      damageModifierSets:
+        - ExtremePoisonResistance
+
+- type: trait
+  id: ForkedTongue
+  category: Physical
+  points: -2
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Reptilian
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: ScentTracker
+
+- type: trait
+  id: StuntedSnout
+  category: Physical
+  points: 1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Vulpkanin
+  functions:
+    - !type:TraitRemoveComponent
+      components:
+        - type: ScentTracker

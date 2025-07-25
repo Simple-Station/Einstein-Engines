@@ -20,7 +20,7 @@
 - type: entity
   parent: [ClothingOuterStorageBase, AllowSuitStorageClothing, TCFLInfo]
   id: ClothingOuterArmorTCFLHeavy
-  name: TCFL heavy armor
+  name: TCAF heavy armor
   suffix: TCFL
   description: A suit of heavy armor used by members of the Tau-Ceti Armed Forces. Once common to the Sol Alliance, this wargear is often now made locally by companies such as Five-Points Armory, BRDI, or even NanoTrasen.
   components:
@@ -31,10 +31,10 @@
     - type: Armor
       modifiers:
         coefficients:
-          Blunt: 0.35
-          Slash: 0.35
-          Piercing: 0.35
-          Heat: 0.35
+          Blunt: 0.5
+          Slash: 0.5
+          Piercing: 0.5
+          Heat: 0.5
           Caustic: 0.5
     - type: ExplosionResistance
       damageCoefficient: 0.35
@@ -46,8 +46,39 @@
         - Energy
         - NonEnergy
     - type: ClothingSpeedModifier
-      walkModifier: 0.85
-      sprintModifier: 0.85
+      walkModifier: 0.7
+      sprintModifier: 0.7
+
+- type: entity
+  parent: [ClothingOuterStorageBase, AllowSuitStorageClothing, TCFLInfo]
+  id: ClothingOuterArmorTCFLLight
+  name: TCAF plate carrier
+  suffix: TCFL
+  description: A plate carrier worn by members of the Tau-Ceti Armed Forces. Once common to the Sol Alliance, this wargear is often now made locally by companies such as Five-Points Armory, BRDI, or even NanoTrasen.
+  components:
+    - type: Sprite
+      sprite: _EE/Clothing/BieselRepublic/OuterClothing/TCAF_plate_carrier_light.rsi
+    - type: Clothing
+      sprite: _EE/Clothing/BieselRepublic/OuterClothing/TCAF_plate_carrier_light.rsi
+    - type: Armor # Good against gunshots, decent against everything else. Balanced by reduced movement speed.
+      modifiers:
+        coefficients:
+          Blunt: 0.80
+          Slash: 0.80
+          Piercing: 0.50
+          Heat: 0.80
+    - type: ClothingSpeedModifier
+      walkModifier: 0.90
+      sprintModifier: 0.90
+    - type: ExplosionResistance # More protective against explosives than you think. Helps in preventing all those vital organs from jiggling around o.o
+      damageCoefficient: 0.70
+    - type: Reflect
+      reflectProb: 0.05
+      spread: 270
+      innate: true
+      reflects:
+        - Energy
+        - NonEnergy
 
 - type: entity
   parent: [ClothingOuterStorageBase, AllowSuitStorageClothing, TCFLInfo]
@@ -68,4 +99,5 @@
           Piercing: 0.95
           Heat: 0.85
     - type: TemperatureProtection
-      coefficient: 0.1
+      heatingCoefficient: 0.1
+      coolingCoefficient: 0.1

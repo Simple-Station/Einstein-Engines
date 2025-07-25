@@ -1,5 +1,4 @@
 using Content.Server.DeviceNetwork.Components;
-using Content.Server.Medical.SuitSensors;
 using Content.Server.Power.EntitySystems;
 using Content.Server.PowerCell;
 using Content.Server.Radio.Components;
@@ -7,8 +6,8 @@ using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.PowerCell.Components;
-using Content.Shared.RadioJammer;
 using Content.Shared.Radio.EntitySystems;
+using Content.Shared.RadioJammer;
 
 namespace Content.Server.Radio.EntitySystems;
 
@@ -26,7 +25,6 @@ public sealed class JammerSystem : SharedJammerSystem
         SubscribeLocalEvent<ActiveRadioJammerComponent, PowerCellChangedEvent>(OnPowerCellChanged);
         SubscribeLocalEvent<RadioJammerComponent, ExaminedEvent>(OnExamine);
         SubscribeLocalEvent<RadioSendAttemptEvent>(OnRadioSendAttempt);
-        SubscribeLocalEvent<SuitSensorComponent, SuitSensorsSendAttemptEvent>(OnSensorSendAttempt);
     }
 
     public override void Update(float frameTime)
@@ -35,7 +33,6 @@ public sealed class JammerSystem : SharedJammerSystem
 
         while (query.MoveNext(out var uid, out var _, out var jam))
         {
-
             if (_powerCell.TryGetBatteryFromSlot(uid, out var batteryUid, out var battery))
             {
                 if (!_battery.TryUseCharge(batteryUid.Value, GetCurrentWattage(jam) * frameTime, battery))
@@ -60,9 +57,7 @@ public sealed class JammerSystem : SharedJammerSystem
                         ChangeChargeLevel(RadioJammerChargeLevel.Medium, uid);
                     }
                 }
-
             }
-
         }
     }
 
@@ -122,14 +117,6 @@ public sealed class JammerSystem : SharedJammerSystem
     private void OnRadioSendAttempt(ref RadioSendAttemptEvent args)
     {
         if (ShouldCancelSend(args.RadioSource))
-        {
-            args.Cancelled = true;
-        }
-    }
-
-    private void OnSensorSendAttempt(EntityUid uid, SuitSensorComponent comp, ref SuitSensorsSendAttemptEvent args)
-    {
-        if (ShouldCancelSend(uid))
         {
             args.Cancelled = true;
         }

@@ -17,14 +17,16 @@ using Content.Shared.Parallax.Biomes;
 using Content.Shared.Salvage;
 using Content.Shared.Shuttles.Components;
 using Robust.Server.GameObjects;
-using Robust.Server.Maps;
 using Robust.Shared.Configuration;
+using Robust.Shared.EntitySerialization;
+using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Utility;
 
 namespace Content.Server._Lavaland.Procedural.Systems;
 
@@ -46,6 +48,7 @@ public sealed class LavalandPlanetSystem : EntitySystem
     [Dependency] private readonly BiomeSystem _biome = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
+    [Dependency] private readonly MapSystem _mapSystem = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly ShuttleSystem _shuttle = default!;
     [Dependency] private readonly StationSystem _station = default!;
@@ -123,7 +126,7 @@ public sealed class LavalandPlanetSystem : EntitySystem
             TerminatingOrDeleted(_lavalandPreloader.Value.Uid))
             return;
 
-        _mapManager.DeleteMap(_lavalandPreloader.Value.Id);
+        _mapSystem.DeleteMap(_lavalandPreloader.Value.Id);
         _lavalandPreloader = null;
     }
 
@@ -170,7 +173,7 @@ public sealed class LavalandPlanetSystem : EntitySystem
 
         PlanetBasicSetup(lavalandMap, prototype, seed.Value);
 
-        _mapManager.SetMapPaused(lavalandMapId, true);
+        _mapSystem.SetPaused(lavalandMapId, true);
 
         if (!SetupOutpost(lavalandMap, lavalandMapId, prototype.OutpostPath, out var outpost))
             return false;
@@ -199,8 +202,8 @@ public sealed class LavalandPlanetSystem : EntitySystem
         }
 
         // Start!!1!!!
-        _mapManager.DoMapInitialize(lavalandMapId);
-        _mapManager.SetMapPaused(lavalandMapId, false);
+        _mapSystem.InitializeMap(lavalandMapId);
+        _mapSystem.SetPaused(lavalandMapId, false);
 
         // also preload the planet itself
         _biome.Preload(lavalandMap, Comp<BiomeComponent>(lavalandMap), loadBox);
@@ -251,16 +254,14 @@ public sealed class LavalandPlanetSystem : EntitySystem
 
     }
 
-    private bool SetupOutpost(EntityUid lavaland, MapId lavalandMapId, string path, out EntityUid outpost)
+    private bool SetupOutpost(EntityUid lavaland, MapId lavalandMapId, ResPath path, out EntityUid outpost)
     {
         outpost = EntityUid.Invalid;
 
         // Setup Outpost
-        if (!_mapLoader.TryLoad(lavalandMapId, path, out var outposts) || outposts.Count != 1)
+        if (!_mapLoader.TryLoadGrid(lavalandMapId, path, out _))
         {
-            Log.Error(outposts?.Count > 1
-                ? $"Loading Outpost on lavaland map failed, {path} is not saved as a grid."
-                : $"Failed to spawn Outpost {path} onto Lavaland map.");
+            Log.Error($"Failed to spawn Outpost {path} onto Lavaland map.");
             return false;
         }
 
@@ -492,12 +493,7 @@ public sealed class LavalandPlanetSystem : EntitySystem
         var mapXform = Transform(salvMap);
 
         // Try to load everything on a dummy map
-        var opts = new MapLoadOptions
-        {
-            Offset = coord
-        };
-
-        if (!_mapLoader.TryLoad(mapXform.MapID, ruin.Path, out _, opts) || mapXform.ChildCount != 1)
+        if (!_mapLoader.TryLoadGrid(mapXform.MapID, ruin.Path, out _, offset:coord))
         {
             Log.Error($"Failed to load ruin {ruin.ID} onto dummy map!");
             return false;
@@ -545,9 +541,7 @@ public sealed class LavalandPlanetSystem : EntitySystem
             var bounds = new List<Box2>();
 
             // Try to load everything on a dummy map
-            var opts = new MapLoadOptions();
-
-            if (!_mapLoader.TryLoad(mapId, proto.Path, out _, opts) || dummyMapXform.ChildCount == 0)
+            if (!_mapLoader.TryLoadGrid(mapId, proto.Path, out _))
             {
                 Log.Error($"Failed to load ruin {proto.ID} onto dummy map!");
                 continue;

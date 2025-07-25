@@ -27,6 +27,7 @@ research-technology-basic-weapons = Basic Weapons
 research-technology-draconic-munitions = Draconic Munitions
 research-technology-uranium-munitions = Uranium Munitions
 research-technology-explosive-technology = Explosive Technology
+research-technology-special-means = Special Means
 research-technology-practice-ammunition = Practice Ammunition
 research-technology-shrapnel-munitions = Shrapnel Munitions
 research-technology-advanced-weapons = Advanced Weapons
@@ -58,3 +59,5 @@ research-technology-basic-electronics = Basic Electronics
 research-technology-basic-life-improvements = Basic Life Improvements
 research-technology-honk-mech = H.O.N.K. Mech
 research-technology-advanced-life-improvements = Advanced Life Improvements
+
+research-technology-positronic-interfacing = Positronic Interfacing

@@ -145,7 +145,7 @@
 - type: trait
   id: Saturnine
   category: Mental
-  points: 6
+  points: 2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -164,7 +164,7 @@
 - type: trait
   id: Sanguine
   category: Mental
-  points: -6
+  points: -2
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -208,3 +208,55 @@
         - type: ReplacementAccent
           replacementChance: 0.15
           accent: liar
+
+- type: trait
+  id: Manic
+  category: Mental
+  points: 0
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - StationAi
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Manic
+
+- type: trait
+  id: Mercurial
+  category: Mental
+  points: 0
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - StationAi
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Mercurial
+
+- type: trait
+  id: DeadEmotions
+  category: Mental
+  points: -5
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - StationAi
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Sanguine
+        - Saturnine
+        - Manic
+        - Mercurial
+  functions:
+    - !type:TraitRemoveComponent
+      components:
+        - type: Mood

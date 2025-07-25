@@ -25,7 +25,7 @@ public sealed partial class AccessLevelControl : GridContainer
         {
             if (!prototypeManager.TryIndex(access, out var accessLevel))
             {
-                Logger.Error($"Unable to find accesslevel for {access}");
+                Logger.GetSawmill("accesslevelcontrol.ui").Error($"Unable to find accesslevel for {access}");
                 continue;
             }
 

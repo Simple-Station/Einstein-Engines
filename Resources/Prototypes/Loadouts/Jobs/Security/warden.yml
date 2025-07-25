@@ -118,3 +118,21 @@
         - Warden
   items:
     - ClothingUniformJumpskirtWardenGrey
+
+- type: loadout
+  id: LoadoutUniformJumpskirtZavodWarden
+  category: JobsSecurityWarden
+  cost: 0
+  exclusive: true
+  guideEntry: ZavodskoiInterstellar
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWardenUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+    - !type:CharacterEmployerRequirement
+      employers:
+        - ZavodskoiInterstellar
+  items:
+    - ClothingUniformJumpsuitZavodWarden

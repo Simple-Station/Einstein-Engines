@@ -16,8 +16,6 @@
          - type: StationEmergencyShuttle
            emergencyShuttlePath: /Maps/Shuttles/DeltaV/NTES_Seal.yml
          - type: StationJobs
-           overflowJobs:
-             - Passenger
            availableJobs:
            #civilian
              Passenger: [ -1, -1 ]
@@ -26,8 +24,8 @@
              Captain: [ 1, 1 ]
              BlueshieldOfficer: [ 1, 1]
              NanotrasenRepresentative: [ 1, 1 ]
-             Magistrate: [ 1, 1 ]
-             AdministrativeAssistant: [ 1, 1 ]
+             # Magistrate: [ 1, 1 ] # EE: Disabled
+             # AdministrativeAssistant: [ 1, 1 ] # EE: Disabled
            #engineering
              AtmosphericTechnician: [ 1, 2 ]
              ChiefEngineer: [ 1, 1 ]
@@ -47,7 +45,7 @@
              Detective: [ 1, 1 ]
              HeadOfSecurity: [ 1, 1 ]
              Prisoner: [ 2, 3 ]
-             PrisonGuard: [ 1, 1 ]
+             # PrisonGuard: [ 1, 1 ] # EE: Disabled
              SecurityOfficer: [ 4, 6 ]
              SeniorOfficer: [ 1, 1 ]
              SecurityCadet: [ 1, 2 ]
@@ -55,7 +53,7 @@
            #service
              Bartender: [ 2, 2 ]
              Botanist: [ 2, 3 ]
-             Boxer: [ 2, 2 ]
+             # Boxer: [ 2, 2 ] # EE: Disabled
              Chef: [ 2, 3 ]
              Clown: [ 1, 2 ]
              HeadOfPersonnel: [ 1, 1 ]
@@ -80,3 +78,9 @@
            # Silicon
              StationAi: [ 1, 1 ]
              Borg: [ 3, 4 ]
+         # Goobstation blob-config-start HUGE
+         - type: StationBlobConfig
+           stageBegin: 40
+           stageCritical: 450
+           stageTheEnd: 900
+         # Goobstation blob-config-end

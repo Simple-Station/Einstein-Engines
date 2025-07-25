@@ -233,7 +233,7 @@ namespace Content.Server.Atmos.EntitySystems
             tile.MapAtmosphere = false;
             atmos.MapTiles.Remove(tile);
             tile.Air = null;
-            Array.Clear(tile.MolesArchived);
+            tile.AirArchived = null;
             tile.ArchivedCycle = 0;
             tile.LastShare = 0f;
             tile.Space = false;
@@ -263,7 +263,7 @@ namespace Content.Server.Atmos.EntitySystems
                     return;
 
                 tile.Air = null;
-                Array.Clear(tile.MolesArchived);
+                tile.AirArchived = null;
                 tile.ArchivedCycle = 0;
                 tile.LastShare = 0f;
                 tile.Hotspot = new Hotspot();
@@ -572,9 +572,13 @@ namespace Content.Server.Atmos.EntitySystems
                 _currentRunAtmosphereIndex = 0;
                 _currentRunAtmosphere.Clear();
 
-                var query = EntityQueryEnumerator<GridAtmosphereComponent, GasTileOverlayComponent, MapGridComponent>();
-                while (query.MoveNext(out var uid, out var atmos, out var overlay, out var grid))
+                var query = EntityQueryEnumerator<GridAtmosphereComponent>();
+                while (query.MoveNext(out var uid, out var atmos))
                 {
+                    if (!TryComp(uid, out GasTileOverlayComponent? overlay)
+                        || !TryComp(uid, out MapGridComponent? grid))
+                        continue;
+
                     _currentRunAtmosphere.Add((uid, atmos, overlay, grid, Transform(uid)));
                 }
             }
@@ -655,16 +659,6 @@ namespace Content.Server.Atmos.EntitySystems
                         }
 
                         atmosphere.ProcessingPaused = false;
-                        atmosphere.State = AtmosphereProcessingState.HighPressureDelta;
-                        continue;
-                    case AtmosphereProcessingState.HighPressureDelta:
-                        if (!ProcessHighPressureDelta((ent, ent)))
-                        {
-                            atmosphere.ProcessingPaused = true;
-                            return;
-                        }
-
-                        atmosphere.ProcessingPaused = false;
                         atmosphere.State = AtmosphereProcessingState.Hotspots;
                         continue;
                     case AtmosphereProcessingState.Hotspots:
@@ -680,10 +674,20 @@ namespace Content.Server.Atmos.EntitySystems
                         //       Therefore, a change to this CVar might only be applied after that step is over.
                         atmosphere.State = Superconduction
                             ? AtmosphereProcessingState.Superconductivity
-                            : AtmosphereProcessingState.PipeNet;
+                            : AtmosphereProcessingState.HighPressureDelta;
                         continue;
                     case AtmosphereProcessingState.Superconductivity:
                         if (!ProcessSuperconductivity(atmosphere))
+                        {
+                            atmosphere.ProcessingPaused = true;
+                            return;
+                        }
+
+                        atmosphere.ProcessingPaused = false;
+                        atmosphere.State = AtmosphereProcessingState.HighPressureDelta;
+                        continue;
+                    case AtmosphereProcessingState.HighPressureDelta:
+                        if (!ProcessHighPressureDelta((ent, ent)))
                         {
                             atmosphere.ProcessingPaused = true;
                             return;
