@@ -575,20 +575,6 @@
 
 - type: entity
   parent: BaseFlatpack
-  id: AdvancedVariableCommodityFablatheFlatpack
-  name: SHI CF-84 advanced variable commodity fabricator flatpack
-  description:  Parts used to build an advanced factory. Activate with a multitool to deploy.
-  components:
-  - type: Flatpack
-    entity: AdvancedVariableCommodityFablathe
-  - type: Sprite
-    layers:
-    - state: ame-part
-  - type: StaticPrice
-    price: 500
-
-- type: entity
-  parent: BaseFlatpack
   id: AutoloomFablatheFlatpack
   name: SHI portable autoloom fablathe flatpack
   description: Parts used to build an autoloom factory. Activate with a multitool to deploy.
