@@ -140,7 +140,7 @@
     bluntStaminaDamageFactor: 2
     heavyStaminaCost: 5
   - type: DamageOtherOnHit
-    staminaCost: 9
+    staminaCost: 15
   - type: Item
     size: Normal
   - type: Tag
