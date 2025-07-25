@@ -5,13 +5,13 @@
   description: A collection of scrap from whatever wrecks you come across.
   components:
   - type: Sprite
-    sprite: Objects/Materials/materials.rsi
-    state: cloth_3
+    sprite: Objects/Materials/Scrap/generic.rsi
+    state: glass-6
     layers:
-    - state: cloth_3
+    - state: glass-6
       map: ["base"]
   - type: Item
-    sprite: Objects/Materials/materials.rsi
+    sprite: Objects/Materials/Scrap/generic.rsi
     size: Normal
   - type: Appearance
   - type: StaticPrice
@@ -23,9 +23,9 @@
     stackType: Scrap
     baseLayer: base
     layerStates:
-    - cloth
-    - cloth_2
-    - cloth_3
+    - glass-1
+    - glass-3
+    - glass-6
 
 - type: entity
   parent: SheetScrapBase
@@ -86,7 +86,7 @@
 - type: stack
   id: Scrap
   name: scrap
-  icon: { sprite: Objects/Materials/materials.rsi, state: cloth }
+  icon: { sprite: Objects/Materials/Scrap/generic.rsi, state: glass-1 }
   spawn: SheetScrap
   maxCount: 30
   itemSize: 1

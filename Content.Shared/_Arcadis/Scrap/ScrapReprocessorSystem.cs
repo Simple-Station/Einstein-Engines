@@ -53,14 +53,10 @@ public sealed class ScrapReprocessorSystem : EntitySystem
             return;
         }
 
-        // Play sound
-        _audioSystem.PlayPvs(component.Sound, args.Target);
-
-        var itemSpawned = false;
-
-
         if (!_netMan.IsServer)
             return;
+
+        _audioSystem.PlayPvs(component.Sound, args.Target);
 
         // Run loop to spawn items for every piece of scrap in the stack
         for (var i = 0; i < stackComponent.Count; i++)
@@ -71,7 +67,6 @@ public sealed class ScrapReprocessorSystem : EntitySystem
                 // Spawn item
                 if (scrapComponent.OutputItems != null)
                 {
-                    itemSpawned = true; // Setting this for flavour text reasons
                     var item = _protoMan.Index<WeightedRandomEntityPrototype>(scrapComponent.OutputItems).Pick(_random);
                     var reward = EntityManager.SpawnNextToOrDrop(item, uid);
                     var direction = new Vector2(_random.Next(-30, 30), _random.Next(-30, 30));
@@ -87,15 +82,5 @@ public sealed class ScrapReprocessorSystem : EntitySystem
 
         // Remove scrap from hand
         QueueDel(args.Used);
-
-        if (itemSpawned)
-        {
-            _popupSystem.PopupEntity(Loc.GetString($"reprocessor-complete-item-{_random.Next(1, 9)}"), args.Target, args.User);
-        }
-        else
-        {
-            _popupSystem.PopupEntity(Loc.GetString($"reprocessor-complete-{_random.Next(1, 5)}"), args.Target, args.User);
-        }
-
     }
 }
