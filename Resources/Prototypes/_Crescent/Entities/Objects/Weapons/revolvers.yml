@@ -12,7 +12,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
+      collection: Revolver_1_Gunshots
       params:
         volume: 2.25
   - type: StaticPrice

@@ -23,6 +23,20 @@
   - ClothingHeadHelmetNCWLBasic
 
 - type: technology
+  id: CommunardRiotGear
+  name: research-technology-communard-riotgear
+  icon:
+    sprite: _Crescent/Objects/Weapons/ncwlshieldriot.rsi
+    state: icon
+  discipline: Communard
+  tier: 1
+  cost: 2000
+  recipeUnlocks:
+  - NCWLLugBaton
+  - NCWLRiotShield
+  - ClothingHeadHelmetNCWLRiot
+
+- type: technology
   id: CommunardInfantry
   name: research-technology-communard-infantry
   icon:

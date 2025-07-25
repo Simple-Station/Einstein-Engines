@@ -32,7 +32,7 @@
       - SemiAuto
       - FullAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
+      collection: Pistol_2_Gunshots
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/pistol_cock.ogg
@@ -82,7 +82,7 @@
     staminaCost: 5
 
 - type: entity
-  name: PTA Viper 9x19mm
+  name: PTA BA-9 Viper 9x19mm
   parent: BaseWeaponPistol
   id: WeaponPistolViper
   description: A small, easily concealable, but somewhat underpowered gun, produced by a bulk arms manufacturer now defunct for over a century. Uses 9x19mm PSTF ammo.
@@ -119,7 +119,7 @@
       - SemiAuto
       - FullAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
+      collection: Pistol_2_Gunshots
     fireOnDropChance: 0.3
 
 - type: entity
@@ -215,9 +215,9 @@
     damageModifier: 1.25 # "Extra Robust" despite having an underpowered cartridge.
     fireRate: 4
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/silenced.ogg
+      collection: Supressed_1_Gunshots
       params:
-        volume: -14
+        volume: -10
     availableModes:
     - SemiAuto
     fireOnDropChance: 0.1
@@ -270,10 +270,10 @@
             - CartridgeCaselessRifle
 
 - type: entity
-  name: MK58 Tayamura 9x19mm
+  name: SHI M008 Hi-Po 6mm
   parent: BaseWeaponPistol
   id: WeaponPistolMk58
-  description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary, the design of which was later publicized. Uses 9x19mm PSTF ammo.
+  description: A cheap, oversized, and unreliable pistol. You’d be better off using it to beat someone to death, assuming it doesn’t shatter into 16 pieces after the first hit. Uses 9x19mm PSTF ammo.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/tayamura.rsi
@@ -287,8 +287,26 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+      collection: Pistol_1_Gunshots
     fireOnDropChance: 0.5
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistol6mm
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistol6mm
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol6mm
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol6mm
 
 - type: entity
   name: SHI MK58 Tayamura 9x19mm
@@ -384,7 +402,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+      collection: M1911_Gunshots
     fireOnDropChance: 0.6
   - type: ItemSlots
     slots:
@@ -434,7 +452,7 @@
   name: NT N1984 Marston .327
   parent: WeaponPistolN1984
   id: WeaponPistolN1984Security # the spaces in description are for formatting.
-  description: The sidearm of any self respecting officer.     Comes in 8.3×33mm, the lord's caliber.
+  description: The sidearm of any self respecting officer. Comes in 8.3×33mm, the lord's caliber.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   suffix: Security Loadouts
   components:
@@ -472,7 +490,7 @@
   name: NT N1984 Marston .327
   parent: WeaponPistolN1984NonLethal
   id: WeaponPistolN1984SecurityNonLethal
-  description: The sidearm of any self respecting officer.     Comes in .327, the lord's caliber.
+  description: The sidearm of any self respecting officer. Comes in .327, the lord's caliber.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   suffix: Security Loadouts
   components:

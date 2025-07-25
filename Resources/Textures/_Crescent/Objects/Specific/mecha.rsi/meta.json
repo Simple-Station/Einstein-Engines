@@ -66,6 +66,16 @@
         },
         {
             "name": "marauder-broken"
+        },
+        {
+            "name": "wanderer",
+            "directions": 4
+        },
+        {
+            "name": "wanderer-open"
+        },
+        {
+            "name": "wanderer-broken"
         }
     ]
 }

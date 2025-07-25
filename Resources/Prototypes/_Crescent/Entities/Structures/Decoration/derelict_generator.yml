@@ -1,0 +1,94 @@
+
+- type: entity
+  id: DerelictGenerator
+  parent: BaseStructure
+  name: derelict generator
+  description: An abandoned generator lacking proper maintainence. It can no longer generate power.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/Decoration/derelict_generator.rsi
+    offset: "0.0,0.5"
+    drawdepth: Mobs
+    noRot: true
+    state: derelict_generator_1
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 6
+            max: 8
+  - type: SpriteFade
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 50
+        mask:
+        - MachineMask
+        layer:
+        - WallLayer
+
+- type: entity
+  id: DerelictGeneratorDamaged
+  parent: DerelictGenerator
+  name: derelict generator
+  description: An abandoned generator lacking proper maintainence. It can no longer generate power.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/Decoration/derelict_generator.rsi
+    state: derelict_generator_2
+
+- type: entity
+  parent: DerelictGenerator
+  id: DerelictGeneratorDestroyed
+  name: destroyed derelict generator
+  description: An abandoned generator damaged beyond repair. It can no longer generate power.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/Decoration/derelict_generator.rsi
+    state: derelict_generator_3
+
+- type: entity
+  parent: DerelictGenerator
+  id: DerelictGeneratorRust
+  name: rusted derelict generator
+  description: An abandoned rusted generator. It can no longer generate power.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/Decoration/derelict_generator.rsi
+    state: derelict_generator_1_r
+
+- type: entity
+  parent: DerelictGenerator
+  id: DerelictGeneratorRustDamaged
+  name: rusted derelict generator
+  description: An abandoned rusted generator. It can no longer generate power.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/Decoration/derelict_generator.rsi
+    state: derelict_generator_2_r     
+
+- type: entity
+  parent: DerelictGenerator
+  id: DerelictGeneratorRustDestroyed
+  name: destroyed rusted derelict generator
+  description: An abandoned destroyed rusted generator. It can no longer generate power.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/Decoration/derelict_generator.rsi
+    state: derelict_generator_3_r   

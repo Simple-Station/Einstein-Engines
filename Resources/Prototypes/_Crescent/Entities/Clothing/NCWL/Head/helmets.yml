@@ -29,6 +29,28 @@
         Heat: 0.85
         Caustic: 0.85
 
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadHelmetNCWLRiot
+  name: homeguard enforcer helm
+  description: The tinted polyplast visor protects a League enforcer's eyes from thrown objects, harsh blows, and most shrapnel. The fit is very “one-size-fits-all,” however, and the helm is rather uncomfortable for non-baseline members of the League. Ventilation is poor by design; discomfort keeps the Enforcer alert. A faded slogan stamped inside the liner reads; “Pain is clarity.” Offers protection from bricks, clubs, and ideologically-weak thoughts.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/Head/ncwlhelmetriot.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/Head/ncwlhelmetriot.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 1000
+    armorType: Metallic
+    armorRepair: SteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 5
+        Slash: 5
+        Piercing: 5
+        Heat: 5
+        Caustic: 5
+
 ## hardsuit helmets
 
 - type: entity
