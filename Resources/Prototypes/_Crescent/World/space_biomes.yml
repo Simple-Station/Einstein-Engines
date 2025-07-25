@@ -228,3 +228,37 @@
   name: Hadal Deadspace
   swapDuration: 2
   parallax: Default
+
+#unionfall exclusives, attached to the 2 unionfall grace period rings and unionfall vladzena
+
+#NCWL grace period
+- type: entity
+  id: UnionfallGraceNCWLSource
+  name: unionfall grace NCWL source
+  components:
+  - type: SpaceBiomeSource
+    biome: unionfallGraceNCWLBiome
+    swapDistance: 1000
+    priority: 2600
+
+- type: crescentFactionBiome
+  id: unionfallGraceNCWLBiome
+  name: Hadal Storm
+  swapDuration: 2
+  parallax: AbyssParallax
+
+#DSM grace period
+- type: entity
+  id: UnionfallGraceDSMSource
+  name: unionfall grace DSM source
+  components:
+  - type: SpaceBiomeSource
+    biome: unionfallGraceDSMBiome
+    swapDistance: 1000
+    priority: 2600
+
+- type: crescentFactionBiome
+  id: unionfallGraceDSMBiome
+  name: Hadal Storm
+  swapDuration: 2
+  parallax: AbyssParallax

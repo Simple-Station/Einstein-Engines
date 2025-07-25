@@ -135,7 +135,8 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         var unionfall_clementine = "/Maps/_Crescent/Unionfall/unionfall_clementine.yml";
         var unionfall_nemesis = "/Maps/_Crescent/Unionfall/unionfall_nemesis.yml";
         var unionfall_vladzena = "/Maps/_Crescent/Unionfall/unionfall_vladzena.yml";
-        var unionfall_grace_barrier = "/Maps/_Crescent/Unionfall/grace_barrier.yml";
+        var unionfall_grace_barrier_ncwl = "/Maps/_Crescent/Unionfall/grace_barrier_NCWL.yml";
+        var unionfall_grace_barrier_dsm = "/Maps/_Crescent/Unionfall/grace_barrier_DSM.yml";
         var defensebattery = "/Maps/_Crescent/Stations/defensebatteryimperial.yml";
         // var northpole = "/Maps/_NF/POI/northpole.yml";
         var arena = "/Maps/_Crescent/Explorables/zhipovwreck.yml";
@@ -565,7 +566,7 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         }
 
         //BARRIER FOR CLEMENTINE - SHOULD MATCH CLEMENTINE COORDINATES BECAUSE ITS A DONUT
-        if (_map.TryLoad(mapId, unionfall_grace_barrier, out var barrierUidA, new MapLoadOptions
+        if (_map.TryLoad(mapId, unionfall_grace_barrier_ncwl, out var barrierUidA, new MapLoadOptions
         {
             Offset = new Vector2(-3000f, 13000f)
         }))
@@ -576,12 +577,12 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
             }
 
             var meta = EnsureComp<MetaDataComponent>(barrierUidA[0]);
-            _meta.SetEntityName(barrierUidA[0], "#############", meta);
+            _meta.SetEntityName(barrierUidA[0], "#####===#####", meta);
             _shuttle.SetIFFColor(barrierUidA[0], depotColor);
         }
 
-        //BARRIER FOR CLEMENTINE - SHOULD MATCH CLEMENTINE COORDINATES BECAUSE ITS A DONUT
-        if (_map.TryLoad(mapId, unionfall_grace_barrier, out var barrierUidB, new MapLoadOptions
+        //BARRIER FOR NEMESIS - SHOULD MATCH NEMESIS COORDINATES BECAUSE ITS A DONUT
+        if (_map.TryLoad(mapId, unionfall_grace_barrier_dsm, out var barrierUidB, new MapLoadOptions
         {
             Offset = new Vector2(2000f, 4500f)
         }))
@@ -592,7 +593,7 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
             }
 
             var meta = EnsureComp<MetaDataComponent>(barrierUidB[0]);
-            _meta.SetEntityName(barrierUidB[0], "#############", meta);
+            _meta.SetEntityName(barrierUidB[0], "#####---#####", meta);
             _shuttle.SetIFFColor(barrierUidB[0], depotColor);
         }
 

@@ -4,15 +4,15 @@
 ##
 ## for your ambient music to be valid, you need two prototypes
 ## first, an ambientMusic prototype. the id !!!!MUST MATCH THE BIOME ID!!!! that you are making ambient music for, and it must have a sound collection
-## otherwise it will play the fallback track. 
+## otherwise it will play the fallback track.
 ## second, a soundCollection prototype. its id can be different, but please keep it the same as the biome for consistency
 ## the music selected from the sound collection will be chosen randomly whenever the appropriate music is required to be played
-## 
+##
 ## combat music default/fallback is called "combatmusic"
 ## factional combat music must be called "combatmusic<FACTIONNAME>", and be a valid faction in the clientside character profile
 ## this is because the way combat music is fetched is just adding that faction string to combatmusic, creating "combatmusicNCWL", "combatmusicDSM", etc.
 ##
-## valid factions: ATH, DSM, NCWL, TFSC, SHI, TAP, SRM, TSP. 
+## valid factions: ATH, DSM, NCWL, TFSC, SHI, TAP, SRM, TSP.
 ##
 ## @.2, hullrot discord, 2025/6/23
 
@@ -53,7 +53,7 @@
   files:
     - /Audio/_Crescent/Ambience/CombatMode/fallback.ogg
 
-## FACTION COMBAT MUSIC TRACKS 
+## FACTION COMBAT MUSIC TRACKS
 ## ID MUST BE "combatmode<FACTION>"!
 
 # NCWL, focus on guitar based songs
@@ -180,6 +180,7 @@
   id: deepwildbiome
   files:
    - /Audio/_Crescent/the_deepwilds.ogg
+
 #fracture / port vladzena
 
 - type: ambientMusic
@@ -192,3 +193,40 @@
   files:
    - /Audio/_Crescent/surfacing.ogg
 
+#UNIONFALL
+
+#unionfall vlad
+
+- type: ambientMusic
+  id: unionfallVladzenaBiome
+  sound:
+    collection: unionfallvladzena
+
+- type: soundCollection
+  id: unionfallvladzena
+  files:
+   - /Audio/_Crescent/surfacing.ogg
+
+#unionfall grace period - NCWL
+
+- type: ambientMusic
+  id: unionfallGraceNCWLBiome
+  sound:
+    collection: unionfallGraceNCWLBiome
+
+- type: soundCollection
+  id: unionfallGraceNCWLBiome
+  files:
+   - /Audio/_Crescent/Ambience/Unionfall/NCWL_grace.ogg
+
+#unionfall grace period - DSM
+
+- type: ambientMusic
+  id: unionfallGraceDSMBiome
+  sound:
+    collection: unionfallGraceDSMBiome
+
+- type: soundCollection
+  id: unionfallGraceDSMBiome
+  files:
+   - /Audio/_Crescent/Ambience/Unionfall/DSM_grace.ogg
