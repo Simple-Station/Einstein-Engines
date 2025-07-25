@@ -59,11 +59,10 @@
     suitstorage: WeaponLightMachineGunNCWLSurplus
     gloves: ClothingHandsGlovesCombat
     eyes: ClothingEyesGlassesNCWL
-  inhand:
-    - WeaponPistolComrade
   storage:
     back:
       - VoidsuitKitNCWL
       - BoxMRE
       - BoxFlare
+      - WeaponPistolComrade
 

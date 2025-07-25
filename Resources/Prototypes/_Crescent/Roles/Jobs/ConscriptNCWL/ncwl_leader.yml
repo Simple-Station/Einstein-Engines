@@ -94,10 +94,9 @@
     suitstorage: WeaponSniperNCWLNovomosin
     gloves: ClothingHandsGlovesCombat
     eyes: ClothingEyesGlassesNCWL
-  inhand:
-    - WeaponPistolT91
   storage:
     back:
       - VoidsuitKitNCWL
       - BoxMRE
       - BoxFlare
+      - WeaponPistolT91

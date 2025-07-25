@@ -59,8 +59,9 @@
     id: SanitarPDA
     suitstorage: WeaponSubMachineGunNCWLPartisan
     gloves: ClothingHandsGlovesCombat
-  inhand:
-    - WeaponPistolComrade
   storage:
     back:
       - VoidsuitKitNCWL
+      - BoxMRE
+      - BoxFlare
+      - WeaponPistolComrade

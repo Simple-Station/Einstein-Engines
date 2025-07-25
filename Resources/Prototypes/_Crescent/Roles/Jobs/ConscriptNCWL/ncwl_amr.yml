@@ -59,10 +59,10 @@
     id: SanitarPDA
     suitstorage: WeaponAntimaterielNCWLHayha
     gloves: ClothingHandsGlovesCombat
-  inhand:
-    - WeaponPistolT91
   storage:
     back:
       - VoidsuitKitNCWL
       - BoxMRE
       - BoxFlare
+      - WeaponPistolT91
+
