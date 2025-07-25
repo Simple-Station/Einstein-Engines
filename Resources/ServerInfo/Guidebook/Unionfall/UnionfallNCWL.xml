@@ -1,8 +1,8 @@
 <Document>
 ## LORE
-After the destruction of their headquarters, Nova Belraska, the NCWL homeguard flees for survival.
+After the destruction of their headquarters, Nova Belraska, the NCWL forces in Taypan flee for survival.
 Their refuge is the Dear Clementine, a cargo freighter converted for war.
-With many wounded, even more dead, and only an ancient pre-collapse armory to supply them, the remnants of the NCWL moves to lay claim to the abandoned Nanotrasen fuel outpost, Vladzena.
+With many wounded, even more dead, and only an ancient pre-Collapse armory to supply them, these remnants of the NCWL Homeguard move to claim the abandoned NanoTrasen fuel outpost, Vladzena.
 
 ## OBJECTIVE
 Each side's objective is to capture this experimental "Jamrock" shield generator, located on the southern side of NT Outpost Vladzena.
@@ -18,7 +18,7 @@ If captured after it is already activated, then 3 minutes are added to the timer
 ## HADAL TIDE / GRACE PERIOD
 
 At the start of the round, your main flagship (and the enemy's) is trapped inside an indestructible, immovable protective circle.
-After a total of 20 minutes, the Hadal Tide ends and the circle dissipates. By this time, both teams should have ammassed a fleet and begun moving towards Vladzena.
+After a total of 20 minutes, the Hadal Tide ends and the circle dissipates. By this time, both teams should have amassed a fleet and begun moving towards Vladzena.
 
 ## WHAT SHOULD YOU BE DOING?
 
@@ -49,8 +49,9 @@ OR
 <GuideEntityEmbed Entity="HandHeldMassScannerEE" Caption="either use the scanner in your bag"/>
 <GuideEntityEmbed Entity="ComputerRadar" Caption="or find this console"/>
 </Box>
-5. Use your ID card (its in your PDA) to unlock the console
+5. Use your ID card (it's in your PDA) to unlock the console
 6. Go to the "Dock" section and undock to free up the space for the next ship
+7. Perform pre-combat checks such as ensuring your weapons are loaded and ready to fire
 
 When the barrier falls, follow orders and attempt to dock with the NT outpost. Good luck.
 
@@ -70,7 +71,7 @@ When the barrier falls, follow orders and attempt to dock with the NT outpost. G
 
 3. NCWL Lodka
 - An armed and armored troop transport with an arsenal to defend itself.
-- Armed with 2 Kurosawa launchers and 4 Point Defense Turrets. Launchers fired from pilot seat, PDTs fired from Targeting console.
+- Armed with 2 Kurosawa launchers and 4 Point Defense Turrets. Launchers fired from pilot seat, PDTs fired from targeting console.
 - Front is up-armored, rear is weak. Suffers from slow acceleration.
 
 4. NCWL Vanguard
