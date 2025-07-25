@@ -62,9 +62,9 @@ public sealed class UnionfallCapturePointSystem : EntitySystem
         _sawmill.Debug("ACTIVATED CONTROL POINT, FIRING TIMERS");
         TimeSpan graceTime = TimeSpan.FromSeconds(component.GracePeriod);
         Timer.Spawn(TimeSpan.FromMinutes(1), () => AnnouncementWarStart(graceTime));
-        Timer.Spawn(graceTime * 0.25, () => AnnouncementWarPeriodic(graceTime * 0.25));
-        Timer.Spawn(graceTime * 0.50, () => AnnouncementWarPeriodic(graceTime * 0.50));
-        Timer.Spawn(graceTime * 0.75, () => AnnouncementWarPeriodic(graceTime * 0.75));
+        Timer.Spawn(graceTime * 0.25, () => AnnouncementWarPeriodic(graceTime - graceTime * 0.25));
+        Timer.Spawn(graceTime * 0.50, () => AnnouncementWarPeriodic(graceTime - graceTime * 0.50));
+        Timer.Spawn(graceTime * 0.75, () => AnnouncementWarPeriodic(graceTime - graceTime * 0.75));
         Timer.Spawn(graceTime - TimeSpan.FromMinutes(1), AnnouncementWarAlmost);
         Timer.Spawn(graceTime, AnnouncementWarGraceOver); // TODO: turn this into a cool 10 second countdown
     }
@@ -156,26 +156,26 @@ public sealed class UnionfallCapturePointSystem : EntitySystem
     private void AnnouncementWarStart(TimeSpan time)
     {
         _sawmill.Debug("firing AnnouncementWarStart");
-        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
+        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("unionfallBegin"), Filter.Broadcast(),
                 "SUDDEN HADAL TIDE DETECTED - DEPLOYING LOCALIZED DEFENSES. EXPECTED DURATION: <" + time + "> ALL VESSELS ADVISED TO REMAIN NEAR THE FLAGSHIP AND WEATHER THE STORM.");
     }
     private void AnnouncementWarPeriodic(TimeSpan time)
     {
         _sawmill.Debug("firing AnnouncementWarPeriodic");
-        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
-                "<" + time + "> SECONDS LEFT OF THE STORM");
+        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("unionfallPeriodic"), Filter.Broadcast(),
+                "<" + time + "> LEFT OF THE TIDE");
     }
 
     private void AnnouncementWarAlmost()
     {
         _sawmill.Debug("firing AnnouncementWarAlmost");
-        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
-                "ALMOST THERE - SCANS SHOW THE HADAL TIDE ACTIVELY RECEDING");
+        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("unionfallAlmost"), Filter.Broadcast(),
+                "<00:01:00> LEFT OF THE TIDE - SCANS SHOW THE HADAL TIDE ACTIVELY RECEDING");
     }
     private void AnnouncementWarGraceOver()
     {
         _sawmill.Debug("firing AnnouncementWarGraceOver");
-        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
-                "WAR HAS BEGUN! - HADAL TIDE RESCINDED ENTIRELY. VESSELS ADVISED TO MAKE THEIR WAY TO THE OBJECTIVE");
+        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("unionfallGraceOver"), Filter.Broadcast(),
+                "WAR HAS BEGUN! - HADAL TIDE RESCINDED ENTIRELY. ALL VESSELS ADVISED TO NAVIGATE TO NT OUTPOST VLADZENA AND SECURE IT");
     }
 }
