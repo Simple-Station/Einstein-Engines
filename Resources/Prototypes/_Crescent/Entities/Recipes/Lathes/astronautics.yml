@@ -50,6 +50,15 @@
     Tungsten: 1000
 
 - type: latheRecipe
+  id: ClothingOuterHardsuitIndependentsEVAAstronautics
+  result: ClothingOuterHardsuitIndependentsEVA
+  completetime: 1.5
+  materials:
+    Cloth: 500
+    Steel: 3000
+    Tungsten: 1000
+
+- type: latheRecipe
   id: ClothingShoesBootsMagAstronautics
   result: ClothingShoesBootsMag
   completetime: 1.5
@@ -107,6 +116,86 @@
     Steel: 1000
 
 - type: latheRecipe
+  id: ClothingOuterHardsuitFishbedAstronautics
+  result: ClothingOuterHardsuitFishbed
+  completetime: 1.5
+  materials:
+    HardsuitElectronics: 500
+    Tungsten: 1000
+    Cloth: 2500
+    Steel: 1500
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitFishbedSilverAstronautics
+  result: ClothingOuterHardsuitFishbedSilver
+  completetime: 1.5
+  materials:
+    HardsuitElectronics: 500
+    Tungsten: 1000
+    Cloth: 2500
+    Steel: 1500
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitFishbedGoldAstronautics
+  result: ClothingOuterHardsuitFishbedGold
+  completetime: 1.5
+  materials:
+    HardsuitElectronics: 500
+    Tungsten: 1000
+    Cloth: 2500
+    Steel: 1500
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitFishbedColonialAstronautics
+  result: ClothingOuterHardsuitFishbedColonial
+  completetime: 1.5
+  materials:
+    HardsuitElectronics: 500
+    Tungsten: 1000
+    Cloth: 2500
+    Steel: 1500
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitFishbedNLFAstronautics
+  result: ClothingOuterHardsuitFishbedNLF
+  completetime: 1.5
+  materials:
+    HardsuitElectronics: 500
+    Tungsten: 1000
+    Cloth: 2500
+    Steel: 1500
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitCenobiteAstronautics
+  result: ClothingOuterHardsuitCenobite
+  completetime: 1.5
+  materials:
+    HardsuitElectronics: 750
+    Tungsten: 1500
+    Cloth: 2500
+    Steel: 1500
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitCenobiteVerdantAstronautics
+  result: ClothingOuterHardsuitCenobiteVerdant
+  completetime: 1.5
+  materials:
+    HardsuitElectronics: 750
+    Tungsten: 1500
+    Cloth: 2500
+    Steel: 1500
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitCenobiteRedAstronautics
+  result: ClothingOuterHardsuitCenobiteRed
+  completetime: 1.5
+  materials:
+    HardsuitElectronics: 750
+    Tungsten: 1500
+    Cloth: 2500
+    Steel: 1500
+
+- type: latheRecipe
   id: ClothingShoesBootsMagbootsAstronautics
   result: ClothingShoesBootsMagAdv
   completetime: 1.5
@@ -125,7 +214,7 @@
     Steel: 3000
 
 - type: latheRecipe
-  id: RCDEmptyAstronautics
+  id: RCDAstronautics
   result: RCDEmpty
   completetime: 1.5
   materials:
@@ -138,7 +227,7 @@
 
 - type: latheRecipe
   id: RCDAmmoAstronautics
-  result: RCDAmmoAstronautics
+  result: RCDAmmo
   completetime: 1.5
   materials:
     Steel: 2000

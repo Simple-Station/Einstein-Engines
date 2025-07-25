@@ -48,6 +48,12 @@
           - id: RockElementalSpawner
             prob: 0.009
             orGroup: rock
+          - id: WallRockTungsten
+            prob: 0.001 # TODO: CHANGEME
+            orGroup: rock
+          - id: WallRockCopper
+            prob: 0.04 # TODO: CHANGEME
+            orGroup: rock
     - type: IFF
       flags: HideLabel
       color: "#d67e27"
@@ -189,6 +195,12 @@
             orGroup: rock
           - id: WallRockSnowSilver
             prob: 0.009
+            orGroup: rock
+          - id: WallRockSnowTungsten # TODO: MAKE SNOW WALL VERSION
+            prob: 0.01 # TODO: CHANGEME
+            orGroup: rock
+          - id: WallRockSnowCopper # TODO: MAKE SNOW WALL VERSION
+            prob: 0.001 # TODO: CHANGEME
             orGroup: rock
     - type: IFF
       flags: HideLabel
@@ -341,6 +353,12 @@
           - id: WallAndesiteCobblebrick
             prob: 0.1
             orGroup: rock
+          - id: WallRockAndesiteTungsten
+            prob: 0.01 # TODO: CHANGEME
+            orGroup: rock
+          - id: WallRockAndesiteCopper
+            prob: 0.05 # TODO: CHANGEME
+            orGroup: rock
     - type: IFF
       flags: HideLabel
       color: "#95c280"
@@ -485,6 +503,12 @@
             orGroup: rock
           - id: WallRockBasaltArtifactFragment
             prob: 0.009
+            orGroup: rock
+          - id: WallRockBasaltTungsten
+            prob: 0.005 # TODO: CHANGEME
+            orGroup: rock
+          - id: WallRockBasaltCopper
+            prob: 0.01 # TODO: CHANGEME
             orGroup: rock
           - id: WallBasaltCobblebrick
             prob: 0.1
@@ -640,6 +664,12 @@
           - id: WallSandstone
             prob: 0.1
             orGroup: rock
+          - id: WallRockSandTungsten
+            prob: 0.005 # TODO: CHANGEME
+            orGroup: rock
+          - id: WallRockSandCopper
+            prob: 0.1 # TODO: CHANGEME
+            orGroup: rock
     - type: IFF
       flags: HideLabel
       color: "#cad17b"
@@ -784,6 +814,12 @@
             orGroup: rock
           - id: WallRockChromiteSilver
             prob: 0.001
+            orGroup: rock
+          - id: WallRockChromiteTungsten
+            prob: 0.001 # TODO: CHANGEME
+            orGroup: rock
+          - id: WallRockChromiteCopper
+            prob: 0.001 # TODO: CHANGEME
             orGroup: rock
     - type: IFF
       flags: HideLabel
@@ -932,6 +968,12 @@
             orGroup: rock
           - id: AsteroidRockArtifactFragment
             prob: 0.0004
+            orGroup: rock
+          - id: AsteroidRockTungsten # TODO: MAKE ASTEROID VARIANT
+            prob: 0.001 # TODO: CHANGEME
+            orGroup: rock
+          - id: AsteroidRockCopper # TODO: MAKE ASTEROID VARIANT
+            prob: 0.1 # TODO: CHANGEME
             orGroup: rock
     - type: IFF
       flags: HideLabel

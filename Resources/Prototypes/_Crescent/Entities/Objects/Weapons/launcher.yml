@@ -34,7 +34,7 @@
 
 
 - type: entity
-  name: SHI MGL Milkor 40mm
+  name: SHI MGL-6 Milkor 40mm
   parent: [BaseWeaponRevolver, BaseGunWieldable]
   id: WeaponLauncherMilkor
   description: A large grenade launcher designed by Shinora. For when you need to make hell rain on the enemy.

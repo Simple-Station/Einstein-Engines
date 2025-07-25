@@ -406,6 +406,18 @@
     Tungsten: 1500
 
 - type: latheRecipe
+  id: WandererFlatpack
+  result: WandererFlatpack
+  completetime: 2
+  materials:
+    AdvancedMechatronics: 3500
+    AdvancedElectronics: 2000
+    Gold: 600
+    Silver: 650
+    Steel: 4250
+    Tungsten: 1500
+
+- type: latheRecipe
   id: LaelapsLPC
   result: ShipVoucherLaelaps
   completetime: 1
