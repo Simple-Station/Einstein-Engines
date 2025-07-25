@@ -57,7 +57,7 @@
     id: LevymanPDA
     suitstorage: WeaponSniperDSMLegax
     eyes: ClothingEyesHudSecurity
-    inhand:
+  inhand:
     - BookUnionfallDSMGuide
   storage:
     back:
