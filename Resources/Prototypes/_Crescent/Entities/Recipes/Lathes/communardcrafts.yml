@@ -113,6 +113,29 @@
     Plastic: 250
 
 - type: latheRecipe
+  id: ClothingHeadHelmetNCWLRiot
+  result: ClothingHeadHelmetNCWLRiot
+  completetime: 2
+  materials:
+    Steel: 500
+    Plastic: 500
+
+- type: latheRecipe
+  id: NCWLLugBaton
+  result: NCWLLugBaton
+  completetime: 2
+  materials:
+    Steel: 1250
+
+- type: latheRecipe
+  id: NCWLRiotShield
+  result: NCWLRiotShield
+  completetime: 2
+  materials:
+    Steel: 500
+    Plastic: 600
+
+- type: latheRecipe
   id: ClothingBeltNCWLWebbing
   result: ClothingBeltNCWLWebbing
   completetime: 2

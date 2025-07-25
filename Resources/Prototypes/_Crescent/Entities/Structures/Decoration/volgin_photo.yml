@@ -1,0 +1,23 @@
+- type: entity
+  name: homeguard admiral opreme's photo
+  parent: BaseItem
+  id: NCWLAdmiralVolginPhoto
+  description: A deceptively simple framed photo of a local Homeguard admiral stiff collar, weathered uniform, and a tired, sunken gaze set in a pale, unreadable face. The eyes don't just follow you; they track you. Too sharp to be natural, some say they're cameras, wired straight to surveillance feeds in Chengridz. Rumor has it Homeguard kapitans haze new cadets by making them turn the portrait around before discussing anything personal whether it's a joke or actually real, no one's sure.
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Misc/Decoration/volgin_photo.rsi
+      state: icon
+    - type: Item
+      sprite: _Crescent/Objects/Misc/Decoration/volgin_photo.rsi
+      size: Small
+    - type: Appearance
+    - type: Damageable
+      damageModifierSet: Wood
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
