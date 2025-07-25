@@ -182,7 +182,7 @@
       - id: DrinkBeerBottleFull
       - id: FoodSnackChocolate
       - id: FoodSnackEnergy
-      - id: FoodSnackProteinBar
+      - id: FoodSnackProteinbar
       - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
