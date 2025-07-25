@@ -1,52 +1,38 @@
 using Content.Shared.Crescent.Radar;
+using Robust.Client.GameObjects;
+using Robust.Shared.GameObjects;
+using Robust.Shared.Maths;
 
 namespace Content.Client.Crescent.Radar;
 
 public sealed partial class ProjectileIFFSystem : SharedProjectileIFFSystem
 {
-    private static readonly IProjectileIFFVisual DefaultVisual = new ProjectileIFFVisuals.Square();
+    private static readonly float scale = 1.0f;
 
     // PROJECTILE IFF VISUAL TYPES
-    private static readonly IProjectileIFFVisual[] Visuals =
-    [
-        new ProjectileIFFVisuals.Square(),              // Square
-        new ProjectileIFFVisuals.Circle(),              // Circle
-        new ProjectileIFFVisuals.Triangle(),            // Triangle
-        new ProjectileIFFVisuals.Diamond(),             // Diamond
-        new ProjectileIFFVisuals.SolidSquare(),         // SolidSquare
-        new ProjectileIFFVisuals.SolidCircle(),         // SolidCircle
-        new ProjectileIFFVisuals.SolidTriangle(),       // SolidTriangle
-        new ProjectileIFFVisuals.SolidDiamond(),        // SolidDiamond
-        new ProjectileIFFVisuals.SquareReticle(),       // SquareReticle
-    ];
-
-    // PROJECTILE IFF COLORS
-    private static readonly Color[] Colors =
-    [
-        Color.White,        // White
-        Color.Red,          // Red
-        Color.LightGreen,   // Green
-        Color.LightBlue,    // Blue
-        Color.Pink,         // Pink
-        Color.Magenta,      // Magenta
-        Color.Yellow,       // Yellow
-    ];
-
-    public IProjectileIFFVisual GetVisual(int visualTypeIndex)
+    private static readonly Dictionary<ProjectileIFFVisualType, IProjectileIFFVisual> VisualInstances = new()
     {
-        if (visualTypeIndex < 0 || visualTypeIndex >= Visuals.Length)
-        {
-            return DefaultVisual;
-        }
-        return Visuals[visualTypeIndex];
-    }
+        { ProjectileIFFVisualType.Square, new ProjectileIFFVisuals.Square(scale) },
+        { ProjectileIFFVisualType.Circle, new ProjectileIFFVisuals.Circle(scale) },
+        { ProjectileIFFVisualType.Triangle, new ProjectileIFFVisuals.Triangle(scale) },
+        { ProjectileIFFVisualType.Diamond, new ProjectileIFFVisuals.Diamond(scale) },
+        { ProjectileIFFVisualType.SolidSquare, new ProjectileIFFVisuals.SolidSquare(scale) },
+        { ProjectileIFFVisualType.SolidCircle, new ProjectileIFFVisuals.SolidCircle(scale) },
+        { ProjectileIFFVisualType.SolidTriangle, new ProjectileIFFVisuals.SolidTriangle(scale) },
+        { ProjectileIFFVisualType.SolidDiamond, new ProjectileIFFVisuals.SolidDiamond(scale) },
+        { ProjectileIFFVisualType.SquareReticle, new ProjectileIFFVisuals.SquareReticle(scale) },
+    };
 
-    public Color GetColor(int colorIndex)
+    private static readonly IProjectileIFFVisual DefaultVisual = VisualInstances[ProjectileIFFVisualType.Square];
+
+    public IProjectileIFFVisual GetVisual(ProjectileIFFVisualType visualType, float scale = 1.0f)
     {
-        if (colorIndex < 0 || colorIndex >= Colors.Length)
-        {
-            return Color.White;
-        }
-        return Colors[colorIndex];
+        if (!VisualInstances.TryGetValue(visualType, out var visual))
+            visual = DefaultVisual;
+
+        // Update the scale of the existing instance before returning it
+        visual.Scale = scale;
+
+        return visual;
     }
 }

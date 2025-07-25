@@ -173,6 +173,18 @@
   - PaladinFlatpack
 
 - type: technology
+  id: ImperialWandererMech
+  name: research-technology-imperial-wanderer
+  icon:
+    sprite: Objects/Devices/flatpack.rsi
+    state: kit
+  discipline: Imperial
+  tier: 2
+  cost: 4000
+  recipeUnlocks:
+  - WandererFlatpack
+
+- type: technology
   id: ImperialAdvancedRifling
   name: research-technology-imperial-advancedrifling
   icon:

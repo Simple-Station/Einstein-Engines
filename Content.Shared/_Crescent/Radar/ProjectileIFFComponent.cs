@@ -1,5 +1,6 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
+using Robust.Shared.Maths;
 
 namespace Content.Shared.Crescent.Radar;
 
@@ -13,7 +14,10 @@ public sealed partial class ProjectileIFFComponent : Component
     public ProjectileIFFVisualType VisualType = ProjectileIFFVisualType.Square;
 
     [DataField("color")]
-    public ProjectileIFFColor Color = ProjectileIFFColor.White;
+    public Color Color = new(255, 255, 255, 255); // White
+    
+    [DataField("scale")]
+    public float Scale = 1.0f; // Editable in YAML to make visuals bigger or smaller
 }
 
 [Serializable, NetSerializable]
@@ -28,16 +32,4 @@ public enum ProjectileIFFVisualType : int
     SolidTriangle = 6,
     SolidDiamond = 7,
     SquareReticle = 8,
-}
-
-[Serializable, NetSerializable]
-public enum ProjectileIFFColor : int
-{
-    White = 0,
-    Red = 1,
-    Green = 2,
-    Blue = 3,
-    Pink = 4,
-    Magenta = 5,
-    Yellow = 6,
 }

@@ -1,3 +1,4 @@
+using Robust.Shared.Maths;
 using Robust.Shared.Map;
 using Robust.Shared.Serialization;
 
@@ -11,5 +12,6 @@ public sealed class ProjectileState
 {
     public NetCoordinates Coordinates;
     public int VisualTypeIndex;
-    public int ColorIndex;
+    public Color Color;
+    public float Scale = 1f;
 }
