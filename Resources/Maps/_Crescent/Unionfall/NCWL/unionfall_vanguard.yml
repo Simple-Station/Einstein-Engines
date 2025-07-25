@@ -114,29 +114,38 @@ entities:
             id: LatticeCornerNE
           decals:
             98: -5,-3
+            119: -5,-3
         - node:
             zIndex: 1
             id: LatticeCornerNW
           decals:
             104: 5,-3
+            125: 5,-3
         - node:
             zIndex: 1
             id: LatticeCornerSE
           decals:
             92: -4,3
             95: -2,5
+            113: -4,3
+            116: -2,5
         - node:
             zIndex: 1
             id: LatticeCornerSW
           decals:
             86: 2,5
             89: 4,3
+            107: 2,5
+            110: 4,3
         - node:
             id: LatticeEdgeE
           decals:
             91: -4,3
             94: -2,5
             96: -5,-3
+            112: -4,3
+            115: -2,5
+            117: -5,-3
         - node:
             id: LatticeEdgeN
           decals:
@@ -145,6 +154,11 @@ entities:
             100: 0,-6
             101: 3,-6
             102: 5,-3
+            118: -5,-3
+            120: -3,-6
+            121: 0,-6
+            122: 3,-6
+            123: 5,-3
         - node:
             id: LatticeEdgeS
           decals:
@@ -152,12 +166,19 @@ entities:
             87: 4,3
             90: -4,3
             93: -2,5
+            105: 2,5
+            108: 4,3
+            111: -4,3
+            114: -2,5
         - node:
             id: LatticeEdgeW
           decals:
             85: 2,5
             88: 4,3
             103: 5,-3
+            106: 2,5
+            109: 4,3
+            124: 5,-3
         - node:
             color: '#FFFFFFFF'
             id: TechCornerE
@@ -1162,6 +1183,22 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
+  - uid: 13
+    components:
+    - type: Transform
+      parent: 75
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+  - uid: 14
+    components:
+    - type: Transform
+      parent: 76
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
   - uid: 93
     components:
     - type: Transform
@@ -1180,24 +1217,6 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: MagazineLightRifleBoxSlugHE
-  entities:
-  - uid: 13
-    components:
-    - type: Transform
-      parent: 75
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-  - uid: 14
-    components:
-    - type: Transform
-      parent: 76
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
 - proto: N14CrateAluminium
   entities:
   - uid: 201
