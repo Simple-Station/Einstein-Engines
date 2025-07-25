@@ -170,12 +170,20 @@
   id: BoxMRE
   description: A box of decades old military surplus rations. It is surprisingly not rotten.
   components:
+  - type: Item
+    shape:
+    - 0,0,1,1
   - type: StorageFill
     contents:
       - id: DrinkMREFlask
       - id: FoodSnackNutribrick
       - id: FoodSnackMREBrownie
       - id: FoodCondimentPacketKetchup
+      - id: DrinkBeerBottleFull
+      - id: FoodSnackChocolate
+      - id: FoodSnackEnergy
+      - id: FoodSnackProteinBar
+      - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
       - state: box_olive
@@ -223,7 +231,7 @@
         amount: 2
 
 - type: entity
-  name: flare pocket box
+  name: flare box
   parent: BoxCardboard
   id: BoxFlare
   description: A box of flares. Fits in your pocket!
@@ -234,8 +242,9 @@
     - 0,0,1,1
   - type: StorageFill
     contents:
+      - id: WeaponFlareGun
       - id: Flare
-        amount: 16
+        amount: 14
   - type: Sprite
     layers:
       - state: box
