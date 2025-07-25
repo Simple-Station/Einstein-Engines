@@ -466,6 +466,9 @@
     - type: IconSmooth
       key: walls
       base: plastitanium
+    - type: Damageable
+      damageContainer: StructuralInorganic
+      damageModifierSet: StructuralMetallicStrong
 
 - type: entity
   parent: WallPlastitaniumIndestructible
@@ -1413,15 +1416,3 @@
                   max: 1
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
-
-- type: entity
-  parent: WallReinforced
-  id: WallTimed15Sec
-  name: Indestructible wall (selfdelete in 15 sec)
-  suffix: ""
-  components:
-    - type: Tag
-      tags:
-        - Wall
-    - type: SelfDelete
-      timeToDelete: 15
