@@ -1,0 +1,72 @@
+#mortar tags
+
+- type: Tag
+  id: MortarShell
+
+- type: Tag
+  id: MortarBox
+  
+#gargoyle tag
+ 
+- type: Tag
+  id: TorpedoGarg
+  
+#lancer tag
+
+- type: Tag
+  id: LanceRocket
+  
+#hephaestus (230mm) tag
+
+- type: Tag
+  id: HeavyMortarShell
+  
+#prince flak tags
+
+- type: Tag
+  id: FlakShell
+
+- type: Tag
+  id: FlakBox
+  
+#323mm catapult Tag
+
+- type: Tag
+  id: TorpedoCatapult
+  
+#compakt lens Tag
+
+- type: Tag
+  id: CompaktLens
+  
+#solaris tags
+
+- type: Tag
+  id: AntimatterCanister
+
+- type: Tag
+  id: AntimatterCartridge
+  
+#jeong/osiris tags
+
+- type: Tag
+  id: SwarmerRocketsClip
+
+- type: Tag
+  id: SwarmerRockets
+  
+#needler tags
+
+- type: Tag
+  id: NeedlerShell
+
+- type: Tag
+  id: NeedlerMag
+  
+#swarmer tags
+
+- type: Tag
+  id: SwarmRocket
+
+- type: Tag
+  id: SwarmRocketBox

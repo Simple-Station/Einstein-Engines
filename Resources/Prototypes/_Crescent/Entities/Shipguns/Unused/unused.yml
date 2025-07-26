@@ -1,0 +1,196 @@
+## EVIL THINGS BELOW
+
+- type: entity
+  id: BaseBulletEmp #added by frontier, unused in-game
+  name: base bullet emp
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Shock: 0
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/Projectiles/magic.rsi
+    layers:
+      - state: emp_projectile
+        shader: unshaded
+  - type: EmpOnTrigger
+    range: 0.3
+    energyConsumption: 50000
+    disableDuration: 10
+    
+- type: entity
+  name: booster wave
+  id: BulletBoosterWave #added by frontier, unused in-game
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    layers:
+    - state: omnilaser_greyscale
+      shader: unshaded
+      color: red
+  - type: Projectile
+    ignoreWeaponGrid: true
+    impactEffect: BulletImpactEffectRedDisabler
+    damage:
+      types:
+        Radiation: 5
+        Structural: 30 # Slightly more damage than the 17heat from the Captain's Hitscan lasgun
+    soundHit:
+      collection: MeatLaserImpact
+    forceSound: true
+  - type: ShipWeaponProjectile
+
+- type: entity
+  id: CartridgeRailArmorPiercing #added by frontier, unused in-game
+  name: 1000 Armor-Piercing rail
+  parent: BaseItem
+  description: A 1000 caliber rail designed for the Railgun. Is made out of solid plasma infused tungsten rod. Punches through hull like butter.
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+  - type: Item
+    size: Huge
+  - type: MultiHandedItem
+  - type: CartridgeAmmo
+    proto: BulletRailArmorPiercing
+    deleteOnSpawn: false
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/1000_armorpiercing_rail_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: SpaceGarbage
+
+- type: entity
+  id: BulletRailArmorPiercing #added by frontier, unused in-game
+  name: rail
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 10000
+        #currently explosion deals 720 damage, gibs in 3 direct rail hits
+  - type: TimedDespawn
+    lifetime: 300
+    #roughly 39000m range
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/1000_armorpiercing_rail_casing.rsi
+    layers:
+      - state: base-projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 94
+    intensitySlope: 52
+    totalIntensity: 122
+    maxTileBreak: 9
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ShipWeaponProjectile
+  - type: ProjectileIFF
+
+- type: entity
+  id: BulletRailEMP
+  name: rail
+  parent: BaseBulletTrigger #added by frontier, unused in-game
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 500
+        Blunt: 50
+  - type: TimedDespawn
+    lifetime: 300
+    #roughly 39000m range
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/1000_armorpiercing_rail_casing.rsi
+    layers:
+      - state: base-projectile
+  - type: EmpOnTrigger
+    range: 12
+    energyConsumption: 1000000
+    disableDuration: 120
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ShipWeaponProjectile
+
+- type: entity
+  id: CartridgeRailEMP #added by frontier, unused in-game
+  name: 1000 EMP rail
+  parent: BaseItem
+  description: A 1000 caliber rail designed for the Railgun. Is made out of solid plasma infused tungsten rod. Punches through hull like butter.
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+  - type: Item
+    size: Huge
+  - type: MultiHandedItem
+  - type: CartridgeAmmo
+    proto: BulletRailEMP
+    deleteOnSpawn: false
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/1000_armorpiercing_rail_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: SpaceGarbage
+
+#The precursors send their regards.
+- type: entity
+  id: ThermonuclearMissile #apparently unused?
+  name: primed thermonuclear missile
+  description: You recoil from ancient genetic memories telling you 'This hurt me. This ruined me. I was once a human being.' But there is no other way. A gun. A sword. A bomb. A vibrokhopesh. There is no other way.
+  parent: BaseBulletTrigger
+  components:
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 5000
+        Heat: 5000
+  - type: Tag
+    tags:
+      - TorpedoGarg
+      - TorpedoCatapult
+  - type: TimedDespawn
+    lifetime: 50
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/nuke.rsi
+    layers:
+      - state: base-projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 20000 #Same as the grenade version
+    intensitySlope: 5
+    maxIntensity: 50
+  - type: PointLight
+    radius: 5.5
+    color: orange
+    energy: 0.5
+  - type: ProjectileIFF
+    visualType: SquareReticle
+    color: Red
+  - type: RadiationSource
+    intensity: 0.1
+    slope: 1.0

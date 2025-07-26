@@ -55,11 +55,7 @@ WeaponTurretPDTCMM: WeaponTurretPDT
 WeaponTurretPDTSHI: WeaponTurretPDT
 WeaponTurretPDTDSM: WeaponTurretPDT
 WeaponTurretPDTNCWL: WeaponTurretPDT
-BaseWeaponTurretLaserCMM: BaseWeaponTurretLaser
-BaseWeaponTurretLaserSRM: BaseWeaponTurretLaser
-BaseWeaponTurretLaserNCWL: BaseWeaponTurretLaser
-BaseWeaponTurretLaserSHI: BaseWeaponTurretLaser
-BaseWeaponTurretLaserNCSP: BaseWeaponTurretLaser
+
 BaseWeaponTurretNeedlerNCWL: WeaponTurretNeedler
 BaseWeaponTurretNeedlerDSM: WeaponTurretNeedler
 BaseWeaponTurretNeedlerCMM: WeaponTurretNeedler

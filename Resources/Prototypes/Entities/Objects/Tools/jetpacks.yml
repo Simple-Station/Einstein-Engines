@@ -28,9 +28,9 @@
     - type: InputMover
       toParent: true
     - type: MovementSpeedModifier
-      weightlessAcceleration: 1
+      weightlessAcceleration: 0.2
       weightlessFriction: 0.3
-      weightlessModifier: 1.2
+      weightlessModifier: 7
     - type: CanMoveInAir
     - type: Sprite
       sprite: Objects/Tanks/Jetpacks/blue.rsi
@@ -54,7 +54,7 @@
         volume: 5
         temperature: 293.15
     - type: Jetpack
-      moleUsage: 0.00085
+      moleUsage: 0.004
     - type: Appearance
     - type: StaticPrice
       price: 100
