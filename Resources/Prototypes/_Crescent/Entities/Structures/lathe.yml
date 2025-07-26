@@ -28,10 +28,31 @@
     - SteelScrap
     - TitaniumScrap
     - Garbage
-    - PlasteelFromScrap1
-    - PlasteelFromScrap
-    - SteelScraptoSteel
-    - SteelScraptoSteel1
+    - PlasticFromGarbage1
+    - PlasticFromGarbage
+    - PlasteelFromScrapHighGrade1
+    - PlasteelFromScrapHighGrade
+    - TungstenFromScrapHighGrade1
+    - TungstenFromScrapHighGrade
+    - SteelFromScrapLowGrade1
+    - SteelFromScrapLowGrade
+    - CopperFromScrapLowGrade1
+    - CopperFromScrapLowGrade
+    - GoldFromScrapCircuit1
+    - GoldFromScrapCircuit
+    - SilverFromScrapCircuit1
+    - SilverFromScrapCircuit
+    - PlasmaFromScrapPlasma1
+    - PlasmaFromScrapPlasma
+    - PhoronFromScrapPlasma
+    - IsotopesFromScrapPlasma
+    - UraniumFromScrapUranium1
+    - UraniumFromScrapUranium
+    - FibreAlloyFromCombinedScrap
+    - BasicElectronicsFromCombinedScrap
+    - BasicMechatronicsFromCombinedScrap
+    - BallisticCyclerFromCombinedScrap
+    - HardsuitElectronicsFromCombinedScrap
 
 - type: entity
   parent: [ BaseMachinePowered, ConstructibleMachine ]
@@ -61,11 +82,31 @@
     - SteelScrap
     - TitaniumScrap
     - Garbage
-    - PlasteelFromScrap1
-    - PlasteelFromScrap
-    - SteelScraptoSteel
-    - SteelScraptoSteel1
-
+    - PlasticFromGarbage1
+    - PlasticFromGarbage
+    - PlasteelFromScrapHighGrade1
+    - PlasteelFromScrapHighGrade
+    - TungstenFromScrapHighGrade1
+    - TungstenFromScrapHighGrade
+    - SteelFromScrapLowGrade1
+    - SteelFromScrapLowGrade
+    - CopperFromScrapLowGrade1
+    - CopperFromScrapLowGrade
+    - GoldFromScrapCircuit1
+    - GoldFromScrapCircuit
+    - SilverFromScrapCircuit1
+    - SilverFromScrapCircuit
+    - PlasmaFromScrapPlasma1
+    - PlasmaFromScrapPlasma
+    - PhoronFromScrapPlasma
+    - IsotopesFromScrapPlasma
+    - UraniumFromScrapUranium1
+    - UraniumFromScrapUranium
+    - FibreAlloyFromCombinedScrap
+    - BasicElectronicsFromCombinedScrap
+    - BasicMechatronicsFromCombinedScrap
+    - BallisticCyclerFromCombinedScrap
+    - HardsuitElectronicsFromCombinedScrap
 
 #drugs
 

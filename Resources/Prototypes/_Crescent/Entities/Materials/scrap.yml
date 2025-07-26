@@ -2,8 +2,8 @@
 - type: entity
   parent: OreBase
   id: SteelScrapOre
-  name: scrapsteel shards
-  description: Scraps of steel blasted off larger structures.
+  name: low-grade metal shards
+  description: Scraps of steel and fused power cables blasted off larger structures.
   suffix: Full
   components:
   - type: Stack
@@ -17,7 +17,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      ScrapSteel: 500
+      ScrapLowGrade: 500
 
 - type: entity
   id: SteelScrap1
@@ -66,8 +66,8 @@
 - type: entity
   parent: OreBase
   id: TitaniumScrapOre
-  name: titanium scrap
-  description: Pile of titanium scrap, blasted off a larger structure.
+  name: high-grade metal shards
+  description: Pile of good quality scrap, blasted off a larger industrial or military structure.
   suffix: Full
   components:
   - type: Tag
@@ -81,7 +81,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      ScrapTitanium: 500
+      ScrapHighGrade: 500
 
 - type: entity
   id: TitaniumScrap1
@@ -94,7 +94,7 @@
 - type: entity
   id: TitaniumScrap6
   parent: TitaniumScrapOre
-  suffix: Single
+  suffix: Six
   components:
     - type: Stack
       count: 6
@@ -102,7 +102,7 @@
 - type: entity
   id: TitaniumScrap17
   parent: TitaniumScrapOre
-  suffix: Single
+  suffix: Seventeen
   components:
     - type: Stack
       count: 17
@@ -110,38 +110,158 @@
 - type: entity
   id: TitaniumScrap25
   parent: TitaniumScrapOre
-  suffix: Single
+  suffix: Twenty Five
   components:
     - type: Stack
       count: 25
 
-#single-use scrap
+#circuit
 
 - type: entity
-  parent: BaseItem
+  parent: OreBase
   id: ScrapCircuit
-  name: destroyed electronics
+  name: damaged electronics
   description: A pile of scrap electronics, ripped out of a larger machine.
+  suffix: Full
   components:
+  - type: Stack
+    stackType: ScrapCircuit
+  - type: Tag
+    tags:
+    - RawMaterial
   - type: Sprite
     sprite: _Crescent/Objects/Misc/scrapcircuit.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 250
+    state: icon
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      ScrapCircuit: 500
 
 - type: entity
-  parent: BaseItem
-  id: ScrapPlasma
-  name: destroyed plasma pump
-  description: A pile of scrap plasma, ripped out of a larger machine.
+  id: ScrapCircuit1
+  parent: ScrapCircuit
+  suffix: Single
   components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  id: ScrapCircuit5
+  parent: ScrapCircuit
+  suffix: Five
+  components:
+    - type: Stack
+      count: 5
+
+- type: entity
+  id: ScrapCircuit10
+  parent: ScrapCircuit
+  suffix: Ten
+  components:
+    - type: Stack
+      count: 10
+
+- type: entity
+  id: ScrapCircuit20
+  parent: ScrapCircuit
+  suffix: Twenty
+  components:
+    - type: Stack
+      count: 20
+
+#plasma
+
+- type: entity
+  parent: OreBase
+  id: ScrapPlasma
+  name: plasma isotope salvage
+  description: A pile of broken pumps or perhaps canisters, ripped out of an engine and still leaking valuable plasma.
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: ScrapPlasma
+  - type: Tag
+    tags:
+    - RawMaterial
   - type: Sprite
     sprite: _Crescent/Objects/Misc/scraplasma.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 325
+    state: icon
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      ScrapPlasma: 500
+
+- type: entity
+  id: ScrapPlasma1
+  parent: ScrapPlasma
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  id: ScrapPlasma3
+  parent: ScrapPlasma
+  suffix: Three
+  components:
+    - type: Stack
+      count: 3
+
+- type: entity
+  id: ScrapPlasma5
+  parent: ScrapPlasma
+  suffix: Five
+  components:
+    - type: Stack
+      count: 5
+
+#uranium
+
+- type: entity
+  parent: OreBase
+  id: ScrapUranium
+  name: discarded fissiles
+  description: Spent uranium cells, discarded radio-thermal components, and other radioactive elements that could be reused.
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: ScrapUranium
+  - type: Tag
+    tags:
+    - RawMaterial
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/scrapuranium.rsi
+    state: icon
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      ScrapUranium: 500
+
+- type: entity
+  id: ScrapUranium1
+  parent: ScrapUranium
+  suffix: Single
+  components:
+    - type: Stack
+      count: 1
+
+- type: entity
+  id: ScrapUranium3
+  parent: ScrapUranium
+  suffix: Three
+  components:
+    - type: Stack
+      count: 3
+
+- type: entity
+  id: ScrapUranium5
+  parent: ScrapUranium
+  suffix: Five
+  components:
+    - type: Stack
+      count: 5
+
+#single-use scrap
 
 - type: entity
   parent: BaseItem
@@ -155,19 +275,6 @@
     - state: icon
   - type: StaticPrice
     price: 500
-
-- type: entity
-  parent: BaseItem
-  id: ScrapUranium
-  name: spent uranium cell
-  description: A spent uranium cell, discarded. May still be of some use to scrappers.
-  components:
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/scrapuranium.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 850
 
 - type: entity
   parent: BaseItem
@@ -363,6 +470,7 @@
   components:
   - type: Tag
     tags:
+    - RawMaterial
     - DrugComponent
   - type: Stack
     stackType: RefinedGarbageOre
