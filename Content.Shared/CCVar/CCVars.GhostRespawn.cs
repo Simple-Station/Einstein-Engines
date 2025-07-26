@@ -9,7 +9,7 @@ public sealed partial class CCVars
     // This is the real respawn timer that gets used ingame. it's also in minutes.
     //
     public static readonly CVarDef<float> GhostRespawnTime =
-        CVarDef.Create("ghost.respawn_time", 10f, CVar.SERVERONLY);
+        CVarDef.Create("ghost.respawn_time", 3f, CVar.SERVERONLY);
 
     public static readonly CVarDef<int> GhostRespawnMaxPlayers =
         CVarDef.Create("ghost.respawn_max_players", 9999, CVar.SERVERONLY);
