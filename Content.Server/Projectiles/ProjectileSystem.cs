@@ -57,7 +57,6 @@ public sealed class ProjectileSystem : SharedProjectileSystem
         if (component.gibsOnHit) //used for antimateriel rifles
         {
             _bodySystem.GibBody(target);
-            return; //no need to do the rest if they're gibbed
         }
 
         var otherName = ToPrettyString(target);
