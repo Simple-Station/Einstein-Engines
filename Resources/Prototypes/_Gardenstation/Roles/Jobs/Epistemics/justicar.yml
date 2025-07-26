@@ -71,7 +71,7 @@
     shoes: ClothingShoesBootsJusticarPsychalBoot
     head: ClothingHeadHatJusticarPsychalCoif
     id: JusticarPDA
-    ears: ClothingHeadsetSecScience #Justicar has an over-ear headset with sec and epi comms
+    ears: ClothingHeadsetJustiScience #Justicar has an over-ear headset with sec, epi, and command comms
     gloves: ClothingHandsGlovesJusticarPsychalWrappings # fix the sprite not showing at some point
     outerClothing: ClothingOuterCoatJusticarFur
     belt: ClothingBeltJusticarPsychalBelt # this probably works ok now
