@@ -59,6 +59,7 @@
     eyes: ClothingEyesHudSecurity
   inhand:
     - BookUnionfallDSMGuide
+    - BoxRoundsAntiMateriel
   storage:
     back:
       - VoidsuitKitDSM

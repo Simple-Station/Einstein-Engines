@@ -61,6 +61,7 @@
     gloves: ClothingHandsGlovesCombat
   inhand:
     - BookUnionfallNCWLGuide
+    - BoxRoundsAntiMateriel
   storage:
     back:
       - VoidsuitKitNCWL
