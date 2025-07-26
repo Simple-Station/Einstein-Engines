@@ -5,17 +5,9 @@
   description: A dusty pamphlet given to every Communard as a briefing for the mission ahead.
   components:
   - type: Sprite
-    sprite: Objects/Misc/books.rsi
+    sprite: Objects/Misc/bureaucracy.rsi
     layers:
-    - state: paper
-    - state: cover_base
-      color: "#52320b"
-    - state: decor_wingette
-      color: "#e69a3e"
-    - state: icon_glow
-    - state: icon_diamond
-    - state: icon_text
-      color: "#fcdf74"
+    - state: scrap
   - type: Tag
     tags:
     - Book
@@ -23,6 +15,8 @@
     openOnActivation: true
     guides:
     - UnionfallNCWL
+  - type: SelfDelete
+    timeToDelete: 60 #should be enough to read it and then not clutter
 
 - type: entity
   id: BookUnionfallDSMGuide
@@ -31,17 +25,9 @@
   description: A dusty pamphlet given to every Imperial soldier as a briefing for the mission ahead.
   components:
   - type: Sprite
-    sprite: Objects/Misc/books.rsi
+    sprite: Objects/Misc/bureaucracy.rsi
     layers:
-    - state: paper
-    - state: cover_base
-      color: "#52320b"
-    - state: decor_wingette
-      color: "#e69a3e"
-    - state: icon_glow
-    - state: icon_diamond
-    - state: icon_text
-      color: "#fcdf74"
+    - state: scrap
   - type: Tag
     tags:
     - Book
@@ -49,3 +35,5 @@
     openOnActivation: true
     guides:
     - UnionfallDSM
+  - type: SelfDelete
+    timeToDelete: 60 #should be enough to read it and then not clutter
