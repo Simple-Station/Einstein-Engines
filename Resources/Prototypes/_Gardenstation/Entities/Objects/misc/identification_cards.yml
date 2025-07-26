@@ -12,8 +12,8 @@
     - state: subdepartment
       color: "#58C800"
     - state: justicar
-    - type: PresetIdCard
-      job: Justicar
+  - type: PresetIdCard
+    job: Justicar
   - type: Access
     tags:
     - Justicar

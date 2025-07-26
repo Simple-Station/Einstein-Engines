@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: Justicar
   name: job-name-justicar
   description: job-description-justicar
@@ -29,14 +29,14 @@
     - !type:CharacterItemGroupRequirement
       group: TraitsCasterType
   startingGear: JusticarGear
-  icon: "JobIconLibrarian" # ill make an icon eventually but not today haha
+  icon: "JobIconJusticar"
   supervisors: job-supervisors-rd
   canBeAntag: false # dont EVER let these guys be antag im fucking BEGGING YOU
   # whitelistRequired: true - make real for if too many psychic war veterans
   access:
   - Research
   - Security # coordination with mantis and sec to punish psishitters and conduct mindbreaking
-  - Brig # this is temp till we start mapping in a special justicar brig
+  #- Brig # this is temp till we start mapping in a special justicar brig
   - Maintenance
   - Justicar # this isnt actually a real access yet lol 7-19-25 4:15 tell me when it is
   special:
@@ -71,7 +71,7 @@
     shoes: ClothingShoesBootsJusticarPsychalBoot
     head: ClothingHeadHatJusticarPsychalCoif
     id: JusticarPDA
-    ears: ClothingHeadsetAltScience
+    ears: ClothingHeadsetSecScience #Justicar has an over-ear headset with sec and epi comms
     gloves: ClothingHandsGlovesJusticarPsychalWrappings # fix the sprite not showing at some point
     outerClothing: ClothingOuterCoatJusticarFur
     belt: ClothingBeltJusticarPsychalBelt # this probably works ok now
