@@ -1,0 +1,22 @@
+- type: entity
+  name: APMC Polka 35
+  parent: BaseWeaponPistol
+  id: WeaponPistolPolka35
+  description: A large but quite lightweight pistol, comes with a attachment point for suppressors and a infrared trigger guard for EVA gloves. Uses .35 auto.
+  components:
+  - type: Sprite
+    sprite: _CS4875/Polka.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
+  - type: Gun
+    fireRate: 8 #slightly out preforms the MK58
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+    fireOnDropChance: 1
