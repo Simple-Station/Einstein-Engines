@@ -3154,7 +3154,7 @@ entities:
     - type: Transform
       pos: 1.8334126,-9.462616
       parent: 1
-- proto: ScrapPlasma
+- proto: ScrapPlasma3
   entities:
   - uid: 675
     components:
