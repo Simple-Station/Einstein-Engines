@@ -1,23 +1,23 @@
 - type: vessel
-  id: UnionfallImparator
-  name: DSM Imparator
-  description: A light Imperial picket and support fighter.
+  id: UnionfallIbis
+  name: DSM Ibis
+  description: A heavy imperial fighter armed with missles and dual plasma repeaters.
   price: 30000
   category: Small
   group: None
-  path: /Maps/_Crescent/Unionfall/DSM/unionfall_imparator.yml
+  path: /Maps/_Crescent/Unionfall/DSM/unionfall_ibis.yml
 
 - type: gameMap
-  id: UnionfallImparator
-  mapName: 'DSM Imparator'
-  mapPath: /Maps/_Crescent/Unionfall/DSM/unionfall_imparator.yml
+  id: UnionfallIbis
+  mapName: 'DSM Ibis'
+  mapPath: /Maps/_Crescent/Unionfall/DSM/unionfall_ibis.yml
   minPlayers: 0
   stations:
-    UnionfallImparator:
+    UnionfallIbis:
       stationProto: StandardCrescentVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'DSM Imparator {1}'
+          mapNameTemplate: 'DSM Ibis {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'

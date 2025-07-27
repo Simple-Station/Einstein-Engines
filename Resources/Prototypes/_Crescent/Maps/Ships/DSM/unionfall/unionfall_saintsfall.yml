@@ -1,23 +1,23 @@
 - type: vessel
-  id: UnionfallJannissary
-  name: DSM Jannissary
-  description: A light Imperial combat shuttle.
+  id: UnionfallSaintsfall
+  name: DSM Saintsfall
+  description: A light vulcan fighter meant to eliminate ultralights.
   price: 30000
   category: Small
   group: None
-  path: /Maps/_Crescent/Unionfall/DSM/unionfall_jannissary.yml
+  path: /Maps/_Crescent/Unionfall/DSM/unionfall_saintsfall.yml
 
 - type: gameMap
-  id: UnionfallJannissary
-  mapName: 'DSM Jannissary'
-  mapPath: /Maps/_Crescent/Unionfall/DSM/unionfall_jannissary.yml
+  id: UnionfallSaintsfall
+  mapName: 'DSM Saintsfall'
+  mapPath: /Maps/_Crescent/Unionfall/DSM/unionfall_saintsfall.yml
   minPlayers: 0
   stations:
-    UnionfallJannissary:
+    UnionfallSaintsfall:
       stationProto: StandardCrescentVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'DSM Jannissary {1}'
+          mapNameTemplate: 'DSM Saintsfall {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'

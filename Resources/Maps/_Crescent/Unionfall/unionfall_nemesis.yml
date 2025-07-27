@@ -586,6 +586,24 @@ entities:
             1313: 10,-27
             1321: 11,-26
             1339: 4,16
+            1352: 4,12
+            1360: 4,13
+            1368: 4,14
+            1376: 4,15
+            1384: 8,2
+            1392: 8,3
+            1400: 8,4
+            1443: -13,-15
+            1448: -13,-14
+            1456: -13,-22
+            1461: -13,-21
+            1466: -13,-20
+            1469: -10,-28
+            1474: -8,-32
+            1479: 2,-27
+            1490: 10,-27
+            1498: 11,-26
+            1516: 4,16
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -700,6 +718,28 @@ entities:
             1329: 11,-20
             1334: 11,-19
             1342: 4,16
+            1355: 4,12
+            1363: 4,13
+            1371: 4,14
+            1379: 4,15
+            1387: 8,2
+            1395: 8,3
+            1403: 8,4
+            1408: 9,2
+            1413: 9,3
+            1418: 9,4
+            1423: 2,-13
+            1428: 2,-12
+            1433: 2,-11
+            1438: 2,-10
+            1471: -10,-28
+            1482: 2,-27
+            1485: 8,-32
+            1493: 10,-27
+            1501: 11,-26
+            1506: 11,-20
+            1511: 11,-19
+            1519: 4,16
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -794,6 +834,24 @@ entities:
             1319: 11,-26
             1337: 4,16
             1345: 4,17
+            1350: 4,12
+            1358: 4,13
+            1366: 4,14
+            1374: 4,15
+            1382: 8,2
+            1390: 8,3
+            1398: 8,4
+            1441: -13,-15
+            1446: -13,-14
+            1451: -13,-13
+            1454: -13,-22
+            1459: -13,-21
+            1464: -13,-20
+            1477: 2,-27
+            1488: 10,-27
+            1496: 11,-26
+            1514: 4,16
+            1522: 4,17
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -903,6 +961,27 @@ entities:
             1333: 11,-19
             1341: 4,16
             1347: 4,17
+            1354: 4,12
+            1362: 4,13
+            1370: 4,14
+            1378: 4,15
+            1386: 8,2
+            1394: 8,3
+            1402: 8,4
+            1407: 9,2
+            1412: 9,3
+            1417: 9,4
+            1422: 2,-13
+            1427: 2,-12
+            1432: 2,-11
+            1437: 2,-10
+            1481: 2,-27
+            1492: 10,-27
+            1500: 11,-26
+            1505: 11,-20
+            1510: 11,-19
+            1518: 4,16
+            1524: 4,17
         - node:
             id: LatticeEdgeE
           decals:
@@ -1006,6 +1085,26 @@ entities:
             1318: 11,-26
             1336: 4,16
             1344: 4,17
+            1349: 4,12
+            1357: 4,13
+            1365: 4,14
+            1373: 4,15
+            1381: 8,2
+            1389: 8,3
+            1397: 8,4
+            1440: -13,-15
+            1445: -13,-14
+            1450: -13,-13
+            1453: -13,-22
+            1458: -13,-21
+            1463: -13,-20
+            1467: -10,-28
+            1472: -8,-32
+            1476: 2,-27
+            1487: 10,-27
+            1495: 11,-26
+            1513: 4,16
+            1521: 4,17
         - node:
             id: LatticeEdgeN
           decals:
@@ -1149,6 +1248,34 @@ entities:
             1326: 11,-20
             1331: 11,-19
             1338: 4,16
+            1351: 4,12
+            1359: 4,13
+            1367: 4,14
+            1375: 4,15
+            1383: 8,2
+            1391: 8,3
+            1399: 8,4
+            1405: 9,2
+            1410: 9,3
+            1415: 9,4
+            1420: 2,-13
+            1425: 2,-12
+            1430: 2,-11
+            1435: 2,-10
+            1442: -13,-15
+            1447: -13,-14
+            1455: -13,-22
+            1460: -13,-21
+            1465: -13,-20
+            1468: -10,-28
+            1473: -8,-32
+            1478: 2,-27
+            1483: 8,-32
+            1489: 10,-27
+            1497: 11,-26
+            1503: 11,-20
+            1508: 11,-19
+            1515: 4,16
         - node:
             id: LatticeEdgeS
           decals:
@@ -1287,6 +1414,33 @@ entities:
             1330: 11,-19
             1335: 4,16
             1343: 4,17
+            1348: 4,12
+            1356: 4,13
+            1364: 4,14
+            1372: 4,15
+            1380: 8,2
+            1388: 8,3
+            1396: 8,4
+            1404: 9,2
+            1409: 9,3
+            1414: 9,4
+            1419: 2,-13
+            1424: 2,-12
+            1429: 2,-11
+            1434: 2,-10
+            1439: -13,-15
+            1444: -13,-14
+            1449: -13,-13
+            1452: -13,-22
+            1457: -13,-21
+            1462: -13,-20
+            1475: 2,-27
+            1486: 10,-27
+            1494: 11,-26
+            1502: 11,-20
+            1507: 11,-19
+            1512: 4,16
+            1520: 4,17
         - node:
             id: LatticeEdgeW
           decals:
@@ -1405,6 +1559,29 @@ entities:
             1332: 11,-19
             1340: 4,16
             1346: 4,17
+            1353: 4,12
+            1361: 4,13
+            1369: 4,14
+            1377: 4,15
+            1385: 8,2
+            1393: 8,3
+            1401: 8,4
+            1406: 9,2
+            1411: 9,3
+            1416: 9,4
+            1421: 2,-13
+            1426: 2,-12
+            1431: 2,-11
+            1436: 2,-10
+            1470: -10,-28
+            1480: 2,-27
+            1484: 8,-32
+            1491: 10,-27
+            1499: 11,-26
+            1504: 11,-20
+            1509: 11,-19
+            1517: 4,16
+            1523: 4,17
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
@@ -2373,7 +2550,7 @@ entities:
       pos: 0.5,-10.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -12281.299
+      secondsUntilStateChange: -12338.966
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -2414,18 +2591,15 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -2.5,-0.5
       parent: 1
+  - uid: 527
+    components:
+    - type: Transform
+      pos: 9.5,-21.5
+      parent: 1
   - uid: 627
     components:
     - type: Transform
       pos: 1.5,-19.5
-      parent: 1
-- proto: AirlockCommandLockedDSMHorizontalSoldier
-  entities:
-  - uid: 527
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 9.5,-21.5
       parent: 1
 - proto: AirlockExternal
   entities:
@@ -2473,7 +2647,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -19520.012
+      secondsUntilStateChange: -19577.678
       state: Opening
   - uid: 403
     components:
@@ -2754,10 +2928,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -10.5,-8.5
       parent: 1
-    - type: PointCannon
-      linkedConsoleIds:
-      - 840
-      linkedConsoleId: 840
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -2768,16 +2938,16 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+    - type: PointCannon
+      linkedConsoleIds:
+      - 840
+      linkedConsoleId: 840
   - uid: 561
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 10.5,0.5
       parent: 1
-    - type: PointCannon
-      linkedConsoleIds:
-      - 840
-      linkedConsoleId: 840
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -2788,6 +2958,10 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+    - type: PointCannon
+      linkedConsoleIds:
+      - 840
+      linkedConsoleId: 840
 - proto: Bed
   entities:
   - uid: 552
@@ -7151,6 +7325,13 @@ entities:
     components:
     - type: Transform
       pos: -7.5,-13.5
+      parent: 1
+- proto: CrateIdnaAmmo
+  entities:
+  - uid: 1598
+    components:
+    - type: Transform
+      pos: -7.5,-12.5
       parent: 1
 - proto: CrateMedicalSupplies
   entities:
@@ -12426,8 +12607,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -6.5,11.5
       parent: 1
-    - type: PointCannon
-      linkedConsoleId: 840
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -12442,14 +12621,14 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+    - type: PointCannon
+      linkedConsoleId: 840
   - uid: 574
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 8.5,10.5
       parent: 1
-    - type: PointCannon
-      linkedConsoleId: 840
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -12464,6 +12643,8 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+    - type: PointCannon
+      linkedConsoleId: 840
 - proto: WeaponTurretPDT
   entities:
   - uid: 389

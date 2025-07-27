@@ -89,9 +89,9 @@
 
 - type: entity
   parent: BaseItem
-  id: ShipVoucherUnionfallImparator
-  name: Old DSM 'Imparator' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with an Imperial Imparator-class support artillery craft. Has to be redeemed at a shipyard console.
+  id: ShipVoucherUnionfallIbis
+  name: Old DSM 'Ibis' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Ibis-class heavy fighter. Has to be redeemed at a shipyard console.
   components:
   - type: Item
     size: Small
@@ -102,13 +102,13 @@
   - type: StaticPrice
     price: 30000
   - type: ShipVoucher
-    ship: UnionfallImparator
+    ship: UnionfallIbis
 
 - type: entity
   parent: BaseItem
-  id: ShipVoucherUnionfallJannissary
-  name: Old DSM 'Jannissary' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with an Imperial Jannissary-class fighter. Has to be redeemed at a shipyard console.
+  id: ShipVoucherUnionfallSaintsfall
+  name: Old DSM 'Saintsfall' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Saintsfall-class vulcan fighter. Has to be redeemed at a shipyard console.
   components:
   - type: Item
     size: Small
@@ -119,7 +119,7 @@
   - type: StaticPrice
     price: 30000
   - type: ShipVoucher
-    ship: UnionfallJannissary
+    ship: UnionfallSaintsfall
 
 - type: entity
   parent: BaseItem
@@ -137,4 +137,21 @@
     price: 30000
   - type: ShipVoucher
     ship: UnionfallRaider
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherUnionfallValor
+  name: Old DSM 'Valor' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with an Imperial Valor-class ultralight bomber. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 30000
+  - type: ShipVoucher
+    ship: UnionfallValor
 

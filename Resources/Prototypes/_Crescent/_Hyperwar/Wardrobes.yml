@@ -1076,15 +1076,16 @@
 - type: vendingMachineInventory
   id: NCWLConscriptShipInventory
   startingInventory:
-    ShipVoucherUnionfallLodka: 5
-    ShipVoucherUnionfallVanguard: 5
+    ShipVoucherUnionfallLodka: 2
+    ShipVoucherUnionfallVanguard: 4
     ShipVoucherUnionfallBroadsword: 10
     ShipVoucherUnionfallKhopesh: 10
 
 - type: vendingMachineInventory
   id: DSMConscriptShipInventory
   startingInventory:
-    ShipVoucherUnionfallRaider: 6
-    ShipVoucherUnionfallJannissary: 7
-    ShipVoucherUnionfallImparator: 7
+    ShipVoucherUnionfallRaider: 2
+    ShipVoucherUnionfallIbis: 3
+    ShipVoucherUnionfallSaintsfall: 2
     ShipVoucherUnionfallConquest: 10
+    ShipVoucherUnionfallValor: 10
