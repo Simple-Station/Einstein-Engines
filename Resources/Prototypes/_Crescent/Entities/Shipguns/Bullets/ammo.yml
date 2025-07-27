@@ -19,6 +19,72 @@
   - type: Sprite
     sprite: _Crescent/Ammunition/vulcan.rsi
     state: base
+
+#armor piercing slugthrower ammo
+
+- type: entity
+  id: MagazineLightRifleBoxSlug
+  name: ".50 cal uranium-tip slugthrower box"
+  parent: BaseMagazineLightRifle
+  components:
+  - type: Tag
+    tags:
+      - SlugthrowerCartridgeBox
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeMachineGun
+    proto: CartridgeMachineGunArmorPiercing
+    capacity: 50
+  - type: Item
+  - type: Sprite
+    sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
+    state: base
+    
+#low yield slugthrower ammo
+
+- type: entity
+  id: MagazineLightRifleBoxSlugHE
+  name: ".50 cal low-yield explosive slugthrower box"
+  parent: BaseMagazineLightRifle
+  components:
+  - type: Tag
+    tags:
+      - SlugthrowerCartridgeBox
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeMachineGun
+    proto: CartridgeMachineGunHighExplosive
+    capacity: 50
+  - type: Item
+  - type: Sprite
+    sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
+    state: base
+
+#inert slugthrower ammo
+
+- type: entity
+  id: MagazineLightRifleBoxSlugInert
+  name: ".50 cal inert slugthrower box"
+  parent: BaseMagazineLightRifle
+  components:
+  - type: Tag
+    tags:
+      - SlugthrowerCartridgeBox
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeMachineGun
+    proto: BulletMachineGunPractice
+    capacity: 50
+  - type: Item
+  - type: Sprite
+    sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
+    state: base
   
 #mortar ammo
 
