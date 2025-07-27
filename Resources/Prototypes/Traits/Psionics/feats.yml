@@ -15,6 +15,7 @@
             - ForensicMantis
             - Chaplain
             - Librarian
+            - Justicar
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -52,6 +53,7 @@
             - ForensicMantis
             - Chaplain
             - Librarian
+            - Justicar
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement

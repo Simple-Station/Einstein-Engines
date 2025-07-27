@@ -24,8 +24,8 @@
              Captain: [ 1, 1 ]
              BlueshieldOfficer: [ 1, 1]
              NanotrasenRepresentative: [ 1, 1 ]
-             # Magistrate: [ 1, 1 ] # EE: Disabled
-             # AdministrativeAssistant: [ 1, 1 ] # EE: Disabled
+             Magistrate: [ 1, 1 ] # EE: Disabled # gardenstation enabled
+             AdministrativeAssistant: [ 1, 1 ] # EE: Disabled # gardenstation enabled
            #engineering
              AtmosphericTechnician: [ 1, 2 ]
              ChiefEngineer: [ 1, 1 ]
@@ -70,6 +70,7 @@
              ResearchDirector: [ 1, 1 ]
              Scientist: [ 3, 5 ]
              SeniorResearcher: [ 1, 1 ]
+             Justicar: [ 1,1 ] # gardenstation added
            #supply
              Quartermaster: [ 1, 1 ]
              CargoTechnician: [ 2, 3 ]

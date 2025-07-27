@@ -25,8 +25,8 @@
             Captain: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1]
             NanotrasenRepresentative: [ 1, 1 ]
-            # Magistrate: [ 1, 1 ] # EE: Disabled
-            # AdministrativeAssistant: [ 1, 1 ] # EE: Disabled
+            Magistrate: [ 1, 1 ] # EE: Disabled # gardenstation enabled
+            AdministrativeAssistant: [ 1, 1 ] # EE: Disabled # gardenstation enabled
             HeadOfPersonnel: [ 1, 1 ]
             ServiceWorker: [ 3, 6 ]
             # Engineering
@@ -48,6 +48,7 @@
             Chaplain: [ 1, 1 ]
             Librarian: [ 1, 1 ]
             ForensicMantis: [ 1, 1 ]
+            Justicar: [ 1,1 ] #gardenstation added
             # Security
             HeadOfSecurity: [ 1, 1 ]
             SecurityOfficer: [ 4, 6 ]

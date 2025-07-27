@@ -1,0 +1,14 @@
+﻿- type: entity
+  parent: ClothingShoesMilitaryBase
+  id: ClothingShoesBootsJusticarPsychalBoot
+  name: justicar's psychal boots
+  description: The strange fitted boots seem to adjust to the wearer's foot size on their own.
+  components:
+  - type: Sprite
+    sprite: _Gardenstation/Clothing/Shoes/Boots/justicar_psychal_boots.rsi
+  - type: Clothing
+    sprite: _Gardenstation/Clothing/Shoes/Boots/justicar_psychal_boots.rsi
+  - type: ClothingSlowOnDamageModifier # just jackboot values idk
+    modifier: 0.8
+  - type: ClothingModifyStunTime
+    modifier: 0.8

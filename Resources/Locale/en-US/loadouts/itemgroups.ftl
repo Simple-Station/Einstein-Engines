@@ -326,6 +326,21 @@ character-item-group-LoadoutPsionicMantisOuter = Psionic Mantis Outerwear
 character-item-group-LoadoutPsionicMantisShoes = Psionic Mantis Shoes
 character-item-group-LoadoutPsionicMantisUniforms = Psionic Mantis Uniforms
 
+# Epistemics - Justicar
+character-item-group-LoadoutJusticarBackpacks = Justicar Backpacks
+character-item-group-LoadoutJusticarBelt = Justicar Belt
+character-item-group-LoadoutJusticarEars = Justicar Ears
+character-item-group-LoadoutJusticarEquipment = Justicar Equipment
+character-item-group-LoadoutJusticarEyes = Justicar Eyewear
+character-item-group-LoadoutJusticarGloves = Justicar Gloves
+character-item-group-LoadoutJusticarHead = Justicar Headgear
+character-item-group-LoadoutJusticarId = Justicar Id
+character-item-group-LoadoutJusticarNeck = Justicar Neckwear
+character-item-group-LoadoutJusticarMask = Justicar Masks
+character-item-group-LoadoutJusticarOuter = Justicar Outerwear
+character-item-group-LoadoutJusticarShoes = Justicar Shoes
+character-item-group-LoadoutJusticarUniforms = Justicar Uniforms
+
 # Logistics
 character-item-group-LoadoutLogisticsBackpacks = Logistics Backpacks
 character-item-group-LoadoutLogisticsBelt = Logistics Belt

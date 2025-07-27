@@ -1,0 +1,13 @@
+﻿- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltJusticarPsychalBelt
+  name: justicar's psychal belt
+  description: The belt seems to wrap itself around anything you press up against it...
+  components:
+  - type: Sprite
+    sprite: _Gardenstation/Clothing/Belt/justicar_psychal_belt.rsi
+  - type: Clothing
+    sprite: _Gardenstation/Clothing/Belt/justicar_psychal_belt.rsi
+  - type: Storage
+    grid:
+    - 0,0,15,1

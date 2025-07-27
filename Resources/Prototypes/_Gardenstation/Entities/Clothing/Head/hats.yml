@@ -1,0 +1,20 @@
+﻿- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatJusticarPsychalCoif
+  name: justicar's psychal coif
+  description: a strange looking coif, a large socket is fitted in the back. The strange metallic head covering seems to pulse in response to your own thoughts. Its swirling lights call to you...
+  components:
+  - type: Sprite
+    sprite: _Gardenstation/Clothing/Head/Hats/justicar_psychal_coif.rsi
+  - type: Clothing
+    sprite: _Gardenstation/Clothing/Head/Hats/justicar_psychal_coif.rsi
+  - type: Armor # if its too much just remove everything but rads and holy idk
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Caustic: 0.9
+        Radiation: 0.9
+        Holy: 0.9

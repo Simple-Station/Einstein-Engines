@@ -31,13 +31,16 @@
   startingGear: ForensicMantisGear
   icon: "JobIconForensicMantis"
   supervisors: job-supervisors-rd
-  canBeAntag: true # DeltaV - Mantis is no longer a Detective
+  canBeAntag: false # DeltaV - Mantis is no longer a Detective # Gardenstation - We're changing this again sorry guys
   # whitelistRequired: true
   access:
   - Research
+  - Security # Gardenstation - psiwarrior needs to coordinate with sec getting psishitters
   - Maintenance
   - Mantis # DeltaV - Mantis, see Resources/Prototypes/DeltaV/Access/epistemics.yml
   special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ] # Gardenstation - Epi psiwarriors NEED to be reliable for future paranormal antags
   - !type:AddComponentSpecial
     components:
       - type: Psionic
@@ -64,7 +67,7 @@
     head: ClothingHeadHatFezMantis
     id: ForensicMantisPDA
     eyes: ClothingEyesGlassesSunglasses
-    ears: ClothingHeadsetScience # DeltaV - Mantis is part of Epistemics
+    ears: ClothingHeadsetSecScience # DeltaV - Mantis is part of Epistemics #Gardenstation - Mantis has an over-ear headset with sec and epi comms
     gloves: ClothingHandsGlovesColorWhite
     outerClothing: ClothingOuterCoatMantis
     belt: ClothingBeltMantis

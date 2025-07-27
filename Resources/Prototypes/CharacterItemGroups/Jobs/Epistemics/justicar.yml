@@ -1,0 +1,81 @@
+﻿# Justicar
+#- type: characterItemGroup
+#  id: LoadoutJusticarBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutJusticarBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutJusticarEars
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutJusticarEquipment
+  maxItems: 3
+  items:
+    - type: loadout
+      id: LoadoutJusticarEquipmentCandles
+    - type: loadout
+      id: LoadoutJusticarPillCanisterSpaceDrugs
+    - type: loadout
+      id: LoadoutJusticarPillCanisterCryptobiolin
+
+- type: characterItemGroup
+  id: LoadoutJusticarEyes
+  maxItems: 1
+  items:
+  - type: loadout
+    id: LoadoutJusticarEyesEpiHUD
+  - type: loadout
+    id: LoadoutJusticarEyesEpiGlasses
+
+#- type: characterItemGroup
+#  id: LoadoutJusticarGloves
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutJusticarHead
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutJusticarId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutJusticarNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutJusticarMask
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutJusticarOuter
+#  maxItems: 1
+#  items:
+#    - type: loadout
+#      id: LoadoutScienceOuterWinterJusticar
+
+#- type: characterItemGroup
+#  id: LoadoutJusticarShoes
+#  maxItems: 1
+#  items:
+#
+# - type: characterItemGroup
+#  id: LoadoutJusticarUniforms
+#  maxItems: 1
+# items:
+#    - type: loadout
+#      id: LoadoutJusticar x x x
+#    - type: loadout
+#      id: LoadoutJusticar x x x

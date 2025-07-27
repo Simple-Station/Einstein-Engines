@@ -1,0 +1,93 @@
+- type: job
+  id: Justicar
+  name: job-name-justicar
+  description: job-description-justicar
+  playTimeTracker: JobJusticar
+  requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 24000
+    - !type:CharacterDepartmentTimeRequirement
+      department: Epistemics
+      min: 14600
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security # pump this up if everyone sucks at being psi ward - the time conversion is fucking weird idk
+      min: 14600
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterSpeciesRequirement
+        inverted: true
+        species:
+          - IPC
+      - !type:CharacterTraitRequirement
+        inverted: true
+        traits:
+          - Pacifist
+    - !type:CharacterEmployerRequirement
+      employers:
+        - NanoTrasen
+        - ZengHuPharmaceuticals
+    - !type:CharacterItemGroupRequirement
+      group: TraitsCasterType
+  startingGear: JusticarGear
+  icon: "JobIconJusticar"
+  supervisors: job-supervisors-rd
+  canBeAntag: false # dont EVER let these guys be antag im fucking BEGGING YOU
+  # whitelistRequired: true - make real for if too many psychic war veterans
+  access:
+  - Research
+  - Security # coordination with mantis and sec to punish psishitters and conduct mindbreaking
+  #- Brig # this is temp till we start mapping in a special justicar brig
+  - Maintenance
+  - Justicar # this isnt actually a real access yet lol 7-19-25 4:15 tell me when it is
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ] # any epi psiwarriors need to be shielded otherwise secCHUDS wont ever fucking listen to them
+  - !type:AddComponentSpecial
+    components:
+      - type: BibleUser # added this for a justicar grimoire im working over
+      - type: Psionic
+        powerSlots: 3
+        baselinePowerCost: 75
+        nextPowerCost: 75
+        removable: false
+      - type: InnatePsionicPowers
+        powersToAdd: # ok i know this seems sort of stacked but this is gonna turn into some other shit eventually so keep with me here
+          - NoosphericZapPower # closest we have to psikrav for now - just a temp thing till i sit down and make it happen
+          - MetapsionicPower
+          - TelepathyPower
+          - XenoglossyPower # we will turn librarian back to a civ job at somepoint unless cataloger becomes some other shit
+          - AssayPower # eventually this will become a justicar only assay showing what psi-level an entity is and give an idea of how to deal with them
+          - MantisSummonBlackBlade # this is a temp thing just till we add in the psi krav for justicar
+          # - JusticarPsionicAssault - Legsweep with vomit and bleed proc
+          # - JusticarWhisperTruth - throatchop with insane mood debuff and subtle text implying eldritch horrors driving you catatonically insane
+          # - JusticarPainBeam - lungpunch with added stamina damage and minor mood debuff
+
+- type: startingGear
+  id: JusticarGear
+  subGear:
+  - JusticarPlasmamanGear
+  equipment: # add more cool shit soon
+    jumpsuit: ClothingUniformJumpsuitJusticarBodysuit # add alternatives for flavor eventually
+    back: ClothingBackpackScience
+    shoes: ClothingShoesBootsJusticarPsychalBoot
+    head: ClothingHeadHatJusticarPsychalCoif
+    id: JusticarPDA
+    ears: ClothingHeadsetJustiScience #Justicar has an over-ear headset with sec, epi, and command comms
+    gloves: ClothingHandsGlovesJusticarPsychalWrappings # fix the sprite not showing at some point
+    outerClothing: ClothingOuterCoatJusticarFur
+    belt: ClothingBeltJusticarPsychalBelt # this probably works ok now
+    pocket1: BookPsionicsGuidebook
+  storage:
+    back:
+    - HandLabeler
+    - PillMindbreakerToxin
+    - Flash
+
+- type: startingGear
+  id: JusticarPlasmamanGear
+  parent: BasePlasmamanMaskGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitScientist # placeholder envirosuit till i sprite it lol
+    head: ClothingHeadEnvirohelmScientist
+    gloves: ClothingHandsGlovesEnviroglovesWhite
+

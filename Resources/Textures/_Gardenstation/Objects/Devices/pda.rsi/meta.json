@@ -1,0 +1,23 @@
+﻿{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "pda-justicar sprited and implemented by bunnygirlHyacinth",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "pda"
+        },
+        {
+            "name": "light_overlay"
+        },
+        {
+            "name": "id_overlay"
+        },
+        {
+            "name": "pda-justicar"
+        }
+    ]
+}

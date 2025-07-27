@@ -10,7 +10,7 @@ namespace Content.Shared.Access.Components;
 [Access(typeof(SharedIdCardConsoleSystem))]
 public sealed partial class IdCardConsoleComponent : Component
 {
-    public const int MaxFullNameLength = 30;
+    public const int MaxFullNameLength = 48;
     public const int MaxJobTitleLength = 30;
 
     public static string PrivilegedIdCardSlotId = "IdCardConsole-privilegedId";
@@ -91,6 +91,7 @@ public sealed partial class IdCardConsoleComponent : Component
         "Justice",  // DeltaV - Add Justice access
         "Prosecutor", // Delta V - Add Prosecutor access
         "Clerk", // Delta V - Add Clerk access
+        "Justicar", // Gardenstation - add justicar access
     };
 
     [Serializable, NetSerializable]

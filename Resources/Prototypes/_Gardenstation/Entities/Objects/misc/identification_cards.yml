@@ -1,0 +1,19 @@
+#epistemics - justicar only for now
+- type: entity
+  parent: IDCardStandard
+  id: JusticarIDCard
+  name: Justicar ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: department
+      color: "#C96DBF"
+    - state: subdepartment
+      color: "#58C800"
+    - state: justicar
+  - type: PresetIdCard
+    job: Justicar
+  - type: Access
+    tags:
+    - Justicar

@@ -1,0 +1,10 @@
+﻿- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitJusticarBodysuit
+  name: justicar's psychal bodysuit
+  description: a strange looking skin-tight bodysuit, a large eye is emblazoned on the front and several sockets are fitted along its spine. It seems alive.
+  components:
+  - type: Sprite
+    sprite: _Gardenstation/Clothing/Uniform/Jumpsuit/justicar_psychal_bodysuit.rsi
+  - type: Clothing
+    sprite: _Gardenstation/Clothing/Uniform/Jumpsuit/justicar_psychal_bodysuit.rsi

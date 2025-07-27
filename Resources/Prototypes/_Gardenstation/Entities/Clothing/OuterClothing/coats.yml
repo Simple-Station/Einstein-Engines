@@ -1,0 +1,25 @@
+﻿- type: entity
+  parent: [ClothingOuterBaseMedium, AllowSuitStorageClothing, ClothingOuterArmorBasic, ClothingOuterStorageBase]
+  id: ClothingOuterCoatJusticarFur
+  name: justicar coat
+  description: An antique coat with fur trim and golden fittings. A sigil sewn into one of its inner cuffs seems to grant it increased protection
+  components:
+  - type: Sprite
+    sprite: _Gardenstation/Clothing/OuterClothing/Coats/justicar_long_coat.rsi
+  - type: Clothing
+    sprite: _Gardenstation/Clothing/OuterClothing/Coats/justicar_long_coat.rsi
+  - type: Armor #basically ward armor with rad/holy idk probably busted as fuck but who gaf
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.7
+        Caustic: 0.75
+        Radiation: 0.7
+        Holy: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: TemperatureProtection
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
