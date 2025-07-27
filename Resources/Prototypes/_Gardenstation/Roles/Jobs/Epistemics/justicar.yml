@@ -44,6 +44,7 @@
     implants: [ MindShieldImplant ] # any epi psiwarriors need to be shielded otherwise secCHUDS wont ever fucking listen to them
   - !type:AddComponentSpecial
     components:
+      - type: BibleUser # added this for a justicar grimoire im working over
       - type: Psionic
         powerSlots: 3
         baselinePowerCost: 75
