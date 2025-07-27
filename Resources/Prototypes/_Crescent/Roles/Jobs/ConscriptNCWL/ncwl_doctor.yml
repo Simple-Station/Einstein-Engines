@@ -43,7 +43,7 @@
 - type: startingGear
   id: ConscriptDoctorNCWLGear
   equipment:
-    mask: ClothingMaskSterile
+    mask: ClothingMaskPilot
     neck: ClothingNeckIFFOrange
     jumpsuit: ClothingUniformJumpsuitNCWLMedic
     shoes: ClothingShoesBootsMagNCWL
