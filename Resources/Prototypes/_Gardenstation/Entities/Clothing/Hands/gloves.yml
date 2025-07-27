@@ -1,5 +1,5 @@
 ﻿- type: entity
-  parent: ClothingHandsBase # idk why but it just doesnt show on a sprite and im too drunk to figure this out rn lole
+  parent: ClothingHandsBase
   id: ClothingHandsGlovesJusticarPsychalWrappings
   name: justicar's psychal wrappings
   description: The strange fabric of the psychal bodysuit seems to have woven itself into gloves. When worn, hidden sigils reveal themselves on the backs of the wearer's hands.
