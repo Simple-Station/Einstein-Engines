@@ -173,3 +173,37 @@
   - type: Clothing
     sprite: Clothing/Ears/Headsets/security.rsi
 # Goobstation end
+# Gardenstation start
+- type: entity
+  parent: [ClothingHeadsetAlt, BaseCommandContraband]
+  id: ClothingHeadsetSecScience
+  name: mantis's over-ear headset # Need a headset with access to epi and sec comms for Mantis
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyScience
+      - EncryptionKeySecurity
+      - EncryptionKeyCommon
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/science.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/science.rsi
+
+- type: entity
+  parent: [ClothingHeadsetAlt, BaseCommandContraband]
+  id: ClothingHeadsetJustiScience
+  name: justicar's over-ear headset # ...And a version with command comms for the Justicar
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyScience
+      - EncryptionKeySecurity
+      - EncryptionKeyCommand    
+      - EncryptionKeyCommon
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/science.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/science.rsi
+# Gardenstation end

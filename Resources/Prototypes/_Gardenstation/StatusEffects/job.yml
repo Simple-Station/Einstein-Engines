@@ -1,0 +1,7 @@
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconJusticar
+  icon:
+    sprite: /Textures/_Gardenstation/Interface/Misc/job_icons.rsi
+    state: Justicar
+  jobName: job-name-justicar
