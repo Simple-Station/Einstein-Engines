@@ -122,7 +122,7 @@
     - suitStorage
   - type: Gun
     fireRate: 2
-    damageModifier: 2.5
+    damageModifier: 1.75
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
