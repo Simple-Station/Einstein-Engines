@@ -36,7 +36,7 @@
       tags:
         - CartridgeMachineGun
     proto: CartridgeMachineGunArmorPiercing
-    capacity: 50
+    capacity: 100
   - type: Item
   - type: Sprite
     sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
@@ -58,7 +58,7 @@
       tags:
         - CartridgeMachineGun
     proto: CartridgeMachineGunHighExplosive
-    capacity: 50
+    capacity: 100
   - type: Item
   - type: Sprite
     sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
@@ -80,7 +80,7 @@
       tags:
         - CartridgeMachineGun
     proto: BulletMachineGunPractice
-    capacity: 50
+    capacity: 100
   - type: Item
   - type: Sprite
     sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
