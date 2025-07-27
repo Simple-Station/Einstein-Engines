@@ -15,7 +15,7 @@ public sealed partial class CCVars
     ///     Whether gas differences will move entities.
     /// </summary>
     public static readonly CVarDef<bool> SpaceWind =
-        CVarDef.Create("atmos.space_wind", true, CVar.SERVERONLY);
+        CVarDef.Create("atmos.space_wind", false, CVar.SERVERONLY);
 
     /// <summary>
     ///     A direct multiplier on how violent space wind is.
