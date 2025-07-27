@@ -146,7 +146,7 @@
 - type: entity
   id: ComputerCargoOrdersCommie
   parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, BaseStructureComputer]
-  name: port vladzena station commissary
+  name: nova balreska station commissary
   description: Used to order supplies.
   placement:
     mode: SnapgridCenter
