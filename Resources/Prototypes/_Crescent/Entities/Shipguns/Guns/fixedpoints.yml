@@ -195,6 +195,7 @@
     sprite: _Crescent/Objects/ShuttleWeapons/torpedo.rsi
     layers:
     - state: base
+      map: ["enum.GunVisualLayers.Base"]
     - state: mag-2
       map: ["enum.GunVisualLayers.Mag"]
   - type: ContainerContainer
@@ -238,6 +239,7 @@
   - type: HardpointAnchorableOnly
     class: Missile
     size: Small
+  - type: Appearance
 
 
 #kurosawa
