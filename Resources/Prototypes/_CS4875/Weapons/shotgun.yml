@@ -1,0 +1,49 @@
+- type: entity
+  name: SV2 Thunker
+  parent: [BaseWeaponBattery, BaseGunWieldable]
+  id: WeaponEnergyShotgunThunker
+  description: bloom!!
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Battery/energy_shotgun.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-unshaded-4
+        map: ["enum.GunVisualLayers.MagUnshaded"]
+        shader: unshaded
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Battery/energy_shotgun.rsi
+  - type: Gun
+    fireRate: 2
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+    uniformSpread: true
+  - type: ProjectileBatteryAmmoProvider
+    proto: AntiParticlesProjectileEvil
+    fireCost: 1000
+  - type: BatteryWeaponFireModes
+    fireModes:
+    - proto: AntiParticlesProjectileEvil
+      fireCost: 1000
+    - proto: AntiParticlesProjectileLessEvil
+      fireCost: 100
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,3,1
+    sprite: Objects/Weapons/Guns/Battery/inhands_64x.rsi
+    heldPrefix: energy
+  - type: Tag
+    tags:
+    - HighRiskItem
+  - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
+  - type: Battery
+    maxCharge: 1000
+    startingCharge: 1000
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 75
+    autoRechargePause: true
+    autoRechargePauseTime: 5
+
