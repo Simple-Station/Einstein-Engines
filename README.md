@@ -6,7 +6,7 @@ This is the Main Repository of the Hullrot Server. Hullrot is a spin on classic 
 
 License-wise, for any code in the Hullrot Folder , it has been licensed to AGPL, with files that have alternative licenses being denoted so through comments at the top.
 
-Most sprite assets in the Hullrot Folder are propietary, meaning do not redistribute , do not relicense , do not use and do not modify.the "Ported" folder is exempt from this.Other exemptions are explicity mentioned in the json of the RSI assets.
+Most sprite assets in the Hullrot Folder are propietary, meaning do not redistribute , do not relicense , do not use and do not modify.The Ported folders are exempt from this.Other exemptions are explicity mentioned in the json of the RSI assets.
 
 ---
 
