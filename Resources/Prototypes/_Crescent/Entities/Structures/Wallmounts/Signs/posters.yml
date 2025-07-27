@@ -1,7 +1,7 @@
 - type: entity
   parent: PosterBase
   id: PosterDSMGirl
-  name: "Play Duchess': Edition 7"
+  name: "Play Duke: Edition 7"
   description: "A coveted cover of the Imperial Regime's top model."
   components:
   - type: Sprite
