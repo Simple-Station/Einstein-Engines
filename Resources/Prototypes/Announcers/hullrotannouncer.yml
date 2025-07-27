@@ -14,13 +14,15 @@
 
     ## UNIONFALL
     - id: unionfallBegin # start of round, 1 minute in
-      path: comms/war_alarm.ogg
+      path: comms/war_start.ogg
     - id: unionfallPeriodic # every 0.25, 0.5, 0.75 of the grace period
-      path: comms/war_alarm.ogg
+      path: comms/war_periodic.ogg
     - id: unionfallAlmost # at 1 minute before grace period end
-      path: comms/war_alarm.ogg
+      path: comms/war_almost.ogg
     - id: unionfallGraceOver # grace period end
       path: comms/war_alarm_heavy.ogg
+    - id: unionfallPointCapture # point being captured
+      path: comms/war_alarm.ogg
 
     ### Events
     - id: anomalySpawn # An anomaly has spawned in a random place

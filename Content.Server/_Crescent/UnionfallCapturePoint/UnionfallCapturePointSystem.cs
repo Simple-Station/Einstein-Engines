@@ -139,7 +139,7 @@ public sealed class UnionfallCapturePointSystem : EntitySystem
         if (component.CapturingFaction == null) //faction now controls da point
         {
             component.CapturingFaction = faction;
-            _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
+            _announcer.SendAnnouncement(_announcer.GetAnnouncementId("unionfallPointCapture"), Filter.Broadcast(),
                 faction + " has activated the control point! It will finish in " + float.Round(component.CurrentCaptureProgress).ToString() + " seconds.");
         }
         else if (component.CapturingFaction != faction) //opposing faction touched control point
@@ -148,7 +148,7 @@ public sealed class UnionfallCapturePointSystem : EntitySystem
             component.CurrentCaptureProgress += component.CaptureTimeBonus; //takes longer since it switched sides
             if (component.CurrentCaptureProgress > component.TimeToEnd) //cant go longer than this amount
                 component.CurrentCaptureProgress = component.TimeToEnd;
-            _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
+            _announcer.SendAnnouncement(_announcer.GetAnnouncementId("unionfallPointCapture"), Filter.Broadcast(),
                 faction + " seized control of the control point! The time left is " + float.Round(component.CurrentCaptureProgress).ToString() + " seconds.");
         }
     }
