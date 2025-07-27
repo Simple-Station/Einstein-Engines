@@ -219,6 +219,18 @@
   files:
    - /Audio/_Crescent/Ambience/Unionfall/NCWL_grace.ogg
 
+#unionfall fight period - NCWL
+
+- type: ambientMusic
+  id: unionfallApproachingNCWLBiome
+  sound:
+    collection: unionfallApproachingNCWLBiome
+
+- type: soundCollection
+  id: unionfallApproachingNCWLBiome
+  files:
+   - /Audio/_Crescent/Ambience/Unionfall/NCWL_fight.ogg
+
 #unionfall grace period - DSM
 
 - type: ambientMusic
@@ -230,3 +242,15 @@
   id: unionfallGraceDSMBiome
   files:
    - /Audio/_Crescent/Ambience/Unionfall/DSM_grace.ogg
+
+#unionfall fight period - DSM
+
+- type: ambientMusic
+  id: unionfallApproachingDSMBiome
+  sound:
+    collection: unionfallApproachingDSMBiome
+
+- type: soundCollection
+  id: unionfallApproachingDSMBiome
+  files:
+   - /Audio/_Crescent/Ambience/Unionfall/DSM_fight.ogg

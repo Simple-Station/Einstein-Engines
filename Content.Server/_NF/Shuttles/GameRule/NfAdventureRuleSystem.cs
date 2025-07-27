@@ -137,6 +137,8 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         var unionfall_vladzena = "/Maps/_Crescent/Unionfall/unionfall_vladzena.yml";
         var unionfall_grace_barrier_ncwl = "/Maps/_Crescent/Unionfall/grace_barrier_NCWL.yml";
         var unionfall_grace_barrier_dsm = "/Maps/_Crescent/Unionfall/grace_barrier_DSM.yml";
+        var unionfall_biome_emitter_ncwl = "/Maps/_Crescent/Unionfall/unionfall_biome_emitter_NCWL.yml";
+        var unionfall_biome_emitter_dsm = "/Maps/_Crescent/Unionfall/unionfall_biome_emitter_DSM.yml";
         var defensebattery = "/Maps/_Crescent/Stations/defensebatteryimperial.yml";
         // var northpole = "/Maps/_NF/POI/northpole.yml";
         var arena = "/Maps/_Crescent/Explorables/zhipovwreck.yml";
@@ -595,6 +597,30 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
             var meta = EnsureComp<MetaDataComponent>(barrierUidB[0]);
             _meta.SetEntityName(barrierUidB[0], "#####---#####", meta);
             _shuttle.SetIFFColor(barrierUidB[0], depotColor);
+        }
+
+        //FIGHT BIOME EMITTER FOR NEMESIS - COORDINATES OFFSET CUZ ITS AN ASTEROID
+        if (_map.TryLoad(mapId, unionfall_biome_emitter_dsm, out var biomeEmitterUidA, new MapLoadOptions
+        {
+            Offset = new Vector2(2030f, 4530f)
+        }))
+        {
+            var meta = EnsureComp<MetaDataComponent>(biomeEmitterUidA[0]);
+            _meta.SetEntityName(biomeEmitterUidA[0], "Biome Emitter DSM", meta);
+            _shuttle.SetIFFColor(biomeEmitterUidA[0], depotColor);
+            _shuttle.AddIFFFlag(biomeEmitterUidA[0], IFFFlags.HideLabel);
+        }
+
+        //FIGHT BIOME EMITTER FOR CLEMENTINE - COORDINATES OFFSET CUZ ITS AN ASTEROID
+        if (_map.TryLoad(mapId, unionfall_biome_emitter_ncwl, out var biomeEmitterUidB, new MapLoadOptions
+        {
+            Offset = new Vector2(-3030f, 13030f)
+        }))
+        {
+            var meta = EnsureComp<MetaDataComponent>(biomeEmitterUidB[0]);
+            _meta.SetEntityName(biomeEmitterUidB[0], "Biome Emitter NCWL", meta);
+            _shuttle.SetIFFColor(biomeEmitterUidB[0], depotColor);
+            _shuttle.AddIFFFlag(biomeEmitterUidB[0], IFFFlags.HideLabel);
         }
 
 
