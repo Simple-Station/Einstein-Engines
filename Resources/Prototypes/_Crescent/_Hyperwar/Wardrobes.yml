@@ -1060,7 +1060,6 @@
   startingInventory:
     C4: 100
     JetpackBlackFilled: 100
-    ExGrenade: 5
     GrenadeFlashBang: 5
     DoubleEmergencyOxygenTankFilled: 100
     ClothingHeadHelmetNCWLBasic: 100
@@ -1070,8 +1069,7 @@
   id: DSMConscriptGearInventory
   startingInventory:
     C4: 100
-    JetpackBlackFilled: 100
-    ExGrenade: 5
+    JetpackBlackFilled: 10
     GrenadeFlashBang: 5
     DoubleEmergencyOxygenTankFilled: 100
     ClothingHeadHelmetImperialTrooperHelmet: 100

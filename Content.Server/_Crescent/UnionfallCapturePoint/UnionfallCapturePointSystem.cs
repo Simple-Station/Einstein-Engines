@@ -39,22 +39,6 @@ public sealed class UnionfallCapturePointSystem : EntitySystem
         SubscribeLocalEvent<UnionfallCapturePointComponent, ActivateInWorldEvent>(OnActivatedInWorld);
         SubscribeLocalEvent<UnionfallCapturePointComponent, UnionfallCapturePointDoAfterEvent>(OnCaptureDoAfter);
         _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("audio.ambience");
-        // var query = EntityQueryEnumerator<UnionfallCapturePointComponent>();
-        // while (query.MoveNext(out var uid, out var capturepoint))
-        // {
-        //     TimeSpan graceTime = TimeSpan.FromSeconds(capturepoint.GracePeriod);
-        //     if (capturepoint.IsAnnouncerUnionfall)
-        //     {   //this announces 30 seconds in, then 1/4 thru the time, 1/2, 3/4, almost done, and finally at war start
-        //         Timer.Spawn(TimeSpan.FromMinutes(1), () => AnnouncementWarStart(graceTime));
-        //         // Timer.Spawn(graceTime * 0.25, () => AnnouncementWarPeriodic(graceTime * 0.25));
-        //         // Timer.Spawn(graceTime * 0.50, () => AnnouncementWarPeriodic(graceTime * 0.50));
-        //         // Timer.Spawn(graceTime * 0.75, () => AnnouncementWarPeriodic(graceTime * 0.75));
-        //         Timer.Spawn(graceTime - TimeSpan.FromMinutes(1), AnnouncementWarAlmost);
-        //         Timer.Spawn(graceTime, AnnouncementWarGraceOver); // TODO: turn this into a cool 10 second countdown
-
-
-        //     }
-        // }
     }
 
     private void OnComponentInit(EntityUid uid, UnionfallCapturePointComponent component, ComponentInit args)
@@ -93,7 +77,7 @@ public sealed class UnionfallCapturePointSystem : EntitySystem
                 _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
             capturepoint.CapturingFaction + " has secured the control point! The round is over.");
                 _gameTicker.EndRound(capturepoint.CapturingFaction + " WON. RESTARTING ROUND IN 1 MINUTE");
-                Timer.Spawn(TimeSpan.FromMinutes(1), () => _gameTicker.RestartRound());
+                //Timer.Spawn(TimeSpan.FromMinutes(1), () => _gameTicker.RestartRound()); this doesnt work but it should.......
                 capturepoint.CurrentCaptureProgress = 999999;
             }
         }

@@ -298,9 +298,9 @@
     boltClosed: null
   - type: Gun
     fireRate: 9
-    angleIncrease: 1
-    angleDecay: 15
-    maxAngle: 15
+    angleIncrease: 15
+    angleDecay: 90
+    maxAngle: 90
     minAngle: 1
     selectedMode: FullAuto
     availableModes:
