@@ -1058,8 +1058,10 @@
 - type: vendingMachineInventory
   id: NCWLConscriptGearInventory
   startingInventory:
-    BreachingCharge: 100
+    C4: 100
     JetpackBlackFilled: 100
+    ExGrenade: 5
+    GrenadeFlashBang: 5
     DoubleEmergencyOxygenTankFilled: 100
     ClothingHeadHelmetNCWLBasic: 100
     ClothingOuterArmorNCWLHeavyCarapace: 100
@@ -1067,8 +1069,10 @@
 - type: vendingMachineInventory
   id: DSMConscriptGearInventory
   startingInventory:
-    BreachingCharge: 100
+    C4: 100
     JetpackBlackFilled: 100
+    ExGrenade: 5
+    GrenadeFlashBang: 5
     DoubleEmergencyOxygenTankFilled: 100
     ClothingHeadHelmetImperialTrooperHelmet: 100
     ClothingOuterArmorImperialTrooperArmor: 100

@@ -91,8 +91,9 @@ public sealed class UnionfallCapturePointSystem : EntitySystem
             if (capturepoint.CurrentCaptureProgress <= 0) //capturing complete. TODO: NEED TO END THE ROUND SOMEHOW
             {
                 _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
-            capturepoint.CapturingFaction + " has seized control of the control point! The round is over.");
-                _gameTicker.EndRound(capturepoint.CapturingFaction + " won");
+            capturepoint.CapturingFaction + " has secured the control point! The round is over.");
+                _gameTicker.EndRound(capturepoint.CapturingFaction + " WON. RESTARTING ROUND IN 1 MINUTE");
+                Timer.Spawn(TimeSpan.FromMinutes(1), () => _gameTicker.RestartRound());
                 capturepoint.CurrentCaptureProgress = 999999;
             }
         }
@@ -157,25 +158,25 @@ public sealed class UnionfallCapturePointSystem : EntitySystem
     {
         _sawmill.Debug("firing AnnouncementWarStart");
         _announcer.SendAnnouncement(_announcer.GetAnnouncementId("unionfallBegin"), Filter.Broadcast(),
-                "SUDDEN HADAL TIDE DETECTED - DEPLOYING LOCALIZED DEFENSES. EXPECTED DURATION: <" + time + "> ALL VESSELS ADVISED TO REMAIN NEAR THE FLAGSHIP AND WEATHER THE STORM.");
+                "SUDDEN HADAL TIDE DETECTED - DEPLOYING LOCALIZED PROTECTION BUBBLE. EXPECTED DURATION: <" + time + "> ALL VESSELS ADVISED TO REMAIN NEAR THE FLAGSHIP AND DEPLOY A FLEET.");
     }
     private void AnnouncementWarPeriodic(TimeSpan time)
     {
         _sawmill.Debug("firing AnnouncementWarPeriodic");
         _announcer.SendAnnouncement(_announcer.GetAnnouncementId("unionfallPeriodic"), Filter.Broadcast(),
-                "<" + time + "> LEFT OF THE TIDE");
+                "<" + time + "> UNTIL PROTECTIVE BUBBLE FALLS.");
     }
 
     private void AnnouncementWarAlmost()
     {
         _sawmill.Debug("firing AnnouncementWarAlmost");
         _announcer.SendAnnouncement(_announcer.GetAnnouncementId("unionfallAlmost"), Filter.Broadcast(),
-                "<00:01:00> LEFT OF THE TIDE - SCANS SHOW THE HADAL TIDE ACTIVELY RECEDING");
+                "<00:01:00> LEFT UNTIL PROTECTIVE BUBBLE FALLS - CHECK ALL SEALS THREE TIMES SO DEATH DOES NOT COME FOR YOU.");
     }
     private void AnnouncementWarGraceOver()
     {
         _sawmill.Debug("firing AnnouncementWarGraceOver");
         _announcer.SendAnnouncement(_announcer.GetAnnouncementId("unionfallGraceOver"), Filter.Broadcast(),
-                "WAR HAS BEGUN! - HADAL TIDE RESCINDED ENTIRELY. ALL VESSELS ADVISED TO NAVIGATE TO NT OUTPOST VLADZENA AND SECURE IT");
+                "WAR HAS BEGUN! - HADAL TIDE RESCINDED ENTIRELY, PROTECTIVE BUBBLES FALLEN. ALL VESSELS ADVISED TO NAVIGATE TO NT OUTPOST VLADZENA AND SECURE IT.");
     }
 }

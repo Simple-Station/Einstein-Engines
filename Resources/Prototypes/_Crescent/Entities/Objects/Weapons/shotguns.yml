@@ -90,7 +90,7 @@
     - suitStorage
   - type: Gun
     fireRate: 0.8
-    damageModifier: 1.5
+    damageModifier: 1.25
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -98,7 +98,7 @@
       path: /Audio/Weapons/Guns/UnionfallWeapons/shotgun_fire_1.ogg
     fireOnDropChance: 1
   - type: BallisticAmmoProvider
-    capacity: 5
+    capacity: 6
     autoCycle: true
     proto: ShellShotgun
     whitelist:
@@ -122,10 +122,14 @@
     - suitStorage
   - type: Gun
     fireRate: 2
-    damageModifier: 1.75
+    damageModifier: 1.5
+    burstFireRate: 15
+    shotgunSpreadMultiplier: 2
+    shotsPerBurst: 2
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
+    - Burst
     soundGunshot:
       path: /Audio/Weapons/Guns/UnionfallWeapons/shotgun_fire_1.ogg
     fireOnDropChance: 1

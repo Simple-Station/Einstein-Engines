@@ -297,16 +297,15 @@
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
   - type: Gun
-    fireRate: 7
-    angleIncrease: 1.5
-    angleDecay: 6
-    selectedMode: Burst
-    shotsPerBurst: 8
-    burstCooldown: 0.8
-    burstFireRate: 7
+    fireRate: 9
+    angleIncrease: 1
+    angleDecay: 15
+    maxAngle: 15
+    minAngle: 1
+    selectedMode: FullAuto
     availableModes:
     - SemiAuto
-    - Burst
+    - FullAuto
     fireOnDropChance: 0.1
   - type: ItemSlots
     slots:
@@ -353,9 +352,11 @@
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
   - type: Gun
-    fireRate: 5
-    angleIncrease: 1.5
-    angleDecay: 6
+    fireRate: 6
+    angleIncrease: 0.25
+    angleDecay: 15
+    minAngle: 0
+    maxAngle: 5
     selectedMode: FullAuto
     availableModes:
     - SemiAuto
