@@ -14,6 +14,15 @@
     - type: Transform
 
 - type: entity
+  id: StandardCrescentNoLatejoin #for derelicts and temporary objects
+  parent:
+    - BaseStation
+    - BaseStationShuttles
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Transform
+
+- type: entity
   id: StandardCrescentOutpost #POI
   parent:
     - BaseStation

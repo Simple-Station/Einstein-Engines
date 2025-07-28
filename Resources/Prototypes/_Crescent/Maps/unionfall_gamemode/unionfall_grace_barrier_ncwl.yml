@@ -1,11 +1,11 @@
 - type: gameMap
-  id: mysterious-barrier
+  id: unionfall-Grace-Barrier-NCWL
   mapName: 'Mysterious Barrier'
-  mapPath: /Maps/_Crescent/Unionfall/grace_barrier.yml
+  mapPath: /Maps/_Crescent/Unionfall/grace_barrier_NCWL.yml
   minPlayers: 0
   stations:
-    Mysterious-Barrier:
-      stationProto: StandardCrescentStation
+    Unionfall-Grace-Barrier-NCWL:
+      stationProto: StandardCrescentNoLatejoin
       gridComponents:
         - type: BlockShipWeaponProjectileGrid
         - type: PreventPilot

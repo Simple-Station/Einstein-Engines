@@ -571,13 +571,13 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
             Offset = new Vector2(-3000f, 13000f)
         }))
         {
-            if (_prototypeManager.TryIndex<GameMapPrototype>("mysterious-barrier", out var stationProto))
+            if (_prototypeManager.TryIndex<GameMapPrototype>("unionfall-Grace-Barrier-NCWL", out var stationProto))
             {
-                _station.InitializeNewStation(stationProto.Stations["Mysterious-Barrier"], barrierUidA);
+                _station.InitializeNewStation(stationProto.Stations["Unionfall-Grace-Barrier-NCWL"], barrierUidA);
             }
 
             var meta = EnsureComp<MetaDataComponent>(barrierUidA[0]);
-            _meta.SetEntityName(barrierUidA[0], "#####===#####", meta);
+            _meta.SetEntityName(barrierUidA[0], "Hadal Protection Bubble (NCWL)", meta);
             _shuttle.SetIFFColor(barrierUidA[0], depotColor);
         }
 
@@ -587,13 +587,13 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
             Offset = new Vector2(2000f, 4500f)
         }))
         {
-            if (_prototypeManager.TryIndex<GameMapPrototype>("mysterious-barrier", out var stationProto))
+            if (_prototypeManager.TryIndex<GameMapPrototype>("unionfall-Grace-Barrier-DSM", out var stationProto))
             {
-                _station.InitializeNewStation(stationProto.Stations["Mysterious-Barrier"], barrierUidB);
+                _station.InitializeNewStation(stationProto.Stations["Unionfall-Grace-Barrier-DSM"], barrierUidB);
             }
 
             var meta = EnsureComp<MetaDataComponent>(barrierUidB[0]);
-            _meta.SetEntityName(barrierUidB[0], "#####---#####", meta);
+            _meta.SetEntityName(barrierUidB[0], "Hadal Protection Bubble (DSM)", meta);
             _shuttle.SetIFFColor(barrierUidB[0], depotColor);
         }
 
