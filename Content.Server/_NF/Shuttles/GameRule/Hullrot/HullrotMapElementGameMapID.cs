@@ -30,6 +30,9 @@ public sealed partial class HullrotMapElementGameMapID
     [DataField("HideIFF", required: false)]
     public bool HideIFF = false;
 
+    [DataField("forcedName", required: false)]
+    public string? ForcedName = null;
+
     /// <summary>
     /// This float decides the maximum random offset for X for this map element when it spawns. Leave unconfigured or at 0 if you want it fixed.
     /// </summary>
