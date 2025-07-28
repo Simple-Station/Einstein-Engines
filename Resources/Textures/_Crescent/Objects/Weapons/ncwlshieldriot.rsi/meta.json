@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "license": "",
+    "copyright": "Made by the Sector Crescent team for the Hullrot Project. All rights reserved. Do not modify, publish, use, relicense, or edit.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "ncwl-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "ncwl-inhand-right",
+            "directions": 4
+        }
+    ]
+}

@@ -15531,7 +15531,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 27.320206,11.96379
       parent: 1
-- proto: ScrapCircuit
+- proto: ScrapCircuit1
   entities:
   - uid: 2130
     components:
@@ -15547,7 +15547,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 29.609648,9.611828
       parent: 1
-- proto: ScrapPlasma
+- proto: ScrapPlasma1
   entities:
   - uid: 2128
     components:

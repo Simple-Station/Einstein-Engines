@@ -6825,7 +6825,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ScrapCircuit
+- proto: ScrapCircuit1
   entities:
   - uid: 117
     components:
