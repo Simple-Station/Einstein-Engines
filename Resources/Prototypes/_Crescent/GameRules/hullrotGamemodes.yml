@@ -1,5 +1,5 @@
 # GAME PRESETS ARE WHAT YOU VOTE ON AS A GAMEMODE.
-# They do NOT CONTROL what spawns in by themselves. this is handled by the rule under it.
+# They do NOT CONTROL what spawns in by themselves. this is handled by the rule that it's pointing to in the rules: dictionary
 # in hullrotGamemodes.yml you can find "Adventure" "VladzenaJackal", etc.
 
 - type: gamePreset
@@ -17,7 +17,7 @@
 
 # GAMERULES ARE WAHT DECIDES WHAT SPAWNS IN, BY EVERYTHING IN THE ADVENTURERULE COMPONENT
 #
-# gameMapsByID is a DICTIONARY that describes all spawned grids defined by a gameMap. 
+# gameMapsByID is a DICTIONARY that describes all spawned grids defined by a gameMap.
 # this is stuff like Port Vladzena, which has vladzena.yml (MAP) and vladzena.yml (PROTOTYPE)
 # you can give the dictionary key whatever name you want
 # gameMapID must equal the ID of the gameMap prototype's YML.
@@ -43,7 +43,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: AdventureRule
-    gameMapsByID: 
+    gameMapsByID:
       Vladzena:
         gameMapID: Vladzena
         posX: 0
@@ -56,7 +56,30 @@
         posY: 4500
         IFFColor: IndianRed
         IFFFaction: TFSC
-    gameMapsByPath: 
+      Dochenskaya:
+        gameMapID: Dochenskaya
+        posX: 9000
+        posY: 4000
+        IFFColor: Orange
+        IFFFaction: TFSC
+      GliessSanto:
+        gameMapID: GliessSanto
+        posX: 4200
+        posY: -4500
+        IFFColor: White
+      Tatsumoto:
+        gameMapID: Tatsumoto
+        posX: 6000
+        posY: 1000
+        IFFColor: White
+        IFFFaction: SHI
+      KalSuzerai:
+        gameMapID: Kal
+        posX: 0
+        posY: 0
+        IFFColor: White
+        IFFFaction: DSM
+    gameMapsByPath:
       Tinnia:
         path: /Maps/_NF/POI/tinnia.yml
         entityName: Faint Signal
@@ -120,14 +143,14 @@
         entityName: Taypan-2 Asteroid Belt
         posX: 3000
         posY: 5400
-  
+
 
 
 - type: gamePreset
   id: VladzenaJackal
   name: Hyperwar | NCWL VS GSC
   showInVote: true
-  description: Port Vladzena defends against a surprise attack from the GSC Grinning Jackal. 
+  description: Port Vladzena defends against a surprise attack from the GSC Grinning Jackal.
   rules:
     - HyperwarNCWLvsGSC
     - LavalandStormScheduler # Lavaland Change
@@ -138,7 +161,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: AdventureRule
-    gameMapsByID: 
+    gameMapsByID:
       Vladzena:
         gameMapID: Vladzena
         posX: 0
@@ -149,7 +172,7 @@
         posX: 7794
         posY: 4500
         IFFColor: IndianRed
-    gameMapsByPath: 
+    gameMapsByPath:
       Tinnia:
         path: /Maps/_NF/POI/tinnia.yml
         entityName: Faint Signal
