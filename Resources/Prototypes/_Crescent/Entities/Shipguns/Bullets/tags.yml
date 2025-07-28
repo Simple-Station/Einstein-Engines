@@ -70,3 +70,13 @@
 
 - type: Tag
   id: SwarmRocketBox
+
+#slugthrower tag
+
+- type: Tag
+  id: SlugthrowerCartridgeBox
+
+#vulcan tag
+
+- type: Tag
+  id: VulcanCartridgeBox

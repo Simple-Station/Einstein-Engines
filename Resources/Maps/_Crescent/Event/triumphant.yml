@@ -6979,14 +6979,14 @@ entities:
     - type: Transform
       pos: -11.503976,2.7147357
       parent: 1
-- proto: ScrapCircuit
+- proto: ScrapCircuit1
   entities:
   - uid: 859
     components:
     - type: Transform
       pos: -12.074517,3.0066154
       parent: 1
-- proto: ScrapPlasma
+- proto: ScrapPlasma1
   entities:
   - uid: 860
     components:

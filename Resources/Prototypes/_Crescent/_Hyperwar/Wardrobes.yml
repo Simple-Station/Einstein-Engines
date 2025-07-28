@@ -203,6 +203,7 @@
     Crowbar: 150
     BoxBreachingCharges: 150
     ClothingOuterHardsuitNCWLJuggernaut: 150
+    ClothingOuterHardsuitNCWLPetya: 150
     ClothingOuterHardsuitNCWLInfantry: 150
     OxygenTankFilled: 150
     ClothingShoesBootsMagAdv: 150
@@ -303,6 +304,7 @@
     HandHeldMassScannerEE: 150
     Crowbar: 150
     BoxBreachingCharges: 150
+    ClothingOuterHardsuitImperialKnight: 150
     ClothingOuterHardsuitImperialSoldier: 150
     ClothingOuterHardsuitClarize: 150
     OxygenTankFilled: 150
@@ -691,6 +693,7 @@
     ClothingBeltMinutemanPouches: 100
     ClothingMaskSyndicateFacemask: 100
     ClothingUniformJumpsuitDraugr: 150
+    ClothingOuterHardsuitIndependentsEVA: 150
     ClothingHandsGlovesCombat: 100
     ClothingShoesBootsJack: 100
     ClothingBackpackSHIDuffelbag: 150
@@ -923,6 +926,9 @@
     BoxBreachingCharges: 150
     ClothingOuterHardsuitPangTai: 150
     ClothingOuterHardsuitHighsec: 150
+    ClothingOuterHardsuitFishbed: 150
+    ClothingOuterHardsuitCenobite: 150
+    ClothingOuterHardsuitIndependentsEVA: 150
     OxygenTankFilled: 150
     ClothingShoesBootsMagAdv: 150
     StimpackMini: 150

@@ -135,27 +135,6 @@
         requireDetailRange: false
 
 - type: entity
-  name: SHI Hristov 15.2x169
-  parent: [BaseWeaponSniper, BaseGunWieldable]
-  id: WeaponSniperHristov
-  description: A portable anti-materiel rifle. Uses 15.2×169 mm  ammo.
-  components:
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Snipers/heavy_sniper.rsi
-  - type: Clothing
-    sprite: Objects/Weapons/Guns/Snipers/heavy_sniper.rsi
-  - type: BallisticAmmoProvider
-    whitelist:
-      tags:
-      - CartridgeAntiMateriel
-    capacity: 5
-    proto: CartridgeAntiMateriel
-  - type: Telescope
-  - type: GunRequiresWield # DeltaV - Firing an antimateriel rifle is.. incredibly unweildy with one hand.
-  - type: Gun # DeltaV
-    fireRate: 0.5
-
-- type: entity
   name: musket
   parent: BaseWeaponSniper
   id: Musket

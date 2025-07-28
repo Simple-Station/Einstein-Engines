@@ -78,6 +78,7 @@ research-technology-imperial-nobleweapons = Imperial Nobility Swords
 research-technology-imperial-sunesis = Imperial Exploration Cruiser
 research-technology-imperial-frigate = Imperial Assault Frigate
 research-technology-imperial-paladin = Imperial Combat Exosuit
+research-technology-imperial-wanderer = Imperial Scout Exosuit
 research-technology-imperial-carrion = Imperial Utility Exosuit
 research-technology-imperial-advancedrifling = Advanced Rifling
 research-technology-imperial-srmimitation = Sixth Fireteam Imitation
@@ -88,6 +89,7 @@ research-technology-imperial-padparadscha = Imperial Siege Battlecruiser
 #NCWL
 research-technology-communard-clothes = Communard Clothes
 research-technology-communard-infantry = Communard Infantry Equipment
+research-technology-communard-riotgear = Communard Riot Gear
 research-technology-communard-fighters = Communard Ultralight Fighters
 research-technology-communard-molot = Communard Missile Corvette
 research-technology-communard-heavyinfantry = Communard Heavy Equipment

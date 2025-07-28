@@ -1,8 +1,6 @@
 # Reporting a security vulnerability
 
-You can report a security vulnerability through Discord or through email.
+All vulnerabilities are to be reported though discord to any maintainer/artificer in the official Hullrot discord.
+If that is not possible , report them to #mlgtastic directly through discord.
 
-If you want to send an email, you can contact us at <simplestation@simplestation.org>.
-If you want to contact us through Discord, you can join [our server](https://discord.gg/X4QEXxUrsJ) and then **privately** message anyone with the `@Maintainer` role.
-
-In either case, **do not publicly disclose the vulnerability until we explicitly give you permission to do so**.
+In either case, **do not publicly disclose the vulnerability**

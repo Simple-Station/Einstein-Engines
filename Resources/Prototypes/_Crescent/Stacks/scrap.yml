@@ -2,14 +2,14 @@
 
 - type: stack
   id: SteelScrapOre
-  name: scrapsteel shards
+  name: low-grade metal shards
   icon: { sprite: /Textures/_Crescent/Objects/Materials/ore.rsi, state: icon-scrap }
   spawn: SteelScrap1
   maxCount: 30
 
 - type: stack
   id: TitaniumScrapOre
-  name: titanium scrap
+  name: high-grade metal shards
   icon: { sprite: /Textures/_Crescent/Objects/Materials/ore.rsi, state: icon-titaniumscrap }
   spawn: TitaniumScrap1
   maxCount: 30
@@ -26,6 +26,27 @@
   name: refined titanium scrap
   icon: { sprite: /Textures/_Crescent/Objects/Materials/ore.rsi, state: icon-titta }
   spawn: RefinedTitaniumScrap1
+  maxCount: 30
+
+- type: stack
+  id: ScrapCircuit
+  name: damaged electronics
+  icon: { sprite: /_Crescent/Objects/Misc/scrapcircuit.rsi, state: icon }
+  spawn: ScrapCircuit1
+  maxCount: 30
+
+- type: stack
+  id: ScrapPlasma
+  name: plasma isotope salvage
+  icon: { sprite: /_Crescent/Objects/Misc/scraplasma.rsi, state: icon }
+  spawn: ScrapPlasma1
+  maxCount: 30
+
+- type: stack
+  id: ScrapUranium
+  name: discarded fissiles
+  icon: { sprite: /_Crescent/Objects/Misc/scrapuranium.rsi, state: icon }
+  spawn: ScrapUranium1
   maxCount: 30
 
 #drugmaking

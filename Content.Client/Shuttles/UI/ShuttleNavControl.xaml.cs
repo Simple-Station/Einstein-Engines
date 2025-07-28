@@ -562,8 +562,12 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
     {
         foreach (var projectile in _projectiles)
         {
-            var visual = _projectileIFF.GetVisual(projectile.VisualTypeIndex);
+            // Create the visual with the scale passed to the constructor
+            var visual = _projectileIFF.GetVisual((ProjectileIFFVisualType)projectile.VisualTypeIndex, projectile.Scale);
+
+            // Call GetVertice without the scale argument
             var verts = visual.GetVertice(projectile.Coordinates.Position, matrix);
+
             for (var i = 0; i < verts.Length; i++)
             {
                 var vert = verts[i];
@@ -571,8 +575,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
                 verts[i] = ScalePosition(vert);
             }
 
-            var color = _projectileIFF.GetColor(projectile.ColorIndex);
-            handle.DrawPrimitives(visual.Topology, verts, color);
+            handle.DrawPrimitives(visual.Topology, verts, projectile.Color);
         }
     }
 
