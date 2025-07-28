@@ -5,6 +5,7 @@
   placement:
     mode: SnapgridCenter
   components:
+    - type: Clickable
     - type: Sprite
       drawdepth: FloorObjects
       sprite: _Crescent/Structures/lightstrip.rsi
