@@ -389,7 +389,7 @@
     - suitStorage
   - type: Appearance
   - type: Gun
-    damageModifier: 5 #enough to KILL a fully armored dsm soldier to DEATH and CAN'T be treated
+    damageModifier: 0.75 # enough to near-crit a fully armored soldier
     fireRate: 8
     selectedMode: SemiAuto
     availableModes:
@@ -444,7 +444,7 @@
     - suitStorage
   - type: Appearance
   - type: Gun
-    damageModifier: 5 #enough to KILL a fully armored ncwl soldier to DEATH and CAN'T be treated
+    damageModifier: 0.75 #enough to near-crit a fully armored soldier
     fireRate: 8
     selectedMode: SemiAuto
     availableModes:

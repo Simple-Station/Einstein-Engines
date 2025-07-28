@@ -11,14 +11,7 @@
         Structural: 400 # Sniper is rarely used this way, but this ammo type exists to burst down CONCRETE and TANKS
     harmorPenetration: 180
     stoppingPower: 45
-    gibsOnHit: true # hue hue. .2 | 2025
-  # - type: ExplodeOnTrigger this doesnt work for some reason???
-  # - type: Explosive #doesn't need to explode too much, just to Look Cool cuz gibbing matters
-  #   explosionType: Default
-  #   maxIntensity: 4
-  #   intensitySlope: 1
-  #   totalIntensity: 4
-  #   maxTileBreak: 0
+  #  gibsOnHit: true # hilarious but overpowered. use for rockets and ship guns maybe? .2 | 2025
 
 - type: entity
   id: BulletAntiMaterielShrapnel
