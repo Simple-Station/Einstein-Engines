@@ -185,7 +185,7 @@
   - type: SpaceBiomeSource
     biome: hadalbiome
     swapDistance: 2000
-    priority: 2500
+    priority: 2800
 
 - type: crescentFactionBiome
   id: hadalbiome
@@ -238,8 +238,8 @@
   components:
   - type: SpaceBiomeSource
     biome: unionfallGraceNCWLBiome
-    swapDistance: 1000
-    priority: 2600
+    swapDistance: 500
+    priority: 2550
 
 - type: crescentFactionBiome
   id: unionfallGraceNCWLBiome
@@ -254,14 +254,14 @@
   components:
   - type: SpaceBiomeSource
     biome: unionfallApproachingNCWLBiome
-    swapDistance: 4000
-    priority: 2400
+    swapDistance: 2000
+    priority: 2600
 
 - type: crescentFactionBiome
   id: unionfallApproachingNCWLBiome
   name: Taypan Wilds
   swapDuration: 2
-  parallax: WildParallax
+  parallax: AbyssParallax
 
 #DSM grace period
 - type: entity
@@ -270,8 +270,8 @@
   components:
   - type: SpaceBiomeSource
     biome: unionfallGraceDSMBiome
-    swapDistance: 1000
-    priority: 2600
+    swapDistance: 500
+    priority: 2550
 
 - type: crescentFactionBiome
   id: unionfallGraceDSMBiome
@@ -286,11 +286,11 @@
   components:
   - type: SpaceBiomeSource
     biome: unionfallApproachingDSMBiome
-    swapDistance: 4000
-    priority: 2400
+    swapDistance: 2000
+    priority: 2600
 
 - type: crescentFactionBiome
   id: unionfallApproachingDSMBiome
   name: Taypan Wilds
   swapDuration: 2
-  parallax: WildParallax
+  parallax: AbyssParallax

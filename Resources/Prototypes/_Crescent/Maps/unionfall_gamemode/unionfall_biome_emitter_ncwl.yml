@@ -1,0 +1,25 @@
+- type: gameMap
+  id: unionfall-Biome-Emitter-NCWL
+  mapName: 'Biome Emitter NCWL'
+  mapPath: /Maps/_Crescent/Unionfall/unionfall_biome_emitter_ncwl.yml
+  minPlayers: 0
+  stations:
+    Unionfall-Biome-Emitter-NCWL:
+      stationProto: StandardCrescentNoLatejoin
+      gridComponents:
+        - type: BlockShipWeaponProjectileGrid
+        - type: PreventPilot
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: outpost
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Biome Emitter NCWL'
+        - type: VesselDesignation
+          designation: vessel-designation-outpost
+        - type: VesselDescription
+          description: what
+        - type: Grammar
+          attributes:
+            proper: true

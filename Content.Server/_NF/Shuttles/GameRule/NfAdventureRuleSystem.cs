@@ -599,24 +599,32 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
             _shuttle.SetIFFColor(barrierUidB[0], depotColor);
         }
 
-        //FIGHT BIOME EMITTER FOR NEMESIS - COORDINATES OFFSET CUZ ITS AN ASTEROID
+        //FIGHT BIOME EMITTER FOR DSM - COORDINATES HALFWAY BETWEEN VLAD AND NEM
         if (_map.TryLoad(mapId, unionfall_biome_emitter_dsm, out var biomeEmitterUidA, new MapLoadOptions
         {
-            Offset = new Vector2(2030f, 4530f)
+            Offset = new Vector2(1000f, 6750f)
         }))
         {
+            if (_prototypeManager.TryIndex<GameMapPrototype>("unionfall-Biome-Emitter-DSM", out var stationProto))
+            {
+                _station.InitializeNewStation(stationProto.Stations["Unionfall-Biome-Emitter-DSM"], biomeEmitterUidA);
+            }
             var meta = EnsureComp<MetaDataComponent>(biomeEmitterUidA[0]);
             _meta.SetEntityName(biomeEmitterUidA[0], "Biome Emitter DSM", meta);
             _shuttle.SetIFFColor(biomeEmitterUidA[0], depotColor);
             _shuttle.AddIFFFlag(biomeEmitterUidA[0], IFFFlags.HideLabel);
         }
 
-        //FIGHT BIOME EMITTER FOR CLEMENTINE - COORDINATES OFFSET CUZ ITS AN ASTEROID
+        //FIGHT BIOME EMITTER FOR NCWL - COORDINATES HALFWAY BETWEEN VLAD AND CLEM
         if (_map.TryLoad(mapId, unionfall_biome_emitter_ncwl, out var biomeEmitterUidB, new MapLoadOptions
         {
-            Offset = new Vector2(-3030f, 13030f)
+            Offset = new Vector2(-1500f, 11000f)
         }))
         {
+            if (_prototypeManager.TryIndex<GameMapPrototype>("unionfall-Biome-Emitter-NCWL", out var stationProto))
+            {
+                _station.InitializeNewStation(stationProto.Stations["Unionfall-Biome-Emitter-NCWL"], biomeEmitterUidB);
+            }
             var meta = EnsureComp<MetaDataComponent>(biomeEmitterUidB[0]);
             _meta.SetEntityName(biomeEmitterUidB[0], "Biome Emitter NCWL", meta);
             _shuttle.SetIFFColor(biomeEmitterUidB[0], depotColor);
