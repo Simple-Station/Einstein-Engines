@@ -13,6 +13,7 @@ using Content.Shared.Mech.Components;
 using Content.Shared.Mech.EntitySystems;
 using Content.Shared.Movement.Events;
 using Content.Shared.Popups;
+using Content.Shared.Shuttles.BUIStates;
 using Content.Shared.Tools.Components;
 using Content.Shared.Verbs;
 using Content.Shared.Wires;
@@ -50,6 +51,7 @@ public sealed partial class MechSystem : SharedMechSystem
         SubscribeLocalEvent<MechComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<MechComponent, GetVerbsEvent<AlternativeVerb>>(OnAlternativeVerb);
         SubscribeLocalEvent<MechComponent, MechOpenUiEvent>(OnOpenUi);
+        SubscribeLocalEvent<MechComponent, MechOpenRadarEvent>(OnOpenRadar);
         SubscribeLocalEvent<MechComponent, RemoveBatteryEvent>(OnRemoveBattery);
         SubscribeLocalEvent<MechComponent, MechEntryEvent>(OnMechEntry);
         SubscribeLocalEvent<MechComponent, MechExitEvent>(OnMechExit);
@@ -161,6 +163,15 @@ public sealed partial class MechSystem : SharedMechSystem
     {
         args.Handled = true;
         ToggleMechUi(uid, component);
+    }
+
+    private void OnOpenRadar(EntityUid uid, MechComponent component, MechOpenRadarEvent args)
+    {
+        var pilot = GetEntity(args.Pilot);
+        if (!TryComp<ActorComponent>(pilot, out var actor))
+            return;
+
+        _ui.TryToggleUi(uid, RadarConsoleUiKey.Key, actor.PlayerSession);
     }
 
     private void OnToolUseAttempt(EntityUid uid, MechPilotComponent component, ref ToolUserAttemptUseEvent args)
