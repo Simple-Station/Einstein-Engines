@@ -28,6 +28,7 @@
             Magistrate: [ 1, 1 ] # EE: Disabled # gardenstation enabled
             AdministrativeAssistant: [ 1, 1 ] # EE: Disabled # gardenstation enabled
             HeadOfPersonnel: [ 1, 1 ]
+            HospitalityDirector: [ 1, 1 ] #Added by Impstation, ported by Gardenstation
             ServiceWorker: [ 3, 6 ]
             # Engineering
             ChiefEngineer: [ 1, 1 ]

@@ -1,0 +1,52 @@
+- type: job
+  id: HospitalityDirector
+  name: job-name-hd
+  description: job-description-hd
+  playTimeTracker: JobHospitalityDirector
+  requirements: #Fix this!
+  - !type:CharacterDepartmentTimeRequirement
+    department: Civilian
+    min: 3600 #DeltaV
+  - !type:CharacterEmployerRequirement
+    employers:
+    - IdrisIncorporated
+    - NanoTrasen
+    - OrionExpress
+  weight: 5
+  startingGear: HospitalityGear
+  icon: "JobIconHospitalityDirector"
+  supervisors: job-supervisors-captain
+  access:
+  - Command
+  - Service
+  - Maintenance
+  - Janitor
+  - Kitchen
+  - Bar
+  - Musician
+  - Theatre
+  - Clown
+  - Mime
+  extendedAccess:
+  - Kitchen
+  - Hydroponics
+
+- type: startingGear
+  id: HospitalityGear
+  subGear:
+  - BartenderPlasmamanGear
+  equipment:
+    head: ClothingHeadHatBellhopHD
+    jumpsuit: ClothingUniformJumpsuitHD
+    back: ClothingBackpack
+    shoes: ClothingShoesColorBlack
+    id: BartenderPDA
+    ears: ClothingHeadsetService #replace this with a command comms service headset when one is added pleaseeeee
+
+- type: startingGear #this also needs a proper go-over
+  id: BartenderPlasmamanGear
+  parent: BasePlasmamanMaskGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitEnviroslacks
+    head: ClothingHeadEnvirohelmColorWhite
+    gloves: ClothingHandsGlovesEnviroglovesWhite

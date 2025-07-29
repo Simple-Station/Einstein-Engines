@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "HospitalityDirector by DinnerCalzone(github) using icon from service techfab sprite by EmoGarbage",
+    "size": {
+        "x": 8,
+        "y": 8
+    },
+    "states": [
+        {
+            "name": "HospitalityDirector"
+        }
+    ]
+}
