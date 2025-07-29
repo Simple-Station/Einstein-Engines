@@ -136,10 +136,10 @@
     armorRepair: Kevlar
     initialModifiers:
       flatReductions:
-        Blunt: 10
-        Slash: 10
-        Piercing: 20
-        Heat: 10
+        Blunt: 30
+        Slash: 30
+        Piercing: 50
+        Heat: 30
         Caustic: 25
   - type: ClothingSpeedModifier
     walkModifier: 1.0

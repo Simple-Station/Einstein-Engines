@@ -1,5 +1,5 @@
 #IF YOURE WONDERING WHERE ALL THE NON-CONSCRIPT JOBS WENT
-#JUST RE-ENABLE THEM AND SET editorHidden: false 
+#JUST RE-ENABLE THEM AND SET editorHidden: false
 #YOU'RE WELCOME
 # .2 - 2025
 
@@ -251,6 +251,7 @@
   weight: 100
   roles:
   - ConscriptLeaderNCWL
+  - ConscriptOfficerNCWL
   - ConscriptSniperNCWL
   - ConscriptGunnerNCWL
   - ConscriptDoctorNCWL
@@ -269,6 +270,7 @@
   weight: 85
   roles:
   - ConscriptLeaderDSM
+  - ConscriptOfficerDSM
   - ConscriptSniperDSM
   - ConscriptGunnerDSM
   - ConscriptDoctorDSM

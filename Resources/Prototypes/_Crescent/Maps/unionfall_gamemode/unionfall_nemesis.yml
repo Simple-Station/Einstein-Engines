@@ -28,13 +28,14 @@
         - type: StationJobs
           overflowJobs: []
           availableJobs:
+            ConscriptShipCaptainDSM: [ 1, 1 ]
+            ConscriptShipCrewDSM: [ 2, 2 ]
             ConscriptLeaderDSM: [ 1, 1 ]
+            ConscriptOfficerDSM: [ 2, 2 ]
+            ConscriptDoctorDSM: [ 5, 5 ]
             ConscriptSniperDSM: [ 1, 1 ]
             ConscriptGunnerDSM: [ 1, 1 ]
             ConscriptShotgunDSM: [ 3, 3 ]
             ConscriptSubmachinegunDSM: [ 3, 3 ]
-            ConscriptDoctorDSM: [ 5, 5 ]
             ConscriptRiflemanDSM: [ 50, 50 ]
             ConscriptCadetDSM: [ 50, 50 ]
-            ConscriptShipCaptainDSM: [ 1, 1 ]
-            ConscriptShipCrewDSM: [ 2, 2 ]

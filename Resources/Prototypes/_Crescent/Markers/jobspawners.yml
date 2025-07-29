@@ -898,6 +898,18 @@
       - state: passenger
 
 - type: entity
+  id: SpawnPointConscriptOfficerNCWL
+  parent: SpawnPointJobBase
+  name: ConscriptOfficerNCWL
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptOfficerNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
   id: SpawnPointConscriptSniperNCWL
   parent: SpawnPointJobBase
   name: ConscriptSniperNCWL
@@ -1110,6 +1122,18 @@
   components:
   - type: SpawnPoint
     job_id: ConscriptLeaderDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointConscriptOfficerDSM
+  parent: SpawnPointJobBase
+  name: ConscriptOfficerDSM
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptOfficerDSM
   - type: Sprite
     layers:
       - state: green

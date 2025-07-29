@@ -83,8 +83,8 @@
     neck: ClothingNeckIFFCyan
     back: ClothingBackpackDSM
     shoes: ClothingShoesBootsMagDSM
-    head: ClothingHeadHatImperialBeret
-    outerClothing: ClothingOuterHardsuitImperialCommand
+    head: ClothingHeadHatImperialBicorne
+    outerClothing: ClothingOuterHardsuitImperialKnight
     id: KnightPDA
     belt: ClothingBeltAssaultFilledAdjutant
     pocket1: DoubleEmergencyOxygenTankFilled

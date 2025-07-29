@@ -18,21 +18,23 @@ crescent-rank-templar = Knight Templar
 
 #dsm-conscript
 crescent-rank-dsm-captain = Grand Steward
-crescent-rank-dsm-crew = Yeoman
+crescent-rank-dsm-crew = Steward
 crescent-rank-dsm-leader = Marshal-Bannaret
+crescent-rank-dsm-officer = Knight
 crescent-rank-dsm-specialist = Ward
 crescent-rank-dsm-cqc = Squire
 crescent-rank-dsm-grunt = Armsman
-crescent-rank-dsm-new = Fledgeling
+crescent-rank-dsm-new = Recruit
 crescent-rank-dsm-doctor = Medicant
 
 #ncwl-conscript
 crescent-rank-ncwl-captain = Admiral
 crescent-rank-ncwl-crew = Artificer
-crescent-rank-ncwl-leader = Kommissar
-crescent-rank-ncwl-specialist = Operator
+crescent-rank-ncwl-leader = Major
+crescent-rank-ncwl-officer = Kommissar
+crescent-rank-ncwl-specialist = Specialist
 crescent-rank-ncwl-cqc = Breacher
-crescent-rank-ncwl-grunt = Efréĭtor
+crescent-rank-ncwl-grunt = Soldat
 crescent-rank-ncwl-new = Cadet
 crescent-rank-ncwl-doctor = Doktor
 

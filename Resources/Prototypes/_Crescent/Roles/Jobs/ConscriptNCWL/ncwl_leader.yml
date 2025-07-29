@@ -85,8 +85,8 @@
     ears: ClothingHeadsetNCWL
     mask: ClothingMaskPilot
     shoes: ClothingShoesBootsMagNCWL
-    outerClothing: ClothingOuterArmorNCWLCarapace
-    head: ClothingHeadHatNCWLKommissarHat
+    outerClothing: ClothingOuterArmorNCWLOpremeCarapace
+    head: ClothingHeadHatNCWLBeretAdmiral
     belt: ClothingBeltNCWLPouchesFilledKommissar
     pocket1: DoubleEmergencyOxygenTankFilled
     pocket2: SyndicateWhistle
@@ -95,7 +95,7 @@
     gloves: ClothingHandsGlovesCombat
     eyes: ClothingEyesGlassesNCWL
   inhand:
-    - ClothingOuterHardsuitNCWLInfantry
+    - ClothingOuterHardsuitNCWLPetya
   storage:
     back:
       - VoidsuitKitNCWL

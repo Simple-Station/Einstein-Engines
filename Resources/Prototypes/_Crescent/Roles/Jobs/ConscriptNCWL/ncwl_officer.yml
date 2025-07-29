@@ -1,11 +1,11 @@
 - type: job
-  id: ConscriptShipCaptainDSM
-  name: job-name-conscript-dsm-ship-captain
-  description: job-description-conscript-dsm-ship-captain
-  playTimeTracker: ConscriptJobShipCaptainDSM
+  id: ConscriptOfficerNCWL
+  name: job-name-conscript-ncwl-officer
+  description: job-description-conscript-ncwl-officer
+  playTimeTracker: ConscriptJobOfficerNCWL
   requirements:
     - !type:FactionRequirement
-      factionID: "DSM"
+      factionID: "NCWL"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -16,19 +16,19 @@
         - Pacifist
         - WheelchairBound
   weight: 55
-  startingGear: ConscriptShipCaptainDSMGear
+  startingGear: ConscriptOfficerNCWLGear
   alwaysUseSpawner: true
-  icon: "JobIconImperialGovernor"
+  icon: "JobIconCommissar"
   requireAdminNotify: true
-  supervisors: job-supervisors-conscript-dsm-high
+  supervisors: job-supervisors-conscript-ncwl-high
   canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-dsm-captain
+        rank: crescent-rank-ncwl-officer
       - type: HullrotFaction
-        faction: DSM
+        faction: NCWL
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -67,31 +67,38 @@
   - Atmospherics
   - Command
   - Maintenance
-  - DSMGeneral
+  - NCWLGeneral
   - Service
-  - DSMJail
-  - DSMArmory
-  - DSMCommand
+  - NCWLKommissar
+  - NCWLJail
+  - NCWLArmory
+  - NCWLCommand
   - External
   - Captain # Frontier
-  - Empire
 
 - type: startingGear
-  id: ConscriptShipCaptainDSMGear
+  id: ConscriptOfficerNCWLGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitMilitaryCaptain
-    neck: ClothingNeckIFFCyan
-    back: ClothingBackpackDSM
-    shoes: ClothingShoesBootsMagDSM
-    head: ClothingHeadHatImperialPeakedCap
-    outerClothing: ClothingOuterCoatImperialParade
-    id: KnightPDA
-    belt: ClothingBeltAssaultFilledCrew
+    jumpsuit: ClothingUniformJumpsuitNCWLKommissar
+    neck: ClothingNeckIFFOrange
+    id: KommissarPDA
+    ears: ClothingHeadsetNCWL
+    mask: ClothingMaskPilot
+    shoes: ClothingShoesBootsMagNCWL
+    outerClothing: ClothingOuterArmorNCWLCarapace
+    head: ClothingHeadHatNCWLKommissarHat
+    belt: ClothingBeltNCWLPouchesFilledKommissar
     pocket1: DoubleEmergencyOxygenTankFilled
-    ears: ClothingHeadsetEmpire
-    eyes: ClothingEyesHudSecurity
+    pocket2: SyndicateWhistle
+    back: ClothingBackpackNCWL
+    suitstorage: WeaponSniperNCWLNovomosin
+    gloves: ClothingHandsGlovesCombat
+    eyes: ClothingEyesGlassesNCWL
+  inhand:
+    - ClothingOuterHardsuitNCWLInfantry
   storage:
     back:
-      - VoidsuitKitDSM
+      - VoidsuitKitNCWL
       - BoxMRE
-      - WeaponPistolNeoVolker
+      - BoxFlare
+      - WeaponPistolT91
