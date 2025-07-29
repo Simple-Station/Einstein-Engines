@@ -3,10 +3,10 @@
   name: job-name-conscript-ncwl-amr
   description: job-description-conscript-ncwl-amr #change me later
   playTimeTracker: ConscriptJobSniperNCWL
-  weight: 10
+  weight: 5
   startingGear: ConscriptSniperNCWLGear
   alwaysUseSpawner: true
-  icon: "JobIconCommsOfficer"
+  icon: "JobIconUnionfallNCWLSpecialist"
   requirements:
     - !type:FactionRequirement
       factionID: "NCWL"

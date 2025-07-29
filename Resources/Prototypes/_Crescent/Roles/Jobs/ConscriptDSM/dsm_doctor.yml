@@ -3,10 +3,10 @@
   name: job-name-conscript-dsm-doctor
   description: job-description-conscript-dsm-doctor
   playTimeTracker: ConscriptJobSurgeonDSM
-  weight: 20
+  weight: 7
   startingGear: ConscriptDoctorDSMGear
   alwaysUseSpawner: true
-  icon: "JobIconImperialSurgeon"
+  icon: "JobIconUnionfallDSMMedic"
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"

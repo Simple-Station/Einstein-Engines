@@ -3,10 +3,10 @@
   name: job-name-conscript-dsm-smg
   description: job-description-conscript-dsm-smg #change me later
   playTimeTracker: ConscriptJobSubmachinegunDSM
-  weight: 10
+  weight: 3
   startingGear: ConscriptSubmachinegunDSMGear
   alwaysUseSpawner: true
-  icon: "JobIconImperialLevyman"
+  icon: "JobIconUnionfallDSMCQC"
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"

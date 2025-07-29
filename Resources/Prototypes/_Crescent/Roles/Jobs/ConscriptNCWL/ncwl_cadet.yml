@@ -3,10 +3,10 @@
   name: job-name-conscript-ncwl-cadet
   description: job-description-conscript-ncwl-cadet
   playTimeTracker: ConscriptJobCadetNCWL
-  weight: 10
+  weight: 1
   startingGear: ConscriptCadetNCWLGear
   alwaysUseSpawner: true
-  icon: "JobIconKadet"
+  icon: "JobIconUnionfallNCWLCadet"
   requirements:
     - !type:FactionRequirement
       factionID: "NCWL"

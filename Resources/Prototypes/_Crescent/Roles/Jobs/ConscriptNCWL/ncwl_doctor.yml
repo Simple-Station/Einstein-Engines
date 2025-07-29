@@ -12,10 +12,10 @@
         - Foreigner
         - Blindness
         - WheelchairBound
-  weight: 22
+  weight: 7
   startingGear: ConscriptDoctorNCWLGear
   alwaysUseSpawner: true
-  icon: "JobIconDoktor"
+  icon: "JobIconUnionfallNCWLMedic"
   requireAdminNotify: false
   supervisors: job-supervisors-conscript-ncwl
   canBeAntag: false

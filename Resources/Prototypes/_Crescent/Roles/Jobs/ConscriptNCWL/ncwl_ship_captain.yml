@@ -15,10 +15,10 @@
         - Blindness
         - Pacifist
         - WheelchairBound
-  weight: 55
+  weight: 11
   startingGear: ConscriptShipCaptainNCWLGear
   alwaysUseSpawner: true
-  icon: "JobIconCommsOfficer"
+  icon: "JobIconUnionfallNCWLCaptain"
   requireAdminNotify: true
   supervisors: job-supervisors-conscript-ncwl-high
   canBeAntag: false

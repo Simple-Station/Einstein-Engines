@@ -3,10 +3,10 @@
   name: job-name-conscript-ncwl-rifleman
   description: job-description-conscript-ncwl-rifleman #change me later
   playTimeTracker: ConscriptJobRiflemanNCWL
-  weight: 10
+  weight: 2
   startingGear: ConscriptRiflemanNCWLGear
   alwaysUseSpawner: true
-  icon: "JobIconSanitar"
+  icon: "JobIconUnionfallNCWLRifleman"
   requirements:
     - !type:FactionRequirement
       factionID: "NCWL"

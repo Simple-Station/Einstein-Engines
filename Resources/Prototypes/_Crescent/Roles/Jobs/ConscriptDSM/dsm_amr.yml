@@ -3,10 +3,10 @@
   name: job-name-conscript-dsm-amr
   description: job-description-conscript-dsm-amr #change me later
   playTimeTracker: ConscriptJobSniperDSM
-  weight: 10
+  weight: 5
   startingGear: ConscriptSniperDSMGear
   alwaysUseSpawner: true
-  icon: "JobIconImperialKnight"
+  icon: "JobIconUnionfallDSMSpecialist"
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"

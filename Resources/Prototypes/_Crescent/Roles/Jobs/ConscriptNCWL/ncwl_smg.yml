@@ -3,10 +3,10 @@
   name: job-name-conscript-ncwl-smg
   description: job-description-conscript-ncwl-smg #change me later
   playTimeTracker: ConscriptJobSubmachinegunNCWL
-  weight: 10
+  weight: 3
   startingGear: ConscriptSubmachinegunNCWLGear
   alwaysUseSpawner: true
-  icon: "JobIconSanitar"
+  icon: "JobIconUnionfallNCWLCQC"
   requirements:
     - !type:FactionRequirement
       factionID: "NCWL"

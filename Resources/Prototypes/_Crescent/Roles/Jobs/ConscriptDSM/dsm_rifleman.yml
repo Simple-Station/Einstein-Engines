@@ -3,10 +3,10 @@
   name: job-name-conscript-dsm-rifleman
   description: job-description-conscript-dsm-rifleman #change me later
   playTimeTracker: ConscriptJobRiflemanDSM
-  weight: 10
+  weight: 2
   startingGear: ConscriptRiflemanDSMGear
   alwaysUseSpawner: true
-  icon: "JobIconImperialLevyman"
+  icon: "JobIconUnionfallDSMRifleman"
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"

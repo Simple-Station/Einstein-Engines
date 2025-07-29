@@ -3,10 +3,10 @@
   name: job-name-conscript-dsm-cadet
   description: job-description-conscript-dsm-cadet #change me later
   playTimeTracker: ConscriptJobCadetDSM
-  weight: 10
+  weight: 1
   startingGear: ConscriptCadetDSMGear
   alwaysUseSpawner: true
-  icon: "JobIconImperialFreeholder"
+  icon: "JobIconUnionfallDSMCadet"
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"

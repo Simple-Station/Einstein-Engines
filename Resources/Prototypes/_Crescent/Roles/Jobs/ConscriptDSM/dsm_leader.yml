@@ -15,10 +15,10 @@
         - Blindness
         - Pacifist
         - WheelchairBound
-  weight: 55
+  weight: 9
   startingGear: ConscriptLeaderDSMGear
   alwaysUseSpawner: true
-  icon: "JobIconImperialAdjutant"
+  icon: "JobIconUnionfallDSMLeader"
   requireAdminNotify: true
   supervisors: job-supervisors-conscript-dsm-high
   canBeAntag: false
