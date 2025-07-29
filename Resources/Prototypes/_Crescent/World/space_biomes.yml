@@ -247,6 +247,22 @@
   swapDuration: 2
   parallax: AbyssParallax
 
+#NCWL approaching vladzena
+- type: entity
+  id: UnionfallApproachingNCWLSource
+  name: unionfall NCWL source
+  components:
+  - type: SpaceBiomeSource
+    biome: unionfallApproachingNCWLBiome
+    swapDistance: 4000
+    priority: 2400
+
+- type: crescentFactionBiome
+  id: unionfallApproachingNCWLBiome
+  name: Taypan Wilds
+  swapDuration: 2
+  parallax: WildParallax
+
 #DSM grace period
 - type: entity
   id: UnionfallGraceDSMSource
@@ -262,3 +278,19 @@
   name: Hadal Storm
   swapDuration: 2
   parallax: AbyssParallax
+
+#DSM approaching vladzena
+- type: entity
+  id: UnionfallApproachingDSMSource
+  name: unionfall DSM source
+  components:
+  - type: SpaceBiomeSource
+    biome: unionfallApproachingDSMBiome
+    swapDistance: 4000
+    priority: 2400
+
+- type: crescentFactionBiome
+  id: unionfallApproachingDSMBiome
+  name: Taypan Wilds
+  swapDuration: 2
+  parallax: WildParallax
