@@ -1079,7 +1079,8 @@
   id: NCWLConscriptShipInventory
   startingInventory:
     ShipVoucherUnionfallLodka: 2
-    ShipVoucherUnionfallVanguard: 4
+    ShipVoucherUnionfallVanguard: 2
+    ShipVoucherUnionfallAegis: 2
     ShipVoucherUnionfallBroadsword: 10
     ShipVoucherUnionfallKhopesh: 10
 
@@ -1087,7 +1088,8 @@
   id: DSMConscriptShipInventory
   startingInventory:
     ShipVoucherUnionfallRaider: 2
-    ShipVoucherUnionfallIbis: 3
-    ShipVoucherUnionfallSaintsfall: 2
+    ShipVoucherUnionfallIbis: 2
+    ShipVoucherUnionfallSaintsfall: 1
+    ShipVoucherUnionfallImparator: 1
     ShipVoucherUnionfallConquest: 10
     ShipVoucherUnionfallValor: 10

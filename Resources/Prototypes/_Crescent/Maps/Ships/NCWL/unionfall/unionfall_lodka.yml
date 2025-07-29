@@ -4,7 +4,7 @@
 - type: vessel
   id: UnionfallLodka
   name: NCWL Lodka
-  description: A light communard fighter.
+  description: A communard armored transport ship.
   price: 25000
   category: Small
   group: None
@@ -25,3 +25,4 @@
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: VesselDesignation
+          designation: vessel-designation-utility
