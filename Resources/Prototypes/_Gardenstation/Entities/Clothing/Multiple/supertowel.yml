@@ -1,0 +1,49 @@
+﻿- type: entity # im going insane - figure out why i cant add more slots later // its the next day (7-29) and i figured it out yay
+  abstract: true
+  parent: [ UnsensoredClothingUniformBase, ClothingHeadBase, ClothingBeltBase, ClothingNeckBase, ClothingOuterBase, ClothingHandsBase, ClothingMaskGas ]
+  id: SuperTowel
+  description: Something is weird about this towel...
+  components:
+  - type: Sprite
+    sprite: icon
+  - type: Clothing
+    slots: # i think its like the order of the fucking slots or something? this is so stupid.
+    - BELT
+    - INNERCLOTHING
+    - HEAD
+    - OUTERCLOTHING
+    - NECK
+    - GLOVES
+    - MASK
+    equipSound:
+    unequipSound:
+  - type: Spillable
+    solution: absorbed
+  - type: Absorbent
+    pickupAmount: 150
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 50
+      absorbed:
+        maxVol: 50
+  - type: UseDelay
+    delay: 1
+  - type: Fiber
+    fiberColor: fibers-white
+  - type: Item
+    size: Small
+
+- type: entity
+  id: HdTowel
+  name: Head of Service's SuperSoak Ultra-Towel
+  parent: [SuperTowel]
+  description: A robust towel for a robust head of service.
+  components:
+  - type: Sprite
+    sprite: _Gardenstation/Clothing/Multiple/hd_towel.rsi
+  - type: Clothing
+    sprite: _Gardenstation/Clothing/Multiple/hd_towel.rsi

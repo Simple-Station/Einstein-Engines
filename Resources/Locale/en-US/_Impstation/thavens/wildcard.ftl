@@ -79,5 +79,5 @@ thaven-mood-flatstation-desc = You feel as if ancient forbidden knowledge has be
 thaven-mood-soda-name = Delicious Soda
 thaven-mood-soda-desc = You've become quite parched. You must attempt to drink all the soda on the station.
 
-thaven-mood-everything-is-good-for-you-name = everything is good for you
+thaven-mood-everything-is-good-for-you-name = Everything is good for you
 thaven-mood-everything-is-good-for-you-desc = Everything Is Good For You. This is all a test, there is no right or wrong answer. Despite anything that may happen- you know you will come out better from it.
