@@ -498,7 +498,7 @@
   id: Type99Artillery
   name: SHI Type 99 120mm artillery
   parent: BaseFixedShipgun
-  description: A heavier, bulkier version of the slugthrower. An antiquated SHI design. Requires manual reloading after expending magazine.
+  description: A heavier, bulkier version of the slugthrower. An antiquated SHI design. Requires manual reloading after its two chambers.
   components:
   - type: ApcPowerReceiver
     powerLoad: 3000
@@ -520,7 +520,7 @@
     - state: artillery
   - type: BallisticAmmoProvider
     cycleable: true
-    capacity: 16
+    capacity: 2
     proto: CartridgeShellArmorPiercing
     whitelist:
       tags:
