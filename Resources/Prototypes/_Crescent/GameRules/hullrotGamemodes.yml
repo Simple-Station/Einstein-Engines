@@ -12,7 +12,6 @@
   description: The last days of Taypan. Lasts 2-4 hours.
   rules:
     - Adventure
-    - LavalandStormScheduler # Lavaland Change
 
 
 # GAMERULES ARE WAHT DECIDES WHAT SPAWNS IN, BY EVERYTHING IN THE ADVENTURERULE COMPONENT
@@ -73,77 +72,75 @@
         posY: 1000
         IFFColor: White
         IFFFaction: SHI
-        forcedName: Taypan Shipworks
       KalSuzerai:
         gameMapID: Kal
         posX: 0
         posY: 0
         IFFColor: White
         IFFFaction: DSM
-    gameMapsByPath:
-      Tinnia:
-        path: /Maps/_NF/POI/tinnia.yml
-        entityName: Faint Signal
-        posX: 0
-        posY: 0
-        randomOffsetX: 12100
-        randomOffsetY: 6000
-      Graveyard:
-        path: /Maps/_Crescent/Explorables/zhipovwreck.yml
-        entityName: The Graveyard
-        posX: 7200
-        posY: 5500
-      StrandedShip:
-        path: /Maps/_Crescent/Explorables/stranded.yml
-        entityName: Stranded Ship
-        posX: 7250
-        posY: 5320
-        HideIFF: true
-      Fighter1:
-        path: /Maps/_Crescent/Explorables/ruinedfightereast.yml
-        entityName: Destroyed Fighter
-        posX: 7730
-        posY: 5920
-        HideIFF: true
-      Fighter2:
-        path: /Maps/_Crescent/Explorables/ruinedfighterwest.yml
-        entityName: Destroyed Fighter
-        posX: 7721
-        posY: 5950
-        HideIFF: true
-      FogwreckedDerelict:
-        path: /Maps/_Crescent/Explorables/fogexplorer.yml
-        entityName: Fogwrecked Derelict
-        posX: 1730
-        posY: 9920
-        HideIFF: true
-      SolarSailorDerelict:
-        path: /Maps/_Crescent/Explorables/ruinedsolarsailor.yml
-        entityName: Solar Sailor Derelict
-        posX: 7750
-        posY: 5170
-        HideIFF: true
-      ImperialHaulerWreck:
-        path: /Maps/_Crescent/Explorables/impwreck.yml
-        entityName: Imperial Hauler Wreck
-        posX: 7770
-        posY: 5750
-        HideIFF: true
-      DerelictWaystation:
-        path: /Maps/_Crescent/Explorables/hayeswreck.yml
-        entityName: Derelict Waystation
-        posX: -3000
-        posY: 6500
       Taypan1AsteroidBelt:
-        path: /Maps/_Crescent/Explorables/taypanone.yml
-        entityName: Taypan-1 Asteroid Belt
+        gameMapID: Taypan1AsteroidBelt
         posX: 3000
         posY: 3500
       Taypan2AsteroidBelt:
-        path: /Maps/_Crescent/Explorables/oris.yml
-        entityName: Taypan-2 Asteroid Belt
+        gameMapID: Taypan2AsteroidBelt
         posX: 3000
         posY: 5400
+
+    # gameMapsByPath:
+    #   Tinnia:
+    #     path: /Maps/_NF/POI/tinnia.yml
+    #     entityName: Faint Signal
+    #     posX: 0
+    #     posY: 0
+    #     randomOffsetX: 12100
+    #     randomOffsetY: 6000
+    #   Graveyard:
+    #     path: /Maps/_Crescent/Explorables/zhipovwreck.yml
+    #     entityName: The Graveyard
+    #     posX: 7200
+    #     posY: 5500
+    #   StrandedShip:
+    #     path: /Maps/_Crescent/Explorables/stranded.yml
+    #     entityName: Stranded Ship
+    #     posX: 7250
+    #     posY: 5320
+    #     HideIFF: true
+    #   Fighter1:
+    #     path: /Maps/_Crescent/Explorables/ruinedfightereast.yml
+    #     entityName: Destroyed Fighter
+    #     posX: 7730
+    #     posY: 5920
+    #     HideIFF: true
+    #   Fighter2:
+    #     path: /Maps/_Crescent/Explorables/ruinedfighterwest.yml
+    #     entityName: Destroyed Fighter
+    #     posX: 7721
+    #     posY: 5950
+    #     HideIFF: true
+    #   FogwreckedDerelict:
+    #     path: /Maps/_Crescent/Explorables/fogexplorer.yml
+    #     entityName: Fogwrecked Derelict
+    #     posX: 1730
+    #     posY: 9920
+    #     HideIFF: true
+    #   SolarSailorDerelict:
+    #     path: /Maps/_Crescent/Explorables/ruinedsolarsailor.yml
+    #     entityName: Solar Sailor Derelict
+    #     posX: 7750
+    #     posY: 5170
+    #     HideIFF: true
+    #   ImperialHaulerWreck:
+    #     path: /Maps/_Crescent/Explorables/impwreck.yml
+    #     entityName: Imperial Hauler Wreck
+    #     posX: 7770
+    #     posY: 5750
+    #     HideIFF: true
+    #   DerelictWaystation:
+    #     path: /Maps/_Crescent/Explorables/hayeswreck.yml
+    #     entityName: Derelict Waystation
+    #     posX: -3000
+    #     posY: 6500
 
 
 
@@ -154,7 +151,6 @@
   description: Port Vladzena defends against a surprise attack from the GSC Grinning Jackal.
   rules:
     - HyperwarNCWLvsGSC
-    - LavalandStormScheduler # Lavaland Change
 
 - type: entity
   id: HyperwarNCWLvsGSC
@@ -173,66 +169,3 @@
         posX: 7794
         posY: 4500
         IFFColor: IndianRed
-    gameMapsByPath:
-      Tinnia:
-        path: /Maps/_NF/POI/tinnia.yml
-        entityName: Faint Signal
-        posX: 0
-        posY: 0
-        randomOffsetX: 12100
-        randomOffsetY: 6000
-      Graveyard:
-        path: /Maps/_Crescent/Explorables/zhipovwreck.yml
-        entityName: The Graveyard
-        posX: 7200
-        posY: 5500
-      StrandedShip:
-        path: /Maps/_Crescent/Explorables/stranded.yml
-        entityName: Stranded Ship
-        posX: 7250
-        posY: 5320
-      Fighter1:
-        path: /Maps/_Crescent/Explorables/ruinedfightereast.yml
-        entityName: Destroyed Fighter
-        posX: 7730
-        posY: 5920
-        HideIFF: true
-      Fighter2:
-        path: /Maps/_Crescent/Explorables/ruinedfighterwest.yml
-        entityName: Destroyed Fighter
-        posX: 7721
-        posY: 5950
-        HideIFF: true
-      FogwreckedDerelict:
-        path: /Maps/_Crescent/Explorables/fogexplorer.yml
-        entityName: Fogwrecked Derelict
-        posX: 1730
-        posY: 9920
-        HideIFF: true
-      SolarSailorDerelict:
-        path: /Maps/_Crescent/Explorables/ruinedsolarsailor.yml
-        entityName: Solar Sailor Derelict
-        posX: 7750
-        posY: 5170
-        HideIFF: true
-      ImperialHaulerWreck:
-        path: /Maps/_Crescent/Explorables/impwreck.yml
-        entityName: Imperial Hauler Wreck
-        posX: 7770
-        posY: 5750
-        HideIFF: true
-      DerelictWaystation:
-        path: /Maps/_Crescent/Explorables/hayeswreck.yml
-        entityName: Derelict Waystation
-        posX: -3000
-        posY: 6500
-      Taypan1AsteroidBelt:
-        path: /Maps/_Crescent/Explorables/taypanone.yml
-        entityName: Taypan-1 Asteroid Belt
-        posX: 3000
-        posY: 3500
-      Taypan2AsteroidBelt:
-        path: /Maps/_Crescent/Explorables/oris.yml
-        entityName: Taypan-2 Asteroid Belt
-        posX: 3000
-        posY: 5400
