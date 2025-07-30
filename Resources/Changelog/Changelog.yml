@@ -16675,3 +16675,13 @@ Entries:
   id: 7306
   time: '2025-07-23T05:15:55.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2512
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: >-
+        Added a new trait, Species Swap: Shell. This trait turns a human
+        character into an IPC made to look like a human, complete with all of
+        the mechanical features of an IPC. Hazel enthusiasts rejoice.
+  id: 7307
+  time: '2025-07-30T02:28:05.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2518
