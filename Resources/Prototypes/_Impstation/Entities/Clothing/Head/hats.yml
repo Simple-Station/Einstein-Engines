@@ -12,3 +12,20 @@
     tags:
     - ClothMade
     - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingHeadBase, BaseCommandContraband]
+  id: ClothingHeadHatBeretHD
+  name: hospitality director's beret
+  description: A beret with the service's insignia emblazoned on it. For hospitality directors that are more inclined towards style.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Head/Hats/beret_hd.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Head/Hats/beret_hd.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - DroneUsable
+    - HamsterWearable
+    - WhitelistChameleon

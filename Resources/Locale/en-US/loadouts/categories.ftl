@@ -78,6 +78,7 @@ loadout-category-JobsSecurityWarden = Warden
 # Service
 loadout-category-JobsService = Service
 loadout-category-JobsServiceAUncategorized = All Service
+loadout-category-JobsServiceHospitalityDirector = Hospitality Director
 loadout-category-JobsServiceBartender = Bartender
 loadout-category-JobsServiceBotanist = Botanist
 loadout-category-JobsServiceChef = Chef

@@ -675,6 +675,23 @@ character-item-group-LoadoutServiceOuter = Service Outerwear
 character-item-group-LoadoutServiceShoes = Service Shoes
 character-item-group-LoadoutServiceUniforms = Service Uniforms
 
+# Service - Hospitality Director
+character-item-group-LoadoutHospitalityDirectorBackpacks = Hospitality Director Backpacks
+character-item-group-LoadoutHospitalityDirectorBelt = Hospitality Director Belt
+character-item-group-LoadoutHospitalityDirectorEars = Hospitality Director Ears
+character-item-group-LoadoutHospitalityDirectorEquipment = Hospitality Director Equipment
+character-item-group-LoadoutHospitalityDirectorAmmo = Hospitality Director Ammo
+character-item-group-LoadoutHospitalityDirectorWeapon = Hospitality Director Weapon
+character-item-group-LoadoutHospitalityDirectorEyes = Hospitality Director Eyewear
+character-item-group-LoadoutHospitalityDirectorGloves = Hospitality Director Gloves
+character-item-group-LoadoutHospitalityDirectorHead = Hospitality Director Headgear
+character-item-group-LoadoutHospitalityDirectorId = Hospitality Director Id
+character-item-group-LoadoutHospitalityDirectorNeck = Hospitality Director Neckwear
+character-item-group-LoadoutHospitalityDirectorMask = Hospitality Director Masks
+character-item-group-LoadoutHospitalityDirectorOuter = Hospitality Director Outerwear
+character-item-group-LoadoutHospitalityDirectorShoes = Hospitality Director Shoes
+character-item-group-LoadoutHospitalityDirectorUniforms = Hospitality Director Uniforms
+
 # Service - Bartender
 character-item-group-LoadoutBartenderBackpacks = Bartender Backpacks
 character-item-group-LoadoutBartenderBelt = Bartender Belt

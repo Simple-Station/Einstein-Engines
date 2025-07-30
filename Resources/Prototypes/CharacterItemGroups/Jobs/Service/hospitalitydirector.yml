@@ -1,0 +1,94 @@
+# HospitalityDirector
+#- type: characterItemGroup
+#  id: LoadoutHospitalityDirectorBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutHospitalityDirectorBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutHospitalityDirectorEars
+#  maxItems: 1
+#  items:
+#
+
+#- type: characterItemGroup
+#  id: LoadoutBartenderAmmo
+#  items:
+#    - type: loadout
+#      id: LoadoutServiceBartenderBoxBeanbags
+#    - type: loadout
+#      id: LoadoutServiceBartenderBoxLightRifleRubber
+#    - type: loadout
+#      id: LoadoutServiceBartenderBoxRifleRubber
+#    - type: loadout
+#      id: LoadoutServiceBartenderBoxMagnumRubber
+
+#- type: characterItemGroup
+#  id: LoadoutBartenderWeapon
+#  items:
+#    - type: loadout
+#      id: LoadoutServiceBartenderShotgunDoubleBarreledRubber
+#    - type: loadout
+#      id: LoadoutServiceBartenderMosinRubber
+#    - type: loadout
+#      id: LoadoutServiceBartenderArgentiNonlethal
+#    - type: loadout
+#      id: LoadoutServiceBartenderRepeaterNonlethal
+
+#- type: characterItemGroup
+#  id: LoadoutHospitalityDirectorEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutHospitalityDirectorGloves
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutHospitalityDirectorHead
+  items:
+    - type: loadout
+      id: LoadoutServiceHeadHDBeret
+
+#- type: characterItemGroup
+#  id: LoadoutHospitalityDirectorId
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutHospitalityDirectorNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutServiceNeckHDMantle
+#
+#- type: characterItemGroup
+#  id: LoadoutHospitalityDirectorMask
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutHospitalityDirectorOuter
+  items:
+    - type: loadout
+      id: LoadoutServiceHDWinterCoat
+
+#- type: characterItemGroup
+#  id: LoadoutHospitalityDirectorShoes
+#  maxItems: 1
+#  items:
+#
+- type: characterItemGroup
+  id: LoadoutHospitalityDirectorUniforms
+  items:
+    - type: loadout
+      id: LoadoutServiceJumpskirtHD
+    - type: loadout
+      id: LoadoutServiceJumpsuitHDTurtleneck
+    - type: loadout
+      id: LoadoutServiceJumpskirtHDTurtleneck

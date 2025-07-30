@@ -21,15 +21,13 @@
   - Service
   - Maintenance
   - Janitor
+  - Hydroponics
   - Kitchen
   - Bar
   - Musician
   - Theatre
   - Clown
   - Mime
-  extendedAccess:
-  - Kitchen
-  - Hydroponics
 
 - type: startingGear
   id: HospitalityGear
@@ -44,7 +42,7 @@
     ears: ClothingHeadsetService #replace this with a command comms service headset when one is added pleaseeeee
 
 - type: startingGear #this also needs a proper go-over
-  id: BartenderPlasmamanGear
+  id: HospitalityPlasmamanGear
   parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitEnviroslacks

@@ -1,0 +1,118 @@
+# HospitalityDirector
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+
+# Head
+- type: loadout
+  id: LoadoutServiceHeadHDBeret
+  category: JobsServiceHospitalityDirector
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHospitalityDirectorHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - HospitalityDirector
+  items:
+    - ClothingHeadHatBeretHD
+
+# Id
+
+# Neck
+- type: loadout
+  id: LoadoutServiceNeckHDMantle
+  category: JobsServiceHospitalityDirector
+  cost: 0
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHospitalityDirectorNeck
+  - !type:CharacterJobRequirement
+    jobs:
+    - HospitalityDirector
+  items:
+  - ClothingNeckMantleHD
+
+# Mask
+
+# Outer
+- type: loadout
+  id: LoadoutServiceHDsWinterCoat
+  category: JobsServiceHospitalityDirector
+  cost: 0
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHospitalityDirectorOuter
+  - !type:CharacterJobRequirement
+    jobs:
+    - HospitalityDirector
+  items:
+  - ClothingOuterWinterHD
+
+#- type: loadout
+#  id: LoadoutServiceOuterHospitalityDirector
+#  category: JobsServiceHospitalityDirector
+#  cost: 0
+#  exclusive: true
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutHospitalityDirectorOuter
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - HospitalityDirector
+#  items:
+#    - ClothingOuterVestNt
+
+# Shoes
+
+# Uniforms
+- type: loadout
+  id: LoadoutServiceJumpskirtHD
+  category: JobsServiceHospitalityDirector
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHospitalityDirectorUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - HospitalityDirector
+  items:
+    - ClothingUniformJumpskirtHD
+
+- type: loadout
+  id: LoadoutServiceJumpsuitHDTurtleneck
+  category: JobsServiceHospitalityDirector
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHospitalityDirectorUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - HospitalityDirector
+  items:
+    - ClothingUniformJumpsuitHDTurtle
+
+- type: loadout
+  id: LoadoutServiceJumpskirtHDTurtleneck
+  category: JobsServiceHospitalityDirector
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHospitalityDirectorUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - HospitalityDirector
+  items:
+    - ClothingUniformJumpskirtHDTurtle
