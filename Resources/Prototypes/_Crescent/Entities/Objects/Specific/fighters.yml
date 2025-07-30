@@ -1,4 +1,18 @@
 - type: entity
+  name: NCWL Broadsword Spawner
+  id: SpawnFighterBroadsword
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Crescent/Objects/Specific/fighters.rsi
+        state: broadsword
+  - type: ConditionalSpawner
+    prototypes:
+      - FighterNCWLBroadswordBattery
+
+- type: entity
   id: FighterNCWLBroadsword
   parent: [ BaseMech, LightFighter ]
   name: NCWL PATTERN-46 'Broadsword' light fighter
@@ -54,7 +68,7 @@
 - type: entity
   id: FighterNCWLClaymore
   parent: [ BaseMech, MediumFighter ]
-  name: DSM PATTERN-22 'Claymore' medium gunship
+  name: NCWL PATTERN-22 'Claymore' medium gunship
   description: A logistics shuttle that has been converted for use in combat by the Homeguard Militia. Fitted with mounts for ballistics as well as a bomb bay, the Claymore serves as the bigger cousin of the Broadsword, able to dish out more sustained and reliable damage at the cost of mobility.
   components:
   - type: Sprite
