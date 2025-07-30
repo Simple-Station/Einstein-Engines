@@ -898,6 +898,11 @@ public sealed partial class TraitAddTrait : TraitFunction
     }
 }
 
+/// <summary>
+///     This trait takes component registries, and overwrites all the datafields of matching components in the target,
+///     except ONLY touching datafields declared in yml serialization. Effectively this allows traits to
+///     directly write to arbitrarily any component, without needing to destroy any previous data.
+/// </summary>
 [UsedImplicitly]
 public sealed partial class TraitModifyComponent : TraitFunction
 {
@@ -948,6 +953,10 @@ public sealed partial class TraitModifyComponent : TraitFunction
     }
 }
 
+/// <summary>
+///     As per TraitModifyComponent, except if it only works on datafields that are a number.
+///     It takes the target datafield, and multiplies it by the declared number.
+/// </summary>
 [UsedImplicitly]
 public sealed partial class TraitMultiplyToComponent : TraitFunction
 {
@@ -986,10 +995,26 @@ public sealed partial class TraitMultiplyToComponent : TraitFunction
                     continue;
                 entityManager.Dirty(uid, targetComp);
             }
+            else if (EnsureComp)
+            {
+                // Oh hey it didn't exist and we want to force it to do so, let's add it.
+                // This exists because I cannot EnsureComp from reflected types. Thanks Robust Toolbox.
+                var comp = (Component) serializationManager.CreateCopy(entry.Component, notNullableOverride: true);
+                comp.Owner = uid;
+                entityManager.AddComponent(uid, comp);
+
+                if (!comp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
+                    continue;
+                entityManager.Dirty(uid, comp);
+            }
         }
     }
 }
 
+/// <summary>
+///     As per TraitModifyComponent, except if it only works on datafields that are a number.
+///     It takes the target datafield, and adds the declared number to it.
+/// </summary>
 [UsedImplicitly]
 public sealed partial class TraitAddToComponent : TraitFunction
 {
@@ -1027,6 +1052,18 @@ public sealed partial class TraitAddToComponent : TraitFunction
                 if (!targetComp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
                     continue;
                 entityManager.Dirty(uid, targetComp);
+            }
+            else if (EnsureComp)
+            {
+                // Oh hey it didn't exist and we want to force it to do so, let's add it.
+                // This exists because I cannot EnsureComp from reflected types. Thanks Robust Toolbox.
+                var comp = (Component) serializationManager.CreateCopy(entry.Component, notNullableOverride: true);
+                comp.Owner = uid;
+                entityManager.AddComponent(uid, comp);
+
+                if (!comp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
+                    continue;
+                entityManager.Dirty(uid, comp);
             }
         }
     }
