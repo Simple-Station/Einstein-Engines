@@ -1,11 +1,16 @@
 - type: entity
   id: Supermatter
-  name: supermatter crystal
-  description: A strangely translucent and iridescent crystal.
+  name: hadal crystal fragment
+  description: An odd crystal. Your skin prickles when you stand closer to it.
   placement:
     mode: SnapgridCenter
   components:
-  - type: Supermatter
+  - type: Electrified
+    onHandInteract: false
+    onInteractUsing: false
+    onBump: true
+    requirePower: true
+    highVoltageNode: output
   - type: AtmosDevice
   - type: RadiationSource
   - type: AmbientSound
@@ -17,15 +22,6 @@
     sound:
       collection: SupermatterAccentNormal
   - type: Physics
-  - type: Speech
-    speechSounds: null
-    speechVerb: Supermatter
-    suffixSpeechVerbs:
-      chat-speech-verb-suffix-exclamation-strong: Supermatter
-      chat-speech-verb-suffix-exclamation: Supermatter
-      chat-speech-verb-suffix-question: Supermatter
-      chat-speech-verb-suffix-stutter: Supermatter
-      chat-speech-verb-suffix-mumble: Supermatter
   - type: Fixtures
     fixtures:
       fix1:
@@ -70,16 +66,7 @@
     totalIntensity: 120000
     intensitySlope: 5
     maxIntensity: 100
-  - type: GuideHelp
-    guides: [ Supermatter, Power ]
-  - type: WarpPoint
-    follow: true
-    location: supermatter
-  - type: SinguloFood
-    energy: 10000
-  - type: LanguageSpeaker
-  - type: LanguageKnowledge
-    speaks:
-    - TauCetiBasic
-    understands:
-    - TauCetiBasic
+  - type: PowerSupplier
+    supplyRate: 250000
+    supplyRampRate: 10000
+    supplyRampTolerance: 10000

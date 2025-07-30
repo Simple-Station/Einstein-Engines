@@ -4,14 +4,14 @@
   result: RefinedSteelScrap1
   completetime: 0.25
   materials:
-    ScrapSteel: 500
+    ScrapLowGrade: 500
 
 - type: latheRecipe
   id: TitaniumScrap
   result: RefinedTitaniumScrap1
   completetime: 0.25
   materials:
-    ScrapTitanium: 500
+    ScrapHighGrade: 500
 
 - type: latheRecipe
   id: Garbage
@@ -21,29 +21,184 @@
     Garbage: 500
 
 - type: latheRecipe
-  id: SteelScraptoSteel1
+  id: PlasticFromGarbage1
+  result: SheetPlastic1
+  completetime: 0.25
+  materials:
+    RefinedGarbage: 200
+
+- type: latheRecipe
+  id: PlasticFromGarbage
+  result: SheetPlastic
+  completetime: 0.25
+  materials:
+    RefinedGarbage: 6000
+
+- type: latheRecipe
+  id: SteelFromScrapLowGrade1
   result: SheetSteel1
   completetime: 0.25
   materials:
-    ScrapSteel: 100
+    ScrapLowGrade: 100
 
 - type: latheRecipe
-  id: SteelScraptoSteel
+  id: SteelFromScrapLowGrade
   result: SheetSteel
   completetime: 0.25
   materials:
-    ScrapSteel: 3000
+    ScrapLowGrade: 3000
 
 - type: latheRecipe
-  id: PlasteelFromScrap1
+  id: CopperFromScrapLowGrade1
+  result: IngotCopper1
+  completetime: 0.25
+  materials:
+    ScrapLowGrade: 100
+
+- type: latheRecipe
+  id: CopperFromScrapLowGrade
+  result: IngotCopper
+  completetime: 0.25
+  materials:
+    ScrapLowGrade: 3000
+
+
+- type: latheRecipe
+  id: PlasteelFromScrapHighGrade1
   result: SheetPlasteel1
   completetime: 0.25
   materials:
-    ScrapTitanium: 200
+    ScrapHighGrade: 200
 
 - type: latheRecipe
-  id: PlasteelFromScrap
+  id: PlasteelFromScrapHighGrade
   result: SheetPlasteel
   completetime: 0.25
   materials:
-    ScrapTitanium: 6000
+    ScrapHighGrade: 6000
+
+- type: latheRecipe
+  id: TungstenFromScrapHighGrade1
+  result: IngotTungsten1
+  completetime: 0.25
+  materials:
+    ScrapHighGrade: 250
+
+- type: latheRecipe
+  id: TungstenFromScrapHighGrade
+  result: IngotTungsten
+  completetime: 0.25
+  materials:
+    ScrapHighGrade: 7000
+
+- type: latheRecipe
+  id: GoldFromScrapCircuit1
+  result: IngotGold1
+  completetime: 0.25
+  materials:
+    ScrapCircuit: 250
+
+- type: latheRecipe
+  id: GoldFromScrapCircuit
+  result: IngotGold
+  completetime: 0.25
+  materials:
+    ScrapCircuit: 7000
+
+- type: latheRecipe
+  id: SilverFromScrapCircuit1
+  result: IngotSilver1
+  completetime: 0.25
+  materials:
+    ScrapCircuit: 200
+
+- type: latheRecipe
+  id: SilverFromScrapCircuit
+  result: IngotSilver
+  completetime: 0.25
+  materials:
+    ScrapCircuit: 6000
+
+- type: latheRecipe
+  id: PlasmaFromScrapPlasma1
+  result: SheetPlasma1
+  completetime: 0.25
+  materials:
+    ScrapPlasma: 250
+
+- type: latheRecipe
+  id: PlasmaFromScrapPlasma
+  result: SheetPlasma
+  completetime: 0.25
+  materials:
+    ScrapPlasma: 5000
+
+- type: latheRecipe
+  id: PhoronFromScrapPlasma
+  result: DeactivatedPhoronBottle5
+  completetime: 0.25
+  materials:
+    ScrapPlasma: 2500
+
+- type: latheRecipe
+  id: IsotopesFromScrapPlasma
+  result: PlasmaIsotope5
+  completetime: 0.25
+  materials:
+    ScrapPlasma: 2500
+
+- type: latheRecipe
+  id: UraniumFromScrapUranium1
+  result: SheetUranium1
+  completetime: 0.25
+  materials:
+    ScrapUranium: 500
+
+- type: latheRecipe
+  id: UraniumFromScrapUranium
+  result: SheetUranium
+  completetime: 0.25
+  materials:
+    ScrapUranium: 8000
+
+- type: latheRecipe
+  id: FibreAlloyFromCombinedScrap
+  result: PlastitaniumFibreAlloy1
+  completetime: 0.5
+  materials:
+    ScrapHighGrade: 3000
+    RefinedScrapTitanium: 2000
+    ScrapPlasma: 1000
+
+- type: latheRecipe
+  id: BasicElectronicsFromCombinedScrap
+  result: BasicElectronics1
+  completetime: 0.5
+  materials:
+    RefinedGarbage: 1000
+    ScrapCircuit: 250
+
+- type: latheRecipe
+  id: BasicMechatronicsFromCombinedScrap
+  result: BasicMechatronics1
+  completetime: 0.5
+  materials:
+    RefinedScrapSteel: 1000
+    RefinedScrapTitanium: 250
+
+- type: latheRecipe
+  id: BallisticCyclerFromCombinedScrap
+  result: BallisticCycler1
+  completetime: 0.5
+  materials:
+    RefinedScrapSteel: 5000
+    RefinedScrapTitanium: 3000
+
+- type: latheRecipe
+  id: HardsuitElectronicsFromCombinedScrap
+  result: HardsuitElectronics1
+  completetime: 0.5
+  materials:
+    RefinedScrapSteel: 3000
+    ScrapCircuit: 1000
+    ScrapUranium: 500
