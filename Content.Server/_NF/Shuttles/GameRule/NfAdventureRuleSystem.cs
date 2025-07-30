@@ -127,7 +127,7 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
     /// <param name="color">the IFF color to set this object to</param>
     /// <param name="IFFFaction">the IFF faction to set this to. i don't think this does anything</param>
     /// <param name="hideIFF">a boolean to set wether this is visible on the map screen or not</param>
-    private void SpawnMapElementByID(MapId mapid, string gameMapID, float posX, float posY, float randomOffsetX, float randomOffsetY, string? forcedName, Color color, string? iffFaction, bool hideIFF)
+    private void SpawnMapElementByID(MapId mapid, string gameMapID, float posX, float posY, float randomOffsetX, float randomOffsetY, Color color, string? iffFaction, bool hideIFF)
     {
         if (_prototypeManager.TryIndex<GameMapPrototype>(gameMapID, out var stationProto))
         {
@@ -137,14 +137,6 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
             }))
             {
                 _station.InitializeNewStation(stationProto.Stations[gameMapID], stationGridUid);
-
-                var meta = EnsureComp<MetaDataComponent>(stationGridUid[0]); //NEED TO FIX THIS TOO. what. what did i mean by this 3 weeks ago. .2 | 2025
-
-                // forcing name if applicable
-                if (forcedName != null)
-                    _meta.SetEntityName(stationGridUid[0], forcedName, meta);
-                else
-                    _meta.SetEntityName(stationGridUid[0], stationProto.MapName, meta); //NEED TO FIX THIS.
 
                 // setting color if applicable. if not, White is default
                 _shuttle.SetIFFColor(stationGridUid[0], color);
@@ -157,43 +149,6 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
                 if (hideIFF)
                     _shuttle.AddIFFFlag(stationGridUid[0], IFFFlags.HideLabel);
             }
-        }
-    }
-
-
-    /// <summary>
-    /// This is a helper function that spawns in stuff by a direct path to the map file.
-    /// </summary>
-    /// <param name="mapid"> the ID of the map. this is always GameTicker.DefaultMap; for hullrot </param>
-    /// <param name="path">the path to the map file to spawn in</param>
-    /// <param name="posX">the X coordinate to spawn it at</param>
-    /// <param name="posY">the Y coordinate to spawn it at</param>
-    /// <param name="randomOffsetX">the maximum POSITIVE value the X coordinate can be offset by randomly. 0 works</param>
-    /// <param name="randomOffsetY">the maximum POSITIVE value the Y coordinate can be offset by randomly. 0 works</param>
-    /// <param name="color">the IFF color to set this object to</param>
-    /// <param name="hideIFF">a boolean to set wether this is visible on the map screen or not</param>
-    private void SpawnMapElementByPath(MapId mapid, string path, string entityName, float posX, float posY, float randomOffsetX, float randomOffsetY, string? forcedName, Color color, bool hideIFF)
-    {
-        if (_map.TryLoad(mapid, path, out var stationGridUid, new MapLoadOptions
-        {
-            Offset = new Vector2(posX, posY) + _random.NextVector2(randomOffsetX, randomOffsetY)
-
-        }))
-        {
-            var meta = EnsureComp<MetaDataComponent>(stationGridUid[0]);
-
-            // setting forcedname if needed
-            if (forcedName != null)
-                _meta.SetEntityName(stationGridUid[0], forcedName, meta);
-            else
-                _meta.SetEntityName(stationGridUid[0], entityName, meta);
-
-            // set color if specified. if not, default is White
-            _shuttle.SetIFFColor(stationGridUid[0], color);
-
-            // hide iff flag for secrets and derelicts
-            if (hideIFF)
-                _shuttle.AddIFFFlag(stationGridUid[0], IFFFlags.HideLabel);
         }
     }
 
@@ -210,7 +165,6 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
                                 gamemap.Value.PositionY,
                                 gamemap.Value.RandomOffsetX,
                                 gamemap.Value.RandomOffsetY,
-                                gamemap.Value.ForcedName,
                                 gamemap.Value.IFFColor,
                                 gamemap.Value.IFFFaction,
                                 gamemap.Value.HideIFF);
@@ -220,27 +174,6 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
             // _sawmill.Debug("GAMEMAPID: " + gamemap.Value.GameMapID);
             // _sawmill.Debug("posX: " + gamemap.Value.PositionX);
             // _sawmill.Debug("posY: " + gamemap.Value.PositionY);
-            // _sawmill.Debug("------------");
-        }
-
-        foreach (var pathmap in component.GameMapsPath)
-        {
-            SpawnMapElementByPath(mapId,
-                                pathmap.Value.Path,
-                                pathmap.Value.EntityName,
-                                pathmap.Value.PositionX,
-                                pathmap.Value.PositionY,
-                                pathmap.Value.RandomOffsetX,
-                                pathmap.Value.RandomOffsetY,
-                                pathmap.Value.ForcedName,
-                                pathmap.Value.IFFColor,
-                                pathmap.Value.HideIFF);
-
-            // _sawmill.Debug("------------");
-            // _sawmill.Debug("PATH: " + pathmap.Value.Path);
-            // _sawmill.Debug("ENTITYNAME: " + pathmap.Value.EntityName);
-            // _sawmill.Debug("posX: " + pathmap.Value.PositionX);
-            // _sawmill.Debug("posY: " + pathmap.Value.PositionY);
             // _sawmill.Debug("------------");
         }
     }
