@@ -25,16 +25,7 @@
 # IFFColor changes what color the IFF in the shuttle and map screen will have. Use colors from the Color type, like White, Aqua, Blue, etc.
 # IFFFaction sets the faction of the object. to be honest i dont know if this does anything.
 # hideIFF is a boolean that controls if the object is visible from the map screen or not. by default it is set to false. use this for derelicts or secrets
-#
-# gameMapsByPath is a DICTIONARY that describes all spawned grids defined by a path.
-# this is stuff like derelicts, roundstart ships or secrets. the path MUST POINT TO A MAP .yml or it will NOT WORK.
-# you can give the dictionary key whatever name you want
-# path is a path that points to the map .yml
-# posX & posY define the position it will be spawned at
-# randomOffsetX & randomOffsetY describe an offset that will be applied to the position. leave undefined or at 0 to spawn as is. This offset is ALWAYS POSITIVE.
-# IFFColor changes what color the IFF in the shuttle and map screen will have. Use colors from the Color type, like White, Aqua, Blue, etc.
-# IFFFaction sets the faction of the object. to be honest i dont know if this does anything.
-# hideIFF is a boolean that controls if the object is visible from the map screen or not. by default it is set to false. use this for derelicts or secrets
+
 
 - type: entity
   id: Adventure #FREEPLAY, DO NOT REMOVE
