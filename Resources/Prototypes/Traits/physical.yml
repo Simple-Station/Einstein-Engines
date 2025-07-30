@@ -1468,9 +1468,6 @@
         - type: SiliconDownOnDead
         - type: Inventory
           templateId: ipc
-        - type: SiliconDownOnDead
-        - type: Inventory
-          templateId: ipc
         - type: GuideHelp
           guides:
             - IPC
