@@ -1449,6 +1449,7 @@
         - type: Dna
         - type: Hunger
         - type: Thirst
+        - type: Internals
     - !type:TraitModifyComponent
       components:
         - type: PowerCellSlot
@@ -1587,8 +1588,6 @@
           soundTypes:
             Heat:
               collection: MetalLaserImpact
-        - type: HumanoidAppearance
-          species: IPC
         - type: Speech
           speechSounds: Pai
         - type: Vocal
