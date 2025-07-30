@@ -1278,9 +1278,14 @@
   category: Physical
   points: -4
   requirements:
-    - !type:CharacterSpeciesRequirement
-      species:
-        - IPC
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - Shell
   functions:
     - !type:TraitAddArmor
       damageModifierSets:
@@ -1291,9 +1296,14 @@
   category: Physical
   points: -5
   requirements:
-    - !type:CharacterSpeciesRequirement
-      species:
-        - IPC
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - Shell
   functions:
     - !type:TraitAddComponent
       components:
@@ -1310,9 +1320,14 @@
   category: Physical
   points: -3
   requirements:
-    - !type:CharacterSpeciesRequirement
-      species:
-        - IPC
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - Shell
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -1417,6 +1432,13 @@
     - !type:TraitRemoveComponent
       components:
         - type: Mood
+        - type: Perishable
+        - type: Butcherable
+        - type: Respirator
+        - type: Absorbable
+        - type: Dna
+        - type: Hunger
+        - type: Thirst
     - !type:TraitModifyComponent
       components:
         - type: PowerCellSlot
@@ -1565,6 +1587,7 @@
             Male: UnisexIPC
             Female: UnisexIPC
             Unsexed: UnisexIPC
+          forceEmoteSounds: UnisexIPC
         - type: LightningTarget
           priority: 1
           lightningExplode: false
