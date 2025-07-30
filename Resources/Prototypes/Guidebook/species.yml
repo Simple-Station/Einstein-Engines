@@ -19,6 +19,7 @@
     - Xelthia
     # ImpStation additions
     - Thaven
+    - Shell
 
 - type: guideEntry
   id: Arachnid
@@ -84,3 +85,8 @@
   id: Xelthia
   name: species-name-xelthia
   text: "/ServerInfo/_EE/Guidebook/Mobs/Xelthia.xml"
+
+- type: guideEntry
+  id: Shell
+  name: species-name-shell
+  text: "/ServerInfo/Guidebook/Mobs/Shell.xml"
