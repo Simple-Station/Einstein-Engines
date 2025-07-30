@@ -42,23 +42,19 @@ public sealed partial class AtmosphereSystem
             // Create a new "Integer Vector2" using the search pattern, which will first be used to search the matrix of air tiles via its index.
             // It'll be normalized immediately after that check is performed.
             var offsetVector = new Vector2(x, y);
-
+            offsetVector.Normalize();
             // If the tile checked doesn't exist, or has no air, or it's space,
             // then there's nothing to "push back" against our center tile's air.
             if (!gridAtmos.Tiles.TryGetValue(tile.GridIndices + (x, y), out var tileAtmosphere)
                 || tileAtmosphere.Space)
             {
-                // Since vectors with values of <+-1, +-1> actually have a length of Sqrt(2) instead of 1, we need to normalize them.
-                // We'll normalize all of them uniformly, even the ones that already have a length of 1, because we can't guarantee
-                // that our search pattern will always have normalized vectors.
-                // It's roughly the same computation time both ways since these are all integers. Thank you identity property shenanigans.
-                offsetVector.Normalize();
-
                 pressureVector += offsetVector * centerPressure;
+                if (!gridAtmos.Tiles.TryGetValue(tile.GridIndices - (x, y), out var opposingTile)
+                    || opposingTile.AirArchived is null)
+                    continue;
+                pressureVector += offsetVector * (opposingTile.AirArchived.Pressure - centerPressure);
                 continue;
             }
-            // See above, both sides of the condition have to have the Normalize.
-            offsetVector.Normalize();
 
             // If the tile checked is blocking airflow from this direction, the center tile's air "Bounces" off it and into the
             // opposite direction.
@@ -67,6 +63,11 @@ public sealed partial class AtmosphereSystem
                 || tileAtmosphere.AirArchived is null)
             {
                 pressureVector -= offsetVector * centerPressure;
+                if (!gridAtmos.Tiles.TryGetValue(tile.GridIndices - (x, y), out var opposingTile)
+                    || opposingTile.AirArchived is null)
+                    continue;
+
+                pressureVector += offsetVector * (opposingTile.AirArchived.Pressure - centerPressure);
                 continue;
             }
 

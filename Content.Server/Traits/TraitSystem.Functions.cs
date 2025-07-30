@@ -897,3 +897,184 @@ public sealed partial class TraitAddTrait : TraitFunction
             traitSystem.AddTrait(uid, trait);
     }
 }
+
+/// <summary>
+///     This trait takes component registries, and overwrites all the datafields of matching components in the target,
+///     except ONLY touching datafields declared in yml serialization. Effectively this allows traits to
+///     directly write to arbitrarily any component, without needing to destroy any previous data.
+/// </summary>
+[UsedImplicitly]
+public sealed partial class TraitModifyComponent : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public ComponentRegistry Components { get; private set; } = new();
+
+    [DataField, AlwaysPushInheritance]
+    public bool EnsureComp { get; private set; } = true;
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        foreach (var entry in Components.Values)
+        {
+            var entryType = entry.Component.GetType();
+            var refComp = factory.GetComponent(entry);
+
+            if (entityManager.HasComponent(uid, entryType))
+            {
+                var targetComp = entityManager.GetComponent(uid, entryType);
+                foreach (var field in entryType.GetFields())
+                {
+                    var setValue = field.GetValue(entry.Component);
+                    if (setValue == field.GetValue(refComp))
+                        continue;
+
+                    field.SetValue(targetComp, setValue);
+                }
+                if (!targetComp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
+                    continue;
+                entityManager.Dirty(uid, targetComp);
+            }
+            else if (EnsureComp)
+            {
+                // Oh hey it didn't exist and we want to force it to do so, let's add it.
+                // This exists because I cannot EnsureComp from reflected types. Thanks Robust Toolbox.
+                var comp = (Component) serializationManager.CreateCopy(entry.Component, notNullableOverride: true);
+                comp.Owner = uid;
+                entityManager.AddComponent(uid, comp);
+
+                if (!comp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
+                    continue;
+                entityManager.Dirty(uid, comp);
+            }
+        }
+    }
+}
+
+/// <summary>
+///     As per TraitModifyComponent, except if it only works on datafields that are a number.
+///     It takes the target datafield, and multiplies it by the declared number.
+/// </summary>
+[UsedImplicitly]
+public sealed partial class TraitMultiplyToComponent : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public ComponentRegistry Components { get; private set; } = new();
+
+    [DataField, AlwaysPushInheritance]
+    public bool EnsureComp { get; private set; } = true;
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        foreach (var entry in Components.Values)
+        {
+            var entryType = entry.Component.GetType();
+            var refComp = factory.GetComponent(entry);
+
+            if (entityManager.HasComponent(uid, entryType))
+            {
+                var targetComp = entityManager.GetComponent(uid, entryType);
+                foreach (var field in entryType.GetFields())
+                {
+                    var setValue = field.GetValue(entry.Component);
+                    var targetValue = field.GetValue(targetComp);
+                    if (setValue == field.GetValue(refComp)
+                        || setValue is null || targetValue is null)
+                        continue;
+
+                    if (targetValue is float targetFloat && setValue is float setFloat)
+                        field.SetValue(targetComp, targetFloat * setFloat);
+                    else if (targetValue is double targetDouble && setValue is double setDouble)
+                        field.SetValue(targetComp, targetDouble * setDouble);
+                    else if (targetValue is int targetInt && setValue is int setInt)
+                        field.SetValue(targetComp, targetInt * setInt);
+                    else if (targetValue is FixedPoint2 targetFixed && setValue is FixedPoint2 setFixed)
+                        field.SetValue(targetComp, targetFixed * setFixed);
+                }
+                if (!targetComp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
+                    continue;
+                entityManager.Dirty(uid, targetComp);
+            }
+            else if (EnsureComp)
+            {
+                // Oh hey it didn't exist and we want to force it to do so, let's add it.
+                // This exists because I cannot EnsureComp from reflected types. Thanks Robust Toolbox.
+                var comp = (Component) serializationManager.CreateCopy(entry.Component, notNullableOverride: true);
+                comp.Owner = uid;
+                entityManager.AddComponent(uid, comp);
+
+                if (!comp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
+                    continue;
+                entityManager.Dirty(uid, comp);
+            }
+        }
+    }
+}
+
+/// <summary>
+///     As per TraitModifyComponent, except if it only works on datafields that are a number.
+///     It takes the target datafield, and adds the declared number to it.
+/// </summary>
+[UsedImplicitly]
+public sealed partial class TraitAddToComponent : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public ComponentRegistry Components { get; private set; } = new();
+
+    [DataField, AlwaysPushInheritance]
+    public bool EnsureComp { get; private set; } = true;
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        foreach (var entry in Components.Values)
+        {
+            var entryType = entry.Component.GetType();
+            var refComp = factory.GetComponent(entry);
+
+            if (entityManager.HasComponent(uid, entryType))
+            {
+                var targetComp = entityManager.GetComponent(uid, entryType);
+                foreach (var field in entryType.GetFields())
+                {
+                    var setValue = field.GetValue(entry.Component);
+                    var targetValue = field.GetValue(targetComp);
+                    if (setValue == field.GetValue(refComp)
+                        || setValue is null || targetValue is null)
+                        continue;
+
+                    if (targetValue is float targetFloat && setValue is float setFloat)
+                        field.SetValue(targetComp, targetFloat + setFloat);
+                    else if (targetValue is double targetDouble && setValue is double setDouble)
+                        field.SetValue(targetComp, targetDouble + setDouble);
+                    else if (targetValue is int targetInt && setValue is int setInt)
+                        field.SetValue(targetComp, targetInt + setInt);
+                    else if (targetValue is FixedPoint2 targetFixed && setValue is FixedPoint2 setFixed)
+                        field.SetValue(targetComp, targetFixed + setFixed);
+                }
+                if (!targetComp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
+                    continue;
+                entityManager.Dirty(uid, targetComp);
+            }
+            else if (EnsureComp)
+            {
+                // Oh hey it didn't exist and we want to force it to do so, let's add it.
+                // This exists because I cannot EnsureComp from reflected types. Thanks Robust Toolbox.
+                var comp = (Component) serializationManager.CreateCopy(entry.Component, notNullableOverride: true);
+                comp.Owner = uid;
+                entityManager.AddComponent(uid, comp);
+
+                if (!comp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
+                    continue;
+                entityManager.Dirty(uid, comp);
+            }
+        }
+    }
+}
