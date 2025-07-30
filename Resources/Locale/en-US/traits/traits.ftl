@@ -718,3 +718,9 @@ trait-description-ForkedTongue =
 trait-name-StuntedSnout = Stunted Snout
 trait-description-StuntedSnout =
     Your sense of smell is stunted for one reason or another. You lack the ability to pick up scents.
+
+trait-name-Shell = Species Swap: Shell
+trait-description-Shell =
+    You are a highly sophisticated positronic brain inside a construct consisting of living tissue over a metal endoskeleton.
+    On the exterior you look like a human, but the lack of humanity is plainly evident in the empty eyes and calculating stare.
+    Nearly all of your character's Human features are swapped for those of an IPC, effectively making this a species swap "under the hood".

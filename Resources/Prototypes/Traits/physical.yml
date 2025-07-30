@@ -392,7 +392,6 @@
             types:
               Blunt: 0
 
-
 - type: trait
   id: Claws
   category: Physical
@@ -412,14 +411,16 @@
       traits:
         - Talons
   functions:
-    - !type:TraitModifyUnarmed
-      soundHit:
-        collection: AlienClaw
-      animation: WeaponArcClaw
-      damage:
-        types:
-          Slash: 5 # Trade stamina damage on hit for a very minor amount of extra bleed.
-                  # Blunt also deals bleed damage, so this is more of a sidegrade.
+    - !type:TraitModifyComponent
+      components:
+        - type: MeleeWeapon
+          soundHit:
+            collection: AlienClaw
+          animation: WeaponArcClaw
+          damage:
+            types:
+              Slash: 5 # Trade stamina damage on hit for a very minor amount of extra bleed.
+                      # Blunt also deals bleed damage, so this is more of a sidegrade.
     - !type:TraitRemoveComponent
       components:
         - type: DamageOnHit
@@ -1397,3 +1398,173 @@
     - !type:TraitRemoveComponent
       components:
         - type: ScentTracker
+
+- type: trait
+  id: Shell
+  category: Physical
+  points: -2
+  slots: 0
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - RobotTalk
+      languagesUnderstood:
+        - RobotTalk
+    - !type:TraitRemoveComponent
+      components:
+        - type: Mood
+    - !type:TraitModifyComponent
+      components:
+        - type: PowerCellSlot
+          cellSlotId: cell_slot
+          fitsInCharger: true
+        - type: ItemSlots
+          slots:
+            cell_slot:
+              name: power-cell-slot-component-slot-name-default
+              startingItem: PowerCellMedium
+        - type: ItemSlotsRequirePanel
+          slots:
+            cell_slot: true
+        - type: EncryptionHolderRequiresLock
+        - type: SiliconEmitSoundOnDrained
+          sound: "/Audio/Weapons/Guns/EmptyAlarm/smg_empty_alarm.ogg"
+          minInterval: 15
+          maxInterval: 30
+          popUp: "silicon-power-low"
+        - type: WiresPanel
+          openDelay: 5
+        - type: LockedWiresPanel
+        - type: Lock
+          locked: true
+          lockOnClick: false
+          unlockOnClick: false
+          breakOnEmag: false
+        - type: AccessReader
+          breakOnEmag: true
+          ownerHasAccess: true
+        - type: MobState
+          allowedStates:
+            - Alive
+            - Dead
+        - type: MobThresholds
+          thresholds:
+            0: Alive
+            120: Dead
+          stateAlertDict:
+            Alive: BorgHealth
+            Dead: BorgDead
+        - type: TypingIndicator
+          proto: robot
+        - type: SlowOnDamage
+          speedModifierThresholds:
+            60: 0.75
+            90: 0.5
+            120: 0.3
+        - type: SiliconDownOnDead
+        - type: Inventory
+          templateId: ipc
+        - type: GuideHelp
+          guides:
+            - IPC
+        - type: Silicon
+          entityType: enum.SiliconType.Player
+          batteryPowered: true
+          drainPerSecond: 1.5
+          chargeThresholdMid: 0.80
+          chargeThresholdLow: 0.35
+          chargeThresholdCritical: 0.10
+          speedModifierThresholds:
+            4: 1
+            3: 1
+            2: 0.80
+            1: 0.45
+            0: 0.00
+        - type: BatteryDrinker
+        - type: EncryptionKeyHolder
+          keySlots: 4
+          examineWhileLocked: false
+          keysExtractionMethod: Cutting
+          keysUnlocked: false
+        - type: ActiveRadio
+        - type: IntrinsicRadioReceiver
+        - type: IntrinsicRadioTransmitter
+        - type: DeadStartupButton
+          sound:
+            path: /Audio/Effects/Silicon/startup.ogg
+        - type: EmitBuzzWhileDamaged
+        - type: ProtectedFromStepTriggers
+          whitelist:
+            types:
+            - Shard
+        - type: Tag
+          tags:
+          - CanPilot
+          - FootstepSound
+          - DoorBumpOpener
+          - SiliconEmotes
+          - SiliconMob
+        - type: Damageable
+          damageContainer: SiliconUnshielded
+          damageModifierSet: IPC
+        - type: Barotrauma
+          damage:
+            types:
+              Heat: 0.55 #per second, scales with pressure and other constants. Uniquely Heat instead of blunt, to simulate mechanical overheating in vacuum. IPCs are normally air cooled.
+        - type: Bloodstream
+          bloodlossDamage:
+            types:
+              Bloodloss: 0
+          bloodlossHealDamage:
+            types:
+              Bloodloss: 0
+          bloodRegenerationHunger: 0
+          bloodRegenerationThirst: 0
+          bloodReagent: IPCCoolant
+          cauterizeMessage: null
+        - type: Temperature
+          heatDamageThreshold: 1800 # GoobStation: Roughly the melting point of mild steels
+          coldDamageThreshold: 260
+          currentTemperature: 310.15
+          specificHeat: 42
+          coldDamage:
+            types:
+              Cold: 0.1 #per second, scales with temperature & other constants
+          heatDamage:
+            types:
+              Heat: 3 #per second, scales with temperature & other constants
+          atmosTemperatureTransferEfficiency: 0.05
+        - type: KillOnOverheat # GoobStation
+        - type: Deathgasp
+          prototype: SiliconDeathgasp
+          needsCritical: false
+        - type: Flammable
+          fireSpread: true
+          canResistFire: true
+          damage:
+            types:
+              Heat: 0 # GoobStation: Replaced fire damage with overheating shutdown
+        - type: RangedDamageSound
+          soundGroups:
+            Brute:
+              collection: MetalBulletImpact
+          soundTypes:
+            Heat:
+              collection: MetalLaserImpact
+        - type: HumanoidAppearance
+          species: IPC
+        - type: Speech
+          speechSounds: Pai
+        - type: Vocal
+          wilhelm: "/Audio/Voice/IPC/wilhelm.ogg"
+          sounds:
+            Male: UnisexIPC
+            Female: UnisexIPC
+            Unsexed: UnisexIPC
+        - type: LightningTarget
+          priority: 1
+          lightningExplode: false
