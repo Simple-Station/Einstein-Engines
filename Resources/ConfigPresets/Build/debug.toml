@@ -11,3 +11,6 @@ preset_autovote_enabled = false
 
 [lavaland]
 enabled = false
+
+[rules]
+exempt_local = true
