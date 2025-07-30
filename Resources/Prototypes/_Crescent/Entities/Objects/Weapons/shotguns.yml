@@ -75,7 +75,7 @@
 
 - type: entity
   name: IRM Matusa 12g
-  parent: BaseWeaponSniperNoWield #UNTIL THE REVOLVER SYSTEM GETS FIXED WE USE THIS.
+  parent: BaseWeaponSniper
   id: WeaponShotgunDSMMatusa
   description: The Matusa has only recently fallen out of favour with the Imperial Subjugation Corps as the civil war has pivoted arsenals towards armour-piercing firepower for whom the shotgun falls short. However, Matusas can be found in shock-assault divisions and peacekeeping forces across the sectors which once comprised the Imperial Mandate as the revolving street-sweeper requires no advanced machining and is effective at clearing fortified positions and unruly crowds alike.
   components:
@@ -89,8 +89,9 @@
     - Back
     - suitStorage
   - type: Gun
-    fireRate: 0.8
+    fireRate: 2.5
     damageModifier: 1.25
+    shotgunSpreadMultiplier: 3.5
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -104,6 +105,7 @@
     whitelist:
       tags:
       - ShellShotgun
+
 
 - type: entity
   name: NCWL Pioneer Double-Barrel 12g
@@ -122,9 +124,9 @@
     - suitStorage
   - type: Gun
     fireRate: 2
-    damageModifier: 1.5
+    damageModifier: 1.8
     burstFireRate: 15
-    shotgunSpreadMultiplier: 2
+    shotgunSpreadMultiplier: 3
     shotsPerBurst: 2
     selectedMode: SemiAuto
     availableModes:
