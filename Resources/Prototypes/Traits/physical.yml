@@ -1526,9 +1526,6 @@
           bloodRegenerationThirst: 0
           bloodReagent: IPCCoolant
           cauterizeMessage: null
-        - type: Damageable
-          damageContainer: Silicon
-          damageModifierSet: IPC
         - type: Temperature
           heatDamageThreshold: 1800 # GoobStation: Roughly the melting point of mild steels
           coldDamageThreshold: 260
