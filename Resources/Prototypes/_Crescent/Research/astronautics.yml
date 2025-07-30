@@ -1,0 +1,108 @@
+# Tier 1
+- type: technology
+  id: AstronauticsBasicFlight
+  name: research-technology-astronautics-basic-flight
+  icon:
+    sprite: Structures/Shuttles/gyroscope.rsi
+    state: base
+  discipline: Astronautics
+  tier: 1
+  cost: 3500
+  recipeUnlocks:
+  - ThrusterFlatpackAstronautics
+  - GyroscopeFlatpackAstronautics
+  - ShuttleFlatpackAstronautics
+
+- type: technology
+  id: MicroGravity
+  name: research-technology-astronautics-microgravity
+  icon:
+    sprite: Structures/Machines/gravity_generator_mini.rsi
+    state: on
+  discipline: Astronautics
+  tier: 1
+  cost: 3000
+  recipeUnlocks:
+  - MiniGravityFlatpack
+
+- type: technology
+  id: BasicHardsuits
+  name: research-technology-astronautics-basiceva
+  icon:
+    sprite: Clothing/OuterClothing/Hardsuits/basic.rsi
+    state: icon
+  discipline: Astronautics
+  tier: 1
+  cost: 3500
+  recipeUnlocks:
+  - ClothingOuterHardsuitBasicAstronautics
+  - ClothingOuterHardsuitSpatioAstronautics
+  - ClothingShoesBootsMagAstronautics
+  - JetpackBlueFilledAstronautics
+  - ClothingOuterHardsuitIndependentsEVAAstronautics
+
+
+- type: technology
+  id: SpaceScanningAstronautics
+  name: research-technology-space-scanning
+  icon:
+    sprite: Objects/Tools/handheld_mass_scanner.rsi
+    state: icon
+  discipline: Industrial
+  tier: 1
+  cost: 3500
+  recipeUnlocks:
+  - HandheldMassScannerAstronautics
+  - BorgModuleGPS
+
+#tier 2
+
+- type: technology
+  id: AdvancedHardsuits
+  name: research-technology-astronautics-advancedeva
+  icon:
+    sprite: _NF/Clothing/OuterClothing/Hardsuits/private_security.rsi
+    state: icon
+  discipline: Astronautics
+  tier: 2
+  cost: 6000
+  recipeUnlocks:
+  - ClothingOuterHardsuitPrivateSecurityAstronautics
+  - ClothingOuterHardsuitPilotAstronautics
+  - ClothingOuterHardsuitVoidParamedAstronautics
+  - JetpackMiniFilledAstronautics
+  - ClothingOuterHardsuitFishbedAstronautics
+  - ClothingOuterHardsuitFishbedSilverAstronautics
+  - ClothingOuterHardsuitFishbedGoldAstronautics
+  - ClothingOuterHardsuitFishbedColonialAstronautics
+  - ClothingOuterHardsuitFishbedNLFAstronautics
+  - ClothingOuterHardsuitCenobiteAstronautics
+  - ClothingOuterHardsuitCenobiteVerdantAstronautics
+  - ClothingOuterHardsuitCenobiteRedAstronautics
+
+- type: technology
+  id: RCDAstronautics
+  name: research-technology-astronautics-shipyardconstruction
+  icon:
+    sprite: Objects/Tools/rcd.rsi
+    state: icon
+  discipline: Astronautics
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - RCDAstronautics
+  - RCDAmmoAstronautics
+
+#Tier 3
+
+- type: technology
+  id: ModsuitAstronautics
+  name: research-technology-astronautics-modsuit
+  icon:
+    sprite: _Goobstation/Clothing/Back/Modsuits/standard.rsi
+    state: control
+  discipline: Astronautics
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - ClothingModsuitStandardAstronautics
