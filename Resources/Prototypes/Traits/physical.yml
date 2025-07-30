@@ -1439,6 +1439,12 @@
           - id: FoodMeatHuman
             amount: 5
         - type: Respirator
+          damage:
+            types:
+              Asphyxiation: 2
+          damageRecovery:
+            types:
+              Asphyxiation: -1.0
         - type: Absorbable
         - type: Dna
         - type: Hunger
