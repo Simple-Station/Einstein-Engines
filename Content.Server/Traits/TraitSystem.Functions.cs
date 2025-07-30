@@ -897,3 +897,53 @@ public sealed partial class TraitAddTrait : TraitFunction
             traitSystem.AddTrait(uid, trait);
     }
 }
+
+[UsedImplicitly]
+public sealed partial class TraitModifyComponent : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public ComponentRegistry Components { get; private set; } = new();
+
+    [DataField, AlwaysPushInheritance]
+    public bool EnsureComp { get; private set; } = true;
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        foreach (var entry in Components.Values)
+        {
+            var entryType = entry.Component.GetType();
+            var refComp = factory.GetComponent(entry);
+
+            if (entityManager.HasComponent(uid, entryType))
+            {
+                var targetComp = entityManager.GetComponent(uid, entryType);
+                foreach (var field in entryType.GetFields())
+                {
+                    var setValue = field.GetValue(entry.Component);
+                    if (setValue == field.GetValue(refComp))
+                        continue;
+
+                    field.SetValue(targetComp, setValue);
+                }
+                if (!targetComp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
+                    continue;
+                entityManager.Dirty(uid, targetComp);
+            }
+            else if (EnsureComp)
+            {
+                // Oh hey it didn't exist and we want to force it to do so, let's add it.
+                // This exists because I cannot EnsureComp from reflected types. Thanks Robust Toolbox.
+                var comp = (Component) serializationManager.CreateCopy(entry.Component, notNullableOverride: true);
+                comp.Owner = uid;
+                entityManager.AddComponent(uid, comp);
+
+                if (!comp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
+                    continue;
+                entityManager.Dirty(uid, comp);
+            }
+        }
+    }
+}
