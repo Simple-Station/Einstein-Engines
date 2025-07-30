@@ -16685,3 +16685,14 @@ Entries:
   id: 7307
   time: '2025-07-30T02:28:05.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2518
+- author: VMSolidus
+  changes:
+    - type: Tweak
+      message: >-
+        Most traits that were previously IPC exclusive can now also be taken by
+        Shells. 
+    - type: Fix
+      message: Fixed Shells not having any emote sounds.
+  id: 7308
+  time: '2025-07-30T04:50:25.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2519
