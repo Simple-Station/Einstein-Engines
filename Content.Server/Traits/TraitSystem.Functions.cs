@@ -947,3 +947,87 @@ public sealed partial class TraitModifyComponent : TraitFunction
         }
     }
 }
+
+[UsedImplicitly]
+public sealed partial class TraitMultiplyToComponent : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public ComponentRegistry Components { get; private set; } = new();
+
+    [DataField, AlwaysPushInheritance]
+    public bool EnsureComp { get; private set; } = true;
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        foreach (var entry in Components.Values)
+        {
+            var entryType = entry.Component.GetType();
+            var refComp = factory.GetComponent(entry);
+
+            if (entityManager.HasComponent(uid, entryType))
+            {
+                var targetComp = entityManager.GetComponent(uid, entryType);
+                foreach (var field in entryType.GetFields())
+                {
+                    var setValue = field.GetValue(entry.Component);
+                    var targetValue = field.GetValue(targetComp);
+                    if (setValue == field.GetValue(refComp)
+                        || setValue is null || targetValue is null
+                        || !targetValue.GetType().IsValueType
+                        || !setValue.GetType().IsValueType)
+                        continue;
+
+                    field.SetValue(targetComp, (float) targetValue * (float) setValue);
+                }
+                if (!targetComp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
+                    continue;
+                entityManager.Dirty(uid, targetComp);
+            }
+        }
+    }
+}
+
+[UsedImplicitly]
+public sealed partial class TraitAddToComponent : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public ComponentRegistry Components { get; private set; } = new();
+
+    [DataField, AlwaysPushInheritance]
+    public bool EnsureComp { get; private set; } = true;
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        foreach (var entry in Components.Values)
+        {
+            var entryType = entry.Component.GetType();
+            var refComp = factory.GetComponent(entry);
+
+            if (entityManager.HasComponent(uid, entryType))
+            {
+                var targetComp = entityManager.GetComponent(uid, entryType);
+                foreach (var field in entryType.GetFields())
+                {
+                    var setValue = field.GetValue(entry.Component);
+                    var targetValue = field.GetValue(targetComp);
+                    if (setValue == field.GetValue(refComp)
+                        || setValue is null || targetValue is null
+                        || !targetValue.GetType().IsValueType
+                        || !setValue.GetType().IsValueType)
+                        continue;
+
+                    field.SetValue(targetComp, (float) targetValue + (float) setValue);
+                }
+                if (!targetComp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
+                    continue;
+                entityManager.Dirty(uid, targetComp);
+            }
+        }
+    }
+}
