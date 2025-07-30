@@ -76,10 +76,10 @@ public sealed class UnionfallCapturePointSystem : EntitySystem
             {
                 _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
             capturepoint.CapturingFaction + " has secured the control point! The round is over.");
-                //_gameTicker.EndRound(capturepoint.CapturingFaction + " WON. RESTARTING ROUND IN 1 MINUTE");
+                _gameTicker.EndRound(capturepoint.CapturingFaction + " WON. RESTARTING ROUND IN 1 MINUTE");
                 capturepoint.CurrentCaptureProgress = 999999;
                 _sawmill.Debug("ROUND ENDED");
-                _gameTicker.RestartRound();
+                Timer.Spawn(TimeSpan.FromMinutes(1), _gameTicker.RestartRound);
             }
         }
     }
