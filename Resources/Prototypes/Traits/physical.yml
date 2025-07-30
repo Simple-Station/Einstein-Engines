@@ -1433,7 +1433,11 @@
       components:
         - type: Mood
         - type: Perishable
-        - type: Butcherable
+        - type: Butcherable # I hate that required fields are required on components that aren't real.
+          butcheringType: Spike
+          spawned:
+          - id: FoodMeatHuman
+            amount: 5
         - type: Respirator
         - type: Absorbable
         - type: Dna
