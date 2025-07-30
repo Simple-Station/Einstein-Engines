@@ -43,6 +43,9 @@ public sealed partial class VocalComponent : Component
     [AutoNetworkedField]
     public EntityUid? ScreamActionEntity;
 
+    [DataField, AutoNetworkedField]
+    public ProtoId<EmoteSoundsPrototype>? ForceEmoteSounds = null;
+
     /// <summary>
     ///     Currently loaded emote sounds prototype, based on entity sex.
     ///     Null if no valid prototype for entity sex was found.

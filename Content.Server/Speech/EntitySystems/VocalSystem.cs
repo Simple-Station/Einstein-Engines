@@ -69,6 +69,12 @@ public sealed class VocalSystem : EntitySystem
             || TryComp<ReplacementAccentComponent>(uid, out var replacement) && replacement.Accent == MuzzleAccent) // This is not ideal, but it works.
             return;
 
+        if (_proto.TryIndex(component.ForceEmoteSounds, out var emoteSoundsPrototype, false))
+        {
+            component.EmoteSounds = emoteSoundsPrototype;
+            component.ForceEmoteSounds = null;
+        }
+
         // snowflake case for wilhelm scream easter egg
         if (args.Emote.ID == component.ScreamId)
         {
