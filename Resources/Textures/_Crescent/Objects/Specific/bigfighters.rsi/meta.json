@@ -1,0 +1,41 @@
+{
+  "copyright" : "Developed by the HULLROT team. Do not edit, relicense, or redistribute.",
+  "license" : "",
+  "version": 1,
+  "size": {
+    "x": 96,
+    "y": 96
+  },
+    "states": [
+        {
+            "name": "valor",
+            "directions": 4
+        },
+        {
+            "name": "valor-open"
+        },
+        {
+            "name": "valor-broken"
+        },
+        {
+            "name": "raptor",
+            "directions": 4
+        },
+        {
+            "name": "raptor-open"
+        },
+        {
+            "name": "raptor-broken"
+        },
+        {
+            "name": "viper",
+            "directions": 4
+        },
+        {
+            "name": "viper-open"
+        },
+        {
+            "name": "viper-broken"
+        }
+    ]
+}

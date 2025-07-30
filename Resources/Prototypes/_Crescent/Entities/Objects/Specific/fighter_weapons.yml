@@ -1,0 +1,50 @@
+- type: Tag
+  id: LightFighterEquipment
+
+- type: Tag
+  id: MediumFighterEquipment
+
+- type: entity
+  id: LightFighter
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Mech
+    equipmentWhitelist:
+      tags:
+      - LightFighterEquipment
+
+
+- type: entity
+  id: MediumFighter
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Mech
+    equipmentWhitelist:
+      tags:
+      - MediumFighterEquipment
+      - LightFighterEquipment
+
+- type: entity
+  id: LightFighterEquipment
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Tag
+    tags:
+    - LightFighter
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  id: MediumFighterEquipment
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Tag
+    tags:
+    - MediumFighter
+    - LightFighter
+  - type: StaticPrice
+    price: 500

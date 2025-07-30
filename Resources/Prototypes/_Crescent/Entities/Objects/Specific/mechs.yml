@@ -43,9 +43,6 @@
     weightlessModifier: 4.5 # 20ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
-  - type: RadarConsole # doesn't work atm for mechs, will port soon
-    maxRange: 256
-    followEntity: true
   - type: ProjectileIFF
     visualType: Square
     color: "#bd73d0"
@@ -115,9 +112,6 @@
     weightlessModifier: 4.75 # 15ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
-  - type: RadarConsole
-    maxRange: 256
-    followEntity: true
   - type: ProjectileIFF
     visualType: Triangle
     color: "#c87d32"
@@ -184,9 +178,6 @@
     weightlessModifier: 6.25 # 20ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
-  - type: RadarConsole
-    maxRange: 256
-    followEntity: true
   - type: ProjectileIFF
     visualType: Triangle
     color: "#c87d32"
@@ -252,9 +243,6 @@
     weightlessModifier: 4 # 20ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
-  - type: RadarConsole
-    maxRange: 256
-    followEntity: true
   - type: ProjectileIFF
     visualType: Triangle
     color: "#af1919"
@@ -324,9 +312,6 @@
     weightlessModifier: 5.5 # 10ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
-  - type: RadarConsole
-    maxRange: 256
-    followEntity: true
   - type: ProjectileIFF
     visualType: Triangle
     color: "#d9d9d9"
@@ -397,9 +382,6 @@
     weightlessModifier: 4.75 # 15ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
-  - type: RadarConsole
-    maxRange: 256
-    followEntity: true
   - type: ProjectileIFF
     visualType: Triangle
     color: "#bd73d0"
@@ -479,9 +461,6 @@
     weightlessModifier: 6.25 # 20ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
-  - type: RadarConsole
-    maxRange: 256
-    followEntity: true
   - type: ProjectileIFF
     visualType: Triangle
     color: "#bd73d0"
