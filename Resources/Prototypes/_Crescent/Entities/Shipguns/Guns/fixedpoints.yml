@@ -519,6 +519,8 @@
     layers:
     - state: artillery
   - type: BallisticAmmoProvider
+    fillWithDoAfter: true
+    fillDelay: 1
     cycleable: true
     capacity: 2
     proto: CartridgeShellArmorPiercing
@@ -530,7 +532,7 @@
       ballistic-ammo: !type:Container
         ents: []
   - type: Gun
-    fireRate: 0.5
+    fireRate: 4
     projectileSpeed: 95
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ship_duster.ogg
