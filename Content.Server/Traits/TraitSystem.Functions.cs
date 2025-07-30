@@ -984,12 +984,17 @@ public sealed partial class TraitMultiplyToComponent : TraitFunction
                     var setValue = field.GetValue(entry.Component);
                     var targetValue = field.GetValue(targetComp);
                     if (setValue == field.GetValue(refComp)
-                        || setValue is null || targetValue is null
-                        || !targetValue.GetType().IsValueType
-                        || !setValue.GetType().IsValueType)
+                        || setValue is null || targetValue is null)
                         continue;
 
-                    field.SetValue(targetComp, (float) targetValue * (float) setValue);
+                    if (targetValue is float targetFloat && setValue is float setFloat)
+                        field.SetValue(targetComp, targetFloat * setFloat);
+                    else if (targetValue is double targetDouble && setValue is double setDouble)
+                        field.SetValue(targetComp, targetDouble * setDouble);
+                    else if (targetValue is int targetInt && setValue is int setInt)
+                        field.SetValue(targetComp, targetInt * setInt);
+                    else if (targetValue is FixedPoint2 targetFixed && setValue is FixedPoint2 setFixed)
+                        field.SetValue(targetComp, targetFixed * setFixed);
                 }
                 if (!targetComp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
                     continue;
@@ -1042,12 +1047,17 @@ public sealed partial class TraitAddToComponent : TraitFunction
                     var setValue = field.GetValue(entry.Component);
                     var targetValue = field.GetValue(targetComp);
                     if (setValue == field.GetValue(refComp)
-                        || setValue is null || targetValue is null
-                        || !targetValue.GetType().IsValueType
-                        || !setValue.GetType().IsValueType)
+                        || setValue is null || targetValue is null)
                         continue;
 
-                    field.SetValue(targetComp, (float) targetValue + (float) setValue);
+                    if (targetValue is float targetFloat && setValue is float setFloat)
+                        field.SetValue(targetComp, targetFloat + setFloat);
+                    else if (targetValue is double targetDouble && setValue is double setDouble)
+                        field.SetValue(targetComp, targetDouble + setDouble);
+                    else if (targetValue is int targetInt && setValue is int setInt)
+                        field.SetValue(targetComp, targetInt + setInt);
+                    else if (targetValue is FixedPoint2 targetFixed && setValue is FixedPoint2 setFixed)
+                        field.SetValue(targetComp, targetFixed + setFixed);
                 }
                 if (!targetComp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
                     continue;
