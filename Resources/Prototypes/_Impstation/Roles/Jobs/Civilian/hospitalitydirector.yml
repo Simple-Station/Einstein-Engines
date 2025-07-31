@@ -3,7 +3,7 @@
   name: job-name-hd
   description: job-description-hd
   playTimeTracker: JobHospitalityDirector
-  requirements: #Fix this!
+  requirements:
   - !type:CharacterPlaytimeRequirement
     tracker: JobJanitor
     min: 14400
@@ -62,7 +62,7 @@
     back: ClothingBackpack
     shoes: ClothingShoesColorBlack
     id: HospitalityDirectorPDA
-    ears: ClothingHeadsetService #replace this with a command comms service headset when one is added pleaseeeee
+    ears: ClothingHeadsetHeadService #replace this with a command comms service headset when one is added pleaseeeee
 
 - type: startingGear #this also needs a proper go-over
   id: HospitalityPlasmamanGear
