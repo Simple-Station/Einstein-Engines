@@ -4,6 +4,27 @@
   description: job-description-hop
   playTimeTracker: JobHeadOfPersonnel
   requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Command
+    min: 28800
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 28800
+  - !type:CharacterDepartmentTimeRequirement
+    department: Engineering
+    min: 28800
+  - !type:CharacterDepartmentTimeRequirement
+    department: Medical
+    min: 28800
+  - !type:CharacterDepartmentTimeRequirement
+    department: Epistemics
+    min: 28800
+  - !type:CharacterDepartmentTimeRequirement
+    department: Logistics
+    min: 28800
+  - !type:CharacterDepartmentTimeRequirement
+    department: Civilian
+    min: 28800
   - !type:CharacterTraitRequirement
     inverted: true
     traits:
@@ -25,6 +46,7 @@
   - HeadOfPersonnel
   - Bar
   - Service
+  - Clerk 
   - Maintenance
   - Janitor
   - Theatre
@@ -34,9 +56,22 @@
   - Cryogenics
   - Lawyer
   - Cargo
+  - Orders
+  - Mail
+  - Salvage 
   - Boxer
   - Clown
   - Library
+  - Chapel 
+  - Research
+  - Medical
+  - Corpsman
+  - Paramedic
+  - Psychologist 
+  - Chemistry
+  - Security
+  - Engineering
+  - Atmospherics 
   - Mime
   - Musician
   - Reporter

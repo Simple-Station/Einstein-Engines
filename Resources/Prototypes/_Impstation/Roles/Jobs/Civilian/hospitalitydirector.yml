@@ -4,9 +4,25 @@
   description: job-description-hd
   playTimeTracker: JobHospitalityDirector
   requirements: #Fix this!
+  - !type:CharacterPlaytimeRequirement
+    tracker: JobJanitor
+    min: 14400
+  - !type:CharacterPlaytimeRequirement
+    tracker: JobReporter
+    min: 14400
+  - !type:CharacterPlaytimeRequirement
+    tracker: JobBotany
+    min: 21600
+  - !type:CharacterPlaytimeRequirement
+    tracker: JobChef
+    min: 21600
+  - !type:CharacterPlaytimeRequirement
+    tracker: JobBartender
+    min: 21600
   - !type:CharacterDepartmentTimeRequirement
     department: Civilian
-    min: 3600 #DeltaV
+    min: 72000
+
   - !type:CharacterEmployerRequirement
     employers:
     - IdrisIncorporated
@@ -16,6 +32,7 @@
   startingGear: HospitalityGear
   icon: "JobIconHospitalityDirector"
   supervisors: job-supervisors-captain
+  canBeAntag: false
   access:
   - Command
   - Service
@@ -28,6 +45,12 @@
   - Theatre
   - Clown
   - Mime
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: CommandStaff
 
 - type: startingGear
   id: HospitalityGear
