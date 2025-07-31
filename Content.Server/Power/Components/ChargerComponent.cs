@@ -16,6 +16,12 @@ namespace Content.Server.Power.Components
         public float ChargeRate = 20.0f;
 
         /// <summary>
+        /// Multiplies the load this charger puts on the powernet by this amount.
+        /// </summary>
+        [DataField]
+        public float ChargeEfficiency = 1f;
+
+        /// <summary>
         /// The container ID that is holds the entities being charged.
         /// </summary>
         [DataField("slotId", required: true)]
