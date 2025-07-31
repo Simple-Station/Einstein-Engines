@@ -5,7 +5,7 @@
   minPlayers: 0
   stations:
     Dochenskaya:
-      stationProto: StandardCrescentOutpost
+      stationProto: StandardCrescentStation
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Dochenskaya-Hyundari Engineering And Research Platform'

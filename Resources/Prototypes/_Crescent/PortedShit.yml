@@ -62,6 +62,9 @@
     points: 15000
   - type: StaticPrice
     price: 25000
+  - type: Currency
+    price:
+      ScrapSAW: 5
   - type: GuideHelp
     guides:
     - Science
@@ -78,6 +81,9 @@
     - state: dataracks
   - type: TechnologyDisk
     tierWeightPrototype: TechDiskTierWeights
+  - type: Currency
+    price:
+      ScrapSAW: 5
   - type: StaticPrice
     price: 20000
 
@@ -641,26 +647,3 @@
     sprite: _Crescent/Structures/fueltank.rsi
     layers:
       - state: fueltank
-
-- type: gamePreset
-  id: Adventure
-  alias:
-    - adventure
-    - hullrot
-  name: adventure-title
-  showInVote: true
-  description: adventure-description
-  rules:
-    - Adventure
-    - LavalandStormScheduler # Lavaland Change
-
-- type: gamePreset
-  id: Unionfall
-  alias:
-    - unionfall
-  name: unionfall-title
-  showInVote: true
-  description: unionfall-description
-  rules:
-    - Unionfall
-    - LavalandStormScheduler # Lavaland Change

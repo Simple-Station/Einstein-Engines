@@ -27,6 +27,7 @@ using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
 using Robust.Shared.Configuration;
+using Content.Shared.Telescope;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -47,6 +48,7 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
     [Dependency] private readonly ShuttleSystem _shuttle = default!;
 
     private readonly HttpClient _httpClient = new();
+    private ISawmill _sawmill = default!;
 
     [ViewVariables]
     // this is used for money but its very poorly named - SPCR 2025
@@ -56,6 +58,8 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
     public override void Initialize()
     {
         base.Initialize();
+
+        _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("nfadventurerulesystem");
 
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawningEvent);
     }
@@ -72,9 +76,9 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
             if (!TryComp<BankAccountComponent>(player.Item1, out var bank) || !TryComp<MetaDataComponent>(player.Item1, out var meta))
                 continue;
 
-            var profit = (long)bank.Balance - player.Item2;
+            var profit = (long) bank.Balance - player.Item2;
             ev.AddLine($"- {meta.EntityName} {profitText} {profit} Credits");
-            allScore.Add(new Tuple<string, int>(meta.EntityName, (int)profit));
+            allScore.Add(new Tuple<string, int>(meta.EntityName, (int) profit));
         }
 
         if (!(allScore.Count >= 1))
@@ -111,146 +115,66 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         }
     }
 
+    /// <summary>
+    /// This is a helper function that spawns in stuff by their gameMap .yml's ID field. The map's path is fetched from the gameMap .yml
+    /// </summary>
+    /// <param name="mapid"> the ID of the map. this is always GameTicker.DefaultMap; for hullrot </param>
+    /// <param name="gameMapID">the ID of the gameMap prototype to spawn</param>
+    /// <param name="posX">the X coordinate to spawn it at</param>
+    /// <param name="posY">the Y coordinate to spawn it at</param>
+    /// <param name="randomOffsetX">the maximum POSITIVE value the X coordinate can be offset by randomly. 0 works</param>
+    /// <param name="randomOffsetY">the maximum POSITIVE value the Y coordinate can be offset by randomly. 0 works</param>
+    /// <param name="color">the IFF color to set this object to</param>
+    /// <param name="IFFFaction">the IFF faction to set this to. i don't think this does anything</param>
+    /// <param name="hideIFF">a boolean to set wether this is visible on the map screen or not</param>
+    private void SpawnMapElementByID(MapId mapid, string gameMapID, float posX, float posY, float randomOffsetX, float randomOffsetY, Color color, string? iffFaction, bool hideIFF)
+    {
+        if (_prototypeManager.TryIndex<GameMapPrototype>(gameMapID, out var stationProto))
+        {
+            if (_map.TryLoad(mapid, stationProto.MapPath.ToString(), out var stationGridUid, new MapLoadOptions
+            {
+                Offset = new Vector2(posX, posY) + _random.NextVector2(randomOffsetX, randomOffsetY)
+            }))
+            {
+                _station.InitializeNewStation(stationProto.Stations[gameMapID], stationGridUid);
+
+                // setting color if applicable. if not, White is default
+                _shuttle.SetIFFColor(stationGridUid[0], color);
+
+                // set IFFFaction if applicable. dont know if this does anything
+                if (iffFaction != null)
+                    _shuttle.SetIFFFaction(stationGridUid[0], iffFaction);
+
+                // hide IFF if needed, like for derelicts or secrets
+                if (hideIFF)
+                    _shuttle.AddIFFFlag(stationGridUid[0], IFFFlags.HideLabel);
+            }
+        }
+    }
+
     protected override void Started(EntityUid uid, AdventureRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
+        var mapId = GameTicker.DefaultMap;
         base.Started(uid, component, gameRule, args);
 
-        var unionfall_clementine = "/Maps/_Crescent/Unionfall/unionfall_clementine.yml";
-        var unionfall_nemesis = "/Maps/_Crescent/Unionfall/unionfall_nemesis.yml";
-        var unionfall_vladzena = "/Maps/_Crescent/Unionfall/unionfall_vladzena.yml";
-        var unionfall_grace_barrier_ncwl = "/Maps/_Crescent/Unionfall/grace_barrier_NCWL.yml";
-        var unionfall_grace_barrier_dsm = "/Maps/_Crescent/Unionfall/grace_barrier_DSM.yml";
-        var unionfall_biome_emitter_ncwl = "/Maps/_Crescent/Unionfall/unionfall_biome_emitter_NCWL.yml";
-        var unionfall_biome_emitter_dsm = "/Maps/_Crescent/Unionfall/unionfall_biome_emitter_DSM.yml";
-
-        var depotColor = new Color(55, 200, 55);
-        var civilianColor = new Color(55, 55, 200);
-        var lpbravoColor = new Color(200, 55, 55);
-        var coveColor = new Color(203, 195, 227);
-        var tatsumotoColor = new Color(128, 128, 128);
-        var factionColor = new Color(255, 165, 0);
-        var refugeColor = new Color(34, 139, 34);
-        var mapId = GameTicker.DefaultMap;
-        var depotOffset = _random.NextVector2(4500f, 6000f);
-        var tinniaOffset = _random.NextVector2(12100f, 5800f);
-        var caseysOffset = _random.NextVector2(2250f, 4600f);
-        var tradeOffset = _random.NextVector2(1500f, 2500f);
-
-        // CONSCRIPT - UNIONFALL
-        // THIS SHOULD BE REPLACED ONCE WE HAVE THE NEW GAMEMODE REFACTOR!
-        // CONSCRIPT - UNIONFALL
-
-
-        //UNIONFALL_NEMESIS
-        if (_map.TryLoad(mapId, unionfall_nemesis, out var nemesisUid, new MapLoadOptions
+        foreach (var gamemap in component.GameMapsID)
         {
-            Offset = new Vector2(2000f, 4500f)
-        }))
-        {
-            if (_prototypeManager.TryIndex<GameMapPrototype>("unionfall-Nemesis", out var stationProto))
-            {
-                _station.InitializeNewStation(stationProto.Stations["Unionfall-Nemesis"], nemesisUid);
-            }
+            SpawnMapElementByID(mapId,
+                                gamemap.Value.GameMapID,
+                                gamemap.Value.PositionX,
+                                gamemap.Value.PositionY,
+                                gamemap.Value.RandomOffsetX,
+                                gamemap.Value.RandomOffsetY,
+                                gamemap.Value.IFFColor,
+                                gamemap.Value.IFFFaction,
+                                gamemap.Value.HideIFF);
 
-            var meta = EnsureComp<MetaDataComponent>(nemesisUid[0]);
-            _meta.SetEntityName(nemesisUid[0], "DSM Nemesis-P", meta);
-            _shuttle.SetIFFColor(nemesisUid[0], lpbravoColor);
-        }
 
-        //UNIONFALL_CLEMENTINE
-        if (_map.TryLoad(mapId, unionfall_clementine, out var clementineUid, new MapLoadOptions
-        {
-            Offset = new Vector2(-2000f, 4500f)
-        }))
-        {
-            if (_prototypeManager.TryIndex<GameMapPrototype>("unionfall-Clementine", out var stationProto))
-            {
-                _station.InitializeNewStation(stationProto.Stations["Unionfall-Clementine"], clementineUid);
-            }
-
-            var meta = EnsureComp<MetaDataComponent>(clementineUid[0]);
-            _meta.SetEntityName(clementineUid[0], "NCWL Dear Clementine", meta);
-            _shuttle.SetIFFColor(clementineUid[0], factionColor);
-        }
-
-        //UNIONFALL_VLADZENA
-        if (_map.TryLoad(mapId, unionfall_vladzena, out var vladzenaUid, new MapLoadOptions
-        {
-            Offset = new Vector2(0f, 9000f)
-        }))
-        {
-            if (_prototypeManager.TryIndex<GameMapPrototype>("unionfall-Vladzena", out var stationProto))
-            {
-                _station.InitializeNewStation(stationProto.Stations["Unionfall-Vladzena"], vladzenaUid);
-            }
-
-            var meta = EnsureComp<MetaDataComponent>(vladzenaUid[0]);
-            _meta.SetEntityName(vladzenaUid[0], "NT Outpost Vladzena", meta);
-            _shuttle.SetIFFColor(vladzenaUid[0], depotColor);
-        }
-
-        //BARRIER FOR CLEMENTINE - SHOULD MATCH CLEMENTINE COORDINATES BECAUSE ITS A DONUT
-        if (_map.TryLoad(mapId, unionfall_grace_barrier_ncwl, out var barrierUidA, new MapLoadOptions
-        {
-            Offset = new Vector2(-2000f, 4500f)
-        }))
-        {
-            if (_prototypeManager.TryIndex<GameMapPrototype>("unionfall-Grace-Barrier-NCWL", out var stationProto))
-            {
-                _station.InitializeNewStation(stationProto.Stations["Unionfall-Grace-Barrier-NCWL"], barrierUidA);
-            }
-
-            var meta = EnsureComp<MetaDataComponent>(barrierUidA[0]);
-            _meta.SetEntityName(barrierUidA[0], "Hadal Protection Bubble (NCWL)", meta);
-            _shuttle.SetIFFColor(barrierUidA[0], depotColor);
-        }
-
-        //BARRIER FOR NEMESIS - SHOULD MATCH NEMESIS COORDINATES BECAUSE ITS A DONUT
-        if (_map.TryLoad(mapId, unionfall_grace_barrier_dsm, out var barrierUidB, new MapLoadOptions
-        {
-            Offset = new Vector2(2000f, 4500f)
-        }))
-        {
-            if (_prototypeManager.TryIndex<GameMapPrototype>("unionfall-Grace-Barrier-DSM", out var stationProto))
-            {
-                _station.InitializeNewStation(stationProto.Stations["Unionfall-Grace-Barrier-DSM"], barrierUidB);
-            }
-
-            var meta = EnsureComp<MetaDataComponent>(barrierUidB[0]);
-            _meta.SetEntityName(barrierUidB[0], "Hadal Protection Bubble (DSM)", meta);
-            _shuttle.SetIFFColor(barrierUidB[0], depotColor);
-        }
-
-        //FIGHT BIOME EMITTER FOR DSM - COORDINATES HALFWAY BETWEEN VLAD AND NEM
-        if (_map.TryLoad(mapId, unionfall_biome_emitter_dsm, out var biomeEmitterUidA, new MapLoadOptions
-        {
-            Offset = new Vector2(1000f, 6750f)
-        }))
-        {
-            if (_prototypeManager.TryIndex<GameMapPrototype>("unionfall-Biome-Emitter-DSM", out var stationProto))
-            {
-                _station.InitializeNewStation(stationProto.Stations["Unionfall-Biome-Emitter-DSM"], biomeEmitterUidA);
-            }
-            var meta = EnsureComp<MetaDataComponent>(biomeEmitterUidA[0]);
-            _meta.SetEntityName(biomeEmitterUidA[0], "Biome Emitter DSM", meta);
-            _shuttle.SetIFFColor(biomeEmitterUidA[0], depotColor);
-            _shuttle.AddIFFFlag(biomeEmitterUidA[0], IFFFlags.HideLabel);
-        }
-
-        //FIGHT BIOME EMITTER FOR NCWL - COORDINATES HALFWAY BETWEEN VLAD AND CLEM
-        if (_map.TryLoad(mapId, unionfall_biome_emitter_ncwl, out var biomeEmitterUidB, new MapLoadOptions
-        {
-            Offset = new Vector2(-1000f, 6750f)
-        }))
-        {
-            if (_prototypeManager.TryIndex<GameMapPrototype>("unionfall-Biome-Emitter-NCWL", out var stationProto))
-            {
-                _station.InitializeNewStation(stationProto.Stations["Unionfall-Biome-Emitter-NCWL"], biomeEmitterUidB);
-            }
-            var meta = EnsureComp<MetaDataComponent>(biomeEmitterUidB[0]);
-            _meta.SetEntityName(biomeEmitterUidB[0], "Biome Emitter NCWL", meta);
-            _shuttle.SetIFFColor(biomeEmitterUidB[0], depotColor);
-            _shuttle.AddIFFFlag(biomeEmitterUidB[0], IFFFlags.HideLabel);
+            // _sawmill.Debug("------------");
+            // _sawmill.Debug("GAMEMAPID: " + gamemap.Value.GameMapID);
+            // _sawmill.Debug("posX: " + gamemap.Value.PositionX);
+            // _sawmill.Debug("posY: " + gamemap.Value.PositionY);
+            // _sawmill.Debug("------------");
         }
     }
 }
