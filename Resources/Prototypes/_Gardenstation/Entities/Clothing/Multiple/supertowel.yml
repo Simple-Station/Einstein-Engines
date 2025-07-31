@@ -1,0 +1,157 @@
+﻿- type: entity # im going insane - figure out why i cant add more slots later // its the next day (7-29) and i figured it out yay
+  abstract: true
+  parent: [ UnsensoredClothingUniformBase, ClothingHeadBase, ClothingBeltBase, ClothingNeckBase, ClothingOuterBase, ClothingHandsBase, ClothingMaskGas ]
+  id: SuperTowel
+  description: Something is weird about this towel...
+  components:
+  - type: Sprite
+    sprite: icon
+  - type: Clothing
+    slots: # i think its like the order of the fucking slots or something? this is so stupid.
+    - BELT
+    - INNERCLOTHING
+    - HEAD
+    - OUTERCLOTHING
+    - NECK
+    - GLOVES
+    - MASK
+    equipSound:
+    unequipSound:
+  - type: Spillable
+    solution: absorbed
+  - type: Absorbent
+    pickupAmount: 150
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        maxVol: 150
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 50
+      absorbed:
+        maxVol: 50
+  - type: UseDelay
+    delay: 1
+  - type: Fiber
+    fiberColor: fibers-white
+  - type: Item
+    size: Small
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.5
+  - type: MeleeWeapon # inject attack
+    autoAttack: true
+    attackRate: 0.85
+    wideAnimationRotation: -135
+    range: 1.75
+    damage:
+      types:
+        Blunt: 7
+        Slash: 1
+    heavyRateModifier: 1.3
+    heavyRangeModifier: 1.35
+    heavyDamageBaseModifier: 1.0
+    heavyStaminaCost: 2.5
+    maxTargets: 3
+    angle: 20
+    animation: WeaponArcThrust
+    soundHit:
+      path: /Audio/Weapons/punch2.ogg
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 10
+    staminaCost: 6
+  - type: MeleeChemicalInjector
+    solution: melee
+  - type: RefillableSolution
+    solution: melee
+  - type: InjectableSolution
+    solution: melee
+  - type: SolutionInjectOnEmbed
+    transferAmount: 20
+    solution: melee
+  - type: SolutionTransfer
+    maxTransferAmount: 25
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 3
+        Slash: 3
+  - type: Damageable # remove if too powerful
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30 #excess damage avoids cost of spawning entities.
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+          params:
+            volume: -4
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          PartRodMetal1:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: MeleeSpeech
+  - type: ActivatableUI
+    key: enum.MeleeSpeechUiKey.Key
+    verbOnly: true
+  - type: Actions
+  - type: UserInterface
+    interfaces:
+      enum.MeleeSpeechUiKey.Key:
+        type: MeleeSpeechBoundUserInterface     # attack finish
+
+- type: entity
+  abstract: true
+  id: HdTowelHelmet
+  parent: ClothingHeadBase
+  description: I can do anything I want through the hole in the sheet!
+  components:
+  - type: Sprite
+    sprite: icon
+  - type: Clothing
+    slots:
+    - HEAD
+  #- type: Tag || make the accent apply only when its in the helmet slot. idk how right now but eventually uhhh eventually this do  thing yeah?
+  #  tags:
+  #  - HEAD
+  #- type: AddAccentClothing
+  #  accent: ReplacementAccent
+  #  replacement: mumble
+  - type: IdentityBlocker
+
+
+- type: entity
+  id: HdTowel
+  name: Head of Service's SuperSoak Ultra-Towel
+  parent: [ SuperTowel, ClothingHandsTacticalMaidGloves, HdTowelHelmet ]
+  description: A robust towel for a robust head of service.
+  components:
+  - type: Sprite
+    sprite: _Gardenstation/Clothing/Multiple/hd_towel.rsi
+  - type: Clothing
+    sprite: _Gardenstation/Clothing/Multiple/hd_towel.rsi
+  - type: ClothingSpeedModifier
+    walkModifier: 2.5
+    sprintModifier: 0.50
+  - type: HeldSpeedModifier
+  - type: Fiber
+    fiberMaterial: fibers-durathread
+    fiberColor: fibers-green
