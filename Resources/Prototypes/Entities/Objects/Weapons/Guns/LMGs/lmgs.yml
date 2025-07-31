@@ -159,7 +159,7 @@
   - type: Appearance
   - type: HeldSpeedModifier
     walkModifier: 0.6
-    sprintModifier: 0.3
+    sprintModifier: 0.4
   - type: Item
     size: Ginormous
   - type: Gun
@@ -234,4 +234,4 @@
   - type: Appearance
   - type: HeldSpeedModifier
     walkModifier: 0.4
-    sprintModifier: 0.2
+    sprintModifier: 0.3
