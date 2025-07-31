@@ -29,7 +29,7 @@
     solution:
       reagents:
       - ReagentId: Phlogiston
-        Quantity: 30
+        Quantity: 20
   - type: TimerTriggerVisuals
     primingSound:
       path: "/Audio/_Crescent/Weapons/Grenades/trigger1.ogg"
@@ -183,7 +183,7 @@
       collection: FragGrenadeSFX
 
 - type: entity
-  name: NCWL Zaryia-4M Grenade
+  name: NCWL Zaryia-4M Flashbang
   description: A modernized version of the Zaryia-4 flashbang, adorned with the NCWL color.
   parent: GrenadeBase
   id: ZaryiaFlashbangHandgrenade
@@ -330,7 +330,7 @@
       collection: SmokeGrenadeSFX
 
 - type: entity
-  name: PTA He-Im-OFG-31 Impact-grenade
+  name: PTA He-Im-OFG-31 Impact grenade
   description: A small and weak grenade with a impact fuse that can be armed and disarmed. Manufactured by Pang Tai Arms.
   parent: BaseItem
   id: PTAImpactHandgrenade
@@ -392,7 +392,7 @@
       collection: FragGrenadeSFX
 
 - type: entity
-  name: PTA Cp-Tf-SG-32 Smoke grenade
+  name: PTA Cp-Tf-SG-32 WP Smoke grenade
   description: A grenade that disperses a thick cloud of white phosphorus. Manufactured by Pang Tai Arms.
   parent: GrenadeBase
   id: PTAWarcrimeHandgrenade

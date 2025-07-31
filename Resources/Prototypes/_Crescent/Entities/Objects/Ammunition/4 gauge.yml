@@ -241,7 +241,7 @@
         - state: base
           map: [ "enum.AmmoVisualLayers.Base" ]
     - type: CartridgeAmmo
-      proto: PelletShotgunUraniumSpread4g
+      proto: PelletShotgunMagnumSpread4g
 
 - type: entity
   id: PelletShotgunMagnum4g
