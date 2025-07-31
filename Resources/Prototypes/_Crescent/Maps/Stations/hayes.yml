@@ -5,7 +5,7 @@
   minPlayers: 0
   stations:
     Hayes:
-      stationProto: StandardCrescentOutpost
+      stationProto: StandardCrescentStation
       components:
         - type: StationNameSetup
           mapNameTemplate: 'IPM Hayes Medical Waystation'
