@@ -641,15 +641,3 @@
     sprite: _Crescent/Structures/fueltank.rsi
     layers:
       - state: fueltank
-
-- type: gamePreset
-  id: Adventure
-  alias:
-    - adventure
-    - hullrot
-  name: adventure-title
-  showInVote: false
-  description: adventure-description
-  rules:
-    - Adventure
-    - LavalandStormScheduler # Lavaland Change

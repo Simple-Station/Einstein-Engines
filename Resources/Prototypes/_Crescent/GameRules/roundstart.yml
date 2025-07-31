@@ -1,6 +1,0 @@
-- type: entity
-  id: Adventure
-  parent: BaseGameRule
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: AdventureRule
