@@ -16696,3 +16696,14 @@ Entries:
   id: 7308
   time: '2025-07-30T04:50:25.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2519
+- author: RedFoxIV
+  changes:
+    - type: Fix
+      message: >-
+        Chargers and energy turrets no longer make the lights flash rapidly if
+        their power draw is too high
+    - type: Add
+      message: Lights dim if the powernet they're connected to is overloaded
+  id: 7309
+  time: '2025-07-31T16:21:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2505
