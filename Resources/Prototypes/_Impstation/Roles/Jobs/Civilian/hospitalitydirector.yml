@@ -63,6 +63,7 @@
     shoes: ClothingShoesColorBlack
     id: HospitalityDirectorPDA
     ears: ClothingHeadsetHeadService #replace this with a command comms service headset when one is added pleaseeeee
+    belt: HdTowel
 
 - type: startingGear #this also needs a proper go-over
   id: HospitalityPlasmamanGear
