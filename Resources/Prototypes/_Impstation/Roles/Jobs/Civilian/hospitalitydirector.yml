@@ -38,7 +38,7 @@
     jumpsuit: ClothingUniformJumpsuitHD
     back: ClothingBackpack
     shoes: ClothingShoesColorBlack
-    id: BartenderPDA
+    id: HospitalityDirectorPDA
     ears: ClothingHeadsetService #replace this with a command comms service headset when one is added pleaseeeee
 
 - type: startingGear #this also needs a proper go-over
