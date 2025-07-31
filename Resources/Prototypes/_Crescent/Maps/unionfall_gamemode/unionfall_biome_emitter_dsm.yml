@@ -1,10 +1,10 @@
 - type: gameMap
-  id: unionfall-Biome-Emitter-DSM
+  id: UnionfallBiomeEmitterDSM
   mapName: 'Biome Emitter DSM'
   mapPath: /Maps/_Crescent/Unionfall/unionfall_biome_emitter_dsm.yml
   minPlayers: 0
   stations:
-    Unionfall-Biome-Emitter-DSM:
+    UnionfallBiomeEmitterDSM:
       stationProto: StandardCrescentPOI
       gridComponents:
         - type: BlockShipWeaponProjectileGrid

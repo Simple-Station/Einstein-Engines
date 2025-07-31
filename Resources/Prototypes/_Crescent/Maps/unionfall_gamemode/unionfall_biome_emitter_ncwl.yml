@@ -1,10 +1,10 @@
 - type: gameMap
-  id: unionfall-Biome-Emitter-NCWL
+  id: UnionfallBiomeEmitterNCWL
   mapName: 'Biome Emitter NCWL'
   mapPath: /Maps/_Crescent/Unionfall/unionfall_biome_emitter_ncwl.yml
   minPlayers: 0
   stations:
-    Unionfall-Biome-Emitter-NCWL:
+    UnionfallBiomeEmitterNCWL:
       stationProto: StandardCrescentPOI
       gridComponents:
         - type: BlockShipWeaponProjectileGrid

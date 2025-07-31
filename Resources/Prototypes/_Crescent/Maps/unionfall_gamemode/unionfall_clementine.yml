@@ -1,19 +1,10 @@
-- type: vessel
-  id: unionfall-Clementine
-  name: NCWL Dear Clementine
-  description: The Flagship of the Union fleet.
-  price: 600000
-  category: Large
-  group: None
-  path: /Maps/_Crescent/Unionfall/unionfall_clementine.yml
-
 - type: gameMap
-  id: unionfall-Clementine
+  id: UnionfallClementine
   mapName: 'NCWL Dear Clementine'
   mapPath: /Maps/_Crescent/Unionfall/unionfall_clementine.yml
   minPlayers: 0
   stations:
-    Unionfall-Clementine:
+    UnionfallClementine:
       stationProto: FlagshipCrescentVessel
       components:
         - type: StationNameSetup

@@ -1,10 +1,10 @@
 - type: gameMap
-  id: unionfall-Grace-Barrier-NCWL
-  mapName: 'Mysterious Barrier'
+  id: UnionfallGraceBarrierNCWL
+  mapName: 'Hadal Protection Barrier (NCWL)'
   mapPath: /Maps/_Crescent/Unionfall/grace_barrier_NCWL.yml
   minPlayers: 0
   stations:
-    Unionfall-Grace-Barrier-NCWL:
+    UnionfallGraceBarrierNCWL:
       stationProto: StandardCrescentPOI
       gridComponents:
         - type: BlockShipWeaponProjectileGrid
@@ -17,7 +17,7 @@
             state: outpost
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Grace Period Barrier'
+          mapNameTemplate: 'Hadal Protection Barrier (NCWL)'
         - type: VesselDesignation
           designation: vessel-designation-outpost
         - type: VesselDescription
