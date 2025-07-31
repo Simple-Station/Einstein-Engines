@@ -5,7 +5,7 @@
   minPlayers: 0
   stations:
     Unionfall-Grace-Barrier-NCWL:
-      stationProto: StandardCrescentNoLatejoin
+      stationProto: StandardCrescentPOI
       gridComponents:
         - type: BlockShipWeaponProjectileGrid
         - type: PreventPilot

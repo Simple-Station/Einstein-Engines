@@ -147,3 +147,54 @@
         posX: 7794
         posY: 4500
         IFFColor: IndianRed
+
+- type: gamePreset
+  id: Unionfall
+  name: Unionfall | NCWL VS DSM
+  showInVote: true
+  description: The NCWL Homeguard flees to a new home, after the destruction of Nova Belraska. A DSM punishment regimen intercepts them to regain their honor.
+  rules:
+    - Unionfall
+
+- type: entity
+  id: Unionfall
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: AdventureRule
+    gameMapsByID:
+      UnionfallVladzena:
+        gameMapID: unionfall-Vladzena
+        posX: 0
+        posY: 9000
+        IFFColor: Green
+      UnionfallNemesis:
+        gameMapID: unionfall-Nemesis
+        posX: 2000
+        posY: 4500
+        IFFColor: IndianRed
+      GraceBarrierDSM:
+        gameMapID: unionfall-Grace-Barrier-DSM
+        posX: 2000
+        posY: 4500
+        IFFColor: Blue
+      UnionfallClementine:
+        gameMapID: unionfall-Clementine
+        posX: 2000
+        posY: 4500
+        IFFColor: Orange
+      GraceBarrierNCWL:
+        gameMapID: unionfall-Grace-Barrier-NCWL
+        posX: -2000
+        posY: 4500
+        IFFColor: Blue
+      UnionfallBiomeEmitterNCWL:
+        gameMapID: unionfall-Biome-Emitter-NCWL
+        posX: -1000
+        posY: 6750
+        HideIFF: true
+      UnionfallBiomeEmitterDSM:
+        gameMapID: unionfall-Biome-Emitter-DSM
+        posX: 1000
+        posY: 6750
+        HideIFF: true

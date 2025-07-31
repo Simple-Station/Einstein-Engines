@@ -5,7 +5,7 @@
   minPlayers: 0
   stations:
     Unionfall-Biome-Emitter-DSM:
-      stationProto: StandardCrescentNoLatejoin
+      stationProto: StandardCrescentPOI
       gridComponents:
         - type: BlockShipWeaponProjectileGrid
         - type: PreventPilot
