@@ -1,0 +1,22 @@
+- type: entity
+  parent: BasePDA
+  id: HospitalityDirectorPDA
+  name: hospitality director PDA
+  description: Looks recently cleaned.
+  components:
+  - type: Pda
+    id: HDIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-hd
+  - type: Sprite
+    sprite: _Impstation/Objects/Devices/pda.rsi
+    state: pda-hd
+  - type: Icon
+    sprite: _Impstation/Objects/Devices/pda.rsi
+    state: pda-hd
+  - type: PdaBorderColor
+    borderColor: "#77b861"
+    accentHColor: "#447987"

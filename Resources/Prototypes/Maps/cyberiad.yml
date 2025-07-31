@@ -19,6 +19,7 @@
             NanotrasenRepresentative: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
+            HospitalityDirector: [ 1, 1 ] #Added by Impstation, ported by Gardenstation
             AdministrativeAssistant: [ 1, 1 ] # EE: Disabled # gardenstation enabled
             Magistrate: [ 1, 1 ] # EE: Disabled #gardenstation enabled
             Bartender: [ 2, 2 ]

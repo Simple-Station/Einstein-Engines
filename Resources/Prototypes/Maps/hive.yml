@@ -22,6 +22,7 @@
              Librarian: [ 1, 1 ]
            #command
              Captain: [ 1, 1 ]
+             HeadOfPersonnel: [ 1, 1 ]
              BlueshieldOfficer: [ 1, 1]
              NanotrasenRepresentative: [ 1, 1 ]
              Magistrate: [ 1, 1 ] # EE: Disabled # gardenstation enabled
@@ -51,12 +52,12 @@
              SecurityCadet: [ 1, 2 ]
              Warden: [ 1, 1 ]
            #service
+             HospitalityDirector: [ 1, 1 ] #Added by Impstation, ported by Gardenstation
              Bartender: [ 2, 2 ]
              Botanist: [ 2, 3 ]
              # Boxer: [ 2, 2 ] # EE: Disabled
              Chef: [ 2, 3 ]
              Clown: [ 1, 2 ]
-             HeadOfPersonnel: [ 1, 1 ]
              Janitor: [ 2, 3 ]
              Lawyer: [ 2, 2 ]
              Mime: [ 1, 2 ]

@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterHD
+  categories: [ HideSpawnMenu ]
+  name: hospitality director's coat hood
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Head/Hoods/Coat/hoodhd.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Head/Hoods/Coat/hoodhd.rsi

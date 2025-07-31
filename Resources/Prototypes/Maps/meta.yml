@@ -19,12 +19,13 @@
           availableJobs:
           #command
             Captain: [ 1, 1 ]
+            HeadOfPersonnel: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1]
             NanotrasenRepresentative: [ 1, 1 ]
             Magistrate: [ 1, 1 ] # EE: Disabled # gardenstation enabled
             AdministrativeAssistant: [ 1, 1 ] # EE: Disabled # gardenstation enabled
           #service
-            HeadOfPersonnel: [ 1, 1 ]
+            HospitalityDirector: [ 1, 1 ] #Added by Impstation, ported by Gardenstation
             Bartender: [ 2, 2 ]
             Botanist: [ 2, 3 ]
             Chef: [ 2, 2 ]

@@ -1,0 +1,10 @@
+- type: entity
+  parent: [ClothingNeckBase, BaseCommandContraband]
+  id: ClothingNeckMantleHD
+  name: hospitality director's mantle
+  description: This mantle shows you really know your stuff when it comes to growing plants, mopping puddles, and all those other things that makes this station hospitable.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Neck/Mantles/hdmantle.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Neck/Mantles/hdmantle.rsi

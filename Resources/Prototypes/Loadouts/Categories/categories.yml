@@ -260,6 +260,7 @@
   id: JobsService
   subCategories:
     - JobsServiceAUncategorized
+    - JobsServiceHospitalityDirector #Ported from Impstation by Gardenstation 
     - JobsServiceBartender
     - JobsServiceBotanist
     - JobsServiceChef
@@ -272,6 +273,9 @@
 
 - type: loadoutCategory
   id: JobsServiceAUncategorized
+
+- type: loadoutCategory
+  id: JobsServiceHospitalityDirector #Ported from Impstation by Gardenstation
 
 - type: loadoutCategory
   id: JobsServiceBartender

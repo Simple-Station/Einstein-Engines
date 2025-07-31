@@ -1,0 +1,31 @@
+- type: entity
+  parent: [ClothingHeadBase, BaseCommandContraband]
+  id: ClothingHeadHatBellhopHD
+  name: hospitality director's bellhop hat
+  description: A hat styled after a hotel bellhop. Can I take your coat sir?
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Head/Hats/bellhop_hd.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Head/Hats/bellhop_hd.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingHeadBase, BaseCommandContraband]
+  id: ClothingHeadHatBeretHD
+  name: hospitality director's beret
+  description: A beret with the service's insignia emblazoned on it. For hospitality directors that are more inclined towards style.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Head/Hats/beret_hd.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Head/Hats/beret_hd.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - DroneUsable
+    - HamsterWearable
+    - WhitelistChameleon

@@ -1,0 +1,17 @@
+#Hospitality Director
+- type: entity
+  parent: IDCardStandard
+  id: HDIDCard
+  name: Hospitality Director ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: departmenthead
+      color: "#1B67A5"
+    - state: subdepartment
+      color: "#58C800"
+    - state: hd
+  - type: PresetIdCard
+    job: HospitalityDirector
+  - type: Access

@@ -18,6 +18,7 @@
         - type: StationJobs
           availableJobs:
           #Service
+            HospitalityDirector: [ 1, 1 ] #Added by Impstation, ported by Gardenstation
             Passenger: [ -1, -1 ]
             ServiceWorker: [ 1, 2]
             Reporter: [ 0, 1 ]

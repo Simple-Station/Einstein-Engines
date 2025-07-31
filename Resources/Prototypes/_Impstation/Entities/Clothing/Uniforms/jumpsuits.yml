@@ -1,0 +1,21 @@
+- type: entity
+  parent: [ClothingUniformBase, BaseCommandContraband]
+  id: ClothingUniformJumpsuitHD
+  name: hospitality director's jumpsuit
+  description: A uniform of splendid sartorial make, fit for the lead of the service department.
+  components:
+    - type: Sprite
+      sprite: _Impstation/Clothing/Uniforms/Jumpsuit/hd_uniform.rsi
+    - type: Clothing
+      sprite: _Impstation/Clothing/Uniforms/Jumpsuit/hd_uniform.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCommandContraband]
+  id: ClothingUniformJumpsuitHDTurtle
+  name: hospitality director's turtleneck
+  description: This turtleneck gives you an air of class and authority over the service department while still being pretty dang comfy.
+  components:
+    - type: Sprite
+      sprite: _Impstation/Clothing/Uniforms/Jumpsuit/hd_turtle.rsi
+    - type: Clothing
+      sprite: _Impstation/Clothing/Uniforms/Jumpsuit/hd_turtle.rsi
