@@ -288,6 +288,9 @@
     - state: icon
   - type: StaticPrice
     price: 3500
+  - type: Currency
+    price:
+      ScrapSAW: 8
   - type: Contraband
 
 - type: entity
@@ -300,6 +303,9 @@
     sprite: _Crescent/Objects/Misc/ai_core.rsi
     layers:
     - state: icon
+  - type: Currency
+    price:
+      ScrapSAW: 15
   - type: StaticPrice
     price: 50000
   - type: Contraband
