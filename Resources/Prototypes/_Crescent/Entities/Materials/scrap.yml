@@ -24,8 +24,11 @@
   parent: SteelScrapOre
   suffix: Single
   components:
-    - type: Stack
-      count: 1
+  - type: Stack
+    count: 1
+  - type: Currency
+    price:
+      ScrapSAW: 0.05
 
 - type: entity
   id: SteelScrap3
@@ -75,6 +78,9 @@
     - RawMaterial
   - type: Stack
     stackType: TitaniumScrapOre
+  - type: Currency
+    price:
+      ScrapSAW: 0.1
   - type: Sprite
     sprite: _Crescent/Objects/Materials/ore.rsi
     state: icon-titaniumscrap
@@ -132,10 +138,14 @@
   - type: Sprite
     sprite: _Crescent/Objects/Misc/scrapcircuit.rsi
     state: icon
+  - type: Currency
+    price:
+      ScrapSAW: 0.08
   - type: Material
   - type: PhysicalComposition
     materialComposition:
       ScrapCircuit: 500
+
 
 - type: entity
   id: ScrapCircuit1
@@ -190,6 +200,9 @@
   - type: PhysicalComposition
     materialComposition:
       ScrapPlasma: 500
+  - type: Currency
+    price:
+      ScrapSAW: 0.3
 
 - type: entity
   id: ScrapPlasma1
@@ -236,6 +249,9 @@
   - type: PhysicalComposition
     materialComposition:
       ScrapUranium: 500
+  - type: Currency
+    price:
+      ScrapSAW: 0.3
 
 - type: entity
   id: ScrapUranium1
@@ -275,6 +291,9 @@
     - state: icon
   - type: StaticPrice
     price: 500
+  - type: Currency
+    price:
+      ScrapSAW: 0.5
 
 - type: entity
   parent: BaseItem
