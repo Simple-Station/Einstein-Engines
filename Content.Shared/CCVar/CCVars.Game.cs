@@ -157,13 +157,13 @@ public sealed partial class CCVars
     /// Whether or not panic bunker is currently enabled.
     /// </summary>
     public static readonly CVarDef<bool> PanicBunkerEnabled =
-        CVarDef.Create("game.panic_bunker.enabled", false, CVar.NOTIFY | CVar.REPLICATED);
+        CVarDef.Create("game.panic_bunker.enabled", true, CVar.NOTIFY | CVar.REPLICATED);
 
     /// <summary>
     /// Whether or not the panic bunker will disable when an admin comes online.
     /// </summary>
     public static readonly CVarDef<bool> PanicBunkerDisableWithAdmins =
-        CVarDef.Create("game.panic_bunker.disable_with_admins", false, CVar.SERVERONLY);
+        CVarDef.Create("game.panic_bunker.disable_with_admins", true, CVar.SERVERONLY);
 
     /// <summary>
     /// Whether or not the panic bunker will enable when no admins are online.
@@ -380,7 +380,7 @@ public sealed partial class CCVars
     ///     If true, contraband severity can be viewed in the examine menu
     /// </summary>
     public static readonly CVarDef<bool> ContrabandExamine =
-        CVarDef.Create("game.contraband_examine", false, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("game.contraband_examine", true, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     /// Set to true to enable the dynamic hostname system.
