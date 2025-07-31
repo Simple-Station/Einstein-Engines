@@ -62,6 +62,9 @@
     points: 15000
   - type: StaticPrice
     price: 25000
+  - type: Currency
+    price:
+      ScrapSAW: 5
   - type: GuideHelp
     guides:
     - Science
@@ -78,6 +81,9 @@
     - state: dataracks
   - type: TechnologyDisk
     tierWeightPrototype: TechDiskTierWeights
+  - type: Currency
+    price:
+      ScrapSAW: 5
   - type: StaticPrice
     price: 20000
 
