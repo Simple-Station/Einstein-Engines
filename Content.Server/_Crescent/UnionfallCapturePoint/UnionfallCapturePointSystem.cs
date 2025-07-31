@@ -43,7 +43,6 @@ public sealed class UnionfallCapturePointSystem : EntitySystem
 
     private void OnComponentInit(EntityUid uid, UnionfallCapturePointComponent component, ComponentInit args)
     {
-        _sawmill.Debug("ACTIVATED CONTROL POINT, FIRING TIMERS");
         TimeSpan graceTime = TimeSpan.FromSeconds(component.GracePeriod);
         Timer.Spawn(TimeSpan.FromMinutes(1), () => AnnouncementWarStart(graceTime));
         Timer.Spawn(graceTime * 0.25, () => AnnouncementWarPeriodic(graceTime - graceTime * 0.25));
@@ -78,7 +77,6 @@ public sealed class UnionfallCapturePointSystem : EntitySystem
             capturepoint.CapturingFaction + " has secured the control point! The round is over.");
                 _gameTicker.EndRound(capturepoint.CapturingFaction + " WON. RESTARTING ROUND IN 1 MINUTE");
                 capturepoint.CurrentCaptureProgress = 999999;
-                _sawmill.Debug("ROUND ENDED");
                 Timer.Spawn(TimeSpan.FromMinutes(1), _gameTicker.RestartRound);
             }
         }
@@ -141,27 +139,23 @@ public sealed class UnionfallCapturePointSystem : EntitySystem
 
     private void AnnouncementWarStart(TimeSpan time)
     {
-        _sawmill.Debug("firing AnnouncementWarStart");
         _announcer.SendAnnouncement(_announcer.GetAnnouncementId("unionfallBegin"), Filter.Broadcast(),
-                "SUDDEN HADAL TIDE DETECTED - DEPLOYING LOCALIZED PROTECTION BUBBLE. EXPECTED DURATION: <" + time + "> ALL VESSELS ADVISED TO REMAIN NEAR THE FLAGSHIP AND DEPLOY A FLEET.");
+                "HADAL STORM DETECTED - Emergency repulsion field deployed, estimated storm dispersion time: <" + time + ">...  Dispersion pattern confirms presence of a hostile fleet in the operating area.");
     }
     private void AnnouncementWarPeriodic(TimeSpan time)
     {
-        _sawmill.Debug("firing AnnouncementWarPeriodic");
         _announcer.SendAnnouncement(_announcer.GetAnnouncementId("unionfallPeriodic"), Filter.Broadcast(),
-                "<" + time + "> UNTIL PROTECTIVE BUBBLE FALLS.");
+                "<" + time + "> until the Hadal storm disperses.");
     }
 
     private void AnnouncementWarAlmost()
     {
-        _sawmill.Debug("firing AnnouncementWarAlmost");
         _announcer.SendAnnouncement(_announcer.GetAnnouncementId("unionfallAlmost"), Filter.Broadcast(),
-                "<00:01:00> LEFT UNTIL PROTECTIVE BUBBLE FALLS - CHECK ALL SEALS THREE TIMES SO DEATH DOES NOT COME FOR YOU.");
+                "<00:01:00> LEFT UNTIL FULL HADAL STORM DISPERSION.");
     }
     private void AnnouncementWarGraceOver()
     {
-        _sawmill.Debug("firing AnnouncementWarGraceOver");
         _announcer.SendAnnouncement(_announcer.GetAnnouncementId("unionfallGraceOver"), Filter.Broadcast(),
-                "WAR HAS BEGUN! - HADAL TIDE RESCINDED ENTIRELY, PROTECTIVE BUBBLES FALLEN. ALL VESSELS ADVISED TO NAVIGATE TO NT OUTPOST VLADZENA AND SECURE IT.");
+                "HADAL STORM HAS DISPERSED. Emergency dispersion field has been disabled. Long-Range radar readings confirm presence of hostile fleet, with interception course set to NanoTransen Vladzena Extraction Station");
     }
 }
