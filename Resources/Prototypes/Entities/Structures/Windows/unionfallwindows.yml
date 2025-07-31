@@ -1,6 +1,6 @@
 - type: entity
-  id: MiningWindow
-  name: mining window
+  id: UnionfallVladWindow #super fucking busted to make sure station doesnt get spaced
+  name: ancient window
   parent: WindowRCDResistant
   components:
   - type: Sprite
@@ -18,13 +18,13 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 200
+        damage: 5000
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 2500
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -50,45 +50,3 @@
       sprite: Structures/Windows/cracks.rsi
   - type: StaticPrice
     price: 100
-
-- type: entity
-  parent: ShuttleWindow
-  id: MiningWindowDiagonal
-  suffix: diagonal
-  placement:
-    mode: SnapgridCenter
-    snap:
-    - Window
-  components:
-  - type: Sprite
-    drawdepth: WallTops
-    sprite: Structures/Windows/mining_diagonal.rsi
-    state: state0
-  - type: IconSmooth
-    mode: Diagonal
-    key: walls
-    base: state
-  - type: Icon
-    sprite: Structures/Windows/mining_diagonal.rsi
-    state: state0
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PolygonShape
-            vertices:
-            - "-0.5,-0.5"
-            - "0.5,0.5"
-            - "0.5,-0.5"
-        mask:
-        - FullTileMask
-        layer:
-        - GlassLayer
-  - type: Airtight
-    noAirWhenFullyAirBlocked: false
-    airBlockedDirection:
-    - South
-    - East
-  - type: DamageVisuals
-    damageOverlay:
-      sprite: Structures/Windows/cracks_diagonal.rsi

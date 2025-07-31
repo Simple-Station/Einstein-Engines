@@ -45000,7 +45000,7 @@ entities:
     - type: Transform
       pos: -2.2826912,-10.461274
       parent: 1
-- proto: MiningWindow
+- proto: UnionfallVladWindow
   entities:
   - uid: 17
     components:
@@ -54168,7 +54168,7 @@ entities:
     - type: Transform
       pos: 8.548232,-51.409927
       parent: 1
-- proto: WallMining
+- proto: UnionfallVladWall
   entities:
   - uid: 43
     components:
