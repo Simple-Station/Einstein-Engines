@@ -1,0 +1,22 @@
+- type: reagent
+  id: VodkaSoyjack
+  name: reagent-name-vodka-soyjack
+  parent: BaseAlcohol
+  desc: reagent-desc-vodka-soyjack
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: vodkasoyjack
+  color: "#E5EDDD"
+  metamorphicSprite:
+    sprite: _Gardenstation/Objects/Consumable/Drinks/vodkasoyjack.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.11

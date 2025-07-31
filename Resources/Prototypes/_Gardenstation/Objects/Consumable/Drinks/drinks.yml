@@ -1,0 +1,15 @@
+- type: entity
+  parent: DrinkGlass
+  id: DrinkVodkaSoyjackGlass
+  suffix: vodka soyjack
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: VodkaSoyjack
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/vodkasoyjack.rsi
+    state: icon
