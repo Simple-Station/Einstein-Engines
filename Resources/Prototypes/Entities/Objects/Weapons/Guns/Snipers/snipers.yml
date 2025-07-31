@@ -389,7 +389,7 @@
     - suitStorage
   - type: Appearance
   - type: Gun
-    damageModifier: 0.75 # enough to near-crit a fully armored soldier
+    damageModifier: 0.85 # enough to crit a fully armored soldier
     fireRate: 8
     selectedMode: SemiAuto
     availableModes:
@@ -444,7 +444,7 @@
     - suitStorage
   - type: Appearance
   - type: Gun
-    damageModifier: 0.75 #enough to near-crit a fully armored soldier
+    damageModifier: 0.85 #enough to crit a fully armored soldier
     fireRate: 8
     selectedMode: SemiAuto
     availableModes:
