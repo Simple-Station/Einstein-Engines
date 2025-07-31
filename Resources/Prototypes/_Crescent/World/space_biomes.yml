@@ -254,7 +254,7 @@
   components:
   - type: SpaceBiomeSource
     biome: unionfallApproachingNCWLBiome
-    swapDistance: 4000
+    swapDistance: 3000
     priority: 2600
 
 - type: crescentFactionBiome
@@ -286,8 +286,8 @@
   components:
   - type: SpaceBiomeSource
     biome: unionfallApproachingDSMBiome
-    swapDistance: 4000
-    priority: 2600
+    swapDistance: 3000
+    priority: 2601
 
 - type: crescentFactionBiome
   id: unionfallApproachingDSMBiome
