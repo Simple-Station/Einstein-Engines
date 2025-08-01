@@ -253,8 +253,6 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
-    - type: BecomesStation
-      id: Pathfinder
 - proto: AirAlarm
   entities:
   - uid: 52
