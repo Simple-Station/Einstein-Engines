@@ -1,0 +1,13 @@
+- type: entity
+  name: plungineering laser rifle
+  parent: [WeaponLaserCarbine]
+  id: WeaponLaserCarbinePlungineeringAdmeme
+  description: "In the process of making the Core Eject shotgun, Nanotrasen figured out how to compress pure heat into objects. A deranged engineer made this in the process: a Laser Rifle with a modification that allows it to alternately fire plungers. For obvious reasons, it never actually made it into production."
+  components:
+  - type: Gun
+    canAltFire: true
+    altFireProjectile: Plunger
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+

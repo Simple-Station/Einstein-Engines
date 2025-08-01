@@ -145,7 +145,7 @@ public abstract partial class SharedGunSystem : EntitySystem
 
         gun.ShootCoordinates = GetCoordinates(msg.Coordinates);
         gun.Target = GetEntity(msg.Target);
-        AttemptShoot(user.Value, ent, gun);
+        AttemptShoot(user.Value, ent, gun, msg.AltFire ?? false);
     }
 
     private void OnStopShootRequest(RequestStopShootEvent ev, EntitySessionEventArgs args)
@@ -243,7 +243,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         gun.ShotCounter = 0;
     }
 
-    private void AttemptShoot(EntityUid user, EntityUid gunUid, GunComponent gun)
+    private void AttemptShoot(EntityUid user, EntityUid gunUid, GunComponent gun, bool altFiring = false)
     {
         if (gun.FireRateModified <= 0f ||
             !_actionBlockerSystem.CanAttack(user))
@@ -402,7 +402,8 @@ public abstract partial class SharedGunSystem : EntitySystem
             toCoordinates.Value,
             out var userImpulse,
             user,
-            throwItems: attemptEv.ThrowItems);
+            throwItems: attemptEv.ThrowItems,
+            altFire: altFiring);
         var shotEv = new GunShotEvent(user, ev.Ammo);
         RaiseLocalEvent(gunUid, ref shotEv);
 
@@ -437,7 +438,8 @@ public abstract partial class SharedGunSystem : EntitySystem
         EntityCoordinates toCoordinates,
         out bool userImpulse,
         EntityUid? user = null,
-        bool throwItems = false);
+        bool throwItems = false,
+        bool? altFire = false);
 
     public void ShootProjectile(EntityUid uid, Vector2 direction, Vector2 gunVelocity, EntityUid gunUid, EntityUid? user = null, float speed = 20f)
     {
