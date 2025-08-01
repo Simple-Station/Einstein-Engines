@@ -1,0 +1,27 @@
+- type: gameMap
+  id: UnionfallGraceBarrierNCWL
+  mapName: 'Hadal Protection Barrier (NCWL)'
+  mapPath: /Maps/_Crescent/Unionfall/grace_barrier_NCWL.yml
+  minPlayers: 0
+  stations:
+    UnionfallGraceBarrierNCWL:
+      stationProto: StandardCrescentPOI
+      gridComponents:
+        - type: BlockShipWeaponProjectileGrid
+        - type: PreventPilot
+        - type: SelfDeleteGrid
+          timeToDelete: 1200 # 20 minutes
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: outpost
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Hadal Protection Barrier (NCWL)'
+        - type: VesselDesignation
+          designation: vessel-designation-outpost
+        - type: VesselDescription
+          description: what
+        - type: Grammar
+          attributes:
+            proper: true

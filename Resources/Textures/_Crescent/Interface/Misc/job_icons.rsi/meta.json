@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from https://github.com/vgstation-coders/vgstation13/blob/e71d6c4fba5a51f99b81c295dcaec4fc2f58fb19/icons/mob/screen1.dmi | Brigmedic icon made by PuroSlavKing (Github) | Zombie icon made by RamZ | Zookeper by netwy (discort) | Rev and Head Rev icon taken from https://tgstation13.org/wiki/HUD and edited by coolmankid12345 (Discord)",
+    "copyright": "Taken from https://github.com/vgstation-coders/vgstation13/blob/e71d6c4fba5a51f99b81c295dcaec4fc2f58fb19/icons/mob/screen1.dmi | Brigmedic icon made by PuroSlavKing (Github) | Zombie icon made by RamZ | Zookeper by netwy (discort) | Rev and Head Rev icon taken from https://tgstation13.org/wiki/HUD and edited by coolmankid12345 (Discord), hullrot unionfall icons by darkest08 (github)",
 
     "size": {
         "x": 8,
@@ -406,6 +406,66 @@
         },
         {
             "name": "HeadRevolutionary"
+        },
+        {
+            "name": "hr_dsm_cadet"
+        },
+        {
+            "name": "hr_dsm_rifleman"
+        },
+        {
+            "name": "hr_dsm_cqc"
+        },
+        {
+            "name": "hr_dsm_specialist"
+        },
+        {
+            "name": "hr_dsm_medic"
+        },
+        {
+            "name": "hr_dsm_sapper"
+        },
+        {
+            "name": "hr_dsm_officer"
+        },
+        {
+            "name": "hr_dsm_leader"
+        },
+        {
+            "name": "hr_dsm_crew"
+        },
+        {
+            "name": "hr_dsm_captain"
+        },
+        {
+            "name": "hr_ncwl_cadet"
+        },
+        {
+            "name": "hr_ncwl_rifleman"
+        },
+        {
+            "name": "hr_ncwl_cqc"
+        },
+        {
+            "name": "hr_ncwl_specialist"
+        },
+        {
+            "name": "hr_ncwl_medic"
+        },
+        {
+            "name": "hr_ncwl_sapper"
+        },
+        {
+            "name": "hr_ncwl_officer"
+        },
+        {
+            "name": "hr_ncwl_leader"
+        },
+        {
+            "name": "hr_ncwl_crew"
+        },
+        {
+            "name": "hr_ncwl_captain"
         }
     ]
 }

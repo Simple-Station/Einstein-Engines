@@ -5,6 +5,9 @@
   id: MagazineRifleDrum
 
 - type: Tag
+  id: MagazineRiflePan
+
+- type: Tag
   id: MagazineSMG6mm
 
 - type: Tag
@@ -21,7 +24,7 @@
 
 - type: Tag
   id: CartridgeRailgun15mm
-  
+
 - type: Tag
   id: AirAlarm
 
@@ -1348,6 +1351,9 @@
   id: SpeedLoaderRifle
 
 - type: Tag
+  id: SpeedLoaderLightRifle
+
+- type: Tag
   id: SpiderCraft
 
 - type: Tag
@@ -1561,3 +1567,6 @@
 
 - type: Tag
   id: UnathiEmotes
+
+- type: Tag
+  id: FitsInVoidsuitKit

@@ -1,0 +1,28 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: UnionfallAegis
+  name: NCWL Aegis
+  description: An artillery ship equipped with point defense.
+  price: 35000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Unionfall/NCWL/unionfall_aegis.yml
+
+- type: gameMap
+  id: UnionfallAegis
+  mapName: 'NCWL Aegis'
+  mapPath: /Maps/_Crescent/Unionfall/NCWL/unionfall_Aegis.yml
+  minPlayers: 0
+  stations:
+    UnionfallAegis:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Aegis {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-artillery-ship

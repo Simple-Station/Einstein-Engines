@@ -1,0 +1,27 @@
+- type: gameMap
+  id: UnionfallGraceBarrierDSM
+  mapName: 'Hadal Protection Barrier (DSM)'
+  mapPath: /Maps/_Crescent/Unionfall/grace_barrier_DSM.yml
+  minPlayers: 0
+  stations:
+    UnionfallGraceBarrierDSM:
+      stationProto: StandardCrescentPOI
+      gridComponents:
+        - type: BlockShipWeaponProjectileGrid
+        - type: PreventPilot
+        - type: SelfDeleteGrid
+          timeToDelete: 1200 # 20 minutes
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: outpost
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Hadal Protection Barrier (DSM)'
+        - type: VesselDesignation
+          designation: vessel-designation-outpost
+        - type: VesselDescription
+          description: what
+        - type: Grammar
+          attributes:
+            proper: true

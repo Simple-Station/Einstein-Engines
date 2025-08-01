@@ -170,12 +170,20 @@
   id: BoxMRE
   description: A box of decades old military surplus rations. It is surprisingly not rotten.
   components:
+  - type: Item
+    shape:
+    - 0,0,1,1
   - type: StorageFill
     contents:
       - id: DrinkMREFlask
       - id: FoodSnackNutribrick
       - id: FoodSnackMREBrownie
       - id: FoodCondimentPacketKetchup
+      - id: DrinkBeerBottleFull
+      - id: FoodSnackChocolate
+      - id: FoodSnackEnergy
+      - id: FoodSnackProteinbar
+      - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
       - state: box_olive
@@ -226,16 +234,85 @@
   name: flare box
   parent: BoxCardboard
   id: BoxFlare
-  description: A box of flares. Party time.
+  description: A box of flares. Fits in your pocket!
   components:
+  - type: Item
+    size: Tiny #so it can fit in pockets
+    shape:
+    - 0,0,1,1
   - type: StorageFill
     contents:
+      - id: WeaponFlareGun
       - id: Flare
-        amount: 6
+        amount: 14
   - type: Sprite
     layers:
       - state: box
       - state: flare
+
+- type: entity
+  name: Cosmonaut Kit #for unionfall. kind of too good for disguising otherwise
+  parent: BoxCardboard
+  id: VoidsuitKitNCWL
+  description: A kit containing everything needed to survive in space. Communard edition.
+  components:
+  - type: Item
+    shape:
+    - 0,0,2,1
+    size: Small
+  - type: Storage
+    maxItemSize: Large
+    grid:
+    - 0,0,6,3
+    whitelist:
+      tags:
+        - FitsInVoidsuitKit
+        - Crowbar
+        - Wrench
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterNCWLEVA
+      - id: ClothingHeadHelmetNCWLEVA
+      - id: DoubleEmergencyOxygenTankFilled
+      - id: HandHeldMassScannerEE
+      - id: CrowbarRed
+      - id: Wrench
+  - type: Sprite
+    layers:
+      - state: boxwidetoy
+      - state: extendedtank
+
+- type: entity
+  name: Imperionaut Kit #for unionfall. kind of too good for disguising otherwise
+  parent: BoxCardboard
+  id: VoidsuitKitDSM
+  description: A kit containing everything needed to survive in space. Imperial edition.
+  components:
+  - type: Item
+    shape:
+    - 0,0,2,1
+  - type: Storage
+    maxItemSize: Large
+    grid:
+    - 0,0,6,3
+    whitelist:
+      tags:
+        - FitsInVoidsuitKit
+        - Crowbar
+        - Wrench
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterCoatImperialSoftsuit
+      - id: ClothingHeadHelmetImperialEVA
+      - id: DoubleEmergencyOxygenTankFilled
+      - id: HandHeldMassScannerEE
+      - id: CrowbarRed
+      - id: Wrench
+  - type: Sprite
+    layers:
+      - state: boxwide
+      - state: extendedtank
+
 
 - type: entity
   name: trashbag box

@@ -1,3 +1,8 @@
+#IF YOURE WONDERING WHERE ALL THE NON-CONSCRIPT JOBS WENT
+#JUST RE-ENABLE THEM AND SET editorHidden: false
+#YOU'RE WELCOME
+# .2 - 2025
+
 - type: department
   id: Logistics
   description: department-Cargo-description
@@ -25,12 +30,13 @@
  # - Librarian
  # - Mime
  # - Musician
-  - Contractor
+ # - Contractor
  # - Reporter
  # - Visitor
  # - Zookeeper
  # - ServiceWorker
   enabled: true
+  editorHidden: false
 
 - type: department
   id: Command
@@ -88,6 +94,8 @@
   color: "#9FED58"
   weight: -91
   primary: false
+  editorHidden: true
+
 - type: department
   id: NCWL
   description: department-NCWL-description
@@ -102,6 +110,7 @@
   - KapitanNCWL
   - KadetNCWL
   enabled: true
+  editorHidden: false
 
 - type: department
   id: NCSP
@@ -122,6 +131,7 @@
   - ForemanNCSP
   - ShipbreakerNCSP
   enabled: true
+  editorHidden: false
 
 - type: department
   id: DSM
@@ -145,6 +155,7 @@
   - AdvocatusDSM
   - ArchmaesterDSM
   enabled: true
+  editorHidden: false
 
 - type: department
   id: SRM
@@ -158,7 +169,7 @@
   - MontagneSRM
   - OverseerSRM
   enabled: false
-  editorHidden: false # i just like to see them for the numbers , SPCR 2025
+  editorHidden: true # i just like to see them for the numbers , SPCR 2025
 
 - type: department
   id: SHI
@@ -173,6 +184,7 @@
   - EmployeeSHI
   - MedtechSHI
   enabled: false
+  editorHidden: true
 
 - type: department
   id: CMM
@@ -187,7 +199,8 @@
   - WatchmasterCMM
   - DeputyMarshalCMM
   - MarshalCMM
-  enabled: true
+  enabled: false
+  editorHidden: true
 
 - type: department
   id: TAP
@@ -204,7 +217,8 @@
   - BeltrunnerTAP
   - DraugrTAP
   - ServileTAP
-  enabled: true
+  enabled: false
+  editorHidden: false
 
 - type: department
   id: ATH
@@ -225,5 +239,45 @@
   - ChirurgeonATH
   - VorarbeiterATH
   - ArbeiterATH
+  enabled: false
+  editorHidden: true # i just like to see them for the numbers , SPCR 2025
+
+  # CONSCRIPT
+
+- type: department
+  id: NCWL-W
+  description: department-NCWL-description
+  color: "#FFD580"
+  weight: 100
+  roles:
+  - ConscriptLeaderNCWL
+  - ConscriptOfficerNCWL
+  - ConscriptSniperNCWL
+  - ConscriptGunnerNCWL
+  - ConscriptDoctorNCWL
+  - ConscriptShotgunNCWL
+  - ConscriptSubmachinegunNCWL
+  - ConscriptRiflemanNCWL
+  - ConscriptCadetNCWL
+  - ConscriptShipCaptainNCWL
+  - ConscriptShipCrewNCWL
   enabled: true
-  editorHidden: false # i just like to see them for the numbers , SPCR 2025
+
+- type: department
+  id: DSM-W
+  description: department-DSM-description
+  color: "#684871"
+  weight: 85
+  roles:
+  - ConscriptLeaderDSM
+  - ConscriptOfficerDSM
+  - ConscriptSniperDSM
+  - ConscriptGunnerDSM
+  - ConscriptDoctorDSM
+  - ConscriptShotgunDSM
+  - ConscriptSubmachinegunDSM
+  - ConscriptRiflemanDSM
+  - ConscriptCadetDSM
+  - ConscriptShipCaptainDSM
+  - ConscriptShipCrewDSM
+  enabled: true

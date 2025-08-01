@@ -72,3 +72,73 @@
   - type: BallisticAmmoProvider
   - type: StaticPrice
     price: 2500
+
+- type: entity
+  name: IRM Matusa 12g
+  parent: BaseWeaponSniper
+  id: WeaponShotgunDSMMatusa
+  description: The Matusa has only recently fallen out of favour with the Imperial Subjugation Corps as the civil war has pivoted arsenals towards armour-piercing firepower for whom the shotgun falls short. However, Matusas can be found in shock-assault divisions and peacekeeping forces across the sectors which once comprised the Imperial Mandate as the revolving street-sweeper requires no advanced machining and is effective at clearing fortified positions and unruly crowds alike.
+  components:
+  - type: Item
+    size: Ginormous
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_shotgun.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_shotgun.rsi
+    slots:
+    - Back
+    - suitStorage
+  - type: Gun
+    fireRate: 2.5
+    damageModifier: 1.25
+    shotgunSpreadMultiplier: 3.5
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/UnionfallWeapons/shotgun_fire_1.ogg
+    fireOnDropChance: 1
+  - type: BallisticAmmoProvider
+    capacity: 6
+    autoCycle: true
+    proto: ShellShotgun
+    whitelist:
+      tags:
+      - ShellShotgun
+
+
+- type: entity
+  name: NCWL Pioneer Double-Barrel 12g
+  parent: BaseWeaponSniperNoWield
+  id: WeaponShotgunDoubleBarreledNCWL
+  description: A short, rugged scattergun based on ancient Terran designs. Cheap to print, easy to maintain, and reliable enough for frontier defense and penal use. Favored by proletariat civilians, shipboard crews, and disciplinary squads for its close quarters effectiveness and ease of storage compared to more advanced pump-action or automatic models. An inscription on the side reads "Property of—" though the rest has been scorched off with a laser engraver, replaced by a crude ID serial. The wooden buttstock still has a splinter jutting out—like everything else about this gun, it’s functional, not comfortable.
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/surplus_ncwl_shotgun.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/surplus_ncwl_shotgun.rsi
+    slots:
+    - Back
+    - suitStorage
+  - type: Gun
+    fireRate: 2
+    damageModifier: 1.8
+    burstFireRate: 15
+    shotgunSpreadMultiplier: 3
+    shotsPerBurst: 2
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    - Burst
+    soundGunshot:
+      path: /Audio/Weapons/Guns/UnionfallWeapons/shotgun_fire_1.ogg
+    fireOnDropChance: 1
+  - type: BallisticAmmoProvider
+    capacity: 2
+    autoCycle: true
+    proto: ShellShotgun
+    whitelist:
+      tags:
+      - ShellShotgun
