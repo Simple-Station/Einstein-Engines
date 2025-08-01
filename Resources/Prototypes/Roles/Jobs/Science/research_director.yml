@@ -4,6 +4,20 @@
   description: job-description-rd
   playTimeTracker: JobResearchDirector
   requirements:
+  - !type:CharacterOverallTimeRequirement
+    min: 24000
+  - !type:CharacterDepartmentTimeRequirement
+    department: Epistemics
+    min: 38800
+  - !type:CharacterDepartmentTimeRequirement
+    department: JobJusticar
+    min: 36000 # 10 hours
+  - !type:CharacterDepartmentTimeRequirement
+    department: JobScientist
+    min: 36000 # 10 hours
+  - !type:CharacterDepartmentTimeRequirement
+    department: JobForensicMantis
+    min: 36000 # 10 hours
   - !type:CharacterItemGroupRequirement
     group: TraitsCasterType
   - !type:CharacterLogicOrRequirement

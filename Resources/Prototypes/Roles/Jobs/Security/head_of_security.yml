@@ -4,6 +4,20 @@
   description: job-description-hos
   playTimeTracker: JobHeadOfSecurity
   requirements:
+  - !type:CharacterOverallTimeRequirement
+    min: 24000
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 48800
+  - !type:CharacterDepartmentTimeRequirement
+    department: JobSecurityOfficer
+    min: 36000 # 10 hours
+  - !type:CharacterDepartmentTimeRequirement
+    department: JobDetective
+    min: 36000 # 10 hours
+  - !type:CharacterDepartmentTimeRequirement
+    department: JobWarden
+    min: 36000 # 10 hours
   - !type:CharacterTraitRequirement
     inverted: true
     traits:

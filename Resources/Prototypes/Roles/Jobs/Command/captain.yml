@@ -4,6 +4,29 @@
   description: job-description-captain
   playTimeTracker: JobCaptain
   requirements:
+  - !type:CharacterOverallTimeRequirement
+    min: 24000
+  - !type:CharacterDepartmentTimeRequirement
+    department: Command
+    min: 48800
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 48800
+  - !type:CharacterDepartmentTimeRequirement
+    department: Engineering
+    min: 48800
+  - !type:CharacterDepartmentTimeRequirement
+    department: Medical
+    min: 48800
+  - !type:CharacterDepartmentTimeRequirement
+    department: Epistemics
+    min: 28800
+  - !type:CharacterDepartmentTimeRequirement
+    department: Logistics
+    min: 48800
+  - !type:CharacterDepartmentTimeRequirement
+    department: Civilian
+    min: 28800
   - !type:CharacterTraitRequirement
     inverted: true
     traits:

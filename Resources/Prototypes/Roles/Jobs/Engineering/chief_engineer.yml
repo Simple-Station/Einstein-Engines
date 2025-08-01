@@ -4,6 +4,17 @@
   description: job-description-ce
   playTimeTracker: JobChiefEngineer
   requirements:
+  - !type:CharacterOverallTimeRequirement
+    min: 24000
+  - !type:CharacterDepartmentTimeRequirement
+    department: Engineering
+    min: 48800
+  - !type:CharacterDepartmentTimeRequirement
+    department: JobStationEngineer
+    min: 36000 # 10 hours
+  - !type:CharacterDepartmentTimeRequirement
+    department: JobAtmosphericTechnician
+    min: 36000 # 10 hours
   - !type:CharacterTraitRequirement
     inverted: true
     traits:

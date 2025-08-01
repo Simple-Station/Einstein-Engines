@@ -12,6 +12,9 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Security # pump this up if everyone sucks at being psi ward - the time conversion is fucking weird idk
       min: 14600
+    - !type:CharacterDepartmentTimeRequirement
+      department: JobWarden
+      min: 36000 # 10 hours
     - !type:CharacterLogicOrRequirement
       requirements:
       - !type:CharacterSpeciesRequirement
