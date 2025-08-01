@@ -11,7 +11,7 @@
     tracker: JobReporter
     min: 14400
   - !type:CharacterPlaytimeRequirement
-    tracker: JobBotany
+    tracker: JobBotanist
     min: 21600
   - !type:CharacterPlaytimeRequirement
     tracker: JobChef
