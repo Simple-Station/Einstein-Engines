@@ -38,7 +38,6 @@
   - HeadOfSecurity
   - ResearchDirector
   - Frontier # Frontier
-  - Command
   - Cryogenics
   - Security
   - Detective
@@ -66,14 +65,11 @@
   - Hydroponics
   - Atmospherics
   - Command
-  - Maintenance
   - DSMGeneral
   - Service
   - DSMJail
   - DSMArmory
   - DSMCommand
-  - External
-  - Captain # Frontier
   - Empire
 
 - type: startingGear

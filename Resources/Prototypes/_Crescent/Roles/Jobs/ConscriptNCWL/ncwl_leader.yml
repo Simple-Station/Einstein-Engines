@@ -65,16 +65,11 @@
   - Chapel
   - Hydroponics
   - Atmospherics
-  - Command
-  - Maintenance
   - NCWLGeneral
-  - Service
   - NCWLKommissar
   - NCWLJail
   - NCWLArmory
   - NCWLCommand
-  - External
-  - Captain # Frontier
 
 - type: startingGear
   id: ConscriptLeaderNCWLGear

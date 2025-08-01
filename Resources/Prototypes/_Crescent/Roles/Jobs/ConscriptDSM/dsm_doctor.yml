@@ -29,7 +29,6 @@
         faction: DSM
   access:
   - Command
-  - Empire
   - Maintenance
   - ScribesGuild
   - Service
@@ -38,7 +37,6 @@
   - Captain # Frontier
   - Empire
   - DSMArmory
-  - DSMCommand
 
 - type: startingGear
   id: ConscriptDoctorDSMGear
