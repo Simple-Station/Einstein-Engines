@@ -27,6 +27,7 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 1000
+  - type: AllowSuitStorage
 
 - type: entity
   parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
@@ -59,7 +60,7 @@
     price: 1000
 
 - type: entity
-  parent: ClothingOuterArmorBasic
+  parent: ClothingOuterBaseLarge
   id: ClothingOuterArmorNCWLHeavyCarapace
   name: communard's heavy carapace
   description: A steel-beaten juggernaut's carapace in communard orange.
@@ -86,6 +87,7 @@
     damageCoefficient: 0.90
   - type: GroupExamine
   - type: StaticPrice
+  - type: AllowSuitStorage
     price: 750
 
 - type: entity
@@ -134,10 +136,10 @@
     armorRepair: Kevlar
     initialModifiers:
       flatReductions:
-        Blunt: 10
-        Slash: 10
-        Piercing: 20
-        Heat: 10
+        Blunt: 15
+        Slash: 15
+        Piercing: 25
+        Heat: 15
         Caustic: 25
   - type: ClothingSpeedModifier
     walkModifier: 1.0
@@ -147,6 +149,7 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 900
+  - type: AllowSuitStorage
 
 ## hardsuits
 
@@ -270,5 +273,10 @@
   - type: Tag
     tags:
     - SuitEVA
+    - FitsInVoidsuitKit
   - type: StaticPrice
     price: 1000
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,3,3

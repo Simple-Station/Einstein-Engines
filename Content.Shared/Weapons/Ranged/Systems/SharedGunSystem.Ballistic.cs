@@ -27,7 +27,8 @@ public abstract partial class SharedGunSystem
         SubscribeLocalEvent<BallisticAmmoProviderComponent, GetVerbsEvent<Verb>>(OnBallisticVerb);
         SubscribeLocalEvent<BallisticAmmoProviderComponent, InteractUsingEvent>(OnBallisticInteractUsing);
         SubscribeLocalEvent<BallisticAmmoProviderComponent, AfterInteractEvent>(OnBallisticAfterInteract);
-        SubscribeLocalEvent<BallisticAmmoProviderComponent, AmmoFillDoAfterEvent>(OnBallisticAmmoFillDoAfter);
+        SubscribeLocalEvent<BallisticAmmoProviderComponent, MagazineFillDoAfterEvent>(OnMagazineFillDoAfter);
+        SubscribeLocalEvent<BallisticAmmoProviderComponent, AmmoInsertDoAfterEvent>(OnAmmoInsertDoAfter);
         SubscribeLocalEvent<BallisticAmmoProviderComponent, UseInHandEvent>(OnBallisticUse);
     }
 
@@ -47,8 +48,40 @@ public abstract partial class SharedGunSystem
             || GetBallisticShots(component) >= component.Capacity)
             return;
 
-        component.Entities.Add(args.Used);
-        Containers.Insert(args.Used, component.Container);
+        if (component.FillWithDoAfter) //HULLROT: used for single-shell/magazine filling of shipguns
+        {
+            _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, component.FillDelay, new AmmoInsertDoAfterEvent(), used: args.Used, target: args.Target, eventTarget: uid)
+            {
+                BreakOnMove = true,
+                BreakOnDamage = false,
+                NeedHand = true
+            });
+        }
+        else
+        {
+            component.Entities.Add(args.Used);
+            Containers.Insert(args.Used, component.Container);
+            // Not predicted so
+            Audio.PlayPredicted(component.SoundInsert, uid, args.User);
+            args.Handled = true;
+            component.Cycled = true;
+            UpdateAmmoCount(uid);
+            UpdateBallisticAppearance(uid, component);
+            Dirty(uid, component);
+        }
+    }
+
+    private void OnAmmoInsertDoAfter(EntityUid uid, BallisticAmmoProviderComponent component, AmmoInsertDoAfterEvent args)
+    {
+        if (args.Cancelled)
+            return;
+        if (args.Target is null)
+            return;
+        if (args.Used is null)
+            return;
+
+        component.Entities.Add((EntityUid) args.Used); //would have returned if it's null, so its OK to cast.
+        Containers.Insert((EntityUid) args.Used, component.Container);
         // Not predicted so
         Audio.PlayPredicted(component.SoundInsert, uid, args.User);
         args.Handled = true;
@@ -69,7 +102,7 @@ public abstract partial class SharedGunSystem
 
         args.Handled = true;
 
-        _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, component.FillDelay, new AmmoFillDoAfterEvent(), used: uid, target: args.Target, eventTarget: uid)
+        _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, component.FillDelay, new MagazineFillDoAfterEvent(), used: uid, target: args.Target, eventTarget: uid)
         {
             BreakOnMove = true,
             BreakOnDamage = false,
@@ -77,7 +110,7 @@ public abstract partial class SharedGunSystem
         });
     }
 
-    private void OnBallisticAmmoFillDoAfter(EntityUid uid, BallisticAmmoProviderComponent component, AmmoFillDoAfterEvent args)
+    private void OnMagazineFillDoAfter(EntityUid uid, BallisticAmmoProviderComponent component, MagazineFillDoAfterEvent args)
     {
         if (Deleted(args.Target)
             || !TryComp(args.Target, out BallisticAmmoProviderComponent? target)
@@ -281,4 +314,10 @@ public abstract partial class SharedGunSystem
 /// DoAfter event for filling one ballistic ammo provider from another.
 /// </summary>
 [Serializable, NetSerializable]
-public sealed partial class AmmoFillDoAfterEvent : SimpleDoAfterEvent { }
+public sealed partial class MagazineFillDoAfterEvent : SimpleDoAfterEvent { }
+
+/// <summary>
+/// HULLROT: DoAfter event for inserting a magazine/singular cartridge into a gun. Used exclusively for ship guns.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed partial class AmmoInsertDoAfterEvent : SimpleDoAfterEvent { }

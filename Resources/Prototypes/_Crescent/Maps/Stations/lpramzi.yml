@@ -5,7 +5,7 @@
   minPlayers: 0
   stations:
     lpramzi:
-      stationProto: StandardCrescentOutpost
+      stationProto: StandardCrescentStation
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Listening Post 5'

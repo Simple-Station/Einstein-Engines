@@ -1,78 +1,78 @@
 - type: jukebox
   id: BeHereAWhile
-  name: I'll Be Here A While
+  name: 311 - I'll Be Here A While
   path:
     path: /Audio/_Crescent/Jukebox/behereawhile.ogg
 
 - type: jukebox
   id: BlueMonday
-  name: Blue Monday
+  name: New Order - Blue Monday
   path:
     path: /Audio/_Crescent/Jukebox/bluemonday.ogg
 
 - type: jukebox
   id: IFoughtTheLaw
-  name: I Fought the Law
+  name: Dead Kennedys - I Fought the Law
   path:
     path: /Audio/_Crescent/Jukebox/ifoughtthelaw.ogg
 
 - type: jukebox
   id: MoneyPinkFloyd
-  name: Money
+  name: Pink Floyd - Money
   path:
     path: /Audio/_Crescent/Jukebox/moneypinkfloydcover.ogg
 
 - type: jukebox
   id: Luftballoons
-  name: Luftballoons
+  name: Nena - Luftballoons
   path:
     path: /Audio/_Crescent/Jukebox/luftballoons.ogg
 
 - type: jukebox
   id: AllAlone
-  name: All Alone
+  name: Jimi Hendrix - All Along the Watchtower
   path:
     path: /Audio/_Crescent/Jukebox/allalone.ogg
 
 - type: jukebox
   id: FeelGood
-  name: Feel Good
+  name: Thia Megia - Feel Good
   path:
     path: /Audio/_Crescent/Jukebox/feelgood.ogg
 
 - type: jukebox
   id: Madmen
-  name: Mad Men
+  name: Propaganda - Mad Men
   path:
     path: /Audio/_Crescent/Jukebox/madmen.ogg
 
 - type: jukebox
   id: LifeOnMars
-  name: Life on Mars
+  name: Olivia Kuper Harris - Life on Mars
   path:
     path: /Audio/_Crescent/Jukebox/lifeonmars.ogg
 
 - type: jukebox
   id: Neverhood
-  name: Neverhood
+  name: Terry Scott Taylor - Neverhood
   path:
     path: /Audio/_Crescent/Jukebox/neverhood.ogg
 
 - type: jukebox
   id: Davai
-  name: Davai
+  name: KMFDM - Davai
   path:
     path: /Audio/_Crescent/Jukebox/Davai.ogg
 
 - type: jukebox
   id: PowerInTheUnion
-  name: Power In The Union
+  name: Joshua James - Power In The Union
   path:
     path: /Audio/_Crescent/Jukebox/PowerInTheUnion.ogg
 
 - type: jukebox
   id: WhichSideAreYouOn
-  name: Which Side Are You On?
+  name: Florence Reece - Which Side Are You On?
   path:
     path: /Audio/_Crescent/Jukebox/WhichSideAreYouOn.ogg
 
@@ -96,7 +96,7 @@
 
 - type: jukebox
   id: HorseWithNoName
-  name: A Horse with No Name
+  name: America - A Horse with No Name
   path:
     path: "/Audio/_Crescent/Jukebox/august2nd/horse.ogg"
 

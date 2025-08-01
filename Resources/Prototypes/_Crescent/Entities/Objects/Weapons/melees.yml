@@ -1,0 +1,161 @@
+- type: entity
+  parent: ArmBlade
+  id: MantisBlade
+  suffix: Unremoveable
+  name: plasteel armblade
+  description: An instrument of war. Directly in your forearm!
+  components:
+  - type: MeleeWeapon
+    wideAnimationRotation: 90
+    attackRate: 1.25
+    damage:
+      types:
+        Slash: 24
+        Structural: 20
+    clickPartDamageMultiplier: 3
+    heavyPartDamageMultiplier: 2
+    lightRangeModifier: 1.5
+    heavyRateModifier: 1.25
+    maxTargets: 1
+    angle: 10
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: MultiHandedItem
+
+- type: entity
+  name: machete
+  parent: Machete
+  id: IndependentMachete
+  description: A vicious looking blade.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/machete.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+    maxTargets: 4
+    angle: 80
+  - type: DamageOtherOnHit
+    staminaCost: 5
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: ThrowingAngle
+    angle: 225
+  - type: Item
+    size: Normal
+    sprite: _Crescent/Objects/Weapons/machete.rsi
+  - type: Tag
+    tags:
+    - Machete
+  - type: DisarmMalus
+
+- type: entity
+  name: noble's rapier
+  parent: BaseItem
+  id: DSMRapier
+  description: A ceremonial dueling weapon belonging to the nobles of the mandate.
+  components:
+  - type: Sharp
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/noble_rapier.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    range: 1.75
+    attackRate: 1.25
+    damage:
+      types:
+        Slash: 18
+        Piercing: 22
+    clickPartDamageMultiplier: 2
+    maxTargets: 7
+    angle: 0.1
+    animation: WeaponArcThrust
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    size: Normal
+    sprite: _Crescent/Objects/Weapons/noble_rapier.rsi
+  - type: Tag
+    tags:
+    - Rapier
+  - type: DisarmMalus
+
+- type: entity
+  name: noble's sabre
+  parent: BaseItem
+  id: DSMSabre
+  description: A ceremonial weapon belonging to the nobles of the mandate.
+  components:
+  - type: Sharp
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/noble_sabre.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1.5
+    range: 1.25
+    damage:
+      types:
+        Slash: 36
+    clickPartDamageMultiplier: 2
+    heavyPartDamageMultiplier: 1.5
+    lightRangeModifier: 1.5
+    heavyStaminaCost: 2.5
+    maxTargets: 7
+    animation: WeaponArcThrust
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+  - type: Reflect
+    enabled: true
+    reflectProb: .1
+    spread: 90
+  - type: Item
+    size: Normal
+    sprite: _Crescent/Objects/Weapons/noble_sabre.rsi
+  - type: Tag
+    tags:
+    - DSMSabre
+  - type: DisarmMalus
+
+- type: entity
+  name: homeguard lug baton
+  parent: BaseItem
+  id: NCWLLugBaton
+  description: Disdaining the fragile electrotaser or shock batons of more "advanced" polities, the League opts for a hard wearing steel core rod with two lug nuts fixed at the head. More mace than baton, few lumpenproles risk being struck twice.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/ncwllugbaton.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1.2
+    damage:
+      types:
+        Blunt: 25
+    soundHit:
+      collection: MetalThud
+    bluntStaminaDamageFactor: 2
+    heavyStaminaCost: 5
+  - type: DamageOtherOnHit
+    staminaCost: 15
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+    - Truncheon
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/ncwllugbaton.rsi
+    quickEquip: false
+    slots:
+    - Belt
+  - type: DisarmMalus
+    malus: 0.225
+  - type: Appearance
+  - type: StaticPrice
+    price: 80
+  - type: GuideHelp
+    guides:
+    - Security

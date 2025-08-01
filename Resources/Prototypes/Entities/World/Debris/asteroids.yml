@@ -1,4 +1,9 @@
-﻿- type: entity
+﻿## HULLROT DOES FUCKING NOT
+## YOU HEAR ME. IT DOES NOT
+## USE THIS FILE. INSTEAD IT USES... /_NF/Entities/World/Debris/Asteroids
+## WHY? BECAUSE FUCK YOU
+
+- type: entity
   id: BaseAsteroidDebris
   parent: BaseDebris
   name: Asteroid Debris
@@ -20,7 +25,7 @@
           - id: WallRockCoal
             prob: 0.15
             orGroup: rock
-          - id: WallRockTin
+          - id: WallRockTin # THIS IS STEEL. WHY THE FUCK IS IT CALLED TIN??
             prob: 0.15
             orGroup: rock
           - id: WallRockQuartz
@@ -32,6 +37,12 @@
           - id: WallRockGold
             prob: 0.05
             orGroup: rock
+          - id: WallRockTungsten
+            prob: 0.15 # TODO: CHANGEME
+            orGroup: rock
+          - id: WallRockCopper
+            prob: 0.15 # TODO: CHANGEME
+            orGroup: rock
           - id: WallRockDiamond
             prob: 0.005
             orGroup: rock
@@ -42,9 +53,6 @@
             prob: 0.05
             orGroup: rock
           - id: WallRockUranium
-            prob: 0.02
-            orGroup: rock
-          - id: WallRockBananium
             prob: 0.02
             orGroup: rock
           - id: WallRockArtifactFragment

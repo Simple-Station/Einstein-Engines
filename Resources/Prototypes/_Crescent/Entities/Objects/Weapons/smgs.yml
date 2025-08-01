@@ -1,5 +1,5 @@
 - type: entity
-  name: PTA Vektor 6mm
+  name: PTA P-M50 Vektor 6mm
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunPTAVektor
   description: A cheap, open-bolt copy of the Vector. Favored by mercs on a budget. Chambered in small 6mm rounds.
@@ -38,7 +38,7 @@
     angleDecay: 16
     fireRate: 8
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+      collection: SMG_1_Gunshots
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -63,7 +63,7 @@
   - type: Gun
     fireRate: 7
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+      collection: SMG_3_Gunshots
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -92,7 +92,7 @@
   - type: Gun
     fireRate: 7
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+      collection: SMG_2_Gunshots
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -120,7 +120,7 @@
     fireRate: 7
     selectedMode: FullAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+      collection: SMG_2_Gunshots
     availableModes:
     - FullAuto
   - type: ItemSlots
@@ -166,7 +166,7 @@
       fireRate: 6
       selectedMode: FullAuto
       soundGunshot:
-        path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+        collection: SMG_3_Gunshots
       availableModes:
         - FullAuto
     - type: ItemSlots
@@ -194,10 +194,10 @@
     - type: Appearance
 
 - type: entity
-  name: SHI M221 Sabre 9x19mm
+  name: SHI M221s Phantom 9x19mm
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunSabre
-  description: A blatant copy of the much more advanced and cost-friendly NanoTrasen Sabre, this Shinohara conversion cuts a few corners and features to deliver a reliable, if generic product. Rifling systems lifted from the original Sabre afford a breakneck rate of fire, however.
+  description: A cheap submachine gun that cuts a few corners and features to deliver a reliable enough product, but hey, at least it comes with a free suppressor. Chambered in 9x19mm PSTF.
   components:
   - type: StaticPrice
     price: 1250
@@ -214,7 +214,9 @@
     fireRate: 7
     selectedMode: FullAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/silenced.ogg
+      collection: Supressed_1_Gunshots
+      params:
+        volume: -10
     availableModes:
     - FullAuto
   - type: ItemSlots
@@ -262,7 +264,7 @@
     fireRate: 6
     selectedMode: FullAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+      collection: SMG_1_Gunshots
     availableModes:
     - FullAuto
   - type: ItemSlots
@@ -304,13 +306,13 @@
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
-  - type: Clothing
-    sprite: _Crescent/Objects/Weapons/Guns/cheshyre.rsi
+    soundGunshot:
+      collection: SMG_3_Gunshots
   - type: Gun
     fireRate: 7
     selectedMode: Burst
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/cheshyre.ogg
+      collection: SMG_3_Gunshots
     availableModes:
     - SemiAuto
     - Burst

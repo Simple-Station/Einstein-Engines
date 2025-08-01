@@ -17982,7 +17982,7 @@ entities:
     - type: Transform
       pos: 17.855978,14.563066
       parent: 1
-- proto: ScrapCircuit
+- proto: ScrapCircuit1
   entities:
   - uid: 1040
     components:
@@ -17994,7 +17994,7 @@ entities:
     - type: Transform
       pos: 1.7305666,23.739513
       parent: 1
-- proto: ScrapPlasma
+- proto: ScrapPlasma1
   entities:
   - uid: 1041
     components:

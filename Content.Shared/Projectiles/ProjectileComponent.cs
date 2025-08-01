@@ -47,7 +47,8 @@ public sealed partial class ProjectileComponent : Component
     /// <summary>
     ///     The amount of damage the projectile will do.
     /// </summary>
-    [DataField(required: true)] [ViewVariables(VVAccess.ReadWrite)]
+    [DataField(required: true)]
+    [ViewVariables(VVAccess.ReadWrite)]
     public DamageSpecifier Damage = new();
 
     /// <summary>
@@ -107,5 +108,9 @@ public sealed partial class ProjectileComponent : Component
     ///  modifies some behaviour regarding fixture checks for the projectile system, set by phasePreventSystem, SPCR 2025
     /// </summary>
     public bool raycasting = false;
+
+    [DataField("gibsOnHit")]
+    public bool gibsOnHit = false;
+
     // Hullrot end
 }

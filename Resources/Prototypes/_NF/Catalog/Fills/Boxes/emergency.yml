@@ -51,6 +51,9 @@
     layers:
       - state: internals
       - state: extendedtank
+  - type: Tag
+    tags:
+      - FitsInVoidsuitKit
 
 - type: entity
   parent: BoxSurvivalEngineering

@@ -519,6 +519,20 @@
 
 - type: entity
   parent: BaseFlatpack
+  id: WandererFlatpack
+  name: IEE mV-400 'Wanderer' exosuit construction kit
+  description:  Parts used to build an imperial scout exosuit. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: MechDSMWandererBattery
+  - type: Sprite
+    layers:
+    - state: kit
+  - type: StaticPrice
+    price: 12000
+
+- type: entity
+  parent: BaseFlatpack
   id: BallisticFablatheFlatpack
   name: SHI TF-22 armaments foundry flatpack
   description:  Parts used to build a ballistics factory. Activate with a multitool to deploy.
@@ -628,6 +642,7 @@
     - state: ame-part
   - type: StaticPrice
     price: 500
+
 
 - type: entity
   parent: BaseFlatpack
