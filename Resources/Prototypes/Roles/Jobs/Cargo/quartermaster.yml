@@ -4,6 +4,17 @@
   description: job-description-qm
   playTimeTracker: JobQuartermaster
   requirements:
+  - !type:CharacterOverallTimeRequirement
+    min: 24000
+  - !type:CharacterDepartmentTimeRequirement
+    department: Logistics
+    min: 28800
+  - !type:CharacterDepartmentTimeRequirement
+    department: JobSalvageSpecialist
+    min: 18800
+  - !type:CharacterDepartmentTimeRequirement
+    department: JobCargoTechnician
+    min: 18800
   - !type:CharacterTraitRequirement
     inverted: true
     traits:

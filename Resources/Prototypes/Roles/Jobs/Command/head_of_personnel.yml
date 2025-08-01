@@ -4,6 +4,8 @@
   description: job-description-hop
   playTimeTracker: JobHeadOfPersonnel
   requirements:
+  - !type:CharacterOverallTimeRequirement
+    min: 24000
   - !type:CharacterDepartmentTimeRequirement
     department: Command
     min: 28800
@@ -46,7 +48,7 @@
   - HeadOfPersonnel
   - Bar
   - Service
-  - Clerk 
+  - Clerk
   - Maintenance
   - Janitor
   - Theatre
@@ -58,20 +60,20 @@
   - Cargo
   - Orders
   - Mail
-  - Salvage 
+  - Salvage
   - Boxer
   - Clown
   - Library
-  - Chapel 
+  - Chapel
   - Research
   - Medical
   - Corpsman
   - Paramedic
-  - Psychologist 
+  - Psychologist
   - Chemistry
   - Security
   - Engineering
-  - Atmospherics 
+  - Atmospherics
   - Mime
   - Musician
   - Reporter
