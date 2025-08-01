@@ -11,11 +11,11 @@
   - !type:CharacterDepartmentTimeRequirement
     department: Medical
     min: 38800
-  - !type:CharacterDepartmentTimeRequirement
-    department: JobMedicalDoctor
+  - !type:CharacterPlaytimeRequirement
+    tracker: JobMedicalDoctor
     min: 36000 # 10 hours
-  - !type:CharacterDepartmentTimeRequirement
-    department: JobChemist
+  - !type:CharacterPlaytimeRequirement
+    tracker: JobChemist
     min: 36000 # 10 hours
   - !type:CharacterTraitRequirement
     inverted: true

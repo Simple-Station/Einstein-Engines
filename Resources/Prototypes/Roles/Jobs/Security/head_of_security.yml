@@ -9,14 +9,14 @@
   - !type:CharacterDepartmentTimeRequirement
     department: Security
     min: 48800
-  - !type:CharacterDepartmentTimeRequirement
-    department: JobSecurityOfficer
+  - !type:CharacterPlaytimeRequirement
+    tracker: JobSecurityOfficer
     min: 36000 # 10 hours
-  - !type:CharacterDepartmentTimeRequirement
-    department: JobDetective
+  - !type:CharacterPlaytimeRequirement
+    tracker: JobDetective
     min: 36000 # 10 hours
-  - !type:CharacterDepartmentTimeRequirement
-    department: JobWarden
+  - !type:CharacterPlaytimeRequirement
+    tracker: JobWarden
     min: 36000 # 10 hours
   - !type:CharacterTraitRequirement
     inverted: true

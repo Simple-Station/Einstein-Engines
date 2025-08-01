@@ -9,14 +9,14 @@
   - !type:CharacterDepartmentTimeRequirement
     department: Epistemics
     min: 38800
-  - !type:CharacterDepartmentTimeRequirement
-    department: JobJusticar
+  - !type:CharacterPlaytimeRequirement
+    tracker: JobJusticar
     min: 36000 # 10 hours
-  - !type:CharacterDepartmentTimeRequirement
-    department: JobScientist
+  - !type:CharacterPlaytimeRequirement
+    tracker: JobScientist
     min: 36000 # 10 hours
-  - !type:CharacterDepartmentTimeRequirement
-    department: JobForensicMantis
+  - !type:CharacterPlaytimeRequirement
+    tracker: JobForensicMantis
     min: 36000 # 10 hours
   - !type:CharacterItemGroupRequirement
     group: TraitsCasterType

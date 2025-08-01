@@ -9,11 +9,11 @@
   - !type:CharacterDepartmentTimeRequirement
     department: Engineering
     min: 48800
-  - !type:CharacterDepartmentTimeRequirement
-    department: JobStationEngineer
+  - !type:CharacterPlaytimeRequirement
+    tracker: JobStationEngineer
     min: 36000 # 10 hours
-  - !type:CharacterDepartmentTimeRequirement
-    department: JobAtmosphericTechnician
+  - !type:CharacterPlaytimeRequirement
+    tracker: JobAtmosphericTechnician
     min: 36000 # 10 hours
   - !type:CharacterTraitRequirement
     inverted: true
