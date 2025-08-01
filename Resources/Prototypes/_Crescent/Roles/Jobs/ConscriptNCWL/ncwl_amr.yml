@@ -1,0 +1,71 @@
+- type: job
+  id: ConscriptSniperNCWL
+  name: job-name-conscript-ncwl-amr
+  description: job-description-conscript-ncwl-amr #change me later
+  playTimeTracker: ConscriptJobSniperNCWL
+  weight: 5
+  startingGear: ConscriptSniperNCWLGear
+  alwaysUseSpawner: true
+  icon: "JobIconUnionfallNCWLSpecialist"
+  requirements:
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - Muted
+        - WheelchairBound
+  requireAdminNotify: false
+  supervisors: job-supervisors-conscript-ncwl
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ncwl-specialist
+      - type: HullrotFaction
+        faction: NCWL
+  access:
+  - Command
+  - Maintenance
+  - Service
+  - NCWLGeneral
+  - NCWLJail
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+  - NCWLAdministrator
+  - NCWLFunds
+  - NCWLKommissar
+  - NCWLArmory
+  - NCWLCommand
+
+- type: startingGear
+  id: ConscriptSniperNCWLGear
+  equipment:
+    head: ClothingHeadHelmetNCWLBasic
+    neck: ClothingNeckIFFOrange
+    mask: ClothingMaskSyndicateFacemask
+    jumpsuit: ClothingUniformJumpsuitNCWL
+    outerClothing: ClothingOuterArmorNCWLHeavyCarapace
+    shoes: ClothingShoesBootsMagNCWL
+    belt: ClothingBeltNCWLPouchesFilledSniper
+    back: ClothingBackpackNCWL
+    pocket1: DoubleEmergencyOxygenTankFilled
+    pocket2: GrenadeFlashBang
+    ears: ClothingHeadsetNCWL
+    eyes: ClothingEyesGlassesNCWL
+    id: SanitarPDA
+    suitstorage: WeaponAntimaterielNCWLHayha
+    gloves: ClothingHandsGlovesCombat
+  inhand:
+    - BookUnionfallNCWLGuide
+    - BoxRoundsAntiMateriel
+  storage:
+    back:
+      - VoidsuitKitNCWL
+      - BoxMRE
+      - BoxFlare
+      - WeaponPistolT91
+

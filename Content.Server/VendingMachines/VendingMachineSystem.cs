@@ -88,7 +88,7 @@ namespace Content.Server.VendingMachines
                     continue;
                 }
 
-                price += entry.Amount * _pricing.GetEstimatedPrice(proto);
+                price += entry.Amount * _pricing.GetEstimatedPrice(proto) * component.GlobalPriceMod;
             }
 
             args.Price += price;
@@ -122,7 +122,7 @@ namespace Content.Server.VendingMachines
             {
                 if (!_prototypeManager.TryIndex<EntityPrototype>(thing.ID, out var proto))
                     return;
-                thing.Price = _pricing.GetEstimatedPrice(proto);
+                thing.Price = _pricing.GetEstimatedPrice(proto) * component.GlobalPriceMod;
             }
 
             _userInterfaceSystem.SetUiState(uid, VendingMachineUiKey.Key, state);
@@ -338,7 +338,7 @@ namespace Content.Server.VendingMachines
             if (string.IsNullOrEmpty(entry.ID))
                 return;
 
-            var price = _pricing.GetEstimatedPrice(proto);
+            var price = _pricing.GetEstimatedPrice(proto) * vendComponent.GlobalPriceMod;
 
             if (price > bank.Balance)
             {

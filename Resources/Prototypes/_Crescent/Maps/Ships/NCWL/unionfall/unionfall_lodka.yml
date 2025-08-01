@@ -1,0 +1,28 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: UnionfallLodka
+  name: NCWL Lodka
+  description: A communard armored transport ship.
+  price: 25000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Unionfall/NCWL/unionfall_lodka.yml
+
+- type: gameMap
+  id: UnionfallLodka
+  mapName: 'NCWL Lodka'
+  mapPath: /Maps/_Crescent/Unionfall/NCWL/unionfall_lodka.yml
+  minPlayers: 0
+  stations:
+    UnionfallLodka:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Lodka {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-utility

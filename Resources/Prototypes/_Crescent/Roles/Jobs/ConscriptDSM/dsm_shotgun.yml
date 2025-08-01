@@ -1,0 +1,67 @@
+- type: job
+  id: ConscriptShotgunDSM
+  name: job-name-conscript-dsm-shotgun
+  description: job-description-conscript-dsm-shotgun #change me later
+  playTimeTracker: ConscriptJobShotgunDSM
+  weight: 4
+  startingGear: ConscriptShotgunDSMGear
+  alwaysUseSpawner: true
+  icon: "JobIconUnionfallDSMCQC"
+  requirements:
+    - !type:FactionRequirement
+      factionID: "DSM"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - Muted
+        - WheelchairBound
+  requireAdminNotify: false
+  supervisors: job-supervisors-conscript-dsm
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-dsm-cqc
+      - type: HullrotFaction
+        faction: DSM
+  access:
+  - Command
+  - Maintenance
+  - Service
+  - DSMGeneral
+  - DSMJail
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+  - Empire
+  - DSMArmory
+  - DSMCommand
+
+- type: startingGear
+  id: ConscriptShotgunDSMGear
+  equipment:
+    head: ClothingHeadHelmetImperialTrooperHelmet
+    neck: ClothingNeckIFFCyan
+    mask: ClothingMaskImperialCombatGasmask
+    jumpsuit: ClothingUniformJumpsuitImperialCombat
+    outerClothing: ClothingOuterArmorImperialTrooperArmor
+    shoes: ClothingShoesBootsMagDSM
+    belt: ClothingBeltAssaultFilledShotgun
+    gloves: ClothingHandsGlovesImperialLonggloves
+    back: ClothingBackpackDSM
+    pocket1: DoubleEmergencyOxygenTankFilled
+    pocket2: ExGrenade
+    ears: ClothingHeadsetEmpire
+    id: LevymanPDA
+    suitstorage: WeaponShotgunDSMMatusa
+    eyes: ClothingEyesHudSecurity
+  inhand:
+    - BookUnionfallDSMGuide
+  storage:
+    back:
+      - VoidsuitKitDSM
+      - BoxMRE
+      - BoxFlare
+      - WeaponPistolComplianceImperial

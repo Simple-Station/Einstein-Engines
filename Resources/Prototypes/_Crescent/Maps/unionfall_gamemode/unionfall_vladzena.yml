@@ -1,0 +1,25 @@
+- type: gameMap
+  id: UnionfallVladzena
+  mapName: 'NT Outpost Vladzena'
+  mapPath: /Maps/_Crescent/Unionfall/unionfall_vladzena.yml
+  minPlayers: 0
+  stations:
+    UnionfallVladzena:
+      stationProto: StandardCrescentPOI
+      gridComponents:
+        - type: BlockShipWeaponProjectileGrid
+        - type: PreventPilot
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: outpost
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NT Outpost Vladzena'
+        - type: VesselDesignation
+          designation: vessel-designation-outpost
+        - type: VesselDescription
+          description: An ancient NT refueling station, left derelict. Has been drifting for centuries. Spacer myth says it's cursed.
+        - type: Grammar
+          attributes:
+            proper: true
