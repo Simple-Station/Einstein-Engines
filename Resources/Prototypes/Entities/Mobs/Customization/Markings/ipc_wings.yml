@@ -1,8 +1,8 @@
 - type: marking
-  id: WingsSkeleton
+  id: WingsRobotic
   bodyPart: Wings
   markingCategory: Wings
-  speciesRestriction: [Plasmaman]
+  speciesRestriction: [IPC]
   sprites:
     - sprite: Mobs/Customization/wings64x34.rsi
-      state: skeleton
+      state: robotic
