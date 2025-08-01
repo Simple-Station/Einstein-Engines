@@ -859,6 +859,140 @@
       - state: green
       - state: passenger
 
+# CONSCRIPT - NCWL
+
+- type: entity
+  id: SpawnPointConscriptShipCaptainNCWL
+  parent: SpawnPointJobBase
+  name: ConscriptShipCaptainNCWL
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptShipCaptainNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointConscriptShipCrewNCWL
+  parent: SpawnPointJobBase
+  name: ConscriptShipCrewNCWL
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptShipCrewNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointConscriptLeaderNCWL
+  parent: SpawnPointJobBase
+  name: ConscriptLeaderNCWL
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptLeaderNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointConscriptOfficerNCWL
+  parent: SpawnPointJobBase
+  name: ConscriptOfficerNCWL
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptOfficerNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointConscriptSniperNCWL
+  parent: SpawnPointJobBase
+  name: ConscriptSniperNCWL
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptSniperNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointConscriptGunnerNCWL
+  parent: SpawnPointJobBase
+  name: ConscriptGunnerNCWL
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptGunnerNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointConscriptDoctorNCWL
+  parent: SpawnPointJobBase
+  name: ConscriptDoctorNCWL
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptDoctorNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointConscriptShotgunNCWL
+  parent: SpawnPointJobBase
+  name: ConscriptShotgunNCWL
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptShotgunNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointConscriptSubmachinegunNCWL
+  parent: SpawnPointJobBase
+  name: ConscriptSubmachinegunNCWL
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptSubmachinegunNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointConscriptRiflemanNCWL
+  parent: SpawnPointJobBase
+  name: ConscriptRiflemanNCWL
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptRiflemanNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointConscriptCadetNCWL
+  parent: SpawnPointJobBase
+  name: ConscriptCadetNCWL
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptCadetNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
 - type: entity
   id: SpawnPointStewardATH
   parent: SpawnPointJobBase
@@ -954,3 +1088,138 @@
     layers:
     - state: green
     - state: passenger
+
+# CONSCRIPT - DSM
+
+- type: entity
+  id: SpawnPointConscriptShipCaptainDSM
+  parent: SpawnPointJobBase
+  name: ConscriptShipCaptainDSM
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptShipCaptainDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointConscriptShipCrewDSM
+  parent: SpawnPointJobBase
+  name: ConscriptShipCrewDSM
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptShipCrewDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointConscriptLeaderDSM
+  parent: SpawnPointJobBase
+  name: ConscriptLeaderDSM
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptLeaderDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointConscriptOfficerDSM
+  parent: SpawnPointJobBase
+  name: ConscriptOfficerDSM
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptOfficerDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointConscriptSniperDSM
+  parent: SpawnPointJobBase
+  name: ConscriptSniperDSM
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptSniperDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointConscriptGunnerDSM
+  parent: SpawnPointJobBase
+  name: ConscriptGunnerDSM
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptGunnerDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointConscriptDoctorDSM
+  parent: SpawnPointJobBase
+  name: ConscriptDoctorDSM
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptDoctorDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointConscriptShotgunDSM
+  parent: SpawnPointJobBase
+  name: ConscriptShotgunDSM
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptShotgunDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointConscriptSubmachinegunDSM
+  parent: SpawnPointJobBase
+  name: ConscriptSubmachinegunDSM
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptSubmachinegunDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointConscriptRiflemanDSM
+  parent: SpawnPointJobBase
+  name: ConscriptRiflemanDSM
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptRiflemanDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointConscriptCadetDSM
+  parent: SpawnPointJobBase
+  name: ConscriptCadetDSM
+  components:
+  - type: SpawnPoint
+    job_id: ConscriptCadetDSM
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+

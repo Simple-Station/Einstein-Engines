@@ -1,0 +1,93 @@
+- type: job
+  id: ConscriptShipCaptainDSM
+  name: job-name-conscript-dsm-ship-captain
+  description: job-description-conscript-dsm-ship-captain
+  playTimeTracker: ConscriptJobShipCaptainDSM
+  requirements:
+    - !type:FactionRequirement
+      factionID: "DSM"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
+  weight: 11
+  startingGear: ConscriptShipCaptainDSMGear
+  alwaysUseSpawner: true
+  icon: "JobIconUnionfallDSMCaptain"
+  requireAdminNotify: true
+  supervisors: job-supervisors-conscript-dsm-high
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-dsm-captain
+      - type: HullrotFaction
+        faction: DSM
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Mercenary # Frontier
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - DSMGeneral
+  - Service
+  - DSMJail
+  - DSMArmory
+  - DSMCommand
+  - Empire
+
+- type: startingGear
+  id: ConscriptShipCaptainDSMGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryCaptain
+    neck: ClothingNeckIFFCyan
+    back: ClothingBackpackDSM
+    shoes: ClothingShoesBootsMagDSM
+    head: ClothingHeadHatImperialPeakedCap
+    outerClothing: ClothingOuterCoatImperialParade
+    id: KnightPDA
+    belt: ClothingBeltAssaultFilledCrew
+    pocket1: DoubleEmergencyOxygenTankFilled
+    ears: ClothingHeadsetEmpire
+    eyes: ClothingEyesHudSecurity
+  storage:
+    back:
+      - VoidsuitKitDSM
+      - BoxMRE
+      - WeaponPistolNeoVolker

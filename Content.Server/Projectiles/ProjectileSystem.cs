@@ -1,6 +1,8 @@
 using Content.Server.Administration.Logs;
+using Content.Server.Body.Systems;
 using Content.Server.Damage.Systems;
 using Content.Server.Effects;
+using Content.Server.Explosion.EntitySystems;
 using Content.Server.Weapons.Ranged.Systems;
 using Content.Shared._Crescent;
 using Content.Shared._Crescent.ShipShields;
@@ -9,6 +11,7 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Events;
 using Content.Shared.Database;
 using Content.Shared.Projectiles;
+using Robust.Server.GameObjects;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
@@ -22,6 +25,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly GunSystem _guns = default!;
     [Dependency] private readonly SharedCameraRecoilSystem _sharedCameraRecoil = default!;
+    [Dependency] private readonly BodySystem _bodySystem = default!;
 
     public override void Initialize()
     {
@@ -49,6 +53,11 @@ public sealed class ProjectileSystem : SharedProjectileSystem
 
         var ev = new ProjectileHitEvent(component.Damage, target, component.Shooter);
         RaiseLocalEvent(uid, ref ev);
+
+        if (component.gibsOnHit) //used for antimateriel rifles
+        {
+            _bodySystem.GibBody(target);
+        }
 
         var otherName = ToPrettyString(target);
         var modifiedDamage = _damageableSystem.TryChangeDamage(target, ev.Damage, component.IgnoreResistances, origin: component.Shooter, armorPen: component.HullrotArmorPenetration, stopPower: component.stoppingPower);

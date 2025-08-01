@@ -186,6 +186,12 @@ namespace Content.Shared.VendingMachines
         /// </summary>
         [DataField("loopDeny")]
         public bool LoopDenyAnimation = true;
+
+        /// <summary>
+        /// HULLROT: every price in the vending machine is multiplied by this. useful for making shit more/less expensive. set to 0 to make everything free.
+        /// </summary>
+        [DataField("globalPriceMod")]
+        public float GlobalPriceMod = 1;
         #endregion
     }
 

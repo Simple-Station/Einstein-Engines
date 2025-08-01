@@ -34,8 +34,32 @@
     - Redemptor
     - Impel
     - Gnosis
+    - Sunesis
+
+- type: entity
+  id: NemesisMothershipComputer
+  parent: BaseMothershipComputer
+  name: nemesis internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Imparator
+    - Jannissary
+    - Conquest
+    - Valor
     - Praxis
     - Torturer
+
+- type: entity
+  id: UnionfallNemesisMothershipComputer
+  parent: BaseMothershipComputer
+  name: nemesis internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - UnionfallConquest
+    - UnionfallValor
+
 
 - type: entity
   id: InterdyneMothershipComputer
@@ -99,6 +123,16 @@
     shuttles:
     - Khopesh
     - Broadsword
+
+- type: entity
+  id: UnionfallClementineMothershipComputer
+  parent: BaseMothershipComputer
+  name: clementine internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - UnionfallKhopesh
+    - UnionfallBroadsword
 
 - type: entity
   id: JackalCarrierMothershipComputer

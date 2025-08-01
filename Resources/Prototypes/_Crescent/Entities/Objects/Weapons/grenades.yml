@@ -12,3 +12,562 @@
     smokePrototype: AluminiumMetalFoam
   - type: StaticPrice
     price: 350
+
+- type: entity
+  name: M14 Incendiary grenade
+  description: A simple incendiary grenade with a TH-3 Thermalite composition, capable of burning at temperatures up to 2,500 degrees Celsius.
+  parent: GrenadeBase
+  id: M14IncendiaryHandgrenade
+  components:
+  - type: OnUseTimerTrigger
+    delay: 2.5
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Grenades/incendiary.rsi
+  - type: SmokeOnTrigger
+    duration: 13
+    spreadAmount: 9
+    solution:
+      reagents:
+      - ReagentId: Phlogiston
+        Quantity: 20
+  - type: TimerTriggerVisuals
+    primingSound:
+      path: "/Audio/_Crescent/Weapons/Grenades/trigger1.ogg"
+  - type: SoundOnTrigger
+    sound: /Audio/_Crescent/Weapons/Grenades/smoke10s.ogg
+  - type: DeleteOnTrigger
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Grenades/grab1.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Grenades/drop1.ogg
+  - type: EmitSoundOnLand
+    sound:
+      collection: SmokeGrenadeSFX
+
+- type: entity
+  name: M18 Smoke grenade
+  description: A simple grey smoke grenade, canned smoke for your convenience. At least, you think it’s canned smoke, you’re not entirely sure how these things actually work.
+  parent: GrenadeBase
+  id: M18SmokeHandgrenade
+  components:
+  - type: OnUseTimerTrigger
+    delay: 2.5
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Grenades/smoke.rsi
+  - type: SmokeOnTrigger
+    duration: 13
+    spreadAmount: 18
+  - type: TimerTriggerVisuals
+    primingSound:
+      path: "/Audio/_Crescent/Weapons/Grenades/trigger1.ogg"
+  - type: SoundOnTrigger
+    sound: /Audio/_Crescent/Weapons/Grenades/smoke10s.ogg
+  - type: DeleteOnTrigger
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Grenades/grab1.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Grenades/drop1.ogg
+  - type: EmitSoundOnLand
+    sound:
+      collection: SmokeGrenadeSFX
+
+- type: entity
+  name: F-1 Grenade
+  description: An old, simple, and brutally effective grenade. If it ain't broke, don't fix it.
+  parent: GrenadeBase
+  id: F1Handgrenade
+  components:
+  - type: OnUseTimerTrigger
+    delay: 4
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Grenades/f1.rsi
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 10
+    intensitySlope: 3
+    totalIntensity: 120
+    canCreateVacuum: false
+  - type: TimerTriggerVisuals
+    primingSound:
+      path: "/Audio/_Crescent/Weapons/Grenades/trigger1.ogg"
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Grenades/grab1.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Grenades/drop1.ogg
+  - type: EmitSoundOnLand
+    sound:
+      collection: FragGrenadeSFX
+
+- type: entity
+  name: NCSP RGD-5 Grenade
+  description: A grenade built from ancient Terran schematics, painted in NSCP colors.
+  parent: GrenadeBase
+  id: NCSPRGD5Handgrenade
+  components:
+  - type: OnUseTimerTrigger
+    delay: 3.5
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Grenades/ncsp_rgd5.rsi
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 10
+    intensitySlope: 3
+    totalIntensity: 120 
+    canCreateVacuum: false
+  - type: TimerTriggerVisuals
+    primingSound:
+      path: "/Audio/_Crescent/Weapons/Grenades/trigger1.ogg"
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Grenades/grab1.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Grenades/drop1.ogg
+  - type: EmitSoundOnLand
+    sound:
+      collection: FragGrenadeSFX
+
+- type: entity
+  name: NCSP RGD-2B Smoke grenade
+  description: A cheap smoke grenade that resembles a stick of dynamite more than a proper smoke bomb. Produces a small but long-lasting smoke cloud.
+  parent: GrenadeBase
+  id: TFSCRGD2BSmokeHandgrenade
+  components:
+  - type: OnUseTimerTrigger
+    delay: 2.5
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Grenades/ncsp_smoke.rsi
+  - type: SmokeOnTrigger
+    duration: 20
+    spreadAmount: 9
+  - type: DeleteOnTrigger
+  - type: TimerTriggerVisuals
+    primingSound:
+      path: "/Audio/_Crescent/Weapons/Grenades/trigger3.ogg"
+  - type: SoundOnTrigger
+    sound: /Audio/_Crescent/Weapons/Grenades/smoke20s.ogg
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Grenades/grab2.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Grenades/drop2.ogg
+  - type: EmitSoundOnLand
+    sound:
+      collection: SmokeGrenadeSFX
+
+- type: entity
+  name: NCWL RGD-55M13 Grenade
+  description: A heavily modernized grenade with roots in the RGD-5.
+  parent: GrenadeBase
+  id: RGD55M13Handgrenade
+  components:
+  - type: OnUseTimerTrigger
+    delay: 4
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Grenades/ncwl_rgd55.rsi
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 10
+    intensitySlope: 3
+    totalIntensity: 140
+    canCreateVacuum: false
+  - type: TimerTriggerVisuals
+    primingSound:
+      path: "/Audio/_Crescent/Weapons/Grenades/trigger1.ogg"
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Grenades/grab1.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Grenades/drop1.ogg
+  - type: EmitSoundOnLand
+    sound:
+      collection: FragGrenadeSFX
+
+- type: entity
+  name: NCWL Zaryia-4M Flashbang
+  description: A modernized version of the Zaryia-4 flashbang, adorned with the NCWL color.
+  parent: GrenadeBase
+  id: ZaryiaFlashbangHandgrenade
+  components:
+  - type: OnUseTimerTrigger
+    delay: 2
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Grenades/ncwl_zaryia.rsi
+  - type: FlashOnTrigger
+    range: 5
+  - type: SoundOnTrigger
+    sound:
+      path: "/Audio/_Crescent/Weapons/Grenades/flashbang.ogg"
+  - type: TimerTriggerVisuals
+    primingSound:
+      path: "/Audio/_Crescent/Weapons/Grenades/trigger1.ogg"
+  - type: DeleteOnTrigger
+  - type: SpawnOnTrigger
+    proto: GrenadeFlashEffect
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Grenades/grab1.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Grenades/drop1.ogg
+  - type: EmitSoundOnLand
+    sound:
+      collection: FlashGrenadeSFX
+
+- type: entity
+  name: DSM G-8 Neurotoxin grenade
+  description: A smoke grenade filled with a neurotoxin, that creates a small poisonous cloud.
+  parent: GrenadeBase
+  id: DSMG8PoisonHandgrenade
+  components:
+  - type: OnUseTimerTrigger
+    delay: 3
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Grenades/dsm_smoke.rsi
+  - type: SmokeOnTrigger
+    duration: 13
+    spreadAmount: 8
+    solution:
+      reagents:
+      - ReagentId: NorepinephricAcid
+        Quantity: 20
+      - ReagentId: Cyanide
+        Quantity: 20
+      - ReagentId: Impedrezene
+        Quantity: 20
+      - ReagentId: LiftLoversSpecial
+        Quantity: 20
+      - ReagentId: ChloralHydrate
+        Quantity: 20
+      - ReagentId: HeartbreakerToxin
+        Quantity: 10
+      - ReagentId: Lexorin
+        Quantity: 10
+  - type: DeleteOnTrigger
+  - type: TimerTriggerVisuals
+    primingSound:
+      path: "/Audio/_Crescent/Weapons/Grenades/trigger1.ogg"
+  - type: SoundOnTrigger
+    sound: /Audio/_Crescent/Weapons/Grenades/smoke10s.ogg
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Grenades/grab1.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Grenades/drop1.ogg
+  - type: EmitSoundOnLand
+    sound:
+      collection: SmokeGrenadeSFX
+
+- type: entity
+  name: DSM G-4 Twist-cap grenade
+  description: A grenade with a large explosive payload and a unique twist-cap fuse.
+  parent: GrenadeBase
+  id: DSMG4TwistcapHandgrenade
+  components:
+  - type: OnUseTimerTrigger
+    delay: 5
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Grenades/dsm_twist.rsi
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 12
+    intensitySlope: 2
+    totalIntensity: 180
+    canCreateVacuum: false
+  - type: TimerTriggerVisuals
+    primingSound:
+      path: "/Audio/_Crescent/Weapons/Grenades/trigger2.ogg"
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Grenades/grab1.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Grenades/drop1.ogg
+  - type: EmitSoundOnLand
+    sound:
+      collection: FragGrenadeSFX
+
+- type: entity
+  name: DSM G-3 Stick grenade
+  description: A grenade with large stick attached to improve the throwing distance. It can be used as a last-resort mace.
+  parent: GrenadeBase
+  id: DSMG3StickHandgrenade
+  components:
+  - type: OnUseTimerTrigger
+    delay: 3.5
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Grenades/dsm_stick.rsi
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 10
+    intensitySlope: 3
+    totalIntensity: 120
+    canCreateVacuum: false
+  - type: DamageOnHit 
+    damage:
+      types:
+        Blunt: 2.5
+  - type: MeleeWeapon
+    range: 1
+    wideAnimationRotation: 0
+    damage:
+      types:
+        Blunt: 15
+    bluntStaminaDamageFactor: 1.5
+    heavyRateModifier: 1.75
+    heavyDamageBaseModifier: 1.5
+    heavyStaminaCost: 5
+    angle: 105
+  - type: DamageOtherOnHit
+    staminaCost: 7
+  - type: TimerTriggerVisuals
+    primingSound:
+      path: "/Audio/_Crescent/Weapons/Grenades/trigger2.ogg"
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Grenades/grab1.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Grenades/drop1.ogg
+  - type: EmitSoundOnLand
+    sound:
+      collection: SmokeGrenadeSFX
+
+- type: entity
+  name: PTA He-Im-OFG-31 Impact grenade
+  description: A small and weak grenade with a impact fuse that can be armed and disarmed. Manufactured by Pang Tai Arms.
+  parent: BaseItem
+  id: PTAImpactHandgrenade
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Grenades/pta_impact.rsi
+    layers:
+    - state: icon
+    - state: primed
+      visible: false
+      shader: unshaded
+      map: ["enum.ToggleVisuals.Layer"]
+  - type: Appearance
+  - type: AnimationPlayer
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+  - type: ItemToggle
+    predictable: false
+    soundActivate:
+      path: /Audio/_Crescent/Weapons/Grenades/trigger2.ogg
+    soundDeactivate:
+      path: /Audio/_Crescent/Weapons/Grenades/disable1.ogg
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:TriggerBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: ComponentToggler
+    components:
+    - type: DamageOnLand
+      damage:
+        types:
+          Blunt: 50
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 9
+    intensitySlope: 3
+    totalIntensity: 80
+    canCreateVacuum: false
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Grenades/grab1.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Grenades/drop1.ogg
+  - type: EmitSoundOnLand
+    sound:
+      collection: FragGrenadeSFX
+
+- type: entity
+  name: PTA Cp-Tf-SG-32 WP Smoke grenade
+  description: A grenade that disperses a thick cloud of white phosphorus. Manufactured by Pang Tai Arms.
+  parent: GrenadeBase
+  id: PTAWarcrimeHandgrenade
+  components:
+  - type: OnUseTimerTrigger
+    delay: 4
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Grenades/pta_wp.rsi
+  - type: SmokeOnTrigger
+    duration: 13
+    spreadAmount: 9
+    solution:
+      reagents:
+      - ReagentId: PolytrinicAcid
+        Quantity: 20
+      - ReagentId: TearGas
+        Quantity: 40
+      - ReagentId: Phlogiston
+        Quantity: 40
+  - type: TimerTriggerVisuals
+    primingSound:
+      path: "/Audio/_Crescent/Weapons/Grenades/trigger1.ogg"
+  - type: SoundOnTrigger
+    sound: /Audio/_Crescent/Weapons/Grenades/smoke10s.ogg
+  - type: DeleteOnTrigger
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Grenades/grab1.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Grenades/drop1.ogg
+  - type: EmitSoundOnLand
+    sound:
+      collection: SmokeGrenadeSFX
+
+- type: entity
+  name: SHI HG-13M2 Mini-grenade
+  description: A small and weak grenade but still devastating if one explodes point plank. Made by Shinora 
+  parent: GrenadeBase
+  id: HG13M2MiniHandgrenade
+  components:
+  - type: OnUseTimerTrigger
+    delay: 3.5
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Grenades/shi_mini.rsi
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 9
+    intensitySlope: 3
+    totalIntensity: 80
+    canCreateVacuum: false
+  - type: TimerTriggerVisuals
+    primingSound:
+      path: "/Audio/_Crescent/Weapons/Grenades/trigger1.ogg"
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Grenades/grab1.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Grenades/drop1.ogg
+  - type: EmitSoundOnLand
+    sound:
+      collection: FragGrenadeSFX
+
+- type: entity
+  name: SHI HG-23 Electromagnetic grenade
+  description: A small electromagnetic grenade capable of short circuiting electronics.
+  parent: GrenadeBase
+  id: SHIHG32EMPHandgrenade
+  components:
+  - type: Item
+    size: Tiny
+  - type: OnUseTimerTrigger
+    delay: 3.5
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Grenades/shi_emp.rsi
+  - type: EmpOnTrigger
+    range: 2
+    energyConsumption: 2700000
+    canCreateVacuum: false
+  - type: DeleteOnTrigger
+  - type: TimerTriggerVisuals
+    primingSound:
+      path: "/Audio/_Crescent/Weapons/Grenades/trigger1.ogg"
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Grenades/grab1.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Grenades/drop1.ogg
+  - type: EmitSoundOnLand
+    sound:
+      collection: FlashGrenadeSFX
+
+- type: entity
+  name: SHI HG-17 Smart-grenade
+  description: A smart grenade with a variable time fuse, made by Shinora.
+  parent: GrenadeBase
+  id: SHIHG17SmartHandgrenade
+  components:
+  - type: OnUseTimerTrigger
+    delay: 2.5
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Grenades/shi_smart.rsi
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 10
+    intensitySlope: 3
+    totalIntensity: 120
+    canCreateVacuum: false
+  - type: TimerTriggerVisuals
+    primingSound:
+      path: "/Audio/_Crescent/Weapons/Grenades/trigger2.ogg"
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Grenades/grab1.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Grenades/drop1.ogg
+  - type: EmitSoundOnLand
+    sound:
+      collection: FragGrenadeSFX
+
+- type: entity
+  name: SHI HG-3 CS Gas grenade 
+  description: A CS gas grenade manufactured by Shinora. A reliable design that's seen frequent use in worker union liquidations.
+  parent: GrenadeBase
+  id: SHIHG3TearGasHandgrenade
+  components:
+  - type: OnUseTimerTrigger
+    delay: 3.5
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Grenades/shi_tear.rsi
+  - type: SmokeOnTrigger
+    duration: 13
+    spreadAmount: 30
+    solution:
+      reagents:
+      - ReagentId: TearGas
+        Quantity: 50
+  - type: TimerTriggerVisuals
+    primingSound:
+      path: "/Audio/_Crescent/Weapons/Grenades/trigger1.ogg"
+  - type: SoundOnTrigger
+    sound: /Audio/_Crescent/Weapons/Grenades/smoke10s.ogg
+  - type: DeleteOnTrigger
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Grenades/grab1.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Grenades/drop1.ogg
+  - type: EmitSoundOnLand
+    sound:
+      collection: SmokeGrenadeSFX
+
+- type: entity
+  name: SHI HG-07 Flashbang
+  description: A flashbang manufactured by Shinora. A reliable design that's seen frequent use in worker union liquidations.
+  parent: GrenadeBase
+  id: SHIHG7FlashbangHandgrenade
+  components:
+  - type: OnUseTimerTrigger
+    delay: 2.5
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Grenades/shi_flash.rsi
+  - type: FlashOnTrigger
+    range: 7
+  - type: SoundOnTrigger
+    sound:
+      path: "/Audio/_Crescent/Weapons/Grenades/flashbang.ogg"
+  - type: TimerTriggerVisuals
+    primingSound:
+      path: "/Audio/_Crescent/Weapons/Grenades/trigger1.ogg"
+  - type: DeleteOnTrigger
+  - type: SpawnOnTrigger
+    proto: GrenadeFlashEffect
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Crescent/Weapons/Grenades/grab1.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_Crescent/Weapons/Grenades/drop1.ogg
+  - type: EmitSoundOnLand
+    sound:
+      collection: FlashGrenadeSFX

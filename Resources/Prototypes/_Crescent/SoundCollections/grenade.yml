@@ -1,0 +1,22 @@
+- type: soundCollection
+  id: FragGrenadeSFX
+  files:
+  - /Audio/_Crescent/Weapons/Grenades/bounce_frag/bounce_1.ogg
+  - /Audio/_Crescent/Weapons/Grenades/bounce_frag/bounce_2.ogg
+  - /Audio/_Crescent/Weapons/Grenades/bounce_frag/bounce_3.ogg
+
+- type: soundCollection
+  id: FlashGrenadeSFX
+  files:
+  - /Audio/_Crescent/Weapons/Grenades/bounce_flash/bounce_1.ogg
+  - /Audio/_Crescent/Weapons/Grenades/bounce_flash/bounce_2.ogg
+  - /Audio/_Crescent/Weapons/Grenades/bounce_flash/bounce_3.ogg
+  - /Audio/_Crescent/Weapons/Grenades/bounce_flash/bounce_4.ogg
+
+- type: soundCollection
+  id: SmokeGrenadeSFX
+  files:
+  - /Audio/_Crescent/Weapons/Grenades/bounce_smoke/bounce_1.ogg
+  - /Audio/_Crescent/Weapons/Grenades/bounce_smoke/bounce_2.ogg
+  - /Audio/_Crescent/Weapons/Grenades/bounce_smoke/bounce_3.ogg
+  - /Audio/_Crescent/Weapons/Grenades/bounce_smoke/bounce_4.ogg

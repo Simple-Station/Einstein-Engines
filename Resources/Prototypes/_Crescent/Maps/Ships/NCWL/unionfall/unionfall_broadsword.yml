@@ -1,0 +1,28 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: UnionfallBroadsword
+  name: NCWL Broadsword
+  description: An ultralight communard bomber.
+  price: 12500
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Unionfall/NCWL/unionfall_broadsword.yml
+
+- type: gameMap
+  id: UnionfallBroadsword
+  mapName: 'NCWL Broadsword'
+  mapPath: /Maps/_Crescent/Unionfall/NCWL/unionfall_broadsword.yml
+  minPlayers: 0
+  stations:
+    UnionfallBroadsword:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Broadsword {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-bomber
