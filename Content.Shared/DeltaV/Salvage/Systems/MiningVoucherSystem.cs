@@ -1,4 +1,4 @@
-using Content.Shared._DV.Salvage.Components;
+using Content.Shared.DeltaV.Salvage.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
@@ -7,7 +7,7 @@ using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
-namespace Content.Shared._DV.Salvage.Systems;
+namespace Content.Shared.DeltaV.Salvage.Systems;
 
 public sealed class MiningVoucherSystem : EntitySystem
 {

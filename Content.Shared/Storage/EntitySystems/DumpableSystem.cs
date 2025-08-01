@@ -1,5 +1,5 @@
 using System.Linq;
-using Content.Shared._DV.SmartFridge; // DeltaV - ough why do you not use events for this
+using Content.Shared.DeltaV.SmartFridge;
 using Content.Shared.Disposal;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
@@ -23,8 +23,8 @@ public sealed class DumpableSystem : EntitySystem
     [Dependency] private readonly SharedDisposalUnitSystem _disposalUnitSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!; // DeltaV - ough why do you not use events for this
-    [Dependency] private readonly SmartFridgeSystem _smartFridge = default!; // Frontier
+    [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly SmartFridgeSystem _smartFridge = default!;
 
     private EntityQuery<ItemComponent> _itemQuery;
 

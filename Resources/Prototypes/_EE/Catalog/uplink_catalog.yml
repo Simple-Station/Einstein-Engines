@@ -3,6 +3,36 @@
   name: store-category-faction
   priority: 12
 
+# Wearables
+
+- type: listing
+  id: UplinkHardsuitBloodRedModsuit
+  name: uplink-modsuit-bloodred-name
+  description: uplink-modsuit-bloodred-desc
+  icon: { sprite: /Textures/_EE/Clothing/Modsuit/bloodredmodsuit.rsi, state: chestplate }
+  productEntity: BloodredModsuitBackpack
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 15
+  cost:
+    Telecrystal: 25
+  categories:
+  - UplinkWearables
+
+- type: listing
+  id: UplinkHardsuitSyndicateEliteModsuit
+  name: uplink-modsuit-elitemodsuit-name
+  description: uplink-modsuit-elitemodsuit-desc
+  icon: { sprite: /Textures/_EE/Clothing/Modsuit/syndicateelitemodsuit.rsi, state: chestplate }
+  productEntity: EliteModsuitBackpack
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 35
+  cost:
+    Telecrystal: 70
+  categories:
+  - UplinkWearables
+
 # Faction Gear Loadouts
 # Solarian Alliance
 - type: listing
