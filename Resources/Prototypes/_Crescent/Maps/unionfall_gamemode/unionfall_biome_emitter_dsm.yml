@@ -1,0 +1,25 @@
+- type: gameMap
+  id: UnionfallBiomeEmitterDSM
+  mapName: 'Biome Emitter DSM'
+  mapPath: /Maps/_Crescent/Unionfall/unionfall_biome_emitter_dsm.yml
+  minPlayers: 0
+  stations:
+    UnionfallBiomeEmitterDSM:
+      stationProto: StandardCrescentPOI
+      gridComponents:
+        - type: BlockShipWeaponProjectileGrid
+        - type: PreventPilot
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: outpost
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Biome Emitter DSM'
+        - type: VesselDesignation
+          designation: vessel-designation-outpost
+        - type: VesselDescription
+          description: what
+        - type: Grammar
+          attributes:
+            proper: true

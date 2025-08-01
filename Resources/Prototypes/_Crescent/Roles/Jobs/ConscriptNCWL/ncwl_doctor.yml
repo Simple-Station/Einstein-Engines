@@ -1,0 +1,77 @@
+- type: job
+  id: ConscriptDoctorNCWL
+  name: job-name-conscript-ncwl-doctor
+  description: job-description-conscript-ncwl-doctor
+  playTimeTracker: ConscriptJobDoctorNCWL
+  requirements:
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - Blindness
+        - WheelchairBound
+  weight: 7
+  startingGear: ConscriptDoctorNCWLGear
+  alwaysUseSpawner: true
+  icon: "JobIconUnionfallNCWLMedic"
+  requireAdminNotify: false
+  supervisors: job-supervisors-conscript-ncwl
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ncwl-doctor
+      - type: HullrotFaction
+        faction: NCWL
+  access:
+  - Command
+  - Maintenance
+  - NCWLGeneral
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+  - NCWLAdministrator
+  - NCWLFunds
+  - NCWLKommissar
+  - NCWLArmory
+  - NCWLCommand
+
+- type: startingGear
+  id: ConscriptDoctorNCWLGear
+  equipment:
+    mask: ClothingMaskPilot
+    neck: ClothingNeckIFFOrange
+    jumpsuit: ClothingUniformJumpsuitNCWLMedic
+    shoes: ClothingShoesBootsMagNCWL
+    id: DoktorPDA
+    ears: ClothingHeadsetNCWL
+    belt: ClothingBeltNCWLPouchesFilledMedic
+    pocket1: DoubleEmergencyOxygenTankFilled
+    pocket2: ParamedHypo
+    outerClothing: ClothingOuterArmorNCWLCarapaceDoktor
+    head: ClothingHeadHatNCWLCapsoftMedical
+    suitstorage: WeaponPistolT91
+    back: ClothingBackpackSatchelMedical
+    gloves: ClothingHandsGlovesNitrile
+    eyes: ClothingEyesHudMedSec
+  inhand:
+    - BookUnionfallNCWLGuide
+    - CartridgePuncturase
+  storage:
+    back:
+      - DefibrillatorCompact
+      - VoidsuitKitNCWL
+      - BoxFlare
+      - BoxMRE
+      - MedkitCombatFilled
+      - OmnizineChemistryBottle
+      - Bloodpack
+      - CartridgePuncturase
+      - CartridgePuncturase
+      - CartridgePuncturase
+      - CartridgePuncturase
+      - CartridgePuncturase

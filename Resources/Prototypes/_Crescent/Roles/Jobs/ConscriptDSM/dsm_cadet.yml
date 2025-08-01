@@ -1,0 +1,67 @@
+- type: job
+  id: ConscriptCadetDSM
+  name: job-name-conscript-dsm-cadet
+  description: job-description-conscript-dsm-cadet #change me later
+  playTimeTracker: ConscriptJobCadetDSM
+  weight: 1
+  startingGear: ConscriptCadetDSMGear
+  alwaysUseSpawner: true
+  icon: "JobIconUnionfallDSMCadet"
+  requirements:
+    - !type:FactionRequirement
+      factionID: "DSM"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - Muted
+        - WheelchairBound
+  requireAdminNotify: false
+  supervisors: job-supervisors-conscript-dsm
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-dsm-new
+      - type: HullrotFaction
+        faction: DSM
+  access:
+  - Command
+  - Maintenance
+  - Service
+  - DSMGeneral
+  - DSMJail
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+  - Empire
+  - DSMArmory
+  - DSMCommand
+
+- type: startingGear
+  id: ConscriptCadetDSMGear
+  equipment:
+    head: ClothingHeadHelmetRiot
+    neck: ClothingNeckIFFCyan
+    mask: ClothingMaskImperialCombatGasmask
+    jumpsuit: ClothingUniformJumpsuitImperialCombat
+    outerClothing: ClothingOuterArmorImperialTrooperArmor
+    shoes: ClothingShoesBootsMagDSM
+    belt: ClothingBeltAssaultFilledRifleman
+    gloves: ClothingHandsGlovesImperialLonggloves
+    back: ClothingBackpackDSM
+    pocket1: DoubleEmergencyOxygenTankFilled
+    pocket2: GrenadeFlashBang
+    ears: ClothingHeadsetEmpire
+    id: LevymanPDA
+    suitstorage: WeaponSniperDSMLegax
+    eyes: ClothingEyesHudSecurity
+  inhand:
+    - BookUnionfallDSMGuide
+  storage:
+    back:
+      - VoidsuitKitDSM
+      - BoxMRE
+      - BoxFlare
+      - WeaponPistolComplianceImperial

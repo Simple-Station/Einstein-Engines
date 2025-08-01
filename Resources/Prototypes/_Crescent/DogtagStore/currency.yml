@@ -7,3 +7,14 @@
   id: DogtagDSM
   displayName: Imperial IDs #CHANGE TO DOGTAG LATER
   canWithdraw: false
+
+- type: currency
+  id: PlunderGSC
+  displayName: Plundered Goods #CHANGE TO DOGTAG LATER
+  canWithdraw: false
+
+- type: currency
+  id: ScrapSAW
+  displayName: Scrapped Goods #CHANGE TO DOGTAG LATER
+  canWithdraw: false
+

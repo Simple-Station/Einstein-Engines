@@ -3,7 +3,7 @@
   alias:
     - survival
   name: survival-title
-  showInVote: true # secret # DeltaV - Me when the survival. Used for periapsis.
+  showInVote: false # secret # DeltaV - Me when the survival. Used for periapsis.
   description: survival-description
   rules:
     - RampingStationEventScheduler
@@ -15,7 +15,7 @@
   id: SurvivalHellshift
   alias:
     - hellshift
-  showInVote: true
+  showInVote: false
   name: hellshift-title
   description: hellshift-description
   rules:
@@ -27,7 +27,7 @@
 - type: gamePreset
   id: SurvivalIrregular
   alias: [irregular]
-  showInVote: true
+  showInVote: false
   name: irregular-title
   description: irregular-description
   rules:
@@ -38,7 +38,7 @@
 - type: gamePreset
   id: SurvivalIrregularExtended
   alias: [irregular-extended]
-  showInVote: true
+  showInVote: false
   name: irregular-extended-title
   description: irregular-extended-description
   rules:
@@ -67,7 +67,7 @@
   - extended
   - shittersafari
   name: extended-title
-  showInVote: true #2boring2vote # DeltaV - I'd like to disagree, used for periapsis.
+  showInVote: false #2boring2vote # DeltaV - I'd like to disagree, used for periapsis.
   description: extended-description
   rules:
   - BasicStationEventScheduler
@@ -81,7 +81,7 @@
   - greenshift
   - shittersafarideluxeedition
   name: greenshift-title
-  showInVote: true
+  showInVote: false
   description: greenshift-description
   rules:
   - LavalandStormScheduler # Lavaland Change
@@ -92,7 +92,7 @@
     - secret
     - sekrit
   name: secret-title
-  showInVote: true
+  showInVote: false
   description: secret-description
   rules:
     - Secret
@@ -137,7 +137,7 @@
     - traitor
   name: traitor-title
   description: traitor-description
-  showInVote: true
+  showInVote: false
   rules:
     - Traitor
     - SubGamemodesRule

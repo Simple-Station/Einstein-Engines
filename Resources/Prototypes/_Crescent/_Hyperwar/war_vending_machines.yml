@@ -279,3 +279,231 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: MarketModifier
+    mod: 0.2
+
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachine]
+  id: NCWLConscriptWarVendory
+  name: NCWL conscript war vendor
+  description: You're getting the bottom of the barrel. Good luck.
+  components:
+  - type: VendingMachine
+    pack: NCWLConscriptWarInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Advertise
+    pack: WarVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/armory.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: MarketModifier
+    mod: 0.2
+
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachine]
+  id: DSMConscriptWarVendory
+  name: DSM conscript war vendor
+  description: You're getting the bottom of the barrel. Good luck.
+  components:
+  - type: VendingMachine
+    pack: DSMConscriptWarInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Advertise
+    pack: WarVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/armory.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: MarketModifier
+    mod: 0.2
+
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachine]
+  id: NCWLConscriptAmmoVendory
+  name: NCWL surplus gear vendor
+  description: Food for your guns. Fire for the revolution.
+  components:
+  - type: VendingMachine
+    pack: NCWLConscriptAmmoInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    globalPriceMod: 0
+  - type: Advertise
+    pack: WarVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/armory.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachine]
+  id: DSMConscriptAmmoVendory
+  name: DSM surplus gear vendor
+  description: Ammunition for your weapons. It only prints the bad ones.
+  components:
+  - type: VendingMachine
+    pack: DSMConscriptAmmoInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    globalPriceMod: 0
+  - type: Advertise
+    pack: WarVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/armory.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachine]
+  id: NCWLConscriptGearVendory
+  name: NCWL surplus equipment vendor
+  description: Space suits for the void, armor for the heart.
+  components:
+  - type: VendingMachine
+    pack: NCWLConscriptGearInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    globalPriceMod: 0
+  - type: Advertise
+    pack: WarVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/armory.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachine]
+  id: DSMConscriptGearVendory
+  name: DSM surplus equipment vendor
+  description: Various different costumes for you to wear.
+  components:
+  - type: VendingMachine
+    pack: DSMConscriptGearInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    globalPriceMod: 0
+  - type: Advertise
+    pack: WarVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/armory.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachine]
+  id: NCWLConscriptShipVendory
+  name: NCWL surplus LPC vendor
+  description: The sparks which ignite a fire. Insert an LPC into a shipyard console to retrieve your spacecraft.
+  components:
+  - type: VendingMachine
+    pack: NCWLConscriptShipInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    globalPriceMod: 0
+  - type: Advertise
+    pack: WarVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/armory.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachine]
+  id: DSMConscriptShipVendory
+  name: DSM surplus LPC vendor
+  description: Ancient fleet leftovers, now coffins for you to die in.  Insert an LPC into a shipyard console to retrieve your spacecraft.
+  components:
+  - type: VendingMachine
+    pack: DSMConscriptShipInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    globalPriceMod: 0
+  - type: Advertise
+    pack: WarVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/armory.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]

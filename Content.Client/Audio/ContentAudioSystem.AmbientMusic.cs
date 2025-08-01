@@ -74,10 +74,10 @@ public sealed partial class ContentAudioSystem
     private float _combatMusicFadeInTime = 2f;
 
     // Time that combat mode needs to be on to start playing music. Set to 0 to play immediately.
-    private TimeSpan _combatStartUpTime = TimeSpan.FromSeconds(2.0);
+    private TimeSpan _combatStartUpTime = TimeSpan.FromSeconds(3.0);
 
     // Time that combat mode needs to be off to stop combat mode. Set to 0 to turn off as soon as combat mode is off.
-    private TimeSpan _combatWindDownTime = TimeSpan.FromSeconds(20.0);
+    private TimeSpan _combatWindDownTime = TimeSpan.FromSeconds(30.0);
 
     // Combat mode state before checking to switch combat music off/on.
     // 1. We toggle combat mode. We fire SwitchCombatMusic in (timer) seconds.

@@ -1,0 +1,25 @@
+- type: vessel
+  id: UnionfallImparator
+  name: DSM Imparator
+  description: An artillery ship with a vulcan and a single PDT turret.
+  price: 35000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Unionfall/DSM/unionfall_imparator.yml
+
+- type: gameMap
+  id: UnionfallImparator
+  mapName: 'DSM Imparator'
+  mapPath: /Maps/_Crescent/Unionfall/DSM/unionfall_imparator.yml
+  minPlayers: 0
+  stations:
+    UnionfallImparator:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Imparator {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-artillery-ship

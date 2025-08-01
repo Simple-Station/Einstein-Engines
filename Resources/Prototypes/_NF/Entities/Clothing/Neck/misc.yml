@@ -22,7 +22,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckIFFNeutral
-  name: IFF white strobe
+  name: shoulder light & IFF white strobe
   description: Visible LED IFF kit that consists of helmet and shoulder strobes.
   components:
   - type: Item
@@ -42,11 +42,47 @@
       - state: equipped-NECK-on
         color: "#a9b6bd"
         shader: unshaded
+  - type: ToggleableLightVisuals
+  - type: PointLight
+    enabled: false
+    radius: 3
+    energy: 2
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    netsync: false
+  - type: Appearance
+  - type: HandheldLight
+    addPrefix: true
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour
+        id: radiating
+        interpolate: Linear
+        maxDuration: 2.0
+        startValue: 3.0
+        endValue: 2.0
+        isLooped: true
+        reverseWhenFinished: true
+      - !type:PulseBehaviour
+        id: blinking
+        interpolate: Nearest
+        maxDuration: 1.0
+        minValue: 0.1
+        maxValue: 2.0
+        isLooped: true
+  - type: Battery
+    maxCharge: 600 #lights drain 3/s but recharge of 2 makes this 1/s. Therefore 600 is 10 minutes of light.
+    startingCharge: 600
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 2
 
 - type: entity
   parent: ClothingNeckIFFNeutral
   id: ClothingNeckIFFGreen
-  name: IFF green strobe
+  name: shoulder light & IFF green strobe
   components:
   - type: Sprite
     sprite: _NF/Clothing/Neck/Misc/mercenary_iff.rsi
@@ -63,11 +99,14 @@
       - state: equipped-NECK-on
         color: "#33cc00"
         shader: unshaded
+  - type: PointLight
+    radius: 3
+    color: "#33cc00"
 
 - type: entity
   parent: ClothingNeckIFFNeutral
   id: ClothingNeckIFFRed
-  name: IFF red strobe
+  name: shoulder light & IFF red strobe
   components:
   - type: Sprite
     sprite: _NF/Clothing/Neck/Misc/mercenary_iff.rsi
@@ -84,11 +123,14 @@
       - state: equipped-NECK-on
         color: "#990000"
         shader: unshaded
+  - type: PointLight
+    radius: 3
+    color: "#990000"
 
 - type: entity
   parent: ClothingNeckIFFNeutral
   id: ClothingNeckIFFBlue
-  name: IFF blue strobe
+  name: shoulder light & IFF blue strobe
   components:
   - type: Sprite
     sprite: _NF/Clothing/Neck/Misc/mercenary_iff.rsi
@@ -105,11 +147,14 @@
       - state: equipped-NECK-on
         color: "#0055cc"
         shader: unshaded
+  - type: PointLight
+    radius: 3
+    color: "#0055cc"
 
 - type: entity
   parent: ClothingNeckIFFNeutral
   id: ClothingNeckIFFCyan
-  name: IFF cyan strobe
+  name: shoulder light & IFF cyan strobe
   components:
   - type: Sprite
     sprite: _NF/Clothing/Neck/Misc/mercenary_iff.rsi
@@ -126,11 +171,14 @@
       - state: equipped-NECK-on
         color: "#47f8ff"
         shader: unshaded
+  - type: PointLight
+    radius: 3
+    color: "#47f8ff"
 
 - type: entity
   parent: ClothingNeckIFFNeutral
   id: ClothingNeckIFFOrange
-  name: IFF orange strobe
+  name: shoulder light & IFF orange strobe
   components:
   - type: Sprite
     sprite: _NF/Clothing/Neck/Misc/mercenary_iff.rsi
@@ -147,11 +195,14 @@
       - state: equipped-NECK-on
         color: "#ff8227"
         shader: unshaded
+  - type: PointLight
+    radius: 3
+    color: "#ff8227"
 
 - type: entity
   parent: ClothingNeckIFFNeutral
   id: ClothingNeckIFFPurple
-  name: IFF purple strobe
+  name: shoulder light & IFF purple strobe
   components:
   - type: Sprite
     sprite: _NF/Clothing/Neck/Misc/mercenary_iff.rsi
@@ -168,3 +219,6 @@
       - state: equipped-NECK-on
         color: "#9c0de1"
         shader: unshaded
+  - type: PointLight
+    radius: 3
+    color: "#9c0de1"

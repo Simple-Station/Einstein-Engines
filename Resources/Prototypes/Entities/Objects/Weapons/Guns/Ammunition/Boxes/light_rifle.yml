@@ -89,8 +89,23 @@
 
 - type: entity
   parent: BaseMagazineBoxLightRifle
+  id: MagazineBoxLightRifleSurplus
+  name: surplus ammunition box (5.56x45mm Imperial)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeLightRifle
+    capacity: 24
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  parent: BaseMagazineBoxLightRifle
   id: MagazineBoxLightRifle
-  name: ammunition box (5.56x45mm rifle)
+  name: ammunition box (5.56x45mm Imperial)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeLightRifle

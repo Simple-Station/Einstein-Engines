@@ -1,11 +1,11 @@
 - type: entity
   id: SpeedLoaderLightRifle
-  name: "speed loader (5.56x45mm)"
+  name: "speed loader (5.56x45mm Imperial)"
   parent: BaseItem
   components:
   - type: Tag
     tags:
-      - SpeedLoaderRifle
+      - SpeedLoaderLightRifle
   - type: SpeedLoader
   - type: BallisticAmmoProvider
     mayTransfer: true

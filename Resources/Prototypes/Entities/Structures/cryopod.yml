@@ -58,6 +58,19 @@
   id: CryogenicSleepUnitSpawnerLateJoin
   suffix: Spawner, LateJoin
   components:
-    - type: ContainerSpawnPoint
-      containerId: storage
-      spawnType: LateJoin
+    # - type: ContainerSpawnPoint # this doesnt work. .2 | 2025
+    #   containerId: storage
+    #   spawnType: LateJoin
+    - type: SpawnPoint
+      spawn_type: LateJoin
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 200 #might be too low
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalGlassBreak
