@@ -322,7 +322,7 @@
 
 - type: entity
   name: SHI-30J Paperwork
-  parent: BaseWeaponBatterySmall
+  parent: BaseItem
   id: WeaponPistolPaperwork
   description: A sick joke by Shinohara higherups. Fires pre-printed job applications with reinforced edges that stick into those hit, causing both emotional and physical damage. Outlawed in most of Taypan.
   components:
@@ -331,21 +331,27 @@
       layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
+    - type: Item
+      size: Small
+      shape:
+      - 0,0,1,0
+      - 0,1,0,1
+    - type: Tag
+      tags:
+      - Sidearm
     - type: Gun
       soundGunshot:
         path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
       fireRate: 2
-    - type: ProjectileBatteryAmmoProvider
+    - type: AmmoCounter
+    - type: RechargeBasicEntityAmmo
+      rechargeCooldown: 3
+      rechargeSound:
+        path: /Audio/Machines/scanning.ogg
+    - type: BasicEntityAmmoProvider
       proto: JobApplication
-      fireCost: 50
-    - type: BatterySelfRecharger
-      autoRecharge: true
-      autoRechargeRate: 25
-      autoRechargePause: true
-      autoRechargePauseTime: 3
-    - type: Battery
-      maxCharge: 500
-      startingCharge: 500
+      capacity: 10
+      count: 10
     - type: StaticPrice
       price: 750
     - type: MeleeWeapon
