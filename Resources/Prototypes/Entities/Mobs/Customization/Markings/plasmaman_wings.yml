@@ -4,5 +4,5 @@
   markingCategory: Wings
   speciesRestriction: [Plasmaman]
   sprites:
-    - sprite: _SimpleStation/Mobs/Customization/wings64x34.rsi
+    - sprite: Mobs/Customization/wings64x34.rsi
       state: skeleton
