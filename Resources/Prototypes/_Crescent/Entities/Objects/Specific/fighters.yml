@@ -51,7 +51,6 @@
     visualType: Diamond
     color: "#cb7723"
     scale: 1.5
-    requireNoGrid: true # doesn't work atm, leaving this here for later - all projectiles only show off-grid at the moment
   - type: StaticPrice
     price: 25000
 
@@ -104,7 +103,6 @@
     visualType: Diamond
     color: "#cb7723"
     scale: 1.5
-    requireNoGrid: true # doesn't work atm, leaving this here for later - all projectiles only show off-grid at the moment
   - type: StaticPrice
     price: 15000
 
@@ -157,7 +155,6 @@
     visualType: Diamond
     color: "#674ea7"
     scale: 1.5
-    requireNoGrid: true # doesn't work atm, leaving this here for later - all projectiles only show off-grid at the moment
   - type: StaticPrice
     price: 15000
 
@@ -210,7 +207,6 @@
     visualType: Diamond
     color: "#674ea7"
     scale: 1.5
-    requireNoGrid: true # doesn't work atm, leaving this here for later - all projectiles only show off-grid at the moment
   - type: StaticPrice
     price: 15000
 
@@ -263,7 +259,6 @@
     visualType: Diamond
     color: "#674ea7"
     scale: 1.5
-    requireNoGrid: true # doesn't work atm, leaving this here for later - all projectiles only show off-grid at the moment
   - type: StaticPrice
     price: 15000
 
@@ -316,7 +311,6 @@
     visualType: Diamond
     color: "#674ea7"
     scale: 1.5
-    requireNoGrid: true # doesn't work atm, leaving this here for later - all projectiles only show off-grid at the moment
   - type: StaticPrice
     price: 15000
 

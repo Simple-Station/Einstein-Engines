@@ -538,7 +538,7 @@
   description:  Parts used to build a ballistics factory. Activate with a multitool to deploy.
   components:
   - type: Flatpack
-    entity: BallisticsFablathe
+    entity: BallisticFablathe
   - type: Sprite
     layers:
     - state: ame-part
