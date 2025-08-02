@@ -9,8 +9,10 @@
         - Wall
     - type: Sprite
       sprite: _Crescent/Structures/reinforcedPlastitanium.rsi
+      state: rplastitaniumfull
     - type: Icon
       sprite: Structures/Walls/reinforcedPlastitanium.rsi
+      state: rplastitaniumfull
     - type: IconSmooth
       key: walls
       base: rplastitanium
