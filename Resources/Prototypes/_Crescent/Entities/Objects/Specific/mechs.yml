@@ -47,7 +47,6 @@
     visualType: Square
     color: "#bd73d0"
     scale: 1.5
-    requireNoGrid: true # doesn't work atm, leaving this here for later - all projectiles only show off-grid at the moment
   - type: StaticPrice
     price: 1500
   - type: Tag
@@ -116,7 +115,6 @@
     visualType: Triangle
     color: "#c87d32"
     scale: 2.5
-    requireNoGrid: true
   - type: StaticPrice
     price: 5000
   - type: Tag
@@ -182,7 +180,6 @@
     visualType: Triangle
     color: "#c87d32"
     scale: 2
-    requireNoGrid: true
   - type: StaticPrice
     price: 3000
   - type: Tag
@@ -247,7 +244,6 @@
     visualType: Triangle
     color: "#af1919"
     scale: 2
-    requireNoGrid: true
   - type: StaticPrice
     price: 3000
   - type: Tag
@@ -316,7 +312,6 @@
     visualType: Triangle
     color: "#d9d9d9"
     scale: 3.5
-    requireNoGrid: false # doesn't work atm, leaving this here for later
   - type: StaticPrice
     price: 30000
   - type: Tag
@@ -386,7 +381,6 @@
     visualType: Triangle
     color: "#bd73d0"
     scale: 2.5
-    requireNoGrid: true
   - type: StaticPrice
     price: 5000
   - type: Tag
@@ -465,7 +459,6 @@
     visualType: Triangle
     color: "#bd73d0"
     scale: 2
-    requireNoGrid: true
   - type: StaticPrice
     price: 4000
   - type: Tag
