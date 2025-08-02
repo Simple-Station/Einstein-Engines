@@ -36,6 +36,12 @@
     Hair:
       points: 1
       required: false
+    Head: # garden added
+      points: 4
+      required: false #
+    Face: # garden added
+      points: 6
+      required: false #
     HeadSide:
       points: 6
       required: false
@@ -75,6 +81,9 @@
     LeftHand:
       points: 6
       required: false
+    Overlay: # garden added
+      points: 4
+      required: false #
 
 - type: humanoidBaseSprite
   id: MobSlimeMarkingFollowSkin
