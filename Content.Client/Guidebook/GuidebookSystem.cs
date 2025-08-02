@@ -3,6 +3,7 @@ using Content.Client.Guidebook.Components;
 using Content.Client.Light;
 using Content.Client.Verbs;
 using Content.Shared.Guidebook;
+using Content.Shared.Guidebook.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Light.Components;
 using Content.Shared.Speech;
