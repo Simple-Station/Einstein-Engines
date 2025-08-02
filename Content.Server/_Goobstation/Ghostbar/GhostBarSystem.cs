@@ -44,9 +44,11 @@ public sealed class GhostBarSystem : EntitySystem
 
     public override void Initialize()
     {
+        /* Hullrot disabled - RAM bloat  , SPCR 2025
         SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
         SubscribeNetworkEvent<GhostBarSpawnEvent>(SpawnPlayer);
         SubscribeLocalEvent<GhostBarPlayerComponent, MindRemovedMessage>(OnPlayerGhosted);
+        */
     }
 
     const string MapPath = "Maps/_Goobstation/Nonstations/ghostbar.yml";
