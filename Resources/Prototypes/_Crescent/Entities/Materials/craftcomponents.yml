@@ -28,6 +28,22 @@
       count: 1
 
 - type: entity
+  id: BasicElectronics3
+  parent: BasicElectronics
+  suffix: "3"
+  components:
+    - type: Stack
+      count: 3
+
+- type: entity
+  id: BasicElectronics5
+  parent: BasicElectronics
+  suffix: "5"
+  components:
+    - type: Stack
+      count: 5
+
+- type: entity
   parent: OreBase
   id: AdvancedElectronics
   name: advanced electronic parts
@@ -55,6 +71,22 @@
   components:
     - type: Stack
       count: 1
+
+- type: entity
+  id: AdvancedElectronics3
+  parent: AdvancedElectronics
+  suffix: "3"
+  components:
+    - type: Stack
+      count: 3
+
+- type: entity
+  id: AdvancedElectronics5
+  parent: AdvancedElectronics
+  suffix: "5"
+  components:
+    - type: Stack
+      count: 5
 
 - type: entity
   parent: OreBase
@@ -86,6 +118,22 @@
       count: 1
 
 - type: entity
+  id: NanotrasenElectronics3
+  parent: NanotrasenElectronics
+  suffix: "3"
+  components:
+    - type: Stack
+      count: 3
+
+- type: entity
+  id: NanotrasenElectronics5
+  parent: NanotrasenElectronics
+  suffix: "5"
+  components:
+    - type: Stack
+      count: 5
+
+- type: entity
   parent: OreBase
   id: BasicMechatronics
   name: basic mechatronic components
@@ -113,6 +161,23 @@
   components:
     - type: Stack
       count: 1
+
+- type: entity
+  id: BasicMechatronics3
+  parent: BasicMechatronics
+  suffix: "3"
+  components:
+    - type: Stack
+      count: 3
+
+- type: entity
+  id: BasicMechatronics5
+  parent: BasicMechatronics
+  suffix: "5"
+  components:
+    - type: Stack
+      count: 5
+
 
 - type: entity
   parent: OreBase
@@ -144,6 +209,22 @@
       count: 1
 
 - type: entity
+  id: AdvancedMechatronics3
+  parent: AdvancedMechatronics
+  suffix: "3"
+  components:
+    - type: Stack
+      count: 3
+
+- type: entity
+  id: AdvancedMechatronics5
+  parent: AdvancedMechatronics
+  suffix: "5"
+  components:
+    - type: Stack
+      count: 5
+
+- type: entity
   parent: OreBase
   id: NanotrasenMechatronics
   name: bluespace mechatronic components
@@ -171,6 +252,24 @@
   components:
     - type: Stack
       count: 1
+
+
+- type: entity
+  id: NanotrasenMechatronics3
+  parent: NanotrasenMechatronics
+  suffix: "3"
+  components:
+    - type: Stack
+      count: 3
+
+
+- type: entity
+  id: NanotrasenMechatronics5
+  parent: NanotrasenMechatronics
+  suffix: "5"
+  components:
+    - type: Stack
+      count: 5
 
 - type: entity
   parent: OreBase
@@ -200,6 +299,24 @@
   components:
     - type: Stack
       count: 1
+
+
+- type: entity
+  id: LaserLocus3
+  parent: LaserLocus
+  suffix: "3"
+  components:
+    - type: Stack
+      count: 3
+
+
+- type: entity
+  id: LaserLocus5
+  parent: LaserLocus
+  suffix: "5"
+  components:
+    - type: Stack
+      count: 5
 
 - type: entity
   parent: OreBase
@@ -231,6 +348,22 @@
       count: 1
 
 - type: entity
+  id: BallisticCycler3
+  parent: BallisticCycler
+  suffix: "3"
+  components:
+    - type: Stack
+      count: 3
+
+- type: entity
+  id: BallisticCycler5
+  parent: BallisticCycler
+  suffix: "5"
+  components:
+    - type: Stack
+      count: 5
+
+- type: entity
   parent: OreBase
   id: TubeLoader
   name: tube loader robotics
@@ -258,6 +391,22 @@
   components:
     - type: Stack
       count: 1
+
+- type: entity
+  id: TubeLoader3
+  parent: TubeLoader
+  suffix: "3"
+  components:
+    - type: Stack
+      count: 3
+
+- type: entity
+  id: TubeLoader5
+  parent: TubeLoader
+  suffix: "5"
+  components:
+    - type: Stack
+      count: 5
 
 - type: entity
   parent: OreBase
@@ -289,6 +438,22 @@
       count: 1
 
 - type: entity
+  id: WeakLaserLocus3
+  parent: WeakLaserLocus
+  suffix: "3"
+  components:
+    - type: Stack
+      count: 3
+
+- type: entity
+  id: WeakLaserLocus5
+  parent: WeakLaserLocus
+  suffix: "5"
+  components:
+    - type: Stack
+      count: 5
+
+- type: entity
   parent: OreBase
   id: HardlightGenerator
   name: focused hardlight generator
@@ -316,6 +481,22 @@
   components:
     - type: Stack
       count: 1
+
+- type: entity
+  id: HardlightGenerator3
+  parent: HardlightGenerator
+  suffix: "3"
+  components:
+    - type: Stack
+      count: 3
+
+- type: entity
+  id: HardlightGenerator5
+  parent: HardlightGenerator
+  suffix: "5"
+  components:
+    - type: Stack
+      count: 5
 
 - type: entity
   parent: OreBase
@@ -347,6 +528,22 @@
       count: 1
 
 - type: entity
+  id: HardsuitElectronics3
+  parent: HardsuitElectronics
+  suffix: "3"
+  components:
+    - type: Stack
+      count: 3
+
+- type: entity
+  id: HardsuitElectronics5
+  parent: HardsuitElectronics
+  suffix: "5"
+  components:
+    - type: Stack
+      count: 5
+
+- type: entity
   parent: OreBase
   id: PlastitaniumFibreAlloy
   name: plastitanium fibre alloy plate
@@ -374,3 +571,19 @@
   components:
     - type: Stack
       count: 1
+
+- type: entity
+  id: PlastitaniumFibreAlloy3
+  parent: PlastitaniumFibreAlloy
+  suffix: "3"
+  components:
+    - type: Stack
+      count: 3
+
+- type: entity
+  id: PlastitaniumFibreAlloy5
+  parent: PlastitaniumFibreAlloy
+  suffix: "5"
+  components:
+    - type: Stack
+      count: 5
