@@ -9,8 +9,10 @@
         - Wall
     - type: Sprite
       sprite: _Crescent/Structures/remnantWalls.rsi
+      state: remnant_full
     - type: Icon
       sprite: Structures/Walls/remnantWalls.rsi
+      state: remnant_full
     - type: IconSmooth
       key: walls
       base: remnant_
