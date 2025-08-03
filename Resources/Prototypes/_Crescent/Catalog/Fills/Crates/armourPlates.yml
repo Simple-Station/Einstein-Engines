@@ -43,17 +43,6 @@
         amount: 6
 
 - type: entity
-  id: CrateSecurityArmorDurathreadPlates
-  parent: CrateSecgear
-  name: Armor Durathread Weave Crate
-  description: "6 rolls of Durathread Weave ready for combat-use."
-  components:
-  - type: StorageFill
-    contents:
-      - id: ArmorPlateDurathread
-        amount: 6
-
-- type: entity
   id: CrateSecurityArmorHomelandPlates
   parent: CrateSecgear
   name: Armor Homeland Alloy Plates Crate

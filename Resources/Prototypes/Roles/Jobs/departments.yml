@@ -35,7 +35,6 @@
  # - Visitor
  # - Zookeeper
  # - ServiceWorker
-  enabled: true
   editorHidden: false
 
 - type: department
@@ -109,7 +108,6 @@
   - DoktorNCWL
   - KapitanNCWL
   - KadetNCWL
-  enabled: true
   editorHidden: false
 
 - type: department
@@ -130,7 +128,6 @@
   - CyberdawnTechNCSP
   - ForemanNCSP
   - ShipbreakerNCSP
-  enabled: true
   editorHidden: false
 
 - type: department
@@ -154,7 +151,6 @@
   - GovernorDSM
   - AdvocatusDSM
   - ArchmaesterDSM
-  enabled: true
   editorHidden: false
 
 - type: department
@@ -168,7 +164,6 @@
   - HunterSRM
   - MontagneSRM
   - OverseerSRM
-  enabled: false
   editorHidden: true # i just like to see them for the numbers , SPCR 2025
 
 - type: department
@@ -183,7 +178,6 @@
   - CorpsecSHI
   - EmployeeSHI
   - MedtechSHI
-  enabled: false
   editorHidden: true
 
 - type: department
@@ -199,7 +193,6 @@
   - WatchmasterCMM
   - DeputyMarshalCMM
   - MarshalCMM
-  enabled: false
   editorHidden: true
 
 - type: department
@@ -217,7 +210,6 @@
   - BeltrunnerTAP
   - DraugrTAP
   - ServileTAP
-  enabled: false
   editorHidden: false
 
 - type: department
@@ -239,7 +231,6 @@
   - ChirurgeonATH
   - VorarbeiterATH
   - ArbeiterATH
-  enabled: false
   editorHidden: true # i just like to see them for the numbers , SPCR 2025
 
   # CONSCRIPT
@@ -261,7 +252,6 @@
   - ConscriptCadetNCWL
   - ConscriptShipCaptainNCWL
   - ConscriptShipCrewNCWL
-  enabled: true
 
 - type: department
   id: DSM-W
@@ -280,4 +270,3 @@
   - ConscriptCadetDSM
   - ConscriptShipCaptainDSM
   - ConscriptShipCrewDSM
-  enabled: true

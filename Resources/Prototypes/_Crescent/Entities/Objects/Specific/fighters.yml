@@ -51,7 +51,6 @@
     visualType: Diamond
     color: "#cb7723"
     scale: 1.5
-    requireNoGrid: true # doesn't work atm, leaving this here for later - all projectiles only show off-grid at the moment
   - type: StaticPrice
     price: 25000
 
@@ -104,7 +103,6 @@
     visualType: Diamond
     color: "#cb7723"
     scale: 1.5
-    requireNoGrid: true # doesn't work atm, leaving this here for later - all projectiles only show off-grid at the moment
   - type: StaticPrice
     price: 15000
 
@@ -117,6 +115,20 @@
     containers:
       mech-battery-slot:
       - PowerCageUraniumCell
+
+- type: entity
+  name: DSM Valor Spawner
+  id: SpawnFighterValor
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Crescent/Objects/Specific/bigfighters.rsi
+        state: valor
+  - type: ConditionalSpawner
+    prototypes:
+      - FighterDSMValorBattery
 
 - type: entity
   id: FighterDSMValor
@@ -157,7 +169,6 @@
     visualType: Diamond
     color: "#674ea7"
     scale: 1.5
-    requireNoGrid: true # doesn't work atm, leaving this here for later - all projectiles only show off-grid at the moment
   - type: StaticPrice
     price: 15000
 
@@ -170,6 +181,20 @@
     containers:
       mech-battery-slot:
       - PowerCageUraniumCell
+
+- type: entity
+  name: DSM Honor Spawner
+  id: SpawnFighterHonor
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Crescent/Objects/Specific/fighters.rsi
+        state: honor
+  - type: ConditionalSpawner
+    prototypes:
+      - FighterDSMHonorBattery
 
 - type: entity
   id: FighterDSMHonor
@@ -210,7 +235,6 @@
     visualType: Diamond
     color: "#674ea7"
     scale: 1.5
-    requireNoGrid: true # doesn't work atm, leaving this here for later - all projectiles only show off-grid at the moment
   - type: StaticPrice
     price: 15000
 
@@ -263,7 +287,6 @@
     visualType: Diamond
     color: "#674ea7"
     scale: 1.5
-    requireNoGrid: true # doesn't work atm, leaving this here for later - all projectiles only show off-grid at the moment
   - type: StaticPrice
     price: 15000
 
@@ -316,7 +339,6 @@
     visualType: Diamond
     color: "#674ea7"
     scale: 1.5
-    requireNoGrid: true # doesn't work atm, leaving this here for later - all projectiles only show off-grid at the moment
   - type: StaticPrice
     price: 15000
 
