@@ -16,8 +16,12 @@
     Imp:
       stationProto: StandardCrescentCivilianVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: bigindustrial
         - type: StationNameSetup
-          mapNameTemplate: 'DSM Impel {1}'
+          mapNameTemplate: 'DSM Covetor {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'

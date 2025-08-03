@@ -10,6 +10,10 @@
         - type: BlockShipWeaponProjectileGrid
         - type: PreventPilot
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: outpost
         - type: StationNameSetup
           mapNameTemplate: 'Tatsumoto Trading Outpost'
         - type: VesselDesignation

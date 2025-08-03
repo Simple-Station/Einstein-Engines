@@ -19,6 +19,10 @@
     Hulk:
       stationProto: StandardCrescentCivilianVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: dreadnought
         - type: StationNameSetup
           mapNameTemplate: 'IPM Hulk {1}'
           nameGenerator:

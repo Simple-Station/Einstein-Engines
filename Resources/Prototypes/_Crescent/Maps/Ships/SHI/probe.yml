@@ -16,6 +16,10 @@
     Probe:
       stationProto: StandardCrescentVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: industrial
         - type: StationNameSetup
           mapNameTemplate: 'SHI Probe {1}'
           nameGenerator:

@@ -19,6 +19,10 @@
     Harpy:
       stationProto: StandardCrescentExpeditionVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
         - type: StationNameSetup
           mapNameTemplate: 'IPM Harpy {1}'
           nameGenerator:

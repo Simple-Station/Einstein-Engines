@@ -16,6 +16,10 @@
     Musinyane:
       stationProto: StandardCrescentVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
         - type: StationNameSetup
           mapNameTemplate: 'CSEC Musinyane {1}'
           nameGenerator:

@@ -16,6 +16,10 @@
     Gnosis:
       stationProto: StandardCrescentCivilianVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: industrial
         - type: StationNameSetup
           mapNameTemplate: 'DSM Gnosis {1}'
           nameGenerator:

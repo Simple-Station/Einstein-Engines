@@ -9,10 +9,16 @@
       gridComponents:
         - type: BlockShipWeaponProjectileGrid
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: dreadnought
         - type: StationNameSetup
           mapNameTemplate: 'The Countsman'
         - type: VesselDesignation
           designation: vessel-designation-headquarters
+        - type: VesselDescription
+          description: A ramshackle hubship housing the last coherent Imperial chapter in this system.
         - type: Grammar
           attributes:
             proper: true
