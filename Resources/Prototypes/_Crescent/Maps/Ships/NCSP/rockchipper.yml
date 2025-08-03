@@ -19,6 +19,10 @@
     Rockchipper:
       stationProto: StandardCrescentCivilianVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
         - type: StationNameSetup
           mapNameTemplate: 'SAW Rockchipper {1}'
           nameGenerator:

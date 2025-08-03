@@ -16,6 +16,10 @@
     Bison:
       stationProto: StandardCrescentCivilianVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: frigate
         - type: StationNameSetup
           mapNameTemplate: 'CSEC Bison {1}'
           nameGenerator:

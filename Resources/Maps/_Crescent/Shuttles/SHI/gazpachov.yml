@@ -62,7 +62,521 @@ entities:
     - type: DecalGrid
       chunkCollection:
         version: 2
-        nodes: []
+        nodes:
+        - node:
+            zIndex: 1
+            id: LatticeCornerNE
+          decals:
+            80: -15,1
+            88: -14,1
+            142: -15,-3
+            147: -15,-2
+            152: -15,-1
+            165: -14,-1
+            171: -13,-1
+            176: -12,-1
+            181: -11,-3
+            187: -6,-1
+            192: -5,-4
+            197: -5,-3
+            200: -4,-4
+            205: -2,-4
+            218: 0,-1
+            223: 1,-3
+            229: 12,-2
+            237: 15,-3
+            242: 15,-2
+            323: -15,1
+            331: -14,1
+            385: -15,-3
+            390: -15,-2
+            395: -15,-1
+            408: -14,-1
+            414: -13,-1
+            419: -12,-1
+            424: -11,-3
+            430: -6,-1
+            435: -5,-4
+            440: -5,-3
+            443: -4,-4
+            448: -2,-4
+            461: 0,-1
+            466: 1,-3
+            472: 12,-2
+            480: 15,-3
+            485: 15,-2
+        - node:
+            zIndex: 1
+            id: LatticeCornerNW
+          decals:
+            91: -14,1
+            136: 16,-3
+            155: -14,-3
+            160: -14,-2
+            168: -14,-1
+            173: -13,-1
+            178: -12,-1
+            184: -7,-3
+            189: -6,-1
+            202: -4,-4
+            207: -2,-4
+            210: -1,-4
+            215: -1,-3
+            220: 0,-1
+            226: 6,-3
+            231: 12,-2
+            234: 13,-2
+            334: -14,1
+            379: 16,-3
+            398: -14,-3
+            403: -14,-2
+            411: -14,-1
+            416: -13,-1
+            421: -12,-1
+            427: -7,-3
+            432: -6,-1
+            445: -4,-4
+            450: -2,-4
+            453: -1,-4
+            458: -1,-3
+            463: 0,-1
+            469: 6,-3
+            474: 12,-2
+            477: 13,-2
+        - node:
+            zIndex: 1
+            id: LatticeCornerSE
+          decals:
+            2: 0,2
+            7: 1,3
+            10: 2,3
+            15: 3,3
+            20: 4,3
+            25: 5,3
+            30: 6,3
+            35: 7,3
+            40: 8,3
+            45: 9,3
+            53: 11,2
+            58: 12,2
+            63: 13,2
+            68: 14,2
+            73: 15,2
+            78: -15,1
+            83: -15,2
+            86: -14,1
+            97: -13,1
+            102: -12,1
+            107: -11,3
+            110: -10,4
+            119: -6,2
+            124: -5,5
+            140: -15,-3
+            145: -15,-2
+            150: -15,-1
+            163: -14,-1
+            195: -5,-3
+            240: 15,-2
+            245: 0,2
+            250: 1,3
+            253: 2,3
+            258: 3,3
+            263: 4,3
+            268: 5,3
+            273: 6,3
+            278: 7,3
+            283: 8,3
+            288: 9,3
+            296: 11,2
+            301: 12,2
+            306: 13,2
+            311: 14,2
+            316: 15,2
+            321: -15,1
+            326: -15,2
+            329: -14,1
+            340: -13,1
+            345: -12,1
+            350: -11,3
+            353: -10,4
+            362: -6,2
+            367: -5,5
+            383: -15,-3
+            388: -15,-2
+            393: -15,-1
+            406: -14,-1
+            438: -5,-3
+            483: 15,-2
+        - node:
+            zIndex: 1
+            id: LatticeCornerSW
+          decals:
+            4: 0,2
+            12: 2,3
+            17: 3,3
+            22: 4,3
+            27: 5,3
+            32: 6,3
+            37: 7,3
+            42: 8,3
+            47: 9,3
+            50: 10,3
+            55: 11,2
+            60: 12,2
+            65: 13,2
+            70: 14,2
+            75: 15,2
+            90: -14,1
+            94: -14,2
+            99: -13,1
+            104: -12,1
+            113: -8,4
+            116: -7,3
+            121: -6,2
+            127: -1,5
+            130: 16,2
+            135: 16,-3
+            159: -14,-2
+            167: -14,-1
+            214: -1,-3
+            247: 0,2
+            255: 2,3
+            260: 3,3
+            265: 4,3
+            270: 5,3
+            275: 6,3
+            280: 7,3
+            285: 8,3
+            290: 9,3
+            293: 10,3
+            298: 11,2
+            303: 12,2
+            308: 13,2
+            313: 14,2
+            318: 15,2
+            333: -14,1
+            337: -14,2
+            342: -13,1
+            347: -12,1
+            356: -8,4
+            359: -7,3
+            364: -6,2
+            370: -1,5
+            373: 16,2
+            378: 16,-3
+            402: -14,-2
+            410: -14,-1
+            457: -1,-3
+        - node:
+            id: LatticeEdgeE
+          decals:
+            1: 0,2
+            6: 1,3
+            9: 2,3
+            14: 3,3
+            19: 4,3
+            24: 5,3
+            29: 6,3
+            34: 7,3
+            39: 8,3
+            44: 9,3
+            52: 11,2
+            57: 12,2
+            62: 13,2
+            67: 14,2
+            72: 15,2
+            77: -15,1
+            82: -15,2
+            85: -14,1
+            96: -13,1
+            101: -12,1
+            106: -11,3
+            109: -10,4
+            118: -6,2
+            123: -5,5
+            139: -15,-3
+            144: -15,-2
+            149: -15,-1
+            162: -14,-1
+            169: -13,-1
+            174: -12,-1
+            179: -11,-3
+            185: -6,-1
+            190: -5,-4
+            194: -5,-3
+            198: -4,-4
+            203: -2,-4
+            216: 0,-1
+            221: 1,-3
+            227: 12,-2
+            235: 15,-3
+            239: 15,-2
+            244: 0,2
+            249: 1,3
+            252: 2,3
+            257: 3,3
+            262: 4,3
+            267: 5,3
+            272: 6,3
+            277: 7,3
+            282: 8,3
+            287: 9,3
+            295: 11,2
+            300: 12,2
+            305: 13,2
+            310: 14,2
+            315: 15,2
+            320: -15,1
+            325: -15,2
+            328: -14,1
+            339: -13,1
+            344: -12,1
+            349: -11,3
+            352: -10,4
+            361: -6,2
+            366: -5,5
+            382: -15,-3
+            387: -15,-2
+            392: -15,-1
+            405: -14,-1
+            412: -13,-1
+            417: -12,-1
+            422: -11,-3
+            428: -6,-1
+            433: -5,-4
+            437: -5,-3
+            441: -4,-4
+            446: -2,-4
+            459: 0,-1
+            464: 1,-3
+            470: 12,-2
+            478: 15,-3
+            482: 15,-2
+        - node:
+            id: LatticeEdgeN
+          decals:
+            79: -15,1
+            87: -14,1
+            131: 16,-4
+            133: 16,-3
+            137: -15,-4
+            141: -15,-3
+            146: -15,-2
+            151: -15,-1
+            153: -14,-3
+            157: -14,-2
+            164: -14,-1
+            170: -13,-1
+            175: -12,-1
+            180: -11,-3
+            182: -7,-3
+            186: -6,-1
+            191: -5,-4
+            196: -5,-3
+            199: -4,-4
+            204: -2,-4
+            208: -1,-4
+            212: -1,-3
+            217: 0,-1
+            222: 1,-3
+            224: 6,-3
+            228: 12,-2
+            232: 13,-2
+            236: 15,-3
+            241: 15,-2
+            322: -15,1
+            330: -14,1
+            374: 16,-4
+            376: 16,-3
+            380: -15,-4
+            384: -15,-3
+            389: -15,-2
+            394: -15,-1
+            396: -14,-3
+            400: -14,-2
+            407: -14,-1
+            413: -13,-1
+            418: -12,-1
+            423: -11,-3
+            425: -7,-3
+            429: -6,-1
+            434: -5,-4
+            439: -5,-3
+            442: -4,-4
+            447: -2,-4
+            451: -1,-4
+            455: -1,-3
+            460: 0,-1
+            465: 1,-3
+            467: 6,-3
+            471: 12,-2
+            475: 13,-2
+            479: 15,-3
+            484: 15,-2
+        - node:
+            id: LatticeEdgeS
+          decals:
+            0: 0,2
+            5: 1,3
+            8: 2,3
+            13: 3,3
+            18: 4,3
+            23: 5,3
+            28: 6,3
+            33: 7,3
+            38: 8,3
+            43: 9,3
+            48: 10,3
+            51: 11,2
+            56: 12,2
+            61: 13,2
+            66: 14,2
+            71: 15,2
+            76: -15,1
+            81: -15,2
+            84: -14,1
+            92: -14,2
+            95: -13,1
+            100: -12,1
+            105: -11,3
+            108: -10,4
+            111: -8,4
+            114: -7,3
+            117: -6,2
+            122: -5,5
+            125: -1,5
+            128: 16,2
+            132: 16,-3
+            138: -15,-3
+            143: -15,-2
+            148: -15,-1
+            156: -14,-2
+            161: -14,-1
+            193: -5,-3
+            211: -1,-3
+            238: 15,-2
+            243: 0,2
+            248: 1,3
+            251: 2,3
+            256: 3,3
+            261: 4,3
+            266: 5,3
+            271: 6,3
+            276: 7,3
+            281: 8,3
+            286: 9,3
+            291: 10,3
+            294: 11,2
+            299: 12,2
+            304: 13,2
+            309: 14,2
+            314: 15,2
+            319: -15,1
+            324: -15,2
+            327: -14,1
+            335: -14,2
+            338: -13,1
+            343: -12,1
+            348: -11,3
+            351: -10,4
+            354: -8,4
+            357: -7,3
+            360: -6,2
+            365: -5,5
+            368: -1,5
+            371: 16,2
+            375: 16,-3
+            381: -15,-3
+            386: -15,-2
+            391: -15,-1
+            399: -14,-2
+            404: -14,-1
+            436: -5,-3
+            454: -1,-3
+            481: 15,-2
+        - node:
+            id: LatticeEdgeW
+          decals:
+            3: 0,2
+            11: 2,3
+            16: 3,3
+            21: 4,3
+            26: 5,3
+            31: 6,3
+            36: 7,3
+            41: 8,3
+            46: 9,3
+            49: 10,3
+            54: 11,2
+            59: 12,2
+            64: 13,2
+            69: 14,2
+            74: 15,2
+            89: -14,1
+            93: -14,2
+            98: -13,1
+            103: -12,1
+            112: -8,4
+            115: -7,3
+            120: -6,2
+            126: -1,5
+            129: 16,2
+            134: 16,-3
+            154: -14,-3
+            158: -14,-2
+            166: -14,-1
+            172: -13,-1
+            177: -12,-1
+            183: -7,-3
+            188: -6,-1
+            201: -4,-4
+            206: -2,-4
+            209: -1,-4
+            213: -1,-3
+            219: 0,-1
+            225: 6,-3
+            230: 12,-2
+            233: 13,-2
+            246: 0,2
+            254: 2,3
+            259: 3,3
+            264: 4,3
+            269: 5,3
+            274: 6,3
+            279: 7,3
+            284: 8,3
+            289: 9,3
+            292: 10,3
+            297: 11,2
+            302: 12,2
+            307: 13,2
+            312: 14,2
+            317: 15,2
+            332: -14,1
+            336: -14,2
+            341: -13,1
+            346: -12,1
+            355: -8,4
+            358: -7,3
+            363: -6,2
+            369: -1,5
+            372: 16,2
+            377: 16,-3
+            397: -14,-3
+            401: -14,-2
+            409: -14,-1
+            415: -13,-1
+            420: -12,-1
+            426: -7,-3
+            431: -6,-1
+            444: -4,-4
+            449: -2,-4
+            452: -1,-4
+            456: -1,-3
+            462: 0,-1
+            468: 6,-3
+            473: 12,-2
+            476: 13,-2
     - type: GridAtmosphere
       version: 2
       data:
@@ -166,6 +680,41 @@ entities:
     - type: ShuttleDeed
       shuttleName: Shuttle NX-406
       shuttleUid: 1
+- proto: AAAHardpointFixed
+  entities:
+  - uid: 6
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 2.5,3.5
+      parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 123
+    - type: Physics
+      canCollide: False
+  - uid: 229
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 4.5,3.5
+      parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 123
+    - type: Physics
+      canCollide: False
+  - uid: 318
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 3.5,3.5
+      parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 123
+    - type: Physics
+      canCollide: False
 - proto: AirAlarm
   entities:
   - uid: 113
@@ -245,6 +794,12 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -14.5,0.5
+      parent: 1
+  - uid: 450
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -8.5,3.5
       parent: 1
 - proto: AirSensor
   entities:
@@ -358,6 +913,12 @@ entities:
     - type: Transform
       pos: -6.5,0.5
       parent: 1
+  - uid: 122
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -8.5,3.5
+      parent: 1
   - uid: 138
     components:
     - type: Transform
@@ -383,6 +944,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 108
+      - 123
   - uid: 117
     components:
     - type: Transform
@@ -391,6 +953,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 108
+      - 123
   - uid: 118
     components:
     - type: Transform
@@ -399,6 +962,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 108
+      - 123
 - proto: BoriaticFuelTankFull
   entities:
   - uid: 213
@@ -1418,32 +1982,11 @@ entities:
       maxRange: 356
 - proto: ComputerTabletopShuttle
   entities:
-  - uid: 229
+  - uid: 123
     components:
     - type: Transform
       pos: -2.5,4.5
       parent: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        209:
-        - Group1: Toggle
-        208:
-        - Group1: Toggle
-        203:
-        - Group1: Toggle
-        123:
-        - Group2: Toggle
-        122:
-        - Group2: Toggle
-        6:
-        - Group2: Toggle
-    - type: NamedModules
-      buttonNames:
-      - Toggle Bridge Blastdoors
-      - Toggle Exhumers
-      - Module C
-      - Module D
-      - Module E
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -1458,6 +2001,35 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+    - type: DeviceLinkSource
+      linkedPorts:
+        6:
+        - Group1: Toggle
+        318:
+        - Group1: Toggle
+        229:
+        - Group1: Toggle
+        118:
+        - Group2: Toggle
+        7:
+        - Group2: Toggle
+        117:
+        - Group2: Toggle
+        39:
+        - Group3: Toggle
+        38:
+        - Group3: Toggle
+        307:
+        - Group4: Toggle
+        304:
+        - Group4: Toggle
+    - type: NamedModules
+      buttonNames:
+      - Toggle Exhumers
+      - Mining bay blastdoors
+      - Right-side lockdown shutters
+      - Left-side lockdown shutters
+      - Module E
 - proto: CrateTrashCartFilled
   entities:
   - uid: 212
@@ -1764,8 +2336,6 @@ entities:
     - type: Transform
       pos: -8.5,-0.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
 - proto: JetpackMiniFilled
   entities:
   - uid: 54
@@ -1874,12 +2444,16 @@ entities:
       rot: 3.141592653589793 rad
       pos: -9.5,4.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 467
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -7.5,4.5
       parent: 1
+    - type: Physics
+      bodyType: Static
 - proto: Poweredlight
   entities:
   - uid: 51
@@ -2042,21 +2616,6 @@ entities:
     - type: Transform
       pos: -2.5,5.5
       parent: 1
-- proto: RemoteSignallerAdvanced
-  entities:
-  - uid: 450
-    components:
-    - type: Transform
-      pos: -1.6710832,3.4233837
-      parent: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        123:
-        - Pressed: Toggle
-        6:
-        - Pressed: Toggle
-        122:
-        - Pressed: Toggle
 - proto: ShuttersNormalOpen
   entities:
   - uid: 38
@@ -2068,6 +2627,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 226
+      - 123
   - uid: 39
     components:
     - type: Transform
@@ -2077,6 +2637,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 226
+      - 123
   - uid: 203
     components:
     - type: Transform
@@ -2085,7 +2646,6 @@ entities:
     - type: DeviceLinkSink
       links:
       - 226
-      - 229
   - uid: 208
     components:
     - type: Transform
@@ -2094,7 +2654,6 @@ entities:
     - type: DeviceLinkSink
       links:
       - 226
-      - 229
   - uid: 209
     components:
     - type: Transform
@@ -2103,7 +2662,6 @@ entities:
     - type: DeviceLinkSink
       links:
       - 226
-      - 229
   - uid: 304
     components:
     - type: Transform
@@ -2113,6 +2671,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 226
+      - 123
   - uid: 307
     components:
     - type: Transform
@@ -2122,38 +2681,27 @@ entities:
     - type: DeviceLinkSink
       links:
       - 226
+      - 123
 - proto: ShuttleGunExhumer
   entities:
-  - uid: 6
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 4.5,3.5
-      parent: 1
-    - type: DeviceLinkSink
-      links:
-      - 450
-      - 229
-  - uid: 122
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 3.5,3.5
-      parent: 1
-    - type: DeviceLinkSink
-      links:
-      - 450
-      - 229
-  - uid: 123
+  - uid: 471
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 2.5,3.5
       parent: 1
-    - type: DeviceLinkSink
-      links:
-      - 450
-      - 229
+  - uid: 472
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 3.5,3.5
+      parent: 1
+  - uid: 473
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 4.5,3.5
+      parent: 1
 - proto: SignalButton
   entities:
   - uid: 108
@@ -2326,14 +2874,33 @@ entities:
       parent: 1
 - proto: Thruster
   entities:
+  - uid: 164
+    components:
+    - type: Transform
+      pos: 12.5,2.5
+      parent: 1
+  - uid: 311
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 16.5,-1.5
+      parent: 1
+  - uid: 461
+    components:
+    - type: Transform
+      pos: 14.5,2.5
+      parent: 1
   - uid: 462
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -14.5,-1.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
+  - uid: 463
+    components:
+    - type: Transform
+      pos: 13.5,2.5
+      parent: 1
 - proto: ThrusterSHIWarship
   entities:
   - uid: 2
@@ -2341,118 +2908,65 @@ entities:
     - type: Transform
       pos: 0.5,2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 91
     components:
     - type: Transform
       pos: -5.5,2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 93
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 2.5,-2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 94
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 3.5,-2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 112
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 13.5,-1.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 120
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 5.5,-2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 261
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -9.5,-2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 278
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -7.5,-2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 293
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -8.5,-2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 436
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 4.5,-2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 438
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -2.5,-3.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-- proto: ThrusterUnwelded
-  entities:
-  - uid: 164
-    components:
-    - type: Transform
-      pos: 12.5,2.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 311
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 16.5,-1.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 461
-    components:
-    - type: Transform
-      pos: 14.5,2.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
-  - uid: 463
-    components:
-    - type: Transform
-      pos: 13.5,2.5
-      parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
 - proto: ToolboxElectricalFilled
   entities:
   - uid: 291
@@ -2860,11 +3374,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -13.5,1.5
-      parent: 1
-  - uid: 318
-    components:
-    - type: Transform
-      pos: -8.5,3.5
       parent: 1
   - uid: 319
     components:

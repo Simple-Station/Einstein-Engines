@@ -1,10 +1,10 @@
 - type: gameMap
-  id: Vladzena
-  mapName: 'Port Vladzena'
-  mapPath: /Maps/_Crescent/Stations/vladzena.yml
+  id: PortBalreska
+  mapName: 'Port Balreska'
+  mapPath: /Maps/_Crescent/Stations/novabalreska.yml
   minPlayers: 0
   stations:
-    Vladzena:
+    PortBalreska:
       stationProto: StandardCrescentStation
       gridComponents:
         - type: BlockShipWeaponProjectileGrid
@@ -15,11 +15,11 @@
             state: outpost
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Port Vladzena'
+          mapNameTemplate: 'Port Balreska'
         - type: VesselDesignation
           designation: vessel-designation-headquarters
         - type: VesselDescription
-          description: The sector's last burning hope. Are you here to snuff it out, or fan the flame?
+          description: A sturdy Communard fortress constructed around a bleeding gash in our reality.
         - type: Grammar
           attributes:
             proper: true
@@ -28,8 +28,8 @@
           availableJobs:
             AdministratorNCWL: [ 1, 1 ]
             KommissarNCWL: [ 1, 1 ]
-            KapitanNCWL: [ 10, 10 ]
-            SanitarNCWL: [ 30, 30 ]
-            KadetNCWL: [ 20, 20 ]
+            KapitanNCWL: [ 3, 3 ]
+            SanitarNCWL: [ 25, 25 ]
+            KadetNCWL: [ 10, 10 ]
             ArtificerNCWL: [ 6, 6 ]
             DoktorNCWL: [ 6, 6 ]

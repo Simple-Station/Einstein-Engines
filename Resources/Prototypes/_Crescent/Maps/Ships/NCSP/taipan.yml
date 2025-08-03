@@ -19,6 +19,10 @@
     Taipan:
       stationProto: StandardCrescentExpeditionVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: frigate
         - type: StationNameSetup
           mapNameTemplate: 'CD Taipan {1}'
           nameGenerator:

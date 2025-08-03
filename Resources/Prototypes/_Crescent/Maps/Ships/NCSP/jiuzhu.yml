@@ -19,6 +19,10 @@
     Jiuzhu:
       stationProto: StandardCrescentnVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: frigate
         - type: StationNameSetup
           mapNameTemplate: 'IPM Jiuzhu {1}'
           nameGenerator:

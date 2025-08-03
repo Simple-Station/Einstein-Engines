@@ -19,6 +19,10 @@
     Wolf:
       stationProto: StandardCrescentCivilianVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: cruiser
         - type: StationNameSetup
           mapNameTemplate: 'GSC Wolf {1}'
           nameGenerator:
