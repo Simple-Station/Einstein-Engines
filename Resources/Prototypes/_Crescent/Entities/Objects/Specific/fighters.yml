@@ -117,6 +117,20 @@
       - PowerCageUraniumCell
 
 - type: entity
+  name: DSM Valor Spawner
+  id: SpawnFighterValor
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Crescent/Objects/Specific/bigfighters.rsi
+        state: valor
+  - type: ConditionalSpawner
+    prototypes:
+      - FighterDSMValorBattery
+
+- type: entity
   id: FighterDSMValor
   parent: [ BaseMech, LightFighter ]
   name: DSM pRAA-2 'Valor' light interceptor
@@ -167,6 +181,20 @@
     containers:
       mech-battery-slot:
       - PowerCageUraniumCell
+
+- type: entity
+  name: DSM Honor Spawner
+  id: SpawnFighterHonor
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Crescent/Objects/Specific/fighters.rsi
+        state: honor
+  - type: ConditionalSpawner
+    prototypes:
+      - FighterDSMHonorBattery
 
 - type: entity
   id: FighterDSMHonor
