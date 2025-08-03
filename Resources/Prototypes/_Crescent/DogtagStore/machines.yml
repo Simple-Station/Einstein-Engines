@@ -108,11 +108,11 @@
 - type: entity
   parent: [ BaseStructureUnanchorable, BaseStore, StorePresetHullrotDogtagNCWL ]
   id: NCWLDogtagStore
-  name: NCWL Bounty Console
-  description: A machine rewarding your revolutionary might with better gear. Only accepts DSM ID cards.
+  name: union commissariat autovendor
+  description: A Shinohara-patented autopeddler machine. Uses an integrated, lobotomized zircon-class artifical intelligence subcore to sell you things. Provided you have the Merits.
 
 - type: entity
   parent: [ BaseStructureUnanchorable, BaseStore, StorePresetHullrotDogtagDSM ]
   id: DSMDogtagStore
-  name: DSM Bounty Console
-  description: A machine rewarding your righteous fury with better gear. Only accepts NCWL ID cards.
+  name: imperial requisitions autopeddler
+  description: A Shinohara-patented autopeddler machine. Uses an integrated, lobotomized zircon-class artifical intelligence subcore to sell you things. Provided you have the Dockets.
