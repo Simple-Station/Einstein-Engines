@@ -6,6 +6,9 @@
     - !type:TraitAddComponent
       components:
         - type: Psionic
+    - !type:TraitAddArmor # try to add psionic vuln
+      damageModifierSets:
+      - PsionicDamageVul
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsCasterType
@@ -39,6 +42,9 @@
       components:
         - type: PsionicInsulation
         - type: Mindbroken
+    - !type:TraitAddArmor # add psionic invul
+      damageModifierSets:
+      - PsionicDamageInvul
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsCasterType
@@ -74,6 +80,9 @@
           nextPowerCost: 75
           removable: false
           powerPool: PsychoHistorianPowerPool
+    - !type:TraitAddArmor # try to add psionic vuln
+      damageModifierSets:
+      - PsionicDamageVul
     - !type:TraitAddPsionics
       psionicPowers:
         - TelepathyPower

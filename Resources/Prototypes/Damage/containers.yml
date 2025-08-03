@@ -8,6 +8,7 @@
     - Genetic
   supportedTypes: # Goobstation
   - Holy
+  - Psionic
 
 - type: damageContainer
   id: Inorganic
@@ -33,6 +34,7 @@
   supportedTypes:
   - Heat
   - Shock
+  - Psionic # add a clause to ONLY allow silicon psidamage on anomposi trait
 
 - type: damageContainer
   id: SiliconUnshielded

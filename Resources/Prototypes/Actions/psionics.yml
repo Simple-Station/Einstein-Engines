@@ -171,6 +171,7 @@
             Airloss: -5
             Brute: -7.5
             Burn: -10
+            Metaphysical: -2.5 # change this to JUST psionic later
         rotReduction: 10
         useDelay: 1
         doRevive: false

@@ -28,6 +28,10 @@
       - !type:Drunk
         slurSpeech: false
         boozePower: 20
+      - !type:HealthChange
+        damage:
+          types:
+            Psionic: -0.2 # should barely do anything
 
 - type: reagent
   id: Dylovene
@@ -1127,6 +1131,7 @@
             Heat: -0.2
             Shock: -0.2
             Cold: -0.2
+            Psionic: -0.1 # GD - just a little helpful, really only for the justicar if they dont have other means of psi damage healing their charges
       - !type:PurifyEvil
         conditions:
         - !type:ReagentThreshold

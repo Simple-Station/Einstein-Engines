@@ -20,7 +20,8 @@
     damage:
       types:
         Blunt: 1
-        Holy: 15
+        Holy: 10
+        Psionic: 15
     soundHit:
       collection: Punch
     animation: WeaponArcFist
