@@ -1,3 +1,4 @@
+using System.Collections.Concurrent;
 using System.Numerics;
 using Content.Client.Crescent.Radar;
 using Content.Client.Station;
@@ -20,6 +21,7 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Collision.Shapes;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
+using Robust.Shared.Threading;
 
 
 namespace Content.Client.Shuttles.UI;
@@ -29,6 +31,8 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
 {
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IUserInterfaceManager _uiManager = default!;
+    [Dependency] private readonly IParallelManager _parMan = default!;
+    [Dependency] private readonly ILocalizationManager _locMan = default!;
     private readonly StationSystem _station; // Frontier
     private readonly SharedShuttleSystem _shuttles;
     private readonly SharedTransformSystem _transform;
@@ -49,7 +53,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
 
     internal int updateTicker = 0;
 
-
+    private ShuttleCalculatePositionsJob drawJob;
 
     public bool ShowIFF { get; set; } = true;
     public bool ShowDocks { get; set; } = true;
@@ -72,6 +76,12 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         public MapGridComponent comp;
         public bool forceShow;
         public Vector2 UIPosition;
+        public Texture? icon;
+        public int WidthRequired;
+        public int HeightRequired;
+        public Vector2 textureOffset;
+        public Vector2 calculatedUiPositionIcon;
+        public Vector2 calcultedUiPositionText;
 
         public shipData(MapGridComponent comp, Vector2 uiPosition)
         {
@@ -80,6 +90,171 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
             this.forceShow = false;
         }
     }
+    private record struct ShuttleCalculatePositionsJob : IParallelRobustJob
+    {
+        public int BatchSize => 15;
+
+        public IEntityManager EntManager;
+        public SharedShuttleSystem ShuttlesSys;
+        public SharedTransformSystem TransformSys;
+        public FixtureSystem fixturesSys;
+        public SpriteSystem spritesSys;
+
+        public EntityQuery<TransformComponent> xformQuery;
+        public EntityQuery<FixturesComponent> fixturesQuery;
+        public EntityQuery<PhysicsComponent> bodyQuery;
+        public EntityQuery<VesselIconComponent> iconQuery;
+
+        public bool ShowIFF;
+        public bool ShowDocks;
+        public Box2 viewAABB;
+        public Angle rot;
+        public MapCoordinates mapPos;
+        public Vector2 MidPointVector;
+        public Vector2 MousePositionOnUi;
+        public int PixelWidth;
+        public int PixelHeight;
+        public Font Font;
+        public float MinimapScale;
+
+        public EntityUid selfGrid;
+        public Matrix3x2 selfWorldMatrixInvert;
+        public List<Entity<MapGridComponent>> grids;
+        public ConcurrentBag<Entity<MapGridComponent>> closeGrids;
+        public ConcurrentDictionary<EntityUid, shipData> gridData;
+        public DrawingHandleScreen handle;
+        public ILocalizationManager Loc;
+        public void Execute(int index)
+        {
+            var gUid = grids[index].Owner;
+            var gComp = grids[index].Comp;
+            if (gUid == selfGrid || !fixturesQuery.HasComponent(gUid))
+                return;
+
+            var gridBody = bodyQuery.GetComponent(gUid);
+            EntManager.TryGetComponent<IFFComponent>(gUid, out var iff);
+
+            if (!ShuttlesSys.CanDraw(gUid, gridBody, iff))
+                return;
+
+            var labelName = ShuttlesSys.GetIFFLabel(gUid, self: false, iff);
+            var gridMatrix = TransformSys.GetWorldMatrix(gUid);
+            var matty = Matrix3x2.Multiply(gridMatrix, selfWorldMatrixInvert);
+            var color = ShuttlesSys.GetIFFColor(gUid, self: false, iff);
+            shipData data;
+            if (!gridData.ContainsKey(gUid))
+            {
+                data = new shipData(gComp, Vector2.Zero);
+                if (iconQuery.TryComp(gUid, out var vesselIcon) && vesselIcon.Icon != null)
+                {
+                    data.icon =  spritesSys.Frame0(vesselIcon.Icon);
+                    data.HeightRequired = data.icon.Height / 2;
+                    data.WidthRequired = data.icon.Width / 2;
+                    data.textureOffset = new Vector2(-data.icon.Width, -data.icon.Height);
+                    data.textureOffset /= 2;
+                }
+                gridData[gUid] = data;
+            }
+            else
+            {
+                data = gridData[gUid];
+            }
+
+
+            if (ShowIFF && data.forceShow)
+                color = Color.DarkRed;
+            var gridAABB = gridMatrix.TransformBox(gComp.LocalAABB);
+            if (gridAABB.Intersects(viewAABB))
+            {
+                closeGrids.Add(grids[index]);
+                return;
+            }
+
+            if (labelName != null && !gridAABB.Intersects(viewAABB) && ShowIFF)
+            {
+                const float ShipSelectionDotRadius = 5f;
+                float xSpaceRequired = ShipSelectionDotRadius;
+                float ySpaceRequired = ShipSelectionDotRadius;
+                Texture? icon = null;
+                Vector2 textureOffset = Vector2.Zero;
+                if (data.icon is not null)
+                {
+                    icon = data.icon;
+                    textureOffset = data.textureOffset;
+                    xSpaceRequired = data.WidthRequired;
+                    ySpaceRequired = data.HeightRequired;
+                }
+
+                // transform vector from worldPosition to UIPosition.
+                Vector2 UIPosVector = (-rot).RotateVec(TransformSys.GetWorldPosition(gUid) - mapPos.Position);
+                UIPosVector.Y *= -1;
+                // get its direction.
+                Vector2 UIDirection = UIPosVector.Normalized();
+                // collision with oY axis.
+                Vector2 YTargetScaled = MidPointVector +
+                    UIPosVector.Normalized() * Math.Abs((MidPointVector.X - xSpaceRequired) / UIDirection.Y);
+                // collision with oX axis
+                Vector2 XTargetScaled = MidPointVector +
+                    UIPosVector.Normalized() * Math.Abs((MidPointVector.Y - ySpaceRequired) / UIDirection.X);
+                // fucked up maths case!! SPCR
+                if (YTargetScaled.X < 0)
+                    YTargetScaled = XTargetScaled;
+                if (XTargetScaled.Y < 0)
+                    XTargetScaled = YTargetScaled;
+                //handle.DrawLine(MidPointVector, ScalePosition(UIPosVector), Color.AntiqueWhite);
+                var gridCentre = Vector2.Transform(gridBody.LocalCenter, matty);
+                gridCentre.Y = -gridCentre.Y;
+                var distance = gridCentre.Length();
+                // yes 1.0 scale is intended here.
+                var labelText = Loc.GetString(
+                    "shuttle-console-iff-label",
+                    ("name", labelName),
+                    ("distance", $"{distance:0.0}"));
+                var labelDimensions = handle.GetDimensions(Font, labelText, 1f);
+                Vector2 textUiPosition = new Vector2(-labelDimensions.X / 2f, 0);
+                if (data.forceShow)
+                    color = Color.DarkRed;
+                if (YTargetScaled.Length() < XTargetScaled.Length())
+                {
+                    if ((YTargetScaled - MousePositionOnUi).Length() < 10 || distance < 512 || data.forceShow)
+                    {
+                        textUiPosition += YTargetScaled;
+                        textUiPosition.X = Math.Clamp(textUiPosition.X, 0f, PixelWidth - labelDimensions.X);
+                        textUiPosition.Y = Math.Clamp(
+                            textUiPosition.Y - (Math.Sign(UIDirection.Y) + 1) * 10f,
+                            0f,
+                            PixelHeight - labelDimensions.Y);
+
+                        handle.DrawString(Font, textUiPosition, labelText, color);
+                    }
+
+                    if (icon is not null)
+                        handle.DrawTexture(icon, YTargetScaled + textureOffset, color);
+                    else
+                        handle.DrawCircle(YTargetScaled, ShipSelectionDotRadius, color, true);
+                    data.UIPosition = YTargetScaled;
+                }
+                else
+                {
+                    if ((XTargetScaled - MousePositionOnUi).Length() < 10 || distance < 512 || data.forceShow)
+                    {
+                        textUiPosition += XTargetScaled;
+                        textUiPosition.X = Math.Clamp(textUiPosition.X, 0f, PixelWidth - labelDimensions.X);
+                        textUiPosition.Y = Math.Clamp(textUiPosition.Y, 0f, PixelHeight - labelDimensions.Y);
+
+                        handle.DrawString(Font, textUiPosition, labelText, color);
+                    }
+
+                    if (icon is not null)
+                        handle.DrawTexture(icon, XTargetScaled + textureOffset, color);
+                    else
+                        handle.DrawCircle(XTargetScaled, ShipSelectionDotRadius, color, true);
+                    data.UIPosition = XTargetScaled;
+                }
+            }
+        }
+    }
+
     private Dictionary<EntityUid,shipData> localShips = new();
     public bool keepWorldAligned = false;
 
@@ -94,6 +269,22 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         _projectileIFF = EntManager.System<ProjectileIFFSystem>();
         _fixtures = EntManager.System<FixtureSystem>();
         _sprites = EntManager.System<SpriteSystem>();
+        drawJob = new ShuttleCalculatePositionsJob()
+        {
+            EntManager = EntManager,
+            ShuttlesSys = _shuttles,
+            TransformSys = _transform,
+            fixturesSys = _fixtures,
+            spritesSys = _sprites,
+            Loc = _locMan,
+            xformQuery = EntManager.GetEntityQuery<TransformComponent>(),
+            fixturesQuery = EntManager.GetEntityQuery<FixturesComponent>(),
+            bodyQuery = EntManager.GetEntityQuery<PhysicsComponent>(),
+            iconQuery = EntManager.GetEntityQuery<VesselIconComponent>(),
+            closeGrids = new ConcurrentBag<Entity<MapGridComponent>>(),
+            gridData = new ConcurrentDictionary<EntityUid, shipData>(),
+        };
+
     }
 
     public void SetMatrix(EntityCoordinates? coordinates, Angle? angle)
@@ -367,8 +558,27 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
 
         _grids.Clear();
         _mapManager.FindGridsIntersecting(xform.MapID, new Box2(mapPos.Position - MaxRadarRangeVector, mapPos.Position + MaxRadarRangeVector), ref _grids, approx: true, includeMap: false);
+        if(ourGridId is not null)
+            drawJob.selfGrid = ourGridId.Value;
+        drawJob.MidPointVector = MidPointVector;
+        drawJob.MinimapScale = MinimapScale;
+        drawJob.Font = Font;
+        drawJob.grids = _grids;
+        drawJob.handle = handle;
+        drawJob.rot = rot;
+        drawJob.PixelHeight = PixelHeight;
+        drawJob.PixelWidth = PixelWidth;
+        drawJob.selfWorldMatrixInvert = ourWorldMatrixInvert;
+        drawJob.mapPos = mapPos;
+        drawJob.viewAABB = viewAABB;
+        drawJob.ShowDocks = ShowDocks;
+        drawJob.ShowIFF = ShowIFF;
+        drawJob.MousePositionOnUi = vert;
+        drawJob.closeGrids.Clear();
+        _parMan.ProcessNow(drawJob, _grids.Count);
+
         // Draw other grids... differently
-        foreach (var grid in _grids)
+        foreach (var grid in drawJob.closeGrids)
         {
             var gUid = grid.Owner;
             if (gUid == ourGridId || !fixturesQuery.HasComponent(gUid))
@@ -383,138 +593,46 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
             var gridMatrix = _transform.GetWorldMatrix(gUid);
             var matty = Matrix3x2.Multiply(gridMatrix, ourWorldMatrixInvert);
             var color = _shuttles.GetIFFColor(grid, self: false, iff);
-            if (!localShips.ContainsKey(grid.Owner))
-            {
-                localShips[grid.Owner] = new shipData(grid.Comp, Vector2.Zero);
-            }
 
-            if (ShowIFF && localShips[grid.Owner].forceShow)
+            if (ShowIFF && drawJob.gridData[gUid].forceShow)
                 color = Color.DarkRed;
-
             // Others default:
             // Color.FromHex("#FFC000FF")
             // Hostile default: Color.Firebrick
             var labelName = _shuttles.GetIFFLabel(grid, self: false, iff);
+            var gridCentre = Vector2.Transform(gridBody.LocalCenter, matty);
             var gridBounds = grid.Comp.LocalAABB;
 
-            // Detailed view
-            var gridAABB = gridMatrix.TransformBox(grid.Comp.LocalAABB);
-
-            if (!gridAABB.Intersects(viewAABB) && labelName != null && ShowIFF)
+            gridCentre.Y = -gridCentre.Y;
+            var distance = gridCentre.Length();
+            if (ShowIFF && labelName != null)
             {
-                const float ShipSelectionDotRadius = 5f*2;
-                float xSpaceRequired = ShipSelectionDotRadius;
-                float ySpaceRequired = ShipSelectionDotRadius;
-                Texture? icon = null;
-                Vector2 textureOffset = Vector2.Zero;
-                if (EntManager.TryGetComponent<VesselIconComponent>(grid.Owner, out var vesselIcon) &&
-                    vesselIcon.Icon != null)
-                {
-                    icon = _sprites.Frame0(vesselIcon.Icon);
-                    xSpaceRequired = icon.Width/2;
-                    ySpaceRequired = icon.Height/2;
-                    textureOffset.X = -icon.Width;
-                    textureOffset.Y= -icon.Height;
-                    textureOffset /= 2;
-                    Logger.Debug($"Width {xSpaceRequired} Height {ySpaceRequired}");
-                }
-                // transform vector from worldPosition to UIPosition.
-                Vector2 UIPosVector = (-rot).RotateVec(_transform.GetWorldPosition(grid.Owner) - mapPos.Position);
-                UIPosVector.Y *= -1;
-                // get its direction.
-                Vector2 UIDirection = UIPosVector.Normalized();
-                // collision with oY axis.
-                Vector2 YTargetScaled = MidPointVector + UIPosVector.Normalized() * Math.Abs((MidPoint-xSpaceRequired) / UIDirection.Y);
-                // collision with oX axis
-                Vector2 XTargetScaled = MidPointVector + UIPosVector.Normalized() * Math.Abs((MidPoint-ySpaceRequired) / UIDirection.X);
-                // fucked up maths case!! SPCR
-                if(YTargetScaled.X < 0)
-                    YTargetScaled = XTargetScaled;
-                if(XTargetScaled.Y < 0)
-                    XTargetScaled = YTargetScaled;
-                //handle.DrawLine(MidPointVector, ScalePosition(UIPosVector), Color.AntiqueWhite);
-                var gridCentre = Vector2.Transform(gridBody.LocalCenter, matty);
-                gridCentre.Y = -gridCentre.Y;
-                var distance = gridCentre.Length();
-                // yes 1.0 scale is intended here.
-                var labelText = Loc.GetString("shuttle-console-iff-label", ("name", labelName),
+                var labelText = Loc.GetString(
+                    "shuttle-console-iff-label",
+                    ("name", labelName),
                     ("distance", $"{distance:0.0}"));
+
+                // yes 1.0 scale is intended here.
                 var labelDimensions = handle.GetDimensions(Font, labelText, 1f);
-                Vector2 textUiPosition = new Vector2(-labelDimensions.X / 2f,0);
-                // dont waste GPU resources filling a pixel radius that won't show
-                if(localShips[grid.Owner].forceShow)
-                    color = Color.DarkRed;
-                if (YTargetScaled.Length() < XTargetScaled.Length())
-                {
-                    if ((YTargetScaled - vert).Length() < 10 || distance < 512 || localShips[grid.Owner].forceShow)
-                    {
-                        textUiPosition += YTargetScaled;
-                        textUiPosition.X = Math.Clamp(textUiPosition.X, 0f, PixelWidth - labelDimensions.X);
-                        textUiPosition.Y = Math.Clamp(
-                            textUiPosition.Y - (Math.Sign(UIDirection.Y) + 1) * 10f,
-                            0f,
-                            PixelHeight - labelDimensions.Y);
 
-                        handle.DrawString(Font,textUiPosition , labelText, color);
-                    }
+                // y-offset the control to always render below the grid (vertically)
+                var yOffset = Math.Max(gridBounds.Height, gridBounds.Width) * MinimapScale / 1.8f;
 
-                    if (icon is not null)
-                        handle.DrawTexture(icon, YTargetScaled + textureOffset, color);
-                    else
-                        handle.DrawCircle(YTargetScaled, ShipSelectionDotRadius, color, true);
-                    localShips[grid.Owner].UIPosition = YTargetScaled;
-                }
-                else
-                {
-                    if ((XTargetScaled - vert).Length() < 10 || distance < 512 || localShips[grid.Owner].forceShow)
-                    {
-                        textUiPosition += XTargetScaled;
-                        textUiPosition.X = Math.Clamp(textUiPosition.X, 0f, PixelWidth - labelDimensions.X);
-                        textUiPosition.Y = Math.Clamp(textUiPosition.Y, 0f, PixelHeight - labelDimensions.Y);
+                // The actual position in the UI. We offset the matrix position to render it off by half its width
+                // plus by the offset.
+                var uiPosition = ScalePosition(gridCentre) - new Vector2(labelDimensions.X / 2f, -yOffset);
 
-                        handle.DrawString(Font,textUiPosition , labelText, color);
-                    }
-                    if (icon is not null)
-                        handle.DrawTexture(icon, XTargetScaled + textureOffset, color);
-                    else
-                        handle.DrawCircle(XTargetScaled, ShipSelectionDotRadius, color, true);
-                    localShips[grid.Owner].UIPosition = XTargetScaled;
-                }
+                // Look this is uggo so feel free to cleanup. We just need to clamp the UI position to within the viewport.
+                uiPosition = new Vector2(
+                    Math.Clamp(uiPosition.X, 0f, PixelWidth - labelDimensions.X),
+                    Math.Clamp(uiPosition.Y, 0f, PixelHeight - labelDimensions.Y));
+                handle.DrawString(Font, uiPosition, labelText, color);
             }
-            else
-            {
-                var gridCentre = Vector2.Transform(gridBody.LocalCenter, matty);
-                var globalGridCentre = _transform.GetWorldPosition(gUid);
-                gridCentre.Y = -gridCentre.Y;
-                var distance = gridCentre.Length();
-                if (ShowIFF && labelName != null)
-                {
-                    var labelText = Loc.GetString(
-                        "shuttle-console-iff-label",
-                        ("name", labelName),
-                        ("distance", $"{distance:0.0}"));
-
-                    // yes 1.0 scale is intended here.
-                    var labelDimensions = handle.GetDimensions(Font, labelText, 1f);
-
-                    // y-offset the control to always render below the grid (vertically)
-                    var yOffset = Math.Max(gridBounds.Height, gridBounds.Width) * MinimapScale / 1.8f;
-
-                    // The actual position in the UI. We offset the matrix position to render it off by half its width
-                    // plus by the offset.
-                    var uiPosition = ScalePosition(gridCentre) - new Vector2(labelDimensions.X / 2f, -yOffset);
-
-                    // Look this is uggo so feel free to cleanup. We just need to clamp the UI position to within the viewport.
-                    uiPosition = new Vector2(
-                        Math.Clamp(uiPosition.X, 0f, PixelWidth - labelDimensions.X),
-                        Math.Clamp(uiPosition.Y, 0f, PixelHeight - labelDimensions.Y));
-                    handle.DrawString(Font, uiPosition, labelText, color);
-                }
 
             DrawGrid(handle, matty, grid, color);
             DrawDocks(handle, gUid, matty);
             DrawTurrets(handle, gUid, matty, false);
-            }
+
         }
     }
 
