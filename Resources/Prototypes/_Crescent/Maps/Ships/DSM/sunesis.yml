@@ -16,6 +16,10 @@
     Sunesis:
       stationProto: StandardCrescentVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: bigindustrial
         - type: StationNameSetup
           mapNameTemplate: 'DSM Sunesis {1}'
           nameGenerator:

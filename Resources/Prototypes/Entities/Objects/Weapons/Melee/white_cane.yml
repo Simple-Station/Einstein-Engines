@@ -16,7 +16,7 @@
     range: 1.75
     damage:
       types:
-        Blunt: 4
+        Blunt: 10
     bluntStaminaDamageFactor: 4
     heavyRateModifier: 2
     lightRangeModifier: 1.3
@@ -29,6 +29,6 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 1
+        Blunt: 5
   - type: UseDelay
     delay: 1

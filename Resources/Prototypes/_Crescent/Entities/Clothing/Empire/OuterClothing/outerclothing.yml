@@ -228,10 +228,44 @@
   - type: StaticPrice
     price: 4500
 
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitImperialKnight
+  name: imperial 'KONIGSCHILD' mk II combat hardsuit
+  description: A modular knight's hardsuit, bears the colors of the Kaiser and House Olywir.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/OuterClothing/mandateknight.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/OuterClothing/mandateknight.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: DegradeableArmor
+    armorMaxHealth: 750
+    armorType: Metallic
+    armorRepair: PlasteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 30
+        Slash: 30
+        Piercing: 55
+        Heat: 30
+        Caustic: 25
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitImperialKnight
+  - type: StaticPrice
+    price: 6000
+
 # armor
 
 - type: entity
-  parent: ClothingOuterArmorBasic
+  parent: ClothingOuterBaseLarge
   id: ClothingOuterArmorImperialTrooperArmor
   name: imperial man-at-arms vest
   description: A Type III Imperial trooper vest.
@@ -246,14 +280,15 @@
     armorRepair: PlasteelPlate
     initialModifiers:
       flatReductions:
-        Blunt: 17
-        Slash: 17
-        Piercing: 30
-        Heat: 15
+        Blunt: 25
+        Slash: 25
+        Piercing: 45
+        Heat: 25
         Caustic: 25
   - type: ExplosionResistance
-    damageCoefficient: 0.80
+    damageCoefficient: 0.90
   - type: StaticPrice
+  - type: AllowSuitStorage
     price: 1500
 
 - type: entity
@@ -283,7 +318,7 @@
     price: 1500
 
 - type: entity
-  parent: ClothingOuterArmorBasic
+  parent: ClothingOuterBaseLarge
   id: ClothingOuterArmorImperialArmorPrestige
   name: imperial prestige armor vest
   description: A Type IV Imperial trooper vest with rank stripes and enhanced kevlar composite.
@@ -300,12 +335,13 @@
       flatReductions:
         Blunt: 20
         Slash: 20
-        Piercing: 40
+        Piercing: 45
         Heat: 25
         Caustic: 25
   - type: ExplosionResistance
     damageCoefficient: 0.80
   - type: StaticPrice
+  - type: AllowSuitStorage
     price: 3000
 
 #coats
@@ -445,8 +481,13 @@
   - type: Tag
     tags:
     - SuitEVA
+    - FitsInVoidsuitKit
   - type: StaticPrice
     price: 1500
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,3,3
 
 - type: entity
   parent: ClothingOuterEVASuitBase

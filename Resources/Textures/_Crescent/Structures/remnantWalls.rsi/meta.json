@@ -1,0 +1,46 @@
+{
+    "version": 1,
+    "license": "Propietary",
+    "copyright": "Commisioned and owned by SPCR/MLGTASTICa",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "remnant_full"
+      },
+      {
+        "name": "remnant_0",
+        "directions": 4
+      },
+      {
+        "name": "remnant_1",
+        "directions": 4
+      },
+      {
+        "name": "remnant_2",
+        "directions": 4
+      },
+      {
+        "name": "remnant_3",
+        "directions": 4
+      },
+      {
+        "name": "remnant_4",
+        "directions": 4
+      },
+      {
+        "name": "remnant_5",
+        "directions": 4
+      },
+      {
+        "name": "remnant_6",
+        "directions": 4
+      },
+      {
+        "name": "remnant_7",
+        "directions": 4
+      }
+    ]
+  }

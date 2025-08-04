@@ -548,10 +548,12 @@ namespace Content.Server.Atmos.EntitySystems
                 var direction = ((Vector2)_depressurizeTiles[tileCount - 1].GridIndices - tile.GridIndices).Normalized();
 
                 var gridPhysics = Comp<PhysicsComponent>(owner);
-
+                float forceMult = 2;
+                if (gridPhysics.Mass < 100)
+                    forceMult *= gridPhysics.Mass / 100;
                 // TODO ATMOS: Come up with better values for these.
-                // Hullrot edit, came with better values. times 3 because that is a semi-realistic value for any gas density in general
-                _physics.ApplyLinearImpulse(owner, direction * 3 * (totalMolesRemoved * (0.1f + (tile.Temperature+1)/Atmospherics.T0C)), body: gridPhysics);
+                // Hullrot edit, came with better values. times 3(changed to 2 by comm request) because that is a semi-realistic value for any gas density in general
+                _physics.ApplyLinearImpulse(owner, direction * forceMult * (totalMolesRemoved * (0.1f + (tile.Temperature+1)/Atmospherics.T0C)), body: gridPhysics);
                 _physics.ApplyAngularImpulse(owner, Vector2Helpers.Cross(tile.GridIndices - gridPhysics.LocalCenter, direction) * totalMolesRemoved, body: gridPhysics);
             }
 

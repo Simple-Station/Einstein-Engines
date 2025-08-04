@@ -1,0 +1,69 @@
+- type: job
+  id: ConscriptShotgunNCWL
+  name: job-name-conscript-ncwl-shotgun
+  description: job-description-conscript-ncwl-shotgun #change me later
+  playTimeTracker: ConscriptJobShotgunNCWL
+  weight: 4
+  startingGear: ConscriptShotgunNCWLGear
+  alwaysUseSpawner: true
+  icon: "JobIconUnionfallNCWLCQC"
+  requirements:
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - Muted
+        - WheelchairBound
+  requireAdminNotify: false
+  supervisors: job-supervisors-conscript-ncwl
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ncwl-cqc
+      - type: HullrotFaction
+        faction: NCWL
+  access:
+  - Command
+  - Maintenance
+  - Service
+  - NCWLGeneral
+  - NCWLJail
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+  - NCWLAdministrator
+  - NCWLFunds
+  - NCWLKommissar
+  - NCWLArmory
+  - NCWLCommand
+
+- type: startingGear
+  id: ConscriptShotgunNCWLGear
+  equipment:
+    head: ClothingHeadHelmetNCWLHeavy
+    neck: ClothingNeckIFFOrange
+    mask: ClothingMaskPilot
+    jumpsuit: ClothingUniformJumpsuitNCWL
+    outerClothing: ClothingOuterArmorNCWLHeavyCarapace
+    shoes: ClothingShoesBootsMagNCWL
+    belt: ClothingBeltNCWLPouchesFilledShotgun
+    back: ClothingBackpackNCWL
+    pocket1: DoubleEmergencyOxygenTankFilled
+    pocket2: ExGrenade
+    ears: ClothingHeadsetNCWL
+    id: SanitarPDA
+    suitstorage: WeaponShotgunDoubleBarreledNCWL
+    gloves: ClothingHandsGlovesCombat
+    eyes: ClothingEyesGlassesNCWL
+  inhand:
+    - BookUnionfallNCWLGuide
+  storage:
+    back:
+      - VoidsuitKitNCWL
+      - BoxMRE
+      - BoxFlare
+      - WeaponPistolComrade

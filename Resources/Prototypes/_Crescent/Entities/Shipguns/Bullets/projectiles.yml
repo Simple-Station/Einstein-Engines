@@ -1,0 +1,1538 @@
+#vulcan projectile
+
+- type: entity
+  id: BulletMachineGunVulcan
+  name: 20mm vulcan bullet
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileIFF
+    visualType: Circle
+    color: White
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 90
+        Piercing: 50
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: TimedDespawn
+    lifetime: 4
+  - type: Fixtures
+    fixtures:
+      projectile:
+        hard: false
+      fly-by: &flybyfixture
+        shape: !type:PhysShapeCircle
+          radius: 1.5
+        layer:
+        - Impassable
+        - MidImpassable
+        - HighImpassable
+        - LowImpassable
+        hard: False
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/pdtcasing.rsi
+    layers:
+      - state: base-projectile
+  - type: ShipWeaponProjectile
+  - type: ProjectilePhasePrevent #do not remove
+    mask:
+    - BulletImpassable
+    - Impassable
+
+#mortar projectile
+
+- type: entity
+  id: BulletMachineGunMortarTurret
+  name: 90mm heavy mortar shell
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileIFF
+    visualType: Square
+    color: White
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 250
+        Piercing: 100
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 100
+    intensitySlope: 14
+    totalIntensity: 325
+    maxTileBreak: 7
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: TimedDespawn
+    lifetime: 120
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/mortarcasing.rsi
+    layers:
+      - state: base-projectile
+
+#plasma repeater projectile
+
+- type: entity
+  id: BulletMachineGunPlasmaShuttle
+  name: plasma bolt
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: ProjectileIFF
+    visualType: Circle
+    color: Blue
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 80
+        Radiation: 10
+        Heat: 25
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 14
+    intensitySlope: 23
+    totalIntensity: 20
+    maxTileBreak: 2
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: TimedDespawn
+    lifetime: 22
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/plasmahardpoint.rsi
+    layers:
+      - state: icon
+
+#hardliner projectile
+
+- type: entity
+  id: BulletMachineGunPlasmaShuttleLarge
+  name: plasma ball
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 150
+        Radiation: 25
+        Heat: 35
+  - type: ProjectileIFF
+    visualType: Circle
+    color: Blue
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 80
+    intensitySlope: 4
+    maxIntensity: 6
+    maxTileBreak: 4
+  - type: PointLight
+    radius: 3.5
+    color: red
+    energy: 0.5
+  - type: TimedDespawn
+    lifetime: 80
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/plasmaheavy.rsi
+    layers:
+      - state: icon
+
+#bizmuth projectile
+
+- type: entity
+  id: BulletMachineGunIon
+  name: ion ray
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Radiation: 25
+        Heat: 35
+  - type: ProjectileIFF
+    visualType: Circle
+    color: Blue
+  - type: EmpOnTrigger
+    range: 2
+    energyConsumption: 1000
+    disableDuration: 6
+  - type: PointLight
+    radius: 3.5
+    color: blue
+    energy: 0.5
+  - type: TimedDespawn
+    lifetime: 60
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/ion.rsi
+    layers:
+      - state: icon
+
+#idna projectile
+
+- type: entity
+  id: IdnaTorpedoBullet
+  name: Idna Torpedo
+  parent: TorpedoBase
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 75
+    intensitySlope: 20
+    totalIntensity: 900
+
+- type: entity
+  id: TorpedoBase
+  name: shell
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 250
+        Blunt: 40
+  - type: Tag
+    tags:
+      - Torpedo
+  - type: TimedDespawn
+    lifetime: 40
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/torpedop.rsi
+    layers:
+      - state: base-projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 75
+    intensitySlope: 20
+    totalIntensity: 450
+  - type: HeatSeeking
+    rotationSpeed: 25
+    acceleration: 25
+    topSpeed: 50
+    fov: 30
+    defaultSeekingRange: 600
+    guidanceAlgorithm: PredictiveGuidance
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ProjectileIFF
+    visualType: SquareReticle
+    color: Red
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.45,0.15,0.15"
+        layer:
+        - BulletImpassable
+        mask:
+        - Impassable
+        - BulletImpassable
+        hard: true
+      fly-by: *flybyfixture
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 80
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ExplodeBehavior
+
+#gargoyle projectile
+
+- type: entity
+  id: TorpedoGargoyle
+  name: 240mm heatseeking cruise missile
+  description: Shit.
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 5000
+        Blunt: 40
+  - type: Tag
+    tags:
+      - TorpedoGarg
+  - type: TimedDespawn
+    lifetime: 50
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/torp.rsi
+    layers:
+      - state: base-projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 650
+    intensitySlope: 10
+    maxIntensity: 40
+  - type: HeatSeeking
+    rotationSpeed: 7 # slow turn rate
+    acceleration: 5
+    topSpeed: 40
+    fov: 20
+    defaultSeekingRange: 1500 # long range
+    guidanceAlgorithm: PredictiveGuidance
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ProjectileIFF
+    visualType: SquareReticle
+    color: Red
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.45,0.15,0.15"
+        layer:
+        - BulletImpassable
+        mask:
+        - Impassable
+        - BulletImpassable
+        hard: true
+      fly-by: *flybyfixture
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ExplodeBehavior
+
+#emp gargoyle projectile
+
+- type: entity
+  id: TorpedoGargoyleEMP
+  name: 240mm heatseeking cruise missile
+  description: Shit.
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 500
+        Blunt: 40
+  - type: Tag
+    tags:
+      - TorpedoGarg
+  - type: TimedDespawn
+    lifetime: 50
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/torpemp.rsi
+    layers:
+      - state: base-projectile
+  - type: ExplodeOnTrigger
+  - type: EmpOnTrigger
+    range: 8
+    energyConsumption: 3000
+    disableDuration: 14
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 50
+    intensitySlope: 50
+    totalIntensity: 120
+    maxTileBreak: 5
+  - type: HeatSeeking
+    rotationSpeed: 5 # slow turn rate
+    acceleration: 5
+    topSpeed: 40
+    fov: 20
+    defaultSeekingRange: 1500 # long range
+    guidanceAlgorithm: PredictiveGuidance
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ProjectileIFF
+    visualType: SquareReticle
+    color: Red
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.45,0.15,0.15"
+        layer:
+        - BulletImpassable
+        mask:
+        - Impassable
+        - BulletImpassable
+        hard: true
+      fly-by: *flybyfixture
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ExplodeBehavior
+
+#lancer projectile
+
+- type: entity
+  id: LanceRocketProjectile
+  name: 100mm high-explosive fragmentation rocket
+  description: Shit.
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 125
+        Blunt: 40
+  - type: Tag
+    tags:
+      - LanceRocket
+  - type: TimedDespawn
+    lifetime: 8
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/lance.rsi
+    layers:
+      - state: base-projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 20
+    intensitySlope: 20
+    totalIntensity: 120
+    maxTileBreak: 4
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ProjectileIFF
+    visualType: SquareReticle
+    color: Red
+  - type: HeatSeeking
+    rotationSpeed: 15 # slow rotation so it isnt aimbot, still fairly accurate though
+    acceleration: 120
+    topSpeed: 120
+    fov: 30
+    defaultSeekingRange: 400
+    guidanceAlgorithm: PredictiveGuidance
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.45,0.15,0.15"
+        layer:
+        - BulletImpassable
+        mask:
+        - Impassable
+        - BulletImpassable
+        hard: true
+      fly-by: *flybyfixture
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ExplodeBehavior
+
+# hephaestus (230mm) projectile
+
+- type: entity
+  id: BattlemortarProjectile
+  name: 230mm high-explosive heavy mortar shell
+  description: Shit.
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 500
+        Blunt: 40
+  - type: Tag
+    tags:
+      - HeavyMortarShell
+  - type: TimedDespawn
+    lifetime: 30
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/battleshell.rsi
+    layers:
+      - state: base-projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 900
+    intensitySlope: 35
+    maxIntensity: 250
+    maxTileBreak: 12
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ProjectileIFF
+    visualType: Diamond
+    color: White
+
+# prince flak projectile
+
+- type: entity
+  id: FlakProjectileHE
+  name: 88mm high explosive flak pellet
+  description: Shit.
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 2500
+        Blunt: 40
+  - type: Tag
+    tags:
+      - FlakShell
+  - type: TimedDespawn
+    lifetime: 10
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/flak.rsi
+    layers:
+      - state: base-projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 250
+    intensitySlope: 1
+    maxIntensity: 35
+    maxTileBreak: 7
+  - type: ProximityFuse
+    maxRange: 15
+    minRange: 2
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ProjectileIFF
+    visualType: Circle
+    color: White
+
+- type: entity
+  id: FlakProjectile
+  name: 88mm low-yield flak pellet
+  description: Shit.
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 600
+        Blunt: 40
+  - type: Tag
+    tags:
+      - FlakShell
+  - type: TimedDespawn
+    lifetime: 10
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/flak.rsi
+    layers:
+      - state: base-projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 150
+    intensitySlope: 0.2
+    maxIntensity: 2
+    maxTileBreak: 5
+  - type: ProximityFuse
+    maxRange: 15
+    minRange: 2
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ProjectileIFF
+    visualType: Circle
+    color: White
+
+#323mm catapult projectile
+
+- type: entity
+  id: CatapultProjectile
+  name: 320mm high-explosive torpedo
+  description: Shit.
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 5000
+        Blunt: 40
+  - type: Tag
+    tags:
+      - TorpedoCatapult
+  - type: TimedDespawn
+    lifetime: 35
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/catapult.rsi
+    layers:
+      - state: base-projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 1500
+    intensitySlope: 35
+    maxIntensity: 250
+    maxTileBreak: 12
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ProjectileIFF
+    visualType: SquareReticle
+    color: Red
+
+# rimward projectile
+
+- type: entity
+  id: BulletPlasmaBlaster
+  name: heavy plasma bolt
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 375
+        Radiation: 35
+        Heat: 40
+        Blunt: 20
+  - type: ProjectileIFF
+    visualType: Circle
+    color: Blue
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 35
+    intensitySlope: 7
+    totalIntensity: 25
+    maxTileBreak: 6
+  - type: PointLight
+    radius: 3.5
+    color: red
+    energy: 0.5
+  - type: TimedDespawn
+    lifetime: 20
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/plasmaheavy.rsi
+    layers:
+      - state: base-projectile
+
+#xray compakt projectile
+
+- type: entity
+  id: CompaktXrayProjectile
+  name: xray laser
+  description: Shit.
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: ProjectilePhasePrevent #doesnt cause explosions so probably fine
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 250
+        Radiation: 45
+        Blunt: 40
+  - type: Tag
+    tags:
+      - CompaktLens
+  - type: TimedDespawn
+    lifetime: 8
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/lenses.rsi
+    layers:
+      - state: base-xray
+  - type: EmpOnTrigger
+    energyConsumption: 500
+    range: 3
+    disableDuration: 1
+  - type: PointLight
+    radius: 3.5
+    color: blue
+    energy: 0.5
+  - type: ProjectileIFF
+    visualType: Circle
+    color: Blue
+
+#infrared compakt projectile
+
+- type: entity
+  id: CompaktInfraredProjectile
+  name: infrared laser
+  description: Shit.
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: ProjectilePhasePrevent #doesnt cause explosions so probably fine
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 450
+        Radiation: 20
+        Blunt: 40
+  - type: Tag
+    tags:
+      - CompaktLens
+  - type: TimedDespawn
+    lifetime: 25
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/lenses.rsi
+    layers:
+      - state: base-projectile
+  - type: PointLight
+    radius: 3.5
+    color: white
+    energy: 0.5
+  - type: ProjectileIFF
+    visualType: Circle
+    color: Blue
+
+#microwave compakt projectile
+
+- type: entity
+  id: CompaktMicrowaveProjectile
+  name: microwave laser
+  description: Shit.
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: ProjectilePhasePrevent #doesnt cause explosions so probably fine
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 250
+        Radiation: 20
+        Blunt: 40
+  - type: Tag
+    tags:
+      - CompaktLens
+  - type: TimedDespawn
+    lifetime: 14
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/lenses.rsi
+    layers:
+      - state: base-projectile
+  - type: PointLight
+    radius: 3.5
+    color: white
+    energy: 0.5
+  - type: ProjectileIFF
+    visualType: Circle
+    color: Blue
+
+#plasma compakt projectile
+
+- type: entity
+  id: CompaktPlasmaProjectile
+  name: plasma laser
+  description: Shit.
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 4
+    intensitySlope: 3
+    totalIntensity: 4
+    maxTileBreak: 1
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 400
+        Radiation: 20
+        Blunt: 40
+  - type: Tag
+    tags:
+      - CompaktLens
+  - type: TimedDespawn
+    lifetime: 14
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/lenses.rsi
+    layers:
+      - state: base-projectile
+  - type: PointLight
+    radius: 3.5
+    color: white
+    energy: 0.5
+  - type: ProjectileIFF
+    visualType: Circle
+    color: Blue
+
+#standard solaris projectile
+
+- type: entity
+  id: StandardAntimatterProjectile
+  name: exotic particles
+  description: Shit.
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 800
+        Radiation: 40
+  - type: Tag
+    tags:
+      - CompaktLens
+  - type: TimedDespawn
+    lifetime: 14
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/amcanister.rsi
+    layers:
+      - state: base-projectile
+  - type: PointLight
+    radius: 3.5
+    color: white
+    energy: 0.5
+  - type: ProjectileIFF
+    visualType: SolidCircle
+    color: White
+
+#plasma solaris projectile
+
+- type: entity
+  id: PlasmaAntimatterProjectile
+  name: exotic plasma particles
+  description: Shit.
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 20
+    intensitySlope: 10
+    totalIntensity: 90
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 400
+        Radiation: 20
+  - type: TimedDespawn
+    lifetime: 14
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/amcanisterplas.rsi
+    layers:
+      - state: base-projectile
+  - type: PointLight
+    radius: 3.5
+    color: purple
+    energy: 0.5
+  - type: ProjectileIFF
+    visualType: SolidCircle
+    color: White
+
+#guided solaris projectile
+
+- type: entity
+  id: GuidedAntimatterProjectile
+  name: plasma particles
+  description: Shit.
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 600
+        Radiation: 20
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 20
+    intensitySlope: 10
+    totalIntensity: 50
+    maxTileBreak: 7
+  - type: TimedDespawn
+    lifetime: 14
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/amcanisterguided.rsi
+    layers:
+      - state: base-projectile
+  - type: PointLight
+    radius: 3.5
+    color: purple
+    energy: 0.5
+  - type: ProjectileIFF
+    visualType: SolidCircle
+    color: White
+  - type: HeatSeeking
+    rotationSpeed: 20 # slow rotation so it isnt aimbot, still fairly accurate though
+    acceleration: 85
+    topSpeed: 85
+    fov: 20
+    defaultSeekingRange: 400
+    guidanceAlgorithm: PredictiveGuidance
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.45,0.15,0.15"
+        layer:
+        - BulletImpassable
+        mask:
+        - Impassable
+        - BulletImpassable
+        hard: true
+      fly-by: *flybyfixture
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ExplodeBehavior
+
+#jeong/osiris
+
+- type: entity
+  id: SwarmerRocketsGuided
+  name: 70mm rocket
+  description: Shit.
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 700
+  - type: TimedDespawn
+    lifetime: 20
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/swarmclip.rsi
+    layers:
+      - state: base-projectile
+  - type: ProjectileIFF
+    visualType: SquareReticle
+    color: Red
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 10
+    intensitySlope: 5
+    totalIntensity: 30
+    maxTileBreak: 1
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: HeatSeeking
+    rotationSpeed: 15
+    acceleration: 25
+    topSpeed: 125
+    fov: 30
+    defaultSeekingRange: 400
+    guidanceAlgorithm: PredictiveGuidance
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.45,0.15,0.15"
+        layer:
+        - BulletImpassable
+        mask:
+        - Impassable
+        - BulletImpassable
+        hard: true
+      fly-by: *flybyfixture
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ExplodeBehavior
+
+#komodo projectile
+
+- type: entity
+  id: BulletMachineGunPlasmaKomodo
+  name: plasma bolt
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: ProjectileIFF
+    visualType: Circle
+    color: Blue
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 250
+        Radiation: 40
+        Heat: 65
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 42
+    intensitySlope: 6
+    totalIntensity: 28
+    maxTileBreak: 6
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: TimedDespawn
+    lifetime: 22
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/plasmahardpoint.rsi
+    layers:
+      - state: icon
+
+#needler projectile
+
+- type: entity
+  id: NeedlerBase
+  name: shell
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Piercing: 700
+        Structural: 2500
+  - type: TimedDespawn
+    lifetime: 20
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/needler.rsi
+    layers:
+      - state: base-projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 38
+    intensitySlope: 30
+    totalIntensity: 200
+    maxTileBreak: 5
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ProjectileIFF
+
+#pilum projectile
+
+- type: entity
+  id: SmartBombBase
+  name: shell
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 70
+        Blunt: 40
+  - type: TimedDespawn
+    lifetime: 40
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/smartbomb.rsi
+    layers:
+      - state: base-projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 40
+    intensitySlope: 35
+    totalIntensity: 145
+    maxTileBreak: 7
+  - type: HeatSeeking
+    rotationSpeed: 25
+    acceleration: 5
+    topSpeed: 20
+    initialSpeed: 10
+    defaultSeekingRange: 300
+    guidanceAlgorithm: PredictiveGuidance
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ProjectileIFF
+
+#derecho projectile
+
+- type: entity
+  id: LonggunShell
+  name: shell
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 70
+        Blunt: 40
+        Piercing: 10
+  - type: TimedDespawn
+    lifetime: 20
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/coilcasing.rsi
+    layers:
+      - state: base-projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 20
+    intensitySlope: 12
+    totalIntensity: 100
+    maxTileBreak: 7
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ProjectileIFF
+
+#swarmer projectile
+
+- type: entity
+  id: SwarmerMissile
+  name: shell
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 800
+        Piercing: 100
+  - type: TimedDespawn
+    lifetime: 20
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/swarmermissile.rsi
+    layers:
+      - state: base-projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 45
+    intensitySlope: 30
+    totalIntensity: 80
+    maxTileBreak: 4
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ProjectileIFF
+
+#pdt projectile
+
+- type: entity
+  id: PDTBullet
+  name: shell
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 90
+        Blunt: 30
+        Piercing: 30
+  - type: ProjectileIFF
+  - type: TimedDespawn
+    lifetime: 15
+  - type: Fixtures
+    fixtures:
+      fly-by: *flybyfixture
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/pdtcasing.rsi
+    layers:
+      - state: base-projectile
+  - type: ExplodeOnTrigger
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ProjectilePhasePrevent #do not remove
+    mask:
+    - BulletImpassable
+    - Impassable
+
+#320mm projectile
+
+- type: entity
+  id: BulletRailHighExplosive
+  name: rail
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 5000
+  - type: TimedDespawn
+    lifetime: 300
+    #roughly 39000m range
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/1000_armorpiercing_rail_casing.rsi
+    layers:
+      - state: base-projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 3000
+    intensitySlope: 3
+    totalIntensity: 3000
+    maxTileBreak: 53
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ShipWeaponProjectile
+  - type: ProjectileIFF
+
+#inert 43mm (slugthrower) projectile
+
+- type: entity
+  id: BulletMachineGunPractice
+  name: .50 inert slughthrower bullet
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 5
+  - type: TimedDespawn
+    lifetime: 10
+    #roughly 600m range
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/50_practice_machinegun_casing.rsi
+    layers:
+      - state: base-projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 0.1
+    intensitySlope: 1
+    totalIntensity: 0.5
+    maxTileBreak: 0
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ShipWeaponProjectile
+  - type: ProjectileIFF
+
+#low yield 43mm (slugthrower) projectile
+
+- type: entity
+  id: BulletMachineGunHighExplosive
+  name: 43mm low-yield explosive slugthrower bullet
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 55
+  - type: TimedDespawn
+    lifetime: 10
+    #roughly 600m range
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/50_highexplosive_machinegun_casing.rsi
+    layers:
+      - state: base-projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 12
+    intensitySlope: 15
+    totalIntensity: 13
+    maxTileBreak: 2
+  - type: PointLight
+    radius: 5
+    color: orange
+    energy: 0.8
+  - type: ShipWeaponProjectile
+  - type: ProjectileIFF
+    visualType: Square
+    color: White
+
+#armor piercing 43mm (slugthrower) projectile
+
+- type: entity
+  id: BulletMachineGunArmorPiercing
+  name: 43mm AP slugthrower bullet
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Piercing: 375
+  - type: TimedDespawn
+    lifetime: 10
+    #roughly 600m range
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/50_armorpiercing_machinegun_casing.rsi
+    layers:
+      - state: base-projectile
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ShipWeaponProjectile
+  - type: ProjectileIFF
+    visualType: Square
+    color: White
+
+#emp 43mm (slugthrower) projectile
+
+- type: entity
+  id: BulletMachineGunEMP
+  name: 43mm EMP-tip slugthrower pellet
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileIFF
+    visualType: Square
+    color: White
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 35
+        Blunt: 10
+  - type: TimedDespawn
+    lifetime: 10
+    #roughly 600m range
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/50_emp_machinegun_casing.rsi
+    layers:
+      - state: base-projectile
+  - type: EmpOnTrigger
+    range: 3
+    energyConsumption: 250
+    disableDuration: 1
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ShipWeaponProjectile
+
+#practice 120mm projectile
+
+- type: entity
+  id: BulletShellPractice
+  name: shell
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileIFF
+    visualType: Diamond
+    color: White
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 1
+  - type: TimedDespawn
+    lifetime: 240
+    #roughly 22800m range
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/630_practice_shell_casing.rsi
+    layers:
+      - state: base-projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 0.1
+    intensitySlope: 1
+    totalIntensity: 2
+    maxTileBreak: 2
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ShipWeaponProjectile
+
+#high yield 120mm projectile
+
+- type: entity
+  id: BulletShellHighExplosive
+  name: shell
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileIFF
+    visualType: Diamond
+    color: White
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 150
+  - type: TimedDespawn
+    lifetime: 240
+    #roughly 22800m range
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/630_highexplosive_shell_casing.rsi
+    layers:
+      - state: base-projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 100
+    intensitySlope: 35
+    totalIntensity: 500
+    maxTileBreak: 8
+  - type: PointLight
+    radius: 3.5
+    color: red
+    energy: 0.5
+  - type: ShipWeaponProjectile
+
+#armor piercing 120mm projectile
+
+- type: entity
+  id: BulletShellArmorPiercing
+  name: shell
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileIFF
+    visualType: Diamond
+    color: White
+  - type: Projectile
+    ignoreWeaponGrid: true
+    damage:
+      types:
+        Structural: 1000
+  - type: TimedDespawn
+    lifetime: 240
+    #roughly 22800m range
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/630_armorpiercing_shell_casing.rsi
+    layers:
+      - state: base-projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 60
+    intensitySlope: 50
+    totalIntensity: 60
+    maxTileBreak: 5
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ShipWeaponProjectile

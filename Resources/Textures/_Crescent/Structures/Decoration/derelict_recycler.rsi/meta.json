@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Taken from MS13",
+  "size": {
+    "x": 64,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "machine",
+      "delays": [
+      [
+        0.3,
+        0.3,
+        0.3,
+        0.3
+      ] ]
+    },
+    {
+      "name": "off"
+    }
+  ]
+}

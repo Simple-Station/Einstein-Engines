@@ -1,0 +1,63 @@
+- type: entity
+  id: BaseFixedShipgun
+  parent: BaseMachinePowered
+  name: fixed shipgun
+  abstract: true
+  components:
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhilePulling: false
+    rotateWhileAnchored: false
+  - type: Battery
+    maxCharge: 20000
+    startingCharge: 20000
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 1000
+  - type: DeviceLinkSource
+    ports:
+      - SpaceArtilleryDetectedFiring
+      - SpaceArtilleryDetectedMalfunction
+      - SpaceArtilleryDetectedSafetyChange
+  - type: SpaceArtillery
+    powerChargeRate: 5000
+    powerUsePassive: 0
+    powerUseActive: 2000
+    isArmed: true
+    isPowerRequiredToFire: true
+  - type: ExtensionCableReceiver
+  - type: ExaminableBattery
+  - type: TurretIFF
+
+- type: entity
+  id: BaseTurretShipgun
+  parent: BaseMachinePowered
+  name: turret shipgun
+  abstract: true
+  components:
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhilePulling: false
+    rotateWhileAnchored: false
+  - type: WorldLoader
+    radius: 256
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
+  - type: MouseRotator
+    angleTolerance: 5
+    rotationSpeed: 180
+    simple4DirMode: false
+  - type: Input
+    context: "human"
+  - type: NoRotateOnInteract
+  - type: NoRotateOnMove
+  - type: PointCannon
+  - type: TurretIFF

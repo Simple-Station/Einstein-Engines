@@ -1,0 +1,25 @@
+- type: vessel
+  id: UnionfallConquest
+  name: DSM Conquest
+  description: An ultralight interceptor with an EMP gun and plasma repeater.
+  price: 18000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Unionfall/DSM/unionfall_conquest.yml
+
+- type: gameMap
+  id: UnionfallConquest
+  mapName: 'DSM Conquest'
+  mapPath: /Maps/_Crescent/Unionfall/DSM/unionfall_conquest.yml
+  minPlayers: 0
+  stations:
+    UnionfallConquest:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Conquest {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-interceptor

@@ -227,8 +227,8 @@
     Tungsten: 1000
 
 - type: latheRecipe
-  id: ClothingOuterHardsuitImperialCommand
-  result: ClothingOuterHardsuitImperialCommand
+  id: ClothingOuterHardsuitImperialKnight
+  result: ClothingOuterHardsuitImperialKnight
   completetime: 2
   materials:
     HardsuitElectronics: 1000
@@ -403,6 +403,18 @@
     Gold: 1000
     Silver: 750
     Steel: 6000
+    Tungsten: 1500
+
+- type: latheRecipe
+  id: WandererFlatpack
+  result: WandererFlatpack
+  completetime: 2
+  materials:
+    AdvancedMechatronics: 3500
+    AdvancedElectronics: 2000
+    Gold: 600
+    Silver: 650
+    Steel: 4250
     Tungsten: 1500
 
 - type: latheRecipe

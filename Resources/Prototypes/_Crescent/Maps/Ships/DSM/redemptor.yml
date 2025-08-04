@@ -16,6 +16,10 @@
     Redemptor:
       stationProto: StandardCrescentVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: fighter
         - type: StationNameSetup
           mapNameTemplate: 'DSM Redemptor {1}'
           nameGenerator:

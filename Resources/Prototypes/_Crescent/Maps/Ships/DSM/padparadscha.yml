@@ -16,6 +16,10 @@
     Padparadscha:
       stationProto: StandardCrescentVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: battleship
         - type: StationNameSetup
           mapNameTemplate: 'DSM Padparadscha {1}'
           nameGenerator:

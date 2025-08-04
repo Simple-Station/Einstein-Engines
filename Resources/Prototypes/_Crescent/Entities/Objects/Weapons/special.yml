@@ -113,71 +113,8 @@
       - state: icon
 
 - type: entity
-  name: SHI Hammerhead smart-missile launcher
-  parent: [BaseWeaponLauncher, BaseGunWieldable]
-  id: WeaponLauncherHammerhead
-  description: A modified ancient rocket-propelled grenade launcher. Stamped with the Shinohara Heavy Industries logo and capable of firing guided projectiles.
-  components:
-  - type: Sprite
-    sprite: _Crescent/Objects/Weapons/Guns/hammerhead.rsi
-    layers:
-      - state: base
-        map: ["enum.GunVisualLayers.Base"]
-      - state: mag-0
-        map: ["enum.GunVisualLayers.Mag"]
-  - type: Clothing
-    sprite: _Crescent/Objects/Weapons/Guns/hammerhead.rsi
-  - type: GunRequiresWield
-  - type: Gun
-    fireRate: 0.5
-    soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
-  - type: BallisticAmmoProvider
-    proto: BulletRocketSmart
-    capacity: 3
-    cycleable: false
-    soundInsert:
-      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
-  - type: MagazineVisuals
-    magState: mag
-    steps: 3
-    zeroVisible: true
-  - type: Appearance
-  - type: Contraband
-
-- type: entity
-  id: BulletRocketSmart
-  name: smart missile
-  parent: BaseBulletTrigger
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: ProjectileIFF
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    layers:
-      - state: frag
-  - type: ExplodeOnTrigger
-  - type: Explosive
-    explosionType: Default
-    maxIntensity: 65
-    intensitySlope: 5
-    totalIntensity: 200
-    maxTileBreak: 5
-  - type: PointLight
-    radius: 3.5
-    color: orange
-    energy: 0.5
-  - type: HeatSeeking
-    rotationSpeed: 40
-    acceleration: 25
-    topSpeed: 125
-
-    defaultSeekingRange: 400
-    guidanceAlgorithm: PredictiveGuidance
-
-- type: entity
   name: SCHK-2 plasma hardlight sword
-  parent: BaseItem
+  parent: EnergySword
   id: EnergySwordFamilies
   description: A stylish answer to the antiquated NanoTrasen energy sword.
   components:
@@ -225,7 +162,7 @@
         map: [ "blade" ]
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1
+    attackRate: 1.15
     damage:
       types:
         Blunt: 4.5
@@ -276,6 +213,7 @@
       types:
         Slash: 25
         Heat: 10
+        Structural: 10
     soundHit:
       collection: MetalThud
   - type: Wieldable
@@ -284,6 +222,7 @@
       types:
         Slash: 35
         Heat: 25
+        Structural: 15
   - type: Item
     size: Ginormous
   - type: Tool
@@ -311,8 +250,54 @@
       types:
         Blunt: 35
         Heat: 10
+        Structural: 25
     soundHit:
       collection: MetalThud
   - type: Item
     size: Normal
   - type: DisarmMalus #harder to shake firm grip
+
+- type: entity
+  name: SHI-30J Paperwork
+  parent: BaseItem
+  id: WeaponPistolPaperwork
+  description: A sick joke by Shinohara higherups. Fires pre-printed job applications with reinforced edges that stick into those hit, causing both emotional and physical damage. Outlawed in most of Taypan.
+  components:
+    - type: Sprite
+      sprite: _Crescent/Objects/Weapons/Guns/compliance.rsi
+      layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+    - type: Item
+      size: Small
+      shape:
+      - 0,0,1,0
+      - 0,1,0,1
+    - type: Tag
+      tags:
+      - Sidearm
+    - type: Gun
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+      fireRate: 2
+    - type: AmmoCounter
+    - type: RechargeBasicEntityAmmo
+      rechargeCooldown: 3
+      rechargeSound:
+        path: /Audio/Machines/scanning.ogg
+    - type: BasicEntityAmmoProvider
+      proto: JobApplication
+      capacity: 10
+      count: 10
+    - type: StaticPrice
+      price: 750
+    - type: MeleeWeapon
+      attackRate: 0.8 # You wouldn't swing a paperwork gun at someone.
+      damage:
+        types:
+          Blunt: 8.5
+      bluntStaminaDamageFactor: 1.0
+      wideAnimationRotation: 135
+    - type: DamageOtherOnHit
+      staminaCost: 5
+

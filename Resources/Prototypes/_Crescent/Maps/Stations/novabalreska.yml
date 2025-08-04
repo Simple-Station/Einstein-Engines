@@ -1,0 +1,35 @@
+- type: gameMap
+  id: PortBalreska
+  mapName: 'Port Balreska'
+  mapPath: /Maps/_Crescent/Stations/novabalreska.yml
+  minPlayers: 0
+  stations:
+    PortBalreska:
+      stationProto: StandardCrescentStation
+      gridComponents:
+        - type: BlockShipWeaponProjectileGrid
+        - type: PreventPilot
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: outpost
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Port Balreska'
+        - type: VesselDesignation
+          designation: vessel-designation-headquarters
+        - type: VesselDescription
+          description: A sturdy Communard fortress constructed around a bleeding gash in our reality.
+        - type: Grammar
+          attributes:
+            proper: true
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            AdministratorNCWL: [ 1, 1 ]
+            KommissarNCWL: [ 1, 1 ]
+            KapitanNCWL: [ 3, 3 ]
+            SanitarNCWL: [ 25, 25 ]
+            KadetNCWL: [ 10, 10 ]
+            ArtificerNCWL: [ 6, 6 ]
+            DoktorNCWL: [ 6, 6 ]

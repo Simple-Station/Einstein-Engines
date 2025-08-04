@@ -10,7 +10,6 @@
     - Cherenzikov
     - Hind
     - Ivarod
-    - Meteor
 
 - type: entity
   id: JackalMothershipComputer
@@ -34,8 +33,28 @@
     - Redemptor
     - Impel
     - Gnosis
+    - Sunesis
+
+- type: entity
+  id: NemesisMothershipComputer
+  parent: BaseMothershipComputer
+  name: nemesis internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
     - Praxis
     - Torturer
+
+- type: entity
+  id: UnionfallNemesisMothershipComputer
+  parent: BaseMothershipComputer
+  name: nemesis internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - UnionfallConquest
+    - UnionfallValor
+
 
 - type: entity
   id: InterdyneMothershipComputer
@@ -101,6 +120,16 @@
     - Broadsword
 
 - type: entity
+  id: UnionfallClementineMothershipComputer
+  parent: BaseMothershipComputer
+  name: clementine internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - UnionfallKhopesh
+    - UnionfallBroadsword
+
+- type: entity
   id: JackalCarrierMothershipComputer
   parent: BaseMothershipComputer
   name: jackal internal shipyard
@@ -142,9 +171,6 @@
   name: anathema internal shipyard
   components:
   - type: ShipyardListing
-    shuttles:
-    - Conquest
-    - Valor
 
 - type: entity
   id: AlseikMothershipComputer

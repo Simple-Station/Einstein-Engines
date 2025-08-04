@@ -19,6 +19,10 @@
     Ouroboros:
       stationProto: StandardCrescentCivilianVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: frigate
         - type: StationNameSetup
           mapNameTemplate: 'GSC Ouroboros {1}'
           nameGenerator:

@@ -14,7 +14,7 @@
     heavyStaminaCost: 5
     damage:
       types:
-        Piercing: 15
+        Piercing: 25
   - type: DamageOtherOnHit
     staminaCost: 5
   - type: EmbeddableProjectile
@@ -55,7 +55,7 @@
     range: 1.65
     damage:
       types:
-        Slash: 24
+        Slash: 35
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 10
     maxTargets: 3
@@ -113,18 +113,18 @@
     wideAnimationRotation: -135
     damage:
       types:
-        Piercing: 26
+        Piercing: 25
     angle: 0
     animation: WeaponArcThrust
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
     range: 2
-    attackRate: 1.42
+    attackRate: 0.8
   - type: DamageOtherOnHit
     damage:
       types:
-        Piercing: 40
-    staminaCost: 18
+        Piercing: 45
+    staminaCost: 20
   - type: Item
     sprite: WhiteDream/BloodCult/Entities/Items/Weapons/cult_spear.rsi
     storedRotation: 44

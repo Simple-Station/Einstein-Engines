@@ -1,0 +1,364 @@
+#vulcan ammo
+
+- type: entity
+  id: MagazineVulcan
+  name: "20mm vulcan ammunition box"
+  parent: BaseMagazineLightRifle
+  components:
+  - type: Tag
+    tags:
+      - VulcanCartridgeBox
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - VulcanCartridgeBox
+    proto: CartridgeVulcanStandard
+    capacity: 500
+  - type: Item
+  - type: Sprite
+    sprite: _Crescent/Ammunition/vulcan.rsi
+    state: base
+
+#armor piercing slugthrower ammo
+
+- type: entity
+  id: MagazineLightRifleBoxSlug
+  name: ".50 cal uranium-tip slugthrower box"
+  parent: BaseMagazineLightRifle
+  components:
+  - type: Tag
+    tags:
+      - SlugthrowerCartridgeBox
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeMachineGun
+    proto: CartridgeMachineGunArmorPiercing
+    capacity: 100
+  - type: Item
+  - type: Sprite
+    sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
+    state: base
+    
+#low yield slugthrower ammo
+
+- type: entity
+  id: MagazineLightRifleBoxSlugHE
+  name: ".50 cal low-yield explosive slugthrower box"
+  parent: BaseMagazineLightRifle
+  components:
+  - type: Tag
+    tags:
+      - SlugthrowerCartridgeBox
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeMachineGun
+    proto: CartridgeMachineGunHighExplosive
+    capacity: 100
+  - type: Item
+  - type: Sprite
+    sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
+    state: base
+
+#inert slugthrower ammo
+
+- type: entity
+  id: MagazineLightRifleBoxSlugInert
+  name: ".50 cal inert slugthrower box"
+  parent: BaseMagazineLightRifle
+  components:
+  - type: Tag
+    tags:
+      - SlugthrowerCartridgeBox
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeMachineGun
+    proto: BulletMachineGunPractice
+    capacity: 100
+  - type: Item
+  - type: Sprite
+    sprite: _Crescent/Ammunition/conscript_ammo_box.rsi
+    state: base
+  
+#mortar ammo
+
+- type: entity
+  id: MagazineMortar
+  name: "90mm automortar shellbox"
+  parent: BaseMagazineLightRifle
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - MortarShell
+    proto: CartridgeMortarStandardTurret
+    capacity: 10
+  - type: Item
+  - type: Sprite
+    sprite: _Crescent/Ammunition/mortar.rsi
+    state: base
+  - type: Tag
+    tags:
+      - MortarBox
+      
+#base compakt ammo
+
+- type: entity
+  id: BaseMagazineLens
+  name: base magazine lens
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - CompaktLens
+  - type: BallisticAmmoProvider
+    mayTransfer: false
+    whitelist:
+      tags:
+        - CompaktLens
+    proto: CartridgeLightRifle
+    capacity: 30
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/light_rifle_mag.rsi
+    state: base
+  - type: Appearance
+  
+#xray compakt ammo
+
+- type: entity
+  id: LensXray
+  name: hybrid xray lens
+  parent: BaseMagazineLens
+  components:
+  - type: Tag
+    tags:
+      - CompaktLens
+  - type: BallisticAmmoProvider
+    mayTransfer: false
+    whitelist:
+      tags:
+      - CompaktLens
+    proto: XrayLensCartridge
+    capacity: 100
+  - type: Item
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/lenses.rsi
+    state: xraylens
+    
+#infrared compakt ammo
+
+- type: entity
+  id: LensInfared
+  name: hybrid infrared lens
+  description: A laser lens meant to be fitted over laser gatlings. This one is tuned to the infrared frequency.
+  parent: BaseMagazineLens
+  components:
+  - type: Tag
+    tags:
+      - CompaktLens
+  - type: BallisticAmmoProvider
+    mayTransfer: false
+    whitelist:
+      tags:
+      - CompaktLens
+    proto: InfraredLensCartridge
+    capacity: 250
+  - type: Item
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/lenses.rsi
+    state: infraredlens
+    
+#microwave compakt ammo
+
+- type: entity
+  id: LensMicrowave
+  name: hybrid microwave lens
+  description: A laser lens meant to be fitted over laser gatlings. This one is tuned to the microwave frequency.
+  parent: BaseMagazineLens
+  components:
+  - type: Tag
+    tags:
+      - CompaktLens
+  - type: BallisticAmmoProvider
+    mayTransfer: false
+    whitelist:
+      tags:
+      - CompaktLens
+    proto: MicrowaveLensCartridge
+    capacity: 60
+  - type: Item
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/lenses.rsi
+    state: microwavelens
+    
+#plasma compakt ammo
+
+- type: entity
+  id: LensPlasma
+  name: hybrid plasma lens
+  description: A laser lens meant to be fitted over laser gatlings. This one comes pre-loaded with plasma-derived chemicals for an explosive payload.
+  parent: BaseMagazineLens
+  components:
+  - type: Tag
+    tags:
+      - CompaktLens
+  - type: BallisticAmmoProvider
+    mayTransfer: false
+    whitelist:
+      tags:
+      - CompaktLens
+    proto: PlasmaLensCartridge
+    capacity: 100
+  - type: Item
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/lenses.rsi
+    state: plasmalens
+    
+#standard solaris ammo
+
+- type: entity
+  id: StandardAntimatterCanister
+  name: ballistic antimatter canister
+  description: A standard antimatter ammunition canister. Projectiles are manufactured in real time using the exotic particles within. Cost-effective and easy to make in the New World.
+  parent: BaseMagazineLens
+  components:
+  - type: Tag
+    tags:
+      - AntimatterCanister
+  - type: BallisticAmmoProvider
+    mayTransfer: false
+    whitelist:
+      tags:
+      - AntimatterCartridge
+    proto: StandardAntimatterCartridge
+    capacity: 75
+  - type: Item
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/amcanister.rsi
+    state: base
+    
+#plasma solaris ammo
+
+- type: entity
+  id: PlasmaAntimatterCanister
+  name: plasma-charged ballistic antimatter canister
+  description: A standard antimatter ammunition canister. Projectiles are manufactured in real time using the exotic particles within. Cost-effective and easy to make in the New World. This one is charged with volatile plasma motes.
+  parent: BaseMagazineLens
+  components:
+  - type: Tag
+    tags:
+      - AntimatterCanister
+  - type: BallisticAmmoProvider
+    mayTransfer: false
+    whitelist:
+      tags:
+      - AntimatterCartridge
+    proto: PlasmaAntimatterCartridge
+    capacity: 75
+  - type: Item
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/amcanisterplas.rsi
+    state: base
+    
+#guided solaris ammo
+
+- type: entity
+  id: GuidedAntimatterCanister
+  name: guided ballistic antimatter canister
+  description: A standard antimatter ammunition canister. Projectiles are manufactured in real time using the exotic particles within. Cost-effective and easy to make in the New World. This one has primitive aim-correction capacity.
+  parent: BaseMagazineLens
+  components:
+  - type: Tag
+    tags:
+      - AntimatterCanister
+  - type: BallisticAmmoProvider
+    mayTransfer: false
+    whitelist:
+      tags:
+      - AntimatterCartridge
+    proto: GuidedAntimatterCartridge
+    capacity: 75
+  - type: Item
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/amcanisterguided.rsi
+    state: base
+    
+#jeong/osiris ammo
+
+- type: entity
+  id: SwarmrocketClip
+  name: 70mm swarmer rocket drum
+  description: An autofeeder drum of 70mm Authoritat rockets.
+  parent: BaseMagazineLens
+  components:
+  - type: Tag
+    tags:
+      - SwarmerRocketsClip
+  - type: BallisticAmmoProvider
+    mayTransfer: false
+    whitelist:
+      tags:
+      - SwarmerRockets
+    proto: SwarmerRocketsGuidedCartridge
+    capacity: 30
+  - type: Item
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/swarmclip.rsi
+    state: base
+    
+#needler ammo
+
+- type: entity
+  id: MagazineNeedler
+  name: "60mm 'Needler' heavygun magazine"
+  parent: BaseMagazineLightRifle
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - NeedlerMag
+    proto: Needler
+    capacity: 20
+  - type: Item
+  - type: Sprite
+    sprite: _Crescent/Ammunition/needler.rsi
+    state: base
+  - type: Tag
+    tags:
+      - NeedlerMag
+      
+#swarmer ammo
+
+- type: entity
+  id: MagazineSwarmer
+  name: "40mm 'Swarmer' minirocket bundle"
+  parent: BaseMagazineLightRifle
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - SwarmRocket
+    proto: SwarmerRocketCartridge
+    capacity: 10
+  - type: Item
+  - type: Sprite
+    sprite: _Crescent/Ammunition/coil.rsi
+    state: base
+  - type: Tag
+    tags:
+      - SwarmRocketBox

@@ -126,6 +126,20 @@
 
 - type: entity
   parent: BaseFlatpack
+  id: IdnaFlatpack
+  name: SHI "Idna" torpedo flatpack
+  description: A flatpack used for constructing torpedo launchers.
+  components:
+  - type: Flatpack
+    entity: ShuttleGunTorpedo
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 3500
+
+- type: entity
+  parent: BaseFlatpack
   id: PlasmaRepeaterFlatpack
   name: plasma repeater flatpack
   description: A flatpack used for constructing a plasma repeater hardpoint weapon.
@@ -505,12 +519,26 @@
 
 - type: entity
   parent: BaseFlatpack
+  id: WandererFlatpack
+  name: IEE mV-400 'Wanderer' exosuit construction kit
+  description:  Parts used to build an imperial scout exosuit. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: MechDSMWandererBattery
+  - type: Sprite
+    layers:
+    - state: kit
+  - type: StaticPrice
+    price: 12000
+
+- type: entity
+  parent: BaseFlatpack
   id: BallisticFablatheFlatpack
   name: SHI TF-22 armaments foundry flatpack
   description:  Parts used to build a ballistics factory. Activate with a multitool to deploy.
   components:
   - type: Flatpack
-    entity: BallisticsFablathe
+    entity: BallisticFablathe
   - type: Sprite
     layers:
     - state: ame-part
@@ -525,20 +553,6 @@
   components:
   - type: Flatpack
     entity: VariableCommodityFablathe
-  - type: Sprite
-    layers:
-    - state: ame-part
-  - type: StaticPrice
-    price: 500
-
-- type: entity
-  parent: BaseFlatpack
-  id: AdvancedVariableCommodityFablatheFlatpack
-  name: SHI CF-84 advanced variable commodity fabricator flatpack
-  description:  Parts used to build an advanced factory. Activate with a multitool to deploy.
-  components:
-  - type: Flatpack
-    entity: AdvancedVariableCommodityFablathe
   - type: Sprite
     layers:
     - state: ame-part
@@ -628,3 +642,61 @@
     - state: ame-part
   - type: StaticPrice
     price: 500
+
+
+- type: entity
+  parent: BaseFlatpack
+  id: FixedHardpointFlatpack
+  name: fixedpoint system building kit
+  description: Parts used to build a fixed shuttle weapon hardpoint. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: AAAHardpointFixed
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 500
+
+
+- type: entity
+  parent: BaseFlatpack
+  id: ShieldEmitterSmallFlatpack
+  name: NT-280 deflector flatpack
+  description: Parts used to build a small shield generator. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: ShieldEmitterSmall
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 9000
+
+- type: entity
+  parent: BaseFlatpack
+  id: ShieldEmitterMediumFlatpack
+  name: NT-630 deflector flatpack
+  description: Parts used to build a medium shield generator. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: ShieldEmitterMedium
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 9000
+
+- type: entity
+  parent: BaseFlatpack
+  id: MagwellFlatpack
+  name: SHI "Magwell" flatpack
+  description: Parts used to build a torpedo launcher turret. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: BaseWeaponTurretMagwell
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 9000

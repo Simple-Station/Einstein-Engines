@@ -35,8 +35,8 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Slash: 8
-        Piercing: 10
+        Slash: 10
+        Piercing: 15
   - type: EmbedPassiveDamage
   - type: StaminaDamageOnCollide
     damage: 45

@@ -62,6 +62,9 @@
     points: 15000
   - type: StaticPrice
     price: 25000
+  - type: Currency
+    price:
+      ScrapSAW: 5
   - type: GuideHelp
     guides:
     - Science
@@ -78,6 +81,9 @@
     - state: dataracks
   - type: TechnologyDisk
     tierWeightPrototype: TechDiskTierWeights
+  - type: Currency
+    price:
+      ScrapSAW: 5
   - type: StaticPrice
     price: 20000
 
@@ -466,6 +472,7 @@
       visible: true
   - type: MagnetPickup # Frontier
     range: 20 # Ore bag has a range of 1.0
+    requireWorn: false
   - type: Fixtures
     fixtures:
       fix1:
@@ -642,14 +649,26 @@
     layers:
       - state: fueltank
 
-- type: gamePreset
-  id: Adventure
-  alias:
-    - adventure
-    - hullrot
-  name: adventure-title
-  showInVote: false
-  description: adventure-description
-  rules:
-    - Adventure
-    - LavalandStormScheduler # Lavaland Change
+- type: entity
+  id: TrackingImplanterDSMSec
+  name: tracking implanter (DSM Sec Death Alarm)
+  parent: BaseImplantOnlyImplanter
+  components:
+    - type: Implanter
+      implant: TrackingImplantDSMSec
+
+- type: entity
+  id: TrackingImplanterDSMCiv
+  name: tracking implanter (DSM Civ Death Alarm)
+  parent: BaseImplantOnlyImplanter
+  components:
+    - type: Implanter
+      implant: TrackingImplantDSMCiv
+
+- type: entity
+  id: TrackingImplanterNCWL
+  name: tracking implanter (NCWL Death Alarm)
+  parent: BaseImplantOnlyImplanter
+  components:
+    - type: Implanter
+      implant: TrackingImplantNCWL

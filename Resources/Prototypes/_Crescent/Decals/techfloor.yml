@@ -81,3 +81,27 @@
   sprite:
     sprite: _Crescent/Decals/techfloor.rsi
     state: techsw
+
+- type: decal
+  id: FloorTechMaintDirectionalEdge
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Crescent/Decals/techfloor.rsi
+    state: techn
+
+- type: decal
+  id: FloorTechMaintDirectionalCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Crescent/Decals/techfloor.rsi
+    state: technem
+
+- type: decal
+  id: FloorTechMaintDirectionalOuterCorner
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Crescent/Decals/techfloor.rsi
+    state: cornere
+
+
+

@@ -58,7 +58,7 @@
   id: AdvancedImperialArmor
   name: research-technology-imperial-advancedarmor
   icon:
-    sprite: _Crescent/Clothing/Empire/Head/mandatecommanderhelmet.rsi
+    sprite: _Crescent/Clothing/Empire/OuterClothing/mandatearmorprestige.rsi
     state: icon
   discipline: Imperial
   tier: 1
@@ -66,7 +66,7 @@
   recipeUnlocks:
   - ClothingHeadHelmetImperialKnightCommanderHelmet
   - ClothingOuterArmorImperialArmorPrestige
-  - ClothingOuterHardsuitImperialCommand
+  - ClothingOuterHardsuitImperialKnight
 
 - type: technology
   id: BasicImperialRifling
@@ -171,6 +171,18 @@
   cost: 9000
   recipeUnlocks:
   - PaladinFlatpack
+
+- type: technology
+  id: ImperialWandererMech
+  name: research-technology-imperial-wanderer
+  icon:
+    sprite: Objects/Devices/flatpack.rsi
+    state: kit
+  discipline: Imperial
+  tier: 2
+  cost: 4000
+  recipeUnlocks:
+  - WandererFlatpack
 
 - type: technology
   id: ImperialAdvancedRifling

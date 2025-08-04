@@ -19,6 +19,10 @@
     Qian:
       stationProto: StandardCrescentExpeditionVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: bigindustrial
         - type: StationNameSetup
           mapNameTemplate: 'PTA Qian {1}'
           nameGenerator:
