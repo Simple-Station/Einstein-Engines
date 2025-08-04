@@ -532,7 +532,7 @@
   parent: BaseItem
   id: TradeDeedLow
   name: deed of delivery
-  description: A printed deed of delivery. Blocky letting informs that this deed is one thousand Union credits to an official chartered station.
+  description: A printed deed of delivery. Blocky letting informs that this deed is one thousand and five hundred Union credits to an official chartered station.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/TradeGoods/deed.rsi
@@ -543,7 +543,7 @@
   parent: BaseItem
   id: TradeDeedNormal
   name: deed of delivery
-  description: A printed deed of delivery. Blocky letting informs that this deed is worth two thousand Union credits to an official chartered station.
+  description: A printed deed of delivery. Blocky letting informs that this deed is worth three thousand and five hundred Union credits to an official chartered station.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/TradeGoods/deed.rsi
@@ -554,7 +554,7 @@
   parent: BaseItem
   id: TradeDeedHigh
   name: deed of delivery
-  description: A printed deed of delivery. Blocky letting informs that this deed is worth three thousand and five hundred Union credits to an official chartered station.
+  description: A printed deed of delivery. Blocky letting informs that this deed is worth four thousand and five hundred Union credits to an official chartered station.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/TradeGoods/deed.rsi
@@ -565,7 +565,7 @@
   parent: BaseItem
   id: TradeDeedVeryHigh
   name: deed of delivery
-  description: A printed deed of delivery. Blocky letting informs that this deed is worth five thousand Union credits to an official chartered station.
+  description: A printed deed of delivery. Blocky letting informs that this deed is worth six thousand Union credits to an official chartered station.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/TradeGoods/deed.rsi
@@ -576,7 +576,7 @@
   parent: BaseItem
   id: TradeDeedExotic
   name: deed of delivery
-  description: A printed deed of delivery. Blocky letting informs that this deed is worth eight thousand Union credits to an official chartered station.
+  description: A printed deed of delivery. Blocky letting informs that this deed is worth ten thousand Union credits to an official chartered station.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/TradeGoods/deed.rsi
