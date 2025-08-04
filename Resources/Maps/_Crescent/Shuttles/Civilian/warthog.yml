@@ -53,6 +53,10 @@ entities:
       chunkCollection:
         version: 2
         nodes: []
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: fighter
     - type: RadiationGridResistance
     - type: BecomesStation
       id: Warthog

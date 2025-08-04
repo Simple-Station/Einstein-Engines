@@ -632,6 +632,10 @@ entities:
     - type: ShuttleDeed
       shuttleName: Shuttle NX-544
       shuttleUid: 1
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: bigindustrial
     - type: BecomesStation
       id: Covetor
 - proto: AAAHardpointSmallBallistic

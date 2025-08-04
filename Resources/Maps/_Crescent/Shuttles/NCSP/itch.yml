@@ -266,6 +266,10 @@ entities:
     - type: ShuttleDeed
       shuttleName: Shuttle KXZ-720
       shuttleUid: 1
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: fighter
     - type: BecomesStation
       id: Itch
 - proto: AAAHardpointFixed

@@ -590,6 +590,10 @@ entities:
       relations: {}
       color: '#F6CE9C9C'
       flags: IsPlayerShuttle
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: outpost
     - type: ShuttleDeed
       shuttleName: Shuttle MV-927
       shuttleUid: 1
