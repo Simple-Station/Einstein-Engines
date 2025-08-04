@@ -2,7 +2,7 @@
   id: RollingReverie
   name: DSM Rolling Reverie
   description: A luxury iff-cloaked vessel, fielded exclusively by the House of Questions. Amis of House Valkenrath's seal is on the LPC itself.
-  price: 30000
+  price: 45000
   category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/DSM/rolling_reverie.yml
@@ -13,7 +13,7 @@
   mapPath: /Maps/_Crescent/Shuttles/DSM/rolling_reverie.yml
   minPlayers: 0
   stations:
-    Ibis:
+    RollingReverie:
       stationProto: StandardCrescentVessel
       components:
         - type: VesselIcon
