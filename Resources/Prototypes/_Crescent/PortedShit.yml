@@ -472,6 +472,7 @@
       visible: true
   - type: MagnetPickup # Frontier
     range: 20 # Ore bag has a range of 1.0
+    requireWorn: false
   - type: Fixtures
     fixtures:
       fix1:
