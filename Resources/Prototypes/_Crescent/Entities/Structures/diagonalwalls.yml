@@ -1,3 +1,67 @@
+# base curved wall
+
+- type: entity
+  abstract: true
+  parent: BaseWallDiagonal
+  id: BaseWallCurved
+  name: basewall
+  suffix: curved
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PolygonShape
+            vertices:
+            - "-0.5,-0.5"
+            - "-0.5, 0.3"
+            - "0.5,0.5"
+            - "0.5,-0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+  - type: Occluder
+    enabled: false
+
+#reinforced
+
+- type: entity
+  parent: [BaseWallCurved, WallReinforced]
+  id: WallReinforcedCurved
+  name: reinforced wall
+  suffix: curved
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: Structures/Walls/reinforced_diagonalcurved.rsi
+    state: state0
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+  - type: Icon
+    sprite:  Structures/Walls/reinforced_diagonalcurved.rsi
+    state: state0
+
+- type: entity
+  parent: [BaseWallCurved, WallReinforced]
+  id: WallReinforcedHollow
+  name: reinforced wall
+  suffix: hollow
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: Structures/Walls/reinforced_diagonalhollow.rsi
+    state: state0
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+  - type: Icon
+    sprite: Structures/Walls/reinforced_diagonalhollow.rsi
+    state: state0
+
 #mining
 
 - type: entity
