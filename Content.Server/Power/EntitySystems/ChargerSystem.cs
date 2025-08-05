@@ -81,8 +81,8 @@ internal sealed class ChargerSystem : EntitySystem
 
     public override void Update(float frameTime)
     {
-        var query = EntityQueryEnumerator<ActiveChargerComponent, ChargerComponent, ContainerManagerComponent>();
-        while (query.MoveNext(out var uid, out _, out var charger, out var containerComp))
+        var query = EntityQueryEnumerator<ActiveChargerComponent, ChargerComponent, ApcPowerReceiverComponent, ContainerManagerComponent>();
+        while (query.MoveNext(out var uid, out _, out var charger, out var apcReceiver, out var containerComp))
         {
             if (!_container.TryGetContainer(uid, charger.SlotId, out var container, containerComp))
                 continue;
@@ -92,7 +92,7 @@ internal sealed class ChargerSystem : EntitySystem
 
             foreach (var contained in container.ContainedEntities)
             {
-                TransferPower(uid, contained, charger, frameTime);
+                TransferPower(uid, contained, charger, apcReceiver.SideLoadFraction, frameTime);
             }
         }
     }
@@ -177,19 +177,19 @@ internal sealed class ChargerSystem : EntitySystem
         switch (component.Status)
         {
             case CellChargerStatus.Off:
-                receiver.Load = 0;
+                receiver.SideLoad = 0;
                 _appearance.SetData(uid, CellVisual.Light, CellChargerStatus.Off, appearance);
                 break;
             case CellChargerStatus.Empty:
-                receiver.Load = 0;
+                receiver.SideLoad = 0;
                 _appearance.SetData(uid, CellVisual.Light, CellChargerStatus.Empty, appearance);
                 break;
             case CellChargerStatus.Charging:
-                receiver.Load = component.ChargeRate;
+                receiver.SideLoad = component.ChargeRate * component.ChargeEfficiency;
                 _appearance.SetData(uid, CellVisual.Light, CellChargerStatus.Charging, appearance);
                 break;
             case CellChargerStatus.Charged:
-                receiver.Load = 0;
+                receiver.SideLoad = 0;
                 _appearance.SetData(uid, CellVisual.Light, CellChargerStatus.Charged, appearance);
                 break;
             default:
@@ -235,7 +235,7 @@ internal sealed class ChargerSystem : EntitySystem
         return CellChargerStatus.Charging;
     }
 
-    private void TransferPower(EntityUid uid, EntityUid targetEntity, ChargerComponent component, float frameTime)
+    private void TransferPower(EntityUid uid, EntityUid targetEntity, ChargerComponent component, float powerDemandFraction, float frameTime)
     {
         if (!TryComp(uid, out ApcPowerReceiverComponent? receiverComponent))
             return;
@@ -249,7 +249,7 @@ internal sealed class ChargerSystem : EntitySystem
         if (!SearchForBattery(targetEntity, out var batteryUid, out var heldBattery))
             return;
 
-        _battery.SetCharge(batteryUid.Value, heldBattery.CurrentCharge + component.ChargeRate * frameTime, heldBattery);
+        _battery.SetCharge(batteryUid.Value, heldBattery.CurrentCharge + component.ChargeRate * powerDemandFraction * frameTime, heldBattery);
         // Just so the sprite won't be set to 99.99999% visibility
         if (heldBattery.MaxCharge - heldBattery.CurrentCharge < 0.01)
         {

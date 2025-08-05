@@ -16696,3 +16696,31 @@ Entries:
   id: 7308
   time: '2025-07-30T04:50:25.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2519
+- author: RedFoxIV
+  changes:
+    - type: Fix
+      message: >-
+        Chargers and energy turrets no longer make the lights flash rapidly if
+        their power draw is too high
+    - type: Add
+      message: Lights dim if the powernet they're connected to is overloaded
+  id: 7309
+  time: '2025-07-31T16:21:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2505
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: >-
+        Fixed the Species Swap: Shell trait wiping your character's marking
+        selections.
+    - type: Remove
+      message: >-
+        Shells no longer have an icon to turn on internals since they don't have
+        lungs to begin with.
+    - type: Add
+      message: >-
+        TraitModifyComponent and its variations can now force modified
+        components to redo their Initialization logic.
+  id: 7310
+  time: '2025-08-02T15:47:19.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2520

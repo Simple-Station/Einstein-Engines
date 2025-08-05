@@ -1445,6 +1445,26 @@
         - type: Dna
         - type: Hunger
         - type: Thirst
+        - type: Internals
+    - !type:TraitReplaceComponent
+      components:
+        - type: Damageable
+          damageContainer: SiliconUnshielded
+          damageModifierSet: IPC
+    - !type:TraitModifyComponent
+      reinitializeComponent: true
+      components:
+        - type: Bloodstream
+          bloodlossDamage:
+            types:
+              Bloodloss: 0
+          bloodlossHealDamage:
+            types:
+              Bloodloss: 0
+          bloodRegenerationHunger: 0
+          bloodRegenerationThirst: 0
+          bloodReagent: IPCCoolant
+          cauterizeMessage: null
     - !type:TraitModifyComponent
       components:
         - type: PowerCellSlot
@@ -1498,7 +1518,7 @@
           templateId: ipc
         - type: GuideHelp
           guides:
-            - IPC
+            - Shell
         - type: Silicon
           entityType: enum.SiliconType.Player
           batteryPowered: true
@@ -1536,24 +1556,10 @@
           - DoorBumpOpener
           - SiliconEmotes
           - SiliconMob
-        - type: Damageable
-          damageContainer: SiliconUnshielded
-          damageModifierSet: IPC
         - type: Barotrauma
           damage:
             types:
               Heat: 0.55 #per second, scales with pressure and other constants. Uniquely Heat instead of blunt, to simulate mechanical overheating in vacuum. IPCs are normally air cooled.
-        - type: Bloodstream
-          bloodlossDamage:
-            types:
-              Bloodloss: 0
-          bloodlossHealDamage:
-            types:
-              Bloodloss: 0
-          bloodRegenerationHunger: 0
-          bloodRegenerationThirst: 0
-          bloodReagent: IPCCoolant
-          cauterizeMessage: null
         - type: Temperature
           heatDamageThreshold: 1800 # GoobStation: Roughly the melting point of mild steels
           coldDamageThreshold: 260
@@ -1583,8 +1589,6 @@
           soundTypes:
             Heat:
               collection: MetalLaserImpact
-        - type: HumanoidAppearance
-          species: IPC
         - type: Speech
           speechSounds: Pai
         - type: Vocal

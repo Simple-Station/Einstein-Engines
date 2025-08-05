@@ -11,6 +11,7 @@ using JetBrains.Annotations;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.Threading;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Power.EntitySystems
 {
@@ -324,6 +325,7 @@ namespace Content.Server.Power.EntitySystems
             {
                 var powered = !apcReceiver.PowerDisabled
                               && (!apcReceiver.NeedsPower
+                                  || apcReceiver.NetworkLoad.ReceivingPower > apcReceiver.Load
                                   || MathHelper.CloseToPercent(apcReceiver.NetworkLoad.ReceivingPower,
                                       apcReceiver.Load));
 
@@ -334,6 +336,7 @@ namespace Content.Server.Power.EntitySystems
                 if (_apcBatteryQuery.TryComp(uid, out var apcBattery) && _batteryQuery.TryComp(uid, out var battery))
                 {
                     apcReceiver.Load = apcBattery.IdleLoad;
+                    apcReceiver.SideLoad = 0;
 
                     // Try to draw power from the battery if there isn't sufficient external power
                     var requireBattery = !powered && !apcReceiver.PowerDisabled;
@@ -345,8 +348,8 @@ namespace Content.Server.Power.EntitySystems
                     // Otherwise try to charge the battery
                     else if (powered && !_battery.IsFull(uid, battery))
                     {
-                        apcReceiver.Load += apcBattery.BatteryRechargeRate * apcBattery.BatteryRechargeEfficiency;
-                        _battery.SetCharge(uid, battery.CurrentCharge + apcBattery.BatteryRechargeRate * frameTime, battery);
+                        apcReceiver.SideLoad = apcBattery.BatteryRechargeRate * apcBattery.BatteryRechargeEfficiency;
+                        _battery.SetCharge(uid, battery.CurrentCharge + apcBattery.BatteryRechargeRate * apcReceiver.SideLoadFraction * frameTime, battery);
                     }
 
                     // Enable / disable the battery if the state changed
@@ -365,6 +368,16 @@ namespace Content.Server.Power.EntitySystems
                     }
 
                     powered |= enableBattery;
+                }
+
+                // this is a stopgap measure to allow lights to dim depending on power net load strain, while also avoiding
+                // adding an Update() loop to iterate over all the lights in the game world to check their apc receiver's side load furfillment.
+                if (apcReceiver.SideLoadFraction != apcReceiver.LastSideLoadFraction &&
+                   (Math.Abs(apcReceiver.SideLoadFraction - apcReceiver.LastSideLoadFraction) >= 0.01f || apcReceiver.SideLoadFraction is 1 or 0))
+                {
+                    apcReceiver.LastSideLoadFraction = apcReceiver.SideLoadFraction;
+                    var sev = new SidePowerChangedEvent(apcReceiver.SideLoadFraction);
+                    RaiseLocalEvent(uid, ref sev);
                 }
 
                 // If new value is the same as the old, then exit

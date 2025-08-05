@@ -912,6 +912,27 @@ public sealed partial class TraitModifyComponent : TraitFunction
     [DataField, AlwaysPushInheritance]
     public bool EnsureComp { get; private set; } = true;
 
+    /// <summary>
+    ///     Whether this function will issue a ComponentInit command to a component, triggering its Initialize subscriptions.
+    ///     THIS COMES WITH A HUGE WARNING, IT CAN ABSOLUTELY CAUSE MASSIVE BUGS. TEST YOUR TRAITS IF YOU USE THIS.
+    /// </summary>
+    [DataField, AlwaysPushInheritance]
+    public bool ReinitializeComponent { get; private set; }
+
+    /// <summary>
+    ///     Whether this function will issue a ComponentStartup command to a component, triggering its Startup subscriptions.
+    ///     THIS COMES WITH A HUGE WARNING, IT CAN ABSOLUTELY CAUSE MASSIVE BUGS. TEST YOUR TRAITS IF YOU USE THIS.
+    /// </summary>
+    [DataField, AlwaysPushInheritance]
+    public bool RestartComponent { get; private set; }
+
+    /// <summary>
+    ///     Whether this function will issue a MapInit command to a component, triggering its MapInit subscriptions.
+    ///     THIS COMES WITH A HUGE WARNING, IT CAN ABSOLUTELY CAUSE MASSIVE BUGS. TEST YOUR TRAITS IF YOU USE THIS.
+    /// </summary>
+    [DataField, AlwaysPushInheritance]
+    public bool MapInitComponent { get; private set; }
+
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
         IEntityManager entityManager,
@@ -933,9 +954,14 @@ public sealed partial class TraitModifyComponent : TraitFunction
 
                     field.SetValue(targetComp, setValue);
                 }
-                if (!targetComp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
-                    continue;
-                entityManager.Dirty(uid, targetComp);
+                if (targetComp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
+                    entityManager.Dirty(uid, targetComp);
+                if (ReinitializeComponent)
+                    entityManager.EventBus.RaiseComponentEvent(uid, targetComp, new ComponentInit());
+                if (RestartComponent)
+                    entityManager.EventBus.RaiseComponentEvent(uid, targetComp, new ComponentStartup());
+                if (MapInitComponent)
+                    entityManager.EventBus.RaiseComponentEvent(uid, targetComp, new MapInitEvent());
             }
             else if (EnsureComp)
             {
@@ -965,6 +991,27 @@ public sealed partial class TraitMultiplyToComponent : TraitFunction
 
     [DataField, AlwaysPushInheritance]
     public bool EnsureComp { get; private set; } = true;
+
+    /// <summary>
+    ///     Whether this function will issue a ComponentInit command to a component, triggering its Initialize subscriptions.
+    ///     THIS COMES WITH A HUGE WARNING, IT CAN ABSOLUTELY CAUSE MASSIVE BUGS. TEST YOUR TRAITS IF YOU USE THIS.
+    /// </summary>
+    [DataField, AlwaysPushInheritance]
+    public bool ReinitializeComponent { get; private set; }
+
+    /// <summary>
+    ///     Whether this function will issue a ComponentStartup command to a component, triggering its Startup subscriptions.
+    ///     THIS COMES WITH A HUGE WARNING, IT CAN ABSOLUTELY CAUSE MASSIVE BUGS. TEST YOUR TRAITS IF YOU USE THIS.
+    /// </summary>
+    [DataField, AlwaysPushInheritance]
+    public bool RestartComponent { get; private set; }
+
+    /// <summary>
+    ///     Whether this function will issue a MapInit command to a component, triggering its MapInit subscriptions.
+    ///     THIS COMES WITH A HUGE WARNING, IT CAN ABSOLUTELY CAUSE MASSIVE BUGS. TEST YOUR TRAITS IF YOU USE THIS.
+    /// </summary>
+    [DataField, AlwaysPushInheritance]
+    public bool MapInitComponent { get; private set; }
 
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
@@ -996,9 +1043,14 @@ public sealed partial class TraitMultiplyToComponent : TraitFunction
                     else if (targetValue is FixedPoint2 targetFixed && setValue is FixedPoint2 setFixed)
                         field.SetValue(targetComp, targetFixed * setFixed);
                 }
-                if (!targetComp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
-                    continue;
-                entityManager.Dirty(uid, targetComp);
+                if (targetComp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
+                    entityManager.Dirty(uid, targetComp);
+                if (ReinitializeComponent)
+                    entityManager.EventBus.RaiseComponentEvent(uid, targetComp, new ComponentInit());
+                if (RestartComponent)
+                    entityManager.EventBus.RaiseComponentEvent(uid, targetComp, new ComponentStartup());
+                if (MapInitComponent)
+                    entityManager.EventBus.RaiseComponentEvent(uid, targetComp, new MapInitEvent());
             }
             else if (EnsureComp)
             {
@@ -1028,6 +1080,27 @@ public sealed partial class TraitAddToComponent : TraitFunction
 
     [DataField, AlwaysPushInheritance]
     public bool EnsureComp { get; private set; } = true;
+
+    /// <summary>
+    ///     Whether this function will issue a ComponentInit command to a component, triggering its Initialize subscriptions.
+    ///     THIS COMES WITH A HUGE WARNING, IT CAN ABSOLUTELY CAUSE MASSIVE BUGS. TEST YOUR TRAITS IF YOU USE THIS.
+    /// </summary>
+    [DataField, AlwaysPushInheritance]
+    public bool ReinitializeComponent { get; private set; }
+
+    /// <summary>
+    ///     Whether this function will issue a ComponentStartup command to a component, triggering its Startup subscriptions.
+    ///     THIS COMES WITH A HUGE WARNING, IT CAN ABSOLUTELY CAUSE MASSIVE BUGS. TEST YOUR TRAITS IF YOU USE THIS.
+    /// </summary>
+    [DataField, AlwaysPushInheritance]
+    public bool RestartComponent { get; private set; }
+
+    /// <summary>
+    ///     Whether this function will issue a MapInit command to a component, triggering its MapInit subscriptions.
+    ///     THIS COMES WITH A HUGE WARNING, IT CAN ABSOLUTELY CAUSE MASSIVE BUGS. TEST YOUR TRAITS IF YOU USE THIS.
+    /// </summary>
+    [DataField, AlwaysPushInheritance]
+    public bool MapInitComponent { get; private set; }
 
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
@@ -1059,9 +1132,14 @@ public sealed partial class TraitAddToComponent : TraitFunction
                     else if (targetValue is FixedPoint2 targetFixed && setValue is FixedPoint2 setFixed)
                         field.SetValue(targetComp, targetFixed + setFixed);
                 }
-                if (!targetComp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
-                    continue;
-                entityManager.Dirty(uid, targetComp);
+                if (targetComp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
+                    entityManager.Dirty(uid, targetComp);
+                if (ReinitializeComponent)
+                    entityManager.EventBus.RaiseComponentEvent(uid, targetComp, new ComponentInit());
+                if (RestartComponent)
+                    entityManager.EventBus.RaiseComponentEvent(uid, targetComp, new ComponentStartup());
+                if (MapInitComponent)
+                    entityManager.EventBus.RaiseComponentEvent(uid, targetComp, new MapInitEvent());
             }
             else if (EnsureComp)
             {

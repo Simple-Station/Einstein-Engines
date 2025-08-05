@@ -205,6 +205,13 @@ public sealed class BloodstreamSystem : EntitySystem
             RaiseLocalEvent(entity.Owner, ref ev);
         }
 
+        // Make sure the blood solution is actually clean first.
+        var reagentsToRemove = new List<ReagentQuantity>();
+        foreach (var reagent in bloodSolution.Contents)
+            reagentsToRemove.Add(reagent);
+        foreach (var reagent in reagentsToRemove)
+            bloodSolution.RemoveReagent(reagent);
+
         // Fill blood solution with BLOOD
         bloodSolution.AddReagent(new ReagentId(entity.Comp.BloodReagent, GetEntityBloodData(entity.Owner)), entity.Comp.BloodMaxVolume - bloodSolution.Volume);
     }
