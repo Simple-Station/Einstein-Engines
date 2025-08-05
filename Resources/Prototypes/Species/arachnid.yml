@@ -48,6 +48,9 @@
     Hair:
       points: 0
       required: false
+    Head: # garden added
+      points: 4
+      required: false #
     FacialHair:
       points: 0
       required: false
@@ -95,6 +98,9 @@
     LeftHand:
       points: 6
       required: false
+    Overlay: # garden added
+      points: 4
+      required: false #
 
 - type: humanoidBaseSprite
   id: MobArachnidHead

@@ -45,6 +45,12 @@
     FacialHair:
       points: 1
       required: false
+    Head: # garden added
+      points: 4
+      required: false #
+    Face: # garden added
+      points: 6
+      required: false #
     Tail:
       points: 1
       required: true
@@ -83,6 +89,9 @@
     HeadSide:
       points: 6
       required: false
+    Overlay: # garden added
+      points: 4
+      required: false #
 
 - type: humanoidBaseSprite
   id: MobVulpkaninHead

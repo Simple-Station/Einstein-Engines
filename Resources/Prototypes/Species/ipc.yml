@@ -101,6 +101,9 @@
     Wings:
       points: 1
       required: false
+    Overlay: # garden added
+      points: 4
+      required: false #
 
 - type: humanoidBaseSprite
   id: MobIPCMarkingFollowSkin

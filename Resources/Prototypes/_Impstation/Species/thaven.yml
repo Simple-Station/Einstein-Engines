@@ -11,11 +11,16 @@
   maleFirstNames: names_thaven
   femaleFirstNames: names_thaven
   naming: First
+  youngAge: 60
+  oldAge: 160
+  minAge: 18
+  maxAge: 260
 
 - type: speciesBaseSprites
   id: MobThavenSprites
   sprites:
     Hair: MobHumanoidAnyMarking
+    Face: MobHumanoidAnyMarking # add more thaven markings later // GD
     Eyes: MobThavenEyes
     Head: MobThavenHead
     HeadTop: MobHumanoidAnyMarking
@@ -36,6 +41,12 @@
     Hair:
       points: 1
       required: false
+    Head: # garden added
+      points: 4
+      required: false #
+    Face: # garden added
+      points: 6
+      required: false #
     Snout:
       points: 1
       required: false
@@ -79,6 +90,9 @@
     LeftHand:
       points: 6
       required: false
+    Overlay: # garden added
+      points: 4
+      required: false #
 
 - type: humanoidBaseSprite
   id: MobThavenEyes

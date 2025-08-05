@@ -97,6 +97,9 @@
     LeftHand:
       points: 6
       required: false
+    Overlay: # garden added
+      points: 4
+      required: false #
 
 - type: humanoidBaseSprite
   id: MobReptilianHead

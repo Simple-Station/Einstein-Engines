@@ -53,6 +53,12 @@
       points: 1
       required: true
       defaultMarkings: [TailShadowkin]
+    Head: # garden added
+      points: 2
+      required: false #
+    Face: # garden added
+      points: 4
+      required: false #
     HeadTop:
       points: 1
       required: true
@@ -84,6 +90,9 @@
     LeftHand:
       points: 6
       required: false
+    Overlay: # garden added
+      points: 4
+      required: false #
 
 - type: humanoidBaseSprite
   id: MobShadowkinAnyMarkingFollowSkin

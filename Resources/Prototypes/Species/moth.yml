@@ -68,6 +68,9 @@
     Head:
       points: 6
       required: false
+    Face: # garden added
+      points: 6
+      required: false #
     Chest:
       points: 6
       required: false
@@ -101,6 +104,9 @@
     LeftHand:
       points: 6
       required: false
+    Overlay: # garden added
+      points: 4
+      required: false #
 
 - type: humanoidBaseSprite
   id: MobMothHead

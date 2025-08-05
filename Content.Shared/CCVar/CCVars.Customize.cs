@@ -9,7 +9,7 @@ public sealed partial class CCVars
     ///     It looks something like "She also goes by they/them pronouns."
     /// </summary>
     public static readonly CVarDef<bool> AllowCosmeticPronouns =
-        CVarDef.Create("customize.allow_cosmetic_pronouns", false, CVar.REPLICATED);
+        CVarDef.Create("customize.allow_cosmetic_pronouns", true, CVar.REPLICATED);
 
     /// <summary>
     ///     Allow players to set their own Station AI names.
