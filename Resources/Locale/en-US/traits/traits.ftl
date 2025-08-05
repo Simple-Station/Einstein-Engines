@@ -701,12 +701,12 @@ trait-name-CyberneticRightLeg = Cybernetic Right Leg
 trait-description-CyberneticRightLeg =
     Your right leg has been replaced with a baseline cybernetic leg.
     This does not cost any trait slot selections.
-trait-name-Dwarf = Dwarf
+trait-name-Dwarf = Species Swap: Dwarf
 trait-description-Dwarf =
     You are not just short and stout... You are a dwarf.
     You get alcohol healing, you are resistant to poison, you also do not vomit when drunk.
 
-trait-name-Kobold = Kobold
+trait-name-Kobold = Species Swap: Kobold
 trait-description-Kobold =
     You are not just short and stout... You are a kobold.
     You get alcohol healing, you are resistant to poison, you also do not vomit when drunk.
