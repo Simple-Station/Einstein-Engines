@@ -25,8 +25,6 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/batrifle.ogg
   - type: ChamberMagazineAmmoProvider
-    soundGunshot:
-      path: /Audio/_Crescent/Weapons/Guns/rifle_1/rifle_gunshot_2.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
