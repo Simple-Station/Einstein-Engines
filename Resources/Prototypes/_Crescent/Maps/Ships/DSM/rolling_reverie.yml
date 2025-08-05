@@ -8,8 +8,8 @@
   path: /Maps/_Crescent/Shuttles/DSM/rolling_reverie.yml
 
 - type: gameMap
-  id: Ibis
-  mapName: 'DSM Ibis'
+  id: RollingReverie
+  mapName: 'DSM Rolling Reverie'
   mapPath: /Maps/_Crescent/Shuttles/DSM/rolling_reverie.yml
   minPlayers: 0
   stations:
@@ -26,6 +26,6 @@
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: VesselDesignation
-          designation: vessel-designation-fighter
+          designation: vessel-designation-interceptor
         - type: VesselDescription
-          description: A ghost, haunting the enemies of the Mandate. This vessel is the cloaked dagger of Spymaster Amis Valkenrath.
+          description: A ghost, haunting the enemies of the Mandate. This vessel is the cloaked dagger of Spymaster Amis De Mullein.

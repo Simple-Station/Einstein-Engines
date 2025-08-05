@@ -33,11 +33,11 @@ entities:
       chunks:
         0,0:
           ind: 0,0
-          tiles: BgAAAAAABgAAAAAAIgAAAAAAAwAAAAAABQAAAAAABQAAAAAABQAAAAAABQAAAAAABAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAABgAAAAAAIgAAAAAAggAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAgQAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAABgAAAAAAIgAAAAAAggAAAAAAIwAAAAAAIwAAAAAAIwAAAAAAAwAAAAAACQAAAAAACQAAAAAAgQAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIgAAAAAAIgAAAAAABAAAAAAAggAAAAAAIwAAAAAAIwAAAAAAIwAAAAAAAwAAAAAACQAAAAAAAwAAAAAAgQAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAPQAAAAAAPQAAAAAABAAAAAAAggAAAAAAggAAAAAABAAAAAAACQAAAAAAgQAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+          tiles: BgAAAAAABgAAAAAAIgAAAAAAAwAAAAAABQAAAAAABQAAAAAABQAAAAAABQAAAAAABAAAAAAAPQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAABgAAAAAAIgAAAAAAggAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAgQAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAABgAAAAAAIgAAAAAAggAAAAAAIwAAAAAAIwAAAAAAIwAAAAAAAwAAAAAACQAAAAAACQAAAAAAgQAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIgAAAAAAIgAAAAAABAAAAAAAggAAAAAAIwAAAAAAIwAAAAAAIwAAAAAAAwAAAAAACQAAAAAAAwAAAAAAgQAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAPQAAAAAAPQAAAAAABAAAAAAAggAAAAAAggAAAAAABAAAAAAACQAAAAAAgQAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
           version: 6
         -1,0:
           ind: -1,0
-          tiles: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAABQAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAAAwAAAAAAIgAAAAAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAgQAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAggAAAAAAIgAAAAAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAgQAAAAAABgAAAAAABgAAAAAAAwAAAAAAIwAAAAAAIwAAAAAAIwAAAAAAggAAAAAAIgAAAAAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAgQAAAAAABgAAAAAABgAAAAAAAwAAAAAAIwAAAAAAIwAAAAAAIwAAAAAAggAAAAAABQAAAAAAIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAgQAAAAAACwAAAAAABAAAAAAAggAAAAAAggAAAAAABAAAAAAAPQAAAAAAPQAAAAAAgQAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+          tiles: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPQAAAAAABQAAAAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAAAwAAAAAAIgAAAAAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAgQAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAAwAAAAAAggAAAAAAIgAAAAAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAgQAAAAAABgAAAAAABgAAAAAAAwAAAAAAIwAAAAAAIwAAAAAAIwAAAAAAggAAAAAAIgAAAAAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAgQAAAAAABgAAAAAABgAAAAAAAwAAAAAAIwAAAAAAIwAAAAAAIwAAAAAAggAAAAAABQAAAAAAIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAgQAAAAAACwAAAAAABAAAAAAAggAAAAAAggAAAAAABAAAAAAAPQAAAAAAPQAAAAAAgQAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAgQAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
           version: 6
         -1,-1:
           ind: -1,-1
@@ -89,13 +89,13 @@ entities:
             id: BrickTileSteelInnerNe
           decals:
             19: -2,0
-            47: -1,-1
+            45: -1,-1
         - node:
             color: '#D381C996'
             id: BrickTileSteelInnerNw
           decals:
             18: 2,0
-            46: 1,-1
+            44: 1,-1
         - node:
             color: '#D381C996'
             id: BrickTileSteelLineE
@@ -107,7 +107,7 @@ entities:
             color: '#D381C996'
             id: BrickTileSteelLineN
           decals:
-            48: 0,-1
+            46: 0,-1
         - node:
             color: '#D381C996'
             id: BrickTileSteelLineS
@@ -127,954 +127,292 @@ entities:
             angle: -4.71238898038469 rad
             id: ErisCarpetPurpleCorner
           decals:
-            2417: -1,2
-            2528: -9,3
+            1799: -1,2
+            1817: -9,3
+            2057: -9,3
+            2099: -1,2
+            2346: -9,3
+            2388: -1,2
         - node:
             zIndex: 1
             angle: -3.141592653589793 rad
             id: ErisCarpetPurpleCorner
           decals:
-            1295: -9,2
-            1447: -9,2
-            1755: -9,2
-            2414: -1,0
+            1293: -9,2
+            1438: -9,2
+            1717: -9,2
+            1796: -1,0
+            2054: -9,2
+            2095: -1,0
+            2343: -9,2
+            2384: -1,0
         - node:
             zIndex: 1
             angle: -1.5707963267948966 rad
             id: ErisCarpetPurpleCorner
           decals:
-            1290: -8,2
-            1468: -8,2
-            1776: -8,2
-            2428: 1,0
+            1288: -8,2
+            1454: -8,2
+            1723: -8,2
+            1803: 1,0
+            1859: 1,0
+            2071: -8,2
+            2148: 1,0
+            2360: -8,2
         - node:
             zIndex: 1
             id: ErisCarpetPurpleCorner
           decals:
-            1287: -8,3
-            1471: -8,3
-            2431: 1,2
-            2547: -8,3
+            1285: -8,3
+            1457: -8,3
+            1806: 1,2
+            1836: -8,3
+            1863: 1,2
+            2074: -8,3
+            2152: 1,2
+            2363: -8,3
         - node:
             angle: -4.71238898038469 rad
             id: ErisCarpetPurpleEdge
           decals:
-            1292: -9,3
-            1294: -9,2
-            1446: -9,2
-            1449: -9,3
-            1754: -9,2
-            2411: -1,1
-            2413: -1,0
-            2416: -1,2
-            2527: -9,3
+            1290: -9,3
+            1292: -9,2
+            1437: -9,2
+            1440: -9,3
+            1716: -9,2
+            1793: -1,1
+            1795: -1,0
+            1798: -1,2
+            1816: -9,3
+            2053: -9,2
+            2056: -9,3
+            2094: -1,0
+            2096: -1,1
+            2098: -1,2
+            2342: -9,2
+            2345: -9,3
+            2383: -1,0
+            2385: -1,1
+            2387: -1,2
         - node:
             angle: -3.141592653589793 rad
             id: ErisCarpetPurpleEdge
           decals:
-            1288: -8,2
-            1293: -9,2
-            1445: -9,2
-            1466: -8,2
-            1753: -9,2
-            1774: -8,2
-            2390: 0,0
-            2412: -1,0
-            2426: 1,0
+            1286: -8,2
+            1291: -9,2
+            1436: -9,2
+            1452: -8,2
+            1715: -9,2
+            1721: -8,2
+            1784: 0,0
+            1794: -1,0
+            1801: 1,0
+            1850: 0,0
+            1857: 1,0
+            2052: -9,2
+            2069: -8,2
+            2093: -1,0
+            2139: 0,0
+            2146: 1,0
+            2341: -9,2
+            2358: -8,2
+            2382: -1,0
         - node:
             angle: -1.5707963267948966 rad
             id: ErisCarpetPurpleEdge
           decals:
-            1285: -8,3
-            1289: -8,2
-            1467: -8,2
-            1469: -8,3
-            1775: -8,2
-            2425: 1,1
-            2427: 1,0
-            2429: 1,2
-            2545: -8,3
+            1283: -8,3
+            1287: -8,2
+            1453: -8,2
+            1455: -8,3
+            1722: -8,2
+            1800: 1,1
+            1802: 1,0
+            1804: 1,2
+            1834: -8,3
+            1858: 1,0
+            1860: 1,1
+            1861: 1,2
+            2070: -8,2
+            2072: -8,3
+            2147: 1,0
+            2149: 1,1
+            2150: 1,2
+            2359: -8,2
+            2361: -8,3
         - node:
             id: ErisCarpetPurpleEdge
           decals:
-            1286: -8,3
-            1470: -8,3
-            2093: 0,2
-            2415: -1,2
-            2430: 1,2
-            2526: -9,3
-            2546: -8,3
+            1284: -8,3
+            1456: -8,3
+            1775: 0,2
+            1797: -1,2
+            1805: 1,2
+            1815: -9,3
+            1835: -8,3
+            1851: 0,2
+            1862: 1,2
+            2055: -9,3
+            2073: -8,3
+            2097: -1,2
+            2140: 0,2
+            2151: 1,2
+            2344: -9,3
+            2362: -8,3
+            2386: -1,2
         - node:
             zIndex: 1
             id: ErisCarpetPurpleOuterCorner
           decals:
-            1291: -9,3
-            1448: -9,3
+            1289: -9,3
+            1439: -9,3
         - node:
             zIndex: 1
             angle: -4.71238898038469 rad
             id: FloorTechMaintDirectionalCorner
           decals:
-            1308: 2,-1
-            1316: -2,-1
-            1501: -2,-1
-            1512: 2,-1
-            2359: -2,-1
-            2398: 2,-1
+            1301: 2,-1
+            1309: -2,-1
+            1487: -2,-1
+            1498: 2,-1
+            1783: -2,-1
+            1792: 2,-1
+            2121: -2,-1
+            2132: 2,-1
+            2410: -2,-1
+            2421: 2,-1
         - node:
             zIndex: 1
             angle: -3.141592653589793 rad
             id: FloorTechMaintDirectionalCorner
           decals:
-            1307: 2,-1
-            1315: -2,-1
-            1500: -2,-1
-            1511: 2,-1
-            2358: -2,-1
-            2397: 2,-1
+            1300: 2,-1
+            1308: -2,-1
+            1486: -2,-1
+            1497: 2,-1
+            1782: -2,-1
+            1791: 2,-1
+            2120: -2,-1
+            2131: 2,-1
+            2409: -2,-1
+            2420: 2,-1
         - node:
             zIndex: 1
             angle: -1.5707963267948966 rad
             id: FloorTechMaintDirectionalCorner
           decals:
-            1303: 2,-1
-            1311: -2,-1
-            1496: -2,-1
-            1507: 2,-1
-            2354: -2,-1
-            2393: 2,-1
+            1296: 2,-1
+            1304: -2,-1
+            1482: -2,-1
+            1493: 2,-1
+            1778: -2,-1
+            1787: 2,-1
+            2116: -2,-1
+            2127: 2,-1
+            2405: -2,-1
+            2416: 2,-1
         - node:
             zIndex: 1
             id: FloorTechMaintDirectionalCorner
           decals:
-            1305: 2,-1
-            1313: -2,-1
-            1498: -2,-1
-            1509: 2,-1
-            2356: -2,-1
-            2395: 2,-1
+            1298: 2,-1
+            1306: -2,-1
+            1484: -2,-1
+            1495: 2,-1
+            1780: -2,-1
+            1789: 2,-1
+            2118: -2,-1
+            2129: 2,-1
+            2407: -2,-1
+            2418: 2,-1
         - node:
             color: '#FFFFFFFF'
             id: FloorTechMaintDirectionalCorner
           decals:
-            359: 8,2
+            357: 8,2
         - node:
             angle: 4.71238898038469 rad
             color: '#FFFFFFFF'
             id: FloorTechMaintDirectionalCorner
           decals:
-            360: 8,4
+            358: 8,4
         - node:
             angle: -4.71238898038469 rad
             id: FloorTechMaintDirectionalEdge
           decals:
-            1306: 2,-1
-            1314: -2,-1
-            1499: -2,-1
-            1510: 2,-1
-            2357: -2,-1
-            2396: 2,-1
+            1299: 2,-1
+            1307: -2,-1
+            1485: -2,-1
+            1496: 2,-1
+            1781: -2,-1
+            1790: 2,-1
+            2119: -2,-1
+            2130: 2,-1
+            2408: -2,-1
+            2419: 2,-1
         - node:
             angle: -3.141592653589793 rad
             id: FloorTechMaintDirectionalEdge
           decals:
-            1301: 2,-1
-            1309: -2,-1
-            1494: -2,-1
-            1505: 2,-1
-            2352: -2,-1
-            2391: 2,-1
+            1294: 2,-1
+            1302: -2,-1
+            1480: -2,-1
+            1491: 2,-1
+            1776: -2,-1
+            1785: 2,-1
+            2114: -2,-1
+            2125: 2,-1
+            2403: -2,-1
+            2414: 2,-1
         - node:
             angle: -1.5707963267948966 rad
             id: FloorTechMaintDirectionalEdge
           decals:
-            1302: 2,-1
-            1310: -2,-1
-            1495: -2,-1
-            1506: 2,-1
-            2353: -2,-1
-            2392: 2,-1
+            1295: 2,-1
+            1303: -2,-1
+            1481: -2,-1
+            1492: 2,-1
+            1777: -2,-1
+            1786: 2,-1
+            2115: -2,-1
+            2126: 2,-1
+            2404: -2,-1
+            2415: 2,-1
         - node:
             id: FloorTechMaintDirectionalEdge
           decals:
-            1304: 2,-1
-            1312: -2,-1
-            1497: -2,-1
-            1508: 2,-1
-            2355: -2,-1
-            2394: 2,-1
+            1297: 2,-1
+            1305: -2,-1
+            1483: -2,-1
+            1494: 2,-1
+            1779: -2,-1
+            1788: 2,-1
+            2117: -2,-1
+            2128: 2,-1
+            2406: -2,-1
+            2417: 2,-1
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
             id: FloorTechMaintDirectionalEdge
           decals:
-            1319: -1,-1
+            1312: -1,-1
         - node:
             angle: 3.141592653589793 rad
             color: '#FFFFFFFF'
             id: FloorTechMaintDirectionalEdge
           decals:
-            1318: 2,0
-            1320: -2,0
+            1311: 2,0
+            1313: -2,0
         - node:
             angle: 4.71238898038469 rad
             color: '#FFFFFFFF'
             id: FloorTechMaintDirectionalEdge
           decals:
-            1317: 1,-1
+            1310: 1,-1
         - node:
             zIndex: 1
             id: LatticeCornerNE
-          decals:
-            51: -6,-2
-            54: -2,-3
-            63: -6,-2
-            66: -2,-3
-            75: -6,-2
-            78: -2,-3
-            87: -6,-2
-            90: -2,-3
-            109: 9,5
-            125: 10,5
-            134: -10,3
-            139: -10,4
-            142: -11,5
-            147: -10,5
-            158: -9,5
-            176: 10,6
-            184: -11,6
-            189: -10,6
-            208: -8,-1
-            216: 10,6
-            229: -11,6
-            234: -10,6
-            243: -6,-2
-            246: -2,-3
-            262: -9,5
-            275: -11,5
-            280: -10,5
-            288: -11,4
-            293: -10,4
-            316: -11,3
-            319: -11,2
-            322: -8,-1
-            333: -10,2
-            339: -10,1
-            344: -10,3
-            352: -9,1
-            365: 9,1
-            373: 10,2
-            389: 9,5
-            397: 10,4
-            405: 10,3
-            418: 10,5
-            436: 9,1
-            444: 9,5
-            455: 10,2
-            463: 10,3
-            471: 10,4
-            479: 10,5
-            503: -11,2
-            508: -11,3
-            513: -11,4
-            518: -11,5
-            521: -8,-1
-            524: -6,-2
-            527: -2,-3
-            538: -10,2
-            544: -10,1
-            554: -9,1
-            562: -9,5
-            570: -10,4
-            578: -10,3
-            586: -10,5
-            605: -10,6
-            613: -11,6
-            624: 10,6
-            650: 9,1
-            658: 9,5
-            672: 10,2
-            680: 10,3
-            688: 10,4
-            696: 10,5
-            704: 10,6
-            736: -11,2
-            741: -11,3
-            746: -11,4
-            751: -11,5
-            756: -11,6
-            759: -10,1
-            764: -10,2
-            772: -10,3
-            780: -10,4
-            788: -10,5
-            796: -10,6
-            807: -9,1
-            815: -9,5
-            834: -8,-1
-            837: -6,-2
-            840: -2,-3
-            864: 9,1
-            872: 9,5
-            886: 10,2
-            894: 10,3
-            902: 10,4
-            910: 10,5
-            918: 10,6
-            950: -11,2
-            955: -11,3
-            960: -11,4
-            965: -11,5
-            970: -11,6
-            973: -10,1
-            978: -10,2
-            986: -10,3
-            994: -10,4
-            1002: -10,5
-            1010: -10,6
-            1021: -9,1
-            1029: -9,5
-            1048: -8,-1
-            1051: -6,-2
-            1054: -2,-3
-            1078: 9,5
-            1089: 10,2
-            1097: 10,3
-            1105: 10,4
-            1113: 10,5
-            1137: -11,2
-            1142: -11,3
-            1147: -11,4
-            1152: -11,5
-            1163: -6,-2
-            1166: -2,-3
-            1180: 9,1
-            1192: -8,-1
-            1205: 10,6
-            1213: -11,6
-            1221: -10,6
-            1233: -9,5
-            1241: -10,5
-            1254: -10,4
-            1262: -10,2
-            1268: -10,1
-            1273: -10,3
-            1281: -9,1
-            1338: 10,6
-            1370: -11,2
-            1375: -11,3
-            1380: -11,4
-            1385: -11,5
-            1390: -11,6
-            1393: -10,1
-            1398: -10,2
-            1406: -10,3
-            1414: -10,4
-            1422: -10,5
-            1430: -10,6
-            1441: -9,1
-            1459: -9,5
-            1487: -8,-1
-            1490: -6,-2
-            1493: -2,-3
-            1523: 9,1
-            1531: 10,2
-            1542: 9,5
-            1550: 10,4
-            1558: 10,3
-            1571: 10,5
-            1592: 9,1
-            1600: 9,5
-            1614: 10,2
-            1622: 10,3
-            1630: 10,4
-            1638: 10,5
-            1646: 10,6
-            1678: -11,2
-            1683: -11,3
-            1688: -11,4
-            1693: -11,5
-            1698: -11,6
-            1701: -10,1
-            1706: -10,2
-            1738: -10,6
-            1749: -9,1
-            1795: -8,-1
-            1798: -6,-2
-            1801: -2,-3
-            2522: -9,5
-            2533: -10,4
-            2541: -10,3
-            2552: -10,5
-        - node:
-            zIndex: 1
-            id: LatticeCornerNW
-          decals:
-            57: 2,-3
-            60: 6,-2
-            69: 2,-3
-            72: 6,-2
-            81: 2,-3
-            84: 6,-2
-            93: 2,-3
-            96: 6,-2
-            99: 10,3
-            112: 9,5
-            117: 10,4
-            120: 11,5
-            128: 10,5
-            150: -10,5
-            161: -9,5
-            171: 11,6
-            179: 10,6
-            192: -10,6
-            205: 8,-1
-            219: 10,6
-            224: 11,6
-            237: -10,6
-            249: 2,-3
-            252: 6,-2
-            265: -9,5
-            283: -10,5
-            296: -10,4
-            301: 11,4
-            306: 11,5
-            311: 11,3
-            325: 8,-1
-            328: 11,2
-            336: -10,2
-            347: -10,3
-            355: -9,1
-            368: 9,1
-            376: 10,2
-            379: 10,1
-            392: 9,5
-            400: 10,4
-            408: 10,3
-            421: 10,5
-            439: 9,1
-            447: 9,5
-            450: 10,1
-            458: 10,2
-            466: 10,3
-            474: 10,4
-            482: 10,5
-            485: 11,2
-            490: 11,3
-            495: 11,4
-            500: 11,5
-            530: 2,-3
-            533: 6,-2
-            541: -10,2
-            557: -9,1
-            565: -9,5
-            573: -10,4
-            581: -10,3
-            589: -10,5
-            597: 8,-1
-            608: -10,6
-            627: 10,6
-            635: 11,6
-            653: 9,1
-            661: 9,5
-            667: 10,1
-            675: 10,2
-            683: 10,3
-            691: 10,4
-            699: 10,5
-            707: 10,6
-            713: 11,2
-            718: 11,3
-            723: 11,4
-            728: 11,5
-            733: 11,6
-            767: -10,2
-            775: -10,3
-            783: -10,4
-            791: -10,5
-            799: -10,6
-            810: -9,1
-            818: -9,5
-            843: 2,-3
-            846: 6,-2
-            849: 8,-1
-            867: 9,1
-            875: 9,5
-            881: 10,1
-            889: 10,2
-            897: 10,3
-            905: 10,4
-            913: 10,5
-            921: 10,6
-            927: 11,2
-            932: 11,3
-            937: 11,4
-            942: 11,5
-            947: 11,6
-            981: -10,2
-            989: -10,3
-            997: -10,4
-            1005: -10,5
-            1013: -10,6
-            1024: -9,1
-            1032: -9,5
-            1057: 2,-3
-            1060: 6,-2
-            1063: 8,-1
-            1081: 9,5
-            1092: 10,2
-            1100: 10,3
-            1108: 10,4
-            1116: 10,5
-            1119: 11,2
-            1124: 11,3
-            1129: 11,4
-            1134: 11,5
-            1169: 2,-3
-            1172: 6,-2
-            1183: 9,1
-            1186: 8,-1
-            1189: 10,1
-            1197: 11,6
-            1208: 10,6
-            1224: -10,6
-            1236: -9,5
-            1244: -10,5
-            1257: -10,4
-            1265: -10,2
-            1276: -10,3
-            1284: -9,1
-            1341: 10,6
-            1347: 11,2
-            1352: 11,3
-            1357: 11,4
-            1362: 11,5
-            1367: 11,6
-            1401: -10,2
-            1409: -10,3
-            1417: -10,4
-            1425: -10,5
-            1433: -10,6
-            1444: -9,1
-            1462: -9,5
-            1504: 2,-3
-            1515: 6,-2
-            1518: 8,-1
-            1526: 9,1
-            1534: 10,2
-            1537: 10,1
-            1545: 9,5
-            1553: 10,4
-            1561: 10,3
-            1574: 10,5
-            1595: 9,1
-            1603: 9,5
-            1609: 10,1
-            1617: 10,2
-            1625: 10,3
-            1633: 10,4
-            1641: 10,5
-            1649: 10,6
-            1655: 11,2
-            1660: 11,3
-            1665: 11,4
-            1670: 11,5
-            1675: 11,6
-            1709: -10,2
-            1741: -10,6
-            1752: -9,1
-            1812: 2,-3
-            1823: 6,-2
-            1826: 8,-1
-            2525: -9,5
-            2536: -10,4
-            2544: -10,3
-            2555: -10,5
-        - node:
-            zIndex: 1
-            id: LatticeCornerSE
-          decals:
-            102: 8,5
-            107: 9,5
-            123: 10,5
-            131: 9,6
-            137: -10,4
-            145: -10,5
-            156: -9,5
-            164: -8,5
-            174: 10,6
-            182: -11,6
-            187: -10,6
-            195: -7,5
-            200: 7,5
-            211: 9,6
-            214: 10,6
-            227: -11,6
-            232: -10,6
-            255: -8,5
-            260: -9,5
-            268: -7,5
-            273: -11,5
-            278: -10,5
-            286: -11,4
-            291: -10,4
-            314: -11,3
-            331: -10,2
-            342: -10,3
-            350: -9,1
-            363: 9,1
-            371: 10,2
-            382: 7,5
-            387: 9,5
-            395: 10,4
-            403: 10,3
-            411: 8,5
-            416: 10,5
-            424: 7,5
-            429: 8,5
-            434: 9,1
-            442: 9,5
-            453: 10,2
-            461: 10,3
-            469: 10,4
-            477: 10,5
-            506: -11,3
-            511: -11,4
-            516: -11,5
-            536: -10,2
-            547: -7,5
-            552: -9,1
-            560: -9,5
-            568: -10,4
-            576: -10,3
-            584: -10,5
-            592: -8,5
-            603: -10,6
-            611: -11,6
-            619: 10,7
-            622: 10,6
-            630: 9,6
-            638: 7,5
-            643: 8,5
-            648: 9,1
-            656: 9,5
-            664: 9,6
-            670: 10,2
-            678: 10,3
-            686: 10,4
-            694: 10,5
-            702: 10,6
-            710: 10,7
-            739: -11,3
-            744: -11,4
-            749: -11,5
-            754: -11,6
-            762: -10,2
-            770: -10,3
-            778: -10,4
-            786: -10,5
-            794: -10,6
-            805: -9,1
-            813: -9,5
-            824: -8,5
-            829: -7,5
-            852: 7,5
-            857: 8,5
-            862: 9,1
-            870: 9,5
-            878: 9,6
-            884: 10,2
-            892: 10,3
-            900: 10,4
-            908: 10,5
-            916: 10,6
-            924: 10,7
-            953: -11,3
-            958: -11,4
-            963: -11,5
-            968: -11,6
-            976: -10,2
-            984: -10,3
-            992: -10,4
-            1000: -10,5
-            1008: -10,6
-            1019: -9,1
-            1027: -9,5
-            1038: -8,5
-            1043: -7,5
-            1066: 7,5
-            1071: 8,5
-            1076: 9,5
-            1084: 9,6
-            1087: 10,2
-            1095: 10,3
-            1103: 10,4
-            1111: 10,5
-            1140: -11,3
-            1145: -11,4
-            1150: -11,5
-            1158: -7,5
-            1178: 9,1
-            1200: 10,7
-            1203: 10,6
-            1211: -11,6
-            1219: -10,6
-            1231: -9,5
-            1239: -10,5
-            1247: -8,5
-            1252: -10,4
-            1260: -10,2
-            1271: -10,3
-            1279: -9,1
-            1325: 6,5
-            1328: 7,5
-            1333: 9,6
-            1336: 10,6
-            1344: 10,7
-            1373: -11,3
-            1378: -11,4
-            1383: -11,5
-            1388: -11,6
-            1396: -10,2
-            1404: -10,3
-            1412: -10,4
-            1420: -10,5
-            1428: -10,6
-            1439: -9,1
-            1457: -9,5
-            1474: -8,5
-            1479: -7,5
-            1521: 9,1
-            1529: 10,2
-            1540: 9,5
-            1548: 10,4
-            1556: 10,3
-            1564: 8,5
-            1569: 10,5
-            1577: 6,5
-            1580: 7,5
-            1585: 8,5
-            1590: 9,1
-            1598: 9,5
-            1606: 9,6
-            1612: 10,2
-            1620: 10,3
-            1628: 10,4
-            1636: 10,5
-            1644: 10,6
-            1652: 10,7
-            1681: -11,3
-            1686: -11,4
-            1691: -11,5
-            1696: -11,6
-            1704: -10,2
-            1736: -10,6
-            1747: -9,1
-            1787: -7,5
-            1846: -2,4
-            1862: -1,4
-            1882: 0,4
-            1897: 2,4
-            1902: 1,4
-            2520: -9,5
-            2531: -10,4
-            2539: -10,3
-            2550: -10,5
-            2558: -8,5
-        - node:
-            zIndex: 1
-            id: LatticeCornerSW
-          decals:
-            104: 8,5
-            111: 9,5
-            116: 10,4
-            127: 10,5
-            149: -10,5
-            153: -9,6
-            160: -9,5
-            166: -8,5
-            170: 11,6
-            178: 10,6
-            191: -10,6
-            197: -7,5
-            202: 7,5
-            218: 10,6
-            223: 11,6
-            236: -10,6
-            240: -9,6
-            257: -8,5
-            264: -9,5
-            270: -7,5
-            282: -10,5
-            295: -10,4
-            300: 11,4
-            305: 11,5
-            310: 11,3
-            335: -10,2
-            346: -10,3
-            354: -9,1
-            367: 9,1
-            375: 10,2
-            384: 7,5
-            391: 9,5
-            399: 10,4
-            407: 10,3
-            413: 8,5
-            420: 10,5
-            426: 7,5
-            431: 8,5
-            438: 9,1
-            446: 9,5
-            457: 10,2
-            465: 10,3
-            473: 10,4
-            481: 10,5
-            489: 11,3
-            494: 11,4
-            499: 11,5
-            540: -10,2
-            549: -7,5
-            556: -9,1
-            564: -9,5
-            572: -10,4
-            580: -10,3
-            588: -10,5
-            594: -8,5
-            600: -10,7
-            607: -10,6
-            616: -9,6
-            626: 10,6
-            634: 11,6
-            640: 7,5
-            645: 8,5
-            652: 9,1
-            660: 9,5
-            674: 10,2
-            682: 10,3
-            690: 10,4
-            698: 10,5
-            706: 10,6
-            717: 11,3
-            722: 11,4
-            727: 11,5
-            732: 11,6
-            766: -10,2
-            774: -10,3
-            782: -10,4
-            790: -10,5
-            798: -10,6
-            802: -10,7
-            809: -9,1
-            817: -9,5
-            821: -9,6
-            826: -8,5
-            831: -7,5
-            854: 7,5
-            859: 8,5
-            866: 9,1
-            874: 9,5
-            888: 10,2
-            896: 10,3
-            904: 10,4
-            912: 10,5
-            920: 10,6
-            931: 11,3
-            936: 11,4
-            941: 11,5
-            946: 11,6
-            980: -10,2
-            988: -10,3
-            996: -10,4
-            1004: -10,5
-            1012: -10,6
-            1016: -10,7
-            1023: -9,1
-            1031: -9,5
-            1035: -9,6
-            1040: -8,5
-            1045: -7,5
-            1068: 7,5
-            1073: 8,5
-            1080: 9,5
-            1091: 10,2
-            1099: 10,3
-            1107: 10,4
-            1115: 10,5
-            1123: 11,3
-            1128: 11,4
-            1133: 11,5
-            1155: -9,6
-            1160: -7,5
-            1175: -6,5
-            1182: 9,1
-            1196: 11,6
-            1207: 10,6
-            1216: -10,7
-            1223: -10,6
-            1235: -9,5
-            1243: -10,5
-            1249: -8,5
-            1256: -10,4
-            1264: -10,2
-            1275: -10,3
-            1283: -9,1
-            1330: 7,5
-            1340: 10,6
-            1351: 11,3
-            1356: 11,4
-            1361: 11,5
-            1366: 11,6
-            1400: -10,2
-            1408: -10,3
-            1416: -10,4
-            1424: -10,5
-            1432: -10,6
-            1436: -10,7
-            1443: -9,1
-            1461: -9,5
-            1465: -9,6
-            1476: -8,5
-            1481: -7,5
-            1484: -6,5
-            1525: 9,1
-            1533: 10,2
-            1544: 9,5
-            1552: 10,4
-            1560: 10,3
-            1566: 8,5
-            1573: 10,5
-            1582: 7,5
-            1587: 8,5
-            1594: 9,1
-            1602: 9,5
-            1616: 10,2
-            1624: 10,3
-            1632: 10,4
-            1640: 10,5
-            1648: 10,6
-            1659: 11,3
-            1664: 11,4
-            1669: 11,5
-            1674: 11,6
-            1708: -10,2
-            1740: -10,6
-            1744: -10,7
-            1751: -9,1
-            1773: -9,6
-            1789: -7,5
-            1792: -6,5
-            1848: -2,4
-            1864: -1,4
-            1884: 0,4
-            1899: 2,4
-            1904: 1,4
-            2524: -9,5
-            2535: -10,4
-            2543: -10,3
-            2554: -10,5
-            2560: -8,5
-        - node:
-            id: LatticeEdgeE
           decals:
             49: -6,-2
             52: -2,-3
@@ -1084,504 +422,466 @@ entities:
             76: -2,-3
             85: -6,-2
             88: -2,-3
-            101: 8,5
-            106: 9,5
-            122: 10,5
-            130: 9,6
+            107: 9,5
+            123: 10,5
             132: -10,3
-            136: -10,4
+            137: -10,4
             140: -11,5
-            144: -10,5
-            155: -9,5
-            163: -8,5
-            173: 10,6
-            181: -11,6
-            186: -10,6
-            194: -7,5
-            199: 7,5
+            145: -10,5
+            156: -9,5
+            174: 10,6
+            182: -11,6
+            187: -10,6
             206: -8,-1
-            210: 9,6
-            213: 10,6
-            226: -11,6
-            231: -10,6
+            214: 10,6
+            227: -11,6
+            232: -10,6
             241: -6,-2
             244: -2,-3
-            254: -8,5
-            259: -9,5
-            267: -7,5
-            272: -11,5
-            277: -10,5
-            285: -11,4
-            290: -10,4
-            313: -11,3
+            260: -9,5
+            273: -11,5
+            278: -10,5
+            286: -11,4
+            291: -10,4
+            314: -11,3
             317: -11,2
             320: -8,-1
-            330: -10,2
+            331: -10,2
             337: -10,1
-            341: -10,3
-            349: -9,1
-            362: 9,1
-            370: 10,2
-            381: 7,5
-            386: 9,5
-            394: 10,4
-            402: 10,3
-            410: 8,5
-            415: 10,5
-            423: 7,5
-            428: 8,5
-            433: 9,1
-            441: 9,5
-            452: 10,2
-            460: 10,3
-            468: 10,4
-            476: 10,5
+            342: -10,3
+            350: -9,1
+            363: 9,1
+            371: 10,2
+            387: 9,5
+            395: 10,4
+            403: 10,3
+            416: 10,5
+            434: 9,1
+            442: 9,5
+            453: 10,2
+            461: 10,3
+            469: 10,4
+            477: 10,5
             501: -11,2
-            505: -11,3
-            510: -11,4
-            515: -11,5
+            506: -11,3
+            511: -11,4
+            516: -11,5
             519: -8,-1
             522: -6,-2
             525: -2,-3
-            535: -10,2
+            536: -10,2
             542: -10,1
-            546: -7,5
-            551: -9,1
-            559: -9,5
-            567: -10,4
-            575: -10,3
-            583: -10,5
-            591: -8,5
-            602: -10,6
-            610: -11,6
-            618: 10,7
-            621: 10,6
-            629: 9,6
-            637: 7,5
-            642: 8,5
-            647: 9,1
-            655: 9,5
-            663: 9,6
-            669: 10,2
-            677: 10,3
-            685: 10,4
-            693: 10,5
-            701: 10,6
-            709: 10,7
+            552: -9,1
+            560: -9,5
+            568: -10,4
+            576: -10,3
+            584: -10,5
+            603: -10,6
+            611: -11,6
+            622: 10,6
+            648: 9,1
+            656: 9,5
+            670: 10,2
+            678: 10,3
+            686: 10,4
+            694: 10,5
+            702: 10,6
             734: -11,2
-            738: -11,3
-            743: -11,4
-            748: -11,5
-            753: -11,6
+            739: -11,3
+            744: -11,4
+            749: -11,5
+            754: -11,6
             757: -10,1
-            761: -10,2
-            769: -10,3
-            777: -10,4
-            785: -10,5
-            793: -10,6
-            804: -9,1
-            812: -9,5
-            823: -8,5
-            828: -7,5
+            762: -10,2
+            770: -10,3
+            778: -10,4
+            786: -10,5
+            794: -10,6
+            805: -9,1
+            813: -9,5
             832: -8,-1
             835: -6,-2
             838: -2,-3
-            851: 7,5
-            856: 8,5
-            861: 9,1
-            869: 9,5
-            877: 9,6
-            883: 10,2
-            891: 10,3
-            899: 10,4
-            907: 10,5
-            915: 10,6
-            923: 10,7
+            862: 9,1
+            870: 9,5
+            884: 10,2
+            892: 10,3
+            900: 10,4
+            908: 10,5
+            916: 10,6
             948: -11,2
-            952: -11,3
-            957: -11,4
-            962: -11,5
-            967: -11,6
+            953: -11,3
+            958: -11,4
+            963: -11,5
+            968: -11,6
             971: -10,1
-            975: -10,2
-            983: -10,3
-            991: -10,4
-            999: -10,5
-            1007: -10,6
-            1018: -9,1
-            1026: -9,5
-            1037: -8,5
-            1042: -7,5
+            976: -10,2
+            984: -10,3
+            992: -10,4
+            1000: -10,5
+            1008: -10,6
+            1019: -9,1
+            1027: -9,5
             1046: -8,-1
             1049: -6,-2
             1052: -2,-3
-            1065: 7,5
-            1070: 8,5
-            1075: 9,5
-            1083: 9,6
-            1086: 10,2
-            1094: 10,3
-            1102: 10,4
-            1110: 10,5
+            1076: 9,5
+            1087: 10,2
+            1095: 10,3
+            1103: 10,4
+            1111: 10,5
             1135: -11,2
-            1139: -11,3
-            1144: -11,4
-            1149: -11,5
-            1157: -7,5
+            1140: -11,3
+            1145: -11,4
+            1150: -11,5
             1161: -6,-2
             1164: -2,-3
-            1177: 9,1
+            1178: 9,1
             1190: -8,-1
-            1199: 10,7
-            1202: 10,6
-            1210: -11,6
-            1218: -10,6
-            1230: -9,5
-            1238: -10,5
-            1246: -8,5
-            1251: -10,4
-            1259: -10,2
+            1203: 10,6
+            1211: -11,6
+            1219: -10,6
+            1231: -9,5
+            1239: -10,5
+            1252: -10,4
+            1260: -10,2
             1266: -10,1
-            1270: -10,3
-            1278: -9,1
-            1324: 6,5
-            1327: 7,5
-            1332: 9,6
-            1335: 10,6
-            1343: 10,7
-            1368: -11,2
-            1372: -11,3
-            1377: -11,4
-            1382: -11,5
-            1387: -11,6
-            1391: -10,1
-            1395: -10,2
-            1403: -10,3
-            1411: -10,4
-            1419: -10,5
-            1427: -10,6
-            1438: -9,1
-            1456: -9,5
-            1473: -8,5
-            1478: -7,5
-            1485: -8,-1
-            1488: -6,-2
-            1491: -2,-3
-            1520: 9,1
-            1528: 10,2
-            1539: 9,5
-            1547: 10,4
-            1555: 10,3
-            1563: 8,5
-            1568: 10,5
-            1576: 6,5
-            1579: 7,5
-            1584: 8,5
-            1589: 9,1
-            1597: 9,5
-            1605: 9,6
-            1611: 10,2
-            1619: 10,3
-            1627: 10,4
-            1635: 10,5
-            1643: 10,6
-            1651: 10,7
-            1676: -11,2
-            1680: -11,3
-            1685: -11,4
-            1690: -11,5
-            1695: -11,6
-            1699: -10,1
-            1703: -10,2
-            1735: -10,6
-            1746: -9,1
-            1786: -7,5
-            1793: -8,-1
-            1796: -6,-2
-            1799: -2,-3
-            1845: -2,4
-            1861: -1,4
-            1881: 0,4
-            1896: 2,4
-            1901: 1,4
-            2519: -9,5
-            2530: -10,4
-            2538: -10,3
-            2549: -10,5
-            2557: -8,5
+            1271: -10,3
+            1279: -9,1
+            1329: 10,6
+            1361: -11,2
+            1366: -11,3
+            1371: -11,4
+            1376: -11,5
+            1381: -11,6
+            1384: -10,1
+            1389: -10,2
+            1397: -10,3
+            1405: -10,4
+            1413: -10,5
+            1421: -10,6
+            1432: -9,1
+            1445: -9,5
+            1473: -8,-1
+            1476: -6,-2
+            1479: -2,-3
+            1509: 9,1
+            1517: 10,2
+            1528: 9,5
+            1536: 10,4
+            1544: 10,3
+            1557: 10,5
+            1578: 9,1
+            1586: 9,5
+            1600: 10,2
+            1608: 10,3
+            1616: 10,4
+            1624: 10,5
+            1632: 10,6
+            1664: -11,2
+            1669: -11,3
+            1674: -11,4
+            1679: -11,5
+            1684: -11,6
+            1687: -10,1
+            1692: -10,2
+            1700: -10,6
+            1711: -9,1
+            1734: -8,-1
+            1737: -6,-2
+            1740: -2,-3
+            1811: -9,5
+            1822: -10,4
+            1830: -10,3
+            1841: -10,5
+            1891: 9,1
+            1899: 9,5
+            1913: 10,2
+            1921: 10,3
+            1929: 10,4
+            1937: 10,5
+            1945: 10,6
+            1977: -11,2
+            1982: -11,3
+            1987: -11,4
+            1992: -11,5
+            1997: -11,6
+            2000: -10,1
+            2005: -10,2
+            2013: -10,3
+            2021: -10,4
+            2029: -10,5
+            2037: -10,6
+            2048: -9,1
+            2062: -9,5
+            2107: -8,-1
+            2110: -6,-2
+            2113: -2,-3
+            2188: 9,5
+            2202: 10,2
+            2210: 10,3
+            2218: 10,4
+            2226: 10,5
+            2234: 10,6
+            2266: -11,2
+            2271: -11,3
+            2276: -11,4
+            2281: -11,5
+            2286: -11,6
+            2294: -10,2
+            2302: -10,3
+            2310: -10,4
+            2318: -10,5
+            2326: -10,6
+            2351: -9,5
+            2399: -6,-2
+            2402: -2,-3
+            2432: -9,1
+            2438: -8,-1
+            2441: -10,1
+            2452: 9,1
         - node:
-            id: LatticeEdgeN
+            zIndex: 1
+            id: LatticeCornerNW
           decals:
-            50: -6,-2
-            53: -2,-3
             55: 2,-3
             58: 6,-2
-            62: -6,-2
-            65: -2,-3
             67: 2,-3
             70: 6,-2
-            74: -6,-2
-            77: -2,-3
             79: 2,-3
             82: 6,-2
-            86: -6,-2
-            89: -2,-3
             91: 2,-3
             94: 6,-2
             97: 10,3
-            108: 9,5
-            114: 10,4
+            110: 9,5
+            115: 10,4
             118: 11,5
-            124: 10,5
-            133: -10,3
-            138: -10,4
-            141: -11,5
-            146: -10,5
-            157: -9,5
-            168: 11,6
-            175: 10,6
-            183: -11,6
-            188: -10,6
+            126: 10,5
+            148: -10,5
+            159: -9,5
+            169: 11,6
+            177: 10,6
+            190: -10,6
             203: 8,-1
-            207: -8,-1
-            215: 10,6
-            221: 11,6
-            228: -11,6
-            233: -10,6
-            242: -6,-2
-            245: -2,-3
+            217: 10,6
+            222: 11,6
+            235: -10,6
             247: 2,-3
             250: 6,-2
-            261: -9,5
-            274: -11,5
-            279: -10,5
-            287: -11,4
-            292: -10,4
-            298: 11,4
-            303: 11,5
-            308: 11,3
-            315: -11,3
-            318: -11,2
-            321: -8,-1
+            263: -9,5
+            281: -10,5
+            294: -10,4
+            299: 11,4
+            304: 11,5
+            309: 11,3
             323: 8,-1
             326: 11,2
-            332: -10,2
-            338: -10,1
-            343: -10,3
-            351: -9,1
-            364: 9,1
-            372: 10,2
+            334: -10,2
+            345: -10,3
+            353: -9,1
+            366: 9,1
+            374: 10,2
             377: 10,1
-            388: 9,5
-            396: 10,4
-            404: 10,3
-            417: 10,5
-            435: 9,1
-            443: 9,5
+            390: 9,5
+            398: 10,4
+            406: 10,3
+            419: 10,5
+            437: 9,1
+            445: 9,5
             448: 10,1
-            454: 10,2
-            462: 10,3
-            470: 10,4
-            478: 10,5
+            456: 10,2
+            464: 10,3
+            472: 10,4
+            480: 10,5
             483: 11,2
-            487: 11,3
-            492: 11,4
-            497: 11,5
-            502: -11,2
-            507: -11,3
-            512: -11,4
-            517: -11,5
-            520: -8,-1
-            523: -6,-2
-            526: -2,-3
+            488: 11,3
+            493: 11,4
+            498: 11,5
             528: 2,-3
             531: 6,-2
-            537: -10,2
-            543: -10,1
-            553: -9,1
-            561: -9,5
-            569: -10,4
-            577: -10,3
-            585: -10,5
+            539: -10,2
+            555: -9,1
+            563: -9,5
+            571: -10,4
+            579: -10,3
+            587: -10,5
             595: 8,-1
-            604: -10,6
-            612: -11,6
-            623: 10,6
-            632: 11,6
-            649: 9,1
-            657: 9,5
+            606: -10,6
+            625: 10,6
+            633: 11,6
+            651: 9,1
+            659: 9,5
             665: 10,1
-            671: 10,2
-            679: 10,3
-            687: 10,4
-            695: 10,5
-            703: 10,6
+            673: 10,2
+            681: 10,3
+            689: 10,4
+            697: 10,5
+            705: 10,6
             711: 11,2
-            715: 11,3
-            720: 11,4
-            725: 11,5
-            730: 11,6
-            735: -11,2
-            740: -11,3
-            745: -11,4
-            750: -11,5
-            755: -11,6
-            758: -10,1
-            763: -10,2
-            771: -10,3
-            779: -10,4
-            787: -10,5
-            795: -10,6
-            806: -9,1
-            814: -9,5
-            833: -8,-1
-            836: -6,-2
-            839: -2,-3
+            716: 11,3
+            721: 11,4
+            726: 11,5
+            731: 11,6
+            765: -10,2
+            773: -10,3
+            781: -10,4
+            789: -10,5
+            797: -10,6
+            808: -9,1
+            816: -9,5
             841: 2,-3
             844: 6,-2
             847: 8,-1
-            863: 9,1
-            871: 9,5
+            865: 9,1
+            873: 9,5
             879: 10,1
-            885: 10,2
-            893: 10,3
-            901: 10,4
-            909: 10,5
-            917: 10,6
+            887: 10,2
+            895: 10,3
+            903: 10,4
+            911: 10,5
+            919: 10,6
             925: 11,2
-            929: 11,3
-            934: 11,4
-            939: 11,5
-            944: 11,6
-            949: -11,2
-            954: -11,3
-            959: -11,4
-            964: -11,5
-            969: -11,6
-            972: -10,1
-            977: -10,2
-            985: -10,3
-            993: -10,4
-            1001: -10,5
-            1009: -10,6
-            1020: -9,1
-            1028: -9,5
-            1047: -8,-1
-            1050: -6,-2
-            1053: -2,-3
+            930: 11,3
+            935: 11,4
+            940: 11,5
+            945: 11,6
+            979: -10,2
+            987: -10,3
+            995: -10,4
+            1003: -10,5
+            1011: -10,6
+            1022: -9,1
+            1030: -9,5
             1055: 2,-3
             1058: 6,-2
             1061: 8,-1
-            1077: 9,5
-            1088: 10,2
-            1096: 10,3
-            1104: 10,4
-            1112: 10,5
+            1079: 9,5
+            1090: 10,2
+            1098: 10,3
+            1106: 10,4
+            1114: 10,5
             1117: 11,2
-            1121: 11,3
-            1126: 11,4
-            1131: 11,5
-            1136: -11,2
-            1141: -11,3
-            1146: -11,4
-            1151: -11,5
-            1162: -6,-2
-            1165: -2,-3
+            1122: 11,3
+            1127: 11,4
+            1132: 11,5
             1167: 2,-3
             1170: 6,-2
-            1179: 9,1
+            1181: 9,1
             1184: 8,-1
             1187: 10,1
-            1191: -8,-1
-            1194: 11,6
-            1204: 10,6
-            1212: -11,6
-            1220: -10,6
-            1232: -9,5
-            1240: -10,5
-            1253: -10,4
-            1261: -10,2
-            1267: -10,1
-            1272: -10,3
-            1280: -9,1
-            1337: 10,6
-            1345: 11,2
-            1349: 11,3
-            1354: 11,4
-            1359: 11,5
-            1364: 11,6
-            1369: -11,2
-            1374: -11,3
-            1379: -11,4
-            1384: -11,5
-            1389: -11,6
-            1392: -10,1
-            1397: -10,2
-            1405: -10,3
-            1413: -10,4
-            1421: -10,5
-            1429: -10,6
-            1440: -9,1
-            1458: -9,5
-            1486: -8,-1
-            1489: -6,-2
-            1492: -2,-3
-            1502: 2,-3
-            1513: 6,-2
-            1516: 8,-1
-            1522: 9,1
-            1530: 10,2
-            1535: 10,1
-            1541: 9,5
-            1549: 10,4
-            1557: 10,3
-            1570: 10,5
-            1591: 9,1
-            1599: 9,5
-            1607: 10,1
-            1613: 10,2
-            1621: 10,3
-            1629: 10,4
-            1637: 10,5
-            1645: 10,6
-            1653: 11,2
-            1657: 11,3
-            1662: 11,4
-            1667: 11,5
-            1672: 11,6
-            1677: -11,2
-            1682: -11,3
-            1687: -11,4
-            1692: -11,5
-            1697: -11,6
-            1700: -10,1
-            1705: -10,2
-            1737: -10,6
-            1748: -9,1
-            1794: -8,-1
-            1797: -6,-2
-            1800: -2,-3
-            1810: 2,-3
-            1821: 6,-2
-            1824: 8,-1
-            2521: -9,5
-            2532: -10,4
-            2540: -10,3
-            2551: -10,5
+            1195: 11,6
+            1206: 10,6
+            1222: -10,6
+            1234: -9,5
+            1242: -10,5
+            1255: -10,4
+            1263: -10,2
+            1274: -10,3
+            1282: -9,1
+            1332: 10,6
+            1338: 11,2
+            1343: 11,3
+            1348: 11,4
+            1353: 11,5
+            1358: 11,6
+            1392: -10,2
+            1400: -10,3
+            1408: -10,4
+            1416: -10,5
+            1424: -10,6
+            1435: -9,1
+            1448: -9,5
+            1490: 2,-3
+            1501: 6,-2
+            1504: 8,-1
+            1512: 9,1
+            1520: 10,2
+            1523: 10,1
+            1531: 9,5
+            1539: 10,4
+            1547: 10,3
+            1560: 10,5
+            1581: 9,1
+            1589: 9,5
+            1595: 10,1
+            1603: 10,2
+            1611: 10,3
+            1619: 10,4
+            1627: 10,5
+            1635: 10,6
+            1641: 11,2
+            1646: 11,3
+            1651: 11,4
+            1656: 11,5
+            1661: 11,6
+            1695: -10,2
+            1703: -10,6
+            1714: -9,1
+            1743: 2,-3
+            1746: 6,-2
+            1749: 8,-1
+            1814: -9,5
+            1825: -10,4
+            1833: -10,3
+            1844: -10,5
+            1894: 9,1
+            1902: 9,5
+            1908: 10,1
+            1916: 10,2
+            1924: 10,3
+            1932: 10,4
+            1940: 10,5
+            1948: 10,6
+            1954: 11,2
+            1959: 11,3
+            1964: 11,4
+            1969: 11,5
+            1974: 11,6
+            2008: -10,2
+            2016: -10,3
+            2024: -10,4
+            2032: -10,5
+            2040: -10,6
+            2051: -9,1
+            2065: -9,5
+            2124: 2,-3
+            2135: 6,-2
+            2138: 8,-1
+            2191: 9,5
+            2205: 10,2
+            2213: 10,3
+            2221: 10,4
+            2229: 10,5
+            2237: 10,6
+            2243: 11,2
+            2248: 11,3
+            2253: 11,4
+            2258: 11,5
+            2263: 11,6
+            2297: -10,2
+            2305: -10,3
+            2313: -10,4
+            2321: -10,5
+            2329: -10,6
+            2354: -9,5
+            2413: 2,-3
+            2424: 6,-2
+            2435: -9,1
+            2455: 9,1
+            2458: 8,-1
+            2461: 10,1
         - node:
-            id: LatticeEdgeS
+            zIndex: 1
+            id: LatticeCornerSE
           decals:
             100: 8,5
             105: 9,5
-            113: 10,4
             121: 10,5
             129: 9,6
             135: -10,4
             143: -10,5
-            151: -9,6
             154: -9,5
             162: -8,5
-            167: 11,6
             172: 10,6
             180: -11,6
             185: -10,6
@@ -1589,10 +889,8 @@ entities:
             198: 7,5
             209: 9,6
             212: 10,6
-            220: 11,6
             225: -11,6
             230: -10,6
-            238: -9,6
             253: -8,5
             258: -9,5
             266: -7,5
@@ -1600,9 +898,6 @@ entities:
             276: -10,5
             284: -11,4
             289: -10,4
-            297: 11,4
-            302: 11,5
-            307: 11,3
             312: -11,3
             329: -10,2
             340: -10,3
@@ -1623,9 +918,6 @@ entities:
             459: 10,3
             467: 10,4
             475: 10,5
-            486: 11,3
-            491: 11,4
-            496: 11,5
             504: -11,3
             509: -11,4
             514: -11,5
@@ -1637,14 +929,11 @@ entities:
             574: -10,3
             582: -10,5
             590: -8,5
-            598: -10,7
             601: -10,6
             609: -11,6
-            614: -9,6
             617: 10,7
             620: 10,6
             628: 9,6
-            631: 11,6
             636: 7,5
             641: 8,5
             646: 9,1
@@ -1656,10 +945,6 @@ entities:
             692: 10,5
             700: 10,6
             708: 10,7
-            714: 11,3
-            719: 11,4
-            724: 11,5
-            729: 11,6
             737: -11,3
             742: -11,4
             747: -11,5
@@ -1669,10 +954,8 @@ entities:
             776: -10,4
             784: -10,5
             792: -10,6
-            800: -10,7
             803: -9,1
             811: -9,5
-            819: -9,6
             822: -8,5
             827: -7,5
             850: 7,5
@@ -1686,10 +969,6 @@ entities:
             906: 10,5
             914: 10,6
             922: 10,7
-            928: 11,3
-            933: 11,4
-            938: 11,5
-            943: 11,6
             951: -11,3
             956: -11,4
             961: -11,5
@@ -1699,10 +978,8 @@ entities:
             990: -10,4
             998: -10,5
             1006: -10,6
-            1014: -10,7
             1017: -9,1
             1025: -9,5
-            1033: -9,6
             1036: -8,5
             1041: -7,5
             1064: 7,5
@@ -1713,21 +990,14 @@ entities:
             1093: 10,3
             1101: 10,4
             1109: 10,5
-            1120: 11,3
-            1125: 11,4
-            1130: 11,5
             1138: -11,3
             1143: -11,4
             1148: -11,5
-            1153: -9,6
             1156: -7,5
-            1173: -6,5
             1176: 9,1
-            1193: 11,6
             1198: 10,7
             1201: 10,6
             1209: -11,6
-            1214: -10,7
             1217: -10,6
             1229: -9,5
             1237: -10,5
@@ -1736,312 +1006,1620 @@ entities:
             1258: -10,2
             1269: -10,3
             1277: -9,1
-            1323: 6,5
-            1326: 7,5
-            1331: 9,6
-            1334: 10,6
-            1342: 10,7
-            1348: 11,3
-            1353: 11,4
-            1358: 11,5
-            1363: 11,6
-            1371: -11,3
-            1376: -11,4
-            1381: -11,5
-            1386: -11,6
-            1394: -10,2
-            1402: -10,3
-            1410: -10,4
-            1418: -10,5
-            1426: -10,6
-            1434: -10,7
-            1437: -9,1
-            1455: -9,5
-            1463: -9,6
-            1472: -8,5
-            1477: -7,5
-            1482: -6,5
-            1519: 9,1
-            1527: 10,2
-            1538: 9,5
-            1546: 10,4
-            1554: 10,3
-            1562: 8,5
-            1567: 10,5
-            1575: 6,5
-            1578: 7,5
-            1583: 8,5
-            1588: 9,1
-            1596: 9,5
-            1604: 9,6
-            1610: 10,2
-            1618: 10,3
-            1626: 10,4
-            1634: 10,5
-            1642: 10,6
-            1650: 10,7
-            1656: 11,3
-            1661: 11,4
-            1666: 11,5
-            1671: 11,6
-            1679: -11,3
-            1684: -11,4
-            1689: -11,5
-            1694: -11,6
-            1702: -10,2
-            1734: -10,6
-            1742: -10,7
-            1745: -9,1
-            1771: -9,6
-            1785: -7,5
-            1790: -6,5
-            1844: -2,4
-            1860: -1,4
-            1880: 0,4
-            1895: 2,4
-            1900: 1,4
-            2518: -9,5
-            2529: -10,4
-            2537: -10,3
-            2548: -10,5
-            2556: -8,5
+            1316: 6,5
+            1319: 7,5
+            1324: 9,6
+            1327: 10,6
+            1335: 10,7
+            1364: -11,3
+            1369: -11,4
+            1374: -11,5
+            1379: -11,6
+            1387: -10,2
+            1395: -10,3
+            1403: -10,4
+            1411: -10,5
+            1419: -10,6
+            1430: -9,1
+            1443: -9,5
+            1460: -8,5
+            1465: -7,5
+            1507: 9,1
+            1515: 10,2
+            1526: 9,5
+            1534: 10,4
+            1542: 10,3
+            1550: 8,5
+            1555: 10,5
+            1563: 6,5
+            1566: 7,5
+            1571: 8,5
+            1576: 9,1
+            1584: 9,5
+            1592: 9,6
+            1598: 10,2
+            1606: 10,3
+            1614: 10,4
+            1622: 10,5
+            1630: 10,6
+            1638: 10,7
+            1667: -11,3
+            1672: -11,4
+            1677: -11,5
+            1682: -11,6
+            1690: -10,2
+            1698: -10,6
+            1709: -9,1
+            1726: -7,5
+            1752: -2,4
+            1757: -1,4
+            1762: 0,4
+            1767: 2,4
+            1772: 1,4
+            1809: -9,5
+            1820: -10,4
+            1828: -10,3
+            1839: -10,5
+            1847: -8,5
+            1854: 0,4
+            1866: 1,4
+            1871: 2,4
+            1876: 6,5
+            1879: 7,5
+            1884: 8,5
+            1889: 9,1
+            1897: 9,5
+            1905: 9,6
+            1911: 10,2
+            1919: 10,3
+            1927: 10,4
+            1935: 10,5
+            1943: 10,6
+            1951: 10,7
+            1980: -11,3
+            1985: -11,4
+            1990: -11,5
+            1995: -11,6
+            2003: -10,2
+            2011: -10,3
+            2019: -10,4
+            2027: -10,5
+            2035: -10,6
+            2046: -9,1
+            2060: -9,5
+            2077: -8,5
+            2082: -7,5
+            2090: -2,4
+            2102: -1,4
+            2143: 0,4
+            2155: 1,4
+            2160: 2,4
+            2165: 6,5
+            2168: 7,5
+            2173: 8,5
+            2186: 9,5
+            2194: 9,6
+            2200: 10,2
+            2208: 10,3
+            2216: 10,4
+            2224: 10,5
+            2232: 10,6
+            2269: -11,3
+            2274: -11,4
+            2279: -11,5
+            2284: -11,6
+            2292: -10,2
+            2300: -10,3
+            2308: -10,4
+            2316: -10,5
+            2324: -10,6
+            2349: -9,5
+            2366: -8,5
+            2371: -7,5
+            2379: -2,4
+            2391: -1,4
+            2430: -9,1
+            2447: 10,7
+            2450: 9,1
+        - node:
+            zIndex: 1
+            id: LatticeCornerSW
+          decals:
+            102: 8,5
+            109: 9,5
+            114: 10,4
+            125: 10,5
+            147: -10,5
+            151: -9,6
+            158: -9,5
+            164: -8,5
+            168: 11,6
+            176: 10,6
+            189: -10,6
+            195: -7,5
+            200: 7,5
+            216: 10,6
+            221: 11,6
+            234: -10,6
+            238: -9,6
+            255: -8,5
+            262: -9,5
+            268: -7,5
+            280: -10,5
+            293: -10,4
+            298: 11,4
+            303: 11,5
+            308: 11,3
+            333: -10,2
+            344: -10,3
+            352: -9,1
+            365: 9,1
+            373: 10,2
+            382: 7,5
+            389: 9,5
+            397: 10,4
+            405: 10,3
+            411: 8,5
+            418: 10,5
+            424: 7,5
+            429: 8,5
+            436: 9,1
+            444: 9,5
+            455: 10,2
+            463: 10,3
+            471: 10,4
+            479: 10,5
+            487: 11,3
+            492: 11,4
+            497: 11,5
+            538: -10,2
+            547: -7,5
+            554: -9,1
+            562: -9,5
+            570: -10,4
+            578: -10,3
+            586: -10,5
+            592: -8,5
+            598: -10,7
+            605: -10,6
+            614: -9,6
+            624: 10,6
+            632: 11,6
+            638: 7,5
+            643: 8,5
+            650: 9,1
+            658: 9,5
+            672: 10,2
+            680: 10,3
+            688: 10,4
+            696: 10,5
+            704: 10,6
+            715: 11,3
+            720: 11,4
+            725: 11,5
+            730: 11,6
+            764: -10,2
+            772: -10,3
+            780: -10,4
+            788: -10,5
+            796: -10,6
+            800: -10,7
+            807: -9,1
+            815: -9,5
+            819: -9,6
+            824: -8,5
+            829: -7,5
+            852: 7,5
+            857: 8,5
+            864: 9,1
+            872: 9,5
+            886: 10,2
+            894: 10,3
+            902: 10,4
+            910: 10,5
+            918: 10,6
+            929: 11,3
+            934: 11,4
+            939: 11,5
+            944: 11,6
+            978: -10,2
+            986: -10,3
+            994: -10,4
+            1002: -10,5
+            1010: -10,6
+            1014: -10,7
+            1021: -9,1
+            1029: -9,5
+            1033: -9,6
+            1038: -8,5
+            1043: -7,5
+            1066: 7,5
+            1071: 8,5
+            1078: 9,5
+            1089: 10,2
+            1097: 10,3
+            1105: 10,4
+            1113: 10,5
+            1121: 11,3
+            1126: 11,4
+            1131: 11,5
+            1153: -9,6
+            1158: -7,5
+            1173: -6,5
+            1180: 9,1
+            1194: 11,6
+            1205: 10,6
+            1214: -10,7
+            1221: -10,6
+            1233: -9,5
+            1241: -10,5
+            1247: -8,5
+            1254: -10,4
+            1262: -10,2
+            1273: -10,3
+            1281: -9,1
+            1321: 7,5
+            1331: 10,6
+            1342: 11,3
+            1347: 11,4
+            1352: 11,5
+            1357: 11,6
+            1391: -10,2
+            1399: -10,3
+            1407: -10,4
+            1415: -10,5
+            1423: -10,6
+            1427: -10,7
+            1434: -9,1
+            1447: -9,5
+            1451: -9,6
+            1462: -8,5
+            1467: -7,5
+            1470: -6,5
+            1511: 9,1
+            1519: 10,2
+            1530: 9,5
+            1538: 10,4
+            1546: 10,3
+            1552: 8,5
+            1559: 10,5
+            1568: 7,5
+            1573: 8,5
+            1580: 9,1
+            1588: 9,5
+            1602: 10,2
+            1610: 10,3
+            1618: 10,4
+            1626: 10,5
+            1634: 10,6
+            1645: 11,3
+            1650: 11,4
+            1655: 11,5
+            1660: 11,6
+            1694: -10,2
+            1702: -10,6
+            1706: -10,7
+            1713: -9,1
+            1720: -9,6
+            1728: -7,5
+            1731: -6,5
+            1754: -2,4
+            1759: -1,4
+            1764: 0,4
+            1769: 2,4
+            1774: 1,4
+            1813: -9,5
+            1824: -10,4
+            1832: -10,3
+            1843: -10,5
+            1849: -8,5
+            1856: 0,4
+            1868: 1,4
+            1873: 2,4
+            1881: 7,5
+            1886: 8,5
+            1893: 9,1
+            1901: 9,5
+            1915: 10,2
+            1923: 10,3
+            1931: 10,4
+            1939: 10,5
+            1947: 10,6
+            1958: 11,3
+            1963: 11,4
+            1968: 11,5
+            1973: 11,6
+            2007: -10,2
+            2015: -10,3
+            2023: -10,4
+            2031: -10,5
+            2039: -10,6
+            2043: -10,7
+            2050: -9,1
+            2064: -9,5
+            2068: -9,6
+            2079: -8,5
+            2084: -7,5
+            2087: -6,5
+            2092: -2,4
+            2104: -1,4
+            2145: 0,4
+            2157: 1,4
+            2162: 2,4
+            2170: 7,5
+            2175: 8,5
+            2190: 9,5
+            2204: 10,2
+            2212: 10,3
+            2220: 10,4
+            2228: 10,5
+            2236: 10,6
+            2247: 11,3
+            2252: 11,4
+            2257: 11,5
+            2262: 11,6
+            2296: -10,2
+            2304: -10,3
+            2312: -10,4
+            2320: -10,5
+            2328: -10,6
+            2353: -9,5
+            2357: -9,6
+            2368: -8,5
+            2373: -7,5
+            2376: -6,5
+            2381: -2,4
+            2393: -1,4
+            2434: -9,1
+            2444: -10,7
+            2454: 9,1
+        - node:
+            id: LatticeEdgeE
+          decals:
+            47: -6,-2
+            50: -2,-3
+            59: -6,-2
+            62: -2,-3
+            71: -6,-2
+            74: -2,-3
+            83: -6,-2
+            86: -2,-3
+            99: 8,5
+            104: 9,5
+            120: 10,5
+            128: 9,6
+            130: -10,3
+            134: -10,4
+            138: -11,5
+            142: -10,5
+            153: -9,5
+            161: -8,5
+            171: 10,6
+            179: -11,6
+            184: -10,6
+            192: -7,5
+            197: 7,5
+            204: -8,-1
+            208: 9,6
+            211: 10,6
+            224: -11,6
+            229: -10,6
+            239: -6,-2
+            242: -2,-3
+            252: -8,5
+            257: -9,5
+            265: -7,5
+            270: -11,5
+            275: -10,5
+            283: -11,4
+            288: -10,4
+            311: -11,3
+            315: -11,2
+            318: -8,-1
+            328: -10,2
+            335: -10,1
+            339: -10,3
+            347: -9,1
+            360: 9,1
+            368: 10,2
+            379: 7,5
+            384: 9,5
+            392: 10,4
+            400: 10,3
+            408: 8,5
+            413: 10,5
+            421: 7,5
+            426: 8,5
+            431: 9,1
+            439: 9,5
+            450: 10,2
+            458: 10,3
+            466: 10,4
+            474: 10,5
+            499: -11,2
+            503: -11,3
+            508: -11,4
+            513: -11,5
+            517: -8,-1
+            520: -6,-2
+            523: -2,-3
+            533: -10,2
+            540: -10,1
+            544: -7,5
+            549: -9,1
+            557: -9,5
+            565: -10,4
+            573: -10,3
+            581: -10,5
+            589: -8,5
+            600: -10,6
+            608: -11,6
+            616: 10,7
+            619: 10,6
+            627: 9,6
+            635: 7,5
+            640: 8,5
+            645: 9,1
+            653: 9,5
+            661: 9,6
+            667: 10,2
+            675: 10,3
+            683: 10,4
+            691: 10,5
+            699: 10,6
+            707: 10,7
+            732: -11,2
+            736: -11,3
+            741: -11,4
+            746: -11,5
+            751: -11,6
+            755: -10,1
+            759: -10,2
+            767: -10,3
+            775: -10,4
+            783: -10,5
+            791: -10,6
+            802: -9,1
+            810: -9,5
+            821: -8,5
+            826: -7,5
+            830: -8,-1
+            833: -6,-2
+            836: -2,-3
+            849: 7,5
+            854: 8,5
+            859: 9,1
+            867: 9,5
+            875: 9,6
+            881: 10,2
+            889: 10,3
+            897: 10,4
+            905: 10,5
+            913: 10,6
+            921: 10,7
+            946: -11,2
+            950: -11,3
+            955: -11,4
+            960: -11,5
+            965: -11,6
+            969: -10,1
+            973: -10,2
+            981: -10,3
+            989: -10,4
+            997: -10,5
+            1005: -10,6
+            1016: -9,1
+            1024: -9,5
+            1035: -8,5
+            1040: -7,5
+            1044: -8,-1
+            1047: -6,-2
+            1050: -2,-3
+            1063: 7,5
+            1068: 8,5
+            1073: 9,5
+            1081: 9,6
+            1084: 10,2
+            1092: 10,3
+            1100: 10,4
+            1108: 10,5
+            1133: -11,2
+            1137: -11,3
+            1142: -11,4
+            1147: -11,5
+            1155: -7,5
+            1159: -6,-2
+            1162: -2,-3
+            1175: 9,1
+            1188: -8,-1
+            1197: 10,7
+            1200: 10,6
+            1208: -11,6
+            1216: -10,6
+            1228: -9,5
+            1236: -10,5
+            1244: -8,5
+            1249: -10,4
+            1257: -10,2
+            1264: -10,1
+            1268: -10,3
+            1276: -9,1
+            1315: 6,5
+            1318: 7,5
+            1323: 9,6
+            1326: 10,6
+            1334: 10,7
+            1359: -11,2
+            1363: -11,3
+            1368: -11,4
+            1373: -11,5
+            1378: -11,6
+            1382: -10,1
+            1386: -10,2
+            1394: -10,3
+            1402: -10,4
+            1410: -10,5
+            1418: -10,6
+            1429: -9,1
+            1442: -9,5
+            1459: -8,5
+            1464: -7,5
+            1471: -8,-1
+            1474: -6,-2
+            1477: -2,-3
+            1506: 9,1
+            1514: 10,2
+            1525: 9,5
+            1533: 10,4
+            1541: 10,3
+            1549: 8,5
+            1554: 10,5
+            1562: 6,5
+            1565: 7,5
+            1570: 8,5
+            1575: 9,1
+            1583: 9,5
+            1591: 9,6
+            1597: 10,2
+            1605: 10,3
+            1613: 10,4
+            1621: 10,5
+            1629: 10,6
+            1637: 10,7
+            1662: -11,2
+            1666: -11,3
+            1671: -11,4
+            1676: -11,5
+            1681: -11,6
+            1685: -10,1
+            1689: -10,2
+            1697: -10,6
+            1708: -9,1
+            1725: -7,5
+            1732: -8,-1
+            1735: -6,-2
+            1738: -2,-3
+            1751: -2,4
+            1756: -1,4
+            1761: 0,4
+            1766: 2,4
+            1771: 1,4
+            1808: -9,5
+            1819: -10,4
+            1827: -10,3
+            1838: -10,5
+            1846: -8,5
+            1853: 0,4
+            1865: 1,4
+            1870: 2,4
+            1875: 6,5
+            1878: 7,5
+            1883: 8,5
+            1888: 9,1
+            1896: 9,5
+            1904: 9,6
+            1910: 10,2
+            1918: 10,3
+            1926: 10,4
+            1934: 10,5
+            1942: 10,6
+            1950: 10,7
+            1975: -11,2
+            1979: -11,3
+            1984: -11,4
+            1989: -11,5
+            1994: -11,6
+            1998: -10,1
+            2002: -10,2
+            2010: -10,3
+            2018: -10,4
+            2026: -10,5
+            2034: -10,6
+            2045: -9,1
+            2059: -9,5
+            2076: -8,5
+            2081: -7,5
+            2089: -2,4
+            2101: -1,4
+            2105: -8,-1
+            2108: -6,-2
+            2111: -2,-3
+            2142: 0,4
+            2154: 1,4
+            2159: 2,4
+            2164: 6,5
+            2167: 7,5
+            2172: 8,5
+            2185: 9,5
+            2193: 9,6
+            2199: 10,2
+            2207: 10,3
+            2215: 10,4
+            2223: 10,5
+            2231: 10,6
+            2264: -11,2
+            2268: -11,3
+            2273: -11,4
+            2278: -11,5
+            2283: -11,6
+            2291: -10,2
+            2299: -10,3
+            2307: -10,4
+            2315: -10,5
+            2323: -10,6
+            2348: -9,5
+            2365: -8,5
+            2370: -7,5
+            2378: -2,4
+            2390: -1,4
+            2397: -6,-2
+            2400: -2,-3
+            2429: -9,1
+            2436: -8,-1
+            2439: -10,1
+            2446: 10,7
+            2449: 9,1
+        - node:
+            id: LatticeEdgeN
+          decals:
+            48: -6,-2
+            51: -2,-3
+            53: 2,-3
+            56: 6,-2
+            60: -6,-2
+            63: -2,-3
+            65: 2,-3
+            68: 6,-2
+            72: -6,-2
+            75: -2,-3
+            77: 2,-3
+            80: 6,-2
+            84: -6,-2
+            87: -2,-3
+            89: 2,-3
+            92: 6,-2
+            95: 10,3
+            106: 9,5
+            112: 10,4
+            116: 11,5
+            122: 10,5
+            131: -10,3
+            136: -10,4
+            139: -11,5
+            144: -10,5
+            155: -9,5
+            166: 11,6
+            173: 10,6
+            181: -11,6
+            186: -10,6
+            201: 8,-1
+            205: -8,-1
+            213: 10,6
+            219: 11,6
+            226: -11,6
+            231: -10,6
+            240: -6,-2
+            243: -2,-3
+            245: 2,-3
+            248: 6,-2
+            259: -9,5
+            272: -11,5
+            277: -10,5
+            285: -11,4
+            290: -10,4
+            296: 11,4
+            301: 11,5
+            306: 11,3
+            313: -11,3
+            316: -11,2
+            319: -8,-1
+            321: 8,-1
+            324: 11,2
+            330: -10,2
+            336: -10,1
+            341: -10,3
+            349: -9,1
+            362: 9,1
+            370: 10,2
+            375: 10,1
+            386: 9,5
+            394: 10,4
+            402: 10,3
+            415: 10,5
+            433: 9,1
+            441: 9,5
+            446: 10,1
+            452: 10,2
+            460: 10,3
+            468: 10,4
+            476: 10,5
+            481: 11,2
+            485: 11,3
+            490: 11,4
+            495: 11,5
+            500: -11,2
+            505: -11,3
+            510: -11,4
+            515: -11,5
+            518: -8,-1
+            521: -6,-2
+            524: -2,-3
+            526: 2,-3
+            529: 6,-2
+            535: -10,2
+            541: -10,1
+            551: -9,1
+            559: -9,5
+            567: -10,4
+            575: -10,3
+            583: -10,5
+            593: 8,-1
+            602: -10,6
+            610: -11,6
+            621: 10,6
+            630: 11,6
+            647: 9,1
+            655: 9,5
+            663: 10,1
+            669: 10,2
+            677: 10,3
+            685: 10,4
+            693: 10,5
+            701: 10,6
+            709: 11,2
+            713: 11,3
+            718: 11,4
+            723: 11,5
+            728: 11,6
+            733: -11,2
+            738: -11,3
+            743: -11,4
+            748: -11,5
+            753: -11,6
+            756: -10,1
+            761: -10,2
+            769: -10,3
+            777: -10,4
+            785: -10,5
+            793: -10,6
+            804: -9,1
+            812: -9,5
+            831: -8,-1
+            834: -6,-2
+            837: -2,-3
+            839: 2,-3
+            842: 6,-2
+            845: 8,-1
+            861: 9,1
+            869: 9,5
+            877: 10,1
+            883: 10,2
+            891: 10,3
+            899: 10,4
+            907: 10,5
+            915: 10,6
+            923: 11,2
+            927: 11,3
+            932: 11,4
+            937: 11,5
+            942: 11,6
+            947: -11,2
+            952: -11,3
+            957: -11,4
+            962: -11,5
+            967: -11,6
+            970: -10,1
+            975: -10,2
+            983: -10,3
+            991: -10,4
+            999: -10,5
+            1007: -10,6
+            1018: -9,1
+            1026: -9,5
+            1045: -8,-1
+            1048: -6,-2
+            1051: -2,-3
+            1053: 2,-3
+            1056: 6,-2
+            1059: 8,-1
+            1075: 9,5
+            1086: 10,2
+            1094: 10,3
+            1102: 10,4
+            1110: 10,5
+            1115: 11,2
+            1119: 11,3
+            1124: 11,4
+            1129: 11,5
+            1134: -11,2
+            1139: -11,3
+            1144: -11,4
+            1149: -11,5
+            1160: -6,-2
+            1163: -2,-3
+            1165: 2,-3
+            1168: 6,-2
+            1177: 9,1
+            1182: 8,-1
+            1185: 10,1
+            1189: -8,-1
+            1192: 11,6
+            1202: 10,6
+            1210: -11,6
+            1218: -10,6
+            1230: -9,5
+            1238: -10,5
+            1251: -10,4
+            1259: -10,2
+            1265: -10,1
+            1270: -10,3
+            1278: -9,1
+            1328: 10,6
+            1336: 11,2
+            1340: 11,3
+            1345: 11,4
+            1350: 11,5
+            1355: 11,6
+            1360: -11,2
+            1365: -11,3
+            1370: -11,4
+            1375: -11,5
+            1380: -11,6
+            1383: -10,1
+            1388: -10,2
+            1396: -10,3
+            1404: -10,4
+            1412: -10,5
+            1420: -10,6
+            1431: -9,1
+            1444: -9,5
+            1472: -8,-1
+            1475: -6,-2
+            1478: -2,-3
+            1488: 2,-3
+            1499: 6,-2
+            1502: 8,-1
+            1508: 9,1
+            1516: 10,2
+            1521: 10,1
+            1527: 9,5
+            1535: 10,4
+            1543: 10,3
+            1556: 10,5
+            1577: 9,1
+            1585: 9,5
+            1593: 10,1
+            1599: 10,2
+            1607: 10,3
+            1615: 10,4
+            1623: 10,5
+            1631: 10,6
+            1639: 11,2
+            1643: 11,3
+            1648: 11,4
+            1653: 11,5
+            1658: 11,6
+            1663: -11,2
+            1668: -11,3
+            1673: -11,4
+            1678: -11,5
+            1683: -11,6
+            1686: -10,1
+            1691: -10,2
+            1699: -10,6
+            1710: -9,1
+            1733: -8,-1
+            1736: -6,-2
+            1739: -2,-3
+            1741: 2,-3
+            1744: 6,-2
+            1747: 8,-1
+            1810: -9,5
+            1821: -10,4
+            1829: -10,3
+            1840: -10,5
+            1890: 9,1
+            1898: 9,5
+            1906: 10,1
+            1912: 10,2
+            1920: 10,3
+            1928: 10,4
+            1936: 10,5
+            1944: 10,6
+            1952: 11,2
+            1956: 11,3
+            1961: 11,4
+            1966: 11,5
+            1971: 11,6
+            1976: -11,2
+            1981: -11,3
+            1986: -11,4
+            1991: -11,5
+            1996: -11,6
+            1999: -10,1
+            2004: -10,2
+            2012: -10,3
+            2020: -10,4
+            2028: -10,5
+            2036: -10,6
+            2047: -9,1
+            2061: -9,5
+            2106: -8,-1
+            2109: -6,-2
+            2112: -2,-3
+            2122: 2,-3
+            2133: 6,-2
+            2136: 8,-1
+            2187: 9,5
+            2201: 10,2
+            2209: 10,3
+            2217: 10,4
+            2225: 10,5
+            2233: 10,6
+            2241: 11,2
+            2245: 11,3
+            2250: 11,4
+            2255: 11,5
+            2260: 11,6
+            2265: -11,2
+            2270: -11,3
+            2275: -11,4
+            2280: -11,5
+            2285: -11,6
+            2293: -10,2
+            2301: -10,3
+            2309: -10,4
+            2317: -10,5
+            2325: -10,6
+            2350: -9,5
+            2398: -6,-2
+            2401: -2,-3
+            2411: 2,-3
+            2422: 6,-2
+            2431: -9,1
+            2437: -8,-1
+            2440: -10,1
+            2451: 9,1
+            2456: 8,-1
+            2459: 10,1
+        - node:
+            id: LatticeEdgeS
+          decals:
+            98: 8,5
+            103: 9,5
+            111: 10,4
+            119: 10,5
+            127: 9,6
+            133: -10,4
+            141: -10,5
+            149: -9,6
+            152: -9,5
+            160: -8,5
+            165: 11,6
+            170: 10,6
+            178: -11,6
+            183: -10,6
+            191: -7,5
+            196: 7,5
+            207: 9,6
+            210: 10,6
+            218: 11,6
+            223: -11,6
+            228: -10,6
+            236: -9,6
+            251: -8,5
+            256: -9,5
+            264: -7,5
+            269: -11,5
+            274: -10,5
+            282: -11,4
+            287: -10,4
+            295: 11,4
+            300: 11,5
+            305: 11,3
+            310: -11,3
+            327: -10,2
+            338: -10,3
+            346: -9,1
+            359: 9,1
+            367: 10,2
+            378: 7,5
+            383: 9,5
+            391: 10,4
+            399: 10,3
+            407: 8,5
+            412: 10,5
+            420: 7,5
+            425: 8,5
+            430: 9,1
+            438: 9,5
+            449: 10,2
+            457: 10,3
+            465: 10,4
+            473: 10,5
+            484: 11,3
+            489: 11,4
+            494: 11,5
+            502: -11,3
+            507: -11,4
+            512: -11,5
+            532: -10,2
+            543: -7,5
+            548: -9,1
+            556: -9,5
+            564: -10,4
+            572: -10,3
+            580: -10,5
+            588: -8,5
+            596: -10,7
+            599: -10,6
+            607: -11,6
+            612: -9,6
+            615: 10,7
+            618: 10,6
+            626: 9,6
+            629: 11,6
+            634: 7,5
+            639: 8,5
+            644: 9,1
+            652: 9,5
+            660: 9,6
+            666: 10,2
+            674: 10,3
+            682: 10,4
+            690: 10,5
+            698: 10,6
+            706: 10,7
+            712: 11,3
+            717: 11,4
+            722: 11,5
+            727: 11,6
+            735: -11,3
+            740: -11,4
+            745: -11,5
+            750: -11,6
+            758: -10,2
+            766: -10,3
+            774: -10,4
+            782: -10,5
+            790: -10,6
+            798: -10,7
+            801: -9,1
+            809: -9,5
+            817: -9,6
+            820: -8,5
+            825: -7,5
+            848: 7,5
+            853: 8,5
+            858: 9,1
+            866: 9,5
+            874: 9,6
+            880: 10,2
+            888: 10,3
+            896: 10,4
+            904: 10,5
+            912: 10,6
+            920: 10,7
+            926: 11,3
+            931: 11,4
+            936: 11,5
+            941: 11,6
+            949: -11,3
+            954: -11,4
+            959: -11,5
+            964: -11,6
+            972: -10,2
+            980: -10,3
+            988: -10,4
+            996: -10,5
+            1004: -10,6
+            1012: -10,7
+            1015: -9,1
+            1023: -9,5
+            1031: -9,6
+            1034: -8,5
+            1039: -7,5
+            1062: 7,5
+            1067: 8,5
+            1072: 9,5
+            1080: 9,6
+            1083: 10,2
+            1091: 10,3
+            1099: 10,4
+            1107: 10,5
+            1118: 11,3
+            1123: 11,4
+            1128: 11,5
+            1136: -11,3
+            1141: -11,4
+            1146: -11,5
+            1151: -9,6
+            1154: -7,5
+            1171: -6,5
+            1174: 9,1
+            1191: 11,6
+            1196: 10,7
+            1199: 10,6
+            1207: -11,6
+            1212: -10,7
+            1215: -10,6
+            1227: -9,5
+            1235: -10,5
+            1243: -8,5
+            1248: -10,4
+            1256: -10,2
+            1267: -10,3
+            1275: -9,1
+            1314: 6,5
+            1317: 7,5
+            1322: 9,6
+            1325: 10,6
+            1333: 10,7
+            1339: 11,3
+            1344: 11,4
+            1349: 11,5
+            1354: 11,6
+            1362: -11,3
+            1367: -11,4
+            1372: -11,5
+            1377: -11,6
+            1385: -10,2
+            1393: -10,3
+            1401: -10,4
+            1409: -10,5
+            1417: -10,6
+            1425: -10,7
+            1428: -9,1
+            1441: -9,5
+            1449: -9,6
+            1458: -8,5
+            1463: -7,5
+            1468: -6,5
+            1505: 9,1
+            1513: 10,2
+            1524: 9,5
+            1532: 10,4
+            1540: 10,3
+            1548: 8,5
+            1553: 10,5
+            1561: 6,5
+            1564: 7,5
+            1569: 8,5
+            1574: 9,1
+            1582: 9,5
+            1590: 9,6
+            1596: 10,2
+            1604: 10,3
+            1612: 10,4
+            1620: 10,5
+            1628: 10,6
+            1636: 10,7
+            1642: 11,3
+            1647: 11,4
+            1652: 11,5
+            1657: 11,6
+            1665: -11,3
+            1670: -11,4
+            1675: -11,5
+            1680: -11,6
+            1688: -10,2
+            1696: -10,6
+            1704: -10,7
+            1707: -9,1
+            1718: -9,6
+            1724: -7,5
+            1729: -6,5
+            1750: -2,4
+            1755: -1,4
+            1760: 0,4
+            1765: 2,4
+            1770: 1,4
+            1807: -9,5
+            1818: -10,4
+            1826: -10,3
+            1837: -10,5
+            1845: -8,5
+            1852: 0,4
+            1864: 1,4
+            1869: 2,4
+            1874: 6,5
+            1877: 7,5
+            1882: 8,5
+            1887: 9,1
+            1895: 9,5
+            1903: 9,6
+            1909: 10,2
+            1917: 10,3
+            1925: 10,4
+            1933: 10,5
+            1941: 10,6
+            1949: 10,7
+            1955: 11,3
+            1960: 11,4
+            1965: 11,5
+            1970: 11,6
+            1978: -11,3
+            1983: -11,4
+            1988: -11,5
+            1993: -11,6
+            2001: -10,2
+            2009: -10,3
+            2017: -10,4
+            2025: -10,5
+            2033: -10,6
+            2041: -10,7
+            2044: -9,1
+            2058: -9,5
+            2066: -9,6
+            2075: -8,5
+            2080: -7,5
+            2085: -6,5
+            2088: -2,4
+            2100: -1,4
+            2141: 0,4
+            2153: 1,4
+            2158: 2,4
+            2163: 6,5
+            2166: 7,5
+            2171: 8,5
+            2184: 9,5
+            2192: 9,6
+            2198: 10,2
+            2206: 10,3
+            2214: 10,4
+            2222: 10,5
+            2230: 10,6
+            2244: 11,3
+            2249: 11,4
+            2254: 11,5
+            2259: 11,6
+            2267: -11,3
+            2272: -11,4
+            2277: -11,5
+            2282: -11,6
+            2290: -10,2
+            2298: -10,3
+            2306: -10,4
+            2314: -10,5
+            2322: -10,6
+            2347: -9,5
+            2355: -9,6
+            2364: -8,5
+            2369: -7,5
+            2374: -6,5
+            2377: -2,4
+            2389: -1,4
+            2428: -9,1
+            2442: -10,7
+            2445: 10,7
+            2448: 9,1
         - node:
             id: LatticeEdgeW
           decals:
-            56: 2,-3
-            59: 6,-2
-            68: 2,-3
-            71: 6,-2
-            80: 2,-3
-            83: 6,-2
-            92: 2,-3
-            95: 6,-2
-            98: 10,3
-            103: 8,5
-            110: 9,5
-            115: 10,4
-            119: 11,5
-            126: 10,5
-            148: -10,5
-            152: -9,6
-            159: -9,5
-            165: -8,5
-            169: 11,6
-            177: 10,6
-            190: -10,6
-            196: -7,5
-            201: 7,5
-            204: 8,-1
-            217: 10,6
-            222: 11,6
-            235: -10,6
-            239: -9,6
-            248: 2,-3
-            251: 6,-2
-            256: -8,5
-            263: -9,5
-            269: -7,5
-            281: -10,5
-            294: -10,4
-            299: 11,4
-            304: 11,5
-            309: 11,3
-            324: 8,-1
-            327: 11,2
-            334: -10,2
-            345: -10,3
-            353: -9,1
-            366: 9,1
-            374: 10,2
-            378: 10,1
-            383: 7,5
-            390: 9,5
-            398: 10,4
-            406: 10,3
-            412: 8,5
-            419: 10,5
-            425: 7,5
-            430: 8,5
-            437: 9,1
-            445: 9,5
-            449: 10,1
-            456: 10,2
-            464: 10,3
-            472: 10,4
-            480: 10,5
-            484: 11,2
-            488: 11,3
-            493: 11,4
-            498: 11,5
-            529: 2,-3
-            532: 6,-2
-            539: -10,2
-            548: -7,5
-            555: -9,1
-            563: -9,5
-            571: -10,4
-            579: -10,3
-            587: -10,5
-            593: -8,5
-            596: 8,-1
-            599: -10,7
-            606: -10,6
-            615: -9,6
-            625: 10,6
-            633: 11,6
-            639: 7,5
-            644: 8,5
-            651: 9,1
-            659: 9,5
-            666: 10,1
-            673: 10,2
-            681: 10,3
-            689: 10,4
-            697: 10,5
-            705: 10,6
-            712: 11,2
-            716: 11,3
-            721: 11,4
-            726: 11,5
-            731: 11,6
-            765: -10,2
-            773: -10,3
-            781: -10,4
-            789: -10,5
-            797: -10,6
-            801: -10,7
-            808: -9,1
-            816: -9,5
-            820: -9,6
-            825: -8,5
-            830: -7,5
-            842: 2,-3
-            845: 6,-2
-            848: 8,-1
-            853: 7,5
-            858: 8,5
-            865: 9,1
-            873: 9,5
-            880: 10,1
-            887: 10,2
-            895: 10,3
-            903: 10,4
-            911: 10,5
-            919: 10,6
-            926: 11,2
-            930: 11,3
-            935: 11,4
-            940: 11,5
-            945: 11,6
-            979: -10,2
-            987: -10,3
-            995: -10,4
-            1003: -10,5
-            1011: -10,6
-            1015: -10,7
-            1022: -9,1
-            1030: -9,5
-            1034: -9,6
-            1039: -8,5
-            1044: -7,5
-            1056: 2,-3
-            1059: 6,-2
-            1062: 8,-1
-            1067: 7,5
-            1072: 8,5
-            1079: 9,5
-            1090: 10,2
-            1098: 10,3
-            1106: 10,4
-            1114: 10,5
-            1118: 11,2
-            1122: 11,3
-            1127: 11,4
-            1132: 11,5
-            1154: -9,6
-            1159: -7,5
-            1168: 2,-3
-            1171: 6,-2
-            1174: -6,5
-            1181: 9,1
-            1185: 8,-1
-            1188: 10,1
-            1195: 11,6
-            1206: 10,6
-            1215: -10,7
-            1222: -10,6
-            1234: -9,5
-            1242: -10,5
-            1248: -8,5
-            1255: -10,4
-            1263: -10,2
-            1274: -10,3
-            1282: -9,1
-            1329: 7,5
-            1339: 10,6
-            1346: 11,2
-            1350: 11,3
-            1355: 11,4
-            1360: 11,5
-            1365: 11,6
-            1399: -10,2
-            1407: -10,3
-            1415: -10,4
-            1423: -10,5
-            1431: -10,6
-            1435: -10,7
-            1442: -9,1
-            1460: -9,5
-            1464: -9,6
-            1475: -8,5
-            1480: -7,5
-            1483: -6,5
-            1503: 2,-3
-            1514: 6,-2
-            1517: 8,-1
-            1524: 9,1
-            1532: 10,2
-            1536: 10,1
-            1543: 9,5
-            1551: 10,4
-            1559: 10,3
-            1565: 8,5
-            1572: 10,5
-            1581: 7,5
-            1586: 8,5
-            1593: 9,1
-            1601: 9,5
-            1608: 10,1
-            1615: 10,2
-            1623: 10,3
-            1631: 10,4
-            1639: 10,5
-            1647: 10,6
-            1654: 11,2
-            1658: 11,3
-            1663: 11,4
-            1668: 11,5
-            1673: 11,6
-            1707: -10,2
-            1739: -10,6
-            1743: -10,7
-            1750: -9,1
-            1772: -9,6
-            1788: -7,5
-            1791: -6,5
-            1811: 2,-3
-            1822: 6,-2
-            1825: 8,-1
-            1847: -2,4
-            1863: -1,4
-            1883: 0,4
-            1898: 2,4
-            1903: 1,4
-            2523: -9,5
-            2534: -10,4
-            2542: -10,3
-            2553: -10,5
-            2559: -8,5
+            54: 2,-3
+            57: 6,-2
+            66: 2,-3
+            69: 6,-2
+            78: 2,-3
+            81: 6,-2
+            90: 2,-3
+            93: 6,-2
+            96: 10,3
+            101: 8,5
+            108: 9,5
+            113: 10,4
+            117: 11,5
+            124: 10,5
+            146: -10,5
+            150: -9,6
+            157: -9,5
+            163: -8,5
+            167: 11,6
+            175: 10,6
+            188: -10,6
+            194: -7,5
+            199: 7,5
+            202: 8,-1
+            215: 10,6
+            220: 11,6
+            233: -10,6
+            237: -9,6
+            246: 2,-3
+            249: 6,-2
+            254: -8,5
+            261: -9,5
+            267: -7,5
+            279: -10,5
+            292: -10,4
+            297: 11,4
+            302: 11,5
+            307: 11,3
+            322: 8,-1
+            325: 11,2
+            332: -10,2
+            343: -10,3
+            351: -9,1
+            364: 9,1
+            372: 10,2
+            376: 10,1
+            381: 7,5
+            388: 9,5
+            396: 10,4
+            404: 10,3
+            410: 8,5
+            417: 10,5
+            423: 7,5
+            428: 8,5
+            435: 9,1
+            443: 9,5
+            447: 10,1
+            454: 10,2
+            462: 10,3
+            470: 10,4
+            478: 10,5
+            482: 11,2
+            486: 11,3
+            491: 11,4
+            496: 11,5
+            527: 2,-3
+            530: 6,-2
+            537: -10,2
+            546: -7,5
+            553: -9,1
+            561: -9,5
+            569: -10,4
+            577: -10,3
+            585: -10,5
+            591: -8,5
+            594: 8,-1
+            597: -10,7
+            604: -10,6
+            613: -9,6
+            623: 10,6
+            631: 11,6
+            637: 7,5
+            642: 8,5
+            649: 9,1
+            657: 9,5
+            664: 10,1
+            671: 10,2
+            679: 10,3
+            687: 10,4
+            695: 10,5
+            703: 10,6
+            710: 11,2
+            714: 11,3
+            719: 11,4
+            724: 11,5
+            729: 11,6
+            763: -10,2
+            771: -10,3
+            779: -10,4
+            787: -10,5
+            795: -10,6
+            799: -10,7
+            806: -9,1
+            814: -9,5
+            818: -9,6
+            823: -8,5
+            828: -7,5
+            840: 2,-3
+            843: 6,-2
+            846: 8,-1
+            851: 7,5
+            856: 8,5
+            863: 9,1
+            871: 9,5
+            878: 10,1
+            885: 10,2
+            893: 10,3
+            901: 10,4
+            909: 10,5
+            917: 10,6
+            924: 11,2
+            928: 11,3
+            933: 11,4
+            938: 11,5
+            943: 11,6
+            977: -10,2
+            985: -10,3
+            993: -10,4
+            1001: -10,5
+            1009: -10,6
+            1013: -10,7
+            1020: -9,1
+            1028: -9,5
+            1032: -9,6
+            1037: -8,5
+            1042: -7,5
+            1054: 2,-3
+            1057: 6,-2
+            1060: 8,-1
+            1065: 7,5
+            1070: 8,5
+            1077: 9,5
+            1088: 10,2
+            1096: 10,3
+            1104: 10,4
+            1112: 10,5
+            1116: 11,2
+            1120: 11,3
+            1125: 11,4
+            1130: 11,5
+            1152: -9,6
+            1157: -7,5
+            1166: 2,-3
+            1169: 6,-2
+            1172: -6,5
+            1179: 9,1
+            1183: 8,-1
+            1186: 10,1
+            1193: 11,6
+            1204: 10,6
+            1213: -10,7
+            1220: -10,6
+            1232: -9,5
+            1240: -10,5
+            1246: -8,5
+            1253: -10,4
+            1261: -10,2
+            1272: -10,3
+            1280: -9,1
+            1320: 7,5
+            1330: 10,6
+            1337: 11,2
+            1341: 11,3
+            1346: 11,4
+            1351: 11,5
+            1356: 11,6
+            1390: -10,2
+            1398: -10,3
+            1406: -10,4
+            1414: -10,5
+            1422: -10,6
+            1426: -10,7
+            1433: -9,1
+            1446: -9,5
+            1450: -9,6
+            1461: -8,5
+            1466: -7,5
+            1469: -6,5
+            1489: 2,-3
+            1500: 6,-2
+            1503: 8,-1
+            1510: 9,1
+            1518: 10,2
+            1522: 10,1
+            1529: 9,5
+            1537: 10,4
+            1545: 10,3
+            1551: 8,5
+            1558: 10,5
+            1567: 7,5
+            1572: 8,5
+            1579: 9,1
+            1587: 9,5
+            1594: 10,1
+            1601: 10,2
+            1609: 10,3
+            1617: 10,4
+            1625: 10,5
+            1633: 10,6
+            1640: 11,2
+            1644: 11,3
+            1649: 11,4
+            1654: 11,5
+            1659: 11,6
+            1693: -10,2
+            1701: -10,6
+            1705: -10,7
+            1712: -9,1
+            1719: -9,6
+            1727: -7,5
+            1730: -6,5
+            1742: 2,-3
+            1745: 6,-2
+            1748: 8,-1
+            1753: -2,4
+            1758: -1,4
+            1763: 0,4
+            1768: 2,4
+            1773: 1,4
+            1812: -9,5
+            1823: -10,4
+            1831: -10,3
+            1842: -10,5
+            1848: -8,5
+            1855: 0,4
+            1867: 1,4
+            1872: 2,4
+            1880: 7,5
+            1885: 8,5
+            1892: 9,1
+            1900: 9,5
+            1907: 10,1
+            1914: 10,2
+            1922: 10,3
+            1930: 10,4
+            1938: 10,5
+            1946: 10,6
+            1953: 11,2
+            1957: 11,3
+            1962: 11,4
+            1967: 11,5
+            1972: 11,6
+            2006: -10,2
+            2014: -10,3
+            2022: -10,4
+            2030: -10,5
+            2038: -10,6
+            2042: -10,7
+            2049: -9,1
+            2063: -9,5
+            2067: -9,6
+            2078: -8,5
+            2083: -7,5
+            2086: -6,5
+            2091: -2,4
+            2103: -1,4
+            2123: 2,-3
+            2134: 6,-2
+            2137: 8,-1
+            2144: 0,4
+            2156: 1,4
+            2161: 2,4
+            2169: 7,5
+            2174: 8,5
+            2189: 9,5
+            2203: 10,2
+            2211: 10,3
+            2219: 10,4
+            2227: 10,5
+            2235: 10,6
+            2242: 11,2
+            2246: 11,3
+            2251: 11,4
+            2256: 11,5
+            2261: 11,6
+            2295: -10,2
+            2303: -10,3
+            2311: -10,4
+            2319: -10,5
+            2327: -10,6
+            2352: -9,5
+            2356: -9,6
+            2367: -8,5
+            2372: -7,5
+            2375: -6,5
+            2380: -2,4
+            2392: -1,4
+            2412: 2,-3
+            2423: 6,-2
+            2433: -9,1
+            2443: -10,7
+            2453: 9,1
+            2457: 8,-1
+            2460: 10,1
         - node:
             color: '#FFFFFFFF'
             id: TechE
@@ -2052,19 +2630,19 @@ entities:
             color: '#FFFFFFFF'
             id: TechE
           decals:
-            358: 8,3
+            356: 8,3
         - node:
             angle: 6.283185307179586 rad
             color: '#FFFFFFFF'
             id: TechN
           decals:
-            356: 9,2
+            354: 9,2
         - node:
             angle: 6.283185307179586 rad
             color: '#FFFFFFFF'
             id: TechS
           decals:
-            357: 9,4
+            355: 9,4
         - node:
             color: '#D381C996'
             id: WarnLineN
@@ -2092,15 +2670,15 @@ entities:
             color: '#7B7C8BFF'
             id: WarnLineW
           decals:
-            1225: 2,3
-            1227: -2,3
+            1223: 2,3
+            1225: -2,3
         - node:
             angle: 6.283185307179586 rad
             color: '#7B7C8BFF'
             id: WarnLineW
           decals:
-            1226: 2,3
-            1228: -2,3
+            1224: 2,3
+            1226: -2,3
         - node:
             color: '#D381C996'
             id: WarnLineW
@@ -2330,6 +2908,14 @@ entities:
     - type: Transform
       pos: 1.5,-2.5
       parent: 1
+- proto: APCHighCapacity
+  entities:
+  - uid: 47
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 3.5,1.5
+      parent: 1
 - proto: AtmosDeviceFanTiny
   entities:
   - uid: 22
@@ -2370,6 +2956,10 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+    - type: PointCannon
+      linkedConsoleIds:
+      - 122
+      linkedConsoleId: 122
   - uid: 210
     components:
     - type: Transform
@@ -2386,6 +2976,10 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+    - type: PointCannon
+      linkedConsoleIds:
+      - 122
+      linkedConsoleId: 122
 - proto: Bed
   entities:
   - uid: 114
@@ -2473,6 +3067,8 @@ entities:
       parent: 1
     - type: FuelGenerator
       on: False
+    - type: PortableGenerator
+      startOnMapInit: False
     - type: Physics
       bodyType: Static
 - proto: ButtonFrameCaution
@@ -2506,6 +3102,16 @@ entities:
     components:
     - type: Transform
       pos: 5.5,4.5
+      parent: 1
+  - uid: 21
+    components:
+    - type: Transform
+      pos: 2.5,1.5
+      parent: 1
+  - uid: 40
+    components:
+    - type: Transform
+      pos: 3.5,1.5
       parent: 1
   - uid: 43
     components:
@@ -2606,11 +3212,6 @@ entities:
     components:
     - type: Transform
       pos: -4.5,3.5
-      parent: 1
-  - uid: 251
-    components:
-    - type: Transform
-      pos: 1.5,0.5
       parent: 1
   - uid: 254
     components:
@@ -2842,6 +3443,186 @@ entities:
     - type: Transform
       pos: -1.5,4.5
       parent: 1
+  - uid: 349
+    components:
+    - type: Transform
+      pos: 8.5,0.5
+      parent: 1
+  - uid: 350
+    components:
+    - type: Transform
+      pos: 7.5,0.5
+      parent: 1
+  - uid: 351
+    components:
+    - type: Transform
+      pos: 6.5,0.5
+      parent: 1
+  - uid: 352
+    components:
+    - type: Transform
+      pos: 6.5,2.5
+      parent: 1
+  - uid: 353
+    components:
+    - type: Transform
+      pos: 7.5,2.5
+      parent: 1
+  - uid: 354
+    components:
+    - type: Transform
+      pos: 8.5,2.5
+      parent: 1
+  - uid: 355
+    components:
+    - type: Transform
+      pos: 9.5,2.5
+      parent: 1
+  - uid: 356
+    components:
+    - type: Transform
+      pos: 9.5,1.5
+      parent: 1
+  - uid: 357
+    components:
+    - type: Transform
+      pos: 9.5,3.5
+      parent: 1
+  - uid: 358
+    components:
+    - type: Transform
+      pos: 9.5,4.5
+      parent: 1
+  - uid: 359
+    components:
+    - type: Transform
+      pos: 10.5,2.5
+      parent: 1
+  - uid: 360
+    components:
+    - type: Transform
+      pos: 11.5,2.5
+      parent: 1
+  - uid: 361
+    components:
+    - type: Transform
+      pos: 11.5,3.5
+      parent: 1
+  - uid: 362
+    components:
+    - type: Transform
+      pos: 11.5,4.5
+      parent: 1
+  - uid: 363
+    components:
+    - type: Transform
+      pos: 11.5,5.5
+      parent: 1
+  - uid: 364
+    components:
+    - type: Transform
+      pos: 11.5,6.5
+      parent: 1
+  - uid: 365
+    components:
+    - type: Transform
+      pos: 11.5,8.5
+      parent: 1
+  - uid: 366
+    components:
+    - type: Transform
+      pos: 10.5,5.5
+      parent: 1
+  - uid: 367
+    components:
+    - type: Transform
+      pos: 9.5,5.5
+      parent: 1
+  - uid: 368
+    components:
+    - type: Transform
+      pos: 8.5,5.5
+      parent: 1
+  - uid: 369
+    components:
+    - type: Transform
+      pos: 7.5,5.5
+      parent: 1
+  - uid: 370
+    components:
+    - type: Transform
+      pos: 6.5,5.5
+      parent: 1
+  - uid: 371
+    components:
+    - type: Transform
+      pos: 6.5,4.5
+      parent: 1
+  - uid: 372
+    components:
+    - type: Transform
+      pos: 3.5,4.5
+      parent: 1
+  - uid: 373
+    components:
+    - type: Transform
+      pos: -2.5,4.5
+      parent: 1
+  - uid: 374
+    components:
+    - type: Transform
+      pos: -9.5,5.5
+      parent: 1
+  - uid: 375
+    components:
+    - type: Transform
+      pos: -8.5,5.5
+      parent: 1
+  - uid: 376
+    components:
+    - type: Transform
+      pos: -7.5,5.5
+      parent: 1
+  - uid: 377
+    components:
+    - type: Transform
+      pos: -6.5,5.5
+      parent: 1
+  - uid: 378
+    components:
+    - type: Transform
+      pos: -5.5,5.5
+      parent: 1
+  - uid: 379
+    components:
+    - type: Transform
+      pos: -5.5,4.5
+      parent: 1
+  - uid: 380
+    components:
+    - type: Transform
+      pos: -3.5,-0.5
+      parent: 1
+  - uid: 381
+    components:
+    - type: Transform
+      pos: -3.5,-1.5
+      parent: 1
+  - uid: 382
+    components:
+    - type: Transform
+      pos: 4.5,-0.5
+      parent: 1
+  - uid: 383
+    components:
+    - type: Transform
+      pos: 4.5,-1.5
+      parent: 1
+  - uid: 384
+    components:
+    - type: Transform
+      pos: 11.5,7.5
+      parent: 1
 - proto: CableHV
   entities:
   - uid: 19
@@ -2916,16 +3697,6 @@ entities:
       parent: 1
 - proto: CableMV
   entities:
-  - uid: 21
-    components:
-    - type: Transform
-      pos: 1.5,1.5
-      parent: 1
-  - uid: 63
-    components:
-    - type: Transform
-      pos: 1.5,0.5
-      parent: 1
   - uid: 197
     components:
     - type: Transform
@@ -2961,6 +3732,11 @@ entities:
     - type: Transform
       pos: 3.5,1.5
       parent: 1
+  - uid: 304
+    components:
+    - type: Transform
+      pos: 2.5,1.5
+      parent: 1
 - proto: Catwalk
   entities:
   - uid: 176
@@ -2983,6 +3759,66 @@ entities:
     - type: Transform
       pos: 4.5,0.5
       parent: 1
+- proto: ClothingHeadHelmetImperialEVA
+  entities:
+  - uid: 395
+    components:
+    - type: Transform
+      parent: 389
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 402
+    components:
+    - type: Transform
+      parent: 396
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: ClothingOuterCoatImperialSoftsuit
+  entities:
+  - uid: 392
+    components:
+    - type: Transform
+      parent: 389
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 398
+    components:
+    - type: Transform
+      parent: 396
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: ClothingShoesBootsMagDSM
+  entities:
+  - uid: 390
+    components:
+    - type: Transform
+      parent: 389
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 400
+    components:
+    - type: Transform
+      parent: 396
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: ComputerIFF
   entities:
   - uid: 123
@@ -3037,6 +3873,14 @@ entities:
     - type: Transform
       pos: 6.5,0.5
       parent: 1
+    - type: TargetingConsole
+      cannonGroups:
+        all:
+        - 210
+        - 208
+        350c "Compakt" hybrid energy gatling:
+        - 210
+        - 208
 - proto: CurtainsWhiteOpen
   entities:
   - uid: 211
@@ -3044,6 +3888,26 @@ entities:
     - type: Transform
       pos: -8.5,4.5
       parent: 1
+- proto: DoubleEmergencyOxygenTankFilled
+  entities:
+  - uid: 393
+    components:
+    - type: Transform
+      parent: 389
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 397
+    components:
+    - type: Transform
+      parent: 396
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: DrinkPoisonWinebottleFull
   entities:
   - uid: 102
@@ -3131,6 +3995,11 @@ entities:
     - type: Transform
       pos: -1.5,4.5
       parent: 1
+  - uid: 348
+    components:
+    - type: Transform
+      pos: 0.5,4.5
+      parent: 1
 - proto: GasPipeBend
   entities:
   - uid: 149
@@ -3189,23 +4058,11 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 0.5,2.5
       parent: 1
-  - uid: 164
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -0.5,2.5
-      parent: 1
   - uid: 165
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 3.5,2.5
-      parent: 1
-  - uid: 174
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 1.5,2.5
       parent: 1
   - uid: 177
     components:
@@ -3227,6 +4084,50 @@ entities:
     - type: Transform
       pos: -1.5,3.5
       parent: 1
+  - uid: 324
+    components:
+    - type: Transform
+      pos: -0.5,1.5
+      parent: 1
+  - uid: 325
+    components:
+    - type: Transform
+      pos: -0.5,0.5
+      parent: 1
+  - uid: 328
+    components:
+    - type: Transform
+      pos: 1.5,1.5
+      parent: 1
+  - uid: 329
+    components:
+    - type: Transform
+      pos: 1.5,0.5
+      parent: 1
+  - uid: 332
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,0.5
+      parent: 1
+  - uid: 334
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,1.5
+      parent: 1
+  - uid: 336
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,2.5
+      parent: 1
+  - uid: 343
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,3.5
+      parent: 1
 - proto: GasPipeTJunction
   entities:
   - uid: 10
@@ -3234,6 +4135,16 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -4.5,2.5
+      parent: 1
+  - uid: 53
+    components:
+    - type: Transform
+      pos: 1.5,2.5
+      parent: 1
+  - uid: 54
+    components:
+    - type: Transform
+      pos: -0.5,2.5
       parent: 1
   - uid: 83
     components:
@@ -3300,6 +4211,26 @@ entities:
       rot: 3.141592653589793 rad
       pos: -3.5,0.5
       parent: 1
+  - uid: 326
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -0.5,-0.5
+      parent: 1
+  - uid: 330
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 1.5,-0.5
+      parent: 1
+- proto: GasVentScrubber
+  entities:
+  - uid: 331
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,-0.5
+      parent: 1
 - proto: GravityGeneratorMini
   entities:
   - uid: 56
@@ -3331,6 +4262,26 @@ entities:
     - type: Transform
       pos: -6.5,0.5
       parent: 1
+- proto: HandHeldMassScannerEE
+  entities:
+  - uid: 391
+    components:
+    - type: Transform
+      parent: 389
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 401
+    components:
+    - type: Transform
+      parent: 396
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: Holopad
   entities:
   - uid: 68
@@ -3338,6 +4289,26 @@ entities:
     - type: Transform
       pos: 0.5,-0.5
       parent: 1
+- proto: JetpackBlackFilled
+  entities:
+  - uid: 394
+    components:
+    - type: Transform
+      parent: 389
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 399
+    components:
+    - type: Transform
+      parent: 396
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: JugBoriaticFuel
   entities:
   - uid: 267
@@ -3416,86 +4387,6 @@ entities:
     - type: Transform
       pos: -7.5,3.5
       parent: 1
-- proto: NTVulcanTurret
-  entities:
-  - uid: 40
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 11.5,8.5
-      parent: 1
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        gun_magazine: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        gun_chamber: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-  - uid: 47
-    components:
-    - type: Transform
-      pos: 9.5,0.5
-      parent: 1
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        gun_magazine: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        gun_chamber: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-  - uid: 53
-    components:
-    - type: Transform
-      pos: -8.5,0.5
-      parent: 1
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        gun_magazine: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        gun_chamber: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-  - uid: 54
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -10.5,8.5
-      parent: 1
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        gun_magazine: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        gun_chamber: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
 - proto: PoweredlightBlue
   entities:
   - uid: 229
@@ -3522,6 +4413,9 @@ entities:
       rot: 3.141592653589793 rad
       pos: 11.5,8.5
       parent: 1
+    - type: PointLight
+      energy: 2
+      radius: 2
   - uid: 338
     components:
     - type: Transform
@@ -3534,42 +4428,97 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -8.5,0.5
       parent: 1
+    - type: PointLight
+      energy: 2
+      radius: 2
   - uid: 341
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 9.5,0.5
       parent: 1
+    - type: PointLight
+      energy: 2
+      radius: 2
   - uid: 342
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -10.5,8.5
       parent: 1
+    - type: PointLight
+      energy: 2
+      radius: 2
   - uid: 344
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -10.5,5.5
       parent: 1
+    - type: PointLight
+      energy: 2
+      radius: 2
   - uid: 345
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 11.5,5.5
       parent: 1
+    - type: PointLight
+      energy: 2
+      radius: 2
   - uid: 346
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -10.5,4.5
       parent: 1
+    - type: PointLight
+      energy: 2
+      radius: 2
   - uid: 347
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 11.5,4.5
       parent: 1
+    - type: PointLight
+      energy: 2
+      radius: 2
+  - uid: 385
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 3.5,4.5
+      parent: 1
+    - type: PointLight
+      energy: 1
+      radius: 2
+  - uid: 386
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -2.5,4.5
+      parent: 1
+    - type: PointLight
+      energy: 2
+      radius: 2
+  - uid: 387
+    components:
+    - type: Transform
+      pos: -3.5,-1.5
+      parent: 1
+    - type: PointLight
+      energy: 1
+      radius: 2
+  - uid: 388
+    components:
+    - type: Transform
+      pos: 4.5,-1.5
+      parent: 1
+    - type: PointLight
+      energy: 1
+      radius: 2
 - proto: PoweredlightRed
   entities:
   - uid: 105
@@ -3772,6 +4721,46 @@ entities:
     - type: Transform
       pos: 7.5,0.5
       parent: 1
+- proto: SuitStorageWallmount
+  entities:
+  - uid: 389
+    components:
+    - type: Transform
+      pos: -3.5,1.5
+      parent: 1
+    - type: ContainerContainer
+      containers:
+        entity_storage: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 390
+          - 391
+          - 392
+          - 393
+          - 394
+          - 395
+    - type: Physics
+      canCollide: False
+  - uid: 396
+    components:
+    - type: Transform
+      pos: 4.5,1.5
+      parent: 1
+    - type: ContainerContainer
+      containers:
+        entity_storage: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 397
+          - 398
+          - 399
+          - 400
+          - 401
+          - 402
+    - type: Physics
+      canCollide: False
 - proto: TableFancyPurple
   entities:
   - uid: 117
@@ -4323,4 +5312,84 @@ entities:
     - type: Transform
       pos: 6.5,-1.5
       parent: 1
+- proto: WeaponTurretVulcan
+  entities:
+  - uid: 63
+    components:
+    - type: Transform
+      pos: 9.5,0.5
+      parent: 1
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        gun_magazine: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        gun_chamber: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+  - uid: 164
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 11.5,8.5
+      parent: 1
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        gun_magazine: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        gun_chamber: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+  - uid: 174
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -10.5,8.5
+      parent: 1
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        gun_magazine: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        gun_chamber: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+  - uid: 251
+    components:
+    - type: Transform
+      pos: -8.5,0.5
+      parent: 1
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        gun_magazine: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        gun_chamber: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
 ...

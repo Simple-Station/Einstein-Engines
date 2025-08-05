@@ -1,19 +1,19 @@
 - type: vessel
-  id: UnionfallAegis
+  id: Aegis
   name: NCWL Aegis
-  description: An artillery ship equipped with point defense.
-  price: 35000
+  description: An artillery ship equipped with point defense. Demands 2 crew for full power.
+  price: 65000
   category: Small
   group: None
-  path: /Maps/_Crescent/Unionfall/NCWL/unionfall_aegis.yml
+  path: /Maps/_Crescent/Shuttles/NCWL/aegis.yml
 
 - type: gameMap
-  id: UnionfallAegis
+  id: Aegis
   mapName: 'NCWL Aegis'
-  mapPath: /Maps/_Crescent/Unionfall/NCWL/unionfall_Aegis.yml
+  mapPath: /Maps/_Crescent/Shuttles/NCWL/aegis.yml
   minPlayers: 0
   stations:
-    UnionfallAegis:
+    Aegis:
       stationProto: StandardCrescentVessel
       components:
         - type: StationNameSetup
@@ -23,3 +23,5 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-artillery-ship
+        - type: VesselDescription
+          description: A ship built in times of struggle. The sound of twin cannons still echoes throughout its cramped hull.
