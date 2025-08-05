@@ -35,6 +35,7 @@
   canBeAntag: false
   access:
   - Command
+  - HospitalityDirector 
   - Service
   - Maintenance
   - Janitor
@@ -45,6 +46,9 @@
   - Theatre
   - Clown
   - Mime
+  - Reporter
+  - Zookeeper
+  - Library 
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
