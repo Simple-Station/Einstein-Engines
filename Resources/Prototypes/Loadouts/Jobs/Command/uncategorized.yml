@@ -25,7 +25,7 @@
   id: LoadoutCommandDisabler
   category: JobsCommandAUncategorized
   cost: 2
-  exclusive: true
+  exclusive: false
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCommandSelfDefense
@@ -39,7 +39,7 @@
   id: LoadoutCommandStunBaton
   category: JobsCommandAUncategorized
   cost: 1
-  exclusive: true
+  exclusive: false
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCommandSelfDefense
