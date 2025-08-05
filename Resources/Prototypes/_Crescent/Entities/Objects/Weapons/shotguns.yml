@@ -21,7 +21,7 @@
     burstCooldown: 1
     fireOnDropChance: 0.5
     soundGunshot:
-      collection: Shotgun_2_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/shotgun_2/shotgun_gunshot_2.ogg
   - type: Wieldable
   - type: BallisticAmmoProvider
     capacity: 10
@@ -44,7 +44,7 @@
     fireRate: 3
     fireOnDropChance: 0.5
     soundGunshot:
-      collection: Shotgun_2_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/shotgun_2/shotgun_gunshot_2.ogg
   - type: Wieldable
   - type: BallisticAmmoProvider
     whitelist:

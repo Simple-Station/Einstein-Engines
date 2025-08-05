@@ -29,7 +29,7 @@
     availableModes:
       - FullAuto
     soundGunshot:
-      collection: Lmg_2_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/lmg_2/lmg_gunshot_2.ogg
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
   - type: ChamberMagazineAmmoProvider

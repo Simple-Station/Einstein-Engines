@@ -71,7 +71,7 @@
       path: /Audio/_Crescent/Ambience/computer_loop.ogg
       params:
         volume: -12
-        range: 5
+        maxDistance: 5
   - type: EmitSoundOnUIOpen
     sound:
       path: /Audio/_Crescent/Ambience/Computers/type.ogg
