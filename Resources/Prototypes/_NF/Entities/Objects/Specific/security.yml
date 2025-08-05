@@ -68,10 +68,6 @@
         type: StoreBoundUserInterface
   - type: ActivatableUI
     key: enum.StoreUiKey.Key
-  - type: Store
-    preset: StorePresetSecurityUplink
-    balance:
-      FrontierUplinkCoin: 0
   - type: Tag
     tags:
     - SecurityUplink

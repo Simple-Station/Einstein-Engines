@@ -192,16 +192,6 @@
 ## rd
 
 - type: entity
-  abstract: true
-  parent: BaseTraitorStealObjective
-  id: BaseRDStealObjective
-  components:
-  - type: NotJobRequirement
-    job: ResearchDirector
-  - type: StealCondition
-    owner: job-name-rd
-
-- type: entity
   categories: [HideSpawnMenu]
   parent: BaseRDStealObjective
   id: RDHardsuitStealObjective

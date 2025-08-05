@@ -852,24 +852,6 @@
       settings: DisasterVictimCaptain
 
 - type: randomHumanoidSettings
-  id: DisasterVictimResearchDirector
-  randomizeName: false
-  components:
-    - type: GhostRole
-      name: ghost-role-information-disaster-victim-name
-      description: ghost-role-information-disaster-victim-description
-      rules: ghost-role-information-disaster-victim-rules
-      raffle:
-        settings: default
-    - type: GhostTakeoverAvailable
-    - type: Loadout
-      prototypes: [ ResearchDirectorGear ]
-    - type: RandomMetadata
-      nameSegments:
-      - names_first
-      - names_last
-
-- type: randomHumanoidSettings
   id: DisasterVictimCMO
   randomizeName: false
   components:

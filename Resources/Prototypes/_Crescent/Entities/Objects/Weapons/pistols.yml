@@ -35,6 +35,7 @@
     soundBoltClosed: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
     soundBoltOpened: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
     soundRack: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+  - type: Clothing
     quickEquip: false
     slots:
     - Belt
