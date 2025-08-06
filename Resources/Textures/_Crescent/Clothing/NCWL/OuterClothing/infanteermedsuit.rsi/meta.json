@@ -8,18 +8,11 @@
   },
   "states": [
     {
-      "name": "infanteermedsuit_worn",
+      "name": "equipped-OUTERCLOTHING",
       "directions": 4
     },
     {
-      "name": "infanteermedsuit_helmet_worn",
-      "directions": 4
-    },
-    {
-      "name": "infanteermedsuit_item"
-    },
-    {
-      "name": "infanteermedsuit_helmet_item"
+      "name": "icon"
     }
   ]
 }

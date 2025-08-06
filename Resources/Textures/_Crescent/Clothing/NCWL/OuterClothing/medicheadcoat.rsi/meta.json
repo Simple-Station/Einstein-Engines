@@ -8,10 +8,10 @@
   },
   "states": [
     {
-      "name": "vrachevofficercoat_item"
+      "name": "icon"
     },
     {
-      "name": "vrachevofficercoat_worn",
+      "name": "equipped-OUTERCLOTHING",
       "directions": 4
     }
   ]

@@ -8,11 +8,11 @@
   },
   "states": [
     {
-      "name": "labcoat_worn",
+      "name": "equipped-OUTERCLOTHING",
       "directions": 4
     },
     {
-      "name": "labcoat_item"
+      "name": "icon"
     }
   ]
 }

@@ -8,11 +8,11 @@
   },
   "states": [
     {
-      "name": "engiofficerjacket_worn",
+      "name": "equipped-OUTERCLOTHING",
       "directions": 4
     },
     {
-      "name": "engiofficerjacket_item"
+      "name": "icon"
     }
   ]
 }
