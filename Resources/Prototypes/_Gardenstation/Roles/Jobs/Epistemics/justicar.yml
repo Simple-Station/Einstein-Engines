@@ -55,13 +55,12 @@
         removable: false
       - type: InnatePsionicPowers
         powersToAdd: # ok i know this seems sort of stacked but this is gonna turn into some other shit eventually so keep with me here
-          - NoosphericZapPower # closest we have to psikrav for now - just a temp thing till i sit down and make it happen
+          - PsionicAssaultPower # we're sending you to the world of mud and vomit buddy
           - MetapsionicPower
           - TelepathyPower
           - XenoglossyPower # we will turn librarian back to a civ job at somepoint unless cataloger becomes some other shit
           - AssayPower # eventually this will become a justicar only assay showing what psi-level an entity is and give an idea of how to deal with them
           - MantisSummonBlackBlade # this is a temp thing just till we add in the psi krav for justicar
-          # - JusticarPsionicAssault - Legsweep with vomit and bleed proc
           # - JusticarWhisperTruth - throatchop with insane mood debuff and subtle text implying eldritch horrors driving you catatonically insane
           # - JusticarPainBeam - lungpunch with added stamina damage and minor mood debuff
 

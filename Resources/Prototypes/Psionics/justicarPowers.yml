@@ -1,0 +1,59 @@
+- type: psionicPower
+  id: PsionicAssaultPower
+  name: Psionic Assault
+  powerCategories:
+    - Mentalic
+    - Dangerous
+  initializeFunctions:
+    - !type:AddPsionicActions
+      actions:
+        - ActionPsionicAssault
+    - !type:AddPsionicPowerComponents
+      components:
+        - type: PsionicAssaultPower
+    - !type:PsionicFeedbackPopup
+    - !type:PsionicFeedbackSelfChat
+      feedbackMessage: The leylines are revealed for a moment- you reach through the psychal waves and pluck a thread. There is only silence now.
+    - !type:PsionicModifyGlimmer
+      glimmerModifier: 2
+    - !type:AddPsionicAssayFeedback
+      assayFeedback: I look through {CAPITALIZE($entity)}'s being, a vast ocean opens before me. Far in the distance a great presence casts its gaze upon me, I feel a new sensation of pain.
+    - !type:AddPsionicStatSources
+      amplificationModifier: 1
+  removalFunctions:
+    - !type:RemovePsionicActions
+    - !type:RemovePsionicPowerComponents
+      components:
+        - type: PsionicAssaultPower
+    - !type:RemovePsionicStatSources
+    - !type:RemoveAssayFeedback
+      assayFeedback: I look through {CAPITALIZE($entity)}'s being, a vast ocean opens before me. Far in the distance a great presence casts its gaze upon me, I feel a new sensation of pain.
+#  - !type:GenericStatusEffect
+#    key: PsionicallyInsulated
+#    component: PsionicInsulation
+#    type: Add
+#    time: 100
+#  - !type:GenericStatusEffect
+#    key: PsionicsDisabled
+#    component: PsionicsDisabled
+#    type: Add
+#    time: 900
+#  - !type:ChemVomit
+#    conditions: PsionicallyInsulated
+
+- type: entity
+  id: ActionPsionicAssault
+  name: Psionic Assault
+  description: Teach the wicked. Show them pain.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: EntityTargetAction
+      icon: Interface/VerbIcons/dispel.png
+      useDelay: 30
+      range: 10
+      itemIconStyle: BigAction
+      blacklist:
+        components:
+          - PsionicInsulation
+          - Mindbroken
+      event: !type:PsionicAssaultPowerActionEvent
