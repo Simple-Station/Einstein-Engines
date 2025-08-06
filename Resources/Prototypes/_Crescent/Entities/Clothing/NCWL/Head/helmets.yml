@@ -83,16 +83,16 @@
 
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
-  id: ClothingHeadHelmetHardsuitNCWLMedi
+  id: ClothingHeadHelmetHardsuitNCWLEngi
   categories: [ HideSpawnMenu ]
   name: Engineering Union MK.I hardsuit helmet
   description: Spaceworthy protection for your fragile skull. A communard design.
   components:
   - type: BreathMask
   - type: Sprite
-    sprite: _Crescent/Clothing/NCWL/Head/salvagehardsuithelm.rsi
+    sprite: _Crescent/Clothing/NCWL/Head/salvagehardsuithelmet.rsi
   - type: Clothing
-    sprite: _Crescent/Clothing/NCWL/Head/salvagehardsuithelm.rsi
+    sprite: _Crescent/Clothing/NCWL/Head/salvagehardsuithelmet.rsi
   - type: PointLight
     radius: 6
     color: "#ffffff"

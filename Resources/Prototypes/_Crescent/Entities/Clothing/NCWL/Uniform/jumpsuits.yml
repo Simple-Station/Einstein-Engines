@@ -84,6 +84,6 @@
   description: A jumpsuit. Write a better description later.
   components:
   - type: Sprite
-    sprite: _Crescent/Clothing/NCWL/Uniform/trainee.rsi
+    sprite: _Crescent/Clothing/NCWL/Uniform/ncwltrainee.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/NCWL/Uniform/ncwltrainee.rsi
