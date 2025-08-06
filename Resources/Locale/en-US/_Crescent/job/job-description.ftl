@@ -8,6 +8,10 @@ job-description-doktor = Listen to your superiors. Tend to the ailing health of 
 job-description-administrator = Coordinate the Union. Tend to the unwashed citizenry. Guard the interests of the State.
 job-description-kadet = Listen to your superiors. Learn proper procedure. Guard the interests of the State.
 
+#ncwl-2#
+
+job-description-worker = Do what work needs doing. Serve the League and perhaps join one of the Unions.
+
 #syndicate#
 
 job-description-ringleader = Coordinate the NCSP. Approve and uphold contracts.

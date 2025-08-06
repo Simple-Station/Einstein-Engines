@@ -8,6 +8,10 @@ job-name-administrator = Admiral Opreme
 job-name-kapitan = Fleetkapitan
 job-name-kadet = Citizen Soldat
 
+#ncwl-2#
+
+job-name-worker = Worker
+
 #syndicate#
 
 job-name-ringleader = Ringleader
