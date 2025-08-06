@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "license": null,
+  "copyright": "Taken from Shiptest by no_originality for use in the Hullrot project.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "vrachevofficercoat_item"
+    },
+    {
+      "name": "vrachevofficercoat_worn",
+      "directions": 4
+    }
+  ]
+}
