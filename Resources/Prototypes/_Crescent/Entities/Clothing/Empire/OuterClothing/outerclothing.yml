@@ -341,9 +341,8 @@
   - type: ExplosionResistance
     damageCoefficient: 0.80
   - type: StaticPrice
-  - type: AllowSuitStorage
     price: 3000
-
+  - type: AllowSuitStorage
 #coats
 
 - type: entity

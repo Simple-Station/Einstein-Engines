@@ -1,18 +1,18 @@
 - type: entity
   parent: ComputerComms
   id: ComputerCommsShip
-  name: ship communications console
+  name: ship-comm-console
   description: A computer used to make ship-wide announcements via keyboard and set the appropriate alert level.
   suffix: ship
   components:
     - type: CommunicationsConsole
-      title: ship communications console
+      title: ship-comm-console
 - type: entity
   parent: ComputerTabletopComms
   id: ComputerTabletopCommsShip
-  name: ship communications console
+  name: ship-comm-console
   description: A computer used to make ship-wide announcements via keyboard and set the appropriate alert level.
   suffix: ship, tabletop
   components:
     - type: CommunicationsConsole
-      title: ship communications console
+      title: ship-comm-console

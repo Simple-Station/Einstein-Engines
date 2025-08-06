@@ -92,7 +92,7 @@
   id: ShinoharaHammerhead
   icon:
     sprite: _Crescent/Objects/Weapons/rocket.rsi
-    state: icon
+    state: base
   product: CrateShinoharaHammerhead
   cost: 20000
   category: cargoproduct-category-name-military

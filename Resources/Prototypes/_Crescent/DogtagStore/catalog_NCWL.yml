@@ -8,7 +8,7 @@
   id: StoreListingNCWLMRE
   name: MRE snack
   description: delicious n tasty
-  icon: { sprite: /Textures/Objects/Consumable/Food/snacks.rsi, state: icon }
+  icon: { sprite: /Textures/Objects/Consumable/Food/snacks.rsi, state: nutribrick }
   productEntity: FoodSnackMREBrownie
   cost:
     DogtagDSM: 1

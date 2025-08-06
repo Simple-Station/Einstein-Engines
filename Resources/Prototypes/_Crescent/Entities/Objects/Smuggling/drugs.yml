@@ -165,7 +165,7 @@
   name: narcan autoinjector
   parent: ChemicalMedipen
   id: NarcanAutoinjector
-  description: A chemical used for the stabilization of patients who have overdosed on narcotics.
+  description: narcan-desc
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/medipen.rsi
