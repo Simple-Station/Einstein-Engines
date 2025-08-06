@@ -49,8 +49,8 @@
   components:
     - type: EntityTargetAction
       icon: Interface/VerbIcons/dispel.png
-      useDelay: 15
-      range: 5
+      useDelay: 30
+      range: 10
       itemIconStyle: BigAction
       blacklist:
         components:
