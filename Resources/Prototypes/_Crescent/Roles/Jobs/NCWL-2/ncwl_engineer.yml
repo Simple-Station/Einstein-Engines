@@ -1,7 +1,7 @@
 - type: job
   id:
-  name: job-name-figurehead
-  description: job-description-figurehead
+  name: job-name-ncwl-engineering-mechanic
+  description: job-description-ncwl-engineering-mechanic
   playTimeTracker:
   weight: 1
   startingGear:

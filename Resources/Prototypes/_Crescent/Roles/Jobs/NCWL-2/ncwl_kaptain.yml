@@ -1,7 +1,7 @@
 - type: job
   id:
-  name: job-name-director
-  description: job-description-director
+  name: job-name-ncwl-homeguard-kaptain
+  description: job-description-ncwl-homeguard-kaptain
   playTimeTracker:
   weight: 1
   startingGear:

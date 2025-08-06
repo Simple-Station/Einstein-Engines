@@ -1,7 +1,7 @@
 - type: job
   id:
-  name: job-name-homeguardsoldat
-  description: job-description-homeguardsoldat
+  name: job-name-ncwl-medical-director
+  description: job-description-ncwl-medical-director
   playTimeTracker:
   weight: 1
   startingGear:

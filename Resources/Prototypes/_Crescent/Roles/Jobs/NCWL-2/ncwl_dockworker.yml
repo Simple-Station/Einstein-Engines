@@ -1,7 +1,7 @@
 - type: job
   id:
-  name: job-name-dockmaster
-  description: job-description-dockmaster
+  name: job-name-ncwl-logistic-dockworker
+  description: job-description-ncwl-logistic-dockworker
   playTimeTracker:
   weight: 1
   startingGear:

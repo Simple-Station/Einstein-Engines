@@ -1,12 +1,12 @@
 - type: job
-  id:
-  name: job-name-dockworker
-  description: job-description-dockworker
-  playTimeTracker:
+  id: WorkerNCWL
+  name: job-name-ncwl-newbie
+  description: job-description-ncwl-newbie
+  playTimeTracker: JobWorkerNCWL
   weight: 1
-  startingGear:
+  startingGear: WorkerGear
   alwaysUseSpawner: true
-  icon:
+  icon: "JobIconKadet"
   requirements:
     - !type:FactionRequirement
       factionID: "NCWL"
@@ -22,7 +22,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank:
+        rank: crescent-rank-soldat
   access:
   - Command
   - Maintenance
@@ -34,10 +34,10 @@
   - Captain # Frontier
 
 - type: startingGear
-  id:
+  id: WorkerGear
   equipment:
-    shoes:
-    jumpsuit:
-    ears:
-    pocket1:
-    id:
+    shoes: ClothingShoesBootsJack
+    jumpsuit: ClothingUniformJumpsuitNCWL
+    ears: ClothingHeadsetNCWL
+    pocket1: WeaponPistolHKUSP
+    id: KadetPDA

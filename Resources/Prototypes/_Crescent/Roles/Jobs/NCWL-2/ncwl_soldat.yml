@@ -1,7 +1,7 @@
 - type: job
   id:
-  name: job-name-skipper
-  description: job-description-skipper
+  name: job-name-ncwl-homeguard-soldat
+  description: job-description-ncwl-homeguard-soldat
   playTimeTracker:
   weight: 1
   startingGear:

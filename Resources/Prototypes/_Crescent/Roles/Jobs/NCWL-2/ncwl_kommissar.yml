@@ -1,12 +1,12 @@
 - type: job
-  id: WorkerNCWL
-  name: job-name-newbie
-  description: job-description-newbie
-  playTimeTracker: JobWorkerNCWL
+  id:
+  name: job-name-ncwl-homeguard-kommissar
+  description: job-description-ncwl-homeguard-kommissar
+  playTimeTracker:
   weight: 1
-  startingGear: WorkerGear
+  startingGear:
   alwaysUseSpawner: true
-  icon: "JobIconKadet"
+  icon:
   requirements:
     - !type:FactionRequirement
       factionID: "NCWL"
@@ -22,7 +22,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-soldat
+        rank:
   access:
   - Command
   - Maintenance
@@ -34,10 +34,10 @@
   - Captain # Frontier
 
 - type: startingGear
-  id: WorkerGear
+  id:
   equipment:
-    shoes: ClothingShoesBootsJack
-    jumpsuit: ClothingUniformJumpsuitNCWL
-    ears: ClothingHeadsetNCWL
-    pocket1: WeaponPistolHKUSP
-    id: KadetPDA
+    shoes:
+    jumpsuit:
+    ears:
+    pocket1:
+    id:

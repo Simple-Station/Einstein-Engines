@@ -1,7 +1,7 @@
 - type: job
   id:
-  name: job-name-mechanic
-  description: job-description-mechanic
+  name: job-name-ncwl-engineering-station-commander
+  description: job-description-ncwl-engineering-station-commander
   playTimeTracker:
   weight: 1
   startingGear:
