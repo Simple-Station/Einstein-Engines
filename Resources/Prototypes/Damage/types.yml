@@ -92,3 +92,9 @@
   armorCoefficientPrice: 25
   armorFlatPrice: 150
 
+#Special metaphysical damage for psi-enforcers and paranormal/magic antags - meta is usually special but this has more ways to heal so its ok to be busted and hurt crew
+- type: damageType
+  id: Psionic
+  name: damage-type-psionic
+  armorCoefficientPrice: 25
+  armorFlatPrice: 70

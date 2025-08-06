@@ -352,6 +352,10 @@
         - !type:ReagentThreshold
           reagent: MindbreakerToxin
           min: 20
+      - !type:HealthChange # GD added // mindbreaking removes psi damage
+        damage:
+          types:
+            Psionic: -8 #
   # TODO: PROPER hallucinations
 
 - type: reagent

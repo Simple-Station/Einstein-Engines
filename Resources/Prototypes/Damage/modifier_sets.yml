@@ -183,6 +183,7 @@
     Cold: 0.8
     Heat: 0.2
     Holy: 1.5
+    Psionic: 1.1 # GD
   flatReductions:
     Heat: 3
 
@@ -219,6 +220,8 @@
     Heat: 1.25
     Poison: 0.0
     Radiation: 0.0
+    Holy: 1.2 # GD // romerol is like a necromancy oopsie or some shit iirc so this is probably ok
+    Psionic: 1.1 # GD
 
 # immune to everything except physical and heat damage
 - type: damageModifierSet
@@ -233,6 +236,7 @@
     Asphyxiation: 0.0
     Bloodloss: 0.0
     Cellular: 0.0
+    Holy: 1.5 # gardenstation added // idk why they were beyond god despite being evil skeletons
   flatReductions:
     Blunt: 5
 
@@ -246,6 +250,7 @@
     Asphyxiation: 0.0
     Bloodloss: 0.0
     Cellular: 0.0
+    Psionic: 8.0 # instantly sunder the cookies disgusting fake-soul
 
 # Represents which damage types should be modified
 # in relation to how they cause bleed rate.
@@ -285,6 +290,7 @@
     Shock: 0.8
     Bloodloss: 0.4
     Holy: 1
+    Psionic: 0.9 # idk if this is the right container but im putting it here
 
 - type: damageModifierSet
   id: Cockroach
@@ -312,6 +318,7 @@
     Cellular: 0.0
     Heat: 2.5
     Caustic: 0.0
+    Psionic: 1.2 # artis are noospheric bullshit so theyre probably suseptable to sundering
 
 # terminator's flesh damage set
 - type: damageModifierSet
@@ -359,6 +366,7 @@
     Asphyxiation: 0.5
     Cold: 0.8
     Heat: 1.2
+    Psionic: 1.3 # there is a solarian saying.
 
 - type: damageModifierSet
   id: Plasmaman
@@ -403,7 +411,7 @@
   id: HardenedCircuits
   coefficients:
     Shock: .666
-    
+
 - type: damageModifierSet
   id: ExtremePoisonResistance
   coefficients:
@@ -419,6 +427,7 @@
   id: ManifestedSpirit
   coefficients:
     Holy: 2
+    Psionic: 1.1 # kill ghosts with your mind
 
 - type: damageModifierSet
   id: CorporealSpirit
@@ -430,6 +439,7 @@
     Piercing: 0.5
     Heat: 1.5
     Holy: 2
+    Psionic: 1.5 # gd  added
 
 - type: damageModifierSet
   id: HalfSpirit
@@ -441,5 +451,18 @@
     Piercing: 0.75
     Heat: 1.25
     Holy: 1.5
+    Psionic: 1.3 # gd added
   flatReductions:
     Cold: 3
+
+- type: damageModifierSet
+  id: PsionicDamageInvul
+  coefficients:
+    Psionic: 0.0
+  flatReductions:
+    Psionic: 1
+
+- type: damageModifierSet
+  id: PsionicDamageVul
+  coefficients:
+    Psionic: 1.3

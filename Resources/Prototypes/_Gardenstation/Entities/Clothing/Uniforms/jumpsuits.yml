@@ -8,3 +8,7 @@
     sprite: _Gardenstation/Clothing/Uniform/Jumpsuit/justicar_psychal_bodysuit.rsi
   - type: Clothing
     sprite: _Gardenstation/Clothing/Uniform/Jumpsuit/justicar_psychal_bodysuit.rsi
+  - type: Armor # the justicar bodysuit and coif are made specially for psionic trojans and should allow them to attack while remaining protected from outside psychic threats
+    modifiers:
+      coefficients:
+        Psionic: 0.6

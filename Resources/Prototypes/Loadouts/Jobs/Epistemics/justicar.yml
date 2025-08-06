@@ -77,7 +77,19 @@
   items:
     - ClothingEyesGlassesEpistemics
 # Gloves - alt gloves would go here
-
+- type: loadout
+  id: LoadoutJusticarGlovesEnchanterGloves
+  category: JobsEpistemicsJusticar
+  cost: 10
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutJusticarEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Justicar
+  items:
+  - ClothingHandsEnchanterGloves
 # Head
 
 # Id
@@ -85,7 +97,19 @@
 # Neck
 
 # Mask
-
+- type: loadout
+  id: LoadoutJusticarSorcererMask
+  category: JobsEpistemicsJusticar
+  cost: 5
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutJusticarEquipment
+  - !type:CharacterJobRequirement
+    jobs:
+    - Justicar
+  items:
+  - FujitaMaskFake
 # Outer
 
 # Uniforms - other uniforms would go here

@@ -53,6 +53,7 @@
       types:
         Slash: 10
         Holy: 15
+        Psionic: 25
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 10
     maxTargets: 3

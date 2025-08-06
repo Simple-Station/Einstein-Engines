@@ -20,9 +20,63 @@
     damage:
       types:
         Blunt: 1
-        Holy: 15
+        Holy: 10
+        Psionic: 15
     soundHit:
       collection: Punch
     animation: WeaponArcFist
     mustBeEquippedToUse: True
   - type: FingerprintMask
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsEnchanterGloves
+  name: enchanter gloves
+  description: A strange pair of gloves made of a very warm fabric. Your hands tingle when you put them on...
+  components:
+  - type: Sprite
+    sprite: _Gardenstation/Clothing/Hands/Gloves/enchanter_gloves.rsi
+  - type: Clothing
+    sprite: _Gardenstation/Clothing/Hands/Gloves/enchanter_gloves.rsi
+  - type:  Insulated
+  - type: Fiber
+    fibermaterial: fibers-leather
+    fibercolor: fibers-red
+  - type: StaminaDamageOnHit
+    damage: 8 # this is probably HORRIBLY BUSTED - at some point it shld be so it does way more stun to paranormal antags and only like 8-10 to shitters
+  - type: MeleeWeapon
+    autoAttack: true
+    attackRate: 1.0
+    damage:
+      types:
+        Blunt: 1
+        Heat: 13
+        Psionic: 5
+    heavyDamageBaseModifier: 1.2
+    heavyStaminaCost: 5
+    soundHit:
+      collection: Punch
+    animation: WeaponArcFist
+    mustBeEquippedToUse: True
+  - type: Armor
+    modifiers:
+      coefficients:
+        Psionic: 0.95
+        Heat: 0.85
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+  - type: FingerprintMask
+  - type: PointLight
+    color: "#793a80"
+    radius: 1.5
+    energy: 12.5
+  - type: MeleeSpeech
+  - type: ActivatableUI
+    key: enum.MeleeSpeechUiKey.Key
+    verbOnly: true
+  - type: Actions
+  - type: UserInterface
+    interfaces:
+      enum.MeleeSpeechUiKey.Key:
+        type: MeleeSpeechBoundUserInterface     # attack finish

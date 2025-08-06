@@ -1,0 +1,53 @@
+﻿- type: entity
+  abstract: true
+  parent: [ ClothingMaskBase ]
+  id: SorcererMask
+  components:
+  - type: Sprite
+    state: icon
+  - type: Item
+    size: Small
+  - type: Clothing
+    slots:
+    - MASK
+  - type: EyeProtection
+  - type: BreathMask
+  - type: Tag
+    tags:
+    - IPCMaskWearable
+  - type: Armor
+    modifiers:
+      coefficients:
+       Psionic: 0.95
+       Holy: 0.95
+
+- type: entity
+  parent: [ SorcererMask, ClothingMaskPullableBase ]
+  id: FujitaMaskReal
+  name: sorcerer mask
+  description: A well-loved mask, likely belonging to some low-tier shitwizard... It seems to be leaking a strange looking smoke...
+  components:
+  - type: Sprite
+    sprite: _Gardenstation/Clothing/Mask/fujita_mask.rsi
+  - type: Clothing
+    sprite: _Gardenstation/Clothing/Mask/fujita_mask.rsi
+  - type: EyeProtection
+  - type: BreathMask
+  - type: VoiceMask
+  - type: UserInterface
+    interfaces:
+      enum.VoiceMaskUIKey.Key:
+        type: VoiceMaskBoundUserInterface
+
+- type: entity
+  parent: [ SorcererMask, ClothingMaskPullableBase, ShowPsionicsIcons ]
+  id: FujitaMaskFake
+  name: sorcerer mask
+  description: A well-loved mask, likely belonging to some low-tier shitwizard...
+  components:
+  - type: Sprite
+    sprite: _Gardenstation/Clothing/Mask/fujita_mask.rsi
+  - type: Clothing
+    sprite: _Gardenstation/Clothing/Mask/fujita_mask.rsi
+  - type: EyeProtection
+  - type: BreathMask

@@ -36,6 +36,7 @@
             Caustic: -3
             Poison: -3
             Bloodloss: -3
+            Psionic: -3 # this should probably get lowered later idk // GD
 
 - type: reagent
   id: SoulbreakerToxin
@@ -56,6 +57,7 @@
         damage:
           groups:
             Toxin: 2
+            Psionic: 10 # gd // cant take psi damage if theres no psyche to damage
       - !type:ChemRemovePsionic
         conditions:
         - !type:ReagentThreshold
@@ -74,6 +76,10 @@
     Narcotic:
       metabolismRate: 0.2
       effects:
+      - !type:HealthChange # GD added // something to heal psidamage with
+        damage:
+          types:
+            Psionic: -5 #
       - !type:GenericStatusEffect
         key: SeeingRainbows
         component: SeeingRainbows
@@ -139,6 +145,8 @@
             groups:
               Toxin: 15 #fast heavy damage, but extreamly hard to get large quantity
               Burn: 5
+            types: # gd
+              Psionic: -30 # GD// dune water of life lol
         - !type:Drunk
           boozePower: 50
         - !type:Paralyze
