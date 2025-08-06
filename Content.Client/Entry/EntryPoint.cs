@@ -1,4 +1,3 @@
-using Content.Client._White.ItemSlotRenderer;
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
@@ -24,6 +23,7 @@ using Content.Client.Singularity;
 using Content.Client.Stylesheets;
 using Content.Client.Viewport;
 using Content.Client.Voting;
+using Content.Client.WhiteDream.ItemSlotRenderer;
 using Content.Shared.Ame.Components;
 using Content.Shared.Gravity;
 using Content.Shared.Localizations;
@@ -158,7 +158,7 @@ namespace Content.Client.Entry
 
             _overlayManager.AddOverlay(new SingularityOverlay());
             _overlayManager.AddOverlay(new RadiationPulseOverlay());
-            _overlayManager.AddOverlay(new SpriteToLayerBullshitOverlay()); // WD EDIT
+            _overlayManager.AddOverlay(new SpriteToLayerBullshitOverlay());
             _chatManager.Initialize();
             _clientPreferencesManager.Initialize();
             _euiManager.Initialize();

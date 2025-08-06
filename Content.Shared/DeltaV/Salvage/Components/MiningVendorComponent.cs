@@ -1,8 +1,9 @@
-using Content.Shared._DV.Salvage.Systems;
+using Content.Shared.DeltaV.Salvage.Systems;
 using Content.Shared.Thief;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
-namespace Content.Shared._DV.Salvage.Components;
+
+namespace Content.Shared.DeltaV.Salvage.Components;
 
 /// </summary>
 ///     A vendor that sells mining equipment. Also holds a radial menu to redeem vouchers with a preset list of items.
