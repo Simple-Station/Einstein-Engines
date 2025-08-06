@@ -2,7 +2,7 @@
   id: WorkerNCWL
   name: job-name-worker
   description: job-description-worker
-  playTimeTracker: JobKadetNCWL
+  playTimeTracker: JobWorkerNCWL
   weight: 1
   startingGear: WorkerGear
   alwaysUseSpawner: true

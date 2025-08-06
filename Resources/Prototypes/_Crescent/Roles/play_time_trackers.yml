@@ -21,6 +21,11 @@
 - type: playTimeTracker
   id: JobKadetNCWL
 
+#ncwl-2
+
+- type: playTimeTracker
+  id: JobWorkerNCWL
+
 #syndicate
 
 - type: playTimeTracker
