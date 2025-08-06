@@ -1,4 +1,8 @@
 - type: accessLevel
+  id: HospitalityDirector
+  name: id-card-access-level-hospitality-director
+
+- type: accessLevel
   id: Bar
   name: id-card-access-level-bar
 
@@ -34,6 +38,7 @@
   id: Service
   tags:
   - HeadOfPersonnel
+  - HospitalityDirector # Gardenstation - Add Hospitality Director from Impstation
   - Bar
   - Kitchen
   - Hydroponics

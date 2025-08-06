@@ -1,4 +1,4 @@
-﻿- type: entity # im going insane - figure out why i cant add more slots later // its the next day (7-29) and i figured it out yay
+- type: entity # im going insane - figure out why i cant add more slots later // its the next day (7-29) and i figured it out yay
   abstract: true
   parent: [ UnsensoredClothingUniformBase, ClothingHeadBase, ClothingBeltBase, ClothingNeckBase, ClothingOuterBase, ClothingHandsBase, ClothingMaskGas ]
   id: SuperTowel
@@ -149,7 +149,7 @@
   - type: Clothing
     sprite: _Gardenstation/Clothing/Multiple/hd_towel.rsi
   - type: ClothingSpeedModifier
-    walkModifier: 2.5
+    walkModifier: 2.0
     sprintModifier: 0.50
   - type: HeldSpeedModifier
   - type: Fiber
