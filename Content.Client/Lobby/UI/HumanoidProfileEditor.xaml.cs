@@ -43,6 +43,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using Direction = Robust.Shared.Maths.Direction;
 
+//changes to height measurements reverse engineered from user portfiend, commit d09ff45 on Denstation.
 namespace Content.Client.Lobby.UI
 {
     [GenerateTypedNameReferences]
@@ -1660,12 +1661,40 @@ namespace Content.Client.Lobby.UI
             WidthSlider.SetValueWithoutEvent(Profile?.Width ?? species.DefaultWidth);
 
             var height = MathF.Round(species.AverageHeight * HeightSlider.Value);
-            HeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", (int) height));
+            var (heightFt, heightIn) = MetricToImperialLength(height);
+
+            HeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label",
+                ("height", (int) height),
+                ("feet", heightFt),
+                ("inches", heightIn));
 
             var width = MathF.Round(species.AverageWidth * WidthSlider.Value);
-            WidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", (int) width));
-
+            var widthIn = CentimetersToInches(width);
+            WidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label",
+                ("width", (int) width),
+                ("inches", (int) widthIn));
             UpdateDimensions(SliderUpdate.Both);
+        }
+
+        private static (int feet, int inches) MetricToImperialLength(float centimeters)
+        {
+            var inchesPerFoot = 12;
+            var totalInches = CentimetersToInches(centimeters);
+            var feet = (int) totalInches / inchesPerFoot;
+            var inches = totalInches % inchesPerFoot;
+            return (feet, inches);
+        }
+
+        private static float KilosToPounds(float kilograms)
+        {
+            var reductionFactor = 0.453f;
+            return kilograms / reductionFactor;
+        }
+
+        private static int CentimetersToInches(float centimeters)
+        {
+            const float reductionFactor = 2.54f;
+            return (int) Math.Round(centimeters / reductionFactor);
         }
 
         private enum SliderUpdate
@@ -1705,10 +1734,18 @@ namespace Content.Client.Lobby.UI
             SetProfileWidth(widthValue);
 
             var height = MathF.Round(species.AverageHeight * HeightSlider.Value);
-            HeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", (int) height));
+            var (heightFt, heightIn) = MetricToImperialLength(height);
+
+            HeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label",
+                ("height", (int) height),
+                ("feet", heightFt),
+                ("inches", heightIn));
 
             var width = MathF.Round(species.AverageWidth * WidthSlider.Value);
-            WidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", (int) width));
+            var widthIn = CentimetersToInches(width);
+            WidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label",
+                ("width", (int) width),
+                ("inches", (int) widthIn));
 
             UpdateWeight();
         }
@@ -1727,7 +1764,10 @@ namespace Content.Client.Lobby.UI
                 var density = fixture.Fixtures["fix1"].Density;
                 var avg = (Profile.Width + Profile.Height) / 2;
                 var weight = MathF.Round(MathF.PI * MathF.Pow(radius * avg, 2) * density);
-                WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int) weight));
+                var pounds = KilosToPounds(weight);
+                WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label",
+                    ("weight", (int) weight),
+                    ("pounds", (int) pounds));
             }
             else // Whelp, the fixture doesn't exist, guesstimate it instead
                 WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int) 71));
