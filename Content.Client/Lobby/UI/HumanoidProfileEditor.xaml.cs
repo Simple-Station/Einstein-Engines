@@ -43,6 +43,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using Direction = Robust.Shared.Maths.Direction;
 
+//changes to height measurements reverse engineered from user portfiend, commit d09ff45 on Denstation.
 namespace Content.Client.Lobby.UI
 {
     [GenerateTypedNameReferences]
@@ -1664,26 +1665,14 @@ namespace Content.Client.Lobby.UI
 
             HeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label",
                 ("height", (int) height),
-
-
                 ("feet", heightFt),
-
-
                 ("inches", heightIn));
 
-
-
             var width = MathF.Round(species.AverageWidth * WidthSlider.Value);
-            //WidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", (int) width));
             var widthIn = CentimetersToInches(width);
             WidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label",
-
-
                 ("width", (int) width),
-
-
                 ("inches", (int) widthIn));
-
             UpdateDimensions(SliderUpdate.Both);
         }
 
@@ -1747,14 +1736,12 @@ namespace Content.Client.Lobby.UI
             var height = MathF.Round(species.AverageHeight * HeightSlider.Value);
             var (heightFt, heightIn) = MetricToImperialLength(height);
 
-            //HeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", (int) height));
             HeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label",
                 ("height", (int) height),
                 ("feet", heightFt),
                 ("inches", heightIn));
 
             var width = MathF.Round(species.AverageWidth * WidthSlider.Value);
-            //WidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", (int) width));
             var widthIn = CentimetersToInches(width);
             WidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label",
                 ("width", (int) width),
@@ -1777,7 +1764,6 @@ namespace Content.Client.Lobby.UI
                 var density = fixture.Fixtures["fix1"].Density;
                 var avg = (Profile.Width + Profile.Height) / 2;
                 var weight = MathF.Round(MathF.PI * MathF.Pow(radius * avg, 2) * density);
-                //WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int) weight));
                 var pounds = KilosToPounds(weight);
                 WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label",
                     ("weight", (int) weight),
