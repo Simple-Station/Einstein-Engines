@@ -348,3 +348,30 @@
     Uranium: 1500
     Gold: 1000
     Plasma: 4000
+
+- type: latheRecipe
+  id: TermiteLPC
+  result: ShipVoucherTermite
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 2000
+    ShipComponents: 500
+    ShipHull: 1500
+
+- type: latheRecipe
+  id: ParacelsusLPC
+  result: ShipVoucherParacelsus
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 4000
+    ShipComponents: 2500
+    ShipHull: 5000
+
+- type: latheRecipe
+  id: ExhumerLPC
+  result: ShipVoucherExhumer
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 4000
+    ShipComponents: 1000
+    ShipHull: 3500
