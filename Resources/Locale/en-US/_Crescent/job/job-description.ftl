@@ -10,7 +10,17 @@ job-description-kadet = Listen to your superiors. Learn proper procedure. Guard 
 
 #ncwl-2#
 
-job-description-worker = Do what work needs doing. Serve the League and perhaps join one of the Unions.
+job-description-figurehead = Something
+job-description-homeguardkommissar = Something
+job-description-skipper = Something
+job-description-homeguardsoldat = Something
+job-description-dockmaster = Something
+job-description-dockworker = Something
+job-description-director = Something
+job-description-doctor = Something
+job-description-stationcommander = Something
+job-description-mechanic = Something
+job-description-newbie = Do what work needs doing. Serve the League and perhaps join one of the Unions.
 
 #syndicate#
 

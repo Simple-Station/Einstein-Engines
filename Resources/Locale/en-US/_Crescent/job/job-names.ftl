@@ -10,7 +10,17 @@ job-name-kadet = Citizen Soldat
 
 #ncwl-2#
 
-job-name-worker = Worker
+job-name-figurehead = Grand Kommandant
+job-name-homeguardkommissar = Kommissar
+job-name-skipper = Fleet Kaptain
+job-name-homeguardsoldat = Soldat
+job-name-dockmaster = Communard Dockmaster
+job-name-dockworker = Dockworker
+job-name-director = Direktor
+job-name-doctor = Doktor
+job-name-stationcommander = Station Kommander
+job-name-mechanic = Engineer
+job-name-newbie = Worker
 
 #syndicate#
 
