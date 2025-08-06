@@ -1,4 +1,4 @@
-﻿- type: psionicPower
+- type: psionicPower
   id: PsionicAssaultPower
   name: Psionic Assault
   powerCategories:
@@ -10,7 +10,7 @@
         - ActionPsionicAssault
     - !type:AddPsionicPowerComponents
       components:
-      - type: PsionicAssaultPower
+        - type: PsionicAssaultPower
     - !type:PsionicFeedbackPopup
     - !type:PsionicFeedbackSelfChat
       feedbackMessage: The leylines are revealed for a moment- you reach through the psychal waves and pluck a thread. There is only silence now.
@@ -21,13 +21,13 @@
     - !type:AddPsionicStatSources
       amplificationModifier: 1
   removalFunctions:
-  - !type:RemovePsionicActions
-  - !type:RemovePsionicPowerComponents
-    components:
-    - type: PsionicAssaultPower
-  - !type:RemovePsionicStatSources
-  - !type:RemoveAssayFeedback
-    assayFeedback: I look through {CAPITALIZE($entity)}'s being, a vast ocean opens before me. Far in the distance a great presence casts its gaze upon me, I feel a new sensation of pain.
+    - !type:RemovePsionicActions
+    - !type:RemovePsionicPowerComponents
+      components:
+        - type: PsionicAssaultPower
+    - !type:RemovePsionicStatSources
+    - !type:RemoveAssayFeedback
+      assayFeedback: I look through {CAPITALIZE($entity)}'s being, a vast ocean opens before me. Far in the distance a great presence casts its gaze upon me, I feel a new sensation of pain.
 #  - !type:GenericStatusEffect
 #    key: PsionicallyInsulated
 #    component: PsionicInsulation
@@ -56,5 +56,4 @@
         components:
           - PsionicInsulation
           - Mindbroken
-      event:
-      - !type:PsionicAssaultPowerActionEvent
+      event: !type:PsionicAssaultPowerActionEvent
