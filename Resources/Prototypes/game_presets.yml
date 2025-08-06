@@ -146,33 +146,6 @@
     - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
-  id: Deathmatch
-  alias:
-    - deathmatch
-    - dm
-  name: death-match-title
-  description: death-match-description
-  #maxPlayers: 15
-  showInVote: false # DeltaV - No.
-  supportedMaps: DeathMatchMapPool
-  rules:
-    - DeathMatch31
-
-- type: gamePreset
-  id: Nukeops
-  alias:
-    - nukeops
-  name: nukeops-title
-  description: nukeops-description
-  showInVote: false
-  rules:
-    - Nukeops
-    - SubGamemodesRule
-    - BasicStationEventScheduler
-    - BasicRoundstartVariation
-    - LavalandStormScheduler # Lavaland Change
-
-- type: gamePreset
   id: Revolutionary
   alias:
     - rev

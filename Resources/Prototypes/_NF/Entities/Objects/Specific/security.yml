@@ -78,7 +78,6 @@
   suffix: Security, DEBUG
   components:
   - type: Store
-    preset: StorePresetSecurityUplink
     balance:
       FrontierUplinkCoin: 99999
 

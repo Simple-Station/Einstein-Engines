@@ -22,7 +22,6 @@
           attributes:
             proper: true
         - type: StationJobs
-          checkAlive: false
           overflowJobs: []
           availableJobs:
             RingleaderNCSP: [ 1, 1 ]

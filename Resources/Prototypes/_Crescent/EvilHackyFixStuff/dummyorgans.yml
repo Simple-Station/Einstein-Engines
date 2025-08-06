@@ -1,4 +1,5 @@
 - type: entity
   id: OrganCrescentDummy
   components:
+  - type: Body
   - type: DeleteOnMapInit
