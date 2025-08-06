@@ -11,7 +11,7 @@
       sprite: _Crescent/Structures/remnantWalls.rsi
       state: remnant_full
     - type: Icon
-      sprite: Structures/Walls/remnantWalls.rsi
+      sprite: _Crescent/Structures/remnantWalls.rsi
       state: remnant_full
     - type: IconSmooth
       key: walls

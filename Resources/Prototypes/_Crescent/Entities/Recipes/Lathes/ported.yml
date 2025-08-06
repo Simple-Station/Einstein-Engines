@@ -60,14 +60,6 @@
     Plastic: 150
 
 - type: latheRecipe
-  id: ClothingShoesBootsMagSci
-  result: ClothingShoesBootsMagSci
-  completetime: 10
-  materials:
-    Steel: 1000
-    Plastic: 500
-
-- type: latheRecipe
   id: UtilityBeltChiefEngineer
   result: ClothingBeltChiefEngineer
   completetime: 6

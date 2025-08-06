@@ -2,7 +2,7 @@
   id: ConscriptGunnerDSM
   name: job-name-conscript-dsm-lmg
   description: job-description-conscript-dsm-lmg #change me later
-  playTimeTracker: ConscriptJobGunnerDSM
+  playTimeTracker: ConscriptDSM
   weight: 6
   startingGear: ConscriptGunnerDSMGear
   alwaysUseSpawner: true

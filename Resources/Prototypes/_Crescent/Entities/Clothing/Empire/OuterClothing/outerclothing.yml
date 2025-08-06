@@ -287,8 +287,8 @@
         Caustic: 25
   - type: ExplosionResistance
     damageCoefficient: 0.90
-  - type: StaticPrice
   - type: AllowSuitStorage
+  - type: StaticPrice
     price: 1500
 
 - type: entity
