@@ -5,12 +5,12 @@
   description: A semi-automatic shotgun with a high-capacity magazine, capable of firing two shells at once. Chambered in 12g shells.
   components:
   - type: Sprite
-    sprite: _Crescent\Objects\Weapons\Guns\twinshot.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/twinshot.rsi
   - type: Clothing
-    sprite: _Crescent\Objects\Weapons\Guns\twinshot.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/twinshot.rsi
   - type: Item
     size: Huge
-    sprite: _Crescent\Objects\Weapons\Guns\twinshot.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/twinshot.rsi
   - type: GunRequiresWield
   - type: Gun
     selectedMode: Burst
@@ -33,12 +33,12 @@
   description: A cheap, oversized shotgun. Manufactured by Shinora for their BudgetArms line. Chambered in 4g shells.
   components:
   - type: Sprite
-    sprite: _Crescent\Objects\Weapons\Guns\dbshotgun.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/dbshotgun.rsi
   - type: Clothing
-    sprite: _Crescent\Objects\Weapons\Guns\dbshotgun.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/dbshotgun.rsi
   - type: Item
     size: Huge
-    sprite: _Crescent\Objects\Weapons\Guns\dbshotgun.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/dbshotgun.rsi
   - type: GunRequiresWield
   - type: Gun
     fireRate: 3
