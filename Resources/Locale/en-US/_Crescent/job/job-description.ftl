@@ -10,17 +10,17 @@ job-description-kadet = Listen to your superiors. Learn proper procedure. Guard 
 
 #ncwl-2#
 
-job-description-ncwl-faction-leader = Something
-job-description-ncwl-homeguard-kommissar = Something
-job-description-ncwl-homeguard-kaptain = Something
-job-description-ncwl-homeguard-soldat = Something
-job-description-ncwl-logistic-dockmaster = Something
-job-description-ncwl-logistic-dockworker = Something
-job-description-ncwl-medical-director = Something
-job-description-ncwl-medical-doctor = Something
-job-description-ncwl-engineering-station-commander = Something
-job-description-ncwl-engineering-mechanic = Something
-job-description-ncwl-newbie = Do what work needs doing. Serve the League and perhaps join one of the Unions.
+job-description-ncwl-faction-leader = Coordinate the League. Ensure its survival, and the destruction of those who would oppose it.
+job-description-ncwl-homeguard-kommissar = Lead the Homeguard. Defend Port Balreska and eliminate the League's enemies.
+job-description-ncwl-homeguard-kaptain = Command a squad of Soldats. Listen to the Coordinator. Maintain battlefield cohesion.
+job-description-ncwl-homeguard-soldat = Defend the League. Listen to your Squad Captain. Do what you're told.
+job-description-ncwl-logistic-dockmaster = Run industry. Produce goods. Make money. Supply the League. Yell at your dockhands.
+job-description-ncwl-logistic-dockworker = Listen to the Dockmaster. Do trade runs. Order supplies. Man the machines. Get caught in conveyor belts.
+job-description-ncwl-medical-director = Keep the League alive and healthy. Coordinate research. Order cybernetics. Yell at your doctors.
+job-description-ncwl-medical-doctor = Listen to the Director. Do research. Practice medicine. Practice combat medicine. Make drugs.
+job-description-ncwl-engineering-station-commander = Supervise salvage and techmining. Oversee mining. Repair and maintain ships. Yell at your Engineers.
+job-description-ncwl-engineering-mechanic = Listen to the Supervisor. Gather resources for the League. Do repairs and shipmods. Explode.
+job-description-ncwl-newbie = Listen to everyone. Do what work needs doing. Serve the League and perhaps join one of the Unions.
 
 #syndicate#
 
