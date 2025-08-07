@@ -34,3 +34,8 @@ materials-weaklaserlocus = weak laser locus
 materials-hardlightgenerator = hardlight generator conduit
 materials-hardsuitelectronics = hardsuit electronics
 materials-plastitaniumfibrealloy = plastitanium fibre alloy
+
+# units
+
+materials-unit-canister = units
+materials-unit-liter = liters

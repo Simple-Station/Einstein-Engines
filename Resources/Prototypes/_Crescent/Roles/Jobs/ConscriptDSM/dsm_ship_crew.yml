@@ -2,7 +2,7 @@
   id: ConscriptShipCrewDSM
   name: job-name-conscript-dsm-ship-crew
   description: job-description-conscript-dsm-ship-crew
-  playTimeTracker: ConscriptJobShipCrewDSM
+  playTimeTracker: ConscriptDSM
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"
@@ -65,11 +65,7 @@
   - Hydroponics
   - Atmospherics
   - Command
-  - DSMGeneral
   - Service
-  - DSMJail
-  - DSMArmory
-  - DSMCommand
   - Empire
 
 - type: startingGear

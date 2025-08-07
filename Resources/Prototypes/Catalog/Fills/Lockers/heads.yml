@@ -252,7 +252,6 @@
       - id: RubberStampRd
       - id: BoxEncryptionKeyScience
       - id: BoxPDAScience # Delta-V
-      - id: RDIDCard # Delta-V
       - id: ClothingHeadsetAltScience
       - id: EncryptionKeyBinary
       - id: Intellicard
@@ -282,7 +281,6 @@
       - id: RubberStampRd
       - id: BoxEncryptionKeyScience
       - id: BoxPDAScience # Delta-V
-      - id: RDIDCard # Delta-V
       - id: ClothingHeadsetAltScience
       - id: EncryptionKeyBinary
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!

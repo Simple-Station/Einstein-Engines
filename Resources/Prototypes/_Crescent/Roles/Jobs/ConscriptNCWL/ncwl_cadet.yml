@@ -2,7 +2,7 @@
   id: ConscriptCadetNCWL
   name: job-name-conscript-ncwl-cadet
   description: job-description-conscript-ncwl-cadet
-  playTimeTracker: ConscriptJobCadetNCWL
+  playTimeTracker: ConscriptNCWL
   weight: 1
   startingGear: ConscriptCadetNCWLGear
   alwaysUseSpawner: true

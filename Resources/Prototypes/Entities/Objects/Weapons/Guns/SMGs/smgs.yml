@@ -27,7 +27,7 @@
     - SemiAuto
     - FullAuto
     soundGunshot:
-      collection: SMG_2_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/smg_2/smg_gunshot_3.ogg
     defaultDirection: 1, 0
   - type: ChamberMagazineAmmoProvider
     soundRack:
@@ -92,7 +92,7 @@
   - type: Gun
     fireRate: 10
     soundGunshot:
-      collection: SMG_3_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/smg_3/smg_gunshot_2.ogg
     fireOnDropChance: 0.3
   - type: MagazineVisuals
     magState: mag
@@ -129,7 +129,7 @@
     - Burst
     - FullAuto
     soundGunshot:
-      collection: SMG_2_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/smg_2/smg_gunshot_3.ogg
     fireOnDropChance: 0.3
   - type: ChamberMagazineAmmoProvider
     autoEject: true
@@ -200,7 +200,7 @@
       burstFireRate: 12
       selectedMode: FullAuto
       soundGunshot:
-        collection: SMG_1_Gunshots
+        path: /Audio/_Crescent/Weapons/Guns/smg_1/smg_gunshot_1.ogg
       availableModes:
         - FullAuto
     - type: ItemSlots

@@ -92,7 +92,7 @@
   id: ShinoharaHammerhead
   icon:
     sprite: _Crescent/Objects/Weapons/rocket.rsi
-    state: icon
+    state: base
   product: CrateShinoharaHammerhead
   cost: 20000
   category: cargoproduct-category-name-military
@@ -117,14 +117,3 @@
   cost: 35000
   category: cargoproduct-category-name-military
   group: shinohara
-
-- type: cargoProduct
-  id: DurathreadShinohara
-  icon:
-    sprite: _Crescent/Clothing/armorSprites.rsi
-    state: cloth
-  product: CrateSecurityArmorDurathreadPlates
-  cost: 15000
-  category: cargoproduct-category-name-military
-  group: shinohara
-

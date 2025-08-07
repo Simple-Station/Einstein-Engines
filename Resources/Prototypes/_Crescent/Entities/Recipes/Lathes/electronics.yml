@@ -27,7 +27,7 @@
 
 - type: latheRecipe
   id: EMPGrenadeElectronics
-  result: EMPGrenade
+  result: EmpGrenade
   completetime: 1.5
   materials:
     Silver: 250

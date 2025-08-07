@@ -769,54 +769,6 @@
     state: pda-chemistry
 
 - type: entity
-  parent: SciencePDA
-  id: RnDPDA
-  name: mystagogue PDA # DeltaV - Epistemics Department replacing Science
-  description: It appears surprisingly ordinary.
-  components:
-  - type: Pda
-    id: RDIDCard
-    state: pda-rd
-  - type: PdaBorderColor
-    borderColor: "#d7d7d0"
-    accentHColor: "#447987"
-    accentVColor: "#8900c9"
-  - type: Icon
-    state: pda-rd
-  - type: CartridgeLoader # Nyanotrasen - Glimmer Monitor
-    preinstalled:
-      - CrewManifestCartridge
-      - NotekeeperCartridge
-      - NewsReaderCartridge
-      - GlimmerMonitorCartridge
-      - NanoChatCartridge # DeltaV
-      - PsiWatchCartridge
-
-- type: entity
-  parent: BasePDA
-  id: RnDNTPDA
-  name: MY special PDA unit # DeltaV - Epistemics Department replacing Science
-  description: It appears surprisingly ordinary.it says in gold "special unit unique to the best Mystagogue in the sector".
-  components:
-  - type: Pda
-    id: RDIDCard
-    state: pda-rd
-  - type: PdaBorderColor
-    borderColor: "#d7d7d0"
-    accentHColor: "#447987"
-    accentVColor: "#8900c9"
-  - type: Icon
-    state: pda-rd
-  - type: CartridgeLoader # Nyanotrasen - Glimmer Monitor
-    preinstalled:
-      - CrewManifestCartridge
-      - NotekeeperCartridge
-      - NewsReaderCartridge
-      - GlimmerMonitorCartridge
-      - NanoChatCartridge
-      - PsiWatchCartridge
-
-- type: entity
   parent: BasePDA
   id: SciencePDA
   name: epistemics PDA # DeltaV - Epistemics Department replacing Science
@@ -850,8 +802,6 @@
   - type: PdaBorderColor
     borderColor: "#d7d7d0"
     accentVColor: "#952004"
-  - type: Icon
-    state: pda-robotics
 
 - type: entity
   parent: BasePDA
@@ -1333,13 +1283,6 @@
     borderColor: "#1c8f4d"
   - type: Icon
     state: pda-cluwne
-    penSlot:
-      startingItem: CrayonGreen
-      ejectSound: /Audio/Items/bikehorn.ogg
-      priority: -1
-      whitelist:
-        tags:
-        - Write
   - type: Unremoveable
 
 - type: entity
@@ -1426,8 +1369,6 @@
   components:
   - type: Pda
     id: PirateIDCard
-    state: pda-pirate
-  - type: Icon
     state: pda-pirate
 
 - type: entity

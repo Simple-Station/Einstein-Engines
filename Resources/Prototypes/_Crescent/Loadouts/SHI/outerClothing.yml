@@ -50,7 +50,7 @@
   category: Outer
   cost: 0
   items:
-    - ClothingOuterShinoharaSuitjacket
+    - ClothingOuterShinoharaSuitJacket
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter

@@ -5,7 +5,7 @@
   description: A Hunter's beloved sidearm.
   components:
   - type: Sprite
-    sprite: _Crescent\Objects\Weapons\Guns\acolyte.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/acolyte.rsi
   - type: Gun
     fireRate: 2.5
     resetOnHandSelected: false
