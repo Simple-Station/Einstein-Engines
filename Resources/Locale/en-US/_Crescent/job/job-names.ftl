@@ -4,8 +4,8 @@ job-name-kommissar = Kommissar
 job-name-sanitar = Partisan
 job-name-artificer = Artificer
 job-name-doktor = Sanitar
-job-name-administrator = Admiral Opreme
-job-name-kapitan = Fleetkapitan
+job-name-administrator = Major
+job-name-kapitan = Union Kaptain
 job-name-kadet = Citizen Soldat
 
 #syndicate#
