@@ -27,8 +27,8 @@
           overflowJobs: []
           availableJobs:
             AdministratorNCWL: [ 1, 1 ]
-            KommissarNCWL: [ 1, 1 ]
-            KapitanNCWL: [ 3, 3 ]
+            KommissarNCWL: [ 2, 2 ]
+            KapitanNCWL: [ 5, 5 ]
             SanitarNCWL: [ 25, 25 ]
             KadetNCWL: [ 10, 10 ]
             ArtificerNCWL: [ 6, 6 ]
