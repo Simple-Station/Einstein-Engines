@@ -2,7 +2,7 @@
   id: ConscriptCadetDSM
   name: job-name-conscript-dsm-cadet
   description: job-description-conscript-dsm-cadet #change me later
-  playTimeTracker: ConscriptJobCadetDSM
+  playTimeTracker: ConscriptDSM
   weight: 1
   startingGear: ConscriptCadetDSMGear
   alwaysUseSpawner: true
@@ -30,14 +30,10 @@
   - Command
   - Maintenance
   - Service
-  - DSMGeneral
-  - DSMJail
   - External
   - Mercenary # Frontier
   - Captain # Frontier
   - Empire
-  - DSMArmory
-  - DSMCommand
 
 - type: startingGear
   id: ConscriptCadetDSMGear

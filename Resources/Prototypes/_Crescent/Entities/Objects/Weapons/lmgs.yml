@@ -110,7 +110,7 @@
   - type: Gun
     fireRate: 8
     soundGunshot:
-      collection: Lmg_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/lmg_1/lmg_gunshot_1.ogg
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -158,7 +158,7 @@
     burstCooldown: 0.5
     fireRate: 6
     soundGunshot:
-      collection: Lmg_2_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/lmg_2/lmg_gunshot_1.ogg
   - type: MagazineVisuals
     magState: mag
     steps: 3
