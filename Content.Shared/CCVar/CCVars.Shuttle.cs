@@ -79,7 +79,7 @@ public sealed partial class CCVars
     /// Whether to automatically preloading grids by GridPreloaderSystem
     /// </summary>
     public static readonly CVarDef<bool> PreloadGrids =
-        CVarDef.Create("shuttle.preload_grids", true, CVar.SERVERONLY);
+        CVarDef.Create("shuttle.preload_grids", false, CVar.SERVERONLY);
 
     /// <summary>
     /// How long the warmup time before FTL start should be.
