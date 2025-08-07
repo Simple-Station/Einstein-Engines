@@ -288,46 +288,53 @@ public sealed partial class CharacterPlaytimeRequirement : CharacterRequirement
         }
 
         // Get the JobPrototype of the Tracker
-        var trackerJob = jobSystem.GetJobPrototype(Tracker);
-        var jobStr = prototypeManager.Index<JobPrototype>(trackerJob).LocalizedName;
-
-        // Get the primary department of the Tracker
-        if (!jobSystem.TryGetPrimaryDepartment(trackerJob, out var department) &&
-            !jobSystem.TryGetDepartment(trackerJob, out department))
-        {
-            DebugTools.Assert($"CharacterRequirements: Department not found for job {trackerJob}");
-            reason = null;
-            return false;
-        }
-
-        // Get the time for the tracker
-        var time = playTimes.GetValueOrDefault(Tracker);
+        var trackerList = jobSystem.GetJobPrototype(Tracker);
         reason = null;
-
-        if (time > Max)
+        foreach (var trackerJob in trackerList)
         {
-            // Show the reason if invalid
-            reason = Inverted
-                ? null
-                : Loc.GetString("character-timer-role-too-high",
-                    ("time", time.TotalMinutes - Max.TotalMinutes),
-                    ("job", jobStr),
-                    ("departmentColor", department.Color));
-            return false;
-        }
+            var jobStr = prototypeManager.Index<JobPrototype>(trackerJob).LocalizedName;
 
-        if (time < Min)
-        {
-            // Show the reason if invalid
-            reason = Inverted
-                ? null
-                : Loc.GetString("character-timer-role-insufficient",
-                    ("time", Min.TotalMinutes - time.TotalMinutes),
-                    ("job", jobStr),
-                    ("departmentColor", department.Color));
-            return false;
-        }
+            // Get the primary department of the Tracker
+            if (!jobSystem.TryGetPrimaryDepartment(trackerJob, out var department) &&
+                !jobSystem.TryGetDepartment(trackerJob, out department))
+            {
+                DebugTools.Assert($"CharacterRequirements: Department not found for job {trackerJob}");
+                reason = null;
+                return false;
+            }
 
+
+            // Get the time for the tracker
+            var time = playTimes.GetValueOrDefault(Tracker);
+            reason = null;
+
+            if (time > Max)
+            {
+                // Show the reason if invalid
+                reason = Inverted
+                    ? null
+                    : Loc.GetString(
+                        "character-timer-role-too-high",
+                        ("time", time.TotalMinutes - Max.TotalMinutes),
+                        ("job", jobStr),
+                        ("departmentColor", department.Color));
+                return false;
+            }
+
+            if (time < Min)
+            {
+                // Show the reason if invalid
+                reason = Inverted
+                    ? null
+                    : Loc.GetString(
+                        "character-timer-role-insufficient",
+                        ("time", Min.TotalMinutes - time.TotalMinutes),
+                        ("job", jobStr),
+                        ("departmentColor", department.Color));
+                return false;
+            }
+
+        }
         return true;
     }
 }

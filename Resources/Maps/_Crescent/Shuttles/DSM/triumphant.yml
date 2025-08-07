@@ -938,6 +938,10 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: battleship
     - type: BecomesStation
       id: Triumphant
     - type: VesselDesignation

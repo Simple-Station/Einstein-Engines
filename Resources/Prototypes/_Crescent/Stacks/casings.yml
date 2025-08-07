@@ -22,13 +22,6 @@
   maxCount: 2
 
 - type: stack
-  id: WeldedCasingEmp
-  name: welded EMP munitions casing
-  icon: { sprite: _Crescent/Objects/FactoryGoods/120wemp.rsi, state: icon }
-  spawn: Casing120WeldedEMP
-  maxCount: 2
-
-- type: stack
   id: WeldedCasingHE
   name: welded HE munitions casing
   icon: { sprite: _Crescent/Objects/FactoryGoods/120whe.rsi, state: icon }

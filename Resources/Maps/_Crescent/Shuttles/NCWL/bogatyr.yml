@@ -326,6 +326,10 @@ entities:
           - 0
         chunkSize: 4
     - type: GasTileOverlay
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: corvette
     - type: RadiationGridResistance
     - type: BecomesStation
       id: Bogatyr

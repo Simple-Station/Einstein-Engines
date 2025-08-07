@@ -2,7 +2,7 @@
   id: ConscriptOfficerDSM
   name: job-name-conscript-dsm-officer
   description: job-description-conscript-dsm-officer
-  playTimeTracker: ConscriptJobOfficerDSM
+  playTimeTracker: ConscriptDSM
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"
@@ -65,11 +65,7 @@
   - Hydroponics
   - Atmospherics
   - Command
-  - DSMGeneral
   - Service
-  - DSMJail
-  - DSMArmory
-  - DSMCommand
   - Empire
 
 - type: startingGear

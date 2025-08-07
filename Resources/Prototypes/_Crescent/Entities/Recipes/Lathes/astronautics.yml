@@ -69,7 +69,7 @@
 
 - type: latheRecipe
   id: HandheldMassScannerAstronautics
-  result: HandheldMassScannerEE
+  result: HandHeldMassScannerEE
   completetime: 1.5
   materials:
     BasicElectronics: 500

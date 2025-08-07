@@ -17,7 +17,7 @@ public abstract class SharedJobSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly SharedRoleSystem _roles = default!;
 
-    private readonly Dictionary<string, string> _inverseTrackerLookup = new();
+    private readonly Dictionary<string, List<string>> _inverseTrackerLookup = new();
 
     public override void Initialize()
     {
@@ -39,7 +39,10 @@ public abstract class SharedJobSystem : EntitySystem
         // This breaks if you have N trackers to 1 JobId but future concern.
         foreach (var job in _prototypes.EnumeratePrototypes<JobPrototype>())
         {
-            _inverseTrackerLookup.Add(job.PlayTimeTracker, job.ID);
+            if (_inverseTrackerLookup.ContainsKey(job.PlayTimeTracker))
+                _inverseTrackerLookup[job.PlayTimeTracker].Add(job.ID);
+            else
+                _inverseTrackerLookup.Add(job.PlayTimeTracker, new List<string>() { job.ID});
         }
     }
 
@@ -48,7 +51,7 @@ public abstract class SharedJobSystem : EntitySystem
     /// </summary>
     /// <param name="trackerProto"></param>
     /// <returns></returns>
-    public string GetJobPrototype(string trackerProto)
+    public List<string> GetJobPrototype(string trackerProto)
     {
         DebugTools.Assert(_prototypes.HasIndex<PlayTimeTrackerPrototype>(trackerProto));
         return _inverseTrackerLookup[trackerProto];

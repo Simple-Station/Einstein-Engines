@@ -25,7 +25,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      collection: Shotgun_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/shotgun_1/shotgun_gunshot_3.ogg
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
     fireOnDropChance: 0.2
@@ -94,7 +94,7 @@
     availableModes:
     - FullAuto
     soundGunshot:
-      collection: Shotgun_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/shotgun_1/shotgun_gunshot_3.ogg
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
     fireOnDropChance: 0.3

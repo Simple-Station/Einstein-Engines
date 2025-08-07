@@ -3232,6 +3232,10 @@ entities:
       - Module E
     - type: ApcPowerReceiver
       needsPower: False
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: cruiser
     - type: BecomesStation
       id: Cerberus
 - proto: ComputerTabletopCommsShip

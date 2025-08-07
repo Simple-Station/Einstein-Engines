@@ -114,7 +114,7 @@
     explosionType: Default
     maxIntensity: 10
     intensitySlope: 3
-    totalIntensity: 120 
+    totalIntensity: 120
     canCreateVacuum: false
   - type: TimerTriggerVisuals
     primingSound:
@@ -301,7 +301,7 @@
     intensitySlope: 3
     totalIntensity: 120
     canCreateVacuum: false
-  - type: DamageOnHit 
+  - type: DamageOnHit
     damage:
       types:
         Blunt: 2.5
@@ -428,7 +428,7 @@
 
 - type: entity
   name: SHI HG-13M2 Mini-grenade
-  description: A small and weak grenade but still devastating if one explodes point plank. Made by Shinora 
+  description: A small and weak grenade but still devastating if one explodes point plank. Made by Shinora
   parent: GrenadeBase
   id: HG13M2MiniHandgrenade
   components:
@@ -471,7 +471,6 @@
   - type: EmpOnTrigger
     range: 2
     energyConsumption: 2700000
-    canCreateVacuum: false
   - type: DeleteOnTrigger
   - type: TimerTriggerVisuals
     primingSound:
@@ -513,7 +512,7 @@
       collection: FragGrenadeSFX
 
 - type: entity
-  name: SHI HG-3 CS Gas grenade 
+  name: SHI HG-3 CS Gas grenade
   description: A CS gas grenade manufactured by Shinora. A reliable design that's seen frequent use in worker union liquidations.
   parent: GrenadeBase
   id: SHIHG3TearGasHandgrenade

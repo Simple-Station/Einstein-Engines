@@ -1174,6 +1174,10 @@ entities:
     - type: ShuttleDeed
       shuttleName: Shuttle MV-679
       shuttleUid: 1
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: battleship
     - type: BecomesStation
       id: Padparadscha
 - proto: AAAHardpointLargeMissile

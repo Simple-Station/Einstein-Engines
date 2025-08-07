@@ -570,24 +570,6 @@
 
 - type: entity
   parent: IDCardStandard
-  id: RDIDCard
-  name: mystagogue ID card # DeltaV - Epistemics Department replacing Science
-  components:
-  - type: Sprite
-    layers:
-    - state: silver
-    - state: departmenthead
-      color: "#1B67A5"
-    - state: subdepartment
-      color: "#C96DBF"
-    - state: scientist
-  - type: Item
-    heldPrefix: silver
-  - type: PresetIdCard
-    job: ResearchDirector
-
-- type: entity
-  parent: IDCardStandard
   id: HoSIDCard
   name: head of security ID card
   components:

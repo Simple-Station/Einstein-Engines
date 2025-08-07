@@ -2,7 +2,7 @@
   id: ConscriptSubmachinegunDSM
   name: job-name-conscript-dsm-smg
   description: job-description-conscript-dsm-smg #change me later
-  playTimeTracker: ConscriptJobSubmachinegunDSM
+  playTimeTracker: ConscriptDSM
   weight: 3
   startingGear: ConscriptSubmachinegunDSMGear
   alwaysUseSpawner: true
@@ -30,14 +30,10 @@
   - Command
   - Maintenance
   - Service
-  - DSMGeneral
-  - DSMJail
   - External
   - Mercenary # Frontier
   - Captain # Frontier
   - Empire
-  - DSMArmory
-  - DSMCommand
 
 - type: startingGear
   id: ConscriptSubmachinegunDSMGear
