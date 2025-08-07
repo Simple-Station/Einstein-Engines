@@ -97,43 +97,50 @@ namespace Content.Server.GameTicking
             }
 
             var spawnableStations = GetSpawnableStations();
-            var assignedJobs = _stationJobs.AssignJobs(profiles, spawnableStations);
-
-            _stationJobs.AssignOverflowJobs(ref assignedJobs, playerNetIds, profiles, spawnableStations);
-
-            // Calculate extended access for stations.
-            var stationJobCounts = spawnableStations.ToDictionary(e => e, _ => 0);
-            foreach (var (netUser, (job, station)) in assignedJobs)
+            if (spawnableStations.Any())
             {
-                if (job == null)
+
+                var assignedJobs = _stationJobs.AssignJobs(profiles, spawnableStations);
+
+                _stationJobs.AssignOverflowJobs(ref assignedJobs, playerNetIds, profiles, spawnableStations);
+
+                // Calculate extended access for stations.
+                var stationJobCounts = spawnableStations.ToDictionary(e => e, _ => 0);
+                foreach (var (netUser, (job, station)) in assignedJobs)
                 {
-                    var playerSession = _playerManager.GetSessionById(netUser);
-                    _chatManager.DispatchServerMessage(playerSession, Loc.GetString("job-not-available-wait-in-lobby"));
+                    if (job == null)
+                    {
+                        var playerSession = _playerManager.GetSessionById(netUser);
+                        _chatManager.DispatchServerMessage(
+                            playerSession,
+                            Loc.GetString("job-not-available-wait-in-lobby"));
+                    }
+                    else
+                    {
+                        stationJobCounts[station] += 1;
+                    }
                 }
-                else
+
+
+                _stationJobs.CalcExtendedAccess(stationJobCounts);
+
+                // Spawn everybody in!
+                foreach (var (player, (job, station)) in assignedJobs)
                 {
-                    stationJobCounts[station] += 1;
+                    if (job == null)
+                        continue;
+
+                    SpawnPlayer(_playerManager.GetSessionById(player), profiles[player], station, job, false);
                 }
+
+                // Allow rules to add roles to players who have been spawned in. (For example, on-station traitors)
+                RaiseLocalEvent(
+                    new RulePlayerJobsAssignedEvent(
+                        assignedJobs.Keys.Select(x => _playerManager.GetSessionById(x)).ToArray(),
+                        profiles,
+                        force));
             }
-
-            _stationJobs.CalcExtendedAccess(stationJobCounts);
-
-            // Spawn everybody in!
-            foreach (var (player, (job, station)) in assignedJobs)
-            {
-                if (job == null)
-                    continue;
-
-                SpawnPlayer(_playerManager.GetSessionById(player), profiles[player], station, job, false);
-            }
-
             RefreshLateJoinAllowed();
-
-            // Allow rules to add roles to players who have been spawned in. (For example, on-station traitors)
-            RaiseLocalEvent(new RulePlayerJobsAssignedEvent(
-                assignedJobs.Keys.Select(x => _playerManager.GetSessionById(x)).ToArray(),
-                profiles,
-                force));
         }
 
         private void SpawnPlayer(ICommonSession player,
