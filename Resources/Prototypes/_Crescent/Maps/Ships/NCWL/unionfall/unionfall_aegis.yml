@@ -13,7 +13,7 @@
 - type: gameMap
   id: UnionfallAegis
   mapName: 'NCWL Aegis'
-  mapPath: /Maps/_Crescent/Unionfall/NCWL/unionfall_Aegis.yml
+  mapPath: /Maps/_Crescent/Unionfall/NCWL/unionfall_aegis.yml
   minPlayers: 0
   stations:
     UnionfallAegis:

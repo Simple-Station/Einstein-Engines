@@ -4,8 +4,6 @@
    components:
    - type: StationEvent
      startAnnouncement: true
-     startAudio:
-       path: /Audio/Announcements/attention.ogg
      endAnnouncement: true
      earliestStart: 30
      minimumPlayers: 1
@@ -28,8 +26,6 @@
    components:
    - type: StationEvent
      startAnnouncement: true
-     startAudio:
-       path: /Audio/Announcements/attention.ogg
      endAnnouncement: true
      earliestStart: 25
      minimumPlayers: 25
@@ -52,8 +48,6 @@
    components:
    - type: StationEvent
      startAnnouncement: true
-     startAudio:
-       path: /Audio/Announcements/attention.ogg
      endAnnouncement: true
      earliestStart: 25
      minimumPlayers: 25
@@ -76,8 +70,6 @@
    components:
    - type: StationEvent
      startAnnouncement: true
-     startAudio:
-       path: /Audio/Announcements/attention.ogg
      endAnnouncement: true
      earliestStart: 15
      minimumPlayers: 25
@@ -101,8 +93,6 @@
    components:
    - type: StationEvent
      startAnnouncement: true
-     startAudio:
-       path: /Audio/Announcements/attention.ogg
      endAnnouncement: true
      earliestStart: 25
      minimumPlayers: 5
@@ -125,8 +115,6 @@
    components:
    - type: StationEvent
      startAnnouncement: true
-     startAudio:
-       path: /Audio/Announcements/attention.ogg
      endAnnouncement: true
      earliestStart: 25
      minimumPlayers: 5

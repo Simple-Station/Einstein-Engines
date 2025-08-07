@@ -2903,7 +2903,7 @@ entities:
     - type: Transform
       pos: -10.5,-5.5
       parent: 1
-- proto: HyperlinkBookSpaceLaw
+- proto: BookSecurity
   entities:
   - uid: 661
     components:

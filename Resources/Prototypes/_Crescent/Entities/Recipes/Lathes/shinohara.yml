@@ -28,7 +28,7 @@
     Cloth: 500
 
 - type: latheRecipe
-  id: ClothingOuterShinoharaExecSuitjacket
+  id: ClothingOuterShinoharaExecSuitJacket
   result: ClothingOuterShinoharaExecSuitJacket
   completetime: 2
   materials:
@@ -348,7 +348,7 @@
   completetime: 2
   materials:
     Steel: 3000
-    BallisticElectronics: 1000
+    AdvancedMechatronics: 1000
     BasicMechatronics: 1000
 
 - type: latheRecipe

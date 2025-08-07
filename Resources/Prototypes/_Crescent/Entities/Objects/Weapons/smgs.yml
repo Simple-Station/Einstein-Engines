@@ -38,7 +38,7 @@
     angleDecay: 16
     fireRate: 8
     soundGunshot:
-      collection: SMG_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/smg_1/smg_gunshot_1.ogg
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -63,7 +63,7 @@
   - type: Gun
     fireRate: 7
     soundGunshot:
-      collection: SMG_3_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/smg_3/smg_gunshot_2.ogg
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -92,7 +92,7 @@
   - type: Gun
     fireRate: 7
     soundGunshot:
-      collection: SMG_2_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/smg_2/smg_gunshot_3.ogg
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -120,7 +120,7 @@
     fireRate: 7
     selectedMode: FullAuto
     soundGunshot:
-      collection: SMG_2_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/smg_2/smg_gunshot_3.ogg
     availableModes:
     - FullAuto
   - type: ItemSlots
@@ -166,7 +166,7 @@
       fireRate: 6
       selectedMode: FullAuto
       soundGunshot:
-        collection: SMG_3_Gunshots
+        path: /Audio/_Crescent/Weapons/Guns/smg_3/smg_gunshot_2.ogg
       availableModes:
         - FullAuto
     - type: ItemSlots
@@ -214,7 +214,7 @@
     fireRate: 7
     selectedMode: FullAuto
     soundGunshot:
-      collection: Supressed_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/supressed_1/supressed_gunshot_2.ogg
       params:
         volume: -10
     availableModes:
@@ -264,7 +264,7 @@
     fireRate: 6
     selectedMode: FullAuto
     soundGunshot:
-      collection: SMG_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/smg_1/smg_gunshot_1.ogg
     availableModes:
     - FullAuto
   - type: ItemSlots
@@ -307,12 +307,12 @@
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
     soundGunshot:
-      collection: SMG_3_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/smg_3/smg_gunshot_2.ogg
   - type: Gun
     fireRate: 7
     selectedMode: Burst
     soundGunshot:
-      collection: SMG_3_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/smg_3/smg_gunshot_2.ogg
     availableModes:
     - SemiAuto
     - Burst
