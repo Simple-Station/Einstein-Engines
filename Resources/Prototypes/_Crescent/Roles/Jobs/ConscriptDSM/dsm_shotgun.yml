@@ -2,7 +2,7 @@
   id: ConscriptShotgunDSM
   name: job-name-conscript-dsm-shotgun
   description: job-description-conscript-dsm-shotgun #change me later
-  playTimeTracker: ConscriptJobShotgunDSM
+  playTimeTracker: ConscriptDSM
   weight: 4
   startingGear: ConscriptShotgunDSMGear
   alwaysUseSpawner: true
@@ -30,14 +30,10 @@
   - Command
   - Maintenance
   - Service
-  - DSMGeneral
-  - DSMJail
   - External
   - Mercenary # Frontier
   - Captain # Frontier
   - Empire
-  - DSMArmory
-  - DSMCommand
 
 - type: startingGear
   id: ConscriptShotgunDSMGear

@@ -34,7 +34,6 @@
   id: default
   sound:
     collection: default
-  fadeIn: true
 
 - type: soundCollection
   id: default

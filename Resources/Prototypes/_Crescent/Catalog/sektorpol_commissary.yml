@@ -291,7 +291,7 @@
   name:  uplink-security-breachingcharge-box-name
   description: uplink-security-breachingcharge-box-desc
   productEntity: BoxBreachingCharges
-  icon: { sprite: DeltaV/Objects/Weapons/Bombs/breaching.rsi, state: icon}
+  icon: { sprite: Objects/Weapons/Bombs/breaching.rsi, state: icon}
   cost:
     FrontierUplinkCoin: 3
   categories:

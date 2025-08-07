@@ -7,7 +7,7 @@
     - !type:CharacterOverallTimeRequirement
       min: 43200
   startingGear: PilotGear
-  icon: "JobIconPilot"
+  icon: "JobIconPassenger"
   supervisors: job-supervisors-hire
   accessGroups: # Frontier
   - GeneralAccess

@@ -24,7 +24,7 @@ public sealed partial class AdminVerbSystem
     private const string DefaultTraitorRule = "Traitor";
 
     [ValidatePrototypeId<EntityPrototype>]
-    private const string DefaultNukeOpRule = "LoneOpsSpawn";
+    private const string DefaultNukeOpRule = "Traitor";
 
     [ValidatePrototypeId<EntityPrototype>]
     private const string DefaultRevsRule = "Revolutionary";
