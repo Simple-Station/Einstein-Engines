@@ -12,7 +12,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      collection: Revolver_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/revolver_1/revolver_gunshot_2.ogg
       params:
         volume: 2.25
   - type: StaticPrice

@@ -671,6 +671,10 @@ entities:
     - type: ShuttleDeed
       shuttleName: Shuttle BET-709
       shuttleUid: 1
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: frigate
     - type: BecomesStation
       id: Sinn
 - proto: AAAHardpointFixed

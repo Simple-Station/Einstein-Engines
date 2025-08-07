@@ -3,7 +3,7 @@
   abstract: true
   components:
   - type: Store
-    name: Workers League Bounty Console. Uses imperial IDs as currency.
+    name: workers-league-console
     categories:
     - StoreCategoryNCWLSnacks
     - StoreCategoryNCWLUtility
@@ -17,7 +17,7 @@
   abstract: true
   components:
   - type: Store
-    name: Mandate Bounty Console. Uses communard IDs as currency.
+    name: imperial-console
     categories:
     - StoreCategoryDSMSnacks
     - StoreCategoryDSMUtility

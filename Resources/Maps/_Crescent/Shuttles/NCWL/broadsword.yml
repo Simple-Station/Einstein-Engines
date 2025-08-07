@@ -127,6 +127,10 @@ entities:
     - type: GasTileOverlay
     - type: BecomesStation
       id: Broadsword
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: fighter
 - proto: AAAHardpointFixed
   entities:
   - uid: 10

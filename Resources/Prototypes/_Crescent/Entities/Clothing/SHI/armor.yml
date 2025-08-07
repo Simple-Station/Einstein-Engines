@@ -180,7 +180,7 @@
 
 - type: entity
   parent: ClothingOuterBaseLarge
-  id: ClothingOuterShinoharaSuitjacket
+  id: ClothingOuterShinoharaSuitJacket
   name: corporate suit jacket
   description: A silken suit jacket, worn by corporate goons everywhere.
   components:
@@ -191,7 +191,7 @@
 
 - type: entity
   parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
-  id: ClothingOuterShinoharaExecSuitjacket
+  id: ClothingOuterShinoharaExecSuitJacket
   name: corporate executive suit jacket
   description: A silken, luxurious suit jacket, worn by corporate bosses everywhere.
   components:

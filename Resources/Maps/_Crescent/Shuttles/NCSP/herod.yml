@@ -360,6 +360,10 @@ entities:
     - type: ShuttleDeed
       shuttleName: Shuttle MV-262
       shuttleUid: 1
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: corvette
     - type: BecomesStation
       id: Herod
 - proto: AirAlarm

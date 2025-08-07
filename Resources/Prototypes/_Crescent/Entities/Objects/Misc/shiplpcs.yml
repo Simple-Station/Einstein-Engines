@@ -208,23 +208,6 @@
 
 - type: entity
   parent: BaseItem
-  id: ShipVoucherKavkaz
-  name: NCWL 'Kavkaz' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a communard Kavkaz-class light destroyer pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 60000
-  - type: ShipVoucher
-    ship: Kavkaz
-
-- type: entity
-  parent: BaseItem
   id: ShipVoucherKrechet
   name: NCWL 'Krechet' pattern LPC fabprint disk
   description: An LPC fabprint disk loaded with a communard Krechet-class light fighter pattern. Has to be redeemed at a shipyard console.
@@ -811,23 +794,6 @@
 
 - type: entity
   parent: BaseItem
-  id: ShipVoucherJiuzhu
-  name: IPC 'Jiuzhu' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a Interdyne Pharmaceuticals Jiuzhu-class medical frigate pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 20000
-  - type: ShipVoucher
-    ship: Jiuzhu
-
-- type: entity
-  parent: BaseItem
   id: ShipVoucherHulk
   name: IPC 'Hulk' pattern LPC fabprint disk
   description: An LPC fabprint disk loaded with a Interdyne Pharmaceuticals Hulk-class medical heavy cruiser pattern. Has to be redeemed at a shipyard console.
@@ -961,23 +927,6 @@
     price: 22000
   - type: ShipVoucher
     ship: Velator
-
-- type: entity
-  parent: BaseItem
-  id: ShipVoucherWreck
-  name: RC 'Wreck' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a Ramzi's Clique Wreck-class salvaged shuttle pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 9000
-  - type: ShipVoucher
-    ship: Wreck
 
 #cmm
 
@@ -1293,22 +1242,6 @@
   - type: ShipVoucher
     ship: Warthog
 
-- type: entity
-  parent: BaseItem
-  id: ShipVoucherBorealis
-  name: Borealis pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a new CMM design for the Borealis diplomatic cruiser.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 10000 # change later
-  - type: ShipVoucher
-    ship: Borealis
 
 - type: entity
   parent: BaseItem

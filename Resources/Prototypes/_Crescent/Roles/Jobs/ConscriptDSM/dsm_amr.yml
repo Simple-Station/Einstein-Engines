@@ -2,7 +2,7 @@
   id: ConscriptSniperDSM
   name: job-name-conscript-dsm-amr
   description: job-description-conscript-dsm-amr #change me later
-  playTimeTracker: ConscriptJobSniperDSM
+  playTimeTracker: ConscriptDSM
   weight: 5
   startingGear: ConscriptSniperDSMGear
   alwaysUseSpawner: true
@@ -30,14 +30,10 @@
   - Command
   - Maintenance
   - Service
-  - DSMGeneral
-  - DSMJail
   - External
   - Mercenary # Frontier
   - Captain # Frontier
   - Empire
-  - DSMArmory
-  - DSMCommand
 
 - type: startingGear
   id: ConscriptSniperDSMGear

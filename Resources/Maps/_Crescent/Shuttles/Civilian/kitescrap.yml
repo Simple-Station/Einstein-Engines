@@ -251,9 +251,10 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
-    - type: CrescentEMPTechnologyTier
-      powerLossMarkiplier: 0.5
-      eMPMultiplier: 0.5
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: fighter
     - type: BecomesStation
       id: KiteScrap
 - proto: AirAlarm

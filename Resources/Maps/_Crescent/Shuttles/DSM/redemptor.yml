@@ -308,6 +308,10 @@ entities:
     - type: ShuttleDeed
       shuttleName: Shuttle MV-857
       shuttleUid: 1
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: fighter
     - type: BecomesStation
       id: Redemptor
 - proto: AAAHardpointFixed

@@ -820,54 +820,8 @@
         state: icon
   - type: RandomSpawner
     prototypes:
-    - RandomHumanoidDisasterVictimRD
-    - RandomHumanoidDisasterVictimCMO
-    - RandomHumanoidDisasterVictimCaptain
     - MobSkeletonCloset
 
-- type: entity
-  id: RandomHumanoidDisasterVictimRD
-  name: disaster victim RD ghost role
-  components:
-    - type: Sprite
-      sprite: Clothing/OuterClothing/Hardsuits/basic.rsi
-      state: icon
-    - type: RandomHumanoidSpawner
-      settings: DisasterVictimResearchDirector
-
-- type: entity
-  id: RandomHumanoidDisasterVictimCMO
-  parent: RandomHumanoidDisasterVictimRD
-  name: disaster victim CMO ghost role
-  components:
-    - type: RandomHumanoidSpawner
-      settings: DisasterVictimCMO
-
-- type: entity
-  id: RandomHumanoidDisasterVictimCaptain
-  parent: RandomHumanoidDisasterVictimRD
-  name: disaster victim Captain ghost role
-  components:
-    - type: RandomHumanoidSpawner
-      settings: DisasterVictimCaptain
-
-- type: randomHumanoidSettings
-  id: DisasterVictimResearchDirector
-  randomizeName: false
-  components:
-    - type: GhostRole
-      name: ghost-role-information-disaster-victim-name
-      description: ghost-role-information-disaster-victim-description
-      rules: ghost-role-information-disaster-victim-rules
-      raffle:
-        settings: default
-    - type: GhostTakeoverAvailable
-    - type: Loadout
-      prototypes: [ ResearchDirectorGear ]
-    - type: RandomMetadata
-      nameSegments:
-      - names_first
-      - names_last
 
 - type: randomHumanoidSettings
   id: DisasterVictimCMO

@@ -58072,6 +58072,10 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: outpost
     - type: BecomesStation
       id: PortBalreska
 - proto: AAAHardpointLargeBallistic
