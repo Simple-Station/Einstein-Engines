@@ -264,6 +264,7 @@
   - type: Currency
     price:
       DogtagDSM: 1
+  - type: Sprite
     layers:
     - state: default
     - state: idseniorresearcher

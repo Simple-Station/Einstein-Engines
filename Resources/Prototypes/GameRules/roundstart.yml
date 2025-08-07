@@ -63,79 +63,79 @@
     roundMaxTime: 300
     roundEndDelay: 10
 
-- type: entity
-  abstract: true
-  parent: BaseGameRule
-  id: BaseNukeopsRule
-  components:
-  - type: RandomMetadata #this generates the random operation name cuz it's cool.
-    nameSegments:
-    - operationPrefix
-    - operationSuffix
-  - type: NukeopsRule
-  - type: RuleGrids
-  - type: AntagSelection
-  - type: AntagLoadProfileRule
-
-- type: entity
-  categories: [ HideSpawnMenu ]
-  parent: BaseNukeopsRule
-  id: Nukeops
-  components:
-  - type: GameRule
-    minPlayers: 20
-  - type: LoadMapRule
-    gameMap: NukieOutpost
-  - type: AntagSelection
-    selectionTime: PrePlayerSpawn
-    definitions:
-    - prefRoles: [ NukeopsCommander ]
-      fallbackRoles: [ Nukeops, NukeopsMedic ]
-      spawnerPrototype: SpawnPointNukeopsCommander
-      startingGear: SyndicateCommanderGearFull
-      components:
-      - type: NukeOperative
-      - type: RandomMetadata
-        nameSegments:
-        - nukeops-role-commander
-        - SyndicateNamesElite
-      - type: NpcFactionMember
-        factions:
-        - Syndicate
-      mindRoles:
-      - MindRoleNukeopsCommander
-    - prefRoles: [ NukeopsMedic ]
-      fallbackRoles: [ Nukeops, NukeopsCommander ]
-      spawnerPrototype: SpawnPointNukeopsMedic
-      startingGear: SyndicateOperativeMedicFull
-      components:
-      - type: NukeOperative
-      - type: RandomMetadata
-        nameSegments:
-        - nukeops-role-agent
-        - SyndicateNamesNormal
-      - type: NpcFactionMember
-        factions:
-        - Syndicate
-      mindRoles:
-      - MindRoleNukeopsMedic
-    - prefRoles: [ Nukeops ]
-      fallbackRoles: [ NukeopsCommander, NukeopsMedic ]
-      spawnerPrototype: SpawnPointNukeopsOperative
-      max: 3
-      playerRatio: 10
-      startingGear: SyndicateOperativeGearFull
-      components:
-      - type: NukeOperative
-      - type: RandomMetadata
-        nameSegments:
-        - nukeops-role-operator
-        - SyndicateNamesNormal
-      - type: NpcFactionMember
-        factions:
-        - Syndicate
-      mindRoles:
-      - MindRoleNukeops
+#- type: entity
+  #abstract: true
+  #parent: BaseGameRule
+  #id: BaseNukeopsRule
+  #components:
+  #- type: RandomMetadata #this generates the random operation name cuz it's cool.
+    #nameSegments:
+    #- operationPrefix
+    #- operationSuffix
+  #- type: NukeopsRule
+  #- type: RuleGrids
+  #- type: AntagSelection
+  #- type: AntagLoadProfileRule
+#
+    #- type: entity
+    #categories: [ HideSpawnMenu ]
+    #parent: BaseNukeopsRule
+    #id: Nukeops
+    #components:
+    #- type: GameRule
+      #minPlayers: 20
+    #- type: LoadMapRule
+      #gameMap: NukieOutpost
+    #- type: AntagSelection
+      #selectionTime: PrePlayerSpawn
+      #definitions:
+      #- prefRoles: [ NukeopsCommander ]
+        #fallbackRoles: [ Nukeops, NukeopsMedic ]
+        #spawnerPrototype: SpawnPointNukeopsCommander
+        #startingGear: SyndicateCommanderGearFull
+        #components:
+        #- type: NukeOperative
+        #- type: RandomMetadata
+          #nameSegments:
+          #- nukeops-role-commander
+          #- SyndicateNamesElite
+        #- type: NpcFactionMember
+          #factions:
+          #- Syndicate
+        #mindRoles:
+        #- MindRoleNukeopsCommander
+      #- prefRoles: [ NukeopsMedic ]
+        #fallbackRoles: [ Nukeops, NukeopsCommander ]
+        #spawnerPrototype: SpawnPointNukeopsMedic
+        #startingGear: SyndicateOperativeMedicFull
+        #components:
+        #- type: NukeOperative
+        #- type: RandomMetadata
+          #nameSegments:
+          #- nukeops-role-agent
+          #- SyndicateNamesNormal
+        #- type: NpcFactionMember
+          #factions:
+          #- Syndicate
+        #mindRoles:
+        #- MindRoleNukeopsMedic
+      #- prefRoles: [ Nukeops ]
+        #fallbackRoles: [ NukeopsCommander, NukeopsMedic ]
+        #spawnerPrototype: SpawnPointNukeopsOperative
+        #max: 3
+        #playerRatio: 10
+        #startingGear: SyndicateOperativeGearFull
+        #components:
+        #- type: NukeOperative
+        #- type: RandomMetadata
+          #nameSegments:
+          #- nukeops-role-operator
+          #- SyndicateNamesNormal
+        #- type: NpcFactionMember
+          #factions:
+          #- Syndicate
+        #mindRoles:
+        #- MindRoleNukeops
 
 - type: entity
   abstract: true

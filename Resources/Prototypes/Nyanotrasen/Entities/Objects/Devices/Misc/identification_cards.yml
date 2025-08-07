@@ -79,18 +79,3 @@
   - type: PresetIdCard
     job: MartialArtist
 
-- type: entity
-  parent: IDCardStandard
-  id: ForensicMantisIDCard
-  name: mantis ID card
-  components:
-  - type: Sprite
-    layers:
-    - state: default
-    - state: department
-      color: "#C96DBF"
-    - state: subdepartment
-      color: "#C96DBF"
-    - state: detective
-  - type: PresetIdCard
-    job: ForensicMantis

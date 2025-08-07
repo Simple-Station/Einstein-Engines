@@ -267,3 +267,9 @@
 
 - type: playTimeTracker
   id: JobGliessDockmaster
+
+- type: playTimeTracker
+  id: ConscriptDSM
+
+- type: playTimeTracker
+  id: ConscriptNCWL

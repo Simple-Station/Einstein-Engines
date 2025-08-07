@@ -708,8 +708,6 @@
       id: RDRoom
       children:
         - !type:MappingTemplatePrototype
-          id: SpawnPointResearchDirector
-        - !type:MappingTemplatePrototype
           id: DresserResearchDirectorFilled
         - !type:MappingTemplatePrototype
           id: SuitStorageRD

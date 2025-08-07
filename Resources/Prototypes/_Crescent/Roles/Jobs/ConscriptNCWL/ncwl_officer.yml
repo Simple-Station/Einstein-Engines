@@ -2,7 +2,7 @@
   id: ConscriptOfficerNCWL
   name: job-name-conscript-ncwl-officer
   description: job-description-conscript-ncwl-officer
-  playTimeTracker: ConscriptJobOfficerNCWL
+  playTimeTracker: ConscriptNCWL
   requirements:
     - !type:FactionRequirement
       factionID: "NCWL"

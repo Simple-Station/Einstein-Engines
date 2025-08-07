@@ -23,7 +23,7 @@
         startingItem: ShellShotgun
         priority: 1
         whitelist:
-          tags: 
+          tags:
             - ShellShotgun
   - type: ContainerContainer
     containers:
@@ -35,6 +35,7 @@
     soundBoltClosed: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
     soundBoltOpened: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
     soundRack: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+  - type: Clothing
     quickEquip: false
     slots:
     - Belt
@@ -92,10 +93,10 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      collection: Pistol_2_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/pistol_2/pistol_gunshot_1.ogg
   - type: StaticPrice
     price: 750
-  
+
 - type: entity
   name: NCSP DE-7 Deagle .327
   parent: BaseWeaponPistol
@@ -119,7 +120,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      collection: Pistol_3_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/pistol_3/pistol_gunshot_2.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -140,7 +141,7 @@
             - CartridgeMagnum
   - type: StaticPrice
     price: 1250
-  
+
 - type: entity
   name: NCWL T-91 Quasar .327
   parent: BaseWeaponPistol
@@ -164,7 +165,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      collection: Pistol_2_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/pistol_2/pistol_gunshot_1.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -205,7 +206,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      collection: Pistol_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/pistol_1/pistol_gunshot_3.ogg
   - type: StaticPrice
     price: 900
 
@@ -228,7 +229,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      collection: Pistol_2_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/pistol_2/pistol_gunshot_1.ogg
   - type: StaticPrice
     price: 1000
 
@@ -248,7 +249,7 @@
   - type: MagazineVisuals
     magState: mag
     steps: 3
-    zeroVisible: true 
+    zeroVisible: true
   - type: Gun
     minAngle: 1
     maxAngle: 19
@@ -260,7 +261,7 @@
     - SemiAuto
     - FullAuto
     soundGunshot:
-      collection: Pistol_3_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/pistol_3/pistol_gunshot_2.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -321,7 +322,7 @@
       - SemiAuto
       - FullAuto
     soundGunshot:
-      collection: Pistol_2_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/pistol_2/pistol_gunshot_1.ogg
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -351,7 +352,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      collection: Pistol_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/pistol_1/pistol_gunshot_3.ogg
   - type: StaticPrice
     price: 100
   - type: BallisticAmmoProvider
@@ -377,7 +378,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      collection: Pistol_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/pistol_1/pistol_gunshot_3.ogg
   - type: StaticPrice
     price: 100
   - type: BallisticAmmoProvider
@@ -403,7 +404,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      collection: Pistol_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/pistol_1/pistol_gunshot_3.ogg
   - type: StaticPrice
     price: 100
   - type: BallisticAmmoProvider
@@ -429,7 +430,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      collection: Pistol_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/pistol_1/pistol_gunshot_3.ogg
   - type: StaticPrice
     price: 100
   - type: BallisticAmmoProvider
@@ -455,7 +456,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      collection: Pistol_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/pistol_1/pistol_gunshot_3.ogg
   - type: StaticPrice
     price: 100
   - type: BallisticAmmoProvider
@@ -481,7 +482,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      collection: Pistol_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/pistol_1/pistol_gunshot_3.ogg
   - type: StaticPrice
     price: 100
   - type: BallisticAmmoProvider
@@ -539,7 +540,7 @@
 
 
 - type: entity
-  name: PTA BA-6 Rongyu 6mm 
+  name: PTA BA-6 Rongyu 6mm
   parent: BaseWeaponPistol
   id: WeaponPistolRongyu
   description: A cheap sidearm produced by Pang Tai Arms. Made for the merc on a budget. Chambered in small 6mm rounds.
@@ -562,7 +563,7 @@
     - SemiAuto
     - Burst
     soundGunshot:
-      collection: Pistol_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/pistol_1/pistol_gunshot_3.ogg
   - type: ItemSlots
     slots:
       gun_magazine:

@@ -604,7 +604,6 @@
   - type: ActivatableUI
     key: enum.StoreUiKey.Key
   - type: Store
-    preset: StorePresetSecurityUplink
     balance:
       FrontierUplinkCoin: 5
   - type: Tag
