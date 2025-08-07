@@ -1,7 +1,7 @@
 - type: gameMapPool
   id: DefaultMapPool
   maps:
-   - Dev # Placeholder for default gamemode
+   - Empty # Placeholder for default gamemode
 #  - Anchor # Maintained by the SiN Mapping Team
 #  - Arena # Maintained by astriloqua.
 #  - Asterisk # Maintained by mrs.

@@ -5,10 +5,13 @@
   minPlayers: 0
   stations:
     Empty:
-      stationProto: StandardNanotrasenStationAbandoned
+      stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
           mapNameTemplate: "Empty"
+        - type: StationJobs
+          availableJobs:
+            Passenger: [ 0, 0 ]
 
 - type: gameMap
   id: Dev

@@ -894,23 +894,6 @@
   - type: ShipVoucher
     ship: Velator
 
-- type: entity
-  parent: BaseItem
-  id: ShipVoucherWreck
-  name: RC 'Wreck' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a Ramzi's Clique Wreck-class salvaged shuttle pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 9000
-  - type: ShipVoucher
-    ship: Wreck
-
 #cmm
 
 - type: entity
