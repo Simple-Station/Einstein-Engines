@@ -1,4 +1,9 @@
 job-supervisors-highcomm = NCWL High Command
+job-supervisors-ncwl-major = The esteemed and current acting Major General
+job-supervisors-ncwl-homeguard = The nearest Kommissar
+job-supervisors-ncwl-alyans = Director of the Alyans Vrachev Union
+job-supervisors-ncwl-koalitsiya = Dockmaster of the Koalitsiya Logistyka Union
+job-supervisors-ncwl-sindikat = Supervisor from the Sindikat Inzenjera Union
 job-supervisors-ncsp = NCSP High Command
 job-supervisors-imperial = House Olywir
 job-supervisors-shi = Shinohara Corporate Command
