@@ -1,5 +1,5 @@
 - type: job
-  id:
+  id: DirectorNCWL
   name: job-name-ncwl-medical-director
   description: job-description-ncwl-medical-director
   playTimeTracker:

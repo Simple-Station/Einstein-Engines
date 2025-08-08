@@ -1,5 +1,5 @@
 - type: job
-  id:
+  id: DockmasterNCWL
   name: job-name-ncwl-logistic-dockmaster
   description: job-description-ncwl-logistic-dockmaster
   playTimeTracker:

@@ -11,7 +11,7 @@ job-description-kadet = Listen to your superiors. Learn proper procedure. Guard 
 #ncwl-2#
 
 job-description-ncwl-faction-leader = Coordinate the League. Ensure its survival, and the destruction of those who would oppose it.
-job-description-ncwl-homeguard-coordinator = Lead the Homeguard. Defend Port Balreska and eliminate the League's enemies.
+job-description-ncwl-homeguard-overseer = Lead the Homeguard. Defend Port Balreska and eliminate the League's enemies.
 job-description-ncwl-homeguard-captain = Command a squad of Soldats. Listen to the Coordinator. Maintain battlefield cohesion.
 job-description-ncwl-homeguard-soldat = Defend the League. Listen to your Squad Captain. Do what you're told.
 job-description-ncwl-logistic-dockmaster = Run industry. Produce goods. Make money. Supply the League. Yell at your dockhands.

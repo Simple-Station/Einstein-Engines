@@ -1,5 +1,5 @@
 - type: job
-  id:
+  id: SupervisorNCWL
   name: job-name-ncwl-engineering-supervisor
   description: job-description-ncwl-engineering-supervisor
   playTimeTracker:
