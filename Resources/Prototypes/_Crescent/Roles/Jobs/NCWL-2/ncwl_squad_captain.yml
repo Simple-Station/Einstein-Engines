@@ -3,10 +3,10 @@
   name: job-name-ncwl-homeguard-captain
   description: job-description-ncwl-homeguard-captain
   playTimeTracker: JobHomeguardSquadCaptainNCWL
-  weight: 1
+  weight: 9
   startingGear:
   alwaysUseSpawner: true
-  icon:
+  icon: "JobIconNCWLHomeguardSquadCaptain"
   requirements:
     - !type:FactionRequirement
       factionID: "NCWL"

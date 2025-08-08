@@ -3,10 +3,10 @@
   name: job-name-ncwl-logistic-dockmaster
   description: job-description-ncwl-logistic-dockmaster
   playTimeTracker: JobLogisticLeaderNCWL
-  weight: 1
+  weight: 3
   startingGear:
   alwaysUseSpawner: true
-  icon:
+  icon: "JobIconNCWLLogisticLeader"
   requirements:
     - !type:FactionRequirement
       factionID: "NCWL"

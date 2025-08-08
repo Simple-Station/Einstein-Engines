@@ -3,10 +3,10 @@
   name: job-name-ncwl-homeguard-overseer
   description: job-description-ncwl-homeguard-overseer
   playTimeTracker: JobHomeguardLeaderNCWL
-  weight: 1
+  weight: 10
   startingGear:
   alwaysUseSpawner: true
-  icon:
+  icon: "JobIconNCWLHomeguardLeader"
   requirements:
     - !type:FactionRequirement
       factionID: "NCWL"

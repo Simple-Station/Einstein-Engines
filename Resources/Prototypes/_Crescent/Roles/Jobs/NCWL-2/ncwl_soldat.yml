@@ -3,10 +3,10 @@
   name: job-name-ncwl-homeguard-soldat
   description: job-description-ncwl-homeguard-soldat
   playTimeTracker: JobHomeguardSoldatNCWL
-  weight: 1
+  weight: 8
   startingGear:
   alwaysUseSpawner: true
-  icon:
+  icon: "JobIconNCWLHomeguardSoldat"
   requirements:
     - !type:FactionRequirement
       factionID: "NCWL"

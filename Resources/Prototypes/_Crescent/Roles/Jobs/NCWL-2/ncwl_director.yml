@@ -3,10 +3,10 @@
   name: job-name-ncwl-medical-director
   description: job-description-ncwl-medical-director
   playTimeTracker: JobMedicalLeaderNCWL
-  weight: 1
+  weight: 7
   startingGear:
   alwaysUseSpawner: true
-  icon:
+  icon: "JobIconNCWLMedicalLeader"
   requirements:
     - !type:FactionRequirement
       factionID: "NCWL"

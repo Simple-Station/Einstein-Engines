@@ -3,10 +3,10 @@
   name: job-name-ncwl-engineering-supervisor
   description: job-description-ncwl-engineering-supervisor
   playTimeTracker: JobEngineeringLeaderNCWL
-  weight: 1
+  weight: 5
   startingGear:
   alwaysUseSpawner: true
-  icon:
+  icon: "JobIconNCWLEngineeringLeader"
   requirements:
     - !type:FactionRequirement
       factionID: "NCWL"

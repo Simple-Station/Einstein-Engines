@@ -662,3 +662,84 @@
   icon:
     sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
     state: hr_ncwl_captain
+
+#ncwl-2#
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNCWLWorker
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hl_ncwl_worker
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNCWLHomeguardLeader
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hl_ncwl_military_officer
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNCWLHomeguardSquadCaptain
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hl_ncwl_military_serg
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNCWLHomeguardSoldat
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hl_ncwl_military_soldier
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNCWLLogisticLeader
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hl_ncwl_cargo_leader
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNCWLLogisticWorker
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hl_ncwl_cargo_worker
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNCWLMedicalLeader
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hl_ncwl_medsci_leader
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNCWLMedicalWorker
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hl_ncwl_medsci_worker
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNCWLEngineeringLeader
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hl_ncwl_engi_leader
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNCWLEngineeringWorker
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hl_ncwl_engi_worker
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNCWLFactionLeader
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hl_ncwl_faclead
+
+

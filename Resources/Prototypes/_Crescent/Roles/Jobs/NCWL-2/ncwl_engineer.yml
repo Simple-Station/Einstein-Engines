@@ -3,10 +3,10 @@
   name: job-name-ncwl-engineering-mechanic
   description: job-description-ncwl-engineering-mechanic
   playTimeTracker: JobEngineeringWorkerNCWL
-  weight: 1
+  weight: 4
   startingGear:
   alwaysUseSpawner: true
-  icon:
+  icon: "JobIconNCWLEngineeringWorker"
   requirements:
     - !type:FactionRequirement
       factionID: "NCWL"
