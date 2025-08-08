@@ -48,6 +48,20 @@ crescent-rank-partisan = Soldat
 crescent-rank-soldat = Kadet
 crescent-rank-kapitan = Kapitan
 
+#ncwl-2
+crescent-rank-ncwl-faction-leader = Commandant
+crescent-rank-ncwl-home-leader = Overseer
+crescent-rank-ncwl-home-squad-lead = Captain
+crescent-rank-ncwl-home-soldat = Soldat
+crescent-rank-ncwl-logi-leader = Dockmaster
+crescent-rank-ncwl-logi-worker = Dockhand
+crescent-rank-ncwl-engi-leader = Supervisor
+crescent-rank-ncwl-engi-worker = Engineer
+crescent-rank-ncwl-medi-leader = Director
+crescent-rank-ncwl-medi-worker = Doctor
+crescent-rank-ncwl-worker = Comrade
+
+
 #syn
 
 crescent-rank-synadmin = Ringleader

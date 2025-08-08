@@ -22,7 +22,7 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank:
+        rank: crescent-rank-ncwl-engi-leader
   access:
   - Command
   - Maintenance
