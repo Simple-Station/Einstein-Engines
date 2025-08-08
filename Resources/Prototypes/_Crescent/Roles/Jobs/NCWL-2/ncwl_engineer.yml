@@ -34,10 +34,12 @@
   - Captain # Frontier
 
 - type: startingGear
-  id:
+  id: EngineerNCWLGear
   equipment:
-    shoes:
-    jumpsuit:
-    ears:
-    pocket1:
+    shoes: ClothingShoesBootsSalvage
+    jumpsuit: ClothingUniformJumpsuitNCWLArtificer
     id:
+    belt: ClothingBeltUtilityFilled
+    back: ClothingBackpackNCWL
+    gloves: ClothingHandsGlovesColorYellow
+    ears: ClothingHeadsetNCWL

@@ -34,10 +34,15 @@
   - Captain # Frontier
 
 - type: startingGear
-  id:
+  id: SoldatNCWLGear
   equipment:
-    shoes:
-    jumpsuit:
-    ears:
-    pocket1:
+    shoes: ClothingShtosBootsJack
+    jumpsuit: ClothingUniformJumpsuitNCWL
     id:
+    outerClothing: ClothingOuterArmorNCWLCarapace
+    belt: ClothingBeltNCWLPouches
+    back: ClothingBackpackNCWL
+    gloves: ClothingHandsGlovesCombat
+    head: ClothingHeadHelmetNCWLBasic
+    eyes: ClothingHeadsetNCWL
+    ears: ClothingEyesGlassesNCWL

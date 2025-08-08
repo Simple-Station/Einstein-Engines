@@ -34,10 +34,14 @@
   - Captain # Frontier
 
 - type: startingGear
-  id:
+  id: DockmasterNCWLGear
   equipment:
-    shoes:
-    jumpsuit:
-    ears:
-    pocket1:
+    shoes: ClothingShoesBootsSalvage
+    jumpsuit: ClothingUniformJumpsuitNCWLTelnikSleeved
     id:
+    outerClothing: ClothingOuterArmorNCWLLogi
+    belt: ClothingBeltSalvageWebbing
+    back: ClothingBackpackNCWL
+    gloves: ClothingHandsGlovesFingerless
+    head: ClothingHeadHatBeretQM
+    ears: ClothingHeadsetNCWL

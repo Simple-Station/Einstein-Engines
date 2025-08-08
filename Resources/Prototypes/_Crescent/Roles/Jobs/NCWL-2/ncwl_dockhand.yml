@@ -1,7 +1,7 @@
 - type: job
   id:
-  name: job-name-ncwl-logistic-dockworker
-  description: job-description-ncwl-logistic-dockworker
+  name: job-name-ncwl-logistic-dockhand
+  description: job-description-ncwl-logistic-dockhand
   playTimeTracker:
   weight: 1
   startingGear:
@@ -34,10 +34,13 @@
   - Captain # Frontier
 
 - type: startingGear
-  id:
+  id: DockhandNCWLGear
   equipment:
-    shoes:
-    jumpsuit:
-    ears:
-    pocket1:
+    shoes: ClothingShoesBootsSalvage
+    jumpsuit: ClothingUniformJumpsuitNCWLTelnikSleeved
     id:
+    belt: ClothingBeltSalvageWebbing
+    back: ClothingBackpackNCWL
+    gloves: ClothingHandsGlovesFingerless
+    head: ClothingHeadHatNCWLTanker
+    ears: ClothingHeadsetNCWL

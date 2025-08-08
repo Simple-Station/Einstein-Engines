@@ -1,7 +1,7 @@
 - type: job
   id:
-  name: job-name-ncwl-homeguard-kaptain
-  description: job-description-ncwl-homeguard-kaptain
+  name: job-name-ncwl-faction-leader
+  description: job-description-ncwl-faction-leader
   playTimeTracker:
   weight: 1
   startingGear:
@@ -34,10 +34,17 @@
   - Captain # Frontier
 
 - type: startingGear
-  id:
+  id: CommandantNCWLGear
   equipment:
-    shoes:
-    jumpsuit:
-    ears:
-    pocket1:
+    shoes: ClothingShoesBootsNCWLAdmiralParade
+    jumpsuit: ClothingUniformJumpsuitNCWLCommunications
     id:
+    outerClothing: ClothingOuterArmorNCWLOpremeCarapace
+    belt: ClothingBeltNCWLDoubleHolster
+    pocket1: WeaponRevolverPython
+    pocket2: WeaponRevolverPython
+    back: ClothingBackpackNCWL
+    gloves: ClothingHandsGlovesNCWLAdmiralParade
+    neck: ClothingNeckAdminCapelet
+    head: ClothingHeadHatNCWLBeretAdmiral
+    ears: ClothingHeadsetNCWL

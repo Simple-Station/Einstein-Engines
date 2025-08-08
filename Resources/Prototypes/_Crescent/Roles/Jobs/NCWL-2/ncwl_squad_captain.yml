@@ -1,7 +1,7 @@
 - type: job
   id:
-  name: job-name-ncwl-medical-doctor
-  description: job-description-ncwl-medical-doctor
+  name: job-name-ncwl-homeguard-captain
+  description: job-description-ncwl-homeguard-captain
   playTimeTracker:
   weight: 1
   startingGear:
@@ -34,10 +34,15 @@
   - Captain # Frontier
 
 - type: startingGear
-  id:
+  id: CaptainNCWLGear
   equipment:
-    shoes:
-    jumpsuit:
-    ears:
-    pocket1:
+    shoes: ClothingShoesBootsJack
+    jumpsuit: ClothingUniformJumpsuitNCWL
     id:
+    outerClothing: ClothingOuterArmorNCWLCarapaceKapitan
+    belt: ClothingBeltNCWLPouches
+    pocket1: WeaponPistolHKUSP
+    back: ClothingBackpackNCWL
+    gloves: ClothingHandsGlovesCombat
+    head: ClothingHeadHatNCWLBeret
+    ears: ClothingHeadsetNCWL

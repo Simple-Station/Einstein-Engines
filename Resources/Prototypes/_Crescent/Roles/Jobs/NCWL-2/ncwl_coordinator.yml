@@ -1,7 +1,7 @@
 - type: job
   id:
-  name: job-name-ncwl-medical-director
-  description: job-description-ncwl-medical-director
+  name: job-name-ncwl-homeguard-coordinator
+  description: job-description-ncwl-homeguard-coordinator
   playTimeTracker:
   weight: 1
   startingGear:
@@ -34,10 +34,14 @@
   - Captain # Frontier
 
 - type: startingGear
-  id:
+  id: CoordinatorNCWLGear
   equipment:
-    shoes:
-    jumpsuit:
-    ears:
-    pocket1:
+    shoes: ClothingShoesBootsJack
+    jumpsuit: ClothingUniformJumpsuitNCWLKommissar
     id:
+    outerClothing: ClothingOuterArmorNCWLCarapace
+    belt: ClothingBeltNCWLPouches
+    back: ClothingBackpackNCWL
+    gloves: ClothingHandsGlovesCombat
+    head: ClothingHeadHatNCWLKommissarHat
+    ears: ClothingHeadsetNCWL

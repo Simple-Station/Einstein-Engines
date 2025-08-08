@@ -1,7 +1,7 @@
 - type: job
   id:
-  name: job-name-ncwl-engineering-station-commander
-  description: job-description-ncwl-engineering-station-commander
+  name: job-name-ncwl-medical-doctor
+  description: job-description-ncwl-medical-doctor
   playTimeTracker:
   weight: 1
   startingGear:
@@ -34,10 +34,15 @@
   - Captain # Frontier
 
 - type: startingGear
-  id:
+  id: DoctorNCWLGear
   equipment:
-    shoes:
-    jumpsuit:
-    ears:
-    pocket1:
+    shoes: ClothingShoesBootsJack
+    jumpsuit: ClothingUniformJumpsuitNCWLMedic
     id:
+    outerClothing: ClothingOuterArmorNCWLMedi
+    belt: ClothingBeltMedicalFilled
+    back: ClothingBackpackNCWL
+    gloves: ClothingHandsGlovesNitrile
+    head: ClothingHeadHatNCWLCapsoftMedical
+    eyes: ClothingEyesHudMedSec
+    ears: ClothingHeadsetNCWL
