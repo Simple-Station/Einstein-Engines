@@ -49,7 +49,7 @@ crescent-rank-soldat = Kadet
 crescent-rank-kapitan = Kapitan
 
 #ncwl-2
-crescent-rank-ncwl-faction-leader = Commandant
+crescent-rank-ncwl-faction-leader = Major General
 crescent-rank-ncwl-home-leader = Kommissar
 crescent-rank-ncwl-home-squad-lead = Kapitan
 crescent-rank-ncwl-home-soldat = Soldat

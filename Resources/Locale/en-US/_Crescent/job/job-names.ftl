@@ -10,7 +10,7 @@ job-name-kadet = Citizen Soldat
 
 #ncwl-2#
 
-job-name-ncwl-faction-leader = Commandant of the Workers League
+job-name-ncwl-faction-leader = Major General of the Workers League
 job-name-ncwl-homeguard-overseer = Homeguard Kommissar
 job-name-ncwl-homeguard-captain = Squad Kapitan
 job-name-ncwl-homeguard-soldat = Soldat
