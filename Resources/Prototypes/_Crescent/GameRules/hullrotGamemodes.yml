@@ -157,38 +157,33 @@
   components:
   - type: AdventureRule
     gameMapsByID:
-      UnionfallVladzena:
-        gameMapID: UnionfallVladzena
-        posX: 0
-        posY: 9000
-        IFFColor: Green
       UnionfallNemesis:
         gameMapID: UnionfallNemesis
         posX: 3000
-        posY: 3500
+        posY: 0
         IFFColor: IndianRed
       UnionfallGraceBarrierDSM:
         gameMapID: UnionfallGraceBarrierDSM
         posX: 3000
-        posY: 3500
+        posY: 0
         IFFColor: Blue
       UnionfallBiomeEmitterDSM:
         gameMapID: UnionfallBiomeEmitterDSM
         posX: 1500
-        posY: 6250
+        posY: 0
         HideIFF: true
       Unionfall-Clementine:
         gameMapID: UnionfallClementine
         posX: -3000
-        posY: 3500
+        posY: 0
         IFFColor: Orange
       UnionfallGraceBarrierNCWL:
         gameMapID: UnionfallGraceBarrierNCWL
         posX: -3000
-        posY: 3500
+        posY: 0
         IFFColor: Blue
       UnionfallBiomeEmitterNCWL:
         gameMapID: UnionfallBiomeEmitterNCWL
-        posX: -1000
-        posY: 6250
+        posX: -1500
+        posY: 0
         HideIFF: true
