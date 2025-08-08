@@ -168,7 +168,7 @@
         posY: 0
         IFFColor: Blue
       UnionfallBiomeEmitterDSM:
-        gameMapID: UnionfallBiomeEmitterDSM
+        gameMapID: UnionfallBiomeEmitterDSM #THIS IS ALSO THE ANNOUNCER
         posX: 1500
         posY: 0
         HideIFF: true

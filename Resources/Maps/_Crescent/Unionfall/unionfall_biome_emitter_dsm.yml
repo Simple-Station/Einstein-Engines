@@ -213,6 +213,13 @@ entities:
     - type: Transform
       pos: 0.5,4.5
       parent: 1
+- proto: UnionfallAnnouncerEntity
+  entities:
+  - uid: 30
+    components:
+    - type: Transform
+      pos: 0.5,4.5
+      parent: 1
 - proto: UnionfallApproachingDSMSource
   entities:
   - uid: 27
