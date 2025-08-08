@@ -20,21 +20,6 @@
   - GliessianDockmaster
   - GliessianSheriff
   - Spacer
- # - Botanist
- # - Boxer
- # - Chaplain
- # - Chef
- # - Clown
-#  - HeadOfPersonnel
- # - Lawyer
- # - Librarian
- # - Mime
- # - Musician
- # - Contractor
- # - Reporter
- # - Visitor
- # - Zookeeper
- # - ServiceWorker
   editorHidden: false
 
 - type: department
@@ -101,13 +86,17 @@
   color: "#FFD580"
   weight: 100
   roles:
-  - AdministratorNCWL
-  - KommissarNCWL
-  - SanitarNCWL
-  - ArtificerNCWL
-  - DoktorNCWL
-  - KapitanNCWL
-  - KadetNCWL
+  - CommandantNCWL
+  - HomeguardLeaderNCWL
+  - HomeguardSquadCaptainNCWL
+  - HomeguardSoldatNCWL
+  - DirectorNCWL
+  - DoctorNCWL
+  - SupervisorNCWL
+  - EngineerNCWL
+  - DockmasterNCWL
+  - DockhandNCWL
+  - WorkerNCWL
   editorHidden: false
 
 - type: department
@@ -178,7 +167,7 @@
   - CorpsecSHI
   - EmployeeSHI
   - MedtechSHI
-  editorHidden: true
+  editorHidden: false
 
 - type: department
   id: CMM
@@ -210,7 +199,7 @@
   - BeltrunnerTAP
   - DraugrTAP
   - ServileTAP
-  editorHidden: false
+  editorHidden: true
 
 - type: department
   id: ATH
@@ -252,6 +241,7 @@
   - ConscriptCadetNCWL
   - ConscriptShipCaptainNCWL
   - ConscriptShipCrewNCWL
+  editorhidden: true
 
 - type: department
   id: DSM-W
@@ -270,3 +260,4 @@
   - ConscriptCadetDSM
   - ConscriptShipCaptainDSM
   - ConscriptShipCrewDSM
+  editorhidden: true
