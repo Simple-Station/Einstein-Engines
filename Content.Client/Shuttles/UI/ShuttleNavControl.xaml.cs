@@ -92,7 +92,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
     }
     private record struct ShuttleCalculatePositionsJob : IParallelRobustJob
     {
-        public int BatchSize => 15;
+        public int BatchSize => 99999;
 
         public IEntityManager EntManager;
         public SharedShuttleSystem ShuttlesSys;
