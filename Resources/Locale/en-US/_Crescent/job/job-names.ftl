@@ -10,15 +10,15 @@ job-name-kadet = Citizen Soldat
 
 #ncwl-2#
 
-job-name-ncwl-faction-leader = Commander of the Workers League
-job-name-ncwl-homeguard-kommissar = Homeguard Coordinator
-job-name-ncwl-homeguard-kaptain = Squad Captain
+job-name-ncwl-faction-leader = Commandant of the Workers League
+job-name-ncwl-homeguard-coordinator = Homeguard Coordinator
+job-name-ncwl-homeguard-captain = Squad Captain
 job-name-ncwl-homeguard-soldat = Soldat
 job-name-ncwl-logistic-dockmaster = Koalitsiya Dockmaster
-job-name-ncwl-logistic-dockworker = Dockhand
+job-name-ncwl-logistic-dockhand = Dockhand
 job-name-ncwl-medical-director = Alyans Director
 job-name-ncwl-medical-doctor = Doctor
-job-name-ncwl-engineering-station-commander = Sindikat Supervisor
+job-name-ncwl-engineering-supervisor = Sindikat Supervisor
 job-name-ncwl-engineering-mechanic = Engineer
 job-name-ncwl-newbie = Union Worker
 
