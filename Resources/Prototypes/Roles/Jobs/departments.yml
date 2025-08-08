@@ -28,7 +28,6 @@
   color: "#334E6D"
   roles:
   - CentralCommandOfficial
-  - KommissarNCWL
   - HeadOfPersonnel # Not shown but needed here for playtime
   - HeadOfSecurity # Not shown but needed here for playtime
 #  - ChiefMedicalOfficer

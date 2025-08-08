@@ -35,48 +35,6 @@
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconArtificer
-  icon:
-    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
-    state: Artificer
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconKadet
-  icon:
-    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
-    state: Kadet
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconCommsOfficer
-  icon:
-    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
-    state: CommunicationsOfficer
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconCommissar
-  icon:
-    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
-    state: Commissar
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconDoktor
-  icon:
-    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
-    state: Doktor
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconSanitar
-  icon:
-    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
-    state: Sanitar
-
-- type: jobIcon
-  parent: JobIcon
   id: JobIconSyndieRingleader
   icon:
     sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi

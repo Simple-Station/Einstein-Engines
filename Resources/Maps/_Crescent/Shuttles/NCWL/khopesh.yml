@@ -467,13 +467,6 @@ entities:
     - type: Transform
       pos: 0.5,3.5
       parent: 1
-- proto: SpawnPointSanitar
-  entities:
-  - uid: 54
-    components:
-    - type: Transform
-      pos: 0.5,3.5
-      parent: 1
 - proto: SubstationWallBasic
   entities:
   - uid: 32

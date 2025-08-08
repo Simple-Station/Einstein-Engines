@@ -1,15 +1,5 @@
 #ncwl#
 
-job-name-kommissar = Kommissar
-job-name-sanitar = Partisan
-job-name-artificer = Artificer
-job-name-doktor = Sanitar
-job-name-administrator = Admiral Opreme
-job-name-kapitan = Fleetkapitan
-job-name-kadet = Citizen Soldat
-
-#ncwl-2#
-
 job-name-ncwl-faction-leader = Major General of the Workers League
 job-name-ncwl-homeguard-overseer = Homeguard Kommissar
 job-name-ncwl-homeguard-captain = Squad Kapitan

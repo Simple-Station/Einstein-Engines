@@ -39,16 +39,6 @@ crescent-rank-ncwl-new = Cadet
 crescent-rank-ncwl-doctor = Doktor
 
 #ncwl
-crescent-rank-admin = Major
-crescent-rank-kommissar = Kommissar
-crescent-rank-artificer = Artificer
-crescent-rank-doktor = Dr.
-crescent-rank-specialist = Specialist
-crescent-rank-partisan = Soldat
-crescent-rank-soldat = Kadet
-crescent-rank-kapitan = Kapitan
-
-#ncwl-2
 crescent-rank-ncwl-faction-leader = Major General
 crescent-rank-ncwl-home-leader = Kommissar
 crescent-rank-ncwl-home-squad-lead = Kapitan

@@ -11,13 +11,17 @@
       group: LoadoutHead
     - !type:CharacterJobRequirement
       jobs:
-        - AdministratorNCWL
-        - ArtificerNCWL
-        - DoktorNCWL
-        - KadetNCWL
-        - KapitanNCWL
-        - KommissarNCWL
-        - SanitarNCWL
+        - CommandantNCWL
+        - HomeguardLeaderNCWL
+        - CaptainNCWL
+        - SoldatNCWL
+        - DirectorNCWL
+        - DoctorNCWL
+        - SupervisorNCWL
+        - EngineerNCWL
+        - DockmasterNCWL
+        - DockhandNCWL
+        - WorkerNCWL
 
 - type: loadout
   id: LoadoutHeadNCWLHeavy
@@ -31,12 +35,17 @@
       group: LoadoutHead
     - !type:CharacterJobRequirement
       jobs:
-        - AdministratorNCWL
-        - ArtificerNCWL
-        - KadetNCWL
-        - KapitanNCWL
-        - KommissarNCWL
-        - SanitarNCWL
+        - CommandantNCWL
+        - HomeguardLeaderNCWL
+        - CaptainNCWL
+        - SoldatNCWL
+        - DirectorNCWL
+        - DoctorNCWL
+        - SupervisorNCWL
+        - EngineerNCWL
+        - DockmasterNCWL
+        - DockhandNCWL
+        - WorkerNCWL
 
 - type: loadout
   id: LoadoutHeadHatNCWLCapsoft
@@ -50,12 +59,17 @@
       group: LoadoutHead
     - !type:CharacterJobRequirement
       jobs:
-        - AdministratorNCWL
-        - ArtificerNCWL
-        - KadetNCWL
-        - KapitanNCWL
-        - KommissarNCWL
-        - SanitarNCWL
+        - CommandantNCWL
+        - HomeguardLeaderNCWL
+        - CaptainNCWL
+        - SoldatNCWL
+        - DirectorNCWL
+        - DoctorNCWL
+        - SupervisorNCWL
+        - EngineerNCWL
+        - DockmasterNCWL
+        - DockhandNCWL
+        - WorkerNCWL
 
 - type: loadout
   id: LoadoutHeadHatNCWLTanker
@@ -69,12 +83,17 @@
       group: LoadoutHead
     - !type:CharacterJobRequirement
       jobs:
-        - AdministratorNCWL
-        - ArtificerNCWL
-        - KadetNCWL
-        - KapitanNCWL
-        - KommissarNCWL
-        - SanitarNCWL
+        - CommandantNCWL
+        - HomeguardLeaderNCWL
+        - CaptainNCWL
+        - SoldatNCWL
+        - DirectorNCWL
+        - DoctorNCWL
+        - SupervisorNCWL
+        - EngineerNCWL
+        - DockmasterNCWL
+        - DockhandNCWL
+        - WorkerNCWL
 
 - type: loadout
   id: LoadoutHeadNCWLBeret
@@ -88,10 +107,14 @@
       group: LoadoutHead
     - !type:CharacterJobRequirement
       jobs:
-        - AdministratorNCWL
-        - ArtificerNCWL
-        - DoktorNCWL
-        - KadetNCWL
-        - KapitanNCWL
-        - KommissarNCWL
-        - SanitarNCWL
+        - CommandantNCWL
+        - HomeguardLeaderNCWL
+        - CaptainNCWL
+        - SoldatNCWL
+        - DirectorNCWL
+        - DoctorNCWL
+        - SupervisorNCWL
+        - EngineerNCWL
+        - DockmasterNCWL
+        - DockhandNCWL
+        - WorkerNCWL
