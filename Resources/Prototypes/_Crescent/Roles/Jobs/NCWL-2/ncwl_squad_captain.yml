@@ -2,7 +2,7 @@
   id: CaptainNCWLGear
   name: job-name-ncwl-homeguard-captain
   description: job-description-ncwl-homeguard-captain
-  playTimeTracker:
+  playTimeTracker: JobHomeguardSquadCaptainNCWL
   weight: 1
   startingGear:
   alwaysUseSpawner: true

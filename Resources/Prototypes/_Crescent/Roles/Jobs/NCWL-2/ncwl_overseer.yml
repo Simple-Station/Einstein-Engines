@@ -2,7 +2,7 @@
   id: HomeguardLeaderNCWL
   name: job-name-ncwl-homeguard-overseer
   description: job-description-ncwl-homeguard-overseer
-  playTimeTracker:
+  playTimeTracker: JobHomeguardLeaderNCWL
   weight: 1
   startingGear:
   alwaysUseSpawner: true

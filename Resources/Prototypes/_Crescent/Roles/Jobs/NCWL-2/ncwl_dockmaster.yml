@@ -2,7 +2,7 @@
   id: DockmasterNCWL
   name: job-name-ncwl-logistic-dockmaster
   description: job-description-ncwl-logistic-dockmaster
-  playTimeTracker:
+  playTimeTracker: JobLogisticLeaderNCWL
   weight: 1
   startingGear:
   alwaysUseSpawner: true

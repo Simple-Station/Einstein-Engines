@@ -2,7 +2,7 @@
   id: SoldatNCWL
   name: job-name-ncwl-homeguard-soldat
   description: job-description-ncwl-homeguard-soldat
-  playTimeTracker:
+  playTimeTracker: JobHomeguardSoldatNCWL
   weight: 1
   startingGear:
   alwaysUseSpawner: true

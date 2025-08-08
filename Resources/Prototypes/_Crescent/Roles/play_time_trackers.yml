@@ -24,6 +24,36 @@
 #ncwl-2
 
 - type: playTimeTracker
+  id: JobFactionLeaderNCWL
+
+- type: playTimeTracker
+  id: JobHomeguardLeaderNCWL
+
+- type: playTimeTracker
+  id: JobHomeguardSquadCaptainNCWL
+
+- type: playTimeTracker
+  id: JobHomeguardSoldatNCWL
+
+- type: playTimeTracker
+  id: JobMedicalLeaderNCWL
+
+- type: playTimeTracker
+  id: JobMedicalWorkerNCWL
+
+- type: playTimeTracker
+  id: JobLogisticLeaderNCWL
+
+- type: playTimeTracker
+  id: JobLogisticWorkerNCWL
+
+- type: playTimeTracker
+  id: JobEngineeringLeaderNCWL
+
+- type: playTimeTracker
+  id: JobEngineeringWorkerNCWL
+
+- type: playTimeTracker
   id: JobWorkerNCWL
 
 #syndicate

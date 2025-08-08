@@ -2,7 +2,7 @@
   id: EngineerNCWL
   name: job-name-ncwl-engineering-mechanic
   description: job-description-ncwl-engineering-mechanic
-  playTimeTracker:
+  playTimeTracker: JobEngineeringWorkerNCWL
   weight: 1
   startingGear:
   alwaysUseSpawner: true

@@ -2,7 +2,7 @@
   id: DirectorNCWL
   name: job-name-ncwl-medical-director
   description: job-description-ncwl-medical-director
-  playTimeTracker:
+  playTimeTracker: JobMedicalLeaderNCWL
   weight: 1
   startingGear:
   alwaysUseSpawner: true

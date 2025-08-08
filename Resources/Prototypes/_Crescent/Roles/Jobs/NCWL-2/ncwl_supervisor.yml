@@ -2,7 +2,7 @@
   id: SupervisorNCWL
   name: job-name-ncwl-engineering-supervisor
   description: job-description-ncwl-engineering-supervisor
-  playTimeTracker:
+  playTimeTracker: JobEngineeringLeaderNCWL
   weight: 1
   startingGear:
   alwaysUseSpawner: true
