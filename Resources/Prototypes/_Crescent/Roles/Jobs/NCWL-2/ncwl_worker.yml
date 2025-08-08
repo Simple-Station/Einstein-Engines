@@ -16,7 +16,7 @@
         - Muted
         - WheelchairBound
   requireAdminNotify: false
-  supervisors: job-supervisors-highcomm
+  supervisors: job-supervisors-ncwl-worker
   canBeAntag: false
   special:
   - !type:AddComponentSpecial
