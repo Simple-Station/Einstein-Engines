@@ -88,8 +88,8 @@
   roles:
   - CommandantNCWL
   - HomeguardLeaderNCWL
-  - HomeguardSquadCaptainNCWL
-  - HomeguardSoldatNCWL
+  - CaptainNCWL
+  - SoldatNCWL
   - DirectorNCWL
   - DoctorNCWL
   - SupervisorNCWL
