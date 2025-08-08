@@ -2,7 +2,7 @@
   id: Aegis
   name: NCWL Aegis
   description: An artillery ship equipped with point defense. Demands 2 crew for full power.
-  price: 65000
+  price: 8000
   category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/NCWL/aegis.yml
