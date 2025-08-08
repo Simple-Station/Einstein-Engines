@@ -4,7 +4,7 @@
   description: job-description-ncwl-homeguard-overseer
   playTimeTracker: JobHomeguardLeaderNCWL
   weight: 10
-  startingGear:
+  startingGear: OverseerNCWLGear
   alwaysUseSpawner: true
   icon: "JobIconNCWLHomeguardLeader"
   requirements:

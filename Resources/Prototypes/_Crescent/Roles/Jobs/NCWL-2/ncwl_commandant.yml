@@ -4,7 +4,7 @@
   description: job-description-ncwl-faction-leader
   playTimeTracker: JobFactionLeaderNCWL
   weight: 12
-  startingGear:
+  startingGear: CommandantNCWLGear
   alwaysUseSpawner: true
   icon: "JobIconNCWLFactionLeader"
   requirements:

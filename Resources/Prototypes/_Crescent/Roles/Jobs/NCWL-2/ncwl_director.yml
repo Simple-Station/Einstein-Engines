@@ -4,7 +4,7 @@
   description: job-description-ncwl-medical-director
   playTimeTracker: JobMedicalLeaderNCWL
   weight: 7
-  startingGear:
+  startingGear: DirectorNCWLGear
   alwaysUseSpawner: true
   icon: "JobIconNCWLMedicalLeader"
   requirements:

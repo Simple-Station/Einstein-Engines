@@ -4,7 +4,7 @@
   description: job-description-ncwl-engineering-supervisor
   playTimeTracker: JobEngineeringLeaderNCWL
   weight: 5
-  startingGear:
+  startingGear: SupervisorNCWLGear
   alwaysUseSpawner: true
   icon: "JobIconNCWLEngineeringLeader"
   requirements:

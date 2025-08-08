@@ -4,7 +4,7 @@
   description: job-description-ncwl-medical-doctor
   playTimeTracker: JobMedicalWorkerNCWL
   weight: 6
-  startingGear:
+  startingGear: DoctorNCWLGear
   alwaysUseSpawner: true
   icon: "JobIconNCWLMedicalWorker"
   requirements:

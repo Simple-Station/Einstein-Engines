@@ -4,7 +4,7 @@
   description: job-description-ncwl-logistic-dockmaster
   playTimeTracker: JobLogisticLeaderNCWL
   weight: 3
-  startingGear:
+  startingGear: DockmasterNCWLGear
   alwaysUseSpawner: true
   icon: "JobIconNCWLLogisticLeader"
   requirements:

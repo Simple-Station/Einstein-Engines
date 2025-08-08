@@ -4,7 +4,7 @@
   description: job-description-ncwl-homeguard-soldat
   playTimeTracker: JobHomeguardSoldatNCWL
   weight: 8
-  startingGear:
+  startingGear: SoldatNCWLGear
   alwaysUseSpawner: true
   icon: "JobIconNCWLHomeguardSoldat"
   requirements:

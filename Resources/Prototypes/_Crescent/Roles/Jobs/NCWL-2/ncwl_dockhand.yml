@@ -4,7 +4,7 @@
   description: job-description-ncwl-logistic-dockhand
   playTimeTracker: JobLogisticWorkerNCWL
   weight: 2
-  startingGear:
+  startingGear: DockhandNCWLGear
   alwaysUseSpawner: true
   icon: "JobIconNCWLLogisticWorker"
   requirements:

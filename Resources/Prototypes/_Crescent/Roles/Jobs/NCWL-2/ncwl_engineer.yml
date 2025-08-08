@@ -4,7 +4,7 @@
   description: job-description-ncwl-engineering-mechanic
   playTimeTracker: JobEngineeringWorkerNCWL
   weight: 4
-  startingGear:
+  startingGear: EngineerNCWLGear
   alwaysUseSpawner: true
   icon: "JobIconNCWLEngineeringWorker"
   requirements:
