@@ -8,6 +8,8 @@
   alwaysUseSpawner: true
   icon: "JobIconNCWLLogisticLeader"
   requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 20000
     - !type:FactionRequirement
       factionID: "NCWL"
     - !type:CharacterTraitRequirement
