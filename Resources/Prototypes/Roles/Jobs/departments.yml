@@ -178,7 +178,7 @@
   - CorpsecSHI
   - EmployeeSHI
   - MedtechSHI
-  editorHidden: true
+  editorHidden: false
 
 - type: department
   id: CMM
