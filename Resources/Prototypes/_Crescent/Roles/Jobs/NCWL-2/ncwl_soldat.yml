@@ -8,6 +8,8 @@
   alwaysUseSpawner: true
   icon: "JobIconNCWLHomeguardSoldat"
   requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 1000
     - !type:FactionRequirement
       factionID: "NCWL"
     - !type:CharacterTraitRequirement
