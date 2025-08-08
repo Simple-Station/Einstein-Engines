@@ -38,13 +38,12 @@
 - type: startingGear
   id: SoldatNCWLGear
   equipment:
-    shoes: ClothingShtosBootsJack
+    shoes: ClothingShoesBootsJack
     jumpsuit: ClothingUniformJumpsuitNCWL
     id: NCWLHomeguardSoldatPDA
-    outerClothing: ClothingOuterArmorNCWLCarapace
+    outerClothing: ClothingOuterArmorNCWLHeavyCarapace
     belt: ClothingBeltNCWLPouches
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesCombat
     head: ClothingHeadHelmetNCWLBasic
-    eyes: ClothingHeadsetNCWL
-    ears: ClothingEyesGlassesNCWL
+    ears: ClothingHeadsetNCWL

@@ -4,7 +4,7 @@
   description: job-description-ncwl-newbie
   playTimeTracker: JobWorkerNCWL
   weight: 1
-  startingGear: WorkerGear
+  startingGear: WorkerNCWLGear
   alwaysUseSpawner: true
   icon: "JobIconNCWLWorker"
   requirements:

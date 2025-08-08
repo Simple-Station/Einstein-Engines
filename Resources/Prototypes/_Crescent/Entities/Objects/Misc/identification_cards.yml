@@ -229,6 +229,22 @@
 
 - type: entity
   parent: IDCardStandard
+  id: NCWLIDCardLogisticWorker
+  name: NCWL ID card
+  components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcentcom
+  - type: PresetIdCard
+    job: NCWLLogisticWorker
+
+
+- type: entity
+  parent: IDCardStandard
   id: NCWLIDCardEngineeringLeader
   name: NCWL ID card
   components:
