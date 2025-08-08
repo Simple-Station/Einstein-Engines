@@ -227,7 +227,7 @@
   id: NCWL-W
   description: department-NCWL-description
   color: "#FFD580"
-  weight: 100
+  weight: 11
   roles:
   - ConscriptLeaderNCWL
   - ConscriptOfficerNCWL
@@ -246,7 +246,7 @@
   id: DSM-W
   description: department-DSM-description
   color: "#684871"
-  weight: 85
+  weight: 10
   roles:
   - ConscriptLeaderDSM
   - ConscriptOfficerDSM
