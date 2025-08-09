@@ -15,6 +15,8 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
+        - Foreigner
+        - ForeignerLight
         - Muted
         - WheelchairBound
   requireAdminNotify: false
@@ -78,5 +80,5 @@
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesNitrile
     head: ClothingHeadHatNCWLBeretMedi
-    eyes: ClothingEyesHudMedSec
+    eyes: ClothingEyesHudMedical
     ears: ClothingHeadsetNCWL

@@ -40,7 +40,7 @@ crescent-rank-ncwl-doctor = Doktor
 
 #ncwl
 crescent-rank-ncwl-faction-leader = Major General
-crescent-rank-ncwl-home-leader = Kommandant
+crescent-rank-ncwl-home-leader = Kommissar
 crescent-rank-ncwl-home-squad-lead = Kapitan
 crescent-rank-ncwl-home-soldat = Soldat
 crescent-rank-ncwl-logi-leader = Dockmaster

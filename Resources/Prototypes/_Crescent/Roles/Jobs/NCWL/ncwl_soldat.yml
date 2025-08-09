@@ -15,7 +15,11 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
+        - Foreigner
+        - ForeignerLight
         - Muted
+        - Blindness
+        - Pacifist
         - WheelchairBound
   requireAdminNotify: false
   supervisors: job-supervisors-ncwl-homeguard

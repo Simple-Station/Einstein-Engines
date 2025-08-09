@@ -1,8 +1,8 @@
 #ncwl#
 
 job-name-ncwl-faction-leader = Major General of the Workers League
-job-name-ncwl-homeguard-overseer = Homeguard Kommandant
-job-name-ncwl-homeguard-captain = Fleetkapitan
+job-name-ncwl-homeguard-overseer = Kommissar
+job-name-ncwl-homeguard-captain = Union Kapitan
 job-name-ncwl-homeguard-soldat = Soldat
 job-name-ncwl-logistic-dockmaster = Koalitsiya Dockmaster
 job-name-ncwl-logistic-dockhand = Dockhand
