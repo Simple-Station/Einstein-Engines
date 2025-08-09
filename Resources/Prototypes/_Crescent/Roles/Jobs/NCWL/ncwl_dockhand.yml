@@ -15,7 +15,9 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
+        - Foreigner
         - Muted
+        - Blindness
         - WheelchairBound
   requireAdminNotify: false
   supervisors: job-supervisors-ncwl-koalitsiya

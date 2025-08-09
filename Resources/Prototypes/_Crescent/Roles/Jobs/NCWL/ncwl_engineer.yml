@@ -15,7 +15,10 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
+        - Foreigner
         - Muted
+        - Blindness
+        - Pacifist
         - WheelchairBound
   requireAdminNotify: false
   supervisors: job-supervisors-ncwl-sindikat

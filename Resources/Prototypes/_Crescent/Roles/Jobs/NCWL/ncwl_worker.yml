@@ -13,8 +13,9 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
+        - Foreigner
         - Muted
-        - WheelchairBound
+        - Blindness
   requireAdminNotify: false
   supervisors: job-supervisors-ncwl-worker
   canBeAntag: false
