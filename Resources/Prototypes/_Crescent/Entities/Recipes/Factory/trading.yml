@@ -1,0 +1,26 @@
+
+- type: factoryRecipe
+  id: FabricateMunitions
+  name: fabricate packaged trade ammunitions
+  inputs:
+    Steel: 10
+    Plasma: 5
+  outputs:
+    TradeGoodAmmo: 1
+
+- type: factoryRecipe
+  id: FabricateGunparts
+  name: fabricate packaged trade gunparts
+  inputs:
+    Steel: 25
+  outputs:
+    TradeGoodGunparts: 1
+
+- type: factoryRecipe
+  id: FabricatePlasmas
+  name: fabricate packaged trade plasma
+  inputs:
+    Steel: 5
+    Plasma: 15
+  outputs:
+    TradeGoodPlasma: 1
