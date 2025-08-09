@@ -133,7 +133,8 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
         {
             if (_map.TryLoad(mapid, stationProto.MapPath.ToString(), out var stationGridUid, new MapLoadOptions
             {
-                Offset = new Vector2(posX, posY) + _random.NextVector2(randomOffsetX, randomOffsetY)
+                Offset = new Vector2(posX, posY) + _random.NextVector2(randomOffsetX, randomOffsetY),
+                LoadMap = false
             }))
             {
                 _station.InitializeNewStation(stationProto.Stations[gameMapID], stationGridUid);
@@ -148,6 +149,10 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
                 // hide IFF if needed, like for derelicts or secrets
                 if (hideIFF)
                     _shuttle.AddIFFFlag(stationGridUid[0], IFFFlags.HideLabel);
+            }
+            else
+            {
+                _sawmill.Error($"Failed to load {gameMapID} in map {mapid}");
             }
         }
     }

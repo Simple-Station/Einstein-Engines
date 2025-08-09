@@ -16,11 +16,11 @@
           designation: vessel-designation-outpost
         - type: StationJobs
           overflowJobs: []
-          availableJobs:
+          availableJobs: #20 total
             ForemanNCSP: [ 1, 1 ]
-            ShipbreakerNCSP: [ 6, 6 ]
+            ShipbreakerNCSP: [ 9, 9 ]
             IntelligenceOfficerNCSP: [1,1]
-            OperativeNCSP: [4,4]
-            CyberdawnTechNCSP: [2,2]
+            OperativeNCSP: [6,6]
+            CyberdawnTechNCSP: [3,3]
 
 

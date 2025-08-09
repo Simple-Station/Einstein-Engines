@@ -149,6 +149,9 @@
       - FabricateBasicMechatronics
       - FabricateWeakLaserLocus
       - FabricateHardsuitElectronics
+      - FabricateMunitions
+      - FabricateGunparts
+      - FabricatePlasmas
   - type: Sprite
     sprite: _Crescent/Structures/factorystructures.rsi
     layers:

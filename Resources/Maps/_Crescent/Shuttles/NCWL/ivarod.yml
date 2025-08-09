@@ -5106,39 +5106,6 @@ entities:
     - type: Transform
       pos: -6.5,-7.5
       parent: 1
-- proto: SpawnPointArtificer
-  entities:
-  - uid: 934
-    components:
-    - type: Transform
-      pos: -5.5,-8.5
-      parent: 1
-- proto: SpawnPointKadet
-  entities:
-  - uid: 927
-    components:
-    - type: Transform
-      pos: -5.5,-0.5
-      parent: 1
-- proto: SpawnPointKapitan
-  entities:
-  - uid: 933
-    components:
-    - type: Transform
-      pos: 0.5,1.5
-      parent: 1
-- proto: SpawnPointSanitar
-  entities:
-  - uid: 931
-    components:
-    - type: Transform
-      pos: -5.5,1.5
-      parent: 1
-  - uid: 932
-    components:
-    - type: Transform
-      pos: -5.5,0.5
-      parent: 1
 - proto: StairStageDark
   entities:
   - uid: 183

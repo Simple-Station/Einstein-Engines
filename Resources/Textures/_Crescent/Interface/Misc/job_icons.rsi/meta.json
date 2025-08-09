@@ -466,6 +466,39 @@
         },
         {
             "name": "hr_ncwl_captain"
+        },
+        {
+            "name": "hl_ncwl_worker"
+        },
+        {
+            "name": "hl_ncwl_military_soldier"
+        },
+        {
+            "name": "hl_ncwl_military_serg"
+        },
+        {
+            "name": "hl_ncwl_military_officer"
+        },
+        {
+            "name": "hl_ncwl_medsci_worker"
+        },
+        {
+            "name": "hl_ncwl_medsci_leader"
+        },
+        {
+            "name": "hl_ncwl_engi_worker"
+        },
+        {
+            "name": "hl_ncwl_engi_leader"
+        },
+        {
+            "name": "hl_ncwl_cargo_worker"
+        },
+        {
+            "name": "hl_ncwl_cargo_leader"
+        },
+        {
+            "name": "hl_ncwl_faclead"
         }
     ]
 }
