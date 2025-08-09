@@ -1,12 +1,16 @@
 #ncwl#
 
-job-name-kommissar = Kommissar
-job-name-sanitar = Partisan
-job-name-artificer = Artificer
-job-name-doktor = Sanitar
-job-name-administrator = Major
-job-name-kapitan = Union Kaptain
-job-name-kadet = Citizen Soldat
+job-name-ncwl-faction-leader = Major General of the Workers League
+job-name-ncwl-homeguard-overseer = Kommissar
+job-name-ncwl-homeguard-captain = Union Kapitan
+job-name-ncwl-homeguard-soldat = Soldat
+job-name-ncwl-logistic-dockmaster = Koalitsiya Dockmaster
+job-name-ncwl-logistic-dockhand = Dockhand
+job-name-ncwl-medical-director = Alyans Director
+job-name-ncwl-medical-doctor = Sanitar
+job-name-ncwl-engineering-supervisor = Sindikat Supervisor
+job-name-ncwl-engineering-mechanic = Artificer
+job-name-ncwl-newbie = Union Worker
 
 #syndicate#
 

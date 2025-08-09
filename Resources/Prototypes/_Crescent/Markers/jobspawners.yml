@@ -1,89 +1,136 @@
-#ncwl#
+#ncwl2electricboogaloo#
 
 - type: entity
-  id: SpawnPointKommissar
+  id: SpawnPointNCWLCommandant
   parent: SpawnPointJobBase
-  name: kommissar
+  name: NCWLCommandant
   components:
   - type: SpawnPoint
-    job_id: KommissarNCWL
+    job_id: CommandantNCWL
   - type: Sprite
     layers:
       - state: green
       - state: passenger
 
 - type: entity
-  id: SpawnPointSanitar
+  id: SpawnPointNCWLOverseer
   parent: SpawnPointJobBase
-  name: sanitar
+  name: NCWLOverseer
   components:
   - type: SpawnPoint
-    job_id: SanitarNCWL
+    job_id: HomeguardLeaderNCWL
   - type: Sprite
     layers:
       - state: green
       - state: passenger
 
 - type: entity
-  id: SpawnPointArtificer
+  id: SpawnPointNCWLCaptain
   parent: SpawnPointJobBase
-  name: artificer
+  name: NCWLCaptain
   components:
   - type: SpawnPoint
-    job_id: ArtificerNCWL
+    job_id: CaptainNCWL
   - type: Sprite
     layers:
       - state: green
       - state: passenger
 
 - type: entity
-  id: SpawnPointDoktor
+  id: SpawnPointNCWLSoldat
   parent: SpawnPointJobBase
-  name: doktor
+  name: NCWLSoldat
   components:
   - type: SpawnPoint
-    job_id: DoktorNCWL
+    job_id: SoldatNCWL
   - type: Sprite
     layers:
       - state: green
       - state: passenger
 
 - type: entity
-  id: SpawnPointAdministrator
+  id: SpawnPointNCWLDockmaster
   parent: SpawnPointJobBase
-  name: administrator
+  name: NCWLDockmaster
   components:
   - type: SpawnPoint
-    job_id: AdministratorNCWL
+    job_id: DockmasterNCWL
   - type: Sprite
     layers:
       - state: green
       - state: passenger
 
 - type: entity
-  id: SpawnPointKapitan
+  id: SpawnPointNCWLDockhand
   parent: SpawnPointJobBase
-  name: kapitan
+  name: NCWLDockhand
   components:
   - type: SpawnPoint
-    job_id: KapitanNCWL
+    job_id: DockhandNCWL
   - type: Sprite
     layers:
       - state: green
       - state: passenger
 
 - type: entity
-  id: SpawnPointKadet
+  id: SpawnPointNCWLDirector
   parent: SpawnPointJobBase
-  name: kadet
+  name: NCWLDirector
   components:
   - type: SpawnPoint
-    job_id: KadetNCWL
+    job_id: DirectorNCWL
   - type: Sprite
     layers:
       - state: green
       - state: passenger
 
+- type: entity
+  id: SpawnPointNCWLDoctor
+  parent: SpawnPointJobBase
+  name: NCWLDoctor
+  components:
+  - type: SpawnPoint
+    job_id: DoctorNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointNCWLSupervisor
+  parent: SpawnPointJobBase
+  name: NCWLSupervisor
+  components:
+  - type: SpawnPoint
+    job_id: SupervisorNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointNCWLEngineer
+  parent: SpawnPointJobBase
+  name: NCWLEngineer
+  components:
+  - type: SpawnPoint
+    job_id: EngineerNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointNCWLWorker
+  parent: SpawnPointJobBase
+  name: NCWLWorker
+  components:
+  - type: SpawnPoint
+    job_id: WorkerNCWL
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
 
 #syndicate#
 

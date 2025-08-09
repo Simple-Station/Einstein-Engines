@@ -1,13 +1,12 @@
 - type: job
-  id: AdministratorNCWL
-  name: job-name-administrator
-  description: job-description-administrator
-  playTimeTracker: JobAdministratorNCWL
-  weight: 60
-  startingGear: AdministratorGear
+  id: CommandantNCWL
+  name: job-name-ncwl-faction-leader
+  description: job-description-ncwl-faction-leader
+  playTimeTracker: JobFactionLeaderNCWL
+  weight: 12
+  startingGear: CommandantNCWLGear
   alwaysUseSpawner: true
-  icon: "JobIconHeadOfPersonnel"
-  requireAdminNotify: true
+  icon: "JobIconNCWLFactionLeader"
   requirements:
     - !type:CharacterWhitelistRequirement
     - !type:FactionRequirement
@@ -15,15 +14,20 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
+        - Foreigner
+        - ForeignerLight
         - Muted
         - Blindness
+        - Pacifist
+        - WheelchairBound
+  requireAdminNotify: false
   supervisors: job-supervisors-highcomm
   canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-admin
+        rank: crescent-rank-ncwl-faction-leader
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -33,6 +37,7 @@
   - HeadOfSecurity
   - ResearchDirector
   - Frontier # Frontier
+  - Command
   - Cryogenics
   - Security
   - Detective
@@ -42,13 +47,16 @@
   - Engineering
   - Mail # Frontier
   - Medical
+  - Mercenary # Frontier
   - Quartermaster
   - Salvage
   - Cargo
   - Research
+  - Service
   - StationTrafficController # Frontier
   - Maintenance
   - External
+  - Janitor
   - Theatre
   - Bar
   - Chemistry
@@ -56,30 +64,24 @@
   - Chapel
   - Hydroponics
   - Atmospherics
-  - Command
-  - Maintenance
-  - Service
-  - External
-  - NCWLAdministrator
-  - NCWLFunds
-  - NCWLKommissar
   - NCWLGeneral
+  - NCWLKommissar
+  - NCWLJail
   - NCWLArmory
   - NCWLCommand
-  - NCWLJail
-  - Mercenary # Frontier
-  - Captain # Frontier
 
 - type: startingGear
-  id: AdministratorGear
+  id: CommandantNCWLGear
   equipment:
+    shoes: ClothingShoesBootsNCWLAdmiralParade
     jumpsuit: ClothingUniformJumpsuitNCWLCommunications
-    id: AdministratorPDA
-    neck: ClothingNeckAdminCapelet
-    ears: ClothingHeadsetNCWL
-    gloves: ClothingHandsGlovesNCWLAdmiralParade
+    id: NCWLFactionLeaderPDA
+    outerClothing: ClothingOuterArmorNCWLOpremeCarapace
     belt: ClothingBeltNCWLDoubleHolster
     pocket1: WeaponRevolverPython
     pocket2: WeaponRevolverPython
-    shoes: ClothingShoesBootsNCWLAdmiralParade
+    back: ClothingBackpackNCWL
+    gloves: ClothingHandsGlovesNCWLAdmiralParade
     head: ClothingHeadHatNCWLBeretAdmiral
+    ears: ClothingHeadsetNCWL
+    eyes: ClothingEyesHudSecurity
