@@ -8,6 +8,10 @@
   alwaysUseSpawner: true
   icon: "JobIconNCWLHomeguardSoldat"
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Shadowkin
     - !type:CharacterOverallTimeRequirement
       min: 1000
     - !type:FactionRequirement
@@ -47,6 +51,7 @@
     id: NCWLHomeguardSoldatPDA
     outerClothing: ClothingOuterArmorNCWLHeavyCarapace
     belt: ClothingBeltNCWLPouches
+    pocket1: WeaponPistolHKUSP
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesCombat
     head: ClothingHeadHelmetNCWLBasic

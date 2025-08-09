@@ -8,6 +8,10 @@
   alwaysUseSpawner: true
   icon: "JobIconNCWLFactionLeader"
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Shadowkin
     - !type:CharacterWhitelistRequirement
     - !type:FactionRequirement
       factionID: "NCWL"

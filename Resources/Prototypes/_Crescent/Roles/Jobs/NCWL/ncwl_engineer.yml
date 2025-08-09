@@ -8,6 +8,10 @@
   alwaysUseSpawner: true
   icon: "JobIconNCWLEngineeringWorker"
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Shadowkin
     - !type:CharacterOverallTimeRequirement
       min: 1000
     - !type:FactionRequirement
@@ -33,7 +37,6 @@
   - Maintenance
   - Service
   - NCWLGeneral
-  - NCWLJail
   - External
   - Mercenary # Frontier
   - Captain # Frontier
