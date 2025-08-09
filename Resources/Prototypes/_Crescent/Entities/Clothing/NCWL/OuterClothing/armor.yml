@@ -32,7 +32,7 @@
 - type: entity
   parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
   id: ClothingOuterArmorNCWLOpremeCarapace
-  name: admiral's greatcoat
+  name: major's greatcoat
   description: A kevlar-intervowen durathread trenchcoat with a synthfleece-trim collar. Looks badass.
   components:
   - type: Sprite

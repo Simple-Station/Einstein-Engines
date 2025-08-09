@@ -17,3 +17,19 @@
         - Dockta
       languagesUnderstood:
         - Dockta
+
+- type: trait
+  id: HighImperial
+  category: TraitsSpeechLanguages
+  points: -1
+  requirements:
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Imperial
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - HighImperial
+      languagesUnderstood:
+        - HighImperial
