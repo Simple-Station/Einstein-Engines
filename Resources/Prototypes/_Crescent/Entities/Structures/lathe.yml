@@ -236,6 +236,7 @@
       - Ingot
       - ShipParts
       - RawMaterial
+      - ShipParts
   - type: Sprite
     sprite: _Crescent/Structures/nanoforge.rsi
     layers:
