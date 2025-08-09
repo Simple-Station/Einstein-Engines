@@ -9,4 +9,15 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Storage/Crates/cashregister.rsi
 
+- type: entity
+  parent: CrateGenericSteel
+  id: N14CashRegisterBloody
+  name: bloody cash register
+  description: A bloody cash register. The blood looks dried.
+  components:
+  - type: Icon
+    sprite: _Nuclear14/Structures/Storage/Crates/cashregisterbloody.rsi
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Storage/Crates/cashregisterbloody.rsi
+
 
