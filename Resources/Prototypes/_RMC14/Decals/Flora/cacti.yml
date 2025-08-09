@@ -17,7 +17,7 @@
   id: FloraCactus2
   tags: ["flora"]
   parent: Cactus
-  snapcardinals: true
+  snapCardinals: true
   sprite:
     sprite: _RMC14/Structures/Flora/cactus.rsi
     state: cactus_4
