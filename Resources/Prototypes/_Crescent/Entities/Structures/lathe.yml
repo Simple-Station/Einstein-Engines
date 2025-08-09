@@ -234,6 +234,7 @@
       - Sheet
       - CraftMaterials
       - Ingot
+      - ShipParts
       - RawMaterial
   - type: Sprite
     sprite: _Crescent/Structures/nanoforge.rsi
