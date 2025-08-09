@@ -1,12 +1,12 @@
 - type: job
-  id: KadetNCWL
-  name: job-name-kadet
-  description: job-description-kadet
-  playTimeTracker: JobKadetNCWL
-  weight: 10
-  startingGear: KadetGear
+  id: WorkerNCWL
+  name: job-name-ncwl-newbie
+  description: job-description-ncwl-newbie
+  playTimeTracker: JobWorkerNCWL
+  weight: 1
+  startingGear: WorkerNCWLGear
   alwaysUseSpawner: true
-  icon: "JobIconKadet"
+  icon: "JobIconNCWLWorker"
   requirements:
     - !type:FactionRequirement
       factionID: "NCWL"
@@ -15,15 +15,15 @@
       traits:
         - Foreigner
         - Muted
-        - WheelchairBound
+        - Blindness
   requireAdminNotify: false
-  supervisors: job-supervisors-highcomm
+  supervisors: job-supervisors-ncwl-worker
   canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-soldat
+        rank: crescent-rank-ncwl-worker
   access:
   - Command
   - Maintenance
@@ -35,10 +35,11 @@
   - Captain # Frontier
 
 - type: startingGear
-  id: KadetGear
+  id: WorkerNCWLGear
   equipment:
-    shoes: ClothingShoesBootsJack
-    jumpsuit: ClothingUniformJumpsuitNCWL
+    shoes: ClothingShoesBootsSalvage
+    jumpsuit: ClothingUniformJumpsuitNCWLTrainee
+    id: NCWLWorkerPDA
+    belt: ClothingBeltUtilityFilled
+    back: ClothingBackpackNCWL
     ears: ClothingHeadsetNCWL
-    pocket1: WeaponPistolHKUSP
-    id: KadetPDA

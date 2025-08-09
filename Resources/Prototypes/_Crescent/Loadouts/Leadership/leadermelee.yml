@@ -9,9 +9,8 @@
       group: LoadoutLeaderMelee
     - !type:CharacterJobRequirement
       jobs:
-        - AdministratorNCWL
-        - KapitanNCWL
-        - KommissarNCWL
+        - CommandantNCWL
+        - HomeguardLeaderNCWL
         - IntelligenceOfficerNCSP
         - LieutenantNCSP
         - RingleaderNCSP
@@ -32,9 +31,8 @@
       group: LoadoutBelt
     - !type:CharacterJobRequirement
       jobs:
-        - AdministratorNCWL
-        - KapitanNCWL
-        - KommissarNCWL
+        - CommandantNCWL
+        - HomeguardLeaderNCWL
         - IntelligenceOfficerNCSP
         - LieutenantNCSP
         - RingleaderNCSP
