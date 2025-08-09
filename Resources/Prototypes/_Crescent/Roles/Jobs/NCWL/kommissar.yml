@@ -81,6 +81,8 @@
     jumpsuit: ClothingUniformJumpsuitNCWLKommissar
     id: KommissarPDA
     ears: ClothingHeadsetNCWL
+    belt: ClothingBeltHolster
+    pocket1: WeaponRevolverPython
     shoes: ClothingShoesBootsJack
     outerClothing: ClothingOuterArmorNCWLCarapace
     head: ClothingHeadHatNCWLKommissarHat
