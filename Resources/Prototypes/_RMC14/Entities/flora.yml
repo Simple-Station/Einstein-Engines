@@ -108,8 +108,8 @@
 - type: entity
   parent: RMCBasePlant
   id: BonsaiTree01
-  description: A small, leafy bush.
-  name: Bush
+  description: A small, leafy bonsai tree.
+  name: Bonsai Tree
   components:
   - type: Sprite
     state: tree_1
@@ -118,8 +118,8 @@
 - type: entity
   parent: RMCBasePlant
   id: BonsaiTree02
-  description: A small, leafy bush.
-  name: Bush
+  description: A small, leafy bonsai tree.
+  name: Bonsai Tree
   components:
   - type: Sprite
     state: tree_2
@@ -128,8 +128,8 @@
 - type: entity
   parent: RMCBasePlant
   id: BonsaiTree03
-  description: A small, leafy bush.
-  name: Bush
+  description: A small, leafy bonsai tree.
+  name: Bonsai Tree
   components:
   - type: Sprite
     state: tree_3
@@ -138,71 +138,18 @@
 - type: entity
   parent: RMCBasePlant
   id: BonsaiTree04
-  description: A small, leafy bush.
-  name: Bush
+  description: A small, leafy bonsai tree.
+  name: Bonsai Tree
   components:
   - type: Sprite
     state: tree_4
     sprite: _RMC14/Objects/Flora/dam.rsi
 
 - type: entity
-  parent: RMCBasePlant
-  id: StalkyBush01
-  name: stalkybush
-  components:
-  - type: Sprite
-    state: bushh1
-    sprite: Decals/Flora/flora_bushes.rsi
-
-- type: entity
-  parent: RMCBasePlant
-  id: StalkyBush02
-  name: stalkybush
-  components:
-  - type: Sprite
-    state: bushh2
-    sprite: Decals/Flora/flora_bushes.rsi
-
-- type: entity
-  parent: RMCBasePlant
-  id: StalkyBush03
-  name: stalkybush
-  components:
-  - type: Sprite
-    state: bushh3
-    sprite: Decals/Flora/flora_bushes.rsi
-
-- type: entity
-  parent: RMCBasePlant
-  id: FernyBush01
-  name: fernybush
-  components:
-  - type: Sprite
-    state: bushj1
-    sprite: Decals/Flora/flora_bushes.rsi
-
-- type: entity
-  parent: RMCBasePlant
-  id: FernyBush02
-  name: fernybush
-  components:
-  - type: Sprite
-    state: bushj2
-    sprite: Decals/Flora/flora_bushes.rsi
-
-- type: entity
-  parent: RMCBasePlant
-  id: FernyBush03
-  name: fernybush
-  components:
-  - type: Sprite
-    state: bushj3
-    sprite: Decals/Flora/flora_bushes.rsi
-
-- type: entity
   parent: RMCBasePalm
   id: RMCFloraTreePalm01
   name: palm tree
+  description: A tropical tree.
   components:
   - type: Sprite
     state: palm1
@@ -211,6 +158,7 @@
   parent: RMCBasePalm
   id: RMCFloraTreePalm02
   name: palm tree
+  description: A tropical tree.
   components:
   - type: Sprite
     state: palm2
@@ -258,7 +206,7 @@
   components:
   - type: Sprite
     state: boulder2
-    
+
 - type: entity
   parent: RMCBoulder1
   id: RMCBoulder3
