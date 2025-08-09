@@ -1,0 +1,12 @@
+- type: entity
+  parent: CrateGenericSteel
+  id: N14CashRegister
+  name: cash register
+  description: An instrument for storing means for material transactions.
+  components:
+  - type: Icon
+    sprite: _Nuclear14/Structures/Storage/Crates/cashregister.rsi
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Storage/Crates/cashregister.rsi
+
+
