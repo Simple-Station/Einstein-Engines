@@ -296,23 +296,6 @@
 
 - type: entity
   parent: BaseItem
-  id: ShipVoucherAegis
-  name: NCWL 'Aegis' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a communard Aegis-class artillery boat pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 8000
-  - type: ShipVoucher
-    ship: Aegis
-
-- type: entity
-  parent: BaseItem
   id: ShipVoucherRapier
   name: NCWL 'Rapier' pattern LPC fabprint disk
   description: An LPC fabprint disk loaded with a communard Rapier-class torpedo bomber pattern. Has to be redeemed at a shipyard console.
