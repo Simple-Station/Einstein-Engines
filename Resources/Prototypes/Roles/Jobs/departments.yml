@@ -240,7 +240,7 @@
   - ConscriptCadetNCWL
   - ConscriptShipCaptainNCWL
   - ConscriptShipCrewNCWL
-  editorhidden: true
+  editorHidden: true
 
 - type: department
   id: DSM-W
@@ -259,4 +259,4 @@
   - ConscriptCadetDSM
   - ConscriptShipCaptainDSM
   - ConscriptShipCrewDSM
-  editorhidden: true
+  editorHidden: true
