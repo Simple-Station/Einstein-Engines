@@ -7,6 +7,7 @@
     tags:
       - MagazineLightRifleSubsonic
       - MagazineLightRifle
+      - Magazine
   - type: BallisticAmmoProvider
     proto: CartridgeLightRifleSubsonic
     mayTransfer: true

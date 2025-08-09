@@ -8,6 +8,7 @@
   - type: Tag
     tags:
       - MagazineLightRifle
+      - Magazine
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:
@@ -42,6 +43,7 @@
   - type: Tag
     tags:
       - MagazineLightRifleBox
+      - Magazine
   - type: BallisticAmmoProvider
     proto: CartridgeLightRifle
     capacity: 100
@@ -165,6 +167,7 @@
   - type: Tag
     tags:
       - MagazineLightRiflePan
+      - Magazine
   - type: BallisticAmmoProvider
     proto: CartridgeLightRifle
     capacity: 96
@@ -179,6 +182,7 @@
   - type: Tag
     tags:
       - MagazineLightRifleBox
+      - Magazine
   - type: BallisticAmmoProvider
     proto: CartridgeLightRifle
     capacity: 80
