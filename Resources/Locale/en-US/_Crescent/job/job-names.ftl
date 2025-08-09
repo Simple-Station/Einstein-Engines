@@ -7,9 +7,9 @@ job-name-ncwl-homeguard-soldat = Soldat
 job-name-ncwl-logistic-dockmaster = Koalitsiya Dockmaster
 job-name-ncwl-logistic-dockhand = Dockhand
 job-name-ncwl-medical-director = Alyans Director
-job-name-ncwl-medical-doctor = Doctor
+job-name-ncwl-medical-doctor = Sanitar
 job-name-ncwl-engineering-supervisor = Sindikat Supervisor
-job-name-ncwl-engineering-mechanic = Engineer
+job-name-ncwl-engineering-mechanic = Artificer
 job-name-ncwl-newbie = Union Worker
 
 #syndicate#

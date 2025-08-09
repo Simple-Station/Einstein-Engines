@@ -46,9 +46,9 @@ crescent-rank-ncwl-home-soldat = Soldat
 crescent-rank-ncwl-logi-leader = Dockmaster
 crescent-rank-ncwl-logi-worker = Dockhand
 crescent-rank-ncwl-engi-leader = Supervisor
-crescent-rank-ncwl-engi-worker = Engineer
+crescent-rank-ncwl-engi-worker = Artificer
 crescent-rank-ncwl-medi-leader = Director
-crescent-rank-ncwl-medi-worker = Doctor
+crescent-rank-ncwl-medi-worker = Sanitar
 crescent-rank-ncwl-worker = Comrade
 
 
