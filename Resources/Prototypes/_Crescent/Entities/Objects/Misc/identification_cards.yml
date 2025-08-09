@@ -13,7 +13,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: NCWLWorker
+    job: WorkerNCWL
 
 - type: entity
   parent: IDCardStandard
@@ -28,7 +28,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: NCWLFactionLeader
+    job: CommandantNCWL
 
 - type: entity
   parent: IDCardStandard
@@ -43,7 +43,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: NCWLHomeguardLeader
+    job: HomeguardLeaderNCWL
 
 - type: entity
   parent: IDCardStandard
@@ -58,7 +58,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: NCWLSquadCaptain
+    job: CaptainNCWL
 
 - type: entity
   parent: IDCardStandard
@@ -73,7 +73,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: NCWLSoldat
+    job: SoldatNCWL
 
 - type: entity
   parent: IDCardStandard
@@ -88,7 +88,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: NCWLMedicalLeader
+    job: DirectorNCWL
 
 - type: entity
   parent: IDCardStandard
@@ -103,7 +103,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: NCWLMedicalWorker
+    job: DoctorNCWL
 
 - type: entity
   parent: IDCardStandard
@@ -118,7 +118,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: NCWLLogisticLeader
+    job: DockmasterNCWL
 
 - type: entity
   parent: IDCardStandard
@@ -133,7 +133,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: NCWLLogisticWorker
+    job: DockhandNCWL
 
 
 - type: entity
@@ -149,7 +149,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: NCWLEngineeringLeader
+    job: SupervisorNCWL
 
 - type: entity
   parent: IDCardStandard
@@ -164,7 +164,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: NCWLEngineeringWorker
+    job: EngineerNCWL
 
 #syndicate#
 
