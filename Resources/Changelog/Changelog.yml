@@ -16738,3 +16738,10 @@ Entries:
   id: 7312
   time: '2025-08-10T20:32:03.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2529
+- author: ODJ
+  changes:
+    - type: Fix
+      message: Fixed Pebble.
+  id: 7313
+  time: '2025-08-10T20:32:11.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2528
