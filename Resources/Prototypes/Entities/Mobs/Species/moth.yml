@@ -77,6 +77,8 @@
       250: 0.55
   - type: TemperatureProtection # moff fluff acts as insulation
     coefficient: 0.5 # less than vulp fur but still significant
+  - type: PotentiaModifier
+    potentiaMultiplier: 1.25
   - type: Sprite # sprite again because we want different layer ordering
     noRot: true
     drawdepth: Mobs
