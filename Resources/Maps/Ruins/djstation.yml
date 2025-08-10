@@ -45,8 +45,6 @@ entities:
       bodyType: Dynamic
     - type: Fixtures
       fixtures: {}
-    - type: BecomesStation
-      id: Empty
     - type: OccluderTree
     - type: Shuttle
     - type: GridPathfinding
