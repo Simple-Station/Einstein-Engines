@@ -7,6 +7,7 @@
   - type: Tag
     tags:
       - MagazineHeavyRifle
+      - Magazine
   - type: Item
     size: Small
   - type: BallisticAmmoProvider
@@ -35,6 +36,7 @@
   - type: Tag
     tags:
       - MagazineBoxRifleMinigun
+      - Magazine
   - type: BallisticAmmoProvider
     proto: CartridgeMinigun
     capacity: 500

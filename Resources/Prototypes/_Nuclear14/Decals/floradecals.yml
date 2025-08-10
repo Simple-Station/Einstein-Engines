@@ -1,6 +1,18 @@
 - type: decal
+  id: Branches
+  parent: Flora
+  abstract: true
+
+- type: decal
+  id: Dead
+  parent: Flora
+  abstract: true
+
+  # Actual Decals
+- type: decal
   id: FloraBranch1
   tags: ["flora"]
+  parent: Branches
   snapCardinals: true
   sprite:
     sprite: _Nuclear14/Structures/Decoration/flora.rsi
@@ -9,6 +21,7 @@
 - type: decal
   id: FloraBranchBroken
   tags: ["flora"]
+  parent: Branches
   snapCardinals: true
   sprite:
     sprite: _Nuclear14/Structures/Decoration/flora.rsi
@@ -17,6 +30,7 @@
 - type: decal
   id: FloraBranchBrushwood
   tags: ["flora"]
+  parent: Branches
   snapCardinals: true
   sprite:
     sprite: _Nuclear14/Structures/Decoration/flora.rsi
@@ -25,6 +39,7 @@
 - type: decal
   id: FloraBranchBrushwoodAlt
   tags: ["flora"]
+  parent: Branches
   snapCardinals: true
   sprite:
     sprite: _Nuclear14/Structures/Decoration/flora.rsi
@@ -33,6 +48,7 @@
 - type: decal
   id: FloraTallGrass1
   tags: ["flora"]
+  parent: Grass
   snapCardinals: true
   sprite:
     sprite: _Nuclear14/Structures/Decoration/flora.rsi
@@ -41,6 +57,7 @@
 - type: decal
   id: FloraTallGrass2
   tags: ["flora"]
+  parent: Grass
   snapCardinals: true
   sprite:
     sprite: _Nuclear14/Structures/Decoration/flora.rsi
@@ -49,6 +66,7 @@
 - type: decal
   id: FloraTallGrass3
   tags: ["flora"]
+  parent: Grass
   snapCardinals: true
   sprite:
     sprite: _Nuclear14/Structures/Decoration/flora.rsi
@@ -57,6 +75,7 @@
 - type: decal
   id: FloraTallGrass4
   tags: ["flora"]
+  parent: Grass
   snapCardinals: true
   sprite:
     sprite: _Nuclear14/Structures/Decoration/flora.rsi
@@ -65,6 +84,7 @@
 - type: decal
   id: FloraTallGrass5
   tags: ["flora"]
+  parent: Grass
   snapCardinals: true
   sprite:
     sprite: _Nuclear14/Structures/Decoration/flora.rsi
@@ -73,6 +93,7 @@
 - type: decal
   id: FloraTallGrass6
   tags: ["flora"]
+  parent: Grass
   snapCardinals: true
   sprite:
     sprite: _Nuclear14/Structures/Decoration/flora.rsi
@@ -81,6 +102,7 @@
 - type: decal
   id: FloraTallGrass7
   tags: ["flora"]
+  parent: Grass
   snapCardinals: true
   sprite:
     sprite: _Nuclear14/Structures/Decoration/flora.rsi
@@ -89,6 +111,7 @@
 - type: decal
   id: FloraTallGrass8
   tags: ["flora"]
+  parent: Grass
   snapCardinals: true
   sprite:
     sprite: _Nuclear14/Structures/Decoration/flora.rsi
@@ -97,6 +120,7 @@
 - type: decal
   id: FloraDeadBroc
   tags: ["flora"]
+  parent: Dead
   snapCardinals: true
   sprite:
     sprite: _Nuclear14/Structures/Decoration/flora.rsi
@@ -105,6 +129,7 @@
 - type: decal
   id: FloraDeadXander
   tags: ["flora"]
+  parent: Dead
   snapCardinals: true
   sprite:
     sprite: _Nuclear14/Structures/Decoration/flora.rsi
@@ -113,6 +138,7 @@
 - type: decal
   id: FloraDeadMutfruit
   tags: ["flora"]
+  parent: Dead
   snapCardinals: true
   sprite:
     sprite: _Nuclear14/Structures/Decoration/flora.rsi
@@ -121,6 +147,7 @@
 - type: decal
   id: FloraDeadFerocactus
   tags: ["flora"]
+  parent: Dead
   snapCardinals: true
   sprite:
     sprite: _Nuclear14/Structures/Decoration/flora.rsi
@@ -129,6 +156,7 @@
 - type: decal
   id: FloraDeadAgave
   tags: ["flora"]
+  parent: Dead
   snapCardinals: true
   sprite:
     sprite: _Nuclear14/Structures/Decoration/flora.rsi
