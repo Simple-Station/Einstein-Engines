@@ -110,22 +110,22 @@
   id: PriestessSong
   name: L-79 - Priestess
   path:
-    path: "/Audio/_Crescent/Priestess.ogg"
+    path: "/Audio/_Crescent/Jukebox/Priestess.ogg"
 
 - type: jukebox
   id: BreakSong
   name: L-79 - Break
   path:
-    path: "/Audio/_Crescent/Break.ogg"
+    path: "/Audio/_Crescent/Jukebox/Break.ogg"
 
 - type: jukebox
   id: LadikerfosSong
   name: KEYGEN CHURCH - L A D I K E R F O S
   path:
-    path: "/Audio/_Crescent/Ladikerfos.ogg"
+    path: "/Audio/_Crescent/Jukebox/Ladikerfos.ogg"
 
 - type: jukebox
   id: WitchSong
   name: Total Dead Center - Witch
   path:
-    path: "/Audio/_Crescent/Witch.ogg"
+    path: "/Audio/_Crescent/Jukebox/Witch.ogg"
