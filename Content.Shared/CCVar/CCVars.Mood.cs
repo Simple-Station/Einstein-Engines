@@ -10,7 +10,7 @@ public sealed partial class CCVars
 
     public static readonly CVarDef<bool> MoodEnabled =
 #if RELEASE
-        CVarDef.Create("mood.enabled", true, CVar.SERVER);
+        CVarDef.Create("mood.enabled", false, CVar.SERVER);
 #else
         CVarDef.Create("mood.enabled", false, CVar.SERVER);
 #endif
