@@ -16731,3 +16731,10 @@ Entries:
   id: 7311
   time: '2025-08-10T20:31:22.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2522
+- author: ODJ
+  changes:
+    - type: Tweak
+      message: Arrivals adjusted
+  id: 7312
+  time: '2025-08-10T20:32:03.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2529
