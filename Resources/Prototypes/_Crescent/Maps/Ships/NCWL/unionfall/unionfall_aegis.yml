@@ -1,6 +1,3 @@
-# Author Info
-# Discord: @fleshangel
-
 - type: vessel
   id: UnionfallAegis
   name: NCWL Aegis
@@ -13,7 +10,7 @@
 - type: gameMap
   id: UnionfallAegis
   mapName: 'NCWL Aegis'
-  mapPath: /Maps/_Crescent/Unionfall/NCWL/unionfall_Aegis.yml
+  mapPath: /Maps/_Crescent/Unionfall/NCWL/unionfall_aegis.yml
   minPlayers: 0
   stations:
     UnionfallAegis:

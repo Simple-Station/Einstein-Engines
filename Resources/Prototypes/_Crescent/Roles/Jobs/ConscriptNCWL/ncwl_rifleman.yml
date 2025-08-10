@@ -2,7 +2,7 @@
   id: ConscriptRiflemanNCWL
   name: job-name-conscript-ncwl-rifleman
   description: job-description-conscript-ncwl-rifleman #change me later
-  playTimeTracker: ConscriptJobRiflemanNCWL
+  playTimeTracker: ConscriptNCWL
   weight: 2
   startingGear: ConscriptRiflemanNCWLGear
   alwaysUseSpawner: true
@@ -55,7 +55,7 @@
     pocket1: DoubleEmergencyOxygenTankFilled
     pocket2: ExGrenade
     ears: ClothingHeadsetNCWL
-    id: SanitarPDA
+    id: NCWLHomeguardSoldatPDA
     suitstorage: WeaponSniperNCWLNovomosin
     gloves: ClothingHandsGlovesCombat
     eyes: ClothingEyesGlassesNCWL

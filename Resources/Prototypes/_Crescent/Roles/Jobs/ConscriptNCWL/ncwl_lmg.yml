@@ -2,7 +2,7 @@
   id: ConscriptGunnerNCWL
   name: job-name-conscript-ncwl-lmg
   description: job-description-conscript-ncwl-lmg #change me later
-  playTimeTracker: ConscriptJobGunnerNCWL
+  playTimeTracker: ConscriptNCWL
   weight: 6
   startingGear: ConscriptGunnerNCWLGear
   alwaysUseSpawner: true
@@ -55,7 +55,7 @@
     pocket1: DoubleEmergencyOxygenTankFilled
     pocket2: GrenadeFlashBang
     ears: ClothingHeadsetNCWL
-    id: SanitarPDA
+    id: NCWLHomeguardSoldatPDA
     suitstorage: WeaponLightMachineGunNCWLSurplus
     gloves: ClothingHandsGlovesCombat
     eyes: ClothingEyesGlassesNCWL

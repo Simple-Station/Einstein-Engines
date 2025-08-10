@@ -12,7 +12,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      collection: Dmr_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/dmr_1/dmr_gunshot_2.ogg
   - type: BallisticAmmoProvider
     capacity: 20
     proto: CartridgeLightRifle
@@ -34,7 +34,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      collection: Dmr_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/dmr_1/dmr_gunshot_2.ogg
   - type: BallisticAmmoProvider
     capacity: 15
     proto: CartridgeRifle
@@ -131,7 +131,7 @@
     burstCooldown: 0.5
     fireRate: 6
     soundGunshot:
-      collection: Supressed_2_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/supressed_2/supressed_gunshot_2.ogg
       params:
         volume: -10
   - type: MagazineVisuals
@@ -158,7 +158,7 @@
   - type: Gun
     fireRate: 4
     soundGunshot:
-      collection: Rifle_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/rifle_1/rifle_gunshot_2.ogg
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
@@ -210,7 +210,7 @@
   - type: Gun
     fireRate: 4.8
     soundGunshot:
-      collection: Rifle_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/rifle_1/rifle_gunshot_2.ogg
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
@@ -263,7 +263,7 @@
   - type: Gun
     fireRate: 6
     soundGunshot:
-      collection: Rifle_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/rifle_1/rifle_gunshot_2.ogg
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
@@ -315,7 +315,7 @@
   - type: Gun
     fireRate: 5
     soundGunshot:
-      collection: Rifle_2_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/rifle_2/rifle_gunshot_2.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -364,7 +364,7 @@
   - type: Gun
     fireRate: 6
     soundGunshot:
-      collection: Rifle_2_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/rifle_2/rifle_gunshot_2.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -468,7 +468,7 @@
   - type: Gun
     fireRate: 2.5
     soundGunshot:
-      collection: Dmr_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/dmr_1/dmr_gunshot_2.ogg
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto
@@ -520,7 +520,7 @@
     sprite: _Crescent/Objects/Weapons/Guns/hound.rsi
   - type: Gun
     soundGunshot:
-      collection: M16_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/M16/rifle_gunshot_2.ogg
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto
@@ -571,7 +571,7 @@
     sprite: _Crescent/Objects/Weapons/Guns/hunter.rsi
   - type: Gun
     soundGunshot:
-      collection: M16_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/M16/rifle_gunshot_2.ogg
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto
@@ -622,7 +622,7 @@
     sprite: _Crescent/Objects/Weapons/Guns/mayflower.rsi
   - type: Gun
     soundGunshot:
-      collection: Rifle_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/rifle_1/rifle_gunshot_2.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -671,12 +671,12 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/barghest.rsi
   - type: Gun
-    FireRate: 2.5
+    fireRate: 2.5
     shotsPerBurst: 2
     burstFireRate: 24
     burstCooldown: 1.5
     soundGunshot:
-      collection: Dmr_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/dmr_1/dmr_gunshot_2.ogg
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto

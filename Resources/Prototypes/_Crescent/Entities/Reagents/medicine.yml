@@ -2,7 +2,7 @@
   id: Narcan
   name: narcan
   group: Medicine
-  desc: A chemical used for the stabilization of patients who have overdosed on narcotics.
+  desc: narcan-desc
   physicalDesc: reagent-physical-desc-pungent
   flavor: medicine
   color: "#ff7db5"
@@ -56,7 +56,7 @@
         component: SeeingRainbows
         time: 15
         type: Remove
-      - !type:GenericStatusEffect 
+      - !type:GenericStatusEffect
         key: Drunk # make people a little dizzy, narcan has side effects
         time: 3
         type: Add

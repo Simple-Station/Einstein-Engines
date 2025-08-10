@@ -2230,18 +2230,6 @@ entities:
     - type: Transform
       pos: 0.5,4.5
       parent: 2
-- proto: SpawnPointSanitar
-  entities:
-  - uid: 503
-    components:
-    - type: Transform
-      pos: -4.5,-1.5
-      parent: 2
-  - uid: 504
-    components:
-    - type: Transform
-      pos: 5.5,-2.5
-      parent: 2
 - proto: StairStageDark
   entities:
   - uid: 233

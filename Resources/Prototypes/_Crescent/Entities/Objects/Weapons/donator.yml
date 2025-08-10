@@ -24,7 +24,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      collection: Pistol_3_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/pistol_3/pistol_gunshot_1.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -71,7 +71,7 @@
     burstCooldown: 0.5
     fireRate: 7
     soundGunshot:
-      collection: Rifle_2_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/rifle_2/rifle_gunshot_1.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -101,7 +101,7 @@
   - type: Appearance
   - type: StaticPrice
     price: 3000
-    
+
 # @m18hellcat76mmgunmotorcarriage (Hellcat) donor gun
 - type: entity
   name: PTA XCR-6 Charge rifle 6x24mm
@@ -169,7 +169,7 @@
   - type: Gun
     fireRate: 2
     soundGunshot:
-      collection: Shotgun_2_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/shotgun_2/shotgun_gunshot_1.ogg
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto

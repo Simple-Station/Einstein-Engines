@@ -2,7 +2,7 @@
   id: ConscriptSniperNCWL
   name: job-name-conscript-ncwl-amr
   description: job-description-conscript-ncwl-amr #change me later
-  playTimeTracker: ConscriptJobSniperNCWL
+  playTimeTracker: ConscriptNCWL
   weight: 5
   startingGear: ConscriptSniperNCWLGear
   alwaysUseSpawner: true
@@ -56,7 +56,7 @@
     pocket2: GrenadeFlashBang
     ears: ClothingHeadsetNCWL
     eyes: ClothingEyesGlassesNCWL
-    id: SanitarPDA
+    id: NCWLHomeguardSoldatPDA
     suitstorage: WeaponAntimaterielNCWLHayha
     gloves: ClothingHandsGlovesCombat
   inhand:

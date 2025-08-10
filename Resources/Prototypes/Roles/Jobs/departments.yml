@@ -20,21 +20,6 @@
   - GliessianDockmaster
   - GliessianSheriff
   - Spacer
- # - Botanist
- # - Boxer
- # - Chaplain
- # - Chef
- # - Clown
-#  - HeadOfPersonnel
- # - Lawyer
- # - Librarian
- # - Mime
- # - Musician
- # - Contractor
- # - Reporter
- # - Visitor
- # - Zookeeper
- # - ServiceWorker
   editorHidden: false
 
 - type: department
@@ -43,7 +28,6 @@
   color: "#334E6D"
   roles:
   - CentralCommandOfficial
-  - KommissarNCWL
   - HeadOfPersonnel # Not shown but needed here for playtime
   - HeadOfSecurity # Not shown but needed here for playtime
 #  - ChiefMedicalOfficer
@@ -101,13 +85,17 @@
   color: "#FFD580"
   weight: 100
   roles:
-  - AdministratorNCWL
-  - KommissarNCWL
-  - SanitarNCWL
-  - ArtificerNCWL
-  - DoktorNCWL
-  - KapitanNCWL
-  - KadetNCWL
+  - CommandantNCWL
+  - HomeguardLeaderNCWL
+  - CaptainNCWL
+  - SoldatNCWL
+  - DirectorNCWL
+  - DoctorNCWL
+  - SupervisorNCWL
+  - EngineerNCWL
+  - DockmasterNCWL
+  - DockhandNCWL
+  - WorkerNCWL
   editorHidden: false
 
 - type: department
@@ -178,7 +166,7 @@
   - CorpsecSHI
   - EmployeeSHI
   - MedtechSHI
-  editorHidden: true
+  editorHidden: false
 
 - type: department
   id: CMM
@@ -210,7 +198,7 @@
   - BeltrunnerTAP
   - DraugrTAP
   - ServileTAP
-  editorHidden: false
+  editorHidden: true
 
 - type: department
   id: ATH
@@ -239,7 +227,7 @@
   id: NCWL-W
   description: department-NCWL-description
   color: "#FFD580"
-  weight: 100
+  weight: 11
   roles:
   - ConscriptLeaderNCWL
   - ConscriptOfficerNCWL
@@ -252,12 +240,13 @@
   - ConscriptCadetNCWL
   - ConscriptShipCaptainNCWL
   - ConscriptShipCrewNCWL
+  editorHidden: true
 
 - type: department
   id: DSM-W
   description: department-DSM-description
   color: "#684871"
-  weight: 85
+  weight: 10
   roles:
   - ConscriptLeaderDSM
   - ConscriptOfficerDSM
@@ -270,3 +259,4 @@
   - ConscriptCadetDSM
   - ConscriptShipCaptainDSM
   - ConscriptShipCrewDSM
+  editorHidden: true

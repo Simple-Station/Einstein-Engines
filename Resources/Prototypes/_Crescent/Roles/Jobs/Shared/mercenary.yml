@@ -8,7 +8,7 @@
       min: 108000
   startingGear: MercenaryGear
   canBeAntag: true
-  icon: "JobIconMercenary"
+  icon: "JobIconPassenger"
   supervisors: job-supervisors-hire
   setPreference: true
   accessGroups: # Frontier

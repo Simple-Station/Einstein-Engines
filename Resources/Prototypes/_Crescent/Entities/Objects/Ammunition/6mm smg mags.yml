@@ -19,7 +19,7 @@
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: _Crescent\Objects\Weapons\Ammunition\Magazine\6mm_smg.rsi
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/6mm_smg.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -45,7 +45,7 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
-      
+
 - type: entity
   id: MagazinePistol6mmSmg
   name: "SMG magazine (6mm Auto)"

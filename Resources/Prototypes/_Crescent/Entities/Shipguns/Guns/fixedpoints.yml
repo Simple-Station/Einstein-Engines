@@ -521,6 +521,8 @@
     layers:
     - state: artillery
   - type: BallisticAmmoProvider
+    soundInsert: 
+      path: /Audio/Weapons/Guns/UnionfallWeapons/amr_close_1.ogg
     fillWithDoAfter: true
     fillDelay: 1
     cycleable: true

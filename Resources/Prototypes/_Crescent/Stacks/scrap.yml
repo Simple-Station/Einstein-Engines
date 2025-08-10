@@ -31,21 +31,21 @@
 - type: stack
   id: ScrapCircuit
   name: damaged electronics
-  icon: { sprite: /_Crescent/Objects/Misc/scrapcircuit.rsi, state: icon }
+  icon: { sprite: /Textures/_Crescent/Objects/Misc/scrapcircuit.rsi, state: icon }
   spawn: ScrapCircuit1
   maxCount: 30
 
 - type: stack
   id: ScrapPlasma
   name: plasma isotope salvage
-  icon: { sprite: /_Crescent/Objects/Misc/scraplasma.rsi, state: icon }
+  icon: { sprite: /Textures/_Crescent/Objects/Misc/scraplasma.rsi, state: icon }
   spawn: ScrapPlasma1
   maxCount: 30
 
 - type: stack
   id: ScrapUranium
   name: discarded fissiles
-  icon: { sprite: /_Crescent/Objects/Misc/scrapuranium.rsi, state: icon }
+  icon: { sprite: /Textures/_Crescent/Objects/Misc/scrapuranium.rsi, state: icon }
   spawn: ScrapUranium1
   maxCount: 30
 
