@@ -1,9 +1,9 @@
-using Content.Shared._DV.Salvage.Systems;
+using Content.Shared.DeltaV.Salvage.Systems;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 
-namespace Content.Shared._DV.Salvage.Components;
+namespace Content.Shared.DeltaV.Salvage.Components;
 
 /// <summary>
 ///     Trigger for purchasing a kit from the Mining Vendors.
