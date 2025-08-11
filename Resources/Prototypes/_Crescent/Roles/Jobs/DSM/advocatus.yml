@@ -38,14 +38,14 @@
       - type: ChatRank
         rank: crescent-rank-advocatus
       - type: LanguageKnowledge
-    speaks:
-      - HighImperial
-      - Tradeband
-      - SolCommon
-    understands:
-      - HighImperial
-      - Tradeband
-      - SolCommon
+        speaks:
+          - HighImperial
+          - Tradeband
+          - SolCommon
+        understands:
+          - HighImperial
+          - Tradeband
+          - SolCommon
 
   access:
   - EmergencyShuttleRepealAll

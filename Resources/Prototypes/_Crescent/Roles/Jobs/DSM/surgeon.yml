@@ -33,10 +33,10 @@
       - type: SurgerySpeedModifier
         speedModifier: 2
       - type: LanguageKnowledge
-    speaks:
-      - SolCommon
-    understands:
-      - SolCommon
+        speaks:
+          - SolCommon
+        understands:
+          - SolCommon
   access:
   - Command
   - Empire

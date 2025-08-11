@@ -29,12 +29,12 @@
         rank: crescent-rank-smarts
       - type: BibleUser
       - type: LanguageKnowledge
-    speaks:
-      - Tradeband
-      - SolCommon
-    understands:
-      - Tradeband
-      - SolCommon
+        speaks:
+          - Tradeband
+          - SolCommon
+        understands:
+          - Tradeband
+          - SolCommon
   access:
   - Command
   - Empire

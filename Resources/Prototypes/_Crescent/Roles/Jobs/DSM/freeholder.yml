@@ -16,11 +16,11 @@
   - !type:AddComponentSpecial
     components:
       - type: LanguageKnowledge
-    speaks:
-      - SolCommon
-    understands:
-      - Tradeband
-      - SolCommon
+        speaks:
+          - SolCommon
+        understands:
+          - Tradeband
+          - SolCommon
   alwaysUseSpawner: true
   icon: "JobIconImperialFreeholder"
   requireAdminNotify: false

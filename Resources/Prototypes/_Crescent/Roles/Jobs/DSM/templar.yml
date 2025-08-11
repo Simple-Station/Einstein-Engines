@@ -40,14 +40,14 @@
         rank: crescent-rank-templar
       - type: BibleUser
       - type: LanguageKnowledge
-    speaks:
-      - HighImperial
-      - Tradeband
-      - SolCommon
-    understands:
-      - HighImperial
-      - Tradeband
-      - SolCommon
+        speaks:
+          - HighImperial
+          - Tradeband
+          - SolCommon
+        understands:
+          - HighImperial
+          - Tradeband
+          - SolCommon
   access:
   - Command
   - Empire

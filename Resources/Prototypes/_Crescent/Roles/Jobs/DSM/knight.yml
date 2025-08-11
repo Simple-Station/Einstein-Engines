@@ -36,14 +36,14 @@
       - type: ChatRank
         rank: crescent-rank-knight
       - type: LanguageKnowledge
-    speaks:
-      - HighImperial
-      - Tradeband
-      - SolCommon
-    understands:
-      - HighImperial
-      - Tradeband
-      - SolCommon
+        speaks:
+          - HighImperial
+          - Tradeband
+          - SolCommon
+        understands:
+          - HighImperial
+          - Tradeband
+          - SolCommon
 
   access:
   - Command

@@ -28,13 +28,13 @@
       - type: ChatRank
         rank: crescent-rank-courtier
       - type: LanguageKnowledge
-    speaks:
-      - HighImperial
-      - SolCommon
-    understands:
-      - HighImperial
-      - Tradeband
-      - SolCommon
+        speaks:
+          - HighImperial
+          - SolCommon
+        understands:
+          - HighImperial
+          - Tradeband
+          - SolCommon
   access:
   - Command
   - Empire

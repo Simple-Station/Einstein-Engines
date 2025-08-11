@@ -35,11 +35,11 @@
       - type: ChatRank
         rank: crescent-rank-manatarms
       - type: LanguageKnowledge
-    speaks:
-      - SolCommon
-    understands:
-      - Tradeband
-      - SolCommon
+        speaks:
+          - SolCommon
+        understands:
+          - Tradeband
+          - SolCommon
   access:
   - Command
   - Empire

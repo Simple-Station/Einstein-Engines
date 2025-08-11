@@ -36,14 +36,14 @@
       - type: ChatRank
         rank: crescent-rank-baron
       - type: LanguageKnowledge
-    speaks:
-      - HighImperial
-      - SolCommon
-      - Tradeband
-    understands:
-      - HighImperial
-      - Tradeband
-      - SolCommon
+        speaks:
+          - HighImperial
+          - SolCommon
+          - Tradeband
+        understands:
+          - HighImperial
+          - Tradeband
+          - SolCommon
   access:
   - EmergencyShuttleRepealAll
   - Captain

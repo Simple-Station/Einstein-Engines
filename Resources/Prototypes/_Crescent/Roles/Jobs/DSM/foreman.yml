@@ -26,12 +26,12 @@
   - !type:AddComponentSpecial
     components:
       - type: LanguageKnowledge
-    speaks:
-      - Tradeband
-      - SolCommon
-    understands:
-      - Tradeband
-      - SolCommon
+        speaks:
+          - Tradeband
+          - SolCommon
+        understands:
+          - Tradeband
+          - SolCommon
 
   icon: "JobIconImperialForeman"
   requireAdminNotify: false
