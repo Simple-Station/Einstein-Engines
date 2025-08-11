@@ -29,42 +29,12 @@
   group: market
 
 - type: cargoProduct
-  id: MaterialBrass
-  icon:
-    sprite: Objects/Materials/Sheets/metal.rsi
-    state: brass_3
-  product: CrateMaterialBrass
-  cost: 2500
-  category: cargoproduct-category-name-materials
-  group: market
-
-- type: cargoProduct
-  id: MaterialPlasteel
-  icon:
-    sprite: Objects/Materials/Sheets/metal.rsi
-    state: plasteel_3
-  product: CrateMaterialPlasteel
-  cost: 3000
-  category: cargoproduct-category-name-materials
-  group: market
-
-- type: cargoProduct
   id: MaterialTextiles
   icon:
     sprite: Objects/Materials/materials.rsi
     state: cloth_3
   product: CrateMaterialTextiles
   cost: 1000
-  category: cargoproduct-category-name-materials
-  group: market
-
-- type: cargoProduct
-  id: MaterialPlasma
-  icon:
-    sprite: Objects/Materials/Sheets/other.rsi
-    state: plasma_3
-  product: CrateMaterialPlasma
-  cost: 2000
   category: cargoproduct-category-name-materials
   group: market
 
@@ -105,35 +75,5 @@
     state: watertank
   product: WaterTankFull
   cost: 1000
-  category: cargoproduct-category-name-materials
-  group: market
-
-- type: cargoProduct
-  id: MaterialUranium
-  icon:
-    sprite: Objects/Materials/Sheets/other.rsi
-    state: uranium_3
-  product: CrateMaterialUranium
-  cost: 3000
-  category: cargoproduct-category-name-materials
-  group: market
-
-- type: cargoProduct
-  id: MaterialGold
-  icon:
-    sprite: Objects/Materials/ingots.rsi
-    state: gold_3
-  product: CrateMaterialGold
-  cost: 3000
-  category: cargoproduct-category-name-materials
-  group: market
-
-- type: cargoProduct
-  id: MaterialSilver
-  icon:
-    sprite: Objects/Materials/ingots.rsi
-    state: silver_3
-  product: CrateMaterialSilver
-  cost: 3000
   category: cargoproduct-category-name-materials
   group: market

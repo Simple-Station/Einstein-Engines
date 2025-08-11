@@ -973,6 +973,8 @@
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
   - type: CargoOrderConsole
+    allowedGroups:
+    - market
   - type: BankClient
   - type: ActiveRadio
     channels:

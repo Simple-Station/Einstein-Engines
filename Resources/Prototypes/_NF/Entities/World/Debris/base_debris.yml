@@ -4,3 +4,6 @@
   components:
     - type: OwnedDebris
     - type: LocalityLoader
+    - type: Physics
+      angularDamping: 0.05
+      linearDamping: 0.1
