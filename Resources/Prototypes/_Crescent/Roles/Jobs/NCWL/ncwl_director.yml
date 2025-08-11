@@ -29,6 +29,13 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-medi-leader
+      - type: LanguageKnowledge
+        speaks:
+          - Dockta
+          - Tradeband
+        understands:
+          - Dockta
+          - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -84,11 +91,3 @@
     head: ClothingHeadHatNCWLBeretMedi
     eyes: ClothingEyesHudMedical
     ears: ClothingHeadsetNCWL
-
-- type: LanguageKnowledge
-  speaks:
-    - Dockta
-    - Tradeband
-  understands:
-    - Dockta
-    - Tradeband

@@ -29,6 +29,13 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-engi-leader
+      - type: LanguageKnowledge
+        speaks:
+          - Dockta
+          - Tradeband
+        understands:
+          - Dockta
+          - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -84,11 +91,3 @@
     head: ClothingHeadHatBeretEngineering
     ears: ClothingHeadsetNCWL
     eyes: ClothingEyesHudSecurity
-
-- type: LanguageKnowledge
-  speaks:
-    - Dockta
-    - Tradeband
-  understands:
-    - Dockta
-    - Tradeband
