@@ -4,7 +4,7 @@
   category: Belt
   cost: 0
   items:
-    - ClothingBeltSheathKhopesh
+    - ClothingBeltSheathKhopeshFilled
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBelt

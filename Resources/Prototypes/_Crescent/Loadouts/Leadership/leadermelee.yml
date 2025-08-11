@@ -1,31 +1,9 @@
 - type: loadout
-  id: LoadoutItemSabre
-  category: Items
-  cost: 2
-  items:
-    - CaptainSabre
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutLeaderMelee
-    - !type:CharacterJobRequirement
-      jobs:
-        - CommandantNCWL
-        - HomeguardLeaderNCWL
-        - IntelligenceOfficerNCSP
-        - LieutenantNCSP
-        - RingleaderNCSP
-        - KommandantATH
-        - LeutnantATH
-        - Antiquarian
-        - GliessianDockmaster
-        - GliessianSheriff
-
-- type: loadout
   id: LoadoutBeltSheathSabre
   category: Belt
-  cost: 2
+  cost: 0
   items:
-    - ClothingBeltSheath
+    - ClothingBeltSheathFilled
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBelt
