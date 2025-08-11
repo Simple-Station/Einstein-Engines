@@ -674,3 +674,27 @@
   materials:
     Plastic: 1000
     Steel: 1500
+
+- type: latheRecipe
+  id: ClothingBeltSheathSHIKatana
+  result: ClothingBeltSheathSHIKatana
+  completetime: 2
+  materials:
+    Cloth: 750
+
+- type: latheRecipe
+  id: SHIKatana
+  result: SHIKatana
+  completetime: 2
+  materials:
+    Steel: 1500
+    Silver: 500
+
+- type: latheRecipe
+  id: SHIShiverBlade
+  result: SHIShiverBlade
+  completetime: 2
+  materials:
+    AdvancedElectronics: 1000
+    Plasma: 500
+    WeakLaserLocus: 500

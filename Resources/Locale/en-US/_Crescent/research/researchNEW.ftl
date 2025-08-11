@@ -133,3 +133,4 @@ research-technology-shinohara-emitter = Deflector Technology
 research-technology-shinohara-gilgamesh = mR-815 Prototype Exosuit
 research-technology-shinohara-ballisticfab = TF-22 Armaments Foundry
 research-technology-shinohara-dermalarmor = KOURINDO-U Dermal Armor
+research-technology-shinohara-shiverblade = SHI-RIP9 Shiver Blade

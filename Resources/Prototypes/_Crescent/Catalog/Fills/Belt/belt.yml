@@ -344,3 +344,13 @@
       - id: Gauze
       - id: EmergencyMedipen
       - id: SpaceMedipen
+
+- type: entity
+  id: ClothingBeltSheathSHIKatanaFilled
+  parent: ClothingBeltSheathSHIKatana
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - SHIKatana
