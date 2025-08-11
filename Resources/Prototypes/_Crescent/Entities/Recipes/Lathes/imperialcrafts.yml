@@ -367,8 +367,8 @@
     Cloth: 750
 
 - type: latheRecipe
-  id: ClothingBeltSheathRapier
-  result: ClothingBeltSheathRapier
+  id: ClothingBeltSheathDSMRapier
+  result: ClothingBeltSheathDSMRapier
   completetime: 2
   materials:
     Cloth: 750
