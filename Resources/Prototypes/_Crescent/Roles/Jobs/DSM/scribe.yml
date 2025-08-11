@@ -28,6 +28,13 @@
       - type: ChatRank
         rank: crescent-rank-smarts
       - type: BibleUser
+      - type: LanguageKnowledge
+    speaks:
+      - Tradeband
+      - SolCommon
+    understands:
+      - Tradeband
+      - SolCommon
   access:
   - Command
   - Empire
@@ -48,12 +55,3 @@
     mask: ClothingMaskImperialAdjutantMask
     shoes: ClothingShoesBootsImperialClogs
     jumpsuit: ClothingUniformJumpsuitImperialDoctor
-
-- components:
-  - type: LanguageKnowledge
-    speaks:
-      - Tradeband
-      - SolCommon
-    understands:
-      - Tradeband
-      - SolCommon

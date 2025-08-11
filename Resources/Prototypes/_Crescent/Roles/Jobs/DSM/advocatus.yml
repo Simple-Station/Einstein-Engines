@@ -37,6 +37,16 @@
     components:
       - type: ChatRank
         rank: crescent-rank-advocatus
+      - type: LanguageKnowledge
+    speaks:
+      - HighImperial
+      - Tradeband
+      - SolCommon
+    understands:
+      - HighImperial
+      - Tradeband
+      - SolCommon
+
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -96,14 +106,3 @@
     outerClothing: ClothingOuterCoatImperialAdvocatus
     shoes: ClothingShoesBootsJack
     jumpsuit: ClothingUniformJumpsuitImperialNobleMale
-
-- components:
-  - type: LanguageKnowledge
-    speaks:
-      - HighImperial
-      - Tradeband
-      - SolCommon
-    understands:
-      - HighImperial
-      - Tradeband
-      - SolCommon

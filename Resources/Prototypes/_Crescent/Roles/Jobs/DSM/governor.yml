@@ -35,6 +35,15 @@
     components:
       - type: ChatRank
         rank: crescent-rank-baron
+      - type: LanguageKnowledge
+    speaks:
+      - HighImperial
+      - SolCommon
+      - Tradeband
+    understands:
+      - HighImperial
+      - Tradeband
+      - SolCommon
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -97,14 +106,3 @@
     outerClothing: ClothingOuterCoatImperialGovernor
     id: GovernorPDA
     ears: ClothingHeadsetEmpire
-
-- components:
-  - type: LanguageKnowledge
-    speaks:
-      - HighImperial
-      - SolCommon
-      - Tradeband
-    understands:
-      - HighImperial
-      - Tradeband
-      - SolCommon

@@ -34,6 +34,12 @@
     components:
       - type: ChatRank
         rank: crescent-rank-archmaester
+      - type: LanguageKnowledge
+    speaks:
+      - SolCommon
+    understands:
+      - Tradeband
+      - SolCommon
   access:
   - Command
   - Empire

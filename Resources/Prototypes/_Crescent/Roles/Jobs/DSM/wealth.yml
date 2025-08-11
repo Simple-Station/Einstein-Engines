@@ -34,6 +34,15 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ministry
+      - type: LanguageKnowledge
+    speaks:
+      - HighImperial
+      - Tradeband
+      - SolCommon
+    understands:
+      - HighImperial
+      - Tradeband
+      - SolCommon
   access:
   - Command
   - Empire
@@ -60,14 +69,3 @@
     ears: ClothingHeadsetEmpire
     pocket1: ImperialPassportBareLegit
     pocket2: SpaceCash10000
-
-- components:
-  - type: LanguageKnowledge
-    speaks:
-      - HighImperial
-      - Tradeband
-      - SolCommon
-    understands:
-      - HighImperial
-      - Tradeband
-      - SolCommon

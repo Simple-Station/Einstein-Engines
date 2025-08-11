@@ -32,6 +32,11 @@
       - type: CPRTraining
       - type: SurgerySpeedModifier
         speedModifier: 2
+      - type: LanguageKnowledge
+    speaks:
+      - SolCommon
+    understands:
+      - SolCommon
   access:
   - Command
   - Empire
@@ -51,10 +56,3 @@
     head: ClothingHeadHatImperialSurgeon
     shoes: ClothingShoesBootsImperialLaceup
     jumpsuit: ClothingUniformJumpsuitImperialSurgeon
-
-- components:
-  - type: LanguageKnowledge
-    speaks:
-      - SolCommon
-    understands:
-      - SolCommon

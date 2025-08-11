@@ -22,6 +22,16 @@
         - Blindness
         - Pacifist
         - WheelchairBound
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: LanguageKnowledge
+    speaks:
+      - SolCommon
+    understands:
+      - Tradeband
+      - SolCommon
+
   icon: "JobIconImperialForeman"
   requireAdminNotify: false
   supervisors: job-supervisors-imperial

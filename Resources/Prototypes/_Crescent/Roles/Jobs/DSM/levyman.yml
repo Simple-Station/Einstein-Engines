@@ -34,6 +34,12 @@
     components:
       - type: ChatRank
         rank: crescent-rank-manatarms
+      - type: LanguageKnowledge
+    speaks:
+      - SolCommon
+    understands:
+      - Tradeband
+      - SolCommon
   access:
   - Command
   - Empire
@@ -54,11 +60,3 @@
     jumpsuit: ClothingUniformJumpsuitImperialCombat
     outerClothing: ClothingOuterArmorImperialTrooperArmor
     gloves: ClothingHandsGlovesImperialLonggloves
-
-- components:
-  - type: LanguageKnowledge
-    speaks:
-      - SolCommon
-    understands:
-      - Tradeband
-      - SolCommon

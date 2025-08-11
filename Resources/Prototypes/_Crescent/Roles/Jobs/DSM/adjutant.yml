@@ -27,6 +27,15 @@
     components:
       - type: ChatRank
         rank: crescent-rank-adjutant
+      - type: LanguageKnowledge
+        speaks:
+          - HighImperial
+          - Tradeband
+          - SolCommon
+        understands:
+          - HighImperial
+          - Tradeband
+          - SolCommon
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -90,14 +99,3 @@
     pocket2: WeaponRevolverSnubnose
     ears: ClothingHeadsetEmpire
     gloves: ClothingHandsGlovesImperialAdjutantGloves
-
-- components:
-  - type: LanguageKnowledge
-    speaks:
-      - HighImperial
-      - Tradeband
-      - SolCommon
-    understands:
-      - HighImperial
-      - Tradeband
-      - SolCommon

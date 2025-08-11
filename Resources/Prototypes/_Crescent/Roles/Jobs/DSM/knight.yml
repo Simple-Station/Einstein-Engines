@@ -35,6 +35,16 @@
     components:
       - type: ChatRank
         rank: crescent-rank-knight
+      - type: LanguageKnowledge
+    speaks:
+      - HighImperial
+      - Tradeband
+      - SolCommon
+    understands:
+      - HighImperial
+      - Tradeband
+      - SolCommon
+
   access:
   - Command
   - Empire
@@ -59,14 +69,3 @@
     outerClothing: ClothingOuterArmorImperialArmorPrestige
     gloves: ClothingHandsGlovesImperialLonggloves
     pocket1: ImperialPassportBareLegit
-
-- components:
-  - type: LanguageKnowledge
-    speaks:
-      - HighImperial
-      - Tradeband
-      - SolCommon
-    understands:
-      - HighImperial
-      - Tradeband
-      - SolCommon

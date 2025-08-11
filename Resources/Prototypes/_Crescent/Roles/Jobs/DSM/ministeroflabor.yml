@@ -34,6 +34,15 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ministry
+      - type: LanguageKnowledge
+    speaks:
+      - HighImperial
+      - Tradeband
+      - SolCommon
+    understands:
+      - HighImperial
+      - Tradeband
+      - SolCommon
   access:
   - Command
   - Empire
@@ -56,14 +65,3 @@
     outerClothing: ClothingOuterCoatImperialParade
     id: CourtierPDA
     ears: ClothingHeadsetEmpire
-
-- components:
-  - type: LanguageKnowledge
-    speaks:
-      - HighImperial
-      - Tradeband
-      - SolCommon
-    understands:
-      - HighImperial
-      - Tradeband
-      - SolCommon
