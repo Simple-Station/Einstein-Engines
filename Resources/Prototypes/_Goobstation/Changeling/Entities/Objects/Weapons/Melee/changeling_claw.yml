@@ -26,8 +26,6 @@
   - type: Tool
     qualities:
     - Prying
-    soundHit:
-      path: /Audio/Weapons/bladeslice.ogg
   - type: Item
     size: Ginormous
     sprite: _Goobstation/Changeling/claw.rsi
