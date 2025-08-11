@@ -46,3 +46,10 @@
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesColorYellow
     ears: ClothingHeadsetNCWL
+
+- type: LanguageKnowledge
+  speaks:
+    - Dockta
+  understands:
+    - Dockta
+    - Tradeband

@@ -43,3 +43,9 @@
     belt: ClothingBeltUtilityFilled
     back: ClothingBackpackNCWL
     ears: ClothingHeadsetNCWL
+
+- type: LanguageKnowledge
+  speaks:
+    - Dockta
+  understands:
+    - Dockta

@@ -49,3 +49,10 @@
     gloves: ClothingHandsGlovesCombat
     head: ClothingHeadHelmetNCWLBasic
     ears: ClothingHeadsetNCWL
+
+- type: LanguageKnowledge
+  speaks:
+    - Dockta
+  understands:
+    - Dockta
+    - Tradeband

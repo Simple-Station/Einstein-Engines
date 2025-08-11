@@ -84,3 +84,11 @@
     head: ClothingHeadHatBeretEngineering
     ears: ClothingHeadsetNCWL
     eyes: ClothingEyesHudSecurity
+
+- type: LanguageKnowledge
+  speaks:
+    - Dockta
+    - Tradeband
+  understands:
+    - Dockta
+    - Tradeband
