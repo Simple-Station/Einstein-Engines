@@ -1,0 +1,31 @@
+- type: vessel
+  id: RollingReverie
+  name: DSM Rolling Reverie
+  description: A luxury iff-cloaked vessel, fielded exclusively by the House of Questions. Amis of House Valkenrath's seal is on the LPC itself.
+  price: 8000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/DSM/rolling_reverie.yml
+
+- type: gameMap
+  id: RollingReverie
+  mapName: 'DSM Rolling Reverie'
+  mapPath: /Maps/_Crescent/Shuttles/DSM/rolling_reverie.yml
+  minPlayers: 0
+  stations:
+    RollingReverie:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Rolling Reverie {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-interceptor
+        - type: VesselDescription
+          description: A ghost, haunting the enemies of the Mandate. This vessel is the cloaked dagger of Spymaster Amis De Mullein.

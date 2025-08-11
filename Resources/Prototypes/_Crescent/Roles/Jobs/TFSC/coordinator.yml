@@ -4,6 +4,8 @@
   description: job-description-coordinator
   playTimeTracker: JobCoordinatorNCSP
   requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 20000
     - !type:CharacterWhitelistRequirement
     - !type:FactionRequirement
       factionID: "TFSC"
