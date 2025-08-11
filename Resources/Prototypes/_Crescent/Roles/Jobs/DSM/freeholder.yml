@@ -6,6 +6,10 @@
   weight: 73
   startingGear: FreeholderGear
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Shadowkin
     - !type:FactionRequirement
         factionID: "DSM"
   alwaysUseSpawner: true

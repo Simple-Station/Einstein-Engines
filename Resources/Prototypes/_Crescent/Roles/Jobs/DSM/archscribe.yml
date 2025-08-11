@@ -14,6 +14,10 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Human
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Shadowkin
     - !type:CharacterOverallTimeRequirement
       min: 36000
     - !type:FactionRequirement

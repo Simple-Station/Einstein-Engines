@@ -9,6 +9,10 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Human
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Shadowkin
     - !type:FactionRequirement
       factionID: "DSM"
   weight: 86
