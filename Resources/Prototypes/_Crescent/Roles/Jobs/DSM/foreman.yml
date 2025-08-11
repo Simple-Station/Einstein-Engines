@@ -48,3 +48,10 @@
     jumpsuit: ClothingUniformJumpsuitImperialFreeholder
     gloves: ClothingHandsGlovesImperialWorkerGloves
 
+- type: LanguageKnowledge
+  speaks:
+    - Tradeband
+    - SolCommon
+  understands:
+    - Tradeband
+    - SolCommon

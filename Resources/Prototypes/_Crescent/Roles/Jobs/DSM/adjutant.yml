@@ -90,3 +90,13 @@
     pocket2: WeaponRevolverSnubnose
     ears: ClothingHeadsetEmpire
     gloves: ClothingHandsGlovesImperialAdjutantGloves
+
+- type: LanguageKnowledge
+  speaks:
+    - HighImperial
+    - Tradeband
+    - SolCommon
+  understands:
+    - HighImperial
+    - Tradeband
+    - SolCommon

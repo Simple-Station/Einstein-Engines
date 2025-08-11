@@ -56,3 +56,13 @@
     outerClothing: ClothingOuterCoatImperialParade
     id: CourtierPDA
     ears: ClothingHeadsetEmpire
+
+- type: LanguageKnowledge
+  speaks:
+    - HighImperial
+    - Tradeband
+    - SolCommon
+  understands:
+    - HighImperial
+    - Tradeband
+    - SolCommon

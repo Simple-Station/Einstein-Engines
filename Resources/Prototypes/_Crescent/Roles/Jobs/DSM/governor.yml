@@ -97,3 +97,11 @@
     outerClothing: ClothingOuterCoatImperialGovernor
     id: GovernorPDA
     ears: ClothingHeadsetEmpire
+
+- type: LanguageKnowledge
+  speaks:
+    - HighImperial
+  understands:
+    - HighImperial
+    - Tradeband
+    - SolCommon

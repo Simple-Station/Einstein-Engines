@@ -33,3 +33,10 @@
     id: FreeholderPDA
     ears: ClothingHeadsetEmpireCiv
     shoes: ClothingShoesBootsImperialLongboots
+
+- type: LanguageKnowledge
+  speaks:
+    - SolCommon
+  understands:
+    - Tradeband
+    - SolCommon

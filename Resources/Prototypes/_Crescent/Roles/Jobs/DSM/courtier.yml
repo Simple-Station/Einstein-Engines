@@ -45,3 +45,12 @@
     shoes: ClothingShoesBootsImperialLaceup
     id: CourtierPDA
     ears: ClothingHeadsetEmpire
+
+- type: LanguageKnowledge
+  speaks:
+    - HighImperial
+    - SolCommon
+  understands:
+    - HighImperial
+    - Tradeband
+    - SolCommon

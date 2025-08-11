@@ -51,3 +51,9 @@
     head: ClothingHeadHatImperialSurgeon
     shoes: ClothingShoesBootsImperialLaceup
     jumpsuit: ClothingUniformJumpsuitImperialSurgeon
+
+- type: LanguageKnowledge
+  speaks:
+    - SolCommon
+  understands:
+    - SolCommon

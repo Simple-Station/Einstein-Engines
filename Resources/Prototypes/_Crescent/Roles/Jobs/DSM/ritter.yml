@@ -58,3 +58,12 @@
     head: ClothingHeadHelmetImperialRitter
     outerClothing: ClothingOuterCoatImperialRitter
     gloves: ClothingHandsGlovesImperialLonggloves
+
+- type: LanguageKnowledge
+  speaks:
+    - HighImperial
+    - SolCommon
+  understands:
+    - HighImperial
+    - Tradeband
+    - SolCommon

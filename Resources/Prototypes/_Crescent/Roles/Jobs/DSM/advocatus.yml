@@ -96,3 +96,13 @@
     outerClothing: ClothingOuterCoatImperialAdvocatus
     shoes: ClothingShoesBootsJack
     jumpsuit: ClothingUniformJumpsuitImperialNobleMale
+
+- type: LanguageKnowledge
+  speaks:
+    - HighImperial
+    - Tradeband
+    - SolCommon
+  understands:
+    - HighImperial
+    - Tradeband
+    - SolCommon

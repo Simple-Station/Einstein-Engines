@@ -48,3 +48,11 @@
     mask: ClothingMaskImperialAdjutantMask
     shoes: ClothingShoesBootsImperialClogs
     jumpsuit: ClothingUniformJumpsuitImperialDoctor
+
+- type: LanguageKnowledge
+  speaks:
+    - Tradeband
+    - SolCommon
+  understands:
+    - Tradeband
+    - SolCommon

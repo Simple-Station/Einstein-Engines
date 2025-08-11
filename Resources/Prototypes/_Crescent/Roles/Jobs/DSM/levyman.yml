@@ -54,3 +54,10 @@
     jumpsuit: ClothingUniformJumpsuitImperialCombat
     outerClothing: ClothingOuterArmorImperialTrooperArmor
     gloves: ClothingHandsGlovesImperialLonggloves
+
+- type: LanguageKnowledge
+  speaks:
+    - SolCommon
+  understands:
+    - Tradeband
+    - SolCommon

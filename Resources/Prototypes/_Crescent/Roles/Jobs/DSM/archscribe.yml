@@ -56,3 +56,13 @@
     mask: ClothingMaskImperialAdjutantMask
     shoes: ClothingShoesBootsImperialLaceup
     jumpsuit: ClothingUniformJumpsuitImperialArchmaester
+
+- type: LanguageKnowledge
+  speaks:
+    - HighImperial
+    - Tradeband
+    - SolCommon
+  understands:
+    - HighImperial
+    - Tradeband
+    - SolCommon
