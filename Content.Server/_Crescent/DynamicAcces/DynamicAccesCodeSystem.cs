@@ -221,8 +221,7 @@ public sealed class DynamicCodeSystem : SharedDynamicCodeSystem
             instancesPerKey[key]--;
             if (instancesPerKey[key] <= 0)
             {
-                instancesPerKey.Remove(key);
-                freeKeys.Add(key);
+                releaseKey(key);
             }
         }
     }
@@ -235,6 +234,7 @@ public sealed class DynamicCodeSystem : SharedDynamicCodeSystem
         if(!component.mappedCodes.ContainsKey(identifier))
             component.mappedCodes.Add(identifier, new HashSet<int>());
         component.mappedCodes[identifier].Add(key);
+        instancesPerKey[key]++;
     }
 
     public void AddKeyToComponent(DynamicCodeHolderComponent component, HashSet<int> keys, string? identifier)
@@ -263,9 +263,7 @@ public sealed class DynamicCodeSystem : SharedDynamicCodeSystem
         instancesPerKey[key]--;
         if (instancesPerKey[key] <= 0)
         {
-            instancesPerKey.Remove(key);
             releaseKey(key);
-
         }
         string? containedIn = null;
         if (identifier is not null && component.mappedCodes.ContainsKey(identifier) && component.mappedCodes[identifier].Contains(key))
@@ -294,6 +292,7 @@ public sealed class DynamicCodeSystem : SharedDynamicCodeSystem
     public void releaseKey(int key)
     {
         existingKeys.Remove(key);
+        instancesPerKey.Remove(key);
         freeKeys.Add(key);
 
     }
@@ -314,6 +313,7 @@ public sealed class DynamicCodeSystem : SharedDynamicCodeSystem
         }
 
         existingKeys.Add(key);
+        instancesPerKey.Add(key,0);
         return key;
 
     }

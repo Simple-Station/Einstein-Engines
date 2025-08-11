@@ -2,7 +2,7 @@
   id: ConscriptSubmachinegunNCWL
   name: job-name-conscript-ncwl-smg
   description: job-description-conscript-ncwl-smg #change me later
-  playTimeTracker: ConscriptJobSubmachinegunNCWL
+  playTimeTracker: ConscriptNCWL
   weight: 3
   startingGear: ConscriptSubmachinegunNCWLGear
   alwaysUseSpawner: true
@@ -56,7 +56,7 @@
     pocket2: ExGrenade
     ears: ClothingHeadsetNCWL
     eyes: ClothingEyesGlassesNCWL
-    id: SanitarPDA
+    id: NCWLHomeguardSoldatPDA
     suitstorage: WeaponSubMachineGunNCWLPartisan
     gloves: ClothingHandsGlovesCombat
   inhand:

@@ -2,7 +2,7 @@
   id: ConscriptDoctorDSM
   name: job-name-conscript-dsm-doctor
   description: job-description-conscript-dsm-doctor
-  playTimeTracker: ConscriptJobSurgeonDSM
+  playTimeTracker: ConscriptDSM
   weight: 7
   startingGear: ConscriptDoctorDSMGear
   alwaysUseSpawner: true
@@ -36,7 +36,6 @@
   - Mercenary # Frontier
   - Captain # Frontier
   - Empire
-  - DSMArmory
 
 - type: startingGear
   id: ConscriptDoctorDSMGear

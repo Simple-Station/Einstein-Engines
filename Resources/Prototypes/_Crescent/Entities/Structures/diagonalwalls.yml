@@ -14,7 +14,8 @@
           !type:PolygonShape
             vertices:
             - "-0.5,-0.5"
-            - "-0.5, 0.3"
+            - "-0.5,-0.2"
+            - "0.2,0.5"
             - "0.5,0.5"
             - "0.5,-0.5"
         mask:
@@ -28,7 +29,7 @@
 
 - type: entity
   parent: [BaseWallCurved, WallReinforced]
-  id: WallReinforcedCurved
+  id: WallReinforcedDiagonalCurved
   name: reinforced wall
   suffix: curved
   components:
@@ -36,17 +37,13 @@
     drawdepth: Walls
     sprite: Structures/Walls/reinforced_diagonalcurved.rsi
     state: state0
-  - type: IconSmooth
-    mode: Diagonal
-    key: walls
-    base: state
   - type: Icon
     sprite:  Structures/Walls/reinforced_diagonalcurved.rsi
     state: state0
 
 - type: entity
   parent: [BaseWallCurved, WallReinforced]
-  id: WallReinforcedHollow
+  id: WallReinforcedDiagonalHollow
   name: reinforced wall
   suffix: hollow
   components:
@@ -54,21 +51,171 @@
     drawdepth: Walls
     sprite: Structures/Walls/reinforced_diagonalhollow.rsi
     state: state0
-  - type: IconSmooth
-    mode: Diagonal
-    key: walls
-    base: state
   - type: Icon
     sprite: Structures/Walls/reinforced_diagonalhollow.rsi
     state: state0
 
-#mining
+# mining
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallCurved, WallMining]
+  id: WallMiningDiagonalCurved
+  name: wall
+  suffix: curved
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: Structures/Walls/mining_diagonalcurved.rsi
+    state: state0
+  - type: Icon
+    sprite: Structures/Walls/mining_diagonalcurved.rsi
+    state: state0
+
+- type: entity
+  parent: [BaseWallCurved, WallMining]
+  id: WallMiningDiagonalHollow
+  name: wall
+  suffix: hollow
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: Structures/Walls/mining_diagonalhollow.rsi
+    state: state0
+  - type: Icon
+    sprite: Structures/Walls/mining_diagonalhollow.rsi
+    state: state0
+
+# plastitanium
+
+- type: entity
+  parent: [BaseWallCurved, WallPlastitanium]
+  id: WallPlastitaniumDiagonalCurved
+  name: plastitanium wall
+  suffix: curved
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: Structures/Walls/plastitanium_diagonalcurved.rsi
+    state: state0
+  - type: Icon
+    sprite: Structures/Walls/plastitanium_diagonalcurved.rsi
+    state: state0
+  - type: Reflect
+    reflectProb: 0.15
+
+- type: entity
+  parent: [BaseWallCurved, WallPlastitanium]
+  id: WallPlastitaniumDiagonalHollow
+  name: plastitanium wall
+  suffix: hollow
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: Structures/Walls/plastitanium_diagonalhollow.rsi
+    state: state0
+  - type: Icon
+    sprite: Structures/Walls/plastitanium_diagonalhollow.rsi
+    state: state0
+  - type: Reflect
+    reflectProb: 0.15
+
+# shuttle
+
+- type: entity
+  parent: [BaseWallCurved, WallShuttle]
+  id: WallShuttleDiagonalCurved
+  name: shuttle wall
+  suffix: curved
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: Structures/Walls/shuttle_diagonalcurved.rsi
+    state: state0
+  - type: Icon
+    sprite: Structures/Walls/shuttle_diagonalcurved.rsi
+    state: state0
+
+- type: entity
+  parent: [BaseWallCurved, WallShuttle]
+  id: WallShuttleDiagonalHollow
+  name: shuttle wall
+  suffix: hollow
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: Structures/Walls/shuttle_diagonalcurved.rsi
+    state: state0
+  - type: Icon
+    sprite: Structures/Walls/shuttle_diagonalcurved.rsi
+    state: state0
+
+# solid
+
+- type: entity
+  parent: [BaseWallCurved, WallSolid]
+  id: WallSolidDiagonalCurved
+  name: solid wall
+  suffix: curved
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: Structures/Walls/solid_diagonalcurved.rsi
+    state: state0
+  - type: Icon
+    sprite: Structures/Walls/solid_diagonalcurved.rsi
+    state: state0
+
+- type: entity
+  parent: [BaseWallCurved, WallSolid]
+  id: WallSolidDiagonalHollow
+  name: solid wall
+  suffix: hollow
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: Structures/Walls/solid_diagonalhollow.rsi
+    state: state0
+  - type: Icon
+    sprite: Structures/Walls/solid_diagonalhollow.rsi
+    state: state0
+
+# jackal
+
+- type: entity
+  parent: [BaseWallCurved, WallJackal]
+  id: WallJackalDiagonalCurved
+  name: jackal hull
+  suffix: curved
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: Structures/Walls/solid_diagonalcurved.rsi
+    state: state0
+  - type: Icon
+    sprite: Structures/Walls/solid_diagonalcurved.rsi
+    state: state0
+
+- type: entity
+  parent: [BaseWallCurved, WallJackal]
+  id: WallJackalDiagonalHollow
+  name: jackal hull
+  suffix: hollow
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: Structures/Walls/solid_diagonalhollow.rsi
+    state: state0
+  - type: Icon
+    sprite: Structures/Walls/solid_diagonalhollow.rsi
+    state: state0
+
+# DO NOT USE ANY OF THE BELOW PROTOTYPES; INCLUDED FOR BACKWARDS COMPATIBILITY ONLY
+
+- type: entity
+  parent: [BaseWallDiagonal, WallMining]
   id: WallMiningDiagonalHollowNortheast
   name: wall
-  suffix: NortheastHollow
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -87,10 +234,10 @@
     state: state0
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallMining]
   id: WallMiningDiagonalHollowNorthwest
   name: wall
-  suffix: NorthwestHollow
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -109,10 +256,10 @@
     state: state0
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallMining]
   id: WallMiningDiagonalHollowSoutheast
   name: wall
-  suffix: SoutheastHollow
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -131,10 +278,10 @@
     state: state0
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallMining]
   id: WallMiningDiagonalHollowSouthwest
   name: wall
-  suffix: SouthwestHollow
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -153,10 +300,10 @@
     state: state0
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallMining]
   id: WallMiningDiagonalCurvedNortheast
   name: wall
-  suffix: NortheastCurved
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -175,10 +322,10 @@
     state: state0
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallMining]
   id: WallMiningDiagonalCurvedNorthwest
   name: wall
-  suffix: NorthwestCurved
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -197,10 +344,10 @@
     state: state0
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallMining]
   id: WallMiningDiagonalCurvedSouthwest
   name: wall
-  suffix: SouthwestCurved
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -219,10 +366,10 @@
     state: state0
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallMining]
   id: WallMiningDiagonalCurvedSoutheast
   name: wall
-  suffix: SoutheastCurved
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -240,13 +387,12 @@
     sprite: Structures/Walls/mining_diagonalcurvedsoutheast.rsi
     state: state0
 
-#plastitanium
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallPlastitanium]
   id: WallPlastitaniumDiagonalNortheastHollow
   name: plastitanium wall
-  suffix: NortheastHollow
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -267,10 +413,10 @@
     reflectProb: 0.15
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallPlastitanium]
   id: WallPlastitaniumDiagonalNorthwestHollow
   name: plastitanium wall
-  suffix: NorthwestHollow
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -291,10 +437,10 @@
     reflectProb: 0.15
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallPlastitanium]
   id: WallPlastitaniumDiagonalSouthwestHollow
   name: plastitanium wall
-  suffix: SouthwestHollow
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -315,10 +461,10 @@
     reflectProb: 0.15
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallPlastitanium]
   id: WallPlastitaniumDiagonalSoutheastHollow
   name: plastitanium wall
-  suffix: SoutheastHollow
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -339,10 +485,10 @@
     reflectProb: 0.15
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallPlastitanium]
   id: WallPlastitaniumDiagonalSouthwestCurved
   name: plastitanium wall
-  suffix: SouthwestCurved
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -363,10 +509,10 @@
     reflectProb: 0.15
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallPlastitanium]
   id: WallPlastitaniumDiagonalSoutheastCurved
   name: plastitanium wall
-  suffix: SoutheastCurved
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -387,10 +533,10 @@
     reflectProb: 0.15
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallPlastitanium]
   id: WallPlastitaniumDiagonalNortheastCurved
   name: plastitanium wall
-  suffix: NortheastCurved
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -411,10 +557,10 @@
     reflectProb: 0.15
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallPlastitanium]
   id: WallPlastitaniumDiagonalNorthwestCurved
   name: plastitanium wall
-  suffix: NorthwestCurved
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -434,13 +580,11 @@
   - type: Reflect
     reflectProb: 0.15
 
-#shuttle
-
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallShuttle]
   id: WallShuttleDiagonalNortheastCurved
   name: shuttle wall
-  suffix: NortheastCurved
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -459,10 +603,10 @@
     state: state0
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallShuttle]
   id: WallShuttleDiagonalNorthwestCurved
   name: shuttle wall
-  suffix: NorthwestCurved
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -481,10 +625,10 @@
     state: state0
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallShuttle]
   id: WallShuttleDiagonalSouthwestCurved
   name: shuttle wall
-  suffix: SouthwestCurved
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -503,10 +647,10 @@
     state: state0
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallShuttle]
   id: WallShuttleDiagonalSoutheastCurved
   name: shuttle wall
-  suffix: SoutheastCurved
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -525,10 +669,10 @@
     state: state0
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallShuttle]
   id: WallShuttleDiagonalSoutheastHollow
   name: shuttle wall
-  suffix: SoutheastHollow
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -547,10 +691,10 @@
     state: state0
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallShuttle]
   id: WallShuttleDiagonalSouthwestHollow
   name: shuttle wall
-  suffix: SouthwestHollow
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -569,10 +713,10 @@
     state: state0
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallShuttle]
   id: WallShuttleDiagonalNorthwestHollow
   name: shuttle wall
-  suffix: NorthwestHollow
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -591,10 +735,10 @@
     state: state0
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallShuttle]
   id: WallShuttleDiagonalNortheastHollow
   name: shuttle wall
-  suffix: NortheastHollow
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -615,10 +759,10 @@
 #solid
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallSolid]
   id: WallSolidDiagonalNortheastCurved
   name: solid wall
-  suffix: NortheastCurved
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -637,10 +781,10 @@
     state: state0
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallSolid]
   id: WallSolidDiagonalNorthwestCurved
   name: solid wall
-  suffix: NorthwestCurved
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -659,10 +803,10 @@
     state: state0
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallSolid]
   id: WallSolidDiagonalSouthwestCurved
   name: solid wall
-  suffix: SouthwestCurved
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -681,10 +825,10 @@
     state: state0
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallSolid]
   id: WallSolidDiagonalSoutheastCurved
   name: solid wall
-  suffix: SoutheastCurved
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -703,10 +847,10 @@
     state: state0
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallSolid]
   id: WallSolidDiagonalNortheastHollow
   name: solid wall
-  suffix: NortheastHollow
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -725,10 +869,10 @@
     state: state0
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallSolid]
   id: WallSolidDiagonalNorthwestHollow
   name: solid wall
-  suffix: NorthwestHollow
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -747,10 +891,10 @@
     state: state0
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallSolid]
   id: WallSolidDiagonalSouthwestHollow
   name: solid wall
-  suffix: SouthwestHollow
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -769,10 +913,10 @@
     state: state0
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallSolid]
   id: WallSolidDiagonalSoutheastHollow
   name: solid wall
-  suffix: SoutheastHollow
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -793,10 +937,10 @@
 #jackal
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallJackal]
   id: WallJackalDiagonalNortheastCurved
   name: jackal hull
-  suffix: NortheastCurved
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -828,10 +972,10 @@
             acts: [ "Destruction" ]
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallJackal]
   id: WallJackalDiagonalNorthwestCurved
   name: jackal hull
-  suffix: NorthwestCurved
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -863,10 +1007,10 @@
             acts: [ "Destruction" ]
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallJackal]
   id: WallJackalDiagonalSouthwestCurved
   name: jackal hull
-  suffix: SouthwestCurved
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -898,10 +1042,10 @@
             acts: [ "Destruction" ]
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallJackal]
   id: WallJackalDiagonalSoutheastCurved
   name: jackal hull
-  suffix: SoutheastCurved
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -933,10 +1077,10 @@
             acts: [ "Destruction" ]
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallJackal]
   id: WallJackalDiagonalNortheastHollow
   name: jackal hull
-  suffix: NortheastHollow
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -968,10 +1112,10 @@
             acts: [ "Destruction" ]
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallJackal]
   id: WallJackalDiagonalNorthwestHollow
   name: jackal hull
-  suffix: NorthwestHollow
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -1003,10 +1147,10 @@
             acts: [ "Destruction" ]
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallJackal]
   id: WallJackalDiagonalSouthwestHollow
   name: jackal hull
-  suffix: SouthwestHollow
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -1038,10 +1182,10 @@
             acts: [ "Destruction" ]
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: [BaseWallDiagonal, WallJackal]
   id: WallJackalDiagonalSoutheastHollow
   name: jackal hull
-  suffix: SoutheastHollow
+  suffix: DO NOT MAP
   placement:
     mode: SnapgridCenter
     snap:

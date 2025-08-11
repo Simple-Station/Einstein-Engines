@@ -2,7 +2,7 @@
   id: ConscriptShipCaptainNCWL
   name: job-name-conscript-ncwl-ship-captain
   description: job-description-conscript-ncwl-ship-captain
-  playTimeTracker: ConscriptJobShipCaptainNCWL
+  playTimeTracker: ConscriptNCWL
   requirements:
     - !type:FactionRequirement
       factionID: "NCWL"
@@ -76,7 +76,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitNCWLCommunications
     neck: ClothingNeckIFFOrange
-    id: AdministratorPDA
+    id: NCWLHomeguardLeaderPDA
     ears: ClothingHeadsetNCWL
     shoes: ClothingShoesBootsMagNCWL
     outerClothing: ClothingOuterCoatJacketJamrock

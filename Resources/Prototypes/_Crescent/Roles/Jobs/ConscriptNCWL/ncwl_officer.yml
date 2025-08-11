@@ -2,7 +2,7 @@
   id: ConscriptOfficerNCWL
   name: job-name-conscript-ncwl-officer
   description: job-description-conscript-ncwl-officer
-  playTimeTracker: ConscriptJobOfficerNCWL
+  playTimeTracker: ConscriptNCWL
   requirements:
     - !type:FactionRequirement
       factionID: "NCWL"
@@ -76,7 +76,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitNCWLKommissar
     neck: ClothingNeckIFFOrange
-    id: KommissarPDA
+    id: NCWLHomeguardSquadCaptainPDA
     ears: ClothingHeadsetNCWL
     mask: ClothingMaskPilot
     shoes: ClothingShoesBootsMagNCWL

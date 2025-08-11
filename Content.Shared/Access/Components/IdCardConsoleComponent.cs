@@ -78,7 +78,6 @@ public sealed partial class IdCardConsoleComponent : Component
         "Quartermaster",
         "Reporter", // DeltaV - Add Reporter access
         "Research",
-        "ResearchDirector",
         "Salvage",
         "Security",
         "Service",

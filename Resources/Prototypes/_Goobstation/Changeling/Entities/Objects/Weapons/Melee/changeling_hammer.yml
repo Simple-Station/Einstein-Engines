@@ -9,18 +9,18 @@
     sprite: _Goobstation/Changeling/hammer.rsi
     state: icon
   - type: MeleeWeapon
-    wideAnimationRotation: -90
-    attackRate: 1.35
+    wideAnimationRotation: -45
+    attackRate: 1.6
+    heavyStaminaCost: 12
+    range: 1.5
     damage:
       types:
-        Blunt: 20
+        Blunt: 60
         Structural: 50
-    heavyStaminaCost: 10
-    heavyRangeModifier: 1.2
-    heavyRateModifier: 2.5
-    heavyDamageBaseModifier: 1.5
-    maxTargets: 12
-    angle: 150
+    heavyDamageBaseModifier: 1
+    heavyRateModifier: 1.75
+    maxTargets: 4
+    angle: 90
     soundHit:
       collection: MetalThud
   - type: Item
@@ -30,7 +30,7 @@
   - type: DisarmMalus
     malus: 0
   - type: MeleeThrowOnHit
-    speed: 5
-    lifetime: 0.5
+    speed: 6
+    lifetime: 0.25
   - type: KnockdownOnHit
     duration: 0

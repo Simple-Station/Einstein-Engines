@@ -18,9 +18,9 @@
             proper: true
         - type: StationJobs
           overflowJobs: []
-          availableJobs:
+          availableJobs: #20 total
             RingleaderNCSP: [ 1, 1 ]
             LieutenantNCSP: [ 1, 1 ]
-            InfanteerNCSP: [ 50, 50 ]
-            TechnicianNCSP: [ 15, 15 ]
-            RipperdocNCSP: [ 3, 3 ]
+            InfanteerNCSP: [ 10, 10 ]
+            TechnicianNCSP: [ 4, 4 ]
+            RipperdocNCSP: [ 4, 4 ]

@@ -28,7 +28,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      collection: Revolver_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/revolver_1/revolver_gunshot_2.ogg
     fireOnDropChance: 0.5
   - type: UseDelay
     delay: 0.66
@@ -171,7 +171,7 @@
   - type: Gun
     fireRate: 3
     soundGunshot:
-      collection: Revolver_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/revolver_1/revolver_gunshot_2.ogg
 
 - type: entity
   name: NCWL T-43 Python .45
@@ -189,7 +189,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      collection: Revolver_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/revolver_1/revolver_gunshot_2.ogg
       params:
         volume: 2.25
     fireOnDropChance: 0.3

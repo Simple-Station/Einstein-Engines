@@ -40,8 +40,8 @@
     baseWalkSpeed: 0.5
     baseSprintSpeed: 0.5
     weightlessFriction: 0.4
-    weightlessAcceleration: 7
-    weightlessModifier: 7.5
+    weightlessAcceleration: 0.6
+    weightlessModifier: 150
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: RadarConsole # doesn't work atm for mechs, will port soon
@@ -92,8 +92,8 @@
     baseWalkSpeed: 0.5
     baseSprintSpeed: 0.5
     weightlessFriction: 0.4
-    weightlessAcceleration: 2.5
-    weightlessModifier: 5.8
+    weightlessAcceleration: 0.4
+    weightlessModifier: 100
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: RadarConsole # doesn't work atm for mechs, will port soon
@@ -158,8 +158,8 @@
     baseWalkSpeed: 0.5
     baseSprintSpeed: 0.5
     weightlessFriction: 0.3
-    weightlessAcceleration: 7.5
-    weightlessModifier: 7.9
+    weightlessAcceleration: 0.6
+    weightlessModifier: 150
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: RadarConsole # doesn't work atm for mechs, will port soon
@@ -224,8 +224,8 @@
     baseWalkSpeed: 0.5
     baseSprintSpeed: 0.5
     weightlessFriction: 0.3
-    weightlessAcceleration: 2.5
-    weightlessModifier: 7.5
+    weightlessAcceleration: 0.5
+    weightlessModifier: 100
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: RadarConsole # doesn't work atm for mechs, will port soon
@@ -276,8 +276,8 @@
     baseWalkSpeed: 0.5
     baseSprintSpeed: 0.5
     weightlessFriction: 0.3
-    weightlessAcceleration: 3.5
-    weightlessModifier: 6.5
+    weightlessAcceleration: 0.4
+    weightlessModifier: 100
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: RadarConsole # doesn't work atm for mechs, will port soon
@@ -328,8 +328,8 @@
     baseWalkSpeed: 0.5
     baseSprintSpeed: 0.5
     weightlessFriction: 0.3
-    weightlessAcceleration: 7.5
-    weightlessModifier: 8.5
+    weightlessAcceleration: 0.6
+    weightlessModifier: 150
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: RadarConsole # doesn't work atm for mechs, will port soon

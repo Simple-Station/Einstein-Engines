@@ -1,25 +1,37 @@
 #ncwl
 
 - type: playTimeTracker
-  id: JobKommissarNCWL
+  id: JobFactionLeaderNCWL
 
 - type: playTimeTracker
-  id: JobSanitarNCWL
+  id: JobHomeguardLeaderNCWL
 
 - type: playTimeTracker
-  id: JobArtificerNCWL
+  id: JobHomeguardSquadCaptainNCWL
 
 - type: playTimeTracker
-  id: JobDoktorNCWL
+  id: JobHomeguardSoldatNCWL
 
 - type: playTimeTracker
-  id: JobAdministratorNCWL
+  id: JobMedicalLeaderNCWL
 
 - type: playTimeTracker
-  id: JobKapitanNCWL
+  id: JobMedicalWorkerNCWL
 
 - type: playTimeTracker
-  id: JobKadetNCWL
+  id: JobLogisticLeaderNCWL
+
+- type: playTimeTracker
+  id: JobLogisticWorkerNCWL
+
+- type: playTimeTracker
+  id: JobEngineeringLeaderNCWL
+
+- type: playTimeTracker
+  id: JobEngineeringWorkerNCWL
+
+- type: playTimeTracker
+  id: JobWorkerNCWL
 
 #syndicate
 
@@ -267,3 +279,9 @@
 
 - type: playTimeTracker
   id: JobGliessDockmaster
+
+- type: playTimeTracker
+  id: ConscriptDSM
+
+- type: playTimeTracker
+  id: ConscriptNCWL

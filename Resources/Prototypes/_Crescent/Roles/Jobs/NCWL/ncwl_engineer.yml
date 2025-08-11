@@ -1,0 +1,48 @@
+- type: job
+  id: EngineerNCWL
+  name: job-name-ncwl-engineering-mechanic
+  description: job-description-ncwl-engineering-mechanic
+  playTimeTracker: JobEngineeringWorkerNCWL
+  weight: 4
+  startingGear: EngineerNCWLGear
+  alwaysUseSpawner: true
+  icon: "JobIconNCWLEngineeringWorker"
+  requirements:
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
+  requireAdminNotify: false
+  supervisors: job-supervisors-ncwl-sindikat
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ncwl-engi-worker
+  access:
+  - Command
+  - Maintenance
+  - Service
+  - NCWLGeneral
+  - NCWLJail
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: EngineerNCWLGear
+  equipment:
+    shoes: ClothingShoesBootsSalvage
+    jumpsuit: ClothingUniformJumpsuitNCWLArtificer
+    id: NCWLEngineeringWorkerPDA
+    belt: ClothingBeltUtilityFilled
+    back: ClothingBackpackNCWL
+    gloves: ClothingHandsGlovesColorYellow
+    ears: ClothingHeadsetNCWL

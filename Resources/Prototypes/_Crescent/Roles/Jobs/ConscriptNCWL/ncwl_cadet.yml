@@ -2,7 +2,7 @@
   id: ConscriptCadetNCWL
   name: job-name-conscript-ncwl-cadet
   description: job-description-conscript-ncwl-cadet
-  playTimeTracker: ConscriptJobCadetNCWL
+  playTimeTracker: ConscriptNCWL
   weight: 1
   startingGear: ConscriptCadetNCWLGear
   alwaysUseSpawner: true
@@ -55,7 +55,7 @@
     pocket1: DoubleEmergencyOxygenTankFilled
     pocket2: GrenadeFlashBang
     ears: ClothingHeadsetNCWL
-    id: KadetPDA
+    id: NCWLHomeguardSoldatPDA
     suitstorage: WeaponSniperNCWLNovomosin
     gloves: ClothingHandsGlovesCombat
     eyes: ClothingEyesGlassesNCWL

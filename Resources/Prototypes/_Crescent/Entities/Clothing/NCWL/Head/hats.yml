@@ -63,3 +63,14 @@
     sprite: _Crescent/Clothing/NCWL/Head/ncwlpeakedcap.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/NCWL/Head/ncwlpeakedcap.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatNCWLBeretMedi
+  name: director's beret
+  description: An officer's beret in NCWL colors. Has the golden communard insignia on the front.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/Head/vrachevberet.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/Head/vrachevberet.rsi

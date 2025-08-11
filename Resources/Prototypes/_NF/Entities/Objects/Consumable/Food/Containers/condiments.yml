@@ -16,7 +16,6 @@
   - type: Spillable
     solution: food
   - type: SolutionTransfer
-    playTransferSound: true
     canChangeTransferAmount: true
     minTransferAmount: 5
     maxTransferAmount: 30
