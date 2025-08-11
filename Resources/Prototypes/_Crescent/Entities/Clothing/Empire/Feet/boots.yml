@@ -60,7 +60,7 @@
   description: Combat magnetic boots, often used during extravehicular activity to ensure the user remains safely attached to the vehicle.
   components:
   - type: Sprite
-    sprite: _Crescent/Clothing/Empire/Feet/magboots_dsm.rsi
+    sprite: _Crescent/Clothing/Empire/Feet/mandatemagboots.rsi
     state: icon
   - type: Clothing
     sprite: _Crescent/Clothing/Empire/Feet/mandatemagboots.rsi
