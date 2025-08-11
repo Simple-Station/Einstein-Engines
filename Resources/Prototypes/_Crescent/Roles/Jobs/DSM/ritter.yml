@@ -33,16 +33,16 @@
   special:
   - !type:AddComponentSpecial
     components:
-    - type: ChatRank
-      rank: crescent-rank-knight
-    - type: LanguageKnowledge
-      speaks:
-        - HighImperial
-        - SolCommon
-      understands:
-        - HighImperial
-        - Tradeband
-        - SolCommon
+      - type: ChatRank
+        rank: crescent-rank-knight
+      - type: LanguageKnowledge
+        speaks:
+          - HighImperial
+          - SolCommon
+        understands:
+          - HighImperial
+          - Tradeband
+          - SolCommon
 
   access:
   - Command
