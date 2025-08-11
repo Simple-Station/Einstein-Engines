@@ -55,9 +55,10 @@
     outerClothing: ClothingOuterArmorImperialTrooperArmor
     gloves: ClothingHandsGlovesImperialLonggloves
 
-- type: LanguageKnowledge
-  speaks:
-    - SolCommon
-  understands:
-    - Tradeband
-    - SolCommon
+- components:
+  - type: LanguageKnowledge
+    speaks:
+      - SolCommon
+    understands:
+      - Tradeband
+      - SolCommon

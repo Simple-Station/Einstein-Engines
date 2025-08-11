@@ -61,12 +61,13 @@
     pocket1: ImperialPassportBareLegit
     pocket2: SpaceCash10000
 
-- type: LanguageKnowledge
-  speaks:
-    - HighImperial
-    - Tradeband
-    - SolCommon
-  understands:
-    - HighImperial
-    - Tradeband
-    - SolCommon
+- components:
+  - type: LanguageKnowledge
+    speaks:
+      - HighImperial
+      - Tradeband
+      - SolCommon
+    understands:
+      - HighImperial
+      - Tradeband
+      - SolCommon

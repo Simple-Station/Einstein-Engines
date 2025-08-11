@@ -98,12 +98,13 @@
     id: GovernorPDA
     ears: ClothingHeadsetEmpire
 
-- type: LanguageKnowledge
-  speaks:
-    - HighImperial
-    - SolCommon
-    - Tradeband
-  understands:
-    - HighImperial
-    - Tradeband
-    - SolCommon
+- components:
+  - type: LanguageKnowledge
+    speaks:
+      - HighImperial
+      - SolCommon
+      - Tradeband
+    understands:
+      - HighImperial
+      - Tradeband
+      - SolCommon

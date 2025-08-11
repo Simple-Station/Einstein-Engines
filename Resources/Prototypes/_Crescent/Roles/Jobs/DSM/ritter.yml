@@ -59,11 +59,12 @@
     outerClothing: ClothingOuterCoatImperialRitter
     gloves: ClothingHandsGlovesImperialLonggloves
 
-- type: LanguageKnowledge
-  speaks:
-    - HighImperial
-    - SolCommon
-  understands:
-    - HighImperial
-    - Tradeband
-    - SolCommon
+- components:
+  - type: LanguageKnowledge
+    speaks:
+      - HighImperial
+      - SolCommon
+    understands:
+      - HighImperial
+      - Tradeband
+      - SolCommon

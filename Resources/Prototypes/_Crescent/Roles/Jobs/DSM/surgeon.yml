@@ -52,8 +52,9 @@
     shoes: ClothingShoesBootsImperialLaceup
     jumpsuit: ClothingUniformJumpsuitImperialSurgeon
 
-- type: LanguageKnowledge
-  speaks:
-    - SolCommon
-  understands:
-    - SolCommon
+- components:
+  - type: LanguageKnowledge
+    speaks:
+      - SolCommon
+    understands:
+      - SolCommon

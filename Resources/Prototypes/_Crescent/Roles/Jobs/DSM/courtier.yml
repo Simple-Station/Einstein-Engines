@@ -46,11 +46,12 @@
     id: CourtierPDA
     ears: ClothingHeadsetEmpire
 
-- type: LanguageKnowledge
-  speaks:
-    - HighImperial
-    - SolCommon
-  understands:
-    - HighImperial
-    - Tradeband
-    - SolCommon
+- components:
+  - type: LanguageKnowledge
+    speaks:
+      - HighImperial
+      - SolCommon
+    understands:
+      - HighImperial
+      - Tradeband
+      - SolCommon

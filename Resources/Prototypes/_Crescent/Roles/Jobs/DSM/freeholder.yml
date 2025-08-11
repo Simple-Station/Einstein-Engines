@@ -34,9 +34,10 @@
     ears: ClothingHeadsetEmpireCiv
     shoes: ClothingShoesBootsImperialLongboots
 
-- type: LanguageKnowledge
-  speaks:
-    - SolCommon
-  understands:
-    - Tradeband
-    - SolCommon
+- components:
+  - type: LanguageKnowledge
+    speaks:
+      - SolCommon
+    understands:
+      - Tradeband
+      - SolCommon

@@ -49,10 +49,11 @@
     shoes: ClothingShoesBootsImperialClogs
     jumpsuit: ClothingUniformJumpsuitImperialDoctor
 
-- type: LanguageKnowledge
-  speaks:
-    - Tradeband
-    - SolCommon
-  understands:
-    - Tradeband
-    - SolCommon
+- components:
+  - type: LanguageKnowledge
+    speaks:
+      - Tradeband
+      - SolCommon
+    understands:
+      - Tradeband
+      - SolCommon

@@ -57,12 +57,13 @@
     shoes: ClothingShoesBootsImperialLaceup
     jumpsuit: ClothingUniformJumpsuitImperialArchmaester
 
-- type: LanguageKnowledge
-  speaks:
-    - HighImperial
-    - Tradeband
-    - SolCommon
-  understands:
-    - HighImperial
-    - Tradeband
-    - SolCommon
+- components:
+  - type: LanguageKnowledge
+    speaks:
+      - HighImperial
+      - Tradeband
+      - SolCommon
+    understands:
+      - HighImperial
+      - Tradeband
+      - SolCommon

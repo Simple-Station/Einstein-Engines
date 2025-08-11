@@ -66,12 +66,13 @@
     pocket1: ImperialPassportBareLegit
     pocket2: RomaineBible
 
-- type: LanguageKnowledge
-  speaks:
-    - HighImperial
-    - Tradeband
-    - SolCommon
-  understands:
-    - HighImperial
-    - Tradeband
-    - SolCommon
+- components:
+  - type: LanguageKnowledge
+    speaks:
+      - HighImperial
+      - Tradeband
+      - SolCommon
+    understands:
+      - HighImperial
+      - Tradeband
+      - SolCommon

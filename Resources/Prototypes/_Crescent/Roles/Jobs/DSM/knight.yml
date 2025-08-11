@@ -60,12 +60,13 @@
     gloves: ClothingHandsGlovesImperialLonggloves
     pocket1: ImperialPassportBareLegit
 
-- type: LanguageKnowledge
-  speaks:
-    - HighImperial
-    - Tradeband
-    - SolCommon
-  understands:
-    - HighImperial
-    - Tradeband
-    - SolCommon
+- components:
+  - type: LanguageKnowledge
+    speaks:
+      - HighImperial
+      - Tradeband
+      - SolCommon
+    understands:
+      - HighImperial
+      - Tradeband
+      - SolCommon
