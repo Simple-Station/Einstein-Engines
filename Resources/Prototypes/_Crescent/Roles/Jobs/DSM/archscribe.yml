@@ -36,8 +36,11 @@
         rank: crescent-rank-archmaester
       - type: LanguageKnowledge
     speaks:
+      - HighImperial
+      - Tradeband
       - SolCommon
     understands:
+      - HighImperial
       - Tradeband
       - SolCommon
   access:
@@ -62,14 +65,3 @@
     mask: ClothingMaskImperialAdjutantMask
     shoes: ClothingShoesBootsImperialLaceup
     jumpsuit: ClothingUniformJumpsuitImperialArchmaester
-
-- components:
-  - type: LanguageKnowledge
-    speaks:
-      - HighImperial
-      - Tradeband
-      - SolCommon
-    understands:
-      - HighImperial
-      - Tradeband
-      - SolCommon

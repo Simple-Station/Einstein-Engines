@@ -27,6 +27,7 @@
     components:
       - type: LanguageKnowledge
     speaks:
+      - Tradeband
       - SolCommon
     understands:
       - Tradeband
@@ -57,12 +58,3 @@
     shoes: ClothingShoesBootsImperialLongboots
     jumpsuit: ClothingUniformJumpsuitImperialFreeholder
     gloves: ClothingHandsGlovesImperialWorkerGloves
-
-- components:
-  - type: LanguageKnowledge
-    speaks:
-      - Tradeband
-      - SolCommon
-    understands:
-      - Tradeband
-      - SolCommon
