@@ -12,6 +12,8 @@
       inverted: true
       species:
         - Shadowkin
+    - !type:CharacterOverallTimeRequirement
+      min: 35000
     - !type:CharacterWhitelistRequirement
     - !type:FactionRequirement
       factionID: "NCWL"
