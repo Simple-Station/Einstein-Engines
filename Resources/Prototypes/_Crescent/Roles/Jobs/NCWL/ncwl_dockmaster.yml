@@ -8,6 +8,10 @@
   alwaysUseSpawner: true
   icon: "JobIconNCWLLogisticLeader"
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Shadowkin
     - !type:CharacterOverallTimeRequirement
       min: 20000
     - !type:FactionRequirement
@@ -79,6 +83,7 @@
     id: NCWLLogisticLeaderPDA
     outerClothing: ClothingOuterArmorNCWLLogi
     belt: ClothingBeltSalvageWebbing
+    pocket1: WeaponPistolHKUSP
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesFingerless
     head: ClothingHeadHatBeretQM
