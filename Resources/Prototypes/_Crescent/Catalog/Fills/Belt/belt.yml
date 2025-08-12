@@ -354,6 +354,7 @@
       item:
       - SHIKatana
 
+- type: entity
   id: ClothingBeltSheathKhopeshFilled
   parent: ClothingBeltSheathKhopesh
   suffix: Filled
