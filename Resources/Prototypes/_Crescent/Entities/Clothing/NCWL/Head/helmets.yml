@@ -57,7 +57,7 @@
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitNCWLMedi
   categories: [ HideSpawnMenu ]
-  name: Vrachev Union MK.I hardsuit helmet
+  name: homeguard "SANITAR" hardsuit helmet
   description: Spaceworthy protection for your fragile skull. A communard design.
   components:
   - type: BreathMask
@@ -85,7 +85,7 @@
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitNCWLEngi
   categories: [ HideSpawnMenu ]
-  name: Engineering Union MK.I hardsuit helmet
+  name: worker's league "EVERYMAN" hardsuit helmet
   description: Spaceworthy protection for your fragile skull. A communard design.
   components:
   - type: BreathMask
