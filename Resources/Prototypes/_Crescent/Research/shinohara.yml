@@ -97,6 +97,19 @@
   - WeaponMechSword
 
 - type: technology
+  id: ShinoharaBasicFighterGuns
+  name: research-technology-shinohara-basicfighterguns
+  icon:
+    sprite: _Crescent/Objects/Specific/fighterweapons.rsi
+    state: auto_cannon
+  discipline: Corporate
+  tier: 1
+  cost: 7500
+  recipeUnlocks:
+  - WeaponFighterMachinegun
+  - WeaponFighterAutocannon
+
+- type: technology
   id: ShinoharaHighsec
   name: research-technology-shinohara-highsec
   icon:

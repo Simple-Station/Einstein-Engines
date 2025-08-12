@@ -316,6 +316,25 @@
     AdvancedElectronics: 1000
 
 - type: latheRecipe
+  id: WeaponFighterMachinegun
+  result: WeaponFighterMachinegun
+  completetime: 2
+  materials:
+    Steel: 3000
+    BallisticCycler: 500
+    AdvancedMechatronics: 1000
+
+- type: latheRecipe
+  id: WeaponFighterAutocannon
+  result: WeaponFighterAutocannon
+  completetime: 2
+  materials:
+    Steel: 3000
+    Uranium: 2000
+    TubeLoader: 1000
+    AdvancedMechatronics: 1500
+
+- type: latheRecipe
   id: WeaponMechCombatTaikotyo
   result: WeaponMechCombatTaikotyo
   completetime: 2
