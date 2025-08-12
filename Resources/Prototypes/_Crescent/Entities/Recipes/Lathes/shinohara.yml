@@ -692,7 +692,7 @@
 
 - type: latheRecipe
   id: SHIShiverBlade
-  result: SHIShiverBlade
+  result: SHIKatanaShiverBlade
   completetime: 2
   materials:
     AdvancedElectronics: 1000
