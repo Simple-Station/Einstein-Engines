@@ -147,18 +147,6 @@
       - state: passenger
 
 - type: entity
-  id: SpawnPointCoordinator
-  parent: SpawnPointJobBase
-  name: interdyne coordinator
-  components:
-  - type: SpawnPoint
-    job_id: CoordinatorNCSP
-  - type: Sprite
-    layers:
-      - state: green
-      - state: passenger
-
-- type: entity
   id: SpawnPointLieutenant
   parent: SpawnPointJobBase
   name: lieutenant
@@ -201,18 +189,6 @@
   components:
   - type: SpawnPoint
     job_id: TechnicianNCSP
-  - type: Sprite
-    layers:
-      - state: green
-      - state: passenger
-
-- type: entity
-  id: SpawnPointCoordinator
-  parent: SpawnPointJobBase
-  name: coordinator
-  components:
-  - type: SpawnPoint
-    job_id: CoordinatorNCSP
   - type: Sprite
     layers:
       - state: green
