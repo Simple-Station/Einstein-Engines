@@ -1,0 +1,23 @@
+{
+  "copyright" : "Developed by the HULLROT team. Do not edit, relicense, or redistribute.",
+  "license" : "",
+  "version": 1,
+  "size": {
+    "x": 64,
+    "y": 32
+  },
+    "states": [
+        {
+            "name": "torpedo"
+        },
+        {
+            "name": "heavy_slugger"
+        },
+        {
+            "name": "ion_cannon"
+        },
+        {
+            "name": "auto_cannon"
+        }
+    ]
+}

@@ -311,14 +311,6 @@
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconResearchDirector
-  icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
-    state: ResearchDirector
-  jobName: job-name-rd
-
-- type: jobIcon
-  parent: JobIcon
   id: JobIconMime
   icon:
     sprite: /Textures/Interface/Misc/job_icons.rsi

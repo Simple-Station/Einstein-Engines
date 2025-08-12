@@ -512,6 +512,10 @@ entities:
     - type: ShuttleDeed
       shuttleName: Shuttle MV-222
       shuttleUid: 1
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: fighter
     - type: BecomesStation
       id: Cleaver
 - proto: AAAHardpointFixed

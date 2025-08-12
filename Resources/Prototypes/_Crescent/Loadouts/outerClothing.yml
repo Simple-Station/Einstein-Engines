@@ -1,12 +1,13 @@
-- type: loadout
-  id: LoadoutOuterArmorIndependentsEVA
-  category: Outer
-  cost: 2
-  items:
-    - ClothingOuterHardsuitIndependentsEVA
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutEVASuit
+# - type: loadout
+#   id: LoadoutOuterArmorIndependentsEVA
+#   category: Outer
+#   cost: 2
+#   items:
+#     - ClothingOuterHardsuitIndependentsEVA
+#   requirements:
+#     - !type:CharacterItemGroupRequirement
+#       group: LoadoutEVASuit
+# NOTE: THIS FUCKING NUKES BALANCE FOR CONSCRIPT. PLEASE LEAVE IT COMMENTED
 
 - type: loadout
   id: LoadoutOuterArmorNCWLEVA
@@ -19,13 +20,17 @@
       group: LoadoutEVASuit
     - !type:CharacterJobRequirement
       jobs:
-        - AdministratorNCWL
-        - ArtificerNCWL
-        - DoktorNCWL
-        - KadetNCWL
-        - KapitanNCWL
-        - KommissarNCWL
-        - SanitarNCWL
+        - CommandantNCWL
+        - HomeguardLeaderNCWL
+        - CaptainNCWL
+        - SoldatNCWL
+        - DirectorNCWL
+        - DoctorNCWL
+        - SupervisorNCWL
+        - EngineerNCWL
+        - DockmasterNCWL
+        - DockhandNCWL
+        - WorkerNCWL
 
 - type: loadout
   id: LoadoutHeadNCWLEVA
@@ -38,13 +43,17 @@
       group: LoadoutEVASuit
     - !type:CharacterJobRequirement
       jobs:
-        - AdministratorNCWL
-        - ArtificerNCWL
-        - DoktorNCWL
-        - KadetNCWL
-        - KapitanNCWL
-        - KommissarNCWL
-        - SanitarNCWL
+        - CommandantNCWL
+        - HomeguardLeaderNCWL
+        - CaptainNCWL
+        - SoldatNCWL
+        - DirectorNCWL
+        - DoctorNCWL
+        - SupervisorNCWL
+        - EngineerNCWL
+        - DockmasterNCWL
+        - DockhandNCWL
+        - WorkerNCWL
 
 - type: loadout
   id: LoadoutOuterArmorTFSCEVA

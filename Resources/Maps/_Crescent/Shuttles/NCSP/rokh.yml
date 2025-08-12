@@ -913,6 +913,10 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: cruiser
     - type: BecomesStation
       id: Rokh
 - proto: AAAardpointMediumMissile

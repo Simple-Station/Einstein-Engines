@@ -51,7 +51,7 @@ public sealed partial class BallisticAmmoProviderComponent : Component
     public bool MayTransfer;
 
     /// <summary>
-    /// DoAfter delay for filling a bullet into another ballistic ammo provider.
+    /// DoAfter delay for transferring ammo from one ballistic ammo provider to another.
     /// </summary>
     [DataField]
     public TimeSpan FillDelay = TimeSpan.FromSeconds(0.5);
@@ -67,4 +67,10 @@ public sealed partial class BallisticAmmoProviderComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool Cycled = true;
+
+    /// <summary>
+    /// If the gun needs a DoAfter for inserting shells into it. Used exclusively for shipguns in hullrot.
+    /// </summary>
+    [DataField]
+    public bool FillWithDoAfter = false;
 }

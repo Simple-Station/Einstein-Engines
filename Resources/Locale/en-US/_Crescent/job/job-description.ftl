@@ -1,12 +1,16 @@
 #ncwl#
 
-job-description-kommissar = Coordinate the Homeguard. Guard the interests of the State.
-job-description-kapitan = Help your Kommissar. Manage the armory. Lead patrols. Guard the interests of the State.
-job-description-sanitar = Listen to your superiors. Patrol Union airspace. Guard the interests of the State.
-job-description-artificer = Listen to your superiors. Tend to the ailing communard infrastructure. Guard the interests of the State.
-job-description-doktor = Listen to your superiors. Tend to the ailing health of your fellow communards. Guard the interests of the State.
-job-description-administrator = Coordinate the Union. Tend to the unwashed citizenry. Guard the interests of the State.
-job-description-kadet = Listen to your superiors. Learn proper procedure. Guard the interests of the State.
+job-description-ncwl-faction-leader = Coordinate the League. Ensure its survival, and the destruction of those who would oppose it.
+job-description-ncwl-homeguard-overseer = Lead the Homeguard. Defend Port Balreska and eliminate the League's enemies.
+job-description-ncwl-homeguard-captain = Command a squad of Soldats. Listen to the Coordinator. Maintain battlefield cohesion.
+job-description-ncwl-homeguard-soldat = Defend the League. Listen to your Squad Captain. Do what you're told.
+job-description-ncwl-logistic-dockmaster = Run industry. Produce goods. Make money. Supply the League. Yell at your dockhands.
+job-description-ncwl-logistic-dockhand = Listen to the Dockmaster. Do trade runs. Order supplies. Man the machines. Get caught in conveyor belts.
+job-description-ncwl-medical-director = Keep the League alive and healthy. Coordinate research. Order cybernetics. Yell at your doctors.
+job-description-ncwl-medical-doctor = Listen to the Director. Do research. Practice medicine. Practice combat medicine. Make drugs.
+job-description-ncwl-engineering-supervisor = Supervise salvage and techmining. Oversee mining. Repair and maintain ships. Yell at your Engineers.
+job-description-ncwl-engineering-mechanic = Listen to the Supervisor. Gather resources for the League. Do repairs and shipmods. Explode.
+job-description-ncwl-newbie = Do what work needs doing. Serve the League and perhaps join one of the Unions.
 
 #syndicate#
 
@@ -103,3 +107,30 @@ job-description-arbeiter = The industrial life blood of the Authoritat. Follow t
 job-description-spacer = Be an independent citizen of Taypan.
 job-description-gliess-sheriff = Keep the law in Gliess Santo.
 job-description-gliess-dockmaster = Make sure nobody blows up your station.
+
+#conscript-ncwl
+job-description-conscript-ncwl-ship-captain = Pilot the Clementine. Ensure it's safety and use its armaments well. Go down with the ship.
+job-description-conscript-ncwl-ship-crew = Man the guns and fix holes. Load ammo. Help the soldiers do their job. Don't leave the ship.
+job-description-conscript-ncwl-leader = Lead the remnants of the NCWL. Ensure the League takes control of Vladzena.
+job-description-conscript-ncwl-officer = Command the men in infantry combat. Ensure cohesion. Listen to your superiors.
+job-description-conscript-ncwl-amr = Deal with priority targets. Pick your shots carefully. Don't miss. (Anti-Materiel Rifle)
+job-description-conscript-ncwl-lmg = Provide fire support for your comrades. Control the battlefield. (Light Machine Gun)
+job-description-conscript-ncwl-doctor = Keep your comrades alive. Retrieve corpses to clone. (Magnum)
+job-description-conscript-ncwl-shotgun = Punch through enemy lines. Be the first to fall. (Double-Barrel Shotgun)
+job-description-conscript-ncwl-smg = Punish overconfidence. Make them keep their head down. (Submachine Gun)
+job-description-conscript-ncwl-rifleman = Be the rank and file. Be the corpses the League will stand on. (Bolt-action Rifle)
+job-description-conscript-ncwl-cadet = Listen to your superiors. Keep your head down and learn. (Bolt-action Rifle)
+
+#conscript-dsm
+job-description-conscript-dsm-ship-captain = Pilot the Nemesis. Ensure it's safety and use its armaments well. Go down with the ship.
+job-description-conscript-dsm-ship-crew = Man the guns and fix holes. Load ammo. Help the soldiers do their job. Don't leave the ship.
+job-description-conscript-dsm-leader = Lead the punishment regimen. Reclaim the honor of your house. Stamp out the League.
+job-description-conscript-dsm-officer = Command the men in infantry combat. Ensure cohesion. Listen to your superiors.
+job-description-conscript-dsm-amr = Deal with priority targets. Pick your shots carefully. Don't miss. (Anti-Materiel Rifle)
+job-description-conscript-dsm-lmg = Provide fire support for your brothers. Control the battlefield. (Light Machine Gun)
+job-description-conscript-dsm-doctor = Keep your brothers alive. Retrieve corpses to clone. (Magnum)
+job-description-conscript-dsm-shotgun = Punch through enemy lines. Be the first to fall. (Revolver Shotgun)
+job-description-conscript-dsm-smg = Punish overconfidence. Make them keep their head down. (Submachine Gun)
+job-description-conscript-dsm-rifleman = Be the rank and file. Be the corpses the League will stand on. (Lever-action Rifle)
+job-description-conscript-dsm-cadet = Listen to your superiors. Keep your head down and learn. (Lever-action Rifle)
+

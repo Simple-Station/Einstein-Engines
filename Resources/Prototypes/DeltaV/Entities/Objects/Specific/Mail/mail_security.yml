@@ -41,7 +41,7 @@
 #  components:
 #  - type: Mail
 #    contents:
-#    - id: HyperlinkBookSpaceLaw
+#    - id: BookSecurity
 # Will we ever readd hyperlinks books? Who knows!
 
 - type: entity

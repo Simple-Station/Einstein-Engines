@@ -1,0 +1,28 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: UnionfallKhopesh
+  name: NCWL Khopesh
+  description: An ultralight communard fighter.
+  price: 6000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Unionfall/NCWL/unionfall_khopesh.yml
+
+- type: gameMap
+  id: UnionfallKhopesh
+  mapName: 'NCWL Khopesh'
+  mapPath: /Maps/_Crescent/Unionfall/NCWL/unionfall_khopesh.yml
+  minPlayers: 0
+  stations:
+    UnionfallKhopesh:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Khopesh {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter

@@ -1,0 +1,56 @@
+- type: gameMap
+  id: Refuge
+  mapName: 'The Refuge'
+  mapPath: /Maps/_Crescent/Stations/refuge.yml
+  minPlayers: 0
+  stations:
+    Refuge:
+      stationProto: StandardCrescentStation
+      gridComponents:
+        - type: BlockShipWeaponProjectileGrid
+        - type: PreventPilot
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: outpost
+        - type: StationNameSetup
+          mapNameTemplate: 'The Refuge'
+        - type: VesselDesignation
+          designation: vessel-designation-headquarters
+        - type: Grammar
+          attributes:
+            proper: true
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            OverseerSRM: [ 1, 1 ]
+            MontagneSRM: [ 1, 1 ]
+            HunterSRM: [ 3, 3 ]
+            TenderSRM: [ 2, 2 ]
+            AcolyteSRM: [ 2, 2 ]
+
+- type: gameMap
+  id: GliessSanto
+  mapName: 'Gliess Santo'
+  mapPath: /Maps/_Crescent/Stations/gliess.yml
+  minPlayers: 0
+  stations:
+    GliessSanto:
+      stationProto: StandardCrescentStation
+      components:
+        - type: BlockShipWeaponProjectileGrid
+        - type: PreventPilot
+        - type: StationNameSetup
+          mapNameTemplate: 'Gliess Santo'
+        - type: VesselDesignation
+          designation: vessel-designation-headquarters
+        - type: Grammar
+          attributes:
+            proper: true
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            GliessianDockmaster: [ 1, 1 ]
+            GliessianSheriff: [ 1, 1 ]
+            Spacer: [ 15, 15 ]

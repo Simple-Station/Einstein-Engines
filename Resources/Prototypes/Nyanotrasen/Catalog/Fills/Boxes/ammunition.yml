@@ -85,4 +85,50 @@
       - 0,0,3,2
     whitelist:
       tags:
+        - SpeedLoaderLightRifle
+
+- type: entity
+  name: box of 7.62x51 USM speed loaders
+  parent: BoxMagazine
+  id: BoxSpeedLoaderRifle
+  description: A box full of 7.62x51 USM speed loaders.
+  components:
+  - type: StorageFill
+    contents:
+    - id: SpeedLoaderRifle
+      amount: 6
+  - type: Storage
+    maxItemSize: Small
+    grid:
+      - 0,0,3,2
+    whitelist:
+      tags:
         - SpeedLoaderRifle
+
+- type: entity
+  name: packet of 15.2x169mm rounds
+  parent: BoxMagazine
+  id: BoxRoundsAntiMateriel
+  description: A box full of 15.2x169mm rounds.
+  components:
+  - type: StorageFill
+    contents:
+    - id: CartridgeAntiMateriel
+      amount: 6
+  - type: Storage
+    maxItemSize: Small
+    grid:
+      - 0,0,2,1
+    whitelist:
+      tags:
+        - CartridgeAntiMateriel
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/anti_materiel.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  
+
+

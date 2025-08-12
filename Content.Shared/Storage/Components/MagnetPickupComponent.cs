@@ -20,4 +20,8 @@ public sealed partial class MagnetPickupComponent : Component
 
     [ViewVariables(VVAccess.ReadWrite), DataField("range")]
     public float Range = 1f;
+
+    // hullrot added,  if it being worn is actually required aka bypass slot flag requirement.
+    [ViewVariables(VVAccess.ReadWrite), DataField("requireWorn")]
+    public bool requireWorn = true;
 }

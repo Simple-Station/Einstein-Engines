@@ -131,10 +131,11 @@
   tier: 2
   cost: 5000
   recipeUnlocks:
-  - ClothingBeltSheathRapier
+  - ClothingBeltSheathDSMRapier
   - ClothingBeltSheathDSMSabre
   - DSMRapier
   - DSMSabre
+  - DSMDuelingKhopesh
 
 - type: technology
   id: ImperialSunesis

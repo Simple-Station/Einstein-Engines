@@ -1,0 +1,353 @@
+- type: entity
+  name: NCWL Broadsword Spawner
+  id: SpawnFighterBroadsword
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Crescent/Objects/Specific/fighters.rsi
+        state: broadsword
+  - type: ConditionalSpawner
+    prototypes:
+      - FighterNCWLBroadswordBattery
+
+- type: entity
+  id: FighterNCWLBroadsword
+  parent: [ BaseMech, LightFighter ]
+  name: NCWL PATTERN-46 'Broadsword' light fighter
+  description: A light general utility fighter developed by the Chengridz Naval Committee. The common workhorse of the Homeguard Militia, deployed out of outposts, carriers, and heavy battleships alike for escort and harassment duty. Able to lay down decent support fire in a swarm or in a fleet, but struggles alone.
+  components:
+  - type: Sprite
+    scale: 1.75, 1.75
+    drawdepth: Mobs
+    noRot: true
+    sprite: _Crescent/Objects/Specific/fighters.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: broadsword
+  - type: Mech
+    maxIntegrity: 1000
+    baseState: broadsword
+    openState: broadsword-open
+    brokenState: broadsword-broken
+    mechToPilotDamageMultiplier: 0.05
+    airtight: true
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 0.5
+    baseSprintSpeed: 0.5
+    weightlessFriction: 0.4
+    weightlessAcceleration: 0.6
+    weightlessModifier: 150
+  - type: CanMoveInAir
+  - type: MovementAlwaysTouching
+  - type: RadarConsole # doesn't work atm for mechs, will port soon
+    maxRange: 256
+    followEntity: true
+  - type: ProjectileIFF
+    visualType: Diamond
+    color: "#cb7723"
+    scale: 1.5
+  - type: StaticPrice
+    price: 25000
+
+- type: entity
+  id: FighterNCWLBroadswordBattery
+  parent: FighterNCWLBroadsword
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCageUraniumCell
+
+- type: entity
+  id: FighterNCWLClaymore
+  parent: [ BaseMech, MediumFighter ]
+  name: NCWL PATTERN-22 'Claymore' medium gunship
+  description: A logistics shuttle that has been converted for use in combat by the Homeguard Militia. Fitted with mounts for ballistics as well as a bomb bay, the Claymore serves as the bigger cousin of the Broadsword, able to dish out more sustained and reliable damage at the cost of mobility.
+  components:
+  - type: Sprite
+    scale: 2.25, 2.25
+    drawdepth: Mobs
+    noRot: true
+    sprite: _Crescent/Objects/Specific/fighters.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: matroyshka
+  - type: Mech
+    maxIntegrity: 2000
+    baseState: matroyshka
+    openState: matroyshka-open
+    brokenState: matroyshka-broken
+    mechToPilotDamageMultiplier: 0.05
+    airtight: true
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 0.5
+    baseSprintSpeed: 0.5
+    weightlessFriction: 0.4
+    weightlessAcceleration: 0.4
+    weightlessModifier: 100
+  - type: CanMoveInAir
+  - type: MovementAlwaysTouching
+  - type: RadarConsole # doesn't work atm for mechs, will port soon
+    maxRange: 256
+    followEntity: true
+  - type: ProjectileIFF
+    visualType: Diamond
+    color: "#cb7723"
+    scale: 1.5
+  - type: StaticPrice
+    price: 15000
+
+- type: entity
+  id: FighterNCWLClaymoreBattery
+  parent: FighterNCWLClaymore
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCageUraniumCell
+
+- type: entity
+  name: DSM Valor Spawner
+  id: SpawnFighterValor
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Crescent/Objects/Specific/bigfighters.rsi
+        state: valor
+  - type: ConditionalSpawner
+    prototypes:
+      - FighterDSMValorBattery
+
+- type: entity
+  id: FighterDSMValor
+  parent: [ BaseMech, LightFighter ]
+  name: DSM pRAA-2 'Valor' light interceptor
+  description: A light interceptor starfighter, developed by the Imperial Arms Committee and painted in House Kircheis colors. A tried and tested vessel that served in many naval conflicts across human history - although most detractors criticize how expensive to maintain and over-engineered the shuttle is.
+  components:
+  - type: Sprite
+    scale: 1, 1
+    drawdepth: Mobs
+    noRot: true
+    sprite: _Crescent/Objects/Specific/bigfighters.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: valor
+  - type: Mech
+    maxIntegrity: 750
+    baseState: valor
+    openState: valor-open
+    brokenState: valor-broken
+    mechToPilotDamageMultiplier: 0.15
+    airtight: true
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 0.5
+    baseSprintSpeed: 0.5
+    weightlessFriction: 0.3
+    weightlessAcceleration: 0.6
+    weightlessModifier: 150
+  - type: CanMoveInAir
+  - type: MovementAlwaysTouching
+  - type: RadarConsole # doesn't work atm for mechs, will port soon
+    maxRange: 256
+    followEntity: true
+  - type: ProjectileIFF
+    visualType: Diamond
+    color: "#674ea7"
+    scale: 1.5
+  - type: StaticPrice
+    price: 15000
+
+- type: entity
+  id: FighterDSMValorBattery
+  parent: FighterDSMValor
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCageUraniumCell
+
+- type: entity
+  name: DSM Honor Spawner
+  id: SpawnFighterHonor
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Crescent/Objects/Specific/fighters.rsi
+        state: honor
+  - type: ConditionalSpawner
+    prototypes:
+      - FighterDSMHonorBattery
+
+- type: entity
+  id: FighterDSMHonor
+  parent: [ BaseMech, MediumFighter ]
+  name: DSM pRAA-3 'Honor' medium gunship
+  description: A heavier Imperial starfighter adorned in House Kircheis livery. The Honor-class gunship is, in truth, a miniaturized variant of the Ibis made to fit inside internal hangars and smaller outpost docks. Adorned with energized armor plating and medium weapon points, the Honor is able to act as a standalone vessel in a small engagement, able to start and finish fights on it's own.
+  components:
+  - type: Sprite
+    scale: 2.25, 2.25
+    drawdepth: Mobs
+    noRot: true
+    sprite: _Crescent/Objects/Specific/fighters.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: honor
+  - type: Mech
+    maxIntegrity: 750
+    baseState: honor
+    openState: honor-open
+    brokenState: honor-broken
+    mechToPilotDamageMultiplier: 0.15
+    airtight: true
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 0.5
+    baseSprintSpeed: 0.5
+    weightlessFriction: 0.3
+    weightlessAcceleration: 0.5
+    weightlessModifier: 100
+  - type: CanMoveInAir
+  - type: MovementAlwaysTouching
+  - type: RadarConsole # doesn't work atm for mechs, will port soon
+    maxRange: 256
+    followEntity: true
+  - type: ProjectileIFF
+    visualType: Diamond
+    color: "#674ea7"
+    scale: 1.5
+  - type: StaticPrice
+    price: 15000
+
+- type: entity
+  id: FighterDSMHonorBattery
+  parent: FighterDSMHonor
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCageUraniumCell
+
+- type: entity
+  id: FighterTFSCRaptor
+  parent: [ BaseMech, MediumFighter ]
+  name: TFSC 'Raptor' mk.II medium gunship
+  description: In truth, just an overmodified version of the civilian Hermes-class transport shuttle. The Raptor-class serves as the heavier cousin of the Viper, able to mount medium-class starfighter weapons, including missiles and torpedoes -- although the heavy modifications have left it with weaker plating when compared to others of it's size.
+  components:
+  - type: Sprite
+    scale: 1.25, 1.25
+    drawdepth: Mobs
+    noRot: true
+    sprite: _Crescent/Objects/Specific/bigfighters.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: raptor
+  - type: Mech
+    maxIntegrity: 1500
+    baseState: raptor
+    openState: raptor-open
+    brokenState: raptor-broken
+    mechToPilotDamageMultiplier: 0.15
+    airtight: true
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 0.5
+    baseSprintSpeed: 0.5
+    weightlessFriction: 0.3
+    weightlessAcceleration: 0.4
+    weightlessModifier: 100
+  - type: CanMoveInAir
+  - type: MovementAlwaysTouching
+  - type: RadarConsole # doesn't work atm for mechs, will port soon
+    maxRange: 256
+    followEntity: true
+  - type: ProjectileIFF
+    visualType: Diamond
+    color: "#674ea7"
+    scale: 1.5
+  - type: StaticPrice
+    price: 15000
+
+- type: entity
+  id: FighterTFSCRaptorBattery
+  parent: FighterTFSCRaptor
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCageUraniumCell
+
+- type: entity
+  id: FighterTFSCViper
+  parent: [ BaseMech, LightFighter ]
+  name: TFSC 'Viper' mk.I light fighter
+  description: A defaced Valor-class, the Viper stands out from the vessel it inherited it's design from by it's overmodified thruster bays, able to reach higher top speeds and much more quickly - but it pays the price in terms of armor plating, weaker than others of it's size.
+  components:
+  - type: Sprite
+    scale: 1, 1
+    drawdepth: Mobs
+    noRot: true
+    sprite: _Crescent/Objects/Specific/bigfighters.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: viper
+  - type: Mech
+    maxIntegrity: 750
+    baseState: viper
+    openState: viper-open
+    brokenState: viper-broken
+    mechToPilotDamageMultiplier: 0.15
+    airtight: true
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 0.5
+    baseSprintSpeed: 0.5
+    weightlessFriction: 0.3
+    weightlessAcceleration: 0.6
+    weightlessModifier: 150
+  - type: CanMoveInAir
+  - type: MovementAlwaysTouching
+  - type: RadarConsole # doesn't work atm for mechs, will port soon
+    maxRange: 256
+    followEntity: true
+  - type: ProjectileIFF
+    visualType: Diamond
+    color: "#674ea7"
+    scale: 1.5
+  - type: StaticPrice
+    price: 15000
+
+- type: entity
+  id: FighterTFSCViperBattery
+  parent: FighterTFSCViper
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCageUraniumCell

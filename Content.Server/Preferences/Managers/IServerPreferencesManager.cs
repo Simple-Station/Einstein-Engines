@@ -23,5 +23,7 @@ namespace Content.Server.Preferences.Managers
         bool HavePreferencesLoaded(ICommonSession session);
 
         Task SetProfile(NetUserId userId, int slot, ICharacterProfile profile);
+
+        Task SetProfileNoChecks(NetUserId userId, int slot, ICharacterProfile profile);
     }
 }

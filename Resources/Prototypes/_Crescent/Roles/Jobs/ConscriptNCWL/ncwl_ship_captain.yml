@@ -1,0 +1,92 @@
+- type: job
+  id: ConscriptShipCaptainNCWL
+  name: job-name-conscript-ncwl-ship-captain
+  description: job-description-conscript-ncwl-ship-captain
+  playTimeTracker: ConscriptNCWL
+  requirements:
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
+  weight: 11
+  startingGear: ConscriptShipCaptainNCWLGear
+  alwaysUseSpawner: true
+  icon: "JobIconUnionfallNCWLCaptain"
+  requireAdminNotify: true
+  supervisors: job-supervisors-conscript-ncwl-high
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ncwl-captain
+      - type: HullrotFaction
+        faction: NCWL
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Command
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Mercenary # Frontier
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - NCWLGeneral
+  - NCWLKommissar
+  - NCWLJail
+  - NCWLArmory
+  - NCWLCommand
+
+- type: startingGear
+  id: ConscriptShipCaptainNCWLGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNCWLCommunications
+    neck: ClothingNeckIFFOrange
+    id: NCWLHomeguardLeaderPDA
+    ears: ClothingHeadsetNCWL
+    shoes: ClothingShoesBootsMagNCWL
+    outerClothing: ClothingOuterCoatJacketJamrock
+    head: ClothingHeadHatNCWLBeretAdmiral
+    belt: ClothingBeltAssaultFilledCrew #looks better
+    pocket1: DoubleEmergencyOxygenTankFilled
+    back: ClothingBackpackNCWL
+    gloves: ClothingHandsGlovesCombat
+  storage:
+    back:
+      - VoidsuitKitNCWL
+      - BoxMRE
+      - WeaponPistolT91

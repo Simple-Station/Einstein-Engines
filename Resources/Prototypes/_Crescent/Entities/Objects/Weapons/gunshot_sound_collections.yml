@@ -128,12 +128,6 @@
 # Gun specific shit
 
 - type: soundCollection
-  id: AK_47_Gunshots
-  files:
-  - "/Audio/_Crescent/Weapons/Guns/AK_47/rifle_gunshot_1.ogg"
-  - "/Audio/_Crescent/Weapons/Guns/AK_47/rifle_gunshot_2.ogg"
-
-- type: soundCollection
   id: AK_74_Gunshots
   files:
   - "/Audio/_Crescent/Weapons/Guns/AK_74/rifle_gunshot_1.ogg"

@@ -4496,27 +4496,6 @@ entities:
     - type: Transform
       pos: -4.5,0.5
       parent: 1
-- proto: SpawnPointAdministrator
-  entities:
-  - uid: 836
-    components:
-    - type: Transform
-      pos: 1.5,10.5
-      parent: 1
-- proto: SpawnPointKommissar
-  entities:
-  - uid: 833
-    components:
-    - type: Transform
-      pos: -0.5,10.5
-      parent: 1
-- proto: SpawnPointSanitar
-  entities:
-  - uid: 835
-    components:
-    - type: Transform
-      pos: 0.5,10.5
-      parent: 1
 - proto: StairDark
   entities:
   - uid: 290

@@ -1,0 +1,91 @@
+- type: job
+  id: DockmasterNCWL
+  name: job-name-ncwl-logistic-dockmaster
+  description: job-description-ncwl-logistic-dockmaster
+  playTimeTracker: JobLogisticLeaderNCWL
+  weight: 3
+  startingGear: DockmasterNCWLGear
+  alwaysUseSpawner: true
+  icon: "JobIconNCWLLogisticLeader"
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Shadowkin
+    - !type:CharacterOverallTimeRequirement
+      min: 20000
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
+  requireAdminNotify: false
+  supervisors: job-supervisors-ncwl-major
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ncwl-logi-leader
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Command
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Mercenary # Frontier
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - NCWLGeneral
+  - NCWLKommissar
+  - NCWLJail
+  - NCWLArmory
+  - NCWLCommand
+
+- type: startingGear
+  id: DockmasterNCWLGear
+  equipment:
+    shoes: ClothingShoesBootsSalvage
+    jumpsuit: ClothingUniformJumpsuitNCWLTelnikSleeved
+    id: NCWLLogisticLeaderPDA
+    outerClothing: ClothingOuterArmorNCWLLogi
+    belt: ClothingBeltSalvageWebbing
+    pocket1: WeaponPistolHKUSP
+    back: ClothingBackpackNCWL
+    gloves: ClothingHandsGlovesFingerless
+    head: ClothingHeadHatBeretQM
+    eyes: ClothingEyesHudSecurity
+    ears: ClothingHeadsetNCWL

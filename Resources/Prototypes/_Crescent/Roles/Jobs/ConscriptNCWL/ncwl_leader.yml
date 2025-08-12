@@ -1,0 +1,99 @@
+- type: job
+  id: ConscriptLeaderNCWL
+  name: job-name-conscript-ncwl-leader
+  description: job-description-conscript-ncwl-leader
+  playTimeTracker: ConscriptNCWL
+  requirements:
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
+  weight: 9
+  startingGear: ConscriptLeaderNCWLGear
+  alwaysUseSpawner: true
+  icon: "JobIconUnionfallNCWLLeader"
+  requireAdminNotify: true
+  supervisors: job-supervisors-conscript-ncwl-high
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ncwl-leader
+      - type: HullrotFaction
+        faction: NCWL
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Command
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Mercenary # Frontier
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - NCWLGeneral
+  - NCWLKommissar
+  - NCWLJail
+  - NCWLArmory
+  - NCWLCommand
+
+- type: startingGear
+  id: ConscriptLeaderNCWLGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNCWLKommissar
+    neck: ClothingNeckIFFOrange
+    id: NCWLFactionLeaderPDA
+    ears: ClothingHeadsetNCWL
+    mask: ClothingMaskPilot
+    shoes: ClothingShoesBootsMagNCWL
+    outerClothing: ClothingOuterArmorNCWLOpremeCarapace
+    head: ClothingHeadHatNCWLBeretAdmiral
+    belt: ClothingBeltNCWLPouchesFilledKommissar
+    pocket1: DoubleEmergencyOxygenTankFilled
+    pocket2: SyndicateWhistle
+    back: ClothingBackpackNCWL
+    suitstorage: WeaponSniperNCWLNovomosin
+    gloves: ClothingHandsGlovesCombat
+    eyes: ClothingEyesGlassesNCWL
+  inhand:
+    - ClothingOuterHardsuitNCWLPetya
+  storage:
+    back:
+      - VoidsuitKitNCWL
+      - BoxMRE
+      - BoxFlare
+      - WeaponPistolT91

@@ -46,6 +46,13 @@ public sealed partial class EmbedPassiveDamageComponent : Component
     public DamageSpecifier Damage = new();
 
     /// <summary>
+    ///   Whether the embedded damage should ignore resistances.
+    ///   Pray to god that this is never set to true; else your death is nigh.
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
+    public bool IgnoreResistances = false;
+
+    /// <summary>
     ///   Multiplier to be applied to the damage of DamageOtherOnHit to
     ///   calculate the damage per second.
     /// </summary>

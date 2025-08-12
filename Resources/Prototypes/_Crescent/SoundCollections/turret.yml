@@ -1,0 +1,17 @@
+- type: soundCollection
+  id: TurretSFX
+  files:
+  - /Audio/_Crescent/Ambience/Turret/beep1.ogg
+  - /Audio/_Crescent/Ambience/Turret/beep2.ogg
+  - /Audio/_Crescent/Ambience/Turret/beep3.ogg
+  - /Audio/_Crescent/Ambience/Turret/beep4.ogg
+  - /Audio/_Crescent/Ambience/Turret/beep5.ogg
+  - /Audio/_Crescent/Ambience/Turret/beep6.ogg
+  - /Audio/_Crescent/Ambience/Turret/beep7.ogg
+
+- type: soundCollection
+  id: Turret_Gunshots
+  files:
+  - "/Audio/_Crescent/Weapons/Guns/Turret/turret_gunshot_1.ogg"
+  - "/Audio/_Crescent/Weapons/Guns/Turret/turret_gunshot_2.ogg"
+  - "/Audio/_Crescent/Weapons/Guns/Turret/turret_gunshot_3.ogg"

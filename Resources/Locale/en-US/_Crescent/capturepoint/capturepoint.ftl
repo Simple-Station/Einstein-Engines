@@ -1,0 +1,6 @@
+capturepoint-grace-period-fail = The point isn't done spooling up. Try again later. How did you even get here?
+capturepoint-same-faction-fail = The point is already being captured by your faction.
+shipnode-grace-period-fail = The cloner database hums quietly. You aren't meant to touch it yet.
+shipnode-same-faction-fail = This is your own faction's cloner database. Defend it!
+shipnode-defusing = Defusing...
+shipnode-sabotaging = Sabotaging...

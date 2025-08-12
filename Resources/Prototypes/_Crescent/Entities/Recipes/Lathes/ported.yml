@@ -60,14 +60,6 @@
     Plastic: 150
 
 - type: latheRecipe
-  id: ClothingShoesBootsMagSci
-  result: ClothingShoesBootsMagSci
-  completetime: 10
-  materials:
-    Steel: 1000
-    Plastic: 500
-
-- type: latheRecipe
   id: UtilityBeltChiefEngineer
   result: ClothingBeltChiefEngineer
   completetime: 6
@@ -75,4 +67,311 @@
     Silver: 400
     Gold: 100
 
+- type: latheRecipe
+  id: WeaponSubMachineGunCheshyre
+  result: WeaponSubMachineGunCheshyre
+  completetime: 4
+  materials:
+    Steel: 2500
+    Plastic: 1000
 
+- type: latheRecipe
+  id: WeaponPistolRongyu
+  result: WeaponPistolRongyu
+  completetime: 4
+  materials:
+    Steel: 1500
+
+- type: latheRecipe
+  id: WeaponSpecialMako
+  result: WeaponSpecialMako
+  completetime: 4
+  materials:
+    Steel: 7500
+    Plasma: 5000
+    Gold: 1500
+    Silver: 2500
+
+- type: latheRecipe
+  id: ClothingOuterArmorPangTaiVest
+  result: ClothingOuterArmorPangTaiVest
+  completetime: 4
+  materials:
+    Steel: 1500
+    Plastic: 1000
+    Cloth: 500
+
+- type: latheRecipe
+  id: ClothingHeadHatPangtaiCorvidHelmet
+  result: ClothingHeadHatPangtaiCorvidHelmet
+  completetime: 4
+  materials:
+    Steel: 1000
+    Plastic: 500
+    Cloth: 250
+
+- type: latheRecipe
+  id: ClothingOuterArmorPangTaiKorund
+  result: ClothingOuterArmorPangTaiKorund
+  completetime: 4
+  materials:
+    Steel: 5000
+    Plastic: 2500
+    Cloth: 2500
+
+- type: latheRecipe
+  id: ClothingHeadHatPangtaiKorundHelmet
+  result: ClothingHeadHatPangtaiKorundHelmet
+  completetime: 4
+  materials:
+    Steel: 2500
+    Plastic: 2000
+    Cloth: 1000
+
+
+- type: latheRecipe
+  id: WeaponRifleM90GrenadeLauncherNT
+  result: WeaponRifleM90GrenadeLauncher
+  completetime: 5
+  materials:
+    Steel: 3250
+    Plastic: 1000
+
+- type: latheRecipe
+  id: WeaponSubMachineGunMP5NT
+  result: WeaponSubMachineGunMP5
+  completetime: 5
+  materials:
+    Steel: 2250
+    Plastic: 650
+
+- type: latheRecipe
+  id: WeaponShotgunSpasNT
+  result: WeaponShotgunSpas
+  completetime: 5
+  materials:
+    Steel: 1050
+
+- type: latheRecipe
+  id: WeaponRevolverSnubnoseNT
+  result: WeaponRevolverSnubnose
+  completetime: 5
+  materials:
+    Steel: 625
+
+- type: latheRecipe
+  id:  WeaponPistolHKUSPNT
+  result:  WeaponPistolHKUSP
+  completetime: 5
+  materials:
+    Steel: 750
+
+- type: latheRecipe
+  id: MissileRackFlatpackCraft
+  result: MissileRackFlatpack
+  completetime: 5
+  materials:
+    Steel: 5000
+    Silver: 1500
+    Uranium: 500
+
+- type: latheRecipe
+  id: VulcanFlatpackCraft
+  result: VulcanFlatpack
+  completetime: 5
+  materials:
+    Steel: 5000
+    Silver: 2500
+
+- type: latheRecipe
+  id: HardlineBeamPulserFlatpackCraft
+  result: HardlineBeamPulserFlatpack
+  completetime: 5
+  materials:
+    Steel: 5000
+    Silver: 2500
+    Glass: 1000
+    Plasma: 1500
+
+
+- type: latheRecipe
+  id: SHIFighterThrusterFlatpackCraft
+  result: SHIFighterThrusterFlatpack
+  completetime: 5
+  materials:
+    Steel: 3250
+    Plastic: 1000
+
+
+- type: latheRecipe
+  id: SHIWarshipThrusterFlatpackCraft
+  result: SHIWarshipThrusterFlatpack
+  completetime: 5
+  materials:
+    Steel: 3250
+    Plastic: 1000
+
+- type: latheRecipe
+  id: WeaponPistolBlastpopBlueCraft
+  result: WeaponPistolBlastpopBlue
+  completetime: 5
+  materials:
+    Plastic: 1000
+
+- type: latheRecipe
+  id: WeaponPistolBlastpopRedCraft
+  result: WeaponPistolBlastpopRed
+  completetime: 5
+  materials:
+    Plastic: 1000
+
+- type: latheRecipe
+  id: WeaponPistolBlastpopGoldCraft
+  result: WeaponPistolBlastpopGold
+  completetime: 5
+  materials:
+    Plastic: 1000
+
+- type: latheRecipe
+  id: WeaponPistolBlastpopGrayCraft
+  result: WeaponPistolBlastpopGray
+  completetime: 5
+  materials:
+    Plastic: 1000
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitHEVCraft
+  result: ClothingOuterHardsuitHEV
+  completetime: 5
+  materials:
+    Steel: 5000
+    Cloth: 500
+    Plastic: 2500
+
+- type: latheRecipe
+  id: ClothingOuterArmorShinoharaArmorCraft
+  result: ClothingOuterArmorShinoharaArmor
+  completetime: 5
+  materials:
+    Cloth: 1500
+    Plastic: 2500
+
+- type: latheRecipe
+  id: ClothingHeadHatShinoharaBeretCraft
+  result: ClothingHeadHatShinoharaBeret
+  completetime: 5
+  materials:
+    Cloth: 1500
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitShinoharaSecurityCraft
+  result: ClothingUniformJumpsuitShinoharaSecurity
+  completetime: 5
+  materials:
+    Cloth: 2000
+
+- type: latheRecipe
+  id: WeaponPistolHimehabuCraft
+  result: WeaponPistolHimehabu
+  completetime: 5
+  materials:
+    Steel: 3000
+    Plastic: 1500
+
+- type: latheRecipe
+  id: WeaponSubMachineGunSabreCraft
+  result: WeaponSubMachineGunSabre
+  completetime: 5
+  materials:
+    Steel: 3500
+    Plastic: 2500
+    Silver: 250
+
+- type: latheRecipe
+  id: WeaponPistolMk58Craft
+  result: WeaponPistolMk58
+  completetime: 5
+  materials:
+    Steel: 4000
+
+- type: latheRecipe
+  id: WeaponPistolViperCraft
+  result: WeaponPistolViper
+  completetime: 5
+  materials:
+    Steel: 2000
+
+- type: latheRecipe
+  id: ClothingHeadHatShinoharaHelmetCraft
+  result: ClothingHeadHatShinoharaHelmet
+  completetime: 5
+  materials:
+    Steel: 2500
+    Silver: 1000
+    Cloth: 250
+
+- type: latheRecipe
+  id: WeaponPistolSmartpistolCraft
+  result: WeaponPistolSmartpistol
+  completetime: 5
+  materials:
+    Steel: 2500
+    Silver: 1000
+    Cloth: 250
+    Plasma: 500
+
+- type: latheRecipe
+  id: MagazinePistolSmartgunCraft
+  result: MagazinePistolSmartgun
+  completetime: 5
+  materials:
+    Steel: 500
+    Uranium: 200
+
+- type: latheRecipe
+  id: EnergyKatanaCraft
+  result: EnergyKatana
+  completetime: 5
+  materials:
+    Steel: 5000
+    Uranium: 1500
+    Silver: 2500
+    Gold: 1500
+    Plasma: 500
+
+- type: latheRecipe
+  id: WeaponLauncherHammerheadCraft
+  result: WeaponLauncherHammerhead
+  completetime: 5
+  materials:
+    Steel: 3000
+    Uranium: 1500
+    Gold: 1000
+    Plasma: 4000
+
+- type: latheRecipe
+  id: TermiteLPC
+  result: ShipVoucherTermite
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 2000
+    ShipComponents: 500
+    ShipHull: 1500
+
+- type: latheRecipe
+  id: ParacelsusLPC
+  result: ShipVoucherParacelsus
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 4000
+    ShipComponents: 2500
+    ShipHull: 5000
+
+- type: latheRecipe
+  id: ExhumerLPC
+  result: ShipVoucherExhumer
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 4000
+    ShipComponents: 1000
+    ShipHull: 3500

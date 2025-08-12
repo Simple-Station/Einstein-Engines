@@ -28,7 +28,7 @@ entities:
     - type: Fixtures
       fixtures: {}
     - type: BecomesStation
-      id: StandardNanotrasenStationAbandoned
+      id: Empty
     - type: OccluderTree
     - type: Shuttle
     - type: GridPathfinding
@@ -51,3 +51,11 @@ entities:
     - type: MovedGrids
     - type: Broadphase
     - type: OccluderTree
+- proto: SpawnPointLatejoin
+  entities:
+  - uid: 1
+    components:
+    - type: Transform
+      anchored: False
+      parent: 3
+...

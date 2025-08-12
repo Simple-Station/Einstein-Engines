@@ -5,7 +5,7 @@
   id: Scabrak
   name: SAW Scabrak
   description: Medium-sized mining barge
-  price: 31000
+  price: 100000
   category: Medium
   group: None
   path: /Maps/_Crescent/Shuttles/NCSP/scabrak.yml
@@ -19,6 +19,10 @@
     Scabrak:
       stationProto: StandardCrescentExpeditionVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: industrial
         - type: StationNameSetup
           mapNameTemplate: 'SAW Scabrak {1}'
           nameGenerator:

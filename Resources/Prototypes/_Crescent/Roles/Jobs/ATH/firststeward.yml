@@ -2,7 +2,7 @@
   id: StewardATH
   name: job-name-steward
   description: job-description-steward
-  playTimeTracker: JobStewardATH
+  playTimeTracker: ConscriptDSM
   requirements:
     - !type:CharacterSpeciesRequirement
       species:

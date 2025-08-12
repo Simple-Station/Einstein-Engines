@@ -14,8 +14,8 @@
     range: 1.75
     damage:
       types:
-        Blunt: 20
-        Structural: 30
+        Blunt: 25
+        Structural: 50
     soundHit:
       path: /Audio/Nyanotrasen/Weapons/club.ogg
     bluntStaminaDamageFactor: 1.5 # 15 stamina damage
@@ -28,8 +28,8 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 35
-        Structural: 50
+        Blunt: 45
+        Structural: 100
   - type: Tool
     qualities:
       - Prying

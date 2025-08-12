@@ -1,0 +1,28 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: UnionfallVanguard
+  name: NCWL Vanguard
+  description: A communard gunship, sees use primarily as an escort vessel.
+  price: 35000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Unionfall/NCWL/unionfall_vanguard.yml
+
+- type: gameMap
+  id: UnionfallVanguard
+  mapName: 'NCWL Vanguard'
+  mapPath: /Maps/_Crescent/Unionfall/NCWL/unionfall_vanguard.yml
+  minPlayers: 0
+  stations:
+    UnionfallVanguard:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Vanguard {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-gunship

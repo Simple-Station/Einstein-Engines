@@ -9,17 +9,23 @@
     sprite: _Goobstation/Changeling/claw.rsi
     state: icon
   - type: MeleeWeapon
-    angle: 0
+    angle: 5
     wideAnimationRotation: 180
     attackRate: 1
-    heavyStaminaCost: 8
+    heavyStaminaCost: 10
     damage:
       types:
-        Slash: 5
-        Piercing: 15
-        Structural: 10
-    soundHit:
-      path: /Audio/Weapons/bladeslice.ogg
+        Slash: 10
+        Piercing: 30
+        Structural: 25
+    heavyDamageBaseModifier: 1
+    maxTargets: 3
+  - type: Prying
+    speedModifier: 2
+    pryPowered: true
+  - type: Tool
+    qualities:
+    - Prying
   - type: Item
     size: Ginormous
     sprite: _Goobstation/Changeling/claw.rsi

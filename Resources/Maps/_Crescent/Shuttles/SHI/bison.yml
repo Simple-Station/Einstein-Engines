@@ -326,6 +326,10 @@ entities:
           - 0
           - 0
         chunkSize: 4
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: frigate
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: BecomesStation

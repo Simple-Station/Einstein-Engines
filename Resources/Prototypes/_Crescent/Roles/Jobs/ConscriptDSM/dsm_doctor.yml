@@ -1,0 +1,74 @@
+- type: job
+  id: ConscriptDoctorDSM
+  name: job-name-conscript-dsm-doctor
+  description: job-description-conscript-dsm-doctor
+  playTimeTracker: ConscriptDSM
+  weight: 7
+  startingGear: ConscriptDoctorDSMGear
+  alwaysUseSpawner: true
+  icon: "JobIconUnionfallDSMMedic"
+  requirements:
+    - !type:FactionRequirement
+      factionID: "DSM"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ForeignerLight
+        - Blindness
+        - Pacifist
+        - WheelchairBound
+  requireAdminNotify: false
+  supervisors: job-supervisors-conscript-dsm
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-dsm-doctor
+      - type: HullrotFaction
+        faction: DSM
+  access:
+  - Command
+  - Maintenance
+  - ScribesGuild
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+  - Empire
+
+- type: startingGear
+  id: ConscriptDoctorDSMGear
+  equipment:
+    head: ClothingHeadHatImperialSurgeon
+    neck: ClothingNeckIFFCyan
+    mask: ClothingMaskImperialCombatGasmask
+    jumpsuit: ClothingUniformJumpsuitImperialSurgeon
+    outerClothing: ClothingOuterArmorImperialTrooperArmor
+    shoes: ClothingShoesBootsMagDSM
+    belt: ClothingBeltAssaultFilledMedic
+    eyes: ClothingEyesHudMedSec
+    gloves: ClothingHandsGlovesNitrile
+    pocket1: DoubleEmergencyOxygenTankFilled
+    pocket2: ParamedHypo
+    ears: ClothingHeadsetEmpire
+    id: SurgeonPDA
+    suitstorage: WeaponPistolNeoVolker
+    back: ClothingBackpackSatchelMedical
+  inhand:
+    - BookUnionfallDSMGuide
+    - CartridgePuncturase
+  storage:
+    back:
+      - DefibrillatorCompact
+      - VoidsuitKitDSM
+      - BoxFlare
+      - BoxMRE
+      - MedkitCombatFilled
+      - OmnizineChemistryBottle
+      - Bloodpack
+      - CartridgePuncturase
+      - CartridgePuncturase
+      - CartridgePuncturase
+      - CartridgePuncturase
+      - CartridgePuncturase

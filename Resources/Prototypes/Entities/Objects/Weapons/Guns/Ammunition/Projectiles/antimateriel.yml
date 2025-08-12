@@ -11,6 +11,7 @@
         Structural: 400 # Sniper is rarely used this way, but this ammo type exists to burst down CONCRETE and TANKS
     harmorPenetration: 180
     stoppingPower: 45
+  #  gibsOnHit: true # hilarious but overpowered. use for rockets and ship guns maybe? .2 | 2025
 
 - type: entity
   id: BulletAntiMaterielShrapnel

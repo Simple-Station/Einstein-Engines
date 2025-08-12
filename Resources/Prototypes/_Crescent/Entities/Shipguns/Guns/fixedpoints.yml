@@ -500,7 +500,7 @@
   id: Type99Artillery
   name: SHI Type 99 120mm artillery
   parent: BaseFixedShipgun
-  description: A heavier, bulkier version of the slugthrower. An antiquated SHI design. Requires manual reloading after expending magazine.
+  description: A heavier, bulkier version of the slugthrower. An antiquated SHI design. Requires manual reloading after its two chambers.
   components:
   - type: ApcPowerReceiver
     powerLoad: 3000
@@ -521,8 +521,12 @@
     layers:
     - state: artillery
   - type: BallisticAmmoProvider
+    soundInsert: 
+      path: /Audio/Weapons/Guns/UnionfallWeapons/amr_close_1.ogg
+    fillWithDoAfter: true
+    fillDelay: 1
     cycleable: true
-    capacity: 16
+    capacity: 2
     proto: CartridgeShellArmorPiercing
     whitelist:
       tags:
@@ -532,7 +536,7 @@
       ballistic-ammo: !type:Container
         ents: []
   - type: Gun
-    fireRate: 0.5
+    fireRate: 4
     projectileSpeed: 95
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ship_duster.ogg

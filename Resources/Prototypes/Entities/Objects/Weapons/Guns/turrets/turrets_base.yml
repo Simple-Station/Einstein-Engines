@@ -29,7 +29,7 @@
       interactSuccessString: petting-success-generic
       interactFailureString: petting-failure-generic
       interactSuccessSound:
-        path: /Audio/Effects/double_beep.ogg
+        path: /Audio/_Crescent/Ambience/ping.ogg
     - type: CombatMode
       toggleMouseRotator: false
     - type: Damageable
@@ -70,7 +70,7 @@
         RotateSpeed: !type:Single
           1.571 # At most 1 second to react to a target directly behind it, instead of instantaneous tracking
         SoundTargetInLOS: !type:SoundPathSpecifier
-          path: /Audio/Effects/double_beep.ogg
+          path: /Audio/_Crescent/Ambience/ping.ogg
     - type: MouseRotator
       angleTolerance: 5
       rotationSpeed: 90
@@ -95,10 +95,19 @@
       selectedMode: FullAuto
       availableModes:
         - FullAuto
-      soundGunshot: /Audio/Weapons/Guns/Gunshots/gun_sentry.ogg
+      soundGunshot:
+        collection: Turret_Gunshots
       currentAngle: 25 # Fires first shot at min accuracy.
       minAngle: 25 # Not guaranteed to hit their shots anymore.
       maxAngle: 45 # Continuous fire makes their accuracy unreliable.
+    - type: SpamEmitSound
+      minInterval: 20
+      maxInterval: 40
+      sound:
+        collection: TurretSFX
+        params:
+          volume: -5
+          maxDistance: 4
     - type: BallisticAmmoProvider
       proto: CartridgeCaselessRifle
       capacity: 200

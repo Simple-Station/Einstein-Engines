@@ -265,7 +265,7 @@
 # armor
 
 - type: entity
-  parent: ClothingOuterArmorBasic
+  parent: ClothingOuterBaseLarge
   id: ClothingOuterArmorImperialTrooperArmor
   name: imperial man-at-arms vest
   description: A Type III Imperial trooper vest.
@@ -280,13 +280,14 @@
     armorRepair: PlasteelPlate
     initialModifiers:
       flatReductions:
-        Blunt: 17
-        Slash: 17
-        Piercing: 30
-        Heat: 15
+        Blunt: 25
+        Slash: 25
+        Piercing: 45
+        Heat: 25
         Caustic: 25
   - type: ExplosionResistance
-    damageCoefficient: 0.80
+    damageCoefficient: 0.90
+  - type: AllowSuitStorage
   - type: StaticPrice
     price: 1500
 
@@ -317,7 +318,7 @@
     price: 1500
 
 - type: entity
-  parent: ClothingOuterArmorBasic
+  parent: ClothingOuterBaseLarge
   id: ClothingOuterArmorImperialArmorPrestige
   name: imperial prestige armor vest
   description: A Type IV Imperial trooper vest with rank stripes and enhanced kevlar composite.
@@ -334,14 +335,14 @@
       flatReductions:
         Blunt: 20
         Slash: 20
-        Piercing: 40
+        Piercing: 45
         Heat: 25
         Caustic: 25
   - type: ExplosionResistance
     damageCoefficient: 0.80
   - type: StaticPrice
     price: 3000
-
+  - type: AllowSuitStorage
 #coats
 
 - type: entity
@@ -479,8 +480,13 @@
   - type: Tag
     tags:
     - SuitEVA
+    - FitsInVoidsuitKit
   - type: StaticPrice
     price: 1500
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,3,3
 
 - type: entity
   parent: ClothingOuterEVASuitBase
@@ -497,3 +503,37 @@
     - SuitEVA
   - type: StaticPrice
     price: 2000
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitImperialNullweavePsion
+  name: psion nullweave robes
+  description: Suffocating black cloth is the mark of the Imperial Psion, lacking value or birthright enough to escape the clutches of the House of Questions. After processing and education for the betterment of the Mandate at large, their uniform remains as both a mark of origin and valuable tool - the design of the robe and accompanying mask isolates the wearer entirely from their surroundings so that they may focus upon the working of space and matter. In addition, the space-grade seals are suitable for EVA traversal.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/OuterClothing/mandatenullweavepsion.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/OuterClothing/mandatenullweavepsion.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: DegradeableArmor
+    armorMaxHealth: 500
+    armorType: Metallic
+    armorRepair: PlasteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 10
+        Slash: 20
+        Piercing: 20
+        Heat: 20
+        Caustic: 25
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitImperialNullweavePsion
+  - type: StaticPrice
+    price: 2500

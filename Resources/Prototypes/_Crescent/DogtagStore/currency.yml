@@ -1,9 +1,20 @@
 - type: currency
   id: DogtagNCWL
-  displayName: Communard IDs #CHANGE TO DOGTAG LATER
+  displayName: Union Merits
   canWithdraw: false
 
 - type: currency
   id: DogtagDSM
-  displayName: Imperial IDs #CHANGE TO DOGTAG LATER
+  displayName: Imperia Ordo Dockets
   canWithdraw: false
+
+- type: currency
+  id: PlunderGSC
+  displayName: Street Cred
+  canWithdraw: false
+
+- type: currency
+  id: ScrapSAW
+  displayName: Scrapped Goods
+  canWithdraw: false
+

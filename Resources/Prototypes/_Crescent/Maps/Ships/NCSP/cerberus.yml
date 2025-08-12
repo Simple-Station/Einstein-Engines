@@ -19,6 +19,10 @@
     Cerberus:
       stationProto: StandardCrescentCivilianVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: cruiser
         - type: StationNameSetup
           mapNameTemplate: 'GSC Cerberus {1}'
           nameGenerator:

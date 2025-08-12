@@ -27,11 +27,12 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 1000
+  - type: AllowSuitStorage
 
 - type: entity
   parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
   id: ClothingOuterArmorNCWLOpremeCarapace
-  name: admiral's greatcoat
+  name: major's greatcoat
   description: A kevlar-intervowen durathread trenchcoat with a synthfleece-trim collar. Looks badass.
   components:
   - type: Sprite
@@ -59,7 +60,7 @@
     price: 1000
 
 - type: entity
-  parent: ClothingOuterArmorBasic
+  parent: ClothingOuterBaseLarge
   id: ClothingOuterArmorNCWLHeavyCarapace
   name: communard's heavy carapace
   description: A steel-beaten juggernaut's carapace in communard orange.
@@ -87,6 +88,7 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 750
+  - type: AllowSuitStorage
 
 - type: entity
   parent: ClothingOuterArmorBasic
@@ -134,10 +136,10 @@
     armorRepair: Kevlar
     initialModifiers:
       flatReductions:
-        Blunt: 10
-        Slash: 10
-        Piercing: 20
-        Heat: 10
+        Blunt: 15
+        Slash: 15
+        Piercing: 25
+        Heat: 15
         Caustic: 25
   - type: ClothingSpeedModifier
     walkModifier: 1.0
@@ -147,6 +149,206 @@
   - type: GroupExamine
   - type: StaticPrice
     price: 900
+  - type: AllowSuitStorage
+
+## ncwl revamp clothing
+
+- type: entity
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
+  id: ClothingOuterArmorNCWLLogi
+  name: logistics union armored jacket
+  description: A communard jacket. Layered with kevlar nanoweave.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/OuterClothing/cargojacket.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/OuterClothing/cargojacket.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 750
+    armorType: Metallic
+    armorRepair: Kevlar
+    initialModifiers:
+      flatReductions:
+        Blunt: 15
+        Slash: 15
+        Piercing: 25
+        Heat: 15
+        Caustic: 25
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+  - type: StaticPrice
+    price: 900
+  - type: AllowSuitStorage
+
+- type: entity
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
+  id: ClothingOuterArmorNCWLEngi
+  name: engineering armored jacket
+  description: A communard jacket. Layered with kevlar nanoweave.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/OuterClothing/engijacket.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/OuterClothing/engijacket.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 750
+    armorType: Metallic
+    armorRepair: Kevlar
+    initialModifiers:
+      flatReductions:
+        Blunt: 15
+        Slash: 15
+        Piercing: 25
+        Heat: 15
+        Caustic: 25
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+  - type: StaticPrice
+    price: 900
+  - type: AllowSuitStorage
+
+- type: entity
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
+  id: ClothingOuterArmorNCWLCarapaceVrachev
+  name: director's armored labcoat
+  description: A communard jacket. Layered with kevlar nanoweave.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/OuterClothing/medicheadcoat.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/OuterClothing/medicheadcoat.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 750
+    armorType: Metallic
+    armorRepair: Kevlar
+    initialModifiers:
+      flatReductions:
+        Blunt: 15
+        Slash: 15
+        Piercing: 45
+        Heat: 15
+        Caustic: 25
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+  - type: StaticPrice
+    price: 900
+  - type: AllowSuitStorage
+
+- type: entity
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
+  id: ClothingOuterArmorNCWLMedi
+  name: vrachev union labcoat
+  description: A communard labcoat. Layered with kevlar nanoweave.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/OuterClothing/mediclabcoat.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/OuterClothing/mediclabcoat.rsi
+  - type: DegradeableArmor
+    armorMaxHealth: 750
+    armorType: Metallic
+    armorRepair: Kevlar
+    initialModifiers:
+      flatReductions:
+        Blunt: 15
+        Slash: 15
+        Piercing: 25
+        Heat: 15
+        Caustic: 25
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+  - type: StaticPrice
+    price: 900
+  - type: AllowSuitStorage
+
+## hardsuits ncwl revamp
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitNCWLMedi
+  name: Vrachev Union Mk.I hardsuit
+  description: An armored hardsuit of communard design. Comes with ballistic gel and kevlar padding. Spaceworthy.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/OuterClothing/infanteermedsuit.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/OuterClothing/infanteermedsuit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: DegradeableArmor
+    armorMaxHealth: 750
+    armorType: Metallic
+    armorRepair: HomelandAlloy
+    initialModifiers:
+      flatReductions:
+        Blunt: 15
+        Slash: 15
+        Piercing: 35
+        Heat: 15
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitNCWLMedi
+  - type: StaticPrice
+    price: 2000
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitNCWLEngi
+  name: Engineering Union Mk.I hardsuit
+  description: An armored hardsuit of communard design. Comes with ballistic gel and kevlar padding. Spaceworthy.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/OuterClothing/salvagehardsuit.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/OuterClothing/salvagehardsuit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: DegradeableArmor
+    armorMaxHealth: 750
+    armorType: Metallic
+    armorRepair: HomelandAlloy
+    initialModifiers:
+      flatReductions:
+        Blunt: 15
+        Slash: 15
+        Piercing: 35
+        Heat: 15
+        Caustic: 15
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitNCWLEngi
+  - type: StaticPrice
+    price: 2000
+
 
 ## hardsuits
 
@@ -270,5 +472,10 @@
   - type: Tag
     tags:
     - SuitEVA
+    - FitsInVoidsuitKit
   - type: StaticPrice
     price: 1000
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,3,3

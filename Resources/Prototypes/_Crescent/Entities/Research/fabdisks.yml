@@ -1,0 +1,273 @@
+﻿#precursor
+
+- type: entity
+  parent: BaseItem
+  id: NanotrasenFabdiskWeapons
+  name: nanotrasen fabdisk
+  description: A disk for the R&D server containing research technology. A label reads, 'NT #012 - LONG ARMS'.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/techdisks.rsi
+    layers:
+    - state: iconnanotrasen
+  - type: TechnologyDisk
+    recipes:
+      - WeaponRifleM90GrenadeLauncherNT
+      - WeaponSubMachineGunMP5NT
+      - WeaponShotgunSpasNT
+  - type: StaticPrice
+    price: 12500
+
+- type: entity
+  parent: BaseItem
+  id: NanotrasenFabdiskWeaponsSmall
+  name: nanotrasen fabdisk
+  description: A disk for the R&D server containing research technology. A label reads, 'NT #013 - SMALL ARMS'.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/techdisks.rsi
+    layers:
+    - state: iconnanotrasen
+  - type: TechnologyDisk
+    recipes:
+      - WeaponRevolverSnubnoseNT
+      - WeaponPistolHKUSPNT
+  - type: StaticPrice
+    price: 5000
+
+
+#shi
+
+- type: entity
+  parent: BaseItem
+  id: CorporateFabdiskDisposable
+  name: shinohara fabdisk
+  description: A disk for the R&D server containing research technology. A label reads, 'SHINOHARA LABS - DISPOSABLE ARMAMENTS'.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/techdisks.rsi
+    layers:
+    - state: iconnanotrasen
+  - type: TechnologyDisk
+    recipes:
+      - WeaponPistolBlastpopGrayCraft
+      - WeaponPistolBlastpopGoldCraft
+      - WeaponPistolBlastpopBlueCraft
+      - WeaponPistolBlastpopRedCraft
+  - type: StaticPrice
+    price: 250
+
+- type: entity
+  parent: BaseItem
+  id: CorporateFabdiskHEV
+  name: shinohara fabdisk
+  description: A disk for the R&D server containing research technology. A label reads, 'SHINOHARA LABS - HAZARDOUS ENVIRONMENT HARDSUIT'.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/techdisks.rsi
+    layers:
+    - state: iconnanotrasen
+  - type: TechnologyDisk
+    recipes:
+      - ClothingOuterHardsuitHEVCraft
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseItem
+  id: CorporateFabdiskHimehabu
+  name: shinohara fabdisk
+  description: A disk for the R&D server containing research technology. A label reads, 'SHINOHARA LABS - HIMEHABU SIDEARM'.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/techdisks.rsi
+    layers:
+    - state: iconnanotrasen
+  - type: TechnologyDisk
+    recipes:
+      - WeaponPistolHimehabuCraft
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseItem
+  id: CorporateFabdiskShinobu
+  name: shinohara fabdisk
+  description: A disk for the R&D server containing research technology. A label reads, 'SHINOHARA LABS - SHINOBU PROJECT'.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/techdisks.rsi
+    layers:
+    - state: iconnanotrasen
+  - type: TechnologyDisk
+    recipes:
+      - WeaponPistolSmartpistolCraft
+      - MagazinePistolSmartgunCraft
+  - type: StaticPrice
+    price: 2500
+
+- type: entity
+  parent: BaseItem
+  id: CorporateFabdiskSabre
+  name: shinohara fabdisk
+  description: A disk for the R&D server containing research technology. A label reads, 'SHINOHARA LABS - SABRE'.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/techdisks.rsi
+    layers:
+    - state: iconnanotrasen
+  - type: TechnologyDisk
+    recipes:
+      - WeaponSubMachineGunSabreCraft
+  - type: StaticPrice
+    price: 2500
+
+- type: entity
+  parent: BaseItem
+  id: CorporateFabdiskHammerhead
+  name: shinohara fabdisk
+  description: A disk for the R&D server containing research technology. A label reads, 'SHINOHARA LABS - HAMMERHEAD LAUNCHER'.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/techdisks.rsi
+    layers:
+    - state: iconnanotrasen
+  - type: TechnologyDisk
+    recipes:
+      - WeaponLauncherHammerheadCraft
+  - type: StaticPrice
+    price: 5000
+
+#civ
+
+- type: entity
+  parent: BaseItem
+  id: CorporateFabdiskTermite
+  name: shuttle pattern fabdisk
+  description: A disk for the R&D server containing research technology. A label reads, 'SHINOHARA LABS - TERMITE'.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/techdisks.rsi
+    layers:
+    - state: iconnanotrasen
+  - type: TechnologyDisk
+    recipes:
+      - TermiteLPC
+  - type: StaticPrice
+    price: 2000
+
+- type: entity
+  parent: BaseItem
+  id: CorporateFabdiskParacelsus
+  name: shuttle pattern fabdisk
+  description: A disk for the R&D server containing research technology. A label reads, 'IHIKERJA CIVILIAN MANUFACTURING - PARACELSUS'.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/techdisks.rsi
+    layers:
+    - state: iconnanotrasen
+  - type: TechnologyDisk
+    recipes:
+      - ParacelsusLPC
+  - type: StaticPrice
+    price: 5000
+
+- type: entity
+  parent: BaseItem
+  id: CorporateFabdiskExhumer
+  name: shuttle pattern fabdisk
+  description: A disk for the R&D server containing research technology. A label reads, 'IHIKERJA CIVILIAN MANUFACTURING - EXHUMER'.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/techdisks.rsi
+    layers:
+    - state: iconnanotrasen
+  - type: TechnologyDisk
+    recipes:
+      - ExhumerLPC
+  - type: StaticPrice
+    price: 7500
+
+#corporate
+
+- type: entity
+  parent: BaseItem
+  id: CorporateFabdiskKorund
+  name: corporate armor fabdisk
+  description: A disk for the R&D server containing research technology. A label reads, 'PANG-TAI ARMS - KORUND'.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/techdisks.rsi
+    layers:
+    - state: iconnanotrasen
+  - type: TechnologyDisk
+    recipes:
+      - ClothingHeadHatPangtaiKorundHelmet
+      - ClothingOuterArmorPangTaiKorund
+  - type: StaticPrice
+    price: 7500
+
+- type: entity
+  parent: BaseItem
+  id: CorporateFabdiskCorvid
+  name: corporate armor fabdisk
+  description: A disk for the R&D server containing research technology. A label reads, 'PANG-TAI ARMS - CORVID'.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/techdisks.rsi
+    layers:
+    - state: iconnanotrasen
+  - type: TechnologyDisk
+    recipes:
+      - ClothingHeadHatPangtaiCorvidHelmet
+      - ClothingOuterArmorPangTaiVest
+  - type: StaticPrice
+    price: 2500
+
+- type: entity
+  parent: BaseItem
+  id: CorporateFabdiskMako
+  name: corporate weapon fabdisk
+  description: A disk for the R&D server containing research technology. A label reads, 'PANG-TAI ARMS - MAKO'.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/techdisks.rsi
+    layers:
+    - state: iconnanotrasen
+  - type: TechnologyDisk
+    recipes:
+      - WeaponSpecialMako
+  - type: StaticPrice
+    price: 5000
+
+- type: entity
+  parent: BaseItem
+  id: CorporateFabdiskCheshyre
+  name: corporate weapon fabdisk
+  description: A disk for the R&D server containing research technology. A label reads, 'PANG-TAI ARMS - CHESHYRE'.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/techdisks.rsi
+    layers:
+    - state: iconnanotrasen
+  - type: TechnologyDisk
+    recipes:
+      - WeaponSubMachineGunCheshyre
+  - type: StaticPrice
+    price: 3000
+
+- type: entity
+  parent: BaseItem
+  id: CorporateFabdiskRongyu
+  name: corporate weapon fabdisk
+  description: A disk for the R&D server containing research technology. A label reads, 'PANG-TAI ARMS - RONGYU'.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/techdisks.rsi
+    layers:
+    - state: iconnanotrasen
+  - type: TechnologyDisk
+    recipes:
+      - WeaponPistolRongyu
+  - type: StaticPrice
+    price: 1000

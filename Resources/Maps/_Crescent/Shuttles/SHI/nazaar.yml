@@ -58,6 +58,82 @@ entities:
         version: 2
         nodes:
         - node:
+            zIndex: 1
+            id: LatticeCornerNE
+          decals:
+            27: 1,3
+            57: -1,3
+            64: -5,-3
+            70: -1,-4
+        - node:
+            zIndex: 1
+            id: LatticeCornerNW
+          decals:
+            30: 1,3
+            40: 1,-4
+            43: 5,-3
+            60: -1,3
+        - node:
+            zIndex: 1
+            id: LatticeCornerSE
+          decals:
+            25: 1,3
+            49: -4,1
+            52: -3,2
+            55: -1,3
+            67: -5,-1
+        - node:
+            zIndex: 1
+            id: LatticeCornerSW
+          decals:
+            29: 1,3
+            34: 3,2
+            37: 4,1
+            46: 5,-1
+            59: -1,3
+        - node:
+            id: LatticeEdgeE
+          decals:
+            24: 1,3
+            48: -4,1
+            51: -3,2
+            54: -1,3
+            62: -5,-3
+            66: -5,-1
+            68: -1,-4
+        - node:
+            id: LatticeEdgeN
+          decals:
+            26: 1,3
+            38: 1,-4
+            41: 5,-3
+            56: -1,3
+            63: -5,-3
+            69: -1,-4
+        - node:
+            id: LatticeEdgeS
+          decals:
+            23: 1,3
+            31: 1,4
+            32: 3,2
+            35: 4,1
+            44: 5,-1
+            47: -4,1
+            50: -3,2
+            53: -1,3
+            61: -1,4
+            65: -5,-1
+        - node:
+            id: LatticeEdgeW
+          decals:
+            28: 1,3
+            33: 3,2
+            36: 4,1
+            39: 1,-4
+            42: 5,-3
+            45: 5,-1
+            58: -1,3
+        - node:
             color: '#EFB34196'
             id: WarnBoxGreyscale
           decals:
@@ -166,6 +242,10 @@ entities:
           - 0
           - 0
         chunkSize: 4
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: fighter
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: IFF
@@ -177,18 +257,44 @@ entities:
       shuttleUid: 1
 - proto: AAAardpointMediumMissile
   entities:
-  - uid: 77
+  - uid: 139
     components:
     - type: Transform
+      rot: -1.5707963267948966 rad
       pos: -2.5,2.5
       parent: 1
     - type: Physics
       canCollide: False
-  - uid: 141
+  - uid: 140
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: 3.5,2.5
       parent: 1
+    - type: Physics
+      canCollide: False
+- proto: AAAHardpointFixed
+  entities:
+  - uid: 48
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 2.5,3.5
+      parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 141
+    - type: Physics
+      canCollide: False
+  - uid: 67
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -1.5,3.5
+      parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 141
     - type: Physics
       canCollide: False
 - proto: AirlockCommand
@@ -233,32 +339,18 @@ entities:
       parent: 1
 - proto: BaseWeaponTurretLancer
   entities:
-  - uid: 78
+  - uid: 144
     components:
     - type: Transform
-      anchored: False
-      rot: 3.141592653589793 rad
+      rot: -1.5707963267948966 rad
       pos: -2.5,2.5
       parent: 1
-    - type: PointCannon
-      linkedConsoleId: invalid
-      obstructedRanges:
-      - 3.3586234622910975 rad: 4.27832736298208 rad
-    - type: Physics
-      bodyType: Dynamic
-  - uid: 140
+  - uid: 145
     components:
     - type: Transform
-      anchored: False
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: 3.5,2.5
       parent: 1
-    - type: PointCannon
-      linkedConsoleId: invalid
-      obstructedRanges:
-      - 1.7878271354962012 rad: 4.27832736298208 rad
-    - type: Physics
-      bodyType: Dynamic
 - proto: BoriaticGeneratorHerculesShuttle
   entities:
   - uid: 57
@@ -579,28 +671,15 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 85
           - 84
-- proto: ComputerShuttle
+          - 85
+- proto: ComputerTabletopShuttle
   entities:
-  - uid: 67
+  - uid: 141
     components:
     - type: Transform
-      pos: -2.5,0.5
+      pos: 0.5,2.5
       parent: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        139:
-        - Group1: Toggle
-        80:
-        - Group1: Toggle
-    - type: NamedModules
-      buttonNames:
-      - Fire Vulcans
-      - N/A
-      - N/A
-      - N/A
-      - N/A
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -615,14 +694,25 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-    - type: ApcPowerReceiver
-      needsPower: False
-- proto: ComputerTabletopTargeting
+    - type: DeviceLinkSource
+      linkedPorts:
+        67:
+        - Group1: Toggle
+        48:
+        - Group1: Toggle
+    - type: NamedModules
+      buttonNames:
+      - fire vulcans
+      - Module B
+      - Module C
+      - Module D
+      - Module E
+- proto: ComputerTargeting
   entities:
-  - uid: 48
+  - uid: 80
     components:
     - type: Transform
-      pos: 0.5,2.5
+      pos: -2.5,0.5
       parent: 1
 - proto: FaxMachineShip
   entities:
@@ -645,63 +735,62 @@ entities:
     - type: Transform
       parent: 83
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: NTVulcanTurretSHI
+- proto: LanceRocketCartridge
   entities:
-  - uid: 80
+  - uid: 146
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 2.5,3.5
+      rot: 1.5707963267948966 rad
+      pos: 1.5982008,-1.6027455
       parent: 1
-    - type: Battery
-      startingCharge: 197500
-    - type: DeviceLinkSink
-      links:
-      - 67
-    - type: ChamberMagazineAmmoProvider
-      boltClosed: True
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        gun_magazine: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        gun_chamber: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        machine_board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        machine_parts: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-    - type: BatterySelfRecharger
-      autoRechargeRate: -500
-      autoRecharge: True
-    - type: ApcPowerReceiver
-      powerLoad: 2000
-  - uid: 139
+  - uid: 147
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 1.5982022,-1.7761848
+      parent: 1
+  - uid: 148
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 1.5982008,-1.3797529
+      parent: 1
+  - uid: 149
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 1.5982008,-1.2434793
+      parent: 1
+- proto: MagazineVulcan
+  entities:
+  - uid: 78
+    components:
+    - type: Transform
+      parent: 77
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+  - uid: 143
+    components:
+    - type: Transform
+      parent: 142
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+- proto: NTVulcanTurret
+  entities:
+  - uid: 77
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -1.5,3.5
       parent: 1
-    - type: Battery
-      startingCharge: 197500
-    - type: DeviceLinkSink
-      links:
-      - 67
-    - type: ChamberMagazineAmmoProvider
-      boltClosed: True
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -711,24 +800,31 @@ entities:
         gun_magazine: !type:ContainerSlot
           showEnts: False
           occludes: True
-          ent: null
+          ent: 78
         gun_chamber: !type:ContainerSlot
           showEnts: False
           occludes: True
           ent: null
-        machine_board: !type:Container
+  - uid: 142
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 2.5,3.5
+      parent: 1
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
           showEnts: False
           occludes: True
           ents: []
-        machine_parts: !type:Container
+        gun_magazine: !type:ContainerSlot
           showEnts: False
           occludes: True
-          ents: []
-    - type: BatterySelfRecharger
-      autoRechargeRate: -500
-      autoRecharge: True
-    - type: ApcPowerReceiver
-      powerLoad: 2000
+          ent: 143
+        gun_chamber: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
 - proto: PoweredlightLED
   entities:
   - uid: 131
@@ -864,8 +960,6 @@ entities:
     - type: Transform
       pos: 3.5,-0.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 200
 - proto: SpawnPointCorpSec
   entities:
   - uid: 98
@@ -907,46 +1001,34 @@ entities:
       rot: 3.141592653589793 rad
       pos: 3.5,-2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 20
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -2.5,-2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 38
     components:
     - type: Transform
       pos: 1.5,4.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 39
     components:
     - type: Transform
       pos: -0.5,4.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 43
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 5.5,-2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 44
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -4.5,-2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
 - proto: ToolboxMechanicalFilled
   entities:
   - uid: 84
@@ -954,6 +1036,8 @@ entities:
     - type: Transform
       parent: 83
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
 - proto: WallReinforced

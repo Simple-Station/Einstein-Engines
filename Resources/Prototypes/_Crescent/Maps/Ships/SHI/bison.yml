@@ -2,7 +2,7 @@
   id: Bison
   name: SHI Bison
   description: A heavy blockade runner, the Bison primarily serves as a backliner for the CorpSec team, and as a smuggler vehicle for prospective freight-runners.
-  price: 55000
+  price: 75000
   category: Medium
   group: None
   path: /Maps/_Crescent/Shuttles/SHI/bison.yml
@@ -16,6 +16,10 @@
     Bison:
       stationProto: StandardCrescentCivilianVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: frigate
         - type: StationNameSetup
           mapNameTemplate: 'CSEC Bison {1}'
           nameGenerator:

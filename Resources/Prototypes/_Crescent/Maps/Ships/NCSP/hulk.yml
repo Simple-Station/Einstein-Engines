@@ -5,7 +5,7 @@
   id: Hulk
   name: IPM Hulk
   description: A mobile hospital on thrusters. Quite heavy, yet underarmed.
-  price: 120000
+  price: 160000
   category: Large
   group: None
   path: /Maps/_Crescent/Shuttles/NCSP/hulk.yml
@@ -19,6 +19,10 @@
     Hulk:
       stationProto: StandardCrescentCivilianVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: dreadnought
         - type: StationNameSetup
           mapNameTemplate: 'IPM Hulk {1}'
           nameGenerator:

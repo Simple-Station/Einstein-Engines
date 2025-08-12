@@ -67,7 +67,6 @@
     MagazinePistolSubMachineGunHeavy: 250
     MagazinePistolSubMachineGun: 250
     MagazinePistol6mmSmg: 250
-    BaseMagazineMagnumSubMachineGun: 250
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
     MagazinePistol: 250
@@ -75,11 +74,6 @@
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
-    BoxLethalshot4g: 250
-    BoxBeanbag4g: 250
-    BoxShotgunSlug4g: 250
-    BoxShotgunBreach4g: 250
-    BoxShotgunFlash4g: 250
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingMaskSyndicateFacemask: 100
@@ -119,7 +113,6 @@
     WeaponLauncherMilkor: 60
     WeaponLauncherChinaLake: 60
     WeaponSpecialMako: 60
-    BaseWeaponLightMachineGunConscript: 60
     WeaponSpecialRailgun: 60
     WeaponSniperHristov: 60
     WeaponSniperMosin: 60
@@ -174,7 +167,6 @@
     MagazinePistolSubMachineGunHeavy: 250
     MagazinePistolSubMachineGun: 250
     MagazinePistol6mmSmg: 250
-    BaseMagazineMagnumSubMachineGun: 250
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
     MagazinePistol: 250
@@ -182,11 +174,6 @@
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
-    BoxLethalshot4g: 250
-    BoxBeanbag4g: 250
-    BoxShotgunSlug4g: 250
-    BoxShotgunBreach4g: 250
-    BoxShotgunFlash4g: 250
     ClothingBeltNCWLWebbingMedFilled: 60
     ClothingBeltNCWLWebbingFilledGrenadier: 60
     ClothingMaskSyndicateFacemask: 100
@@ -255,12 +242,9 @@
     WeaponPistolViper: 60
     WeaponPistolRongyu: 60
     WeaponPistolBlastpopGray: 60
-    SRMKhopesh: 60
-    ClothingBeltSheathKhopesh: 60
-    DSMSabre: 60
-    ClothingBeltSheathDSMSabre: 60
-    DSMRapier: 60
-    ClothingBeltSheathRapier: 60
+    ClothingBeltSheathKhopeshFilled: 60
+    ClothingBeltSheathDSMSabreFilled: 60
+    ClothingBeltSheathDSMRapierFilled: 60
     SecBreachingHammer: 60
     Katana: 60
     RiotBulletShield: 100
@@ -277,7 +261,6 @@
     MagazinePistolSubMachineGunHeavy: 250
     MagazinePistolSubMachineGun: 250
     MagazinePistol6mmSmg: 250
-    BaseMagazineMagnumSubMachineGun: 250
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
     MagazinePistol: 250
@@ -285,11 +268,6 @@
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
-    BoxLethalshot4g: 250
-    BoxBeanbag4g: 250
-    BoxShotgunSlug4g: 250
-    BoxShotgunBreach4g: 250
-    BoxShotgunFlash4g: 250
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingMaskImperialCombatGasmask: 100
@@ -357,8 +335,7 @@
     WeaponPistolViper: 60
     WeaponPistolRongyu: 60
     WeaponPistolBlastpopGray: 60
-    SRMKhopesh: 60
-    ClothingBeltSheathKhopesh: 60
+    ClothingBeltSheathKhopeshFilled: 60
     SecBreachingHammer: 60
     Katana: 60
     RiotBulletShield: 100
@@ -375,7 +352,6 @@
     MagazinePistolSubMachineGunHeavy: 250
     MagazinePistolSubMachineGun: 250
     MagazinePistol6mmSmg: 250
-    BaseMagazineMagnumSubMachineGun: 250
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
     MagazinePistol: 250
@@ -383,11 +359,6 @@
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
-    BoxLethalshot4g: 250
-    BoxBeanbag4g: 250
-    BoxShotgunSlug4g: 250
-    BoxShotgunBreach4g: 250
-    BoxShotgunFlash4g: 250
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingMaskImperialCombatGasmask: 100
@@ -473,7 +444,6 @@
     MagazinePistolSubMachineGunHeavy: 250
     MagazinePistolSubMachineGun: 250
     MagazinePistol6mmSmg: 250
-    BaseMagazineMagnumSubMachineGun: 250
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
     MagazinePistol: 250
@@ -481,11 +451,6 @@
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
-    BoxLethalshot4g: 250
-    BoxBeanbag4g: 250
-    BoxShotgunSlug4g: 250
-    BoxShotgunBreach4g: 250
-    BoxShotgunFlash4g: 250
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingBeltMinutemanPouches: 100
@@ -563,7 +528,6 @@
     MagazineLightRifle: 250
     MagazinePistolSubMachineGunHeavy: 250
     MagazinePistolSubMachineGun: 250
-    BaseMagazineMagnumSubMachineGun: 250
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
     MagazinePistol: 250
@@ -571,11 +535,6 @@
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
-    BoxLethalshot4g: 250
-    BoxBeanbag4g: 250
-    BoxShotgunSlug4g: 250
-    BoxShotgunBreach4g: 250
-    BoxShotgunFlash4g: 250
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingBeltMinutemanPouches: 100
@@ -675,7 +634,6 @@
     MagazinePistolSubMachineGunHeavy: 250
     MagazinePistolSubMachineGun: 250
     MagazinePistol6mmSmg: 250
-    BaseMagazineMagnumSubMachineGun: 250
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
     MagazinePistol: 250
@@ -683,11 +641,6 @@
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
-    BoxLethalshot4g: 250
-    BoxBeanbag4g: 250
-    BoxShotgunSlug4g: 250
-    BoxShotgunBreach4g: 250
-    BoxShotgunFlash4g: 250
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingBeltMinutemanPouches: 100
@@ -782,7 +735,6 @@
     MagazinePistolSubMachineGunHeavy: 250
     MagazinePistolSubMachineGun: 250
     MagazinePistol6mmSmg: 250
-    BaseMagazineMagnumSubMachineGun: 250
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
     MagazinePistol: 250
@@ -790,11 +742,6 @@
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
-    BoxLethalshot4g: 250
-    BoxBeanbag4g: 250
-    BoxShotgunSlug4g: 250
-    BoxShotgunBreach4g: 250
-    BoxShotgunFlash4g: 250
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingBeltAuthorityWebbing: 100
@@ -895,7 +842,6 @@
     MagazinePistolSubMachineGunHeavy: 250
     MagazinePistolSubMachineGun: 250
     MagazinePistol6mmSmg: 250
-    BaseMagazineMagnumSubMachineGun: 250
     MagazineMagnum: 250
     SpeedLoaderMagnum: 250
     MagazinePistol: 250
@@ -903,11 +849,6 @@
     SpeedLoaderPistol: 250
     BoxLethalshot: 250
     BoxShotgunSlug: 250
-    BoxLethalshot4g: 250
-    BoxBeanbag4g: 250
-    BoxShotgunSlug4g: 250
-    BoxShotgunBreach4g: 250
-    BoxShotgunFlash4g: 250
     ClothingBeltSyndicateWebbingMedFilled: 60
     ClothingBeltSyndicateWebbingFilledGrenadier: 60
     ClothingBeltMinutemanPouches: 100
@@ -943,11 +884,9 @@
   startingInventory:
     MetalFoamGrenadeFast: 150
     CartridgeShellHighExplosive: 5000
-    CartridgeShellEmp: 5000
     CartridgeShellArmorPiercing: 5000
     MagazineLightRifleBoxSlug: 5000
     MagazineLightRifleBoxSlugHE: 5000
-    MagazineLightRifleBoxSlugEMP: 5000
     MagazineMortar: 5000
     LanceRocketCartridge : 5000
     MagazineSwarmer: 5000
@@ -963,3 +902,139 @@
     IdnaTorpedo: 5000
     MagazineVulcan: 5000
     MagazineFlak: 5000
+
+- type: vendingMachineInventory
+  id: NCWLConscriptWarInventory
+  startingInventory:
+    WeaponSniperNCWLNovomosin: 100
+    BoxSpeedLoaderRifle: 100
+    WeaponSubMachineGunNCWLPartisan: 4
+    MagazinePistolSubMachineGun: 12
+    WeaponAntimaterielNCWLHayha: 1
+    BoxRoundsAntiMateriel: 1
+    WeaponLightMachineGunNCWLSurplus: 1
+    MagazineRiflePan: 3
+    WeaponShotgunDoubleBarreledNCWL: 5
+    BoxLethalshot: 10
+    WeaponPistolT91: 4
+    MagazineMagnum: 12
+    WeaponPistolComrade: 20
+    MagazinePistol: 250
+    TelescopicShield: 2
+    RiotShield: 2
+    CombatKnife: 100
+    ClothingBeltNCWLWebbingMedFilled: 4
+    ClothingBeltNCWLWebbing: 100
+    ClothingBackpackNCWL: 100
+    JetpackBlackFilled: 20
+    FoodSnackNutribrick: 100
+    DrinkMREFlask: 100
+    HandHeldMassScannerEE: 150
+    Crowbar: 150
+    OxygenTankFilled: 150
+    ClothingHeadHelmetNCWLBasic: 100
+    ClothingOuterArmorNCWLHeavyCarapace: 100
+    ClothingHeadHelmetNCWLEVA: 100
+    ClothingOuterNCWLEVA: 100
+
+
+
+- type: vendingMachineInventory
+  id: DSMConscriptWarInventory
+  startingInventory:
+    WeaponSniperDSMLegax: 100
+    MagazineBoxLightRifleSurplus: 100
+    WeaponSubMachineGunDSMArbiter: 4
+    MagazinePistolSubMachineGun: 12
+    WeaponAntimaterielDSMLeveller: 1
+    BoxRoundsAntiMateriel: 1
+    WeaponLightMachineDSMSurplus: 1
+    MagazineLightRifleBox: 3
+    WeaponShotgunDSMMatusa: 5 #WHEN REVOLVERS ARE FIXED THIS NEEDS TO BE CHANGED TO REVOLVER TYPE INSTEAD OF RIFLE TYPE
+    BoxLethalshot: 10
+    WeaponPistolNeoVolker: 5
+    MagazineMagnum: 12
+    WeaponPistolComplianceImperial: 20
+    MagazinePistol: 250
+    TelescopicShield: 2
+    RiotShield: 2
+    CombatKnife: 100
+    BoxSpeedLoaderLightRifle: 20
+    ClothingBeltSyndicateWebbingMedFilled: 4
+    ClothingBeltAuthorityWebbing: 100
+    ClothingBackpackDSM: 100
+    JetpackBlackFilled: 20
+    FoodSnackNutribrick: 100
+    DrinkMREFlask: 100
+    HandHeldMassScannerEE: 150
+    Crowbar: 150
+    OxygenTankFilled: 150
+    ClothingHeadHelmetImperialTrooperHelmet: 100
+    ClothingOuterArmorImperialTrooperArmor: 100
+    ClothingHeadHelmetImperialKnightCommanderHelmet: 5
+    ClothingOuterArmorImperialArmorPrestige: 5
+    ClothingHeadHelmetImperialEVA: 100
+    ClothingOuterCoatImperialSoftsuit: 100
+
+- type: vendingMachineInventory
+  id: NCWLConscriptAmmoInventory
+  startingInventory:
+    WeaponSniperNCWLNovomosin: 100
+    WeaponPistolComrade: 20
+    BoxSpeedLoaderRifle: 50
+    MagazinePistolSubMachineGun: 12
+    BoxRoundsAntiMateriel: 1
+    BoxLethalshot: 10
+    MagazineMagnum: 12
+    MagazinePistol: 50
+
+- type: vendingMachineInventory
+  id: DSMConscriptAmmoInventory
+  startingInventory:
+    WeaponSniperDSMLegax: 100
+    WeaponPistolComplianceImperial: 20
+    MagazineBoxLightRifleSurplus: 50
+    MagazinePistolSubMachineGun: 12
+    BoxRoundsAntiMateriel: 1
+    BoxLethalshot: 10
+    MagazineMagnum: 12
+    MagazinePistol: 50
+
+- type: vendingMachineInventory
+  id: NCWLConscriptGearInventory
+  startingInventory:
+    C4: 100
+    JetpackBlackFilled: 100
+    GrenadeFlashBang: 5
+    DoubleEmergencyOxygenTankFilled: 100
+    ClothingHeadHelmetNCWLBasic: 100
+    ClothingOuterArmorNCWLHeavyCarapace: 100
+
+- type: vendingMachineInventory
+  id: DSMConscriptGearInventory
+  startingInventory:
+    C4: 100
+    JetpackBlackFilled: 10
+    GrenadeFlashBang: 5
+    DoubleEmergencyOxygenTankFilled: 100
+    ClothingHeadHelmetImperialTrooperHelmet: 100
+    ClothingOuterArmorImperialTrooperArmor: 100
+
+- type: vendingMachineInventory
+  id: NCWLConscriptShipInventory
+  startingInventory:
+    ShipVoucherUnionfallLodka: 2
+    ShipVoucherUnionfallVanguard: 4
+    ShipVoucherUnionfallAegis: 2
+    ShipVoucherUnionfallBroadsword: 20
+    ShipVoucherUnionfallKhopesh: 20
+
+- type: vendingMachineInventory
+  id: DSMConscriptShipInventory
+  startingInventory:
+    ShipVoucherUnionfallRaider: 2
+    ShipVoucherUnionfallIbis: 2
+    ShipVoucherUnionfallSaintsfall: 2
+    ShipVoucherUnionfallImparator: 2
+    ShipVoucherUnionfallConquest: 20
+    ShipVoucherUnionfallValor: 20

@@ -1,0 +1,91 @@
+- type: job
+  id: ConscriptShipCrewDSM
+  name: job-name-conscript-dsm-ship-crew
+  description: job-description-conscript-dsm-ship-crew
+  playTimeTracker: ConscriptDSM
+  requirements:
+    - !type:FactionRequirement
+      factionID: "DSM"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
+  weight: 10
+  startingGear: ConscriptShipCrewDSMGear
+  alwaysUseSpawner: true
+  icon: "JobIconUnionfallDSMCrew"
+  requireAdminNotify: true
+  supervisors: job-supervisors-conscript-dsm
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-dsm-crew
+      - type: HullrotFaction
+        faction: DSM
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Mercenary # Frontier
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Service
+  - Empire
+
+- type: startingGear
+  id: ConscriptShipCrewDSMGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitImperialFreeholder
+    neck: ClothingNeckIFFCyan
+    back: ClothingBackpackDSM
+    shoes: ClothingShoesBootsMagDSM
+    head: ClothingHeadHelmetImperialWorkerHelmet
+    gloves: ClothingHandsGlovesImperialWorkerGloves
+    id: LevymanPDA
+    belt: ClothingBeltAssaultFilledCrew
+    pocket1: DoubleEmergencyOxygenTankFilled
+    ears: ClothingHeadsetEmpire
+    eyes: ClothingEyesHudSecurity
+  inhand:
+    - BookUnionfallDSMGuide
+  storage:
+    back:
+      - VoidsuitKitDSM
+      - BoxMRE
+      - WeaponPistolNeoVolker

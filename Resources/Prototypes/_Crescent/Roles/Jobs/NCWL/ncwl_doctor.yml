@@ -1,0 +1,57 @@
+- type: job
+  id: DoctorNCWL
+  name: job-name-ncwl-medical-doctor
+  description: job-description-ncwl-medical-doctor
+  playTimeTracker: JobMedicalWorkerNCWL
+  weight: 6
+  startingGear: DoctorNCWLGear
+  alwaysUseSpawner: true
+  icon: "JobIconNCWLMedicalWorker"
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Shadowkin
+    - !type:CharacterOverallTimeRequirement
+      min: 1000
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
+  requireAdminNotify: false
+  supervisors: job-supervisors-ncwl-alyans
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ncwl-medi-worker
+  access:
+  - Command
+  - Maintenance
+  - Service
+  - NCWLGeneral
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: DoctorNCWLGear
+  equipment:
+    shoes: ClothingShoesBootsJack
+    jumpsuit: ClothingUniformJumpsuitNCWLMedic
+    id: NCWLMedicalWorkerPDA
+    outerClothing: ClothingOuterArmorNCWLMedi
+    belt: ClothingBeltMedicalFilled
+    back: ClothingBackpackNCWL
+    gloves: ClothingHandsGlovesNitrile
+    head: ClothingHeadHatNCWLCapsoftMedical
+    eyes: ClothingEyesHudMedical
+    ears: ClothingHeadsetNCWL

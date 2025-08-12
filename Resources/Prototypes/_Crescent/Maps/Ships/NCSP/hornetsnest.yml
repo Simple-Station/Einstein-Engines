@@ -2,7 +2,7 @@
   id: Hornetsnest
   name: GSC Hornet's Nest
   description: A Carrier fit for use by Para Military Corporations. A capable vessel for its class.
-  price: 90000
+  price: 105000
   category: Medium
   group: None
   path: /Maps/_Crescent/Shuttles/NCSP/hornetsnest.yml
@@ -16,6 +16,10 @@
     Hornetsnest:
       stationProto: StandardCrescentVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: cruiser
         - type: StationNameSetup
           mapNameTemplate: 'GSC Hornets Nest {1}'
           nameGenerator:
