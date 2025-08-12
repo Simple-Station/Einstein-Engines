@@ -93,8 +93,8 @@
 - type: entity
   parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorNCWLCarapaceKapitan
-  name: kapitan's armored overcoat
-  description: A communard overcoat overlaid with a kevlar vest.
+  name: fleetkapitan's armored overcoat
+  description: A communard overcoat overlaid with a kevlar vest. Fit for a commanding officer.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/NCWL/OuterClothing/commsofficercoat.rsi
@@ -156,7 +156,7 @@
 - type: entity
   parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
   id: ClothingOuterArmorNCWLLogi
-  name: logistics union armored jacket
+  name: dockmaster's armored jacket
   description: A communard jacket. Layered with kevlar nanoweave.
   components:
   - type: Sprite
@@ -187,8 +187,8 @@
 - type: entity
   parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
   id: ClothingOuterArmorNCWLEngi
-  name: engineering armored jacket
-  description: A communard jacket. Layered with kevlar nanoweave.
+  name: overboss armored jacket
+  description: A communard jacket. Layered with kevlar nanoweave. Boss around your fellow proletariat in style and comfort!
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/NCWL/OuterClothing/engijacket.rsi
