@@ -8,18 +8,18 @@
   },
   "states": [
     {
-        "name": "equipped-BELT",
-        "directions": 4
+      "name": "icon"
     },
     {
-        "name": "sheath-sabre-equipped-BELT",
-        "directions": 4
+      "name": "on-equipped-HELMET",
+      "directions": 4
     },
     {
-        "name": "sheath-sabre"
+      "name": "icon-flash"
     },
     {
-        "name": "sheath"
+      "name": "off-equipped-HELMET",
+      "directions": 4
     }
   ]
 }

@@ -8,6 +8,8 @@
     sprite: _Crescent/Objects/Misc/ntid.rsi
     layers:
       - state: chip
+  - type: StaticPrice
+    price: 5000
 
 - type: entity
   parent: BaseItem
@@ -19,6 +21,8 @@
     sprite: _Crescent/Objects/Misc/ntid.rsi
     layers:
       - state: chip
+  - type: StaticPrice
+    price: 8500
 
 - type: entity
   parent: BaseItem
@@ -30,6 +34,8 @@
     sprite: _Crescent/Objects/Misc/ntid.rsi
     layers:
       - state: abyssal
+  - type: StaticPrice
+    price: 10000
 
 - type: startingGear
   id: LowRiskCriminalLoot

@@ -11,9 +11,9 @@
 - type: loadout
   id: LoadoutBeltSheathMacheteIndependent
   category: Belt
-  cost: 0
+  cost: 4
   items:
-    - ClothingBeltSheathMacheteIndependent
+    - ClothingBeltSheathMacheteIndependentFilled
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBelt

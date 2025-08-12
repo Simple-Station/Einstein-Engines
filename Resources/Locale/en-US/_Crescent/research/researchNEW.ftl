@@ -124,6 +124,7 @@ research-technology-shinohara-cybereyes = Corporate Smart Optics
 research-technology-shinohara-grenadelauncher = Corporate Grenade Launcher
 research-technology-shinohara-mantisblades = CRL-20 Mantis Blades
 research-technology-shinohara-boriaticcomposting = Boriatic Fuel Composting
+research-technology-shinohara-basicfighterguns = Basic Fighter Weaponry
 research-technology-shinohara-basicmechguns = Basic Mechasuit Weaponry
 research-technology-shinohara-advancedmechweaponry = Advanced Mechasuit Weaponry
 research-technology-shinohara-shipyardmanufactorum = Shipyard Manufactorum

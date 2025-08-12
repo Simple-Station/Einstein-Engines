@@ -520,7 +520,7 @@
       - CovetorLPC
       - IbisLPC
       - SunesisLPC
-      - ClothingBeltSheathRapier
+      - ClothingBeltSheathDSMRapier
       - ClothingBeltSheathDSMSabre
       - DSMRapier
       - DSMSabre
@@ -589,6 +589,8 @@
       - ClothingHeadHatShinoharaNonevaHelm
       - TelescopicBatonSHI
       - ShinoharaOptics
+      - WeaponFighterMachinegun
+      - WeaponFighterAutocannon
       - WeaponMechCombatAutoshotgun
       - WeaponMechCombatLightRifle
       - WeaponMechSword
