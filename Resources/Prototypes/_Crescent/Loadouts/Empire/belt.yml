@@ -3,7 +3,7 @@
   category: Belt
   cost: 0
   items:
-    - ClothingBeltSheathDSMSabre
+    - ClothingBeltSheathDSMSabreFilled
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBelt
@@ -25,7 +25,7 @@
   category: Belt
   cost: 0
   items:
-    - ClothingBeltSheathRapier
+    - ClothingBeltSheathDSMRapierFilled
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBelt
