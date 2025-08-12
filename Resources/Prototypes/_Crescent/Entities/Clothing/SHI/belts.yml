@@ -1,0 +1,31 @@
+- type: entity
+  parent: [ClothingBeltBase, ClothingSlotBase]
+  id: ClothingBeltSheathSHIKatana
+  name: katana sheath
+  description: A sheath to hold a katana.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/SHI/Belt/katana_sheath.rsi
+    state: sheath
+  - type: Clothing
+    sprite: _Crescent/Clothing/SHI/Belt/katana_sheath.rsi
+  - type: Item
+    size: Ginormous
+  - type: ItemSlots
+    slots:
+      item:
+        name: Katana
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+        whitelist:
+          tags:
+          - Katana
+  - type: ItemMapper
+    mapLayers:
+      sheath-sabre:
+        whitelist:
+          tags:
+          - Katana
+  - type: Appearance

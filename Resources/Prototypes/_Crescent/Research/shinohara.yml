@@ -67,6 +67,8 @@
   - ClothingOuterArmorShinoharaArmorBulwark
   - ClothingHeadHatShinoharaNonevaHelm
   - TelescopicBatonSHI
+  - SHIKatana
+  - ClothingBeltSheathSHIKatana
 
 - type: technology
   id: ShinoharaCybereyes
@@ -411,3 +413,15 @@
   cost: 9000
   recipeUnlocks:
   - BallisticFablatheFlatpack
+
+- type: technology
+  id: ShinoharaShiverBlade
+  name: research-technology-shinohara-shiverblade
+  icon:
+    sprite: _Crescent/Objects/Weapons/shiverblade.rsi
+    state: icon
+  discipline: Corporate
+  tier: 3
+  cost: 8000
+  recipeUnlocks:
+  - SHIShiverBlade
