@@ -59,3 +59,11 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMasks
+
+- type: loadout
+  id: LoadoutMaskClothingMaskBreath
+  category: Mask
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingMaskBreath

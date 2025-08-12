@@ -43,6 +43,7 @@
   cost: 0
   exclusive: true
   canBeHeirloom: true
+  customColorTint: true
   items:
     - ClothingHeadHatCowboyBountyHunter
   requirements:
