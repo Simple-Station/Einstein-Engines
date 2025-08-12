@@ -1,6 +1,6 @@
 #ncwl#
 
-job-name-ncwl-faction-leader = Major General of the Workers League
+job-name-ncwl-faction-leader = Major General of the League
 job-name-ncwl-homeguard-overseer = Kommissar
 job-name-ncwl-homeguard-captain = Union Kapitan
 job-name-ncwl-homeguard-soldat = Soldat
