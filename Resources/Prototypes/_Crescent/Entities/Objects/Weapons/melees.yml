@@ -193,7 +193,7 @@
   - type: Item
     size: Normal
     shape:
-      - 0,0,1,2
+      - 0,0,1,3
     sprite: _Crescent/Objects/Weapons/shinoharakatana.rsi
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/shinoharakatana.rsi
@@ -239,3 +239,33 @@
     volume: 1
     sound:
       path: /Audio/Weapons/ebladehum.ogg
+
+- type: entity
+  name: dueling khopesh
+  parent: BaseItem
+  id: DSMDuelingKhopesh
+  description: Typically relegated to a ceremonial weapon, the steel dueling khopesh saw widespread revival among Saintsworn aristocrats after the death of Romaine. The curved design allows a canny swordsman to work their way past an enemy's guard and deliver heavy chopping blows.
+  components:
+  - type: Sharp
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/duelingkhopesh.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: 90
+    attackRate: 1
+    damage:
+      types:
+        Slash: 33
+    heavyDamageBaseModifier: 1
+    heavyRateModifier: 1.25
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    size: Normal
+    shape:
+      - 0,0,1,3
+    sprite: _Crescent/Objects/Weapons/duelingkhopesh.rsi
+  - type: Tag
+    tags:
+    - Khopesh
+  - type: DisarmMalus

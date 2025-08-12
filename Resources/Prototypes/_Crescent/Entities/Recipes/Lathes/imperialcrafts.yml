@@ -360,6 +360,14 @@
     Gold: 1000
 
 - type: latheRecipe
+  id: DSMDuelingKhopesh
+  result: DSMDuelingKhopesh
+  completetime: 2
+  materials:
+    Steel: 1500
+    Silver: 1000
+
+- type: latheRecipe
   id: ClothingBeltSheathDSMSabre
   result: ClothingBeltSheathDSMSabre
   completetime: 2
