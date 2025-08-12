@@ -1259,6 +1259,18 @@
         - MagazineBoxCaselessRifleRubber # EE
         - MagazineLightRifleMarkOneEmpty
         - MagazineLightRifleMarkOne
+      #Hullrot edit start
+        - MagazineLightRifle
+        - MagazinePistol6mm
+        - MagazineHeavyRifle
+        - MagazinePistolSubMachineGunHeavy
+        - MagazinePistolSubMachineGun
+        - MagazinePistolSubMachineGunTopMounted
+        - MagazineRifle
+        - MagazineShotgun
+        - MagazineShotgunSlug
+        - MagazineMagnumSub
+      #Hullrot edit end
     - type: MaterialStorage
       whitelist:
         tags:
