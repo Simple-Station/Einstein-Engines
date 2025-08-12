@@ -1,9 +1,9 @@
 - type: job
-  id: SupervisorNCWL
-  name: job-name-ncwl-engineering-supervisor
-  description: job-description-ncwl-engineering-supervisor
+  id: WorkerOverbossNCWL
+  name: job-name-ncwl-worker-overboss
+  description: job-description-ncwl-worker-overboss
   playTimeTracker: JobEngineeringLeaderNCWL
-  weight: 5
+  weight: 2
   startingGear: SupervisorNCWLGear
   alwaysUseSpawner: true
   icon: "JobIconNCWLEngineeringLeader"
@@ -22,7 +22,7 @@
         - Pacifist
         - WheelchairBound
   requireAdminNotify: false
-  supervisors: job-supervisors-ncwl-major
+  supervisors: job-supervisors-ncwl-leaders
   canBeAntag: false
   special:
   - !type:AddComponentSpecial

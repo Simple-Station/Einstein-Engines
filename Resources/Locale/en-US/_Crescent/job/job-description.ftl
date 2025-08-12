@@ -1,16 +1,13 @@
 #ncwl#
 
-job-description-ncwl-faction-leader = Coordinate the League. Ensure its survival, and the destruction of those who would oppose it.
-job-description-ncwl-homeguard-overseer = Lead the Homeguard. Defend Port Balreska and eliminate the League's enemies.
-job-description-ncwl-homeguard-captain = Command a squad of Soldats. Listen to the Coordinator. Maintain battlefield cohesion.
-job-description-ncwl-homeguard-soldat = Defend the League. Listen to your Squad Captain. Do what you're told.
-job-description-ncwl-logistic-dockmaster = Run industry. Produce goods. Make money. Supply the League. Yell at your dockhands.
-job-description-ncwl-logistic-dockhand = Listen to the Dockmaster. Do trade runs. Order supplies. Man the machines. Get caught in conveyor belts.
-job-description-ncwl-medical-director = Keep the League alive and healthy. Coordinate research. Order cybernetics. Yell at your doctors.
-job-description-ncwl-medical-doctor = Listen to the Director. Do research. Practice medicine. Practice combat medicine. Make drugs.
-job-description-ncwl-engineering-supervisor = Supervise salvage and techmining. Oversee mining. Repair and maintain ships. Yell at your Engineers.
-job-description-ncwl-engineering-mechanic = Listen to the Supervisor. Gather resources for the League. Do repairs and shipmods. Explode.
-job-description-ncwl-newbie = Do what work needs doing. Serve the League and perhaps join one of the Unions.
+job-description-ncwl-faction-leader = Lead the League from the external end. Maintain relations or war plans with other factions. Don't die.
+job-description-ncwl-kommissar = Lead the League from the internal end. Make sure the Homeguard and Union does their job. Execute traitors.
+job-description-ncwl-fleetkapitan = Command the mass of Partisans. Listen to the Kommissar. Maintain battlefield cohesion.
+job-description-ncwl-partisan = Defend the League. Listen to your Fleetkapitan. Do what you're told.
+job-description-ncwl-industry-taskmaster = Ensure materials are being refined into trade goods and ammo. Organize trade routes. Work with the Overboss.
+job-description-ncwl-medical-doctor = Keep the Workers and the Homeguard alive. Run with the Homeguard on missions. Make drugs, save those lost in space.
+job-description-ncwl-worker-overboss = Organize salvage and mining. Make sure workers are working. Keep resources flowing to the Taskmaster.
+job-description-ncwl-newbie = Do what work needs doing. Serve the League. Listen to the Overboss and Taskmaster.
 
 #syndicate#
 

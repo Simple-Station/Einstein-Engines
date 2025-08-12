@@ -1,12 +1,12 @@
 - type: job
-  id: DirectorNCWL
-  name: job-name-ncwl-medical-director
-  description: job-description-ncwl-medical-director
-  playTimeTracker: JobMedicalLeaderNCWL
-  weight: 7
-  startingGear: DirectorNCWLGear
+  id: FleetkapitanNCWL
+  name: job-name-ncwl-fleetkapitan
+  description: job-description-ncwl-fleetkapitan
+  playTimeTracker: JobHomeguardSquadCaptainNCWL
+  weight: 6
+  startingGear: CaptainNCWLGear
   alwaysUseSpawner: true
-  icon: "JobIconNCWLMedicalLeader"
+  icon: "JobIconNCWLHomeguardSquadCaptain"
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 20000
@@ -22,13 +22,13 @@
         - Pacifist
         - WheelchairBound
   requireAdminNotify: false
-  supervisors: job-supervisors-ncwl-major
+  supervisors: job-supervisors-ncwl-leaders
   canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-ncwl-medi-leader
+        rank: crescent-rank-ncwl-home-squad-lead
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -72,15 +72,16 @@
   - NCWLCommand
 
 - type: startingGear
-  id: DirectorNCWLGear
+  id: CaptainNCWLGear
   equipment:
     shoes: ClothingShoesBootsJack
-    jumpsuit: ClothingUniformJumpsuitNCWLMedic
-    id: NCWLMedicalLeaderPDA
-    outerClothing: ClothingOuterArmorNCWLCarapaceVrachev
-    belt: ClothingBeltMedicalFilled
+    jumpsuit: ClothingUniformJumpsuitNCWL
+    id: NCWLHomeguardSquadCaptainPDA
+    outerClothing: ClothingOuterArmorNCWLCarapaceKapitan
+    belt: ClothingBeltNCWLPouches
+    pocket1: WeaponPistolHKUSP
     back: ClothingBackpackNCWL
-    gloves: ClothingHandsGlovesNitrile
-    head: ClothingHeadHatNCWLBeretMedi
-    eyes: ClothingEyesHudMedical
+    gloves: ClothingHandsGlovesCombat
+    head: ClothingHeadHatNCWLBeret
     ears: ClothingHeadsetNCWL
+    eyes: ClothingEyesHudSecurity

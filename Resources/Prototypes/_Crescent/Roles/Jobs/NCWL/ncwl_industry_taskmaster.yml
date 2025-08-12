@@ -1,7 +1,7 @@
 - type: job
-  id: DockmasterNCWL
-  name: job-name-ncwl-logistic-dockmaster
-  description: job-description-ncwl-logistic-dockmaster
+  id: IndustryTaskmasterNCWL
+  name: job-name-ncwl-industry-taskmaster
+  description: job-description-ncwl-industry-taskmaster
   playTimeTracker: JobLogisticLeaderNCWL
   weight: 3
   startingGear: DockmasterNCWLGear
@@ -22,7 +22,7 @@
         - Pacifist
         - WheelchairBound
   requireAdminNotify: false
-  supervisors: job-supervisors-ncwl-major
+  supervisors: job-supervisors-ncwl-leaders
   canBeAntag: false
   special:
   - !type:AddComponentSpecial

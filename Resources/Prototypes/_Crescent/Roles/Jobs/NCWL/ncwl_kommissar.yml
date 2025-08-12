@@ -1,15 +1,15 @@
 - type: job
-  id: CaptainNCWL
-  name: job-name-ncwl-homeguard-captain
-  description: job-description-ncwl-homeguard-captain
-  playTimeTracker: JobHomeguardSquadCaptainNCWL
-  weight: 9
-  startingGear: CaptainNCWLGear
+  id: KommissarNCWL
+  name: job-name-ncwl-kommissar
+  description: job-description-ncwl-kommissar
+  playTimeTracker: JobHomeguardLeaderNCWL
+  weight: 7
+  startingGear: OverseerNCWLGear
   alwaysUseSpawner: true
-  icon: "JobIconNCWLHomeguardSquadCaptain"
+  icon: "JobIconNCWLHomeguardLeader"
   requirements:
     - !type:CharacterOverallTimeRequirement
-      min: 20000
+      min: 30000
     - !type:FactionRequirement
       factionID: "NCWL"
     - !type:CharacterTraitRequirement
@@ -22,13 +22,13 @@
         - Pacifist
         - WheelchairBound
   requireAdminNotify: false
-  supervisors: job-supervisors-ncwl-homeguard
+  supervisors: job-supervisors-ncwl-kommissar
   canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-ncwl-home-squad-lead
+        rank: crescent-rank-ncwl-home-leader
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -72,16 +72,15 @@
   - NCWLCommand
 
 - type: startingGear
-  id: CaptainNCWLGear
+  id: OverseerNCWLGear
   equipment:
     shoes: ClothingShoesBootsJack
-    jumpsuit: ClothingUniformJumpsuitNCWL
-    id: NCWLHomeguardSquadCaptainPDA
-    outerClothing: ClothingOuterArmorNCWLCarapaceKapitan
+    jumpsuit: ClothingUniformJumpsuitNCWLKommissar
+    id: NCWLHomeguardLeaderPDA
+    outerClothing: ClothingOuterArmorNCWLCarapace
     belt: ClothingBeltNCWLPouches
-    pocket1: WeaponPistolHKUSP
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesCombat
-    head: ClothingHeadHatNCWLBeret
+    head: ClothingHeadHatNCWLKommissarHat
     ears: ClothingHeadsetNCWL
     eyes: ClothingEyesHudSecurity

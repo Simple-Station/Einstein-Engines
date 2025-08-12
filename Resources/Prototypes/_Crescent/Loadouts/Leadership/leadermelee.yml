@@ -10,7 +10,7 @@
     - !type:CharacterJobRequirement
       jobs:
         - CommandantNCWL
-        - HomeguardLeaderNCWL
+        - KommissarNCWL
         - IntelligenceOfficerNCSP
         - LieutenantNCSP
         - RingleaderNCSP
@@ -32,7 +32,7 @@
     - !type:CharacterJobRequirement
       jobs:
         - CommandantNCWL
-        - HomeguardLeaderNCWL
+        - KommissarNCWL
         - IntelligenceOfficerNCSP
         - LieutenantNCSP
         - RingleaderNCSP

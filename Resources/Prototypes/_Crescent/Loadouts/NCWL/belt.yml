@@ -10,12 +10,12 @@
     - !type:CharacterJobRequirement
       jobs:
         - CommandantNCWL
-        - HomeguardLeaderNCWL
-        - CaptainNCWL
-        - SoldatNCWL
+        - KommissarNCWL
+        - FleetkapitanNCWL
+        - PartisanNCWL
         - DoctorNCWL
-        - SupervisorNCWL
-        - DockmasterNCWL
+        - WorkerOverbossNCWL
+        - IndustryTaskmasterNCWL
         - WorkerNCWL
 
 - type: loadout
@@ -30,12 +30,12 @@
     - !type:CharacterJobRequirement
       jobs:
         - CommandantNCWL
-        - HomeguardLeaderNCWL
-        - CaptainNCWL
-        - SoldatNCWL
+        - KommissarNCWL
+        - FleetkapitanNCWL
+        - PartisanNCWL
         - DoctorNCWL
-        - SupervisorNCWL
-        - DockmasterNCWL
+        - WorkerOverbossNCWL
+        - IndustryTaskmasterNCWL
         - WorkerNCWL
 - type: loadout
   id: LoadoutBeltNCWLDoubleHolster

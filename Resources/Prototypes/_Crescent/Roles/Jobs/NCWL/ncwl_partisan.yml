@@ -1,9 +1,9 @@
 - type: job
-  id: SoldatNCWL
-  name: job-name-ncwl-homeguard-soldat
-  description: job-description-ncwl-homeguard-soldat
+  id: PartisanNCWL
+  name: job-name-ncwl-partisan
+  description: job-description-ncwl-partisan
   playTimeTracker: JobHomeguardSoldatNCWL
-  weight: 8
+  weight: 5
   startingGear: SoldatNCWLGear
   alwaysUseSpawner: true
   icon: "JobIconNCWLHomeguardSoldat"
@@ -20,7 +20,7 @@
         - Pacifist
         - WheelchairBound
   requireAdminNotify: false
-  supervisors: job-supervisors-ncwl-homeguard
+  supervisors: job-supervisors-ncwl-partisan
   canBeAntag: false
   special:
   - !type:AddComponentSpecial

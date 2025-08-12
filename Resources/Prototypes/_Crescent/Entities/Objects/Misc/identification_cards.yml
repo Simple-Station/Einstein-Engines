@@ -43,7 +43,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: HomeguardLeaderNCWL
+    job: KommissarNCWL
 
 - type: entity
   parent: IDCardStandard
@@ -58,7 +58,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: CaptainNCWL
+    job: FleetkapitanNCWL
 
 - type: entity
   parent: IDCardStandard
@@ -73,7 +73,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: SoldatNCWL
+    job: PartisanNCWL
 
 - type: entity
   parent: IDCardStandard
@@ -103,7 +103,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: DockmasterNCWL
+    job: IndustryTaskmasterNCWL
 
 
 - type: entity
@@ -119,7 +119,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: SupervisorNCWL
+    job: WorkerOverbossNCWL
 
 #syndicate#
 
