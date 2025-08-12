@@ -348,9 +348,47 @@
 - type: entity
   id: ClothingBeltSheathSHIKatanaFilled
   parent: ClothingBeltSheathSHIKatana
-  suffix: Filled
   components:
   - type: ContainerFill
     containers:
       item:
       - SHIKatana
+
+  id: ClothingBeltSheathKhopeshFilled
+  parent: ClothingBeltSheathKhopesh
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - SRMKhopesh
+
+- type: entity
+  id: ClothingBeltSheathMacheteIndependentFilled
+  parent: ClothingBeltSheathMacheteIndependent
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - IndependentMachete
+
+- type: entity
+  id: ClothingBeltSheathDSMSabreFilled
+  parent: ClothingBeltSheathDSMSabre
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - DSMSabre
+
+- type: entity
+  id: ClothingBeltSheathDSMRapierFilled
+  parent: ClothingBeltSheathDSMRapier
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - DSMRapier
