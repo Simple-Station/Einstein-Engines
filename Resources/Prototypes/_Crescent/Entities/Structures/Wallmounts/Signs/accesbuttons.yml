@@ -1,0 +1,7 @@
+- type: entity
+  id: LockableButtonShinohara
+  suffix: Shinohara
+  parent: LockableButton
+  components:
+  - type: AccessReader
+    access: [["Shinohara"]]
