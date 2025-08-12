@@ -107079,30 +107079,6 @@ entities:
     - type: Transform
       pos: -17.5,42.5
       parent: 1
-- proto: SpawnPointNCWLDirector
-  entities:
-  - uid: 6121
-    components:
-    - type: Transform
-      pos: -2.5,-43.5
-      parent: 1
-- proto: SpawnPointNCWLDockhand
-  entities:
-  - uid: 9743
-    components:
-    - type: Transform
-      pos: 35.5,-1.5
-      parent: 1
-  - uid: 9744
-    components:
-    - type: Transform
-      pos: 37.5,0.5
-      parent: 1
-  - uid: 9745
-    components:
-    - type: Transform
-      pos: 35.5,2.5
-      parent: 1
 - proto: SpawnPointNCWLDockmaster
   entities:
   - uid: 9742
@@ -107126,18 +107102,6 @@ entities:
     components:
     - type: Transform
       pos: -2.5,-45.5
-      parent: 1
-- proto: SpawnPointNCWLEngineer
-  entities:
-  - uid: 9739
-    components:
-    - type: Transform
-      pos: -40.5,-1.5
-      parent: 1
-  - uid: 9740
-    components:
-    - type: Transform
-      pos: -42.5,-0.5
       parent: 1
 - proto: SpawnPointNCWLOverseer
   entities:
