@@ -9,6 +9,10 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Human
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Shadowkin
     - !type:FactionRequirement
       factionID: "DSM"
   weight: 78
@@ -23,6 +27,14 @@
     components:
       - type: ChatRank
         rank: crescent-rank-courtier
+      - type: LanguageKnowledge
+        speaks:
+          - HighImperial
+          - SolCommon
+        understands:
+          - HighImperial
+          - Tradeband
+          - SolCommon
   access:
   - Command
   - Empire

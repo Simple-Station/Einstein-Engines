@@ -1,11 +1,4 @@
 - type: loadout
-  id: LoadoutItemIndependentsMachete
-  category: Items
-  cost: 4
-  items:
-    - IndependentMachete
-
-- type: loadout
   id: LoadoutItemBurlapSack
   category: Items
   cost: 1
