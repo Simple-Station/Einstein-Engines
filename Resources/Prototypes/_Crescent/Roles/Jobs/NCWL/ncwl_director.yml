@@ -8,6 +8,10 @@
   alwaysUseSpawner: true
   icon: "JobIconNCWLMedicalLeader"
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Shadowkin
     - !type:CharacterOverallTimeRequirement
       min: 20000
     - !type:FactionRequirement
@@ -86,6 +90,7 @@
     id: NCWLMedicalLeaderPDA
     outerClothing: ClothingOuterArmorNCWLCarapaceVrachev
     belt: ClothingBeltMedicalFilled
+    pocket1: WeaponPistolHKUSP
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesNitrile
     head: ClothingHeadHatNCWLBeretMedi

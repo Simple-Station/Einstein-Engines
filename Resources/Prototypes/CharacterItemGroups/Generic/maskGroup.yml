@@ -17,6 +17,8 @@
     - type: loadout
       id: LoadoutMaskNCWLBalaclava
     - type: loadout
+      id: LoadoutMaskNCWLGasmask
+    - type: loadout
       id: LoadoutMaskTFSCFacemask
     - type: loadout
       id: LoadoutMaskDSMCombatGasmask

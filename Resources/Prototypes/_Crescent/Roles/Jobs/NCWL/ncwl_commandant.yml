@@ -8,6 +8,10 @@
   alwaysUseSpawner: true
   icon: "JobIconNCWLFactionLeader"
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Shadowkin
     - !type:CharacterOverallTimeRequirement
       min: 35000
     - !type:CharacterWhitelistRequirement
@@ -78,6 +82,7 @@
   - NCWLJail
   - NCWLArmory
   - NCWLCommand
+  - NCWLAdministrator
 
 - type: startingGear
   id: CommandantNCWLGear
@@ -92,5 +97,6 @@
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesNCWLAdmiralParade
     head: ClothingHeadHatNCWLBeretAdmiral
+    mask: ClothingMaskNCWLGasmask
     ears: ClothingHeadsetNCWL
     eyes: ClothingEyesHudSecurity

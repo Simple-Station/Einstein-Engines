@@ -17,3 +17,16 @@
         Slash: 0.95
         Piercing: 0.95
         Heat: 0.95
+
+- type: entity
+  parent: ClothingMaskGasSyndicate
+  id: ClothingMaskNCWLGasmask
+  name: homeguard gas mask
+  description: A kevlar durathread weave enhanced gas mask, a new piece of kit within the Homeguard.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/Mask/homeguardgasmask.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/Mask/homeguardgasmask.rsi

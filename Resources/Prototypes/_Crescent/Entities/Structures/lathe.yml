@@ -520,10 +520,11 @@
       - CovetorLPC
       - IbisLPC
       - SunesisLPC
-      - ClothingBeltSheathRapier
+      - ClothingBeltSheathDSMRapier
       - ClothingBeltSheathDSMSabre
       - DSMRapier
       - DSMSabre
+      - DSMDuelingKhopesh
       - LaelapsLPC
       - PaladinFlatpack
       - WandererFlatpack
@@ -548,6 +549,7 @@
       - ClothingUniformJumpsuitNCWL
       - ClothingMaskNCWLBalaclava
       - ClothingEyesGlassesNCWL
+      - ClothingMaskNCWLGasmask
       - ClothingBeltNCWLWebbing
       - ClothingHeadHelmetNCWLBasic
       - ClothingHeadHelmetNCWLRiot
@@ -642,6 +644,8 @@
       - GilgameshFlatpack
       - BallisticFablatheFlatpack
       - CyberneticsDermalArmor
+      - SHIKatana
+      - SHIShiverBlade
 
   - type: Machine
     board: MicroforgeCircuitboard

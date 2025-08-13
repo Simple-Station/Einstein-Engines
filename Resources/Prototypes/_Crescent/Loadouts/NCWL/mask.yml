@@ -8,3 +8,33 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMasks
+    - !type:CharacterJobRequirement
+      jobs:
+        - CommandantNCWL
+        - HomeguardLeaderNCWL
+        - CaptainNCWL
+        - SoldatNCWL
+        - DirectorNCWL
+        - DoctorNCWL
+        - SupervisorNCWL
+        - EngineerNCWL
+        - DockmasterNCWL
+        - DockhandNCWL
+        - WorkerNCWL
+
+- type: loadout
+  id: LoadoutMaskNCWLGasmask
+  category: Mask
+  cost: 0
+  exclusive: true
+  items:
+  - ClothingMaskNCWLGasmask
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutMasks
+  - !type:CharacterJobRequirement
+    jobs:
+      - CommandantNCWL
+      - HomeguardLeaderNCWL
+      - CaptainNCWL
+      - SoldatNCWL

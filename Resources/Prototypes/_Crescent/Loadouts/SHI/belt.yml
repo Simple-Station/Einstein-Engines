@@ -1,0 +1,17 @@
+- type: loadout
+  id: LoadoutClothingBeltSheathSHIKatana
+  category: Belt
+  cost: 4
+  items:
+    - ClothingBeltSheathSHIKatanaFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - BoardSHI
+        - EmployeeSHI
+        - ExecutiveSHI
+        - HighsecSHI
+        - MedtechSHI
+        - CorpsecSHI

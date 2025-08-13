@@ -8,3 +8,26 @@
     sprite: _Crescent/Clothing/NCWL/Feet/ncwl_admiral_boots.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/NCWL/Feet/ncwl_admiral_boots.rsi
+
+- type: entity
+  parent: [ClothingShoesBootsMag, ClothingShoesBootsCombat]
+  id: ClothingShoesBootsMagNCWL
+  name: NCWL combat magboots
+  description: Combat magnetic boots, often used during extravehicular activity to ensure the user remains safely attached to the vehicle.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/Feet/magboots_ncwl.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/Feet/magboots_ncwl.rsi
+  - type: Magboots
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 13
+    staminaCost: 15
+  - type: StaticPrice
+    price: 750
