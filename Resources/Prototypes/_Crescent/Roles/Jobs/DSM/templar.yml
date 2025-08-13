@@ -9,6 +9,10 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Human
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Shadowkin
     - !type:SexRequirement
       sex: Male
     - !type:FactionRequirement
@@ -35,6 +39,15 @@
       - type: ChatRank
         rank: crescent-rank-templar
       - type: BibleUser
+      - type: LanguageKnowledge
+        speaks:
+          - HighImperial
+          - Tradeband
+          - SolCommon
+        understands:
+          - HighImperial
+          - Tradeband
+          - SolCommon
   access:
   - Command
   - Empire
