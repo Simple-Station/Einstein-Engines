@@ -32,6 +32,6 @@
   - !type:CharacterJobRequirement
     jobs:
       - CommandantNCWL
-      - HomeguardLeaderNCWL
-      - CaptainNCWL
-      - SoldatNCWL
+      - KommissarNCWL
+      - FleetkapitanNCWL
+      - PartisanNCWL
