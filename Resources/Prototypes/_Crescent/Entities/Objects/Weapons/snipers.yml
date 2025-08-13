@@ -15,6 +15,9 @@
     sprite: _Crescent/Objects/Weapons/Guns/hristov.rsi
   - type: Telescope
   - type: GunRequiresWield
+  - type: Item
+    shape:
+    - 0,0,5,2
   - type: Gun
     fireRate: 1
     soundGunshot:
@@ -68,6 +71,9 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/imperator.rsi
   - type: GunRequiresWield
+  - type: Item
+    shape:
+    - 0,0,5,2
   - type: Gun
     fireRate: 0.75
     soundGunshot:
@@ -121,6 +127,9 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/molot.rsi
   - type: GunRequiresWield
+  - type: Item
+    shape:
+    - 0,0,5,2
   - type: Gun
     fireRate: 0.75
     soundGunshot:

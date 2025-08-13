@@ -13,8 +13,11 @@
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    shape:
+    - 0,0,5,2
   - type: Gun
-    fireRate: 0.5
+    fireRate: 1
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/charged.ogg
     fireOnDropChance: 0.5
@@ -65,6 +68,9 @@
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
   - type: Appearance
+  - type: Item
+    shape:
+    - 0,0,5,2
   - type: MagazineVisuals
     magState: mag
     steps: 3
