@@ -4,10 +4,10 @@ job-description-ncwl-faction-leader = Lead the League from the external end. Mai
 job-description-ncwl-kommissar = Lead the League from the internal end. Make sure the Homeguard and Union does their job. Execute traitors.
 job-description-ncwl-fleetkapitan = Command the mass of Partisans. Listen to the Kommissar. Maintain battlefield cohesion.
 job-description-ncwl-partisan = Defend the League. Listen to your Fleetkapitan. Do what you're told.
-job-description-ncwl-industry-taskmaster = Ensure materials are being refined into trade goods and ammo. Organize trade routes. Work with the Overboss.
+job-description-ncwl-industry-taskmaster = Ensure materials are being refined into trade goods and ammo. Organize trade routes. Work with the Overseer.
 job-description-ncwl-medical-doctor = Keep the Workers and the Homeguard alive. Run with the Homeguard on missions. Make drugs, save those lost in space.
-job-description-ncwl-worker-overboss = Organize salvage and mining. Make sure workers are working. Keep resources flowing to the Taskmaster.
-job-description-ncwl-newbie = Do what work needs doing. Serve the League. Listen to the Overboss and Taskmaster.
+job-description-ncwl-worker-overboss = Organize salvage and mining. Make sure workers are working. Keep resources flowing to the Coordinator.
+job-description-ncwl-newbie = Do what work needs doing. Serve the League. Listen to the Overseer and Coordinator.
 
 #syndicate#
 

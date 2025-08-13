@@ -1,12 +1,12 @@
 #ncwl#
 
-job-name-ncwl-faction-leader = Major General of the Workers League
+job-name-ncwl-faction-leader = Kommandante
 job-name-ncwl-kommissar = Kommissar
 job-name-ncwl-fleetkapitan = Fleetkapitan
 job-name-ncwl-partisan = Partisan
-job-name-ncwl-industry-taskmaster = Industry Taskmaster
+job-name-ncwl-industry-taskmaster = Technician-Overseer
 job-name-ncwl-medical-doctor = Sanitar
-job-name-ncwl-worker-overboss = Worker Overboss
+job-name-ncwl-worker-overboss = Union Coordinator
 job-name-ncwl-newbie = Union Worker
 
 #syndicate#
