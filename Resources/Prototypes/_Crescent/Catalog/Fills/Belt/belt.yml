@@ -346,6 +346,15 @@
       - id: SpaceMedipen
 
 - type: entity
+  id: ClothingBeltSheathSHIKatanaFilled
+  parent: ClothingBeltSheathSHIKatana
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - SHIKatana
+
+- type: entity
   id: ClothingBeltSheathKhopeshFilled
   parent: ClothingBeltSheathKhopesh
   suffix: Filled
