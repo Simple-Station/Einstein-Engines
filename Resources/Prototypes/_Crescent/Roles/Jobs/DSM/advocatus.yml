@@ -15,6 +15,10 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Human
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Shadowkin
     - !type:CharacterOverallTimeRequirement
       min: 36000
     - !type:FactionRequirement
@@ -33,6 +37,16 @@
     components:
       - type: ChatRank
         rank: crescent-rank-advocatus
+      - type: LanguageKnowledge
+        speaks:
+          - HighImperial
+          - Tradeband
+          - SolCommon
+        understands:
+          - HighImperial
+          - Tradeband
+          - SolCommon
+
   access:
   - EmergencyShuttleRepealAll
   - Captain

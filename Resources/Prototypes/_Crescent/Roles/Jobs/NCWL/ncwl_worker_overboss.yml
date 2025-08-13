@@ -8,6 +8,10 @@
   alwaysUseSpawner: true
   icon: "JobIconNCWLEngineeringLeader"
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Shadowkin
     - !type:CharacterOverallTimeRequirement
       min: 20000
     - !type:FactionRequirement
@@ -79,6 +83,7 @@
     id: NCWLEngineeringLeaderPDA
     outerClothing: ClothingOuterArmorNCWLEngi
     belt: ClothingBeltUtilityFilled
+    pocket1: WeaponPistolHKUSP
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesColorYellow
     head: ClothingHeadHatBeretEngineering

@@ -1,0 +1,19 @@
+- type: entity
+  id: ClothingShoesBootsMagDSMFilled
+  parent: ClothingShoesBootsMagDSM
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - CombatKnife
+
+- type: entity
+  id: ClothingShoesBootsMagNCWLFilled
+  parent: ClothingShoesBootsMagNCWL
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - CombatKnife
