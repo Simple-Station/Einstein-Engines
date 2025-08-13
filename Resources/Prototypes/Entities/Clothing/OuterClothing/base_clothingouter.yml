@@ -305,10 +305,6 @@
     - LeftFoot
     - RightLeg
     - RightFoot
-  - type: ClothingSpeedModifier
-    walkModifier: 0.8
-    sprintModifier: 0.8
-  - type: HeldSpeedModifier
   - type: Item
     size: Huge
   - type: Tag

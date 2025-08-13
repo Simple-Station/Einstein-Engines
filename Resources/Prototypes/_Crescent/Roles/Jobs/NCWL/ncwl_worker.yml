@@ -8,6 +8,10 @@
   alwaysUseSpawner: true
   icon: "JobIconNCWLWorker"
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Shadowkin
     - !type:FactionRequirement
       factionID: "NCWL"
     - !type:CharacterTraitRequirement
@@ -29,7 +33,6 @@
   - Maintenance
   - Service
   - NCWLGeneral
-  - NCWLJail
   - External
   - Mercenary # Frontier
   - Captain # Frontier

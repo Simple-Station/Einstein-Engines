@@ -4,6 +4,8 @@
   keycode: ";"
   frequency: 1459
   color: "#32cd32"
+  # long range so it functions without a telecom server
+  longRange: true
   localizedRange: 2500.0
 
 - type: radioChannel
