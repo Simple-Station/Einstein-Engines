@@ -1,15 +1,15 @@
 - type: vendingMachineInventory
   id: FitnessVendInventory
   startingInventory:
-    FoodSnackProteinbar: 3
-    FoodCondimentPacketProtein: 3
-    DrinkMilkCartonMini: 3
-    DrinkMilkCartonMiniChocolate: 3
-    DrinkWaterBottleFull: 3
-    DrinkFitnessShakerBlack: 2
-    DrinkFitnessShakerRed: 2
-    DrinkFitnessShakerBlue: 2
-    DrinkSportsYellowBottleFull: 3
+    FoodSnackProteinbar: 6
+    FoodCondimentPacketProtein: 6
+    DrinkMilkCartonMini: 4
+    DrinkMilkCartonMiniChocolate: 4
+    DrinkWaterBottleFull: 6
+    DrinkFitnessShakerBlack: 4
+    DrinkFitnessShakerRed: 4
+    DrinkFitnessShakerBlue: 4
+    DrinkSportsYellowBottleFull: 4
   contrabandInventory:
-    DrinkSportsBlueBottleFull: 2 # they never took the drinks out when cryanobalamin got banned
-    DrinkSportsRedBottleFull: 1
+    DrinkSportsBlueBottleFull: 4 # they never took the drinks out when cryanobalamin got banned
+    DrinkSportsRedBottleFull: 14

@@ -1,8 +1,8 @@
 - type: vendingMachineInventory
   id: HotfoodInventory
   startingInventory:
-    FoodSnackAncientBurger: 1
-    FoodSnackAncientPizza: 1
-    FoodSnackAncientFries: 1
-    FoodSnackAncientHotdog: 1
-    FoodSnackAncientTaco: 1
+    FoodSnackAncientBurger: 4
+    FoodSnackAncientPizza: 4
+    FoodSnackAncientFries: 4
+    FoodSnackAncientHotdog: 4
+    FoodSnackAncientTaco: 4
