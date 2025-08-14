@@ -14,12 +14,12 @@
   - type: MeleeWeapon
     wideAnimationRotation: 90
     attackRate: 0.75
-    heavyStaminaCost: 8
     damage:
       types:
         Slash: 32
         Structural: 20
     heavyDamageBaseModifier: 1
+    heavyStaminaCost: 8
     clickPartDamageMultiplier: 2.5
     heavyPartDamageMultiplier: 1.5
     lightRangeModifier: 1.5

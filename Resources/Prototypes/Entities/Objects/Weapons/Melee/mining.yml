@@ -22,7 +22,7 @@
     damage:
       types:
         Blunt: 5
-        Piercing: 15
+        Piercing: 20
         Structural: 10
     bluntStaminaDamageFactor: 2.0
     heavyDamageBaseModifier: 1.25
@@ -65,9 +65,9 @@
     wideAnimationRotation: -90
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
-    attackRate: 1.5
+    attackRate: 0.5
     range: 1.5
-    heavyStaminaCost: 0.5
+    heavyStaminaCost: 1
     damage:
       types:
         Structural: 15
@@ -96,7 +96,7 @@
     wideAnimationRotation: -90
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
-    heavyStaminaCost: 0.55 # More efficient so less stamina needed to use
+    heavyStaminaCost: 0.5 # More efficient so less stamina needed to use
     damage:
       types:
         Piercing: 8
@@ -149,16 +149,18 @@
     capacity: 1
     count: 1
   - type: MeleeWeapon
-    attackRate: 1.25 # Lavaland/Eris Change
+    attackRate: 1.15 # Lavaland/Eris Change
     range: 1.65
     wideAnimationRotation: -135
     damage:
       types:
-        Blunt: 15 # Lavaland Change: no damage when unwielded
-        Slash: 10
-    bluntStaminaDamageFactor: 1.5
+        Blunt: 10 # Lavaland Change: no damage when unwielded
+        Slash: 15
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
     heavyRateModifier: 1.25
-    heavyStaminaCost: 5
+    clickPartDamageMultiplier: 1.25
+    maxTargets: 3
     angle: 120
     soundHit:
       collection: MetalThud
@@ -181,10 +183,10 @@
       types: # Totals to 45 damage when hitting marked targets
         Blunt: 10
         Slash: 10
-    backstabBoost: # And 30 extra for a backstab. Adding up to 55
+    backstabBoost: # And 10 extra for a backstab. Adding up to 55
       types:
-        Blunt: 15
-        Slash: 15
+        Blunt: 5
+        Slash: 5
 
 - type: entity
   parent: BaseWeaponCrusher
@@ -198,11 +200,15 @@
   - type: MeleeWeapon
     autoAttack: true
     wideAnimationRotation: -135
-    attackRate: 1.5
+    attackRate: 0.75
     range: 1.25
     damage:
       types:
         Slash: 24
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 8
+    heavyRateModifier: 1
+    clickPartDamageMultiplier: 1.25
     maxTargets: 2
     angle: 20
   - type: DamageOtherOnHit

@@ -41,6 +41,10 @@
             Slash: 15
             Heat: 25
             Structural: 20 # its a damn laser sword, let people star wars their way through walls
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
+    clickPartDamageMultiplier: 1.25
+    maxTargets: 3
   - type: ItemToggleDamageOtherOnHit
     activatedStaminaCost: 6
   - type: ItemToggleThrowingAngle
@@ -62,8 +66,6 @@
     damage:
       types:
         Blunt: 2.5
-    clickPartDamageMultiplier: 3
-    heavyPartDamageMultiplier: 2
   - type: DamageOtherOnHit
   - type: Item
     size: Small
@@ -140,7 +142,7 @@
     activatedDamage:
         types:
             Slash: 10
-            Heat: 15
+            Heat: 16
     deactivatedSecret: true
   - type: ItemToggleActiveSound
     activeSound:
@@ -326,7 +328,7 @@
     wieldSound: null # esword light sound instead
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 0.75
+    attackRate: 1.6
     angle: 100
     damage:
       types:
