@@ -10,6 +10,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Server.Popups;
 using Content.Shared.Psionics;
 using Content.Server.GameTicking;
+using Content.Server.Ghost;
 using Content.Shared.Mind;
 using Content.Shared.Actions.Events;
 

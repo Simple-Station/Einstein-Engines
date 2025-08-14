@@ -452,9 +452,16 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
             StopTargeting();
 
         foreach (var page in _pages)
+        {
             for (var i = 0; i < page.Size; i++)
+            {
                 if (page[i] == actionId)
+                {
                     page[i] = null;
+                    (_container.GetChild(i) as ActionButton)?.ClearData();
+                }
+            }
+        }
     }
 
     private void OnActionsUpdated()
@@ -462,10 +469,6 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
         QueueWindowUpdate();
         if (_container == null)
             return;
-
-        // TODO ACTIONS allow buttons to persist across state applications
-        // Then we don't have to interrupt drags any time the buttons get rebuilt.
-        _menuDragHelper.EndDrag();
 
         if (_actionsSystem != null)
             _container?.SetActionData(_actionsSystem, _pages[_currentPageIndex]);

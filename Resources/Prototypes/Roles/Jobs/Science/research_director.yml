@@ -4,26 +4,26 @@
   description: job-description-rd
   playTimeTracker: JobResearchDirector
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsCasterType
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
-    - !type:CharacterTraitRequirement
+  - !type:CharacterItemGroupRequirement
+    group: TraitsCasterType
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterSpeciesRequirement
       inverted: true
+      species:
+      - IPC
+    - !type:CharacterTraitRequirement
       traits:
-        - Muted
-        - Foreigner
-        - ForeignerLight
-    - !type:CharacterEmployerRequirement
-      employers:
-      - NanoTrasen
+      - AnomalousPositronics
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Muted
+    - Foreigner
+    - ForeignerLight
+  - !type:CharacterEmployerRequirement
+    employers:
+    - NanoTrasen
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
@@ -35,24 +35,24 @@
   - Command
   - Maintenance
   - ResearchDirector
-  - Mantis # DeltaV - Mantis, see Resources/Prototypes/DeltaV/Access/epistemics.yml
-  - Chapel # DeltaV - Chaplain is in Epistemics
-  - External # DeltaV - AI satellite access
+  - Mantis
+  - Chapel
+  - External
   - Cryogenics
-  special: # Nyanotrasen - Mystagogue can use the Bible
+  special:
   - !type:AddComponentSpecial
     components:
-      - type: BibleUser # Nyano - Lets them heal with bibles
-      - type: Psionic # Nyano - They start with telepathic chat
-        powerSlots: 3
-        baselinePowerCost: 75
-        nextPowerCost: 75 # No that's fully intended that he has the "Full" power pull. Have fun with being a crew-aligned wizard/cultist.
-      - type: CommandStaff
-      - type: InnatePsionicPowers
-        powersToAdd:
-          - DispelPower
-          - MetapsionicPower
-          - TelepathyPower
+    - type: BibleUser
+    - type: Psionic
+      powerSlots: 3
+      baselinePowerCost: 75
+      nextPowerCost: 75
+    - type: CommandStaff
+    - type: InnatePsionicPowers
+      powersToAdd:
+      - DispelPower
+      - MetapsionicPower
+      - TelepathyPower
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
   afterLoadoutSpecial:
@@ -67,19 +67,19 @@
   - ResearchDirectorPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitResearchDirector
-    back: ClothingBackpackResearchDirectorFilled
+    back: ClothingBackpackScience
     shoes: ClothingShoesColorBrown
     id: RnDPDA
-    ears: ClothingHeadsetAltScience # Goobstation
+    ears: ClothingHeadsetAltScience
     pocket1: BookPsionicsGuidebook
     pocket2: BibleMystagogue
-  innerClothingSkirt: ClothingUniformJumpskirtResearchDirector
-  satchel: ClothingBackpackSatchelResearchDirectorFilled
-  duffelbag: ClothingBackpackDuffelResearchDirectorFilled
+  storage:
+    back:
+    - Flash
 
 - type: startingGear
   id: ResearchDirectorPlasmamanGear
-  parent: BasePlasmamanGear
+  parent: BasePlasmamanMaskGear
   equipment:
     jumpsuit: ClothingUniformEnvirosuitResearchDirector
     head: ClothingHeadEnvirohelmResearchDirector

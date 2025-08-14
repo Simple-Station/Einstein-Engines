@@ -1,4 +1,6 @@
-﻿- type: entity
+﻿# Rating 1
+
+- type: entity
   id: BaseStockPart
   name: stock part
   parent: BaseItem
@@ -12,11 +14,11 @@
       size: Tiny
     - type: Stack
       count: 1
-    - type: PhysicalComposition #Goobstation - Recycle update
+    - type: PhysicalComposition
       materialComposition:
         Steel: 12
         Plastic: 12
-    - type: StockPart # Goobstation
+    - type: StockPart
 
 - type: entity
   id: CapacitorStockPart
@@ -28,11 +30,11 @@
     - type: Sprite
       state: capacitor
     - type: MachinePart
-      part: Capacitor
+      partType: Capacitor
       rating: 1
-    - type: ReverseEngineering # Nyano
+    - type: ReverseEngineering
       recipes:
-        - CapacitorStockPart
+      - CapacitorStockPart
     - type: Tag
       tags:
         - CapacitorStockPart
@@ -49,13 +51,13 @@
     - type: Sprite
       state: micro_mani
     - type: MachinePart
-      part: Manipulator
+      partType: Manipulator
       rating: 1
-    - type: Stack
-      stackType: MicroManipulator
-    - type: ReverseEngineering # Nyano
+    - type: ReverseEngineering
       recipes:
-        - MicroManipulatorStockPart
+      - MicroManipulatorStockPart
+    - type: Stack
+      stackType: Manipulator
 
 - type: entity
   id: MatterBinStockPart
@@ -67,13 +69,13 @@
     - type: Sprite
       state: matter_bin
     - type: MachinePart
-      part: MatterBin
+      partType: MatterBin
       rating: 1
+    - type: ReverseEngineering
+      recipes:
+      - MatterBinStockPart
     - type: Stack
       stackType: MatterBin
-    - type: ReverseEngineering # Nyano
-      recipes:
-        - MatterBinStockPart
 
 # Rating 2
 
@@ -84,14 +86,16 @@
   description: An advanced capacitor used in the construction of a variety of devices.
   suffix: Rating 2
   components:
-    - type: Sprite
-      state: adv_capacitor
-    - type: MachinePart
-      rating: 2
-    - type: ReverseEngineering # Nyano
-      difficulty: 2
-      recipes:
-        - AdvancedCapacitorStockPart
+  - type: Sprite
+    state: adv_capacitor
+  - type: MachinePart
+    rating: 2
+  - type: ReverseEngineering
+    difficulty: 2
+    recipes:
+    - AdvancedCapacitorStockPart
+  - type: Stack
+    stackType: AdvancedCapacitor
 
 - type: entity
   id: NanoManipulatorStockPart
@@ -100,14 +104,16 @@
   description: An advanced manipulator used in the construction of a variety of devices.
   suffix: Rating 2
   components:
-    - type: Sprite
-      state: nano_mani
-    - type: MachinePart
-      rating: 2
-    - type: ReverseEngineering # Nyano
-      difficulty: 2
-      recipes:
-        - NanoManipulatorStockPart
+  - type: Sprite
+    state: nano_mani
+  - type: MachinePart
+    rating: 2
+  - type: ReverseEngineering
+    difficulty: 2
+    recipes:
+    - NanoManipulatorStockPart
+  - type: Stack
+    stackType: AdvancedManipulator
 
 - type: entity
   id: AdvancedMatterBinStockPart
@@ -116,14 +122,16 @@
   description: An advanced matter bin used in the construction of a variety of devices.
   suffix: Rating 2
   components:
-    - type: Sprite
-      state: advanced_matter_bin
-    - type: MachinePart
-      rating: 2
-    - type: ReverseEngineering # Nyano
-      difficulty: 2
-      recipes:
-        - AdvancedMatterBinStockPart
+  - type: Sprite
+    state: advanced_matter_bin
+  - type: MachinePart
+    rating: 2
+  - type: ReverseEngineering
+    difficulty: 2
+    recipes:
+    - AdvancedMatterBinStockPart
+  - type: Stack
+    stackType: AdvancedMatterBin
 
 # Rating 3
 
@@ -134,14 +142,16 @@
   description: A super capacitor used in the construction of a variety of devices.
   suffix: Rating 3
   components:
-    - type: Sprite
-      state: super_capacitor
-    - type: MachinePart
-      rating: 3
-    - type: ReverseEngineering # Nyano
-      difficulty: 3
-      recipes:
-        - SuperCapacitorStockPart
+  - type: Sprite
+    state: super_capacitor
+  - type: MachinePart
+    rating: 3
+  - type: ReverseEngineering
+    difficulty: 3
+    recipes:
+    - SuperCapacitorStockPart
+  - type: Stack
+    stackType: SuperCapacitor
 
 - type: entity
   id: PicoManipulatorStockPart
@@ -150,14 +160,16 @@
   description: A super manipulator used in the construction of a variety of devices.
   suffix: Rating 3
   components:
-    - type: Sprite
-      state: pico_mani
-    - type: MachinePart
-      rating: 3
-    - type: ReverseEngineering # Nyano
-      difficulty: 3
-      recipes:
-        - PicoManipulatorStockPart
+  - type: Sprite
+    state: pico_mani
+  - type: MachinePart
+    rating: 3
+  - type: ReverseEngineering
+    difficulty: 3
+    recipes:
+    - PicoManipulatorStockPart
+  - type: Stack
+    stackType: SuperManipulator
 
 - type: entity
   id: SuperMatterBinStockPart
@@ -166,14 +178,16 @@
   description: A super matter bin used in the construction of a variety of devices.
   suffix: Rating 3
   components:
-    - type: Sprite
-      state: super_matter_bin
-    - type: MachinePart
-      rating: 3
-    - type: ReverseEngineering # Nyano
-      difficulty: 3
-      recipes:
-        - SuperMatterBinStockPart
+  - type: Sprite
+    state: super_matter_bin
+  - type: MachinePart
+    rating: 3
+  - type: ReverseEngineering
+    difficulty: 3
+    recipes:
+    - SuperMatterBinStockPart
+  - type: Stack
+    stackType: SuperMatterBin
 
 # Rating 4
 
@@ -184,14 +198,16 @@
   description: A bluespace capacitor used in the construction of a variety of devices.
   suffix: Rating 4
   components:
-    - type: Sprite
-      state: quadratic_capacitor
-    - type: MachinePart
-      rating: 4
-    - type: ReverseEngineering # Nyano
-      difficulty: 4
-      recipes:
-        - BluespaceCapacitorStockPart
+  - type: Sprite
+    state: quadratic_capacitor
+  - type: MachinePart
+    rating: 4
+  - type: ReverseEngineering
+    difficulty: 4
+    recipes:
+    - BluespaceCapacitorStockPart
+  - type: Stack
+    stackType: BluespaceCapacitor
 
 - type: entity
   id: BluespaceManipulatorStockPart
@@ -200,14 +216,16 @@
   description: A bluespace manipulator used in the construction of a variety of devices.
   suffix: Rating 4
   components:
-    - type: Sprite
-      state: femto_mani
-    - type: MachinePart
-      rating: 4
-    - type: ReverseEngineering # Nyano
-      difficulty: 4
-      recipes:
-        - BluespaceManipulatorStockPart
+  - type: Sprite
+    state: femto_mani
+  - type: MachinePart
+    rating: 4
+  - type: ReverseEngineering
+    difficulty: 4
+    recipes:
+    - BluespaceManipulatorStockPart
+  - type: Stack
+    stackType: BluespaceManipulator
 
 - type: entity
   id: BluespaceMatterBinStockPart
@@ -216,11 +234,13 @@
   description: A bluespace matter bin used in the construction of a variety of devices.
   suffix: Rating 4
   components:
-    - type: Sprite
-      state: bluespace_matter_bin
-    - type: MachinePart
-      rating: 4
-    - type: ReverseEngineering # Nyano
-      difficulty: 4
-      recipes:
-        -  BluespaceMatterBinStockPart
+  - type: Sprite
+    state: bluespace_matter_bin
+  - type: MachinePart
+    rating: 4
+  - type: ReverseEngineering
+    difficulty: 4
+    recipes:
+    -  BluespaceMatterBinStockPart
+  - type: Stack
+    stackType: BluespaceMatterBin

@@ -1,12 +1,11 @@
-using Content.Server.Parallax;
 using Content.Server.Station.Components;
 using Robust.Server.GameObjects;
+using Robust.Shared.EntitySerialization.Systems;
 
 namespace Content.Server.Station.Systems;
 
 public sealed class StationSurfaceSystem : EntitySystem
 {
-    [Dependency] private readonly BiomeSystem _biome = default!;
     [Dependency] private readonly MapSystem _map = default!;
     [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
 
@@ -23,7 +22,7 @@ public sealed class StationSurfaceSystem : EntitySystem
             return;
 
         var map = _map.CreateMap(out var mapId);
-        if (!_mapLoader.TryLoad(mapId, path.ToString(), out _))
+        if (!_mapLoader.TryLoadGrid(mapId, path, out _))
         {
             Log.Error($"Failed to load surface map {ent.Comp.MapPath}!");
             Del(map);

@@ -33,7 +33,7 @@
     containers:
     - entity_storage
   - type: StaticPrice
-    price: 80
+    price: 100
   - type: DamageOtherOnHit
     damage:
       types:
@@ -52,6 +52,11 @@
   - type: AntiRottingContainer
   - type: ExplosionResistance
     damageCoefficient: 0.50
+  - type: Construction
+    graph: CrateFreezer
+    node: done
+    containers:
+    - entity_storage
 
 - type: entity
   parent: CratePlastic
@@ -117,7 +122,7 @@
 - type: entity
   parent: CrateGenericSteel
   id: CrateScience
-  name: epistemics crate # DeltaV - Epistemics Department replacing Science
+  name: epistemics crate
   components:
   - type: Icon
     sprite: Structures/Storage/Crates/science.rsi
@@ -181,7 +186,7 @@
 # Secure Crates
 
 - type: entity
-  parent: CrateBaseSecure
+  parent: [ CrateBaseSecure, BaseRestrictedContraband ]
   id: CrateSecgear
   name: secgear crate
   components:
@@ -221,12 +226,12 @@
   id: CrateChemistrySecure
   name: secure chemistry crate
   components:
-    - type: Icon
-      sprite: Structures/Storage/Crates/chemcrate_secure.rsi
-    - type: Sprite
-      sprite: Structures/Storage/Crates/chemcrate_secure.rsi
-    - type: AccessReader
-      access: [["Chemistry"]]
+  - type: Icon
+    sprite: Structures/Storage/Crates/chemcrate_secure.rsi
+  - type: Sprite
+    sprite: Structures/Storage/Crates/chemcrate_secure.rsi
+  - type: AccessReader
+    access: [["Chemistry"]]
 
 - type: entity
   parent: CrateBaseSecure
@@ -241,7 +246,7 @@
 - type: entity
   parent: CrateBaseSecure
   id: CrateScienceSecure
-  name: secure epistemics crate # DeltaV - Epistemics Department replacing Science
+  name: secure epistemics crate
   components:
   - type: Icon
     sprite: Structures/Storage/Crates/scicrate_secure.rsi
@@ -279,10 +284,10 @@
   id: CrateSecure
   name: secure crate
   components:
-    - type: Icon
-      sprite: Structures/Storage/Crates/secure.rsi
-    - type: Sprite
-      sprite: Structures/Storage/Crates/secure.rsi
+  - type: Icon
+    sprite: Structures/Storage/Crates/secure.rsi
+  - type: Sprite
+    sprite: Structures/Storage/Crates/secure.rsi
 
 - type: entity
   parent: CrateBaseSecure
@@ -309,7 +314,7 @@
     access: [["Armory"]]
 
 - type: entity
-  parent: CrateBaseSecureReinforced
+  parent: [ CrateBaseSecureReinforced, BaseRestrictedContraband ]
   suffix: Armory, Secure, Reinforced
   id: CrateContrabandStorageSecure
   name: contraband storage crate
@@ -439,7 +444,7 @@
         layer:
         - LargeMobLayer
   - type: StaticPrice
-    price: 60
+    price: 75
 
 - type: entity
   parent: CrateGeneric

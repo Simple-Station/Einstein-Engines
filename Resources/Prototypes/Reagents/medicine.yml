@@ -138,6 +138,8 @@
             Radiation: -3
           groups:
             Brute: 0.5
+      - !type:ChemAddMoodlet
+        moodPrototype: StrongPaincauser
 
 - type: reagent
   id: Bicaridine
@@ -172,6 +174,8 @@
         - !type:ReagentThreshold
           min: 15
       - !type:Drunk
+      - !type:ChemAddMoodlet
+        moodPrototype: MildPaincauser
 
 - type: reagent
   id: Cryoxadone
@@ -191,17 +195,17 @@
   metabolisms:
     Medicine:
       effects:
-        - !type:HealthChange
-          conditions:
-          - !type:Temperature
-            # this is a little arbitrary but they gotta be pretty cold
-            max: 213.0
-          damage:
+      - !type:HealthChange
+        conditions:
+        - !type:Temperature
+          # this is a little arbitrary but they gotta be pretty cold
+          max: 213.0
+        damage:
           # todo scale with temp like SS13
-            groups:
-              Airloss: -10
-        - !type:ModifyBloodLevel
-          amount: 5
+          groups:
+            Airloss: -10
+      - !type:ModifyBloodLevel
+        amount: 5
 
 - type: reagent
   id: Doxarubixadone
@@ -215,15 +219,15 @@
   metabolisms:
     Medicine:
       effects:
-        - !type:HealthChange
-          conditions:
-          - !type:Temperature
-            max: 213.0
-          damage:
-            types:
-             Cellular: -4
-            groups:
-                Brute: 1
+      - !type:HealthChange
+        conditions:
+        - !type:Temperature
+          max: 213.0
+        damage:
+          types:
+            Cellular: -4
+          groups:
+            Brute: 1
 
 - type: reagent
   id: Dermaline
@@ -275,8 +279,8 @@
             Bloodloss: -0.5
       - !type:HealthChange
         conditions:
-          - !type:ReagentThreshold
-            min: 20
+        - !type:ReagentThreshold
+          min: 20
         damage:
           types:
             Asphyxiation: 3
@@ -307,8 +311,8 @@
         amount: -3
       - !type:HealthChange
         conditions:
-          - !type:ReagentThreshold
-            min: 25
+        - !type:ReagentThreshold
+          min: 25
         damage:
           types:
             Asphyxiation: 5
@@ -328,7 +332,7 @@
       effects:
       - !type:HealthChange
         conditions:
-          # they gotta be in crit first
+        # they gotta be in crit first
         - !type:MobStateCondition
           mobstate: Critical
         - !type:ReagentThreshold
@@ -382,6 +386,8 @@
       - !type:MovespeedModifier # Goob edit
         walkSpeedModifier: 1.1
         sprintSpeedModifier: 1.1
+      - !type:ChemAddMoodlet
+        moodPrototype: EpinephrineEffect
 
 - type: reagent
   id: Hyronalin
@@ -406,7 +412,7 @@
           min: 30
         damage:
           types:
-           Heat: 2
+            Heat: 2
       - !type:Jitter
         conditions:
         - !type:ReagentThreshold
@@ -442,7 +448,7 @@
       effects:
       - !type:HealthChange
         conditions:
-          # they gotta be in crit first
+        # they gotta be in crit first
         - !type:MobStateCondition
           mobstate: Critical
         damage:
@@ -450,6 +456,8 @@
             Asphyxiation: -5
       - !type:ModifyBleedAmount
         amount: -0.25
+      - !type:ChemAddMoodlet
+        moodPrototype: MildPainkiller
 
 - type: reagent
   id: Kelotane
@@ -483,6 +491,8 @@
         conditions:
         - !type:ReagentThreshold
           min: 25
+      - !type:ChemAddMoodlet
+        moodPrototype: MildPainkiller
 
 - type: reagent
   id: Leporazine
@@ -536,16 +546,16 @@
             Heat: 0.5
       - !type:HealthChange
         conditions:
-          - !type:ReagentThreshold
-            min: 30
+        - !type:ReagentThreshold
+          min: 30
         damage:
           types:
             Poison: 3
       - !type:ChemVomit
         probability: 0.15
         conditions:
-          - !type:ReagentThreshold
-            min: 30
+        - !type:ReagentThreshold
+          min: 30
       - !type:GenericStatusEffect
         key: PressureImmunity
         component: PressureImmunity
@@ -571,12 +581,12 @@
   flavor: medicine
   color: "#c8ff75"
   plantMetabolism:
-    - !type:PlantAdjustToxins
-      amount: 6
-    - !type:PlantPhalanximine
-      conditions:
-      - !type:ReagentThreshold
-        min: 4
+  - !type:PlantAdjustToxins
+    amount: 6
+  - !type:PlantPhalanximine
+    conditions:
+    - !type:ReagentThreshold
+      min: 4
   metabolisms:
     Medicine:
       effects:
@@ -626,10 +636,15 @@
   metabolisms:
     Medicine:
       effects:
-        - !type:CureZombieInfection
-          conditions:
-            - !type:ReagentThreshold
-              min: 10
+      - !type:CureZombieInfection
+        conditions:
+        - !type:ReagentThreshold
+          min: 10
+      - !type:ChemRemoveMoodlet
+        moodPrototype: RomerolEffect
+        conditions:
+        - !type:ReagentThreshold
+          min: 10
 
 - type: reagent
   id: AmbuzolPlus
@@ -642,11 +657,16 @@
   metabolisms:
     Medicine:
       effects:
-        - !type:CureZombieInfection
-          innoculate: true
-          conditions:
-            - !type:ReagentThreshold
-              min: 5
+      - !type:CureZombieInfection
+        innoculate: true
+        conditions:
+        - !type:ReagentThreshold
+          min: 5
+      - !type:ChemRemoveMoodlet
+        moodPrototype: RomerolEffect
+        conditions:
+        - !type:ReagentThreshold
+          min: 5
 
 - type: reagent
   id: PulpedBananaPeel
@@ -673,10 +693,10 @@
   metabolisms:
     Drink:
       effects:
-        - !type:SatiateThirst
-          factor: 6
-        - !type:ModifyBloodLevel
-          amount: 6
+      - !type:SatiateThirst
+        factor: 6
+      - !type:ModifyBloodLevel
+        amount: 6
 
 - type: reagent
   id: Siderlac
@@ -744,6 +764,11 @@
         key: SeeingRainbows
         time: 15.0
         type: Remove
+      - !type:ChemPurgeMoodlets
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Synaptizine
+          min: 10
 
 - type: reagent
   id: TranexamicAcid
@@ -792,6 +817,8 @@
             Heat: -0.5
             Shock: -0.5
             Cold: -0.5 # Was .33, Buffed due to limb damage changes
+      - !type:ChemAddMoodlet
+        moodPrototype: MildPainkiller
 
 - type: reagent
   id: Lipozine
@@ -1016,6 +1043,8 @@
         damage:
           types:
             Cold: 3
+      - !type:ChemAddMoodlet
+        moodPrototype: LacerinolEffect
 
 - type: reagent
   id: Puncturase
@@ -1040,6 +1069,8 @@
         damage:
           types:
             Blunt: 5
+      - !type:ChemAddMoodlet
+        moodPrototype: PuncturaseEffect
 
 - type: reagent
   id: Bruizine
@@ -1063,6 +1094,64 @@
         damage:
           types:
             Poison: 4
+      - !type:ChemAddMoodlet
+        moodPrototype: BruizineEffect
+
+- type: reagent
+  id: HolyWater
+  name: reagent-name-holywater
+  group: Medicine
+  desc: reagent-desc-holywater
+  physicalDesc: reagent-physical-desc-holy
+  flavor: holy
+  color: "#91C3F7"
+  boilingPoint: 100.0
+  meltingPoint: 0.0
+  metabolisms: #Could nullify debuffs of feeding.
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 3
+    Medicine:
+      effects:
+      - !type:ModifyBloodLevel
+        amount: 0.1
+      - !type:HealthChange
+        conditions:
+        - !type:TotalDamage
+          max: 50
+        damage:
+          types:
+            Blunt: -0.2
+            Poison: -0.2
+            Heat: -0.2
+            Shock: -0.2
+            Cold: -0.2
+      - !type:PurifyEvil
+        conditions:
+        - !type:ReagentThreshold
+          min: 15
+  reactiveEffects:
+    Extinguish:
+      methods: [ Touch ]
+      effects:
+      - !type:ExtinguishReaction
+    Acidic:
+      methods: [ Touch ]
+      effects:
+      - !type:HealthChange
+        scaleByQuantity: true
+        ignoreResistances: false
+        damage:
+          types:
+            Holy: 0.5
+  plantMetabolism:
+  - !type:PlantAdjustWater
+    amount: 1
+  - !type:PlantAdjustHealth #Heals plants a little with the holy power within it.
+    amount: 0.1
+  tileReactions:
+  - !type:ExtinguishTileReaction { }
 
 - type: reagent
   id: Pyrazine
@@ -1156,14 +1245,14 @@
   metabolisms:
     Medicine:
       effects:
-        - !type:ReduceRotting
-          seconds: 20
-          conditions:
-          #Patient must be dead and in a cryo tube (or something cold)
-          - !type:Temperature
-            max: 150.0
-          - !type:MobStateCondition
-            mobstate: Dead
+      - !type:ReduceRotting
+        seconds: 20
+        conditions:
+        #Patient must be dead and in a cryo tube (or something cold)
+        - !type:Temperature
+          max: 150.0
+        - !type:MobStateCondition
+          mobstate: Dead
 
 - type: reagent
   id: Necrosol
@@ -1183,16 +1272,16 @@
   metabolisms:
     Medicine:
       effects:
-        - !type:HealthChange
-          conditions:
-          - !type:Temperature
-            max: 213.0
-          damage:
-            groups:
-              Brute: -4
-              Burn: -5
-            types:
-              Poison: -2
+      - !type:HealthChange
+        conditions:
+        - !type:Temperature
+          max: 213.0
+        damage:
+          groups:
+            Brute: -4
+            Burn: -5
+          types:
+            Poison: -2
 
 - type: reagent
   id : Aloxadone
@@ -1272,14 +1361,8 @@
         key: Drunk
         time: 6.0
         type: Remove
-      - !type:PopupMessage # we dont have sanity/mood so this will have to do
-        type: Local
-        visualType: Medium
-        messages:
-        - "psicodine-effect-fearless"
-        - "psicodine-effect-anxieties-wash-away"
-        - "psicodine-effect-at-peace"
-        probability: 0.2
+      - !type:ChemAddMoodlet
+        moodPrototype: PsicodineEffect
 
 - type: reagent
   id: PotassiumIodide
@@ -1300,8 +1383,8 @@
         refresh: false
       - !type:HealthChange
         conditions:
-          - !type:ReagentThreshold
-            min: 20
+        - !type:ReagentThreshold
+          min: 20
         damage:
           types:
             Poison: 1
@@ -1335,6 +1418,10 @@
         key: SeeingRainbows
         time: 10.0
         type: Remove
+      - !type:GenericStatusEffect
+        key: Stutter
+        time: 10.0
+        type: Remove
       - !type:AdjustReagent
         reagent: Desoxyephedrine
         amount: -3.0
@@ -1361,57 +1448,13 @@
         amount: -3.0
 
 - type: reagent
-  id: HolyWater
-  name: reagent-name-holywater
-  group: Medicine
-  desc: reagent-desc-holywater
-  physicalDesc: reagent-physical-desc-translucent
-  flavor: holy
-  color: "#75b1f0"
-  boilingPoint: 100.0
-  meltingPoint: 0.0
-  reactiveEffects:
-    Acidic:
-      methods: [ Touch ]
-      effects:
-      - !type:HealthChange
-        scaleByQuantity: true
-        ignoreResistances: false
-        damage:
-          types:
-            Holy: 0.5
-  metabolisms: #Could nullify debuffs of feeding.
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 3
-    Medicine:
-      effects:
-      - !type:ModifyBloodLevel
-        amount: 0.1
-      - !type:HealthChange
-        damage:
-          groups:
-            Brute: -0.5
-            Burn: -0.5
-          types:
-            Holy: 1
-      - !type:PurifyEvil
-        conditions:
-        - !type:ReagentThreshold
-          min: 15
-  plantMetabolism: #Heals plants a little with the holy power within it.
-  - !type:PlantAdjustHealth
-    amount: 0.1
-
-- type: reagent
   id: Artiplates
   name: reagent-name-artiplates
   group: Medicine
   desc: reagent-desc-artiplates
   physicalDesc: reagent-physical-desc-cloudy
   flavor: medicine
-  color: "#382766"
+  color: "#422766"
   metabolisms:
     Medicine:
       effects:

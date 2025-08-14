@@ -59,7 +59,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitBrigmedic
     outerClothing: ClothingOuterArmorPlateCarrier
-    back: ClothingBackpackBrigmedicFilled
+    back: ClothingBackpackBrigmedic
     shoes: ClothingShoesBootsCombatFilled
     gloves: ClothingHandsGlovesNitrile
     eyes: ClothingEyesHudMedical
@@ -67,9 +67,16 @@
     id: CorpsmanPDA
     ears: ClothingHeadsetBrigmedic
     belt: ClothingBeltCorpsmanWebbingFilled
-  innerClothingSkirt: ClothingUniformJumpskirtBrigmedic
-  satchel: ClothingBackpackSatchelBrigmedicFilled
-  duffelbag: ClothingBackpackDuffelBrigmedicFilled
+  storage:
+    back:
+    - EmergencyRollerBedSpawnFolded
+    - BodyBagFolded
+    - Portafib
+    - BruteAutoInjector
+    - BruteAutoInjector
+    - BurnAutoInjector
+    - BurnAutoInjector
+    - MagazinePistol
 
 - type: startingGear
   id: CorpsmanPlasmamanGear

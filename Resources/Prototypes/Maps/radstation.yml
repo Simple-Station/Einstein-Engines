@@ -15,8 +15,6 @@
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: StationJobs
-          overflowJobs:
-            - Passenger
           availableJobs:
           #command
             Captain: [ 1, 1 ]
@@ -40,7 +38,6 @@
           #medical
             ChiefMedicalOfficer: [ 1, 1 ]
             Chemist: [ 2, 2 ]
-            MedicalBorg: [ 2, 2 ]
             MedicalDoctor: [ 3, 3 ]
             Paramedic: [ 1, 1 ]
             MedicalIntern: [ 2, 2 ]
@@ -80,3 +77,9 @@
           #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 3, 3 ]
+        # blob-config-start MEDIUM
+        - type: StationBlobConfig
+          stageBegin: 30
+          stageCritical: 375
+          stageTheEnd: 750
+        # blob-config-end

@@ -1,11 +1,11 @@
-using Content.Shared.Advertise;
+using Content.Shared.Dataset;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Advertise.Components;
 
 /// <summary>
 /// Makes this entity periodically advertise by speaking a randomly selected
-/// message from a specified MessagePack into local chat.
+/// message from a specified dataset into local chat.
 /// </summary>
 [RegisterComponent]
 public sealed partial class AdvertiseComponent : Component
@@ -32,10 +32,10 @@ public sealed partial class AdvertiseComponent : Component
     public bool Prewarm = true;
 
     /// <summary>
-    /// The identifier for the advertisements pack prototype.
+    /// The identifier for the advertisements dataset prototype.
     /// </summary>
     [DataField(required: true)]
-    public ProtoId<MessagePackPrototype> Pack { get; private set; }
+    public ProtoId<LocalizedDatasetPrototype> Pack { get; private set; }
 
     /// <summary>
     /// The next time an advertisement will be said.

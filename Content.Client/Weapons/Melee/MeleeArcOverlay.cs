@@ -1,11 +1,9 @@
 using System.Numerics;
 using Content.Shared.CombatMode;
-using Content.Shared.Weapons.Melee;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
-using Robust.Shared.Map;
 
 namespace Content.Client.Weapons.Melee;
 
@@ -64,7 +62,7 @@ public sealed class MeleeArcOverlay : Overlay
         if (diff.Equals(Vector2.Zero))
             return;
 
-        diff = diff.Normalized() * Math.Min(weapon.Range, diff.Length());
+        diff = diff.Normalized() * Math.Min(weapon.Range * weapon.HeavyRangeModifier, diff.Length());
         args.WorldHandle.DrawLine(playerPos.Position, playerPos.Position + diff, Color.Aqua);
 
         if (weapon.Angle.Theta == 0)

@@ -64,7 +64,7 @@
         layer:
         - FlyingMobLayer
   - type: Damageable
-    damageContainer: CorporealSpirit
+    damageContainer: ManifestedSpirit
     damageModifierSet: CorporealSpirit
   - type: MobThresholds
     thresholds:

@@ -30,6 +30,7 @@ using Robust.Shared.Physics.Systems;
 using System.Linq;
 using Robust.Shared.Utility;
 using Robust.Shared.GameStates;
+using Content.Shared.Humanoid;
 
 namespace Content.Server.Traits;
 
@@ -126,6 +127,23 @@ public sealed partial class TraitAddActions : TraitFunction
             if (actionSystem.AddAction(uid, ref actionId, id))
                 actionSystem.StartUseDelay(actionId);
         }
+    }
+}
+
+[UsedImplicitly]
+public sealed partial class TraitRemoveActions : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public List<EntProtoId> Actions { get; private set; } = new();
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var actionSystem = entityManager.System<SharedActionsSystem>();
+        foreach (var proto in Actions)
+            actionSystem.RemoveAction(uid, proto);
     }
 }
 
@@ -846,6 +864,295 @@ public sealed partial class TraitCyberneticLimbReplacement : TraitFunction
             var newLimb = entityManager.SpawnAtPosition(ProtoId, xform.Coordinates);
             if (entityManager.TryGetComponent(newLimb, out BodyPartComponent? limbComp))
                 bodySystem.AttachPart(root.Value.Entity, SlotId, newLimb, root.Value.BodyPart, limbComp);
+        }
+    }
+}
+
+// This may seem self referential, but it's a convenient shorthand for systems other than Traits that also use these functions.
+// By Hullrot's request for the sanity of their contributors.
+[UsedImplicitly]
+public sealed partial class TraitAddTrait : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public List<ProtoId<TraitPrototype>> Traits { get; private set; } = new();
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var traitSystem = entityManager.System<TraitSystem>();
+        var protoMan = IoCManager.Resolve<IPrototypeManager>();
+        if (!entityManager.TryGetComponent(uid, out HumanoidAppearanceComponent? humanoid))
+            return;
+
+        var traitsToAdd = new List<TraitPrototype>();
+
+        foreach (var trait in Traits)
+            if (humanoid.LastProfileLoaded is not null
+                && !humanoid.LastProfileLoaded.TraitPreferences.Contains(trait)
+                && protoMan.TryIndex(trait, out var traitPrototype))
+                traitsToAdd.Add(traitPrototype);
+
+        foreach (var trait in traitsToAdd)
+            traitSystem.AddTrait(uid, trait);
+    }
+}
+
+/// <summary>
+///     This trait takes component registries, and overwrites all the datafields of matching components in the target,
+///     except ONLY touching datafields declared in yml serialization. Effectively this allows traits to
+///     directly write to arbitrarily any component, without needing to destroy any previous data.
+/// </summary>
+[UsedImplicitly]
+public sealed partial class TraitModifyComponent : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public ComponentRegistry Components { get; private set; } = new();
+
+    [DataField, AlwaysPushInheritance]
+    public bool EnsureComp { get; private set; } = true;
+
+    /// <summary>
+    ///     Whether this function will issue a ComponentInit command to a component, triggering its Initialize subscriptions.
+    ///     THIS COMES WITH A HUGE WARNING, IT CAN ABSOLUTELY CAUSE MASSIVE BUGS. TEST YOUR TRAITS IF YOU USE THIS.
+    /// </summary>
+    [DataField, AlwaysPushInheritance]
+    public bool ReinitializeComponent { get; private set; }
+
+    /// <summary>
+    ///     Whether this function will issue a ComponentStartup command to a component, triggering its Startup subscriptions.
+    ///     THIS COMES WITH A HUGE WARNING, IT CAN ABSOLUTELY CAUSE MASSIVE BUGS. TEST YOUR TRAITS IF YOU USE THIS.
+    /// </summary>
+    [DataField, AlwaysPushInheritance]
+    public bool RestartComponent { get; private set; }
+
+    /// <summary>
+    ///     Whether this function will issue a MapInit command to a component, triggering its MapInit subscriptions.
+    ///     THIS COMES WITH A HUGE WARNING, IT CAN ABSOLUTELY CAUSE MASSIVE BUGS. TEST YOUR TRAITS IF YOU USE THIS.
+    /// </summary>
+    [DataField, AlwaysPushInheritance]
+    public bool MapInitComponent { get; private set; }
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        foreach (var entry in Components.Values)
+        {
+            var entryType = entry.Component.GetType();
+            var refComp = factory.GetComponent(entry);
+
+            if (entityManager.HasComponent(uid, entryType))
+            {
+                var targetComp = entityManager.GetComponent(uid, entryType);
+                foreach (var field in entryType.GetFields())
+                {
+                    var setValue = field.GetValue(entry.Component);
+                    if (setValue == field.GetValue(refComp))
+                        continue;
+
+                    field.SetValue(targetComp, setValue);
+                }
+                if (targetComp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
+                    entityManager.Dirty(uid, targetComp);
+                if (ReinitializeComponent)
+                    entityManager.EventBus.RaiseComponentEvent(uid, targetComp, new ComponentInit());
+                if (RestartComponent)
+                    entityManager.EventBus.RaiseComponentEvent(uid, targetComp, new ComponentStartup());
+                if (MapInitComponent)
+                    entityManager.EventBus.RaiseComponentEvent(uid, targetComp, new MapInitEvent());
+            }
+            else if (EnsureComp)
+            {
+                // Oh hey it didn't exist and we want to force it to do so, let's add it.
+                // This exists because I cannot EnsureComp from reflected types. Thanks Robust Toolbox.
+                var comp = (Component) serializationManager.CreateCopy(entry.Component, notNullableOverride: true);
+                comp.Owner = uid;
+                entityManager.AddComponent(uid, comp);
+
+                if (!comp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
+                    continue;
+                entityManager.Dirty(uid, comp);
+            }
+        }
+    }
+}
+
+/// <summary>
+///     As per TraitModifyComponent, except if it only works on datafields that are a number.
+///     It takes the target datafield, and multiplies it by the declared number.
+/// </summary>
+[UsedImplicitly]
+public sealed partial class TraitMultiplyToComponent : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public ComponentRegistry Components { get; private set; } = new();
+
+    [DataField, AlwaysPushInheritance]
+    public bool EnsureComp { get; private set; } = true;
+
+    /// <summary>
+    ///     Whether this function will issue a ComponentInit command to a component, triggering its Initialize subscriptions.
+    ///     THIS COMES WITH A HUGE WARNING, IT CAN ABSOLUTELY CAUSE MASSIVE BUGS. TEST YOUR TRAITS IF YOU USE THIS.
+    /// </summary>
+    [DataField, AlwaysPushInheritance]
+    public bool ReinitializeComponent { get; private set; }
+
+    /// <summary>
+    ///     Whether this function will issue a ComponentStartup command to a component, triggering its Startup subscriptions.
+    ///     THIS COMES WITH A HUGE WARNING, IT CAN ABSOLUTELY CAUSE MASSIVE BUGS. TEST YOUR TRAITS IF YOU USE THIS.
+    /// </summary>
+    [DataField, AlwaysPushInheritance]
+    public bool RestartComponent { get; private set; }
+
+    /// <summary>
+    ///     Whether this function will issue a MapInit command to a component, triggering its MapInit subscriptions.
+    ///     THIS COMES WITH A HUGE WARNING, IT CAN ABSOLUTELY CAUSE MASSIVE BUGS. TEST YOUR TRAITS IF YOU USE THIS.
+    /// </summary>
+    [DataField, AlwaysPushInheritance]
+    public bool MapInitComponent { get; private set; }
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        foreach (var entry in Components.Values)
+        {
+            var entryType = entry.Component.GetType();
+            var refComp = factory.GetComponent(entry);
+
+            if (entityManager.HasComponent(uid, entryType))
+            {
+                var targetComp = entityManager.GetComponent(uid, entryType);
+                foreach (var field in entryType.GetFields())
+                {
+                    var setValue = field.GetValue(entry.Component);
+                    var targetValue = field.GetValue(targetComp);
+                    if (setValue == field.GetValue(refComp)
+                        || setValue is null || targetValue is null)
+                        continue;
+
+                    if (targetValue is float targetFloat && setValue is float setFloat)
+                        field.SetValue(targetComp, targetFloat * setFloat);
+                    else if (targetValue is double targetDouble && setValue is double setDouble)
+                        field.SetValue(targetComp, targetDouble * setDouble);
+                    else if (targetValue is int targetInt && setValue is int setInt)
+                        field.SetValue(targetComp, targetInt * setInt);
+                    else if (targetValue is FixedPoint2 targetFixed && setValue is FixedPoint2 setFixed)
+                        field.SetValue(targetComp, targetFixed * setFixed);
+                }
+                if (targetComp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
+                    entityManager.Dirty(uid, targetComp);
+                if (ReinitializeComponent)
+                    entityManager.EventBus.RaiseComponentEvent(uid, targetComp, new ComponentInit());
+                if (RestartComponent)
+                    entityManager.EventBus.RaiseComponentEvent(uid, targetComp, new ComponentStartup());
+                if (MapInitComponent)
+                    entityManager.EventBus.RaiseComponentEvent(uid, targetComp, new MapInitEvent());
+            }
+            else if (EnsureComp)
+            {
+                // Oh hey it didn't exist and we want to force it to do so, let's add it.
+                // This exists because I cannot EnsureComp from reflected types. Thanks Robust Toolbox.
+                var comp = (Component) serializationManager.CreateCopy(entry.Component, notNullableOverride: true);
+                comp.Owner = uid;
+                entityManager.AddComponent(uid, comp);
+
+                if (!comp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
+                    continue;
+                entityManager.Dirty(uid, comp);
+            }
+        }
+    }
+}
+
+/// <summary>
+///     As per TraitModifyComponent, except if it only works on datafields that are a number.
+///     It takes the target datafield, and adds the declared number to it.
+/// </summary>
+[UsedImplicitly]
+public sealed partial class TraitAddToComponent : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public ComponentRegistry Components { get; private set; } = new();
+
+    [DataField, AlwaysPushInheritance]
+    public bool EnsureComp { get; private set; } = true;
+
+    /// <summary>
+    ///     Whether this function will issue a ComponentInit command to a component, triggering its Initialize subscriptions.
+    ///     THIS COMES WITH A HUGE WARNING, IT CAN ABSOLUTELY CAUSE MASSIVE BUGS. TEST YOUR TRAITS IF YOU USE THIS.
+    /// </summary>
+    [DataField, AlwaysPushInheritance]
+    public bool ReinitializeComponent { get; private set; }
+
+    /// <summary>
+    ///     Whether this function will issue a ComponentStartup command to a component, triggering its Startup subscriptions.
+    ///     THIS COMES WITH A HUGE WARNING, IT CAN ABSOLUTELY CAUSE MASSIVE BUGS. TEST YOUR TRAITS IF YOU USE THIS.
+    /// </summary>
+    [DataField, AlwaysPushInheritance]
+    public bool RestartComponent { get; private set; }
+
+    /// <summary>
+    ///     Whether this function will issue a MapInit command to a component, triggering its MapInit subscriptions.
+    ///     THIS COMES WITH A HUGE WARNING, IT CAN ABSOLUTELY CAUSE MASSIVE BUGS. TEST YOUR TRAITS IF YOU USE THIS.
+    /// </summary>
+    [DataField, AlwaysPushInheritance]
+    public bool MapInitComponent { get; private set; }
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        foreach (var entry in Components.Values)
+        {
+            var entryType = entry.Component.GetType();
+            var refComp = factory.GetComponent(entry);
+
+            if (entityManager.HasComponent(uid, entryType))
+            {
+                var targetComp = entityManager.GetComponent(uid, entryType);
+                foreach (var field in entryType.GetFields())
+                {
+                    var setValue = field.GetValue(entry.Component);
+                    var targetValue = field.GetValue(targetComp);
+                    if (setValue == field.GetValue(refComp)
+                        || setValue is null || targetValue is null)
+                        continue;
+
+                    if (targetValue is float targetFloat && setValue is float setFloat)
+                        field.SetValue(targetComp, targetFloat + setFloat);
+                    else if (targetValue is double targetDouble && setValue is double setDouble)
+                        field.SetValue(targetComp, targetDouble + setDouble);
+                    else if (targetValue is int targetInt && setValue is int setInt)
+                        field.SetValue(targetComp, targetInt + setInt);
+                    else if (targetValue is FixedPoint2 targetFixed && setValue is FixedPoint2 setFixed)
+                        field.SetValue(targetComp, targetFixed + setFixed);
+                }
+                if (targetComp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
+                    entityManager.Dirty(uid, targetComp);
+                if (ReinitializeComponent)
+                    entityManager.EventBus.RaiseComponentEvent(uid, targetComp, new ComponentInit());
+                if (RestartComponent)
+                    entityManager.EventBus.RaiseComponentEvent(uid, targetComp, new ComponentStartup());
+                if (MapInitComponent)
+                    entityManager.EventBus.RaiseComponentEvent(uid, targetComp, new MapInitEvent());
+            }
+            else if (EnsureComp)
+            {
+                // Oh hey it didn't exist and we want to force it to do so, let's add it.
+                // This exists because I cannot EnsureComp from reflected types. Thanks Robust Toolbox.
+                var comp = (Component) serializationManager.CreateCopy(entry.Component, notNullableOverride: true);
+                comp.Owner = uid;
+                entityManager.AddComponent(uid, comp);
+
+                if (!comp.GetType().HasCustomAttribute<NetworkedComponentAttribute>())
+                    continue;
+                entityManager.Dirty(uid, comp);
+            }
         }
     }
 }

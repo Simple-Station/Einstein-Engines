@@ -7,23 +7,22 @@
     ClothingUniformJumpsuitSec: 3
     ClothingShoesBootsJack: 3
     ClothingHeadHatBeretSecurity: 3
-##    ClothingHeadHatSecsoft: 3 # DeltaV - removed from SecDrobe due to inconsistency with art direction
     ClothingHeadBandRed: 3
+    ClothingMaskNeckGaiterRed: 3
     ClothingHandsGlovesColorBlack: 3
     ClothingHandsGlovesFingerless: 3
     ClothingUniformJumpskirtSec: 3
     ClothingUniformJumpsuitSecGrey: 3
     ClothingUniformJumpskirtSecGrey: 3
     ClothingUniformJumpsuitSecBlue: 3
-    ClothingUniformJumpskirtSecBlue: 3 # DeltaV - new skirt sprited, added to secdrobe
-    ClothingHeadsetAltSecurityRegular: 3 # Goobstation
+    ClothingUniformJumpskirtSecBlue: 3
+    ClothingHeadsetAltSecurityRegular: 3
     ClothingOuterWinterSec: 2
-    ClothingOuterCoatGreatcoat: 2 # DeltaV - added greatcoats to SecDrobe. Surplus, reminds the officers of the good times.
-##    ClothingOuterArmorBasic: 2 # DeltaV - moved body armour from SecDrobe to SecTech
-##    ClothingOuterArmorBasicSlim: 2
+    ClothingOuterCoatGreatcoat: 2
     ClothingNeckScarfStripedRed: 3
     ClothingEyesBlindfold: 1
     ClothingShoesBootsCombat: 1
     ClothingShoesBootsWinterSec: 2
-    ClothingShoesBootsCowboyBlack: 1
-    ClothingHeadHatCowboyBlack: 1
+    ClothingHeadHelmetJustice: 1
+  contrabandInventory:
+    ClothingMaskClownSecurity: 1

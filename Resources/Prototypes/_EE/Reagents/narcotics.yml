@@ -4,7 +4,7 @@
   group: Narcotics
   desc: reagent-desc-morphine
   flavor: bitter
-  color: "#fff8e8"
+  color: "#ffde7448"
   physicalDesc: reagent-physical-desc-translucent
   metabolisms:
     Narcotic:
@@ -14,7 +14,7 @@
         emote: Yawn
         showInChat: true
         probability: 0.05
-      - !type:PopupMessage # a warning when you have 10 seconds left
+      - !type:PopupMessage # a warning when you have 15 seconds left
         visualType: Medium
         messages: ["morphine-wear-off"]
         type: Local
@@ -22,11 +22,11 @@
         conditions:
         - !type:ReagentThreshold
           reagent: Morphine
-          max: 2.1
-          min: 1.91
+          max: 0.2
       - !type:GenericStatusEffect
         key: NoScream
         component: NoScream
+        time: 15.0 # should hopefully last long enough for quick heart swaps now
       - !type:ChemAddMoodlet
         moodPrototype: MorphineBenefit
         conditions:

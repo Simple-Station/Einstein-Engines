@@ -128,9 +128,12 @@ namespace Content.Server.PowerSink
             if (station == null)
                 return;
 
-            _announcer.SendAnnouncement(_announcer.GetAnnouncementId("PowerSinkExplosion"),
-                _station.GetInOwningStation(station.Value), "powersink-immiment-explosion-announcement",
-                colorOverride: Color.Yellow, station: station.Value);
+            _announcer.SendAnnouncement(
+                _announcer.GetAnnouncementId("PowerSinkExplosion"),
+                 "powersink-immiment-explosion-announcement",
+                filter: _station.GetInOwningStation(station.Value),
+                colorOverride: Color.Yellow,
+                station: station.Value);
         }
     }
 }

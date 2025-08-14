@@ -9,7 +9,6 @@ namespace Content.Server.Entry
             "InteractionOutline",
             "Marker",
             "GuidebookControlsTest",
-            "GuideHelp",
             "Clickable",
             "Icon",
             "CableVisualizer",
@@ -21,6 +20,7 @@ namespace Content.Server.Entry
             "HolidayRsiSwap",
             "OptionsVisualizer",
             "ToggleableLightWieldable", // Goobstation
+            "ItemSlotRenderer", // WWDP EDIT
         };
     }
 }

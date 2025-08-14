@@ -1,25 +1,21 @@
 using Content.Server.Botany.Components;
-using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Kitchen.Components;
 using Content.Server.Popups;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Botany;
 using Content.Shared.Examine;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.Physics;
 using Content.Shared.Popups;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
-using Content.Shared.Slippery;
-using Content.Shared.StepTrigger.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
-using Robust.Shared.Physics;
-using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Server.Teleportation;
 
 namespace Content.Server.Botany.Systems;
 
@@ -31,10 +27,9 @@ public sealed partial class BotanySystem : EntitySystem
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedPointLightSystem _light = default!;
-    [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly FixtureSystem _fixtureSystem = default!;
-    [Dependency] private readonly CollisionWakeSystem _colWakeSystem = default!;
     [Dependency] private readonly RandomHelperSystem _randomHelper = default!;
 
     public override void Initialize()
@@ -146,6 +141,7 @@ public sealed partial class BotanySystem : EntitySystem
     public IEnumerable<EntityUid> GenerateProduct(SeedData proto, EntityCoordinates position, int yieldMod = 1)
     {
         var totalYield = CalculateTotalYield(proto.Yield, yieldMod);
+
         var products = new List<EntityUid>();
 
         if (totalYield > 1 || proto.HarvestRepeat != HarvestType.NoRepeat)
@@ -174,33 +170,10 @@ public sealed partial class BotanySystem : EntitySystem
                     metaData.EntityDescription + " " + Loc.GetString("botany-mysterious-description-addon"), metaData);
             }
 
-            if (proto.Bioluminescent)
-            {
-                var light = _light.EnsureLight(entity);
-                _light.SetRadius(entity, proto.BioluminescentRadius, light);
-                _light.SetColor(entity, proto.BioluminescentColor, light);
-                // TODO: Ayo why you copy-pasting code between here and plantholder?
-                _light.SetCastShadows(entity, false, light); // this is expensive, and botanists make lots of plants
-            }
-
-            if (proto.Slip)
-            {
-                var slippery = EnsureComp<SlipperyComponent>(entity);
-                Dirty(entity, slippery);
-                EnsureComp<StepTriggerComponent>(entity);
-                // Need a fixture with a slip layer in order to actually do the slipping
-                var fixtures = EnsureComp<FixturesComponent>(entity);
-                var body = EnsureComp<PhysicsComponent>(entity);
-                var shape = fixtures.Fixtures["fix1"].Shape;
-                _fixtureSystem.TryCreateFixture(entity, shape, "slips", 1, false, (int) CollisionGroup.SlipLayer, manager: fixtures, body: body);
-                // Need to disable collision wake so that mobs can collide with and slip on it
-                var collisionWake = EnsureComp<CollisionWakeComponent>(entity);
-                _colWakeSystem.SetEnabled(entity, false, collisionWake);
-            }
             if (proto.Teleporting)
             {
-                var teleporting = EnsureComp<TeleportingTraitComponent>(entity);
-                TeleportingTraitSystem.SetPotencyRadius(proto.Potency, teleporting);
+                var teleporting = EnsureComp<SquashTeleportComponent>(entity);
+                teleporting.TeleportRadius = proto.Potency / 10f;
             }
         }
 

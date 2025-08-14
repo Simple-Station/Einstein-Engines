@@ -55,25 +55,6 @@
   - WeaponPistolUniversalSecurity
 
 - type: loadout
-  id: LoadoutSecurityPistolUniversalNonLethal
-  category: JobsSecuritySeniorOfficer
-  cost: 6
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutSecurityWeapons
-  - !type:CharacterJobRequirement
-    jobs:
-    - SeniorOfficer
-    - HeadOfSecurity
-    - BlueshieldOfficer
-  - !type:CharacterAgeRequirement
-    min: 21
-  items:
-  - WeaponPistolUniversalSecurityNonLethal
-
-- type: loadout
   id: LoadoutMagazineUniversalMagnum
   category: JobsSecuritySeniorOfficer
   cost: 4
@@ -111,45 +92,21 @@
   items:
   - MagazineUniversalMagnum
 
-- type: loadout
-  id: LoadoutMagazineUniversalMagnumRubber
-  category: JobsSecuritySeniorOfficer
-  cost: 4
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutSecurityEquipment
-  - !type:CharacterJobRequirement
-    jobs:
-    - SeniorOfficer
-    - HeadOfSecurity
-    - BlueshieldOfficer
-  - !type:CharacterAgeRequirement
-    min: 21
-  items:
-  - MagazineUniversalMagnumRubber
-
-- type: loadout
-  id: LoadoutMagazineUniversalMagnumRubberSpare
-  category: JobsSecuritySeniorOfficer
-  cost: 4
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutSecurityEquipment
-  - !type:CharacterJobRequirement
-    jobs:
-    - SeniorOfficer
-    - HeadOfSecurity
-    - BlueshieldOfficer
-  - !type:CharacterAgeRequirement
-    min: 21
-  items:
-  - MagazineUniversalMagnumRubber
-
 # Eyes
+
+- type: loadout
+  id: LoadoutClothingEyesPatchTintedSenior
+  category: JobsSecuritySeniorOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEyes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingEyesEyepatchHudTintedSecurity
 
 # Gloves
 

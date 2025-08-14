@@ -5,6 +5,7 @@ using Content.Shared.CCVar;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.GameTicking;
+using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
 using Content.Shared.Item;
 using Content.Shared.Players;
@@ -43,6 +44,7 @@ public sealed class LoadoutSystem : EntitySystem
         _sawmill = _log.GetSawmill("loadouts");
 
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
+        SubscribeLocalEvent<LoadProfileExtensionsEvent>(OnProfileLoad);
     }
 
 
@@ -63,6 +65,23 @@ public sealed class LoadoutSystem : EntitySystem
             jobProto: job);
 
         RaiseLocalEvent(ev.Mob, new PlayerLoadoutAppliedEvent(ev.Mob, ev.Player, ev.JobId, ev.LateJoin, ev.Silent, ev.JoinOrder, ev.Station, ev.Profile), broadcast: true);
+    }
+
+    private void OnProfileLoad(LoadProfileExtensionsEvent ev)
+    {
+        if (ev.JobId == null || Deleted(ev.Mob) || !Exists(ev.Mob)
+            || !HasComp<MetaDataComponent>(ev.Mob) // TODO: FIND THE STUPID RACE CONDITION THAT IS MAKING ME CHECK FOR THIS.
+            || !_protoMan.TryIndex<JobPrototype>(ev.JobId, out var job)
+            || !_configurationManager.GetCVar(CCVars.GameLoadoutsEnabled))
+            return;
+
+        ApplyCharacterLoadout(
+            ev.Mob,
+            ev.JobId,
+            ev.Profile,
+            _playTimeTracking.GetTrackerTimes(ev.Player),
+            ev.Player.ContentData()?.Whitelisted ?? false,
+            jobProto: job);
     }
 
 

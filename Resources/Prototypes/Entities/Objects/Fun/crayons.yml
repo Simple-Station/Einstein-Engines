@@ -23,6 +23,10 @@
   - type: Crayon
     capacity: 25
   - type: Food
+  - type: FlavorProfile
+    flavors:
+    - chewy
+    - bitter
   - type: SolutionContainerManager
     solutions:
       food:

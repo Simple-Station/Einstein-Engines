@@ -43,7 +43,7 @@ public sealed class DockingShuttleSystem : SharedDockingShuttleSystem
         var query = EntityQueryEnumerator<FTLDestinationComponent, MapComponent>();
         while (query.MoveNext(out var mapUid, out var dest, out var map))
         {
-            if (!dest.Enabled || _whitelist.IsWhitelistFailOrNull(dest.Whitelist, ent))
+            if (!dest.Enabled || dest.RequireCoordinateDisk || _whitelist.IsWhitelistFail(dest.Whitelist, ent))
                 continue;
 
             AddDestinations(ent, map.MapId);

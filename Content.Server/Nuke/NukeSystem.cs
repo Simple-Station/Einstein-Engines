@@ -1,4 +1,5 @@
 using Content.Server.AlertLevel;
+using Content.Server.Announcements.Systems;
 using Content.Server.Audio;
 using Content.Server.Chat.Systems;
 using Content.Server.Explosion.EntitySystems;
@@ -22,7 +23,6 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
-using Content.Server.Announcements.Systems;
 
 namespace Content.Server.Nuke;
 
@@ -459,10 +459,12 @@ public sealed class NukeSystem : EntitySystem
             _announcer.GetAnnouncementId("NukeArm"),
             "nuke-component-announcement-armed",
             Loc.GetString("nuke-component-announcement-sender"),
+            null,
             Color.Red,
             stationUid ?? uid,
             null,
-            ("time", (int) component.RemainingTime), ("location", FormattedMessage.RemoveMarkupPermissive(_navMap.GetNearestBeaconString((uid, nukeXform))))
+            ("time", (int) component.RemainingTime),
+            ("location", FormattedMessage.RemoveMarkupPermissive(_navMap.GetNearestBeaconString((uid, nukeXform))))
         );
 
         _sound.PlayGlobalOnStation(uid, _audio.GetSound(component.ArmSound));
@@ -592,7 +594,7 @@ public sealed class NukeSystem : EntitySystem
         {
             BreakOnDamage = true,
             BreakOnMove = true,
-            NeedHand = true
+            NeedHand = true,
         };
 
         if (!_doAfter.TryStartDoAfter(doAfter))

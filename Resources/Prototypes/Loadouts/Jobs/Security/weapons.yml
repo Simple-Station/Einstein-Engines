@@ -92,46 +92,6 @@
   - MagazinePistol
 
 - type: loadout
-  id: LoadoutMagazinePistolRubber
-  category: JobsSecurityWeapons
-  cost: 0
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutSecurityEquipment
-  - !type:CharacterLogicOrRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Security
-    - !type:CharacterJobRequirement
-      jobs:
-      - BlueshieldOfficer
-  - !type:CharacterAgeRequirement
-    min: 21
-  items:
-  - MagazinePistolRubber
-
-- type: loadout
-  id: LoadoutMagazinePistolRubberSpare
-  category: JobsSecurityWeapons
-  cost: 2
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutSecurityEquipment
-  - !type:CharacterLogicOrRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Security
-    - !type:CharacterJobRequirement
-      jobs:
-      - BlueshieldOfficer
-  - !type:CharacterAgeRequirement
-    min: 21
-  items:
-  - MagazinePistolRubber
-
-- type: loadout
   id: LoadoutSpeedLoaderMagnum
   category: JobsSecurityWeapons
   cost: 2
@@ -180,48 +140,6 @@
   - SpeedLoaderMagnum
 
 - type: loadout
-  id: LoadoutSpeedLoaderMagnumRubber
-  category: JobsSecurityWeapons
-  cost: 2
-  exclusive: true
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutSecurityEquipment
-  - !type:CharacterLogicOrRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Security
-    - !type:CharacterJobRequirement
-      jobs:
-      - BlueshieldOfficer
-  - !type:CharacterAgeRequirement
-    min: 21
-  items:
-  - SpeedLoaderMagnumRubber
-
-- type: loadout
-  id: LoadoutSpeedLoaderMagnumRubberSpare
-  category: JobsSecurityWeapons
-  cost: 4
-  exclusive: true
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutSecurityEquipment
-  - !type:CharacterLogicOrRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Security
-    - !type:CharacterJobRequirement
-      jobs:
-      - BlueshieldOfficer
-  - !type:CharacterAgeRequirement
-    min: 21
-  items:
-  - SpeedLoaderMagnumRubber
-
-- type: loadout
   id: LoadoutMagazineMagnum
   category: JobsSecurityWeapons
   cost: 4
@@ -246,30 +164,6 @@
   - MagazineMagnum
 
 - type: loadout
-  id: LoadoutMagazineMagnumRubber
-  category: JobsSecurityWeapons
-  cost: 4
-  exclusive: true
-  requirements:
-  - !type:CharacterDepartmentTimeRequirement
-    department: Security
-    min: 3600 # 1 hours
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutSecurityEquipment
-  - !type:CharacterLogicOrRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Security
-    - !type:CharacterJobRequirement
-      jobs:
-      - BlueshieldOfficer
-  - !type:CharacterAgeRequirement
-    min: 21
-  items:
-  - MagazineMagnumRubber
-
-- type: loadout
   id: LoadoutMagazineMagnumSpare
   category: JobsSecurityWeapons
   cost: 4
@@ -292,30 +186,6 @@
     min: 21
   items:
   - MagazineMagnum
-
-- type: loadout
-  id: LoadoutMagazineMagnumRubberSpare
-  category: JobsSecurityWeapons
-  cost: 4
-  exclusive: true
-  requirements:
-  - !type:CharacterDepartmentTimeRequirement
-    department: Security
-    min: 3600 # 1 hours
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutSecurityEquipment
-  - !type:CharacterLogicOrRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Security
-    - !type:CharacterJobRequirement
-      jobs:
-      - BlueshieldOfficer
-  - !type:CharacterAgeRequirement
-    min: 21
-  items:
-  - MagazineMagnumRubber
 
 - type: loadout
   id: LoadoutSpeedLoaderRifleHeavy
@@ -364,48 +234,6 @@
     min: 21
   items:
   - SpeedLoaderRifleHeavy
-
-- type: loadout
-  id: LoadoutSpeedLoaderRifleHeavyRubber
-  category: JobsSecurityWeapons
-  cost: 2
-  exclusive: true
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutSecurityEquipment
-  - !type:CharacterLogicOrRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Security
-    - !type:CharacterJobRequirement
-      jobs:
-      - BlueshieldOfficer
-  - !type:CharacterAgeRequirement
-    min: 21
-  items:
-  - SpeedLoaderRifleHeavyRubber
-
-- type: loadout
-  id: LoadoutSpeedLoaderRifleHeavyRubberSpare
-  category: JobsSecurityWeapons
-  cost: 4
-  exclusive: true
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutSecurityEquipment
-  - !type:CharacterLogicOrRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Security
-    - !type:CharacterJobRequirement
-      jobs:
-      - BlueshieldOfficer
-  - !type:CharacterAgeRequirement
-    min: 21
-  items:
-  - SpeedLoaderRifleHeavyRubber
 
 # Service Weapon, limit 1 selection.
 # Security no longer spawns with a weapon automatically, instead they have a free choice of security appropriate Duty Pistol in their loadouts.
@@ -457,28 +285,6 @@
   - WeaponPistolMk58Security
 
 - type: loadout
-  id: LoadoutSecurityMk58NonLethal
-  category: JobsSecurityWeapons
-  cost: 0
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutSecurityWeapons
-  - !type:CharacterLogicOrRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Security
-    - !type:CharacterJobRequirement
-      jobs:
-      - BlueshieldOfficer
-  - !type:CharacterAgeRequirement
-    min: 21
-  items:
-  - WeaponPistolMk58SecurityNonlethal
-
-- type: loadout
   id: LoadoutSecurityRevolver
   category: JobsSecurityWeapons
   cost: 0
@@ -502,28 +308,6 @@
     min: 21
   items:
   - WeaponRevolverInspectorSecurity
-
-- type: loadout
-  id: LoadoutSecurityRevolverNonLethal
-  category: JobsSecurityWeapons
-  cost: 0
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutSecurityWeapons
-  - !type:CharacterLogicOrRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Security
-    - !type:CharacterJobRequirement
-      jobs:
-      - BlueshieldOfficer
-  - !type:CharacterAgeRequirement
-    min: 21
-  items:
-  - WeaponRevolverInspectorNonLethalSecurity
 
 - type: loadout
   id: LoadoutSecurityRevolverDeckard
@@ -551,28 +335,6 @@
   - WeaponRevolverDeckardSecurity
 
 - type: loadout
-  id: LoadoutSecurityRevolverDeckardNonLethal
-  category: JobsSecurityWeapons
-  cost: 1
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutSecurityWeapons
-  - !type:CharacterLogicOrRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Security
-    - !type:CharacterJobRequirement
-      jobs:
-      - BlueshieldOfficer
-  - !type:CharacterAgeRequirement
-    min: 21
-  items:
-  - WeaponRevolverDeckardNonLethalSecurity
-
-- type: loadout
   id: LoadoutSecurityPistolN1984
   category: JobsSecurityWeapons
   cost: 5
@@ -598,28 +360,6 @@
   - WeaponPistolN1984Security
 
 - type: loadout
-  id: LoadoutSecurityPistolN1984NonLethal
-  category: JobsSecurityWeapons
-  cost: 5
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutSecurityWeapons
-  - !type:CharacterLogicOrRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Security
-    - !type:CharacterJobRequirement
-      jobs:
-      - BlueshieldOfficer
-  - !type:CharacterAgeRequirement
-    min: 21
-  items:
-  - WeaponPistolN1984SecurityNonLethal
-
-- type: loadout
   id: LoadoutSecurityPistolViper
   category: JobsSecurityWeapons
   cost: 2
@@ -643,28 +383,6 @@
     min: 21
   items:
   - WeaponPistolViperSecurity
-
-- type: loadout
-  id: LoadoutSecurityPistolViperNonLethal
-  category: JobsSecurityWeapons
-  cost: 2
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutSecurityWeapons
-  - !type:CharacterLogicOrRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Security
-    - !type:CharacterJobRequirement
-      jobs:
-      - BlueshieldOfficer
-  - !type:CharacterAgeRequirement
-    min: 21
-  items:
-  - WeaponPistolViperSecurityNonLethal
 
 - type: loadout
   id: LoadoutSecurityPistolViperWood
@@ -841,28 +559,6 @@
   - WeaponPistolPollockSecurity
 
 - type: loadout
-  id: LoadoutSecurityPistolPollockNonlethal
-  category: JobsSecurityWeapons
-  cost: 1
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutSecurityWeapons
-  - !type:CharacterLogicOrRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Security
-    - !type:CharacterJobRequirement
-      jobs:
-      - BlueshieldOfficer
-  - !type:CharacterAgeRequirement
-    min: 21
-  items:
-  - WeaponPistolPollockNonlethalSecurity
-
-- type: loadout
   id: LoadoutSecurityRevolverSnub
   category: JobsSecurityWeapons
   cost: 3
@@ -886,28 +582,6 @@
     min: 21
   items:
   - WeaponRevolverSnubSecurity
-
-- type: loadout
-  id: LoadoutSecurityRevolverSnubNonlethal
-  category: JobsSecurityWeapons
-  cost: 3
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutSecurityWeapons
-  - !type:CharacterLogicOrRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Security
-    - !type:CharacterJobRequirement
-      jobs:
-      - BlueshieldOfficer
-  - !type:CharacterAgeRequirement
-    min: 21
-  items:
-  - WeaponRevolverSnubNonlethalSecurity
 
 - type: loadout
   id: LoadoutSecurityRevolverK38Master
@@ -935,28 +609,6 @@
   - WeaponRevolverK38MasterSecurity
 
 - type: loadout
-  id: LoadoutSecurityRevolverK38MasterNonlethal
-  category: JobsSecurityWeapons
-  cost: 1
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutSecurityWeapons
-  - !type:CharacterLogicOrRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Security
-    - !type:CharacterJobRequirement
-      jobs:
-      - BlueshieldOfficer
-  - !type:CharacterAgeRequirement
-    min: 21
-  items:
-  - WeaponRevolverK38MasterNonlethalSecurity
-
-- type: loadout
   id: LoadoutSecurityRevolverFitz
   category: JobsSecurityWeapons
   cost: 2
@@ -980,28 +632,6 @@
     min: 21
   items:
   - WeaponRevolverFitzSecurity
-
-- type: loadout
-  id: LoadoutSecurityRevolverFitzNonlethal
-  category: JobsSecurityWeapons
-  cost: 2
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutSecurityWeapons
-  - !type:CharacterLogicOrRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Security
-    - !type:CharacterJobRequirement
-      jobs:
-      - BlueshieldOfficer
-  - !type:CharacterAgeRequirement
-    min: 21
-  items:
-  - WeaponRevolverFitzNonlethalSecurity
 
 - type: loadout
   id: LoadoutSecurityRevolverPython
@@ -1029,28 +659,6 @@
   - WeaponRevolverPythonSecurity
 
 - type: loadout
-  id: LoadoutSecurityRevolverPythonNonlethal
-  category: JobsSecurityWeapons
-  cost: 5
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutSecurityWeapons
-  - !type:CharacterLogicOrRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Security
-    - !type:CharacterJobRequirement
-      jobs:
-      - BlueshieldOfficer
-  - !type:CharacterAgeRequirement
-    min: 21
-  items:
-  - WeaponRevolverPythonNonlethalSecurity
-
-- type: loadout
   id: LoadoutSecurityArgenti
   category: JobsSecurityWeapons
   cost: 0
@@ -1074,28 +682,6 @@
     min: 21
   items:
   - WeaponRevolverArgentiSecurity
-
-- type: loadout
-  id: LoadoutSecurityArgentiNonLethal
-  category: JobsSecurityWeapons
-  cost: 0
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutSecurityWeapons
-  - !type:CharacterLogicOrRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Security
-    - !type:CharacterJobRequirement
-      jobs:
-      - BlueshieldOfficer
-  - !type:CharacterAgeRequirement
-    min: 21
-  items:
-  - WeaponRevolverArgentiNonLethalSecurity
 
 - type: loadout
   id: LoadoutSecurityEnergyRevolver

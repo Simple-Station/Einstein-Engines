@@ -1,26 +1,10 @@
-using System.Linq;
 using Content.Server.Cargo.Components;
-using Content.Server.GameTicking.Events;
-using Content.Server.Shuttles.Components;
-using Content.Server.Station.Systems;
 using Content.Shared.Stacks;
 using Content.Shared.Cargo;
 using Content.Shared.Cargo.BUI;
 using Content.Shared.Cargo.Components;
 using Content.Shared.Cargo.Events;
-using Content.Shared.CCVar;
-using Content.Shared.GameTicking;
-using Content.Shared.Shuttles.Components;
-using Content.Shared.Tiles;
-using Content.Shared.Whitelist;
-using Robust.Server.Maps;
-using Robust.Shared.Map;
-using Robust.Shared.Random;
 using Robust.Shared.Audio;
-using Robust.Shared.Physics.Components;
-using Robust.Shared.Utility;
-using Robust.Shared.Configuration;
-using Robust.Shared.Map.Components;
 
 namespace Content.Server.Cargo.Systems;
 
@@ -29,8 +13,6 @@ public sealed partial class CargoSystem
     /*
      * Handles cargo shuttle / trade mechanics.
      */
-    [Dependency] private readonly IConfigurationManager _confMan = default!;
-    public MapId? CargoMap { get; private set; }
 
     private static readonly SoundPathSpecifier ApproveSound = new("/Audio/Effects/Cargo/ping.ogg");
 
@@ -43,19 +25,6 @@ public sealed partial class CargoSystem
         SubscribeLocalEvent<CargoPalletConsoleComponent, CargoPalletSellMessage>(OnPalletSale);
         SubscribeLocalEvent<CargoPalletConsoleComponent, CargoPalletAppraiseMessage>(OnPalletAppraise);
         SubscribeLocalEvent<CargoPalletConsoleComponent, BoundUIOpenedEvent>(OnPalletUIOpen);
-
-        SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestart);
-        SubscribeLocalEvent<StationInitializedEvent>(OnStationInitialize);
-
-        Subs.CVar(_cfgManager, CCVars.GridFill, SetGridFill);
-    }
-
-    private void SetGridFill(bool obj)
-    {
-        if (obj)
-        {
-            SetupTradePost();
-        }
     }
 
     #region Console
@@ -342,83 +311,6 @@ public sealed partial class CargoSystem
     }
 
     #endregion
-
-    private void OnRoundRestart(RoundRestartCleanupEvent ev)
-    {
-        Reset();
-        CleanupTradeStation();
-    }
-
-    private void OnStationInitialize(StationInitializedEvent args)
-    {
-        if (!HasComp<StationCargoOrderDatabaseComponent>(args.Station)) // No cargo, L
-            return;
-
-        if (_cfgManager.GetCVar(CCVars.GridFill) && _confMan.GetCVar(CargoCVars.CreateCargoMap))
-            SetupTradePost();
-    }
-
-    private void CleanupTradeStation()
-    {
-        if (CargoMap == null || !_sharedMapSystem.MapExists(CargoMap.Value))
-        {
-            CargoMap = null;
-            DebugTools.Assert(!EntityQuery<CargoShuttleComponent>().Any());
-            return;
-        }
-
-        _mapManager.DeleteMap(CargoMap.Value);
-        CargoMap = null;
-    }
-
-    private void SetupTradePost()
-    {
-        if (CargoMap != null && _sharedMapSystem.MapExists(CargoMap.Value))
-        {
-            return;
-        }
-
-        // It gets mapinit which is okay... buuutt we still want it paused to avoid power draining.
-        var mapEntId = _mapSystem.CreateMap();
-        CargoMap = _entityManager.GetComponent<MapComponent>(mapEntId).MapId;
-
-        var options = new MapLoadOptions
-        {
-            LoadMap = true,
-        };
-
-        _mapLoader.TryLoad((MapId) CargoMap, "/Maps/Shuttles/trading_outpost.yml", out var rootUids, options); // Oh boy oh boy, hardcoded paths!
-
-        // If this fails to load for whatever reason, cargo is fucked
-        if (rootUids == null || !rootUids.Any())
-            return;
-
-        foreach (var grid in rootUids)
-        {
-            EnsureComp<ProtectedGridComponent>(grid);
-            EnsureComp<TradeStationComponent>(grid);
-
-            var shuttleComponent = EnsureComp<ShuttleComponent>(grid);
-            shuttleComponent.AngularDamping = 10000;
-            shuttleComponent.LinearDamping = 10000;
-            Dirty(grid, shuttleComponent);
-        }
-
-        var mapUid = _sharedMapSystem.GetMap(CargoMap.Value);
-        var ftl = EnsureComp<FTLDestinationComponent>(mapUid);
-
-        ftl.Whitelist = new EntityWhitelist()
-        {
-            Components =
-            [
-                _factory.GetComponentName(typeof(CargoShuttleComponent))
-            ]
-        };
-
-        _metaSystem.SetEntityName(mapUid, $"Automated Trade Station {_random.Next(1000):000}");
-
-        _console.RefreshShuttleConsoles();
-    }
 }
 
 /// <summary>

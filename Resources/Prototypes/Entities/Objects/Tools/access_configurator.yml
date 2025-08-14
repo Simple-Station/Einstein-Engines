@@ -23,8 +23,7 @@
       - Atmospherics
       - BasicSilicon
       - Borg
-      #- Brig #Delta V: Removed Brig Access
-      - Boxer #Delta V: Add Boxer Access
+      - Boxer
       - Detective
       - Captain
       - Cargo
@@ -32,8 +31,8 @@
       - Chemistry
       - ChiefEngineer
       - ChiefMedicalOfficer
-      - Clown #Delta V: Add Clown Access
-      - Corpsman # DeltaV: Add Corpsman access
+      - Clown
+      - Corpsman
       - Command
       - Engineering
       - External
@@ -43,15 +42,15 @@
       - Janitor
       - Kitchen
       - Lawyer
-      - Library #Delta V: Add Library Access
+      - Library
       - Maintenance
       - Medical
-      - Mime #Delta V: Add Mime Access
-      - Musician #Delta V: Add Musician Access
-      - Paramedic # Delta V - adds Paramedic access
-      - Psychologist #Delta V: Add Psychologist Access
+      - Mime
+      - Musician
+      - Paramedic
+      - Psychologist
       - Quartermaster
-      - Reporter #Delta V: Add Reporter Access
+      - Reporter
       - Research
       - ResearchDirector
       - Salvage
@@ -59,11 +58,11 @@
       - Service
       - StationAi
       - Theatre
-      - Zookeeper #Delta V: Add Zookeeper Access
-      - ChiefJustice  #Delta V: Add Chief Justice Access
-      - Prosecutor  #Delta V: Add Prosecutor Access
-      - Justice  #Delta V: Add Justice Access
-      - Clerk  #Delta V: Add Clerk Access
+      - Zookeeper
+      - ChiefJustice
+      - Prosecutor
+      - Justice
+      - Clerk
       privilegedIdSlot:
         name: id-card-console-privileged-id
         ejectSound: /Audio/Machines/id_swipe.ogg
@@ -100,3 +99,77 @@
           - ItemMask
           restitution: 0.3
           friction: 0.2
+
+- type: entity
+  parent: AccessConfigurator
+  id: AccessConfiguratorUniversal
+  name: universal access configurator
+  suffix: Admin
+  description: A modified access configurator used only by the mythical Administrator.
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/universal_access_configurator.rsi
+  - type: Clothing
+    sprite: Objects/Tools/universal_access_configurator.rsi
+  - type: AccessOverrider
+    accessLevels:
+    - Armory
+    - Atmospherics
+    - BasicSilicon
+    - Borg
+    - Boxer
+    - Detective
+    - Captain
+    - Cargo
+    - Chapel
+    - Chemistry
+    - ChiefEngineer
+    - ChiefMedicalOfficer
+    - Clown
+    - Corpsman
+    - Command
+    - Engineering
+    - External
+    - HeadOfPersonnel
+    - HeadOfSecurity
+    - Hydroponics
+    - Janitor
+    - Kitchen
+    - Lawyer
+    - Library
+    - Maintenance
+    - Medical
+    - Mime
+    - Musician
+    - Paramedic
+    - Psychologist
+    - Quartermaster
+    - Reporter
+    - Research
+    - ResearchDirector
+    - Salvage
+    - Security
+    - Service
+    - StationAi
+    - Theatre
+    - Zookeeper
+    - ChiefJustice
+    - Prosecutor
+    - Justice
+    - Clerk
+    - CentralCommand
+    - NuclearOperative
+    - SyndicateAgent
+    - Wizard
+    privilegedIdSlot:
+      name: id-card-console-privileged-id
+      ejectSound: /Audio/Machines/id_swipe.ogg
+      insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+      ejectOnBreak: true
+      swap: false
+      whitelist:
+        components:
+        - IdCard
+    denialSound:
+      path: /Audio/Machines/custom_deny.ogg
+    doAfter: 0.5

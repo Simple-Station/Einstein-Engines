@@ -1,5 +1,4 @@
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using System.Numerics;
 using Content.Client.Examine;
 using Content.Client.Gameplay;
@@ -25,7 +24,6 @@ namespace Content.Client.Verbs
         [Dependency] private readonly ExamineSystem _examine = default!;
         [Dependency] private readonly SpriteTreeSystem _tree = default!;
         [Dependency] private readonly TagSystem _tagSystem = default!;
-        [Dependency] private readonly SharedTransformSystem _transform = default!;
         [Dependency] private readonly IStateManager _stateManager = default!;
         [Dependency] private readonly IEyeManager _eyeManager = default!;
         [Dependency] private readonly IPlayerManager _playerManager = default!;

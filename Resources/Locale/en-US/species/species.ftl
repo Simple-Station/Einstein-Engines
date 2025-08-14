@@ -10,9 +10,11 @@ species-name-arachne = Arachne
 species-name-moth = Moth Person
 species-name-skeleton = Skeleton
 species-name-vox = Vox
+species-name-gingerbread = delicious baked good
 species-name-ipc = IPC
 species-name-shadowkin = Shadowkin
 species-name-plasmaman = Plasmaman
+species-name-shell = Shell
 
 ## Misc species things
 

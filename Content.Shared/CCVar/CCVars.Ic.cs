@@ -8,7 +8,7 @@ public sealed partial class CCVars
     ///     Restricts IC character names to alphanumeric chars.
     /// </summary>
     public static readonly CVarDef<bool> RestrictedNames =
-        CVarDef.Create("ic.restricted_names", true, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("ic.restricted_names", false, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     ///     Allows flavor text (character descriptions)

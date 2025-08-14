@@ -89,7 +89,7 @@
     heldPrefix: radkit
 
 - type: entity
-  name: combat medical kit
+  name: combat medical first aid kit
   description: "For the big weapons among us."
   parent: Medkit
   id: MedkitCombat

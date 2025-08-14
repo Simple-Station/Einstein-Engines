@@ -33,7 +33,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 25
+        damage: 100
       behaviors:
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
@@ -47,7 +47,7 @@
         sound:
           collection: MetalBreak
   - type: StaticPrice
-    price: 25
+    price: 50
   - type: RequireProjectileTarget
 
 #Starts unanchored, cannot be rotated while anchored
@@ -84,7 +84,6 @@
   - type: Rotatable
     rotateWhileAnchored: true
 
-# Goobstation - rolly chairs that actually roll!
 - type: entity
   name: chair
   id: RollingOfficeChairBase
@@ -119,8 +118,8 @@
         !type:DamageTrigger
         damage: 100
       behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 50
@@ -213,13 +212,17 @@
 - type: entity
   name: white office chair
   id: ChairOfficeLight
-  parent: RollingOfficeChairBase # Goobstation - make the rolly chairs roll!
+  parent: OfficeChairBase
   components:
   - type: Sprite
     state: office-white
   - type: Construction
     graph: Seat
     node: chairOffice
+  - type: SpawnItemsAtLocationOnUse
+    spawnItemsVerbText: disable-wheel-locks
+    items:
+    - id: ChairOfficeLightRolling
 
 - type: entity
   name: dark office chair
@@ -231,6 +234,46 @@
   - type: Construction
     graph: Seat
     node: chairOfficeDark
+  - type: SpawnItemsAtLocationOnUse
+    spawnItemsVerbText: disable-wheel-locks
+    items:
+    - id: ChairOfficeDarkRolling
+
+# EE start
+
+- type: entity
+  name: white office chair
+  suffix: No mapping
+  id: ChairOfficeLightRolling
+  parent: RollingOfficeChairBase
+  components:
+  - type: Sprite
+    state: office-white
+  - type: Construction
+    graph: Seat
+    node: chairOffice
+  - type: SpawnItemsAtLocationOnUse
+    spawnItemsVerbText: activate-wheel-locks
+    items:
+    - id: ChairOfficeLight
+
+- type: entity
+  name: dark office chair
+  suffix: No mapping
+  id: ChairOfficeDarkRolling
+  parent: ChairOfficeLightRolling
+  components:
+  - type: Sprite
+    state: office-dark
+  - type: Construction
+    graph: Seat
+    node: chairOfficeDark
+  - type: SpawnItemsAtLocationOnUse
+    spawnItemsVerbText: activate-wheel-locks
+    items:
+    - id: ChairOfficeDark
+
+# EE end
 
 - type: entity
   name: comfy chair
@@ -382,7 +425,7 @@
     node: chair
 
 - type: entity
-  parent: [SeatBase, BaseFoldable]
+  parent: [SeatBase, BaseDeployFoldable]
   id: ChairFolding
   name: folding chair
   description: If you carry six of these you become the coolest kid at church.
@@ -459,4 +502,4 @@
             min: 2
             max: 4
   - type: StaticPrice
-    price: 20
+    price: 50

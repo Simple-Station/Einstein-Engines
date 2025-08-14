@@ -5,10 +5,6 @@ deadmin_on_join = true
 [discord]
 rich_main_icon_id = "einstein-engines"
 
-[events]
-ramping_average_end_time = 180.0
-ramping_average_chaos    = 4.5
-
 [game]
 hostname           = "Einstein Engines (change this)"
 desc               = "An alternative upstream that favors content intended for RP servers. If you are reading this, please change it."

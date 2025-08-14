@@ -19,8 +19,6 @@
 #              paths:
 #              - /Maps/Shuttles/AISAT.yml
         - type: StationJobs
-          overflowJobs:
-            - Passenger
           availableJobs:
           #service
             Captain: [ 1, 1 ]
@@ -73,3 +71,9 @@
             Passenger: [ -1, -1 ]
           # Silicon
             StationAi: [ 1, 1 ]
+        # blob-config-start SMALL+
+        - type: StationBlobConfig
+          stageBegin: 25
+          stageCritical: 350
+          stageTheEnd: 700
+        # blob-config-end

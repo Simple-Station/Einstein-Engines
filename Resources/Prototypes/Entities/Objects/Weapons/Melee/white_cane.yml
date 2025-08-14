@@ -19,7 +19,7 @@
         Blunt: 4
     bluntStaminaDamageFactor: 4
     heavyRateModifier: 2
-    heavyRangeModifier: 1.75
+    lightRangeModifier: 1.3
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 0
     maxTargets: 1

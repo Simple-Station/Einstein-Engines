@@ -1,7 +1,7 @@
 using Content.Server.Chat.Systems;
-using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.NPC.Components;
 using Content.Shared.Chat;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
 using Content.Shared.Emag.Components;
 using Content.Shared.Interaction;
@@ -21,7 +21,7 @@ public sealed partial class MedibotInjectOperator : HTNOperator
     private SharedAudioSystem _audio = default!;
     private SharedInteractionSystem _interaction = default!;
     private SharedPopupSystem _popup = default!;
-    private SolutionContainerSystem _solutionContainer = default!;
+    private SharedSolutionContainerSystem _solutionContainer = default!;
 
     /// <summary>
     /// Target entity to inject.
@@ -37,7 +37,7 @@ public sealed partial class MedibotInjectOperator : HTNOperator
         _audio = sysManager.GetEntitySystem<SharedAudioSystem>();
         _interaction = sysManager.GetEntitySystem<SharedInteractionSystem>();
         _popup = sysManager.GetEntitySystem<SharedPopupSystem>();
-        _solutionContainer = sysManager.GetEntitySystem<SolutionContainerSystem>();
+        _solutionContainer = sysManager.GetEntitySystem<SharedSolutionContainerSystem>();
     }
 
     public override void TaskShutdown(NPCBlackboard blackboard, HTNOperatorStatus status)

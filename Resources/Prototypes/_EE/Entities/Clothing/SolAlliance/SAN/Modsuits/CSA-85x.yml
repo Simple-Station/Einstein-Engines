@@ -88,7 +88,8 @@
           Radiation: 0.50
           Caustic: 0.50
     - type: TemperatureProtection
-      coefficient: 0.01
+      heatingCoefficient: 0.1
+      coolingCoefficient: 0.1
     - type: StaminaDamageResistance
       coefficient: 0.5
     - type: EmitsSoundOnMove

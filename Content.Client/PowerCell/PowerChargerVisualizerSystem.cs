@@ -29,7 +29,6 @@ public sealed class PowerChargerVisualizerSystem : VisualizerSystem<PowerCharger
             args.Sprite.LayerSetVisible(PowerChargerVisualLayers.Light, true);
         }
         else
-            // 
             args.Sprite.LayerSetVisible(PowerChargerVisualLayers.Light, false);
     }
 }
@@ -38,4 +37,5 @@ enum PowerChargerVisualLayers : byte
 {
     Base,
     Light,
+    ItemDisplay,
 }

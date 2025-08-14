@@ -73,6 +73,7 @@ namespace Content.Server.Atmos.EntitySystems
             SubscribeLocalEvent<FlammableComponent, IsHotEvent>(OnIsHot);
             SubscribeLocalEvent<FlammableComponent, TileFireEvent>(OnTileFire);
             SubscribeLocalEvent<FlammableComponent, RejuvenateEvent>(OnRejuvenate);
+            SubscribeLocalEvent<FlammableComponent, ResistFireAlertEvent>(OnResistFireAlert);
 
             SubscribeLocalEvent<IgniteOnCollideComponent, StartCollideEvent>(IgniteOnCollide);
             SubscribeLocalEvent<IgniteOnCollideComponent, LandEvent>(OnIgniteLand);
@@ -251,6 +252,15 @@ namespace Content.Server.Atmos.EntitySystems
             Extinguish(uid, component);
         }
 
+        private void OnResistFireAlert(Entity<FlammableComponent> ent, ref ResistFireAlertEvent args)
+        {
+            if (args.Handled)
+                return;
+
+            Resist(ent, ent);
+            args.Handled = true;
+        }
+
         public void UpdateAppearance(EntityUid uid, FlammableComponent? flammable = null, AppearanceComponent? appearance = null)
         {
             if (!Resolve(uid, ref flammable, ref appearance))
@@ -295,10 +305,11 @@ namespace Content.Server.Atmos.EntitySystems
 
         public void Extinguish(EntityUid uid, FlammableComponent? flammable = null)
         {
-            if (!Resolve(uid, ref flammable))
+            if (!Resolve(uid, ref flammable) || !flammable.CanExtinguish)
                 return;
 
-            if (!flammable.OnFire || !flammable.CanExtinguish)
+            RemCompDeferred<OnFireComponent>(uid);
+            if (!flammable.OnFire)
                 return;
 
             _adminLogger.Add(LogType.Flammable, $"{ToPrettyString(uid):entity} stopped being on fire damage");
@@ -317,6 +328,7 @@ namespace Content.Server.Atmos.EntitySystems
             if (!Resolve(uid, ref flammable, false)) // Lavaland Change: SHUT THE FUCK UP FLAMMABLE
                 return;
 
+            EnsureComp<OnFireComponent>(uid);
             if (flammable.AlwaysCombustible)
             {
                 flammable.FireStacks = Math.Max(flammable.FirestacksOnIgnite, flammable.FireStacks);
@@ -410,9 +422,15 @@ namespace Content.Server.Atmos.EntitySystems
             _timer -= UpdateTime;
 
             // TODO: This needs cleanup to take off the crust from TemperatureComponent and shit.
-            var query = EntityQueryEnumerator<FlammableComponent, TransformComponent>();
-            while (query.MoveNext(out var uid, out var flammable, out _))
+            var query = EntityQueryEnumerator<OnFireComponent>();
+            while (query.MoveNext(out var uid, out _))
             {
+                if (!TryComp(uid, out FlammableComponent? flammable))
+                {
+                    RemCompDeferred<OnFireComponent>(uid);
+                    continue;
+                }
+
                 // Slowly dry ourselves off if wet.
                 if (flammable.FireStacks < 0)
                 {
@@ -423,6 +441,7 @@ namespace Content.Server.Atmos.EntitySystems
                 {
                     _alertsSystem.ClearAlert(uid, flammable.FireAlert);
                     RaiseLocalEvent(uid, new MoodRemoveEffectEvent("OnFire"));
+                    RemCompDeferred<OnFireComponent>(uid);
                     continue;
                 }
 
@@ -461,7 +480,7 @@ namespace Content.Server.Atmos.EntitySystems
 
                     _damageableSystem.TryChangeDamage(uid, flammable.Damage * flammable.FireStacks * multiplier, interruptsDoAfters: false);
 
-                    AdjustFireStacks(uid, flammable.FirestackFade * (flammable.Resisting ? 10f : 1f), flammable);
+                    AdjustFireStacks(uid, flammable.FirestackFade * (flammable.Resisting ? 10f : 1f), flammable, flammable.OnFire);
                 }
                 else
                 {

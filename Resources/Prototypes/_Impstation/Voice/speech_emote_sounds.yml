@@ -31,6 +31,12 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
   params:
     variation: 0.05
     pitch: 1.25
@@ -68,6 +74,12 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
   params:
     variation: 0.05
     pitch: 1.25
@@ -105,6 +117,12 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
   params:
     variation: 0.05
     pitch: 1.25

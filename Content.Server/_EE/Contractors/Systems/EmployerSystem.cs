@@ -1,4 +1,3 @@
-using System.Linq;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Shared._EE.Contractors.Prototypes;
 using Content.Shared.CCVar;
@@ -8,7 +7,6 @@ using Content.Shared.Humanoid;
 using Content.Shared.Players;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
-using Robust.Shared;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
@@ -30,10 +28,15 @@ public sealed class EmployerSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
+        SubscribeLocalEvent<LoadProfileExtensionsEvent>(OnProfileLoad);
     }
 
     // When the player is spawned in, add the employer components selected during character creation
     private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent args) =>
+        ApplyEmployer(args.Mob, args.JobId, args.Profile,
+            _playTimeTracking.GetTrackerTimes(args.Player), args.Player.ContentData()?.Whitelisted ?? false);
+
+    private void OnProfileLoad(LoadProfileExtensionsEvent args) =>
         ApplyEmployer(args.Mob, args.JobId, args.Profile,
             _playTimeTracking.GetTrackerTimes(args.Player), args.Player.ContentData()?.Whitelisted ?? false);
 
@@ -50,7 +53,7 @@ public sealed class EmployerSystem : EntitySystem
 
         ProtoId<EmployerPrototype> employer = profile.Employer != string.Empty ? profile.Employer : SharedHumanoidAppearanceSystem.DefaultEmployer;
 
-        if(!_prototype.TryIndex<EmployerPrototype>(employer, out var employerPrototype))
+        if (!_prototype.TryIndex(employer, out var employerPrototype))
         {
             DebugTools.Assert($"Employer '{employer}' not found!");
             return;

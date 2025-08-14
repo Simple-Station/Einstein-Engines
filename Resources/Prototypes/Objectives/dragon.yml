@@ -6,14 +6,13 @@
   - type: Objective
     # difficulty isn't used at all since objective are fixed
     difficulty: 1.5
-    issuer: dragon
+    issuer: objective-issuer-dragon
   - type: RoleRequirement
     roles:
       mindRoles:
       - DragonRole
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BaseDragonObjective
   id: CarpRiftsObjective
   components:
@@ -30,7 +29,6 @@
   - type: CarpRiftsCondition
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: [BaseDragonObjective, BaseSurviveObjective]
   id: DragonSurviveObjective
   name: Survive

@@ -6,6 +6,8 @@
     - Toxin
     - Airloss
     - Genetic
+  supportedTypes: # Goobstation
+  - Holy
 
 - type: damageContainer
   id: Inorganic
@@ -27,10 +29,19 @@
 - type: damageContainer
   id: Silicon
   supportedGroups:
-    - Brute
+  - Brute
   supportedTypes:
-    - Heat
-    - Shock
+  - Heat
+  - Shock
+
+- type: damageContainer
+  id: SiliconUnshielded
+  supportedGroups:
+  - Brute
+  supportedTypes:
+  - Heat
+  - Shock
+  - Radiation
 
 - type: damageContainer
   id: Shield
@@ -54,12 +65,21 @@
     - Heat
 
 - type: damageContainer
-  id: HalfSpirit
+  id: ManifestedSpirit
   supportedGroups:
-    - Burn
-    - Brute
-    - Airloss
-    - Immaterial
+  - Metaphysical
+  - Brute
   supportedTypes:
-    - Poison
+  - Heat
+  - Shock
+  - Caustic
 
+- type: damageContainer
+  id: BiologicalMetaphysical
+  supportedGroups:
+  - Brute
+  - Burn
+  - Toxin
+  - Airloss
+  - Genetic
+  - Metaphysical

@@ -16,8 +16,6 @@
           !type:NanotrasenNameGenerator
           prefixCreator: '14'
       - type: StationJobs
-        overflowJobs:
-        - Passenger
         availableJobs:
         #command
           Captain: [ 1, 1 ]
@@ -76,3 +74,9 @@
           Passenger: [ -1, -1 ]
         # Silicon
           StationAi: [ 1, 1 ]
+      # Goobstation blob-config-start HUGE
+      - type: StationBlobConfig
+        stageBegin: 40
+        stageCritical: 450
+        stageTheEnd: 900
+      # Goobstation blob-config-end

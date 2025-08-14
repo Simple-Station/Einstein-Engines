@@ -26,11 +26,13 @@
       Brute:
         sprite: Mobs/Effects/brute_damage.rsi
         color: "#cd7314"
+      Burn:
+        sprite: Mobs/Effects/burn_damage.rsi
   - type: Butcherable
     butcheringType: Spike
     spawned:
-      - id: FoodMeatPlant
-        amount: 5
+    - id: FoodMeatPlant
+      amount: 5
   - type: Bloodstream
     bloodReagent: Sap
     bloodRegenerationHunger: 1
@@ -52,9 +54,9 @@
         scaleByQuantity: true
         damage:
           types:
-            Blunt: 2
-            Slash: 2
-            Piercing: 3
+            Blunt: 0.1
+            Slash: 0.1
+            Piercing: 0.15
       - !type:PopupMessage
         type: Local
         visualType: Large
@@ -67,7 +69,7 @@
         scaleByQuantity: true
         damage:
           types:
-            Poison: 5
+            Poison: 0.25
       - !type:PopupMessage
         type: Local
         visualType: Large
@@ -82,11 +84,9 @@
         density: 300 #weighs more than humans because wood
         restitution: 0.0
         mask:
-          - MobMask
+        - MobMask
         layer:
-          - MobLayer
-  - type: Inventory
-    templateId: diona
+        - MobLayer
   - type: Speech
     speechVerb: Plant
   - type: Vocal
@@ -116,20 +116,34 @@
     walkModifier: 0.75
   - type: SpeedModifierImmunity
   - type: NoSlip
-  - type: StepTriggerImmune
+  - type: ProtectedFromStepTriggers
     whitelist:
       types:
       - Shard
   - type: FootPrints
     leftBarePrint: "footprint-left-bare-diona"
     rightBarePrint: "footprint-right-bare-diona"
+  - type: Inventory
+    templateId: diona
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
 
 - type: entity
   parent: BaseSpeciesDummy
   id: MobDionaDummy
   categories: [ HideSpawnMenu ]
   components:
-  - type: Inventory
-    templateId: diona
   - type: HumanoidAppearance
     species: Diona
+  - type: Inventory
+    templateId: diona
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female

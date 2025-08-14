@@ -16,8 +16,6 @@
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/DeltaV/NTES_UCLB.yml
         - type: StationJobs
-          overflowJobs:
-            - Passenger
           availableJobs:
           #civilian
             Passenger: [ -1, -1 ]
@@ -77,3 +75,9 @@
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
             MedicalBorg: [ 1, 1 ]
+        # blob-config-start SMALL+
+        - type: StationBlobConfig
+          stageBegin: 25
+          stageCritical: 350
+          stageTheEnd: 700
+        # blob-config-end

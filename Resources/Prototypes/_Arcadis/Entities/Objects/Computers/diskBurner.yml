@@ -60,7 +60,7 @@
     state: science
   - type: MachineBoard
     prototype: DiskBurner
-    requirements:
+    machinePartRequirements:
       Capacitor: 2
       Manipulator: 2
 

@@ -83,7 +83,7 @@ reagent-name-lipozine = lipozine
 reagent-desc-lipozine = A chemical that accelerates metabolism, causing the user to hunger faster.
 
 reagent-name-omnizine = omnizine
-reagent-desc-omnizine = A soothing milky liquid with an iridescent gleam. A well known conspiracy theory says that it's origins remain a mystery because revealing the secrets of its production would render most commercial pharmaceuticals obsolete.
+reagent-desc-omnizine = A soothing milky liquid with an iridescent gleam. A well known conspiracy theory says that its origins remain a mystery because revealing the secrets of its production would render most commercial pharmaceuticals obsolete.
 
 reagent-name-ultravasculine = ultravasculine
 reagent-desc-ultravasculine = A complicated anti-toxin solution that quickly flushes out toxin while causing minor stress on the body. Reacts with histamine, duplicating itself while flushing it out. Overdose causes extreme pain.
@@ -150,3 +150,6 @@ reagent-desc-haloperidol = Removes most stimulating and hallucinogenic drugs. Re
 
 reagent-name-artiplates = artiplates
 reagent-desc-artiplates = A highly advanced form of artificial blood that expands rapidly when introduced to the bloodstream. Due to its expansive properties, it can cause severe internal hemorrhaging in large doses.
+
+reagent-name-enunciase = enunciase
+reagent-desc-enunciase = An enzyme that helps stimulate the language centers of the brain, relieving stuttering due to other drugs and temporarily forcing 'perfect' speech. Causes nausea in high doses.

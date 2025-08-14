@@ -47,7 +47,7 @@ public sealed class RottingSystem : SharedRottingSystem
     }
 
 
-    public void ReduceAccumulator(EntityUid uid, TimeSpan time)
+    public new void ReduceAccumulator(EntityUid uid, TimeSpan time)
     {
         if (!TryComp<PerishableComponent>(uid, out var perishable))
             return;

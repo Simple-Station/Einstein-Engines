@@ -69,7 +69,7 @@
   - type: Puller
   - type: StandingState
   - type: Alerts
-  - type: StepTriggerImmune
+  - type: ProtectedFromStepTriggers
   - type: Targeting # Shitmed Change
 
 - type: entity
@@ -207,7 +207,7 @@
     softness: 1
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
-  - type: StepTriggerImmune
+  - type: ProtectedFromStepTriggers
   - type: InputMover
   - type: MobMover
   - type: ContentEye

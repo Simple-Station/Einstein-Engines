@@ -30,8 +30,8 @@
       0: Alive
       50: Dead
   - type: Damageable
-    damageContainer: CorporealSpirit
-    damageModifierSet: CorporealSpirit
+    damageContainer: BiologicalMetaphysical
+    damageModifierSet: HalfSpirit
   - type: MindContainer
     showExamineInfo: false
   - type: NpcFactionMember
@@ -43,11 +43,11 @@
     removable: false
     roller: false
     psychognomicDescriptors:
-      - p-descriptor-bound
-      - p-descriptor-cyclic
+    - p-descriptor-bound
+    - p-descriptor-cyclic
   - type: InnatePsionicPowers
     powersToAdd:
-      - TelepathyPower
+    - TelepathyPower
   - type: HTN
     rootTask:
       task: MeleePsionicFamiliarCompound
@@ -97,8 +97,8 @@
     - Chapel
   - type: InnatePsionicPowers
     powersToAdd:
-      - TelepathyPower
-      - XenoglossyPower
+    - TelepathyPower
+    - XenoglossyPower
   - type: MovementSpeedModifier
     baseWalkSpeed : 3
     baseSprintSpeed : 6
@@ -126,7 +126,7 @@
       path: /Audio/Animals/fox_squeak.ogg
   - type: MeleeWeapon
     soundHit:
-        path: /Audio/Effects/bite.ogg
+      path: /Audio/Effects/bite.ogg
     angle: 0
     animation: WeaponArcBite
     damage:
@@ -149,7 +149,6 @@
     allowSpeech: true
     name: ghost-role-information-cerberus-name
     description: ghost-role-information-cerberus-description
-    rules: ghost-role-information-cerberus-rules
     mindRoles:
     - MindRoleGhostRoleFamiliar
     raffle:
@@ -200,7 +199,7 @@
     roller: false
   - type: InnatePsionicPowers
     powersToAdd:
-      - TelepathyPower
+    - TelepathyPower
   - type: Vocal
     sounds:
       Male: Cerberus
@@ -219,11 +218,13 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: imp
       sprite: Mobs/Demons/imp.rsi
+  - type: Damageable
+    damageContainer: ManifestedSpirit
   - type: InnatePsionicPowers
     powersToAdd:
-      - TelepathyPower
-      - PyrokineticFlare
-      - XenoglossyPower
+    - TelepathyPower
+    - PyrokineticFlare
+    - XenoglossyPower
   - type: MeleeWeapon
     damage:
       types:
