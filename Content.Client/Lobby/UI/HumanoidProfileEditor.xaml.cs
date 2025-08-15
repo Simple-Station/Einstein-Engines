@@ -1176,6 +1176,20 @@ namespace Content.Client.Lobby.UI
                     Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
                     break;
                 }
+                case HumanoidSkinColor.VoidbornHues:
+                    {
+                    if (!RgbSkinColorContainer.Visible)
+                    {
+                        Skin.Visible = false;
+                        RgbSkinColorContainer.Visible = true;
+                    }
+
+                    var color = skinColor.ClosestVoidbornHues(_rgbSkinColorSelector.Color);
+
+                    Markings.CurrentSkinColor = color;
+                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+                    break;
+                }
                 case HumanoidSkinColor.AnimalFur: // Einstein Engines - Tajaran
                     {
                         if (!RgbSkinColorContainer.Visible)
@@ -1483,6 +1497,18 @@ namespace Content.Client.Lobby.UI
                     }
 
                     _rgbSkinColorSelector.Color = SkinColor.ClosestVoxColor(Profile.Appearance.SkinColor);
+
+                    break;
+                }
+                case HumanoidSkinColor.VoidbornHues:
+                {
+                    if (!RgbSkinColorContainer.Visible)
+                    {
+                        Skin.Visible = false;
+                        RgbSkinColorContainer.Visible = true;
+                    }
+
+                    _rgbSkinColorSelector.Color = SkinColor.ClosestVoidbornHues(Profile.Appearance.SkinColor);
 
                     break;
                 }
