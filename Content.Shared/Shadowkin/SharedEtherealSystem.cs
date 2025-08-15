@@ -16,7 +16,7 @@ using Content.Shared.Abilities.Psionics;
 using Content.Shared.Tag;
 
 
-namespace Content.Shared.Shadowkin;
+namespace Content.Shared.Voidborn;
 
 public abstract class SharedEtherealSystem : EntitySystem
 {
@@ -83,8 +83,8 @@ public abstract class SharedEtherealSystem : EntitySystem
 
     private void OnMindbreak(EntityUid uid, EtherealComponent component, ref OnMindbreakEvent args)
     {
-        SpawnAtPosition("ShadowkinShadow", Transform(uid).Coordinates);
-        SpawnAtPosition("EffectFlashShadowkinDarkSwapOff", Transform(uid).Coordinates);
+        SpawnAtPosition("VoidbornShadow", Transform(uid).Coordinates);
+        SpawnAtPosition("EffectFlashVoidbornDarkSwapOff", Transform(uid).Coordinates);
         RemComp(uid, component);
     }
 
@@ -93,8 +93,8 @@ public abstract class SharedEtherealSystem : EntitySystem
         if (args.NewMobState == MobState.Critical
             || args.NewMobState == MobState.Dead)
         {
-            SpawnAtPosition("ShadowkinShadow", Transform(uid).Coordinates);
-            SpawnAtPosition("EffectFlashShadowkinDarkSwapOff", Transform(uid).Coordinates);
+            SpawnAtPosition("VoidbornShadow", Transform(uid).Coordinates);
+            SpawnAtPosition("EffectFlashVoidbornDarkSwapOff", Transform(uid).Coordinates);
             RemComp(uid, component);
         }
     }

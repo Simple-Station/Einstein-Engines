@@ -1,83 +1,83 @@
 # Ears
 
 - type: marking
-  id: EarsShadowkin
+  id: EarsVoidborn
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Shadowkin]
+  speciesRestriction: [Voidborn]
   forcedColoring: true
   sprites:
-    - sprite: Mobs/Customization/Shadowkin/ears.rsi
-      state: shadowkin
+    - sprite: Mobs/Customization/Voidborn/ears.rsi
+      state: voidborn
 
 - type: marking
-  id: EarsShadowkinStriped
+  id: EarsVoidbornStriped
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Shadowkin]
+  speciesRestriction: [Voidborn]
   coloring:
     default:
       type:
         !type:SkinColoring
     layers:
-      shadowkin_stripes:
+      voidborn_stripes:
         type:
           !type:SimpleColoring
             color: "#FFFFFF"
   sprites:
-    - sprite: Mobs/Customization/Shadowkin/ears.rsi
-      state: shadowkin
-    - sprite: Mobs/Customization/Shadowkin/ears.rsi
-      state: shadowkin_stripes
+    - sprite: Mobs/Customization/Voidborn/ears.rsi
+      state: voidborn
+    - sprite: Mobs/Customization/Voidborn/ears.rsi
+      state: voidborn_stripes
 
 # Tails
 
 - type: marking
-  id: TailShadowkin
+  id: TailVoidborn
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Shadowkin]
+  speciesRestriction: [Voidborn]
   forcedColoring: true
   sprites:
-    - sprite: Mobs/Customization/Shadowkin/tails64x32.rsi
-      state: shadowkin
+    - sprite: Mobs/Customization/Voidborn/tails64x32.rsi
+      state: voidborn
 
 - type: marking
-  id: TailShadowkinBig
+  id: TailVoidbornBig
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Shadowkin]
+  speciesRestriction: [Voidborn]
   forcedColoring: true
   sprites:
-    - sprite: Mobs/Customization/Shadowkin/tails64x32.rsi
-      state: shadowkin_big
+    - sprite: Mobs/Customization/Voidborn/tails64x32.rsi
+      state: voidborn_big
 
 - type: marking
-  id: TailShadowkinBigFluff
+  id: TailVoidbornBigFluff
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Shadowkin]
+  speciesRestriction: [Voidborn]
   forcedColoring: true
   sprites:
-    - sprite: Mobs/Customization/Shadowkin/tails64x32.rsi
-      state: shadowkin_big_fluff
+    - sprite: Mobs/Customization/Voidborn/tails64x32.rsi
+      state: voidborn_big_fluff
 
 - type: marking
-  id: TailShadowkinShorter
+  id: TailVoidbornShorter
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Shadowkin]
+  speciesRestriction: [Voidborn]
   forcedColoring: true
   sprites:
-    - sprite: Mobs/Customization/Shadowkin/tails32x32.rsi
-      state: shadowkin_shorter
+    - sprite: Mobs/Customization/Voidborn/tails32x32.rsi
+      state: voidborn_shorter
 
 - type: marking
-  id: TailShadowkinMedium
+  id: TailVoidbornMedium
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Shadowkin]
+  speciesRestriction: [Voidborn]
   forcedColoring: true
   sprites:
-    - sprite: Mobs/Customization/Shadowkin/tails32x32.rsi
-      state: shadowkin_medium
+    - sprite: Mobs/Customization/Voidborn/tails32x32.rsi
+      state: voidborn_medium

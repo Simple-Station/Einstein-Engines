@@ -1,4 +1,4 @@
-using Content.Shared.Shadowkin;
+using Content.Shared.Voidborn;
 using Content.Shared.CCVar;
 using Robust.Client.Graphics;
 using Robust.Shared.Configuration;
@@ -7,9 +7,9 @@ using Content.Shared.Humanoid;
 using Content.Shared.Abilities.Psionics;
 using Content.Client.Overlays;
 
-namespace Content.Client.Shadowkin;
+namespace Content.Client.Voidborn;
 
-public sealed partial class ShadowkinSystem : EntitySystem
+public sealed partial class VoidbornSystem : EntitySystem
 {
     [Dependency] private readonly IOverlayManager _overlayMan = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
@@ -21,17 +21,17 @@ public sealed partial class ShadowkinSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<ShadowkinComponent, ComponentInit>(OnInit);
-        SubscribeLocalEvent<ShadowkinComponent, ComponentShutdown>(Onhutdown);
-        SubscribeLocalEvent<ShadowkinComponent, LocalPlayerAttachedEvent>(OnPlayerAttached);
-        SubscribeLocalEvent<ShadowkinComponent, LocalPlayerDetachedEvent>(OnPlayerDetached);
+        SubscribeLocalEvent<VoidbornComponent, ComponentInit>(OnInit);
+        SubscribeLocalEvent<VoidbornComponent, ComponentShutdown>(Onhutdown);
+        SubscribeLocalEvent<VoidbornComponent, LocalPlayerAttachedEvent>(OnPlayerAttached);
+        SubscribeLocalEvent<VoidbornComponent, LocalPlayerDetachedEvent>(OnPlayerDetached);
 
         Subs.CVar(_cfg, CCVars.NoVisionFilters, OnNoVisionFiltersChanged);
 
         _overlay = new();
     }
 
-    private void OnInit(EntityUid uid, ShadowkinComponent component, ComponentInit args)
+    private void OnInit(EntityUid uid, VoidbornComponent component, ComponentInit args)
     {
         if (uid != _playerMan.LocalEntity
             || _cfg.GetCVar(CCVars.NoVisionFilters))
@@ -40,7 +40,7 @@ public sealed partial class ShadowkinSystem : EntitySystem
         _overlayMan.AddOverlay(_overlay);
     }
 
-    private void Onhutdown(EntityUid uid, ShadowkinComponent component, ComponentShutdown args)
+    private void Onhutdown(EntityUid uid, VoidbornComponent component, ComponentShutdown args)
     {
         if (uid != _playerMan.LocalEntity)
             return;
@@ -48,15 +48,15 @@ public sealed partial class ShadowkinSystem : EntitySystem
         _overlayMan.RemoveOverlay(_overlay);
     }
 
-    private void OnPlayerAttached(EntityUid uid, ShadowkinComponent component, LocalPlayerAttachedEvent args)
+    private void OnPlayerAttached(EntityUid uid, VoidbornComponent component, LocalPlayerAttachedEvent args)
     {
         if (_cfg.GetCVar(CCVars.NoVisionFilters))
             return;
-            
+
         _overlayMan.AddOverlay(_overlay);
     }
 
-    private void OnPlayerDetached(EntityUid uid, ShadowkinComponent component, LocalPlayerDetachedEvent args)
+    private void OnPlayerDetached(EntityUid uid, VoidbornComponent component, LocalPlayerDetachedEvent args)
     {
         _overlayMan.RemoveOverlay(_overlay);
     }
@@ -78,7 +78,7 @@ public sealed partial class ShadowkinSystem : EntitySystem
 
         var uid = _playerMan.LocalEntity;
         if (uid == null
-            || !TryComp<ShadowkinComponent>(uid, out var comp)
+            || !TryComp<VoidbornComponent>(uid, out var comp)
             || !TryComp<HumanoidAppearanceComponent>(uid, out var humanoid))
             return;
 

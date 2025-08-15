@@ -2,10 +2,10 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Content.Shared.Alert;
 
-namespace Content.Shared.Shadowkin;
+namespace Content.Shared.Voidborn;
 
 [RegisterComponent, NetworkedComponent]
-public sealed partial class ShadowkinComponent : Component
+public sealed partial class VoidbornComponent : Component
 {
     /// <summary>
     ///     Apply the SleepManaRegenMultiplier on SleepComponent if true.
@@ -28,5 +28,5 @@ public sealed partial class ShadowkinComponent : Component
     public Color OldEyeColor = Color.LimeGreen;
 
     [DataField]
-    public EntityUid? ShadowkinSleepAction;
+    public EntityUid? VoidbornSleepAction;
 }

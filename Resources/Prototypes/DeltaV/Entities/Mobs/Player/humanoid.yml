@@ -11,7 +11,7 @@
 - type: randomHumanoidSettings
   id: SyndicateListener
   speciesBlacklist:
-    - Shadowkin
+    - Voidborn
     - Monkey # Shitmed Change
     - Kobold # Shitmed Change
   components:
@@ -39,7 +39,7 @@
   id: Mobster
   randomizeName: false
   speciesBlacklist:
-    - Shadowkin
+    - Voidborn
     - Monkey # Shitmed Change
     - Kobold # Shitmed Change
   components:
@@ -74,7 +74,7 @@
   id: MobsterAlt
   randomizeName: false
   speciesBlacklist:
-    - Shadowkin
+    - Voidborn
     - Monkey # Shitmed Change
     - Kobold # Shitmed Change
   components:

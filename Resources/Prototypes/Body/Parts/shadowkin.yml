@@ -1,14 +1,14 @@
 - type: entity
-  id: PartShadowkin
+  id: PartVoidborn
   parent: BaseItem
-  name: "Shadowkin body part"
+  name: "Voidborn body part"
   abstract: true
   components:
     - type: Sprite
       netsync: false
-      sprite: Mobs/Species/Shadowkin/parts.rsi
+      sprite: Mobs/Species/Voidborn/parts.rsi
     - type: Icon
-      sprite: Mobs/Species/Shadowkin/parts.rsi
+      sprite: Mobs/Species/Voidborn/parts.rsi
     - type: Damageable
       damageContainer: OrganicPart # Shitmed
     - type: BodyPart
@@ -18,9 +18,9 @@
           ents: []
 
 - type: entity
-  id: TorsoShadowkin
-  name: "Shadowkin torso"
-  parent: PartShadowkin
+  id: TorsoVoidborn
+  name: "Voidborn torso"
+  parent: PartVoidborn
   components:
     - type: Sprite
       state: "torso_m"
@@ -30,9 +30,9 @@
       partType: Torso
 
 - type: entity
-  id: HeadShadowkin
-  name: "Shadowkin head"
-  parent: PartShadowkin
+  id: HeadVoidborn
+  name: "Voidborn head"
+  parent: PartVoidborn
   components:
     - type: Sprite
       state: "head_m"
@@ -49,9 +49,9 @@
     - type: GhostOnMove
 
 - type: entity
-  id: LeftArmShadowkin
-  name: "left Shadowkin arm"
-  parent: PartShadowkin
+  id: LeftArmVoidborn
+  name: "left Voidborn arm"
+  parent: PartVoidborn
   components:
     - type: Sprite
       state: "l_arm"
@@ -62,9 +62,9 @@
       symmetry: Left
 
 - type: entity
-  id: RightArmShadowkin
-  name: "right Shadowkin arm"
-  parent: PartShadowkin
+  id: RightArmVoidborn
+  name: "right Voidborn arm"
+  parent: PartVoidborn
   components:
     - type: Sprite
       state: "r_arm"
@@ -75,9 +75,9 @@
       symmetry: Right
 
 - type: entity
-  id: LeftHandShadowkin
-  name: "left Shadowkin hand"
-  parent: PartShadowkin
+  id: LeftHandVoidborn
+  name: "left Voidborn hand"
+  parent: PartVoidborn
   components:
     - type: Sprite
       state: "l_hand"
@@ -88,9 +88,9 @@
       symmetry: Left
 
 - type: entity
-  id: RightHandShadowkin
-  name: "right Shadowkin hand"
-  parent: PartShadowkin
+  id: RightHandVoidborn
+  name: "right Voidborn hand"
+  parent: PartVoidborn
   components:
     - type: Sprite
       state: "r_hand"
@@ -101,9 +101,9 @@
       symmetry: Right
 
 - type: entity
-  id: LeftLegShadowkin
-  name: "left Shadowkin leg"
-  parent: PartShadowkin
+  id: LeftLegVoidborn
+  name: "left Voidborn leg"
+  parent: PartVoidborn
   components:
     - type: Sprite
       state: "l_leg"
@@ -115,9 +115,9 @@
     - type: MovementBodyPart
 
 - type: entity
-  id: RightLegShadowkin
-  name: "right Shadowkin leg"
-  parent: PartShadowkin
+  id: RightLegVoidborn
+  name: "right Voidborn leg"
+  parent: PartVoidborn
   components:
     - type: Sprite
       state: "r_leg"
@@ -129,9 +129,9 @@
     - type: MovementBodyPart
 
 - type: entity
-  id: LeftFootShadowkin
-  name: "left Shadowkin foot"
-  parent: PartShadowkin
+  id: LeftFootVoidborn
+  name: "left Voidborn foot"
+  parent: PartVoidborn
   components:
     - type: Sprite
       state: "l_foot"
@@ -142,9 +142,9 @@
       symmetry: Left
 
 - type: entity
-  id: RightFootShadowkin
-  name: "right Shadowkin foot"
-  parent: PartShadowkin
+  id: RightFootVoidborn
+  name: "right Voidborn foot"
+  parent: PartVoidborn
   components:
     - type: Sprite
       state: "r_foot"

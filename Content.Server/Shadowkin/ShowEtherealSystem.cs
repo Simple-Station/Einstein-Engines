@@ -1,4 +1,4 @@
-using Content.Shared.Shadowkin;
+using Content.Shared.Voidborn;
 using Content.Shared.Eye;
 using Robust.Server.GameObjects;
 using Content.Shared.Inventory.Events;
@@ -7,7 +7,7 @@ using Robust.Shared.Timing;
 using Content.Shared.Popups;
 using Content.Shared.Clothing.Components;
 
-namespace Content.Server.Shadowkin;
+namespace Content.Server.Voidborn;
 public sealed class ShowEtherealSystem : EntitySystem
 {
     [Dependency] private readonly EyeSystem _eye = default!;

@@ -3,7 +3,7 @@ using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
-using Content.Shared.Shadowkin;
+using Content.Shared.Voidborn;
 
 namespace Content.Client.Overlays;
 
@@ -38,7 +38,7 @@ public sealed class ColorTintOverlay : Overlay
     protected override bool BeforeDraw(in OverlayDrawArgs args)
     {
         if (_player.LocalEntity is not { Valid: true } player
-            || !_entityManager.HasComponent<ShadowkinComponent>(player))
+            || !_entityManager.HasComponent<VoidbornComponent>(player))
             return false;
 
         return base.BeforeDraw(in args);

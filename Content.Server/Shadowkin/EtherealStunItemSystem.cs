@@ -1,11 +1,11 @@
 using Content.Shared.Interaction.Events;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
-using Content.Shared.Shadowkin;
+using Content.Shared.Voidborn;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Stacks;
 
-namespace Content.Server.Shadowkin;
+namespace Content.Server.Voidborn;
 
 public sealed class EtherealStunItemSystem : EntitySystem
 {

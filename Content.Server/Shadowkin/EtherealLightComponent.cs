@@ -1,4 +1,4 @@
-namespace Content.Server.Shadowkin;
+namespace Content.Server.Voidborn;
 
 [RegisterComponent]
 public sealed partial class EtherealLightComponent : Component

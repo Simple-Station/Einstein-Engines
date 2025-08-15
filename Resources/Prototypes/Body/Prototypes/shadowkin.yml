@@ -1,17 +1,17 @@
 - type: body
-  id: Shadowkin
-  name: "Shadowkin"
+  id: Voidborn
+  name: "Voidborn"
   root: torso
   slots:
     head:
-      part: HeadShadowkin
+      part: HeadVoidborn
       connections:
       - torso
       organs:
-        brain: OrganShadowkinBrain
-        eyes: OrganShadowkinEyes
+        brain: OrganVoidbornBrain
+        eyes: OrganVoidbornEyes
     torso:
-      part: TorsoShadowkin
+      part: TorsoVoidborn
       connections:
       - right arm
       - left arm
@@ -19,32 +19,32 @@
       - left leg
       - head # Shitmed
       organs:
-        heart: OrganShadowkinHeart
-        stomach: OrganShadowkinStomach
-        liver:  OrganShadowkinLiver
-        kidneys: OrganShadowkinKidneys
-        lungs: OrganShadowkinCore
+        heart: OrganVoidbornHeart
+        stomach: OrganVoidbornStomach
+        liver:  OrganVoidbornLiver
+        kidneys: OrganVoidbornKidneys
+        lungs: OrganVoidbornCore
     right arm:
-      part: RightArmShadowkin
+      part: RightArmVoidborn
       connections:
       - right hand
     left arm:
-      part: LeftArmShadowkin
+      part: LeftArmVoidborn
       connections:
       - left hand
     right hand:
-      part: RightHandShadowkin
+      part: RightHandVoidborn
     left hand:
-      part: LeftHandShadowkin
+      part: LeftHandVoidborn
     right leg:
-      part: RightLegShadowkin
+      part: RightLegVoidborn
       connections:
       - right foot
     left leg:
-      part: LeftLegShadowkin
+      part: LeftLegVoidborn
       connections:
       - left foot
     right foot:
-      part: RightFootShadowkin
+      part: RightFootVoidborn
     left foot:
-      part: LeftFootShadowkin
+      part: LeftFootVoidborn

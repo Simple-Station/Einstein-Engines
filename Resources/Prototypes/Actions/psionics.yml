@@ -300,7 +300,7 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
-      icon: { sprite: Interface/Actions/shadowkin_icons.rsi, state: darkswap }
+      icon: { sprite: Interface/Actions/voidborn_icons.rsi, state: darkswap }
       useDelay: 10
       checkCanInteract: false
       event: !type:DarkSwapActionEvent

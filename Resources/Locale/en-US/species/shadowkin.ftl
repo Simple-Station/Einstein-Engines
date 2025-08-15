@@ -1,16 +1,16 @@
-shadowkin-power-examined-other = {CAPITALIZE(SUBJECT($target))} seems to be {$powerType}.
-shadowkin-power-examined-self = I have {$power}/{$powerMax} energy, I am {$powerType}.
+voidborn-power-examined-other = {CAPITALIZE(SUBJECT($target))} seems to be {$powerType}.
+voidborn-power-examined-self = I have {$power}/{$powerMax} energy, I am {$powerType}.
 
-shadowkin-power-5 = energetic
-shadowkin-power-4 = great
-shadowkin-power-3 = good
-shadowkin-power-2 = okay
-shadowkin-power-1 = exhausted
-shadowkin-power-0 = drained
+voidborn-power-5 = energetic
+voidborn-power-4 = great
+voidborn-power-3 = good
+voidborn-power-2 = okay
+voidborn-power-1 = exhausted
+voidborn-power-0 = drained
 
-examine-mindbroken-shadowkin-message = {CAPITALIZE($entity)} seems to be a blackeye.
+examine-mindbroken-voidborn-message = {CAPITALIZE($entity)} seems to be a blackeye.
 
-identity-eye-shadowkin = {$color}-eye
+identity-eye-voidborn = {$color}-eye
 
-shadowkin-blackeye = I feel my power draining away...
-shadowkin-tired = I don't have the energy for that.
+voidborn-blackeye = I feel my power draining away...
+voidborn-tired = I don't have the energy for that.

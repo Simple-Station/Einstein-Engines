@@ -74,7 +74,7 @@ language-Sign-name = Tau-Ceti Basic Sign Language
 language-Sign-description = TCB-SL for short, this sign language is prevalent among mute and deaf people.
 
 language-Marish-name = Marish
-language-Marish-description =  A language spoken only by Shadowkin, one that is unable to be replicated by normal tongues.
+language-Marish-description =  A language spoken only by Voidborn, one that is unable to be replicated by normal tongues.
 
 language-ValyrianStandard-name = Valyrian Standard
 language-ValyrianStandard-description =

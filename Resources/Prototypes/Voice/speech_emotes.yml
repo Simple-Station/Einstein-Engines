@@ -340,7 +340,7 @@
   category: Vocal
   whitelist:
     tags:
-    - ShadowkinEmotes
+    - VoidbornEmotes
     - HarpyEmotes
   blacklist:
     components:
@@ -355,7 +355,7 @@
   category: Vocal
   whitelist:
     tags:
-    - ShadowkinEmotes
+    - VoidbornEmotes
     - HarpyEmotes
   blacklist:
     components:

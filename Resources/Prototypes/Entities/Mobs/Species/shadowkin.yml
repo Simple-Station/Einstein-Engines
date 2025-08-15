@@ -2,7 +2,7 @@
   save: false
   parent:
     - BaseMobSpeciesOrganic
-  id: MobShadowkinBase
+  id: MobVoidbornBase
   name: Urist McShadow
   abstract: true
   components:
@@ -16,10 +16,10 @@
             - !type:GibBehavior {}
             - !type:SpawnEntitiesBehavior
               spawn:
-                ShadowkinShadow:
+                VoidbornShadow:
                   min: 1
                   max: 1
-                EffectFlashShadowkinShadeskip:
+                EffectFlashVoidbornShadeskip:
                   min: 1
                   max: 1
         - trigger:
@@ -83,12 +83,12 @@
     - type: Thirst
     - type: Carriable
     - type: HumanoidAppearance
-      species: Shadowkin
+      species: Voidborn
     - type: Icon
-      sprite: Mobs/Species/Shadowkin/parts.rsi
+      sprite: Mobs/Species/Voidborn/parts.rsi
       state: full
     - type: Body
-      prototype: Shadowkin
+      prototype: Voidborn
     - type: Flammable
       damage:
         types:
@@ -103,8 +103,8 @@
         48: 0.85
         64: 0.65
     - type: Damageable
-      damageContainer: Biological # Shadowkin
-      damageModifierSet: Shadowkin
+      damageContainer: Biological # Voidborn
+      damageModifierSet: Voidborn
     - type: DamageVisuals
       damageOverlayGroups:
         Brute:
@@ -211,9 +211,9 @@
           Slash: 5
     - type: Vocal
       sounds:
-        Male: MaleShadowkin
-        Female: FemaleShadowkin
-        Unsexed: MaleShadowkin
+        Male: MaleVoidborn
+        Female: FemaleVoidborn
+        Unsexed: MaleVoidborn
     - type: TypingIndicator
       proto: alien
     - type: MovementSpeedModifier
@@ -225,9 +225,9 @@
       durationMultiplier: 1.5
     - type: Speech
       allowedEmotes: ['Mars', 'Wurble']
-    - type: Shadowkin
+    - type: Voidborn
     - type: Psionic
-      mindbreakingFeedback: shadowkin-blackeye
+      mindbreakingFeedback: voidborn-blackeye
     - type: InnatePsionicPowers
       powersToAdd:
         - TelepathyPower
@@ -245,17 +245,17 @@
       - CanPilot
       - FootstepSound
       - DoorBumpOpener
-      - ShadowkinEmotes
+      - VoidbornEmotes
 
 - type: entity
   save: false
   parent: MobHumanDummy
-  id: MobShadowkinDummy
+  id: MobVoidbornDummy
   categories: [ HideSpawnMenu ]
-  description: A dummy shadowkin meant to be used in character setup.
+  description: A dummy voidborn meant to be used in character setup.
   components:
     - type: HumanoidAppearance
-      species: Shadowkin
+      species: Voidborn
     - type: Sprite
       netsync: false
       noRot: true

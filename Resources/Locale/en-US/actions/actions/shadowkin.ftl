@@ -1,2 +1,2 @@
-action-name-shadowkin-rest = Rest
-action-description-shadowkin-rest = Rama
+action-name-voidborn-rest = Rest
+action-description-voidborn-rest = Rama

@@ -1,5 +1,5 @@
 using Content.Shared.Eye;
-using Content.Shared.Shadowkin;
+using Content.Shared.Voidborn;
 using Robust.Server.GameObjects;
 using Content.Shared.Stealth;
 using Content.Shared.Stealth.Components;
@@ -14,7 +14,7 @@ using Content.Server.Flash;
 using Content.Shared.Stunnable;
 
 
-namespace Content.Server.Shadowkin;
+namespace Content.Server.Voidborn;
 
 public sealed class EtherealSystem : SharedEtherealSystem
 {

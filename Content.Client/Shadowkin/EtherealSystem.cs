@@ -1,9 +1,9 @@
-using Content.Shared.Shadowkin;
+using Content.Shared.Voidborn;
 using Robust.Client.Graphics;
 using Robust.Shared.Player;
 using Content.Client.Overlays;
 
-namespace Content.Client.Shadowkin;
+namespace Content.Client.Voidborn;
 
 public sealed partial class EtherealSystem : EntitySystem
 {
