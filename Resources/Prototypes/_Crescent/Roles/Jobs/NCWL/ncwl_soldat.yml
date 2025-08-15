@@ -31,6 +31,12 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-home-soldat
+      - type: LanguageKnowledge
+        speaks:
+        - Dockta
+        understands:
+          - Dockta
+          - Tradeband
   access:
   - Command
   - Maintenance

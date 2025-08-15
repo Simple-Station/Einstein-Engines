@@ -29,6 +29,13 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-logi-worker
+      - type: LanguageKnowledge
+        speaks:
+          - Dockta
+          - Tradeband
+        understands:
+          - Dockta
+          - Tradeband
   access:
   - Command
   - Maintenance

@@ -34,6 +34,13 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-faction-leader
+      - type: LanguageKnowledge
+        speaks:
+          - Dockta
+          - Tradeband
+        understands:
+          - Dockta
+          - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain

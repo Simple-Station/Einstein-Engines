@@ -33,6 +33,13 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-home-squad-lead
+      - type: LanguageKnowledge
+        speaks:
+          - Dockta
+          - Tradeband
+        understands:
+          - Dockta
+          - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain
