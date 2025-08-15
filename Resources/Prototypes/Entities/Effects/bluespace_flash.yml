@@ -87,7 +87,7 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
-      sprite: Interface/Actions/psionics.rsi
+      sprite: /Textures/Interface/Actions/psionics.rsi
       visible: false
       state: pyrokinetic_flare
     - type: TriggerOnSpawn
@@ -103,4 +103,4 @@
       range: 7
     - type: EmitSoundOnSpawn
       sound:
-        path: /Audio/Effects/flash_bang.ogg
+        path: "/Audio/Effects/flash_bang.ogg"
