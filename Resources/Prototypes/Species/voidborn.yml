@@ -23,6 +23,8 @@
   minWidth: 1
   defaultWidth: 1
   maxWidth: 1
+  requirements:
+  - !type:CharacterWhitelistRequirement
 
 - type: speciesBaseSprites
   id: MobVoidbornSprites
