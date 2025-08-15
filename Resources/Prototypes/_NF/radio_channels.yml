@@ -4,6 +4,8 @@
   keycode: 'd'
   frequency: 1022
   color: "#CC6633"
+  # long range so it functions without a telecom server
+  longRange: true
   localizedRange: 500.0
 
 - type: radioChannel

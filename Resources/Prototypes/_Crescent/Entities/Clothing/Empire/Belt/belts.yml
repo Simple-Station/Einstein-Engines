@@ -35,7 +35,7 @@
 
 - type: entity
   parent: [ClothingBeltBase, ClothingSlotBase]
-  id: ClothingBeltSheathRapier
+  id: ClothingBeltSheathDSMRapier
   name: rapier scabbard
   description: A scabbard meant to hold a noble's rapier.
   components:

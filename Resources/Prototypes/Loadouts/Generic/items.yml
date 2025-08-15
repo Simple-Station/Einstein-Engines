@@ -1,15 +1,5 @@
 #Smokes
 - type: loadout
-  id: LoadoutItemCig
-  category: Items
-  cost: 0
-  items:
-    - Cigarette
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSmokes
-
-- type: loadout
   id: LoadoutItemCigsGreen
   category: Items
   cost: 0
@@ -52,7 +42,7 @@
 - type: loadout
   id: LoadoutItemCigsMixed
   category: Items
-  cost: 1
+  cost: 0
   items:
     - CigPackMixed
   requirements:
@@ -62,7 +52,7 @@
 - type: loadout
   id: LoadoutItemLighter
   category: Items
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - Lighter
@@ -84,7 +74,7 @@
 - type: loadout
   id: LoadoutItemLighterFlippo
   category: Items
-  cost: 2
+  cost: 0
   customColorTint: true
   items:
     - FlippoLighter
@@ -106,7 +96,7 @@
 - type: loadout
   id: LoadoutItemMicrophoneInstrument
   category: Items
-  cost: 2
+  cost: 0
   items:
     - MicrophoneInstrument
   requirements:
@@ -120,7 +110,7 @@
 - type: loadout
   id: LoadoutItemKalimbaInstrument
   category: Items
-  cost: 2
+  cost: 0
   items:
     - KalimbaInstrument
   requirements:
@@ -134,7 +124,7 @@
 - type: loadout
   id: LoadoutItemTrumpetInstrument
   category: Items
-  cost: 4
+  cost: 0
   items:
     - TrumpetInstrument
   requirements:
@@ -148,7 +138,7 @@
 - type: loadout
   id: LoadoutItemElectricGuitar
   category: Items
-  cost: 5
+  cost: 0
   items:
     - ElectricGuitarInstrument
   requirements:
@@ -162,7 +152,7 @@
 - type: loadout
   id: LoadoutItemBassGuitar
   category: Items
-  cost: 5
+  cost: 0
   items:
     - BassGuitarInstrument
   requirements:
@@ -176,7 +166,7 @@
 - type: loadout
   id: LoadoutItemRockGuitar
   category: Items
-  cost: 5
+  cost: 0
   items:
     - RockGuitarInstrument
   requirements:
@@ -190,7 +180,7 @@
 - type: loadout
   id: LoadoutItemAcousticGuitar
   category: Items
-  cost: 5
+  cost: 0
   items:
     - AcousticGuitarInstrument
   requirements:
@@ -204,7 +194,7 @@
 - type: loadout
   id: LoadoutItemViolin
   category: Items
-  cost: 4
+  cost: 0
   items:
     - ViolinInstrument
   requirements:
@@ -218,7 +208,7 @@
 - type: loadout
   id: LoadoutItemHarmonica
   category: Items
-  cost: 1
+  cost: 0
   items:
     - HarmonicaInstrument
   requirements:
@@ -232,7 +222,7 @@
 - type: loadout
   id: LoadoutItemAccordion
   category: Items
-  cost: 4
+  cost: 0
   items:
     - AccordionInstrument
   requirements:
@@ -246,7 +236,7 @@
 - type: loadout
   id: LoadoutItemFlute
   category: Items
-  cost: 2
+  cost: 0
   items:
     - FluteInstrument
   requirements:
@@ -260,7 +250,7 @@
 - type: loadout
   id: LoadoutItemOcarina
   category: Items
-  cost: 1
+  cost: 0
   items:
     - OcarinaInstrument
   requirements:
@@ -272,38 +262,11 @@
         - Musician
 
 # Survival Kit
-- type: loadout
-  id: LoadoutItemsEmergencyOxygenTank
-  category: Items
-  cost: 0
-  items:
-    - EmergencyOxygenTankFilled
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutAirTank
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Plasmaman
-
-- type: loadout
-  id: LoadoutItemsExtendedEmergencyOxygenTank
-  category: Items
-  cost: 1
-  items:
-    - ExtendedEmergencyOxygenTankFilled
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutAirTank
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Plasmaman
-
+#removed regular O2 tank
 - type: loadout
   id: LoadoutItemsDoubleEmergencyOxygenTank
   category: Items
-  cost: 2
+  cost: 1
   items:
     - DoubleEmergencyOxygenTankFilled
   requirements:
@@ -315,16 +278,9 @@
         - Plasmaman
 
 - type: loadout
-  id: LoadoutItemClothingMaskBreath
-  category: Items
-  cost: 0
-  items:
-    - ClothingMaskBreath
-
-- type: loadout
   id: LoadoutItemsEmergencyCrowbar
   category: Items
-  cost: 3
+  cost: 0
   canBeHeirloom: true
   items:
     - CrowbarRed
@@ -332,35 +288,35 @@
 - type: loadout
   id: LoadoutItemFireExtinguisher
   category: Items
-  cost: 3
+  cost: 0
   items:
     - FireExtinguisher
 
 - type: loadout
   id: LoadoutItemFlashlightLantern
   category: Items
-  cost: 2
+  cost: 0
   items:
     - FlashlightLantern
 
 - type: loadout
   id: LoadoutItemFlare
   category: Items
-  cost: 1
+  cost: 0
   items:
     - Flare
 
 - type: loadout
   id: LoadoutEmergencyMedipen
   category: Items
-  cost: 1
+  cost: 0
   items:
     - EmergencyMedipen
 
 - type: loadout
   id: LoadoutSpaceMedipen
   category: Items
-  cost: 1
+  cost: 0
   items:
     - SpaceMedipen
 
@@ -389,16 +345,6 @@
       group: LoadoutWritables
 
 - type: loadout
-  id: LoadoutBookRandom
-  category: Items
-  cost: 1
-  items:
-    - BookRandom
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutWritables
-
-- type: loadout
   id: LoadoutPen
   category: Items
   cost: 0
@@ -409,36 +355,13 @@
       group: LoadoutWritables
 
 # Food and drink
-- type: loadout
-  id: LoadoutDrinkWaterBottleFull
-  category: Items
-  cost: 1
-  items:
-    - DrinkWaterBottleFull
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Plasmaman
 
 - type: loadout
   id: LoadoutItemLunchboxGenericFilledRandom
   category: Items
-  cost: 3
+  cost: 0
   items:
     - LunchboxGenericFilledRandom
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Plasmaman
-
-- type: loadout
-  id: LoadoutItemDrinkMREFlask
-  category: Items
-  cost: 2
-  items:
-    - DrinkMREFlask
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
@@ -470,7 +393,7 @@
 - type: loadout
   id: LoadoutMedkitFilled
   category: Items
-  cost: 2
+  cost: 1
   items:
     - MedkitFilled
   requirements:
@@ -480,7 +403,7 @@
 - type: loadout
   id: LoadoutMedkitBruteFilled
   category: Items
-  cost: 2
+  cost: 1
   items:
     - MedkitBruteFilled
   requirements:
@@ -490,7 +413,7 @@
 - type: loadout
   id: LoadoutMedkitBurnFilled
   category: Items
-  cost: 2
+  cost: 1
   items:
     - MedkitBurnFilled
   requirements:
@@ -500,7 +423,7 @@
 - type: loadout
   id: LoadoutMedkitToxinFilled
   category: Items
-  cost: 2
+  cost: 1
   items:
     - MedkitToxinFilled
   requirements:
@@ -510,7 +433,7 @@
 - type: loadout
   id: LoadoutMedkitOxygenFilled
   category: Items
-  cost: 2
+  cost: 1
   items:
     - MedkitOxygenFilled
   requirements:
@@ -520,7 +443,7 @@
 - type: loadout
   id: LoadoutMedkitRadiationFilled
   category: Items
-  cost: 2
+  cost: 1
   items:
     - MedkitRadiationFilled
   requirements:
@@ -530,7 +453,7 @@
 - type: loadout
   id: LoadoutMedkitAdvancedFilled
   category: Items
-  cost: 3
+  cost: 2
   items:
     - MedkitAdvancedFilled
   requirements:
@@ -540,7 +463,7 @@
 - type: loadout
   id: LoadoutMedkitCombatFilled
   category: Items
-  cost: 3
+  cost: 2
   items:
     - MedkitCombatFilled
   requirements:
@@ -551,7 +474,7 @@
 - type: loadout
   id: LoadoutItemPAI
   category: Items
-  cost: 3
+  cost: 1
   canBeHeirloom: true
   items:
     - PersonalAI
@@ -559,42 +482,42 @@
 - type: loadout
   id: LoadoutItemCrayonBox
   category: Items
-  cost: 4
+  cost: 0
   items:
     - CrayonBox
 
 - type: loadout
   id: LoadoutItemBarberScissors
   category: Items
-  cost: 4
+  cost: 0
   items:
     - BarberScissors
 
 - type: loadout
   id: LoadoutHandLabeler
   category: Items
-  cost: 3
+  cost: 0
   items:
     - HandLabeler
 
 - type: loadout
   id: LoadoutItemHandheldStationMap
   category: Items
-  cost: 2
+  cost: 0
   items:
     - HandheldStationMap
 
 - type: loadout
   id: LoadoutItemLantern
   category: Items
-  cost: 2
+  cost: 0
   items:
     - Lantern
 
 - type: loadout
   id: LoadoutItemDrinkShinyFlask
   category: Items
-  cost: 1
+  cost: 0
   customColorTint: true
   canBeHeirloom: true
   items:
@@ -603,7 +526,7 @@
 - type: loadout
   id: LoadoutItemDrinkLithiumFlask
   category: Items
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - DrinkLithiumFlask
@@ -611,7 +534,7 @@
 - type: loadout
   id: LoadoutItemDrinkVacuumFlask
   category: Items
-  cost: 1
+  cost: 0
   customColorTint: true
   items:
     - DrinkVacuumFlask
@@ -619,7 +542,7 @@
 - type: loadout
   id: LoadoutItemAACTablet
   category: Items
-  cost: 2
+  cost: 0
   items:
     - AACTablet
 
@@ -633,7 +556,7 @@
 - type: loadout
   id: LoadoutItemBlackDeck
   category: Items
-  cost: 3
+  cost: 0
   canBeHeirloom: false
   items:
     - CardBoxBlack
@@ -644,7 +567,7 @@
 - type: loadout
   id: LoadoutItemNTDeck
   category: Items
-  cost: 3
+  cost: 0
   canBeHeirloom: false
   items:
     - CardBoxNanotrasen
@@ -658,10 +581,18 @@
 - type: loadout
   id: LuxuryPen
   category: Items
-  cost: 2
+  cost: 0
   canBeHeirloom: true
   items:
     - LuxuryPen
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutWritables
+
+- type: loadout
+  id: HandheldCrewMonitor
+  category: Items
+  cost: 3
+  canBeHeirloom: false
+  items:
+    - HandheldCrewMonitor

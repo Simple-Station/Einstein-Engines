@@ -73,7 +73,7 @@
     - id: CigarGold
       amount: 8
 
-- type: entity 
+- type: entity
   id: CigarRobustCase
   parent: CigarCase
   name: Cohiba Robusto cigar case
@@ -102,7 +102,7 @@
       visible: false
   - type: Storage
     grid:
-    - 0,1,4,1
+    - 0,0,3,1
   - type: Item
     sprite: Objects/Consumable/Smokeables/Cigars/case_robust.rsi
     size: Normal
