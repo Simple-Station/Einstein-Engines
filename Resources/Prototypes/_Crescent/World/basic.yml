@@ -131,8 +131,8 @@
 - type: spaceBiome
   id: AsteroidsStandardTaypanOne
   priority: 1123
-  minX: 2 # -3
-  maxX: 8 # +3
+  minX: -8 # -3
+  maxX: -2 # +3
   minY: -34 # -3
   maxY: -28 # +3
   noiseRanges: {}
