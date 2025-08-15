@@ -129,6 +129,48 @@
     noiseChannel: Carver
 
 - type: spaceBiome
+  id: AsteroidsStandardTaypanOne
+  priority: 1123
+  minX: 2 # -3
+  maxX: 8 # +3
+  minY: -34 # -3
+  maxY: -28 # +3
+  noiseRanges: {}
+  chunkComponents:
+  - type: DebrisFeaturePlacerController
+    densityNoiseChannel: Density
+  - type: SimpleDebrisSelector
+    debrisTable:
+    - id: AsteroidDebrisNFMedium
+    - id: AsteroidDebrisNFIceMedium
+    - id: AsteroidDebrisNFLarge
+      prob: 0.6
+    - id: AsteroidDebrisNFIceLarge
+      prob: 0.6
+    - id: AsteroidDebrisNFLarger
+      prob: 0.3
+    - id: AsteroidDebrisNFIceLarger
+      prob: 0.3
+    - id: AsteroidDebrisNFHuge
+      prob: 0.15
+    - id: AsteroidDebrisNFIceHuge
+      prob: 0.15
+    - id: AsteroidSalvageNFSmall
+      prob: 0.1
+    - id: AsteroidSalvageNFIceSmall
+      prob: 0.1
+    - id: AsteroidSalvageNFMedium
+      prob: 0.08
+    - id: AsteroidSalvageNFIceMedium
+      prob: 0.08
+    - id: AsteroidSalvageNFLarge
+      prob: 0.05
+    - id: AsteroidSalvageNFIceLarge
+      prob: 0.05
+    - id: AsteroidSalvageNFHuge
+      prob: 0.03
+
+- type: spaceBiome
   id: AsteroidsStandardTaypanTwo
   priority: 1005
   minX: 18 # -3
@@ -174,48 +216,6 @@
     - id: AsteroidSalvageNFHuge
       prob: 0.03
     - id: AsteroidSalvageNFIceHuge
-      prob: 0.03
-
-- type: spaceBiome
-  id: AsteroidsStandardTaypanOne
-  priority: 1123
-  minX: 18 # -3
-  maxX: 28 # +3
-  minY: -17 # -3
-  maxY: -11 # +3
-  noiseRanges: {}
-  chunkComponents:
-  - type: DebrisFeaturePlacerController
-    densityNoiseChannel: Density
-  - type: SimpleDebrisSelector
-    debrisTable:
-    - id: AsteroidDebrisNFMedium
-    - id: AsteroidDebrisNFIceMedium
-    - id: AsteroidDebrisNFLarge
-      prob: 0.6
-    - id: AsteroidDebrisNFIceLarge
-      prob: 0.6
-    - id: AsteroidDebrisNFLarger
-      prob: 0.3
-    - id: AsteroidDebrisNFIceLarger
-      prob: 0.3
-    - id: AsteroidDebrisNFHuge
-      prob: 0.15
-    - id: AsteroidDebrisNFIceHuge
-      prob: 0.15
-    - id: AsteroidSalvageNFSmall
-      prob: 0.1
-    - id: AsteroidSalvageNFIceSmall
-      prob: 0.1
-    - id: AsteroidSalvageNFMedium
-      prob: 0.08
-    - id: AsteroidSalvageNFIceMedium
-      prob: 0.08
-    - id: AsteroidSalvageNFLarge
-      prob: 0.05
-    - id: AsteroidSalvageNFIceLarge
-      prob: 0.05
-    - id: AsteroidSalvageNFHuge
       prob: 0.03
 
 - type: spaceBiome
