@@ -5,13 +5,13 @@
 - type: gamePreset
   id: Adventure #FREEPLAY, DO NOT REMOVE
   alias:
-    - adventure
-    - hullrot
+  - adventure
+  - hullrot
   name: Freeplay
   showInVote: true
   description: The last days of Taypan. Lasts 2-4 hours.
   rules:
-    - Adventure
+  - Adventure
 
 
 # GAMERULES ARE WAHT DECIDES WHAT SPAWNS IN, BY EVERYTHING IN THE ADVENTURERULE COMPONENT
@@ -36,85 +36,95 @@
     gameMapsByID:
       PortBalreska:
         gameMapID: PortBalreska
-        posX: 0
-        posY: 9000
+        posX: 1000
+        posY: -6000
         IFFColor: Orange
         IFFFaction: NCWL
-      Freeport:
-        gameMapID: Freeport
-        posX: 7794
-        posY: 4500
+      Dochenskaya:
+        gameMapID: Dochenskaya
+        posX: 3500
+        posY: 4400
         IFFColor: IndianRed
         IFFFaction: TFSC
       GliessSanto:
         gameMapID: GliessSanto
-        posX: 4200
-        posY: -4500
+        posX: 0
+        posY: 0
         IFFColor: White
       Tatsumoto:
         gameMapID: Tatsumoto
-        posX: 6000
-        posY: 1000
+        posX: 4000
+        posY: 0
         IFFColor: White
         IFFFaction: SHI
       Countsman:
         gameMapID: Countsman
-        posX: 0
-        posY: 0
-        IFFColor: White
+        posX: -3200
+        posY: 6000
+        IFFColor: Purple
         IFFFaction: DSM
-      Taypan1AsteroidBelt:
-        gameMapID: Taypan1AsteroidBelt
+      Aasim:
+        gameMapID: Aasim
         posX: 3000
-        posY: 3500
-      Taypan2AsteroidBelt:
-        gameMapID: Taypan2AsteroidBelt
-        posX: 3000
-        posY: 5400
-      FaintSignal:
-        gameMapID: FaintSignal
-        posX: 0
-        posY: 0
-        randomOffsetX: 12100
-        randomOffsetY: 6000
+        posY: -3000
+      Wisp: #CyberdawnMothership whenever we have the map
+        gameMapID: Wisp #CyberdawnMothership
+        posX: 1000
+        posY: 2400
+      Jackal:
+        gameMapID: Jackal
+        posX: -7000
+        posY: -3000
       Graveyard:
         gameMapID: Graveyard
-        posX: 7200
-        posY: 5500
+        posX: 2800
+        posY: 3800
       StrandedShip:
         gameMapID: StrandedShip
-        posX: 7250
-        posY: 5320
+        posX: 2850
+        posY: 3620
         HideIFF: true
       Fighter1:
         gameMapID: Fighter1
-        posX: 7730
-        posY: 5920
+        posX: 3330
+        posY: 4220
         HideIFF: true
       Fighter2:
         gameMapID: Fighter2
-        posX: 7721
-        posY: 5950
-        HideIFF: true
-      FogwreckedDerelict:
-        gameMapID: FogwreckedDerelict
-        posX: 1730
-        posY: 9920
+        posX: 3321
+        posY: 4350
         HideIFF: true
       SolarSailorDerelict:
         gameMapID: SolarSailorDerelict
-        posX: 7750
-        posY: 5170
+        posX: 3350
+        posY: 3470
         HideIFF: true
       ImperialHaulerWreck:
         gameMapID: ImperialHaulerWreck
-        posX: 7770
-        posY: 5750
+        posX: 3320
+        posY: 4050
         HideIFF: true
-      DerelictWaystation:
-        gameMapID: DerelictWaystation
-        posX: -3000
-        posY: 6500
+      FogwreckedDerelict:
+        gameMapID: FogwreckedDerelict
+        posX: 1200
+        posY: -7000
+        HideIFF: true
+      Craster:
+        gameMapID: Craster
+        posX: -7000
+        posY: 1000
+      Taypan1AsteroidBelt:
+        gameMapID: Taypan1AsteroidBelt
+        posX: -700
+        posY: -4000
+      Taypan2AsteroidBelt:
+        gameMapID: Taypan2AsteroidBelt
+        posX: 2700
+        posY: -1800
+      FaintSignal:
+        gameMapID: FaintSignal
+        posX: 2000
+        posY: 1000
 
 - type: gamePreset
   id: VladzenaJackal
@@ -122,7 +132,7 @@
   showInVote: true
   description: Port Vladzena defends against a surprise attack from the GSC Grinning Jackal.
   rules:
-    - HyperwarNCWLvsGSC
+  - HyperwarNCWLvsGSC
 
 - type: entity
   id: HyperwarNCWLvsGSC
@@ -148,7 +158,7 @@
   showInVote: true
   description: The NCWL Homeguard flees to a new home, after the destruction of Nova Belraska. A DSM punishment regimen intercepts them to regain their honor.
   rules:
-    - Unionfall
+  - Unionfall
 
 - type: entity
   id: Unionfall
