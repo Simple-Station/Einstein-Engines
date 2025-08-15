@@ -17,6 +17,14 @@ public static class SkinColor
     public const float MinFeathersValue = 36f / 100;
     public const float MaxFeathersValue = 55f / 100;
 
+    // Voidborn
+    public const float MinVoidbornHue = 210f / 360;
+    public const float MaxVoidbornHue = 280f / 360;
+    public const float MinVoidbornSaturation = 0f / 100;
+    public const float MaxVoidbornSaturation = 100f / 100;
+    public const float MinVoidbornValue = 15f / 100;
+    public const float MaxVoidbornValue = 35f / 100;
+
     // Einstein Engines - Tajaran
     public const float MinAnimalFurHue = 20f / 360;
     public const float MaxAnimalFurHue = 60f / 360;
@@ -237,7 +245,7 @@ public static class SkinColor
     /// </summary>
     /// <param name="color">Color to convert</param>
     /// <returns>Vox feather coloration</returns>
-    public static Color ProportionalVoidbornHues(Color color)
+    public static Color ProportionalVoidbornHuesColor(Color color)
     {
         var newColor = Color.ToHsv(color);
 
