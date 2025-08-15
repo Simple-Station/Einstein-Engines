@@ -88,8 +88,8 @@
   components:
     - type: Sprite
       sprite: Interface/Actions/psionics.rsi
-      visible: false
       state: pyrokinetic_flare
+      visible: false
     - type: TriggerOnSpawn
     - type: PointLight
       radius: 5
