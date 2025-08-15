@@ -16,8 +16,7 @@
   youngAge: 80
   oldAge: 175
   sexes:
-    - Male
-    - Female
+    - Unsexed
   minHeight: 1
   defaultHeight: 1
   maxHeight: 1
