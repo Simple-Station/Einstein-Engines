@@ -61,23 +61,3 @@
   sprites:
     - sprite: Mobs/Customization/Voidborn/tails64x32.rsi
       state: voidborn_big_fluff
-
-- type: marking
-  id: TailVoidbornShorter
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Voidborn]
-  forcedColoring: true
-  sprites:
-    - sprite: Mobs/Customization/Voidborn/tails32x32.rsi
-      state: voidborn_shorter
-
-- type: marking
-  id: TailVoidbornMedium
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Voidborn]
-  forcedColoring: true
-  sprites:
-    - sprite: Mobs/Customization/Voidborn/tails32x32.rsi
-      state: voidborn_medium
