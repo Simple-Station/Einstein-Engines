@@ -48,7 +48,7 @@
     - id: ScrapDebrisMedium
       prob: 1
     - id: ScrapDebrisLarge
-      prob: 0.5
+      prob: 1
     #- id: ScrapDebrisExtraLarge
     #  prob: 0.3
     #- id: ScrapDebrisExtraLargeScattered
@@ -79,7 +79,7 @@
     - id: ScrapDebrisMedium
       prob: 1
     - id: ScrapDebrisLarge
-      prob: 0.5
+      prob: 1
     #- id: ScrapDebrisExtraLarge
     #  prob: 0.3
     #- id: ScrapDebrisExtraLargeScattered
@@ -110,13 +110,7 @@
     - id: ScrapDebrisMedium
       prob: 1
     - id: ScrapDebrisLarge
-      prob: 0.5
-    #- id: ScrapDebrisExtraLarge
-    #  prob: 0.3
-    #- id: ScrapDebrisExtraLargeScattered
-    #  prob: 0.3
-    #- id: ScrapDebrisHuge
-    #  prob: 0.15
+      prob: 1
     #- id: ScrapDebrisExtraLarge
     #  prob: 0.3
     #- id: ScrapDebrisExtraLargeScattered
@@ -141,12 +135,16 @@
     densityNoiseChannel: Density
   - type: SimpleDebrisSelector
     debrisTable:
-    - id: AsteroidDebrisNFMedium
     - id: AsteroidDebrisNFIceMedium
+      prob: 0.1
     - id: AsteroidDebrisNFLarge
-      prob: 0.6
+      prob: 0.2
     - id: AsteroidDebrisNFIceLarge
-      prob: 0.6
+      prob: 0.1
+    - id: AsteroidRockDebrisNFLarger
+      prob: 0.1
+    - id: AsteroidRockDebrisNFHuge
+      prob: 0.2
     - id: AsteroidDebrisNFLarger
       prob: 0.3
     - id: AsteroidDebrisNFIceLarger
@@ -168,6 +166,8 @@
     - id: AsteroidSalvageNFIceLarge
       prob: 0.05
     - id: AsteroidSalvageNFHuge
+      prob: 0.03
+    - id: AsteroidSalvageNFIceHuge
       prob: 0.03
 
 - type: spaceBiome
@@ -231,7 +231,6 @@
     densityNoiseChannel: Density
   - type: SimpleDebrisSelector
     debrisTable:
-    - id: AsteroidDebrisNFChromiteMedium
     - id: AsteroidDebrisNFChromiteLarge
       prob: 0.6
     - id: AsteroidDebrisNFChromiteLarger
@@ -246,4 +245,3 @@
       prob: 0.05
     - id: AsteroidSalvageNFChromiteHuge
       prob: 0.03
-
