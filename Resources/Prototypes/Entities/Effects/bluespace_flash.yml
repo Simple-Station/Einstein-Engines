@@ -87,7 +87,8 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
-      sprite: Interface/Actions/psionics.rsi
+      sprite:
+        sprite: Interface/Actions/psionics.rsi
       state: pyrokinetic_flare
       visible: false
     - type: TriggerOnSpawn
