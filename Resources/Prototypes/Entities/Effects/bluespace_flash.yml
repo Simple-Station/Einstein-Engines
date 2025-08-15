@@ -103,4 +103,4 @@
       range: 7
     - type: EmitSoundOnSpawn
       sound:
-        path: "/Audio/Effects/flash_bang.ogg"
+        path: /Audio/Effects/flash_bang.ogg
