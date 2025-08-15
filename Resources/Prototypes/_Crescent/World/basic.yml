@@ -1,6 +1,6 @@
 ﻿- type: spaceBiome
   id: GraveyardWrecks
-  priority: 1000
+  priority: 9000
   minX: 19 # -3
   maxX: 25 # +3
   minY: 26 # -3
@@ -13,9 +13,9 @@
     noiseChannel: WreckGraveyard
     debrisTable:
     - id: ScrapDebrisSmall
-      prob: 0.8
+      prob: 1
     - id: ScrapDebrisMedium
-      prob: 0.8
+      prob: 1
     - id: ScrapDebrisLarge
       prob: 1
     #- id: ScrapDebrisExtraLarge
@@ -31,7 +31,7 @@
 
 - type: spaceBiome
   id: BalreskaWrecks
-  priority: 1000
+  priority: 9000
   minX: 5 # -3
   maxX: 11 # +3
   minY: -50 # -3
@@ -62,7 +62,7 @@
 
 - type: spaceBiome
   id: AncientBattlefieldWrecks
-  priority: 1000
+  priority: 9000
   minX: -1 # -3
   maxX: 5 # +3
   minY: 36 # -3
@@ -93,7 +93,7 @@
 
 - type: spaceBiome
   id: HeartlandsWrecks
-  priority: 1041
+  priority: 9000
   minX: 14 # -3
   maxX: 20 # +3
   minY: -31 # -3
@@ -130,7 +130,7 @@
 
 - type: spaceBiome
   id: AsteroidsStandardTaypanOne
-  priority: 1123
+  priority: 9000
   minX: -8 # -3
   maxX: -2 # +3
   minY: -34 # -3
@@ -172,7 +172,7 @@
 
 - type: spaceBiome
   id: AsteroidsStandardTaypanTwo
-  priority: 1005
+  priority: 9000
   minX: 18 # -3
   maxX: 24 # +3
   minY: -17 # -3
@@ -220,7 +220,7 @@
 
 - type: spaceBiome
   id: Craster
-  priority: 1124
+  priority: 9000
   minX: -58 # -3
   maxX: -52 # +3
   minY: 5 # -3
