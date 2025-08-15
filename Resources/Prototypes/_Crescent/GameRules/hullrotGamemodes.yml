@@ -63,14 +63,14 @@
         posY: 6000
         IFFColor: Purple
         IFFFaction: DSM
-      Aasim:
-        gameMapID: Aasim
-        posX: 3000
-        posY: -3000
-      Wisp: #CyberdawnMothership whenever we have the map
-        gameMapID: Wisp #CyberdawnMothership
-        posX: 1000
-        posY: 2400
+#      Aasim: #reenable whenever TAP is gameplay ready
+#        gameMapID: Aasim
+#        posX: 3000
+#        posY: -3000
+#      Wisp: #CyberdawnMothership whenever we have the map
+#        gameMapID: Wisp #CyberdawnMothership
+#        posX: 1000
+#        posY: 2400
       Jackal:
         gameMapID: Jackal
         posX: -7000
@@ -125,6 +125,14 @@
         gameMapID: FaintSignal
         posX: 2000
         posY: 1000
+      TribalScrapyard:
+        gameMapID: TribalScrapyard
+        posX: 2400
+        posY: -3600
+      AncientBattlefield:
+        gameMapID: AncientBattlefield
+        posX: 400
+        posY: 5000
 
 - type: gamePreset
   id: VladzenaJackal
