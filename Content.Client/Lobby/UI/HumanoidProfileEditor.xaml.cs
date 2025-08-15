@@ -1184,7 +1184,7 @@ namespace Content.Client.Lobby.UI
                         RgbSkinColorContainer.Visible = true;
                     }
 
-                    var color = skinColor.ClosestVoidbornHues(_rgbSkinColorSelector.Color);
+                    var color = SkinColor.ClosestVoidbornHues(_rgbSkinColorSelector.Color);
 
                     Markings.CurrentSkinColor = color;
                     Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
