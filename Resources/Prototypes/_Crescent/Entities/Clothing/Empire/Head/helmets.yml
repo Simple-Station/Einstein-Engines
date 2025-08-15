@@ -42,7 +42,7 @@
     sprite: _Crescent/Clothing/Empire/Head/inspector.rsi
   - type: PointLight
     radius: 6
-    color: "#184b0a"
+    color: "#70615b"
   - type: PressureProtection
     highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
@@ -484,3 +484,34 @@
     - Hair
     - Snout
   - type: IdentityBlocker
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitImperialNullweavePsion
+  categories: [ HideSpawnMenu ]
+  name: psion nullweave hood
+  description: Suffocating black cloth is the mark of the Imperial Psion, lacking value or birthright enough to escape the clutches of the House of Questions. After processing and education for the betterment of the Mandate at large, their uniform remains as both a mark of origin and valuable tool - the design of the robe and accompanying mask isolates the wearer entirely from their surroundings so that they may focus upon the working of space and matter. In addition, the space-grade seals are suitable for EVA traversal.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Head/mandatenullweavepsion.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Head/mandatenullweavepsion.rsi
+  - type: PointLight
+    radius: 6
+    color: "#e5d7ac"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: IdentityBlocker
+  - type: DegradeableArmor
+    armorMaxHealth: 1000
+    armorType: Metallic
+    armorRepair: SteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 5
+        Slash: 5
+        Piercing: 5
+        Heat: 5
+        Caustic: 5

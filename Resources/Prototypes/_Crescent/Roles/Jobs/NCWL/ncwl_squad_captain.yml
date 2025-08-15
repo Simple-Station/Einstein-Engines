@@ -8,6 +8,10 @@
   alwaysUseSpawner: true
   icon: "JobIconNCWLHomeguardSquadCaptain"
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Shadowkin
     - !type:CharacterOverallTimeRequirement
       min: 20000
     - !type:FactionRequirement
@@ -29,6 +33,13 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-home-squad-lead
+      - type: LanguageKnowledge
+        speaks:
+          - Dockta
+          - Tradeband
+        understands:
+          - Dockta
+          - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -83,5 +94,6 @@
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesCombat
     head: ClothingHeadHatNCWLBeret
+    mask: ClothingMaskNCWLGasmask
     ears: ClothingHeadsetNCWL
     eyes: ClothingEyesHudSecurity

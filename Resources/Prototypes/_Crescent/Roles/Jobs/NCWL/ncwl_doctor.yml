@@ -8,6 +8,10 @@
   alwaysUseSpawner: true
   icon: "JobIconNCWLMedicalWorker"
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Shadowkin
     - !type:CharacterOverallTimeRequirement
       min: 1000
     - !type:FactionRequirement
@@ -29,12 +33,18 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-medi-worker
+      - type: LanguageKnowledge
+        speaks:
+          - Dockta
+          - Tradeband
+        understands:
+          - Dockta
+          - Tradeband
   access:
   - Command
   - Maintenance
   - Service
   - NCWLGeneral
-  - NCWLJail
   - External
   - Mercenary # Frontier
   - Captain # Frontier
