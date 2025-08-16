@@ -297,7 +297,7 @@
       inverted: true
       species:
         - Vulpkanin # This trait functions exactly as-is for the Vulpkanin trait.
-        - Shadowkin
+        - Voidborn
     - !type:CharacterTraitRequirement
       inverted: true
       traits:

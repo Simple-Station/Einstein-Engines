@@ -379,9 +379,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 9
-    intensitySlope: 3
-    totalIntensity: 80
+    maxIntensity: 7
+    intensitySlope: 2
+    totalIntensity: 60
     canCreateVacuum: false
   - type: EmitSoundOnPickup
     sound: /Audio/_Crescent/Weapons/Grenades/grab1.ogg
@@ -441,9 +441,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 9
-    intensitySlope: 3
-    totalIntensity: 80
+    maxIntensity: 7
+    intensitySlope: 2
+    totalIntensity: 60
     canCreateVacuum: false
   - type: TimerTriggerVisuals
     primingSound:
