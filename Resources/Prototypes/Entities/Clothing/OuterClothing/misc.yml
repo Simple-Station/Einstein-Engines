@@ -431,19 +431,19 @@
 
 # - type: entity # TODO: There no use for it now... but pehaps we could turn it into a Anti-Psionic Clothing like headcage?
 #   parent: ClothingOuterBase
-#   id: ClothingOuterShadowkinRestraints
-#   name: shadowkin restraints
-#   description: One of the first creations after finding Shadowkin, these were used to contain the Shadowkin during research so they didn't teleport away.
+#   id: ClothingOuterVoidbornRestraints
+#   name: voidborn restraints
+#   description: One of the first creations after finding Voidborn, these were used to contain the Voidborn during research so they didn't teleport away.
 #   components:
 #   - type: Sprite
-#     sprite: Clothing/OuterClothing/Misc/shadowkinrestraints.rsi
+#     sprite: Clothing/OuterClothing/Misc/voidbornrestraints.rsi
 #   - type: Clothing
-#     sprite: Clothing/OuterClothing/Misc/shadowkinrestraints.rsi
+#     sprite: Clothing/OuterClothing/Misc/voidbornrestraints.rsi
 #     equipDelay: 0.5
 #     unequipDelay: 10
 #   - type: GuideHelp
 #     guides:
-#     - Shadowkin
+#     - Voidborn
 
 - type: entity
   parent: ClothingOuterStorageFoldableBase

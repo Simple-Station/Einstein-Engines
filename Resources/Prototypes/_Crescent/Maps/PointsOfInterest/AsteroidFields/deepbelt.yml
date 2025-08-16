@@ -1,0 +1,16 @@
+- type: gameMap
+  id: Deepbelt
+  mapName: 'The "Deepbelt"'
+  mapPath: /Maps/_Crescent/Explorables/deepbelt.yml
+  minPlayers: 0
+  stations:
+    Deepbelt:
+      stationProto: StandardCrescentPOI
+      gridComponents:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: asteroid
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'The "Deepbelt"'

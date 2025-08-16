@@ -1,4 +1,4 @@
-#ONION
+# ONION
 
 advertisement-onion-1 = Psst. You. Come over here.
 advertisement-onion-2 = Stick a needle in me. Stick a needle in you.

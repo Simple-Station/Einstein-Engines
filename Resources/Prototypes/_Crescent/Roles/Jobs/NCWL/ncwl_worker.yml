@@ -11,7 +11,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
-        - Shadowkin
+        - Voidborn
     - !type:FactionRequirement
       factionID: "NCWL"
     - !type:CharacterTraitRequirement
@@ -28,6 +28,11 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-worker
+      - type: LanguageKnowledge
+        speaks:
+          - Dockta
+        understands:
+          - Dockta
   access:
   - Command
   - Maintenance

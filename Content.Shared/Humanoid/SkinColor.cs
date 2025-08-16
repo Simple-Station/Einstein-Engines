@@ -17,6 +17,14 @@ public static class SkinColor
     public const float MinFeathersValue = 36f / 100;
     public const float MaxFeathersValue = 55f / 100;
 
+    // Voidborn
+    public const float MinVoidbornHue = 210f / 360;
+    public const float MaxVoidbornHue = 280f / 360;
+    public const float MinVoidbornSaturation = 0f / 100;
+    public const float MaxVoidbornSaturation = 100f / 100;
+    public const float MinVoidbornValue = 15f / 100;
+    public const float MaxVoidbornValue = 35f / 100;
+
     // Einstein Engines - Tajaran
     public const float MinAnimalFurHue = 20f / 360;
     public const float MaxAnimalFurHue = 60f / 360;
@@ -231,6 +239,53 @@ public static class SkinColor
         return true;
     }
 
+/// <summary>
+    ///     Converts a Color proportionally to the allowed vox color range.
+    ///     Will NOT preserve the specific input color even if it is within the allowed vox color range.
+    /// </summary>
+    /// <param name="color">Color to convert</param>
+    /// <returns>Vox feather coloration</returns>
+    public static Color ProportionalVoidbornHuesColor(Color color)
+    {
+        var newColor = Color.ToHsv(color);
+
+        newColor.X = newColor.X * (MaxVoidbornHue - MinVoidbornHue) + MinVoidbornHue;
+        newColor.Y = newColor.Y * (MaxVoidbornSaturation - MinVoidbornSaturation) + MinVoidbornSaturation;
+        newColor.Z = newColor.Z * (MaxVoidbornValue - MinVoidbornValue) + MinVoidbornValue;
+
+        return Color.FromHsv(newColor);
+    }
+
+    public static Color ClosestVoidbornHues(Color color)
+    {
+        var hsv = Color.ToHsv(color);
+        hsv.X = Math.Clamp(hsv.X, MinVoidbornHue, MaxVoidbornHue);
+        hsv.Y = Math.Clamp(hsv.Y, MinVoidbornSaturation, MaxVoidbornSaturation);
+        hsv.Z = Math.Clamp(hsv.Z, MinVoidbornValue, MaxVoidbornValue);
+
+        return Color.FromHsv(hsv);
+    }
+
+    /// <summary>
+    ///     Verify if the color is a valid voidborn hue, or not. Absolute shitcode -Sobachka.
+    /// </summary>
+    /// <param name="color">The color to verify</param>
+    /// <returns>True if valid, false otherwise</returns>
+    public static bool VerifyVoidbornHues(Color color)
+    {
+        var colorHsv = Color.ToHsv(color);
+
+        if (colorHsv.X < MinVoidbornHue || colorHsv.X > MaxVoidbornHue)
+            return false;
+
+        if (colorHsv.Y < MinVoidbornSaturation || colorHsv.Y > MaxVoidbornSaturation)
+            return false;
+
+        if (colorHsv.Z < MinVoidbornValue || colorHsv.Z > MaxVoidbornValue)
+            return false;
+        return true;
+    }
+
     /// <summary>
     ///     Converts a Color proportionally to the allowed animal fur color range.
     ///     Will NOT preserve the specific input color even if it is within the allowed animal fur color range.
@@ -316,6 +371,7 @@ public static class SkinColor
             HumanoidSkinColor.TintedHuesSkin => true, // DeltaV - Tone blending
             HumanoidSkinColor.Hues => VerifyHues(color),
             HumanoidSkinColor.VoxFeathers => VerifyVoxFeathers(color),
+            HumanoidSkinColor.VoidbornHues => VerifyVoidbornHues(color),
             HumanoidSkinColor.AnimalFur => VerifyAnimalFur(color), // Einsetin Engines - Tajaran
             _ => false,
         };
@@ -330,6 +386,7 @@ public static class SkinColor
             HumanoidSkinColor.TintedHuesSkin => ValidTintedHuesSkinTone(color), // DeltaV - Tone blending
             HumanoidSkinColor.Hues => MakeHueValid(color),
             HumanoidSkinColor.VoxFeathers => ClosestVoxColor(color),
+            HumanoidSkinColor.VoidbornHues => ClosestVoidbornHues(color),
             HumanoidSkinColor.AnimalFur => ClosestAnimalFurColor(color), // Einsetin Engines - Tajaran
             _ => color
         };
@@ -341,6 +398,7 @@ public enum HumanoidSkinColor : byte
     HumanToned,
     Hues,
     VoxFeathers, // Vox feathers are limited to a specific color range
+    VoidbornHues, // Voidborn hues are limited to darker colors
     TintedHues, //This gives a color tint to a humanoid's skin (10% saturation with full hue range).
     TintedHuesSkin, // DeltaV - Default TintedHues assumes the texture will have the proper skin color, but moths dont
     AnimalFur, // Einstein Engines - limits coloration to more or less what earthen animals might have

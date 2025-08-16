@@ -1,0 +1,631 @@
+- type: marking
+  id: EarsVoidbornMotley
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+    layers:
+      motley_secondary:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+    - sprite: Mobs/Customization/Voidborn/ears.rsi
+      state: voidborn
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: motley_secondary
+
+- type: marking
+  id: EarsVoidbornShady
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: shady
+
+- type: marking
+  id: EarsVoidbornPiercingAll
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+    layers:
+      piercing_all:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+    - sprite: Mobs/Customization/Voidborn/ears.rsi
+      state: voidborn
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: piercing_all
+
+- type: marking
+  id: EarsVoidbornPiercingLeft
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+    layers:
+      piercing_left:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+    - sprite: Mobs/Customization/Voidborn/ears.rsi
+      state: voidborn
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: piercing_left
+
+- type: marking
+  id: EarsVoidbornPiercingRight
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+    layers:
+      piercing_right:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+    - sprite: Mobs/Customization/Voidborn/ears.rsi
+      state: voidborn
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: piercing_right
+
+- type: marking
+  id: EarsVoidbornRingedAll
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+    layers:
+      ringed_all_secondary:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+    - sprite: Mobs/Customization/Voidborn/ears.rsi
+      state: voidborn
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: ringed_all_secondary
+
+- type: marking
+  id: EarsVoidbornRingedLeft
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+    layers:
+      ringed_left_secondary:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+    - sprite: Mobs/Customization/Voidborn/ears.rsi
+      state: voidborn
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: ringed_left_secondary
+
+- type: marking
+  id: EarsVoidbornRingedRight
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+    layers:
+      ringed_right_secondary:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+    - sprite: Mobs/Customization/Voidborn/ears.rsi
+      state: voidborn
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: ringed_right_secondary
+
+- type: marking
+  id: EarsVoidbornGauzedAll
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: Mobs/Customization/Voidborn/ears.rsi
+      state: voidborn
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: gauze_ear_all_default
+
+- type: marking
+  id: EarsVoidbornGauzedLeft
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: Mobs/Customization/Voidborn/ears.rsi
+      state: voidborn
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: gauze_ear_l_default
+
+- type: marking
+  id: EarsVoidbornGauzedRight
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: Mobs/Customization/Voidborn/ears.rsi
+      state: voidborn
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: gauze_ear_r_default
+
+- type: marking
+  id: EarsVoidbornFluffy
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: fluffy_default
+
+- type: marking
+  id: EarsVoidbornFluffyButterfly
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: fluffy_default
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: fluffy_butterfly
+
+- type: marking
+  id: EarsVoidbornFluffyCowling
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: fluffy_default
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: fluffy_cowling
+
+- type: marking
+  id: EarsVoidbornFluffyCrow
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: fluffy_default
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: fluffy_crow
+
+- type: marking
+  id: EarsVoidbornFluffyMotley
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: fluffy_default
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: fluffy_motley
+
+- type: marking
+  id: EarsVoidbornFluffySpidy
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: fluffy_default
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: fluffy_spidy
+
+- type: marking
+  id: EarsVoidbornFluffyRingedAll
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: fluffy_default
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: fluffy_ringed_all
+
+- type: marking
+  id: EarsVoidbornFluffyRingedLeft
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: fluffy_default
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: fluffy_ringed_left
+
+- type: marking
+  id: EarsVoidbornFluffyRingedRight
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: fluffy_default
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: fluffy_ringed_right
+
+- type: marking
+  id: EarsVoidbornSaggy
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: saggy_default
+
+- type: marking
+  id: EarsVoidbornSaggyBrawly
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: saggy_default
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: saggy_brawly
+
+- type: marking
+  id: EarsVoidbornSaggyZebra
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: saggy_default
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: saggy_zebra
+
+- type: marking
+  id: EarsVoidbornSaggyGradient
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: saggy_default
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: saggy_gradient
+
+- type: marking
+  id: EarsVoidbornSaggyGauzedAll
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: saggy_default
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: saggy_gauze_all
+
+- type: marking
+  id: EarsVoidbornSaggyGauzedLeft
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: saggy_default
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: saggy_gauze_l
+
+- type: marking
+  id: EarsVoidbornSaggyGauzedRight
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: saggy_default
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: saggy_gauze_r
+
+- type: marking
+  id: EarsVoidbornShort
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: short_default
+
+- type: marking
+  id: EarsVoidbornShortButterfly
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: short_default
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: short_butterfly
+
+- type: marking
+  id: EarsVoidbornShortRingedAll
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: short_default
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: short_ringed_all
+
+- type: marking
+  id: EarsVoidbornShortRingedLeft
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: short_default
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: short_ringed_left
+
+- type: marking
+  id: EarsVoidbornShortRingedRight
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: short_default
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: short_ringed_right
+
+- type: marking
+  id: EarsVoidbornBull
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: bull_default
+
+- type: marking
+  id: EarsVoidbornBullSmooth
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: bull_default
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: bull_smooth
+
+- type: marking
+  id: EarsVoidbornAqua
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: aqua_default
+
+- type: marking
+  id: EarsVoidbornAquaIncolor
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: aqua_default
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_ears_32x32.rsi
+      state: aqua_incolor
+
+- type: marking
+  id: BodyVoidbornArrow
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_overlay.rsi
+      state: body_arrow
+
+- type: marking
+  id: BodyVoidbornBlackHole
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_overlay.rsi
+      state: body_blackhole
+
+- type: marking
+  id: BodyVoidbornBrace
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_overlay.rsi
+      state: body_brace
+
+- type: marking
+  id: BodyVoidbornBrawly
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_overlay.rsi
+      state: body_brawly
+
+- type: marking
+  id: BodyVoidbornHeart
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_overlay.rsi
+      state: body_heart
+
+- type: marking
+  id: BodyVoidbornInk
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_overlay.rsi
+      state: body_ink
+
+- type: marking
+  id: BodyVoidbornInk2
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_overlay.rsi
+      state: body_ink2
+
+- type: marking
+  id: BodyVoidbornInk3
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_overlay.rsi
+      state: body_ink3
+
+- type: marking
+  id: BodyVoidbornInk4
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_overlay.rsi
+      state: body_ink4
+
+- type: marking
+  id: BodyVoidbornInk5
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_overlay.rsi
+      state: body_ink5
+
+- type: marking
+  id: BodyVoidbornInk6
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_overlay.rsi
+      state: body_ink6
+
+- type: marking
+  id: BodyVoidbornInkAnim
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_overlay.rsi
+      state: body_ink_anim
+
+- type: marking
+  id: BodyVoidbornLines
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_overlay.rsi
+      state: body_lines
+
+- type: marking
+  id: BodyVoidbornNeck
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_overlay.rsi
+      state: body_neck
+
+- type: marking
+  id: BodyVoidbornShield
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_overlay.rsi
+      state: body_shield
+
+- type: marking
+  id: BodyVoidbornVacuum
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_overlay.rsi
+      state: body_vacuum
+
+- type: marking
+  id: TailVoidbornShorter
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_tails_32x32.rsi
+      state: voidborn_shorter
+
+- type: marking
+  id: TailVoidbornShorterBrush
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_tails_32x32.rsi
+      state: voidborn_shorter
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_tails_32x32.rsi
+      state: shorter_brush
+
+- type: marking
+  id: TailVoidbornMedium
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_tails_32x32.rsi
+      state: voidborn_medium
+
+- type: marking
+  id: TailVoidbornMediumTwoColored
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Voidborn]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_tails_32x32.rsi
+      state: voidborn_medium
+    - sprite: _ADT/Mobs/Customization/Voidborn/voidborn_tails_32x32.rsi
+      state: medium_twocolored
+

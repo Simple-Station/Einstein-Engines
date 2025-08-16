@@ -1,281 +1,297 @@
 ﻿- type: spaceBiome
-  id: DevilsMawWrecks
-  priority: 1000
-  minX: 50
-  maxX: 72
-  minY: 24
-  maxY: 46
+  id: GraveyardWrecks
+  priority: 9000
+  minX: 28
+  maxX: 37
+  minY: 39
+  maxY: 48
   noiseRanges: {}
   chunkComponents:
-    - type: DebrisFeaturePlacerController
-      densityNoiseChannel: DensityGraveyard
-    - type: NoiseDrivenDebrisSelector
-      noiseChannel: WreckGraveyard
-      debrisTable:
-        - id: ScrapDebrisSmall
-          prob: 1
-        - id: ScrapDebrisMedium
-          prob: 1
-        - id: ScrapDebrisLarge
-          prob: 0.6
-        #- id: ScrapDebrisExtraLarge
-        #  prob: 0.3
-        #- id: ScrapDebrisExtraLargeScattered
-        #  prob: 0.3
-        #- id: ScrapDebrisHuge
-        #  prob: 0.15
-    - type: NoiseRangeCarver
-      ranges:
-        - 0.4, 0.6
-      noiseChannel: Carver
+  - type: DebrisFeaturePlacerController
+    densityNoiseChannel: DensityGraveyard
+  - type: NoiseDrivenDebrisSelector
+    noiseChannel: WreckGraveyard
+    debrisTable:
+    - id: ScrapDebrisSmall
+      prob: 1
+    - id: ScrapDebrisMedium
+      prob: 1
+    - id: ScrapDebrisLarge
+      prob: 1
+  - type: NoiseRangeCarver
+    ranges:
+    - 0.4, 0.6
+    noiseChannel: Carver
 
 - type: spaceBiome
-  id: GenericWrecks1
-  priority: 1000
-  minX: -10
-  maxX: 10
-  minY: 59
-  maxY: 81
+  id: BalreskaWrecks
+  priority: 9000
+  minX: 7
+  maxX: 16
+  minY: -75
+  maxY: -66
   noiseRanges: {}
   chunkComponents:
-    - type: DebrisFeaturePlacerController
-      densityNoiseChannel: DensityGraveyard
-    - type: NoiseDrivenDebrisSelector
-      noiseChannel: WreckGraveyard
-      debrisTable:
-        - id: ScrapDebrisSmall
-          prob: 1
-        - id: ScrapDebrisMedium
-          prob: 1
-        - id: ScrapDebrisLarge
-          prob: 0.6
-        #- id: ScrapDebrisExtraLarge
-        #  prob: 0.3
-        #- id: ScrapDebrisExtraLargeScattered
-        #  prob: 0.3
-        #- id: ScrapDebrisHuge
-        #  prob: 0.15
-    - type: NoiseRangeCarver
-      ranges:
-        - 0.4, 0.6
-      noiseChannel: Carver
+  - type: DebrisFeaturePlacerController
+    densityNoiseChannel: DensityGraveyard
+  - type: NoiseDrivenDebrisSelector
+    noiseChannel: WreckGraveyard
+    debrisTable:
+    - id: ScrapDebrisSmall
+      prob: 1
+    - id: ScrapDebrisMedium
+      prob: 1
+    - id: ScrapDebrisLarge
+      prob: 1
+  - type: NoiseRangeCarver
+    ranges:
+    - 0.4, 0.6
+    noiseChannel: Carver
 
 - type: spaceBiome
-  id: GenericWrecks2
-  priority: 1000
-  minX: -10
-  maxX: 10
-  minY: -10
-  maxY: 10
-  noiseRanges: {}
-  chunkComponents:
-    - type: DebrisFeaturePlacerController
-      densityNoiseChannel: DensityGraveyard
-    - type: NoiseDrivenDebrisSelector
-      noiseChannel: WreckGraveyard
-      debrisTable:
-        - id: ScrapDebrisSmall
-          prob: 1
-        - id: ScrapDebrisMedium
-          prob: 1
-        - id: ScrapDebrisLarge
-          prob: 0.6
-        #- id: ScrapDebrisExtraLarge
-        #  prob: 0.3
-        #- id: ScrapDebrisExtraLargeScattered
-        #  prob: 0.3
-        #- id: ScrapDebrisHuge
-        #  prob: 0.15
-    - type: NoiseRangeCarver
-      ranges:
-        - 0.4, 0.6
-      noiseChannel: Carver
-
-- type: spaceBiome
-  id: GenericWrecks3
-  priority: 1000
-  minX: -12
-  maxX: -3
-  minY: -2
-  maxY: 10
-  noiseRanges: {}
-  chunkComponents:
-    - type: DebrisFeaturePlacerController
-      densityNoiseChannel: DensityGraveyard
-    - type: NoiseDrivenDebrisSelector
-      noiseChannel: WreckGraveyard
-      debrisTable:
-        - id: ScrapDebrisSmall
-          prob: 1
-        - id: ScrapDebrisMedium
-          prob: 1
-        - id: ScrapDebrisLarge
-          prob: 0.6
-        #- id: ScrapDebrisExtraLarge
-        #  prob: 0.3
-        #- id: ScrapDebrisExtraLargeScattered
-        #  prob: 0.3
-        #- id: ScrapDebrisHuge
-        #  prob: 0.15
-    - type: NoiseRangeCarver
-      ranges:
-        - 0.4, 0.6
-      noiseChannel: Carver
-
-- type: spaceBiome
-  id: HayesWrecks
-  priority: 1041
+  id: AncientBattlefieldWrecks
+  priority: 9000
   minX: -1
-  maxX: 1
-  minY: -1
-  maxY: 1
+  maxX: 7
+  minY: 54
+  maxY: 63
   noiseRanges: {}
   chunkComponents:
-    - type: DebrisFeaturePlacerController
-      densityNoiseChannel: DensityGraveyard
-    - type: NoiseDrivenDebrisSelector
-      noiseChannel: WreckGraveyard
-      debrisTable:
-        - id: ScrapDebrisSmall
-          prob: 1
-        - id: ScrapDebrisMedium
-          prob: 1
-        - id: ScrapDebrisLarge
-          prob: 0.6
-        #- id: ScrapDebrisExtraLarge
-        #  prob: 0.3
-        #- id: ScrapDebrisExtraLargeScattered
-        #  prob: 0.3
-        #- id: ScrapDebrisHuge
-        #  prob: 0.15
-        - id: ScrapDebrisLarge
-          prob: 0.6
-        #- id: ScrapDebrisExtraLarge
-        #  prob: 0.3
-        #- id: ScrapDebrisExtraLargeScattered
-        #  prob: 0.3
-        #- id: ScrapDebrisHuge
-        #  prob: 0.15
-    - type: NoiseRangeCarver
-      ranges:
-        - 0.4, 0.6
-      noiseChannel: Carver
+  - type: DebrisFeaturePlacerController
+    densityNoiseChannel: DensityGraveyard
+  - type: NoiseDrivenDebrisSelector
+    noiseChannel: WreckGraveyard
+    debrisTable:
+    - id: ScrapDebrisSmall
+      prob: 1
+    - id: ScrapDebrisMedium
+      prob: 1
+    - id: ScrapDebrisLarge
+      prob: 1
+  - type: NoiseRangeCarver
+    ranges:
+    - 0.4, 0.6
+    noiseChannel: Carver
 
 - type: spaceBiome
-  id: AsteroidsStandardShinohara
-  priority: 1005
-  minX: 13
-  maxX: 33
-  minY: 25
-  maxY: 45
+  id: HeartlandsWrecks
+  priority: 9000
+  minX: 21
+  maxX: 30
+  minY: -46
+  maxY: -37
   noiseRanges: {}
   chunkComponents:
-    - type: DebrisFeaturePlacerController
-      densityNoiseChannel: Density
-    - type: SimpleDebrisSelector
-      debrisTable:
-        - id: AsteroidDebrisNFIceMedium
-          prob: 0.1
-        - id: AsteroidDebrisNFLarge
-          prob: 0.2
-        - id: AsteroidDebrisNFIceLarge
-          prob: 0.1
-        - id: AsteroidRockDebrisNFLarger
-          prob: 0.1
-        - id: AsteroidRockDebrisNFHuge
-          prob: 0.2
-        - id: AsteroidDebrisNFLarger
-          prob: 0.3
-        - id: AsteroidDebrisNFIceLarger
-          prob: 0.3
-        - id: AsteroidDebrisNFHuge
-          prob: 0.15
-        - id: AsteroidDebrisNFIceHuge
-          prob: 0.15
-        - id: AsteroidSalvageNFSmall
-          prob: 0.1
-        - id: AsteroidSalvageNFIceSmall
-          prob: 0.1
-        - id: AsteroidSalvageNFMedium
-          prob: 0.08
-        - id: AsteroidSalvageNFIceMedium
-          prob: 0.08
-        - id: AsteroidSalvageNFLarge
-          prob: 0.05
-        - id: AsteroidSalvageNFIceLarge
-          prob: 0.05
-        - id: AsteroidSalvageNFHuge
-          prob: 0.03
-        - id: AsteroidSalvageNFIceHuge
-          prob: 0.03
+  - type: DebrisFeaturePlacerController
+    densityNoiseChannel: DensityGraveyard
+  - type: NoiseDrivenDebrisSelector
+    noiseChannel: WreckGraveyard
+    debrisTable:
+    - id: ScrapDebrisSmall
+      prob: 1
+    - id: ScrapDebrisMedium
+      prob: 1
+    - id: ScrapDebrisLarge
+      prob: 1
+  - type: NoiseRangeCarver
+    ranges:
+    - 0.4, 0.6
+    noiseChannel: Carver
 
 - type: spaceBiome
   id: AsteroidsStandardTaypanOne
-  priority: 1123
-  minX: 19
-  maxX: 27
-  minY: 31
-  maxY: 39
+  priority: 9000
+  minX: -12
+  maxX: -3
+  minY: -51
+  maxY: -42
   noiseRanges: {}
   chunkComponents:
-    - type: DebrisFeaturePlacerController
-      densityNoiseChannel: Density
-    - type: SimpleDebrisSelector
-      debrisTable:
-        - id: AsteroidDebrisNFMedium
-        - id: AsteroidDebrisNFIceMedium
-        - id: AsteroidDebrisNFLarge
-          prob: 0.6
-        - id: AsteroidDebrisNFIceLarge
-          prob: 0.6
-        - id: AsteroidDebrisNFLarger
-          prob: 0.3
-        - id: AsteroidDebrisNFIceLarger
-          prob: 0.3
-        - id: AsteroidDebrisNFHuge
-          prob: 0.15
-        - id: AsteroidDebrisNFIceHuge
-          prob: 0.15
-        - id: AsteroidSalvageNFSmall
-          prob: 0.1
-        - id: AsteroidSalvageNFIceSmall
-          prob: 0.1
-        - id: AsteroidSalvageNFMedium
-          prob: 0.08
-        - id: AsteroidSalvageNFIceMedium
-          prob: 0.08
-        - id: AsteroidSalvageNFLarge
-          prob: 0.05
-        - id: AsteroidSalvageNFIceLarge
-          prob: 0.05
-        - id: AsteroidSalvageNFHuge
-          prob: 0.03
+  - type: DebrisFeaturePlacerController
+    densityNoiseChannel: Density
+  - type: SimpleDebrisSelector
+    debrisTable:
+    - id: AsteroidDebrisNFIceMedium
+      prob: 0.1
+    - id: AsteroidDebrisNFLarge
+      prob: 0.2
+    - id: AsteroidDebrisNFChromiteLarge
+      prob: 0.1
+    - id: AsteroidRockDebrisNFLarger
+      prob: 0.1
+    - id: AsteroidRockDebrisNFHuge
+      prob: 0.2
+    - id: AsteroidDebrisNFLarger
+      prob: 0.3
+    - id: AsteroidDebrisNFIceLarger
+      prob: 0.3
+    - id: AsteroidDebrisNFHuge
+      prob: 0.15
+    - id: AsteroidDebrisNFIceHuge
+      prob: 0.15
+    - id: AsteroidSalvageNFSmall
+      prob: 0.1
+    - id: AsteroidSalvageNFIceSmall
+      prob: 0.1
+    - id: AsteroidSalvageNFMedium
+      prob: 0.08
+    - id: AsteroidSalvageNFChromiteMedium
+      prob: 0.08
+    - id: AsteroidSalvageNFLarge
+      prob: 0.05
+    - id: AsteroidSalvageNFIceLarge
+      prob: 0.05
+    - id: AsteroidSalvageNFHuge
+      prob: 0.03
+    - id: AsteroidSalvageNFIceHuge
+      prob: 0.03
 
 - type: spaceBiome
-  id: CrastersGrave
-  priority: 1124
-  minX: 21
-  maxX: 25
-  minY: 32
-  maxY: 37
+  id: AsteroidsStandardTaypanTwo
+  priority: 9000
+  minX: 27
+  maxX: 36
+  minY: -26
+  maxY: -16
   noiseRanges: {}
   chunkComponents:
-    - type: DebrisFeaturePlacerController
-      densityNoiseChannel: Density
-    - type: SimpleDebrisSelector
-      debrisTable:
-        - id: AsteroidDebrisNFChromiteMedium
-        - id: AsteroidDebrisNFChromiteLarge
-          prob: 0.6
-        - id: AsteroidDebrisNFChromiteLarger
-          prob: 0.3
-        - id: AsteroidDebrisNFChromiteHuge
-          prob: 0.15
-        - id: AsteroidSalvageNFChromiteSmall
-          prob: 0.1
-        - id: AsteroidSalvageNFChromiteMedium
-          prob: 0.08
-        - id: AsteroidSalvageNFChromiteLarge
-          prob: 0.05
-        - id: AsteroidSalvageNFChromiteHuge
-          prob: 0.03
+  - type: DebrisFeaturePlacerController
+    densityNoiseChannel: Density
+  - type: SimpleDebrisSelector
+    debrisTable:
+    - id: AsteroidDebrisNFIceMedium
+      prob: 0.1
+    - id: AsteroidDebrisNFLarge
+      prob: 0.2
+    - id: AsteroidDebrisNFChromiteLarge
+      prob: 0.1
+    - id: AsteroidRockDebrisNFLarger
+      prob: 0.1
+    - id: AsteroidRockDebrisNFHuge
+      prob: 0.2
+    - id: AsteroidDebrisNFLarger
+      prob: 0.3
+    - id: AsteroidDebrisNFIceLarger
+      prob: 0.3
+    - id: AsteroidDebrisNFHuge
+      prob: 0.15
+    - id: AsteroidDebrisNFIceHuge
+      prob: 0.15
+    - id: AsteroidSalvageNFSmall
+      prob: 0.1
+    - id: AsteroidSalvageNFIceSmall
+      prob: 0.1
+    - id: AsteroidSalvageNFMedium
+      prob: 0.08
+    - id: AsteroidSalvageNFChromiteMedium
+      prob: 0.08
+    - id: AsteroidSalvageNFLarge
+      prob: 0.05
+    - id: AsteroidSalvageNFIceLarge
+      prob: 0.05
+    - id: AsteroidSalvageNFHuge
+      prob: 0.03
+    - id: AsteroidSalvageNFIceHuge
+      prob: 0.03
+
+- type: spaceBiome
+  id: Craster
+  priority: 9000
+  minX: -87
+  maxX: -78
+  minY: 7
+  maxY: 16
+  noiseRanges: {}
+  chunkComponents:
+  - type: DebrisFeaturePlacerController
+    densityNoiseChannel: Density
+  - type: SimpleDebrisSelector
+    debrisTable:
+    - id: AsteroidDebrisNFChromiteLarge
+      prob: 0.6
+    - id: AsteroidDebrisNFChromiteLarger
+      prob: 0.3
+    - id: AsteroidDebrisNFChromiteHuge
+      prob: 0.15
+    - id: AsteroidSalvageNFChromiteSmall
+      prob: 0.1
+    - id: AsteroidSalvageNFChromiteMedium
+      prob: 0.08
+    - id: AsteroidSalvageNFChromiteLarge
+      prob: 0.05
+    - id: AsteroidSalvageNFChromiteHuge
+      prob: 0.03
+
+- type: spaceBiome
+  id: Marchbelt
+  priority: 9000
+  minX: -62
+  maxX: -56
+  minY: 46
+  maxY: 52
+  noiseRanges: {}
+  chunkComponents:
+  - type: DebrisFeaturePlacerController
+    densityNoiseChannel: Density
+  - type: SimpleDebrisSelector
+    debrisTable:
+    - id: AsteroidDebrisNFIceMedium
+      prob: 0.5
+    - id: AsteroidSalvageNFSmall
+      prob: 0.5
+    - id: AsteroidSalvageNFIceSmall
+      prob: 0.5
+    - id: AsteroidSalvageNFMedium
+      prob: 0.5
+    - id: AsteroidSalvageNFHuge
+      prob: 0.03
+    - id: AsteroidSalvageNFIceHuge
+      prob: 0.03
+
+- type: spaceBiome
+  id: Deepbelt
+  priority: 9000
+  minX: -40
+  maxX: -34
+  minY: -7
+  maxY: -1
+  noiseRanges: {}
+  chunkComponents:
+  - type: DebrisFeaturePlacerController
+    densityNoiseChannel: Density
+  - type: SimpleDebrisSelector
+    debrisTable:
+    - id: AsteroidDebrisNFIceMedium
+      prob: 0.1
+    - id: AsteroidDebrisNFLarge
+      prob: 0.2
+    - id: AsteroidDebrisNFChromiteLarge
+      prob: 0.1
+    - id: AsteroidRockDebrisNFLarger
+      prob: 0.1
+    - id: AsteroidRockDebrisNFHuge
+      prob: 0.2
+    - id: AsteroidDebrisNFLarger
+      prob: 0.3
+    - id: AsteroidDebrisNFIceLarger
+      prob: 0.3
+    - id: AsteroidDebrisNFChromiteHuge
+      prob: 0.15
+    - id: AsteroidSalvageNFChromiteSmall
+      prob: 0.1
+    - id: AsteroidSalvageNFChromiteMedium
+      prob: 0.08
+    - id: AsteroidSalvageNFIceSmall
+      prob: 0.1
+    - id: AsteroidSalvageNFMedium
+      prob: 0.08
+    - id: AsteroidSalvageNFChromiteMedium
+      prob: 0.08
+    - id: AsteroidSalvageNFLarge
+      prob: 0.05
+    - id: AsteroidSalvageNFIceLarge
+      prob: 0.05
+    - id: AsteroidSalvageNFHuge
+      prob: 0.03
+    - id: AsteroidSalvageNFIceHuge
+      prob: 0.03

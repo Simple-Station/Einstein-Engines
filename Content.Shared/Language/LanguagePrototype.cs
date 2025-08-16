@@ -66,7 +66,7 @@ public sealed partial class SpeechOverrideInfo
 
     /// <summary>
     ///     If true, the message will be relayed to the Empathy Chat and
-    ///     anyone with that language will also hear Empathy Chat. (Unless user has ShadowkinBlackeyeComponent)
+    ///     anyone with that language will also hear Empathy Chat. (Unless user has VoidbornBlackeyeComponent)
     ///     This is mostly only use for "Marish" but... fuckit modularity :p
     /// </summary>
     [DataField]

@@ -41,7 +41,7 @@
       path: /Audio/Psionics/shadeskip_power.ogg
 
 - type: entity
-  id: EffectFlashShadowkinShadeskip
+  id: EffectFlashVoidbornShadeskip
   categories: [ HideSpawnMenu ]
   components:
   - type: PointLight
@@ -52,10 +52,10 @@
     lifetime: 3
   - type: EmitSoundOnSpawn
     sound:
-      path: /Audio/Effects/Shadowkin/shadeskip.ogg
+      path: /Audio/Effects/Voidborn/shadeskip.ogg
 
 - type: entity
-  id: EffectFlashShadowkinDarkSwapOn
+  id: EffectFlashVoidbornDarkSwapOn
   categories: [ HideSpawnMenu ]
   components:
   - type: PointLight
@@ -66,10 +66,10 @@
     lifetime: 3
   - type: EmitSoundOnSpawn
     sound:
-      path: /Audio/Effects/Shadowkin/darkswapon.ogg
+      path: /Audio/Effects/Voidborn/darkswapon.ogg
 
 - type: entity
-  id: EffectFlashShadowkinDarkSwapOff
+  id: EffectFlashVoidbornDarkSwapOff
   categories: [ HideSpawnMenu ]
   components:
   - type: PointLight
@@ -80,16 +80,16 @@
     lifetime: 3
   - type: EmitSoundOnSpawn
     sound:
-      path: /Audio/Effects/Shadowkin/darkswapoff.ogg
+      path: /Audio/Effects/Voidborn/darkswapoff.ogg
 
 - type: entity
   id: EffectPyrokineticFlare
   categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
-      sprite: /Textures/Interface/Actions/psionics.rsi
-      visible: false
+      sprite: Interface/Actions/psionics.rsi
       state: pyrokinetic_flare
+      visible: false
     - type: TriggerOnSpawn
     - type: PointLight
       radius: 5
