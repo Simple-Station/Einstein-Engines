@@ -1,6 +1,6 @@
 - type: job
   id: APRTKanoneerATH
-  name: job-name-aprt-kanoneer
+  name: job-name-kanoneer
   description: job-description-kanoneer
   playTimeTracker: JobKanoneerATH
   requirements:

@@ -1,6 +1,6 @@
 - type: job
   id: APRTSoldatATH
-  name: job-name-aprt-soldat
+  name: job-name-soldat
   description: job-description-soldat
   playTimeTracker: JobSoldatATH
   requirements:

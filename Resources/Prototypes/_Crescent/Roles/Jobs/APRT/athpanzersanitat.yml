@@ -1,6 +1,6 @@
 - type: job
   id: APRTSanitatATH
-  name: job-name-aprt-sanitat
+  name: job-name-sanitat
   description: job-description-sanitat
   playTimeTracker: JobSanitatATH
   requirements:
