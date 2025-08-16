@@ -11,7 +11,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
-        - Shadowkin
+        - Voidborn
     - !type:SexRequirement
       sex : Male
     - !type:FactionRequirement

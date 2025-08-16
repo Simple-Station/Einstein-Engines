@@ -1,0 +1,16 @@
+- type: gameMap
+  id: Marchbelt
+  mapName: 'The "Marchbelt'
+  mapPath: /Maps/_Crescent/Explorables/marchbelt.yml
+  minPlayers: 0
+  stations:
+    Marchbelt:
+      stationProto: StandardCrescentPOI
+      gridComponents:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: asteroid
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'The "Marchbelt"'

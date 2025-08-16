@@ -1,13 +1,16 @@
 ﻿- type: worldgenConfig
   id: Default
   components:
-    - type: WorldController
-    - type: BiomeSelection
-      biomes:
-        - Failsafe
-        - DevilsMawWrecks
-        - AsteroidsStandardShinohara
-        - GenericWrecks1
-        - GenericWrecks2
-        - AsteroidsStandardTaypanOne
-        - CrastersGrave
+  - type: WorldController
+  - type: BiomeSelection
+    biomes:
+    - Failsafe
+    - AsteroidsStandardTaypanOne
+    - AsteroidsStandardTaypanTwo
+    - GraveyardWrecks
+    - BalreskaWrecks
+    - AncientBattlefieldWrecks
+    - HeartlandsWrecks
+    - Craster
+    - Marchbelt
+    - Deepbelt

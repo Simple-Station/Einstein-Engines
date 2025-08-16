@@ -220,7 +220,7 @@
       collection: Weh
 
 - type: emoteSounds
-  id: MaleShadowkin
+  id: MaleVoidborn
   params:
     variation: 0.125
   sounds:
@@ -262,7 +262,7 @@
       collection: Wurble
 
 - type: emoteSounds
-  id: FemaleShadowkin
+  id: FemaleVoidborn
   params:
     variation: 0.125
   sounds:

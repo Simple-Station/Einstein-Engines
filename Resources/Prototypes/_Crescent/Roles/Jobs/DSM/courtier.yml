@@ -12,7 +12,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
-        - Shadowkin
+        - Voidborn
     - !type:FactionRequirement
       factionID: "DSM"
   weight: 78
