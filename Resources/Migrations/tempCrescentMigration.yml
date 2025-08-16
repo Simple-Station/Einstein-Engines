@@ -1,6 +1,6 @@
 # This file holds all of the temporary migrations to get AdventureRule to actually load.
 # This is bad. Please port these properly or replace them in the map.
-
+SpawnPointKommissar: null
 ThrusterUnwelded: Thruster
 
 ActionToggleMagbootsSyndie: null

@@ -151,3 +151,36 @@
         - type: StationNameSetup
           mapNameTemplate: 'Derelict Waystation'
 
+- type: gameMap
+  id: TribalScrapyard
+  mapName: 'Tribal Scrapyard'
+  mapPath: /Maps/_Crescent/Explorables/tribalscrapyard.yml
+  minPlayers: 0
+  stations:
+    TribalScrapyard:
+      stationProto: StandardCrescentPOI
+      gridComponents:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: pointofinterest
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Tribal Scrapyard'
+          
+- type: gameMap
+  id: AncientBattlefield
+  mapName: 'Ancient Battlefield'
+  mapPath: /Maps/_Crescent/Explorables/ancientbattlefield.yml
+  minPlayers: 0
+  stations:
+    AncientBattlefield:
+      stationProto: StandardCrescentPOI
+      gridComponents:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: pointofinterest
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Ancient Battlefield'
