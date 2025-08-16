@@ -243,10 +243,6 @@
       prob: 0.5
     - id: AsteroidSalvageNFMedium
       prob: 0.5
-    - id: AsteroidSalvageNFLarge
-      prob: 0.25
-    - id: AsteroidSalvageNFIceLarge
-      prob: 0.25
     - id: AsteroidSalvageNFHuge
       prob: 0.03
     - id: AsteroidSalvageNFIceHuge
