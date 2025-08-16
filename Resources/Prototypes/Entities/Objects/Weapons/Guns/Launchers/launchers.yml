@@ -13,6 +13,8 @@
     - Back
   - type: Item
     size: Huge
+    shape:
+    - 0,0,4,2
   - type: StaticPrice
     price: 500
   - type: ContainerContainer
@@ -36,7 +38,7 @@
   - type: Execution
 
 - type: entity
-  name: PTA 10AX Thumper 40mm
+  name: PTA 10AX Chinalake 40mm
   parent: [BaseWeaponLauncher, BaseGunWieldable]
   id: WeaponLauncherChinaLake
   description: A pump action grenade launcher manufactured by Pang Tai Arms.
@@ -85,6 +87,9 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/rpg7.rsi
   - type: GunRequiresWield
+  - type: Item
+    shape:
+    - 0,0,5,2
   - type: Gun
     fireRate: 0.5
     soundGunshot:

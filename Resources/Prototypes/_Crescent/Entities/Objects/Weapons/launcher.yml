@@ -1,5 +1,5 @@
 - type: entity
-  name: NCWL GPGL-94 40mm
+  name: NCWL GPGL-94 Thumper 40mm
   parent: [BaseWeaponLauncher, BaseGunWieldable]
   id: WeaponLauncherGM94
   description: An NCWL grenade launcher based on ancient schematics.
@@ -15,6 +15,9 @@
     - Back
     - suitStorage
   - type: AmmoCounter
+  - type: Item
+    shape:
+    - 0,0,4,2
   - type: Gun
     fireRate: 1
     selectedMode: SemiAuto
@@ -49,7 +52,7 @@
   - type: Item
     size: Huge
     shape:
-    - 0,0,7,2
+    - 0,0,5,2
   - type: GunRequiresWield
   - type: Gun
     selectedMode: SemiAuto
@@ -94,7 +97,7 @@
   name: SHI LAM-17 84mm
   parent: [BaseWeaponLauncher, BaseGunWieldable]
   id: WeaponLauncherDisposableRocket
-  description: A single-shot, throwaway rocket launcher designed by Shinora for combating mechs in the field.
+  description: A single-shot, throwaway rocket launcher designed by Shinora for combating mechs in the field. Quite compact when folded.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/disposablerpg.rsi
@@ -104,6 +107,9 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/disposablerpg.rsi
   - type: GunRequiresWield
+  - type: Item
+    shape:
+    - 0,0,5,2
   - type: Gun
     fireRate: 0.5
     soundGunshot:

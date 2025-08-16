@@ -1,7 +1,7 @@
 - type: cargoProduct
   id: TakemuraPangtai
   icon:
-    sprite: _Crescent/Objects/Weapons/takemura.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/takemura.rsi
     state: icon
   product: CratePangtaiTakemura
   cost: 10000
@@ -11,10 +11,50 @@
 - type: cargoProduct
   id: PozharPangtai
   icon:
-    sprite: Objects/Weapons/Guns/Shotguns/bulldog.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/pozhar.rsi
     state: icon
   product: CratePangtaiPozhar
   cost: 15000
+  category: cargoproduct-category-name-military
+  group: pangtai
+
+- type: cargoProduct
+  id: CratePangtaiVector
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/vektor.rsi
+    state: icon
+  product: CratePangtaiVektor
+  cost: 2500
+  category: cargoproduct-category-name-military
+  group: pangtai
+
+- type: cargoProduct
+  id: TwinshotPangtai
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/twinshot.rsi
+    state: icon
+  product: CratePangtaiTwinshot
+  cost: 15000
+  category: cargoproduct-category-name-military
+  group: pangtai
+
+- type: cargoProduct
+  id: KarabinPangtai
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/karabin.rsi
+    state: icon
+  product: CratePangtaiKarabin
+  cost: 20000
+  category: cargoproduct-category-name-military
+  group: pangtai
+
+- type: cargoProduct
+  id: LancerPangtai
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/railgun.rsi
+    state: icon
+  product: CratePangtaiLancer
+  cost: 60000
   category: cargoproduct-category-name-military
   group: pangtai
 
@@ -31,7 +71,7 @@
 - type: cargoProduct
   id: HalyadPangtai
   icon:
-    sprite: _Crescent/Objects/Weapons/halyad.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/halyad.rsi
     state: icon
   product: CratePangtaiHalyad
   cost: 35000
@@ -39,19 +79,9 @@
   group: pangtai
 
 - type: cargoProduct
-  id: BarghestPangtai
-  icon:
-    sprite: _Crescent/Objects/Weapons/barghest.rsi
-    state: icon
-  product: CratePangtaiBarghest
-  cost: 37500
-  category: cargoproduct-category-name-military
-  group: pangtai
-
-- type: cargoProduct
   id: CheshyrePangtai
   icon:
-    sprite: _Crescent/Objects/Weapons/cheshyre.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/cheshyre.rsi
     state: icon
   product: CratePangtaiCheshyre
   cost: 12500
@@ -61,7 +91,7 @@
 - type: cargoProduct
   id: DrozdPangtai
   icon:
-    sprite: Objects/Weapons/Guns/SMGs/drozd.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/drozd.rsi
     state: icon
   product: CratePangtaiDrozd
   cost: 15000
@@ -71,7 +101,7 @@
 - type: cargoProduct
   id: RongyuPangtai
   icon:
-    sprite: _Crescent/Objects/Weapons/rongyu.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/rongyu.rsi
     state: icon
   product: CratePangtaiRongyu
   cost: 2500
@@ -81,7 +111,7 @@
 - type: cargoProduct
   id: ViperPangtai
   icon:
-    sprite: Objects/Weapons/Guns/Pistols/viper.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/viper.rsi
     state: icon
   product: CratePangtaiViper
   cost: 5000
@@ -101,7 +131,7 @@
 - type: cargoProduct
   id: CorvidPangtai
   icon:
-    sprite: _Crescent/Clothing/Corpo/Head/corvid.rsi
+    sprite: _Crescent/Clothing/Corpo/OuterClothing/pangtaivest.rsi
     state: icon
   product: CratePangtaiLowArmor
   cost: 2500
@@ -111,40 +141,71 @@
 - type: cargoProduct
   id: HardsuitPangtai
   icon:
-    sprite: _Crescent/Clothing/Corpo/Head/corvid.rsi
+    sprite: _Crescent/Clothing/Corpo/OuterClothing/zhanshi.rsi
     state: icon
-  product: CratePangtaiHighArmor
+  product: CratePangtaiHardsuitArmor
   cost: 5000
   category: cargoproduct-category-name-military
   group: pangtai
 
 - type: cargoProduct
-  id: KevlarPangTai
+  id: ImpactGrenadePangTai
   icon:
-    sprite: _Crescent/Clothing/armorSprites.rsi
-    state: kevlar
-  product: CrateSecurityArmorKevlarPlates
-  cost: 20000
+    sprite: _Crescent/Objects/Weapons/Grenades/pta_impact.rsi
+    state: base
+  product: CratePangtaiImpactGrenade
+  cost: 8000
   category: cargoproduct-category-name-military
   group: pangtai
 
 - type: cargoProduct
-  id: EncasedKevlarPangTai
+  id: WPSmokeGrenadePangTai
   icon:
-    sprite: _Crescent/Clothing/armorSprites.rsi
-    state: PCK
-  product: CrateSecurityArmorPEKPlates
-  cost: 25000
+    sprite: _Crescent/Objects/Weapons/Grenades/pta_wp.rsi
+    state: base
+  product: CratePangtaiWPSmokeGrenade
+  cost: 8000
   category: cargoproduct-category-name-military
   group: pangtai
 
 - type: cargoProduct
-  id: CeramicPangTai
+  id: ChinalakePangTai
   icon:
-    sprite: _Crescent/Clothing/armorSprites.rsi
-    state: ceramic
-  product: CrateSecurityArmorCeramicPlates
-  cost: 4500
+    sprite: _Crescent/Objects/Weapons/Guns/chinalake.rsi
+    state: base
+  product: CratePangtaiChinalake
+  cost: 17500
   category: cargoproduct-category-name-military
   group: pangtai
+
+
+#- type: cargoProduct
+#  id: KevlarPangTai
+#  icon:
+#    sprite: _Crescent/Clothing/armorSprites.rsi
+#    state: kevlar
+#  product: CrateSecurityArmorKevlarPlates
+#  cost: 20000
+#  category: cargoproduct-category-name-military
+#  group: pangtai
+
+#- type: cargoProduct
+#  id: EncasedKevlarPangTai
+#  icon:
+#    sprite: _Crescent/Clothing/armorSprites.rsi
+#    state: PCK
+#  product: CrateSecurityArmorPEKPlates
+#  cost: 25000
+#  category: cargoproduct-category-name-military
+#  group: pangtai
+
+#- type: cargoProduct
+#  id: CeramicPangTai
+#  icon:
+#    sprite: _Crescent/Clothing/armorSprites.rsi
+#    state: ceramic
+#  product: CrateSecurityArmorCeramicPlates
+#  cost: 4500
+#  category: cargoproduct-category-name-military
+#  group: pangtai
 
