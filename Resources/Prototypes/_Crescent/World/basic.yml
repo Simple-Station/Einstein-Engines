@@ -236,17 +236,17 @@
   - type: SimpleDebrisSelector
     debrisTable:
     - id: AsteroidDebrisNFIceMedium
-      prob: 0.1
+      prob: 0.5
     - id: AsteroidSalvageNFSmall
-      prob: 0.1
+      prob: 0.5
     - id: AsteroidSalvageNFIceSmall
-      prob: 0.1
+      prob: 0.5
     - id: AsteroidSalvageNFMedium
-      prob: 0.08
+      prob: 0.5
     - id: AsteroidSalvageNFLarge
-      prob: 0.05
+      prob: 0.25
     - id: AsteroidSalvageNFIceLarge
-      prob: 0.05
+      prob: 0.25
     - id: AsteroidSalvageNFHuge
       prob: 0.03
     - id: AsteroidSalvageNFIceHuge
