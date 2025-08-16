@@ -1,10 +1,10 @@
 ﻿- type: spaceBiome
   id: GraveyardWrecks
   priority: 9000
-  minX: 19 # -3
-  maxX: 25 # +3
-  minY: 26 # -3
-  maxY: 32 # +3
+  minX: 28
+  maxX: 37
+  minY: 39
+  maxY: 48
   noiseRanges: {}
   chunkComponents:
   - type: DebrisFeaturePlacerController
@@ -18,12 +18,6 @@
       prob: 1
     - id: ScrapDebrisLarge
       prob: 1
-    #- id: ScrapDebrisExtraLarge
-    #  prob: 0.3
-    #- id: ScrapDebrisExtraLargeScattered
-    #  prob: 0.3
-    #- id: ScrapDebrisHuge
-    #  prob: 0.15
   - type: NoiseRangeCarver
     ranges:
     - 0.4, 0.6
@@ -32,10 +26,10 @@
 - type: spaceBiome
   id: BalreskaWrecks
   priority: 9000
-  minX: 5 # -3
-  maxX: 11 # +3
-  minY: -50 # -3
-  maxY: -44 # +3
+  minX: 7
+  maxX: 16
+  minY: -75
+  maxY: -66
   noiseRanges: {}
   chunkComponents:
   - type: DebrisFeaturePlacerController
@@ -49,12 +43,6 @@
       prob: 1
     - id: ScrapDebrisLarge
       prob: 1
-    #- id: ScrapDebrisExtraLarge
-    #  prob: 0.3
-    #- id: ScrapDebrisExtraLargeScattered
-    #  prob: 0.3
-    #- id: ScrapDebrisHuge
-    #  prob: 0.15
   - type: NoiseRangeCarver
     ranges:
     - 0.4, 0.6
@@ -63,10 +51,10 @@
 - type: spaceBiome
   id: AncientBattlefieldWrecks
   priority: 9000
-  minX: -1 # -3
-  maxX: 5 # +3
-  minY: 36 # -3
-  maxY: 42 # +3
+  minX: -1
+  maxX: 7
+  minY: 54
+  maxY: 63
   noiseRanges: {}
   chunkComponents:
   - type: DebrisFeaturePlacerController
@@ -80,12 +68,6 @@
       prob: 1
     - id: ScrapDebrisLarge
       prob: 1
-    #- id: ScrapDebrisExtraLarge
-    #  prob: 0.3
-    #- id: ScrapDebrisExtraLargeScattered
-    #  prob: 0.3
-    #- id: ScrapDebrisHuge
-    #  prob: 0.15
   - type: NoiseRangeCarver
     ranges:
     - 0.4, 0.6
@@ -94,10 +76,10 @@
 - type: spaceBiome
   id: HeartlandsWrecks
   priority: 9000
-  minX: 14 # -3
-  maxX: 20 # +3
-  minY: -31 # -3
-  maxY: -25 # +3
+  minX: 21
+  maxX: 30
+  minY: -46
+  maxY: -37
   noiseRanges: {}
   chunkComponents:
   - type: DebrisFeaturePlacerController
@@ -111,12 +93,6 @@
       prob: 1
     - id: ScrapDebrisLarge
       prob: 1
-    #- id: ScrapDebrisExtraLarge
-    #  prob: 0.3
-    #- id: ScrapDebrisExtraLargeScattered
-    #  prob: 0.3
-    #- id: ScrapDebrisHuge
-    #  prob: 0.15
   - type: NoiseRangeCarver
     ranges:
     - 0.4, 0.6
@@ -125,10 +101,10 @@
 - type: spaceBiome
   id: AsteroidsStandardTaypanOne
   priority: 9000
-  minX: -8 # -3
-  maxX: -2 # +3
-  minY: -34 # -3
-  maxY: -28 # +3
+  minX: -12
+  maxX: -3
+  minY: -51
+  maxY: -42
   noiseRanges: {}
   chunkComponents:
   - type: DebrisFeaturePlacerController
@@ -173,10 +149,10 @@
 - type: spaceBiome
   id: AsteroidsStandardTaypanTwo
   priority: 9000
-  minX: 18 # -3
-  maxX: 24 # +3
-  minY: -17 # -3
-  maxY: -11 # +3
+  minX: 27
+  maxX: 36
+  minY: -26
+  maxY: -16
   noiseRanges: {}
   chunkComponents:
   - type: DebrisFeaturePlacerController
@@ -221,10 +197,10 @@
 - type: spaceBiome
   id: Craster
   priority: 9000
-  minX: -58 # -3
-  maxX: -52 # +3
-  minY: 5 # -3
-  maxY: 11 # +3
+  minX: -87
+  maxX: -78
+  minY: 7
+  maxY: 16
   noiseRanges: {}
   chunkComponents:
   - type: DebrisFeaturePlacerController

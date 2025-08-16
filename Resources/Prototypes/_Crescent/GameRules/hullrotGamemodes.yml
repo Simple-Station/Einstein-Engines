@@ -36,14 +36,14 @@
     gameMapsByID:
       PortBalreska:
         gameMapID: PortBalreska
-        posX: 1000
-        posY: -6000
+        posX: 1500
+        posY: -9000
         IFFColor: Orange
         IFFFaction: NCWL
       Dochenskaya:
         gameMapID: Dochenskaya
-        posX: 3500
-        posY: 4400
+        posX: 5250
+        posY: 6600
         IFFColor: IndianRed
         IFFFaction: TFSC
       GliessSanto:
@@ -53,86 +53,86 @@
         IFFColor: White
       Tatsumoto:
         gameMapID: Tatsumoto
-        posX: 4000
+        posX: 6000
         posY: 0
         IFFColor: White
         IFFFaction: SHI
       Countsman:
         gameMapID: Countsman
-        posX: -3200
-        posY: 6000
+        posX: -4800
+        posY: 9000
         IFFColor: Purple
         IFFFaction: DSM
-#      Aasim: #reenable whenever TAP is gameplay ready
-#        gameMapID: Aasim
-#        posX: 3000
-#        posY: -3000
-#      Wisp: #CyberdawnMothership whenever we have the map
-#        gameMapID: Wisp #CyberdawnMothership
-#        posX: 1000
-#        posY: 2400
+      #      Aasim: #reenable whenever TAP is gameplay ready
+      #        gameMapID: Aasim
+      #        posX: 4500
+      #        posY: -4500
+      #      Wisp: #CyberdawnMothership whenever we have the map
+      #        gameMapID: Wisp #CyberdawnMothership
+      #        posX: 1500
+      #        posY: 3600
       Jackal:
         gameMapID: Jackal
-        posX: -7000
-        posY: -3000
+        posX: -10500
+        posY: -4500
       Graveyard:
         gameMapID: Graveyard
-        posX: 2800
-        posY: 3800
+        posX: 4200
+        posY: 5700
       StrandedShip:
         gameMapID: StrandedShip
-        posX: 2850
-        posY: 3620
+        posX: 4275
+        posY: 5430
         HideIFF: true
       Fighter1:
         gameMapID: Fighter1
-        posX: 3330
-        posY: 4220
+        posX: 4995
+        posY: 6330
         HideIFF: true
       Fighter2:
         gameMapID: Fighter2
-        posX: 3321
-        posY: 4350
+        posX: 4981.5
+        posY: 6525
         HideIFF: true
       SolarSailorDerelict:
         gameMapID: SolarSailorDerelict
-        posX: 3350
-        posY: 3470
+        posX: 5025
+        posY: 5205
         HideIFF: true
       ImperialHaulerWreck:
         gameMapID: ImperialHaulerWreck
-        posX: 3320
-        posY: 4050
+        posX: 4980
+        posY: 6075
         HideIFF: true
       FogwreckedDerelict:
         gameMapID: FogwreckedDerelict
-        posX: 1200
-        posY: -7000
+        posX: 1800
+        posY: -10500
         HideIFF: true
       Craster:
         gameMapID: Craster
-        posX: -7000
-        posY: 1000
+        posX: -10500
+        posY: 1500
       Taypan1AsteroidBelt:
         gameMapID: Taypan1AsteroidBelt
-        posX: -700
-        posY: -4000
+        posX: -1050
+        posY: -6000
       Taypan2AsteroidBelt:
         gameMapID: Taypan2AsteroidBelt
-        posX: 2700
-        posY: -1800
+        posX: 4050
+        posY: -2700
       FaintSignal:
         gameMapID: FaintSignal
-        posX: 2000
-        posY: 1000
+        posX: 3000
+        posY: 1500
       TribalScrapyard:
         gameMapID: TribalScrapyard
-        posX: 2400
-        posY: -3600
+        posX: 3600
+        posY: -5400
       AncientBattlefield:
         gameMapID: AncientBattlefield
-        posX: 400
-        posY: 5000
+        posX: 600
+        posY: 7500
 
 - type: gamePreset
   id: VladzenaJackal
