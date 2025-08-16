@@ -648,7 +648,7 @@
 - type: entity
   parent: BaseTurretShipgun
   id: BaseWeaponTurretLancer
-  name: light 'Lancer' MRM missile system
+  name: medium 'Lancer' MRM missile system
   components:
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/lancemissile.rsi

@@ -1,0 +1,16 @@
+- type: gameMap
+  id: Craster
+  mapName: 'Crasters Grave'
+  mapPath: /Maps/_Crescent/Explorables/craster.yml
+  minPlayers: 0
+  stations:
+    Craster:
+      stationProto: StandardCrescentPOI
+      gridComponents:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: asteroid
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Crasters Grave'

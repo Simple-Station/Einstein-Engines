@@ -1,4 +1,4 @@
-#ONION
+# ONION
 
 thankyou-onion-1 = C-c-come aga*BZZT*in.
 thankyou-onion-2 = 4 DA EMPRAH. Just kidding. Come again.

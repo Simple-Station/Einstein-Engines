@@ -1,4 +1,4 @@
-#Discipline Names
+# Discipline Names
 
 research-discipline-mechatronics = Engineering
 research-discipline-electronics = Mechatronics
@@ -10,9 +10,9 @@ research-discipline-communard = Communard
 research-discipline-imperial = Imperial
 research-discipline-corporate = Shinohara
 
-#Node Names
+# Node Names
 
-#ASTRONAUTICS
+# ASTRONAUTICS
 research-technology-astronautics-basic-flight = Basic Avionics
 research-technology-astronautics-microgravity = Microgravity
 research-technology-astronautics-basiceva = Basic EVA
@@ -20,7 +20,7 @@ research-technology-astronautics-advancedeva = Specialized EVA
 research-technology-astronautics-shipyardconstruction = Rapid Vessel Construction Device
 research-technology-astronautics-modsuit = MODSuit
 
-#MECHATRONICS
+# MECHATRONICS
 research-technology-mechatronics-parts = Construction Parts
 research-technology-mechatronics-armaments = Basic Infantry Armaments
 research-technology-biochemical-surgerytools = Basic Surgery Equipment
@@ -31,12 +31,12 @@ research-technology-biochemical-defibrillator = Defibrillator
 research-technology-biochemical-stasis = Stasis Equipment
 research-technology-biochemical-hypo = Hypochemistry
 
-#ELECTRONICS
+# ELECTRONICS
 research-technology-electronics-materials = Basic Components
 research-technology-electronics-defense = Civilian Defense Pistols
 research-technology-electronics-terminus = Ogre Shocktrooper Armaments
 
-#INTERDYNE
+# INTERDYNE
 research-technology-interdyne-clothing = Basic Clothing
 research-technology-interdyne-armor = TraumaSec Armor
 research-technology-interdyne-defib = Portable Defibrillator
@@ -49,7 +49,7 @@ research-technology-interdyne-adrenalaccelerator = TT-86 Adrenal Accelerator
 research-technology-interdyne-bloodpump = TT-92 Bloodpump
 research-technology-interdyne-pryarms = TT-42 Pryarms
 
-#CYBERDAWN
+# CYBERDAWN
 research-technology-cyberdawn-clothing = Cyberdawn Clothing
 research-technology-cyberdawn-basicballistics = Basic Syndicate Ballistics
 research-technology-cyberdawn-powersink = Power Sink
@@ -65,7 +65,7 @@ research-technology-cyberdawn-egui = Egui Stealth Tacsuit
 research-technology-cyberdawn-psybreaker = Anti-Psionic Armaments
 research-technology-cyberdawn-thermals = Thermal Vision Goggles
 
-#DSM
+# DSM
 research-technology-imperial-basicclothes = Basic Tailoring
 research-technology-imperial-advancedclothes = Advanced Tailoring
 research-technology-imperial-basicarmor = Basic Armor Fabrication
@@ -86,7 +86,7 @@ research-technology-imperial-bomblauncher = M320 Launcher
 research-technology-imperial-triumphant = Imperial Cruiser
 research-technology-imperial-padparadscha = Imperial Siege Battlecruiser
 
-#NCWL
+# NCWL
 research-technology-communard-clothes = Communard Clothes
 research-technology-communard-infantry = Communard Infantry Equipment
 research-technology-communard-riotgear = Communard Riot Gear
@@ -102,7 +102,7 @@ research-technology-communard-stern = Communard Siege Battlecruiser
 research-technology-communard-bogatyr = Communard Battle Mech
 research-technology-communard-commienaut = Communard Juggernaut Suit
 
-#SHI
+# SHI
 research-technology-shinohara-clothes = Corporate Uniforms
 research-technology-shinohara-security = Corporate Security
 research-technology-shinohara-highsec = Corporate HighSec

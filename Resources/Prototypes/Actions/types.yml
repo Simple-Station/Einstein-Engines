@@ -305,15 +305,15 @@
     event: !type:SleepActionEvent
 
 - type: entity
-  id: ShadowkinActionSleep
-  name: action-name-shadowkin-rest
-  description: action-description-shadowkin-rest
+  id: VoidbornActionSleep
+  name: action-name-voidborn-rest
+  description: action-description-voidborn-rest
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     checkCanInteract: false
     checkConsciousness: false
-    icon: { sprite: Interface/Actions/shadowkin_icons.rsi, state: rest }
+    icon: { sprite: Interface/Actions/voidborn_icons.rsi, state: rest }
     event: !type:SleepActionEvent
 
 - type: entity

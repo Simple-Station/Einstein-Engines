@@ -130,8 +130,9 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 21
-        Blunt: 1
+        Piercing: 24
+    harmorPenetration: 6.5
+    stoppingPower : 2
 
   # Machines
 # Engineering

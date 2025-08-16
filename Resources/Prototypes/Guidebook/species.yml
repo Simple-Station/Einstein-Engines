@@ -12,7 +12,7 @@
     - SlimePerson
     - IPCs
     - Harpy
-    - Shadowkin
+    - Voidborn
     - Plasmaman
 #    - Chitinid
     - Tajaran
@@ -66,9 +66,9 @@
   text: "/ServerInfo/Guidebook/Mobs/Harpy.xml"
 
 - type: guideEntry
-  id: Shadowkin
-  name: species-name-shadowkin
-  text: "/ServerInfo/Guidebook/Mobs/Shadowkin.xml"
+  id: Voidborn
+  name: species-name-voidborn
+  text: "/ServerInfo/Guidebook/Mobs/Voidborn.xml"
 
 - type: guideEntry
   id: Tajaran
@@ -79,7 +79,7 @@
   id: Plasmaman
   name: species-name-plasmaman
   text: "/ServerInfo/Guidebook/Mobs/Plasmaman.xml"
-  
+
 - type: guideEntry
   id: Xelthia
   name: species-name-xelthia

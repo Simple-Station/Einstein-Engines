@@ -10,6 +10,8 @@
     sprite: _Crescent/Objects/Weapons/Guns/twinshot.rsi
   - type: Item
     size: Huge
+    shape:
+    - 0,0,4,1
     sprite: _Crescent/Objects/Weapons/Guns/twinshot.rsi
   - type: GunRequiresWield
   - type: Gun
@@ -63,10 +65,13 @@
   name: NT SPAS-13 12g
   parent: [BaseWeaponShotgun, BaseGunWieldable]
   id: WeaponShotgunSpas
-  description: A premium combat shotgun ripped from ancient Terran designs. Originates from the now-defunct NanoTrasen.
+  description: A premium combat shotgun with a folding stock. Originates from the now-defunct NanoTrasen.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/spas13.rsi
+  - type: Item
+    shape:
+    - 0,0,3,1
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/spas13.rsi
   - type: BallisticAmmoProvider
