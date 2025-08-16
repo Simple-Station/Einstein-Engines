@@ -208,7 +208,7 @@
   id: LizardChestTiger
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Reptilian, Shadowkin, Lamia]
+  speciesRestriction: [Reptilian, Voidborn, Lamia]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: body_tiger

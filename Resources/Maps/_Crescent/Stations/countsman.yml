@@ -167,7 +167,7 @@ entities:
     - type: OccluderTree
     - type: SpreaderGrid
     - type: Shuttle
-      baseMaxLinearVelocity: 15
+      baseMaxLinearVelocity: 7.5
     - type: GridPathfinding
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
@@ -64337,7 +64337,7 @@ entities:
     - type: Transform
       pos: 12.5,-18.5
       parent: 1
-- proto: OreProcessorIndustrial
+- proto: OreProcessor
   entities:
   - uid: 5703
     components:

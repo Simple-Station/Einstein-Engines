@@ -300,8 +300,8 @@
       spreadChance: 0 #appears during pulsation. It shouldnt spreading.
 
 - type: entity
-  name: Shadowkin Haze
-  id: ShadowkinShadow
+  name: Voidborn Haze
+  id: VoidbornShadow
   parent: ShadowKudzuWeak
   components:
     - type: RandomSpawner

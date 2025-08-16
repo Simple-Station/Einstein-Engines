@@ -1,0 +1,182 @@
+- type: species
+  id: Voidborn
+  name: species-name-voidborn
+  roundStart: true # Are you happy with yourself?
+  prototype: MobVoidborn
+  sprites: MobVoidbornSprites
+  defaultSkinTone: "#FFFFFF"
+  markingLimits: MobVoidbornMarkingLimits
+  dollPrototype: MobVoidbornDummy
+  skinColoration: Hues
+  naming: First
+  maleFirstNames: names_voidborn
+  femaleFirstNames: names_voidborn
+  minAge: 18
+  maxAge: 250
+  youngAge: 80
+  oldAge: 175
+  sexes:
+    - Unsexed
+  minHeight: 1
+  defaultHeight: 1
+  maxHeight: 1
+  minWidth: 1
+  defaultWidth: 1
+  maxWidth: 1
+
+- type: speciesBaseSprites
+  id: MobVoidbornSprites
+  sprites:
+    Head: MobVoidbornHead
+    Snout: MobVoidbornAnyMarkingFollowSkin
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
+    HeadTop: MobVoidbornAnyMarking
+    HeadSide: MobVoidbornAnyMarkingFollowSkin
+    Tail: MobVoidbornAnyMarkingFollowSkin
+    Chest: MobVoidbornTorso
+    Eyes: MobVoidbornEyes
+    LArm: MobVoidbornLArm
+    RArm: MobVoidbornRArm
+    LHand: MobVoidbornLHand
+    RHand: MobVoidbornRHand
+    LLeg: MobVoidbornLLeg
+    RLeg: MobVoidbornRLeg
+    LFoot: MobVoidbornLFoot
+    RFoot: MobVoidbornRFoot
+
+- type: markingPoints
+  id: MobVoidbornMarkingLimits
+  points:
+    Tail:
+      points: 1
+      required: true
+      defaultMarkings: [TailVoidborn]
+    HeadTop:
+      points: 1
+      required: true
+      defaultMarkings: [EarsVoidborn]
+    Chest:
+      points: 6
+      required: false
+    RightLeg:
+      points: 6
+      required: false
+    RightFoot:
+      points: 6
+      required: false
+    LeftLeg:
+      points: 6
+      required: false
+    LeftFoot:
+      points: 6
+      required: false
+    RightArm:
+      points: 6
+      required: false
+    RightHand:
+      points: 6
+      required: false
+    LeftArm:
+      points: 6
+      required: false
+    LeftHand:
+      points: 6
+      required: false
+
+- type: humanoidBaseSprite
+  id: MobVoidbornAnyMarkingFollowSkin
+  markingsMatchSkin: true
+
+- type: humanoidBaseSprite
+  id: MobVoidbornAnyMarking
+
+- type: humanoidBaseSprite
+  id: MobVoidbornHead
+  baseSprite:
+    sprite: Mobs/Species/Voidborn/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobVoidbornHeadMale
+  baseSprite:
+    sprite: Mobs/Species/Voidborn/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobVoidbornHeadFemale
+  baseSprite:
+    sprite: Mobs/Species/Voidborn/parts.rsi
+    state: head_f
+
+- type: humanoidBaseSprite
+  id: MobVoidbornTorso
+  baseSprite:
+    sprite: Mobs/Species/Voidborn/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: MobVoidbornTorsoMale
+  baseSprite:
+    sprite: Mobs/Species/Voidborn/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: MobVoidbornTorsoFemale
+  baseSprite:
+    sprite: Mobs/Species/Voidborn/parts.rsi
+    state: torso_f
+
+- type: humanoidBaseSprite
+  id: MobVoidbornLLeg
+  baseSprite:
+    sprite: Mobs/Species/Voidborn/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: MobVoidbornLHand
+  baseSprite:
+    sprite: Mobs/Species/Voidborn/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: MobVoidbornEyes
+  baseSprite:
+    sprite: Mobs/Species/Voidborn/parts.rsi
+    state: eyes
+
+- type: humanoidBaseSprite
+  id: MobVoidbornLArm
+  baseSprite:
+    sprite: Mobs/Species/Voidborn/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: MobVoidbornLFoot
+  baseSprite:
+    sprite: Mobs/Species/Voidborn/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: MobVoidbornRLeg
+  baseSprite:
+    sprite: Mobs/Species/Voidborn/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: MobVoidbornRHand
+  baseSprite:
+    sprite: Mobs/Species/Voidborn/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: MobVoidbornRArm
+  baseSprite:
+    sprite: Mobs/Species/Voidborn/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: MobVoidbornRFoot
+  baseSprite:
+    sprite: Mobs/Species/Voidborn/parts.rsi
+    state: r_foot

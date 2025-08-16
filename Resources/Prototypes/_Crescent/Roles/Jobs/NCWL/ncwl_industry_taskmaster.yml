@@ -11,7 +11,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
-        - Shadowkin
+        - Voidborn
     - !type:CharacterOverallTimeRequirement
       min: 20000
     - !type:FactionRequirement
@@ -33,6 +33,13 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-logi-leader
+      - type: LanguageKnowledge
+        speaks:
+          - Dockta
+          - Tradeband
+        understands:
+          - Dockta
+          - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain

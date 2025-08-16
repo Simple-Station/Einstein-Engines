@@ -370,7 +370,7 @@
     Holy: 1.5
 
 - type: damageModifierSet
-  id: Shadowkin
+  id: Voidborn
   coefficients:
     Slash: 1.2
     Piercing: 1.1
