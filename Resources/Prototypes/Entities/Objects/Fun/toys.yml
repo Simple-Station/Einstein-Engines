@@ -2008,13 +2008,13 @@
 
 - type: entity
   parent: BasePlushie
-  id: PlushieShadowkin
-  name: shadowkin plushie
-  description: A plushie of a Shadowkin. It's very soft.
+  id: PlushieVoidborn
+  name: voidborn plushie
+  description: A plushie of a Voidborn. It's very soft.
   components:
     - type: Sprite
       sprite: Objects/Fun/toys.rsi
-      state: shadowkin
+      state: voidborn
 
 - type: entity
   parent: BasePlushie

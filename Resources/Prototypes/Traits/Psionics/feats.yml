@@ -19,7 +19,7 @@
       inverted: true
       species:
         - Oni
-        - Shadowkin
+        - Voidborn
   functions:
     - !type:TraitReplaceComponent
       components:

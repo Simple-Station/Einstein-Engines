@@ -1,0 +1,50 @@
+- type: body
+  id: Voidborn
+  name: "Voidborn"
+  root: torso
+  slots:
+    head:
+      part: HeadVoidborn
+      connections:
+      - torso
+      organs:
+        brain: OrganVoidbornBrain
+        eyes: OrganVoidbornEyes
+    torso:
+      part: TorsoVoidborn
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head # Shitmed
+      organs:
+        heart: OrganVoidbornHeart
+        stomach: OrganVoidbornStomach
+        liver:  OrganVoidbornLiver
+        kidneys: OrganVoidbornKidneys
+        lungs: OrganVoidbornCore
+    right arm:
+      part: RightArmVoidborn
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmVoidborn
+      connections:
+      - left hand
+    right hand:
+      part: RightHandVoidborn
+    left hand:
+      part: LeftHandVoidborn
+    right leg:
+      part: RightLegVoidborn
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegVoidborn
+      connections:
+      - left foot
+    right foot:
+      part: RightFootVoidborn
+    left foot:
+      part: LeftFootVoidborn

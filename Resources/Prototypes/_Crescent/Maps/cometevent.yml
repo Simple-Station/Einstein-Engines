@@ -19,6 +19,6 @@
           overflowJobs: []
           availableJobs:
             CommandantNCWL: [ 1, 1 ]
-            HomeguardLeaderNCWL: [ 1, 1 ]
-            CaptainNCWL: [ 5, 5 ]
-            SoldatNCWL: [ 10, 10 ]
+            KommissarNCWL: [ 1, 1 ]
+            FleetkapitanNCWL: [ 5, 5 ]
+            PartisanNCWL: [ 10, 10 ]
