@@ -382,3 +382,58 @@
   - type: Tag
     tags:
     - ScoutMechEquipment
+
+- type: entity
+  id: WeaponMechCombatPlasmaRifle
+  name: IRM 'Verdict' 250c exosuit plasma repeater
+  description: An arm-mounted exosuit sized plasma repeater that draws from the mech connected power supply. Developed by the Scribes Guild as one of their first projects in understanding NanoTrasens technology, producing a weapon beloved by the Imperial Cavalry for battlefields despite its often wasteful power use.
+  suffix: Mech Weapon, Gun, Combat, Plasma Repeater
+  parent: [ BaseMechWeaponRange, ScoutMechEquipment ]
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: plasmarifle
+  - type: Gun
+    fireRate: 0.8
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/ship_svalinn.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: ExosuitPlasmaBoltLight
+    fireCost: 30
+  - type: Appearance
+  - type: AmmoCounter
+  - type: Tag
+    tags:
+    - ScoutMechEquipment
+
+- type: entity
+  id: WeaponMechCombatPlasmaCannon
+  name: IRM 'Judgement' 600c exosuit plasma cannon
+  description: Physical proof of the Imperial industry taken form in an experimental exosuit-sized plasma cannon linked to a mech power supply. Through cleverly designed capacitors, and cycling heat-banks, it is able to fire agitated plasma hot enough to burn through military hulls but is liable to completely drain its power supply with even sparse usage.
+  suffix: Mech Weapon, Gun, Combat, Plasma Cannon
+  parent: [ BaseMechWeaponRange, MediumMechEquipment ]
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: plasmacannon
+  - type: Gun
+    fireRate: 0.5
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/ship_svalinn.ogg
+  - type: Battery
+    maxCharge: 250
+    startingCharge: 250
+  - type: ProjectileBatteryAmmoProvider
+    proto: ExosuitPlasmaBoltHeavy
+    fireCost: 250
+  - type: Appearance
+  - type: AmmoCounter
+  - type: Tag
+    tags:
+    - MediumMechEquipment

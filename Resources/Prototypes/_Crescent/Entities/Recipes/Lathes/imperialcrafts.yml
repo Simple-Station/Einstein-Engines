@@ -426,6 +426,31 @@
     Tungsten: 1500
 
 - type: latheRecipe
+  id: WeaponMechCombatPlasmaRifle
+  result: WeaponMechCombatPlasmaRifle
+  completetime: 2
+  materials:
+    Steel: 2000
+    Plasma: 1000
+    Copper: 3000
+    BasicElectronics: 3500
+    BasicMechatronics: 1000
+    WeakLaserLocus: 5000
+
+- type: latheRecipe
+  id: WeaponMechCombatPlasmaCannon
+  result: WeaponMechCombatPlasmaCannon
+  completetime: 2
+  materials:
+    Steel: 5000
+    Plasma: 2000
+    Copper: 2500
+    Tungsten: 2500
+    AdvancedElectronics: 3000
+    AdvancedMechatronics: 1500
+    LaserLocus: 4000
+
+- type: latheRecipe
   id: LaelapsLPC
   result: ShipVoucherLaelaps
   completetime: 1
