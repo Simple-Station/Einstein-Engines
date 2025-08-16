@@ -103,13 +103,13 @@
             - LatentPsychic
 
 - type: trait
-  id: ShadowkinBlackeye
+  id: VoidbornBlackeye
   category: Mental
   points: 5
   functions:
     - !type:TraitReplaceComponent
       components:
-        - type: Shadowkin
+        - type: Voidborn
           blackeyeSpawn: true
     - !type:TraitRemoveComponent
       components:
@@ -117,7 +117,7 @@
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
-        - Shadowkin
+        - Voidborn
 
 - type: trait
   id: MothFlight

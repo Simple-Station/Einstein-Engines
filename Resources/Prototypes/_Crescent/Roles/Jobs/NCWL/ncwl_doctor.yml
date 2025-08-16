@@ -11,7 +11,7 @@
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
-        - Shadowkin
+        - Voidborn
     - !type:CharacterOverallTimeRequirement
       min: 1000
     - !type:FactionRequirement

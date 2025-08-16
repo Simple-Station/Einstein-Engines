@@ -18,10 +18,10 @@
         - !type:CharacterSpeciesRequirement
           inverted: true
           species:
-            - Shadowkin
+            - Voidborn
         - !type:CharacterTraitRequirement
           traits:
-            - ShadowkinBlackeye
+            - VoidbornBlackeye
   special:
   - !type:AddComponentSpecial
     components:
