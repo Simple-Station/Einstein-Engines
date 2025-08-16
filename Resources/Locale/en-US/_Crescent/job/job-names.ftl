@@ -133,3 +133,9 @@ job-name-conscript-dsm-smg = Squire (SMG)
 job-name-conscript-dsm-shotgun = Squire (Shotgun)
 job-name-conscript-dsm-rifleman = Armsman (Rifle)
 job-name-conscript-dsm-cadet = Recruit
+
+#anti psionic response teams ath
+
+job-name-aprt-kanoneer = Panzerfeldwebel
+job-name-aprt-sanitat = Panzersanitat
+job-name-aprt-soldat = Panzergrenadier

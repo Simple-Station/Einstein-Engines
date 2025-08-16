@@ -29,5 +29,6 @@
         - type: StationJobs
           overflowJobs: []
           availableJobs:
-            SoldatATH: [ 2, 2 ]
-            KanoneerATH: [ 1, 1 ]
+            APRTKanoneerATH: [ 1, 1 ]
+            APRTSanitatATH: [ 1, 1 ]
+            APRTSoldatATH: [ 2, 2 ]

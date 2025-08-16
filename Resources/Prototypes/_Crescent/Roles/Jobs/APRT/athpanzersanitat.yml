@@ -1,0 +1,83 @@
+- type: job
+  id: APRTSanitatATH
+  name: job-name-aprt-sanitat
+  description: job-description-sanitat
+  playTimeTracker: JobSanitatATH
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
+        - Reptilian
+        - Oni
+    - !type:FactionRequirement
+      factionID: "ATH"
+  weight: 81
+  startingGear: APRTSanitatGear
+  alwaysUseSpawner: true
+  icon: "JobIconSanitat"
+  requireAdminNotify: true
+  supervisors: job-supervisors-ath
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-sanitat
+      - type: CPRTraining
+      - type: SurgerySpeedModifier
+        speedModifier: 2
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - Service
+  - External
+  - Authority
+  - Authoritymed
+
+- type: startingGear
+  id: APRTSanitatGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAuthoritySanitat
+    shoes: ClothingShoesBootsMagCombat
+    head: ClothingHeadHatAuthoritySanitat
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitAuthorityPanzer
+    suitstorage: JetpackBlueFilled
+    id: APRTIDCardSanitat
+    ears: ClothingHeadsetAuthority
+    pocket1: HandHeldMassScannerEE
+    pocket2: ExtendedEmergencyOxygenTankFilled
+    belt: ClothingBeltAuthorityDroppouchesFilled
+  inhand:
+  - WeaponRifleTakemura

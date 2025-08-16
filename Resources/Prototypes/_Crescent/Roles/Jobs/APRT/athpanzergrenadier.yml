@@ -1,0 +1,79 @@
+- type: job
+  id: APRTSoldatATH
+  name: job-name-aprt-soldat
+  description: job-description-soldat
+  playTimeTracker: JobSoldatATH
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
+        - Reptilian
+        - Oni
+    - !type:FactionRequirement
+      factionID: "ATH"
+  weight: 80
+  startingGear: APRTSoldatGear
+  alwaysUseSpawner: true
+  icon: "JobIconSoldat"
+  requireAdminNotify: true
+  supervisors: job-supervisors-ath
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-soldatATH
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - Service
+  - External
+  - Authority
+
+- type: startingGear
+  id: APRTSoldatGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAuthoritySoldat
+    shoes: ClothingShoesBootsMagCombat
+    head: ClothingHeadHatAuthoritySoldat
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitAuthorityPanzer
+    suitstorage: JetpackBlueFilled
+    id: APRTIDCardSoldat
+    ears: ClothingHeadsetAuthority
+    pocket1: HandHeldMassScannerEE
+    pocket2: ExtendedEmergencyOxygenTankFilled
+    belt: ClothingBeltAuthorityPouchesFilled
+  inhand:
+  - WeaponRifleTakemura
