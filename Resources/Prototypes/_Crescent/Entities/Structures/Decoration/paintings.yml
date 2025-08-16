@@ -1,7 +1,7 @@
 - type: entity
   name: homeguard admiral opreme's photo
   parent: BaseItem
-  id: NCWLAdmiralVolginPhoto
+  id: NCWLVolginPhoto
   description: A deceptively simple framed photo of a local Homeguard admiral stiff collar, weathered uniform, and a tired, sunken gaze set in a pale, unreadable face. The eyes don't just follow you; they track you. Too sharp to be natural, some say they're cameras, wired straight to surveillance feeds in Chengridz. Rumor has it Homeguard kapitans haze new cadets by making them turn the portrait around before discussing anything personal whether it's a joke or actually real, no one's sure.
   components:
     - type: Sprite
@@ -21,3 +21,14 @@
         behaviors:
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
+
+- type: entity
+  parent: PaintingBase
+  id: PaintingNCWLVolgin
+  name: homeguard major general's portrait
+  description: A deceptively simple framed photo of a local Homeguard general stiff collar, weathered uniform, and a tired, sunken gaze set in a pale, unreadable face.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/Decoration/paintings.rsi
+    state: painting0
+    scale: 0.2, 0.2
