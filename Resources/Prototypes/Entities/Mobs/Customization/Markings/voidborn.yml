@@ -1,0 +1,63 @@
+# Ears
+
+- type: marking
+  id: EarsVoidborn
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  forcedColoring: true
+  sprites:
+    - sprite: Mobs/Customization/Voidborn/ears.rsi
+      state: voidborn
+
+- type: marking
+  id: EarsVoidbornStriped
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Voidborn]
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+    layers:
+      voidborn_stripes:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+  sprites:
+    - sprite: Mobs/Customization/Voidborn/ears.rsi
+      state: voidborn
+    - sprite: Mobs/Customization/Voidborn/ears.rsi
+      state: voidborn_stripes
+
+# Tails
+
+- type: marking
+  id: TailVoidborn
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Voidborn]
+  forcedColoring: true
+  sprites:
+    - sprite: Mobs/Customization/Voidborn/tails64x32.rsi
+      state: voidborn
+
+- type: marking
+  id: TailVoidbornBig
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Voidborn]
+  forcedColoring: true
+  sprites:
+    - sprite: Mobs/Customization/Voidborn/tails64x32.rsi
+      state: voidborn_big
+
+- type: marking
+  id: TailVoidbornBigFluff
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Voidborn]
+  forcedColoring: true
+  sprites:
+    - sprite: Mobs/Customization/Voidborn/tails64x32.rsi
+      state: voidborn_big_fluff

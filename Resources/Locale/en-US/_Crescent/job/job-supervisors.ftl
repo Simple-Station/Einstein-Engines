@@ -1,10 +1,8 @@
 job-supervisors-highcomm = NCWL High Command
-job-supervisors-ncwl-major = The esteemed and current acting Major General
-job-supervisors-ncwl-homeguard = The nearest Kommissar
-job-supervisors-ncwl-alyans = Director of the Alyans Vrachev Union
-job-supervisors-ncwl-koalitsiya = Dockmaster of the Koalitsiya Logistyka Union
-job-supervisors-ncwl-sindikat = Supervisor from the Sindikat Inzenjera Union
-job-supervisors-ncwl-worker = To anybody in the New Crescent Worker's League
+job-supervisors-ncwl-kommissar = To the current Major General of the Worker's League, under your scrutiny.
+job-supervisors-ncwl-leaders = To the Kommissar first, and the Major General.
+job-supervisors-ncwl-partisan = To your Fleetkapitan first, then the Kommissar, then the Major General.
+job-supervisors-ncwl-worker = To the Coordinator and Overseer first, then the Kommissar and anyone else second.
 job-supervisors-ncsp = NCSP High Command
 job-supervisors-imperial = House Olywir
 job-supervisors-shi = Shinohara Corporate Command

@@ -54,7 +54,7 @@
   id: DeathSquad
   randomizeName: false
   speciesBlacklist:
-    - Shadowkin
+    - Voidborn
     - Monkey # Shitmed Change
     - Kobold # Shitmed Change
   components:
@@ -94,7 +94,7 @@
   id: ERTLeader
   randomizeName: false
   speciesBlacklist:
-    - Shadowkin
+    - Voidborn
     - Monkey # Shitmed Change
     - Kobold # Shitmed Change
   components:
@@ -519,7 +519,7 @@
 - type: randomHumanoidSettings
   id: CBURNAgent
   speciesBlacklist:
-    - Shadowkin
+    - Voidborn
     - Monkey # Shitmed Change
     - Kobold # Shitmed Change
   components:
@@ -553,7 +553,7 @@
 - type: randomHumanoidSettings
   id: CentcomOfficial
   speciesBlacklist:
-    - Shadowkin
+    - Voidborn
     - Monkey # Shitmed Change
     - Kobold # Shitmed Change
   components:
@@ -585,7 +585,7 @@
 - type: randomHumanoidSettings
   id: SyndicateAgent
   speciesBlacklist:
-    - Shadowkin
+    - Voidborn
     - Monkey # Shitmed Change
     - Kobold # Shitmed Change
   components:
@@ -607,7 +607,7 @@
 - type: randomHumanoidSettings
   id: NukeOp
   speciesBlacklist:
-    - Shadowkin
+    - Voidborn
     - Monkey # Shitmed Change
     - Kobold # Shitmed Change
   components:
@@ -635,7 +635,7 @@
 - type: randomHumanoidSettings
   id: Cluwne
   speciesBlacklist:
-    - Shadowkin
+    - Voidborn
     - Monkey # Shitmed Change
     - Kobold # Shitmed Change
   randomizeName: false

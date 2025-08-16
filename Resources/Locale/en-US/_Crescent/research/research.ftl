@@ -10,7 +10,7 @@ research-discipline-shi = Corporate
 
 research-discipline-families = Pacter
 
-#families
+# families
 
 research-technology-clothwork = Tribal Clothwork
 
@@ -30,7 +30,7 @@ research-technology-tesla = Tribal Electric Manipulation
 
 research-technology-compakt = Laser Gatling
 
-#precursor
+# precursor
 
 research-technology-weaponsnanolarge = NanoTrasen Large Armaments
 
@@ -38,7 +38,7 @@ research-technology-weaponsnanosmall = NanoTrasen Small Armaments
 
 research-technology-shuttleweps = NanoTrasen Ship Armaments
 
-#syndicate
+# syndicate
 
 research-technology-syndiehards = Privateer Hardsuit Fabrication
 
@@ -58,7 +58,7 @@ research-technology-sinn = Privateer Light Destroyer
 
 research-technology-wolf = Privateer Battleship
 
-#commie
+# commie
 
 research-technology-commieclothes = Union Standard Textiles
 
@@ -90,7 +90,7 @@ research-technology-zhipov = Communard Converted Battlecarrier
 
 research-technology-fighter = Communard Fighters
 
-#imperial
+# imperial
 
 research-technology-impsuit = Imperial Worksuit Patterns
 
@@ -120,7 +120,7 @@ research-technology-laelaps = Imperial Cruiser
 
 research-technology-anathema = Imperial Light Battlecarrier
 
-#shi
+# shi
 
 research-technology-corpavionics = Corporate Aviation
 
@@ -144,7 +144,7 @@ research-technology-corpsmartgun = Shinohara Smartpistol Line
 
 research-technology-corpsword = Shinohara Shiverblade Line
 
-#civ
+# civ
 
 research-technology-termite = Civilian Miner Pod
 
