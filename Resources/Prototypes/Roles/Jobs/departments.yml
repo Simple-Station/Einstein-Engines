@@ -86,15 +86,12 @@
   weight: 100
   roles:
   - CommandantNCWL
-  - HomeguardLeaderNCWL
-  - CaptainNCWL
-  - SoldatNCWL
-  - DirectorNCWL
+  - KommissarNCWL
+  - FleetkapitanNCWL
+  - PartisanNCWL
   - DoctorNCWL
-  - SupervisorNCWL
-  - EngineerNCWL
-  - DockmasterNCWL
-  - DockhandNCWL
+  - WorkerOverbossNCWL
+  - IndustryTaskmasterNCWL
   - WorkerNCWL
   editorHidden: false
 

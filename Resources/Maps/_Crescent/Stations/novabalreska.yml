@@ -107060,7 +107060,7 @@ entities:
     - type: Transform
       pos: 1.5,22.5
       parent: 1
-- proto: SpawnPointNCWLCaptain
+- proto: SpawnPointNCWLFleetkapitan
   entities:
   - uid: 10186
     components:
@@ -107079,31 +107079,7 @@ entities:
     - type: Transform
       pos: -17.5,42.5
       parent: 1
-- proto: SpawnPointNCWLDirector
-  entities:
-  - uid: 6121
-    components:
-    - type: Transform
-      pos: -2.5,-43.5
-      parent: 1
-- proto: SpawnPointNCWLDockhand
-  entities:
-  - uid: 9743
-    components:
-    - type: Transform
-      pos: 35.5,-1.5
-      parent: 1
-  - uid: 9744
-    components:
-    - type: Transform
-      pos: 37.5,0.5
-      parent: 1
-  - uid: 9745
-    components:
-    - type: Transform
-      pos: 35.5,2.5
-      parent: 1
-- proto: SpawnPointNCWLDockmaster
+- proto: SpawnPointNCWLIndustryTaskmaster
   entities:
   - uid: 9742
     components:
@@ -107127,26 +107103,14 @@ entities:
     - type: Transform
       pos: -2.5,-45.5
       parent: 1
-- proto: SpawnPointNCWLEngineer
-  entities:
-  - uid: 9739
-    components:
-    - type: Transform
-      pos: -40.5,-1.5
-      parent: 1
-  - uid: 9740
-    components:
-    - type: Transform
-      pos: -42.5,-0.5
-      parent: 1
-- proto: SpawnPointNCWLOverseer
+- proto: SpawnPointNCWLKommissar
   entities:
   - uid: 10188
     components:
     - type: Transform
       pos: -6.5,41.5
       parent: 1
-- proto: SpawnPointNCWLSoldat
+- proto: SpawnPointNCWLPartisan
   entities:
   - uid: 9746
     components:
@@ -107178,7 +107142,7 @@ entities:
     - type: Transform
       pos: -4.5,41.5
       parent: 1
-- proto: SpawnPointNCWLSupervisor
+- proto: SpawnPointNCWLWorkerOverboss
   entities:
   - uid: 9741
     components:

@@ -38,16 +38,13 @@ crescent-rank-ncwl-grunt = Soldat
 crescent-rank-ncwl-new = Cadet
 crescent-rank-ncwl-doctor = Doktor
 
-# ncwl
-crescent-rank-ncwl-faction-leader = Major General
+#ncwl
+crescent-rank-ncwl-faction-leader = Major
 crescent-rank-ncwl-home-leader = Kommissar
 crescent-rank-ncwl-home-squad-lead = Kapitan
-crescent-rank-ncwl-home-soldat = Soldat
-crescent-rank-ncwl-logi-leader = Dockmaster
-crescent-rank-ncwl-logi-worker = Dockhand
-crescent-rank-ncwl-engi-leader = Supervisor
-crescent-rank-ncwl-engi-worker = Artificer
-crescent-rank-ncwl-medi-leader = Director
+crescent-rank-ncwl-home-soldat = Partisan
+crescent-rank-ncwl-logi-leader = Overseer
+crescent-rank-ncwl-engi-leader = Coordinator
 crescent-rank-ncwl-medi-worker = Sanitar
 crescent-rank-ncwl-worker = Comrade
 

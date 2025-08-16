@@ -1,12 +1,12 @@
 - type: job
-  id: DirectorNCWL
-  name: job-name-ncwl-medical-director
-  description: job-description-ncwl-medical-director
-  playTimeTracker: JobMedicalLeaderNCWL
-  weight: 7
-  startingGear: DirectorNCWLGear
+  id: WorkerOverbossNCWL
+  name: job-name-ncwl-worker-overboss
+  description: job-description-ncwl-worker-overboss
+  playTimeTracker: JobEngineeringLeaderNCWL
+  weight: 2
+  startingGear: SupervisorNCWLGear
   alwaysUseSpawner: true
-  icon: "JobIconNCWLMedicalLeader"
+  icon: "JobIconNCWLEngineeringLeader"
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
@@ -26,13 +26,13 @@
         - Pacifist
         - WheelchairBound
   requireAdminNotify: false
-  supervisors: job-supervisors-ncwl-major
+  supervisors: job-supervisors-ncwl-leaders
   canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-ncwl-medi-leader
+        rank: crescent-rank-ncwl-engi-leader
       - type: LanguageKnowledge
         speaks:
           - Dockta
@@ -83,16 +83,16 @@
   - NCWLCommand
 
 - type: startingGear
-  id: DirectorNCWLGear
+  id: SupervisorNCWLGear
   equipment:
-    shoes: ClothingShoesBootsJack
-    jumpsuit: ClothingUniformJumpsuitNCWLMedic
-    id: NCWLMedicalLeaderPDA
-    outerClothing: ClothingOuterArmorNCWLCarapaceVrachev
-    belt: ClothingBeltMedicalFilled
+    shoes: ClothingShoesBootsSalvage
+    jumpsuit: ClothingUniformJumpsuitNCWLArtificer
+    id: NCWLEngineeringLeaderPDA
+    outerClothing: ClothingOuterArmorNCWLEngi
+    belt: ClothingBeltUtilityFilled
     pocket1: WeaponPistolHKUSP
     back: ClothingBackpackNCWL
-    gloves: ClothingHandsGlovesNitrile
-    head: ClothingHeadHatNCWLBeretMedi
-    eyes: ClothingEyesHudMedical
+    gloves: ClothingHandsGlovesColorYellow
+    head: ClothingHeadHatBeretEngineering
     ears: ClothingHeadsetNCWL
+    eyes: ClothingEyesHudSecurity

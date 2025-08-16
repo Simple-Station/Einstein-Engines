@@ -21,15 +21,12 @@
     - !type:CharacterJobRequirement
       jobs:
         - CommandantNCWL
-        - HomeguardLeaderNCWL
-        - CaptainNCWL
-        - SoldatNCWL
-        - DirectorNCWL
+        - KommissarNCWL
+        - FleetkapitanNCWL
+        - PartisanNCWL
         - DoctorNCWL
-        - SupervisorNCWL
-        - EngineerNCWL
-        - DockmasterNCWL
-        - DockhandNCWL
+        - WorkerOverbossNCWL
+        - IndustryTaskmasterNCWL
         - WorkerNCWL
 
 - type: loadout
@@ -44,15 +41,12 @@
     - !type:CharacterJobRequirement
       jobs:
         - CommandantNCWL
-        - HomeguardLeaderNCWL
-        - CaptainNCWL
-        - SoldatNCWL
-        - DirectorNCWL
+        - KommissarNCWL
+        - FleetkapitanNCWL
+        - PartisanNCWL
         - DoctorNCWL
-        - SupervisorNCWL
-        - EngineerNCWL
-        - DockmasterNCWL
-        - DockhandNCWL
+        - WorkerOverbossNCWL
+        - IndustryTaskmasterNCWL
         - WorkerNCWL
 
 - type: loadout

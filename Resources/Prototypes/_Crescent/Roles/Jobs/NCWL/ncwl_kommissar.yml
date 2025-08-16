@@ -1,9 +1,9 @@
 - type: job
-  id: HomeguardLeaderNCWL
-  name: job-name-ncwl-homeguard-overseer
-  description: job-description-ncwl-homeguard-overseer
+  id: KommissarNCWL
+  name: job-name-ncwl-kommissar
+  description: job-description-ncwl-kommissar
   playTimeTracker: JobHomeguardLeaderNCWL
-  weight: 10
+  weight: 7
   startingGear: OverseerNCWLGear
   alwaysUseSpawner: true
   icon: "JobIconNCWLHomeguardLeader"
@@ -26,7 +26,7 @@
         - Pacifist
         - WheelchairBound
   requireAdminNotify: false
-  supervisors: job-supervisors-ncwl-major
+  supervisors: job-supervisors-ncwl-kommissar
   canBeAntag: false
   special:
   - !type:AddComponentSpecial

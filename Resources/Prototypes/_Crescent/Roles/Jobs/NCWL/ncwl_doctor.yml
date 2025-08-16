@@ -3,7 +3,7 @@
   name: job-name-ncwl-medical-doctor
   description: job-description-ncwl-medical-doctor
   playTimeTracker: JobMedicalWorkerNCWL
-  weight: 6
+  weight: 4
   startingGear: DoctorNCWLGear
   alwaysUseSpawner: true
   icon: "JobIconNCWLMedicalWorker"
@@ -26,7 +26,7 @@
         - Pacifist
         - WheelchairBound
   requireAdminNotify: false
-  supervisors: job-supervisors-ncwl-alyans
+  supervisors: job-supervisors-ncwl-partisan
   canBeAntag: false
   special:
   - !type:AddComponentSpecial

@@ -1,12 +1,12 @@
 - type: job
-  id: SupervisorNCWL
-  name: job-name-ncwl-engineering-supervisor
-  description: job-description-ncwl-engineering-supervisor
-  playTimeTracker: JobEngineeringLeaderNCWL
-  weight: 5
-  startingGear: SupervisorNCWLGear
+  id: FleetkapitanNCWL
+  name: job-name-ncwl-fleetkapitan
+  description: job-description-ncwl-fleetkapitan
+  playTimeTracker: JobHomeguardSquadCaptainNCWL
+  weight: 6
+  startingGear: CaptainNCWLGear
   alwaysUseSpawner: true
-  icon: "JobIconNCWLEngineeringLeader"
+  icon: "JobIconNCWLHomeguardSquadCaptain"
   requirements:
     - !type:CharacterSpeciesRequirement
       inverted: true
@@ -26,13 +26,13 @@
         - Pacifist
         - WheelchairBound
   requireAdminNotify: false
-  supervisors: job-supervisors-ncwl-major
+  supervisors: job-supervisors-ncwl-leaders
   canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-ncwl-engi-leader
+        rank: crescent-rank-ncwl-home-squad-lead
       - type: LanguageKnowledge
         speaks:
           - Dockta
@@ -83,16 +83,17 @@
   - NCWLCommand
 
 - type: startingGear
-  id: SupervisorNCWLGear
+  id: CaptainNCWLGear
   equipment:
-    shoes: ClothingShoesBootsSalvage
-    jumpsuit: ClothingUniformJumpsuitNCWLArtificer
-    id: NCWLEngineeringLeaderPDA
-    outerClothing: ClothingOuterArmorNCWLEngi
-    belt: ClothingBeltUtilityFilled
+    shoes: ClothingShoesBootsJack
+    jumpsuit: ClothingUniformJumpsuitNCWL
+    id: NCWLHomeguardSquadCaptainPDA
+    outerClothing: ClothingOuterArmorNCWLCarapaceKapitan
+    belt: ClothingBeltNCWLPouches
     pocket1: WeaponPistolHKUSP
     back: ClothingBackpackNCWL
-    gloves: ClothingHandsGlovesColorYellow
-    head: ClothingHeadHatBeretEngineering
+    gloves: ClothingHandsGlovesCombat
+    head: ClothingHeadHatNCWLBeret
+    mask: ClothingMaskNCWLGasmask
     ears: ClothingHeadsetNCWL
     eyes: ClothingEyesHudSecurity
