@@ -115,7 +115,7 @@
       prob: 0.1
     - id: AsteroidDebrisNFLarge
       prob: 0.2
-    - id: AsteroidDebrisNFIceLarge
+    - id: AsteroidDebrisNFChromiteLarge
       prob: 0.1
     - id: AsteroidRockDebrisNFLarger
       prob: 0.1
@@ -135,7 +135,7 @@
       prob: 0.1
     - id: AsteroidSalvageNFMedium
       prob: 0.08
-    - id: AsteroidSalvageNFIceMedium
+    - id: AsteroidSalvageNFChromiteMedium
       prob: 0.08
     - id: AsteroidSalvageNFLarge
       prob: 0.05
@@ -163,7 +163,7 @@
       prob: 0.1
     - id: AsteroidDebrisNFLarge
       prob: 0.2
-    - id: AsteroidDebrisNFIceLarge
+    - id: AsteroidDebrisNFChromiteLarge
       prob: 0.1
     - id: AsteroidRockDebrisNFLarger
       prob: 0.1
@@ -183,7 +183,7 @@
       prob: 0.1
     - id: AsteroidSalvageNFMedium
       prob: 0.08
-    - id: AsteroidSalvageNFIceMedium
+    - id: AsteroidSalvageNFChromiteMedium
       prob: 0.08
     - id: AsteroidSalvageNFLarge
       prob: 0.05
@@ -220,4 +220,82 @@
     - id: AsteroidSalvageNFChromiteLarge
       prob: 0.05
     - id: AsteroidSalvageNFChromiteHuge
+      prob: 0.03
+
+- type: spaceBiome
+  id: Marchbelt
+  priority: 9000
+  minX: -62
+  maxX: -56
+  minY: 46
+  maxY: 52
+  noiseRanges: {}
+  chunkComponents:
+  - type: DebrisFeaturePlacerController
+    densityNoiseChannel: Density
+  - type: SimpleDebrisSelector
+    debrisTable:
+    - id: AsteroidDebrisNFIceMedium
+      prob: 0.1
+    - id: AsteroidSalvageNFSmall
+      prob: 0.1
+    - id: AsteroidSalvageNFIceSmall
+      prob: 0.1
+    - id: AsteroidSalvageNFMedium
+      prob: 0.08
+    - id: AsteroidSalvageNFLarge
+      prob: 0.05
+    - id: AsteroidSalvageNFIceLarge
+      prob: 0.05
+    - id: AsteroidSalvageNFHuge
+      prob: 0.03
+    - id: AsteroidSalvageNFIceHuge
+      prob: 0.03
+
+- type: spaceBiome
+  id: Deepbelt
+  priority: 9000
+  minX: -40
+  maxX: -34
+  minY: -7
+  maxY: -1
+  noiseRanges: {}
+  chunkComponents:
+  - type: DebrisFeaturePlacerController
+    densityNoiseChannel: Density
+  - type: SimpleDebrisSelector
+    debrisTable:
+    - id: AsteroidDebrisNFIceMedium
+      prob: 0.1
+    - id: AsteroidDebrisNFLarge
+      prob: 0.2
+    - id: AsteroidDebrisNFChromiteLarge
+      prob: 0.1
+    - id: AsteroidRockDebrisNFLarger
+      prob: 0.1
+    - id: AsteroidRockDebrisNFHuge
+      prob: 0.2
+    - id: AsteroidDebrisNFLarger
+      prob: 0.3
+    - id: AsteroidDebrisNFIceLarger
+      prob: 0.3
+    - id: AsteroidDebrisNFChromiteHuge
+      prob: 0.15
+    - id: AsteroidSalvageNFChromiteSmall
+      prob: 0.1
+    - id: AsteroidSalvageNFChromiteMedium
+      prob: 0.08
+    - id: AsteroidSalvageNFIceSmall
+      prob: 0.1
+    - id: AsteroidSalvageNFMedium
+      prob: 0.08
+    - id: AsteroidSalvageNFChromiteMedium
+      prob: 0.08
+    - id: AsteroidSalvageNFLarge
+      prob: 0.05
+    - id: AsteroidSalvageNFIceLarge
+      prob: 0.05
+    - id: AsteroidSalvageNFHuge
+      prob: 0.03
+    - id: AsteroidSalvageNFIceHuge
       prob: 0.03

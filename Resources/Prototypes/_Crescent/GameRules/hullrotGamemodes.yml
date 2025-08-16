@@ -91,7 +91,7 @@
         HideIFF: true
       Fighter2:
         gameMapID: Fighter2
-        posX: 4981.5
+        posX: 4982
         posY: 6525
         HideIFF: true
       SolarSailorDerelict:
@@ -121,6 +121,14 @@
         gameMapID: Taypan2AsteroidBelt
         posX: 4050
         posY: -2700
+      Marchbelt:
+        gameMapID: Marchbelt
+        posX: -7500
+        posY: 6300
+      Deepbelt:
+        gameMapID: Deepbelt
+        posX: -4800
+        posY: -600
       FaintSignal:
         gameMapID: FaintSignal
         posX: 3000
