@@ -505,7 +505,7 @@
   - type: ApcPowerReceiver
     powerLoad: 3000
   - type: StaticPrice
-    price: 10000
+    price: 7500
   - type: Destructible
     thresholds:
     - trigger:
@@ -536,7 +536,7 @@
       ballistic-ammo: !type:Container
         ents: []
   - type: Gun
-    fireRate: 4
+    fireRate: 0.5
     projectileSpeed: 95
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ship_duster.ogg

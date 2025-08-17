@@ -43,7 +43,7 @@
     damage:
       types:
         Piercing: 65 #Dummy but holy shit these are massive
-        Structural: 100
+        Structural: 80
     harmorPenetration: 70
     stoppingPower: 9
 
