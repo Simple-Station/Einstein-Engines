@@ -5,3 +5,11 @@
   components:
   - type: AccessReader
     access: [["Shinohara"]]
+
+- type: entity
+  id: LockableButtonNCWL
+  suffix: NCWL
+  parent: LockableButton
+  components:
+  - type: AccessReader
+    access: [["NCWLGeneral"]]
