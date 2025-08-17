@@ -75,6 +75,8 @@
       Unsexed: UnisexArachnid
   - type: TypingIndicator
     proto: spider
+  - type: PotentiaModifier
+    potentiaMultiplier: 1.25
   - type: Sprite # I'd prefer if these maps were better. Insert map pun here.
     layers:
       - map: [ "enum.HumanoidVisualLayers.Chest" ]

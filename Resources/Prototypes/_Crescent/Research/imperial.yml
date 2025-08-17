@@ -200,6 +200,19 @@
   - WeaponPistolNeoVolker
 
 - type: technology
+  id: ImperialPlasmaMechGuns
+  name: research-technology-imperial-plasmamechguns
+  icon:
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: plasmarifle
+  discipline: Imperial
+  tier: 2
+  cost: 9000
+  recipeUnlocks:
+  - WeaponMechCombatPlasmaRifle
+  - WeaponMechCombatPlasmaCannon
+
+- type: technology
   id: ImperialSRM
   name: research-technology-imperial-srmimitation
   icon:
