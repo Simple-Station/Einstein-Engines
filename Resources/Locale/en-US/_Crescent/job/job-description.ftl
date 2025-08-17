@@ -26,22 +26,22 @@ job-description-foreman = Coordinate the SAWs. Lead pirate boardings. Scrap vess
 
 # empire
 
-job-description-freeholder = Obey the Imperial hierarchy. Earn Credits for the Governor.
-job-description-levyman = Obey your liege. Uphold the will of the Kaiser.
-job-description-knight = Organize the Imperial Navy. Obey your liege.
-job-description-ritter = Don your Exoplate. Obey your liege lord. Slaughter communards.
-job-description-courtier = Obey your liege. Intrigue for power and rank within his prestigious court.
-job-description-labor = Oversee and command reconstruction and trade efforts on behalf of your liege.
-job-description-adjutant = Obey your liege lord, the Kaiser, and your liege lord, the Governor. Attempt to coordinate the Empire.
-job-description-governor = Maintain the delicate balance of the Count's court. Protect your fief.
-job-description-logistics = Outfit your liege's army with vessels and munitions.
-job-description-wealth = Oversee the barony's economical matters, generate revenue for your liege lord and pay his men.
-job-description-foremanimp = Coordinate the workers of your liege.
+job-description-freeholder = Obey the Imperial hierarchy. Earn Credits for the Lord Admiral.
+job-description-levyman = Obey your liege, the Lord Admiral. Uphold the will of the Kaiserin.
+job-description-knight = Organize the Imperial Navy. Obey your liege, the Lord Admiral.
+job-description-ritter = Don your Exoplate. Obey your liege, the Lord Admiral. Bring glory in battle.
+job-description-courtier = Obey  your liege, the Lord Admiral. Intrigue for power and rank within his prestigious court.
+job-description-labor = Oversee industrial and trade efforts on behalf of  your liege, the Lord Admiral.
+job-description-adjutant = Obey the Kaiserin, and your liege, the Lord Admiral. Attempt to coordinate the Empire.
+job-description-governor = Exercise the Kaiserin's will. Protect your fief. The Mandate must survive.
+job-description-logistics = Outfit your liege, the Lord Admiral's military with vessels and munitions.
+job-description-wealth = Oversee the barony's economy, generate revenue for your liege, the Lord Admiral and pay his men.
+job-description-foremanimp = Coordinate the workers of your liege, the Lord Admiral.
 job-description-scribe = Explore, discover new technologies, and recover derelicts.
-job-description-archmaester = Coordinate the Scribes' Guild, discover new technologies for the Empire.
+job-description-archmaester = Coordinate the Scribes Guild, discover new technologies for the Lord Admiral.
 job-description-surgeon = Tend to the bodily ails of your comrades.
-job-description-advocatus = Maintain the interests of the Count in the Barony. Collect "taxes".
-job-description-advocatustemplar = Make sure the Advocati stays alive.
+job-description-advocatus = Scrutinise the loyalty of your liege, the Lord Admiral's subjects. Question violators of His will. Ensure compliance to the Mandate.
+job-description-advocatustemplar = Protect the Advocatus and carry out their will. Ensure compliance to the Mandate.
 
 # srm#
 

@@ -3,19 +3,22 @@
   name: job-name-ncwl-worker-overboss
   description: job-description-ncwl-worker-overboss
   playTimeTracker: JobEngineeringLeaderNCWL
-  weight: 2
+  weight: 4
   startingGear: SupervisorNCWLGear
   alwaysUseSpawner: true
+  requireAdminNotify: false
   icon: "JobIconNCWLEngineeringLeader"
+  supervisors: job-supervisors-ncwl-leaders
+  canBeAntag: false
   requirements:
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterOverallTimeRequirement
+      min: 20000
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
         - Voidborn
-    - !type:CharacterOverallTimeRequirement
-      min: 20000
-    - !type:FactionRequirement
-      factionID: "NCWL"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -25,9 +28,6 @@
         - Blindness
         - Pacifist
         - WheelchairBound
-  requireAdminNotify: false
-  supervisors: job-supervisors-ncwl-leaders
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
@@ -36,9 +36,11 @@
       - type: LanguageKnowledge
         speaks:
           - Dockta
+          - TauCetiBasic
           - Tradeband
         understands:
           - Dockta
+          - TauCetiBasic
           - Tradeband
   access:
   - EmergencyShuttleRepealAll

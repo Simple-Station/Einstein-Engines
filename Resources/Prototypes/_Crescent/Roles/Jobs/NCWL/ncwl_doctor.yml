@@ -3,19 +3,22 @@
   name: job-name-ncwl-medical-doctor
   description: job-description-ncwl-medical-doctor
   playTimeTracker: JobMedicalWorkerNCWL
-  weight: 4
+  weight: 2
   startingGear: DoctorNCWLGear
   alwaysUseSpawner: true
+  requireAdminNotify: false
   icon: "JobIconNCWLMedicalWorker"
+  supervisors: job-supervisors-ncwl-partisan
+  canBeAntag: false
   requirements:
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterOverallTimeRequirement
+      min: 1000
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
         - Voidborn
-    - !type:CharacterOverallTimeRequirement
-      min: 1000
-    - !type:FactionRequirement
-      factionID: "NCWL"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -25,9 +28,6 @@
         - Blindness
         - Pacifist
         - WheelchairBound
-  requireAdminNotify: false
-  supervisors: job-supervisors-ncwl-partisan
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
@@ -36,10 +36,10 @@
       - type: LanguageKnowledge
         speaks:
           - Dockta
-          - Tradeband
+          - TauCetiBasic
         understands:
           - Dockta
-          - Tradeband
+          - TauCetiBasic
   access:
   - Command
   - Maintenance

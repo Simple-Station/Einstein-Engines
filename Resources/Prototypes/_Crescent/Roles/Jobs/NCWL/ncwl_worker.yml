@@ -6,23 +6,23 @@
   weight: 1
   startingGear: WorkerNCWLGear
   alwaysUseSpawner: true
+  requireAdminNotify: false
   icon: "JobIconNCWLWorker"
+  supervisors: job-supervisors-ncwl-worker
+  canBeAntag: false
   requirements:
+    - !type:FactionRequirement
+      factionID: "NCWL"
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
         - Voidborn
-    - !type:FactionRequirement
-      factionID: "NCWL"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - Foreigner
         - Muted
         - Blindness
-  requireAdminNotify: false
-  supervisors: job-supervisors-ncwl-worker
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
@@ -31,8 +31,12 @@
       - type: LanguageKnowledge
         speaks:
           - Dockta
+          - TauCetiBasic
+          - Tradeband
         understands:
           - Dockta
+          - TauCetiBasic
+          - Tradeband
   access:
   - Command
   - Maintenance

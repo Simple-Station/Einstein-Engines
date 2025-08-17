@@ -35,7 +35,7 @@ job-name-ministerlabor = Minister of Labor
 job-name-logisticsofficer = Minister of Wealth
 job-name-adjutant = Imperial Adjutant
 job-name-archmaester = Scribe Archmaester
-job-name-governor = Lord Regent
+job-name-governor = Lord Admiral
 job-name-foremanimp = Imperial Foreman
 job-name-imperialresearch = Imperial Scribe
 job-name-surgeon = Imperial Surgeon
@@ -58,7 +58,7 @@ job-name-board = Board Executive
 job-name-corpsec = CorpSec Agent
 job-name-highsec = Corporate Liquidation Agent
 job-name-employee = Salaryman
-job-name-medtech = MedTech Specialist
+job-name-medtech = MedTech Researcher
 
 # tsp
 

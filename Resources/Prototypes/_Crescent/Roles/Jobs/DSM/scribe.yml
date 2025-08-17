@@ -3,11 +3,11 @@
   name: job-name-imperialresearch
   description: job-description-scribe
   playTimeTracker: JobScribeDSM
-  weight: 76
+  weight: 93
   startingGear: ScribeGear
   alwaysUseSpawner: true
-  icon: "JobIconImperialScribe"
   requireAdminNotify: false
+  icon: "JobIconImperialScribe"
   supervisors: job-supervisors-imperial
   canBeAntag: false
   requirements:
@@ -30,11 +30,13 @@
       - type: BibleUser
       - type: LanguageKnowledge
         speaks:
+          - LowImperial
+          - TauCetiBasic
           - Tradeband
-          - SolCommon
         understands:
+          - LowImperial
+          - TauCetiBasic
           - Tradeband
-          - SolCommon
   access:
   - Command
   - Empire

@@ -3,20 +3,24 @@
   name: job-name-ncwl-faction-leader
   description: job-description-ncwl-faction-leader
   playTimeTracker: JobFactionLeaderNCWL
-  weight: 8
+  weight: 100
   startingGear: CommandantNCWLGear
   alwaysUseSpawner: true
+  requireAdminNotify: false
   icon: "JobIconNCWLFactionLeader"
+  supervisors: job-supervisors-highcomm
+  canBeAntag: false
   requirements:
+    - !type:CharacterWhitelistRequirement
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterOverallTimeRequirement
+      min: 35000
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
         - Voidborn
-    - !type:CharacterOverallTimeRequirement
-      min: 35000
     - !type:CharacterWhitelistRequirement
-    - !type:FactionRequirement
-      factionID: "NCWL"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -26,9 +30,6 @@
         - Blindness
         - Pacifist
         - WheelchairBound
-  requireAdminNotify: false
-  supervisors: job-supervisors-highcomm
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
@@ -37,10 +38,14 @@
       - type: LanguageKnowledge
         speaks:
           - Dockta
+          - TauCetiBasic
           - Tradeband
+          - Sign
         understands:
           - Dockta
+          - TauCetiBasic
           - Tradeband
+          - Sign
   access:
   - EmergencyShuttleRepealAll
   - Captain
