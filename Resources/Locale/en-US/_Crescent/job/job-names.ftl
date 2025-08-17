@@ -58,7 +58,7 @@ job-name-board = Board Executive
 job-name-corpsec = CorpSec Agent
 job-name-highsec = Corporate Liquidation Agent
 job-name-employee = Salaryman
-job-name-medtech = MedTech Specialist
+job-name-medtech = MedTech Researcher
 
 # tsp
 
