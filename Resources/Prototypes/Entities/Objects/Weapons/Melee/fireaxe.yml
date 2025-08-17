@@ -16,20 +16,21 @@
   - type: MeleeWeapon
     wideAnimationRotation: 135
     swingLeft: true
-    attackRate: 0.75
+    attackRate: 1.75
+    range: 1.75
     damage:
       types:
         # axes are kinda like sharp hammers, you know? # FACK YOU
         Slash: 15
         Structural: 10
-    clickPartDamageMultiplier: 3
-    heavyPartDamageMultiplier: 2
-    heavyStaminaCost: 5
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 14
+    clickPartDamageMultiplier: 1.25
+    maxTargets: 3
     angle: 100
     soundHit:
       collection: MetalThud
   - type: DamageOtherOnHit
-    meleeDamageMultiplier: 1.5
     staminaCost: 10
   - type: EmbeddableProjectile
   - type: EmbedPassiveDamage
@@ -37,15 +38,18 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Slash: 40
+        Slash: 45
         Structural: 40
   - type: Item
     size: Ginormous
+    shape:
+      - 0,0,3,3
   - type: Clothing
     sprite: Objects/Weapons/Melee/fireaxe.rsi
     quickEquip: false
     slots:
     - back
+    - suitStorage
   - type: Tool
     qualities:
       - Prying

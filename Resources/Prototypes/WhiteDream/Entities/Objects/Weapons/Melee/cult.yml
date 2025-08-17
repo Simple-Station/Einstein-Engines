@@ -9,12 +9,11 @@
     state: icon
   - type: MeleeWeapon # TODO: It should have armor piercing effect (around 50%?) but we have no such system yet. Sucks.
     wideAnimationRotation: -135
-    maxTargets: 1
-    heavyRateModifier: 0.95
-    heavyStaminaCost: 5
+    maxTargets: 2
+    heavyStaminaCost: 8
     damage:
       types:
-        Piercing: 25
+        Piercing: 32
   - type: DamageOtherOnHit
     staminaCost: 5
   - type: EmbeddableProjectile
@@ -51,13 +50,15 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.3333
+    attackRate: 1.3
     range: 1.65
     damage:
       types:
-        Slash: 35
-    heavyDamageBaseModifier: 1.2
+        Slash: 38
+    heavyDamageBaseModifier: 1
     heavyStaminaCost: 10
+    heavyRateModifier: 1.4
+    clickPartDamageMultiplier: 2
     maxTargets: 3
     angle: 90
     soundHit:
@@ -111,19 +112,23 @@
   - type: Sharp
   - type: MeleeWeapon
     wideAnimationRotation: -135
+    attackRate: 1.25
     damage:
       types:
-        Piercing: 25
+        Piercing: 36
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
+    heavyRateModifier: 1.25
+    clickPartDamageMultiplier: 2
     angle: 0
     animation: WeaponArcThrust
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
     range: 2
-    attackRate: 0.8
   - type: DamageOtherOnHit
     damage:
       types:
-        Piercing: 45
+        Piercing: 48
     staminaCost: 20
   - type: Item
     sprite: WhiteDream/BloodCult/Entities/Items/Weapons/cult_spear.rsi
