@@ -3,29 +3,30 @@
   name: job-name-freeholder
   description: job-description-freeholder
   playTimeTracker: JobFreeholderDSM
-  weight: 73
+  weight: 1
   startingGear: FreeholderGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconImperialFreeholder"
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
   requirements:
+    - !type:FactionRequirement
+      factionID: "DSM"
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
         - Voidborn
-    - !type:FactionRequirement
-        factionID: "DSM"
   special:
   - !type:AddComponentSpecial
     components:
       - type: LanguageKnowledge
         speaks:
-          - SolCommon
+          - LowImperial
+          - TauCetiBasic
         understands:
-          - Tradeband
-          - SolCommon
-  alwaysUseSpawner: true
-  icon: "JobIconImperialFreeholder"
-  requireAdminNotify: false
-  supervisors: job-supervisors-imperial
-  canBeAntag: false
+          - LowImperial
+          - TauCetiBasic
   access:
   - Command
   - Maintenance

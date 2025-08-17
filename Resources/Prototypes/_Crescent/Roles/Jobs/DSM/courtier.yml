@@ -3,25 +3,22 @@
   name: job-name-courtier
   description: job-description-courtier
   playTimeTracker: JobCourtierDSM
+  weight: 52
+  startingGear: CourtierGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconImperialCourtier"
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
   requirements:
+    - !type:CharacterWhitelistRequirement
+    - !type:FactionRequirement
+      factionID: "DSM"
     - !type:CharacterOverallTimeRequirement
       min: 2500
     - !type:CharacterSpeciesRequirement
       species:
         - Human
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Voidborn
-    - !type:FactionRequirement
-      factionID: "DSM"
-  weight: 78
-  startingGear: CourtierGear
-  alwaysUseSpawner: true
-  icon: "JobIconImperialCourtier"
-  requireAdminNotify: false
-  supervisors: job-supervisors-imperial
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
@@ -30,11 +27,14 @@
       - type: LanguageKnowledge
         speaks:
           - HighImperial
-          - SolCommon
+          - LowImperial
+          - TauCetiBasic
+          - Tradeband
         understands:
           - HighImperial
+          - LowImperial
+          - TauCetiBasic
           - Tradeband
-          - SolCommon
   access:
   - Command
   - Empire
