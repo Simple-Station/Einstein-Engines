@@ -7,9 +7,9 @@
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
-        - SolCommon
+        - LowImperial
       languagesUnderstood:
-        - SolCommon
+        - LowImperial
   passportPrototype: ImperialPassport
 
 - type: nationality

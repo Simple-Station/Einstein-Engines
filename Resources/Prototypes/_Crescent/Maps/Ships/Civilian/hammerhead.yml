@@ -1,0 +1,32 @@
+# Author Info
+# Discord: @fleshangel
+
+- type: vessel
+  id: Hammerhead
+  name: PTA Hammerhead
+  description: A common warship designed by Pang Tai Arms, intended as a generalized frontliner bessel.
+  price: 160000
+  category: Large
+  group: Civilian
+  path: /Maps/_Crescent/Shuttles/Civilian/hammerhead.yml
+
+- type: gameMap
+  id: Hammerhead
+  mapName: 'PTA Hammerhead'
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/hammerhead.yml
+  minPlayers: 0
+  stations:
+    Hammerhead:
+      stationProto: StandardCrescentCivilianVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: cruiser
+        - type: StationNameSetup
+          mapNameTemplate: 'PTA Hammerhead {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: Cruiser

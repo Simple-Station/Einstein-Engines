@@ -3,20 +3,23 @@
   name: job-name-advocatustemplar
   description: job-description-advocatustemplar
   playTimeTracker: JobTemplarDSM
+  weight: 97
+  startingGear: TemplarGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconAdvocatusTemplar"
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
   requirements:
+    - !type:FactionRequirement
+      factionID: "DSM"
     - !type:CharacterOverallTimeRequirement
       min: 55000
     - !type:CharacterSpeciesRequirement
       species:
         - Human
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Voidborn
     - !type:SexRequirement
       sex: Male
-    - !type:FactionRequirement
-      factionID: "DSM"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -26,13 +29,6 @@
         - Blindness
         - Pacifist
         - WheelchairBound
-  weight: 80
-  startingGear: TemplarGear
-  alwaysUseSpawner: true
-  icon: "JobIconAdvocatusTemplar"
-  requireAdminNotify: false
-  supervisors: job-supervisors-imperial
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
@@ -42,12 +38,14 @@
       - type: LanguageKnowledge
         speaks:
           - HighImperial
-          - Tradeband
-          - SolCommon
+          - LowImperial
+          - TauCetiBasic
+          - Sign
         understands:
           - HighImperial
-          - Tradeband
-          - SolCommon
+          - LowImperial
+          - TauCetiBasic
+          - Sign
   access:
   - Command
   - Empire

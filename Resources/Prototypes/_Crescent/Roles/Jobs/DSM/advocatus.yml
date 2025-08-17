@@ -3,26 +3,22 @@
   name: job-name-advocatus
   description: job-description-advocatus
   playTimeTracker: JobAdvocatusDSM
-  weight: 85
+  weight: 98
   startingGear: AdvocatusGear
   alwaysUseSpawner: true
-  icon: "JobIconAdvocatus"
   requireAdminNotify: true
+  icon: "JobIconAdvocatus"
   supervisors: job-supervisors-imperial
   canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement
+    - !type:FactionRequirement
+      factionID: "DSM"
     - !type:CharacterSpeciesRequirement
       species:
         - Human
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Voidborn
     - !type:CharacterOverallTimeRequirement
       min: 36000
-    - !type:FactionRequirement
-      factionID: "DSM"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -40,12 +36,14 @@
       - type: LanguageKnowledge
         speaks:
           - HighImperial
-          - Tradeband
-          - SolCommon
+          - LowImperial
+          - TauCetiBasic
+          - Sign
         understands:
           - HighImperial
-          - Tradeband
-          - SolCommon
+          - LowImperial
+          - TauCetiBasic
+          - Sign
 
   access:
   - EmergencyShuttleRepealAll

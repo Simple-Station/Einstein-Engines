@@ -3,33 +3,30 @@
   name: job-name-ritter
   description: job-description-ritter
   playTimeTracker: JobRitterDSM
-  requirements:
-  - !type:CharacterOverallTimeRequirement
-    min: 30000
-  - !type:CharacterSpeciesRequirement
-    species:
-    - Human
-  - !type:CharacterSpeciesRequirement
-    inverted: true
-    species:
-    - Voidborn
-  - !type:FactionRequirement
-    factionID: "DSM"
-  - !type:CharacterTraitRequirement
-    inverted: true
-    traits:
-    - Foreigner
-    - ForeignerLight
-    - Muted
-    - Pacifist
-    - WheelchairBound
-  weight: 79
+  weight: 51
   startingGear: RitterGear
   alwaysUseSpawner: true
-  icon: "JobIconImperialRitter"
   requireAdminNotify: false
+  icon: "JobIconImperialRitter"
   supervisors: job-supervisors-imperial
   canBeAntag: false
+  requirements:
+    - !type:CharacterWhitelistRequirement
+    - !type:FactionRequirement
+      factionID: "DSM"
+    - !type:CharacterOverallTimeRequirement
+      min: 30000
+    - !type:CharacterSpeciesRequirement
+      species:
+      - Human
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+      - Foreigner
+      - ForeignerLight
+      - Muted
+      - Pacifist
+      - WheelchairBound
   special:
   - !type:AddComponentSpecial
     components:
@@ -38,11 +35,12 @@
       - type: LanguageKnowledge
         speaks:
           - HighImperial
-          - SolCommon
+          - LowImperial
+          - TauCetiBasic
         understands:
           - HighImperial
-          - Tradeband
-          - SolCommon
+          - LowImperial
+          - TauCetiBasic
 
   access:
   - Command

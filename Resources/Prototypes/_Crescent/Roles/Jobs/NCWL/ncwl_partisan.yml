@@ -3,17 +3,20 @@
   name: job-name-ncwl-partisan
   description: job-description-ncwl-partisan
   playTimeTracker: JobHomeguardSoldatNCWL
-  weight: 5
+  weight: 3
   startingGear: SoldatNCWLGear
   alwaysUseSpawner: true
+  requireAdminNotify: false
   icon: "JobIconNCWLHomeguardSoldat"
+  supervisors: job-supervisors-ncwl-partisan
+  canBeAntag: false
   requirements:
+    - !type:FactionRequirement
+      factionID: "NCWL"
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
         - Voidborn
-    - !type:FactionRequirement
-      factionID: "NCWL"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -23,9 +26,6 @@
         - Blindness
         - Pacifist
         - WheelchairBound
-  requireAdminNotify: false
-  supervisors: job-supervisors-ncwl-partisan
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
@@ -33,10 +33,11 @@
         rank: crescent-rank-ncwl-home-soldat
       - type: LanguageKnowledge
         speaks:
-        - Dockta
+          - Dockta
+          - TauCetiBasic
         understands:
           - Dockta
-          - Tradeband
+          - TauCetiBasic
   access:
   - Command
   - Maintenance

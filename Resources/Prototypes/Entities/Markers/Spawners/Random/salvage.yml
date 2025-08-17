@@ -67,6 +67,8 @@
         - GarbageOre5
         - GarbageOre10
         - GarbageOre25
+        - DelamDisk
+        - DelamDiskThumb
       chance: 0.9
       offset: 0.0
 
@@ -88,6 +90,7 @@
         - RefinedSteelScrapOre
         - RefinedTitaniumScrapOre
         - RefinedGarbageOre
+        - AbyssalSurvey
       chance: 0.009
       offset: 0.0
 

@@ -3,19 +3,23 @@
   name: job-name-ncwl-fleetkapitan
   description: job-description-ncwl-fleetkapitan
   playTimeTracker: JobHomeguardSquadCaptainNCWL
-  weight: 6
+  weight: 98
   startingGear: CaptainNCWLGear
   alwaysUseSpawner: true
+  requireAdminNotify: false
   icon: "JobIconNCWLHomeguardSquadCaptain"
+  supervisors: job-supervisors-ncwl-leaders
+  canBeAntag: false
   requirements:
+    - !type:CharacterWhitelistRequirement
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterOverallTimeRequirement
+      min: 20000
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
         - Voidborn
-    - !type:CharacterOverallTimeRequirement
-      min: 20000
-    - !type:FactionRequirement
-      factionID: "NCWL"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -25,9 +29,6 @@
         - Blindness
         - Pacifist
         - WheelchairBound
-  requireAdminNotify: false
-  supervisors: job-supervisors-ncwl-leaders
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
@@ -36,9 +37,11 @@
       - type: LanguageKnowledge
         speaks:
           - Dockta
+          - TauCetiBasic
           - Tradeband
         understands:
           - Dockta
+          - TauCetiBasic
           - Tradeband
   access:
   - EmergencyShuttleRepealAll
