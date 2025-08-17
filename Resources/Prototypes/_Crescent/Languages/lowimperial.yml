@@ -2,7 +2,7 @@
   id: LowImperial
   isVisibleLanguage: true
   speech:
-    color: "#7224b3"
+    color: "#be59c9"
     fontId: Cambria
   obfuscation:
     !type:SyllableObfuscation

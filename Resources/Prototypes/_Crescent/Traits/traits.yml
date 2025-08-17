@@ -19,7 +19,7 @@
         - Dockta
 
 - type: trait
-  id: HighImperial
+  id: LowImperial
   category: TraitsSpeechLanguages
   points: -1
   requirements:
@@ -30,6 +30,6 @@
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
-        - HighImperial
+        - LowImperial
       languagesUnderstood:
-        - HighImperial
+        - LowImperial
