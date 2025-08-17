@@ -33,8 +33,7 @@
         rank: crescent-rank-ncwl-home-soldat
       - type: LanguageKnowledge
         speaks:
-          - Dockta
-          - Tradeband
+        - Dockta
         understands:
           - Dockta
           - Tradeband

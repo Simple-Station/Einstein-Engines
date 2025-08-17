@@ -31,10 +31,8 @@
       - type: LanguageKnowledge
         speaks:
           - Dockta
-          - Tradeband
         understands:
           - Dockta
-          - Tradeband
   access:
   - Command
   - Maintenance

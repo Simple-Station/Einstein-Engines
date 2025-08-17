@@ -87,7 +87,7 @@
 - type: startingGear
   id: CommandantNCWLGear
   equipment:
-    shoes: ClothingShoesBootsJack
+    shoes: ClothingShoesBootsNCWLAdmiralParade
     jumpsuit: ClothingUniformJumpsuitNCWLCommunications
     id: NCWLFactionLeaderPDA
     outerClothing: ClothingOuterArmorNCWLOpremeCarapace
@@ -95,7 +95,7 @@
     pocket1: WeaponRevolverPython
     pocket2: WeaponRevolverPython
     back: ClothingBackpackNCWL
-    gloves: ClothingHandsGlovesCombat
+    gloves: ClothingHandsGlovesNCWLAdmiralParade
     head: ClothingHeadHatNCWLBeretAdmiral
     mask: ClothingMaskNCWLGasmask
     ears: ClothingHeadsetNCWL
