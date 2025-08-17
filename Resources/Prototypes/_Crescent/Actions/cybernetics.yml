@@ -22,11 +22,11 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
-    useDelay: 2
+    useDelay: 1
     itemIconStyle: NoItem
     icon:
-      sprite: _Goobstation/Changeling/changeling_abilities.rsi
-      state: armblade
+      sprite: _Crescent/Objects/Weapons/mantis_blade.rsi
+      state: icon
     event: !type:MantisBladeToggledEvent
 
 - type: entity

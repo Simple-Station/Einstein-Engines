@@ -10,13 +10,14 @@
       group: LoadoutBackpacks
     - !type:CharacterJobRequirement
       jobs:
-        - AdministratorNCWL
-        - ArtificerNCWL
-        - DoktorNCWL
-        - KadetNCWL
-        - KapitanNCWL
+        - CommandantNCWL
         - KommissarNCWL
-        - SanitarNCWL
+        - FleetkapitanNCWL
+        - PartisanNCWL
+        - DoctorNCWL
+        - WorkerOverbossNCWL
+        - IndustryTaskmasterNCWL
+        - WorkerNCWL
 
 - type: loadout
   id: LoadoutBackpackNCWLSatchel
@@ -30,13 +31,14 @@
       group: LoadoutBackpacks
     - !type:CharacterJobRequirement
       jobs:
-        - AdministratorNCWL
-        - ArtificerNCWL
-        - DoktorNCWL
-        - KadetNCWL
-        - KapitanNCWL
+        - CommandantNCWL
         - KommissarNCWL
-        - SanitarNCWL
+        - FleetkapitanNCWL
+        - PartisanNCWL
+        - DoctorNCWL
+        - WorkerOverbossNCWL
+        - IndustryTaskmasterNCWL
+        - WorkerNCWL
 
 - type: loadout
   id: LoadoutBackpackNCWLDuffel
@@ -50,13 +52,14 @@
       group: LoadoutBackpacks
     - !type:CharacterJobRequirement
       jobs:
-        - AdministratorNCWL
-        - ArtificerNCWL
-        - DoktorNCWL
-        - KadetNCWL
-        - KapitanNCWL
+        - CommandantNCWL
         - KommissarNCWL
-        - SanitarNCWL
+        - FleetkapitanNCWL
+        - PartisanNCWL
+        - DoctorNCWL
+        - WorkerOverbossNCWL
+        - IndustryTaskmasterNCWL
+        - WorkerNCWL
 
 - type: loadout
   id: LoadoutBackpackTFSC

@@ -209,13 +209,14 @@
   - type: Dispenser
     defaultItem: HuntersPermit
     inventory:
-      NCWLIDCardAdministrator: SpaceCash30000
-      NCWLIDCardKommissar: SpaceCash30000
-      NCWLIDCardKapitan: SpaceCash20000
-      NCWLIDCardSanitar: SpaceCash10000
-      NCWLIDCardArtificer: SpaceCash10000
-      NCWLIDCardDoktor: SpaceCash10000
-      NCWLIDCardKadet: SpaceCash5000
+      NCWLIDCardFactionLeader: SpaceCash30000
+      NCWLIDCardHomeguardLeader: SpaceCash30000
+      NCWLIDCardHomeguardSquadCaptain: SpaceCash20000
+      NCWLIDCardHomeguardSoldat: SpaceCash15000
+      NCWLIDCardLogisticLeader: SpaceCash20000
+      NCWLIDCardMedicalWorker: SpaceCash10000
+      NCWLIDCardEngineeringLeader: SpaceCash20000
+      NCWLIDCardWorker: SpaceCash5000
       NCSPIDCardRingleader: SpaceCash30000
       NCSPIDCardLieutenant: SpaceCash30000
       NCSPIDCardInfanteer: SpaceCash10000
@@ -547,13 +548,14 @@
   - type: Dispenser
     defaultItem: BountyHuntersPermit
     inventory:
-      NCWLIDCardAdministrator: SpaceCash30000
-      NCWLIDCardKommissar: SpaceCash30000
-      NCWLIDCardKapitan: SpaceCash20000
-      NCWLIDCardSanitar: SpaceCash10000
-      NCWLIDCardArtificer: SpaceCash10000
-      NCWLIDCardDoktor: SpaceCash10000
-      NCWLIDCardKadet: SpaceCash5000
+      NCWLIDCardFactionLeader: SpaceCash30000
+      NCWLIDCardHomeguardLeader: SpaceCash30000
+      NCWLIDCardHomeguardSquadCaptain: SpaceCash20000
+      NCWLIDCardHomeguardSoldat: SpaceCash15000
+      NCWLIDCardLogisticLeader: SpaceCash20000
+      NCWLIDCardMedicalWorker: SpaceCash10000
+      NCWLIDCardEngineeringLeader: SpaceCash20000
+      NCWLIDCardWorker: SpaceCash5000
       NCSPIDCardRingleader: SpaceCash30000
       NCSPIDCardLieutenant: SpaceCash30000
       NCSPIDCardInfanteer: SpaceCash10000

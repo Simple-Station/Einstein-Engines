@@ -3,26 +3,45 @@
   name: job-name-adjutant
   description: job-description-adjutant
   playTimeTracker: JobAdjutantDSM
+  weight: 99
+  startingGear: AdjutantGear
+  alwaysUseSpawner: true
+  requireAdminNotify: true
+  icon: "JobIconImperialAdjutant"
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
   requirements:
+    - !type:CharacterWhitelistRequirement
+    - !type:FactionRequirement
+      factionID: "DSM"
     - !type:CharacterOverallTimeRequirement
       min: 36000
     - !type:CharacterSpeciesRequirement
       species:
         - Human
-    - !type:FactionRequirement
-      factionID: "DSM"
-  weight: 86
-  startingGear: AdjutantGear
-  alwaysUseSpawner: true
-  icon: "JobIconImperialAdjutant"
-  requireAdminNotify: true
-  supervisors: job-supervisors-imperial
-  canBeAntag: false
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Pacifist
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
         rank: crescent-rank-adjutant
+      - type: LanguageKnowledge
+        speaks:
+          - HighImperial
+          - LowImperial
+          - TauCetiBasic
+          - Tradeband
+        understands:
+          - HighImperial
+          - LowImperial
+          - TauCetiBasic
+          - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain

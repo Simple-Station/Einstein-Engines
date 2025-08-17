@@ -242,12 +242,9 @@
     WeaponPistolViper: 60
     WeaponPistolRongyu: 60
     WeaponPistolBlastpopGray: 60
-    SRMKhopesh: 60
-    ClothingBeltSheathKhopesh: 60
-    DSMSabre: 60
-    ClothingBeltSheathDSMSabre: 60
-    DSMRapier: 60
-    ClothingBeltSheathRapier: 60
+    ClothingBeltSheathKhopeshFilled: 60
+    ClothingBeltSheathDSMSabreFilled: 60
+    ClothingBeltSheathDSMRapierFilled: 60
     SecBreachingHammer: 60
     Katana: 60
     RiotBulletShield: 100
@@ -338,8 +335,7 @@
     WeaponPistolViper: 60
     WeaponPistolRongyu: 60
     WeaponPistolBlastpopGray: 60
-    SRMKhopesh: 60
-    ClothingBeltSheathKhopesh: 60
+    ClothingBeltSheathKhopeshFilled: 60
     SecBreachingHammer: 60
     Katana: 60
     RiotBulletShield: 100
@@ -1028,17 +1024,17 @@
   id: NCWLConscriptShipInventory
   startingInventory:
     ShipVoucherUnionfallLodka: 2
-    ShipVoucherUnionfallVanguard: 2
+    ShipVoucherUnionfallVanguard: 4
     ShipVoucherUnionfallAegis: 2
-    ShipVoucherUnionfallBroadsword: 10
-    ShipVoucherUnionfallKhopesh: 10
+    ShipVoucherUnionfallBroadsword: 20
+    ShipVoucherUnionfallKhopesh: 20
 
 - type: vendingMachineInventory
   id: DSMConscriptShipInventory
   startingInventory:
     ShipVoucherUnionfallRaider: 2
     ShipVoucherUnionfallIbis: 2
-    ShipVoucherUnionfallSaintsfall: 1
-    ShipVoucherUnionfallImparator: 1
-    ShipVoucherUnionfallConquest: 10
-    ShipVoucherUnionfallValor: 10
+    ShipVoucherUnionfallSaintsfall: 2
+    ShipVoucherUnionfallImparator: 2
+    ShipVoucherUnionfallConquest: 20
+    ShipVoucherUnionfallValor: 20

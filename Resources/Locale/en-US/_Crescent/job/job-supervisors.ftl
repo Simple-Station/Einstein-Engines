@@ -1,6 +1,10 @@
 job-supervisors-highcomm = NCWL High Command
+job-supervisors-ncwl-kommissar = To the current Major General of the Worker's League, under your scrutiny.
+job-supervisors-ncwl-leaders = To the Kommissar first, and the Major General.
+job-supervisors-ncwl-partisan = To your Fleetkapitan first, then the Kommissar, then the Major General.
+job-supervisors-ncwl-worker = To the Coordinator and Overseer first, then the Kommissar and anyone else second.
 job-supervisors-ncsp = NCSP High Command
-job-supervisors-imperial = House Olywir
+job-supervisors-imperial = House Kircheis
 job-supervisors-shi = Shinohara Corporate Command
 job-supervisors-prophet = The Mother's Will
 job-supervisors-tap = Nomadic Law

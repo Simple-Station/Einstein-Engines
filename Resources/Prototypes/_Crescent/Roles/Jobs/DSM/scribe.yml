@@ -3,16 +3,20 @@
   name: job-name-imperialresearch
   description: job-description-scribe
   playTimeTracker: JobScribeDSM
-  weight: 76
+  weight: 93
   startingGear: ScribeGear
   alwaysUseSpawner: true
-  icon: "JobIconImperialScribe"
   requireAdminNotify: false
+  icon: "JobIconImperialScribe"
   supervisors: job-supervisors-imperial
   canBeAntag: false
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -24,6 +28,15 @@
       - type: ChatRank
         rank: crescent-rank-smarts
       - type: BibleUser
+      - type: LanguageKnowledge
+        speaks:
+          - LowImperial
+          - TauCetiBasic
+          - Tradeband
+        understands:
+          - LowImperial
+          - TauCetiBasic
+          - Tradeband
   access:
   - Command
   - Empire

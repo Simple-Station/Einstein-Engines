@@ -7441,7 +7441,7 @@ Entries:
 - author: FoxxoTrystan
   changes:
     - type: Add
-      message: Added a new species, Shadowkin!
+      message: Added a new species, Voidborn!
   id: 6472
   time: '2024-10-20T16:31:21.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/960
@@ -7828,7 +7828,7 @@ Entries:
   changes:
     - type: Remove
       message: >-
-        Shadowkin have been temporarily disabled pending significant reworks and
+        Voidborn have been temporarily disabled pending significant reworks and
         balance updates.
   id: 6512
   time: '2024-11-08T19:33:53.0000000+00:00'
@@ -8814,7 +8814,7 @@ Entries:
 - author: FoxxoTrystan
   changes:
     - type: Tweak
-      message: Shadowkins has returned and has been reworked.
+      message: Voidborns has returned and has been reworked.
     - type: Add
       message: DarkSwap is now in the Psionic Power Pool.
     - type: Tweak
@@ -9522,7 +9522,7 @@ Entries:
     - type: Add
       message: >-
         Added 2 new traits related to CyberEyes. Light Amplification Module, and
-        Thermographic Scanner Module. 
+        Thermographic Scanner Module.
   id: 6658
   time: '2025-01-10T05:14:46.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1477
@@ -9700,7 +9700,7 @@ Entries:
 - author: VMSolidus
   changes:
     - type: Tweak
-      message: Disabled Shadowkin as a default roundstart-available species.
+      message: Disabled Voidborn as a default roundstart-available species.
   id: 6676
   time: '2025-01-12T20:28:22.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1516
@@ -10079,12 +10079,12 @@ Entries:
     - type: Add
       message: >-
         The much-requested Psionics Guidebook has returned, now with all new
-        up-to-date information. 
+        up-to-date information.
     - type: Remove
       message: >-
         Removed "GLIMMERLOOSE". It's no longer possible for glimmer to start a
         chain of events that ends the round if epistemics isn't destroyed. You
-        can ALWAYS recover from high glimmer now. 
+        can ALWAYS recover from high glimmer now.
     - type: Tweak
       message: >-
         All glimmer events have had their thresholds tweaked to reflect the fact
@@ -10301,7 +10301,7 @@ Entries:
     - type: Tweak
       message: >-
         The "Scream Action" no longer appears by default. It may be set in your
-        server's configuration to spawn or not. 
+        server's configuration to spawn or not.
   id: 6725
   time: '2025-01-18T20:28:56.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1589
@@ -10359,7 +10359,7 @@ Entries:
         most of the useless single item researches into larger essential
         categories. Basic Weapons, Advanced Weapons, Prototype Weapons. Going
         forwards, these three categories will have significantly more exciting
-        options added to them that should make it more worthwhile to pursue. 
+        options added to them that should make it more worthwhile to pursue.
   id: 6731
   time: '2025-01-19T20:44:45.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1602
@@ -10506,7 +10506,7 @@ Entries:
         server's tickrate. It should now be SIGNIFICANTLY less likely to enter a
         plasma fire death spiral. If it does catch fire, just make sure coolant
         is being pumped into the engine, and start blasting it with a fire
-        extinguisher. 
+        extinguisher.
   id: 6744
   time: '2025-01-20T23:13:35.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1618
@@ -10524,7 +10524,7 @@ Entries:
         Singularity and Tesla are now affected by objects thrown into them,
         causing them to change directions. Unless a traitor intervenes (with a
         Singularity Beacon), a "Singuloose" is extremely likely to be blown out
-        to space. 
+        to space.
   id: 6746
   time: '2025-01-21T00:18:24.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1619
@@ -10790,7 +10790,7 @@ Entries:
     - type: Fix
       message: >-
         Harpy, Arachne and Lamia can no longer pick the "No Ears" marking which
-        had no effect as they had no default ear markings. 
+        had no effect as they had no default ear markings.
   id: 6767
   time: '2025-01-26T01:14:42.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1658
@@ -10799,7 +10799,7 @@ Entries:
     - type: Remove
       message: >-
         Removed almost all of the EE DEFAULT playtime requirements. If you're a
-        downstream, set these yourself. 
+        downstream, set these yourself.
   id: 6768
   time: '2025-01-26T02:13:32.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1660
@@ -10983,11 +10983,11 @@ Entries:
     - type: Add
       message: >-
         Clothing now supports having multiple species-specific layers, and
-        species-specific shaders. 
+        species-specific shaders.
     - type: Add
       message: >-
         New "Unpainted" engineering hardsuit, and "Unpainted" Shanlin Tacsuit.
-        More to come soon. 
+        More to come soon.
     - type: Add
       message: >-
         Unpainted variant of the "Shiwei" tacsuit(AKA: Elite suit). This one is
@@ -11295,7 +11295,7 @@ Entries:
     - type: Add
       message: >-
         BSO now selects their weapon from the same list as Security Officers. So
-        you can trade your energy revolver for a Python if desired. 
+        you can trade your energy revolver for a Python if desired.
   id: 6806
   time: '2025-02-06T19:05:07.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1727
@@ -11467,7 +11467,7 @@ Entries:
     - type: Add
       message: >-
         Added "Lyre Bird" as a new trait exclusively available to Harpies. It
-        massively expands their ability to play Midis. 
+        massively expands their ability to play Midis.
   id: 6825
   time: '2025-02-09T04:12:25.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1747
@@ -11501,7 +11501,7 @@ Entries:
     - type: Tweak
       message: >-
         Stations SMES now store 120MW of power, up from 8MW. They should
-        actually do what they are intended to do now. 
+        actually do what they are intended to do now.
   id: 6829
   time: '2025-02-10T02:23:39.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1752
@@ -11619,7 +11619,7 @@ Entries:
         uranium fuel. As a reminder, Saltern is unique among all other maps in
         that it is the only map which can be run on its solars alone. The
         generators and generous battery backups are there to provide more than
-        adequate time to setup your choice of solars or supermatter. 
+        adequate time to setup your choice of solars or supermatter.
   id: 6840
   time: '2025-02-12T17:33:25.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1771
@@ -11690,7 +11690,7 @@ Entries:
         KyuPolaris)
     - type: Fix
       message: >-
-        Shadowkin are now able to select Psionic Power traits without taking the
+        Voidborn are now able to select Psionic Power traits without taking the
         Latent Psychic trait. (by Rosycup)
   id: 6845
   time: '2025-02-13T03:23:30.0000000+00:00'
@@ -12093,12 +12093,12 @@ Entries:
   changes:
     - type: Tweak
       message: >-
-        Striking Calluses no longer require you to be one of 3 jobs and Human. 
+        Striking Calluses no longer require you to be one of 3 jobs and Human.
         Also increased the +1 damage to +2.
     - type: Tweak
       message: >-
         Bionic Spinarette SHOULD no longer have a hunger penalty and costs
-        less. 
+        less.
     - type: Tweak
       message: >-
         Platelet Factories heal rate buffed from 0.07 to 0.35, airloss from 0.7
@@ -12121,9 +12121,9 @@ Entries:
 - author: ShirouAjisai
   changes:
     - type: Add
-      message: Added Shadowkin plushie to crates and stuff
+      message: Added Voidborn plushie to crates and stuff
     - type: Tweak
-      message: Tweaked Shadowkin age brackets
+      message: Tweaked Voidborn age brackets
   id: 6888
   time: '2025-02-27T03:39:43.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1684
@@ -12164,11 +12164,11 @@ Entries:
         A new Midround Antagonist has been added to the game. The "Solarian
         Deserters" are a group of highly trained soldiers who haven't been paid
         for far too long, whom have come to the station to loot it for
-        everything valuable. 
+        everything valuable.
     - type: Add
       message: >-
         Lore guidebook entry for the Solarian Alliance, a majorly antagonistic
-        faction. 
+        faction.
   id: 6893
   time: '2025-03-01T22:19:22.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1851
@@ -12215,7 +12215,7 @@ Entries:
     - type: Add
       message: >-
         Added EE-Specific ores to Lavaland, such as Bauxite, Cassiterite,
-        Wolframite, etc. 
+        Wolframite, etc.
     - type: Add
       message: Wolframite now spawns in veins just like other ores.
   id: 6898
@@ -12427,7 +12427,7 @@ Entries:
       message: >-
         Added a variety of "Shuttle Spawning Airlocks" for mappers to use, which
         can make it so that shuttles like the Cargo Shuttle, Pathfinder, etc.
-        Spawn already docked to the station. 
+        Spawn already docked to the station.
   id: 6913
   time: '2025-03-08T20:11:39.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1890
@@ -12640,7 +12640,7 @@ Entries:
     - type: Fix
       message: >-
         After lengthy retraining, NanoTrasen has taught Vulpkanin that underwear
-        is meant to be worn inside pants, not outside them. 
+        is meant to be worn inside pants, not outside them.
   id: 6930
   time: '2025-03-11T21:24:10.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1894
@@ -12651,7 +12651,7 @@ Entries:
         Adjusted turrets to be a more "Fair" fight. They no longer have perfect
         aimbot accuracy, they don't track targets instantly, and they also have
         a "More fair" healthbar that can reasonably be shot through by someone
-        with good enough weapons and armor, 
+        with good enough weapons and armor,
   id: 6931
   time: '2025-03-11T21:26:17.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1923
@@ -12667,7 +12667,7 @@ Entries:
     - type: Tweak
       message: >-
         Nerfed universals and other .45 auto guns. I get the meme that .45 is
-        better than 9mm, but not "More than double" the damage of 9mm. 
+        better than 9mm, but not "More than double" the damage of 9mm.
   id: 6933
   time: '2025-03-11T21:31:34.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1895
@@ -12776,7 +12776,7 @@ Entries:
     - type: Tweak
       message: >-
         Default settings for Ramping Event Scheduler no longer throws
-        "Ventcritters every 10 seconds, 30 minutes into the round". 
+        "Ventcritters every 10 seconds, 30 minutes into the round".
   id: 6944
   time: '2025-03-13T03:16:40.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1945
@@ -12792,11 +12792,11 @@ Entries:
     - type: Add
       message: >-
         Most markings from ADT, along with two new hairstyles, new markings for
-        Shadowkin (Despite all my hate for them).
+        Voidborn (Despite all my hate for them).
     - type: Fix
       message: >-
-        Shadowkin ears are now colorable again, fuck around and find out if you
-        want your Shadowkin's ears to be pink with red or something.
+        Voidborn ears are now colorable again, fuck around and find out if you
+        want your Voidborn's ears to be pink with red or something.
   id: 6946
   time: '2025-03-14T02:53:40.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1951
@@ -12960,7 +12960,7 @@ Entries:
     - type: Fix
       message: >-
         Fixed an issue where the R25 was inaudible unless you were the one
-        firing it. 
+        firing it.
   id: 6962
   time: '2025-03-17T15:53:04.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1946
@@ -13083,7 +13083,7 @@ Entries:
   changes:
     - type: Tweak
       message: >-
-        Changed shadowkin blood type to black blood, to better fit their organs'
+        Changed voidborn blood type to black blood, to better fit their organs'
         color palette
   id: 6974
   time: '2025-03-17T18:10:44.0000000+00:00'
@@ -13107,7 +13107,7 @@ Entries:
     - type: Tweak
       message: >-
         Tweaked default CCVars for space wind to be less aggressive, and less
-        likely to throw people through walls. 
+        likely to throw people through walls.
   id: 6977
   time: '2025-03-17T20:21:03.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1988
@@ -13127,7 +13127,7 @@ Entries:
         Batteries no longer drain power 30 to 60 times faster than physics
         states. This is particularly a large buff to IPCs and MODSuits, who both
         no longer have to deal with batteries lasting an absurdly short amount
-        of time. 
+        of time.
     - type: Tweak
       message: Solarian Modsuit now provides protection from cold.
   id: 6979
@@ -13207,7 +13207,7 @@ Entries:
       message: >-
         The sawn-off shotgun now has a significantly wider spread(Making hitting
         anything reliably beyond 3 tiles quite hard). As a trade-off, it's now a
-        bit like a Super Shotgun. Its projectiles deal 50% bonus damage. 
+        bit like a Super Shotgun. Its projectiles deal 50% bonus damage.
   id: 6986
   time: '2025-03-18T04:32:49.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1997
@@ -13256,7 +13256,7 @@ Entries:
         To encourage people to buy different kinds of ammo, certain guns in the
         Syndicate Uplink no longer spawn with ammo, and are in return discounted
         by the cost of the ammo that was removed. Have fun buying C20 magazines
-        with incendiary ammo. 
+        with incendiary ammo.
     - type: Add
       message: >-
         Added Shrapnel Munitions to Arsenal Research T2. Once researched,
@@ -13319,7 +13319,7 @@ Entries:
         against "Chip damage" attacks such as unarmed fighting, wild animals,
         and Shrapnel ammo. But it also makes it much worse against large single
         sources of damage such as anti-material rifles, large caliber rounds,
-        shotgun slugs, etc. 
+        shotgun slugs, etc.
   id: 6996
   time: '2025-03-20T05:04:42.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2016
@@ -13527,7 +13527,7 @@ Entries:
     - type: Add
       message: >-
         Added an AI sat, xenobiolab for epi, expanded supermatter maints,
-        expanded atmos, added a shuttle making dock, and a courtroom. 
+        expanded atmos, added a shuttle making dock, and a courtroom.
     - type: Tweak
       message: Moved ore silo to vault. Added a spare captain ID locker in vault.
   id: 7015
@@ -13680,11 +13680,11 @@ Entries:
       message: >-
         Added back Bionic Legs. The trait has been reworked so that it makes you
         start with one of your legs replaced with an actual speed legs
-        cyberware. 
+        cyberware.
     - type: Add
       message: >-
         Bionic Arm now gives you an actual bionic arm. Have fun mugging people
-        for their cyberware so you can have a collection of fancy bionic limbs. 
+        for their cyberware so you can have a collection of fancy bionic limbs.
   id: 7028
   time: '2025-03-25T08:38:42.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2056
@@ -13807,7 +13807,7 @@ Entries:
         lines shown directly correspond to how powerful the flow of air is at
         that tile. Shorter lines = shorter throws. Longer lines = more powerful
         throws. These are also no longer restricted to compass directions, and
-        can point in arbitrarily any direction on a circle. 
+        can point in arbitrarily any direction on a circle.
     - type: Tweak
       message: >-
         Space Wind now no longer has Monstermos as a hard requirement. It'll be
@@ -13817,7 +13817,7 @@ Entries:
       message: >-
         Wreckages in space are now never airtight. I'm sorry, but this was
         basically the cost I had to pay in exchange for making Atmos no longer
-        even on the top 20 systems for server tickrate cost. 
+        even on the top 20 systems for server tickrate cost.
   id: 7042
   time: '2025-03-27T03:21:38.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2089
@@ -13972,7 +13972,7 @@ Entries:
         containing information about where your character is from and who they
         are, but they are fully integrated with Character Requirements, and by
         extension can be used for and alongside Traits, Loadouts, Jobs,
-        Antagonists, etc. 
+        Antagonists, etc.
   id: 7055
   time: '2025-03-28T17:10:00.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2030
@@ -14182,7 +14182,7 @@ Entries:
       message: >-
         Comprehensively rebalanced the Juggernaut Suit around having a monstrous
         45% projectile deflection chance. Go ahead. Shoot it with birdshot. You
-        won't be disappointed in the visuals. 
+        won't be disappointed in the visuals.
   id: 7077
   time: '2025-04-01T15:21:02.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2114
@@ -14381,7 +14381,7 @@ Entries:
         Glimmer now operates on double precision. Have fun with that breaking
         change if you made any psionic code downstream. Hint, you can cast
         doubles into a (float) if you don't wish to convert your system to
-        double. 
+        double.
   id: 7092
   time: '2025-04-04T15:41:43.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1848
@@ -14390,7 +14390,7 @@ Entries:
     - type: Fix
       message: >-
         Fixed an issue that prevented players from saving item customizations if
-        they didn't have enough loadout points to buy the item a second time. 
+        they didn't have enough loadout points to buy the item a second time.
     - type: Add
       message: 'Traits can now define the order in which they are applied. '
     - type: Fix
@@ -14528,7 +14528,7 @@ Entries:
     - type: Tweak
       message: >-
         Taught the Psionic Mantis how to summon his blade quietly, and not do so
-        via screaming like a lunatic. 
+        via screaming like a lunatic.
   id: 7107
   time: '2025-04-06T19:44:17.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2186
@@ -14800,7 +14800,7 @@ Entries:
       message: >-
         Mosin Nagant is now a proper bolt action rifle. The bolt must be worked
         manually (press Z) after each shot. The fun tradeoff is that it now hits
-        like a truck with 42 damage a shot. 
+        like a truck with 42 damage a shot.
     - type: Tweak
       message: >-
         Bulldog shotgun now has a wide choke, it fires 33% more projectiles per
@@ -15046,12 +15046,12 @@ Entries:
         Added "Integrated Thrusters" and "Integrated Magboots" as features that
         hardsuits and tacsuits can sometimes have. Hardsuits rarely have both,
         and sometimes have neither, while the more "Advanced" Tacsuits such as
-        the CSA series of suits will always have both. 
+        the CSA series of suits will always have both.
     - type: Tweak
       message: >-
         Reduced the maximum amount of time player characters can remain in the
         air without being touched by space wind again to 1 second, down from 2.
-        This does nothing if you're actively being thrown. 
+        This does nothing if you're actively being thrown.
     - type: Fix
       message: >-
         Fixed a bug where the hardsuit action to toggle your helmet wasn't
@@ -15203,7 +15203,7 @@ Entries:
       message: >-
         NT has had its station's "High Security" doors such as Command,
         Security, and Vault doors shielded with psifoil around their components.
-        They can no longer be forced open by the Anoigo power. 
+        They can no longer be forced open by the Anoigo power.
     - type: Tweak
       message: >-
         Anoigo, Dispel, Mindswap, Healing Word, Breath Of Life, Pyrokinesis, and
@@ -15268,7 +15268,7 @@ Entries:
     - type: Remove
       message: >-
         DarkSwap no longer makes its user immune to Space, Gravity, and
-        Vacuums. 
+        Vacuums.
   id: 7169
   time: '2025-04-18T22:09:50.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2274
@@ -15353,7 +15353,7 @@ Entries:
     - type: Fix
       message: >-
         Fixed items such as tactical webbing, bell collars, and hardsuits being
-        desynced with character movement. 
+        desynced with character movement.
     - type: Tweak
       message: Made various large performance improvements.
   id: 7180
@@ -15699,7 +15699,7 @@ Entries:
     - type: Tweak
       message: >-
         SAN Deserters now have actual equipment. Their dropship is also now
-        airtight. 
+        airtight.
     - type: Tweak
       message: >-
         SAN Deserters no longer speak Tau-Ceti Basic. They can only speak Sol
@@ -15921,7 +15921,7 @@ Entries:
       message: >-
         Attempting to spawn in with an invalid trait list will now simply
         prevent you from spawning with any traits at all. It will also inform
-        any admins who may be online of the attempt. 
+        any admins who may be online of the attempt.
   id: 7236
   time: '2025-05-05T01:39:33.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2410
@@ -16202,7 +16202,7 @@ Entries:
         Turrets and NPCs can now hit players who are laying down on the floor.
         They (by default) have a 50% chance to miss players who are laying down,
         meaning it still offers some protection, but not perfect protection from
-        turrets. 
+        turrets.
   id: 7255
   time: '2025-05-17T21:10:34.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2427
@@ -16219,7 +16219,7 @@ Entries:
       message: >-
         Markings can now use shaders. Including things like glowing light
         effects. You can now also have glowing cybernetic eyes. IPC head screens
-        now glow. 
+        now glow.
   id: 7257
   time: '2025-05-17T21:26:06.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2432
@@ -16260,7 +16260,7 @@ Entries:
     - type: Fix
       message: >-
         Fixed melee weapons "Bonus range for heavy attacks" not functioning
-        correctly. 
+        correctly.
     - type: Add
       message: >-
         Added support for melee weapons having bonus range on disarms or light

@@ -51,6 +51,64 @@
         Heat: 5
         Caustic: 5
 
+## hardsuit helmets ncwl revamp
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitNCWLMedi
+  categories: [ HideSpawnMenu ]
+  name: homeguard "SANITAR" hardsuit helmet
+  description: Spaceworthy protection for your fragile skull. A communard design.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/Head/infanteermedsuithelmet.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/Head/infanteermedsuithelmet.rsi
+  - type: PointLight
+    radius: 6
+    color: "#ffffff"
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9
+        Caustic: 0.9
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitNCWLEngi
+  categories: [ HideSpawnMenu ]
+  name: worker's league "EVERYMAN" hardsuit helmet
+  description: Spaceworthy protection for your fragile skull. A communard design.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/Head/salvagehardsuithelmet.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/Head/salvagehardsuithelmet.rsi
+  - type: PointLight
+    radius: 6
+    color: "#ffffff"
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Radiation: 0.9
+        Caustic: 0.9
+
 ## hardsuit helmets
 
 - type: entity
@@ -82,10 +140,10 @@
         Caustic: 0.9
 
 - type: entity
-  parent: ClothingHeadHardsuitBase
+  parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitNCWLPetya
   categories: [ HideSpawnMenu ]
-  name: homeguard heavy hardsuithelmet
+  name: homeguard heavy hardsuit helmet
   description: Spaceworthy protection for your fragile skull. A communard design.
   components:
   - type: BreathMask
@@ -93,6 +151,9 @@
     sprite: _Crescent/Clothing/NCWL/Head/commieheavy.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/NCWL/Head/commieheavy.rsi
+  - type: PointLight
+    radius: 6
+    color: "#e86d3c"
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000

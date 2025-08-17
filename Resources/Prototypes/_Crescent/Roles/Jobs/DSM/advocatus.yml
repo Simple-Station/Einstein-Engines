@@ -3,22 +3,22 @@
   name: job-name-advocatus
   description: job-description-advocatus
   playTimeTracker: JobAdvocatusDSM
-  weight: 85
+  weight: 98
   startingGear: AdvocatusGear
   alwaysUseSpawner: true
-  icon: "JobIconAdvocatus"
   requireAdminNotify: true
+  icon: "JobIconAdvocatus"
   supervisors: job-supervisors-imperial
   canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement
+    - !type:FactionRequirement
+      factionID: "DSM"
     - !type:CharacterSpeciesRequirement
       species:
         - Human
     - !type:CharacterOverallTimeRequirement
       min: 36000
-    - !type:FactionRequirement
-      factionID: "DSM"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -33,6 +33,18 @@
     components:
       - type: ChatRank
         rank: crescent-rank-advocatus
+      - type: LanguageKnowledge
+        speaks:
+          - HighImperial
+          - LowImperial
+          - TauCetiBasic
+          - Sign
+        understands:
+          - HighImperial
+          - LowImperial
+          - TauCetiBasic
+          - Sign
+
   access:
   - EmergencyShuttleRepealAll
   - Captain

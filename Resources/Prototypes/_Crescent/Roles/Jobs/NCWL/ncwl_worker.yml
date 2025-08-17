@@ -1,0 +1,57 @@
+- type: job
+  id: WorkerNCWL
+  name: job-name-ncwl-newbie
+  description: job-description-ncwl-newbie
+  playTimeTracker: JobWorkerNCWL
+  weight: 1
+  startingGear: WorkerNCWLGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconNCWLWorker"
+  supervisors: job-supervisors-ncwl-worker
+  canBeAntag: false
+  requirements:
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - Muted
+        - Blindness
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ncwl-worker
+      - type: LanguageKnowledge
+        speaks:
+          - Dockta
+          - TauCetiBasic
+          - Tradeband
+        understands:
+          - Dockta
+          - TauCetiBasic
+          - Tradeband
+  access:
+  - Command
+  - Maintenance
+  - Service
+  - NCWLGeneral
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: WorkerNCWLGear
+  equipment:
+    shoes: ClothingShoesBootsSalvage
+    jumpsuit: ClothingUniformJumpsuitNCWLTrainee
+    id: NCWLWorkerPDA
+    belt: ClothingBeltUtilityFilled
+    back: ClothingBackpackNCWL
+    ears: ClothingHeadsetNCWL

@@ -42,7 +42,10 @@
       types:
         Piercing: 10
         Slash: 5
-    heavyStaminaCost: 5
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
+    heavyRateModifier: 1.15
+    clickPartDamageMultiplier: 1.25
     maxTargets: 3
     angle: 20
     animation: WeaponArcThrust
@@ -55,6 +58,8 @@
     staminaCost: 6
   - type: Item
     size: Ginormous
+    shape:
+      - 0,0,1,3
   - type: Clothing
     quickEquip: false
     slots:
@@ -235,10 +240,10 @@
       types:
         Piercing: 10
         Slash: 10
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
     heavyRateModifier: 1.25
-    heavyRangeModifier: 1.35
-    heavyDamageBaseModifier: 1.0
-    heavyStaminaCost: 5
+    clickPartDamageMultiplier: 1.25
     maxTargets: 3
     angle: 20
     animation: WeaponArcThrust
@@ -250,6 +255,8 @@
         Piercing: 35
   - type: Item
     size: Ginormous
+    shape:
+      - 0,0,1,3
   - type: Clothing
     quickEquip: false
     slots:

@@ -12,6 +12,8 @@
   - type: Item
     # If you update this also update the bulldog's size.
     size: Large
+    shape:
+    - 0,0,4,1
   - type: Clothing
     sprite: DeltaV/Objects/Weapons/Guns/Shotguns/db_shotgun.rsi # Delta-V
     quickEquip: false
@@ -69,7 +71,7 @@
   # Don't parent to BaseWeaponShotgun because it differs significantly
   parent: [BaseItem, BaseGunWieldable]
   id: WeaponShotgunBulldog
-  description: It's a magazine-fed shotgun designed for close quarters combat. Uses .50 shotgun shells.
+  description: It's a magazine-fed shotgun designed for close quarters combat. Uses 12 gauge shotgun shells.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/pozhar.rsi
@@ -80,6 +82,8 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: Item
     size: Large
+    shape:
+    - 0,0,4,2
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/pozhar.rsi
     quickEquip: false
@@ -89,7 +93,7 @@
   - type: AmmoCounter
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
-    fireRate: 2
+    fireRate: 3
     selectedMode: FullAuto
     availableModes:
     - FullAuto
@@ -248,12 +252,12 @@
   name: NT 00-1 Kammerer 12g
   parent: [BaseWeaponShotgun, BaseGunWieldable]
   id: WeaponShotgunKammerer
-  description: When an old Remington design meets modern materials, this is the result. A favourite weapon of militia forces throughout many worlds. Uses 12g shotgun shells.
+  description: A simple 12-gauge pump-action shotgun, equipped with a choke to improve accuracy. This is the gun you imagine when someone says shotgun.
   components:
   - type: Item
     size: Normal
     shape:
-    - 0,0,4,0
+    - 0,0,3,1
     sprite: _Crescent/Objects/Weapons/Guns/kammerer.rsi
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/kammerer.rsi
@@ -261,7 +265,7 @@
     sprite: _Crescent/Objects/Weapons/Guns/kammerer.rsi
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: BallisticAmmoProvider
-    capacity: 4
+    capacity: 6
     autoCycle: false
   - type: Tag
     tags:

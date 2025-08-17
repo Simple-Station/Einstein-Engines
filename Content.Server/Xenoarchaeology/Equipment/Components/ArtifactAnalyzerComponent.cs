@@ -17,13 +17,13 @@ public sealed partial class ArtifactAnalyzerComponent : Component
     /// How long it takes to analyze an artifact
     /// </summary>
     [DataField("BaseAnalysisDuration", customTypeSerializer: typeof(TimespanSerializer))]
-    public TimeSpan BaseAnalysisDuration = TimeSpan.FromSeconds(40);
+    public TimeSpan BaseAnalysisDuration = TimeSpan.FromSeconds(5);
 
     /// <summary>
     /// How long it takes to analyze an artifact with modifiers applied
     /// </summary>
     [DataField("AnalysisDuration", customTypeSerializer: typeof(TimespanSerializer))]
-    public TimeSpan AnalysisDuration = TimeSpan.FromSeconds(40);
+    public TimeSpan AnalysisDuration = TimeSpan.FromSeconds(5);
 
     /// <summary>
     /// Which machine part affects time reduction

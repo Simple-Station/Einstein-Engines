@@ -1,0 +1,102 @@
+- type: job
+  id: FleetkapitanNCWL
+  name: job-name-ncwl-fleetkapitan
+  description: job-description-ncwl-fleetkapitan
+  playTimeTracker: JobHomeguardSquadCaptainNCWL
+  weight: 98
+  startingGear: CaptainNCWLGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconNCWLHomeguardSquadCaptain"
+  supervisors: job-supervisors-ncwl-leaders
+  canBeAntag: false
+  requirements:
+    - !type:CharacterWhitelistRequirement
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterOverallTimeRequirement
+      min: 20000
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ncwl-home-squad-lead
+      - type: LanguageKnowledge
+        speaks:
+          - Dockta
+          - TauCetiBasic
+          - Tradeband
+        understands:
+          - Dockta
+          - TauCetiBasic
+          - Tradeband
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Command
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Mercenary # Frontier
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - NCWLGeneral
+  - NCWLKommissar
+  - NCWLJail
+  - NCWLArmory
+  - NCWLCommand
+
+- type: startingGear
+  id: CaptainNCWLGear
+  equipment:
+    shoes: ClothingShoesBootsJack
+    jumpsuit: ClothingUniformJumpsuitNCWL
+    id: NCWLHomeguardSquadCaptainPDA
+    outerClothing: ClothingOuterArmorNCWLCarapaceKapitan
+    belt: ClothingBeltNCWLPouches
+    pocket1: WeaponPistolHKUSP
+    back: ClothingBackpackNCWL
+    gloves: ClothingHandsGlovesCombat
+    head: ClothingHeadHatNCWLBeret
+    mask: ClothingMaskNCWLGasmask
+    ears: ClothingHeadsetNCWL
+    eyes: ClothingEyesHudSecurity

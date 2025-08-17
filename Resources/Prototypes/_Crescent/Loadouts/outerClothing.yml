@@ -20,13 +20,14 @@
       group: LoadoutEVASuit
     - !type:CharacterJobRequirement
       jobs:
-        - AdministratorNCWL
-        - ArtificerNCWL
-        - DoktorNCWL
-        - KadetNCWL
-        - KapitanNCWL
+        - CommandantNCWL
         - KommissarNCWL
-        - SanitarNCWL
+        - FleetkapitanNCWL
+        - PartisanNCWL
+        - DoctorNCWL
+        - WorkerOverbossNCWL
+        - IndustryTaskmasterNCWL
+        - WorkerNCWL
 
 - type: loadout
   id: LoadoutHeadNCWLEVA
@@ -39,13 +40,14 @@
       group: LoadoutEVASuit
     - !type:CharacterJobRequirement
       jobs:
-        - AdministratorNCWL
-        - ArtificerNCWL
-        - DoktorNCWL
-        - KadetNCWL
-        - KapitanNCWL
+        - CommandantNCWL
         - KommissarNCWL
-        - SanitarNCWL
+        - FleetkapitanNCWL
+        - PartisanNCWL
+        - DoctorNCWL
+        - WorkerOverbossNCWL
+        - IndustryTaskmasterNCWL
+        - WorkerNCWL
 
 - type: loadout
   id: LoadoutOuterArmorTFSCEVA

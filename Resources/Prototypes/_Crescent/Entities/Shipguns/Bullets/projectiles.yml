@@ -13,7 +13,7 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Structural: 90
+        Structural: 75
         Piercing: 50
   - type: PointLight
     radius: 3.5
@@ -60,14 +60,14 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Structural: 250
+        Structural: 100
         Piercing: 100
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 100
-    intensitySlope: 14
-    totalIntensity: 325
+    maxIntensity: 50
+    intensitySlope: 12
+    totalIntensity: 250
     maxTileBreak: 7
   - type: PointLight
     radius: 3.5
@@ -102,10 +102,10 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 14
-    intensitySlope: 23
-    totalIntensity: 20
-    maxTileBreak: 2
+    maxIntensity: 12
+    intensitySlope: 22
+    totalIntensity: 15
+    maxTileBreak: 1
   - type: PointLight
     radius: 3.5
     color: orange
@@ -1342,7 +1342,7 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Structural: 55
+        Structural: 50
   - type: TimedDespawn
     lifetime: 10
     #roughly 600m range
@@ -1353,10 +1353,10 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 12
-    intensitySlope: 15
-    totalIntensity: 13
-    maxTileBreak: 2
+    maxIntensity: 11
+    intensitySlope: 16
+    totalIntensity: 11
+    maxTileBreak: 1
   - type: PointLight
     radius: 5
     color: orange
@@ -1378,7 +1378,7 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Piercing: 375
+        Piercing: 150
   - type: TimedDespawn
     lifetime: 10
     #roughly 600m range
@@ -1491,10 +1491,10 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 100
-    intensitySlope: 35
-    totalIntensity: 500
-    maxTileBreak: 8
+    maxIntensity: 80
+    intensitySlope: 25
+    totalIntensity: 200
+    maxTileBreak: 6
   - type: PointLight
     radius: 3.5
     color: red

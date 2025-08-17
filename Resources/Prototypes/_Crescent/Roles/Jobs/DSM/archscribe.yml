@@ -3,21 +3,22 @@
   name: job-name-archmaester
   description: job-description-archmaester
   playTimeTracker: JobArchmaesterDSM
-  weight: 76
+  weight: 94
   startingGear: ArchmaesterGear
   alwaysUseSpawner: true
-  icon: "JobIconArchmaester"
   requireAdminNotify: true
+  icon: "JobIconArchmaester"
   supervisors: job-supervisors-imperial
   canBeAntag: false
   requirements:
+    - !type:CharacterWhitelistRequirement
+    - !type:FactionRequirement
+      factionID: "DSM"
+    - !type:CharacterOverallTimeRequirement
+      min: 36000
     - !type:CharacterSpeciesRequirement
       species:
         - Human
-    - !type:CharacterOverallTimeRequirement
-      min: 36000
-    - !type:FactionRequirement
-      factionID: "DSM"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -30,6 +31,17 @@
     components:
       - type: ChatRank
         rank: crescent-rank-archmaester
+      - type: LanguageKnowledge
+        speaks:
+          - HighImperial
+          - LowImperial
+          - TauCetiBasic
+          - Tradeband
+        understands:
+          - HighImperial
+          - LowImperial
+          - TauCetiBasic
+          - Tradeband
   access:
   - Command
   - Empire

@@ -9,13 +9,14 @@
       group: LoadoutOuter
     - !type:CharacterJobRequirement
       jobs:
-        - AdministratorNCWL
-        - ArtificerNCWL
-        - KadetNCWL
-        - KapitanNCWL
+        - CommandantNCWL
         - KommissarNCWL
-        - SanitarNCWL
-
+        - FleetkapitanNCWL
+        - PartisanNCWL
+        - DoctorNCWL
+        - WorkerOverbossNCWL
+        - IndustryTaskmasterNCWL
+        - WorkerNCWL
 - type: loadout
   id: LoadoutOuterArmorNCWLCarapaceDoktor
   category: Outer
@@ -27,4 +28,4 @@
       group: LoadoutOuter
     - !type:CharacterJobRequirement
       jobs:
-        - DoktorNCWL
+        - DoctorNCWL
