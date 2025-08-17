@@ -58265,23 +58265,6 @@ entities:
     - type: Transform
       pos: -13.5,5.5
       parent: 1
-- proto: NCWLAdmiralVolginPhoto
-  entities:
-  - uid: 1375
-    components:
-    - type: Transform
-      pos: 23.589022,3.5922225
-      parent: 1
-  - uid: 2043
-    components:
-    - type: Transform
-      pos: -21.5,-5.5
-      parent: 1
-  - uid: 2075
-    components:
-    - type: Transform
-      pos: -21.460718,6.6145854
-      parent: 1
 - proto: NCWLCargoDispenser
   entities:
   - uid: 8610
