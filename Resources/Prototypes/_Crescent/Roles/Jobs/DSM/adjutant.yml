@@ -11,9 +11,9 @@
   supervisors: job-supervisors-imperial
   canBeAntag: false
   requirements:
+    - !type:CharacterWhitelistRequirement
     - !type:FactionRequirement
       factionID: "DSM"
-    - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
       min: 36000
     - !type:CharacterSpeciesRequirement
