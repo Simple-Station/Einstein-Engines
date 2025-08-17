@@ -520,13 +520,16 @@
       - CovetorLPC
       - IbisLPC
       - SunesisLPC
-      - ClothingBeltSheathRapier
+      - ClothingBeltSheathDSMRapier
       - ClothingBeltSheathDSMSabre
       - DSMRapier
       - DSMSabre
+      - DSMDuelingKhopesh
       - LaelapsLPC
       - PaladinFlatpack
       - WandererFlatpack
+      - WeaponMechCombatPlasmaRifle
+      - WeaponMechCombatPlasmaCannon
       - WeaponRifleDSMLegionnaire
       - WeaponSubMachineGunC20rImperial
       - WeaponPistolNeoVolker
@@ -548,6 +551,7 @@
       - ClothingUniformJumpsuitNCWL
       - ClothingMaskNCWLBalaclava
       - ClothingEyesGlassesNCWL
+      - ClothingMaskNCWLGasmask
       - ClothingBeltNCWLWebbing
       - ClothingHeadHelmetNCWLBasic
       - ClothingHeadHelmetNCWLRiot
@@ -589,6 +593,8 @@
       - ClothingHeadHatShinoharaNonevaHelm
       - TelescopicBatonSHI
       - ShinoharaOptics
+      - WeaponFighterMachinegun
+      - WeaponFighterAutocannon
       - WeaponMechCombatAutoshotgun
       - WeaponMechCombatLightRifle
       - WeaponMechSword
@@ -640,6 +646,8 @@
       - GilgameshFlatpack
       - BallisticFablatheFlatpack
       - CyberneticsDermalArmor
+      - SHIKatana
+      - SHIShiverBlade
 
   - type: Machine
     board: MicroforgeCircuitboard

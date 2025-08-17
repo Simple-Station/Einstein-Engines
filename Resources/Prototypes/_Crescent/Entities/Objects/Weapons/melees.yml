@@ -10,16 +10,17 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -45
-    attackRate: 0.8
-    heavyStaminaCost: 10
+    attackRate: 0.85
     damage:
       types:
         Slash: 28
         Structural: 20
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
+    heavyRateModifier: 1.3
     clickPartDamageMultiplier: 2
     heavyPartDamageMultiplier: 1.3
     lightRangeModifier: 1.4
-    heavyRateModifier: 1.3
     maxTargets: 2
     angle: 45
     soundHit:
@@ -37,25 +38,8 @@
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/machete.rsi
     state: icon
-  - type: MeleeWeapon
-    wideAnimationRotation: -135
-    soundHit:
-      path: /Audio/Weapons/bladeslice.ogg
-    maxTargets: 4
-    angle: 80
-  - type: DamageOtherOnHit
-    staminaCost: 5
-  - type: EmbeddableProjectile
-  - type: EmbedPassiveDamage
-  - type: ThrowingAngle
-    angle: 225
   - type: Item
-    size: Normal
     sprite: _Crescent/Objects/Weapons/machete.rsi
-  - type: Tag
-    tags:
-    - Machete
-  - type: DisarmMalus
 
 - type: entity
   name: noble's rapier
@@ -70,19 +54,25 @@
   - type: MeleeWeapon
     wideAnimationRotation: -135
     range: 1.75
-    attackRate: 1.25
+    attackRate: 1.15
     damage:
       types:
         Slash: 18
         Piercing: 22
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
+    heavyRateModifier: 1.25
     clickPartDamageMultiplier: 2
-    maxTargets: 7
+    lightRangeModifier: 1.15
+    maxTargets: 3
     angle: 0.1
     animation: WeaponArcThrust
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: Item
     size: Normal
+    shape:
+      - 0,0,1,3
     sprite: _Crescent/Objects/Weapons/noble_rapier.rsi
   - type: Tag
     tags:
@@ -101,16 +91,17 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.5
+    attackRate: 0.85
     range: 1.25
     damage:
       types:
         Slash: 36
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 8
+    heavyRateModifier: 1
     clickPartDamageMultiplier: 2
-    heavyPartDamageMultiplier: 1.5
-    lightRangeModifier: 1.5
-    heavyStaminaCost: 2.5
-    maxTargets: 7
+    lightRangeModifier: 1.2
+    maxTargets: 4
     animation: WeaponArcThrust
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
@@ -119,6 +110,8 @@
     spread: 90
   - type: Item
     size: Normal
+    shape:
+      - 0,0,1,3
     sprite: _Crescent/Objects/Weapons/noble_sabre.rsi
   - type: Tag
     tags:
@@ -136,18 +129,25 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.2
+    attackRate: 1
     damage:
       types:
-        Blunt: 25
+        Blunt: 28
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
+    heavyRateModifier: 1.15
+    clickPartDamageMultiplier: 1.25
+    lightRangeModifier: 1.2
+    bluntStaminaDamageFactor: 1.25
+    maxTargets: 2
     soundHit:
       collection: MetalThud
-    bluntStaminaDamageFactor: 2
-    heavyStaminaCost: 5
   - type: DamageOtherOnHit
     staminaCost: 15
   - type: Item
     size: Normal
+    shape:
+      - 0,0,1,2
   - type: Tag
     tags:
     - Truncheon
@@ -164,3 +164,115 @@
   - type: GuideHelp
     guides:
     - Security
+
+- type: entity
+  name: shinohara corporate katana
+  parent: BaseItem
+  id: SHIKatana
+  description: The result of corporate think-tank focus groups, the Shinohara Industrial Handheld Cutting Device is legally considered a kitchen implement, not a weapon. It is marketed as the cost-effective choice for a thrifty consumer intending to keep a tight budget and still appeal to style - and when a corpsec agent finds themselves unable to afford more ammunition renewals, there is the option of falling on this standard issue kitchen implement rather than void their contract by willingly refusing to engage a noncompliant customer.
+  components:
+  - type: Tag
+    tags:
+    - Katana
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/shinoharakatana.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -90
+    range: 1.25
+    attackRate: 1
+    damage:
+      types:
+        Slash: 36
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
+    heavyRateModifier: 1.15
+    clickPartDamageMultiplier: 1.5
+    lightRangeModifier: 1.15
+    maxTargets: 3
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+  - type: ThrowingAngle
+    angle: 300
+  - type: Item
+    size: Normal
+    shape:
+      - 0,0,1,3
+    sprite: _Crescent/Objects/Weapons/shinoharakatana.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/shinoharakatana.rsi
+    slots:
+    - Back
+
+- type: entity
+  name: SHI-RIP9 cherenzikov shiver blade
+  parent: SHIKatana
+  id: SHIKatanaShiverBlade
+  description: Combining cutting-edge contained plasma field technology with elegant neomilitarism, the RIP9 Cherenzikov is a favourite of SHI Liquidation agents and penthouse PMCs across known space. Don't just kill your enemy - make a statement. Shinohara Industrial™.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/shiverblade.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -90
+    attackRate: 0.85
+    damage:
+      types:
+        Slash: 38
+    heavyRateModifier: 1
+  - type: Item
+    size: Normal
+    sprite: _Crescent/Objects/Weapons/shiverblade.rsi
+  - type: DashAbility
+  - type: LimitedCharges
+    maxCharges: 1
+    charges: 1
+  - type: AutoRecharge
+    rechargeDuration: 180
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/shiverblade.rsi
+    slots:
+    - Back
+  - type: Reflect
+    reflectProb: 0.33
+    velocityBeforeNotMaxProb: 4.0
+    velocityBeforeMinProb: 8.0
+  - type: AmbientSound
+    range: 8
+    volume: 1
+    sound:
+      path: /Audio/Weapons/ebladehum.ogg
+
+- type: entity
+  name: dueling khopesh
+  parent: BaseItem
+  id: DSMDuelingKhopesh
+  description: Typically relegated to a ceremonial weapon, the steel dueling khopesh saw widespread revival among Saintsworn aristocrats after the death of Romaine. The curved design allows a canny swordsman to work their way past an enemy's guard and deliver heavy chopping blows.
+  components:
+  - type: Sharp
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/duelingkhopesh.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: 90
+    attackRate: 1
+    damage:
+      types:
+        Slash: 33
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
+    heavyRateModifier: 1.25
+    clickPartDamageMultiplier: 2
+    lightRangeModifier: 1.15
+    maxTargets: 3
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    size: Normal
+    shape:
+      - 0,0,1,3
+    sprite: _Crescent/Objects/Weapons/duelingkhopesh.rsi
+  - type: Tag
+    tags:
+    - Khopesh
+  - type: DisarmMalus

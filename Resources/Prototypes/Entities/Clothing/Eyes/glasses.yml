@@ -472,7 +472,7 @@
   parent: ClothingEyesBase
   id: ClothingEyesGlassesEthereal
   name: ethereal goggles
-  description: An unusual pair of goggles developed during a time of inhumane experimentation involving Shadowkin. They are designed to allow the wearer to peer into The Dark.
+  description: An unusual pair of goggles developed during a time of inhumane experimentation involving Voidborn. They are designed to allow the wearer to peer into The Dark.
   components:
   - type: Sprite
     sprite: Clothing/Eyes/Glasses/etherealgoogles.rsi

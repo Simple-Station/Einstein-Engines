@@ -12,13 +12,17 @@
     angle: 5
     wideAnimationRotation: 180
     attackRate: 1
-    heavyStaminaCost: 10
     damage:
       types:
         Slash: 10
         Piercing: 30
         Structural: 25
     heavyDamageBaseModifier: 1
+    heavyStaminaCost: 8
+    clickPartDamageMultiplier: 2.5
+    heavyPartDamageMultiplier: 1.5
+    lightRangeModifier: 1.5
+    heavyRateModifier: 1.2
     maxTargets: 3
   - type: Prying
     speedModifier: 2
@@ -26,8 +30,6 @@
   - type: Tool
     qualities:
     - Prying
-    soundHit:
-      path: /Audio/Weapons/bladeslice.ogg
   - type: Item
     size: Ginormous
     sprite: _Goobstation/Changeling/claw.rsi

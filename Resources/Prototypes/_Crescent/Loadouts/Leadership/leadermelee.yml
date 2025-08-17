@@ -10,7 +10,7 @@
     - !type:CharacterJobRequirement
       jobs:
         - CommandantNCWL
-        - HomeguardLeaderNCWL
+        - KommissarNCWL
         - IntelligenceOfficerNCSP
         - LieutenantNCSP
         - RingleaderNCSP
@@ -23,16 +23,16 @@
 - type: loadout
   id: LoadoutBeltSheathSabre
   category: Belt
-  cost: 2
+  cost: 0
   items:
-    - ClothingBeltSheath
+    - ClothingBeltSheathFilled
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBelt
     - !type:CharacterJobRequirement
       jobs:
         - CommandantNCWL
-        - HomeguardLeaderNCWL
+        - KommissarNCWL
         - IntelligenceOfficerNCSP
         - LieutenantNCSP
         - RingleaderNCSP

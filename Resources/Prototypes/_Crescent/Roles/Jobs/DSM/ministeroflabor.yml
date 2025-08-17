@@ -9,6 +9,10 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Human
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
     - !type:FactionRequirement
       factionID: "DSM"
     - !type:CharacterTraitRequirement
@@ -30,6 +34,15 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ministry
+      - type: LanguageKnowledge
+        speaks:
+          - HighImperial
+          - Tradeband
+          - SolCommon
+        understands:
+          - HighImperial
+          - Tradeband
+          - SolCommon
   access:
   - Command
   - Empire

@@ -8,6 +8,10 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Human
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
     - !type:SexRequirement
       sex : Male
     - !type:FactionRequirement
@@ -31,6 +35,15 @@
     components:
       - type: ChatRank
         rank: crescent-rank-baron
+      - type: LanguageKnowledge
+        speaks:
+          - HighImperial
+          - SolCommon
+          - Tradeband
+        understands:
+          - HighImperial
+          - Tradeband
+          - SolCommon
   access:
   - EmergencyShuttleRepealAll
   - Captain

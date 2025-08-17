@@ -13,6 +13,10 @@
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -24,6 +28,13 @@
       - type: ChatRank
         rank: crescent-rank-smarts
       - type: BibleUser
+      - type: LanguageKnowledge
+        speaks:
+          - Tradeband
+          - SolCommon
+        understands:
+          - Tradeband
+          - SolCommon
   access:
   - Command
   - Empire

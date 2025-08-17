@@ -6,8 +6,21 @@
   weight: 73
   startingGear: FreeholderGear
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
     - !type:FactionRequirement
         factionID: "DSM"
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: LanguageKnowledge
+        speaks:
+          - SolCommon
+        understands:
+          - Tradeband
+          - SolCommon
   alwaysUseSpawner: true
   icon: "JobIconImperialFreeholder"
   requireAdminNotify: false

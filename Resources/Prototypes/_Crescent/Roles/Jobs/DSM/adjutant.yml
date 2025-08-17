@@ -9,6 +9,10 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Human
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
     - !type:FactionRequirement
       factionID: "DSM"
   weight: 86
@@ -23,6 +27,15 @@
     components:
       - type: ChatRank
         rank: crescent-rank-adjutant
+      - type: LanguageKnowledge
+        speaks:
+          - HighImperial
+          - Tradeband
+          - SolCommon
+        understands:
+          - HighImperial
+          - Tradeband
+          - SolCommon
   access:
   - EmergencyShuttleRepealAll
   - Captain

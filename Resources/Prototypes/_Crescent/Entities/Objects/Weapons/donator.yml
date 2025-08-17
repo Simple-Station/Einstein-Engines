@@ -46,6 +46,20 @@
   - type: StaticPrice
     price: 5000
 
+- type: entity
+  id: CaseZodum
+  parent: WeaponCaseZodum
+  name: shinohara "SHI001P Zodum" case
+  suffix: Donor - Zodum
+  description: A pistol case from Shinohara containing a extremly rare prototype of a custom made hand-cannon.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponPistolZodum
+        amount: 1
+      - id: MagazineMagnum
+        amount: 3
+
 # @theassassin25 (Volgin) donor gun
 - type: entity
   name: NCWL-AR02 Porodschok 5.56x45mm
@@ -62,6 +76,9 @@
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/porodshok.rsi
+  - type: Item
+    shape:
+    - 0,0,4,1
   - type: Gun
     shotsPerBurst: 2
     availableModes:
@@ -102,6 +119,20 @@
   - type: StaticPrice
     price: 3000
 
+- type: entity
+  id: CasePorodshok
+  parent: WeaponCasePorodshok
+  name: Chengridz factory 553 "AR02 Porodschok" case
+  suffix: Donor - Porodshok
+  description: Chengridz Factory 553 weapon case containing a rare, high-end Communard rifle. That has ben recalled after Imperial sabotage at the plant.
+  components:
+  - type: StorageFill
+    contents:
+      - id: PorodschokDonator
+        amount: 1
+      - id: MagazineLightRifle
+        amount: 3
+
 # @m18hellcat76mmgunmotorcarriage (Hellcat) donor gun
 - type: entity
   name: PTA XCR-6 Charge rifle 6x24mm
@@ -118,6 +149,9 @@
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    shape:
+    - 0,0,4,1
   - type: Gun
     fireRate: 6
     soundGunshot:
@@ -154,6 +188,21 @@
     zeroVisible: true
   - type: Appearance
 
+- type: entity
+  id: CaseChargeRifle
+  parent: WeaponCaseChargeRifle
+  name: pang tai arms "M-18" case
+  suffix: Donor - Charge rifle
+  description: A weapon case marked with a large red stamp reading 'EXPERIMENTAL,' with smaller text below 'SrNum M-18.' On the inside is a note filled with technical mumbo-jumbo.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSpecialChargeRifle
+        amount: 1
+      - id: Magazine6x24mmCharge
+        amount: 2
+      - id: Magazine6x24mmShock
+        amount: 1
 # @willybillygilly (WillyBillyGilly) donor gun
 - type: entity
   name: PTA 23AX Karabin 4g
@@ -166,6 +215,9 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/karabin.rsi
   - type: GunRequiresWield
+  - type: Item
+    shape:
+    - 0,0,4,1
   - type: Gun
     fireRate: 2
     soundGunshot:
@@ -199,6 +251,9 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/hammerhead.rsi
   - type: GunRequiresWield
+  - type: Item
+    shape:
+    - 0,0,5,2
   - type: Gun
     fireRate: 0.5
     soundGunshot:
@@ -245,3 +300,53 @@
 
     defaultSeekingRange: 400
     guidanceAlgorithm: PredictiveGuidance
+
+# @Tomahawk101 (Tomahawk101) donor gun
+- type: entity
+  name: DEW-17-Mod Cycler 95c
+  parent: BaseWeaponBatterySmall
+  id: WeaponDonorCycler
+  description: A heavily modified DEW-17 laser pistol, its battery connection point has ben replaced with a miniature RTG capable of recharging the weapon indefinitely.
+  components:
+  - type: Item
+    size: Normal  
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/cycler.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-12
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/cycler.rsi
+  - type: Gun
+    fireRate: 6
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/laser1.ogg
+  - type: HitscanBatteryAmmoProvider
+    proto: RedMediumLaser
+    fireCost: 100
+  - type: Battery
+    maxCharge: 2400
+    startingCharge: 2400
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 60
+  - type: MagazineVisuals
+    magState: mag
+    steps: 13
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 4000
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 8
+  - type: DamageOtherOnHit
+    staminaCost: 6

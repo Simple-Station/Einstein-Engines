@@ -8,6 +8,10 @@
   alwaysUseSpawner: true
   icon: "JobIconNCWLWorker"
   requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
     - !type:FactionRequirement
       factionID: "NCWL"
     - !type:CharacterTraitRequirement
@@ -24,12 +28,16 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-worker
+      - type: LanguageKnowledge
+        speaks:
+          - Dockta
+        understands:
+          - Dockta
   access:
   - Command
   - Maintenance
   - Service
   - NCWLGeneral
-  - NCWLJail
   - External
   - Mercenary # Frontier
   - Captain # Frontier

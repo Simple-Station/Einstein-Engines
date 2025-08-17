@@ -131,10 +131,11 @@
   tier: 2
   cost: 5000
   recipeUnlocks:
-  - ClothingBeltSheathRapier
+  - ClothingBeltSheathDSMRapier
   - ClothingBeltSheathDSMSabre
   - DSMRapier
   - DSMSabre
+  - DSMDuelingKhopesh
 
 - type: technology
   id: ImperialSunesis
@@ -197,6 +198,19 @@
   - WeaponRifleDSMLegionnaire
   - WeaponSubMachineGunC20rImperial
   - WeaponPistolNeoVolker
+
+- type: technology
+  id: ImperialPlasmaMechGuns
+  name: research-technology-imperial-plasmamechguns
+  icon:
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: plasmarifle
+  discipline: Imperial
+  tier: 2
+  cost: 9000
+  recipeUnlocks:
+  - WeaponMechCombatPlasmaRifle
+  - WeaponMechCombatPlasmaCannon
 
 - type: technology
   id: ImperialSRM

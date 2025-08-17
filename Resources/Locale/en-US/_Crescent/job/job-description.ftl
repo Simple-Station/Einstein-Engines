@@ -1,18 +1,15 @@
-#ncwl#
+# ncwl
 
-job-description-ncwl-faction-leader = Coordinate the League. Ensure its survival, and the destruction of those who would oppose it.
-job-description-ncwl-homeguard-overseer = Lead the Homeguard. Defend Port Balreska and eliminate the League's enemies.
-job-description-ncwl-homeguard-captain = Command a squad of Soldats. Listen to the Coordinator. Maintain battlefield cohesion.
-job-description-ncwl-homeguard-soldat = Defend the League. Listen to your Squad Captain. Do what you're told.
-job-description-ncwl-logistic-dockmaster = Run industry. Produce goods. Make money. Supply the League. Yell at your dockhands.
-job-description-ncwl-logistic-dockhand = Listen to the Dockmaster. Do trade runs. Order supplies. Man the machines. Get caught in conveyor belts.
-job-description-ncwl-medical-director = Keep the League alive and healthy. Coordinate research. Order cybernetics. Yell at your doctors.
-job-description-ncwl-medical-doctor = Listen to the Director. Do research. Practice medicine. Practice combat medicine. Make drugs.
-job-description-ncwl-engineering-supervisor = Supervise salvage and techmining. Oversee mining. Repair and maintain ships. Yell at your Engineers.
-job-description-ncwl-engineering-mechanic = Listen to the Supervisor. Gather resources for the League. Do repairs and shipmods. Explode.
-job-description-ncwl-newbie = Do what work needs doing. Serve the League and perhaps join one of the Unions.
+job-description-ncwl-faction-leader = Lead the League from the external end. Maintain relations or war plans with other factions. Don't die.
+job-description-ncwl-kommissar = Lead the League from the internal end. Make sure the Homeguard and Union does their job. Execute traitors.
+job-description-ncwl-fleetkapitan = Command the mass of Partisans. Listen to the Kommissar. Maintain battlefield cohesion.
+job-description-ncwl-partisan = Defend the League. Listen to your Fleetkapitan. Do what you're told.
+job-description-ncwl-industry-taskmaster = Ensure materials are being refined into trade goods and ammo. Organize trade routes. Work with the Overseer.
+job-description-ncwl-medical-doctor = Keep the Workers and the Homeguard alive. Run with the Homeguard on missions. Make drugs, save those lost in space.
+job-description-ncwl-worker-overboss = Organize salvage and mining. Make sure workers are working. Keep resources flowing to the Coordinator.
+job-description-ncwl-newbie = Do what work needs doing. Serve the League. Listen to the Overseer and Coordinator.
 
-#syndicate#
+# syndicate
 
 job-description-ringleader = Coordinate the NCSP. Approve and uphold contracts.
 job-description-lieutenant = Assist your Ringleader to coordinate the NCSP. Approve and uphold contracts.
@@ -27,7 +24,7 @@ job-description-cyberdawntech = Research new technologies for the Family.
 job-description-shipbreaker = Repair Syndicate vessels, take the others apart for scrap.
 job-description-foreman = Coordinate the SAWs. Lead pirate boardings. Scrap vessels.
 
-#empire#
+# empire
 
 job-description-freeholder = Obey the Imperial hierarchy. Earn Credits for the Governor.
 job-description-levyman = Obey your liege. Uphold the will of the Kaiser.
@@ -46,7 +43,7 @@ job-description-surgeon = Tend to the bodily ails of your comrades.
 job-description-advocatus = Maintain the interests of the Count in the Barony. Collect "taxes".
 job-description-advocatustemplar = Make sure the Advocati stays alive.
 
-#srm#
+# srm#
 
 job-description-tender = Tend to the wounds of your comrades. Tend to the vessels of the Saint. Carry out menial chores.
 job-description-apprenticehunter = Learn the Hunt from your assigned Master Hunter.
@@ -54,7 +51,7 @@ job-description-hunter = Partake in the Hunt. Capture non-conformists for sale.
 job-description-montagne = Assist your Overseer in organizing the Hunters in the Sector.
 job-description-overseer = Oversee the Great Hunt.
 
-#shi
+# shi
 
 job-description-executive = Manage Shinohara assets within Taypan.
 job-description-board = Assist your Manager in coordinating Shinohara assets within the System.
@@ -63,7 +60,7 @@ job-description-highsec = Secure the military interests of the Corporation. Resp
 job-description-employee = Serve in various departments of the Corporation.
 job-description-medtech = Research and develop new technologies, tend to the ailments of employees.
 
-#cmm
+# cmm
 
 job-description-ordnanceman = Man the artillery of Minuteman vessels.
 job-description-machinist = Repair and maintain Minuteman vessels.
@@ -73,7 +70,7 @@ job-description-watchmaster = Coordinate your underlings for the Deputy Marshal.
 job-description-deputymarshal = Coordinate the Minutemen in the absence of the Marshal. Whip the militia into shape.
 job-description-marshal = Coordinate the Minutemen. Oversee martial and civil court. Protect the System.
 
-#tap
+# tap
 
 job-description-prophet = Lead your flock into the light. Ensure order within the Families.
 job-description-acolytetap = Follow your Prophet. Ensure their safety.
@@ -85,7 +82,7 @@ job-description-draugr = Assert your superiority over the Serviles. Protect the 
 job-description-servile = Listen to your Draugrs - earn your stay in the family. Make a name for yourself.
 job-description-antiquarian = Fulfill the system's blackmarketing needs. Make sure your office stays in one piece.
 
-#ath
+# ath
 
 job-description-kommandant = Command the 43rd Battlegroup. Ensure total integration of this system.
 job-description-leutnant = Lead the 43rd Battlegroup's battle fleets.
@@ -102,13 +99,13 @@ job-description-vorarbeiter = Guide the Arbeiters in new industrial conquests. M
 job-description-arbeiter = The industrial life blood of the Authoritat. Follow the Vorarbeiter's direction. Fear the psionicist.
 
 
-#misc
+# misc
 
 job-description-spacer = Be an independent citizen of Taypan.
 job-description-gliess-sheriff = Keep the law in Gliess Santo.
 job-description-gliess-dockmaster = Make sure nobody blows up your station.
 
-#conscript-ncwl
+# conscript-ncwl
 job-description-conscript-ncwl-ship-captain = Pilot the Clementine. Ensure it's safety and use its armaments well. Go down with the ship.
 job-description-conscript-ncwl-ship-crew = Man the guns and fix holes. Load ammo. Help the soldiers do their job. Don't leave the ship.
 job-description-conscript-ncwl-leader = Lead the remnants of the NCWL. Ensure the League takes control of Vladzena.
@@ -121,7 +118,7 @@ job-description-conscript-ncwl-smg = Punish overconfidence. Make them keep their
 job-description-conscript-ncwl-rifleman = Be the rank and file. Be the corpses the League will stand on. (Bolt-action Rifle)
 job-description-conscript-ncwl-cadet = Listen to your superiors. Keep your head down and learn. (Bolt-action Rifle)
 
-#conscript-dsm
+# conscript-dsm
 job-description-conscript-dsm-ship-captain = Pilot the Nemesis. Ensure it's safety and use its armaments well. Go down with the ship.
 job-description-conscript-dsm-ship-crew = Man the guns and fix holes. Load ammo. Help the soldiers do their job. Don't leave the ship.
 job-description-conscript-dsm-leader = Lead the punishment regimen. Reclaim the honor of your house. Stamp out the League.
@@ -133,4 +130,3 @@ job-description-conscript-dsm-shotgun = Punch through enemy lines. Be the first 
 job-description-conscript-dsm-smg = Punish overconfidence. Make them keep their head down. (Submachine Gun)
 job-description-conscript-dsm-rifleman = Be the rank and file. Be the corpses the League will stand on. (Lever-action Rifle)
 job-description-conscript-dsm-cadet = Listen to your superiors. Keep your head down and learn. (Lever-action Rifle)
-

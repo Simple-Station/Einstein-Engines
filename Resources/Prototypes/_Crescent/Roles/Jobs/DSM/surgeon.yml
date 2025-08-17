@@ -10,6 +10,10 @@
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -28,6 +32,11 @@
       - type: CPRTraining
       - type: SurgerySpeedModifier
         speedModifier: 2
+      - type: LanguageKnowledge
+        speaks:
+          - SolCommon
+        understands:
+          - SolCommon
   access:
   - Command
   - Empire

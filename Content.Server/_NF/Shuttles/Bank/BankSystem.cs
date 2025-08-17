@@ -56,8 +56,7 @@ public sealed partial class BankSystem : EntitySystem
         {
             Balance = bank.Balance,
         };
-
-        _dbManager.SaveCharacterSlotAsync((NetUserId) user, newProfile, index);
+        _prefsManager.SetProfileNoChecks((NetUserId) user, index,(ICharacterProfile)newProfile);
         _log.Info($"Character {profile.Name} saved");
         if (balanceDiff > 250000)
         {
