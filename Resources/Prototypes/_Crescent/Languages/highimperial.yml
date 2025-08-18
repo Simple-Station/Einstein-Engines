@@ -3,7 +3,7 @@
   isVisibleLanguage: true
   speech:
     color: "#bd73d0"
-    fontId: Cambria
+    fontId: GrenzeGotisch
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
