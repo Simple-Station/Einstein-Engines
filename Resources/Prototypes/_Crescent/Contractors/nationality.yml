@@ -7,9 +7,9 @@
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
-        - LowImperial
+        - Sign
       languagesUnderstood:
-        - LowImperial
+        - Sign
   passportPrototype: ImperialPassport
 
 - type: nationality
@@ -21,9 +21,9 @@
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
-        - Dockta
+        - Sign
       languagesUnderstood:
-        - Dockta
+        - Sign
   passportPrototype: NCWLPassport
 
 - type: nationality
@@ -33,9 +33,9 @@
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
-        - Clarizian
+        - Sign
       languagesUnderstood:
-        - Clarizian
+        - Sign
   passportPrototype: ClarizianPassport
 
 - type: nationality
@@ -45,9 +45,9 @@
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
-        - Freespeak
+        - Sign
       languagesUnderstood:
-        - Freespeak
+        - Sign
   passportPrototype: CoalitionPassport
 
 - type: nationality
@@ -57,7 +57,7 @@
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
-        - SolBasic
+        - Sign
       languagesUnderstood:
-        - SolBasic
+        - Sign
   passportPrototype: AuthorityPassport
