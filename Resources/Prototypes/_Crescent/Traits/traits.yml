@@ -1,12 +1,24 @@
 - type: trait
+  id: LowImperial
+  category: TraitsSpeechLanguages
+  points: -6
+  requirements:
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Imperial
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - LowImperial
+      languagesUnderstood:
+        - LowImperial
+
+- type: trait
   id: Dockta
   category: TraitsSpeechLanguages
-  points: -1
-  # slots: 1
-  # itemGroupSlots: 0
+  points: -6
   requirements:
-    # - !type:CharacterItemGroupRequirement
-    #   group: TraitsLanguagesBasic
     - !type:CharacterNationalityRequirement
       inverted: true
       nationalities:
@@ -19,17 +31,49 @@
         - Dockta
 
 - type: trait
-  id: LowImperial
+  id: Freespeak
   category: TraitsSpeechLanguages
-  points: -1
+  points: -6
   requirements:
     - !type:CharacterNationalityRequirement
       inverted: true
       nationalities:
-        - Imperial
+        - Coalition
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
-        - LowImperial
+        - Freespeak
       languagesUnderstood:
-        - LowImperial
+        - Freespeak
+
+- type: trait
+  id: Clarizian
+  category: TraitsSpeechLanguages
+  points: -6
+  requirements:
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Clarizian
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Clarizian
+      languagesUnderstood:
+        - Clarizian
+
+- type: trait
+  id: SolBasic
+  category: TraitsSpeechLanguages
+  points: -6
+  requirements:
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Authority
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - SolBasic
+      languagesUnderstood:
+        - SolBasic

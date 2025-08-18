@@ -15,5 +15,5 @@ language-SolBasic-description = A derived form of High Imperial and Tau Ceti Bas
 chat-language-SolBasic-name = Solarian Basic
 
 language-Clarizian-name = Clarizian Common
-language-Clarizian-description = Clarizian Standard is the official tongue of the Free Clarizian Duchies. Constructed using elements of Farsi - Arabic - and Turkish, used by both highborn and commoners.
+language-Clarizian-description = Clarizian Common is the official tongue of the Free Clarizian Duchies. Constructed using elements of Farsi - Arabic - and Turkish, used by both highborn and commoners.
 chat-language-Clarizian-name = Clarizian Common

@@ -68,6 +68,13 @@
     speechVerb: Arachnid
     speechSounds: Arachnid
     allowedEmotes: ['Click', 'Chitter', 'Hiss'] # DeltaV: Added Hiss
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Moffic
+    understands:
+    - TauCetiBasic
+    - Moffic
   - type: Vocal
     sounds:
       Male: UnisexArachnid
