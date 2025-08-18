@@ -3,7 +3,15 @@
   name: job-name-board
   description: job-description-board
   playTimeTracker: JobBoardSHI
+  weight: 99
+  startingGear: BoardGear
+  alwaysUseSpawner: true
+  requireAdminNotify: true
+  icon: "JobIconBoard"
+  supervisors: job-supervisors-shi
+  canBeAntag: false
   requirements:
+    - !type:CharacterWhitelistRequirement
     - !type:FactionRequirement
       factionID: "SHI"
     - !type:CharacterTraitRequirement
@@ -14,13 +22,16 @@
         - Muted
         - Blindness
         - WheelchairBound
-  weight: 50
-  startingGear: BoardGear
-  alwaysUseSpawner: true
-  icon: "JobIconBoard"
-  requireAdminNotify: true
-  supervisors: job-supervisors-shi
-  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: LanguageKnowledge
+        speaks:
+          - Tradeband
+          - TauCetiBasic
+        understands:
+          - Tradeband
+          - TauCetiBasic
   access:
   - Command
   - Maintenance
