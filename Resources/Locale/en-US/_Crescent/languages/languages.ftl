@@ -17,3 +17,7 @@ chat-language-SolBasic-name = Solarian Basic
 language-Clarizian-name = Clarizian Common
 language-Clarizian-description = Clarizian Standard is the official tongue of the Free Clarizian Duchies. Constructed using elements of Farsi - Arabic - and Turkish, used by both highborn and commoners.
 chat-language-Clarizian-name = Clarizian Common
+
+language-Atyrian-name = Atyrian
+language-Atyrian-description = The lingua franca of Atyrians and other nonhumans, developed by butchering Moffic. Its sounds have been adapted over time to accomodate as many species of speakers as possible.
+chat-language-Atyrian-name = Atyrian
