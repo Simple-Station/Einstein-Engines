@@ -295,7 +295,8 @@
   speech:
     allowRadio: false
     requireSpeech: false
-    color: "#dddddd"
+    color: "#aaaaaa"
+    fontId: Cambria
     messageWrapOverrides:
       Speak: chat-sign-language-message-wrap
       Whisper: chat-sign-language-whisper-wrap
