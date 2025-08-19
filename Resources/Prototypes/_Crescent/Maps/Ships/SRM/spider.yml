@@ -14,7 +14,7 @@
   minPlayers: 0
   stations:
     Spider:
-      stationProto: StandardCrescentExpeditionVessel
+      stationProto: FlagshipCrescentVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Spider {1}'
