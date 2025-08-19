@@ -83,6 +83,11 @@ entities:
             193: -4,-4
             196: -3,-4
             201: -2,-4
+            206: 3,-4
+            211: 4,-4
+            231: -4,-4
+            234: -3,-4
+            239: -2,-4
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -107,6 +112,11 @@ entities:
             178: 5,-4
             198: -3,-4
             203: -2,-4
+            208: 3,-4
+            213: 4,-4
+            216: 5,-4
+            236: -3,-4
+            241: -2,-4
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -119,6 +129,8 @@ entities:
             152: -7,-1
             187: -8,-2
             190: -7,-1
+            225: -8,-2
+            228: -7,-1
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -131,6 +143,8 @@ entities:
             146: 9,-2
             181: 8,-1
             184: 9,-2
+            219: 8,-1
+            222: 9,-2
         - node:
             id: LatticeEdgeE
           decals:
@@ -162,6 +176,13 @@ entities:
             191: -4,-4
             194: -3,-4
             199: -2,-4
+            204: 3,-4
+            209: 4,-4
+            224: -8,-2
+            227: -7,-1
+            229: -4,-4
+            232: -3,-4
+            237: -2,-4
         - node:
             id: LatticeEdgeN
           decals:
@@ -189,6 +210,12 @@ entities:
             192: -4,-4
             195: -3,-4
             200: -2,-4
+            205: 3,-4
+            210: 4,-4
+            214: 5,-4
+            230: -4,-4
+            233: -3,-4
+            238: -2,-4
         - node:
             id: LatticeEdgeS
           decals:
@@ -208,6 +235,10 @@ entities:
             182: 9,-2
             185: -8,-2
             188: -7,-1
+            217: 8,-1
+            220: 9,-2
+            223: -8,-2
+            226: -7,-1
         - node:
             id: LatticeEdgeW
           decals:
@@ -239,6 +270,13 @@ entities:
             183: 9,-2
             197: -3,-4
             202: -2,-4
+            207: 3,-4
+            212: 4,-4
+            215: 5,-4
+            218: 8,-1
+            221: 9,-2
+            235: -3,-4
+            240: -2,-4
         - node:
             color: '#43990996'
             id: WarnCornerGreyscaleNE
@@ -1051,8 +1089,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -0.5,2.5
       parent: 2
-    - type: IFFConsole
-      allowedFlags: HideLabel, Hide
 - proto: ComputerTabletopPowerMonitoring
   entities:
   - uid: 174
