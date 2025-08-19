@@ -28,15 +28,11 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-worker
-      - type: LanguageKnowledge
-        speaks:
+      - type: LanguageAdder
+        addSpoken:
           - Dockta
-          - TauCetiBasic
-          - Tradeband
-        understands:
+        addUnderstood:
           - Dockta
-          - TauCetiBasic
-          - Tradeband
   access:
   - Command
   - Maintenance
