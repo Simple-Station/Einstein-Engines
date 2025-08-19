@@ -29,6 +29,8 @@
   special:
   - !type:AddComponentSpecial
     components:
+      - type: ChatRank
+        rank: crescent-rank-foreman
       - type: LanguageAdder
         addSpoken:
           - LowImperial
