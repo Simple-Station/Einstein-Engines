@@ -21,6 +21,13 @@
     components:
       - type: ChatRank
         rank: crescent-rank-foreman
+      - type: LanguageAdder
+        speaks:
+          - Freespeak
+          - Tradeband
+        understands:
+          - Freespeak
+          - Tradeband
 
   weight: 8
   startingGear: ForemanGear
