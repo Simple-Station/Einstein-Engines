@@ -65,6 +65,6 @@
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
-        - LowImperial
+        - HighImperial
       languagesUnderstood:
-        - LowImperial
+        - HighImperial
