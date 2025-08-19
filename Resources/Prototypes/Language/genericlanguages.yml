@@ -301,9 +301,9 @@
       Speak: chat-sign-language-message-wrap
       Whisper: chat-sign-language-whisper-wrap
     speechVerbOverrides:
-    - chat-speech-verb-sign-1
-    - chat-speech-verb-sign-2
-    - chat-speech-verb-sign-3
+    #- chat-speech-verb-sign-1
+    - chat-speech-verb-sign-2 #looks nicer to just have "signs"
+    #- chat-speech-verb-sign-3
   obfuscation:
     !type:ReplacementObfuscation
     replacement:
