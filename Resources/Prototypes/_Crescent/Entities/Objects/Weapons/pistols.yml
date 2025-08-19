@@ -316,20 +316,20 @@
     - suitStorage
     - Belt
   - type: Gun
-    fireRate: 3
-    selectedMode: SemiAuto
+    shotsPerBurst: 20
+    selectedMode: Burst
     availableModes:
-      - SemiAuto
-      - FullAuto
+    - Burst
+    burstFireRate: 24
+    burstCooldown: 0.5
     soundGunshot:
-      path: /Audio/_Crescent/Weapons/Guns/pistol_2/pistol_gunshot_1.ogg
-  - type: MagazineVisuals
-    magState: mag
-    steps: 1
-    zeroVisible: true
-  - type: Appearance
+      path: /Audio/_Crescent/Weapons/Guns/pistol_1/pistol_gunshot_3.ogg
   - type: StaticPrice
-    price: 500
+    price: 100
+  - type: BallisticAmmoProvider
+    proto: CartridgePistol6mm
+    capacity: 20
+    cycleable: false
 
 #single use pistols actual
 
@@ -346,19 +346,6 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Gun
-    fireRate: 2
-    selectedMode: SemiAuto
-    availableModes:
-    - SemiAuto
-    soundGunshot:
-      path: /Audio/_Crescent/Weapons/Guns/pistol_1/pistol_gunshot_3.ogg
-  - type: StaticPrice
-    price: 100
-  - type: BallisticAmmoProvider
-    proto: CartridgePistol6mm
-    capacity: 20
-    cycleable: false
 
 - type: entity
   name: SHI-DG03 Blastpop 'Lavender Purple' 6mm
@@ -373,18 +360,6 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Gun
-    fireRate: 2
-    availableModes:
-    - SemiAuto
-    soundGunshot:
-      path: /Audio/_Crescent/Weapons/Guns/pistol_1/pistol_gunshot_3.ogg
-  - type: StaticPrice
-    price: 100
-  - type: BallisticAmmoProvider
-    proto: CartridgePistol6mm
-    capacity: 20
-    cycleable: false
 
 - type: entity
   name: SHI-DG04 Blastpop 'Lethal Gray' 6mm
@@ -399,18 +374,6 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Gun
-    fireRate: 2
-    availableModes:
-    - SemiAuto
-    soundGunshot:
-      path: /Audio/_Crescent/Weapons/Guns/pistol_1/pistol_gunshot_3.ogg
-  - type: StaticPrice
-    price: 100
-  - type: BallisticAmmoProvider
-    proto: CartridgePistol6mm
-    capacity: 20
-    cycleable: false
 
 - type: entity
   name: SHI-DG05 Blastpop 'Poison Green' 6mm
@@ -425,18 +388,6 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Gun
-    fireRate: 2
-    availableModes:
-    - SemiAuto
-    soundGunshot:
-      path: /Audio/_Crescent/Weapons/Guns/pistol_1/pistol_gunshot_3.ogg
-  - type: StaticPrice
-    price: 100
-  - type: BallisticAmmoProvider
-    proto: CartridgePistol6mm
-    capacity: 20
-    cycleable: false
 
 - type: entity
   name: SHI-DG06 Blastpop 'Royal Gold' 6mm
@@ -451,18 +402,6 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Gun
-    fireRate: 2
-    availableModes:
-    - SemiAuto
-    soundGunshot:
-      path: /Audio/_Crescent/Weapons/Guns/pistol_1/pistol_gunshot_3.ogg
-  - type: StaticPrice
-    price: 100
-  - type: BallisticAmmoProvider
-    proto: CartridgePistol6mm
-    capacity: 20
-    cycleable: false
 
 - type: entity
   name: SHI-DG07 Blastpop 'Fresh Blue' 6mm
@@ -477,18 +416,6 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Gun
-    fireRate: 2
-    availableModes:
-    - SemiAuto
-    soundGunshot:
-      path: /Audio/_Crescent/Weapons/Guns/pistol_1/pistol_gunshot_3.ogg
-  - type: StaticPrice
-    price: 100
-  - type: BallisticAmmoProvider
-    proto: CartridgePistol6mm
-    capacity: 20
-    cycleable: false
 
 - type: entity
   name: IRM M-8 NeoVolker Tribune .327
