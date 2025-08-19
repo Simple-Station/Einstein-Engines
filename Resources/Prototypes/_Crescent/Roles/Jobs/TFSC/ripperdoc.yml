@@ -22,6 +22,11 @@
       - type: CPRTraining
       - type: SurgerySpeedModifier
         speedModifier: 2
+      - type: LanguageAdder
+        speaks:
+          - Freespeak
+        understands:
+          - Freespeak
   weight: 16
   startingGear: RipperdocGear
   alwaysUseSpawner: true

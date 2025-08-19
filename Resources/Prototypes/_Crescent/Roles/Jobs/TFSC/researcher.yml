@@ -19,6 +19,11 @@
     components:
       - type: ChatRank
         rank: crescent-rank-doc
+      - type: LanguageAdder
+        speaks:
+          - Freespeak
+        understands:
+          - Freespeak
   weight: 15
   startingGear: CyberdawnGear
   alwaysUseSpawner: true
