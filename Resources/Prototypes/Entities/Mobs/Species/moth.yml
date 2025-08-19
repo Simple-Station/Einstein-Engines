@@ -26,11 +26,10 @@
     allowedEmotes: ['Chitter', 'Squeak']
   - type: LanguageKnowledge
     speaks:
-    - TauCetiBasic
-    - Moffic
+    - Atyrian
     understands:
-    - TauCetiBasic
-    - Moffic
+    - Atyrian
+    - TauCetiBasic #needed for vending machines and anything else
   - type: TypingIndicator
     proto: moth
   - type: Butcherable
