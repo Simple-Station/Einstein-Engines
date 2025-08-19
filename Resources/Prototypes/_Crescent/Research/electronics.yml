@@ -26,6 +26,21 @@
   - BiomassReclaimerMachineCircuitboard
 
 - type: technology
+  id: Translators
+  name: Translators
+  icon:
+    sprite: Objects/Devices/translator.rsi
+    state: icon
+  discipline: Electronics
+  tier: 1
+  cost: 1000
+  recipeUnlocks:
+  - CreoleTranslator
+  - LowImperialTranslator
+  - FreespeakTranslator
+  - KaishagoTranslator
+
+- type: technology
   id: BasicComponentsElectronics
   name: research-technology-electronics-materials
   icon:

@@ -31,9 +31,9 @@
         rank: crescent-rank-shi-board
       - type: LanguageAdder
         addSpoken:
-          - Kaigengo
+          - Kaishago
         addUnderstood:
-          - Kaigengo
+          - Kaishago
   access:
   - Command
   - Maintenance

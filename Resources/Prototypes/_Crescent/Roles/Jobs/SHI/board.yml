@@ -28,10 +28,10 @@
         rank: crescent-rank-shi-board
       - type: LanguageAdder
         addSpoken:
-          - Kaigengo
+          - Kaishago
           - Tradeband
         addUnderstood:
-          - Kaigengo
+          - Kaishago
           - Tradeband
   access:
   - Command

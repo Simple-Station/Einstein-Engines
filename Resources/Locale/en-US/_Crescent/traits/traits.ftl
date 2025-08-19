@@ -4,8 +4,8 @@ trait-description-Dockta = A language developed by the Crescent Workers League o
 trait-name-HighImperial = High Imperial
 trait-description-HighImperial = A language primarily used by the nobility of Old Terra. With influences primarily from European linguistics, High Imperial is considered a dead language today, kept alive only by the small population of devoted Imperial citizenry and nobility.
 
-trait-name-Kaigengo = Kaigengo
-trait-description-Kaigengo = A bizzare compaction of ancient Japanese, made to deliver the most information in the shortest amount of time. All SHI employees have a brainchip that auto-teaches this...form of communication.
+trait-name-Kaishago = Kaishago
+trait-description-Kaishago = A bizzare compaction of ancient Japanese, made to deliver the most information in the shortest amount of time. All SHI employees have a brainchip that auto-teaches this...form of communication.
 
 trait-name-LowImperial = Low Imperial
 trait-description-LowImperial = The language of the uneducated and unwashed masses of the Divine Sol Mandate. While it may not be the most refined language, it serves as a crucial means of communication for the masses.

@@ -31,10 +31,10 @@
         rank: crescent-rank-shi-executive
       - type: LanguageAdder
         addSpoken:
-          - Kaigengo
+          - Kaishago
           - Tradeband
         addUnderstood:
-          - Kaigengo
+          - Kaishago
           - Tradeband
   access:
   - EmergencyShuttleRepealAll

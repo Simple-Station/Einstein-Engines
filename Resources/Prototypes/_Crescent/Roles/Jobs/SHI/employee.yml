@@ -26,10 +26,10 @@
         rank: crescent-rank-shi-employee
       - type: LanguageAdder
         addSpoken:
-          - Kaigengo
+          - Kaishago
           - Tradeband
         addUnderstood:
-          - Kaigengo
+          - Kaishago
           - Tradeband
   access:
   - Command

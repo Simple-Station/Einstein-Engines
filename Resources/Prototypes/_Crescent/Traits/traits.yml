@@ -29,7 +29,7 @@
         - Freespeak
 
 - type: trait
-  id: Kaigengo
+  id: Kaishago
   category: TraitsSpeechLanguages
   points: -6
   requirements:
@@ -39,9 +39,9 @@
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
-        - Kaigengo
+        - Kaishago
       languagesUnderstood:
-        - Kaigengo
+        - Kaishago
 
 - type: trait
   id: LowImperial

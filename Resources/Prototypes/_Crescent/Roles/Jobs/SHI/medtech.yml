@@ -29,9 +29,9 @@
         rank: crescent-rank-shi-medtech
       - type: LanguageAdder
         addSpoken:
-          - Kaigengo
+          - Kaishago
         addUnderstood:
-          - Kaigengo
+          - Kaishago
   access:
   - Command
   - Maintenance

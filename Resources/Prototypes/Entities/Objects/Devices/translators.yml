@@ -90,16 +90,16 @@
     - Sign
 
 - type: entity
-  id: KaigengoTranslator
+  id: KaishagoTranslator
   parent: [ TranslatorPoweredBase ]
-  name: Kaigengo translator
-  description: Translates Kaigengo, mainly spoken by SHI. Has a little display with a friendly-looking Salaryman performing Spacer's Sign for you to understand.
+  name: Kaishago translator
+  description: Translates Kaishago, mainly spoken by SHI. Has a little display with a friendly-looking Salaryman performing Spacer's Sign for you to understand.
   components:
   - type: HandheldTranslator
     spoken:
-    - Kaigengo
+    - Kaishago
     understood:
-    - Kaigengo
+    - Kaishago
     requires:
     - Sign
 
