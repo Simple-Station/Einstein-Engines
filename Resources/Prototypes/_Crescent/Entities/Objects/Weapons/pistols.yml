@@ -324,6 +324,7 @@
     burstCooldown: 0.5
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/pistol_1/pistol_gunshot_3.ogg
+    fireOnDropChance: .6
   - type: StaticPrice
     price: 100
   - type: BallisticAmmoProvider
