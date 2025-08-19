@@ -1,16 +1,7 @@
 - type: trait
   id: Dockta
   category: TraitsSpeechLanguages
-  points: -1
-  # slots: 1
-  # itemGroupSlots: 0
-  requirements:
-    # - !type:CharacterItemGroupRequirement
-    #   group: TraitsLanguagesBasic
-    - !type:CharacterNationalityRequirement
-      inverted: true
-      nationalities:
-        - Unionist
+  points: -6
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -21,12 +12,7 @@
 - type: trait
   id: HighImperial
   category: TraitsSpeechLanguages
-  points: -1
-  requirements:
-    - !type:CharacterNationalityRequirement
-      inverted: true
-      nationalities:
-        - Imperial
+  points: -8
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
