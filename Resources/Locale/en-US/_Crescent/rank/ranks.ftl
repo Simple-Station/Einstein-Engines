@@ -4,6 +4,11 @@ rank-ordering = {$rank} {$name}
 # default
 crescent-rank-private = PvT.
 
+# independents
+crescent-rank-ind-gliess-sheriff = Sheriff
+crescent-rank-ind-gliess-dockmaster = Dockmaster
+crescent-rank-ind-spacer = Spacer
+
 # shi
 crescent-rank-shi-executive = Manager
 crescent-rank-shi-board = Exec.
@@ -103,9 +108,3 @@ crescent-rank-sanitat = PvT.
 crescent-rank-kanoneer = Cpl.
 crescent-rank-steward = Steward
 crescent-rank-logistat = Marshallie
-
-
-# misc
-
-crescent-rank-sheriff = Sheriff
-crescent-rank-dockmaster = Dockmaster
