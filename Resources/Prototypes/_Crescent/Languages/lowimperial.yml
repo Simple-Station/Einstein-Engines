@@ -3,7 +3,7 @@
   isVisibleLanguage: true
   speech:
     color: "#cf277b"
-    fontId: Cambria
+    fontId: Lymphatic
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1

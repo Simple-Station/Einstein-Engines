@@ -296,7 +296,7 @@
     allowRadio: false
     requireSpeech: false
     color: "#aaaaaa"
-    fontId: Cambria
+    fontId: Silkscreen
     messageWrapOverrides:
       Speak: chat-sign-language-message-wrap
       Whisper: chat-sign-language-whisper-wrap
