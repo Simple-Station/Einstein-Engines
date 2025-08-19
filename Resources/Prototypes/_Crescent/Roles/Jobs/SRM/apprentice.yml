@@ -3,19 +3,19 @@
   name: job-name-acolyte
   description: job-description-apprenticehunter
   playTimeTracker: JobAcolyteSRM
+  weight: 1
+  startingGear: AcolyteGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconAcolyte"
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
   requirements:
+    - !type:FactionRequirement
+      factionID: "SRM"
     - !type:CharacterSpeciesRequirement
       species:
         - Human
-    - !type:FactionRequirement
-      factionID: "SRM"
-  weight: 22
-  startingGear: AcolyteGear
-  alwaysUseSpawner: true
-  icon: "JobIconAcolyte"
-  requireAdminNotify: false
-  supervisors: job-supervisors-imperial
-  canBeAntag: false
   access:
   - Command
   - Hunter

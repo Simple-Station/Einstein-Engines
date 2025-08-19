@@ -3,6 +3,13 @@
   name: job-name-technician
   description: job-description-technician
   playTimeTracker: JobTechnicianNCSP
+  weight: 9
+  startingGear: TechnicianGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconSyndieNewblood"
+  supervisors: You answer to all Gorlex Security personnel and the Station Administrator
+  canBeAntag: false
   requirements:
     - !type:FactionRequirement
       factionID: "TFSC"
@@ -21,13 +28,13 @@
     components:
       - type: ChatRank
         rank: crescent-rank-op
-  weight: 18
-  startingGear: TechnicianGear
-  alwaysUseSpawner: true
-  icon: "JobIconSyndieNewblood"
-  requireAdminNotify: false
-  supervisors: You answer to all Gorlex Security personnel and the Station Administrator
-  canBeAntag: false
+      - type: LanguageKnowledge
+        speaks:
+          - Freespeak
+          - TauCetiBasic
+        understands:
+          - Freespeak
+          - TauCetiBasic
   access:
   - Command
   - Maintenance

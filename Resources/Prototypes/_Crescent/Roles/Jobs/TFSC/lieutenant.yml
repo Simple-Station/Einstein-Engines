@@ -3,11 +3,18 @@
   name: job-name-lieutenant
   description: job-description-lieutenant
   playTimeTracker: JobLieutenantNCSP
+  weight: 11
+  startingGear: LieutenantGear
+  alwaysUseSpawner: true
+  requireAdminNotify: true
+  icon: "JobIconSyndieLieutenant"
+  supervisors: You answer to the Station Administrator.
+  canBeAntag: false
   requirements:
-    - !type:CharacterOverallTimeRequirement
-      min: 30000
     - !type:FactionRequirement
       factionID: "TFSC"
+    - !type:CharacterOverallTimeRequirement
+      min: 30000
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -21,13 +28,13 @@
     components:
       - type: ChatRank
         rank: crescent-rank-boss
-  weight: 45
-  startingGear: LieutenantGear
-  alwaysUseSpawner: true
-  icon: "JobIconSyndieLieutenant"
-  requireAdminNotify: true
-  supervisors: You answer to the Station Administrator.
-  canBeAntag: false
+      - type: LanguageKnowledge
+        speaks:
+          - Freespeak
+          - TauCetiBasic
+        understands:
+          - Freespeak
+          - TauCetiBasic
   access:
   - EmergencyShuttleRepealAll
   - Captain

@@ -3,11 +3,18 @@
   name: job-name-infanteer
   description: job-description-infanteer
   playTimeTracker: JobInfanteerNCSP
+  weight: 10
+  startingGear: InfanteerGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconSyndiePrivateer"
+  supervisors: You answer to the Station Administrator and Gorlex Security Lieutenants
+  canBeAntag: false
   requirements:
-    - !type:CharacterOverallTimeRequirement
-      min: 8000
     - !type:FactionRequirement
       factionID: "TFSC"
+    - !type:CharacterOverallTimeRequirement
+      min: 8000
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -17,18 +24,18 @@
         - Blindness
         - Pacifist
         - WheelchairBound
-  weight: 20
-  startingGear: InfanteerGear
-  alwaysUseSpawner: true
-  icon: "JobIconSyndiePrivateer"
-  requireAdminNotify: false
-  supervisors: You answer to the Station Administrator and Gorlex Security Lieutenants
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
         rank: crescent-rank-pfc
+      - type: LanguageKnowledge
+        speaks:
+          - Freespeak
+          - TauCetiBasic
+        understands:
+          - Freespeak
+          - TauCetiBasic
   access:
   - Command
   - Maintenance

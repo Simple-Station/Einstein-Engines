@@ -3,11 +3,18 @@
   name: job-name-cyberdawntech
   description: job-description-cyberdawntech
   playTimeTracker: JobCyberdawnTechNCSP
+  weight: 3
+  startingGear: CyberdawnGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconCyberdawnTech"
+  supervisors: You answer to the patriach and the interests of the CyberDawn Technologies company.
+  canBeAntag: false
   requirements:
-    - !type:CharacterOverallTimeRequirement
-      min: 2000
     - !type:FactionRequirement
       factionID: "TFSC"
+    - !type:CharacterOverallTimeRequirement
+      min: 2000
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -19,13 +26,13 @@
     components:
       - type: ChatRank
         rank: crescent-rank-doc
-  weight: 15
-  startingGear: CyberdawnGear
-  alwaysUseSpawner: true
-  icon: "JobIconCyberdawnTech"
-  requireAdminNotify: false
-  supervisors: You answer to the patriach and the interests of the CyberDawn Technologies company.
-  canBeAntag: false
+      - type: LanguageKnowledge
+        speaks:
+          - Freespeak
+          - TauCetiBasic
+        understands:
+          - Freespeak
+          - TauCetiBasic
   access:
   - Command
   - Maintenance

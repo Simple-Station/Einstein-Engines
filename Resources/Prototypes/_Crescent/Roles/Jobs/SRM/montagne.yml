@@ -3,21 +3,22 @@
   name: job-name-montagne
   description: job-description-montagne
   playTimeTracker: JobMontagneSRM
+  weight: 100
+  startingGear: MontagneGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconMontagne"
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
   requirements:
+    - !type:CharacterWhitelistRequirement
+    - !type:FactionRequirement
+      factionID: "SRM"
     - !type:CharacterSpeciesRequirement
       species:
         - Human
     - !type:CharacterOverallTimeRequirement
       min: 40000
-    - !type:FactionRequirement
-      factionID: "SRM"
-  weight: 22
-  startingGear: MontagneGear
-  alwaysUseSpawner: true
-  icon: "JobIconMontagne"
-  requireAdminNotify: false
-  supervisors: job-supervisors-imperial
-  canBeAntag: false
   access:
   - Command
   - Hunter

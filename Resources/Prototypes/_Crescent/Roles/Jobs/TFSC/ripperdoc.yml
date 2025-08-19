@@ -3,11 +3,18 @@
   name: job-name-ripperdoc
   description: job-description-ripperdoc
   playTimeTracker: JobRipperdocNCSP
+  weight: 6
+  startingGear: RipperdocGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconSyndieRipperdoc"
+  supervisors: You answer to the interests of Interdyne Pharmaceuticals company, whatever they be decided by you or your colleagues
+  canBeAntag: false
   requirements:
-    - !type:CharacterOverallTimeRequirement
-      min: 6000
     - !type:FactionRequirement
       factionID: "TFSC"
+    - !type:CharacterOverallTimeRequirement
+      min: 6000
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -22,13 +29,13 @@
       - type: CPRTraining
       - type: SurgerySpeedModifier
         speedModifier: 2
-  weight: 16
-  startingGear: RipperdocGear
-  alwaysUseSpawner: true
-  icon: "JobIconSyndieRipperdoc"
-  requireAdminNotify: false
-  supervisors: You answer to the interests of Interdyne Pharmaceuticals company, whatever they be decided by you or your colleagues
-  canBeAntag: false
+      - type: LanguageKnowledge
+        speaks:
+          - Freespeak
+          - TauCetiBasic
+        understands:
+          - Freespeak
+          - TauCetiBasic
   access:
   - Command
   - Maintenance

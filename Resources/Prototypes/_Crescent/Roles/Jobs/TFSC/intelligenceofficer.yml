@@ -3,11 +3,11 @@
   name: job-name-intelligenceofficer
   description: job-description-intelligenceofficer
   playTimeTracker: JobIntelligenceOfficerNCSP
-  weight: 14
+  weight: 5
   startingGear: IntelligenceOfficerGear
   alwaysUseSpawner: true
-  icon: "JobIconSyndieIntelligenceOfficer"
   requireAdminNotify: true
+  icon: "JobIconSyndieIntelligenceOfficer"
   supervisors: You answer to the interests of the CyberDawn Technologies company. Protect your technology, make money,  take out competition.
   canBeAntag: false
   requirements:
@@ -28,6 +28,13 @@
     components:
       - type: ChatRank
         rank: crescent-rank-patriarch
+      - type: LanguageKnowledge
+        speaks:
+          - Freespeak
+          - TauCetiBasic
+        understands:
+          - Freespeak
+          - TauCetiBasic
   access:
   - Command
   - Maintenance
