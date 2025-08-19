@@ -2,12 +2,61 @@
   id: Dockta
   category: TraitsSpeechLanguages
   points: -6
+  requirements:
+    - !type:FactionRequirement
+      inverted: true
+      factionID: "NCWL"
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
         - Dockta
       languagesUnderstood:
         - Dockta
+
+- type: trait
+  id: Freespeak
+  category: TraitsSpeechLanguages
+  points: -6
+  requirements:
+    - !type:FactionRequirement
+      inverted: true
+      factionID: "TFSC"
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Freespeak
+      languagesUnderstood:
+        - Freespeak
+
+- type: trait
+  id: Kaigengo
+  category: TraitsSpeechLanguages
+  points: -6
+  requirements:
+    - !type:FactionRequirement
+      inverted: true
+      factionID: "SHI"
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Kaigengo
+      languagesUnderstood:
+        - Kaigengo
+
+- type: trait
+  id: LowImperial
+  category: TraitsSpeechLanguages
+  points: -6
+  requirements:
+    - !type:FactionRequirement
+      inverted: true
+      factionID: "DSM"
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - LowImperial
+      languagesUnderstood:
+        - LowImperial
 
 - type: trait
   id: HighImperial

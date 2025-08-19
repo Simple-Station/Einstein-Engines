@@ -21,3 +21,7 @@ chat-language-Clarizian-name = Clarizian Common
 language-Atyrian-name = Atyrian
 language-Atyrian-description = The lingua franca of Atyrians and other nonhumans, developed by butchering Moffic. Its sounds have been adapted over time to accomodate as many species of speakers as possible.
 chat-language-Atyrian-name = Atyrian
+
+language-Kaigengo-name = Kaigengo
+language-Kaigengo-description = A bizzare compaction of ancient Japanese, made to deliver the most information in the shortest amount of time. All SHI employees have a brainchip that auto-teaches this...form of communication.
+chat-language-Kaigengo-name = Kaigengo
