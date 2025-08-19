@@ -18,9 +18,9 @@
       - type: ChatRank
         rank: crescent-rank-saw
       - type: LanguageAdder
-        speaks:
+        addSpoken:
           - Freespeak
-        understands:
+        addUnderstood:
           - Freespeak
   weight: 8
   startingGear: ShipbreakerGear

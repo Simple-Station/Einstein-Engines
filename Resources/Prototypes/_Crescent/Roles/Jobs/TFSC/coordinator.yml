@@ -26,10 +26,10 @@
       - type: SurgerySpeedModifier
         speedModifier: 2.5
       - type: LanguageAdder
-        speaks:
+        addSpoken:
           - Freespeak
           - Tradeband
-        understands:
+        addUnderstood:
           - Freespeak
           - Tradeband
   weight: 17

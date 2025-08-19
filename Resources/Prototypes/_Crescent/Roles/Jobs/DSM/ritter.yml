@@ -33,10 +33,10 @@
       - type: ChatRank
         rank: crescent-rank-knight
       - type: LanguageAdder
-        speaks:
+        addSpoken:
           - HighImperial
           - LowImperial
-        understands:
+        addUnderstood:
           - HighImperial
           - LowImperial
 

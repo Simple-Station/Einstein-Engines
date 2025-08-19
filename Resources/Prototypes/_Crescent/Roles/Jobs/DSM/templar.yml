@@ -36,10 +36,10 @@
         rank: crescent-rank-templar
       - type: BibleUser
       - type: LanguageAdder
-        speaks:
+        addSpoken:
           - HighImperial
           - LowImperial
-        understands:
+        addUnderstood:
           - HighImperial
           - LowImperial
   access:

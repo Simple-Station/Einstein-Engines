@@ -23,9 +23,9 @@
       - type: SurgerySpeedModifier
         speedModifier: 2
       - type: LanguageAdder
-        speaks:
+        addSpoken:
           - Freespeak
-        understands:
+        addUnderstood:
           - Freespeak
   weight: 16
   startingGear: RipperdocGear

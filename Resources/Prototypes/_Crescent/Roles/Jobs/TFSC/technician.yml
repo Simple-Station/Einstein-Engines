@@ -22,9 +22,9 @@
       - type: ChatRank
         rank: crescent-rank-op
       - type: LanguageAdder
-        speaks:
+        addSpoken:
           - Freespeak
-        understands:
+        addUnderstood:
           - Freespeak
   weight: 18
   startingGear: TechnicianGear

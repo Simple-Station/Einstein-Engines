@@ -22,10 +22,10 @@
       - type: ChatRank
         rank: crescent-rank-boss
       - type: LanguageAdder
-        speaks:
+        addSpoken:
           - Freespeak
           - Tradeband
-        understands:
+        addUnderstood:
           - Freespeak
           - Tradeband
   weight: 45

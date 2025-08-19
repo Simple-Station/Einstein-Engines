@@ -21,9 +21,9 @@
   - !type:AddComponentSpecial
     components:
       - type: LanguageAdder
-        speaks:
+        addSpoken:
           - LowImperial
-        understands:
+        addUnderstood:
           - LowImperial
   access:
   - Command

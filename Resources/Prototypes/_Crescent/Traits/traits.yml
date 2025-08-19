@@ -1,7 +1,7 @@
 - type: trait
   id: Dockta
   category: TraitsSpeechLanguages
-  points: -6
+  points: -7
   requirements:
     - !type:FactionRequirement
       inverted: true
@@ -16,7 +16,7 @@
 - type: trait
   id: Freespeak
   category: TraitsSpeechLanguages
-  points: -6
+  points: -7
   requirements:
     - !type:FactionRequirement
       inverted: true
@@ -31,7 +31,7 @@
 - type: trait
   id: Kaishago
   category: TraitsSpeechLanguages
-  points: -6
+  points: -7
   requirements:
     - !type:FactionRequirement
       inverted: true
@@ -46,7 +46,7 @@
 - type: trait
   id: LowImperial
   category: TraitsSpeechLanguages
-  points: -6
+  points: -7
   requirements:
     - !type:FactionRequirement
       inverted: true
@@ -61,7 +61,7 @@
 - type: trait
   id: HighImperial
   category: TraitsSpeechLanguages
-  points: -8
+  points: -9
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:

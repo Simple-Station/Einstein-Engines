@@ -21,9 +21,9 @@
       - type: ChatRank
         rank: crescent-rank-operative
       - type: LanguageAdder
-        speaks:
+        addSpoken:
           - Freespeak
-        understands:
+        addUnderstood:
           - Freespeak
   icon: "JobIconSyndieOperative"
   requireAdminNotify: false

@@ -20,9 +20,9 @@
       - type: ChatRank
         rank: crescent-rank-doc
       - type: LanguageAdder
-        speaks:
+        addSpoken:
           - Freespeak
-        understands:
+        addUnderstood:
           - Freespeak
   weight: 15
   startingGear: CyberdawnGear

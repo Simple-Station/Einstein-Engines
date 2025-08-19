@@ -29,9 +29,9 @@
         rank: crescent-rank-smarts
       - type: BibleUser
       - type: LanguageAdder
-        speaks:
+        addSpoken:
           - LowImperial
-        understands:
+        addUnderstood:
           - LowImperial
   access:
   - Command

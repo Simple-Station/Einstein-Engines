@@ -20,9 +20,9 @@
         rank: crescent-rank-agent
       - type: CPRTraining
       - type: LanguageAdder
-        speaks:
+        addSpoken:
           - Freespeak
-        understands:
+        addUnderstood:
           - Freespeak
   weight: 16
   startingGear: TraumasecGear

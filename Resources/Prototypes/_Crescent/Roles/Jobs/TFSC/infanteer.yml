@@ -30,9 +30,9 @@
       - type: ChatRank
         rank: crescent-rank-pfc
       - type: LanguageAdder
-        speaks:
+        addSpoken:
           - Freespeak
-        understands:
+        addUnderstood:
           - Freespeak
   access:
   - Command

@@ -29,10 +29,10 @@
       - type: ChatRank
         rank: crescent-rank-patriarch
       - type: LanguageAdder
-        speaks:
+        addSpoken:
           - Freespeak
           - Tradeband
-        understands:
+        addUnderstood:
           - Freespeak
           - Tradeband
   access:

@@ -30,10 +30,10 @@
   - !type:AddComponentSpecial
     components:
       - type: LanguageAdder
-        speaks:
+        addSpoken:
           - LowImperial
           - Tradeband
-        understands:
+        addUnderstood:
           - LowImperial
           - Tradeband
   access:

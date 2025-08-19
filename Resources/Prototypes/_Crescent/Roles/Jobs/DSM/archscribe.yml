@@ -32,11 +32,11 @@
       - type: ChatRank
         rank: crescent-rank-archmaester
       - type: LanguageAdder
-        speaks:
+        addSpoken:
           - HighImperial
           - LowImperial
           - Tradeband
-        understands:
+        addUnderstood:
           - HighImperial
           - LowImperial
           - Tradeband

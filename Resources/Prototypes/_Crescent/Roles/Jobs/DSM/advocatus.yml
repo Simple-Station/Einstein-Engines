@@ -34,11 +34,11 @@
       - type: ChatRank
         rank: crescent-rank-advocatus
       - type: LanguageAdder
-        speaks:
+        addSpoken:
           - HighImperial
           - LowImperial
           - Tradeband
-        understands:
+        addUnderstood:
           - HighImperial
           - LowImperial
           - Tradeband

@@ -33,9 +33,9 @@
       - type: SurgerySpeedModifier
         speedModifier: 2
       - type: LanguageAdder
-        speaks:
+        addSpoken:
           - LowImperial
-        understands:
+        addUnderstood:
           - LowImperial
   access:
   - Command
