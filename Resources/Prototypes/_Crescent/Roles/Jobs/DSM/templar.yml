@@ -35,17 +35,13 @@
       - type: ChatRank
         rank: crescent-rank-templar
       - type: BibleUser
-      - type: LanguageKnowledge
+      - type: LanguageAdder
         speaks:
           - HighImperial
           - LowImperial
-          - TauCetiBasic
-          - Sign
         understands:
           - HighImperial
           - LowImperial
-          - TauCetiBasic
-          - Sign
   access:
   - Command
   - Empire

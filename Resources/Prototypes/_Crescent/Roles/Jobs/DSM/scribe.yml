@@ -28,15 +28,11 @@
       - type: ChatRank
         rank: crescent-rank-smarts
       - type: BibleUser
-      - type: LanguageKnowledge
+      - type: LanguageAdder
         speaks:
           - LowImperial
-          - TauCetiBasic
-          - Tradeband
         understands:
           - LowImperial
-          - TauCetiBasic
-          - Tradeband
   access:
   - Command
   - Empire

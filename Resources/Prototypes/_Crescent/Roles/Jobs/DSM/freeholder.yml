@@ -20,13 +20,11 @@
   special:
   - !type:AddComponentSpecial
     components:
-      - type: LanguageKnowledge
+      - type: LanguageAdder
         speaks:
           - LowImperial
-          - TauCetiBasic
         understands:
           - LowImperial
-          - TauCetiBasic
   access:
   - Command
   - Maintenance

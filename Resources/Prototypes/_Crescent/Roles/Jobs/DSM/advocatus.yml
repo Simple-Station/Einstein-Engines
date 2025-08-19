@@ -33,17 +33,15 @@
     components:
       - type: ChatRank
         rank: crescent-rank-advocatus
-      - type: LanguageKnowledge
+      - type: LanguageAdder
         speaks:
           - HighImperial
           - LowImperial
-          - TauCetiBasic
-          - Sign
+          - Tradeband
         understands:
           - HighImperial
           - LowImperial
-          - TauCetiBasic
-          - Sign
+          - Tradeband
 
   access:
   - EmergencyShuttleRepealAll

@@ -31,16 +31,14 @@
     components:
       - type: ChatRank
         rank: crescent-rank-adjutant
-      - type: LanguageKnowledge
+      - type: LanguageAdder
         speaks:
           - HighImperial
           - LowImperial
-          - TauCetiBasic
           - Tradeband
         understands:
           - HighImperial
           - LowImperial
-          - TauCetiBasic
           - Tradeband
   access:
   - EmergencyShuttleRepealAll

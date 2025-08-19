@@ -29,14 +29,12 @@
   special:
   - !type:AddComponentSpecial
     components:
-      - type: LanguageKnowledge
+      - type: LanguageAdder
         speaks:
           - LowImperial
-          - TauCetiBasic
           - Tradeband
         understands:
           - LowImperial
-          - TauCetiBasic
           - Tradeband
   access:
   - Command

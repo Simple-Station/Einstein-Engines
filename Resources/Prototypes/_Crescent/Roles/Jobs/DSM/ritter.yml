@@ -32,15 +32,13 @@
     components:
       - type: ChatRank
         rank: crescent-rank-knight
-      - type: LanguageKnowledge
+      - type: LanguageAdder
         speaks:
           - HighImperial
           - LowImperial
-          - TauCetiBasic
         understands:
           - HighImperial
           - LowImperial
-          - TauCetiBasic
 
   access:
   - Command
