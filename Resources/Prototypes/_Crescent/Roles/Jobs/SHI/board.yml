@@ -21,6 +21,18 @@
   requireAdminNotify: true
   supervisors: job-supervisors-shi
   canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-shi-board
+      - type: LanguageAdder
+        addSpoken:
+          - Kaigengo
+          - Tradeband
+        addUnderstood:
+          - Kaigengo
+          - Tradeband
   access:
   - Command
   - Maintenance

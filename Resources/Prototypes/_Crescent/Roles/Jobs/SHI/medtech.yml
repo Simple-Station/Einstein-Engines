@@ -22,6 +22,16 @@
   special:
   - !type:AddComponentSpecial
     components:
+      - type: ChatRank
+        rank: crescent-rank-shi-medtech
+      - type: LanguageAdder
+        addSpoken:
+          - Kaigengo
+        addUnderstood:
+          - Kaigengo
+  special:
+  - !type:AddComponentSpecial
+    components:
       - type: CPRTraining
       - type: SurgerySpeedModifier
         speedModifier: 1.5

@@ -25,6 +25,16 @@
   requireAdminNotify: false
   supervisors: job-supervisors-shi
   canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-shi-highsec
+      - type: LanguageAdder
+        addSpoken:
+          - Kaigengo
+        addUnderstood:
+          - Kaigengo
   access:
   - Command
   - Maintenance

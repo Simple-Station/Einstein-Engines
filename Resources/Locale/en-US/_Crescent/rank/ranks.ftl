@@ -4,6 +4,14 @@ rank-ordering = {$rank} {$name}
 # default
 crescent-rank-private = PvT.
 
+# shi
+crescent-rank-shi-executive = Manager
+crescent-rank-shi-board = Exec.
+crescent-rank-shi-corpsec = CorpSec.
+crescent-rank-shi-highsec = Liquidator
+crescent-rank-shi-employee = Employee
+crescent-rank-shi-medtech = Medtech
+
 # empire
 crescent-rank-baron = Lord Admiral
 crescent-rank-adjutant = Adjutant
