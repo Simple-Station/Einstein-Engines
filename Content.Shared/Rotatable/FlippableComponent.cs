@@ -1,7 +1,7 @@
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
-namespace Content.Server.Rotatable
+namespace Content.Shared.Rotatable
 {
     [RegisterComponent]
     public sealed partial class FlippableComponent : Component
