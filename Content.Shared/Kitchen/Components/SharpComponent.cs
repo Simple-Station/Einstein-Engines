@@ -1,4 +1,4 @@
-namespace Content.Server.Kitchen.Components;
+namespace Content.Shared.Kitchen.Components;
 
 /// <summary>
 ///     Applies to items that are capable of butchering entities, or
@@ -13,7 +13,7 @@ public sealed partial class SharpComponent : Component
     [DataField("butcherDelayModifier")]
     public float ButcherDelayModifier = 1.0f;
 
-    
+
     /// <summary>
     ///     Shitmed: Whether this item had <c>ScalpelComponent</c> before sharp was added.
     /// </summary>

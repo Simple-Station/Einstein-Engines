@@ -1,5 +1,5 @@
 using Content.Server.Botany.Components;
-using Content.Server.Kitchen.Components;
+using Content.Shared.Kitchen.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Random;

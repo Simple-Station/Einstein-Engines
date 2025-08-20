@@ -1,14 +1,14 @@
 ﻿using Content.Server.Body.Systems;
-using Content.Server.Kitchen.Components;
 using Content.Server.Nutrition.EntitySystems;
 using Content.Shared.Body.Components;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
 using Content.Shared.Interaction;
+using Content.Shared.Kitchen.EntitySystems;
+using Content.Shared.Kitchen.Components;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Popups;
 using Content.Shared.Storage;
-using Content.Shared.Verbs;
 using Content.Shared.Destructible;
 using Content.Shared.DoAfter;
 using Content.Shared.Kitchen;
@@ -17,11 +17,10 @@ using Content.Shared.Mobs.Systems;
 using Robust.Server.Containers;
 using Robust.Server.GameObjects;
 using Robust.Shared.Random;
-using Robust.Shared.Utility;
 
 namespace Content.Server.Kitchen.EntitySystems;
 
-public sealed class SharpSystem : EntitySystem
+public sealed class SharpSystem : SharedSharpSystem
 {
     [Dependency] private readonly BodySystem _bodySystem = default!;
     [Dependency] private readonly SharedDestructibleSystem _destructibleSystem = default!;
@@ -39,8 +38,6 @@ public sealed class SharpSystem : EntitySystem
 
         SubscribeLocalEvent<SharpComponent, AfterInteractEvent>(OnAfterInteract, before: [typeof(UtensilSystem)]);
         SubscribeLocalEvent<SharpComponent, SharpDoAfterEvent>(OnDoAfter);
-
-        SubscribeLocalEvent<ButcherableComponent, GetVerbsEvent<InteractionVerb>>(OnGetInteractionVerbs);
     }
 
     private void OnAfterInteract(EntityUid uid, SharpComponent component, AfterInteractEvent args)
@@ -52,7 +49,10 @@ public sealed class SharpSystem : EntitySystem
             args.Handled = true;
     }
 
-    private bool TryStartButcherDoafter(EntityUid knife, EntityUid target, EntityUid user)
+    /// <remarks>
+    ///     This is called by an empty virtual method in shared. See <see cref="SharedSharpSystem"/>
+    /// </remarks>
+    protected override bool TryStartButcherDoafter(EntityUid knife, EntityUid target, EntityUid user)
     {
         if (!TryComp<ButcherableComponent>(target, out var butcher))
             return false;
@@ -132,47 +132,5 @@ public sealed class SharpSystem : EntitySystem
             $"{EntityManager.ToPrettyString(args.User):user} " +
             $"has butchered {EntityManager.ToPrettyString(args.Target):target} " +
             $"with {EntityManager.ToPrettyString(args.Used):knife}");
-    }
-
-    private void OnGetInteractionVerbs(EntityUid uid, ButcherableComponent component, GetVerbsEvent<InteractionVerb> args)
-    {
-        if (component.Type != ButcheringType.Knife || args.Hands == null || !args.CanAccess || !args.CanInteract)
-            return;
-
-        bool disabled = false;
-        string? message = null;
-
-        if (!HasComp<SharpComponent>(args.Using))
-        {
-            disabled = true;
-            message = Loc.GetString("butcherable-need-knife",
-                ("target", uid));
-        }
-        else if (_containerSystem.IsEntityInContainer(uid))
-        {
-            message = Loc.GetString("butcherable-not-in-container",
-                ("target", uid));
-            disabled = true;
-        }
-        else if (TryComp<MobStateComponent>(uid, out var state) && !_mobStateSystem.IsDead(uid, state))
-        {
-            disabled = true;
-            message = Loc.GetString("butcherable-mob-isnt-dead");
-        }
-
-        InteractionVerb verb = new()
-        {
-            Act = () =>
-            {
-                if (!disabled)
-                    TryStartButcherDoafter(args.Using!.Value, args.Target, args.User);
-            },
-            Message = message,
-            Disabled = disabled,
-            Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/cutlery.svg.192dpi.png")),
-            Text = Loc.GetString("butcherable-verb-name"),
-        };
-
-        args.Verbs.Add(verb);
     }
 }
