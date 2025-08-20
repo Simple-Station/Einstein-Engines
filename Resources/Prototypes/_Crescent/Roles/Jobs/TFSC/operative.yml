@@ -20,6 +20,11 @@
     components:
       - type: ChatRank
         rank: crescent-rank-operative
+      - type: LanguageAdder
+        addSpoken:
+          - Freespeak
+        addUnderstood:
+          - Freespeak
   icon: "JobIconSyndieOperative"
   requireAdminNotify: false
   supervisors: You answer to the patriach and the interests of the CyberDawn Technologies company.

@@ -5,9 +5,9 @@
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
-        - Freespeak
+        - Sign
       languagesUnderstood:
-        - Freespeak
+        - Sign
   passportPrototype: AmericanPassport
 
 #- type: nationality

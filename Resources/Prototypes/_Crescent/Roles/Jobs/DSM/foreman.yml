@@ -29,14 +29,14 @@
   special:
   - !type:AddComponentSpecial
     components:
-      - type: LanguageKnowledge
-        speaks:
+      - type: ChatRank
+        rank: crescent-rank-foreman
+      - type: LanguageAdder
+        addSpoken:
           - LowImperial
-          - TauCetiBasic
           - Tradeband
-        understands:
+        addUnderstood:
           - LowImperial
-          - TauCetiBasic
           - Tradeband
   access:
   - Command

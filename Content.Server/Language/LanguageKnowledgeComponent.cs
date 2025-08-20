@@ -1,10 +1,11 @@
+using System.ComponentModel.DataAnnotations;
 using Content.Shared.Language;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Language;
 
 /// <summary>
-///     Stores data about entities' intrinsic language knowledge.
+///     Stores data about entities' intrinsic language knowledge. Setting this OVERRIDES the entity's known languages.
 /// </summary>
 [RegisterComponent]
 public sealed partial class LanguageKnowledgeComponent : Component
@@ -20,4 +21,5 @@ public sealed partial class LanguageKnowledgeComponent : Component
     /// </summary>
     [DataField("understands", required: true)]
     public List<ProtoId<LanguagePrototype>> UnderstoodLanguages = new();
+
 }
