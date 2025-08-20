@@ -1210,6 +1210,7 @@
         - FullAuto
       soundGunshot: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
     - type: BallisticAmmoProvider
+      proto: IdnaTorpedo
       whitelist:
         tags:
           - Torpedo
