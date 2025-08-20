@@ -429,6 +429,10 @@ namespace Content.Shared.Stacks
             }
         }
 
+        /// <remarks>
+        ///     Predicted interactions with spawned entities is weird, so we're not going to predict entity spawn/deletion.
+        ///     This empty virtual method exists to call UserSplit() only on the server for that reason.
+        /// </remarks>
         protected virtual void UserSplit(EntityUid uid, EntityUid userUid, int amount,
             StackComponent? stack = null,
             TransformComponent? userTransform = null)
