@@ -10,10 +10,18 @@ language-LowImperial-name = Low Imperial
 language-LowImperial-description = The language of the uneducated and unwashed masses of the Divine Sol Mandate. While it may not be the most refined language, it serves as a crucial means of communication for the masses.
 chat-language-LowImperial-name = Low Imperial
 
-language-SolBasic-name = Solarian Basic
+language-SolBasic-name = Solarian
 language-SolBasic-description = A derived form of High Imperial and Tau Ceti Basic, distilled down to it's base components to make the language easier to understand for foreign merchants and immigrants. Solarian Basic was used by the lower caste of Imperial society long before the Authority's coup d'etat, but it was declared the official mother tongue of the fledgling nation during their declaration of sovereignty.
-chat-language-SolBasic-name = Solarian Basic
+chat-language-SolBasic-name = Solarian
 
 language-Clarizian-name = Clarizian Common
 language-Clarizian-description = Clarizian Standard is the official tongue of the Free Clarizian Duchies. Constructed using elements of Farsi - Arabic - and Turkish, used by both highborn and commoners.
 chat-language-Clarizian-name = Clarizian Common
+
+language-Atyrian-name = Atyrian
+language-Atyrian-description = The lingua franca of Atyrians and other nonhumans, developed by butchering Moffic. Its sounds have been adapted over time to accomodate as many species of speakers as possible.
+chat-language-Atyrian-name = Atyrian
+
+language-Kaishago-name = Kaishago
+language-Kaishago-description = A bizzare compaction of ancient Japanese, made to deliver the most information in the shortest amount of time. All SHI employees have a brainchip that auto-teaches this...form of communication.
+chat-language-Kaishago-name = Kaishago

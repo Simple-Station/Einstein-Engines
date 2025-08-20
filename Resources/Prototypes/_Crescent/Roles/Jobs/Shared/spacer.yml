@@ -8,6 +8,16 @@
   supervisors: job-supervisors-hire
   accessGroups:
   - GeneralAccess
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ind-spacer
+      - type: LanguageAdder
+        addSpoken:
+          - Tradeband
+        addUnderstood:
+          - Tradeband
 
 - type: entity
   parent: IDCardStandard
@@ -20,6 +30,7 @@
     - state: idpassenger
   - type: PresetIdCard
     job: Spacer
+
 
 - type: startingGear
   id: ContractorGear

@@ -17,6 +17,11 @@
     components:
       - type: ChatRank
         rank: crescent-rank-saw
+      - type: LanguageAdder
+        addSpoken:
+          - Freespeak
+        addUnderstood:
+          - Freespeak
   weight: 8
   startingGear: ShipbreakerGear
   alwaysUseSpawner: true
