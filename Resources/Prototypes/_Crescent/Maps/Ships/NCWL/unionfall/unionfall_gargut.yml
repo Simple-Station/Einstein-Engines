@@ -1,0 +1,18 @@
+- type: gameMap
+  id: UnionfallGargut
+  mapName: 'NCWL Gargut'
+  mapPath: /Maps/_Crescent/Unionfall/NCWL/unionfall_gargut.yml
+  minPlayers: 0
+  stations:
+    UnionfallGargut:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Gargut {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-artillery-carrier
+        - type: VesselDescription
+          description: A relic of another time. Enough guns to rival flagships. But is it enough to save the League?

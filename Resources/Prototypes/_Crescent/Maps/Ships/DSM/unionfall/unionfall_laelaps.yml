@@ -1,0 +1,18 @@
+- type: gameMap
+  id: UnionfallLaelaps
+  mapName: 'DSM Laelaps'
+  mapPath: /Maps/_Crescent/Unionfall/DSM/unionfall_laelaps.yml
+  minPlayers: 0
+  stations:
+    UnionfallLaelaps:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Laelaps {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-warship
+        - type: VesselDescription
+          description: A hull that's seen a hundred wars. In quiet times, this is a prison. In wartime, this is your only hope.
