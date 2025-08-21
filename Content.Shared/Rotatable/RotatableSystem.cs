@@ -1,19 +1,19 @@
-using Content.Server.Popups;
 using Content.Shared.Popups;
-using Content.Shared.Rotatable;
 using Content.Shared.Verbs;
+using Robust.Shared.Network;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Utility;
 
-namespace Content.Server.Rotatable
+namespace Content.Shared.Rotatable
 {
     /// <summary>
     ///     Handles verbs for the <see cref="RotatableComponent"/> and <see cref="FlippableComponent"/> components.
     /// </summary>
     public sealed class RotatableSystem : EntitySystem
     {
-        [Dependency] private readonly PopupSystem _popup = default!;
+        [Dependency] private readonly SharedPopupSystem _popup = default!;
+        [Dependency] private readonly INetManager _net = default!;
 
         public override void Initialize()
         {
@@ -63,10 +63,23 @@ namespace Content.Server.Rotatable
             };
             args.Verbs.Add(resetRotation);
 
-            // rotate clockwise
-            Verb rotateCW = new()
+            // Predicting the "act" which belongs to the rotate verbs results in stuttery wierdness when rotating entities.
+            // If I had to guess, the item is rotated first on the client, and then on the server. When it's rotated on the server, it snaps back to it's original unrotated position for a frame.
+            // So for now, the acts will only be non-null serverside.
+            Verb rotateCW, rotateCCW;
+            Action? rotateCWAct = null, rotateCCWAct = null;
+
+            // TODO: predict rotate acts clientside without stuttery weirdness.
+            if (_net.IsServer)
             {
-                Act = () => EntityManager.GetComponent<TransformComponent>(uid).LocalRotation -= component.Increment,
+                rotateCWAct = () => EntityManager.GetComponent<TransformComponent>(uid).LocalRotation -= component.Increment;
+                rotateCCWAct = () => EntityManager.GetComponent<TransformComponent>(uid).LocalRotation += component.Increment;
+            }
+
+            // rotate clockwise
+            rotateCW = new()
+            {
+                Act = rotateCWAct,
                 Category = VerbCategory.Rotate,
                 Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/rotate_cw.svg.192dpi.png")),
                 Priority = -1,
@@ -75,9 +88,9 @@ namespace Content.Server.Rotatable
             args.Verbs.Add(rotateCW);
 
             // rotate counter-clockwise
-            Verb rotateCCW = new()
+            rotateCCW = new()
             {
-                Act = () => EntityManager.GetComponent<TransformComponent>(uid).LocalRotation += component.Increment,
+                Act = rotateCCWAct,
                 Category = VerbCategory.Rotate,
                 Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/rotate_ccw.svg.192dpi.png")),
                 Priority = 0,
@@ -94,7 +107,7 @@ namespace Content.Server.Rotatable
             if (EntityManager.TryGetComponent(uid, out PhysicsComponent? physics) &&
                 physics.BodyType == BodyType.Static)
             {
-                _popup.PopupEntity(Loc.GetString("flippable-component-try-flip-is-stuck"), uid, user);
+                _popup.PopupPredicted(Loc.GetString("flippable-component-try-flip-is-stuck"), uid, user);
                 return;
             }
 

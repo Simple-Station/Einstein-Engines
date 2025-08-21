@@ -5,6 +5,7 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Storage.EntitySystems;
+using Content.Shared.Verbs;
 using JetBrains.Annotations;
 using Robust.Shared.GameStates;
 using Robust.Shared.Physics.Systems;
@@ -28,6 +29,8 @@ namespace Content.Shared.Stacks
         [Dependency] protected readonly SharedPopupSystem Popup = default!;
         [Dependency] private readonly SharedStorageSystem _storage = default!;
 
+        public static readonly int[] DefaultSplitAmounts = { 1, 5, 10, 20, 30, 50 };
+
         public override void Initialize()
         {
             base.Initialize();
@@ -37,6 +40,7 @@ namespace Content.Shared.Stacks
             SubscribeLocalEvent<StackComponent, ComponentStartup>(OnStackStarted);
             SubscribeLocalEvent<StackComponent, ExaminedEvent>(OnStackExamined);
             SubscribeLocalEvent<StackComponent, InteractUsingEvent>(OnStackInteractUsing);
+            SubscribeLocalEvent<StackComponent, GetVerbsEvent<AlternativeVerb>>(OnStackAlternativeInteract);
 
             _vvm.GetTypeHandler<StackComponent>()
                 .AddPath(nameof(StackComponent.Count), (_, comp) => comp.Count, SetCount);
@@ -388,6 +392,51 @@ namespace Content.Shared.Stacks
                     ("markupCountColor", "lightgray")
                 )
             );
+        }
+
+        private void OnStackAlternativeInteract(EntityUid uid, StackComponent stack, GetVerbsEvent<AlternativeVerb> args)
+        {
+            if (!args.CanAccess || !args.CanInteract || args.Hands == null || stack.Count == 1)
+                return;
+
+            AlternativeVerb halve = new()
+            {
+                Text = Loc.GetString("comp-stack-split-halve"),
+                Category = VerbCategory.Split,
+                Act = () => UserSplit(uid, args.User, stack.Count / 2, stack),
+                Priority = 1
+            };
+            args.Verbs.Add(halve);
+
+            var priority = 0;
+            foreach (var amount in DefaultSplitAmounts)
+            {
+                if (amount >= stack.Count)
+                    continue;
+
+                AlternativeVerb verb = new()
+                {
+                    Text = amount.ToString(),
+                    Category = VerbCategory.Split,
+                    Act = () => UserSplit(uid, args.User, amount, stack),
+                    // we want to sort by size, not alphabetically by the verb text.
+                    Priority = priority
+                };
+
+                priority--;
+
+                args.Verbs.Add(verb);
+            }
+        }
+
+        /// <remarks>
+        ///     Predicted interactions with spawned entities is weird, so we're not going to predict entity spawn/deletion.
+        ///     This empty virtual method exists to call UserSplit() only on the server for that reason.
+        /// </remarks>
+        protected virtual void UserSplit(EntityUid uid, EntityUid userUid, int amount,
+            StackComponent? stack = null,
+            TransformComponent? userTransform = null)
+        {
         }
     }
 
