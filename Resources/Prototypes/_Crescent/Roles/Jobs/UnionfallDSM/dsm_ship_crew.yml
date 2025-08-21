@@ -87,10 +87,10 @@
     pocket1: DoubleEmergencyOxygenTankFilled
     ears: ClothingHeadsetEmpire
     eyes: ClothingEyesHudSecurity
+    outerClothing: ClothingOuterHardsuitImperialWorker
   inhand:
     - BookUnionfallDSMGuide
   storage:
     back:
-      - VoidsuitKitDSM
       - BoxMRE
       - WeaponPistolNeoVolker

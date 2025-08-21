@@ -89,10 +89,10 @@
     pocket1: DoubleEmergencyOxygenTankFilled
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitNCWLEngi
   inhand:
     - BookUnionfallNCWLGuide
   storage:
     back:
-      - VoidsuitKitNCWL
       - BoxMRE
       - WeaponPistolT91
