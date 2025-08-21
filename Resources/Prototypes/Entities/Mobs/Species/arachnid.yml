@@ -80,6 +80,12 @@
       Male: UnisexArachnid
       Female: UnisexArachnid
       Unsexed: UnisexArachnid
+  - type: LanguageKnowledge
+    speaks:
+    - Atyrian
+    understands:
+    - Atyrian
+    - TauCetiBasic #needed for vending machines
   - type: TypingIndicator
     proto: spider
   - type: PotentiaModifier

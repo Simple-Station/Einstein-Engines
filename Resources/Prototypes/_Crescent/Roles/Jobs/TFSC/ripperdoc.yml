@@ -29,13 +29,11 @@
       - type: CPRTraining
       - type: SurgerySpeedModifier
         speedModifier: 2
-      - type: LanguageKnowledge
-        speaks:
+      - type: LanguageAdder
+        addSpoken:
           - Freespeak
-          - TauCetiBasic
-        understands:
+        addUnderstood:
           - Freespeak
-          - TauCetiBasic
   access:
   - Command
   - Maintenance

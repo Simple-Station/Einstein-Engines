@@ -20,13 +20,13 @@
   special:
   - !type:AddComponentSpecial
     components:
-      - type: LanguageKnowledge
-        speaks:
+      - type: ChatRank
+        rank: crescent-rank-foreman
+      - type: LanguageAdder
+        addSpoken:
           - LowImperial
-          - TauCetiBasic
-        understands:
+        addUnderstood:
           - LowImperial
-          - TauCetiBasic
   access:
   - Command
   - Maintenance

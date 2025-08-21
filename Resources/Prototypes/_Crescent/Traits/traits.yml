@@ -5,8 +5,7 @@
   requirements:
     - !type:CharacterNationalityRequirement
       inverted: true
-      nationalities:
-        - Imperial
+      factionID: "DSM"
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -15,14 +14,24 @@
         - LowImperial
 
 - type: trait
+  id: HighImperial
+  category: TraitsSpeechLanguages
+  points: -6
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - HighImperial
+      languagesUnderstood:
+        - HighImperial
+
+- type: trait
   id: Dockta
   category: TraitsSpeechLanguages
   points: -6
   requirements:
-    - !type:CharacterNationalityRequirement
+    - !type:FactionRequirement
       inverted: true
-      nationalities:
-        - Unionist
+      factionID: "NCWL"
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -35,16 +44,30 @@
   category: TraitsSpeechLanguages
   points: -6
   requirements:
-    - !type:CharacterNationalityRequirement
+    - !type:FactionRequirement
       inverted: true
-      nationalities:
-        - Coalition
+      factionID: "TFSC"
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
         - Freespeak
       languagesUnderstood:
         - Freespeak
+
+- type: trait
+  id: Kaishago
+  category: TraitsSpeechLanguages
+  points: -6
+  requirements:
+    - !type:FactionRequirement
+      inverted: true
+      factionID: "SHI"
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Kaishago
+      languagesUnderstood:
+        - Kaishago
 
 - type: trait
   id: Clarizian

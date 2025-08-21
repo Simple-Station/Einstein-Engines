@@ -27,13 +27,13 @@
     components:
       - type: ChatRank
         rank: crescent-rank-synadmin
-      - type: LanguageKnowledge
-        speaks:
+      - type: LanguageAdder
+        addSpoken:
           - Freespeak
-          - TauCetiBasic
-        understands:
+          - Tradeband
+        addUnderstood:
           - Freespeak
-          - TauCetiBasic
+          - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain

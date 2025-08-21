@@ -70,8 +70,8 @@ language-RobotTalk-description = A language consisting of harsh binary chirps, w
 language-Calcic-name = Calcic
 language-Calcic-description = The bone-rattling language of skeletons and Plasmamen. It sounds like a harmonic trousle of bones with a humerus tone, sans any off-tune ribbing.
 
-language-Sign-name = Tau-Ceti Basic Sign Language
-language-Sign-description = TCB-SL for short, this sign language is prevalent among mute and deaf people.
+language-Sign-name = Spacer's Sign
+language-Sign-description = An evolved form of the ancient American Sign Language, used by all spacefarers. Comprised mostly of aggressive arm-length gestures that are meant to be seen clearly in the silence of EVA.
 
 language-Marish-name = Marish
 language-Marish-description =  A language spoken only by Voidborn, one that is unable to be replicated by normal tongues.

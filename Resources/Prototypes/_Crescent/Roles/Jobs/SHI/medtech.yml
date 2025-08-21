@@ -32,6 +32,13 @@
       - type: CPRTraining
       - type: SurgerySpeedModifier
         speedModifier: 1.5
+      - type: ChatRank
+        rank: crescent-rank-shi-medtech
+      - type: LanguageAdder
+        addSpoken:
+          - Kaishago
+        addUnderstood:
+          - Kaishago
   access:
   - Command
   - Maintenance

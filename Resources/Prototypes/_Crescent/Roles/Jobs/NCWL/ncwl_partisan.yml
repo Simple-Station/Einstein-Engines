@@ -31,13 +31,11 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-home-soldat
-      - type: LanguageKnowledge
-        speaks:
+      - type: LanguageAdder
+        addSpoken:
           - Dockta
-          - TauCetiBasic
-        understands:
+        addUnderstood:
           - Dockta
-          - TauCetiBasic
   access:
   - Command
   - Maintenance

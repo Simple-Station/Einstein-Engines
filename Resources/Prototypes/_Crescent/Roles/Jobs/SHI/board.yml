@@ -25,13 +25,15 @@
   special:
   - !type:AddComponentSpecial
     components:
-      - type: LanguageKnowledge
-        speaks:
+      - type: ChatRank
+        rank: crescent-rank-shi-board
+      - type: LanguageAdder
+        addSpoken:
+          - Kaishago
           - Tradeband
-          - TauCetiBasic
-        understands:
+        addUnderstood:
+          - Kaishago
           - Tradeband
-          - TauCetiBasic
   access:
   - Command
   - Maintenance

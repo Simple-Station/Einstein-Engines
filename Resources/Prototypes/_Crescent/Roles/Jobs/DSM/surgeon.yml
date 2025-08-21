@@ -32,13 +32,11 @@
       - type: CPRTraining
       - type: SurgerySpeedModifier
         speedModifier: 2
-      - type: LanguageKnowledge
-        speaks:
+      - type: LanguageAdder
+        addSpoken:
           - LowImperial
-          - TauCetiBasic
-        understands:
+        addUnderstood:
           - LowImperial
-          - TauCetiBasic
   access:
   - Command
   - Empire

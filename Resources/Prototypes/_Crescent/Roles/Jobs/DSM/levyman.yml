@@ -31,13 +31,11 @@
     components:
       - type: ChatRank
         rank: crescent-rank-manatarms
-      - type: LanguageKnowledge
-        speaks:
+      - type: LanguageAdder
+        addSpoken:
           - LowImperial
-          - TauCetiBasic
-        understands:
+        addUnderstood:
           - LowImperial
-          - TauCetiBasic
   access:
   - Command
   - Empire

@@ -35,17 +35,13 @@
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-faction-leader
-      - type: LanguageKnowledge
-        speaks:
+      - type: LanguageAdder
+        addSpoken:
           - Dockta
-          - TauCetiBasic
           - Tradeband
-          - Sign
-        understands:
+        addUnderstood:
           - Dockta
-          - TauCetiBasic
           - Tradeband
-          - Sign
   access:
   - EmergencyShuttleRepealAll
   - Captain

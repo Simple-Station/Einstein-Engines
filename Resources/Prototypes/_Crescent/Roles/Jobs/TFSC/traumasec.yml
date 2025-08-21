@@ -26,13 +26,11 @@
       - type: ChatRank
         rank: crescent-rank-agent
       - type: CPRTraining
-      - type: LanguageKnowledge
-        speaks:
+      - type: LanguageAdder
+        addSpoken:
           - Freespeak
-          - TauCetiBasic
-        understands:
+        addUnderstood:
           - Freespeak
-          - TauCetiBasic
   access:
   - Command
   - Maintenance

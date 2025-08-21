@@ -28,13 +28,13 @@
     components:
       - type: ChatRank
         rank: crescent-rank-patriarch
-      - type: LanguageKnowledge
-        speaks:
+      - type: LanguageAdder
+        addSpoken:
           - Freespeak
-          - TauCetiBasic
-        understands:
+          - Tradeband
+        addUnderstood:
           - Freespeak
-          - TauCetiBasic
+          - Tradeband
   access:
   - Command
   - Maintenance
