@@ -6,6 +6,8 @@
   requirements:
     - !type:FactionRequirement
       factionID: "NCWL"
+    - !type:CharacterOverallTimeRequirement
+      min: 35000
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -83,7 +85,6 @@
     neck: ClothingNeckIFFOrange
     id: NCWLHomeguardSquadCaptainPDA
     ears: ClothingHeadsetNCWL
-    mask: ClothingMaskPilot
     shoes: ClothingShoesBootsMagNCWL
     outerClothing: ClothingOuterArmorNCWLCarapace
     head: ClothingHeadHatNCWLKommissarHat
@@ -98,7 +99,7 @@
     - ClothingOuterHardsuitNCWLInfantry
   storage:
     back:
-      - VoidsuitKitNCWL
       - BoxMRE
-      - BoxFlare
       - WeaponPistolT91
+      - CrowbarRed
+      - HandheldMassScannerEE

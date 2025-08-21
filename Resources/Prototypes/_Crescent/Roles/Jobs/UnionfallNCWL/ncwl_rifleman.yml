@@ -49,11 +49,9 @@
 - type: startingGear
   id: UnionfallRiflemanNCWLGear
   equipment:
-    head: ClothingHeadHelmetNCWLBasic
     neck: ClothingNeckIFFOrange
-    mask: ClothingMaskPilot
     jumpsuit: ClothingUniformJumpsuitNCWL
-    outerClothing: ClothingOuterArmorNCWLHeavyCarapace
+    outerClothing: ClothingOuterHardsuitNCWLInfantry
     shoes: ClothingShoesBootsMagNCWL
     belt: ClothingBeltNCWLPouchesFilledRifleman
     back: ClothingBackpackNCWL
@@ -68,7 +66,7 @@
     - BookUnionfallNCWLGuide
   storage:
     back:
-      - VoidsuitKitNCWL
       - BoxMRE
-      - BoxFlare
       - WeaponPistolComrade
+      - CrowbarRed
+      - HandheldMassScannerEE

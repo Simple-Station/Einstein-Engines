@@ -6,6 +6,8 @@
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"
+    - !type:CharacterOverallTimeRequirement
+      min: 35000
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -93,7 +95,7 @@
     eyes: ClothingEyesHudSecurity
   storage:
     back:
-      - VoidsuitKitDSM
       - BoxMRE
-      - BoxFlare
       - WeaponPistolNeoVolker
+      - CrowbarRed
+      - HandheldMassScannerEE

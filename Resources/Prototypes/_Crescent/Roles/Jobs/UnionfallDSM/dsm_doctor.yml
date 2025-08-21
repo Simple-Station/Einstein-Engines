@@ -62,12 +62,10 @@
     back: ClothingBackpackSatchelMedical
   inhand:
     - BookUnionfallDSMGuide
-    - CartridgePuncturase
+    - ClothingOuterArmorImperialTrooperArmor
   storage:
     back:
       - DefibrillatorCompact
-      - VoidsuitKitDSM
-      - BoxFlare
       - BoxMRE
       - MedkitCombatFilled
       - OmnizineChemistryBottle
@@ -77,3 +75,5 @@
       - CartridgePuncturase
       - CartridgePuncturase
       - CartridgePuncturase
+      - CrowbarRed
+      - HandheldMassScannerEE

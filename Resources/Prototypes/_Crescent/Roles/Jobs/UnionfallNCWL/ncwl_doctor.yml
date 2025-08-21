@@ -48,7 +48,6 @@
 - type: startingGear
   id: UnionfallDoctorNCWLGear
   equipment:
-    mask: ClothingMaskPilot
     neck: ClothingNeckIFFOrange
     jumpsuit: ClothingUniformJumpsuitNCWLMedic
     shoes: ClothingShoesBootsMagNCWL
@@ -57,7 +56,7 @@
     belt: ClothingBeltNCWLPouchesFilledMedic
     pocket1: DoubleEmergencyOxygenTankFilled
     pocket2: ParamedHypo
-    outerClothing: ClothingOuterArmorNCWLCarapaceDoktor
+    outerClothing: ClothingOuterHardsuitNCWLMedi
     head: ClothingHeadHatNCWLCapsoftMedical
     suitstorage: WeaponPistolT91
     back: ClothingBackpackSatchelMedical
@@ -65,12 +64,9 @@
     eyes: ClothingEyesHudMedSec
   inhand:
     - BookUnionfallNCWLGuide
-    - CartridgePuncturase
   storage:
     back:
       - DefibrillatorCompact
-      - VoidsuitKitNCWL
-      - BoxFlare
       - BoxMRE
       - MedkitCombatFilled
       - OmnizineChemistryBottle
@@ -80,3 +76,5 @@
       - CartridgePuncturase
       - CartridgePuncturase
       - CartridgePuncturase
+      - CrowbarRed
+      - HandheldMassScannerEE

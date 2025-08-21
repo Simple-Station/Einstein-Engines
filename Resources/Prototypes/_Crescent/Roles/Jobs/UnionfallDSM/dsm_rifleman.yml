@@ -43,9 +43,7 @@
 - type: startingGear
   id: UnionfallRiflemanDSMGear
   equipment:
-    head: ClothingHeadHelmetImperialTrooperHelmet
     neck: ClothingNeckIFFCyan
-    mask: ClothingMaskImperialCombatGasmask
     jumpsuit: ClothingUniformJumpsuitImperialCombat
     outerClothing: ClothingOuterArmorImperialTrooperArmor
     shoes: ClothingShoesBootsMagDSM
@@ -62,7 +60,7 @@
     - BookUnionfallDSMGuide
   storage:
     back:
-      - VoidsuitKitDSM
       - BoxMRE
-      - BoxFlare
       - WeaponPistolComplianceImperial
+      - CrowbarRed
+      - HandheldMassScannerEE
