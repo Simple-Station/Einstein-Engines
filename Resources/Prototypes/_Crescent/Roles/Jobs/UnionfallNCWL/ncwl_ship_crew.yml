@@ -1,5 +1,5 @@
 - type: job
-  id: UnionFallShipCrewNCWL
+  id: UnionfallShipCrewNCWL
   name: job-name-conscript-ncwl-ship-crew
   description: job-description-conscript-ncwl-ship-crew
   playTimeTracker: ConscriptNCWL
@@ -16,7 +16,7 @@
         - Pacifist
         - WheelchairBound
   weight: 10
-  startingGear: UnionFallShipCrewNCWLGear
+  startingGear: UnionfallShipCrewNCWLGear
   alwaysUseSpawner: true
   icon: "JobIconUnionfallNCWLCrew"
   requireAdminNotify: true
@@ -29,6 +29,11 @@
         rank: crescent-rank-ncwl-crew
       - type: HullrotFaction
         faction: NCWL
+      - type: LanguageAdder
+        addSpoken:
+          - Dockta
+        addUnderstood:
+          - Dockta
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -72,7 +77,7 @@
   - NCWLCommand
 
 - type: startingGear
-  id: UnionFallShipCrewNCWLGear
+  id: UnionfallShipCrewNCWLGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitNCWLArtificer
     neck: ClothingNeckIFFOrange

@@ -1,7 +1,7 @@
 - type: job
-  id: UnionFallShipCrewNCWL
-  name: job-name-conscript-ncwl-ship-crew
-  description: job-description-conscript-ncwl-ship-crew
+  id: UnionfallOfficerNCWL
+  name: job-name-conscript-ncwl-officer
+  description: job-description-conscript-ncwl-officer
   playTimeTracker: ConscriptNCWL
   requirements:
     - !type:FactionRequirement
@@ -15,20 +15,25 @@
         - Blindness
         - Pacifist
         - WheelchairBound
-  weight: 10
-  startingGear: UnionFallShipCrewNCWLGear
+  weight: 8
+  startingGear: UnionfallOfficerNCWLGear
   alwaysUseSpawner: true
-  icon: "JobIconUnionfallNCWLCrew"
+  icon: "JobIconUnionfallNCWLOfficer"
   requireAdminNotify: true
-  supervisors: job-supervisors-conscript-ncwl
+  supervisors: job-supervisors-conscript-ncwl-high
   canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-ncwl-crew
+        rank: crescent-rank-ncwl-officer
       - type: HullrotFaction
         faction: NCWL
+      - type: LanguageAdder
+        addSpoken:
+          - Dockta
+        addUnderstood:
+          - Dockta
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -72,22 +77,28 @@
   - NCWLCommand
 
 - type: startingGear
-  id: UnionFallShipCrewNCWLGear
+  id: UnionfallOfficerNCWLGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitNCWLArtificer
+    jumpsuit: ClothingUniformJumpsuitNCWLKommissar
     neck: ClothingNeckIFFOrange
-    id: NCWLHomeguardSoldatPDA
+    id: NCWLHomeguardSquadCaptainPDA
     ears: ClothingHeadsetNCWL
+    mask: ClothingMaskPilot
     shoes: ClothingShoesBootsMagNCWL
-    head: ClothingHeadHatNCWLBeret
-    belt: ClothingBeltAssaultFilledCrew #drips better
+    outerClothing: ClothingOuterArmorNCWLCarapace
+    head: ClothingHeadHatNCWLKommissarHat
+    belt: ClothingBeltNCWLPouchesFilledKommissar
     pocket1: DoubleEmergencyOxygenTankFilled
+    pocket2: SyndicateWhistle
     back: ClothingBackpackNCWL
+    suitstorage: WeaponSniperNCWLNovomosin
     gloves: ClothingHandsGlovesCombat
+    eyes: ClothingEyesGlassesNCWL
   inhand:
-    - BookUnionfallNCWLGuide
+    - ClothingOuterHardsuitNCWLInfantry
   storage:
     back:
       - VoidsuitKitNCWL
       - BoxMRE
+      - BoxFlare
       - WeaponPistolT91

@@ -1,0 +1,74 @@
+- type: job
+  id: UnionfallRiflemanNCWL
+  name: job-name-conscript-ncwl-rifleman
+  description: job-description-conscript-ncwl-rifleman #change me later
+  playTimeTracker: ConscriptNCWL
+  weight: 2
+  startingGear: UnionfallRiflemanNCWLGear
+  alwaysUseSpawner: true
+  icon: "JobIconUnionfallNCWLRifleman"
+  requirements:
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - Muted
+        - WheelchairBound
+  requireAdminNotify: false
+  supervisors: job-supervisors-conscript-ncwl
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ncwl-grunt
+      - type: HullrotFaction
+        faction: NCWL
+      - type: LanguageAdder
+        addSpoken:
+          - Dockta
+        addUnderstood:
+          - Dockta
+  access:
+  - Command
+  - Maintenance
+  - Service
+  - NCWLGeneral
+  - NCWLJail
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+  - NCWLAdministrator
+  - NCWLFunds
+  - NCWLKommissar
+  - NCWLArmory
+  - NCWLCommand
+
+- type: startingGear
+  id: UnionfallRiflemanNCWLGear
+  equipment:
+    head: ClothingHeadHelmetNCWLBasic
+    neck: ClothingNeckIFFOrange
+    mask: ClothingMaskPilot
+    jumpsuit: ClothingUniformJumpsuitNCWL
+    outerClothing: ClothingOuterArmorNCWLHeavyCarapace
+    shoes: ClothingShoesBootsMagNCWL
+    belt: ClothingBeltNCWLPouchesFilledRifleman
+    back: ClothingBackpackNCWL
+    pocket1: DoubleEmergencyOxygenTankFilled
+    pocket2: ExGrenade
+    ears: ClothingHeadsetNCWL
+    id: NCWLHomeguardSoldatPDA
+    suitstorage: WeaponSniperNCWLNovomosin
+    gloves: ClothingHandsGlovesCombat
+    eyes: ClothingEyesGlassesNCWL
+  inhand:
+    - BookUnionfallNCWLGuide
+  storage:
+    back:
+      - VoidsuitKitNCWL
+      - BoxMRE
+      - BoxFlare
+      - WeaponPistolComrade

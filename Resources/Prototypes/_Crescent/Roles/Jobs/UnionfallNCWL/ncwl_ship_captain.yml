@@ -1,7 +1,7 @@
 - type: job
-  id: UnionFallShipCrewNCWL
-  name: job-name-conscript-ncwl-ship-crew
-  description: job-description-conscript-ncwl-ship-crew
+  id: UnionfallShipCaptainNCWL
+  name: job-name-conscript-ncwl-ship-captain
+  description: job-description-conscript-ncwl-ship-captain
   playTimeTracker: ConscriptNCWL
   requirements:
     - !type:FactionRequirement
@@ -15,20 +15,25 @@
         - Blindness
         - Pacifist
         - WheelchairBound
-  weight: 10
-  startingGear: UnionFallShipCrewNCWLGear
+  weight: 11
+  startingGear: UnionfallShipCaptainNCWLGear
   alwaysUseSpawner: true
-  icon: "JobIconUnionfallNCWLCrew"
+  icon: "JobIconUnionfallNCWLCaptain"
   requireAdminNotify: true
-  supervisors: job-supervisors-conscript-ncwl
+  supervisors: job-supervisors-conscript-ncwl-high
   canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-ncwl-crew
+        rank: crescent-rank-ncwl-captain
       - type: HullrotFaction
         faction: NCWL
+      - type: LanguageAdder
+        addSpoken:
+          - Dockta
+        addUnderstood:
+          - Dockta
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -72,20 +77,19 @@
   - NCWLCommand
 
 - type: startingGear
-  id: UnionFallShipCrewNCWLGear
+  id: UnionfallShipCaptainNCWLGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitNCWLArtificer
+    jumpsuit: ClothingUniformJumpsuitNCWLCommunications
     neck: ClothingNeckIFFOrange
-    id: NCWLHomeguardSoldatPDA
+    id: NCWLHomeguardLeaderPDA
     ears: ClothingHeadsetNCWL
     shoes: ClothingShoesBootsMagNCWL
-    head: ClothingHeadHatNCWLBeret
-    belt: ClothingBeltAssaultFilledCrew #drips better
+    outerClothing: ClothingOuterCoatJacketJamrock
+    head: ClothingHeadHatNCWLBeretAdmiral
+    belt: ClothingBeltAssaultFilledCrew #looks better
     pocket1: DoubleEmergencyOxygenTankFilled
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesCombat
-  inhand:
-    - BookUnionfallNCWLGuide
   storage:
     back:
       - VoidsuitKitNCWL
