@@ -83,7 +83,7 @@
     stackType: TitaniumScrapOre
   - type: Currency
     price:
-      ScrapSAW: 0.4
+      ScrapSAW: 0.3
   - type: Sprite
     sprite: _Crescent/Objects/Materials/ore.rsi
     state: icon-titaniumscrap
