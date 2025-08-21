@@ -167,7 +167,7 @@ entities:
     - type: OccluderTree
     - type: SpreaderGrid
     - type: Shuttle
-      baseMaxLinearVelocity: 7.5
+      baseMaxLinearVelocity: 10
     - type: GridPathfinding
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
@@ -76915,7 +76915,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 2.4755316,-42.190998
       parent: 1
-- proto: WeaponSubMachineGunDSMArbiter
+- proto: WeaponSubMachineGunC20r
   entities:
   - uid: 7788
     components:
