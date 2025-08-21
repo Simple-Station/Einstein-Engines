@@ -11,6 +11,9 @@
   - type: Tag
     tags:
     - RawMaterial
+  - type: Currency
+    price:
+      ScrapSAW: 0.05
   - type: Sprite
     sprite: _Crescent/Objects/Materials/ore.rsi
     state: icon-scrap
@@ -80,7 +83,7 @@
     stackType: TitaniumScrapOre
   - type: Currency
     price:
-      ScrapSAW: 0.1
+      ScrapSAW: 0.4
   - type: Sprite
     sprite: _Crescent/Objects/Materials/ore.rsi
     state: icon-titaniumscrap
