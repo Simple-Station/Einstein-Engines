@@ -1,7 +1,7 @@
 - type: job
   id: UnionfallCadetNCWL
-  name: job-name-conscript-ncwl-cadet
-  description: job-description-conscript-ncwl-cadet #change me later
+  name: job-name-unionfall-ncwl-cadet
+  description: job-description-unionfall-ncwl-cadet #change me later
   playTimeTracker: ConscriptNCWL
   weight: 2
   startingGear: UnionfallCadetNCWLGear
@@ -17,7 +17,7 @@
         - Muted
         - WheelchairBound
   requireAdminNotify: false
-  supervisors: job-supervisors-conscript-ncwl
+  supervisors: job-supervisors-unionfall-ncwl
   canBeAntag: false
   special:
   - !type:AddComponentSpecial

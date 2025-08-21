@@ -1,7 +1,7 @@
 - type: job
   id: UnionfallDoctorDSM
-  name: job-name-conscript-dsm-doctor
-  description: job-description-conscript-dsm-doctor
+  name: job-name-unionfall-dsm-doctor
+  description: job-description-unionfall-dsm-doctor
   playTimeTracker: ConscriptDSM
   weight: 7
   startingGear: UnionfallDoctorDSMGear
@@ -18,7 +18,7 @@
         - Pacifist
         - WheelchairBound
   requireAdminNotify: false
-  supervisors: job-supervisors-conscript-dsm
+  supervisors: job-supervisors-unionfall-dsm
   canBeAntag: false
   special:
   - !type:AddComponentSpecial

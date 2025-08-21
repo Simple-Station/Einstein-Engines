@@ -1,7 +1,7 @@
 - type: job
   id: UnionfallRiflemanNCWL
-  name: job-name-conscript-ncwl-rifleman
-  description: job-description-conscript-ncwl-rifleman #change me later
+  name: job-name-unionfall-ncwl-rifleman
+  description: job-description-unionfall-ncwl-rifleman #change me later
   playTimeTracker: ConscriptNCWL
   weight: 2
   startingGear: UnionfallRiflemanNCWLGear
@@ -17,7 +17,7 @@
         - Muted
         - WheelchairBound
   requireAdminNotify: false
-  supervisors: job-supervisors-conscript-ncwl
+  supervisors: job-supervisors-unionfall-ncwl
   canBeAntag: false
   special:
   - !type:AddComponentSpecial

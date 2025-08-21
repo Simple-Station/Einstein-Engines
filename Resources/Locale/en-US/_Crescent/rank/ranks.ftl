@@ -30,18 +30,18 @@ crescent-rank-advocatus = Advocati
 crescent-rank-templar = Knight Templar
 crescent-rank-freeholder = Freeholder
 
-# dsm-conscript
+# dsm-conscript - for PLANETFALL
 crescent-rank-dsm-captain = Grand Steward
 crescent-rank-dsm-crew = Steward
-crescent-rank-dsm-leader = Marshal-Bannaret
+crescent-rank-dsm-leader = Knight-Bannaret
 crescent-rank-dsm-officer = Knight
-crescent-rank-dsm-specialist = Ward
-crescent-rank-dsm-cqc = Squire
-crescent-rank-dsm-grunt = Armsman
-crescent-rank-dsm-new = Recruit
+crescent-rank-dsm-specialist = Lancer
+crescent-rank-dsm-cqc = Fencer
+crescent-rank-dsm-grunt = Man-at-arms
+crescent-rank-dsm-new = Squire
 crescent-rank-dsm-doctor = Medicant
 
-# ncwl-conscript
+# ncwl-conscript - for PLANETFALL
 crescent-rank-ncwl-captain = Admiral
 crescent-rank-ncwl-crew = Artificer
 crescent-rank-ncwl-leader = Major

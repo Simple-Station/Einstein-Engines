@@ -1,7 +1,7 @@
 - type: job
   id: UnionfallDoctorNCWL
-  name: job-name-conscript-ncwl-doctor
-  description: job-description-conscript-ncwl-doctor
+  name: job-name-unionfall-ncwl-doctor
+  description: job-description-unionfall-ncwl-doctor
   playTimeTracker: ConscriptNCWL
   requirements:
     - !type:FactionRequirement
@@ -17,7 +17,7 @@
   alwaysUseSpawner: true
   icon: "JobIconUnionfallNCWLMedic"
   requireAdminNotify: false
-  supervisors: job-supervisors-conscript-ncwl
+  supervisors: job-supervisors-unionfall-ncwl
   canBeAntag: false
   special:
   - !type:AddComponentSpecial

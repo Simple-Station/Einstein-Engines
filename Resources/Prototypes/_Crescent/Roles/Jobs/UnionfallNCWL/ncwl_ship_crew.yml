@@ -1,7 +1,7 @@
 - type: job
   id: UnionfallShipCrewNCWL
-  name: job-name-conscript-ncwl-ship-crew
-  description: job-description-conscript-ncwl-ship-crew
+  name: job-name-unionfall-ncwl-ship-crew
+  description: job-description-unionfall-ncwl-ship-crew
   playTimeTracker: ConscriptNCWL
   requirements:
     - !type:FactionRequirement
@@ -20,7 +20,7 @@
   alwaysUseSpawner: true
   icon: "JobIconUnionfallNCWLCrew"
   requireAdminNotify: true
-  supervisors: job-supervisors-conscript-ncwl
+  supervisors: job-supervisors-unionfall-ncwl
   canBeAntag: false
   special:
   - !type:AddComponentSpecial

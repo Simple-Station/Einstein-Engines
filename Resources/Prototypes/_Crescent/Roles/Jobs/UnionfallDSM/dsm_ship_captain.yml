@@ -1,7 +1,7 @@
 - type: job
   id: UnionfallShipCaptainDSM
-  name: job-name-conscript-dsm-ship-captain
-  description: job-description-conscript-dsm-ship-captain
+  name: job-name-unionfall-dsm-ship-captain
+  description: job-description-unionfall-dsm-ship-captain
   playTimeTracker: ConscriptDSM
   requirements:
     - !type:FactionRequirement
@@ -22,7 +22,7 @@
   alwaysUseSpawner: true
   icon: "JobIconUnionfallDSMCaptain"
   requireAdminNotify: true
-  supervisors: job-supervisors-conscript-dsm-high
+  supervisors: job-supervisors-unionfall-dsm-high
   canBeAntag: false
   special:
   - !type:AddComponentSpecial

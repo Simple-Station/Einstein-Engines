@@ -1,7 +1,7 @@
 - type: job
   id: UnionfallOfficerDSM
-  name: job-name-conscript-dsm-officer
-  description: job-description-conscript-dsm-officer
+  name: job-name-unionfall-dsm-officer
+  description: job-description-unionfall-dsm-officer
   playTimeTracker: ConscriptDSM
   requirements:
     - !type:FactionRequirement
@@ -22,7 +22,7 @@
   alwaysUseSpawner: true
   icon: "JobIconUnionfallDSMOfficer"
   requireAdminNotify: true
-  supervisors: job-supervisors-conscript-dsm-high
+  supervisors: job-supervisors-unionfall-dsm-high
   canBeAntag: false
   special:
   - !type:AddComponentSpecial

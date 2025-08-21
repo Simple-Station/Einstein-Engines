@@ -1,7 +1,7 @@
 - type: job
   id: UnionfallOfficerNCWL
-  name: job-name-conscript-ncwl-officer
-  description: job-description-conscript-ncwl-officer
+  name: job-name-unionfall-ncwl-officer
+  description: job-description-unionfall-ncwl-officer
   playTimeTracker: ConscriptNCWL
   requirements:
     - !type:FactionRequirement
@@ -22,7 +22,7 @@
   alwaysUseSpawner: true
   icon: "JobIconUnionfallNCWLOfficer"
   requireAdminNotify: true
-  supervisors: job-supervisors-conscript-ncwl-high
+  supervisors: job-supervisors-unionfall-ncwl-high
   canBeAntag: false
   special:
   - !type:AddComponentSpecial

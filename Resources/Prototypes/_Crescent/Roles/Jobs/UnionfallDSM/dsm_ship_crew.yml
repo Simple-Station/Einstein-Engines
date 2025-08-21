@@ -1,7 +1,7 @@
 - type: job
   id: UnionfallShipCrewDSM
-  name: job-name-conscript-dsm-ship-crew
-  description: job-description-conscript-dsm-ship-crew
+  name: job-name-unionfall-dsm-ship-crew
+  description: job-description-unionfall-dsm-ship-crew
   playTimeTracker: ConscriptDSM
   requirements:
     - !type:FactionRequirement
@@ -20,7 +20,7 @@
   alwaysUseSpawner: true
   icon: "JobIconUnionfallDSMCrew"
   requireAdminNotify: true
-  supervisors: job-supervisors-conscript-dsm
+  supervisors: job-supervisors-unionfall-dsm
   canBeAntag: false
   special:
   - !type:AddComponentSpecial

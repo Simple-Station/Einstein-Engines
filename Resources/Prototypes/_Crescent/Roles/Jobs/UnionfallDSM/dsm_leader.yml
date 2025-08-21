@@ -1,7 +1,7 @@
 - type: job
   id: UnionfallLeaderDSM
-  name: job-name-conscript-dsm-leader
-  description: job-description-conscript-dsm-leader
+  name: job-name-unionfall-dsm-leader
+  description: job-description-unionfall-dsm-leader
   playTimeTracker: ConscriptDSM
   requirements:
     - !type:FactionRequirement
@@ -23,7 +23,7 @@
   alwaysUseSpawner: true
   icon: "JobIconUnionfallDSMLeader"
   requireAdminNotify: true
-  supervisors: job-supervisors-conscript-dsm-high
+  supervisors: job-supervisors-unionfall-dsm-high
   canBeAntag: false
   special:
   - !type:AddComponentSpecial

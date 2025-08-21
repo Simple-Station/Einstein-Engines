@@ -1,7 +1,7 @@
 - type: job
   id: UnionfallCadetDSM
-  name: job-name-conscript-dsm-cadet
-  description: job-description-conscript-dsm-cadet #change me later
+  name: job-name-unionfall-dsm-cadet
+  description: job-description-unionfall-dsm-cadet #change me later
   playTimeTracker: ConscriptDSM
   weight: 2
   startingGear: UnionfallCadetDSMGear
@@ -17,7 +17,7 @@
         - Muted
         - WheelchairBound
   requireAdminNotify: false
-  supervisors: job-supervisors-conscript-dsm
+  supervisors: job-supervisors-unionfall-dsm
   canBeAntag: false
   special:
   - !type:AddComponentSpecial
