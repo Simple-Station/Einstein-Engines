@@ -23,6 +23,7 @@
     components:
       - type: ChatRank
         rank: crescent-rank-kanoneer
+      - type: BibleUser
   access:
   - EmergencyShuttleRepealAll
   - Captain

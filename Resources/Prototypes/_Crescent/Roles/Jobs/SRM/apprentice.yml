@@ -24,6 +24,10 @@
   - External
   - Mercenary # Frontier
   - Captain # Frontier
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: BibleUser
 
 - type: startingGear
   id: AcolyteGear

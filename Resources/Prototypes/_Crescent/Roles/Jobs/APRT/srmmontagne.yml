@@ -31,6 +31,7 @@
   - !type:AddComponentSpecial
     components:
       - type: Telepathic
+      - type: BibleUser
 
 - type: startingGear
   id: APRTMontagneGear
