@@ -199,7 +199,7 @@
         IFFColor: Cyan
       UnionfallLaelaps2:
         gameMapID: UnionfallLaelaps
-        posX: 3060
+        posX: 2970
         posY: 0
         IFFColor: Cyan
       UnionfallClementine:
@@ -210,6 +210,11 @@
       UnionfallGargut:
         gameMapID: UnionfallGargut
         posX: -3030
+        posY: 0
+        IFFColor: Orange
+      UnionfallSasha:
+        gameMapID: UnionfallSasha
+        posX: -2970
         posY: 0
         IFFColor: Orange
       UnionfallGraceBarrierDSM:

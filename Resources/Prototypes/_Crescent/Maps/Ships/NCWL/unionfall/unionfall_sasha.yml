@@ -1,0 +1,18 @@
+- type: gameMap
+  id: UnionfallSasha
+  mapName: 'NCWL Sasha'
+  mapPath: /Maps/_Crescent/Unionfall/NCWL/unionfall_sasha.yml
+  minPlayers: 0
+  stations:
+    UnionfallSasha:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Sasha {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-artillery-carrier
+        - type: VesselDescription
+          description: A relic of another time. Enough guns to rival flagships. But is it enough to save the League?
