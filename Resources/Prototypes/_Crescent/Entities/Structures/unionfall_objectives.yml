@@ -99,7 +99,7 @@
     sprite: _Crescent/Structures/capturepoint.rsi
     layers:
     - state: icon
-    - state: unlit
+    - state: lightingDSM
       shader: unshaded
       map: ["enum.PowerDeviceVisualLayers.Powered"]
   - type: GenericVisualizer
@@ -137,7 +137,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 2500
+        damage: 10000
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -181,7 +181,7 @@
     sprite: _Crescent/Structures/capturepoint.rsi
     layers:
     - state: icon
-    - state: unlit
+    - state: lightingNCWL
       shader: unshaded
       map: ["enum.PowerDeviceVisualLayers.Powered"]
   - type: GenericVisualizer
@@ -219,7 +219,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 2500
+        damage: 10000
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]

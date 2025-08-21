@@ -32,7 +32,10 @@ public sealed class UnionfallShipNodeSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
 
-    private ISawmill _sawmill = default!;
+    private ISawmill _sawmill = default!; //debug logging
+
+    private int nodesLeftDSM = 0;
+    private int nodesLeftNCWL = 0;
 
     public override void Initialize()
     {
@@ -40,12 +43,15 @@ public sealed class UnionfallShipNodeSystem : EntitySystem
         SubscribeLocalEvent<UnionfallShipNodeComponent, ActivateInWorldEvent>(OnActivatedInWorld);
         SubscribeLocalEvent<UnionfallShipNodeComponent, UnionfallShipNodeDoAfterEvent>(OnCaptureDoAfter);
         SubscribeLocalEvent<UnionfallShipNodeComponent, ComponentRemove>(OnDestruction);
-        _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("audio.ambience");
+        _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("unionfall.shipnodes");
     }
 
     private void OnComponentInit(EntityUid uid, UnionfallShipNodeComponent component, ComponentInit args)
     {
-        //skibidi sigma
+        if (component.OwningFaction == "DSM")
+            nodesLeftDSM += 1;
+        else if (component.OwningFaction == "NCWL") //could be "else" but just in case we get more factions
+            nodesLeftNCWL += 1;
     }
 
     public override void Update(float frameTime)
@@ -142,9 +148,17 @@ public sealed class UnionfallShipNodeSystem : EntitySystem
     {
         _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
             "A " + capturepoint.OwningFaction + " cloner database has been destroyed!");
-        _gameTicker.EndRound("All of " + capturepoint.OwningFaction + "'s cloner databases have been destroyed. ROUND OVER");
-        capturepoint.CurrentCaptureProgress = 999999;
-        Timer.Spawn(TimeSpan.FromMinutes(1), _gameTicker.RestartRound);
+        if (capturepoint.OwningFaction == "NCWL")
+            nodesLeftNCWL -= 1;
+        else if (capturepoint.OwningFaction == "DSM")
+            nodesLeftDSM -= 1;
+
+        if (nodesLeftNCWL <= 0 || nodesLeftDSM <= 0)
+        {
+            _gameTicker.EndRound("All of " + capturepoint.OwningFaction + "'s cloner databases have been destroyed. ROUND OVER");
+            capturepoint.CurrentCaptureProgress = 999999;
+            Timer.Spawn(TimeSpan.FromMinutes(1), _gameTicker.RestartRound);
+        }
     }
 
 
