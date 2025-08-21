@@ -49,7 +49,6 @@
 - type: startingGear
   id: UnionfallCadetNCWLGear
   equipment:
-    head: ClothingHeadHatNCWLCapsoft
     neck: ClothingNeckIFFOrange
     jumpsuit: ClothingUniformJumpsuitNCWL
     outerClothing: ClothingOuterHardsuitNCWLInfantry
