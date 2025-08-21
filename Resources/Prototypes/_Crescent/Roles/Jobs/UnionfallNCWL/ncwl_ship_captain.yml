@@ -92,6 +92,7 @@
     pocket1: DoubleEmergencyOxygenTankFilled
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesCombat
+    eyes: ClothingEyesHudSecurity
   storage:
     back:
       - VoidsuitKitNCWL

@@ -90,6 +90,7 @@
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitNCWLEngi
+    eyes: ClothingEyesHudSecurity
   inhand:
     - BookUnionfallNCWLGuide
   storage:
