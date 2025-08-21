@@ -523,6 +523,6 @@
   description: A patrol cap in imperial colors.
   components:
   - type: Sprite
-    sprite: _Crescent/Clothing/NCWL/Head/ncwlcap.rsi
+    sprite: _Crescent/Clothing/Empire/Head/dsm_cap.rsi
   - type: Clothing
-    sprite: _Crescent/Clothing/NCWL/Head/ncwlcap.rsi
+    sprite: _Crescent/Clothing/Empire/Head/dsm_cap.rsi

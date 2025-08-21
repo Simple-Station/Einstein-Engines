@@ -43,10 +43,9 @@
 - type: startingGear
   id: UnionfallCadetDSMGear
   equipment:
-    head: ClothingHeadHatDSMCapsoft
     neck: ClothingNeckIFFCyan
     jumpsuit: ClothingUniformJumpsuitImperialCombat
-    outerClothing: ClothingOuterArmorImperialTrooperArmor
+    outerClothing: ClothingOuterHardsuitImperialSoldier
     shoes: ClothingShoesBootsMagDSM
     belt: ClothingBeltAssaultFilledRifleman
     gloves: ClothingHandsGlovesImperialLonggloves

@@ -47,9 +47,8 @@
   equipment:
     head: ClothingHeadHatImperialSurgeon
     neck: ClothingNeckIFFCyan
-    mask: ClothingMaskImperialCombatGasmask
     jumpsuit: ClothingUniformJumpsuitImperialSurgeon
-    outerClothing: ClothingOuterArmorImperialTrooperArmor
+    outerClothing: ClothingOuterHardsuitImperialWorker
     shoes: ClothingShoesBootsMagDSM
     belt: ClothingBeltAssaultFilledMedic
     eyes: ClothingEyesHudMedSec

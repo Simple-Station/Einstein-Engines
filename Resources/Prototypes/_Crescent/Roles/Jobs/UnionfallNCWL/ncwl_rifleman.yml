@@ -49,6 +49,7 @@
 - type: startingGear
   id: UnionfallRiflemanNCWLGear
   equipment:
+    head: ClothingHeadHatNCWLCapsoft
     neck: ClothingNeckIFFOrange
     jumpsuit: ClothingUniformJumpsuitNCWL
     outerClothing: ClothingOuterHardsuitNCWLInfantry
