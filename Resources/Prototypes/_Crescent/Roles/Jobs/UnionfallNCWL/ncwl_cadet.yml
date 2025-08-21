@@ -1,0 +1,73 @@
+- type: job
+  id: UnionfallCadetNCWL
+  name: job-name-conscript-ncwl-cadet
+  description: job-description-conscript-ncwl-cadet #change me later
+  playTimeTracker: ConscriptNCWL
+  weight: 2
+  startingGear: UnionfallCadetNCWLGear
+  alwaysUseSpawner: true
+  icon: "JobIconUnionfallNCWLCadet"
+  requirements:
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - Muted
+        - WheelchairBound
+  requireAdminNotify: false
+  supervisors: job-supervisors-conscript-ncwl
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ncwl-cadet
+      - type: HullrotFaction
+        faction: NCWL
+      - type: LanguageAdder
+        addSpoken:
+          - Dockta
+        addUnderstood:
+          - Dockta
+  access:
+  - Command
+  - Maintenance
+  - Service
+  - NCWLGeneral
+  - NCWLJail
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+  - NCWLAdministrator
+  - NCWLFunds
+  - NCWLKommissar
+  - NCWLArmory
+  - NCWLCommand
+
+- type: startingGear
+  id: UnionfallCadetNCWLGear
+  equipment:
+    head: ClothingHeadHatNCWLCapsoft
+    neck: ClothingNeckIFFOrange
+    jumpsuit: ClothingUniformJumpsuitNCWL
+    outerClothing: ClothingOuterHardsuitNCWLInfantry
+    shoes: ClothingShoesBootsMagNCWL
+    belt: ClothingBeltNCWLPouchesFilledRifleman
+    back: ClothingBackpackNCWL
+    pocket1: DoubleEmergencyOxygenTankFilled
+    pocket2: ExGrenade
+    ears: ClothingHeadsetNCWL
+    id: NCWLHomeguardSoldatPDA
+    suitstorage: WeaponSniperNCWLNovomosin
+    gloves: ClothingHandsGlovesCombat
+    eyes: ClothingEyesGlassesNCWL
+  inhand:
+    - BookUnionfallNCWLGuide
+  storage:
+    back:
+      - BoxMRE
+      - WeaponPistolComrade
+      - CrowbarRed
+      - HandheldMassScannerEE
