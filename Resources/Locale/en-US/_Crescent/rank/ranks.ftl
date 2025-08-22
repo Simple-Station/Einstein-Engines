@@ -4,6 +4,19 @@ rank-ordering = {$rank} {$name}
 # default
 crescent-rank-private = PvT.
 
+# independents
+crescent-rank-ind-gliess-sheriff = Sheriff
+crescent-rank-ind-gliess-dockmaster = Dockmaster
+crescent-rank-ind-spacer = Spacer
+
+# shi
+crescent-rank-shi-executive = Manager
+crescent-rank-shi-board = Exec.
+crescent-rank-shi-corpsec = CorpSec.
+crescent-rank-shi-highsec = Employee
+crescent-rank-shi-employee = Employee
+crescent-rank-shi-medtech = Medtech
+
 # empire
 crescent-rank-baron = Lord Admiral
 crescent-rank-adjutant = Adjutant
@@ -15,6 +28,7 @@ crescent-rank-courtier = Edler
 crescent-rank-archmaester = Archmaester
 crescent-rank-advocatus = Advocati
 crescent-rank-templar = Knight Templar
+crescent-rank-freeholder = Freeholder
 
 # dsm-conscript
 crescent-rank-dsm-captain = Grand Steward
@@ -95,9 +109,3 @@ crescent-rank-sanitat = Cpl.
 crescent-rank-kanoneer = Sgt.
 crescent-rank-steward = Steward
 crescent-rank-logistat = Marshallie
-
-
-# misc
-
-crescent-rank-sheriff = Sheriff
-crescent-rank-dockmaster = Dockmaster

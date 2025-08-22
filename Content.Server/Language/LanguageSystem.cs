@@ -140,7 +140,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         EnsureComp<LanguageSpeakerComponent>(uid, out var speaker);
 
         if (addSpoken && !knowledge.SpokenLanguages.Contains(language))
-            knowledge.SpokenLanguages.Add(language);
+            knowledge.SpokenLanguages.Insert(0, language); //HULLROT CHANGE: so faction lang is the first one on the list.
 
         if (addUnderstood && !knowledge.UnderstoodLanguages.Contains(language))
             knowledge.UnderstoodLanguages.Add(language);

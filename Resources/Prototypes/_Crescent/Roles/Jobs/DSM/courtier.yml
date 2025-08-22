@@ -24,16 +24,14 @@
     components:
       - type: ChatRank
         rank: crescent-rank-courtier
-      - type: LanguageKnowledge
-        speaks:
+      - type: LanguageAdder
+        addSpoken:
           - HighImperial
           - LowImperial
-          - TauCetiBasic
           - Tradeband
-        understands:
+        addUnderstood:
           - HighImperial
           - LowImperial
-          - TauCetiBasic
           - Tradeband
   access:
   - Command

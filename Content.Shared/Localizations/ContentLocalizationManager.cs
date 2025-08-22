@@ -36,6 +36,8 @@ namespace Content.Shared.Localizations
             _loc.AddFunction(culture, "LOC", FormatLoc);
             _loc.AddFunction(culture, "NATURALFIXED", FormatNaturalFixed);
             _loc.AddFunction(culture, "NATURALPERCENT", FormatNaturalPercent);
+            //HULLROT EDIT: needed for formatting sign language to only 1 word and 10 characters
+            _loc.AddFunction(culture, "FORMATSIGNLANGUAGE", FormatSignLanguage);
 
 
             /*
@@ -173,6 +175,23 @@ namespace Content.Shared.Localizations
             }
 
             return new LocValueString(Loc.GetString(mode, ("divided", pressure), ("places", places)));
+        }
+
+
+        /// <summary>
+        ///  //HULLROT EDIT: needed for formatting sign language to only 1 word and 10 characters
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        private static ILocValue FormatSignLanguage(LocArgs args)
+        {
+            string originalMessage = ((LocValueString) args.Args[0]).Value;
+            string newMessage = originalMessage.Split([' ', ',', '.', '-', '_'])[0]; //SHOULD grab the first word
+
+            if (newMessage.Length > 10)
+                newMessage = newMessage.Substring(0, 10);
+
+            return new LocValueString(newMessage);
         }
 
         private static ILocValue FormatPressure(LocArgs args)

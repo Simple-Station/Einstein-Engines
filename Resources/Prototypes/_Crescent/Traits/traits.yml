@@ -1,16 +1,11 @@
 - type: trait
   id: Dockta
   category: TraitsSpeechLanguages
-  points: -1
-  # slots: 1
-  # itemGroupSlots: 0
+  points: -7
   requirements:
-    # - !type:CharacterItemGroupRequirement
-    #   group: TraitsLanguagesBasic
-    - !type:CharacterNationalityRequirement
+    - !type:FactionRequirement
       inverted: true
-      nationalities:
-        - Unionist
+      factionID: "NCWL"
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -19,14 +14,54 @@
         - Dockta
 
 - type: trait
+  id: Freespeak
+  category: TraitsSpeechLanguages
+  points: -7
+  requirements:
+    - !type:FactionRequirement
+      inverted: true
+      factionID: "TFSC"
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Freespeak
+      languagesUnderstood:
+        - Freespeak
+
+- type: trait
+  id: Kaishago
+  category: TraitsSpeechLanguages
+  points: -7
+  requirements:
+    - !type:FactionRequirement
+      inverted: true
+      factionID: "SHI"
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Kaishago
+      languagesUnderstood:
+        - Kaishago
+
+- type: trait
+  id: LowImperial
+  category: TraitsSpeechLanguages
+  points: -7
+  requirements:
+    - !type:FactionRequirement
+      inverted: true
+      factionID: "DSM"
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - LowImperial
+      languagesUnderstood:
+        - LowImperial
+
+- type: trait
   id: HighImperial
   category: TraitsSpeechLanguages
-  points: -1
-  requirements:
-    - !type:CharacterNationalityRequirement
-      inverted: true
-      nationalities:
-        - Imperial
+  points: -9
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:

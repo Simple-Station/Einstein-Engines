@@ -32,6 +32,7 @@ research-technology-biochemical-stasis = Stasis Equipment
 research-technology-biochemical-hypo = Hypochemistry
 
 # ELECTRONICS
+research-technology-electronics-translators = Translators
 research-technology-electronics-materials = Basic Components
 research-technology-electronics-defense = Civilian Defense Pistols
 research-technology-electronics-terminus = Ogre Shocktrooper Armaments

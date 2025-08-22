@@ -2,8 +2,8 @@
   id: LowImperial
   isVisibleLanguage: true
   speech:
-    color: "#7224b3"
-    fontId: Cambria
+    color: "#cf277b"
+    fontId: Lymphatic
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1

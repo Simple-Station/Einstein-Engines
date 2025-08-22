@@ -28,15 +28,11 @@
       - type: ChatRank
         rank: crescent-rank-smarts
       - type: BibleUser
-      - type: LanguageKnowledge
-        speaks:
+      - type: LanguageAdder
+        addSpoken:
           - LowImperial
-          - TauCetiBasic
-          - Tradeband
-        understands:
+        addUnderstood:
           - LowImperial
-          - TauCetiBasic
-          - Tradeband
   access:
   - Command
   - Empire

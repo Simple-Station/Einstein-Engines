@@ -233,11 +233,10 @@
         - TelepathyPower
     - type: LanguageKnowledge
       speaks:
-        - TauCetiBasic
-        - Marish
+      - Atyrian
       understands:
-        - TauCetiBasic
-        - Marish
+      - Atyrian
+      - TauCetiBasic #needed for vending machines and anything else
     - type: PotentiaModifier
       potentiaMultiplier: 1.25
     - type: Tag

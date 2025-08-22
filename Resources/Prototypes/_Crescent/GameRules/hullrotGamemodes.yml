@@ -75,6 +75,8 @@
         gameMapID: Jackal
         posX: -10500
         posY: -4500
+        IFFColor: IndianRed
+        IFFFaction: TFSC
       Graveyard:
         gameMapID: Graveyard
         posX: 4200
