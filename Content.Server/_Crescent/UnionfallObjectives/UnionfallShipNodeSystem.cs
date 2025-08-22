@@ -77,7 +77,6 @@ public sealed class UnionfallShipNodeSystem : EntitySystem
 
             if (capturepoint.CurrentCaptureProgress <= 0) //capturing complete. announce and count how many left
             {
-                _explosionSystem.QueueExplosion(_transformSystem.GetMapCoordinates(uid), ExplosionSystem.DefaultExplosionPrototypeId, 20, 1, 2, 0);
                 QueueDel(uid);
 
             }
@@ -148,12 +147,13 @@ public sealed class UnionfallShipNodeSystem : EntitySystem
     {
         if (isRoundEnding) //prevents this from triggering 6 times and breaking the round when they all get removed from the game
             return;
-        _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
-            "A " + capturepoint.OwningFaction + " cloner database has been destroyed! B");
         if (capturepoint.OwningFaction == "NCWL")
             nodesLeftNCWL -= 1;
         else if (capturepoint.OwningFaction == "DSM")
             nodesLeftDSM -= 1;
+
+        _explosionSystem.QueueExplosion(_transformSystem.GetMapCoordinates(uid), ExplosionSystem.DefaultExplosionPrototypeId, 20, 1, 2, 0);
+
 
         if (nodesLeftNCWL <= 0 || nodesLeftDSM <= 0)
         {
@@ -161,6 +161,11 @@ public sealed class UnionfallShipNodeSystem : EntitySystem
             _gameTicker.EndRound("All of " + capturepoint.OwningFaction + "'s cloner databases have been destroyed. ROUND OVER");
             capturepoint.CurrentCaptureProgress = 999999;
             Timer.Spawn(TimeSpan.FromMinutes(1), _gameTicker.RestartRound);
+        }
+        else
+        {
+            _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
+            "A " + capturepoint.OwningFaction + " cloner database has been destroyed!");
         }
     }
 
