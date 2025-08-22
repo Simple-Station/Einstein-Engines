@@ -3,16 +3,20 @@
   name: job-name-levyman
   description: job-description-levyman
   playTimeTracker: JobLevymanDSM
+  weight: 4
+  startingGear: LevymanGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconImperialLevyman"
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
   requirements:
+    - !type:FactionRequirement
+      factionID: "DSM"
     - !type:CharacterSpeciesRequirement
       species:
         - Human
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Voidborn
-    - !type:FactionRequirement
-      factionID: "DSM"
+        - Oni
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -22,24 +26,16 @@
         - Blindness
         - Pacifist
         - WheelchairBound
-  weight: 77
-  startingGear: LevymanGear
-  alwaysUseSpawner: true
-  icon: "JobIconImperialLevyman"
-  requireAdminNotify: false
-  supervisors: job-supervisors-imperial
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
         rank: crescent-rank-manatarms
-      - type: LanguageKnowledge
-        speaks:
-          - SolCommon
-        understands:
-          - Tradeband
-          - SolCommon
+      - type: LanguageAdder
+        addSpoken:
+          - LowImperial
+        addUnderstood:
+          - LowImperial
   access:
   - Command
   - Empire

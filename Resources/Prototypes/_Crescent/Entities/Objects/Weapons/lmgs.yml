@@ -107,6 +107,9 @@
         whitelist:
           tags:
             - CartridgeRifle
+  - type: Item
+    shape:
+    - 0,0,5,2
   - type: Gun
     fireRate: 8
     soundGunshot:
@@ -149,6 +152,9 @@
         whitelist:
           tags:
             - CartridgeLightRifle
+  - type: Item
+    shape:
+    - 0,0,5,2
   - type: Gun
     shotsPerBurst: 6
     availableModes:

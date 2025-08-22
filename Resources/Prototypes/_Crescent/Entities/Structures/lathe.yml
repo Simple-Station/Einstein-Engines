@@ -313,7 +313,12 @@
       - ClothingHeadHatWelding
       - ClothingOuterSuitEmergency
       - ClothingHeadHelmetEVALarge # Frontier
+      - TradebandTranslator
     dynamicRecipes:
+      - CreoleTranslator
+      - LowImperialTranslator
+      - FreespeakTranslator
+      - KaishagoTranslator
       - ThrusterFlatpackAstronautics
       - GyroscopeFlatpackAstronautics
       - MiniGravityFlatpack
@@ -528,6 +533,8 @@
       - LaelapsLPC
       - PaladinFlatpack
       - WandererFlatpack
+      - WeaponMechCombatPlasmaRifle
+      - WeaponMechCombatPlasmaCannon
       - WeaponRifleDSMLegionnaire
       - WeaponSubMachineGunC20rImperial
       - WeaponPistolNeoVolker

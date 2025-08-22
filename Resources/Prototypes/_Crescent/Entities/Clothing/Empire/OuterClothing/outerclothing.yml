@@ -3,7 +3,7 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitImperialWorker
-  name: imperial mining hardsuit
+  name: imperial worker hardsuit
   description: A modular worker's hardsuit, bears the colors of the Kaiser and House Olywir.
   components:
   - type: Sprite
@@ -23,12 +23,12 @@
       flatReductions:
         Blunt: 10
         Slash: 10
-        Piercing: 15
+        Piercing: 35
         Heat: 15
         Caustic: 25
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 1
+    sprintModifier: 1
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitImperialWorker
   - type: StaticPrice

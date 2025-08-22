@@ -20,6 +20,13 @@
     components:
       - type: ChatRank
         rank: crescent-rank-synadmin
+      - type: LanguageAdder
+        addSpoken:
+          - Freespeak
+          - Tradeband
+        addUnderstood:
+          - Freespeak
+          - Tradeband
   weight: 55
   startingGear: RingleaderGear
   alwaysUseSpawner: true

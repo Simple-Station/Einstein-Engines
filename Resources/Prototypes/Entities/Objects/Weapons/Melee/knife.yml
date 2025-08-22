@@ -19,9 +19,12 @@
     damage:
       types:
         Slash: 20
-    heavyRateModifier: 1.25
-    heavyDamageBaseModifier: 1.2
-    maxTargets: 3
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 8
+    heavyRateModifier: 1.15
+    clickPartDamageMultiplier: 1.25
+    lightRangeModifier: 1.25
+    maxTargets: 2
     angle: 40
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
@@ -86,7 +89,7 @@
     attackRate: 1.15
     damage:
       types:
-        Slash: 25
+        Slash: 28
   - type: DamageOtherOnHit
     staminaCost: 2.5
   - type: ThrowingAngle
@@ -118,17 +121,22 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.25
+    attackRate: 1
     damage:
       types:
-        Slash: 25
+        Slash: 28
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 8
+    clickPartDamageMultiplier: 1.5
+    lightRangeModifier: 1.25
+    maxTargets: 3
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
   - type: LandAtCursor
   - type: DamageOtherOnHit
     damage:
       types:
-        Slash: 30
+        Slash: 32
   - type: ThrowingAngle
     angle: 225
   - type: Item
@@ -147,19 +155,9 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.25
-    damage:
-      types:
-        Slash: 22
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
   - type: LandAtCursor
-  - type: DamageOtherOnHit
-    damage:
-      types:
-        Slash: 25
-  - type: ThrowingAngle
-    angle: 225
   - type: Item
     sprite: Objects/Weapons/Melee/survival_knife.rsi
   - type: AttachmentBayonet # Lavaland Change
@@ -174,14 +172,23 @@
     sprite: Objects/Weapons/Melee/kukri_knife.rsi
     state: icon
   - type: MeleeWeapon
-    attackRate: 1
+    attackRate: 1.15
     range: 1.25
     damage:
       types:
-        Slash: 30
+        Slash: 36
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
+    heavyRateModifier: 1.25
+    clickPartDamageMultiplier: 1.5
+    lightRangeModifier: 1.2
+    maxTargets: 2
   - type: ThrowingAngle
     angle: 225
   - type: Item
+    size: Normal
+    shape:
+      - 0,0,1,3
     sprite: Objects/Weapons/Melee/kukri_knife.rsi
 
 - type: entity
@@ -241,8 +248,7 @@
     sprite: Objects/Weapons/Melee/shiv.rsi
     state: icon
   - type: MeleeWeapon
-    attackRate: 1.25
-    range: 1.25
+    attackRate: 0.85
     damage:
       types:
         Slash: 15
@@ -323,10 +329,10 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.25
+    attackRate: 1.15
     damage:
       types:
-        Slash: 20
+        Slash: 28
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
   - type: LandAtCursor

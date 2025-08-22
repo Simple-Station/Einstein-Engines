@@ -1,0 +1,23 @@
+- type: gameMap
+  id: UnionfallGargut
+  mapName: 'NCWL Gargut'
+  mapPath: /Maps/_Crescent/Unionfall/NCWL/unionfall_gargut.yml
+  minPlayers: 0
+  stations:
+    UnionfallGargut:
+      stationProto: FlagshipCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Gargut {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-artillery-carrier
+        - type: VesselDescription
+          description: A relic of another time.
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            UnionfallShipCaptainNCWL: [ 1, 1 ]
+            UnionfallShipCrewNCWL: [ 2, 2 ]

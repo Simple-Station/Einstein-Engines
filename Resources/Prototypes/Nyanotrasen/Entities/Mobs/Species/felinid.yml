@@ -67,7 +67,6 @@
   - type: NoShoesSilentFootsteps
   - type: LanguageKnowledge
     speaks:
-    - TauCetiBasic
     - Nekomimetic
     understands:
     - TauCetiBasic

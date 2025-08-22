@@ -100,11 +100,10 @@
   - type: CanHostGuardian
   - type: LanguageKnowledge
     speaks:
-    - TauCetiBasic
-    - RobotTalk
+    - Atyrian
     understands:
-    - TauCetiBasic
-    - RobotTalk
+    - Atyrian
+    - TauCetiBasic #needed for vending machines and anything else
   - type: WeldingHealable
   - type: PsionicInsulation
   - type: OfferItem

@@ -4,8 +4,21 @@ rank-ordering = {$rank} {$name}
 # default
 crescent-rank-private = PvT.
 
+# independents
+crescent-rank-ind-gliess-sheriff = Sheriff
+crescent-rank-ind-gliess-dockmaster = Dockmaster
+crescent-rank-ind-spacer = Spacer
+
+# shi
+crescent-rank-shi-executive = Manager
+crescent-rank-shi-board = Exec.
+crescent-rank-shi-corpsec = CorpSec.
+crescent-rank-shi-highsec = Employee
+crescent-rank-shi-employee = Employee
+crescent-rank-shi-medtech = Medtech
+
 # empire
-crescent-rank-baron = Regent
+crescent-rank-baron = Lord Admiral
 crescent-rank-adjutant = Adjutant
 crescent-rank-knight = Ser
 crescent-rank-manatarms = Levy
@@ -15,21 +28,22 @@ crescent-rank-courtier = Edler
 crescent-rank-archmaester = Archmaester
 crescent-rank-advocatus = Advocati
 crescent-rank-templar = Knight Templar
+crescent-rank-freeholder = Freeholder
 
 # dsm-conscript
 crescent-rank-dsm-captain = Grand Steward
 crescent-rank-dsm-crew = Steward
-crescent-rank-dsm-leader = Marshal-Bannaret
+crescent-rank-dsm-leader = Knight-Bannaret
 crescent-rank-dsm-officer = Knight
-crescent-rank-dsm-specialist = Ward
-crescent-rank-dsm-cqc = Squire
-crescent-rank-dsm-grunt = Armsman
-crescent-rank-dsm-new = Recruit
+crescent-rank-dsm-specialist = Lancer
+crescent-rank-dsm-cqc = Fencer
+crescent-rank-dsm-grunt = Man-at-arms
+crescent-rank-dsm-new = Levyman
 crescent-rank-dsm-doctor = Medicant
 
 # ncwl-conscript
-crescent-rank-ncwl-captain = Admiral
-crescent-rank-ncwl-crew = Artificer
+crescent-rank-ncwl-captain = Captain
+crescent-rank-ncwl-crew = Crewman
 crescent-rank-ncwl-leader = Major
 crescent-rank-ncwl-officer = Kommissar
 crescent-rank-ncwl-specialist = Specialist
@@ -95,9 +109,3 @@ crescent-rank-sanitat = PvT.
 crescent-rank-kanoneer = Cpl.
 crescent-rank-steward = Steward
 crescent-rank-logistat = Marshallie
-
-
-# misc
-
-crescent-rank-sheriff = Sheriff
-crescent-rank-dockmaster = Dockmaster

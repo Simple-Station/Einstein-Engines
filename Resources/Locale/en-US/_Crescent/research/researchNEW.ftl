@@ -32,6 +32,7 @@ research-technology-biochemical-stasis = Stasis Equipment
 research-technology-biochemical-hypo = Hypochemistry
 
 # ELECTRONICS
+research-technology-electronics-translators = Translators
 research-technology-electronics-materials = Basic Components
 research-technology-electronics-defense = Civilian Defense Pistols
 research-technology-electronics-terminus = Ogre Shocktrooper Armaments
@@ -77,6 +78,7 @@ research-technology-imperial-laelaps = Imperial Assault Frigate
 research-technology-imperial-nobleweapons = Imperial Nobility Swords
 research-technology-imperial-sunesis = Imperial Exploration Cruiser
 research-technology-imperial-frigate = Imperial Assault Frigate
+research-technology-imperial-plasmamechguns = Plasma Mechasuit Weaponry
 research-technology-imperial-paladin = Imperial Combat Exosuit
 research-technology-imperial-wanderer = Imperial Scout Exosuit
 research-technology-imperial-carrion = Imperial Utility Exosuit

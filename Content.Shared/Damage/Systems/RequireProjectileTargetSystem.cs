@@ -1,7 +1,7 @@
 using Content.Shared.Projectiles;
 using Content.Shared.Weapons.Ranged.Components;
-using Content.Shared.Standing;
 using Robust.Shared.Physics.Events;
+using Content.Shared.Mobs;
 
 namespace Content.Shared.Damage.Components;
 
@@ -10,14 +10,13 @@ public sealed class RequireProjectileTargetSystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<RequireProjectileTargetComponent, PreventCollideEvent>(PreventCollide);
-        SubscribeLocalEvent<RequireProjectileTargetComponent, StoodEvent>(StandingBulletHit);
-        SubscribeLocalEvent<RequireProjectileTargetComponent, DownedEvent>(LayingBulletPass);
+        SubscribeLocalEvent<RequireProjectileTargetComponent, MobStateChangedEvent>(CritBulletPass);
     }
 
     private void PreventCollide(Entity<RequireProjectileTargetComponent> ent, ref PreventCollideEvent args)
     {
         if (args.Cancelled)
-          return;
+            return;
 
         if (!ent.Comp.Active)
             return;
@@ -38,14 +37,15 @@ public sealed class RequireProjectileTargetSystem : EntitySystem
         ent.Comp.Active = value;
         Dirty(ent);
     }
-
-    private void StandingBulletHit(Entity<RequireProjectileTargetComponent> ent, ref StoodEvent args)
+    private void CritBulletPass(Entity<RequireProjectileTargetComponent> ent, ref MobStateChangedEvent args)
     {
-        SetActive(ent, false);
-    }
-
-    private void LayingBulletPass(Entity<RequireProjectileTargetComponent> ent, ref DownedEvent args)
-    {
-        SetActive(ent, true);
+        if (args.NewMobState is MobState.SoftCritical or MobState.Critical or MobState.Dead)
+        {
+            SetActive(ent, true);
+        }
+        else
+        {
+            SetActive(ent, false);
+        }
     }
 }

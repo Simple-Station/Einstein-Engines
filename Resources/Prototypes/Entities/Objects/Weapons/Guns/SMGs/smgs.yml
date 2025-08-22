@@ -174,10 +174,10 @@
       stealGroup: HoSAntiqueWeapon
 
 - type: entity
-  name: PTA TKI-20 Drozd .327
+  name: PTA P-M85 Drozd 9x19mm
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunDrozd
-  description: A heavy submachine gun with robust rifling. Manufactured by Pang Tai Arms and outsourced to mercenary factors in the area.
+  description: A fast very firing bullpup submachine gun. Manufactured by Pang Tai Arms and outsourced to mercenary factors in the area.
   components:
     - type: Sprite
       sprite: _Crescent/Objects/Weapons/Guns/drozd.rsi
