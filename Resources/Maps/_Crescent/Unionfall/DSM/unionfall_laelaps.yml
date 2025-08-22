@@ -6262,8 +6262,8 @@ entities:
     - type: NamedModules
       buttonNames:
       - Fire Twin 120mm
-      - Module B
       - Fire Plasmacasters
+      - Module C
       - Module D
       - Module E
 - proto: ComputerTabletopTargeting
