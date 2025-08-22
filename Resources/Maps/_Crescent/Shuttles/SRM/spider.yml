@@ -88,6 +88,11 @@ entities:
             231: -4,-4
             234: -3,-4
             239: -2,-4
+            244: 3,-4
+            249: 4,-4
+            269: -4,-4
+            272: -3,-4
+            277: -2,-4
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -117,6 +122,11 @@ entities:
             216: 5,-4
             236: -3,-4
             241: -2,-4
+            246: 3,-4
+            251: 4,-4
+            254: 5,-4
+            274: -3,-4
+            279: -2,-4
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -131,6 +141,8 @@ entities:
             190: -7,-1
             225: -8,-2
             228: -7,-1
+            263: -8,-2
+            266: -7,-1
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -145,6 +157,8 @@ entities:
             184: 9,-2
             219: 8,-1
             222: 9,-2
+            257: 8,-1
+            260: 9,-2
         - node:
             id: LatticeEdgeE
           decals:
@@ -183,6 +197,13 @@ entities:
             229: -4,-4
             232: -3,-4
             237: -2,-4
+            242: 3,-4
+            247: 4,-4
+            262: -8,-2
+            265: -7,-1
+            267: -4,-4
+            270: -3,-4
+            275: -2,-4
         - node:
             id: LatticeEdgeN
           decals:
@@ -216,6 +237,12 @@ entities:
             230: -4,-4
             233: -3,-4
             238: -2,-4
+            243: 3,-4
+            248: 4,-4
+            252: 5,-4
+            268: -4,-4
+            271: -3,-4
+            276: -2,-4
         - node:
             id: LatticeEdgeS
           decals:
@@ -239,6 +266,10 @@ entities:
             220: 9,-2
             223: -8,-2
             226: -7,-1
+            255: 8,-1
+            258: 9,-2
+            261: -8,-2
+            264: -7,-1
         - node:
             id: LatticeEdgeW
           decals:
@@ -277,6 +308,13 @@ entities:
             221: 9,-2
             235: -3,-4
             240: -2,-4
+            245: 3,-4
+            250: 4,-4
+            253: 5,-4
+            256: 8,-1
+            259: 9,-2
+            273: -3,-4
+            278: -2,-4
         - node:
             color: '#43990996'
             id: WarnCornerGreyscaleNE
@@ -1196,6 +1234,13 @@ entities:
     - type: Transform
       pos: 4.5215135,1.5494282
       parent: 2
+- proto: PinpointerPsion
+  entities:
+  - uid: 139
+    components:
+    - type: Transform
+      pos: 4.474638,1.5489967
+      parent: 2
 - proto: Poweredlight
   entities:
   - uid: 93
@@ -1410,6 +1455,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: -2.5,-3.5
       parent: 2
+    - type: Thruster
+      enabled: False
   - uid: 73
     components:
     - type: Transform
