@@ -93,6 +93,7 @@
     back: ClothingBackpackNCWL
     gloves: ClothingHandsGlovesCombat
     eyes: ClothingEyesHudSecurity
+    suitstorage: WeaponPistolT91
   storage:
     back:
       - VoidsuitKitNCWL

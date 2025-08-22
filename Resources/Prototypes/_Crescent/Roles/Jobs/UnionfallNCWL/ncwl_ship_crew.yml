@@ -91,6 +91,7 @@
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitNCWLEngi
     eyes: ClothingEyesHudSecurity
+    suitstorage: WeaponPistolT91
   inhand:
     - BookUnionfallNCWLGuide
   storage:
