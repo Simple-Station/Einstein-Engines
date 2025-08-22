@@ -66,6 +66,7 @@
     eyes: ClothingEyesHudMedSec
   inhand:
     - BookUnionfallNCWLGuide
+    - JetpackBlackFilled
   storage:
     back:
       - DefibrillatorCompact

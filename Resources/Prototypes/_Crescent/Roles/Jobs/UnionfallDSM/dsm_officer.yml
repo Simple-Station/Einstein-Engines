@@ -93,6 +93,8 @@
     ears: ClothingHeadsetEmpire
     suitstorage: WeaponSniperDSMLegax
     eyes: ClothingEyesHudSecurity
+  inhand:
+    - JetpackBlackFilled
   storage:
     back:
       - BoxMRE

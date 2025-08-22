@@ -67,6 +67,7 @@
     eyes: ClothingEyesGlassesNCWL
   inhand:
     - BookUnionfallNCWLGuide
+    - JetpackBlackFilled
   storage:
     back:
       - BoxMRE

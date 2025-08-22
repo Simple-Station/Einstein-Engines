@@ -58,6 +58,7 @@
     eyes: ClothingEyesHudSecurity
   inhand:
     - BookUnionfallDSMGuide
+    - JetpackBlackFilled
   storage:
     back:
       - BoxMRE

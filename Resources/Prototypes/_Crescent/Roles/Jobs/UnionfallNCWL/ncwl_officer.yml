@@ -97,6 +97,7 @@
     eyes: ClothingEyesGlassesNCWL
   inhand:
     - ClothingOuterHardsuitNCWLInfantry
+    - JetpackBlackFilled
   storage:
     back:
       - BoxMRE
