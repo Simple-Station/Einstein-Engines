@@ -54,6 +54,7 @@ public sealed class UnionfallShipNodeSystem : EntitySystem
 
     private void OnComponentInit(EntityUid uid, UnionfallShipNodeComponent component, ComponentInit args)
     {
+        isRoundEnding = false;
         if (component.OwningFaction == "DSM")
             nodesLeftDSM += 1;
         else if (component.OwningFaction == "NCWL") //could be "else" but just in case we get more factions
