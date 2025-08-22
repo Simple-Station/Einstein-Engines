@@ -5,7 +5,7 @@
   minPlayers: 0
   stations:
     UnionfallGargut:
-      stationProto: StandardCrescentVessel
+      stationProto: FlagshipCrescentVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'NCWL Gargut {1}'
@@ -15,4 +15,9 @@
         - type: VesselDesignation
           designation: vessel-designation-artillery-carrier
         - type: VesselDescription
-          description: A relic of another time. Enough guns to rival flagships. But is it enough to save the League?
+          description: A relic of another time.
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            UnionfallShipCaptainNCWL: [ 1, 1 ]
+            UnionfallShipCrewNCWL: [ 2, 2 ]

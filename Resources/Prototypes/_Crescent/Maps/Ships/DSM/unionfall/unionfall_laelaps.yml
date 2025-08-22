@@ -5,7 +5,7 @@
   minPlayers: 0
   stations:
     UnionfallLaelaps:
-      stationProto: StandardCrescentVessel
+      stationProto: FlagshipCrescentVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'DSM Laelaps {1}'
@@ -16,3 +16,8 @@
           designation: vessel-designation-warship
         - type: VesselDescription
           description: A hull that's seen a hundred wars. In quiet times, this is a prison. In wartime, this is your only hope.
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            UnionfallShipCaptainDSM: [ 1, 1 ]
+            UnionfallShipCrewDSM: [ 2, 2 ]
