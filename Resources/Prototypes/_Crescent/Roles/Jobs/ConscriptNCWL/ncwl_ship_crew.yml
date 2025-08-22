@@ -1,5 +1,5 @@
 - type: job
-  id: UnionFallShipCrewNCWL
+  id: ConscriptShipCrewNCWL
   name: job-name-conscript-ncwl-ship-crew
   description: job-description-conscript-ncwl-ship-crew
   playTimeTracker: ConscriptNCWL
@@ -16,7 +16,7 @@
         - Pacifist
         - WheelchairBound
   weight: 10
-  startingGear: UnionFallShipCrewNCWLGear
+  startingGear: ConscriptShipCrewNCWLGear
   alwaysUseSpawner: true
   icon: "JobIconUnionfallNCWLCrew"
   requireAdminNotify: true
@@ -72,7 +72,7 @@
   - NCWLCommand
 
 - type: startingGear
-  id: UnionFallShipCrewNCWLGear
+  id: ConscriptShipCrewNCWLGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitNCWLArtificer
     neck: ClothingNeckIFFOrange
