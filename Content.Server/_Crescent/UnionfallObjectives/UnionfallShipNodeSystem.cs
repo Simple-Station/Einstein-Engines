@@ -21,6 +21,7 @@ using Content.Shared._Crescent.UnionfallCapturePoint;
 using Robust.Shared.Timing;
 using Content.Shared._Crescent.UnionfallShipNode;
 using Content.Server.Explosion.EntitySystems;
+using Content.Shared.Destructible;
 
 
 namespace Content.Server._Crescent.UnionfallCapturePoint;
@@ -47,7 +48,7 @@ public sealed class UnionfallShipNodeSystem : EntitySystem
         SubscribeLocalEvent<UnionfallShipNodeComponent, ComponentInit>(OnComponentInit);
         SubscribeLocalEvent<UnionfallShipNodeComponent, ActivateInWorldEvent>(OnActivatedInWorld);
         SubscribeLocalEvent<UnionfallShipNodeComponent, UnionfallShipNodeDoAfterEvent>(OnCaptureDoAfter);
-        SubscribeLocalEvent<UnionfallShipNodeComponent, ComponentRemove>(OnDestruction);
+        SubscribeLocalEvent<UnionfallShipNodeComponent, DestructionEventArgs>(OnDestruction);
         _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("unionfall.shipnodes");
     }
 
@@ -77,6 +78,9 @@ public sealed class UnionfallShipNodeSystem : EntitySystem
 
             if (capturepoint.CurrentCaptureProgress <= 0) //capturing complete. announce and count how many left
             {
+                var eventArgs = new DestructionEventArgs();
+
+                RaiseLocalEvent(uid, eventArgs); //should force OnDestruction to fire and do the same thing as when ti gets destroyed
                 QueueDel(uid);
 
             }
@@ -143,8 +147,10 @@ public sealed class UnionfallShipNodeSystem : EntitySystem
         }
     }
 
-    private void OnDestruction(EntityUid uid, UnionfallShipNodeComponent capturepoint, ComponentRemove args)
+    private void OnDestruction(EntityUid uid, UnionfallShipNodeComponent capturepoint, DestructionEventArgs args)
     {
+        // _explosionSystem.QueueExplosion(_transformSystem.GetMapCoordinates(uid), ExplosionSystem.DefaultExplosionPrototypeId, 20, 1, 2, 0);
+        _explosionSystem.TriggerExplosive(uid);
         if (isRoundEnding) //prevents this from triggering 6 times and breaking the round when they all get removed from the game
             return;
         if (capturepoint.OwningFaction == "NCWL")
@@ -152,20 +158,19 @@ public sealed class UnionfallShipNodeSystem : EntitySystem
         else if (capturepoint.OwningFaction == "DSM")
             nodesLeftDSM -= 1;
 
-        _explosionSystem.QueueExplosion(_transformSystem.GetMapCoordinates(uid), ExplosionSystem.DefaultExplosionPrototypeId, 20, 1, 2, 0);
-
-
         if (nodesLeftNCWL <= 0 || nodesLeftDSM <= 0)
         {
             isRoundEnding = true;
+            _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
+            capturepoint.OwningFaction + " has lost all of their warships and cloner databases. They are doomed to a slow death in Taypan.");
             _gameTicker.EndRound("All of " + capturepoint.OwningFaction + "'s cloner databases have been destroyed. ROUND OVER");
             capturepoint.CurrentCaptureProgress = 999999;
             Timer.Spawn(TimeSpan.FromMinutes(1), _gameTicker.RestartRound);
         }
-        else
+        else 
         {
             _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
-            "A " + capturepoint.OwningFaction + " cloner database has been destroyed!");
+            "A " + capturepoint.OwningFaction + " cloner database has been destroyed! | REMAINING FOR DSM: " + nodesLeftDSM + " | REMAINING FOR NCWL: " + nodesLeftNCWL);
         }
     }
 

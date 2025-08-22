@@ -158,6 +158,9 @@
     color: "#90d5ff"
   - type: AnimationPlayer
   - type: Appearance
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 120 # ~ 5 tile radius
   - type: UnionfallShipNode
     gracePeriod: 1200
     timeToCapture: 60
@@ -240,6 +243,9 @@
     color: "#90d5ff"
   - type: AnimationPlayer
   - type: Appearance
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 120 # ~ 5 tile radius
   - type: UnionfallShipNode
     gracePeriod: 1200
     timeToCapture: 60
