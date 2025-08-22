@@ -10,6 +10,8 @@
   requirements:
     - !type:FactionRequirement
       factionID: "NCWL"
+    - !type:CharacterOverallTimeRequirement
+      min: 1000
     - !type:CharacterTraitRequirement
       inverted: true
       traits:

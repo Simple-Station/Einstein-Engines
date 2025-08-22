@@ -6,6 +6,8 @@
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"
+    - !type:CharacterOverallTimeRequirement
+      min: 1000
     - !type:CharacterTraitRequirement
       inverted: true
       traits:

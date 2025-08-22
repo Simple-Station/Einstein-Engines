@@ -148,4 +148,4 @@ job-name-unionfall-dsm-leader = Knight-Bannaret
 job-name-unionfall-dsm-officer = Knight
 job-name-unionfall-dsm-doctor = Medicant
 job-name-unionfall-dsm-rifleman = Man-at-arms
-job-name-unionfall-dsm-cadet = Squire
+job-name-unionfall-dsm-cadet = Levyman

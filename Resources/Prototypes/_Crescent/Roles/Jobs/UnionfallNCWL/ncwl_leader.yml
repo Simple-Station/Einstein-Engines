@@ -8,7 +8,7 @@
       factionID: "NCWL"
     - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
-      min: 35000
+      min: 20000
     - !type:CharacterTraitRequirement
       inverted: true
       traits:

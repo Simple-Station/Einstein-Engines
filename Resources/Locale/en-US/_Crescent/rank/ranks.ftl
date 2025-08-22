@@ -38,7 +38,7 @@ crescent-rank-dsm-officer = Knight
 crescent-rank-dsm-specialist = Lancer
 crescent-rank-dsm-cqc = Fencer
 crescent-rank-dsm-grunt = Man-at-arms
-crescent-rank-dsm-new = Squire
+crescent-rank-dsm-new = Levyman
 crescent-rank-dsm-doctor = Medicant
 
 # ncwl-conscript
