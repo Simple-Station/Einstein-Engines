@@ -193,3 +193,16 @@
   - BasicStationEventScheduler
   - BasicRoundstartVariation
   - LavalandStormScheduler # Lavaland Change
+
+- type: gamePreset
+  id: Deathmatch
+  alias:
+  - deathmatch
+  - dm
+  name: death-match-title
+  description: death-match-description
+  #maxPlayers: 15
+  showInVote: false # DeltaV - No.
+  supportedMaps: DeathMatchMapPool
+  rules:
+  - DeathMatch31
