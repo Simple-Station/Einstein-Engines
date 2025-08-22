@@ -395,6 +395,7 @@ entities:
             2260: -2,19
             2456: -2,19
             2641: -2,19
+            2826: -2,19
         - node:
             zIndex: 1
             angle: -3.141592653589793 rad
@@ -405,6 +406,7 @@ entities:
             2241: -2,15
             2426: -2,15
             2611: -2,15
+            2796: -2,15
         - node:
             zIndex: 1
             angle: -1.5707963267948966 rad
@@ -415,6 +417,7 @@ entities:
             2216: 2,15
             2401: 2,15
             2586: 2,15
+            2771: 2,15
         - node:
             zIndex: 1
             id: FloorTechMaintDirectionalCorner
@@ -424,6 +427,7 @@ entities:
             2358: 2,19
             2554: 2,19
             2739: 2,19
+            2924: 2,19
         - node:
             angle: -4.71238898038469 rad
             id: FloorTechMaintDirectionalEdge
@@ -453,6 +457,11 @@ entities:
             2637: -2,17
             2638: -2,18
             2640: -2,19
+            2795: -2,15
+            2821: -2,16
+            2822: -2,17
+            2823: -2,18
+            2825: -2,19
         - node:
             angle: -3.141592653589793 rad
             id: FloorTechMaintDirectionalEdge
@@ -482,6 +491,11 @@ entities:
             2584: 2,15
             2609: -2,15
             2612: -1,15
+            2767: 0,15
+            2768: 1,15
+            2769: 2,15
+            2794: -2,15
+            2797: -1,15
         - node:
             angle: -1.5707963267948966 rad
             id: FloorTechMaintDirectionalEdge
@@ -511,6 +525,11 @@ entities:
             2735: 2,17
             2736: 2,18
             2737: 2,19
+            2770: 2,15
+            2919: 2,16
+            2920: 2,17
+            2921: 2,18
+            2922: 2,19
         - node:
             id: FloorTechMaintDirectionalEdge
           decals:
@@ -539,6 +558,11 @@ entities:
             2671: 0,19
             2705: 1,19
             2738: 2,19
+            2824: -2,19
+            2827: -1,19
+            2856: 0,19
+            2890: 1,19
+            2923: 2,19
         - node:
             zIndex: 1
             id: LatticeCornerNE
@@ -738,6 +762,22 @@ entities:
             2726: 1,26
             2744: 5,31
             2763: -5,32
+            2788: -8,0
+            2793: -6,9
+            2800: -5,-1
+            2803: -2,-2
+            2817: -5,31
+            2832: -1,24
+            2840: -1,25
+            2848: -1,26
+            2861: 0,24
+            2869: 0,25
+            2877: 0,26
+            2895: 1,24
+            2903: 1,25
+            2911: 1,26
+            2929: 5,31
+            2948: -5,32
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -937,6 +977,22 @@ entities:
             2729: 1,26
             2747: 5,31
             2755: 5,32
+            2776: 6,9
+            2779: 8,0
+            2806: 2,-2
+            2809: 5,-1
+            2820: -5,31
+            2835: -1,24
+            2843: -1,25
+            2851: -1,26
+            2864: 0,24
+            2872: 0,25
+            2880: 0,26
+            2898: 1,24
+            2906: 1,25
+            2914: 1,26
+            2932: 5,31
+            2940: 5,32
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -1147,6 +1203,23 @@ entities:
             2742: 5,31
             2761: -5,32
             2766: -5,33
+            2785: -9,7
+            2791: -6,9
+            2812: -6,31
+            2815: -5,31
+            2830: -1,24
+            2838: -1,25
+            2846: -1,26
+            2859: 0,24
+            2867: 0,25
+            2875: 0,26
+            2883: 0,27
+            2893: 1,24
+            2901: 1,25
+            2909: 1,26
+            2927: 5,31
+            2946: -5,32
+            2951: -5,33
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -1357,6 +1430,23 @@ entities:
             2750: 6,31
             2754: 5,32
             2758: 5,33
+            2775: 6,9
+            2782: 9,7
+            2819: -5,31
+            2834: -1,24
+            2842: -1,25
+            2850: -1,26
+            2863: 0,24
+            2871: 0,25
+            2879: 0,26
+            2885: 0,27
+            2897: 1,24
+            2905: 1,25
+            2913: 1,26
+            2931: 5,31
+            2935: 6,31
+            2939: 5,32
+            2943: 5,33
         - node:
             id: LatticeEdgeE
           decals:
@@ -1715,6 +1805,32 @@ entities:
             2741: 5,31
             2760: -5,32
             2765: -5,33
+            2784: -9,7
+            2786: -8,0
+            2790: -6,9
+            2798: -5,-1
+            2801: -2,-2
+            2811: -6,31
+            2814: -5,31
+            2829: -1,24
+            2837: -1,25
+            2845: -1,26
+            2852: -1,29
+            2854: -1,31
+            2858: 0,24
+            2866: 0,25
+            2874: 0,26
+            2882: 0,27
+            2886: 0,29
+            2888: 0,31
+            2892: 1,24
+            2900: 1,25
+            2908: 1,26
+            2915: 1,29
+            2917: 1,31
+            2926: 5,31
+            2945: -5,32
+            2950: -5,33
         - node:
             id: LatticeEdgeN
           decals:
@@ -1990,6 +2106,27 @@ entities:
             2743: 5,31
             2752: 5,32
             2762: -5,32
+            2773: 6,9
+            2777: 8,0
+            2787: -8,0
+            2792: -6,9
+            2799: -5,-1
+            2802: -2,-2
+            2804: 2,-2
+            2807: 5,-1
+            2816: -5,31
+            2831: -1,24
+            2839: -1,25
+            2847: -1,26
+            2860: 0,24
+            2868: 0,25
+            2876: 0,26
+            2894: 1,24
+            2902: 1,25
+            2910: 1,26
+            2928: 5,31
+            2937: 5,32
+            2947: -5,32
         - node:
             id: LatticeEdgeS
           decals:
@@ -2271,6 +2408,28 @@ entities:
             2756: 5,33
             2759: -5,32
             2764: -5,33
+            2772: 6,9
+            2780: 9,7
+            2783: -9,7
+            2789: -6,9
+            2810: -6,31
+            2813: -5,31
+            2828: -1,24
+            2836: -1,25
+            2844: -1,26
+            2857: 0,24
+            2865: 0,25
+            2873: 0,26
+            2881: 0,27
+            2891: 1,24
+            2899: 1,25
+            2907: 1,26
+            2925: 5,31
+            2933: 6,31
+            2936: 5,32
+            2941: 5,33
+            2944: -5,32
+            2949: -5,33
         - node:
             id: LatticeEdgeW
           decals:
@@ -2629,6 +2788,32 @@ entities:
             2749: 6,31
             2753: 5,32
             2757: 5,33
+            2774: 6,9
+            2778: 8,0
+            2781: 9,7
+            2805: 2,-2
+            2808: 5,-1
+            2818: -5,31
+            2833: -1,24
+            2841: -1,25
+            2849: -1,26
+            2853: -1,29
+            2855: -1,31
+            2862: 0,24
+            2870: 0,25
+            2878: 0,26
+            2884: 0,27
+            2887: 0,29
+            2889: 0,31
+            2896: 1,24
+            2904: 1,25
+            2912: 1,26
+            2916: 1,29
+            2918: 1,31
+            2930: 5,31
+            2934: 6,31
+            2938: 5,32
+            2942: 5,33
         - node:
             angle: 1.5707963267948966 rad
             color: '#D381C996'
@@ -6276,11 +6461,11 @@ entities:
     - type: TargetingConsole
       cannonGroups:
         all:
-        - 75
         - 74
+        - 75
         70mm "Jeong" swarmrocket platform:
-        - 75
         - 74
+        - 75
 - proto: ConveyorBelt
   entities:
   - uid: 423
@@ -7127,6 +7312,89 @@ entities:
     - type: Transform
       pos: -7.510775,4.049509
       parent: 1
+- proto: LightStripInner
+  entities:
+  - uid: 984
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -0.5,16.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+    - type: TurretIFF
+  - uid: 985
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 1.5,16.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+    - type: TurretIFF
+  - uid: 986
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 1.5,18.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+    - type: TurretIFF
+  - uid: 987
+    components:
+    - type: Transform
+      pos: -0.5,18.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+    - type: TurretIFF
+  - uid: 992
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 0.5,17.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+    - type: TurretIFF
+- proto: LightStripLineRotate
+  entities:
+  - uid: 988
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -0.5,17.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+    - type: TurretIFF
+  - uid: 989
+    components:
+    - type: Transform
+      pos: 0.5,16.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+    - type: TurretIFF
+  - uid: 990
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 1.5,17.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+    - type: TurretIFF
+  - uid: 991
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,18.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+    - type: TurretIFF
 - proto: MachineFrame
   entities:
   - uid: 552

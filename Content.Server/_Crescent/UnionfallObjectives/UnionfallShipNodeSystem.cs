@@ -149,7 +149,6 @@ public sealed class UnionfallShipNodeSystem : EntitySystem
 
     private void OnDestruction(EntityUid uid, UnionfallShipNodeComponent capturepoint, DestructionEventArgs args)
     {
-        // _explosionSystem.QueueExplosion(_transformSystem.GetMapCoordinates(uid), ExplosionSystem.DefaultExplosionPrototypeId, 20, 1, 2, 0);
         _explosionSystem.TriggerExplosive(uid);
         if (isRoundEnding) //prevents this from triggering 6 times and breaking the round when they all get removed from the game
             return;
@@ -161,6 +160,8 @@ public sealed class UnionfallShipNodeSystem : EntitySystem
         if (nodesLeftNCWL <= 0 || nodesLeftDSM <= 0)
         {
             isRoundEnding = true;
+            nodesLeftDSM = 0; //prep for next round
+            nodesLeftNCWL = 0;
             _announcer.SendAnnouncement(_announcer.GetAnnouncementId("Fallback"), Filter.Broadcast(),
             capturepoint.OwningFaction + " has lost all of their warships and cloner databases. They are doomed to a slow death in Taypan.");
             _gameTicker.EndRound("All of " + capturepoint.OwningFaction + "'s cloner databases have been destroyed. ROUND OVER");

@@ -158,6 +158,20 @@ entities:
             458: -8,-11
             464: -8,-7
             467: -5,-19
+            504: -8,1
+            509: -7,0
+            514: -6,10
+            522: -5,12
+            542: -8,-11
+            548: -8,-7
+            551: -5,-19
+            588: -8,1
+            593: -7,0
+            598: -6,10
+            606: -5,12
+            626: -8,-11
+            632: -8,-7
+            635: -5,-19
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -185,6 +199,20 @@ entities:
             449: 8,-11
             455: 8,-7
             470: 5,-19
+            482: 5,12
+            490: 6,10
+            498: 7,0
+            501: 8,1
+            533: 8,-11
+            539: 8,-7
+            554: 5,-19
+            566: 5,12
+            574: 6,10
+            582: 7,0
+            585: 8,1
+            617: 8,-11
+            623: 8,-7
+            638: 5,-19
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -211,6 +239,20 @@ entities:
             441: -5,13
             444: -4,14
             461: -8,-9
+            507: -7,0
+            512: -6,10
+            517: -6,11
+            520: -5,12
+            525: -5,13
+            528: -4,14
+            545: -8,-9
+            591: -7,0
+            596: -6,10
+            601: -6,11
+            604: -5,12
+            609: -5,13
+            612: -4,14
+            629: -8,-9
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -237,6 +279,20 @@ entities:
             409: 6,11
             413: 7,0
             452: 8,-9
+            477: 4,14
+            481: 5,12
+            485: 5,13
+            489: 6,10
+            493: 6,11
+            497: 7,0
+            536: 8,-9
+            561: 4,14
+            565: 5,12
+            569: 5,13
+            573: 6,10
+            577: 6,11
+            581: 7,0
+            620: 8,-9
         - node:
             id: LatticeEdgeE
           decals:
@@ -284,6 +340,34 @@ entities:
             460: -8,-9
             462: -8,-7
             465: -5,-19
+            471: 0,12
+            473: 1,12
+            502: -8,1
+            506: -7,0
+            511: -6,10
+            516: -6,11
+            519: -5,12
+            524: -5,13
+            527: -4,14
+            529: -1,12
+            540: -8,-11
+            544: -8,-9
+            546: -8,-7
+            549: -5,-19
+            555: 0,12
+            557: 1,12
+            586: -8,1
+            590: -7,0
+            595: -6,10
+            600: -6,11
+            603: -5,12
+            608: -5,13
+            611: -4,14
+            613: -1,12
+            624: -8,-11
+            628: -8,-9
+            630: -8,-7
+            633: -5,-19
         - node:
             id: LatticeEdgeN
           decals:
@@ -335,6 +419,34 @@ entities:
             463: -8,-7
             466: -5,-19
             468: 5,-19
+            479: 5,12
+            487: 6,10
+            495: 7,0
+            499: 8,1
+            503: -8,1
+            508: -7,0
+            513: -6,10
+            521: -5,12
+            531: 8,-11
+            537: 8,-7
+            541: -8,-11
+            547: -8,-7
+            550: -5,-19
+            552: 5,-19
+            563: 5,12
+            571: 6,10
+            579: 7,0
+            583: 8,1
+            587: -8,1
+            592: -7,0
+            597: -6,10
+            605: -5,12
+            615: 8,-11
+            621: 8,-7
+            625: -8,-11
+            631: -8,-7
+            634: -5,-19
+            636: 5,-19
         - node:
             id: LatticeEdgeS
           decals:
@@ -382,6 +494,34 @@ entities:
             442: -4,14
             450: 8,-9
             459: -8,-9
+            475: 4,14
+            478: 5,12
+            483: 5,13
+            486: 6,10
+            491: 6,11
+            494: 7,0
+            505: -7,0
+            510: -6,10
+            515: -6,11
+            518: -5,12
+            523: -5,13
+            526: -4,14
+            534: 8,-9
+            543: -8,-9
+            559: 4,14
+            562: 5,12
+            567: 5,13
+            570: 6,10
+            575: 6,11
+            578: 7,0
+            589: -7,0
+            594: -6,10
+            599: -6,11
+            602: -5,12
+            607: -5,13
+            610: -4,14
+            618: 8,-9
+            627: -8,-9
         - node:
             id: LatticeEdgeW
           decals:
@@ -429,6 +569,34 @@ entities:
             451: 8,-9
             454: 8,-7
             469: 5,-19
+            472: 0,12
+            474: 1,12
+            476: 4,14
+            480: 5,12
+            484: 5,13
+            488: 6,10
+            492: 6,11
+            496: 7,0
+            500: 8,1
+            530: -1,12
+            532: 8,-11
+            535: 8,-9
+            538: 8,-7
+            553: 5,-19
+            556: 0,12
+            558: 1,12
+            560: 4,14
+            564: 5,12
+            568: 5,13
+            572: 6,10
+            576: 6,11
+            580: 7,0
+            584: 8,1
+            614: -1,12
+            616: 8,-11
+            619: 8,-9
+            622: 8,-7
+            637: 5,-19
         - node:
             angle: -1.5707963267948966 rad
             color: '#EFB34196'
@@ -1427,18 +1595,30 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 8.5,-2.5
       parent: 2
+    - type: PointCannon
+      linkedConsoleIds:
+      - 1100
+      linkedConsoleId: 1100
   - uid: 715
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 0.5,10.5
       parent: 2
+    - type: PointCannon
+      linkedConsoleIds:
+      - 1100
+      linkedConsoleId: 1100
   - uid: 718
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -7.5,-2.5
       parent: 2
+    - type: PointCannon
+      linkedConsoleIds:
+      - 1100
+      linkedConsoleId: 1100
 - proto: BedsheetMedical
   entities:
   - uid: 416
@@ -4250,6 +4430,16 @@ entities:
     - type: Transform
       pos: 1.5,1.5
       parent: 2
+    - type: TargetingConsole
+      cannonGroups:
+        all:
+        - 580
+        - 715
+        - 718
+        230mm 'Hephaeustus' assault artillery platform:
+        - 580
+        - 715
+        - 718
 - proto: ComputerTelevision
   entities:
   - uid: 1102
@@ -5211,6 +5401,91 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: LightStripCorner
+  entities:
+  - uid: 1122
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 1.5,-8.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+    - type: TurretIFF
+  - uid: 1123
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -0.5,-8.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+    - type: TurretIFF
+  - uid: 1124
+    components:
+    - type: Transform
+      pos: -0.5,-6.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+    - type: TurretIFF
+  - uid: 1125
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 1.5,-6.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+    - type: TurretIFF
+- proto: LightStripInner
+  entities:
+  - uid: 1130
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 0.5,-7.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+    - type: TurretIFF
+- proto: LightStripLineRotate
+  entities:
+  - uid: 1126
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,-8.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+    - type: TurretIFF
+  - uid: 1127
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -0.5,-7.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+    - type: TurretIFF
+  - uid: 1128
+    components:
+    - type: Transform
+      pos: 0.5,-6.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+    - type: TurretIFF
+  - uid: 1129
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 1.5,-7.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+    - type: TurretIFF
 - proto: MedicalBed
   entities:
   - uid: 414
