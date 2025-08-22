@@ -31,19 +31,15 @@
     components:
       - type: ChatRank
         rank: crescent-rank-baron
-      - type: LanguageKnowledge
-        speaks:
+      - type: LanguageAdder
+        addSpoken:
           - HighImperial
           - LowImperial
-          - TauCetiBasic
           - Tradeband
-          - Sign
-        understands:
+        addUnderstood:
           - HighImperial
           - LowImperial
-          - TauCetiBasic
           - Tradeband
-          - Sign
   access:
   - EmergencyShuttleRepealAll
   - Captain

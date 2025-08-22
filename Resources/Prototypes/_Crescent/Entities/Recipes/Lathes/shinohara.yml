@@ -321,8 +321,8 @@
   completetime: 2
   materials:
     Steel: 3000
-    BallisticCycler: 500
-    AdvancedMechatronics: 1000
+    BallisticCycler: 1000
+    BasicMechatronics: 2000
 
 - type: latheRecipe
   id: WeaponFighterAutocannon
@@ -332,7 +332,7 @@
     Steel: 3000
     Uranium: 2000
     TubeLoader: 1000
-    AdvancedMechatronics: 1500
+    BasicMechatronics: 3000
 
 - type: latheRecipe
   id: WeaponMechCombatTaikotyo

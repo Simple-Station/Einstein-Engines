@@ -21,7 +21,7 @@
     itself to suit the needs of the Authority.
   color: "#ffffed"
   weight: 1
-  enabled: true
+  enabled: false
   icon:
     sprite: /Textures/_Crescent/faction_icons.rsi
     state: csa
@@ -117,7 +117,7 @@
     smugglers, racketeers, and gamblers.
   color: "#9FED58"
   weight: -7
-  enabled: true
+  enabled: false
   icon:
     sprite: /Textures/_Crescent/faction_icons.rsi
     state: fourfamilies
@@ -133,7 +133,7 @@
     the rebuilding effort.
   color: "#9FED58"
   weight: -5
-  enabled: true
+  enabled: false
   icon:
     sprite: /Textures/_Crescent/faction_icons.rsi
     state: srm
@@ -149,7 +149,7 @@
     the major powers of the system often has little manpower or resources to mitigate or mend.
   color: "#9FED58"
   weight: -5
-  enabled: true
+  enabled: false
   icon:
     sprite: /Textures/_Crescent/faction_icons.rsi
     state: tsp

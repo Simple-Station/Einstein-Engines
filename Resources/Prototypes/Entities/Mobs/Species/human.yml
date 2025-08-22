@@ -23,11 +23,12 @@
     - Snout
   - type: LanguageKnowledge
     speaks:
-    - TauCetiBasic
-    - SolCommon
+    - Sign # basic language needed, otherwise it gives u universal lang
+    # - Solarian # uncomment me if we need universal langs again
     understands:
-    - TauCetiBasic
-    - SolCommon
+    - Sign # basic language needed, otherwise it gives u universal lang
+    - TauCetiBasic #needed for vending machines
+    # - Solarian # uncomment me if we need universal langs again
   - type: FootPrints
 
 - type: entity
