@@ -35,7 +35,7 @@
     proto: Bullet84mmRocket
     deleteOnSpawn: true
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosive.rsi
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
     state: rpg
   - type: StaticPrice
     price: 20
