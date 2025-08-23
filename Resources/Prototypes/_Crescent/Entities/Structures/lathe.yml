@@ -237,7 +237,6 @@
       - ShipParts
       - RawMaterial
       - ShipParts
-      - Bluespace
   - type: Sprite
     sprite: _Crescent/Structures/nanoforge.rsi
     layers:
