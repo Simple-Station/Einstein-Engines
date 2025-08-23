@@ -435,7 +435,7 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-- proto: MagazineGrenadeEMP
+- proto: MagazineRocketEMP
   entities:
   - uid: 73
     components:

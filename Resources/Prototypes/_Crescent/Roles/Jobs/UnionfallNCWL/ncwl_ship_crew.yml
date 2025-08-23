@@ -1,0 +1,103 @@
+- type: job
+  id: UnionfallShipCrewNCWL
+  name: job-name-unionfall-ncwl-ship-crew
+  description: job-description-unionfall-ncwl-ship-crew
+  playTimeTracker: ConscriptNCWL
+  requirements:
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterOverallTimeRequirement
+      min: 1000
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
+  weight: 10
+  startingGear: UnionfallShipCrewNCWLGear
+  alwaysUseSpawner: true
+  icon: "JobIconUnionfallNCWLCrew"
+  requireAdminNotify: true
+  supervisors: job-supervisors-unionfall-ncwl
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ncwl-crew
+      - type: HullrotFaction
+        faction: NCWL
+      - type: LanguageAdder
+        addSpoken:
+          - Dockta
+        addUnderstood:
+          - Dockta
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Command
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Mercenary # Frontier
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - NCWLGeneral
+  - NCWLKommissar
+  - NCWLJail
+  - NCWLArmory
+  - NCWLCommand
+
+- type: startingGear
+  id: UnionfallShipCrewNCWLGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNCWLArtificer
+    neck: ClothingNeckIFFOrange
+    id: NCWLHomeguardSoldatPDA
+    ears: ClothingHeadsetNCWL
+    shoes: ClothingShoesBootsMagNCWL
+    head: ClothingHeadHatNCWLBeret
+    belt: ClothingBeltAssaultFilledCrew #drips better
+    pocket1: DoubleEmergencyOxygenTankFilled
+    back: ClothingBackpackNCWL
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitNCWLEngi
+    eyes: ClothingEyesHudSecurity
+    suitstorage: WeaponPistolT91
+  inhand:
+    - BookUnionfallNCWLGuide
+    - JetpackBlackFilled
+  storage:
+    back:
+      - BoxMRE
+      - WeaponPistolT91

@@ -561,13 +561,6 @@ entities:
     - type: Transform
       pos: -0.5,2.5
       parent: 1
-- proto: SpawnPointConscriptRiflemanNCWL
-  entities:
-  - uid: 28
-    components:
-    - type: Transform
-      pos: 0.5,3.5
-      parent: 1
 - proto: SpawnPointLatejoin
   entities:
   - uid: 26
