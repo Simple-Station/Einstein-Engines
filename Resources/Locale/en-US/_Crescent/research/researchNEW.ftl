@@ -71,6 +71,7 @@ research-technology-imperial-basicclothes = Basic Tailoring
 research-technology-imperial-advancedclothes = Advanced Tailoring
 research-technology-imperial-basicarmor = Basic Armor Fabrication
 research-technology-imperial-advancedarmor = Prestigious Armor Fabrication
+research-technology-imperial-psionicattunement = Psionic Attunement
 research-technology-imperial-basicrifling = Basic Rifling
 research-technology-imperial-covetor = Imperial Salvage Corvette
 research-technology-imperial-ibis = Imperial Heavy Fighter

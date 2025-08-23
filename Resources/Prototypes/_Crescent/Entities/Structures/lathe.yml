@@ -237,6 +237,7 @@
       - ShipParts
       - RawMaterial
       - ShipParts
+      - Bluespace
   - type: Sprite
     sprite: _Crescent/Structures/nanoforge.rsi
     layers:
@@ -515,6 +516,8 @@
       - ClothingHeadHelmetImperialKnightCommanderHelmet
       - ClothingOuterArmorImperialArmorPrestige
       - ClothingOuterHardsuitImperialKnight
+      - ClothingOuterHardsuitImperialNullweavePsion
+      - ImperialPsionBoundlightStaff
       - CarrionFlatpack
       - WeaponMechIndustrialKineticAcceleratorImperial
       - MechEquipmentGrabberImperial
