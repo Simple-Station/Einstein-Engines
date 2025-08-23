@@ -191,3 +191,16 @@
   cost: 15000
   recipeUnlocks:
   - ClothingOuterHardsuitNCWLJuggernaut
+
+- type: technology
+  id: CommunardVibrokukri
+  name: research-technology-communard-vibrokukri
+  icon:
+    sprite: _Crescent/Clothing/NCWL/Belt/ncwl_kukri_sheath.rsi
+    state: sheath-sabre
+  discipline: Communard
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - NCWLKukri
+  - ClothingBeltSheathNCWLKukri

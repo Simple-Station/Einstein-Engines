@@ -1,24 +1,24 @@
 <Document>
 ## LORE
 After the destruction of their headquarters, Nova Belraska, the NCWL forces in Taypan flee for survival.
-Their refuge is the Dear Clementine, a cargo freighter converted for war.
-With many wounded, even more dead, and only an ancient pre-Collapse armory to supply them, these remnants of the NCWL Homeguard move to claim the abandoned NanoTrasen fuel outpost, Vladzena.
+Their refuge is the Dear Clementine, a cargo freighter converted for war. A Gargut artillery carrier and Sasha heavy bomber follow suit.
+A DSM warfleet detects their presence and moves to intercept. The fate of the revolution all hangs on this one battle.
 
 ## OBJECTIVE
-Each side's objective is to capture this experimental "Jamrock" shield generator, located on the southern side of NT Outpost Vladzena.
-(If you see blood and rot spreading, then you're likely close.)
+Each side's goal is to destroy the 3 Cloner Databases, henceforth reffered to as the objective, located on each fleet's warships.
 
 <Box>
-<GuideEntityEmbed Entity="UnionfallCapturePoint"/>
+<GuideEntityEmbed Entity="UnionfallShipNodeNCWL" Caption="NCWL's Cloner Database"/>
+<GuideEntityEmbed Entity="UnionfallShipNodeDSM" Caption="DSM's Cloner Database"/>
 </Box>
 
-It takes 10 seconds to activate, and then 10 minutes to finish once it's activated.
-If captured after it is already activated, then 3 minutes are added to the timer.
+Either you can destroy them by direct and focused ship fire, or by going there in person interacting with it to sabotage.
+Sabotaging takes 10 seconds, and rigs the objective to explode in 60 seconds. It can be disarmed as well.
 
 ## HADAL TIDE / GRACE PERIOD
 
 At the start of the round, your main flagship (and the enemy's) is trapped inside an indestructible, immovable protective circle.
-After a total of 20 minutes, the Hadal Tide ends and the circle dissipates. By this time, both teams should have amassed a fleet and begun moving towards Vladzena.
+After a total of 20 minutes, the Hadal Tide ends and the circle dissipates. By this time, both teams should have ammassed a fleet of fighters and coherent squads.
 
 ## WHAT SHOULD YOU BE DOING?
 
@@ -55,6 +55,34 @@ OR
 
 When the barrier falls, follow orders and attempt to dock with the NT outpost. Good luck.
 
+## NCWL WARSHIP ROSTER
+
+1. NCWL Dear Clementine
+- NCWL's flagship. Dwarfs most ships in Taypan in sheer size. Scares the rest with its arsenal.
+- Front: 1x 320mm accelerator cannon
+- Broadside: 4x Automortars
+- Point Defense: Too much
+- Spinal 320mm cannon is the most destructive weapon in the sector. If placed well, a single shot can disable most ships.
+- Automortars offer incredible efficiency and destructive power at the cost of needing constant reloading.
+- PDT is weak on it's own but en-masse it does not allow ultralights to even approach.
+
+2. NCWL Gargut
+- An artillery carrier with heavy armor and room padding.
+- Front: 4 * 120mm artillery
+- Front: 2 * Automortars
+- Surrounding: 4 * "Slugspitter" 40mm guns
+- Point Defense: Decent
+- 120mm layout demands either 2 loaders, or to only use one side for repeated fire. Destructive power at range is second only to the 320mm.
+- Automortars offer decent close range duelling power.
+- Slugspitters and PDT turrets can hold their own against fighters from all directions, but not optimally.
+
+3. NCWL Sasha
+- Triple 230mm "Hephaestus" cannons on a slim hull. An ancient relic from another time.
+- Front, and broadsides: 230mm "Hephaestus"
+- PDT: Plenty
+- 230mm cannon offers solid, long ranged destructive power with fast reloadable rounds. 
+- PDT can harass fighters and delete ultralights, but it still requires escort to defend it properly.
+
 ## NCWL SHIP ROSTER
 
 1. NCWL Broadsword
@@ -78,6 +106,12 @@ When the barrier falls, follow orders and attempt to dock with the NT outpost. G
 - An armored fighter made for extended engagements. Sports dual slugthrowers.
 - Slugthrowers hold a low amount of ammo and must be manually reloaded (AND RACKED!) after emptying.
 - Front is up-armored, rear is weak.
+
+5. NCWL Aegis
+- A modified Vanguard hull with a 120mm strapped in the middle.
+- Requires 2 crew: 1 pilot and 1 loader/gunner.
+- 120mm has long range and good damage, but requires constant reloading.
+- Loader mans PDT while loading shells.
 
 
 </Document>

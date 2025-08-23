@@ -525,3 +525,14 @@
     destroyOnFry: false
   - type: GuideHelp
     guides: [ PsionicInsulation ]
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatDSMCapsoft
+  name: imperial cap
+  description: A patrol cap in imperial colors.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Head/dsm_cap.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Head/dsm_cap.rsi
