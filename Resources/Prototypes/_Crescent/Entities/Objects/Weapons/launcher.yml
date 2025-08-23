@@ -171,7 +171,7 @@
       path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
 
 - type: entity
-  name: PTA Carl M4 Gustav 84mm
+  name: PTA Carl M4 Gustaf 84mm
   parent: [BaseWeaponLauncher, BaseGunWieldable]
   id: WeaponLauncherGustav
   description: A ruggid, breach-loaded recoiless rifle. Suitable for a variety of large targets.
