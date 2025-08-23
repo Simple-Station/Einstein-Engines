@@ -890,9 +890,9 @@
     MagazineMortar: 5000
     LanceRocketCartridge : 5000
     MagazineSwarmer: 5000
-    MagazineGrenadeBlast: 5000
-    MagazineGrenadeFrag: 5000
-    MagazineGrenadeEMP: 5000
+    MagazineRocketLowYield: 5000
+    MagazineRocketHighYield: 5000
+    MagazineRocketEMP: 5000
     TorpGargEMP: 5000
     TorpGarg: 5000
     HeavyMortarCartridge: 5000

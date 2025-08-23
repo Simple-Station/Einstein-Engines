@@ -108,6 +108,7 @@ research-technology-communard-lancer = Communard Light Mech
 research-technology-communard-grenadelauncher = Communard Grenade Launcher
 research-technology-communard-bogatyr = Communard Battle Mech
 research-technology-communard-commienaut = Communard Juggernaut Suit
+research-technology-communard-vibrokukri = Communard Chengridz Vibrokukri
 
 # SHI
 research-technology-shinohara-clothes = Corporate Uniforms

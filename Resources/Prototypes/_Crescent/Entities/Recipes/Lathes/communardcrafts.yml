@@ -351,3 +351,20 @@
     Silver: 2500
     Steel: 3500
     Tungsten: 2500
+
+- type: latheRecipe
+  id: NCWLKukri
+  result: NCWLKukri
+  completetime: 2
+  materials:
+    Steel: 1500
+    Tungsten: 1250
+    Plasma: 250
+    NanotrasenElectronics: 1500
+
+- type: latheRecipe
+  id: ClothingBeltSheathNCWLKukri
+  result: ClothingBeltSheathNCWLKukri
+  completetime: 2
+  materials:
+    Cloth: 750

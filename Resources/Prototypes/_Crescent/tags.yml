@@ -46,6 +46,9 @@
 - type: Tag # Frontier Space Artillery
   id: CartridgeShell # Frontier Space Artillery
 
+- type: Tag # Hullrot
+  id: Kukri #Hullrot
+
 - type: Tag # Frontier
   id: MothFood #Frontier
 
@@ -69,3 +72,9 @@
 
 - type: Tag # Hullrot
   id: ShipDeed # Hullrot
+
+- type: Tag # Hullrot
+  id: Rocket48mm # Hullrot
+
+- type: Tag # Hullrot
+  id: MagazineRocket48mm # Hullrot

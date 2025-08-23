@@ -393,3 +393,13 @@
     containers:
       item:
       - DSMRapier
+
+- type: entity
+  id: ClothingBeltSheathNCWLKukriFilled
+  parent: ClothingBeltSheathNCWLKukri
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - NCWLKukri

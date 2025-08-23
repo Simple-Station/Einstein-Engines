@@ -515,3 +515,14 @@
         Piercing: 5
         Heat: 5
         Caustic: 5
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatDSMCapsoft
+  name: imperial cap
+  description: A patrol cap in imperial colors.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Head/dsm_cap.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Head/dsm_cap.rsi
