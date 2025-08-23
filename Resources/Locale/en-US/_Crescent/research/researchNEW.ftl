@@ -64,6 +64,7 @@ research-technology-cyberdawn-zhongyao = Zhongyao Tacsuit
 research-technology-cyberdawn-egui = Egui Stealth Tacsuit
 research-technology-cyberdawn-psybreaker = Anti-Psionic Armaments
 research-technology-cyberdawn-thermals = Thermal Vision Goggles
+research-technology-cyberdawn-advancedlaunchers = Advanced Launchers
 
 # DSM
 research-technology-imperial-basicclothes = Basic Tailoring

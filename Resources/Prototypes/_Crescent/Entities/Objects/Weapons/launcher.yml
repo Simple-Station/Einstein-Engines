@@ -115,7 +115,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
   - type: BallisticAmmoProvider
-    proto: CartridgeRocket
+    proto: Cartridge84mmRocket
     cycleable: false
     capacity: 1
     soundInsert:
@@ -143,7 +143,7 @@
         startingItem: GrenadeFrag
         priority: 1
         whitelist:
-          tags: 
+          tags:
             - Grenade
   - type: ContainerContainer
     containers:
@@ -169,3 +169,87 @@
       - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
+
+- type: entity
+  name: PTA Carl M4 Gustav 84mm
+  parent: [BaseWeaponLauncher, BaseGunWieldable]
+  id: WeaponLauncherGustav
+  description: A ruggid, breach-loaded recoiless rifle. Suitable for a variety of large targets.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/gustav.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+  - type: GunRequiresWield
+  - type: Item
+    shape:
+    - 0,0,5,2
+    sprite: _Crescent/Objects/Weapons/Guns/gustav.rsi
+  - type: ItemSlots
+    slots:
+      gun_chamber:
+        name: Chamber
+        startingItem: Bullet84mmRocketHEAT
+        priority: 1
+        whitelist:
+          tags:
+            - ShellRocket84mm
+  - type: ContainerContainer
+    containers:
+      gun_chamber: !type:ContainerSlot
+  - type: ChamberMagazineAmmoProvider
+    autoCycle: false
+    boltClosed: true
+    canRack: false
+    soundBoltClosed: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+    soundBoltOpened: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+    soundRack: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/gustav.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: Appearance
+  - type: Gun
+    fireRate: 0.5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+
+- type: entity
+  name: NCSP RPG-2
+  parent: [BaseWeaponLauncher, BaseGunWieldable]
+  id: WeaponLauncherSmallRocket
+  description: The lesser known predecessor. A rocket launcher often seen in the hands of terrorists and informal militias.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/rpg2.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/rpg2.rsi
+  - type: GunRequiresWield
+  - type: Item
+    shape:
+    - 0,0,4,2
+  - type: Gun
+    fireRate: 0.5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeSmallRocket
+        - CartridgeRocket
+    capacity: 1
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
