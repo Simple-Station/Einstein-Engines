@@ -1,0 +1,100 @@
+- type: job
+  id: UnionfallShipCrewDSM
+  name: job-name-unionfall-dsm-ship-crew
+  description: job-description-unionfall-dsm-ship-crew
+  playTimeTracker: ConscriptDSM
+  requirements:
+    - !type:FactionRequirement
+      factionID: "DSM"
+    - !type:CharacterOverallTimeRequirement
+      min: 1000
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
+  weight: 10
+  startingGear: UnionfallShipCrewDSMGear
+  alwaysUseSpawner: true
+  icon: "JobIconUnionfallDSMCrew"
+  requireAdminNotify: true
+  supervisors: job-supervisors-unionfall-dsm
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-dsm-crew
+      - type: HullrotFaction
+        faction: DSM
+      - type: LanguageAdder
+        addSpoken:
+          - LowImperial
+        addUnderstood:
+          - LowImperial
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Mercenary # Frontier
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Service
+  - Empire
+
+- type: startingGear
+  id: UnionfallShipCrewDSMGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitImperialFreeholder
+    neck: ClothingNeckIFFCyan
+    back: ClothingBackpackDSM
+    shoes: ClothingShoesBootsMagDSM
+    head: ClothingHeadHelmetImperialWorkerHelmet
+    gloves: ClothingHandsGlovesImperialWorkerGloves
+    id: LevymanPDA
+    belt: ClothingBeltAssaultFilledCrew
+    pocket1: DoubleEmergencyOxygenTankFilled
+    ears: ClothingHeadsetEmpire
+    eyes: ClothingEyesHudSecurity
+    outerClothing: ClothingOuterHardsuitImperialWorker
+    suitstorage: WeaponPistolNeoVolker
+  inhand:
+    - BookUnionfallDSMGuide
+    - JetpackBlackFilled
+  storage:
+    back:
+      - BoxMRE
+      - WeaponPistolNeoVolker

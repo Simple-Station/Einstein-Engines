@@ -110,6 +110,12 @@
     requiredLegs: 8
   - type: Speech
     speechSounds: Alto
+  - type: LanguageKnowledge
+    speaks:
+    - Atyrian
+    understands:
+    - Atyrian
+    - TauCetiBasic #needed for vending machines
   - type: Inventory
     templateId: anytaur
   - type: Tag

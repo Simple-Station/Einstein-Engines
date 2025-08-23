@@ -86,8 +86,8 @@
     sprite: _Crescent/Objects/Specific/fighterweapons.rsi
     state: auto_cannon
   - type: Gun
-    fireRate: 3
-    selectedMode: FullAuto
+    fireRate: 0.5
+    projectileSpeed: 95
     availableModes:
       - FullAuto
     soundGunshot:
@@ -112,7 +112,8 @@
     sprite: _Crescent/Objects/Specific/fighterweapons.rsi
     state: heavy_slugger
   - type: Gun
-    fireRate: 0.6
+    fireRate: 8
+    projectileSpeed: 135
     selectedMode: FullAuto
     availableModes:
       - FullAuto

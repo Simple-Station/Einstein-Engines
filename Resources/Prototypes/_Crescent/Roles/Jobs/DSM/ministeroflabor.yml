@@ -3,14 +3,22 @@
   name: job-name-ministerlabor
   description: job-description-labor
   playTimeTracker: JobLaborDSM
+  weight: 96
+  startingGear: LaborGear
+  alwaysUseSpawner: true
+  icon: "JobIconImperialLabor"
+  requireAdminNotify: false
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
   requirements:
+    - !type:CharacterWhitelistRequirement
+    - !type:FactionRequirement
+      factionID: "DSM"
     - !type:CharacterOverallTimeRequirement
       min: 2500
     - !type:CharacterSpeciesRequirement
       species:
         - Human
-    - !type:FactionRequirement
-      factionID: "DSM"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -18,18 +26,20 @@
         - ForeignerLight
         - Muted
         - Blindness
-  weight: 84
-  startingGear: LaborGear
-  alwaysUseSpawner: true
-  icon: "JobIconImperialLabor"
-  requireAdminNotify: false
-  supervisors: job-supervisors-imperial
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
         rank: crescent-rank-ministry
+      - type: LanguageAdder
+        addSpoken:
+          - HighImperial
+          - LowImperial
+          - Tradeband
+        addUnderstood:
+          - HighImperial
+          - LowImperial
+          - Tradeband
   access:
   - Command
   - Empire

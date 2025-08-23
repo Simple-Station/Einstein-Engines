@@ -520,7 +520,7 @@
       - !type:AdjustReagent
         conditions:
         - !type:OrganType
-          type: Shadowkin
+          type: Voidborn
         reagent: Protein
         amount: 0.5
 

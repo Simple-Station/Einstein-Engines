@@ -10,6 +10,8 @@
     sprite: _Crescent/Objects/Weapons/Guns/twinshot.rsi
   - type: Item
     size: Huge
+    shape:
+    - 0,0,4,1
     sprite: _Crescent/Objects/Weapons/Guns/twinshot.rsi
   - type: GunRequiresWield
   - type: Gun
@@ -63,10 +65,13 @@
   name: NT SPAS-13 12g
   parent: [BaseWeaponShotgun, BaseGunWieldable]
   id: WeaponShotgunSpas
-  description: A premium combat shotgun ripped from ancient Terran designs. Originates from the now-defunct NanoTrasen.
+  description: A premium combat shotgun with a folding stock. Originates from the now-defunct NanoTrasen.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/spas13.rsi
+  - type: Item
+    shape:
+    - 0,0,3,1
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/spas13.rsi
   - type: BallisticAmmoProvider
@@ -142,3 +147,85 @@
     whitelist:
       tags:
       - ShellShotgun
+
+- type: entity
+  name: NCSP Saiga-12k 12g
+  # Don't parent to BaseWeaponShotgun because it differs significantly
+  parent: [BaseItem, BaseGunWieldable]
+  id: WeaponShotgunNCSPSaiga12
+  description: A magazine-fed shotgun in use by terrorist forces. Uses 12 gauge shotgun shells.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/saiga12.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,4,2
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/saiga12.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: AmmoCounter
+  - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
+  - type: Gun
+    fireRate: 3.5
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/shotgun_1/shotgun_gunshot_3.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+    fireOnDropChance: 0.3
+    shotgunSpreadMultiplier: 1.5
+    shotgunProjectileCountModifier: 1.33
+  - type: Wieldable
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineShotgun
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineShotgun
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineAmmoProvider
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 500
+  - type: Execution
+  - type: MeleeWeapon
+    attackRate: 1.4
+    damage:
+      types:
+        Blunt: 10
+    bluntStaminaDamageFactor: 1.3333
+    swapKeys: true
+    disableHeavy: true
+    animation: WeaponArcThrust
+    wideAnimationRotation: 180
+    soundHit:
+      collection: MetalThud
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2.5
+  - type: DamageOtherOnHit
+    staminaCost: 9.5

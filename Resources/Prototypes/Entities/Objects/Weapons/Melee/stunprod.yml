@@ -36,8 +36,11 @@
     damage:
       types:
         Blunt: 9
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
+    heavyRateModifier: 1.25
+    clickPartDamageMultiplier: 2
     bluntStaminaDamageFactor: 2.0
-    heavyDamageBaseModifier: 1.2
     animation: WeaponArcThrust
   - type: DamageOtherOnHit
   - type: StaminaDamageOnHit

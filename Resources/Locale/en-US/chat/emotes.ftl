@@ -29,7 +29,7 @@ chat-emote-name-chime = Chime
 chat-emote-name-buzztwo = Buzz Two
 chat-emote-name-ping = Ping
 chat-emote-name-robotbeep = Robot
-# Shadowkin
+# Voidborn
 chat-emote-name-mars = Mars
 chat-emote-name-wurble = Wurble
 # Harpy

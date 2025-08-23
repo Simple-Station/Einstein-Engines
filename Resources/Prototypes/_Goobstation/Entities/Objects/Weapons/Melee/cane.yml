@@ -11,23 +11,23 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 65
-    attackRate: 0.9
+    attackRate: 1
     damage:
       types:
-        Slash: 10
-    heavyRateModifier: 2
-    heavyRangeModifier: 1.2
-    heavyDamageBaseModifier: 1.5
-    maxTargets: 1
+        Slash: 36
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
+    heavyRateModifier: 1.25
+    clickPartDamageMultiplier: 1.5
+    heavyPartDamageMultiplier: 1.2
+    lightRangeModifier: 1.25
+    maxTargets: 2
     angle: 10
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/cane_blade.rsi
-  - type: Tag
-    tags:
-      - CaneBlade
   - type: DisarmMalus
 
 - type: entity

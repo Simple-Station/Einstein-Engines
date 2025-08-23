@@ -28,19 +28,26 @@
   - type: ItemToggleMeleeWeapon
     activatedDamage:
       types:
-        Heat: 5
+        Heat: 22
   - type: Stunbaton
     energyPerUse: 120
   - type: MeleeWeapon
     angle: 0
     wideAnimationRotation: -135
-    attackRate: 1.1
-    range: 1.4
+    attackRate: 1.25
+    range: 1.25
     damage:
       types:
-        Blunt: 13 # Unlucky number
-        Slash: 7 # Lucky number
+        Blunt: 22
+        Slash: 12
     animation: WeaponArcThrust
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 12
+    heavyRateModifier: 1.5
+    clickPartDamageMultiplier: 1.5
+    heavyPartDamageMultiplier: 1.25
+    lightRangeModifier: 1.2
+    maxTargets: 3
   - type: StaminaDamageOnHit
     damage: 30
     overtime: 30
@@ -58,8 +65,10 @@
     autoRechargeRate: 20
   - type: UseDelay
   - type: Item
-    heldPrefix: off
     size: Normal
+    shape:
+      - 0,0,1,2
+    heldPrefix: off
   - type: DisarmMalus
     malus: 0.225
   - type: Appearance

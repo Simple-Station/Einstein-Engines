@@ -37,8 +37,10 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 20
-        Shock: 5
+        Piercing: 22
+        Shock: 4
+    harmorPenetration: 29
+    stoppingPower: 5
 #---------- The uranium ammo of 6x24mm ----------
 - type: entity
   id: Cartridge6x24mmConcentrated
@@ -63,8 +65,10 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 20
-        Shock: 10
+        Piercing: 18
+        Shock: 8
+    harmorPenetration: 39
+    stoppingPower: 3
 #---------- Anti-mech/cyborg ammo ----------
 - type: entity
   id: Cartridge6x24mmIon
@@ -72,7 +76,7 @@
   parent: BaseCartridge6x24mm
   components:
   - type: CartridgeAmmo
-    proto: Bullet6x24mmConcentrated
+    proto: Bullet6x24mmIon
   - type: Sprite
     layers:
       - state: blue
@@ -83,15 +87,17 @@
 - type: entity
   id: Bullet6x24mmIon
   name: bullet (6x24mm ion)
-  parent: BaseBullet
+  parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Piercing: 10 # make this deal more damage against mech + cyborgs or make it drain battery like EMP
-        Shock: 10
-
+        Blunt: 2
+        Shock: 20
+  - type: EmpOnTrigger
+    range: 0.50
+    energyConsumption: 25
 #---------- Incendiary ammo ----------
 - type: entity
   id: Cartridge6x24mmIncendiary
@@ -118,6 +124,8 @@
       types:
         Piercing: 10
         Heat: 15
+    harmorPenetration: 29
+    stoppingPower: 5
   - type: PointLight
     enabled: true
     color: "#ff4300"

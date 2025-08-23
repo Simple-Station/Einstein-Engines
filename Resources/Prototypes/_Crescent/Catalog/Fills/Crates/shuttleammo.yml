@@ -1,18 +1,18 @@
 - type: entity
   id: CrateSumitomoAmmo
   parent: CrateSecgear
-  name: sumitomo crate
-  description: Ammunition for the SHI Sumitomo and SHI Kurosawa.
+  name: 48mm crate
+  description: Ammunition for the SHI Sumitomo and SHI Kurosawa rocket launchers.
   components:
   - type: StorageFill
     contents:
-      - id: MagazineGrenadeEmpty
+      - id: MagazineRocketEmpty
         amount: 3
-      - id: GrenadeEMP
+      - id: CartridgeRocketEMP
         amount: 6
-      - id: GrenadeBlast
+      - id: CartridgeRocketHighYield
         amount: 6
-      - id: GrenadeBaton
+      - id: CartridgeRocketLowYield
         amount: 12
 
 - type: entity

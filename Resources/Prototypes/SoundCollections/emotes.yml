@@ -90,9 +90,9 @@
 - type: soundCollection
   id: Mars
   files:
-    - /Audio/Voice/Shadowkin/mar.ogg
+    - /Audio/Voice/Voidborn/mar.ogg
 
 - type: soundCollection
   id: Wurble
   files:
-    - /Audio/Voice/Shadowkin/wurble.ogg
+    - /Audio/Voice/Voidborn/wurble.ogg

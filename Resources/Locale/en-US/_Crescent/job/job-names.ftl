@@ -1,18 +1,15 @@
-#ncwl#
+# ncwl
 
-job-name-ncwl-faction-leader = Major General of the League
-job-name-ncwl-homeguard-overseer = Kommissar
-job-name-ncwl-homeguard-captain = Union Kapitan
-job-name-ncwl-homeguard-soldat = Soldat
-job-name-ncwl-logistic-dockmaster = Koalitsiya Dockmaster
-job-name-ncwl-logistic-dockhand = Dockhand
-job-name-ncwl-medical-director = Alyans Director
+job-name-ncwl-faction-leader = Kommandante
+job-name-ncwl-kommissar = Kommissar
+job-name-ncwl-fleetkapitan = Fleetkapitan
+job-name-ncwl-partisan = Partisan
+job-name-ncwl-industry-taskmaster = Technician-Overseer
 job-name-ncwl-medical-doctor = Sanitar
-job-name-ncwl-engineering-supervisor = Sindikat Supervisor
-job-name-ncwl-engineering-mechanic = Artificer
+job-name-ncwl-worker-overboss = Union Coordinator
 job-name-ncwl-newbie = Union Worker
 
-#syndicate#
+# syndicate
 
 job-name-ringleader = Ringleader
 job-name-lieutenant = Lieutenant
@@ -27,7 +24,7 @@ job-name-intelligenceofficer = Patriarch
 job-name-shipbreaker = Shipbreaker
 job-name-foreman = SAW Foreman
 
-#empire
+# empire
 
 job-name-freeholder = Freeholder
 job-name-levyman = Man-at-Arms
@@ -38,7 +35,7 @@ job-name-ministerlabor = Minister of Labor
 job-name-logisticsofficer = Minister of Wealth
 job-name-adjutant = Imperial Adjutant
 job-name-archmaester = Scribe Archmaester
-job-name-governor = Lord Regent
+job-name-governor = Lord Admiral
 job-name-foremanimp = Imperial Foreman
 job-name-imperialresearch = Imperial Scribe
 job-name-surgeon = Imperial Surgeon
@@ -46,7 +43,7 @@ job-name-wealth = Knight Logisticar
 job-name-advocatus = Advocatus
 job-name-advocatustemplar = Knight Templar
 
-#srm
+# srm
 
 job-name-tender = Tender
 job-name-acolyte = Apprentice Hunter
@@ -54,16 +51,16 @@ job-name-hunter = Hunter
 job-name-montagne = Hunter Montagne
 job-name-overseer = Overseer of the Hunt
 
-#shi
+# shi
 
 job-name-executive = Sector Manager
 job-name-board = Board Executive
 job-name-corpsec = CorpSec Agent
 job-name-highsec = Corporate Liquidation Agent
 job-name-employee = Salaryman
-job-name-medtech = MedTech Specialist
+job-name-medtech = MedTech Researcher
 
-#tsp
+# tsp
 
 job-name-ordnanceman = Ordnanceman
 job-name-machinist = Engine Machinist
@@ -73,7 +70,7 @@ job-name-watchmaster = Colonial Watchmaster
 job-name-deputymarshal = Deputy Marshal
 job-name-marshal = Colonial Marshal
 
-#tap
+# tap
 
 job-name-prophet = Arabet Prophet
 job-name-acolytetap = Arabet Devoted
@@ -84,7 +81,7 @@ job-name-beltrunner = Izdari Beltrunner
 job-name-draugr = Al'Seik Draugr
 job-name-servile = Al'Seik Servile
 
-#ath
+# ath
 job-name-kommandant = Konteradmiral
 job-name-leutnant = Leutnant
 job-name-soldat = Jaeger
@@ -99,14 +96,14 @@ job-name-chirurgeon = Chirurgeon
 job-name-vorarbeiter = Vorarbeiter
 job-name-arbeiter = Arbeiter
 
-#misc
+# misc
 
 job-name-antiquarian = Izdari Antiquarian
 job-name-spacer = Spacer
 job-name-gliess-sheriff = Gliessian Sheriff
 job-name-gliess-dockmaster = Gliessian Dockmaster
 
-#conscript-ncwl#
+# conscript-ncwl - for PLANETFALL
 
 job-name-conscript-ncwl-ship-captain = Clementine Admiral
 job-name-conscript-ncwl-ship-crew = Clementine Artificer
@@ -120,7 +117,7 @@ job-name-conscript-ncwl-shotgun = Breacher (Shotgun)
 job-name-conscript-ncwl-rifleman = Soldat (Rifle)
 job-name-conscript-ncwl-cadet = Cadet
 
-#conscript-dsm#
+# conscript-dsm - for PLANETFALL
 
 job-name-conscript-dsm-ship-captain = Nemesis Grand Steward
 job-name-conscript-dsm-ship-crew = Nemesis Steward
@@ -133,3 +130,22 @@ job-name-conscript-dsm-smg = Squire (SMG)
 job-name-conscript-dsm-shotgun = Squire (Shotgun)
 job-name-conscript-dsm-rifleman = Armsman (Rifle)
 job-name-conscript-dsm-cadet = Recruit
+
+# unionfall-ncwl
+
+job-name-unionfall-ncwl-ship-captain = Ship Captain
+job-name-unionfall-ncwl-ship-crew = Ship Crew
+job-name-unionfall-ncwl-leader = Fleet Kommandant
+job-name-unionfall-ncwl-officer = Kommissar
+job-name-unionfall-ncwl-doctor = Doktor
+job-name-unionfall-ncwl-rifleman = Soldat
+job-name-unionfall-ncwl-cadet = Cadet
+
+# unionfall-dsm
+job-name-unionfall-dsm-ship-captain = Ship Grand Steward
+job-name-unionfall-dsm-ship-crew = Ship Steward
+job-name-unionfall-dsm-leader = Knight-Bannaret
+job-name-unionfall-dsm-officer = Knight
+job-name-unionfall-dsm-doctor = Medicant
+job-name-unionfall-dsm-rifleman = Man-at-arms
+job-name-unionfall-dsm-cadet = Levyman

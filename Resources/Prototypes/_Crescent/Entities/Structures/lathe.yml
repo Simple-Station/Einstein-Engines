@@ -313,7 +313,12 @@
       - ClothingHeadHatWelding
       - ClothingOuterSuitEmergency
       - ClothingHeadHelmetEVALarge # Frontier
+      - TradebandTranslator
     dynamicRecipes:
+      - CreoleTranslator
+      - LowImperialTranslator
+      - FreespeakTranslator
+      - KaishagoTranslator
       - ThrusterFlatpackAstronautics
       - GyroscopeFlatpackAstronautics
       - MiniGravityFlatpack
@@ -477,6 +482,10 @@
       - EmagCyberdawn
       - WeaponLightMachineGunNCSPRPD
       - WeaponRifleMayflower
+      - WeaponRifleSVDMarksmanNCSP
+      - WeaponShotgunSaiga12NCSP
+      - WeaponLauncherRPGNSCP
+      - WeaponLCartridgeRPGSmall
       - DnaScramblerImplanter
       - EmpImplanter
       - EnergyDagger
@@ -528,6 +537,8 @@
       - LaelapsLPC
       - PaladinFlatpack
       - WandererFlatpack
+      - WeaponMechCombatPlasmaRifle
+      - WeaponMechCombatPlasmaCannon
       - WeaponRifleDSMLegionnaire
       - WeaponSubMachineGunC20rImperial
       - WeaponPistolNeoVolker
@@ -577,6 +588,8 @@
       - SternLPC
       - BogatyrFlatpack
       - ClothingOuterHardsuitNCWLJuggernaut
+      - NCWLKukri
+      - ClothingBeltSheathNCWLKukri
       - ClothingUniformJumpsuitExecutiveShinoharaSuit
       - ClothingUniformJumpsuitShinoharaLogistics
       - ClothingOuterShinoharaVest

@@ -3,15 +3,22 @@
   name: job-name-governor
   description: job-description-governor
   playTimeTracker: JobGovernorDSM
+  weight: 100
+  startingGear: GovernorGear
+  alwaysUseSpawner: true
+  requireAdminNotify: true
+  icon: "JobIconImperialGovernor"
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement
+    - !type:FactionRequirement
+      factionID: "DSM"
     - !type:CharacterSpeciesRequirement
       species:
         - Human
     - !type:SexRequirement
       sex : Male
-    - !type:FactionRequirement
-      factionID: "DSM"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -19,18 +26,20 @@
         - ForeignerLight
         - Muted
         - Pacifist
-  weight: 87
-  startingGear: GovernorGear
-  alwaysUseSpawner: true
-  icon: "JobIconImperialGovernor"
-  requireAdminNotify: true
-  supervisors: job-supervisors-imperial
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
         rank: crescent-rank-baron
+      - type: LanguageAdder
+        addSpoken:
+          - HighImperial
+          - LowImperial
+          - Tradeband
+        addUnderstood:
+          - HighImperial
+          - LowImperial
+          - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain

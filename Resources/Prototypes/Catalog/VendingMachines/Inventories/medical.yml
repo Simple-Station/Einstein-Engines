@@ -1,12 +1,13 @@
 - type: vendingMachineInventory
   id: NanoMedPlusInventory
   startingInventory:
-    HandheldHealthAnalyzer: 3
+    HandheldHealthAnalyzer: 6
     Brutepack: 15
     Ointment: 15
     Gauze: 15
     Bloodpack: 15
     EpinephrineChemistryBottle: 10
-    Syringe: 5
-    Portafib: 1
-    ClothingEyesHudMedical: 2
+    Syringe: 8
+    Tourniquet: 6 #Goobstation - ParamedHypo
+    Portafib: 3
+    ClothingEyesHudMedical: 6

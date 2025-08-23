@@ -5,11 +5,16 @@
   description: A special knife designed for killing psychics.
   components:
   - type: MeleeWeapon
-    attackRate: 1.25
+    attackRate: 1.15
     damage:
       types:
-        Slash: 25
+        Slash: 24
         Holy: 10
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 8
+    heavyRateModifier: 1.25
+    clickPartDamageMultiplier: 2
+    lightRangeModifier: 1.25
   - type: StaminaDamageOnHit
     damage: 0
   - type: AntiPsionicWeapon

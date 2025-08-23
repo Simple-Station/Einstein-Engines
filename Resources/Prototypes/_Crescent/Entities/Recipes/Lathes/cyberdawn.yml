@@ -214,3 +214,40 @@
   materials:
     Silver: 750
     Steel: 1000
+
+- type: latheRecipe
+  id:  WeaponRifleSVDMarksmanNCSP
+  result: WeaponRifleSVDMarksman
+  completetime: 1.5
+  materials:
+    Steel: 2000
+    BasicMechatronics: 1500
+    BallisticCycler: 500
+
+- type: latheRecipe
+  id:  WeaponShotgunSaiga12NCSP
+  result: WeaponShotgunNCSPSaiga12
+  completetime: 1.5
+  materials:
+    Steel: 1500
+    BasicMechatronics: 1000
+    BallisticCycler: 500
+
+- type: latheRecipe
+  id:  WeaponLauncherRPGNSCP
+  result: WeaponLauncherSmallRocket
+  completetime: 1.5
+  materials:
+    Steel: 1500
+    BasicMechatronics: 1000
+    Silver: 750
+
+- type: latheRecipe
+  id:  WeaponLCartridgeRPGSmall
+  result: CartridgeSmallRocket
+  completetime: 1.5
+  materials:
+    Steel: 500
+    BasicMechatronics: 500
+    Silver: 250
+    Tungsten: 1500

@@ -39,14 +39,22 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 65
-    attackRate: .8
+    attackRate: 1
     damage:
       types:
-        Slash: 26
+        Slash: 30
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 8
+    heavyRateModifier: 1.15
+    clickPartDamageMultiplier: 1.5
+    lightRangeModifier: 1.5
+    maxTargets: 2
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: Item
     size: Normal
+    shape:
+      - 0,0,1,2
     sprite: Objects/Weapons/Melee/cane_blade.rsi
   - type: Tag
     tags:
@@ -58,6 +66,10 @@
   id: CaneSheath
   suffix: Empty
   components:
+  - type: Item
+    size: Normal
+    shape:
+      - 0,0,1,2
   - type: Sprite
     sprite: Objects/Weapons/Melee/cane.rsi
     state: cane-empty
