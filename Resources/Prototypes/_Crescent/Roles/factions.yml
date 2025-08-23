@@ -2,6 +2,9 @@
 - type: faction
   name: "Central Sol Authority"
   id: ATH
+  descriptionPrefix: |
+    This faction is only very rarely present in the Taypan system at present.
+    Restricted to Special Midround Spawns
   description: |
     The victors of an undisputed internal war that broke out in Sol over the Kaiser's turbulent and
     violent reign, the Authority was born out of a need for reform. Lead by the Jovian ideals of
@@ -21,7 +24,7 @@
     itself to suit the needs of the Authority.
   color: "#ffffed"
   weight: 1
-  enabled: false
+  enabled: true
   icon:
     sprite: /Textures/_Crescent/faction_icons.rsi
     state: csa
@@ -125,6 +128,9 @@
 - type: faction
   name: "Saint Romaine's Militia"
   id: SRM
+  descriptionPrefix: |
+    This faction is only very rarely present in the Taypan system.
+    Restricted to Special Midround Spawns
   description: |
     Formerly several fireteams of the Imperial Compliance Corps united under a single wing, the SRM have
     found their new identity in the reclamation of escaped Imperial 'assets', as well as the 'conscription'
@@ -133,7 +139,7 @@
     the rebuilding effort.
   color: "#9FED58"
   weight: -5
-  enabled: false
+  enabled: true
   icon:
     sprite: /Textures/_Crescent/faction_icons.rsi
     state: srm
