@@ -189,11 +189,13 @@
 
 #ncwl
 
+#T0
+
 - type: entity
   parent: BaseItem
-  id: ShipVoucherLodka
-  name: NCWL 'Lodka' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a communard Lodka-class combat freighter pattern. Has to be redeemed at a shipyard console.
+  id: ShipVoucherVanguard
+  name: NCWL 'Vanguard' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a communard Vanguard-class gunship pattern. Has to be redeemed at a shipyard console.
   components:
   - type: Item
     size: Small
@@ -202,27 +204,9 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 15000
+    price: 26000
   - type: ShipVoucher
-    ship: Lodka
-
-- type: entity
-  parent: BaseItem
-  id: ShipVoucherKrechet
-  name: NCWL 'Krechet' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a communard Krechet-class light fighter pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 15000
-  - type: ShipVoucher
-    ship: Krechet
-
+    ship: Vanguard
 
 - type: entity
   parent: BaseItem
@@ -237,10 +221,47 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 30000
+    price: 24000
   - type: ShipVoucher
     ship: Zorniy
 
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherLodka
+  name: NCWL 'Lodka' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a communard Lodka-class combat freighter pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 22500
+  - type: ShipVoucher
+    ship: Lodka
+
+#T0 END
+
+
+#T1
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherKrechet
+  name: NCWL 'Krechet' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a communard Krechet-class light fighter pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 18000
+  - type: ShipVoucher
+    ship: Krechet
 
 - type: entity
   parent: BaseItem
@@ -258,13 +279,12 @@
     price: 30000
   - type: ShipVoucher
     ship: Molot
-
-
+    
 - type: entity
   parent: BaseItem
-  id: ShipVoucherStern
-  name: NCWL 'Stern' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a communard Stern-class heavy battlecruiser pattern. Has to be redeemed at a shipyard console.
+  id: ShipVoucherIvarod
+  name: NCWL 'Ivarod' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a communard Ivarod-class light destroyer pattern. Has to be redeemed at a shipyard console.
   components:
   - type: Item
     size: Small
@@ -273,43 +293,13 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 75000
+    price: 67500
   - type: ShipVoucher
-    ship: Stern
+    ship: Ivarod
+    
+#T1 END
 
-- type: entity
-  parent: BaseItem
-  id: ShipVoucherVanguard
-  name: NCWL 'Vanguard' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a communard Vanguard-class gunship pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 9000
-  - type: ShipVoucher
-    ship: Vanguard
-
-- type: entity
-  parent: BaseItem
-  id: ShipVoucherRapier
-  name: NCWL 'Rapier' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a communard Rapier-class torpedo bomber pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 6000
-  - type: ShipVoucher
-    ship: Rapier
+#T2
 
 - type: entity
   parent: BaseItem
@@ -324,26 +314,9 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 40000
+    price: 43500
   - type: ShipVoucher
     ship: Hind
-
-- type: entity
-  parent: BaseItem
-  id: ShipVoucherIvarod
-  name: NCWL 'Ivarod' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a communard Ivarod-class light destroyer pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 60000
-  - type: ShipVoucher
-    ship: Ivarod
 
 - type: entity
   parent: BaseItem
@@ -358,7 +331,7 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 12000
+    price: 26000
   - type: ShipVoucher
     ship: VanguardMarkTwo
 
@@ -375,32 +348,20 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 70000
+    price: 93750
   - type: ShipVoucher
     ship: Gargut
 
-- type: entity
-  parent: BaseItem
-  id: ShipVoucherBroadsword
-  name: NCWL 'Broadsword' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a communard Broadsword-class light fighter pattern. Has to be redeemed at a shipyard console.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    layers:
-    - state: icon
-  - type: StaticPrice
-    price: 3000
-  - type: ShipVoucher
-    ship: Broadsword
+#T2 END
+
+
+#T3
 
 - type: entity
   parent: BaseItem
-  id: ShipVoucherSabre
-  name: NCWL 'Sabre' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a communard Sabre-class assault picket fighter pattern. Has to be redeemed at a shipyard console.
+  id: ShipVoucherStern
+  name: NCWL 'Stern' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a communard Stern-class heavy battlecruiser pattern. Has to be redeemed at a shipyard console.
   components:
   - type: Item
     size: Small
@@ -409,10 +370,9 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 4000
+    price: 93750
   - type: ShipVoucher
-    ship: Sabre
-    requiresShipInConsole: false
+    ship: Stern
 
 - type: entity
   parent: BaseItem
@@ -427,15 +387,15 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 18000
+    price: 65000
   - type: ShipVoucher
     ship: Bogatyr
-
+    
 - type: entity
   parent: BaseItem
-  id: ShipVoucherKhopesh
-  name: NCWL 'Khopesh' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a communard Khopesh-class assault interceptor pattern. Has to be redeemed at a shipyard console.
+  id: ShipVoucherSunder
+  name: NCWL 'Sunder' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a communard Sunder-class energy cruiser pattern. Has to be redeemed at a shipyard console.
   components:
   - type: Item
     size: Small
@@ -444,9 +404,11 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 4000
+    price: 70000 #normally this'd be 75% from the ship price but having a t3 cruiser lpc sell for 50k is absurd
   - type: ShipVoucher
-    ship: Khopesh
+    ship: Sunder
+
+#T3 END
 
 #SHI
 

@@ -221,76 +221,85 @@
     TubeLoader: 500
 
 - type: latheRecipe
-  id: BroadswordLPC
-  result: ShipVoucherBroadsword
+  id: VanguardLPC
+  result: ShipVoucherVanguard
   completetime: 1
   materials:
-    StarshipEngineComponents: 300
-    ShipComponents: 250
-    ShipHull: 600
+    StarshipEngineComponents: 1500
+    ShipComponents: 1500
+    ShipHull: 2500
 
 - type: latheRecipe
-  id: KhopeshLPC
-  result: ShipVoucherKhopesh
+  id: ZorniyLPC
+  result: ShipVoucherZorniy
   completetime: 1
   materials:
-    StarshipEngineComponents: 400
-    ShipComponents: 250
-    ShipHull: 500
+    StarshipEngineComponents: 1500
+    ShipComponents: 1500
+    ShipHull: 2500
 
 - type: latheRecipe
-  id: RapierLPC
-  result: ShipVoucherRapier
+  id: LodkaLPC
+  result: ShipVoucherLodka
   completetime: 1
   materials:
-    StarshipEngineComponents: 400
-    ShipComponents: 250
-    ShipHull: 500
-
-- type: latheRecipe
-  id: SabreLPC
-  result: ShipVoucherSabre
-  completetime: 1
-  materials:
-    StarshipEngineComponents: 400
-    ShipComponents: 250
-    ShipHull: 500
-
-- type: latheRecipe
-  id: VanguardMarkTwoLPC
-  result: ShipVoucherVanguardMarkTwo
-  completetime: 1
-  materials:
-    StarshipEngineComponents: 2500
-    ShipComponents: 1250
-    ShipHull: 3500
+    StarshipEngineComponents: 1500
+    ShipComponents: 1500
+    ShipHull: 2500
 
 - type: latheRecipe
   id: MolotLPC
   result: ShipVoucherMolot
   completetime: 1
   materials:
-    StarshipEngineComponents: 4000
-    ShipComponents: 4500
-    ShipHull: 5000
+    StarshipEngineComponents: 2000
+    ShipComponents: 2500
+    ShipHull: 3000
+
+- type: latheRecipe
+  id: KrechetLPC
+  result: ShipVoucherKrechet
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 2000
+    ShipComponents: 2000
+    ShipHull: 2000
 
 - type: latheRecipe
   id: IvarodLPC
   result: ShipVoucherIvarod
   completetime: 1
   materials:
-    StarshipEngineComponents: 6000
-    ShipComponents: 3250
-    ShipHull: 7500
+    StarshipEngineComponents: 4000
+    ShipComponents: 4000
+    ShipHull: 6000
+
+- type: latheRecipe
+  id: VanguardMarkTwoLPC
+  result: ShipVoucherVanguardMarkTwo
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 2000
+    ShipComponents: 2000
+    ShipHull: 2500
 
 - type: latheRecipe
   id: HindLPC
   result: ShipVoucherHind
   completetime: 1
   materials:
-    StarshipEngineComponents: 4500
-    ShipComponents: 4500
+    StarshipEngineComponents: 5000
+    ShipComponents: 5000
     ShipHull: 6000
+
+- type: latheRecipe
+  id: GargutLPC
+  result: ShipVoucherGargut
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 7000
+    ShipComponents: 8000
+    ShipHull: 12000
 
 - type: latheRecipe
   id: SternLPC
@@ -300,6 +309,24 @@
     StarshipEngineComponents: 12500
     ShipComponents: 10000
     ShipHull: 17500
+
+- type: latheRecipe
+  id: SunderLPC
+  result: ShipVoucherSunder
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 7000
+    ShipComponents: 8000
+    ShipHull: 8000
+
+- type: latheRecipe
+  id: BogatyrLPC
+  result: ShipVoucherBogatyr
+  completetime: 1
+  materials:
+    StarshipEngineComponents: 6000
+    ShipComponents: 6000
+    ShipHull: 8000
 
 - type: latheRecipe
   id: LancerFlatpack

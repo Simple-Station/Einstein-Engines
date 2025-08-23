@@ -1,22 +1,22 @@
 # Author Info
-# Discord: originally @fleshangel, later remade by @ninruB
+# Discord: @ninruB
 
 - type: vessel
-  id: Ivarod
-  name: NCWL Ivarod
-  description: A converted light destroyer, purpose-built with endurance in mind.
-  price: 90000
+  id: Sunder
+  name: NCWL Sunder
+  description: A light energy cruiser.
+  price: 70000
   category: Large
   group: None
-  path: /Maps/_Crescent/Shuttles/NCWL/ivarod.yml
+  path: /Maps/_Crescent/Shuttles/NCWL/sunder.yml
 
 - type: gameMap
-  id: Ivarod
-  mapName: 'NCWL Ivarod'
-  mapPath: /Maps/_Crescent/Shuttles/NCWL/ivarod.yml
+  id: Sunder
+  mapName: 'NCWL Sunder'
+  mapPath: /Maps/_Crescent/Shuttles/NCWL/sunder.yml
   minPlayers: 0
   stations:
-    Ivarod:
+    Sunder:
       stationProto: StandardCrescentVessel
       components:
         - type: VesselIcon
@@ -24,7 +24,7 @@
             sprite: _Crescent/ShipIcons/ifficons.rsi
             state: cruiser
         - type: StationNameSetup
-          mapNameTemplate: 'NCWL Ivarod {1}'
+          mapNameTemplate: 'NCWL Sunder {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
