@@ -347,6 +347,8 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
+  - type: StaticPrice
+    price: 100
 
 - type: entity
   name: SHI-DG03 Blastpop 'Lavender Purple' 6mm
@@ -361,6 +363,8 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
+  - type: StaticPrice
+    price: 100
 
 - type: entity
   name: SHI-DG04 Blastpop 'Lethal Gray' 6mm
@@ -375,6 +379,8 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
+  - type: StaticPrice
+    price: 100
 
 - type: entity
   name: SHI-DG05 Blastpop 'Poison Green' 6mm
@@ -389,6 +395,8 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
+  - type: StaticPrice
+    price: 100
 
 - type: entity
   name: SHI-DG06 Blastpop 'Royal Gold' 6mm
@@ -403,6 +411,8 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
+  - type: StaticPrice
+    price: 100
 
 - type: entity
   name: SHI-DG07 Blastpop 'Fresh Blue' 6mm
@@ -417,6 +427,8 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
+  - type: StaticPrice
+    price: 100
 
 - type: entity
   name: IRM M-8 NeoVolker Tribune .327
