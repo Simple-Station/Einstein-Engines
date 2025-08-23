@@ -104,6 +104,7 @@ research-technology-communard-ivarod = Communard Assault Frigate
 research-technology-communard-stern = Communard Siege Battlecruiser
 research-technology-communard-bogatyr = Communard Battle Mech
 research-technology-communard-commienaut = Communard Juggernaut Suit
+research-technology-communard-vibrokukri = Communard Chengridz Vibrokukri
 
 # SHI
 research-technology-shinohara-clothes = Corporate Uniforms

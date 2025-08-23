@@ -144,31 +144,33 @@
         posX: 600
         posY: 7500
 
-- type: gamePreset
-  id: VladzenaJackal
-  name: Hyperwar | NCWL VS GSC
-  showInVote: true
-  description: Port Vladzena defends against a surprise attack from the GSC Grinning Jackal.
-  rules:
-  - HyperwarNCWLvsGSC
+# lol this doesnt work cause vladzena is gone
 
-- type: entity
-  id: HyperwarNCWLvsGSC
-  parent: BaseGameRule
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: AdventureRule
-    gameMapsByID:
-      Vladzena:
-        gameMapID: Vladzena
-        posX: 0
-        posY: 9000
-        IFFColor: Orange
-      Jackal:
-        gameMapID: Jackal
-        posX: 7794
-        posY: 4500
-        IFFColor: IndianRed
+# - type: gamePreset
+#   id: VladzenaJackal
+#   name: Hyperwar | NCWL VS GSC
+#   showInVote: true
+#   description: Port Vladzena defends against a surprise attack from the GSC Grinning Jackal.
+#   rules:
+#   - HyperwarNCWLvsGSC
+
+# - type: entity
+#   id: HyperwarNCWLvsGSC
+#   parent: BaseGameRule
+#   categories: [ HideSpawnMenu ]
+#   components:
+#   - type: AdventureRule
+#     gameMapsByID:
+#       Vladzena:
+#         gameMapID: Vladzena
+#         posX: 0
+#         posY: 9000
+#         IFFColor: Orange
+#       Jackal:
+#         gameMapID: Jackal
+#         posX: 7794
+#         posY: 4500
+#         IFFColor: IndianRed
 
 - type: gamePreset
   id: Unionfall
@@ -189,7 +191,32 @@
         gameMapID: UnionfallNemesis
         posX: 3000
         posY: 0
-        IFFColor: IndianRed
+        IFFColor: Cyan
+      UnionfallLaelaps1:
+        gameMapID: UnionfallLaelaps
+        posX: 3030
+        posY: 0
+        IFFColor: Cyan
+      UnionfallLaelaps2:
+        gameMapID: UnionfallLaelaps
+        posX: 2970
+        posY: 0
+        IFFColor: Cyan
+      UnionfallClementine:
+        gameMapID: UnionfallClementine
+        posX: -3000
+        posY: 0
+        IFFColor: Orange
+      UnionfallGargut:
+        gameMapID: UnionfallGargut
+        posX: -3030
+        posY: 0
+        IFFColor: Orange
+      UnionfallSasha:
+        gameMapID: UnionfallSasha
+        posX: -2970
+        posY: 0
+        IFFColor: Orange
       UnionfallGraceBarrierDSM:
         gameMapID: UnionfallGraceBarrierDSM
         posX: 3000
@@ -200,11 +227,6 @@
         posX: 1500
         posY: 0
         HideIFF: true
-      Unionfall-Clementine:
-        gameMapID: UnionfallClementine
-        posX: -3000
-        posY: 0
-        IFFColor: Orange
       UnionfallGraceBarrierNCWL:
         gameMapID: UnionfallGraceBarrierNCWL
         posX: -3000

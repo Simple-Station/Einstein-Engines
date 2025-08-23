@@ -76,11 +76,14 @@ entities:
           decals:
             89: -7,-1
             92: -4,-4
+            112: -7,-1
+            115: -4,-4
         - node:
             zIndex: 1
             id: LatticeCornerNW
           decals:
             72: 5,-4
+            95: 5,-4
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -88,12 +91,17 @@ entities:
             81: -7,0
             84: -8,-2
             87: -7,-1
+            104: -7,0
+            107: -8,-2
+            110: -7,-1
         - node:
             zIndex: 1
             id: LatticeCornerSW
           decals:
             75: 8,-1
             78: 9,-2
+            98: 8,-1
+            101: 9,-2
         - node:
             id: LatticeEdgeE
           decals:
@@ -101,12 +109,19 @@ entities:
             83: -8,-2
             86: -7,-1
             90: -4,-4
+            103: -7,0
+            106: -8,-2
+            109: -7,-1
+            113: -4,-4
         - node:
             id: LatticeEdgeN
           decals:
             70: 5,-4
             88: -7,-1
             91: -4,-4
+            93: 5,-4
+            111: -7,-1
+            114: -4,-4
         - node:
             id: LatticeEdgeS
           decals:
@@ -115,12 +130,20 @@ entities:
             79: -7,0
             82: -8,-2
             85: -7,-1
+            96: 8,-1
+            99: 9,-2
+            102: -7,0
+            105: -8,-2
+            108: -7,-1
         - node:
             id: LatticeEdgeW
           decals:
             71: 5,-4
             74: 8,-1
             77: 9,-2
+            94: 5,-4
+            97: 8,-1
+            100: 9,-2
         - node:
             color: '#FFFFFFFF'
             id: TechE
@@ -844,6 +867,31 @@ entities:
     - type: Transform
       pos: 7.5,-1.5
       parent: 2
+  - uid: 302
+    components:
+    - type: Transform
+      pos: -1.5,5.5
+      parent: 2
+  - uid: 303
+    components:
+    - type: Transform
+      pos: -1.5,4.5
+      parent: 2
+  - uid: 304
+    components:
+    - type: Transform
+      pos: 3.5,5.5
+      parent: 2
+  - uid: 305
+    components:
+    - type: Transform
+      pos: 3.5,4.5
+      parent: 2
+  - uid: 306
+    components:
+    - type: Transform
+      pos: 4.5,1.5
+      parent: 2
 - proto: CableHV
   entities:
   - uid: 82
@@ -957,6 +1005,11 @@ entities:
     components:
     - type: Transform
       pos: 8.5,-1.5
+      parent: 2
+  - uid: 301
+    components:
+    - type: Transform
+      pos: -3.5,1.5
       parent: 2
 - proto: Catwalk
   entities:
@@ -1158,6 +1211,13 @@ entities:
         - Group1: Toggle
         9:
         - Group1: Toggle
+    - type: NamedModules
+      buttonNames:
+      - Fire Plasmacasters
+      - Module B
+      - Module C
+      - Module D
+      - Module E
 - proto: DrinkMugOne
   entities:
   - uid: 297
