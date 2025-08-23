@@ -76915,7 +76915,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 2.4755316,-42.190998
       parent: 1
-- proto: WeaponSubMachineGunC20r
+- proto: WeaponSubMachineGunDSMArbiter
   entities:
   - uid: 7788
     components:
