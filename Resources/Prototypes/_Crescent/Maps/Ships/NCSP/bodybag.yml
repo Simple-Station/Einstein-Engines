@@ -8,17 +8,21 @@
   price: 12500
   category: Small
   group: None
-  path: /Maps/_Crescent/Shuttles/NCSP/Bodybag.yml
+  path: /Maps/_Crescent/Shuttles/NCSP/bodybag.yml
 
 - type: gameMap
   id: Bodybag
   mapName: 'GSC Bodybag'
-  mapPath: /Maps/_Crescent/Shuttles/NCSP/Bodybag.yml
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/bodybag.yml
   minPlayers: 0
   stations:
     Bodybag:
       stationProto: StandardCrescentVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: fighter
         - type: StationNameSetup
           mapNameTemplate: 'GSC Bodybag {1}'
           nameGenerator:

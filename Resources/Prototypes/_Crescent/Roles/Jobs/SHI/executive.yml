@@ -24,6 +24,18 @@
   requireAdminNotify: true
   supervisors: job-supervisors-shi
   canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-shi-executive
+      - type: LanguageAdder
+        addSpoken:
+          - Kaishago
+          - Tradeband
+        addUnderstood:
+          - Kaishago
+          - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -71,7 +83,7 @@
     jumpsuit: ClothingUniformJumpsuitExecutiveShinoharaSuit
     shoes: ClothingShoesBootsLaceup
     neck: ClothingNeckTieRed
-    outerClothing: ClothingOuterShinoharaExecSuitjacket
+    outerClothing: ClothingOuterShinoharaExecSuitJacket
     id: ExecutivePDA
     pocket1: TradePassport
     ears: ClothingHeadsetShinohara

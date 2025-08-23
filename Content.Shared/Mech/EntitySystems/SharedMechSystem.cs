@@ -14,6 +14,7 @@ using Content.Shared.Mech.Equipment.Components;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
+using Content.Shared.Shuttles.BUIStates;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Whitelist;
 using Robust.Shared.Containers;
@@ -62,6 +63,7 @@ public abstract class SharedMechSystem : EntitySystem
     {
         SubscribeLocalEvent<MechComponent, MechToggleEquipmentEvent>(OnToggleEquipmentAction);
         SubscribeLocalEvent<MechComponent, MechEjectPilotEvent>(OnEjectPilotEvent);
+        SubscribeLocalEvent<MechComponent, MechRadarUiEvent>(OnOpenRadarUiEvent);
         SubscribeLocalEvent<MechComponent, UserActivateInWorldEvent>(RelayInteractionEvent);
         SubscribeLocalEvent<MechComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<MechComponent, DestructionEventArgs>(OnDestruction);
@@ -98,6 +100,24 @@ public abstract class SharedMechSystem : EntitySystem
             return;
         args.Handled = true;
         TryEject(uid, component);
+    }
+
+    private void OnOpenRadarUiEvent(EntityUid uid, MechComponent component, MechRadarUiEvent args)
+    {
+        if (args.Handled)
+            return;
+        args.Handled = true;
+
+        // Mass scanner logic - open radar console UI
+        var pilot = component.PilotSlot.ContainedEntity;
+        if (pilot == null)
+            return;
+
+        // Raise server event to open radar UI
+        if (_net.IsServer)
+        {
+            RaiseLocalEvent(uid, new MechOpenRadarEvent(EntityManager.GetNetEntity(pilot.Value)));
+        }
     }
 
     private void RelayInteractionEvent(EntityUid uid, MechComponent component, UserActivateInWorldEvent args)
@@ -160,6 +180,7 @@ public abstract class SharedMechSystem : EntitySystem
         _actions.AddAction(pilot, ref component.MechUiActionEntity, component.MechUiAction, mech);
         _actions.AddAction(pilot, ref component.MechEjectActionEntity, component.MechEjectAction, mech);
         _actions.AddAction(pilot, ref component.ToggleActionEntity, component.ToggleAction, mech); //Goobstation Mech Lights toggle action
+        _actions.AddAction(pilot, ref component.MechRadarUiActionEntity, component.MechRadarUiAction, mech);
     }
 
     private void RemoveUser(EntityUid mech, EntityUid pilot)
@@ -584,4 +605,15 @@ public sealed partial class MechEntryEvent : SimpleDoAfterEvent
 [Serializable, NetSerializable]
 public sealed partial class HandleMechEquipmentBatteryEvent : EntityEventArgs
 {
+}
+
+[Serializable, NetSerializable]
+public sealed partial class MechOpenRadarEvent : EntityEventArgs
+{
+    public NetEntity Pilot { get; }
+
+    public MechOpenRadarEvent(NetEntity pilot)
+    {
+        Pilot = pilot;
+    }
 }

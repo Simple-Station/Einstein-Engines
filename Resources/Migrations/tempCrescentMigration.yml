@@ -1,54 +1,21 @@
 # This file holds all of the temporary migrations to get AdventureRule to actually load.
 # This is bad. Please port these properly or replace them in the map.
-
+SpawnPointKommissar: null
 ThrusterUnwelded: Thruster
 
 ActionToggleMagbootsSyndie: null
+ClothingHeadHatSyndicateDoctor: null
+ResearchAndDevelopmentSeverPirate: null
 BedsheetNfsd: null
 StationAdminBankATM: null
 StationAdminBankATMDSM: null
 ResearchAndDevelopmentServerPirate: null
 ResearchAndDevelopmentServerNCWL: null
 ResearchAndDevelopmentServerFamilies: null
-ResearchAndDevelopmentServerImperial: null
 ResearchAndDevelopmentServerBasic: null
 StationAdminBankATMNCWL: null
 StationAdminBankATMSyndicate: null
 StationAdminBankATMCMM: null
-CorporateFabdiskCheshyre: null
-CorporateFabdiskCorvid: null
-CorporateFabdiskDisposable: null
-CorporateFabdiskExhumer: null
-CorporateFabdiskHammerhead: null
-CorporateFabdiskHEV: null
-CorporateFabdiskHimehabu: null
-CorporateFabdiskKorund: null
-CorporateFabdiskMako: null
-CorporateFabdiskParacelsus: null
-CorporateFabdiskRongyu: null
-CorporateFabdiskSabre: null
-CorporateFabdiskShinobu: null
-CorporateFabdiskTermite: null
-ImperialFabdiskArmor: null
-ImperialFabdiskAvionics: null
-ImperialFabdiskCompliance: null
-ImperialFabdiskKhopesh: null
-ImperialFabdiskPlasmaGatling: null
-ImperialFabdiskTurrets: null
-NanotrasenFabdiskWeapons: null
-NanotrasenFabdiskWeaponsSmall: null
-SyndicateFabdiskAviation: null
-SyndicateFabdiskClothes: null
-SyndicateFabdiskCobra: null
-SyndicateFabdiskDrozd: null
-SyndicateFabdiskMayflower: null
-SyndicateFabdiskShuttleWeapons: null
-UnionFabdiskBulldog: null
-UnionFabdiskConscript: null
-UnionFabdiskInfanteerSuit: null
-UnionFabdiskJuggernaut: null
-UnionFabdiskSMG: null
-UnionFabdiskUniforms: null
 
 WeaponTurretPDTSRM: WeaponTurretPDT
 WeaponTurretPDTCMM: WeaponTurretPDT
@@ -134,7 +101,6 @@ PlastitaniumWindowStation: PlastitaniumWindow
 ReagentContainerRaisin: ReagentContainerFlour
 
 BookSecretDocuments: null
-TrackingImplanterNCWL: null
 
 ComputerMarketConsoleNFNormalMarket: ComputerCargoOrders
 CrateMachine: null
@@ -142,7 +108,4 @@ DefaultStationBeaconFactory: DefaultStationBeacon
 DefaultStationBeaconKeep: DefaultStationBeacon
 DefaultStationBeaconQuestions: DefaultStationBeacon
 ReinforcedPlasmaWindowStation: ReinforcedPlasmaWindow
-TrackingImplanterDSMCiv: null
-TrackingImplanterDSMSec: null
-
 ComputerShipyard : ComputerShipyardCrescent

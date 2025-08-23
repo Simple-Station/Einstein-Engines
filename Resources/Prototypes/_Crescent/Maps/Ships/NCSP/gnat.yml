@@ -19,6 +19,10 @@
     Gnat:
       stationProto: StandardCrescentVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: fighter
         - type: StationNameSetup
           mapNameTemplate: 'GSC Gnat {1}'
           nameGenerator:

@@ -21,6 +21,11 @@
     components:
       - type: ChatRank
         rank: crescent-rank-op
+      - type: LanguageAdder
+        addSpoken:
+          - Freespeak
+        addUnderstood:
+          - Freespeak
   weight: 18
   startingGear: TechnicianGear
   alwaysUseSpawner: true

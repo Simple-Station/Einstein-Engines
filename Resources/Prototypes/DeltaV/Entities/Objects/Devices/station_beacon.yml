@@ -5,7 +5,7 @@
   suffix: Conference Room
   components:
   - type: NavMapBeacon
-    text: station-beacon-conference-room
+    text: Briefing
 
 #Medical
 - type: entity
@@ -46,7 +46,7 @@
   suffix: Psych
   components:
   - type: NavMapBeacon
-    text: station-beacon-psych
+    text: Psych
 
 #Epistemics
 - type: entity
@@ -107,7 +107,7 @@
   suffix: Camera Servers
   components:
   - type: NavMapBeacon
-    text: station-beacon-camera-servers
+    text: Cams
 
 #General
 - type: entity

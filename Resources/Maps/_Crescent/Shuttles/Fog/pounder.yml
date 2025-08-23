@@ -1095,7 +1095,7 @@ entities:
     - type: Transform
       pos: -2.5,3.5
       parent: 1
-- proto: MagazineGrenadeBlast
+- proto: MagazineRocketHighYield
   entities:
   - uid: 18
     components:

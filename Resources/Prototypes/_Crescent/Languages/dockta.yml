@@ -3,7 +3,7 @@
   isVisibleLanguage: true
   speech:
     color: "#ffa53f"
-    fontId: Noganas
+    fontId: SpecialElite
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1

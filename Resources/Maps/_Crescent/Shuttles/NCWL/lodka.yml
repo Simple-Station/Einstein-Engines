@@ -436,6 +436,10 @@ entities:
           - 0
         chunkSize: 4
     - type: GasTileOverlay
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: industrial
     - type: RadiationGridResistance
     - type: BecomesStation
       id: Lodka

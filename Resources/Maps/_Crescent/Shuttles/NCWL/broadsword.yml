@@ -127,6 +127,10 @@ entities:
     - type: GasTileOverlay
     - type: BecomesStation
       id: Broadsword
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: fighter
 - proto: AAAHardpointFixed
   entities:
   - uid: 10
@@ -465,20 +469,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 0.5,0.5
-      parent: 1
-- proto: SpawnPointSanitar
-  entities:
-  - uid: 40
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 0.5,3.5
-      parent: 1
-  - uid: 86
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 0.5,2.5
       parent: 1
 - proto: SubstationWallBasic
   entities:

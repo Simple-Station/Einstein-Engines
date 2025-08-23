@@ -1,8 +1,38 @@
-#ncwl#
+#ncwl-2#
 
 - type: entity
   parent: IDCardStandard
-  id: NCWLIDCardKommissar
+  id: NCWLIDCardWorker
+  name: NCWL ID card
+  components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcentcom
+  - type: PresetIdCard
+    job: WorkerNCWL
+
+- type: entity
+  parent: IDCardStandard
+  id: NCWLIDCardFactionLeader
+  name: NCWL ID card
+  components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcentcom
+  - type: PresetIdCard
+    job: CommandantNCWL
+
+- type: entity
+  parent: IDCardStandard
+  id: NCWLIDCardHomeguardLeader
   name: NCWL ID card
   components:
   - type: Currency
@@ -17,22 +47,22 @@
 
 - type: entity
   parent: IDCardStandard
-  id: NCWLIDCardSanitar
+  id: NCWLIDCardHomeguardSquadCaptain
   name: NCWL ID card
   components:
   - type: Currency
     price:
       DogtagNCWL: 1
-  - type: PresetIdCard
-    job: SanitarNCWL
   - type: Sprite
     layers:
     - state: default
     - state: idcentcom
+  - type: PresetIdCard
+    job: FleetkapitanNCWL
 
 - type: entity
   parent: IDCardStandard
-  id: NCWLIDCardArtificer
+  id: NCWLIDCardHomeguardSoldat
   name: NCWL ID card
   components:
   - type: Currency
@@ -43,11 +73,11 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: ArtificerNCWL
+    job: PartisanNCWL
 
 - type: entity
   parent: IDCardStandard
-  id: NCWLIDCardDoktor
+  id: NCWLIDCardMedicalWorker
   name: NCWL ID card
   components:
   - type: Currency
@@ -58,11 +88,11 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: DoktorNCWL
+    job: DoctorNCWL
 
 - type: entity
   parent: IDCardStandard
-  id: NCWLIDCardAdministrator
+  id: NCWLIDCardLogisticLeader
   name: NCWL ID card
   components:
   - type: Currency
@@ -73,11 +103,12 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: AdministratorNCWL
+    job: IndustryTaskmasterNCWL
+
 
 - type: entity
   parent: IDCardStandard
-  id: NCWLIDCardKapitan
+  id: NCWLIDCardEngineeringLeader
   name: NCWL ID card
   components:
   - type: Currency
@@ -88,22 +119,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: KapitanNCWL
-
-- type: entity
-  parent: IDCardStandard
-  id: NCWLIDCardKadet
-  name: NCWL ID card
-  components:
-  - type: Currency
-    price:
-      DogtagNCWL: 1
-  - type: Sprite
-    layers:
-    - state: default
-    - state: idcentcom
-  - type: PresetIdCard
-    job: KadetNCWL
+    job: WorkerOverbossNCWL
 
 #syndicate#
 

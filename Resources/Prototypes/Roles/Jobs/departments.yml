@@ -1,3 +1,8 @@
+#IF YOURE WONDERING WHERE ALL THE NON-CONSCRIPT JOBS WENT
+#JUST RE-ENABLE THEM AND SET editorHidden: false
+#YOU'RE WELCOME
+# .2 - 2025
+
 - type: department
   id: Logistics
   description: department-Cargo-description
@@ -15,22 +20,7 @@
   - GliessianDockmaster
   - GliessianSheriff
   - Spacer
- # - Botanist
- # - Boxer
- # - Chaplain
- # - Chef
- # - Clown
-#  - HeadOfPersonnel
- # - Lawyer
- # - Librarian
- # - Mime
- # - Musician
-  - Contractor
- # - Reporter
- # - Visitor
- # - Zookeeper
- # - ServiceWorker
-  enabled: true
+  editorHidden: false
 
 - type: department
   id: Command
@@ -38,7 +28,6 @@
   color: "#334E6D"
   roles:
   - CentralCommandOfficial
-  - KommissarNCWL
   - HeadOfPersonnel # Not shown but needed here for playtime
   - HeadOfSecurity # Not shown but needed here for playtime
 #  - ChiefMedicalOfficer
@@ -88,20 +77,23 @@
   color: "#9FED58"
   weight: -91
   primary: false
+  editorHidden: true
+
 - type: department
   id: NCWL
   description: department-NCWL-description
   color: "#FFD580"
   weight: 100
   roles:
-  - AdministratorNCWL
+  - CommandantNCWL
   - KommissarNCWL
-  - SanitarNCWL
-  - ArtificerNCWL
-  - DoktorNCWL
-  - KapitanNCWL
-  - KadetNCWL
-  enabled: true
+  - FleetkapitanNCWL
+  - PartisanNCWL
+  - DoctorNCWL
+  - WorkerOverbossNCWL
+  - IndustryTaskmasterNCWL
+  - WorkerNCWL
+  editorHidden: false
 
 - type: department
   id: NCSP
@@ -121,7 +113,7 @@
   - CyberdawnTechNCSP
   - ForemanNCSP
   - ShipbreakerNCSP
-  enabled: true
+  editorHidden: false
 
 - type: department
   id: DSM
@@ -144,7 +136,7 @@
   - GovernorDSM
   - AdvocatusDSM
   - ArchmaesterDSM
-  enabled: true
+  editorHidden: false
 
 - type: department
   id: SRM
@@ -157,8 +149,7 @@
   - HunterSRM
   - MontagneSRM
   - OverseerSRM
-  enabled: false
-  editorHidden: false # i just like to see them for the numbers , SPCR 2025
+  editorHidden: true # i just like to see them for the numbers , SPCR 2025
 
 - type: department
   id: SHI
@@ -172,7 +163,7 @@
   - CorpsecSHI
   - EmployeeSHI
   - MedtechSHI
-  enabled: false
+  editorHidden: false
 
 - type: department
   id: CMM
@@ -187,7 +178,7 @@
   - WatchmasterCMM
   - DeputyMarshalCMM
   - MarshalCMM
-  enabled: true
+  editorHidden: true
 
 - type: department
   id: TAP
@@ -204,7 +195,7 @@
   - BeltrunnerTAP
   - DraugrTAP
   - ServileTAP
-  enabled: true
+  editorHidden: true
 
 - type: department
   id: ATH
@@ -225,5 +216,44 @@
   - ChirurgeonATH
   - VorarbeiterATH
   - ArbeiterATH
-  enabled: true
-  editorHidden: false # i just like to see them for the numbers , SPCR 2025
+  editorHidden: true # i just like to see them for the numbers , SPCR 2025
+
+  # CONSCRIPT
+
+- type: department
+  id: NCWL-W
+  description: department-NCWL-description
+  color: "#FFD580"
+  weight: 11
+  roles:
+  - ConscriptLeaderNCWL
+  - ConscriptOfficerNCWL
+  - ConscriptSniperNCWL
+  - ConscriptGunnerNCWL
+  - ConscriptDoctorNCWL
+  - ConscriptShotgunNCWL
+  - ConscriptSubmachinegunNCWL
+  - ConscriptRiflemanNCWL
+  - ConscriptCadetNCWL
+  - ConscriptShipCaptainNCWL
+  - ConscriptShipCrewNCWL
+  editorHidden: true
+
+- type: department
+  id: DSM-W
+  description: department-DSM-description
+  color: "#684871"
+  weight: 10
+  roles:
+  - ConscriptLeaderDSM
+  - ConscriptOfficerDSM
+  - ConscriptSniperDSM
+  - ConscriptGunnerDSM
+  - ConscriptDoctorDSM
+  - ConscriptShotgunDSM
+  - ConscriptSubmachinegunDSM
+  - ConscriptRiflemanDSM
+  - ConscriptCadetDSM
+  - ConscriptShipCaptainDSM
+  - ConscriptShipCrewDSM
+  editorHidden: true

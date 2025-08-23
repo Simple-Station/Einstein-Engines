@@ -18,6 +18,7 @@
         - type: StationJobs
           overflowJobs: []
           availableJobs:
-            AdministratorNCWL: [ 1, 1 ]
+            CommandantNCWL: [ 1, 1 ]
             KommissarNCWL: [ 1, 1 ]
-            SanitarNCWL: [ 15, 15 ]
+            FleetkapitanNCWL: [ 5, 5 ]
+            PartisanNCWL: [ 10, 10 ]

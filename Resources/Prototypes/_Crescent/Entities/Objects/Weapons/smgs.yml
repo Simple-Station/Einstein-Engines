@@ -2,7 +2,7 @@
   name: PTA P-M50 Vektor 6mm
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunPTAVektor
-  description: A cheap, open-bolt copy of the Vector. Favored by mercs on a budget. Chambered in small 6mm rounds.
+  description: A cheap, open-bolt copy of the Vector. Unlike the real vector this one doesnt have the signature Super V recoil mitigation system. Chambered in small 6mm rounds.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/vektor.rsi
@@ -31,14 +31,17 @@
         whitelist:
           tags:
             - CartridgePistol6mm
+  - type: Item
+    shape:
+    - 0,0,2,1
   - type: Gun
     minAngle: 24
     maxAngle: 45
     angleIncrease: 4
     angleDecay: 16
-    fireRate: 8
+    fireRate: 16.67 #i know this seems very high but the gun cant hit anything at a distance of 3-2 tiles anyway
     soundGunshot:
-      collection: SMG_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/smg_1/smg_gunshot_1.ogg
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -63,7 +66,7 @@
   - type: Gun
     fireRate: 7
     soundGunshot:
-      collection: SMG_3_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/smg_3/smg_gunshot_2.ogg
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -92,7 +95,7 @@
   - type: Gun
     fireRate: 7
     soundGunshot:
-      collection: SMG_2_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/smg_2/smg_gunshot_3.ogg
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -120,7 +123,7 @@
     fireRate: 7
     selectedMode: FullAuto
     soundGunshot:
-      collection: SMG_2_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/smg_2/smg_gunshot_3.ogg
     availableModes:
     - FullAuto
   - type: ItemSlots
@@ -166,7 +169,7 @@
       fireRate: 6
       selectedMode: FullAuto
       soundGunshot:
-        collection: SMG_3_Gunshots
+        path: /Audio/_Crescent/Weapons/Guns/smg_3/smg_gunshot_2.ogg
       availableModes:
         - FullAuto
     - type: ItemSlots
@@ -194,10 +197,10 @@
     - type: Appearance
 
 - type: entity
-  name: SHI M221s Phantom 9x19mm
+  name: SHI M221s Phantom 6mm
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunSabre
-  description: A cheap submachine gun that cuts a few corners and features to deliver a reliable enough product, but hey, at least it comes with a free suppressor. Chambered in 9x19mm PSTF.
+  description: A cheap submachine gun that cuts a corners and features to deliver a reliable enough product, but hey, at least it comes with a free suppressor . Chambered in 6mm PSTF.
   components:
   - type: StaticPrice
     price: 1250
@@ -210,11 +213,14 @@
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/sabre.rsi
+  - type: Item
+    shape:
+    - 0,0,2,1
   - type: Gun
-    fireRate: 7
+    fireRate: 8
     selectedMode: FullAuto
     soundGunshot:
-      collection: Supressed_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/supressed_1/supressed_gunshot_2.ogg
       params:
         volume: -10
     availableModes:
@@ -223,20 +229,20 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazinePistolSubMachineGun
+        startingItem: MagazinePistol6mmSmg
         insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazinePistolSubMachineGun
+            - MagazineSMG6mm
       gun_chamber:
         name: Chamber
-        startingItem: CartridgePistol
+        startingItem: CartridgePistol6mm
         priority: 1
         whitelist:
           tags:
-            - CartridgePistol
+            - CartridgePistol6mm
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -244,7 +250,7 @@
   - type: Appearance
 
 - type: entity
-  name: HP MK-1 Beetle 9x19mm
+  name: HP Mak-11 Beetle 9x19mm
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunBeetle
   description: A crude weapon manufactured by the Hunter's Pride merchant's guild. Intended as nothing more than cheap armament to stuff into the hands of expendable fodder.
@@ -260,11 +266,18 @@
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/beetle.rsi
+  - type: Item
+    shape:
+    - 0,0,2,1
   - type: Gun
-    fireRate: 6
+    minAngle: 2
+    maxAngle: 20
+    angleIncrease: 4
+    angleDecay: 16
+    fireRate: 8
     selectedMode: FullAuto
     soundGunshot:
-      collection: SMG_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/smg_1/smg_gunshot_1.ogg
     availableModes:
     - FullAuto
   - type: ItemSlots
@@ -307,12 +320,12 @@
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
     soundGunshot:
-      collection: SMG_3_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/smg_3/smg_gunshot_2.ogg
   - type: Gun
     fireRate: 7
     selectedMode: Burst
     soundGunshot:
-      collection: SMG_3_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/smg_3/smg_gunshot_2.ogg
     availableModes:
     - SemiAuto
     - Burst

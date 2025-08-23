@@ -1,0 +1,64 @@
+- type: job
+  id: ConscriptSniperDSM
+  name: job-name-conscript-dsm-amr
+  description: job-description-conscript-dsm-amr #change me later
+  playTimeTracker: ConscriptDSM
+  weight: 5
+  startingGear: ConscriptSniperDSMGear
+  alwaysUseSpawner: true
+  icon: "JobIconUnionfallDSMSpecialist"
+  requirements:
+    - !type:FactionRequirement
+      factionID: "DSM"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - Muted
+        - WheelchairBound
+  requireAdminNotify: false
+  supervisors: job-supervisors-conscript-dsm
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-dsm-specialist
+      - type: HullrotFaction
+        faction: DSM
+  access:
+  - Command
+  - Maintenance
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+  - Empire
+
+- type: startingGear
+  id: ConscriptSniperDSMGear
+  equipment:
+    head: ClothingHeadHelmetImperialKnightCommanderHelmet
+    neck: ClothingNeckIFFCyan
+    mask: ClothingMaskImperialCombatGasmask
+    jumpsuit: ClothingUniformJumpsuitImperialCombat
+    outerClothing: ClothingOuterArmorImperialArmorPrestige
+    shoes: ClothingShoesBootsMagDSM
+    belt: ClothingBeltAssaultFilledSniper
+    gloves: ClothingHandsGlovesImperialLonggloves
+    back: ClothingBackpackDSM
+    pocket1: DoubleEmergencyOxygenTankFilled
+    pocket2: GrenadeFlashBang
+    ears: ClothingHeadsetEmpire
+    id: LevymanPDA
+    suitstorage: WeaponAntimaterielDSMLeveller
+    eyes: ClothingEyesHudSecurity
+  inhand:
+    - BookUnionfallDSMGuide
+    - BoxRoundsAntiMateriel
+  storage:
+    back:
+      - VoidsuitKitDSM
+      - BoxMRE
+      - BoxFlare
+      - WeaponPistolNeoVolker

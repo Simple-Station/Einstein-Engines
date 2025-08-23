@@ -9,8 +9,10 @@
         - Wall
     - type: Sprite
       sprite: _Crescent/Structures/reinforcedPlastitanium.rsi
+      state: rplastitaniumfull
     - type: Icon
-      sprite: Structures/Walls/reinforcedPlastitanium.rsi
+      sprite: _Crescent/Structures/reinforcedPlastitanium.rsi
+      state: rplastitaniumfull
     - type: IconSmooth
       key: walls
       base: rplastitanium
@@ -30,3 +32,47 @@
                   max: 1
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
+
+- type: entity
+  parent: WallHeavyPlastitanium
+  id: WallHeavyPlastitaniumFilledCorner
+  name: Reinforced Plastitanium Corner
+  suffix: Filled
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: _Crescent/Structures/heavyPlastitaniumFilledCorners.rsi
+    state: state0
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+  - type: Icon
+    sprite: _Crescent/Structures/heavyPlastitaniumFilledCorners.rsi
+    state: state0
+
+- type: entity
+  parent: WallHeavyPlastitanium
+  id: WallHeavyPlastitaniumHollowCorner
+  name: Reinforced Plastitanium Corner
+  suffix: Hollow
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: _Crescent/Structures/heavyPlastitaniumHollowCorners.rsi
+    state: state0
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+  - type: Icon
+    sprite: _Crescent/Structures/heavyPlastitaniumHollowCorners.rsi
+    state: state0

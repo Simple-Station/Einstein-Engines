@@ -372,6 +372,7 @@
     fixedRotation: false
   - type: EmbeddableProjectile
     deleteOnRemove: true
+    autoRemoveDuration: 300
   - type: Fixtures
     fixtures:
       projectile:
@@ -387,7 +388,7 @@
     ignited: true
     temperature: 1000
   - type: TimedDespawn
-    lifetime: 240
+    lifetime: 300
   - type: AmbientSound
     enabled: true
     volume: 0

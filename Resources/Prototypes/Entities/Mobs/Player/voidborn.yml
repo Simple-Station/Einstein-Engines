@@ -1,0 +1,6 @@
+- type: entity
+  save: false
+  name: Urist McFog
+  parent: MobVoidbornBase
+  id: MobVoidborn
+  description: "You can hear dozens of voices crying out for help, emanating from the voidborn before you."

@@ -5,7 +5,7 @@
   id: Vanguard
   name: NCWL Vanguard
   description: A communard gunship, sees use primarily as an escort vessel.
-  price: 35000
+  price: 40000
   category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/NCWL/vanguard.yml
@@ -19,6 +19,10 @@
     Vanguard:
       stationProto: StandardCrescentVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: fighter
         - type: StationNameSetup
           mapNameTemplate: 'NCWL Vanguard {1}'
           nameGenerator:

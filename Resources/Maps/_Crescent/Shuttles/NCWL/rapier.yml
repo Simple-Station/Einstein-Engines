@@ -138,6 +138,10 @@ entities:
           - 0
           - 0
         chunkSize: 4
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: fighter
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: BecomesStation
@@ -530,13 +534,6 @@ entities:
 - proto: SpawnPointLatejoin
   entities:
   - uid: 74
-    components:
-    - type: Transform
-      pos: 0.5,2.5
-      parent: 1
-- proto: SpawnPointSanitar
-  entities:
-  - uid: 73
     components:
     - type: Transform
       pos: 0.5,2.5

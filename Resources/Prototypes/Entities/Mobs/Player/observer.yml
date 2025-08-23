@@ -44,7 +44,7 @@
     - state: animated
       shader: unshaded
   - type: ContentEye
-    maxZoom: 1.44,1.44
+    maxZoom: 2,2
   - type: Eye
     drawFov: false
     visMask:
@@ -71,7 +71,22 @@
   - type: PointLight
     radius: 6
     enabled: false
-
+  - type: UserInterface
+    interfaces:
+      enum.RadarConsoleUiKey.Key:
+        type: RadarConsoleBoundUserInterface
+      enum.CrewMonitoringUIKey.Key:
+        type: CrewMonitoringBoundUserInterface
+  - type: IntrinsicUI
+    uis:
+      enum.RadarConsoleUiKey.Key:
+        toggleAction: ActionAGhostShowRadar
+      enum.CrewMonitoringUIKey.Key:
+        toggleAction: ActionAGhostShowCrewMonitoring
+  - type: CrewMonitoringConsole
+  - type: RadarConsole
+    followEntity: true
+    keepWorldAligned: true
 
 - type: entity
   id: ActionGhostBoo

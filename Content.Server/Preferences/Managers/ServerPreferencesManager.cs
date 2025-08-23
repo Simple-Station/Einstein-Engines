@@ -90,6 +90,24 @@ namespace Content.Server.Preferences.Managers
                 await SetProfile(userId, message.Slot, message.Profile);
         }
 
+        public async Task SetProfileNoChecks(NetUserId userId, int slot, ICharacterProfile profile)
+        {
+            if (!_cachedPlayerPrefs.TryGetValue(userId, out var prefsData) || !prefsData.PrefsLoaded)
+            {
+                _sawmill.Error($"Tried to modify user {userId} preferences before they loaded.");
+                return;
+            }
+            var curPrefs = prefsData.Prefs!;
+            var session = _playerManager.GetSessionById(userId);
+            var profiles = new Dictionary<int, ICharacterProfile>(curPrefs.Characters)
+            {
+                [slot] = profile
+            };
+            prefsData.Prefs = new PlayerPreferences(profiles, slot, curPrefs.AdminOOCColor);
+            if (ShouldStorePrefs(session.Channel.AuthType))
+                await _db.SaveCharacterSlotAsync(userId, profile, slot);
+        }
+
         public async Task SetProfile(NetUserId userId, int slot, ICharacterProfile profile)
         {
             if (!_cachedPlayerPrefs.TryGetValue(userId, out var prefsData) || !prefsData.PrefsLoaded)
@@ -123,11 +141,10 @@ namespace Content.Server.Preferences.Managers
                     }
 
                     // ha ha ha ha
-                    if (humanoidEditingTarget.BankBalance != humanProfile.BankBalance &&
-                        humanProfile.BankBalance > humanoidEditingTarget.BankBalance)
+                    if (humanoidEditingTarget.BankBalance != humanProfile.BankBalance)
                     {
-                        _sawmill.Info(
-                            $"{session.Name} has tried to give their character money. They are using a modified client!");
+                        if(humanProfile.BankBalance > humanoidEditingTarget.BankBalance)
+                            _sawmill.Info($"{session.Name} has tried to give their character money. They are using a modified client!");
                         profile = humanProfile.WithBank(humanoidEditingTarget.BankBalance);
                     }
                 }

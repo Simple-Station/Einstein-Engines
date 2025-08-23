@@ -326,6 +326,10 @@ entities:
           - 0
         chunkSize: 4
     - type: GasTileOverlay
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: corvette
     - type: RadiationGridResistance
     - type: BecomesStation
       id: Bogatyr
@@ -2218,25 +2222,6 @@ entities:
     components:
     - type: Transform
       pos: 7.372225,-2.4523332
-      parent: 2
-- proto: SpawnPointKapitan
-  entities:
-  - uid: 502
-    components:
-    - type: Transform
-      pos: 0.5,4.5
-      parent: 2
-- proto: SpawnPointSanitar
-  entities:
-  - uid: 503
-    components:
-    - type: Transform
-      pos: -4.5,-1.5
-      parent: 2
-  - uid: 504
-    components:
-    - type: Transform
-      pos: 5.5,-2.5
       parent: 2
 - proto: StairStageDark
   entities:

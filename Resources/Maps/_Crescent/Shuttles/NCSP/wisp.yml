@@ -246,9 +246,10 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
-    - type: CrescentEMPTechnologyTier
-      powerLossMarkiplier: 1.5
-      eMPMultiplier: 3
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: fighter
     - type: BecomesStation
       id: Wisp
     - type: PacifistShipHullmod

@@ -8,3 +8,6 @@
     sprite: _Crescent/Objects/Misc/shuttledeed.rsi
     layers:
       - state: ShipDeed
+  - type: Tag
+    tags:
+    - ShipDeed

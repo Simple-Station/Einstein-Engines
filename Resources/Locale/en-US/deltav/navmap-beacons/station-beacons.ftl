@@ -2,7 +2,7 @@ station-beacon-epistemics = Epistemics
 station-beacon-mystagogue = Mystagogue
 
 station-beacon-logistics = Logistics
-station-beacon-logistics-reception = Logistics
+station-beacon-manufacturing = Manufacturing
 station-beacon-lo = LO
 
 station-beacon-conference-room = Conference Room

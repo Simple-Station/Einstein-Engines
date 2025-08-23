@@ -23,7 +23,7 @@
         startingItem: ShellShotgun
         priority: 1
         whitelist:
-          tags: 
+          tags:
             - ShellShotgun
   - type: ContainerContainer
     containers:
@@ -35,6 +35,7 @@
     soundBoltClosed: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
     soundBoltOpened: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
     soundRack: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+  - type: Clothing
     quickEquip: false
     slots:
     - Belt
@@ -92,10 +93,10 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      collection: Pistol_2_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/pistol_2/pistol_gunshot_1.ogg
   - type: StaticPrice
     price: 750
-  
+
 - type: entity
   name: NCSP DE-7 Deagle .327
   parent: BaseWeaponPistol
@@ -119,7 +120,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      collection: Pistol_3_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/pistol_3/pistol_gunshot_2.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -140,7 +141,7 @@
             - CartridgeMagnum
   - type: StaticPrice
     price: 1250
-  
+
 - type: entity
   name: NCWL T-91 Quasar .327
   parent: BaseWeaponPistol
@@ -164,7 +165,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      collection: Pistol_2_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/pistol_2/pistol_gunshot_1.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -205,7 +206,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      collection: Pistol_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/pistol_1/pistol_gunshot_3.ogg
   - type: StaticPrice
     price: 900
 
@@ -228,7 +229,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      collection: Pistol_2_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/pistol_2/pistol_gunshot_1.ogg
   - type: StaticPrice
     price: 1000
 
@@ -248,7 +249,7 @@
   - type: MagazineVisuals
     magState: mag
     steps: 3
-    zeroVisible: true 
+    zeroVisible: true
   - type: Gun
     minAngle: 1
     maxAngle: 19
@@ -260,7 +261,7 @@
     - SemiAuto
     - FullAuto
     soundGunshot:
-      collection: Pistol_3_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/pistol_3/pistol_gunshot_2.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -315,20 +316,21 @@
     - suitStorage
     - Belt
   - type: Gun
-    fireRate: 3
-    selectedMode: SemiAuto
+    shotsPerBurst: 20
+    selectedMode: Burst
     availableModes:
-      - SemiAuto
-      - FullAuto
+    - Burst
+    burstFireRate: 24
+    burstCooldown: 0.5
     soundGunshot:
-      collection: Pistol_2_Gunshots
-  - type: MagazineVisuals
-    magState: mag
-    steps: 1
-    zeroVisible: true
-  - type: Appearance
+      path: /Audio/_Crescent/Weapons/Guns/pistol_1/pistol_gunshot_3.ogg
+    fireOnDropChance: .6
   - type: StaticPrice
-    price: 500
+    price: 100
+  - type: BallisticAmmoProvider
+    proto: CartridgePistol6mm
+    capacity: 20
+    cycleable: false
 
 #single use pistols actual
 
@@ -345,19 +347,6 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Gun
-    fireRate: 2
-    selectedMode: SemiAuto
-    availableModes:
-    - SemiAuto
-    soundGunshot:
-      collection: Pistol_1_Gunshots
-  - type: StaticPrice
-    price: 100
-  - type: BallisticAmmoProvider
-    proto: CartridgePistol6mm
-    capacity: 20
-    cycleable: false
 
 - type: entity
   name: SHI-DG03 Blastpop 'Lavender Purple' 6mm
@@ -372,18 +361,6 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Gun
-    fireRate: 2
-    availableModes:
-    - SemiAuto
-    soundGunshot:
-      collection: Pistol_1_Gunshots
-  - type: StaticPrice
-    price: 100
-  - type: BallisticAmmoProvider
-    proto: CartridgePistol6mm
-    capacity: 20
-    cycleable: false
 
 - type: entity
   name: SHI-DG04 Blastpop 'Lethal Gray' 6mm
@@ -398,18 +375,6 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Gun
-    fireRate: 2
-    availableModes:
-    - SemiAuto
-    soundGunshot:
-      collection: Pistol_1_Gunshots
-  - type: StaticPrice
-    price: 100
-  - type: BallisticAmmoProvider
-    proto: CartridgePistol6mm
-    capacity: 20
-    cycleable: false
 
 - type: entity
   name: SHI-DG05 Blastpop 'Poison Green' 6mm
@@ -424,18 +389,6 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Gun
-    fireRate: 2
-    availableModes:
-    - SemiAuto
-    soundGunshot:
-      collection: Pistol_1_Gunshots
-  - type: StaticPrice
-    price: 100
-  - type: BallisticAmmoProvider
-    proto: CartridgePistol6mm
-    capacity: 20
-    cycleable: false
 
 - type: entity
   name: SHI-DG06 Blastpop 'Royal Gold' 6mm
@@ -450,18 +403,6 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Gun
-    fireRate: 2
-    availableModes:
-    - SemiAuto
-    soundGunshot:
-      collection: Pistol_1_Gunshots
-  - type: StaticPrice
-    price: 100
-  - type: BallisticAmmoProvider
-    proto: CartridgePistol6mm
-    capacity: 20
-    cycleable: false
 
 - type: entity
   name: SHI-DG07 Blastpop 'Fresh Blue' 6mm
@@ -476,24 +417,12 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Gun
-    fireRate: 2
-    availableModes:
-    - SemiAuto
-    soundGunshot:
-      collection: Pistol_1_Gunshots
-  - type: StaticPrice
-    price: 100
-  - type: BallisticAmmoProvider
-    proto: CartridgePistol6mm
-    capacity: 20
-    cycleable: false
 
 - type: entity
-  name: IRM M-8 NeoVolker Tribune .45
+  name: IRM M-8 NeoVolker Tribune .327
   parent: BaseWeaponPistol
   id: WeaponPistolNeoVolker
-  description: An antiquated, outdated Imperial sidearm, attributed to ancient Terran designs. Fires .45 rounds.
+  description: An antiquated, outdated Imperial sidearm, attributed to ancient Terran designs. Fires .327 rounds.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/tribune.rsi
@@ -539,7 +468,7 @@
 
 
 - type: entity
-  name: PTA BA-6 Rongyu 6mm 
+  name: PTA BA-6 Rongyu 6mm
   parent: BaseWeaponPistol
   id: WeaponPistolRongyu
   description: A cheap sidearm produced by Pang Tai Arms. Made for the merc on a budget. Chambered in small 6mm rounds.
@@ -562,7 +491,7 @@
     - SemiAuto
     - Burst
     soundGunshot:
-      collection: Pistol_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/pistol_1/pistol_gunshot_3.ogg
   - type: ItemSlots
     slots:
       gun_magazine:

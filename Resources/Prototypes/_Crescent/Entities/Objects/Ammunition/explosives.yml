@@ -1,0 +1,85 @@
+# Rockets
+
+- type: entity
+  id: CartridgeSmallRocket
+  name: PG-2 grenade
+  parent: BaseItem
+  description: A 80mm warhead designed for the RPG-2 launcher. Has a cone tipped shape.
+  components:
+  - type: Tag
+    tags:
+      - CartridgeSmallRocket
+  - type: Item
+    shape:
+    - 0,0,0,3
+  - type: CartridgeAmmo
+    proto: BulletSmallRocket
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/small_rocket.rsi
+    state: he
+  - type: StaticPrice
+    price: 20
+
+- type: entity
+  id: Cartridge84mmRocket
+  name: 84mm rocket
+  parent: BaseItem
+  components:
+  - type: Tag
+    tags:
+      - Cartridge84mmRocket
+  - type: Item
+    size: Small
+  - type: CartridgeAmmo
+    proto: Bullet84mmRocket
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    state: rpg
+  - type: StaticPrice
+    price: 20
+
+## 84mm
+
+- type: entity
+  id: BaseBullet84mmRocket
+  name: shell (84mm)
+  parent: BaseCartridge
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - ShellRocket84mm
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Explosives/gustavrocket.rsi
+    layers:
+      - state: solid
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+    state: "solid"
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Weapons/Guns/Casings/casing_fall_1.ogg
+      params:
+        volume: -1
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Weapons/Guns/Casings/casing_fall_2.ogg
+      params:
+        volume: -1
+
+- type: entity
+  id: Bullet84mmRocketHEAT
+  name: shell (84mm HEAT)
+  parent: BaseBullet84mmRocket
+  components:
+    - type: Sprite
+      layers:
+        - state: heat
+          map: [ "enum.AmmoVisualLayers.Base" ]
+    - type: CartridgeAmmo
+      proto: Bullet84mmRocket
+    - type: SpentAmmoVisuals
+      state: "heat"

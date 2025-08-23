@@ -55,9 +55,26 @@
     autoRot: true
     offset: "0, 0.4" # shine from the top, not bottom of the computer
     castShadows: false
+  - type: SpamEmitSoundRequirePower
+  - type: SpamEmitSound
+    minInterval: 20
+    maxInterval: 60
+    sound:
+      collection: ComputerSFX
+      params:
+        volume: -3
+        maxDistance: 5
+        variation: 0.15
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    sound:
+      path: /Audio/_Crescent/Ambience/computer_loop.ogg
+      params:
+        volume: -12
+        maxDistance: 5
   - type: EmitSoundOnUIOpen
     sound:
-      collection: Keyboard
+      path: /Audio/_Crescent/Ambience/Computers/type.ogg
       params:
         volume: -1
         variation: 0.10

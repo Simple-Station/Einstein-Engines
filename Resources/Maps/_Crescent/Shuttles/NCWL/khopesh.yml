@@ -141,6 +141,10 @@ entities:
           - 0
         chunkSize: 4
     - type: GasTileOverlay
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: fighter
     - type: BecomesStation
       id: Khopesh
 - proto: AAAHardpointFixed
@@ -459,13 +463,6 @@ entities:
 - proto: SpawnPointLatejoin
   entities:
   - uid: 53
-    components:
-    - type: Transform
-      pos: 0.5,3.5
-      parent: 1
-- proto: SpawnPointSanitar
-  entities:
-  - uid: 54
     components:
     - type: Transform
       pos: 0.5,3.5

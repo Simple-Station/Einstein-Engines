@@ -27,7 +27,7 @@
   - type: ItemToggleMeleeWeapon
     activatedDamage:
       types:
-        Blunt: 18
+        Blunt: 20
   - type: ItemToggleDamageOtherOnHit
   - type: ItemToggleSize
     activatedSize: Normal
@@ -38,10 +38,10 @@
     duration: 1.5
     dropHeldItemsBehavior: NoDrop
   - type: MeleeWeapon
-    attackRate: 1.25
-    bluntStaminaDamageFactor: 1.5
-    heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 2.5
+    attackRate: 1.15
+    bluntStaminaDamageFactor: 1.75
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 8
     maxTargets: 1
     angle: 40
     damage:

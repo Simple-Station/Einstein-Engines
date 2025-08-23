@@ -22,25 +22,34 @@
     sprite: Objects/Devices/pda.rsi
     state: pda
   - type: Pda
-    state: pda
+    shipDeedSlot:
+      priority: -4
+      whitelist:
+        tags:
+          - ShipDeed
+    passportSlot:
+      priority: -3
+      whitelist:
+        components:
+          - Passport
     paiSlot:
       priority: -2
       whitelist:
         components:
-        - PAI
+          - PAI
     penSlot:
       startingItem: Pen
       priority: -1
       whitelist:
         tags:
-        - Write
+          - Write
     idSlot:
       name: access-id-card-component-default
       ejectSound: /Audio/Machines/id_swipe.ogg
       insertSound: /Audio/Machines/id_insert.ogg
       whitelist:
         components:
-        - IdCard
+          - IdCard
   - type: Item
     size: Small
   - type: ContainerContainer
@@ -48,6 +57,8 @@
       PDA-id: !type:ContainerSlot {}
       PDA-pen: !type:ContainerSlot {}
       PDA-pai: !type:ContainerSlot {}
+      PDA-passport: !type:ContainerSlot {}
+      PDA-shipdeed: !type:ContainerSlot {}
       Cartridge-Slot: !type:ContainerSlot {}
       program-container: !type:Container
   - type: ItemSlots
@@ -484,34 +495,6 @@
 
 - type: entity
   parent: BasePDA
-  id: LibrarianPDA
-  name: librarian PDA
-  description: Smells like books.
-  components:
-  - type: Pda
-    id: LibrarianIDCard
-    state: pda-library
-    penSlot:
-      startingItem: LuxuryPen
-      priority: -1
-      whitelist:
-        tags:
-        - Write
-  - type: PdaBorderColor
-    borderColor: "#858585"
-  - type: Icon
-    state: pda-library
-  - type: CartridgeLoader
-    preinstalled:
-      - CrewManifestCartridge
-      - NotekeeperCartridge
-      - NewsReaderCartridge
-      - GlimmerMonitorCartridge
-      - NanoChatCartridge
-      - PsiWatchCartridge
-
-- type: entity
-  parent: BasePDA
   id: LawyerPDA
   name: lawyer PDA
   description: For lawyers to poach dubious clients.
@@ -797,54 +780,6 @@
     state: pda-chemistry
 
 - type: entity
-  parent: SciencePDA
-  id: RnDPDA
-  name: mystagogue PDA # DeltaV - Epistemics Department replacing Science
-  description: It appears surprisingly ordinary.
-  components:
-  - type: Pda
-    id: RDIDCard
-    state: pda-rd
-  - type: PdaBorderColor
-    borderColor: "#d7d7d0"
-    accentHColor: "#447987"
-    accentVColor: "#8900c9"
-  - type: Icon
-    state: pda-rd
-  - type: CartridgeLoader # Nyanotrasen - Glimmer Monitor
-    preinstalled:
-      - CrewManifestCartridge
-      - NotekeeperCartridge
-      - NewsReaderCartridge
-      - GlimmerMonitorCartridge
-      - NanoChatCartridge # DeltaV
-      - PsiWatchCartridge
-
-- type: entity
-  parent: BasePDA
-  id: RnDNTPDA
-  name: MY special PDA unit # DeltaV - Epistemics Department replacing Science
-  description: It appears surprisingly ordinary.it says in gold "special unit unique to the best Mystagogue in the sector".
-  components:
-  - type: Pda
-    id: RDIDCard
-    state: pda-rd
-  - type: PdaBorderColor
-    borderColor: "#d7d7d0"
-    accentHColor: "#447987"
-    accentVColor: "#8900c9"
-  - type: Icon
-    state: pda-rd
-  - type: CartridgeLoader # Nyanotrasen - Glimmer Monitor
-    preinstalled:
-      - CrewManifestCartridge
-      - NotekeeperCartridge
-      - NewsReaderCartridge
-      - GlimmerMonitorCartridge
-      - NanoChatCartridge
-      - PsiWatchCartridge
-
-- type: entity
   parent: BasePDA
   id: SciencePDA
   name: epistemics PDA # DeltaV - Epistemics Department replacing Science
@@ -878,8 +813,6 @@
   - type: PdaBorderColor
     borderColor: "#d7d7d0"
     accentVColor: "#952004"
-  - type: Icon
-    state: pda-robotics
 
 - type: entity
   parent: BasePDA
@@ -1361,13 +1294,6 @@
     borderColor: "#1c8f4d"
   - type: Icon
     state: pda-cluwne
-    penSlot:
-      startingItem: CrayonGreen
-      ejectSound: /Audio/Items/bikehorn.ogg
-      priority: -1
-      whitelist:
-        tags:
-        - Write
   - type: Unremoveable
 
 - type: entity
@@ -1454,8 +1380,6 @@
   components:
   - type: Pda
     id: PirateIDCard
-    state: pda-pirate
-  - type: Icon
     state: pda-pirate
 
 - type: entity

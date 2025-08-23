@@ -9,27 +9,33 @@
     state: icon
   - type: Item
     size: Huge
+    shape:
+      - 0,0,3,3
   - type: MeleeWeapon
-    attackRate: 0.75
+    attackRate: 1.75
     range: 1.75
     damage:
       types:
-        Blunt: 20
-        Structural: 30
+        Blunt: 25
+        Structural: 50
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 14
+    heavyRateModifier: 2
+    clickPartDamageMultiplier: 1.25
+    maxTargets: 4
     soundHit:
       path: /Audio/Nyanotrasen/Weapons/club.ogg
-    bluntStaminaDamageFactor: 1.5 # 15 stamina damage
 #  - type: MeleeStaminaCost
 #    swing: 10
 #    wieldCoefficient: 0.5 #if wielded you will only consume 5
   - type: DamageOtherOnHit
-    staminaCost: 12
+    staminaCost: 14
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 35
-        Structural: 50
+        Blunt: 45
+        Structural: 100
   - type: Tool
     qualities:
       - Prying
@@ -46,3 +52,4 @@
     quickEquip: false
     slots:
     - back
+    - suitStorage

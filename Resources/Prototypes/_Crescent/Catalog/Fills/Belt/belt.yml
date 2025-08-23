@@ -84,3 +84,322 @@
         amount: 2
   - type: StaticPrice
     price: 250
+
+#CONSCRIPT - NCWL
+
+- type: entity
+  id: ClothingBeltNCWLPouchesFilledCrew
+  parent: ClothingBeltNCWLPouches
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: RCD
+      - id: RCDAmmo
+        amount: 2
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+      - id: MagazineMagnum
+        amount: 2
+
+- type: entity
+  id: ClothingBeltNCWLPouchesFilledRifleman
+  parent: ClothingBeltNCWLPouches
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: SpeedLoaderRifle
+        amount: 4
+      - id: MagazinePistol
+        amount: 2
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+
+- type: entity
+  id: ClothingBeltNCWLPouchesFilledKommissar
+  parent: ClothingBeltNCWLPouches
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: SpeedLoaderRifle
+        amount: 4
+      - id: MagazineMagnum
+        amount: 2
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+
+- type: entity
+  id: ClothingBeltNCWLPouchesFilledShotgun
+  parent: ClothingBeltNCWLPouches
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxLethalshot
+      - id: MagazinePistol
+        amount: 2
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+
+- type: entity
+  id: ClothingBeltNCWLPouchesFilledSubmachinegun
+  parent: ClothingBeltNCWLPouches
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazinePistolSubMachineGun
+        amount: 4
+      - id: MagazinePistol
+        amount: 2
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+
+- type: entity
+  id: ClothingBeltNCWLPouchesFilledGunner
+  parent: ClothingBeltNCWLPouches
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineRiflePan
+        amount: 2
+      - id: MagazinePistol
+        amount: 2
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+
+- type: entity
+  id: ClothingBeltNCWLPouchesFilledSniper
+  parent: ClothingBeltNCWLPouches
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineMagnum
+        amount: 3
+      - id: CartridgeAntiMateriel
+        amount: 6
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+
+- type: entity
+  id: ClothingBeltNCWLPouchesFilledMedic
+  parent: ClothingBeltNCWLPouches
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineMagnum
+        amount: 3
+      - id: MedicatedSuture
+      - id: RegenerativeMesh
+      - id: Bloodpack
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+
+#CONSCRIPT - DSM
+
+- type: entity
+  id: ClothingBeltAssaultFilledCrew
+  parent: ClothingBeltAssault
+  suffix: Filled
+  components:
+  - type: Storage
+    whitelist:
+  - type: StorageFill
+    contents:
+      - id: RCD
+      - id: RCDAmmo
+        amount: 2
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+      - id: MagazineMagnum
+        amount: 2
+
+- type: entity
+  id: ClothingBeltAssaultFilledRifleman
+  parent: ClothingBeltAssault
+  suffix: Filled
+  components:
+  - type: Storage
+    whitelist:
+  - type: StorageFill
+    contents:
+      - id: MagazineBoxLightRifleSurplus
+      - id: MagazinePistol
+        amount: 2
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+
+- type: entity
+  id: ClothingBeltAssaultFilledAdjutant
+  parent: ClothingBeltAssault
+  suffix: Filled
+  components:
+  - type: Storage
+    whitelist:
+  - type: StorageFill
+    contents:
+      - id: MagazineBoxLightRifleSurplus
+      - id: MagazineMagnum
+        amount: 2
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+
+- type: entity
+  id: ClothingBeltAssaultFilledShotgun
+  parent: ClothingBeltAssault
+  suffix: Filled
+  components:
+  - type: Storage
+    whitelist:
+  - type: StorageFill
+    contents:
+      - id: BoxLethalshot
+      - id: MagazinePistol
+        amount: 2
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+
+- type: entity
+  id: ClothingBeltAssaultFilledSubmachinegun
+  parent: ClothingBeltAssault
+  suffix: Filled
+  components:
+  - type: Storage
+    whitelist:
+  - type: StorageFill
+    contents:
+      - id: MagazinePistolSubMachineGun
+        amount: 4
+      - id: MagazinePistol
+        amount: 2
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+
+- type: entity
+  id: ClothingBeltAssaultFilledGunner
+  parent: ClothingBeltAssault
+  suffix: Filled
+  components:
+  - type: Storage
+    whitelist:
+  - type: StorageFill
+    contents:
+      - id: MagazineLightRifleBox
+        amount: 1
+      - id: MagazinePistol
+        amount: 2
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+
+- type: entity
+  id: ClothingBeltAssaultFilledSniper
+  parent: ClothingBeltAssault
+  suffix: Filled
+  components:
+  - type: Storage
+    whitelist:
+  - type: StorageFill
+    contents:
+      - id: MagazineMagnum
+        amount: 3
+      - id: CartridgeAntiMateriel
+        amount: 6
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+
+- type: entity
+  id: ClothingBeltAssaultFilledMedic
+  parent: ClothingBeltAssault
+  suffix: Filled
+  components:
+  - type: Storage
+    whitelist:
+  - type: StorageFill
+    contents:
+      - id: MagazineMagnum
+        amount: 3
+      - id: MedicatedSuture
+      - id: RegenerativeMesh
+      - id: Bloodpack
+      - id: Gauze
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+
+- type: entity
+  id: ClothingBeltSheathSHIKatanaFilled
+  parent: ClothingBeltSheathSHIKatana
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - SHIKatana
+
+- type: entity
+  id: ClothingBeltSheathKhopeshFilled
+  parent: ClothingBeltSheathKhopesh
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - SRMKhopesh
+
+- type: entity
+  id: ClothingBeltSheathMacheteIndependentFilled
+  parent: ClothingBeltSheathMacheteIndependent
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - IndependentMachete
+
+- type: entity
+  id: ClothingBeltSheathDSMSabreFilled
+  parent: ClothingBeltSheathDSMSabre
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - DSMSabre
+
+- type: entity
+  id: ClothingBeltSheathDSMRapierFilled
+  parent: ClothingBeltSheathDSMRapier
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - DSMRapier
+
+- type: entity
+  id: ClothingBeltSheathNCWLKukriFilled
+  parent: ClothingBeltSheathNCWLKukri
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - NCWLKukri

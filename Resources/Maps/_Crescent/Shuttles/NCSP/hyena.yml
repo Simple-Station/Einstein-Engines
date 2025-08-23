@@ -683,6 +683,10 @@ entities:
     - type: ShuttleDeed
       shuttleName: Shuttle NX-544
       shuttleUid: 1
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: frigate
     - type: BecomesStation
       id: Hyena
 - proto: AAAardpointMediumMissile

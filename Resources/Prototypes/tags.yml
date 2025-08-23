@@ -1,8 +1,20 @@
 - type: Tag
+  id: ShellRocket84mm
+
+- type: Tag
+  id: Cartridge84mmRocket
+
+- type: Tag
+  id: CartridgeSmallRocket
+
+- type: Tag
   id: MagazineAntiMateriel
 
 - type: Tag
   id: MagazineRifleDrum
+
+- type: Tag
+  id: MagazineRiflePan
 
 - type: Tag
   id: MagazineSMG6mm
@@ -21,7 +33,7 @@
 
 - type: Tag
   id: CartridgeRailgun15mm
-  
+
 - type: Tag
   id: AirAlarm
 
@@ -1348,6 +1360,9 @@
   id: SpeedLoaderRifle
 
 - type: Tag
+  id: SpeedLoaderLightRifle
+
+- type: Tag
   id: SpiderCraft
 
 - type: Tag
@@ -1551,7 +1566,7 @@
   id: VulpEmotes
 
 - type: Tag
-  id: ShadowkinEmotes
+  id: VoidbornEmotes
 
 - type: Tag
   id: SiliconEmotes
@@ -1561,3 +1576,6 @@
 
 - type: Tag
   id: UnathiEmotes
+
+- type: Tag
+  id: FitsInVoidsuitKit

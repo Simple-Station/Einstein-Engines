@@ -186,14 +186,14 @@ trait-description-LowPainTolerance =
 trait-name-Steadfast = Steadfast
 trait-description-Steadfast =
     When others would buckle from the weight of your injuries, you still march forward unrelentingly.
-    For most species [color=gray](excluding IPC/Shadowkin)[/color], this trait modifies:
+    For most species [color=gray](excluding IPC/Voidborn)[/color], this trait modifies:
     - [color=yellow]25%[/color] movement slow at [color=red]60[/color] damage ➔ [color=yellow]17%[/color] movement slow at [color=red]70[/color] damage
     - [color=yellow]45%[/color] movement slow at [color=red]80[/color] damage ➔ [color=yellow]30%[/color] movement slow at [color=red]90[/color] damage
 
 trait-name-Feeble = Feeble
 trait-description-Feeble =
     Your body responds poorly to injuries, making damage affect your movement more severely.
-    For most species [color=gray](excluding IPC/Shadowkin)[/color], this trait modifies:
+    For most species [color=gray](excluding IPC/Voidborn)[/color], this trait modifies:
     - [color=yellow]25%[/color] movement slow at [color=red]60[/color] damage ➔ [color=yellow]30%[/color] movement slow at [color=red]45[/color] damage
     - [color=yellow]45%[/color] movement slow at [color=red]80[/color] damage ➔ [color=yellow]54%[/color] movement slow at [color=red]65[/color] damage
 
@@ -243,12 +243,6 @@ trait-name-Tradeband = Tradeband
 trait-description-Tradeband =
     Descended from latin and romance languages of old Earth - Tradeband remains the main tongue of the upper class of humanity.
     The language sounds elegant and well structured to most ears. It remains in popular use with traders - diplomats - and those seeking to hold onto a piece of a romantic past.
-
-trait-name-Freespeak = Freespeak (Gutter)
-trait-description-Freespeak =
-    A language of renegades and frontiersmen descending from various languages from Earth like Hindi combined into a multi-rooted jumble that sounds incoherent or even barbarian to non-native speakers.
-    This language is the only common cultural identity for humans in the frontier. Speaking this language in itself boldly declares the speaker a free spirit.
-    Often called 'Gutter' by Alliance citizens.
 
 trait-name-Elyran = Elyran Standard
 trait-description-Elyran =
@@ -536,9 +530,9 @@ trait-description-ThermographicVision =
     Your Cyber-Eyes have been enhanced with a Thermographic Scanner. When enabled, it captures a snapshot of the user's surroundings, while highlighting all
     biological life forms. It can even detect individuals through the walls of a station.
 
-trait-name-ShadowkinBlackeye = Blackeye
-trait-description-ShadowkinBlackeye =
-    You lose your special Shadowkin powers & respect amongst your peers, in return for some points. Effectively, you are only a Shadowkin in name, not in practice.
+trait-name-VoidbornBlackeye = Blackeye
+trait-description-VoidbornBlackeye =
+    You lose your special Voidborn powers & respect amongst your peers, in return for some points. Effectively, you are only a Voidborn in name, not in practice.
 
 trait-name-LyreBird = Lyre Bird
 trait-description-LyreBird =

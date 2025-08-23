@@ -14,15 +14,10 @@
     - type: Transform
 
 - type: entity
-  id: StandardCrescentOutpost #POI
+  id: StandardCrescentPOI #POI
   parent:
     - BaseStation
-    - BaseStationCargo
-    - BaseStationJobsSpawning
-    - BaseStationRecords
     - BaseStationShuttles
-    - BaseStationAlertLevels
-    - BaseStationSiliconLawCrescentStation
   categories: [ HideSpawnMenu ]
   components:
     - type: Transform

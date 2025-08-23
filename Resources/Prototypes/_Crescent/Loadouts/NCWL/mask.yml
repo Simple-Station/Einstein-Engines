@@ -8,3 +8,30 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMasks
+    - !type:CharacterJobRequirement
+      jobs:
+        - CommandantNCWL
+        - KommissarNCWL
+        - FleetkapitanNCWL
+        - PartisanNCWL
+        - DoctorNCWL
+        - WorkerOverbossNCWL
+        - IndustryTaskmasterNCWL
+        - WorkerNCWL
+
+- type: loadout
+  id: LoadoutMaskNCWLGasmask
+  category: Mask
+  cost: 0
+  exclusive: true
+  items:
+  - ClothingMaskNCWLGasmask
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutMasks
+  - !type:CharacterJobRequirement
+    jobs:
+      - CommandantNCWL
+      - KommissarNCWL
+      - FleetkapitanNCWL
+      - PartisanNCWL

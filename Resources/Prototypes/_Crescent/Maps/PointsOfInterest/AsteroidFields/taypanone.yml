@@ -1,0 +1,16 @@
+- type: gameMap
+  id: Taypan1AsteroidBelt
+  mapName: 'Taypan-1 Asteroid Belt'
+  mapPath: /Maps/_Crescent/Explorables/taypanone.yml
+  minPlayers: 0
+  stations:
+    Taypan1AsteroidBelt:
+      stationProto: StandardCrescentPOI
+      gridComponents:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: asteroid
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Taypan-1 Asteroid Belt'

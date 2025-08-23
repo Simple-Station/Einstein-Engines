@@ -36,3 +36,35 @@
     sprite: _Crescent/Clothing/NCWL/Belt/ncwl_double_holster.rsi
   - type: ExplosionResistance
     damageCoefficient: 0.1
+
+- type: entity
+  parent: [ClothingBeltBase, ClothingSlotBase]
+  id: ClothingBeltSheathNCWLKukri
+  name: chengridz jaeger's kukri sheath
+  description: A sheath made of synthetic leather meant to hold a Jaeger-design vibro-kukri, decorated in communard colors.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/Belt/ncwl_kukri_sheath.rsi
+    state: sheath
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/Belt/ncwl_kukri_sheath.rsi
+  - type: Item
+    size: Ginormous
+  - type: ItemSlots
+    slots:
+      item:
+        name: Kukri
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+        whitelist:
+          tags:
+          - Kukri
+  - type: ItemMapper
+    mapLayers:
+      sheath-sabre:
+        whitelist:
+          tags:
+          - Kukri
+  - type: Appearance

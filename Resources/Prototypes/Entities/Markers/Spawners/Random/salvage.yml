@@ -56,9 +56,19 @@
         - SalvageHumanCorpse
       rareChance: 0.01
       prototypes:
-        - SteelScrapOre
-        - TitaniumScrapOre
-        - GarbageOre
+        - SteelScrap3
+        - SteelScrap8
+        - SteelScrap16
+        - SteelScrap25
+        - TitaniumScrap1
+        - TitaniumScrap6
+        - TitaniumScrap25
+        - GarbageOre1
+        - GarbageOre5
+        - GarbageOre10
+        - GarbageOre25
+        - DelamDisk
+        - DelamDiskThumb
       chance: 0.9
       offset: 0.0
 
@@ -75,12 +85,13 @@
     - type: RandomSpawner
       rarePrototypes:
         - SalvageHumanCorpse
-      rareChance: 0.01
+      rareChance: 0.001
       prototypes:
         - RefinedSteelScrapOre
         - RefinedTitaniumScrapOre
         - RefinedGarbageOre
-      chance: 0.9
+        - AbyssalSurvey
+      chance: 0.009
       offset: 0.0
 
 - type: entity
@@ -98,15 +109,20 @@
         - SalvageHumanCorpse
       rareChance: 0.01
       prototypes:
-        - BasicElectronics
-        - BasicMechatronics
-        - LaserLocus
-        - BallisticCycler
-        - TubeLoader
-        - WeakLaserLocus
-        - HardlightGenerator
-        - HardsuitElectronics
-        - PlastitaniumFibreAlloy
+        - BasicElectronics1
+        - BasicElectronics3
+        - BasicElectronics5
+        - BasicMechatronics1
+        - BasicMechatronics3
+        - BasicMechatronics5
+        - LaserLocus1
+        - BallisticCycler1
+        - TubeLoader1
+        - WeakLaserLocus1
+        - WeakLaserLocus3
+        - HardlightGenerator1
+        - HardsuitElectronics1
+        - PlastitaniumFibreAlloy5
       chance: 0.9
       offset: 0.0
 

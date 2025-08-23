@@ -7,10 +7,8 @@
   - type: ShipyardListing
     shuttles:
     - Vanguard
-    - Cherenzikov
-    - Hind
-    - Ivarod
-    - Meteor
+    - Zorniy
+    - Lodka
 
 - type: entity
   id: JackalMothershipComputer
@@ -20,9 +18,8 @@
   - type: ShipyardListing
     shuttles:
     - Reaver
-    - Corvax
-    - Wolf
-    - Hornetsnest
+    - Itch
+    - Sinn
 
 - type: entity
   id: CountsmanMothershipComputer
@@ -32,10 +29,32 @@
   - type: ShipyardListing
     shuttles:
     - Redemptor
+    - Torturer
+    - Ibis
     - Impel
     - Gnosis
     - Praxis
+
+- type: entity
+  id: NemesisMothershipComputer
+  parent: BaseMothershipComputer
+  name: nemesis internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - Praxis
     - Torturer
+
+- type: entity
+  id: UnionfallNemesisMothershipComputer
+  parent: BaseMothershipComputer
+  name: nemesis internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - UnionfallConquest
+    - UnionfallValor
+
 
 - type: entity
   id: InterdyneMothershipComputer
@@ -101,6 +120,16 @@
     - Broadsword
 
 - type: entity
+  id: UnionfallClementineMothershipComputer
+  parent: BaseMothershipComputer
+  name: clementine internal shipyard
+  components:
+  - type: ShipyardListing
+    shuttles:
+    - UnionfallKhopesh
+    - UnionfallBroadsword
+
+- type: entity
   id: JackalCarrierMothershipComputer
   parent: BaseMothershipComputer
   name: jackal internal shipyard
@@ -124,7 +153,6 @@
     - Lunge
     - Provost
     - Adjudicator
-    - Borealis
 
 - type: entity
   id: RefugeMothershipComputer
@@ -142,9 +170,6 @@
   name: anathema internal shipyard
   components:
   - type: ShipyardListing
-    shuttles:
-    - Conquest
-    - Valor
 
 - type: entity
   id: AlseikMothershipComputer

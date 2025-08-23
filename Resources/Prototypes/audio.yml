@@ -4,8 +4,6 @@
     params:
       volume: -12
     collection: AmbienceSpooky
-  rules: NearMorgue
-  priority: 4
 
 - type: ambientMusic
   id: SpookyFog
@@ -13,8 +11,6 @@
     params:
       volume: -12
     collection: AmbienceSpookyFog
-  rules: NearSpookyFog
-  priority: 5
 
 - type: ambientMusic
   id: Holy
@@ -22,8 +18,6 @@
     params:
       volume: -12
     collection: AmbienceHoly
-  rules: NearPrayable
-  priority: 4
 
 - type: ambientMusic
   id: Train
@@ -31,8 +25,6 @@
     params:
       volume: -8
     collection: AmbienceTrain
-  rules: NearTrain
-  priority: 4
 
 # Departments
 - type: ambientMusic
@@ -41,8 +33,6 @@
     params:
       volume: -12
     collection: AmbienceMedical
-  rules: NearMedical
-  priority: 3
 
 - type: ambientMusic
   id: Engineering
@@ -50,8 +40,6 @@
     params:
       volume: -12
     collection: AmbienceEngineering
-  rules: NearEngineering
-  priority: 3
 
 # General areas
 - type: ambientMusic
@@ -60,8 +48,6 @@
     params:
       volume: -12
     collection: AmbienceMaintenance
-  rules: NearMaintenance
-  priority: 2
 
 - type: ambientMusic
   id: Space
@@ -69,10 +55,6 @@
     params:
       volume: -10
     collection: AmbienceSpace
-  fadeIn: true
-  interruptable: true
-  rules: InSpace
-  priority: 1
 
 - type: ambientMusic
   id: Mining
@@ -80,10 +62,6 @@
     params:
       volume: -12
     collection: AmbienceMining
-  rules: OnMapGrid
-  fadeIn: true
-  interruptable: true
-  priority: 1
 
 ## Fallback if nothing else found
 - type: ambientMusic
@@ -92,7 +70,6 @@
     params:
       volume: -12
     collection: AmbienceGeneral
-  rules: AlwaysTrue
 
 # Sound collections
 - type: soundCollection
@@ -320,7 +297,7 @@
       components:
         - type: Morgue
       range: 3
-      
+
 - type: rules
   id: NearSpookyFog
   rules:

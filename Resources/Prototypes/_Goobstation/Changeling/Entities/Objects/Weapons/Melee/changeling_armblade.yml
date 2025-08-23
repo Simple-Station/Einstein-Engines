@@ -1,25 +1,30 @@
 - type: entity
-  parent: ArmBlade
+  parent: BaseItem
   id: ArmBladeChangeling
   suffix: Unremoveable
+  name: arm blade
+  description: A grotesque blade made out of bone and flesh that cleaves through people as a hot knife through butter.
   components:
   - type: Sharp
+  - type: Execution
+    doAfterDuration: 4.0
   - type: Sprite
     sprite: _Goobstation/Changeling/arm_blade.rsi
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 90
-    attackRate: 0.9
+    attackRate: 0.75
     damage:
       types:
-        Slash: 15
+        Slash: 32
         Structural: 20
-    clickPartDamageMultiplier: 3
-    heavyPartDamageMultiplier: 2.5
-    lightRangeModifier: 1.2
-    heavyRateModifier: 2.5
-    heavyDamageBaseModifier: 1.2
-    maxTargets: 1
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 8
+    clickPartDamageMultiplier: 2.5
+    heavyPartDamageMultiplier: 1.5
+    lightRangeModifier: 1.5
+    heavyRateModifier: 1.2
+    maxTargets: 3
     angle: 10
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
@@ -27,7 +32,7 @@
     size: Ginormous
     sprite: _Goobstation/Changeling/arm_blade.rsi
   - type: Prying
-    speedModifier: 2
+    speedModifier: 1.5
     pryPowered: true
   - type: UseDelay # For insta prying
     delay: 1
@@ -38,9 +43,21 @@
     - Prying
   - type: DisarmMalus
     malus: 0
+  - type: Utensil
+    types:
+    - Knife
+  # Shitmed Change
+  - type: Scalpel
+    speed: 0.3
+  - type: BoneSaw
+    speed: 0.75
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Medical/Surgery/saw.ogg
 
 - type: entity
   parent: ArmBladeChangeling
+  suffix: Unremoveable, Fake
   id: FakeArmBladeChangeling
   components:
   - type: MeleeWeapon

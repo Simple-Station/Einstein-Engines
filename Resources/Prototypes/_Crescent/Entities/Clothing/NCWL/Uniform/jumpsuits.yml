@@ -52,3 +52,38 @@
     sprite: _Crescent/Clothing/NCWL/Uniform/ncwladmiral.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/NCWL/Uniform/ncwladmiral.rsi
+
+## ncwl revamp
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitNCWLTelnikSleeved
+  name: communard telnik
+  description: A telnik. Write a better description later.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/Uniform/ncwltelniksleeved.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/Uniform/ncwltelniksleeved.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitNCWLTelnikSleeveless
+  name: communard telnik (sleeveless)
+  description: A telnik. Write a better description later.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/Uniform/ncwltelniksleeveless.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/Uniform/ncwltelniksleeveless.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitNCWLTrainee
+  name: worker's jumpsuit
+  description: A jumpsuit. Write a better description later.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/Uniform/ncwltrainee.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/Uniform/ncwltrainee.rsi

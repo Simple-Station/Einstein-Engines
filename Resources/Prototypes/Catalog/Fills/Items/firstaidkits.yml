@@ -100,6 +100,7 @@
       - id: BurnAutoInjector
       - id: EmergencyMedipen
       - id: PainMedipen # Morphine
+      - id: SyringeSaline
 
 - type: entity
   id: StimkitFilled

@@ -52,3 +52,26 @@
     sprite: _Crescent/Clothing/Empire/Feet/mandatelaceup.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/Empire/Feet/mandatelaceup.rsi
+
+- type: entity
+  parent: [ClothingShoesBootsMag, ClothingShoesBootsCombat]
+  id: ClothingShoesBootsMagDSM
+  name: DSM combat magboots
+  description: Combat magnetic boots, often used during extravehicular activity to ensure the user remains safely attached to the vehicle.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Feet/mandatemagboots.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Feet/mandatemagboots.rsi
+  - type: Magboots
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 13
+    staminaCost: 15
+  - type: StaticPrice
+    price: 750

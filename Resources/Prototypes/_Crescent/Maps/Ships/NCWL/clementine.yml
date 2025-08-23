@@ -16,6 +16,10 @@
     Clementine:
       stationProto: FlagshipCrescentVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: dreadnought
         - type: StationNameSetup
           mapNameTemplate: 'NCWL Clementine {1}'
           nameGenerator:
@@ -26,9 +30,12 @@
         - type: StationJobs
           overflowJobs: []
           availableJobs:
+            CommandantNCWL: [ 1, 1 ]
             KommissarNCWL: [ 1, 1 ]
-            KapitanNCWL: [ 3, 3 ]
-            SanitarNCWL: [ 12, 12 ]
-            KadetNCWL: [ 7, 7 ]
-            ArtificerNCWL: [ 4, 4 ]
-            DoktorNCWL: [ 4, 4 ]
+            FleetkapitanNCWL: [ 5, 5 ]
+            PartisanNCWL: [ 15, 15 ]
+            DoctorNCWL: [ 5, 5 ]
+            WorkerOverbossNCWL: [ 2, 2 ]
+            IndustryTaskmasterNCWL: [ 2, 2 ]
+            WorkerNCWL: [ 20, 20 ]
+

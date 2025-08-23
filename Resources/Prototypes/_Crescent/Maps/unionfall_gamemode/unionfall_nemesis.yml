@@ -1,0 +1,28 @@
+- type: gameMap
+  id: UnionfallNemesis
+  mapName: 'DSM Nemesis (P)'
+  mapPath: /Maps/_Crescent/Unionfall/unionfall_nemesis.yml
+  minPlayers: 0
+  stations:
+    UnionfallNemesis:
+      stationProto: FlagshipCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Nemesis (P) {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-artillery-carrier
+        - type: VesselDescription
+          description: A refitted punishment vessel. The crew is expected to give their lives for the Mandate before they return.
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            UnionfallShipCaptainDSM: [ 1, 1 ]
+            UnionfallShipCrewDSM: [ 2, 2 ]
+            UnionfallLeaderDSM: [ 1, 1 ]
+            UnionfallOfficerDSM: [ 5, 5 ]
+            UnionfallDoctorDSM: [ 5, 5 ]
+            UnionfallRiflemanDSM: [ 50, 50 ]
+            UnionfallCadetDSM: [ 50, 50 ]

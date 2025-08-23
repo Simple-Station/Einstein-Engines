@@ -9,13 +9,14 @@
       group: LoadoutBelt
     - !type:CharacterJobRequirement
       jobs:
-        - AdministratorNCWL
-        - ArtificerNCWL
-        - DoktorNCWL
-        - KadetNCWL
-        - KapitanNCWL
+        - CommandantNCWL
         - KommissarNCWL
-        - SanitarNCWL
+        - FleetkapitanNCWL
+        - PartisanNCWL
+        - DoctorNCWL
+        - WorkerOverbossNCWL
+        - IndustryTaskmasterNCWL
+        - WorkerNCWL
 
 - type: loadout
   id: LoadoutBeltNCWLPouches
@@ -28,14 +29,14 @@
       group: LoadoutBelt
     - !type:CharacterJobRequirement
       jobs:
-        - AdministratorNCWL
-        - ArtificerNCWL
-        - DoktorNCWL
-        - KadetNCWL
-        - KapitanNCWL
+        - CommandantNCWL
         - KommissarNCWL
-        - SanitarNCWL
-
+        - FleetkapitanNCWL
+        - PartisanNCWL
+        - DoctorNCWL
+        - WorkerOverbossNCWL
+        - IndustryTaskmasterNCWL
+        - WorkerNCWL
 - type: loadout
   id: LoadoutBeltNCWLDoubleHolster
   category: Belt

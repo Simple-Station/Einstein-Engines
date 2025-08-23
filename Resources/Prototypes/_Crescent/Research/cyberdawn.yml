@@ -116,8 +116,10 @@
   tier: 2
   cost: 9000
   recipeUnlocks:
+  - WeaponShotgunSaiga12NCSP
   - WeaponLightMachineGunNCSPRPD
   - WeaponRifleMayflower
+  - WeaponRifleSVDMarksmanNCSP
 
 - type: technology
   id: CyberdawnEnergyDagger
@@ -181,3 +183,16 @@
   cost: 8000
   recipeUnlocks:
   - ClothingEyesThermalVisionGogglesCyberdawn
+
+- type: technology
+  id: CyberdawnAdvancedLaunchers
+  name: research-technology-cyberdawn-advancedlaunchers
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/rpg2.rsi
+    state: base
+  discipline: Cyberdawn
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - WeaponLCartridgeRPGSmall
+  - WeaponLauncherRPGNSCP

@@ -16,6 +16,7 @@ entities:
   entities:
   - uid: 1
     components:
+
     - type: MetaData
       name: grid
     - type: Transform
@@ -173,6 +174,10 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: corvette
     - type: BecomesStation
       id: Anthead
 - proto: Airlock

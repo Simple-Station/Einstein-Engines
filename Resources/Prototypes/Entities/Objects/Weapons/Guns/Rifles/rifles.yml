@@ -25,8 +25,6 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/batrifle.ogg
   - type: ChamberMagazineAmmoProvider
-    soundGunshot:
-      collection: Rifle_1_Gunshots
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -75,7 +73,7 @@
   name: NCSP AKMS Kalash 7.62x51mm
   parent: BaseWeaponRifle
   id: WeaponRifleAk
-  description: An iconic weapon of war. Uses 7.62x51mm ammo. An illegal firearm often seen in the hands of terrorists and informal militias.
+  description: An iconic weapon of war. this one has ben rechambered to 7.62x51mm, commonly attributed to terrorist groups. Cheap and easily made.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/akms.rsi
@@ -84,10 +82,13 @@
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    shape:
+    - 0,0,5,1
   - type: Gun
-    fireRate: 3
+    fireRate: 5
     soundGunshot:
-      collection: AK_47_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/AK_74/rifle_gunshot_1.ogg
     fireOnDropChance: 0.5
   - type: ChamberMagazineAmmoProvider
     soundRack:
@@ -121,11 +122,14 @@
   - type: Appearance
 
 - type: entity
-  name: NT M-90gl Hercules 5.56x45mm
+  name: NT M-90gl Hercules 7.62x51mm
   parent: BaseWeaponRifle
   id: WeaponRifleM90GrenadeLauncher
-  description: An older bullpup carbine model, with an attached underbarrel grenade launcher. Uses 5.56x45mm ammo.
+  description: An simple battle carbine battle model, with an attached underbarrel grenade launcher. Uses 7.62x51mm ammo.
   components:
+  - type: Item
+    shape:
+    - 0,0,4,1
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/carbine.rsi
     layers:
@@ -164,11 +168,14 @@
   - type: Appearance
 
 - type: entity
-  name: SHI PAA-2 Lecter 7.62x51mm
+  name: SHI M931c Lecter 7.62x51mm
   parent: BaseWeaponRifle
   id: WeaponRifleLecter
-  description: A generic, SHI-brand assault carbine sold to corporations and security forces everywhere.
+  description: A fancy SHI-brand rifle sold to corporations and security forces everywhere.
   components:
+  - type: Item
+    shape:
+    - 0,0,5,1
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/lecter.rsi
     layers:
@@ -179,8 +186,9 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/lecter.rsi
   - type: Gun
+    fireRate: 5.5
     soundGunshot:
-      collection: Rifle_1_Gunshots
+      path: /Audio/_Crescent/Weapons/Guns/rifle_1/rifle_gunshot_2.ogg
     fireOnDropChance: 0.2
   - type: ItemSlots
     slots:

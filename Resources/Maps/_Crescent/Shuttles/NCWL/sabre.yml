@@ -118,6 +118,10 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: fighter
     - type: BecomesStation
       id: Sabre
 - proto: AirlockShuttle
@@ -422,13 +426,6 @@ entities:
       parent: 1
     - type: Thruster
       originalPowerLoad: 200
-- proto: SpawnPointSanitar
-  entities:
-  - uid: 45
-    components:
-    - type: Transform
-      pos: -0.5,2.5
-      parent: 1
 - proto: SubstationWallBasic
   entities:
   - uid: 42

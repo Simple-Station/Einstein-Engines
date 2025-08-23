@@ -226,6 +226,7 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
   - type: BallisticAmmoProvider
+    proto: IdnaTorpedo
     whitelist:
       tags:
         - Torpedo
@@ -291,9 +292,10 @@
     class: Missile
     size: Small
   - type: BallisticAmmoProvider
+    proto: CartridgeRocketLowYield
     whitelist:
       tags:
-        - Grenade
+        - Rocket48mm
     capacity: 2
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
@@ -357,9 +359,10 @@
       gun_magazine:
         name: Magazine
         priority: 2
+        startingItem: MagazineRocketLowYield
         whitelist:
           tags:
-          - MagazineGrenade
+          - MagazineRocket48mm
         insertSound:
           path: /Audio/Weapons/Guns/MagIn/kinetic_reload.ogg
           params:
@@ -500,12 +503,12 @@
   id: Type99Artillery
   name: SHI Type 99 120mm artillery
   parent: BaseFixedShipgun
-  description: A heavier, bulkier version of the slugthrower. An antiquated SHI design. Requires manual reloading after expending magazine.
+  description: A heavier, bulkier version of the slugthrower. An antiquated SHI design. Requires manual reloading after its two chambers.
   components:
   - type: ApcPowerReceiver
     powerLoad: 3000
   - type: StaticPrice
-    price: 10000
+    price: 7500
   - type: Destructible
     thresholds:
     - trigger:
@@ -521,8 +524,12 @@
     layers:
     - state: artillery
   - type: BallisticAmmoProvider
+    soundInsert: 
+      path: /Audio/Weapons/Guns/UnionfallWeapons/amr_close_1.ogg
+    fillWithDoAfter: true
+    fillDelay: 1
     cycleable: true
-    capacity: 16
+    capacity: 2
     proto: CartridgeShellArmorPiercing
     whitelist:
       tags:

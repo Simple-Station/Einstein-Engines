@@ -8,6 +8,16 @@
   supervisors: job-supervisors-hire
   accessGroups:
   - GeneralAccess
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ind-spacer
+      - type: LanguageAdder
+        addSpoken:
+          - Tradeband
+        addUnderstood:
+          - Tradeband
 
 - type: entity
   parent: IDCardStandard
@@ -21,8 +31,14 @@
   - type: PresetIdCard
     job: Spacer
 
+
 - type: startingGear
   id: ContractorGear
   equipment:
     ears: ClothingHeadsetGrey
     id: SpacerIDCard
+    jumpsuit: ClothingUniformSpacer
+    back: ClothingBackpackFilled
+    shoes: ClothingShoesColorBlack
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled

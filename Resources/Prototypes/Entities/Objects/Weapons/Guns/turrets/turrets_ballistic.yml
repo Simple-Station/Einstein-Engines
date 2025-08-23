@@ -41,7 +41,8 @@
       selectedMode: FullAuto
       availableModes:
         - FullAuto
-      soundGunshot: /Audio/Weapons/Guns/Gunshots/gun_sentry.ogg
+      soundGunshot:
+        collection: Turret_Gunshots
     - type: BallisticAmmoProvider
       proto: CartridgePistol
       capacity: 50

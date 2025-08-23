@@ -41,7 +41,6 @@
     proto: oni
   - type: LanguageKnowledge
     speaks:
-    - TauCetiBasic
     - Nekomimetic
     understands:
     - TauCetiBasic

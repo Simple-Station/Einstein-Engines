@@ -319,7 +319,7 @@
         name: mail (any)
         store: altar_component
         icon:
-          sprite: Nyanotrasen/Objects/Specific/Mail/mail.rsi
+          sprite: Objects/Specific/Chapel/bible.rsi
           state: icon
       - material: Cloth
         store: altar_cloth
