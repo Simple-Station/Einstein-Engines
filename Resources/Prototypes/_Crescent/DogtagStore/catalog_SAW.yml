@@ -27,7 +27,7 @@
   icon: { sprite: /Textures/Nyanotrasen/Objects/Weapons/Melee/breaching_hammer.rsi, state: icon }
   productEntity: SecBreachingHammer
   cost:
-    ScrapSAW: 3
+    ScrapSAW: 15
   categories:
   - StoreCategorySAW
 
@@ -38,7 +38,7 @@
   icon: { sprite: /Textures/_Crescent/Clothing/Syndicate/Head/syndicateramzi.rsi, state: icon }
   productEntity: ClothingOuterHardsuitRamzi
   cost:
-    ScrapSAW: 3
+    ScrapSAW: 35
   categories:
   - StoreCategorySAW
 
@@ -49,7 +49,7 @@
   icon: { sprite: /Textures/_Crescent/Clothing/Syndicate/Head/syndicatedonator.rsi, state: icon }
   productEntity: ClothingOuterHardsuitSyndieDonator
   cost:
-    ScrapSAW: 10
+    ScrapSAW: 45
   categories:
   - StoreCategorySAW
 
@@ -82,7 +82,7 @@
   icon: { sprite: /Textures/Objects/Devices/flatpack.rsi, state: kit }
   productEntity: FixedHardpointFlatpack
   cost:
-    ScrapSAW: 130
+    ScrapSAW: 60
   categories:
   - StoreCategorySAWshipmods
 
