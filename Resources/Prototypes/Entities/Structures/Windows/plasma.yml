@@ -5,9 +5,9 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/plasma_window.rsi
+    sprite: _Crescent/Structures/newReinfPlasWindow2.rsi
   - type: Icon
-    sprite: Structures/Windows/plasma_window.rsi
+    sprite: _Crescent/Structures/newReinfPlasWindow2.rsi
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: RGlass
@@ -15,7 +15,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 120
+        damage: 500
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -24,7 +24,7 @@
           collection: WindowShatter
     - trigger:
         !type:DamageTrigger
-        damage: 60
+        damage: 300
       behaviors:
       - !type:PlaySoundBehavior
         sound:
