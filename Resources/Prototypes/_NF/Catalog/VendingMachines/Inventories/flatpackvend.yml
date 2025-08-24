@@ -1,7 +1,6 @@
 - type: vendingMachineInventory
   id: FlatpackVendInventory
   startingInventory:
-    OreProcessorFlatpack: 10
     HydroponicsTrayEmptyFlatpack: 16
     MaterialReclaimerFlatpack: 4
     UniformPrinterFlatpack: 6
