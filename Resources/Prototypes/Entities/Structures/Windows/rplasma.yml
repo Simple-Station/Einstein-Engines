@@ -8,6 +8,7 @@
     sprite: _Crescent/Structures/newReinfPlasWindow.rsi
   - type: Icon
     sprite: _Crescent/Structures/newReinfPlasWindow.rsi
+    state: windowfull
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: RGlass
