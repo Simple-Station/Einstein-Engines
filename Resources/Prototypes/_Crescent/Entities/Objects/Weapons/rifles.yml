@@ -780,14 +780,11 @@
   - type: Gun
     fireRate: 3.5
     shotsPerBurst: 2
-    burstFireRate: 12
-    burstCooldown: 1.5
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/dmr_1/dmr_gunshot_2.ogg
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto
-      - Burst
   - type: ItemSlots
     slots:
       gun_magazine:
