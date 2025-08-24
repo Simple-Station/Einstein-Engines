@@ -35,7 +35,7 @@
 - type: entity
   parent: BasePDA
   id: NCWLHomeguardSquadCaptainPDA
-  name: squad captain's PDA
+  name: fleetkapitan's PDA
   description: Brown for communard.
   components:
   - type: Pda
@@ -56,22 +56,6 @@
   components:
   - type: Pda
     id: NCWLIDCardHomeguardSoldat
-    state: pda-militiaman
-  - type: PdaBorderColor
-    borderColor: "#3d251e"
-    accentHColor: "#d4d4d4"
-    accentVColor: "#d4d4d4"
-  - type: Icon
-    state: pda-militiaman
-
-- type: entity
-  parent: BasePDA
-  id: NCWLMedicalLeaderPDA
-  name: director's PDA
-  description: Brown for communard.
-  components:
-  - type: Pda
-    id: NCWLIDCardMedicalLeader
     state: pda-militiaman
   - type: PdaBorderColor
     borderColor: "#3d251e"
@@ -114,44 +98,12 @@
 
 - type: entity
   parent: BasePDA
-  id: NCWLLogisticWorkerPDA
-  name: dockhand's PDA
-  description: Brown for communard.
-  components:
-  - type: Pda
-    id: NCWLIDCardLogisticWorker
-    state: pda-militiaman
-  - type: PdaBorderColor
-    borderColor: "#3d251e"
-    accentHColor: "#d4d4d4"
-    accentVColor: "#d4d4d4"
-  - type: Icon
-    state: pda-militiaman
-
-- type: entity
-  parent: BasePDA
   id: NCWLEngineeringLeaderPDA
   name: supervisor's PDA
   description: Brown for communard.
   components:
   - type: Pda
     id: NCWLIDCardEngineeringLeader
-    state: pda-militiaman
-  - type: PdaBorderColor
-    borderColor: "#3d251e"
-    accentHColor: "#d4d4d4"
-    accentVColor: "#d4d4d4"
-  - type: Icon
-    state: pda-militiaman
-
-- type: entity
-  parent: BasePDA
-  id: NCWLEngineeringWorkerPDA
-  name: artificer's PDA
-  description: Brown for communard.
-  components:
-  - type: Pda
-    id: NCWLIDCardEngineeringWorker
     state: pda-militiaman
   - type: PdaBorderColor
     borderColor: "#3d251e"
@@ -1186,6 +1138,50 @@
   components:
   - type: Pda
     id: ATHIDCardArbeiter
+    state: pda-bartender
+  - type: PdaBorderColor
+    borderColor: "#535961"
+  - type: Icon
+    state: pda-bartender
+
+#anti psionic response team
+
+- type: entity
+  parent: BasePDA
+  id: APRTKanoneerPDA
+  name: panzerfeldwebel's PDA
+  description: Gunmetal gray.
+  components:
+  - type: Pda
+    id: APRTIDCardKanoneer
+    state: pda-bartender
+  - type: PdaBorderColor
+    borderColor: "#535961"
+  - type: Icon
+    state: pda-bartender
+
+- type: entity
+  parent: BasePDA
+  id: APRTSanitatPDA
+  name: panzersanitat's PDA
+  description: Gunmetal gray.
+  components:
+  - type: Pda
+    id: APRTIDCardSanitat
+    state: pda-bartender
+  - type: PdaBorderColor
+    borderColor: "#535961"
+  - type: Icon
+    state: pda-bartender
+
+- type: entity
+  parent: BasePDA
+  id: APRTSoldatPDA
+  name: panzergrenadier's PDA
+  description: Gunmetal gray.
+  components:
+  - type: Pda
+    id: APRTIDCardSoldat
     state: pda-bartender
   - type: PdaBorderColor
     borderColor: "#535961"

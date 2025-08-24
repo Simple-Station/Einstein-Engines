@@ -1,4 +1,13 @@
 - type: Tag
+  id: ShellRocket84mm
+
+- type: Tag
+  id: Cartridge84mmRocket
+
+- type: Tag
+  id: CartridgeSmallRocket
+
+- type: Tag
   id: MagazineAntiMateriel
 
 - type: Tag
@@ -1557,7 +1566,7 @@
   id: VulpEmotes
 
 - type: Tag
-  id: ShadowkinEmotes
+  id: VoidbornEmotes
 
 - type: Tag
   id: SiliconEmotes

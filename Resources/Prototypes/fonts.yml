@@ -101,3 +101,23 @@
 - type: font
   id: NovaFlat
   path: /Fonts/NovaFlat/NovaFlat-Regular.ttf
+
+- type: font
+  id: SpecialElite
+  path: /Fonts/SpecialElite-Regular.ttf
+
+- type: font
+  id: Geo
+  path: /Fonts/Geo/Geo-Regular.ttf
+
+- type: font
+  id: MedievalSharp
+  path: /Fonts/MedievalSharp/MedievalSharp.ttf
+
+- type: font
+  id: Silkscreen
+  path: /Fonts/Silkscreen/Silkscreen.ttf
+
+- type: font
+  id: Iceberg
+  path: /Fonts/Iceberg-Regular.ttf

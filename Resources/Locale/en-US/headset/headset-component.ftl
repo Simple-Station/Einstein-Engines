@@ -4,7 +4,7 @@ chat-radio-message-wrap-bold = [color={$color}]{$channel} [font size=11][color={
 
 examine-headset-default-channel = Use {$prefix} for the default channel ([color={$color}]{$channel}[/color]).
 
-chat-radio-common = Common
+chat-radio-common = Longwave 2.5km
 chat-radio-centcom = CentCom
 chat-radio-command = Command
 chat-radio-engineering = Engineering

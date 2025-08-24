@@ -1,0 +1,23 @@
+- type: gameMap
+  id: UnionfallSasha
+  mapName: 'NCWL Sasha'
+  mapPath: /Maps/_Crescent/Unionfall/NCWL/unionfall_sasha.yml
+  minPlayers: 0
+  stations:
+    UnionfallSasha:
+      stationProto: FlagshipCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Sasha {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-artillery-carrier
+        - type: VesselDescription
+          description: A relic of another time.
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            UnionfallShipCaptainNCWL: [ 1, 1 ]
+            UnionfallShipCrewNCWL: [ 2, 2 ]

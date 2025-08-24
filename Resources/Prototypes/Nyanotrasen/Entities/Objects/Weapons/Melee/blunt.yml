@@ -9,15 +9,22 @@
     state: icon
   - type: Item
     size: Normal
+    shape:
+      - 0,0,1,2
   - type: MeleeWeapon
-    attackRate: 1.15
-    range: 1.5
+    attackRate: 1.3
+    range: 1.4
     damage:
       types:
-        Blunt: 15
+        Blunt: 24
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
+    heavyRateModifier: 1.5
+    clickPartDamageMultiplier: 2
+    maxTargets: 4
     soundHit:
       path: /Audio/Nyanotrasen/Weapons/club.ogg
-    bluntStaminaDamageFactor: 1.5
+    bluntStaminaDamageFactor: 1.2
 #  - type: MeleeStaminaCost
 #    swing: 10
 #    wieldCoefficient: 0.35 #if wielded you will only consume 3.5 stam its a weapon after all
@@ -27,7 +34,7 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 20
+        Blunt: 14
   - type: Clothing
     sprite: Nyanotrasen/Objects/Weapons/Melee/kanabou.rsi
     quickEquip: false

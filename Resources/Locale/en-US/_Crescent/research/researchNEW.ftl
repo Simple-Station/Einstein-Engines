@@ -1,4 +1,4 @@
-#Discipline Names
+# Discipline Names
 
 research-discipline-mechatronics = Engineering
 research-discipline-electronics = Mechatronics
@@ -10,9 +10,9 @@ research-discipline-communard = Communard
 research-discipline-imperial = Imperial
 research-discipline-corporate = Shinohara
 
-#Node Names
+# Node Names
 
-#ASTRONAUTICS
+# ASTRONAUTICS
 research-technology-astronautics-basic-flight = Basic Avionics
 research-technology-astronautics-microgravity = Microgravity
 research-technology-astronautics-basiceva = Basic EVA
@@ -20,7 +20,7 @@ research-technology-astronautics-advancedeva = Specialized EVA
 research-technology-astronautics-shipyardconstruction = Rapid Vessel Construction Device
 research-technology-astronautics-modsuit = MODSuit
 
-#MECHATRONICS
+# MECHATRONICS
 research-technology-mechatronics-parts = Construction Parts
 research-technology-mechatronics-armaments = Basic Infantry Armaments
 research-technology-biochemical-surgerytools = Basic Surgery Equipment
@@ -31,12 +31,13 @@ research-technology-biochemical-defibrillator = Defibrillator
 research-technology-biochemical-stasis = Stasis Equipment
 research-technology-biochemical-hypo = Hypochemistry
 
-#ELECTRONICS
+# ELECTRONICS
+research-technology-electronics-translators = Translators
 research-technology-electronics-materials = Basic Components
 research-technology-electronics-defense = Civilian Defense Pistols
 research-technology-electronics-terminus = Ogre Shocktrooper Armaments
 
-#INTERDYNE
+# INTERDYNE
 research-technology-interdyne-clothing = Basic Clothing
 research-technology-interdyne-armor = TraumaSec Armor
 research-technology-interdyne-defib = Portable Defibrillator
@@ -49,7 +50,7 @@ research-technology-interdyne-adrenalaccelerator = TT-86 Adrenal Accelerator
 research-technology-interdyne-bloodpump = TT-92 Bloodpump
 research-technology-interdyne-pryarms = TT-42 Pryarms
 
-#CYBERDAWN
+# CYBERDAWN
 research-technology-cyberdawn-clothing = Cyberdawn Clothing
 research-technology-cyberdawn-basicballistics = Basic Syndicate Ballistics
 research-technology-cyberdawn-powersink = Power Sink
@@ -64,12 +65,14 @@ research-technology-cyberdawn-zhongyao = Zhongyao Tacsuit
 research-technology-cyberdawn-egui = Egui Stealth Tacsuit
 research-technology-cyberdawn-psybreaker = Anti-Psionic Armaments
 research-technology-cyberdawn-thermals = Thermal Vision Goggles
+research-technology-cyberdawn-advancedlaunchers = Advanced Launchers
 
-#DSM
+# DSM
 research-technology-imperial-basicclothes = Basic Tailoring
 research-technology-imperial-advancedclothes = Advanced Tailoring
 research-technology-imperial-basicarmor = Basic Armor Fabrication
 research-technology-imperial-advancedarmor = Prestigious Armor Fabrication
+research-technology-imperial-psionicattunement = Psionic Attunement
 research-technology-imperial-basicrifling = Basic Rifling
 research-technology-imperial-covetor = Imperial Salvage Corvette
 research-technology-imperial-ibis = Imperial Heavy Fighter
@@ -77,6 +80,7 @@ research-technology-imperial-laelaps = Imperial Assault Frigate
 research-technology-imperial-nobleweapons = Imperial Nobility Swords
 research-technology-imperial-sunesis = Imperial Exploration Cruiser
 research-technology-imperial-frigate = Imperial Assault Frigate
+research-technology-imperial-plasmamechguns = Plasma Mechasuit Weaponry
 research-technology-imperial-paladin = Imperial Combat Exosuit
 research-technology-imperial-wanderer = Imperial Scout Exosuit
 research-technology-imperial-carrion = Imperial Utility Exosuit
@@ -86,23 +90,29 @@ research-technology-imperial-bomblauncher = M320 Launcher
 research-technology-imperial-triumphant = Imperial Cruiser
 research-technology-imperial-padparadscha = Imperial Siege Battlecruiser
 
-#NCWL
+# NCWL
 research-technology-communard-clothes = Communard Clothes
 research-technology-communard-infantry = Communard Infantry Equipment
 research-technology-communard-riotgear = Communard Riot Gear
 research-technology-communard-fighters = Communard Ultralight Fighters
 research-technology-communard-molot = Communard Missile Corvette
-research-technology-communard-heavyinfantry = Communard Heavy Equipment
-research-technology-communard-vanguardmktwo = Vanguard Mk. II
-research-technology-communard-lancer = Communard Light Mech
-research-technology-communard-grenadelauncher = Communard Grenade Launcher
+research-technology-communard-krechet = Communard Light Fighter
+research-technology-communard-rudimentary-ships = Communard Rudimentary Ships
+research-technology-communard-carrier = Communard Carrier
+research-technology-communard-bogatyrship = Communard Heavy Fighter
 research-technology-communard-corvette = Communard Heavy Corvette
 research-technology-communard-ivarod = Communard Assault Frigate
 research-technology-communard-stern = Communard Siege Battlecruiser
+research-technology-communard-vanguardmktwo = Vanguard Mk. II
+research-technology-communard-sunder = Communard Energy Cruiser
+research-technology-communard-heavyinfantry = Communard Heavy Equipment
+research-technology-communard-lancer = Communard Light Mech
+research-technology-communard-grenadelauncher = Communard Grenade Launcher
 research-technology-communard-bogatyr = Communard Battle Mech
 research-technology-communard-commienaut = Communard Juggernaut Suit
+research-technology-communard-vibrokukri = Communard Chengridz Vibrokukri
 
-#SHI
+# SHI
 research-technology-shinohara-clothes = Corporate Uniforms
 research-technology-shinohara-security = Corporate Security
 research-technology-shinohara-highsec = Corporate HighSec
@@ -124,6 +134,7 @@ research-technology-shinohara-cybereyes = Corporate Smart Optics
 research-technology-shinohara-grenadelauncher = Corporate Grenade Launcher
 research-technology-shinohara-mantisblades = CRL-20 Mantis Blades
 research-technology-shinohara-boriaticcomposting = Boriatic Fuel Composting
+research-technology-shinohara-basicfighterguns = Basic Fighter Weaponry
 research-technology-shinohara-basicmechguns = Basic Mechasuit Weaponry
 research-technology-shinohara-advancedmechweaponry = Advanced Mechasuit Weaponry
 research-technology-shinohara-shipyardmanufactorum = Shipyard Manufactorum
@@ -133,3 +144,4 @@ research-technology-shinohara-emitter = Deflector Technology
 research-technology-shinohara-gilgamesh = mR-815 Prototype Exosuit
 research-technology-shinohara-ballisticfab = TF-22 Armaments Foundry
 research-technology-shinohara-dermalarmor = KOURINDO-U Dermal Armor
+research-technology-shinohara-shiverblade = SHI-RIP9 Shiver Blade

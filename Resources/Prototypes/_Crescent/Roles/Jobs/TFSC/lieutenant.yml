@@ -21,6 +21,13 @@
     components:
       - type: ChatRank
         rank: crescent-rank-boss
+      - type: LanguageAdder
+        addSpoken:
+          - Freespeak
+          - Tradeband
+        addUnderstood:
+          - Freespeak
+          - Tradeband
   weight: 45
   startingGear: LieutenantGear
   alwaysUseSpawner: true

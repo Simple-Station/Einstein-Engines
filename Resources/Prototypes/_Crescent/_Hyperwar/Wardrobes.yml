@@ -242,12 +242,9 @@
     WeaponPistolViper: 60
     WeaponPistolRongyu: 60
     WeaponPistolBlastpopGray: 60
-    SRMKhopesh: 60
-    ClothingBeltSheathKhopesh: 60
-    DSMSabre: 60
-    ClothingBeltSheathDSMSabre: 60
-    DSMRapier: 60
-    ClothingBeltSheathRapier: 60
+    ClothingBeltSheathKhopeshFilled: 60
+    ClothingBeltSheathDSMSabreFilled: 60
+    ClothingBeltSheathDSMRapierFilled: 60
     SecBreachingHammer: 60
     Katana: 60
     RiotBulletShield: 100
@@ -338,8 +335,7 @@
     WeaponPistolViper: 60
     WeaponPistolRongyu: 60
     WeaponPistolBlastpopGray: 60
-    SRMKhopesh: 60
-    ClothingBeltSheathKhopesh: 60
+    ClothingBeltSheathKhopeshFilled: 60
     SecBreachingHammer: 60
     Katana: 60
     RiotBulletShield: 100
@@ -894,9 +890,9 @@
     MagazineMortar: 5000
     LanceRocketCartridge : 5000
     MagazineSwarmer: 5000
-    MagazineGrenadeBlast: 5000
-    MagazineGrenadeFrag: 5000
-    MagazineGrenadeEMP: 5000
+    MagazineRocketLowYield: 5000
+    MagazineRocketHighYield: 5000
+    MagazineRocketEMP: 5000
     TorpGargEMP: 5000
     TorpGarg: 5000
     HeavyMortarCartridge: 5000

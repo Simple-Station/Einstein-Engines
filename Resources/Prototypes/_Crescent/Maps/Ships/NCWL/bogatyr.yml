@@ -1,11 +1,11 @@
 # Author Info
-# Discord: @fleshangel
+# Discord: originally @fleshangel, later remade by @ninruB
 
 - type: vessel
   id: Bogatyr
   name: NCWL Bogatyr
-  description: A communard stealth bomber, sees use primarily in discreet naval operations.
-  price: 150000
+  description: An advanced communard heavy escort.
+  price: 90000
   category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/NCWL/bogatyr.yml

@@ -1,0 +1,49 @@
+- type: job
+  id: APRTHunterSRM
+  name: job-name-hunter
+  description: job-description-hunter
+  playTimeTracker: JobHunterSRM
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+      - Human
+    - !type:CharacterOverallTimeRequirement
+      min: 20000
+    - !type:FactionRequirement
+      factionID: "SRM"
+  weight: 22
+  startingGear: APRTHunterGear
+  alwaysUseSpawner: true
+  icon: "JobIconHunter"
+  requireAdminNotify: false
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
+  access:
+  - Command
+  - Hunter
+  - Maintenance
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+  special:
+    - !type:AddComponentSpecial
+      components:
+        - type: Telepathic
+        - type: BibleUser
+
+- type: startingGear
+  id: APRTHunterGear
+  equipment:
+    id: HunterPDA
+    ears: ClothingHeadsetHunter
+    jumpsuit: ClothingUniformJumpsuitHunter
+    shoes: ClothingShoesBootsMagCombat
+    outerClothing: ClothingOuterHardsuitHunter
+    suitstorage: JetpackBlueFilled
+    gloves: ClothingHandsGlovesHunter
+    pocket1: HandHeldMassScannerEE
+    pocket2: ExtendedEmergencyOxygenTankFilled
+    belt: ClothingBeltTacticalRigFilled
+  inhand:
+  - WeaponRifleHunter

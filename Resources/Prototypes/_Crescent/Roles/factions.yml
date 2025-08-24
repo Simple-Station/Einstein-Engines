@@ -2,6 +2,9 @@
 - type: faction
   name: "Central Sol Authority"
   id: ATH
+  descriptionPrefix: |
+    This faction is only very rarely present in the Taypan system at present.
+    Restricted to Special Midround Spawns
   description: |
     The victors of an undisputed internal war that broke out in Sol over the Kaiser's turbulent and
     violent reign, the Authority was born out of a need for reform. Lead by the Jovian ideals of
@@ -117,7 +120,7 @@
     smugglers, racketeers, and gamblers.
   color: "#9FED58"
   weight: -7
-  enabled: true
+  enabled: false
   icon:
     sprite: /Textures/_Crescent/faction_icons.rsi
     state: fourfamilies
@@ -125,6 +128,9 @@
 - type: faction
   name: "Saint Romaine's Militia"
   id: SRM
+  descriptionPrefix: |
+    This faction is only very rarely present in the Taypan system.
+    Restricted to Special Midround Spawns
   description: |
     Formerly several fireteams of the Imperial Compliance Corps united under a single wing, the SRM have
     found their new identity in the reclamation of escaped Imperial 'assets', as well as the 'conscription'
@@ -139,17 +145,17 @@
     state: srm
 
 - type: faction
-  name: "Taypan Sektor Polizei"
+  name: "Colonial Minutemen"
   id: TSP
   description: |
-    Appointed by themselves as a civil enforcement agency, the Taypan Sektor Polizei are a frontier sheriff agency
+    Appointed by themselves as a civil enforcement agency, the Colonial Minutemen are a frontier sheriff agency
     run solely on scant funding from confiscated items and donations from private and civilian entities.
     Formed with the system's best interests at heart, underperforming equipment, underfunded staff, and
     tendency to draw their members from within impoverished circles leave them susceptible to corruption - which
     the major powers of the system often has little manpower or resources to mitigate or mend.
   color: "#9FED58"
   weight: -5
-  enabled: true
+  enabled: false
   icon:
     sprite: /Textures/_Crescent/faction_icons.rsi
     state: tsp

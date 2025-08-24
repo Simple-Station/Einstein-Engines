@@ -99,7 +99,7 @@
     sprite: _Crescent/Structures/capturepoint.rsi
     layers:
     - state: icon
-    - state: unlit
+    - state: lightingDSM
       shader: unshaded
       map: ["enum.PowerDeviceVisualLayers.Powered"]
   - type: GenericVisualizer
@@ -137,7 +137,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 2500
+        damage: 3000
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -158,6 +158,12 @@
     color: "#90d5ff"
   - type: AnimationPlayer
   - type: Appearance
+  - type: Explosive
+    explosionType: Default
+    intensitySlope: 5
+    maxIntensity: 50
+    tileBreakScale: 0.2 # until MLG makes grid pieces not spam the map, then keep this 
+    totalIntensity: 5000 # slips most ships in half
   - type: UnionfallShipNode
     gracePeriod: 1200
     timeToCapture: 60
@@ -181,7 +187,7 @@
     sprite: _Crescent/Structures/capturepoint.rsi
     layers:
     - state: icon
-    - state: unlit
+    - state: lightingNCWL
       shader: unshaded
       map: ["enum.PowerDeviceVisualLayers.Powered"]
   - type: GenericVisualizer
@@ -219,7 +225,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 2500
+        damage: 3000
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -240,6 +246,12 @@
     color: "#90d5ff"
   - type: AnimationPlayer
   - type: Appearance
+  - type: Explosive
+    explosionType: Default
+    intensitySlope: 5
+    maxIntensity: 50
+    tileBreakScale: 0.2 # until MLG makes grid pieces not spam the map, then keep this 
+    totalIntensity: 5000 # slips most ships in half
   - type: UnionfallShipNode
     gracePeriod: 1200
     timeToCapture: 60

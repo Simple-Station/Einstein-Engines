@@ -12,7 +12,7 @@
       - Normal
       - Ethereal
   - type: ContentEye
-    maxZoom: 8.916104, 8.916104
+    maxZoom: 10, 10
   - type: Tag
     tags:
     - InstantDoAfters
@@ -81,6 +81,7 @@
     color: "#228b22"
   - type: RadarConsole
     followEntity: true
+    keepWorldAligned: true
   - type: CargoOrderConsole
   - type: BankClient
   - type: CrewMonitoringConsole
@@ -121,6 +122,7 @@
     keywords: [ "AI", "console", "interface" ]
     priority: -10
     event: !type:ToggleIntrinsicUIEvent { key: enum.SolarControlConsoleUiKey.Key }
+    checkCanInteract: false
 
 - type: entity
   id: ActionAGhostShowCommunications
@@ -134,6 +136,7 @@
     keywords: [ "AI", "console", "interface" ]
     priority: -4
     event: !type:ToggleIntrinsicUIEvent { key: enum.CommunicationsConsoleUiKey.Key }
+    checkCanInteract: false
 
 - type: entity
   id: ActionAGhostShowRadar
@@ -147,6 +150,7 @@
     keywords: [ "AI", "console", "interface" ]
     priority: -7
     event: !type:ToggleIntrinsicUIEvent { key: enum.RadarConsoleUiKey.Key }
+    checkCanInteract: false
 
 - type: entity
   id: ActionAGhostShowCargo
@@ -160,6 +164,7 @@
     keywords: [ "AI", "console", "interface" ]
     priority: -10
     event: !type:ToggleIntrinsicUIEvent { key: enum.CargoConsoleUiKey.Orders }
+    checkCanInteract: false
 
 - type: entity
   id: ActionAGhostShowCrewMonitoring
@@ -173,6 +178,7 @@
     keywords: [ "AI", "console", "interface" ]
     priority: -9
     event: !type:ToggleIntrinsicUIEvent { key: enum.CrewMonitoringUIKey.Key }
+    checkCanInteract: false
 
 - type: entity
   id: ActionAGhostShowStationRecords
@@ -186,3 +192,4 @@
     keywords: [ "AI", "console", "interface" ]
     priority: -8
     event: !type:ToggleIntrinsicUIEvent { key: enum.GeneralStationRecordConsoleKey.Key }
+    checkCanInteract: false

@@ -18,7 +18,12 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-dockmaster
+        rank: crescent-rank-ind-gliess-dockmaster
+      - type: LanguageAdder
+        addSpoken:
+          - Tradeband
+        addUnderstood:
+          - Tradeband
 
 - type: startingGear
   id: GliessDockmasterGear
@@ -27,6 +32,6 @@
     shoes: ClothingShoesBootsLaceup
     jumpsuit: ClothingUniformJumpsuitCapFormal
     head: ClothingHeadHatCapcap
-    belt: ClothingBeltSheath
+    belt: ClothingBeltSheathFilled
     id: GliessDockmasterPDA
     back: ClothingBackpackSatchelLeatherFilledDSM

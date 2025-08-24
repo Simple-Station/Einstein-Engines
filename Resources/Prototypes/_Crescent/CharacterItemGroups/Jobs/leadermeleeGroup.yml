@@ -1,8 +1,6 @@
 - type: characterItemGroup
   id: LoadoutLeaderMelee
-  maxItems: 2
+  maxItems: 1
   items:
-    - type: loadout
-      id: LoadoutItemSabre
     - type: loadout
       id: LoadoutBeltSheathSabre

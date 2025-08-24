@@ -28,6 +28,13 @@
     components:
       - type: ChatRank
         rank: crescent-rank-patriarch
+      - type: LanguageAdder
+        addSpoken:
+          - Freespeak
+          - Tradeband
+        addUnderstood:
+          - Freespeak
+          - Tradeband
   access:
   - Command
   - Maintenance

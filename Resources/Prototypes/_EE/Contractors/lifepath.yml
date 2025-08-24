@@ -41,6 +41,12 @@
   id: Aristocrat
   nameKey: lifepath_name_aristocrat
   descriptionKey: lifepath_description_aristocrat
+  # functions:
+  #   - !type:TraitModifyLanguages
+  #     languagesSpoken:
+  #       - HighImperial
+  #     languagesUnderstood:
+  #       - HighImperial
 
 - type: lifepath
   id: WarVet

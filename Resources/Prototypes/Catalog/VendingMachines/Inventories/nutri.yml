@@ -1,26 +1,26 @@
 - type: vendingMachineInventory
   id: NutriMaxInventory
   startingInventory:
-    HydroponicsToolSpade: 3
-    HydroponicsToolMiniHoe: 3
-    HydroponicsToolClippers: 3
-    HydroponicsToolScythe: 3
-    HydroponicsToolHatchet: 3
-    Dropper: 3
+    HydroponicsToolSpade: 4
+    HydroponicsToolMiniHoe: 4
+    HydroponicsToolClippers: 4
+    HydroponicsToolScythe: 4
+    HydroponicsToolHatchet: 4
+    Dropper: 4
     PlantAnalyzer: 4
-    PlantBag: 3
+    PlantBag: 4
     PlantBGoneSpray: 20
     WeedSpray: 20
     PestSpray: 20
-    Syringe: 5
-    RobustHarvestChemistryBottle: 3
-    EZNutrientChemistryBottle: 3
-    Bucket: 3
+    Syringe: 6
+    RobustHarvestChemistryBottle: 6
+    EZNutrientChemistryBottle: 6
+    Bucket: 6
     DiseaseSwab: 20
     #TO DO:
     #plant analyzer
   contrabandInventory:
-    UnstableMutagenChemistryBottle: 1
-    Joint: 1
+    UnstableMutagenChemistryBottle: 4
+    Joint: 6
   emaggedInventory:
     Left4ZedChemistryBottle: 1
