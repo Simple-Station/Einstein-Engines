@@ -8,6 +8,7 @@
     sprite: Structures/Windows/reinforced_uranium_window.rsi
   - type: Icon
     sprite: Structures/Windows/reinforced_uranium_window.rsi
+    state: full
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: RGlass

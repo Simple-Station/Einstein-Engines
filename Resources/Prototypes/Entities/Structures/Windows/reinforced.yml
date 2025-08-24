@@ -5,9 +5,10 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/reinforced_window.rsi
+    sprite: _Crescent/Structures/newReinfWindow.rsi
   - type: Icon
-    sprite: Structures/Windows/reinforced_window.rsi
+    sprite: _Crescent/Structures/newReinfWindow.rsi
+    state: windowfull
   - type: Repairable
     fuelCost: 10
     doAfterDelay: 2
@@ -44,7 +45,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
-    base: rwindow
+    base: window
   - type: Construction
     graph: Window
     node: reinforcedWindow
@@ -64,9 +65,9 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/reinforced_window.rsi
+    sprite: _Crescent/Structures/newReinfWindow.rsi
   - type: Icon
-    sprite: Structures/Windows/reinforced_window.rsi
+    sprite: _Crescent/Structures/newReinfWindow.rsi
   - type: Repairable
     fuelCost: 10
     doAfterDelay: 2
@@ -126,6 +127,7 @@
     sprite: Structures/Windows/tinted_window.rsi
   - type: Icon
     sprite: Structures/Windows/tinted_window.rsi
+    state: full
   - type: IconSmooth
     base: twindow
   - type: Construction
