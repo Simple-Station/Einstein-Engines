@@ -69,6 +69,19 @@
   - ClothingOuterHardsuitImperialKnight
 
 - type: technology
+  id: ImperialPsionicAttunement
+  name: research-technology-imperial-psionicattunement
+  icon:
+    sprite: _Crescent/Clothing/Empire/OuterClothing/mandatenullweavepsion.rsi
+    state: icon
+  discipline: Imperial
+  tier: 1
+  cost: 2000
+  recipeUnlocks:
+  - ClothingOuterHardsuitImperialNullweavePsion
+  - ImperialPsionBoundlightStaff
+
+- type: technology
   id: BasicImperialRifling
   name: research-technology-imperial-basicrifling
   icon:
