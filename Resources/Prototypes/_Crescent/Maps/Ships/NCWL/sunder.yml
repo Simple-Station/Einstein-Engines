@@ -1,0 +1,32 @@
+# Author Info
+# Discord: @ninruB
+
+- type: vessel
+  id: Sunder
+  name: NCWL Sunder
+  description: A light energy cruiser.
+  price: 70000
+  category: Large
+  group: None
+  path: /Maps/_Crescent/Shuttles/NCWL/sunder.yml
+
+- type: gameMap
+  id: Sunder
+  mapName: 'NCWL Sunder'
+  mapPath: /Maps/_Crescent/Shuttles/NCWL/sunder.yml
+  minPlayers: 0
+  stations:
+    Sunder:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: cruiser
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Sunder {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-destroyer

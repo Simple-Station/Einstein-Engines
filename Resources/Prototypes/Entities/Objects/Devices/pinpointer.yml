@@ -108,3 +108,24 @@
   - type: Pinpointer
     component: ResearchServer
     targetName: the station
+
+- type: entity
+  parent: PinpointerBase
+  name: psion pointer
+  description: A handheld device that leads to the direction of a nearby psionic being. Mystical technology powers this.
+  id: PinpointerPsion
+  suffix: Station
+  components:
+  - type: Sprite
+    layers:
+    - state: pinpointer-syndicate
+      map: ["enum.PinpointerLayers.Base"]
+    - state: pinonnull
+      map: ["enum.PinpointerLayers.Screen"]
+      shader: unshaded
+      visible: false
+  - type: Icon
+    state: pinpointer-syndicate
+  - type: Pinpointer
+    component: Psionic
+    targetName: the tainted

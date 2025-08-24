@@ -1,0 +1,83 @@
+- type: job
+  id: UnionfallDoctorNCWL
+  name: job-name-unionfall-ncwl-doctor
+  description: job-description-unionfall-ncwl-doctor
+  playTimeTracker: ConscriptNCWL
+  requirements:
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterOverallTimeRequirement
+      min: 1000
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - Blindness
+        - WheelchairBound
+  weight: 7
+  startingGear: UnionfallDoctorNCWLGear
+  alwaysUseSpawner: true
+  icon: "JobIconUnionfallNCWLMedic"
+  requireAdminNotify: false
+  supervisors: job-supervisors-unionfall-ncwl
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ncwl-doctor
+      - type: HullrotFaction
+        faction: NCWL
+      - type: LanguageAdder
+        addSpoken:
+          - Dockta
+        addUnderstood:
+          - Dockta
+  access:
+  - Command
+  - Maintenance
+  - NCWLGeneral
+  - Service
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+  - NCWLAdministrator
+  - NCWLFunds
+  - NCWLKommissar
+  - NCWLArmory
+  - NCWLCommand
+
+- type: startingGear
+  id: UnionfallDoctorNCWLGear
+  equipment:
+    neck: ClothingNeckIFFOrange
+    jumpsuit: ClothingUniformJumpsuitNCWLMedic
+    shoes: ClothingShoesBootsMagNCWL
+    id: NCWLMedicalWorkerPDA
+    ears: ClothingHeadsetNCWL
+    belt: ClothingBeltNCWLPouchesFilledMedic
+    pocket1: DoubleEmergencyOxygenTankFilled
+    pocket2: ParamedHypo
+    outerClothing: ClothingOuterHardsuitNCWLMedi
+    head: ClothingHeadHatNCWLCapsoftMedical
+    suitstorage: WeaponPistolT91
+    back: ClothingBackpackSatchelMedical
+    gloves: ClothingHandsGlovesNitrile
+    eyes: ClothingEyesHudMedSec
+  inhand:
+    - BookUnionfallNCWLGuide
+    - JetpackBlackFilled
+  storage:
+    back:
+      - DefibrillatorCompact
+      - BoxMRE
+      - MedkitCombatFilled
+      - OmnizineChemistryBottle
+      - Bloodpack
+      - CartridgePuncturase
+      - CartridgePuncturase
+      - CartridgePuncturase
+      - CartridgePuncturase
+      - CartridgePuncturase
+      - CrowbarRed
+      - HandHeldMassScannerEE

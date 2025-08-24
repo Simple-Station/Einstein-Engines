@@ -1,0 +1,49 @@
+- type: latheRecipe
+  id: LowImperialTranslator
+  result: LowImperialTranslator
+  category: Tools
+  completetime: 2
+  materials:
+    Steel: 200
+    Glass: 200
+    BasicElectronics: 100
+
+- type: latheRecipe
+  id: FreespeakTranslator
+  result: FreespeakTranslator
+  category: Tools
+  completetime: 2
+  materials:
+    Steel: 200
+    Glass: 200
+    BasicElectronics: 100
+
+- type: latheRecipe
+  id: CreoleTranslator
+  result: CreoleTranslator
+  category: Tools
+  completetime: 2
+  materials:
+    Steel: 200
+    Glass: 200
+    BasicElectronics: 100
+
+- type: latheRecipe
+  id: KaishagoTranslator
+  result: KaishagoTranslator
+  category: Tools
+  completetime: 2
+  materials:
+    Steel: 200
+    Glass: 200
+    BasicElectronics: 100
+
+- type: latheRecipe
+  id: TradebandTranslator
+  result: TradebandTranslator
+  category: Tools
+  completetime: 2
+  materials:
+    Steel: 200
+    Glass: 200
+    BasicElectronics: 100

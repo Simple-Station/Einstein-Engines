@@ -362,3 +362,81 @@
   - type: Tag
     tags:
       - SwarmRocketBox
+
+#48mm rockets - sumitomo & kurosawa
+
+- type: entity
+  id: BaseMagazineRocket
+  name: 48mm rocket magazine
+  description: A 5-round magazine capable of holding 48mm rockets. Fits in Sumitomo launchers.
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - MagazineRocket48mm
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Rocket48mm
+    capacity: 5
+    soundRack:
+      path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
+      params:
+        variation: 0.05
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/rifle_load.ogg
+      params:
+        variation: 0.05
+  - type: Item
+    size: Large
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Grenade/grenade_cartridge.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-4
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineRocketEmpty
+  name: 48mm rocket magazine
+  parent: BaseMagazineRocket
+  components:
+  - type: BallisticAmmoProvider
+
+- type: entity
+  id: MagazineRocketEMP
+  name: 48mm rocket Magazine
+  suffix: (EMP)
+  parent: BaseMagazineRocket
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeRocketEMP
+
+- type: entity
+  id: MagazineRocketLowYield
+  name: 48mm rocket magazine
+  suffix: (low yield)
+  parent: BaseMagazineRocket
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeRocketLowYield
+
+- type: entity
+  id: MagazineRocketHighYield
+  name: 48mm rocket magazine
+  suffix: (high yield)
+  parent: BaseMagazineRocket
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeRocketHighYield

@@ -3,19 +3,23 @@
   name: job-name-ncwl-kommissar
   description: job-description-ncwl-kommissar
   playTimeTracker: JobHomeguardLeaderNCWL
-  weight: 7
+  weight: 99
   startingGear: OverseerNCWLGear
   alwaysUseSpawner: true
+  requireAdminNotify: false
   icon: "JobIconNCWLHomeguardLeader"
+  supervisors: job-supervisors-ncwl-kommissar
+  canBeAntag: false
   requirements:
+    - !type:CharacterWhitelistRequirement
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterOverallTimeRequirement
+      min: 30000
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
         - Voidborn
-    - !type:CharacterOverallTimeRequirement
-      min: 30000
-    - !type:FactionRequirement
-      factionID: "NCWL"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -25,19 +29,16 @@
         - Blindness
         - Pacifist
         - WheelchairBound
-  requireAdminNotify: false
-  supervisors: job-supervisors-ncwl-kommissar
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
         rank: crescent-rank-ncwl-home-leader
-      - type: LanguageKnowledge
-        speaks:
+      - type: LanguageAdder
+        addSpoken:
           - Dockta
           - Tradeband
-        understands:
+        addUnderstood:
           - Dockta
           - Tradeband
   access:

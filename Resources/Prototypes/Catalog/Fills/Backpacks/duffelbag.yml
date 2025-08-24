@@ -71,7 +71,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: WeaponSubMachineGunC20rEmpty
+      - id: WeaponSubMachineGunC20r
 #     - id: SMGSuppressor
 
 - type: entity

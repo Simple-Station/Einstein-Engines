@@ -35,7 +35,7 @@ job-name-ministerlabor = Minister of Labor
 job-name-logisticsofficer = Minister of Wealth
 job-name-adjutant = Imperial Adjutant
 job-name-archmaester = Scribe Archmaester
-job-name-governor = Lord Regent
+job-name-governor = Lord Admiral
 job-name-foremanimp = Imperial Foreman
 job-name-imperialresearch = Imperial Scribe
 job-name-surgeon = Imperial Surgeon
@@ -58,7 +58,7 @@ job-name-board = Board Executive
 job-name-corpsec = CorpSec Agent
 job-name-highsec = Corporate Liquidation Agent
 job-name-employee = Salaryman
-job-name-medtech = MedTech Specialist
+job-name-medtech = MedTech Researcher
 
 # tsp
 
@@ -103,7 +103,7 @@ job-name-spacer = Spacer
 job-name-gliess-sheriff = Gliessian Sheriff
 job-name-gliess-dockmaster = Gliessian Dockmaster
 
-# conscript-ncwl
+# conscript-ncwl - for PLANETFALL
 
 job-name-conscript-ncwl-ship-captain = Clementine Admiral
 job-name-conscript-ncwl-ship-crew = Clementine Artificer
@@ -117,7 +117,7 @@ job-name-conscript-ncwl-shotgun = Breacher (Shotgun)
 job-name-conscript-ncwl-rifleman = Soldat (Rifle)
 job-name-conscript-ncwl-cadet = Cadet
 
-# conscript-dsm
+# conscript-dsm - for PLANETFALL
 
 job-name-conscript-dsm-ship-captain = Nemesis Grand Steward
 job-name-conscript-dsm-ship-crew = Nemesis Steward
@@ -130,3 +130,22 @@ job-name-conscript-dsm-smg = Squire (SMG)
 job-name-conscript-dsm-shotgun = Squire (Shotgun)
 job-name-conscript-dsm-rifleman = Armsman (Rifle)
 job-name-conscript-dsm-cadet = Recruit
+
+# unionfall-ncwl
+
+job-name-unionfall-ncwl-ship-captain = Ship Captain
+job-name-unionfall-ncwl-ship-crew = Ship Crew
+job-name-unionfall-ncwl-leader = Fleet Kommandant
+job-name-unionfall-ncwl-officer = Kommissar
+job-name-unionfall-ncwl-doctor = Doktor
+job-name-unionfall-ncwl-rifleman = Soldat
+job-name-unionfall-ncwl-cadet = Cadet
+
+# unionfall-dsm
+job-name-unionfall-dsm-ship-captain = Ship Grand Steward
+job-name-unionfall-dsm-ship-crew = Ship Steward
+job-name-unionfall-dsm-leader = Knight-Bannaret
+job-name-unionfall-dsm-officer = Knight
+job-name-unionfall-dsm-doctor = Medicant
+job-name-unionfall-dsm-rifleman = Man-at-arms
+job-name-unionfall-dsm-cadet = Levyman

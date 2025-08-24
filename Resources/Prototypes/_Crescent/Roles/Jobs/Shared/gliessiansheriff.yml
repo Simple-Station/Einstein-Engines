@@ -18,7 +18,12 @@
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
-        rank: crescent-rank-sheriff
+        rank: crescent-rank-ind-gliess-sheriff
+      - type: LanguageAdder
+        addSpoken:
+          - Tradeband
+        addUnderstood:
+          - Tradeband
 
 - type: startingGear
   id: GliessSheriffGear

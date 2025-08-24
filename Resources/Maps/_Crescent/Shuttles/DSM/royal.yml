@@ -9477,7 +9477,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: MagazineGrenadeEMP
+- proto: MagazineRocketEMP
   entities:
   - uid: 2801
     components:

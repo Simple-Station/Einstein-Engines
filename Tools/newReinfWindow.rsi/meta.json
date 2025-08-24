@@ -1,0 +1,46 @@
+{
+    "version": 1,
+    "license": "Propietary",
+    "copyright": "Commisioned and owned by SPCR/MLGTASTICa",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "windowfull"
+      },
+      {
+        "name": "window0",
+        "directions": 4
+      },
+      {
+        "name": "window1",
+        "directions": 4
+      },
+      {
+        "name": "window2",
+        "directions": 4
+      },
+      {
+        "name": "window3",
+        "directions": 4
+      },
+      {
+        "name": "window4",
+        "directions": 4
+      },
+      {
+        "name": "window5",
+        "directions": 4
+      },
+      {
+        "name": "window6",
+        "directions": 4
+      },
+      {
+        "name": "window7",
+        "directions": 4
+      }
+    ]
+  }

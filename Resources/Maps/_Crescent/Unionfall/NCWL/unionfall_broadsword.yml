@@ -81,6 +81,17 @@ entities:
             182: -1,4
             186: -1,-1
             189: 0,-1
+            199: 0,0
+            207: 1,0
+            215: 1,1
+            243: -2,0
+            248: -2,1
+            256: -1,0
+            264: -1,1
+            272: -1,3
+            277: -1,4
+            281: -1,-1
+            284: 0,-1
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -107,6 +118,17 @@ entities:
             172: -1,1
             191: 0,-1
             194: 1,-1
+            202: 0,0
+            210: 1,0
+            218: 1,1
+            223: 1,3
+            228: 1,4
+            232: 2,0
+            237: 2,1
+            259: -1,0
+            267: -1,1
+            286: 0,-1
+            289: 1,-1
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -129,6 +151,15 @@ entities:
             167: -1,1
             175: -1,3
             180: -1,4
+            197: 0,0
+            205: 1,0
+            213: 1,1
+            246: -2,1
+            251: -2,2
+            254: -1,0
+            262: -1,1
+            270: -1,3
+            275: -1,4
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -151,6 +182,15 @@ entities:
             145: 2,2
             163: -1,0
             171: -1,1
+            201: 0,0
+            209: 1,0
+            217: 1,1
+            222: 1,3
+            227: 1,4
+            236: 2,1
+            240: 2,2
+            258: -1,0
+            266: -1,1
         - node:
             id: LatticeEdgeE
           decals:
@@ -178,6 +218,18 @@ entities:
             179: -1,4
             184: -1,-1
             187: 0,-1
+            196: 0,0
+            204: 1,0
+            212: 1,1
+            241: -2,0
+            245: -2,1
+            250: -2,2
+            253: -1,0
+            261: -1,1
+            269: -1,3
+            274: -1,4
+            279: -1,-1
+            282: 0,-1
         - node:
             id: LatticeEdgeN
           decals:
@@ -213,6 +265,22 @@ entities:
             185: -1,-1
             188: 0,-1
             192: 1,-1
+            198: 0,0
+            206: 1,0
+            214: 1,1
+            220: 1,3
+            225: 1,4
+            230: 2,0
+            234: 2,1
+            242: -2,0
+            247: -2,1
+            255: -1,0
+            263: -1,1
+            271: -1,3
+            276: -1,4
+            280: -1,-1
+            283: 0,-1
+            287: 1,-1
         - node:
             id: LatticeEdgeS
           decals:
@@ -246,6 +314,21 @@ entities:
             173: -1,3
             178: -1,4
             183: -1,5
+            195: 0,0
+            203: 1,0
+            211: 1,1
+            219: 1,3
+            224: 1,4
+            229: 1,5
+            233: 2,1
+            238: 2,2
+            244: -2,1
+            249: -2,2
+            252: -1,0
+            260: -1,1
+            268: -1,3
+            273: -1,4
+            278: -1,5
         - node:
             id: LatticeEdgeW
           decals:
@@ -273,6 +356,18 @@ entities:
             170: -1,1
             190: 0,-1
             193: 1,-1
+            200: 0,0
+            208: 1,0
+            216: 1,1
+            221: 1,3
+            226: 1,4
+            231: 2,0
+            235: 2,1
+            239: 2,2
+            257: -1,0
+            265: -1,1
+            285: 0,-1
+            288: 1,-1
         - node:
             color: '#EFB34196'
             id: WarnCornerGreyscaleNE
@@ -555,6 +650,38 @@ entities:
     - type: Transform
       pos: -0.5,1.5
       parent: 1
+- proto: CartridgeRocketLowYield
+  entities:
+  - uid: 40
+    components:
+    - type: Transform
+      pos: 1.617569,2.341842
+      parent: 1
+  - uid: 73
+    components:
+    - type: Transform
+      pos: -0.42149353,2.341842
+      parent: 1
+  - uid: 74
+    components:
+    - type: Transform
+      pos: -0.25743103,2.3652794
+      parent: 1
+  - uid: 75
+    components:
+    - type: Transform
+      pos: -0.60899353,2.3652794
+      parent: 1
+  - uid: 76
+    components:
+    - type: Transform
+      pos: 1.5003815,2.341842
+      parent: 1
+  - uid: 77
+    components:
+    - type: Transform
+      pos: 1.336319,2.341842
+      parent: 1
 - proto: Catwalk
   entities:
   - uid: 2
@@ -657,49 +784,6 @@ entities:
       - Module E
 - proto: GrenadeBaton
   entities:
-  - uid: 40
-    components:
-    - type: Transform
-      pos: -0.60944057,2.6029887
-      parent: 1
-  - uid: 73
-    components:
-    - type: Transform
-      pos: -0.26853275,2.5696964
-      parent: 1
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-  - uid: 74
-    components:
-    - type: Transform
-      pos: 1.2030594,2.6655316
-      parent: 1
-  - uid: 75
-    components:
-    - type: Transform
-      pos: 1.4218094,2.5560803
-      parent: 1
-  - uid: 76
-    components:
-    - type: Transform
-      pos: -0.78131557,2.3684506
-      parent: 1
-  - uid: 77
-    components:
-    - type: Transform
-      pos: -0.46881557,2.2277274
-      parent: 1
-  - uid: 83
-    components:
-    - type: Transform
-      pos: 1.3124344,2.4309936
-      parent: 1
-  - uid: 84
-    components:
-    - type: Transform
-      pos: 1.5936844,2.3997226
-      parent: 1
   - uid: 85
     components:
     - type: Transform

@@ -22,10 +22,10 @@ language-Azaziba-description =
     A language of Moghes consisting of a combination of spoken word and gesticulation.
     While waning since Moghes entered the galactic stage - it enjoys popular use by Unathi that never fell to the Hegemony's cultural dominance.
 
-language-SolCommon-name = Low Imperial
+language-SolCommon-name = Sol Common
 language-SolCommon-description =
-    The language of the uneducated and unwashed masses of the Divine Sol Mandate. It is taught in all elementary schools of the Mandate, a requirement to graduate.
-    While it may not be the most refined language, it serves as a crucial means of communication for the masses.
+    With its roots in Mandarin Chinese - Common evolved as the official language of the Sol Alliance - with officials working to tie it together with a common tongue.
+    It's spoken by state officials - taught in schools - and spoken by those who either feel a sense of national pride in the Alliance or otherwise fell sway to the culture.
 
 language-NovuNederic-name = Novu-Nederic
 language-NovuNederic-description =
@@ -70,8 +70,8 @@ language-RobotTalk-description = A language consisting of harsh binary chirps, w
 language-Calcic-name = Calcic
 language-Calcic-description = The bone-rattling language of skeletons and Plasmamen. It sounds like a harmonic trousle of bones with a humerus tone, sans any off-tune ribbing.
 
-language-Sign-name = Tau-Ceti Basic Sign Language
-language-Sign-description = TCB-SL for short, this sign language is prevalent among mute and deaf people.
+language-Sign-name = Spacer's Sign
+language-Sign-description = An evolved form of the ancient American Sign Language, used by all spacefarers. Comprised mostly of aggressive arm-length gestures that are meant to be seen clearly in the silence of EVA.
 
 language-Marish-name = Marish
 language-Marish-description =  A language spoken only by Voidborn, one that is unable to be replicated by normal tongues.

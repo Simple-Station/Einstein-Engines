@@ -3,18 +3,21 @@
   name: job-name-knight
   description: job-description-knight
   playTimeTracker: JobKnightDSM
+  weight: 50
+  startingGear: KnightGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconImperialKnight"
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
   requirements:
+    - !type:FactionRequirement
+      factionID: "DSM"
     - !type:CharacterOverallTimeRequirement
       min: 35000
     - !type:CharacterSpeciesRequirement
       species:
         - Human
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Voidborn
-    - !type:FactionRequirement
-      factionID: "DSM"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -23,28 +26,18 @@
         - Muted
         - Pacifist
         - WheelchairBound
-  weight: 81
-  startingGear: KnightGear
-  alwaysUseSpawner: true
-  icon: "JobIconImperialKnight"
-  requireAdminNotify: false
-  supervisors: job-supervisors-imperial
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
         rank: crescent-rank-knight
-      - type: LanguageKnowledge
-        speaks:
+      - type: LanguageAdder
+        addSpoken:
           - HighImperial
-          - Tradeband
-          - SolCommon
-        understands:
+          - LowImperial
+        addUnderstood:
           - HighImperial
-          - Tradeband
-          - SolCommon
-
+          - LowImperial
   access:
   - Command
   - Empire

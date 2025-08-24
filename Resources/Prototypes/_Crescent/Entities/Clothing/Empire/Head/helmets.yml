@@ -56,6 +56,11 @@
         Heat: 0.9
         Radiation: 0.9
         Caustic: 0.9
+  - type: TinfoilHat
+    passthrough: true
+    destroyOnFry: false
+  - type: GuideHelp
+    guides: [ PsionicInsulation ]
 
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
@@ -515,3 +520,19 @@
         Piercing: 5
         Heat: 5
         Caustic: 5
+  - type: TinfoilHat
+    passthrough: true
+    destroyOnFry: false
+  - type: GuideHelp
+    guides: [ PsionicInsulation ]
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatDSMCapsoft
+  name: imperial cap
+  description: A patrol cap in imperial colors.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/Empire/Head/dsm_cap.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/Empire/Head/dsm_cap.rsi

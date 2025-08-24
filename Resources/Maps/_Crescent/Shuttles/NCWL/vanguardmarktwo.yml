@@ -50,7 +50,7 @@ entities:
     - type: OccluderTree
     - type: SpreaderGrid
     - type: Shuttle
-      baseMaxLinearVelocity: 25
+      baseMaxLinearVelocity: 30
     - type: GridPathfinding
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
@@ -63,162 +63,216 @@ entities:
             color: '#EFB34196'
             id: BrickTileSteelLineE
           decals:
-            45: 0,-2
-            46: 0,-1
+            21: 0,-2
+            22: 0,-1
         - node:
             color: '#EFB34196'
             id: BrickTileSteelLineW
           decals:
-            47: 0,-2
-            48: 0,-1
+            23: 0,-2
+            24: 0,-1
         - node:
             color: '#FFFFFFFF'
             id: DirtMedium
           decals:
-            83: -2,-2
-            84: -1,-1
-            85: 0,-1
-            86: -1,-2
-            87: 1,-1
-            88: 2,-1
-            89: 1,-2
-            90: 2,-2
-            91: 2,1
-            92: 1,1
-            93: 0,1
-            94: -1,1
-            95: -2,1
-            96: -1,3
-            97: 0,4
-            98: -2,3
-            99: -2,3
-            100: 0,5
-            101: 1,5
-            102: 0,3
-            103: 1,3
-            104: 2,3
-            105: 2,3
-            106: 4,3
-            107: -4,3
-            108: -2,3
-            109: 0,5
-            110: 1,5
-            111: 0,5
-            112: 0,5
-            113: -4,1
-            114: -4,0
-            115: -4,-1
-            116: 4,1
-            117: 4,0
-            118: 4,0
-            119: 4,-1
-            120: 3,3
-            121: 2,3
-            122: 1,3
-            123: 1,5
-            124: 0,5
-            125: -1,4
+            57: -2,-2
+            58: -1,-1
+            59: 0,-1
+            60: -1,-2
+            61: 1,-1
+            62: 2,-1
+            63: 1,-2
+            64: 2,-2
+            65: 2,1
+            66: 1,1
+            67: 0,1
+            68: -1,1
+            69: -2,1
+            70: -1,3
+            71: 0,4
+            72: -2,3
+            73: -2,3
+            74: 0,5
+            75: 1,5
+            76: 0,3
+            77: 1,3
+            78: 2,3
+            79: 2,3
+            80: 4,3
+            81: -4,3
+            82: -2,3
+            83: 0,5
+            84: 1,5
+            85: 0,5
+            86: 0,5
+            87: -4,1
+            88: -4,0
+            89: -4,-1
+            90: 4,1
+            91: 4,0
+            92: 4,0
+            93: 4,-1
+            94: 3,3
+            95: 2,3
+            96: 1,3
+            97: 1,5
+            98: 0,5
+            99: -1,4
+        - node:
+            zIndex: 1
+            id: LatticeCornerNE
+          decals:
+            108: -5,-2
+            111: -4,-5
+        - node:
+            zIndex: 1
+            id: LatticeCornerNW
+          decals:
+            122: 4,-5
+            125: 5,-2
+        - node:
+            zIndex: 1
+            id: LatticeCornerSE
+          decals:
+            115: -4,4
+            118: -2,6
+        - node:
+            zIndex: 1
+            id: LatticeCornerSW
+          decals:
+            102: 2,6
+            105: 4,4
+        - node:
+            id: LatticeEdgeE
+          decals:
+            106: -5,-2
+            109: -4,-5
+            114: -4,4
+            117: -2,6
+        - node:
+            id: LatticeEdgeN
+          decals:
+            107: -5,-2
+            110: -4,-5
+            112: -3,-6
+            119: 3,-6
+            120: 4,-5
+            123: 5,-2
+        - node:
+            id: LatticeEdgeS
+          decals:
+            100: 2,6
+            103: 4,4
+            113: -4,4
+            116: -2,6
+        - node:
+            id: LatticeEdgeW
+          decals:
+            101: 2,6
+            104: 4,4
+            121: 4,-5
+            124: 5,-2
         - node:
             color: '#FFFFFFFF'
             id: TechE
           decals:
-            50: -1,4
-            51: -1,3
-            53: 2,3
+            26: -1,4
+            27: -1,3
+            29: 2,3
         - node:
             color: '#FFFFFFFF'
             id: TechN
           decals:
-            29: 2,1
-            30: 1,1
-            39: -2,1
-            40: -1,1
-            59: 0,4
+            10: 2,1
+            11: 1,1
+            15: -2,1
+            16: -1,1
+            33: 0,4
         - node:
             color: '#FFFFFFFF'
             id: TechS
           decals:
-            18: -2,-2
-            19: -1,-2
-            20: 1,-2
-            21: 2,-2
-            43: 2,-1
-            44: -2,-1
+            2: -2,-2
+            3: -1,-2
+            4: 1,-2
+            5: 2,-2
+            19: 2,-1
+            20: -2,-1
         - node:
             color: '#FFFFFFFF'
             id: TechSE
           decals:
-            42: -1,-1
+            18: -1,-1
         - node:
             color: '#FFFFFFFF'
             id: TechSW
           decals:
-            41: 1,-1
+            17: 1,-1
         - node:
             color: '#FFFFFFFF'
             id: TechW
           decals:
-            49: 1,4
-            52: 1,3
-            54: -2,3
+            25: 1,4
+            28: 1,3
+            30: -2,3
         - node:
             color: '#EFB34196'
             id: WarnCornerSmallSE
           decals:
-            38: -1,1
+            14: -1,1
         - node:
             color: '#EFB34196'
             id: WarnCornerSmallSW
           decals:
-            27: 1,1
+            9: 1,1
         - node:
             color: '#EFB34196'
             id: WarnLineE
           decals:
-            56: -3,3
-            61: -2,3
-            67: -5,0
-            68: -3,1
-            69: 3,1
-            70: 5,0
-            81: 0,5
+            32: -3,3
+            35: -2,3
+            41: -5,0
+            42: -3,1
+            43: 3,1
+            44: 5,0
+            55: 0,5
         - node:
             color: '#EFB34196'
             id: WarnLineN
           decals:
-            37: 0,1
-            60: 0,3
-            71: 0,0
-            72: 0,2
-            73: -3,4
-            74: 0,6
-            75: 3,4
+            13: 0,1
+            34: 0,3
+            45: 0,0
+            46: 0,2
+            47: -3,4
+            48: 0,6
+            49: 3,4
         - node:
             color: '#EFB34196'
             id: WarnLineS
           decals:
-            55: 3,3
-            62: 2,3
-            63: 5,0
-            64: 3,1
-            65: -5,0
-            66: -3,1
-            82: 0,5
+            31: 3,3
+            36: 2,3
+            37: 5,0
+            38: 3,1
+            39: -5,0
+            40: -3,1
+            56: 0,5
         - node:
             color: '#EFB34196'
             id: WarnLineW
           decals:
-            10: -2,-3
-            11: 2,-3
-            22: 1,-3
-            23: 0,-3
-            24: -1,-3
-            36: 0,1
-            76: 0,0
-            77: 0,2
-            78: 3,4
-            79: -3,4
-            80: 0,6
+            0: -2,-3
+            1: 2,-3
+            6: 1,-3
+            7: 0,-3
+            8: -1,-3
+            12: 0,1
+            50: 0,0
+            51: 0,2
+            52: 3,4
+            53: -3,4
+            54: 0,6
     - type: GridAtmosphere
       version: 2
       data:
@@ -236,23 +290,27 @@ entities:
             0: 136
             1: 1025
           1,0:
-            0: 8211
+            0: 19
+            2: 8192
           1,1:
             1: 1
           1,-1:
-            0: 4113
+            0: 4096
+            2: 17
             1: 512
           -2,-1:
             1: 2048
           -2,0:
-            0: 32776
+            0: 8
+            2: 32768
           -1,-1:
-            0: 56529
+            0: 56512
+            2: 17
           -1,-2:
             1: 4608
-            0: 49152
+            2: 49152
           0,-2:
-            0: 24576
+            2: 24576
             1: 2048
           1,-2:
             1: 4096
@@ -287,15 +345,26 @@ entities:
           - 0
           - 0
           - 0
+        - volume: 2500
+          temperature: 293.15
+          moles:
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
         chunkSize: 4
-    - type: VesselIcon
-      iffIcon:
-        sprite: _Crescent/ShipIcons/ifficons.rsi
-        state: fighter
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: BecomesStation
-      id: VanguardMarkTwo
+      id: Vanguard2
 - proto: AAAHardpointFixed
   entities:
   - uid: 13
@@ -425,6 +494,108 @@ entities:
     components:
     - type: Transform
       pos: 5.5,0.5
+      parent: 1
+- proto: AtmosFixBlockerMarker
+  entities:
+  - uid: 216
+    components:
+    - type: Transform
+      pos: -1.5,-4.5
+      parent: 1
+  - uid: 217
+    components:
+    - type: Transform
+      pos: -0.5,-4.5
+      parent: 1
+  - uid: 218
+    components:
+    - type: Transform
+      pos: 1.5,-4.5
+      parent: 1
+  - uid: 219
+    components:
+    - type: Transform
+      pos: 2.5,-4.5
+      parent: 1
+  - uid: 220
+    components:
+    - type: Transform
+      pos: 3.5,-5.5
+      parent: 1
+  - uid: 221
+    components:
+    - type: Transform
+      pos: 4.5,-4.5
+      parent: 1
+  - uid: 222
+    components:
+    - type: Transform
+      pos: 4.5,-3.5
+      parent: 1
+  - uid: 223
+    components:
+    - type: Transform
+      pos: 4.5,-2.5
+      parent: 1
+  - uid: 224
+    components:
+    - type: Transform
+      pos: -2.5,-5.5
+      parent: 1
+  - uid: 225
+    components:
+    - type: Transform
+      pos: -3.5,-4.5
+      parent: 1
+  - uid: 226
+    components:
+    - type: Transform
+      pos: -3.5,-3.5
+      parent: 1
+  - uid: 227
+    components:
+    - type: Transform
+      pos: -3.5,-2.5
+      parent: 1
+  - uid: 228
+    components:
+    - type: Transform
+      pos: -4.5,-1.5
+      parent: 1
+  - uid: 229
+    components:
+    - type: Transform
+      pos: -4.5,3.5
+      parent: 1
+  - uid: 230
+    components:
+    - type: Transform
+      pos: -3.5,4.5
+      parent: 1
+  - uid: 231
+    components:
+    - type: Transform
+      pos: -1.5,6.5
+      parent: 1
+  - uid: 232
+    components:
+    - type: Transform
+      pos: 2.5,6.5
+      parent: 1
+  - uid: 233
+    components:
+    - type: Transform
+      pos: 4.5,4.5
+      parent: 1
+  - uid: 234
+    components:
+    - type: Transform
+      pos: 5.5,3.5
+      parent: 1
+  - uid: 235
+    components:
+    - type: Transform
+      pos: 5.5,-1.5
       parent: 1
 - proto: BlastDoor
   entities:
@@ -916,6 +1087,28 @@ entities:
     - type: Transform
       pos: 2.5,-0.5
       parent: 1
+- proto: Firelock
+  entities:
+  - uid: 237
+    components:
+    - type: Transform
+      pos: -2.5,1.5
+      parent: 1
+  - uid: 238
+    components:
+    - type: Transform
+      pos: 0.5,2.5
+      parent: 1
+  - uid: 239
+    components:
+    - type: Transform
+      pos: 0.5,0.5
+      parent: 1
+  - uid: 240
+    components:
+    - type: Transform
+      pos: 3.5,1.5
+      parent: 1
 - proto: GasPassiveVent
   entities:
   - uid: 136
@@ -1104,6 +1297,13 @@ entities:
     - type: Transform
       pos: 2.5,-2.5
       parent: 1
+- proto: NFHolopadShip
+  entities:
+  - uid: 236
+    components:
+    - type: Transform
+      pos: -0.5,-1.5
+      parent: 1
 - proto: NTVulcanTurret
   entities:
   - uid: 88
@@ -1112,12 +1312,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 0.5,5.5
       parent: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        84:
-        - SpaceArtilleryDetectedFiring: Open
-    - type: ChamberMagazineAmmoProvider
-      boltClosed: True
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -1140,6 +1334,12 @@ entities:
           showEnts: False
           occludes: True
           ents: []
+    - type: ChamberMagazineAmmoProvider
+      boltClosed: True
+    - type: DeviceLinkSource
+      linkedPorts:
+        84:
+        - SpaceArtilleryDetectedFiring: Open
 - proto: PaperBin20
   entities:
   - uid: 96
@@ -1265,12 +1465,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -2.5,3.5
       parent: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        83:
-        - SpaceArtilleryDetectedFiring: Open
-    - type: ChamberMagazineAmmoProvider
-      boltClosed: True
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -1293,18 +1487,18 @@ entities:
           showEnts: False
           occludes: True
           ents: []
+    - type: ChamberMagazineAmmoProvider
+      boltClosed: True
+    - type: DeviceLinkSource
+      linkedPorts:
+        83:
+        - SpaceArtilleryDetectedFiring: Open
   - uid: 90
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 3.5,3.5
       parent: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        85:
-        - SpaceArtilleryDetectedFiring: Open
-    - type: ChamberMagazineAmmoProvider
-      boltClosed: True
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -1327,6 +1521,12 @@ entities:
           showEnts: False
           occludes: True
           ents: []
+    - type: ChamberMagazineAmmoProvider
+      boltClosed: True
+    - type: DeviceLinkSource
+      linkedPorts:
+        85:
+        - SpaceArtilleryDetectedFiring: Open
 - proto: SubstationBasic
   entities:
   - uid: 99

@@ -3,10 +3,13 @@
   name: job-name-surgeon
   description: job-description-surgeon
   playTimeTracker: JobSurgeonDSM
-  weight: 75
+  weight: 2
   startingGear: SurgeonGear
   alwaysUseSpawner: true
+  requireAdminNotify: false
   icon: "JobIconImperialSurgeon"
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
   requirements:
     - !type:FactionRequirement
       factionID: "DSM"
@@ -21,9 +24,6 @@
         - Blindness
         - Pacifist
         - WheelchairBound
-  requireAdminNotify: false
-  supervisors: job-supervisors-imperial
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
@@ -32,11 +32,11 @@
       - type: CPRTraining
       - type: SurgerySpeedModifier
         speedModifier: 2
-      - type: LanguageKnowledge
-        speaks:
-          - SolCommon
-        understands:
-          - SolCommon
+      - type: LanguageAdder
+        addSpoken:
+          - LowImperial
+        addUnderstood:
+          - LowImperial
   access:
   - Command
   - Empire

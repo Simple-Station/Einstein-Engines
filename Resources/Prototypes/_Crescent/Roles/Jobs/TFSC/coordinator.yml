@@ -25,6 +25,13 @@
       - type: CPRTraining
       - type: SurgerySpeedModifier
         speedModifier: 2.5
+      - type: LanguageAdder
+        addSpoken:
+          - Freespeak
+          - Tradeband
+        addUnderstood:
+          - Freespeak
+          - Tradeband
   weight: 17
   startingGear: CoordinatorGear
   alwaysUseSpawner: true

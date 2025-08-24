@@ -1736,7 +1736,7 @@ entities:
     - type: Transform
       pos: 4.5,4.5
       parent: 1
-- proto: GrenadeBaton
+- proto: CartridgeRocketLowYield
   entities:
   - uid: 237
     components:
@@ -1972,7 +1972,7 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-- proto: MagazineGrenadeEmpty
+- proto: MagazineRocketEmpty
   entities:
   - uid: 231
     components:

@@ -1,11 +1,11 @@
 # Author Info
-# Discord: @fleshangel
+# Discord: originally @fleshangel, later remade by @ninruB
 
 - type: vessel
   id: Ivarod
   name: NCWL Ivarod
   description: A converted light destroyer, purpose-built with endurance in mind.
-  price: 110000
+  price: 90000
   category: Large
   group: None
   path: /Maps/_Crescent/Shuttles/NCWL/ivarod.yml
