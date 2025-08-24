@@ -68,7 +68,7 @@
     sprite: _Crescent/Structures/newReinfWindow.rsi
   - type: Icon
     sprite: _Crescent/Structures/newReinfWindow.rsi
-    state: full
+    state: windowfull
   - type: Repairable
     fuelCost: 10
     doAfterDelay: 2
