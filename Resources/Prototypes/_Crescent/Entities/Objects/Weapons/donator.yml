@@ -383,7 +383,6 @@
     angleDecay: 30
     selectedMode: SemiAuto
     fireRate: 4
-    damageModifier: 0.75
     availableModes:
     - SemiAuto
     soundGunshot:
