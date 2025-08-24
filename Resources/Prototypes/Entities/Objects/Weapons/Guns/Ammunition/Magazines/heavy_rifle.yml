@@ -11,6 +11,9 @@
     size: Small
   - type: BallisticAmmoProvider
     mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeHeavyRifle
     capacity: 16
   - type: ContainerContainer
     containers:
