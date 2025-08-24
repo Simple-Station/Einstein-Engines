@@ -238,6 +238,27 @@
     Tungsten: 1000
 
 - type: latheRecipe
+  id: ClothingOuterHardsuitImperialNullweavePsion
+  result: ClothingOuterHardsuitImperialNullweavePsion
+  completetime: 2
+  materials:
+    Bluespace: 500
+    HardsuitElectronics: 500
+    Cloth: 500
+    Durathread: 500
+    Silver: 500
+
+- type: latheRecipe
+  id: ImperialPsionBoundlightStaff
+  result: ImperialPsionBoundlightStaff
+  completetime: 2
+  materials:
+    Bluespace: 1000
+    Cloth: 250
+    Wood: 750
+    Silver: 500
+
+- type: latheRecipe
   id: ClothingOuterHardsuitHunterElite
   result: ClothingOuterHardsuitHunterElite
   completetime: 2
