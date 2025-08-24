@@ -68,6 +68,7 @@
     sprite: _Crescent/Structures/newReinfWindow.rsi
   - type: Icon
     sprite: _Crescent/Structures/newReinfWindow.rsi
+    state: full
   - type: Repairable
     fuelCost: 10
     doAfterDelay: 2
@@ -104,7 +105,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
-    base: rwindow
+    base: window
   - type: Construction
     graph: Window
     node: reinforcedWindow
