@@ -9,6 +9,11 @@
   name: Shipfitting
   priority: 10
 
+- type: storeCategory
+  id: StoreCategorySAWships
+  name: Salvaged and Retrofitted Ships
+  priority: 8
+
 - type: listing
   id: StoreListingSAWKalash
   name: NCSP AKMS Kalash 7.62x51mm
@@ -118,3 +123,36 @@
     ScrapSAW: 55
   categories:
   - StoreCategorySAWshipmods
+
+- type: listing
+  id: StoreListingSAWCaracal
+  name: SAW Caracal LPC
+  description: A Retrofitted Caracal fighter, equipped with Idna launchers and unique 70mm rocket launchers.
+  icon: { sprite: _Crescent/Objects/Misc/lpcchip.rsi, state: icon }
+  productEntity: ShipVoucherCaracal
+  cost:
+    ScrapSAW: 75
+  categories:
+  - StoreCategorySAWships
+
+- type: listing
+  id: StoreListingSAWRokh
+  name: SAW Rokh LPC
+  description: A Retrofitted mining barge Rokh, equipped with enourmous plastitanium hull and a unique cargo console on board.
+  icon: { sprite: _Crescent/Objects/Misc/lpcchip.rsi, state: icon }
+  productEntity: ShipVoucherRokh
+  cost:
+    ScrapSAW: 205
+  categories:
+  - StoreCategorySAWships
+
+- type: listing
+  id: StoreListingSAWAmadeus
+  name: SAW Amadeus LPC
+  description: Retrofitted Praxis vessel made into a rugged, shielded corvette.
+  icon: { sprite: _Crescent/Objects/Misc/lpcchip.rsi, state: icon }
+  productEntity: ShipVoucherAmadeus
+  cost:
+    ScrapSAW: 140
+  categories:
+  - StoreCategorySAWships
