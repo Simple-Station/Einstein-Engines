@@ -19,7 +19,7 @@
   name: hellshift-title
   description: hellshift-description
   rules:
-    - HellshiftStationEventScheduler
+    - RampingStationEventScheduler
     - BasicRoundstartVariation
     - SubGamemodesRule
     - LavalandStormScheduler # Lavaland Change
@@ -31,7 +31,7 @@
   name: irregular-title
   description: irregular-description
   rules:
-    - IrregularStationEventScheduler
+    - BasicStationEventScheduler
     - BasicRoundstartVariation
     - LavalandStormScheduler # Lavaland Change
 
@@ -42,7 +42,7 @@
   name: irregular-extended-title
   description: irregular-extended-description
   rules:
-    - IrregularExtendedStationEventScheduler
+    - BasicStationEventScheduler
     - BasicRoundstartVariation
     - LavalandStormScheduler # Lavaland Change
 
