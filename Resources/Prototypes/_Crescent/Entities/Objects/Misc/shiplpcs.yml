@@ -279,7 +279,7 @@
     price: 30000
   - type: ShipVoucher
     ship: Molot
-    
+
 - type: entity
   parent: BaseItem
   id: ShipVoucherIvarod
@@ -296,7 +296,7 @@
     price: 67500
   - type: ShipVoucher
     ship: Ivarod
-    
+
 #T1 END
 
 #T2
@@ -390,7 +390,7 @@
     price: 65000
   - type: ShipVoucher
     ship: Bogatyr
-    
+
 - type: entity
   parent: BaseItem
   id: ShipVoucherSunder
@@ -719,6 +719,23 @@
     price: 40000
   - type: ShipVoucher
     ship: Sinn
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherThanapod
+  name: SAW 'Thanapod' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a Shipfitters Aeronautics union Thanapod-class versatile miner pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 45000
+  - type: ShipVoucher
+    ship: Thanapod
 
 - type: entity
   parent: BaseItem
