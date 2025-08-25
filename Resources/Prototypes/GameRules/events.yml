@@ -28,7 +28,6 @@
     children:
     - id: ClosetSkeleton
     - id: DragonSpawn
-    - id: KingRatMigration
     - id: NinjaSpawn
     - id: RevenantSpawn
     - id: SleeperAgents
