@@ -278,6 +278,11 @@ public sealed class PsionicAbilitiesSystem : EntitySystem
                 Loc,
                 psionicComponent,
                 psionicPower);
+
+        var ev = new PsionicPowersModifiedEvent(
+            psionicComponent.ActivePowers
+        );
+        RaiseLocalEvent(uid, ref ev);
     }
 
     public void RemovePsionicPower(EntityUid uid, PsionicPowerPrototype psionicPower, bool forced = false)
@@ -296,6 +301,11 @@ public sealed class PsionicAbilitiesSystem : EntitySystem
                 Loc,
                 psionicComponent,
                 psionicPower);
+
+        var ev = new PsionicPowersModifiedEvent(
+            psionicComponent.ActivePowers
+        );
+        RaiseLocalEvent(uid, ref ev);
     }
 
     private void UpdatePowerSlots(PsionicComponent psionic)

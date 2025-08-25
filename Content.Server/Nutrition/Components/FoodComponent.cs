@@ -83,3 +83,16 @@ public sealed partial class FoodComponent : Component
     [DataField]
     public HashSet<string> MoodletsOnEat = new();
 }
+
+// HULLROT EDIT
+
+[ByRefEvent]
+public sealed class FoodEatenFullyEvent
+{
+    public EntityUid Edible;
+
+    public FoodEatenFullyEvent(EntityUid edible)
+    {
+        Edible = edible;
+    }
+}
