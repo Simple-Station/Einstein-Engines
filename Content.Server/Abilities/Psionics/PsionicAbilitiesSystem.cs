@@ -135,6 +135,12 @@ public sealed class PsionicAbilitiesSystem : EntitySystem
 
         RefreshPsionicModifiers(uid, psionic);
         UpdatePowerSlots(psionic);
+
+        // HULLROT EDIT
+        var ev = new PsionicPowersModifiedEvent(
+            psionic.ActivePowers
+        );
+        RaiseLocalEvent(uid, ref ev);
     }
 
     /// <summary>
