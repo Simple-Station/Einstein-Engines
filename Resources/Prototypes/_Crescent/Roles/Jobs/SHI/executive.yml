@@ -5,6 +5,8 @@
   playTimeTracker: JobExecutiveSHI
   requirements:
     - !type:CharacterWhitelistRequirement
+    - !type:CharacterOverallTimeRequirement
+      min: 36000
     - !type:FactionRequirement
       factionID: "SHI"
     - !type:CharacterTraitRequirement
