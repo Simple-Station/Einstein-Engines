@@ -49,9 +49,7 @@ namespace Content.Server._Crescent.Magic
 
             foreach (var power in entity.Comp.PowerPrototypes)
             {
-                // Generate a float between 0 and 1, if it's less than ChancePerPower, give the power.
-                var roll = _random.NextFloat(1f);
-                if (roll >= entity.Comp.ChancePerPower)
+                if (_random.Prob(entity.Comp.ChancePerPower))
                     continue;
 
                 if (!_prototypeManager.TryIndex<PsionicPowerPrototype>(power, out var powerProto))
