@@ -10,6 +10,7 @@ using Content.Shared.Psionics;
 using Robust.Server.Containers;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
 namespace Content.Server._Crescent.Magic
@@ -17,6 +18,7 @@ namespace Content.Server._Crescent.Magic
     public sealed class PsionicBrainEatingSystem : EntitySystem
     {
 
+        [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly ContainerSystem _container = default!;
         [Dependency] private readonly PsionicAbilitiesSystem _psionics = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
@@ -42,8 +44,16 @@ namespace Content.Server._Crescent.Magic
             if (HasComp<MindbrokenComponent>(args.User))
                 return;
 
+            if (!TryComp<PsionicComponent>(args.User, out var psiComp) && entity.Comp.RequiresLatent)
+                return;
+
             foreach (var power in entity.Comp.PowerPrototypes)
             {
+                // Generate a float between 0 and 1, if it's less than ChancePerPower, give the power.
+                var roll = _random.NextFloat(1f);
+                if (roll >= entity.Comp.ChancePerPower)
+                    continue;
+
                 if (!_prototypeManager.TryIndex<PsionicPowerPrototype>(power, out var powerProto))
                     return;
 

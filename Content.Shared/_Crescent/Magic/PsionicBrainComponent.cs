@@ -13,5 +13,13 @@ namespace Content.Shared._Crescent.Magic
         // networking is not fucking me over this time
         [DataField, AutoNetworkedField]
         public List<string> PowerPrototypes = new();
+
+        // Do you need to be a Psion to take the power from this brain?
+        [DataField, AutoNetworkedField]
+        public bool RequiresLatent = true;
+
+        // What's the per-power chance of getting a power from this brain?
+        [DataField, AutoNetworkedField]
+        public float ChancePerPower = 1.0f;
     }
 }
