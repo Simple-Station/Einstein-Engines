@@ -5,8 +5,6 @@
   playTimeTracker: JobExecutiveSHI
   requirements:
     - !type:CharacterWhitelistRequirement
-    - !type:CharacterOverallTimeRequirement
-      min: 36000
     - !type:FactionRequirement
       factionID: "SHI"
     - !type:CharacterTraitRequirement
@@ -87,3 +85,4 @@
     id: ExecutivePDA
     pocket1: TradePassport
     ears: ClothingHeadsetShinohara
+    back: ClothingBackpackSHISatchel
