@@ -1018,6 +1018,45 @@
   - type: PresetIdCard
     job: ArbeiterATH
 
+#anti psionic response team
+
+- type: entity
+  parent: IDCardStandard
+  id: APRTIDCardKanoneer
+  name: 43rd battlegroup ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: APRTKanoneerATH
+
+- type: entity
+  parent: IDCardStandard
+  id: APRTIDCardSanitat
+  name: 43rd battlegroup ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: APRTSanitatATH
+
+- type: entity
+  parent: IDCardStandard
+  id: APRTIDCardSoldat
+  name: 43rd battlegroup ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: APRTSoldatATH
+
+
 #misc
 
 - type: entity

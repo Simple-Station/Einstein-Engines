@@ -256,6 +256,7 @@
     staticRecipes:
       - MagazineBoxLightRifle
       - MagazineBoxMagnum
+      - MagazineBoxHeavyRifle
       - MagazineBoxPistol
       - MagazineBoxRifle
       - MagazineLightRifle
@@ -482,6 +483,10 @@
       - EmagCyberdawn
       - WeaponLightMachineGunNCSPRPD
       - WeaponRifleMayflower
+      - WeaponRifleSVDMarksmanNCSP
+      - WeaponShotgunSaiga12NCSP
+      - WeaponLauncherRPGNSCP
+      - WeaponLCartridgeRPGSmall
       - DnaScramblerImplanter
       - EmpImplanter
       - EnergyDagger
@@ -515,6 +520,8 @@
       - ClothingHeadHelmetImperialKnightCommanderHelmet
       - ClothingOuterArmorImperialArmorPrestige
       - ClothingOuterHardsuitImperialKnight
+      - ClothingOuterHardsuitImperialNullweavePsion
+      - ImperialPsionBoundlightStaff
       - CarrionFlatpack
       - WeaponMechIndustrialKineticAcceleratorImperial
       - MechEquipmentGrabberImperial

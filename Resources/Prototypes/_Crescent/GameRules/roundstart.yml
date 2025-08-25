@@ -1,0 +1,20 @@
+- type: entity
+  id: HullrotEventScheduler
+  parent: BaseGameRule
+  components:
+  - type: BasicStationEventScheduler
+    scheduledGameRules: !type:NestedSelector
+      tableId: HullrotEventsTable
+    minimumTimeUntilFirstEvent: 1500 # 25 minutes
+    minMaxEventTiming:
+      min: 1800 # min 30 minutes between events
+      max: 3600 # max 60 minutes between events
+
+- type: entityTable
+  id: HullrotEventsTable
+  table: !type:AllSelector
+    children:
+    - id: ShinoharaTrader
+    - id: PangTaiTrader
+    - id: NanoTrasenProbe
+    - id: InfestedStation

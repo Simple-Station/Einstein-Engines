@@ -9,6 +9,7 @@
     sprite: Structures/Windows/clockwork_window.rsi
   - type: Icon
     sprite: Structures/Windows/clockwork_window.rsi
+    state: full
   - type: Repairable
     fuelCost: 10
     doAfterDelay: 2

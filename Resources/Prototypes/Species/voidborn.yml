@@ -1,7 +1,7 @@
 - type: species
   id: Voidborn
   name: species-name-voidborn
-  roundStart: true # Are you happy with yourself?
+  roundStart: false
   prototype: MobVoidborn
   sprites: MobVoidbornSprites
   defaultSkinTone: "#FFFFFF"

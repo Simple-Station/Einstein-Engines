@@ -25,8 +25,8 @@
           overflowJobs: []
           availableJobs:
             ExecutiveSHI: [ 1, 1 ]
-            HighsecSHI: [ 3, 3 ]
             BoardSHI: [ 3, 3 ]
+            HighsecSHI: [ 2, 2 ]
             CorpsecSHI: [ 6, 6 ]
-            EmployeeSHI: [ 15, 15 ]
             MedtechSHI: [ 4, 4 ]
+            EmployeeSHI: [ 15, 15 ]

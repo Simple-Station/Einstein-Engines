@@ -5,9 +5,10 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/reinforced_plasma_window.rsi
+    sprite: _Crescent/Structures/newReinfPlasWindow.rsi
   - type: Icon
-    sprite: Structures/Windows/reinforced_plasma_window.rsi
+    sprite: _Crescent/Structures/newReinfPlasWindow.rsi
+    state: windowfull
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: RGlass
@@ -42,7 +43,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
-    base: rpwindow
+    base: window
   - type: Construction
     graph: Window
     node: reinforcedPlasmaWindow

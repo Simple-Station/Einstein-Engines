@@ -249,6 +249,20 @@
       - PowerCageUraniumCell
 
 - type: entity
+  name: TFSC Raptor Spawner
+  id: SpawnFighterRaptor
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Crescent/Objects/Specific/bigfighters.rsi
+        state: raptor
+  - type: ConditionalSpawner
+    prototypes:
+      - FighterTFSCRaptorBattery
+
+- type: entity
   id: FighterTFSCRaptor
   parent: [ BaseMech, MediumFighter ]
   name: TFSC 'Raptor' mk.II medium gunship
@@ -299,6 +313,20 @@
     containers:
       mech-battery-slot:
       - PowerCageUraniumCell
+
+- type: entity
+  name: TFSC Viper Spawner
+  id: SpawnFighterViper
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Crescent/Objects/Specific/bigfighters.rsi
+        state: viper
+  - type: ConditionalSpawner
+    prototypes:
+      - FighterTFSCViperBattery
 
 - type: entity
   id: FighterTFSCViper
