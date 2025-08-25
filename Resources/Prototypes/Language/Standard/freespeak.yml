@@ -2,7 +2,7 @@
   id: Freespeak
   isVisibleLanguage: true
   speech:
-    color: "#597d35"
+    color: "#ff5b50"
     fontId: Lymphatic
   obfuscation:
     !type:SyllableObfuscation
