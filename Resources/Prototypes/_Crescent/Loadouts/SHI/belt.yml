@@ -10,8 +10,5 @@
     - !type:CharacterJobRequirement
       jobs:
         - BoardSHI
-        - EmployeeSHI
         - ExecutiveSHI
         - HighsecSHI
-        - MedtechSHI
-        - CorpsecSHI
