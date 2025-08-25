@@ -16,7 +16,7 @@
   mapPath: /Maps/_Crescent/Shuttles/NCSP/thanapod.yml
   minPlayers: 0
   stations:
-    Thanapode:
+    Thanapod:
       stationProto: StandardCrescentExpeditionVessel
       components:
         - type: VesselIcon
