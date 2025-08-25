@@ -8,12 +8,12 @@
   price: 24000
   category: Small
   group: None
-  path: /Maps/_Crescent/Shuttles/NCSP/shanty.yml
+  path: /Maps/_Crescent/Shuttles/NCSP/Shanty.yml
 
 - type: gameMap
   id: Shanty
   mapName: 'SAW Shanty'
-  mapPath: /Maps/_Crescent/Shuttles/NCSP/shanty.yml
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/Shanty.yml
   minPlayers: 0
   stations:
     Shanty:
