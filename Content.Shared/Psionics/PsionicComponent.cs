@@ -1,3 +1,4 @@
+using Content.Shared.Abilities.Psionics;
 using Content.Shared.DoAfter;
 using Content.Shared.Psionics;
 using Content.Shared.Random;
@@ -230,5 +231,17 @@ namespace Content.Shared.Abilities.Psionics
 
         [DataField]
         public Dictionary<string, float> AvailablePowers = new();
+    }
+}
+
+// HULLROT EDIT
+[ByRefEvent]
+public sealed class PsionicPowersModifiedEvent
+{
+    public HashSet<PsionicPowerPrototype> Powers;
+
+    public PsionicPowersModifiedEvent(HashSet<PsionicPowerPrototype> powers)
+    {
+        Powers = powers;
     }
 }
