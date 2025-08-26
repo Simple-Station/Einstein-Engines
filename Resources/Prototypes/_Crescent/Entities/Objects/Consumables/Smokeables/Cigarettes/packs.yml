@@ -89,7 +89,7 @@
 
 - type: entity
   id: CigPackFilterless
-  parent: CigPackBase
+  parent: CigPackCRESCENTBase
   name: Filterless CIGPACK
   description: Filterless CIGPACK desc
   components:
@@ -100,7 +100,7 @@
 
 - type: entity
   id: CigPackNCWL
-  parent: CigPackBase
+  parent: CigPackCRESCENTBase
   name: NCWL CIGPACK
   description: NCWL CIGPACK desc
   components:
@@ -111,7 +111,7 @@
 
 - type: entity
   id: CigPackEmpire
-  parent: CigPackBase
+  parent: CigPackCRESCENTBase
   name: EMPIRE CIGPACK
   description: EMPIRE CIGPACK desc
   components:
@@ -122,7 +122,7 @@
 
 - type: entity
   id: CigPackSHI
-  parent: CigPackBase
+  parent: CigPackCRESCENTBase
   name: SHI CIGPACK
   description: SHI CIGPACK desc
   components:
@@ -133,7 +133,7 @@
 
 - type: entity
   id: CigPackSHI_Menthol
-  parent: CigPackBase
+  parent: CigPackCRESCENTBase
   name: SHI_Menthol CIGPACK
   description: SHI_Menthol CIGPACK desc
   components:
@@ -144,7 +144,7 @@
 
 - type: entity
   id: CigPackFreeports
-  parent: CigPackBase
+  parent: CigPackCRESCENTBase
   name: Freeports CIGPACK
   description: Freeports CIGPACK desc
   components:
@@ -155,7 +155,7 @@
 
 - type: entity
   id: CigPackInterdyne_Real
-  parent: CigPackBase
+  parent: CigPackCRESCENTBase
   name: Interdyne_Real CIGPACK
   description: Interdyne_Real CIGPACK desc
   components:
@@ -166,7 +166,7 @@
 
 - type: entity
   id: CigPackInterdynes
-  parent: CigPackBase
+  parent: CigPackCRESCENTBase
   name: Interdynes CIGPACK
   description: Interdynes CIGPACK desc
   components:
@@ -177,7 +177,7 @@
 
 - type: entity
   id: CigPackInterdyne_Drug
-  parent: CigPackBase
+  parent: CigPackCRESCENTBase
   name: Interdyne_Drug CIGPACK
   description: Interdyne_Drug CIGPACK desc
   components:
@@ -188,7 +188,7 @@
 
 - type: entity
   id: CigPackInterdyne_Herbal
-  parent: CigPackBase
+  parent: CigPackCRESCENTBase
   name: Interdyne_Herbal CIGPACK
   description: Interdyne_Herbal CIGPACK desc
   components:
@@ -199,7 +199,7 @@
 
 - type: entity
   id: CigPackInterdyne_Psy
-  parent: CigPackBase
+  parent: CigPackCRESCENTBase
   name: Interdyne_Psy CIGPACK
   description: Interdyne_Psy CIGPACK desc
   components:
@@ -210,7 +210,7 @@
 
 - type: entity
   id: CigPackLucky
-  parent: CigPackBase
+  parent: CigPackCRESCENTBase
   name: Lucky CIGPACK
   description: Lucky CIGPACK desc
   components:
@@ -221,7 +221,7 @@
 
 - type: entity
   id: CigPackLucky_Menthol
-  parent: CigPackBase
+  parent: CigPackCRESCENTBase
   name: Lucky_Menthol CIGPACK
   description: Lucky_menthol CIGPACK desc
   components:
@@ -232,7 +232,7 @@
 
 - type: entity
   id: CigPackMarlboro
-  parent: CigPackBase
+  parent: CigPackCRESCENTBase
   name: Marlboro CIGPACK
   description: Marlboro CIGPACK desc
   components:
@@ -243,7 +243,7 @@
 
 - type: entity
   id: CigPackMarlboro_Menthol
-  parent: CigPackBase
+  parent: CigPackCRESCENTBase
   name: Marlboro_Menthol CIGPACK
   description: Marlboro_Menthol CIGPACK desc
   components:
@@ -254,7 +254,7 @@
 
 - type: entity
   id: CigPackMarlboro_Real
-  parent: CigPackBase
+  parent: CigPackCRESCENTBase
   name: Marlboro_Real CIGPACK
   description: Marlboro_Real CIGPACK desc
   components:
@@ -265,7 +265,7 @@
 
 - type: entity
   id: CigPackNewports
-  parent: CigPackBase
+  parent: CigPackCRESCENTBase
   name: Newports CIGPACK
   description: Newports CIGPACK desc
   components:
@@ -276,7 +276,7 @@
 
 - type: entity
   id: CigPackNT
-  parent: CigPackBase
+  parent: CigPackCRESCENTBase
   name: NT CIGPACK
   description: NT CIGPACK desc
   components:
@@ -287,7 +287,7 @@
 
 - type: entity
   id: CigPackNT_Limited
-  parent: CigPackBase
+  parent: CigPackCRESCENTBase
   name: NT_Limited CIGPACK
   description: NT_Limited CIGPACK desc
   components:
@@ -298,7 +298,7 @@
 
 - type: entity
   id: CigPackRecreatios_Crack
-  parent: CigPackBase
+  parent: CigPackCRESCENTBase
   name: Recreatios_Crack
   description: Recreatios_Crack desc
   components:
@@ -309,7 +309,7 @@
 
 - type: entity
   id: CigPackRecreatios_Meth
-  parent: CigPackBase
+  parent: CigPackCRESCENTBase
   name: Recreatios_Meth
   description: Recreatios_Meth desc
   components:
@@ -320,7 +320,7 @@
 
 - type: entity
   id: CigPackRecreatios_Psy
-  parent: CigPackBase
+  parent: CigPackCRESCENTBase
   name: Recreatios_Psy
   description: Recreatios_Psy desc
   components:
@@ -331,7 +331,7 @@
 
 - type: entity
   id: CigPackRecreatios_Weed
-  parent: CigPackBase
+  parent: CigPackCRESCENTBase
   name: Recreatios_Weed
   description: Recreatios_Weed desc
   components:
@@ -342,7 +342,7 @@
 
 - type: entity
   id: CigPackTimmys
-  parent: CigPackBase
+  parent: CigPackCRESCENTBase
   name: Timmys
   description: Timmys desc
   components:
