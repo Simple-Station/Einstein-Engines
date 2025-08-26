@@ -414,7 +414,7 @@
 
 - type: entity
   id: MechDSMWanderer
-  parent: [ BaseMech, ScoutMech ]
+  parent: [ BaseMech, HybridScoutMech ]
   name: IEE mV-400 Wanderer scout mechsuit
   description: The Wanderer class is a mainstay of the Imperial Cavalry corps as its low profile and light maintenance makes it perfectly suited for freshly graduated cadets and down-on-their-luck Ritters to support the Imperial Navy and heavier Exos. Their construction, while fragile, is speedy enough to perform reconnaissance in asteroid belts and battlefields alike, and powerful synthmuscle arms can mount a variety of infantry level equipment for harassment. Wanderers frequently fall short and are expected to be recalled or bunker down on nearby wrecks or asteroids when enemy fighter support is in a sector, as any caught in the open are doomed to be stripped apart.
   components:
