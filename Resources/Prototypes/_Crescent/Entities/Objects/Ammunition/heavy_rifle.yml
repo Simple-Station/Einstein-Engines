@@ -5,3 +5,42 @@
   components:
   - type: CartridgeAmmo
     proto: BulletHeavyRifle
+
+- type: entity
+  abstract: true
+  parent: BaseMagazineBox
+  id: BaseMagazineBoxHeavyRifle
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeHeavyRifle
+    proto: CartridgeHeavyRifle
+    capacity: 32
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/anti_materiel.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  parent: BaseMagazineBoxHeavyRifle
+  id: MagazineBoxHeavyRifle
+  name: ammunition box (12.7x99mm USM)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeHeavyRifle
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]

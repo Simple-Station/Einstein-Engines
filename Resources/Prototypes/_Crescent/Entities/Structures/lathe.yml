@@ -28,10 +28,31 @@
     - SteelScrap
     - TitaniumScrap
     - Garbage
-    - PlasteelFromScrap1
-    - PlasteelFromScrap
-    - SteelScraptoSteel
-    - SteelScraptoSteel1
+    - PlasticFromGarbage1
+    - PlasticFromGarbage
+    - PlasteelFromScrapHighGrade1
+    - PlasteelFromScrapHighGrade
+    - TungstenFromScrapHighGrade1
+    - TungstenFromScrapHighGrade
+    - SteelFromScrapLowGrade1
+    - SteelFromScrapLowGrade
+    - CopperFromScrapLowGrade1
+    - CopperFromScrapLowGrade
+    - GoldFromScrapCircuit1
+    - GoldFromScrapCircuit
+    - SilverFromScrapCircuit1
+    - SilverFromScrapCircuit
+    - PlasmaFromScrapPlasma1
+    - PlasmaFromScrapPlasma
+    - PhoronFromScrapPlasma
+    - IsotopesFromScrapPlasma
+    - UraniumFromScrapUranium1
+    - UraniumFromScrapUranium
+    - FibreAlloyFromCombinedScrap
+    - BasicElectronicsFromCombinedScrap
+    - BasicMechatronicsFromCombinedScrap
+    - BallisticCyclerFromCombinedScrap
+    - HardsuitElectronicsFromCombinedScrap
 
 - type: entity
   parent: [ BaseMachinePowered, ConstructibleMachine ]
@@ -61,11 +82,31 @@
     - SteelScrap
     - TitaniumScrap
     - Garbage
-    - PlasteelFromScrap1
-    - PlasteelFromScrap
-    - SteelScraptoSteel
-    - SteelScraptoSteel1
-
+    - PlasticFromGarbage1
+    - PlasticFromGarbage
+    - PlasteelFromScrapHighGrade1
+    - PlasteelFromScrapHighGrade
+    - TungstenFromScrapHighGrade1
+    - TungstenFromScrapHighGrade
+    - SteelFromScrapLowGrade1
+    - SteelFromScrapLowGrade
+    - CopperFromScrapLowGrade1
+    - CopperFromScrapLowGrade
+    - GoldFromScrapCircuit1
+    - GoldFromScrapCircuit
+    - SilverFromScrapCircuit1
+    - SilverFromScrapCircuit
+    - PlasmaFromScrapPlasma1
+    - PlasmaFromScrapPlasma
+    - PhoronFromScrapPlasma
+    - IsotopesFromScrapPlasma
+    - UraniumFromScrapUranium1
+    - UraniumFromScrapUranium
+    - FibreAlloyFromCombinedScrap
+    - BasicElectronicsFromCombinedScrap
+    - BasicMechatronicsFromCombinedScrap
+    - BallisticCyclerFromCombinedScrap
+    - HardsuitElectronicsFromCombinedScrap
 
 #drugs
 
@@ -91,8 +132,9 @@
       tags:
       - DrugComponent
       - Sheet
-      - RawMaterial
       - CraftMaterials
+      - Ingot
+      - RawMaterial
   - type: Lathe
     idleState: base_machine
     runningState: base_machine_processing
@@ -109,6 +151,7 @@
     - Saw
     - Hemostat
     - BoneGel
+    - ParamedHypo
     - ClothingHandsGlovesNitrile
     - ClothingMaskSterile
     - Brutepack
@@ -122,10 +165,11 @@
     - Dropper
     - Jug
     - Syringe
+    - Defibrillator
     dynamicRecipes:
       - ClothingUniformJumpsuitSyndicateInterdyne
       - ClothingBeltSyndicateWebbingInterdyne
-      - ClothingHeadHatSyndicateDoctor
+      - ClothingHeadHatSyndicateInterdyne
       - ClothingOuterArmorSyndicateApron
       - ClothingHeadHelmetSyndicateBasicInterdyne
       - ClothingOuterArmorSyndicateArmorvestInterdyne
@@ -135,9 +179,10 @@
       - CyberneticsPainEditorInterdyne
       - CyberneticsAdrenalInterdyne
       - CyberneticsBloodPumpInterdyne
+      - InterdyneOpticsInterdyne
       - CrowbarLeftArmInterdyne
       - CrowbarRightArmInterdyne
-      - SecHypoInterdyne
+      - HypoInterdyne
       - CartridgeEphedrineInterdyne
       - CartridgeTirizeneInterdyne
       - CartridgeBicaridineInterdyne
@@ -147,6 +192,12 @@
       - CartridgeAtropineInterdyne
       - SyringeCase
       - InterdyneOptics
+      - MothroachCubeBiochemical
+      - CowCubeBiochemical
+      - GoatCubeBiochemical
+      - CryostasisBeaker
+      - SyringeCryostasis
+      - StasisBedMachineCircuitboardBiochemical
   - type: Anchorable
     flags:
     - Anchorable
@@ -183,7 +234,9 @@
       - Sheet
       - CraftMaterials
       - Ingot
+      - ShipParts
       - RawMaterial
+      - ShipParts
   - type: Sprite
     sprite: _Crescent/Structures/nanoforge.rsi
     layers:
@@ -203,6 +256,7 @@
     staticRecipes:
       - MagazineBoxLightRifle
       - MagazineBoxMagnum
+      - MagazineBoxHeavyRifle
       - MagazineBoxPistol
       - MagazineBoxRifle
       - MagazineLightRifle
@@ -260,22 +314,37 @@
       - ClothingHeadHatWelding
       - ClothingOuterSuitEmergency
       - ClothingHeadHelmetEVALarge # Frontier
+      - TradebandTranslator
     dynamicRecipes:
+      - CreoleTranslator
+      - LowImperialTranslator
+      - FreespeakTranslator
+      - KaishagoTranslator
       - ThrusterFlatpackAstronautics
       - GyroscopeFlatpackAstronautics
       - MiniGravityFlatpack
       - ShuttleFlatpackAstronautics
       - ClothingOuterHardsuitBasicAstronautics
       - ClothingOuterHardsuitSpatioAstronautics
+      - ClothingOuterHardsuitIndependentsEVAAstronautics
       - ClothingShoesBootsMagAstronautics
       - HandheldMassScannerAstronautics
       - JetpackBlueFilledAstronautics
       - ClothingOuterHardsuitPilotAstronautics
       - ClothingOuterHardsuitVoidParamedAstronautics
       - ClothingOuterHardsuitPrivateSecurityAstronautics
+      - ClothingOuterHardsuitFishbedAstronautics
+      - ClothingOuterHardsuitFishbedSilverAstronautics
+      - ClothingOuterHardsuitFishbedGoldAstronautics
+      - ClothingOuterHardsuitFishbedColonialAstronautics
+      - ClothingOuterHardsuitFishbedNLFAstronautics
+      - ClothingOuterHardsuitCenobiteAstronautics
+      - ClothingOuterHardsuitCenobiteVerdantAstronautics
+      - ClothingOuterHardsuitCenobiteRedAstronautics
+      - ClothingModsuitStandardAstronautics
       - ClothingShoesBootsMagbootsAstronautics
       - JetpackMiniFilledAstronautics
-      - RCDEmptyAstronautics
+      - RCDAstronautics
       - RCDAmmoAstronautics
       - MiningDrill
       - BorgModuleMining
@@ -334,9 +403,13 @@
       - Saw
       - Hemostat
       - BoneGel
+      - ParamedHypo
       - MothroachCubeBiochemical
       - CowCubeBiochemical
       - GoatCubeBiochemical
+      - CryostasisBeaker
+      - SyringeCryostasis
+      - StasisBedMachineCircuitboardBiochemical
       - ClothingHandsGlovesNitrile
       - ClothingMaskSterile
       - Brutepack
@@ -344,13 +417,17 @@
       - Gauze
       - SyringeCase
       - DisposableSyringe
+      - CartridgeAtropine
+      - CartridgeEpinephrine
+      - CartridgeBicaridine
+      - CartridgeDermaline
+      - CartridgeSaline
       - HandheldHealthAnalyzer
       - BodyBag
       - Beaker
       - LargeBeaker
       - Dropper
       - Jug
-      - Syringe
       - Defibrillator
       - SurveillanceCameraRouterCircuitboard
       - SurveillanceCameraWirelessRouterCircuitboard
@@ -406,6 +483,10 @@
       - EmagCyberdawn
       - WeaponLightMachineGunNCSPRPD
       - WeaponRifleMayflower
+      - WeaponRifleSVDMarksmanNCSP
+      - WeaponShotgunSaiga12NCSP
+      - WeaponLauncherRPGNSCP
+      - WeaponLCartridgeRPGSmall
       - DnaScramblerImplanter
       - EmpImplanter
       - EnergyDagger
@@ -439,6 +520,8 @@
       - ClothingHeadHelmetImperialKnightCommanderHelmet
       - ClothingOuterArmorImperialArmorPrestige
       - ClothingOuterHardsuitImperialKnight
+      - ClothingOuterHardsuitImperialNullweavePsion
+      - ImperialPsionBoundlightStaff
       - CarrionFlatpack
       - WeaponMechIndustrialKineticAcceleratorImperial
       - MechEquipmentGrabberImperial
@@ -449,12 +532,16 @@
       - CovetorLPC
       - IbisLPC
       - SunesisLPC
-      - ClothingBeltSheathRapier
+      - ClothingBeltSheathDSMRapier
       - ClothingBeltSheathDSMSabre
       - DSMRapier
       - DSMSabre
+      - DSMDuelingKhopesh
       - LaelapsLPC
       - PaladinFlatpack
+      - WandererFlatpack
+      - WeaponMechCombatPlasmaRifle
+      - WeaponMechCombatPlasmaCannon
       - WeaponRifleDSMLegionnaire
       - WeaponSubMachineGunC20rImperial
       - WeaponPistolNeoVolker
@@ -476,30 +563,39 @@
       - ClothingUniformJumpsuitNCWL
       - ClothingMaskNCWLBalaclava
       - ClothingEyesGlassesNCWL
+      - ClothingMaskNCWLGasmask
       - ClothingBeltNCWLWebbing
       - ClothingHeadHelmetNCWLBasic
+      - ClothingHeadHelmetNCWLRiot
+      - NCWLRiotShield
+      - NCWLLugBaton
       - WeaponRifleFAL
       - WeaponPistolComrade
       - WeaponSubMachineGunNCWLWatchdog
       - ClothingOuterHardsuitNCWLInfantry
-      - SabreLPC
-      - RapierLPC
-      - KhopeshLPC
-      - BroadswordLPC
+      - VanguardLPC
+      - ZorniyLPC
+      - LodkaLPC
       - MolotLPC
+      - KrechetLPC
+      - IvarodLPC
       - HindLPC
+      - GargutLPC
+      - VanguardMarkTwoLPC
+      - SternLPC
+      - BogatyrLPC
+      - SunderLPC
       - WeaponSubMachineGunBloodhound
       - WeaponRifleNCWLBatanya
       - WeaponPistolT91
       - WeaponRevolverPython
       - ClothingOuterHardsuitNCWLPetya
-      - VanguardMarkTwoLPC
       - LancerFlatpack
       - WeaponLauncherGM94
-      - IvarodLPC
-      - SternLPC
       - BogatyrFlatpack
       - ClothingOuterHardsuitNCWLJuggernaut
+      - NCWLKukri
+      - ClothingBeltSheathNCWLKukri
       - ClothingUniformJumpsuitExecutiveShinoharaSuit
       - ClothingUniformJumpsuitShinoharaLogistics
       - ClothingOuterShinoharaVest
@@ -514,6 +610,8 @@
       - ClothingHeadHatShinoharaNonevaHelm
       - TelescopicBatonSHI
       - ShinoharaOptics
+      - WeaponFighterMachinegun
+      - WeaponFighterAutocannon
       - WeaponMechCombatAutoshotgun
       - WeaponMechCombatLightRifle
       - WeaponMechSword
@@ -565,6 +663,8 @@
       - GilgameshFlatpack
       - BallisticFablatheFlatpack
       - CyberneticsDermalArmor
+      - SHIKatana
+      - SHIShiverBlade
 
   - type: Machine
     board: MicroforgeCircuitboard

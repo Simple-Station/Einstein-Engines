@@ -135,6 +135,12 @@ public sealed class PsionicAbilitiesSystem : EntitySystem
 
         RefreshPsionicModifiers(uid, psionic);
         UpdatePowerSlots(psionic);
+
+        // HULLROT EDIT
+        var ev = new PsionicPowersModifiedEvent(
+            psionic.ActivePowers
+        );
+        RaiseLocalEvent(uid, ref ev);
     }
 
     /// <summary>
@@ -272,6 +278,11 @@ public sealed class PsionicAbilitiesSystem : EntitySystem
                 Loc,
                 psionicComponent,
                 psionicPower);
+
+        var ev = new PsionicPowersModifiedEvent(
+            psionicComponent.ActivePowers
+        );
+        RaiseLocalEvent(uid, ref ev);
     }
 
     public void RemovePsionicPower(EntityUid uid, PsionicPowerPrototype psionicPower, bool forced = false)
@@ -290,6 +301,11 @@ public sealed class PsionicAbilitiesSystem : EntitySystem
                 Loc,
                 psionicComponent,
                 psionicPower);
+
+        var ev = new PsionicPowersModifiedEvent(
+            psionicComponent.ActivePowers
+        );
+        RaiseLocalEvent(uid, ref ev);
     }
 
     private void UpdatePowerSlots(PsionicComponent psionic)

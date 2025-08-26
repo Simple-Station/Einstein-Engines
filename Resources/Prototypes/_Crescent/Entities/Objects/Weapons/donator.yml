@@ -1,5 +1,6 @@
+# @ezo_rb (ezo) donor gun
 - type: entity
-  name: SHI-001P Zodum .327
+  name: SHI001P Zodum .327
   parent: BaseWeaponPistol
   id: WeaponPistolZodum
   description: A custom hand-cannon from the SHI development team that was never meant to be released. Chambered in heavy .327 Imperial.
@@ -23,7 +24,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+      path: /Audio/_Crescent/Weapons/Guns/pistol_3/pistol_gunshot_1.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -46,6 +47,21 @@
     price: 5000
 
 - type: entity
+  id: CaseZodum
+  parent: WeaponCaseZodum
+  name: shinohara "SHI001P Zodum" case
+  suffix: Donor - Zodum
+  description: A pistol case from Shinohara containing a extremly rare prototype of a custom made hand-cannon.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponPistolZodum
+        amount: 1
+      - id: MagazineMagnum
+        amount: 3
+
+# @theassassin25 (Volgin) donor gun
+- type: entity
   name: NCWL-AR02 Porodschok 5.56x45mm
   parent: BaseWeaponRifle
   id: PorodschokDonator
@@ -60,9 +76,19 @@
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/porodshok.rsi
+  - type: Item
+    shape:
+    - 0,0,4,1
   - type: Gun
+    shotsPerBurst: 2
+    availableModes:
+    - Burst
+    - FullAuto
+    burstFireRate: 24
+    burstCooldown: 0.5
+    fireRate: 7
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
+      path: /Audio/_Crescent/Weapons/Guns/rifle_2/rifle_gunshot_1.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -92,3 +118,290 @@
   - type: Appearance
   - type: StaticPrice
     price: 3000
+
+- type: entity
+  id: CasePorodshok
+  parent: WeaponCasePorodshok
+  name: Chengridz factory 553 "AR02 Porodschok" case
+  suffix: Donor - Porodshok
+  description: Chengridz Factory 553 weapon case containing a rare, high-end Communard rifle. That has ben recalled after Imperial sabotage at the plant.
+  components:
+  - type: StorageFill
+    contents:
+      - id: PorodschokDonator
+        amount: 1
+      - id: MagazineLightRifle
+        amount: 3
+
+# @m18hellcat76mmgunmotorcarriage (Hellcat) donor gun
+- type: entity
+  name: PTA XCR-6 Charge rifle 6x24mm
+  parent: BaseWeaponRifle
+  id: WeaponSpecialChargeRifle
+  description: A canceled experimental rifle developed by Pang Tai Arms. Only a few exist. This one has the serial number M-18. Chambered in 6×24mm.
+  components:
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/charge_rifle.rsi
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/charge_rifle.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    shape:
+    - 0,0,4,1
+  - type: Gun
+    fireRate: 6
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/charged.ogg
+    fireOnDropChance: 0.5
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Magazine6x24mmCharge
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - Magazine6x24mm
+      gun_chamber:
+        name: Chamber
+        startingItem: Cartridge6x24mmCharge
+        priority: 1
+        whitelist:
+          tags:
+            - Cartridge6x24mm
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
+  - type: Appearance
+
+- type: entity
+  id: CaseChargeRifle
+  parent: WeaponCaseChargeRifle
+  name: pang tai arms "M-18" case
+  suffix: Donor - Charge rifle
+  description: A weapon case marked with a large red stamp reading 'EXPERIMENTAL,' with smaller text below 'SrNum M-18.' On the inside is a note filled with technical mumbo-jumbo.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSpecialChargeRifle
+        amount: 1
+      - id: Magazine6x24mmCharge
+        amount: 2
+      - id: Magazine6x24mmShock
+        amount: 1
+# @willybillygilly (WillyBillyGilly) donor gun
+- type: entity
+  name: PTA 23AX Karabin 4g
+  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  id: WeaponShotgunKS23
+  description: An oversized shotgun. Packs devastating 4 Gauge punches. Developed as part of Pang Tai's elite mercenary package.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/karabin.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/karabin.rsi
+  - type: GunRequiresWield
+  - type: Item
+    shape:
+    - 0,0,4,1
+  - type: Gun
+    fireRate: 2
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/shotgun_2/shotgun_gunshot_1.ogg
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - ShellShotgun4g
+    capacity: 4
+    autoCycle: false
+    proto: ShellShotgun4gBuckshot
+  - type: ItemSlots
+
+# @a_person5660 (Reggie) donor gun
+- type: entity
+  name: SHI HSRPG-38M13 Hammerhead smart-missile launcher 65mm
+  parent: [BaseWeaponLauncher, BaseGunWieldable]
+  id: WeaponLauncherHammerhead
+  description: A modified ancient rocket-propelled grenade launcher. Stamped with the Shinohara Heavy Industries logo and capable of firing guided projectiles.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/hammerhead.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/hammerhead.rsi
+  - type: GunRequiresWield
+  - type: Item
+    shape:
+    - 0,0,5,2
+  - type: Gun
+    fireRate: 0.5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+  - type: BallisticAmmoProvider
+    proto: BulletRocketSmart
+    capacity: 3
+    cycleable: false
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
+    zeroVisible: true
+  - type: Appearance
+  - type: Contraband
+
+- type: entity
+  id: BulletRocketSmart
+  name: smart missile
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileIFF
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 65
+    intensitySlope: 5
+    totalIntensity: 200
+    maxTileBreak: 5
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: HeatSeeking
+    rotationSpeed: 40
+    acceleration: 25
+    topSpeed: 125
+
+    defaultSeekingRange: 400
+    guidanceAlgorithm: PredictiveGuidance
+
+# @Tomahawk101 (Tomahawk101) donor gun
+- type: entity
+  name: DEW-17-Mod Cycler 95c
+  parent: BaseWeaponBatterySmall
+  id: WeaponDonorCycler
+  description: A heavily modified DEW-17 laser pistol, its battery connection point has ben replaced with a miniature RTG capable of recharging the weapon indefinitely.
+  components:
+  - type: Item
+    size: Normal  
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/cycler.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-12
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/cycler.rsi
+  - type: Gun
+    fireRate: 6
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/laser1.ogg
+  - type: HitscanBatteryAmmoProvider
+    proto: RedMediumLaser
+    fireCost: 100
+  - type: Battery
+    maxCharge: 2400
+    startingCharge: 2400
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 60
+  - type: MagazineVisuals
+    magState: mag
+    steps: 13
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 4000
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 8
+  - type: DamageOtherOnHit
+    staminaCost: 6
+
+# @no_originality (Original) donor gun
+- type: entity
+  name: HP Madrugad 12.7x99mm
+  parent: BaseWeaponRevolver
+  id: WeaponDonorRevolverMadrugad
+  description: An ornate percussion revolver, hand-crafted to have once served a Hunter Montagne in the Great Hunt, now pilfered from their cold hands so it may serve yours.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/madrugad.rsi
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,1
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeHeavyRifle
+    proto: CartridgeHeavyRifle
+    capacity: 7
+    chambers: [ True, True, True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null, null, null ]
+    soundEject:
+      path: /Audio/_Crescent/Weapons/Guns/Madrugad/madrugad_unloadbullets.ogg
+    soundInsert:
+      path: /Audio/_Crescent/Weapons/Guns/Madrugad/madrugad_loadbullets.ogg
+  - type: Gun
+    minAngle: 0
+    maxAngle: 30
+    angleIncrease: 20
+    angleDecay: 30
+    selectedMode: SemiAuto
+    fireRate: 4
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/Madrugad/madrugad_shot.ogg
+    soundEmpty:
+      path: /Audio/_Crescent/Weapons/Guns/Madrugad/madrugad_emptyfire.ogg
+  - type: StaticPrice
+    price: 1250
+
+- type: entity
+  id: CaseMadrugada
+  parent: WeaponCaseMadrugada
+  name: hunter's pride Madrugad case
+  suffix: Donor - Madrugad
+  description: A fancy wooden case with the 6th Saint Romaine's Militia flag draped over it
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponDonorRevolverMadrugad
+        amount: 1
+      - id: MagazineBoxHeavyRifle
+        amount: 1

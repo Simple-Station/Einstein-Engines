@@ -1,10 +1,43 @@
-#ncwl#
+#ncwl-2#
 
 - type: entity
   parent: IDCardStandard
-  id: NCWLIDCardKommissar
+  id: NCWLIDCardWorker
   name: NCWL ID card
   components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcentcom
+  - type: PresetIdCard
+    job: WorkerNCWL
+
+- type: entity
+  parent: IDCardStandard
+  id: NCWLIDCardFactionLeader
+  name: NCWL ID card
+  components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcentcom
+  - type: PresetIdCard
+    job: CommandantNCWL
+
+- type: entity
+  parent: IDCardStandard
+  id: NCWLIDCardHomeguardLeader
+  name: NCWL ID card
+  components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
   - type: Sprite
     layers:
     - state: default
@@ -14,75 +47,79 @@
 
 - type: entity
   parent: IDCardStandard
-  id: NCWLIDCardSanitar
+  id: NCWLIDCardHomeguardSquadCaptain
   name: NCWL ID card
   components:
-  - type: PresetIdCard
-    job: SanitarNCWL
+  - type: Currency
+    price:
+      DogtagNCWL: 1
   - type: Sprite
     layers:
     - state: default
     - state: idcentcom
+  - type: PresetIdCard
+    job: FleetkapitanNCWL
 
 - type: entity
   parent: IDCardStandard
-  id: NCWLIDCardArtificer
+  id: NCWLIDCardHomeguardSoldat
   name: NCWL ID card
   components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
   - type: Sprite
     layers:
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: ArtificerNCWL
+    job: PartisanNCWL
 
 - type: entity
   parent: IDCardStandard
-  id: NCWLIDCardDoktor
+  id: NCWLIDCardMedicalWorker
   name: NCWL ID card
   components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
   - type: Sprite
     layers:
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: DoktorNCWL
+    job: DoctorNCWL
 
 - type: entity
   parent: IDCardStandard
-  id: NCWLIDCardAdministrator
+  id: NCWLIDCardLogisticLeader
   name: NCWL ID card
   components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
   - type: Sprite
     layers:
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: AdministratorNCWL
+    job: IndustryTaskmasterNCWL
+
 
 - type: entity
   parent: IDCardStandard
-  id: NCWLIDCardKapitan
+  id: NCWLIDCardEngineeringLeader
   name: NCWL ID card
   components:
+  - type: Currency
+    price:
+      DogtagNCWL: 1
   - type: Sprite
     layers:
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: KapitanNCWL
-
-- type: entity
-  parent: IDCardStandard
-  id: NCWLIDCardKadet
-  name: NCWL ID card
-  components:
-  - type: Sprite
-    layers:
-    - state: default
-    - state: idcentcom
-  - type: PresetIdCard
-    job: KadetNCWL
+    job: WorkerOverbossNCWL
 
 #syndicate#
 
@@ -225,6 +262,9 @@
   id: DSMIDCardFreeholder
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -237,6 +277,9 @@
   id: DSMIDCardTemplar
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -249,6 +292,9 @@
   id: DSMIDCardAdvocatus
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -261,6 +307,9 @@
   id: DSMIDCardArchmaester
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -273,6 +322,9 @@
   id: DSMIDCardSurgeon
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -285,6 +337,9 @@
   id: DSMIDCardWealth
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -297,6 +352,9 @@
   id: DSMIDCardForeman
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -309,6 +367,9 @@
   id: DSMIDCardScribe
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -321,6 +382,9 @@
   id: DSMIDCardLevyman
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -333,6 +397,9 @@
   id: DSMIDCardKnight
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -345,6 +412,9 @@
   id: DSMIDCardRitter
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -355,7 +425,11 @@
 - type: entity
   parent: IDCardStandard
   id: DSMIDCardLabor
+  name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -368,6 +442,9 @@
   id: DSMIDCardCourtier
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -380,6 +457,9 @@
   id: DSMIDCardAdjutant
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -392,6 +472,9 @@
   id: DSMIDCardGovernor
   name: imperial ID card
   components:
+  - type: Currency
+    price:
+      DogtagDSM: 1
   - type: Sprite
     layers:
     - state: default
@@ -934,6 +1017,45 @@
     - state: idquartermaster
   - type: PresetIdCard
     job: ArbeiterATH
+
+#anti psionic response team
+
+- type: entity
+  parent: IDCardStandard
+  id: APRTIDCardKanoneer
+  name: 43rd battlegroup ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: APRTKanoneerATH
+
+- type: entity
+  parent: IDCardStandard
+  id: APRTIDCardSanitat
+  name: 43rd battlegroup ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: APRTSanitatATH
+
+- type: entity
+  parent: IDCardStandard
+  id: APRTIDCardSoldat
+  name: 43rd battlegroup ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: APRTSoldatATH
+
 
 #misc
 

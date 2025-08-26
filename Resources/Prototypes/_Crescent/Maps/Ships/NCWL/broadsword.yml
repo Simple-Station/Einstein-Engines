@@ -19,6 +19,10 @@
     Broadsword:
       stationProto: StandardCrescentVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: fighter
         - type: StationNameSetup
           mapNameTemplate: 'NCWL Broadsword {1}'
           nameGenerator:

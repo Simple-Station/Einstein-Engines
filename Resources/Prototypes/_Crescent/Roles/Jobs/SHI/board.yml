@@ -4,6 +4,8 @@
   description: job-description-board
   playTimeTracker: JobBoardSHI
   requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 14400
     - !type:FactionRequirement
       factionID: "SHI"
     - !type:CharacterTraitRequirement
@@ -21,6 +23,18 @@
   requireAdminNotify: true
   supervisors: job-supervisors-shi
   canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-shi-board
+      - type: LanguageAdder
+        addSpoken:
+          - Kaishago
+          - Tradeband
+        addUnderstood:
+          - Kaishago
+          - Tradeband
   access:
   - Command
   - Maintenance
@@ -37,6 +51,8 @@
     jumpsuit: ClothingUniformJumpsuitShinoharaSuit
     shoes: ClothingShoesBootsLaceup
     neck: ClothingNeckTieRed
+    outerClothing: ClothingOuterShinoharaSuitJacket
     id: BoardPDA
     pocket1: TradePassport
     ears: ClothingHeadsetShinohara
+    back: ClothingBackpackSHISatchel

@@ -1,5 +1,5 @@
 # Author Info
-# Discord: @fleshangel
+# Discord: originally @fleshangel, later remade by @ninruB
 
 - type: vessel
   id: Hind
@@ -19,6 +19,10 @@
     Hind:
       stationProto: StandardCrescentVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: frigate
         - type: StationNameSetup
           mapNameTemplate: 'NCWL Hind {1}'
           nameGenerator:

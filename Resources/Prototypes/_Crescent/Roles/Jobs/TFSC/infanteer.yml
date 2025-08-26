@@ -29,6 +29,11 @@
     components:
       - type: ChatRank
         rank: crescent-rank-pfc
+      - type: LanguageAdder
+        addSpoken:
+          - Freespeak
+        addUnderstood:
+          - Freespeak
   access:
   - Command
   - Maintenance

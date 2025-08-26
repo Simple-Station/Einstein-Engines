@@ -10,7 +10,8 @@
     tags:
       - CartridgeRocket
   - type: Item
-    size: Small
+    shape:
+    - 0,0,0,3
   - type: CartridgeAmmo
     proto: BulletRocket
     deleteOnSpawn: true

@@ -68,6 +68,72 @@ entities:
             8: -1,-2
             9: 1,-2
         - node:
+            zIndex: 1
+            id: LatticeCornerNE
+          decals:
+            23: 8,6
+            47: -2,-7
+        - node:
+            zIndex: 1
+            id: LatticeCornerNW
+          decals:
+            14: 2,6
+            26: 8,6
+            35: 2,-7
+            38: 5,-6
+            41: 7,-2
+            44: 10,-1
+        - node:
+            zIndex: 1
+            id: LatticeCornerSE
+          decals:
+            18: 4,6
+            21: 8,6
+            32: -2,6
+        - node:
+            zIndex: 1
+            id: LatticeCornerSW
+          decals:
+            13: 2,6
+            25: 8,6
+            29: 11,7
+        - node:
+            id: LatticeEdgeE
+          decals:
+            17: 4,6
+            20: 8,6
+            31: -2,6
+            45: -2,-7
+        - node:
+            id: LatticeEdgeN
+          decals:
+            11: 2,6
+            22: 8,6
+            33: 2,-7
+            36: 5,-6
+            39: 7,-2
+            42: 10,-1
+            46: -2,-7
+        - node:
+            id: LatticeEdgeS
+          decals:
+            10: 2,6
+            15: 2,7
+            16: 4,6
+            19: 8,6
+            27: 11,7
+            30: -2,6
+        - node:
+            id: LatticeEdgeW
+          decals:
+            12: 2,6
+            24: 8,6
+            28: 11,7
+            34: 2,-7
+            37: 5,-6
+            40: 7,-2
+            43: 10,-1
+        - node:
             color: '#FFFFFFFF'
             id: WarnLineW
           decals:
@@ -167,6 +233,10 @@ entities:
           - 0
           - 0
         chunkSize: 4
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: industrial
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: BecomesStation
@@ -178,6 +248,30 @@ entities:
     - type: ShuttleDeed
       shuttleName: Shuttle KXZ-397
       shuttleUid: 1
+- proto: AAAHardpointFixed
+  entities:
+  - uid: 111
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -0.5,5.5
+      parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 151
+    - type: Physics
+      canCollide: False
+  - uid: 149
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 1.5,5.5
+      parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 151
+    - type: Physics
+      canCollide: False
 - proto: AirlockCommand
   entities:
   - uid: 108
@@ -249,6 +343,12 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -1.5,3.5
       parent: 1
+    - type: DeviceLinkSource
+      lastSignals:
+        DoorStatus: True
+    - type: Door
+      secondsUntilStateChange: -99.1334
+      state: Opening
 - proto: AirTankFilled
   entities:
   - uid: 125
@@ -334,24 +434,20 @@ entities:
       parent: 1
 - proto: BenchSofaCorpLeft
   entities:
-  - uid: 314
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 6.5,3.5
-      parent: 1
-    - type: Physics
-      bodyType: Static
-- proto: BenchSofaCorpRight
-  entities:
-  - uid: 315
+  - uid: 32
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 7.5,3.5
       parent: 1
-    - type: Physics
-      bodyType: Static
+- proto: BenchSofaCorpRight
+  entities:
+  - uid: 33
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 6.5,3.5
+      parent: 1
 - proto: BlastDoorOpen
   entities:
   - uid: 3
@@ -361,7 +457,7 @@ entities:
       parent: 1
     - type: DeviceLinkSink
       links:
-      - 32
+      - 151
   - uid: 129
     components:
     - type: Transform
@@ -369,7 +465,7 @@ entities:
       parent: 1
     - type: DeviceLinkSink
       links:
-      - 32
+      - 151
   - uid: 131
     components:
     - type: Transform
@@ -377,7 +473,7 @@ entities:
       parent: 1
     - type: DeviceLinkSink
       links:
-      - 32
+      - 151
 - proto: BoriaticGeneratorHerculesShuttle
   entities:
   - uid: 193
@@ -979,30 +1075,11 @@ entities:
     - type: InsideEntityStorage
 - proto: ComputerShuttle
   entities:
-  - uid: 32
+  - uid: 151
     components:
     - type: Transform
       pos: 5.5,1.5
       parent: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        133:
-        - Group1: Toggle
-        33:
-        - Group1: Toggle
-        129:
-        - Group2: Toggle
-        131:
-        - Group2: Toggle
-        3:
-        - Group2: Toggle
-    - type: NamedModules
-      buttonNames:
-      - Toggle Exhumers
-      - Toggle Blastdoors
-      - Module C
-      - Module D
-      - Module E
     - type: ContainerContainer
       containers:
         board: !type:Container
@@ -1017,6 +1094,25 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+    - type: DeviceLinkSource
+      linkedPorts:
+        111:
+        - Group1: Toggle
+        149:
+        - Group1: Toggle
+        129:
+        - Group2: Toggle
+        131:
+        - Group2: Toggle
+        3:
+        - Group2: Toggle
+    - type: NamedModules
+      buttonNames:
+      - Toggle Exhumers
+      - Toggle Blastdoors
+      - Module C
+      - Module D
+      - Module E
 - proto: ComputerTabletopAlert
   entities:
   - uid: 299
@@ -1399,8 +1495,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 1.5,-2.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
 - proto: JetpackCaptainFilled
   entities:
   - uid: 120
@@ -1664,24 +1758,18 @@ entities:
       parent: 1
 - proto: ShuttleGunExhumer
   entities:
-  - uid: 33
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 1.5,5.5
-      parent: 1
-    - type: DeviceLinkSink
-      links:
-      - 32
   - uid: 133
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -0.5,5.5
       parent: 1
-    - type: DeviceLinkSink
-      links:
-      - 32
+  - uid: 150
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 1.5,5.5
+      parent: 1
 - proto: SMESBasic
   entities:
   - uid: 156
@@ -1788,71 +1876,53 @@ entities:
       rot: 3.141592653589793 rad
       pos: -0.5,-6.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 47
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 0.5,-6.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 48
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 1.5,-6.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 94
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 3.5,-5.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 95
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 4.5,-5.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 103
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 10.5,1.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 104
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 10.5,0.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 106
     components:
     - type: Transform
       pos: 3.5,5.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
   - uid: 107
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 8.5,7.5
       parent: 1
-    - type: Thruster
-      originalPowerLoad: 1500
 - proto: ToolboxMechanicalFilled
   entities:
   - uid: 300
@@ -2209,13 +2279,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 5.5,0.5
-      parent: 1
-- proto: WeaponGrapplingGun
-  entities:
-  - uid: 149
-    components:
-    - type: Transform
-      pos: 2.4201288,0.89664763
       parent: 1
 - proto: WeaponProtoKineticAccelerator
   entities:

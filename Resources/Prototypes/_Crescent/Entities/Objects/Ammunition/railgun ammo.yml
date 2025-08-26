@@ -15,7 +15,7 @@
     deleteOnSpawn: true
   - type: Sprite
     noRot: false
-    sprite: _Crescent\Objects\Weapons\Ammunition\Casings\railgun_slug.rsi
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/railgun_slug.rsi
     layers:
     - state: base
       map: ["enum.AmmoVisualLayers.Base"]
@@ -42,6 +42,8 @@
     damage:
       types:
         Piercing: 70
+    harmorPenetration: 65
+    stoppingPower: 10
 #---------- Uranium ammo of Railgun 15mm ----------
 - type: entity
   id: CartridgeRailgun15mmDU
@@ -66,3 +68,5 @@
       types:
         Piercing: 70
         Radiation: 15
+    harmorPenetration: 80
+    stoppingPower: 10

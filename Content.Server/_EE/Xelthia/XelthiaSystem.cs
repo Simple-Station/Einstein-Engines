@@ -8,7 +8,7 @@ using Content.Shared.Psionics;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
-using Content.Shared.Shadowkin;
+using Content.Shared.Voidborn;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Alert;
 using Content.Shared.Rounding;

@@ -1,0 +1,35 @@
+#320mm
+
+- type: entity
+  id: ColonyShellComplete
+  name: 320mm subnuclear accelerator artillery shell
+  parent: BaseItem
+  description: A 320mm railgun cartridge produced out of a volatile plasma-cored tungsten shell. 'House Olywir Armaments' has been laser-stamped at the bottom. This one is deactivated for shipping.
+  components:
+  - type: Item
+    size: Huge
+  - type: MultiHandedItem
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/1000_armorpiercing_rail_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+
+- type: entity
+  id: ColonyShellIncomplete
+  name: unpacked 320mm artillery shell
+  parent: BaseItem
+  description: A 320mm railgun cartridge produced out of a volatile plasma-cored tungsten shell. This one has no actual payload.
+  components:
+  - type: Stack
+    stackType: ColonyShellIncomplete
+  - type: Item
+    size: Huge
+  - type: MultiHandedItem
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/1000_armorpiercing_rail_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance

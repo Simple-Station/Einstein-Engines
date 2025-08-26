@@ -1,0 +1,811 @@
+#vulcan cartridge
+
+- type: entity
+  id: CartridgeVulcanStandard
+  name: 20mm surplus casing
+  parent: BaseItem
+  description: Ammunition for turrets.
+  components:
+  - type: Item
+    size: Normal
+  - type: CartridgeAmmo
+    proto: BulletMachineGunVulcan
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/pdtcasing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: SpaceGarbage
+  
+#mortar cartridge
+
+- type: entity
+  id: CartridgeMortarStandardTurret
+  name: 90mm surplus shell
+  parent: BaseItem
+  description: Ammunition for turrets.
+  components:
+  - type: Item
+    size: Normal
+  - type: CartridgeAmmo
+    proto: BulletMachineGunMortarTurret
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/mortarcasing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: SpaceGarbage
+  - type: Tag
+    tags:
+      - MortarShell
+      
+ #idna cartridge
+ 
+- type: entity
+  id: IdnaTorpedo
+  name: 180mm heat-guided torpedo
+  parent: BaseItem
+  description: A high-explosive cannon shell for ship weapons.
+  components:
+  - type: Tag
+    tags:
+      - Torpedo
+  - type: Item
+    size: Normal
+  - type: CartridgeAmmo
+    proto: IdnaTorpedoBullet
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/torpedop.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: SpaceGarbage
+  
+#gargoyle cartridge
+
+- type: entity
+  id: TorpGarg
+  name: 240mm heat-guided high-explosive cruise missile
+  parent: BaseItem
+  description: A bulky missile with an HE charge. Bad news.
+  components:
+  - type: Tag
+    tags:
+      - TorpedoGarg
+  - type: MultiHandedItem
+  - type: Item
+    size: Normal
+  - type: CartridgeAmmo
+    proto: TorpedoGargoyle
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/torp.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: SpaceGarbage
+  
+#emp gargoyle cartridge
+
+- type: entity
+  id: TorpGargEMP
+  name: 240mm heat-guided electromagnetic cruise missile
+  parent: BaseItem
+  description: A bulky missile with an EMP charge. Bad news.
+  components:
+  - type: Tag
+    tags:
+      - TorpedoGarg
+  - type: MultiHandedItem
+  - type: Item
+    size: Large
+  - type: CartridgeAmmo
+    proto: TorpedoGargoyleEMP
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/torpemp.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: SpaceGarbage
+  
+#lancer cartridge
+
+- type: entity
+  id: LanceRocketCartridge
+  name: 100mm high-explosive fragmentation rocket
+  parent: BaseItem
+  description: A fragmentation rocket with an HE payload.
+  components:
+  - type: Tag
+    tags:
+      - LanceRocket
+  - type: Item
+    size: Small
+  - type: CartridgeAmmo
+    proto: LanceRocketProjectile
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/lance.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  
+#hephaestus (230mm) cartridge
+
+- type: entity
+  id: HeavyMortarCartridge
+  name: 230mm high-explosive heavy mortar shell
+  parent: BaseItem
+  description: An unyieldy mortar shell with an explosive payload.
+  components:
+  - type: Tag
+    tags:
+      - HeavyMortarShell
+  - type: Item
+    size: Small
+  - type: CartridgeAmmo
+    proto: BattlemortarProjectile
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/battleshell.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: SpaceGarbage
+  
+#prince flak cartridge
+
+- type: entity
+  id: FlakCartridge
+  name: 88mm 'Prince' flak cannon shell
+  parent: BaseItem
+  description: A spread-fire flak cannon shell.
+  components:
+  - type: Tag
+    tags:
+      - FlakShell
+  - type: Item
+    size: Small
+  - type: CartridgeAmmo
+    proto: FlakProjectile
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/flak.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: SpaceGarbage
+  
+#prince flak AP cartridge
+  
+- type: entity
+  id: MagazineFlak
+  name: "88mm 'Prince' flakcannon AP"
+  parent: BaseMagazineLightRifle
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - FlakShell
+    proto: FlakCartridge
+    capacity: 15
+  - type: Item
+  - type: Sprite
+    sprite: _Crescent/Ammunition/flak.rsi
+    state: base
+  - type: Tag
+    tags:
+      - FlakBox
+      
+#323mm catapult cartridge
+
+- type: entity
+  id: TorpCatapult
+  name: 320mm "Immolator" high-explosive torpedo
+  parent: BaseItem
+  description: A dumbfire torpedo meant to be fired from Catapult platforms.
+  components:
+  - type: Tag
+    tags:
+      - TorpedoCatapult
+  - type: Item
+    size: Small
+  - type: CartridgeAmmo
+    proto: CatapultProjectile
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/catapult.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  
+#xray compakt cartridge
+
+- type: entity
+  id: XrayLensCartridge
+  name: hybrid xray lens
+  categories: [ HideSpawnMenu ]
+  parent: BaseItem
+  description: A laser lens meant to be fitted over laser gatlings. This one is tuned to the xray frequency.
+  components:
+  - type: Tag
+    tags:
+      - CompaktLens
+  - type: Item
+    size: Small
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: CompaktXrayProjectile
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/lenses.rsi
+    layers:
+    - state: base-spent
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpaceGarbage
+  
+#infrared compakt cartridge
+
+- type: entity
+  id: InfraredLensCartridge
+  name: hybrid infrared lens
+  categories: [ HideSpawnMenu ]
+  parent: BaseItem
+  components:
+  - type: Tag
+    tags:
+      - CompaktLens
+  - type: Item
+    size: Small
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: CompaktInfraredProjectile
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/lenses.rsi
+    layers:
+    - state: base-spent
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpaceGarbage
+  
+#microwave compakt cartridge
+
+- type: entity
+  id: MicrowaveLensCartridge
+  name: hybrid microwave lens
+  categories: [ HideSpawnMenu ]
+  parent: BaseItem
+  components:
+  - type: Tag
+    tags:
+      - CompaktLens
+  - type: Item
+    size: Small
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: CompaktMicrowaveProjectile
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/lenses.rsi
+    layers:
+    - state: base-spent
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpaceGarbage
+  
+#plasma compakt cartridge
+
+- type: entity
+  id: PlasmaLensCartridge
+  name: hybrid plasma lens
+  categories: [ HideSpawnMenu ]
+  parent: BaseItem
+  components:
+  - type: Tag
+    tags:
+      - CompaktLens
+  - type: Item
+    size: Small
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: CompaktPlasmaProjectile
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/lenses.rsi
+    layers:
+    - state: base-spent
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpaceGarbage
+  
+#standard solaris cartridge
+
+- type: entity
+  id: StandardAntimatterCartridge
+  name: exotic antimatter shell casing
+  categories: [ HideSpawnMenu ]
+  parent: BaseItem
+  components:
+  - type: Tag
+    tags:
+      - AntimatterCartridge
+  - type: Item
+    size: Small
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: StandardAntimatterProjectile
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/amcanister.rsi
+    layers:
+    - state: base-spent
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpaceGarbage
+  
+#plasma solaris cartridge
+
+- type: entity
+  id: PlasmaAntimatterCartridge
+  name: exotic antimatter shell casing
+  categories: [ HideSpawnMenu ]
+  parent: BaseItem
+  components:
+  - type: Tag
+    tags:
+      - AntimatterCartridge
+  - type: Item
+    size: Small
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: PlasmaAntimatterProjectile
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/amcanisterplas.rsi
+    layers:
+    - state: base-spent
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpaceGarbage
+ 
+#guided solaris cartridge
+
+- type: entity
+  id: GuidedAntimatterCartridge
+  name: guided antimatter shell casing
+  categories: [ HideSpawnMenu ]
+  parent: BaseItem
+  components:
+  - type: Tag
+    tags:
+      - AntimatterCartridge
+  - type: Item
+    size: Small
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: GuidedAntimatterProjectile
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/amcanisterguided.rsi
+    layers:
+    - state: base-spent
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpaceGarbage
+  
+#jeong/osiris cartridge
+
+- type: entity
+  id: SwarmerRocketsGuidedCartridge
+  name: 70mm rocket
+  categories: [ HideSpawnMenu ]
+  parent: BaseItem
+  components:
+  - type: Tag
+    tags:
+      - SwarmerRockets
+  - type: Item
+    size: Small
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: SwarmerRocketsGuided
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/swarmclip.rsi
+    layers:
+    - state: base-spent
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpaceGarbage
+  
+#needler cartridge
+
+- type: entity
+  id: Needler
+  name: 60mm needler shell
+  parent: BaseItem
+  description: A high-explosive cannon shell for ship weapons.
+  components:
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+      - NeedlerShell
+  - type: CartridgeAmmo
+    proto: NeedlerBase
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/needler.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: SpaceGarbage
+  
+#pilum cartridge
+
+- type: entity
+  id: SmartBomb
+  name: 50mm high-explosive smart-bomb
+  parent: BaseItem
+  description: A high-explosive cannon shell for ship weapons.
+  components:
+  - type: Item
+    size: Normal
+  - type: CartridgeAmmo
+    proto: SmartBombBase
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/smartbomb.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: SpaceGarbage
+  
+#swarmer cartridge
+
+- type: entity
+  id: SwarmerRocketCartridge
+  name: 40mm 'Swarmer' rocket
+  parent: BaseItem
+  description: A *currently* disarmed rocket.
+  components:
+  - type: Item
+    size: Normal
+  - type: CartridgeAmmo
+    proto: SwarmerMissile
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/swarmermissile.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: Tag
+    tags:
+      - SwarmRocket
+  - type: SpaceGarbage
+  
+#pdt cartridge
+
+- type: entity
+  id: PDTBulletCase
+  name: 30mm pdt shell
+  parent: BaseItem
+  description: Ammunition for turrets.
+  components:
+  - type: Item
+    size: Normal
+  - type: CartridgeAmmo
+    proto: PDTBullet
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/pdtcasing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: SpaceGarbage
+  
+#320mm cartridge
+
+- type: entity
+  id: CartridgeRailHighExplosive
+  name: 320mm subnuclear accelerator cartridge
+  parent: BaseItem
+  suffix: Live Ammo
+  description: A 320mm railgun cartridge produced out of a volatile plasma-cored tungsten shell. 'House Olywir Armaments' has been laser-stamped at the bottom.
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+  - type: Item
+    size: Huge
+  - type: MultiHandedItem
+  - type: CartridgeAmmo
+    proto: BulletRailHighExplosive
+    deleteOnSpawn: false
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/1000_armorpiercing_rail_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: SpaceGarbage
+  
+#inert 43mm (slugthrower) cartridge
+
+- type: entity
+  id: CartridgeMachineGunPractice
+  name: 43mm inert slugthrower cartridge
+  parent: BaseItem
+  description: An inert slugthrower cartridge with a lower gunpowder yield.
+  components:
+  - type: Tag
+    tags:
+      - CartridgeMachineGun
+      - Cartridge
+  - type: Item
+    size: Tiny
+  - type: CartridgeAmmo
+    proto: BulletMachineGunPractice
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/50_practice_machinegun_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: SpaceGarbage
+  
+#low yield 43mm (slugthrower) cartridge
+
+- type: entity
+  id: CartridgeMachineGunHighExplosive
+  name: 43mm low-yield explosive slugthrower cartridge
+  parent: BaseItem
+  description: An explosive-tipped slugthrower cartridge.
+  components:
+  - type: Tag
+    tags:
+      - CartridgeMachineGun
+      - Cartridge
+  - type: Item
+    size: Tiny
+  - type: CartridgeAmmo
+    proto: BulletMachineGunHighExplosive
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/50_highexplosive_machinegun_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: SpaceGarbage
+  
+#armor piercing 43mm (slugthrower) cartridge
+
+- type: entity
+  id: CartridgeMachineGunArmorPiercing
+  name: 43mm depleted uranium slugthrower cartridge
+  parent: BaseItem
+  description: An armor-piercing 43mm slugthrower cartridge, tipped with depleted uranium.
+  components:
+  - type: Tag
+    tags:
+      - CartridgeMachineGun
+      - Cartridge
+  - type: Item
+    size: Tiny
+  - type: CartridgeAmmo
+    proto: BulletMachineGunArmorPiercing
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/50_armorpiercing_machinegun_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: SpaceGarbage
+  
+#emp 43mm (slugthrower) cartridge
+
+- type: entity
+  id: CartridgeMachineGunEMP
+  name: 43mm polymer-tip slugthrower cartridge
+  parent: BaseItem
+  description: A 43mm slugthrower cartridge, tipped with polymer-encased bluespace crystal fragments, emitting an electromagnetic pulse upon landing.
+  components:
+  - type: Tag
+    tags:
+      - CartridgeMachineGun
+      - Cartridge
+  - type: Item
+    size: Tiny
+  - type: CartridgeAmmo
+    proto: BulletMachineGunEMP
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/50_emp_machinegun_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: SpaceGarbage
+  
+#practice 120mm cartridge
+
+- type: entity
+  id: CartridgeShellPractice
+  name: 120mm practice artillery shell
+  parent: BaseItem
+  description: A primitive artillery shell designed for naval training drills.
+  components:
+  - type: Tag
+    tags:
+      - CartridgeShell
+      - Cartridge
+  - type: Item
+    size: Normal
+  - type: CartridgeAmmo
+    proto: BulletShellPractice
+    deleteOnSpawn: false
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/630_practice_shell_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  
+#low yield 120mm cartridge
+
+- type: entity
+  id: CartridgeShellHighExplosive
+  name: 120mm high-yield explosive artillery shell
+  parent: BaseItem
+  description: A primitive 120mm artillery shell with a volatile compound tip. Delivers devastating kinetic explosions against enemy hull.
+  components:
+  - type: Tag
+    tags:
+      - CartridgeShell
+      - Cartridge
+  - type: Item
+    size: Normal
+  - type: CartridgeAmmo
+    proto: BulletShellHighExplosive
+    deleteOnSpawn: false
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/630_highexplosive_shell_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  
+#armor piercing 120mm cartridge
+
+- type: entity
+  id: CartridgeShellArmorPiercing
+  name: 120mm depleted uranium shell
+  parent: BaseItem
+  description: A primitive artillery shell with a depleted uranium tip. Rends armor apart.
+  components:
+  - type: Tag
+    tags:
+      - CartridgeShell
+      - Cartridge
+  - type: Item
+    size: Normal
+  - type: CartridgeAmmo
+    proto: BulletShellArmorPiercing
+    deleteOnSpawn: false
+  - type: Sprite
+    sprite: _NF/Objects/SpaceArtillery/630_armorpiercing_shell_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+
+# 48mm rocket - sumitomo & kurosawa
+
+- type: entity
+  id: BaseRocket
+  name: base rocket
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - Rocket48mm
+  - type: Item
+    size: Small
+  - type: Sprite
+
+- type: entity
+  id: CartridgeRocketLowYield
+  name: 48mm low-yield rocket
+  parent: BaseRocket
+  components:
+  - type: CartridgeAmmo
+    proto: BulletRocketLowYield
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    layers:
+    - state: baton
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+    state: baton
+    suffix: false
+  - type: Tag
+    tags:
+      - Rocket48mm
+
+- type: entity
+  id: CartridgeRocketHighYield
+  name: 48mm high-yield rocket
+  parent: BaseRocket
+  components:
+  - type: CartridgeAmmo
+    proto: BulletRocketHighYield
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    layers:
+    - state: blast
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+    state: blast
+    suffix: false
+  - type: Tag
+    tags:
+      - Rocket48mm
+
+- type: entity
+  id: CartridgeRocketEMP
+  name: 48mm EMP rocket
+  parent: BaseRocket
+  components:
+  - type: CartridgeAmmo
+    proto: BulletRocketEMP
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    layers:
+    - state: emp
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+    state: frag
+    suffix: false
+  - type: Tag
+    tags:
+      - Rocket48mm

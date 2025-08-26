@@ -10,14 +10,18 @@
 - type: gameMap
   id: Imp
   mapName: 'DSM Covetor'
-  mapPath: /Maps/_Crescent/Shuttles/DSM/Covetor.yml
+  mapPath: /Maps/_Crescent/Shuttles/DSM/covetor.yml
   minPlayers: 0
   stations:
     Imp:
       stationProto: StandardCrescentCivilianVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: bigindustrial
         - type: StationNameSetup
-          mapNameTemplate: 'DSM Impel {1}'
+          mapNameTemplate: 'DSM Covetor {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'

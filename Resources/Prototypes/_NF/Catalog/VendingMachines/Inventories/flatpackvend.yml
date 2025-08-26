@@ -1,14 +1,7 @@
 - type: vendingMachineInventory
   id: FlatpackVendInventory
   startingInventory:
-    ShuttleGunKineticFlatpack: 12
-    OreProcessorFlatpack: 10
-    AutolatheFlatpack: 6
     HydroponicsTrayEmptyFlatpack: 16
-    ExosuitFabricatorFlatpack: 4
-    ProtolatheFlatpack: 6
-    CircuitImprinterFlatpack: 6
-    ResearchAndDevelopmentServerFlatpack: 6
     MaterialReclaimerFlatpack: 4
     UniformPrinterFlatpack: 6
     PowerCellRechargerFlatpack: 8

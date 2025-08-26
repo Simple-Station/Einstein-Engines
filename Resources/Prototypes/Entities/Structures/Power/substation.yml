@@ -102,10 +102,20 @@
   - type: StationInfiniteBatteryTarget
   - type: AmbientOnPowered
   - type: AmbientSound
-    volume: -5
-    range: 3
+    volume: -10
+    range: 4
     sound:
-      path: /Audio/Ambience/Objects/buzzing.ogg
+      path: /Audio/_Crescent/Ambience/smes_loop.ogg
+  - type: SpamEmitSoundRequirePower
+  - type: SpamEmitSound
+    minInterval: 20
+    maxInterval: 90
+    sound:
+      collection: SmesSFX
+      params:
+        volume: -5
+        maxDistance: 4
+        variation: 0.05
   - type: Electrified
     onHandInteract: false
     onInteractUsing: false
@@ -125,10 +135,20 @@
   components:
   - type: AmbientOnPowered
   - type: AmbientSound
-    volume: -5
-    range: 2
+    volume: -10
+    range: 4
     sound:
-      path: /Audio/Ambience/Objects/buzzing.ogg
+      path: /Audio/_Crescent/Ambience/smes_loop.ogg
+  - type: SpamEmitSoundRequirePower
+  - type: SpamEmitSound
+    minInterval: 20
+    maxInterval: 90
+    sound:
+      collection: SmesSFX
+      params:
+        volume: -5
+        maxDistance: 4
+        variation: 0.05
   - type: PointLight
     radius: 1.5
     energy: 1.6

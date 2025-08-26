@@ -1,0 +1,117 @@
+<Document>
+## LORE
+After the destruction of their headquarters, Nova Belraska, the NCWL forces in Taypan flee for survival.
+Their refuge is the Dear Clementine, a cargo freighter converted for war. A Gargut artillery carrier and Sasha heavy bomber follow suit.
+A DSM warfleet detects their presence and moves to intercept. The fate of the revolution all hangs on this one battle.
+
+## OBJECTIVE
+Each side's goal is to destroy the 3 Cloner Databases, henceforth reffered to as the objective, located on each fleet's warships.
+
+<Box>
+<GuideEntityEmbed Entity="UnionfallShipNodeNCWL" Caption="NCWL's Cloner Database"/>
+<GuideEntityEmbed Entity="UnionfallShipNodeDSM" Caption="DSM's Cloner Database"/>
+</Box>
+
+Either you can destroy them by direct and focused ship fire, or by going there in person interacting with it to sabotage.
+Sabotaging takes 10 seconds, and rigs the objective to explode in 60 seconds. It can be disarmed as well.
+
+## HADAL TIDE / GRACE PERIOD
+
+At the start of the round, your main flagship (and the enemy's) is trapped inside an indestructible, immovable protective circle.
+After a total of 20 minutes, the Hadal Tide ends and the circle dissipates. By this time, both teams should have ammassed a fleet of fighters and coherent squads.
+
+## WHAT SHOULD YOU BE DOING?
+
+1. Link up with your superior (the Kommissar, or the Admiral) and listen to their speech.
+<Box>
+<GuideEntityEmbed Entity="ClothingHeadHatNCWLKommissarHat" Caption="look for this hat"/>
+<GuideEntityEmbed Entity="ClothingOuterArmorNCWLCarapace" Caption="and this coat"/>
+</Box>
+2a. Join with an existing ship crew and board their ship. Use a mass scanner to find docked Lodkas or Vanguards.
+<Box>
+<GuideEntityEmbed Entity="HandHeldMassScannerEE" Caption="either use the scanner in your bag"/>
+<GuideEntityEmbed Entity="ComputerRadar" Caption="or find this console"/>
+</Box>
+
+OR
+
+2b. Get a ship LPC from a vendor
+<Box>
+<GuideEntityEmbed Entity="NCWLConscriptShipVendory" Caption="vendor looks like this"/>
+<GuideEntityEmbed Entity="ShipVoucherUnionfallKhopesh" Caption="you want this thing"/>
+</Box>
+3. Insert it in a shipyard console
+<Box>
+<GuideEntityEmbed Entity="UnionfallClementineMothershipComputer" Caption="console looks like this"/>
+</Box>
+4. Use a mass scanner to find where it's docked
+<Box>
+<GuideEntityEmbed Entity="HandHeldMassScannerEE" Caption="either use the scanner in your bag"/>
+<GuideEntityEmbed Entity="ComputerRadar" Caption="or find this console"/>
+</Box>
+5. Use your ID card (it's in your PDA) to unlock the console
+6. Go to the "Dock" section and undock to free up the space for the next ship
+7. Perform pre-combat checks such as ensuring your weapons are loaded and ready to fire
+
+When the barrier falls, follow orders and attempt to dock with the NT outpost. Good luck.
+
+## NCWL WARSHIP ROSTER
+
+1. NCWL Dear Clementine
+- NCWL's flagship. Dwarfs most ships in Taypan in sheer size. Scares the rest with its arsenal.
+- Front: 1x 320mm accelerator cannon
+- Broadside: 4x Automortars
+- Point Defense: Too much
+- Spinal 320mm cannon is the most destructive weapon in the sector. If placed well, a single shot can disable most ships.
+- Automortars offer incredible efficiency and destructive power at the cost of needing constant reloading.
+- PDT is weak on it's own but en-masse it does not allow ultralights to even approach.
+
+2. NCWL Gargut
+- An artillery carrier with heavy armor and room padding.
+- Front: 4 * 120mm artillery
+- Front: 2 * Automortars
+- Surrounding: 4 * "Slugspitter" 40mm guns
+- Point Defense: Decent
+- 120mm layout demands either 2 loaders, or to only use one side for repeated fire. Destructive power at range is second only to the 320mm.
+- Automortars offer decent close range duelling power.
+- Slugspitters and PDT turrets can hold their own against fighters from all directions, but not optimally.
+
+3. NCWL Sasha
+- Triple 230mm "Hephaestus" cannons on a slim hull. An ancient relic from another time.
+- Front, and broadsides: 230mm "Hephaestus"
+- PDT: Plenty
+- 230mm cannon offers solid, long ranged destructive power with fast reloadable rounds. 
+- PDT can harass fighters and delete ultralights, but it still requires escort to defend it properly.
+
+## NCWL SHIP ROSTER
+
+1. NCWL Broadsword
+- An ultralight missle boat sporting dual Kurosawa launchers.
+- Extremely fragile. Devastating when used as a hit-and-run vessel.
+- Kurosawa launchers must be reloaded manually after expending their 2 shots.
+- DOES NOT HOLD ATMOSPHERE!
+
+2. NCWL Khopesh
+- An ultralight gun boat sporting dual Vulcan miniguns.
+- Extremely fragile. Excells at killing other ultralights, harassing ships and killing crew once hull is destroyed.
+- Vulcan launchers each hold 500 rounds.
+- DOES NOT HOLD ATMOSPHERE!
+
+3. NCWL Lodka
+- An armed and armored troop transport with an arsenal to defend itself.
+- Armed with 2 Kurosawa launchers and 4 Point Defense Turrets. Launchers fired from pilot seat, PDTs fired from targeting console.
+- Front is up-armored, rear is weak. Suffers from slow acceleration.
+
+4. NCWL Vanguard
+- An armored fighter made for extended engagements. Sports dual slugthrowers.
+- Slugthrowers hold a low amount of ammo and must be manually reloaded (AND RACKED!) after emptying.
+- Front is up-armored, rear is weak.
+
+5. NCWL Aegis
+- A modified Vanguard hull with a 120mm strapped in the middle.
+- Requires 2 crew: 1 pilot and 1 loader/gunner.
+- 120mm has long range and good damage, but requires constant reloading.
+- Loader mans PDT while loading shells.
+
+
+</Document>

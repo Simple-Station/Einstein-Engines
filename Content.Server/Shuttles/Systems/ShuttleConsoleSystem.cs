@@ -581,8 +581,9 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
             var projectile = new ProjectileState
             {
                 Coordinates = GetNetCoordinates(_transform.GetMoverCoordinates(uid, transform)),
-                VisualTypeIndex = (int) projectileIFF.VisualType,
-                ColorIndex = (int) projectileIFF.Color
+                VisualTypeIndex = (int)projectileIFF.VisualType,
+                Color = projectileIFF.Color,
+                Scale = projectileIFF.Scale // Add this line to support scale
             };
             projectiles.Add(projectile);
         }

@@ -3,16 +3,30 @@
   name: job-name-freeholder
   description: job-description-freeholder
   playTimeTracker: JobFreeholderDSM
-  weight: 73
+  weight: 1
   startingGear: FreeholderGear
-  requirements:
-    - !type:FactionRequirement
-        factionID: "DSM"
   alwaysUseSpawner: true
-  icon: "JobIconImperialFreeholder"
   requireAdminNotify: false
+  icon: "JobIconImperialFreeholder"
   supervisors: job-supervisors-imperial
   canBeAntag: false
+  requirements:
+    - !type:FactionRequirement
+      factionID: "DSM"
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-foreman
+      - type: LanguageAdder
+        addSpoken:
+          - LowImperial
+        addUnderstood:
+          - LowImperial
   access:
   - Command
   - Maintenance

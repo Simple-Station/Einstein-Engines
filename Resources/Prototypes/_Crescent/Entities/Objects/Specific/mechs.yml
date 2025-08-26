@@ -38,8 +38,15 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.5
     baseSprintSpeed: 4.5
+    weightlessFriction: 0
+    weightlessAcceleration: 0.3
+    weightlessModifier: 4.5 # 20ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
+  - type: ProjectileIFF
+    visualType: Square
+    color: "#bd73d0"
+    scale: 1.5
   - type: StaticPrice
     price: 1500
   - type: Tag
@@ -99,8 +106,15 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 1.5
     baseSprintSpeed: 3.5
+    weightlessFriction: 0
+    weightlessAcceleration: 0.1
+    weightlessModifier: 4.75 # 15ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
+  - type: ProjectileIFF
+    visualType: Triangle
+    color: "#c87d32"
+    scale: 2.5
   - type: StaticPrice
     price: 5000
   - type: Tag
@@ -157,8 +171,15 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 1.9
     baseSprintSpeed: 3.5
+    weightlessFriction: 0
+    weightlessAcceleration: 0.2
+    weightlessModifier: 6.25 # 20ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
+  - type: ProjectileIFF
+    visualType: Triangle
+    color: "#c87d32"
+    scale: 2
   - type: StaticPrice
     price: 3000
   - type: Tag
@@ -214,8 +235,15 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 3.5
     baseSprintSpeed: 5.5
+    weightlessFriction: 0
+    weightlessAcceleration: 0.25
+    weightlessModifier: 4 # 20ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
+  - type: ProjectileIFF
+    visualType: Triangle
+    color: "#af1919"
+    scale: 2
   - type: StaticPrice
     price: 3000
   - type: Tag
@@ -275,8 +303,15 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 1
     baseSprintSpeed: 1.85
+    weightlessFriction: 0
+    weightlessAcceleration: 0.1
+    weightlessModifier: 5.5 # 10ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
+  - type: ProjectileIFF
+    visualType: Triangle
+    color: "#d9d9d9"
+    scale: 3.5
   - type: StaticPrice
     price: 30000
   - type: Tag
@@ -337,8 +372,15 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 1.5
     baseSprintSpeed: 3.5
+    weightlessFriction: 0
+    weightlessAcceleration: 0.15
+    weightlessModifier: 4.75 # 15ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
+  - type: ProjectileIFF
+    visualType: Triangle
+    color: "#bd73d0"
+    scale: 2.5
   - type: StaticPrice
     price: 5000
   - type: Tag
@@ -369,3 +411,67 @@
   - type: Battery
     maxCharge: 7500
     startingCharge: 7500
+
+- type: entity
+  id: MechDSMWanderer
+  parent: [ BaseMech, HybridScoutMech ]
+  name: IEE mV-400 Wanderer scout mechsuit
+  description: The Wanderer class is a mainstay of the Imperial Cavalry corps as its low profile and light maintenance makes it perfectly suited for freshly graduated cadets and down-on-their-luck Ritters to support the Imperial Navy and heavier Exos. Their construction, while fragile, is speedy enough to perform reconnaissance in asteroid belts and battlefields alike, and powerful synthmuscle arms can mount a variety of infantry level equipment for harassment. Wanderers frequently fall short and are expected to be recalled or bunker down on nearby wrecks or asteroids when enemy fighter support is in a sector, as any caught in the open are doomed to be stripped apart.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    sprite: _Crescent/Objects/Specific/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: wanderer
+    - map: ["enum.PaperLabelVisuals.Layer"]
+      sprite: Structures/Storage/Crates/labels.rsi
+      state: paper
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+  - type: Mech
+    maxIntegrity: 250
+    baseState: wanderer
+    openState: wanderer-open
+    brokenState: wanderer-broken
+    mechToPilotDamageMultiplier: 0.25
+    airtight: true
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+  - type: MeleeWeapon
+    hidden: true
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 25
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.9
+    baseSprintSpeed: 3.5
+    weightlessFriction: 0
+    weightlessAcceleration: 0.2
+    weightlessModifier: 6.25 # 20ish ship speed - weightless speed is influenced by weightlessModifier and base(Walk/Sprint)Speed
+  - type: CanMoveInAir
+  - type: MovementAlwaysTouching
+  - type: ProjectileIFF
+    visualType: Triangle
+    color: "#bd73d0"
+    scale: 2
+  - type: StaticPrice
+    price: 4000
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - FootstepSound
+
+- type: entity
+  id: MechDSMWandererBattery
+  parent: MechDSMWanderer
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCageUraniumCell

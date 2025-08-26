@@ -60,6 +60,78 @@
   description: A special-issue translator that helps foreigner's speak and understand this station's primary language.
 
 
+# HULLROT: langauge translators for hullrot-specific languages. uses sign language since that's what everybody knows
+- type: entity
+  id: CreoleTranslator
+  parent: [ TranslatorPoweredBase ]
+  name: Crescent Creole translator
+  description: Translates Crescent Creole, mainly spoken by NCWL. Has a little display with a friendly-looking Union Worker performing Spacer's Sign for you to understand.
+  components:
+  - type: HandheldTranslator
+    spoken:
+    - Dockta
+    understood:
+    - Dockta
+    requires:
+    - Sign
+
+- type: entity
+  id: LowImperialTranslator
+  parent: [ TranslatorPoweredBase ]
+  name: Low Imperial translator
+  description: Translates Low Imperial, mainly spoken by DSM. Has a little display with a friendly-looking Freeholder performing Spacer's Sign for you to understand.
+  components:
+  - type: HandheldTranslator
+    spoken:
+    - LowImperial
+    understood:
+    - LowImperial
+    requires:
+    - Sign
+
+- type: entity
+  id: KaishagoTranslator
+  parent: [ TranslatorPoweredBase ]
+  name: Kaishago translator
+  description: Translates Kaishago, mainly spoken by SHI. Has a little display with a friendly-looking Salaryman performing Spacer's Sign for you to understand.
+  components:
+  - type: HandheldTranslator
+    spoken:
+    - Kaishago
+    understood:
+    - Kaishago
+    requires:
+    - Sign
+
+- type: entity
+  id: FreespeakTranslator
+  parent: [ TranslatorPoweredBase ]
+  name: Freespeak translator
+  description: Translates Freespeak, mainly spoken by TFSC. Has a little display with a friendly-looking Gorlex Infanteer performing Spacer's Sign for you to understand.
+  components:
+  - type: HandheldTranslator
+    spoken:
+    - Freespeak
+    understood:
+    - Freespeak
+    requires:
+    - Sign
+
+- type: entity
+  id: TradebandTranslator
+  parent: [ TranslatorPoweredBase ]
+  name: Tradeband translator
+  description: Translates Tradeband, mainly spoken by traders and independent spacers. Has a little display with a friendly-looking Spacer performing Spacer's Sign for you to understand.
+  components:
+  - type: HandheldTranslator
+    spoken:
+    - Tradeband
+    understood:
+    - Tradeband
+    requires:
+    - Sign
+
+
 - type: entity
   id: CanilunztTranslator
   parent: [ TranslatorPoweredBase ]
@@ -305,3 +377,4 @@
     requires:
     - TauCetiBasic
     - SiikMaas
+

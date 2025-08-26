@@ -17,3 +17,5 @@ mech-energy-missing = Energy: MISSING
 mech-slot-display = Open Slots: {$amount}
 
 mech-no-enter = You cannot pilot this.
+
+mech-custom-action-popup = Mass scanner activated! Opening radar display...

@@ -3,7 +3,7 @@
   alias:
     - survival
   name: survival-title
-  showInVote: true # secret # DeltaV - Me when the survival. Used for periapsis.
+  showInVote: false # secret # DeltaV - Me when the survival. Used for periapsis.
   description: survival-description
   rules:
     - RampingStationEventScheduler
@@ -15,11 +15,11 @@
   id: SurvivalHellshift
   alias:
     - hellshift
-  showInVote: true
+  showInVote: false
   name: hellshift-title
   description: hellshift-description
   rules:
-    - HellshiftStationEventScheduler
+    - RampingStationEventScheduler
     - BasicRoundstartVariation
     - SubGamemodesRule
     - LavalandStormScheduler # Lavaland Change
@@ -27,22 +27,22 @@
 - type: gamePreset
   id: SurvivalIrregular
   alias: [irregular]
-  showInVote: true
+  showInVote: false
   name: irregular-title
   description: irregular-description
   rules:
-    - IrregularStationEventScheduler
+    - BasicStationEventScheduler
     - BasicRoundstartVariation
     - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: SurvivalIrregularExtended
   alias: [irregular-extended]
-  showInVote: true
+  showInVote: false
   name: irregular-extended-title
   description: irregular-extended-description
   rules:
-    - IrregularExtendedStationEventScheduler
+    - BasicStationEventScheduler
     - BasicRoundstartVariation
     - LavalandStormScheduler # Lavaland Change
 
@@ -52,7 +52,6 @@
   description: all-at-once-description
   showInVote: false
   rules:
-    - Nukeops
     - Traitor
     - Revolutionary
     - Zombie
@@ -67,7 +66,7 @@
   - extended
   - shittersafari
   name: extended-title
-  showInVote: true #2boring2vote # DeltaV - I'd like to disagree, used for periapsis.
+  showInVote: false #2boring2vote # DeltaV - I'd like to disagree, used for periapsis.
   description: extended-description
   rules:
   - BasicStationEventScheduler
@@ -81,7 +80,7 @@
   - greenshift
   - shittersafarideluxeedition
   name: greenshift-title
-  showInVote: true
+  showInVote: false
   description: greenshift-description
   rules:
   - LavalandStormScheduler # Lavaland Change
@@ -92,7 +91,7 @@
     - secret
     - sekrit
   name: secret-title
-  showInVote: true
+  showInVote: false
   description: secret-description
   rules:
     - Secret
@@ -137,36 +136,9 @@
     - traitor
   name: traitor-title
   description: traitor-description
-  showInVote: true
-  rules:
-    - Traitor
-    - SubGamemodesRule
-    - BasicStationEventScheduler
-    - BasicRoundstartVariation
-    - LavalandStormScheduler # Lavaland Change
-
-- type: gamePreset
-  id: Deathmatch
-  alias:
-    - deathmatch
-    - dm
-  name: death-match-title
-  description: death-match-description
-  #maxPlayers: 15
-  showInVote: false # DeltaV - No.
-  supportedMaps: DeathMatchMapPool
-  rules:
-    - DeathMatch31
-
-- type: gamePreset
-  id: Nukeops
-  alias:
-    - nukeops
-  name: nukeops-title
-  description: nukeops-description
   showInVote: false
   rules:
-    - Nukeops
+    - Traitor
     - SubGamemodesRule
     - BasicStationEventScheduler
     - BasicRoundstartVariation
@@ -221,3 +193,16 @@
   - BasicStationEventScheduler
   - BasicRoundstartVariation
   - LavalandStormScheduler # Lavaland Change
+
+- type: gamePreset
+  id: Deathmatch
+  alias:
+  - deathmatch
+  - dm
+  name: death-match-title
+  description: death-match-description
+  #maxPlayers: 15
+  showInVote: false # DeltaV - No.
+  supportedMaps: DeathMatchMapPool
+  rules:
+  - DeathMatch31

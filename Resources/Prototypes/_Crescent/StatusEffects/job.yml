@@ -35,48 +35,6 @@
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconArtificer
-  icon:
-    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
-    state: Artificer
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconKadet
-  icon:
-    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
-    state: Kadet
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconCommsOfficer
-  icon:
-    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
-    state: CommunicationsOfficer
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconCommissar
-  icon:
-    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
-    state: Commissar
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconDoktor
-  icon:
-    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
-    state: Doktor
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconSanitar
-  icon:
-    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
-    state: Sanitar
-
-- type: jobIcon
-  parent: JobIcon
   id: JobIconSyndieRingleader
   icon:
     sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
@@ -522,3 +480,203 @@
   icon:
     sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
     state: logisticier
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnionfallDSMSapper
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hr_dsm_sapper
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnionfallDSMCrew
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hr_dsm_crew
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnionfallDSMCadet
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hr_dsm_cadet
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnionfallDSMRifleman
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hr_dsm_rifleman
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnionfallDSMCQC
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hr_dsm_cqc
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnionfallDSMSpecialist
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hr_dsm_specialist
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnionfallDSMMedic
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hr_dsm_medic
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnionfallDSMOfficer
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hr_dsm_officer
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnionfallDSMLeader
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hr_dsm_leader
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnionfallDSMCaptain
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hr_dsm_captain
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnionfallNCWLSapper
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hr_ncwl_sapper
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnionfallNCWLCrew
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hr_ncwl_crew
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnionfallNCWLCadet
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hr_ncwl_cadet
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnionfallNCWLRifleman
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hr_ncwl_rifleman
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnionfallNCWLCQC
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hr_ncwl_cqc
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnionfallNCWLSpecialist
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hr_ncwl_specialist
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnionfallNCWLMedic
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hr_ncwl_medic
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnionfallNCWLOfficer
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hr_ncwl_officer
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnionfallNCWLLeader
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hr_ncwl_leader
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnionfallNCWLCaptain
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hr_ncwl_captain
+
+#ncwl#
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNCWLWorker
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hl_ncwl_worker
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNCWLHomeguardLeader
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hl_ncwl_military_officer
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNCWLHomeguardSquadCaptain
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hl_ncwl_military_serg
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNCWLHomeguardSoldat
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hl_ncwl_military_soldier
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNCWLLogisticLeader
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hl_ncwl_cargo_leader
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNCWLMedicalWorker
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hl_ncwl_medsci_worker
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNCWLEngineeringLeader
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hl_ncwl_engi_leader
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNCWLFactionLeader
+  icon:
+    sprite: /Textures/_Crescent/Interface/Misc/job_icons.rsi
+    state: hl_ncwl_faclead
+
+

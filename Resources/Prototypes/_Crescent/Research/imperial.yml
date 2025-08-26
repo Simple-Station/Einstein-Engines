@@ -69,6 +69,19 @@
   - ClothingOuterHardsuitImperialKnight
 
 - type: technology
+  id: ImperialPsionicAttunement
+  name: research-technology-imperial-psionicattunement
+  icon:
+    sprite: _Crescent/Clothing/Empire/OuterClothing/mandatenullweavepsion.rsi
+    state: icon
+  discipline: Imperial
+  tier: 1
+  cost: 2000
+  recipeUnlocks:
+  - ClothingOuterHardsuitImperialNullweavePsion
+  - ImperialPsionBoundlightStaff
+
+- type: technology
   id: BasicImperialRifling
   name: research-technology-imperial-basicrifling
   icon:
@@ -131,10 +144,11 @@
   tier: 2
   cost: 5000
   recipeUnlocks:
-  - ClothingBeltSheathRapier
+  - ClothingBeltSheathDSMRapier
   - ClothingBeltSheathDSMSabre
   - DSMRapier
   - DSMSabre
+  - DSMDuelingKhopesh
 
 - type: technology
   id: ImperialSunesis
@@ -173,6 +187,18 @@
   - PaladinFlatpack
 
 - type: technology
+  id: ImperialWandererMech
+  name: research-technology-imperial-wanderer
+  icon:
+    sprite: Objects/Devices/flatpack.rsi
+    state: kit
+  discipline: Imperial
+  tier: 2
+  cost: 4000
+  recipeUnlocks:
+  - WandererFlatpack
+
+- type: technology
   id: ImperialAdvancedRifling
   name: research-technology-imperial-advancedrifling
   icon:
@@ -185,6 +211,19 @@
   - WeaponRifleDSMLegionnaire
   - WeaponSubMachineGunC20rImperial
   - WeaponPistolNeoVolker
+
+- type: technology
+  id: ImperialPlasmaMechGuns
+  name: research-technology-imperial-plasmamechguns
+  icon:
+    sprite: _Crescent/Objects/Specific/mechaweapons.rsi
+    state: plasmarifle
+  discipline: Imperial
+  tier: 2
+  cost: 9000
+  recipeUnlocks:
+  - WeaponMechCombatPlasmaRifle
+  - WeaponMechCombatPlasmaCannon
 
 - type: technology
   id: ImperialSRM

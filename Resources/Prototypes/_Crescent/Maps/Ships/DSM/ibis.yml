@@ -16,6 +16,10 @@
     Ibis:
       stationProto: StandardCrescentVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
         - type: StationNameSetup
           mapNameTemplate: 'DSM Ibis {1}'
           nameGenerator:

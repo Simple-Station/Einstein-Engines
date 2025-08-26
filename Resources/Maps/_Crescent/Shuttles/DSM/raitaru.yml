@@ -1217,6 +1217,10 @@ entities:
     - type: ShuttleDeed
       shuttleName: Shuttle KXZ-889
       shuttleUid: 1
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: outpost
     - type: BecomesStation
       id: Raitaru
 - proto: AAAHardpointSmallBallistic

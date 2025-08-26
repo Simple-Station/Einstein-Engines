@@ -28,7 +28,7 @@
     Cloth: 500
 
 - type: latheRecipe
-  id: ClothingOuterShinoharaExecSuitjacket
+  id: ClothingOuterShinoharaExecSuitJacket
   result: ClothingOuterShinoharaExecSuitJacket
   completetime: 2
   materials:
@@ -316,6 +316,25 @@
     AdvancedElectronics: 1000
 
 - type: latheRecipe
+  id: WeaponFighterMachinegun
+  result: WeaponFighterMachinegun
+  completetime: 2
+  materials:
+    Steel: 3000
+    BallisticCycler: 1000
+    BasicMechatronics: 2000
+
+- type: latheRecipe
+  id: WeaponFighterAutocannon
+  result: WeaponFighterAutocannon
+  completetime: 2
+  materials:
+    Steel: 3000
+    Uranium: 2000
+    TubeLoader: 1000
+    BasicMechatronics: 3000
+
+- type: latheRecipe
   id: WeaponMechCombatTaikotyo
   result: WeaponMechCombatTaikotyo
   completetime: 2
@@ -348,7 +367,7 @@
   completetime: 2
   materials:
     Steel: 3000
-    BallisticElectronics: 1000
+    AdvancedMechatronics: 1000
     BasicMechatronics: 1000
 
 - type: latheRecipe
@@ -674,3 +693,27 @@
   materials:
     Plastic: 1000
     Steel: 1500
+
+- type: latheRecipe
+  id: ClothingBeltSheathSHIKatana
+  result: ClothingBeltSheathSHIKatana
+  completetime: 2
+  materials:
+    Cloth: 750
+
+- type: latheRecipe
+  id: SHIKatana
+  result: SHIKatana
+  completetime: 2
+  materials:
+    Steel: 1500
+    Silver: 500
+
+- type: latheRecipe
+  id: SHIShiverBlade
+  result: SHIKatanaShiverBlade
+  completetime: 2
+  materials:
+    AdvancedElectronics: 1000
+    Plasma: 500
+    WeakLaserLocus: 500

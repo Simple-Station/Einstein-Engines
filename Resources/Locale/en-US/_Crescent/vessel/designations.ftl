@@ -19,6 +19,7 @@ vessel-designation-interceptor = interceptor
 vessel-designation-flagship = flagship
 vessel-designation-salvage = salvager
 vessel-designation-artillery-carrier = artillery carrier
+vessel-designation-artillery-ship = artillery ship
 vessel-designation-torpedo-bomber = torpedo bomber
 vessel-designation-electronic = electronic warfare vessel
 vessel-designation-stealth-bomber = stealth bomber

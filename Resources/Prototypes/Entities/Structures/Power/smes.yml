@@ -8,11 +8,22 @@
   placement:
     mode: SnapgridCenter
   components:
+    - type: AmbientOnPowered
     - type: AmbientSound
-      volume: -7
-      range: 3
+      volume: -10
+      range: 4
       sound:
-        path: /Audio/Ambience/Objects/periodic_beep.ogg
+        path: /Audio/_Crescent/Ambience/smes_loop.ogg
+    - type: SpamEmitSoundRequirePower
+    - type: SpamEmitSound
+      minInterval: 20
+      maxInterval: 90
+      sound:
+        collection: SmesSFX
+        params:
+          volume: -5
+          maxDistance: 4
+          variation: 0.05
     - type: Sprite
       sprite: Structures/Power/smes.rsi
       snapCardinals: true

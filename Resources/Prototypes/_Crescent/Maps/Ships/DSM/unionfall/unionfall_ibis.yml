@@ -1,0 +1,25 @@
+- type: vessel
+  id: UnionfallIbis
+  name: DSM Ibis
+  description: A heavy imperial fighter armed with missles and dual plasma repeaters.
+  price: 30000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Unionfall/DSM/unionfall_ibis.yml
+
+- type: gameMap
+  id: UnionfallIbis
+  mapName: 'DSM Ibis'
+  mapPath: /Maps/_Crescent/Unionfall/DSM/unionfall_ibis.yml
+  minPlayers: 0
+  stations:
+    UnionfallIbis:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'DSM Ibis {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter

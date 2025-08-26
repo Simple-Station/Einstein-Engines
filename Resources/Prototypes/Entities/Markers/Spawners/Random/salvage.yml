@@ -39,6 +39,95 @@
       chance: 0.9
       offset: 0.0
 
+# HULLROT INDUSTRY EDIT BEGIN
+
+- type: entity
+  name: Salvage Metal Scrap Spawner
+  id: SalvageMetalScrapSpawner
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: Structures/Storage/Crates/generic.rsi
+          state: icon
+    - type: RandomSpawner
+      rarePrototypes:
+        - SalvageHumanCorpse
+      rareChance: 0.01
+      prototypes:
+        - SteelScrap3
+        - SteelScrap8
+        - SteelScrap16
+        - SteelScrap25
+        - TitaniumScrap1
+        - TitaniumScrap6
+        - TitaniumScrap25
+        - GarbageOre1
+        - GarbageOre5
+        - GarbageOre10
+        - GarbageOre25
+        - DelamDisk
+        - DelamDiskThumb
+      chance: 0.9
+      offset: 0.0
+
+- type: entity
+  name: Salvage Rare Metal Scrap Spawner
+  id: SalvageRareMetalScrapSpawner
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: Structures/Storage/Crates/generic.rsi
+          state: icon
+    - type: RandomSpawner
+      rarePrototypes:
+        - SalvageHumanCorpse
+      rareChance: 0.001
+      prototypes:
+        - RefinedSteelScrapOre
+        - RefinedTitaniumScrapOre
+        - RefinedGarbageOre
+        - AbyssalSurvey
+      chance: 0.009
+      offset: 0.0
+
+- type: entity
+  name: Salvage Electronic Scrap Spawner
+  id: SalvageElectronicScrapSpawner
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: Structures/Storage/Crates/generic.rsi
+          state: icon
+    - type: RandomSpawner
+      rarePrototypes:
+        - SalvageHumanCorpse
+      rareChance: 0.01
+      prototypes:
+        - BasicElectronics1
+        - BasicElectronics3
+        - BasicElectronics5
+        - BasicMechatronics1
+        - BasicMechatronics3
+        - BasicMechatronics5
+        - LaserLocus1
+        - BallisticCycler1
+        - TubeLoader1
+        - WeakLaserLocus1
+        - WeakLaserLocus3
+        - HardlightGenerator1
+        - HardsuitElectronics1
+        - PlastitaniumFibreAlloy5
+      chance: 0.9
+      offset: 0.0
+
+# HULLROT INDUSTRY EDIT END
+
 - type: entity
   name: Salvage Canister Spawner
   id: SalvageCanisterSpawner

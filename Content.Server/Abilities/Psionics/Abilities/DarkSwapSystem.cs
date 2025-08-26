@@ -1,6 +1,6 @@
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Actions.Events;
-using Content.Shared.Shadowkin;
+using Content.Shared.Voidborn;
 using Content.Shared.Physics;
 using Content.Shared.Popups;
 using Content.Shared.Maps;
@@ -34,8 +34,8 @@ namespace Content.Server.Abilities.Psionics
 
                 if (_psionics.OnAttemptPowerUse(args.Performer, "DarkSwap", true))
                 {
-                    SpawnAtPosition("ShadowkinShadow", Transform(args.Performer).Coordinates);
-                    SpawnAtPosition("EffectFlashShadowkinDarkSwapOff", Transform(args.Performer).Coordinates);
+                    SpawnAtPosition("VoidbornShadow", Transform(args.Performer).Coordinates);
+                    SpawnAtPosition("EffectFlashVoidbornDarkSwapOff", Transform(args.Performer).Coordinates);
                     RemComp(args.Performer, ethereal);
                     args.Handled = true;
                 }
@@ -45,8 +45,8 @@ namespace Content.Server.Abilities.Psionics
                 var newethereal = EnsureComp<EtherealComponent>(args.Performer);
                 newethereal.Darken = true;
 
-                SpawnAtPosition("ShadowkinShadow", Transform(args.Performer).Coordinates);
-                SpawnAtPosition("EffectFlashShadowkinDarkSwapOn", Transform(args.Performer).Coordinates);
+                SpawnAtPosition("VoidbornShadow", Transform(args.Performer).Coordinates);
+                SpawnAtPosition("EffectFlashVoidbornDarkSwapOn", Transform(args.Performer).Coordinates);
 
                 args.Handled = true;
             }

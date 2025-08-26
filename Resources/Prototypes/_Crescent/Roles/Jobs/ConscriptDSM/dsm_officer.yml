@@ -1,0 +1,92 @@
+- type: job
+  id: ConscriptOfficerDSM
+  name: job-name-conscript-dsm-officer
+  description: job-description-conscript-dsm-officer
+  playTimeTracker: ConscriptDSM
+  requirements:
+    - !type:FactionRequirement
+      factionID: "DSM"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
+  weight: 8
+  startingGear: ConscriptOfficerDSMGear
+  alwaysUseSpawner: true
+  icon: "JobIconUnionfallDSMOfficer"
+  requireAdminNotify: true
+  supervisors: job-supervisors-conscript-dsm-high
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-dsm-officer
+      - type: HullrotFaction
+        faction: DSM
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Mercenary # Frontier
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Service
+  - Empire
+
+- type: startingGear
+  id: ConscriptOfficerDSMGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitImperialGovernor
+    neck: ClothingNeckIFFCyan
+    back: ClothingBackpackDSM
+    shoes: ClothingShoesBootsMagDSM
+    head: ClothingHeadHatImperialBeret
+    outerClothing: ClothingOuterHardsuitImperialCommand
+    id: KnightPDA
+    belt: ClothingBeltAssaultFilledAdjutant
+    pocket1: DoubleEmergencyOxygenTankFilled
+    pocket2: SyndicateWhistle
+    ears: ClothingHeadsetEmpire
+    suitstorage: WeaponSniperDSMLegax
+    eyes: ClothingEyesHudSecurity
+  storage:
+    back:
+      - VoidsuitKitDSM
+      - BoxMRE
+      - BoxFlare
+      - WeaponPistolNeoVolker

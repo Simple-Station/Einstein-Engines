@@ -1,0 +1,63 @@
+- type: job
+  id: PartisanNCWL
+  name: job-name-ncwl-partisan
+  description: job-description-ncwl-partisan
+  playTimeTracker: JobHomeguardSoldatNCWL
+  weight: 3
+  startingGear: SoldatNCWLGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconNCWLHomeguardSoldat"
+  supervisors: job-supervisors-ncwl-partisan
+  canBeAntag: false
+  requirements:
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ncwl-home-soldat
+      - type: LanguageAdder
+        addSpoken:
+          - Dockta
+        addUnderstood:
+          - Dockta
+  access:
+  - Command
+  - Maintenance
+  - Service
+  - NCWLGeneral
+  - NCWLJail
+  - NCWLArmory
+  - External
+  - Mercenary # Frontier
+  - Captain # Frontier
+
+- type: startingGear
+  id: SoldatNCWLGear
+  equipment:
+    shoes: ClothingShoesBootsJack
+    jumpsuit: ClothingUniformJumpsuitNCWL
+    id: NCWLHomeguardSoldatPDA
+    outerClothing: ClothingOuterArmorNCWLHeavyCarapace
+    belt: ClothingBeltNCWLPouches
+    pocket1: WeaponPistolHKUSP
+    back: ClothingBackpackNCWL
+    gloves: ClothingHandsGlovesCombat
+    head: ClothingHeadHelmetNCWLBasic
+    mask: ClothingMaskNCWLGasmask
+    ears: ClothingHeadsetNCWL

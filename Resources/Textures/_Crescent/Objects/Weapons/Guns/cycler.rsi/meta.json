@@ -1,0 +1,77 @@
+{
+    "version": 1,
+    "license": "",
+    "copyright": "Made by the Sector Crescent team for the Hullrot Project. All rights reserved. Do not modify, publish, use, relicense, or edit.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "base"
+        },
+        {
+            "name": "mag-unshaded-0",
+            "delays": [ [ 0.3, 0.3, 0.3, 0.3, 0.3, 0.3 ] ]
+        },
+        {
+            "name": "mag-unshaded-1",
+            "delays": [ [ 0.3, 0.3, 0.3, 0.3, 0.3, 0.3 ] ]
+        },
+        {
+            "name": "mag-unshaded-2",
+            "delays": [ [ 0.275, 0.275, 0.275, 0.275, 0.275, 0.275 ] ]
+        },
+        {
+            "name": "mag-unshaded-3",
+            "delays": [ [ 0.275, 0.275, 0.275, 0.275, 0.275, 0.275 ] ]
+        },
+        {
+            "name": "mag-unshaded-4",
+            "delays": [ [ 0.25, 0.25, 0.25, 0.25, 0.25, 0.25 ] ]
+        },
+        {
+            "name": "mag-unshaded-5",
+            "delays": [ [ 0.25, 0.25, 0.25, 0.25, 0.25, 0.25 ] ]
+        },
+        {
+            "name": "mag-unshaded-6",
+            "delays": [ [ 0.225, 0.225, 0.225, 0.225, 0.225, 0.225 ] ]
+        },
+        {
+            "name": "mag-unshaded-7",
+            "delays": [ [ 0.225, 0.225, 0.225, 0.225, 0.225, 0.225 ] ]
+        },
+        {
+            "name": "mag-unshaded-8",
+            "delays": [ [ 0.2, 0.2, 0.2, 0.2, 0.2, 0.2 ] ]
+        },
+        {
+            "name": "mag-unshaded-9",
+            "delays": [ [ 0.175, 0.175, 0.175, 0.175, 0.175, 0.175 ] ]
+        },
+        {
+            "name": "mag-unshaded-10",
+            "delays": [ [ 0.15, 0.15, 0.15, 0.15, 0.15, 0.15 ] ]
+        },
+        {
+            "name": "mag-unshaded-11",
+            "delays": [ [ 0.125, 0.125, 0.125, 0.125, 0.125, 0.125 ] ]
+        },
+        {
+            "name": "mag-unshaded-12",
+            "delays": [ [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ] ]
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        }
+    ]
+}

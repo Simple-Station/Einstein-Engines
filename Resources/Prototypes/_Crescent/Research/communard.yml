@@ -21,6 +21,21 @@
   - ClothingEyesGlassesNCWL
   - ClothingBeltNCWLWebbing
   - ClothingHeadHelmetNCWLBasic
+  - ClothingMaskNCWLGasmask
+
+- type: technology
+  id: CommunardRiotGear
+  name: research-technology-communard-riotgear
+  icon:
+    sprite: _Crescent/Objects/Weapons/ncwlshieldriot.rsi
+    state: icon
+  discipline: Communard
+  tier: 1
+  cost: 2000
+  recipeUnlocks:
+  - NCWLLugBaton
+  - NCWLRiotShield
+  - ClothingHeadHelmetNCWLRiot
 
 - type: technology
   id: CommunardInfantry
@@ -39,7 +54,7 @@
 
 - type: technology
   id: CommunardFighters
-  name: research-technology-communard-fighters
+  name: research-technology-communard-rudimentary-ships
   icon:
     sprite: _Crescent/Objects/Misc/lpcchip.rsi
     state: icon
@@ -47,11 +62,22 @@
   tier: 1
   cost: 5000
   recipeUnlocks:
-  - SabreLPC
-  - RapierLPC
-  - KhopeshLPC
-  - BroadswordLPC
+  - VanguardLPC
+  - ZorniyLPC
+  - LodkaLPC
 
+- type: technology
+  id: CommunardKrechet
+  name: research-technology-communard-krechet
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Communard
+  tier: 1
+  cost: 8000
+  recipeUnlocks:
+  - KrechetLPC
+  
 - type: technology
   id: CommunardMolot
   name: research-technology-communard-molot
@@ -63,7 +89,19 @@
   cost: 8000
   recipeUnlocks:
   - MolotLPC
-
+  
+- type: technology
+  id: CommunardIvarod
+  name: research-technology-communard-ivarod
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Communard
+  tier: 1
+  cost: 8000
+  recipeUnlocks:
+  - IvarodLPC
+  
 - type: technology
   id: CommunardHind
   name: research-technology-communard-corvette
@@ -75,7 +113,30 @@
   cost: 8500
   recipeUnlocks:
   - HindLPC
-
+  
+- type: technology
+  id: CommunardGargut
+  name: research-technology-communard-carrier
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Communard
+  tier: 2
+  cost: 8500
+  recipeUnlocks:
+  - GargutLPC
+  
+- type: technology
+  id: CommunardVanguardMarkTwo
+  name: research-technology-communard-vanguardmktwo
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Communard
+  tier: 2
+  cost: 8000
+  recipeUnlocks:
+  - VanguardMarkTwoLPC
 
 - type: technology
   id: CommunardHeavyInfantry
@@ -92,18 +153,6 @@
   - WeaponPistolT91
   - WeaponRevolverPython
   - ClothingOuterHardsuitNCWLPetya
-
-- type: technology
-  id: CommunardVanguardMarkTwo
-  name: research-technology-communard-vanguardmktwo
-  icon:
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    state: icon
-  discipline: Communard
-  tier: 2
-  cost: 8000
-  recipeUnlocks:
-  - VanguardMarkTwoLPC
 
 - type: technology
   id: CommunardLancer
@@ -130,18 +179,6 @@
   - WeaponLauncherGM94
 
 - type: technology
-  id: CommunardIvarod
-  name: research-technology-communard-ivarod
-  icon:
-    sprite: _Crescent/Objects/Misc/lpcchip.rsi
-    state: icon
-  discipline: Communard
-  tier: 2
-  cost: 8000
-  recipeUnlocks:
-  - IvarodLPC
-
-- type: technology
   id: CommunardStern
   name: research-technology-communard-stern
   icon:
@@ -152,6 +189,30 @@
   cost: 15000
   recipeUnlocks:
   - SternLPC
+
+- type: technology
+  id: CommunardBogatyrship
+  name: research-technology-communard-bogatyrship
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Communard
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - BogatyrLPC
+
+- type: technology
+  id: CommunardSunder
+  name: research-technology-communard-sunder
+  icon:
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    state: icon
+  discipline: Communard
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - SunderLPC
 
 - type: technology
   id: CommunardBogatyr
@@ -176,3 +237,16 @@
   cost: 15000
   recipeUnlocks:
   - ClothingOuterHardsuitNCWLJuggernaut
+
+- type: technology
+  id: CommunardVibrokukri
+  name: research-technology-communard-vibrokukri
+  icon:
+    sprite: _Crescent/Clothing/NCWL/Belt/ncwl_kukri_sheath.rsi
+    state: sheath-sabre
+  discipline: Communard
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - NCWLKukri
+  - ClothingBeltSheathNCWLKukri

@@ -5,9 +5,10 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/reinforced_window.rsi
+    sprite: _Crescent/Structures/newReinfWindow.rsi
   - type: Icon
-    sprite: Structures/Windows/reinforced_window.rsi
+    sprite: _Crescent/Structures/newReinfWindow.rsi
+    state: windowfull
   - type: Repairable
     fuelCost: 10
     doAfterDelay: 2
@@ -44,7 +45,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
-    base: rwindow
+    base: window
   - type: Construction
     graph: Window
     node: reinforcedWindow
@@ -57,6 +58,67 @@
       sprite: Structures/Windows/cracks.rsi
 
 - type: entity
+  id: ReinforcedWindowTough
+  name: reinforced window
+  suffix: Tough
+  parent: Window
+  components:
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _Crescent/Structures/newReinfWindow.rsi
+  - type: Icon
+    sprite: _Crescent/Structures/newReinfWindow.rsi
+    state: windowfull
+  - type: Repairable
+    fuelCost: 10
+    doAfterDelay: 2
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: RGlass
+  - type: RCDDeconstructable
+    cost: 6
+    delay: 6
+    fx: EffectRCDDeconstruct6
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400 #excess damage (nuke?). avoid computational cost of spawning entities.
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+    - trigger:
+        !type:DamageTrigger
+        damage: 350
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ShardGlassReinforced:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: IconSmooth
+    base: window
+  - type: Construction
+    graph: Window
+    node: reinforcedWindow
+  - type: Appearance
+  - type: DamageVisuals
+    thresholds: [4, 8, 12]
+    damageDivisor: 4
+    trackAllDamage: true
+    damageOverlay:
+      sprite: Structures/Windows/cracks.rsi
+
+
+- type: entity
   parent: ReinforcedWindow
   id: TintedWindow
   name: tinted window
@@ -66,6 +128,7 @@
     sprite: Structures/Windows/tinted_window.rsi
   - type: Icon
     sprite: Structures/Windows/tinted_window.rsi
+    state: full
   - type: IconSmooth
     base: twindow
   - type: Construction

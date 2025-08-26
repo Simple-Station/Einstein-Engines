@@ -1,18 +1,42 @@
 - type: material
-  id: ScrapSteel
+  id: ScrapLowGrade
   stackEntity: SteelScrap1
-  name: materials-scrap-steel
+  name: materials-scrap-lowgrade
   unit: materials-unit-chunk
   icon: { sprite: _Crescent/Objects/Materials/ore.rsi, state: icon-scrap }
   price: 0.08
 
 - type: material
-  id: ScrapTitanium
+  id: ScrapHighGrade
   stackEntity: TitaniumScrap1
-  name: materials-scrap-titanium
+  name: materials-scrap-highgrade
   unit: materials-unit-chunk
   icon: { sprite: _Crescent/Objects/Materials/ore.rsi, state: icon-titaniumscrap }
   price: 0.1
+
+- type: material
+  id: ScrapCircuit
+  stackEntity: ScrapCircuit1
+  name: materials-scrap-circuit
+  unit: materials-unit-chunk
+  icon: { sprite: _Crescent/Objects/Misc/scrapcircuit.rsi, state: icon }
+  price: 0.2
+
+- type: material
+  id: ScrapPlasma
+  stackEntity: ScrapPlasma1
+  name: materials-scrap-plasma
+  unit: materials-unit-chunk
+  icon: { sprite: _Crescent/Objects/Misc/scraplasma.rsi, state: icon }
+  price: 0.5
+
+- type: material
+  id: ScrapUranium
+  stackEntity: ScrapUranium1
+  name: materials-scrap-uranium
+  unit: materials-unit-chunk
+  icon: { sprite: _Crescent/Objects/Misc/scrapuranium.rsi, state: icon }
+  price: 0.8
 
 - type: material
   id: RefinedScrapSteel
@@ -145,7 +169,7 @@
   stackEntity: AdvancedMechatronics1
   name: materials-advancedmechanics
   unit: materials-unit-chunk
-  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: advancedcmechanic }
+  icon: { sprite: _Crescent/Objects/Materials/materials.rsi, state: advancedmechanic }
   price: 0.55
 
 - type: material

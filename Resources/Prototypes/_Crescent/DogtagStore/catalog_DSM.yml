@@ -1,0 +1,32 @@
+# DSM catalog for the id/dogtag console, using communard IDs as currency
+- type: storeCategory
+  id: StoreCategoryDSMSnacks
+  name: Snacks
+  priority: 12
+
+- type: listing
+  id: StoreListingDSMMRE
+  name: MRE snack
+  description: delicious n tasty
+  icon: { sprite: /Textures/Objects/Consumable/Food/snacks.rsi, state: nutribrick }
+  productEntity: FoodSnackMREBrownie
+  cost:
+    DogtagNCWL: 1
+  categories:
+  - StoreCategoryDSMSnacks
+
+- type: storeCategory
+  id: StoreCategoryDSMUtility
+  name: Utility
+  priority: 10
+
+- type: listing
+  id: StoreListingDSMFlashbang
+  name: bright grenade
+  description: dont look at it
+  icon: { sprite: /Textures/Objects/Weapons/Grenades/flashbang.rsi, state: icon }
+  productEntity: GrenadeFlashBang
+  cost:
+    DogtagNCWL: 2
+  categories:
+  - StoreCategoryDSMUtility

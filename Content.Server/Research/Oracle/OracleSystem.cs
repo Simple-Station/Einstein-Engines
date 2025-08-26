@@ -233,7 +233,7 @@ public sealed class OracleSystem : EntitySystem
     {
         // Try to find the most advanced server.
         var database = _research.GetServerIds()
-            .Select(x => _research.TryGetServerById(x, out var serverUid, out _) ? serverUid : null)
+            .Select(x => _research.TryGetServerById(oracle.Owner, x, out var serverUid, out _) ? serverUid : null)
             .Where(x => x != null && Transform(x.Value).GridUid == Transform(oracle).GridUid)
             .Select(x =>
             {

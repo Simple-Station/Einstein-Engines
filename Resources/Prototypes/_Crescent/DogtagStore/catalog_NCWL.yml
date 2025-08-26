@@ -1,0 +1,32 @@
+# NCWL catalog for the id/dogtag console, using imperial IDs as currency
+- type: storeCategory
+  id: StoreCategoryNCWLSnacks
+  name: Snacks
+  priority: 12
+
+- type: listing
+  id: StoreListingNCWLMRE
+  name: MRE snack
+  description: delicious n tasty
+  icon: { sprite: /Textures/Objects/Consumable/Food/snacks.rsi, state: nutribrick }
+  productEntity: FoodSnackMREBrownie
+  cost:
+    DogtagDSM: 1
+  categories:
+  - StoreCategoryNCWLSnacks
+
+- type: storeCategory
+  id: StoreCategoryNCWLUtility
+  name: Utility
+  priority: 10
+
+- type: listing
+  id: StoreListingNCWLFlashbang
+  name: bright grenade
+  description: dont look at it
+  icon: { sprite: /Textures/Objects/Weapons/Grenades/flashbang.rsi, state: icon }
+  productEntity: GrenadeFlashBang
+  cost:
+    DogtagDSM: 2
+  categories:
+  - StoreCategoryNCWLUtility

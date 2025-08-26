@@ -1,0 +1,48 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Created by λserovich[BAD] (Aserovich) for Sector Crescent : Hullrot. Resprite Shit Forever.",
+    "size": {
+      "x": 128,
+      "y": 128
+    },
+    "states": [
+      {
+        "name": "icon"
+      },
+      {
+        "name": "lightingDSM",
+          "delays": [
+            [
+              0.2,
+              0.2,
+              0.2,
+              0.2
+            ]
+          ]
+      },
+      {
+        "name": "lightingNCWL",
+          "delays": [
+            [
+              0.2,
+              0.2,
+              0.2,
+              0.2
+            ]
+          ]
+      },
+      {
+        "name": "unlit",
+          "delays": [
+            [
+              0.2,
+              0.2,
+              0.2,
+              0.2
+            ]
+          ]
+      }
+    ]
+  }
+  

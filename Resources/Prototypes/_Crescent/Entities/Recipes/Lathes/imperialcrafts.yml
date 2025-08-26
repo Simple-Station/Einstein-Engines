@@ -238,6 +238,27 @@
     Tungsten: 1000
 
 - type: latheRecipe
+  id: ClothingOuterHardsuitImperialNullweavePsion
+  result: ClothingOuterHardsuitImperialNullweavePsion
+  completetime: 2
+  materials:
+    Bluespace: 500
+    HardsuitElectronics: 500
+    Cloth: 500
+    Durathread: 500
+    Silver: 500
+
+- type: latheRecipe
+  id: ImperialPsionBoundlightStaff
+  result: ImperialPsionBoundlightStaff
+  completetime: 2
+  materials:
+    Bluespace: 1000
+    Cloth: 250
+    Wood: 750
+    Silver: 500
+
+- type: latheRecipe
   id: ClothingOuterHardsuitHunterElite
   result: ClothingOuterHardsuitHunterElite
   completetime: 2
@@ -360,6 +381,14 @@
     Gold: 1000
 
 - type: latheRecipe
+  id: DSMDuelingKhopesh
+  result: DSMDuelingKhopesh
+  completetime: 2
+  materials:
+    Steel: 1500
+    Silver: 1000
+
+- type: latheRecipe
   id: ClothingBeltSheathDSMSabre
   result: ClothingBeltSheathDSMSabre
   completetime: 2
@@ -367,8 +396,8 @@
     Cloth: 750
 
 - type: latheRecipe
-  id: ClothingBeltSheathRapier
-  result: ClothingBeltSheathRapier
+  id: ClothingBeltSheathDSMRapier
+  result: ClothingBeltSheathDSMRapier
   completetime: 2
   materials:
     Cloth: 750
@@ -404,6 +433,43 @@
     Silver: 750
     Steel: 6000
     Tungsten: 1500
+
+- type: latheRecipe
+  id: WandererFlatpack
+  result: WandererFlatpack
+  completetime: 2
+  materials:
+    AdvancedMechatronics: 3500
+    AdvancedElectronics: 2000
+    Gold: 600
+    Silver: 650
+    Steel: 4250
+    Tungsten: 1500
+
+- type: latheRecipe
+  id: WeaponMechCombatPlasmaRifle
+  result: WeaponMechCombatPlasmaRifle
+  completetime: 2
+  materials:
+    Steel: 2000
+    Plasma: 1000
+    Copper: 3000
+    BasicElectronics: 3500
+    BasicMechatronics: 1000
+    WeakLaserLocus: 5000
+
+- type: latheRecipe
+  id: WeaponMechCombatPlasmaCannon
+  result: WeaponMechCombatPlasmaCannon
+  completetime: 2
+  materials:
+    Steel: 5000
+    Plasma: 2000
+    Copper: 2500
+    Tungsten: 2500
+    AdvancedElectronics: 3000
+    AdvancedMechatronics: 1500
+    LaserLocus: 4000
 
 - type: latheRecipe
   id: LaelapsLPC

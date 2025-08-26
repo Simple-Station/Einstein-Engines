@@ -2,7 +2,7 @@
   id: Sunesis
   name: DSM Sunesis
   description: A mobile base of operations for a small team of Imperial Scribes, this cruiser is equipped with stealth technology and civilian modules for low-risk voyages.
-  price: 85000
+  price: 140000
   category: Large
   group: None
   path: /Maps/_Crescent/Shuttles/DSM/sunesis.yml
@@ -16,6 +16,10 @@
     Sunesis:
       stationProto: StandardCrescentVessel
       components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: bigindustrial
         - type: StationNameSetup
           mapNameTemplate: 'DSM Sunesis {1}'
           nameGenerator:

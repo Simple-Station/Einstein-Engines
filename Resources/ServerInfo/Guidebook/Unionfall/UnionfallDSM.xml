@@ -1,0 +1,100 @@
+<Document>
+## LORE
+A DSM punishment regimen, made up of disgraced soldiers and prisoners with too much experience to waste, runs a regular patrol of the Taypan sector.
+Suddenly, their mass scanners detect a massive signature of an NCWL warfleet. The only remnants of a failed revolution. Your golden ticket out of punishment.
+An inconvenient communications failure prevents them for signalling for help, and they decide try to regain their honor by stamping out the last embers of the revolution.
+
+## OBJECTIVE
+Each side's goal is to destroy the 3 Cloner Databases, henceforth reffered to as the objective, located on each fleet's warships.
+
+<Box>
+<GuideEntityEmbed Entity="UnionfallShipNodeNCWL" Caption="NCWL's Cloner Database"/>
+<GuideEntityEmbed Entity="UnionfallShipNodeDSM" Caption="DSM's Cloner Database"/>
+</Box>
+
+Either you can destroy them by direct and focused ship fire, or by going there in person interacting with it to sabotage.
+Sabotaging takes 10 seconds, and rigs the objective to explode in 60 seconds. It can be disarmed as well.
+
+## HADAL TIDE / GRACE PERIOD
+
+At the start of the round, your main flagship (and the enemy's) is trapped inside an indestructible, immovable protective circle.
+After a total of 20 minutes, the Hadal Tide ends and the circle dissipates. By this time, both teams should have ammassed a fleet of fighters and coherent squads.
+
+## WHAT SHOULD YOU BE DOING?
+
+1. Link up with your superior (the Knight-Bannaret, or the Grand Steward) and listen to their speech.
+<Box>
+<GuideEntityEmbed Entity="ClothingHeadHatImperialBeret" Caption="look for this hat"/>
+<GuideEntityEmbed Entity="ClothingOuterHardsuitImperialCommand" Caption="and this hardsuit"/>
+</Box>
+2a. Join with an existing ship crew and board their ship. Use a mass scanner to find docked Raiders or Jannissaries.
+<Box>
+<GuideEntityEmbed Entity="HandHeldMassScannerEE" Caption="either use the scanner in your bag"/>
+<GuideEntityEmbed Entity="ComputerRadar" Caption="or find this console"/>
+</Box>
+
+OR
+
+2b. Get a ship LPC from a vendor
+<Box>
+<GuideEntityEmbed Entity="NCWLConscriptShipVendory" Caption="vendor looks like this"/>
+<GuideEntityEmbed Entity="ShipVoucherUnionfallKhopesh" Caption="you want this thing"/>
+</Box>
+3. Insert it in a shipyard console
+<Box>
+<GuideEntityEmbed Entity="UnionfallClementineMothershipComputer" Caption="console looks like this"/>
+</Box>
+4. Use a mass scanner to find where it's docked
+<Box>
+<GuideEntityEmbed Entity="HandHeldMassScannerEE" Caption="either use the scanner in your bag"/>
+<GuideEntityEmbed Entity="ComputerRadar" Caption="or find this console"/>
+</Box>
+5. Use your ID card (its in your PDA) to unlock the console
+6. Go to the "Dock" section and undock to free up the space for the next ship
+
+When the barrier falls, follow orders and do your best to maintain fleet cohesion. Good luck.
+
+## DSM WARSHIP ROSTER
+
+1. DSM Laelaps (two ships)
+- Generalist war vessel, meant to do decently in all situations.
+- Requires 1 pilot, 1 gunner and 1 loader.
+- Front: 2x 120mm cannons, 2x plasmacasters
+- Broadside: 3x "Needler" heavy autoguns, 1x "Jeong" swarmrocket platform
+- Point Defense: 4x "Operator" machinegun turrets
+- Frontal weaponry is well-equipped for long range harassment, but poorly suited for close range duelling
+- Side-mounted autoguns are excellent for destroying heavy armor. Jeong launcher is good for destroying insides after hull is down.
+- Operator turrets are good all-rounders for destroying ultralights and harassing fighters.
+
+## DSM FIGHTER ROSTER
+
+1. DSM Conquest
+- An ultralight energy harasser with an EMP gun and a plasmacaster.
+- Extremely fragile. Excels at disabling and slowly whittling down ships of all sizes.
+- EMP gun saps the powergrid and disables electronics, while the plasmacaster offers dissapointing damage output. Bring a friend.
+- DOES NOT HOLD ATMOSPHERE!
+
+2. DSM Valor
+- An ultralight energy bomber with an "Idna" dual torpedo launcher and a plasmacaster.
+- Extremely fragile. Excels at hit-and-run attacks or finishing off retreating vessels.
+- Idna torpedoes are homing and deal massive damage. Use them wisely!
+- DOES NOT HOLD ATMOSPHERE!
+
+3. DSM Ibis
+- Mainline fighter. Decently armored. Equipped with an "Idna" dual torpedo launcher and dual plasmacasters.
+- Side wings offer good protection and padding. Front cockpit is vulnerable.
+- Idna torpedoes provide burst damage while plasma casters offer good sustained damage.
+
+3. DSM Raider
+- An unarmed, armored troop transport with an IFF cloaker for stealth.
+- Very good top speed. Primary use is to sneak up on ships, dock, and kill crew in boarding combat.
+- IFF cloaker, once activated, hides your signature from the Map screen (looks like a regular asteroid) and your nametag from the ship screen.
+- Well armored except for the front shutters. Ideally don't get hit.
+
+4. DSM Imparator
+- A dedicated artillery boat with an explosive 120mm cannon, vulcan minigun, and two Point Defense Turrets.
+- Requires a pilot AND a loader. Loader has access to a targeting console that controls PDT turrets.
+- Small, mobile, and made to harass larger vessels. In this scenario, its gun devastates any vessel it manages to connect to.
+- Plastitanium armor offers superior defence to other options.
+
+</Document>

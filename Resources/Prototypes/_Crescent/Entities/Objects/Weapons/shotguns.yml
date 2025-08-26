@@ -1,20 +1,52 @@
 - type: entity
-  name: SHI double-barreled shotgun 4g
+  name: PTA MOD-1 Twinshot 12g
   parent: [BaseWeaponShotgun, BaseGunWieldable]
-  id: WeaponShotgunSHIDoubleBarreled4g
-  description: A cheap, oversized shotgun. Manufactured by Shinora for their BudgetArms line. Chambered in 4 Gauge.
+  id: WeaponShotgunPTATwinshot
+  description: A semi-automatic shotgun with a high-capacity magazine, capable of firing two shells at once. Chambered in 12g shells.
   components:
   - type: Sprite
-    sprite: _Crescent\Objects\Weapons\Guns\dbshotgun.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/twinshot.rsi
   - type: Clothing
-    sprite: _Crescent\Objects\Weapons\Guns\dbshotgun.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/twinshot.rsi
   - type: Item
     size: Huge
-    sprite: _Crescent\Objects\Weapons\Guns\dbshotgun.rsi
+    shape:
+    - 0,0,4,1
+    sprite: _Crescent/Objects/Weapons/Guns/twinshot.rsi
   - type: GunRequiresWield
   - type: Gun
-    fireRate: 2
+    selectedMode: Burst
+    shotsPerBurst: 2
+    availableModes:
+    - Burst
+    burstFireRate: 24
+    burstCooldown: 1
     fireOnDropChance: 0.5
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/shotgun_2/shotgun_gunshot_2.ogg
+  - type: Wieldable
+  - type: BallisticAmmoProvider
+    capacity: 10
+
+- type: entity
+  name: SHI M135 double-barreled shotgun 4g
+  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  id: WeaponShotgunSHIDoubleBarreled4g
+  description: A cheap, oversized shotgun. Manufactured by Shinora for their BudgetArms line. Chambered in 4g shells.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/dbshotgun.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/dbshotgun.rsi
+  - type: Item
+    size: Huge
+    sprite: _Crescent/Objects/Weapons/Guns/dbshotgun.rsi
+  - type: GunRequiresWield
+  - type: Gun
+    fireRate: 3
+    fireOnDropChance: 0.5
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/shotgun_2/shotgun_gunshot_2.ogg
   - type: Wieldable
   - type: BallisticAmmoProvider
     whitelist:
@@ -33,10 +65,13 @@
   name: NT SPAS-13 12g
   parent: [BaseWeaponShotgun, BaseGunWieldable]
   id: WeaponShotgunSpas
-  description: A premium combat shotgun ripped from ancient Terran designs. Originates from the now-defunct NanoTrasen.
+  description: A premium combat shotgun with a folding stock. Originates from the now-defunct NanoTrasen.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/spas13.rsi
+  - type: Item
+    shape:
+    - 0,0,3,1
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/spas13.rsi
   - type: BallisticAmmoProvider
@@ -44,26 +79,153 @@
     price: 2500
 
 - type: entity
-  name: PTA 23AX Karabin 4g
-  parent: [BaseWeaponShotgun, BaseGunWieldable]
-  id: WeaponShotgunKS23
-  description: An oversized shotgun. Packs devastating 4 Gauge punches. Developed as part of Pang Tai's elite mercenary package.
+  name: IRM Matusa 12g
+  parent: BaseWeaponSniper
+  id: WeaponShotgunDSMMatusa
+  description: The Matusa has only recently fallen out of favour with the Imperial Subjugation Corps as the civil war has pivoted arsenals towards armour-piercing firepower for whom the shotgun falls short. However, Matusas can be found in shock-assault divisions and peacekeeping forces across the sectors which once comprised the Imperial Mandate as the revolving street-sweeper requires no advanced machining and is effective at clearing fortified positions and unruly crowds alike.
   components:
+  - type: Item
+    size: Ginormous
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/Guns/karabin.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_shotgun.rsi
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/Guns/karabin.rsi
-  - type: GunRequiresWield
+    sprite: _Crescent/Objects/Weapons/Guns/surplus_dsm_shotgun.rsi
+    slots:
+    - Back
+    - suitStorage
   - type: Gun
-    fireRate: 1.5
-    soundGunshot: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
+    fireRate: 2.5
+    damageModifier: 1.25
+    shotgunSpreadMultiplier: 3.5
     selectedMode: SemiAuto
     availableModes:
-      - SemiAuto
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/UnionfallWeapons/shotgun_fire_1.ogg
+    fireOnDropChance: 1
   - type: BallisticAmmoProvider
+    capacity: 6
+    autoCycle: true
+    proto: ShellShotgun
     whitelist:
       tags:
-        - ShellShotgun4g
-    capacity: 4
-    proto: ShellShotgun4gBuckshot
+      - ShellShotgun
+
+
+- type: entity
+  name: NCWL Pioneer Double-Barrel 12g
+  parent: BaseWeaponSniperNoWield
+  id: WeaponShotgunDoubleBarreledNCWL
+  description: A short, rugged scattergun based on ancient Terran designs. Cheap to print, easy to maintain, and reliable enough for frontier defense and penal use. Favored by proletariat civilians, shipboard crews, and disciplinary squads for its close quarters effectiveness and ease of storage compared to more advanced pump-action or automatic models. An inscription on the side reads "Property of—" though the rest has been scorched off with a laser engraver, replaced by a crude ID serial. The wooden buttstock still has a splinter jutting out—like everything else about this gun, it’s functional, not comfortable.
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/surplus_ncwl_shotgun.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/surplus_ncwl_shotgun.rsi
+    slots:
+    - Back
+    - suitStorage
+  - type: Gun
+    fireRate: 2
+    damageModifier: 1.8
+    burstFireRate: 15
+    shotgunSpreadMultiplier: 3
+    shotsPerBurst: 2
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    - Burst
+    soundGunshot:
+      path: /Audio/Weapons/Guns/UnionfallWeapons/shotgun_fire_1.ogg
+    fireOnDropChance: 1
+  - type: BallisticAmmoProvider
+    capacity: 2
+    autoCycle: true
+    proto: ShellShotgun
+    whitelist:
+      tags:
+      - ShellShotgun
+
+- type: entity
+  name: NCSP Saiga-12k 12g
+  # Don't parent to BaseWeaponShotgun because it differs significantly
+  parent: [BaseItem, BaseGunWieldable]
+  id: WeaponShotgunNCSPSaiga12
+  description: A magazine-fed shotgun in use by terrorist forces. Uses 12 gauge shotgun shells.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/saiga12.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,4,2
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/saiga12.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: AmmoCounter
+  - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
+  - type: Gun
+    fireRate: 3.5
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/shotgun_1/shotgun_gunshot_3.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+    fireOnDropChance: 0.3
+    shotgunSpreadMultiplier: 1.5
+    shotgunProjectileCountModifier: 1.33
+  - type: Wieldable
   - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineShotgun
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineShotgun
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineAmmoProvider
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 500
+  - type: Execution
+  - type: MeleeWeapon
+    attackRate: 1.4
+    damage:
+      types:
+        Blunt: 10
+    bluntStaminaDamageFactor: 1.3333
+    swapKeys: true
+    disableHeavy: true
+    animation: WeaponArcThrust
+    wideAnimationRotation: 180
+    soundHit:
+      collection: MetalThud
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2.5
+  - type: DamageOtherOnHit
+    staminaCost: 9.5

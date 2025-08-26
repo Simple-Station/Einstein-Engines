@@ -1,0 +1,28 @@
+- type: gameMap
+  id: UnionfallClementine
+  mapName: 'NCWL Dear Clementine'
+  mapPath: /Maps/_Crescent/Unionfall/unionfall_clementine.yml
+  minPlayers: 0
+  stations:
+    UnionfallClementine:
+      stationProto: FlagshipCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NCWL Dear Clementine {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-flagship
+        - type: VesselDescription
+          description: This behemoth carries the last hope of the League. What once held hope and determination, now only hosts a final cry of revolution.
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            UnionfallShipCaptainNCWL: [ 1, 1 ]
+            UnionfallShipCrewNCWL: [ 2, 2 ]
+            UnionfallLeaderNCWL: [ 1, 1 ]
+            UnionfallOfficerNCWL: [ 5, 5 ]
+            UnionfallDoctorNCWL: [ 5, 5 ]
+            UnionfallRiflemanNCWL: [ 50, 50 ]
+            UnionfallCadetNCWL: [ 50, 50 ]

@@ -145,7 +145,7 @@ public sealed class DegradeableArmorSystem : EntitySystem
     }
     private void OnDamageModify(EntityUid uid, DegradeableArmorComponent component, InventoryRelayedEvent<DamageModifyEvent> args)
     {
-        if (component.armorHealth == 0)
+        if (component.armorHealth <= 0)
             return;
         var armorDamage = 0f;
 
@@ -156,7 +156,8 @@ public sealed class DegradeableArmorSystem : EntitySystem
         {
             if (!component.initialModifiers.FlatReduction.ContainsKey(type))
                 continue;
-
+            if (value < 0)
+                continue;
             var trueReduction = component.initialModifiers.FlatReduction[type];
             if (trueReduction == 0)
                 continue;

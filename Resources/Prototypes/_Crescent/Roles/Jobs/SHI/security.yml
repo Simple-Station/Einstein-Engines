@@ -5,7 +5,7 @@
   playTimeTracker: JobSecuritySHI
   requirements:
     - !type:CharacterOverallTimeRequirement
-      min: 18000
+      min: 7200
     - !type:FactionRequirement
       factionID: "SHI"
     - !type:CharacterTraitRequirement
@@ -24,6 +24,16 @@
   requireAdminNotify: false
   supervisors: job-supervisors-shi
   canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-shi-board
+      - type: LanguageAdder
+        addSpoken:
+          - Kaishago
+        addUnderstood:
+          - Kaishago
   access:
   - Command
   - Maintenance
@@ -39,9 +49,9 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitShinoharaSecurity
     shoes: ClothingShoesBootsCombat
-    belt: WeaponLaserSvalinn
     gloves: ClothingHandsGlovesCombat
     id: CorpsecPDA
     ears: ClothingHeadsetShinohara
     pocket1: Handcuffs
     pocket2: TradePassport
+    back: ClothingBackpackSHISatchel

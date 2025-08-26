@@ -4,6 +4,7 @@
   description: job-description-highsec
   playTimeTracker: JobHighsecSHI
   requirements:
+    - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
       min: 35000
     - !type:FactionRequirement
@@ -24,6 +25,16 @@
   requireAdminNotify: false
   supervisors: job-supervisors-shi
   canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-shi-highsec
+      - type: LanguageAdder
+        addSpoken:
+          - Kaishago
+        addUnderstood:
+          - Kaishago
   access:
   - Command
   - Maintenance
@@ -40,11 +51,9 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitShinoharaHighsec
     shoes: ClothingShoesBootsCombat
-    belt: WeaponLaserSvalinn
-    head: ClothingHeadHatShinoharaHelmet
-    outerClothing: ClothingOuterArmorShinoharaArmorHighsec
     gloves: ClothingHandsGlovesCombat
     id: HighsecPDA
     ears: ClothingHeadsetShinohara
     pocket1: Handcuffs
     pocket2: TradePassport
+    back: ClothingBackpackSHISatchel

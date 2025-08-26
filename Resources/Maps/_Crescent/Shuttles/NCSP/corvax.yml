@@ -428,6 +428,10 @@ entities:
     - type: ShuttleDeed
       shuttleName: Shuttle ALP-894
       shuttleUid: 1
+    - type: VesselIcon
+      iffIcon:
+        sprite: _Crescent/ShipIcons/ifficons.rsi
+        state: corvette
     - type: BecomesStation
       id: Corvax
 - proto: AAAHardpointFixed

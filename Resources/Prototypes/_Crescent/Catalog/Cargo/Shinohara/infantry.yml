@@ -1,17 +1,37 @@
 - type: cargoProduct
   id: ShinoharaGoro
   icon:
-    sprite: _Crescent/Objects/Weapons/goro.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/goro.rsi
     state: icon
   product: CrateShinoharaGoro
-  cost: 8500
+  cost: 5000
+  category: cargoproduct-category-name-military
+  group: shinohara
+
+- type: cargoProduct
+  id: ShinoharaLecter
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/lecter.rsi
+    state: icon
+  product: CrateShinoharaLecter
+  cost: 12000
+  category: cargoproduct-category-name-military
+  group: shinohara
+
+- type: cargoProduct
+  id: ShinoharaHristov
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/hristov.rsi
+    state: icon
+  product: CrateShinoharaHristov
+  cost: 35000
   category: cargoproduct-category-name-military
   group: shinohara
 
 - type: cargoProduct
   id: ShinoharaHound
   icon:
-    sprite: _Crescent/Objects/Weapons/hound.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/hound.rsi
     state: icon
   product: CrateShinoharaHound
   cost: 5000
@@ -21,7 +41,7 @@
 - type: cargoProduct
   id: ShinoharaMP49
   icon:
-    sprite: _Crescent/Objects/Weapons/mp49.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/mp49.rsi
     state: icon
   product: CrateShinoharaMP49
   cost: 4000
@@ -31,7 +51,7 @@
 - type: cargoProduct
   id: ShinoharaHimehabu
   icon:
-    sprite: _Crescent/Objects/Weapons/himehabu.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/himehabu.rsi
     state: icon
   product: CrateShinoharaHimehabu
   cost: 3000
@@ -41,7 +61,7 @@
 - type: cargoProduct
   id: ShinoharaSmartgun
   icon:
-    sprite: _Crescent/Objects/Weapons/smartgun.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/shinobi.rsi
     state: icon
   product: CrateShinoharaShinobi
   cost: 10000
@@ -51,10 +71,20 @@
 - type: cargoProduct
   id: ShinoharaSAW
   icon:
-    sprite: Objects/Weapons/Guns/LMGs/l6.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/l6saw.rsi
     state: icon
   product: CrateShinoharaSAW
   cost: 25000
+  category: cargoproduct-category-name-military
+  group: shinohara
+
+- type: cargoProduct
+  id: ShinoraBarghest
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/barghest.rsi
+    state: icon
+  product: CrateShinoharaBarghest
+  cost: 37500
   category: cargoproduct-category-name-military
   group: shinohara
 
@@ -91,40 +121,109 @@
 - type: cargoProduct
   id: ShinoharaHammerhead
   icon:
-    sprite: _Crescent/Objects/Weapons/rocket.rsi
-    state: icon
+    sprite: _Crescent/Objects/Weapons/Guns/hammerhead.rsi
+    state: base
   product: CrateShinoharaHammerhead
   cost: 20000
   category: cargoproduct-category-name-military
   group: shinohara
 
 - type: cargoProduct
-  id: NanoPolymerShinohara
+  id: ShinoharaNonLethalGrenade
   icon:
-    sprite: _Crescent/Clothing/armorSprites.rsi
-    state: NanoPolymer
-  product: CrateSecurityArmorNanoPolymerPlates
-  cost: 20000
+    sprite: _Crescent/Objects/Weapons/Grenades/shi_flash.rsi
+    state: base
+  product: CrateShinoharaNonLethalGrenade
+  cost: 6000
   category: cargoproduct-category-name-military
   group: shinohara
 
 - type: cargoProduct
-  id: NanoCeramicShinohara
+  id: ShinoharaMiniGrenade
   icon:
-    sprite: _Crescent/Clothing/armorSprites.rsi
-    state: NanoCeramic
-  product: CrateSecurityArmorNanoCeramicPlates
-  cost: 35000
+    sprite: _Crescent/Objects/Weapons/Grenades/shi_mini.rsi
+    state: base
+  product: CrateShinoharaMiniGrenade
+  cost: 8000
   category: cargoproduct-category-name-military
   group: shinohara
 
 - type: cargoProduct
-  id: DurathreadShinohara
+  id: ShinoharaEmpGrenade
   icon:
-    sprite: _Crescent/Clothing/armorSprites.rsi
-    state: cloth
-  product: CrateSecurityArmorDurathreadPlates
-  cost: 15000
+    sprite: _Crescent/Objects/Weapons/Grenades/shi_emp.rsi
+    state: base
+  product: CrateShinoharaEmpGrenade
+  cost: 12000
   category: cargoproduct-category-name-military
   group: shinohara
 
+- type: cargoProduct
+  id: ShinoharaSmartGrenade
+  icon:
+    sprite: _Crescent/Objects/Weapons/Grenades/shi_smart.rsi
+    state: base
+  product: CrateShinoharaSmartGrenade
+  cost: 8000
+  category: cargoproduct-category-name-military
+  group: shinohara
+
+- type: cargoProduct
+  id: ShinoharaDisposableRpg
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/disposablerpg.rsi
+    state: base
+  product: CrateShinoharaDisposableRpg
+  cost: 9000
+  category: cargoproduct-category-name-military
+  group: shinohara
+
+- type: cargoProduct
+  id: ShinoharaMilkor
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/milkor.rsi
+    state: base
+  product: CrateShinoharaMilkor
+  cost: 32500
+  category: cargoproduct-category-name-military
+  group: shinohara
+
+- type: cargoProduct
+  id: ShinoharaM211s
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/sabre.rsi
+    state: base
+  product: CrateShinoharaM211s
+  cost: 3000
+  category: cargoproduct-category-name-military
+  group: shinohara
+
+- type: cargoProduct
+  id: ShinoharaHiPo
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/tayamura.rsi
+    state: base
+  product: CrateShinoharaHiPo
+  cost: 1000
+  category: cargoproduct-category-name-military
+  group: shinohara
+
+#- type: cargoProduct
+#  id: NanoPolymerShinohara
+#  icon:
+#    sprite: _Crescent/Clothing/armorSprites.rsi
+#    state: NanoPolymer
+#  product: CrateSecurityArmorNanoPolymerPlates
+#  cost: 20000
+#  category: cargoproduct-category-name-military
+#  group: shinohara
+
+#- type: cargoProduct
+#  id: NanoCeramicShinohara
+#  icon:
+#    sprite: _Crescent/Clothing/armorSprites.rsi
+#    state: NanoCeramic
+#  product: CrateSecurityArmorNanoCeramicPlates
+#  cost: 35000
+#  category: cargoproduct-category-name-military
+#  group: shinohara

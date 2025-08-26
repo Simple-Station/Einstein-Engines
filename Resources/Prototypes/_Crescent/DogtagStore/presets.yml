@@ -1,0 +1,43 @@
+- type: entity
+  id: StorePresetHullrotDogtagNCWL
+  abstract: true
+  components:
+  - type: Store
+    name: workers-league-console
+    categories:
+    - StoreCategoryNCWLSnacks
+    - StoreCategoryNCWLUtility
+    currencyWhitelist:
+    - DogtagDSM
+    balance:
+      DogtagDSM: 0
+
+- type: entity
+  id: StorePresetHullrotDogtagDSM
+  abstract: true
+  components:
+  - type: Store
+    name: imperial-console
+    categories:
+    - StoreCategoryDSMSnacks
+    - StoreCategoryDSMUtility
+    currencyWhitelist:
+    - DogtagNCWL
+    balance:
+      DogtagNCWL: 0
+
+- type: entity
+  id: StorePresetHullrotDogtagSAW
+  abstract: true
+  components:
+  - type: Store
+    name: saw-console
+    categories:
+    - StoreCategorySAW
+    - StoreCategorySAWshipmods
+    currencyWhitelist:
+    - ScrapSAW
+    balance:
+      DogtagNCWL: 0
+
+

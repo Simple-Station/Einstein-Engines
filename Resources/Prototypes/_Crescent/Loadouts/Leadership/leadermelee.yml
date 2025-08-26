@@ -9,8 +9,7 @@
       group: LoadoutLeaderMelee
     - !type:CharacterJobRequirement
       jobs:
-        - AdministratorNCWL
-        - KapitanNCWL
+        - CommandantNCWL
         - KommissarNCWL
         - IntelligenceOfficerNCSP
         - LieutenantNCSP
@@ -24,16 +23,15 @@
 - type: loadout
   id: LoadoutBeltSheathSabre
   category: Belt
-  cost: 2
+  cost: 0
   items:
-    - ClothingBeltSheath
+    - ClothingBeltSheathFilled
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBelt
     - !type:CharacterJobRequirement
       jobs:
-        - AdministratorNCWL
-        - KapitanNCWL
+        - CommandantNCWL
         - KommissarNCWL
         - IntelligenceOfficerNCSP
         - LieutenantNCSP

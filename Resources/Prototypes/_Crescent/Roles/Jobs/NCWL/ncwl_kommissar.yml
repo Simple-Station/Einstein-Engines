@@ -1,0 +1,100 @@
+- type: job
+  id: KommissarNCWL
+  name: job-name-ncwl-kommissar
+  description: job-description-ncwl-kommissar
+  playTimeTracker: JobHomeguardLeaderNCWL
+  weight: 99
+  startingGear: OverseerNCWLGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconNCWLHomeguardLeader"
+  supervisors: job-supervisors-ncwl-kommissar
+  canBeAntag: false
+  requirements:
+    - !type:CharacterWhitelistRequirement
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterOverallTimeRequirement
+      min: 30000
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Voidborn
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ncwl-home-leader
+      - type: LanguageAdder
+        addSpoken:
+          - Dockta
+          - Tradeband
+        addUnderstood:
+          - Dockta
+          - Tradeband
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Command
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Mercenary # Frontier
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - NCWLGeneral
+  - NCWLKommissar
+  - NCWLJail
+  - NCWLArmory
+  - NCWLCommand
+
+- type: startingGear
+  id: OverseerNCWLGear
+  equipment:
+    shoes: ClothingShoesBootsJack
+    jumpsuit: ClothingUniformJumpsuitNCWLKommissar
+    id: NCWLHomeguardLeaderPDA
+    outerClothing: ClothingOuterArmorNCWLCarapace
+    belt: ClothingBeltNCWLPouches
+    pocket1: WeaponRevolverPython
+    back: ClothingBackpackNCWL
+    gloves: ClothingHandsGlovesCombat
+    head: ClothingHeadHatNCWLKommissarHat
+    mask: ClothingMaskNCWLGasmask
+    ears: ClothingHeadsetNCWL
+    eyes: ClothingEyesHudSecurity

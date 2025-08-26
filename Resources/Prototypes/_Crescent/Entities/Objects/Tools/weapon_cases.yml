@@ -1,0 +1,569 @@
+- type: entity
+  name: grenade case
+  parent: ToolboxBase
+  id: GrenadeCase
+  description: A reinforced casing for storing grenades.
+  suffix:
+  components:
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: Sprite
+    sprite: _Crescent/Objects/Tools/grenadecase.rsi
+    layers:
+    - map: [ base ]
+      state: icon
+    - state: unshaded
+      shader: unshaded
+  - type: Item
+    sprite: _NF/Objects/Tools/guncaselong.rsi
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: icon-open }
+          False: { state: icon }
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,4,3
+    whitelist:
+      components:
+      - SmokeOnTrigger
+      - ExplodeOnTrigger
+      - FlashOnTrigger
+      - EmpOnTrigger
+
+- type: entity
+  name: pistol case
+  id: WeaponCasePistol
+  parent: ToolboxBase
+  description: A reinforced casing for storing weapons and accessories.
+  suffix: Pistol
+  components:
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: Sprite
+    sprite: _Crescent/Objects/Tools/pistolcase.rsi
+    layers:
+    - map: [ base ]
+      state: icon
+    - state: unshaded
+      shader: unshaded
+  - type: Item
+    sprite: _Crescent/Objects/Tools/pistolcase.rsi
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: icon-open }
+          False: { state: icon }
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,3,1
+    whitelist:
+      components:
+      - Gun
+      - BallisticAmmoProvider
+      - Projectile
+      - CartridgeAmmo
+      - PowerCell
+      - MeleeWeapon
+      - Blocking
+      - WeaponCaseInsertable
+      tags:
+      - Cartridge
+
+- type: entity
+  name: smg case
+  id: WeaponCaseSmg
+  parent: ToolboxBase
+  description: A reinforced casing for storing weapons and accessories.
+  suffix: Smg
+  components:
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: Sprite
+    sprite: _Crescent/Objects/Tools/smgcase.rsi
+    layers:
+    - map: [ base ]
+      state: icon
+    - state: unshaded
+      shader: unshaded
+  - type: Item
+    sprite: _Crescent/Objects/Tools/smgcase.rsi
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: icon-open }
+          False: { state: icon }
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,3,2
+    whitelist:
+      components:
+      - Gun
+      - BallisticAmmoProvider
+      - Projectile
+      - CartridgeAmmo
+      - PowerCell
+      - MeleeWeapon
+      - Blocking
+      - WeaponCaseInsertable
+      tags:
+      - Cartridge
+
+- type: entity
+  name: rifle case
+  id: WeaponCaseRifle
+  parent: ToolboxBase
+  description: A reinforced casing for storing weapons and accessories.
+  suffix: Rifle
+  components:
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: Sprite
+    sprite: _Crescent/Objects/Tools/riflecase.rsi
+    layers:
+    - map: [ base ]
+      state: icon
+    - state: unshaded
+      shader: unshaded
+  - type: Item
+    sprite: _Crescent/Objects/Tools/riflecase.rsi
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: icon-open }
+          False: { state: icon }
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,5,3
+    whitelist:
+      components:
+      - Gun
+      - BallisticAmmoProvider
+      - Projectile
+      - CartridgeAmmo
+      - PowerCell
+      - MeleeWeapon
+      - Blocking
+      - WeaponCaseInsertable
+      tags:
+      - Cartridge
+
+- type: entity
+  name: sniper case
+  id: WeaponCaseSniper
+  parent: ToolboxBase
+  description: A reinforced casing for storing weapons and accessories.
+  suffix: Sniper
+  components:
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: Sprite
+    sprite: _Crescent/Objects/Tools/snipercase.rsi
+    layers:
+    - map: [ base ]
+      state: icon
+    - state: unshaded
+      shader: unshaded
+  - type: Item
+    sprite: _Crescent/Objects/Tools/snipercase.rsi
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: icon-open }
+          False: { state: icon }
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,5,3
+    whitelist:
+      components:
+      - Gun
+      - BallisticAmmoProvider
+      - Projectile
+      - CartridgeAmmo
+      - PowerCell
+      - MeleeWeapon
+      - Blocking
+      - WeaponCaseInsertable
+      tags:
+      - Cartridge
+
+- type: entity
+  name: rocket launcher case
+  id: WeaponCaseRpg
+  parent: ToolboxBase
+  description: A reinforced casing for storing weapons and accessories.
+  suffix: Rpg
+  components:
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: Sprite
+    sprite: _Crescent/Objects/Tools/rpgcase.rsi
+    layers:
+    - map: [ base ]
+      state: icon
+    - state: unshaded
+      shader: unshaded
+  - type: Item
+    sprite: _Crescent/Objects/Tools/rpgcase.rsi
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: icon-open }
+          False: { state: icon }
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,5,3
+    whitelist:
+      components:
+      - Gun
+      - BallisticAmmoProvider
+      - Projectile
+      - CartridgeAmmo
+      - PowerCell
+      - MeleeWeapon
+      - Blocking
+      - WeaponCaseInsertable
+      tags:
+      - Cartridge
+
+- type: entity
+  name: light machinegun case
+  id: WeaponCaseLmg
+  parent: ToolboxBase
+  description: A reinforced casing for storing weapons and accessories.
+  suffix: Lmg
+  components:
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: Sprite
+    sprite: _Crescent/Objects/Tools/lmgcase.rsi
+    layers:
+    - map: [ base ]
+      state: icon
+    - state: unshaded
+      shader: unshaded
+  - type: Item
+    sprite: _Crescent/Objects/Tools/lmgcase.rsi
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: icon-open }
+          False: { state: icon }
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,5,3
+    whitelist:
+      components:
+      - Gun
+      - BallisticAmmoProvider
+      - Projectile
+      - CartridgeAmmo
+      - PowerCell
+      - MeleeWeapon
+      - Blocking
+      - WeaponCaseInsertable
+      tags:
+      - Cartridge
+
+- type: entity
+  name: railgun case
+  id: WeaponCaseRailgun
+  parent: ToolboxBase
+  description: A reinforced casing for storing weapons and accessories.
+  suffix: Railgun
+  components:
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: Sprite
+    sprite: _Crescent/Objects/Tools/railguncase.rsi
+    layers:
+    - map: [ base ]
+      state: icon
+    - state: unshaded
+      shader: unshaded
+  - type: Item
+    sprite: _Crescent/Objects/Tools/railguncase.rsi
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: icon-open }
+          False: { state: icon }
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,5,3
+    whitelist:
+      components:
+      - Gun
+      - BallisticAmmoProvider
+      - Projectile
+      - CartridgeAmmo
+      - PowerCell
+      - MeleeWeapon
+      - Blocking
+      - WeaponCaseInsertable
+      tags:
+      - Cartridge
+
+- type: entity
+  name: shotgun case
+  id: WeaponCaseShotgun
+  parent: ToolboxBase
+  description: A reinforced casing for storing weapons and accessories.
+  suffix: Shotgun
+  components:
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: Sprite
+    sprite: _Crescent/Objects/Tools/shotguncase.rsi
+    layers:
+    - map: [ base ]
+      state: icon
+    - state: unshaded
+      shader: unshaded
+  - type: Item
+    sprite: _Crescent/Objects/Tools/shotguncase.rsi
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: icon-open }
+          False: { state: icon }
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,4,3
+    whitelist:
+      components:
+      - Gun
+      - BallisticAmmoProvider
+      - Projectile
+      - CartridgeAmmo
+      - PowerCell
+      - MeleeWeapon
+      - Blocking
+      - WeaponCaseInsertable
+      tags:
+      - Cartridge
+
+- type: entity
+  name: grenade launcher case
+  id: WeaponCaseGl
+  parent: ToolboxBase
+  description: A reinforced casing for storing weapons and accessories.
+  suffix: Gl
+  components:
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: Sprite
+    sprite: _Crescent/Objects/Tools/glcase.rsi
+    layers:
+    - map: [ base ]
+      state: icon
+    - state: unshaded
+      shader: unshaded
+  - type: Item
+    sprite: _Crescent/Objects/Tools/glcase.rsi
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: icon-open }
+          False: { state: icon }
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,5,3
+    whitelist:
+      components:
+      - Gun
+      - BallisticAmmoProvider
+      - Projectile
+      - CartridgeAmmo
+      - PowerCell
+      - MeleeWeapon
+      - Blocking
+      - WeaponCaseInsertable
+      tags:
+      - Cartridge
+
+- type: entity
+  name: charge rifle case
+  abstract: true
+  id: WeaponCaseChargeRifle
+  parent: ToolboxBase
+  description: A reinforced casing for storing weapons and accessories.
+  suffix: Donor - Charge rifle
+  components:
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: Sprite
+    sprite: _Crescent/Objects/Tools/chargeriflecase.rsi
+    layers:
+    - map: [ base ]
+      state: icon
+    - state: unshaded
+      shader: unshaded
+  - type: Item
+    sprite: _Crescent/Objects/Tools/chargeriflecase.rsi
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: icon-open }
+          False: { state: icon }
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,4,3
+    whitelist:
+      components:
+      - Gun
+      - BallisticAmmoProvider
+      - Projectile
+      - CartridgeAmmo
+      - PowerCell
+      - MeleeWeapon
+      - Blocking
+      - WeaponCaseInsertable
+      tags:
+      - Cartridge
+
+- type: entity
+  name: porodshok case
+  abstract: true
+  id: WeaponCasePorodshok
+  parent: ToolboxBase
+  description: A reinforced casing for storing weapons and accessories.
+  suffix: Donor - Porodshok
+  components:
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: Sprite
+    sprite: _Crescent/Objects/Tools/porodshokcase.rsi
+    layers:
+    - map: [ base ]
+      state: icon
+    - state: unshaded
+      shader: unshaded
+  - type: Item
+    sprite: _Crescent/Objects/Tools/porodshokcase.rsi
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: icon-open }
+          False: { state: icon }
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,4,3
+    whitelist:
+      components:
+      - Gun
+      - BallisticAmmoProvider
+      - Projectile
+      - CartridgeAmmo
+      - PowerCell
+      - MeleeWeapon
+      - Blocking
+      - WeaponCaseInsertable
+      tags:
+      - Cartridge
+
+- type: entity
+  name: zodum case
+  abstract: true
+  id: WeaponCaseZodum
+  parent: ToolboxBase
+  description: A reinforced casing for storing weapons and accessories.
+  suffix: Donor - Zodum
+  components:
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: Sprite
+    sprite: _Crescent/Objects/Tools/zodumcase.rsi
+    layers:
+    - map: [ base ]
+      state: icon
+    - state: unshaded
+      shader: unshaded
+  - type: Item
+    sprite: _Crescent/Objects/Tools/zodumcase.rsi
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: icon-open }
+          False: { state: icon }
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,3,2
+    whitelist:
+      components:
+      - Gun
+      - BallisticAmmoProvider
+      - Projectile
+      - CartridgeAmmo
+      - PowerCell
+      - MeleeWeapon
+      - Blocking
+      - WeaponCaseInsertable
+      tags:
+      - Cartridge
+
+- type: entity
+  name: madrugada case
+  abstract: true
+  id: WeaponCaseMadrugada
+  parent: ToolboxBase
+  description: A reinforced casing for storing weapons and accessories.
+  suffix: Donor - Madrugada
+  components:
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: Sprite
+    sprite: _Crescent/Objects/Tools/madrugadacase.rsi
+    layers:
+    - map: [ base ]
+      state: icon
+  - type: Item
+    sprite: _Crescent/Objects/Tools/madrugadacase.rsi
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: icon-open }
+          False: { state: icon }
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,3,2
+    whitelist:
+      components:
+      - Gun
+      - BallisticAmmoProvider
+      - Projectile
+      - CartridgeAmmo
+      - PowerCell
+      - MeleeWeapon
+      - Blocking
+      - WeaponCaseInsertable
+      tags:
+      - Cartridge

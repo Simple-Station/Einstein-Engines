@@ -40,7 +40,10 @@ public sealed partial class FactionRequirement : CharacterRequirement
             return true;
         }
 
-        reason = $"Your faction must be {FactionID} to play this role!";
+        if (Inverted)
+            reason = $"Your faction must NOT be {FactionID}.";
+        else
+            reason = $"Your faction must be {FactionID}.";
         return false;
     }
 

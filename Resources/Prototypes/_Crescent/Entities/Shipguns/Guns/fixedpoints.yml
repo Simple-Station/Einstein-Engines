@@ -1,0 +1,821 @@
+#plasma repeater
+
+- type: entity
+  id: ShuttleGunPlasmaRepeater
+  parent: BaseFixedShipgun
+  name: SHI 400c plasma bolt repeater
+  description: A fixedpoint self-defense tool based on recovered NT technology, subpar in terms of power use to firepower ratio - mostly seen on civilian models.
+  components:
+  - type: ApcPowerReceiver
+    powerLoad: 2000
+  - type: StaticPrice
+    price: 3500
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/lasersmall.rsi
+    layers:
+    - state: lse-400c
+    - state: mag-unshaded-9
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: machineFrame
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Gun
+    projectileSpeed: 95
+    fireRate: 1.2
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    angleDecay: 45
+    minAngle: 5
+    maxAngle: 15
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/ship_svalinn.ogg
+      params:
+        variation: 0.12
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 2
+    rechargeSound:
+      path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
+      params:
+        pitch: 1.2
+        variation: 0.08
+  - type: BasicEntityAmmoProvider
+    proto: BulletMachineGunPlasmaShuttle
+    capacity: 30
+    count: 10
+  - type: HardpointAnchorableOnly
+    class: Energy
+    size: Small
+
+
+#exhumer
+
+- type: entity
+  id: ShuttleGunExhumer
+  parent: BaseFixedShipgun
+  name: SHI 250c "Exhumer" kinetic pulser
+  description: A fixedpoint mining tool that accelerates sound waves to kinetically slice through rock - mostly seen on civilian miner models.
+  components:
+  - type: ApcPowerReceiver
+    powerLoad: 500
+  - type: StaticPrice
+    price: 1500
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/mininglaser.rsi
+    layers:
+    - state: states
+    - state: mag-7
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: machineFrame
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Gun
+    projectileSpeed: 65
+    fireRate: 3
+    selectedMode: SemiAuto
+    angleDecay: 45
+    minAngle: 5
+    maxAngle: 15
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/kinetic_accel.ogg
+      params:
+        variation: 0.12
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 1
+    rechargeSound:
+      path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
+      params:
+        pitch: 1.2
+        variation: 0.08
+  - type: BasicEntityAmmoProvider
+    proto: BulletKineticShuttle
+    capacity: 100
+    count: 100
+  - type: HardpointAnchorableOnly
+    class: Ballistic
+    size: Small
+
+#bizmuth
+
+- type: entity
+  id: ShuttleGunBizmuth
+  parent: BaseFixedShipgun
+  name: 500i "Bizmuth" ion gatling
+  description: An interceptor's bread and butter, the Bizmuth fires supercharged balls of electricty to pelt the powergrids of unsuspecting targets. Most often seen on interceptor vessels.
+  components:
+  - type: ApcPowerReceiver
+    powerLoad: 2000
+  - type: StaticPrice
+    price: 6500
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/ioncannon.rsi
+    layers:
+    - state: base
+    - state: mag-7
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: machineFrame
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Gun
+    projectileSpeed: 95
+    fireRate: 2.4
+    selectedMode: SemiAuto
+    angleDecay: 45
+    minAngle: 8
+    maxAngle: 15
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/fire1.ogg
+      params:
+        variation: 0.12
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 6
+    rechargeSound:
+      path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
+      params:
+        pitch: 1.2
+        variation: 0.08
+  - type: BasicEntityAmmoProvider
+    proto: BulletMachineGunIon
+    capacity: 30
+    count: 25
+  - type: HardpointAnchorableOnly
+    class: Energy
+    size: Medium
+
+#idna
+
+- type: entity
+  id: ShuttleGunTorpedo
+  parent: BaseFixedShipgun
+  name: SHI 180mm "Idna" small torpedo pod
+  description: A small fixedpoint rocketpod with basic heatseeking function.
+  components:
+  - type: ApcPowerReceiver
+    powerLoad: 1000
+  - type: StaticPrice
+    price: 3000
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/torpedo.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-2
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      ballistic-ammo: !type:Container
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: machineFrame
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Gun
+    projectileSpeed: 30
+    fireRate: 0.4
+    angleDecay: 45
+    minAngle: 0
+    maxAngle: 15
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+      params:
+        pitch: 0.8
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+  - type: BallisticAmmoProvider
+    proto: IdnaTorpedo
+    whitelist:
+      tags:
+        - Torpedo
+    capacity: 2
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
+    zeroVisible: false
+  - type: HardpointAnchorableOnly
+    class: Missile
+    size: Small
+  - type: Appearance
+
+
+#kurosawa
+
+- type: entity
+  id: ShuttleGunKurosawa
+  parent: BaseFixedShipgun
+  name: NCWL-3 48mm "Kurosawa" rocket pod
+  description: A small fixedpoint rocketpod with a capacity of two rockets. Must be reloaded by hand.
+  components:
+  - type: ApcPowerReceiver
+    powerLoad: 1000
+  - type: StaticPrice
+    price: 3000
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/cheapmissile.rsi
+    layers:
+    - state: rocket
+    - state: mag-7
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      ballistic-ammo: !type:Container
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: machineFrame
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Gun
+    projectileSpeed: 135
+    fireRate: 1
+    angleDecay: 45
+    minAngle: 0
+    maxAngle: 15
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+      params:
+        pitch: 0.8
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+  - type: HardpointAnchorableOnly
+    class: Missile
+    size: Small
+  - type: BallisticAmmoProvider
+    proto: CartridgeRocketLowYield
+    whitelist:
+      tags:
+        - Rocket48mm
+    capacity: 2
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+  - type: MagazineVisuals
+    magState: mag
+    steps: 8
+    zeroVisible: false
+
+#sumitomo
+
+- type: entity
+  id: ShuttleGunMissileRack
+  parent: BaseFixedShipgun
+  name: NT-6 48mm "Sumitomo" missile rack
+  description: A massive, ship-mounted missile rack with a unique feeding mechanism. Requires a rocket magazine to operate.
+  components:
+  - type: ApcPowerReceiver
+    powerLoad: 2000
+  - type: StaticPrice
+    price: 4500
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/missile.rsi
+    layers:
+    - state: rocket
+    - state: mag-7
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: machineFrame
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      gun_magazine: !type:ContainerSlot
+  - type: Gun
+    projectileSpeed: 100
+    fireRate: 0.3
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+      params:
+        variation: 0.05
+        pitch: 0.8
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+  - type: HardpointAnchorableOnly
+    class: Missile
+    size: Medium
+  - type: MagazineVisuals
+    magState: mag
+    steps: 8
+    zeroVisible: false
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        priority: 2
+        startingItem: MagazineRocketLowYield
+        whitelist:
+          tags:
+          - MagazineRocket48mm
+        insertSound:
+          path: /Audio/Weapons/Guns/MagIn/kinetic_reload.ogg
+          params:
+            pitch: 2
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+
+  - type: MagazineAmmoProvider
+
+#43mm (slugthrower)
+
+- type: entity
+  id: SlugthrowerCannon
+  name: SHI 43mm "Dasher" ballistic slugthrower
+  parent: BaseFixedShipgun
+  description: An outdated, gas-operated slugthrower. Usually found mounted on older civilian models. Ballistic-fed.
+  components:
+  - type: ApcPowerReceiver
+    powerLoad: 3000
+  - type: StaticPrice
+    price: 8000
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 400
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalGlassBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              SheetSteel1:
+                min: 2
+                max: 4
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/50cal.rsi
+    layers:
+    - state: space_artillery
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineLightRifleBoxSlug
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - SlugthrowerCartridgeBox
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeMachineGunArmorPiercing
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeMachineGun
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+  - type: Gun
+    fireRate: 3
+    projectileSpeed: 80
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/50cal.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
+  - type: HardpointAnchorableOnly
+    class: Ballistic
+    size: Medium
+  - type: AutoShootGun
+  - type: ChamberMagazineAmmoProvider
+
+#hardliner
+
+- type: entity
+  id: HardlineBeamPulser
+  name: NT-9 3100c 'Hardliner' plasma lance turret
+  parent: BaseFixedShipgun
+  description: A ship-mounted, fixed-point artillery turret using military laser technology as a base - an outdated model from the now-defunct NanoTrasen, although tried and tested in many battles. Requires upkeep in the form of liquid coolant to stay operational.
+  components:
+  - type: ApcPowerReceiver
+    powerLoad: 1000
+  - type: StaticPrice
+    price: 10000
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: machineFrame
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/bigfuckinglaser.rsi
+    layers:
+    - state: space_artillery
+  - type: BasicEntityAmmoProvider
+    proto: BulletMachineGunPlasmaShuttleLarge
+  - type: ContainerContainer
+    containers:
+      SpaceArtillery-CoolantSlot: !type:ContainerSlot {}
+  - type: Gun
+    fireRate: 0.7
+    projectileSpeed: 70
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/ship_perforator.ogg
+    soundEmpty:
+      path: /Audio/Items/hiss.ogg
+  - type: HardpointAnchorableOnly
+    class: Energy
+    size: Large
+  - type: SpaceArtillery
+    powerUseActive: 25000
+    isCoolantRequiredToFire: true
+    coolantConsumed: 5
+    SpaceArtillery-CoolantSlot:
+            name:  SpaceArtillery-CoolantSlot
+            insertSound: /Audio/Machines/scanning.ogg
+            ejectSound: /Audio/Machines/tray_eject.ogg
+            ejectOnBreak: true
+            swap: false
+            whitelist:
+                components:
+                - Stack
+
+#120mm
+
+- type: entity
+  id: Type99Artillery
+  name: SHI Type 99 120mm artillery
+  parent: BaseFixedShipgun
+  description: A heavier, bulkier version of the slugthrower. An antiquated SHI design. Requires manual reloading after its two chambers.
+  components:
+  - type: ApcPowerReceiver
+    powerLoad: 3000
+  - type: StaticPrice
+    price: 7500
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 800
+      behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: machineFrame
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/artillery.rsi
+    layers:
+    - state: artillery
+  - type: BallisticAmmoProvider
+    soundInsert: 
+      path: /Audio/Weapons/Guns/UnionfallWeapons/amr_close_1.ogg
+    fillWithDoAfter: true
+    fillDelay: 1
+    cycleable: true
+    capacity: 2
+    proto: CartridgeShellArmorPiercing
+    whitelist:
+      tags:
+      - CartridgeShell
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+  - type: Gun
+    fireRate: 0.5
+    projectileSpeed: 95
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/ship_duster.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
+  - type: HardpointAnchorableOnly
+    class: Ballistic
+    size: Large
+
+#320mm
+
+- type: entity
+  id: AcceleratorCannon
+  name: 320mm Imperial high-frequency accelerator cannon
+  parent: BaseFixedShipgun
+  description: A product of the Imperial war machine. Produced as an experimental solution to various insurgencies in the Crescent Sector - and later stolen by the insurgents themselves. Still a rare sight aboard most vessels.
+  components:
+  - type: ApcPowerReceiver
+    powerLoad: 6000
+  - type: StaticPrice
+    price: 20000
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 2500
+      behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: machineFrame
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/bigcannon.rsi
+    layers:
+    - state: deck_turret_loaded
+  - type: Battery
+    maxCharge: 1000000
+    startingCharge: 1000000
+  - type: BallisticAmmoProvider
+    cycleable: false
+    capacity: 5
+    proto: CartridgeRailHighExplosive
+    whitelist:
+      tags:
+      - Cartridge
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+      SpaceArtillery-CoolantSlot: !type:ContainerSlot {}
+  - type: Gun
+    fireRate: 0.1
+    projectileSpeed: 135
+    soundGunshot:
+      path: /Audio/Effects/railfire.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
+  - type: HardpointAnchorableOnly
+    class: Ballistic
+    size: Large
+  - type: SpaceArtillery
+    powerChargeRate: 50000
+    powerUseActive: 500000
+    isCoolantRequiredToFire: true
+    coolantConsumed: 30
+    maxCoolantStored: 120
+    linearRecoilGrid: 900
+    angularInstabilityGrid: 30
+    SpaceArtillery-CoolantSlot:
+            name:  SpaceArtillery-CoolantSlot
+            insertSound: /Audio/Machines/scanning.ogg
+            ejectSound: /Audio/Machines/tray_eject.ogg
+            ejectOnBreak: true
+            swap: false
+            whitelist:
+                components:
+                - Stack
+
+#vulcan
+
+- type: entity
+  id: NTVulcanTurret
+  name: NT 20mm "Vulcan" machineturret
+  parent: BaseFixedShipgun
+  description: An antiquated NanoTrasen model, commonly fitted on mid-tech fighters.
+  components:
+  - type: ApcPowerReceiver
+    powerLoad: 3000
+  - type: StaticPrice
+    price: 2500
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 500
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalGlassBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              SheetSteel1:
+                min: 2
+                max: 4
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/vulcan.rsi
+    layers:
+    - state: space_artillery
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineVulcan
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - VulcanCartridgeBox
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeVulcanStandard
+        priority: 1
+        whitelist:
+          tags:
+            - VulcanCartridgeBox
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+  - type: Gun
+    fireRate: 12
+    projectileSpeed: 135
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/vulcan.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
+  - type: HardpointAnchorableOnly
+    class: Ballistic
+    size: Small
+  - type: AutoShootGun
+  - type: ChamberMagazineAmmoProvider
+
+#cleanser
+
+- type: entity
+  id: SAWCleanser
+  name: SAW 20mm "Cleanser" gatlingun
+  parent: BaseFixedShipgun
+  description: A retrofit of the 20mm vulcan made by TSFC SAW Engineers. All safety considerations seem to be missing on this..
+  components:
+  - type: ApcPowerReceiver
+    powerLoad: 3000
+  - type: StaticPrice
+    price: 8000
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 250 # retrofits make it a bit flimsy
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalGlassBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              SheetSteel1:
+                min: 2
+                max: 4
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/gatling.rsi
+    layers:
+    - state: space_artillery
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineVulcan
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - VulcanCartridgeBox
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeVulcanStandard
+        priority: 1
+        whitelist:
+          tags:
+            - VulcanCartridgeBox
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+  - type: Gun
+    fireRate: 36
+    maxAngle: 4
+    minAngle: 0
+    projectileSpeed: 135
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/vulcan.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
+  - type: HardpointAnchorableOnly
+    class: Ballistic
+    size: Medium
+  - type: AutoShootGun
+  - type: ChamberMagazineAmmoProvider
+
+#wasp
+
+- type: entity
+  id: WaspSwarmPlatform
+  name: ATH 70mm 'Wasp' swarmrocket platform
+  parent: BaseFixedShipgun
+  description: A light, stationary rocket platform intended to apply pressure to a target with its guided projectiles.
+  components:
+  - type: ApcPowerReceiver
+    powerLoad: 2000
+  - type: StaticPrice
+    price: 8000
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 500 #
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalGlassBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              SheetSteel1:
+                min: 2
+                max: 4
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/wasp.rsi
+    layers:
+    - state: base
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: SwarmrocketClip
+        priority: 2
+        whitelist:
+          tags:
+          - SwarmerRocketsClip
+        insertSound:
+          path: /Audio/Weapons/Guns/MagIn/kinetic_reload.ogg
+          params:
+            pitch: 2
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+  - type: Gun
+    projectileSpeed: 60
+    fireRate: 3.4
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+    angleDecay: 45
+    minAngle: 5
+    maxAngle: 15
+  - type: HardpointAnchorableOnly
+    class: Missile
+    size: Small
+  - type: AutoShootGun
+  - type: MagazineAmmoProvider

@@ -1,0 +1,186 @@
+- type: gameMap
+  id: FaintSignal
+  mapName: 'Faint Signal'
+  mapPath: /Maps/_NF/POI/tinnia.yml
+  minPlayers: 0
+  stations:
+    FaintSignal:
+      stationProto: StandardCrescentPOI
+      gridComponents:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: pointofinterest
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Faint Signal'
+
+- type: gameMap
+  id: StandedShip
+  mapName: 'Stranded Ship'
+  mapPath: /Maps/_Crescent/Explorables/stranded.yml
+  minPlayers: 0
+  stations:
+    StandedShip:
+      stationProto: StandardCrescentPOI
+      gridComponents:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: pointofinterest
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Stranded Ship'
+
+- type: gameMap
+  id: Graveyard
+  mapName: 'The Graveyard'
+  mapPath: /Maps/_Crescent/Explorables/zhipovwreck.yml
+  minPlayers: 0
+  stations:
+    Graveyard:
+      stationProto: StandardCrescentPOI
+      gridComponents:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: pointofinterest
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'The Graveyard'
+
+- type: gameMap
+  id: Fighter1
+  mapName: 'Destroyed Fighter'
+  mapPath: /Maps/_Crescent/Explorables/ruinedfightereast.yml
+  minPlayers: 0
+  stations:
+    Fighter1:
+      stationProto: StandardCrescentPOI
+      gridComponents:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: pointofinterest
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Destroyed Fighter'
+
+- type: gameMap
+  id: Fighter2
+  mapName: 'Destroyed Fighter'
+  mapPath: /Maps/_Crescent/Explorables/ruinedfighterwest.yml
+  minPlayers: 0
+  stations:
+    Fighter2:
+      stationProto: StandardCrescentPOI
+      gridComponents:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: pointofinterest
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Destroyed Fighter'
+
+- type: gameMap
+  id: FogwreckedDerelict
+  mapName: 'Fogwrecked Derelict'
+  mapPath: /Maps/_Crescent/Explorables/fogexplorer.yml
+  minPlayers: 0
+  stations:
+    FogwreckedDerelict:
+      stationProto: StandardCrescentPOI
+      gridComponents:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: pointofinterest
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Fogwrecked Derelict'
+
+- type: gameMap
+  id: SolarSailorDerelict
+  mapName: 'Solar Sailor Derelict'
+  mapPath: /Maps/_Crescent/Explorables/ruinedsolarsailor.yml
+  minPlayers: 0
+  stations:
+    SolarSailorDerelict:
+      stationProto: StandardCrescentPOI
+      gridComponents:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: pointofinterest
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Solar Sailor Derelict'
+
+- type: gameMap
+  id: ImperialHaulerWreck
+  mapName: 'Imperial Hauler Wreck'
+  mapPath: /Maps/_Crescent/Explorables/impwreck.yml
+  minPlayers: 0
+  stations:
+    ImperialHaulerWreck:
+      stationProto: StandardCrescentPOI
+      gridComponents:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: pointofinterest
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Imperial Hauler Wreck'
+
+- type: gameMap
+  id: DerelictWaystation
+  mapName: 'Derelict Waystation'
+  mapPath: /Maps/_Crescent/Explorables/hayeswreck.yml
+  minPlayers: 0
+  stations:
+    DerelictWaystation:
+      stationProto: StandardCrescentPOI
+      gridComponents:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: pointofinterest
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Derelict Waystation'
+
+- type: gameMap
+  id: TribalScrapyard
+  mapName: 'Tribal Scrapyard'
+  mapPath: /Maps/_Crescent/Explorables/tribalscrapyard.yml
+  minPlayers: 0
+  stations:
+    TribalScrapyard:
+      stationProto: StandardCrescentPOI
+      gridComponents:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: pointofinterest
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Tribal Scrapyard'
+          
+- type: gameMap
+  id: AncientBattlefield
+  mapName: 'Ancient Battlefield'
+  mapPath: /Maps/_Crescent/Explorables/ancientbattlefield.yml
+  minPlayers: 0
+  stations:
+    AncientBattlefield:
+      stationProto: StandardCrescentPOI
+      gridComponents:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: pointofinterest
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Ancient Battlefield'
