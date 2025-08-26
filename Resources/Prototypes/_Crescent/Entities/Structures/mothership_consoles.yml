@@ -20,7 +20,6 @@
     - Reaver
     - Itch
     - Sinn
-    - Wreck
 
 - type: entity
   id: CountsmanMothershipComputer
@@ -108,6 +107,7 @@
     - Velator
     - Wisp
     - Taipan
+    - Wreck
 
 - type: entity
   id: ZhipovMothershipComputer
