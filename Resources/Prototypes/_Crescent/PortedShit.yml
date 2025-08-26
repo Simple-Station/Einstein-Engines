@@ -488,6 +488,16 @@
         - MachineLayer
 
 - type: entity
+  id: ScrapMagnet
+  name: SHI baromagnetic scrap array
+  description: A large, ship-mounted magnetic device. When pointed in the direction of loose scrap, gathers the scavengable material with a miniature tractor beam and stores it in an internal compartment for later harvest.
+  parent: OreBox
+  components:
+    whitelist:
+      tags:
+        - RawMaterial
+
+- type: entity
   parent: BaseBulletTrigger
   id: ProjectileEmp
   name: emp projectile
