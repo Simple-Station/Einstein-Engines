@@ -26,6 +26,7 @@
     equipmentWhitelist:
       tags:
       - ScoutMechEquipment
+      - IndustrialMechEquipment
 
 - type: entity
   id: MediumMech
