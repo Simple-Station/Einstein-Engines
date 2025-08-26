@@ -1,10 +1,11 @@
 - type: entity
   id: CigarFreeports
   parent: CigarCase
-  name: Freeports cigar case
-  description: "FREEPORTS DSC"
+  name: Freeport cigar case
+  description: A case containing cigars made from a luxuriant blend of a scant amount of intercepted pure Chengridz tobacco, near-extinct Kal Surezai leaf and an anomalous strain invented by Cyberdawn Technologies.
   components:
   - type: Sprite
+    scale: 0.8, 0.8
     sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/freeports_cigar.rsi
   - type: Item
     sprite: _Crescent/Objects/Consumable/Smokeables/Cigars/freeports_cigar.rsi
@@ -20,10 +21,11 @@
 - type: entity
   id: CigarNCWLCase
   parent: CigarCase
-  name: NCWL IMPORT CIGAR
-  description: "NCWL IMPORT CIGAR DESC."
+  name: imported Chengridz cigar case
+  description: A cigar case containing the sort of indulgence reserved for those who measure worth in fleets and factories. Each stick is rolled from genuine leaf, untouched by synth processes, carrying a taste the common rabble will never know. Scarcity only adds to their prestige as Imperial raids and sabotage on supply convoys have turned every shipment into a gamble, where a single draw might cost more than a laborer’s year.
   components:
   - type: Sprite
+    scale: 0.9, 0.9
     sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/imported_cigar.rsi
     layers:
     - state: closed
@@ -71,10 +73,11 @@
 - type: entity
   id: CigarRoyalCase
   parent: CigarCase
-  name: ROYAL CIGAR
-  description: "ROYAL CIGAR DESC."
+  name: Royal cigar case
+  description: A cigar case containing cigars rolled from exquisite Kal Surezai derived tobacco, certified under the Royal brand.
   components:
   - type: Sprite
+    scale: 0.9, 0.9
     sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/royal_cigar.rsi
     layers:
     - state: closed

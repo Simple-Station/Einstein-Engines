@@ -1,8 +1,8 @@
 - type: entity
   id: CigarNCWL
   parent: BaseCigar
-  name: CigarNCWLPlaceholder
-  description: "A Placeholder lore CigarNCWL Lore"
+  name: imported Chengridz cigar
+  description: A hand rolled Chengridz cigar, pure leaf and pure status, each draw worth more than most men’s wages.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/importcigar.rsi
@@ -27,7 +27,7 @@
 
 - type: entity
   id: CigarNCWLSpent
-  parent: Cigar
+  parent: CigarNCWL
   suffix: spent
   components:
   - type: Sprite
@@ -47,8 +47,8 @@
 - type: entity
   id: CigarRoyal
   parent: BaseCigar
-  name: CigarRoyalPlaceholder
-  description: "A Placeholder lore CigarRoyal Lore"
+  name: Royal cigar
+  description: A cigar fit for the upper crust of true Taypan's natives.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/royalcigar.rsi
@@ -73,7 +73,7 @@
 
 - type: entity
   id: CigarRoyalSpent
-  parent: Cigar
+  parent: CigarRoyal
   suffix: spent
   components:
   - type: Sprite
@@ -93,8 +93,8 @@
 - type: entity
   id: CigarFreeport
   parent: BaseCigar
-  name: CigarFreeportPlaceholder
-  description: "A Placeholder lore CigarFreeport Lore"
+  name: Freeport cigar
+  description: A black roll of high quality tobacco and... whatever else could be found.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/freeportcigar.rsi
@@ -119,7 +119,7 @@
 
 - type: entity
   id: CigarFreeportSpent
-  parent: Cigar
+  parent: CigarFreeport
   suffix: spent
   components:
   - type: Sprite
