@@ -1,7 +1,7 @@
 
 - type: vessel
   id: Wreck
-  name: GSC Wreck
+  name: RC Wreck
   description: An asteroid strapped with a gun.
   price: 28000
   category: Small
@@ -10,7 +10,7 @@
 
 - type: gameMap
   id: Wreck
-  mapName: 'GSC Wreck'
+  mapName: 'RC Wreck'
   mapPath: /Maps/_Crescent/Shuttles/NCSP/wreck.yml
   minPlayers: 0
   stations:
@@ -22,7 +22,7 @@
             sprite: _Crescent/ShipIcons/ifficons.rsi
             state: fighter.
         - type: StationNameSetup
-          mapNameTemplate: 'GSC Wolf {1}'
+          mapNameTemplate: 'RC Wreck {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
