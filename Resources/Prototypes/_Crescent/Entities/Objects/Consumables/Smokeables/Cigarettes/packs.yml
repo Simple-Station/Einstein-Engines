@@ -102,7 +102,7 @@
 - type: entity
   id: CigPackNCWL
   parent: CigPackCRESCENTBase
-  name: Unioners Star packet
+  name: Union Star packet
   description: Quality cigarettes from Chengridz. Stars issued en mass to the Workers hands.
   components:
   - type: Sprite
