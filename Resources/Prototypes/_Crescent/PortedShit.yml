@@ -493,7 +493,7 @@
   description: A large, ship-mounted magnetic device. When pointed in the direction of loose scrap, gathers the scavengable material with a miniature tractor beam and stores it in an internal compartment for later harvest.
   parent: OreBox
   components:
-  - type: storage
+  - type: Storage
     whitelist:
       tags:
         - RawMaterial
