@@ -1,0 +1,26 @@
+- type: entity
+  parent: SurveillanceCameraWirelessRouterBase
+  id: SurveillanceCameraRouterImperialDSM
+  suffix: DSM
+  components:
+    - type: SurveillanceCameraRouter
+      subnetFrequency: SurveillanceCameraImperialDSM
+    - type: WirelessNetworkConnection
+
+- type: entity
+  parent: SurveillanceCameraWirelessRouterBase
+  id: SurveillanceCameraRouterCommunardNCWL
+  suffix: NCWL
+  components:
+    - type: SurveillanceCameraRouter
+      subnetFrequency: SurveillanceCameraCommunardNCWL
+    - type: WirelessNetworkConnection
+
+- type: entity
+  parent: SurveillanceCameraWirelessRouterBase
+  id: SurveillanceCameraRouterInterdyneIPM
+  suffix: IPM
+  components:
+    - type: SurveillanceCameraRouter
+      subnetFrequency: SurveillanceCameraInterdyneIPM
+    - type: WirelessNetworkConnection

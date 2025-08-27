@@ -9,3 +9,62 @@
   - type: Clothing
     sprite: _Crescent/Clothing/Misc/burlap_sack.rsi
   - type: Blindfold
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckWearableCamera
+  name: wearable surveying port
+  description: a commander's eyes on the battlefield.
+  components:
+    - type: Sprite
+      sprite: _Crescent/Clothing/Misc/pir.rsi
+    - type: DeviceNetwork
+      deviceNetId: Wireless
+      receiveFrequencyId: SurveillanceCameraSecurity
+      transmitFrequencyId: SurveillanceCamera
+    - type: SurveillanceCamera
+      networkSet: true
+      nameSet: True
+      id: Bodycam
+    - type: Eye
+    - type: WirelessNetworkConnection
+      range: 2000
+    - type: SurveillanceCameraMicrophone
+      blacklist:
+        components:
+        - SurveillanceCamera
+        - RadioSpeaker
+        - SurveillanceCameraMonitor
+    - type: ActiveListener
+      range: 10
+    - type: ClothingGrantComponent
+      component:
+      - type: StationAiVision
+        range: 4
+
+- type: entity
+  parent: ClothingNeckWearableCamera
+  id: ClothingNeckWearableCameraImperial
+  name: imperial wearable surveying port
+  description: the lord admiral's eyes on extraction operations.
+  components:
+    - type: DeviceNetwork
+      receiveFrequencyId: SurveillanceCameraImperialDSM
+
+- type: entity
+  parent: ClothingNeckWearableCamera
+  id: ClothingNeckWearableCameraCommunardNCWL
+  name: communard wearable surveying port
+  description: the major's eyes on the battlefield.
+  components:
+    - type: DeviceNetwork
+      receiveFrequencyId: SurveillanceCameraCommunardNCWL
+
+- type: entity
+  parent: ClothingNeckWearableCamera
+  id: ClothingNeckWearableCameraInterdyne
+  name: interdyne wearable surveying port
+  description: the coordinator's eyes on extraction operations.
+  components:
+    - type: DeviceNetwork
+      receiveFrequencyId: SurveillanceCameraInterdyneIPM
