@@ -12,6 +12,7 @@
   description: The last days of Taypan. Lasts 2-4 hours.
   rules:
   - Adventure
+  - HullrotEventScheduler
 
 
 # GAMERULES ARE WAHT DECIDES WHAT SPAWNS IN, BY EVERYTHING IN THE ADVENTURERULE COMPONENT

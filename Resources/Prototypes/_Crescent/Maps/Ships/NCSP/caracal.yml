@@ -2,25 +2,25 @@
 # Discord: @fleshangel
 #
 - type: vessel
-  id: Rattler
-  name: SAW Rattler
-  description: An ad-hoc guns platform developed by the Shipbreakers.
-  price: 45000
+  id: Caracal
+  name: SAW Caracal
+  description: Retroffited shipbreaker fighter platform.
+  price: 60000
   category: Small
   group: None
-  path: /Maps/_Crescent/Shuttles/NCSP/rattler.yml
+  path: /Maps/_Crescent/Shuttles/NCSP/caracal.yml
 
 - type: gameMap
-  id: Rattler
-  mapName: 'SAW Rattler'
-  mapPath: /Maps/_Crescent/Shuttles/NCSP/rattler.yml
+  id: Caracal
+  mapName: 'SAW Caracal'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/caracal.yml
   minPlayers: 0
   stations:
-    Rattler:
+    Caracal:
       stationProto: StandardCrescentVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'SAW Rattler {1}'
+          mapNameTemplate: 'SAW Caracal {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
