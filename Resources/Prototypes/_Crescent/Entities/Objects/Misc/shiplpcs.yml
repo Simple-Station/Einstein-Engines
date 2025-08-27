@@ -279,7 +279,7 @@
     price: 30000
   - type: ShipVoucher
     ship: Molot
-    
+
 - type: entity
   parent: BaseItem
   id: ShipVoucherIvarod
@@ -296,7 +296,7 @@
     price: 67500
   - type: ShipVoucher
     ship: Ivarod
-    
+
 #T1 END
 
 #T2
@@ -390,7 +390,7 @@
     price: 65000
   - type: ShipVoucher
     ship: Bogatyr
-    
+
 - type: entity
   parent: BaseItem
   id: ShipVoucherSunder
@@ -1221,6 +1221,57 @@
     price: 27000
   - type: ShipVoucher
     ship: Geode
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherRokh
+  name: SAW 'Rokh' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with the SAW Rokh.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 135000
+  - type: ShipVoucher
+    ship: Rokh
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherCaracal
+  name: SAW 'Caracal' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with the SAW Caracal.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 55000
+  - type: ShipVoucher
+    ship: Caracal
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherAmadeus
+  name: SAW 'Amadeus' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with the SAW Amadeus.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 90000
+  - type: ShipVoucher
+    ship: Amadeus
 
 - type: entity
   parent: BaseItem
