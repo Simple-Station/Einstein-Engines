@@ -115,7 +115,7 @@
   id: CigPackEmpire
   parent: CigPackCRESCENTBase
   name: Royal packet
-  description: Made from the tobacco rejected from the prestigious Cigars of the same Brand.
+  description: Made from the tobacco rejected from the prestigious Cigars of the Imperial Brand.
   components:
   - type: Sprite
     scale: 0.7, 0.7

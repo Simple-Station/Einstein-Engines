@@ -47,8 +47,8 @@
 - type: entity
   id: CigarRoyal
   parent: BaseCigar
-  name: Royal cigar
-  description: A cigar fit for the upper crust of true Taypan's natives.
+  name: Imperial cigar
+  description: A cigar fit for the upper crust of Taypan's true natives.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/royalcigar.rsi
