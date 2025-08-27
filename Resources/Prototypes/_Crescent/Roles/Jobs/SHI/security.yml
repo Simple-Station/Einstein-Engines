@@ -6,6 +6,12 @@
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 7200
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
+        - Reptilian
+        - Moth
+        - Arachnid
     - !type:FactionRequirement
       factionID: "SHI"
     - !type:CharacterTraitRequirement
