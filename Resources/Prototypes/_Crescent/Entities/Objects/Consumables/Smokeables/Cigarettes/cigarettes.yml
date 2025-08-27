@@ -1,0 +1,85 @@
+- type: entity
+  id: CrescentCigaretteTHC
+  parent: SoakedCigarette
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nicotine
+          Quantity: 10
+        - ReagentId: THC
+          Quantity: 10
+
+- type: entity
+  id: CrescentCigaretteSpaceDrugs
+  parent: SoakedCigarette
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nicotine
+          Quantity: 10
+        - ReagentId: SpaceDrugs
+          Quantity: 10
+
+- type: entity
+  id: CrescentCigaretteCrash
+  parent: SoakedCigarette
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nicotine
+          Quantity: 10
+        - ReagentId: Crash
+          Quantity: 10
+
+- type: entity
+  id: CrescentCigaretteBloodeye
+  parent: SoakedCigarette
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nicotine
+          Quantity: 10
+        - ReagentId: Bloodeye
+          Quantity: 10
+
+- type: entity
+  id: CrescentCigaretteLotophagoiOil
+  parent: SoakedCigarette
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nicotine
+          Quantity: 10
+        - ReagentId: LotophagoiOil
+          Quantity: 10
+
+- type: entity
+  id: CrescentCigaretteNanotrasen
+  suffix: nanotrasen
+  parent: Cigarette
+  name: cigarette
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nicotine
+          Quantity: 10
+        - ReagentId: Omnizine
+          Quantity: 10

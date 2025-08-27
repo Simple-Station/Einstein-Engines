@@ -1,0 +1,137 @@
+- type: entity
+  id: CigarNCWL
+  parent: BaseCigar
+  name: imported Chengridz cigar
+  description: A hand rolled Chengridz cigar, pure leaf and pure status, each draw worth more than most men’s wages.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/importcigar.rsi
+    state: unlit-icon
+  - type: Tag
+    tags:
+    - Cigar
+    - Trash
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 50
+        reagents:
+        - ReagentId: Nicotine
+          Quantity: 25
+  - type: Clothing
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/importcigar.rsi
+    slots: [ mask ]
+    equippedPrefix: unlit
+  - type: Item
+    size: Tiny
+
+- type: entity
+  id: CigarNCWLSpent
+  parent: CigarNCWL
+  suffix: spent
+  components:
+  - type: Sprite
+    state: burnt-icon
+  - type: Smokable
+    state: Burnt
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 50
+  - type: Tag
+    tags:
+    - Cigar
+    - Trash
+    - Burnt
+
+- type: entity
+  id: CigarRoyal
+  parent: BaseCigar
+  name: Imperial cigar
+  description: A cigar fit for the upper crust of Taypan's true natives.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/royalcigar.rsi
+    state: unlit-icon
+  - type: Tag
+    tags:
+    - Cigar
+    - Trash
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 50
+        reagents:
+        - ReagentId: Nicotine
+          Quantity: 25
+  - type: Clothing
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/royalcigar.rsi
+    slots: [ mask ]
+    equippedPrefix: unlit
+  - type: Item
+    size: Tiny
+
+- type: entity
+  id: CigarRoyalSpent
+  parent: CigarRoyal
+  suffix: spent
+  components:
+  - type: Sprite
+    state: burnt-icon
+  - type: Smokable
+    state: Burnt
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 50
+  - type: Tag
+    tags:
+    - Cigar
+    - Trash
+    - Burnt
+
+- type: entity
+  id: CigarFreeport
+  parent: BaseCigar
+  name: Freeport cigar
+  description: A black roll of high quality tobacco and... whatever else could be found.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/freeportcigar.rsi
+    state: unlit-icon
+  - type: Tag
+    tags:
+    - Cigar
+    - Trash
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 50
+        reagents:
+        - ReagentId: Nicotine
+          Quantity: 25
+  - type: Clothing
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/freeportcigar.rsi
+    slots: [ mask ]
+    equippedPrefix: unlit
+  - type: Item
+    size: Tiny
+
+- type: entity
+  id: CigarFreeportSpent
+  parent: CigarFreeport
+  suffix: spent
+  components:
+  - type: Sprite
+    state: burnt-icon
+  - type: Smokable
+    state: Burnt
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 50
+  - type: Tag
+    tags:
+    - Cigar
+    - Trash
+    - Burnt
