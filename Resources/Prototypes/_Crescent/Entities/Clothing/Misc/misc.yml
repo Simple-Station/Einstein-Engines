@@ -28,7 +28,7 @@
       id: Bodycam
     - type: Eye
     - type: WirelessNetworkConnection
-      range: 2000
+      range: 7500
     - type: SurveillanceCameraMicrophone
       blacklist:
         components:
