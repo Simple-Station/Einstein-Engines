@@ -15,4 +15,6 @@ imperial-console = Mandate Bounty Console. Uses communard IDs as currency
 
 saw-console = Scrapaloid Bounty Console. Uses scrap as currency
 
+saw-console = Gorlex Bounty Console. Uses plunder as currency
+
 ship-comm-console = ship communications console
