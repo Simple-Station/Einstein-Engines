@@ -140,31 +140,6 @@
   - type: Appearance
 
 - type: entity
-  name: IRM C-20r 9x19mm
-  parent: [WeaponSubMachineGunC20r]
-  id: WeaponSubMachineGunC20rEmpty
-  description: A compact submachinegun produced by Olywir Armaments for the Imperial Navy. Sees little use in the hands of actual troopers due to the cost of manufacturing.
-  components:
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: null
-        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
-        priority: 2
-        whitelist:
-          tags:
-            - MagazinePistolSubMachineGun
-      gun_chamber:
-        name: Chamber
-        startingItem: null
-        priority: 1
-        whitelist:
-          tags:
-            - CartridgePistol
-
-- type: entity
   name: antique IRM C-20r 9x19mm
   parent: WeaponSubMachineGunC20r
   id: WeaponSubMachineGunC20rHoS

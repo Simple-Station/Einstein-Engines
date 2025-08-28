@@ -76,7 +76,6 @@
   - Hydroponics
   - Atmospherics
   - NCWLGeneral
-  - NCWLKommissar
   - NCWLJail
   - NCWLArmory
   - NCWLCommand
@@ -84,7 +83,7 @@
 - type: startingGear
   id: CaptainNCWLGear
   equipment:
-    shoes: ClothingShoesBootsJack
+    shoes: ClothingShoesBootsCombat
     jumpsuit: ClothingUniformJumpsuitNCWL
     id: NCWLHomeguardSquadCaptainPDA
     outerClothing: ClothingOuterArmorNCWLCarapaceKapitan

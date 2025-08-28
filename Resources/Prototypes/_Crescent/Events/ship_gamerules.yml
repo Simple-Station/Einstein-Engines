@@ -5,7 +5,7 @@
   minPlayers: 0
   stations:
     trader:
-      stationProto: StandardCrescentOutpost
+      stationProto: StandardCrescentPOI
       components:
         - type: StationNameSetup
           mapNameTemplate: 'PTA Gu Tian'
@@ -20,7 +20,7 @@
   minPlayers: 0
   stations:
     shitrader:
-      stationProto: StandardCrescentOutpost
+      stationProto: StandardCrescentPOI
       components:
         - type: StationNameSetup
           mapNameTemplate: 'SHI Kitamura Jeon'

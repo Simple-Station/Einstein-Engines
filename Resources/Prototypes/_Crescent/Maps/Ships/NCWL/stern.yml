@@ -1,11 +1,11 @@
 # Author Info
-# Discord: @fleshangel
+# Discord: originally @fleshangel, later remade by @ninruB
 
 - type: vessel
   id: Stern
   name: NCWL Stern
   description: A communard heavy battlecruiser.
-  price: 100000
+  price: 125000
   category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/NCWL/stern.yml

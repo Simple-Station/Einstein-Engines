@@ -3,7 +3,7 @@
 #
 - type: vessel
   id: Rattler
-  name: NCSP Rattler
+  name: SAW Rattler
   description: An ad-hoc guns platform developed by the Shipbreakers.
   price: 45000
   category: Small
@@ -12,7 +12,7 @@
 
 - type: gameMap
   id: Rattler
-  mapName: 'NCSP Rattler'
+  mapName: 'SAW Rattler'
   mapPath: /Maps/_Crescent/Shuttles/NCSP/rattler.yml
   minPlayers: 0
   stations:

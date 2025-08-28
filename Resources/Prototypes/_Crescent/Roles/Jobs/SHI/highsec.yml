@@ -7,6 +7,9 @@
     - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
       min: 35000
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
     - !type:FactionRequirement
       factionID: "SHI"
     - !type:CharacterTraitRequirement
@@ -51,11 +54,10 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitShinoharaHighsec
     shoes: ClothingShoesBootsCombat
-    belt: WeaponLaserSvalinn
-    head: ClothingHeadHatShinoharaHelmet
-    outerClothing: ClothingOuterArmorShinoharaArmorHighsec
     gloves: ClothingHandsGlovesCombat
     id: HighsecPDA
+    eyes: ClothingEyesGlassesSunglasses
     ears: ClothingHeadsetShinohara
     pocket1: Handcuffs
     pocket2: TradePassport
+    back: ClothingBackpackSHISatchel

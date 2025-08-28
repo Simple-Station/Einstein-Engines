@@ -188,8 +188,13 @@ namespace Content.Server.Explosion.EntitySystems
             if (implanted.ImplantedEntity == null)
                 return;
 
-            // Gets location of the implant
-            var posText = FormattedMessage.RemoveMarkup(_navMap.GetNearestBeaconString(uid));
+            // Gets location coords of the implant
+            var ownerXform = Transform(uid);
+            var pos = ownerXform.MapPosition;
+            var x = (int) pos.X;
+            var y = (int) pos.Y;
+            var posText = $"({x}, {y})";
+
             var critMessage = Loc.GetString(component.CritMessage, ("user", implanted.ImplantedEntity.Value), ("position", posText));
             var deathMessage = Loc.GetString(component.DeathMessage, ("user", implanted.ImplantedEntity.Value), ("position", posText));
 

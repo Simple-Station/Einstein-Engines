@@ -5,7 +5,13 @@
   playTimeTracker: JobSecuritySHI
   requirements:
     - !type:CharacterOverallTimeRequirement
-      min: 18000
+      min: 7200
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
+        - Reptilian
+        - Moth
+        - Arachnid
     - !type:FactionRequirement
       factionID: "SHI"
     - !type:CharacterTraitRequirement
@@ -49,9 +55,9 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitShinoharaSecurity
     shoes: ClothingShoesBootsCombat
-    belt: WeaponLaserSvalinn
     gloves: ClothingHandsGlovesCombat
     id: CorpsecPDA
     ears: ClothingHeadsetShinohara
     pocket1: Handcuffs
     pocket2: TradePassport
+    back: ClothingBackpackSHISatchel

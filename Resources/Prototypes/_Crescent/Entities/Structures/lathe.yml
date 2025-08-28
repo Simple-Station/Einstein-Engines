@@ -256,6 +256,7 @@
     staticRecipes:
       - MagazineBoxLightRifle
       - MagazineBoxMagnum
+      - MagazineBoxHeavyRifle
       - MagazineBoxPistol
       - MagazineBoxRifle
       - MagazineLightRifle
@@ -482,6 +483,10 @@
       - EmagCyberdawn
       - WeaponLightMachineGunNCSPRPD
       - WeaponRifleMayflower
+      - WeaponRifleSVDMarksmanNCSP
+      - WeaponShotgunSaiga12NCSP
+      - WeaponLauncherRPGNSCP
+      - WeaponLCartridgeRPGSmall
       - DnaScramblerImplanter
       - EmpImplanter
       - EnergyDagger
@@ -515,6 +520,8 @@
       - ClothingHeadHelmetImperialKnightCommanderHelmet
       - ClothingOuterArmorImperialArmorPrestige
       - ClothingOuterHardsuitImperialKnight
+      - ClothingOuterHardsuitImperialNullweavePsion
+      - ImperialPsionBoundlightStaff
       - CarrionFlatpack
       - WeaponMechIndustrialKineticAcceleratorImperial
       - MechEquipmentGrabberImperial
@@ -566,24 +573,29 @@
       - WeaponPistolComrade
       - WeaponSubMachineGunNCWLWatchdog
       - ClothingOuterHardsuitNCWLInfantry
-      - SabreLPC
-      - RapierLPC
-      - KhopeshLPC
-      - BroadswordLPC
+      - VanguardLPC
+      - ZorniyLPC
+      - LodkaLPC
       - MolotLPC
+      - KrechetLPC
+      - IvarodLPC
       - HindLPC
+      - GargutLPC
+      - VanguardMarkTwoLPC
+      - SternLPC
+      - BogatyrLPC
+      - SunderLPC
       - WeaponSubMachineGunBloodhound
       - WeaponRifleNCWLBatanya
       - WeaponPistolT91
       - WeaponRevolverPython
       - ClothingOuterHardsuitNCWLPetya
-      - VanguardMarkTwoLPC
       - LancerFlatpack
       - WeaponLauncherGM94
-      - IvarodLPC
-      - SternLPC
       - BogatyrFlatpack
       - ClothingOuterHardsuitNCWLJuggernaut
+      - NCWLKukri
+      - ClothingBeltSheathNCWLKukri
       - ClothingUniformJumpsuitExecutiveShinoharaSuit
       - ClothingUniformJumpsuitShinoharaLogistics
       - ClothingOuterShinoharaVest

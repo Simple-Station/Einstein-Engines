@@ -14,7 +14,7 @@
   minPlayers: 0
   stations:
     Spider:
-      stationProto: StandardCrescentExpeditionVessel
+      stationProto: FlagshipCrescentVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Spider {1}'
@@ -23,3 +23,9 @@
             prefixCreator: '14'
         - type: VesselDesignation
           designation: vessel-designation-expeditions
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            APRTMontagneSRM: [ 1, 1 ]
+            APRTHunterSRM: [ 2, 2 ]
+            AcolyteSRM: [ 1, 1 ]

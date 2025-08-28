@@ -4,6 +4,15 @@
   description: job-description-board
   playTimeTracker: JobBoardSHI
   requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 14400
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
+        - Reptilian
+        - Moth
+        - Arachnid
+        - Felinid #makes no sense in lore considering that Felinids are created by SHI's competitors but MLG won't merge the change without this
     - !type:FactionRequirement
       factionID: "SHI"
     - !type:CharacterTraitRequirement
@@ -49,6 +58,8 @@
     jumpsuit: ClothingUniformJumpsuitShinoharaSuit
     shoes: ClothingShoesBootsLaceup
     neck: ClothingNeckTieRed
+    outerClothing: ClothingOuterShinoharaSuitJacket
     id: BoardPDA
     pocket1: TradePassport
     ears: ClothingHeadsetShinohara
+    back: ClothingBackpackSHISatchel
