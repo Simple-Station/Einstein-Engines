@@ -23,6 +23,11 @@
     components:
       - type: ChatRank
         rank: crescent-rank-kanoneer
+      - type: LanguageAdder
+        addSpoken:
+          - SolBasic
+        addUnderstood:
+          - SolBasic
   access:
   - EmergencyShuttleRepealAll
   - Captain

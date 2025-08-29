@@ -30,6 +30,13 @@
     components:
       - type: ChatRank
         rank: crescent-rank-smarts
+      - type: LanguageAdder
+        addSpoken:
+          - SolBasic
+          - Tradeband
+        addUnderstood:
+          - SolBasic
+          - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain

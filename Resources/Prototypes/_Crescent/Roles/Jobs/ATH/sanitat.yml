@@ -26,6 +26,11 @@
       - type: CPRTraining
       - type: SurgerySpeedModifier
         speedModifier: 2
+      - type: LanguageAdder
+        addSpoken:
+          - SolBasic
+        addUnderstood:
+          - SolBasic
   access:
   - EmergencyShuttleRepealAll
   - Captain
