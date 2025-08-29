@@ -19,6 +19,8 @@
     shuttles:
     - Reaver
     - Itch
+    - Cleaver
+    - Eradicator
     - Sinn
 
 - type: entity
@@ -79,6 +81,8 @@
     - Rockchipper
     - Hyena
     - Scabrak
+    - Geode
+    - Thanapod
     - Rattler
 
 - type: entity
@@ -106,6 +110,7 @@
     - Velator
     - Wisp
     - Taipan
+    - Wreck
 
 - type: entity
   id: ZhipovMothershipComputer
@@ -145,10 +150,6 @@
   components:
   - type: ShipyardListing
     shuttles:
-    - Justiciar
-    - Templar
-    - Courageous
-    - Lunge
     - Provost
     - Adjudicator
 

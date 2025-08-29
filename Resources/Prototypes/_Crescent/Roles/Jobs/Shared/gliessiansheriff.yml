@@ -4,7 +4,7 @@
   description: job-description-gliess-sheriff
   playTimeTracker: JobGliessSheriff
   startingGear: GliessSheriffGear
-  icon: "JobIconGliessSheriff"
+  icon: "JobIconMarshal"
   supervisors: job-supervisors-gliess
   requirements:
     - !type:CharacterOverallTimeRequirement
@@ -28,9 +28,12 @@
 - type: startingGear
   id: GliessSheriffGear
   equipment:
-    ears: ClothingHeadsetGrey
-    shoes: ClothingShoesBootsCowboyBrown
-    jumpsuit: ClothingUniformJumpsuitDetective
-    head: ClothingHeadHatCowboyBrown
+    jumpsuit: ClothingUniformJumpsuitCMMOfficer
+    shoes: ClothingShoesBootsCombat
+    head: ClothingHeadHatCMMMarshal
+    gloves: ClothingHandsGlovesCombat
+    belt: ClothingBeltMinutemanPouches
+    pocket1: WeaponRevolverSnubnose
     id: GliessSheriffPDA
-    back: ClothingBackpackSatchelLeatherFilledDSM
+    ears: ClothingHeadsetCMM
+    outerClothing: ClothingOuterArmorCMMCarapace

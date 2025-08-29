@@ -45,7 +45,7 @@
   - type: MovementAlwaysTouching
   - type: ProjectileIFF
     visualType: Square
-    color: "#bd73d0"
+    color: "#cc7be0"
     scale: 1.5
   - type: StaticPrice
     price: 1500
@@ -113,7 +113,7 @@
   - type: MovementAlwaysTouching
   - type: ProjectileIFF
     visualType: Triangle
-    color: "#c87d32"
+    color: "#e08c38"
     scale: 2.5
   - type: StaticPrice
     price: 5000
@@ -242,7 +242,7 @@
   - type: MovementAlwaysTouching
   - type: ProjectileIFF
     visualType: Triangle
-    color: "#af1919"
+    color: "#d11d1d"
     scale: 2
   - type: StaticPrice
     price: 3000
@@ -379,7 +379,7 @@
   - type: MovementAlwaysTouching
   - type: ProjectileIFF
     visualType: Triangle
-    color: "#bd73d0"
+    color: "#ce7de3"
     scale: 2.5
   - type: StaticPrice
     price: 5000
