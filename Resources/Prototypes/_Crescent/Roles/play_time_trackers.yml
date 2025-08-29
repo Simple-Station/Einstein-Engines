@@ -269,6 +269,9 @@
   id: JobGliessSheriff
 
 - type: playTimeTracker
+  id: JobGliessDeputy
+
+- type: playTimeTracker
   id: JobGliessDockmaster
 
 - type: playTimeTracker

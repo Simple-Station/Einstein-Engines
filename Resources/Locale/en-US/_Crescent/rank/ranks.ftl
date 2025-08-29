@@ -6,6 +6,7 @@ crescent-rank-private = PvT.
 
 # independents
 crescent-rank-ind-gliess-sheriff = Sheriff
+crescent-rank-ind-gliess-deputy = Deputy
 crescent-rank-ind-gliess-dockmaster = Dockmaster
 crescent-rank-ind-spacer = Spacer
 
