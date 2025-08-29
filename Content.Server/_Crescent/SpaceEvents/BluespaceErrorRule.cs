@@ -4,7 +4,8 @@ using Content.Server.Cargo.Components;
 using Content.Server.Cargo.Systems;
 using Content.Server.GameTicking;
 using Robust.Server.GameObjects;
-using Robust.Server.Maps;
+using Robust.Shared.EntitySerialization.Systems;
+using Robust.Shared.EntitySerialization;
 using Robust.Shared.Map;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Maps;
@@ -21,6 +22,7 @@ using Content.Shared.Mobs.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Utility;
 
 namespace Content.Server.StationEvents.Events;
 
@@ -44,14 +46,10 @@ public sealed class BluespaceErrorRule : StationEventSystem<BluespaceErrorRuleCo
         base.Started(uid, component, gameRule, args);
 
         var shuttleMap = _mapManager.CreateMap();
-        var options = new MapLoadOptions
-        {
-            LoadMap = true,
-        };
 
-        if (!_map.TryLoad(shuttleMap, component.GridPath, out var gridUids, options))
+        if (!_map.TryLoadGrid(shuttleMap, new ResPath(component.GridPath), out var gridUids))
             return;
-        component.GridUid = gridUids[0];
+        component.GridUid = gridUids.Value.Owner;
         if (component.GridUid is not EntityUid gridUid)
             return;
         component.startingValue = _pricing.AppraiseGrid(gridUid);
