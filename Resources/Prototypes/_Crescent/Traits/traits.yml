@@ -13,16 +13,16 @@
       languagesUnderstood:
         - LowImperial
 
-- type: trait
-  id: HighImperial
-  category: TraitsSpeechLanguages
-  points: -6
-  functions:
-    - !type:TraitModifyLanguages
-      languagesSpoken:
-        - HighImperial
-      languagesUnderstood:
-        - HighImperial
+#- type: trait
+#  id: HighImperial
+#  category: TraitsSpeechLanguages
+#  points: -6
+#  functions:
+#    - !type:TraitModifyLanguages
+#      languagesSpoken:
+#        - HighImperial
+#      languagesUnderstood:
+#        - HighImperial
 
 - type: trait
   id: Dockta
