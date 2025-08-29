@@ -24,6 +24,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
+using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -56,8 +57,9 @@ namespace Content.Server.GameTicking
         [Dependency] private readonly IServerDbManager _db = default!;
         [Dependency] private readonly ArrivalsSystem _arrivals = default!;
         [Dependency] private readonly ChatSystem _chatSystem = default!;
+        [Dependency] private readonly MapLoaderSystem _loader = default!;
+        [Dependency] private readonly SharedMapSystem _map = default!;
         [Dependency] private readonly DamageableSystem _damageable = default!;
-        [Dependency] private readonly MapLoaderSystem _map = default!;
         [Dependency] private readonly GhostSystem _ghost = default!;
         [Dependency] private readonly SharedMindSystem _mind = default!;
         [Dependency] private readonly MobStateSystem _mobState = default!;
