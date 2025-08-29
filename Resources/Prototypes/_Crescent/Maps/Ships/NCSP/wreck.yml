@@ -20,7 +20,7 @@
         - type: VesselIcon
           iffIcon:
             sprite: _Crescent/ShipIcons/ifficons.rsi
-            state: fighter.
+            state: fighter
         - type: StationNameSetup
           mapNameTemplate: 'RC Wreck {1}'
           nameGenerator:
