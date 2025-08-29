@@ -722,6 +722,23 @@
 
 - type: entity
   parent: BaseItem
+  id: ShipVoucherThanapod
+  name: SAW 'Thanapod' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a Shipfitters Aeronautics union Thanapod-class versatile miner pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 45000
+  - type: ShipVoucher
+    ship: Thanapod
+
+- type: entity
+  parent: BaseItem
   id: ShipVoucherHyena
   name: SAW 'Hyena' pattern LPC fabprint disk
   description: An LPC fabprint disk loaded with a Gorlex Security Consulting Hyena-class wrecking tug pattern. Has to be redeemed at a shipyard console.
