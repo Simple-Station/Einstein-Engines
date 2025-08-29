@@ -1,0 +1,41 @@
+﻿{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by WillyBillyGilly for Hullrot",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "cig1"
+    },
+    {
+      "name": "cig2"
+    },
+    {
+      "name": "cig3"
+    },
+    {
+      "name": "cig4"
+    },
+    {
+      "name": "cig5"
+    },
+    {
+      "name": "cig6"
+    },
+    {
+      "name": "cig7"
+    },
+    {
+      "name": "cig8"
+    },
+    {
+      "name": "cig9"
+    },
+    {
+      "name": "cig10"
+    }
+  ]
+}
