@@ -15,6 +15,12 @@
       min: 7200
     - !type:FactionRequirement
       factionID: "SHI"
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
+        - Reptilian
+        - Moth
+        - Arachnid
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
