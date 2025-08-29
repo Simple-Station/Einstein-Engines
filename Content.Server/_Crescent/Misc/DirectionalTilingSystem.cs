@@ -150,18 +150,21 @@ public sealed class DirectionalTilingSystem : EntitySystem
 
     public void OnTileSingularChanged(TileChangedEntry entry, EntityUid tileGrid)
     {
-        EntityCoordinates gridPos = _mapSystem.GridTileToLocal(entry.NewTile.GridUid, map, entry.NewTile.GridIndices);
+        if (!TryComp<MapGridComponent>(tileGrid, out var map))
+            return;
+
+        EntityCoordinates gridPos = _mapSystem.GridTileToLocal(tileGrid, map, entry.GridIndices);
         if (_tiles[entry.OldTile.TypeId] is not ContentTileDefinition contentDefOld)
             return;
         DeleteDirectionalDecals(gridPos);
         if (tileIdToDecals!.ContainsKey(entry.OldTile.TypeId))
             updateNeighbors(map, gridPos, entry.OldTile.TypeId, contentDefOld.DirectionalType, contentDefOld.uniqueDirectionals, true);
-        if (!tileIdToDecals!.ContainsKey(entry.NewTile.Tile.TypeId))
+        if (!tileIdToDecals!.ContainsKey(entry.NewTile.TypeId))
             return;
-        if (_tiles[entry.NewTile.Tile.TypeId] is not ContentTileDefinition contentDef)
+        if (_tiles[entry.NewTile.TypeId] is not ContentTileDefinition contentDef)
             return;
-        updateTile(map, gridPos, entry.NewTile.Tile.TypeId, contentDef.DirectionalType, contentDef.uniqueDirectionals, true);
-        updateNeighbors(map, gridPos, entry.NewTile.Tile.TypeId, contentDef.DirectionalType, contentDef.uniqueDirectionals, false);
+        updateTile(map, gridPos, entry.NewTile.TypeId, contentDef.DirectionalType, contentDef.uniqueDirectionals, true);
+        updateNeighbors(map, gridPos, entry.NewTile.TypeId, contentDef.DirectionalType, contentDef.uniqueDirectionals, false);
     }
 
     public void DeleteDirectionalDecals(EntityCoordinates tileCoordinates)
