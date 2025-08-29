@@ -12,10 +12,13 @@
   canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement
-    - !type:FactionRequirement
-      factionID: "SHI"
     - !type:CharacterOverallTimeRequirement
       min: 36000
+    - !type:FactionRequirement
+      factionID: "SHI"
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -87,3 +90,4 @@
     id: ExecutivePDA
     pocket1: TradePassport
     ears: ClothingHeadsetShinohara
+    back: ClothingBackpackSHISatchel

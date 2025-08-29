@@ -1,0 +1,28 @@
+# Author Info
+# Discord: @fleshangel
+#
+- type: vessel
+  id: Caracal
+  name: SAW Caracal
+  description: Retroffited shipbreaker fighter platform.
+  price: 60000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/NCSP/caracal.yml
+
+- type: gameMap
+  id: Caracal
+  mapName: 'SAW Caracal'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/caracal.yml
+  minPlayers: 0
+  stations:
+    Caracal:
+      stationProto: StandardCrescentVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'SAW Caracal {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-fighter

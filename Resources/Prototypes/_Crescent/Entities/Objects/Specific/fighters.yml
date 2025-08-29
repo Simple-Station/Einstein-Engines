@@ -53,6 +53,17 @@
     scale: 1.5
   - type: StaticPrice
     price: 25000
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 1.25 # 3x3
+        density: 21390 # 15 Tonnes
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
 
 - type: entity
   id: FighterNCWLBroadswordBattery
@@ -105,6 +116,17 @@
     scale: 1.5
   - type: StaticPrice
     price: 15000
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 1.75 # slightly bigger than 3x3
+        density: 21390 # 15 Tonnes
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
 
 - type: entity
   id: FighterNCWLClaymoreBattery
@@ -171,6 +193,17 @@
     scale: 1.5
   - type: StaticPrice
     price: 15000
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 1.25 # 3x3
+        density: 21390 # 15 Tonnes
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
 
 - type: entity
   id: FighterDSMValorBattery
@@ -237,6 +270,17 @@
     scale: 1.5
   - type: StaticPrice
     price: 15000
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 1.75 # slightly bigger than 3x3
+        density: 21390 # 15 Tonnes
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
 
 - type: entity
   id: FighterDSMHonorBattery
@@ -247,6 +291,20 @@
     containers:
       mech-battery-slot:
       - PowerCageUraniumCell
+
+- type: entity
+  name: TFSC Raptor Spawner
+  id: SpawnFighterRaptor
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Crescent/Objects/Specific/bigfighters.rsi
+        state: raptor
+  - type: ConditionalSpawner
+    prototypes:
+      - FighterTFSCRaptorBattery
 
 - type: entity
   id: FighterTFSCRaptor
@@ -289,6 +347,17 @@
     scale: 1.5
   - type: StaticPrice
     price: 15000
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 1.75 # slightly bigger than 3x3
+        density: 21390 # 15 Tonnes
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
 
 - type: entity
   id: FighterTFSCRaptorBattery
@@ -299,6 +368,20 @@
     containers:
       mech-battery-slot:
       - PowerCageUraniumCell
+
+- type: entity
+  name: TFSC Viper Spawner
+  id: SpawnFighterViper
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Crescent/Objects/Specific/bigfighters.rsi
+        state: viper
+  - type: ConditionalSpawner
+    prototypes:
+      - FighterTFSCViperBattery
 
 - type: entity
   id: FighterTFSCViper
@@ -341,6 +424,17 @@
     scale: 1.5
   - type: StaticPrice
     price: 15000
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 1.25 # slightly bigger than 3x3
+        density: 21390 # 15 Tonnes
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
 
 - type: entity
   id: FighterTFSCViperBattery

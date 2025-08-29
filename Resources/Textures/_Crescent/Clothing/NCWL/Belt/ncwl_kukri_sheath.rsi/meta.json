@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "license": "",
+  "copyright": "Original artwork made by no_originality for the Hullrot Project. All rights reserved. Do not copy, use, modify, or redistribute unless with express permission from no_originality.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+        "name": "equipped-BELT",
+        "directions": 4
+    },
+    {
+        "name": "sheath-sabre-equipped-BELT",
+        "directions": 4
+    },
+    {
+        "name": "sheath-sabre"
+    },
+    {
+        "name": "sheath"
+    }
+  ]
+}

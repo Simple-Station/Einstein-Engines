@@ -37,9 +37,8 @@
   equipment:
     ears: ClothingHeadsetGrey
     id: SpacerIDCard
-    jumpsuit: ClothingUniformJumpsuitColorGrey
+    jumpsuit: ClothingUniformSpacer
     back: ClothingBackpackFilled
     shoes: ClothingShoesColorBlack
-  innerClothingSkirt: ClothingUniformJumpskirtColorGrey
   satchel: ClothingBackpackSatchelFilled
   duffelbag: ClothingBackpackDuffelFilled

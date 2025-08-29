@@ -1536,3 +1536,119 @@
     color: orange
     energy: 0.5
   - type: ShipWeaponProjectile
+
+# 48mm - sumitomo and kurosawa
+
+- type: entity
+  id: BulletRocketLowYield
+  name: low-yield rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShipWeaponProjectile
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: grenade
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 320
+    intensitySlope: 2
+    maxIntensity: 320
+  - type: ProjectileIFF
+    visualType: SquareReticle
+    color: Red
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.45,0.15,0.15"
+        layer:
+        - BulletImpassable
+        mask:
+        - Impassable
+        - BulletImpassable
+        hard: true
+      fly-by: *flybyfixture
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ExplodeBehavior
+
+- type: entity
+  id: BulletRocketHighYield
+  name: high-yield rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: grenade
+  - type: ShipWeaponProjectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 650
+    intensitySlope: 25
+    maxIntensity: 650
+  - type: ProjectileIFF
+    visualType: SquareReticle
+    color: Red
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.45,0.15,0.15"
+        layer:
+        - BulletImpassable
+        mask:
+        - Impassable
+        - BulletImpassable
+        hard: true
+      fly-by: *flybyfixture
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ExplodeBehavior
+
+- type: entity
+  id: BulletRocketEMP
+  name: EMP rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag
+  - type: EmpOnTrigger
+    range: 5
+    energyConsumption: 5000
+    disableDuration: 8
+  - type: Ammo
+    muzzleFlash: null
+  - type: PointLight
+    radius: 3.5
+    color: blue
+    energy: 0.5
+  - type: ProjectileIFF

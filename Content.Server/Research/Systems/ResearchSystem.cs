@@ -20,9 +20,13 @@ namespace Content.Server.Research.Systems
         [Dependency] private readonly IGameTiming _timing = default!;
         [Dependency] private readonly AccessReaderSystem _accessReader = default!;
         [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
+        [Dependency] private readonly EntityLookupSystem _lookup = default!;
+
         [Dependency] private readonly SharedPopupSystem _popup = default!;
         [Dependency] private readonly RadioSystem _radio = default!;
         [Dependency] private readonly StationSystem _station = default!;
+
+        private readonly HashSet<Entity<ResearchServerComponent>> ClientLookup = new(); // Frontier: not static
 
         public override void Initialize()
         {
@@ -36,19 +40,20 @@ namespace Content.Server.Research.Systems
         }
 
         /// <summary>
-        /// Gets a server based on it's unique numeric id.
+        /// Gets a server based on its unique numeric id.
         /// </summary>
+        /// <param name="client"></param>
         /// <param name="id"></param>
         /// <param name="serverUid"></param>
         /// <param name="serverComponent"></param>
         /// <returns></returns>
-        public bool TryGetServerById(int id, [NotNullWhen(true)] out EntityUid? serverUid, [NotNullWhen(true)] out ResearchServerComponent? serverComponent)
+        public bool TryGetServerById(EntityUid client, int id, [NotNullWhen(true)] out EntityUid? serverUid, [NotNullWhen(true)] out ResearchServerComponent? serverComponent)
         {
             serverUid = null;
             serverComponent = null;
 
-            var query = EntityQueryEnumerator<ResearchServerComponent>();
-            while (query.MoveNext(out var uid, out var server))
+            var query = GetServers(client).ToList();
+            foreach (var (uid, server) in query)
             {
                 if (server.Id != id)
                     continue;
@@ -134,6 +139,18 @@ namespace Content.Server.Research.Systems
 
             var serverList = list.ToArray();
             return serverList;
+        }
+
+        public HashSet<Entity<ResearchServerComponent>> GetServers(EntityUid client)
+        {
+            ClientLookup.Clear();
+
+            var clientXform = Transform(client);
+            if (clientXform.GridUid is not { } grid)
+                return ClientLookup;
+
+            _lookup.GetGridEntities(grid, ClientLookup);
+            return ClientLookup;
         }
 
         public override void Update(float frameTime)

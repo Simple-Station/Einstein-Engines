@@ -251,6 +251,7 @@ entities:
             1397: 6,11
             1677: 6,11
             1957: 6,11
+            2237: 6,11
         - node:
             zIndex: 1
             angle: -3.141592653589793 rad
@@ -262,6 +263,7 @@ entities:
             1394: 6,10
             1674: 6,10
             1954: 6,10
+            2234: 6,10
         - node:
             zIndex: 1
             angle: -1.5707963267948966 rad
@@ -273,6 +275,7 @@ entities:
             1426: 9,10
             1706: 9,10
             1986: 9,10
+            2266: 9,10
         - node:
             zIndex: 1
             id: ErisCarpetCorner
@@ -289,6 +292,8 @@ entities:
             1708: 9,10
             1970: 7,11
             1988: 9,10
+            2250: 7,11
+            2268: 9,10
         - node:
             angle: -4.71238898038469 rad
             id: ErisCarpetEdge
@@ -305,6 +310,8 @@ entities:
             1676: 6,11
             1953: 6,10
             1956: 6,11
+            2233: 6,10
+            2236: 6,11
         - node:
             angle: -3.141592653589793 rad
             id: ErisCarpetEdge
@@ -333,6 +340,10 @@ entities:
             1966: 7,10
             1976: 8,10
             1984: 9,10
+            2232: 6,10
+            2246: 7,10
+            2256: 8,10
+            2264: 9,10
         - node:
             angle: -1.5707963267948966 rad
             id: ErisCarpetEdge
@@ -349,6 +360,8 @@ entities:
             1705: 9,10
             1968: 7,11
             1985: 9,10
+            2248: 7,11
+            2265: 9,10
         - node:
             id: ErisCarpetEdge
           decals:
@@ -376,6 +389,10 @@ entities:
             1969: 7,11
             1977: 8,10
             1987: 9,10
+            2235: 6,11
+            2249: 7,11
+            2257: 8,10
+            2267: 9,10
         - node:
             zIndex: 1
             id: ErisCarpetOuterCorner
@@ -386,6 +403,7 @@ entities:
             1407: 7,10
             1687: 7,10
             1967: 7,10
+            2247: 7,10
         - node:
             color: '#FFFFFFFF'
             id: FloorTechMaintDirectionalCorner
@@ -588,6 +606,36 @@ entities:
             2159: 9,28
             2166: 9,29
             2196: -9,36
+            2205: 3,1
+            2210: 4,1
+            2215: 5,0
+            2220: 5,8
+            2228: 6,8
+            2242: 7,8
+            2271: 10,9
+            2292: -11,9
+            2297: -11,10
+            2300: -10,9
+            2305: -9,0
+            2314: -4,1
+            2319: -3,1
+            2324: -2,0
+            2329: -10,19
+            2340: -9,28
+            2347: -9,29
+            2358: -8,28
+            2365: -8,29
+            2373: -8,30
+            2381: -7,27
+            2386: -7,28
+            2394: -7,29
+            2402: 7,29
+            2413: 8,28
+            2420: 8,29
+            2428: 8,30
+            2439: 9,28
+            2446: 9,29
+            2476: -9,36
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -779,6 +827,36 @@ entities:
             2169: 9,29
             2174: 10,19
             2185: 9,36
+            2202: 2,0
+            2207: 3,1
+            2212: 4,1
+            2223: 5,8
+            2231: 6,8
+            2245: 7,8
+            2255: 8,8
+            2260: 9,0
+            2273: 10,9
+            2280: 11,9
+            2285: 11,10
+            2302: -10,9
+            2311: -5,0
+            2316: -4,1
+            2321: -3,1
+            2342: -9,28
+            2350: -9,29
+            2360: -8,28
+            2368: -8,29
+            2376: -8,30
+            2389: -7,28
+            2397: -7,29
+            2405: 7,29
+            2415: 8,28
+            2423: 8,29
+            2431: 8,30
+            2441: 9,28
+            2449: 9,29
+            2454: 10,19
+            2465: 9,36
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -933,6 +1011,31 @@ entities:
             2191: -10,35
             2194: -9,36
             2199: -8,39
+            2218: 5,8
+            2226: 6,8
+            2240: 7,8
+            2290: -11,9
+            2295: -11,10
+            2308: -9,6
+            2327: -10,19
+            2332: -10,20
+            2335: -9,20
+            2345: -9,29
+            2353: -8,20
+            2363: -8,29
+            2371: -8,30
+            2379: -7,27
+            2384: -7,28
+            2392: -7,29
+            2400: 7,29
+            2408: 8,20
+            2418: 8,29
+            2426: 8,30
+            2434: 9,20
+            2444: 9,29
+            2471: -10,35
+            2474: -9,36
+            2479: -8,39
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -1087,6 +1190,31 @@ entities:
             2180: 8,39
             2184: 9,36
             2188: 10,35
+            2222: 5,8
+            2230: 6,8
+            2244: 7,8
+            2254: 8,8
+            2263: 9,6
+            2279: 11,9
+            2284: 11,10
+            2337: -9,20
+            2349: -9,29
+            2355: -8,20
+            2367: -8,29
+            2375: -8,30
+            2388: -7,28
+            2396: -7,29
+            2404: 7,29
+            2410: 8,20
+            2422: 8,29
+            2430: 8,30
+            2436: 9,20
+            2448: 9,29
+            2453: 10,19
+            2457: 10,20
+            2460: 8,39
+            2464: 9,36
+            2468: 10,35
         - node:
             id: LatticeEdgeE
           decals:
@@ -1325,6 +1453,44 @@ entities:
             2190: -10,35
             2193: -9,36
             2198: -8,39
+            2203: 3,1
+            2208: 4,1
+            2213: 5,0
+            2217: 5,8
+            2225: 6,8
+            2239: 7,8
+            2269: 10,9
+            2289: -11,9
+            2294: -11,10
+            2298: -10,9
+            2303: -9,0
+            2307: -9,6
+            2312: -4,1
+            2317: -3,1
+            2322: -2,0
+            2326: -10,19
+            2331: -10,20
+            2334: -9,20
+            2338: -9,28
+            2344: -9,29
+            2352: -8,20
+            2356: -8,28
+            2362: -8,29
+            2370: -8,30
+            2378: -7,27
+            2383: -7,28
+            2391: -7,29
+            2399: 7,29
+            2407: 8,20
+            2411: 8,28
+            2417: 8,29
+            2425: 8,30
+            2433: 9,20
+            2437: 9,28
+            2443: 9,29
+            2470: -10,35
+            2473: -9,36
+            2478: -8,39
         - node:
             id: LatticeEdgeN
           decals:
@@ -1578,6 +1744,46 @@ entities:
             2171: 10,19
             2182: 9,36
             2195: -9,36
+            2200: 2,0
+            2204: 3,1
+            2209: 4,1
+            2214: 5,0
+            2219: 5,8
+            2227: 6,8
+            2241: 7,8
+            2252: 8,8
+            2258: 9,0
+            2270: 10,9
+            2275: 11,8
+            2277: 11,9
+            2282: 11,10
+            2287: -11,8
+            2291: -11,9
+            2296: -11,10
+            2299: -10,9
+            2304: -9,0
+            2309: -5,0
+            2313: -4,1
+            2318: -3,1
+            2323: -2,0
+            2328: -10,19
+            2339: -9,28
+            2346: -9,29
+            2357: -8,28
+            2364: -8,29
+            2372: -8,30
+            2380: -7,27
+            2385: -7,28
+            2393: -7,29
+            2401: 7,29
+            2412: 8,28
+            2419: 8,29
+            2427: 8,30
+            2438: 9,28
+            2445: 9,29
+            2451: 10,19
+            2462: 9,36
+            2475: -9,36
         - node:
             id: LatticeEdgeS
           decals:
@@ -1797,6 +2003,42 @@ entities:
             2189: -10,35
             2192: -9,36
             2197: -8,39
+            2216: 5,8
+            2224: 6,8
+            2238: 7,8
+            2251: 8,8
+            2261: 9,6
+            2274: 11,8
+            2276: 11,9
+            2281: 11,10
+            2286: -11,8
+            2288: -11,9
+            2293: -11,10
+            2306: -9,6
+            2325: -10,19
+            2330: -10,20
+            2333: -9,20
+            2343: -9,29
+            2351: -8,20
+            2361: -8,29
+            2369: -8,30
+            2377: -7,27
+            2382: -7,28
+            2390: -7,29
+            2398: 7,29
+            2406: 8,20
+            2416: 8,29
+            2424: 8,30
+            2432: 9,20
+            2442: 9,29
+            2450: 10,19
+            2455: 10,20
+            2458: 8,39
+            2461: 9,36
+            2466: 10,35
+            2469: -10,35
+            2472: -9,36
+            2477: -8,39
         - node:
             id: LatticeEdgeW
           decals:
@@ -2035,6 +2277,44 @@ entities:
             2179: 8,39
             2183: 9,36
             2187: 10,35
+            2201: 2,0
+            2206: 3,1
+            2211: 4,1
+            2221: 5,8
+            2229: 6,8
+            2243: 7,8
+            2253: 8,8
+            2259: 9,0
+            2262: 9,6
+            2272: 10,9
+            2278: 11,9
+            2283: 11,10
+            2301: -10,9
+            2310: -5,0
+            2315: -4,1
+            2320: -3,1
+            2336: -9,20
+            2341: -9,28
+            2348: -9,29
+            2354: -8,20
+            2359: -8,28
+            2366: -8,29
+            2374: -8,30
+            2387: -7,28
+            2395: -7,29
+            2403: 7,29
+            2409: 8,20
+            2414: 8,28
+            2421: 8,29
+            2429: 8,30
+            2435: 9,20
+            2440: 9,28
+            2447: 9,29
+            2452: 10,19
+            2456: 10,20
+            2459: 8,39
+            2463: 9,36
+            2467: 10,35
         - node:
             color: '#FFFFFFFF'
             id: TechCornerE
@@ -3061,6 +3341,11 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -2.5,35.5
+      parent: 1
+  - uid: 1412
+    components:
+    - type: Transform
+      pos: 5.5,6.5
       parent: 1
 - proto: AtmosDeviceFanTiny
   entities:
@@ -4281,12 +4566,12 @@ entities:
   - uid: 1180
     components:
     - type: Transform
-      pos: 0.5,31.5
+      pos: 4.5,35.5
       parent: 1
   - uid: 1181
     components:
     - type: Transform
-      pos: 0.5,32.5
+      pos: 5.5,35.5
       parent: 1
   - uid: 1182
     components:
@@ -5003,6 +5288,286 @@ entities:
     - type: Transform
       pos: -1.5,9.5
       parent: 1
+  - uid: 1414
+    components:
+    - type: Transform
+      pos: -2.5,35.5
+      parent: 1
+  - uid: 1416
+    components:
+    - type: Transform
+      pos: -3.5,35.5
+      parent: 1
+  - uid: 1417
+    components:
+    - type: Transform
+      pos: -4.5,35.5
+      parent: 1
+  - uid: 1418
+    components:
+    - type: Transform
+      pos: -5.5,35.5
+      parent: 1
+  - uid: 1419
+    components:
+    - type: Transform
+      pos: -6.5,35.5
+      parent: 1
+  - uid: 1420
+    components:
+    - type: Transform
+      pos: -7.5,35.5
+      parent: 1
+  - uid: 1421
+    components:
+    - type: Transform
+      pos: -8.5,35.5
+      parent: 1
+  - uid: 1422
+    components:
+    - type: Transform
+      pos: -8.5,36.5
+      parent: 1
+  - uid: 1423
+    components:
+    - type: Transform
+      pos: -8.5,37.5
+      parent: 1
+  - uid: 1424
+    components:
+    - type: Transform
+      pos: -8.5,34.5
+      parent: 1
+  - uid: 1425
+    components:
+    - type: Transform
+      pos: -8.5,33.5
+      parent: 1
+  - uid: 1426
+    components:
+    - type: Transform
+      pos: -4.5,34.5
+      parent: 1
+  - uid: 1427
+    components:
+    - type: Transform
+      pos: -4.5,33.5
+      parent: 1
+  - uid: 1428
+    components:
+    - type: Transform
+      pos: -5.5,36.5
+      parent: 1
+  - uid: 1429
+    components:
+    - type: Transform
+      pos: -5.5,37.5
+      parent: 1
+  - uid: 1430
+    components:
+    - type: Transform
+      pos: -5.5,38.5
+      parent: 1
+  - uid: 1431
+    components:
+    - type: Transform
+      pos: -2.5,36.5
+      parent: 1
+  - uid: 1432
+    components:
+    - type: Transform
+      pos: -2.5,37.5
+      parent: 1
+  - uid: 1433
+    components:
+    - type: Transform
+      pos: -1.5,35.5
+      parent: 1
+  - uid: 1434
+    components:
+    - type: Transform
+      pos: -0.5,35.5
+      parent: 1
+  - uid: 1435
+    components:
+    - type: Transform
+      pos: 0.5,35.5
+      parent: 1
+  - uid: 1436
+    components:
+    - type: Transform
+      pos: 1.5,35.5
+      parent: 1
+  - uid: 1437
+    components:
+    - type: Transform
+      pos: 2.5,35.5
+      parent: 1
+  - uid: 1438
+    components:
+    - type: Transform
+      pos: 3.5,35.5
+      parent: 1
+  - uid: 1439
+    components:
+    - type: Transform
+      pos: 3.5,36.5
+      parent: 1
+  - uid: 1440
+    components:
+    - type: Transform
+      pos: 3.5,37.5
+      parent: 1
+  - uid: 1441
+    components:
+    - type: Transform
+      pos: 0.5,36.5
+      parent: 1
+  - uid: 1442
+    components:
+    - type: Transform
+      pos: 0.5,37.5
+      parent: 1
+  - uid: 1443
+    components:
+    - type: Transform
+      pos: 0.5,34.5
+      parent: 1
+  - uid: 1444
+    components:
+    - type: Transform
+      pos: 0.5,33.5
+      parent: 1
+  - uid: 1445
+    components:
+    - type: Transform
+      pos: 6.5,35.5
+      parent: 1
+  - uid: 1446
+    components:
+    - type: Transform
+      pos: 6.5,36.5
+      parent: 1
+  - uid: 1447
+    components:
+    - type: Transform
+      pos: 6.5,37.5
+      parent: 1
+  - uid: 1448
+    components:
+    - type: Transform
+      pos: 6.5,38.5
+      parent: 1
+  - uid: 1449
+    components:
+    - type: Transform
+      pos: 7.5,35.5
+      parent: 1
+  - uid: 1450
+    components:
+    - type: Transform
+      pos: 8.5,35.5
+      parent: 1
+  - uid: 1451
+    components:
+    - type: Transform
+      pos: 9.5,35.5
+      parent: 1
+  - uid: 1452
+    components:
+    - type: Transform
+      pos: 9.5,36.5
+      parent: 1
+  - uid: 1453
+    components:
+    - type: Transform
+      pos: 9.5,37.5
+      parent: 1
+  - uid: 1454
+    components:
+    - type: Transform
+      pos: 9.5,34.5
+      parent: 1
+  - uid: 1455
+    components:
+    - type: Transform
+      pos: 9.5,33.5
+      parent: 1
+  - uid: 1456
+    components:
+    - type: Transform
+      pos: 5.5,34.5
+      parent: 1
+  - uid: 1457
+    components:
+    - type: Transform
+      pos: 5.5,33.5
+      parent: 1
+  - uid: 1458
+    components:
+    - type: Transform
+      pos: 3.5,38.5
+      parent: 1
+  - uid: 1459
+    components:
+    - type: Transform
+      pos: -2.5,38.5
+      parent: 1
+  - uid: 1460
+    components:
+    - type: Transform
+      pos: -1.5,38.5
+      parent: 1
+  - uid: 1461
+    components:
+    - type: Transform
+      pos: 2.5,38.5
+      parent: 1
+  - uid: 1462
+    components:
+    - type: Transform
+      pos: 1.5,38.5
+      parent: 1
+  - uid: 1463
+    components:
+    - type: Transform
+      pos: -0.5,38.5
+      parent: 1
+  - uid: 1464
+    components:
+    - type: Transform
+      pos: -2.5,39.5
+      parent: 1
+  - uid: 1465
+    components:
+    - type: Transform
+      pos: 3.5,39.5
+      parent: 1
+  - uid: 1466
+    components:
+    - type: Transform
+      pos: -5.5,39.5
+      parent: 1
+  - uid: 1467
+    components:
+    - type: Transform
+      pos: 6.5,39.5
+      parent: 1
+  - uid: 1468
+    components:
+    - type: Transform
+      pos: -4.5,32.5
+      parent: 1
+  - uid: 1469
+    components:
+    - type: Transform
+      pos: 5.5,32.5
+      parent: 1
+  - uid: 1470
+    components:
+    - type: Transform
+      pos: -3.5,21.5
+      parent: 1
 - proto: CableHV
   entities:
   - uid: 1005
@@ -5144,6 +5709,26 @@ entities:
     components:
     - type: Transform
       pos: -1.5,4.5
+      parent: 1
+  - uid: 1413
+    components:
+    - type: Transform
+      pos: -2.5,4.5
+      parent: 1
+  - uid: 1415
+    components:
+    - type: Transform
+      pos: -3.5,3.5
+      parent: 1
+  - uid: 1471
+    components:
+    - type: Transform
+      pos: -1.5,3.5
+      parent: 1
+  - uid: 1472
+    components:
+    - type: Transform
+      pos: -2.5,3.5
       parent: 1
 - proto: CableMV
   entities:
@@ -5576,6 +6161,16 @@ entities:
     components:
     - type: Transform
       pos: -9.5,10.5
+      parent: 1
+  - uid: 1473
+    components:
+    - type: Transform
+      pos: 6.5,6.5
+      parent: 1
+  - uid: 1474
+    components:
+    - type: Transform
+      pos: 5.5,6.5
       parent: 1
 - proto: CableTerminal
   entities:
@@ -6507,7 +7102,7 @@ entities:
         all:
         - 759
         - 760
-        light 'Lancer' MRM missile system:
+        medium 'Lancer' MRM missile system:
         - 759
         - 760
 - proto: CryogenicSleepUnitSpawnerLateJoin
@@ -7392,8 +7987,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -1.5,6.5
       parent: 1
-    - type: GasPressurePump
-      enabled: True
 - proto: GasVentPump
   entities:
   - uid: 1052

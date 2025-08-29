@@ -1,0 +1,104 @@
+- type: job
+  id: UnionfallLeaderDSM
+  name: job-name-unionfall-dsm-leader
+  description: job-description-unionfall-dsm-leader
+  playTimeTracker: ConscriptDSM
+  requirements:
+    - !type:FactionRequirement
+      factionID: "DSM"
+    - !type:CharacterWhitelistRequirement
+    - !type:CharacterOverallTimeRequirement
+      min: 20000
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
+  weight: 9
+  startingGear: UnionfallLeaderDSMGear
+  alwaysUseSpawner: true
+  icon: "JobIconUnionfallDSMLeader"
+  requireAdminNotify: true
+  supervisors: job-supervisors-unionfall-dsm-high
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-dsm-leader
+      - type: HullrotFaction
+        faction: DSM
+      - type: LanguageAdder
+        addSpoken:
+          - HighImperial
+          - LowImperial
+        addUnderstood:
+          - HighImperial
+          - LowImperial
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Mercenary # Frontier
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Service
+  - Empire
+
+- type: startingGear
+  id: UnionfallLeaderDSMGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitImperialGovernor
+    neck: ClothingNeckIFFCyan
+    back: ClothingBackpackDSM
+    shoes: ClothingShoesBootsMagDSM
+    head: ClothingHeadHatImperialBicorne
+    outerClothing: ClothingOuterHardsuitImperialKnight
+    id: KnightPDA
+    belt: ClothingBeltAssaultFilledAdjutant
+    pocket1: DoubleEmergencyOxygenTankFilled
+    pocket2: SyndicateWhistle
+    ears: ClothingHeadsetEmpire
+    suitstorage: WeaponSniperDSMLegax
+    eyes: ClothingEyesHudSecurity
+  inhand:
+    - JetpackBlackFilled
+  storage:
+    back:
+      - BoxMRE
+      - WeaponPistolNeoVolker
+      - CrowbarRed
+      - HandHeldMassScannerEE

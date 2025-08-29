@@ -8,6 +8,7 @@
     sprite: Structures/Windows/mining.rsi
   - type: Icon
     sprite: Structures/Windows/mining.rsi
+    state: full
   - type: Repairable
     fuelCost: 15
     doAfterDelay: 3

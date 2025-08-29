@@ -92,6 +92,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
     }
     private record struct ShuttleCalculatePositionsJob : IParallelRobustJob
     {
+        // modify in the future to use multiple drawing handles incase more objects get added(to prevent multi-threaded rendering artifacts) SPCR 2025
         public int BatchSize => 99999;
 
         public IEntityManager EntManager;

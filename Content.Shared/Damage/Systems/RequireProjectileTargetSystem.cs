@@ -1,16 +1,27 @@
+using Content.Shared.CCVar;
 using Content.Shared.Projectiles;
+using Content.Shared.Random.Helpers;
 using Content.Shared.Weapons.Ranged.Components;
+using Content.Shared.Standing;
 using Robust.Shared.Physics.Events;
-using Content.Shared.Mobs;
+using Robust.Shared.Configuration;
+using Robust.Shared.Containers;
+using Robust.Shared.Timing;
+
 
 namespace Content.Shared.Damage.Components;
 
 public sealed class RequireProjectileTargetSystem : EntitySystem
 {
+    [Dependency] private readonly IConfigurationManager _cfgManager = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
+
     public override void Initialize()
     {
         SubscribeLocalEvent<RequireProjectileTargetComponent, PreventCollideEvent>(PreventCollide);
-        SubscribeLocalEvent<RequireProjectileTargetComponent, MobStateChangedEvent>(CritBulletPass);
+        SubscribeLocalEvent<RequireProjectileTargetComponent, StoodEvent>(StandingBulletHit);
+        SubscribeLocalEvent<RequireProjectileTargetComponent, DownedEvent>(LayingBulletPass);
     }
 
     private void PreventCollide(Entity<RequireProjectileTargetComponent> ent, ref PreventCollideEvent args)
@@ -22,10 +33,37 @@ public sealed class RequireProjectileTargetSystem : EntitySystem
             return;
 
         var other = args.OtherEntity;
-        if (HasComp<ProjectileComponent>(other) &&
+        if (TryComp(other, out ProjectileComponent? projectile) &&
             CompOrNull<TargetedProjectileComponent>(other)?.Target != ent)
         {
-            args.Cancelled = true;
+            // Prevents shooting out of while inside of crates
+            var shooter = projectile.Shooter;
+            if (!shooter.HasValue)
+                return;
+
+
+            if (!_container.IsEntityOrParentInContainer(shooter.Value))
+            {
+                var hitChance = _cfgManager.GetCVar(CCVars.ProneMobHitChance);
+
+                // Check if this entity is a mob capable of going prone
+                // Skip if false or hit chance is 0
+                if (hitChance > 0 && HasComp<StandingStateComponent>(ent))
+                {
+                    // TODO: Replace with RandomPredicted once the engine PR is merged
+                    var seed = SharedRandomExtensions.HashCodeCombine(new() { (int) _timing.CurTick.Value, GetNetEntity(other).Id });
+                    var rand = new System.Random(seed);
+
+                    if (hitChance < 100 && hitChance <= rand.Next(100))
+                    {
+                        args.Cancelled = true;
+                    }
+                }
+            }
+            else
+            {
+                args.Cancelled = true;
+            }
         }
     }
 
@@ -37,15 +75,14 @@ public sealed class RequireProjectileTargetSystem : EntitySystem
         ent.Comp.Active = value;
         Dirty(ent);
     }
-    private void CritBulletPass(Entity<RequireProjectileTargetComponent> ent, ref MobStateChangedEvent args)
+
+    private void StandingBulletHit(Entity<RequireProjectileTargetComponent> ent, ref StoodEvent args)
     {
-        if (args.NewMobState is MobState.SoftCritical or MobState.Critical or MobState.Dead)
-        {
-            SetActive(ent, true);
-        }
-        else
-        {
-            SetActive(ent, false);
-        }
+        SetActive(ent, false);
+    }
+
+    private void LayingBulletPass(Entity<RequireProjectileTargetComponent> ent, ref DownedEvent args)
+    {
+        SetActive(ent, true);
     }
 }

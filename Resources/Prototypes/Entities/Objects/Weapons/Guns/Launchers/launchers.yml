@@ -89,7 +89,7 @@
   - type: GunRequiresWield
   - type: Item
     shape:
-    - 0,0,5,2
+    - 0,0,4,2
   - type: Gun
     fireRate: 0.5
     soundGunshot:
@@ -98,6 +98,7 @@
     whitelist:
       tags:
         - CartridgeRocket
+        - CartridgeSmallRocket
     proto: CartridgeRocket
     capacity: 1
     soundInsert:

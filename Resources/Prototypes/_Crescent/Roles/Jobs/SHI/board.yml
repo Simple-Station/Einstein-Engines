@@ -12,8 +12,14 @@
   canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement
+    - !type:CharacterOverallTimeRequirement
+      min: 14400
     - !type:FactionRequirement
       factionID: "SHI"
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Oni
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -50,6 +56,8 @@
     jumpsuit: ClothingUniformJumpsuitShinoharaSuit
     shoes: ClothingShoesBootsLaceup
     neck: ClothingNeckTieRed
+    outerClothing: ClothingOuterShinoharaSuitJacket
     id: BoardPDA
     pocket1: TradePassport
     ears: ClothingHeadsetShinohara
+    back: ClothingBackpackSHISatchel

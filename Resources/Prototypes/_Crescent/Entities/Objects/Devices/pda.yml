@@ -1144,6 +1144,50 @@
   - type: Icon
     state: pda-bartender
 
+#anti psionic response team
+
+- type: entity
+  parent: BasePDA
+  id: APRTKanoneerPDA
+  name: panzerfeldwebel's PDA
+  description: Gunmetal gray.
+  components:
+  - type: Pda
+    id: APRTIDCardKanoneer
+    state: pda-bartender
+  - type: PdaBorderColor
+    borderColor: "#535961"
+  - type: Icon
+    state: pda-bartender
+
+- type: entity
+  parent: BasePDA
+  id: APRTSanitatPDA
+  name: panzersanitat's PDA
+  description: Gunmetal gray.
+  components:
+  - type: Pda
+    id: APRTIDCardSanitat
+    state: pda-bartender
+  - type: PdaBorderColor
+    borderColor: "#535961"
+  - type: Icon
+    state: pda-bartender
+
+- type: entity
+  parent: BasePDA
+  id: APRTSoldatPDA
+  name: panzergrenadier's PDA
+  description: Gunmetal gray.
+  components:
+  - type: Pda
+    id: APRTIDCardSoldat
+    state: pda-bartender
+  - type: PdaBorderColor
+    borderColor: "#535961"
+  - type: Icon
+    state: pda-bartender
+
 
 #misc
 

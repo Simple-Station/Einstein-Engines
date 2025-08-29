@@ -105,7 +105,7 @@ job-description-spacer = Be an independent citizen of Taypan.
 job-description-gliess-sheriff = Keep the law in Gliess Santo.
 job-description-gliess-dockmaster = Make sure nobody blows up your station.
 
-# conscript-ncwl
+# conscript-ncwl - for PLANETFALL
 job-description-conscript-ncwl-ship-captain = Pilot the Clementine. Ensure it's safety and use its armaments well. Go down with the ship.
 job-description-conscript-ncwl-ship-crew = Man the guns and fix holes. Load ammo. Help the soldiers do their job. Don't leave the ship.
 job-description-conscript-ncwl-leader = Lead the remnants of the NCWL. Ensure the League takes control of Vladzena.
@@ -118,7 +118,7 @@ job-description-conscript-ncwl-smg = Punish overconfidence. Make them keep their
 job-description-conscript-ncwl-rifleman = Be the rank and file. Be the corpses the League will stand on. (Bolt-action Rifle)
 job-description-conscript-ncwl-cadet = Listen to your superiors. Keep your head down and learn. (Bolt-action Rifle)
 
-# conscript-dsm
+# conscript-dsm - for PLANETFALL
 job-description-conscript-dsm-ship-captain = Pilot the Nemesis. Ensure it's safety and use its armaments well. Go down with the ship.
 job-description-conscript-dsm-ship-crew = Man the guns and fix holes. Load ammo. Help the soldiers do their job. Don't leave the ship.
 job-description-conscript-dsm-leader = Lead the punishment regimen. Reclaim the honor of your house. Stamp out the League.
@@ -130,3 +130,21 @@ job-description-conscript-dsm-shotgun = Punch through enemy lines. Be the first 
 job-description-conscript-dsm-smg = Punish overconfidence. Make them keep their head down. (Submachine Gun)
 job-description-conscript-dsm-rifleman = Be the rank and file. Be the corpses the League will stand on. (Lever-action Rifle)
 job-description-conscript-dsm-cadet = Listen to your superiors. Keep your head down and learn. (Lever-action Rifle)
+
+# unionfall-ncwl
+job-description-unionfall-ncwl-ship-captain = Pilot the fleet's anchors. Coordinate with other vessels. Go down with your ship.
+job-description-unionfall-ncwl-ship-crew = Man the guns and fix holes. Load ammo. Don't leave the ship. Listen to the Grand Steward.
+job-description-unionfall-ncwl-leader = Lead the remnants of the NCWL. Ensure the League survives and eliminates its enemies.
+job-description-unionfall-ncwl-officer = Lead small squads. Ensure cohesion. Listen to the Kommandant.
+job-description-unionfall-ncwl-doctor = Keep your comrades alive.
+job-description-unionfall-ncwl-rifleman = Be the rank and file. Pilot fighters and ultralights. Listen to your superiors.
+job-description-unionfall-ncwl-cadet = Listen to your superiors. Keep your head down and learn.
+
+# unionfall-dsm
+job-description-unionfall-dsm-ship-captain = Pilot the fleet's anchors. Coordinate with other vessels. Go down with your ship.
+job-description-unionfall-dsm-ship-crew = Man the guns and fix holes. Load ammo. Don't leave the ship. Listen to the Grand Steward.
+job-description-unionfall-dsm-leader = Lead the punishment regimen. Reclaim the honor of your house. Stamp out the League.
+job-description-unionfall-dsm-officer = Lead small squads. Ensure cohesion. Listen to the Knight-Bannaret.
+job-description-unionfall-dsm-doctor = Keep your fellow men alive.
+job-description-unionfall-dsm-rifleman = Be the rank and file. Pilot fighters and ultralights. Listen to your superiors.
+job-description-unionfall-dsm-cadet = Listen to your superiors. Keep your head down and learn.

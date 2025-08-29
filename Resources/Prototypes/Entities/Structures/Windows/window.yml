@@ -21,10 +21,10 @@
       - WeldbotFixableStructure
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/window.rsi
+    sprite: _Crescent/Structures/newWindow.rsi
   - type: Icon
-    sprite: Structures/Windows/window.rsi
-    state: full
+    sprite: _Crescent/Structures/newWindow.rsi
+    state: windowfull
   - type: Physics
     bodyType: Static
   - type: Fixtures

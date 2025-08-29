@@ -1,0 +1,101 @@
+- type: job
+  id: UnionfallShipCaptainNCWL
+  name: job-name-unionfall-ncwl-ship-captain
+  description: job-description-unionfall-ncwl-ship-captain
+  playTimeTracker: ConscriptNCWL
+  requirements:
+    - !type:FactionRequirement
+      factionID: "NCWL"
+    - !type:CharacterOverallTimeRequirement
+      min: 20000
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - WheelchairBound
+  weight: 11
+  startingGear: UnionfallShipCaptainNCWLGear
+  alwaysUseSpawner: true
+  icon: "JobIconUnionfallNCWLCaptain"
+  requireAdminNotify: true
+  supervisors: job-supervisors-unionfall-ncwl-high
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ncwl-captain
+      - type: HullrotFaction
+        faction: NCWL
+      - type: LanguageAdder
+        addSpoken:
+          - Dockta
+        addUnderstood:
+          - Dockta
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Command
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Mercenary # Frontier
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - NCWLGeneral
+  - NCWLKommissar
+  - NCWLJail
+  - NCWLArmory
+  - NCWLCommand
+
+- type: startingGear
+  id: UnionfallShipCaptainNCWLGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNCWLCommunications
+    neck: ClothingNeckIFFOrange
+    id: NCWLHomeguardLeaderPDA
+    ears: ClothingHeadsetNCWL
+    shoes: ClothingShoesBootsMagNCWL
+    outerClothing: ClothingOuterCoatJacketJamrock
+    head: ClothingHeadHatNCWLBeretAdmiral
+    belt: ClothingBeltAssaultFilledCrew #looks better
+    pocket1: DoubleEmergencyOxygenTankFilled
+    back: ClothingBackpackNCWL
+    gloves: ClothingHandsGlovesCombat
+    eyes: ClothingEyesHudSecurity
+    suitstorage: WeaponPistolT91
+  storage:
+    back:
+      - VoidsuitKitNCWL
+      - BoxMRE
+      - WeaponPistolT91

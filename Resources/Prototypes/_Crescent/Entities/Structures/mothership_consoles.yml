@@ -29,6 +29,7 @@
   - type: ShipyardListing
     shuttles:
     - Redemptor
+    - Torturer
     - Ibis
     - Impel
     - Gnosis
@@ -75,12 +76,10 @@
   - type: ShipyardListing
     shuttles:
     - Shanty
-    - Amadeus
-    - Hyena
-    - Rattler
-    - Scabrak
-    - Geode
     - Rockchipper
+    - Hyena
+    - Scabrak
+    - Rattler
 
 - type: entity
   id: TatsumotoMothershipComputer

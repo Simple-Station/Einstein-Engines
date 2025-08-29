@@ -86,7 +86,7 @@
 - type: startingGear
   id: OverseerNCWLGear
   equipment:
-    shoes: ClothingShoesBootsJack
+    shoes: ClothingShoesBootsCombat
     jumpsuit: ClothingUniformJumpsuitNCWLKommissar
     id: NCWLHomeguardLeaderPDA
     outerClothing: ClothingOuterArmorNCWLCarapace

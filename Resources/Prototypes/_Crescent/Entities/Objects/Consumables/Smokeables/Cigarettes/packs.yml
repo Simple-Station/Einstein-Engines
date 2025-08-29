@@ -1,0 +1,397 @@
+- type: entity
+  id: CigPackCRESCENTBase
+  parent: [ BaseStorageItem, BaseBagOpenClose ]
+  name: crescent cigarette pack (don't map)
+  abstract: true
+  components:
+  - type: Sprite
+    layers:
+    - state: closed
+    - state: open
+      map: ["openLayer"]
+      visible: false
+    - state: cig1
+      map: ["cig1"]
+      sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/visualizer.rsi
+      visible: false
+    - state: cig2
+      map: ["cig2"]
+      sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/visualizer.rsi
+      visible: false
+    - state: cig3
+      map: ["cig3"]
+      sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/visualizer.rsi
+      visible: false
+    - state: cig4
+      map: ["cig4"]
+      sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/visualizer.rsi
+      visible: false
+    - state: cig5
+      map: ["cig5"]
+      sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/visualizer.rsi
+      visible: false
+    - state: cig6
+      map: ["cig6"]
+      sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/visualizer.rsi
+      visible: false
+    - state: cig7
+      map: [ "cig7" ]
+      sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/visualizer.rsi
+      visible: false
+    - state: cig8
+      map: [ "cig8" ]
+      sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/visualizer.rsi
+      visible: false
+    - state: cig9
+      map: [ "cig9" ]
+      sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/visualizer.rsi
+      visible: false
+    - state: cig10
+      map: [ "cig10" ]
+      sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/visualizer.rsi
+      visible: false
+  - type: Tag
+    tags:
+    - CigPack
+    - Trash
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 50
+  - type: SpaceGarbage
+  - type: Item
+    size: Tiny
+    shape: # Yes, this is cursed, but it breaks otherwise, dont question it.
+    - 0,0,0,1
+  - type: Storage
+    grid:
+    - 0,0,4,1
+  - type: StorageFill
+    contents:
+    - id: Cigarette
+      amount: 10
+  - type: ItemCounter
+    count:
+      tags: [Cigarette]
+    composite: true
+    layerStates:
+    - cig1
+    - cig2
+    - cig3
+    - cig4
+    - cig5
+    - cig6
+    - cig7
+    - cig8
+    - cig9
+    - cig10
+  - type: Appearance
+
+
+- type: entity
+  id: CigPackFilterless
+  parent: CigPackCRESCENTBase
+  name: Filterless packet
+  description: Filterless cigarettes. For those who simply can't care any more.
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/filterless.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/filterless.rsi
+
+- type: entity
+  id: CigPackNCWL
+  parent: CigPackCRESCENTBase
+  name: Union Star packet
+  description: Quality cigarettes from Chengridz. Stars issued en mass to the Workers hands.
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/ncwl_cigs.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/ncwl_cigs.rsi
+
+- type: entity
+  id: CigPackEmpire
+  parent: CigPackCRESCENTBase
+  name: Royal packet
+  description: Made from the tobacco rejected from the prestigious Cigars of the Imperial Brand.
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/royal.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/royal.rsi
+
+- type: entity
+  id: CigPackSHI
+  parent: CigPackCRESCENTBase
+  name: Shinohara Smokes
+  description: Light one up, take a drag. Put it in your ashtray, get back to work and forget about it.
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/shi_cigs.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/shi_cigs.rsi
+
+- type: entity
+  id: CigPackSHI_Menthol
+  parent: CigPackCRESCENTBase
+  name: Shinohara Menthols
+  description: For those seven minutes of quiet, desperate, relief. Only hours through your shift.
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/shi_menthol.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/shi_menthol.rsi
+
+- type: entity
+  id: CigPackFreeports
+  parent: CigPackCRESCENTBase
+  name: Freeports pack
+  description: What port? Freeport! Now with less plasteel dust.
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/freeports.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/freeports.rsi
+
+- type: entity
+  id: CigPackInterdyne_Real
+  parent: CigPackCRESCENTBase
+  name: Interdyne non-synthetic pack
+  description: Real tobacco, not a taint of manipulation. You trust Interdyne?
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/interdyne_real.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/interdyne_real.rsi
+
+- type: entity
+  id: CigPackInterdynes
+  parent: CigPackCRESCENTBase
+  name: Interdyne synthetic pack
+  description: For when you just need to kill a craving. And yourself ever so slightly.
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/interdynes.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/interdynes.rsi
+
+- type: entity
+  id: CigPackInterdyne_Drug
+  parent: CigPackCRESCENTBase
+  name: Interdyne recreationals pack
+  description: Just something to take the edge off after a long haul cruise. Or during.
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/interdynes_drug.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/interdynes_drug.rsi
+  - type: StorageFill
+    contents:
+    - id: CrescentCigaretteSpaceDrugs
+      amount: 10
+
+- type: entity
+  id: CigPackInterdyne_Herbal
+  parent: CigPackCRESCENTBase
+  name: Interdyne herbals pack
+  description: A perfect strain that is guaranteed to make you relax. Smells like a felinids toilet.
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/interdynes_herbal.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/interdynes_herbal.rsi
+  - type: StorageFill
+    contents:
+    - id: CrescentCigaretteTHC
+      amount: 10
+
+
+- type: entity
+  id: CigPackInterdyne_Psy
+  parent: CigPackCRESCENTBase
+  name: Interdyne psion-active pack
+  description: Something special for those who dare to pry open their third eye.
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/interdynes_psy.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/interdynes_psy.rsi
+  - type: StorageFill
+    contents:
+    - id: CrescentCigaretteLotophagoiOil
+      amount: 10
+
+- type: entity
+  id: CigPackLucky
+  parent: CigPackCRESCENTBase
+  name: Luckies pack
+  description: Always Smooth. Always Luckies. Rarer than you can imagine.
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/lucky.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/lucky.rsi
+
+- type: entity
+  id: CigPackLucky_Menthol
+  parent: CigPackCRESCENTBase
+  name: Luckies menthol pack
+  description: Shake hands with Luckies Green. Rarer than you can imagine.
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/lucky_menthol.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/lucky_menthol.rsi
+
+- type: entity
+  id: CigPackMarlboro
+  parent: CigPackCRESCENTBase
+  name: Marlboro pack
+  description: Come to where the flavor is. Come to Marlboro country. Rarer than you can imagine.
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/marlboro.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/marlboro.rsi
+
+- type: entity
+  id: CigPackMarlboro_Menthol
+  parent: CigPackCRESCENTBase
+  name: Marlboro menthol pack
+  description: Theres a New Cigarette in Marlboro Country. Rarer than you can imagine.
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/marlboro_menthol.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/marlboro_menthol.rsi
+
+- type: entity
+  id: CigPackMarlboro_Real
+  parent: CigPackCRESCENTBase
+  name: Marlboro lights pack
+  description: The spirit of Marlboro in a low tar cigarette. Rarer than you can imagine.
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/marlboro_real.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/marlboro_real.rsi
+
+- type: entity
+  id: CigPackNewports
+  parent: CigPackCRESCENTBase
+  name: Newport pack
+  description: Alive with Pleasure. Rarer than you can imagine.
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/newports.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/newports.rsi
+
+- type: entity
+  id: CigPackNT
+  parent: CigPackCRESCENTBase
+  name: Nanotrasen pack
+  description: Plain and straightforward. Its reputation precedes it.
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/nt_cigs.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/nt_cigs.rsi
+  - type: StorageFill
+    contents:
+    - id: CrescentCigaretteNanotrasen
+      amount: 10
+
+- type: entity
+  id: CigPackRecreatios_Crack
+  parent: CigPackCRESCENTBase
+  name: Recreatios pack
+  description: Commonly seen in the hands of Spacers. Light blue. Crash.
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/recreatios_crack.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/recreatios_crack.rsi
+  - type: StorageFill
+    contents:
+    - id: CrescentCigaretteCrash
+      amount: 10
+
+- type: entity
+  id: CigPackRecreatios_Meth
+  parent: CigPackCRESCENTBase
+  name: Recreatios pack
+  description: Commonly seen in the hands of Spacers. Light green. Bloodeye.
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/recreatios_meth.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/recreatios_meth.rsi
+  - type: StorageFill
+    contents:
+    - id: CrescentCigaretteBloodeye
+      amount: 10
+
+- type: entity
+  id: CigPackRecreatios_Psy
+  parent: CigPackCRESCENTBase
+  name: Recreatios pack
+  description:  Commonly seen in the hands of Spacers. Dark Green? Interesting.
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/recreatios_psy.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/recreatios_psy.rsi
+  - type: StorageFill
+    contents:
+    - id: CrescentCigaretteLotophagoiOil
+      amount: 10
+
+- type: entity
+  id: CigPackRecreatios_Weed
+  parent: CigPackCRESCENTBase
+  name: Recreatios pack
+  description: Commonly seen in the hands of Spacers. Plain Green. Weed.
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/recreatios_weed.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/recreatios_weed.rsi
+  - type: StorageFill
+    contents:
+    - id: CrescentCigaretteTHC
+      amount: 10
+
+- type: entity
+  id: CigPackTimmys
+  parent: CigPackCRESCENTBase
+  name: Timmys pack
+  description: A childhood favourite. Familiar and nostalgic.
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/timmys.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigarettes/Packs/timmys.rsi

@@ -3,7 +3,7 @@
 #
 - type: vessel
   id: Amadeus
-  name: NCSP Amadeus
+  name: SAW Amadeus
   description: A shielded, lightly-armed defense corvette.
   price: 125000
   category: Medium
@@ -12,7 +12,7 @@
 
 - type: gameMap
   id: Amadeus
-  mapName: 'NCSP Amadeus'
+  mapName: 'SAW Amadeus'
   mapPath: /Maps/_Crescent/Shuttles/NCSP/amadeus.yml
   minPlayers: 0
   stations:

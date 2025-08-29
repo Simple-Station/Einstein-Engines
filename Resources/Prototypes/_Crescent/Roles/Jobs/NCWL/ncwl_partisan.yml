@@ -42,6 +42,7 @@
   - Service
   - NCWLGeneral
   - NCWLJail
+  - NCWLArmory
   - External
   - Mercenary # Frontier
   - Captain # Frontier
@@ -49,7 +50,7 @@
 - type: startingGear
   id: SoldatNCWLGear
   equipment:
-    shoes: ClothingShoesBootsJack
+    shoes: ClothingShoesBootsCombat
     jumpsuit: ClothingUniformJumpsuitNCWL
     id: NCWLHomeguardSoldatPDA
     outerClothing: ClothingOuterArmorNCWLHeavyCarapace

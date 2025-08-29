@@ -31,6 +31,7 @@
       - SmokeOnTrigger
       - ExplodeOnTrigger
       - FlashOnTrigger
+      - EmpOnTrigger
 
 - type: entity
   name: pistol case
@@ -403,6 +404,7 @@
 
 - type: entity
   name: charge rifle case
+  abstract: true
   id: WeaponCaseChargeRifle
   parent: ToolboxBase
   description: A reinforced casing for storing weapons and accessories.
@@ -444,6 +446,7 @@
 
 - type: entity
   name: porodshok case
+  abstract: true
   id: WeaponCasePorodshok
   parent: ToolboxBase
   description: A reinforced casing for storing weapons and accessories.
@@ -485,6 +488,7 @@
 
 - type: entity
   name: zodum case
+  abstract: true
   id: WeaponCaseZodum
   parent: ToolboxBase
   description: A reinforced casing for storing weapons and accessories.
@@ -526,6 +530,7 @@
 
 - type: entity
   name: madrugada case
+  abstract: true
   id: WeaponCaseMadrugada
   parent: ToolboxBase
   description: A reinforced casing for storing weapons and accessories.
