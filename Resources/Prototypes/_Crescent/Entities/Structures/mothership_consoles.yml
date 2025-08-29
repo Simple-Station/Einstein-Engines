@@ -76,13 +76,12 @@
   - type: ShipyardListing
     shuttles:
     - Shanty
-    - Amadeus
+    - Rockchipper
     - Hyena
-    - Rattler
     - Scabrak
     - Geode
-    - Rockchipper
     - Thanapod
+    - Rattler
 
 - type: entity
   id: TatsumotoMothershipComputer

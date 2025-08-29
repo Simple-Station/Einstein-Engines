@@ -1,6 +1,6 @@
 - type: gameMap
   id: Dochenskaya
-  mapName: 'Dochenskaya-Hyundari Engineering And Research Platform'
+  mapName: 'Dochenskaya-Hyundari Engineering Outpost'
   mapPath: /Maps/_Crescent/Stations/dochenskaya.yml
   minPlayers: 0
   stations:
@@ -8,7 +8,7 @@
       stationProto: StandardCrescentStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Dochenskaya-Hyundari Engineering And Research Platform'
+          mapNameTemplate: 'Dochenskaya-Hyundari Engineering Outpost'
         - type: Grammar
           attributes:
             proper: true
@@ -16,11 +16,11 @@
           designation: vessel-designation-outpost
         - type: StationJobs
           overflowJobs: []
-          availableJobs: #20 total
+          availableJobs: #10 total
             ForemanNCSP: [ 1, 1 ]
             ShipbreakerNCSP: [ 9, 9 ]
-            IntelligenceOfficerNCSP: [1,1]
-            OperativeNCSP: [6,6]
-            CyberdawnTechNCSP: [3,3]
+
+
+
 
 

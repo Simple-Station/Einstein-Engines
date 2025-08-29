@@ -7,6 +7,9 @@
     - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
       min: 35000
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
     - !type:FactionRequirement
       factionID: "SHI"
     - !type:CharacterTraitRequirement
@@ -53,6 +56,7 @@
     shoes: ClothingShoesBootsCombat
     gloves: ClothingHandsGlovesCombat
     id: HighsecPDA
+    eyes: ClothingEyesGlassesSunglasses
     ears: ClothingHeadsetShinohara
     pocket1: Handcuffs
     pocket2: TradePassport
