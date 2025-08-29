@@ -70,22 +70,15 @@
     allowedEmotes: ['Click', 'Chitter', 'Hiss'] # DeltaV: Added Hiss
   - type: LanguageKnowledge
     speaks:
-    - TauCetiBasic
-    - Moffic
+    - Atyrian
     understands:
-    - TauCetiBasic
-    - Moffic
+    - Atyrian
+    - TauCetiBasic #needed for vending machines
   - type: Vocal
     sounds:
       Male: UnisexArachnid
       Female: UnisexArachnid
       Unsexed: UnisexArachnid
-  - type: LanguageKnowledge
-    speaks:
-    - Atyrian
-    understands:
-    - Atyrian
-    - TauCetiBasic #needed for vending machines
   - type: TypingIndicator
     proto: spider
   - type: PotentiaModifier

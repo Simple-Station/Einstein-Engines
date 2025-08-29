@@ -66,9 +66,9 @@
   - type: Wagging
   - type: LanguageKnowledge
     speaks:
-    - Atyrian
+    - Draconic
     understands:
-    - Atyrian
+    - Draconic
     - TauCetiBasic #needed for vending machines and anything else
   - type: FootPrints
     leftBarePrint: "footprint-left-bare-lizard"

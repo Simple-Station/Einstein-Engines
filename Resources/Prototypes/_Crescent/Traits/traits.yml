@@ -1,7 +1,7 @@
 - type: trait
   id: LowImperial
   category: TraitsSpeechLanguages
-  points: -6
+  points: -4
   requirements:
     - !type:CharacterNationalityRequirement
       inverted: true
@@ -27,7 +27,7 @@
 - type: trait
   id: Dockta
   category: TraitsSpeechLanguages
-  points: -6
+  points: -4
   requirements:
     - !type:FactionRequirement
       inverted: true
@@ -42,7 +42,7 @@
 - type: trait
   id: Freespeak
   category: TraitsSpeechLanguages
-  points: -6
+  points: -4
   requirements:
     - !type:FactionRequirement
       inverted: true
@@ -57,7 +57,7 @@
 - type: trait
   id: Kaishago
   category: TraitsSpeechLanguages
-  points: -6
+  points: -4
   requirements:
     - !type:FactionRequirement
       inverted: true
@@ -72,7 +72,7 @@
 - type: trait
   id: Clarizian
   category: TraitsSpeechLanguages
-  points: -6
+  points: -4
   requirements:
     - !type:CharacterNationalityRequirement
       inverted: true
@@ -88,7 +88,7 @@
 - type: trait
   id: SolBasic
   category: TraitsSpeechLanguages
-  points: -6
+  points: -4
   requirements:
     - !type:CharacterNationalityRequirement
       inverted: true
