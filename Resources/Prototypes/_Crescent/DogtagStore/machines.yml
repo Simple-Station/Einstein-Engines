@@ -121,3 +121,9 @@
   id: SAWDogtagStore
   name: SAWs requisitions autopeddler
   description: A stolen Shinohara-patented autopeddler machine. Uses an integrated, lobotomized zircon-class artifical intelligence subcore to sell you things. Provided you have the Scrap.
+
+- type: entity
+  parent: [ BaseStructureUnanchorable, BaseStore, StorePresetHullrotDogtagGSC ]
+  id: GSCDogtagStore
+  name: GSCs requisitions autopeddler
+  description: A stolen Shinohara-patented autopeddler machine. Uses an integrated, lobotomized zircon-class artifical intelligence subcore to sell you things. Provided you have the Bounty.

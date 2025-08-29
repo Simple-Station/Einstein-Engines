@@ -19,6 +19,8 @@
     shuttles:
     - Reaver
     - Itch
+    - Cleaver
+    - Eradicator
     - Sinn
 
 - type: entity
@@ -79,6 +81,8 @@
     - Rockchipper
     - Hyena
     - Scabrak
+    - Geode
+    - Thanapod
     - Rattler
 
 - type: entity

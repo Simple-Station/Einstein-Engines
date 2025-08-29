@@ -67,6 +67,12 @@
         - GarbageOre5
         - GarbageOre10
         - GarbageOre25
+        - ScrapPlasma1
+        - ScrapPlasma3
+        - ScrapPlasma5
+        - ScrapUranium1
+        - ScrapUranium3
+        - ScrapUranium5
         - DelamDisk
         - DelamDiskThumb
       chance: 0.9
@@ -109,6 +115,10 @@
         - SalvageHumanCorpse
       rareChance: 0.01
       prototypes:
+        - ScrapCircuit1
+        - ScrapCircuit5
+        - ScrapCircuit10
+        - ScrapCircuit20
         - BasicElectronics1
         - BasicElectronics3
         - BasicElectronics5

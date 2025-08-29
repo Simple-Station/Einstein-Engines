@@ -643,6 +643,19 @@
   - type: StaticPrice
     price: 500
 
+- type: entity
+  parent: BaseFlatpack
+  id: ScrapMagnetFlatpack
+  name: SHI baromagnetic scrap magnet array flatpack
+  description: Parts used to build an scrap magnet. Activate with a multitool to deploy.
+  components:
+  - type: Flatpack
+    entity: ScrapMagnet
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 500
 
 - type: entity
   parent: BaseFlatpack
