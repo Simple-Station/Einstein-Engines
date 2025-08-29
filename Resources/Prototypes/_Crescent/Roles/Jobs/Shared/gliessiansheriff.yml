@@ -7,7 +7,7 @@
     - !type:CharacterOverallTimeRequirement
       min: 4000
   startingGear: GliessSheriffGear
-  icon: "JobIconGliessSheriff"
+  icon: "JobIconMarshal"
   supervisors: job-supervisors-gliess
   accessGroups:
   - GeneralAccess
@@ -28,9 +28,12 @@
 - type: startingGear
   id: GliessSheriffGear
   equipment:
-    ears: ClothingHeadsetGrey
-    shoes: ClothingShoesBootsCowboyBrown
-    jumpsuit: ClothingUniformJumpsuitDetective
-    head: ClothingHeadHatCowboyBrown
+    jumpsuit: ClothingUniformJumpsuitCMMOfficer
+    shoes: ClothingShoesBootsCombat
+    head: ClothingHeadHatCMMMarshal
+    gloves: ClothingHandsGlovesCombat
+    belt: ClothingBeltMinutemanPouches
+    pocket1: WeaponRevolverSnubnose
     id: GliessSheriffPDA
-    back: ClothingBackpackSatchelLeatherFilledDSM
+    ears: ClothingHeadsetCMM
+    outerClothing: ClothingOuterArmorCMMCarapace

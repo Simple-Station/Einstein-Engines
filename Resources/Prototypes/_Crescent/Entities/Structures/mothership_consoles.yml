@@ -145,10 +145,6 @@
   components:
   - type: ShipyardListing
     shuttles:
-    - Justiciar
-    - Templar
-    - Courageous
-    - Lunge
     - Provost
     - Adjudicator
 
