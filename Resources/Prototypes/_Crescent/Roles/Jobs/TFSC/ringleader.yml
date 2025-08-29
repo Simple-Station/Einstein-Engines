@@ -8,7 +8,7 @@
   alwaysUseSpawner: true
   requireAdminNotify: true
   icon: "JobIconSyndieRingleader"
-  supervisors: You're the defacto Commander of the Taypani Free Stations, whether by charm or by firepower. You answer to money and your heart's desires.
+  supervisors: You're the defacto leader of the Taypani Free Stations Coalition, whether by charm or by firepower. You answer to money and personal interests.
   canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement

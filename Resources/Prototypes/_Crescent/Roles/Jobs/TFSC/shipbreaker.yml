@@ -8,7 +8,7 @@
   alwaysUseSpawner: true
   requireAdminNotify: false
   icon: "JobIconSyndieShipbreaker"
-  supervisors: You answer to the Shipfitters Aerodynamic & Worker's union interests, which your Foreman will decide.
+  supervisors: You answer to the Shipfitters Aerodynamic & Worker's union interests and its foreman's.
   canBeAntag: false
   requirements:
     - !type:FactionRequirement

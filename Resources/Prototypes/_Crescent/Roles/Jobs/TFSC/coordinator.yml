@@ -12,10 +12,10 @@
   canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement
-    - !type:FactionRequirement
-      factionID: "TFSC"
     - !type:CharacterOverallTimeRequirement
       min: 20000
+    - !type:FactionRequirement
+      factionID: "TFSC"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:

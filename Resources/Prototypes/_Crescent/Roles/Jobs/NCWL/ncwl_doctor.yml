@@ -11,10 +11,10 @@
   supervisors: job-supervisors-ncwl-partisan
   canBeAntag: false
   requirements:
-    - !type:FactionRequirement
-      factionID: "NCWL"
     - !type:CharacterOverallTimeRequirement
       min: 1000
+    - !type:FactionRequirement
+      factionID: "NCWL"
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:

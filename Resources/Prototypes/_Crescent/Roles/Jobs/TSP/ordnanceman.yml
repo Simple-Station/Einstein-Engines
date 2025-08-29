@@ -6,25 +6,25 @@
   weight: 18
   startingGear: OrdnancemanGear
   alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconOrdnanceman"
+  supervisors: You answer to your Colonial Marshal , Deputy Marshal and Watchmaster.
+  canBeAntag: false
   requirements:
-  - !type:FactionRequirement
-      factionID: "TSP"
-  - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Foreigner
-        - Blindness
-        - Pacifist
-        - WheelchairBound
+    - !type:FactionRequirement
+        factionID: "TSP"
+    - !type:CharacterTraitRequirement
+        inverted: true
+        traits:
+          - Foreigner
+          - Blindness
+          - Pacifist
+          - WheelchairBound
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
         rank: crescent-rank-ordnance
-  icon: "JobIconOrdnanceman"
-  requireAdminNotify: false
-  supervisors: You answer to your Colonial Marshal , Deputy Marshal and Watchmaster.
-  canBeAntag: false
   access:
   - Command
   - Maintenance

@@ -8,13 +8,13 @@
   alwaysUseSpawner: true
   requireAdminNotify: false
   icon: "JobIconSyndiePrivateer"
-  supervisors: You answer to the Station Administrator and Gorlex Security Lieutenants
+  supervisors: You answer to the Ringleader and Gorlex Security Lieutenants
   canBeAntag: false
   requirements:
-    - !type:FactionRequirement
-      factionID: "TFSC"
     - !type:CharacterOverallTimeRequirement
       min: 8000
+    - !type:FactionRequirement
+      factionID: "TFSC"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:

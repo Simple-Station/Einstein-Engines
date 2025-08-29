@@ -8,13 +8,13 @@
   alwaysUseSpawner: true
   requireAdminNotify: false
   icon: "JobIconSyndieTraumasec"
-  supervisors: You answer to the interests of the Interdyne Pharmaceuticals Company. Whichever you decide with your colleagues they be.
+  supervisors: You answer to the interests of the Interdyne Pharmaceuticals company's coordinator and your peers.
   canBeAntag: false
   requirements:
-    - !type:FactionRequirement
-      factionID: "TFSC"
     - !type:CharacterOverallTimeRequirement
       min: 8000
+    - !type:FactionRequirement
+      factionID: "TFSC"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:

@@ -8,7 +8,7 @@
   alwaysUseSpawner: true
   requireAdminNotify: false
   icon: "JobIconSyndieOperative"
-  supervisors: You answer to the patriach and the interests of the CyberDawn Technologies company.
+  supervisors: You answer to the patriarch and the interests of the CyberDawn Technologies company.
   canBeAntag: false
   requirements:
     - !type:FactionRequirement

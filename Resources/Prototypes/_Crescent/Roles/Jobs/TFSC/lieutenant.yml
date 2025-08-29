@@ -8,13 +8,13 @@
   alwaysUseSpawner: true
   requireAdminNotify: true
   icon: "JobIconSyndieLieutenant"
-  supervisors: You answer to the Station Administrator.
+  supervisors: You answer to the Ringleader.
   canBeAntag: false
   requirements:
-    - !type:FactionRequirement
-      factionID: "TFSC"
     - !type:CharacterOverallTimeRequirement
       min: 30000
+    - !type:FactionRequirement
+      factionID: "TFSC"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:

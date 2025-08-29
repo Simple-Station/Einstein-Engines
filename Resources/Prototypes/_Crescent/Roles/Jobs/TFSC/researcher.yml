@@ -8,13 +8,13 @@
   alwaysUseSpawner: true
   requireAdminNotify: false
   icon: "JobIconCyberdawnTech"
-  supervisors: You answer to the patriach and the interests of the CyberDawn Technologies company.
+  supervisors: You answer to the patriarch and the interests of the CyberDawn Technologies company.
   canBeAntag: false
   requirements:
-    - !type:FactionRequirement
-      factionID: "TFSC"
     - !type:CharacterOverallTimeRequirement
       min: 2000
+    - !type:FactionRequirement
+      factionID: "TFSC"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
