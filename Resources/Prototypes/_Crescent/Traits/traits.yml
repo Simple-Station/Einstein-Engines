@@ -3,7 +3,7 @@
   category: TraitsSpeechLanguages
   points: -4
   requirements:
-    - !type:CharacterNationalityRequirement
+    - !type:FactionRequirement
       inverted: true
       factionID: "DSM"
   functions:
