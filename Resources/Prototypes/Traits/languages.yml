@@ -1,24 +1,20 @@
-- type: trait
-  id: SignLanguage
-  category: TraitsSpeechLanguages
-  points: -1
-  requirements:
+#- type: trait
+  #id: SignLanguage
+  #category: TraitsSpeechLanguages
+  #points: -1
+  #requirements:
     # - !type:CharacterItemGroupRequirement
     #   group: TraitsLanguagesBasic
     #- !type:CharacterTraitRequirement
     #  inverted: true
     #  traits:
     #    - Muted
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Human
-  functions:
-    - !type:TraitModifyLanguages
-      languagesSpoken:
-        - Sign
-      languagesUnderstood:
-        - Sign
+  #functions:
+    #- !type:TraitModifyLanguages
+     # languagesSpoken:
+      #  - Sign
+      #languagesUnderstood:
+       # - Sign
 
 - type: trait
   id: Tradeband
