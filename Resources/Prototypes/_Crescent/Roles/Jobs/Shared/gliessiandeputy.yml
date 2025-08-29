@@ -3,6 +3,9 @@
   name: job-name-gliess-deputy
   description: job-description-gliess-deputy
   playTimeTracker: JobGliessDeputy
+   requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 0
   startingGear: GliessDeputyGear
   icon: "JobIconMinuteman"
   supervisors: job-supervisors-gliess
