@@ -22,13 +22,6 @@
   special:
   - !type:AddComponentSpecial
     components:
-      - type: LanguageKnowledge
-        speaks:
-          - Tradeband
-          - TauCetiBasic
-        understands:
-          - Tradeband
-          - TauCetiBasic
       - type: CPRTraining
       - type: SurgerySpeedModifier
         speedModifier: 1.5
