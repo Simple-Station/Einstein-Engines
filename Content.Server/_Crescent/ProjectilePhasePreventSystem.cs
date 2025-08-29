@@ -6,15 +6,30 @@ using Content.Shared.Projectiles;
 using Robust.Server.GameObjects;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
+using Robust.Shared.Physics.Dynamics;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Threading;
+
 
 /// <summary>
 ///  Written by MLGTASTICa/SPCR 2025 for Hullrot EE
 ///  This was initially using RobustParallel Manager, but the implementation is horrendous for this kind of task (threadPooling (fake c# threads) instead of high-performance single CPU threads)
 ///  This system is expected to be ran on objects that DO not have any HARD-FIXTURES. As in all-collision events are handled only by this and not by physics due to actual body collision.
 /// </summary>
+///
+[ByRefEvent]
+public class HullrotBulletHitEvent : EntityEventArgs
+{
+    public EntityUid selfEntity;
+    public EntityUid hitEntity;
+    public Fixture targetFixture = default!;
+    public Fixture selfFixture = default!;
+    public string selfFixtureKey = string.Empty;
+    public string targetFixtureKey = string.Empty;
+
+
+}
 public class ProjectilePhasePreventerSystem : EntitySystem
 {
     [Dependency] private readonly PhysicsSystem _phys = default!;
@@ -37,7 +52,7 @@ public class ProjectilePhasePreventerSystem : EntitySystem
     public class RaycastBucket()
     {
         public HashSet<Entity<ProjectilePhasePreventComponent, ProjectileComponent>> items = new();
-        public List<Tuple<StartCollideEvent, StartCollideEvent>> output = new();
+        public List<HullrotBulletHitEvent> output = new();
 
     };
 
@@ -134,28 +149,16 @@ public class ProjectilePhasePreventerSystem : EntitySystem
                     var targetFixtures = fixtureQuery.GetComponent(hit.Entity);
                     var targetString = targetFixtures.Fixtures.Keys.First();
                     // i hate how verbose this is. - SPCR 2025
-                    var bulletEvent = new StartCollideEvent(
-                        owner,
-                        hit.Entity,
+                    var bulletEvent = new HullrotBulletHitEvent()
+                    {
+                        selfEntity = owner,
+                        hitEntity = hit.Entity,
+                        selfFixtureKey = bulletString,
+                        targetFixture = targetFixtures.Fixtures.Values.First(),
+                        targetFixtureKey = targetString,
+                    };
 
-                        bulletString,
-                        targetString,
-                        bulletFixtures.Fixtures[bulletString],
-                        targetFixtures.Fixtures[targetString],
-                        bulletPhysics,
-                        targetPhysics,
-                        hit.Point);
-                    var targetEvent = new StartCollideEvent(
-                        hit.Entity,
-                        owner,
-                        targetString,
-                        bulletString,
-                        targetFixtures.Fixtures[targetString],
-                        bulletFixtures.Fixtures[bulletString],
-                        targetPhysics,
-                        bulletPhysics,
-                        hit.Point);
-                    args.output.Add(new Tuple<StartCollideEvent, StartCollideEvent>(bulletEvent, targetEvent));
+                    args.output.Add(bulletEvent);
                 }
 
             }
@@ -171,15 +174,13 @@ public class ProjectilePhasePreventerSystem : EntitySystem
         {
             foreach(var eventData in bucket.output)
             {
-                if (TerminatingOrDeleted(eventData.Item1.OurEntity) || TerminatingOrDeleted(eventData.Item2.OurEntity))
+                if (TerminatingOrDeleted(eventData.selfEntity) || TerminatingOrDeleted(eventData.hitEntity))
                     continue;
-                var fEv = eventData.Item1;
-                var sEv = eventData.Item2;
+                var fEv = eventData;
                 try
                 {
                     count++;
-                    RaiseLocalEvent(eventData.Item1.OurEntity, ref fEv, true);
-                    RaiseLocalEvent(eventData.Item2.OurEntity, ref sEv, true);
+                    RaiseLocalEvent(eventData.selfEntity, ref fEv, true);
                 }
                 catch (Exception e)
                 {
