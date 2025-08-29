@@ -11,7 +11,8 @@ using Content.Server.GameTicking.Events;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Shared.Procedural;
 using Robust.Server.GameObjects;
-using Robust.Server.Maps;
+using Robust.Shared.EntitySerialization.Systems;
+using Robust.Shared.EntitySerialization;
 using Robust.Shared.Console;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -28,6 +29,7 @@ using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
 using Robust.Shared.Configuration;
 using Content.Shared.Telescope;
+using Robust.Shared.Utility;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -131,24 +133,20 @@ public sealed class NfAdventureRuleSystem : GameRuleSystem<AdventureRuleComponen
     {
         if (_prototypeManager.TryIndex<GameMapPrototype>(gameMapID, out var stationProto))
         {
-            if (_map.TryLoad(mapid, stationProto.MapPath.ToString(), out var stationGridUid, new MapLoadOptions
+            if (_map.TryLoadGrid(mapid, new ResPath(stationProto.MapPath.ToString()), out var stationGridUid, null, new Vector2(posX, posY) + _random.NextVector2(randomOffsetX, randomOffsetY)))
             {
-                Offset = new Vector2(posX, posY) + _random.NextVector2(randomOffsetX, randomOffsetY),
-                LoadMap = false
-            }))
-            {
-                _station.InitializeNewStation(stationProto.Stations[gameMapID], stationGridUid);
+                _station.InitializeNewStation(stationProto.Stations[gameMapID], [stationGridUid.Value.Owner]);
 
                 // setting color if applicable. if not, White is default
-                _shuttle.SetIFFColor(stationGridUid[0], color);
+                _shuttle.SetIFFColor(stationGridUid.Value.Owner, color);
 
                 // set IFFFaction if applicable. dont know if this does anything
                 if (iffFaction != null)
-                    _shuttle.SetIFFFaction(stationGridUid[0], iffFaction);
+                    _shuttle.SetIFFFaction(stationGridUid.Value.Owner, iffFaction);
 
                 // hide IFF if needed, like for derelicts or secrets
                 if (hideIFF)
-                    _shuttle.AddIFFFlag(stationGridUid[0], IFFFlags.HideLabel);
+                    _shuttle.AddIFFFlag(stationGridUid.Value.Owner, IFFFlags.HideLabel);
             }
             else
             {
