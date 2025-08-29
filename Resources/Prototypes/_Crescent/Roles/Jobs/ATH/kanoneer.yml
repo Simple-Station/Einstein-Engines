@@ -3,21 +3,21 @@
   name: job-name-kanoneer
   description: job-description-kanoneer
   playTimeTracker: JobKanoneerATH
+  weight: 2
+  startingGear: KanoneerGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconKanoneer"
+  supervisors: job-supervisors-ath
+  canBeAntag: false
   requirements:
+    - !type:FactionRequirement
+      factionID: "ATH"
     - !type:CharacterSpeciesRequirement
       species:
         - Human
         - Reptilian
         - Oni
-    - !type:FactionRequirement
-      factionID: "ATH"
-  weight: 82
-  startingGear: KanoneerGear
-  alwaysUseSpawner: true
-  icon: "JobIconKanoneer"
-  requireAdminNotify: false
-  supervisors: job-supervisors-ath
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:

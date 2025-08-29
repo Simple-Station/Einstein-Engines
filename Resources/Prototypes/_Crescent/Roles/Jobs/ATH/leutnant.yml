@@ -3,22 +3,22 @@
   name: job-name-leutnant
   description: job-description-leutnant
   playTimeTracker: JobLeutnantATH
+  weight: 50
+  startingGear: LeutnantGear
+  alwaysUseSpawner: true
+  requireAdminNotify: true
+  icon: "JobIconLeutnant"
+  supervisors: job-supervisors-ath
+  canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement
+    - !type:FactionRequirement
+      factionID: "ATH"
     - !type:CharacterSpeciesRequirement
       species:
         - Human
         - Reptilian
         - Oni
-    - !type:FactionRequirement
-      factionID: "ATH"
-  weight: 83
-  startingGear: LeutnantGear
-  alwaysUseSpawner: true
-  icon: "JobIconLeutnant"
-  requireAdminNotify: true
-  supervisors: job-supervisors-ath
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:

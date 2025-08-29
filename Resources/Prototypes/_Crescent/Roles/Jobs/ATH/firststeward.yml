@@ -3,18 +3,18 @@
   name: job-name-steward
   description: job-description-steward
   playTimeTracker: ConscriptDSM
+  weight: 99
+  startingGear: StewardGear
+  alwaysUseSpawner: true
+  requireAdminNotify: true
+  icon: "JobIconSteward"
+  supervisors: job-supervisors-ath
   requirements:
+    - !type:FactionRequirement
+      factionID: "ATH"
     - !type:CharacterSpeciesRequirement
       species:
         - Human
-    - !type:FactionRequirement
-      factionID: "ATH"
-  weight: 86
-  startingGear: StewardGear
-  alwaysUseSpawner: true
-  icon: "JobIconSteward"
-  requireAdminNotify: true
-  supervisors: job-supervisors-ath
   canBeAntag: false
   special:
   - !type:AddComponentSpecial

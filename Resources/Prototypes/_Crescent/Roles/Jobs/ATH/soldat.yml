@@ -3,21 +3,21 @@
   name: job-name-soldat
   description: job-description-soldat
   playTimeTracker: JobSoldatATH
+  weight: 4
+  startingGear: SoldatGear
+  alwaysUseSpawner: true
+  requireAdminNotify: true
+  icon: "JobIconSoldat"
+  supervisors: job-supervisors-ath
+  canBeAntag: false
   requirements:
+    - !type:FactionRequirement
+      factionID: "ATH"
     - !type:CharacterSpeciesRequirement
       species:
         - Human
         - Reptilian
         - Oni
-    - !type:FactionRequirement
-      factionID: "ATH"
-  weight: 80
-  startingGear: SoldatGear
-  alwaysUseSpawner: true
-  icon: "JobIconSoldat"
-  requireAdminNotify: true
-  supervisors: job-supervisors-ath
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
