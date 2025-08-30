@@ -189,7 +189,7 @@
     followEntity: true
   - type: ProjectileIFF
     visualType: Diamond
-    color: "#674ea7"
+    color: "#8060d1"
     scale: 1.5
   - type: StaticPrice
     price: 15000
@@ -266,7 +266,7 @@
     followEntity: true
   - type: ProjectileIFF
     visualType: Diamond
-    color: "#674ea7"
+    color: "#765abf"
     scale: 1.5
   - type: StaticPrice
     price: 15000
@@ -343,7 +343,7 @@
     followEntity: true
   - type: ProjectileIFF
     visualType: Diamond
-    color: "#674ea7"
+    color: "#c43751"
     scale: 1.5
   - type: StaticPrice
     price: 15000
@@ -420,7 +420,7 @@
     followEntity: true
   - type: ProjectileIFF
     visualType: Diamond
-    color: "#674ea7"
+    color: "#cf4848"
     scale: 1.5
   - type: StaticPrice
     price: 15000

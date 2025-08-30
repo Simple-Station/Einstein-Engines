@@ -1,0 +1,37 @@
+﻿{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by WillyBillyGilly for Hullrot",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "cigar1"
+    },
+    {
+      "name": "cigar2"
+    },
+    {
+      "name": "cigar3"
+    },
+    {
+      "name": "cigar4"
+    },
+    {
+      "name": "open"
+    },
+    {
+      "name": "closed"
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
+    }
+  ]
+}

@@ -439,11 +439,11 @@
   result: WandererFlatpack
   completetime: 2
   materials:
-    AdvancedMechatronics: 3500
-    AdvancedElectronics: 2000
+    BasicMechatronics: 2500
+    AdvancedElectronics: 1000
     Gold: 600
     Silver: 650
-    Steel: 4250
+    Steel: 3000
     Tungsten: 1500
 
 - type: latheRecipe

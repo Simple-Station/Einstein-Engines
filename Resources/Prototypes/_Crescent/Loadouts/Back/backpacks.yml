@@ -271,6 +271,7 @@
         - Spacer
         - GliessianDockmaster
         - GliessianSheriff
+        - GliessianDeputy
 
 - type: loadout
   id: LoadoutBackpackSHISatchel
@@ -315,6 +316,7 @@
         - Spacer
         - GliessianDockmaster
         - GliessianSheriff
+        - GliessianDeputy
 
 - type: loadout
   id: LoadoutBackpackSHIDuffel
@@ -351,6 +353,7 @@
         - Spacer
         - GliessianDockmaster
         - GliessianSheriff
+        - GliessianDeputy
 
 - type: loadout
   id: LoadoutBackpackCMM
@@ -371,6 +374,8 @@
         - MinutemanCMM
         - OrdnancemanCMM
         - WatchmasterCMM
+        - GliessianDeputy
+        - GliessianSheriff
 
 - type: loadout
   id: LoadoutBackpackCMMSatchel
@@ -391,6 +396,8 @@
         - MinutemanCMM
         - OrdnancemanCMM
         - WatchmasterCMM
+        - GliessianSheriff
+        - GliessianDeputy
 
 - type: loadout
   id: LoadoutBackpackCMMDuffel
@@ -411,3 +418,5 @@
         - MinutemanCMM
         - OrdnancemanCMM
         - WatchmasterCMM
+        - GliessianSheriff
+        - GliessianDeputy

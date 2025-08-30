@@ -812,7 +812,7 @@
   parent: BasePlushie
   id: PlushieArachne
   name: Arachne plushie
-  description: A plushie of an Arachne, a half human, half spider creature. Why does it look familiar?
+  description: A plushie of an Arachne, a half human, half spider creature.
   components:
   - type: Sprite
     state: plushie_arachne

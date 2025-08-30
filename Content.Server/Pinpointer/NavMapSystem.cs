@@ -100,30 +100,33 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
 
     private void OnTileChanged(ref TileChangedEvent ev)
     {
-        if (!ev.EmptyChanged || !_navQuery.TryComp(ev.NewTile.GridUid, out var navMap))
-            return;
-
-        var tile = ev.NewTile.GridIndices;
-        var chunkOrigin = SharedMapSystem.GetChunkIndices(tile, ChunkSize);
-
-        var chunk = EnsureChunk(navMap, chunkOrigin);
-
-        // This could be easily replaced in the future to accommodate diagonal tiles
-        var relative = SharedMapSystem.GetChunkRelative(tile, ChunkSize);
-        ref var tileData = ref chunk.TileData[GetTileIndex(relative)];
-
-        if (ev.NewTile.IsSpace(_tileDefManager))
+        foreach (var change in ev.Changes)
         {
-            tileData = 0;
-            if (PruneEmpty((ev.NewTile.GridUid, navMap), chunk))
+            if (!change.EmptyChanged || !_navQuery.TryComp(ev.Entity, out var navMap))
                 return;
-        }
-        else
-        {
-            tileData = FloorMask;
-        }
 
-        DirtyChunk((ev.NewTile.GridUid, navMap), chunk);
+            var tile = change.GridIndices;
+            var chunkOrigin = SharedMapSystem.GetChunkIndices(tile, ChunkSize);
+
+            var chunk = EnsureChunk(navMap, chunkOrigin);
+
+            // This could be easily replaced in the future to accommodate diagonal tiles
+            var relative = SharedMapSystem.GetChunkRelative(tile, ChunkSize);
+            ref var tileData = ref chunk.TileData[GetTileIndex(relative)];
+
+            if (change.NewTile.IsSpace(_tileDefManager))
+            {
+                tileData = 0;
+                if (PruneEmpty((ev.Entity, navMap), chunk))
+                    return;
+            }
+            else
+            {
+                tileData = FloorMask;
+            }
+
+            DirtyChunk((ev.Entity, navMap), chunk);
+        }
     }
 
     private void DirtyChunk(Entity<NavMapComponent> entity, NavMapChunk chunk)
@@ -236,16 +239,6 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
         // Clear stale data
         component.Chunks.Clear();
         component.Beacons.Clear();
-
-        // Refresh beacons
-        var query = EntityQueryEnumerator<NavMapBeaconComponent, TransformComponent>();
-        while (query.MoveNext(out var qUid, out var qNavComp, out var qTransComp))
-        {
-            if (qTransComp.ParentUid != uid)
-                continue;
-
-            UpdateNavMapBeaconData(qUid, qNavComp);
-        }
 
         // Loop over all tiles
         var tileRefs = _mapSystem.GetAllTiles(uid, mapGrid);

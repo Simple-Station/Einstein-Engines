@@ -19,6 +19,7 @@
   roles:
   - GliessianDockmaster
   - GliessianSheriff
+  - GliessianDeputy
   - Spacer
   editorHidden: false
 
@@ -195,7 +196,7 @@
   - BeltrunnerTAP
   - DraugrTAP
   - ServileTAP
-  editorHidden: true
+  editorHidden: false
 
 - type: department
   id: ATH

@@ -785,6 +785,18 @@
       - state: passenger
 
 - type: entity
+  id: SpawnPointGliessDeputy
+  parent: SpawnPointJobBase
+  name: GliessDeputy
+  components:
+  - type: SpawnPoint
+    job_id: GliessianDeputy
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
   id: SpawnPointGliessSheriff
   parent: SpawnPointJobBase
   name: GliessSheriff

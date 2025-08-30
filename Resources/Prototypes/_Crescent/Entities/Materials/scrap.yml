@@ -13,7 +13,7 @@
     - RawMaterial
   - type: Currency
     price:
-      ScrapSAW: 0.1
+      ScrapSAW: 0.2
   - type: Sprite
     sprite: _Crescent/Objects/Materials/ore.rsi
     state: icon-scrap
@@ -29,9 +29,6 @@
   components:
   - type: Stack
     count: 1
-  - type: Currency
-    price:
-      ScrapSAW: 0.05
 
 - type: entity
   id: SteelScrap3
@@ -83,7 +80,7 @@
     stackType: TitaniumScrapOre
   - type: Currency
     price:
-      ScrapSAW: 0.3
+      ScrapSAW: 0.4
   - type: Sprite
     sprite: _Crescent/Objects/Materials/ore.rsi
     state: icon-titaniumscrap
@@ -143,7 +140,7 @@
     state: icon
   - type: Currency
     price:
-      ScrapSAW: 0.08
+      ScrapSAW: 0.3
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -205,7 +202,7 @@
       ScrapPlasma: 500
   - type: Currency
     price:
-      ScrapSAW: 0.3
+      ScrapSAW: 0.5
 
 - type: entity
   id: ScrapPlasma1
@@ -254,7 +251,7 @@
       ScrapUranium: 500
   - type: Currency
     price:
-      ScrapSAW: 0.3
+      ScrapSAW: 0.5
 
 - type: entity
   id: ScrapUranium1

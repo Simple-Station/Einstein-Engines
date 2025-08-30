@@ -1073,6 +1073,19 @@
 
 - type: entity
   parent: IDCardStandard
+  id: GliessIDCardDeputy
+  name: spacer ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: GliessianDeputy
+
+
+- type: entity
+  parent: IDCardStandard
   id: GliessIDCardDockmaster
   name: spacer ID card
   components:

@@ -83,7 +83,7 @@
     tierWeightPrototype: TechDiskTierWeights
   - type: Currency
     price:
-      ScrapSAW: 5
+      ScrapSAW: 15
   - type: StaticPrice
     price: 20000
 
@@ -98,6 +98,9 @@
     state: icon
   - type: ResearchDisk
     points: 6000
+  - type: Currency
+    price:
+      ScrapSAW: 5
   - type: StaticPrice
     price: 3000
   - type: GuideHelp
@@ -115,8 +118,11 @@
     state: icon
   - type: ResearchDisk
     points: 2000
+  - type: Currency
+    price:
+      ScrapSAW: 2
   - type: StaticPrice
-    price: 100
+    price: 1000
   - type: GuideHelp
     guides:
     - Science
@@ -486,6 +492,17 @@
         - SmallMobMask  # Frontier
         layer:
         - MachineLayer
+
+- type: entity
+  id: ScrapMagnet
+  name: SHI baromagnetic scrap array
+  description: A large, ship-mounted magnetic device. When pointed in the direction of loose scrap, gathers the scavengable material with a miniature tractor beam and stores it in an internal compartment for later harvest.
+  parent: OreMagnet
+  components:
+  - type: Storage
+    whitelist:
+      tags:
+        - RawMaterial
 
 - type: entity
   parent: BaseBulletTrigger

@@ -1,0 +1,14 @@
+- type: deviceFrequency
+  id: SurveillanceCameraImperialDSM
+  name: device-frequency-prototype-name-surveillance-camera-imperial
+  frequency: 6233
+
+- type: deviceFrequency
+  id: SurveillanceCameraCommunardNCWL
+  name: device-frequency-prototype-name-surveillance-camera-communard
+  frequency: 1995
+
+- type: deviceFrequency
+  id: SurveillanceCameraInterdyneIPM
+  name: device-frequency-prototype-name-surveillance-camera-interdyne
+  frequency: 6221
