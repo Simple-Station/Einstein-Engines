@@ -90,11 +90,11 @@
 
 - type: entity
   parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitNCWLTrainee
-  name: worker's jumpsuit
-  description: A jumpsuit. Write a better description later.
+  id: ClothingUniformJumpsuitNCWLSkirt
+  name: worker's skirtsuit
+  description: A skirt-jumpsuit amalgamation
   components:
   - type: Sprite
-    sprite: _Crescent/Clothing/NCWL/Uniform/ncwltrainee.rsi
+    sprite: _Crescent/Clothing/NCWL/Uniform/ncwlskirt.rsi
   - type: Clothing
-    sprite: _Crescent/Clothing/NCWL/Uniform/ncwltrainee.rsi
+    sprite: _Crescent/Clothing/NCWL/Uniform/ncwlskirt.rsi
