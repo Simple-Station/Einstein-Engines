@@ -1,0 +1,29 @@
+- type: entity
+  parent: SurveillanceCameraWirelessRouterBase
+  id: SurveillanceCameraRouterImperialDSM
+  suffix: DSM
+  components:
+    - type: SurveillanceCameraRouter
+      subnetFrequency: SurveillanceCameraImperialDSM
+    - type: WirelessNetworkConnection
+      range: 7000 # Modify this to change the range, make sure to change the range of the respective camera to be the same
+
+- type: entity
+  parent: SurveillanceCameraWirelessRouterBase
+  id: SurveillanceCameraRouterCommunardNCWL
+  suffix: NCWL
+  components:
+    - type: SurveillanceCameraRouter
+      subnetFrequency: SurveillanceCameraCommunardNCWL
+    - type: WirelessNetworkConnection
+      range: 7000
+
+- type: entity
+  parent: SurveillanceCameraWirelessRouterBase
+  id: SurveillanceCameraRouterInterdyneIPM
+  suffix: IPM
+  components:
+    - type: SurveillanceCameraRouter
+      subnetFrequency: SurveillanceCameraInterdyneIPM
+    - type: WirelessNetworkConnection
+      range: 7000

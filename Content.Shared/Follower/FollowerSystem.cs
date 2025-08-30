@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Numerics;
 using Content.Shared.Database;
 using Content.Shared.Follower.Components;
@@ -9,6 +10,7 @@ using Content.Shared.Movement.Systems;
 using Content.Shared.Tag;
 using Content.Shared.Verbs;
 using Robust.Shared.Containers;
+using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Events;
 using Robust.Shared.Network;
@@ -38,13 +40,19 @@ public sealed class FollowerSystem : EntitySystem
 
         SubscribeLocalEvent<FollowerComponent, GotEquippedHandEvent>(OnGotEquippedHand);
         SubscribeLocalEvent<FollowedComponent, EntityTerminatingEvent>(OnFollowedTerminating);
-        SubscribeLocalEvent<BeforeSaveEvent>(OnBeforeSave);
+        SubscribeLocalEvent<BeforeSerializationEvent>(OnBeforeSave);
     }
 
-    private void OnBeforeSave(BeforeSaveEvent ev)
+    private void OnBeforeSave(BeforeSerializationEvent ev)
     {
-        // Some followers will not be map savable. This ensures that maps don't get saved with empty/invalid
-        // followers, but just stopping any following on the map being saved.
+        // Some followers will not be map savable. This ensures that maps don't get saved with some entities that have
+        // empty/invalid followers, by just stopping any following happening on the map being saved.
+        // I hate this so much.
+        // TODO WeakEntityReference
+        // We need some way to store entity references in a way that doesn't imply that the entity still exists.
+        // Then we wouldn't have to deal with this shit.
+
+        var maps = ev.Entities.Select(x => Transform(x).MapUid).ToHashSet();
 
         var query = AllEntityQuery<FollowerComponent, TransformComponent, MetaDataComponent>();
         while (query.MoveNext(out var uid, out var follower, out var xform, out var meta))
@@ -52,7 +60,7 @@ public sealed class FollowerSystem : EntitySystem
             if (meta.EntityPrototype == null || meta.EntityPrototype.MapSavable)
                 continue;
 
-            if (xform.MapUid != ev.Map)
+            if (!maps.Contains(xform.MapUid))
                 continue;
 
             StopFollowingEntity(uid, follower.Following);
@@ -183,6 +191,7 @@ public sealed class FollowerSystem : EntitySystem
         RaiseLocalEvent(follower, followerEv);
         RaiseLocalEvent(entity, entityEv);
         Dirty(entity, followedComp);
+        Dirty(follower, followerComp);
     }
 
     /// <summary>

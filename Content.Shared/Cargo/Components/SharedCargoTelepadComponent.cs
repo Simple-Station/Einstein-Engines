@@ -20,13 +20,13 @@ public sealed partial class CargoTelepadComponent : Component
     ///     The base amount of time it takes to teleport from the telepad
     /// </summary>
     [DataField]
-    public float BaseDelay = 10f;
+    public float BaseDelay = 2f;
 
     /// <summary>
     ///     The actual amount of time it takes to teleport from the telepad
     /// </summary>
     [DataField]
-    public float Delay = 10f;
+    public float Delay = 2f;
 
     /// <summary>
     ///     The machine part that affects <see cref="Delay"/>
