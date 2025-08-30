@@ -1,0 +1,24 @@
+- type: gameMap
+  id: TribalHideout
+  mapName: 'Tribal Hideout'
+  mapPath: /Maps/_Crescent/Stations/tribalhideout.yml
+  minPlayers: 0
+  stations:
+    TribalHideout:
+      stationProto: StandardCrescentStation
+      gridComponents:
+        - type: BlockShipWeaponProjectileGrid
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Tribal Hideout'
+        - type: Grammar
+          attributes:
+            proper: true
+        - type: VesselDesignation
+          designation: vessel-designation-headquarters
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            DraugrTAP: [ 2, 2 ]
+            BeltrunnerTAP: [ 1, 1 ]
+            Antiquarian: [ 1, 1 ]
