@@ -3786,7 +3786,7 @@ entities:
     - type: RadiationGridResistance
     - type: IFF
       relations: {}
-      flags: Hide
+      flags: HideLabel
 - proto: AirCanister
   entities:
   - uid: 855
