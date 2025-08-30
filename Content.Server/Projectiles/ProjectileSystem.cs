@@ -12,6 +12,7 @@ using Content.Shared.Damage.Events;
 using Content.Shared.Database;
 using Content.Shared.Projectiles;
 using Robust.Server.GameObjects;
+using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
@@ -31,7 +32,72 @@ public sealed class ProjectileSystem : SharedProjectileSystem
     {
         base.Initialize();
         SubscribeLocalEvent<ProjectileComponent, StartCollideEvent>(OnStartCollide);
+        SubscribeLocalEvent<ProjectileComponent, HullrotBulletHitEvent>(OnBulletHit);
         SubscribeLocalEvent<EmbeddableProjectileComponent, DamageExamineEvent>(OnDamageExamine, after: [typeof(DamageOtherOnHitSystem)]);
+    }
+    // preety much a copy paste of OnStartCollide.
+    // Needed because new SS14 ENGINE update doesn't let you make StartCollideEvents anymore for some reason - SPCR 2025
+    private void OnBulletHit(EntityUid uid, ProjectileComponent component, ref HullrotBulletHitEvent args)
+    {
+        if (!component.raycasting && args.selfFixtureKey != ProjectileFixture || component.DamagedEntity || component is { Weapon: null, OnlyCollideWhenShot: true, })
+            return;
+        if (!HasComp<ShipShieldComponent>(uid) && !args.targetFixture.Hard)
+            return;
+        if (!TryComp<PhysicsComponent>(uid, out var physics))
+            return;
+        var target = args.hitEntity;
+        // it's here so this check is only done once before possible hit
+        var attemptEv = new ProjectileReflectAttemptEvent(uid, component, false);
+        RaiseLocalEvent(target, ref attemptEv);
+        if (attemptEv.Cancelled)
+        {
+            SetShooter(uid, component, target);
+            return;
+        }
+
+        var ev = new ProjectileHitEvent(component.Damage, target, component.Shooter);
+        RaiseLocalEvent(uid, ref ev);
+
+        if (component.gibsOnHit) //used for antimateriel rifles
+        {
+            _bodySystem.GibBody(target);
+        }
+
+        var otherName = ToPrettyString(target);
+        var modifiedDamage = _damageableSystem.TryChangeDamage(target, ev.Damage, component.IgnoreResistances, origin: component.Shooter, armorPen: component.HullrotArmorPenetration, stopPower: component.stoppingPower);
+        var deleted = Deleted(target);
+
+        if (modifiedDamage is not null && EntityManager.EntityExists(component.Shooter))
+        {
+            if (modifiedDamage.AnyPositive() && !deleted)
+                _color.RaiseEffect(Color.Red, [ target, ], Filter.Pvs(target, entityManager: EntityManager));
+
+            _adminLogger.Add(
+                LogType.BulletHit,
+                HasComp<ActorComponent>(target) ? LogImpact.Extreme : LogImpact.High,
+                $"Projectile {ToPrettyString(uid):projectile} shot by {ToPrettyString(component.Shooter!.Value):user} hit {otherName:target} and dealt {modifiedDamage.GetTotal():damage} damage");
+        }
+
+        if (!deleted)
+        {
+            _guns.PlayImpactSound(target, modifiedDamage, component.SoundHit, component.ForceSound);
+
+            if (!physics.LinearVelocity.IsLengthZero())
+                _sharedCameraRecoil.KickCamera(target, physics.LinearVelocity.Normalized());
+        }
+
+        // Goobstation start
+        if (component.Penetrate)
+            component.IgnoredEntities.Add(target);
+        else
+            component.DamagedEntity = true;
+        // Goobstation end
+
+        if (component.DeleteOnCollide)
+            QueueDel(uid);
+
+        if (component.ImpactEffect != null && TryComp(uid, out TransformComponent? xform))
+            RaiseNetworkEvent(new ImpactEffectEvent(component.ImpactEffect, GetNetCoordinates(xform.Coordinates)), Filter.Pvs(xform.Coordinates, entityMan: EntityManager));
     }
 
     private void OnStartCollide(EntityUid uid, ProjectileComponent component, ref StartCollideEvent args)
@@ -89,7 +155,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
             component.DamagedEntity = true;
         // Goobstation end
 
-        if (component.DeleteOnCollide)
+        if (component.DeleteOnCollide || (component.NoPenetrateMask & args.OtherFixture.CollisionLayer) != 0) // Goobstation - Make x-ray arrows not penetrate blob
             QueueDel(uid);
 
         if (component.ImpactEffect != null && TryComp(uid, out TransformComponent? xform))

@@ -53,6 +53,17 @@
     scale: 1.5
   - type: StaticPrice
     price: 25000
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 1.25 # 3x3
+        density: 21390 # 15 Tonnes
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
 
 - type: entity
   id: FighterNCWLBroadswordBattery
@@ -105,6 +116,17 @@
     scale: 1.5
   - type: StaticPrice
     price: 15000
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 1.75 # slightly bigger than 3x3
+        density: 21390 # 15 Tonnes
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
 
 - type: entity
   id: FighterNCWLClaymoreBattery
@@ -167,10 +189,21 @@
     followEntity: true
   - type: ProjectileIFF
     visualType: Diamond
-    color: "#674ea7"
+    color: "#8060d1"
     scale: 1.5
   - type: StaticPrice
     price: 15000
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 1.25 # 3x3
+        density: 21390 # 15 Tonnes
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
 
 - type: entity
   id: FighterDSMValorBattery
@@ -233,10 +266,21 @@
     followEntity: true
   - type: ProjectileIFF
     visualType: Diamond
-    color: "#674ea7"
+    color: "#765abf"
     scale: 1.5
   - type: StaticPrice
     price: 15000
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 1.75 # slightly bigger than 3x3
+        density: 21390 # 15 Tonnes
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
 
 - type: entity
   id: FighterDSMHonorBattery
@@ -299,10 +343,21 @@
     followEntity: true
   - type: ProjectileIFF
     visualType: Diamond
-    color: "#674ea7"
+    color: "#c43751"
     scale: 1.5
   - type: StaticPrice
     price: 15000
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 1.75 # slightly bigger than 3x3
+        density: 21390 # 15 Tonnes
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
 
 - type: entity
   id: FighterTFSCRaptorBattery
@@ -365,10 +420,21 @@
     followEntity: true
   - type: ProjectileIFF
     visualType: Diamond
-    color: "#674ea7"
+    color: "#cf4848"
     scale: 1.5
   - type: StaticPrice
     price: 15000
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 1.25 # slightly bigger than 3x3
+        density: 21390 # 15 Tonnes
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
 
 - type: entity
   id: FighterTFSCViperBattery

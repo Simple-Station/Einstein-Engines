@@ -103,6 +103,7 @@ job-description-arbeiter = The industrial life blood of the Authoritat. Follow t
 
 job-description-spacer = Be an independent citizen of Taypan.
 job-description-gliess-sheriff = Keep the law in Gliess Santo.
+job-description-gliess-deputy = Assist the Sheriff in keeping the law in Gliess Santo.
 job-description-gliess-dockmaster = Make sure nobody blows up your station.
 
 # conscript-ncwl - for PLANETFALL

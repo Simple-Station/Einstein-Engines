@@ -409,6 +409,216 @@ entities:
             667: 7,16
             668: 7,17
         - node:
+            zIndex: 1
+            id: LatticeCornerNE
+          decals:
+            691: 3,10
+            699: 3,11
+            704: 3,12
+            731: -10,14
+            736: -10,15
+            744: -1,10
+            765: -10,16
+            770: -10,17
+            775: -10,18
+            820: -15,-9
+            823: -12,-11
+            826: -6,-16
+            838: 2,-10
+            841: 3,-14
+            844: 4,-16
+        - node:
+            zIndex: 1
+            id: LatticeCornerNW
+          decals:
+            694: 3,10
+            715: 12,14
+            720: 12,15
+            747: -1,10
+            752: -1,11
+            757: -1,12
+            804: 12,16
+            809: 12,17
+            814: 12,18
+            829: -2,-16
+            832: -1,-14
+            835: 0,-10
+            847: 8,-16
+            850: 14,-11
+            853: 17,-9
+        - node:
+            zIndex: 1
+            id: LatticeCornerSE
+          decals:
+            686: 2,10
+            689: 3,10
+            697: 3,11
+            702: 3,12
+            707: 3,13
+            710: 4,15
+            726: -12,3
+            729: -10,14
+            734: -10,15
+            742: -1,10
+            763: -10,16
+            768: -10,17
+            773: -10,18
+            778: -8,25
+            790: 6,19
+            793: 7,22
+            796: 8,25
+            817: -16,-1
+            862: -20,-3
+        - node:
+            zIndex: 1
+            id: LatticeCornerSW
+          decals:
+            683: 0,10
+            693: 3,10
+            714: 12,14
+            719: 12,15
+            723: 14,3
+            739: -2,15
+            746: -1,10
+            751: -1,11
+            756: -1,12
+            760: -1,13
+            781: -6,25
+            784: -5,22
+            787: -4,19
+            799: 10,25
+            803: 12,16
+            808: 12,17
+            813: 12,18
+            856: 18,-1
+            859: 22,-3
+        - node:
+            id: LatticeEdgeE
+          decals:
+            685: 2,10
+            688: 3,10
+            696: 3,11
+            701: 3,12
+            706: 3,13
+            709: 4,15
+            725: -12,3
+            728: -10,14
+            733: -10,15
+            741: -1,10
+            762: -10,16
+            767: -10,17
+            772: -10,18
+            777: -8,25
+            789: 6,19
+            792: 7,22
+            795: 8,25
+            816: -16,-1
+            818: -15,-9
+            821: -12,-11
+            824: -6,-16
+            836: 2,-10
+            839: 3,-14
+            842: 4,-16
+            861: -20,-3
+        - node:
+            id: LatticeEdgeN
+          decals:
+            690: 3,10
+            698: 3,11
+            703: 3,12
+            712: 12,14
+            717: 12,15
+            730: -10,14
+            735: -10,15
+            743: -1,10
+            749: -1,11
+            754: -1,12
+            764: -10,16
+            769: -10,17
+            774: -10,18
+            801: 12,16
+            806: 12,17
+            811: 12,18
+            819: -15,-9
+            822: -12,-11
+            825: -6,-16
+            827: -2,-16
+            830: -1,-14
+            833: 0,-10
+            837: 2,-10
+            840: 3,-14
+            843: 4,-16
+            845: 8,-16
+            848: 14,-11
+            851: 17,-9
+        - node:
+            id: LatticeEdgeS
+          decals:
+            681: 0,10
+            684: 2,10
+            687: 3,10
+            695: 3,11
+            700: 3,12
+            705: 3,13
+            708: 4,15
+            711: 12,14
+            716: 12,15
+            721: 14,3
+            724: -12,3
+            727: -10,14
+            732: -10,15
+            737: -2,15
+            740: -1,10
+            748: -1,11
+            753: -1,12
+            758: -1,13
+            761: -10,16
+            766: -10,17
+            771: -10,18
+            776: -8,25
+            779: -6,25
+            782: -5,22
+            785: -4,19
+            788: 6,19
+            791: 7,22
+            794: 8,25
+            797: 10,25
+            800: 12,16
+            805: 12,17
+            810: 12,18
+            815: -16,-1
+            854: 18,-1
+            857: 22,-3
+            860: -20,-3
+        - node:
+            id: LatticeEdgeW
+          decals:
+            682: 0,10
+            692: 3,10
+            713: 12,14
+            718: 12,15
+            722: 14,3
+            738: -2,15
+            745: -1,10
+            750: -1,11
+            755: -1,12
+            759: -1,13
+            780: -6,25
+            783: -5,22
+            786: -4,19
+            798: 10,25
+            802: 12,16
+            807: 12,17
+            812: 12,18
+            828: -2,-16
+            831: -1,-14
+            834: 0,-10
+            846: 8,-16
+            849: 14,-11
+            852: 17,-9
+            855: 18,-1
+            858: 22,-3
+        - node:
             color: '#FFFFFFFF'
             id: TechE
           decals:
@@ -1272,6 +1482,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: 1.5,6.5
       parent: 1
+    - type: ApcPowerReceiver
+      powerLoad: 20000
     - type: Battery
       startingCharge: 994000
     - type: ContainerContainer
@@ -1292,8 +1504,6 @@ entities:
           showEnts: False
           occludes: True
           ents: []
-    - type: ApcPowerReceiver
-      powerLoad: 20000
     - type: BatterySelfRecharger
       autoRechargeRate: -6000
       autoRecharge: True
@@ -1358,6 +1568,12 @@ entities:
     - type: Transform
       pos: -4.5,-6.5
       parent: 1
+    - type: Door
+      secondsUntilStateChange: -23.800034
+      state: Opening
+    - type: DeviceLinkSource
+      lastSignals:
+        DoorStatus: True
   - uid: 240
     components:
     - type: Transform
@@ -1738,34 +1954,28 @@ entities:
       rot: 3.141592653589793 rad
       pos: 15.5,1.5
       parent: 1
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        gun_magazine: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
     - type: PointCannon
       linkedConsoleIds:
       - 185
       linkedConsoleId: 185
       obstructedRanges:
       - 1.4869516066610842 rad: 4.609508086385656 rad
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        gun_magazine: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
   - uid: 968
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -12.5,1.5
       parent: 1
-    - type: PointCannon
-      linkedConsoleIds:
-      - 185
-      linkedConsoleId: 185
-      obstructedRanges:
-      - 3.328318267722639 rad: 4.609508086385656 rad
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -1776,6 +1986,12 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+    - type: PointCannon
+      linkedConsoleIds:
+      - 185
+      linkedConsoleId: 185
+      obstructedRanges:
+      - 3.328318267722639 rad: 4.609508086385656 rad
 - proto: BaseWeaponTurretSwarmer
   entities:
   - uid: 961
@@ -1797,6 +2013,10 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+    - type: PointCannon
+      linkedConsoleIds:
+      - 185
+      linkedConsoleId: 185
   - uid: 966
     components:
     - type: Transform
@@ -1816,6 +2036,10 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+    - type: PointCannon
+      linkedConsoleIds:
+      - 185
+      linkedConsoleId: 185
   - uid: 1724
     components:
     - type: Transform
@@ -1836,6 +2060,10 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+    - type: PointCannon
+      linkedConsoleIds:
+      - 185
+      linkedConsoleId: 185
   - uid: 1725
     components:
     - type: Transform
@@ -1856,6 +2084,10 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+    - type: PointCannon
+      linkedConsoleIds:
+      - 185
+      linkedConsoleId: 185
 - proto: Beaker
   entities:
   - uid: 544
@@ -2299,6 +2531,11 @@ entities:
     components:
     - type: Transform
       pos: 16.5,-0.5
+      parent: 1
+  - uid: 1328
+    components:
+    - type: Transform
+      pos: -7.5,19.5
       parent: 1
   - uid: 1329
     components:
@@ -2754,11 +2991,6 @@ entities:
     components:
     - type: Transform
       pos: 15.5,-7.5
-      parent: 1
-  - uid: 1420
-    components:
-    - type: Transform
-      pos: 16.5,-7.5
       parent: 1
   - uid: 1421
     components:
@@ -3515,11 +3747,6 @@ entities:
     - type: Transform
       pos: -11.5,-7.5
       parent: 1
-  - uid: 1585
-    components:
-    - type: Transform
-      pos: -13.5,-7.5
-      parent: 1
   - uid: 1586
     components:
     - type: Transform
@@ -3735,8 +3962,113 @@ entities:
     - type: Transform
       pos: 0.5,9.5
       parent: 1
+  - uid: 1736
+    components:
+    - type: Transform
+      pos: 6.5,15.5
+      parent: 1
+  - uid: 1737
+    components:
+    - type: Transform
+      pos: -3.5,15.5
+      parent: 1
+  - uid: 1738
+    components:
+    - type: Transform
+      pos: -10.5,-9.5
+      parent: 1
+  - uid: 1739
+    components:
+    - type: Transform
+      pos: -10.5,-10.5
+      parent: 1
+  - uid: 1740
+    components:
+    - type: Transform
+      pos: -9.5,-10.5
+      parent: 1
+  - uid: 1741
+    components:
+    - type: Transform
+      pos: -12.5,-0.5
+      parent: 1
+  - uid: 1742
+    components:
+    - type: Transform
+      pos: -12.5,0.5
+      parent: 1
+  - uid: 1743
+    components:
+    - type: Transform
+      pos: 14.5,0.5
+      parent: 1
+  - uid: 1744
+    components:
+    - type: Transform
+      pos: 14.5,1.5
+      parent: 1
+  - uid: 1745
+    components:
+    - type: Transform
+      pos: 15.5,1.5
+      parent: 1
+  - uid: 1746
+    components:
+    - type: Transform
+      pos: -12.5,1.5
+      parent: 1
+  - uid: 1747
+    components:
+    - type: Transform
+      pos: -17.5,-2.5
+      parent: 1
+  - uid: 1748
+    components:
+    - type: Transform
+      pos: -17.5,-6.5
+      parent: 1
+  - uid: 1749
+    components:
+    - type: Transform
+      pos: -19.5,-4.5
+      parent: 1
+  - uid: 1750
+    components:
+    - type: Transform
+      pos: -17.5,-7.5
+      parent: 1
+  - uid: 1751
+    components:
+    - type: Transform
+      pos: 20.5,-7.5
+      parent: 1
+  - uid: 1752
+    components:
+    - type: Transform
+      pos: -7.5,22.5
+      parent: 1
+  - uid: 1753
+    components:
+    - type: Transform
+      pos: -8.5,22.5
+      parent: 1
+  - uid: 1754
+    components:
+    - type: Transform
+      pos: -8.5,19.5
+      parent: 1
+  - uid: 1755
+    components:
+    - type: Transform
+      pos: -9.5,19.5
+      parent: 1
 - proto: CableHV
   entities:
+  - uid: 168
+    components:
+    - type: Transform
+      pos: 16.5,-7.5
+      parent: 1
   - uid: 1105
     components:
     - type: Transform
@@ -4037,6 +4369,11 @@ entities:
     - type: Transform
       pos: 15.5,-7.5
       parent: 1
+  - uid: 1196
+    components:
+    - type: Transform
+      pos: 16.5,-6.5
+      parent: 1
   - uid: 1197
     components:
     - type: Transform
@@ -4091,6 +4428,26 @@ entities:
     components:
     - type: Transform
       pos: -12.5,-7.5
+      parent: 1
+  - uid: 1732
+    components:
+    - type: Transform
+      pos: -13.5,-7.5
+      parent: 1
+  - uid: 1733
+    components:
+    - type: Transform
+      pos: -13.5,-6.5
+      parent: 1
+  - uid: 1734
+    components:
+    - type: Transform
+      pos: -12.5,-6.5
+      parent: 1
+  - uid: 1735
+    components:
+    - type: Transform
+      pos: 15.5,-6.5
       parent: 1
 - proto: CableMV
   entities:
@@ -5483,6 +5840,10 @@ entities:
         - invalid
         - 965
         - 968
+        - 961
+        - 966
+        - 1724
+        - 1725
         70mm "Jeong" swarmrocket platform:
         - 965
         - 968
@@ -5493,6 +5854,11 @@ entities:
         - invalid
         - invalid
         - invalid
+        swarmer missile launcher:
+        - 961
+        - 966
+        - 1724
+        - 1725
 - proto: ConveyorBelt
   entities:
   - uid: 906
@@ -7644,25 +8010,25 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 22.5,-4.5
       parent: 1
-- proto: GyroscopeNfsd
+- proto: Gyroscope
   entities:
-  - uid: 168
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 10.5,20.5
-      parent: 1
-  - uid: 1196
+  - uid: 1420
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 10.5,-9.5
       parent: 1
-  - uid: 1328
+  - uid: 1585
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -7.5,20.5
+      parent: 1
+  - uid: 1731
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 10.5,20.5
       parent: 1
 - proto: HandheldHealthAnalyzer
   entities:
@@ -9580,8 +9946,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: 9.5,24.5
       parent: 1
-    - type: Battery
-      startingCharge: 997000
+    - type: ApcPowerReceiver
+      powerLoad: 5000
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -9596,8 +9962,8 @@ entities:
           showEnts: False
           occludes: True
           ents: []
-    - type: ApcPowerReceiver
-      powerLoad: 5000
+    - type: Battery
+      startingCharge: 997000
     - type: BatterySelfRecharger
       autoRechargeRate: -3000
       autoRecharge: True
@@ -9607,8 +9973,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: -6.5,24.5
       parent: 1
-    - type: Battery
-      startingCharge: 997000
+    - type: ApcPowerReceiver
+      powerLoad: 5000
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -9623,8 +9989,8 @@ entities:
           showEnts: False
           occludes: True
           ents: []
-    - type: ApcPowerReceiver
-      powerLoad: 5000
+    - type: Battery
+      startingCharge: 997000
     - type: BatterySelfRecharger
       autoRechargeRate: -3000
       autoRecharge: True

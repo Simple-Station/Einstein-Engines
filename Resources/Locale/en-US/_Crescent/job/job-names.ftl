@@ -101,6 +101,7 @@ job-name-arbeiter = Arbeiter
 job-name-antiquarian = Izdari Antiquarian
 job-name-spacer = Spacer
 job-name-gliess-sheriff = Gliessian Sheriff
+job-name-gliess-deputy = Gliessian Deputy
 job-name-gliess-dockmaster = Gliessian Dockmaster
 
 # conscript-ncwl - for PLANETFALL

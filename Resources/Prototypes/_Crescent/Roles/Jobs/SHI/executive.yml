@@ -7,6 +7,9 @@
     - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
       min: 36000
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
     - !type:FactionRequirement
       factionID: "SHI"
     - !type:CharacterTraitRequirement

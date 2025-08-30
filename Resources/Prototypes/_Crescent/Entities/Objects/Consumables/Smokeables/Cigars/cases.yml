@@ -1,0 +1,119 @@
+- type: entity
+  id: CigarFreeports
+  parent: CigarCase
+  name: Freeport cigar case
+  description: A case containing cigars made from a luxuriant blend of a scant amount of intercepted pure Chengridz tobacco, near-extinct Kal Surezai leaf and an anomalous strain invented by Cyberdawn Technologies.
+  components:
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/freeports_cigar.rsi
+  - type: Item
+    sprite: _Crescent/Objects/Consumable/Smokeables/Cigars/freeports_cigar.rsi
+    size: Normal
+    shape:
+    - 0,0,2,1
+    storedRotation: 90
+  - type: StorageFill
+    contents:
+    - id: CigarFreeport
+      amount: 8
+
+- type: entity
+  id: CigarNCWLCase
+  parent: CigarCase
+  name: imported Chengridz cigar case
+  description: A cigar case containing the sort of indulgence reserved for those who measure worth in fleets and factories. Each stick is rolled from genuine leaf, untouched by synth processes, carrying a taste the common rabble will never know. Scarcity only adds to their prestige as Imperial raids and sabotage on supply convoys have turned every shipment into a gamble, where a single draw might cost more than a laborer’s year.
+  components:
+  - type: Sprite
+    scale: 0.9, 0.9
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/imported_cigar.rsi
+    layers:
+    - state: closed
+    - state: open
+      map: ["openLayer"]
+    - state: cigar1
+      map: ["cigar1"]
+      visible: false
+    - state: cigar2
+      map: ["cigar2"]
+      visible: false
+    - state: cigar3
+      map: ["cigar3"]
+      visible: false
+    - state: cigar4
+      map: ["cigar4"]
+      visible: false
+    - state: cigar5
+      map: ["cigar5"]
+      visible: false
+  - type: Storage
+    grid:
+    - 0,0,5,1
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/imported_cigar.rsi
+    size: Normal
+    shape:
+    - 0,0,2,1
+    storedRotation: 90
+  - type: StorageFill
+    contents:
+    - id: CigarNCWL
+      amount: 5
+  - type: ItemCounter
+    count:
+      tags: [Cigar]
+    composite: true
+    layerStates:
+    - cigar1
+    - cigar2
+    - cigar3
+    - cigar4
+    - cigar5
+
+- type: entity
+  id: CigarRoyalCase
+  parent: CigarCase
+  name: Imperial cigar case
+  description: A cigar case containing cigars rolled from exquisite tobacco derived from Kal Surezai, certified under the Imperial brand.
+  components:
+  - type: Sprite
+    scale: 0.9, 0.9
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/royal_cigar.rsi
+    layers:
+    - state: closed
+    - state: open
+      map: ["openLayer"]
+    - state: cigar1
+      map: ["cigar1"]
+      visible: false
+    - state: cigar2
+      map: ["cigar2"]
+      visible: false
+    - state: cigar3
+      map: ["cigar3"]
+      visible: false
+    - state: cigar4
+      map: ["cigar4"]
+      visible: false
+  - type: Storage
+    grid:
+    - 0,0,4,1
+  - type: Item
+    sprite: _Crescent/Objects/Consumables/Smokeables/Cigars/royal_cigar.rsi
+    size: Normal
+    shape:
+    - 0,0,2,1
+    storedRotation: 90
+  - type: StorageFill
+    contents:
+    - id: CigarRoyal
+      amount: 4
+  - type: ItemCounter
+    count:
+      tags: [Cigar]
+    composite: true
+    layerStates:
+    - cigar1
+    - cigar2
+    - cigar3
+    - cigar4

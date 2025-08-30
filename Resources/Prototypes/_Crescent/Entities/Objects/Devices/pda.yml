@@ -1207,6 +1207,20 @@
 
 - type: entity
   parent: BasePDA
+  id: GliessDeputyPDA
+  name: deputy's PDA
+  description: You are the law.
+  components:
+  - type: Pda
+    id: GliessIDCardDeputy
+    state: pda-corpsec
+  - type: PdaBorderColor
+    borderColor: "#808080"
+  - type: Icon
+    state: pda-corpsec
+
+- type: entity
+  parent: BasePDA
   id: GliessDockmasterPDA
   name: dockmaster's PDA
   description: You are the law.

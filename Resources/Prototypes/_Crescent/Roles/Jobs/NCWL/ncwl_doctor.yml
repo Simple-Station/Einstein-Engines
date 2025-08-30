@@ -51,7 +51,7 @@
 - type: startingGear
   id: DoctorNCWLGear
   equipment:
-    shoes: ClothingShoesBootsJack
+    shoes: ClothingShoesBootsCombat
     jumpsuit: ClothingUniformJumpsuitNCWLMedic
     id: NCWLMedicalWorkerPDA
     outerClothing: ClothingOuterArmorNCWLMedi
