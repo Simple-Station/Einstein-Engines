@@ -68,8 +68,8 @@
         gameMapID: TribalHideout
         posX: -4800
         posY: -3600
-        RandomOffsetX: 2000
-        RandomOffsetY: 2000
+        randomOffsetX: 2000
+        randomOffsetY: 2000
       #      Aasim: #reenable whenever TAP is gameplay ready
       #        gameMapID: Aasim
       #        posX: 4500
