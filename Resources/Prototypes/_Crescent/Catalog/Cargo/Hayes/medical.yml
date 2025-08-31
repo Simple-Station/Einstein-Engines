@@ -1,0 +1,119 @@
+- type: cargoProduct
+  id: MedicalSuppliesHayes
+  icon:
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: firstaid
+  product: CrateMedicalSupplies
+  cost: 3000
+  category: cargoproduct-category-name-medical
+  group: hayes
+
+- type: cargoProduct
+  id: PhoronHayes
+  icon:
+    sprite: _Crescent/Objects/Materials/ore.rsi
+    state: deactivatedphoron
+  product: CratePhoron
+  cost: 7000
+  category: cargoproduct-category-name-medical
+  group: hayes
+
+- type: cargoProduct
+  id: PlasmaHayes
+  icon:
+    sprite: _Crescent/Objects/Materials/ore.rsi
+    state: plasmaisotope
+  product: CrateIsotopes
+  cost: 8500
+  category: cargoproduct-category-name-medical
+  group: hayes
+
+- type: cargoProduct
+  id: GalineHayes
+  icon:
+    sprite: _Crescent/Objects/Materials/ore.rsi
+    state: galine5
+  product: CrateGaline
+  cost: 6000
+  category: cargoproduct-category-name-medical
+  group: hayes
+
+- type: cargoProduct
+  id: MechaniteHayes
+  icon:
+    sprite: _Crescent/Objects/Materials/ore.rsi
+    state: mechanites
+  product: CrateMechanite
+  cost: 12500
+  category: cargoproduct-category-name-medical
+  group: hayes
+
+- type: cargoProduct
+  id: EmergencyBurnKitHayes
+  icon:
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: burnkit
+  product: CrateEmergencyBurnKit
+  cost: 1500
+  category: cargoproduct-category-name-medical
+  group: hayes
+
+- type: cargoProduct
+  id: EmergencyToxinKitHayes
+  icon:
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: toxinkit
+  product: CrateEmergencyToxinKit
+  cost: 1000
+  category: cargoproduct-category-name-medical
+  group: hayes
+
+- type: cargoProduct
+  id: EmergencyO2KitHayes
+  icon:
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: o2kit
+  product: CrateEmergencyO2Kit
+  cost: 1500
+  category: cargoproduct-category-name-medical
+  group: hayes
+
+- type: cargoProduct
+  id: EmergencyBruteKitHayes
+  icon:
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: brutekit
+  product: CrateEmergencyBruteKit
+  cost: 2000
+  category: cargoproduct-category-name-medical
+  group: hayes
+
+- type: cargoProduct
+  id: EmergencyAdvancedKitHayes
+  icon:
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: advkit
+  product: CrateEmergencyAdvancedKit
+  cost: 3000
+  category: cargoproduct-category-name-medical
+  group: hayes
+
+- type: cargoProduct
+  id: EmergencyRadiationKitHayes
+  icon:
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: radkit
+  product: CrateEmergencyRadiationKit
+  cost: 600
+  category: cargoproduct-category-name-medical
+  group: hayes
+
+- type: cargoProduct
+  id: MedicalBodybagsHayes
+  icon:
+    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+    state: bag_folded
+  product: CrateBodyBags
+  cost: 700
+  category: cargoproduct-category-name-medical
+  group: hayes
