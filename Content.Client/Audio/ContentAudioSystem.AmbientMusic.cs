@@ -94,6 +94,7 @@ public sealed partial class ContentAudioSystem
     private void InitializeAmbientMusic()
     {
         SubscribeNetworkEvent<SpaceBiomeSwapMessage>(OnBiomeChange);
+        SubscribeNetworkEvent<NewVesselEnteredMessage>(OnVesselChange);
         SubscribeLocalEvent<ToggleCombatActionEvent>(OnCombatModeToggle);
 
         Subs.CVar(_configManager, CCVars.AmbientMusicVolume, AmbienceCVarChanged, true);
@@ -180,6 +181,51 @@ public sealed partial class ContentAudioSystem
         string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
 
         PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _ambientMusicFadeInTime);
+    }
+
+
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="ev"></param>
+    private void OnVesselChange(NewVesselEnteredMessage ev)
+    {
+        _sawmill.Debug($"went to ship {ev.Name}"); //SHOULD BE ONE WORD. Jackal, Countsman, PortBalreska...
+
+        // SpaceBiomePrototype biome = _protMan.Index<SpaceBiomePrototype>(ev.Biome); //get the biome prototype
+        // _lastBiome = biome; //save biome in case we are in combat mode
+
+        if (_combatModeSystem.IsInCombatMode()) //we don't want to change music if we are in combat mode right now
+            return;
+
+        // FadeOut(_ambientMusicStream);
+
+        // if (_musicTracks == null)
+        //     return;
+
+        // _musicProto = null;
+
+        // foreach (var ambient in _musicTracks)
+        // {
+        //     if (biome.ID == ambient.ID) //if we find the biome that's matching the ambient's ID, we play that track!
+        //     {
+        //         //_sawmill.Debug($"found biome match: {biome.ID} == {ambient.ID}");
+        //         _musicProto = ambient;
+        //         break;
+        //     }
+        // }
+
+        // if (_musicProto == null) //if we don't find any, we play the default track.
+        // {
+        //     _musicProto = _proto.Index<AmbientMusicPrototype>("default");
+        //     _lastBiome = _proto.Index<SpaceBiomePrototype>("default");
+        // }
+
+        // SoundCollectionPrototype soundcol = _proto.Index<SoundCollectionPrototype>(_musicProto.ID);
+
+        // string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
+
+        // PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _ambientMusicFadeInTime);
     }
 
 
