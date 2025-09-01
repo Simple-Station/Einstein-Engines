@@ -521,6 +521,10 @@
     color: white
     energy: 0.5
   - type: GatheringProjectile
+  - type: ShipWeaponProjectile
+  - type: ProjectileIFF
+    visualType: Circle
+    color: White
 
 - type: entity
   id: BulletCharge

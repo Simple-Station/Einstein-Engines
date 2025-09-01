@@ -634,7 +634,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         while (targets.MoveNext(out var uid, out var comp))
         {
             var dist = (_transform.GetWorldPosition(uid) - drawJob.mapPos.Position).Length();
-            var objectName = $"{comp.Name} {dist:0.0}";
+            var objectName = $"{comp.Name} ({dist:0.0}m)";
             var labelDimensions = handle.GetDimensions(Font, objectName, 1f);
             Vector2 UIPos;
             if (!gridAABB.Intersects(viewAABB))

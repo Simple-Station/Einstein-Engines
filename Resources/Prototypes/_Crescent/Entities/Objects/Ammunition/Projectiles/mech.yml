@@ -15,7 +15,7 @@
 - type: entity
   id: BulletMechAutocannon
   name: bullet (90mm USTF)
-  parent: BaseBullet
+  parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -32,6 +32,9 @@
     intensitySlope: 15
     totalIntensity: 13
     maxTileBreak: 2
+  - type: ProjectileIFF
+    visualType: Square
+    color: White
 
 - type: entity
   id: BulletMechHeavyRifle
@@ -46,6 +49,27 @@
         Structural: 80
     harmorPenetration: 70
     stoppingPower: 9
+  - type: ShipWeaponProjectile
+  - type: Fixtures
+    fixtures:
+      projectile:
+        hard: false
+      fly-by: &flybyfixture
+        shape: !type:PhysShapeCircle
+          radius: 1.5
+        layer:
+        - Impassable
+        - MidImpassable
+        - HighImpassable
+        - LowImpassable
+        hard: false
+  - type: ProjectilePhasePrevent #do not remove
+    mask:
+    - BulletImpassable
+    - Impassable
+  - type: ProjectileIFF
+    visualType: Square
+    color: White
 
 - type: entity
   id: ExosuitAutoshotgunPellet
