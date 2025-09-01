@@ -81,6 +81,8 @@
   - type: ShipyardListing
     shuttles:
     - gazpachov
+    - Hammerhead
+    - Comet
     - Exhumer
     - Homesteader
     - Kite
