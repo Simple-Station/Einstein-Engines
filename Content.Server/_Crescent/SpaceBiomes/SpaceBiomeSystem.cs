@@ -112,26 +112,21 @@ public sealed class SpaceBiomeSystem : EntitySystem
         if (parentStation == null)
             return;
 
-        if (!component.BoringStations.Contains((EntityUid) parentStation))
-        {
-            component.BoringStations.Add((EntityUid) parentStation);
+        // HULLROT EDIT: BoringStations and keeping track of what we've visited before is removed
+        // because we want people to see the message each time you enter, coupled with music and flavor text
 
-            if (!TryComp<VesselDesignationComponent>(parentStation, out var desig) || !TryComp<StationNameSetupComponent>(parentStation, out var setup))
-                return;
+        if (!TryComp<VesselDesignationComponent>(parentStation, out var desig) || !TryComp<StationNameSetupComponent>(parentStation, out var setup))
+            return;
 
-            var description = ""; //fallback if shuttle/station has no description
+        var description = ""; //fallback if shuttle/station has no description
 
-            if (TryComp<VesselDescriptionComponent>(parentStation, out var desc)) //if this succeeds, we have a description! if it fails,
-                description = desc.Description;                                   //the component is missing and we just keep ""
+        if (TryComp<VesselDescriptionComponent>(parentStation, out var desc)) //if this succeeds, we have a description! if it fails,
+            description = desc.Description;                                   //the component is missing and we just keep ""
 
-            var name = setup.StationNameTemplate.Replace("{1}", "").Trim();
-            // This is testing if we just initialized because we don't want to send the message on spawn
-            if (_timing.CurTick.Value - MetaData(uid).CreationTick.Value > 500)
-            {
-                NewVesselEnteredMessage message = new NewVesselEnteredMessage(name, Loc.GetString(desig.Designation), description);
-                RaiseNetworkEvent(message, actor.PlayerSession);
-            }
-        }
+        var name = setup.StationNameTemplate.Replace("{1}", "").Trim();
+        // HULLROT EDIT: we want the vessel you're on to immediately play it's message, for music & larp reasons
+        NewVesselEnteredMessage message = new NewVesselEnteredMessage(name, Loc.GetString(desig.Designation), description);
+        RaiseNetworkEvent(message, actor.PlayerSession);
     }
 
     public void AddBiome(EntityUid uid, SpaceBiomeSourceComponent source)
