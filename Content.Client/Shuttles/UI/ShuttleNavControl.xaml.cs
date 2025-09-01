@@ -599,7 +599,10 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
             DrawTurrets(handle, gUid, matty, false);
 
         }
-        DrawIFFDesignatedObjects(handle);
+
+        if (ourGrid is null)
+            return;
+        DrawIFFDesignatedObjects(handle, ourWorldMatrix, ourGrid, viewAABB);
     }
 
     public Vector2 ResolveUIPosition(Angle rotation, Vector2 gridWorldPos, Vector2 selfPos, Vector2 spaceRequired)
@@ -641,14 +644,17 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
                     _transform.GetWorldPosition(uid),
                     drawJob.mapPos.Position,
                     labelDimensions);
-                UIPos = new Vector2(
-                    Math.Clamp(UIPos.X, 5f, PixelWidth - labelDimensions.X),
-                    Math.Clamp(UIPos.Y, 0f, PixelHeight - labelDimensions.Y));
             }
             else
             {
-
+                UIPos = (-drawJob.rot).RotateVec(_transform.GetWorldPosition(uid) - drawJob.mapPos.Position);
+                UIPos.Y *= -1;
+                UIPos = ScalePosition(UIPos);
+                UIPos.X -= labelDimensions.X/2;
             }
+            UIPos = new Vector2(
+                Math.Clamp(UIPos.X, 5f, PixelWidth - labelDimensions.X),
+                Math.Clamp(UIPos.Y, 0f, PixelHeight - labelDimensions.Y));
 
             handle.DrawString(Font, UIPos, objectName, Color.White);
         }
