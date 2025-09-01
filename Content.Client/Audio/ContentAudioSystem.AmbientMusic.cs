@@ -62,7 +62,7 @@ public sealed partial class ContentAudioSystem
     private SpaceBiomePrototype? _lastBiome;
 
     // Every <THIS> amount of time, attempt to play a new music track. This ticks down on rejoining as well.
-    private TimeSpan _timeUntilNextAmbientTrack = TimeSpan.FromMinutes(5);
+    private TimeSpan _timeUntilNextAmbientTrack = TimeSpan.FromSeconds(30);
 
     // List of available ambient music tracks to sift through.
     private List<AmbientMusicPrototype>? _musicTracks;
@@ -85,6 +85,10 @@ public sealed partial class ContentAudioSystem
     // 3. When SwitchCombatMusic fires, we check if the current combat state is different than _lastCombatState. If it is, then we change music. If not, we keep it.
     bool _lastCombatState = false;
 
+
+    private CancellationTokenSource _combatMusicCancelToken = new CancellationTokenSource();
+
+    //used for logging, don't touch this
     private ISawmill _sawmill = default!;
 
     private void InitializeAmbientMusic()
@@ -184,13 +188,17 @@ public sealed partial class ContentAudioSystem
         if (!_timing.IsFirstTimePredicted == true) //needed, because combat mode is predicted, and triggers 7 times otherwise.
             return;
 
+        // Without this, there's inconsistent behaviour to when combat mode toggles on/off.
+        _combatMusicCancelToken.Cancel();
+        _combatMusicCancelToken = new CancellationTokenSource();
+
         bool currentCombatState = _combatModeSystem.IsInCombatMode();
 
 
         if (currentCombatState)
-            Timer.Spawn(_combatStartUpTime, SwitchCombatMusic);
+            Timer.Spawn(_combatStartUpTime, SwitchCombatMusic, _combatMusicCancelToken.Token);
         else
-            Timer.Spawn(_combatWindDownTime, SwitchCombatMusic);;
+            Timer.Spawn(_combatWindDownTime, SwitchCombatMusic, _combatMusicCancelToken.Token);
 
     }
     private void SwitchCombatMusic()
@@ -204,7 +212,7 @@ public sealed partial class ContentAudioSystem
 
         FadeOut(_ambientMusicStream);
 
-        if (currentCombatState) //true = we toggled combat ON. 
+        if (currentCombatState) //true = we toggled combat ON.
         {
             string combatFactionSuffix = ""; //this is added to "combatmode" to create "combatmodeNCWL", "combatmodeDSM", etc, to fetch combat tracks.
 
