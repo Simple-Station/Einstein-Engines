@@ -55,7 +55,7 @@
 ## FACTION COMBAT MUSIC TRACKS
 ## ID MUST BE "combatmode<FACTION>"!
 
-# NCWL, focus on guitar based songs
+# NCWL | STATE: good but not "communist" at all
 - type: ambientMusic
   id: combatmodeNCWL
   sound:
@@ -68,7 +68,7 @@
     - /Audio/_Crescent/Ambience/CombatMode/NCWL_2.ogg
 
 
-# TFSC, hard techno and pirate shit
+# TFSC | STATE: happy with em
 - type: ambientMusic
   id: combatmodeTFSC
   sound:
@@ -80,7 +80,7 @@
     - /Audio/_Crescent/Ambience/CombatMode/TFSC_1.ogg
     - /Audio/_Crescent/Ambience/CombatMode/TFSC_2.ogg
 
-# DSM, low quality RPG maker tracks, think OFF, LISA, etc. if you don't know what those are get the fuck out of here
+# DSM | STATE: not happy with em
 - type: ambientMusic
   id: combatmodeDSM
   sound:
@@ -92,7 +92,19 @@
     - /Audio/_Crescent/Ambience/CombatMode/DSM_1.ogg
     - /Audio/_Crescent/Ambience/CombatMode/DSM_2.ogg
 
-# TAP, highfleet tracks
+# SHI | STATE: not happy with em
+- type: ambientMusic
+  id: combatmodeSHI
+  sound:
+    collection: combatmodeSHI
+
+- type: soundCollection
+  id: combatmodeSHI
+  files:
+    - /Audio/_Crescent/Ambience/CombatMode/SHI_1.ogg
+    - /Audio/_Crescent/Ambience/CombatMode/SHI_2.ogg
+
+# TAP | STATE: not happy with em
 - type: ambientMusic
   id: combatmodeTAP
   sound:

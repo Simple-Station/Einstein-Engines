@@ -123,7 +123,7 @@ public sealed partial class ContentAudioSystem
             isDone = !audioComp.Playing;
         }
 
-        if (isDone == true) //if it's not done, this just does nothing
+        if (isDone == true) //if it's not done playing the current music track, this just does nothing
         {
             if (_musicProto == null) //if we don't find any, we play the default track.
             {
@@ -238,7 +238,7 @@ public sealed partial class ContentAudioSystem
             else //if the faction combat music prototype does not exist, instead fall back to the default.
             {
                 _musicProto = _proto.Index<AmbientMusicPrototype>("combatmodedefault");
-                SoundCollectionPrototype soundcol = _proto.Index<SoundCollectionPrototype>(_musicProto.ID); //THIS IS WHAT ERRORS!
+                SoundCollectionPrototype soundcol = _proto.Index<SoundCollectionPrototype>(_musicProto.ID);
 
                 string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
 
