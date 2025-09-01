@@ -32,6 +32,7 @@
 
 - type: ambientMusic
   id: default
+  priority: 1
   sound:
     collection: default
 
@@ -44,6 +45,7 @@
 
 - type: ambientMusic
   id: combatmodedefault
+  priority: 3
   sound:
     collection: combatmodedefault
 
@@ -58,6 +60,7 @@
 # NCWL | STATE: good but not "communist" at all
 - type: ambientMusic
   id: combatmodeNCWL
+  priority: 3
   sound:
     collection: combatmodeNCWL
 
@@ -71,6 +74,7 @@
 # TFSC | STATE: happy with em
 - type: ambientMusic
   id: combatmodeTFSC
+  priority: 3
   sound:
     collection: combatmodeTFSC
 
@@ -83,6 +87,7 @@
 # DSM | STATE: not happy with em
 - type: ambientMusic
   id: combatmodeDSM
+  priority: 3
   sound:
     collection: combatmodeDSM
 
@@ -95,6 +100,7 @@
 # SHI | STATE: not happy with em
 - type: ambientMusic
   id: combatmodeSHI
+  priority: 3
   sound:
     collection: combatmodeSHI
 
@@ -107,6 +113,7 @@
 # TAP | STATE: not happy with em
 - type: ambientMusic
   id: combatmodeTAP
+  priority: 3
   sound:
     collection: combatmodeTAP
 
@@ -123,6 +130,7 @@
 
 - type: ambientMusic
   id: imperialbiome
+  priority: 1
   sound:
     collection: imperialbiome
 
@@ -135,6 +143,7 @@
 
 - type: ambientMusic
   id: hunterbiome
+  priority: 1
   sound:
     collection: hunterbiome
 
@@ -147,6 +156,7 @@
 
 - type: ambientMusic
   id: syndicatebiome
+  priority: 1
   sound:
     collection: syndicatebiome
 
@@ -159,6 +169,7 @@
 
 - type: ambientMusic
   id: corpiebiome
+  priority: 1
   sound:
     collection: corpiebiome
 
@@ -171,6 +182,7 @@
 
 - type: ambientMusic
   id: wildbiome
+  priority: 1
   sound:
     collection: wildbiome
 
@@ -184,6 +196,7 @@
 
 - type: ambientMusic
   id: deepwildbiome
+  priority: 1
   sound:
     collection: deepwildbiome
 
@@ -196,6 +209,7 @@
 
 - type: ambientMusic
   id: hadalbiome
+  priority: 1
   sound:
     collection: hadalbiome
 
