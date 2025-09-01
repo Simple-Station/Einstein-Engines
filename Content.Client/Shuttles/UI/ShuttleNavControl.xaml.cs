@@ -70,6 +70,8 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
     private Vector2 MouseUIPosition = Vector2.Zero;
     private Angle LastRotation = Angle.Zero;
     private Vector2 LastWorldCoordinates = Vector2.Zero;
+    public bool keepWorldAligned = false;
+    private List<Entity<MapGridComponent>> _grids = new();
 
     internal record shipData
     {
@@ -256,11 +258,6 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         }
     }
 
-    private Dictionary<EntityUid,shipData> localShips = new();
-    public bool keepWorldAligned = false;
-
-    private List<Entity<MapGridComponent>> _grids = new();
-
     public ShuttleNavControl() : base(64f, 256f, 256f)
     {
         RobustXamlLoader.Load(this);
@@ -320,7 +317,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
             return;
 
         OnRadarClick?.Invoke(PureRelativePosition(args.RelativePosition));
-        foreach (var (shipkey, shipdata) in localShips)
+        foreach (var (shipkey, shipdata) in drawJob.gridData)
         {
             if ((shipdata.UIPosition - MouseUIPosition).Length() < 5)
             {
