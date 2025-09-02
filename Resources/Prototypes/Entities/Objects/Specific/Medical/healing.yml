@@ -210,7 +210,7 @@
       - Biological
     damage:
       types:
-        Bloodloss: -2.5 #lowers bloodloss damage, was .5, buffed due to Limb Damage Changes
+        Bloodloss: -5 #lowers bloodloss damage, was .5, buffed due to Limb Damage Changes
     ModifyBloodLevel: 30 #used to restore 5% blood per use, now restores about 10% blood per use on standard Buffed due to Limb Damage Changes
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
@@ -246,8 +246,8 @@
       damageContainers:
         - Biological
       damage:
-        groups:
-          Brute: 5 # Tourniquets HURT!
+        #groups:
+          #Brute: 5 # Tourniquets HURT!! - WAAAHHH I WANT MY BINKY!!!!! OWIE!!!
         types:
           Asphyxiation: 5 # Essentially Stopping all blood reaching a part of your body
       bloodlossModifier: -10 # Tourniquets stop bleeding
