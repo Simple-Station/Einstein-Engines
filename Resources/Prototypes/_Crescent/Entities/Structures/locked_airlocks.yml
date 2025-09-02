@@ -748,6 +748,15 @@
 
 - type: entity
   parent: WindoorSecure
+  id: WindoorSecureFamilies
+  suffix: Families, Windoor
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsFamilies ]
+
+- type: entity
+  parent: WindoorSecure
   id: WindoorSecureAlseik
   suffix: Al'Seik, Windoor
   components:

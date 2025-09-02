@@ -120,7 +120,7 @@
     smugglers, racketeers, and gamblers.
   color: "#9FED58"
   weight: -7
-  enabled: false
+  enabled: true
   icon:
     sprite: /Textures/_Crescent/faction_icons.rsi
     state: fourfamilies

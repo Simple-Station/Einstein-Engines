@@ -147,7 +147,7 @@
       TradeGoodFabrics: TradeDeedVeryHigh
       TradeGoodMiltech: TradeDeedNormal
       TradeGoodAlloys: TradeDeedExotic
-      TradeGoodWine: TradeDeedExotic
+      TradeGoodWine: TradeDeedHigh
   - type: Sprite
     sprite: _Crescent/Structures/cargochute.rsi
     layers:
@@ -361,7 +361,7 @@
       TradeGoodSugar: TradeDeedLow
       TradeGoodGoodScrap: TradeDeedHigh
       TradeGoodPlasma: TradeDeedExotic
-      TradeGoodWine: TradeDeedExotic
+      TradeGoodWine: TradeDeedHigh
       TradeGoodFabrics: TradeDeedVeryHigh
       TradeGoodNanoTrasen: TradeDeedHigh
       TradeGoodOldCyber: TradeDeedHigh
@@ -398,7 +398,7 @@
       TradeGoodAlloys: TradeDeedExotic
       TradeGoodGoodScrap: TradeDeedVeryHigh
       TradeGoodPlasma: TradeDeedExotic
-      TradeGoodWine: TradeDeedExotic
+      TradeGoodWine: TradeDeedHigh
       TradeGoodNanoTrasen: TradeDeedHigh
       TradeGoodOldCyber: TradeDeedHigh
       TradeGoodOldParts: TradeDeedHigh
@@ -467,7 +467,7 @@
       TradeGoodSugar: TradeDeedLow
       TradeGoodGoodScrap: TradeDeedExotic
       TradeGoodFabrics: TradeDeedVeryHigh
-      TradeGoodWine: TradeDeedExotic
+      TradeGoodWine: TradeDeedHigh
       TradeGoodPlasma: TradeDeedVeryHigh
       TradeGoodNanoTrasen: TradeDeedHigh
       TradeGoodOldCyber: TradeDeedHigh
