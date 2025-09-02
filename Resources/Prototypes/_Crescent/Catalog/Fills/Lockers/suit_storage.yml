@@ -85,7 +85,7 @@
 - type: entity
   id: CrescentSuitStorageDSMTemplarHardsuit
   parent: SuitStorageBase
-  suffix: Imperial Templar Hardsuit
+  suffix: Imperial Mk.III 'ADJUDICATOR' Hardsuit
   components:
   - type: StorageFill
     contents:
