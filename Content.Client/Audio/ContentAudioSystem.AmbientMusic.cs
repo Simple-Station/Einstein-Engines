@@ -49,6 +49,7 @@ public sealed partial class ContentAudioSystem
     [Dependency] private readonly IPrototypeManager _protMan = default!;
     [Dependency] private readonly IEntityManager _entMan = default!;
     [Dependency] private readonly IClientPreferencesManager _prefsManager = default!;
+    
 
     private static float _volumeSlider;
 
@@ -87,6 +88,7 @@ public sealed partial class ContentAudioSystem
 
 
     private CancellationTokenSource _combatMusicCancelToken = new CancellationTokenSource();
+    private CancellationTokenSource _ambientMusicCancelToken = new CancellationTokenSource();
 
     //used for logging, don't touch this
     private ISawmill _sawmill = default!;
@@ -103,7 +105,9 @@ public sealed partial class ContentAudioSystem
         // Setup tracks to pull from. Runs once.
         _musicTracks = GetTracks();
 
-        Timer.Spawn(_timeUntilNextAmbientTrack, () => ReplayAmbientMusic());
+
+        //no longer needed because we track my the current audio track's time
+        //Timer.Spawn(_timeUntilNextAmbientTrack, () => ReplayAmbientMusic());
 
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnProtoReload);
         _state.OnStateChanged += OnStateChange;
@@ -117,29 +121,30 @@ public sealed partial class ContentAudioSystem
     /// </summary>
     private void ReplayAmbientMusic()
     {
-        bool? isDone = null;
 
-        if (TryComp(_ambientMusicStream, out AudioComponent? audioComp))
+        _sawmill.Debug("!!!REPLAY AMBIENT MUSIC RAN!!!! - B");
+
+        _sawmill.Debug("!!!REPLAY AMBIENT MUSIC RAN!!!! - C");
+        if (_musicProto == null) //if we don't find any, we play the default track.
         {
-            isDone = !audioComp.Playing;
+            _sawmill.Debug("!!!REPLAY AMBIENT MUSIC RAN!!!! - D");
+            _musicProto = _proto.Index<AmbientMusicPrototype>("default");
+            _lastBiome = _proto.Index<SpaceBiomePrototype>("default");
         }
 
-        if (isDone == true) //if it's not done playing the current music track, this just does nothing
-        {
-            if (_musicProto == null) //if we don't find any, we play the default track.
-            {
-                _musicProto = _proto.Index<AmbientMusicPrototype>("default");
-                _lastBiome = _proto.Index<SpaceBiomePrototype>("default");
-            }
+        _sawmill.Debug("!!!REPLAY AMBIENT MUSIC RAN!!!! - E");
+        SoundCollectionPrototype soundcol = _proto.Index<SoundCollectionPrototype>(_musicProto.ID);
 
-            SoundCollectionPrototype soundcol = _proto.Index<SoundCollectionPrototype>(_musicProto.ID);
+        string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
 
-            string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
+        PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _ambientMusicFadeInTime);
 
-            PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _ambientMusicFadeInTime);
+        _sawmill.Debug("!!!REPLAY AMBIENT MUSIC RAN!!!! - F");
 
-            Timer.Spawn(_timeUntilNextAmbientTrack, () => ReplayAmbientMusic());
-        }
+        _ambientMusicCancelToken.Cancel();
+        _ambientMusicCancelToken = new CancellationTokenSource();
+
+        Timer.Spawn(_audio.GetAudioLength(path) + _timeUntilNextAmbientTrack, () => ReplayAmbientMusic(), _ambientMusicCancelToken.Token);
 
     }
 
@@ -181,6 +186,11 @@ public sealed partial class ContentAudioSystem
         string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
 
         PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _ambientMusicFadeInTime);
+
+        _ambientMusicCancelToken.Cancel();
+        _ambientMusicCancelToken = new CancellationTokenSource();
+
+        Timer.Spawn(_audio.GetAudioLength(path) + _timeUntilNextAmbientTrack, () => ReplayAmbientMusic(), _ambientMusicCancelToken.Token);
     }
 
 
@@ -249,6 +259,10 @@ public sealed partial class ContentAudioSystem
     }
     private void SwitchCombatMusic()
     {
+        _ambientMusicCancelToken.Cancel();
+        _ambientMusicCancelToken = new CancellationTokenSource();
+
+
         bool currentCombatState = _combatModeSystem.IsInCombatMode();
 
         if (_lastCombatState == currentCombatState)
@@ -316,6 +330,8 @@ public sealed partial class ContentAudioSystem
             string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
 
             PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _ambientMusicFadeInTime);
+
+            Timer.Spawn(_audio.GetAudioLength(path) + _timeUntilNextAmbientTrack, () => ReplayAmbientMusic(), _ambientMusicCancelToken.Token);
         }
     }
 
