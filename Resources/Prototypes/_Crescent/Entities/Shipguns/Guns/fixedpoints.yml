@@ -380,7 +380,7 @@
   description: An outdated, gas-operated slugthrower. Usually found mounted on older civilian models. Ballistic-fed.
   components:
   - type: ApcPowerReceiver
-    powerLoad: 3000
+    powerLoad: 1000
   - type: StaticPrice
     price: 8000
   - type: Destructible
@@ -524,7 +524,7 @@
     layers:
     - state: artillery
   - type: BallisticAmmoProvider
-    soundInsert: 
+    soundInsert:
       path: /Audio/Weapons/Guns/UnionfallWeapons/amr_close_1.ogg
     fillWithDoAfter: true
     fillDelay: 1

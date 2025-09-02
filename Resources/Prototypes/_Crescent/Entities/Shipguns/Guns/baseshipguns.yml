@@ -12,6 +12,8 @@
   - type: Battery
     maxCharge: 20000
     startingCharge: 20000
+  - type: ApcPowerReceiverBattery
+    batteryRechargeRate: 5000
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallicStrong
@@ -26,7 +28,7 @@
       - SpaceArtilleryDetectedMalfunction
       - SpaceArtilleryDetectedSafetyChange
   - type: SpaceArtillery
-    powerChargeRate: 5000
+    powerChargeRate: 1000
     powerUsePassive: 0
     powerUseActive: 2000
     isArmed: true
