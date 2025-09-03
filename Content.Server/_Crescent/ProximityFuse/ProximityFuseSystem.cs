@@ -68,7 +68,10 @@ public sealed class ProximityFuseSystem : EntitySystem
             }
         }
     }
-    public void Detonate(EntityUid uid) // if object has an explosive component then explode it, otherwise delete the object
+    /// <summary>
+    /// Explodes the entity if it has an explosive component, otherwise, deletes the object
+    /// </summary>
+    public void Detonate(EntityUid uid)
     {
         if (TryComp<ExplosiveComponent>(uid, out var explosiveComp))
             _entMan.System<ExplosionSystem>().TriggerExplosive(uid);
