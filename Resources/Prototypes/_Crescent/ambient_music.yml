@@ -109,6 +109,8 @@
   files:
     - /Audio/_Crescent/Ambience/CombatMode/SHI_1.ogg
     - /Audio/_Crescent/Ambience/CombatMode/SHI_2.ogg
+    - /Audio/_Crescent/Ambience/CombatMode/SHI_3.ogg
+    - /Audio/_Crescent/Ambience/CombatMode/SHI_4.ogg
 
 # TAP | STATE: not happy with em
 - type: ambientMusic
@@ -223,6 +225,7 @@
 #They point to an ambientMusicPrototype and that prototype MUST be here, otherwise it does nothing.
 #so for example, in balreska.yml, it's VesselMusic component points to PortBalreskaMusic, which is the first item here.
 
+#PORT BALRESKA
 - type: ambientMusic
   id: PortBalreskaMusic
   priority: 1
@@ -232,7 +235,49 @@
 - type: soundCollection
   id: PortBalreskaMusic
   files:
-   - /Audio/_Crescent/surfacing.ogg
+   - /Audio/_Crescent/Stations/NCWL/PortBalreska/balreska_1.ogg
+   - /Audio/_Crescent/Stations/NCWL/PortBalreska/balreska_2.ogg
+   - /Audio/_Crescent/Stations/NCWL/PortBalreska/balreska_3.ogg
+
+#GLIESS SANTO
+- type: ambientMusic
+  id: GliessMusic
+  priority: 1
+  sound:
+    collection: GliessMusic
+
+- type: soundCollection
+  id: GliessMusic
+  files:
+   - /Audio/_Crescent/Stations/Gliess/gliess_1.ogg
+   - /Audio/_Crescent/Stations/Gliess/gliess_2.ogg
+   - /Audio/_Crescent/Stations/Gliess/gliess_3.ogg
+
+#JACKAL
+- type: ambientMusic
+  id: JackalMusic
+  priority: 1
+  sound:
+    collection: JackalMusic
+
+- type: soundCollection
+  id: JackalMusic
+  files:
+   - /Audio/_Crescent/Stations/TFSC/Jackal/jackal_1.ogg
+   - /Audio/_Crescent/Stations/TFSC/Jackal/jackal_2.ogg
+
+#COUNTSMAN
+- type: ambientMusic
+  id: CountsmanMusic
+  priority: 1
+  sound:
+    collection: CountsmanMusic
+
+- type: soundCollection
+  id: CountsmanMusic
+  files:
+   - /Audio/_Crescent/Stations/DSM/Countsman/countsman_1.ogg
+   - /Audio/_Crescent/Stations/DSM/Countsman/countsman_2.ogg
 
 #UNIONFALL
 

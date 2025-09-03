@@ -19,6 +19,8 @@
           designation: vessel-designation-headquarters
         - type: VesselDescription
           description: A ramshackle hubship housing the last coherent Imperial chapter in this system.
+        - type: VesselMusic
+          ambientMusicPrototype: CountsmanMusic
         - type: Grammar
           attributes:
             proper: true
