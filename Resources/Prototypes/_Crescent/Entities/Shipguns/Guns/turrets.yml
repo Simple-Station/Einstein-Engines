@@ -3,16 +3,16 @@
 - type: entity
   parent: BaseTurretShipgun
   id: WeaponTurretPDT
+  suffix: ShipGun
   name: SHI MG-213 light dual machinegun 20x135mm
   components:
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/lightautoturret.rsi
       drawdepth: Mobs
       layers:
         - state: syndie_lethal
+    - type: Machine
+      board: WeaponTurretPDTCircuitboard
     - type: Damageable
       damageContainer: Inorganic
     - type: Destructible
@@ -21,16 +21,14 @@
             !type:DamageTrigger
             damage: 500
           behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 3
-                  max: 5
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
     - type: Gun
       projectileSpeed: 145
       fireRate: 5
@@ -54,56 +52,56 @@
     - type: HardpointAnchorableOnly
       class: Ballistic
       size: Small
+    - type: Construction
+      graph: Machine
+      node: machine
+      containers:
+      - machine_parts
+      - machine_board
 
 - type: entity
   parent: WeaponTurretPDT
-  name: SHI MG-213 light dual machinegun 20x135mm Mk. II
   id: WeaponTurretPDTNCSP
-  suffix: Tier 2
+  suffix: ShipGun, Tier 2
+  name: SHI MG-213 light dual machinegun 20x135mm Mk. II
   components:
     - type: Gun
       projectileSpeed: 145
       fireRate: 5.5
+    - type: Machine
+      board: WeaponTurretPDTNCSPCircuitboard
 
 # VULCAN TURRET
 
 - type: entity
   parent: BaseTurretShipgun
   id: WeaponTurretVulcan
+  suffix: ShipGun
   name: 20mm PTA "Operator" gatling turret
   components:
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          ents: []
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/vulcangatling.rsi
       drawdepth: Mobs
       layers:
         - state: syndie_lethal
+    - type: Machine
+      board: WeaponTurretVulcanCircuitboard
     - type: Destructible
       thresholds:
         - trigger:
             !type:DamageTrigger
             damage: 800
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-        - trigger:
-            !type:DamageTrigger
-            damage: 500
           # TODO: Construction graph
           behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 3
-                  max: 5
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
     - type: Gun
       fireRate: 12
       projectileSpeed: 120
@@ -115,7 +113,7 @@
       slots:
         gun_magazine:
           name: Magazine
-          startingItem: MagazineVulcan
+          #startingItem: MagazineVulcan - on being rebuilt from destruction this gives it free ammo
           insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
           priority: 2
@@ -135,47 +133,44 @@
       class: Ballistic
       size: Small
     - type: MagazineAmmoProvider
+    - type: Construction
+      graph: Machine
+      node: machine
+      containers:
+      - machine_parts
+      - machine_board
 
 # SWARMER TURRET
 
 - type: entity
   parent: BaseTurretShipgun
   id: BaseWeaponTurretSwarmer
+  suffix: ShipGun
   name: swarmer missile launcher
   components:
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          ents: []
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/swarmermissile.rsi
       drawdepth: Mobs
       layers:
         - state: swarmer
-
+    - type: Machine
+      board: BaseWeaponTurretSwarmerCircuitboard
     - type: Destructible
       thresholds:
-        - trigger:
-            !type:DamageTrigger
-            damage: 800
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
         - trigger:
             !type:DamageTrigger
             damage: 500
           # TODO: Construction graph
           behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 3
-                  max: 5
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
     - type: Gun
       projectileSpeed: 75
       fireRate: 0.5
@@ -187,7 +182,7 @@
       slots:
         gun_magazine:
           name: Magazine
-          startingItem: MagazineSwarmer
+          #startingItem: MagazineSwarmer - on being rebuilt from destruction this gives it free ammo
           insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
           priority: 2
@@ -208,12 +203,19 @@
       size: Small
     - type: MagazineAmmoProvider
     - type: ProjectileIFF
+    - type: Construction
+      graph: Machine
+      node: machine
+      containers:
+      - machine_parts
+      - machine_board
 
 # DERECHO TURRET
 
 - type: entity
   parent: BaseTurretShipgun
   id: WeaponTurretCoilgun
+  suffix: ShipGun
   name: 60mm NT "Derecho" exotic blaster
   components:
     - type: Sprite
@@ -221,29 +223,21 @@
       drawdepth: Mobs
       layers:
         - state: syndie_lethal
+    - type: Machine
+      board: WeaponTurretCoilgunCircuitboard
     - type: Destructible
       thresholds:
-        - trigger:
-            !type:DamageTrigger
-            damage: 800
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
         - trigger:
             !type:DamageTrigger
             damage: 500
           # TODO: Construction graph
           behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 3
-                  max: 5
+
     - type: Gun
       projectileSpeed: 130
       fireRate: 2
@@ -267,43 +261,45 @@
     - type: HardpointAnchorableOnly
       class: Ballistic
       size: Medium
+    - type: Construction
+      graph: Machine
+      node: machine
+      containers:
+      - machine_parts
+      - machine_board
 
 # MORTAR TURRET
 
 - type: entity
   parent: BaseTurretShipgun
   id: WeaponTurretMortar
+  suffix: ShipGun
   name: 90mm heavy mortar-pounder
   components:
-
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/heavymortar.rsi
       drawdepth: Mobs
       layers:
         - state: syndie_lethal
+    - type: Machine
+      board: WeaponTurretMortarCircuitboard
     - type: Destructible
       thresholds:
-        - trigger:
-            !type:DamageTrigger
-            damage: 800
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
         - trigger:
             !type:DamageTrigger
             damage: 500
           # TODO: Construction graph
           behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 3
-                  max: 5
+
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
     - type: Gun
       projectileSpeed: 130
       fireRate: 0.2
@@ -315,7 +311,7 @@
       slots:
         gun_magazine:
           name: Magazine
-          startingItem: MagazineMortar
+          #startingItem: MagazineMortar - on being rebuilt from destruction this gives it free ammo
           insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
           priority: 2
@@ -329,55 +325,49 @@
           whitelist:
             tags:
               - MortarShell
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          ents: []
     - type: ApcPowerReceiver
       powerLoad: 2000
     - type: HardpointAnchorableOnly
       class: Ballistic
       size: Medium
     - type: MagazineAmmoProvider
+    - type: Construction
+      graph: Machine
+      node: machine
+      containers:
+      - machine_parts
+      - machine_board
 
 # PLASMA LASER TURRET
 
 - type: entity
   parent: BaseTurretShipgun
   id: WeaponTurretLaser
+  suffix: ShipGun
   name: SHI 180c 'Torch' pressure gatling
   components:
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/plasmacannonnormal.rsi
       drawdepth: Mobs
       layers:
         - state: syndie_lethal
+    - type: Machine
+      board: WeaponTurretLaserCircuitboard
     - type: Destructible
       thresholds:
-        - trigger:
-            !type:DamageTrigger
-            damage: 800
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
         - trigger:
             !type:DamageTrigger
             damage: 500
           # TODO: Construction graph
           behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 3
-                  max: 5
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
     - type: Gun
       projectileSpeed: 95
       fireRate: 4
@@ -401,45 +391,43 @@
     - type: HardpointAnchorableOnly
       class: Energy
       size: Small
-      
+    - type: Construction
+      graph: Machine
+      node: machine
+      containers:
+      - machine_parts
+      - machine_board
+
 # SMARTBOMB TURRET
 
 - type: entity
   parent: BaseTurretShipgun
   id: BaseWeaponTurretSmartbomb
+  suffix: ShipGun
   name: NCWL 88mm 'Pilum' propelled mine launcher
   components:
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/smartmissile.rsi
       drawdepth: Mobs
       layers:
         - state: syndie_lethal
+    - type: Machine
+      board: BaseWeaponTurretSmartbombCircuitboard
     - type: Destructible
       thresholds:
-        - trigger:
-            !type:DamageTrigger
-            damage: 800
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-        - trigger:
-            !type:DamageTrigger
-            damage: 500
           # TODO: Construction graph
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+          - trigger:
+              !type:DamageTrigger
+              damage: 500
+            behaviors:
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 3
-                  max: 5
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
     - type: Gun
       projectileSpeed: 14
       fireRate: 0.09
@@ -448,17 +436,27 @@
         - FullAuto
       soundGunshot: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
     - type: BallisticAmmoProvider
-      proto: SmartBomb
-      capacity: 99999
+      #proto: SmartBomb - on being rebuilt from destruction this gives it free ammo
+      whitelist:
+        tags:
+          - SmartBomb
+      capacity: 2
     - type: HardpointAnchorableOnly
       class: Missile
       size: Small
+    - type: Construction
+      graph: Machine
+      node: machine
+      containers:
+      - machine_parts
+      - machine_board
 
 # NEEDLER TURRET
 
 - type: entity
   parent: BaseTurretShipgun
   id: WeaponTurretNeedler
+  suffix: ShipGun
   name: 60mm PTA 'Needler' heavy precision autogun
   components:
     - type: Sprite
@@ -466,29 +464,25 @@
       drawdepth: Mobs
       layers:
         - state: syndie_lethal
+    - type: Machine
+      board: WeaponTurretNeedlerCircuitboard
     - type: Destructible
       thresholds:
-        - trigger:
-            !type:DamageTrigger
-            damage: 800
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
         - trigger:
             !type:DamageTrigger
             damage: 500
           # TODO: Construction graph
           behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 3
-                  max: 5
+
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
     - type: Gun
       projectileSpeed: 130
       fireRate: 0.6
@@ -501,7 +495,7 @@
       slots:
         gun_magazine:
           name: Magazine
-          startingItem: MagazineNeedler
+          #startingItem: MagazineNeedler - - on being rebuilt from destruction this gives it free ammo
           insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
           priority: 2
@@ -515,56 +509,49 @@
           whitelist:
             tags:
               - NeedlerShell
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          ents: []
     - type: ApcPowerReceiver
       powerLoad: 3500
     - type: HardpointAnchorableOnly
       class: Ballistic
       size: Medium
+    - type: Construction
+      graph: Machine
+      node: machine
+      containers:
+      - machine_parts
+      - machine_board
 
 # STATION PDT TURRET
 
 - type: entity
   parent: BaseTurretShipgun
   id: PointNFireCannonExample
+  suffix: ShipGun, CAPITAL/STATION ONLY
   name: NT MG-02 dual machinegun 20x135mm
-  suffix: CAPITAL/STATION ONLY
   components:
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/lightautoturret.rsi
       drawdepth: Mobs
       layers:
         - state: syndie_lethal
+    - type: Machine
+      board: PointNFireCannonExampleCircuitboard
     - type: Damageable
       damageContainer: Inorganic
     - type: Destructible
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 800
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-        - trigger:
-            !type:DamageTrigger
             damage: 500
           behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 3
-                  max: 5
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
     - type: Gun
       fireRate: 7
       projectileSpeed: 145
@@ -580,12 +567,19 @@
     - type: HardpointAnchorableOnly
       class: Ballistic
       size: Small
+    - type: Construction
+      graph: Machine
+      node: machine
+      containers:
+      - machine_parts
+      - machine_board
 
 # GARGOYLE TURRET
 
 - type: entity
   parent: BaseTurretShipgun
   id: BaseWeaponTurretGargoyle
+  suffix: ShipGun
   name: heavy 'Gargoyle' LRM cruise missile launcher
   components:
     - type: Sprite
@@ -593,32 +587,25 @@
       drawdepth: Mobs
       layers:
         - state: syndie_lethal
-    - type: Damageable
-      damageContainer: Inorganic
+    - type: Machine
+      board: BaseWeaponTurretGargoyleCircuitboard
     - type: Destructible
       thresholds:
         - trigger:
             !type:DamageTrigger
             damage: 1600
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-        - trigger:
-            !type:DamageTrigger
-            damage: 1600
           # TODO: Construction graph
           behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 3
-                  max: 5
     - type: ProjectileIFF
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
     - type: Gun
       projectileSpeed: 30
       fireRate: 0.4
@@ -629,25 +616,28 @@
     - type: BallisticAmmoProvider
       cycleable: false
       capacity: 3
-      proto: TorpGarg
+      #proto: TorpGarg - on being rebuilt from destruction this gives it free ammo
       whitelist:
         tags:
         - TorpedoGarg
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          ents: []
     - type: ApcPowerReceiver
       powerLoad: 6500
     - type: HardpointAnchorableOnly
       class: Missile
       size: Large
+    - type: Construction
+      graph: Machine
+      node: machine
+      containers:
+      - machine_parts
+      - machine_board
 
 # LANCER TURRET
 
 - type: entity
   parent: BaseTurretShipgun
   id: BaseWeaponTurretLancer
+  suffix: ShipGun
   name: medium 'Lancer' MRM missile system
   components:
     - type: Sprite
@@ -655,32 +645,25 @@
       drawdepth: Mobs
       layers:
         - state: syndie_lethal
-    - type: Damageable
-      damageContainer: Inorganic
+    - type: Machine
+      board: BaseWeaponTurretLancerCircuitboard
     - type: Destructible
       thresholds:
-        - trigger:
-            !type:DamageTrigger
-            damage: 800
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
         - trigger:
             !type:DamageTrigger
             damage: 500
           # TODO: Construction graph
           behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 3
-                  max: 5
     - type: ProjectileIFF
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
     - type: Gun
       projectileSpeed: 85
       fireRate: 0.9
@@ -691,25 +674,28 @@
     - type: BallisticAmmoProvider
       cycleable: false
       capacity: 15
-      proto: LanceRocketCartridge
+      #proto: LanceRocketCartridge - on being rebuilt from destruction this gives it free ammo
       whitelist:
         tags:
         - LanceRocket
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          ents: []
     - type: ApcPowerReceiver
       powerLoad: 4000
     - type: HardpointAnchorableOnly
       class: Missile
       size: Medium
+    - type: Construction
+      graph: Machine
+      node: machine
+      containers:
+      - machine_parts
+      - machine_board
 
 # HEPHAESTUS TURRET (230MM)
 
 - type: entity
   parent: BaseTurretShipgun
   id: BaseWeaponTurretBattlemortar
+  suffix: ShipGun
   name: 230mm 'Hephaeustus' assault artillery platform
   components:
     - type: Sprite
@@ -717,32 +703,25 @@
       drawdepth: Mobs
       layers:
         - state: syndie_lethal
-    - type: Damageable
-      damageContainer: Inorganic
+    - type: Machine
+      board: BaseWeaponTurretBattlemortarCircuitboard
     - type: Destructible
       thresholds:
         - trigger:
             !type:DamageTrigger
             damage: 3000
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-        - trigger:
-            !type:DamageTrigger
-            damage: 3000
           # TODO: Construction graph
           behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 3
-                  max: 5
     - type: ProjectileIFF
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
     - type: Gun
       projectileSpeed: 130
       fireRate: 0.2
@@ -753,25 +732,28 @@
     - type: BallisticAmmoProvider
       cycleable: false
       capacity: 3
-      proto: HeavyMortarCartridge
+      #proto: HeavyMortarCartridge - on being rebuilt from destruction this gives it free ammo
       whitelist:
         tags:
         - HeavyMortarShell
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          ents: []
     - type: ApcPowerReceiver
       powerLoad: 4000
     - type: HardpointAnchorableOnly
       class: Ballistic
       size: Large
+    - type: Construction
+      graph: Machine
+      node: machine
+      containers:
+      - machine_parts
+      - machine_board
 
 # PRINCE FLAK TURRET
 
 - type: entity
   parent: BaseTurretShipgun
   id: FlakCannonTurret
+  suffix: ShipGun
   name: 88mm 'Prince' flak-screen turret
   components:
     - type: Sprite
@@ -779,32 +761,25 @@
       drawdepth: Mobs
       layers:
         - state: syndie_lethal
-    - type: Damageable
-      damageContainer: Inorganic
+    - type: Machine
+      board: FlakCannonTurretCircuitboard
     - type: Destructible
       thresholds:
         - trigger:
             !type:DamageTrigger
             damage: 1600
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-        - trigger:
-            !type:DamageTrigger
-            damage: 1600
           # TODO: Construction graph
           behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 3
-                  max: 5
     - type: ProjectileIFF
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
     - type: Gun
       projectileSpeed: 90
       fireRate: 0.8
@@ -817,7 +792,7 @@
       slots:
         gun_magazine:
           name: Magazine
-          startingItem: MagazineFlak
+          #startingItem: MagazineFlak - on being rebuilt from destruction this gives it free ammo
           insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
           priority: 2
@@ -831,21 +806,24 @@
           whitelist:
             tags:
               - FlakShell
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          ents: []
     - type: ApcPowerReceiver
       powerLoad: 6500
     - type: HardpointAnchorableOnly
       class: Ballistic
       size: Large
+    - type: Construction
+      graph: Machine
+      node: machine
+      containers:
+      - machine_parts
+      - machine_board
 
 # 323MM CATAPULT TURRET
 
 - type: entity
   parent: BaseTurretShipgun
   id: CatapultTorpedo
+  suffix: ShipGun
   name: MU91 323mm "Catapult" LRM torpedo launcher
   components:
     - type: Sprite
@@ -853,31 +831,24 @@
       drawdepth: Mobs
       layers:
         - state: catapult
-    - type: Damageable
-      damageContainer: Inorganic
+    - type: Machine
+      board: CatapultTorpedoCircuitboard
     - type: Destructible
       thresholds:
         - trigger:
             !type:DamageTrigger
             damage: 1600
           behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-        - trigger:
-            !type:DamageTrigger
-            damage: 1600
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 3
-                  max: 5
     - type: ProjectileIFF
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
     - type: Gun
       projectileSpeed: 30
       fireRate: 0.2
@@ -888,59 +859,53 @@
     - type: BallisticAmmoProvider
       cycleable: false
       capacity: 6
-      proto: TorpCatapult
+      #proto: TorpCatapult - on being rebuilt from destruction this gives it free ammo
       whitelist:
         tags:
         - TorpedoCatapult
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          ents: []
     - type: ApcPowerReceiver
       powerLoad: 6500
     - type: HardpointAnchorableOnly
       class: Missile
       size: Large
+    - type: Construction
+      graph: Machine
+      node: machine
+      containers:
+      - machine_parts
+      - machine_board
 
 # RIMWARD TURRET
 
 - type: entity
   parent: BaseTurretShipgun
   id: BaseWeaponTurretHeavyPlasmaRimward
+  suffix: ShipGun
   name: 800c "Rimward" hybrid plasma blaster
   description: A heavy laser turret combining antimatter and plasma technology.
   components:
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/atlas.rsi
       drawdepth: Mobs
       layers:
         - state: atlas
+    - type: Machine
+      board: BaseWeaponTurretHeavyPlasmaRimwardCircuitboard
     - type: Destructible
       thresholds:
-        - trigger:
-            !type:DamageTrigger
-            damage: 800
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
         - trigger:
             !type:DamageTrigger
             damage: 500
           # TODO: Construction graph
           behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 3
-                  max: 5
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
     - type: Gun
       projectileSpeed: 75
       fireRate: 1.7
@@ -964,46 +929,44 @@
     - type: HardpointAnchorableOnly
       class: Energy
       size: Medium
+    - type: Construction
+      graph: Machine
+      node: machine
+      containers:
+      - machine_parts
+      - machine_board
 
 # COMPAKT TURRET
 
 - type: entity
   parent: BaseTurretShipgun
   id: BaseWeaponTurretHeavyPlasma
+  suffix: ShipGun
   name: 350c "Compakt" hybrid energy gatling
   description: A versatile energy turret with interchangable lenses for varied effect.
   components:
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/lasergatling.rsi
       drawdepth: Mobs
       layers:
         - state: lasergatling
+    - type: Machine
+      board: BaseWeaponTurretHeavyPlasmaCircuitboard
     - type: Destructible
       thresholds:
-        - trigger:
-            !type:DamageTrigger
-            damage: 800
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
         - trigger:
             !type:DamageTrigger
             damage: 500
           # TODO: Construction graph
           behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 3
-                  max: 5
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
     - type: Gun
       projectileSpeed: 95
       fireRate: 12
@@ -1016,7 +979,7 @@
       slots:
         gun_magazine:
           name: Magazine
-          startingItem: LensInfared
+          #startingItem: LensInfared - on being rebuilt from destruction this gives it free ammo
           insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
           priority: 2
@@ -1028,46 +991,44 @@
     - type: HardpointAnchorableOnly
       class: Energy
       size: Medium
+    - type: Construction
+      graph: Machine
+      node: machine
+      containers:
+      - machine_parts
+      - machine_board
 
 # SOLARIS TURRET
 
 - type: entity
   parent: BaseTurretShipgun
   id: BaseWeaponTurretSolaris
+  suffix: ShipGun
   name: 90mm "Solaris" antimatter blaster
   description: A versatile ballistic turret that fires specialized antimatter rounds. A hybrid of machinegun and artillery.
   components:
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/solaris.rsi
       drawdepth: Mobs
       layers:
         - state: solaris
+    - type: Machine
+      board: BaseWeaponTurretSolarisCircuitboard
     - type: Destructible
       thresholds:
-        - trigger:
-            !type:DamageTrigger
-            damage: 800
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
         - trigger:
             !type:DamageTrigger
             damage: 500
           # TODO: Construction graph
           behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 3
-                  max: 5
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
     - type: Gun
       projectileSpeed: 95
       fireRate: 3.5
@@ -1080,7 +1041,7 @@
       slots:
         gun_magazine:
           name: Magazine
-          startingItem: StandardAntimatterCanister
+          #startingItem: StandardAntimatterCanister - on being rebuilt from destruction this gives it free ammo
           insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
           priority: 2
@@ -1092,46 +1053,44 @@
     - type: HardpointAnchorableOnly
       class: Energy
       size: Medium
+    - type: Construction
+      graph: Machine
+      node: machine
+      containers:
+      - machine_parts
+      - machine_board
 
 # JEONG TURRET
 
 - type: entity
   parent: BaseTurretShipgun
   id: BaseWeaponTurretJeong
+  suffix: ShipGun
   name: 70mm "Jeong" swarmrocket platform
   description: A heavy, ship-mounted rocket platform that spits out a barrage of guided, small rockets.
   components:
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/jeong.rsi
       drawdepth: Mobs
       layers:
         - state: jeong
+    - type: Machine
+      board: BaseWeaponTurretJeongCircuitboard
     - type: Destructible
       thresholds:
-        - trigger:
-            !type:DamageTrigger
-            damage: 800
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
         - trigger:
             !type:DamageTrigger
             damage: 500
           # TODO: Construction graph
           behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 3
-                  max: 5
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
     - type: Gun
       projectileSpeed: 60
       fireRate: 3.4
@@ -1147,7 +1106,7 @@
       slots:
         gun_magazine:
           name: Magazine
-          startingItem: SwarmrocketClip
+          #startingItem: SwarmrocketClip - on being rebuilt from destruction this gives it free ammo
           insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
           priority: 2
@@ -1159,18 +1118,22 @@
     - type: HardpointAnchorableOnly
       class: Missile
       size: Medium
+    - type: Construction
+      graph: Machine
+      node: machine
+      containers:
+      - machine_parts
+      - machine_board
 
 # MAGWELL TURRET
 
 - type: entity
   parent: BaseTurretShipgun
   id: BaseWeaponTurretMagwell
+  suffix: ShipGun
   name: SHI 180mm "Magwell" torpedo launcher
   description: A small torpedo launcher that fires cheaply-manufactured, heat-seeking projectiles.
   components:
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/magwell.rsi
       drawdepth: Mobs
@@ -1179,29 +1142,23 @@
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-1
         map: ["enum.GunVisualLayers.Mag"]
+    - type: Machine
+      board: BaseWeaponTurretMagwellCircuitboard
     - type: Destructible
       thresholds:
-        - trigger:
-            !type:DamageTrigger
-            damage: 800
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
         - trigger:
             !type:DamageTrigger
             damage: 500
           # TODO: Construction graph
           behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 3
-                  max: 5
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
     - type: Gun
       projectileSpeed: 30
       fireRate: 0.5
@@ -1210,7 +1167,7 @@
         - FullAuto
       soundGunshot: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
     - type: BallisticAmmoProvider
-      proto: IdnaTorpedo
+      #proto: IdnaTorpedo - on being rebuilt from destruction this gives it free ammo
       whitelist:
         tags:
           - Torpedo
@@ -1227,12 +1184,19 @@
       steps: 7
       zeroVisible: false
     - type: Appearance
+    - type: Construction
+      graph: Machine
+      node: machine
+      containers:
+      - machine_parts
+      - machine_board
 
 # SLUGSPITTER TURRET (SLUGTHROWER)
 
 - type: entity
   parent: BaseTurretShipgun
   id: BaseWeaponTurretSlugspitter
+  suffix: ShipGun
   name: SHI 43mm "Hullpiercer" slugspitter
   description: A low-tech alternative to the sophisticated Needler turrets. Easy to maintain, produce, and fire. Suffers from overheating issues and frequent jamming, though.
   components:
@@ -1241,29 +1205,24 @@
       drawdepth: Mobs
       layers:
         - state: slugspitter
+    - type: Machine
+      board: BaseWeaponTurretSlugspitterCircuitboard
     - type: Destructible
       thresholds:
-        - trigger:
-            !type:DamageTrigger
-            damage: 800
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
         - trigger:
             !type:DamageTrigger
             damage: 500
           # TODO: Construction graph
           behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 3
-                  max: 5
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+          ents: []
     - type: Gun
       fireRate: 3
       projectileSpeed: 80
@@ -1279,28 +1238,31 @@
       slots:
         gun_magazine:
           name: Magazine
-          startingItem: MagazineLightRifleBoxSlug
+          #startingItem: MagazineLightRifleBoxSlug - on being rebuilt from destruction this gives it free ammo
           insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
           priority: 2
           whitelist:
             tags:
               - SlugthrowerCartridgeBox
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
-          ents: []
     - type: ApcPowerReceiver
       powerLoad: 4000
     - type: HardpointAnchorableOnly
       class: Ballistic
       size: Medium
+    - type: Construction
+      graph: Machine
+      node: machine
+      containers:
+      - machine_parts
+      - machine_board
 
 # REGENT FLAK TURRET
 
 - type: entity
   parent: BaseTurretShipgun
   id: FlakCannonRegent
+  suffix: ShipGun
   name: NT 88mm 'Regent' flak-screen turret
   description: A flak-screen turret recovered and fabricated with Abyssal materials and designed according to old NanoTrasen schematics. Fires a trio of explosive slugs and uses surrounding trace exotic matter in space to manufacture it's own ammunition.
   components:
@@ -1309,31 +1271,20 @@
       drawdepth: Mobs
       layers:
         - state: regent
-    - type: Damageable
-      damageContainer: Inorganic
+    - type: Machine
+      board: FlakCannonRegentCircuitboard
     - type: Destructible
       thresholds:
         - trigger:
             !type:DamageTrigger
             damage: 1600
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-        - trigger:
-            !type:DamageTrigger
-            damage: 1600
           # TODO: Construction graph
           behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 3
-                  max: 5
     - type: ProjectileIFF
     - type: Gun
       projectileSpeed: 95
@@ -1358,12 +1309,19 @@
     - type: HardpointAnchorableOnly
       class: Ballistic
       size: Large
+    - type: Construction
+      graph: Machine
+      node: machine
+      containers:
+      - machine_parts
+      - machine_board
 
 # SNAPDRAGON TURRET
 
 - type: entity
   parent: BaseTurretShipgun
   id: MissilePodSnapdragon
+  suffix: ShipGun
   name: NT 'Snapdragon' SRM missile system
   description: A small short-range missile pod recovered and fabricated with Abyssal materials and designed according to old NanoTrasen schematics. Fires a blast of guided rockets and uses trace exotic matter in surrounding space to manufacture it's own ammunition.
   components:
@@ -1372,31 +1330,20 @@
       drawdepth: Mobs
       layers:
         - state: regent
-    - type: Damageable
-      damageContainer: Inorganic
+    - type: Machine
+      board: MissilePodSnapdragonCircuitboard
     - type: Destructible
       thresholds:
         - trigger:
             !type:DamageTrigger
             damage: 1600
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-        - trigger:
-            !type:DamageTrigger
-            damage: 1600
           # TODO: Construction graph
           behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 3
-                  max: 5
     - type: ProjectileIFF
     - type: Gun
       projectileSpeed: 95
@@ -1421,46 +1368,44 @@
     - type: HardpointAnchorableOnly
       class: Missile
       size: Small
+    - type: Construction
+      graph: Machine
+      node: machine
+      containers:
+      - machine_parts
+      - machine_board
 
 # KOMODO TURRET
 
 - type: entity
   parent: BaseTurretShipgun
   id: BaseWeaponTurretKomodo
+  suffix: ShipGun
   name: NT 400c 'Komodo' chemical blaster
   description: A small laser pulser of antiquated NanoTrasen design, commonly found mounted on droneships or found as scrap in the Abyss. Uses ancient, outdated chemical mixes to create accelerated laser pulses, which are then flung as projectiles. Luckily for you, this one seems to be sourcing it's material from inert dark matter in the void around it.
   components:
-    - type: ContainerContainer
-      containers:
-        ballistic-ammo: !type:Container
     - type: Sprite
       sprite: _Crescent/Objects/Autoturrets/komodo.rsi
       drawdepth: Mobs
       layers:
         - state: komodo
+    - type: Machine
+      board: BaseWeaponTurretKomodoCircuitboard
     - type: Destructible
       thresholds:
-        - trigger:
-            !type:DamageTrigger
-            damage: 800
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
         - trigger:
             !type:DamageTrigger
             damage: 500
           # TODO: Construction graph
           behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+            - !type:ChangeConstructionNodeBehavior
+              node: machineFrame
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                SheetSteel1:
-                  min: 3
-                  max: 5
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
     - type: Gun
       projectileSpeed: 95
       fireRate: 3
@@ -1484,3 +1429,9 @@
     - type: HardpointAnchorableOnly
       class: Energy
       size: Small
+    - type: Construction
+      graph: Machine
+      node: machine
+      containers:
+      - machine_parts
+      - machine_board
