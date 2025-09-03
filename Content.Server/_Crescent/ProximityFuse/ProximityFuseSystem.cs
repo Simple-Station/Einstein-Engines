@@ -21,7 +21,6 @@ public sealed class ProximityFuseSystem : EntitySystem
         var query = EntityQueryEnumerator<ProximityFuseComponent, TransformComponent>(); // get all proximity fuse components
         while (query.MoveNext(out var uid, out var comp, out var xform))
         {
-            Log.Debug("Proximity fuse shot!");
             if (!TryComp<ProjectileComponent>(uid, out var projectile) ||
                 !TryComp<GunComponent>(projectile.Shooter, out var shooterGunComp) ||
                 !TryComp<TransformComponent>(projectile.Shooter, out var shooterTransform))
@@ -43,7 +42,6 @@ public sealed class ProximityFuseSystem : EntitySystem
 
                 var ourVelocity = ourPhysics.LinearVelocity;
                 var velocity = theirPhysics.LinearVelocity;
-                Log.Debug($"Checking {tUid}!");
 
                 var speedVector = Vector2.Subtract(ourVelocity, velocity);
                 collisionSpeedMagnitude = Math.Abs(speedVector.Length());
@@ -53,7 +51,6 @@ public sealed class ProximityFuseSystem : EntitySystem
                 );
                 if (distance < closestDistance)
                     closestDistance = distance;
-                Log.Debug(closestDistance.ToString());
             }
             if (comp.SafetyTime >= 0.5f)
             {
@@ -66,7 +63,6 @@ public sealed class ProximityFuseSystem : EntitySystem
 
                 if (comp.Fuse <= 0f)
                     Detonate(uid);
-                Log.Debug("Within proximity, detonating!!!");
             }
             else
                 comp.SafetyTime += frameTime;
