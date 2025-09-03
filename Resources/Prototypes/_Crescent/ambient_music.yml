@@ -218,6 +218,22 @@
   files:
    - /Audio/_Crescent/surfacing.ogg
 
+#STATIONS
+#EXPLANATION: shuttle/station prototypes have a VesselMusic component. 
+#They point to an ambientMusicPrototype and that prototype MUST be here, otherwise it does nothing.
+#so for example, in balreska.yml, it's VesselMusic component points to PortBalreskaMusic, which is the first item here.
+
+- type: ambientMusic
+  id: PortBalreskaMusic
+  priority: 1
+  sound:
+    collection: PortBalreskaMusic
+
+- type: soundCollection
+  id: PortBalreskaMusic
+  files:
+   - /Audio/_Crescent/surfacing.ogg
+
 #UNIONFALL
 
 #unionfall vlad

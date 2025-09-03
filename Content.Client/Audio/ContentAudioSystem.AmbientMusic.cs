@@ -49,7 +49,7 @@ public sealed partial class ContentAudioSystem
     [Dependency] private readonly IPrototypeManager _protMan = default!;
     [Dependency] private readonly IEntityManager _entMan = default!;
     [Dependency] private readonly IClientPreferencesManager _prefsManager = default!;
-    
+
 
     private static float _volumeSlider;
 
@@ -117,29 +117,21 @@ public sealed partial class ContentAudioSystem
 
 
     /// <summary>
-    /// This function runs on a timer to check if music is playing or not, and play it again.
+    /// This function runs on a looping timer. The timer fires immediately after any AMBIENT (not combat) track is played, to play the next track.
     /// </summary>
     private void ReplayAmbientMusic()
     {
-
-        _sawmill.Debug("!!!REPLAY AMBIENT MUSIC RAN!!!! - B");
-
-        _sawmill.Debug("!!!REPLAY AMBIENT MUSIC RAN!!!! - C");
         if (_musicProto == null) //if we don't find any, we play the default track.
         {
-            _sawmill.Debug("!!!REPLAY AMBIENT MUSIC RAN!!!! - D");
             _musicProto = _proto.Index<AmbientMusicPrototype>("default");
             _lastBiome = _proto.Index<SpaceBiomePrototype>("default");
         }
 
-        _sawmill.Debug("!!!REPLAY AMBIENT MUSIC RAN!!!! - E");
         SoundCollectionPrototype soundcol = _proto.Index<SoundCollectionPrototype>(_musicProto.ID);
 
         string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
 
         PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _ambientMusicFadeInTime);
-
-        _sawmill.Debug("!!!REPLAY AMBIENT MUSIC RAN!!!! - F");
 
         _ambientMusicCancelToken.Cancel();
         _ambientMusicCancelToken = new CancellationTokenSource();
@@ -202,40 +194,52 @@ public sealed partial class ContentAudioSystem
     {
         _sawmill.Debug($"went to ship {ev.Name}"); //SHOULD BE ONE WORD. Jackal, Countsman, PortBalreska...
 
-        // SpaceBiomePrototype biome = _protMan.Index<SpaceBiomePrototype>(ev.Biome); //get the biome prototype
-        // _lastBiome = biome; //save biome in case we are in combat mode
+        if (ev.AmbientMusicPrototype == "")
+        {
+            _sawmill.Debug("NO MUSIC FOUND FOR SHIP");
+            return;
+        }
+        else
+        {
+            _sawmill.Debug("MUSIC FOUND FOR SHIP! " + ev.AmbientMusicPrototype);
+        }
 
         if (_combatModeSystem.IsInCombatMode()) //we don't want to change music if we are in combat mode right now
             return;
 
-        // FadeOut(_ambientMusicStream);
+        FadeOut(_ambientMusicStream);
 
-        // if (_musicTracks == null)
-        //     return;
+        if (_musicTracks == null)
+            return;
 
-        // _musicProto = null;
+        _musicProto = null;
 
-        // foreach (var ambient in _musicTracks)
-        // {
-        //     if (biome.ID == ambient.ID) //if we find the biome that's matching the ambient's ID, we play that track!
-        //     {
-        //         //_sawmill.Debug($"found biome match: {biome.ID} == {ambient.ID}");
-        //         _musicProto = ambient;
-        //         break;
-        //     }
-        // }
+        foreach (var ambient in _musicTracks)
+        {
+            if (ev.AmbientMusicPrototype == ambient.ID) //if we find the biome that's matching the ambient's ID, we play that track!
+            {
+                //_sawmill.Debug($"found biome match: {biome.ID} == {ambient.ID}");
+                _musicProto = ambient;
+                break;
+            }
+        }
 
-        // if (_musicProto == null) //if we don't find any, we play the default track.
-        // {
-        //     _musicProto = _proto.Index<AmbientMusicPrototype>("default");
-        //     _lastBiome = _proto.Index<SpaceBiomePrototype>("default");
-        // }
+        if (_musicProto == null) //if we don't find any, we play the default track.
+        {
+            _musicProto = _proto.Index<AmbientMusicPrototype>("default");
+            _lastBiome = _proto.Index<SpaceBiomePrototype>("default");
+        }
 
-        // SoundCollectionPrototype soundcol = _proto.Index<SoundCollectionPrototype>(_musicProto.ID);
+        SoundCollectionPrototype soundcol = _proto.Index<SoundCollectionPrototype>(_musicProto.ID);
 
-        // string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
+        string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
 
-        // PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _ambientMusicFadeInTime);
+        PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _ambientMusicFadeInTime);
+
+        _ambientMusicCancelToken.Cancel();
+        _ambientMusicCancelToken = new CancellationTokenSource();
+
+        Timer.Spawn(_audio.GetAudioLength(path) + _timeUntilNextAmbientTrack, () => ReplayAmbientMusic(), _ambientMusicCancelToken.Token);
     }
 
 

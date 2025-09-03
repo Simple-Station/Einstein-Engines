@@ -31,6 +31,8 @@ public sealed class SpaceBiomeSystem : EntitySystem
     private const int ChunkSize = 1000; //in meters
     private const float UpdateInterval = 5; //in seconds
 
+    private ISawmill _sawmill = default!; //used for logging | .2 2025
+
     public override void Initialize()
     {
         base.Initialize();
@@ -38,6 +40,7 @@ public sealed class SpaceBiomeSystem : EntitySystem
         SubscribeLocalEvent<SpaceBiomeSourceComponent, ComponentShutdown>(OnSourceShutdown);
         SubscribeLocalEvent<SpaceBiomeTrackerComponent, EntParentChangedMessage>(OnParentChanged);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRestart);
+        _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("spacebiomes");
     }
 
     public override void Update(float frameTime)
@@ -123,9 +126,14 @@ public sealed class SpaceBiomeSystem : EntitySystem
         if (TryComp<VesselDescriptionComponent>(parentStation, out var desc)) //if this succeeds, we have a description! if it fails,
             description = desc.Description;                                   //the component is missing and we just keep ""
 
+        var musicPrototype = "";
+
+        if (TryComp<VesselMusicComponent>(parentStation, out var music)) //if this succeeds, we have custom music! if it fails,
+            musicPrototype = music.AmbientMusicPrototype;                                   //the component is missing and we just keep ""
+
         var name = setup.StationNameTemplate.Replace("{1}", "").Trim();
-        // HULLROT EDIT: we want the vessel you're on to immediately play it's message, for music & larp reasons
-        NewVesselEnteredMessage message = new NewVesselEnteredMessage(name, Loc.GetString(desig.Designation), description);
+
+        NewVesselEnteredMessage message = new NewVesselEnteredMessage(name, Loc.GetString(desig.Designation), description, musicPrototype);
         RaiseNetworkEvent(message, actor.PlayerSession);
     }
 
