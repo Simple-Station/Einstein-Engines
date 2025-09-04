@@ -114,6 +114,12 @@
   outputs:
     IdnaTorpedo: 1
 
+- type: factoryRecipe
+  id: 230mmCasing
+  inputs:
+    Tungsten: 5
+  outputs:
+    HeavyMortarCartridge: 1
 
 
 
