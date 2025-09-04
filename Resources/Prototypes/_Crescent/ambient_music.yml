@@ -265,6 +265,8 @@
   files:
    - /Audio/_Crescent/Stations/TFSC/Jackal/jackal_1.ogg
    - /Audio/_Crescent/Stations/TFSC/Jackal/jackal_2.ogg
+   - /Audio/_Crescent/Stations/TFSC/Jackal/jackal_3.ogg
+   - /Audio/_Crescent/Stations/TFSC/Jackal/jackal_4.ogg
 
 #COUNTSMAN
 - type: ambientMusic
@@ -278,6 +280,7 @@
   files:
    - /Audio/_Crescent/Stations/DSM/Countsman/countsman_1.ogg
    - /Audio/_Crescent/Stations/DSM/Countsman/countsman_2.ogg
+   - /Audio/_Crescent/Stations/DSM/Countsman/countsman_3.ogg
 
 #TATSUMOTO
 
@@ -290,7 +293,9 @@
 - type: soundCollection
   id: TatsumotoMusic
   files:
-   - /Audio/_Crescent/the_insulindan_miracle.ogg
+   - /Audio/_Crescent/Stations/SHI/Tatsumoto/tatsumoto_1.ogg
+   - /Audio/_Crescent/Stations/SHI/Tatsumoto/tatsumoto_2.ogg
+   - /Audio/_Crescent/Stations/SHI/Tatsumoto/tatsumoto_3.ogg
 
 #UNIONFALL
 
