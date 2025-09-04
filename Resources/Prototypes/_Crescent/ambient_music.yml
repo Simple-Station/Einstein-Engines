@@ -84,7 +84,7 @@
     - /Audio/_Crescent/Ambience/CombatMode/TFSC_1.ogg
     - /Audio/_Crescent/Ambience/CombatMode/TFSC_2.ogg
 
-# DSM | STATE: not happy with em
+# DSM | STATE: theyre ok
 - type: ambientMusic
   id: combatmodeDSM
   priority: 3
@@ -97,7 +97,7 @@
     - /Audio/_Crescent/Ambience/CombatMode/DSM_1.ogg
     - /Audio/_Crescent/Ambience/CombatMode/DSM_2.ogg
 
-# SHI | STATE: not happy with em
+# SHI | STATE: very good
 - type: ambientMusic
   id: combatmodeSHI
   priority: 3
@@ -278,6 +278,19 @@
   files:
    - /Audio/_Crescent/Stations/DSM/Countsman/countsman_1.ogg
    - /Audio/_Crescent/Stations/DSM/Countsman/countsman_2.ogg
+
+#TATSUMOTO
+
+- type: ambientMusic
+  id: TatsumotoMusic
+  priority: 1
+  sound:
+    collection: TatsumotoMusic
+
+- type: soundCollection
+  id: TatsumotoMusic
+  files:
+   - /Audio/_Crescent/the_insulindan_miracle.ogg
 
 #UNIONFALL
 
