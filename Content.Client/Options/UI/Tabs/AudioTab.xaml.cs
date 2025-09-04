@@ -23,6 +23,7 @@ namespace Content.Client.Options.UI.Tabs
             IoCManager.InjectDependencies(this);
 
             _audio = IoCManager.Resolve<IAudioManager>();
+            CombatMusicCheckBox.Pressed = _cfg.GetCVar(CCVars.CombatMusicEnabled);
             LobbyMusicCheckBox.Pressed = _cfg.GetCVar(CCVars.LobbyMusicEnabled);
             RestartSoundsCheckBox.Pressed = _cfg.GetCVar(CCVars.RestartSoundsEnabled);
             EventMusicCheckBox.Pressed = _cfg.GetCVar(CCVars.EventMusicEnabled);
@@ -34,6 +35,7 @@ namespace Content.Client.Options.UI.Tabs
             AttachUpdateChangesHandler(
                 MasterVolumeSlider,
                 MidiVolumeSlider,
+                CombatMusicVolumeSlider,
                 AmbientMusicVolumeSlider,
                 AmbienceVolumeSlider,
                 AmbienceSoundsSlider,
@@ -41,6 +43,7 @@ namespace Content.Client.Options.UI.Tabs
                 InterfaceVolumeSlider,
                 AnnouncerVolumeSlider,
 
+                CombatMusicCheckBox,
                 LobbyMusicCheckBox,
                 RestartSoundsCheckBox,
                 EventMusicCheckBox,
@@ -79,6 +82,7 @@ namespace Content.Client.Options.UI.Tabs
             DetachUpdateChangesHandler(
                 MasterVolumeSlider,
                 MidiVolumeSlider,
+                CombatMusicVolumeSlider,
                 AmbientMusicVolumeSlider,
                 AmbienceVolumeSlider,
                 AmbienceSoundsSlider,
@@ -86,6 +90,7 @@ namespace Content.Client.Options.UI.Tabs
                 InterfaceVolumeSlider,
                 AnnouncerVolumeSlider,
 
+                CombatMusicCheckBox,
                 LobbyMusicCheckBox,
                 RestartSoundsCheckBox,
                 EventMusicCheckBox,
@@ -121,6 +126,7 @@ namespace Content.Client.Options.UI.Tabs
             // For the UI we just display 0-100 still elsewhere
             _cfg.SetCVar(CVars.MidiVolume, MidiVolumeSlider.Value / 100f * ContentAudioSystem.MidiVolumeMultiplier);
             _cfg.SetCVar(CCVars.AmbienceVolume, AmbienceVolumeSlider.Value / 100f * ContentAudioSystem.AmbienceMultiplier);
+            _cfg.SetCVar(CCVars.CombatMusicVolume, CombatMusicVolumeSlider.Value / 100f * ContentAudioSystem.CombatMusicMultiplier);
             _cfg.SetCVar(CCVars.AmbientMusicVolume, AmbientMusicVolumeSlider.Value / 100f * ContentAudioSystem.AmbientMusicMultiplier);
             _cfg.SetCVar(CCVars.LobbyMusicVolume, LobbyVolumeSlider.Value / 100f * ContentAudioSystem.LobbyMultiplier);
             _cfg.SetCVar(CCVars.InterfaceVolume, InterfaceVolumeSlider.Value / 100f * ContentAudioSystem.InterfaceMultiplier);
@@ -128,6 +134,7 @@ namespace Content.Client.Options.UI.Tabs
 
             _cfg.SetCVar(CCVars.MaxAmbientSources, (int)AmbienceSoundsSlider.Value);
 
+            _cfg.SetCVar(CCVars.CombatMusicEnabled, CombatMusicCheckBox.Pressed);
             _cfg.SetCVar(CCVars.LobbyMusicEnabled, LobbyMusicCheckBox.Pressed);
             _cfg.SetCVar(CCVars.RestartSoundsEnabled, RestartSoundsCheckBox.Pressed);
             _cfg.SetCVar(CCVars.EventMusicEnabled, EventMusicCheckBox.Pressed);
@@ -147,6 +154,7 @@ namespace Content.Client.Options.UI.Tabs
             MasterVolumeSlider.Value = _cfg.GetCVar(CVars.AudioMasterVolume) * 100f / ContentAudioSystem.MasterVolumeMultiplier;
             MidiVolumeSlider.Value = _cfg.GetCVar(CVars.MidiVolume) * 100f / ContentAudioSystem.MidiVolumeMultiplier;
             AmbienceVolumeSlider.Value = _cfg.GetCVar(CCVars.AmbienceVolume) * 100f / ContentAudioSystem.AmbienceMultiplier;
+            CombatMusicVolumeSlider.Value = _cfg.GetCVar(CCVars.CombatMusicVolume) * 100f / ContentAudioSystem.CombatMusicMultiplier;
             AmbientMusicVolumeSlider.Value = _cfg.GetCVar(CCVars.AmbientMusicVolume) * 100f / ContentAudioSystem.AmbientMusicMultiplier;
             LobbyVolumeSlider.Value = _cfg.GetCVar(CCVars.LobbyMusicVolume) * 100f / ContentAudioSystem.LobbyMultiplier;
             InterfaceVolumeSlider.Value = _cfg.GetCVar(CCVars.InterfaceVolume) * 100f / ContentAudioSystem.InterfaceMultiplier;
@@ -154,6 +162,7 @@ namespace Content.Client.Options.UI.Tabs
 
             AmbienceSoundsSlider.Value = _cfg.GetCVar(CCVars.MaxAmbientSources);
 
+            CombatMusicCheckBox.Pressed = _cfg.GetCVar(CCVars.CombatMusicEnabled);
             LobbyMusicCheckBox.Pressed = _cfg.GetCVar(CCVars.LobbyMusicEnabled);
             RestartSoundsCheckBox.Pressed = _cfg.GetCVar(CCVars.RestartSoundsEnabled);
             EventMusicCheckBox.Pressed = _cfg.GetCVar(CCVars.EventMusicEnabled);
@@ -171,6 +180,8 @@ namespace Content.Client.Options.UI.Tabs
                 Math.Abs(MidiVolumeSlider.Value - _cfg.GetCVar(CVars.MidiVolume) * 100f / ContentAudioSystem.MidiVolumeMultiplier) < 0.01f;
             var isAmbientVolumeSame =
                 Math.Abs(AmbienceVolumeSlider.Value - _cfg.GetCVar(CCVars.AmbienceVolume) * 100f / ContentAudioSystem.AmbienceMultiplier) < 0.01f;
+            var isCombatMusicVolumeSame =
+                Math.Abs(CombatMusicVolumeSlider.Value - _cfg.GetCVar(CCVars.CombatMusicVolume) * 100f / ContentAudioSystem.CombatMusicMultiplier) < 0.01f;
             var isAmbientMusicVolumeSame =
                 Math.Abs(AmbientMusicVolumeSlider.Value - _cfg.GetCVar(CCVars.AmbientMusicVolume) * 100f / ContentAudioSystem.AmbientMusicMultiplier) < 0.01f;
             var isLobbyVolumeSame =
@@ -181,13 +192,14 @@ namespace Content.Client.Options.UI.Tabs
                 Math.Abs(AnnouncerVolumeSlider.Value - _cfg.GetCVar(CCVars.AnnouncerVolume) * 100f / ContentAudioSystem.AnnouncerMultiplier) < 0.01f;
 
             var isAmbientSoundsSame = (int)AmbienceSoundsSlider.Value == _cfg.GetCVar(CCVars.MaxAmbientSources);
+            var isCombatSame = CombatMusicCheckBox.Pressed == _cfg.GetCVar(CCVars.CombatMusicEnabled);
             var isLobbySame = LobbyMusicCheckBox.Pressed == _cfg.GetCVar(CCVars.LobbyMusicEnabled);
             var isRestartSoundsSame = RestartSoundsCheckBox.Pressed == _cfg.GetCVar(CCVars.RestartSoundsEnabled);
             var isEventSame = EventMusicCheckBox.Pressed == _cfg.GetCVar(CCVars.EventMusicEnabled);
             var isAnnouncerDisableMultipleSoundsSame = AnnouncerDisableMultipleSoundsCheckBox.Pressed == _cfg.GetCVar(CCVars.AnnouncerDisableMultipleSounds);
             var isAdminSoundsSame = AdminSoundsCheckBox.Pressed == _cfg.GetCVar(CCVars.AdminSoundsEnabled);
-            var isEverythingSame = isMasterVolumeSame && isMidiVolumeSame && isAmbientVolumeSame
-                && isAmbientMusicVolumeSame && isAmbientSoundsSame && isLobbySame && isRestartSoundsSame && isEventSame
+            var isEverythingSame = isMasterVolumeSame && isMidiVolumeSame && isAmbientVolumeSame && isCombatMusicVolumeSame
+                && isAmbientMusicVolumeSame && isAmbientSoundsSame && isCombatSame && isLobbySame && isRestartSoundsSame && isEventSame
                 && isAnnouncerDisableMultipleSoundsSame && isAdminSoundsSame && isLobbyVolumeSame
                 && isInterfaceVolumeSame && isAnnouncerVolumeSame;
             ApplyButton.Disabled = isEverythingSame;
@@ -196,6 +208,8 @@ namespace Content.Client.Options.UI.Tabs
                 Loc.GetString("ui-options-volume-percent", ("volume", MasterVolumeSlider.Value / 100));
             MidiVolumeLabel.Text =
                 Loc.GetString("ui-options-volume-percent", ("volume", MidiVolumeSlider.Value / 100));
+            CombatMusicVolumeLabel.Text =
+                Loc.GetString("ui-options-volume-percent", ("volume", CombatMusicVolumeSlider.Value / 100));
             AmbientMusicVolumeLabel.Text =
                 Loc.GetString("ui-options-volume-percent", ("volume", AmbientMusicVolumeSlider.Value / 100));
             AmbienceVolumeLabel.Text =

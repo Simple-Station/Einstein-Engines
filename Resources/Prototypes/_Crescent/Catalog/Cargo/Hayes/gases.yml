@@ -18,3 +18,12 @@
   category: cargoproduct-category-name-atmospherics
   group: hayes
 
+- type: cargoProduct
+  id: AtmosphericsLiquidHayes
+  icon:
+    sprite: Structures/Storage/canister.rsi
+    state: blue
+  product: LiquidOxygenCanister
+  cost: 2000
+  category: cargoproduct-category-name-atmospherics
+  group: hayes

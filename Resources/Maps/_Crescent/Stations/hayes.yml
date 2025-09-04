@@ -8415,7 +8415,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 599
-- proto: MachineFrame
+- proto: InterdyneCargoDispenser
   entities:
   - uid: 807
     components:
