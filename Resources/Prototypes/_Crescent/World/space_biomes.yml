@@ -232,7 +232,7 @@
 
 #NEW BIOMES - V1
 
-#tribal scrapyard
+#generic scrapyard
 
 - type: entity
   id: BiomeScrapyardSource
@@ -240,7 +240,7 @@
   components:
   - type: SpaceBiomeSource
     biome: scrapyardbiome
-    swapDistance: 500
+    swapDistance: 1500
     priority: 2440
 
 - type: crescentFactionBiome
@@ -286,7 +286,7 @@
 #tatsumoto approach
 
 - type: entity
-  id: BiomeGliessSource
+  id: BiomeTatsumotoSource
   name: tatsumoto approach source
   components:
   - type: SpaceBiomeSource
