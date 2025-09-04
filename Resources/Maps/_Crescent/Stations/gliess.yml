@@ -34346,21 +34346,17 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -4.5,12.5
       parent: 1
-- proto: InterdyneCargoChute
+- proto: GliessSantoCargoChute
   entities:
   - uid: 2175
     components:
-    - type: MetaData
-      name: gliess santo cargo turn-in chute
     - type: Transform
       pos: -3.5,8.5
       parent: 1
-- proto: InterdyneCargoDispenser
+- proto: GliessSantoCargoDispenser
   entities:
   - uid: 2176
     components:
-    - type: MetaData
-      name: gliess santo dispensary
     - type: Transform
       pos: 0.5,4.5
       parent: 1
