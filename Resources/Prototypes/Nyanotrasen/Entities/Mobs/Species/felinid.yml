@@ -15,7 +15,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.28
-        density: 140
+        density: 120 # 65% less mass
         restitution: 0.0
         mask:
         - MobMask
@@ -27,6 +27,7 @@
     damageModifierSet: Felinid
   - type: SlowOnDamage
     speedModifierThresholds:
+      30: 0.9 # move slower when hurt
       60: 0.85  # 0.7 is base speed.
       80: 0.75  # 0.5 is base speed.
   - type: MeleeWeapon
