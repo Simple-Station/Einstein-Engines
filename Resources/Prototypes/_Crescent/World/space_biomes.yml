@@ -291,7 +291,7 @@
   components:
   - type: SpaceBiomeSource
     biome: gliessbiome
-    swapDistance: 1000
+    swapDistance: 2000
     priority: 2460
 
 - type: crescentFactionBiome
@@ -308,7 +308,7 @@
   components:
   - type: SpaceBiomeSource
     biome: tatsumotobiome
-    swapDistance: 1000
+    swapDistance: 2500
     priority: 2460
 
 - type: crescentFactionBiome
@@ -325,7 +325,7 @@
   components:
   - type: SpaceBiomeSource
     biome: balreskabiome
-    swapDistance: 1000
+    swapDistance: 2500
     priority: 2460
 
 - type: crescentFactionBiome
