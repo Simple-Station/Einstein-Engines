@@ -65,8 +65,8 @@ public sealed partial class ContentAudioSystem
     // Need to keep track of the last biome we were in to re-play its music when we're out of combat mode
     private SpaceBiomePrototype? _lastBiome;
 
-    // Every <THIS> amount of time, attempt to play a new music track. This ticks down on rejoining as well.
-    private TimeSpan _timeUntilNextAmbientTrack = TimeSpan.FromSeconds(30);
+    // Time to wait in between replaying ambient music tracks. Should be at least 1-2 seconds to prevent possible overlapping.
+    private TimeSpan _timeUntilNextAmbientTrack = TimeSpan.FromSeconds(10);
 
     // List of available ambient music tracks to sift through.
     private List<AmbientMusicPrototype>? _musicTracks;

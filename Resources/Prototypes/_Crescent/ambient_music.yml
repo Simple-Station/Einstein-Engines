@@ -125,8 +125,11 @@
     - /Audio/_Crescent/Ambience/CombatMode/TAP_1.ogg
     - /Audio/_Crescent/Ambience/CombatMode/TAP_2.ogg
 
-## AMBIENT MUSIC TRACKS
+## DEPRECATED!!! AMBIENT MUSIC TRACKS
 ## ID MUST BE IDENTICAL TO BIOME ID FROM space_biomes.yml!
+
+
+## DEPRECATED!!! 
 
 #imperial
 
@@ -192,7 +195,16 @@
 - type: soundCollection
   id: wildbiome
   files:
-   - /Audio/_Crescent/wilds.ogg
+   - /Audio/_Crescent/Biomes/Wilds/wilds_1.ogg
+   - /Audio/_Crescent/Biomes/Wilds/wilds_2.ogg
+   - /Audio/_Crescent/Biomes/Wilds/wilds_3.ogg
+   - /Audio/_Crescent/Biomes/Wilds/wilds_4.ogg
+   - /Audio/_Crescent/Biomes/Wilds/wilds_5.ogg
+   - /Audio/_Crescent/Biomes/Wilds/wilds_6.ogg
+   - /Audio/_Crescent/Biomes/Wilds/wilds_7.ogg
+   - /Audio/_Crescent/Biomes/Wilds/wilds_8.ogg
+   - /Audio/_Crescent/Biomes/Wilds/wilds_9.ogg
+   - /Audio/_Crescent/Biomes/Wilds/wilds_10.ogg
 
 #deepwilds
 
@@ -205,9 +217,13 @@
 - type: soundCollection
   id: deepwildbiome
   files:
-   - /Audio/_Crescent/the_deepwilds.ogg
+   - /Audio/_Crescent/Biomes/Deepwilds/deepwilds_1.ogg
+   - /Audio/_Crescent/Biomes/Deepwilds/deepwilds_2.ogg
+   - /Audio/_Crescent/Biomes/Deepwilds/deepwilds_3.ogg
+   - /Audio/_Crescent/Biomes/Deepwilds/deepwilds_4.ogg
+   - /Audio/_Crescent/Biomes/Deepwilds/deepwilds_5.ogg
 
-#fracture / port vladzena
+#fracture / port vladzena. confusingly named hadalbiome??
 
 - type: ambientMusic
   id: hadalbiome
@@ -219,6 +235,107 @@
   id: hadalbiome
   files:
    - /Audio/_Crescent/surfacing.ogg
+
+#hadal deadspace
+
+- type: ambientMusic
+  id: hadaldeadspace
+  priority: 1
+  sound:
+    collection: hadaldeadspace
+
+- type: soundCollection
+  id: hadaldeadspace
+  files:
+   - /Audio/_Crescent/Biomes/HadalDeadspace/deadspace_1.ogg
+   - /Audio/_Crescent/Biomes/HadalDeadspace/deadspace_2.ogg
+
+#scrapyards, generic
+
+- type: ambientMusic
+  id: scrapyardbiome
+  priority: 1
+  sound:
+    collection: scrapyardbiome
+
+- type: soundCollection
+  id: scrapyardbiome
+  files:
+   - /Audio/_Crescent/Biomes/Scrapyard/scrapyard_1.ogg
+   - /Audio/_Crescent/Biomes/Scrapyard/scrapyard_2.ogg
+   - /Audio/_Crescent/Biomes/Scrapyard/scrapyard_3.ogg
+   - /Audio/_Crescent/Biomes/Scrapyard/scrapyard_4.ogg
+   - /Audio/_Crescent/Biomes/Scrapyard/scrapyard_5.ogg
+
+#asteroid fields, generic
+
+- type: ambientMusic
+  id: asteroidbiome
+  priority: 1
+  sound:
+    collection: asteroidbiome
+
+- type: soundCollection
+  id: asteroidbiome
+  files:
+   - /Audio/_Crescent/Biomes/AsteroidField/asteroid_1.ogg
+   - /Audio/_Crescent/Biomes/AsteroidField/asteroid_2.ogg
+   - /Audio/_Crescent/Biomes/AsteroidField/asteroid_3.ogg
+   - /Audio/_Crescent/Biomes/AsteroidField/asteroid_4.ogg
+   - /Audio/_Crescent/Biomes/AsteroidField/asteroid_5.ogg
+
+# graveyard
+
+- type: ambientMusic
+  id: graveyardbiome
+  priority: 1
+  sound:
+    collection: graveyardbiome
+
+- type: soundCollection
+  id: graveyardbiome
+  files:
+   - /Audio/_Crescent/Biomes/Graveyard/graveyard.ogg
+
+# gliess santo approach
+
+- type: ambientMusic
+  id: gliessbiome
+  priority: 1
+  sound:
+    collection: gliessbiome
+
+- type: soundCollection
+  id: gliessbiome
+  files:
+   - /Audio/_Crescent/Biomes/GliessApproach/gliess_approach_1.ogg
+
+# tatsumoto approach
+
+- type: ambientMusic
+  id: tatsumotobiome
+  priority: 1
+  sound:
+    collection: tatsumotobiome
+
+- type: soundCollection
+  id: tatsumotobiome
+  files:
+   - /Audio/_Crescent/Biomes/TatsumotoApproach/tatsumoto_approach_1.ogg
+   - /Audio/_Crescent/Biomes/TatsumotoApproach/tatsumoto_approach_2.ogg
+
+# balreska approach
+
+- type: ambientMusic
+  id: balreskabiome
+  priority: 1
+  sound:
+    collection: balreskabiome
+
+- type: soundCollection
+  id: balreskabiome
+  files:
+   - /Audio/_Crescent/Biomes/BalreskaApproach/balreska_approach_1.ogg
 
 #STATIONS
 #EXPLANATION: shuttle/station prototypes have a VesselMusic component. 

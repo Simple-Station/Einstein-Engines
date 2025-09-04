@@ -108,7 +108,7 @@
   swapDuration: 2
   parallax: CorpieParallax
 
-#oris
+#taypan-2 / oris
 
 - type: entity
   id: OrisBiomeSource
@@ -122,6 +122,23 @@
 - type: crescentFactionBiome
   id: orisbiome
   name: Taypan-2 Asteroid Belt
+  swapDuration: 2
+  parallax: OrisParallax
+
+#taypan-1
+
+- type: entity
+  id: TaypanOneBiomeSource
+  name: taypan one source
+  components:
+  - type: SpaceBiomeSource
+    biome: taypanonebiome
+    swapDistance: 1500
+    priority: 2492
+
+- type: crescentFactionBiome
+  id: taypanonebiome
+  name: Taypan-1 Asteroid Belt
   swapDuration: 2
   parallax: OrisParallax
 
