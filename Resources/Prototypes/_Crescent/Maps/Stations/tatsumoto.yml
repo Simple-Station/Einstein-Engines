@@ -18,6 +18,8 @@
           mapNameTemplate: 'Tatsumoto Trading Outpost'
         - type: VesselDesignation
           designation: vessel-designation-headquarters
+        - type: VesselMusic
+          ambientMusicPrototype: TatsumotoMusic
         - type: Grammar
           attributes:
             proper: true

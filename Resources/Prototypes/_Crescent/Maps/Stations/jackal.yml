@@ -13,6 +13,8 @@
           mapNameTemplate: 'GSC Jackal'
         - type: VesselDesignation
           designation: vessel-designation-headquarters
+        - type: VesselMusic
+          ambientMusicPrototype: JackalMusic
         - type: Grammar
           attributes:
             proper: true
