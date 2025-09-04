@@ -107,7 +107,7 @@
 
 - type: factoryRecipe
   id: IdnaTorpedoManufacturing
-  name : Manufacture IDNA Torpedo
+  name: Manufacture IDNA Torpedo
   inputs:
     Plasma: 5
     Steel: 5
@@ -116,6 +116,7 @@
 
 - type: factoryRecipe
   id: 230mmCasing
+  name: Manufacture 230mm Heavy Mortar Shell
   inputs:
     Tungsten: 5
   outputs:
