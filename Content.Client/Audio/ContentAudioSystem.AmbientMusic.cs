@@ -50,8 +50,11 @@ public sealed partial class ContentAudioSystem
     [Dependency] private readonly IEntityManager _entMan = default!;
     [Dependency] private readonly IClientPreferencesManager _prefsManager = default!;
 
-
-    private static float _volumeSlider;
+    //options menu ---
+    private static float _volumeSliderAmbient;
+    private static float _volumeSliderCombat;
+    private static bool _combatMusicToggle;
+    //options menu ---
 
     // This stores the music stream. It's used to start/stop the music on the fly.
     private EntityUid? _ambientMusicStream;
@@ -93,6 +96,8 @@ public sealed partial class ContentAudioSystem
 
     // This stores the last station music we were in, so that we can play it when combat mode turns off.
     private string _lastStationMusic = "";
+    // really stupid - i need this to check if the volume changes when you change the options menu options.
+    private bool _isCombatMusicPlaying = false;
 
 
     private CancellationTokenSource _combatMusicCancelToken = new CancellationTokenSource();
@@ -108,6 +113,8 @@ public sealed partial class ContentAudioSystem
         SubscribeLocalEvent<ToggleCombatActionEvent>(OnCombatModeToggle);
 
         Subs.CVar(_configManager, CCVars.AmbientMusicVolume, AmbienceCVarChanged, true);
+        Subs.CVar(_configManager, CCVars.CombatMusicVolume, CombatCVarChanged, true);
+        Subs.CVar(_configManager, CCVars.CombatMusicEnabled, CombatToggleChanged, true);
         _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("audio.ambience");
 
         // Setup tracks to pull from. Runs once.
@@ -138,7 +145,7 @@ public sealed partial class ContentAudioSystem
 
         string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
 
-        PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _ambientMusicFadeInTime);
+        PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _ambientMusicFadeInTime, false);
 
         _ambientMusicCancelToken.Cancel();
         _ambientMusicCancelToken = new CancellationTokenSource();
@@ -187,7 +194,7 @@ public sealed partial class ContentAudioSystem
 
         string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
 
-        PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _ambientMusicFadeInTime);
+        PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _ambientMusicFadeInTime, false);
 
         _ambientMusicCancelToken.Cancel();
         _ambientMusicCancelToken = new CancellationTokenSource();
@@ -247,7 +254,7 @@ public sealed partial class ContentAudioSystem
 
         string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
 
-        PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _ambientMusicFadeInTime);
+        PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _ambientMusicFadeInTime, false);
 
         _ambientMusicCancelToken.Cancel();
         _ambientMusicCancelToken = new CancellationTokenSource();
@@ -258,6 +265,8 @@ public sealed partial class ContentAudioSystem
 
     private void OnCombatModeToggle(ToggleCombatActionEvent ev)
     {
+        if (_combatMusicToggle == false)
+            return;
         if (!_timing.IsFirstTimePredicted == true) //needed, because combat mode is predicted, and triggers 7 times otherwise.
             return;
 
@@ -276,6 +285,9 @@ public sealed partial class ContentAudioSystem
     }
     private void SwitchCombatMusic()
     {
+        // if (_combatMusicToggle == false) // someone's boring and wants no combat music.
+        //     return;                      // this also creates an edge case where if someone has combat music on and turns this setting off it does weird shit but w/e
+
         _ambientMusicCancelToken.Cancel();
         _ambientMusicCancelToken = new CancellationTokenSource();
 
@@ -310,7 +322,7 @@ public sealed partial class ContentAudioSystem
 
                 string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
 
-                PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _combatMusicFadeInTime);
+                PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _combatMusicFadeInTime, true);
             }
             else //if the faction combat music prototype does not exist, instead fall back to the default.
             {
@@ -319,7 +331,7 @@ public sealed partial class ContentAudioSystem
 
                 string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
 
-                PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _combatMusicFadeInTime);
+                PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _combatMusicFadeInTime, true);
             }
         }
         else                    //false = we toggled combat OFF
@@ -354,7 +366,7 @@ public sealed partial class ContentAudioSystem
 
             string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
 
-            PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _ambientMusicFadeInTime);
+            PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _ambientMusicFadeInTime, false);
 
             Timer.Spawn(_audio.GetAudioLength(path) + _timeUntilNextAmbientTrack, () => ReplayAmbientMusic(), _ambientMusicCancelToken.Token);
 
@@ -367,15 +379,21 @@ public sealed partial class ContentAudioSystem
     /// <param name="path"> Path to music to play.</param>
     /// <param name="volume"> Volume modifier (put 0 to keep original volume).</param>
     /// <param name="fadein"> Seconds for the music to fade in. Put 0 for no fadein. </param>
-    private void PlayMusicTrack(string path, float volume, float fadein)
+    private void PlayMusicTrack(string path, float volume, float fadein, bool combatMode)
     {
-        _sawmill.Debug($"NOW PLAYING: {path}");
+        _isCombatMusicPlaying = combatMode;
+        _sawmill.Debug($"NOW PLAYING: {path}" + " | COMBAT MODE: " + _isCombatMusicPlaying);
+
+        if (combatMode)
+            volume += _volumeSliderCombat;
+        else
+            volume += _volumeSliderAmbient;
 
         var strim = _audio.PlayGlobal(
             path,
             Filter.Local(),
             false,
-            AudioParams.Default.WithVolume(volume + _volumeSlider))!;
+            AudioParams.Default.WithVolume(volume))!;
 
         _ambientMusicStream = strim.Value.Entity; //this plays it immediately, but fadein function later makes it actually fade in.
 
@@ -404,12 +422,86 @@ public sealed partial class ContentAudioSystem
     }
     private void AmbienceCVarChanged(float obj)
     {
-        _volumeSlider = SharedAudioSystem.GainToVolume(obj);
+        _volumeSliderAmbient = SharedAudioSystem.GainToVolume(obj);
 
-        if (_ambientMusicStream != null && _musicProto != null)
+        //this changes the music volume live, while the music is playing. otherwise, the line above that changes the slider is the one that matters.
+
+        if (_ambientMusicStream != null && _musicProto != null && !_isCombatMusicPlaying)
         {
-            _audio.SetVolume(_ambientMusicStream, _musicProto.Sound.Params.Volume + _volumeSlider);
+            _audio.SetVolume(_ambientMusicStream, _musicProto.Sound.Params.Volume + _volumeSliderAmbient);
         }
+    }
+
+    private void CombatCVarChanged(float obj)
+    {
+        _volumeSliderCombat = SharedAudioSystem.GainToVolume(obj);
+
+        //this changes the music volume live, while the music is playing. otherwise, the line above that changes the slider is the one that matters.
+
+        if (_ambientMusicStream != null && _musicProto != null && _isCombatMusicPlaying)
+        {
+            _audio.SetVolume(_ambientMusicStream, _musicProto.Sound.Params.Volume + _volumeSliderCombat);
+        }
+    }
+
+    private void CombatToggleChanged(bool obj)
+    {
+        _combatMusicToggle = obj;
+
+        if (_combatMusicToggle)
+            return;
+
+        // if we are turning combat music OFF, then do all this bullshit to turn music off and get ambient music back on
+        _combatMusicCancelToken.Cancel();
+        _combatMusicCancelToken = new CancellationTokenSource();
+
+        _ambientMusicCancelToken.Cancel();
+        _ambientMusicCancelToken = new CancellationTokenSource();
+
+
+        bool currentCombatState = _combatModeSystem.IsInCombatMode();
+
+        if (_lastCombatState == currentCombatState)
+            return;
+
+        _lastCombatState = currentCombatState;
+
+        FadeOut(_ambientMusicStream);
+
+        if (_lastBiome == null) //this should never happen still
+        {
+            if (_player.LocalSession != null) //THIS LITERALLY CANNOT BE NULL!! BUT IT COMPLAINS IF I DONT PUT THIS HERE!!!
+            {
+                _entMan.TryGetComponent<SpaceBiomeTrackerComponent>(_player.LocalSession.AttachedEntity, out var comp);
+                if (comp != null)
+                {
+                    if (comp.Biome != null)
+                        _lastBiome = _proto.Index<SpaceBiomePrototype>(comp.Biome);
+                }
+            }
+        }
+
+        if (_lastBiome == null)
+            return;
+
+
+        // when combat mode turns off, do we have valid station music to play? if yes, play it. if not, play the biome's music.
+        if (_validStationMusic == true)
+        {
+            _musicProto = _proto.Index<AmbientMusicPrototype>(_lastStationMusic);
+        }
+        else
+        {
+            _musicProto = _proto.Index<AmbientMusicPrototype>(_lastBiome.ID); //THIS CAN FUCK UP! BECAUSE THE ID MIGHT NOT HAVE MUSIC AND BE A FALLBACK!
+        }
+        SoundCollectionPrototype soundcol = _proto.Index<SoundCollectionPrototype>(_musicProto.ID); //THIS IS WHAT ERRORS!
+
+        string path = _random.Pick(soundcol.PickFiles).ToString(); // THIS WILL PICK A RANDOM SOUND. WE MAY WANT TO SPECIFY ONE INSTEAD!!
+
+        PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _ambientMusicFadeInTime, false);
+
+        Timer.Spawn(_audio.GetAudioLength(path) + _timeUntilNextAmbientTrack, () => ReplayAmbientMusic(), _ambientMusicCancelToken.Token);
+
     }
 
     private void ShutdownAmbientMusic()

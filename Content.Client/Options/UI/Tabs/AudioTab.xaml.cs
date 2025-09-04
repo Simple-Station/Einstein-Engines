@@ -43,6 +43,7 @@ namespace Content.Client.Options.UI.Tabs
                 InterfaceVolumeSlider,
                 AnnouncerVolumeSlider,
 
+                CombatMusicCheckBox,
                 LobbyMusicCheckBox,
                 RestartSoundsCheckBox,
                 EventMusicCheckBox,
@@ -89,6 +90,7 @@ namespace Content.Client.Options.UI.Tabs
                 InterfaceVolumeSlider,
                 AnnouncerVolumeSlider,
 
+                CombatMusicCheckBox,
                 LobbyMusicCheckBox,
                 RestartSoundsCheckBox,
                 EventMusicCheckBox,
