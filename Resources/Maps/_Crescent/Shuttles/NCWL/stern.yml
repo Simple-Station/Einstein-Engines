@@ -7957,7 +7957,7 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: ColonyShellComplete
+- proto: CartridgeRailHighExplosive
   entities:
   - uid: 813
     components:

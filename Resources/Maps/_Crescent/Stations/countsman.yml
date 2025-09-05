@@ -55666,7 +55666,7 @@ entities:
     - type: Transform
       pos: -19.270203,-33.365627
       parent: 1
-- proto: ColonyShellComplete
+- proto: CartridgeRailHighExplosive
   entities:
   - uid: 4158
     components:

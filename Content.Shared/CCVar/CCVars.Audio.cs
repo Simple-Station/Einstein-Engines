@@ -41,6 +41,13 @@ public sealed partial class CCVars
         CVarDef.Create("ambience.volume", 1.5f, CVar.ARCHIVE | CVar.CLIENTONLY);
 
     /// <summary>
+    /// HULLROT: Combat music volume.
+    /// </summary>
+    public static readonly CVarDef<float> CombatMusicVolume =
+        CVarDef.Create("ambience.combat_music_volume", 1.5f, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+
+    /// <summary>
     /// Ambience music volume.
     /// </summary>
     public static readonly CVarDef<float> AmbientMusicVolume =

@@ -20,6 +20,8 @@
           designation: vessel-designation-headquarters
         - type: VesselDescription
           description: A sturdy Communard fortress constructed around a bleeding gash in our reality.
+        - type: VesselMusic
+          ambientMusicPrototype: PortBalreskaMusic
         - type: Grammar
           attributes:
             proper: true

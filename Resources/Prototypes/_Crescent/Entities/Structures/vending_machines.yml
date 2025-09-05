@@ -238,6 +238,35 @@
 
 - type: entity
   parent: [BaseStructureUnanchorable, VendingMachine]
+  id: GliessSantoCargoDispenser
+  name: gliess santo dispensary
+  description: Excess goods are sold here to licensed traders.
+  components:
+  - type: VendingMachine
+    pack: GliessSantoDispensary
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Advertise
+    pack: AmmoVendAds
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Crescent/Structures/cargovendor.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: MarketModifier
+    mod: 1
+
+- type: entity
+  parent: [BaseStructureUnanchorable, VendingMachine]
   id: InterdyneCargoDispenser
   name: hayes dispensary
   description: Excess goods are sold here to licensed traders.
