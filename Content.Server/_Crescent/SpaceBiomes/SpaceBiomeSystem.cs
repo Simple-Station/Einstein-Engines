@@ -31,6 +31,8 @@ public sealed class SpaceBiomeSystem : EntitySystem
     private const int ChunkSize = 1000; //in meters
     private const float UpdateInterval = 5; //in seconds
 
+    private ISawmill _sawmill = default!; //used for logging | .2 2025
+
     public override void Initialize()
     {
         base.Initialize();
@@ -38,6 +40,8 @@ public sealed class SpaceBiomeSystem : EntitySystem
         SubscribeLocalEvent<SpaceBiomeSourceComponent, ComponentShutdown>(OnSourceShutdown);
         SubscribeLocalEvent<SpaceBiomeTrackerComponent, EntParentChangedMessage>(OnParentChanged);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRestart);
+        SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawn);
+        _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("spacebiomes");
     }
 
     public override void Update(float frameTime)
@@ -102,6 +106,49 @@ public sealed class SpaceBiomeSystem : EntitySystem
         RemoveBiome(uid, uid.Comp);
     }
 
+    /// <summary>
+    /// HULLROT: This specifically makes the station's designation show up 10 seconds after you spawn in. This is exclusively for music, and to show cool title at the top of ur screen.
+    /// </summary>
+    /// <param name="args"></param>
+    private void OnPlayerSpawn(PlayerSpawnCompleteEvent args)
+    {
+
+        _sawmill.Debug("PLAYER SPAWN EVENT RAN!!!! STATION:" + args.Station);
+        var uid = args.Mob;
+
+        if (!TryComp<ActorComponent>(uid, out var actor))
+            return;
+
+        var parentStation = _stationSystem.GetOwningStation(uid);
+
+        if (parentStation == null)
+            return;
+
+        // HULLROT EDIT: BoringStations and keeping track of what we've visited before is removed
+        // because we want people to see the message each time you enter, coupled with music and flavor text
+
+        if (!TryComp<VesselDesignationComponent>(parentStation, out var desig) || !TryComp<StationNameSetupComponent>(parentStation, out var setup))
+            return;
+
+        var description = ""; //fallback if shuttle/station has no description
+
+        if (TryComp<VesselDescriptionComponent>(parentStation, out var desc)) //if this succeeds, we have a description! if it fails,
+            description = desc.Description;                                   //the component is missing and we just keep ""
+
+        var musicPrototype = "";
+
+        if (TryComp<VesselMusicComponent>(parentStation, out var music)) //if this succeeds, we have custom music! if it fails,
+            musicPrototype = music.AmbientMusicPrototype;                                   //the component is missing and we just keep ""
+
+        var name = setup.StationNameTemplate.Replace("{1}", "").Trim();
+
+        Timer.Spawn(TimeSpan.FromSeconds(10), () =>
+        {
+            NewVesselEnteredMessage message = new NewVesselEnteredMessage(name, Loc.GetString(desig.Designation), description, musicPrototype);
+            RaiseNetworkEvent(message, actor.PlayerSession);
+        });
+    }
+
     private void OnParentChanged(EntityUid uid, SpaceBiomeTrackerComponent component, EntParentChangedMessage args)
     {
         if (!TryComp<ActorComponent>(uid, out var actor))
@@ -112,26 +159,26 @@ public sealed class SpaceBiomeSystem : EntitySystem
         if (parentStation == null)
             return;
 
-        if (!component.BoringStations.Contains((EntityUid) parentStation))
-        {
-            component.BoringStations.Add((EntityUid) parentStation);
+        // HULLROT EDIT: BoringStations and keeping track of what we've visited before is removed
+        // because we want people to see the message each time you enter, coupled with music and flavor text
 
-            if (!TryComp<VesselDesignationComponent>(parentStation, out var desig) || !TryComp<StationNameSetupComponent>(parentStation, out var setup))
-                return;
+        if (!TryComp<VesselDesignationComponent>(parentStation, out var desig) || !TryComp<StationNameSetupComponent>(parentStation, out var setup))
+            return;
 
-            var description = ""; //fallback if shuttle/station has no description
+        var description = ""; //fallback if shuttle/station has no description
 
-            if (TryComp<VesselDescriptionComponent>(parentStation, out var desc)) //if this succeeds, we have a description! if it fails,
-                description = desc.Description;                                   //the component is missing and we just keep ""
+        if (TryComp<VesselDescriptionComponent>(parentStation, out var desc)) //if this succeeds, we have a description! if it fails,
+            description = desc.Description;                                   //the component is missing and we just keep ""
 
-            var name = setup.StationNameTemplate.Replace("{1}", "").Trim();
-            // This is testing if we just initialized because we don't want to send the message on spawn
-            if (_timing.CurTick.Value - MetaData(uid).CreationTick.Value > 500)
-            {
-                NewVesselEnteredMessage message = new NewVesselEnteredMessage(name, Loc.GetString(desig.Designation), description);
-                RaiseNetworkEvent(message, actor.PlayerSession);
-            }
-        }
+        var musicPrototype = "";
+
+        if (TryComp<VesselMusicComponent>(parentStation, out var music)) //if this succeeds, we have custom music! if it fails,
+            musicPrototype = music.AmbientMusicPrototype;                                   //the component is missing and we just keep ""
+
+        var name = setup.StationNameTemplate.Replace("{1}", "").Trim();
+
+        NewVesselEnteredMessage message = new NewVesselEnteredMessage(name, Loc.GetString(desig.Designation), description, musicPrototype);
+        RaiseNetworkEvent(message, actor.PlayerSession);
     }
 
     public void AddBiome(EntityUid uid, SpaceBiomeSourceComponent source)

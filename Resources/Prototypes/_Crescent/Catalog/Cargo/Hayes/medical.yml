@@ -49,22 +49,22 @@
   group: hayes
 
 - type: cargoProduct
+  id: EmergencyBruteKitHayes
+  icon:
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: brutekit
+  product: CrateEmergencyBruteKit
+  cost: 2000
+  category: cargoproduct-category-name-medical
+  group: hayes
+
+- type: cargoProduct
   id: EmergencyBurnKitHayes
   icon:
     sprite: Objects/Specific/Medical/firstaidkits.rsi
     state: burnkit
   product: CrateEmergencyBurnKit
   cost: 1500
-  category: cargoproduct-category-name-medical
-  group: hayes
-
-- type: cargoProduct
-  id: EmergencyToxinKitHayes
-  icon:
-    sprite: Objects/Specific/Medical/firstaidkits.rsi
-    state: toxinkit
-  product: CrateEmergencyToxinKit
-  cost: 1000
   category: cargoproduct-category-name-medical
   group: hayes
 
@@ -79,12 +79,12 @@
   group: hayes
 
 - type: cargoProduct
-  id: EmergencyBruteKitHayes
+  id: EmergencyToxinKitHayes
   icon:
     sprite: Objects/Specific/Medical/firstaidkits.rsi
-    state: brutekit
-  product: CrateEmergencyBruteKit
-  cost: 2000
+    state: toxinkit
+  product: CrateEmergencyToxinKit
+  cost: 1000
   category: cargoproduct-category-name-medical
   group: hayes
 

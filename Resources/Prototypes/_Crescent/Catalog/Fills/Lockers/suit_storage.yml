@@ -1,0 +1,340 @@
+# DSM
+
+- type: entity
+  id: CrescentSuitStorageDSMVoidsuit
+  parent: SuitStorageBase
+  suffix: Imperial Voidsuit
+  components:
+  - type: StorageFill
+    contents:
+        - id: ClothingMaskImperialCombatGasmask
+        - id: ClothingHeadHelmetImperialEVA
+        - id: ClothingOuterCoatImperialSoftsuit
+        - id: OxygenTankFilled
+  - type: AccessReader
+    access: [["Empire"]]
+
+- type: entity
+  id: CrescentSuitStorageDSMWorkerHardsuit
+  parent: SuitStorageBase
+  suffix: Imperial Worker Hardsuit
+  components:
+  - type: StorageFill
+    contents:
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: HandheldGPSBasic
+        - id: JetpackMiniFilled
+        - id: ClothingMaskImperialCombatGasmask
+        - id: ClothingOuterHardsuitImperialWorker
+        - id: ClothingHandsGlovesImperialWorkerGloves
+        - id: ClothingShoesBootsMagDSM
+  - type: AccessReader
+    access: [["Empire"]]
+
+- type: entity
+  id: CrescentSuitStorageDSMJannissaryHardsuit
+  parent: SuitStorageBase
+  suffix: Imperial Mk.I 'JANNISSARY' Hardsuit
+  components:
+  - type: StorageFill
+    contents:
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: HandheldGPSBasic
+        - id: JetpackBlackFilled
+        - id: ClothingMaskImperialCombatGasmask
+        - id: ClothingOuterHardsuitImperialSoldier
+        - id: ClothingHandsGlovesImperialLonggloves
+        - id: ClothingShoesBootsMagDSMFilled
+  - type: AccessReader
+    access: [["EmpireSoldier"]]
+
+- type: entity
+  id: CrescentSuitStorageDSMKonigschildHardsuit
+  parent: SuitStorageBase
+  suffix: Imperial Mk.II 'KONIGSCHILD' Hardsuit
+  components:
+  - type: StorageFill
+    contents:
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: HandheldGPSBasic
+        - id: JetpackBlackFilled
+        - id: ClothingMaskImperialCombatGasmask
+        - id: ClothingOuterHardsuitImperialKnight
+        - id: ClothingHandsGlovesImperialLonggloves
+        - id: ClothingShoesBootsMagDSMFilled
+  - type: AccessReader
+    access: [["EmpireNoble"]]
+
+- type: entity
+  id: CrescentSuitStorageDSMCommandHardsuit
+  parent: SuitStorageBase
+  suffix: Imperial Command Hardsuit
+  components:
+  - type: StorageFill
+    contents:
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: HandheldGPSBasic
+        - id: JetpackBlackFilled
+        - id: ClothingMaskImperialCombatGasmask
+        - id: ClothingOuterHardsuitImperialCommand
+        - id: ClothingHandsGlovesImperialLonggloves
+        - id: ClothingShoesBootsMagDSMFilled
+  - type: AccessReader
+    access: [["EmpireGovernor"]]
+
+- type: entity
+  id: CrescentSuitStorageDSMTemplarHardsuit
+  parent: SuitStorageBase
+  suffix: Imperial Mk.III 'ADJUDICATOR' Hardsuit
+  components:
+  - type: StorageFill
+    contents:
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: HandheldGPSBasic
+        - id: JetpackBlackFilled
+        - id: ClothingMaskImperialCombatGasmask
+        - id: ClothingOuterHardsuitInspector
+        - id: ClothingHandsGlovesCombat
+        - id: ClothingShoesBootsMagCombatFilled
+        - id: BoxHandcuff
+  - type: AccessReader
+    access: [["Advocatus"]]
+
+#NCWL
+
+- type: entity
+  id: CrescentSuitStorageNCWLVoidsuit
+  parent: SuitStorageBase
+  suffix: NCWL Voidsuit
+  components:
+  - type: StorageFill
+    contents:
+        - id: ClothingMaskNCWLGasmask
+        - id: ClothingHeadHelmetNCWLEVA
+        - id: ClothingOuterNCWLEVA
+        - id: OxygenTankFilled
+  - type: AccessReader
+    access: [["NCWLGeneral"]]
+
+- type: entity
+  id: CrescentSuitStorageNCWLMedicHardsuit
+  parent: SuitStorageBase
+  suffix: NCWL Medic Hardsuit
+  components:
+  - type: StorageFill
+    contents:
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: HandheldGPSBasic
+        - id: JetpackMiniFilled
+        - id: ClothingMaskNCWLBalaclava
+        - id: ClothingOuterHardsuitNCWLMedi
+        - id: ClothingHandsGlovesCombat
+        - id: ClothingShoesBootsMagNCWL
+  - type: AccessReader
+    access: [["NCWLGeneral"]]
+
+- type: entity
+  id: CrescentSuitStorageNCWLInfanteerHardsuit
+  parent: SuitStorageBase
+  suffix: NCWL Mk.I 'INFANTEER' Hardsuit
+  components:
+  - type: StorageFill
+    contents:
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: HandheldGPSBasic
+        - id: JetpackBlackFilled
+        - id: ClothingMaskNCWLBalaclava
+        - id: ClothingOuterHardsuitNCWLInfantry
+        - id: ClothingHandsGlovesCombat
+        - id: ClothingShoesBootsMagNCWLFilled
+  - type: AccessReader
+    access: [["NCWLArmory"]]
+
+- type: entity
+  id: CrescentSuitStorageNCWLPetyaHardsuit
+  parent: SuitStorageBase
+  suffix: NCWL Mk.II 'PETYA' Hardsuit
+  components:
+  - type: StorageFill
+    contents:
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: HandheldGPSBasic
+        - id: JetpackBlackFilled
+        - id: ClothingMaskNCWLBalaclava
+        - id: ClothingOuterHardsuitNCWLPetya
+        - id: ClothingHandsGlovesCombat
+        - id: ClothingShoesBootsMagNCWLFilled
+  - type: AccessReader
+    access: [["NCWLCommand"]]
+
+# SHI
+
+- type: entity
+  id: CrescentSuitStorageSHIHazardousEnvironmentHardsuit
+  parent: SuitStorageBase
+  suffix: SHI Hazardous Environment Hardsuit
+  components:
+  - type: StorageFill
+    contents:
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: HandheldGPSBasic
+        - id: JetpackMiniFilled
+        - id: ClothingOuterHardsuitHEV
+        - id: ClothingShoesBootsMagCombat
+  - type: AccessReader
+    access: [["Shinohara"]]
+
+- type: entity
+  id: CrescentSuitStorageSHIHighsecUAHardsuit
+  parent: SuitStorageBase
+  suffix: SHI United Arsenal Hardsuit
+  components:
+  - type: StorageFill
+    contents:
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: HandheldGPSBasic
+        - id: JetpackBlackFilled
+        - id: ClothingMaskSyndicateFacemask
+        - id: ClothingOuterHardsuitHighsecUA
+        - id: ClothingHandsGlovesCombat
+        - id: ClothingShoesBootsMagCombatFilled
+  - type: AccessReader
+    access: [["ShinoharaSecurity"]]
+
+- type: entity
+  id: CrescentSuitStorageSHIHighsecHardsuit
+  parent: SuitStorageBase
+  suffix: SHI Combat Hardsuit Hardsuit
+  components:
+  - type: StorageFill
+    contents:
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: HandheldGPSBasic
+        - id: JetpackBlackFilled
+        - id: ClothingMaskSyndicateFacemask
+        - id: ClothingOuterHardsuitHighsec
+        - id: ClothingHandsGlovesCombat
+        - id: ClothingShoesBootsMagCombatFilled
+        - id: DeathAcidifierImplanter
+  - type: AccessReader
+    access: [["ShinoharaOfficer"]]
+
+# TSFC
+
+- type: entity
+  id: CrescentSuitStorageTSFCVacsuit
+  parent: SuitStorageBase
+  suffix: TSFC Vacsuit
+  components:
+  - type: StorageFill
+    contents:
+        - id: ClothingMaskSyndicateFacemask
+        - id: ClothingHeadHelmetSyndicate
+        - id: ClothingOuterHardsuitSyndicate
+        - id: OxygenTankFilled
+  - type: AccessReader
+    access: [["SyndicateBasic"]]
+
+- type: entity
+  id: CrescentSuitStorageTSFCVSAWLugnutHardsuit
+  parent: SuitStorageBase
+  suffix: TSFC SAW Mk.I 'LUGNUT' Hardsuit
+  components:
+  - type: StorageFill
+    contents:
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: HandheldGPSBasic
+        - id: JetpackMiniFilled
+        - id: ClothingMaskSyndicateFacemask
+        - id: ClothingOuterHardsuitRamzi
+        - id: ClothingHandsGlovesColorYellow
+        - id: ClothingShoesBootsMagSyndie
+  - type: AccessReader
+    access: [["SyndicateSaws"]]
+
+- type: entity
+  id: CrescentSuitStorageTSFCSAWUnionizerHardsuit
+  parent: SuitStorageBase
+  suffix: TSFC SAW 'UNIONIZER' Hardsuit
+  components:
+  - type: StorageFill
+    contents:
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: HandheldGPSBasic
+        - id: JetpackMiniFilled
+        - id: ClothingMaskSyndicateFacemask
+        - id: ClothingOuterHardsuitSyndieDonator
+        - id: ClothingHandsGlovesColorYellow
+        - id: ClothingShoesBootsMagSyndie
+  - type: AccessReader
+    access: [["SyndicateCommand"]]
+
+- type: entity
+  id: CrescentSuitStorageTSFCInterdyneTraumasecHardsuit
+  parent: SuitStorageBase
+  suffix: TSFC Interdyne Traumasec Hardsuit
+  components:
+  - type: StorageFill
+    contents:
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: HandheldGPSBasic
+        - id: JetpackMiniFilled
+        - id: ClothingMaskSyndicateFacemask
+        - id: ClothingOuterHardsuitTraumasec
+        - id: ClothingHandsGlovesCombat
+        - id: ClothingShoesBootsMagSyndie
+  - type: AccessReader
+    access: [["SyndicateInterdyne"]]
+
+- type: entity
+  id: CrescentSuitStorageTSFCGorlexBulwarkHardsuit
+  parent: SuitStorageBase
+  suffix: TSFC Gorlex Mk.II 'BULWARK' Hardsuit
+  components:
+  - type: StorageFill
+    contents:
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: HandheldGPSBasic
+        - id: JetpackBlackFilled
+        - id: ClothingMaskSyndicateFacemask
+        - id: ClothingOuterHardsuitSyndicateBG
+        - id: ClothingHandsGlovesCombat
+        - id: ClothingShoesBootsMagSyndie
+  - type: AccessReader
+    access: [["SyndicateGorlex"]]
+
+# TAP
+
+- type: entity
+  id: CrescentSuitStorageTAPBeltrunnerHardsuit
+  parent: SuitStorageBase
+  suffix: TAP Beltrunner Hardsuit
+  components:
+  - type: StorageFill
+    contents:
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: HandheldGPSBasic
+        - id: JetpackBlackFilled
+        - id: ClothingMaskSyndicateFacemask
+        - id: ClothingOuterHardsuitIzdari
+        - id: ClothingHandsGlovesCombat
+        - id: ClothingShoesBootsMagCombatFilled
+  - type: AccessReader
+    access: [["Families"]]
+
+- type: entity
+  id: CrescentSuitStorageTAPDraugrHardsuit
+  parent: SuitStorageBase
+  suffix: TAP Mk.I 'DRAUGR' Hardsuit
+  components:
+  - type: StorageFill
+    contents:
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: HandheldGPSBasic
+        - id: JetpackBlackFilled
+        - id: ClothingMaskSyndicateFacemask
+        - id: ClothingOuterHardsuitDraugr
+        - id: ClothingHandsGlovesCombat
+        - id: ClothingShoesBootsMagCombatFilled
+  - type: AccessReader
+    access: [["Families"]]

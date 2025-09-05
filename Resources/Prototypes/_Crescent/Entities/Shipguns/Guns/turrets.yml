@@ -947,7 +947,7 @@
       selectedMode: FullAuto
       availableModes:
         - FullAuto
-      soundGunshot: _Crescent/Objects/ShuttleWeapons/ioncannon.rsi
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/ship_friendship.ogg
     - type: RechargeBasicEntityAmmo
       rechargeCooldown: 2
       rechargeSound:

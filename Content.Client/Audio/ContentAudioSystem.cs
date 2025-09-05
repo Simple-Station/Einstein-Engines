@@ -26,6 +26,7 @@ public sealed partial class ContentAudioSystem : SharedContentAudioSystem
     public const float MasterVolumeMultiplier = 3f;
     public const float MidiVolumeMultiplier = 0.25f;
     public const float AmbienceMultiplier = 3f;
+    public const float CombatMusicMultiplier = 3f;
     public const float AmbientMusicMultiplier = 3f;
     public const float LobbyMultiplier = 3f;
     public const float InterfaceMultiplier = 2f;
