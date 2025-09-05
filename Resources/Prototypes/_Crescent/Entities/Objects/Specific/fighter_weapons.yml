@@ -12,6 +12,10 @@
   - type: Mech
   - type: CanBeHeatTracked
   - type: ProximityFuseTarget
+  - type: VesselIcon
+    iffIcon:
+      sprite: _Crescent/ShipIcons/ifficons.rsi
+      state: fighter
 
 - type: entity
   id: LightFighter

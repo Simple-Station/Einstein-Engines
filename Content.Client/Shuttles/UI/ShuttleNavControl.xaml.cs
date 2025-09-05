@@ -127,6 +127,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         public ILocalizationManager Loc;
         public void Execute(int index)
         {
+            // TODO: Need to rewrite this so that entities can also be shown.
             var gUid = grids[index].Owner;
             var gComp = grids[index].Comp;
             if (gUid == selfGrid || !fixturesQuery.HasComponent(gUid))
