@@ -45,6 +45,15 @@ public sealed class PvsAutoOverrideSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+        SubscribeLocalEvent<PvsAutoOverrideComponent, ComponentRemove>(onFree);
+    }
+
+    public void onFree(Entity<PvsAutoOverrideComponent> obj, ref ComponentRemove args)
+    {
+        foreach (var session in obj.Comp.SendingSessions)
+        {
+            _override.RemoveSessionOverride(obj.Owner, session);
+        }
     }
 
     public override void Update(float frameTime)
