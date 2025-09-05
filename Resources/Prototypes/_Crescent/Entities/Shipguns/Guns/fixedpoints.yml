@@ -1,9 +1,10 @@
 #plasma repeater
 
 - type: entity
-  id: ShuttleGunPlasmaRepeater
   parent: BaseFixedShipgun
+  id: ShuttleGunPlasmaRepeater
   name: SHI 400c plasma bolt repeater
+  suffix: ShipGun
   description: A fixedpoint self-defense tool based on recovered NT technology, subpar in terms of power use to firepower ratio - mostly seen on civilian models.
   components:
   - type: ApcPowerReceiver
@@ -15,13 +16,8 @@
     layers:
     - state: lse-400c
     - state: mag-unshaded-9
-  - type: ContainerContainer
-    containers:
-      machine_board: !type:Container
-      machine_parts: !type:Container
-  - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: StructuralMetallicStrong
+  - type: Machine
+    board: ShuttleGunPlasmaRepeaterCircuitboard
   - type: Destructible
     thresholds:
     - trigger:
@@ -30,8 +26,10 @@
       behaviors:
         - !type:ChangeConstructionNodeBehavior
           node: machineFrame
-        - !type:DoActsBehavior
-          acts: ["Destruction"]
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
   - type: Gun
     projectileSpeed: 95
     fireRate: 1.2
@@ -59,14 +57,20 @@
   - type: HardpointAnchorableOnly
     class: Energy
     size: Small
-
+  - type: Construction
+    graph: Machine
+    node: machine
+    containers:
+    - machine_parts
+    - machine_board
 
 #exhumer
 
 - type: entity
-  id: ShuttleGunExhumer
   parent: BaseFixedShipgun
+  id: ShuttleGunExhumer
   name: SHI 250c "Exhumer" kinetic pulser
+  suffix: ShipGun
   description: A fixedpoint mining tool that accelerates sound waves to kinetically slice through rock - mostly seen on civilian miner models.
   components:
   - type: ApcPowerReceiver
@@ -78,10 +82,8 @@
     layers:
     - state: states
     - state: mag-7
-  - type: ContainerContainer
-    containers:
-      machine_board: !type:Container
-      machine_parts: !type:Container
+  - type: Machine
+    board: ShuttleGunExhumerCircuitboard
   - type: Destructible
     thresholds:
     - trigger:
@@ -90,8 +92,10 @@
       behaviors:
         - !type:ChangeConstructionNodeBehavior
           node: machineFrame
-        - !type:DoActsBehavior
-          acts: ["Destruction"]
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
   - type: Gun
     projectileSpeed: 65
     fireRate: 3
@@ -119,13 +123,20 @@
   - type: HardpointAnchorableOnly
     class: Ballistic
     size: Small
+  - type: Construction
+    graph: Machine
+    node: machine
+    containers:
+    - machine_parts
+    - machine_board
 
 #bizmuth
 
 - type: entity
-  id: ShuttleGunBizmuth
   parent: BaseFixedShipgun
+  id: ShuttleGunBizmuth
   name: 500i "Bizmuth" ion gatling
+  suffix: ShipGun
   description: An interceptor's bread and butter, the Bizmuth fires supercharged balls of electricty to pelt the powergrids of unsuspecting targets. Most often seen on interceptor vessels.
   components:
   - type: ApcPowerReceiver
@@ -137,10 +148,8 @@
     layers:
     - state: base
     - state: mag-7
-  - type: ContainerContainer
-    containers:
-      machine_board: !type:Container
-      machine_parts: !type:Container
+  - type: Machine
+    board: ShuttleGunBizmuthCircuitboard
   - type: Destructible
     thresholds:
     - trigger:
@@ -149,8 +158,10 @@
       behaviors:
         - !type:ChangeConstructionNodeBehavior
           node: machineFrame
-        - !type:DoActsBehavior
-          acts: ["Destruction"]
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
   - type: Gun
     projectileSpeed: 95
     fireRate: 2.4
@@ -178,13 +189,20 @@
   - type: HardpointAnchorableOnly
     class: Energy
     size: Medium
+  - type: Construction
+    graph: Machine
+    node: machine
+    containers:
+    - machine_parts
+    - machine_board
 
 #idna
 
 - type: entity
-  id: ShuttleGunTorpedo
   parent: BaseFixedShipgun
+  id: ShuttleGunTorpedo
   name: SHI 180mm "Idna" small torpedo pod
+  suffix: ShipGun
   description: A small fixedpoint rocketpod with basic heatseeking function.
   components:
   - type: ApcPowerReceiver
@@ -198,11 +216,8 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-2
       map: ["enum.GunVisualLayers.Mag"]
-  - type: ContainerContainer
-    containers:
-      machine_board: !type:Container
-      machine_parts: !type:Container
-      ballistic-ammo: !type:Container
+  - type: Machine
+    board: ShuttleGunTorpedoCircuitboard
   - type: Destructible
     thresholds:
     - trigger:
@@ -211,8 +226,11 @@
       behaviors:
         - !type:ChangeConstructionNodeBehavior
           node: machineFrame
-        - !type:DoActsBehavior
-          acts: ["Destruction"]
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      ballistic-ammo: !type:Container
   - type: Gun
     projectileSpeed: 30
     fireRate: 0.4
@@ -226,7 +244,7 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
   - type: BallisticAmmoProvider
-    proto: IdnaTorpedo
+    #proto: IdnaTorpedo - on being rebuilt from destruction this gives it free ammo
     whitelist:
       tags:
         - Torpedo
@@ -241,14 +259,21 @@
     class: Missile
     size: Small
   - type: Appearance
+  - type: Construction
+    graph: Machine
+    node: machine
+    containers:
+    - machine_parts
+    - machine_board
 
 
 #kurosawa
 
 - type: entity
-  id: ShuttleGunKurosawa
   parent: BaseFixedShipgun
+  id: ShuttleGunKurosawa
   name: NCWL-3 48mm "Kurosawa" rocket pod
+  suffix: ShipGun
   description: A small fixedpoint rocketpod with a capacity of two rockets. Must be reloaded by hand.
   components:
   - type: ApcPowerReceiver
@@ -261,11 +286,8 @@
     - state: rocket
     - state: mag-7
       map: ["enum.GunVisualLayers.Mag"]
-  - type: ContainerContainer
-    containers:
-      machine_board: !type:Container
-      machine_parts: !type:Container
-      ballistic-ammo: !type:Container
+  - type: Machine
+    board: ShuttleGunKurosawaCircuitboard
   - type: Destructible
     thresholds:
     - trigger:
@@ -274,8 +296,11 @@
       behaviors:
         - !type:ChangeConstructionNodeBehavior
           node: machineFrame
-        - !type:DoActsBehavior
-          acts: ["Destruction"]
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      ballistic-ammo: !type:Container
   - type: Gun
     projectileSpeed: 135
     fireRate: 1
@@ -292,7 +317,7 @@
     class: Missile
     size: Small
   - type: BallisticAmmoProvider
-    proto: CartridgeRocketLowYield
+    #proto: CartridgeRocketLowYield - on being rebuilt from destruction this gives it free ammo
     whitelist:
       tags:
         - Rocket48mm
@@ -303,13 +328,20 @@
     magState: mag
     steps: 8
     zeroVisible: false
+  - type: Construction
+    graph: Machine
+    node: machine
+    containers:
+    - machine_parts
+    - machine_board
 
 #sumitomo
 
 - type: entity
-  id: ShuttleGunMissileRack
   parent: BaseFixedShipgun
+  id: ShuttleGunMissileRack
   name: NT-6 48mm "Sumitomo" missile rack
+  suffix: ShipGun
   description: A massive, ship-mounted missile rack with a unique feeding mechanism. Requires a rocket magazine to operate.
   components:
   - type: ApcPowerReceiver
@@ -322,6 +354,8 @@
     - state: rocket
     - state: mag-7
       map: ["enum.GunVisualLayers.Mag"]
+  - type: Machine
+    board: ShuttleGunMissileRackCircuitboard
   - type: Destructible
     thresholds:
     - trigger:
@@ -330,8 +364,6 @@
       behaviors:
         - !type:ChangeConstructionNodeBehavior
           node: machineFrame
-        - !type:DoActsBehavior
-          acts: ["Destruction"]
   - type: ContainerContainer
     containers:
       machine_board: !type:Container
@@ -359,7 +391,7 @@
       gun_magazine:
         name: Magazine
         priority: 2
-        startingItem: MagazineRocketLowYield
+        #startingItem: MagazineRocketLowYield - on being rebuilt from destruction this gives it free ammo
         whitelist:
           tags:
           - MagazineRocket48mm
@@ -368,59 +400,41 @@
           params:
             pitch: 2
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
-
   - type: MagazineAmmoProvider
+  - type: Construction
+    graph: Machine
+    node: machine
+    containers:
+    - machine_parts
+    - machine_board
 
 #43mm (slugthrower)
 
 - type: entity
+  parent: BaseFixedShipgun
   id: SlugthrowerCannon
   name: SHI 43mm "Dasher" ballistic slugthrower
-  parent: BaseFixedShipgun
+  suffix: ShipGun
   description: An outdated, gas-operated slugthrower. Usually found mounted on older civilian models. Ballistic-fed.
   components:
   - type: ApcPowerReceiver
     powerLoad: 3000
   - type: StaticPrice
     price: 8000
-  - type: Destructible
-    thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 400
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-          - !type:PlaySoundBehavior
-            sound:
-              collection: MetalGlassBreak
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              SheetSteel1:
-                min: 2
-                max: 4
   - type: Sprite
     sprite: _Crescent/Objects/ShuttleWeapons/50cal.rsi
     layers:
     - state: space_artillery
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: MagazineLightRifleBoxSlug
-        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
-        priority: 2
-        whitelist:
-          tags:
-            - SlugthrowerCartridgeBox
-      gun_chamber:
-        name: Chamber
-        startingItem: CartridgeMachineGunArmorPiercing
-        priority: 1
-        whitelist:
-          tags:
-            - CartridgeMachineGun
+  - type: Machine
+    board: SlugthrowerCannonCircuitboard
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: machineFrame
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
@@ -437,19 +451,50 @@
     size: Medium
   - type: AutoShootGun
   - type: ChamberMagazineAmmoProvider
+  - type: Construction
+    graph: Machine
+    node: machine
+    containers:
+    - machine_parts
+    - machine_board
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        #startingItem: MagazineLightRifleBoxSlug - on being rebuilt from destruction this gives it free ammo
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - SlugthrowerCartridgeBox
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeMachineGunArmorPiercing
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeMachineGun
 
 #hardliner
 
 - type: entity
+  parent: BaseFixedShipgun
   id: HardlineBeamPulser
   name: NT-9 3100c 'Hardliner' plasma lance turret
-  parent: BaseFixedShipgun
+  suffix: ShipGun
   description: A ship-mounted, fixed-point artillery turret using military laser technology as a base - an outdated model from the now-defunct NanoTrasen, although tried and tested in many battles. Requires upkeep in the form of liquid coolant to stay operational.
   components:
   - type: ApcPowerReceiver
     powerLoad: 1000
   - type: StaticPrice
     price: 10000
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/bigfuckinglaser.rsi
+    layers:
+    - state: space_artillery
+  - type: Machine
+    board: HardlineBeamPulserCircuitboard
   - type: Destructible
     thresholds:
     - trigger:
@@ -458,17 +503,11 @@
       behaviors:
         - !type:ChangeConstructionNodeBehavior
           node: machineFrame
-        - !type:DoActsBehavior
-          acts: ["Destruction"]
-  - type: Sprite
-    sprite: _Crescent/Objects/ShuttleWeapons/bigfuckinglaser.rsi
-    layers:
-    - state: space_artillery
-  - type: BasicEntityAmmoProvider
-    proto: BulletMachineGunPlasmaShuttleLarge
   - type: ContainerContainer
     containers:
       SpaceArtillery-CoolantSlot: !type:ContainerSlot {}
+  - type: BasicEntityAmmoProvider
+    proto: BulletMachineGunPlasmaShuttleLarge
   - type: Gun
     fireRate: 0.7
     projectileSpeed: 70
@@ -496,19 +535,32 @@
             whitelist:
                 components:
                 - Stack
+  - type: Construction
+    graph: Machine
+    node: machine
+    containers:
+    - machine_parts
+    - machine_board
 
 #120mm
 
 - type: entity
+  parent: BaseFixedShipgun
   id: Type99Artillery
   name: SHI Type 99 120mm artillery
-  parent: BaseFixedShipgun
+  suffix: ShipGun
   description: A heavier, bulkier version of the slugthrower. An antiquated SHI design. Requires manual reloading after its two chambers.
   components:
   - type: ApcPowerReceiver
     powerLoad: 3000
   - type: StaticPrice
     price: 7500
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/artillery.rsi
+    layers:
+    - state: artillery
+  - type: Machine
+    board: Type99ArtilleryCircuitboard
   - type: Destructible
     thresholds:
     - trigger:
@@ -517,27 +569,21 @@
       behaviors:
         - !type:ChangeConstructionNodeBehavior
           node: machineFrame
-        - !type:DoActsBehavior
-          acts: ["Destruction"]
-  - type: Sprite
-    sprite: _Crescent/Objects/ShuttleWeapons/artillery.rsi
-    layers:
-    - state: artillery
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
   - type: BallisticAmmoProvider
-    soundInsert: 
+    soundInsert:
       path: /Audio/Weapons/Guns/UnionfallWeapons/amr_close_1.ogg
     fillWithDoAfter: true
     fillDelay: 1
     cycleable: true
     capacity: 2
-    proto: CartridgeShellArmorPiercing
+    #proto: CartridgeShellArmorPiercing - on being rebuilt from destruction this gives it free ammo
     whitelist:
       tags:
       - CartridgeShell
-  - type: ContainerContainer
-    containers:
-      ballistic-ammo: !type:Container
-        ents: []
   - type: Gun
     fireRate: 0.5
     projectileSpeed: 95
@@ -548,19 +594,32 @@
   - type: HardpointAnchorableOnly
     class: Ballistic
     size: Large
+  - type: Construction
+    graph: Machine
+    node: machine
+    containers:
+    - machine_parts
+    - machine_board
 
 #320mm
 
 - type: entity
+  parent: BaseFixedShipgun
   id: AcceleratorCannon
   name: 320mm Imperial high-frequency accelerator cannon
-  parent: BaseFixedShipgun
+  suffix: ShipGun
   description: A product of the Imperial war machine. Produced as an experimental solution to various insurgencies in the Crescent Sector - and later stolen by the insurgents themselves. Still a rare sight aboard most vessels.
   components:
   - type: ApcPowerReceiver
     powerLoad: 6000
   - type: StaticPrice
     price: 20000
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/bigcannon.rsi
+    layers:
+    - state: deck_turret_loaded
+  - type: Machine
+    board: AcceleratorCannonCircuitboard
   - type: Destructible
     thresholds:
     - trigger:
@@ -569,27 +628,21 @@
       behaviors:
         - !type:ChangeConstructionNodeBehavior
           node: machineFrame
-        - !type:DoActsBehavior
-          acts: ["Destruction"]
-  - type: Sprite
-    sprite: _Crescent/Objects/ShuttleWeapons/bigcannon.rsi
-    layers:
-    - state: deck_turret_loaded
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+      SpaceArtillery-CoolantSlot: !type:ContainerSlot {}
   - type: Battery
     maxCharge: 1000000
     startingCharge: 1000000
   - type: BallisticAmmoProvider
     cycleable: false
     capacity: 5
-    proto: CartridgeRailHighExplosive
+    #proto: CartridgeRailHighExplosive - on being rebuilt from destruction this gives it free ammo
     whitelist:
       tags:
       - Cartridge
-  - type: ContainerContainer
-    containers:
-      ballistic-ammo: !type:Container
-        ents: []
-      SpaceArtillery-CoolantSlot: !type:ContainerSlot {}
   - type: Gun
     fireRate: 0.1
     projectileSpeed: 135
@@ -617,44 +670,52 @@
             whitelist:
                 components:
                 - Stack
+  - type: Construction
+    graph: Machine
+    node: machine
+    containers:
+    - machine_parts
+    - machine_board
 
 #vulcan
 
 - type: entity
+  parent: BaseFixedShipgun
   id: NTVulcanTurret
   name: NT 20mm "Vulcan" machineturret
-  parent: BaseFixedShipgun
+  suffix: ShipGun
   description: An antiquated NanoTrasen model, commonly fitted on mid-tech fighters.
   components:
   - type: ApcPowerReceiver
     powerLoad: 3000
   - type: StaticPrice
     price: 2500
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/vulcan.rsi
+    layers:
+    - state: space_artillery
+  - type: Machine
+    board: NTVulcanTurretCircuitboard
   - type: Destructible
     thresholds:
       - trigger:
           !type:DamageTrigger
           damage: 500
         behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
           - !type:PlaySoundBehavior
             sound:
               collection: MetalGlassBreak
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              SheetSteel1:
-                min: 2
-                max: 4
-  - type: Sprite
-    sprite: _Crescent/Objects/ShuttleWeapons/vulcan.rsi
-    layers:
-    - state: space_artillery
+          - !type:ChangeConstructionNodeBehavior
+            node: machineFrame
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineVulcan
+        #startingItem: MagazineVulcan - on being rebuilt from destruction this gives it free ammo
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         priority: 2
@@ -668,10 +729,6 @@
         whitelist:
           tags:
             - VulcanCartridgeBox
-  - type: ContainerContainer
-    containers:
-      ballistic-ammo: !type:Container
-        ents: []
   - type: Gun
     fireRate: 12
     projectileSpeed: 135
@@ -684,44 +741,52 @@
     size: Small
   - type: AutoShootGun
   - type: ChamberMagazineAmmoProvider
+  - type: Construction
+    graph: Machine
+    node: machine
+    containers:
+    - machine_parts
+    - machine_board
 
 #cleanser
 
 - type: entity
+  parent: BaseFixedShipgun
   id: SAWCleanser
   name: SAW 20mm "Cleanser" gatlingun
-  parent: BaseFixedShipgun
+  suffix: ShipGun
   description: A retrofit of the 20mm vulcan made by TSFC SAW Engineers. All safety considerations seem to be missing on this..
   components:
   - type: ApcPowerReceiver
     powerLoad: 3000
   - type: StaticPrice
     price: 8000
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/gatling.rsi
+    layers:
+    - state: space_artillery
+  - type: Machine
+    board: SAWCleanserCircuitboard
   - type: Destructible
     thresholds:
       - trigger:
           !type:DamageTrigger
           damage: 250 # retrofits make it a bit flimsy
         behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
+          - !type:ChangeConstructionNodeBehavior
+            node: machineFrame
           - !type:PlaySoundBehavior
             sound:
               collection: MetalGlassBreak
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              SheetSteel1:
-                min: 2
-                max: 4
-  - type: Sprite
-    sprite: _Crescent/Objects/ShuttleWeapons/gatling.rsi
-    layers:
-    - state: space_artillery
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineVulcan
+        #startingItem: MagazineVulcan - on being rebuilt from destruction this gives it free ammo
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         priority: 2
@@ -735,10 +800,6 @@
         whitelist:
           tags:
             - VulcanCartridgeBox
-  - type: ContainerContainer
-    containers:
-      ballistic-ammo: !type:Container
-        ents: []
   - type: Gun
     fireRate: 36
     maxAngle: 4
@@ -753,44 +814,52 @@
     size: Medium
   - type: AutoShootGun
   - type: ChamberMagazineAmmoProvider
+  - type: Construction
+    graph: Machine
+    node: machine
+    containers:
+    - machine_parts
+    - machine_board
 
 #wasp
 
 - type: entity
+  parent: BaseFixedShipgun
   id: WaspSwarmPlatform
   name: ATH 70mm 'Wasp' swarmrocket platform
-  parent: BaseFixedShipgun
+  suffix: ShipGun
   description: A light, stationary rocket platform intended to apply pressure to a target with its guided projectiles.
   components:
   - type: ApcPowerReceiver
     powerLoad: 2000
   - type: StaticPrice
     price: 8000
+  - type: Sprite
+    sprite: _Crescent/Objects/ShuttleWeapons/wasp.rsi
+    layers:
+    - state: base
+  - type: Machine
+    board: WaspSwarmPlatformCircuitboard
   - type: Destructible
     thresholds:
       - trigger:
           !type:DamageTrigger
           damage: 500 #
         behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
+          - !type:ChangeConstructionNodeBehavior
+            node: machineFrame
           - !type:PlaySoundBehavior
             sound:
               collection: MetalGlassBreak
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              SheetSteel1:
-                min: 2
-                max: 4
-  - type: Sprite
-    sprite: _Crescent/Objects/ShuttleWeapons/wasp.rsi
-    layers:
-    - state: base
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: SwarmrocketClip
+        #startingItem: SwarmrocketClip - on being rebuilt from destruction this gives it free ammo
         priority: 2
         whitelist:
           tags:
@@ -800,10 +869,6 @@
           params:
             pitch: 2
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
-  - type: ContainerContainer
-    containers:
-      ballistic-ammo: !type:Container
-        ents: []
   - type: Gun
     projectileSpeed: 60
     fireRate: 3.4
@@ -819,3 +884,9 @@
     size: Small
   - type: AutoShootGun
   - type: MagazineAmmoProvider
+  - type: Construction
+    graph: Machine
+    node: machine
+    containers:
+    - machine_parts
+    - machine_board
