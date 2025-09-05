@@ -3,6 +3,13 @@
   name: job-name-draugr
   description: job-description-draugr
   playTimeTracker:  JobDraugrTAP
+  weight: 6
+  startingGear: DraugrGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconDraugr"
+  supervisors: job-supervisors-tap
+  canBeAntag: false
   requirements:
     - !type:FactionRequirement
       factionID: "TAP"
@@ -18,13 +25,6 @@
         - Muted
         - Blindness
         - Pacifist
-  weight: 50
-  startingGear: DraugrGear
-  alwaysUseSpawner: true
-  icon: "JobIconDraugr"
-  requireAdminNotify: false
-  supervisors: job-supervisors-tap
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:

@@ -3,6 +3,13 @@
   name: job-name-medtech
   description: job-description-medtech
   playTimeTracker: JobMedtechSHI
+  weight: 2
+  startingGear: MedtechGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconMedtech"
+  supervisors: job-supervisors-shi
+  canBeAntag: false
   requirements:
     - !type:FactionRequirement
       factionID: "SHI"
@@ -12,13 +19,6 @@
         - Foreigner
         - Blindness
         - WheelchairBound
-  weight: 25
-  startingGear: MedtechGear
-  alwaysUseSpawner: true
-  icon: "JobIconMedtech"
-  requireAdminNotify: false
-  supervisors: job-supervisors-shi
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
