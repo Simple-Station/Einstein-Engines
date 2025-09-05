@@ -39,7 +39,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
     // Needed because new SS14 ENGINE update doesn't let you make StartCollideEvents anymore for some reason - SPCR 2025
     private void OnBulletHit(EntityUid uid, ProjectileComponent component, ref HullrotBulletHitEvent args)
     {
-        if (!component.raycasting && args.selfFixtureKey != ProjectileFixture || component.DamagedEntity || component is { Weapon: null, OnlyCollideWhenShot: true, })
+        if (component.DamagedEntity || component is { Weapon: null, OnlyCollideWhenShot: true, })
             return;
         if (!HasComp<ShipShieldComponent>(uid) && !args.targetFixture.Hard)
             return;
@@ -102,7 +102,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
 
     private void OnStartCollide(EntityUid uid, ProjectileComponent component, ref StartCollideEvent args)
     {
-        if (!component.raycasting && args.OurFixtureId != ProjectileFixture || component.DamagedEntity || component is { Weapon: null, OnlyCollideWhenShot: true, })
+        if (args.OurFixtureId != ProjectileFixture || component.DamagedEntity || component is { Weapon: null, OnlyCollideWhenShot: true, })
             return;
         if (!HasComp<ShipShieldComponent>(uid) && !args.OtherFixture.Hard)
             return;

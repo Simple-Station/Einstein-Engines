@@ -418,7 +418,7 @@
   description: An outdated, gas-operated slugthrower. Usually found mounted on older civilian models. Ballistic-fed.
   components:
   - type: ApcPowerReceiver
-    powerLoad: 3000
+    powerLoad: 1000
   - type: StaticPrice
     price: 8000
   - type: Sprite
