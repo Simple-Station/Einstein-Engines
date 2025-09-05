@@ -30,6 +30,13 @@
   - !type:AddComponentSpecial
     components:
       - type: Telepathic
+      - type: LanguageAdder
+        addSpoken:
+          - Atyrian
+          - Tradeband
+        addUnderstood:
+          - Atyrian
+          - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain

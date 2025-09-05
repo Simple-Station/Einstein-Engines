@@ -6,6 +6,12 @@
     - !type:FactionRequirement
       inverted: true
       factionID: "DSM"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Dockta
+        - Freespeak
+        - Kaishago
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -32,6 +38,12 @@
     - !type:FactionRequirement
       inverted: true
       factionID: "NCWL"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LowImperial
+        - Freespeak
+        - Kaishago
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -47,6 +59,12 @@
     - !type:FactionRequirement
       inverted: true
       factionID: "TFSC"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LowImperial
+        - Dockta
+        - Kaishago
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -62,6 +80,12 @@
     - !type:FactionRequirement
       inverted: true
       factionID: "SHI"
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - LowImperial
+        - Dockta
+        - Freespeak
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -69,34 +93,34 @@
       languagesUnderstood:
         - Kaishago
 
-- type: trait
-  id: Clarizian
-  category: TraitsSpeechLanguages
-  points: -4
-  requirements:
-    - !type:CharacterNationalityRequirement
-      inverted: true
-      nationalities:
-        - Clarizian
-  functions:
-    - !type:TraitModifyLanguages
-      languagesSpoken:
-        - Clarizian
-      languagesUnderstood:
-        - Clarizian
+# - type: trait
+#   id: Clarizian
+#   category: TraitsSpeechLanguages
+#   points: -4
+#   requirements:
+#     - !type:CharacterNationalityRequirement
+#       inverted: true
+#       nationalities:
+#         - Clarizian
+#   functions:
+#     - !type:TraitModifyLanguages
+#       languagesSpoken:
+#         - Clarizian
+#       languagesUnderstood:
+#         - Clarizian
 
-- type: trait
-  id: SolBasic
-  category: TraitsSpeechLanguages
-  points: -4
-  requirements:
-    - !type:CharacterNationalityRequirement
-      inverted: true
-      nationalities:
-        - Authority
-  functions:
-    - !type:TraitModifyLanguages
-      languagesSpoken:
-        - SolBasic
-      languagesUnderstood:
-        - SolBasic
+# - type: trait
+#   id: SolBasic
+#   category: TraitsSpeechLanguages
+#   points: -4
+#   requirements:
+#     - !type:CharacterNationalityRequirement
+#       inverted: true
+#       nationalities:
+#         - Authority
+#   functions:
+#     - !type:TraitModifyLanguages
+#       languagesSpoken:
+#         - SolBasic
+#       languagesUnderstood:
+#         - SolBasic
