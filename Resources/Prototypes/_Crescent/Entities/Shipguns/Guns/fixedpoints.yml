@@ -464,7 +464,7 @@
   description: An outdated, gas-operated slugthrower. Usually found mounted on older civilian models. Ballistic-fed.
   components:
   - type: ApcPowerReceiver
-    powerLoad: 1000
+    powerLoad: 3000
   - type: StaticPrice
     price: 8000
   - type: Sprite
@@ -840,6 +840,9 @@
     size: Small
   - type: AutoShootGun
   - type: ChamberMagazineAmmoProvider
+  - type: SpaceArtillery
+    powerChargeRate: 5000
+    powerUseActive: 100
   - type: Construction
     graph: Machine
     node: machine
@@ -937,6 +940,9 @@
     size: Medium
   - type: AutoShootGun
   - type: ChamberMagazineAmmoProvider
+  - type: SpaceArtillery
+    powerChargeRate: 5000
+    powerUseActive: 100
   - type: Construction
     graph: Machine
     node: machine
