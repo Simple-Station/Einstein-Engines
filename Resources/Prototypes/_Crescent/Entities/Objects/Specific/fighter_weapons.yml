@@ -13,8 +13,8 @@
     equipmentWhitelist:
       tags:
       - LightFighterEquipment
-  - type: PvsAutoOverride
-    pvsSendRange: 1500
+  - type: RangeBasedPvs
+    sendRange: 1500
   - type: EntityIFFDesignation
     name: "Fighter Without Name - get one!"
 
@@ -29,8 +29,8 @@
       tags:
       - MediumFighterEquipment
       - LightFighterEquipment
-  - type: PvsAutoOverride
-    pvsSendRange: 1500
+  - type: RangeBasedPvs
+    sendRange: 1500
   - type: EntityIFFDesignation
     name: "Fighter Without Name - get one!"
 
