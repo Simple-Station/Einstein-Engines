@@ -15,7 +15,7 @@
 - type: entity
   id: BulletMechAutocannon
   name: bullet (90mm USTF)
-  parent: BaseBullet
+  parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -28,10 +28,13 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 12
-    intensitySlope: 15
-    totalIntensity: 13
+    maxIntensity: 195
+    intensitySlope: 50
+    totalIntensity: 195
     maxTileBreak: 2
+  - type: ProjectileIFF
+    visualType: Square
+    color: White
 
 - type: entity
   id: BulletMechHeavyRifle
@@ -46,6 +49,27 @@
         Structural: 80
     harmorPenetration: 70
     stoppingPower: 9
+  - type: ShipWeaponProjectile
+  - type: Fixtures
+    fixtures:
+      projectile:
+        hard: false
+      fly-by: &flybyfixture
+        shape: !type:PhysShapeCircle
+          radius: 1.5
+        layer:
+        - Impassable
+        - MidImpassable
+        - HighImpassable
+        - LowImpassable
+        hard: false
+  - type: ProjectilePhasePrevent #do not remove
+    mask:
+    - BulletImpassable
+    - Impassable
+  - type: ProjectileIFF
+    visualType: Square
+    color: White
 
 - type: entity
   id: ExosuitAutoshotgunPellet
@@ -122,9 +146,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 8
-    intensitySlope: 14
-    totalIntensity: 20
+    maxIntensity: 300
+    intensitySlope: 100
+    totalIntensity: 300
     maxTileBreak: 2
   - type: PointLight
     radius: 3.5
@@ -156,9 +180,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 10
-    intensitySlope: 20
-    totalIntensity: 100
+    maxIntensity: 1500
+    intensitySlope: 300
+    totalIntensity: 1500
     maxTileBreak: 4
   - type: PointLight
     radius: 3.5

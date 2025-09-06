@@ -3,6 +3,13 @@
   name: job-name-servile
   description: job-description-servile
   playTimeTracker:  JobServileTAP
+  weight: 50
+  startingGear: ServileGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconServile"
+  supervisors: job-supervisors-tap
+  canBeAntag: false
   requirements:
     - !type:FactionRequirement
       factionID: "TAP"
@@ -15,13 +22,6 @@
       traits:
         - Blindness
         - WheelchairBound
-  weight: 50
-  startingGear: ServileGear
-  alwaysUseSpawner: true
-  icon: "JobIconServile"
-  requireAdminNotify: false
-  supervisors: job-supervisors-tap
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:

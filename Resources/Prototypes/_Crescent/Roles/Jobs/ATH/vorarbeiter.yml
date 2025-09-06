@@ -3,21 +3,31 @@
   name: job-name-vorarbeiter
   description: job-description-vorarbeiter
   playTimeTracker: JobVorarbeiterATH
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Human
-        - Reptilian
-        - Oni
-    - !type:FactionRequirement
-      factionID: "ATH"
-  weight: 76
+  weight: 93
   startingGear: VorarbeiterGear
   alwaysUseSpawner: true
   icon: "JobIconVorarbeiter"
   requireAdminNotify: true
   supervisors: job-supervisors-ath
   canBeAntag: false
+  requirements:
+    - !type:FactionRequirement
+      factionID: "ATH"
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
+        - Reptilian
+        - Oni
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: LanguageAdder
+        addSpoken:
+          - SolBasic
+          - Tradeband
+        addUnderstood:
+          - SolBasic
+          - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain

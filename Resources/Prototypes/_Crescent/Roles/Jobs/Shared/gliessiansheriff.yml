@@ -3,12 +3,12 @@
   name: job-name-gliess-sheriff
   description: job-description-gliess-sheriff
   playTimeTracker: JobGliessSheriff
-  requirements:
-    - !type:CharacterOverallTimeRequirement
-      min: 4000
   startingGear: GliessSheriffGear
   icon: "JobIconMarshal"
   supervisors: job-supervisors-gliess
+  requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 4000
   accessGroups:
   - GeneralAccess
   access:

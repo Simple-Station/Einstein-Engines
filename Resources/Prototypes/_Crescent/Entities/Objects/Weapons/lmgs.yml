@@ -170,3 +170,122 @@
     steps: 3
     zeroVisible: true
   - type: Appearance
+
+- type: entity
+  name: HGS GrMG-4 Baum 7.62x51mm
+  id: WeaponLightMachineGunMG42
+  parent: BaseWeaponLightMachineGun
+  description: The Großes Maschinengewehr. A long and bulky machinegun made from ancient schematics. Notorious for its high RPM. Chambered in 7.62x51mm.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/mg42.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRifleDrum
+        insertSound: /Audio/_Crescent/Weapons/Guns/MG42/bolt_close.ogg
+        ejectSound: /Audio/_Crescent/Weapons/Guns/MG42/bolt_open.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineRifleDrum
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeRifle
+  - type: Item
+    shape:
+    - 0,0,5,2
+  - type: Gun
+    burstCooldown: 1.5
+    shotsPerBurst: 5
+    burstFireRate: 24
+    fireRate: 5
+    selectedMode: Burst
+    availableModes:
+    - FullAuto
+    - Burst
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/MG42/gunshot.ogg
+    soundEmpty:
+      path: /Audio/_Crescent/Weapons/Guns/MG42/empty.ogg
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
+  - type: Appearance
+
+- type: entity
+  name: HGS GrMG-Neo Koneruusu 7.62x51mm
+  id: WeaponLightMachineGunKoneruusu
+  parent: BaseWeaponLightMachineGun
+  description: The Neo Großes Maschinengewehr. A machinegun revived from ancient schematics and modified for modern combat. Notorious for its high RPM. Chambered in 7.62x51mm.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/koneruusu.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/koneruusu.rsi
+    quickEquip: false
+    slots:
+    - Back
+  - type: Gun
+    minAngle: 21
+    maxAngle: 35
+    angleIncrease: 4
+    angleDecay: 16
+    burstCooldown: 1.5
+    shotsPerBurst: 5
+    burstFireRate: 24
+    fireRate: 16
+    damageModifier: 0.65
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    - Burst
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/MG42/gunshot.ogg
+    soundEmpty:
+      path: /Audio/_Crescent/Weapons/Guns/MG42/empty.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRifleDrum
+        insertSound: /Audio/_Crescent/Weapons/Guns/MG42/bolt_close.ogg
+        ejectSound: /Audio/_Crescent/Weapons/Guns/MG42/bolt_open.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineRifleDrum
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeRifle
+  - type: Item
+    shape:
+    - 0,0,5,2
+  - type: GunWieldBonus
+    minAngle: -20
+    maxAngle: -30
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: true
+  - type: Appearance

@@ -3,25 +3,32 @@
   name: job-name-kommandant
   description: job-description-kommandant
   playTimeTracker: JobKommandantATH
-  requirements:
-    - !type:CharacterWhitelistRequirement
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Human
-    - !type:FactionRequirement
-      factionID: "ATH"
-  weight: 87
+  weight: 100
   startingGear: KommandantGear
   alwaysUseSpawner: true
   icon: "JobIconKommandant"
   requireAdminNotify: true
   supervisors: job-supervisors-ath
   canBeAntag: false
+  requirements:
+    - !type:CharacterWhitelistRequirement
+    - !type:FactionRequirement
+      factionID: "ATH"
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
         rank: crescent-rank-kommandant
+      - type: LanguageAdder
+        addSpoken:
+          - SolBasic
+          - Tradeband
+        addUnderstood:
+          - SolBasic
+          - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain

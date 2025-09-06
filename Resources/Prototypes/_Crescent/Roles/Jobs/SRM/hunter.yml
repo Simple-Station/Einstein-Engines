@@ -3,21 +3,22 @@
   name: job-name-hunter
   description: job-description-hunter
   playTimeTracker: JobHunterSRM
+  weight: 3
+  startingGear: HunterGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconHunter"
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
   requirements:
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Human
+    - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
       min: 20000
     - !type:FactionRequirement
       factionID: "SRM"
-  weight: 22
-  startingGear: HunterGear
-  alwaysUseSpawner: true
-  icon: "JobIconHunter"
-  requireAdminNotify: false
-  supervisors: job-supervisors-imperial
-  canBeAntag: false
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
   access:
   - Command
   - Hunter

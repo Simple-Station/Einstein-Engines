@@ -12,7 +12,7 @@
     sprite: _Crescent/Clothing/ATH/Head/panzer.rsi
   - type: PointLight
     radius: 6
-    color: "#ffffed"
+    color: "#993232"
   - type: PressureProtection
     highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000

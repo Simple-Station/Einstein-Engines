@@ -3,19 +3,19 @@
   name: job-name-tender
   description: job-description-tender
   playTimeTracker: JobTenderSRM
+  weight: 2
+  startingGear: TenderGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconTender"
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
   requirements:
+    - !type:FactionRequirement
+      factionID: "SRM"
     - !type:CharacterSpeciesRequirement
       species:
         - Human
-    - !type:FactionRequirement
-      factionID: "SRM"
-  weight: 20
-  startingGear: TenderGear
-  alwaysUseSpawner: true
-  icon: "JobIconTender"
-  requireAdminNotify: false
-  supervisors: job-supervisors-imperial
-  canBeAntag: false
   access:
   - Command
   - Hunter
