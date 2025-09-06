@@ -204,6 +204,23 @@
   - type: ShipVoucher
     ship: Duchess
 
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherTyche
+  name: DSM 'Tyche' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with the one of a kind Imperial Duchess-class assault frigate. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 50000
+  - type: ShipVoucher
+    ship: Tyche
+
 #ncwl
 
 #T0
