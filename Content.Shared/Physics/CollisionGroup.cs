@@ -50,7 +50,7 @@ public enum CollisionGroup
     LargeMobLayer = Opaque | HighImpassable | MidImpassable | LowImpassable | BulletImpassable,
 
     // Fighters
-    FighterMask = Opaque | Impassable | BulletImpassable, //Hullrot - Fighters
+    FighterMask = Opaque | FighterImpassable | BulletImpassable, //Hullrot - Fighters
 
     // Machines, computers
     MachineMask = Impassable | MidImpassable | LowImpassable | BlobImpassable | FighterImpassable, //Goobstation - Blob, Hullrot - Fighters

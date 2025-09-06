@@ -27,9 +27,7 @@
         mask:
         - FighterImpassable
         layer:
-        - Opaque # should be condensed into CollisionGroup.cs ... sometime...
-        - FighterImpassable
-        - BulletImpassable
+        - FighterMask
 
 - type: entity
   id: LightFighter
