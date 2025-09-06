@@ -1,0 +1,24 @@
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadHelmetAuthoritySoldat
+  name: soldat's armored gas mask
+  description: A kevlar-plated nanoweave gas mask. Standard issue for Authoritat soldats.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Head/soldathelmet.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Head/soldathelmet.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+  - type: BreathMask
+  - type: IdentityBlocker
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.80
+        Slash: 0.80
+        Piercing: 0.85
+        Heat: 0.85
+        Caustic: 0.85

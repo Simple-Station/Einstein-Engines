@@ -11,18 +11,7 @@
             "name": "icon"
         },
         {
-            "name": "icon-flash",
-            "delays": [
-                [
-                    1,
-                    0.05,
-                    0.05,
-                    0.05,
-                    0.05,
-                    0.05,
-                    0.05
-                ]
-            ]
+            "name": "icon-flash"
         },
         {
             "name": "off-equipped-HELMET",
