@@ -29,24 +29,6 @@ public sealed class RangeBasedPvsSystem : EntitySystem
         base.Initialize();
         SubscribeLocalEvent<RangeBasedPvsComponent, ComponentRemove>(OnFree);
     }
-
-    public override void Shutdown()
-    {
-        var enumerator = EntityManager.EntityQueryEnumerator<RangeBasedPvsComponent>();
-        while (enumerator.MoveNext(out var uid, out var comp))
-        {
-            foreach (var session in comp.SendingSessions)
-            {
-                _override.RemoveSessionOverride(uid, session);
-            }
-            comp.SendingSessions.Clear();
-        }
-
-
-        base.Shutdown();
-
-    }
-
     public void OnFree(Entity<RangeBasedPvsComponent> obj, ref ComponentRemove args)
     {
         foreach (var session in obj.Comp.SendingSessions)
@@ -80,7 +62,6 @@ public sealed class RangeBasedPvsSystem : EntitySystem
                     {
                         _override.RemoveSessionOverride(uid, session);
                     }
-
                     continue;
                 }
 
