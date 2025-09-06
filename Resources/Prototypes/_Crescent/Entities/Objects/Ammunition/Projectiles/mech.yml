@@ -4,7 +4,6 @@
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
-  - type: ShipWeaponProjectile
   - type: ProjectilePhasePrevent #do not remove
   - type: Projectile
     damage:
@@ -20,15 +19,7 @@
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
-  - type: ShipWeaponProjectile
   - type: ProjectilePhasePrevent #do not remove
-  - type: Projectile
-    damage:
-      types:
-        Piercing: 65
-        Structural: 60
-    harmorPenetration: 60
-    stoppingPower: 8
   - type: Projectile
     damage:
       types:
