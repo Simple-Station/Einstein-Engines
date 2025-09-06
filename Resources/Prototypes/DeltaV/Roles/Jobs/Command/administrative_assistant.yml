@@ -24,7 +24,6 @@
       min: 10800 # 3 hours
     - !type:CharacterTraitRequirement
       inverted: true
-      traits:
   startingGear: AdminAssistantGear
   icon: "JobIconAdminAssitant"
   supervisors: job-supervisors-command
