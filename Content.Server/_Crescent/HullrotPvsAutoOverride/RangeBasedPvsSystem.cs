@@ -13,7 +13,7 @@ namespace Content.Server._Crescent.HullrotPvsAutoOverride;
 /// <summary>
 /// This handles...
 /// </summary>
-public sealed class PvsAutoOverrideSystem : EntitySystem
+public sealed class RangeBasedPvsSystem : EntitySystem
 {
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly ISharedPlayerManager _players = default!;
@@ -45,10 +45,10 @@ public sealed class PvsAutoOverrideSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<PvsAutoOverrideComponent, ComponentRemove>(onFree);
+        SubscribeLocalEvent<RangeBasedPvsComponent, ComponentRemove>(OnFree);
     }
 
-    public void onFree(Entity<PvsAutoOverrideComponent> obj, ref ComponentRemove args)
+    public void OnFree(Entity<RangeBasedPvsComponent> obj, ref ComponentRemove args)
     {
         foreach (var session in obj.Comp.SendingSessions)
         {
@@ -64,7 +64,7 @@ public sealed class PvsAutoOverrideSystem : EntitySystem
             return;
         accumulator = 0f;
         var playerData = _players.GetAllPlayerData();
-        var enumerator = EntityManager.EntityQueryEnumerator<PvsAutoOverrideComponent>();
+        var enumerator = EntityManager.EntityQueryEnumerator<RangeBasedPvsComponent>();
         HashSet<(EntityUid, ICommonSession)> validPlayers = new();
         foreach (var player in playerData)
         {

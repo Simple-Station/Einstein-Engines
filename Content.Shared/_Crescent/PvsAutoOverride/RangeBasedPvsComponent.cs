@@ -8,7 +8,7 @@ namespace Content.Shared._Crescent.PvsAutoOverride;
 /// Shared Component for prototype purposes!
 /// </summary>
 [RegisterComponent]
-public sealed partial class PvsAutoOverrideComponent : Component
+public sealed partial class RangeBasedPvsComponent : Component
 {
     [DataField]
     public float PvsSendRange = 100f;
