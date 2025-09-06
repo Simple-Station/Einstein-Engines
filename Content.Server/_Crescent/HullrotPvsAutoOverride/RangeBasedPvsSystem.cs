@@ -80,7 +80,6 @@ public sealed class RangeBasedPvsSystem : EntitySystem
                     {
                         _override.RemoveSessionOverride(uid, session);
                     }
-
                     continue;
                 }
 
