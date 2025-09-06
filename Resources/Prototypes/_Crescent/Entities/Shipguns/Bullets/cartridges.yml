@@ -470,6 +470,9 @@
   components:
   - type: Item
     size: Normal
+  - type: Tag
+    tags:
+      - SmartBomb
   - type: CartridgeAmmo
     proto: SmartBombBase
     deleteOnSpawn: true

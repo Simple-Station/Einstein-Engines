@@ -12,7 +12,8 @@ using Content.Shared.Gravity;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
 using Content.Shared.Item;
-using Content.Shared.Mech.Components; // Goobstation
+using Content.Shared.Mech.Components;
+using Content.Shared.Mech.Equipment.Components; // Goobstation
 using Content.Shared.Popups;
 using Content.Shared.Projectiles;
 using Content.Shared.Tag;
@@ -447,10 +448,15 @@ public abstract partial class SharedGunSystem : EntitySystem
         var targetMapVelocity = gunVelocity + direction.Normalized() * speed;
         var currentMapVelocity = Physics.GetMapLinearVelocity(uid, physics);
         var finalLinear = physics.LinearVelocity + targetMapVelocity - currentMapVelocity;
-        Physics.SetLinearVelocity(uid, finalLinear, body: physics);
         // hullrot edit , do not let these slow down >:( SPCR 2025
         Physics.SetAngularDamping(uid, physics, 0);
         Physics.SetLinearDamping(uid, physics, 0);
+        if (TryComp<MechEquipmentComponent>(gunUid, out var comp) && comp.EquipmentOwner is not null)
+        {
+            if (TryComp<PhysicsComponent>(comp.EquipmentOwner, out var trueOwner))
+                finalLinear += trueOwner.LinearVelocity;
+        }
+        Physics.SetLinearVelocity(uid, finalLinear, body: physics);
         //
 
         var projectile = EnsureComp<ProjectileComponent>(uid);

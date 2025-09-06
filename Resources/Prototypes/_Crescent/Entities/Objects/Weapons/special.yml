@@ -355,3 +355,42 @@
     delay: 1
   - type: IgniteOnMeleeHit
     fireStacks: 1
+
+#- type: entity
+#  name: HGS VAP-31X Pulssiase beam rifle
+#  parent: BaseWeaponPowerCell
+#  id: WeaponRiflePulssiase
+#  description: The Vihainen Aseperhe 31X. An experimental beam rifle modified for field use.
+#  components:
+#  - type: Wieldable
+#  - type: GunRequiresWield
+#  - type: Item
+#    shape:
+#    - 0,0,4,1
+#  - type: Sprite
+#    sprite: _Crescent/Objects/Weapons/Guns/pulssiase.rsi
+#    layers:
+#      - state: base
+#        map: ["enum.GunVisualLayers.Base"]
+#      - state: mag-0
+#        map: ["enum.GunVisualLayers.Mag"]
+#      - state: mag-unshaded-0
+#        map: ["enum.GunVisualLayers.MagUnshaded"]
+#        shader: unshaded
+#  - type: Clothing
+#    sprite: _Crescent/Objects/Weapons/Guns/pulssiase.rsi
+#    quickEquip: false
+#    slots:
+#    - Back
+#    - suitStorage
+#  - type: Gun
+#    fireRate: 6
+#    soundGunshot:
+#      path: /Audio/_Crescent/Weapons/Guns/Pulssiase/single_shot.ogg
+#  - type: MagazineVisuals
+#   magState: mag
+#   steps: 5
+#   zeroVisible: true
+# - type: Appearance
+# - type: StaticPrice
+#   price: 3000

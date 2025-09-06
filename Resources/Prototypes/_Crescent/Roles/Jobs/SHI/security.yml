@@ -3,17 +3,24 @@
   name: job-name-corpsec
   description: job-description-corpsec
   playTimeTracker: JobSecuritySHI
+  weight: 3
+  startingGear: CorpsecGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconCorpsec"
+  supervisors: job-supervisors-shi
+  canBeAntag: false
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 7200
+    - !type:FactionRequirement
+      factionID: "SHI"
     - !type:CharacterSpeciesRequirement
       species:
         - Human
         - Reptilian
         - Moth
         - Arachnid
-    - !type:FactionRequirement
-      factionID: "SHI"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -23,13 +30,6 @@
         - Blindness
         - Pacifist
         - WheelchairBound
-  weight: 38
-  startingGear: CorpsecGear
-  alwaysUseSpawner: true
-  icon: "JobIconCorpsec"
-  requireAdminNotify: false
-  supervisors: job-supervisors-shi
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:

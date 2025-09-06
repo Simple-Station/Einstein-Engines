@@ -13,6 +13,10 @@
     equipmentWhitelist:
       tags:
       - LightFighterEquipment
+  - type: RangeBasedPvs
+    sendRange: 1500
+  - type: EntityIFFDesignation
+    name: "Fighter Without Name - get one!"
 
 
 - type: entity
@@ -25,6 +29,10 @@
       tags:
       - MediumFighterEquipment
       - LightFighterEquipment
+  - type: RangeBasedPvs
+    sendRange: 1500
+  - type: EntityIFFDesignation
+    name: "Fighter Without Name - get one!"
 
 - type: entity
   id: LightFighterEquipment
@@ -52,7 +60,7 @@
 - type: entity
   id: WeaponFighterIdna
   name: PTA 60mm "Idna" LRM torpedo system
-  description: A miniatured version of the original Idna, this system only holds one charge at a time and has a lengthy munitions fabrication timer. 
+  description: A miniatured version of the original Idna, this system only holds one charge at a time and has a lengthy munitions fabrication timer.
   suffix: Fighter, Combat, Torpedo
   parent: [ BaseMechWeaponRange, MediumFighterEquipment ]
   components:
@@ -103,7 +111,7 @@
 
 - type: entity
   id: WeaponFighterMachinegun
-  name: SHI 'Nambu' .50 light machinegun system 
+  name: SHI 'Nambu' .50 light machinegun system
   description: A miniaturized SHI-MG intended to intercept incoming missiles or other starfighters. Modified to have an internal munitions cycler.
   suffix: Fighter, Combat, MG
   parent: [ BaseMechWeaponRange, LightFighterEquipment ]

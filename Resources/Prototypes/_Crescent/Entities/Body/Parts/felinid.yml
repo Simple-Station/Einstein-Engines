@@ -1,0 +1,27 @@
+- type: entity
+  parent: LeftLegHuman
+  id: LeftLegFelinid
+  name: "left felinid leg"
+  components:
+  - type: BodyPart
+    children:
+      right foot:
+        id: "right foot"
+        type: Foot
+  - type: MovementBodyPart # 20% faster movespeed
+    walkSpeed: 3.6
+    sprintSpeed: 6 
+
+- type: entity
+  parent: RightLegHuman
+  id: RightLegFelinid
+  name: "right felinid leg"
+  components:
+  - type: BodyPart
+    children:
+      left foot:
+        id: "left foot"
+        type: Foot
+  - type: MovementBodyPart # 20% faster movespeed
+    walkSpeed: 3.6
+    sprintSpeed: 6

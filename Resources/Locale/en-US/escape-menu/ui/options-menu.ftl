@@ -31,12 +31,14 @@ ui-options-chatstack-triple = Last three messages
 
 ui-options-master-volume = Master Volume:
 ui-options-midi-volume = MIDI (Instrument) Volume:
+ui-options-combat-music-volume = Combat music volume:
 ui-options-ambient-music-volume = Ambient music volume:
 ui-options-ambience-volume = Ambience volume:
 ui-options-lobby-volume = Lobby & Round-end volume:
 ui-options-interface-volume = Interface volume:
 ui-options-ambience-max-sounds = Ambience simultaneous sounds:
 ui-options-announcer-volume = Announcer volume:
+ui-options-combat-music = Combat Music
 ui-options-lobby-music = Lobby & Round-end Music
 ui-options-restart-sounds = Round Restart Sounds
 ui-options-event-music = Event Music
