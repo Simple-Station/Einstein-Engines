@@ -53,17 +53,6 @@
     scale: 1.5
   - type: StaticPrice
     price: 25000
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 1.25 # 3x3
-        density: 21390 # 15 Tonnes
-        mask:
-        - MobMask
-        layer:
-        - MobLayer
 
 - type: entity
   id: FighterNCWLBroadswordBattery
@@ -116,17 +105,6 @@
     scale: 1.5
   - type: StaticPrice
     price: 15000
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 1.75 # slightly bigger than 3x3
-        density: 21390 # 15 Tonnes
-        mask:
-        - MobMask
-        layer:
-        - MobLayer
 
 - type: entity
   id: FighterNCWLClaymoreBattery
@@ -193,17 +171,6 @@
     scale: 1.5
   - type: StaticPrice
     price: 15000
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 1.25 # 3x3
-        density: 21390 # 15 Tonnes
-        mask:
-        - MobMask
-        layer:
-        - MobLayer
 
 - type: entity
   id: FighterDSMValorBattery
@@ -270,17 +237,6 @@
     scale: 1.5
   - type: StaticPrice
     price: 15000
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 1.75 # slightly bigger than 3x3
-        density: 21390 # 15 Tonnes
-        mask:
-        - MobMask
-        layer:
-        - MobLayer
 
 - type: entity
   id: FighterDSMHonorBattery
@@ -308,7 +264,7 @@
 
 - type: entity
   id: FighterTFSCRaptor
-  parent: [ BaseMech, MediumFighter ]
+  parent: [ MediumFighter, BaseMech ]
   name: TFSC 'Raptor' mk.II medium gunship
   description: In truth, just an overmodified version of the civilian Hermes-class transport shuttle. The Raptor-class serves as the heavier cousin of the Viper, able to mount medium-class starfighter weapons, including missiles and torpedoes -- although the heavy modifications have left it with weaker plating when compared to others of it's size.
   components:
@@ -321,7 +277,7 @@
     - map: [ "enum.MechVisualLayers.Base" ]
       state: raptor
   - type: Mech
-    maxIntegrity: 1500
+    maxIntegrity: 150
     baseState: raptor
     openState: raptor-open
     brokenState: raptor-broken
@@ -347,17 +303,6 @@
     scale: 1.5
   - type: StaticPrice
     price: 15000
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 1.75 # slightly bigger than 3x3
-        density: 21390 # 15 Tonnes
-        mask:
-        - MobMask
-        layer:
-        - MobLayer
 
 - type: entity
   id: FighterTFSCRaptorBattery
@@ -424,17 +369,6 @@
     scale: 1.5
   - type: StaticPrice
     price: 15000
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 1.25 # slightly bigger than 3x3
-        density: 21390 # 15 Tonnes
-        mask:
-        - MobMask
-        layer:
-        - MobLayer
 
 - type: entity
   id: FighterTFSCViperBattery
