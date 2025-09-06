@@ -1,0 +1,11 @@
+- type: entity
+  parent: BasePlushie
+  id: PlushiePearCat
+  name: pear cat plushie
+  description: Love blooms.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Fun/Plushies/pearcat.rsi
+    state: icon
+  - type: Item
+    sprite: _Crescent/Objects/Fun/Plushies/pearcat.rsi

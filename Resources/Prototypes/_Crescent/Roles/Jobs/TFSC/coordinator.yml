@@ -3,10 +3,17 @@
   name: job-name-coordinator
   description: job-description-coordinator
   playTimeTracker: JobCoordinatorNCSP
+  weight: 8
+  startingGear: CoordinatorGear
+  alwaysUseSpawner: true
+  requireAdminNotify: true
+  icon: "JobIconSyndieCoordinator"
+  supervisors: You answer to the interests of the Interdyne Pharmaceuticals company. Organize your employees. Secure stakeholders and profit.
+  canBeAntag: false
   requirements:
+    - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
       min: 20000
-    - !type:CharacterWhitelistRequirement
     - !type:FactionRequirement
       factionID: "TFSC"
     - !type:CharacterTraitRequirement
@@ -32,13 +39,6 @@
         addUnderstood:
           - Freespeak
           - Tradeband
-  weight: 17
-  startingGear: CoordinatorGear
-  alwaysUseSpawner: true
-  icon: "JobIconSyndieCoordinator"
-  requireAdminNotify: true
-  supervisors: You answer to the interests of the Interdyne Pharmaceuticals company. Organize your employees. Secure stakeholders and profit.
-  canBeAntag: false
   access:
   - Command
   - Maintenance

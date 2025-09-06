@@ -6,12 +6,15 @@
   weight: 28
   startingGear: WatchmasterGear
   alwaysUseSpawner: true
+  requireAdminNotify: false
   icon: "JobIconWatchmaster"
+  supervisors: You answer to your Colonial Marshal and the Deputy Marshal
+  canBeAntag: false
   requirements:
-  - !type:FactionRequirement
-      factionID: "TSP"
   - !type:CharacterOverallTimeRequirement
     min: 12000
+  - !type:FactionRequirement
+      factionID: "TSP"
   - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -26,9 +29,6 @@
     components:
       - type: ChatRank
         rank: crescent-rank-watchmaster
-  requireAdminNotify: false
-  supervisors: You answer to your Colonial Marshal and the Deputy Marshal
-  canBeAntag: false
   access:
   - Command
   - Maintenance

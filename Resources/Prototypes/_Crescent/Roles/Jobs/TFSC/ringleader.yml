@@ -3,6 +3,13 @@
   name: job-name-ringleader
   description: job-description-ringleader
   playTimeTracker: JobRingleaderNCSP
+  weight: 12
+  startingGear: RingleaderGear
+  alwaysUseSpawner: true
+  requireAdminNotify: true
+  icon: "JobIconSyndieRingleader"
+  supervisors: You're the defacto leader of the Taypani Free Stations Coalition, whether by charm or by firepower. You answer to money and personal interests.
+  canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement
     - !type:FactionRequirement
@@ -27,15 +34,7 @@
         addUnderstood:
           - Freespeak
           - Tradeband
-  weight: 55
-  startingGear: RingleaderGear
-  alwaysUseSpawner: true
-  icon: "JobIconSyndieRingleader"
-  requireAdminNotify: true
-  supervisors: You're the defacto Commander of the Taypani Free Stations, whether by charm or by firepower. You answer to money and your heart's desires.
-  canBeAntag: false
   access:
-
   - EmergencyShuttleRepealAll
   - Captain
   - HeadOfPersonnel

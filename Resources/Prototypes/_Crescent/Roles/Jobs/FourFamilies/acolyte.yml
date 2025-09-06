@@ -3,6 +3,13 @@
   name: job-name-acolytetap
   description: job-description-acolytetap
   playTimeTracker: JobAcolyteTAP
+  weight: 5
+  startingGear: AcolyteTAPGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconAcolyteFamilies"
+  supervisors: job-supervisors-tap
+  canBeAntag: false
   requirements:
     - !type:FactionRequirement
       factionID: "TAP"
@@ -19,13 +26,6 @@
         - Foreigner
         - Blindness
         - WheelchairBound
-  weight: 54
-  startingGear: AcolyteTAPGear
-  alwaysUseSpawner: true
-  icon: "JobIconAcolyteFamilies"
-  requireAdminNotify: false
-  supervisors: job-supervisors-tap
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:

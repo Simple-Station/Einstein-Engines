@@ -36,3 +36,16 @@
     sprite: _Crescent/Clothing/ATH/Belt/droppouches.rsi
   - type: ExplosionResistance
     damageCoefficient: 0.1
+
+- type: entity
+  parent: ClothingBeltNfsdWebbing
+  id: ClothingBeltAuthorityBattleBelt
+  name: panzer battle belt
+  description: A light battle belt for rapid-deployment panzer units.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/ATH/Belt/battlebelt.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/ATH/Belt/battlebelt.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
