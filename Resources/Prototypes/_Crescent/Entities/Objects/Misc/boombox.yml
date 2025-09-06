@@ -11,9 +11,6 @@
       map: ["enum.JukeboxVisualLayers.Base"]
   - type: Item
     sprite: _Crescent/Objects/Misc/boombox.rsi
-    layers:
-    - state: "base"
-      map: ["enum.JukeboxVisualLayers.Base"]
     size: Ginormous
   - type: Clothing
     sprite: _Crescent/Objects/Misc/boombox.rsi
