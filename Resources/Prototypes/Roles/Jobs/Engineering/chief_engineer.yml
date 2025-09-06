@@ -6,7 +6,6 @@
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
-      traits:
   weight: 10
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"
