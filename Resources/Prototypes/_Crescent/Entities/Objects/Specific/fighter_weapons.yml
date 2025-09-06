@@ -14,7 +14,7 @@
       tags:
       - LightFighterEquipment
   - type: RangeBasedPvs
-    pvsSendRange: 1500
+    sendRange: 1500
   - type: EntityIFFDesignation
     name: "Fighter Without Name - get one!"
 
@@ -30,7 +30,7 @@
       - MediumFighterEquipment
       - LightFighterEquipment
   - type: RangeBasedPvs
-    pvsSendRange: 1500
+    sendRange: 1500
   - type: EntityIFFDesignation
     name: "Fighter Without Name - get one!"
 

@@ -1,7 +1,9 @@
 using System.Collections.Frozen;
 using System.Linq;
+using System.Runtime.Remoting;
 using Content.Shared._Crescent.PvsAutoOverride;
 using Content.Shared.Players;
+using Robust.Server.GameObjects;
 using Robust.Server.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
@@ -17,29 +19,9 @@ public sealed class RangeBasedPvsSystem : EntitySystem
 {
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly ISharedPlayerManager _players = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-
+    [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly PvsOverrideSystem _override = default!;
     private float accumulator = 0f;
-
-    // first is player EntityUid , second is ownerUid, third is component
-    private FrozenDictionary<IComponent, Func<EntityUid, EntityUid, IComponent, bool>> pvsConditions =
-        new Dictionary<IComponent, Func<EntityUid, EntityUid, IComponent, bool>>().ToFrozenDictionary();
-
-    private FrozenDictionary<IComponent, EntityQuery<IComponent>> compToQuery =
-        new Dictionary<IComponent, EntityQuery<IComponent>>().ToFrozenDictionary();
-
-
-    public void AddPvsCondition(IComponent component, Func<EntityUid, EntityUid, IComponent, bool> condition)
-    {
-        Dictionary<IComponent, Func<EntityUid, EntityUid, IComponent, bool>> reconstructing =
-            pvsConditions.ToDictionary();
-        reconstructing.Add(component, condition);
-        Dictionary<IComponent, EntityQuery<IComponent>> queries = compToQuery.ToDictionary();
-        queries.Add(component, EntityManager.GetEntityQuery(component.GetType()));
-        pvsConditions = reconstructing.ToFrozenDictionary();
-        compToQuery = queries.ToFrozenDictionary();
-    }
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -48,27 +30,42 @@ public sealed class RangeBasedPvsSystem : EntitySystem
         SubscribeLocalEvent<RangeBasedPvsComponent, ComponentRemove>(OnFree);
     }
 
+    public override void Shutdown()
+    {
+        var enumerator = EntityManager.EntityQueryEnumerator<RangeBasedPvsComponent>();
+        while (enumerator.MoveNext(out var uid, out var comp))
+        {
+            foreach (var session in comp.SendingSessions)
+            {
+                _override.RemoveSessionOverride(uid, session);
+            }
+            comp.SendingSessions.Clear();
+        }
+
+
+        base.Shutdown();
+
+    }
+
     public void OnFree(Entity<RangeBasedPvsComponent> obj, ref ComponentRemove args)
     {
         foreach (var session in obj.Comp.SendingSessions)
         {
             _override.RemoveSessionOverride(obj.Owner, session);
         }
+        obj.Comp.SendingSessions.Clear();
     }
 
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
-        accumulator += frameTime;
-        if (accumulator < 1f)
-            return;
-        accumulator = 0f;
         var playerData = _players.GetAllPlayerData();
         var enumerator = EntityManager.EntityQueryEnumerator<RangeBasedPvsComponent>();
         HashSet<(EntityUid, ICommonSession)> validPlayers = new();
         foreach (var player in playerData)
         {
-            var session = _players.GetSessionById(player.UserId);
+            if (!_players.TryGetSessionById(player.UserId, out var session))
+                continue;
             if(session.AttachedEntity is not null)
                 validPlayers.Add((session.AttachedEntity.Value, session));
         }
@@ -79,30 +76,18 @@ public sealed class RangeBasedPvsSystem : EntitySystem
             {
                 if ((_transform.GetWorldPosition(uid) - _transform.GetWorldPosition(player)).Length() > comp.PvsSendRange)
                 {
-                    goto RemoveSession;
-                }
+                    if (comp.SendingSessions.Remove(session))
+                    {
+                        _override.RemoveSessionOverride(uid, session);
+                    }
 
-                foreach (var (queryComp, entQuery) in compToQuery)
-                {
-                    if (!entQuery.HasComp(uid))
-                        continue;
-                    // just need one to be fulfilled
-                    if (pvsConditions[queryComp].Invoke(player, uid, comp))
-                        break;
-                    goto RemoveSession;
+                    continue;
                 }
 
                 if (comp.SendingSessions.Contains(session))
                     continue;
                 comp.SendingSessions.Add(session);
                 _override.AddSessionOverride(uid, session);
-                continue;
-
-                RemoveSession:
-                if (comp.SendingSessions.Remove(session))
-                {
-                    _override.RemoveSessionOverride(uid, session);
-                }
             }
         }
     }
