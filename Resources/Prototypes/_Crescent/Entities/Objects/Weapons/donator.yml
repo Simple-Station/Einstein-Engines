@@ -285,9 +285,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 65
-    intensitySlope: 5
-    totalIntensity: 200
+    maxIntensity: 1500
+    intensitySlope: 500
+    totalIntensity: 3000
     maxTileBreak: 5
   - type: PointLight
     radius: 3.5
@@ -309,7 +309,7 @@
   description: A heavily modified DEW-17 laser pistol, its battery connection point has ben replaced with a miniature RTG capable of recharging the weapon indefinitely.
   components:
   - type: Item
-    size: Normal  
+    size: Normal
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/cycler.rsi
     layers:

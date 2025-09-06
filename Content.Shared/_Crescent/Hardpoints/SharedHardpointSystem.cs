@@ -72,7 +72,8 @@ public class SharedHardpointSystem : EntitySystem
         arg.gridUid = grid;
         RaiseLocalEvent(hardpointUid, arg);
         component.anchoredTo = null;
-        Dirty(hardpointUid, hardpointComp);
+        DirtyEntity(target);
+        DirtyEntity(anchor);
         //Dirty(arg.CannonUid, component);
     }
     public void OnAnchorTry(EntityUid uid, HardpointAnchorableOnlyComponent component, ref AnchorAttemptEvent args)
@@ -120,7 +121,8 @@ public class SharedHardpointSystem : EntitySystem
         arg.cannonUid = target;
         arg.gridUid = grid;
         RaiseLocalEvent(anchor, arg);
-        Dirty(anchor, hardpoint);
+        DirtyEntity(target);
+        DirtyEntity(anchor);
         //Dirty(target, targetComp);
     }
 }

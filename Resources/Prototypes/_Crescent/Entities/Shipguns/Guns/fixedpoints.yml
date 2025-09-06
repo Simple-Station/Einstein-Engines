@@ -741,6 +741,9 @@
     size: Small
   - type: AutoShootGun
   - type: ChamberMagazineAmmoProvider
+  - type: SpaceArtillery
+    powerChargeRate: 5000
+    powerUseActive: 100
   - type: Construction
     graph: Machine
     node: machine
@@ -814,6 +817,9 @@
     size: Medium
   - type: AutoShootGun
   - type: ChamberMagazineAmmoProvider
+  - type: SpaceArtillery
+    powerChargeRate: 5000
+    powerUseActive: 100
   - type: Construction
     graph: Machine
     node: machine
