@@ -30,7 +30,7 @@
   - type: SpaceArtillery
     powerChargeRate: 1000
     powerUsePassive: 0
-    powerUseActive: 2000
+    powerUseActive: 250
     isArmed: true
     isPowerRequiredToFire: true
   - type: ExtensionCableReceiver
