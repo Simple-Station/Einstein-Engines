@@ -1,77 +1,33 @@
 - type: entity
   id: BulletMechLightRifle
   name: bullet (30mm USTF)
-  parent: BaseBullet
+  parent: BulletMachineGunVulcan
   categories: [ HideSpawnMenu ]
   components:
-  - type: ProjectilePhasePrevent #do not remove
   - type: Projectile
-    damage:
-      types:
-        Piercing: 65
-        Structural: 60
-    harmorPenetration: 60
-    stoppingPower: 8
+    ignoreWeaponGrid: false
 
 - type: entity
   id: BulletMechAutocannon
   name: bullet (90mm USTF)
-  parent: BaseBulletTrigger
+  parent: BulletMachineGunMortarTurret
   categories: [ HideSpawnMenu ]
   components:
-  - type: ProjectilePhasePrevent #do not remove
-  - type: Projectile
-    damage:
-      types:
-        Piercing: 100
-        Structural: 400
-    harmorPenetration: 80
-    stoppingPower: 12
-  - type: ExplodeOnTrigger
-  - type: Explosive
-    explosionType: Default
-    maxIntensity: 195
-    intensitySlope: 50
-    totalIntensity: 195
-    maxTileBreak: 2
-  - type: ProjectileIFF
-    visualType: Square
-    color: White
+   - type: Projectile
+     ignoreWeaponGrid: false
 
 - type: entity
   id: BulletMechHeavyRifle
   name: bullet (43mm USTF) #The Proverbial .50
-  parent: BaseBullet
+  parent: BulletMachineGunVulcan
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Piercing: 65 #Dummy but holy shit these are massive
+        Piercing: 95 #Dummy but holy shit these are massive
         Structural: 80
-    harmorPenetration: 70
-    stoppingPower: 9
-  - type: ShipWeaponProjectile
-  - type: Fixtures
-    fixtures:
-      projectile:
-        hard: false
-      fly-by: &flybyfixture
-        shape: !type:PhysShapeCircle
-          radius: 1.5
-        layer:
-        - Impassable
-        - MidImpassable
-        - HighImpassable
-        - LowImpassable
-        hard: false
-  - type: ProjectilePhasePrevent #do not remove
-    mask:
-    - BulletImpassable
-    - Impassable
-  - type: ProjectileIFF
-    visualType: Square
-    color: White
+    ignoreWeaponGrid: false
 
 - type: entity
   id: ExosuitAutoshotgunPellet
