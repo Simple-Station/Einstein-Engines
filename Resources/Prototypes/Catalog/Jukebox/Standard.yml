@@ -10,11 +10,11 @@
   path:
     path: /Audio/Jukebox/title3.ogg
 
-- type: jukebox
-  id: Thunderdome
-  name: MashedByMachines - Sector 11
-  path:
-    path: /Audio/Jukebox/sector11.ogg
+#- type: jukebox
+#  id: Thunderdome
+#  name: MashedByMachines - Sector 11
+#  path:
+#    path: /Audio/Jukebox/sector11.ogg
 
 - type: jukebox
   id: Constellations
@@ -34,8 +34,8 @@
   path:
     path: /Audio/Jukebox/starlight.ogg
 
-- type: jukebox
-  id: sunset
-  name: PigeonBeans - Sunset
-  path:
-    path: /Audio/Jukebox/sunset.ogg
+#- type: jukebox
+#  id: sunset
+#  name: PigeonBeans - Sunset
+#  path:
+#    path: /Audio/Jukebox/sunset.ogg
