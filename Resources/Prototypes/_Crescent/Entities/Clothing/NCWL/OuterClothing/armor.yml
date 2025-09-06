@@ -293,7 +293,7 @@
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.6
+    damageCoefficient: 0.9
   - type: DegradeableArmor
     armorMaxHealth: 750
     armorType: Metallic
@@ -328,7 +328,7 @@
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.6
+    damageCoefficient: 0.9
   - type: DegradeableArmor
     armorMaxHealth: 750
     armorType: Metallic
@@ -366,18 +366,18 @@
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.6
+    damageCoefficient: 0.9
   - type: DegradeableArmor
     armorMaxHealth: 750
     armorType: Metallic
     armorRepair: HomelandAlloy
     initialModifiers:
       flatReductions:
-        Blunt: 15
+        Blunt: 20
         Slash: 15
         Piercing: 45
-        Heat: 15
-        Caustic: 15
+        Heat: 5
+        Caustic: 5
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9
@@ -401,7 +401,7 @@
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.5
+    damageCoefficient: 0.7
   - type: DegradeableArmor
     armorMaxHealth: 750
     armorType: Metallic
@@ -411,7 +411,7 @@
         Blunt: 25
         Slash: 25
         Piercing: 55
-        Heat: 25
+        Heat: 10
         Caustic: 25
   - type: ClothingSpeedModifier
     walkModifier: 0.85
@@ -445,7 +445,7 @@
       flatReductions:
         Blunt: 35
         Slash: 25
-        Piercing: 75
+        Piercing: 90
         Heat: 35
         Caustic: 25
   - type: ClothingSpeedModifier

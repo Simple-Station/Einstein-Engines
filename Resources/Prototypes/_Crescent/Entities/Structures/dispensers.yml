@@ -104,7 +104,7 @@
       TradeGoodNanoTrasen: TradeDeedVeryHigh
       TradeGoodOldCyber: TradeDeedVeryHigh
       TradeGoodOldParts: TradeDeedVeryHigh
-      TradeGoodAntibiotics: TradeDeedVeryHigh
+      TradeGoodAntibiotics: TradeDeedNormal
       TradeGoodScrap: TradeDeedLow
       TradeGoodCybernetics: TradeDeedLow
       TradeGoodGunparts: TradeDeedHigh
@@ -317,7 +317,7 @@
     defaultItem: TradeDeedStub
     inventory:
       TradeGoodAlcohol: TradeDeedLow
-      TradeGoodCybernetics: TradeDeedHigh
+      TradeGoodCybernetics: TradeDeedNormal
       TradeGoodGunparts: TradeDeedNormal
       TradeGoodAntibiotics: TradeDeedLow
       TradeGoodFlour: TradeDeedNormal
