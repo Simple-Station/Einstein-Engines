@@ -1,0 +1,26 @@
+- type: psionicPower
+  id: SummonMothroachPower
+  name: Summon Mothroach
+  powerCategories:
+    - Anomalist
+    - Summoning
+  initializeFunctions:
+    - !type:AddPsionicActions
+      actions:
+        - ActionSummonMothroach
+    - !type:PsionicFeedbackPopup
+    - !type:PsionicFeedbackSelfChat
+      feedbackMessage: summon-mothroach-power-initialization-feedback
+    - !type:PsionicModifyGlimmer
+      glimmerModifier: 10
+    - !type:AddPsionicStatSources
+      amplificationModifier: 0.75
+      dampeningModifier: 0.75
+    - !type:AddPsionicPsychognomicDescriptors
+      psychognomicDescriptor: calling
+  removalFunctions:
+    - !type:RemovePsionicActions
+    - !type:RemovePsionicStatSources
+    - !type:RemovePsionicPsychognomicDescriptors
+      psychognomicDescriptor: calling
+  powerSlotCost: 1
