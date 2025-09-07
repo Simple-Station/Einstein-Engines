@@ -34,7 +34,7 @@ public sealed partial class PsionicFamiliarSystem : EntitySystem
 
     private void OnSummon(EntityUid uid, PsionicComponent psionicComponent, SummonPsionicFamiliarActionEvent args)
     {
-        if (psionicComponent.Familiars.Count >= psionicComponent.FamiliarLimit
+        if ((psionicComponent.Familiars.Count >= psionicComponent.FamiliarLimit && args.IgnoreFamiliarLimit == false)
             || !_psionics.OnAttemptPowerUse(args.Performer, args.PowerName, args.CheckInsulation)
             || args.Handled || args.FamiliarProto is null)
             return;

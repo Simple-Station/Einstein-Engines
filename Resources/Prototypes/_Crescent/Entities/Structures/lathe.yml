@@ -256,6 +256,7 @@
     staticRecipes:
       - MagazineBoxLightRifle
       - MagazineBoxMagnum
+      - SpeedLoader127x99
       - MagazineBoxHeavyRifle
       - MagazineBoxPistol
       - MagazineBoxRifle
@@ -270,6 +271,7 @@
       - MagazineShotgun
       - MagazineShotgunSlug
       - MagazineMagnumSub
+      - BoomboxCraft
       - Wirecutter
       - Igniter
       - Signaller

@@ -29,11 +29,11 @@
     - map: [ "enum.MechVisualLayers.Base" ]
       state: broadsword
   - type: Mech
-    maxIntegrity: 1000
+    maxIntegrity: 800
     baseState: broadsword
     openState: broadsword-open
     brokenState: broadsword-broken
-    mechToPilotDamageMultiplier: 0.05
+    mechToPilotDamageMultiplier: 0.8
     airtight: true
     pilotWhitelist:
       components:
@@ -41,9 +41,9 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 0.5
     baseSprintSpeed: 0.5
-    weightlessFriction: 0.4
-    weightlessAcceleration: 0.6
-    weightlessModifier: 150
+    weightlessFriction: 0.8
+    weightlessAcceleration: 0.75
+    weightlessModifier: 50
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: RadarConsole # doesn't work atm for mechs, will port soon
@@ -60,7 +60,7 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 1.25 # 3x3
+          radius: 1.5 # 3x3
         density: 21390 # 15 Tonnes
         mask:
         - MobMask
@@ -94,11 +94,11 @@
     - map: [ "enum.MechVisualLayers.Base" ]
       state: matroyshka
   - type: Mech
-    maxIntegrity: 2000
+    maxIntegrity: 1250
     baseState: matroyshka
     openState: matroyshka-open
     brokenState: matroyshka-broken
-    mechToPilotDamageMultiplier: 0.05
+    mechToPilotDamageMultiplier: 0.75
     airtight: true
     pilotWhitelist:
       components:
@@ -106,9 +106,9 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 0.5
     baseSprintSpeed: 0.5
-    weightlessFriction: 0.4
-    weightlessAcceleration: 0.4
-    weightlessModifier: 100
+    weightlessFriction: 0.75
+    weightlessAcceleration: 0.85
+    weightlessModifier: 60
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: RadarConsole # doesn't work atm for mechs, will port soon
@@ -125,7 +125,7 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 1.75 # slightly bigger than 3x3
+          radius: 2 # slightly bigger than 3x3
         density: 21390 # 15 Tonnes
         mask:
         - MobMask
@@ -177,7 +177,7 @@
     baseState: valor
     openState: valor-open
     brokenState: valor-broken
-    mechToPilotDamageMultiplier: 0.15
+    mechToPilotDamageMultiplier: 0.8
     airtight: true
     pilotWhitelist:
       components:
@@ -185,9 +185,9 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 0.5
     baseSprintSpeed: 0.5
-    weightlessFriction: 0.3
-    weightlessAcceleration: 0.6
-    weightlessModifier: 150
+    weightlessFriction: 0.75
+    weightlessAcceleration: 0.75
+    weightlessModifier: 70
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: RadarConsole # doesn't work atm for mechs, will port soon
@@ -204,7 +204,7 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 1.25 # 3x3
+          radius: 1.5 # 3x3
         density: 21390 # 15 Tonnes
         mask:
         - MobMask
@@ -252,11 +252,11 @@
     - map: [ "enum.MechVisualLayers.Base" ]
       state: honor
   - type: Mech
-    maxIntegrity: 750
+    maxIntegrity: 1000
     baseState: honor
     openState: honor-open
     brokenState: honor-broken
-    mechToPilotDamageMultiplier: 0.15
+    mechToPilotDamageMultiplier: 0.75
     airtight: true
     pilotWhitelist:
       components:
@@ -264,9 +264,9 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 0.5
     baseSprintSpeed: 0.5
-    weightlessFriction: 0.3
-    weightlessAcceleration: 0.5
-    weightlessModifier: 100
+    weightlessFriction: 0.75
+    weightlessAcceleration: 0.75
+    weightlessModifier: 60
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: RadarConsole # doesn't work atm for mechs, will port soon
@@ -283,7 +283,7 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 1.75 # slightly bigger than 3x3
+          radius: 2 # slightly bigger than 3x3
         density: 21390 # 15 Tonnes
         mask:
         - MobMask
@@ -331,11 +331,11 @@
     - map: [ "enum.MechVisualLayers.Base" ]
       state: raptor
   - type: Mech
-    maxIntegrity: 1500
+    maxIntegrity: 1000
     baseState: raptor
     openState: raptor-open
     brokenState: raptor-broken
-    mechToPilotDamageMultiplier: 0.15
+    mechToPilotDamageMultiplier: 0.75
     airtight: true
     pilotWhitelist:
       components:
@@ -343,9 +343,9 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 0.5
     baseSprintSpeed: 0.5
-    weightlessFriction: 0.3
-    weightlessAcceleration: 0.4
-    weightlessModifier: 100
+    weightlessFriction: 0.75
+    weightlessAcceleration: 0.75
+    weightlessModifier: 60
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: RadarConsole # doesn't work atm for mechs, will port soon
@@ -362,7 +362,7 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 1.75 # slightly bigger than 3x3
+          radius: 2 # slightly bigger than 3x3
         density: 21390 # 15 Tonnes
         mask:
         - MobMask
@@ -410,11 +410,11 @@
     - map: [ "enum.MechVisualLayers.Base" ]
       state: viper
   - type: Mech
-    maxIntegrity: 750
+    maxIntegrity: 700
     baseState: viper
     openState: viper-open
     brokenState: viper-broken
-    mechToPilotDamageMultiplier: 0.15
+    mechToPilotDamageMultiplier: 0.85
     airtight: true
     pilotWhitelist:
       components:
@@ -422,9 +422,9 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 0.5
     baseSprintSpeed: 0.5
-    weightlessFriction: 0.3
-    weightlessAcceleration: 0.6
-    weightlessModifier: 150
+    weightlessFriction: 0.75
+    weightlessAcceleration: 0.75
+    weightlessModifier: 75
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: RadarConsole # doesn't work atm for mechs, will port soon
@@ -441,7 +441,7 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 1.25 # slightly bigger than 3x3
+          radius: 1.5 # slightly bigger than 3x3
         density: 21390 # 15 Tonnes
         mask:
         - MobMask

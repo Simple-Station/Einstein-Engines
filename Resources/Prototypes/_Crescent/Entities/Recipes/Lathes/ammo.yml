@@ -1,3 +1,18 @@
+- type: latheRecipe
+  id: SpeedLoader127x99
+  result: SpeedLoader127x99
+  completetime: 1
+  materials:
+    Steel: 400
+    Uranium: 100
+
+- type: latheRecipe
+  id: MagazineBoxHeavyRifle
+  result: MagazineBoxHeavyRifle
+  completetime: 1
+  materials:
+    Steel: 1250
+    Uranium: 400
 
 - type: latheRecipe
   id: SluggieHE
