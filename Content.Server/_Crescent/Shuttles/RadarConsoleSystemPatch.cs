@@ -18,12 +18,13 @@ public sealed partial class RadarConsoleSystem : SharedRadarConsoleSystem
         var query = AllEntityQuery<RadarConsoleComponent>();
         while (query.MoveNext(out var uid, out var console))
         {
-            if (console.LastUpdatedState == null || console.LastUpdatedState.IFFState == null)
+            if (console.LastUpdatedState is null)
             {
                 continue;
             }
 
             console.LastUpdatedState.IFFState.Turrets = _console.GetAllTurrets(uid);
+            console.LastUpdatedState.IFFState.Projectiles = _console.GetProjectilesInRange(uid);
         }
     }
 
@@ -34,27 +35,22 @@ public sealed partial class RadarConsoleSystem : SharedRadarConsoleSystem
         var query = EntityQueryEnumerator<RadarConsoleComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var console, out var transform))
         {
-            if (console.LastUpdatedState == null || !_uiSystem.IsUiOpen(uid, RadarConsoleUiKey.Key))
+            if (!_uiSystem.IsUiOpen(uid, RadarConsoleUiKey.Key))
             {
                 continue;
             }
 
-            var turrets = console.LastUpdatedState.IFFState?.Turrets;
-            var iffState = _console.GetIFFState(uid, turrets);
-            var state = new NavBoundUserInterfaceState(console.LastUpdatedState);
-            state.IFFState = iffState;
-
-            if (state.DirtyFlags < NavBoundUserInterfaceState.StateDirtyFlags.IFF)
+            if (console.LastUpdatedState is not null)
             {
+                var turrets = console.LastUpdatedState.IFFState?.Turrets;
+                var iffState = _console.GetIFFState(uid, turrets);
+                var state = new NavBoundUserInterfaceState(console.LastUpdatedState);
+                state.IFFState = iffState;
                 state.DirtyFlags |= NavBoundUserInterfaceState.StateDirtyFlags.IFF;
-            }
-            else if (state.DirtyFlags > NavBoundUserInterfaceState.StateDirtyFlags.IFF)
-            {
-                state.DirtyFlags = NavBoundUserInterfaceState.StateDirtyFlags.IFF;
+                console.LastUpdatedState = state;
+                _uiSystem.SetUiState(uid, RadarConsoleUiKey.Key, state);
             }
 
-            console.LastUpdatedState = state;
-            _uiSystem.SetUiState(uid, RadarConsoleUiKey.Key, state);
         }
     }
 }

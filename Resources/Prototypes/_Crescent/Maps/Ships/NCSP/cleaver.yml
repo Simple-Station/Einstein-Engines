@@ -5,7 +5,7 @@
   id: Cleaver
   name: NCSP Cleaver
   description: A heavy Syndicate fighter.
-  price: 65000
+  price: 50000 #50000 appraisegrid
   category: Medium
   group: None
   path: /Maps/_Crescent/Shuttles/NCSP/cleaver.yml

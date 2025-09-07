@@ -3,12 +3,12 @@
   name: job-name-gliess-dockmaster
   description: job-description-gliess-dockmaster
   playTimeTracker: JobGliessDockmaster
-  requirements:
-    - !type:CharacterOverallTimeRequirement
-      min: 8000
   startingGear: GliessDockmasterGear
   icon: "JobIconCaptain"
   supervisors: job-supervisors-lols
+  requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 8000
   accessGroups:
   - GeneralAccess
   access:

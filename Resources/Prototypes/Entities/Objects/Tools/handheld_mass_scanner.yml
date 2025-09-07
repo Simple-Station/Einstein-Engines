@@ -46,6 +46,7 @@
   - type: Tag
     tags:
       - FitsInVoidsuitKit
+  - type: RadarPinger
 
 - type: entity
   id: HandHeldMassScannerEmpty

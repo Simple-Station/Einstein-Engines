@@ -114,6 +114,8 @@
   description: Used to pilot a shuttle.
   abstract: true
   components:
+  - type: ApcPowerReceiver
+    powerLoad: 1500
   - type: ShuttleConsole
     targetIdSlot:
         name: Employee ID card slot

@@ -45,15 +45,13 @@ public sealed partial class RadarConsoleSystem : SharedRadarConsoleSystem
             var docks = _console.GetAllDocks();
 
             if (coordinates != null && angle != null)
-            {
                 state = _console.GetNavState(uid, docks, coordinates.Value, angle.Value);
-            }
             else
-            {
                 state = _console.GetNavState(uid, docks);
-            }
 
-            _uiSystem.SetUiState(uid, RadarConsoleUiKey.Key, new NavBoundUserInterfaceState(state));
+            component.LastUpdatedState = new NavBoundUserInterfaceState(state);
+            component.LastUpdatedState.IFFState = _console.GetIFFState(uid, null);
+            _uiSystem.SetUiState(uid, RadarConsoleUiKey.Key, component.LastUpdatedState);
         }
     }
 }

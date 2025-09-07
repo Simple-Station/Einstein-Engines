@@ -7,3 +7,13 @@
   - type: Sprite
     sprite: _Crescent/Structures/Wallmounts/posters.rsi
     state: dsmposter1
+
+- type: entity
+  parent: PosterBase
+  id: PosterDSMGBoy
+  name: "Play Duke: Edition 11"
+  description: "A special coveted cover of the Imperial Regime's rising star. The poster seems to have been well-used."
+  components:
+  - type: Sprite
+    sprite: _Crescent/Structures/Wallmounts/posters.rsi
+    state: dsmposter2

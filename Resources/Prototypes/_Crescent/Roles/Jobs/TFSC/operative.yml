@@ -3,9 +3,13 @@
   name: job-name-operative
   description: job-description-operative
   playTimeTracker: JobOperativeNCSP
-  weight: 14
+  weight: 4
   startingGear: OperativeGear
   alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconSyndieOperative"
+  supervisors: You answer to the patriarch and the interests of the CyberDawn Technologies company.
+  canBeAntag: false
   requirements:
     - !type:FactionRequirement
       factionID: "TFSC"
@@ -25,10 +29,6 @@
           - Freespeak
         addUnderstood:
           - Freespeak
-  icon: "JobIconSyndieOperative"
-  requireAdminNotify: false
-  supervisors: You answer to the patriach and the interests of the CyberDawn Technologies company.
-  canBeAntag: false
   access:
   - Command
   - Maintenance

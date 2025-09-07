@@ -260,9 +260,10 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
             {
                 component.accesState = ShuttleConsoleAccesState.NoAcces;
                 _popup.PopupEntity("Console locked", uid, args.User, PopupType.Small);
+                _itemSlotsSystem.TryEject(uid, SharedShuttleConsoleComponent.IdSlotName, args.User, out _);
+                _itemSlotsSystem.SetLock(uid, SharedShuttleConsoleComponent.IdSlotName, true);
                 return;
             }
-
             component.accesState = ShuttleConsoleAccesState.CaptainAcces;
             _audio.PlayPvs("/Audio/Machines/high_tech_confirm.ogg", uid, AudioParams.Default);
             _popup.PopupEntity("Console unlocked. Welcome onboard, captain.", uid, args.User);

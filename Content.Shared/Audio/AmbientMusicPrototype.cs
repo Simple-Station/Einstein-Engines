@@ -16,4 +16,16 @@ public sealed partial class AmbientMusicPrototype : IPrototype
     [ViewVariables(VVAccess.ReadWrite), DataField("sound", required: true)]
     public SoundSpecifier Sound = default!;
 
+    /// <summary>
+    /// Decides if this music will play on top of other music or not.
+    /// NOTE!!! THIS ISN'T DONE YET!!!
+    /// BIOMES: 1;
+    /// SHIP AMBIENT: 2;
+    /// COMBAT MODE: 3;
+    /// FUCKED BIOMES/HADAL: 4;
+    /// ADMIN: 5+;
+    /// </summary>
+    [DataField(required: false)]
+    public int Priority = 1;
+
 }

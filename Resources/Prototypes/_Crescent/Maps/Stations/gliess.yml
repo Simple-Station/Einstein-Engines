@@ -45,6 +45,8 @@
           mapNameTemplate: 'Gliess Santo'
         - type: VesselDesignation
           designation: vessel-designation-headquarters
+        - type: VesselMusic
+          ambientMusicPrototype: GliessMusic
         - type: Grammar
           attributes:
             proper: true
