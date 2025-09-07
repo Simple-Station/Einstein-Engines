@@ -202,16 +202,12 @@
     tags:
     - PetWearable
     - WhitelistChameleon
-  - type: PhysicalComposition
+    - BreathMask # Goobstation - For survial boxes
     materialComposition:
       Steel: 50
       Plastic: 100
   - type: StaticPrice
     price: 12.5 # increases in price after decomposed into raw materials
-    tags:
-    - PetWearable
-    - WhitelistChameleon
-    - BreathMask # Goobstation - For survial boxes
 
 - type: entity
   parent: ClothingMaskBase
