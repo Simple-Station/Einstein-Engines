@@ -27,6 +27,13 @@
     components:
       - type: ChatRank
         rank: crescent-rank-beltrunner
+      - type: LanguageAdder
+        addSpoken:
+        - Atyrian
+        - Freespeak
+        addUnderstood:
+        - Atyrian
+        - Freespeak
   - !type:AddComponentSpecial
     components:
       - type: Telepathic

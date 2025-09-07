@@ -30,6 +30,11 @@
     components:
       - type: ChatRank
         rank: crescent-rank-draugr
+      - type: LanguageAdder
+        addSpoken:
+        - Atyrian
+        addUnderstood:
+        - Atyrian
   - !type:AddComponentSpecial
     components:
       - type: Telepathic
