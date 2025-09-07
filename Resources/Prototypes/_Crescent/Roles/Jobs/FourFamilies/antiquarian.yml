@@ -26,9 +26,13 @@
     components:
       - type: ChatRank
         rank: crescent-rank-antiquarian
-  - !type:AddComponentSpecial
-    components:
-      - type: Telepathic
+      - type: LanguageAdder
+        addSpoken:
+        - OldTaypani
+        - Freespeak
+        addUnderstood:
+        - OldTaypani
+        - Freespeak
   access:
   - Families
   - Izdari

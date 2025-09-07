@@ -29,9 +29,14 @@
     components:
       - type: ChatRank
         rank: crescent-rank-prophet
-  - !type:AddComponentSpecial
-    components:
       - type: Telepathic
+      - type: LanguageAdder
+        addSpoken:
+        - OldTaypani
+        - Atyrian
+        addUnderstood:
+        - OldTaypani
+        - Atyrian
   access:
   - EmergencyShuttleRepealAll
   - Captain
