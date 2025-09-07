@@ -266,6 +266,19 @@
     - machine_parts
     - machine_board
 
+- type: entity
+  parent: ShuttleGunTorpedo
+  id: ShuttleGunTorpedoFilled
+  suffix: ShipGun, Filled
+  components:
+  - type: BallisticAmmoProvider
+    proto: IdnaTorpedo
+    whitelist:
+      tags:
+        - Torpedo
+    capacity: 2
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
 
 #kurosawa
 
@@ -334,6 +347,20 @@
     containers:
     - machine_parts
     - machine_board
+
+- type: entity
+  parent: ShuttleGunKurosawa
+  id: ShuttleGunKurosawaFilled
+  suffix: ShipGun, Filled
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeRocketLowYield
+    whitelist:
+      tags:
+        - Rocket48mm
+    capacity: 2
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
 
 #sumitomo
 
@@ -408,6 +435,25 @@
     - machine_parts
     - machine_board
 
+- type: entity
+  parent: ShuttleGunMissileRack
+  id: ShuttleGunMissileRackFilled
+  suffix: ShipGun, Filled
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRocketLowYield
+        whitelist:
+          tags:
+          - MagazineRocket48mm
+        insertSound:
+          path: /Audio/Weapons/Guns/MagIn/kinetic_reload.ogg
+          params:
+            pitch: 2
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+
 #43mm (slugthrower)
 
 - type: entity
@@ -462,6 +508,30 @@
       gun_magazine:
         name: Magazine
         #startingItem: MagazineLightRifleBoxSlug - on being rebuilt from destruction this gives it free ammo
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - SlugthrowerCartridgeBox
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeMachineGunArmorPiercing
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeMachineGun
+
+- type: entity
+  parent: SlugthrowerCannon
+  id: SlugthrowerCannonFilled
+  suffix: ShipGun, Filled
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineLightRifleBoxSlug
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         priority: 2
@@ -601,6 +671,23 @@
     - machine_parts
     - machine_board
 
+- type: entity
+  parent: Type99Artillery
+  id: Type99ArtilleryFilled
+  suffix: ShipGun, Filled
+  components:
+  - type: BallisticAmmoProvider
+    soundInsert:
+      path: /Audio/Weapons/Guns/UnionfallWeapons/amr_close_1.ogg
+    fillWithDoAfter: true
+    fillDelay: 1
+    cycleable: true
+    capacity: 2
+    proto: CartridgeShellArmorPiercing
+    whitelist:
+      tags:
+      - CartridgeShell
+
 #320mm
 
 - type: entity
@@ -677,6 +764,18 @@
     - machine_parts
     - machine_board
 
+- type: entity
+  parent: AcceleratorCannon
+  id: AcceleratorCannonFilled
+  suffix: ShipGun, Filled
+  components:
+  - type: BallisticAmmoProvider
+    cycleable: false
+    capacity: 5
+    proto: CartridgeRailHighExplosive
+    whitelist:
+      tags:
+      - Cartridge
 #vulcan
 
 - type: entity
@@ -750,6 +849,30 @@
     containers:
     - machine_parts
     - machine_board
+
+- type: entity
+  parent: NTVulcanTurret
+  id: NTVulcanTurretFilled
+  suffix: ShipGun, Filled
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineVulcan
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - VulcanCartridgeBox
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeVulcanStandard
+        priority: 1
+        whitelist:
+          tags:
+            - VulcanCartridgeBox
 
 #cleanser
 
@@ -827,6 +950,30 @@
     - machine_parts
     - machine_board
 
+- type: entity
+  parent: SAWCleanser
+  id: SAWCleanserFilled
+  suffix: ShipGun, Filled
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineVulcan
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - VulcanCartridgeBox
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeVulcanStandard
+        priority: 1
+        whitelist:
+          tags:
+            - VulcanCartridgeBox
+
 #wasp
 
 - type: entity
@@ -896,3 +1043,23 @@
     containers:
     - machine_parts
     - machine_board
+
+- type: entity
+  parent: WaspSwarmPlatform
+  id: WaspSwarmPlatformFilled
+  suffix: ShipGun, Filled
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: SwarmrocketClip
+        priority: 2
+        whitelist:
+          tags:
+          - SwarmerRocketsClip
+        insertSound:
+          path: /Audio/Weapons/Guns/MagIn/kinetic_reload.ogg
+          params:
+            pitch: 2
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg

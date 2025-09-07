@@ -5,7 +5,7 @@
   id: Bodybag
   name: GSC Bodybag
   description: A small stealth boarding pod.
-  price: 43000
+  price: 20000 #16000 appraisegrid
   category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/NCSP/bodybag.yml

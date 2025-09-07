@@ -27,9 +27,13 @@
     components:
       - type: ChatRank
         rank: crescent-rank-beltrunner
-  - !type:AddComponentSpecial
-    components:
-      - type: Telepathic
+      - type: LanguageAdder
+        addSpoken:
+        - OldTaypani
+        - Freespeak
+        addUnderstood:
+        - OldTaypani
+        - Freespeak
   access:
   - EmergencyShuttleRepealAll
   - Captain

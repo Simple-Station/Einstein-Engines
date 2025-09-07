@@ -140,6 +140,30 @@
       - machine_parts
       - machine_board
 
+- type: entity
+  parent: WeaponTurretVulcan
+  id: WeaponTurretVulcanFilled
+  suffix: ShipGun, Filled
+  components:
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: MagazineVulcan
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - VulcanCartridgeBox
+        gun_chamber:
+          name: Chamber
+          startingItem: CartridgeVulcanStandard
+          priority: 1
+          whitelist:
+            tags:
+              - VulcanCartridgeBox
+
 # SWARMER TURRET
 
 - type: entity
@@ -210,6 +234,30 @@
       - machine_parts
       - machine_board
 
+- type: entity
+  parent: BaseWeaponTurretSwarmer
+  id: BaseWeaponTurretSwarmerFilled
+  suffix: ShipGun, Filled
+  components:
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: MagazineSwarmer
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - SwarmRocketBox
+        gun_chamber:
+          name: Chamber
+          startingItem: SwarmerRocketCartridge
+          priority: 1
+          whitelist:
+            tags:
+              - SwarmRocket
+
 # DERECHO TURRET
 
 - type: entity
@@ -237,7 +285,6 @@
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-
     - type: Gun
       projectileSpeed: 130
       fireRate: 2
@@ -295,7 +342,6 @@
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -337,6 +383,30 @@
       containers:
       - machine_parts
       - machine_board
+
+- type: entity
+  parent: WeaponTurretMortar
+  id: WeaponTurretMortarFilled
+  suffix: ShipGun, Filled
+  components:
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: MagazineMortar
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - MortarBox
+        gun_chamber:
+          name: Chamber
+          startingItem: CartridgeMortarStandardTurret
+          priority: 1
+          whitelist:
+            tags:
+              - MortarShell
 
 # PLASMA LASER TURRET
 
@@ -451,6 +521,18 @@
       - machine_parts
       - machine_board
 
+- type: entity
+  parent: BaseWeaponTurretSmartbomb
+  id: BaseWeaponTurretSmartbombFilled
+  suffix: ShipGun, Filled
+  components:
+    - type: BallisticAmmoProvider
+      proto: SmartBomb
+      whitelist:
+        tags:
+          - SmartBomb
+      capacity: 2
+
 # NEEDLER TURRET
 
 - type: entity
@@ -478,7 +560,6 @@
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak
-
     - type: ContainerContainer
       containers:
         ballistic-ammo: !type:Container
@@ -520,6 +601,30 @@
       containers:
       - machine_parts
       - machine_board
+
+- type: entity
+  parent: WeaponTurretNeedler
+  id: WeaponTurretNeedlerFilled
+  suffix: ShipGun, Filled
+  components:
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: MagazineNeedler
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - NeedlerMag
+        gun_chamber:
+          name: Chamber
+          startingItem: Needler
+          priority: 1
+          whitelist:
+            tags:
+              - NeedlerShell
 
 # STATION PDT TURRET
 
@@ -632,6 +737,19 @@
       - machine_parts
       - machine_board
 
+- type: entity
+  parent: BaseWeaponTurretGargoyle
+  id: BaseWeaponTurretGargoyleFilled
+  suffix: ShipGun, Filled
+  components:
+    - type: BallisticAmmoProvider
+      cycleable: false
+      capacity: 3
+      proto: TorpGarg
+      whitelist:
+        tags:
+        - TorpedoGarg
+
 # LANCER TURRET
 
 - type: entity
@@ -690,6 +808,19 @@
       - machine_parts
       - machine_board
 
+- type: entity
+  parent: BaseWeaponTurretLancer
+  id: BaseWeaponTurretLancerFilled
+  suffix: ShipGun, Filled
+  components:
+    - type: BallisticAmmoProvider
+      cycleable: false
+      capacity: 15
+      proto: LanceRocketCartridge
+      whitelist:
+        tags:
+        - LanceRocket
+
 # HEPHAESTUS TURRET (230MM)
 
 - type: entity
@@ -747,6 +878,19 @@
       containers:
       - machine_parts
       - machine_board
+
+- type: entity
+  parent: BaseWeaponTurretBattlemortar
+  id: BaseWeaponTurretBattlemortarFilled
+  suffix: ShipGun, Filled
+  components:
+    - type: BallisticAmmoProvider
+      cycleable: false
+      capacity: 3
+      proto: HeavyMortarCartridge
+      whitelist:
+        tags:
+        - HeavyMortarShell
 
 # PRINCE FLAK TURRET
 
@@ -818,6 +962,30 @@
       - machine_parts
       - machine_board
 
+- type: entity
+  parent: FlakCannonTurret
+  id: FlakCannonTurretFilled
+  suffix: ShipGun, Filled
+  components:
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: MagazineFlak
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - FlakBox
+        gun_chamber:
+          name: Chamber
+          startingItem: FlakCartridge
+          priority: 1
+          whitelist:
+            tags:
+              - FlakShell
+
 # 323MM CATAPULT TURRET
 
 - type: entity
@@ -874,6 +1042,19 @@
       containers:
       - machine_parts
       - machine_board
+
+- type: entity
+  parent: CatapultTorpedo
+  id: CatapultTorpedoFilled
+  suffix: ShipGun, Filled
+  components:
+    - type: BallisticAmmoProvider
+      cycleable: false
+      capacity: 6
+      proto: TorpCatapult
+      whitelist:
+        tags:
+        - TorpedoCatapult
 
 # RIMWARD TURRET
 
@@ -998,6 +1179,23 @@
       - machine_parts
       - machine_board
 
+- type: entity
+  parent: BaseWeaponTurretHeavyPlasma
+  id: BaseWeaponTurretHeavyPlasmaFilled
+  suffix: ShipGun, Filled
+  components:
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: LensInfared
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - CompaktLens
+
 # SOLARIS TURRET
 
 - type: entity
@@ -1059,6 +1257,23 @@
       containers:
       - machine_parts
       - machine_board
+
+- type: entity
+  parent: BaseWeaponTurretSolaris
+  id: BaseWeaponTurretSolarisFilled
+  suffix: ShipGun, Filled
+  components:
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: StandardAntimatterCanister
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - AntimatterCanister
 
 # JEONG TURRET
 
@@ -1124,6 +1339,23 @@
       containers:
       - machine_parts
       - machine_board
+
+- type: entity
+  parent: BaseWeaponTurretJeong
+  id: BaseWeaponTurretJeongFilled
+  suffix: ShipGun, Filled
+  components:
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: SwarmrocketClip
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - SwarmerRocketsClip
 
 # MAGWELL TURRET
 
@@ -1191,6 +1423,20 @@
       - machine_parts
       - machine_board
 
+- type: entity
+  parent: BaseWeaponTurretMagwell
+  id: BaseWeaponTurretMagwellFilled
+  suffix: ShipGun, Filled
+  components:
+    - type: BallisticAmmoProvider
+      proto: IdnaTorpedo
+      whitelist:
+        tags:
+          - Torpedo
+      capacity: 6
+      soundInsert:
+        path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+
 # SLUGSPITTER TURRET (SLUGTHROWER)
 
 - type: entity
@@ -1256,6 +1502,23 @@
       containers:
       - machine_parts
       - machine_board
+
+- type: entity
+  parent: BaseWeaponTurretSlugspitter
+  id: BaseWeaponTurretSlugspitterFilled
+  suffix: ShipGun, Filled
+  components:
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: MagazineLightRifleBoxSlug
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - SlugthrowerCartridgeBox
 
 # REGENT FLAK TURRET
 
