@@ -43,7 +43,7 @@
     baseSprintSpeed: 0.5
     weightlessFriction: 0.8
     weightlessAcceleration: 0.75
-    weightlessModifier: 50
+    weightlessModifier: 90
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: RadarConsole # doesn't work atm for mechs, will port soon
@@ -108,7 +108,7 @@
     baseSprintSpeed: 0.5
     weightlessFriction: 0.75
     weightlessAcceleration: 0.85
-    weightlessModifier: 60
+    weightlessModifier: 75
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: RadarConsole # doesn't work atm for mechs, will port soon
@@ -185,9 +185,9 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 0.5
     baseSprintSpeed: 0.5
-    weightlessFriction: 0.75
-    weightlessAcceleration: 0.75
-    weightlessModifier: 70
+    weightlessFriction: 0.7
+    weightlessAcceleration: 0.7
+    weightlessModifier: 85
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: RadarConsole # doesn't work atm for mechs, will port soon
@@ -264,9 +264,9 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 0.5
     baseSprintSpeed: 0.5
-    weightlessFriction: 0.75
-    weightlessAcceleration: 0.75
-    weightlessModifier: 60
+    weightlessFriction: 0.7
+    weightlessAcceleration: 0.7
+    weightlessModifier: 75
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: RadarConsole # doesn't work atm for mechs, will port soon
