@@ -19,12 +19,10 @@
     shuttles:
     - Reaver
     - Itch
-    - Bodybag
-    - Wolf
-    - Ouroboros
-    - Cleaver
-    - Eradicator
     - Sinn
+    - Cerberus
+    - Corvax
+    - Ouroboros
 
 - type: entity
   id: CountsmanMothershipComputer
