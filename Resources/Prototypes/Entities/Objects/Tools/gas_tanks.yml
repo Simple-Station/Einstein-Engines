@@ -141,7 +141,9 @@
         mask:
         - ItemMask
         restitution: 0.3
-        friction: 0.2
+  - type: Tag # Goobstation - For survival boxes
+    tags:
+    - EmergencyOxygenTank
 
 - type: entity
   parent: EmergencyOxygenTank
@@ -155,6 +157,9 @@
     sprite: Objects/Tanks/emergency_red.rsi
   - type: Clothing
     sprite: Objects/Tanks/emergency_red.rsi
+  - type: Tag # Goobstation - For survival boxes
+    tags:
+    - EmergencyNitrogenTank
 
 - type: entity
   parent: EmergencyOxygenTank
@@ -196,6 +201,9 @@
         - ItemMask
         restitution: 0.3
         friction: 0.2
+  - type: Tag # Goobstation - For survival boxes
+    tags:
+    - ExtendedEmergencyOxygenTank
 
 - type: entity
   parent: ExtendedEmergencyOxygenTank
@@ -209,6 +217,9 @@
     sprite: Objects/Tanks/emergency_extended_red.rsi
   - type: Clothing
     sprite: Objects/Tanks/emergency_extended_red.rsi
+  - type: Tag # Goobstation - For survival boxes
+    tags:
+    - EmergencyNitrogenTank
 
 - type: entity
   parent: ExtendedEmergencyOxygenTank
@@ -222,6 +233,9 @@
     sprite: Objects/Tanks/emergency_extended_red.rsi
   - type: Clothing
     sprite: Objects/Tanks/emergency_extended_red.rsi
+  - type: Tag # Goobstation - For survival boxes
+    tags:
+    - ExtendedEmergencyOxygenTank
 
 - type: entity
   parent: ExtendedEmergencyOxygenTank
@@ -260,6 +274,7 @@
   - type: Tag
     tags:
       - FitsInVoidsuitKit
+      - ExtendedEmergencyOxygenTank
 
 - type: entity
   parent: DoubleEmergencyOxygenTank
@@ -273,6 +288,9 @@
     sprite: Objects/Tanks/emergency_double_red.rsi
   - type: Clothing
     sprite: Objects/Tanks/emergency_double_red.rsi
+  - type: Tag # Goobstation - For survival boxes
+    tags:
+    - ExtendedEmergencyOxygenTank
 
 - type: entity
   parent: DoubleEmergencyOxygenTank
@@ -299,6 +317,9 @@
     sprite: Objects/Tanks/emergency_clown.rsi
   - type: Clothing
     sprite: Objects/Tanks/emergency_clown.rsi
+  - type: Tag # Goobstation - For survival boxes
+    tags:
+    - ClownEmergencyOxygenTank
 
 - type: entity
   parent: GasTankRoundBase
