@@ -25,3 +25,7 @@ chat-language-Atyrian-name = Atyrian
 language-Kaishago-name = Kaishago
 language-Kaishago-description = A bizzare compaction of ancient Japanese, made to deliver the most information in the shortest amount of time. All SHI employees have a brainchip that auto-teaches this...form of communication.
 chat-language-Kaishago-name = Kaishago
+
+language-OldTaypani-name = Old Taypani
+language-OldTaypani-description = Formed out of desperation and constant migration - Old Taypani is a language descended from various Unathi and Atyrian dialects. Glottal and guttural at times, speaking this language is a mark of piety in the circles of the Matron and a sign of destitution to many.
+chat-language-OldTaypani-name = Old Taypani
