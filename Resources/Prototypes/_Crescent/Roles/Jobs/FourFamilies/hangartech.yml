@@ -27,9 +27,13 @@
     components:
       - type: ChatRank
         rank: crescent-rank-hangartech
-  - !type:AddComponentSpecial
-    components:
-      - type: Telepathic
+      - type: LanguageAdder
+        addSpoken:
+        - OldTaypani
+        - Tradeband
+        addUnderstood:
+        - OldTaypani
+        - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain
