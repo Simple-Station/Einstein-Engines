@@ -5,7 +5,7 @@
   id: Corvax
   name: NCSP Corvax
   description: A light missile corvette. Devastating at long range.
-  price: 50000
+  price: 50000 #47000 appraisegrid
   category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/NCSP/corvax.yml
