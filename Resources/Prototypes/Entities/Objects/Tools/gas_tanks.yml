@@ -141,6 +141,7 @@
         mask:
         - ItemMask
         restitution: 0.3
+        friction: 0.2
   - type: Tag # Goobstation - For survival boxes
     tags:
     - EmergencyOxygenTank
