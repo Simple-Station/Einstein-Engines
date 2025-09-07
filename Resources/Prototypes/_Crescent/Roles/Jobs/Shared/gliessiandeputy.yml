@@ -6,11 +6,9 @@
   startingGear: GliessDeputyGear
   icon: "JobIconMinuteman"
   supervisors: job-supervisors-gliess
-  accessGroups:
-  - GeneralAccess
-  access:
-  - GliessSheriff
-  - GliessDockmaster
+  requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 20000
   special:
   - !type:AddComponentSpecial
     components:
@@ -21,6 +19,11 @@
           - Tradeband
         addUnderstood:
           - Tradeband
+  accessGroups:
+  - GeneralAccess
+  access:
+  - GliessSheriff
+  - GliessDockmaster
 
 - type: startingGear
   id: GliessDeputyGear
