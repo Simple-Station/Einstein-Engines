@@ -28,14 +28,11 @@
         rank: crescent-rank-antiquarian
       - type: LanguageAdder
         addSpoken:
-        - Atyrian
+        - OldTaypani
         - Freespeak
         addUnderstood:
-        - Atyrian
+        - OldTaypani
         - Freespeak
-  - !type:AddComponentSpecial
-    components:
-      - type: Telepathic
   access:
   - Families
   - Izdari

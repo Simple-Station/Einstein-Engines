@@ -32,12 +32,11 @@
         rank: crescent-rank-draugr
       - type: LanguageAdder
         addSpoken:
-        - Atyrian
+        - OldTaypani
+        - Draconic
         addUnderstood:
-        - Atyrian
-  - !type:AddComponentSpecial
-    components:
-      - type: Telepathic
+        - OldTaypani
+        - Draconic
   access:
   - EmergencyShuttleRepealAll
   - Captain
