@@ -35,6 +35,10 @@
     equipmentWhitelist:
       tags:
       - LightFighterEquipment
+  - type: RangeBasedPvs
+    sendRange: 1500
+  - type: EntityIFFDesignation
+    name: "Fighter Without Name - get one!"
 
 
 - type: entity
@@ -46,6 +50,10 @@
       tags:
       - MediumFighterEquipment
       - LightFighterEquipment
+  - type: RangeBasedPvs
+    sendRange: 1500
+  - type: EntityIFFDesignation
+    name: "Fighter Without Name - get one!"
 
 - type: entity
   id: LightFighterEquipment

@@ -232,6 +232,27 @@
       amount: 2
 
 - type: entity
+  id: ClothingBeltAuthorityBattleBeltFilled
+  parent: ClothingBeltAuthorityBattleBelt
+  name: panzer battle belt
+  suffix: Filled
+  components:
+  - type: Item
+    size: Ginormous
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,7,1
+  - type: StorageFill
+    contents:
+    - id: MagazineBoxRifle
+      amount: 4
+    - id: PTAWarcrimeHandgrenade
+      amount: 2
+    - id: Gauze
+      amount: 2
+
+- type: entity
   id: ClothingBeltAuthorityPouchesFilled
   parent: ClothingBeltAuthorityPouches
   name: tactical combat pouches

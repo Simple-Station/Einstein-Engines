@@ -403,7 +403,7 @@ entities:
       parent: 1
     - type: WarpPoint
       location: Tribal Scrapyard
-- proto: WildBiomeSource
+- proto: BiomeScrapyardSource
   entities:
   - uid: 69
     components:

@@ -1,12 +1,4 @@
 - type: latheRecipe
-  id: MagazineBoxHeavyRifle
-  result: MagazineBoxHeavyRifle
-  completetime: 1
-  materials:
-    Steel: 1250
-    Uranium: 400
-
-- type: latheRecipe
   id: ArmorPlateSteelCraft
   result: ArmorPlateSteel
   completetime: 1

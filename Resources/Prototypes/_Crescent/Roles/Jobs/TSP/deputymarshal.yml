@@ -5,30 +5,30 @@
   playTimeTracker: JobDeputyMarshalCMM
   weight: 32
   startingGear: DeputyMarshalGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconDeputyMarshal"
+  supervisors: You answer to your Colonial Marshal.
+  canBeAntag: false
   requirements:
-  - !type:FactionRequirement
-      factionID: "TSP"
-  - !type:CharacterOverallTimeRequirement
-    min: 36000
-  - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Foreigner
-        - ForeignerLight
-        - Muted
-        - Blindness
-        - Pacifist
-        - WheelchairBound
+    - !type:CharacterOverallTimeRequirement
+      min: 36000
+    - !type:FactionRequirement
+        factionID: "TSP"
+    - !type:CharacterTraitRequirement
+        inverted: true
+        traits:
+          - Foreigner
+          - ForeignerLight
+          - Muted
+          - Blindness
+          - Pacifist
+          - WheelchairBound
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
         rank: crescent-rank-2ic
-  alwaysUseSpawner: true
-  icon: "JobIconDeputyMarshal"
-  requireAdminNotify: false
-  supervisors: You answer to your Colonial Marshal.
-  canBeAntag: false
   access:
   - Command
   - Maintenance

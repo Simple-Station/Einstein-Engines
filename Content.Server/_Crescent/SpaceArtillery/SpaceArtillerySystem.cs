@@ -16,6 +16,7 @@ using Content.Server.Weapons.Ranged.Systems;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Power;
+using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
@@ -40,7 +41,7 @@ public sealed partial class SpaceArtillerySystem : EntitySystem
     [Dependency] private readonly SharedCameraRecoilSystem _recoilSystem = default!;
 
     private const float DISTANCE = 100;
-    private const float BIG_DAMAGE = 1000;
+    private const float BIG_DAMAGE = 2500;
     private const float BIG_DAMGE_KICK = 35;
     private ISawmill _sawmill = default!;
 
@@ -51,6 +52,7 @@ public sealed partial class SpaceArtillerySystem : EntitySystem
         SubscribeLocalEvent<SpaceArtilleryComponent, SignalReceivedEvent>(OnSignalReceived);
         SubscribeLocalEvent<SpaceArtilleryComponent, BuckledEvent>(OnBuckle);
         SubscribeLocalEvent<SpaceArtilleryComponent, UnbuckledEvent>(onUnbuckle);
+        SubscribeLocalEvent<SpaceArtilleryComponent, AttemptShootEvent>(OnShotAttempt);
         SubscribeLocalEvent<SpaceArtilleryComponent, FireActionEvent>(OnFireAction);
         SubscribeLocalEvent<SpaceArtilleryComponent, AmmoShotEvent>(OnShotEvent);
         SubscribeLocalEvent<SpaceArtilleryComponent, OnEmptyGunShotEvent>(OnEmptyShotEvent);
@@ -65,6 +67,23 @@ public sealed partial class SpaceArtillerySystem : EntitySystem
         SubscribeLocalEvent<ShipWeaponProjectileComponent, ProjectileHitEvent>(OnProjectileHit);
     }
 
+    private void OnShotAttempt(Entity<SpaceArtilleryComponent> entity, ref AttemptShootEvent ev)
+    {
+        if (_battery.TryGetBatteryComponent(entity.Owner, out var battery, out var _) &&
+            battery.CurrentCharge < entity.Comp.PowerUseActive)
+        {
+            OnMalfunction(entity.Owner, entity.Comp);
+            ev.Cancelled = true;
+            return;
+        }
+
+        if (!_battery.TryUseCharge(entity.Owner, entity.Comp.PowerUseActive))
+        {
+            OnMalfunction(entity.Owner, entity.Comp);
+            ev.Cancelled = true;
+        }
+
+    }
     private void OnComponentInit(EntityUid uid, SpaceArtilleryComponent component, ComponentInit args)
     {
         if (component.IsCoolantRequiredToFire == true)
@@ -196,13 +215,13 @@ public sealed partial class SpaceArtillerySystem : EntitySystem
     /// </summary>
     private void OnFireAction(EntityUid uid, SpaceArtilleryComponent component, FireActionEvent args)
     {
-        if ((component.IsPowered == true || component.IsPowerRequiredForMount == false) && component.IsArmed == true)
+        if ((component.IsPowered || !component.IsPowerRequiredForMount) && component.IsArmed)
         {
             if (TryComp<BatteryComponent>(uid, out var battery))
             {
-                if (component.IsPowered == true && battery.CurrentCharge >= component.PowerUseActive || component.IsPowerRequiredToFire == false)
+                if ((component.IsPowered && battery.CurrentCharge >= component.PowerUseActive) || !component.IsPowerRequiredToFire)
                 {
-                    if (component.IsCoolantRequiredToFire == true && component.CoolantStored >= component.CoolantConsumed || component.IsCoolantRequiredToFire == false)
+                    if (component.IsCoolantRequiredToFire && component.CoolantStored >= component.CoolantConsumed || !component.IsCoolantRequiredToFire)
                     {
                         if (args.Handled)
                             return;
@@ -317,7 +336,6 @@ public sealed partial class SpaceArtillerySystem : EntitySystem
             OnMalfunction(uid, component);
             return;
         }
-
         var worldPosX = _xform.GetWorldPosition(uid).X;
         var worldPosY = _xform.GetWorldPosition(uid).Y;
         var worldRot = _xform.GetWorldRotation(uid) + Math.PI;

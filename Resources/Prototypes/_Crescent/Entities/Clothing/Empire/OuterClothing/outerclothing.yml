@@ -208,18 +208,18 @@
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.6
+    damageCoefficient: 0.8
   - type: DegradeableArmor
     armorMaxHealth: 750
     armorType: Metallic
     armorRepair: PlasteelPlate
     initialModifiers:
       flatReductions:
-        Blunt: 25
-        Slash: 25
+        Blunt: 15
+        Slash: 15
         Piercing: 45
         Heat: 25
-        Caustic: 25
+        Caustic: 15
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9
@@ -249,8 +249,8 @@
     armorRepair: PlasteelPlate
     initialModifiers:
       flatReductions:
-        Blunt: 30
-        Slash: 30
+        Blunt: 20
+        Slash: 20
         Piercing: 55
         Heat: 30
         Caustic: 25

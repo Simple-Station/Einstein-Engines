@@ -68,17 +68,17 @@
     speechVerb: Arachnid
     speechSounds: Arachnid
     allowedEmotes: ['Click', 'Chitter', 'Hiss'] # DeltaV: Added Hiss
-  - type: Vocal
-    sounds:
-      Male: UnisexArachnid
-      Female: UnisexArachnid
-      Unsexed: UnisexArachnid
   - type: LanguageKnowledge
     speaks:
     - Atyrian
     understands:
     - Atyrian
     - TauCetiBasic #needed for vending machines
+  - type: Vocal
+    sounds:
+      Male: UnisexArachnid
+      Female: UnisexArachnid
+      Unsexed: UnisexArachnid
   - type: TypingIndicator
     proto: spider
   - type: PotentiaModifier

@@ -3,17 +3,13 @@
   name: job-name-gliess-sheriff
   description: job-description-gliess-sheriff
   playTimeTracker: JobGliessSheriff
-  requirements:
-    - !type:CharacterOverallTimeRequirement
-      min: 4000
   startingGear: GliessSheriffGear
   icon: "JobIconMarshal"
   supervisors: job-supervisors-gliess
-  accessGroups:
-  - GeneralAccess
-  access:
-  - GliessSheriff
-  - GliessDockmaster
+  requirements:
+    - !type:CharacterWhitelistRequirement
+    - !type:CharacterOverallTimeRequirement
+      min: 25000
   special:
   - !type:AddComponentSpecial
     components:
@@ -24,6 +20,11 @@
           - Tradeband
         addUnderstood:
           - Tradeband
+  accessGroups:
+  - GeneralAccess
+  access:
+  - GliessSheriff
+  - GliessDockmaster
 
 - type: startingGear
   id: GliessSheriffGear
