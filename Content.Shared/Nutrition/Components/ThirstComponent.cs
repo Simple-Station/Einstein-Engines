@@ -14,7 +14,7 @@ public sealed partial class ThirstComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField("baseDecayRate")]
     [AutoNetworkedField]
-    public float BaseDecayRate = 0.1f;
+    public float BaseDecayRate = 0.033f;
 
     [ViewVariables(VVAccess.ReadWrite)]
     [AutoNetworkedField]
@@ -50,10 +50,10 @@ public sealed partial class ThirstComponent : Component
     [AutoNetworkedField]
     public Dictionary<ThirstThreshold, float> ThirstThresholds = new()
     {
-        {ThirstThreshold.OverHydrated, 600.0f},
-        {ThirstThreshold.Okay, 450.0f},
-        {ThirstThreshold.Thirsty, 300.0f},
-        {ThirstThreshold.Parched, 150.0f},
+        {ThirstThreshold.OverHydrated, 900.0f},
+        {ThirstThreshold.Okay, 675.0f},
+        {ThirstThreshold.Thirsty, 450.0f},
+        {ThirstThreshold.Parched, 225.0f},
         {ThirstThreshold.Dead, 0.0f},
     };
 
