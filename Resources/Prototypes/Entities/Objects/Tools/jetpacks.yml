@@ -54,7 +54,7 @@
         volume: 5
         temperature: 293.15
     - type: Jetpack
-      moleUsage: 0.004
+      moleUsage: 0.00085
     - type: Appearance
     - type: StaticPrice
       price: 100
@@ -225,7 +225,7 @@
     outputPressure: 42.6
     air:
       # 4 minutes of thrust
-      volume: 1.5
+      volume: 2.5
       temperature: 293.15
       moles:
         - 0.307706858 # oxygen
@@ -334,7 +334,7 @@
     outputPressure: 42.6
     air:
       # 2 minutes of thrust
-      volume: 0.75
+      volume: 1.25
       temperature: 293.15
       moles:
         - 0.153853429 # oxygen
