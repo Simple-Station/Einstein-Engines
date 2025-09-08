@@ -178,7 +178,9 @@ public class ProjectilePhasePreventerSystem : EntitySystem
                 try
                 {
                     count++;
+
                     RaiseLocalEvent(eventData.selfEntity, ref fEv, true);
+                    Logger.Debug($"Raised event on {MetaData(eventData.selfEntity).EntityName}");
                 }
                 catch (Exception e)
                 {
