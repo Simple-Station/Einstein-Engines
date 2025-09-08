@@ -50,6 +50,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
     private Dictionary<NetEntity, List<DockingPortState>> _docks = new();
     private List<ProjectileState> _projectiles = new();
     private Dictionary<NetEntity, List<TurretState>> _turrets = new();
+    private List<NetEntity> _vesselIconEntities = new();
 
     internal int updateTicker = 0;
 
@@ -125,9 +126,9 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         public ConcurrentDictionary<EntityUid, shipData> gridData;
         public DrawingHandleScreen handle;
         public ILocalizationManager Loc;
+
         public void Execute(int index)
         {
-            // TODO: Need to rewrite this so that entities can also be shown.
             var gUid = grids[index].Owner;
             var gComp = grids[index].Comp;
             if (gUid == selfGrid || !fixturesQuery.HasComponent(gUid))
@@ -261,6 +262,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
     public bool keepWorldAligned = false;
 
     private List<Entity<MapGridComponent>> _grids = new();
+    private List<Entity<EntityVesselIconComponent>> _entityVesselIcons = new();
 
     public ShuttleNavControl() : base(64f, 256f, 256f)
     {
@@ -271,7 +273,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         _projectileIFF = EntManager.System<ProjectileIFFSystem>();
         _fixtures = EntManager.System<FixtureSystem>();
         _sprites = EntManager.System<SpriteSystem>();
-        drawJob = new ShuttleCalculatePositionsJob()
+        drawJob = new ()
         {
             EntManager = EntManager,
             ShuttlesSys = _shuttles,
@@ -412,6 +414,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
     {
         _projectiles = state.Projectiles;
         _turrets = state.Turrets;
+        _vesselIconEntities = state.VesselIcons;
     }
 
     public void UpdateState(NavInterfaceState state)
@@ -560,6 +563,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
 
         _grids.Clear();
         _mapManager.FindGridsIntersecting(xform.MapID, new Box2(mapPos.Position - MaxRadarRangeVector, mapPos.Position + MaxRadarRangeVector), ref _grids, approx: true, includeMap: false);
+
         if(ourGridId is not null)
             drawJob.selfGrid = ourGridId.Value;
         drawJob.MidPointVector = MidPointVector;
