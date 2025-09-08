@@ -25,6 +25,7 @@
         Structural: 10
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 14
+    heavyRateModifier: 1.15
     clickPartDamageMultiplier: 1.25
     maxTargets: 3
     angle: 100

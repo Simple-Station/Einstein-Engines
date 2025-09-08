@@ -20,14 +20,11 @@
         Structural: 50
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 14
-    heavyRateModifier: 2
+    heavyRateModifier: 1.15
     clickPartDamageMultiplier: 1.25
     maxTargets: 4
     soundHit:
       path: /Audio/Nyanotrasen/Weapons/club.ogg
-#  - type: MeleeStaminaCost
-#    swing: 10
-#    wieldCoefficient: 0.5 #if wielded you will only consume 5
   - type: DamageOtherOnHit
     staminaCost: 14
   - type: Wieldable

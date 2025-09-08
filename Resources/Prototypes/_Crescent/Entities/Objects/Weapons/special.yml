@@ -168,10 +168,17 @@
         map: [ "blade" ]
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.15
+    range: 1.25
+    attackRate: 0.9
     damage:
       types:
         Blunt: 4.5
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
+    heavyRateModifier: 1.15
+    clickPartDamageMultiplier: 1.5
+    lightRangeModifier: 1.2
+    maxTargets: 4
   - type: Item
     size: Small
     sprite: _Crescent/Objects/Weapons/plas_sword-inhands.rsi
@@ -214,12 +221,19 @@
   - type: MeleeWeapon
     wideAnimationRotation: 135
     swingLeft: true
-    attackRate: 0.75
+    attackRate: 1.75
+    range: 1.75
     damage:
       types:
         Slash: 25
         Heat: 10
         Structural: 10
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 14
+    heavyRateModifier: 1.15
+    clickPartDamageMultiplier: 1.25
+    lightRangeModifier: 1.15
+    maxTargets: 6
     soundHit:
       collection: MetalThud
   - type: Wieldable
@@ -252,11 +266,19 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -155 #onehanded stance allows for wider swing
+    range: 1.25
+    attackRate: 1
     damage:
       types:
         Blunt: 35
         Heat: 10
         Structural: 25
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
+    heavyRateModifier: 1.15
+    clickPartDamageMultiplier: 1.5
+    lightRangeModifier: 1.2
+    maxTargets: 3
     soundHit:
       collection: MetalThud
   - type: Item
