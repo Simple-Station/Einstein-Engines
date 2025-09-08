@@ -37,11 +37,9 @@ public sealed class HeatSeekingSystem : EntitySystem
                 if ((comp.GuidanceAlgorithm & GuidanceType.PredictiveGuidance) != 0) { PredictiveGuidance(uid, comp, xform, frameTime); }
                 else if ((comp.GuidanceAlgorithm & GuidanceType.PurePursuit) != 0) { PurePursuit(uid, comp, xform, frameTime); }
                 else { PredictiveGuidance(uid, comp, xform, frameTime); } // if yaml is invalid, default to Predictive Guidance
-                Log.Debug("Lock achieved!");
             }
             else
             {
-                Log.Debug("Looking for new lock...");
                 GetNewTarget(uid, comp, xform);
             }
         }
@@ -69,12 +67,10 @@ public sealed class HeatSeekingSystem : EntitySystem
             if (angle > _transform.GetWorldRotation(transform) + component.FOV / 2 * Math.PI / 180f
             || angle < _transform.GetWorldRotation(transform) - component.FOV / 2 * Math.PI / 180f) // if target is out of FOV, skip it.
             {
-                Log.Debug($"Target is out of FOV.");
                 continue;
             }
             if (distance > component.DefaultSeekingRange) // if target is out of range, skip it.
             {
-                Log.Debug("Target is out of range.");
                 continue;
             }
 
