@@ -24,6 +24,9 @@
   - type: Fixtures
     fixtures:
       projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.45,0.15,0.15"
         hard: false
       fly-by: &flybyfixture
         shape: !type:PhysShapeCircle
