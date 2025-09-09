@@ -1174,7 +1174,7 @@
   parent: BaseItem
   id: ShipVoucherArchon
   name: ATH 'Archon' pattern LPC fabprint disk
-  description: An LPC fabprint disk loaded with a Central Sol Authority Archon-class patrol corvette pattern. Has to be redeemed at a shipyard console.
+  description: An LPC fabprint disk loaded with a Central Sol Authority Archon-class light frigate pattern. Has to be redeemed at a shipyard console.
   components:
   - type: Item
     size: Small
@@ -1186,6 +1186,23 @@
     price: 60000
   - type: ShipVoucher
     ship: Archon
+
+- type: entity
+  parent: BaseItem
+  id: ShipVoucherArchonStrike
+  name: ATH 'Strike Archon' pattern LPC fabprint disk
+  description: An LPC fabprint disk loaded with a Central Sol Authority Strike Archon-class Strike Frigate pattern. Has to be redeemed at a shipyard console.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Crescent/Objects/Misc/lpcchip.rsi
+    layers:
+    - state: icon
+  - type: StaticPrice
+    price: 60000
+  - type: ShipVoucher
+    ship: ArchonStrike
 
 - type: entity
   parent: BaseItem

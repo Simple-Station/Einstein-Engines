@@ -1,0 +1,38 @@
+
+
+
+- type: vessel
+  id: ArchonStrike
+  name: ATH Strike Archon
+  description: A trimmed down light Authoritat frigate, heavily refitted by the 43rd for independent operations within Sector Crescent.
+  price: 75000
+  category: Medium
+  group: None
+  path: /Maps/_Crescent/Shuttles/ATH/archonStrike.yml
+
+- type: gameMap
+  id: ArchonStrike
+  mapName: 'Strike Archon'
+  mapPath: /Maps/_Crescent/Shuttles/ATH/archonStrike.yml
+  minPlayers: 0
+  stations:
+    ArchonStrike:
+      stationProto: FlagshipCrescentVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Strike Archon {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: VesselIcon
+        iffIcon:
+          sprite: _Crescent/ShipIcons/ifficons.rsi
+          state: frigate
+      - type: VesselDesignation
+        designation: vessel-designation-strikefrigate
+      - type: StationJobs
+        overflowJobs: []
+        availableJobs:
+          APRTKanoneerATH: [ 1, 1 ]
+          APRTSanitatATH: [ 1, 1 ]
+          APRTSoldatATH: [ 2, 2 ]
