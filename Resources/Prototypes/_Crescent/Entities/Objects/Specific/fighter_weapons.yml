@@ -11,9 +11,8 @@
   - type: Mech
   - type: CanBeHeatTracked
   - type: ProximityFuseTarget
-  - type: EntityVesselIcon
   - type: Physics
-    bodyType: Dynamic # THIS MAY BE THE CAUSE OF MASSIVE PERFORMANCE ISSUES. I DON'T ACTUALLY KNOW BUT IT HAS COLLISIONS, SO..
+    bodyType: Dynamic
   - type: Fixtures
     fixtures:
       fix1:
@@ -44,6 +43,7 @@
 - type: entity
   id: MediumFighter
   parent: BaseFighter
+  abstract: true
   components:
   - type: Mech
     equipmentWhitelist:
