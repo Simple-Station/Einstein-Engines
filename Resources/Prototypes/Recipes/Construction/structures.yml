@@ -87,6 +87,11 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
+    - type: RCDDeconstructable
+      rcdScrappable: true
+      cost: 6
+      delay: 8
+      fx: EffectRCDDeconstruct8
 
 - type: construction
   name: clock wall

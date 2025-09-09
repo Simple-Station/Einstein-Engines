@@ -523,10 +523,21 @@ public class RCDSystem : EntitySystem
 
                 return false;
             }
+            if (component.IsScrapper && !deconstructible.RcdScrappable)
+            {
+                if (popMsgs)
+                    _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
 
+                return false;
+            }
             // The object is not in the whitelist
             if (!deconstructible.Deconstructable)
             {
+                if (deconstructible.RcdScrappable && component.IsScrapper)
+                {
+                    return true;
+                }
+                else
                 if (popMsgs)
                     _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
 

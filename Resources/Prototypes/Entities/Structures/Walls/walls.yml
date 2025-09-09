@@ -50,6 +50,12 @@
   - type: RadiationBlocker
     resistance: 1
   - type: BlockWeather
+  - type: RCDDeconstructable
+    rcdScrappable: true
+    deconstructable: false
+    cost: 6
+    delay: 8
+    fx: EffectRCDDeconstruct8
 
 - type: entity
   parent: BaseWall
@@ -601,6 +607,10 @@
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallicStrong
+  - type: RCDDeconstructable
+    cost: 6
+    delay: 8
+    fx: EffectRCDDeconstruct8
   - type: Destructible
     thresholds:
     - trigger:

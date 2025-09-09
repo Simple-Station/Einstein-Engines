@@ -309,7 +309,7 @@
   description: A heavily modified DEW-17 laser pistol, its battery connection point has ben replaced with a miniature RTG capable of recharging the weapon indefinitely.
   components:
   - type: Item
-    size: Normal  
+    size: Normal
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/cycler.rsi
     layers:
@@ -406,3 +406,17 @@
         amount: 1
       - id: MagazineBoxHeavyRifle
         amount: 1
+
+# @baldy (baldy) donor gun
+- type: entity
+  name: SAW Plasma Cutter
+  parent: BaseWeaponShotgun
+  id: WeaponDonorPlasmaCutter
+  description:
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/plasma_cutter.rsi
+  - type: RCD
+    isScrapper: true
+    availablePrototypes:
+    - Deconstruct

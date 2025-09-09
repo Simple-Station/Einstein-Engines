@@ -20,6 +20,11 @@
       damageContainer: StructuralInorganic
       damageModifierSet: StructuralMetallicStrong
     - type: Destructible
+    - type: RCDDeconstructable
+      rcdScrappable: true
+      cost: 6
+      delay: 8
+      fx: EffectRCDDeconstruct8
       thresholds:
         - trigger:
             !type:DamageTrigger
