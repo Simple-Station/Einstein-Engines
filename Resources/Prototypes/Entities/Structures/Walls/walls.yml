@@ -57,6 +57,11 @@
     delay: 8
     fx: EffectRCDDeconstruct8
 
+- type: weightedRandomEntity
+  id: WallScrapItemOutputs
+  weights:
+
+
 - type: entity
   parent: BaseWall
   id: WallBrick

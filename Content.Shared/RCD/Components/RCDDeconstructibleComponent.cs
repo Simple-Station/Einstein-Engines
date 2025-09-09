@@ -1,6 +1,7 @@
 using Content.Shared.RCD.Systems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 
 namespace Content.Shared.RCD.Components;
 
@@ -8,6 +9,8 @@ namespace Content.Shared.RCD.Components;
 [Access(typeof(RCDSystem))]
 public sealed partial class RCDDeconstructableComponent : Component
 {
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IPrototypeManager _protoMan = default!;
     /// <summary>
     /// Number of charges consumed when the deconstruction is completed
     /// </summary>
@@ -45,4 +48,11 @@ public sealed partial class RCDDeconstructableComponent : Component
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public bool RcdScrappable = false;
+
+    /// <summary>
+    /// Spawns item when object is scrapped.
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    var item = _protoMan.Index<WeightedRandomEntityPrototype>(RCDDeconstructableComponent.OutputItemField).Pick(_random);
+    var reward = EntityManager.SpawnNextToOrDrop(item, wallUid);
 }
