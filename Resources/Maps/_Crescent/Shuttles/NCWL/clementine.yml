@@ -2084,7 +2084,7 @@ entities:
     - type: Transform
       pos: 4.5,17.5
       parent: 1
-- proto: BaseWeaponTurretNeedlerNCWL
+- proto: BaseWeaponTurretNeedlerFilled
   entities:
   - uid: 1159
     components:
@@ -15102,7 +15102,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -9.164051,-12.443517
       parent: 1
-- proto: WeaponTurretMortarNCWL
+- proto: WeaponTurretMortarFilled
   entities:
   - uid: 150
     components:
