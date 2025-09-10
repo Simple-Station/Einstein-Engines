@@ -60,14 +60,6 @@
   materials:
     Steel: 900
 
-- type: latheRecipe
-  id: MagazineBoxCaselessRifle
-  result: MagazineBoxCaselessRifle
-  completetime: 1
-  materials:
-    Steel: 600
-
-
 # 4 GAUGE SHELLS
 - type: latheRecipe
   id: BoxShotgunIncendiary4g
