@@ -543,7 +543,7 @@
         shader: unshaded
   - type: GatheringProjectile
   - type: DamageMarkerOnCollide
-    onlyWorkOnFauna: true # Lavaland Change
+    onlyWorkOnFauna: false # Lavaland Change
     whitelist:
       components:
         - MobState

@@ -203,6 +203,7 @@
     damage:
       types:
         Slash: 36
+        Structural: 40
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 10
     heavyRateModifier: 1.25
@@ -214,6 +215,9 @@
     angle: 0
     animation: WeaponArcThrust
     range: 1.6
+  - type: Clothing
+    slots:
+    - Belt
   - type: Item
     size: Ginormous
     sprite: _Lavaland/Objects/Weapons/Crushers/crusher_machete-inhands.rsi
