@@ -35,7 +35,7 @@
   name: 90mm heavy mortar-pounder flatpack
   description: An artillery for medium ballistic hardpoint.
   icon: { sprite: _Crescent/Objects/Autoturrets/heavymortar.rsi, state: syndie_lethal }
-  productEntity: MortarFlatpack
+  productEntity: AutomortarFlatpack
   cost:
     ScrapSAW: 25
   categories:
