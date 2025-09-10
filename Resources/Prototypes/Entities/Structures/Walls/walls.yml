@@ -52,6 +52,8 @@
   - type: BlockWeather
   - type: RCDDeconstructable
     rcdScrappable: true
+    scrapResults:
+      - WallScrapItemOutputs
     deconstructable: false
     cost: 6
     delay: 8
@@ -60,6 +62,8 @@
 - type: weightedRandomEntity
   id: WallScrapItemOutputs
   weights:
+    SheetSteel10: 3
+    SheetGlass10: 3
 
 
 - type: entity
