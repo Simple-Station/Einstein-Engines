@@ -20,7 +20,6 @@
   - type: EncryptionKey
     channels:
     - Common
-    - Traffic
     defaultChannel: Common
   - type: Sprite
     layers:
