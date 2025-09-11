@@ -32,6 +32,8 @@
       damage:
         types:
           Heat: 40
+    - type: CanBeHeatTracked
+    - type: ProximityFuseTarget
     - type: InteractionOutline
     - type: Sprite
     - type: Appearance

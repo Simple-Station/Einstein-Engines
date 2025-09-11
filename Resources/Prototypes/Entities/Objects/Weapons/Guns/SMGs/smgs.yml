@@ -149,7 +149,7 @@
       stealGroup: HoSAntiqueWeapon
 
 - type: entity
-  name: PTA P-M85 Drozd 9x19mm
+  name: PTA P-M85 Drozd .327
   parent: BaseWeaponSubMachineGun
   id: WeaponSubMachineGunDrozd
   description: A fast very firing bullpup submachine gun. Manufactured by Pang Tai Arms and outsourced to mercenary factors in the area.
