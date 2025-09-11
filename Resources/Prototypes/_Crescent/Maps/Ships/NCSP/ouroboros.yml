@@ -5,7 +5,7 @@
   id: Ouroboros
   name: NCSP Ouroboros
   description: A Syndicate stealth carrier.
-  price: 62500
+  price: 65000 #65000 appraisegrid
   category: Medium
   group: None
   path: /Maps/_Crescent/Shuttles/NCSP/ouroboros.yml

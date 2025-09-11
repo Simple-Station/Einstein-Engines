@@ -43,7 +43,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: HomeguardLeaderNCWL
+    job: KommissarNCWL
 
 - type: entity
   parent: IDCardStandard
@@ -58,7 +58,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: CaptainNCWL
+    job: FleetkapitanNCWL
 
 - type: entity
   parent: IDCardStandard
@@ -73,22 +73,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: SoldatNCWL
-
-- type: entity
-  parent: IDCardStandard
-  id: NCWLIDCardMedicalLeader
-  name: NCWL ID card
-  components:
-  - type: Currency
-    price:
-      DogtagNCWL: 1
-  - type: Sprite
-    layers:
-    - state: default
-    - state: idcentcom
-  - type: PresetIdCard
-    job: DirectorNCWL
+    job: PartisanNCWL
 
 - type: entity
   parent: IDCardStandard
@@ -118,22 +103,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: DockmasterNCWL
-
-- type: entity
-  parent: IDCardStandard
-  id: NCWLIDCardLogisticWorker
-  name: NCWL ID card
-  components:
-  - type: Currency
-    price:
-      DogtagNCWL: 1
-  - type: Sprite
-    layers:
-    - state: default
-    - state: idcentcom
-  - type: PresetIdCard
-    job: DockhandNCWL
+    job: IndustryTaskmasterNCWL
 
 
 - type: entity
@@ -149,22 +119,7 @@
     - state: default
     - state: idcentcom
   - type: PresetIdCard
-    job: SupervisorNCWL
-
-- type: entity
-  parent: IDCardStandard
-  id: NCWLIDCardEngineeringWorker
-  name: NCWL ID card
-  components:
-  - type: Currency
-    price:
-      DogtagNCWL: 1
-  - type: Sprite
-    layers:
-    - state: default
-    - state: idcentcom
-  - type: PresetIdCard
-    job: EngineerNCWL
+    job: WorkerOverbossNCWL
 
 #syndicate#
 
@@ -1063,6 +1018,45 @@
   - type: PresetIdCard
     job: ArbeiterATH
 
+#anti psionic response team
+
+- type: entity
+  parent: IDCardStandard
+  id: APRTIDCardKanoneer
+  name: 43rd battlegroup ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: APRTKanoneerATH
+
+- type: entity
+  parent: IDCardStandard
+  id: APRTIDCardSanitat
+  name: 43rd battlegroup ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: APRTSanitatATH
+
+- type: entity
+  parent: IDCardStandard
+  id: APRTIDCardSoldat
+  name: 43rd battlegroup ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: APRTSoldatATH
+
+
 #misc
 
 - type: entity
@@ -1076,6 +1070,19 @@
     - state: idquartermaster
   - type: PresetIdCard
     job: GliessianSheriff
+
+- type: entity
+  parent: IDCardStandard
+  id: GliessIDCardDeputy
+  name: spacer ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idquartermaster
+  - type: PresetIdCard
+    job: GliessianDeputy
+
 
 - type: entity
   parent: IDCardStandard

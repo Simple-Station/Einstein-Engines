@@ -6,7 +6,6 @@
   - type: Item
     storedRotation: -90
   - type: Battery
-    pricePerJoule: 0.15
   - type: PowerCell
   - type: Explosive
     explosionType: Default
@@ -34,7 +33,7 @@
   - type: PowerCellVisuals
   - type: Riggable
   - type: HitscanBatteryAmmoProvider
-    proto: RedLightLaser
+    proto: RedLaser
     fireCost: 50
 
 - type: entity

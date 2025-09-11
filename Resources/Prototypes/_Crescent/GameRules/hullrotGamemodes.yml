@@ -5,13 +5,14 @@
 - type: gamePreset
   id: Adventure #FREEPLAY, DO NOT REMOVE
   alias:
-    - adventure
-    - hullrot
+  - adventure
+  - hullrot
   name: Freeplay
   showInVote: true
   description: The last days of Taypan. Lasts 2-4 hours.
   rules:
-    - Adventure
+  - Adventure
+  - HullrotEventScheduler
 
 
 # GAMERULES ARE WAHT DECIDES WHAT SPAWNS IN, BY EVERYTHING IN THE ADVENTURERULE COMPONENT
@@ -36,111 +37,157 @@
     gameMapsByID:
       PortBalreska:
         gameMapID: PortBalreska
-        posX: 0
-        posY: 9000
+        posX: 1500
+        posY: -9000
         IFFColor: Orange
         IFFFaction: NCWL
-      Freeport:
-        gameMapID: Freeport
-        posX: 7794
-        posY: 4500
+      Dochenskaya:
+        gameMapID: Dochenskaya
+        posX: 5250
+        posY: 6600
         IFFColor: IndianRed
         IFFFaction: TFSC
       GliessSanto:
         gameMapID: GliessSanto
-        posX: 4200
-        posY: -4500
+        posX: 0
+        posY: 0
         IFFColor: White
       Tatsumoto:
         gameMapID: Tatsumoto
         posX: 6000
-        posY: 1000
+        posY: 0
         IFFColor: White
         IFFFaction: SHI
       Countsman:
         gameMapID: Countsman
-        posX: 0
-        posY: 0
-        IFFColor: White
+        posX: -4800
+        posY: 9000
+        IFFColor: Purple
         IFFFaction: DSM
-      Taypan1AsteroidBelt:
-        gameMapID: Taypan1AsteroidBelt
-        posX: 3000
-        posY: 3500
-      Taypan2AsteroidBelt:
-        gameMapID: Taypan2AsteroidBelt
-        posX: 3000
-        posY: 5400
-      FaintSignal:
-        gameMapID: FaintSignal
-        posX: 0
-        posY: 0
-        randomOffsetX: 12100
-        randomOffsetY: 6000
+      TribalHideout:
+        gameMapID: TribalHideout
+        posX: -4800
+        posY: -3600
+        randomOffsetX: 2000
+        randomOffsetY: 2000
+      #      Aasim: #reenable whenever TAP is gameplay ready
+      #        gameMapID: Aasim
+      #        posX: 4500
+      #        posY: -4500
+      #      Wisp: #CyberdawnMothership whenever we have the map
+      #        gameMapID: Wisp #CyberdawnMothership
+      #        posX: 1500
+      #        posY: 3600
+      Jackal:
+        gameMapID: Jackal
+        posX: -10500
+        posY: -4500
+        IFFColor: IndianRed
+        IFFFaction: TFSC
+      Dawnbreaker:
+        gameMapID: Dawnbreaker
+        posX: -6500
+        posY: -2500
+        IFFColor: IndianRed
+        IFFFaction: TFSC
       Graveyard:
         gameMapID: Graveyard
-        posX: 7200
-        posY: 5500
+        posX: 4200
+        posY: 5700
       StrandedShip:
         gameMapID: StrandedShip
-        posX: 7250
-        posY: 5320
+        posX: 4275
+        posY: 5430
         HideIFF: true
       Fighter1:
         gameMapID: Fighter1
-        posX: 7730
-        posY: 5920
+        posX: 4995
+        posY: 6330
         HideIFF: true
       Fighter2:
         gameMapID: Fighter2
-        posX: 7721
-        posY: 5950
-        HideIFF: true
-      FogwreckedDerelict:
-        gameMapID: FogwreckedDerelict
-        posX: 1730
-        posY: 9920
+        posX: 4982
+        posY: 6525
         HideIFF: true
       SolarSailorDerelict:
         gameMapID: SolarSailorDerelict
-        posX: 7750
-        posY: 5170
+        posX: 5025
+        posY: 5205
         HideIFF: true
       ImperialHaulerWreck:
         gameMapID: ImperialHaulerWreck
-        posX: 7770
-        posY: 5750
+        posX: 4980
+        posY: 6075
         HideIFF: true
-      DerelictWaystation:
-        gameMapID: DerelictWaystation
-        posX: -3000
-        posY: 6500
+      FogwreckedDerelict:
+        gameMapID: FogwreckedDerelict
+        posX: 1800
+        posY: -10500
+        HideIFF: true
+      Craster:
+        gameMapID: Craster
+        posX: -10500
+        posY: 1500
+      Taypan1AsteroidBelt:
+        gameMapID: Taypan1AsteroidBelt
+        posX: -1050
+        posY: -6000
+      Taypan2AsteroidBelt:
+        gameMapID: Taypan2AsteroidBelt
+        posX: 4050
+        posY: -2700
+      Marchbelt:
+        gameMapID: Marchbelt
+        posX: -7500
+        posY: 6300
+      Deepbelt:
+        gameMapID: Deepbelt
+        posX: -4800
+        posY: -600
+      FaintSignal:
+        gameMapID: FaintSignal
+        posX: 3000
+        posY: 1500
+      TribalScrapyard:
+        gameMapID: TribalScrapyard
+        posX: 3600
+        posY: -5400
+      Hayes:
+        gameMapID: Hayes
+        posX: 4000
+        posY: 2800
+      AncientBattlefield:
+        gameMapID: AncientBattlefield
+        posX: 600
+        posY: 7500
 
-- type: gamePreset
-  id: VladzenaJackal
-  name: Hyperwar | NCWL VS GSC
-  showInVote: true
-  description: Port Vladzena defends against a surprise attack from the GSC Grinning Jackal.
-  rules:
-    - HyperwarNCWLvsGSC
+# lol this doesnt work cause vladzena is gone
 
-- type: entity
-  id: HyperwarNCWLvsGSC
-  parent: BaseGameRule
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: AdventureRule
-    gameMapsByID:
-      Vladzena:
-        gameMapID: Vladzena
-        posX: 0
-        posY: 9000
-        IFFColor: Orange
-      Jackal:
-        gameMapID: Jackal
-        posX: 7794
-        posY: 4500
-        IFFColor: IndianRed
+# - type: gamePreset
+#   id: VladzenaJackal
+#   name: Hyperwar | NCWL VS GSC
+#   showInVote: true
+#   description: Port Vladzena defends against a surprise attack from the GSC Grinning Jackal.
+#   rules:
+#   - HyperwarNCWLvsGSC
+
+# - type: entity
+#   id: HyperwarNCWLvsGSC
+#   parent: BaseGameRule
+#   categories: [ HideSpawnMenu ]
+#   components:
+#   - type: AdventureRule
+#     gameMapsByID:
+#       Vladzena:
+#         gameMapID: Vladzena
+#         posX: 0
+#         posY: 9000
+#         IFFColor: Orange
+#       Jackal:
+#         gameMapID: Jackal
+#         posX: 7794
+#         posY: 4500
+#         IFFColor: IndianRed
 
 - type: gamePreset
   id: Unionfall
@@ -148,7 +195,7 @@
   showInVote: true
   description: The NCWL Homeguard flees to a new home, after the destruction of Nova Belraska. A DSM punishment regimen intercepts them to regain their honor.
   rules:
-    - Unionfall
+  - Unionfall
 
 - type: entity
   id: Unionfall
@@ -161,7 +208,32 @@
         gameMapID: UnionfallNemesis
         posX: 3000
         posY: 0
-        IFFColor: IndianRed
+        IFFColor: Cyan
+      UnionfallLaelaps1:
+        gameMapID: UnionfallLaelaps
+        posX: 3030
+        posY: 0
+        IFFColor: Cyan
+      UnionfallLaelaps2:
+        gameMapID: UnionfallLaelaps
+        posX: 2970
+        posY: 0
+        IFFColor: Cyan
+      UnionfallClementine:
+        gameMapID: UnionfallClementine
+        posX: -3000
+        posY: 0
+        IFFColor: Orange
+      UnionfallGargut:
+        gameMapID: UnionfallGargut
+        posX: -3030
+        posY: 0
+        IFFColor: Orange
+      UnionfallSasha:
+        gameMapID: UnionfallSasha
+        posX: -2970
+        posY: 0
+        IFFColor: Orange
       UnionfallGraceBarrierDSM:
         gameMapID: UnionfallGraceBarrierDSM
         posX: 3000
@@ -172,11 +244,6 @@
         posX: 1500
         posY: 0
         HideIFF: true
-      Unionfall-Clementine:
-        gameMapID: UnionfallClementine
-        posX: -3000
-        posY: 0
-        IFFColor: Orange
       UnionfallGraceBarrierNCWL:
         gameMapID: UnionfallGraceBarrierNCWL
         posX: -3000

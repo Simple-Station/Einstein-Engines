@@ -1095,7 +1095,7 @@ entities:
     - type: Transform
       pos: -2.5,3.5
       parent: 1
-- proto: MagazineGrenadeBlast
+- proto: MagazineRocketHighYield
   entities:
   - uid: 18
     components:
@@ -1185,7 +1185,7 @@ entities:
     - type: Transform
       pos: 5.801818,1.2698609
       parent: 1
-- proto: NTVulcanTurret
+- proto: NTVulcanTurretFilled
   entities:
   - uid: 68
     components:
@@ -1762,7 +1762,7 @@ entities:
       parent: 1
     - type: Physics
       canCollide: False
-- proto: ShuttleGunMissileRack
+- proto: ShuttleGunMissileRackFilled
   entities:
   - uid: 17
     components:

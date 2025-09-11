@@ -8,6 +8,8 @@
   - type: Sprite
   - type: Item
     size: Huge
+    shape:
+    - 0,0,5,2
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/l6saw.rsi
     quickEquip: false

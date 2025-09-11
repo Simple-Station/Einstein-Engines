@@ -1,10 +1,15 @@
 - type: vendingMachineInventory
   id: NanoMedInventory
   startingInventory:
-    Brutepack: 6
-    Ointment: 6
-    Bloodpack: 6
-    Gauze: 6 
-    EpinephrineChemistryBottle: 3
-    Syringe: 3
-    Tourniquet: 3 #Goobstation - ParamedHypo
+    HandheldHealthAnalyzer: 6
+    Brutepack: 10
+    Ointment: 10
+    Gauze: 10 
+    Bloodpack: 10
+    EpinephrineChemistryBottle: 6
+    Syringe: 6
+    Tourniquet: 6
+    HypoMini: 2
+    BoxBodyBag: 6
+    Portafib: 2
+    ClothingEyesHudMedical: 6

@@ -6,6 +6,9 @@
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/muster.rsi
+  - type: Item
+    shape:
+    - 0,0,4,1
   - type: Gun
     fireRate: 4
     selectedMode: SemiAuto
@@ -28,6 +31,9 @@
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/rezerv.rsi
+  - type: Item
+    shape:
+    - 0,0,5,1
   - type: Gun
     fireRate: 4
     selectedMode: SemiAuto
@@ -48,6 +54,9 @@
   parent: BaseWeaponRifle
   description: An overengineered rifle, sharing multiple features with the C-20R SMG, such as a odd magazine angle and automatic magazine ejection. Chambered in 7.62x51mm USM rounds.
   components:
+  - type: Item
+    shape:
+    - 0,0,5,1
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/legionnaire.rsi
     layers:
@@ -95,6 +104,9 @@
   id: WeaponSubMachineGunPTAAsVal
   description: A robust rifle with an inbuilt suppressor. Features a special fast-burst mode to increase hit probability. Chambered in 9x39mm caseless rounds.
   components:
+  - type: Item
+    shape:
+    - 0,0,4,1
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/asval.rsi
     layers:
@@ -146,6 +158,9 @@
   id: WeaponRifleNCWLBatanya
   description: An iconic weapon of war from the Union Foundry. Developed for use by their Homeguard. Comes equipped with NightGlo tracer dot sights. Chambered in 7.62x51mm, the proletariat's chamber.
   components:
+  - type: Item
+    shape:
+    - 0,0,5,1
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/batanya.rsi
     layers:
@@ -198,6 +213,9 @@
   id: WeaponRifleGoro
   description: A clunky battle rifle produced by Shinohara Heavy Industries for the civilian market. Often overlooked by more experienced solos and mercs for more rapid-firing alternatives - it's only saving grace is the heavy caliber.
   components:
+  - type: Item
+    shape:
+    - 0,0,5,1
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/goro.rsi
     layers:
@@ -208,7 +226,7 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/goro.rsi
   - type: Gun
-    fireRate: 4.8
+    fireRate: 3.75
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/rifle_1/rifle_gunshot_2.ogg
   - type: ChamberMagazineAmmoProvider
@@ -246,11 +264,14 @@
 
 
 - type: entity
-  name: PTA D5 Takemura 7.62x51mm
+  name: PTA D5 Takemura 7.62x51mm/5.56x45mm
   parent: BaseWeaponRifle
   id: WeaponRifleTakemura
-  description: A tactical battle rifle from the Pang Tai Arms design labs. All combat. All the time. Chambered in 7.62x51mm.
+  description: A multicaliber fast shooting battle rifle from the Pang Tai Arms design labs. Cabable of shooting both 7.62x51mm and 5.56x45mm. Chambered in 7.62x51mm.
   components:
+  - type: Item
+    shape:
+    - 0,0,5,1
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/takemura.rsi
     layers:
@@ -261,7 +282,7 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/takemura.rsi
   - type: Gun
-    fireRate: 6
+    fireRate: 8
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/rifle_1/rifle_gunshot_2.ogg
   - type: ChamberMagazineAmmoProvider
@@ -278,6 +299,7 @@
         whitelist:
           tags:
             - MagazineRifle
+            - MagazineLightRifle
       gun_chamber:
         name: Chamber
         startingItem: CartridgeRifle
@@ -285,6 +307,7 @@
         whitelist:
           tags:
             - CartridgeRifle
+            - CartridgeLightRifle
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
@@ -303,6 +326,9 @@
   id: WeaponRifleMiller
   description: A mil-grade assault rifle produced by Olywir Armaments, primarily for the Imperial Garrison and Imperial Naval Forces. Comes chambered in light rounds. All flair.
   components:
+  - type: Item
+    shape:
+    - 0,0,4,1
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/miller.rsi
     layers:
@@ -352,6 +378,9 @@
   id: WeaponRifleFAL
   description: Reverse-engineered from Imperial light battle rifle designs. Sacrifices heavier calibers for better rifling, allowing for more rapid fire.
   components:
+  - type: Item
+    shape:
+    - 0,0,4,1
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/fal.rsi
     layers:
@@ -397,14 +426,14 @@
 
 
 - type: entity
-  name: NCSP AK-74U Krinkov 5.56x45mm
+  name: NCSP AKS-74U Krinkov 5.56x45mm
   parent: BaseWeaponRifle
   id: WeaponRifleKrinkov
-  description: A shortened battle rifle, replicated from Terran designs by the Coalition - commonly attributed to terrorist groups. Cheap and easily made.
+  description: A shortened version of the AKS-74, this one has its foldable stock removed and ben rechambered to 5.56x45mm, commonly attributed to terrorist groups. Cheap and easily made.
   components:
   - type: Item
     shape:
-    - 0,0,4,1
+    - 0,0,3,1
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/krinkov.rsi
     layers:
@@ -415,6 +444,10 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/krinkov.rsi
   - type: Gun
+    minAngle: 20
+    maxAngle: 50
+    angleIncrease: 15
+    angleDecay: 16
     fireRate: 5
     soundGunshot:
       collection: AK_74_Gunshots
@@ -456,6 +489,9 @@
   id: WeaponRifleHalyadMarksman
   description: A hefty long-range precision rifle. Packs devastating 12.7x99mm punches. Developed as part of Pang Tai's mercenary package.
   components:
+  - type: Item
+    shape:
+    - 0,0,5,2
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/halyad.rsi
     layers:
@@ -466,7 +502,7 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/halyad.rsi
   - type: Gun
-    fireRate: 2.5
+    fireRate: 3.5
     soundGunshot:
       path: /Audio/_Crescent/Weapons/Guns/dmr_1/dmr_gunshot_2.ogg
     selectedMode: SemiAuto
@@ -509,6 +545,9 @@
   id: WeaponRifleHoundMarksman
   description: A cheap marksman's rifle, one of the few weapons produced for an external market by Shinohara Heavy Industries. Often seen in the hands of wanna-be mercs and thugs.
   components:
+  - type: Item
+    shape:
+    - 0,0,4,1
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/hound.rsi
     layers:
@@ -560,6 +599,9 @@
   id: WeaponRifleHunter
   description: A marksman's rifle of foreign make, repurposed as a mainline battle carbine amongst the predators of this Sector.
   components:
+  - type: Item
+    shape:
+    - 0,0,4,1
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/hunter.rsi
     layers:
@@ -611,6 +653,9 @@
   id: WeaponRifleMayflower
   description: A hefty battle carbine produced by the Coalition for the external independent market. Seen often in the hands of the Gorlex during harassment raids.
   components:
+  - type: Item
+    shape:
+    - 0,0,4,1
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/mayflower.rsi
     layers:
@@ -661,6 +706,9 @@
   id: WeaponRifleBarghest
   description: A hefty CQC battle rifle, built with a fast-burst mode copied from the PTA T3 Whisper. Chambered in the devastating 12.7x99mm round.
   components:
+  - type: Item
+    shape:
+    - 0,0,5,2
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/barghest.rsi
     layers:
@@ -710,3 +758,230 @@
   - type: Appearance
   - type: StaticPrice
     price: 1000
+
+- type: entity
+  name: NCSP SVD 12.7x99mm
+  parent: BaseWeaponRifle
+  id: WeaponRifleSVDMarksman
+  description: A large designated marksman rifle. Chambered in 12.7x99mm for long range engagements. Commonly in use by terrorist militia forces.
+  components:
+  - type: Item
+    shape:
+    - 0,0,5,1
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/svds.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/svds.rsi
+  - type: Gun
+    fireRate: 3.5
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/dmr_1/dmr_gunshot_2.ogg
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineHeavyRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineHeavyRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeHeavyRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeHeavyRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 1000
+
+- type: entity
+  name: HGS ZoG-44 Hund 5.56x45mm
+  parent: BaseWeaponRifle
+  id: WeaponRifleSTG44
+  description: The Zorngewehr 44. A foreign antique assault rifle design salvaged and hastily manufactured for specialized use. Chambered in 5.56x45.
+  components:
+  - type: Item
+    shape:
+    - 0,0,4,1
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/stg44.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/stg44.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/M16/rifle_gunshot_2.ogg
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+      - FullAuto
+    fireRate: 3.7
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineLightRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineLightRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeLightRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 2000
+
+- type: entity
+  name: HGS BoG-98k Bolzen 7.62x51mm
+  parent: WeaponSniperNCWLNovomosin
+  id: WeaponSniperKar98K
+  description: The Boltgewehr 98 kurz. An ancient design that has no place in any current military doctrine. Roughly manufactured for specialized use. Chambered in 7.62x51mm.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/kar98k.rsi
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/kar98k.rsi
+
+- type: entity
+  name: HGS VAP-9B Ruusu  7.62x51mm
+  parent: BaseWeaponRifle
+  id: WeaponRifleRuusu
+  description: The Vihainen Aseperhe 9B. A sleek advanced battle rifle paired with an integral supressor. Chambered in 7.62x51mm.
+  components:
+  - type: Item
+    shape:
+    - 0,0,4,1
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/ruusu.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/ruusu.rsi
+  - type: Gun
+    fireRate: 4
+    damageModifier: 1.4
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/supressed_1/supressed_gunshot_4.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 3500
+
+- type: entity
+  name: HGS VAP-10K Karbiini 5.56x45mm
+  parent: BaseWeaponRifle
+  id: WeaponRifleKarbiini
+  description: The Vihainen Aseperhe 10K. An advanced rapid deployment rifle delivered in a lightweight and compact package. Chambered in 5.56x45mm.
+  components:
+  - type: Item
+    shape:
+    - 0,0,3,1
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/karbiini.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/karbiini.rsi
+  - type: Gun
+    fireRate: 6
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/rifle_2/rifle_gunshot_2.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineLightRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineLightRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeLightRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeLightRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 3000

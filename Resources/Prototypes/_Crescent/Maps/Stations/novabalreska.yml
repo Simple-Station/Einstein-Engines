@@ -20,6 +20,8 @@
           designation: vessel-designation-headquarters
         - type: VesselDescription
           description: A sturdy Communard fortress constructed around a bleeding gash in our reality.
+        - type: VesselMusic
+          ambientMusicPrototype: PortBalreskaMusic
         - type: Grammar
           attributes:
             proper: true
@@ -27,13 +29,10 @@
           overflowJobs: []
           availableJobs:
             CommandantNCWL: [ 1, 1 ]
-            HomeguardLeaderNCWL: [ 2, 2 ]
-            CaptainNCWL: [ 5, 5 ]
-            SoldatNCWL: [ 20, 20 ]
-            DirectorNCWL: [ 1, 1 ]
-            DoctorNCWL: [ 10, 10 ]
-            SupervisorNCWL: [ 1, 1 ]
-            EngineerNCWL: [ 10, 10 ]
-            DockmasterNCWL: [ 1, 1 ]
-            DockhandNCWL: [ 10, 10 ]
-            WorkerNCWL: [ 30, 30 ]
+            KommissarNCWL: [ 1, 1 ]
+            FleetkapitanNCWL: [ 5, 5 ]
+            PartisanNCWL: [ 15, 15 ]
+            DoctorNCWL: [ 5, 5 ]
+            IndustryTaskmasterNCWL: [ 2, 2 ]
+            WorkerOverbossNCWL: [ 2, 2 ]
+            WorkerNCWL: [ 20, 20 ]

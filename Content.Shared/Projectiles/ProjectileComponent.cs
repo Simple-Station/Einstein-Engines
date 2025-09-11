@@ -1,7 +1,9 @@
 using Content.Shared.Damage;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
+using Robust.Shared.Physics.Dynamics;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Shared.Projectiles;
 
@@ -91,6 +93,12 @@ public sealed partial class ProjectileComponent : Component
     [DataField]
     public bool Penetrate;
 
+    /// <summary>
+    ///     Collision mask of what not to penetrate if <see cref="Penetrate"/> is true.
+    /// </summary>
+    [DataField(customTypeSerializer: typeof(FlagSerializer<CollisionMask>))]
+    public int NoPenetrateMask = 0;
+
     [NonSerialized]
     public List<EntityUid> IgnoredEntities = new();
     // Goobstation end
@@ -103,11 +111,6 @@ public sealed partial class ProjectileComponent : Component
     // stamina damage that ignores any armor/buff/etc SPCR 2025
     [DataField]
     public float stoppingPower = 0;
-
-    /// <summary>
-    ///  modifies some behaviour regarding fixture checks for the projectile system, set by phasePreventSystem, SPCR 2025
-    /// </summary>
-    public bool raycasting = false;
 
     [DataField("gibsOnHit")]
     public bool gibsOnHit = false;

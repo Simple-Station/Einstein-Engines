@@ -20,13 +20,18 @@
     TradeGoodAmmo: 9999
     TradeGoodRice: 9999
 
-
 - type: vendingMachineInventory
-  id: InterdyneDispensary
+  id: GliessSantoDispensary
   startingInventory:
     TradeGoodCybernetics: 9999
     TradeGoodAntibiotics: 9999
     TradeGoodAlcohol: 9999
+
+- type: vendingMachineInventory
+  id: InterdyneDispensary
+  startingInventory:
+    TradeGoodAntibiotics: 9999
+    TradeGoodCybernetics: 9999
 
 - type: vendingMachineInventory
   id: SawDispensary

@@ -1,0 +1,81 @@
+- type: job
+  id: APRTKanoneerATH
+  name: job-name-kanoneer
+  description: job-description-kanoneer
+  playTimeTracker: JobKanoneerATH
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
+        - Reptilian
+        - Oni
+    - !type:FactionRequirement
+      factionID: "ATH"
+  weight: 82
+  startingGear: APRTKanoneerGear
+  alwaysUseSpawner: true
+  icon: "JobIconKanoneer"
+  requireAdminNotify: false
+  supervisors: job-supervisors-ath
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-kanoneer
+      - type: BibleUser
+  access:
+  - EmergencyShuttleRepealAll
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - HeadOfSecurity
+  - ResearchDirector
+  - Frontier # Frontier
+  - Cryogenics
+  - Security
+  - Detective
+  - Armory
+  - Brig
+  - Lawyer
+  - Engineering
+  - Mail # Frontier
+  - Medical
+  - Quartermaster
+  - Salvage
+  - Cargo
+  - Research
+  - StationTrafficController # Frontier
+  - Maintenance
+  - External
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Command
+  - Maintenance
+  - Service
+  - External
+  - Authority
+
+- type: startingGear
+  id: APRTKanoneerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAuthorityKanoneer
+    shoes: ClothingShoesBootsMagCombat
+    head: ClothingHeadHatAuthorityKanoneer
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitAuthorityPanzer
+    suitstorage: JetpackBlueFilled
+    id: APRTKanoneerPDA
+    ears: ClothingHeadsetAuthority
+    pocket1: HandHeldMassScannerEE
+    pocket2: ExtendedEmergencyOxygenTankFilled
+    belt: ClothingBeltAuthorityWebbingFilled
+  inhand:
+  - WeaponRifleTakemura
+  - WeaponLauncherDisposableRocket

@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: FoodBarSupplyGliess
+  icon:
+    sprite: Objects/Consumable/Drinks/beerglass.rsi
+    state: icon
+  product: CrateFoodBarSupply
+  cost: 750
+  category: cargoproduct-category-name-food
+  group: gliess

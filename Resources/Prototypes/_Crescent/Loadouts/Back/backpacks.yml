@@ -11,15 +11,12 @@
     - !type:CharacterJobRequirement
       jobs:
         - CommandantNCWL
-        - HomeguardLeaderNCWL
-        - CaptainNCWL
-        - SoldatNCWL
-        - DirectorNCWL
+        - KommissarNCWL
+        - FleetkapitanNCWL
+        - PartisanNCWL
         - DoctorNCWL
-        - SupervisorNCWL
-        - EngineerNCWL
-        - DockmasterNCWL
-        - DockhandNCWL
+        - WorkerOverbossNCWL
+        - IndustryTaskmasterNCWL
         - WorkerNCWL
 
 - type: loadout
@@ -35,15 +32,12 @@
     - !type:CharacterJobRequirement
       jobs:
         - CommandantNCWL
-        - HomeguardLeaderNCWL
-        - CaptainNCWL
-        - SoldatNCWL
-        - DirectorNCWL
+        - KommissarNCWL
+        - FleetkapitanNCWL
+        - PartisanNCWL
         - DoctorNCWL
-        - SupervisorNCWL
-        - EngineerNCWL
-        - DockmasterNCWL
-        - DockhandNCWL
+        - WorkerOverbossNCWL
+        - IndustryTaskmasterNCWL
         - WorkerNCWL
 
 - type: loadout
@@ -59,15 +53,12 @@
     - !type:CharacterJobRequirement
       jobs:
         - CommandantNCWL
-        - HomeguardLeaderNCWL
-        - CaptainNCWL
-        - SoldatNCWL
-        - DirectorNCWL
+        - KommissarNCWL
+        - FleetkapitanNCWL
+        - PartisanNCWL
         - DoctorNCWL
-        - SupervisorNCWL
-        - EngineerNCWL
-        - DockmasterNCWL
-        - DockhandNCWL
+        - WorkerOverbossNCWL
+        - IndustryTaskmasterNCWL
         - WorkerNCWL
 
 - type: loadout
@@ -280,6 +271,7 @@
         - Spacer
         - GliessianDockmaster
         - GliessianSheriff
+        - GliessianDeputy
 
 - type: loadout
   id: LoadoutBackpackSHISatchel
@@ -324,6 +316,7 @@
         - Spacer
         - GliessianDockmaster
         - GliessianSheriff
+        - GliessianDeputy
 
 - type: loadout
   id: LoadoutBackpackSHIDuffel
@@ -360,6 +353,7 @@
         - Spacer
         - GliessianDockmaster
         - GliessianSheriff
+        - GliessianDeputy
 
 - type: loadout
   id: LoadoutBackpackCMM
@@ -380,6 +374,8 @@
         - MinutemanCMM
         - OrdnancemanCMM
         - WatchmasterCMM
+        - GliessianDeputy
+        - GliessianSheriff
 
 - type: loadout
   id: LoadoutBackpackCMMSatchel
@@ -400,6 +396,8 @@
         - MinutemanCMM
         - OrdnancemanCMM
         - WatchmasterCMM
+        - GliessianSheriff
+        - GliessianDeputy
 
 - type: loadout
   id: LoadoutBackpackCMMDuffel
@@ -420,3 +418,5 @@
         - MinutemanCMM
         - OrdnancemanCMM
         - WatchmasterCMM
+        - GliessianSheriff
+        - GliessianDeputy

@@ -3,20 +3,20 @@
   name: job-name-overseer
   description: job-description-overseer
   playTimeTracker: JobOverseerSRM
+  weight: 99
+  startingGear: OverseerGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconOverseer"
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement
+    - !type:FactionRequirement
+      factionID: "SRM"
     - !type:CharacterSpeciesRequirement
       species:
         - Human
-    - !type:FactionRequirement
-      factionID: "SRM"
-  weight: 27
-  startingGear: OverseerGear
-  alwaysUseSpawner: true
-  icon: "JobIconOverseer"
-  requireAdminNotify: false
-  supervisors: job-supervisors-imperial
-  canBeAntag: false
   access:
   - Command
   - Hunter

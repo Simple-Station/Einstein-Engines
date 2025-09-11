@@ -208,6 +208,119 @@
       - id: EmergencyMedipen
       - id: SpaceMedipen
 
+# Anti Psionic Response Team - ATH
+
+- type: entity
+  id: ClothingBeltAuthorityWebbingFilled
+  parent: ClothingBeltAuthorityWebbing
+  name: ballistic combat webbing
+  suffix: Filled
+  components:
+  - type: Item
+    size: Ginormous
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,7,1
+  - type: StorageFill
+    contents:
+    - id: MagazineRifle
+      amount: 5
+    - id: PTAWarcrimeHandgrenade
+      amount: 2
+    - id: PTAImpactHandgrenade
+      amount: 2
+
+- type: entity
+  id: ClothingBeltAuthorityBattleBeltFilled
+  parent: ClothingBeltAuthorityBattleBelt
+  name: panzer battle belt
+  suffix: Filled
+  components:
+  - type: Item
+    size: Ginormous
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,7,1
+  - type: StorageFill
+    contents:
+    - id: MagazineBoxRifle
+      amount: 4
+    - id: PTAWarcrimeHandgrenade
+      amount: 2
+    - id: Gauze
+      amount: 2
+
+- type: entity
+  id: ClothingBeltAuthorityPouchesFilled
+  parent: ClothingBeltAuthorityPouches
+  name: tactical combat pouches
+  suffix: Filled
+  components:
+  - type: Item
+    size: Ginormous
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,7,1
+  - type: StorageFill
+    contents:
+    - id: MagazineRifle
+      amount: 5
+    - id: PTAWarcrimeHandgrenade
+      amount: 2
+    - id: PTAImpactHandgrenade
+      amount: 2
+
+- type: entity
+  id: ClothingBeltAuthorityDroppouchesFilled
+  parent: ClothingBeltAuthorityDroppouches
+  name: tactical droppouches
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: MagazineRifle
+      amount: 3
+    - id: EpinephrineChemistryBottle
+      amount: 1
+    - id: EphedrineChemistryBottle
+      amount: 1
+    - id: OmnizineChemistryBottle
+    - id: MedkitCombatFilled
+    - id: Syringe
+      amount: 1
+    - id: Gauze
+      amount: 1
+
+# Anti Psionic Response Team - SRM
+
+- type: entity
+  id: ClothingBeltTacticalRigFilled
+  parent: ClothingBeltTacticalRig
+  name: tactical rig
+  suffix: Filled
+  components:
+  - type: Item
+    size: Ginormous
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,7,1
+  - type: StorageFill
+    contents:
+    - id: MagazineLightRifle
+      amount: 4
+    - id: M14IncendiaryHandgrenade
+      amount: 1
+    - id: M18SmokeHandgrenade
+      amount: 1
+    - id: F1Handgrenade
+      amount: 1
+    - id: Gauze
+      amount: 1
+
 #CONSCRIPT - DSM
 
 - type: entity
@@ -393,3 +506,13 @@
     containers:
       item:
       - DSMRapier
+
+- type: entity
+  id: ClothingBeltSheathNCWLKukriFilled
+  parent: ClothingBeltSheathNCWLKukri
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - NCWLKukri

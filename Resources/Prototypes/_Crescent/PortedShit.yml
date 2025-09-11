@@ -59,7 +59,7 @@
     sprite: _Crescent/Objects/Misc/abyssal_survey.rsi
     state: abyssal_survey
   - type: ResearchDisk
-    points: 15000
+    points: 30000
   - type: StaticPrice
     price: 25000
   - type: Currency
@@ -83,7 +83,7 @@
     tierWeightPrototype: TechDiskTierWeights
   - type: Currency
     price:
-      ScrapSAW: 5
+      ScrapSAW: 15
   - type: StaticPrice
     price: 20000
 
@@ -97,9 +97,12 @@
     sprite: _Crescent/Objects/Misc/salvagedisk.rsi
     state: icon
   - type: ResearchDisk
-    points: 3000
+    points: 6000
+  - type: Currency
+    price:
+      ScrapSAW: 5
   - type: StaticPrice
-    price: 750
+    price: 3000
   - type: GuideHelp
     guides:
     - Science
@@ -114,9 +117,12 @@
     sprite: _Crescent/Objects/Misc/salvagedisksmall.rsi
     state: icon
   - type: ResearchDisk
-    points: 1000
+    points: 2000
+  - type: Currency
+    price:
+      ScrapSAW: 2
   - type: StaticPrice
-    price: 300
+    price: 1000
   - type: GuideHelp
     guides:
     - Science
@@ -130,8 +136,9 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 21
-        Blunt: 1
+        Piercing: 24
+    harmorPenetration: 6.5
+    stoppingPower : 2
 
   # Machines
 # Engineering
@@ -485,6 +492,17 @@
         - SmallMobMask  # Frontier
         layer:
         - MachineLayer
+
+- type: entity
+  id: ScrapMagnet
+  name: SHI baromagnetic scrap array
+  description: A large, ship-mounted magnetic device. When pointed in the direction of loose scrap, gathers the scavengable material with a miniature tractor beam and stores it in an internal compartment for later harvest.
+  parent: OreMagnet
+  components:
+  - type: Storage
+    whitelist:
+      tags:
+        - RawMaterial
 
 - type: entity
   parent: BaseBulletTrigger

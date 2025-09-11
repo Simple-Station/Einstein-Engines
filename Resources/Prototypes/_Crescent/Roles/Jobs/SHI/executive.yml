@@ -3,12 +3,22 @@
   name: job-name-executive
   description: job-description-executive
   playTimeTracker: JobExecutiveSHI
+  weight: 100
+  startingGear: ExecutiveGear
+  alwaysUseSpawner: true
+  requireAdminNotify: true
+  icon: "JobIconExecutive"
+  supervisors: job-supervisors-shi
+  canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
       min: 36000
     - !type:FactionRequirement
       factionID: "SHI"
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -17,13 +27,18 @@
         - Muted
         - Blindness
         - WheelchairBound
-  weight: 55
-  startingGear: ExecutiveGear
-  alwaysUseSpawner: true
-  icon: "JobIconExecutive"
-  requireAdminNotify: true
-  supervisors: job-supervisors-shi
-  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-shi-executive
+      - type: LanguageAdder
+        addSpoken:
+          - Kaishago
+          - Tradeband
+        addUnderstood:
+          - Kaishago
+          - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain
@@ -75,3 +90,4 @@
     id: ExecutivePDA
     pocket1: TradePassport
     ears: ClothingHeadsetShinohara
+    back: ClothingBackpackSHISatchel

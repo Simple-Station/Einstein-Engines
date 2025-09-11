@@ -104,7 +104,7 @@
       TradeGoodNanoTrasen: TradeDeedVeryHigh
       TradeGoodOldCyber: TradeDeedVeryHigh
       TradeGoodOldParts: TradeDeedVeryHigh
-      TradeGoodAntibiotics: TradeDeedVeryHigh
+      TradeGoodAntibiotics: TradeDeedNormal
       TradeGoodScrap: TradeDeedLow
       TradeGoodCybernetics: TradeDeedLow
       TradeGoodGunparts: TradeDeedHigh
@@ -147,7 +147,7 @@
       TradeGoodFabrics: TradeDeedVeryHigh
       TradeGoodMiltech: TradeDeedNormal
       TradeGoodAlloys: TradeDeedExotic
-      TradeGoodWine: TradeDeedExotic
+      TradeGoodWine: TradeDeedHigh
   - type: Sprite
     sprite: _Crescent/Structures/cargochute.rsi
     layers:
@@ -212,12 +212,10 @@
       NCWLIDCardFactionLeader: SpaceCash30000
       NCWLIDCardHomeguardLeader: SpaceCash30000
       NCWLIDCardHomeguardSquadCaptain: SpaceCash20000
+      NCWLIDCardHomeguardSoldat: SpaceCash15000
       NCWLIDCardLogisticLeader: SpaceCash20000
-      NCWLIDCardLogisticWorker: SpaceCash10000
-      NCWLIDCardMedicalLeader: SpaceCash20000
       NCWLIDCardMedicalWorker: SpaceCash10000
       NCWLIDCardEngineeringLeader: SpaceCash20000
-      NCWLIDCardEngineeringWorker: SpaceCash10000
       NCWLIDCardWorker: SpaceCash5000
       NCSPIDCardRingleader: SpaceCash30000
       NCSPIDCardLieutenant: SpaceCash30000
@@ -297,7 +295,7 @@
       WeaponPistolHimehabu: SpaceCash2500
       WeaponPistolComplianceImperial: SpaceCash2500
       WeaponPistolSmartpistol: SpaceCash2500
-      TradeGoodOrgans: SpaceCash12500
+      TradeGoodOrgans: SpaceCash10000
       TradeGoodDrugs: SpaceCash10000
       FoodAmbrosiaVulgaris: SpaceCash1000
   - type: Sprite
@@ -319,7 +317,7 @@
     defaultItem: TradeDeedStub
     inventory:
       TradeGoodAlcohol: TradeDeedLow
-      TradeGoodCybernetics: TradeDeedHigh
+      TradeGoodCybernetics: TradeDeedNormal
       TradeGoodGunparts: TradeDeedNormal
       TradeGoodAntibiotics: TradeDeedLow
       TradeGoodFlour: TradeDeedNormal
@@ -363,8 +361,44 @@
       TradeGoodSugar: TradeDeedLow
       TradeGoodGoodScrap: TradeDeedHigh
       TradeGoodPlasma: TradeDeedExotic
-      TradeGoodWine: TradeDeedExotic
+      TradeGoodWine: TradeDeedHigh
       TradeGoodFabrics: TradeDeedVeryHigh
+      TradeGoodNanoTrasen: TradeDeedHigh
+      TradeGoodOldCyber: TradeDeedHigh
+      TradeGoodOldParts: TradeDeedHigh
+  - type: Sprite
+    sprite: _Crescent/Structures/cargochute.rsi
+    layers:
+    - state: "icon"
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#9dc5c9"
+
+- type: entity
+  parent: BaseDispenser
+  id: GliessSantoCargoChute
+  name: gliess santo cargo turn-in chute
+  description: A machine with piping systems that lead deep into the bowels of the station, accepting trade goods for deeds.
+  components:
+  - type: Anchorable
+    flags:
+    - None
+  - type: Dispenser
+    defaultItem: TradeDeedStub
+    inventory:
+      TradeGoodAmmo: TradeDeedNormal
+      TradeGoodGunparts: TradeDeedNormal
+      TradeGoodScrap: TradeDeedLow
+      TradeGoodRice: TradeDeedNormal
+      TradeGoodFlour: TradeDeedLow
+      TradeGoodSugar: TradeDeedLow
+      TradeGoodFabrics: TradeDeedVeryHigh
+      TradeGoodMiltech: TradeDeedNormal
+      TradeGoodAlloys: TradeDeedExotic
+      TradeGoodGoodScrap: TradeDeedVeryHigh
+      TradeGoodPlasma: TradeDeedExotic
+      TradeGoodWine: TradeDeedHigh
       TradeGoodNanoTrasen: TradeDeedHigh
       TradeGoodOldCyber: TradeDeedHigh
       TradeGoodOldParts: TradeDeedHigh
@@ -390,19 +424,19 @@
     defaultItem: TradeDeedStub
     inventory:
       TradeGoodAmmo: TradeDeedNormal
-      TradeGoodGunparts: TradeDeedNormal
+      TradeGoodAlcohol: TradeDeedHigh
+      TradeGoodGunparts: TradeDeedLow
       TradeGoodScrap: TradeDeedLow
       TradeGoodRice: TradeDeedNormal
       TradeGoodFlour: TradeDeedLow
       TradeGoodSugar: TradeDeedLow
       TradeGoodFabrics: TradeDeedVeryHigh
-      TradeGoodMiltech: TradeDeedNormal
-      TradeGoodAlloys: TradeDeedExotic
-      TradeGoodGoodScrap: TradeDeedVeryHigh
-      TradeGoodPlasma: TradeDeedExotic
-      TradeGoodWine: TradeDeedExotic
+      TradeGoodMiltech: TradeDeedExotic
+      TradeGoodAlloys: TradeDeedVeryHigh
+      TradeGoodPlasma: TradeDeedHigh
+      TradeGoodWine: TradeDeedHigh
       TradeGoodNanoTrasen: TradeDeedHigh
-      TradeGoodOldCyber: TradeDeedHigh
+      TradeGoodOldCyber: TradeDeedExotic
       TradeGoodOldParts: TradeDeedHigh
   - type: Sprite
     sprite: _Crescent/Structures/cargochute.rsi
@@ -469,7 +503,7 @@
       TradeGoodSugar: TradeDeedLow
       TradeGoodGoodScrap: TradeDeedExotic
       TradeGoodFabrics: TradeDeedVeryHigh
-      TradeGoodWine: TradeDeedExotic
+      TradeGoodWine: TradeDeedHigh
       TradeGoodPlasma: TradeDeedVeryHigh
       TradeGoodNanoTrasen: TradeDeedHigh
       TradeGoodOldCyber: TradeDeedHigh
@@ -553,12 +587,10 @@
       NCWLIDCardFactionLeader: SpaceCash30000
       NCWLIDCardHomeguardLeader: SpaceCash30000
       NCWLIDCardHomeguardSquadCaptain: SpaceCash20000
+      NCWLIDCardHomeguardSoldat: SpaceCash15000
       NCWLIDCardLogisticLeader: SpaceCash20000
-      NCWLIDCardLogisticWorker: SpaceCash10000
-      NCWLIDCardMedicalLeader: SpaceCash20000
       NCWLIDCardMedicalWorker: SpaceCash10000
       NCWLIDCardEngineeringLeader: SpaceCash20000
-      NCWLIDCardEngineeringWorker: SpaceCash10000
       NCWLIDCardWorker: SpaceCash5000
       NCSPIDCardRingleader: SpaceCash30000
       NCSPIDCardLieutenant: SpaceCash30000

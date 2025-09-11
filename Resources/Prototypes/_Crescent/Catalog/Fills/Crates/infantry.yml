@@ -25,7 +25,7 @@
 - type: entity
   id: CrateFreeportPistols
   parent: CrateSecgear
-  name: smuggled light armaments crate
+  name: smuggled light armaments case
   description: Basic light armaments, smuggled from outside sources.
   components:
   - type: StorageFill
@@ -39,9 +39,9 @@
 
 - type: entity
   id: CratePangtaiTakemura
-  parent: CrateSecgear
-  name: pang tai arms "Takemura" crate
-  description: A corporate assault rifle packaged in a stamped cargo crate.
+  parent: WeaponCaseRifle
+  name: pang tai arms "D5 Takemura" case
+  description: A fancy rifle cabable of shooting different calibers packaged in a stamped weapon case.
   components:
   - type: StorageFill
     contents:
@@ -52,9 +52,9 @@
 
 - type: entity
   id: CratePangtaiHalyad
-  parent: CrateSecgear
-  name: pang tai arms "Halyad" crate
-  description: A heavy marksman's rifle packaged in a stamped cargo crate.
+  parent: WeaponCaseRifle
+  name: pang tai arms "3AX Halyad" case
+  description: A heavy marksman's rifle packaged in a stamped weapon case.
   components:
   - type: StorageFill
     contents:
@@ -64,23 +64,10 @@
         amount: 2    
 
 - type: entity
-  id: CratePangtaiBarghest
-  parent: CrateSecgear
-  name: pang tai arms "Barghest" crate
-  description: A heavy marksman's rifle packaged in a stamped cargo crate.
-  components:
-  - type: StorageFill
-    contents:
-      - id: WeaponRifleBarghest
-        amount: 1
-      - id: MagazineHeavyRifle
-        amount: 2    
-
-- type: entity
   id: CratePangtaiCheshyre
-  parent: CrateSecgear
-  name: pang tai arms "Cheshyre" crate
-  description: A heavy operator's submachine gun packaged in a stamped cargo crate.
+  parent: WeaponCaseSmg
+  name: pang tai arms "P-M100 Cheshyre" case
+  description: A heavy operator's submachine gun packaged in a stamped weapon case.
   components:
   - type: StorageFill
     contents:
@@ -91,9 +78,9 @@
 
 - type: entity
   id: CratePangtaiRongyu
-  parent: CrateSecgear
-  name: pang tai arms "Rongyu" crate
-  description: A cheap six milimeter sidearm packaged in a stamped cargo crate.
+  parent: WeaponCasePistol
+  name: pang tai arms "BA-6 Rongyu" case
+  description: A cheap six milimeter sidearm packaged in a stamped weapon case.
   components:
   - type: StorageFill
     contents:
@@ -104,9 +91,9 @@
 
 - type: entity
   id: CratePangtaiViper
-  parent: CrateSecgear
-  name: pang tai arms "Viper" crate
-  description: A nine milimeter operator's handgun packaged in a stamped cargo crate.
+  parent: WeaponCasePistol
+  name: pang tai arms "BA-9 Viper" case
+  description: A nine milimeter operator's handgun packaged in a stamped weapon case.
   components:
   - type: StorageFill
     contents:
@@ -117,9 +104,9 @@
 
 - type: entity
   id: CratePangtaiDrozd
-  parent: CrateSecgear
-  name: pang tai arms "Drozd" crate
-  description: A heavy submachinegun packaged in a stamped cargo crate.
+  parent: WeaponCaseSmg
+  name: pang tai arms "P-M85 Drozd" case
+  description: A fast shooting submachinegun packaged in a stamped weapon case.
   components:
   - type: StorageFill
     contents:
@@ -129,10 +116,23 @@
         amount: 2  
 
 - type: entity
+  id: CratePangtaiVektor
+  parent: WeaponCaseSmg
+  name: pang tai arms "P-M50 Vektor" case
+  description: A cheap submachinegun packaged in a stamped weapon case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSubMachineGunPTAVektor
+        amount: 1
+      - id: MagazinePistol6mmSmg
+        amount: 2  
+
+- type: entity
   id: CratePangtaiPozhar
-  parent: CrateSecgear
-  name: pang tai arms "Pozhar" crate
-  description: A shotgun packaged in a stamped cargo crate.
+  parent: WeaponCaseRifle
+  name: pang tai arms "MOD-2 Pozhar" case
+  description: A shotgun packaged in a stamped weapon case.
   components:
   - type: StorageFill
     contents:
@@ -142,10 +142,47 @@
         amount: 2  
 
 - type: entity
+  id: CratePangtaiTwinshot
+  parent: WeaponCaseShotgun
+  name: pang tai arms "MOD-1 Twinshot" case
+  description: A shotgun packaged in a stamped weapon case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponShotgunPTATwinshot
+        amount: 1
+      - id: BoxLethalshot
+        amount: 2 
+
+- type: entity
+  id: CratePangtaiKarabin
+  parent: WeaponCaseShotgun
+  name: pang tai arms "23AX Karabin" case
+  description: A large shotgun packaged in a stamped weapon case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponShotgunKS23
+        amount: 1
+      - id: BoxLethalshot4g
+        amount: 2 
+
+- type: entity
+  id: CratePangtaiLancer
+  parent: WeaponCaseRailgun
+  name: pang tai arms "XCG-4 Lancer" case
+  description: A railgun packaged in a stamped weapon case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSpecialRailgun
+        amount: 1
+
+- type: entity
   id: CratePangtaiMako
-  parent: CrateSecgear
-  name: pang tai arms "Mako" crate
-  description: A shoulder-operated plasma caster packaged in a stamped cargo crate.
+  parent: WeaponCaseRpg
+  name: pang tai arms "Mako" case
+  description: A shoulder-operated plasma caster packaged in a stamped weapon case.
   components:
   - type: StorageFill
     contents:
@@ -153,9 +190,42 @@
         amount: 1
 
 - type: entity
+  id: CratePangtaiImpactGrenade
+  parent: GrenadeCase
+  name: pang tai arms impact grenade set case
+  description: A set of impact grenades packaged in a stamped case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: PTAImpactHandgrenade
+        amount: 10
+
+- type: entity
+  id: CratePangtaiWPSmokeGrenade
+  parent: GrenadeCase
+  name: pang tai arms WP smoke grenade set case
+  description: A set of White phosphorus smoke grenades packaged in a stamped case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: PTAWarcrimeHandgrenade
+        amount: 5
+
+- type: entity
+  id: CratePangtaiChinalake
+  parent: WeaponCaseGl
+  name: pang tai arms "10AX Chinalake" case
+  description: A pump-action grenade launcher packaged in a stamped weapon case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponLauncherChinaLake
+        amount: 1
+
+- type: entity
   id: CratePangtaiLowArmor
   parent: CrateSecgear
-  name: pang tai arms civilian armor crate
+  name: pang tai arms "CORVID-X1" crate
   description: A cheap armor set packaged in a stamped cargo crate.
   components:
   - type: StorageFill
@@ -174,7 +244,7 @@
 - type: entity
   id: CratePangtaiHighArmor
   parent: CrateSecgear
-  name: pang tai arms ballistic armor crate
+  name: pang tai arms "KORUND-X2" crate
   description: A high-tier armor set packaged in a stamped cargo crate.
   components:
   - type: StorageFill
@@ -193,21 +263,27 @@
 - type: entity
   id: CratePangtaiHardsuitArmor
   parent: CrateSecgear
-  name: pang tai arms hardsuit armor crate
-  description: A spaceworthy corporate hardsuit set packaged in a stamped cargo crate.
+  name: pang tai arms "ZHANSHI-X3" crate
+  description: A combat hardsuit set packaged in a stamped cargo crate.
   components:
   - type: StorageFill
     contents:
-      - id: ClothingOuterHardsuitPangTai
+      - id: ClothingUniformJumpsuitMilitaryColorGrey
         amount: 1
+      - id: ClothingShoesBootsJack
+        amount: 1  
+      - id: ClothingHandsGlovesFingerless
+        amount: 1  
+      - id: ClothingOuterHardsuitPangTai
+        amount: 1 
 
 #shinohara
 
 - type: entity
   id: CrateShinoharaGoro
-  parent: CrateSecgear
-  name: shinohara "Goro M55" crate
-  description: A battle rifle packaged in a stamped cargo crate.
+  parent: WeaponCaseRifle
+  name: shinohara "M55 Goro" case
+  description: A battle rifle packaged in a stamped cweapon case.
   components:
   - type: StorageFill
     contents:
@@ -217,10 +293,36 @@
         amount: 2   
 
 - type: entity
+  id: CrateShinoharaHristov
+  parent: WeaponCaseSniper
+  name: shinohara "PLCR-3M2 Hristov" case
+  description: A anti-materiel rifle packaged in a stamped weapon case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSniperHristov
+        amount: 1
+      - id: MagazineAntiMateriel
+        amount: 2   
+
+- type: entity
+  id: CrateShinoharaLecter
+  parent: WeaponCaseRifle
+  name: shinohara "M931c Lecter" case
+  description: A battle rifle packaged in a stamped weapon case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponRifleLecter
+        amount: 1
+      - id: MagazineRifle
+        amount: 2   
+
+- type: entity
   id: CrateShinoharaHound
-  parent: CrateSecgear
-  name: shinohara "Hound M215s" crate
-  description: A marksman rifle packaged in a stamped cargo crate.
+  parent: WeaponCaseRifle
+  name: shinohara "M215 Hound" case
+  description: A marksman rifle packaged in a stamped weapon case.
   components:
   - type: StorageFill
     contents:
@@ -231,9 +333,9 @@
 
 - type: entity
   id: CrateShinoharaMP49
-  parent: CrateSecgear
-  name: shinohara "MP49" crate
-  description: A light submachinegun packaged in a stamped cargo crate.
+  parent: WeaponCaseSmg
+  name: shinohara "MP49 Warden" case
+  description: A light submachinegun packaged in a stamped weapon case.
   components:
   - type: StorageFill
     contents:
@@ -243,10 +345,23 @@
         amount: 2   
 
 - type: entity
+  id: CrateShinoharaM211s
+  parent: WeaponCaseSmg
+  name: shinohara "M221s Phantom" case
+  description: A supressed light submachinegun packaged in a stamped weapon case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSubMachineGunSabre
+        amount: 1
+      - id: MagazinePistol6mmSmg
+        amount: 2   
+
+- type: entity
   id: CrateShinoharaHimehabu
-  parent: CrateSecgear
-  name: shinohara "M-002 Himehabu" crate
-  description: An operator's pistol packaged in a stamped cargo crate.
+  parent: WeaponCasePistol
+  name: shinohara "M002 Himehabu" case
+  description: An operator's pistol packaged in a stamped weapon case.
   components:
   - type: StorageFill
     contents:
@@ -256,10 +371,23 @@
         amount: 2   
 
 - type: entity
+  id: CrateShinoharaHiPo
+  parent: WeaponCasePistol
+  name: shinohara "M008 Hi-Po" case
+  description: An cheap pistol packaged in a stamped weapon case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponPistolMk58
+        amount: 1
+      - id: MagazinePistol6mm
+        amount: 2   
+
+- type: entity
   id: CrateShinoharaShinobi
-  parent: CrateSecgear
-  name: shinohara "25T Shinobi" crate
-  description: An operator's smartpistol packaged in a stamped cargo crate.
+  parent: WeaponCasePistol
+  name: shinohara "25T Shinobi" case
+  description: An operator's smartpistol packaged in a stamped weapon case.
   components:
   - type: StorageFill
     contents:
@@ -270,15 +398,39 @@
 
 - type: entity
   id: CrateShinoharaSAW
-  parent: CrateSecgear
-  name: shinohara "L93" crate
-  description: A light machinegun packaged in a stamped cargo crate.
+  parent: WeaponCaseLmg
+  name: shinohara "L6SAW Stratos" case
+  description: A light machinegun packaged in a stamped weapon case.
   components:
   - type: StorageFill
     contents:
       - id: WeaponLightMachineGunL6
         amount: 1
 
+- type: entity
+  id: CrateShinoharaBarghest
+  parent: WeaponCaseRifle
+  name: shinohara "M335 Barghest" case
+  description: A heavy CQC rifle packaged in a stamped weapon case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponRifleBarghest
+        amount: 1
+      - id: MagazineHeavyRifle
+        amount: 2   
+
+- type: entity
+  id: CrateShinoharaMilkor
+  parent: WeaponCaseGl
+  name: shinohara "MGL-6 Milkor" case
+  description: A 6 shot revolver grenade launcher in a stamped weapon case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponLauncherMilkor
+        amount: 1
+ 
 - type: entity
   id: CrateShinoharaHardsuit
   parent: CrateSecgear
@@ -330,11 +482,68 @@
 
 - type: entity
   id: CrateShinoharaHammerhead
-  parent: CrateSecgear
-  name: shinohara "Hammerhead" crate
-  description: A disposable smart rocket launcher packaged in a stamped cargo crate.
+  parent: WeaponCaseRpg
+  name: shinohara "HSRPG-38M13 Hammerhead" weapon case
+  description: A disposable smart rocket launcher packaged in a stamped weapon case.
   components:
   - type: StorageFill
     contents:
       - id: WeaponLauncherHammerhead
         amount: 1
+
+- type: entity
+  id: CrateShinoharaDisposableRpg
+  parent: WeaponCaseRpg
+  name: shinohara "LAM-17" weapon case
+  description: A disposable rocket launchers packaged in a stamped weapon case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponLauncherDisposableRocket
+        amount: 1
+
+- type: entity
+  id: CrateShinoharaNonLethalGrenade
+  parent: GrenadeCase
+  name: shinohara Non-lethal grenade set case
+  description: A set of non-lethal grenades packaged in a stamped case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: SHIHG7FlashbangHandgrenade
+        amount: 5
+      - id: SHIHG3TearGasHandgrenade
+        amount: 5
+
+- type: entity
+  id: CrateShinoharaMiniGrenade
+  parent: GrenadeCase
+  name: shinohara mini grenade set case
+  description: A set of mini grenades packaged in a stamped case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: HG13M2MiniHandgrenade
+        amount: 10
+
+- type: entity
+  id: CrateShinoharaEmpGrenade
+  parent: GrenadeCase
+  name: shinohara emp grenade set case
+  description: A set of emp grenades packaged in a stamped case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: SHIHG32EMPHandgrenade
+        amount: 5
+
+- type: entity
+  id: CrateShinoharaSmartGrenade
+  parent: GrenadeCase
+  name: shinohara smart grenade set case
+  description: A set of smart grenades packaged in a stamped case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: SHIHG17SmartHandgrenade
+        amount: 5

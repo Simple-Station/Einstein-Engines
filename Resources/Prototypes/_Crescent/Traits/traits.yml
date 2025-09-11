@@ -1,16 +1,37 @@
 - type: trait
+  id: LowImperial
+  category: TraitsSpeechLanguages
+  points: -4
+  requirements:
+    - !type:FactionRequirement
+      inverted: true
+      factionID: "DSM"
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - LowImperial
+      languagesUnderstood:
+        - LowImperial
+
+#- type: trait
+#  id: HighImperial
+#  category: TraitsSpeechLanguages
+#  points: -6
+#  functions:
+#    - !type:TraitModifyLanguages
+#      languagesSpoken:
+#        - HighImperial
+#      languagesUnderstood:
+#        - HighImperial
+
+- type: trait
   id: Dockta
   category: TraitsSpeechLanguages
-  points: -1
-  # slots: 1
-  # itemGroupSlots: 0
+  points: -4
   requirements:
-    # - !type:CharacterItemGroupRequirement
-    #   group: TraitsLanguagesBasic
-    - !type:CharacterNationalityRequirement
+    - !type:FactionRequirement
       inverted: true
-      nationalities:
-        - Unionist
+      factionID: "NCWL"
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -19,17 +40,78 @@
         - Dockta
 
 - type: trait
-  id: HighImperial
+  id: Freespeak
   category: TraitsSpeechLanguages
-  points: -1
+  points: -4
+  requirements:
+    - !type:FactionRequirement
+      inverted: true
+      factionID: "TFSC"
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Freespeak
+      languagesUnderstood:
+        - Freespeak
+
+- type: trait
+  id: Kaishago
+  category: TraitsSpeechLanguages
+  points: -4
+  requirements:
+    - !type:FactionRequirement
+      inverted: true
+      factionID: "SHI"
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Kaishago
+      languagesUnderstood:
+        - Kaishago
+
+- type: trait
+  id: Clarizian
+  category: TraitsSpeechLanguages
+  points: -4
   requirements:
     - !type:CharacterNationalityRequirement
       inverted: true
       nationalities:
-        - Imperial
+        - Clarizian
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
-        - HighImperial
+        - Clarizian
       languagesUnderstood:
-        - HighImperial
+        - Clarizian
+
+- type: trait
+  id: SolBasic
+  category: TraitsSpeechLanguages
+  points: -4
+  requirements:
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Authority
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - SolBasic
+      languagesUnderstood:
+        - SolBasic
+
+- type: trait
+  id: OldTaypani
+  category: TraitsSpeechLanguages
+  points: -6
+  requirements:
+    - !type:FactionRequirement
+      inverted: true
+      factionID: "TAP"
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - OldTaypani
+      languagesUnderstood:
+        - OldTaypani

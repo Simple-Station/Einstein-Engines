@@ -108,7 +108,7 @@
   swapDuration: 2
   parallax: CorpieParallax
 
-#oris
+#taypan-2 / oris
 
 - type: entity
   id: OrisBiomeSource
@@ -125,6 +125,23 @@
   swapDuration: 2
   parallax: OrisParallax
 
+#taypan-1
+
+- type: entity
+  id: TaypanOneBiomeSource
+  name: taypan one source
+  components:
+  - type: SpaceBiomeSource
+    biome: taypanonebiome
+    swapDistance: 1500
+    priority: 2492
+
+- type: crescentFactionBiome
+  id: taypanonebiome
+  name: Taypan-1 Asteroid Belt
+  swapDuration: 2
+  parallax: OrisParallax
+
 # wilds
 
 - type: entity
@@ -133,8 +150,8 @@
   components:
   - type: SpaceBiomeSource
     biome: wildbiome
-    swapDistance: 8000
-    priority: 2450
+    swapDistance: 6500
+    priority: 2430
 
 - type: crescentFactionBiome
   id: wildbiome
@@ -220,7 +237,7 @@
   components:
   - type: SpaceBiomeSource
     biome: hadaldeadspace
-    swapDistance: 15000
+    swapDistance: 20000
     priority: 2400
 
 - type: crescentFactionBiome
@@ -229,7 +246,109 @@
   swapDuration: 2
   parallax: Default
 
-#unionfall exclusives, attached to the 2 unionfall grace period rings and unionfall vladzena
+
+#NEW BIOMES - V1
+
+#generic scrapyard
+
+- type: entity
+  id: BiomeScrapyardSource
+  name: scrapyard source
+  components:
+  - type: SpaceBiomeSource
+    biome: scrapyardbiome
+    swapDistance: 1500
+    priority: 2440
+
+- type: crescentFactionBiome
+  id: scrapyardbiome
+  name: Scrapyard
+  swapDuration: 2
+  parallax: DebrisParallax
+
+#generic asteroid field
+
+- type: entity
+  id: BiomeAsteroidFieldSource
+  name: asteroid field source
+  components:
+  - type: SpaceBiomeSource
+    biome: asteroidbiome
+    swapDistance: 1500
+    priority: 2440
+
+- type: crescentFactionBiome
+  id: asteroidbiome
+  name: Asteroid Field
+  swapDuration: 2
+  parallax: OrisParallax
+
+#gliess approach
+
+- type: entity
+  id: BiomeGliessSource
+  name: gliess approach source
+  components:
+  - type: SpaceBiomeSource
+    biome: gliessbiome
+    swapDistance: 2000
+    priority: 2460
+
+- type: crescentFactionBiome
+  id: gliessbiome
+  name: Taypan Core
+  swapDuration: 2
+  parallax: AspidParallax
+
+#tatsumoto approach
+
+- type: entity
+  id: BiomeTatsumotoSource
+  name: tatsumoto approach source
+  components:
+  - type: SpaceBiomeSource
+    biome: tatsumotobiome
+    swapDistance: 2500
+    priority: 2460
+
+- type: crescentFactionBiome
+  id: tatsumotobiome
+  name: Corporate Demilitarized Zone
+  swapDuration: 2
+  parallax: CorpieParallax
+
+#balreska approach
+
+- type: entity
+  id: BiomeBalreskaSource
+  name: balreska approach source
+  components:
+  - type: SpaceBiomeSource
+    biome: balreskabiome
+    swapDistance: 2500
+    priority: 2460
+
+- type: crescentFactionBiome
+  id: balreskabiome
+  name: The Fracture
+  swapDuration: 2
+  parallax: Rupture
+
+
+
+
+  #PRIORITIES & DISTANCES:
+  #
+  #
+  #
+  # 
+  # STATIONS - 2460 - ATTACHED TO STATIONS THEMSELVES, RANGE 1,000
+  # P.O.I. - 2440 - ATTACHED TO ASTEROID FIELDS, P.O.I. AND SCRAPYARDS
+  # WILDS - 2430 - ATTACHED TO GLIESS SANTO AT 0,0, RANGE   6,500
+  # DEEPWILDS - 2420 - ATTACHED TO GLIESS SANTO AT 0,0, RANGE 10,000
+  # HADAL DEADSPACE: 2400 - ATTACHED TO GLIESS SANTO AT 0,0 - RANGE INFINITE
+
+#unionfall exclusives, attached to the 2 unionfall grace period rings and the asteroids between them
 
 #NCWL grace period
 - type: entity
@@ -254,7 +373,7 @@
   components:
   - type: SpaceBiomeSource
     biome: unionfallApproachingNCWLBiome
-    swapDistance: 3000
+    swapDistance: 750
     priority: 2600
 
 - type: crescentFactionBiome
@@ -286,7 +405,7 @@
   components:
   - type: SpaceBiomeSource
     biome: unionfallApproachingDSMBiome
-    swapDistance: 3000
+    swapDistance: 750
     priority: 2601
 
 - type: crescentFactionBiome

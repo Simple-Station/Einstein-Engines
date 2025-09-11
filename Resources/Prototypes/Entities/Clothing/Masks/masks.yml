@@ -41,6 +41,11 @@
         Heat: 0.95
   - type: IngestionBlocker # Goobstation
     blockSmokeIngestion: true
+  - type: Tag # Goobstation - For survial boxes
+    tags:
+    - PetWearable
+    - WhitelistChameleon
+    - SecurityBreathMask
 
 - type: entity
   parent: ClothingMaskGas
@@ -63,6 +68,11 @@
         Heat: 0.95
   - type: IngestionBlocker # Goobstation
     blockSmokeIngestion: true
+  - type: Tag  # Goobstation - For survial boxes
+    tags:
+    - PetWearable
+    - WhitelistChameleon
+    - SyndicateBreathMask
 
 - type: entity
   parent: ClothingMaskGas
@@ -152,6 +162,7 @@
     tags:
     - PetWearable
     - WhitelistChameleon
+    - BreathMask  # Goobstation - For survial boxes
 
 - type: entity
   parent: ClothingMaskBreathMedical
@@ -191,6 +202,7 @@
     tags:
     - PetWearable
     - WhitelistChameleon
+    - BreathMask # Goobstation - For survial boxes
   - type: PhysicalComposition
     materialComposition:
       Steel: 50

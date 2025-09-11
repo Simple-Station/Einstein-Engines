@@ -14,11 +14,13 @@ using Content.Shared.Radio;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
-using Robust.Server.Maps;
+using Robust.Shared.EntitySerialization.Systems;
+using Robust.Shared.EntitySerialization;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 
 namespace Content.Server._NF.Smuggling;
 
@@ -78,18 +80,13 @@ public sealed class DeadDropSystem : EntitySystem
         if (_shipyard.ShipyardMap is not MapId shipyardMap)
             return;
 
-        var options = new MapLoadOptions
-        {
-            LoadMap = false,
-        };
-
         //load whatever grid was specified on the component, either a special dead drop or default
-        if (!_map.TryLoad(shipyardMap, component.DropGrid, out var gridUids, options))
+        if (!_map.TryLoadGrid(shipyardMap, new ResPath(component.DropGrid), out var gridUids))
             return;
 
         //setup the radar properties
-        _shuttle.SetIFFColor(gridUids[0], component.Color);
-        _shuttle.AddIFFFlag(gridUids[0], IFFFlags.HideLabel);
+        _shuttle.SetIFFColor(gridUids.Value.Owner, component.Color);
+        _shuttle.AddIFFFlag(gridUids.Value.Owner, IFFFlags.HideLabel);
 
         //this is where we set up all the information that FTL is going to need, including a new null entitiy as a destination target because FTL needs it for reasons?
         //dont ask me im just fulfilling FTL requirements.
@@ -97,9 +94,9 @@ public sealed class DeadDropSystem : EntitySystem
         var mapId = Transform(user).MapID;
         var mapUid = _mapManager.GetMapEntityId(mapId);
 
-        if (TryComp<ShuttleComponent>(gridUids[0], out var shuttle))
+        if (TryComp<ShuttleComponent>(gridUids.Value.Owner, out var shuttle))
         {
-            _shuttle.FTLToCoordinates(gridUids[0], shuttle, new EntityCoordinates(mapUid, dropLocation), 0f, 0f, 35f);
+            _shuttle.FTLToCoordinates(gridUids.Value.Owner, shuttle, new EntityCoordinates(mapUid, dropLocation), 0f, 0f, 35f);
         }
 
         //tattle on the smuggler here, but obfuscate it a bit if possible to just the grid it was summoned from.

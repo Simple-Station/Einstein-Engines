@@ -3,16 +3,16 @@
 #
 - type: vessel
   id: Shanty
-  name: NCSP Shanty
+  name: SAW Shanty
   description: A salvaged Syndicate cargopod.
-  price: 35000
+  price: 31000
   category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/NCSP/Shanty.yml
 
 - type: gameMap
   id: Shanty
-  mapName: 'NCSP Shanty'
+  mapName: 'SAW Shanty'
   mapPath: /Maps/_Crescent/Shuttles/NCSP/Shanty.yml
   minPlayers: 0
   stations:

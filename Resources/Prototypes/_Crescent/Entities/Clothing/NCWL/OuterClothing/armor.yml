@@ -93,8 +93,8 @@
 - type: entity
   parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorNCWLCarapaceKapitan
-  name: kapitan's armored overcoat
-  description: A communard overcoat overlaid with a kevlar vest.
+  name: fleetkapitan's armored overcoat
+  description: A communard overcoat overlaid with a kevlar vest. Fit for a commanding officer.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/NCWL/OuterClothing/commsofficercoat.rsi
@@ -156,7 +156,7 @@
 - type: entity
   parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
   id: ClothingOuterArmorNCWLLogi
-  name: logistics union armored jacket
+  name: dockmaster's armored jacket
   description: A communard jacket. Layered with kevlar nanoweave.
   components:
   - type: Sprite
@@ -187,8 +187,8 @@
 - type: entity
   parent: [ClothingOuterStorageBase, ClothingOuterArmorBasic]
   id: ClothingOuterArmorNCWLEngi
-  name: engineering armored jacket
-  description: A communard jacket. Layered with kevlar nanoweave.
+  name: overboss armored jacket
+  description: A communard jacket. Layered with kevlar nanoweave. Boss around your fellow proletariat in style and comfort!
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/NCWL/OuterClothing/engijacket.rsi
@@ -282,7 +282,7 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitNCWLMedi
-  name: Vrachev Union Mk.I hardsuit
+  name: NCWL Mk.0 "SANITAR" medical hardsuit
   description: An armored hardsuit of communard design. Comes with ballistic gel and kevlar padding. Spaceworthy.
   components:
   - type: Sprite
@@ -293,7 +293,7 @@
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.6
+    damageCoefficient: 0.9
   - type: DegradeableArmor
     armorMaxHealth: 750
     armorType: Metallic
@@ -317,7 +317,7 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitNCWLEngi
-  name: Engineering Union Mk.I hardsuit
+  name: NCWL Mk.0 "EVERYMAN" civilian hardsuit
   description: An armored hardsuit of communard design. Comes with ballistic gel and kevlar padding. Spaceworthy.
   components:
   - type: Sprite
@@ -328,7 +328,7 @@
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.6
+    damageCoefficient: 0.9
   - type: DegradeableArmor
     armorMaxHealth: 750
     armorType: Metallic
@@ -355,7 +355,7 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitNCWLInfantry
-  name: homeguard Mk.I infanteer's hardsuit
+  name: NCWL Mk.I "INFANTEER" hardsuit
   description: An armored hardsuit of communard design. Comes with ballistic gel and kevlar padding. Spaceworthy.
   components:
   - type: Sprite
@@ -366,21 +366,21 @@
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.6
+    damageCoefficient: 0.9
   - type: DegradeableArmor
     armorMaxHealth: 750
     armorType: Metallic
     armorRepair: HomelandAlloy
     initialModifiers:
       flatReductions:
-        Blunt: 15
+        Blunt: 20
         Slash: 15
         Piercing: 45
-        Heat: 15
-        Caustic: 15
+        Heat: 5
+        Caustic: 5
   - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 0.85
+    walkModifier: 0.9
+    sprintModifier: 0.9
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitNCWLInfantry
@@ -390,7 +390,7 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitNCWLPetya
-  name: homeguard Mk.II "Petya" combat hardsuit
+  name: NCWL Mk.II "PETYA" combat hardsuit
   description: An armored hardsuit of communard design. Comes with ballistic gel and kevlar padding. Spaceworthy.
   components:
   - type: Sprite
@@ -401,7 +401,7 @@
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.5
+    damageCoefficient: 0.7
   - type: DegradeableArmor
     armorMaxHealth: 750
     armorType: Metallic
@@ -411,7 +411,7 @@
         Blunt: 25
         Slash: 25
         Piercing: 55
-        Heat: 25
+        Heat: 10
         Caustic: 25
   - type: ClothingSpeedModifier
     walkModifier: 0.85
@@ -425,7 +425,7 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitNCWLJuggernaut
-  name: NCWL 'HADES' Mk.III juggernaut hardsuit
+  name: NCWL MK.III "HADES" juggernaut hardsuit
   description: A heavily armored, spaceworthy hardsuit commonly worn by Homeguard Liquidation teams. Just looking at this makes you want to kick some ass.
   components:
   - type: Sprite
@@ -445,7 +445,7 @@
       flatReductions:
         Blunt: 35
         Slash: 25
-        Piercing: 75
+        Piercing: 90
         Heat: 35
         Caustic: 25
   - type: ClothingSpeedModifier

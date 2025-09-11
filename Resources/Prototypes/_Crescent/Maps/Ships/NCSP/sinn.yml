@@ -5,7 +5,7 @@
   id: Sinn
   name: NCSP Sinn
   description: An uparmed Syndicate destroyer.
-  price: 75000
+  price: 85000 #84000 appraisegrid
   category: Medium
   group: None
   path: /Maps/_Crescent/Shuttles/NCSP/sinn.yml

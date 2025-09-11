@@ -66,11 +66,10 @@
   - type: Wagging
   - type: LanguageKnowledge
     speaks:
-    - TauCetiBasic
     - Draconic
     understands:
-    - TauCetiBasic
     - Draconic
+    - TauCetiBasic #needed for vending machines and anything else
   - type: FootPrints
     leftBarePrint: "footprint-left-bare-lizard"
     rightBarePrint: "footprint-right-bare-lizard"
@@ -80,6 +79,14 @@
     - FootstepSound
     - DoorBumpOpener
     - UnathiEmotes
+  - type: PassiveRegeneration
+    healPerTick:
+      types:
+        Piercing: -0.6
+        Blunt: -0.6
+        Slash: -0.6
+    thirstDrain: 0.1
+    hungerDrain: 0.4
 
 - type: entity
   parent: BaseSpeciesDummy

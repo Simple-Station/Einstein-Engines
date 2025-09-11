@@ -1,0 +1,13 @@
+- type: gamePreset
+  id: Blob
+  alias:
+    - blob
+  name: blob-title
+  showInVote: false
+  description: blob-description
+  rules:
+    - BlobGameMode
+    - SubGamemodesRule
+    - BasicStationEventScheduler
+    - BasicRoundstartVariation
+    - LavalandStormScheduler

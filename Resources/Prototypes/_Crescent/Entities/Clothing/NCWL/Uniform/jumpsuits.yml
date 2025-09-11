@@ -87,3 +87,14 @@
     sprite: _Crescent/Clothing/NCWL/Uniform/ncwltrainee.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/NCWL/Uniform/ncwltrainee.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitNCWLSkirt
+  name: worker's skirtsuit
+  description: A skirt-jumpsuit amalgamation
+  components:
+  - type: Sprite
+    sprite: _Crescent/Clothing/NCWL/Uniform/ncwlskirt.rsi
+  - type: Clothing
+    sprite: _Crescent/Clothing/NCWL/Uniform/ncwlskirt.rsi

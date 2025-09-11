@@ -486,7 +486,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 0.5,-1.5
       parent: 1
-- proto: MagazineGrenadeBlast
+- proto: MagazineRocketHighYield
   entities:
   - uid: 7
     components:
@@ -727,7 +727,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 154
-- proto: ShuttleGunMissileRack
+- proto: ShuttleGunMissileRackFilled
   entities:
   - uid: 6
     components:

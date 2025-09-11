@@ -13,72 +13,48 @@
       - state: passenger
 
 - type: entity
-  id: SpawnPointNCWLOverseer
+  id: SpawnPointNCWLKommissar
   parent: SpawnPointJobBase
-  name: NCWLOverseer
+  name: NCWLKommissar
   components:
   - type: SpawnPoint
-    job_id: HomeguardLeaderNCWL
+    job_id: KommissarNCWL
   - type: Sprite
     layers:
       - state: green
       - state: passenger
 
 - type: entity
-  id: SpawnPointNCWLCaptain
+  id: SpawnPointNCWLFleetkapitan
   parent: SpawnPointJobBase
-  name: NCWLCaptain
+  name: NCWLFleetkapitan
   components:
   - type: SpawnPoint
-    job_id: CaptainNCWL
+    job_id: FleetkapitanNCWL
   - type: Sprite
     layers:
       - state: green
       - state: passenger
 
 - type: entity
-  id: SpawnPointNCWLSoldat
+  id: SpawnPointNCWLPartisan
   parent: SpawnPointJobBase
-  name: NCWLSoldat
+  name: NCWLPartisan
   components:
   - type: SpawnPoint
-    job_id: SoldatNCWL
+    job_id: PartisanNCWL
   - type: Sprite
     layers:
       - state: green
       - state: passenger
 
 - type: entity
-  id: SpawnPointNCWLDockmaster
+  id: SpawnPointNCWLIndustryTaskmaster
   parent: SpawnPointJobBase
-  name: NCWLDockmaster
+  name: NCWLIndustryTaskmaster
   components:
   - type: SpawnPoint
-    job_id: DockmasterNCWL
-  - type: Sprite
-    layers:
-      - state: green
-      - state: passenger
-
-- type: entity
-  id: SpawnPointNCWLDockhand
-  parent: SpawnPointJobBase
-  name: NCWLDockhand
-  components:
-  - type: SpawnPoint
-    job_id: DockhandNCWL
-  - type: Sprite
-    layers:
-      - state: green
-      - state: passenger
-
-- type: entity
-  id: SpawnPointNCWLDirector
-  parent: SpawnPointJobBase
-  name: NCWLDirector
-  components:
-  - type: SpawnPoint
-    job_id: DirectorNCWL
+    job_id: IndustryTaskmasterNCWL
   - type: Sprite
     layers:
       - state: green
@@ -97,24 +73,12 @@
       - state: passenger
 
 - type: entity
-  id: SpawnPointNCWLSupervisor
+  id: SpawnPointNCWLWorkerOverboss
   parent: SpawnPointJobBase
-  name: NCWLSupervisor
+  name: NCWLWorkerOverboss
   components:
   - type: SpawnPoint
-    job_id: SupervisorNCWL
-  - type: Sprite
-    layers:
-      - state: green
-      - state: passenger
-
-- type: entity
-  id: SpawnPointNCWLEngineer
-  parent: SpawnPointJobBase
-  name: NCWLEngineer
-  components:
-  - type: SpawnPoint
-    job_id: EngineerNCWL
+    job_id: WorkerOverbossNCWL
   - type: Sprite
     layers:
       - state: green
@@ -815,6 +779,18 @@
   components:
   - type: SpawnPoint
     job_id: GliessianDockmaster
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointGliessDeputy
+  parent: SpawnPointJobBase
+  name: GliessDeputy
+  components:
+  - type: SpawnPoint
+    job_id: GliessianDeputy
   - type: Sprite
     layers:
       - state: green

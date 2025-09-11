@@ -1,0 +1,158 @@
+# SAWs catalog for the id/dogtag console, using Scrap as currency
+- type: storeCategory
+  id: StoreCategorySAW
+  name: SAWs
+  priority: 12
+
+- type: storeCategory
+  id: StoreCategorySAWshipmods
+  name: Shipfitting
+  priority: 10
+
+- type: storeCategory
+  id: StoreCategorySAWships
+  name: Salvaged and Retrofitted Ships
+  priority: 8
+
+- type: listing
+  id: StoreListingSAWKalash
+  name: NCSP AKMS Kalash 7.62x51mm
+  description: An ancient design from pre-bluespace collapse times. Works just fine against rock-spawns.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Guns/akms.rsi, state: icon }
+  productEntity: WeaponRifleAk
+  cost:
+    ScrapSAW: 25
+  categories:
+  - StoreCategorySAW
+
+- type: listing
+  id: StoreListingSAWMelee
+  name: Breaching hammer
+  description: Just right for hammering heads.
+  icon: { sprite: /Textures/Nyanotrasen/Objects/Weapons/Melee/breaching_hammer.rsi, state: icon }
+  productEntity: SecBreachingHammer
+  cost:
+    ScrapSAW: 15
+  categories:
+  - StoreCategorySAW
+
+- type: listing
+  id: StoreListingSAWSuit
+  name: LUGNUT mk.1 combat technician hardsuit
+  description: A very old, but working design. Many holes and welds can be seen on it however..
+  icon: { sprite: /Textures/_Crescent/Clothing/Syndicate/Head/syndicateramzi.rsi, state: icon }
+  productEntity: ClothingOuterHardsuitRamzi
+  cost:
+    ScrapSAW: 35
+  categories:
+  - StoreCategorySAW
+
+- type: listing
+  id: StoreListingSAWSuitDonator
+  name: UNIONIZER modified combat technician's hardsuit
+  description: A more fancier variant of an old classic. Made for those who lead the true Revolution.
+  icon: { sprite: /Textures/_Crescent/Clothing/Syndicate/Head/syndicatedonator.rsi, state: icon }
+  productEntity: ClothingOuterHardsuitSyndieDonator
+  cost:
+    ScrapSAW: 45
+  categories:
+  - StoreCategorySAW
+
+- type: listing
+  id: StoreListingSAWExpRCD
+  name: Experimental RCD
+  description: A relic made by the first scrap-brained technicians. It was created to attempt to contain vicious man named Bill Marshall for his experiments on scrap-men.
+  icon: { sprite: /Textures/Objects/Tools/rcd.rsi, state: icon }
+  productEntity: RCDRecharging
+  cost:
+    ScrapSAW: 115
+  categories:
+  - StoreCategorySAW
+
+- type: listing
+  id: StoreListingSAWCrash
+  name: Smuggled Crash Injection
+  description: A smuggled injection of crash to help a scrapaloid to remove all the back pain from moving scrap-crates.
+  icon: { sprite: /Textures/_Crescent/Objects/Autoinjectors/crash.rsi, state: medipen }
+  productEntity: CrashAutoinjector
+  cost:
+    ScrapSAW: 30
+  categories:
+  - StoreCategorySAW
+
+- type: listing
+  id: StoreListingSAWHardpoint
+  name: Salvaged fixed hardpoint
+  description: A true desire of every shipbreaker, provided for you from all the salvaged ships which were hauled to Dochenskaya over the years
+  icon: { sprite: /Textures/Objects/Devices/flatpack.rsi, state: kit }
+  productEntity: FixedHardpointFlatpack
+  cost:
+    ScrapSAW: 60
+  categories:
+  - StoreCategorySAWshipmods
+
+- type: listing
+  id: StoreListingSAWGyroscope
+  name: Salvaged Gyroscope Flatpack
+  description: A true desire of every shipbreaker, provided for you from all the salvaged ships which were hauled to Dochenskaya over the years
+  icon: { sprite: /Textures/Objects/Devices/flatpack.rsi, state: kit }
+  productEntity: GyroscopeFlatpack
+  cost:
+    ScrapSAW: 35
+  categories:
+  - StoreCategorySAWshipmods
+
+- type: listing
+  id: StoreListingSAWFighter
+  name: Salvaged Fighter Thruster Flatpack
+  description: A true desire of every shipbreaker, provided for you from all the salvaged ships which were hauled to Dochenskaya over the years
+  icon: { sprite: /Textures/Objects/Devices/flatpack.rsi, state: kit }
+  productEntity: NCSPFighterThrusterFlatpack
+  cost:
+    ScrapSAW: 20
+  categories:
+  - StoreCategorySAWshipmods
+
+- type: listing
+  id: StoreListingSAWFighterWarship
+  name: Salvaged Warship Thruster Flatpack
+  description: A true desire of every shipbreaker, provided for you from all the salvaged ships which were hauled to Dochenskaya over the years
+  icon: { sprite: /Textures/Objects/Devices/flatpack.rsi, state: kit }
+  productEntity: NCSPWarshipThrusterFlatpack
+  cost:
+    ScrapSAW: 55
+  categories:
+  - StoreCategorySAWshipmods
+
+- type: listing
+  id: StoreListingSAWCaracal
+  name: SAW Caracal LPC
+  description: A Retrofitted Caracal fighter, equipped with Idna launchers and unique 70mm rocket launchers.
+  icon: { sprite: _Crescent/Objects/Misc/lpcchip.rsi, state: icon }
+  productEntity: ShipVoucherCaracal
+  cost:
+    ScrapSAW: 75
+  categories:
+  - StoreCategorySAWships
+
+- type: listing
+  id: StoreListingSAWRokh
+  name: SAW Rokh LPC
+  description: A Retrofitted mining barge Rokh, equipped with enourmous plastitanium hull and a unique cargo console on board.
+  icon: { sprite: _Crescent/Objects/Misc/lpcchip.rsi, state: icon }
+  productEntity: ShipVoucherRokh
+  cost:
+    ScrapSAW: 205
+  categories:
+  - StoreCategorySAWships
+
+- type: listing
+  id: StoreListingSAWAmadeus
+  name: SAW Amadeus LPC
+  description: Retrofitted Praxis vessel made into a rugged, shielded corvette.
+  icon: { sprite: _Crescent/Objects/Misc/lpcchip.rsi, state: icon }
+  productEntity: ShipVoucherAmadeus
+  cost:
+    ScrapSAW: 140
+  categories:
+  - StoreCategorySAWships

@@ -19,6 +19,7 @@
   roles:
   - GliessianDockmaster
   - GliessianSheriff
+  - GliessianDeputy
   - Spacer
   editorHidden: false
 
@@ -86,15 +87,12 @@
   weight: 100
   roles:
   - CommandantNCWL
-  - HomeguardLeaderNCWL
-  - CaptainNCWL
-  - SoldatNCWL
-  - DirectorNCWL
+  - KommissarNCWL
+  - FleetkapitanNCWL
+  - PartisanNCWL
   - DoctorNCWL
-  - SupervisorNCWL
-  - EngineerNCWL
-  - DockmasterNCWL
-  - DockhandNCWL
+  - WorkerOverbossNCWL
+  - IndustryTaskmasterNCWL
   - WorkerNCWL
   editorHidden: false
 
@@ -198,7 +196,7 @@
   - BeltrunnerTAP
   - DraugrTAP
   - ServileTAP
-  editorHidden: true
+  editorHidden: false
 
 - type: department
   id: ATH

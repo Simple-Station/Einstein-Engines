@@ -470,6 +470,9 @@
   components:
   - type: Item
     size: Normal
+  - type: Tag
+    tags:
+      - SmartBomb
   - type: CartridgeAmmo
     proto: SmartBombBase
     deleteOnSpawn: true
@@ -734,3 +737,78 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
+
+# 48mm rocket - sumitomo & kurosawa
+
+- type: entity
+  id: BaseRocket
+  name: base rocket
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - Rocket48mm
+  - type: Item
+    size: Small
+  - type: Sprite
+
+- type: entity
+  id: CartridgeRocketLowYield
+  name: 48mm low-yield rocket
+  parent: BaseRocket
+  components:
+  - type: CartridgeAmmo
+    proto: BulletRocketLowYield
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    layers:
+    - state: baton
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+    state: baton
+    suffix: false
+  - type: Tag
+    tags:
+      - Rocket48mm
+
+- type: entity
+  id: CartridgeRocketHighYield
+  name: 48mm high-yield rocket
+  parent: BaseRocket
+  components:
+  - type: CartridgeAmmo
+    proto: BulletRocketHighYield
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    layers:
+    - state: blast
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+    state: blast
+    suffix: false
+  - type: Tag
+    tags:
+      - Rocket48mm
+
+- type: entity
+  id: CartridgeRocketEMP
+  name: 48mm EMP rocket
+  parent: BaseRocket
+  components:
+  - type: CartridgeAmmo
+    proto: BulletRocketEMP
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    layers:
+    - state: emp
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+    state: frag
+    suffix: false
+  - type: Tag
+    tags:
+      - Rocket48mm

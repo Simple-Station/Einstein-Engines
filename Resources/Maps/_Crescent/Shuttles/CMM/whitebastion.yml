@@ -2541,7 +2541,7 @@ entities:
     - type: Transform
       pos: -7.5,-8.5
       parent: 1
-- proto: FlakCannonTurret
+- proto: FlakCannonTurretFilled
   entities:
   - uid: 130
     components:
@@ -4796,7 +4796,7 @@ entities:
     - type: Transform
       pos: 2.5,0.5
       parent: 1
-- proto: SHISlugthrowerTurretCMM
+- proto: SlugthrowerCannonFilled
   entities:
   - uid: 70
     components:

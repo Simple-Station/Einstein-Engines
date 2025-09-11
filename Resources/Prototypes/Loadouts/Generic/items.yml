@@ -374,7 +374,7 @@
   category: Items
   cost: 0
   items:
-    - BoxSurvival
+    - BoxSurvivalSlots # 'rot & goob
   requirements:
     - !type:CharacterDepartmentRequirement
        inverted: true

@@ -1,0 +1,11 @@
+- type: entity
+  name: mothroach
+  id: MobMothroachPsionic
+  parent: [MobMothroach, BaseMobPsionicFamiliar]
+  description: This is the adorable by-product of multiple attempts at genetically mixing mothpeople with cockroaches. It looks cuter then before for some reason.
+  components:
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - TelepathyPower
+      - PsychognomyPower
+

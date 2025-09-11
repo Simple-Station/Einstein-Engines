@@ -1,0 +1,89 @@
+#DSM
+
+- type: entity
+  id: CrescentSuitStorageWallmountDSMVoidsuit
+  parent: [SuitStorageWallmount, CrescentSuitStorageDSMVoidsuit]
+
+- type: entity
+  id: CrescentSuitStorageWallmountDSMWorkerHardsuit
+  parent: [SuitStorageWallmount, CrescentSuitStorageDSMWorkerHardsuit]
+
+- type: entity
+  id: CrescentSuitStorageWallmountDSMJannissaryHardsuit
+  parent: [SuitStorageWallmount, CrescentSuitStorageDSMJannissaryHardsuit]
+
+- type: entity
+  id: CrescentSuitStorageWallmountDSMKonigschildHardsuit
+  parent: [SuitStorageWallmount, CrescentSuitStorageDSMKonigschildHardsuit]
+
+- type: entity
+  id: CrescentSuitStorageWallmountDSMCommandHardsuit
+  parent: [SuitStorageWallmount, CrescentSuitStorageDSMCommandHardsuit]
+
+- type: entity
+  id: CrescentSuitStorageWallmountDSMTemplarHardsuit
+  parent: [SuitStorageWallmount, CrescentSuitStorageDSMTemplarHardsuit]
+
+#NCWL
+
+- type: entity
+  id: CrescentSuitStorageWallmountNCWLVoidsuit
+  parent: [SuitStorageWallmount, CrescentSuitStorageNCWLVoidsuit]
+
+- type: entity
+  id: CrescentSuitStorageWallmountNCWLMedicHardsuit
+  parent: [SuitStorageWallmount, CrescentSuitStorageNCWLMedicHardsuit]
+
+- type: entity
+  id: CrescentSuitStorageWallmountNCWLInfanteerHardsuit
+  parent: [SuitStorageWallmount, CrescentSuitStorageNCWLInfanteerHardsuit]
+
+- type: entity
+  id: CrescentSuitStorageWallmountNCWLPetyaHardsuit
+  parent: [SuitStorageWallmount, CrescentSuitStorageNCWLPetyaHardsuit]
+
+#SHI
+
+- type: entity
+  id: CrescentSuitStorageWallmountSHIHazardousEnvironmentHardsuit
+  parent: [SuitStorageWallmount, CrescentSuitStorageSHIHazardousEnvironmentHardsuit]
+
+- type: entity
+  id: CrescentSuitStorageWallmountSHIHighsecUAHardsuit
+  parent: [SuitStorageWallmount, CrescentSuitStorageSHIHighsecUAHardsuit]
+
+- type: entity
+  id: CrescentSuitStorageWallmountSHIHighsecHardsuit
+  parent: [SuitStorageWallmount, CrescentSuitStorageSHIHighsecHardsuit]
+
+#TSFC
+
+- type: entity
+  id: CrescentSuitStorageWallmountTSFCVacsuit
+  parent: [SuitStorageWallmount, CrescentSuitStorageTSFCVacsuit]
+
+- type: entity
+  id: CrescentSuitStorageWallmountTSFCVSAWLugnutHardsuit
+  parent: [SuitStorageWallmount, CrescentSuitStorageTSFCVSAWLugnutHardsuit]
+
+- type: entity
+  id: CrescentSuitStorageWallmountTSFCSAWUnionizerHardsuit
+  parent: [SuitStorageWallmount, CrescentSuitStorageTSFCSAWUnionizerHardsuit]
+
+- type: entity
+  id: CrescentSuitStorageWallmountTSFCInterdyneTraumasecHardsuit
+  parent: [SuitStorageWallmount, CrescentSuitStorageTSFCInterdyneTraumasecHardsuit]
+
+- type: entity
+  id: CrescentSuitStorageWallmountTSFCGorlexBulwarkHardsuit
+  parent: [SuitStorageWallmount, CrescentSuitStorageTSFCGorlexBulwarkHardsuit]
+
+#TAP
+
+- type: entity
+  id: CrescentSuitStorageWallmountTAPBeltrunnerHardsuit
+  parent: [SuitStorageWallmount, CrescentSuitStorageTAPBeltrunnerHardsuit]
+
+- type: entity
+  id: CrescentSuitStorageWallmountTAPDraugrHardsuit
+  parent: [SuitStorageWallmount, CrescentSuitStorageTAPDraugrHardsuit]

@@ -26,4 +26,35 @@
     balance:
       DogtagNCWL: 0
 
+- type: entity
+  id: StorePresetHullrotDogtagSAW
+  abstract: true
+  components:
+  - type: Store
+    name: saw-console
+    categories:
+    - StoreCategorySAW
+    - StoreCategorySAWshipmods
+    - StoreCategorySAWships
+    currencyWhitelist:
+    - ScrapSAW
+    balance:
+      DogtagNCWL: 0
 
+- type: entity
+  id: StorePresetHullrotDogtagGSC
+  abstract: true
+  components:
+  - type: Store
+    name: gsc-console
+    categories:
+    - StoreCategoryGSCWeapons
+    - StoreCategoryGSCAmmo
+    - StoreCategoryGSCSuits
+    - StoreCategoryGSCExplosives
+    - StoreCategoryGSCMech
+    - StoreCategoryGSCLPC
+    currencyWhitelist:
+    - PlunderGSC
+    balance:
+      PlunderGSC: 0

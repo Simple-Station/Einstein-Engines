@@ -5,31 +5,59 @@
   id: MediumFighterEquipment
 
 - type: entity
-  id: LightFighter
+  id: BaseFighter
   abstract: true
-  categories: [ HideSpawnMenu ]
+  components:
+  - type: Mech
+  - type: CanBeHeatTracked
+  - type: ProximityFuseTarget
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 1
+        density: 21390 # 15 Tonnes
+        mask:
+        - FighterImpassable
+        layer:
+        - FighterMask
+
+- type: entity
+  id: LightFighter
+  parent: BaseFighter
+  abstract: true
   components:
   - type: Mech
     equipmentWhitelist:
       tags:
       - LightFighterEquipment
+  - type: RangeBasedPvs
+    sendRange: 1500
+  - type: EntityIFFDesignation
+    name: "Fighter Without Name - get one!"
 
 
 - type: entity
   id: MediumFighter
+  parent: BaseFighter
   abstract: true
-  categories: [ HideSpawnMenu ]
   components:
   - type: Mech
     equipmentWhitelist:
       tags:
       - MediumFighterEquipment
       - LightFighterEquipment
+  - type: RangeBasedPvs
+    sendRange: 1500
+  - type: EntityIFFDesignation
+    name: "Fighter Without Name - get one!"
 
 - type: entity
   id: LightFighterEquipment
   abstract: true
-  categories: [ HideSpawnMenu ]
   components:
   - type: Tag
     tags:
@@ -40,7 +68,6 @@
 - type: entity
   id: MediumFighterEquipment
   abstract: true
-  categories: [ HideSpawnMenu ]
   components:
   - type: Tag
     tags:
@@ -52,7 +79,7 @@
 - type: entity
   id: WeaponFighterIdna
   name: PTA 60mm "Idna" LRM torpedo system
-  description: A miniatured version of the original Idna, this system only holds one charge at a time and has a lengthy munitions fabrication timer. 
+  description: A miniatured version of the original Idna, this system only holds one charge at a time and has a lengthy munitions fabrication timer.
   suffix: Fighter, Combat, Torpedo
   parent: [ BaseMechWeaponRange, MediumFighterEquipment ]
   components:
@@ -86,8 +113,8 @@
     sprite: _Crescent/Objects/Specific/fighterweapons.rsi
     state: auto_cannon
   - type: Gun
-    fireRate: 3
-    selectedMode: FullAuto
+    fireRate: 0.5
+    projectileSpeed: 95
     availableModes:
       - FullAuto
     soundGunshot:
@@ -103,7 +130,7 @@
 
 - type: entity
   id: WeaponFighterMachinegun
-  name: SHI 'Nambu' .50 light machinegun system 
+  name: SHI 'Nambu' .50 light machinegun system
   description: A miniaturized SHI-MG intended to intercept incoming missiles or other starfighters. Modified to have an internal munitions cycler.
   suffix: Fighter, Combat, MG
   parent: [ BaseMechWeaponRange, LightFighterEquipment ]
@@ -112,7 +139,8 @@
     sprite: _Crescent/Objects/Specific/fighterweapons.rsi
     state: heavy_slugger
   - type: Gun
-    fireRate: 0.6
+    fireRate: 8
+    projectileSpeed: 135
     selectedMode: FullAuto
     availableModes:
       - FullAuto

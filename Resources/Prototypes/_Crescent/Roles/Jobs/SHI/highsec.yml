@@ -3,11 +3,22 @@
   name: job-name-highsec
   description: job-description-highsec
   playTimeTracker: JobHighsecSHI
+  weight: 50
+  startingGear: HighsecGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconHighsec"
+  supervisors: job-supervisors-shi
+  canBeAntag: false
   requirements:
+    - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
       min: 35000
     - !type:FactionRequirement
       factionID: "SHI"
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -17,13 +28,16 @@
         - Blindness
         - Pacifist
         - WheelchairBound
-  weight: 39
-  startingGear: HighsecGear
-  alwaysUseSpawner: true
-  icon: "JobIconHighsec"
-  requireAdminNotify: false
-  supervisors: job-supervisors-shi
-  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-shi-highsec
+      - type: LanguageAdder
+        addSpoken:
+          - Kaishago
+        addUnderstood:
+          - Kaishago
   access:
   - Command
   - Maintenance
@@ -40,11 +54,10 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitShinoharaHighsec
     shoes: ClothingShoesBootsCombat
-    belt: WeaponLaserSvalinn
-    head: ClothingHeadHatShinoharaHelmet
-    outerClothing: ClothingOuterArmorShinoharaArmorHighsec
     gloves: ClothingHandsGlovesCombat
     id: HighsecPDA
+    eyes: ClothingEyesGlassesSunglasses
     ears: ClothingHeadsetShinohara
     pocket1: Handcuffs
     pocket2: TradePassport
+    back: ClothingBackpackSHISatchel

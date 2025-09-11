@@ -5,7 +5,7 @@
   id: Wolf
   name: NCSP Wolf
   description: A converted Imperial cruiser.
-  price: 130000
+  price: 110000 #107000 appraisegrid
   category: Medium
   group: None
   path: /Maps/_Crescent/Shuttles/NCSP/wolf.yml

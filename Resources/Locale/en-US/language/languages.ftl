@@ -22,10 +22,10 @@ language-Azaziba-description =
     A language of Moghes consisting of a combination of spoken word and gesticulation.
     While waning since Moghes entered the galactic stage - it enjoys popular use by Unathi that never fell to the Hegemony's cultural dominance.
 
-language-SolCommon-name = Low Imperial
+language-SolCommon-name = Sol Common
 language-SolCommon-description =
-    The language of the uneducated and unwashed masses of the Divine Sol Mandate. It is taught in all elementary schools of the Mandate, a requirement to graduate.
-    While it may not be the most refined language, it serves as a crucial means of communication for the masses.
+    With its roots in Mandarin Chinese - Common evolved as the official language of the Sol Alliance - with officials working to tie it together with a common tongue.
+    It's spoken by state officials - taught in schools - and spoken by those who either feel a sense of national pride in the Alliance or otherwise fell sway to the culture.
 
 language-NovuNederic-name = Novu-Nederic
 language-NovuNederic-description =
@@ -49,11 +49,11 @@ language-Freespeak-description =
     A language of renegades and frontiersmen descending from various languages from Earth-- like Hindi,
     combined into a multi-rooted jumble that sounds incoherent or even barbarian to non-native speakers.
     This language is the only common cultural identity for humans in the frontier. Speaking this language in itself boldly declares the speaker a free spirit.
-    It is often called 'Gutter' by Alliance citizens.
+    It is often called 'Gutter' by Imperial citizens.
 
-language-Elyran-name = Clarizian Standard
+language-Elyran-name = Elyran Standard
 language-Elyran-description =
-    Clarizian Standard is the official tongue of the Elyran Republic. Constructed using elements of Farsi - Arabic - and Turkish.
+    Elyran Standard is the official tongue of the Elyran Republic. Constructed using elements of Farsi - Arabic - and Turkish.
     Influence from all three of these languages can be seen throughout its grammar and vocabulary.
 
 language-Canilunzt-name = Canilunzt
@@ -61,8 +61,8 @@ language-Canilunzt-description =
     The guttural language spoken and utilized by the inhabitants of the Vazzend system,
     composed of growls, barks, yaps, and heavy utilization of ears and tail movements. Vulpkanin speak this language with ease.
 
-language-Moffic-name = Moffic
-language-Moffic-description = The language of the mothpeople borders on complete unintelligibility.
+language-Moffic-name = Atyrian
+language-Moffic-description = The language of the Atyrians borders on complete unintelligibility.
 
 language-RobotTalk-name = RobotTalk
 language-RobotTalk-description = A language consisting of harsh binary chirps, whistles, hisses, and whines. Organic tongues cannot speak it without aid from special translators.
@@ -70,8 +70,8 @@ language-RobotTalk-description = A language consisting of harsh binary chirps, w
 language-Calcic-name = Calcic
 language-Calcic-description = The bone-rattling language of skeletons and Plasmamen. It sounds like a harmonic trousle of bones with a humerus tone, sans any off-tune ribbing.
 
-language-Sign-name = Tau-Ceti Basic Sign Language
-language-Sign-description = TCB-SL for short, this sign language is prevalent among mute and deaf people.
+language-Sign-name = Spacer's Sign
+language-Sign-description = An evolved form of the ancient American Sign Language, used by all spacefarers. Comprised mostly of aggressive arm-length gestures that are meant to be seen clearly in the silence of EVA.
 
 language-Marish-name = Marish
 language-Marish-description =  A language spoken only by Voidborn, one that is unable to be replicated by normal tongues.

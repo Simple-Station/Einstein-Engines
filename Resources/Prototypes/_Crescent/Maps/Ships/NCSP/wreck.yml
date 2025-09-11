@@ -1,0 +1,29 @@
+
+- type: vessel
+  id: Wreck
+  name: RC Wreck
+  description: An asteroid strapped with a gun.
+  price: 26000
+  category: Small
+  group: None
+  path: /Maps/_Crescent/Shuttles/NCSP/wreck.yml
+
+- type: gameMap
+  id: Wreck
+  mapName: 'RC Wreck'
+  mapPath: /Maps/_Crescent/Shuttles/NCSP/wreck.yml
+  minPlayers: 0
+  stations:
+    Wreck:
+      stationProto: StandardCrescentCivilianVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: fighter
+        - type: StationNameSetup
+          mapNameTemplate: 'RC Wreck {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation

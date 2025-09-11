@@ -1,0 +1,40 @@
+- type: job
+  id: GliessianDeputy
+  name: job-name-gliess-deputy
+  description: job-description-gliess-deputy
+  playTimeTracker: JobContractor
+  startingGear: GliessDeputyGear
+  icon: "JobIconMinuteman"
+  supervisors: job-supervisors-gliess
+  requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 20000
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ind-gliess-deputy
+      - type: LanguageAdder
+        addSpoken:
+          - Tradeband
+        addUnderstood:
+          - Tradeband
+  accessGroups:
+  - GeneralAccess
+  access:
+  - GliessSheriff
+  - GliessDockmaster
+
+- type: startingGear
+  id: GliessDeputyGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCMM
+    shoes: ClothingShoesBootsCombat
+    head: ClothingHeadHatMinuteman
+    gloves: ClothingHandsGlovesCombat
+    belt: ClothingBeltMinutemanPouches
+    pocket1: WeaponPistolHKUSP
+    id: GliessDeputyPDA
+    ears: ClothingHeadsetCMM
+    neck: ClothingNeckScarfCMMCloak
+    outerClothing: ClothingOuterArmorCMM

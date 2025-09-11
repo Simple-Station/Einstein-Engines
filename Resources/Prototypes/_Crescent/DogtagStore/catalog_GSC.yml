@@ -1,0 +1,354 @@
+- type: storeCategory
+  id: StoreCategoryGSCWeapons
+  name: Weapons
+  priority: 4
+
+- type: storeCategory
+  id: StoreCategoryGSCAmmo
+  name: Ammo
+  priority: 6
+
+- type: storeCategory
+  id: StoreCategoryGSCSuits
+  name: Suits
+  priority: 10
+
+- type: storeCategory
+  id: StoreCategoryGSCExplosives
+  name: Explosives
+  priority: 12
+
+- type: storeCategory
+  id: StoreCategoryGSCLPC
+  name: LPCs
+  priority: 14
+
+- type: storeCategory
+  id: StoreCategoryGSCMech
+  name: Mech & Mech Weapons
+  priority: 16
+
+#MECHS
+
+- type: listing
+  id: StoreListingGSCMechBlade
+  name: SHI LvR-200 exosuit-mounted plasteel blade.
+  description: A repurposed fighter wing commissioned from SAW in accordance with Shinohara schematics.
+  icon: { sprite: /Textures/Objects/Devices/flatpack.rsi, state: kit }
+  productEntity: WeaponMechSword
+  cost:
+    PlunderGSC: 10
+  categories:
+  - StoreCategoryGSCMech
+
+- type: listing
+  id: StoreListingGSCMechWeapon30mm
+  name: SHI 'Rupture' 30mm ballistic rifle.
+  description: Stolen from a Shinohara production facility several years ago.
+  icon: { sprite: /Textures/Objects/Devices/flatpack.rsi, state: kit }
+  productEntity: WeaponMechCombatLightRifle
+  cost:
+    PlunderGSC: 10
+  categories:
+  - StoreCategoryGSCMech
+
+- type: listing
+  id: StoreListingGSCMech
+  name: GSC T-97 Marauder.
+  description: A relic of the pre-collapse organization. Light, deadly, painted red.
+  icon: { sprite: /Textures/Objects/Devices/flatpack.rsi, state: kit }
+  productEntity: MarauderFlatpack
+  cost:
+    PlunderGSC: 30
+  categories:
+  - StoreCategoryGSCMech
+
+#MECHS END
+
+#LPCS
+
+- type: listing
+  id: StoreListingGSCEradicator
+  name: GSC Eradicator LPC.
+  description: A converted Courageous-class cruiser with an IFF signature obfuscator welded on.
+  icon: { sprite: _Crescent/Objects/Misc/lpcchip.rsi, state: icon }
+  productEntity: ShipVoucherEradicator
+  cost:
+    PlunderGSC: 40
+  categories:
+  - StoreCategoryGSCLPC
+
+- type: listing
+  id: StoreListingGSCWolf
+  name: GSC Wolf LPC.
+  description: A converted Laelaps-class generalist cruiser suffering from armor delamination, a speed and firepower addiction.
+  icon: { sprite: _Crescent/Objects/Misc/lpcchip.rsi, state: icon }
+  productEntity: ShipVoucherWolf
+  cost:
+    PlunderGSC: 40
+  categories:
+  - StoreCategoryGSCLPC
+
+- type: listing
+  id: StoreListingGSCCleaver
+  name: GSC Cleaver LPC.
+  description: The Reaver's older brother.
+  icon: { sprite: _Crescent/Objects/Misc/lpcchip.rsi, state: icon }
+  productEntity: ShipVoucherCleaver
+  cost:
+    PlunderGSC: 20
+  categories:
+  - StoreCategoryGSCLPC
+
+- type: listing
+  id: StoreListingGSCBodybag
+  name: GSC Bodybag LPC.
+  description: An unlucky Mercury-class civilian shuttle with a state of the art mass signature cloaker installed by Cyberdawn.
+  icon: { sprite: _Crescent/Objects/Misc/lpcchip.rsi, state: icon }
+  productEntity: ShipVoucherBodybag
+  cost:
+    PlunderGSC: 20
+  categories:
+  - StoreCategoryGSCLPC
+
+#LPCS END
+
+#EXPLOSIVES
+
+- type: listing
+  id: StoreListingGSCRPG2Ammo
+  name: PG-2 Rocket.
+  description: Ammunition for the NCSP RP-2 rocket launcher.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Ammunition/Casings/small_rocket.rsi, state: he }
+  productEntity: CartridgeSmallRocket
+  cost:
+    PlunderGSC: 1
+  categories:
+  - StoreCategoryGSCExplosives
+
+- type: listing
+  id: StoreListingGSCRPG2
+  name: NCSP RP-2.
+  description: An ancient rocket launcher design continuously produced from old schematics by SAW.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Guns/rpg2.rsi, state: icon }
+  productEntity: WeaponLauncherSmallRocket
+  cost:
+    PlunderGSC: 8
+  categories:
+  - StoreCategoryGSCExplosives
+
+- type: listing
+  id: StoreListingGSCExplosiveBundle
+  name: C-4 Explosive Bundle.
+  description: A bag of composition C-4 predating the Nanotrasen expansion into the Crescent.
+  icon: { sprite: /Textures/Clothing/Back/Duffels/syndicate.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateC4tBundle
+  cost:
+    PlunderGSC: 4
+  categories:
+  - StoreCategoryGSCExplosives
+
+- type: listing
+  id: StoreListingGSCGrenade
+  name: NCSP RGD-5 Grenade
+  description: A rather competent grenade design pioneered by pre-collapse Gorlex Security Consulting.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Grenades/ncsp_rgd5.rsi, state: icon }
+  productEntity: NCSPRGD5Handgrenade
+  cost:
+    PlunderGSC: 1
+  categories:
+  - StoreCategoryGSCExplosives
+
+#EXPLOSIVES END
+
+#SUITS
+
+- type: listing
+  id: StoreListingGSCEgui
+  name: CDT mk-1 "Egui" tacsuit
+  description: The crown jewel of Cyberdawn's technological prowess. Bargaining it out is going to be costly.
+  icon: { sprite: /Textures/_Crescent/Clothing/Syndicate/OuterClothing/cybersunstealth.rsi, state: icon }
+  productEntity: ClothingOuterHardsuitCybersunStealth
+  cost:
+    PlunderGSC: 50
+  categories:
+  - StoreCategoryGSCSuits
+
+- type: listing
+  id: StoreListingGSCZhongyao
+  name: NCSP mk. IV "Zhongyao" tacsuit
+  description: An advanced tacsuit manufactured by Cyberdawn Technologies and provided to GSC at a discount.
+  icon: { sprite: /Textures/_Impstation/Clothing/OuterClothing/Hardsuits/syndicate_agent.rsi, state: icon }
+  productEntity: ClothingOuterHardsuitSyndieMedic
+  cost:
+    PlunderGSC: 20
+  categories:
+  - StoreCategoryGSCSuits
+
+- type: listing
+  id: StoreListingGSCInfanteer
+  name: Bulwark MK.II Infanteer
+  description: A pre-collapse design, well-aged and ready for action.
+  icon: { sprite: /Textures/_Crescent/Clothing/Syndicate/OuterClothing/syndicatesbg.rsi, state: icon }
+  productEntity: ClothingOuterHardsuitSyndicateBG
+  cost:
+    PlunderGSC: 5
+  categories:
+  - StoreCategoryGSCSuits
+
+#SUITS END
+
+#AMMO
+
+- type: listing
+  id: StoreListingGSC12.7x99mm
+  name: 12.7x99mm High Caliber Magazine
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/light_rifle_mag.rsi, state: base }
+  productEntity: MagazineHeavyRifle
+  cost:
+    PlunderGSC: 1
+  categories:
+  - StoreCategoryGSCAmmo
+
+- type: listing
+  id: StoreListingGSC12gauge
+  name: 12 Gauge Shotgun Magazine
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Ammunition/Magazine/shotgun_mag.rsi, state: base }
+  productEntity: MagazineShotgun
+  cost:
+    PlunderGSC: 1
+  categories:
+  - StoreCategoryGSCAmmo
+
+- type: listing
+  id: StoreListingGSC7.62mmDrum
+  name: 7.62mm Rifle Drum
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Ammunition/Magazine/762_drum.rsi, state: base }
+  productEntity: MagazineRifleDrum
+  cost:
+    PlunderGSC: 1
+  categories:
+  - StoreCategoryGSCAmmo
+
+- type: listing
+  id: StoreListingGSC7.62mm
+  name: 7.62mm Rifle Magazine
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/light_rifle_mag.rsi, state: base }
+  productEntity: MagazineRifle
+  cost:
+    PlunderGSC: 1
+  categories:
+  - StoreCategoryGSCAmmo
+
+- type: listing
+  id: StoreListingGSC5.56mm
+  name: 5.56x45mm Rifle Magazine
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/light_rifle_mag.rsi, state: base }
+  productEntity: MagazineLightRifle
+  cost:
+    PlunderGSC: 1
+  categories:
+  - StoreCategoryGSCAmmo
+
+- type: listing
+  id: StoreListingGSC9x19mm
+  name: SMG Magazine 9x19mm
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/smg_mag.rsi, state: base }
+  productEntity: MagazinePistolSubMachineGun
+  cost:
+    PlunderGSC: 1
+  categories:
+  - StoreCategoryGSCAmmo
+
+#AMMO END
+
+#GUNS
+- type: listing
+  id: StoreListingGSCKrinkov
+  name: NCSP Krinkov 5.56x45mm
+  description: A lightly remodeled frontline infantry rifle from one of the many Terran wars before the collapse.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Guns/krinkov.rsi, state: icon }
+  productEntity: WeaponRifleKrinkov
+  cost:
+    PlunderGSC: 2
+  categories:
+  - StoreCategoryGSCWeapons
+
+- type: listing
+  id: StoreListingGSCAtreides
+  name: NCSP Atreides 9x19mm
+  description: An otherwise finely crafted submachine gun heavily limited by its caliber.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Guns/atreides.rsi, state: icon }
+  productEntity: WeaponSubMachineGunAtreides
+  cost:
+    PlunderGSC: 2
+  categories:
+  - StoreCategoryGSCWeapons
+
+- type: listing
+  id: StoreListingGSCKalash
+  name: NCSP AKMS Kalash 7.62x51mm
+  description: A heavier variant of the NCSP Krinkov originating from the same time period.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Guns/akms.rsi, state: icon }
+  productEntity: WeaponRifleAk
+  cost:
+    PlunderGSC: 5
+  categories:
+  - StoreCategoryGSCWeapons
+
+- type: listing
+  id: StoreListingGSCMayflower
+  name: NCSP Mayflower 7.62X51mm Assault Rifle
+  description: An advanced rifle design manufactured with pre-collapse GSC schematics by Cyberdawn and SAW.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Guns/mayflower.rsi, state: icon }
+  productEntity: WeaponRifleMayflower
+  cost:
+    PlunderGSC: 10
+  categories:
+  - StoreCategoryGSCWeapons
+
+- type: listing
+  id: StoreListingGSCSaiga
+  name: NCSP Saiga-12K Gauge Shotgun
+  description: A competitor to the PTA Pozhar tactical shotgun, once mass-produced by GSC in Shinohara facilities, now only a few are commissioned from SAW's scrapyard.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Guns/saiga12.rsi, state: icon }
+  productEntity: WeaponShotgunNCSPSaiga12
+  cost:
+    PlunderGSC: 10
+  categories:
+  - StoreCategoryGSCWeapons
+
+- type: listing
+  id: StoreListingGSCSVD
+  name: NCSP SVD 12.7x99mm Sniper Rifle
+  description: A natural consequence of Shinohara stirring up the field with the M335 Barghest launching into mass production.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Guns/svds.rsi, state: icon }
+  productEntity: WeaponRifleSVDMarksman
+  cost:
+    PlunderGSC: 15
+  categories:
+  - StoreCategoryGSCWeapons
+
+- type: listing
+  id: StoreListingGSCRPD
+  name: NCSP RPD 7.62x51mm Machine gun
+  description: A blunt and unsophisticated design scavenged and repurposed from a Nanotrasen autonomous killdrone machinegun schematic.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Guns/rpd.rsi, state: icon }
+  productEntity: WeaponLightMachineGunNCSPRPD
+  cost:
+    PlunderGSC: 20
+  categories:
+  - StoreCategoryGSCWeapons
+
+- type: listing
+  id: StoreListingGSCEnergySword
+  name: Energy Sword
+  description: A Gorlex Security Consulting classic desperately clinging onto relevance.
+  icon: { sprite: /Textures/Objects/Weapons/Melee/e_sword.rsi, state: icon }
+  productEntity: EnergySword
+  cost:
+    PlunderGSC: 10
+  categories:
+  - StoreCategoryGSCWeapons
+
+#GUNS END

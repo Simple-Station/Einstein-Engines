@@ -68,6 +68,12 @@
     speechVerb: Arachnid
     speechSounds: Arachnid
     allowedEmotes: ['Click', 'Chitter', 'Hiss'] # DeltaV: Added Hiss
+  - type: LanguageKnowledge
+    speaks:
+    - Atyrian
+    understands:
+    - Atyrian
+    - TauCetiBasic #needed for vending machines
   - type: Vocal
     sounds:
       Male: UnisexArachnid
@@ -75,6 +81,8 @@
       Unsexed: UnisexArachnid
   - type: TypingIndicator
     proto: spider
+  - type: PotentiaModifier
+    potentiaMultiplier: 1.25
   - type: Sprite # I'd prefer if these maps were better. Insert map pun here.
     layers:
       - map: [ "enum.HumanoidVisualLayers.Chest" ]

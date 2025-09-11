@@ -1,16 +1,13 @@
 # ncwl
 
-job-description-ncwl-faction-leader = Coordinate the League. Ensure its survival, and the destruction of those who would oppose it.
-job-description-ncwl-homeguard-overseer = Lead the Homeguard. Defend Port Balreska and eliminate the League's enemies.
-job-description-ncwl-homeguard-captain = Command a squad of Soldats. Listen to the Coordinator. Maintain battlefield cohesion.
-job-description-ncwl-homeguard-soldat = Defend the League. Listen to your Squad Captain. Do what you're told.
-job-description-ncwl-logistic-dockmaster = Run industry. Produce goods. Make money. Supply the League. Yell at your dockhands.
-job-description-ncwl-logistic-dockhand = Listen to the Dockmaster. Do trade runs. Order supplies. Man the machines. Get caught in conveyor belts.
-job-description-ncwl-medical-director = Keep the League alive and healthy. Coordinate research. Order cybernetics. Yell at your doctors.
-job-description-ncwl-medical-doctor = Listen to the Director. Do research. Practice medicine. Practice combat medicine. Make drugs.
-job-description-ncwl-engineering-supervisor = Supervise salvage and techmining. Oversee mining. Repair and maintain ships. Yell at your Engineers.
-job-description-ncwl-engineering-mechanic = Listen to the Supervisor. Gather resources for the League. Do repairs and shipmods. Explode.
-job-description-ncwl-newbie = Do what work needs doing. Serve the League and perhaps join one of the Unions.
+job-description-ncwl-faction-leader = Lead the League from the external end. Maintain relations or war plans with other factions. Don't die.
+job-description-ncwl-kommissar = Lead the League from the internal end. Make sure the Homeguard and Union does their job. Execute traitors.
+job-description-ncwl-fleetkapitan = Command the mass of Partisans. Listen to the Kommissar. Maintain battlefield cohesion.
+job-description-ncwl-partisan = Defend the League. Listen to your Fleetkapitan. Do what you're told.
+job-description-ncwl-industry-taskmaster = Ensure materials are being refined into trade goods and ammo. Organize trade routes. Work with the Overseer.
+job-description-ncwl-medical-doctor = Keep the Workers and the Homeguard alive. Run with the Homeguard on missions. Make drugs, save those lost in space.
+job-description-ncwl-worker-overboss = Organize salvage and mining. Make sure workers are working. Keep resources flowing to the Coordinator.
+job-description-ncwl-newbie = Do what work needs doing. Serve the League. Listen to the Overseer and Coordinator.
 
 # syndicate
 
@@ -29,22 +26,22 @@ job-description-foreman = Coordinate the SAWs. Lead pirate boardings. Scrap vess
 
 # empire
 
-job-description-freeholder = Obey the Imperial hierarchy. Earn Credits for the Governor.
-job-description-levyman = Obey your liege. Uphold the will of the Kaiser.
-job-description-knight = Organize the Imperial Navy. Obey your liege.
-job-description-ritter = Don your Exoplate. Obey your liege lord. Slaughter communards.
-job-description-courtier = Obey your liege. Intrigue for power and rank within his prestigious court.
-job-description-labor = Oversee and command reconstruction and trade efforts on behalf of your liege.
-job-description-adjutant = Obey your liege lord, the Kaiser, and your liege lord, the Governor. Attempt to coordinate the Empire.
-job-description-governor = Maintain the delicate balance of the Count's court. Protect your fief.
-job-description-logistics = Outfit your liege's army with vessels and munitions.
-job-description-wealth = Oversee the barony's economical matters, generate revenue for your liege lord and pay his men.
-job-description-foremanimp = Coordinate the workers of your liege.
+job-description-freeholder = Obey the Imperial hierarchy. Earn Credits for the Lord Admiral.
+job-description-levyman = Obey your liege, the Lord Admiral. Uphold the will of the Kaiserin.
+job-description-knight = Organize the Imperial Navy. Obey your liege, the Lord Admiral.
+job-description-ritter = Don your Exoplate. Obey your liege, the Lord Admiral. Bring glory in battle.
+job-description-courtier = Obey  your liege, the Lord Admiral. Intrigue for power and rank within his prestigious court.
+job-description-labor = Oversee industrial and trade efforts on behalf of  your liege, the Lord Admiral.
+job-description-adjutant = Obey the Kaiserin, and your liege, the Lord Admiral. Attempt to coordinate the Empire.
+job-description-governor = Exercise the Kaiserin's will. Protect your fief. The Mandate must survive.
+job-description-logistics = Outfit your liege, the Lord Admiral's military with vessels and munitions.
+job-description-wealth = Oversee the barony's economy, generate revenue for your liege, the Lord Admiral and pay his men.
+job-description-foremanimp = Coordinate the workers of your liege, the Lord Admiral.
 job-description-scribe = Explore, discover new technologies, and recover derelicts.
-job-description-archmaester = Coordinate the Scribes' Guild, discover new technologies for the Empire.
+job-description-archmaester = Coordinate the Scribes Guild, discover new technologies for the Lord Admiral.
 job-description-surgeon = Tend to the bodily ails of your comrades.
-job-description-advocatus = Maintain the interests of the Count in the Barony. Collect "taxes".
-job-description-advocatustemplar = Make sure the Advocati stays alive.
+job-description-advocatus = Scrutinise the loyalty of your liege, the Lord Admiral's subjects. Question violators of His will. Ensure compliance to the Mandate.
+job-description-advocatustemplar = Protect the Advocatus and carry out their will. Ensure compliance to the Mandate.
 
 # srm#
 
@@ -106,9 +103,10 @@ job-description-arbeiter = The industrial life blood of the Authoritat. Follow t
 
 job-description-spacer = Be an independent citizen of Taypan.
 job-description-gliess-sheriff = Keep the law in Gliess Santo.
+job-description-gliess-deputy = Assist the Sheriff in keeping the law in Gliess Santo.
 job-description-gliess-dockmaster = Make sure nobody blows up your station.
 
-# conscript-ncwl
+# conscript-ncwl - for PLANETFALL
 job-description-conscript-ncwl-ship-captain = Pilot the Clementine. Ensure it's safety and use its armaments well. Go down with the ship.
 job-description-conscript-ncwl-ship-crew = Man the guns and fix holes. Load ammo. Help the soldiers do their job. Don't leave the ship.
 job-description-conscript-ncwl-leader = Lead the remnants of the NCWL. Ensure the League takes control of Vladzena.
@@ -121,7 +119,7 @@ job-description-conscript-ncwl-smg = Punish overconfidence. Make them keep their
 job-description-conscript-ncwl-rifleman = Be the rank and file. Be the corpses the League will stand on. (Bolt-action Rifle)
 job-description-conscript-ncwl-cadet = Listen to your superiors. Keep your head down and learn. (Bolt-action Rifle)
 
-# conscript-dsm
+# conscript-dsm - for PLANETFALL
 job-description-conscript-dsm-ship-captain = Pilot the Nemesis. Ensure it's safety and use its armaments well. Go down with the ship.
 job-description-conscript-dsm-ship-crew = Man the guns and fix holes. Load ammo. Help the soldiers do their job. Don't leave the ship.
 job-description-conscript-dsm-leader = Lead the punishment regimen. Reclaim the honor of your house. Stamp out the League.
@@ -133,3 +131,21 @@ job-description-conscript-dsm-shotgun = Punch through enemy lines. Be the first 
 job-description-conscript-dsm-smg = Punish overconfidence. Make them keep their head down. (Submachine Gun)
 job-description-conscript-dsm-rifleman = Be the rank and file. Be the corpses the League will stand on. (Lever-action Rifle)
 job-description-conscript-dsm-cadet = Listen to your superiors. Keep your head down and learn. (Lever-action Rifle)
+
+# unionfall-ncwl
+job-description-unionfall-ncwl-ship-captain = Pilot the fleet's anchors. Coordinate with other vessels. Go down with your ship.
+job-description-unionfall-ncwl-ship-crew = Man the guns and fix holes. Load ammo. Don't leave the ship. Listen to the Grand Steward.
+job-description-unionfall-ncwl-leader = Lead the remnants of the NCWL. Ensure the League survives and eliminates its enemies.
+job-description-unionfall-ncwl-officer = Lead small squads. Ensure cohesion. Listen to the Kommandant.
+job-description-unionfall-ncwl-doctor = Keep your comrades alive.
+job-description-unionfall-ncwl-rifleman = Be the rank and file. Pilot fighters and ultralights. Listen to your superiors.
+job-description-unionfall-ncwl-cadet = Listen to your superiors. Keep your head down and learn.
+
+# unionfall-dsm
+job-description-unionfall-dsm-ship-captain = Pilot the fleet's anchors. Coordinate with other vessels. Go down with your ship.
+job-description-unionfall-dsm-ship-crew = Man the guns and fix holes. Load ammo. Don't leave the ship. Listen to the Grand Steward.
+job-description-unionfall-dsm-leader = Lead the punishment regimen. Reclaim the honor of your house. Stamp out the League.
+job-description-unionfall-dsm-officer = Lead small squads. Ensure cohesion. Listen to the Knight-Bannaret.
+job-description-unionfall-dsm-doctor = Keep your fellow men alive.
+job-description-unionfall-dsm-rifleman = Be the rank and file. Pilot fighters and ultralights. Listen to your superiors.
+job-description-unionfall-dsm-cadet = Listen to your superiors. Keep your head down and learn.

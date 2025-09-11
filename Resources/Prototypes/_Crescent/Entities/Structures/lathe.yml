@@ -254,21 +254,40 @@
     idleState: fab-idle
     runningState: fab-active
     staticRecipes:
+      - MagazineBoxAntiMateriel
+      - MagazineBoxHeavyRifle
+      - MagazineBoxRifle
       - MagazineBoxLightRifle
+      - MagazineBoxCaselessRifle
+      - MagazineBoxCaselessRifleBig
+      - BoxShotgunFlash4g
+      - BoxShotgunSlug4g
+      - BoxLethalshot4g
+      - BoxBeanbag4g
+      - BoxLethalshot
+      - BoxShotgunLumen
+      - BoxShotgunFlare
       - MagazineBoxMagnum
       - MagazineBoxPistol
-      - MagazineBoxRifle
-      - MagazineLightRifle
-      - MagazinePistol6mm
+      - MagazineAntiMateriel
       - MagazineHeavyRifle
-      - MagazinePistolSubMachineGunHeavy
-      - MagazinePistol
-      - MagazinePistolSubMachineGun
-      - MagazinePistolSubMachineGunTopMounted
+      - MagazineRifleDrum
       - MagazineRifle
-      - MagazineShotgun
+      - MagazineLightRifle
       - MagazineShotgunSlug
+      - MagazineShotgun
+      - SpeedLoader127x99
+      - SpeedLoaderMagnum
       - MagazineMagnumSub
+      - MagazineMagnum
+      - MagazinePistolSubMachineGunHeavy
+      - MagazinePistolSubMachineGun
+      - MagazinePistol6mmSmg
+      - MagazinePistolSmartgun
+      - MagazinePistol
+      - MagazinePistol6mm
+      - MagazinePistolSubMachineGunTopMounted
+      - BoomboxCraft
       - Wirecutter
       - Igniter
       - Signaller
@@ -313,7 +332,12 @@
       - ClothingHeadHatWelding
       - ClothingOuterSuitEmergency
       - ClothingHeadHelmetEVALarge # Frontier
+      - TradebandTranslator
     dynamicRecipes:
+      - CreoleTranslator
+      - LowImperialTranslator
+      - FreespeakTranslator
+      - KaishagoTranslator
       - ThrusterFlatpackAstronautics
       - GyroscopeFlatpackAstronautics
       - MiniGravityFlatpack
@@ -477,6 +501,10 @@
       - EmagCyberdawn
       - WeaponLightMachineGunNCSPRPD
       - WeaponRifleMayflower
+      - WeaponRifleSVDMarksmanNCSP
+      - WeaponShotgunSaiga12NCSP
+      - WeaponLauncherRPGNSCP
+      - WeaponLCartridgeRPGSmall
       - DnaScramblerImplanter
       - EmpImplanter
       - EnergyDagger
@@ -510,6 +538,8 @@
       - ClothingHeadHelmetImperialKnightCommanderHelmet
       - ClothingOuterArmorImperialArmorPrestige
       - ClothingOuterHardsuitImperialKnight
+      - ClothingOuterHardsuitImperialNullweavePsion
+      - ImperialPsionBoundlightStaff
       - CarrionFlatpack
       - WeaponMechIndustrialKineticAcceleratorImperial
       - MechEquipmentGrabberImperial
@@ -528,6 +558,8 @@
       - LaelapsLPC
       - PaladinFlatpack
       - WandererFlatpack
+      - WeaponMechCombatPlasmaRifle
+      - WeaponMechCombatPlasmaCannon
       - WeaponRifleDSMLegionnaire
       - WeaponSubMachineGunC20rImperial
       - WeaponPistolNeoVolker
@@ -559,24 +591,29 @@
       - WeaponPistolComrade
       - WeaponSubMachineGunNCWLWatchdog
       - ClothingOuterHardsuitNCWLInfantry
-      - SabreLPC
-      - RapierLPC
-      - KhopeshLPC
-      - BroadswordLPC
+      - VanguardLPC
+      - ZorniyLPC
+      - LodkaLPC
       - MolotLPC
+      - KrechetLPC
+      - IvarodLPC
       - HindLPC
+      - GargutLPC
+      - VanguardMarkTwoLPC
+      - SternLPC
+      - BogatyrLPC
+      - SunderLPC
       - WeaponSubMachineGunBloodhound
       - WeaponRifleNCWLBatanya
       - WeaponPistolT91
       - WeaponRevolverPython
       - ClothingOuterHardsuitNCWLPetya
-      - VanguardMarkTwoLPC
       - LancerFlatpack
       - WeaponLauncherGM94
-      - IvarodLPC
-      - SternLPC
       - BogatyrFlatpack
       - ClothingOuterHardsuitNCWLJuggernaut
+      - NCWLKukri
+      - ClothingBeltSheathNCWLKukri
       - ClothingUniformJumpsuitExecutiveShinoharaSuit
       - ClothingUniformJumpsuitShinoharaLogistics
       - ClothingOuterShinoharaVest

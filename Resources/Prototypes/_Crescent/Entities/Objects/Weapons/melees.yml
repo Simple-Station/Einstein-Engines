@@ -1,4 +1,43 @@
 - type: entity
+  name: hunter's vibrokhopesh
+  parent: BaseItem
+  id: SRMKhopesh
+  description: A ceremonial weapon belonging to the Hunters.
+  components:
+  - type: Sharp
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/vibrokhopesh.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: 45
+    range: 1.4
+    attackRate: 1
+    damage:
+      types:
+        Slash: 38
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
+    heavyRateModifier: 1.2
+    clickPartDamageMultiplier: 1.25
+    lightRangeModifier: 1.15
+    maxTargets: 4
+  - type: Reflect
+    reflectProb: .75
+    spread: 75
+  - type: Item
+    size: Normal
+    shape:
+      - 0,0,1,3
+    sprite: _Crescent/Objects/Weapons/vibrokhopesh.rsi
+  - type: Tag
+    tags:
+    - Khopesh
+  - type: DisarmMalus
+  - type: MultiHandedItem
+
+- type: entity
   parent: ArmBladeChangeling
   id: MantisBlade
   suffix: Unremoveable
@@ -10,16 +49,17 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -45
-    attackRate: 0.8
-    heavyStaminaCost: 10
+    attackRate: 0.85
     damage:
       types:
         Slash: 28
         Structural: 20
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
+    heavyRateModifier: 1.3
     clickPartDamageMultiplier: 2
     heavyPartDamageMultiplier: 1.3
     lightRangeModifier: 1.4
-    heavyRateModifier: 1.3
     maxTargets: 2
     angle: 45
     soundHit:
@@ -37,25 +77,8 @@
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/machete.rsi
     state: icon
-  - type: MeleeWeapon
-    wideAnimationRotation: -135
-    soundHit:
-      path: /Audio/Weapons/bladeslice.ogg
-    maxTargets: 4
-    angle: 80
-  - type: DamageOtherOnHit
-    staminaCost: 5
-  - type: EmbeddableProjectile
-  - type: EmbedPassiveDamage
-  - type: ThrowingAngle
-    angle: 225
   - type: Item
-    size: Normal
     sprite: _Crescent/Objects/Weapons/machete.rsi
-  - type: Tag
-    tags:
-    - Machete
-  - type: DisarmMalus
 
 - type: entity
   name: noble's rapier
@@ -70,19 +93,25 @@
   - type: MeleeWeapon
     wideAnimationRotation: -135
     range: 1.75
-    attackRate: 1.25
+    attackRate: 1.15
     damage:
       types:
         Slash: 18
         Piercing: 22
-    clickPartDamageMultiplier: 2
-    maxTargets: 7
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
+    heavyRateModifier: 1.25
+    clickPartDamageMultiplier: 1.5
+    lightRangeModifier: 1.15
+    maxTargets: 3
     angle: 0.1
     animation: WeaponArcThrust
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: Item
     size: Normal
+    shape:
+      - 0,0,1,3
     sprite: _Crescent/Objects/Weapons/noble_rapier.rsi
   - type: Tag
     tags:
@@ -101,16 +130,17 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.5
-    range: 1.25
+    attackRate: 0.85
+    range: 1.4
     damage:
       types:
         Slash: 36
-    clickPartDamageMultiplier: 2
-    heavyPartDamageMultiplier: 1.5
-    lightRangeModifier: 1.5
-    heavyStaminaCost: 2.5
-    maxTargets: 7
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 8
+    heavyRateModifier: 1
+    clickPartDamageMultiplier: 1.75
+    lightRangeModifier: 1.15
+    maxTargets: 4
     animation: WeaponArcThrust
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
@@ -119,6 +149,8 @@
     spread: 90
   - type: Item
     size: Normal
+    shape:
+      - 0,0,1,3
     sprite: _Crescent/Objects/Weapons/noble_sabre.rsi
   - type: Tag
     tags:
@@ -136,18 +168,26 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.2
+    attackRate: 1
+    range: 1.25
     damage:
       types:
-        Blunt: 25
+        Blunt: 28
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
+    heavyRateModifier: 1.15
+    clickPartDamageMultiplier: 1.25
+    lightRangeModifier: 1.2
+    bluntStaminaDamageFactor: 1.25
+    maxTargets: 2
     soundHit:
       collection: MetalThud
-    bluntStaminaDamageFactor: 2
-    heavyStaminaCost: 5
   - type: DamageOtherOnHit
     staminaCost: 15
   - type: Item
     size: Normal
+    shape:
+      - 0,0,1,2
   - type: Tag
     tags:
     - Truncheon
@@ -179,13 +219,17 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -90
+    range: 1.25
     attackRate: 1
-    heavyStaminaCost: 10
     damage:
       types:
-        Slash: 34
+        Slash: 36
     heavyDamageBaseModifier: 1
-    heavyRateModifier: 1.3
+    heavyStaminaCost: 10
+    heavyRateModifier: 1.15
+    clickPartDamageMultiplier: 1.5
+    lightRangeModifier: 1.2
+    maxTargets: 3
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: ThrowingAngle
@@ -215,8 +259,7 @@
     damage:
       types:
         Slash: 38
-    heavyDamageBaseModifier: 1
-    heavyRateModifier: 1.25
+    heavyRateModifier: 1
   - type: Item
     size: Normal
     sprite: _Crescent/Objects/Weapons/shiverblade.rsi
@@ -253,11 +296,16 @@
   - type: MeleeWeapon
     wideAnimationRotation: 90
     attackRate: 1
+    range: 1.4
     damage:
       types:
         Slash: 33
     heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
     heavyRateModifier: 1.25
+    clickPartDamageMultiplier: 1.5
+    lightRangeModifier: 1.15
+    maxTargets: 3
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -268,4 +316,50 @@
   - type: Tag
     tags:
     - Khopesh
+  - type: DisarmMalus
+
+- type: entity
+  name: chengridz jaeger's vibrokukri
+  parent: BaseItem
+  id: NCWLKukri
+  description: Taking the shape of a worker's tool, this vibro-alloy kukri is Chengridz's attempt at replicating the Sixth Subjugation Fireteam's signature weapon, following stolen Imperial blueprints.
+  components:
+  - type: Sharp
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/ncwlkukri.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -45
+    range: 1.4
+    attackRate: 1
+    damage:
+      types:
+        Slash: 40
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 10
+    heavyRateModifier: 1.2
+    clickPartDamageMultiplier: 1.25
+    lightRangeModifier: 1.15
+    maxTargets: 3
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+  - type: LandAtCursor
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 40
+  - type: EmbedPassiveDamage
+  - type: Reflect
+    reflectProb: .25
+    spread: 75
+  - type: Item
+    size: Normal
+    shape:
+      - 0,0,1,3
+    sprite: _Crescent/Objects/Weapons/ncwlkukri.rsi
+  - type: Tag
+    tags:
+    - Kukri
   - type: DisarmMalus

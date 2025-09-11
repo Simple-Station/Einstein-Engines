@@ -3,29 +3,38 @@
   name: job-name-gliess-sheriff
   description: job-description-gliess-sheriff
   playTimeTracker: JobGliessSheriff
-  requirements:
-    - !type:CharacterOverallTimeRequirement
-      min: 4000
   startingGear: GliessSheriffGear
-  icon: "JobIconGliessSheriff"
+  icon: "JobIconMarshal"
   supervisors: job-supervisors-gliess
+  requirements:
+    - !type:CharacterWhitelistRequirement
+    - !type:CharacterOverallTimeRequirement
+      min: 25000
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: ChatRank
+        rank: crescent-rank-ind-gliess-sheriff
+      - type: LanguageAdder
+        addSpoken:
+          - Tradeband
+        addUnderstood:
+          - Tradeband
   accessGroups:
   - GeneralAccess
   access:
   - GliessSheriff
   - GliessDockmaster
-  special:
-  - !type:AddComponentSpecial
-    components:
-      - type: ChatRank
-        rank: crescent-rank-sheriff
 
 - type: startingGear
   id: GliessSheriffGear
   equipment:
-    ears: ClothingHeadsetGrey
-    shoes: ClothingShoesBootsCowboyBrown
-    jumpsuit: ClothingUniformJumpsuitDetective
-    head: ClothingHeadHatCowboyBrown
+    jumpsuit: ClothingUniformJumpsuitCMMOfficer
+    shoes: ClothingShoesBootsCombat
+    head: ClothingHeadHatCMMMarshal
+    gloves: ClothingHandsGlovesCombat
+    belt: ClothingBeltMinutemanPouches
+    pocket1: WeaponRevolverSnubnose
     id: GliessSheriffPDA
-    back: ClothingBackpackSatchelLeatherFilledDSM
+    ears: ClothingHeadsetCMM
+    outerClothing: ClothingOuterArmorCMMCarapace

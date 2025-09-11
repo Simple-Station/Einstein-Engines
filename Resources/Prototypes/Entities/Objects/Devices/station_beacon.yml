@@ -34,6 +34,8 @@
         type: NavMapBeaconBoundUserInterface
   - type: Item
     size: Small
+  - type: Visibility
+    layer: 1
   - type: SubFloorHide
   - type: Anchorable
   - type: Construction
@@ -351,19 +353,19 @@
 - type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconSupply
-  suffix: Logistics #Delta V - Renamed
+  suffix: Manufacturing #Delta V - Renamed
   components:
   - type: NavMapBeacon
-    defaultText: station-beacon-logistics #Delta V - Renamed
+    defaultText: station-beacon-manufacturing #Delta V - Renamed
     color: "#A46106"
 
 - type: entity
   parent: DefaultStationBeaconSupply
   id: DefaultStationBeaconCargoReception
-  suffix: Logistics Reception #Delta V - Renamed
+  suffix: Logistics #Delta V - Renamed
   components:
   - type: NavMapBeacon
-    defaultText: station-beacon-logistics-reception #Delta V - Renamed
+    defaultText: station-beacon-logistics #Delta V - Renamed
 
 - type: entity
   parent: DefaultStationBeaconSupply

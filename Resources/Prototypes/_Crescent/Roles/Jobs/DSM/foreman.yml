@@ -3,16 +3,20 @@
   name: job-name-foremanimp
   description: job-description-foremanimp
   playTimeTracker: JobForemanDSM
-  weight: 74
+  weight: 3
   startingGear: ForemanImpGear
   alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconImperialForeman"
+  supervisors: job-supervisors-imperial
+  canBeAntag: false
   requirements:
+    - !type:FactionRequirement
+      factionID: "DSM"
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
         - Voidborn
-    - !type:FactionRequirement
-      factionID: "DSM"
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -25,18 +29,15 @@
   special:
   - !type:AddComponentSpecial
     components:
-      - type: LanguageKnowledge
-        speaks:
+      - type: ChatRank
+        rank: crescent-rank-foreman
+      - type: LanguageAdder
+        addSpoken:
+          - LowImperial
           - Tradeband
-          - SolCommon
-        understands:
+        addUnderstood:
+          - LowImperial
           - Tradeband
-          - SolCommon
-
-  icon: "JobIconImperialForeman"
-  requireAdminNotify: false
-  supervisors: job-supervisors-imperial
-  canBeAntag: false
   access:
   - Command
   - Empire

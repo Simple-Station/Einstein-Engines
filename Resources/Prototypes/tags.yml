@@ -1,4 +1,16 @@
 - type: Tag
+  id: CartridgeHeavyRifleSpeedloader
+
+- type: Tag
+  id: ShellRocket84mm
+
+- type: Tag
+  id: Cartridge84mmRocket
+
+- type: Tag
+  id: CartridgeSmallRocket
+
+- type: Tag
   id: MagazineAntiMateriel
 
 - type: Tag

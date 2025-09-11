@@ -100,22 +100,32 @@ namespace Content.Client._Crescent
                 var factionButton = new Button();
                 // SHORTENED FOR UI's sake
                 factionButton.Text = faction.ID;
+
+                if (faction.DescriptionPrefix != null)
+                    factionButton.ModulateSelfOverride = Color.Red;
+
                 var factionName = new Label();
                 factionName.HorizontalAlignment = HAlignment.Center;
                 var factionPhoto = new TextureRect();
                 factionPhoto.Stretch = TextureRect.StretchMode.Scale;
+                var factionDescPrefix = new Label();
                 var factionDesc = new Label();
+                factionDescPrefix.FontColorOverride = Color.Red;
+                factionDescPrefix.HorizontalAlignment = HAlignment.Center;
+                factionDescPrefix.Align = Label.AlignMode.Center;
                 factionDesc.MaxWidth = 1012f;
                 factionDesc.HorizontalAlignment = HAlignment.Center;
                 factionButton.OnPressed += _ =>
                 {
                     SetFaction(faction);
                     FactionInfo.RemoveAllChildren();
+                    factionDescPrefix.Text = faction.DescriptionPrefix;
                     factionDesc.Text = faction.Description;
                     factionPhoto.Texture = faction.Icon.Frame0();
                     factionPhoto.SetHeight = 189f;
                     factionPhoto.SetWidth = 1012f;
                     FactionInfo.AddChild(factionPhoto);
+                    FactionInfo.AddChild(factionDescPrefix);
                     FactionInfo.AddChild(factionDesc);
                 };
                 _factionList.AddChild(factionButton);
