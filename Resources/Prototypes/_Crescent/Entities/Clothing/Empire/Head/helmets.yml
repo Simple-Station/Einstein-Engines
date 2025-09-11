@@ -523,8 +523,6 @@
         Piercing: 5
         Heat: 5
         Caustic: 5
-<<<<<<< HEAD
-=======
   - type: TinfoilHat
     passthrough: true
     destroyOnFry: false
@@ -541,4 +539,3 @@
     sprite: _Crescent/Clothing/Empire/Head/dsm_cap.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/Empire/Head/dsm_cap.rsi
->>>>>>> 38d894c01007b15085e7b1403af1c1d1e40baaec
