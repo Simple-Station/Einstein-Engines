@@ -5,9 +5,30 @@
   id: MediumFighterEquipment
 
 - type: entity
-  id: LightFighter
+  id: BaseFighter
   abstract: true
-  categories: [ HideSpawnMenu ]
+  components:
+  - type: Mech
+  - type: CanBeHeatTracked
+  - type: ProximityFuseTarget
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 1
+        density: 21390 # 15 Tonnes
+        mask:
+        - FighterImpassable
+        layer:
+        - FighterMask
+
+- type: entity
+  id: LightFighter
+  parent: BaseFighter
+  abstract: true
   components:
   - type: Mech
     equipmentWhitelist:
@@ -21,8 +42,8 @@
 
 - type: entity
   id: MediumFighter
+  parent: BaseFighter
   abstract: true
-  categories: [ HideSpawnMenu ]
   components:
   - type: Mech
     equipmentWhitelist:
@@ -37,7 +58,6 @@
 - type: entity
   id: LightFighterEquipment
   abstract: true
-  categories: [ HideSpawnMenu ]
   components:
   - type: Tag
     tags:
@@ -48,7 +68,6 @@
 - type: entity
   id: MediumFighterEquipment
   abstract: true
-  categories: [ HideSpawnMenu ]
   components:
   - type: Tag
     tags:
