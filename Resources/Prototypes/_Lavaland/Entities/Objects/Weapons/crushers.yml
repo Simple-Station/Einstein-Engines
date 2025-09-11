@@ -203,7 +203,6 @@
     damage:
       types:
         Slash: 36
-        Structural: 40
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 10
     heavyRateModifier: 1.25
@@ -219,7 +218,7 @@
     slots:
     - Belt
   - type: Item
-    size: Ginormous
+    size: Normal
     sprite: _Lavaland/Objects/Weapons/Crushers/crusher_machete-inhands.rsi
   # too lazy to port parrying and risk a [redacted] lmao
   - type: Sharp

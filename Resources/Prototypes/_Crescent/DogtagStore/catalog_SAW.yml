@@ -180,7 +180,7 @@
   icon: { sprite: Structures/Shuttles/gyroscope.rsi, state: base }
   productEntity: GyroscopeFlatpack
   cost:
-    ScrapSAW: 4
+    ScrapSAW: 10
   categories:
   - StoreCategorySAWshipmods
 
@@ -191,7 +191,7 @@
   icon: { sprite: _Crescent/Structures/thrustersyn.rsi, state: base }
   productEntity: NCSPFighterThrusterFlatpack
   cost:
-    ScrapSAW: 5
+    ScrapSAW: 10
   categories:
   - StoreCategorySAWshipmods
 

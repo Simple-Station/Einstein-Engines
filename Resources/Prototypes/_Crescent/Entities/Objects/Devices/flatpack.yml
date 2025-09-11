@@ -173,7 +173,7 @@
   description: A flatpack used for constructing a heavy automortar.
   components:
   - type: Flatpack
-    entity: WeaponTurretMortarFilled
+    entity: WeaponTurretMortar
   - type: Sprite
     layers:
     - state: ame-part
@@ -187,7 +187,7 @@
   description: A flatpack used for constructing a heavy needler autogun.
   components:
   - type: Flatpack
-    entity: WeaponTurretNeedlerFilled
+    entity: WeaponTurretNeedler
   - type: Sprite
     layers:
     - state: ame-part
@@ -272,7 +272,7 @@
   description: A flatpack used for constructing operator turret with a universal commercial IFF.
   components:
   - type: Flatpack
-    entity: WeaponTurretVulcanFilled
+    entity: WeaponTurretVulcan
   - type: Sprite
     layers:
     - state: ame-part
@@ -328,7 +328,7 @@
   description: A flatpack used for constructing artillery cannons with a universal commercial IFF.
   components:
   - type: Flatpack
-    entity: BaseWeaponTurretBattlemortarFilled
+    entity: BaseWeaponTurretBattlemortar
   - type: Sprite
     layers:
     - state: ame-part
