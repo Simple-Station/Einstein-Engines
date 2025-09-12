@@ -43,7 +43,7 @@
   id: CrateAssaultMortarAmmo
   parent: CrateSecgear
   name: assault mortar crate
-  description: Ammunition for the assault mortar platform.
+  description: Ammunition for the 230mm "Hephaestus" assault mortar platform.
   components:
   - type: StorageFill
     contents:
@@ -115,7 +115,7 @@
   id: CrateArtilleryAmmo
   parent: CrateSecgear
   name: type-99 crate
-  description: Ammunition for 120mm artilleries.
+  description: Ammunition for 120mm artillery cannons.
   components:
   - type: StorageFill
     contents:
@@ -130,7 +130,7 @@
   id: CrateAutogunAmmo
   parent: CrateSecgear
   name: autogun crate
-  description: Ammunition for autogun artilleries.
+  description: Ammunition for "Needler" autogun turrets.
   components:
   - type: StorageFill
     contents:
@@ -141,7 +141,7 @@
   id: CrateMortarAmmo
   parent: CrateSecgear
   name: automortar crate
-  description: Ammunition for automortar artilleries.
+  description: Ammunition for automortar artillery turrets.
   components:
   - type: StorageFill
     contents:
