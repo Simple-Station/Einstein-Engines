@@ -92,7 +92,6 @@
         Heat: 0.9
         Radiation: 0.9
         Caustic: 0.9
-  - type: EyeProtection
 
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
