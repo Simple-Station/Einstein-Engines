@@ -69,7 +69,7 @@
 
 - type: entity
   parent: MagazineBoxAntiMateriel
-  id: MagazineBoxAntiMaterielUranium
+  id: MagazineBoxAntiMaterielIncendiary
   name: ammunition box (15.2×169mm incendiary)
   components:
   - type: BallisticAmmoProvider
