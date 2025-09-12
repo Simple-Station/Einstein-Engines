@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseCartridge
   id: CartridgeAntiMateriel
-  name: cartridge (15.2×169 mm )
+  name: cartridge (15.2×169mm)
   components:
   - type: Tag
     tags:
@@ -18,6 +18,22 @@
   - type: SpentAmmoVisuals
   - type: StaticPrice
     price: 20
+
+- type: entity
+  parent: CartridgeAntiMateriel
+  id: CartridgeAntiMaterielUranium
+  name: cartridge (15.2×169mm depleted-uranium)
+  components:
+  - type: CartridgeAmmo
+    proto: BulletAntiMaterielUranium
+
+- type: entity
+  parent: CartridgeAntiMateriel
+  id: CartridgeAntiMaterielIncendiary
+  name: cartridge (15.2×169mm incendiary)
+  components:
+  - type: CartridgeAmmo
+    proto: BulletAntiMaterielIncendiary
 
 - type: entity
   parent: CartridgeAntiMateriel
