@@ -1,0 +1,171 @@
+# Base vitals implant
+- type: entity
+  parent: TrackingImplant
+  id: MedicalTrackingImplant
+  name: vitals tracker (Basic)
+  description: This implant has a vitals tracking device for the local broadband frequency.
+  components:
+    - type: Rattle
+      radioChannel: "Common"
+
+# Hullrot vital tracking implants
+# IPM
+- type: entity
+  parent: TrackingImplant
+  id: TrackingImplantInterdyne
+  name: vitals tracker (IPM)
+  description: This implant has a vitals tracking device for the Interdyne Pharmaceuticals frequency.
+  components:
+    - type: Rattle
+      radioChannel: "Interdyne"
+
+- type: entity
+  parent: BaseImplantOnlyImplanter
+  id: VitalsTrackingImplanterInterdyne
+  name: interdyne vitals tracking implanter
+  components:
+    - type: Implanter
+      implant: TrackingImplantInterdyne
+
+# CMM
+- type: entity
+  parent: TrackingImplant
+  id: TrackingImplantCMM
+  name: vitals tracker (CMM)
+  description: This implant has a vitals tracking device for the Colonial Minutemen frequency.
+  components:
+    - type: Rattle
+      radioChannel: "Nfsd"
+
+- type: entity
+  parent: BaseImplantOnlyImplanter
+  id: VitalsTrackingImplanterCMM
+  name: colonial minutemen vitals tracking implanter
+  components:
+    - type: Implanter
+      implant: TrackingImplantCMM
+
+# SHI
+- type: entity
+  parent: TrackingImplant
+  id: TrackingImplantShinohara
+  name: vitals tracker (SHI)
+  description: This implant has a vitals tracking device for the Shinohara Industries frequency.
+  components:
+    - type: Rattle
+      radioChannel: "SHI"
+
+- type: entity
+  parent: BaseImplantOnlyImplanter
+  id: VitalsTrackingImplanterShinohara
+  name: shinohara vitals tracking implanter
+  components:
+    - type: Implanter
+      implant: TrackingImplantShinohara
+
+# DSM
+- type: entity
+  parent: TrackingImplant
+  id: TrackingImplantDSMCommand
+  name : vitals tracker (DSM-Comm)
+  description: This implant has a vitals tracking device for the Divine Mandate's command frequency.
+  components:
+  - type: Rattle
+    radioChannel: "Imperial"
+
+- type: entity
+  parent: BaseImplantOnlyImplanter
+  id: VitalsTrackingImplanterDSMCommand
+  name: imperial command vitals tracking implanter
+  components:
+    - type: Implanter
+      implant: TrackingImplantDSMCommand
+
+- type: entity
+  parent: TrackingImplant
+  name : vitals tracker (DSM-Civ)
+  id: TrackingImplantDSMCivilian
+  description: This implant has a vitals tracking device for the Divine Mandate's civilian frequency.
+  components:
+  - type: Rattle
+    radioChannel: "EmpireCiv"
+
+- type: entity
+  parent: BaseImplantOnlyImplanter
+  id: VitalsTrackingImplanterDSMCivilian
+  name: imperial civilian vitals tracking implanter
+  components:
+    - type: Implanter
+      implant: TrackingImplantDSMCivilian
+
+# NCWL
+- type: entity
+  parent: TrackingImplant
+  name : vitals tracker (NCWL)
+  id: TrackingImplantNCWL
+  description: This implant has a vitals tracking device for the Workers League frequency.
+  components:
+  - type: Rattle
+    radioChannel: "NCWL"
+
+- type: entity
+  parent: BaseImplantOnlyImplanter
+  id: VitalsTrackingImplanterNCWL
+  name: communard vitals tracking implanter
+  components:
+    - type: Implanter
+      implant: TrackingImplantNCWL
+
+# CRN
+- type: entity
+  parent: TrackingImplant
+  name : vitals tracker (CRN)
+  id: TrackingImplantCRN
+  description: This implant has a vitals tracking device for the Clarizian expeditionary frequency.
+  components:
+  - type: Rattle
+    radioChannel: "Clarizian"
+
+- type: entity
+  parent: BaseImplantOnlyImplanter
+  id: VitalsTrackingImplanterCRN
+  name: clarizian vitals tracking implanter
+  components:
+    - type: Implanter
+      implant: TrackingImplantCRN
+
+# ATH
+- type: entity
+  parent: TrackingImplant
+  name : vitals tracker (ATH)
+  id: TrackingImplantATH
+  description: This implant has a vitals tracking device for the Solarian 43rd Battlegroup frequency.
+  components:
+  - type: Rattle
+    radioChannel: "Authority"
+
+- type: entity
+  parent: BaseImplantOnlyImplanter
+  id: VitalsTrackingImplanterATH
+  name: authoritat vitals tracking implanter
+  components:
+    - type: Implanter
+      implant: TrackingImplantATH
+
+# NAP - uncomment when NAP has comms
+#- type: entity
+#  parent: TrackingImplant
+#  name : tracking implant (NAP)
+#  id: TrackingImplantNAP
+#  description: This implant has a vitals tracking device for the New American Protectorate vanguard frequency.
+#  components:
+#  - type: Rattle
+#    radioChannel: "NAP"
+
+#- type: entity
+#  parent: BaseImplantOnlyImplanter
+#  id: VitalsTrackingImplanterNAP
+#  name: protectorate vitals tracking implanter
+#  components:
+#    - type: Implanter
+#      implant: TrackingImplantNAP
