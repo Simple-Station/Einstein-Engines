@@ -1,4 +1,41 @@
 - type: jukebox
+  id: SpaceAsshowl
+  name: Chris Remo - Space Asshole
+  path:
+    path: /Audio/_Crescent/Jukebox/space_asshole-MONO.ogg
+
+- type: jukebox
+  id: Tintin
+  name: Jeroen Tel - Tintin on the Moon
+  path:
+    path: /Audio/_Crescent/Jukebox/title3.ogg
+
+- type: jukebox
+  id: Constellations
+  name: Qwertyquerty - Constellations
+  path:
+    path: /Audio/_Crescent/Jukebox/constellations.ogg
+
+- type: jukebox
+  id: Drifting
+  name: Qwertyquerty - Drifting
+  path:
+    path: /Audio/_Crescent/Jukebox/drifting.ogg
+
+- type: jukebox
+  id: starlight
+  name: Qwertyquerty - Starlight
+  path:
+    path: /Audio/_Crescent/Jukebox/starlight.ogg
+
+
+- type: jukebox
+  id: FlipFlap
+  name: X-CEED - Flip Flap
+  path:
+    path: /Audio/_Crescent/Jukebox/flip-flap.ogg
+
+- type: jukebox
   id: BeHereAWhile
   name: 311 - I'll Be Here A While
   path:
@@ -29,10 +66,10 @@
     path: /Audio/_Crescent/Jukebox/luftballoons.ogg
 
 - type: jukebox
-  id: AllAlone
+  id: AllAlong
   name: Jimi Hendrix - All Along the Watchtower
   path:
-    path: /Audio/_Crescent/Jukebox/allalone.ogg
+    path: /Audio/_Crescent/Jukebox/allalong.ogg
 
 - type: jukebox
   id: FeelGood
@@ -80,32 +117,19 @@
   id: Quake2QuadMachine
   name: Quake 2 OST - Quad Machine
   path:
-    path: "/Audio/_Crescent/Jukebox/august2nd/quad.ogg"
-
-# i dont think anybody will be mad if i remove the shitty dogshit watery shit DJ toenail dogshit song
-#- type: jukebox
-#  id: PromethazineAndAnthrax
-#  name: dj smokey - promethazine & anthrax
-#  path:
-#    path: "/Audio/_Crescent/Jukebox/august2nd/anthrax.ogg"
-# same with this just get like normal hard bass and not this slop shit dude
-#- type: jukebox
-#  id: NewDonkShitty
-#  name: V Limo (New Donk Shitty)
-#  path:
-#    path: "/Audio/_Crescent/Jukebox/august2nd/newdonk.ogg"
+    path: "/Audio/_Crescent/Jukebox/quad.ogg"
 
 - type: jukebox
   id: HorseWithNoName
   name: America - A Horse with No Name
   path:
-    path: "/Audio/_Crescent/Jukebox/august2nd/horse.ogg"
+    path: "/Audio/_Crescent/Jukebox/horse.ogg"
 
 - type: jukebox
   id: HighfleetTurkoidSong
   name: Turjan - Highfleet
   path:
-    path: "/Audio/_Crescent/highfleet.ogg"
+    path: "/Audio/_Crescent/Jukebox/highfleet.ogg"
 
 - type: jukebox
   id: PriestessSong
@@ -235,7 +259,7 @@
 
 - type: jukebox
   id: TheManWhoSoldSong
-  name: Nirvana - The man who sold the world
+  name: Midge Ure - The man who sold the world
   path:
     path: "/Audio/_Crescent/Jukebox/whosoldtheworld.ogg"
 
@@ -244,3 +268,15 @@
   name: Duran Duran - Invisible
   path:
     path: "/Audio/_Crescent/Jukebox/invisible.ogg"
+
+- type: jukebox
+  id: VolcanicsTheBaronSong
+  name: The Volcanics - The Baron
+  path:
+    path: "/Audio/_Crescent/Jukebox/volcanics_thebaron.ogg"
+
+- type: jukebox
+  id: DeepInHerEyesSong
+  name: Skaven - Deep In Her Eyes
+  path:
+    path: "/Audio/_Crescent/Jukebox/deepinhereyes.ogg"

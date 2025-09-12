@@ -115,42 +115,44 @@ public class ProjectilePhasePreventerSystem : EntitySystem
     {
         Parallel.ForEach(processingBuckets, args =>
         {
-            QueryFilter queryFilter = new QueryFilter();
             args.output.Clear();
-            Vector2 worldPos = Vector2.Zero;
+            Vector2 worldPos;
             foreach(var (owner,  phase, projectile) in args.items)
             {
                 // will be removed through events. Just skip for now
                 if (TerminatingOrDeleted(owner))
                     continue;
-                queryFilter.LayerBits = phase.relevantBitmasks;
-                queryFilter.MaskBits = phase.relevantBitmasks;
                 worldPos = _trans.GetWorldPosition(owner);
-                RayResult result = _raycast.CastRay(phase.mapId, phase.start, worldPos - phase.start , queryFilter);
+                if ((worldPos - phase.start).IsLengthZero())
+                    continue;
+                CollisionRay ray = new CollisionRay(phase.start, (worldPos - phase.start).Normalized(), phase.relevantBitmasks);
+                var rayLength = (worldPos - phase.start).Length();
                 phase.start = worldPos;
                 var bulletPhysics = physQuery.GetComponent(owner);
                 var bulletFixtures = fixtureQuery.GetComponent(owner);
                 var bulletString = bulletFixtures.Fixtures.Keys.First();
-                foreach (var hit in result.Results)
+                var checkUid = EntityUid.Invalid;
+                if (projectile.Weapon is not null && Transform(projectile.Weapon.Value).GridUid is not null )
+                    checkUid = Transform(projectile.Weapon.Value).GridUid!.Value;
+                foreach (var hit in _phys.IntersectRay(_trans.GetMapId(owner), ray,rayLength, projectile.Weapon, false))
                 {
                     // whilst the raycast supports a filter function . i do not want to package variabiles in lambdas in bulk
-                    if (projectile.Shooter == hit.Entity && projectile.IgnoreShooter)
+                    if (projectile.Shooter == hit.HitEntity && projectile.IgnoreShooter)
                         continue;
-                    if (projectile.Weapon == hit.Entity)
-                        continue;
-                    if (projectile.IgnoredEntities.Contains(hit.Entity))
+                    if (projectile.IgnoredEntities.Contains(hit.HitEntity))
                         continue;
                     // dont raise these. We cut some slack for the main thread by running it here.
-                    if (projectile.Weapon is not null && Transform(projectile.Weapon.Value).GridUid == Transform(hit.Entity).GridUid)
+                    var hitTransform = Transform(hit.HitEntity);
+                    if (hitTransform.GridUid is not null && checkUid == hitTransform.GridUid && projectile.IgnoreWeaponGrid)
                         continue;
-                    var targetPhysics = physQuery.GetComponent(hit.Entity);
-                    var targetFixtures = fixtureQuery.GetComponent(hit.Entity);
+                    var targetPhysics = physQuery.GetComponent(hit.HitEntity);
+                    var targetFixtures = fixtureQuery.GetComponent(hit.HitEntity);
                     var targetString = targetFixtures.Fixtures.Keys.First();
                     // i hate how verbose this is. - SPCR 2025
                     var bulletEvent = new HullrotBulletHitEvent()
                     {
                         selfEntity = owner,
-                        hitEntity = hit.Entity,
+                        hitEntity = hit.HitEntity,
                         selfFixtureKey = bulletString,
                         targetFixture = targetFixtures.Fixtures.Values.First(),
                         targetFixtureKey = targetString,
@@ -179,6 +181,7 @@ public class ProjectilePhasePreventerSystem : EntitySystem
                 {
                     count++;
                     RaiseLocalEvent(eventData.selfEntity, ref fEv, true);
+                    Logger.Debug($"Raised event on {MetaData(eventData.selfEntity).EntityName}");
                 }
                 catch (Exception e)
                 {
