@@ -106,6 +106,7 @@
   - type: CargoOrderConsole
     allowedGroups:
     - surezai
+    - genericAmmo
   - type: ActiveRadio
     channels:
     - Imperial
@@ -177,6 +178,7 @@
   - type: CargoOrderConsole
     allowedGroups:
     - commie
+    - genericAmmo
   - type: ActiveRadio
     channels:
     - NCWL
