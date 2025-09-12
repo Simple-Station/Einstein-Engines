@@ -1,4 +1,4 @@
-using Content.Server.Kitchen.Components;
+using Content.Shared.Kitchen.Components;
 using Content.Shared._Shitmed.Medical.Surgery.Tools;
 
 namespace Content.Server._Shitmed.Medical.Surgery;
