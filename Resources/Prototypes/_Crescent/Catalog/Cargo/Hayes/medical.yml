@@ -117,3 +117,23 @@
   cost: 700
   category: cargoproduct-category-name-medical
   group: hayes
+
+- type: cargoProduct
+  id: VitalsTrackingBasicSuppliesHayes
+  icon:
+    sprite: Objects/Specific/Medical/implanter.rsi
+    state: implanter0
+  product: CrateVitalsTrackingBasic
+  cost: 500
+  category: cargoproduct-category-name-medical
+  group: hayes
+
+- type: cargoProduct
+  id: VitalsTrackingIPMSuppliesHayes
+  icon:
+    sprite: Objects/Specific/Medical/implanter.rsi
+    state: implanter0
+  product: CrateVitalsTrackingIPM
+  cost: 500
+  category: cargoproduct-category-name-medical
+  group: hayes
