@@ -1,0 +1,32 @@
+# Author Info
+# Discord: rubeebee
+
+#this prototype represents the info needed for your ship to be purchasable from a shipyard console. if your ship is a POI, station, or LPC only, then you can delete this
+- type: vessel
+  id: Tick #internal ID. must match ship name by convention
+  name: ICM Tick # this is the name visible on the shipyard console
+  description: And old pre-collapse cargo hauler, the tick is a ship perfect for small scale trading. It's hull has been retrofitted to survive taypan, and now sports 2 universal fixed hardpoints. 
+  price: 18750 #this price should be higher than what the ship sells for by 25%
+  category: Small #does not matter 
+  group: None
+  path: /Maps/_Crescent/Shuttles/Civilian/tick.yml
+
+#this prototype is mandatory and decides what info and components your ship spawns with ingame, regardless of how.
+- type: gameMap
+  id: Tick #must be one word. convention is to be the ship's name but capitalized, like Vanguard or Ibis.
+  mapName: 'ICM Tick' #this doesn't ship up ingame but still needs to match the ship's name below.
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/tick.yml
+  minPlayers: 0
+  stations:
+     Tick: #THIS MUST MATCH THE ID ABOVE!
+      stationProto: StandardCrescentVessel #StandardCrescentVessel for ships, FlagshipCrescentVessel for ships that can spawn reinforcement players, and StandardCrescentPOI for points of interest, derelicts, or none of the above.
+      components: #these components will be attached to the STATION. 
+        - type: StationNameSetup
+          mapNameTemplate: 'ICM Tick {1}' #this decides your ship's name ingame
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-expeditions #there are a few. look for em yourself
+        - type: VesselDescription
+          description: The tick was made for more peaceful times. Sadly, you're not in those times.
