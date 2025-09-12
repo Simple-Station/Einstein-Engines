@@ -5,8 +5,8 @@
 - type: vessel
   id: Pear #internal ID. must match ship name by convention
   name: ICM Pear # this is the name visible on the shipyard console
-  description: And old pre-collapse cargo hauler, the tick is a ship perfect for small scale trading. It's hull has been retrofitted to survive taypan, and now sports 2 universal fixed hardpoints. 
-  price: 18750 #this price should be higher than what the ship sells for by 25%
+  description: And old pre-collapse cargo hauler, the pear is a ship perfect for small scale trading. It's hull has been retrofitted to survive taypan, and now sports 2 universal fixed hardpoints. 
+  price: 20000 #this price should be higher than what the ship sells for by 25%
   category: Small #does not matter 
   group: None
   path: /Maps/_Crescent/Shuttles/Civilian/pear.yml
