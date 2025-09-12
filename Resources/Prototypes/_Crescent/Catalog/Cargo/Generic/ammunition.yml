@@ -4,7 +4,7 @@
     sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
     state: baton
   product: CrateSumitomoAmmo
-  cost: 10000
+  cost: 15000
   category: cargoproduct-category-name-shuttle
   group: genericAmmo
 
@@ -45,7 +45,7 @@
     sprite: _Crescent/Objects/Misc/coolant.rsi
     state: icon
   product: CrateGargoyleAmmo
-  cost: 10000
+  cost: 25000
   category: cargoproduct-category-name-shuttle
   group: genericAmmo
 
@@ -56,7 +56,7 @@
     sprite: _Crescent/Objects/Misc/coolant.rsi
     state: icon
   product: CrateLancerAmmo
-  cost: 10000
+  cost: 15000
   category: cargoproduct-category-name-shuttle
   group: genericAmmo
 
@@ -67,7 +67,7 @@
     sprite: _Crescent/Objects/Misc/coolant.rsi
     state: icon
   product: CrateAssaultMortarAmmo
-  cost: 10000
+  cost: 20000
   category: cargoproduct-category-name-shuttle
   group: genericAmmo
 
@@ -78,17 +78,7 @@
     sprite: _Crescent/Objects/Misc/coolant.rsi
     state: icon
   product: CrateIdnaAmmo
-  cost: 10000
-  category: cargoproduct-category-name-shuttle
-  group: genericAmmo
-
-- type: cargoProduct
-  id: ShuttleGeneric
-  icon:
-    sprite: _Crescent/Objects/Misc/coolant.rsi
-    state: icon
-  product:
-  cost: 10000
+  cost: 15000
   category: cargoproduct-category-name-shuttle
   group: genericAmmo
 
@@ -98,7 +88,7 @@
     sprite: _Crescent/Objects/Misc/coolant.rsi
     state: icon
   product: CrateArtilleryAmmo
-  cost: 10000
+  cost: 20000
   category: cargoproduct-category-name-shuttle
   group: genericAmmo
 
@@ -108,7 +98,7 @@
     sprite: _Crescent/Objects/Misc/coolant.rsi
     state: icon
   product: CrateMortarAmmo
-  cost: 10000
+  cost: 20000
   category: cargoproduct-category-name-shuttle
   group: genericAmmo
 
@@ -118,6 +108,6 @@
     sprite: _Crescent/Objects/Misc/coolant.rsi
     state: icon
   product: CrateSwarmerAmmo
-  cost: 10000
+  cost: 15000
   category: cargoproduct-category-name-shuttle
   group: genericAmmo
