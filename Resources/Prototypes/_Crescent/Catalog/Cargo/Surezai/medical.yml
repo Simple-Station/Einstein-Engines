@@ -67,3 +67,33 @@
   cost: 750
   category: cargoproduct-category-name-medical
   group: surezai
+
+- type: cargoProduct
+  id: VitalsTrackingCommandSuppliesSurezai
+  icon:
+    sprite: Objects/Specific/Medical/implanter.rsi
+    state: implanter0
+  product: CrateVitalsTrackingDSMCommand
+  cost: 750
+  category: cargoproduct-category-name-medical
+  group: surezai
+
+- type: cargoProduct
+  id: VitalsTrackingCivilianSuppliesSurezai
+  icon:
+    sprite: Objects/Specific/Medical/implanter.rsi
+    state: implanter0
+  product: CrateVitalsTrackingDSMCivilian
+  cost: 500
+  category: cargoproduct-category-name-medical
+  group: surezai
+
+- type: cargoProduct
+  id: VitalsTrackingInterdyneSuppliesSurezai
+  icon:
+    sprite: Objects/Specific/Medical/implanter.rsi
+    state: implanter0
+  product: CrateVitalsTrackingIPM
+  cost: 1000
+  category: cargoproduct-category-name-medical
+  group: surezai
