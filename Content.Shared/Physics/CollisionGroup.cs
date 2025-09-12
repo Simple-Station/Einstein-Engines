@@ -25,6 +25,7 @@ public enum CollisionGroup
     // Y dis door passable when all the others impassable / collision.
     DoorPassable       = 1 << 8, // 256 Allows door to close over top, Like blast doors over conveyors for disposals rooms/cargo.
     BlobImpassable     = 1 << 9, // 512 Blob Tiles Goobstation - Blob
+    FighterImpassable  = 1 << 10, // 1024 Objects that go over fighters
 
     MapGrid = MapGridHelpers.CollisionGroup, // Map grids, like shuttles. This is the actual grid itself, not the walls or other entities connected to the grid.
 
@@ -45,11 +46,14 @@ public enum CollisionGroup
     FlyingMobLayer = Opaque | BulletImpassable,
 
     // Mechs
-    LargeMobMask = Impassable | HighImpassable | MidImpassable | LowImpassable | BlobImpassable, //Goobstation - Blob
+    LargeMobMask = Impassable | HighImpassable | MidImpassable | LowImpassable | BlobImpassable | FighterImpassable, //Goobstation - Blob, Hullrot - Fighters
     LargeMobLayer = Opaque | HighImpassable | MidImpassable | LowImpassable | BulletImpassable,
 
+    // Fighters
+    FighterMask = Opaque | FighterImpassable | BulletImpassable, //Hullrot - Fighters
+
     // Machines, computers
-    MachineMask = Impassable | MidImpassable | LowImpassable | BlobImpassable, //Goobstation - Blob
+    MachineMask = Impassable | MidImpassable | LowImpassable | BlobImpassable | FighterImpassable, //Goobstation - Blob, Hullrot - Fighters
     MachineLayer = Opaque | MidImpassable | LowImpassable | BulletImpassable,
     ConveyorMask = Impassable | MidImpassable | LowImpassable | DoorPassable,
 

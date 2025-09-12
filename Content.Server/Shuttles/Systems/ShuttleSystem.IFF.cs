@@ -1,4 +1,5 @@
 using Content.Server.Shuttles.Components;
+using Content.Shared.Construction.Components;
 using Content.Shared.Shuttles.BUIStates;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Events;
@@ -9,9 +10,28 @@ public sealed partial class ShuttleSystem
 {
     private void InitializeIFF()
     {
+        SubscribeLocalEvent<IFFConsoleComponent, AnchorAttemptEvent>(OnIFFTryAnchor);
         SubscribeLocalEvent<IFFConsoleComponent, AnchorStateChangedEvent>(OnIFFConsoleAnchor);
         SubscribeLocalEvent<IFFConsoleComponent, IFFShowIFFMessage>(OnIFFShow);
         SubscribeLocalEvent<IFFConsoleComponent, IFFShowVesselMessage>(OnIFFShowVessel);
+        SubscribeLocalEvent<IFFConsoleComponent, MapInitEvent>(OnInit);
+    }
+
+    private void OnIFFTryAnchor(Entity<IFFConsoleComponent> obj, ref AnchorAttemptEvent args)
+    {
+        var targetTransform = Transform(obj);
+        if (targetTransform.GridUid is null || obj.Comp.originalGrid is null )
+            return;
+        if (targetTransform.GridUid == obj.Comp.originalGrid)
+            return;
+        args.Cancel();
+    }
+
+    private void OnInit(Entity<IFFConsoleComponent> obj, ref MapInitEvent args)
+    {
+        var targetTransform = Transform(obj);
+        if (targetTransform.GridUid is not null)
+            obj.Comp.originalGrid = targetTransform.GridUid;
     }
 
     private void OnIFFShow(EntityUid uid, IFFConsoleComponent component, IFFShowIFFMessage args)

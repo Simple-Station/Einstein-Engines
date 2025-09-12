@@ -4567,7 +4567,7 @@ entities:
     - type: Transform
       pos: -10.13166,-40.72991
       parent: 1
-- proto: BaseWeaponTurretJeong
+- proto: BaseWeaponTurretJeongFilled
   entities:
   - uid: 2813
     components:
@@ -4644,12 +4644,14 @@ entities:
         gun_magazine: !type:ContainerSlot
           showEnts: False
           occludes: True
+
           ent: 462
     - type: PointCannon
       linkedConsoleIds:
       - 468
       linkedConsoleId: 468
-- proto: BaseWeaponTurretSolaris
+- proto: BaseWeaponTurretSolarisFilled
+
   entities:
   - uid: 16
     components:

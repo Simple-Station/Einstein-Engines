@@ -26,7 +26,7 @@
 - type: soundCollection
   id: test
   files:
-   - /Audio/Jukebox/sector11.ogg
+   - /Audio/_Crescent/parietal_lobe.ogg
 
 #ambient fallback, don't remove, but can change song
 
@@ -129,7 +129,7 @@
 ## ID MUST BE IDENTICAL TO BIOME ID FROM space_biomes.yml!
 
 
-## DEPRECATED!!! 
+## DEPRECATED!!!
 
 #imperial
 
@@ -338,7 +338,7 @@
    - /Audio/_Crescent/Biomes/BalreskaApproach/balreska_approach_1.ogg
 
 #STATIONS
-#EXPLANATION: shuttle/station prototypes have a VesselMusic component. 
+#EXPLANATION: shuttle/station prototypes have a VesselMusic component.
 #They point to an ambientMusicPrototype and that prototype MUST be here, otherwise it does nothing.
 #so for example, in balreska.yml, it's VesselMusic component points to PortBalreskaMusic, which is the first item here.
 
