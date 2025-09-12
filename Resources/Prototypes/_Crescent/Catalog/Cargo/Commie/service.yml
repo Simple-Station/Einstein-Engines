@@ -18,15 +18,15 @@
   category: cargoproduct-category-name-service
   group: commie
 
-- type: cargoProduct
-  id: MousetrapBoxescommie
-  icon:
-    sprite: Objects/Devices/mousetrap.rsi
-    state: mousetrap
-  product: CrateMousetrapBoxes
-  cost: 500
-  category: cargoproduct-category-name-service
-  group: commie
+# - type: cargoProduct
+#   id: MousetrapBoxescommie
+#   icon:
+#     sprite: Objects/Devices/mousetrap.rsi
+#     state: mousetrap
+#   product: CrateMousetrapBoxes
+#   cost: 500
+#   category: cargoproduct-category-name-service
+#   group: commie
 
 - type: cargoProduct
   id: ServiceSmokeablescommie
@@ -38,33 +38,33 @@
   category: cargoproduct-category-name-service
   group: commie
 
-- type: cargoProduct
-  id: ServiceBureaucracycommie
-  icon:
-    sprite: Objects/Misc/bureaucracy.rsi
-    state: pen
-  product: CrateServiceBureaucracy
-  cost: 1000
-  category: cargoproduct-category-name-service
-  group: commie
+# - type: cargoProduct
+#   id: ServiceBureaucracycommie
+#   icon:
+#     sprite: Objects/Misc/bureaucracy.rsi
+#     state: pen
+#   product: CrateServiceBureaucracy
+#   cost: 1000
+#   category: cargoproduct-category-name-service
+#   group: commie
 
-- type: cargoProduct
-  id: ServiceBookscommie
-  icon:
-    sprite: Objects/Misc/books.rsi
-    state: book_icon
-  product: CrateServiceBooks
-  cost: 1000
-  category: cargoproduct-category-name-service
-  group: commie
+# - type: cargoProduct
+#   id: ServiceBookscommie
+#   icon:
+#     sprite: Objects/Misc/books.rsi
+#     state: book_icon
+#   product: CrateServiceBooks
+#   cost: 1000
+#   category: cargoproduct-category-name-service
+#   group: commie
 
-- type: cargoProduct
-  id: ServiceJanitorTrolleycommie
-  icon:
-    sprite: Objects/Specific/Janitorial/janitorial_cart.rsi
-    state: icon-cart
-  product: JanitorialTrolley
-  cost: 1500
-  category: cargoproduct-category-name-service
-  group: commie
+# - type: cargoProduct
+#   id: ServiceJanitorTrolleycommie
+#   icon:
+#     sprite: Objects/Specific/Janitorial/janitorial_cart.rsi
+#     state: icon-cart
+#   product: JanitorialTrolley
+#   cost: 1500
+#   category: cargoproduct-category-name-service
+#   group: commie
 

@@ -48,12 +48,12 @@
   category: cargoproduct-category-name-materials
   group: commie
 
-- type: cargoProduct
-  id: MaterialWaterTankcommie
-  icon:
-    sprite: Structures/Storage/tanks.rsi
-    state: watertank
-  product: WaterTankFull
-  cost: 3000
-  category: cargoproduct-category-name-materials
-  group: commie
+# - type: cargoProduct
+#   id: MaterialWaterTankcommie
+#   icon:
+#     sprite: Structures/Storage/tanks.rsi
+#     state: watertank
+#   product: WaterTankFull
+#   cost: 3000
+#   category: cargoproduct-category-name-materials
+#   group: commie

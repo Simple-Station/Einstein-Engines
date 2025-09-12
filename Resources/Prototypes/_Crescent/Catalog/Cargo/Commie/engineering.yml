@@ -1,13 +1,13 @@
 
-- type: cargoProduct
-  id: EvaKitcommie
-  icon:
-    sprite: Clothing/Head/Helmets/eva.rsi
-    state: icon
-  product: CrateEvaKit
-  cost: 5000
-  category: cargoproduct-category-name-engineering
-  group: commie
+# - type: cargoProduct
+#   id: EvaKitcommie
+#   icon:
+#     sprite: Clothing/Head/Helmets/eva.rsi
+#     state: icon
+#   product: CrateEvaKit
+#   cost: 5000
+#   category: cargoproduct-category-name-engineering
+#   group: commie
 
 - type: cargoProduct
   id: EngineeringRCDAmmocommie
@@ -19,15 +19,15 @@
   category: cargoproduct-category-name-engineering
   group: commie
 
-- type: cargoProduct
-  id: EngineeringSpaceHeatercommie
-  icon:
-    sprite: Structures/Piping/Atmospherics/Portable/portable_sheater.rsi
-    state: sheaterOff
-  product: SpaceHeaterAnchored
-  cost: 600
-  category: cargoproduct-category-name-engineering
-  group: commie
+# - type: cargoProduct
+#   id: EngineeringSpaceHeatercommie
+#   icon:
+#     sprite: Structures/Piping/Atmospherics/Portable/portable_sheater.rsi
+#     state: sheaterOff
+#   product: SpaceHeaterAnchored
+#   cost: 600
+#   category: cargoproduct-category-name-engineering
+#   group: commie
 
 - type: cargoProduct
   id: EngineAmeJarCommie

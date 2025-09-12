@@ -7,14 +7,14 @@
   product: CrateFoodMRE
   cost: 2500
   category: cargoproduct-category-name-food
-  group: surezai
-
-- type: cargoProduct
-  id: FoodBarSupplycommie
-  icon:
-    sprite: Objects/Consumable/Drinks/beerglass.rsi
-    state: icon
-  product: CrateFoodBarSupply
-  cost: 750
-  category: cargoproduct-category-name-food
   group: commie
+
+# - type: cargoProduct
+#   id: FoodBarSupplycommie
+#   icon:
+#     sprite: Objects/Consumable/Drinks/beerglass.rsi
+#     state: icon
+#   product: CrateFoodBarSupply
+#   cost: 750
+#   category: cargoproduct-category-name-food
+#   group: commie
