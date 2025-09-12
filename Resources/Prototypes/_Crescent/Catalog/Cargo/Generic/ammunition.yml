@@ -6,7 +6,7 @@
   product: CrateSumitomoAmmo
   cost: 10000
   category: cargoproduct-category-name-shuttle
-  group: generic
+  group: genericAmmo
 
 - type: cargoProduct
   id: ShuttleCrateVulcanAmmoGeneric
@@ -16,7 +16,7 @@
   product: CrateVulcanAmmo
   cost: 10000
   category: cargoproduct-category-name-shuttle
-  group: generic
+  group: genericAmmo
 
 - type: cargoProduct
   id: ShuttleCrateSlugAmmoGeneric
@@ -26,7 +26,7 @@
   product: CrateSlugthrowerAmmo
   cost: 10000
   category: cargoproduct-category-name-shuttle
-  group: generic
+  group: genericAmmo
 
 - type: cargoProduct
   id: ShuttleCoolantGeneric
@@ -36,7 +36,7 @@
   product: CrateCoolant
   cost: 10000
   category: cargoproduct-category-name-shuttle
-  group: generic
+  group: genericAmmo
 
 
 - type: cargoProduct
@@ -47,7 +47,7 @@
   product: CrateGargoyleAmmo
   cost: 10000
   category: cargoproduct-category-name-shuttle
-  group: generic
+  group: genericAmmo
 
 
 - type: cargoProduct
@@ -58,7 +58,7 @@
   product: CrateLancerAmmo
   cost: 10000
   category: cargoproduct-category-name-shuttle
-  group: generic
+  group: genericAmmo
 
 
 - type: cargoProduct
@@ -69,7 +69,7 @@
   product: CrateAssaultMortarAmmo
   cost: 10000
   category: cargoproduct-category-name-shuttle
-  group: generic
+  group: genericAmmo
 
 
 - type: cargoProduct
@@ -80,7 +80,7 @@
   product: CrateIdnaAmmo
   cost: 10000
   category: cargoproduct-category-name-shuttle
-  group: generic
+  group: genericAmmo
 
 - type: cargoProduct
   id: ShuttleGeneric
@@ -90,7 +90,7 @@
   product:
   cost: 10000
   category: cargoproduct-category-name-shuttle
-  group: generic
+  group: genericAmmo
 
 - type: cargoProduct
   id: Shuttle120mmAmmoGeneric
@@ -100,7 +100,7 @@
   product: CrateArtilleryAmmo
   cost: 10000
   category: cargoproduct-category-name-shuttle
-  group: generic
+  group: genericAmmo
 
 - type: cargoProduct
   id: ShuttleAutomortarAmmoGeneric
@@ -110,7 +110,7 @@
   product: CrateMortarAmmo
   cost: 10000
   category: cargoproduct-category-name-shuttle
-  group: generic
+  group: genericAmmo
 
 - type: cargoProduct
   id: ShuttleSwarmerAmmoGeneric
@@ -120,4 +120,4 @@
   product: CrateSwarmerAmmo
   cost: 10000
   category: cargoproduct-category-name-shuttle
-  group: generic
+  group: genericAmmo
