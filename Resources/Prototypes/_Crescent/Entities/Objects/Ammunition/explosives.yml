@@ -731,10 +731,10 @@
   description: A 84mm shell designed for the recoilless rifles. Has a HE-Frag warhead.
   components:
   - type: Tag
-    size: Normal
     tags:
       - Rocket84mmRecoilless
   - type: Item
+    size: Normal
     shape:
     - 0,0,1,3
   - type: CartridgeAmmo
@@ -784,10 +784,10 @@
   description: A 84mm shell designed for the recoilless rifles. This is a canister shot.
   components:
   - type: Tag
-    size: Normal
     tags:
       - Rocket84mmRecoilless
   - type: Item
+    size: Normal
     shape:
     - 0,0,1,3
   - type: CartridgeAmmo
@@ -842,10 +842,10 @@
   description: A 84mm shell designed for the recoilless rifles. Has a HEAT warhead.
   components:
   - type: Tag
-    size: Normal
     tags:
       - Rocket84mmRecoilless
   - type: Item
+    size: Normal
     shape:
     - 0,0,1,3
   - type: CartridgeAmmo
@@ -900,10 +900,10 @@
   description: A 84mm shell designed for the recoilless rifles. Has a tandem HEAT warhead.
   components:
   - type: Tag
-    size: Normal
     tags:
       - Rocket84mmRecoilless
   - type: Item
+    size: Normal
     shape:
     - 0,0,1,3
   - type: CartridgeAmmo
@@ -958,10 +958,10 @@
   description: A 84mm shell designed for the recoilless rifles. Has a tandem EMP warhead.
   components:
   - type: Tag
-    size: Normal
     tags:
       - Rocket84mmRecoilless
   - type: Item
+    size: Normal
     shape:
     - 0,0,1,3
   - type: CartridgeAmmo
@@ -1014,10 +1014,10 @@
   description: A 84mm shell designed for the recoilless rifles. Has a tandem smoke warhead.
   components:
   - type: Tag
-    size: Normal
     tags:
       - Rocket84mmRecoilless
   - type: Item
+    size: Normal
     shape:
     - 0,0,1,3
   - type: CartridgeAmmo
@@ -1072,6 +1072,7 @@
     tags:
     - RocketHammerhead
   - type: Item
+    size: Normal
     shape:
     - 0,0,1,3
   - type: Sprite
