@@ -1,27 +1,25 @@
-# - type: trait
-#   id: SignLanguage
-#   category: TraitsSpeechLanguages
-#   points: -1
-#   # slots: 1
-#   # itemGroupSlots: 0
-#   requirements:
-#     # - !type:CharacterItemGroupRequirement
-#     #   group: TraitsLanguagesBasic
-#     - !type:CharacterTraitRequirement
-#       inverted: true
-#       traits:
-#         - Muted
-#   functions:
-#     - !type:TraitModifyLanguages
-#       languagesSpoken:
-#         - Sign
-#       languagesUnderstood:
-#         - Sign
+#- type: trait
+  #id: SignLanguage
+  #category: TraitsSpeechLanguages
+  #points: -1
+  #requirements:
+    # - !type:CharacterItemGroupRequirement
+    #   group: TraitsLanguagesBasic
+    #- !type:CharacterTraitRequirement
+    #  inverted: true
+    #  traits:
+    #    - Muted
+  #functions:
+    #- !type:TraitModifyLanguages
+     # languagesSpoken:
+      #  - Sign
+      #languagesUnderstood:
+       # - Sign
 
 - type: trait
   id: Tradeband
   category: TraitsSpeechLanguages
-  points: -3
+  points: -2
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:

@@ -3,21 +3,31 @@
   name: job-name-handels
   description: job-description-handels
   playTimeTracker: JobHandelsATH
+  weight: 96
+  startingGear: HandelsGear
+  alwaysUseSpawner: true
+  requireAdminNotify: true
+  icon: "JobIconHandels"
+  supervisors: job-supervisors-ath
+  canBeAntag: false
   requirements:
+    - !type:FactionRequirement
+      factionID: "ATH"
     - !type:CharacterSpeciesRequirement
       species:
         - Human
         - Reptilian
         - Oni
-    - !type:FactionRequirement
-      factionID: "ATH"
-  weight: 77
-  startingGear: HandelsGear
-  alwaysUseSpawner: true
-  icon: "JobIconHandels"
-  requireAdminNotify: true
-  supervisors: job-supervisors-ath
-  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: LanguageAdder
+        addSpoken:
+          - SolBasic
+          - Tradeband
+        addUnderstood:
+          - SolBasic
+          - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain

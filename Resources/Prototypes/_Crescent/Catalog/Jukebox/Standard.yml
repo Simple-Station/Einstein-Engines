@@ -1,4 +1,41 @@
 - type: jukebox
+  id: SpaceAsshowl
+  name: Chris Remo - Space Asshole
+  path:
+    path: /Audio/_Crescent/Jukebox/space_asshole-MONO.ogg
+
+- type: jukebox
+  id: Tintin
+  name: Jeroen Tel - Tintin on the Moon
+  path:
+    path: /Audio/_Crescent/Jukebox/title3.ogg
+
+- type: jukebox
+  id: Constellations
+  name: Qwertyquerty - Constellations
+  path:
+    path: /Audio/_Crescent/Jukebox/constellations.ogg
+
+- type: jukebox
+  id: Drifting
+  name: Qwertyquerty - Drifting
+  path:
+    path: /Audio/_Crescent/Jukebox/drifting.ogg
+
+- type: jukebox
+  id: starlight
+  name: Qwertyquerty - Starlight
+  path:
+    path: /Audio/_Crescent/Jukebox/starlight.ogg
+
+
+- type: jukebox
+  id: FlipFlap
+  name: X-CEED - Flip Flap
+  path:
+    path: /Audio/_Crescent/Jukebox/flip-flap.ogg
+
+- type: jukebox
   id: BeHereAWhile
   name: 311 - I'll Be Here A While
   path:
@@ -29,10 +66,10 @@
     path: /Audio/_Crescent/Jukebox/luftballoons.ogg
 
 - type: jukebox
-  id: AllAlone
+  id: AllAlong
   name: Jimi Hendrix - All Along the Watchtower
   path:
-    path: /Audio/_Crescent/Jukebox/allalone.ogg
+    path: /Audio/_Crescent/Jukebox/allalong.ogg
 
 - type: jukebox
   id: FeelGood
@@ -80,31 +117,19 @@
   id: Quake2QuadMachine
   name: Quake 2 OST - Quad Machine
   path:
-    path: "/Audio/_Crescent/Jukebox/august2nd/quad.ogg"
-
-- type: jukebox
-  id: PromethazineAndAnthrax
-  name: dj smokey - promethazine & anthrax
-  path:
-    path: "/Audio/_Crescent/Jukebox/august2nd/anthrax.ogg"
-
-- type: jukebox
-  id: NewDonkShitty
-  name: V Limo (New Donk Shitty)
-  path:
-    path: "/Audio/_Crescent/Jukebox/august2nd/newdonk.ogg"
+    path: "/Audio/_Crescent/Jukebox/quad.ogg"
 
 - type: jukebox
   id: HorseWithNoName
   name: America - A Horse with No Name
   path:
-    path: "/Audio/_Crescent/Jukebox/august2nd/horse.ogg"
+    path: "/Audio/_Crescent/Jukebox/horse.ogg"
 
 - type: jukebox
   id: HighfleetTurkoidSong
   name: Turjan - Highfleet
   path:
-    path: "/Audio/_Crescent/highfleet.ogg"
+    path: "/Audio/_Crescent/Jukebox/highfleet.ogg"
 
 - type: jukebox
   id: PriestessSong
@@ -129,3 +154,129 @@
   name: Total Dead Center - Witch
   path:
     path: "/Audio/_Crescent/Jukebox/Witch.ogg"
+
+- type: jukebox
+  id: BadBoysSong
+  name: Inner Circle - Bad boys
+  path:
+    path: "/Audio/_Crescent/Jukebox/badboys.ogg"
+
+- type: jukebox
+  id: BanditSong
+  name: GSC Game World - Bandit radio
+  path:
+    path: "/Audio/_Crescent/Jukebox/bandit.ogg"
+
+- type: jukebox
+  id: FreedomSong
+  name: GSC Game World - Freedom radio
+  path:
+    path: "/Audio/_Crescent/Jukebox/freedom.ogg"
+
+- type: jukebox
+  id: FortunateSonSong
+  name: Creedence Clearwater Revival - Fortunate son
+  path:
+    path: "/Audio/_Crescent/Jukebox/fortunate.ogg"
+
+- type: jukebox
+  id: WhatItsWorthSong
+  name: Buffalo Springfield - For what its worth
+  path:
+    path: "/Audio/_Crescent/Jukebox/whatitsworth.ogg"
+
+- type: jukebox
+  id: WorldOnFireSong
+  name: The Ink Spots - I don't want to set the world on fire
+  path:
+    path: "/Audio/_Crescent/Jukebox/worldonfire.ogg"
+
+- type: jukebox
+  id: LittleDarkAgeSong
+  name: MGMT - My little dark age
+  path:
+    path: "/Audio/_Crescent/Jukebox/littledarkage.ogg"
+
+- type: jukebox
+  id: TheWandererSong
+  name: Dion DiMucci - The wanderer
+  path:
+    path: "/Audio/_Crescent/Jukebox/thewanderer.ogg"
+
+- type: jukebox
+  id: ArtiljerijaSong
+  name: Muhamed Brkić - Bonska artiljerija
+  path:
+    path: "/Audio/_Crescent/Jukebox/artiljerija.ogg"
+
+- type: jukebox
+  id: BeyondTheSeaSong
+  name: Robbie Williams - Beyond the sea
+  path:
+    path: "/Audio/_Crescent/Jukebox/beyondthesea.ogg"
+
+- type: jukebox
+  id: AtasSong
+  name: Lube - Atas
+  path:
+    path: "/Audio/_Crescent/Jukebox/atas.ogg"
+
+- type: jukebox
+  id: DrogaSong
+  name: Lube - Droga
+  path:
+    path: "/Audio/_Crescent/Jukebox/droga.ogg"
+
+- type: jukebox
+  id: KombatSong
+  name: Lube - Kombat
+  path:
+    path: "/Audio/_Crescent/Jukebox/kombat.ogg"
+
+- type: jukebox
+  id: KletkiSong
+  name: Lube - Kletki
+  path:
+    path: "/Audio/_Crescent/Jukebox/kletki.ogg"
+
+- type: jukebox
+  id: bloodtypeSong
+  name: Kino - Blood type
+  path:
+    path: "/Audio/_Crescent/Jukebox/bloodtype.ogg"
+
+- type: jukebox
+  id: BlueMoonSong
+  name: Lorenz Hart - Blue moon
+  path:
+    path: "/Audio/_Crescent/Jukebox/bluemoon.ogg"
+
+- type: jukebox
+  id: JingleSong
+  name: Frank Loesser - Jingle jangle jingle
+  path:
+    path: "/Audio/_Crescent/Jukebox/jingle.ogg"
+
+- type: jukebox
+  id: TheManWhoSoldSong
+  name: Midge Ure - The man who sold the world
+  path:
+    path: "/Audio/_Crescent/Jukebox/whosoldtheworld.ogg"
+
+- type: jukebox
+  id: InvisibleSong
+  name: Duran Duran - Invisible
+  path:
+    path: "/Audio/_Crescent/Jukebox/invisible.ogg"
+
+- type: jukebox
+  id: VolcanicsTheBaronSong
+  name: The Volcanics - The Baron
+  path:
+    path: "/Audio/_Crescent/Jukebox/volcanics_thebaron.ogg"
+
+- type: jukebox
+  id: DeepInHerEyesSong
+  name: Skaven - Deep In Her Eyes
+  path:
+    path: "/Audio/_Crescent/Jukebox/deepinhereyes.ogg"

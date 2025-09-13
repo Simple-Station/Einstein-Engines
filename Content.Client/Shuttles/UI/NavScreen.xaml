@@ -30,6 +30,11 @@
                                    HorizontalExpand="True"
                                    Margin="3"
                                    Name="ReadonlyDisplay">
+                        <controls:Label Text="Ship IFF:"/>
+                        <controls:Label Name="ShipName"
+                                        Text="No IFF"
+                                        HorizontalExpand="True"
+                                        Align="Right"/>
                         <controls:Label Text="{controls:Loc 'shuttle-console-position'}"/>
                         <controls:Label Name="GridPosition"
                                Text="0.0, 0.0"

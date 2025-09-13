@@ -34,8 +34,10 @@
     - !type:TraitModifyLanguages
       languagesSpoken:
         - Sign
+        - Clarizian
       languagesUnderstood:
         - Sign
+        - Clarizian
   passportPrototype: ClarizianPassport
 
 - type: nationality
@@ -58,6 +60,8 @@
     - !type:TraitModifyLanguages
       languagesSpoken:
         - Sign
+        - SolBasic
       languagesUnderstood:
         - Sign
+        - SolBasic
   passportPrototype: AuthorityPassport

@@ -3,20 +3,20 @@
   name: job-name-chirurgeon
   description: job-description-chirurgeon
   playTimeTracker: JobChirurgeonATH
+  weight: 97
+  startingGear: ChirurgeonGear
+  alwaysUseSpawner: true
+  requireAdminNotify: true
+  icon: "JobIconChirurgeon"
+  supervisors: job-supervisors-ath
+  canBeAntag: false
   requirements:
+    - !type:FactionRequirement
+      factionID: "ATH"
     - !type:CharacterSpeciesRequirement
       species:
         - Human
         - Oni
-    - !type:FactionRequirement
-      factionID: "ATH"
-  weight: 78
-  startingGear: ChirurgeonGear
-  alwaysUseSpawner: true
-  icon: "JobIconChirurgeon"
-  requireAdminNotify: true
-  supervisors: job-supervisors-ath
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:

@@ -41,3 +41,103 @@
     contents:
       - id: MechaniteCanister5
         amount: 3
+
+# vitals tracking implanters
+- type: entity
+  id: CrateVitalsTrackingBasic
+  parent: CrateMedical
+  name: basic vitals tracking crate
+  description: A crate containing six vitals tracking implanters.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MedicalTrackingImplanter
+        amount: 6
+
+- type: entity
+  id: CrateVitalsTrackingIPM
+  parent: CrateMedical
+  name: interdyne vitals tracking crate
+  description: A crate containing six vitals tracking implanters.
+  components:
+  - type: StorageFill
+    contents:
+      - id: VitalsTrackingImplanterInterdyne
+        amount: 6
+
+- type: entity
+  id: CrateVitalsTrackingCMM
+  parent: CrateMedical
+  name: colonial minutemen vitals tracking crate
+  description: A crate containing six vitals tracking implanters.
+  components:
+  - type: StorageFill
+    contents:
+      - id: VitalsTrackingImplanterCMM
+        amount: 6
+
+- type: entity
+  id: CrateVitalsTrackingShinohara
+  parent: CrateMedical
+  name: shinohara vitals tracking crate
+  description: A crate containing six vitals tracking implanters.
+  components:
+  - type: StorageFill
+    contents:
+      - id: VitalsTrackingImplanterShinohara
+        amount: 6
+
+- type: entity
+  id: CrateVitalsTrackingDSMCommand
+  parent: CrateMedical
+  name: mandate command vitals tracking crate
+  description: A crate containing six vitals tracking implanters.
+  components:
+  - type: StorageFill
+    contents:
+      - id: VitalsTrackingImplanterDSMCommand
+        amount: 6
+
+- type: entity
+  id: CrateVitalsTrackingDSMCivilian
+  parent: CrateMedical
+  name: mandate civilian vitals tracking crate
+  description: A crate containing six vitals tracking implanters.
+  components:
+  - type: StorageFill
+    contents:
+      - id: VitalsTrackingImplanterDSMCivilian
+        amount: 6
+
+- type: entity
+  id: CrateVitalsTrackingNCWL
+  parent: CrateMedical
+  name: workers league vitals tracking crate
+  description: A crate containing six vitals tracking implanters.
+  components:
+  - type: StorageFill
+    contents:
+      - id: VitalsTrackingImplanterNCWL
+        amount: 6
+
+- type: entity
+  id: CrateVitalsTrackingClarizian
+  parent: CrateMedical
+  name: clarizian vitals tracking crate
+  description: A crate containing six vitals tracking implanters.
+  components:
+  - type: StorageFill
+    contents:
+      - id: VitalsTrackingImplanterCRN
+        amount: 6
+
+- type: entity
+  id: CrateVitalsTrackingATH
+  parent: CrateMedical
+  name: 43rd battlegroup vitals tracking crate
+  description: A crate containing six vitals tracking implanters.
+  components:
+  - type: StorageFill
+    contents:
+      - id: VitalsTrackingImplanterATH
+        amount: 6

@@ -1,7 +1,33 @@
 - type: trait
+  id: LowImperial
+  category: TraitsSpeechLanguages
+  points: -4
+  requirements:
+    - !type:FactionRequirement
+      inverted: true
+      factionID: "DSM"
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - LowImperial
+      languagesUnderstood:
+        - LowImperial
+
+#- type: trait
+#  id: HighImperial
+#  category: TraitsSpeechLanguages
+#  points: -6
+#  functions:
+#    - !type:TraitModifyLanguages
+#      languagesSpoken:
+#        - HighImperial
+#      languagesUnderstood:
+#        - HighImperial
+
+- type: trait
   id: Dockta
   category: TraitsSpeechLanguages
-  points: -7
+  points: -4
   requirements:
     - !type:FactionRequirement
       inverted: true
@@ -16,7 +42,7 @@
 - type: trait
   id: Freespeak
   category: TraitsSpeechLanguages
-  points: -7
+  points: -4
   requirements:
     - !type:FactionRequirement
       inverted: true
@@ -31,7 +57,7 @@
 - type: trait
   id: Kaishago
   category: TraitsSpeechLanguages
-  points: -7
+  points: -4
   requirements:
     - !type:FactionRequirement
       inverted: true
@@ -44,27 +70,48 @@
         - Kaishago
 
 - type: trait
-  id: LowImperial
+  id: Clarizian
   category: TraitsSpeechLanguages
-  points: -7
+  points: -4
+  requirements:
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Clarizian
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Clarizian
+      languagesUnderstood:
+        - Clarizian
+
+- type: trait
+  id: SolBasic
+  category: TraitsSpeechLanguages
+  points: -4
+  requirements:
+    - !type:CharacterNationalityRequirement
+      inverted: true
+      nationalities:
+        - Authority
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - SolBasic
+      languagesUnderstood:
+        - SolBasic
+
+- type: trait
+  id: OldTaypani
+  category: TraitsSpeechLanguages
+  points: -6
   requirements:
     - !type:FactionRequirement
       inverted: true
-      factionID: "DSM"
+      factionID: "TAP"
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
-        - LowImperial
+        - OldTaypani
       languagesUnderstood:
-        - LowImperial
-
-- type: trait
-  id: HighImperial
-  category: TraitsSpeechLanguages
-  points: -9
-  functions:
-    - !type:TraitModifyLanguages
-      languagesSpoken:
-        - HighImperial
-      languagesUnderstood:
-        - HighImperial
+        - OldTaypani

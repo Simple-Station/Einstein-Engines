@@ -6831,7 +6831,7 @@ entities:
     - type: Transform
       pos: -6.494134,0.49898887
       parent: 1
-- proto: WeaponTurretMortarNCSP
+- proto: WeaponTurretMortarFilled
   entities:
   - uid: 855
     components:
@@ -7007,7 +7007,7 @@ entities:
       links:
       - 949
       - 900
-- proto: WeaponTurretSwarmerNCSP
+- proto: WeaponTurretSwarmerFilled
   entities:
   - uid: 115
     components:

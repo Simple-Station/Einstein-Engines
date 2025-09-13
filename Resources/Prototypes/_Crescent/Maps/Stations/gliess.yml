@@ -45,6 +45,8 @@
           mapNameTemplate: 'Gliess Santo'
         - type: VesselDesignation
           designation: vessel-designation-headquarters
+        - type: VesselMusic
+          ambientMusicPrototype: GliessMusic
         - type: Grammar
           attributes:
             proper: true
@@ -53,5 +55,5 @@
           availableJobs:
             GliessianDockmaster: [ 1, 1 ]
             GliessianSheriff: [ 1, 1 ]
-            GliessianDeputy: [ 3, 3 ]
-            Spacer: [ 15, 15 ]
+            GliessianDeputy: [ 4, 4 ]
+            Spacer: [ 44, 44 ]

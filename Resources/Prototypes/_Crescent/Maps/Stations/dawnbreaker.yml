@@ -1,0 +1,26 @@
+- type: gameMap
+  id: Dawnbreaker
+  mapName: 'CDT Dawnbreaker'
+  mapPath: /Maps/_Crescent/Stations/dawnbreaker.yml
+  minPlayers: 0
+  stations:
+    Dawnbreaker:
+      stationProto: StandardCrescentStation
+      gridComponents:
+        - type: BlockShipWeaponProjectileGrid
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'CDT Dawnbreaker'
+        - type: VesselDesignation
+          designation: vessel-designation-headquarters
+        - type: VesselMusic
+          ambientMusicPrototype: JackalMusic
+        - type: Grammar
+          attributes:
+            proper: true
+        - type: StationJobs
+          overflowJobs: []
+          availableJobs:
+            IntelligenceOfficerNCSP: [ 1, 1 ]
+            OperativeNCSP: [ 4, 4 ]
+            CyberdawnTechNCSP: [ 3, 3 ]

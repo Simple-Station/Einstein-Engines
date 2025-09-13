@@ -3,6 +3,13 @@
   name: job-name-forscher
   description: job-description-forscher
   playTimeTracker: JobForscherATH
+  weight: 98
+  startingGear: ForscherGear
+  alwaysUseSpawner: true
+  requireAdminNotify: true
+  icon: "JobIconForscher"
+  supervisors: job-supervisors-ath
+  canBeAntag: false
   requirements:
     - !type:CharacterSpeciesRequirement
       species:
@@ -10,18 +17,16 @@
         - Oni
     - !type:FactionRequirement
       factionID: "ATH"
-  weight: 79
-  startingGear: ForscherGear
-  alwaysUseSpawner: true
-  icon: "JobIconForscher"
-  requireAdminNotify: true
-  supervisors: job-supervisors-ath
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
         rank: crescent-rank-smarts
+      - type: LanguageAdder
+        addSpoken:
+          - SolBasic
+        addUnderstood:
+          - SolBasic
   access:
   - EmergencyShuttleRepealAll
   - Captain

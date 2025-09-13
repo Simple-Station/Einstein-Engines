@@ -112,11 +112,6 @@ public sealed partial class ProjectileComponent : Component
     [DataField]
     public float stoppingPower = 0;
 
-    /// <summary>
-    ///  modifies some behaviour regarding fixture checks for the projectile system, set by phasePreventSystem, SPCR 2025
-    /// </summary>
-    public bool raycasting = false;
-
     [DataField("gibsOnHit")]
     public bool gibsOnHit = false;
 

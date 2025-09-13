@@ -3,6 +3,13 @@
   name: job-name-servile
   description: job-description-servile
   playTimeTracker:  JobServileTAP
+  weight: 50
+  startingGear: ServileGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconServile"
+  supervisors: job-supervisors-tap
+  canBeAntag: false
   requirements:
     - !type:FactionRequirement
       factionID: "TAP"
@@ -15,21 +22,18 @@
       traits:
         - Blindness
         - WheelchairBound
-  weight: 50
-  startingGear: ServileGear
-  alwaysUseSpawner: true
-  icon: "JobIconServile"
-  requireAdminNotify: false
-  supervisors: job-supervisors-tap
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
         rank: crescent-rank-servile
-  - !type:AddComponentSpecial
-    components:
-      - type: Telepathic
+      - type: LanguageAdder
+        addSpoken:
+        - OldTaypani
+        - Draconic
+        addUnderstood:
+        - OldTaypani
+        - Draconic
   access:
   - EmergencyShuttleRepealAll
   - Captain

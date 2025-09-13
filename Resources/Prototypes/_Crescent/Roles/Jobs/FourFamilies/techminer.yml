@@ -3,6 +3,13 @@
   name: job-name-techminer
   description: job-description-techminer
   playTimeTracker:  JobTechminerTAP
+  weight: 3
+  startingGear: TechminerGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconTechminer"
+  supervisors: job-supervisors-tap
+  canBeAntag: false
   requirements:
     - !type:FactionRequirement
       factionID: "TAP"
@@ -15,21 +22,18 @@
       traits:
         - Blindness
         - WheelchairBound
-  weight: 52
-  startingGear: TechminerGear
-  alwaysUseSpawner: true
-  icon: "JobIconTechminer"
-  requireAdminNotify: false
-  supervisors: job-supervisors-tap
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
         rank: crescent-rank-techminer
-  - !type:AddComponentSpecial
-    components:
-      - type: Telepathic
+      - type: LanguageAdder
+        addSpoken:
+        - OldTaypani
+        - Tradeband
+        addUnderstood:
+        - OldTaypani
+        - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain

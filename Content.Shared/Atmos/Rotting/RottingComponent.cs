@@ -45,7 +45,6 @@ public sealed partial class RottingComponent : Component
     {
         DamageDict = new()
         {
-            { "Blunt", 0.06 },
             { "Cellular", 0.06 }
         }
     };
