@@ -123,7 +123,7 @@
   group: genericAmmo
 
 - type: cargoProduct
-  id: Shuttle120mmAmmoGeneric
+  id: Shuttle120mmAmmoExplosiveGeneric
   icon:
     sprite: _NF/Objects/SpaceArtillery/630_highexplosive_shell_casing.rsi
     state: base
@@ -163,7 +163,7 @@
   group: genericAmmo
 
 - type: cargoProduct
-  id: ShuttleCompaktAmmoGeneric
+  id: ShuttleCompaktAmmoPlasmaGeneric
   icon:
     sprite: _Crescent/Objects/ShuttleWeapons/lenses.rsi
     state: plasmalens
