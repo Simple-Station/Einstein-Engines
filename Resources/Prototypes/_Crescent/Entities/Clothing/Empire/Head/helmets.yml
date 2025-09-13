@@ -41,12 +41,15 @@
     sprite: _Crescent/Clothing/Empire/Head/inspector.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/Empire/Head/inspector.rsi
-  - type: PointLight
-    radius: 6
-    color: "#70615b"
+  - type: PointLight # Literally only so the linter doesn't fail, not intended to be a real light 🥀
+    radius: 1
+    color: "#210032"
   - type: PressureProtection
     highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
+  - type: NightVision
+    isEquipment: true
+    color: Red
   - type: IdentityBlocker
   - type: Armor
     modifiers:

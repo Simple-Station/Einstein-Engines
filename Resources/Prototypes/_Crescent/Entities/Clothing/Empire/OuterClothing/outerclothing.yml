@@ -37,8 +37,8 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitInspector
-  name: mk. III 'ADJUDICATOR' combat hardsuit
-  description: A modular combat hardsuit for the Advocati Compliance Corps. Bears the colors of the Olywir administration.
+  name: mk. IV 'ORATEUR' combat hardsuit
+  description: A modular combat hardsuit for the Advocati Compliance Corps. Bears the colors of the Kaiser's administration.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/Empire/OuterClothing/inspector.rsi
@@ -61,8 +61,8 @@
         Heat: 25
         Caustic: 25
   - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 0.85
+    walkModifier: 0.90
+    sprintModifier: 0.90
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitInspector
   - type: StaticPrice
