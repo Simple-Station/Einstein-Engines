@@ -126,7 +126,6 @@
   description: Spaceworthy protection for your fragile skull.
   components:
   - type: BreathMask
-  - type: EyeProtection
   - type: FlashImmunity
   - type: Sprite
     sprite: _Crescent/Clothing/FourFamilies/Head/prophetmask.rsi
