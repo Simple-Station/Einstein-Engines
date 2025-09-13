@@ -418,7 +418,7 @@
   id: ShinoharaShiverBlade
   name: research-technology-shinohara-shiverblade
   icon:
-    sprite: _Crescent/Objects/Weapons/shiverblade.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/shiverblade.rsi
     state: icon
   discipline: Corporate
   tier: 3

@@ -239,7 +239,7 @@
   name: SHI HSRPG-38M13 Hammerhead smart-missile launcher 65mm
   parent: [BaseWeaponLauncher, BaseGunWieldable]
   id: WeaponLauncherHammerhead
-  description: A modified ancient rocket-propelled grenade launcher. Stamped with the Shinohara Heavy Industries logo and capable of firing guided projectiles.
+  description: A fancy heat-seeking rocket launcher. Stamped with the Shinohara Heavy Industries logo.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/hammerhead.rsi
@@ -257,46 +257,24 @@
   - type: Gun
     fireRate: 0.5
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/rpg_fire.ogg
   - type: BallisticAmmoProvider
-    proto: BulletRocketSmart
-    capacity: 3
-    cycleable: false
+    proto: CartridgeHammerheadRocket
+    capacity: 1
+    autoCycle: false
     soundInsert:
-      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
-  - type: MagazineVisuals
-    magState: mag
-    steps: 3
-    zeroVisible: true
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/rpg_load.ogg
+    fillWithDoAfter: true
+    fillDelay: 1
+    whitelist:
+      tags:
+      - RocketHammerhead
   - type: Appearance
   - type: Contraband
-
-- type: entity
-  id: BulletRocketSmart
-  name: smart missile
-  parent: BaseBulletTrigger
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: ProjectileIFF
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    layers:
-      - state: frag
-  - type: ExplodeOnTrigger
-  - type: Explosive
-    explosionType: Default
-    maxIntensity: 1500
-    intensitySlope: 500
-    totalIntensity: 3000
-    maxTileBreak: 5
-  - type: PointLight
-    radius: 3.5
-    color: orange
-    energy: 0.5
-  - type: HeatSeeking
-    rotationSpeed: 40
-    acceleration: 25
-    topSpeed: 125
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
 
     defaultSeekingRange: 400
     guidanceAlgorithm: PredictiveGuidance

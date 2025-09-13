@@ -181,12 +181,45 @@
 - type: entity
   id: CratePangtaiMako
   parent: WeaponCaseRpg
-  name: pang tai arms "Mako" case
-  description: A shoulder-operated plasma caster packaged in a stamped weapon case.
+  name: pang tai arms "LAS-98 Mako" case
+  description: A shoulder-operated laser cutter packaged in a stamped weapon case.
   components:
   - type: StorageFill
     contents:
       - id: WeaponSpecialMako
+        amount: 1
+
+- type: entity
+  id: CratePangtaiGustaf
+  parent: WeaponCaseRpg
+  name: pang tai arms "M-5 Carl Gustaf" case
+  description: A 84mm recoilless rifle packaged in a stamped weapon case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponLauncherGustav
+        amount: 1
+
+- type: entity
+  id: CratePangtaiCommando
+  parent: WeaponCaseRpg
+  name: pang tai arms "M-32 Commando" case
+  description: A 4-shot 44mm rocket launcher packaged in a stamped weapon case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponLauncherCommando
+        amount: 1
+
+- type: entity
+  id: CratePangtaiSpear
+  parent: WeaponCaseRpg
+  name: pang tai arms "AC-8 Spear" case
+  description: A high end 15.2x169mm AMR packaged in a stamped weapon case.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSniperSpear
         amount: 1
 
 - type: entity

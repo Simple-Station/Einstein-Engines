@@ -1,0 +1,95 @@
+- type: entity
+  id: Crate40mmGrenadeAS
+  parent: CrateSecgear
+  name: 40mm anti-structure grenade crate
+  description: A crate containing 4 Thermobaric shot 40mm grenades
+  components:
+  - type: StorageFill
+    contents:
+      - id: Cartridge40mmThermobaric
+        amount: 4
+
+- type: entity
+  id: Crate40mmGrenadeSup
+  parent: CrateSecgear
+  name: 40mm support grenade crate
+  description: A crate containing 4 HEDP shot 40mm grenades
+  components:
+  - type: StorageFill
+    contents:
+      - id: Cartridge40mmSmoke
+        amount: 4
+
+- type: entity
+  id: Crate40mmGrenadeAT
+  parent: CrateSecgear
+  name: 40mm anti-armor grenade crate
+  description: A crate containing 4 HEDP shot 40mm grenades
+  components:
+  - type: StorageFill
+    contents:
+      - id: Cartridge40mmHEDP
+        amount: 4
+
+- type: entity
+  id: Crate40mmGrenadeAP
+  parent: CrateSecgear
+  name: 40mm anti-personnel grenade crate
+  description: A crate containing 4 HE and 4 Canister shot 40mm grenades
+  components:
+  - type: StorageFill
+    contents:
+      - id: Cartridge40mmFrag
+        amount: 4
+      - id: Cartridge40mmCan
+        amount: 4
+
+- type: entity
+  id: Crate84mmRecoillessAP
+  parent: CrateSecgear
+  name: 84mm recoilless anti-personnel shell crate
+  description: A crate containing 2 HE-Frag and 2 Canister shot 84mm recoilless shells
+  components:
+  - type: StorageFill
+    contents:
+      - id: Cartridge84mmRecoillessFrag
+        amount: 2
+      - id: Cartridge84mmRecoillessCan
+        amount: 2
+
+- type: entity
+  id: Crate84mmRecoillessAT
+  parent: CrateSecgear
+  name: 84mm recoilless anti-armor shell crate
+  description: A crate containing 2 HEAT and 1 Tandem HEAT 84mm recoilless shells
+  components:
+  - type: StorageFill
+    contents:
+      - id: Cartridge84mmRecoillessHEAT
+        amount: 2
+      - id: Cartridge84mmRecoillessTandem
+        amount: 1
+
+- type: entity
+  id: Crate84mmRecoillessSup
+  parent: CrateSecgear
+  name: 84mm recoilless support shell crate
+  description: A crate containing 2 Smoke and 2 EMP 84mm recoilless shells
+  components:
+  - type: StorageFill
+    contents:
+      - id: Cartridge84mmRecoillessSmoke
+        amount: 2
+      - id: Cartridge84mmRecoillessEMP
+        amount: 2
+
+- type: entity
+  id: Crate65mmHammerheadRocket
+  parent: CrateSecgear
+  name: 65mm smart rocket crate
+  description: A crate containing 3 heat-seeking 65mm rockets
+  components:
+  - type: StorageFill
+    contents:
+      - id: CartridgeHammerheadRocket
+        amount: 3

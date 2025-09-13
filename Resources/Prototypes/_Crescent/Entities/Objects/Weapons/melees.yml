@@ -6,7 +6,7 @@
   components:
   - type: Sharp
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/vibrokhopesh.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/vibrokhopesh.rsi
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 45
@@ -30,7 +30,7 @@
     size: Normal
     shape:
       - 0,0,1,3
-    sprite: _Crescent/Objects/Weapons/vibrokhopesh.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/vibrokhopesh.rsi
   - type: Tag
     tags:
     - Khopesh
@@ -45,7 +45,7 @@
   description: An instrument of war. Directly in your forearm!
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/mantis_blade.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/mantis_blade.rsi
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -45
@@ -65,7 +65,7 @@
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
-    sprite: _Crescent/Objects/Weapons/mantis_blade.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/mantis_blade.rsi
   - type: MultiHandedItem
 
 - type: entity
@@ -75,10 +75,10 @@
   description: A vicious looking blade.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/machete.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/machete.rsi
     state: icon
   - type: Item
-    sprite: _Crescent/Objects/Weapons/machete.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/machete.rsi
 
 - type: entity
   name: noble's rapier
@@ -88,7 +88,7 @@
   components:
   - type: Sharp
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/noble_rapier.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/noble_rapier.rsi
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
@@ -112,7 +112,7 @@
     size: Normal
     shape:
       - 0,0,1,3
-    sprite: _Crescent/Objects/Weapons/noble_rapier.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/noble_rapier.rsi
   - type: Tag
     tags:
     - Rapier
@@ -126,7 +126,7 @@
   components:
   - type: Sharp
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/noble_sabre.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/noble_sabre.rsi
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
@@ -151,7 +151,7 @@
     size: Normal
     shape:
       - 0,0,1,3
-    sprite: _Crescent/Objects/Weapons/noble_sabre.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/noble_sabre.rsi
   - type: Tag
     tags:
     - DSMSabre
@@ -164,7 +164,7 @@
   description: Disdaining the fragile electrotaser or shock batons of more "advanced" polities, the League opts for a hard wearing steel core rod with two lug nuts fixed at the head. More mace than baton, few lumpenproles risk being struck twice.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/ncwllugbaton.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/ncwllugbaton.rsi
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
@@ -192,7 +192,7 @@
     tags:
     - Truncheon
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/ncwllugbaton.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/ncwllugbaton.rsi
     quickEquip: false
     slots:
     - Belt
@@ -215,7 +215,7 @@
     tags:
     - Katana
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/shinoharakatana.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/shinoharakatana.rsi
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -90
@@ -238,9 +238,9 @@
     size: Normal
     shape:
       - 0,0,1,3
-    sprite: _Crescent/Objects/Weapons/shinoharakatana.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/shinoharakatana.rsi
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/shinoharakatana.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/shinoharakatana.rsi
     slots:
     - Back
 
@@ -251,7 +251,7 @@
   description: Combining cutting-edge contained plasma field technology with elegant neomilitarism, the RIP9 Cherenzikov is a favourite of SHI Liquidation agents and penthouse PMCs across known space. Don't just kill your enemy - make a statement. Shinohara Industrial™.
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/shiverblade.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/shiverblade.rsi
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -90
@@ -262,7 +262,7 @@
     heavyRateModifier: 1
   - type: Item
     size: Normal
-    sprite: _Crescent/Objects/Weapons/shiverblade.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/shiverblade.rsi
   - type: DashAbility
   - type: LimitedCharges
     maxCharges: 1
@@ -270,7 +270,7 @@
   - type: AutoRecharge
     rechargeDuration: 180
   - type: Clothing
-    sprite: _Crescent/Objects/Weapons/shiverblade.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/shiverblade.rsi
     slots:
     - Back
   - type: Reflect
@@ -291,7 +291,7 @@
   components:
   - type: Sharp
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/duelingkhopesh.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/duelingkhopesh.rsi
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 90
@@ -312,7 +312,7 @@
     size: Normal
     shape:
       - 0,0,1,3
-    sprite: _Crescent/Objects/Weapons/duelingkhopesh.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/duelingkhopesh.rsi
   - type: Tag
     tags:
     - Khopesh
@@ -326,7 +326,7 @@
   components:
   - type: Sharp
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/ncwlkukri.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/ncwlkukri.rsi
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -45
@@ -358,7 +358,7 @@
     size: Normal
     shape:
       - 0,0,1,3
-    sprite: _Crescent/Objects/Weapons/ncwlkukri.rsi
+    sprite: _Crescent/Objects/Weapons/Melee/ncwlkukri.rsi
   - type: Tag
     tags:
     - Kukri

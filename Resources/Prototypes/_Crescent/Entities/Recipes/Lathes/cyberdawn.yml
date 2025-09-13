@@ -244,7 +244,7 @@
 
 - type: latheRecipe
   id:  WeaponLCartridgeRPGSmall
-  result: CartridgeSmallRocket
+  result: CartridgeRPG2Heat
   completetime: 1.5
   materials:
     Steel: 500

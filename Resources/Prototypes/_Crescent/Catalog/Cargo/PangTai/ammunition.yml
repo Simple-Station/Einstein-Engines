@@ -27,3 +27,73 @@
   cost: 2500
   category: cargoproduct-category-name-shuttle
   group: pangtai
+
+- type: cargoProduct
+  id: Crate84mmRecoillessAPAmmoPangtai
+  icon:
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/84mm_recoilless.rsi
+    state: frag
+  product: Crate84mmRecoillessAP
+  cost: 6000
+  category: cargoproduct-category-name-shuttle
+  group: pangtai
+
+- type: cargoProduct
+  id: Crate84mmRecoillessATAmmoPangtai
+  icon:
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/84mm_recoilless.rsi
+    state: heat
+  product: Crate84mmRecoillessAT
+  cost: 9000
+  category: cargoproduct-category-name-shuttle
+  group: pangtai
+
+- type: cargoProduct
+  id: Crate84mmRecoillessSupAmmoPangtai
+  icon:
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/84mm_recoilless.rsi
+    state: smoke
+  product: Crate84mmRecoillessSup
+  cost: 4500
+  category: cargoproduct-category-name-shuttle
+  group: pangtai
+
+- type: cargoProduct
+  id: Crate40mmGrenadeAPAmmoPangtai
+  icon:
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/40mm_grenade.rsi
+    state: frag
+  product: Crate40mmGrenadeAP
+  cost: 4500
+  category: cargoproduct-category-name-shuttle
+  group: pangtai
+
+- type: cargoProduct
+  id: Crate40mmGrenadeATAmmoPangtai
+  icon:
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/40mm_grenade.rsi
+    state: hedp
+  product: Crate40mmGrenadeAT
+  cost: 6000
+  category: cargoproduct-category-name-shuttle
+  group: pangtai
+
+- type: cargoProduct
+  id: Crate40mmGrenadeSupAmmoPangtai
+  icon:
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/40mm_grenade.rsi
+    state: smoke
+  product: Crate40mmGrenadeSup
+  cost: 3000
+  category: cargoproduct-category-name-shuttle
+  group: pangtai
+
+- type: cargoProduct
+  id: Crate40mmGrenadeASAmmoPangtai
+  icon:
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/40mm_grenade.rsi
+    state: thermo
+  product: Crate40mmGrenadeAS
+  cost: 6000
+  category: cargoproduct-category-name-shuttle
+  group: pangtai
