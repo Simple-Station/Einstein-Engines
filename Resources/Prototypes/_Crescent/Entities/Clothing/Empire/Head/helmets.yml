@@ -49,7 +49,7 @@
     lowPressureMultiplier: 1000
   - type: NightVision
     isEquipment: true
-    color: Red
+    color: White
   - type: IdentityBlocker
   - type: Armor
     modifiers:
