@@ -49,7 +49,7 @@
     lowPressureMultiplier: 1000
   - type: NightVision
     isEquipment: true
-    color: Red
+    color: White
   - type: IdentityBlocker
   - type: Armor
     modifiers:
@@ -250,6 +250,9 @@
     tags:
     - ClothMade
     - WhitelistChameleon
+  - type: TinfoilHat
+    passthrough: true
+    destroyOnFry: false
 
 - type: entity
   parent: ClothingHeadBase

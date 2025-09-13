@@ -11,14 +11,14 @@
             "name": "icon"
         },
         {
-            "name": "on-equipped-HELMET",
+            "name": "off-equipped-HELMET",
             "directions": 4
         },
         {
             "name": "icon-flash"
         },
         {
-            "name": "off-equipped-HELMET",
+            "name": "on-equipped-HELMET",
             "directions": 4
         }
     ]
