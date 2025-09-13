@@ -31,7 +31,7 @@
   - type: IdentityBlocker
 
 - type: entity
-  parent: ClothingHeadHardsuitBase
+  parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitDraugr
   categories: [ HideSpawnMenu ]
   name: draugr's exohelm
@@ -43,6 +43,9 @@
     sprite: _Crescent/Clothing/FourFamilies/Head/draugrhelmet.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/FourFamilies/Head/draugrhelmet.rsi
+  - type: PointLight
+    radius: 6
+    color: "#97b350"
   - type: PressureProtection
     highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
@@ -57,7 +60,7 @@
         Caustic: 0.9
 
 - type: entity
-  parent: ClothingHeadHardsuitBase
+  parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitIzdari
   categories: [ HideSpawnMenu ]
   name: beltrunner's hardsuit helmet
@@ -70,6 +73,9 @@
     sprite: _Crescent/Clothing/FourFamilies/Head/izdarihelmet.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/FourFamilies/Head/izdarihelmet.rsi
+  - type: PointLight
+    radius: 6
+    color: "#e3c291"
   - type: PressureProtection
     highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
@@ -84,7 +90,7 @@
         Caustic: 0.9
 
 - type: entity
-  parent: ClothingHeadHardsuitBase
+  parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitThukker
   categories: [ HideSpawnMenu ]
   name: thukker's engineering hardsuit helmet
@@ -96,6 +102,9 @@
     sprite: _Crescent/Clothing/FourFamilies/Head/thukkerhelmet.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/FourFamilies/Head/thukkerhelmet.rsi
+  - type: PointLight
+    radius: 6
+    color: "#e3af91"
   - type: PressureProtection
     highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
@@ -110,7 +119,7 @@
         Caustic: 0.9
 
 - type: entity
-  parent: ClothingHeadHardsuitBase
+  parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitArabet
   categories: [ HideSpawnMenu ]
   name: arabet's hardsuit helmet
@@ -123,6 +132,9 @@
     sprite: _Crescent/Clothing/FourFamilies/Head/prophetmask.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/FourFamilies/Head/prophetmask.rsi
+  - type: PointLight
+    radius: 6
+    color: "#fcd59a"
   - type: PressureProtection
     highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000

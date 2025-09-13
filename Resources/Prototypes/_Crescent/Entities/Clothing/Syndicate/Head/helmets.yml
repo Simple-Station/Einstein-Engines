@@ -28,8 +28,8 @@
 ## hardsuit helmets
 
 - type: entity
-  parent: ClothingHeadHardsuitBase
-  id: ClothingHeadHelmetSyndiDonator
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetSyndieDonator
   categories: [ HideSpawnMenu ]
   name: combat technician's hardsuit helmet
   description: Spaceworthy protection for your fragile skull. A Syndicate design.

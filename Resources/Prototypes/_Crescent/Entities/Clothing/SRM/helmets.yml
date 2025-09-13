@@ -13,7 +13,7 @@
 ## hardsuit helmets
 
 - type: entity
-  parent: ClothingHeadHardsuitBase
+  parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitHunter
   categories: [ HideSpawnMenu ]
   name: hunter's hardsuit helmet
@@ -25,6 +25,9 @@
     sprite: _Crescent/Clothing/SRM/Head/hardsuit.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/SRM/Head/hardsuit.rsi
+  - type: PointLight
+    radius: 4
+    color: "#6d805b"
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -37,7 +40,7 @@
         Heat: 0.9
 
 - type: entity
-  parent: ClothingHeadHardsuitBase
+  parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitHunterElite
   categories: [ HideSpawnMenu ]
   name: sixth subjugation fireteam hardsuit helmet
@@ -49,6 +52,9 @@
     sprite: _Crescent/Clothing/SRM/Head/hardsuitelite.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/SRM/Head/hardsuitelite.rsi
+  - type: PointLight
+    radius: 4
+    color: "#6d805b"
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
