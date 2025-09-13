@@ -1,0 +1,19 @@
+- type: entity
+  id: ActionSummonMothroach
+  name: action-name-summon-mothroach
+  description: action-description-summon-mothroach
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: InstantAction
+      icon: { sprite: Mobs/Animals/mothroach.rsi, state: icon }
+      useDelay: 180
+      checkCanInteract: false
+      event: !type:SummonPsionicFamiliarActionEvent
+        familiarProto: MobMothroachPsionic
+        powerName: "Summon Mothroach"
+        checkInsulation: true
+        doGlimmerEffects: true
+        followMaster: true
+        ignoreFamiliarLimit: true
+        minGlimmer: 10
+        maxGlimmer: 20

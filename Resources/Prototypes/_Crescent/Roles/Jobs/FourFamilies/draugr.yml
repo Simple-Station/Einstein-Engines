@@ -3,6 +3,13 @@
   name: job-name-draugr
   description: job-description-draugr
   playTimeTracker:  JobDraugrTAP
+  weight: 6
+  startingGear: DraugrGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconDraugr"
+  supervisors: job-supervisors-tap
+  canBeAntag: false
   requirements:
     - !type:FactionRequirement
       factionID: "TAP"
@@ -18,21 +25,18 @@
         - Muted
         - Blindness
         - Pacifist
-  weight: 50
-  startingGear: DraugrGear
-  alwaysUseSpawner: true
-  icon: "JobIconDraugr"
-  requireAdminNotify: false
-  supervisors: job-supervisors-tap
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
         rank: crescent-rank-draugr
-  - !type:AddComponentSpecial
-    components:
-      - type: Telepathic
+      - type: LanguageAdder
+        addSpoken:
+        - OldTaypani
+        - Draconic
+        addUnderstood:
+        - OldTaypani
+        - Draconic
   access:
   - EmergencyShuttleRepealAll
   - Captain

@@ -23,7 +23,7 @@ public sealed partial class HungerComponent : Component
     /// The base amount at which <see cref="CurrentHunger"/> decays.
     /// </summary>
     [DataField]
-    public float BaseDecayRate = 0.01666666666f;
+    public float BaseDecayRate = 0.033f;
 
     /// <summary>
     /// The actual amount at which <see cref="CurrentHunger"/> decays.
@@ -51,10 +51,10 @@ public sealed partial class HungerComponent : Component
     [DataField(customTypeSerializer: typeof(DictionarySerializer<HungerThreshold, float>)), AutoNetworkedField]
     public Dictionary<HungerThreshold, float> Thresholds = new()
     {
-        { HungerThreshold.Overfed, 200.0f },
-        { HungerThreshold.Okay, 150.0f },
-        { HungerThreshold.Peckish, 100.0f },
-        { HungerThreshold.Starving, 50.0f },
+        { HungerThreshold.Overfed, 300.0f },
+        { HungerThreshold.Okay, 225.0f },
+        { HungerThreshold.Peckish, 150.0f },
+        { HungerThreshold.Starving, 75.0f },
         { HungerThreshold.Dead, 0.0f }
     };
 
@@ -89,7 +89,7 @@ public sealed partial class HungerComponent : Component
     /// The amount of slowdown applied when an entity is starving
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float StarvingSlowdownModifier = 0.75f;
+    public float StarvingSlowdownModifier = 0.85f;
 
     /// <summary>
     /// Damage dealt when your current threshold is at HungerThreshold.Dead

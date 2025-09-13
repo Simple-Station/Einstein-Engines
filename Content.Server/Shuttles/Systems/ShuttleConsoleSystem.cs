@@ -260,9 +260,10 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
             {
                 component.accesState = ShuttleConsoleAccesState.NoAcces;
                 _popup.PopupEntity("Console locked", uid, args.User, PopupType.Small);
+                _itemSlotsSystem.TryEject(uid, SharedShuttleConsoleComponent.IdSlotName, args.User, out _);
+                _itemSlotsSystem.SetLock(uid, SharedShuttleConsoleComponent.IdSlotName, true);
                 return;
             }
-
             component.accesState = ShuttleConsoleAccesState.CaptainAcces;
             _audio.PlayPvs("/Audio/Machines/high_tech_confirm.ogg", uid, AudioParams.Default);
             _popup.PopupEntity("Console unlocked. Welcome onboard, captain.", uid, args.User);
@@ -335,6 +336,8 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         if (TryComp<DynamicCodeHolderComponent>(args.Grid, out var accesComp))
         {
             comp.accesState = ShuttleConsoleAccesState.NoAcces;
+            _itemSlotsSystem.TryEject(uid, comp.targetIdSlot, null, out var item);
+            _itemSlotsSystem.SetLock(uid, comp.targetIdSlot, true);
         }
         else
         {
@@ -442,6 +445,8 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
             if (HasComp<DynamicCodeHolderComponent>(args.Transform.GridUid))
             {
                 component.accesState = ShuttleConsoleAccesState.NoAcces;
+                _itemSlotsSystem.TryEject(uid, component.targetIdSlot, null, out var item);
+                _itemSlotsSystem.SetLock(uid, component.targetIdSlot, true);
             }
             else
             {

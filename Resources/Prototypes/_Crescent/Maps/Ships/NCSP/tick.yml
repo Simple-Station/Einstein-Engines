@@ -5,7 +5,7 @@
   id: Tick
   name: GSC Tick
   description: An ultralight Syndicate fighter.
-  price: 9500
+  price: 12500 #12000 appraisegrid
   category: Small
   group: None
   path: /Maps/_Crescent/Shuttles/NCSP/tick.yml

@@ -4,9 +4,8 @@
   id: Default
   damagePerIntensity:
     types:
-      Heat: 5
-      Blunt: 5
-      Piercing: 5
+      Heat: 0.75
+      Blunt: 0.25
   tileBreakChance: [0, 0.5, 1]
   tileBreakIntensity: [0, 10, 30]
   tileBreakRerollReduction: 20

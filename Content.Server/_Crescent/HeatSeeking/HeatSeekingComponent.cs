@@ -3,7 +3,7 @@ using System.Numerics;
 namespace Content.Server._Crescent.HeatSeeking;
 
 /// <summary>
-/// This is used for...
+/// This is used for storing active data and the configuration of a heat seeking missile.
 /// </summary>
 [RegisterComponent]
 public sealed partial class HeatSeekingComponent : Component

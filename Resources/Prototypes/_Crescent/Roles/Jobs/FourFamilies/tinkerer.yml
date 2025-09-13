@@ -3,6 +3,13 @@
   name: job-name-tinkerer
   description: job-description-tinkerer
   playTimeTracker:  JobTinkererTAP
+  weight: 2
+  startingGear: TinkererGear
+  alwaysUseSpawner: true
+  requireAdminNotify: false
+  icon: "JobIconTinkerer"
+  supervisors: job-supervisors-tap
+  canBeAntag: false
   requirements:
     - !type:FactionRequirement
       factionID: "TAP"
@@ -15,21 +22,18 @@
       traits:
         - Blindness
         - WheelchairBound
-  weight: 53
-  startingGear: TinkererGear
-  alwaysUseSpawner: true
-  icon: "JobIconTinkerer"
-  requireAdminNotify: false
-  supervisors: job-supervisors-tap
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
         rank: crescent-rank-tinkerer
-  - !type:AddComponentSpecial
-    components:
-      - type: Telepathic
+      - type: LanguageAdder
+        addSpoken:
+        - OldTaypani
+        - Tradeband
+        addUnderstood:
+        - OldTaypani
+        - Tradeband
   access:
   - EmergencyShuttleRepealAll
   - Captain

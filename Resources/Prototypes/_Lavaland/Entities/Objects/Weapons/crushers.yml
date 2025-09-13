@@ -214,8 +214,11 @@
     angle: 0
     animation: WeaponArcThrust
     range: 1.6
+  - type: Clothing
+    slots:
+    - Belt
   - type: Item
-    size: Ginormous
+    size: Normal
     sprite: _Lavaland/Objects/Weapons/Crushers/crusher_machete-inhands.rsi
   # too lazy to port parrying and risk a [redacted] lmao
   - type: Sharp

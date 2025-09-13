@@ -80,3 +80,8 @@
 
 - type: Tag
   id: VulcanCartridgeBox
+
+#smartbomb tag
+
+- type: Tag
+  id: SmartBomb

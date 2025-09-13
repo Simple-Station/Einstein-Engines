@@ -242,7 +242,6 @@
   result: ClothingOuterHardsuitImperialNullweavePsion
   completetime: 2
   materials:
-    Bluespace: 500
     HardsuitElectronics: 500
     Cloth: 500
     Durathread: 500
@@ -253,7 +252,6 @@
   result: ImperialPsionBoundlightStaff
   completetime: 2
   materials:
-    Bluespace: 1000
     Cloth: 250
     Wood: 750
     Silver: 500
