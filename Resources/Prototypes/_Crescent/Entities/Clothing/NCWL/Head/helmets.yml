@@ -61,6 +61,7 @@
   description: Spaceworthy protection for your fragile skull. A communard design.
   components:
   - type: BreathMask
+  - type: FlashImmunity
   - type: Sprite
     sprite: _Crescent/Clothing/NCWL/Head/infanteermedsuithelmet.rsi
   - type: Clothing
@@ -89,6 +90,7 @@
   description: Spaceworthy protection for your fragile skull. A communard design.
   components:
   - type: BreathMask
+  - type: EyeProtection
   - type: Sprite
     sprite: _Crescent/Clothing/NCWL/Head/salvagehardsuithelmet.rsi
   - type: Clothing
@@ -119,6 +121,7 @@
   description: Spaceworthy protection for your fragile skull. A communard design.
   components:
   - type: BreathMask
+  - type: FlashImmunity
   - type: Sprite
     sprite: _Crescent/Clothing/NCWL/Head/infantryhelm.rsi
   - type: Clothing
@@ -147,6 +150,7 @@
   description: Spaceworthy protection for your fragile skull. A communard design.
   components:
   - type: BreathMask
+  - type: FlashImmunity
   - type: Sprite
     sprite: _Crescent/Clothing/NCWL/Head/commieheavy.rsi
   - type: Clothing
@@ -166,6 +170,7 @@
   description: Spaceworthy protection for your fragile skull. A communard design.
   components:
   - type: BreathMask
+  - type: FlashImmunity
   - type: Sprite
     sprite: _Crescent/Clothing/NCWL/Head/ncwljuggernauthelm.rsi
   - type: Clothing

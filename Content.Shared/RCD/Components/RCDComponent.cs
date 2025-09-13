@@ -53,6 +53,8 @@ public sealed partial class RCDComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool IsRpd { get; set; } = false;
+    [DataField, AutoNetworkedField]
+    public bool IsScrapper { get; set; } = false;
 
     /// <summary>
     /// The direction constructed entities will face upon spawning

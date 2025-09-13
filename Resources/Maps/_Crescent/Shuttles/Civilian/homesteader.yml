@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 09/01/2025 16:37:34
-  entityCount: 405
+  time: 09/12/2025 22:12:59
+  entityCount: 406
 maps: []
 grids:
 - 1
@@ -86,229 +86,253 @@ entities:
             color: '#EFB34196'
             id: BotGreyscale
           decals:
-            178: -4,5
-            179: -3,5
+            174: -4,5
+            175: -3,5
         - node:
             color: '#52B4E996'
             id: BrickTileSteelCornerNe
           decals:
-            82: 1,7
-            83: 1,7
-            125: -3,-1
-            126: -3,-1
+            78: 1,7
+            79: 1,7
+            121: -3,-1
+            122: -3,-1
         - node:
             color: '#52B4E996'
             id: BrickTileSteelCornerNw
           decals:
-            84: -1,7
-            85: -1,7
-            123: -5,-1
-            124: -5,-1
+            80: -1,7
+            81: -1,7
+            119: -5,-1
+            120: -5,-1
         - node:
             color: '#D381C996'
             id: BrickTileSteelCornerNw
           decals:
-            107: 3,-1
-            108: 3,-1
+            103: 3,-1
+            104: 3,-1
         - node:
             color: '#52B4E996'
             id: BrickTileSteelCornerSe
           decals:
-            94: 1,5
-            95: 1,5
-            131: -3,-3
-            132: -3,-3
+            90: 1,5
+            91: 1,5
+            127: -3,-3
+            128: -3,-3
         - node:
             color: '#D381C996'
             id: BrickTileSteelCornerSe
           decals:
-            103: 5,-3
-            104: 5,-3
+            99: 5,-3
+            100: 5,-3
         - node:
             color: '#52B4E996'
             id: BrickTileSteelCornerSw
           decals:
-            96: -1,5
-            97: -1,5
-            129: -5,-3
-            130: -5,-3
+            92: -1,5
+            93: -1,5
+            125: -5,-3
+            126: -5,-3
         - node:
             color: '#D381C996'
             id: BrickTileSteelCornerSw
           decals:
-            105: 3,-3
-            106: 3,-3
+            101: 3,-3
+            102: 3,-3
         - node:
             color: '#52B4E996'
             id: BrickTileSteelLineE
           decals:
-            92: 1,6
-            93: 1,6
-            117: -3,-2
-            118: -3,-2
+            88: 1,6
+            89: 1,6
+            113: -3,-2
+            114: -3,-2
         - node:
             color: '#D381C996'
             id: BrickTileSteelLineE
           decals:
-            115: 5,-2
-            116: 5,-2
-            158: 1,-1
-            159: 1,-1
-            160: 1,-1
-            161: 1,-2
-            162: 1,-2
-            163: 1,-2
-            164: 1,-3
-            165: 1,-3
-            166: 1,-3
+            111: 5,-2
+            112: 5,-2
+            154: 1,-1
+            155: 1,-1
+            156: 1,-1
+            157: 1,-2
+            158: 1,-2
+            159: 1,-2
+            160: 1,-3
+            161: 1,-3
+            162: 1,-3
         - node:
             color: '#EFB34196'
             id: BrickTileSteelLineE
           decals:
-            142: 1,3
-            143: 1,3
-            144: 1,2
-            145: 1,2
-            146: 1,2
-            147: 1,1
-            148: 1,1
+            138: 1,3
+            139: 1,3
+            140: 1,2
+            141: 1,2
+            142: 1,2
+            143: 1,1
+            144: 1,1
         - node:
             color: '#52B4E996'
             id: BrickTileSteelLineN
           decals:
-            86: 0,7
-            87: 0,7
-            119: -4,-1
-            120: -4,-1
+            82: 0,7
+            83: 0,7
+            115: -4,-1
+            116: -4,-1
         - node:
             color: '#D381C996'
             id: BrickTileSteelLineN
           decals:
-            109: 4,-1
-            110: 4,-1
+            105: 4,-1
+            106: 4,-1
         - node:
             color: '#52B4E996'
             id: BrickTileSteelLineS
           decals:
-            88: 0,5
-            89: 0,5
-            121: -4,-3
-            122: -4,-3
+            84: 0,5
+            85: 0,5
+            117: -4,-3
+            118: -4,-3
         - node:
             color: '#D381C996'
             id: BrickTileSteelLineS
           decals:
-            111: 4,-3
-            112: 4,-3
+            107: 4,-3
+            108: 4,-3
         - node:
             color: '#52B4E996'
             id: BrickTileSteelLineW
           decals:
-            90: -1,6
-            91: -1,6
-            127: -5,-2
-            128: -5,-2
-            133: -1,-3
-            134: -1,-3
-            135: -1,-3
-            136: -1,-2
-            137: -1,-2
-            138: -1,-2
-            139: -1,-1
-            140: -1,-1
-            141: -1,-1
+            86: -1,6
+            87: -1,6
+            123: -5,-2
+            124: -5,-2
+            129: -1,-3
+            130: -1,-3
+            131: -1,-3
+            132: -1,-2
+            133: -1,-2
+            134: -1,-2
+            135: -1,-1
+            136: -1,-1
+            137: -1,-1
         - node:
             color: '#A4610696'
             id: BrickTileSteelLineW
           decals:
-            149: -1,1
-            150: -1,1
-            151: -1,2
-            152: -1,1
-            153: -1,2
-            154: -1,2
-            155: -1,3
-            156: -1,3
-            157: -1,3
+            145: -1,1
+            146: -1,1
+            147: -1,2
+            148: -1,1
+            149: -1,2
+            150: -1,2
+            151: -1,3
+            152: -1,3
+            153: -1,3
         - node:
             color: '#D381C996'
             id: BrickTileSteelLineW
           decals:
-            113: 3,-2
-            114: 3,-2
+            109: 3,-2
+            110: 3,-2
         - node:
             zIndex: 1
             id: LatticeCornerSE
           decals:
-            194: -4,7
-            197: -2,8
+            190: -4,7
+            193: -2,8
+            202: -4,7
+            205: -2,8
+            214: -4,7
+            217: -2,8
         - node:
             zIndex: 1
             id: LatticeCornerSW
           decals:
-            188: 2,8
-            191: 4,7
+            184: 2,8
+            187: 4,7
+            196: 2,8
+            199: 4,7
+            208: 2,8
+            211: 4,7
         - node:
             id: LatticeEdgeE
           decals:
-            193: -4,7
-            196: -2,8
+            189: -4,7
+            192: -2,8
+            201: -4,7
+            204: -2,8
+            213: -4,7
+            216: -2,8
         - node:
             id: LatticeEdgeS
           decals:
-            186: 2,8
-            189: 4,7
-            192: -4,7
-            195: -2,8
+            182: 2,8
+            185: 4,7
+            188: -4,7
+            191: -2,8
+            194: 2,8
+            197: 4,7
+            200: -4,7
+            203: -2,8
+            206: 2,8
+            209: 4,7
+            212: -4,7
+            215: -2,8
         - node:
             id: LatticeEdgeW
           decals:
-            187: 2,8
-            190: 4,7
+            183: 2,8
+            186: 4,7
+            195: 2,8
+            198: 4,7
+            207: 2,8
+            210: 4,7
         - node:
             color: '#FFFFFFFF'
             id: TechCornerN
           decals:
-            102: 5,1
+            98: 5,1
         - node:
             color: '#FFFFFFFF'
             id: TechE
           decals:
-            180: 1,-5
-            181: 1,-6
-            182: 1,-7
+            176: 1,-5
+            177: 1,-6
+            178: 1,-7
         - node:
             color: '#FFFFFFFF'
             id: TechN
           decals:
-            79: -5,3
-            80: -4,3
-            81: -3,3
-            98: 3,1
-            99: 4,1
+            75: -5,3
+            76: -4,3
+            77: -3,3
+            94: 3,1
+            95: 4,1
         - node:
             color: '#FFFFFFFF'
             id: TechS
           decals:
-            76: -4,1
-            77: -5,1
-            78: -3,1
-            177: -3,6
+            72: -4,1
+            73: -5,1
+            74: -3,1
+            173: -3,6
         - node:
             color: '#FFFFFFFF'
             id: TechW
           decals:
-            100: 5,2
-            101: 5,3
-            183: -1,-5
-            184: -1,-6
-            185: -1,-7
+            96: 5,2
+            97: 5,3
+            179: -1,-5
+            180: -1,-6
+            181: -1,-7
         - node:
             color: '#EFB34196'
             id: WarnBox
           decals:
-            171: 5,-1
-            172: 5,-1
+            167: 5,-1
+            168: 5,-1
         - node:
             color: '#EFB34196'
             id: WarnEndE
@@ -341,10 +365,10 @@ entities:
             53: 2,6
             60: 6,5
             61: 6,5
-            74: 5,-5
-            75: 5,-5
-            169: 6,-1
-            170: 6,-1
+            70: 5,-5
+            71: 5,-5
+            165: 6,-1
+            166: 6,-1
         - node:
             color: '#EFB34196'
             id: WarnLineN
@@ -357,14 +381,14 @@ entities:
             45: 3,4
             56: 0,-4
             57: 0,-4
-            66: -1,-9
-            67: -1,-9
-            68: 0,-9
-            69: 0,-9
-            70: 1,-9
-            71: 1,-9
-            175: -4,4
-            176: -4,4
+            62: -1,-9
+            63: -1,-9
+            64: 0,-9
+            65: 0,-9
+            66: 1,-9
+            67: 1,-9
+            171: -4,4
+            172: -4,4
         - node:
             color: '#EFB34196'
             id: WarnLineS
@@ -391,10 +415,10 @@ entities:
             49: -2,6
             58: -6,5
             59: -6,5
-            72: -5,-5
-            73: -5,-5
-            167: 6,-1
-            168: 6,-1
+            68: -5,-5
+            69: -5,-5
+            163: 6,-1
+            164: 6,-1
         - node:
             color: '#EFB34196'
             id: WarnLineW
@@ -407,8 +431,8 @@ entities:
             41: 3,4
             54: 0,-4
             55: 0,-4
-            173: -4,4
-            174: -4,4
+            169: -4,4
+            170: -4,4
     - type: GridAtmosphere
       version: 2
       data:
@@ -631,7 +655,7 @@ entities:
   - uid: 27
     components:
     - type: Transform
-      pos: 6.5,-0.5
+      pos: -5.5,2.5
       parent: 1
 - proto: Bed
   entities:
@@ -657,8 +681,8 @@ entities:
       parent: 1
     - type: DeviceLinkSink
       links:
-      - 287
-  - uid: 31
+      - 286
+  - uid: 406
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -666,45 +690,63 @@ entities:
       parent: 1
     - type: DeviceLinkSink
       links:
-      - 290
+      - 289
 - proto: BlastDoorOpen
   entities:
-  - uid: 32
+  - uid: 31
     components:
     - type: Transform
       pos: -0.5,8.5
       parent: 1
-  - uid: 33
+    - type: DeviceLinkSink
+      links:
+      - 287
+  - uid: 32
     components:
     - type: Transform
       pos: 1.5,8.5
       parent: 1
-  - uid: 34
+    - type: DeviceLinkSink
+      links:
+      - 287
+  - uid: 33
     components:
     - type: Transform
       pos: 0.5,8.5
       parent: 1
-  - uid: 35
+    - type: DeviceLinkSink
+      links:
+      - 287
+  - uid: 34
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -5.5,-0.5
       parent: 1
-  - uid: 36
+    - type: DeviceLinkSink
+      links:
+      - 290
+  - uid: 35
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -5.5,-1.5
       parent: 1
-  - uid: 37
+    - type: DeviceLinkSink
+      links:
+      - 290
+  - uid: 36
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -5.5,-2.5
       parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 290
 - proto: BoriaticGeneratorHerculesShuttle
   entities:
-  - uid: 38
+  - uid: 37
     components:
     - type: Transform
       pos: 5.5,3.5
@@ -715,17 +757,22 @@ entities:
       bodyType: Static
 - proto: ButtonFrameCaution
   entities:
-  - uid: 39
+  - uid: 38
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -4.5,0.5
       parent: 1
-  - uid: 40
+  - uid: 39
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -1.5,5.5
+      parent: 1
+  - uid: 40
+    components:
+    - type: Transform
+      pos: -4.5,0.5
       parent: 1
 - proto: ButtonFrameCautionSecurity
   entities:
@@ -1445,12 +1492,20 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -5.5,2.5
       parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 315
   - uid: 169
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -4.5,2.5
       parent: 1
+    - type: DeviceLinkSink
+      links:
+      - 315
+    - type: ActiveDeviceLinkSink
+      invokeCounter: 4
 - proto: CrateFreezer
   entities:
   - uid: 170
@@ -1711,7 +1766,7 @@ entities:
     - type: InsideEntityStorage
 - proto: GasPassiveVent
   entities:
-  - uid: 204
+  - uid: 199
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -1719,30 +1774,30 @@ entities:
       parent: 1
 - proto: GasPipeBend
   entities:
-  - uid: 199
+  - uid: 200
     components:
     - type: Transform
       pos: -4.5,5.5
       parent: 1
-  - uid: 200
+  - uid: 201
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 4.5,1.5
       parent: 1
-  - uid: 201
+  - uid: 202
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 2.5,3.5
       parent: 1
-  - uid: 202
+  - uid: 203
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -4.5,-0.5
       parent: 1
-  - uid: 203
+  - uid: 204
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -2138,17 +2193,9 @@ entities:
       rot: 3.141592653589793 rad
       pos: 5.5,-1.5
       parent: 1
-- proto: PlasticFlapsAirtightClear
-  entities:
-  - uid: 252
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -5.5,2.5
-      parent: 1
 - proto: PosterContrabandInterdyne
   entities:
-  - uid: 253
+  - uid: 252
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -2156,7 +2203,7 @@ entities:
       parent: 1
 - proto: PowerCellRecharger
   entities:
-  - uid: 254
+  - uid: 253
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -2164,98 +2211,98 @@ entities:
       parent: 1
 - proto: PoweredlightLED
   entities:
-  - uid: 255
+  - uid: 254
     components:
     - type: Transform
       pos: -0.5,-4.5
       parent: 1
-  - uid: 256
+  - uid: 255
     components:
     - type: Transform
       pos: 1.5,-4.5
       parent: 1
-  - uid: 257
+  - uid: 256
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -0.5,-6.5
       parent: 1
-  - uid: 258
+  - uid: 257
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 1.5,-6.5
       parent: 1
-  - uid: 259
+  - uid: 258
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 1.5,-0.5
       parent: 1
-  - uid: 260
+  - uid: 259
     components:
     - type: Transform
       pos: -3.5,-0.5
       parent: 1
-  - uid: 261
+  - uid: 260
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 3.5,3.5
       parent: 1
-  - uid: 262
+  - uid: 261
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 3.5,1.5
       parent: 1
-  - uid: 263
+  - uid: 262
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 1.5,1.5
       parent: 1
-  - uid: 264
+  - uid: 263
     components:
     - type: Transform
       pos: 4.5,-0.5
       parent: 1
-  - uid: 265
+  - uid: 264
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -3.5,-2.5
       parent: 1
-  - uid: 266
+  - uid: 265
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -0.5,-0.5
       parent: 1
-  - uid: 267
+  - uid: 266
     components:
     - type: Transform
       pos: -4.5,3.5
       parent: 1
-  - uid: 268
+  - uid: 267
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 4.5,-2.5
       parent: 1
-  - uid: 269
+  - uid: 268
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 1.5,5.5
       parent: 1
-  - uid: 270
+  - uid: 269
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -4.5,1.5
       parent: 1
-  - uid: 271
+  - uid: 270
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -2263,33 +2310,33 @@ entities:
       parent: 1
 - proto: PoweredSmallLight
   entities:
-  - uid: 272
+  - uid: 271
     components:
     - type: Transform
       pos: -2.5,6.5
       parent: 1
-  - uid: 273
+  - uid: 272
     components:
     - type: Transform
       pos: 3.5,6.5
       parent: 1
 - proto: PristineMicroforge
   entities:
-  - uid: 274
+  - uid: 273
     components:
     - type: Transform
       pos: 5.5,-2.5
       parent: 1
 - proto: Rack
   entities:
-  - uid: 275
+  - uid: 274
     components:
     - type: Transform
       pos: -4.5,-2.5
       parent: 1
 - proto: RagItem
   entities:
-  - uid: 276
+  - uid: 275
     components:
     - type: Transform
       pos: -2.5881588,-4.1751914
@@ -2341,74 +2388,78 @@ entities:
     - type: InsideEntityStorage
 - proto: ReinforcedWindow
   entities:
-  - uid: 277
+  - uid: 276
     components:
     - type: Transform
       pos: -5.5,-2.5
       parent: 1
-  - uid: 278
+  - uid: 277
     components:
     - type: Transform
       pos: -5.5,-0.5
       parent: 1
-  - uid: 279
+  - uid: 278
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 1.5,8.5
       parent: 1
-  - uid: 280
+  - uid: 279
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 0.5,8.5
       parent: 1
-  - uid: 281
+  - uid: 280
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -0.5,8.5
       parent: 1
-  - uid: 282
+  - uid: 281
     components:
     - type: Transform
       pos: -5.5,-1.5
       parent: 1
 - proto: RollerBed
   entities:
-  - uid: 283
+  - uid: 282
     components:
     - type: Transform
       pos: -2.5358016,-0.44629312
       parent: 1
 - proto: RollingPin
   entities:
-  - uid: 284
+  - uid: 283
     components:
     - type: Transform
       pos: 3.6060946,-5.584002
       parent: 1
 - proto: ShuttersNormal
   entities:
-  - uid: 285
+  - uid: 284
     components:
     - type: Transform
       pos: -2.5,4.5
       parent: 1
     - type: DeviceLinkSink
       links:
-      - 289
-  - uid: 286
+      - 288
+    - type: ActiveDeviceLinkSink
+      invokeCounter: 2
+  - uid: 285
     components:
     - type: Transform
       pos: -3.5,4.5
       parent: 1
     - type: DeviceLinkSink
       links:
-      - 289
+      - 288
+    - type: ActiveDeviceLinkSink
+      invokeCounter: 2
 - proto: SignalButton
   entities:
-  - uid: 287
+  - uid: 286
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -2419,26 +2470,37 @@ entities:
         30:
         - - Pressed
           - Toggle
-  - uid: 288
+  - uid: 287
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -1.5,5.5
       parent: 1
-  - uid: 289
+    - type: DeviceLinkSource
+      linkedPorts:
+        31:
+        - - Pressed
+          - Toggle
+        33:
+        - - Pressed
+          - Toggle
+        32:
+        - - Pressed
+          - Toggle
+  - uid: 288
     components:
     - type: Transform
       pos: -4.5,4.5
       parent: 1
     - type: DeviceLinkSource
       linkedPorts:
-        286:
-        - - Pressed
-          - Toggle
         285:
         - - Pressed
           - Toggle
-  - uid: 290
+        284:
+        - - Pressed
+          - Toggle
+  - uid: 289
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -2446,7 +2508,25 @@ entities:
       parent: 1
     - type: DeviceLinkSource
       linkedPorts:
-        31:
+        406:
+        - - Pressed
+          - Toggle
+- proto: SignalButtonDirectional
+  entities:
+  - uid: 290
+    components:
+    - type: Transform
+      pos: -4.5,0.5
+      parent: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        34:
+        - - Pressed
+          - Toggle
+        35:
+        - - Pressed
+          - Toggle
+        36:
         - - Pressed
           - Toggle
 - proto: SinkWide
@@ -2646,6 +2726,22 @@ entities:
     - type: Transform
       pos: -3.5,2.5
       parent: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        169:
+        - - Left
+          - Reverse
+        - - Right
+          - Forward
+        - - Middle
+          - Off
+        168:
+        - - Left
+          - Reverse
+        - - Right
+          - Forward
+        - - Middle
+          - Off
 - proto: VendingMachineBooze
   entities:
   - uid: 316
