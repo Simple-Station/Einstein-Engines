@@ -48,10 +48,10 @@
     spriteLayer: flame
     inhandVisuals:
       left:
-      - state: inhand-left-flame
+      - state: inhand-left-lit
         shader: unshaded
       right:
-      - state: inhand-right-flame
+      - state: inhand-right-lit
         shader: unshaded
   - type: MultiHandedItem
   - type: PointLight
@@ -146,7 +146,7 @@
     spriteLayer: flame
     inhandVisuals:
       left:
-      - state: inhand-left-liz
+      - state: inhand-left-lit
         shader: unshaded
       right:
       - state: inhand-right-lit
