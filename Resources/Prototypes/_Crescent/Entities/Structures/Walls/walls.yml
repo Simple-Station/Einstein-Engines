@@ -192,14 +192,14 @@
           collection: MetalSlam
       - !type:DoActsBehavior
         acts: ["Destruction"]
-    - type: RCDDeconstructable
-      rcdScrappable: true
-      scrapResults:
-        - PlastitaniumScrapItemOutputs
-      deconstructable: false
-      cost: 6
-      delay: 8
-      fx: EffectRCDDeconstruct8
+  - type: RCDDeconstructable
+    rcdScrappable: true
+     scrapResults:
+      - PlastitaniumScrapItemOutputs
+    deconstructable: false
+    cost: 6
+    delay: 8
+    fx: EffectRCDDeconstruct8
 
 
 # Reinforced Plastitanium
