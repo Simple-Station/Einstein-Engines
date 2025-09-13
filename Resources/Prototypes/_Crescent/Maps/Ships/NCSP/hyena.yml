@@ -5,7 +5,7 @@
   id: Hyena
   name: SAW Hyena
   description: A multipurpose, FTL-capable armed corvette.
-  price: 82000
+  price: 72000 #appraisegrid of 60k~
   category: Medium
   group: None
   path: /Maps/_Crescent/Shuttles/NCSP/hyena.yml

@@ -1,6 +1,8 @@
+using Content.Shared.Random;
 using Content.Shared.RCD.Systems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 
 namespace Content.Shared.RCD.Components;
 
@@ -38,4 +40,16 @@ public sealed partial class RCDDeconstructableComponent : Component
     /// </summary>
     [DataField("rpd"), ViewVariables(VVAccess.ReadWrite)]
     public bool RpdDeconstructable = false;
+
+    /// <summary>
+    /// Toggles whether this entity is scrappable by the RCD or not
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public bool RcdScrappable = false;
+
+    /// <summary>
+    /// What this entity will drop when scrapped with the RCD?
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public List<ProtoId<WeightedRandomEntityPrototype>>? ScrapResults = null;
 }

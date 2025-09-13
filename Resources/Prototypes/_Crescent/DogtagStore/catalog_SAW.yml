@@ -119,6 +119,17 @@
   - StoreCategorySAW
 
 - type: listing
+  id: StoreListingSAWPlasmaCutter
+  name: SAW Plasma Cutter
+  description: This compact cutter fires bolts of ionized plasma that cut easily through most surfaces, making it a cheap but versatile mining tool. This one has been haphazardly modified to work as a self defense tool.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/plasmacutter.rsi, state: icon }
+  productEntity: WeaponDonorPlasmaCutter
+  cost:
+    ScrapSAW: 65
+  categories:
+  - StoreCategorySAW
+
+- type: listing
   id: StoreListingSAWScrapMagnet
   name: Scrap Magnet
   description: A great tool, allows a hands free salvage collection.
