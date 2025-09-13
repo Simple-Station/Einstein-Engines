@@ -13,13 +13,15 @@
           mapNameTemplate: 'GSC Jackal'
         - type: VesselDesignation
           designation: vessel-designation-headquarters
+        - type: VesselMusic
+          ambientMusicPrototype: JackalMusic
         - type: Grammar
           attributes:
             proper: true
         - type: StationJobs
           overflowJobs: []
-          availableJobs: #20 total
+          availableJobs: #12 total
             RingleaderNCSP: [ 1, 1 ]
             LieutenantNCSP: [ 1, 1 ]
-            InfanteerNCSP: [ 10, 10 ]
-            TechnicianNCSP: [ 4, 4 ]
+            InfanteerNCSP: [ 8, 8 ]
+            TechnicianNCSP: [ 2, 2 ]

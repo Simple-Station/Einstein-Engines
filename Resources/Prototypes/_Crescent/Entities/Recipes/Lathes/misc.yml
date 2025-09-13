@@ -1,0 +1,16 @@
+- type: latheRecipe
+  id: BoomboxCraft
+  result: Boombox
+  completetime: 1
+  materials:
+    Steel: 750
+    Gold: 250
+    BasicElectronics: 250
+
+- type: latheRecipe
+  id: JugBoriaticFuelCraft
+  result: JugBoriaticFuel
+  completetime: 3
+  materials:
+    Uranium: 750
+    Plasma: 1000

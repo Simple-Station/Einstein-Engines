@@ -30984,7 +30984,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: WeaponTurretCoilgunDSM
+- proto: WeaponTurretCoilgun
   entities:
   - uid: 167
     components:
@@ -31094,7 +31094,7 @@ entities:
     - type: PointCannon
       obstructedRanges:
       - 3.8222710618675815 rad: 5.385476109049137 rad
-- proto: WeaponTurretMortarDSM
+- proto: WeaponTurretMortarFilled
   entities:
   - uid: 310
     components:

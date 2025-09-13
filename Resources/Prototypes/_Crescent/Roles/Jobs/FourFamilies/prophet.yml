@@ -3,6 +3,13 @@
   name: job-name-prophet
   description: job-description-prophet
   playTimeTracker: JobProphetTAP
+  weight: 100
+  startingGear: ProphetGear
+  alwaysUseSpawner: true
+  requireAdminNotify: true
+  icon: "JobIconProphet"
+  supervisors: job-supervisors-prophet
+  canBeAntag: false
   requirements:
     - !type:CharacterWhitelistRequirement
     - !type:FactionRequirement
@@ -17,21 +24,19 @@
         - Muted
         - Blindness
         - WheelchairBound
-  weight: 55
-  startingGear: ProphetGear
-  alwaysUseSpawner: true
-  icon: "JobIconProphet"
-  requireAdminNotify: true
-  supervisors: job-supervisors-prophet
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: ChatRank
         rank: crescent-rank-prophet
-  - !type:AddComponentSpecial
-    components:
       - type: Telepathic
+      - type: LanguageAdder
+        addSpoken:
+        - OldTaypani
+        - Atyrian
+        addUnderstood:
+        - OldTaypani
+        - Atyrian
   access:
   - EmergencyShuttleRepealAll
   - Captain

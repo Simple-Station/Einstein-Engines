@@ -67,3 +67,23 @@
 #   cost: 750
 #   category: cargoproduct-category-name-medical
 #   group: commie
+
+- type: cargoProduct
+  id: VitalsTrackingNCWLSuppliescommie
+  icon:
+    sprite: Objects/Specific/Medical/implanter.rsi
+    state: implanter0
+  product: CrateVitalsTrackingNCWL
+  cost: 500
+  category: cargoproduct-category-name-medical
+  group: commie
+
+- type: cargoProduct
+  id: VitalsTrackingIPMSuppliescommie
+  icon:
+    sprite: Objects/Specific/Medical/implanter.rsi
+    state: implanter0
+  product: CrateVitalsTrackingIPM
+  cost: 1000
+  category: cargoproduct-category-name-medical
+  group: commie

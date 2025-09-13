@@ -26,12 +26,13 @@
 - type: soundCollection
   id: test
   files:
-   - /Audio/Jukebox/sector11.ogg
+   - /Audio/_Crescent/parietal_lobe.ogg
 
 #ambient fallback, don't remove, but can change song
 
 - type: ambientMusic
   id: default
+  priority: 1
   sound:
     collection: default
 
@@ -44,6 +45,7 @@
 
 - type: ambientMusic
   id: combatmodedefault
+  priority: 3
   sound:
     collection: combatmodedefault
 
@@ -55,9 +57,10 @@
 ## FACTION COMBAT MUSIC TRACKS
 ## ID MUST BE "combatmode<FACTION>"!
 
-# NCWL, focus on guitar based songs
+# NCWL | STATE: good but not "communist" at all
 - type: ambientMusic
   id: combatmodeNCWL
+  priority: 3
   sound:
     collection: combatmodeNCWL
 
@@ -68,9 +71,10 @@
     - /Audio/_Crescent/Ambience/CombatMode/NCWL_2.ogg
 
 
-# TFSC, hard techno and pirate shit
+# TFSC | STATE: happy with em
 - type: ambientMusic
   id: combatmodeTFSC
+  priority: 3
   sound:
     collection: combatmodeTFSC
 
@@ -80,9 +84,10 @@
     - /Audio/_Crescent/Ambience/CombatMode/TFSC_1.ogg
     - /Audio/_Crescent/Ambience/CombatMode/TFSC_2.ogg
 
-# DSM, low quality RPG maker tracks, think OFF, LISA, etc. if you don't know what those are get the fuck out of here
+# DSM | STATE: theyre ok
 - type: ambientMusic
   id: combatmodeDSM
+  priority: 3
   sound:
     collection: combatmodeDSM
 
@@ -92,9 +97,25 @@
     - /Audio/_Crescent/Ambience/CombatMode/DSM_1.ogg
     - /Audio/_Crescent/Ambience/CombatMode/DSM_2.ogg
 
-# TAP, highfleet tracks
+# SHI | STATE: very good
+- type: ambientMusic
+  id: combatmodeSHI
+  priority: 3
+  sound:
+    collection: combatmodeSHI
+
+- type: soundCollection
+  id: combatmodeSHI
+  files:
+    - /Audio/_Crescent/Ambience/CombatMode/SHI_1.ogg
+    - /Audio/_Crescent/Ambience/CombatMode/SHI_2.ogg
+    - /Audio/_Crescent/Ambience/CombatMode/SHI_3.ogg
+    - /Audio/_Crescent/Ambience/CombatMode/SHI_4.ogg
+
+# TAP | STATE: not happy with em
 - type: ambientMusic
   id: combatmodeTAP
+  priority: 3
   sound:
     collection: combatmodeTAP
 
@@ -104,13 +125,17 @@
     - /Audio/_Crescent/Ambience/CombatMode/TAP_1.ogg
     - /Audio/_Crescent/Ambience/CombatMode/TAP_2.ogg
 
-## AMBIENT MUSIC TRACKS
+## DEPRECATED!!! AMBIENT MUSIC TRACKS
 ## ID MUST BE IDENTICAL TO BIOME ID FROM space_biomes.yml!
+
+
+## DEPRECATED!!!
 
 #imperial
 
 - type: ambientMusic
   id: imperialbiome
+  priority: 1
   sound:
     collection: imperialbiome
 
@@ -123,6 +148,7 @@
 
 - type: ambientMusic
   id: hunterbiome
+  priority: 1
   sound:
     collection: hunterbiome
 
@@ -135,6 +161,7 @@
 
 - type: ambientMusic
   id: syndicatebiome
+  priority: 1
   sound:
     collection: syndicatebiome
 
@@ -147,6 +174,7 @@
 
 - type: ambientMusic
   id: corpiebiome
+  priority: 1
   sound:
     collection: corpiebiome
 
@@ -159,6 +187,7 @@
 
 - type: ambientMusic
   id: wildbiome
+  priority: 1
   sound:
     collection: wildbiome
 
@@ -166,24 +195,39 @@
 - type: soundCollection
   id: wildbiome
   files:
-   - /Audio/_Crescent/wilds.ogg
+   - /Audio/_Crescent/Biomes/Wilds/wilds_1.ogg
+   - /Audio/_Crescent/Biomes/Wilds/wilds_2.ogg
+   - /Audio/_Crescent/Biomes/Wilds/wilds_3.ogg
+   - /Audio/_Crescent/Biomes/Wilds/wilds_4.ogg
+   - /Audio/_Crescent/Biomes/Wilds/wilds_5.ogg
+   - /Audio/_Crescent/Biomes/Wilds/wilds_6.ogg
+   - /Audio/_Crescent/Biomes/Wilds/wilds_7.ogg
+   - /Audio/_Crescent/Biomes/Wilds/wilds_8.ogg
+   - /Audio/_Crescent/Biomes/Wilds/wilds_9.ogg
+   - /Audio/_Crescent/Biomes/Wilds/wilds_10.ogg
 
 #deepwilds
 
 - type: ambientMusic
   id: deepwildbiome
+  priority: 1
   sound:
     collection: deepwildbiome
 
 - type: soundCollection
   id: deepwildbiome
   files:
-   - /Audio/_Crescent/the_deepwilds.ogg
+   - /Audio/_Crescent/Biomes/Deepwilds/deepwilds_1.ogg
+   - /Audio/_Crescent/Biomes/Deepwilds/deepwilds_2.ogg
+   - /Audio/_Crescent/Biomes/Deepwilds/deepwilds_3.ogg
+   - /Audio/_Crescent/Biomes/Deepwilds/deepwilds_4.ogg
+   - /Audio/_Crescent/Biomes/Deepwilds/deepwilds_5.ogg
 
-#fracture / port vladzena
+#fracture / port vladzena. confusingly named hadalbiome??
 
 - type: ambientMusic
   id: hadalbiome
+  priority: 1
   sound:
     collection: hadalbiome
 
@@ -191,6 +235,184 @@
   id: hadalbiome
   files:
    - /Audio/_Crescent/surfacing.ogg
+
+#hadal deadspace
+
+- type: ambientMusic
+  id: hadaldeadspace
+  priority: 1
+  sound:
+    collection: hadaldeadspace
+
+- type: soundCollection
+  id: hadaldeadspace
+  files:
+   - /Audio/_Crescent/Biomes/HadalDeadspace/deadspace_1.ogg
+   - /Audio/_Crescent/Biomes/HadalDeadspace/deadspace_2.ogg
+
+#scrapyards, generic
+
+- type: ambientMusic
+  id: scrapyardbiome
+  priority: 1
+  sound:
+    collection: scrapyardbiome
+
+- type: soundCollection
+  id: scrapyardbiome
+  files:
+   - /Audio/_Crescent/Biomes/Scrapyard/scrapyard_1.ogg
+   - /Audio/_Crescent/Biomes/Scrapyard/scrapyard_2.ogg
+   - /Audio/_Crescent/Biomes/Scrapyard/scrapyard_3.ogg
+   - /Audio/_Crescent/Biomes/Scrapyard/scrapyard_4.ogg
+   - /Audio/_Crescent/Biomes/Scrapyard/scrapyard_5.ogg
+
+#asteroid fields, generic
+
+- type: ambientMusic
+  id: asteroidbiome
+  priority: 1
+  sound:
+    collection: asteroidbiome
+
+- type: soundCollection
+  id: asteroidbiome
+  files:
+   - /Audio/_Crescent/Biomes/AsteroidField/asteroid_1.ogg
+   - /Audio/_Crescent/Biomes/AsteroidField/asteroid_2.ogg
+   - /Audio/_Crescent/Biomes/AsteroidField/asteroid_3.ogg
+   - /Audio/_Crescent/Biomes/AsteroidField/asteroid_4.ogg
+   - /Audio/_Crescent/Biomes/AsteroidField/asteroid_5.ogg
+
+# graveyard
+
+- type: ambientMusic
+  id: graveyardbiome
+  priority: 1
+  sound:
+    collection: graveyardbiome
+
+- type: soundCollection
+  id: graveyardbiome
+  files:
+   - /Audio/_Crescent/Biomes/Graveyard/graveyard.ogg
+
+# gliess santo approach
+
+- type: ambientMusic
+  id: gliessbiome
+  priority: 1
+  sound:
+    collection: gliessbiome
+
+- type: soundCollection
+  id: gliessbiome
+  files:
+   - /Audio/_Crescent/Biomes/GliessApproach/gliess_approach_1.ogg
+
+# tatsumoto approach
+
+- type: ambientMusic
+  id: tatsumotobiome
+  priority: 1
+  sound:
+    collection: tatsumotobiome
+
+- type: soundCollection
+  id: tatsumotobiome
+  files:
+   - /Audio/_Crescent/Biomes/TatsumotoApproach/tatsumoto_approach_1.ogg
+   - /Audio/_Crescent/Biomes/TatsumotoApproach/tatsumoto_approach_2.ogg
+
+# balreska approach
+
+- type: ambientMusic
+  id: balreskabiome
+  priority: 1
+  sound:
+    collection: balreskabiome
+
+- type: soundCollection
+  id: balreskabiome
+  files:
+   - /Audio/_Crescent/Biomes/BalreskaApproach/balreska_approach_1.ogg
+
+#STATIONS
+#EXPLANATION: shuttle/station prototypes have a VesselMusic component.
+#They point to an ambientMusicPrototype and that prototype MUST be here, otherwise it does nothing.
+#so for example, in balreska.yml, it's VesselMusic component points to PortBalreskaMusic, which is the first item here.
+
+#PORT BALRESKA
+- type: ambientMusic
+  id: PortBalreskaMusic
+  priority: 1
+  sound:
+    collection: PortBalreskaMusic
+
+- type: soundCollection
+  id: PortBalreskaMusic
+  files:
+   - /Audio/_Crescent/Stations/NCWL/PortBalreska/balreska_1.ogg
+   - /Audio/_Crescent/Stations/NCWL/PortBalreska/balreska_2.ogg
+   - /Audio/_Crescent/Stations/NCWL/PortBalreska/balreska_3.ogg
+
+#GLIESS SANTO
+- type: ambientMusic
+  id: GliessMusic
+  priority: 1
+  sound:
+    collection: GliessMusic
+
+- type: soundCollection
+  id: GliessMusic
+  files:
+   - /Audio/_Crescent/Stations/Gliess/gliess_1.ogg
+   - /Audio/_Crescent/Stations/Gliess/gliess_2.ogg
+   - /Audio/_Crescent/Stations/Gliess/gliess_3.ogg
+
+#JACKAL
+- type: ambientMusic
+  id: JackalMusic
+  priority: 1
+  sound:
+    collection: JackalMusic
+
+- type: soundCollection
+  id: JackalMusic
+  files:
+   - /Audio/_Crescent/Stations/TFSC/Jackal/jackal_1.ogg
+   - /Audio/_Crescent/Stations/TFSC/Jackal/jackal_2.ogg
+   - /Audio/_Crescent/Stations/TFSC/Jackal/jackal_3.ogg
+   - /Audio/_Crescent/Stations/TFSC/Jackal/jackal_4.ogg
+
+#COUNTSMAN
+- type: ambientMusic
+  id: CountsmanMusic
+  priority: 1
+  sound:
+    collection: CountsmanMusic
+
+- type: soundCollection
+  id: CountsmanMusic
+  files:
+   - /Audio/_Crescent/Stations/DSM/Countsman/countsman_1.ogg
+   - /Audio/_Crescent/Stations/DSM/Countsman/countsman_2.ogg
+   - /Audio/_Crescent/Stations/DSM/Countsman/countsman_3.ogg
+
+#TATSUMOTO
+
+- type: ambientMusic
+  id: TatsumotoMusic
+  priority: 1
+  sound:
+    collection: TatsumotoMusic
+
+- type: soundCollection
+  id: TatsumotoMusic
+  files:
+   - /Audio/_Crescent/Stations/SHI/Tatsumoto/tatsumoto_1.ogg
+   - /Audio/_Crescent/Stations/SHI/Tatsumoto/tatsumoto_2.ogg
+   - /Audio/_Crescent/Stations/SHI/Tatsumoto/tatsumoto_3.ogg
 
 #UNIONFALL
 

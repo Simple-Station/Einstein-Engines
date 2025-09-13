@@ -64,9 +64,10 @@
     components:
     - type: NoSlip
   - type: Magboots
-    activeWalkModifier: 0.8
-    activeSprintModifier: 0.8
     changeClothingVisuals: true
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -122,8 +123,8 @@
   description: These would look fetching on a fetcher like you.
   components:
   - type: Magboots
-    activeWalkModifier: 1.10
-    activeSprintModifier: 1.10
+    activeWalkModifier: 1.1
+    activeSprintModifier: 1.1
   - type: ClothingSpeedModifier
     walkModifier: 1
     sprintModifier: 1
@@ -142,8 +143,9 @@
   - type: Clothing
     sprite: Clothing/Shoes/Boots/magboots-syndicate.rsi
   - type: Magboots
-    activeWalkModifier: 0.9
-    activeSprintModifier: 0.9
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
   - type: GasTank
     outputPressure: 42.6
     air:
@@ -190,8 +192,9 @@
   - type: Clothing
     sprite: Clothing/Shoes/Boots/magboots.rsi
   - type: Magboots
-    activeWalkModifier: 0.9
-    activeSprintModifier: 0.9
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
   - type: Tag
     tags:
     - WhitelistChameleon
@@ -214,8 +217,9 @@
   - type: Clothing
     sprite: Clothing/Shoes/Boots/magboots-combat.rsi
   - type: Magboots
-    activeWalkModifier: 0.85
-    activeSprintModifier: 0.85
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.85
   - type: Tag
     tags:
     - WhitelistChameleon

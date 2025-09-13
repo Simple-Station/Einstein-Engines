@@ -285,9 +285,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 65
-    intensitySlope: 5
-    totalIntensity: 200
+    maxIntensity: 1500
+    intensitySlope: 500
+    totalIntensity: 3000
     maxTileBreak: 5
   - type: PointLight
     radius: 3.5
@@ -309,7 +309,7 @@
   description: A heavily modified DEW-17 laser pistol, its battery connection point has ben replaced with a miniature RTG capable of recharging the weapon indefinitely.
   components:
   - type: Item
-    size: Normal  
+    size: Normal
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/cycler.rsi
     layers:
@@ -406,3 +406,30 @@
         amount: 1
       - id: MagazineBoxHeavyRifle
         amount: 1
+      - id: SpeedLoader127x99
+        amount: 1
+
+# @witchblaade (evergreenBloom) donor gun
+- type: entity
+  name: IRM DA-11C Courroux du Kaiser 15.2x169mm Anti-materiel rifle
+  description: A one of a kind heirloom wielded by the Lord Admiral of The Countsman. A relic of Empire and Faith, it serves as tool of authority and the Countsman's last defense. Chambered in 15.2x169mm.
+  parent: WeaponAntimaterielDSMLeveller
+  id: WeaponAntimaterielCourroux
+  components:
+  - type: GunRequiresWield
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/corrux.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/corrux.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: Gun
+    fireRate: 2
+  - type: HeldSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1

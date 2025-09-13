@@ -45,4 +45,11 @@ public sealed partial class SummonPsionicFamiliarActionEvent : InstantActionEven
     /// </summary>
     [DataField]
     public int MaxGlimmer;
+
+    /// <summary>
+    ///    Whether to ignore the familiar limit when summoning.
+    /// </summary>
+
+    [DataField]
+    public bool IgnoreFamiliarLimit = false;
 }

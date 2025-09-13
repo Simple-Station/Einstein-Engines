@@ -118,6 +118,7 @@
       - id: MagazineLightRifleBoxSlugHE
         amount: 8
 
+
 - type: entity
   id: CrateCoolant
   parent: CrateSecgear

@@ -3,18 +3,23 @@
   name: job-name-board
   description: job-description-board
   playTimeTracker: JobBoardSHI
+  weight: 99
+  startingGear: BoardGear
+  alwaysUseSpawner: true
+  requireAdminNotify: true
+  icon: "JobIconBoard"
+  supervisors: job-supervisors-shi
+  canBeAntag: false
   requirements:
+    - !type:CharacterWhitelistRequirement
     - !type:CharacterOverallTimeRequirement
       min: 14400
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Human
-        - Reptilian
-        - Moth
-        - Arachnid
-        - Felinid #makes no sense in lore considering that Felinids are created by SHI's competitors but MLG won't merge the change without this
     - !type:FactionRequirement
       factionID: "SHI"
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Oni
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -23,13 +28,6 @@
         - Muted
         - Blindness
         - WheelchairBound
-  weight: 50
-  startingGear: BoardGear
-  alwaysUseSpawner: true
-  icon: "JobIconBoard"
-  requireAdminNotify: true
-  supervisors: job-supervisors-shi
-  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:

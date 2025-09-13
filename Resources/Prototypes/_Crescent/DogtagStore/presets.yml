@@ -36,6 +36,7 @@
     - StoreCategorySAW
     - StoreCategorySAWshipmods
     - StoreCategorySAWships
+    - StoreCategorySAWGuns
     currencyWhitelist:
     - ScrapSAW
     balance:
@@ -53,6 +54,7 @@
     - StoreCategoryGSCSuits
     - StoreCategoryGSCExplosives
     - StoreCategoryGSCMech
+    - StoreCategoryGSCLPC
     currencyWhitelist:
     - PlunderGSC
     balance:

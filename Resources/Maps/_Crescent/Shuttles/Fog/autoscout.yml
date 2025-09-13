@@ -727,7 +727,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 154
-- proto: ShuttleGunMissileRack
+- proto: ShuttleGunMissileRackFilled
   entities:
   - uid: 6
     components:

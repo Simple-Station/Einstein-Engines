@@ -17,18 +17,21 @@
         Blunt: 1.35
         Slash: 1.25
         Piercing: 1.25
-        Asphyxiation: 1.35
-  - type: Damageable
-    damageModifierSet: Oni
   - type: Body
     prototype: Human
+  - type: Damageable
+    damageModifierSet: Oni
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      60: 1.2  # 0.7 is base speed.
+      80: 1.6  # 0.5 is base speed.
   - type: Fixtures
     fixtures: # TODO: This needs a second fixture just for mob collisions.
       fix1:
         shape:
           !type:PhysShapeCircle
           radius: 0.35
-        density: 220
+        density: 222 # 20% more mass
         restitution: 0.0
         mask:
         - MobMask
