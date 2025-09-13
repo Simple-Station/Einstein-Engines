@@ -194,7 +194,7 @@
         acts: ["Destruction"]
   - type: RCDDeconstructable
     rcdScrappable: true
-     scrapResults:
+    scrapResults:
       - PlastitaniumScrapItemOutputs
     deconstructable: false
     cost: 6
