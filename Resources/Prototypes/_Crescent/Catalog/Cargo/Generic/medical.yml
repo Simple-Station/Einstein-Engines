@@ -6,7 +6,7 @@
   product: VendingMachineRestockChemVend
   cost: 5000
   category: cargoproduct-category-name-medical
-  group:
+  group: generic
 
 - type: cargoProduct
   id: MedicalSuppliesGeneric
