@@ -6,7 +6,6 @@
   description: Spaceworthy protection for your fragile skull. A Northrop-Martin design.
   components:
   - type: BreathMask
-  - type: EyeProtection
   - type: FlashImmunity
   - type: Sprite
     sprite: _Crescent/Clothing/Independents/Head/spacionaut.rsi
