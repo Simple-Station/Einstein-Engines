@@ -41,6 +41,11 @@
   suffix: DO NOT MAP
 
 - type: entity
+  id: GrenadeFlash
+  parent: Cartridge40mmSmoke
+  suffix: DO NOT MAP
+
+- type: entity
   id: GrenadeEMP
   parent: Cartridge40mmCan
   suffix: DO NOT MAP

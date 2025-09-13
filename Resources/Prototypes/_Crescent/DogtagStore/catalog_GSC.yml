@@ -186,7 +186,7 @@
   name: GTB-7S Rocket.
   description: Ammunition for the NCSP RPG-7 rocket launcher, this one has a HE-Frag warhead.
   icon: { sprite: /Textures/_Crescent/Objects/Weapons/Ammunition/Casings/rpg7_rocket.rsi, state: thermo }
-  productEntity: CartridgeRPG7Thermo
+  productEntity: CartridgeRPG7Thermobaric
   cost:
     PlunderGSC: 2
   categories:
@@ -268,9 +268,20 @@
 
 - type: listing
   id: StoreListingGSC12.7x99mm
+  name: 15.2x169mm High Caliber Magazine
+  description: A 6-round 15.2x169mm magazine.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Ammunition/Magazine/amr_mag.rsi, state: icon }
+  productEntity: MagazineAntiMateriel
+  cost:
+    PlunderGSC: 1
+  categories:
+  - StoreCategoryGSCAmmo
+
+- type: listing
+  id: StoreListingGSC15.2x169mm
   name: 12.7x99mm High Caliber Magazine
   description: A 16-round 12.7x99mm magazine.
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/light_rifle_mag.rsi, state: base }
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Ammunition/Magazine/heavy_mag.rsi, state: icon }
   productEntity: MagazineHeavyRifle
   cost:
     PlunderGSC: 1
@@ -303,7 +314,7 @@
   id: StoreListingGSC7.62mm
   name: 7.62mm Rifle Magazine
   description: A 25-round 7.62x51mm magazine.
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/light_rifle_mag.rsi, state: base }
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Ammunition/Magazine/rifle_mag.rsi, state: icon }
   productEntity: MagazineRifle
   cost:
     PlunderGSC: 1
@@ -376,6 +387,17 @@
   productEntity: WeaponRifleMayflower
   cost:
     PlunderGSC: 10
+  categories:
+  - StoreCategoryGSCWeapons
+
+- type: listing
+  id: StoreListingGSCAK60
+  name: NCSP AK-60 15.2x169mm Anti-Materiel Rifle
+  description: An AK platform gun in .60, note that this weapon infringes on the AK naming rights of the Kalashnikov Group.
+  icon: { sprite: /Textures/_Crescent/Objects/Weapons/Guns/ak60.rsi, state: icon }
+  productEntity: WeaponSniperAK60
+  cost:
+    PlunderGSC: 20
   categories:
   - StoreCategoryGSCWeapons
 

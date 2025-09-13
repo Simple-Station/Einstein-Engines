@@ -168,7 +168,7 @@
     price: 2000
 
 - type: entity
-  name: NCSP AK-60  15.2x169mm
+  name: NCSP AK-60 15.2x169mm
   parent: [BaseWeaponRifle, BaseGunWieldable]
   id: WeaponSniperAK60
   description: A unlicensed .60 version of a AK. Its a less simple than a AK-74 but pack a massive 15.2x169mm Pounch.
