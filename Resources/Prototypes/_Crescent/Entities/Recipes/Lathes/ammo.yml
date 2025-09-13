@@ -1,10 +1,12 @@
+
+# RIFLE AMMUNITIONS
 - type: latheRecipe
-  id: SpeedLoader127x99
-  result: SpeedLoader127x99
+  id: MagazineBoxAntiMateriel
+  result: MagazineBoxAntiMateriel
   completetime: 1
   materials:
-    Steel: 400
-    Uranium: 100
+    Steel: 600
+    Uranium: 1000
 
 - type: latheRecipe
   id: MagazineBoxHeavyRifle
@@ -14,6 +16,151 @@
     Steel: 1250
     Uranium: 400
 
+- type: latheRecipe
+  id: MagazineBoxLightRifleBig
+  result: MagazineBoxLightRifleBig
+  completetime: 1
+  materials:
+    Steel: 800
+
+- type: latheRecipe
+  id: MagazineAntiMateriel
+  result: MagazineAntiMateriel
+  completetime: 1
+  materials:
+    Steel: 400
+    Uranium: 800
+
+- type: latheRecipe
+  id: MagazineHeavyRifle
+  result: MagazineHeavyRifle
+  completetime: 1
+  materials:
+    Steel: 750
+    Uranium: 250
+
+- type: latheRecipe
+  id: MagazineRifleDrum
+  result: MagazineRifleDrum
+  completetime: 1
+  materials:
+    Steel: 600
+
+- type: latheRecipe
+  id: MagazineRiflePan
+  result: MagazineRiflePan
+  completetime: 1
+  materials:
+    Steel: 800
+
+- type: latheRecipe
+  id: MagazineBoxCaselessRifleBig
+  result: MagazineBoxCaselessRifleBig
+  completetime: 1
+  materials:
+    Steel: 900
+
+# 4 GAUGE SHELLS
+- type: latheRecipe
+  id: BoxShotgunIncendiary4g
+  result: BoxShotgunIncendiary4g
+  completetime: 1
+  materials:
+    Steel: 600
+    Plastic: 400
+
+- type: latheRecipe
+  id: BoxShotgunFlash4g
+  result: BoxShotgunFlash4g
+  completetime: 2
+  materials:
+    Steel: 400
+    Plastic: 200
+    Silver: 200
+
+- type: latheRecipe
+  id: BoxShotgunUranium4g
+  result: BoxShotgunUranium4g
+  completetime: 2
+  materials:
+    Steel: 400
+    Uranium: 600
+
+- type: latheRecipe
+  id: BoxShotgunSlug4g
+  result: BoxShotgunSlug4g
+  completetime: 2
+  materials:
+    Steel: 600
+    Uranium: 300
+
+- type: latheRecipe
+  id: BoxShotgunSabot4g
+  result: BoxShotgunSabot4g
+  completetime: 2
+  materials:
+    Steel: 400
+    Uranium: 400
+
+- type: latheRecipe
+  id: BoxLethalshot4g
+  result: BoxLethalshot4g
+  completetime: 2
+  materials:
+    Steel: 900
+
+- type: latheRecipe
+  id: BoxShotgunMagnum4g
+  result: BoxShotgunMagnum4g
+  completetime: 2
+  materials:
+    Steel: 1200
+
+- type: latheRecipe
+  id: BoxBeanbag4g
+  result: BoxBeanbag4g
+  completetime: 2
+  materials:
+    Steel: 400
+
+# SMALL ARMS AMMUNITIONS
+- type: latheRecipe
+  id: SpeedLoader127x99
+  result: SpeedLoader127x99
+  completetime: 1
+  materials:
+    Steel: 400
+    Uranium: 100
+
+- type: latheRecipe
+  id: MagazinePistolSubMachineGunHeavy
+  result: MagazinePistolSubMachineGunHeavy
+  completetime: 2
+  materials:
+    Steel: 750
+
+- type: latheRecipe
+  id: MagazinePistolSmartgun
+  result: MagazinePistolSmartgun
+  completetime: 2
+  materials:
+    Steel: 500
+
+- type: latheRecipe
+  id: MagazinePistol6mmSmg
+  result: MagazinePistol6mmSmg
+  completetime: 2
+  materials:
+    Steel: 250
+
+- type: latheRecipe
+  id: MagazinePistol6mm
+  result: MagazinePistol6mm
+  completetime: 2
+  materials:
+    Steel: 250
+
+# SHIP GUN AMMUNITIONS
 - type: latheRecipe
   id: SluggieHE
   result: MagazineLightRifleBoxSlugHE
@@ -69,28 +216,6 @@
   materials:
     Steel: 2500
     Plasma: 1000
-
-- type: latheRecipe
-  id: MagazinePistol6mm
-  result: MagazinePistol6mm
-  completetime: 2
-  materials:
-    Steel: 250
-
-- type: latheRecipe
-  id: MagazineHeavyRifle
-  result: MagazineHeavyRifle
-  completetime: 2
-  materials:
-    Steel: 750
-    Uranium: 250
-
-- type: latheRecipe
-  id: MagazinePistolSubMachineGunHeavy
-  result: MagazinePistolSubMachineGunHeavy
-  completetime: 2
-  materials:
-    Steel: 750
 
 - type: latheRecipe
   id: GrenadeBatonCraft

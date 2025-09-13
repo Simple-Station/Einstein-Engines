@@ -151,7 +151,7 @@
 #clothes
 
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: ClothingOuterBase
   id: ClothingOuterShinoharaVest
   name: corporate hi-vis vest
   description: A hi-vis vest made for Shinohara workers.

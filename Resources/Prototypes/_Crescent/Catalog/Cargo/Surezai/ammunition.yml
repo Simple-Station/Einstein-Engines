@@ -1,39 +1,113 @@
 - type: cargoProduct
-  id: ShuttleSumitomoAmmoSurezai
+  id: ShuttleSumitomoAmmoDSM
   icon:
     sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
     state: baton
   product: CrateSumitomoAmmo
   cost: 15000
   category: cargoproduct-category-name-shuttle
-  group: surezai
+  group: suzerai
 
 - type: cargoProduct
-  id: ShuttleCrateVulcanAmmoSurezai
+  id: ShuttleCrateVulcanAmmoDSM
   icon:
     sprite: _Crescent/Ammunition/vulcan.rsi
     state: base
   product: CrateVulcanAmmo
-  cost: 15000
+  cost: 10000
   category: cargoproduct-category-name-shuttle
-  group: surezai
+  group: suzerai
 
 - type: cargoProduct
-  id: CrateVulcanAmmoSurezai
+  id: ShuttleCrateSlugAmmoDSM
   icon:
     sprite: _NF/Objects/SpaceArtillery/50_armorpiercing_machinegun_casing.rsi
     state: base
   product: CrateSlugthrowerAmmo
   cost: 10000
   category: cargoproduct-category-name-shuttle
-  group: surezai
+  group: suzerai
 
 - type: cargoProduct
-  id: ShuttleCoolantSurezai
+  id: ShuttleCoolantDSM
   icon:
     sprite: _Crescent/Objects/Misc/coolant.rsi
     state: icon
   product: CrateCoolant
+  cost: 10000
+  category: cargoproduct-category-name-shuttle
+  group: suzerai
+
+
+- type: cargoProduct
+  id: ShuttleGargoyleAmmoDSM
+  icon:
+    sprite: _Crescent/Objects/Misc/coolant.rsi
+    state: icon
+  product: CrateGargoyleAmmo
+  cost: 25000
+  category: cargoproduct-category-name-shuttle
+  group: suzerai
+
+
+- type: cargoProduct
+  id: ShuttleLancerAmmoDSM
+  icon:
+    sprite: _Crescent/Objects/Misc/coolant.rsi
+    state: icon
+  product: CrateLancerAmmo
   cost: 15000
   category: cargoproduct-category-name-shuttle
-  group: surezai
+  group: suzerai
+
+
+- type: cargoProduct
+  id: ShuttleAssaultMortarAmmoDSM
+  icon:
+    sprite: _Crescent/Objects/Misc/coolant.rsi
+    state: icon
+  product: CrateAssaultMortarAmmo
+  cost: 20000
+  category: cargoproduct-category-name-shuttle
+  group: suzerai
+
+
+- type: cargoProduct
+  id: ShuttleIdnaAmmoDSM
+  icon:
+    sprite: _Crescent/Objects/Misc/coolant.rsi
+    state: icon
+  product: CrateIdnaAmmo
+  cost: 15000
+  category: cargoproduct-category-name-shuttle
+  group: suzerai
+
+- type: cargoProduct
+  id: Shuttle120mmAmmoDSM
+  icon:
+    sprite: _Crescent/Objects/Misc/coolant.rsi
+    state: icon
+  product: CrateArtilleryAmmo
+  cost: 20000
+  category: cargoproduct-category-name-shuttle
+  group: suzerai
+
+- type: cargoProduct
+  id: ShuttleAutomortarAmmoDSM
+  icon:
+    sprite: _Crescent/Objects/Misc/coolant.rsi
+    state: icon
+  product: CrateMortarAmmo
+  cost: 20000
+  category: cargoproduct-category-name-shuttle
+  group: suzerai
+
+- type: cargoProduct
+  id: ShuttleSwarmerAmmoDSM
+  icon:
+    sprite: _Crescent/Objects/Misc/coolant.rsi
+    state: icon
+  product: CrateSwarmerAmmo
+  cost: 15000
+  category: cargoproduct-category-name-shuttle
+  group: suzerai

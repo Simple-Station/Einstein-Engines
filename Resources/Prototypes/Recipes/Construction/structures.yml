@@ -71,24 +71,6 @@
     - !type:TileNotBlocked
 
 - type: construction
-  name: reinforced wall
-  id: ReinforcedWall
-  graph: Girder
-  startNode: start
-  targetNode: reinforcedWall
-  category: construction-category-structures
-  description: Keeps the air in and the greytide out.
-  icon:
-    sprite: Structures/Walls/solid.rsi
-    state: rgeneric
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: false
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
   name: clock wall
   id: WallClock
   graph: ClockworkGirder

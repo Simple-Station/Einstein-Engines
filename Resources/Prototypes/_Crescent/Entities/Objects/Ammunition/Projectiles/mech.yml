@@ -5,6 +5,10 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
+    damage:
+      types:
+        Piercing: 75 #Dummy but holy shit these are massive
+        Structural: 60
     ignoreWeaponGrid: false
 
 - type: entity

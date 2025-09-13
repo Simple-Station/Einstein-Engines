@@ -150,7 +150,7 @@
     layers:
     - state: tesla-generator
   - type: StaticPrice
-    price: 650
+    price: 8000
 
 - type: entity
   parent: BaseFlatpack
@@ -267,6 +267,20 @@
 
 - type: entity
   parent: BaseFlatpack
+  id: OperatorFlatpack
+  name: operator turret flatpack
+  description: A flatpack used for constructing operator turret with a universal commercial IFF.
+  components:
+  - type: Flatpack
+    entity: WeaponTurretVulcan
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 900
+
+- type: entity
+  parent: BaseFlatpack
   id: VulcanFlatpack
   name: vulcan hardpoint platform flatpack
   description: A flatpack used for constructing shuttle launchers with a universal commercial IFF.
@@ -277,7 +291,7 @@
     layers:
     - state: ame-part
   - type: StaticPrice
-    price: 12500
+    price: 5000
 
 - type: entity
   parent: BaseFlatpack
@@ -306,6 +320,20 @@
     - state: ame-part
   - type: StaticPrice
     price: 10000
+
+- type: entity
+  parent: BaseFlatpack
+  id: HephCannonTurretFlatpack
+  name: Hephaeustatus artillery flatpack
+  description: A flatpack used for constructing artillery cannons with a universal commercial IFF.
+  components:
+  - type: Flatpack
+    entity: BaseWeaponTurretBattlemortar
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 8500
 
 - type: entity
   parent: BaseFlatpack
@@ -371,6 +399,34 @@
   components:
   - type: Flatpack
     entity: AAAHardpointMediumEnergy
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 1500
+
+- type: entity
+  parent: BaseFlatpack
+  id: LargeBallisticHardpointFlatpack
+  name: large ballistic hardpoint flatpack
+  description:  Parts used to build a large ballistic hardpoint.
+  components:
+  - type: Flatpack
+    entity: AAAHardpointLargeBallistic
+  - type: Sprite
+    layers:
+    - state: ame-part
+  - type: StaticPrice
+    price: 1500
+
+- type: entity
+  parent: BaseFlatpack
+  id: SmallBallisticHardpointFlatpack
+  name: small ballistic hardpoint flatpack
+  description:  Parts used to build a small ballistic hardpoint.
+  components:
+  - type: Flatpack
+    entity: AAAHardpointSmallBallistic
   - type: Sprite
     layers:
     - state: ame-part

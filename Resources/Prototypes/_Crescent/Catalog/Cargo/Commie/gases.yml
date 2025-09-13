@@ -1,60 +1,60 @@
-- type: cargoProduct
-  id: AtmosphericsAircommie
-  icon:
-    sprite: Structures/Storage/canister.rsi
-    state: grey
-  product: AirCanister
-  cost: 800
-  category: cargoproduct-category-name-atmospherics
-  group: commie
+# - type: cargoProduct
+#   id: AtmosphericsAircommie
+#   icon:
+#     sprite: Structures/Storage/canister.rsi
+#     state: grey
+#   product: AirCanister
+#   cost: 800
+#   category: cargoproduct-category-name-atmospherics
+#   group: commie
 
-- type: cargoProduct
-  id: AtmosphericsOxygencommie
-  icon:
-    sprite: Structures/Storage/canister.rsi
-    state: blue
-  product: OxygenCanister
-  cost: 1100
-  category: cargoproduct-category-name-atmospherics
-  group: commie
+# # - type: cargoProduct
+# #   id: AtmosphericsOxygencommie
+# #   icon:
+# #     sprite: Structures/Storage/canister.rsi
+# #     state: blue
+# #   product: OxygenCanister
+# #   cost: 1100
+# #   category: cargoproduct-category-name-atmospherics
+# #   group: commie
 
-- type: cargoProduct
-  id: AtmosphericsLiquidcommie
-  icon:
-    sprite: Structures/Storage/canister.rsi
-    state: blue
-  product: LiquidOxygenCanister
-  cost: 2500
-  category: cargoproduct-category-name-atmospherics
-  group: commie
+# - type: cargoProduct
+#   id: AtmosphericsLiquidcommie
+#   icon:
+#     sprite: Structures/Storage/canister.rsi
+#     state: blue
+#   product: LiquidOxygenCanister
+#   cost: 2500
+#   category: cargoproduct-category-name-atmospherics
+#   group: commie
 
-- type: cargoProduct
-  id: Atmosphericscommie
-  icon:
-    sprite: Structures/Storage/canister.rsi
-    state: red
-  product: NitrogenCanister
-  cost: 1100
-  category: cargoproduct-category-name-atmospherics
-  group: commie
+# # - type: cargoProduct
+# #   id: Atmosphericscommie
+# #   icon:
+# #     sprite: Structures/Storage/canister.rsi
+# #     state: red
+# #   product: NitrogenCanister
+# #   cost: 1100
+# #   category: cargoproduct-category-name-atmospherics
+# #   group: commie
 
 
-- type: cargoProduct
-  id: AtmosphericsStoragecommie
-  icon:
-    sprite: Structures/Storage/canister.rsi
-    state: yellow
-  product: StorageCanister
-  cost: 1010 # No gases in it so it's cheaper
-  category: cargoproduct-category-name-atmospherics
-  group: commie
+# # - type: cargoProduct
+# #   id: AtmosphericsStoragecommie
+# #   icon:
+# #     sprite: Structures/Storage/canister.rsi
+# #     state: yellow
+# #   product: StorageCanister
+# #   cost: 1010 # No gases in it so it's cheaper
+# #   category: cargoproduct-category-name-atmospherics
+# #   group: commie
 
-- type: cargoProduct
-  id: AtmosphericsPlasmacommie
-  icon:
-    sprite: Structures/Storage/canister.rsi
-    state: orange
-  product: PlasmaCanister
-  cost: 8000
-  category: cargoproduct-category-name-atmospherics
-  group: commie
+# # - type: cargoProduct
+# #   id: AtmosphericsPlasmacommie
+# #   icon:
+# #     sprite: Structures/Storage/canister.rsi
+# #     state: orange
+# #   product: PlasmaCanister
+# #   cost: 8000
+# #   category: cargoproduct-category-name-atmospherics
+# #   group: commie
