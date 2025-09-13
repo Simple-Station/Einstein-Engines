@@ -6,8 +6,6 @@
     edges:
     - to: ousianadustbowl
       steps:
-      - material: Bluespace
-        amount: 1
       - material: Normality
         amount: 1
       - tag: FoodBowlBig

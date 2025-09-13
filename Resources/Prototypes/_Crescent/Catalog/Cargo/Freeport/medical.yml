@@ -127,3 +127,13 @@
   cost: 6000
   category: cargoproduct-category-name-medical
   group: ship
+
+- type: cargoProduct
+  id: VitalsTrackingIPMSuppliesFreeport
+  icon:
+    sprite: Objects/Specific/Medical/implanter.rsi
+    state: implanter0
+  product: CrateVitalsTrackingIPM
+  cost: 750
+  category: cargoproduct-category-name-medical
+  group: freeport
