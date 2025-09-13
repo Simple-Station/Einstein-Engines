@@ -124,7 +124,6 @@
   description: Spaceworthy protection for your fragile skull.
   components:
   - type: BreathMask
-  - type: EyeProtection
   - type: FlashImmunity
   - type: Sprite
     sprite: _Crescent/Clothing/Syndicate/Head/cybersunhelmet.rsi
@@ -181,7 +180,6 @@
   description: Spaceworthy protection for your fragile skull.
   components:
   - type: BreathMask
-  - type: EyeProtection
   - type: FlashImmunity
   - type: Sprite
     sprite: _Crescent/Clothing/Syndicate/Head/coordinator_helmet.rsi
