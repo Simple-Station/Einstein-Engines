@@ -45,8 +45,8 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Critical
-      200: Dead
+      200: Critical
+      400: Dead
     stateAlertDict:
       Alive: BorgHealth
       Critical: BorgCrit
@@ -103,7 +103,7 @@
   - type: ZombieImmune
   - type: Repairable
     doAfterDelay: 10
-    allowSelfRepair: false
+    allowSelfRepair: true
   - type: BorgChassis
   - type: LockingWhitelist
     blacklist:
@@ -177,7 +177,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 75
+        damage: 150
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -186,7 +186,7 @@
             volume: 5
     - trigger:
         !type:DamageTrigger
-        damage: 300
+        damage: 600
       behaviors:
       - !type:PlaySoundBehavior
         sound:

@@ -10,9 +10,9 @@
     sprite: _Crescent/Clothing/NCWL/Feet/ncwl_admiral_boots.rsi
 
 - type: entity
-  parent: [ClothingShoesBootsMag, ClothingShoesBootsCombat]
+  parent: ClothingShoesBootsMagCombat
   id: ClothingShoesBootsMagNCWL
-  name: NCWL combat magboots
+  name: communard combat magboots
   description: Combat magnetic boots, often used during extravehicular activity to ensure the user remains safely attached to the vehicle.
   components:
   - type: Sprite
@@ -21,9 +21,6 @@
   - type: Clothing
     sprite: _Crescent/Clothing/NCWL/Feet/magboots_ncwl.rsi
   - type: Magboots
-  - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
   - type: DamageOtherOnHit
     damage:
       types:

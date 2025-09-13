@@ -39,6 +39,14 @@
       count: 3
 
 - type: entity
+  id: SteelScrap5
+  parent: SteelScrapOre
+  suffix: Five
+  components:
+    - type: Stack
+      count: 5
+
+- type: entity
   id: SteelScrap8
   parent: SteelScrapOre
   suffix: Eight
@@ -46,6 +54,13 @@
     - type: Stack
       count: 8
 
+- type: entity
+  id: SteelScrap10
+  parent: SteelScrapOre
+  suffix: Ten
+  components:
+    - type: Stack
+      count: 10
 
 - type: entity
   id: SteelScrap16
@@ -104,6 +119,14 @@
   components:
     - type: Stack
       count: 6
+
+- type: entity
+  id: TitaniumScrap10
+  parent: TitaniumScrapOre
+  suffix: Ten
+  components:
+    - type: Stack
+      count: 10
 
 - type: entity
   id: TitaniumScrap17

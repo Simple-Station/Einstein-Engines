@@ -22549,7 +22549,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 20.5,-41.5
       parent: 1
-- proto: FlakCannonTurret
+- proto: FlakCannonTurretFilled
   entities:
   - uid: 3768
     components:
@@ -43821,7 +43821,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 19.694544,-17.405855
       parent: 1
-- proto: WeaponTurretCoilgunDSM
+- proto: WeaponTurretCoilgun
   entities:
   - uid: 6779
     components:
@@ -43901,7 +43901,7 @@ entities:
       linkedConsoleId: 1570
       obstructedRanges:
       - 4.929419789085995 rad: 5.973478696670418 rad
-- proto: WeaponTurretCoilgunNCWL
+- proto: WeaponTurretCoilgun
   entities:
   - uid: 1910
     components:
@@ -43941,7 +43941,7 @@ entities:
       linkedConsoleId: 1570
       obstructedRanges:
       - 1.7878271354962012 rad: 5.8491236897769765 rad
-- proto: WeaponTurretSwarmerDSM
+- proto: WeaponTurretSwarmerFilled
   entities:
   - uid: 6800
     components:

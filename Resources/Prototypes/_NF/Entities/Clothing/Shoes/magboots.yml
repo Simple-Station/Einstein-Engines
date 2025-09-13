@@ -9,7 +9,6 @@
     state: icon
   - type: Clothing
     sprite: _NF/Clothing/Shoes/Boots/magboots-combat.rsi
-  - type: Magboots
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9
