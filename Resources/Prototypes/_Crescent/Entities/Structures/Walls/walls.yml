@@ -102,13 +102,6 @@
       delay: 8
       fx: EffectRCDDeconstruct8
 
-- type: weightedRandomEntity
-  id: WallReinforcedScrapItemOutputs
-  weights:
-    SteelScrap10: 2
-    SteelScrap5: 1
-    SteelScrap16: 1
-
 - type: construction
   name: shuttle wall
   id: ShuttleWall
@@ -134,13 +127,6 @@
       cost: 6
       delay: 8
       fx: EffectRCDDeconstruct8
-
-- type: weightedRandomEntity
-  id: WallReinforcedScrapItemOutputs
-  weights:
-    SteelScrap10: 2
-    SteelScrap5: 1
-    SteelScrap16: 1
 
 #Capital
 - type: entity
@@ -267,13 +253,6 @@
       delay: 8
       fx: EffectRCDDeconstruct8
 
-- type: weightedRandomEntity
-  id: PlastitaniumScrapItemOutputs
-  weights:
-    TitaniumScrap10: 2
-    TitaniumScrap6: 1
-    TitaniumScrap17: 1
-
 
 # Reinforced Plastitanium
 - type: entity
@@ -318,13 +297,6 @@
       cost: 6
       delay: 8
       fx: EffectRCDDeconstruct8
-
-- type: weightedRandomEntity
-  id: PlastitaniumScrapItemOutputs
-  weights:
-    TitaniumScrap10: 2
-    TitaniumScrap6: 1
-    TitaniumScrap17: 1
 
 - type: entity
   parent: WallHeavyPlastitanium
@@ -413,13 +385,6 @@
       cost: 6
       delay: 8
       fx: EffectRCDDeconstruct8
-
-- type: weightedRandomEntity
-  id: PlastitaniumScrapItemOutputs
-  weights:
-    TitaniumScrap10: 2
-    TitaniumScrap6: 1
-    TitaniumScrap17: 1
 
 - type: entity
   parent: WallRemnant
