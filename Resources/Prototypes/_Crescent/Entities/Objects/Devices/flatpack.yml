@@ -150,7 +150,7 @@
     layers:
     - state: tesla-generator
   - type: StaticPrice
-    price: 650
+    price: 8000
 
 - type: entity
   parent: BaseFlatpack
@@ -291,7 +291,7 @@
     layers:
     - state: ame-part
   - type: StaticPrice
-    price: 12500
+    price: 5000
 
 - type: entity
   parent: BaseFlatpack

@@ -34,7 +34,7 @@
     sprite: _Crescent/Objects/ShuttleWeapons/vulcan.rsi
     state: space_artillery
   product: CrateShuttlegunVulcan
-  cost: 5000
+  cost: 12500
   category: cargoproduct-category-name-shuttle
   group: generic
 
@@ -44,7 +44,7 @@
     sprite: _Crescent/Objects/Autoturrets/lightautoturret.rsi
     state: syndie_lethal
   product: CrateShuttlegunPDT
-  cost: 5000
+  cost: 10000
   category: cargoproduct-category-name-shuttle
   group: generic
 
@@ -54,7 +54,7 @@
     sprite: _Crescent/Objects/ShuttleWeapons/50cal.rsi
     state: space_artillery
   product: CrateShuttlegunSlugthrower
-  cost: 5000
+  cost: 12500
   category: cargoproduct-category-name-shuttle
   group: generic
 
@@ -64,6 +64,6 @@
     sprite: _Crescent/Objects/ShuttleWeapons/lasersmall.rsi
     state: lse-400c
   product: CrateShuttlegunPlasmaRepeater
-  cost: 12500
+  cost: 20000
   category: cargoproduct-category-name-shuttle
   group: generic
