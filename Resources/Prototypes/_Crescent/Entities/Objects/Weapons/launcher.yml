@@ -249,10 +249,6 @@
     autoCycle: false
     boltClosed: true
     canRack: false
-    soundInsert:
-      path: /Audio/_Crescent/Weapons/Guns/non_collection/rpg_load.ogg
-    fillWithDoAfter: true
-    fillDelay: 1
     soundBoltClosed: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
     soundBoltOpened: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
     soundRack: /Audio/Weapons/Guns/Cock/revolver_cock.ogg

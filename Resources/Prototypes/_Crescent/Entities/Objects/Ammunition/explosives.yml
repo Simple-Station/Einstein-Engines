@@ -679,10 +679,10 @@
   description: A 70mm warhead designed for the RPG-2 launcher. Has a HE-Frag warhead.
   components:
   - type: Tag
-    size: Normal
     tags:
       - RocketRPG2
   - type: Item
+    size: Normal
     shape:
     - 0,0,1,2
   - type: CartridgeAmmo
