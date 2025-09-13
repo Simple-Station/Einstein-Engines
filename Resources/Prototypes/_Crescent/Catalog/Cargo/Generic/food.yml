@@ -1,11 +1,11 @@
 
 - type: cargoProduct
-  id: FoodMRE
+  id: FoodMREGeneric
   icon:
     sprite: Objects/Consumable/Food/snacks.rsi
     state: nutribrick
   product: CrateFoodMRE
-  cost: 2500
+  cost: 1000
   category: cargoproduct-category-name-food
   group: generic
 

@@ -1,5 +1,5 @@
 - type: cargoProduct
-  id: ServiceJanitorial
+  id: ServiceJanitorialGeneric
   icon:
     sprite: Objects/Specific/Janitorial/janitorial.rsi
     state: cleaner
@@ -8,15 +8,15 @@
   category: cargoproduct-category-name-service
   group: generic
 
-- type: cargoProduct
-  id: ServiceLightsReplacement
-  icon:
-    sprite: Objects/Power/light_bulb.rsi
-    state: normal
-  product: CrateServiceReplacementLights
-  cost: 600
-  category: cargoproduct-category-name-service
-  group: generic
+# - type: cargoProduct
+#   id: ServiceLightsReplacement
+#   icon:
+#     sprite: Objects/Power/light_bulb.rsi
+#     state: normal
+#   product: CrateServiceReplacementLights
+#   cost: 600
+#   category: cargoproduct-category-name-service
+#   group: generic
 
 # - type: cargoProduct
 #   id: MousetrapBoxes
@@ -29,7 +29,7 @@
 #   group:
 
 - type: cargoProduct
-  id: ServiceSmokeables
+  id: ServiceSmokeablesGeneric
   icon:
     sprite: Objects/Consumable/Smokeables/Cigarettes/Cartons/green.rsi
     state: closed

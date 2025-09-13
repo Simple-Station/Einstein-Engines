@@ -1,12 +1,22 @@
-# - type: cargoProduct
-#   id: MedicalSupplies
-#   icon:
-#     sprite: Objects/Specific/Medical/firstaidkits.rsi
-#     state: firstaid
-#   product: CrateMedicalSupplies
-#   cost: 5000
-#   category: cargoproduct-category-name-medical
-#   group:
+- type: cargoProduct
+  id: ChemvendRestockGeneric
+  icon:
+    sprite: Structures/Storage/Crates/chemcrate_secure.rsi
+    state: icon
+  product: VendingMachineRestockChemVend
+  cost: 5000
+  category: cargoproduct-category-name-medical
+  group:
+
+- type: cargoProduct
+  id: MedicalSuppliesGeneric
+  icon:
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: firstaid
+  product: CrateMedicalSupplies
+  cost: 5000
+  category: cargoproduct-category-name-medical
+  group: generic
 
 # - type: cargoProduct
 #   id: MedicalChemistrySupplies

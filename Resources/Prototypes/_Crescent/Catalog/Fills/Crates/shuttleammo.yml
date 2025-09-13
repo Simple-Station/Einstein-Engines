@@ -12,17 +12,28 @@
         amount: 24
 
 - type: entity
-  id: CrateSumitomoAmmoAdvanced
+  id: CrateSumitomoAmmoEMP
   parent: CrateSecgear
-  name: 48mm EMP & high-yield crate
-  description: 12 EMP, 12 high-yield rockets and 5 magazines for the SHI Sumitomo & Kurosawa rocket launchers.
+  name: 48mm EMP rocket crate
+  description: 12 EMP rockets and 2 magazines for the SHI Sumitomo & Kurosawa rocket launchers.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineRocketEmpty
+        amount: 2
+      - id: CartridgeRocketEMP
+        amount: 12
+
+- type: entity
+  id: CrateSumitomoAmmoHighYield
+  parent: CrateSecgear
+  name: 48mm high-yield rocket crate
+  description: 12 high-yield rockets and 2 magazines for the SHI Sumitomo & Kurosawa rocket launchers.
   components:
   - type: StorageFill
     contents:
       - id: MagazineRocketEmpty
         amount: 5
-      - id: CartridgeRocketEMP
-        amount: 12
       - id: CartridgeRocketHighYield
         amount: 12
 
@@ -88,7 +99,7 @@
 - type: entity
   id: CrateVulcanAmmo
   parent: CrateSecgear
-  name: vulcan ammo crate
+  name: 20mm vulcan ammo crate
   description: Six 500 round ammo boxes for the Vulcan, Cleanser and Operator machinegun platforms.
   components:
   - type: StorageFill
@@ -99,7 +110,7 @@
 - type: entity
   id: CrateSlugthrowerAmmo
   parent: CrateSecgear
-  name: .50 Depleted Uranium slugthrower cartridge crate
+  name: 43mm DU slugthrower ammo crate
   description: Sixteen 100 round boxes of DU ammunition the "Dasher" slugthrower or slugspitter platforms.
   components:
   - type: StorageFill
@@ -110,7 +121,7 @@
 - type: entity
   id: CrateSlugthrowerAmmoExplosive
   parent: CrateSecgear
-  name: .50 Explosive slugthrower cartridge crate
+  name: 43mm HE slugthrower ammo crate
   description: Eight 100 round boxes of explosive ammunition the "Dasher" slugthrower or slugspitter platforms. More efficient.
   components:
   - type: StorageFill
@@ -166,7 +177,7 @@
 - type: entity
   id: CrateMortarAmmo
   parent: CrateSecgear
-  name: automortar magazine crate
+  name: 90mm automortar magazine crate
   description: Ammunition for automortar artillery turrets.
   components:
   - type: StorageFill
@@ -184,3 +195,59 @@
     contents:
       - id: MagazineSwarmer
         amount: 5
+
+- type: entity
+  id: CrateSolarisAmmo
+  parent: CrateSecgear
+  name: solaris antimatter tube crate
+  description: 6 tubes of fuel for the Solaris antimatter blaster.
+  components:
+  - type: StorageFill
+    contents:
+      - id: StandardAntimatterCanister
+        amount: 6
+
+- type: entity
+  id: CrateSolarisAmmoGuided
+  parent: CrateSecgear
+  name: solaris guided antimatter tube crate
+  description: 4 tubes of special fuel for the Solaris antimatter blaster, equipped with basic mid-flight guidance for accuracy.
+  components:
+  - type: StorageFill
+    contents:
+      - id: GuidedAntimatterCanister
+        amount: 4
+
+- type: entity
+  id: CrateSolarisAmmoPlasma
+  parent: CrateSecgear
+  name: solaris plasma-charged antimatter tube crate
+  description: 4 tubes of special fuel for the Solaris antimatter blaster, charged with plasma for extra destructive effect.
+  components:
+  - type: StorageFill
+    contents:
+      - id: PlasmaAntimatterCanister
+        amount: 4
+
+- type: entity
+  id: CrateCompaktAmmoInfrared
+  parent: CrateSecgear
+  name: compakt infrared lens crate
+  description: 6 lenses tuned to infrared frequency, similar in performance to vulcan-type weapons.
+  components:
+  - type: StorageFill
+    contents:
+      - id: LensInfared
+        amount: 6
+
+- type: entity
+  id: CrateCompaktAmmoPlasma
+  parent: CrateSecgear
+  name: compakt plasma lens crate
+  description: 4 lenses tuned to plasma frequency, resulting in a devastating explosive barrage.
+  components:
+  - type: StorageFill
+    contents:
+      - id: LensPlasma
+        amount: 4
+

@@ -17,3 +17,15 @@
   - type: StorageFill
     contents:
       - id: GyroscopeFlatpack
+
+- type: entity
+  parent: CrateEngineering
+  id: CrateEngineeringDockingPort
+  name: docking port crate
+  description: Contains 4 docking port flatpacks.
+  components:
+  - type: StorageFill
+    contents:
+      - id: AirlockShuttleFlatpack
+        amount: 4
+
