@@ -410,13 +410,49 @@
 # @baldy (baldy) donor gun
 - type: entity
   name: SAW Plasma Cutter
-  parent: BaseWeaponShotgun
+  parent: WeaponLaserCarbine
   id: WeaponDonorPlasmaCutter
   description:
   components:
   - type: Sprite
-    sprite: _Crescent/Objects/Weapons/plasma_cutter.rsi
+    sprite: _Crescent/Objects/Weapons/plasmacutter.rsi
   - type: RCD
     isScrapper: true
     availablePrototypes:
     - Deconstruct
+  - type: Gun
+    fireRate: 1
+    projectileSpeed: 30
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+    soundEmpty:
+      path: /Audio/DeltaV/Weapons/Guns/Empty/dry_fire.ogg
+  - type: GunRequiresWield
+  - type: Battery
+    maxCharge: 1005
+    startingCharge: 1005
+  - type: HitscanBatteryAmmoProvider
+    proto: PlasmaCutterBolt
+    fireCost: 250
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 125
+    autoRechargePause: true
+    autoRechargePauseTime: 4
+
+- type: hitscan
+  id: PlasmaCutterBolt
+  damage:
+    types:
+      Structural: 40
+      Heat: 20
+      Piercing: 10
+  muzzleFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: muzzle_beam_heavy
+  travelFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: beam_heavy
+  impactFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_beam_heavy
