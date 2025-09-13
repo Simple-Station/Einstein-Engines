@@ -226,7 +226,7 @@
 - type: entity
   name: PTA AC-8 Spear 15.2x169mm
   parent: [BaseWeaponRifle, BaseGunWieldable]
-  id: WeaponSniperAK50
+  id: WeaponSniperSpear
   description: A high-end AMR by Pang Tai Arms, capable of firing significantly faster than its competitors.
   components:
   - type: Sprite

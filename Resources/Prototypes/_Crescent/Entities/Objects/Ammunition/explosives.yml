@@ -1059,3 +1059,57 @@
     radius: 3.5
     color: orange
     energy: 0.5
+
+# hammerhead rocket
+
+- type: entity
+  id: CartridgeHammerheadRocket
+  name: 65mm Hammerhead rocket
+  parent: BaseCartridge
+  description: A 65mm heat-seeking rocket with a thermobaric warhead. Designed for the HSRPG-38M13 launcher.
+  components:
+  - type: Tag
+    tags:
+    - RocketHammerhead
+  - type: Item
+    shape:
+    - 0,0,1,3
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/hammerhead_rocket.rsi
+    layers:
+      - state: hammer
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: BulletRocketSmart
+  - type: Appearance
+  - type: SpentAmmoVisuals
+    state: "hammer"
+  - type: StaticPrice
+    price: 50
+
+- type: entity
+  id: BulletRocketSmart
+  name: smart missile
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileIFF
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Thermobaric
+    maxIntensity: 137.5
+    intensitySlope: 2.5
+    totalIntensity: 300
+    maxTileBreak: 5
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: HeatSeeking
+    rotationSpeed: 40
+    acceleration: 25
+    topSpeed: 125

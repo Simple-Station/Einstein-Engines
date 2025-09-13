@@ -239,7 +239,7 @@
   name: SHI HSRPG-38M13 Hammerhead smart-missile launcher 65mm
   parent: [BaseWeaponLauncher, BaseGunWieldable]
   id: WeaponLauncherHammerhead
-  description: A modified ancient rocket-propelled grenade launcher. Stamped with the Shinohara Heavy Industries logo and capable of firing guided projectiles.
+  description: A fancy heat-seeking rocket launcher. Stamped with the Shinohara Heavy Industries logo.
   components:
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Guns/hammerhead.rsi
@@ -276,60 +276,8 @@
     steps: 2
     zeroVisible: false
 
-- type: entity
-  id: BulletRocketSmart
-  name: smart missile
-  parent: BaseBulletTrigger
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: ProjectileIFF
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    layers:
-      - state: frag
-  - type: ExplodeOnTrigger
-  - type: Explosive
-    explosionType: Default
-    maxIntensity: 1500
-    intensitySlope: 500
-    totalIntensity: 3000
-    maxTileBreak: 5
-  - type: PointLight
-    radius: 3.5
-    color: orange
-    energy: 0.5
-  - type: HeatSeeking
-    rotationSpeed: 40
-    acceleration: 25
-    topSpeed: 125
-
     defaultSeekingRange: 400
     guidanceAlgorithm: PredictiveGuidance
-
-- type: entity
-  id: CartridgeHammerheadRocket
-  name: 65mm Hammerhead rocket
-  parent: BaseCartridge
-  description: A 65mm heat-seeking rocket designed for the HSRPG-38M13 launcher.
-  components:
-  - type: Tag
-    tags:
-    - RocketHammerhead
-  - type: Item
-    shape:
-    - 0,0,1,3
-  - type: Sprite
-    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/rocket.rsi
-    layers:
-      - state: hammer
-        map: [ "enum.AmmoVisualLayers.Base" ]
-  - type: CartridgeAmmo
-    proto: BulletRocketSmart
-  - type: Appearance
-  - type: SpentAmmoVisuals
-    state: "hammer"
-  - type: StaticPrice
-    price: 50
 
 # @Tomahawk101 (Tomahawk101) donor gun
 - type: entity

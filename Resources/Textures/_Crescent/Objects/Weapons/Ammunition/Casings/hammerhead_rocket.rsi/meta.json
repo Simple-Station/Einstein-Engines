@@ -8,7 +8,10 @@
     "copyright": "Made by the Sector Crescent team for the Hullrot Project. All rights reserved. Do not modify, publish, use, relicense, or edit.",
     "states": [
         {
-            "name": "he"
+            "name": "hammer"
+        },
+        {
+            "name": "hammer-spent"
         }
     ]
 }
