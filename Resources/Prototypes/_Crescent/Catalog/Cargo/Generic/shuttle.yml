@@ -1,0 +1,69 @@
+- type: cargoProduct
+  id: ShuttleThrusterGeneric
+  icon:
+    sprite: Structures/Shuttles/thruster.rsi
+    state: base
+  product: CrateEngineeringThruster
+  cost: 1500
+  category: cargoproduct-category-name-shuttle
+  group: generic
+
+- type: cargoProduct
+  id: ShuttleGyroscopeGeneric
+  icon:
+    sprite: Structures/Shuttles/gyroscope.rsi
+    state: base
+  product: CrateEngineeringGyroscope
+  cost: 4000
+  category: cargoproduct-category-name-shuttle
+  group: generic
+
+- type: cargoProduct
+  id: ShuttleDockingPortsGeneric
+  icon:
+    sprite: Structures/Doors/Airlocks/Standard/shuttle.rsi
+    state: closed
+  product: CrateEngineeringDockingPort
+  cost: 4000
+  category: cargoproduct-category-name-shuttle
+  group: generic
+
+- type: cargoProduct
+  id: ShuttleGunVulcanGeneric
+  icon:
+    sprite: _Crescent/Objects/ShuttleWeapons/vulcan.rsi
+    state: space_artillery
+  product: CrateShuttlegunVulcan
+  cost: 12500
+  category: cargoproduct-category-name-shuttle
+  group: generic
+
+- type: cargoProduct
+  id: ShuttleGunPDTGeneric
+  icon:
+    sprite: _Crescent/Objects/Autoturrets/lightautoturret.rsi
+    state: syndie_lethal
+  product: CrateShuttlegunPDT
+  cost: 10000
+  category: cargoproduct-category-name-shuttle
+  group: generic
+
+- type: cargoProduct
+  id: ShuttleGunSlugthrowerGeneric
+  icon:
+    sprite: _Crescent/Objects/ShuttleWeapons/50cal.rsi
+    state: space_artillery
+  product: CrateShuttlegunSlugthrower
+  cost: 12500
+  category: cargoproduct-category-name-shuttle
+  group: generic
+
+- type: cargoProduct
+  id: ShuttleGunPlasmaRepeaterGeneric
+  icon:
+    sprite: _Crescent/Objects/ShuttleWeapons/lasersmall.rsi
+    state: lse-400c
+  product: CrateShuttlegunPlasmaRepeater
+  cost: 20000
+  category: cargoproduct-category-name-shuttle
+  group: generic

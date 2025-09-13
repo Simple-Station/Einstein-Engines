@@ -1,29 +1,29 @@
 # - type: cargoProduct
-#   id: ArmorPlateSteelCommie
+#   id: ArmorPlateSteel
 #   icon:
 #     sprite: _Crescent/Clothing/armorSprites.rsi
 #     state: steel
 #   product: CrateSecurityArmorSteelPlates
 #   cost: 5400
 #   category: cargoproduct-category-name-military
-#   group: commie
+#   group:
 
 # - type: cargoProduct
-#   id: ArmorPlatePlasteelCommie
+#   id: ArmorPlatePlasteel
 #   icon:
 #     sprite: _Crescent/Clothing/armorSprites.rsi
 #     state: plasteel
 #   product: CrateSecurityArmorPlasteelPlates
 #   cost: 9000
 #   category: cargoproduct-category-name-military
-#   group: commie
+#   group:
 
 # - type: cargoProduct
-#   id: ArmorPlateHomelandCommie
+#   id: ArmorPlateHomeland
 #   icon:
 #     sprite: _Crescent/Clothing/armorSprites.rsi
 #     state: homelandAlloy
 #   product: CrateSecurityArmorHomelandPlates
 #   cost: 35000
 #   category: cargoproduct-category-name-military
-#   group: commie
+#   group:

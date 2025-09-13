@@ -1,89 +1,79 @@
-# - type: cargoProduct
-#   id: MedicalSuppliescommie
-#   icon:
-#     sprite: Objects/Specific/Medical/firstaidkits.rsi
-#     state: firstaid
-#   product: CrateMedicalSupplies
-#   cost: 5000
-#   category: cargoproduct-category-name-medical
-#   group: commie
+- type: cargoProduct
+  id: ChemvendRestockGeneric
+  icon:
+    sprite: Structures/Storage/Crates/chemcrate_secure.rsi
+    state: icon
+  product: VendingMachineRestockChemVend
+  cost: 5000
+  category: cargoproduct-category-name-medical
+  group: generic
+
+- type: cargoProduct
+  id: MedicalSuppliesGeneric
+  icon:
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: firstaid
+  product: CrateMedicalSupplies
+  cost: 5000
+  category: cargoproduct-category-name-medical
+  group: generic
 
 # - type: cargoProduct
-#   id: MedicalChemistrySuppliescommie
+#   id: MedicalChemistrySupplies
 #   icon:
 #     sprite: Objects/Specific/Chemistry/beaker.rsi
 #     state: beaker
 #   product: CrateChemistrySupplies
 #   cost: 750
 #   category: cargoproduct-category-name-medical
-#   group: commie
+#   group:
 
 # - type: cargoProduct
-#   id: MedicalChemistryVialscommie
+#   id: MedicalChemistryVials
 #   icon:
 #     sprite: Objects/Specific/Chemistry/vial.rsi
 #     state: vial
 #   product: CrateChemistryVials
 #   cost: 1000
 #   category: cargoproduct-category-name-medical
-#   group: commie
+#   group:
 
 # - type: cargoProduct
-#   id: MedicalBodybagscommie
+#   id: MedicalBodybags
 #   icon:
 #     sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
 #     state: bag_folded
 #   product: CrateBodyBags
 #   cost: 700
 #   category: cargoproduct-category-name-medical
-#   group: commie
+#   group:
 
 # - type: cargoProduct
-#   id: ChemistryPcommie
+#   id: ChemistryP
 #   icon:
 #     sprite: Structures/Storage/Crates/chemcrate_secure.rsi
 #     state: icon
 #   product: CrateChemistryP
 #   cost: 850
 #   category: cargoproduct-category-name-medical
-#   group: commie
+#   group:
 
 # - type: cargoProduct
-#   id: ChemistryScommie
+#   id: ChemistryS
 #   icon:
 #     sprite: Structures/Storage/Crates/chemcrate_secure.rsi
 #     state: icon
 #   product: CrateChemistryS
 #   cost: 750
 #   category: cargoproduct-category-name-medical
-#   group: commie
+#   group:
 
 # - type: cargoProduct
-#   id: CrateChemistryDcommie
+#   id: CrateChemistryD
 #   icon:
 #     sprite: Structures/Storage/Crates/chemcrate_secure.rsi
 #     state: icon
 #   product: CrateChemistryD
 #   cost: 750
 #   category: cargoproduct-category-name-medical
-#   group: commie
-
-- type: cargoProduct
-  id: VitalsTrackingNCWLSuppliescommie
-  icon:
-    sprite: Objects/Specific/Medical/implanter.rsi
-    state: implanter0
-  product: CrateVitalsTrackingNCWL
-  cost: 500
-  category: cargoproduct-category-name-medical
-  group: commie
-
-- type: cargoProduct
-  id: VitalsTrackingIPMSuppliescommie
-  icon:
-    sprite: Objects/Specific/Medical/implanter.rsi
-    state: implanter0
-  product: CrateVitalsTrackingIPM
-  cost: 1000
-  category: cargoproduct-category-name-medical
-  group: commie
+#   group:
