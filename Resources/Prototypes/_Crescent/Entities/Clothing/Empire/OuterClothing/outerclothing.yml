@@ -498,6 +498,22 @@
     sprite: _Crescent/Clothing/Empire/OuterClothing/rittersuit.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/Empire/OuterClothing/rittersuit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: DegradeableArmor
+    armorMaxHealth: 500
+    armorType: Metallic
+    armorRepair: PlasteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 30
+        Slash: 25
+        Piercing: 15
+        Heat: 20
+        Caustic: 25
   - type: ClothingSpeedModifier
     walkModifier: 1
     sprintModifier: 1
