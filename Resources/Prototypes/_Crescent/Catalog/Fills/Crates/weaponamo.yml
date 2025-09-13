@@ -34,7 +34,7 @@
 - type: entity
   id: Crate40mmGrenadeAP
   parent: CrateSecgear
-  name: 40mm anti-personell grenade crate
+  name: 40mm anti-personnel grenade crate
   description: A crate containing 4 HE and 4 Canister shot 40mm grenades
   components:
   - type: StorageFill
@@ -47,7 +47,7 @@
 - type: entity
   id: Crate84mmRecoillessAP
   parent: CrateSecgear
-  name: 84mm recoilless anti-personell shell crate
+  name: 84mm recoilless anti-personnel shell crate
   description: A crate containing 2 HE-Frag and 2 Canister shot 84mm recoilless shells
   components:
   - type: StorageFill
