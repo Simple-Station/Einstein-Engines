@@ -257,19 +257,24 @@
   - type: Gun
     fireRate: 0.5
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/rpg_fire.ogg
   - type: BallisticAmmoProvider
-    proto: BulletRocketSmart
-    capacity: 3
-    cycleable: false
+    proto: CartridgeHammerheadRocket
+    capacity: 1
+    autoCycle: false
     soundInsert:
-      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
-  - type: MagazineVisuals
-    magState: mag
-    steps: 3
-    zeroVisible: true
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/rpg_load.ogg
+    fillWithDoAfter: true
+    fillDelay: 1
+    whitelist:
+      tags:
+      - RocketHammerhead
   - type: Appearance
   - type: Contraband
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
 
 - type: entity
   id: BulletRocketSmart
@@ -300,6 +305,31 @@
 
     defaultSeekingRange: 400
     guidanceAlgorithm: PredictiveGuidance
+
+- type: entity
+  id: CartridgeHammerheadRocket
+  name: 65mm Hammerhead rocket
+  parent: BaseCartridge
+  description: A 65mm heat-seeking rocket designed for the HSRPG-38M13 launcher.
+  components:
+  - type: Tag
+    tags:
+    - RocketHammerhead
+  - type: Item
+    shape:
+    - 0,0,1,3
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/rocket.rsi
+    layers:
+      - state: hammer
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: BulletRocketSmart
+  - type: Appearance
+  - type: SpentAmmoVisuals
+    state: "hammer"
+  - type: StaticPrice
+    price: 50
 
 # @Tomahawk101 (Tomahawk101) donor gun
 - type: entity
