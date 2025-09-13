@@ -76,58 +76,6 @@
     SteelScrap5: 1
     SteelScrap16: 1
 
-- type: construction
-  name: reinforced wall
-  id: ReinforcedWall
-  graph: Girder
-  startNode: start
-  targetNode: reinforcedWall
-  category: construction-category-structures
-  description: Keeps the air in and the greytide out.
-  icon:
-    sprite: Structures/Walls/solid.rsi
-    state: rgeneric
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: false
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-    - type: RCDDeconstructable
-      rcdScrappable: true
-      scrapResults:
-        - WallReinforcedScrapItemOutputs
-      deconstructable: false
-      cost: 6
-      delay: 8
-      fx: EffectRCDDeconstruct8
-
-- type: construction
-  name: shuttle wall
-  id: ShuttleWall
-  graph: Girder
-  startNode: start
-  targetNode: shuttleWall
-  category: construction-category-structures
-  description: Keeps the air in and the greytide out.
-  icon:
-    sprite: Structures/Walls/shuttle.rsi
-    state: full
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: false
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-    - type: RCDDeconstructable
-      rcdScrappable: true
-      scrapResults:
-        - WallReinforcedScrapItemOutputs
-      deconstructable: false
-      cost: 6
-      delay: 8
-      fx: EffectRCDDeconstruct8
-
 #Capital
 - type: entity
   parent: WallReinforced
@@ -385,6 +333,7 @@
       cost: 6
       delay: 8
       fx: EffectRCDDeconstruct8
+
 
 - type: entity
   parent: WallRemnant
