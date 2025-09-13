@@ -250,6 +250,9 @@
     tags:
     - ClothMade
     - WhitelistChameleon
+  - type: TinfoilHat
+    passthrough: true
+    destroyOnFry: false
 
 - type: entity
   parent: ClothingHeadBase
