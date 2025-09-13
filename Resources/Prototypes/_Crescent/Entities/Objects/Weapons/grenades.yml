@@ -83,10 +83,10 @@
     sprite: _Crescent/Objects/Weapons/Grenades/f1.rsi
   - type: ExplodeOnTrigger
   - type: Explosive
-    explosionType: Default
-    maxIntensity: 750
-    intensitySlope: 200
-    totalIntensity: 1800
+    explosionType: Fragmentation
+    maxIntensity: 100
+    intensitySlope: 3
+    totalIntensity: 170
     canCreateVacuum: false
   - type: TimerTriggerVisuals
     primingSound:
@@ -111,10 +111,10 @@
     sprite: _Crescent/Objects/Weapons/Grenades/ncsp_rgd5.rsi
   - type: ExplodeOnTrigger
   - type: Explosive
-    explosionType: Default
-    maxIntensity: 1000
-    intensitySlope: 200
-    totalIntensity: 1800
+    explosionType: Fragmentation
+    maxIntensity: 100
+    intensitySlope: 6
+    totalIntensity: 125
     canCreateVacuum: false
   - type: TimerTriggerVisuals
     primingSound:
@@ -166,10 +166,10 @@
     sprite: _Crescent/Objects/Weapons/Grenades/ncwl_rgd55.rsi
   - type: ExplodeOnTrigger
   - type: Explosive
-    explosionType: Default
-    maxIntensity: 600
-    intensitySlope: 400
-    totalIntensity: 2100
+    explosionType: Fragmentation
+    maxIntensity: 100
+    intensitySlope: 4
+    totalIntensity: 200
     canCreateVacuum: false
   - type: TimerTriggerVisuals
     primingSound:
@@ -214,7 +214,7 @@
       collection: FlashGrenadeSFX
 
 - type: entity
-  name: DSM G-8 Neurotoxin grenade
+  name: IRM G-8 Neurotoxin grenade
   description: A smoke grenade filled with a neurotoxin, that creates a small poisonous cloud.
   parent: GrenadeBase
   id: DSMG8PoisonHandgrenade
@@ -257,7 +257,7 @@
       collection: SmokeGrenadeSFX
 
 - type: entity
-  name: DSM G-4 Twist-cap grenade
+  name: IRM G-4 Twist-cap grenade
   description: A grenade with a large explosive payload and a unique twist-cap fuse.
   parent: GrenadeBase
   id: DSMG4TwistcapHandgrenade
@@ -268,10 +268,10 @@
     sprite: _Crescent/Objects/Weapons/Grenades/dsm_twist.rsi
   - type: ExplodeOnTrigger
   - type: Explosive
-    explosionType: Default
-    maxIntensity: 700
-    intensitySlope: 500
-    totalIntensity: 2700
+    explosionType: Fragmentation
+    maxIntensity: 100
+    intensitySlope: 6
+    totalIntensity: 300
     canCreateVacuum: false
   - type: TimerTriggerVisuals
     primingSound:
@@ -285,7 +285,7 @@
       collection: FragGrenadeSFX
 
 - type: entity
-  name: DSM G-3 Stick grenade
+  name: IRM G-3 Stick grenade
   description: A grenade with large stick attached to improve the throwing distance. It can be used as a last-resort mace.
   parent: GrenadeBase
   id: DSMG3StickHandgrenade
@@ -296,10 +296,10 @@
     sprite: _Crescent/Objects/Weapons/Grenades/dsm_stick.rsi
   - type: ExplodeOnTrigger
   - type: Explosive
-    explosionType: Default
-    maxIntensity: 500
-    intensitySlope: 600
-    totalIntensity: 1800
+    explosionType: Fragmentation
+    maxIntensity: 100
+    intensitySlope: 4
+    totalIntensity: 200
     canCreateVacuum: false
   - type: DamageOnHit
     damage:
@@ -378,10 +378,10 @@
           Blunt: 50
   - type: ExplodeOnTrigger
   - type: Explosive
-    explosionType: Default
-    maxIntensity: 400
-    intensitySlope: 450
-    totalIntensity: 900
+    explosionType: Fragmentation
+    maxIntensity: 100
+    intensitySlope: 4
+    totalIntensity: 100
     canCreateVacuum: false
   - type: EmitSoundOnPickup
     sound: /Audio/_Crescent/Weapons/Grenades/grab1.ogg
@@ -440,10 +440,10 @@
     sprite: _Crescent/Objects/Weapons/Grenades/shi_mini.rsi
   - type: ExplodeOnTrigger
   - type: Explosive
-    explosionType: Default
-    maxIntensity: 300
-    intensitySlope: 300
-    totalIntensity: 900
+    explosionType: Fragmentation
+    maxIntensity: 100
+    intensitySlope: 4
+    totalIntensity: 100
     canCreateVacuum: false
   - type: TimerTriggerVisuals
     primingSound:
@@ -468,6 +468,12 @@
     delay: 3.5
   - type: Sprite
     sprite: _Crescent/Objects/Weapons/Grenades/shi_emp.rsi
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Electric
+    maxIntensity: 100
+    intensitySlope: 1
+    totalIntensity: 30
   - type: EmpOnTrigger
     range: 2
     energyConsumption: 2700000
@@ -495,10 +501,10 @@
     sprite: _Crescent/Objects/Weapons/Grenades/shi_smart.rsi
   - type: ExplodeOnTrigger
   - type: Explosive
-    explosionType: Default
-    maxIntensity: 750
-    intensitySlope: 600
-    totalIntensity: 1800
+    explosionType: Fragmentation
+    maxIntensity: 100
+    intensitySlope: 4
+    totalIntensity: 200
     canCreateVacuum: false
   - type: TimerTriggerVisuals
     primingSound:

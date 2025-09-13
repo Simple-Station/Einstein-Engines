@@ -37,51 +37,14 @@
           Unprimed: { state: icon }
 
 - type: entity
-  name: explosive grenade
-  description: Grenade that creates a small but devastating explosion.
-  parent: GrenadeBase
+  parent: SHIHG17SmartHandgrenade
   id: ExGrenade
-  components:
-  - type: ExplodeOnTrigger
-  - type: Explosive
-    explosionType: Default
-    maxIntensity: 10
-    intensitySlope: 3
-    totalIntensity: 120 # about a ~4 tile radius
-    canCreateVacuum: false
-  - type: OnUseTimerTrigger
-    beepSound:
-      path: "/Audio/Effects/beep1.ogg"
-      params:
-        volume: 5
-    initialBeepDelay: 0
-    beepInterval: 2 # 2 beeps total (at 0 and 2)
+  suffix: DO NOT MAP
 
 - type: entity
-  name: flashbang
-  description: Eeeeeeeeeeeeeeeeeeeeee
-  parent: GrenadeBase
+  parent: SHIHG7FlashbangHandgrenade
   id: GrenadeFlashBang
-  components:
-  - type: Sprite
-    sprite: Objects/Weapons/Grenades/flashbang.rsi
-  - type: FlashOnTrigger
-    range: 7
-  - type: SoundOnTrigger
-    sound:
-      path: "/Audio/Effects/flash_bang.ogg"
-  - type: DeleteOnTrigger
-  - type: SpawnOnTrigger
-    proto: GrenadeFlashEffect
-  - type: Appearance
-  - type: TimerTriggerVisuals
-    primingSound:
-      path: /Audio/Effects/countdown.ogg
-  - type: GuideHelp
-    guides:
-    - Security
-    - Antagonists
-  - type: Flashbang # Goobstation
+  suffix: DO NOT MAP
 
 - type: entity
   id: GrenadeFlashEffect
@@ -100,27 +63,9 @@
 #The explosive values for these are pretty god damn mediocre, but SS14's explosion system is hard to understand - this is a good enough approximation of how it was in SS13.
 #Ideally, there should be a weak radius around the bomb outside of its gibbing / spacing range capable of dealing fair damage to players / structures.
 - type: entity
-  name: syndicate minibomb
-  description: A syndicate-manufactured explosive used to stow destruction and cause chaos.
-  parent: GrenadeBase
+  parent: DSMG4TwistcapHandgrenade
   id: SyndieMiniBomb
-  components:
-  - type: Sprite
-    sprite: Objects/Weapons/Grenades/syndgrenade.rsi
-  - type: OnUseTimerTrigger
-    delay: 5
-  - type: ExplodeOnTrigger
-  - type: Explosive
-    explosionType: Minibomb
-    totalIntensity: 200
-    intensitySlope: 30 #Will destroy the tile under it reliably, space 1-2 more to rods. Only does any significant damage in a 5-tile cross.
-    maxIntensity: 60
-  - type: Appearance
-  - type: TimerTriggerVisuals
-    primingSound:
-      path: /Audio/Effects/minibombcountdown.ogg
-      params:
-        volume: 12
+  suffix: DO NOT MAP
 
 - type: entity
   name: Self Destruct
@@ -331,21 +276,9 @@
     price: 25
 
 - type: entity
-  name: EMP grenade
-  description: A grenade designed to wreak havoc on electronic systems.
-  parent: GrenadeBase
+  parent: SHIHG32EMPHandgrenade
   id: EmpGrenade
-  components:
-  - type: Sprite
-    sprite: Objects/Weapons/Grenades/empgrenade.rsi
-  - type: EmpOnTrigger
-    range: 4
-    energyConsumption: 2700000
-  - type: DeleteOnTrigger
-  - type: Appearance
-  - type: TimerTriggerVisuals
-    primingSound:
-      path: /Audio/Effects/countdown.ogg
+  suffix: DO NOT MAP
 
 - type: entity
   name: holy hand grenade
@@ -373,22 +306,9 @@
       path: /Audio/Effects/hallelujah.ogg
 
 - type: entity
-  parent: GrenadeBase
+  parent: M18SmokeHandgrenade
   id: SmokeGrenade
-  name: smoke grenade
-  description: A tactical grenade that releases a large, long-lasting cloud of smoke when used.
-  components:
-  - type: Sprite
-    sprite: Objects/Weapons/Grenades/smoke.rsi
-  - type: SmokeOnTrigger
-    duration: 30
-    spreadAmount: 50
-  - type: SoundOnTrigger
-    sound: /Audio/Items/smoke_grenade_smoke.ogg
-  - type: DeleteOnTrigger
-  - type: TimerTriggerVisuals
-    primingSound:
-      path: /Audio/Items/smoke_grenade_prime.ogg
+  suffix: DO NOT MAP
 
 - type: entity
   parent: SmokeGrenade
@@ -425,20 +345,9 @@
         Quantity: 30
 
 - type: entity
-  parent: SmokeGrenade
+  parent: SHIHG3TearGasHandgrenade
   id: TearGasGrenade
-  name: tear gas grenade
-  description: A riot control tear gas grenade. Causes irritation, pain and makes you cry your eyes out.
-  components:
-  - type: Sprite
-    sprite: Objects/Weapons/Grenades/tear_gas.rsi
-  - type: SmokeOnTrigger
-    duration: 10
-    spreadAmount: 30
-    solution:
-      reagents:
-      - ReagentId: TearGas
-        Quantity: 50
+  suffix: DO NOT MAP
 
 # Non-explosive "dummy" grenades to use as a distraction.
 

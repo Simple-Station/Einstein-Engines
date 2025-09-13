@@ -61,8 +61,8 @@
 - type: cargoProduct
   id: MakoPangtai
   icon:
-    sprite: _Crescent/Objects/Weapons/mako.rsi
-    state: base
+    sprite: _Crescent/Objects/Weapons/Guns/mako.rsi
+    state: icon
   product: CratePangtaiMako
   cost: 30000
   category: cargoproduct-category-name-military
@@ -75,6 +75,36 @@
     state: icon
   product: CratePangtaiHalyad
   cost: 35000
+  category: cargoproduct-category-name-military
+  group: pangtai
+
+- type: cargoProduct
+  id: SpearPangtai
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/spear.rsi
+    state: icon
+  product: CratePangtaiSpear
+  cost: 40000
+  category: cargoproduct-category-name-military
+  group: pangtai
+
+- type: cargoProduct
+  id: GustavPangtai
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/gustav.rsi
+    state: icon
+  product: CratePangtaiGustaf
+  cost: 20000
+  category: cargoproduct-category-name-military
+  group: pangtai
+
+- type: cargoProduct
+  id: CommandoPangtai
+  icon:
+    sprite: _Crescent/Objects/Weapons/Guns/commando.rsi
+    state: icon
+  product: CratePangtaiCommando
+  cost: 20000
   category: cargoproduct-category-name-military
   group: pangtai
 

@@ -14,6 +14,39 @@
   fireStates: 3
 
 - type: explosion
+  id: Electric
+  damagePerIntensity:
+    types:
+      Shock: 2
+  lightColor: Orange
+  texturePath: /Textures/Effects/sparks.rsi
+
+- type: explosion
+  id: Thermobaric
+  damagePerIntensity:
+    types:
+      Heat: 3
+      Blunt: 4
+      Structural: 100
+  tileBreakChance: [ 0, 0.5, 1 ]
+  tileBreakIntensity: [ 1, 10, 15 ]
+  tileBreakRerollReduction: 30
+  lightColor: Orange
+  texturePath: /Textures/Effects/fire.rsi
+  fireStates: 3
+
+- type: explosion
+  id: Fragmentation
+  damagePerIntensity:
+    types:
+      Heat: 2
+      Blunt: 2.5
+      Piercing: 5.5
+  lightColor: Orange
+  texturePath: /Textures/Effects/fire.rsi
+  fireStates: 3
+
+- type: explosion
   id: DemolitionCharge
   damagePerIntensity:
     types:

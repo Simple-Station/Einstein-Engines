@@ -27,7 +27,7 @@
   id: CommunardRiotGear
   name: research-technology-communard-riotgear
   icon:
-    sprite: _Crescent/Objects/Weapons/ncwlshieldriot.rsi
+    sprite: _Crescent/Objects/Weapons/Shields/ncwlshieldriot.rsi
     state: icon
   discipline: Communard
   tier: 1
