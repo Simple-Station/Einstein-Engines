@@ -1,0 +1,34 @@
+# Author Info
+# Discord: rubeebee
+
+- type: vessel
+  id: Pear
+  name: ICM Pear
+  description: And old pre-collapse cargo hauler, the pear is perfect for small scale trading, it's hull retrofitted to survive taypan.
+  price: 18000
+  category: Small
+  group: Civilian
+  path: /Maps/_Crescent/Shuttles/Civilian/pear.yml
+
+- type: gameMap
+  id: Pear
+  mapName: 'ICM Pear'
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/pear.yml
+  minPlayers: 0
+  stations:
+    Pear:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: industrial
+        - type: StationNameSetup
+          mapNameTemplate: 'ICM Pear {1}'
+          nameGenerator:
+           !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-expeditions
+        - type: VesselDescription
+          description: The Pear was made for more peaceful times. Sadly, you're not in those times.
