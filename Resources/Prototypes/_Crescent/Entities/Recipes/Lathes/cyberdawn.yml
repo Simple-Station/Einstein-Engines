@@ -251,3 +251,11 @@
     BasicMechatronics: 500
     Silver: 250
     Tungsten: 1500
+
+- type: latheRecipe
+  id:  BallisticCycler1Craft
+  result: BallisticCycler1
+  completetime: 1.5
+  materials:
+    BasicMechatronics: 500
+    Steel: 250

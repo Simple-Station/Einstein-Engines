@@ -1,5 +1,3 @@
-
-
 - type: entity
   parent: BaseLathe
   id: ScrapRefiner
@@ -683,6 +681,7 @@
       - CyberneticsDermalArmor
       - SHIKatana
       - SHIShiverBlade
+      - BallisticCycler1Craft
 
   - type: Machine
     board: MicroforgeCircuitboard
