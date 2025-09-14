@@ -1,0 +1,34 @@
+# Author Info
+# Discord: rubeebee
+
+- type: vessel
+  id: Pearmk2
+  name: Pear MKII
+  description: The Pear MKII is a combat capable retrofit, made from a wreck of a pear. It's loadout is made out of scavenged ship guns salvaged from derelicts.
+  price: 29000
+  category: Small
+  group: Scrap
+  path: /Maps/_Crescent/Shuttles/Civilian/pearmk2.yml
+
+- type: gameMap
+  id: Pearmk2
+  mapName: 'Pear MKII'
+  mapPath: /Maps/_Crescent/Shuttles/Civilian/pearmk2.yml
+  minPlayers: 0
+  stations:
+    Pearmk2:
+      stationProto: StandardCrescentExpeditionVessel
+      components:
+        - type: VesselIcon
+          iffIcon:
+            sprite: _Crescent/ShipIcons/ifficons.rsi
+            state: corvette
+        - type: StationNameSetup
+          mapNameTemplate: 'Pear MKII {1}'
+          nameGenerator:
+           !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: VesselDesignation
+          designation: vessel-designation-gunship
+        - type: VesselDescription
+          description: The Pear retrofitted to be a combat capable gunship. Goodluck!
