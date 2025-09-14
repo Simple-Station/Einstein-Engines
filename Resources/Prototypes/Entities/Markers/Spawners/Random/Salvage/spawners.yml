@@ -397,3 +397,22 @@
       #  weight: 10
       #- id: MobArgocyteFounder
       #  weight: 25
+
+
+- type: entity
+  parent: MarkerBase
+  id: SalvageSpawnerHighTierComponents
+  name: T3 Components Spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _Crescent/Objects/Materials/materials.rsi
+      state: bluespacemechatronics
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
+      - id: NanotrasenMechatronics3
+        weight: 50
+      - id: NanotrasenElectronics3
+        weight: 50
