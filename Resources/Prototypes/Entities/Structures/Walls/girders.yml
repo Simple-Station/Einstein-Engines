@@ -17,9 +17,9 @@
           bounds: "-0.45,-0.45,0.45,0.45"
         density: 60
         mask:
-        - MachineMask
+        - TableMask
         layer:
-        - GlassAirlockLayer
+        - TableLayer
   - type: InteractionOutline
   - type: Construction
     graph: Girder
@@ -54,6 +54,7 @@
           collection: MetalBreak
   - type: StaticPrice
     price: 10
+  - type: Climbable
 
 - type: entity
   id: ReinforcedGirder
