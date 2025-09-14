@@ -14,7 +14,7 @@ namespace Content.Server._Crescent.Misc;
 /// </summary>
 public sealed class PassiveSpawningMachineSystem : EntitySystem
 {
-    [Dependency] private readonly PrototypeManager _proto = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly PowerReceiverSystem _powerReceiver = default!;
     public override void Update(float delta)
@@ -28,10 +28,10 @@ public sealed class PassiveSpawningMachineSystem : EntitySystem
             if (comp.passedTime < comp.spawnDelay)
                 continue;
             comp.passedTime = 0;
-            if (!_proto.TryIndex<EntityListPrototype>(comp.entityListProto.ID, out var entityListProto))
+            if (!_proto.TryIndex<EntityListPrototype>(comp.entityListProto, out var entityListProto))
             {
                 Log.Error(
-                    $"PassiveSpawningMachineSystem: EntityListProto with id {comp.entityListProto.ID} NOT FOUND on entity prototype : {MetaData(uid).EntityPrototype}");
+                    $"PassiveSpawningMachineSystem: EntityListProto with id {comp.entityListProto} NOT FOUND on entity prototype : {MetaData(uid).EntityPrototype}");
                 continue;
             }
             var ent = _random.Pick(entityListProto.EntityIds);

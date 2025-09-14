@@ -1,4 +1,5 @@
 using Content.Shared.EntityList;
+using Robust.Shared.Prototypes;
 
 
 namespace Content.Shared._Crescent.Misc;
@@ -11,7 +12,7 @@ namespace Content.Shared._Crescent.Misc;
 public sealed partial class PassiveSpawningMachineComponent : Component
 {
     [DataField]
-    public EntityListPrototype entityListProto = default!;
+    public ProtoId<EntityListPrototype> entityListProto = default!;
 
     [DataField]
     public float spawnDelay = 30f;
