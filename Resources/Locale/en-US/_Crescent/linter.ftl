@@ -17,4 +17,6 @@ saw-console = Scrapaloid Bounty Console. Uses scrap as currency
 
 gsc-console = gsc bounty console. uses plunder as currency
 
+ipm-console = Interdyne Bounty Console. Uses exotic proteins as currency.
+
 ship-comm-console = ship communications console
