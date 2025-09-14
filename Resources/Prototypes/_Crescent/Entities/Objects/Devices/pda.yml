@@ -1232,3 +1232,17 @@
     borderColor: "#808080"
   - type: Icon
     state: pda-corpsec
+
+- type: entity
+  parent: BasePDA
+  id: SpacerPDA
+  name: Spacer's PDA
+  description: You aren't the law.
+  components:
+  - type: Pda
+    id: SpacerIDCard
+    state: pda-corpsec
+  - type: PdaBorderColor
+    borderColor: "#808080"
+  - type: Icon
+    state: pda-corpsec
