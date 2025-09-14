@@ -401,8 +401,8 @@
 
 - type: entity
   parent: MarkerBase
-  id: SalvageSpawnerHighTierComponents
-  name: T3 Components Spawner
+  id: SalvageSpawnerHighTierMechantronics
+  name: T3 Mechatronics Spawner
   components:
   - type: Sprite
     layers:
@@ -412,7 +412,33 @@
   - type: EntityTableSpawner
     table: !type:GroupSelector
       children:
+      - id: NanotrasenMechatronics1
+        weight: 40
       - id: NanotrasenMechatronics3
-        weight: 50
+        weight: 33
+      - id: NanotrasenMechatronics5
+        weight: 25
+      - id: NanotrasenMechatronics
+        weight: 2
+
+- type: entity
+  parent: MarkerBase
+  id: SalvageSpawnerHighTierElectronics
+  name: T3 Electronics Spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _Crescent/Objects/Materials/materials.rsi
+      state: nanotrasenelectronics
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
+      - id: NanotrasenElectronics1
+        weight: 40
       - id: NanotrasenElectronics3
-        weight: 50
+        weight: 33
+      - id: NanotrasenElectronics5
+        weight: 25
+      - id: NanotrasenElectronics
+        weight: 2
