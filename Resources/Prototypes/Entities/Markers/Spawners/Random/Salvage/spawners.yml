@@ -415,11 +415,9 @@
       - id: NanotrasenMechatronics1
         weight: 40
       - id: NanotrasenMechatronics3
-        weight: 33
+        weight: 35
       - id: NanotrasenMechatronics5
-        weight: 25
-      - id: NanotrasenMechatronics
-        weight: 2
+        weight: 15
 
 - type: entity
   parent: MarkerBase
@@ -437,8 +435,7 @@
       - id: NanotrasenElectronics1
         weight: 40
       - id: NanotrasenElectronics3
-        weight: 33
+        weight: 35
       - id: NanotrasenElectronics5
-        weight: 25
-      - id: NanotrasenElectronics
-        weight: 2
+        weight: 15
+
