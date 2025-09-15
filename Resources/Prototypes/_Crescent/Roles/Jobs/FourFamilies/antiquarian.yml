@@ -31,13 +31,13 @@
       - type: Telepathic
       - type: LanguageAdder
         addSpoken:
-          - Atyrian
           - Tradeband
           - OldTaypani
+          - Freespeak
         addUnderstood:
-          - Atyrian
           - Tradeband
           - OldTaypani
+          - Freespeak
   access:
   - Families
   - Izdari
