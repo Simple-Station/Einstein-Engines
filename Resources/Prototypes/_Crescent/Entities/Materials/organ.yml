@@ -20,6 +20,9 @@
       ExoticProteins: 500
   - type: Contraband
     value: 1
+  - type: Currency
+    price:
+      SampleIPM: 1
 
 - type: entity
   id: ProteinCan1
@@ -32,7 +35,7 @@
 - type: entity
   id: ProteinCan5
   parent: ProteinCan
-  suffix: Single
+  suffix: Five
   components:
     - type: Stack
       count: 5

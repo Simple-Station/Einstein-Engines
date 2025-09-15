@@ -41,8 +41,8 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 0.5
     baseSprintSpeed: 0.5
-    weightlessAcceleration: 0.9
-    weightlessFriction: 2.5
+    weightlessAcceleration: 0.5
+    weightlessFriction: 0
     weightlessModifier: 150
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
@@ -106,9 +106,9 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 0.5
     baseSprintSpeed: 0.5
-    weightlessAcceleration: 0.7
-    weightlessFriction: 2.5
-    weightlessModifier: 100
+    weightlessAcceleration: 0.4
+    weightlessFriction: 0
+    weightlessModifier: 150
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: RadarConsole # doesn't work atm for mechs, will port soon
@@ -185,8 +185,8 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 0.5
     baseSprintSpeed: 0.5
-    weightlessAcceleration: 0.9
-    weightlessFriction: 2.5
+    weightlessAcceleration: 0.5
+    weightlessFriction: 0
     weightlessModifier: 150
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
@@ -264,9 +264,9 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 0.5
     baseSprintSpeed: 0.5
-    weightlessAcceleration: 0.7
-    weightlessFriction: 2.5
-    weightlessModifier: 100
+    weightlessAcceleration: 0.4
+    weightlessFriction: 0
+    weightlessModifier: 150
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: RadarConsole # doesn't work atm for mechs, will port soon
@@ -343,9 +343,9 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 0.5
     baseSprintSpeed: 0.5
-    weightlessAcceleration: 0.7
-    weightlessFriction: 2.5
-    weightlessModifier: 100
+    weightlessAcceleration: 0.4
+    weightlessFriction: 0
+    weightlessModifier: 150
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: RadarConsole # doesn't work atm for mechs, will port soon
@@ -422,8 +422,8 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 0.5
     baseSprintSpeed: 0.5
-    weightlessAcceleration: 0.9
-    weightlessFriction: 2.5
+    weightlessAcceleration: 0.5
+    weightlessFriction: 0
     weightlessModifier: 150
   - type: CanMoveInAir
   - type: MovementAlwaysTouching

@@ -18,3 +18,7 @@
   displayName: Scrapped Goods
   canWithdraw: false
 
+- type: currency
+  id: SampleIPM
+  displayName: Exotic Samples
+  canWithdraw: false
