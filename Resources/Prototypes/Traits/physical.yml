@@ -96,30 +96,30 @@
         - type: CritModifier
           critThresholdModifier: -10
 
-# - type: trait
-#   id: Vigor
-#   category: Physical
-#   points: -6
-#   requirements:
-#     - !type:CharacterJobRequirement
-#       inverted: true
-#       jobs:
-#         - Borg
-#         - MedicalBorg
-#     - !type:CharacterTraitRequirement
-#       inverted: true
-#       traits:
-#         - Lethargy
-#     - !type:CharacterSpeciesRequirement
-#       inverted: true
-#       species:
-#         - Oni
-#         - IPC
-#   functions:
-#     - !type:TraitModifyStamina
-#       staminaModifier: 10
-#       decayModifier: 0.6
-#       cooldownModifier: -0.75
+- type: trait
+  id: Vigor
+  category: Physical
+  points: -6
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Lethargy
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Oni
+        - IPC
+  functions:
+    - !type:TraitModifyStamina
+      staminaModifier: 10
+      decayModifier: 0.6
+      cooldownModifier: -0.75
 
 # - type: trait
 #   id: Lethargy
@@ -284,38 +284,38 @@
       damageThresholdsModifier: -15
       speedModifierMultiplier: 1.2
 
-# - type: trait
-#   id: MartialArtist
-#   category: Physical
-#   points: -5
-#   requirements:
-#   - !type:CharacterJobRequirement
-#     inverted: true
-#     jobs:
-#       - Borg
-#       - MedicalBorg
-#       - Boxer
-#       - MartialArtist
-#       - Gladiator
-#   functions:
-#     - !type:TraitModifyUnarmed
-#       heavyOnLightMiss: true
-#       attackRateModifier: 0.8
-#       rangeModifier: 1.1
-#     - !type:TraitReplaceComponent
-#       components:     # Keep BoxerComponent for now until we have After/Before on traits prototypes
-#         - type: Boxer # for potential conflicts with other traits that replace unarmed damage
-#           modifiers:
-#             coefficients:
-#               Blunt: 1.2
-#               Slash: 1.2
-#               Piercing: 1.2
-#               Heat: 1.2
-#               Poison: 1.2
-#               Asphyxiation: 1.2
-#       # An attack rate of 1.25 hits per second (1 / 0.8 = 1.25) multiplied by 20% extra damage
-#       # effectively means 50% more overall DPS, same DPS bonus as before (1 * 1.25 * 1.2 = 1.5)
-#       # but the extra attack rate makes it visually apparent that it's Martial Artist.
+- type: trait
+  id: MartialArtist
+  category: Physical
+  points: -5
+  requirements:
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+      - Borg
+      - MedicalBorg
+      - Boxer
+      - MartialArtist
+      - Gladiator
+  functions:
+    - !type:TraitModifyUnarmed
+      heavyOnLightMiss: true
+      attackRateModifier: 0.8
+      rangeModifier: 1.1
+    - !type:TraitReplaceComponent
+      components:     # Keep BoxerComponent for now until we have After/Before on traits prototypes
+        - type: Boxer # for potential conflicts with other traits that replace unarmed damage
+          modifiers:
+            coefficients:
+              Blunt: 1.2
+              Slash: 1.2
+              Piercing: 1.2
+              Heat: 1.2
+              Poison: 1.2
+              Asphyxiation: 1.2
+      # An attack rate of 1.25 hits per second (1 / 0.8 = 1.25) multiplied by 20% extra damage
+      # effectively means 50% more overall DPS, same DPS bonus as before (1 * 1.25 * 1.2 = 1.5)
+      # but the extra attack rate makes it visually apparent that it's Martial Artist.
 
 - type: trait
   id: Small
