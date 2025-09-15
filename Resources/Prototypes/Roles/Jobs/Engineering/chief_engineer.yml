@@ -6,6 +6,9 @@
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
+      traits:
+        - Muted
+        - Blindness
   weight: 10
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"
