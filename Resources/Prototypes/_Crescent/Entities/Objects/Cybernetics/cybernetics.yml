@@ -235,8 +235,19 @@
       layers:
         - state: cherenzikovaccelerator
     - type: Liver
-    - type: Organ #eris give this a movespeed component too pretty please
+    - type: Organ
       slotId: liver
+      onAdd:
+        - type: TraitSpeedModifier # 25% movespeed increase
+          sprintModifier: 1.25
+          walkModifier: 1.25
+        - type: SlowOnDamage
+          speedModifierThresholds:
+            60: 0.9  # 0.7 is base speed.
+            80: 0.75  # 0.5 is base speed.
+        - type: Stamina
+          critThreshold: 125 # 25% more stamina
+          decay: 4.5 # 50% more regeneration per tick
     - type: Metabolizer
       maxReagents: 10
       metabolizerTypes: [Human]
@@ -255,8 +266,18 @@
       layers:
         - state: paineditor
     - type: Liver
-    - type: Organ #give this an onAdd modifier that raises the Alive to Critical threshhold later
+    - type: Organ
       slotId: liver
+      onAdd:
+        - type: MobThresholds
+          thresholds:
+            0: Alive
+            200: Critical
+            300: Dead
+        - type: SlowOnDamage # without this the player gets no slowdown thresholds since they're removed for some reason
+          speedModifierThresholds: # doubled thresholds
+            120: 0.75  # 0.7 is base speed.
+            160: 0.6  # 0.5 is base speed.
     - type: Metabolizer
       maxReagents: 10
       metabolizerTypes: [Human]
