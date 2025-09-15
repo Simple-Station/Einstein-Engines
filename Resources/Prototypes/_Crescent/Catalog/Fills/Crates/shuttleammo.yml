@@ -156,7 +156,7 @@
   id: CrateArtilleryAmmoExplosive
   parent: CrateSecgear
   name: 120mm DU shell crate
-  description: 12 rounds of High Explosive  shells for the 120mm Type-99 artillery cannon. Devastating effect.
+  description: 12 rounds of High Explosive shells for the 120mm Type-99 artillery cannon. Devastating effect.
   components:
   - type: StorageFill
     contents:
@@ -167,23 +167,23 @@
   id: CrateAutogunAmmo
   parent: CrateSecgear
   name: needler autogun magazine crate
-  description: Ammunition for "Needler" autogun turrets.
+  description: 8 magazines of ammunition for "Needler" autogun turrets.
   components:
   - type: StorageFill
     contents:
       - id: MagazineNeedler
-        amount: 5
+        amount: 8
 
 - type: entity
   id: CrateMortarAmmo
   parent: CrateSecgear
   name: 90mm automortar magazine crate
-  description: Ammunition for automortar artillery turrets.
+  description: 8 boxes of ammunition for 90mm automortar artillery turrets.
   components:
   - type: StorageFill
     contents:
       - id: MagazineMortar
-        amount: 5
+        amount: 8
 
 - type: entity
   id: CrateSwarmerAmmo
