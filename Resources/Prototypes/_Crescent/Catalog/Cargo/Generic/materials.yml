@@ -1,0 +1,59 @@
+- type: cargoProduct
+  id: MaterialGlassGeneric
+  icon:
+    sprite: Objects/Materials/Sheets/glass.rsi
+    state: glass_3
+  product: CrateMaterialGlass
+  cost: 5000 
+  category: cargoproduct-category-name-materials
+  group: generic
+
+- type: cargoProduct
+  id: MaterialSteelGeneric
+  icon:
+    sprite: Objects/Materials/Sheets/metal.rsi
+    state: steel_3
+  product: CrateMaterialSteel
+  cost: 10000
+  category: cargoproduct-category-name-materials
+  group: generic
+
+- type: cargoProduct
+  id: MaterialPlasticGeneric
+  icon:
+    sprite: Objects/Materials/Sheets/other.rsi
+    state: plastic_3
+  product: CrateMaterialPlastic
+  cost: 5000 
+  category: cargoproduct-category-name-materials
+  group: generic
+
+- type: cargoProduct
+  id: MaterialClothGeneric
+  icon:
+    sprite: Objects/Materials/materials.rsi
+    state: cloth_3
+  product: CrateMaterialTextiles
+  cost: 5000
+  category: cargoproduct-category-name-materials
+  group: generic
+
+- type: cargoProduct
+  id: MaterialFuelTankGeneric
+  icon:
+    sprite: Structures/Storage/tanks.rsi
+    state: fueltank
+  product: WeldingFuelTankFull
+  cost: 2500
+  category: cargoproduct-category-name-materials
+  group: generic
+
+# - type: cargoProduct
+#   id: MaterialWaterTank
+#   icon:
+#     sprite: Structures/Storage/tanks.rsi
+#     state: watertank
+#   product: WaterTankFull
+#   cost: 3000
+#   category: cargoproduct-category-name-materials
+#   group:

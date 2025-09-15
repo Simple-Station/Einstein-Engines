@@ -109,6 +109,7 @@
 #       languagesUnderstood:
 #         - Clarizian
 
+
 # - type: trait
 #   id: SolBasic
 #   category: TraitsSpeechLanguages
@@ -124,3 +125,18 @@
 #         - SolBasic
 #       languagesUnderstood:
 #         - SolBasic
+
+# - type: trait
+#   id: OldTaypani
+#   category: TraitsSpeechLanguages
+#   points: -6
+#   requirements:
+#     - !type:FactionRequirement
+#       inverted: true
+#       factionID: "TAP"
+#   functions:
+#     - !type:TraitModifyLanguages
+#       languagesSpoken:
+#         - OldTaypani
+#       languagesUnderstood:
+#         - OldTaypani

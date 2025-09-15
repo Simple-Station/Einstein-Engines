@@ -61,6 +61,22 @@
 
 - type: entity
   parent: MagazineBoxAntiMateriel
+  id: MagazineBoxAntiMaterielUranium
+  name: ammunition box (15.2×169mm depleted-uranium)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeAntiMaterielUranium
+
+- type: entity
+  parent: MagazineBoxAntiMateriel
+  id: MagazineBoxAntiMaterielIncendiary
+  name: ammunition box (15.2×169mm incendiary)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeAntiMaterielIncendiary
+
+- type: entity
+  parent: MagazineBoxAntiMateriel
   id: MagazineBoxAntiMaterielShrapnel
   name: ammunition box (15.2×169mm shrapnel)
   components:

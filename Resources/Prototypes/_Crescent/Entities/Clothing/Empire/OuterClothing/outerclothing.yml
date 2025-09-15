@@ -37,8 +37,8 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitInspector
-  name: mk. III 'ADJUDICATOR' combat hardsuit
-  description: A modular combat hardsuit for the Advocati Compliance Corps. Bears the colors of the Olywir administration.
+  name: mk. IV 'ORATEUR' combat hardsuit
+  description: A modular combat hardsuit for the Advocati Compliance Corps. Bears the colors of the Kaiser's administration.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/Empire/OuterClothing/inspector.rsi
@@ -61,8 +61,8 @@
         Heat: 25
         Caustic: 25
   - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 0.85
+    walkModifier: 0.90
+    sprintModifier: 0.90
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitInspector
   - type: StaticPrice
@@ -489,18 +489,36 @@
     - 0,0,3,3
 
 - type: entity
-  parent: ClothingOuterEVASuitBase
+  parent: ClothingOuterHardsuitBase
   id: ClothingOuterCoatImperialRitter
-  name: neurosuit
+  name: ritter's neurosuit
   description: An airtight ballistic fiber woven uniform for Imperial Ritters. It serves as both soft protection against shrapnel and an interface with their Exoplate, absorbing many of the rigors of piloting in place of their bearer and allowing even an unaugmented human to move with their machine as though they were one body.
   components:
   - type: Sprite
     sprite: _Crescent/Clothing/Empire/OuterClothing/rittersuit.rsi
   - type: Clothing
     sprite: _Crescent/Clothing/Empire/OuterClothing/rittersuit.rsi
-  - type: Tag
-    tags:
-    - SuitEVA
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: DegradeableArmor
+    armorMaxHealth: 500
+    armorType: Metallic
+    armorRepair: PlasteelPlate
+    initialModifiers:
+      flatReductions:
+        Blunt: 30
+        Slash: 25
+        Piercing: 15
+        Heat: 20
+        Caustic: 25
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetImperialRitter
   - type: StaticPrice
     price: 2000
 

@@ -1,7 +1,7 @@
 - type: cargoProduct
   id: CrateSurezaiInfantry
   icon:
-    sprite: _Crescent/Objects/Weapons/mp49.rsi
+    sprite: _Crescent/Objects/Weapons/Guns/mp49.rsi
     state: icon
   product: CrateSurezaiInfantry
   cost: 10000

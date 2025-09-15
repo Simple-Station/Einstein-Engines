@@ -30,16 +30,16 @@
     components:
       - type: ChatRank
         rank: crescent-rank-acolytetap
-  - !type:AddComponentSpecial
-    components:
       - type: Telepathic
       - type: LanguageAdder
         addSpoken:
           - Atyrian
           - Tradeband
+          - OldTaypani
         addUnderstood:
           - Atyrian
           - Tradeband
+          - OldTaypani
   access:
   - EmergencyShuttleRepealAll
   - Captain

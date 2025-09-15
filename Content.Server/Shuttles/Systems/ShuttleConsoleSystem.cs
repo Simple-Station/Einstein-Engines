@@ -336,6 +336,8 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         if (TryComp<DynamicCodeHolderComponent>(args.Grid, out var accesComp))
         {
             comp.accesState = ShuttleConsoleAccesState.NoAcces;
+            _itemSlotsSystem.TryEject(uid, comp.targetIdSlot, null, out var item);
+            _itemSlotsSystem.SetLock(uid, comp.targetIdSlot, true);
         }
         else
         {
@@ -443,6 +445,8 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
             if (HasComp<DynamicCodeHolderComponent>(args.Transform.GridUid))
             {
                 component.accesState = ShuttleConsoleAccesState.NoAcces;
+                _itemSlotsSystem.TryEject(uid, component.targetIdSlot, null, out var item);
+                _itemSlotsSystem.SetLock(uid, component.targetIdSlot, true);
             }
             else
             {

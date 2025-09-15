@@ -36,6 +36,7 @@
     - StoreCategorySAW
     - StoreCategorySAWshipmods
     - StoreCategorySAWships
+    - StoreCategorySAWGuns
     currencyWhitelist:
     - ScrapSAW
     balance:
@@ -53,7 +54,22 @@
     - StoreCategoryGSCSuits
     - StoreCategoryGSCExplosives
     - StoreCategoryGSCMech
+    - StoreCategoryGSCLPC
     currencyWhitelist:
     - PlunderGSC
     balance:
       PlunderGSC: 0
+
+- type: entity
+  id: StorePresetHullrotDogtagIPM
+  abstract: true
+  components:
+  - type: Store
+    name: ipm-console
+    categories:
+    - StoreCategoryIPMCybernetics
+    - StoreCategoryIPMEquipment
+    currencyWhitelist:
+    - SampleIPM
+    balance:
+      SampleIPM: 0

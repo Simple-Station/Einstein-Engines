@@ -1218,60 +1218,41 @@
         - Needler60
         - MagazineVulcan
         - MagazineFlak
+        #Hullrot edit start
+        - MagazineBoxAntiMateriel
+        - MagazineBoxHeavyRifle
+        - MagazineBoxRifle
+        - MagazineBoxLightRifle
+        - MagazineBoxCaselessRifle
+        - MagazineBoxCaselessRifleBig
+        - BoxShotgunFlash4g
+        - BoxShotgunSlug4g
+        - BoxLethalshot4g
+        - BoxBeanbag4g
         - BoxLethalshot
         - BoxShotgunLumen
         - BoxShotgunFlare
-        - BoxShotgunSlug
-        - MagazineBoxLightRifle
         - MagazineBoxMagnum
         - MagazineBoxPistol
-        - MagazineBoxRifle
-        - MagazineLightRifle
-        - MagazineLightRifleEmpty
-        - MagazinePistol
-        - MagazinePistolEmpty
-        - MagazineRifle
-        - MagazineRifleEmpty
-        - MagazineShotgun
-        - MagazineShotgunEmpty
-        - MagazineShotgunSlug
-        - ShellTranquilizer
-        - SpeedLoaderMagnum
-        - SpeedLoaderMagnumEmpty
-        - SpeedLoaderRifleHeavy
-        - SpeedLoaderRifleHeavyEmpty
-        - CartridgeSpecial
-        - MagazineBoxSpecial
-        # .35 Caseless Pistol
-        - MagazinePistolCaselessRiflePractice # EE
-        - MagazinePistolCaselessRifle # EE
-        - MagazinePistolCaselessRifleRubber # EE
-        # .35 Caseless (Civilian) Rifle
-        - MagazineCaselessRifleShortPractice # EE
-        - MagazineCaselessRifleShort # EE
-        - MagazineCaselessRifleShortRubber # EE
-        # .35 Caseless (Military) Rifle
-        - MagazineCaselessRiflePractice # EE
-        - MagazineCaselessRifle # EE
-        - MagazineCaselessRifleRubber # EE
-        # .35 Caseless (Box Mag) Rifle
-        - MagazineBoxCaselessRiflePractice # EE
-        - MagazineBoxCaselessRifle # EE
-        - MagazineBoxCaselessRifleRubber # EE
-        - MagazineLightRifleMarkOneEmpty
-        - MagazineLightRifleMarkOne
-      #Hullrot edit start
-        - MagazineLightRifle
-        - MagazinePistol6mm
+        - MagazineAntiMateriel
         - MagazineHeavyRifle
+        - MagazineRifleDrum
+        - MagazineRifle
+        - MagazineLightRifle
+        - MagazineShotgunSlug
+        - MagazineShotgun
+        - SpeedLoader127x99
+        - SpeedLoaderMagnum
+        - MagazineMagnumSub
+        - MagazineMagnum
         - MagazinePistolSubMachineGunHeavy
         - MagazinePistolSubMachineGun
+        - MagazinePistol6mmSmg
+        - MagazinePistolSmartgun
+        - MagazinePistol
+        - MagazinePistol6mm
         - MagazinePistolSubMachineGunTopMounted
-        - MagazineRifle
-        - MagazineShotgun
-        - MagazineShotgunSlug
-        - MagazineMagnumSub
-      #Hullrot edit end
+        #Hullrot edit end
     - type: MaterialStorage
       whitelist:
         tags:

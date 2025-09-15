@@ -106,6 +106,8 @@
   - type: CargoOrderConsole
     allowedGroups:
     - surezai
+    - generic
+    - genericAmmo
   - type: ActiveRadio
     channels:
     - Imperial
@@ -177,6 +179,8 @@
   - type: CargoOrderConsole
     allowedGroups:
     - commie
+    - generic
+    - genericAmmo
   - type: ActiveRadio
     channels:
     - NCWL
@@ -389,6 +393,8 @@
   - type: CargoOrderConsole
     allowedGroups:
     - shinohara
+    - generic
+    - genericAmmo
   - type: ActiveRadio
     channels:
     - Traffic
@@ -512,6 +518,8 @@
   - type: CargoOrderConsole
     allowedGroups:
     - freeport
+    - generic
+    - genericAmmo
   - type: ActiveRadio
     channels:
     - Syndicate
@@ -580,6 +588,8 @@
   - type: CargoOrderConsole
     allowedGroups:
     - hayes
+    - generic
+    - genericAmmo
   - type: ActiveRadio
     channels:
     - Syndicate
@@ -648,6 +658,8 @@
   - type: CargoOrderConsole
     allowedGroups:
     - gliess
+    - generic
+    - genericAmmo
   - type: ActiveRadio
     channels:
     - Common

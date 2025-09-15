@@ -36,3 +36,6 @@ trait-description-Freespeak = [color = green]
     A language of renegades and frontiersmen descending from various languages from Earth-- like Hindi,
     combined into a multi-rooted jumble that sounds incoherent or even barbarian to non-native speakers.[color = red]
     A translator device for this language is available as a T1 research for all factions, and printable at a Pristine Microforge. [/color]
+
+trait-name-OldTaypani = Old Taypani
+trait-description-OldTaypani = Formed out of desperation and constant migration - Old Taypani is a language descended from various Unathi and Atyrian dialects. Glottal and guttural at times, speaking this language is a mark of piety in the circles of the Matron and a sign of destitution to many.

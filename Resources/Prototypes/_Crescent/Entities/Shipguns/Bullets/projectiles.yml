@@ -13,8 +13,8 @@
     ignoreWeaponGrid: true
     damage:
       types:
-        Structural: 75
-        Piercing: 50
+        Structural: 65
+        Piercing: 90
   - type: PointLight
     radius: 3.5
     color: orange
@@ -24,6 +24,9 @@
   - type: Fixtures
     fixtures:
       projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.45,0.15,0.15"
         hard: false
       fly-by: &flybyfixture
         shape: !type:PhysShapeCircle

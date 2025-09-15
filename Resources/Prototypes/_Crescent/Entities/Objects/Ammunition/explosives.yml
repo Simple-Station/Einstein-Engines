@@ -1,85 +1,1116 @@
-# Rockets
+# 40mm Grenade
 
 - type: entity
-  id: CartridgeSmallRocket
-  name: PG-2 grenade
+  id: Cartridge40mmCan
+  name: 40mm M1001 CA grenade
   parent: BaseItem
-  description: A 80mm warhead designed for the RPG-2 launcher. Has a cone tipped shape.
+  description: A 40mm grenade launcher round, commonly called a 40 mike mike. This is a canister shot.
   components:
   - type: Tag
     tags:
-      - CartridgeSmallRocket
-  - type: Item
-    shape:
-    - 0,0,0,3
-  - type: CartridgeAmmo
-    proto: BulletSmallRocket
-    deleteOnSpawn: true
-  - type: Sprite
-    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/small_rocket.rsi
-    state: he
-  - type: StaticPrice
-    price: 20
-
-- type: entity
-  id: Cartridge84mmRocket
-  name: 84mm rocket
-  parent: BaseItem
-  components:
-  - type: Tag
-    tags:
-      - Cartridge84mmRocket
+      - Shell40mm
   - type: Item
     size: Small
   - type: CartridgeAmmo
-    proto: Bullet84mmRocket
-    deleteOnSpawn: true
+    proto: Spread40mmCan
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
-    state: rpg
-  - type: StaticPrice
-    price: 20
-
-## 84mm
-
-- type: entity
-  id: BaseBullet84mmRocket
-  name: shell (84mm)
-  parent: BaseCartridge
-  abstract: true
-  components:
-  - type: Tag
-    tags:
-    - ShellRocket84mm
-  - type: Sprite
-    sprite: _Crescent/Objects/Weapons/Ammunition/Explosives/gustavrocket.rsi
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/40mm_grenade.rsi
     layers:
-      - state: solid
+      - state: can
         map: [ "enum.AmmoVisualLayers.Base" ]
   - type: Appearance
   - type: SpentAmmoVisuals
-    state: "solid"
-  - type: EmitSoundOnLand
-    sound:
-      path: /Audio/Weapons/Guns/Casings/casing_fall_1.ogg
-      params:
-        volume: -1
-  - type: EmitSoundOnCollide
-    sound:
-      path: /Audio/Weapons/Guns/Casings/casing_fall_2.ogg
-      params:
-        volume: -1
+    state: "can"
+  - type: StaticPrice
+    price: 20
+  - type: ExtendDescription
+    descriptionList:
+      - description: Intended target - Personnel
+        fontSize: 12
+        color: "#ffb700"
+        requireDetailRange: false
 
 - type: entity
-  id: Bullet84mmRocketHEAT
-  name: shell (84mm HEAT)
-  parent: BaseBullet84mmRocket
+  id: Projectile40mmCan
+  name: pellet (40mm can)
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
   components:
-    - type: Sprite
-      layers:
-        - state: heat
-          map: [ "enum.AmmoVisualLayers.Base" ]
-    - type: CartridgeAmmo
-      proto: Bullet84mmRocket
-    - type: SpentAmmoVisuals
-      state: "heat"
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: buckshot
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 21
+    harmorPenetration: 5
+    stoppingPower: 3
+
+- type: entity
+  id: Spread40mmCan
+  categories: [ HideSpawnMenu ]
+  parent: Projectile40mmCan
+  components:
+  - type: ProjectileSpread
+    proto: Projectile40mmCan
+    count: 12
+    spread: 15
+
+- type: entity
+  id: Cartridge40mmSmoke
+  name: 40mm M680 S grenade
+  parent: BaseItem
+  description: A 40mm grenade launcher round, commonly called a 40 mike mike. This one has a smoke warhead.
+  components:
+  - type: Tag
+    tags:
+      - Shell40mm
+  - type: Item
+    size: Small
+  - type: CartridgeAmmo
+    proto: Projectile40mmSmoke
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/40mm_grenade.rsi
+    layers:
+      - state: smoke
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: SpentAmmoVisuals
+    state: "smoke"
+  - type: Appearance
+  - type: StaticPrice
+    price: 20
+  - type: ExtendDescription
+    descriptionList:
+      - description: Intended target - Nothing
+        fontSize: 12
+        color: "#ffffff"
+        requireDetailRange: false
+
+- type: entity
+  id: Projectile40mmSmoke
+  name: rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag
+  - type: SmokeOnTrigger
+    duration: 13
+    spreadAmount: 18
+  - type: SoundOnTrigger
+    sound: /Audio/_Crescent/Weapons/Grenades/smoke10s.ogg
+  - type: DeleteOnTrigger
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+
+- type: entity
+  id: Cartridge40mmThermobaric
+  name: 40mm XM1060 TB grenade
+  parent: BaseItem
+  description: A 40mm grenade launcher round, commonly called a 40 mike mike. This one has a thermobaric warhead.
+  components:
+  - type: Tag
+    tags:
+      - Shell40mm
+  - type: Item
+    size: Small
+  - type: CartridgeAmmo
+    proto: Projectile40mmThermobaric
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/40mm_grenade.rsi
+    layers:
+      - state: thermo
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: SpentAmmoVisuals
+    state: "thermo"
+  - type: Appearance
+  - type: StaticPrice
+    price: 20
+  - type: ExtendDescription
+    descriptionList:
+      - description: Intended target - Structures
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
+
+- type: entity
+  id: Projectile40mmThermobaric
+  name: rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Fragmentation
+    maxIntensity: 100
+    intensitySlope: 4
+    totalIntensity: 100
+    maxTileBreak: 1
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+
+- type: entity
+  id: Cartridge40mmFrag
+  name: 40mm M481A3 HE grenade
+  parent: BaseItem
+  description: A 40mm grenade launcher round, commonly called a 40 mike mike. This one has a HE warhead.
+  components:
+  - type: Tag
+    tags:
+      - Shell40mm
+  - type: Item
+    size: Small
+  - type: CartridgeAmmo
+    proto: Projectile40mmFrag
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/40mm_grenade.rsi
+    layers:
+      - state: frag
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: SpentAmmoVisuals
+    state: "frag"
+  - type: Appearance
+  - type: StaticPrice
+    price: 20
+  - type: ExtendDescription
+    descriptionList:
+      - description: Intended target - Personnel
+        fontSize: 12
+        color: "#ffb700"
+        requireDetailRange: false
+
+- type: entity
+  id: Projectile40mmFrag
+  name: rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Fragmentation
+    maxIntensity: 100
+    intensitySlope: 4
+    totalIntensity: 100
+    canCreateVacuum: false
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+
+- type: entity
+  id: Cartridge40mmHEDP
+  name: 40mm M433 HEDP grenade
+  parent: BaseItem
+  description: A 40mm grenade launcher round, commonly called a 40 mike mike. This one has a HEDP warhead.
+  components:
+  - type: Tag
+    tags:
+      - Shell40mm
+  - type: Item
+    size: Small
+  - type: CartridgeAmmo
+    proto: Projectile40mmHEDP
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/40mm_grenade.rsi
+    layers:
+      - state: hedp
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: SpentAmmoVisuals
+    state: "hedp"
+  - type: Appearance
+  - type: StaticPrice
+    price: 20
+  - type: ExtendDescription
+    descriptionList:
+      - description: Intended target - Light armor
+        fontSize: 12
+        color: "#1aff00"
+        requireDetailRange: false
+
+- type: entity
+  id: Projectile40mmHEDP
+  name: rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 125
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Fragmentation
+    maxIntensity: 100
+    intensitySlope: 3
+    totalIntensity: 75
+    maxTileBreak: 1
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+
+# Misc Rockets
+
+- type: entity
+  id: Cartridge84mmLAM17
+  name: 84mm rocket
+  suffix: DO NOT MAP
+  parent: BaseItem
+  description: A 84mm rocket from a LAM-17, youre not even supposed to have this.. how did you get this?????????
+  components:
+  - type: Item
+    shape:
+    - 0,0,1,3
+  - type: CartridgeAmmo
+    proto: Projectile84mmLAM17
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/rpg7_rocket.rsi
+    state: frag
+  - type: StaticPrice
+    price: 20
+
+- type: entity
+  id: Projectile84mmLAM17
+  name: rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 350
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Fragmentation
+    maxIntensity: 100
+    intensitySlope: 2.0
+    totalIntensity: 100
+    maxTileBreak: 1
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+
+- type: entity
+  id: Cartridge44mmCommando
+  name: 44mm rocket
+  suffix: DO NOT MAP
+  parent: BaseItem
+  description: A 44mm rocket from a M-32 commando, youre not even supposed to have this.. how did you get this?????????
+  components:
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,1,3
+  - type: CartridgeAmmo
+    proto: Projectile44mmCommando
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/rpg7_rocket.rsi
+    state: frag
+  - type: StaticPrice
+    price: 20
+
+- type: entity
+  id: Projectile44mmCommando
+  name: rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Fragmentation
+    maxIntensity: 100
+    intensitySlope: 5
+    totalIntensity: 200
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+
+# RPG-7 Rockets
+
+- type: entity
+  id: CartridgeRPG7Heat
+  name: PG-7M rocket
+  parent: BaseItem
+  description: A 70mm warhead designed for the RPG-7 launcher. Has a HEAT warhead.
+  components:
+  - type: Tag
+    tags:
+      - RocketRPG7
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,1,3
+  - type: CartridgeAmmo
+    proto: ProjectileRPG7Heat
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/rpg7_rocket.rsi
+    state: heat
+  - type: StaticPrice
+    price: 20
+  - type: ExtendDescription
+    descriptionList:
+      - description: Intended target - Armor
+        fontSize: 12
+        color: "#1aff00"
+        requireDetailRange: false
+
+- type: entity
+  id: ProjectileRPG7Heat
+  name: rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 330
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Fragmentation
+    maxIntensity: 100
+    intensitySlope: 3
+    totalIntensity: 200
+    maxTileBreak: 1
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+
+- type: entity
+  id: CartridgeRPG7Tandem
+  name: PG-7T rocket
+  parent: BaseItem
+  description: A 97mm warhead designed for the RPG-7 launcher. Has a Tandem HEAT warhead.
+  components:
+  - type: Tag
+    tags:
+      - RocketRPG7
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,1,3
+  - type: CartridgeAmmo
+    proto: ProjectileRPG7Tandem
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/rpg7_rocket.rsi
+    state: tandem
+  - type: StaticPrice
+    price: 20
+  - type: ExtendDescription
+    descriptionList:
+      - description: Intended target - Heavy armor
+        fontSize: 12
+        color: "#1aff00"
+        requireDetailRange: false
+
+- type: entity
+  id: ProjectileRPG7Tandem
+  name: rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 550
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Fragmentation
+    maxIntensity: 100
+    intensitySlope: 3
+    totalIntensity: 200
+    maxTileBreak: 1
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+
+- type: entity
+  id: CartridgeRPG7Thermobaric
+  name: GTB-7S rocket
+  parent: BaseItem
+  description: A 103mm warhead designed for the RPG-7 launcher. Has a Thermobaric warhead.
+  components:
+  - type: Tag
+    tags:
+      - RocketRPG7
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,1,3
+  - type: CartridgeAmmo
+    proto: ProjectileRPG7Thermobaric
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/rpg7_rocket.rsi
+    state: thermo
+  - type: StaticPrice
+    price: 20
+  - type: ExtendDescription
+    descriptionList:
+      - description: Intended target - Structures
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
+
+- type: entity
+  id: ProjectileRPG7Thermobaric
+  name: rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Thermobaric
+    maxIntensity: 137.5
+    intensitySlope: 2.5
+    totalIntensity: 300
+    maxTileBreak: 5
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+
+- type: entity
+  id: CartridgeRPG7Emp
+  name: OFE-7 rocket
+  parent: BaseItem
+  description: A 85mm warhead designed for the RPG-7 launcher. Has a EMP warhead.
+  components:
+  - type: Tag
+    tags:
+      - RocketRPG7
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,1,3
+  - type: CartridgeAmmo
+    proto: ProjectileRPG7Emp
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/rpg7_rocket.rsi
+    state: emp
+  - type: StaticPrice
+    price: 20
+  - type: ExtendDescription
+    descriptionList:
+      - description: Intended target - Electronics
+        fontSize: 12
+        color: "#9000ff"
+        requireDetailRange: false
+
+- type: entity
+  id: ProjectileRPG7Emp
+  name: rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag
+  - type: EmpOnTrigger
+    range: 3
+    energyConsumption: 2700000
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Electric
+    maxIntensity: 100
+    intensitySlope: 1
+    totalIntensity: 50
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+
+- type: entity
+  id: CartridgeRPG7Frag
+  name: OFG-7 rocket
+  parent: BaseItem
+  description: A 40mm warhead designed for the RPG-7 launcher. Has a HE-Frag warhead.
+  components:
+  - type: Tag
+    tags:
+      - RocketRPG7
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,1,3
+  - type: CartridgeAmmo
+    proto: ProjectileRPG7Frag
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/rpg7_rocket.rsi
+    state: frag
+  - type: StaticPrice
+    price: 20
+  - type: ExtendDescription
+    descriptionList:
+      - description: Intended target - Personnel
+        fontSize: 12
+        color: "#ffb700"
+        requireDetailRange: false
+
+- type: entity
+  id: ProjectileRPG7Frag
+  name: rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Fragmentation
+    maxIntensity: 100
+    intensitySlope: 5
+    totalIntensity: 500
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+
+# RPG-2 Rockets
+
+- type: entity
+  id: CartridgeRPG2Heat
+  name: PG-2 rocket
+  parent: BaseItem
+  description: A 80mm warhead designed for the RPG-2 launcher. Has a HEAT warhead.
+  components:
+  - type: Tag
+    tags:
+      - RocketRPG2
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,2
+  - type: CartridgeAmmo
+    proto: ProjectileRPG2Heat
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/rpg2_rocket.rsi
+    state: heat
+  - type: StaticPrice
+    price: 20
+
+- type: entity
+  id: ProjectileRPG2Heat
+  name: rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 200
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Fragmentation
+    maxIntensity: 100
+    intensitySlope: 4
+    totalIntensity: 100
+    maxTileBreak: 1
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ExtendDescription
+    descriptionList:
+      - description: Intended target - Armor
+        fontSize: 12
+        color: "#227a40"
+        requireDetailRange: false
+
+- type: entity
+  id: CartridgeRPG2Frag
+  name: B40 M2 rocket
+  parent: BaseItem
+  description: A 70mm warhead designed for the RPG-2 launcher. Has a HE-Frag warhead.
+  components:
+  - type: Tag
+    tags:
+      - RocketRPG2
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,2
+  - type: CartridgeAmmo
+    proto: ProjectileRPG2Frag
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/rpg2_rocket.rsi
+    state: frag
+  - type: StaticPrice
+    price: 20
+
+- type: entity
+  id: ProjectileRPG2Frag
+  name: rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Fragmentation
+    maxIntensity: 100
+    intensitySlope: 5
+    totalIntensity: 250
+    maxTileBreak: 1
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: ExtendDescription
+    descriptionList:
+      - description: Intended target - Personnel
+        fontSize: 12
+        color: "#ffb700"
+        requireDetailRange: false
+
+# 84mm recoilless
+
+- type: entity
+  id: Cartridge84mmRecoillessFrag
+  name: HE 441D shell
+  parent: BaseItem
+  description: A 84mm shell designed for the recoilless rifles. Has a HE-Frag warhead.
+  components:
+  - type: Tag
+    tags:
+      - Rocket84mmRecoilless
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,3
+  - type: CartridgeAmmo
+    proto: Projectile84mmRecoillessFrag
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/84mm_recoilless.rsi
+    layers:
+      - state: frag
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: SpentAmmoVisuals
+    state: "frag"
+  - type: Appearance
+  - type: StaticPrice
+    price: 20
+  - type: ExtendDescription
+    descriptionList:
+      - description: Intended target - Personnel
+        fontSize: 12
+        color: "#ffb700"
+        requireDetailRange: false
+
+- type: entity
+  id: Projectile84mmRecoillessFrag
+  name: rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Fragmentation
+    maxIntensity: 100
+    intensitySlope: 5
+    totalIntensity: 500
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+
+- type: entity
+  id: Cartridge84mmRecoillessCan
+  name: ADM 401 shell
+  parent: BaseItem
+  description: A 84mm shell designed for the recoilless rifles. This is a canister shot.
+  components:
+  - type: Tag
+    tags:
+      - Rocket84mmRecoilless
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,3
+  - type: CartridgeAmmo
+    proto: Spread84mmRecoillessCan
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/84mm_recoilless.rsi
+    layers:
+      - state: can
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: SpentAmmoVisuals
+    state: "can"
+  - type: Appearance
+  - type: StaticPrice
+    price: 20
+  - type: ExtendDescription
+    descriptionList:
+      - description: Intended target - Personnel
+        fontSize: 12
+        color: "#ffb700"
+        requireDetailRange: false
+
+- type: entity
+  id: Projectile84mmRecoillessCan
+  name: pellet (84mm can)
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: buckshot
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 27
+    harmorPenetration: 8
+    stoppingPower: 5
+
+- type: entity
+  id: Spread84mmRecoillessCan
+  categories: [ HideSpawnMenu ]
+  parent: Projectile84mmRecoillessCan
+  components:
+  - type: ProjectileSpread
+    proto: Projectile84mmRecoillessCan
+    count: 25
+    spread: 30
+
+- type: entity
+  id: Cartridge84mmRecoillessHEAT
+  name: HEAT 551 shell
+  parent: BaseItem
+  description: A 84mm shell designed for the recoilless rifles. Has a HEAT warhead.
+  components:
+  - type: Tag
+    tags:
+      - Rocket84mmRecoilless
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,3
+  - type: CartridgeAmmo
+    proto: Projectile84mmRecoillessHEAT
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/84mm_recoilless.rsi
+    layers:
+      - state: heat
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: SpentAmmoVisuals
+    state: "heat"
+  - type: Appearance
+  - type: StaticPrice
+    price: 20
+  - type: ExtendDescription
+    descriptionList:
+      - description: Intended target - Armor
+        fontSize: 12
+        color: "#1aff00"
+        requireDetailRange: false
+
+- type: entity
+  id: Projectile84mmRecoillessHEAT
+  name: rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 350
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Fragmentation
+    maxIntensity: 100
+    intensitySlope: 3
+    totalIntensity: 225
+    maxTileBreak: 1
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+
+- type: entity
+  id: Cartridge84mmRecoillessTandem
+  name: HEAT 751 shell
+  parent: BaseItem
+  description: A 84mm shell designed for the recoilless rifles. Has a tandem HEAT warhead.
+  components:
+  - type: Tag
+    tags:
+      - Rocket84mmRecoilless
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,3
+  - type: CartridgeAmmo
+    proto: Projectile84mmRecoillessTandem
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/84mm_recoilless.rsi
+    layers:
+      - state: tandem
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: SpentAmmoVisuals
+    state: "tandem"
+  - type: Appearance
+  - type: StaticPrice
+    price: 20
+  - type: ExtendDescription
+    descriptionList:
+      - description: Intended target - Heavy armor
+        fontSize: 12
+        color: "#1aff00"
+        requireDetailRange: false
+
+- type: entity
+  id: Projectile84mmRecoillessTandem
+  name: rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 600
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Fragmentation
+    maxIntensity: 100
+    intensitySlope: 3
+    totalIntensity: 225
+    maxTileBreak: 1
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+
+- type: entity
+  id: Cartridge84mmRecoillessEMP
+  name: EMP 983C shell
+  parent: BaseItem
+  description: A 84mm shell designed for the recoilless rifles. Has a tandem EMP warhead.
+  components:
+  - type: Tag
+    tags:
+      - Rocket84mmRecoilless
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,3
+  - type: CartridgeAmmo
+    proto: Projectile84mmRecoillessEMP
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/84mm_recoilless.rsi
+    layers:
+      - state: emp
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: SpentAmmoVisuals
+    state: "emp"
+  - type: Appearance
+  - type: StaticPrice
+    price: 20
+  - type: ExtendDescription
+    descriptionList:
+      - description: Intended target - Electronics
+        fontSize: 12
+        color: "#9000ff"
+        requireDetailRange: false
+
+- type: entity
+  id: Projectile84mmRecoillessEMP
+  name: rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag
+  - type: EmpOnTrigger
+    range: 3
+    energyConsumption: 2700000
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Electric
+    maxIntensity: 100
+    intensitySlope: 1
+    totalIntensity: 50
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+
+- type: entity
+  id: Cartridge84mmRecoillessSmoke
+  name: SMOKE 469C shell
+  parent: BaseItem
+  description: A 84mm shell designed for the recoilless rifles. Has a tandem smoke warhead.
+  components:
+  - type: Tag
+    tags:
+      - Rocket84mmRecoilless
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,3
+  - type: CartridgeAmmo
+    proto: Projectile84mmRecoillessSmoke
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/84mm_recoilless.rsi
+    layers:
+      - state: smoke
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: SpentAmmoVisuals
+    state: "smoke"
+  - type: Appearance
+  - type: StaticPrice
+    price: 20
+  - type: ExtendDescription
+    descriptionList:
+      - description: Intended target - Nothing
+        fontSize: 12
+        color: "#ffffff"
+        requireDetailRange: false
+
+- type: entity
+  id: Projectile84mmRecoillessSmoke
+  name: rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag
+  - type: SmokeOnTrigger
+    duration: 13
+    spreadAmount: 18
+  - type: SoundOnTrigger
+    sound: /Audio/_Crescent/Weapons/Grenades/smoke10s.ogg
+  - type: DeleteOnTrigger
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+
+# hammerhead rocket
+
+- type: entity
+  id: CartridgeHammerheadRocket
+  name: 65mm Hammerhead rocket
+  parent: BaseCartridge
+  description: A 65mm heat-seeking rocket with a thermobaric warhead. Designed for the HSRPG-38M13 launcher.
+  components:
+  - type: Tag
+    tags:
+    - RocketHammerhead
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,3
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Ammunition/Casings/hammerhead_rocket.rsi
+    layers:
+      - state: hammer
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: BulletRocketSmart
+  - type: Appearance
+  - type: SpentAmmoVisuals
+    state: "hammer"
+  - type: StaticPrice
+    price: 50
+
+- type: entity
+  id: BulletRocketSmart
+  name: smart missile
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileIFF
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: frag
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Thermobaric
+    maxIntensity: 137.5
+    intensitySlope: 2.5
+    totalIntensity: 300
+    maxTileBreak: 5
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
+  - type: HeatSeeking
+    rotationSpeed: 40
+    acceleration: 25
+    topSpeed: 125

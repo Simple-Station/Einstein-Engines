@@ -58,9 +58,9 @@
     armorRepair: SteelPlate
     initialModifiers:
       flatReductions:
-        Blunt: 10
-        Slash: 10
-        Piercing: 35
+        Blunt: 15
+        Slash: 15
+        Piercing: 45
         Heat: 15
         Caustic: 15
         Radiation: 35
@@ -68,7 +68,7 @@
     walkModifier: 1
     sprintModifier: 1
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetSyndiDonator
+    clothingPrototype: ClothingHeadHelmetSyndieDonator
   - type: StaticPrice
     price: 1000
   - type: Contraband

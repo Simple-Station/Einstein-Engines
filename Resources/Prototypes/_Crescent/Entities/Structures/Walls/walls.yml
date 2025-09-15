@@ -1,0 +1,390 @@
+#reinforced
+- type: entity
+  parent: BaseWall
+  id: WallReinforced
+  name: reinforced wall
+  components:
+  - type: Sprite
+    sprite: Structures/Walls/solid.rsi
+  - type: Icon
+    sprite: Structures/Walls/solid.rsi
+    state: rgeneric
+  - type: Construction
+    graph: Girder
+    node: reinforcedWall
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+      - !type:PlaySoundBehavior #Nyano
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+      - !type:ChangeConstructionNodeBehavior
+        node: girder
+      - !type:SpawnEntitiesBehavior
+          spawn:
+            SteelScrap1:
+              min: 2
+              max: 4
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: IconSmooth
+    key: walls
+    base: reinf_over
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ReinforcedWallVisuals.DeconstructionStage:
+        ReinforcedWallVisualLayers.Deconstruction:
+          -1: { visible: false }
+          0: { state: reinf_construct-0, visible: true}
+          1: { state: reinf_construct-1, visible: true}
+          2: { state: reinf_construct-2, visible: true}
+          3: { state: reinf_construct-3, visible: true}
+          4: { state: reinf_construct-4, visible: true}
+          5: { state: reinf_construct-5, visible: true}
+  - type: ReinforcedWallReplacementMarker
+  - type: StaticPrice
+    price: 150
+  - type: RadiationBlocker
+    resistance: 8
+  - type: RCDDeconstructable
+    rcdScrappable: true
+    scrapResults:
+      - WallReinforcedScrapItemOutputs
+    deconstructable: false
+    cost: 6
+    delay: 3
+    fx: EffectRCDDeconstruct8
+
+- type: weightedRandomEntity
+  id: WallReinforcedScrapItemOutputs
+  weights:
+    SteelScrap10: 2
+    SteelScrap5: 1
+    SteelScrap16: 1
+
+#Capital
+- type: entity
+  parent: WallReinforced
+  id: WallReinforcedCapital
+  suffix: Capital
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 2000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+    - trigger:
+        !type:DamageTrigger
+        damage: 1500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SteelScrap1:
+            min: 2
+            max: 4
+      - !type:ChangeConstructionNodeBehavior
+        node: girder
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+# Plastitanium
+- type: entity
+  parent: WallPlastitaniumIndestructible
+  id: WallPlastitanium
+  name: plastitanium wall
+  suffix: ""
+  components:
+    - type: Tag
+      tags:
+        - Wall
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 1000
+          behaviors:
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                Girder:
+                  min: 1
+                  max: 1
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                SteelScrap1:
+                  min: 4
+                  max: 6
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+    - type: RCDDeconstructable
+      rcdScrappable: true
+      scrapResults:
+        - PlastitaniumScrapItemOutputs
+      deconstructable: false
+      cost: 6
+      delay: 3
+      fx: EffectRCDDeconstruct8
+
+- type: weightedRandomEntity
+  id: PlastitaniumScrapItemOutputs
+  weights:
+    TitaniumScrap10: 2
+    TitaniumScrap6: 1
+    TitaniumScrap17: 1
+
+- type: entity
+  parent: WallShuttleDiagonal
+  id: WallPlastitaniumDiagonal
+  name: plastitanium wall
+  suffix: diagonal
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: Structures/Walls/plastitanium_diagonal.rsi
+    state: state0
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+  - type: Icon
+    sprite: Structures/Walls/plastitanium_diagonal.rsi
+    state: state0
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 2000
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalSlam
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:ChangeConstructionNodeBehavior
+        node: girder
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: RCDDeconstructable
+    rcdScrappable: true
+    scrapResults:
+      - PlastitaniumScrapItemOutputs
+    deconstructable: false
+    cost: 6
+    delay: 3
+    fx: EffectRCDDeconstruct8
+
+
+# Reinforced Plastitanium
+- type: entity
+  parent: BaseWall
+  id: WallHeavyPlastitanium
+  name: Reinforced Plastitanium Wall
+  description: Multiple layers of plastitanium welded one over another, providing the highest grade protection known in Taypan.
+  components:
+    - type: Tag
+      tags:
+        - Wall
+    - type: Sprite
+      sprite: _Crescent/Structures/reinforcedPlastitanium.rsi
+      state: rplastitaniumfull
+    - type: Icon
+      sprite: _Crescent/Structures/reinforcedPlastitanium.rsi
+      state: rplastitaniumfull
+    - type: IconSmooth
+      key: walls
+      base: rplastitanium
+    - type: Damageable
+      damageContainer: StructuralInorganic
+      damageModifierSet: StructuralMetallicStrong
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 1750
+          behaviors:
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                Girder:
+                  min: 1
+                  max: 1
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+    - type: RCDDeconstructable
+      rcdScrappable: true
+      scrapResults:
+        - PlastitaniumScrapItemOutputs
+      deconstructable: false
+      cost: 6
+      delay: 3
+      fx: EffectRCDDeconstruct8
+
+- type: entity
+  parent: WallHeavyPlastitanium
+  id: WallHeavyPlastitaniumFilledCorner
+  name: Reinforced Plastitanium Corner
+  suffix: Filled
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: _Crescent/Structures/heavyPlastitaniumFilledCorners.rsi
+    state: state0
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+  - type: Icon
+    sprite: _Crescent/Structures/heavyPlastitaniumFilledCorners.rsi
+    state: state0
+
+- type: entity
+  parent: WallHeavyPlastitanium
+  id: WallHeavyPlastitaniumHollowCorner
+  name: Reinforced Plastitanium Corner
+  suffix: Hollow
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: _Crescent/Structures/heavyPlastitaniumHollowCorners.rsi
+    state: state0
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+  - type: Icon
+    sprite: _Crescent/Structures/heavyPlastitaniumHollowCorners.rsi
+    state: state0
+
+#Remnant
+- type: entity
+  parent: BaseWall
+  id: WallRemnant
+  name: "Warped Wall"
+  description: A highly unusual hull plating. The edges where the twisting metal meet are filled with a purple residue dust.
+  components:
+    - type: Tag
+      tags:
+        - Wall
+    - type: Sprite
+      sprite: _Crescent/Structures/remnantWalls.rsi
+      state: remnant_full
+    - type: Icon
+      sprite: _Crescent/Structures/remnantWalls.rsi
+      state: remnant_full
+    - type: IconSmooth
+      key: walls
+      base: remnant_
+    - type: Damageable
+      damageContainer: StructuralInorganic
+      damageModifierSet: StructuralMetallicStrong
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 2000
+          behaviors:
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                Girder:
+                  min: 1
+                  max: 1
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+    - type: RCDDeconstructable
+      rcdScrappable: true
+      scrapResults:
+        - PlastitaniumScrapItemOutputs
+      deconstructable: false
+      cost: 6
+      delay: 3
+      fx: EffectRCDDeconstruct8
+
+
+- type: entity
+  parent: WallRemnant
+  id: WallRemnantFilledCorner
+  name: Warped Corner
+  suffix: Filled
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: _Crescent/Structures/remnantFilledCorners.rsi
+    state: state0
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+  - type: Icon
+    sprite: _Crescent/Structures/remnantFilledCorners.rsi
+    state: state0
+
+- type: entity
+  parent: WallRemnant
+  id: WallRemnantHollowCorner
+  name: Warped Corner
+  suffix: Hollow
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: _Crescent/Structures/remnantHollowCorners.rsi
+    state: state0
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+  - type: Icon
+    sprite: _Crescent/Structures/remnantHollowCorners.rsi
+    state: state0

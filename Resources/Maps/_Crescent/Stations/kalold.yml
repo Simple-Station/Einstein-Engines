@@ -57668,7 +57668,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 29.95831,-32.439724
       parent: 1
-- proto: WeaponTurretMortarDSM
+- proto: WeaponTurretMortarFilled
   entities:
   - uid: 6671
     components:

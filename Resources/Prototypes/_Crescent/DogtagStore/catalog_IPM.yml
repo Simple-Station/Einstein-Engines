@@ -1,0 +1,131 @@
+# IPMs catalog for the id/dogtag console, using Samples as currency
+- type: storeCategory
+  id: StoreCategoryIPMCybernetics
+  name: Interdyne Cybernetics
+  priority: 12
+
+- type: storeCategory
+  id: StoreCategoryIPMEquipment
+  name: Interdyne Equipment
+  priority: 10
+
+- type: listing
+  id: StoreListingIPMCyberneticsBloodPump
+  name: IPM TT-92 Overclocked Blood Pump 
+  description: A small, fist-sized device meant to be a total replacement tool for a humanoid heart. Consumes nutrients from the external dermis and speeds up platelet production for accelerated healing. Replaces the heart.
+  icon: { sprite: /Textures/_Crescent/Objects/Misc/cybernetics.rsi, state: heartpump }
+  productEntity: CyberneticsBloodPump
+  cost:
+    SampleIPM: 46
+  categories:
+  - StoreCategoryIPMCybernetics
+
+- type: listing
+  id: StoreListingIPMCyberneticsInterdyneOptics
+  name: IPM Kiroshi mk.I smart optics
+  description: A pair of cybernetic replacements for the human optics network. Offers protection from welding flare and flashbangs and gives live diagnostic data to the user. Developed by Interdyne Pharmaceuticals for domestic use. Replaces the eyes.
+  icon: { sprite: /Textures/_Crescent/Objects/Misc/cybernetics.rsi, state: interdyneoptics }
+  productEntity: InterdyneOptics
+  cost:
+    SampleIPM: 46
+  categories:
+  - StoreCategoryIPMCybernetics
+
+- type: listing
+  id: StoreListingIPMCyberneticsCrowbarLeftArm
+  name: IPM TT-42l pryarm
+  description: A cybernetic left arm that can easily pry open unpowered doors.
+  icon: { sprite: /Textures/Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi, state: iconpry }
+  productEntity: CrowbarLeftArm
+  cost:
+    SampleIPM: 17.25
+  categories:
+  - StoreCategoryIPMCybernetics
+
+- type: listing
+  id: StoreListingIPMCyberneticsCrowbarRightArm
+  name: IPM TT-42r pryarm
+  description: A cybernetic right arm that can easily pry open unpowered doors.
+  icon: { sprite: /Textures/Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi, state: iconpry }
+  productEntity: CrowbarRightArm
+  cost:
+    SampleIPM: 17.25
+  categories:
+  - StoreCategoryIPMCybernetics
+
+- type: listing
+  id: StoreListingIPMCyberneticsAdrenal
+  name: IPM TT-86 adrenal accelerator
+  description: A miniaturized, optimized version of the average humanoid liver. Comes with automated, expanded adrenal glands that allow for faster movement. These models are known to cause agitation, paranoia, and personality shifts with prolonged use. Replaces the liver.
+  icon: { sprite: /Textures/_Crescent/Objects/Misc/cybernetics.rsi, state: cherenzikovaccelerator }
+  productEntity: CyberneticsAdrenal
+  cost:
+    SampleIPM: 57.5
+  categories:
+  - StoreCategoryIPMCybernetics
+
+- type: listing
+  id: StoreListingIPMCyberneticsPainEditor
+  name: IPM TT-46 pain editor
+  description: A miniaturized, optimized version of the average humanoid liver. Developed by Interdyne Pharmaceuticals, this cybernetic organ interfaces with the spinal nerves to nullify pain signals from reaching the brain, allowing the user to fight longer. Replaces the liver.
+  icon: { sprite: /Textures/_Crescent/Objects/Misc/cybernetics.rsi, state: paineditor }
+  productEntity: CyberneticsPainEditor
+  cost:
+    SampleIPM: 57.5
+  categories:
+  - StoreCategoryIPMCybernetics
+
+- type: listing
+  id: StoreListingIPMEquipmentCrash
+  name: Smuggled Crash Injection
+  description: A smuggled injection of crash. For the occassional vagrant junkie that finds his way to Interdyne.
+  icon: { sprite: /Textures/_Crescent/Objects/Autoinjectors/crash.rsi, state: medipen }
+  productEntity: CrashAutoinjector
+  cost:
+    SampleIPM: 11.5
+  categories:
+  - StoreCategoryIPMEquipment
+
+- type: listing
+  id: StoreListingIPMEquipmentHardsuit
+  name: Interdyne traumasec hardsuit
+  description: A modular hardsuit produced by Shinohara Heavy Industries, made for Interdyne TraumaSec officers.
+  icon: { sprite: /Textures/_Crescent/Clothing/Syndicate/OuterClothing/trauma_suit.rsi, state: icon }
+  productEntity: ClothingOuterHardsuitTraumasec
+  cost:
+    SampleIPM: 17.25
+  categories:
+  - StoreCategoryIPMEquipment
+
+- type: listing
+  id: StoreListingIPMEquipmentOmnimedTool
+  name: IPM T-33 medical multitool
+  description: A complex, refined medical multitool, designed by Interdyne Pharmaceuticals to speed up operation times, as well as conserve space.
+  icon: { sprite: /Textures/_Shitmed/Objects/Specific/Medical/Surgery/omnimed.rsi, state: evil }
+  productEntity: OmnimedToolSyndie
+  cost:
+    SampleIPM: 34.5
+  categories:
+  - StoreCategoryIPMEquipment
+
+- type: listing
+  id: StoreListingIPMEquipmentDefibrillatorSyndicate
+  name: Interdyne defibrillator
+  description: Doubles as a self-defense weapon against war-crime inclined vagrants.
+  icon: { sprite: /Textures/Objects/Specific/Medical/defibsyndi.rsi, state: icon }
+  productEntity: DefibrillatorSyndicate
+  cost:
+    SampleIPM: 34.5
+  categories:
+  - StoreCategoryIPMEquipment
+
+- type: listing
+  id: StoreListingIPMEquipmentProteinCan
+  name: Exotic samples can
+  description: Changed your mind? How unfortunate... Do put it to good use atleast, then.
+  icon: { sprite: /Textures/_Crescent/Objects/Misc/proteins.rsi, state: icon }
+  productEntity: ProteinCan1
+  cost:
+    SampleIPM: 1
+  categories:
+  - StoreCategoryIPMEquipment

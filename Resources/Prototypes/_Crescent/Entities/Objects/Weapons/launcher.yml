@@ -24,17 +24,16 @@
     availableModes:
       - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/gl_fire.ogg
   - type: BallisticAmmoProvider
     whitelist:
       tags:
-        - Grenade
+        - Shell40mm
     capacity: 3
     autoCycle: false
-    proto: GrenadeFrag
+    proto: Cartridge40mmFrag
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
-
 
 - type: entity
   name: SHI MGL-6 Milkor 40mm
@@ -60,14 +59,14 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/gl_fire.ogg
     fireOnDropChance: 0.5
   - type: AmmoCounter
   - type: RevolverAmmoProvider
     whitelist:
       tags:
-        - Grenade
-    proto: GrenadeFrag
+        - Shell40mm
+    proto: Cartridge40mmFrag
     capacity: 6
     chambers: [ True, True, True, True, True, True ]
     ammoSlots: [ null, null, null, null, null, null ]
@@ -113,14 +112,62 @@
   - type: Gun
     fireRate: 0.5
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/rpg_fire.ogg
   - type: BallisticAmmoProvider
-    proto: Cartridge84mmRocket
+    proto: Cartridge84mmLAM17
     cycleable: false
     capacity: 1
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
   - type: Appearance
+  - type: ExtendDescription
+    descriptionList:
+      - description: Intended target - Armor
+        fontSize: 12
+        color: "#1aff00"
+        requireDetailRange: false
+
+- type: entity
+  name: PTA M-32 Commando 44mm
+  parent: [BaseWeaponLauncher, BaseGunWieldable]
+  id: WeaponLauncherCommando
+  description: A four-shot, throwaway rocket launcher designed by Pang Tai Arms for obliterating any infantry and damaging mechs
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/commando.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-1
+        map: ["enum.GunVisualLayers.Mag"]
+        shader: unshaded
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/commando.rsi
+  - type: GunRequiresWield
+  - type: Item
+    shape:
+    - 0,0,5,2
+  - type: Gun
+    fireRate: 1
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/rpg_fire.ogg
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
+  - type: BallisticAmmoProvider
+    proto: Cartridge44mmCommando
+    cycleable: false
+    capacity: 4
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+  - type: Appearance
+  - type: ExtendDescription
+    descriptionList:
+      - description: Intended target - Personnel
+        fontSize: 12
+        color: "#ffb700"
+        requireDetailRange: false
 
 - type: entity
   name: IRM M320 40mm
@@ -140,11 +187,11 @@
     slots:
       gun_chamber:
         name: Chamber
-        startingItem: GrenadeFrag
+        startingItem: Cartridge40mmFrag
         priority: 1
         whitelist:
           tags:
-            - Grenade
+            - Shell40mm
   - type: ContainerContainer
     containers:
       gun_chamber: !type:ContainerSlot
@@ -168,10 +215,10 @@
     availableModes:
       - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/gl_fire.ogg
 
 - type: entity
-  name: PTA Carl M4 Gustaf 84mm
+  name: PTA M-5 Carl Gustaf 84mm
   parent: [BaseWeaponLauncher, BaseGunWieldable]
   id: WeaponLauncherGustav
   description: A ruggid, breach-loaded recoiless rifle. Suitable for a variety of large targets.
@@ -190,11 +237,11 @@
     slots:
       gun_chamber:
         name: Chamber
-        startingItem: Bullet84mmRocketHEAT
+        startingItem: Cartridge84mmRecoillessHEAT
         priority: 1
         whitelist:
           tags:
-            - ShellRocket84mm
+            - Rocket84mmRecoilless
   - type: ContainerContainer
     containers:
       gun_chamber: !type:ContainerSlot
@@ -215,7 +262,7 @@
   - type: Gun
     fireRate: 0.5
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/rpg_fire.ogg
 
 - type: entity
   name: NCSP RPG-2
@@ -239,17 +286,90 @@
   - type: Gun
     fireRate: 0.5
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/rpg_fire.ogg
   - type: BallisticAmmoProvider
     whitelist:
       tags:
-        - CartridgeSmallRocket
-        - CartridgeRocket
+        - RocketRPG2
     capacity: 1
     soundInsert:
-      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/rpg_load.ogg
+    fillWithDoAfter: true
+    fillDelay: 1
   - type: MagazineVisuals
     magState: mag
     steps: 2
     zeroVisible: false
   - type: Appearance
+
+- type: entity
+  name: NSCP RPG-7
+  parent: [BaseWeaponLauncher, BaseGunWieldable]
+  id: WeaponLauncherRocket
+  description: An iconic weapon of war. A rocket launcher often seen in the hands of terrorists and informal militias.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/rpg7.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/rpg7.rsi
+  - type: GunRequiresWield
+  - type: Item
+    shape:
+    - 0,0,4,2
+  - type: Gun
+    fireRate: 0.5
+    soundGunshot:
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/rpg_fire.ogg
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - RocketRPG7
+    capacity: 1
+    soundInsert:
+      path: /Audio/_Crescent/Weapons/Guns/non_collection/rpg_load.ogg
+    fillWithDoAfter: true
+    fillDelay: 1
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  name: PTA 10AX Chinalake 40mm
+  parent: [BaseWeaponLauncher, BaseGunWieldable]
+  id: WeaponLauncherChinaLake
+  description: A pump action grenade launcher manufactured by Pang Tai Arms.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/chinalake.rsi
+    layers:
+      - state: icon
+        map: ["enum.GunVisualLayers.Base"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/chinalake.rsi
+    slots:
+    - Back
+    - suitStorage
+  - type: AmmoCounter
+  - type: Gun
+    fireRate: 1
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - Shell40mm
+    capacity: 3
+    autoCycle: false
+    proto: Cartridge40mmFrag
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg

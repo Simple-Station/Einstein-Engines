@@ -8,6 +8,7 @@
   description: Spaceworthy protection for your fragile skull.
   components:
   - type: BreathMask
+  - type: EyeProtection
   - type: Sprite
     sprite: _Crescent/Clothing/SHI/Head/hshinoharahev.rsi
   - type: Clothing
@@ -26,7 +27,6 @@
         Heat: 0.95
         Radiation: 0.95
         Caustic: 0.95
-  - type: EyeProtection
 
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
@@ -36,6 +36,7 @@
   description: Spaceworthy protection for your fragile skull.
   components:
   - type: BreathMask
+  - type: FlashImmunity
   - type: Sprite
     sprite: _Crescent/Clothing/SHI/Head/corpsec.rsi
   - type: Clothing

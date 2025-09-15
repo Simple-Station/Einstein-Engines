@@ -270,12 +270,16 @@
   - type: BallisticAmmoProvider
     proto: CartridgeHeavyRifle
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/light_rifle_mag.rsi
+    sprite: _Crescent/Objects/Weapons/Ammunition/Magazine/heavy_mag.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
     zeroVisible: false
   - type: Appearance
 
@@ -539,50 +543,6 @@
     energyConsumption: 500000
     disableDuration: 30
 
-- type: entity
-  parent: BaseSubdermalImplant
-  id: MedicalTrackingImplant
-  name: tracking implant (IPM)
-  description: This implant has a tracking device monitor for the Interdyne Pharmaceuticals radio channel.
-  components:
-    - type: SubdermalImplant
-      whitelist:
-        components:
-        - MobState
-    - type: TriggerOnMobstateChange
-      mobState:
-      - Critical
-      - Dead
-    - type: Rattle
-      radioChannel: "Interdyne"
-
-- type: entity
-  parent: TrackingImplant
-  id: TrackingImplantDSMSec
-  name : tracking implant (DSM-Sec)
-  description: This implant has a tracking device monitor for the Divine Mandate Security radio channel
-  components:
-  - type: Rattle
-    radioChannel: "Imperial"
-
-- type: entity
-  parent: TrackingImplant
-  name : tracking implant (DSM-Civ)
-  id: TrackingImplantDSMCiv
-  description: This implant has a tracking device monitor for the Divine Mandate Civilian radio channel
-  components:
-  - type: Rattle
-    radioChannel: "EmpireCiv"
-
-- type: entity
-  parent: TrackingImplant
-  name : tracking implant (NCWL)
-  id: TrackingImplantNCWL
-  description: This implant has a tracking device monitor for the New Crescent Workers League radio channel
-  components:
-  - type: Rattle
-    radioChannel: "NCWL"
-
 - type: noiseChannel
   id: DensityGraveyard
   noiseType: Perlin
@@ -666,27 +626,3 @@
     sprite: _Crescent/Structures/fueltank.rsi
     layers:
       - state: fueltank
-
-- type: entity
-  id: TrackingImplanterDSMSec
-  name: tracking implanter (DSM Sec Death Alarm)
-  parent: BaseImplantOnlyImplanter
-  components:
-    - type: Implanter
-      implant: TrackingImplantDSMSec
-
-- type: entity
-  id: TrackingImplanterDSMCiv
-  name: tracking implanter (DSM Civ Death Alarm)
-  parent: BaseImplantOnlyImplanter
-  components:
-    - type: Implanter
-      implant: TrackingImplantDSMCiv
-
-- type: entity
-  id: TrackingImplanterNCWL
-  name: tracking implanter (NCWL Death Alarm)
-  parent: BaseImplantOnlyImplanter
-  components:
-    - type: Implanter
-      implant: TrackingImplantNCWL

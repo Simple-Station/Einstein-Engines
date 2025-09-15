@@ -33,9 +33,11 @@
         addSpoken:
           - Atyrian
           - Tradeband
+          - OldTaypani
         addUnderstood:
           - Atyrian
           - Tradeband
+          - OldTaypani
   access:
   - Families
   - Izdari

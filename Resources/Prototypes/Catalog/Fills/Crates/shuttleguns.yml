@@ -1,0 +1,43 @@
+- type: entity
+  parent: CrateEngineering
+  id: CrateShuttlegunPlasmaRepeater
+  name: SHI 400c plasma repeater flatpack
+  description: Contains a flatpack for a reliable fixedpoint plasma repeater. HARDPOINT TYPE - FIXED
+  components:
+  - type: StorageFill
+    contents:
+      - id: PlasmaRepeaterFlatpack
+        amount: 1
+
+- type: entity
+  parent: CrateEngineering
+  id: CrateShuttlegunVulcan
+  name: NT 20mm Vulcan flatpack
+  description: Contains a flatpack for a brutal fixedpoint gatling gun. HARDPOINT TYPE - FIXED
+  components:
+  - type: StorageFill
+    contents:
+      - id: VulcanFlatpack
+        amount: 1
+
+- type: entity
+  parent: CrateEngineering
+  id: CrateShuttlegunSlugthrower
+  name: SHI 43mm "Dasher" flatpack
+  description: Contains a flatpack for the respective shuttlegun. HARDPOINT TYPE - FIXED
+  components:
+  - type: StorageFill
+    contents:
+      - id: SlugthrowerFlatpack
+        amount: 1
+  
+- type: entity
+  parent: CrateEngineering
+  id: CrateShuttlegunPDT
+  name: Point Defense Turret flatpack
+  description: Contains a flatpack for a general-purpose point defense gun. HARDPOINT TYPE - SMALL BALLISTIC
+  components:
+  - type: StorageFill
+    contents:
+      - id: PDTFlatpack
+        amount: 1
