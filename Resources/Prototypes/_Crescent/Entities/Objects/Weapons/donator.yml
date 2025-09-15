@@ -446,6 +446,11 @@
     autoRechargeRate: 125
     autoRechargePause: true
     autoRechargePauseTime: 4
+  - type: Item
+    size: Normal
+    shape:
+      - 0,0,2,1
+    sprite: _Crescent/Objects/Weapons/plasmacutter.rsi
 
 - type: hitscan
   id: PlasmaCutterBolt
