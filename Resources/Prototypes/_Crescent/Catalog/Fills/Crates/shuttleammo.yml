@@ -41,7 +41,7 @@
   id: CrateGargoyleAmmo
   parent: CrateSecgear
   name: gargoyle cruise missile crate
-  description: Ammunition for the Gargoyle cruise missile launcher.
+  description: 10 explosive and 10 EMP warheads for the Gargoyle cruise missile launcher.
   components:
   - type: StorageFill
     contents:
@@ -54,7 +54,7 @@
   id: CrateLancerAmmo
   parent: CrateSecgear
   name: lancer rocket crate
-  description: Ammunition for the Lancer swarm missile launcher.
+  description: 30 individual rockets for the Lancer swarm missile launcher.
   components:
   - type: StorageFill
     contents:
@@ -134,7 +134,7 @@
   id: CrateCoolant
   parent: CrateSecgear
   name: coolant crate
-  description: Contains coolant for laser turrets.
+  description: 15 cartridges of coolant for various heavy weaponry.
   components:
   - type: StorageFill
     contents:
@@ -189,7 +189,7 @@
   id: CrateSwarmerAmmo
   parent: CrateSecgear
   name: swarmer rocket crate
-  description: Ammunition for swarmer rocket artilleries.
+  description: 5 bundles of ammunition for swarmer rocket artilleries.
   components:
   - type: StorageFill
     contents:
