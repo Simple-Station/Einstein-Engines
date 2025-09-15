@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 09/15/2025 01:14:40
-  entityCount: 366
+  time: 09/15/2025 05:52:45
+  entityCount: 367
 maps: []
 grids:
 - 1
@@ -246,6 +246,7 @@ entities:
             74: 3,4
             234: 3,4
             302: 3,4
+            370: 3,4
         - node:
             zIndex: 1
             angle: -3.141592653589793 rad
@@ -254,6 +255,7 @@ entities:
             73: 3,4
             233: 3,4
             301: 3,4
+            369: 3,4
         - node:
             zIndex: 1
             angle: -1.5707963267948966 rad
@@ -262,6 +264,7 @@ entities:
             69: 3,4
             229: 3,4
             297: 3,4
+            365: 3,4
         - node:
             zIndex: 1
             id: FloorTechMaintDirectionalCorner
@@ -269,6 +272,7 @@ entities:
             71: 3,4
             231: 3,4
             299: 3,4
+            367: 3,4
         - node:
             angle: -4.71238898038469 rad
             id: FloorTechMaintDirectionalEdge
@@ -276,6 +280,7 @@ entities:
             72: 3,4
             232: 3,4
             300: 3,4
+            368: 3,4
         - node:
             angle: -3.141592653589793 rad
             id: FloorTechMaintDirectionalEdge
@@ -283,6 +288,7 @@ entities:
             67: 3,4
             227: 3,4
             295: 3,4
+            363: 3,4
         - node:
             angle: -1.5707963267948966 rad
             id: FloorTechMaintDirectionalEdge
@@ -290,12 +296,14 @@ entities:
             68: 3,4
             228: 3,4
             296: 3,4
+            364: 3,4
         - node:
             id: FloorTechMaintDirectionalEdge
           decals:
             70: 3,4
             230: 3,4
             298: 3,4
+            366: 3,4
         - node:
             color: '#FFFFFFFF'
             id: FloorTechMaintDirectionalEdge
@@ -318,6 +326,9 @@ entities:
             341: -3,3
             353: -8,-4
             359: -4,-4
+            409: -3,3
+            421: -8,-4
+            427: -4,-4
         - node:
             zIndex: 1
             id: LatticeCornerNW
@@ -333,6 +344,9 @@ entities:
             310: 4,3
             323: 5,-4
             326: 9,-4
+            378: 4,3
+            391: 5,-4
+            394: 9,-4
         - node:
             zIndex: 1
             id: LatticeCornerSE
@@ -360,6 +374,13 @@ entities:
             347: -2,5
             350: -1,6
             356: -8,-2
+            400: -7,0
+            403: -6,2
+            407: -3,3
+            412: -3,4
+            415: -2,5
+            418: -1,6
+            424: -8,-2
         - node:
             zIndex: 1
             id: LatticeCornerSW
@@ -387,6 +408,13 @@ entities:
             317: 7,2
             320: 8,0
             329: 9,-2
+            362: 2,6
+            373: 3,5
+            377: 4,3
+            381: 4,4
+            385: 7,2
+            388: 8,0
+            397: 9,-2
         - node:
             id: LatticeEdgeE
           decals:
@@ -421,6 +449,15 @@ entities:
             351: -8,-4
             355: -8,-2
             357: -4,-4
+            399: -7,0
+            402: -6,2
+            406: -3,3
+            411: -3,4
+            414: -2,5
+            417: -1,6
+            419: -8,-4
+            423: -8,-2
+            425: -4,-4
         - node:
             id: LatticeEdgeN
           decals:
@@ -446,6 +483,12 @@ entities:
             340: -3,3
             352: -8,-4
             358: -4,-4
+            375: 4,3
+            389: 5,-4
+            392: 9,-4
+            408: -3,3
+            420: -8,-4
+            426: -4,-4
         - node:
             id: LatticeEdgeS
           decals:
@@ -501,6 +544,22 @@ entities:
             345: -2,5
             348: -1,6
             354: -8,-2
+            360: 2,6
+            371: 3,5
+            374: 4,3
+            379: 4,4
+            382: 6,3
+            383: 7,2
+            386: 8,0
+            395: 9,-2
+            398: -7,0
+            401: -6,2
+            404: -5,3
+            405: -3,3
+            410: -3,4
+            413: -2,5
+            416: -1,6
+            422: -8,-2
         - node:
             id: LatticeEdgeW
           decals:
@@ -535,6 +594,15 @@ entities:
             322: 5,-4
             325: 9,-4
             328: 9,-2
+            361: 2,6
+            372: 3,5
+            376: 4,3
+            380: 4,4
+            384: 7,2
+            387: 8,0
+            390: 5,-4
+            393: 9,-4
+            396: 9,-2
         - node:
             color: '#FFFFFFFF'
             id: TechE
@@ -2424,7 +2492,7 @@ entities:
       pos: 4.5,1.5
       parent: 1
     - type: Battery
-      startingCharge: 13349.432
+      startingCharge: 13050.683
     - type: ApcPowerReceiverBattery
       enabled: True
   - uid: 283
@@ -2433,7 +2501,7 @@ entities:
       pos: -2.5,1.5
       parent: 1
     - type: Battery
-      startingCharge: 13344.589
+      startingCharge: 13045.84
     - type: ApcPowerReceiverBattery
       enabled: True
 - proto: SignalButton
@@ -2943,5 +3011,12 @@ entities:
     components:
     - type: Transform
       pos: 5.5,-3.5
+      parent: 1
+- proto: WarpPointShip
+  entities:
+  - uid: 367
+    components:
+    - type: Transform
+      pos: 0.5,-0.5
       parent: 1
 ...
