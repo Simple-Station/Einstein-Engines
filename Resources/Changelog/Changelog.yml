@@ -16745,3 +16745,10 @@ Entries:
   id: 7313
   time: '2025-08-10T20:32:11.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/2528
+- author: Mike32oz
+  changes:
+    - type: Fix
+      message: Fixed shuttle announcements not playing audio
+  id: 7314
+  time: '2025-09-15T06:20:40.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/2543
